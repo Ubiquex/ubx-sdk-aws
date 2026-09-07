@@ -4,7 +4,7 @@ package imagebuilder
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImageScanFindings_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -14,12 +14,12 @@ type ImageScanFindings_Findings_InspectorScoreDetails_AdjustedCvss_Adjustments s
 }
 
 type ImageScanFindings_Findings_InspectorScoreDetails_AdjustedCvss struct {
-	Adjustments any
-	CvssSource any
-	Score any
-	ScoreSource any
+	Adjustments   any
+	CvssSource    any
+	Score         any
+	ScoreSource   any
 	ScoringVector any
-	Version any
+	Version       any
 }
 
 type ImageScanFindings_Findings_InspectorScoreDetails struct {
@@ -27,41 +27,41 @@ type ImageScanFindings_Findings_InspectorScoreDetails struct {
 }
 
 type ImageScanFindings_Findings_PackageVulnerabilityDetails_Cvss struct {
-	BaseScore any
+	BaseScore     any
 	ScoringVector any
-	Source any
-	Version any
+	Source        any
+	Version       any
 }
 
 type ImageScanFindings_Findings_PackageVulnerabilityDetails_VulnerablePackages struct {
-	Arch any
-	Epoch any
-	FilePath any
-	FixedInVersion any
-	Name any
-	PackageManager any
-	Release any
-	Remediation any
+	Arch            any
+	Epoch           any
+	FilePath        any
+	FixedInVersion  any
+	Name            any
+	PackageManager  any
+	Release         any
+	Remediation     any
 	SourceLayerHash any
-	Version any
+	Version         any
 }
 
 type ImageScanFindings_Findings_PackageVulnerabilityDetails struct {
-	Cvss any
-	ReferenceUrls any
+	Cvss                   any
+	ReferenceUrls          any
 	RelatedVulnerabilities any
-	Source any
-	SourceUrl any
-	VendorCreatedAt any
-	VendorSeverity any
-	VendorUpdatedAt any
-	VulnerabilityId any
-	VulnerablePackages any
+	Source                 any
+	SourceUrl              any
+	VendorCreatedAt        any
+	VendorSeverity         any
+	VendorUpdatedAt        any
+	VulnerabilityId        any
+	VulnerablePackages     any
 }
 
 type ImageScanFindings_Findings_Remediation_Recommendation struct {
 	Text any
-	Url any
+	Url  any
 }
 
 type ImageScanFindings_Findings_Remediation struct {
@@ -69,39 +69,39 @@ type ImageScanFindings_Findings_Remediation struct {
 }
 
 type ImageScanFindings_Findings struct {
-	AwsAccountId any
-	Description any
-	FirstObservedAt any
-	FixAvailable any
-	ImageBuildVersionArn any
-	ImagePipelineArn any
-	InspectorScore any
-	InspectorScoreDetails any
+	AwsAccountId                any
+	Description                 any
+	FirstObservedAt             any
+	FixAvailable                any
+	ImageBuildVersionArn        any
+	ImagePipelineArn            any
+	InspectorScore              any
+	InspectorScoreDetails       any
 	PackageVulnerabilityDetails any
-	Remediation any
-	Severity any
-	Title any
-	Type any
-	UpdatedAt any
+	Remediation                 any
+	Severity                    any
+	Title                       any
+	Type                        any
+	UpdatedAt                   any
 }
 
 var ImageScanFindings_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ImageScanFindingsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ImageScanFindingsAttrs struct {
-	Filters any
-	Findings any
+	Filters    any
+	Findings   any
 	MaxResults any
-	NextToken any
-	RequestId any
+	NextToken  any
+	RequestId  any
 }
 
 var ImageScanFindings = ubx.DataSourceBinding{
@@ -109,10 +109,10 @@ var ImageScanFindings = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ImageScanFindings_FiltersFields,
+			Kind:     "list",
+			Fields:   ImageScanFindings_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

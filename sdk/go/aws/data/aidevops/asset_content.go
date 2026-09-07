@@ -11,14 +11,14 @@ type AssetContent_Content struct {
 type AssetContentConfig struct {
 	AgentSpaceId any
 	// <p>Generic resource identifier (allows alphanumeric characters, hyphens, and underscores; 1-128 characters)</p>
-	AssetId any
+	AssetId      any
 	AssetVersion any
 }
 
 type AssetContentAttrs struct {
 	AgentSpaceId any
 	// <p>Generic resource identifier (allows alphanumeric characters, hyphens, and underscores; 1-128 characters)</p>
-	AssetId any
+	AssetId      any
 	AssetVersion any
 	// <p>A zip file containing asset files</p>
 	Content any
@@ -29,7 +29,7 @@ var AssetContent = ubx.DataSourceBinding{
 	WireType: "aws_aidevops_asset_content",
 	Fields: ubx.FieldMap{
 		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
-		"AssetId": ubx.FieldSpec{WireName: "asset_id"},
+		"AssetId":      ubx.FieldSpec{WireName: "asset_id"},
 		"AssetVersion": ubx.FieldSpec{WireName: "asset_version"},
 	},
 }

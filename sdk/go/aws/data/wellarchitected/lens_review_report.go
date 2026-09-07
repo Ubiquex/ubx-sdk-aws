@@ -8,7 +8,7 @@ type LensReviewReport_LensReviewReport struct {
 	Base64String any
 	// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
 	LensAlias any
-	LensArn any
+	LensArn   any
 }
 
 type LensReviewReportConfig struct {
@@ -34,8 +34,8 @@ type LensReviewReportAttrs struct {
 var LensReviewReport = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_lens_review_report",
 	Fields: ubx.FieldMap{
-		"LensAlias": ubx.FieldSpec{WireName: "lens_alias"},
+		"LensAlias":       ubx.FieldSpec{WireName: "lens_alias"},
 		"MilestoneNumber": ubx.FieldSpec{WireName: "milestone_number"},
-		"WorkloadId": ubx.FieldSpec{WireName: "workload_id"},
+		"WorkloadId":      ubx.FieldSpec{WireName: "workload_id"},
 	},
 }

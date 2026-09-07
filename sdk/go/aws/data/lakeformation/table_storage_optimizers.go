@@ -4,40 +4,40 @@ package lakeformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TableStorageOptimizers_StorageOptimizerList struct {
-	Config any
-	ErrorMessage any
-	LastRunDetails any
+	Config               any
+	ErrorMessage         any
+	LastRunDetails       any
 	StorageOptimizerType any
-	Warnings any
+	Warnings             any
 }
 
 type TableStorageOptimizersConfig struct {
-	CatalogId any
-	DatabaseName any
-	MaxResults any
-	NextToken any
+	CatalogId            any
+	DatabaseName         any
+	MaxResults           any
+	NextToken            any
 	StorageOptimizerType any
-	TableName any
+	TableName            any
 }
 
 type TableStorageOptimizersAttrs struct {
-	CatalogId any
-	DatabaseName any
-	MaxResults any
-	NextToken any
+	CatalogId            any
+	DatabaseName         any
+	MaxResults           any
+	NextToken            any
 	StorageOptimizerList any
 	StorageOptimizerType any
-	TableName any
+	TableName            any
 }
 
 var TableStorageOptimizers = ubx.DataSourceBinding{
 	WireType: "aws_lakeformation_table_storage_optimizers",
 	Fields: ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"CatalogId":            ubx.FieldSpec{WireName: "catalog_id"},
+		"DatabaseName":         ubx.FieldSpec{WireName: "database_name"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 		"StorageOptimizerType": ubx.FieldSpec{WireName: "storage_optimizer_type"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
+		"TableName":            ubx.FieldSpec{WireName: "table_name"},
 	},
 }

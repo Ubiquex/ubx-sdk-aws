@@ -9,8 +9,8 @@ type Account_ExpiryEventsConfiguration struct {
 }
 
 var Account_ExpiryEventsConfigurationFields = ubx.FieldMap{
-		"DaysBeforeExpiry": ubx.FieldSpec{WireName: "days_before_expiry"},
-	}
+	"DaysBeforeExpiry": ubx.FieldSpec{WireName: "days_before_expiry"},
+}
 
 type AccountConfig struct {
 	// Configures the day-based threshold (DaysBeforeExpiry) at which AWS Certificate Manager emits certificate expiration events, enabling EventBridge notifications for upcoming renewals. (AI-inferred)
@@ -29,8 +29,8 @@ var Account = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ExpiryEventsConfiguration": ubx.FieldSpec{
 			WireName: "expiry_events_configuration",
-			Kind: "object",
-			Fields: Account_ExpiryEventsConfigurationFields,
+			Kind:     "object",
+			Fields:   Account_ExpiryEventsConfigurationFields,
 		},
 	},
 }

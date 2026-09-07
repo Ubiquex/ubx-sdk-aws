@@ -4,7 +4,7 @@ package appconfig
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExperimentRun_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,13 +14,13 @@ type ExperimentRun_TreatmentOverrides struct {
 }
 
 var ExperimentRun_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ExperimentRun_TreatmentOverridesFields = ubx.FieldMap{
-		"Inline": ubx.FieldSpec{WireName: "inline"},
-	}
+	"Inline": ubx.FieldSpec{WireName: "inline"},
+}
 
 type ExperimentRunConfig struct {
 	// The application name or ID used to create the experiment run.
@@ -67,19 +67,19 @@ type ExperimentRunAttrs struct {
 var ExperimentRun = ubx.ResourceBinding{
 	WireType: "aws_app_config_experiment_run",
 	Fields: ubx.FieldMap{
-		"ApplicationIdentifier": ubx.FieldSpec{WireName: "application_identifier"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"ApplicationIdentifier":          ubx.FieldSpec{WireName: "application_identifier"},
+		"Description":                    ubx.FieldSpec{WireName: "description"},
 		"ExperimentDefinitionIdentifier": ubx.FieldSpec{WireName: "experiment_definition_identifier"},
-		"ExposurePercentage": ubx.FieldSpec{WireName: "exposure_percentage"},
+		"ExposurePercentage":             ubx.FieldSpec{WireName: "exposure_percentage"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ExperimentRun_TagsFields,
+			Kind:     "list",
+			Fields:   ExperimentRun_TagsFields,
 		},
 		"TreatmentOverrides": ubx.FieldSpec{
 			WireName: "treatment_overrides",
-			Kind: "object",
-			Fields: ExperimentRun_TreatmentOverridesFields,
+			Kind:     "object",
+			Fields:   ExperimentRun_TreatmentOverridesFields,
 		},
 	},
 }

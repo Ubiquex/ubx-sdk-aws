@@ -4,30 +4,30 @@ package lookoutequipment
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Datasets_DatasetSummaries struct {
-	CreatedAt any
-	DatasetArn any
+	CreatedAt   any
+	DatasetArn  any
 	DatasetName any
-	Status any
+	Status      any
 }
 
 type DatasetsConfig struct {
 	DatasetNameBeginsWith any
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 }
 
 type DatasetsAttrs struct {
 	DatasetNameBeginsWith any
-	DatasetSummaries any
-	MaxResults any
-	NextToken any
+	DatasetSummaries      any
+	MaxResults            any
+	NextToken             any
 }
 
 var Datasets = ubx.DataSourceBinding{
 	WireType: "aws_lookoutequipment_datasets",
 	Fields: ubx.FieldMap{
 		"DatasetNameBeginsWith": ubx.FieldSpec{WireName: "dataset_name_begins_with"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 	},
 }

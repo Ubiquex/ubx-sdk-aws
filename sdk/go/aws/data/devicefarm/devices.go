@@ -5,79 +5,79 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Devices_Devices_Cpu struct {
 	Architecture any
-	Clock any
-	Frequency any
+	Clock        any
+	Frequency    any
 }
 
 type Devices_Devices_Instances_InstanceProfile struct {
-	Arn any
-	Description any
+	Arn                           any
+	Description                   any
 	ExcludeAppPackagesFromCleanup any
-	Name any
-	PackageCleanup any
-	RebootAfterUse any
+	Name                          any
+	PackageCleanup                any
+	RebootAfterUse                any
 }
 
 type Devices_Devices_Instances struct {
-	Arn any
-	DeviceArn any
+	Arn             any
+	DeviceArn       any
 	InstanceProfile any
-	Labels any
-	Status any
-	Udid any
+	Labels          any
+	Status          any
+	Udid            any
 }
 
 type Devices_Devices_Resolution struct {
 	Height any
-	Width any
+	Width  any
 }
 
 type Devices_Devices struct {
-	Arn any
-	Availability any
-	Carrier any
-	Cpu any
-	FleetName any
-	FleetType any
-	FormFactor any
-	HeapSize any
-	Image any
-	Instances any
-	Manufacturer any
-	Memory any
-	Model any
-	ModelId any
-	Name any
-	Os any
-	Platform any
-	Radio any
+	Arn                 any
+	Availability        any
+	Carrier             any
+	Cpu                 any
+	FleetName           any
+	FleetType           any
+	FormFactor          any
+	HeapSize            any
+	Image               any
+	Instances           any
+	Manufacturer        any
+	Memory              any
+	Model               any
+	ModelId             any
+	Name                any
+	Os                  any
+	Platform            any
+	Radio               any
 	RemoteAccessEnabled any
-	RemoteDebugEnabled any
-	Resolution any
+	RemoteDebugEnabled  any
+	Resolution          any
 }
 
 type Devices_Filters struct {
 	Attribute any
-	Operator any
-	Values any
+	Operator  any
+	Values    any
 }
 
 var Devices_FiltersFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Operator":  ubx.FieldSpec{WireName: "operator"},
+	"Values":    ubx.FieldSpec{WireName: "values"},
+}
 
 type DevicesConfig struct {
-	Arn any
-	Filters any
+	Arn       any
+	Filters   any
 	NextToken any
 }
 
 type DevicesAttrs struct {
-	Arn any
-	Devices any
-	Filters any
+	Arn       any
+	Devices   any
+	Filters   any
 	NextToken any
 }
 
@@ -87,8 +87,8 @@ var Devices = ubx.DataSourceBinding{
 		"Arn": ubx.FieldSpec{WireName: "arn"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Devices_FiltersFields,
+			Kind:     "list",
+			Fields:   Devices_FiltersFields,
 		},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},

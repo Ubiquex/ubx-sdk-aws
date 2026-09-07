@@ -30,43 +30,43 @@ type AccessPolicy_AccessPolicyResource struct {
 }
 
 var AccessPolicy_AccessPolicyIdentity_IamRoleFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-	}
+	"Arn": ubx.FieldSpec{WireName: "arn"},
+}
 
 var AccessPolicy_AccessPolicyIdentity_UserFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+}
 
 var AccessPolicy_AccessPolicyIdentityFields = ubx.FieldMap{
-		"IamRole": ubx.FieldSpec{
-			WireName: "iam_role",
-			Kind: "object",
-			Fields: AccessPolicy_AccessPolicyIdentity_IamRoleFields,
-		},
-		"IamUser": ubx.FieldSpec{
-			WireName: "iam_user",
-			Kind: "object",
-			Fields: AccessPolicy_AccessPolicyIdentity_IamRoleFields,
-		},
-		"User": ubx.FieldSpec{
-			WireName: "user",
-			Kind: "object",
-			Fields: AccessPolicy_AccessPolicyIdentity_UserFields,
-		},
-	}
+	"IamRole": ubx.FieldSpec{
+		WireName: "iam_role",
+		Kind:     "object",
+		Fields:   AccessPolicy_AccessPolicyIdentity_IamRoleFields,
+	},
+	"IamUser": ubx.FieldSpec{
+		WireName: "iam_user",
+		Kind:     "object",
+		Fields:   AccessPolicy_AccessPolicyIdentity_IamRoleFields,
+	},
+	"User": ubx.FieldSpec{
+		WireName: "user",
+		Kind:     "object",
+		Fields:   AccessPolicy_AccessPolicyIdentity_UserFields,
+	},
+}
 
 var AccessPolicy_AccessPolicyResourceFields = ubx.FieldMap{
-		"Portal": ubx.FieldSpec{
-			WireName: "portal",
-			Kind: "object",
-			Fields: AccessPolicy_AccessPolicyIdentity_UserFields,
-		},
-		"Project": ubx.FieldSpec{
-			WireName: "project",
-			Kind: "object",
-			Fields: AccessPolicy_AccessPolicyIdentity_UserFields,
-		},
-	}
+	"Portal": ubx.FieldSpec{
+		WireName: "portal",
+		Kind:     "object",
+		Fields:   AccessPolicy_AccessPolicyIdentity_UserFields,
+	},
+	"Project": ubx.FieldSpec{
+		WireName: "project",
+		Kind:     "object",
+		Fields:   AccessPolicy_AccessPolicyIdentity_UserFields,
+	},
+}
 
 type AccessPolicyConfig struct {
 	// The identity for this access policy. Choose either an SSO user or group or an IAM user or role.
@@ -95,14 +95,14 @@ var AccessPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessPolicyIdentity": ubx.FieldSpec{
 			WireName: "access_policy_identity",
-			Kind: "object",
-			Fields: AccessPolicy_AccessPolicyIdentityFields,
+			Kind:     "object",
+			Fields:   AccessPolicy_AccessPolicyIdentityFields,
 		},
 		"AccessPolicyPermission": ubx.FieldSpec{WireName: "access_policy_permission"},
 		"AccessPolicyResource": ubx.FieldSpec{
 			WireName: "access_policy_resource",
-			Kind: "object",
-			Fields: AccessPolicy_AccessPolicyResourceFields,
+			Kind:     "object",
+			Fields:   AccessPolicy_AccessPolicyResourceFields,
 		},
 	},
 }

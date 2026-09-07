@@ -4,10 +4,10 @@ package lambda
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountSettings_AccountLimit struct {
-	CodeSizeUnzipped any
-	CodeSizeZipped any
-	ConcurrentExecutions any
-	TotalCodeSize any
+	CodeSizeUnzipped               any
+	CodeSizeZipped                 any
+	ConcurrentExecutions           any
+	TotalCodeSize                  any
 	UnreservedConcurrentExecutions any
 }
 
@@ -28,6 +28,5 @@ type AccountSettingsAttrs struct {
 
 var AccountSettings = ubx.DataSourceBinding{
 	WireType: "aws_lambda_account_settings",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

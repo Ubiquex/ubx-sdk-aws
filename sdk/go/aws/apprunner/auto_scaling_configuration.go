@@ -11,9 +11,9 @@ type AutoScalingConfiguration_Tags struct {
 }
 
 var AutoScalingConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AutoScalingConfigurationConfig struct {
 	// The customer-provided auto scaling configuration name. When you use it for the first time in an AWS Region, App Runner creates revision number 1 of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration. The auto scaling configuration name can be used in multiple revisions of a configuration.
@@ -51,13 +51,13 @@ var AutoScalingConfiguration = ubx.ResourceBinding{
 	WireType: "aws_app_runner_auto_scaling_configuration",
 	Fields: ubx.FieldMap{
 		"AutoScalingConfigurationName": ubx.FieldSpec{WireName: "auto_scaling_configuration_name"},
-		"MaxConcurrency": ubx.FieldSpec{WireName: "max_concurrency"},
-		"MaxSize": ubx.FieldSpec{WireName: "max_size"},
-		"MinSize": ubx.FieldSpec{WireName: "min_size"},
+		"MaxConcurrency":               ubx.FieldSpec{WireName: "max_concurrency"},
+		"MaxSize":                      ubx.FieldSpec{WireName: "max_size"},
+		"MinSize":                      ubx.FieldSpec{WireName: "min_size"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AutoScalingConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   AutoScalingConfiguration_TagsFields,
 		},
 	},
 }

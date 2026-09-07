@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LocalDisks_Disks struct {
 	DiskAllocationResource any
-	DiskAllocationType any
-	DiskAttributeList any
-	DiskId any
-	DiskNode any
-	DiskPath any
-	DiskSizeInBytes any
-	DiskStatus any
+	DiskAllocationType     any
+	DiskAttributeList      any
+	DiskId                 any
+	DiskNode               any
+	DiskPath               any
+	DiskSizeInBytes        any
+	DiskStatus             any
 }
 
 type LocalDisksConfig struct {

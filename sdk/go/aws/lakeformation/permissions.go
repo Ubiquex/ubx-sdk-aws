@@ -63,64 +63,64 @@ type Permissions_Resource struct {
 }
 
 var Permissions_DataLakePrincipalFields = ubx.FieldMap{
-		"DataLakePrincipalIdentifier": ubx.FieldSpec{WireName: "data_lake_principal_identifier"},
-	}
+	"DataLakePrincipalIdentifier": ubx.FieldSpec{WireName: "data_lake_principal_identifier"},
+}
 
 var Permissions_Resource_DataLocationResourceFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"S3Resource": ubx.FieldSpec{WireName: "s3_resource"},
-	}
+	"CatalogId":  ubx.FieldSpec{WireName: "catalog_id"},
+	"S3Resource": ubx.FieldSpec{WireName: "s3_resource"},
+}
 
 var Permissions_Resource_DatabaseResourceFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+}
 
 var Permissions_Resource_TableResourceFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TableWildcard": ubx.FieldSpec{WireName: "table_wildcard"},
-	}
+	"CatalogId":     ubx.FieldSpec{WireName: "catalog_id"},
+	"DatabaseName":  ubx.FieldSpec{WireName: "database_name"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"TableWildcard": ubx.FieldSpec{WireName: "table_wildcard"},
+}
 
 var Permissions_Resource_TableWithColumnsResource_ColumnWildcardFields = ubx.FieldMap{
-		"ExcludedColumnNames": ubx.FieldSpec{WireName: "excluded_column_names"},
-	}
+	"ExcludedColumnNames": ubx.FieldSpec{WireName: "excluded_column_names"},
+}
 
 var Permissions_Resource_TableWithColumnsResourceFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"ColumnNames": ubx.FieldSpec{WireName: "column_names"},
-		"ColumnWildcard": ubx.FieldSpec{
-			WireName: "column_wildcard",
-			Kind: "object",
-			Fields: Permissions_Resource_TableWithColumnsResource_ColumnWildcardFields,
-		},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CatalogId":   ubx.FieldSpec{WireName: "catalog_id"},
+	"ColumnNames": ubx.FieldSpec{WireName: "column_names"},
+	"ColumnWildcard": ubx.FieldSpec{
+		WireName: "column_wildcard",
+		Kind:     "object",
+		Fields:   Permissions_Resource_TableWithColumnsResource_ColumnWildcardFields,
+	},
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+}
 
 var Permissions_ResourceFields = ubx.FieldMap{
-		"DataLocationResource": ubx.FieldSpec{
-			WireName: "data_location_resource",
-			Kind: "object",
-			Fields: Permissions_Resource_DataLocationResourceFields,
-		},
-		"DatabaseResource": ubx.FieldSpec{
-			WireName: "database_resource",
-			Kind: "object",
-			Fields: Permissions_Resource_DatabaseResourceFields,
-		},
-		"TableResource": ubx.FieldSpec{
-			WireName: "table_resource",
-			Kind: "object",
-			Fields: Permissions_Resource_TableResourceFields,
-		},
-		"TableWithColumnsResource": ubx.FieldSpec{
-			WireName: "table_with_columns_resource",
-			Kind: "object",
-			Fields: Permissions_Resource_TableWithColumnsResourceFields,
-		},
-	}
+	"DataLocationResource": ubx.FieldSpec{
+		WireName: "data_location_resource",
+		Kind:     "object",
+		Fields:   Permissions_Resource_DataLocationResourceFields,
+	},
+	"DatabaseResource": ubx.FieldSpec{
+		WireName: "database_resource",
+		Kind:     "object",
+		Fields:   Permissions_Resource_DatabaseResourceFields,
+	},
+	"TableResource": ubx.FieldSpec{
+		WireName: "table_resource",
+		Kind:     "object",
+		Fields:   Permissions_Resource_TableResourceFields,
+	},
+	"TableWithColumnsResource": ubx.FieldSpec{
+		WireName: "table_with_columns_resource",
+		Kind:     "object",
+		Fields:   Permissions_Resource_TableWithColumnsResourceFields,
+	},
+}
 
 type PermissionsConfig struct {
 	// The AWS Lake Formation principal (such as an IAM user, role, or account) that receives the granted permissions, identified by its data lake principal identifier. (AI-inferred)
@@ -151,15 +151,15 @@ var Permissions = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DataLakePrincipal": ubx.FieldSpec{
 			WireName: "data_lake_principal",
-			Kind: "object",
-			Fields: Permissions_DataLakePrincipalFields,
+			Kind:     "object",
+			Fields:   Permissions_DataLakePrincipalFields,
 		},
-		"Permissions": ubx.FieldSpec{WireName: "permissions"},
+		"Permissions":                ubx.FieldSpec{WireName: "permissions"},
 		"PermissionsWithGrantOption": ubx.FieldSpec{WireName: "permissions_with_grant_option"},
 		"Resource": ubx.FieldSpec{
 			WireName: "resource",
-			Kind: "object",
-			Fields: Permissions_ResourceFields,
+			Kind:     "object",
+			Fields:   Permissions_ResourceFields,
 		},
 	},
 }

@@ -9,14 +9,14 @@ type SsmIncidentsIncidentRecord_IncidentRecord_AutomationExecutions struct {
 
 type SsmIncidentsIncidentRecord_IncidentRecord_ChatChannel struct {
 	ChatbotSns any
-	Empty any
+	Empty      any
 }
 
 type SsmIncidentsIncidentRecord_IncidentRecord_IncidentRecordSource struct {
-	CreatedBy any
-	InvokedBy any
+	CreatedBy   any
+	InvokedBy   any
 	ResourceArn any
-	Source any
+	Source      any
 }
 
 type SsmIncidentsIncidentRecord_IncidentRecord_NotificationTargets struct {
@@ -24,22 +24,22 @@ type SsmIncidentsIncidentRecord_IncidentRecord_NotificationTargets struct {
 }
 
 type SsmIncidentsIncidentRecord_IncidentRecord struct {
-	Arn any
+	Arn                  any
 	AutomationExecutions any
 	// <p>The Chatbot chat channel used for collaboration during an incident.</p>
-	ChatChannel any
+	ChatChannel  any
 	CreationTime any
 	DedupeString any
-	Impact any
+	Impact       any
 	// <p>Details about what created the incident record and when it was created.</p>
 	IncidentRecordSource any
-	LastModifiedBy any
-	LastModifiedTime any
-	NotificationTargets any
-	ResolvedTime any
-	Status any
-	Summary any
-	Title any
+	LastModifiedBy       any
+	LastModifiedTime     any
+	NotificationTargets  any
+	ResolvedTime         any
+	Status               any
+	Summary              any
+	Title                any
 }
 
 type SsmIncidentsIncidentRecordConfig struct {

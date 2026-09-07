@@ -16,21 +16,21 @@ type EventInvokeConfig_DestinationConfig struct {
 }
 
 var EventInvokeConfig_DestinationConfig_OnFailureFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{WireName: "destination"},
-	}
+	"Destination": ubx.FieldSpec{WireName: "destination"},
+}
 
 var EventInvokeConfig_DestinationConfigFields = ubx.FieldMap{
-		"OnFailure": ubx.FieldSpec{
-			WireName: "on_failure",
-			Kind: "object",
-			Fields: EventInvokeConfig_DestinationConfig_OnFailureFields,
-		},
-		"OnSuccess": ubx.FieldSpec{
-			WireName: "on_success",
-			Kind: "object",
-			Fields: EventInvokeConfig_DestinationConfig_OnFailureFields,
-		},
-	}
+	"OnFailure": ubx.FieldSpec{
+		WireName: "on_failure",
+		Kind:     "object",
+		Fields:   EventInvokeConfig_DestinationConfig_OnFailureFields,
+	},
+	"OnSuccess": ubx.FieldSpec{
+		WireName: "on_success",
+		Kind:     "object",
+		Fields:   EventInvokeConfig_DestinationConfig_OnFailureFields,
+	},
+}
 
 type EventInvokeConfigConfig struct {
 	// A destination for events after they have been sent to a function for processing.
@@ -63,12 +63,12 @@ var EventInvokeConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DestinationConfig": ubx.FieldSpec{
 			WireName: "destination_config",
-			Kind: "object",
-			Fields: EventInvokeConfig_DestinationConfigFields,
+			Kind:     "object",
+			Fields:   EventInvokeConfig_DestinationConfigFields,
 		},
-		"FunctionName": ubx.FieldSpec{WireName: "function_name"},
+		"FunctionName":             ubx.FieldSpec{WireName: "function_name"},
 		"MaximumEventAgeInSeconds": ubx.FieldSpec{WireName: "maximum_event_age_in_seconds"},
-		"MaximumRetryAttempts": ubx.FieldSpec{WireName: "maximum_retry_attempts"},
-		"Qualifier": ubx.FieldSpec{WireName: "qualifier"},
+		"MaximumRetryAttempts":     ubx.FieldSpec{WireName: "maximum_retry_attempts"},
+		"Qualifier":                ubx.FieldSpec{WireName: "qualifier"},
 	},
 }

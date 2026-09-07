@@ -5,130 +5,130 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Jobs_Jobs_Counters struct {
 	Errored any
-	Failed any
-	Passed any
+	Failed  any
+	Passed  any
 	Skipped any
 	Stopped any
-	Total any
-	Warned any
+	Total   any
+	Warned  any
 }
 
 type Jobs_Jobs_Device_Cpu struct {
 	Architecture any
-	Clock any
-	Frequency any
+	Clock        any
+	Frequency    any
 }
 
 type Jobs_Jobs_Device_Instances_InstanceProfile struct {
-	Arn any
-	Description any
+	Arn                           any
+	Description                   any
 	ExcludeAppPackagesFromCleanup any
-	Name any
-	PackageCleanup any
-	RebootAfterUse any
+	Name                          any
+	PackageCleanup                any
+	RebootAfterUse                any
 }
 
 type Jobs_Jobs_Device_Instances struct {
-	Arn any
-	DeviceArn any
+	Arn             any
+	DeviceArn       any
 	InstanceProfile any
-	Labels any
-	Status any
-	Udid any
+	Labels          any
+	Status          any
+	Udid            any
 }
 
 type Jobs_Jobs_Device_Resolution struct {
 	Height any
-	Width any
+	Width  any
 }
 
 type Jobs_Jobs_Device struct {
-	Arn any
-	Availability any
-	Carrier any
-	Cpu any
-	FleetName any
-	FleetType any
-	FormFactor any
-	HeapSize any
-	Image any
-	Instances any
-	Manufacturer any
-	Memory any
-	Model any
-	ModelId any
-	Name any
-	Os any
-	Platform any
-	Radio any
+	Arn                 any
+	Availability        any
+	Carrier             any
+	Cpu                 any
+	FleetName           any
+	FleetType           any
+	FormFactor          any
+	HeapSize            any
+	Image               any
+	Instances           any
+	Manufacturer        any
+	Memory              any
+	Model               any
+	ModelId             any
+	Name                any
+	Os                  any
+	Platform            any
+	Radio               any
 	RemoteAccessEnabled any
-	RemoteDebugEnabled any
-	Resolution any
+	RemoteDebugEnabled  any
+	Resolution          any
 }
 
 type Jobs_Jobs_DeviceMinutes struct {
-	Metered any
-	Total any
+	Metered   any
+	Total     any
 	Unmetered any
 }
 
 type Jobs_Jobs_Insights_TestReport_Metrics struct {
 	MedianTestExecutionDurationSeconds any
-	TestsErrored any
-	TestsFailed any
-	TestsOther any
-	TestsPassed any
-	TestsPassedPercentage any
-	TestsSkipped any
-	TestsTotal any
-	TotalTestExecutionDurationSeconds any
+	TestsErrored                       any
+	TestsFailed                        any
+	TestsOther                         any
+	TestsPassed                        any
+	TestsPassedPercentage              any
+	TestsSkipped                       any
+	TestsTotal                         any
+	TotalTestExecutionDurationSeconds  any
 }
 
 type Jobs_Jobs_Insights_TestReport struct {
-	Message any
-	Metrics any
+	Message        any
+	Metrics        any
 	TestDetailsUrl any
 }
 
 type Jobs_Jobs_Insights struct {
-	Status any
+	Status     any
 	TestReport any
 }
 
 type Jobs_Jobs struct {
-	Arn any
-	Counters any
-	Created any
-	Device any
+	Arn           any
+	Counters      any
+	Created       any
+	Device        any
 	DeviceMinutes any
-	Insights any
-	InstanceArn any
-	Message any
-	Name any
-	Result any
-	Started any
-	Status any
-	Stopped any
-	Type any
-	VideoCapture any
+	Insights      any
+	InstanceArn   any
+	Message       any
+	Name          any
+	Result        any
+	Started       any
+	Status        any
+	Stopped       any
+	Type          any
+	VideoCapture  any
 	VideoEndpoint any
 }
 
 type JobsConfig struct {
-	Arn any
+	Arn       any
 	NextToken any
 }
 
 type JobsAttrs struct {
-	Arn any
-	Jobs any
+	Arn       any
+	Jobs      any
 	NextToken any
 }
 
 var Jobs = ubx.DataSourceBinding{
 	WireType: "aws_devicefarm_jobs",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":       ubx.FieldSpec{WireName: "arn"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

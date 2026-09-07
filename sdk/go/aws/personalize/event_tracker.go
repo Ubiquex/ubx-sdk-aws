@@ -11,9 +11,9 @@ type EventTracker_Tags struct {
 }
 
 var EventTracker_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EventTrackerConfig struct {
 	// The Amazon Resource Name (ARN) of the dataset group that receives the event data.
@@ -41,11 +41,11 @@ var EventTracker = ubx.ResourceBinding{
 	WireType: "aws_personalize_event_tracker",
 	Fields: ubx.FieldMap{
 		"DatasetGroupArn": ubx.FieldSpec{WireName: "dataset_group_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EventTracker_TagsFields,
+			Kind:     "list",
+			Fields:   EventTracker_TagsFields,
 		},
 	},
 }

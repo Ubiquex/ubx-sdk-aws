@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BulkDeploymentStatus_BulkDeploymentMetrics struct {
 	InvalidInputRecords any
-	RecordsProcessed any
-	RetryAttempts any
+	RecordsProcessed    any
+	RetryAttempts       any
 }
 
 type BulkDeploymentStatus_ErrorDetails struct {
-	DetailedErrorCode any
+	DetailedErrorCode    any
 	DetailedErrorMessage any
 }
 
@@ -24,7 +24,7 @@ type BulkDeploymentStatusAttrs struct {
 	BulkDeploymentMetrics any
 	// The current status of the bulk deployment.
 	BulkDeploymentStatus any
-	CreatedAt any
+	CreatedAt            any
 	// A list of error details.
 	ErrorDetails any
 	ErrorMessage any

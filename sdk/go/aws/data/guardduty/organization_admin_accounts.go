@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationAdminAccounts_AdminAccounts struct {
 	AdminAccountId any
-	AdminStatus any
+	AdminStatus    any
 }
 
 type OrganizationAdminAccountsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type OrganizationAdminAccountsAttrs struct {
 	AdminAccounts any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 var OrganizationAdminAccounts = ubx.DataSourceBinding{
 	WireType: "aws_guardduty_organization_admin_accounts",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -18,9 +18,9 @@ type TransitGatewayPeeringAttachment_Tags struct {
 }
 
 var TransitGatewayPeeringAttachment_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TransitGatewayPeeringAttachmentConfig struct {
 	// The ID of the peer account
@@ -59,13 +59,13 @@ type TransitGatewayPeeringAttachmentAttrs struct {
 var TransitGatewayPeeringAttachment = ubx.ResourceBinding{
 	WireType: "aws_ec2_transit_gateway_peering_attachment",
 	Fields: ubx.FieldMap{
-		"PeerAccountId": ubx.FieldSpec{WireName: "peer_account_id"},
-		"PeerRegion": ubx.FieldSpec{WireName: "peer_region"},
+		"PeerAccountId":        ubx.FieldSpec{WireName: "peer_account_id"},
+		"PeerRegion":           ubx.FieldSpec{WireName: "peer_region"},
 		"PeerTransitGatewayId": ubx.FieldSpec{WireName: "peer_transit_gateway_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TransitGatewayPeeringAttachment_TagsFields,
+			Kind:     "list",
+			Fields:   TransitGatewayPeeringAttachment_TagsFields,
 		},
 		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
 	},

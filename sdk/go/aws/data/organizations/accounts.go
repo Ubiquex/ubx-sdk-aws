@@ -4,32 +4,32 @@ package organizations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Accounts_Accounts struct {
-	Arn any
-	Email any
-	Id any
-	JoinedMethod any
+	Arn             any
+	Email           any
+	Id              any
+	JoinedMethod    any
 	JoinedTimestamp any
-	Name any
-	Paths any
-	State any
-	Status any
+	Name            any
+	Paths           any
+	State           any
+	Status          any
 }
 
 type AccountsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AccountsAttrs struct {
-	Accounts any
+	Accounts   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Accounts = ubx.DataSourceBinding{
 	WireType: "aws_organizations_accounts",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

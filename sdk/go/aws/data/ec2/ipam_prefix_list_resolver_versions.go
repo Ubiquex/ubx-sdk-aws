@@ -4,31 +4,31 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamPrefixListResolverVersions_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var IpamPrefixListResolverVersions_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type IpamPrefixListResolverVersionsConfig struct {
-	DryRun any
-	Filters any
-	IpamPrefixListResolverId any
+	DryRun                         any
+	Filters                        any
+	IpamPrefixListResolverId       any
 	IpamPrefixListResolverVersions any
-	MaxResults any
-	NextToken any
+	MaxResults                     any
+	NextToken                      any
 }
 
 type IpamPrefixListResolverVersionsAttrs struct {
-	DryRun any
-	Filters any
-	IpamPrefixListResolverId any
+	DryRun                         any
+	Filters                        any
+	IpamPrefixListResolverId       any
 	IpamPrefixListResolverVersions any
-	MaxResults any
-	NextToken any
+	MaxResults                     any
+	NextToken                      any
 }
 
 var IpamPrefixListResolverVersions = ubx.DataSourceBinding{
@@ -37,12 +37,12 @@ var IpamPrefixListResolverVersions = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: IpamPrefixListResolverVersions_FiltersFields,
+			Kind:     "list",
+			Fields:   IpamPrefixListResolverVersions_FiltersFields,
 		},
-		"IpamPrefixListResolverId": ubx.FieldSpec{WireName: "ipam_prefix_list_resolver_id"},
+		"IpamPrefixListResolverId":       ubx.FieldSpec{WireName: "ipam_prefix_list_resolver_id"},
 		"IpamPrefixListResolverVersions": ubx.FieldSpec{WireName: "ipam_prefix_list_resolver_versions"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                      ubx.FieldSpec{WireName: "next_token"},
 	},
 }

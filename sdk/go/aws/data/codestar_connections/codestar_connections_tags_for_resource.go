@@ -4,7 +4,7 @@ package codestar_connections
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodestarConnectionsTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type CodestarConnectionsTagsForResourceConfig struct {
 
 type CodestarConnectionsTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var CodestarConnectionsTagsForResource = ubx.DataSourceBinding{

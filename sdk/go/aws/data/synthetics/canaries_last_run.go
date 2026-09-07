@@ -8,57 +8,57 @@ type CanariesLastRun_CanariesLastRun_LastRun_DryRunConfig struct {
 }
 
 type CanariesLastRun_CanariesLastRun_LastRun_Status struct {
-	State any
-	StateReason any
+	State           any
+	StateReason     any
 	StateReasonCode any
-	TestResult any
+	TestResult      any
 }
 
 type CanariesLastRun_CanariesLastRun_LastRun_Timeline struct {
-	Completed any
+	Completed                       any
 	MetricTimestampForRunAndRetries any
-	Started any
+	Started                         any
 }
 
 type CanariesLastRun_CanariesLastRun_LastRun struct {
 	ArtifactS3Location any
-	BrowserType any
-	DryRunConfig any
-	Id any
-	Location any
-	Name any
-	RetryAttempt any
-	ScheduledRunId any
-	Status any
-	Timeline any
+	BrowserType        any
+	DryRunConfig       any
+	Id                 any
+	Location           any
+	Name               any
+	RetryAttempt       any
+	ScheduledRunId     any
+	Status             any
+	Timeline           any
 }
 
 type CanariesLastRun_CanariesLastRun struct {
 	CanaryName any
-	LastRun any
+	LastRun    any
 }
 
 type CanariesLastRunConfig struct {
 	BrowserType any
-	MaxResults any
-	Names any
-	NextToken any
+	MaxResults  any
+	Names       any
+	NextToken   any
 }
 
 type CanariesLastRunAttrs struct {
-	BrowserType any
+	BrowserType     any
 	CanariesLastRun any
-	MaxResults any
-	Names any
-	NextToken any
+	MaxResults      any
+	Names           any
+	NextToken       any
 }
 
 var CanariesLastRun = ubx.DataSourceBinding{
 	WireType: "aws_synthetics_canaries_last_run",
 	Fields: ubx.FieldMap{
 		"BrowserType": ubx.FieldSpec{WireName: "browser_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Names": ubx.FieldSpec{WireName: "names"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"Names":       ubx.FieldSpec{WireName: "names"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

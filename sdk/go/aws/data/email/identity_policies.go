@@ -4,20 +4,20 @@ package email
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityPoliciesConfig struct {
-	Identity any
+	Identity    any
 	PolicyNames any
 }
 
 type IdentityPoliciesAttrs struct {
-	Identity any
-	Policies any
+	Identity    any
+	Policies    any
 	PolicyNames any
 }
 
 var IdentityPolicies = ubx.DataSourceBinding{
 	WireType: "aws_email_identity_policies",
 	Fields: ubx.FieldMap{
-		"Identity": ubx.FieldSpec{WireName: "identity"},
+		"Identity":    ubx.FieldSpec{WireName: "identity"},
 		"PolicyNames": ubx.FieldSpec{WireName: "policy_names"},
 	},
 }

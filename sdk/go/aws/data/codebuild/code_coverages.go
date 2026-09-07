@@ -5,47 +5,47 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodeCoverages_CodeCoverages struct {
 	BranchCoveragePercentage any
-	BranchesCovered any
-	BranchesMissed any
-	Expired any
-	FilePath any
-	Id any
-	LineCoveragePercentage any
-	LinesCovered any
-	LinesMissed any
-	ReportArn any
+	BranchesCovered          any
+	BranchesMissed           any
+	Expired                  any
+	FilePath                 any
+	Id                       any
+	LineCoveragePercentage   any
+	LinesCovered             any
+	LinesMissed              any
+	ReportArn                any
 }
 
 type CodeCoveragesConfig struct {
 	MaxLineCoveragePercentage any
-	MaxResults any
+	MaxResults                any
 	MinLineCoveragePercentage any
-	NextToken any
-	ReportArn any
-	SortBy any
-	SortOrder any
+	NextToken                 any
+	ReportArn                 any
+	SortBy                    any
+	SortOrder                 any
 }
 
 type CodeCoveragesAttrs struct {
-	CodeCoverages any
+	CodeCoverages             any
 	MaxLineCoveragePercentage any
-	MaxResults any
+	MaxResults                any
 	MinLineCoveragePercentage any
-	NextToken any
-	ReportArn any
-	SortBy any
-	SortOrder any
+	NextToken                 any
+	ReportArn                 any
+	SortBy                    any
+	SortOrder                 any
 }
 
 var CodeCoverages = ubx.DataSourceBinding{
 	WireType: "aws_codebuild_code_coverages",
 	Fields: ubx.FieldMap{
 		"MaxLineCoveragePercentage": ubx.FieldSpec{WireName: "max_line_coverage_percentage"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":                ubx.FieldSpec{WireName: "max_results"},
 		"MinLineCoveragePercentage": ubx.FieldSpec{WireName: "min_line_coverage_percentage"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ReportArn": ubx.FieldSpec{WireName: "report_arn"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"NextToken":                 ubx.FieldSpec{WireName: "next_token"},
+		"ReportArn":                 ubx.FieldSpec{WireName: "report_arn"},
+		"SortBy":                    ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":                 ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

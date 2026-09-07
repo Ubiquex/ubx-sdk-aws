@@ -26,8 +26,8 @@ type ResolverRuleAssociationAttrs struct {
 var ResolverRuleAssociation = ubx.ResourceBinding{
 	WireType: "aws_route53_resolver_resolver_rule_association",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"ResolverRuleId": ubx.FieldSpec{WireName: "resolver_rule_id"},
-		"Vpcid": ubx.FieldSpec{WireName: "vpcid"},
+		"Vpcid":          ubx.FieldSpec{WireName: "vpcid"},
 	},
 }

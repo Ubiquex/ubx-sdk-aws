@@ -10,9 +10,9 @@ type TrafficMirrorFilter_Tags struct {
 }
 
 var TrafficMirrorFilter_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TrafficMirrorFilterConfig struct {
 	// The description of a traffic mirror filter.
@@ -37,12 +37,12 @@ type TrafficMirrorFilterAttrs struct {
 var TrafficMirrorFilter = ubx.ResourceBinding{
 	WireType: "aws_ec2_traffic_mirror_filter",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"NetworkServices": ubx.FieldSpec{WireName: "network_services"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TrafficMirrorFilter_TagsFields,
+			Kind:     "list",
+			Fields:   TrafficMirrorFilter_TagsFields,
 		},
 	},
 }

@@ -10,14 +10,14 @@ type ApiSagemakerWorkforces_Workforces_CognitoConfig struct {
 
 type ApiSagemakerWorkforces_Workforces_OidcConfig struct {
 	AuthenticationRequestExtraParams any
-	AuthorizationEndpoint any
-	ClientId any
-	Issuer any
-	JwksUri any
-	LogoutEndpoint any
-	Scope any
-	TokenEndpoint any
-	UserInfoEndpoint any
+	AuthorizationEndpoint            any
+	ClientId                         any
+	Issuer                           any
+	JwksUri                          any
+	LogoutEndpoint                   any
+	Scope                            any
+	TokenEndpoint                    any
+	UserInfoEndpoint                 any
 }
 
 type ApiSagemakerWorkforces_Workforces_SourceIpConfig struct {
@@ -26,50 +26,50 @@ type ApiSagemakerWorkforces_Workforces_SourceIpConfig struct {
 
 type ApiSagemakerWorkforces_Workforces_WorkforceVpcConfig struct {
 	SecurityGroupIds any
-	Subnets any
-	VpcEndpointId any
-	VpcId any
+	Subnets          any
+	VpcEndpointId    any
+	VpcId            any
 }
 
 type ApiSagemakerWorkforces_Workforces struct {
-	CognitoConfig any
-	CreateDate any
-	FailureReason any
-	IpAddressType any
-	LastUpdatedDate any
-	OidcConfig any
-	SourceIpConfig any
-	Status any
-	SubDomain any
-	WorkforceArn any
-	WorkforceName any
+	CognitoConfig      any
+	CreateDate         any
+	FailureReason      any
+	IpAddressType      any
+	LastUpdatedDate    any
+	OidcConfig         any
+	SourceIpConfig     any
+	Status             any
+	SubDomain          any
+	WorkforceArn       any
+	WorkforceName      any
 	WorkforceVpcConfig any
 }
 
 type ApiSagemakerWorkforcesConfig struct {
-	MaxResults any
+	MaxResults   any
 	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
+	NextToken    any
+	SortBy       any
+	SortOrder    any
 }
 
 type ApiSagemakerWorkforcesAttrs struct {
-	MaxResults any
+	MaxResults   any
 	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
-	Workforces any
+	NextToken    any
+	SortBy       any
+	SortOrder    any
+	Workforces   any
 }
 
 var ApiSagemakerWorkforces = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_workforces",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
 		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":       ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":    ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

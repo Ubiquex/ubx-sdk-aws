@@ -26,8 +26,8 @@ type RegistryPolicyAttrs struct {
 var RegistryPolicy = ubx.ResourceBinding{
 	WireType: "aws_event_schemas_registry_policy",
 	Fields: ubx.FieldMap{
-		"Policy": ubx.FieldSpec{WireName: "policy"},
+		"Policy":       ubx.FieldSpec{WireName: "policy"},
 		"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
-		"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
+		"RevisionId":   ubx.FieldSpec{WireName: "revision_id"},
 	},
 }

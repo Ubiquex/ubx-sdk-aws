@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PortalSsoAccountRoles_RoleList struct {
 	AccountId any
-	RoleName any
+	RoleName  any
 }
 
 type PortalSsoAccountRolesConfig struct {
 	AccessToken any
-	AccountId any
-	MaxResults any
-	NextToken any
+	AccountId   any
+	MaxResults  any
+	NextToken   any
 }
 
 type PortalSsoAccountRolesAttrs struct {
 	AccessToken any
-	AccountId any
-	MaxResults any
-	NextToken any
-	RoleList any
+	AccountId   any
+	MaxResults  any
+	NextToken   any
+	RoleList    any
 }
 
 var PortalSsoAccountRoles = ubx.DataSourceBinding{
 	WireType: "aws_portal_sso_account_roles",
 	Fields: ubx.FieldMap{
 		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

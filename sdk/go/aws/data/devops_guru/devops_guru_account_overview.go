@@ -5,21 +5,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DevopsGuruAccountOverviewConfig struct {
 	FromTime any
-	ToTime any
+	ToTime   any
 }
 
 type DevopsGuruAccountOverviewAttrs struct {
-	FromTime any
+	FromTime                        any
 	MeanTimeToRecoverInMilliseconds any
-	ProactiveInsights any
-	ReactiveInsights any
-	ToTime any
+	ProactiveInsights               any
+	ReactiveInsights                any
+	ToTime                          any
 }
 
 var DevopsGuruAccountOverview = ubx.DataSourceBinding{
 	WireType: "aws_devops_guru_account_overview",
 	Fields: ubx.FieldMap{
 		"FromTime": ubx.FieldSpec{WireName: "from_time"},
-		"ToTime": ubx.FieldSpec{WireName: "to_time"},
+		"ToTime":   ubx.FieldSpec{WireName: "to_time"},
 	},
 }

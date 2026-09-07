@@ -4,54 +4,54 @@ package identitystore
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserId_AlternateIdentifier_ExternalId struct {
-	Id any
+	Id     any
 	Issuer any
 }
 
 type UserId_AlternateIdentifier_UniqueAttribute struct {
-	AttributePath any
+	AttributePath  any
 	AttributeValue any
 }
 
 type UserId_AlternateIdentifier struct {
-	ExternalId any
+	ExternalId      any
 	UniqueAttribute any
 }
 
 var UserId_AlternateIdentifier_ExternalIdFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-	}
+	"Id":     ubx.FieldSpec{WireName: "id"},
+	"Issuer": ubx.FieldSpec{WireName: "issuer"},
+}
 
 var UserId_AlternateIdentifier_UniqueAttributeFields = ubx.FieldMap{
-		"AttributePath": ubx.FieldSpec{WireName: "attribute_path"},
-		"AttributeValue": ubx.FieldSpec{WireName: "attribute_value"},
-	}
+	"AttributePath":  ubx.FieldSpec{WireName: "attribute_path"},
+	"AttributeValue": ubx.FieldSpec{WireName: "attribute_value"},
+}
 
 var UserId_AlternateIdentifierFields = ubx.FieldMap{
-		"ExternalId": ubx.FieldSpec{
-			WireName: "external_id",
-			Kind: "object",
-			Fields: UserId_AlternateIdentifier_ExternalIdFields,
-		},
-		"UniqueAttribute": ubx.FieldSpec{
-			WireName: "unique_attribute",
-			Kind: "object",
-			Fields: UserId_AlternateIdentifier_UniqueAttributeFields,
-		},
-	}
+	"ExternalId": ubx.FieldSpec{
+		WireName: "external_id",
+		Kind:     "object",
+		Fields:   UserId_AlternateIdentifier_ExternalIdFields,
+	},
+	"UniqueAttribute": ubx.FieldSpec{
+		WireName: "unique_attribute",
+		Kind:     "object",
+		Fields:   UserId_AlternateIdentifier_UniqueAttributeFields,
+	},
+}
 
 type UserIdConfig struct {
 	// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute.</p>
 	AlternateIdentifier any
-	IdentityStoreId any
+	IdentityStoreId     any
 }
 
 type UserIdAttrs struct {
 	// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute.</p>
 	AlternateIdentifier any
-	IdentityStoreId any
-	UserId any
+	IdentityStoreId     any
+	UserId              any
 }
 
 var UserId = ubx.DataSourceBinding{
@@ -59,8 +59,8 @@ var UserId = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AlternateIdentifier": ubx.FieldSpec{
 			WireName: "alternate_identifier",
-			Kind: "object",
-			Fields: UserId_AlternateIdentifierFields,
+			Kind:     "object",
+			Fields:   UserId_AlternateIdentifierFields,
 		},
 		"IdentityStoreId": ubx.FieldSpec{WireName: "identity_store_id"},
 	},

@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CheckSummaries_CheckSummaries struct {
 	AccountSummary any
-	ChoiceId any
-	Description any
-	Id any
-	LensArn any
-	Name any
-	PillarId any
-	Provider any
-	QuestionId any
-	Status any
-	UpdatedAt any
+	ChoiceId       any
+	Description    any
+	Id             any
+	LensArn        any
+	Name           any
+	PillarId       any
+	Provider       any
+	QuestionId     any
+	Status         any
+	UpdatedAt      any
 }
 
 type CheckSummariesConfig struct {
 	// <p>The ID of a choice.</p>
 	ChoiceId any
-	LensArn any
+	LensArn  any
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
@@ -37,7 +37,7 @@ type CheckSummariesAttrs struct {
 	CheckSummaries any
 	// <p>The ID of a choice.</p>
 	ChoiceId any
-	LensArn any
+	LensArn  any
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
@@ -53,11 +53,11 @@ type CheckSummariesAttrs struct {
 var CheckSummaries = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_check_summaries",
 	Fields: ubx.FieldMap{
-		"ChoiceId": ubx.FieldSpec{WireName: "choice_id"},
-		"LensArn": ubx.FieldSpec{WireName: "lens_arn"},
+		"ChoiceId":   ubx.FieldSpec{WireName: "choice_id"},
+		"LensArn":    ubx.FieldSpec{WireName: "lens_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PillarId": ubx.FieldSpec{WireName: "pillar_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"PillarId":   ubx.FieldSpec{WireName: "pillar_id"},
 		"QuestionId": ubx.FieldSpec{WireName: "question_id"},
 		"WorkloadId": ubx.FieldSpec{WireName: "workload_id"},
 	},

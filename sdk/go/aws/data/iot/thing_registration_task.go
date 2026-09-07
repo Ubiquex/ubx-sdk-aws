@@ -8,18 +8,18 @@ type ThingRegistrationTaskConfig struct {
 }
 
 type ThingRegistrationTaskAttrs struct {
-	CreationDate any
-	FailureCount any
-	InputFileBucket any
-	InputFileKey any
-	LastModifiedDate any
-	Message any
+	CreationDate       any
+	FailureCount       any
+	InputFileBucket    any
+	InputFileKey       any
+	LastModifiedDate   any
+	Message            any
 	PercentageProgress any
-	RoleArn any
-	Status any
-	SuccessCount any
-	TaskId any
-	TemplateBody any
+	RoleArn            any
+	Status             any
+	SuccessCount       any
+	TaskId             any
+	TemplateBody       any
 }
 
 var ThingRegistrationTask = ubx.DataSourceBinding{

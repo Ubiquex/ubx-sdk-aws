@@ -4,43 +4,43 @@ package discovery
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoverySummary_AgentSummary struct {
-	ActiveAgents any
+	ActiveAgents      any
 	BlackListedAgents any
-	HealthyAgents any
-	ShutdownAgents any
-	TotalAgents any
-	UnhealthyAgents any
-	UnknownAgents any
+	HealthyAgents     any
+	ShutdownAgents    any
+	TotalAgents       any
+	UnhealthyAgents   any
+	UnknownAgents     any
 }
 
 type DiscoverySummary_AgentlessCollectorSummary struct {
-	ActiveAgentlessCollectors any
+	ActiveAgentlessCollectors     any
 	DenyListedAgentlessCollectors any
-	HealthyAgentlessCollectors any
-	ShutdownAgentlessCollectors any
-	TotalAgentlessCollectors any
-	UnhealthyAgentlessCollectors any
-	UnknownAgentlessCollectors any
+	HealthyAgentlessCollectors    any
+	ShutdownAgentlessCollectors   any
+	TotalAgentlessCollectors      any
+	UnhealthyAgentlessCollectors  any
+	UnknownAgentlessCollectors    any
 }
 
 type DiscoverySummary_ConnectorSummary struct {
-	ActiveConnectors any
+	ActiveConnectors      any
 	BlackListedConnectors any
-	HealthyConnectors any
-	ShutdownConnectors any
-	TotalConnectors any
-	UnhealthyConnectors any
-	UnknownConnectors any
+	HealthyConnectors     any
+	ShutdownConnectors    any
+	TotalConnectors       any
+	UnhealthyConnectors   any
+	UnknownConnectors     any
 }
 
 type DiscoverySummary_MeCollectorSummary struct {
-	ActiveMeCollectors any
+	ActiveMeCollectors     any
 	DenyListedMeCollectors any
-	HealthyMeCollectors any
-	ShutdownMeCollectors any
-	TotalMeCollectors any
-	UnhealthyMeCollectors any
-	UnknownMeCollectors any
+	HealthyMeCollectors    any
+	ShutdownMeCollectors   any
+	TotalMeCollectors      any
+	UnhealthyMeCollectors  any
+	UnknownMeCollectors    any
 }
 
 type DiscoverySummaryConfig struct {
@@ -51,18 +51,17 @@ type DiscoverySummaryAttrs struct {
 	AgentSummary any
 	// <p>The inventory data for installed Agentless Collector collectors. </p>
 	AgentlessCollectorSummary any
-	Applications any
+	Applications              any
 	// <p>Inventory data for installed discovery connectors.</p>
 	ConnectorSummary any
 	// <p> The inventory data for installed Migration Evaluator collectors. </p>
-	MeCollectorSummary any
-	Servers any
+	MeCollectorSummary          any
+	Servers                     any
 	ServersMappedToApplications any
-	ServersMappedtoTags any
+	ServersMappedtoTags         any
 }
 
 var DiscoverySummary = ubx.DataSourceBinding{
 	WireType: "aws_discovery_discovery_summary",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

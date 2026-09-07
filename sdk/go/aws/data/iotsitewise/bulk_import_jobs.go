@@ -4,32 +4,32 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BulkImportJobs_JobSummaries struct {
-	Id any
-	Name any
+	Id     any
+	Name   any
 	Status any
 }
 
 type BulkImportJobsConfig struct {
-	Filter any
-	MaxResults any
-	NextToken any
+	Filter        any
+	MaxResults    any
+	NextToken     any
 	WorkspaceName any
 }
 
 type BulkImportJobsAttrs struct {
-	Filter any
-	JobSummaries any
-	MaxResults any
-	NextToken any
+	Filter        any
+	JobSummaries  any
+	MaxResults    any
+	NextToken     any
 	WorkspaceName any
 }
 
 var BulkImportJobs = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_bulk_import_jobs",
 	Fields: ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Filter":        ubx.FieldSpec{WireName: "filter"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"WorkspaceName": ubx.FieldSpec{WireName: "workspace_name"},
 	},
 }

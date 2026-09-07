@@ -73,54 +73,54 @@ type ContainerRecipe_TargetRepository struct {
 }
 
 var ContainerRecipe_Components_ParametersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ContainerRecipe_ComponentsFields = ubx.FieldMap{
-		"ComponentArn": ubx.FieldSpec{WireName: "component_arn"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "list",
-			Fields: ContainerRecipe_Components_ParametersFields,
-		},
-	}
+	"ComponentArn": ubx.FieldSpec{WireName: "component_arn"},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "list",
+		Fields:   ContainerRecipe_Components_ParametersFields,
+	},
+}
 
 var ContainerRecipe_InstanceConfiguration_BlockDeviceMappings_EbsFields = ubx.FieldMap{
-		"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
-		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"SnapshotId": ubx.FieldSpec{WireName: "snapshot_id"},
-		"Throughput": ubx.FieldSpec{WireName: "throughput"},
-		"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
-	}
+	"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
+	"Encrypted":           ubx.FieldSpec{WireName: "encrypted"},
+	"Iops":                ubx.FieldSpec{WireName: "iops"},
+	"KmsKeyId":            ubx.FieldSpec{WireName: "kms_key_id"},
+	"SnapshotId":          ubx.FieldSpec{WireName: "snapshot_id"},
+	"Throughput":          ubx.FieldSpec{WireName: "throughput"},
+	"VolumeSize":          ubx.FieldSpec{WireName: "volume_size"},
+	"VolumeType":          ubx.FieldSpec{WireName: "volume_type"},
+}
 
 var ContainerRecipe_InstanceConfiguration_BlockDeviceMappingsFields = ubx.FieldMap{
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"Ebs": ubx.FieldSpec{
-			WireName: "ebs",
-			Kind: "object",
-			Fields: ContainerRecipe_InstanceConfiguration_BlockDeviceMappings_EbsFields,
-		},
-		"NoDevice": ubx.FieldSpec{WireName: "no_device"},
-		"VirtualName": ubx.FieldSpec{WireName: "virtual_name"},
-	}
+	"DeviceName": ubx.FieldSpec{WireName: "device_name"},
+	"Ebs": ubx.FieldSpec{
+		WireName: "ebs",
+		Kind:     "object",
+		Fields:   ContainerRecipe_InstanceConfiguration_BlockDeviceMappings_EbsFields,
+	},
+	"NoDevice":    ubx.FieldSpec{WireName: "no_device"},
+	"VirtualName": ubx.FieldSpec{WireName: "virtual_name"},
+}
 
 var ContainerRecipe_InstanceConfigurationFields = ubx.FieldMap{
-		"BlockDeviceMappings": ubx.FieldSpec{
-			WireName: "block_device_mappings",
-			Kind: "list",
-			Fields: ContainerRecipe_InstanceConfiguration_BlockDeviceMappingsFields,
-		},
-		"Image": ubx.FieldSpec{WireName: "image"},
-	}
+	"BlockDeviceMappings": ubx.FieldSpec{
+		WireName: "block_device_mappings",
+		Kind:     "list",
+		Fields:   ContainerRecipe_InstanceConfiguration_BlockDeviceMappingsFields,
+	},
+	"Image": ubx.FieldSpec{WireName: "image"},
+}
 
 var ContainerRecipe_TargetRepositoryFields = ubx.FieldMap{
-		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
+	"Service":        ubx.FieldSpec{WireName: "service"},
+}
 
 type ContainerRecipeConfig struct {
 	// Components for build and test that are included in the container recipe.
@@ -197,30 +197,30 @@ var ContainerRecipe = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Components": ubx.FieldSpec{
 			WireName: "components",
-			Kind: "list",
-			Fields: ContainerRecipe_ComponentsFields,
+			Kind:     "list",
+			Fields:   ContainerRecipe_ComponentsFields,
 		},
-		"ContainerType": ubx.FieldSpec{WireName: "container_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"ContainerType":          ubx.FieldSpec{WireName: "container_type"},
+		"Description":            ubx.FieldSpec{WireName: "description"},
 		"DockerfileTemplateData": ubx.FieldSpec{WireName: "dockerfile_template_data"},
-		"DockerfileTemplateUri": ubx.FieldSpec{WireName: "dockerfile_template_uri"},
+		"DockerfileTemplateUri":  ubx.FieldSpec{WireName: "dockerfile_template_uri"},
 		"ImageOsVersionOverride": ubx.FieldSpec{WireName: "image_os_version_override"},
 		"InstanceConfiguration": ubx.FieldSpec{
 			WireName: "instance_configuration",
-			Kind: "object",
-			Fields: ContainerRecipe_InstanceConfigurationFields,
+			Kind:     "object",
+			Fields:   ContainerRecipe_InstanceConfigurationFields,
 		},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParentImage": ubx.FieldSpec{WireName: "parent_image"},
+		"KmsKeyId":         ubx.FieldSpec{WireName: "kms_key_id"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"ParentImage":      ubx.FieldSpec{WireName: "parent_image"},
 		"PlatformOverride": ubx.FieldSpec{WireName: "platform_override"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":             ubx.FieldSpec{WireName: "tags"},
 		"TargetRepository": ubx.FieldSpec{
 			WireName: "target_repository",
-			Kind: "object",
-			Fields: ContainerRecipe_TargetRepositoryFields,
+			Kind:     "object",
+			Fields:   ContainerRecipe_TargetRepositoryFields,
 		},
-		"Version": ubx.FieldSpec{WireName: "version"},
+		"Version":          ubx.FieldSpec{WireName: "version"},
 		"WorkingDirectory": ubx.FieldSpec{WireName: "working_directory"},
 	},
 }

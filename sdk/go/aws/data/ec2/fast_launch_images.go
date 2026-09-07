@@ -4,9 +4,9 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FastLaunchImages_FastLaunchImages_LaunchTemplate struct {
-	LaunchTemplateId any
+	LaunchTemplateId   any
 	LaunchTemplateName any
-	Version any
+	Version            any
 }
 
 type FastLaunchImages_FastLaunchImages_SnapshotConfiguration struct {
@@ -14,42 +14,42 @@ type FastLaunchImages_FastLaunchImages_SnapshotConfiguration struct {
 }
 
 type FastLaunchImages_FastLaunchImages struct {
-	ImageId any
-	LaunchTemplate any
-	MaxParallelLaunches any
-	OwnerId any
-	ResourceType any
+	ImageId               any
+	LaunchTemplate        any
+	MaxParallelLaunches   any
+	OwnerId               any
+	ResourceType          any
 	SnapshotConfiguration any
-	State any
+	State                 any
 	StateTransitionReason any
-	StateTransitionTime any
+	StateTransitionTime   any
 }
 
 type FastLaunchImages_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var FastLaunchImages_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type FastLaunchImagesConfig struct {
-	DryRun any
-	Filters any
-	ImageIds any
+	DryRun     any
+	Filters    any
+	ImageIds   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FastLaunchImagesAttrs struct {
-	DryRun any
+	DryRun           any
 	FastLaunchImages any
-	Filters any
-	ImageIds any
-	MaxResults any
-	NextToken any
+	Filters          any
+	ImageIds         any
+	MaxResults       any
+	NextToken        any
 }
 
 var FastLaunchImages = ubx.DataSourceBinding{
@@ -58,11 +58,11 @@ var FastLaunchImages = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: FastLaunchImages_FiltersFields,
+			Kind:     "list",
+			Fields:   FastLaunchImages_FiltersFields,
 		},
-		"ImageIds": ubx.FieldSpec{WireName: "image_ids"},
+		"ImageIds":   ubx.FieldSpec{WireName: "image_ids"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

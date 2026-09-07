@@ -4,33 +4,33 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReplicationTaskIndividualAssessments_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ReplicationTaskIndividualAssessments_ReplicationTaskIndividualAssessments struct {
-	IndividualAssessmentName any
-	ReplicationTaskAssessmentRunArn any
-	ReplicationTaskIndividualAssessmentArn any
+	IndividualAssessmentName                     any
+	ReplicationTaskAssessmentRunArn              any
+	ReplicationTaskIndividualAssessmentArn       any
 	ReplicationTaskIndividualAssessmentStartDate any
-	Status any
+	Status                                       any
 }
 
 var ReplicationTaskIndividualAssessments_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ReplicationTaskIndividualAssessmentsConfig struct {
-	Filters any
-	Marker any
+	Filters    any
+	Marker     any
 	MaxRecords any
 }
 
 type ReplicationTaskIndividualAssessmentsAttrs struct {
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters                              any
+	Marker                               any
+	MaxRecords                           any
 	ReplicationTaskIndividualAssessments any
 }
 
@@ -39,10 +39,10 @@ var ReplicationTaskIndividualAssessments = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ReplicationTaskIndividualAssessments_FiltersFields,
+			Kind:     "list",
+			Fields:   ReplicationTaskIndividualAssessments_FiltersFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
 	},
 }

@@ -66,75 +66,75 @@ type ApplicationReferenceDataSource_ReferenceDataSource struct {
 }
 
 var ApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordColumnsFields = ubx.FieldMap{
-		"Mapping": ubx.FieldSpec{WireName: "mapping"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SqlType": ubx.FieldSpec{WireName: "sql_type"},
-	}
+	"Mapping": ubx.FieldSpec{WireName: "mapping"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"SqlType": ubx.FieldSpec{WireName: "sql_type"},
+}
 
 var ApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordFormat_MappingParameters_CsvmappingParametersFields = ubx.FieldMap{
-		"RecordColumnDelimiter": ubx.FieldSpec{WireName: "record_column_delimiter"},
-		"RecordRowDelimiter": ubx.FieldSpec{WireName: "record_row_delimiter"},
-	}
+	"RecordColumnDelimiter": ubx.FieldSpec{WireName: "record_column_delimiter"},
+	"RecordRowDelimiter":    ubx.FieldSpec{WireName: "record_row_delimiter"},
+}
 
 var ApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordFormat_MappingParameters_JsonmappingParametersFields = ubx.FieldMap{
-		"RecordRowPath": ubx.FieldSpec{WireName: "record_row_path"},
-	}
+	"RecordRowPath": ubx.FieldSpec{WireName: "record_row_path"},
+}
 
 var ApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordFormat_MappingParametersFields = ubx.FieldMap{
-		"CsvmappingParameters": ubx.FieldSpec{
-			WireName: "csvmapping_parameters",
-			Kind: "object",
-			Fields: ApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordFormat_MappingParameters_CsvmappingParametersFields,
-		},
-		"JsonmappingParameters": ubx.FieldSpec{
-			WireName: "jsonmapping_parameters",
-			Kind: "object",
-			Fields: ApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordFormat_MappingParameters_JsonmappingParametersFields,
-		},
-	}
+	"CsvmappingParameters": ubx.FieldSpec{
+		WireName: "csvmapping_parameters",
+		Kind:     "object",
+		Fields:   ApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordFormat_MappingParameters_CsvmappingParametersFields,
+	},
+	"JsonmappingParameters": ubx.FieldSpec{
+		WireName: "jsonmapping_parameters",
+		Kind:     "object",
+		Fields:   ApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordFormat_MappingParameters_JsonmappingParametersFields,
+	},
+}
 
 var ApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordFormatFields = ubx.FieldMap{
-		"MappingParameters": ubx.FieldSpec{
-			WireName: "mapping_parameters",
-			Kind: "object",
-			Fields: ApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordFormat_MappingParametersFields,
-		},
-		"RecordFormatType": ubx.FieldSpec{WireName: "record_format_type"},
-	}
+	"MappingParameters": ubx.FieldSpec{
+		WireName: "mapping_parameters",
+		Kind:     "object",
+		Fields:   ApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordFormat_MappingParametersFields,
+	},
+	"RecordFormatType": ubx.FieldSpec{WireName: "record_format_type"},
+}
 
 var ApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchemaFields = ubx.FieldMap{
-		"RecordColumns": ubx.FieldSpec{
-			WireName: "record_columns",
-			Kind: "list",
-			Fields: ApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordColumnsFields,
-		},
-		"RecordEncoding": ubx.FieldSpec{WireName: "record_encoding"},
-		"RecordFormat": ubx.FieldSpec{
-			WireName: "record_format",
-			Kind: "object",
-			Fields: ApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordFormatFields,
-		},
-	}
+	"RecordColumns": ubx.FieldSpec{
+		WireName: "record_columns",
+		Kind:     "list",
+		Fields:   ApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordColumnsFields,
+	},
+	"RecordEncoding": ubx.FieldSpec{WireName: "record_encoding"},
+	"RecordFormat": ubx.FieldSpec{
+		WireName: "record_format",
+		Kind:     "object",
+		Fields:   ApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordFormatFields,
+	},
+}
 
 var ApplicationReferenceDataSource_ReferenceDataSource_S3ReferenceDataSourceFields = ubx.FieldMap{
-		"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
-		"FileKey": ubx.FieldSpec{WireName: "file_key"},
-		"ReferenceRoleArn": ubx.FieldSpec{WireName: "reference_role_arn"},
-	}
+	"BucketArn":        ubx.FieldSpec{WireName: "bucket_arn"},
+	"FileKey":          ubx.FieldSpec{WireName: "file_key"},
+	"ReferenceRoleArn": ubx.FieldSpec{WireName: "reference_role_arn"},
+}
 
 var ApplicationReferenceDataSource_ReferenceDataSourceFields = ubx.FieldMap{
-		"ReferenceSchema": ubx.FieldSpec{
-			WireName: "reference_schema",
-			Kind: "object",
-			Fields: ApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchemaFields,
-		},
-		"S3ReferenceDataSource": ubx.FieldSpec{
-			WireName: "s3_reference_data_source",
-			Kind: "object",
-			Fields: ApplicationReferenceDataSource_ReferenceDataSource_S3ReferenceDataSourceFields,
-		},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"ReferenceSchema": ubx.FieldSpec{
+		WireName: "reference_schema",
+		Kind:     "object",
+		Fields:   ApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchemaFields,
+	},
+	"S3ReferenceDataSource": ubx.FieldSpec{
+		WireName: "s3_reference_data_source",
+		Kind:     "object",
+		Fields:   ApplicationReferenceDataSource_ReferenceDataSource_S3ReferenceDataSourceFields,
+	},
+	"TableName": ubx.FieldSpec{WireName: "table_name"},
+}
 
 type ApplicationReferenceDataSourceConfig struct {
 	// The name of the Kinesis Analytics application to which this reference data source is associated. (AI-inferred)
@@ -158,8 +158,8 @@ var ApplicationReferenceDataSource = ubx.ResourceBinding{
 		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
 		"ReferenceDataSource": ubx.FieldSpec{
 			WireName: "reference_data_source",
-			Kind: "object",
-			Fields: ApplicationReferenceDataSource_ReferenceDataSourceFields,
+			Kind:     "object",
+			Fields:   ApplicationReferenceDataSource_ReferenceDataSourceFields,
 		},
 	},
 }

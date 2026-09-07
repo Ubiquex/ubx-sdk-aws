@@ -5,39 +5,39 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Answer_Answer_ChoiceAnswers struct {
 	ChoiceId any
-	Notes any
-	Reason any
-	Status any
+	Notes    any
+	Reason   any
+	Status   any
 }
 
 type Answer_Answer_Choices_AdditionalResources_Content struct {
 	DisplayText any
-	Url any
+	Url         any
 }
 
 type Answer_Answer_Choices_AdditionalResources struct {
 	Content any
-	Type any
+	Type    any
 }
 
 type Answer_Answer_Choices struct {
 	AdditionalResources any
-	ChoiceId any
-	Description any
-	HelpfulResource any
-	ImprovementPlan any
-	Title any
+	ChoiceId            any
+	Description         any
+	HelpfulResource     any
+	ImprovementPlan     any
+	Title               any
 }
 
 type Answer_Answer_JiraConfiguration struct {
-	JiraIssueUrl any
+	JiraIssueUrl   any
 	LastSyncedTime any
 }
 
 type Answer_Answer struct {
 	ChoiceAnswers any
 	// <p>List of choices available for a question.</p>
-	Choices any
+	Choices                    any
 	HelpfulResourceDisplayText any
 	// <p>The helpful resource URL.</p> <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p> <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
 	HelpfulResourceUrl any
@@ -57,7 +57,7 @@ type Answer_Answer struct {
 	QuestionId any
 	// <p>The title of the question.</p>
 	QuestionTitle any
-	Reason any
+	Reason        any
 	// <p>The risk for a given workload, lens review, pillar, or question.</p>
 	Risk any
 	// <p>List of selected choice IDs in a question answer.</p> <p>The values entered replace the previously selected choices.</p>
@@ -80,7 +80,7 @@ type AnswerAttrs struct {
 	Answer any
 	// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
 	LensAlias any
-	LensArn any
+	LensArn   any
 	// <p>The milestone number.</p> <p>A workload can have a maximum of 100 milestones.</p>
 	MilestoneNumber any
 	// <p>The ID of the question.</p>
@@ -92,9 +92,9 @@ type AnswerAttrs struct {
 var Answer = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_answer",
 	Fields: ubx.FieldMap{
-		"LensAlias": ubx.FieldSpec{WireName: "lens_alias"},
+		"LensAlias":       ubx.FieldSpec{WireName: "lens_alias"},
 		"MilestoneNumber": ubx.FieldSpec{WireName: "milestone_number"},
-		"QuestionId": ubx.FieldSpec{WireName: "question_id"},
-		"WorkloadId": ubx.FieldSpec{WireName: "workload_id"},
+		"QuestionId":      ubx.FieldSpec{WireName: "question_id"},
+		"WorkloadId":      ubx.FieldSpec{WireName: "workload_id"},
 	},
 }

@@ -14,10 +14,10 @@ type PricingPlan_CurrentPricingPlan struct {
 	BundleInformation any
 	// supports epoch seconds value
 	EffectiveDateTime any
-	PricingMode any
+	PricingMode       any
 	// supports epoch seconds value
 	UpdateDateTime any
-	UpdateReason any
+	UpdateReason   any
 }
 
 type PricingPlanConfig struct {
@@ -32,6 +32,5 @@ type PricingPlanAttrs struct {
 
 var PricingPlan = ubx.DataSourceBinding{
 	WireType: "aws_iottwinmaker_pricing_plan",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

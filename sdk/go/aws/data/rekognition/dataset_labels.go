@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DatasetLabels_DatasetLabelDescriptions_LabelStats struct {
 	BoundingBoxCount any
-	EntryCount any
+	EntryCount       any
 }
 
 type DatasetLabels_DatasetLabelDescriptions struct {
-	LabelName any
+	LabelName  any
 	LabelStats any
 }
 
 type DatasetLabelsConfig struct {
 	DatasetArn any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DatasetLabelsAttrs struct {
-	DatasetArn any
+	DatasetArn               any
 	DatasetLabelDescriptions any
-	MaxResults any
-	NextToken any
+	MaxResults               any
+	NextToken                any
 }
 
 var DatasetLabels = ubx.DataSourceBinding{
@@ -31,6 +31,6 @@ var DatasetLabels = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DatasetArn": ubx.FieldSpec{WireName: "dataset_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

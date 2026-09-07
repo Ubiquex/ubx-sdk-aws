@@ -4,30 +4,30 @@ package greengrass
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectorDefinitionVersions_Versions struct {
-	Arn any
+	Arn               any
 	CreationTimestamp any
-	Id any
-	Version any
+	Id                any
+	Version           any
 }
 
 type ConnectorDefinitionVersionsConfig struct {
 	ConnectorDefinitionId any
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 }
 
 type ConnectorDefinitionVersionsAttrs struct {
 	ConnectorDefinitionId any
-	MaxResults any
-	NextToken any
-	Versions any
+	MaxResults            any
+	NextToken             any
+	Versions              any
 }
 
 var ConnectorDefinitionVersions = ubx.DataSourceBinding{
 	WireType: "aws_greengrass_connector_definition_versions",
 	Fields: ubx.FieldMap{
 		"ConnectorDefinitionId": ubx.FieldSpec{WireName: "connector_definition_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 	},
 }

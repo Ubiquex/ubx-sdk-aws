@@ -5,23 +5,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RoleAliasesConfig struct {
 	AscendingOrder any
-	Marker any
-	PageSize any
+	Marker         any
+	PageSize       any
 }
 
 type RoleAliasesAttrs struct {
 	AscendingOrder any
-	Marker any
-	NextMarker any
-	PageSize any
-	RoleAliases any
+	Marker         any
+	NextMarker     any
+	PageSize       any
+	RoleAliases    any
 }
 
 var RoleAliases = ubx.DataSourceBinding{
 	WireType: "aws_iot_role_aliases",
 	Fields: ubx.FieldMap{
 		"AscendingOrder": ubx.FieldSpec{WireName: "ascending_order"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"Marker":         ubx.FieldSpec{WireName: "marker"},
+		"PageSize":       ubx.FieldSpec{WireName: "page_size"},
 	},
 }

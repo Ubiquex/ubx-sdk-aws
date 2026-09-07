@@ -4,40 +4,40 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationStatus_ApplicationStatuses_Instances_ApplicationStatus_Details_Reason struct {
-	Code any
-	Protocol any
+	Code       any
+	Protocol   any
 	StatusCode any
 }
 
 type ApplicationStatus_ApplicationStatuses_Instances_ApplicationStatus_Details struct {
-	Aggregation any
+	Aggregation              any
 	ApplicationStatusCheckId any
-	CheckUpdateTime any
-	Reason any
-	Status any
-	StatusSince any
-	StatusTimeStamp any
+	CheckUpdateTime          any
+	Reason                   any
+	Status                   any
+	StatusSince              any
+	StatusTimeStamp          any
 }
 
 type ApplicationStatus_ApplicationStatuses_Instances_ApplicationStatus struct {
-	Details any
-	ResumeAt any
-	Status any
-	StatusSince any
+	Details         any
+	ResumeAt        any
+	Status          any
+	StatusSince     any
 	StatusTimeStamp any
 }
 
 type ApplicationStatus_ApplicationStatuses_Instances_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ApplicationStatus_ApplicationStatuses_Instances struct {
-	ApplicationStatus any
-	AvailabilityZone any
+	ApplicationStatus  any
+	AvailabilityZone   any
 	AvailabilityZoneId any
-	InstanceId any
-	Tags any
+	InstanceId         any
+	Tags               any
 }
 
 type ApplicationStatus_ApplicationStatuses struct {
@@ -45,31 +45,31 @@ type ApplicationStatus_ApplicationStatuses struct {
 }
 
 type ApplicationStatus_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var ApplicationStatus_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ApplicationStatusConfig struct {
-	DryRun any
-	Filters any
+	DryRun      any
+	Filters     any
 	InstanceIds any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type ApplicationStatusAttrs struct {
 	// <p>Describes the application statuses for instances.</p>
 	ApplicationStatuses any
-	DryRun any
-	Filters any
-	InstanceIds any
-	MaxResults any
-	NextToken any
+	DryRun              any
+	Filters             any
+	InstanceIds         any
+	MaxResults          any
+	NextToken           any
 }
 
 var ApplicationStatus = ubx.DataSourceBinding{
@@ -78,11 +78,11 @@ var ApplicationStatus = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ApplicationStatus_FiltersFields,
+			Kind:     "list",
+			Fields:   ApplicationStatus_FiltersFields,
 		},
 		"InstanceIds": ubx.FieldSpec{WireName: "instance_ids"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

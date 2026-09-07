@@ -16,19 +16,19 @@ type ApiKeyCredentialProvider_ApiKeySecretConfig struct {
 }
 
 type ApiKeyCredentialProvider_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var ApiKeyCredentialProvider_ApiKeySecretConfigFields = ubx.FieldMap{
-		"JsonKey": ubx.FieldSpec{WireName: "json_key"},
-		"SecretId": ubx.FieldSpec{WireName: "secret_id"},
-	}
+	"JsonKey":  ubx.FieldSpec{WireName: "json_key"},
+	"SecretId": ubx.FieldSpec{WireName: "secret_id"},
+}
 
 var ApiKeyCredentialProvider_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApiKeyCredentialProviderConfig struct {
 	// The API key to use for authentication
@@ -72,15 +72,15 @@ var ApiKeyCredentialProvider = ubx.ResourceBinding{
 		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
 		"ApiKeySecretConfig": ubx.FieldSpec{
 			WireName: "api_key_secret_config",
-			Kind: "object",
-			Fields: ApiKeyCredentialProvider_ApiKeySecretConfigFields,
+			Kind:     "object",
+			Fields:   ApiKeyCredentialProvider_ApiKeySecretConfigFields,
 		},
 		"ApiKeySecretSource": ubx.FieldSpec{WireName: "api_key_secret_source"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ApiKeyCredentialProvider_TagsFields,
+			Kind:     "list",
+			Fields:   ApiKeyCredentialProvider_TagsFields,
 		},
 	},
 }

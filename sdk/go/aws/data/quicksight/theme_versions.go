@@ -4,27 +4,27 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ThemeVersions_ThemeVersionSummaryList struct {
-	Arn any
-	CreatedTime any
-	Description any
-	Status any
+	Arn           any
+	CreatedTime   any
+	Description   any
+	Status        any
 	VersionNumber any
 }
 
 type ThemeVersionsConfig struct {
 	AwsAccountId any
-	MaxResults any
-	NextToken any
-	ThemeId any
+	MaxResults   any
+	NextToken    any
+	ThemeId      any
 }
 
 type ThemeVersionsAttrs struct {
-	AwsAccountId any
-	MaxResults any
-	NextToken any
-	RequestId any
-	Status any
-	ThemeId any
+	AwsAccountId            any
+	MaxResults              any
+	NextToken               any
+	RequestId               any
+	Status                  any
+	ThemeId                 any
 	ThemeVersionSummaryList any
 }
 
@@ -32,8 +32,8 @@ var ThemeVersions = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_theme_versions",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ThemeId": ubx.FieldSpec{WireName: "theme_id"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"ThemeId":      ubx.FieldSpec{WireName: "theme_id"},
 	},
 }

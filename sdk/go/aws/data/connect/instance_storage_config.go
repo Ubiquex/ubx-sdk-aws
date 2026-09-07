@@ -13,18 +13,18 @@ type InstanceStorageConfig_StorageConfig_KinesisStreamConfig struct {
 
 type InstanceStorageConfig_StorageConfig_KinesisVideoStreamConfig_EncryptionConfig struct {
 	EncryptionType any
-	KeyId any
+	KeyId          any
 }
 
 type InstanceStorageConfig_StorageConfig_KinesisVideoStreamConfig struct {
 	// <p>The encryption configuration.</p>
-	EncryptionConfig any
-	Prefix any
+	EncryptionConfig     any
+	Prefix               any
 	RetentionPeriodHours any
 }
 
 type InstanceStorageConfig_StorageConfig_S3Config struct {
-	BucketName any
+	BucketName   any
 	BucketPrefix any
 	// <p>The encryption configuration.</p>
 	EncryptionConfig any
@@ -39,20 +39,20 @@ type InstanceStorageConfig_StorageConfig struct {
 	// <p>Configuration information of a Kinesis video stream.</p>
 	KinesisVideoStreamConfig any
 	// <p>Information about the Amazon Simple Storage Service (Amazon S3) storage type.</p>
-	S3Config any
+	S3Config    any
 	StorageType any
 }
 
 type InstanceStorageConfigConfig struct {
 	AssociationId any
-	InstanceId any
-	ResourceType any
+	InstanceId    any
+	ResourceType  any
 }
 
 type InstanceStorageConfigAttrs struct {
 	AssociationId any
-	InstanceId any
-	ResourceType any
+	InstanceId    any
+	ResourceType  any
 	// <p>The storage configuration for the instance.</p>
 	StorageConfig any
 }
@@ -61,7 +61,7 @@ var InstanceStorageConfig = ubx.DataSourceBinding{
 	WireType: "aws_connect_instance_storage_config",
 	Fields: ubx.FieldMap{
 		"AssociationId": ubx.FieldSpec{WireName: "association_id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"InstanceId":    ubx.FieldSpec{WireName: "instance_id"},
+		"ResourceType":  ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

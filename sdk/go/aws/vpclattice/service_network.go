@@ -16,13 +16,13 @@ type ServiceNetwork_Tags struct {
 }
 
 var ServiceNetwork_SharingConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var ServiceNetwork_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ServiceNetworkConfig struct {
 	// Determines the authentication method for the service network, accepting either NONE to allow open access or AWS_IAM to require IAM authentication for client requests. (AI-inferred)
@@ -58,16 +58,16 @@ var ServiceNetwork = ubx.ResourceBinding{
 	WireType: "aws_vpc_lattice_service_network",
 	Fields: ubx.FieldMap{
 		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"SharingConfig": ubx.FieldSpec{
 			WireName: "sharing_config",
-			Kind: "object",
-			Fields: ServiceNetwork_SharingConfigFields,
+			Kind:     "object",
+			Fields:   ServiceNetwork_SharingConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ServiceNetwork_TagsFields,
+			Kind:     "list",
+			Fields:   ServiceNetwork_TagsFields,
 		},
 	},
 }

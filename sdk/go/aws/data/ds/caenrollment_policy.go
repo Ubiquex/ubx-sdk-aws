@@ -8,11 +8,11 @@ type CaenrollmentPolicyConfig struct {
 }
 
 type CaenrollmentPolicyAttrs struct {
-	CaEnrollmentPolicyStatus any
+	CaEnrollmentPolicyStatus       any
 	CaEnrollmentPolicyStatusReason any
-	DirectoryId any
-	LastUpdatedDateTime any
-	PcaConnectorArn any
+	DirectoryId                    any
+	LastUpdatedDateTime            any
+	PcaConnectorArn                any
 }
 
 var CaenrollmentPolicy = ubx.DataSourceBinding{

@@ -4,35 +4,35 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AwsNetworkPerformanceMetricSubscriptions_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type AwsNetworkPerformanceMetricSubscriptions_Subscriptions struct {
 	Destination any
-	Metric any
-	Period any
-	Source any
-	Statistic any
+	Metric      any
+	Period      any
+	Source      any
+	Statistic   any
 }
 
 var AwsNetworkPerformanceMetricSubscriptions_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type AwsNetworkPerformanceMetricSubscriptionsConfig struct {
-	DryRun any
-	Filters any
+	DryRun     any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AwsNetworkPerformanceMetricSubscriptionsAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun        any
+	Filters       any
+	MaxResults    any
+	NextToken     any
 	Subscriptions any
 }
 
@@ -42,10 +42,10 @@ var AwsNetworkPerformanceMetricSubscriptions = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: AwsNetworkPerformanceMetricSubscriptions_FiltersFields,
+			Kind:     "list",
+			Fields:   AwsNetworkPerformanceMetricSubscriptions_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

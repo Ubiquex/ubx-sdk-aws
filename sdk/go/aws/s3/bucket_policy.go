@@ -20,7 +20,7 @@ type BucketPolicyAttrs struct {
 var BucketPolicy = ubx.ResourceBinding{
 	WireType: "aws_s3_bucket_policy",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":         ubx.FieldSpec{WireName: "bucket"},
 		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
 	},
 }

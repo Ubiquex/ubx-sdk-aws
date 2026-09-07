@@ -4,36 +4,36 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PrefixLists_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type PrefixLists_PrefixLists struct {
-	Cidrs any
-	PrefixListId any
+	Cidrs          any
+	PrefixListId   any
 	PrefixListName any
 }
 
 var PrefixLists_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type PrefixListsConfig struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun        any
+	Filters       any
+	MaxResults    any
+	NextToken     any
 	PrefixListIds any
 }
 
 type PrefixListsAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun        any
+	Filters       any
+	MaxResults    any
+	NextToken     any
 	PrefixListIds any
-	PrefixLists any
+	PrefixLists   any
 }
 
 var PrefixLists = ubx.DataSourceBinding{
@@ -42,11 +42,11 @@ var PrefixLists = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: PrefixLists_FiltersFields,
+			Kind:     "list",
+			Fields:   PrefixLists_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"PrefixListIds": ubx.FieldSpec{WireName: "prefix_list_ids"},
 	},
 }

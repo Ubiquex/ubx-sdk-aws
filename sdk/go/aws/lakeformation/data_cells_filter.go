@@ -16,13 +16,13 @@ type DataCellsFilter_RowFilter struct {
 }
 
 var DataCellsFilter_ColumnWildcardFields = ubx.FieldMap{
-		"ExcludedColumnNames": ubx.FieldSpec{WireName: "excluded_column_names"},
-	}
+	"ExcludedColumnNames": ubx.FieldSpec{WireName: "excluded_column_names"},
+}
 
 var DataCellsFilter_RowFilterFields = ubx.FieldMap{
-		"AllRowsWildcard": ubx.FieldSpec{WireName: "all_rows_wildcard"},
-		"FilterExpression": ubx.FieldSpec{WireName: "filter_expression"},
-	}
+	"AllRowsWildcard":  ubx.FieldSpec{WireName: "all_rows_wildcard"},
+	"FilterExpression": ubx.FieldSpec{WireName: "filter_expression"},
+}
 
 type DataCellsFilterConfig struct {
 	// A list of column names.
@@ -64,17 +64,17 @@ var DataCellsFilter = ubx.ResourceBinding{
 		"ColumnNames": ubx.FieldSpec{WireName: "column_names"},
 		"ColumnWildcard": ubx.FieldSpec{
 			WireName: "column_wildcard",
-			Kind: "object",
-			Fields: DataCellsFilter_ColumnWildcardFields,
+			Kind:     "object",
+			Fields:   DataCellsFilter_ColumnWildcardFields,
 		},
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"RowFilter": ubx.FieldSpec{
 			WireName: "row_filter",
-			Kind: "object",
-			Fields: DataCellsFilter_RowFilterFields,
+			Kind:     "object",
+			Fields:   DataCellsFilter_RowFilterFields,
 		},
 		"TableCatalogId": ubx.FieldSpec{WireName: "table_catalog_id"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
+		"TableName":      ubx.FieldSpec{WireName: "table_name"},
 	},
 }

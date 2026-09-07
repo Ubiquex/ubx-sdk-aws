@@ -41,34 +41,34 @@ type Service_Tags struct {
 }
 
 var Service_DnsConfig_DnsRecordsFields = ubx.FieldMap{
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Ttl":  ubx.FieldSpec{WireName: "ttl"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Service_DnsConfigFields = ubx.FieldMap{
-		"DnsRecords": ubx.FieldSpec{
-			WireName: "dns_records",
-			Kind: "list",
-			Fields: Service_DnsConfig_DnsRecordsFields,
-		},
-		"NamespaceId": ubx.FieldSpec{WireName: "namespace_id"},
-		"RoutingPolicy": ubx.FieldSpec{WireName: "routing_policy"},
-	}
+	"DnsRecords": ubx.FieldSpec{
+		WireName: "dns_records",
+		Kind:     "list",
+		Fields:   Service_DnsConfig_DnsRecordsFields,
+	},
+	"NamespaceId":   ubx.FieldSpec{WireName: "namespace_id"},
+	"RoutingPolicy": ubx.FieldSpec{WireName: "routing_policy"},
+}
 
 var Service_HealthCheckConfigFields = ubx.FieldMap{
-		"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
-		"ResourcePath": ubx.FieldSpec{WireName: "resource_path"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
+	"ResourcePath":     ubx.FieldSpec{WireName: "resource_path"},
+	"Type":             ubx.FieldSpec{WireName: "type"},
+}
 
 var Service_HealthCheckCustomConfigFields = ubx.FieldMap{
-		"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
-	}
+	"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
+}
 
 var Service_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ServiceConfig struct {
 	// A description for the service.
@@ -122,26 +122,26 @@ var Service = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DnsConfig": ubx.FieldSpec{
 			WireName: "dns_config",
-			Kind: "object",
-			Fields: Service_DnsConfigFields,
+			Kind:     "object",
+			Fields:   Service_DnsConfigFields,
 		},
 		"HealthCheckConfig": ubx.FieldSpec{
 			WireName: "health_check_config",
-			Kind: "object",
-			Fields: Service_HealthCheckConfigFields,
+			Kind:     "object",
+			Fields:   Service_HealthCheckConfigFields,
 		},
 		"HealthCheckCustomConfig": ubx.FieldSpec{
 			WireName: "health_check_custom_config",
-			Kind: "object",
-			Fields: Service_HealthCheckCustomConfigFields,
+			Kind:     "object",
+			Fields:   Service_HealthCheckCustomConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NamespaceId": ubx.FieldSpec{WireName: "namespace_id"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"NamespaceId":       ubx.FieldSpec{WireName: "namespace_id"},
 		"ServiceAttributes": ubx.FieldSpec{WireName: "service_attributes"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Service_TagsFields,
+			Kind:     "list",
+			Fields:   Service_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

@@ -4,13 +4,13 @@ package rekognition
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MediaAnalysisJob_FailureDetails struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type MediaAnalysisJob_Input_S3Object struct {
-	Bucket any
-	Name any
+	Bucket  any
+	Name    any
 	Version any
 }
 
@@ -20,7 +20,7 @@ type MediaAnalysisJob_Input struct {
 }
 
 type MediaAnalysisJob_OperationsConfig_DetectModerationLabels struct {
-	MinConfidence any
+	MinConfidence  any
 	ProjectVersion any
 }
 
@@ -30,7 +30,7 @@ type MediaAnalysisJob_OperationsConfig struct {
 }
 
 type MediaAnalysisJob_OutputConfig struct {
-	S3Bucket any
+	S3Bucket    any
 	S3KeyPrefix any
 }
 
@@ -51,13 +51,13 @@ type MediaAnalysisJobConfig struct {
 
 type MediaAnalysisJobAttrs struct {
 	CompletionTimestamp any
-	CreationTimestamp any
+	CreationTimestamp   any
 	// <p>Details about the error that resulted in failure of the job.</p>
 	FailureDetails any
 	// <p>Contains input information for a media analysis job.</p>
-	Input any
-	JobId any
-	JobName any
+	Input    any
+	JobId    any
+	JobName  any
 	KmsKeyId any
 	// <p>Summary that provides statistics on input manifest and errors identified in the input manifest.</p>
 	ManifestSummary any
@@ -67,7 +67,7 @@ type MediaAnalysisJobAttrs struct {
 	OutputConfig any
 	// <p>Contains the results for a media analysis job created with StartMediaAnalysisJob.</p>
 	Results any
-	Status any
+	Status  any
 }
 
 var MediaAnalysisJob = ubx.DataSourceBinding{

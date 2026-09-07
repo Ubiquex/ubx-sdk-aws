@@ -40,10 +40,10 @@ type EventRuleAttrs struct {
 var EventRule = ubx.ResourceBinding{
 	WireType: "aws_notifications_event_rule",
 	Fields: ubx.FieldMap{
-		"EventPattern": ubx.FieldSpec{WireName: "event_pattern"},
-		"EventType": ubx.FieldSpec{WireName: "event_type"},
+		"EventPattern":                 ubx.FieldSpec{WireName: "event_pattern"},
+		"EventType":                    ubx.FieldSpec{WireName: "event_type"},
 		"NotificationConfigurationArn": ubx.FieldSpec{WireName: "notification_configuration_arn"},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
-		"Source": ubx.FieldSpec{WireName: "source"},
+		"Regions":                      ubx.FieldSpec{WireName: "regions"},
+		"Source":                       ubx.FieldSpec{WireName: "source"},
 	},
 }

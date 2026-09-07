@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StaticIps_StaticIps_Location struct {
 	AvailabilityZone any
-	RegionName any
+	RegionName       any
 }
 
 type StaticIps_StaticIps struct {
-	Arn any
-	AttachedTo any
-	CreatedAt any
-	IpAddress any
-	IsAttached any
-	Location any
-	Name any
+	Arn          any
+	AttachedTo   any
+	CreatedAt    any
+	IpAddress    any
+	IsAttached   any
+	Location     any
+	Name         any
 	ResourceType any
-	SupportCode any
+	SupportCode  any
 }
 
 type StaticIpsConfig struct {
@@ -26,8 +26,8 @@ type StaticIpsConfig struct {
 
 type StaticIpsAttrs struct {
 	NextPageToken any
-	PageToken any
-	StaticIps any
+	PageToken     any
+	StaticIps     any
 }
 
 var StaticIps = ubx.DataSourceBinding{

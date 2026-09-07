@@ -4,32 +4,32 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TemplateVersions_TemplateVersionsResponse_Item struct {
-	CreationDate any
+	CreationDate         any
 	DefaultSubstitutions any
-	LastModifiedDate any
-	TemplateDescription any
-	TemplateName any
-	TemplateType any
-	Version any
+	LastModifiedDate     any
+	TemplateDescription  any
+	TemplateName         any
+	TemplateType         any
+	Version              any
 }
 
 type TemplateVersions_TemplateVersionsResponse struct {
-	Item any
-	Message any
+	Item      any
+	Message   any
 	NextToken any
 	RequestId any
 }
 
 type TemplateVersionsConfig struct {
-	NextToken any
-	PageSize any
+	NextToken    any
+	PageSize     any
 	TemplateName any
 	TemplateType any
 }
 
 type TemplateVersionsAttrs struct {
-	NextToken any
-	PageSize any
+	NextToken    any
+	PageSize     any
 	TemplateName any
 	TemplateType any
 	// <p>Provides information about all the versions of a specific message template.</p>
@@ -39,8 +39,8 @@ type TemplateVersionsAttrs struct {
 var TemplateVersions = ubx.DataSourceBinding{
 	WireType: "aws_pinpoint_template_versions",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"PageSize":     ubx.FieldSpec{WireName: "page_size"},
 		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
 		"TemplateType": ubx.FieldSpec{WireName: "template_type"},
 	},

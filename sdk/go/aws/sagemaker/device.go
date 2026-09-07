@@ -19,15 +19,15 @@ type Device_Tags struct {
 }
 
 var Device_DeviceFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"IotThingName": ubx.FieldSpec{WireName: "iot_thing_name"},
-	}
+	"Description":  ubx.FieldSpec{WireName: "description"},
+	"DeviceName":   ubx.FieldSpec{WireName: "device_name"},
+	"IotThingName": ubx.FieldSpec{WireName: "iot_thing_name"},
+}
 
 var Device_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DeviceConfig struct {
 	// Edge device you want to create
@@ -52,14 +52,14 @@ var Device = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Device": ubx.FieldSpec{
 			WireName: "device",
-			Kind: "object",
-			Fields: Device_DeviceFields,
+			Kind:     "object",
+			Fields:   Device_DeviceFields,
 		},
 		"DeviceFleetName": ubx.FieldSpec{WireName: "device_fleet_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Device_TagsFields,
+			Kind:     "list",
+			Fields:   Device_TagsFields,
 		},
 	},
 }

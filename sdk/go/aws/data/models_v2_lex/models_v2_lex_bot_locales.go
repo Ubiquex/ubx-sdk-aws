@@ -4,53 +4,53 @@ package models_v2_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsV2LexBotLocales_BotLocaleSummaries struct {
-	BotLocaleStatus any
-	Description any
+	BotLocaleStatus            any
+	Description                any
 	LastBuildSubmittedDateTime any
-	LastUpdatedDateTime any
-	LocaleId any
-	LocaleName any
+	LastUpdatedDateTime        any
+	LocaleId                   any
+	LocaleName                 any
 }
 
 type ModelsV2LexBotLocales_Filters struct {
-	Name any
+	Name     any
 	Operator any
-	Values any
+	Values   any
 }
 
 type ModelsV2LexBotLocales_SortBy struct {
 	Attribute any
-	Order any
+	Order     any
 }
 
 var ModelsV2LexBotLocales_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var ModelsV2LexBotLocales_SortByFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Order":     ubx.FieldSpec{WireName: "order"},
+}
 
 type ModelsV2LexBotLocalesConfig struct {
-	BotId any
+	BotId      any
 	BotVersion any
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Specifies attributes for sorting a list of bot locales.</p>
 	SortBy any
 }
 
 type ModelsV2LexBotLocalesAttrs struct {
-	BotId any
+	BotId              any
 	BotLocaleSummaries any
-	BotVersion any
-	Filters any
-	MaxResults any
-	NextToken any
+	BotVersion         any
+	Filters            any
+	MaxResults         any
+	NextToken          any
 	// <p>Specifies attributes for sorting a list of bot locales.</p>
 	SortBy any
 }
@@ -58,19 +58,19 @@ type ModelsV2LexBotLocalesAttrs struct {
 var ModelsV2LexBotLocales = ubx.DataSourceBinding{
 	WireType: "aws_models_v2_lex_bot_locales",
 	Fields: ubx.FieldMap{
-		"BotId": ubx.FieldSpec{WireName: "bot_id"},
+		"BotId":      ubx.FieldSpec{WireName: "bot_id"},
 		"BotVersion": ubx.FieldSpec{WireName: "bot_version"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ModelsV2LexBotLocales_FiltersFields,
+			Kind:     "list",
+			Fields:   ModelsV2LexBotLocales_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SortBy": ubx.FieldSpec{
 			WireName: "sort_by",
-			Kind: "object",
-			Fields: ModelsV2LexBotLocales_SortByFields,
+			Kind:     "object",
+			Fields:   ModelsV2LexBotLocales_SortByFields,
 		},
 	},
 }

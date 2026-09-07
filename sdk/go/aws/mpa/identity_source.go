@@ -17,14 +17,14 @@ type IdentitySource_IdentitySourceParameters struct {
 }
 
 type IdentitySource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var IdentitySource_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IdentitySourceConfig struct {
 	// The tags assigned to this identity source. (AI-inferred)
@@ -35,7 +35,7 @@ type IdentitySourceAttrs struct {
 	// The date and time when this identity source was created. (AI-inferred)
 	CreationTime any
 	// The Amazon Resource Name (ARN) of this identity source. (AI-inferred)
-	IdentitySourceArn any
+	IdentitySourceArn        any
 	IdentitySourceParameters any
 	// The type of resource (for example, an IAM Identity Center instance) that provides identities to this identity source. (AI-inferred)
 	IdentitySourceType any
@@ -54,8 +54,8 @@ var IdentitySource = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: IdentitySource_TagsFields,
+			Kind:     "list",
+			Fields:   IdentitySource_TagsFields,
 		},
 	},
 }

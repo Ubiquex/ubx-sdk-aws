@@ -4,18 +4,18 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_ResourceTagSet_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TagsForResource_ResourceTagSet struct {
-	ResourceId any
+	ResourceId   any
 	ResourceType any
-	Tags any
+	Tags         any
 }
 
 type TagsForResourceConfig struct {
-	ResourceId any
+	ResourceId   any
 	ResourceType any
 }
 
@@ -23,13 +23,13 @@ type TagsForResourceAttrs struct {
 	ResourceId any
 	// <p>A complex type containing a resource and its associated tags.</p>
 	ResourceTagSet any
-	ResourceType any
+	ResourceType   any
 }
 
 var TagsForResource = ubx.DataSourceBinding{
 	WireType: "aws_route53_tags_for_resource",
 	Fields: ubx.FieldMap{
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceId":   ubx.FieldSpec{WireName: "resource_id"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

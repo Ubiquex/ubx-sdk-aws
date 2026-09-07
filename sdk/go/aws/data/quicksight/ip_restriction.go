@@ -8,13 +8,13 @@ type IpRestrictionConfig struct {
 }
 
 type IpRestrictionAttrs struct {
-	AwsAccountId any
-	Enabled any
-	IpRestrictionRuleMap any
-	RequestId any
-	Status any
+	AwsAccountId                    any
+	Enabled                         any
+	IpRestrictionRuleMap            any
+	RequestId                       any
+	Status                          any
 	VpcEndpointIdRestrictionRuleMap any
-	VpcIdRestrictionRuleMap any
+	VpcIdRestrictionRuleMap         any
 }
 
 var IpRestriction = ubx.DataSourceBinding{

@@ -5,40 +5,40 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceUpdates_ServiceUpdates struct {
 	AutoUpdateAfterRecommendedApplyByDate any
-	Engine any
-	EngineVersion any
-	EstimatedUpdateTime any
-	ServiceUpdateDescription any
-	ServiceUpdateEndDate any
-	ServiceUpdateName any
-	ServiceUpdateRecommendedApplyByDate any
-	ServiceUpdateReleaseDate any
-	ServiceUpdateSeverity any
-	ServiceUpdateStatus any
-	ServiceUpdateType any
+	Engine                                any
+	EngineVersion                         any
+	EstimatedUpdateTime                   any
+	ServiceUpdateDescription              any
+	ServiceUpdateEndDate                  any
+	ServiceUpdateName                     any
+	ServiceUpdateRecommendedApplyByDate   any
+	ServiceUpdateReleaseDate              any
+	ServiceUpdateSeverity                 any
+	ServiceUpdateStatus                   any
+	ServiceUpdateType                     any
 }
 
 type ServiceUpdatesConfig struct {
-	Marker any
-	MaxRecords any
-	ServiceUpdateName any
+	Marker              any
+	MaxRecords          any
+	ServiceUpdateName   any
 	ServiceUpdateStatus any
 }
 
 type ServiceUpdatesAttrs struct {
-	Marker any
-	MaxRecords any
-	ServiceUpdateName any
+	Marker              any
+	MaxRecords          any
+	ServiceUpdateName   any
 	ServiceUpdateStatus any
-	ServiceUpdates any
+	ServiceUpdates      any
 }
 
 var ServiceUpdates = ubx.DataSourceBinding{
 	WireType: "aws_elasticache_service_updates",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"ServiceUpdateName": ubx.FieldSpec{WireName: "service_update_name"},
+		"Marker":              ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":          ubx.FieldSpec{WireName: "max_records"},
+		"ServiceUpdateName":   ubx.FieldSpec{WireName: "service_update_name"},
 		"ServiceUpdateStatus": ubx.FieldSpec{WireName: "service_update_status"},
 	},
 }

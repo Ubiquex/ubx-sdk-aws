@@ -4,7 +4,7 @@ package kinesisvideo
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HlsstreamingSessionUrl_HlsfragmentSelector_TimestampRange struct {
-	EndTimestamp any
+	EndTimestamp   any
 	StartTimestamp any
 }
 
@@ -15,61 +15,61 @@ type HlsstreamingSessionUrl_HlsfragmentSelector struct {
 }
 
 var HlsstreamingSessionUrl_HlsfragmentSelector_TimestampRangeFields = ubx.FieldMap{
-		"EndTimestamp": ubx.FieldSpec{WireName: "end_timestamp"},
-		"StartTimestamp": ubx.FieldSpec{WireName: "start_timestamp"},
-	}
+	"EndTimestamp":   ubx.FieldSpec{WireName: "end_timestamp"},
+	"StartTimestamp": ubx.FieldSpec{WireName: "start_timestamp"},
+}
 
 var HlsstreamingSessionUrl_HlsfragmentSelectorFields = ubx.FieldMap{
-		"FragmentSelectorType": ubx.FieldSpec{WireName: "fragment_selector_type"},
-		"TimestampRange": ubx.FieldSpec{
-			WireName: "timestamp_range",
-			Kind: "object",
-			Fields: HlsstreamingSessionUrl_HlsfragmentSelector_TimestampRangeFields,
-		},
-	}
+	"FragmentSelectorType": ubx.FieldSpec{WireName: "fragment_selector_type"},
+	"TimestampRange": ubx.FieldSpec{
+		WireName: "timestamp_range",
+		Kind:     "object",
+		Fields:   HlsstreamingSessionUrl_HlsfragmentSelector_TimestampRangeFields,
+	},
+}
 
 type HlsstreamingSessionUrlConfig struct {
-	ContainerFormat any
-	DiscontinuityMode any
+	ContainerFormat          any
+	DiscontinuityMode        any
 	DisplayFragmentTimestamp any
-	Expires any
+	Expires                  any
 	// <p>Contains the range of timestamps for the requested media, and the source of the timestamps.</p>
-	HlsfragmentSelector any
+	HlsfragmentSelector             any
 	MaxMediaPlaylistFragmentResults any
-	PlaybackMode any
-	StreamArn any
-	StreamName any
+	PlaybackMode                    any
+	StreamArn                       any
+	StreamName                      any
 }
 
 type HlsstreamingSessionUrlAttrs struct {
-	ContainerFormat any
-	DiscontinuityMode any
+	ContainerFormat          any
+	DiscontinuityMode        any
 	DisplayFragmentTimestamp any
-	Expires any
+	Expires                  any
 	// <p>Contains the range of timestamps for the requested media, and the source of the timestamps.</p>
-	HlsfragmentSelector any
-	HlsstreamingSessionUrl any
+	HlsfragmentSelector             any
+	HlsstreamingSessionUrl          any
 	MaxMediaPlaylistFragmentResults any
-	PlaybackMode any
-	StreamArn any
-	StreamName any
+	PlaybackMode                    any
+	StreamArn                       any
+	StreamName                      any
 }
 
 var HlsstreamingSessionUrl = ubx.DataSourceBinding{
 	WireType: "aws_kinesisvideo_hlsstreaming_session_url",
 	Fields: ubx.FieldMap{
-		"ContainerFormat": ubx.FieldSpec{WireName: "container_format"},
-		"DiscontinuityMode": ubx.FieldSpec{WireName: "discontinuity_mode"},
+		"ContainerFormat":          ubx.FieldSpec{WireName: "container_format"},
+		"DiscontinuityMode":        ubx.FieldSpec{WireName: "discontinuity_mode"},
 		"DisplayFragmentTimestamp": ubx.FieldSpec{WireName: "display_fragment_timestamp"},
-		"Expires": ubx.FieldSpec{WireName: "expires"},
+		"Expires":                  ubx.FieldSpec{WireName: "expires"},
 		"HlsfragmentSelector": ubx.FieldSpec{
 			WireName: "hlsfragment_selector",
-			Kind: "object",
-			Fields: HlsstreamingSessionUrl_HlsfragmentSelectorFields,
+			Kind:     "object",
+			Fields:   HlsstreamingSessionUrl_HlsfragmentSelectorFields,
 		},
 		"MaxMediaPlaylistFragmentResults": ubx.FieldSpec{WireName: "max_media_playlist_fragment_results"},
-		"PlaybackMode": ubx.FieldSpec{WireName: "playback_mode"},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
-		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
+		"PlaybackMode":                    ubx.FieldSpec{WireName: "playback_mode"},
+		"StreamArn":                       ubx.FieldSpec{WireName: "stream_arn"},
+		"StreamName":                      ubx.FieldSpec{WireName: "stream_name"},
 	},
 }

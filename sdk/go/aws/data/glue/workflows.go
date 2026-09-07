@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkflowsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type WorkflowsAttrs struct {
 	MaxResults any
-	NextToken any
-	Workflows any
+	NextToken  any
+	Workflows  any
 }
 
 var Workflows = ubx.DataSourceBinding{
 	WireType: "aws_glue_workflows",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

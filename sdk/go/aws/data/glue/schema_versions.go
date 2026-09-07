@@ -5,48 +5,48 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SchemaVersions_SchemaId struct {
 	RegistryName any
-	SchemaArn any
-	SchemaName any
+	SchemaArn    any
+	SchemaName   any
 }
 
 type SchemaVersions_Schemas struct {
-	CreatedTime any
-	SchemaArn any
+	CreatedTime     any
+	SchemaArn       any
 	SchemaVersionId any
-	Status any
-	VersionNumber any
+	Status          any
+	VersionNumber   any
 }
 
 var SchemaVersions_SchemaIdFields = ubx.FieldMap{
-		"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
-		"SchemaArn": ubx.FieldSpec{WireName: "schema_arn"},
-		"SchemaName": ubx.FieldSpec{WireName: "schema_name"},
-	}
+	"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
+	"SchemaArn":    ubx.FieldSpec{WireName: "schema_arn"},
+	"SchemaName":   ubx.FieldSpec{WireName: "schema_name"},
+}
 
 type SchemaVersionsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>The unique ID of the schema in the Glue schema registry.</p>
 	SchemaId any
 }
 
 type SchemaVersionsAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>The unique ID of the schema in the Glue schema registry.</p>
 	SchemaId any
-	Schemas any
+	Schemas  any
 }
 
 var SchemaVersions = ubx.DataSourceBinding{
 	WireType: "aws_glue_schema_versions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SchemaId": ubx.FieldSpec{
 			WireName: "schema_id",
-			Kind: "object",
-			Fields: SchemaVersions_SchemaIdFields,
+			Kind:     "object",
+			Fields:   SchemaVersions_SchemaIdFields,
 		},
 	},
 }

@@ -4,10 +4,10 @@ package medialive
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Thumbnails_ThumbnailDetails_Thumbnails struct {
-	Body any
-	ContentType any
+	Body          any
+	ContentType   any
 	ThumbnailType any
-	TimeStamp any
+	TimeStamp     any
 }
 
 type Thumbnails_ThumbnailDetails struct {
@@ -38,8 +38,8 @@ type ThumbnailsAttrs struct {
 var Thumbnails = ubx.DataSourceBinding{
 	WireType: "aws_medialive_thumbnails",
 	Fields: ubx.FieldMap{
-		"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
-		"PipelineId": ubx.FieldSpec{WireName: "pipeline_id"},
+		"ChannelId":     ubx.FieldSpec{WireName: "channel_id"},
+		"PipelineId":    ubx.FieldSpec{WireName: "pipeline_id"},
 		"ThumbnailType": ubx.FieldSpec{WireName: "thumbnail_type"},
 	},
 }

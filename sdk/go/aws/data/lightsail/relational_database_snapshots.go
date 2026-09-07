@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RelationalDatabaseSnapshots_RelationalDatabaseSnapshots_Location struct {
 	AvailabilityZone any
-	RegionName any
+	RegionName       any
 }
 
 type RelationalDatabaseSnapshots_RelationalDatabaseSnapshots_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type RelationalDatabaseSnapshots_RelationalDatabaseSnapshots struct {
-	Arn any
-	CreatedAt any
-	Engine any
-	EngineVersion any
-	FromRelationalDatabaseArn any
+	Arn                               any
+	CreatedAt                         any
+	Engine                            any
+	EngineVersion                     any
+	FromRelationalDatabaseArn         any
 	FromRelationalDatabaseBlueprintId any
-	FromRelationalDatabaseBundleId any
-	FromRelationalDatabaseName any
-	Location any
-	Name any
-	ResourceType any
-	SizeInGb any
-	State any
-	SupportCode any
-	Tags any
+	FromRelationalDatabaseBundleId    any
+	FromRelationalDatabaseName        any
+	Location                          any
+	Name                              any
+	ResourceType                      any
+	SizeInGb                          any
+	State                             any
+	SupportCode                       any
+	Tags                              any
 }
 
 type RelationalDatabaseSnapshotsConfig struct {
@@ -36,8 +36,8 @@ type RelationalDatabaseSnapshotsConfig struct {
 }
 
 type RelationalDatabaseSnapshotsAttrs struct {
-	NextPageToken any
-	PageToken any
+	NextPageToken               any
+	PageToken                   any
 	RelationalDatabaseSnapshots any
 }
 

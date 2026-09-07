@@ -5,23 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountPlanState_AccountPlanRemainingCredits struct {
 	Amount any
-	Unit any
+	Unit   any
 }
 
 type AccountPlanStateConfig struct {
 }
 
 type AccountPlanStateAttrs struct {
-	AccountId any
+	AccountId                 any
 	AccountPlanExpirationDate any
 	// <p> The monetary amount of the credit. </p>
 	AccountPlanRemainingCredits any
-	AccountPlanStatus any
-	AccountPlanType any
+	AccountPlanStatus           any
+	AccountPlanType             any
 }
 
 var AccountPlanState = ubx.DataSourceBinding{
 	WireType: "aws_freetier_account_plan_state",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

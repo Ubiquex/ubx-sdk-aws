@@ -9,8 +9,8 @@ type ThirdPartyFirewallAssociationStatusConfig struct {
 
 type ThirdPartyFirewallAssociationStatusAttrs struct {
 	MarketplaceOnboardingStatus any
-	ThirdPartyFirewall any
-	ThirdPartyFirewallStatus any
+	ThirdPartyFirewall          any
+	ThirdPartyFirewallStatus    any
 }
 
 var ThirdPartyFirewallAssociationStatus = ubx.DataSourceBinding{

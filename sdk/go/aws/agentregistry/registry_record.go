@@ -14,7 +14,7 @@ type RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderCo
 type RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProvider struct {
 	CustomParameters any
 	// The OAuth 2.0 grant type used by this credential provider to obtain an access token when fetching from the source URL, such as client_credentials. (AI-inferred)
-	GrantType any
+	GrantType   any
 	ProviderArn any
 	// Defines the list of OAuth 2.0 scopes to request when the OAuth credential provider obtains an access token to access the external URL source. (AI-inferred)
 	Scopes any
@@ -22,7 +22,7 @@ type RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderCo
 
 type RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider struct {
 	// Configuration for an IAM-based credential provider used to authenticate requests to the source URL from which the A2A agent card is fetched, specifying the IAM role or access keys to use. (AI-inferred)
-	IamCredentialProvider any
+	IamCredentialProvider   any
 	OauthCredentialProvider any
 }
 
@@ -136,189 +136,189 @@ type RegistryRecord_Descriptors struct {
 }
 
 type RegistryRecord_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider_IamCredentialProviderFields = ubx.FieldMap{
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Region":  ubx.FieldSpec{WireName: "region"},
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProviderFields = ubx.FieldMap{
-		"CustomParameters": ubx.FieldSpec{WireName: "custom_parameters"},
-		"GrantType": ubx.FieldSpec{WireName: "grant_type"},
-		"ProviderArn": ubx.FieldSpec{WireName: "provider_arn"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-	}
+	"CustomParameters": ubx.FieldSpec{WireName: "custom_parameters"},
+	"GrantType":        ubx.FieldSpec{WireName: "grant_type"},
+	"ProviderArn":      ubx.FieldSpec{WireName: "provider_arn"},
+	"Scopes":           ubx.FieldSpec{WireName: "scopes"},
+}
 
 var RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProviderFields = ubx.FieldMap{
-		"IamCredentialProvider": ubx.FieldSpec{
-			WireName: "iam_credential_provider",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider_IamCredentialProviderFields,
-		},
-		"OauthCredentialProvider": ubx.FieldSpec{
-			WireName: "oauth_credential_provider",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProviderFields,
-		},
-	}
+	"IamCredentialProvider": ubx.FieldSpec{
+		WireName: "iam_credential_provider",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider_IamCredentialProviderFields,
+	},
+	"OauthCredentialProvider": ubx.FieldSpec{
+		WireName: "oauth_credential_provider",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProviderFields,
+	},
+}
 
 var RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurationsFields = ubx.FieldMap{
-		"CredentialProvider": ubx.FieldSpec{
-			WireName: "credential_provider",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProviderFields,
-		},
-		"CredentialProviderType": ubx.FieldSpec{WireName: "credential_provider_type"},
-	}
+	"CredentialProvider": ubx.FieldSpec{
+		WireName: "credential_provider",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProviderFields,
+	},
+	"CredentialProviderType": ubx.FieldSpec{WireName: "credential_provider_type"},
+}
 
 var RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrlFields = ubx.FieldMap{
-		"CredentialProviderConfigurations": ubx.FieldSpec{
-			WireName: "credential_provider_configurations",
-			Kind: "list",
-			Fields: RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurationsFields,
-		},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"CredentialProviderConfigurations": ubx.FieldSpec{
+		WireName: "credential_provider_configurations",
+		Kind:     "list",
+		Fields:   RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurationsFields,
+	},
+	"Url": ubx.FieldSpec{WireName: "url"},
+}
 
 var RegistryRecord_Descriptors_A2aAgentCard_SourceFields = ubx.FieldMap{
-		"FromUrl": ubx.FieldSpec{
-			WireName: "from_url",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrlFields,
-		},
-	}
+	"FromUrl": ubx.FieldSpec{
+		WireName: "from_url",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_A2aAgentCard_Source_FromUrlFields,
+	},
+}
 
 var RegistryRecord_Descriptors_A2aAgentCardFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"DataSchemaVersion": ubx.FieldSpec{WireName: "data_schema_version"},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_A2aAgentCard_SourceFields,
-		},
-	}
+	"Data":              ubx.FieldSpec{WireName: "data"},
+	"DataSchemaVersion": ubx.FieldSpec{WireName: "data_schema_version"},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_A2aAgentCard_SourceFields,
+	},
+}
 
 var RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalData_SkillMd_Source_FromUrlFields = ubx.FieldMap{
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Url": ubx.FieldSpec{WireName: "url"},
+}
 
 var RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalData_SkillMd_SourceFields = ubx.FieldMap{
-		"FromUrl": ubx.FieldSpec{
-			WireName: "from_url",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalData_SkillMd_Source_FromUrlFields,
-		},
-	}
+	"FromUrl": ubx.FieldSpec{
+		WireName: "from_url",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalData_SkillMd_Source_FromUrlFields,
+	},
+}
 
 var RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalData_SkillMdFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"DataSchemaVersion": ubx.FieldSpec{WireName: "data_schema_version"},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalData_SkillMd_SourceFields,
-		},
-	}
+	"Data":              ubx.FieldSpec{WireName: "data"},
+	"DataSchemaVersion": ubx.FieldSpec{WireName: "data_schema_version"},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalData_SkillMd_SourceFields,
+	},
+}
 
 var RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalDataFields = ubx.FieldMap{
-		"SkillMd": ubx.FieldSpec{
-			WireName: "skill_md",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalData_SkillMdFields,
-		},
-	}
+	"SkillMd": ubx.FieldSpec{
+		WireName: "skill_md",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalData_SkillMdFields,
+	},
+}
 
 var RegistryRecord_Descriptors_AgentSkillsDefinitionFields = ubx.FieldMap{
-		"AdditionalData": ubx.FieldSpec{
-			WireName: "additional_data",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalDataFields,
-		},
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"DataSchemaVersion": ubx.FieldSpec{WireName: "data_schema_version"},
-	}
+	"AdditionalData": ubx.FieldSpec{
+		WireName: "additional_data",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalDataFields,
+	},
+	"Data":              ubx.FieldSpec{WireName: "data"},
+	"DataSchemaVersion": ubx.FieldSpec{WireName: "data_schema_version"},
+}
 
 var RegistryRecord_Descriptors_AguiFields = ubx.FieldMap{
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalData_SkillMd_SourceFields,
-		},
-	}
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalData_SkillMd_SourceFields,
+	},
+}
 
 var RegistryRecord_Descriptors_CustomFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-	}
+	"Data": ubx.FieldSpec{WireName: "data"},
+}
 
 var RegistryRecord_Descriptors_McpServer_AdditionalData_ToolsFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"DataSchemaVersion": ubx.FieldSpec{WireName: "data_schema_version"},
-	}
+	"Data":              ubx.FieldSpec{WireName: "data"},
+	"DataSchemaVersion": ubx.FieldSpec{WireName: "data_schema_version"},
+}
 
 var RegistryRecord_Descriptors_McpServer_AdditionalDataFields = ubx.FieldMap{
-		"Tools": ubx.FieldSpec{
-			WireName: "tools",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_McpServer_AdditionalData_ToolsFields,
-		},
-	}
+	"Tools": ubx.FieldSpec{
+		WireName: "tools",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_McpServer_AdditionalData_ToolsFields,
+	},
+}
 
 var RegistryRecord_Descriptors_McpServerFields = ubx.FieldMap{
-		"AdditionalData": ubx.FieldSpec{
-			WireName: "additional_data",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_McpServer_AdditionalDataFields,
-		},
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"DataSchemaVersion": ubx.FieldSpec{WireName: "data_schema_version"},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_A2aAgentCard_SourceFields,
-		},
-	}
+	"AdditionalData": ubx.FieldSpec{
+		WireName: "additional_data",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_McpServer_AdditionalDataFields,
+	},
+	"Data":              ubx.FieldSpec{WireName: "data"},
+	"DataSchemaVersion": ubx.FieldSpec{WireName: "data_schema_version"},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_A2aAgentCard_SourceFields,
+	},
+}
 
 var RegistryRecord_DescriptorsFields = ubx.FieldMap{
-		"A2aAgentCard": ubx.FieldSpec{
-			WireName: "a2a_agent_card",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_A2aAgentCardFields,
-		},
-		"AgentSkillsDefinition": ubx.FieldSpec{
-			WireName: "agent_skills_definition",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_AgentSkillsDefinitionFields,
-		},
-		"Agui": ubx.FieldSpec{
-			WireName: "agui",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_AguiFields,
-		},
-		"Custom": ubx.FieldSpec{
-			WireName: "custom",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_CustomFields,
-		},
-		"Http": ubx.FieldSpec{
-			WireName: "http",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_AguiFields,
-		},
-		"McpServer": ubx.FieldSpec{
-			WireName: "mcp_server",
-			Kind: "object",
-			Fields: RegistryRecord_Descriptors_McpServerFields,
-		},
-	}
+	"A2aAgentCard": ubx.FieldSpec{
+		WireName: "a2a_agent_card",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_A2aAgentCardFields,
+	},
+	"AgentSkillsDefinition": ubx.FieldSpec{
+		WireName: "agent_skills_definition",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_AgentSkillsDefinitionFields,
+	},
+	"Agui": ubx.FieldSpec{
+		WireName: "agui",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_AguiFields,
+	},
+	"Custom": ubx.FieldSpec{
+		WireName: "custom",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_CustomFields,
+	},
+	"Http": ubx.FieldSpec{
+		WireName: "http",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_AguiFields,
+	},
+	"McpServer": ubx.FieldSpec{
+		WireName: "mcp_server",
+		Kind:     "object",
+		Fields:   RegistryRecord_Descriptors_McpServerFields,
+	},
+}
 
 var RegistryRecord_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RegistryRecordConfig struct {
 	// The description of the registry record.
@@ -378,18 +378,18 @@ var RegistryRecord = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Descriptors": ubx.FieldSpec{
 			WireName: "descriptors",
-			Kind: "object",
-			Fields: RegistryRecord_DescriptorsFields,
+			Kind:     "object",
+			Fields:   RegistryRecord_DescriptorsFields,
 		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RecordType": ubx.FieldSpec{WireName: "record_type"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"RecordType":    ubx.FieldSpec{WireName: "record_type"},
 		"RecordVersion": ubx.FieldSpec{WireName: "record_version"},
-		"RegistryId": ubx.FieldSpec{WireName: "registry_id"},
+		"RegistryId":    ubx.FieldSpec{WireName: "registry_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RegistryRecord_TagsFields,
+			Kind:     "list",
+			Fields:   RegistryRecord_TagsFields,
 		},
 	},
 }

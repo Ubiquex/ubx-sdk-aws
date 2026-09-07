@@ -32,7 +32,7 @@ type FunctionDefinitionVersion_Functions_FunctionConfiguration_Environment_Resou
 type FunctionDefinitionVersion_Functions_FunctionConfiguration_Environment struct {
 	// If true, this grants the Greengrass Lambda function access to the host's /sys filesystem (sysfs) on the core device, with the default being false. (AI-inferred)
 	AccessSysfs any
-	Execution any
+	Execution   any
 	// Specifies the list of resource access policies that grant the Lambda function permissions to access Greengrass local resources (such as devices or volumes) on the core, where each policy includes a resource identifier and a read-only or read-write permission. (AI-inferred)
 	ResourceAccessPolicies any
 	// A map of key-value pairs that define environment variables passed to the Lambda function when it runs in the Greengrass group. (AI-inferred)
@@ -66,70 +66,70 @@ type FunctionDefinitionVersion_Functions struct {
 }
 
 var FunctionDefinitionVersion_DefaultConfig_Execution_RunAsFields = ubx.FieldMap{
-		"Gid": ubx.FieldSpec{WireName: "gid"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Gid": ubx.FieldSpec{WireName: "gid"},
+	"Uid": ubx.FieldSpec{WireName: "uid"},
+}
 
 var FunctionDefinitionVersion_DefaultConfig_ExecutionFields = ubx.FieldMap{
-		"IsolationMode": ubx.FieldSpec{WireName: "isolation_mode"},
-		"RunAs": ubx.FieldSpec{
-			WireName: "run_as",
-			Kind: "object",
-			Fields: FunctionDefinitionVersion_DefaultConfig_Execution_RunAsFields,
-		},
-	}
+	"IsolationMode": ubx.FieldSpec{WireName: "isolation_mode"},
+	"RunAs": ubx.FieldSpec{
+		WireName: "run_as",
+		Kind:     "object",
+		Fields:   FunctionDefinitionVersion_DefaultConfig_Execution_RunAsFields,
+	},
+}
 
 var FunctionDefinitionVersion_DefaultConfigFields = ubx.FieldMap{
-		"Execution": ubx.FieldSpec{
-			WireName: "execution",
-			Kind: "object",
-			Fields: FunctionDefinitionVersion_DefaultConfig_ExecutionFields,
-		},
-	}
+	"Execution": ubx.FieldSpec{
+		WireName: "execution",
+		Kind:     "object",
+		Fields:   FunctionDefinitionVersion_DefaultConfig_ExecutionFields,
+	},
+}
 
 var FunctionDefinitionVersion_Functions_FunctionConfiguration_Environment_ResourceAccessPoliciesFields = ubx.FieldMap{
-		"Permission": ubx.FieldSpec{WireName: "permission"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-	}
+	"Permission": ubx.FieldSpec{WireName: "permission"},
+	"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+}
 
 var FunctionDefinitionVersion_Functions_FunctionConfiguration_EnvironmentFields = ubx.FieldMap{
-		"AccessSysfs": ubx.FieldSpec{WireName: "access_sysfs"},
-		"Execution": ubx.FieldSpec{
-			WireName: "execution",
-			Kind: "object",
-			Fields: FunctionDefinitionVersion_DefaultConfig_ExecutionFields,
-		},
-		"ResourceAccessPolicies": ubx.FieldSpec{
-			WireName: "resource_access_policies",
-			Kind: "list",
-			Fields: FunctionDefinitionVersion_Functions_FunctionConfiguration_Environment_ResourceAccessPoliciesFields,
-		},
-		"Variables": ubx.FieldSpec{WireName: "variables"},
-	}
+	"AccessSysfs": ubx.FieldSpec{WireName: "access_sysfs"},
+	"Execution": ubx.FieldSpec{
+		WireName: "execution",
+		Kind:     "object",
+		Fields:   FunctionDefinitionVersion_DefaultConfig_ExecutionFields,
+	},
+	"ResourceAccessPolicies": ubx.FieldSpec{
+		WireName: "resource_access_policies",
+		Kind:     "list",
+		Fields:   FunctionDefinitionVersion_Functions_FunctionConfiguration_Environment_ResourceAccessPoliciesFields,
+	},
+	"Variables": ubx.FieldSpec{WireName: "variables"},
+}
 
 var FunctionDefinitionVersion_Functions_FunctionConfigurationFields = ubx.FieldMap{
-		"EncodingType": ubx.FieldSpec{WireName: "encoding_type"},
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "object",
-			Fields: FunctionDefinitionVersion_Functions_FunctionConfiguration_EnvironmentFields,
-		},
-		"ExecArgs": ubx.FieldSpec{WireName: "exec_args"},
-		"Executable": ubx.FieldSpec{WireName: "executable"},
-		"MemorySize": ubx.FieldSpec{WireName: "memory_size"},
-		"Pinned": ubx.FieldSpec{WireName: "pinned"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"EncodingType": ubx.FieldSpec{WireName: "encoding_type"},
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "object",
+		Fields:   FunctionDefinitionVersion_Functions_FunctionConfiguration_EnvironmentFields,
+	},
+	"ExecArgs":   ubx.FieldSpec{WireName: "exec_args"},
+	"Executable": ubx.FieldSpec{WireName: "executable"},
+	"MemorySize": ubx.FieldSpec{WireName: "memory_size"},
+	"Pinned":     ubx.FieldSpec{WireName: "pinned"},
+	"Timeout":    ubx.FieldSpec{WireName: "timeout"},
+}
 
 var FunctionDefinitionVersion_FunctionsFields = ubx.FieldMap{
-		"FunctionArn": ubx.FieldSpec{WireName: "function_arn"},
-		"FunctionConfiguration": ubx.FieldSpec{
-			WireName: "function_configuration",
-			Kind: "object",
-			Fields: FunctionDefinitionVersion_Functions_FunctionConfigurationFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"FunctionArn": ubx.FieldSpec{WireName: "function_arn"},
+	"FunctionConfiguration": ubx.FieldSpec{
+		WireName: "function_configuration",
+		Kind:     "object",
+		Fields:   FunctionDefinitionVersion_Functions_FunctionConfigurationFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+}
 
 type FunctionDefinitionVersionConfig struct {
 	// Default configuration settings (execution and environment) that apply to all Lambda functions in this Greengrass function definition version unless overridden per-function. (AI-inferred)
@@ -156,14 +156,14 @@ var FunctionDefinitionVersion = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DefaultConfig": ubx.FieldSpec{
 			WireName: "default_config",
-			Kind: "object",
-			Fields: FunctionDefinitionVersion_DefaultConfigFields,
+			Kind:     "object",
+			Fields:   FunctionDefinitionVersion_DefaultConfigFields,
 		},
 		"FunctionDefinitionId": ubx.FieldSpec{WireName: "function_definition_id"},
 		"Functions": ubx.FieldSpec{
 			WireName: "functions",
-			Kind: "list",
-			Fields: FunctionDefinitionVersion_FunctionsFields,
+			Kind:     "list",
+			Fields:   FunctionDefinitionVersion_FunctionsFields,
 		},
 	},
 }

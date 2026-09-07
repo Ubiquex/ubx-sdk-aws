@@ -4,13 +4,13 @@ package redshift_serverless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RedshiftServerlessTrack_Track_UpdateTargets struct {
-	TrackName any
+	TrackName        any
 	WorkgroupVersion any
 }
 
 type RedshiftServerlessTrack_Track struct {
-	TrackName any
-	UpdateTargets any
+	TrackName        any
+	UpdateTargets    any
 	WorkgroupVersion any
 }
 
@@ -20,7 +20,7 @@ type RedshiftServerlessTrackConfig struct {
 
 type RedshiftServerlessTrackAttrs struct {
 	// <p>Defines a track that determines which Amazon Redshift version to apply after a new version is released. If the value for <code>ServerlessTrack</code> is <code>current</code>, the workgroup is updated to the most recently certified release. If the value is <code>trailing</code>, the workgroup is updated to the previously certified release.</p>
-	Track any
+	Track     any
 	TrackName any
 }
 

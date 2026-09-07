@@ -10,7 +10,7 @@ type AssociatedStacksConfig struct {
 
 type AssociatedStacksAttrs struct {
 	FleetName any
-	Names any
+	Names     any
 	NextToken any
 }
 

@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Cluster_Tags struct {
 	// The key of a tag attached to the Amazon DocumentDB Elastic Cluster, enabling the resource to be categorized, identified, and filtered by user-defined metadata. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Cluster_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ClusterConfig struct {
 	// The administrative (master) username for the DocumentDB elastic cluster, used as the initial admin user for authentication. (AI-inferred)
@@ -83,22 +83,22 @@ type ClusterAttrs struct {
 var Cluster = ubx.ResourceBinding{
 	WireType: "aws_doc_dbelastic_cluster",
 	Fields: ubx.FieldMap{
-		"AdminUserName": ubx.FieldSpec{WireName: "admin_user_name"},
-		"AdminUserPassword": ubx.FieldSpec{WireName: "admin_user_password"},
-		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-		"BackupRetentionPeriod": ubx.FieldSpec{WireName: "backup_retention_period"},
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"PreferredBackupWindow": ubx.FieldSpec{WireName: "preferred_backup_window"},
+		"AdminUserName":              ubx.FieldSpec{WireName: "admin_user_name"},
+		"AdminUserPassword":          ubx.FieldSpec{WireName: "admin_user_password"},
+		"AuthType":                   ubx.FieldSpec{WireName: "auth_type"},
+		"BackupRetentionPeriod":      ubx.FieldSpec{WireName: "backup_retention_period"},
+		"ClusterName":                ubx.FieldSpec{WireName: "cluster_name"},
+		"KmsKeyId":                   ubx.FieldSpec{WireName: "kms_key_id"},
+		"PreferredBackupWindow":      ubx.FieldSpec{WireName: "preferred_backup_window"},
 		"PreferredMaintenanceWindow": ubx.FieldSpec{WireName: "preferred_maintenance_window"},
-		"ShardCapacity": ubx.FieldSpec{WireName: "shard_capacity"},
-		"ShardCount": ubx.FieldSpec{WireName: "shard_count"},
-		"ShardInstanceCount": ubx.FieldSpec{WireName: "shard_instance_count"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"ShardCapacity":              ubx.FieldSpec{WireName: "shard_capacity"},
+		"ShardCount":                 ubx.FieldSpec{WireName: "shard_count"},
+		"ShardInstanceCount":         ubx.FieldSpec{WireName: "shard_instance_count"},
+		"SubnetIds":                  ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Cluster_TagsFields,
+			Kind:     "list",
+			Fields:   Cluster_TagsFields,
 		},
 		"VpcSecurityGroupIds": ubx.FieldSpec{WireName: "vpc_security_group_ids"},
 	},

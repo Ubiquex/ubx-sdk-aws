@@ -4,12 +4,12 @@ package organizations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HandshakesForAccount_Filter struct {
-	ActionType any
+	ActionType        any
 	ParentHandshakeId any
 }
 
 type HandshakesForAccount_Handshakes_Parties struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -18,39 +18,39 @@ type HandshakesForAccount_Handshakes_Resources_Resources struct {
 
 type HandshakesForAccount_Handshakes_Resources struct {
 	Resources any
-	Type any
-	Value any
+	Type      any
+	Value     any
 }
 
 type HandshakesForAccount_Handshakes struct {
-	Action any
-	Arn any
+	Action              any
+	Arn                 any
 	ExpirationTimestamp any
-	Id any
-	Parties any
-	RequestedTimestamp any
-	Resources any
-	State any
+	Id                  any
+	Parties             any
+	RequestedTimestamp  any
+	Resources           any
+	State               any
 }
 
 var HandshakesForAccount_FilterFields = ubx.FieldMap{
-		"ActionType": ubx.FieldSpec{WireName: "action_type"},
-		"ParentHandshakeId": ubx.FieldSpec{WireName: "parent_handshake_id"},
-	}
+	"ActionType":        ubx.FieldSpec{WireName: "action_type"},
+	"ParentHandshakeId": ubx.FieldSpec{WireName: "parent_handshake_id"},
+}
 
 type HandshakesForAccountConfig struct {
 	// <p>Contains the filter used to select the handshakes for an operation.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type HandshakesForAccountAttrs struct {
 	// <p>Contains the filter used to select the handshakes for an operation.</p>
-	Filter any
+	Filter     any
 	Handshakes any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var HandshakesForAccount = ubx.DataSourceBinding{
@@ -58,10 +58,10 @@ var HandshakesForAccount = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: HandshakesForAccount_FilterFields,
+			Kind:     "object",
+			Fields:   HandshakesForAccount_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

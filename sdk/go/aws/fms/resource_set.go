@@ -11,9 +11,9 @@ type ResourceSet_Tags struct {
 }
 
 var ResourceSet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ResourceSetConfig struct {
 	// An optional, user-defined text field that describes the purpose or contents of the AWS Firewall Manager resource set, aiding in identification and management. (AI-inferred)
@@ -46,14 +46,14 @@ type ResourceSetAttrs struct {
 var ResourceSet = ubx.ResourceBinding{
 	WireType: "aws_fms_resource_set",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"ResourceTypeList": ubx.FieldSpec{WireName: "resource_type_list"},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
+		"Resources":        ubx.FieldSpec{WireName: "resources"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ResourceSet_TagsFields,
+			Kind:     "list",
+			Fields:   ResourceSet_TagsFields,
 		},
 	},
 }

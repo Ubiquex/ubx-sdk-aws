@@ -13,51 +13,51 @@ type InstanceStorageConfigs_StorageConfigs_KinesisStreamConfig struct {
 
 type InstanceStorageConfigs_StorageConfigs_KinesisVideoStreamConfig_EncryptionConfig struct {
 	EncryptionType any
-	KeyId any
+	KeyId          any
 }
 
 type InstanceStorageConfigs_StorageConfigs_KinesisVideoStreamConfig struct {
-	EncryptionConfig any
-	Prefix any
+	EncryptionConfig     any
+	Prefix               any
 	RetentionPeriodHours any
 }
 
 type InstanceStorageConfigs_StorageConfigs_S3Config struct {
-	BucketName any
-	BucketPrefix any
+	BucketName       any
+	BucketPrefix     any
 	EncryptionConfig any
 }
 
 type InstanceStorageConfigs_StorageConfigs struct {
-	AssociationId any
-	KinesisFirehoseConfig any
-	KinesisStreamConfig any
+	AssociationId            any
+	KinesisFirehoseConfig    any
+	KinesisStreamConfig      any
 	KinesisVideoStreamConfig any
-	S3Config any
-	StorageType any
+	S3Config                 any
+	StorageType              any
 }
 
 type InstanceStorageConfigsConfig struct {
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId   any
+	MaxResults   any
+	NextToken    any
 	ResourceType any
 }
 
 type InstanceStorageConfigsAttrs struct {
-	InstanceId any
-	MaxResults any
-	NextToken any
-	ResourceType any
+	InstanceId     any
+	MaxResults     any
+	NextToken      any
+	ResourceType   any
 	StorageConfigs any
 }
 
 var InstanceStorageConfigs = ubx.DataSourceBinding{
 	WireType: "aws_connect_instance_storage_configs",
 	Fields: ubx.FieldMap{
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"InstanceId":   ubx.FieldSpec{WireName: "instance_id"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

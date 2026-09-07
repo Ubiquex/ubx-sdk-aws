@@ -23,6 +23,6 @@ var SecurityKey = ubx.ResourceBinding{
 	WireType: "aws_connect_security_key",
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"Key": ubx.FieldSpec{WireName: "key"},
+		"Key":        ubx.FieldSpec{WireName: "key"},
 	},
 }

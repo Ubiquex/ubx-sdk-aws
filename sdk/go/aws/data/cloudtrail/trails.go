@@ -4,39 +4,39 @@ package cloudtrail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Trails_TrailList struct {
-	CloudWatchLogsLogGroupArn any
-	CloudWatchLogsRoleArn any
-	HasCustomEventSelectors any
-	HasInsightSelectors any
-	HomeRegion any
+	CloudWatchLogsLogGroupArn  any
+	CloudWatchLogsRoleArn      any
+	HasCustomEventSelectors    any
+	HasInsightSelectors        any
+	HomeRegion                 any
 	IncludeGlobalServiceEvents any
-	IsMultiRegionTrail any
-	IsOrganizationTrail any
-	KmsKeyId any
-	LogFileValidationEnabled any
-	Name any
-	S3BucketName any
-	S3KeyPrefix any
-	SnsTopicArn any
-	SnsTopicName any
-	TrailArn any
+	IsMultiRegionTrail         any
+	IsOrganizationTrail        any
+	KmsKeyId                   any
+	LogFileValidationEnabled   any
+	Name                       any
+	S3BucketName               any
+	S3KeyPrefix                any
+	SnsTopicArn                any
+	SnsTopicName               any
+	TrailArn                   any
 }
 
 type TrailsConfig struct {
 	IncludeShadowTrails any
-	TrailNameList any
+	TrailNameList       any
 }
 
 type TrailsAttrs struct {
 	IncludeShadowTrails any
-	TrailList any
-	TrailNameList any
+	TrailList           any
+	TrailNameList       any
 }
 
 var Trails = ubx.DataSourceBinding{
 	WireType: "aws_cloudtrail_trails",
 	Fields: ubx.FieldMap{
 		"IncludeShadowTrails": ubx.FieldSpec{WireName: "include_shadow_trails"},
-		"TrailNameList": ubx.FieldSpec{WireName: "trail_name_list"},
+		"TrailNameList":       ubx.FieldSpec{WireName: "trail_name_list"},
 	},
 }

@@ -4,17 +4,17 @@ package invoicing
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InvoicePdf_InvoicePdf_SupplementalDocuments struct {
-	DocumentId any
-	DocumentType any
-	DocumentUrl any
+	DocumentId                any
+	DocumentType              any
+	DocumentUrl               any
 	DocumentUrlExpirationDate any
 }
 
 type InvoicePdf_InvoicePdf struct {
-	DocumentUrl any
+	DocumentUrl               any
 	DocumentUrlExpirationDate any
-	InvoiceId any
-	SupplementalDocuments any
+	InvoiceId                 any
+	SupplementalDocuments     any
 }
 
 type InvoicePdfConfig struct {

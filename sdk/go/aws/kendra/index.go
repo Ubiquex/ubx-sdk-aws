@@ -96,85 +96,85 @@ type Index_UserTokenConfigurations struct {
 }
 
 var Index_CapacityUnitsFields = ubx.FieldMap{
-		"QueryCapacityUnits": ubx.FieldSpec{WireName: "query_capacity_units"},
-		"StorageCapacityUnits": ubx.FieldSpec{WireName: "storage_capacity_units"},
-	}
+	"QueryCapacityUnits":   ubx.FieldSpec{WireName: "query_capacity_units"},
+	"StorageCapacityUnits": ubx.FieldSpec{WireName: "storage_capacity_units"},
+}
 
 var Index_DocumentMetadataConfigurations_Relevance_ValueImportanceItemsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Index_DocumentMetadataConfigurations_RelevanceFields = ubx.FieldMap{
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"Freshness": ubx.FieldSpec{WireName: "freshness"},
-		"Importance": ubx.FieldSpec{WireName: "importance"},
-		"RankOrder": ubx.FieldSpec{WireName: "rank_order"},
-		"ValueImportanceItems": ubx.FieldSpec{
-			WireName: "value_importance_items",
-			Kind: "list",
-			Fields: Index_DocumentMetadataConfigurations_Relevance_ValueImportanceItemsFields,
-		},
-	}
+	"Duration":   ubx.FieldSpec{WireName: "duration"},
+	"Freshness":  ubx.FieldSpec{WireName: "freshness"},
+	"Importance": ubx.FieldSpec{WireName: "importance"},
+	"RankOrder":  ubx.FieldSpec{WireName: "rank_order"},
+	"ValueImportanceItems": ubx.FieldSpec{
+		WireName: "value_importance_items",
+		Kind:     "list",
+		Fields:   Index_DocumentMetadataConfigurations_Relevance_ValueImportanceItemsFields,
+	},
+}
 
 var Index_DocumentMetadataConfigurations_SearchFields = ubx.FieldMap{
-		"Displayable": ubx.FieldSpec{WireName: "displayable"},
-		"Facetable": ubx.FieldSpec{WireName: "facetable"},
-		"Searchable": ubx.FieldSpec{WireName: "searchable"},
-		"Sortable": ubx.FieldSpec{WireName: "sortable"},
-	}
+	"Displayable": ubx.FieldSpec{WireName: "displayable"},
+	"Facetable":   ubx.FieldSpec{WireName: "facetable"},
+	"Searchable":  ubx.FieldSpec{WireName: "searchable"},
+	"Sortable":    ubx.FieldSpec{WireName: "sortable"},
+}
 
 var Index_DocumentMetadataConfigurationsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Relevance": ubx.FieldSpec{
-			WireName: "relevance",
-			Kind: "object",
-			Fields: Index_DocumentMetadataConfigurations_RelevanceFields,
-		},
-		"Search": ubx.FieldSpec{
-			WireName: "search",
-			Kind: "object",
-			Fields: Index_DocumentMetadataConfigurations_SearchFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Relevance": ubx.FieldSpec{
+		WireName: "relevance",
+		Kind:     "object",
+		Fields:   Index_DocumentMetadataConfigurations_RelevanceFields,
+	},
+	"Search": ubx.FieldSpec{
+		WireName: "search",
+		Kind:     "object",
+		Fields:   Index_DocumentMetadataConfigurations_SearchFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Index_ServerSideEncryptionConfigurationFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+}
 
 var Index_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Index_UserTokenConfigurations_JsonTokenTypeConfigurationFields = ubx.FieldMap{
-		"GroupAttributeField": ubx.FieldSpec{WireName: "group_attribute_field"},
-		"UserNameAttributeField": ubx.FieldSpec{WireName: "user_name_attribute_field"},
-	}
+	"GroupAttributeField":    ubx.FieldSpec{WireName: "group_attribute_field"},
+	"UserNameAttributeField": ubx.FieldSpec{WireName: "user_name_attribute_field"},
+}
 
 var Index_UserTokenConfigurations_JwtTokenTypeConfigurationFields = ubx.FieldMap{
-		"ClaimRegex": ubx.FieldSpec{WireName: "claim_regex"},
-		"GroupAttributeField": ubx.FieldSpec{WireName: "group_attribute_field"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"KeyLocation": ubx.FieldSpec{WireName: "key_location"},
-		"SecretManagerArn": ubx.FieldSpec{WireName: "secret_manager_arn"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-		"UserNameAttributeField": ubx.FieldSpec{WireName: "user_name_attribute_field"},
-	}
+	"ClaimRegex":             ubx.FieldSpec{WireName: "claim_regex"},
+	"GroupAttributeField":    ubx.FieldSpec{WireName: "group_attribute_field"},
+	"Issuer":                 ubx.FieldSpec{WireName: "issuer"},
+	"KeyLocation":            ubx.FieldSpec{WireName: "key_location"},
+	"SecretManagerArn":       ubx.FieldSpec{WireName: "secret_manager_arn"},
+	"Url":                    ubx.FieldSpec{WireName: "url"},
+	"UserNameAttributeField": ubx.FieldSpec{WireName: "user_name_attribute_field"},
+}
 
 var Index_UserTokenConfigurationsFields = ubx.FieldMap{
-		"JsonTokenTypeConfiguration": ubx.FieldSpec{
-			WireName: "json_token_type_configuration",
-			Kind: "object",
-			Fields: Index_UserTokenConfigurations_JsonTokenTypeConfigurationFields,
-		},
-		"JwtTokenTypeConfiguration": ubx.FieldSpec{
-			WireName: "jwt_token_type_configuration",
-			Kind: "object",
-			Fields: Index_UserTokenConfigurations_JwtTokenTypeConfigurationFields,
-		},
-	}
+	"JsonTokenTypeConfiguration": ubx.FieldSpec{
+		WireName: "json_token_type_configuration",
+		Kind:     "object",
+		Fields:   Index_UserTokenConfigurations_JsonTokenTypeConfigurationFields,
+	},
+	"JwtTokenTypeConfiguration": ubx.FieldSpec{
+		WireName: "jwt_token_type_configuration",
+		Kind:     "object",
+		Fields:   Index_UserTokenConfigurations_JwtTokenTypeConfigurationFields,
+	},
+}
 
 type IndexConfig struct {
 	// Specifies the query and storage capacity units that configure the throughput and storage capacity of the Amazon Kendra index. (AI-inferred)
@@ -231,33 +231,33 @@ var Index = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CapacityUnits": ubx.FieldSpec{
 			WireName: "capacity_units",
-			Kind: "object",
-			Fields: Index_CapacityUnitsFields,
+			Kind:     "object",
+			Fields:   Index_CapacityUnitsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DocumentMetadataConfigurations": ubx.FieldSpec{
 			WireName: "document_metadata_configurations",
-			Kind: "list",
-			Fields: Index_DocumentMetadataConfigurationsFields,
+			Kind:     "list",
+			Fields:   Index_DocumentMetadataConfigurationsFields,
 		},
 		"Edition": ubx.FieldSpec{WireName: "edition"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"ServerSideEncryptionConfiguration": ubx.FieldSpec{
 			WireName: "server_side_encryption_configuration",
-			Kind: "object",
-			Fields: Index_ServerSideEncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   Index_ServerSideEncryptionConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Index_TagsFields,
+			Kind:     "list",
+			Fields:   Index_TagsFields,
 		},
 		"UserContextPolicy": ubx.FieldSpec{WireName: "user_context_policy"},
 		"UserTokenConfigurations": ubx.FieldSpec{
 			WireName: "user_token_configurations",
-			Kind: "list",
-			Fields: Index_UserTokenConfigurationsFields,
+			Kind:     "list",
+			Fields:   Index_UserTokenConfigurationsFields,
 		},
 	},
 }

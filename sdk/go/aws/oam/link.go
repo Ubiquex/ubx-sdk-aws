@@ -16,21 +16,21 @@ type Link_LinkConfiguration struct {
 }
 
 var Link_LinkConfiguration_LogGroupConfigurationFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-	}
+	"Filter": ubx.FieldSpec{WireName: "filter"},
+}
 
 var Link_LinkConfigurationFields = ubx.FieldMap{
-		"LogGroupConfiguration": ubx.FieldSpec{
-			WireName: "log_group_configuration",
-			Kind: "object",
-			Fields: Link_LinkConfiguration_LogGroupConfigurationFields,
-		},
-		"MetricConfiguration": ubx.FieldSpec{
-			WireName: "metric_configuration",
-			Kind: "object",
-			Fields: Link_LinkConfiguration_LogGroupConfigurationFields,
-		},
-	}
+	"LogGroupConfiguration": ubx.FieldSpec{
+		WireName: "log_group_configuration",
+		Kind:     "object",
+		Fields:   Link_LinkConfiguration_LogGroupConfigurationFields,
+	},
+	"MetricConfiguration": ubx.FieldSpec{
+		WireName: "metric_configuration",
+		Kind:     "object",
+		Fields:   Link_LinkConfiguration_LogGroupConfigurationFields,
+	},
+}
 
 type LinkConfig struct {
 	// Defines a template that generates the label for the link, which is used to identify the linked observability data within the monitoring account. (AI-inferred)
@@ -68,11 +68,11 @@ var Link = ubx.ResourceBinding{
 		"LabelTemplate": ubx.FieldSpec{WireName: "label_template"},
 		"LinkConfiguration": ubx.FieldSpec{
 			WireName: "link_configuration",
-			Kind: "object",
-			Fields: Link_LinkConfigurationFields,
+			Kind:     "object",
+			Fields:   Link_LinkConfigurationFields,
 		},
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
+		"ResourceTypes":  ubx.FieldSpec{WireName: "resource_types"},
 		"SinkIdentifier": ubx.FieldSpec{WireName: "sink_identifier"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":           ubx.FieldSpec{WireName: "tags"},
 	},
 }

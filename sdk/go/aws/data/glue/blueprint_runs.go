@@ -4,36 +4,36 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BlueprintRuns_BlueprintRuns struct {
-	BlueprintName any
-	CompletedOn any
-	ErrorMessage any
-	Parameters any
-	RoleArn any
+	BlueprintName        any
+	CompletedOn          any
+	ErrorMessage         any
+	Parameters           any
+	RoleArn              any
 	RollbackErrorMessage any
-	RunId any
-	StartedOn any
-	State any
-	WorkflowName any
+	RunId                any
+	StartedOn            any
+	State                any
+	WorkflowName         any
 }
 
 type BlueprintRunsConfig struct {
 	BlueprintName any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type BlueprintRunsAttrs struct {
 	BlueprintName any
 	BlueprintRuns any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 var BlueprintRuns = ubx.DataSourceBinding{
 	WireType: "aws_glue_blueprint_runs",
 	Fields: ubx.FieldMap{
 		"BlueprintName": ubx.FieldSpec{WireName: "blueprint_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

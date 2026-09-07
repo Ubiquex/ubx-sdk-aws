@@ -27,19 +27,19 @@ type VpcOrigin_VpcOriginEndpointConfig struct {
 }
 
 var VpcOrigin_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var VpcOrigin_VpcOriginEndpointConfigFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"Httpport": ubx.FieldSpec{WireName: "httpport"},
-		"Httpsport": ubx.FieldSpec{WireName: "httpsport"},
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OriginProtocolPolicy": ubx.FieldSpec{WireName: "origin_protocol_policy"},
-		"OriginSslprotocols": ubx.FieldSpec{WireName: "origin_sslprotocols"},
-	}
+	"Arn":                  ubx.FieldSpec{WireName: "arn"},
+	"Httpport":             ubx.FieldSpec{WireName: "httpport"},
+	"Httpsport":            ubx.FieldSpec{WireName: "httpsport"},
+	"IpAddressType":        ubx.FieldSpec{WireName: "ip_address_type"},
+	"Name":                 ubx.FieldSpec{WireName: "name"},
+	"OriginProtocolPolicy": ubx.FieldSpec{WireName: "origin_protocol_policy"},
+	"OriginSslprotocols":   ubx.FieldSpec{WireName: "origin_sslprotocols"},
+}
 
 type VpcOriginConfig struct {
 	// A complex type that contains zero or more ``Tag`` elements.
@@ -72,13 +72,13 @@ var VpcOrigin = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VpcOrigin_TagsFields,
+			Kind:     "list",
+			Fields:   VpcOrigin_TagsFields,
 		},
 		"VpcOriginEndpointConfig": ubx.FieldSpec{
 			WireName: "vpc_origin_endpoint_config",
-			Kind: "object",
-			Fields: VpcOrigin_VpcOriginEndpointConfigFields,
+			Kind:     "object",
+			Fields:   VpcOrigin_VpcOriginEndpointConfigFields,
 		},
 	},
 }

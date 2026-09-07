@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClusterJobs_JobListEntries struct {
 	CreationDate any
-	Description any
-	IsMaster any
-	JobId any
-	JobState any
-	JobType any
+	Description  any
+	IsMaster     any
+	JobId        any
+	JobState     any
+	JobType      any
 	SnowballType any
 }
 
 type ClusterJobsConfig struct {
-	ClusterId any
+	ClusterId  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ClusterJobsAttrs struct {
-	ClusterId any
+	ClusterId      any
 	JobListEntries any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 var ClusterJobs = ubx.DataSourceBinding{
 	WireType: "aws_snowball_cluster_jobs",
 	Fields: ubx.FieldMap{
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
+		"ClusterId":  ubx.FieldSpec{WireName: "cluster_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

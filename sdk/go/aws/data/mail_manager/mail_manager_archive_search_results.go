@@ -6,29 +6,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type MailManagerArchiveSearchResults_Rows_Envelope struct {
 	From any
 	Helo any
-	To any
+	To   any
 }
 
 type MailManagerArchiveSearchResults_Rows struct {
 	ArchivedMessageId any
-	Cc any
-	Date any
-	Envelope any
-	From any
-	HasAttachments any
-	InReplyTo any
-	IngressPointId any
-	MessageId any
-	ReceivedHeaders any
+	Cc                any
+	Date              any
+	Envelope          any
+	From              any
+	HasAttachments    any
+	InReplyTo         any
+	IngressPointId    any
+	MessageId         any
+	ReceivedHeaders   any
 	ReceivedTimestamp any
-	SenderHostname any
-	SenderIpAddress any
-	SourceArn any
-	Subject any
-	To any
-	Xmailer any
-	XoriginalMailer any
-	Xpriority any
+	SenderHostname    any
+	SenderIpAddress   any
+	SourceArn         any
+	Subject           any
+	To                any
+	Xmailer           any
+	XoriginalMailer   any
+	Xpriority         any
 }
 
 type MailManagerArchiveSearchResultsConfig struct {
@@ -36,7 +36,7 @@ type MailManagerArchiveSearchResultsConfig struct {
 }
 
 type MailManagerArchiveSearchResultsAttrs struct {
-	Rows any
+	Rows     any
 	SearchId any
 }
 

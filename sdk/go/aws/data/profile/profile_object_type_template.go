@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfileObjectTypeTemplate_Fields struct {
 	ContentType any
-	Source any
-	Target any
+	Source      any
+	Target      any
 }
 
 type ProfileObjectTypeTemplate_Keys struct {
-	FieldNames any
+	FieldNames          any
 	StandardIdentifiers any
 }
 
@@ -19,13 +19,13 @@ type ProfileObjectTypeTemplateConfig struct {
 }
 
 type ProfileObjectTypeTemplateAttrs struct {
-	AllowProfileCreation any
-	Fields any
-	Keys any
+	AllowProfileCreation             any
+	Fields                           any
+	Keys                             any
 	SourceLastUpdatedTimestampFormat any
-	SourceName any
-	SourceObject any
-	TemplateId any
+	SourceName                       any
+	SourceObject                     any
+	TemplateId                       any
 }
 
 var ProfileObjectTypeTemplate = ubx.DataSourceBinding{

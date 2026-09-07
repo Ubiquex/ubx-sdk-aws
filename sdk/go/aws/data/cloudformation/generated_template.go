@@ -4,34 +4,34 @@ package cloudformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GeneratedTemplate_Progress struct {
-	ResourcesFailed any
-	ResourcesPending any
+	ResourcesFailed     any
+	ResourcesPending    any
 	ResourcesProcessing any
-	ResourcesSucceeded any
+	ResourcesSucceeded  any
 }
 
 type GeneratedTemplate_Resources_Warnings_Properties struct {
-	Description any
+	Description  any
 	PropertyPath any
-	Required any
+	Required     any
 }
 
 type GeneratedTemplate_Resources_Warnings struct {
 	Properties any
-	Type any
+	Type       any
 }
 
 type GeneratedTemplate_Resources struct {
-	LogicalResourceId any
-	ResourceIdentifier any
-	ResourceStatus any
+	LogicalResourceId    any
+	ResourceIdentifier   any
+	ResourceStatus       any
 	ResourceStatusReason any
-	ResourceType any
-	Warnings any
+	ResourceType         any
+	Warnings             any
 }
 
 type GeneratedTemplate_TemplateConfiguration struct {
-	DeletionPolicy any
+	DeletionPolicy      any
 	UpdateReplacePolicy any
 }
 
@@ -40,19 +40,19 @@ type GeneratedTemplateConfig struct {
 }
 
 type GeneratedTemplateAttrs struct {
-	CreationTime any
-	GeneratedTemplateId any
+	CreationTime          any
+	GeneratedTemplateId   any
 	GeneratedTemplateName any
-	LastUpdatedTime any
+	LastUpdatedTime       any
 	// <p>A summary of the progress of the template generation.</p>
-	Progress any
-	Resources any
-	StackId any
-	Status any
+	Progress     any
+	Resources    any
+	StackId      any
+	Status       any
 	StatusReason any
 	// <p>The configuration details of a generated template.</p>
 	TemplateConfiguration any
-	TotalWarnings any
+	TotalWarnings         any
 }
 
 var GeneratedTemplate = ubx.DataSourceBinding{

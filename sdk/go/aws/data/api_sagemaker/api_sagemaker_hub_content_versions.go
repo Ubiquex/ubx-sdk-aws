@@ -4,63 +4,63 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerHubContentVersions_HubContentSummaries struct {
-	CreationTime any
-	DocumentSchemaVersion any
-	HubContentArn any
-	HubContentDescription any
-	HubContentDisplayName any
-	HubContentName any
-	HubContentSearchKeywords any
-	HubContentStatus any
-	HubContentType any
-	HubContentVersion any
-	OriginalCreationTime any
+	CreationTime                 any
+	DocumentSchemaVersion        any
+	HubContentArn                any
+	HubContentDescription        any
+	HubContentDisplayName        any
+	HubContentName               any
+	HubContentSearchKeywords     any
+	HubContentStatus             any
+	HubContentType               any
+	HubContentVersion            any
+	OriginalCreationTime         any
 	SageMakerPublicHubContentArn any
-	SupportStatus any
+	SupportStatus                any
 }
 
 type ApiSagemakerHubContentVersionsConfig struct {
-	CreationTimeAfter any
+	CreationTimeAfter  any
 	CreationTimeBefore any
-	HubContentName any
-	HubContentType any
-	HubName any
-	MaxResults any
-	MaxSchemaVersion any
-	MinVersion any
-	NextToken any
-	SortBy any
-	SortOrder any
+	HubContentName     any
+	HubContentType     any
+	HubName            any
+	MaxResults         any
+	MaxSchemaVersion   any
+	MinVersion         any
+	NextToken          any
+	SortBy             any
+	SortOrder          any
 }
 
 type ApiSagemakerHubContentVersionsAttrs struct {
-	CreationTimeAfter any
-	CreationTimeBefore any
-	HubContentName any
+	CreationTimeAfter   any
+	CreationTimeBefore  any
+	HubContentName      any
 	HubContentSummaries any
-	HubContentType any
-	HubName any
-	MaxResults any
-	MaxSchemaVersion any
-	MinVersion any
-	NextToken any
-	SortBy any
-	SortOrder any
+	HubContentType      any
+	HubName             any
+	MaxResults          any
+	MaxSchemaVersion    any
+	MinVersion          any
+	NextToken           any
+	SortBy              any
+	SortOrder           any
 }
 
 var ApiSagemakerHubContentVersions = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_hub_content_versions",
 	Fields: ubx.FieldMap{
-		"CreationTimeAfter": ubx.FieldSpec{WireName: "creation_time_after"},
+		"CreationTimeAfter":  ubx.FieldSpec{WireName: "creation_time_after"},
 		"CreationTimeBefore": ubx.FieldSpec{WireName: "creation_time_before"},
-		"HubContentName": ubx.FieldSpec{WireName: "hub_content_name"},
-		"HubContentType": ubx.FieldSpec{WireName: "hub_content_type"},
-		"HubName": ubx.FieldSpec{WireName: "hub_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MaxSchemaVersion": ubx.FieldSpec{WireName: "max_schema_version"},
-		"MinVersion": ubx.FieldSpec{WireName: "min_version"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"HubContentName":     ubx.FieldSpec{WireName: "hub_content_name"},
+		"HubContentType":     ubx.FieldSpec{WireName: "hub_content_type"},
+		"HubName":            ubx.FieldSpec{WireName: "hub_name"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"MaxSchemaVersion":   ubx.FieldSpec{WireName: "max_schema_version"},
+		"MinVersion":         ubx.FieldSpec{WireName: "min_version"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":             ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":          ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

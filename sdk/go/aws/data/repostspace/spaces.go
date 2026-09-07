@@ -5,44 +5,44 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Spaces_Spaces_SupportedEmailDomains struct {
 	AllowedDomains any
-	Enabled any
+	Enabled        any
 }
 
 type Spaces_Spaces struct {
-	Arn any
-	ConfigurationStatus any
-	ContentSize any
-	CreateDateTime any
-	DeleteDateTime any
-	Description any
-	Name any
-	RandomDomain any
-	SpaceId any
-	Status any
-	StorageLimit any
+	Arn                   any
+	ConfigurationStatus   any
+	ContentSize           any
+	CreateDateTime        any
+	DeleteDateTime        any
+	Description           any
+	Name                  any
+	RandomDomain          any
+	SpaceId               any
+	Status                any
+	StorageLimit          any
 	SupportedEmailDomains any
-	Tier any
-	UserCount any
-	UserKmskey any
-	VanityDomain any
-	VanityDomainStatus any
+	Tier                  any
+	UserCount             any
+	UserKmskey            any
+	VanityDomain          any
+	VanityDomainStatus    any
 }
 
 type SpacesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SpacesAttrs struct {
 	MaxResults any
-	NextToken any
-	Spaces any
+	NextToken  any
+	Spaces     any
 }
 
 var Spaces = ubx.DataSourceBinding{
 	WireType: "aws_repostspace_spaces",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

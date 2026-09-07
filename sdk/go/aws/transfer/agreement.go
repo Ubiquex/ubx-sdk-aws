@@ -18,22 +18,22 @@ type Agreement_CustomDirectories struct {
 
 type Agreement_Tags struct {
 	// The key of a tag attached to an AWS Transfer Family agreement, used to categorize or identify the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Agreement_CustomDirectoriesFields = ubx.FieldMap{
-		"FailedFilesDirectory": ubx.FieldSpec{WireName: "failed_files_directory"},
-		"MdnFilesDirectory": ubx.FieldSpec{WireName: "mdn_files_directory"},
-		"PayloadFilesDirectory": ubx.FieldSpec{WireName: "payload_files_directory"},
-		"StatusFilesDirectory": ubx.FieldSpec{WireName: "status_files_directory"},
-		"TemporaryFilesDirectory": ubx.FieldSpec{WireName: "temporary_files_directory"},
-	}
+	"FailedFilesDirectory":    ubx.FieldSpec{WireName: "failed_files_directory"},
+	"MdnFilesDirectory":       ubx.FieldSpec{WireName: "mdn_files_directory"},
+	"PayloadFilesDirectory":   ubx.FieldSpec{WireName: "payload_files_directory"},
+	"StatusFilesDirectory":    ubx.FieldSpec{WireName: "status_files_directory"},
+	"TemporaryFilesDirectory": ubx.FieldSpec{WireName: "temporary_files_directory"},
+}
 
 var Agreement_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AgreementConfig struct {
 	// Specifies the access role for the agreement.
@@ -92,24 +92,24 @@ type AgreementAttrs struct {
 var Agreement = ubx.ResourceBinding{
 	WireType: "aws_transfer_agreement",
 	Fields: ubx.FieldMap{
-		"AccessRole": ubx.FieldSpec{WireName: "access_role"},
+		"AccessRole":    ubx.FieldSpec{WireName: "access_role"},
 		"BaseDirectory": ubx.FieldSpec{WireName: "base_directory"},
 		"CustomDirectories": ubx.FieldSpec{
 			WireName: "custom_directories",
-			Kind: "object",
-			Fields: Agreement_CustomDirectoriesFields,
+			Kind:     "object",
+			Fields:   Agreement_CustomDirectoriesFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
 		"EnforceMessageSigning": ubx.FieldSpec{WireName: "enforce_message_signing"},
-		"LocalProfileId": ubx.FieldSpec{WireName: "local_profile_id"},
-		"PartnerProfileId": ubx.FieldSpec{WireName: "partner_profile_id"},
-		"PreserveFilename": ubx.FieldSpec{WireName: "preserve_filename"},
-		"ServerId": ubx.FieldSpec{WireName: "server_id"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"LocalProfileId":        ubx.FieldSpec{WireName: "local_profile_id"},
+		"PartnerProfileId":      ubx.FieldSpec{WireName: "partner_profile_id"},
+		"PreserveFilename":      ubx.FieldSpec{WireName: "preserve_filename"},
+		"ServerId":              ubx.FieldSpec{WireName: "server_id"},
+		"Status":                ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Agreement_TagsFields,
+			Kind:     "list",
+			Fields:   Agreement_TagsFields,
 		},
 	},
 }

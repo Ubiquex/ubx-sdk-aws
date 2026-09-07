@@ -112,112 +112,112 @@ type InstanceGroupConfig_EbsConfiguration struct {
 }
 
 var InstanceGroupConfig_AutoScalingPolicy_ConstraintsFields = ubx.FieldMap{
-		"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
-		"MinCapacity": ubx.FieldSpec{WireName: "min_capacity"},
-	}
+	"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
+	"MinCapacity": ubx.FieldSpec{WireName: "min_capacity"},
+}
 
 var InstanceGroupConfig_AutoScalingPolicy_Rules_Action_SimpleScalingPolicyConfigurationFields = ubx.FieldMap{
-		"AdjustmentType": ubx.FieldSpec{WireName: "adjustment_type"},
-		"CoolDown": ubx.FieldSpec{WireName: "cool_down"},
-		"ScalingAdjustment": ubx.FieldSpec{WireName: "scaling_adjustment"},
-	}
+	"AdjustmentType":    ubx.FieldSpec{WireName: "adjustment_type"},
+	"CoolDown":          ubx.FieldSpec{WireName: "cool_down"},
+	"ScalingAdjustment": ubx.FieldSpec{WireName: "scaling_adjustment"},
+}
 
 var InstanceGroupConfig_AutoScalingPolicy_Rules_ActionFields = ubx.FieldMap{
-		"Market": ubx.FieldSpec{WireName: "market"},
-		"SimpleScalingPolicyConfiguration": ubx.FieldSpec{
-			WireName: "simple_scaling_policy_configuration",
-			Kind: "object",
-			Fields: InstanceGroupConfig_AutoScalingPolicy_Rules_Action_SimpleScalingPolicyConfigurationFields,
-		},
-	}
+	"Market": ubx.FieldSpec{WireName: "market"},
+	"SimpleScalingPolicyConfiguration": ubx.FieldSpec{
+		WireName: "simple_scaling_policy_configuration",
+		Kind:     "object",
+		Fields:   InstanceGroupConfig_AutoScalingPolicy_Rules_Action_SimpleScalingPolicyConfigurationFields,
+	},
+}
 
 var InstanceGroupConfig_AutoScalingPolicy_Rules_Trigger_CloudWatchAlarmDefinition_DimensionsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var InstanceGroupConfig_AutoScalingPolicy_Rules_Trigger_CloudWatchAlarmDefinitionFields = ubx.FieldMap{
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: InstanceGroupConfig_AutoScalingPolicy_Rules_Trigger_CloudWatchAlarmDefinition_DimensionsFields,
-		},
-		"EvaluationPeriods": ubx.FieldSpec{WireName: "evaluation_periods"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"Statistic": ubx.FieldSpec{WireName: "statistic"},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-	}
+	"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   InstanceGroupConfig_AutoScalingPolicy_Rules_Trigger_CloudWatchAlarmDefinition_DimensionsFields,
+	},
+	"EvaluationPeriods": ubx.FieldSpec{WireName: "evaluation_periods"},
+	"MetricName":        ubx.FieldSpec{WireName: "metric_name"},
+	"Namespace":         ubx.FieldSpec{WireName: "namespace"},
+	"Period":            ubx.FieldSpec{WireName: "period"},
+	"Statistic":         ubx.FieldSpec{WireName: "statistic"},
+	"Threshold":         ubx.FieldSpec{WireName: "threshold"},
+	"Unit":              ubx.FieldSpec{WireName: "unit"},
+}
 
 var InstanceGroupConfig_AutoScalingPolicy_Rules_TriggerFields = ubx.FieldMap{
-		"CloudWatchAlarmDefinition": ubx.FieldSpec{
-			WireName: "cloud_watch_alarm_definition",
-			Kind: "object",
-			Fields: InstanceGroupConfig_AutoScalingPolicy_Rules_Trigger_CloudWatchAlarmDefinitionFields,
-		},
-	}
+	"CloudWatchAlarmDefinition": ubx.FieldSpec{
+		WireName: "cloud_watch_alarm_definition",
+		Kind:     "object",
+		Fields:   InstanceGroupConfig_AutoScalingPolicy_Rules_Trigger_CloudWatchAlarmDefinitionFields,
+	},
+}
 
 var InstanceGroupConfig_AutoScalingPolicy_RulesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: InstanceGroupConfig_AutoScalingPolicy_Rules_ActionFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Trigger": ubx.FieldSpec{
-			WireName: "trigger",
-			Kind: "object",
-			Fields: InstanceGroupConfig_AutoScalingPolicy_Rules_TriggerFields,
-		},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   InstanceGroupConfig_AutoScalingPolicy_Rules_ActionFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Trigger": ubx.FieldSpec{
+		WireName: "trigger",
+		Kind:     "object",
+		Fields:   InstanceGroupConfig_AutoScalingPolicy_Rules_TriggerFields,
+	},
+}
 
 var InstanceGroupConfig_AutoScalingPolicyFields = ubx.FieldMap{
-		"Constraints": ubx.FieldSpec{
-			WireName: "constraints",
-			Kind: "object",
-			Fields: InstanceGroupConfig_AutoScalingPolicy_ConstraintsFields,
-		},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: InstanceGroupConfig_AutoScalingPolicy_RulesFields,
-		},
-	}
+	"Constraints": ubx.FieldSpec{
+		WireName: "constraints",
+		Kind:     "object",
+		Fields:   InstanceGroupConfig_AutoScalingPolicy_ConstraintsFields,
+	},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   InstanceGroupConfig_AutoScalingPolicy_RulesFields,
+	},
+}
 
 var InstanceGroupConfig_ConfigurationsFields = ubx.FieldMap{
-		"Classification": ubx.FieldSpec{WireName: "classification"},
-		"ConfigurationProperties": ubx.FieldSpec{WireName: "configuration_properties"},
-		"Configurations": ubx.FieldSpec{WireName: "configurations"},
-	}
+	"Classification":          ubx.FieldSpec{WireName: "classification"},
+	"ConfigurationProperties": ubx.FieldSpec{WireName: "configuration_properties"},
+	"Configurations":          ubx.FieldSpec{WireName: "configurations"},
+}
 
 var InstanceGroupConfig_EbsConfiguration_EbsBlockDeviceConfigs_VolumeSpecificationFields = ubx.FieldMap{
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"SizeInGb": ubx.FieldSpec{WireName: "size_in_gb"},
-		"Throughput": ubx.FieldSpec{WireName: "throughput"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
-	}
+	"Iops":       ubx.FieldSpec{WireName: "iops"},
+	"SizeInGb":   ubx.FieldSpec{WireName: "size_in_gb"},
+	"Throughput": ubx.FieldSpec{WireName: "throughput"},
+	"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
+}
 
 var InstanceGroupConfig_EbsConfiguration_EbsBlockDeviceConfigsFields = ubx.FieldMap{
-		"VolumeSpecification": ubx.FieldSpec{
-			WireName: "volume_specification",
-			Kind: "object",
-			Fields: InstanceGroupConfig_EbsConfiguration_EbsBlockDeviceConfigs_VolumeSpecificationFields,
-		},
-		"VolumesPerInstance": ubx.FieldSpec{WireName: "volumes_per_instance"},
-	}
+	"VolumeSpecification": ubx.FieldSpec{
+		WireName: "volume_specification",
+		Kind:     "object",
+		Fields:   InstanceGroupConfig_EbsConfiguration_EbsBlockDeviceConfigs_VolumeSpecificationFields,
+	},
+	"VolumesPerInstance": ubx.FieldSpec{WireName: "volumes_per_instance"},
+}
 
 var InstanceGroupConfig_EbsConfigurationFields = ubx.FieldMap{
-		"EbsBlockDeviceConfigs": ubx.FieldSpec{
-			WireName: "ebs_block_device_configs",
-			Kind: "list",
-			Fields: InstanceGroupConfig_EbsConfiguration_EbsBlockDeviceConfigsFields,
-		},
-		"EbsOptimized": ubx.FieldSpec{WireName: "ebs_optimized"},
-	}
+	"EbsBlockDeviceConfigs": ubx.FieldSpec{
+		WireName: "ebs_block_device_configs",
+		Kind:     "list",
+		Fields:   InstanceGroupConfig_EbsConfiguration_EbsBlockDeviceConfigsFields,
+	},
+	"EbsOptimized": ubx.FieldSpec{WireName: "ebs_optimized"},
+}
 
 type InstanceGroupConfigConfig struct {
 	// The auto scaling policy for the EMR instance group, defining constraints on instance counts and CloudWatch metric-based scale-in/scale-out rules. (AI-inferred)
@@ -276,26 +276,26 @@ var InstanceGroupConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoScalingPolicy": ubx.FieldSpec{
 			WireName: "auto_scaling_policy",
-			Kind: "object",
-			Fields: InstanceGroupConfig_AutoScalingPolicyFields,
+			Kind:     "object",
+			Fields:   InstanceGroupConfig_AutoScalingPolicyFields,
 		},
 		"BidPrice": ubx.FieldSpec{WireName: "bid_price"},
 		"Configurations": ubx.FieldSpec{
 			WireName: "configurations",
-			Kind: "list",
-			Fields: InstanceGroupConfig_ConfigurationsFields,
+			Kind:     "list",
+			Fields:   InstanceGroupConfig_ConfigurationsFields,
 		},
 		"CustomAmiId": ubx.FieldSpec{WireName: "custom_ami_id"},
 		"EbsConfiguration": ubx.FieldSpec{
 			WireName: "ebs_configuration",
-			Kind: "object",
-			Fields: InstanceGroupConfig_EbsConfigurationFields,
+			Kind:     "object",
+			Fields:   InstanceGroupConfig_EbsConfigurationFields,
 		},
 		"InstanceCount": ubx.FieldSpec{WireName: "instance_count"},
-		"InstanceRole": ubx.FieldSpec{WireName: "instance_role"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"JobFlowId": ubx.FieldSpec{WireName: "job_flow_id"},
-		"Market": ubx.FieldSpec{WireName: "market"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"InstanceRole":  ubx.FieldSpec{WireName: "instance_role"},
+		"InstanceType":  ubx.FieldSpec{WireName: "instance_type"},
+		"JobFlowId":     ubx.FieldSpec{WireName: "job_flow_id"},
+		"Market":        ubx.FieldSpec{WireName: "market"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 	},
 }

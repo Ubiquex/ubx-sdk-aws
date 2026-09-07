@@ -13,20 +13,20 @@ type Alias_RoutingStrategy struct {
 }
 
 type Alias_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Alias_RoutingStrategyFields = ubx.FieldMap{
-		"FleetId": ubx.FieldSpec{WireName: "fleet_id"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"FleetId": ubx.FieldSpec{WireName: "fleet_id"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 var Alias_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AliasConfig struct {
 	// A human-readable description of the alias.
@@ -58,16 +58,16 @@ var Alias = ubx.ResourceBinding{
 	WireType: "aws_game_lift_alias",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"RoutingStrategy": ubx.FieldSpec{
 			WireName: "routing_strategy",
-			Kind: "object",
-			Fields: Alias_RoutingStrategyFields,
+			Kind:     "object",
+			Fields:   Alias_RoutingStrategyFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Alias_TagsFields,
+			Kind:     "list",
+			Fields:   Alias_TagsFields,
 		},
 	},
 }

@@ -4,14 +4,14 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type JourneyDateRangeKpi_JourneyDateRangeKpiResponse_KpiResult_Rows_GroupedBys struct {
-	Key any
-	Type any
+	Key   any
+	Type  any
 	Value any
 }
 
 type JourneyDateRangeKpi_JourneyDateRangeKpiResponse_KpiResult_Rows struct {
 	GroupedBys any
-	Values any
+	Values     any
 }
 
 type JourneyDateRangeKpi_JourneyDateRangeKpiResponse_KpiResult struct {
@@ -20,9 +20,9 @@ type JourneyDateRangeKpi_JourneyDateRangeKpiResponse_KpiResult struct {
 
 type JourneyDateRangeKpi_JourneyDateRangeKpiResponse struct {
 	ApplicationId any
-	EndTime any
-	JourneyId any
-	KpiName any
+	EndTime       any
+	JourneyId     any
+	KpiName       any
 	// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
 	KpiResult any
 	NextToken any
@@ -31,35 +31,35 @@ type JourneyDateRangeKpi_JourneyDateRangeKpiResponse struct {
 
 type JourneyDateRangeKpiConfig struct {
 	ApplicationId any
-	EndTime any
-	JourneyId any
-	KpiName any
-	NextToken any
-	PageSize any
-	StartTime any
+	EndTime       any
+	JourneyId     any
+	KpiName       any
+	NextToken     any
+	PageSize      any
+	StartTime     any
 }
 
 type JourneyDateRangeKpiAttrs struct {
 	ApplicationId any
-	EndTime any
+	EndTime       any
 	// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
 	JourneyDateRangeKpiResponse any
-	JourneyId any
-	KpiName any
-	NextToken any
-	PageSize any
-	StartTime any
+	JourneyId                   any
+	KpiName                     any
+	NextToken                   any
+	PageSize                    any
+	StartTime                   any
 }
 
 var JourneyDateRangeKpi = ubx.DataSourceBinding{
 	WireType: "aws_pinpoint_journey_date_range_kpi",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"JourneyId": ubx.FieldSpec{WireName: "journey_id"},
-		"KpiName": ubx.FieldSpec{WireName: "kpi_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"EndTime":       ubx.FieldSpec{WireName: "end_time"},
+		"JourneyId":     ubx.FieldSpec{WireName: "journey_id"},
+		"KpiName":       ubx.FieldSpec{WireName: "kpi_name"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"PageSize":      ubx.FieldSpec{WireName: "page_size"},
+		"StartTime":     ubx.FieldSpec{WireName: "start_time"},
 	},
 }

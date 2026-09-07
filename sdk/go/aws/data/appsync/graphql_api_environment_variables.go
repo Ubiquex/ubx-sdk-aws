@@ -8,7 +8,7 @@ type GraphqlApiEnvironmentVariablesConfig struct {
 }
 
 type GraphqlApiEnvironmentVariablesAttrs struct {
-	ApiId any
+	ApiId                any
 	EnvironmentVariables any
 }
 

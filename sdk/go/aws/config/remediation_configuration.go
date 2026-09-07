@@ -16,17 +16,17 @@ type RemediationConfiguration_ExecutionControls struct {
 }
 
 var RemediationConfiguration_ExecutionControls_SsmControlsFields = ubx.FieldMap{
-		"ConcurrentExecutionRatePercentage": ubx.FieldSpec{WireName: "concurrent_execution_rate_percentage"},
-		"ErrorPercentage": ubx.FieldSpec{WireName: "error_percentage"},
-	}
+	"ConcurrentExecutionRatePercentage": ubx.FieldSpec{WireName: "concurrent_execution_rate_percentage"},
+	"ErrorPercentage":                   ubx.FieldSpec{WireName: "error_percentage"},
+}
 
 var RemediationConfiguration_ExecutionControlsFields = ubx.FieldMap{
-		"SsmControls": ubx.FieldSpec{
-			WireName: "ssm_controls",
-			Kind: "object",
-			Fields: RemediationConfiguration_ExecutionControls_SsmControlsFields,
-		},
-	}
+	"SsmControls": ubx.FieldSpec{
+		WireName: "ssm_controls",
+		Kind:     "object",
+		Fields:   RemediationConfiguration_ExecutionControls_SsmControlsFields,
+	},
+}
 
 type RemediationConfigurationConfig struct {
 	// When set to true, AWS Config automatically executes the remediation action on noncompliant resources associated with the rule; when false, remediation must be invoked manually. (AI-inferred)
@@ -77,19 +77,19 @@ type RemediationConfigurationAttrs struct {
 var RemediationConfiguration = ubx.ResourceBinding{
 	WireType: "aws_config_remediation_configuration",
 	Fields: ubx.FieldMap{
-		"Automatic": ubx.FieldSpec{WireName: "automatic"},
+		"Automatic":      ubx.FieldSpec{WireName: "automatic"},
 		"ConfigRuleName": ubx.FieldSpec{WireName: "config_rule_name"},
 		"ExecutionControls": ubx.FieldSpec{
 			WireName: "execution_controls",
-			Kind: "object",
-			Fields: RemediationConfiguration_ExecutionControlsFields,
+			Kind:     "object",
+			Fields:   RemediationConfiguration_ExecutionControlsFields,
 		},
 		"MaximumAutomaticAttempts": ubx.FieldSpec{WireName: "maximum_automatic_attempts"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"RetryAttemptSeconds": ubx.FieldSpec{WireName: "retry_attempt_seconds"},
-		"TargetId": ubx.FieldSpec{WireName: "target_id"},
-		"TargetType": ubx.FieldSpec{WireName: "target_type"},
-		"TargetVersion": ubx.FieldSpec{WireName: "target_version"},
+		"Parameters":               ubx.FieldSpec{WireName: "parameters"},
+		"ResourceType":             ubx.FieldSpec{WireName: "resource_type"},
+		"RetryAttemptSeconds":      ubx.FieldSpec{WireName: "retry_attempt_seconds"},
+		"TargetId":                 ubx.FieldSpec{WireName: "target_id"},
+		"TargetType":               ubx.FieldSpec{WireName: "target_type"},
+		"TargetVersion":            ubx.FieldSpec{WireName: "target_version"},
 	},
 }

@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataAtsIotThingShadowConfig struct {
 	ShadowName any
-	ThingName any
+	ThingName  any
 }
 
 type DataAtsIotThingShadowAttrs struct {
-	Payload any
+	Payload    any
 	ShadowName any
-	ThingName any
+	ThingName  any
 }
 
 var DataAtsIotThingShadow = ubx.DataSourceBinding{
 	WireType: "aws_data_ats_iot_thing_shadow",
 	Fields: ubx.FieldMap{
 		"ShadowName": ubx.FieldSpec{WireName: "shadow_name"},
-		"ThingName": ubx.FieldSpec{WireName: "thing_name"},
+		"ThingName":  ubx.FieldSpec{WireName: "thing_name"},
 	},
 }

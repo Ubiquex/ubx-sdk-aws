@@ -11,9 +11,9 @@ type ResolverQueryLoggingConfig_Tags struct {
 }
 
 var ResolverQueryLoggingConfig_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ResolverQueryLoggingConfigConfig struct {
 	// destination arn
@@ -53,11 +53,11 @@ var ResolverQueryLoggingConfig = ubx.ResourceBinding{
 	WireType: "aws_route53_resolver_resolver_query_logging_config",
 	Fields: ubx.FieldMap{
 		"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ResolverQueryLoggingConfig_TagsFields,
+			Kind:     "list",
+			Fields:   ResolverQueryLoggingConfig_TagsFields,
 		},
 	},
 }

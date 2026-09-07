@@ -4,10 +4,10 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainAutoTunes_AutoTunes_AutoTuneDetails_ScheduledAutoTuneDetails struct {
-	Action any
+	Action     any
 	ActionType any
-	Date any
-	Severity any
+	Date       any
+	Severity   any
 }
 
 type DomainAutoTunes_AutoTunes_AutoTuneDetails struct {
@@ -16,7 +16,7 @@ type DomainAutoTunes_AutoTunes_AutoTuneDetails struct {
 
 type DomainAutoTunes_AutoTunes struct {
 	AutoTuneDetails any
-	AutoTuneType any
+	AutoTuneType    any
 }
 
 type DomainAutoTunesConfig struct {
@@ -43,6 +43,6 @@ var DomainAutoTunes = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -9,7 +9,7 @@ type FhirimportJobs_ImportJobPropertiesList_InputDataConfig struct {
 
 type FhirimportJobs_ImportJobPropertiesList_JobOutputDataConfig_S3Configuration struct {
 	KmsKeyId any
-	S3Uri any
+	S3Uri    any
 }
 
 type FhirimportJobs_ImportJobPropertiesList_JobOutputDataConfig struct {
@@ -17,38 +17,38 @@ type FhirimportJobs_ImportJobPropertiesList_JobOutputDataConfig struct {
 }
 
 type FhirimportJobs_ImportJobPropertiesList_JobProgressReport struct {
-	Throughput any
-	TotalFilesConverted any
-	TotalNumberOfFilesReadWithCustomerError any
-	TotalNumberOfImportedFiles any
-	TotalNumberOfImportedNonFhirFiles any
+	Throughput                                     any
+	TotalFilesConverted                            any
+	TotalNumberOfFilesReadWithCustomerError        any
+	TotalNumberOfImportedFiles                     any
+	TotalNumberOfImportedNonFhirFiles              any
 	TotalNumberOfNonFhirFilesReadWithCustomerError any
-	TotalNumberOfNonFhirResourcesImported any
-	TotalNumberOfNonFhirResourcesScanned any
+	TotalNumberOfNonFhirResourcesImported          any
+	TotalNumberOfNonFhirResourcesScanned           any
 	TotalNumberOfNonFhirResourcesWithCustomerError any
-	TotalNumberOfResourcesImported any
-	TotalNumberOfResourcesScanned any
-	TotalNumberOfResourcesWithCustomerError any
-	TotalNumberOfScannedFiles any
-	TotalNumberOfScannedNonFhirFiles any
-	TotalResourcesGenerated any
-	TotalSizeOfScannedFilesInMb any
-	TotalSizeOfScannedNonFhirFilesInMb any
+	TotalNumberOfResourcesImported                 any
+	TotalNumberOfResourcesScanned                  any
+	TotalNumberOfResourcesWithCustomerError        any
+	TotalNumberOfScannedFiles                      any
+	TotalNumberOfScannedNonFhirFiles               any
+	TotalResourcesGenerated                        any
+	TotalSizeOfScannedFilesInMb                    any
+	TotalSizeOfScannedNonFhirFilesInMb             any
 }
 
 type FhirimportJobs_ImportJobPropertiesList struct {
-	DataAccessRoleArn any
-	DatastoreId any
-	EndTime any
-	InputDataConfig any
-	JobId any
-	JobName any
+	DataAccessRoleArn   any
+	DatastoreId         any
+	EndTime             any
+	InputDataConfig     any
+	JobId               any
+	JobName             any
 	JobOutputDataConfig any
-	JobProgressReport any
-	JobStatus any
-	Message any
-	SubmitTime any
-	ValidationLevel any
+	JobProgressReport   any
+	JobStatus           any
+	Message             any
+	SubmitTime          any
+	ValidationLevel     any
 }
 
 type FhirimportJobsConfig struct {
@@ -70,7 +70,7 @@ type FhirimportJobsConfig struct {
 
 type FhirimportJobsAttrs struct {
 	// The identifier of a data store.
-	DatastoreId any
+	DatastoreId             any
 	ImportJobPropertiesList any
 	// The human-readable name of a job.
 	JobName any
@@ -89,12 +89,12 @@ type FhirimportJobsAttrs struct {
 var FhirimportJobs = ubx.DataSourceBinding{
 	WireType: "aws_healthlake_fhirimport_jobs",
 	Fields: ubx.FieldMap{
-		"DatastoreId": ubx.FieldSpec{WireName: "datastore_id"},
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"JobStatus": ubx.FieldSpec{WireName: "job_status"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SubmittedAfter": ubx.FieldSpec{WireName: "submitted_after"},
+		"DatastoreId":     ubx.FieldSpec{WireName: "datastore_id"},
+		"JobName":         ubx.FieldSpec{WireName: "job_name"},
+		"JobStatus":       ubx.FieldSpec{WireName: "job_status"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"SubmittedAfter":  ubx.FieldSpec{WireName: "submitted_after"},
 		"SubmittedBefore": ubx.FieldSpec{WireName: "submitted_before"},
 	},
 }

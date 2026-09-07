@@ -4,29 +4,29 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Integrations_IntegrationSummaries struct {
-	IntegrationName any
+	IntegrationName   any
 	IntegrationStatus any
-	IntegrationType any
+	IntegrationType   any
 }
 
 type IntegrationsConfig struct {
 	IntegrationNamePrefix any
-	IntegrationStatus any
-	IntegrationType any
+	IntegrationStatus     any
+	IntegrationType       any
 }
 
 type IntegrationsAttrs struct {
 	IntegrationNamePrefix any
-	IntegrationStatus any
-	IntegrationSummaries any
-	IntegrationType any
+	IntegrationStatus     any
+	IntegrationSummaries  any
+	IntegrationType       any
 }
 
 var Integrations = ubx.DataSourceBinding{
 	WireType: "aws_logs_integrations",
 	Fields: ubx.FieldMap{
 		"IntegrationNamePrefix": ubx.FieldSpec{WireName: "integration_name_prefix"},
-		"IntegrationStatus": ubx.FieldSpec{WireName: "integration_status"},
-		"IntegrationType": ubx.FieldSpec{WireName: "integration_type"},
+		"IntegrationStatus":     ubx.FieldSpec{WireName: "integration_status"},
+		"IntegrationType":       ubx.FieldSpec{WireName: "integration_type"},
 	},
 }

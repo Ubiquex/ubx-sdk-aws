@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamSession_DisplayConfiguration_Resolution struct {
 	Height any
-	Width any
+	Width  any
 }
 
 type StreamSession_DisplayConfiguration struct {
@@ -14,8 +14,8 @@ type StreamSession_DisplayConfiguration struct {
 }
 
 type StreamSession_ExportFilesMetadata struct {
-	OutputUri any
-	Status any
+	OutputUri    any
+	Status       any
 	StatusReason any
 }
 
@@ -24,45 +24,45 @@ type StreamSession_PerformanceStatsConfiguration struct {
 }
 
 type StreamSessionConfig struct {
-	Identifier any
+	Identifier              any
 	StreamSessionIdentifier any
 }
 
 type StreamSessionAttrs struct {
 	AdditionalEnvironmentVariables any
-	AdditionalLaunchArgs any
-	ApplicationArn any
-	Arn any
-	ConnectionTimeoutSeconds any
-	CreatedAt any
-	Description any
+	AdditionalLaunchArgs           any
+	ApplicationArn                 any
+	Arn                            any
+	ConnectionTimeoutSeconds       any
+	CreatedAt                      any
+	Description                    any
 	// <p>The virtual monitor settings for a stream session, including the resolution. If not specified, the stream session uses the default resolution of 1920 × 1080.</p>
 	DisplayConfiguration any
 	// <p>Provides details about the stream session's exported files. </p>
 	ExportFilesMetadata any
-	Identifier any
-	LastUpdatedAt any
-	Location any
-	LogFileLocationUri any
+	Identifier          any
+	LastUpdatedAt       any
+	Location            any
+	LogFileLocationUri  any
 	// <p>Configuration settings for sharing the stream session's performance stats with the client</p>
 	PerformanceStatsConfiguration any
-	Protocol any
-	RoleArn any
-	SessionLengthSeconds any
-	SignalRequest any
-	SignalResponse any
-	Status any
-	StatusReason any
-	StreamGroupId any
-	StreamSessionIdentifier any
-	UserId any
-	WebSdkProtocolUrl any
+	Protocol                      any
+	RoleArn                       any
+	SessionLengthSeconds          any
+	SignalRequest                 any
+	SignalResponse                any
+	Status                        any
+	StatusReason                  any
+	StreamGroupId                 any
+	StreamSessionIdentifier       any
+	UserId                        any
+	WebSdkProtocolUrl             any
 }
 
 var StreamSession = ubx.DataSourceBinding{
 	WireType: "aws_gameliftstreams_stream_session",
 	Fields: ubx.FieldMap{
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
+		"Identifier":              ubx.FieldSpec{WireName: "identifier"},
 		"StreamSessionIdentifier": ubx.FieldSpec{WireName: "stream_session_identifier"},
 	},
 }

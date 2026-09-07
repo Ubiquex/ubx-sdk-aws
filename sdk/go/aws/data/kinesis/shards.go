@@ -4,74 +4,74 @@ package kinesis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Shards_ShardFilter struct {
-	ShardId any
+	ShardId   any
 	Timestamp any
-	Type any
+	Type      any
 }
 
 type Shards_Shards_HashKeyRange struct {
-	EndingHashKey any
+	EndingHashKey   any
 	StartingHashKey any
 }
 
 type Shards_Shards_SequenceNumberRange struct {
-	EndingSequenceNumber any
+	EndingSequenceNumber   any
 	StartingSequenceNumber any
 }
 
 type Shards_Shards struct {
 	AdjacentParentShardId any
-	HashKeyRange any
-	ParentShardId any
-	SequenceNumberRange any
-	ShardId any
+	HashKeyRange          any
+	ParentShardId         any
+	SequenceNumberRange   any
+	ShardId               any
 }
 
 var Shards_ShardFilterFields = ubx.FieldMap{
-		"ShardId": ubx.FieldSpec{WireName: "shard_id"},
-		"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ShardId":   ubx.FieldSpec{WireName: "shard_id"},
+	"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 type ShardsConfig struct {
 	ExclusiveStartShardId any
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 	// <p>The request parameter used to filter out the response of the <code>ListShards</code> API.</p>
-	ShardFilter any
-	StreamArn any
+	ShardFilter             any
+	StreamArn               any
 	StreamCreationTimestamp any
-	StreamId any
-	StreamName any
+	StreamId                any
+	StreamName              any
 }
 
 type ShardsAttrs struct {
 	ExclusiveStartShardId any
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 	// <p>The request parameter used to filter out the response of the <code>ListShards</code> API.</p>
-	ShardFilter any
-	Shards any
-	StreamArn any
+	ShardFilter             any
+	Shards                  any
+	StreamArn               any
 	StreamCreationTimestamp any
-	StreamId any
-	StreamName any
+	StreamId                any
+	StreamName              any
 }
 
 var Shards = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_shards",
 	Fields: ubx.FieldMap{
 		"ExclusiveStartShardId": ubx.FieldSpec{WireName: "exclusive_start_shard_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 		"ShardFilter": ubx.FieldSpec{
 			WireName: "shard_filter",
-			Kind: "object",
-			Fields: Shards_ShardFilterFields,
+			Kind:     "object",
+			Fields:   Shards_ShardFilterFields,
 		},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
+		"StreamArn":               ubx.FieldSpec{WireName: "stream_arn"},
 		"StreamCreationTimestamp": ubx.FieldSpec{WireName: "stream_creation_timestamp"},
-		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
-		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
+		"StreamId":                ubx.FieldSpec{WireName: "stream_id"},
+		"StreamName":              ubx.FieldSpec{WireName: "stream_name"},
 	},
 }

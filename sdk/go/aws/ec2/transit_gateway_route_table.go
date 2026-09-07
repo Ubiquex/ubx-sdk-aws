@@ -11,9 +11,9 @@ type TransitGatewayRouteTable_Tags struct {
 }
 
 var TransitGatewayRouteTable_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TransitGatewayRouteTableConfig struct {
 	// Tags are composed of a Key/Value pair. You can use tags to categorize and track each parameter group. The tag value null is permitted.
@@ -36,8 +36,8 @@ var TransitGatewayRouteTable = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TransitGatewayRouteTable_TagsFields,
+			Kind:     "list",
+			Fields:   TransitGatewayRouteTable_TagsFields,
 		},
 		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
 	},

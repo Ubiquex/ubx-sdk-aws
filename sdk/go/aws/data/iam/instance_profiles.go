@@ -4,70 +4,70 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceProfiles_InstanceProfiles_Roles_PermissionsBoundary struct {
-	PermissionsBoundaryArn any
+	PermissionsBoundaryArn  any
 	PermissionsBoundaryType any
 }
 
 type InstanceProfiles_InstanceProfiles_Roles_RoleLastUsed struct {
 	LastUsedDate any
-	Region any
+	Region       any
 }
 
 type InstanceProfiles_InstanceProfiles_Roles_SourceRoleTemplate struct {
-	TemplateArn any
+	TemplateArn          any
 	TemplateMinorVersion any
 }
 
 type InstanceProfiles_InstanceProfiles_Roles_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type InstanceProfiles_InstanceProfiles_Roles struct {
-	Arn any
+	Arn                      any
 	AssumeRolePolicyDocument any
-	CreateDate any
-	Description any
-	MaxSessionDuration any
-	Path any
-	PermissionsBoundary any
-	RoleId any
-	RoleLastUsed any
-	RoleName any
-	SourceRoleTemplate any
-	Tags any
+	CreateDate               any
+	Description              any
+	MaxSessionDuration       any
+	Path                     any
+	PermissionsBoundary      any
+	RoleId                   any
+	RoleLastUsed             any
+	RoleName                 any
+	SourceRoleTemplate       any
+	Tags                     any
 }
 
 type InstanceProfiles_InstanceProfiles struct {
-	Arn any
-	CreateDate any
-	InstanceProfileId any
+	Arn                 any
+	CreateDate          any
+	InstanceProfileId   any
 	InstanceProfileName any
-	Path any
-	Roles any
-	Tags any
+	Path                any
+	Roles               any
+	Tags                any
 }
 
 type InstanceProfilesConfig struct {
-	Marker any
-	MaxItems any
+	Marker     any
+	MaxItems   any
 	PathPrefix any
 }
 
 type InstanceProfilesAttrs struct {
 	// <p>Contains a list of instance profiles.</p>
 	InstanceProfiles any
-	IsTruncated any
-	Marker any
-	MaxItems any
-	PathPrefix any
+	IsTruncated      any
+	Marker           any
+	MaxItems         any
+	PathPrefix       any
 }
 
 var InstanceProfiles = ubx.DataSourceBinding{
 	WireType: "aws_iam_instance_profiles",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
+		"MaxItems":   ubx.FieldSpec{WireName: "max_items"},
 		"PathPrefix": ubx.FieldSpec{WireName: "path_prefix"},
 	},
 }

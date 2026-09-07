@@ -4,46 +4,46 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerDevices_DeviceSummaries_Models struct {
-	ModelName any
+	ModelName    any
 	ModelVersion any
 }
 
 type ApiSagemakerDevices_DeviceSummaries struct {
-	AgentVersion any
-	Description any
-	DeviceArn any
-	DeviceFleetName any
-	DeviceName any
-	IotThingName any
-	LatestHeartbeat any
-	Models any
+	AgentVersion     any
+	Description      any
+	DeviceArn        any
+	DeviceFleetName  any
+	DeviceName       any
+	IotThingName     any
+	LatestHeartbeat  any
+	Models           any
 	RegistrationTime any
 }
 
 type ApiSagemakerDevicesConfig struct {
-	DeviceFleetName any
+	DeviceFleetName      any
 	LatestHeartbeatAfter any
-	MaxResults any
-	ModelName any
-	NextToken any
+	MaxResults           any
+	ModelName            any
+	NextToken            any
 }
 
 type ApiSagemakerDevicesAttrs struct {
-	DeviceFleetName any
-	DeviceSummaries any
+	DeviceFleetName      any
+	DeviceSummaries      any
 	LatestHeartbeatAfter any
-	MaxResults any
-	ModelName any
-	NextToken any
+	MaxResults           any
+	ModelName            any
+	NextToken            any
 }
 
 var ApiSagemakerDevices = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_devices",
 	Fields: ubx.FieldMap{
-		"DeviceFleetName": ubx.FieldSpec{WireName: "device_fleet_name"},
+		"DeviceFleetName":      ubx.FieldSpec{WireName: "device_fleet_name"},
 		"LatestHeartbeatAfter": ubx.FieldSpec{WireName: "latest_heartbeat_after"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"ModelName": ubx.FieldSpec{WireName: "model_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"ModelName":            ubx.FieldSpec{WireName: "model_name"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 	},
 }

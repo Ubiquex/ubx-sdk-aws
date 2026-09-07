@@ -11,9 +11,9 @@ type ChannelGroup_Tags struct {
 }
 
 var ChannelGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ChannelGroupConfig struct {
 	// The unique name for the channel group within the AWS Region, used to identify and reference this group of channels in AWS Elemental MediaPackage v2. (AI-inferred)
@@ -45,11 +45,11 @@ var ChannelGroup = ubx.ResourceBinding{
 	WireType: "aws_media_package_v2_channel_group",
 	Fields: ubx.FieldMap{
 		"ChannelGroupName": ubx.FieldSpec{WireName: "channel_group_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ChannelGroup_TagsFields,
+			Kind:     "list",
+			Fields:   ChannelGroup_TagsFields,
 		},
 	},
 }

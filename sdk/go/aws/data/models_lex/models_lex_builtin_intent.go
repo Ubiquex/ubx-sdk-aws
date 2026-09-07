@@ -12,8 +12,8 @@ type ModelsLexBuiltinIntentConfig struct {
 }
 
 type ModelsLexBuiltinIntentAttrs struct {
-	Signature any
-	Slots any
+	Signature        any
+	Slots            any
 	SupportedLocales any
 }
 

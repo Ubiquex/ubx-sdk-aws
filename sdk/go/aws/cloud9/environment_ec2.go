@@ -17,14 +17,14 @@ type EnvironmentEc2_Tags struct {
 }
 
 var EnvironmentEc2_RepositoriesFields = ubx.FieldMap{
-		"PathComponent": ubx.FieldSpec{WireName: "path_component"},
-		"RepositoryUrl": ubx.FieldSpec{WireName: "repository_url"},
-	}
+	"PathComponent": ubx.FieldSpec{WireName: "path_component"},
+	"RepositoryUrl": ubx.FieldSpec{WireName: "repository_url"},
+}
 
 var EnvironmentEc2_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EnvironmentEc2Config struct {
 	// The number of minutes of inactivity after which AWS Cloud9 automatically stops the environment's EC2 instance, shutting down the environment when this time is reached. (AI-inferred)
@@ -80,22 +80,22 @@ var EnvironmentEc2 = ubx.ResourceBinding{
 	WireType: "aws_cloud9_environment_ec2",
 	Fields: ubx.FieldMap{
 		"AutomaticStopTimeMinutes": ubx.FieldSpec{WireName: "automatic_stop_time_minutes"},
-		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ImageId": ubx.FieldSpec{WireName: "image_id"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OwnerArn": ubx.FieldSpec{WireName: "owner_arn"},
+		"ConnectionType":           ubx.FieldSpec{WireName: "connection_type"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
+		"ImageId":                  ubx.FieldSpec{WireName: "image_id"},
+		"InstanceType":             ubx.FieldSpec{WireName: "instance_type"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
+		"OwnerArn":                 ubx.FieldSpec{WireName: "owner_arn"},
 		"Repositories": ubx.FieldSpec{
 			WireName: "repositories",
-			Kind: "list",
-			Fields: EnvironmentEc2_RepositoriesFields,
+			Kind:     "list",
+			Fields:   EnvironmentEc2_RepositoriesFields,
 		},
 		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EnvironmentEc2_TagsFields,
+			Kind:     "list",
+			Fields:   EnvironmentEc2_TagsFields,
 		},
 	},
 }

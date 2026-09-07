@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Applications_Applications struct {
 	ApplicationId any
-	Author any
-	CreationTime any
-	Description any
-	HomePageUrl any
-	Labels any
-	Name any
+	Author        any
+	CreationTime  any
+	Description   any
+	HomePageUrl   any
+	Labels        any
+	Name          any
 	SpdxLicenseId any
 }
 
 type ApplicationsConfig struct {
-	MaxItems any
+	MaxItems  any
 	NextToken any
 }
 
 type ApplicationsAttrs struct {
 	Applications any
-	MaxItems any
-	NextToken any
+	MaxItems     any
+	NextToken    any
 }
 
 var Applications = ubx.DataSourceBinding{
 	WireType: "aws_serverlessrepo_applications",
 	Fields: ubx.FieldMap{
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"MaxItems":  ubx.FieldSpec{WireName: "max_items"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

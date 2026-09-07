@@ -4,27 +4,27 @@ package cassandra
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Keyspaces_Keyspaces struct {
-	KeyspaceName any
-	ReplicationRegions any
+	KeyspaceName        any
+	ReplicationRegions  any
 	ReplicationStrategy any
-	ResourceArn any
+	ResourceArn         any
 }
 
 type KeyspacesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type KeyspacesAttrs struct {
-	Keyspaces any
+	Keyspaces  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Keyspaces = ubx.DataSourceBinding{
 	WireType: "aws_cassandra_keyspaces",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,40 +4,40 @@ package proton
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RepositorySyncStatus_LatestSync_Events struct {
-	Event any
+	Event      any
 	ExternalId any
-	Time any
-	Type any
+	Time       any
+	Type       any
 }
 
 type RepositorySyncStatus_LatestSync struct {
-	Events any
+	Events    any
 	StartedAt any
-	Status any
+	Status    any
 }
 
 type RepositorySyncStatusConfig struct {
-	Branch any
-	RepositoryName any
+	Branch             any
+	RepositoryName     any
 	RepositoryProvider any
-	SyncType any
+	SyncType           any
 }
 
 type RepositorySyncStatusAttrs struct {
 	Branch any
 	// <p>Detail data for a repository sync attempt activated by a push to a repository.</p>
-	LatestSync any
-	RepositoryName any
+	LatestSync         any
+	RepositoryName     any
 	RepositoryProvider any
-	SyncType any
+	SyncType           any
 }
 
 var RepositorySyncStatus = ubx.DataSourceBinding{
 	WireType: "aws_proton_repository_sync_status",
 	Fields: ubx.FieldMap{
-		"Branch": ubx.FieldSpec{WireName: "branch"},
-		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
+		"Branch":             ubx.FieldSpec{WireName: "branch"},
+		"RepositoryName":     ubx.FieldSpec{WireName: "repository_name"},
 		"RepositoryProvider": ubx.FieldSpec{WireName: "repository_provider"},
-		"SyncType": ubx.FieldSpec{WireName: "sync_type"},
+		"SyncType":           ubx.FieldSpec{WireName: "sync_type"},
 	},
 }

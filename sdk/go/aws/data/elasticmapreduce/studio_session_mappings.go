@@ -4,32 +4,32 @@ package elasticmapreduce
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StudioSessionMappings_SessionMappings struct {
-	CreationTime any
-	IdentityId any
-	IdentityName any
-	IdentityType any
+	CreationTime     any
+	IdentityId       any
+	IdentityName     any
+	IdentityType     any
 	SessionPolicyArn any
-	StudioId any
+	StudioId         any
 }
 
 type StudioSessionMappingsConfig struct {
 	IdentityType any
-	Marker any
-	StudioId any
+	Marker       any
+	StudioId     any
 }
 
 type StudioSessionMappingsAttrs struct {
-	IdentityType any
-	Marker any
+	IdentityType    any
+	Marker          any
 	SessionMappings any
-	StudioId any
+	StudioId        any
 }
 
 var StudioSessionMappings = ubx.DataSourceBinding{
 	WireType: "aws_elasticmapreduce_studio_session_mappings",
 	Fields: ubx.FieldMap{
 		"IdentityType": ubx.FieldSpec{WireName: "identity_type"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"StudioId": ubx.FieldSpec{WireName: "studio_id"},
+		"Marker":       ubx.FieldSpec{WireName: "marker"},
+		"StudioId":     ubx.FieldSpec{WireName: "studio_id"},
 	},
 }

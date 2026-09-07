@@ -32,36 +32,36 @@ type Plan_Stages struct {
 }
 
 var Plan_Stages_Targets_ChannelTargetInfoFields = ubx.FieldMap{
-		"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
-		"RetryIntervalInMinutes": ubx.FieldSpec{WireName: "retry_interval_in_minutes"},
-	}
+	"ChannelId":              ubx.FieldSpec{WireName: "channel_id"},
+	"RetryIntervalInMinutes": ubx.FieldSpec{WireName: "retry_interval_in_minutes"},
+}
 
 var Plan_Stages_Targets_ContactTargetInfoFields = ubx.FieldMap{
-		"ContactId": ubx.FieldSpec{WireName: "contact_id"},
-		"IsEssential": ubx.FieldSpec{WireName: "is_essential"},
-	}
+	"ContactId":   ubx.FieldSpec{WireName: "contact_id"},
+	"IsEssential": ubx.FieldSpec{WireName: "is_essential"},
+}
 
 var Plan_Stages_TargetsFields = ubx.FieldMap{
-		"ChannelTargetInfo": ubx.FieldSpec{
-			WireName: "channel_target_info",
-			Kind: "object",
-			Fields: Plan_Stages_Targets_ChannelTargetInfoFields,
-		},
-		"ContactTargetInfo": ubx.FieldSpec{
-			WireName: "contact_target_info",
-			Kind: "object",
-			Fields: Plan_Stages_Targets_ContactTargetInfoFields,
-		},
-	}
+	"ChannelTargetInfo": ubx.FieldSpec{
+		WireName: "channel_target_info",
+		Kind:     "object",
+		Fields:   Plan_Stages_Targets_ChannelTargetInfoFields,
+	},
+	"ContactTargetInfo": ubx.FieldSpec{
+		WireName: "contact_target_info",
+		Kind:     "object",
+		Fields:   Plan_Stages_Targets_ContactTargetInfoFields,
+	},
+}
 
 var Plan_StagesFields = ubx.FieldMap{
-		"DurationInMinutes": ubx.FieldSpec{WireName: "duration_in_minutes"},
-		"Targets": ubx.FieldSpec{
-			WireName: "targets",
-			Kind: "list",
-			Fields: Plan_Stages_TargetsFields,
-		},
-	}
+	"DurationInMinutes": ubx.FieldSpec{WireName: "duration_in_minutes"},
+	"Targets": ubx.FieldSpec{
+		WireName: "targets",
+		Kind:     "list",
+		Fields:   Plan_Stages_TargetsFields,
+	},
+}
 
 type PlanConfig struct {
 	// Contact ID for the AWS SSM Incident Manager Contact to associate the plan.
@@ -86,12 +86,12 @@ type PlanAttrs struct {
 var Plan = ubx.ResourceBinding{
 	WireType: "aws_ssmcontacts_plan",
 	Fields: ubx.FieldMap{
-		"ContactId": ubx.FieldSpec{WireName: "contact_id"},
+		"ContactId":   ubx.FieldSpec{WireName: "contact_id"},
 		"RotationIds": ubx.FieldSpec{WireName: "rotation_ids"},
 		"Stages": ubx.FieldSpec{
 			WireName: "stages",
-			Kind: "list",
-			Fields: Plan_StagesFields,
+			Kind:     "list",
+			Fields:   Plan_StagesFields,
 		},
 	},
 }

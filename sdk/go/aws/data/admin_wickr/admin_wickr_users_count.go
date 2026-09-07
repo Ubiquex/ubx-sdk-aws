@@ -8,12 +8,12 @@ type AdminWickrUsersCountConfig struct {
 }
 
 type AdminWickrUsersCountAttrs struct {
-	Active any
+	Active    any
 	NetworkId any
-	Pending any
-	Rejected any
+	Pending   any
+	Rejected  any
 	Remaining any
-	Total any
+	Total     any
 }
 
 var AdminWickrUsersCount = ubx.DataSourceBinding{

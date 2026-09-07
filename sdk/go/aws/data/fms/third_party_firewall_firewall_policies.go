@@ -4,28 +4,28 @@ package fms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ThirdPartyFirewallFirewallPolicies_ThirdPartyFirewallFirewallPolicies struct {
-	FirewallPolicyId any
+	FirewallPolicyId   any
 	FirewallPolicyName any
 }
 
 type ThirdPartyFirewallFirewallPoliciesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	ThirdPartyFirewall any
 }
 
 type ThirdPartyFirewallFirewallPoliciesAttrs struct {
-	MaxResults any
-	NextToken any
-	ThirdPartyFirewall any
+	MaxResults                         any
+	NextToken                          any
+	ThirdPartyFirewall                 any
 	ThirdPartyFirewallFirewallPolicies any
 }
 
 var ThirdPartyFirewallFirewallPolicies = ubx.DataSourceBinding{
 	WireType: "aws_fms_third_party_firewall_firewall_policies",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 		"ThirdPartyFirewall": ubx.FieldSpec{WireName: "third_party_firewall"},
 	},
 }

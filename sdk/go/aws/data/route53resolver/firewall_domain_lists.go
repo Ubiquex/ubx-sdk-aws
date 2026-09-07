@@ -4,30 +4,30 @@ package route53resolver
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallDomainLists_FirewallDomainLists struct {
-	Arn any
-	Category any
+	Arn              any
+	Category         any
 	CreatorRequestId any
-	Id any
-	ManagedListType any
+	Id               any
+	ManagedListType  any
 	ManagedOwnerName any
-	Name any
+	Name             any
 }
 
 type FirewallDomainListsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FirewallDomainListsAttrs struct {
 	FirewallDomainLists any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 }
 
 var FirewallDomainLists = ubx.DataSourceBinding{
 	WireType: "aws_route53resolver_firewall_domain_lists",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

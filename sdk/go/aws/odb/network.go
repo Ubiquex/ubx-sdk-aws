@@ -89,14 +89,14 @@ type Network_ManagedServices struct {
 
 type Network_Tags struct {
 	// The key of a tag attached to the network resource, used as the tag's unique identifier within the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Network_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type NetworkConfig struct {
 	// The AWS Availability Zone (AZ) where the ODB network is located.
@@ -189,25 +189,25 @@ type NetworkAttrs struct {
 var Network = ubx.ResourceBinding{
 	WireType: "aws_odb_network",
 	Fields: ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"AvailabilityZoneId": ubx.FieldSpec{WireName: "availability_zone_id"},
-		"BackupSubnetCidr": ubx.FieldSpec{WireName: "backup_subnet_cidr"},
-		"ClientSubnetCidr": ubx.FieldSpec{WireName: "client_subnet_cidr"},
+		"AvailabilityZone":            ubx.FieldSpec{WireName: "availability_zone"},
+		"AvailabilityZoneId":          ubx.FieldSpec{WireName: "availability_zone_id"},
+		"BackupSubnetCidr":            ubx.FieldSpec{WireName: "backup_subnet_cidr"},
+		"ClientSubnetCidr":            ubx.FieldSpec{WireName: "client_subnet_cidr"},
 		"CrossRegionS3RestoreSources": ubx.FieldSpec{WireName: "cross_region_s3_restore_sources"},
-		"CustomDomainName": ubx.FieldSpec{WireName: "custom_domain_name"},
-		"DefaultDnsPrefix": ubx.FieldSpec{WireName: "default_dns_prefix"},
-		"DeleteAssociatedResources": ubx.FieldSpec{WireName: "delete_associated_resources"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"KmsAccess": ubx.FieldSpec{WireName: "kms_access"},
-		"KmsPolicyDocument": ubx.FieldSpec{WireName: "kms_policy_document"},
-		"S3Access": ubx.FieldSpec{WireName: "s3_access"},
-		"S3PolicyDocument": ubx.FieldSpec{WireName: "s3_policy_document"},
-		"StsAccess": ubx.FieldSpec{WireName: "sts_access"},
-		"StsPolicyDocument": ubx.FieldSpec{WireName: "sts_policy_document"},
+		"CustomDomainName":            ubx.FieldSpec{WireName: "custom_domain_name"},
+		"DefaultDnsPrefix":            ubx.FieldSpec{WireName: "default_dns_prefix"},
+		"DeleteAssociatedResources":   ubx.FieldSpec{WireName: "delete_associated_resources"},
+		"DisplayName":                 ubx.FieldSpec{WireName: "display_name"},
+		"KmsAccess":                   ubx.FieldSpec{WireName: "kms_access"},
+		"KmsPolicyDocument":           ubx.FieldSpec{WireName: "kms_policy_document"},
+		"S3Access":                    ubx.FieldSpec{WireName: "s3_access"},
+		"S3PolicyDocument":            ubx.FieldSpec{WireName: "s3_policy_document"},
+		"StsAccess":                   ubx.FieldSpec{WireName: "sts_access"},
+		"StsPolicyDocument":           ubx.FieldSpec{WireName: "sts_policy_document"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Network_TagsFields,
+			Kind:     "list",
+			Fields:   Network_TagsFields,
 		},
 		"ZeroEtlAccess": ubx.FieldSpec{WireName: "zero_etl_access"},
 	},

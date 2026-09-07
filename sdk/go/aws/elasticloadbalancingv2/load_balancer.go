@@ -29,21 +29,21 @@ type LoadBalancer_SubnetMappings struct {
 }
 
 var LoadBalancer_LoadBalancerAttributesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var LoadBalancer_MinimumLoadBalancerCapacityFields = ubx.FieldMap{
-		"CapacityUnits": ubx.FieldSpec{WireName: "capacity_units"},
-	}
+	"CapacityUnits": ubx.FieldSpec{WireName: "capacity_units"},
+}
 
 var LoadBalancer_SubnetMappingsFields = ubx.FieldMap{
-		"AllocationId": ubx.FieldSpec{WireName: "allocation_id"},
-		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
-		"PrivateIpv4Address": ubx.FieldSpec{WireName: "private_ipv4_address"},
-		"SourceNatIpv6Prefix": ubx.FieldSpec{WireName: "source_nat_ipv6_prefix"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-	}
+	"AllocationId":        ubx.FieldSpec{WireName: "allocation_id"},
+	"Ipv6Address":         ubx.FieldSpec{WireName: "ipv6_address"},
+	"PrivateIpv4Address":  ubx.FieldSpec{WireName: "private_ipv4_address"},
+	"SourceNatIpv6Prefix": ubx.FieldSpec{WireName: "source_nat_ipv6_prefix"},
+	"SubnetId":            ubx.FieldSpec{WireName: "subnet_id"},
+}
 
 type LoadBalancerConfig struct {
 	// Indicates whether to enable stabilization when creating or updating an LCU reservation. This ensures that the final stack status reflects the status of the LCU reservation. The default is ``false``.
@@ -120,34 +120,34 @@ type LoadBalancerAttrs struct {
 var LoadBalancer = ubx.ResourceBinding{
 	WireType: "aws_elastic_load_balancing_v2_load_balancer",
 	Fields: ubx.FieldMap{
-		"EnableCapacityReservationProvisionStabilize": ubx.FieldSpec{WireName: "enable_capacity_reservation_provision_stabilize"},
-		"EnablePrefixForIpv6SourceNat": ubx.FieldSpec{WireName: "enable_prefix_for_ipv6_source_nat"},
+		"EnableCapacityReservationProvisionStabilize":          ubx.FieldSpec{WireName: "enable_capacity_reservation_provision_stabilize"},
+		"EnablePrefixForIpv6SourceNat":                         ubx.FieldSpec{WireName: "enable_prefix_for_ipv6_source_nat"},
 		"EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic": ubx.FieldSpec{WireName: "enforce_security_group_inbound_rules_on_private_link_traffic"},
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
+		"IpAddressType":  ubx.FieldSpec{WireName: "ip_address_type"},
 		"Ipv4IpamPoolId": ubx.FieldSpec{WireName: "ipv4_ipam_pool_id"},
 		"LoadBalancerAttributes": ubx.FieldSpec{
 			WireName: "load_balancer_attributes",
-			Kind: "list",
-			Fields: LoadBalancer_LoadBalancerAttributesFields,
+			Kind:     "list",
+			Fields:   LoadBalancer_LoadBalancerAttributesFields,
 		},
 		"MinimumLoadBalancerCapacity": ubx.FieldSpec{
 			WireName: "minimum_load_balancer_capacity",
-			Kind: "object",
-			Fields: LoadBalancer_MinimumLoadBalancerCapacityFields,
+			Kind:     "object",
+			Fields:   LoadBalancer_MinimumLoadBalancerCapacityFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Scheme": ubx.FieldSpec{WireName: "scheme"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"Scheme":         ubx.FieldSpec{WireName: "scheme"},
 		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
 		"SubnetMappings": ubx.FieldSpec{
 			WireName: "subnet_mappings",
-			Kind: "list",
-			Fields: LoadBalancer_SubnetMappingsFields,
+			Kind:     "list",
+			Fields:   LoadBalancer_SubnetMappingsFields,
 		},
 		"Subnets": ubx.FieldSpec{WireName: "subnets"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LoadBalancer_LoadBalancerAttributesFields,
+			Kind:     "list",
+			Fields:   LoadBalancer_LoadBalancerAttributesFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

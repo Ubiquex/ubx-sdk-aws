@@ -106,9 +106,9 @@ type Detector_Rules struct {
 }
 
 var Detector_EventType_EntityTypes_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DetectorConfig struct {
 	// The description of the detector.
@@ -153,14 +153,14 @@ type DetectorAttrs struct {
 var Detector = ubx.ResourceBinding{
 	WireType: "aws_fraud_detector_detector",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DetectorId": ubx.FieldSpec{WireName: "detector_id"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"DetectorId":            ubx.FieldSpec{WireName: "detector_id"},
 		"DetectorVersionStatus": ubx.FieldSpec{WireName: "detector_version_status"},
-		"RuleExecutionMode": ubx.FieldSpec{WireName: "rule_execution_mode"},
+		"RuleExecutionMode":     ubx.FieldSpec{WireName: "rule_execution_mode"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Detector_EventType_EntityTypes_TagsFields,
+			Kind:     "list",
+			Fields:   Detector_EventType_EntityTypes_TagsFields,
 		},
 	},
 }

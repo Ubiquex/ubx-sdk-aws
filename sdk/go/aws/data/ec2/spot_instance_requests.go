@@ -4,40 +4,40 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SpotInstanceRequests_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type SpotInstanceRequests_SpotInstanceRequests_Fault struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type SpotInstanceRequests_SpotInstanceRequests_LaunchSpecification_BlockDeviceMappings_Ebs struct {
-	AvailabilityZone any
-	AvailabilityZoneId any
-	DeleteOnTermination any
-	EbsCardIndex any
-	Encrypted any
-	Iops any
-	KmsKeyId any
-	OutpostArn any
-	SnapshotId any
-	Throughput any
+	AvailabilityZone         any
+	AvailabilityZoneId       any
+	DeleteOnTermination      any
+	EbsCardIndex             any
+	Encrypted                any
+	Iops                     any
+	KmsKeyId                 any
+	OutpostArn               any
+	SnapshotId               any
+	Throughput               any
 	VolumeInitializationRate any
-	VolumeSize any
-	VolumeType any
+	VolumeSize               any
+	VolumeType               any
 }
 
 type SpotInstanceRequests_SpotInstanceRequests_LaunchSpecification_BlockDeviceMappings struct {
-	DeviceName any
-	Ebs any
-	NoDevice any
+	DeviceName  any
+	Ebs         any
+	NoDevice    any
 	VirtualName any
 }
 
 type SpotInstanceRequests_SpotInstanceRequests_LaunchSpecification_IamInstanceProfile struct {
-	Arn any
+	Arn  any
 	Name any
 }
 
@@ -47,8 +47,8 @@ type SpotInstanceRequests_SpotInstanceRequests_LaunchSpecification_Monitoring st
 
 type SpotInstanceRequests_SpotInstanceRequests_LaunchSpecification_NetworkInterfaces_ConnectionTrackingSpecification struct {
 	TcpEstablishedTimeout any
-	UdpStreamTimeout any
-	UdpTimeout any
+	UdpStreamTimeout      any
+	UdpTimeout            any
 }
 
 type SpotInstanceRequests_SpotInstanceRequests_LaunchSpecification_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecification struct {
@@ -56,7 +56,7 @@ type SpotInstanceRequests_SpotInstanceRequests_LaunchSpecification_NetworkInterf
 }
 
 type SpotInstanceRequests_SpotInstanceRequests_LaunchSpecification_NetworkInterfaces_EnaSrdSpecification struct {
-	EnaSrdEnabled any
+	EnaSrdEnabled          any
 	EnaSrdUdpSpecification any
 }
 
@@ -65,7 +65,7 @@ type SpotInstanceRequests_SpotInstanceRequests_LaunchSpecification_NetworkInterf
 }
 
 type SpotInstanceRequests_SpotInstanceRequests_LaunchSpecification_NetworkInterfaces_Ipv6Addresses struct {
-	Ipv6Address any
+	Ipv6Address   any
 	IsPrimaryIpv6 any
 }
 
@@ -74,120 +74,120 @@ type SpotInstanceRequests_SpotInstanceRequests_LaunchSpecification_NetworkInterf
 }
 
 type SpotInstanceRequests_SpotInstanceRequests_LaunchSpecification_NetworkInterfaces_PrivateIpAddresses struct {
-	Primary any
+	Primary          any
 	PrivateIpAddress any
 }
 
 type SpotInstanceRequests_SpotInstanceRequests_LaunchSpecification_NetworkInterfaces struct {
-	AssociateCarrierIpAddress any
-	AssociatePublicIpAddress any
+	AssociateCarrierIpAddress       any
+	AssociatePublicIpAddress        any
 	ConnectionTrackingSpecification any
-	DeleteOnTermination any
-	Description any
-	DeviceIndex any
-	EnaQueueCount any
-	EnaSrdSpecification any
-	Groups any
-	InterfaceType any
-	Ipv4PrefixCount any
-	Ipv4Prefixes any
-	Ipv6AddressCount any
-	Ipv6Addresses any
-	Ipv6PrefixCount any
-	Ipv6Prefixes any
-	NetworkCardIndex any
-	NetworkInterfaceId any
-	PrimaryIpv6 any
-	PrivateIpAddress any
-	PrivateIpAddresses any
-	SecondaryPrivateIpAddressCount any
-	SubnetId any
+	DeleteOnTermination             any
+	Description                     any
+	DeviceIndex                     any
+	EnaQueueCount                   any
+	EnaSrdSpecification             any
+	Groups                          any
+	InterfaceType                   any
+	Ipv4PrefixCount                 any
+	Ipv4Prefixes                    any
+	Ipv6AddressCount                any
+	Ipv6Addresses                   any
+	Ipv6PrefixCount                 any
+	Ipv6Prefixes                    any
+	NetworkCardIndex                any
+	NetworkInterfaceId              any
+	PrimaryIpv6                     any
+	PrivateIpAddress                any
+	PrivateIpAddresses              any
+	SecondaryPrivateIpAddressCount  any
+	SubnetId                        any
 }
 
 type SpotInstanceRequests_SpotInstanceRequests_LaunchSpecification_Placement struct {
-	AvailabilityZone any
+	AvailabilityZone   any
 	AvailabilityZoneId any
-	GroupName any
-	Tenancy any
+	GroupName          any
+	Tenancy            any
 }
 
 type SpotInstanceRequests_SpotInstanceRequests_LaunchSpecification_SecurityGroups struct {
-	GroupId any
+	GroupId   any
 	GroupName any
 }
 
 type SpotInstanceRequests_SpotInstanceRequests_LaunchSpecification struct {
-	AddressingType any
+	AddressingType      any
 	BlockDeviceMappings any
-	EbsOptimized any
-	IamInstanceProfile any
-	ImageId any
-	InstanceType any
-	KernelId any
-	KeyName any
-	Monitoring any
-	NetworkInterfaces any
-	Placement any
-	RamdiskId any
-	SecurityGroups any
-	SubnetId any
-	UserData any
+	EbsOptimized        any
+	IamInstanceProfile  any
+	ImageId             any
+	InstanceType        any
+	KernelId            any
+	KeyName             any
+	Monitoring          any
+	NetworkInterfaces   any
+	Placement           any
+	RamdiskId           any
+	SecurityGroups      any
+	SubnetId            any
+	UserData            any
 }
 
 type SpotInstanceRequests_SpotInstanceRequests_Status struct {
-	Code any
-	Message any
+	Code       any
+	Message    any
 	UpdateTime any
 }
 
 type SpotInstanceRequests_SpotInstanceRequests_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type SpotInstanceRequests_SpotInstanceRequests struct {
-	ActualBlockHourlyPrice any
-	AvailabilityZoneGroup any
-	BlockDurationMinutes any
-	CreateTime any
-	Fault any
-	InstanceId any
+	ActualBlockHourlyPrice       any
+	AvailabilityZoneGroup        any
+	BlockDurationMinutes         any
+	CreateTime                   any
+	Fault                        any
+	InstanceId                   any
 	InstanceInterruptionBehavior any
-	LaunchGroup any
-	LaunchSpecification any
-	LaunchedAvailabilityZone any
-	LaunchedAvailabilityZoneId any
-	ProductDescription any
-	SpotInstanceRequestId any
-	SpotPrice any
-	State any
-	Status any
-	Tags any
-	Type any
-	ValidFrom any
-	ValidUntil any
+	LaunchGroup                  any
+	LaunchSpecification          any
+	LaunchedAvailabilityZone     any
+	LaunchedAvailabilityZoneId   any
+	ProductDescription           any
+	SpotInstanceRequestId        any
+	SpotPrice                    any
+	State                        any
+	Status                       any
+	Tags                         any
+	Type                         any
+	ValidFrom                    any
+	ValidUntil                   any
 }
 
 var SpotInstanceRequests_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type SpotInstanceRequestsConfig struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                 any
+	Filters                any
+	MaxResults             any
+	NextToken              any
 	SpotInstanceRequestIds any
 }
 
 type SpotInstanceRequestsAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                 any
+	Filters                any
+	MaxResults             any
+	NextToken              any
 	SpotInstanceRequestIds any
-	SpotInstanceRequests any
+	SpotInstanceRequests   any
 }
 
 var SpotInstanceRequests = ubx.DataSourceBinding{
@@ -196,11 +196,11 @@ var SpotInstanceRequests = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SpotInstanceRequests_FiltersFields,
+			Kind:     "list",
+			Fields:   SpotInstanceRequests_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
 		"SpotInstanceRequestIds": ubx.FieldSpec{WireName: "spot_instance_request_ids"},
 	},
 }

@@ -21,7 +21,7 @@ type ConfigurationManager_StatusSummaries struct {
 	// The timestamp (as a string) indicating when the status summary for the SSM Quick Setup configuration manager was last updated. (AI-inferred)
 	LastUpdatedAt any
 	// The current status of the configuration manager, indicating whether the configuration setup succeeded, failed, or is still in progress. (AI-inferred)
-	Status any
+	Status        any
 	StatusDetails any
 	// The status message is a human-readable string that provides detailed information about the current status of the configuration manager, including any errors or issues encountered during its deployment or operation. (AI-inferred)
 	StatusMessage any
@@ -61,7 +61,7 @@ var ConfigurationManager = ubx.ResourceBinding{
 	WireType: "aws_ssmquick_setup_configuration_manager",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 	},
 }

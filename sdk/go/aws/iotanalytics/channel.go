@@ -33,29 +33,29 @@ type Channel_Tags struct {
 }
 
 var Channel_ChannelStorage_CustomerManagedS3Fields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"KeyPrefix": ubx.FieldSpec{WireName: "key_prefix"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"Bucket":    ubx.FieldSpec{WireName: "bucket"},
+	"KeyPrefix": ubx.FieldSpec{WireName: "key_prefix"},
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var Channel_ChannelStorageFields = ubx.FieldMap{
-		"CustomerManagedS3": ubx.FieldSpec{
-			WireName: "customer_managed_s3",
-			Kind: "object",
-			Fields: Channel_ChannelStorage_CustomerManagedS3Fields,
-		},
-		"ServiceManagedS3": ubx.FieldSpec{WireName: "service_managed_s3"},
-	}
+	"CustomerManagedS3": ubx.FieldSpec{
+		WireName: "customer_managed_s3",
+		Kind:     "object",
+		Fields:   Channel_ChannelStorage_CustomerManagedS3Fields,
+	},
+	"ServiceManagedS3": ubx.FieldSpec{WireName: "service_managed_s3"},
+}
 
 var Channel_RetentionPeriodFields = ubx.FieldMap{
-		"NumberOfDays": ubx.FieldSpec{WireName: "number_of_days"},
-		"Unlimited": ubx.FieldSpec{WireName: "unlimited"},
-	}
+	"NumberOfDays": ubx.FieldSpec{WireName: "number_of_days"},
+	"Unlimited":    ubx.FieldSpec{WireName: "unlimited"},
+}
 
 var Channel_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ChannelConfig struct {
 	// The name of the AWS IoT Analytics channel; if omitted, CloudFormation generates a unique name for the channel. (AI-inferred)
@@ -87,18 +87,18 @@ var Channel = ubx.ResourceBinding{
 		"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
 		"ChannelStorage": ubx.FieldSpec{
 			WireName: "channel_storage",
-			Kind: "object",
-			Fields: Channel_ChannelStorageFields,
+			Kind:     "object",
+			Fields:   Channel_ChannelStorageFields,
 		},
 		"RetentionPeriod": ubx.FieldSpec{
 			WireName: "retention_period",
-			Kind: "object",
-			Fields: Channel_RetentionPeriodFields,
+			Kind:     "object",
+			Fields:   Channel_RetentionPeriodFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Channel_TagsFields,
+			Kind:     "list",
+			Fields:   Channel_TagsFields,
 		},
 	},
 }

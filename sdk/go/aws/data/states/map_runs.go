@@ -4,31 +4,31 @@ package states
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MapRuns_MapRuns struct {
-	ExecutionArn any
-	MapRunArn any
-	StartDate any
+	ExecutionArn    any
+	MapRunArn       any
+	StartDate       any
 	StateMachineArn any
-	StopDate any
+	StopDate        any
 }
 
 type MapRunsConfig struct {
 	ExecutionArn any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type MapRunsAttrs struct {
 	ExecutionArn any
-	MapRuns any
-	MaxResults any
-	NextToken any
+	MapRuns      any
+	MaxResults   any
+	NextToken    any
 }
 
 var MapRuns = ubx.DataSourceBinding{
 	WireType: "aws_states_map_runs",
 	Fields: ubx.FieldMap{
 		"ExecutionArn": ubx.FieldSpec{WireName: "execution_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -14,12 +14,12 @@ type View_IncludedProperties struct {
 }
 
 var View_FiltersFields = ubx.FieldMap{
-		"FilterString": ubx.FieldSpec{WireName: "filter_string"},
-	}
+	"FilterString": ubx.FieldSpec{WireName: "filter_string"},
+}
 
 var View_IncludedPropertiesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 type ViewConfig struct {
 	// Specifies the query filter string that determines which resources are included in this Resource Explorer view. (AI-inferred)
@@ -54,16 +54,16 @@ var View = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: View_FiltersFields,
+			Kind:     "object",
+			Fields:   View_FiltersFields,
 		},
 		"IncludedProperties": ubx.FieldSpec{
 			WireName: "included_properties",
-			Kind: "list",
-			Fields: View_IncludedPropertiesFields,
+			Kind:     "list",
+			Fields:   View_IncludedPropertiesFields,
 		},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Scope":    ubx.FieldSpec{WireName: "scope"},
+		"Tags":     ubx.FieldSpec{WireName: "tags"},
 		"ViewName": ubx.FieldSpec{WireName: "view_name"},
 	},
 }

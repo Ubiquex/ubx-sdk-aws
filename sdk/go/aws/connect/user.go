@@ -81,7 +81,7 @@ type User_UserProficiencies struct {
 	AttributeName any
 	// The value of the proficiency attribute (e.g., 'English' for the 'Language' attribute) that defines a user's skill level for routing. (AI-inferred)
 	AttributeValue any
-	Level any
+	Level          any
 }
 
 type User_VoiceEnhancementConfigs struct {
@@ -92,72 +92,72 @@ type User_VoiceEnhancementConfigs struct {
 }
 
 var User_AfterContactWorkConfigs_AfterContactWorkConfigFields = ubx.FieldMap{
-		"AfterContactWorkMode": ubx.FieldSpec{WireName: "after_contact_work_mode"},
-		"AfterContactWorkTimeLimit": ubx.FieldSpec{WireName: "after_contact_work_time_limit"},
-	}
+	"AfterContactWorkMode":      ubx.FieldSpec{WireName: "after_contact_work_mode"},
+	"AfterContactWorkTimeLimit": ubx.FieldSpec{WireName: "after_contact_work_time_limit"},
+}
 
 var User_AfterContactWorkConfigsFields = ubx.FieldMap{
-		"AfterContactWorkConfig": ubx.FieldSpec{
-			WireName: "after_contact_work_config",
-			Kind: "object",
-			Fields: User_AfterContactWorkConfigs_AfterContactWorkConfigFields,
-		},
-		"AgentFirstCallbackAfterContactWorkConfig": ubx.FieldSpec{
-			WireName: "agent_first_callback_after_contact_work_config",
-			Kind: "object",
-			Fields: User_AfterContactWorkConfigs_AfterContactWorkConfigFields,
-		},
-		"Channel": ubx.FieldSpec{WireName: "channel"},
-	}
+	"AfterContactWorkConfig": ubx.FieldSpec{
+		WireName: "after_contact_work_config",
+		Kind:     "object",
+		Fields:   User_AfterContactWorkConfigs_AfterContactWorkConfigFields,
+	},
+	"AgentFirstCallbackAfterContactWorkConfig": ubx.FieldSpec{
+		WireName: "agent_first_callback_after_contact_work_config",
+		Kind:     "object",
+		Fields:   User_AfterContactWorkConfigs_AfterContactWorkConfigFields,
+	},
+	"Channel": ubx.FieldSpec{WireName: "channel"},
+}
 
 var User_AutoAcceptConfigsFields = ubx.FieldMap{
-		"AgentFirstCallbackAutoAccept": ubx.FieldSpec{WireName: "agent_first_callback_auto_accept"},
-		"AutoAccept": ubx.FieldSpec{WireName: "auto_accept"},
-		"Channel": ubx.FieldSpec{WireName: "channel"},
-	}
+	"AgentFirstCallbackAutoAccept": ubx.FieldSpec{WireName: "agent_first_callback_auto_accept"},
+	"AutoAccept":                   ubx.FieldSpec{WireName: "auto_accept"},
+	"Channel":                      ubx.FieldSpec{WireName: "channel"},
+}
 
 var User_IdentityInfoFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"FirstName": ubx.FieldSpec{WireName: "first_name"},
-		"LastName": ubx.FieldSpec{WireName: "last_name"},
-		"Mobile": ubx.FieldSpec{WireName: "mobile"},
-		"SecondaryEmail": ubx.FieldSpec{WireName: "secondary_email"},
-	}
+	"Email":          ubx.FieldSpec{WireName: "email"},
+	"FirstName":      ubx.FieldSpec{WireName: "first_name"},
+	"LastName":       ubx.FieldSpec{WireName: "last_name"},
+	"Mobile":         ubx.FieldSpec{WireName: "mobile"},
+	"SecondaryEmail": ubx.FieldSpec{WireName: "secondary_email"},
+}
 
 var User_PersistentConnectionConfigsFields = ubx.FieldMap{
-		"Channel": ubx.FieldSpec{WireName: "channel"},
-		"PersistentConnection": ubx.FieldSpec{WireName: "persistent_connection"},
-	}
+	"Channel":              ubx.FieldSpec{WireName: "channel"},
+	"PersistentConnection": ubx.FieldSpec{WireName: "persistent_connection"},
+}
 
 var User_PhoneConfigFields = ubx.FieldMap{
-		"AfterContactWorkTimeLimit": ubx.FieldSpec{WireName: "after_contact_work_time_limit"},
-		"AutoAccept": ubx.FieldSpec{WireName: "auto_accept"},
-		"DeskPhoneNumber": ubx.FieldSpec{WireName: "desk_phone_number"},
-		"PersistentConnection": ubx.FieldSpec{WireName: "persistent_connection"},
-		"PhoneType": ubx.FieldSpec{WireName: "phone_type"},
-	}
+	"AfterContactWorkTimeLimit": ubx.FieldSpec{WireName: "after_contact_work_time_limit"},
+	"AutoAccept":                ubx.FieldSpec{WireName: "auto_accept"},
+	"DeskPhoneNumber":           ubx.FieldSpec{WireName: "desk_phone_number"},
+	"PersistentConnection":      ubx.FieldSpec{WireName: "persistent_connection"},
+	"PhoneType":                 ubx.FieldSpec{WireName: "phone_type"},
+}
 
 var User_PhoneNumberConfigsFields = ubx.FieldMap{
-		"Channel": ubx.FieldSpec{WireName: "channel"},
-		"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
-		"PhoneType": ubx.FieldSpec{WireName: "phone_type"},
-	}
+	"Channel":     ubx.FieldSpec{WireName: "channel"},
+	"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
+	"PhoneType":   ubx.FieldSpec{WireName: "phone_type"},
+}
 
 var User_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var User_UserProficienciesFields = ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"AttributeValue": ubx.FieldSpec{WireName: "attribute_value"},
-		"Level": ubx.FieldSpec{WireName: "level"},
-	}
+	"AttributeName":  ubx.FieldSpec{WireName: "attribute_name"},
+	"AttributeValue": ubx.FieldSpec{WireName: "attribute_value"},
+	"Level":          ubx.FieldSpec{WireName: "level"},
+}
 
 var User_VoiceEnhancementConfigsFields = ubx.FieldMap{
-		"Channel": ubx.FieldSpec{WireName: "channel"},
-		"VoiceEnhancementMode": ubx.FieldSpec{WireName: "voice_enhancement_mode"},
-	}
+	"Channel":              ubx.FieldSpec{WireName: "channel"},
+	"VoiceEnhancementMode": ubx.FieldSpec{WireName: "voice_enhancement_mode"},
+}
 
 type UserConfig struct {
 	// After Contact Work configurations of a user.
@@ -236,55 +236,55 @@ var User = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AfterContactWorkConfigs": ubx.FieldSpec{
 			WireName: "after_contact_work_configs",
-			Kind: "list",
-			Fields: User_AfterContactWorkConfigsFields,
+			Kind:     "list",
+			Fields:   User_AfterContactWorkConfigsFields,
 		},
 		"AutoAcceptConfigs": ubx.FieldSpec{
 			WireName: "auto_accept_configs",
-			Kind: "list",
-			Fields: User_AutoAcceptConfigsFields,
+			Kind:     "list",
+			Fields:   User_AutoAcceptConfigsFields,
 		},
-		"DirectoryUserId": ubx.FieldSpec{WireName: "directory_user_id"},
+		"DirectoryUserId":   ubx.FieldSpec{WireName: "directory_user_id"},
 		"HierarchyGroupArn": ubx.FieldSpec{WireName: "hierarchy_group_arn"},
 		"IdentityInfo": ubx.FieldSpec{
 			WireName: "identity_info",
-			Kind: "object",
-			Fields: User_IdentityInfoFields,
+			Kind:     "object",
+			Fields:   User_IdentityInfoFields,
 		},
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Password": ubx.FieldSpec{WireName: "password"},
+		"Password":    ubx.FieldSpec{WireName: "password"},
 		"PersistentConnectionConfigs": ubx.FieldSpec{
 			WireName: "persistent_connection_configs",
-			Kind: "list",
-			Fields: User_PersistentConnectionConfigsFields,
+			Kind:     "list",
+			Fields:   User_PersistentConnectionConfigsFields,
 		},
 		"PhoneConfig": ubx.FieldSpec{
 			WireName: "phone_config",
-			Kind: "object",
-			Fields: User_PhoneConfigFields,
+			Kind:     "object",
+			Fields:   User_PhoneConfigFields,
 		},
 		"PhoneNumberConfigs": ubx.FieldSpec{
 			WireName: "phone_number_configs",
-			Kind: "list",
-			Fields: User_PhoneNumberConfigsFields,
+			Kind:     "list",
+			Fields:   User_PhoneNumberConfigsFields,
 		},
-		"RoutingProfileArn": ubx.FieldSpec{WireName: "routing_profile_arn"},
+		"RoutingProfileArn":   ubx.FieldSpec{WireName: "routing_profile_arn"},
 		"SecurityProfileArns": ubx.FieldSpec{WireName: "security_profile_arns"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: User_TagsFields,
+			Kind:     "list",
+			Fields:   User_TagsFields,
 		},
 		"UserProficiencies": ubx.FieldSpec{
 			WireName: "user_proficiencies",
-			Kind: "list",
-			Fields: User_UserProficienciesFields,
+			Kind:     "list",
+			Fields:   User_UserProficienciesFields,
 		},
 		"Username": ubx.FieldSpec{WireName: "username"},
 		"VoiceEnhancementConfigs": ubx.FieldSpec{
 			WireName: "voice_enhancement_configs",
-			Kind: "list",
-			Fields: User_VoiceEnhancementConfigsFields,
+			Kind:     "list",
+			Fields:   User_VoiceEnhancementConfigsFields,
 		},
 	},
 }

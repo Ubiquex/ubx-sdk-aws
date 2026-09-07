@@ -11,9 +11,9 @@ type ResourceGroup_ResourceGroupTags struct {
 }
 
 var ResourceGroup_ResourceGroupTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ResourceGroupConfig struct {
 	// Defines the tag key-value pairs that identify the EC2 instances to include in this Inspector resource group, used as the basis for an assessment target. (AI-inferred)
@@ -32,8 +32,8 @@ var ResourceGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ResourceGroupTags": ubx.FieldSpec{
 			WireName: "resource_group_tags",
-			Kind: "list",
-			Fields: ResourceGroup_ResourceGroupTagsFields,
+			Kind:     "list",
+			Fields:   ResourceGroup_ResourceGroupTagsFields,
 		},
 	},
 }

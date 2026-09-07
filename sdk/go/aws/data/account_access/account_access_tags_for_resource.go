@@ -9,7 +9,7 @@ type AccountAccessTagsForResourceConfig struct {
 
 type AccountAccessTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var AccountAccessTagsForResource = ubx.DataSourceBinding{

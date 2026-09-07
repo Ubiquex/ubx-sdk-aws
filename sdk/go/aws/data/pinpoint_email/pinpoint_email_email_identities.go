@@ -4,26 +4,26 @@ package pinpoint_email
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PinpointEmailEmailIdentities_EmailIdentities struct {
-	IdentityName any
-	IdentityType any
+	IdentityName   any
+	IdentityType   any
 	SendingEnabled any
 }
 
 type PinpointEmailEmailIdentitiesConfig struct {
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 type PinpointEmailEmailIdentitiesAttrs struct {
 	EmailIdentities any
-	NextToken any
-	PageSize any
+	NextToken       any
+	PageSize        any
 }
 
 var PinpointEmailEmailIdentities = ubx.DataSourceBinding{
 	WireType: "aws_pinpoint_email_email_identities",
 	Fields: ubx.FieldMap{
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 	},
 }

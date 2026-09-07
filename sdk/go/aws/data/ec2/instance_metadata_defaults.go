@@ -4,12 +4,12 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceMetadataDefaults_AccountLevel struct {
-	HttpEndpoint any
+	HttpEndpoint            any
 	HttpPutResponseHopLimit any
-	HttpTokens any
-	HttpTokensEnforced any
-	InstanceMetadataTags any
-	ManagedBy any
+	HttpTokens              any
+	HttpTokensEnforced      any
+	InstanceMetadataTags    any
+	ManagedBy               any
 	ManagedExceptionMessage any
 }
 
@@ -20,7 +20,7 @@ type InstanceMetadataDefaultsConfig struct {
 type InstanceMetadataDefaultsAttrs struct {
 	// <p>The default instance metadata service (IMDS) settings that were set at the account level in the specified Amazon Web Services Region.</p>
 	AccountLevel any
-	DryRun any
+	DryRun       any
 }
 
 var InstanceMetadataDefaults = ubx.DataSourceBinding{

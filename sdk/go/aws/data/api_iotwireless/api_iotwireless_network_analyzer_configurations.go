@@ -4,27 +4,27 @@ package api_iotwireless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotwirelessNetworkAnalyzerConfigurations_NetworkAnalyzerConfigurationList struct {
-	Arn any
+	Arn  any
 	Name any
 }
 
 type ApiIotwirelessNetworkAnalyzerConfigurationsConfig struct {
 	// <p>The maximum number of results to return in this operation.</p>
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApiIotwirelessNetworkAnalyzerConfigurationsAttrs struct {
 	// <p>The maximum number of results to return in this operation.</p>
-	MaxResults any
+	MaxResults                       any
 	NetworkAnalyzerConfigurationList any
-	NextToken any
+	NextToken                        any
 }
 
 var ApiIotwirelessNetworkAnalyzerConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_network_analyzer_configurations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

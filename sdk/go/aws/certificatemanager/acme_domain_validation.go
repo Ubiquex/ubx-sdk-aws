@@ -25,37 +25,37 @@ type AcmeDomainValidation_PrevalidationOptions struct {
 }
 
 type AcmeDomainValidation_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var AcmeDomainValidation_PrevalidationOptions_DnsPrevalidation_DomainScopeFields = ubx.FieldMap{
-		"ExactDomain": ubx.FieldSpec{WireName: "exact_domain"},
-		"Subdomains": ubx.FieldSpec{WireName: "subdomains"},
-		"Wildcards": ubx.FieldSpec{WireName: "wildcards"},
-	}
+	"ExactDomain": ubx.FieldSpec{WireName: "exact_domain"},
+	"Subdomains":  ubx.FieldSpec{WireName: "subdomains"},
+	"Wildcards":   ubx.FieldSpec{WireName: "wildcards"},
+}
 
 var AcmeDomainValidation_PrevalidationOptions_DnsPrevalidationFields = ubx.FieldMap{
-		"DomainScope": ubx.FieldSpec{
-			WireName: "domain_scope",
-			Kind: "object",
-			Fields: AcmeDomainValidation_PrevalidationOptions_DnsPrevalidation_DomainScopeFields,
-		},
-		"HostedZoneId": ubx.FieldSpec{WireName: "hosted_zone_id"},
-	}
+	"DomainScope": ubx.FieldSpec{
+		WireName: "domain_scope",
+		Kind:     "object",
+		Fields:   AcmeDomainValidation_PrevalidationOptions_DnsPrevalidation_DomainScopeFields,
+	},
+	"HostedZoneId": ubx.FieldSpec{WireName: "hosted_zone_id"},
+}
 
 var AcmeDomainValidation_PrevalidationOptionsFields = ubx.FieldMap{
-		"DnsPrevalidation": ubx.FieldSpec{
-			WireName: "dns_prevalidation",
-			Kind: "object",
-			Fields: AcmeDomainValidation_PrevalidationOptions_DnsPrevalidationFields,
-		},
-	}
+	"DnsPrevalidation": ubx.FieldSpec{
+		WireName: "dns_prevalidation",
+		Kind:     "object",
+		Fields:   AcmeDomainValidation_PrevalidationOptions_DnsPrevalidationFields,
+	},
+}
 
 var AcmeDomainValidation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AcmeDomainValidationConfig struct {
 	// The ARN of the ACME endpoint this domain validation is associated with.
@@ -85,16 +85,16 @@ var AcmeDomainValidation = ubx.ResourceBinding{
 	WireType: "aws_certificate_manager_acme_domain_validation",
 	Fields: ubx.FieldMap{
 		"AcmeEndpointArn": ubx.FieldSpec{WireName: "acme_endpoint_arn"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":      ubx.FieldSpec{WireName: "domain_name"},
 		"PrevalidationOptions": ubx.FieldSpec{
 			WireName: "prevalidation_options",
-			Kind: "object",
-			Fields: AcmeDomainValidation_PrevalidationOptionsFields,
+			Kind:     "object",
+			Fields:   AcmeDomainValidation_PrevalidationOptionsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AcmeDomainValidation_TagsFields,
+			Kind:     "list",
+			Fields:   AcmeDomainValidation_TagsFields,
 		},
 	},
 }

@@ -4,53 +4,53 @@ package ivsrealtime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Participants_Participants struct {
-	FirstJoinTime any
+	FirstJoinTime          any
 	IngestConfigurationArn any
-	ParticipantId any
-	Published any
-	RecordingState any
-	RedundantIngest any
-	ReplicationState any
-	ReplicationType any
-	SourceSessionId any
-	SourceStageArn any
-	State any
-	UserId any
+	ParticipantId          any
+	Published              any
+	RecordingState         any
+	RedundantIngest        any
+	ReplicationState       any
+	ReplicationType        any
+	SourceSessionId        any
+	SourceStageArn         any
+	State                  any
+	UserId                 any
 }
 
 type ParticipantsConfig struct {
-	FilterByPublished any
+	FilterByPublished      any
 	FilterByRecordingState any
-	FilterByState any
-	FilterByUserId any
-	MaxResults any
-	NextToken any
-	SessionId any
-	StageArn any
+	FilterByState          any
+	FilterByUserId         any
+	MaxResults             any
+	NextToken              any
+	SessionId              any
+	StageArn               any
 }
 
 type ParticipantsAttrs struct {
-	FilterByPublished any
+	FilterByPublished      any
 	FilterByRecordingState any
-	FilterByState any
-	FilterByUserId any
-	MaxResults any
-	NextToken any
-	Participants any
-	SessionId any
-	StageArn any
+	FilterByState          any
+	FilterByUserId         any
+	MaxResults             any
+	NextToken              any
+	Participants           any
+	SessionId              any
+	StageArn               any
 }
 
 var Participants = ubx.DataSourceBinding{
 	WireType: "aws_ivsrealtime_participants",
 	Fields: ubx.FieldMap{
-		"FilterByPublished": ubx.FieldSpec{WireName: "filter_by_published"},
+		"FilterByPublished":      ubx.FieldSpec{WireName: "filter_by_published"},
 		"FilterByRecordingState": ubx.FieldSpec{WireName: "filter_by_recording_state"},
-		"FilterByState": ubx.FieldSpec{WireName: "filter_by_state"},
-		"FilterByUserId": ubx.FieldSpec{WireName: "filter_by_user_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SessionId": ubx.FieldSpec{WireName: "session_id"},
-		"StageArn": ubx.FieldSpec{WireName: "stage_arn"},
+		"FilterByState":          ubx.FieldSpec{WireName: "filter_by_state"},
+		"FilterByUserId":         ubx.FieldSpec{WireName: "filter_by_user_id"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
+		"SessionId":              ubx.FieldSpec{WireName: "session_id"},
+		"StageArn":               ubx.FieldSpec{WireName: "stage_arn"},
 	},
 }

@@ -16,6 +16,5 @@ type ScalingProcessTypesAttrs struct {
 
 var ScalingProcessTypes = ubx.DataSourceBinding{
 	WireType: "aws_autoscaling_scaling_process_types",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

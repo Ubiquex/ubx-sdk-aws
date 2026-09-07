@@ -20,15 +20,15 @@ type Channel_Tags struct {
 }
 
 var Channel_MultitrackInputConfigurationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MaximumResolution": ubx.FieldSpec{WireName: "maximum_resolution"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-	}
+	"Enabled":           ubx.FieldSpec{WireName: "enabled"},
+	"MaximumResolution": ubx.FieldSpec{WireName: "maximum_resolution"},
+	"Policy":            ubx.FieldSpec{WireName: "policy"},
+}
 
 var Channel_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ChannelConfig struct {
 	// Whether the channel is authorized.
@@ -85,22 +85,22 @@ type ChannelAttrs struct {
 var Channel = ubx.ResourceBinding{
 	WireType: "aws_ivs_channel",
 	Fields: ubx.FieldMap{
-		"Authorized": ubx.FieldSpec{WireName: "authorized"},
+		"Authorized":      ubx.FieldSpec{WireName: "authorized"},
 		"ContainerFormat": ubx.FieldSpec{WireName: "container_format"},
-		"InsecureIngest": ubx.FieldSpec{WireName: "insecure_ingest"},
-		"LatencyMode": ubx.FieldSpec{WireName: "latency_mode"},
+		"InsecureIngest":  ubx.FieldSpec{WireName: "insecure_ingest"},
+		"LatencyMode":     ubx.FieldSpec{WireName: "latency_mode"},
 		"MultitrackInputConfiguration": ubx.FieldSpec{
 			WireName: "multitrack_input_configuration",
-			Kind: "object",
-			Fields: Channel_MultitrackInputConfigurationFields,
+			Kind:     "object",
+			Fields:   Channel_MultitrackInputConfigurationFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Preset": ubx.FieldSpec{WireName: "preset"},
+		"Name":                      ubx.FieldSpec{WireName: "name"},
+		"Preset":                    ubx.FieldSpec{WireName: "preset"},
 		"RecordingConfigurationArn": ubx.FieldSpec{WireName: "recording_configuration_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Channel_TagsFields,
+			Kind:     "list",
+			Fields:   Channel_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

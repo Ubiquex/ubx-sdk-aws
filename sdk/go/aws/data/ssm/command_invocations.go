@@ -4,91 +4,91 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CommandInvocations_CommandInvocations_CloudWatchOutputConfig struct {
-	CloudWatchLogGroupName any
+	CloudWatchLogGroupName  any
 	CloudWatchOutputEnabled any
 }
 
 type CommandInvocations_CommandInvocations_CommandPlugins struct {
-	Name any
-	Output any
-	OutputS3BucketName any
-	OutputS3KeyPrefix any
-	OutputS3Region any
-	ResponseCode any
+	Name                   any
+	Output                 any
+	OutputS3BucketName     any
+	OutputS3KeyPrefix      any
+	OutputS3Region         any
+	ResponseCode           any
 	ResponseFinishDateTime any
-	ResponseStartDateTime any
-	StandardErrorUrl any
-	StandardOutputUrl any
-	Status any
-	StatusDetails any
+	ResponseStartDateTime  any
+	StandardErrorUrl       any
+	StandardOutputUrl      any
+	Status                 any
+	StatusDetails          any
 }
 
 type CommandInvocations_CommandInvocations_NotificationConfig struct {
-	NotificationArn any
+	NotificationArn    any
 	NotificationEvents any
-	NotificationType any
+	NotificationType   any
 }
 
 type CommandInvocations_CommandInvocations struct {
 	CloudWatchOutputConfig any
-	CommandId any
-	CommandPlugins any
-	Comment any
-	DocumentName any
-	DocumentVersion any
-	InstanceId any
-	InstanceName any
-	NotificationConfig any
-	RequestedDateTime any
-	ServiceRole any
-	StandardErrorUrl any
-	StandardOutputUrl any
-	Status any
-	StatusDetails any
-	TraceOutput any
+	CommandId              any
+	CommandPlugins         any
+	Comment                any
+	DocumentName           any
+	DocumentVersion        any
+	InstanceId             any
+	InstanceName           any
+	NotificationConfig     any
+	RequestedDateTime      any
+	ServiceRole            any
+	StandardErrorUrl       any
+	StandardOutputUrl      any
+	Status                 any
+	StatusDetails          any
+	TraceOutput            any
 }
 
 type CommandInvocations_Filters struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var CommandInvocations_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CommandInvocationsConfig struct {
-	CommandId any
-	Details any
-	Filters any
+	CommandId  any
+	Details    any
+	Filters    any
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CommandInvocationsAttrs struct {
-	CommandId any
+	CommandId          any
 	CommandInvocations any
-	Details any
-	Filters any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	Details            any
+	Filters            any
+	InstanceId         any
+	MaxResults         any
+	NextToken          any
 }
 
 var CommandInvocations = ubx.DataSourceBinding{
 	WireType: "aws_ssm_command_invocations",
 	Fields: ubx.FieldMap{
 		"CommandId": ubx.FieldSpec{WireName: "command_id"},
-		"Details": ubx.FieldSpec{WireName: "details"},
+		"Details":   ubx.FieldSpec{WireName: "details"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: CommandInvocations_FiltersFields,
+			Kind:     "list",
+			Fields:   CommandInvocations_FiltersFields,
 		},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -16,13 +16,13 @@ type VariantStore_SseConfig struct {
 }
 
 var VariantStore_ReferenceFields = ubx.FieldMap{
-		"ReferenceArn": ubx.FieldSpec{WireName: "reference_arn"},
-	}
+	"ReferenceArn": ubx.FieldSpec{WireName: "reference_arn"},
+}
 
 var VariantStore_SseConfigFields = ubx.FieldMap{
-		"KeyArn": ubx.FieldSpec{WireName: "key_arn"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"KeyArn": ubx.FieldSpec{WireName: "key_arn"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+}
 
 type VariantStoreConfig struct {
 	// A user-supplied description of the variant store, providing human-readable context for the resource. (AI-inferred)
@@ -68,16 +68,16 @@ var VariantStore = ubx.ResourceBinding{
 	WireType: "aws_omics_variant_store",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Reference": ubx.FieldSpec{
 			WireName: "reference",
-			Kind: "object",
-			Fields: VariantStore_ReferenceFields,
+			Kind:     "object",
+			Fields:   VariantStore_ReferenceFields,
 		},
 		"SseConfig": ubx.FieldSpec{
 			WireName: "sse_config",
-			Kind: "object",
-			Fields: VariantStore_SseConfigFields,
+			Kind:     "object",
+			Fields:   VariantStore_SseConfigFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

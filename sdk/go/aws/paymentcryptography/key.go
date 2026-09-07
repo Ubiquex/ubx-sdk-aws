@@ -37,37 +37,37 @@ type Key_KeyAttributes struct {
 
 type Key_Tags struct {
 	// The key of a user-defined tag applied to an AWS Payment Cryptography key, enabling categorization, filtering, cost allocation, and access control for the key. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Key_KeyAttributes_KeyModesOfUseFields = ubx.FieldMap{
-		"Decrypt": ubx.FieldSpec{WireName: "decrypt"},
-		"DeriveKey": ubx.FieldSpec{WireName: "derive_key"},
-		"Encrypt": ubx.FieldSpec{WireName: "encrypt"},
-		"Generate": ubx.FieldSpec{WireName: "generate"},
-		"NoRestrictions": ubx.FieldSpec{WireName: "no_restrictions"},
-		"Sign": ubx.FieldSpec{WireName: "sign"},
-		"Unwrap": ubx.FieldSpec{WireName: "unwrap"},
-		"Verify": ubx.FieldSpec{WireName: "verify"},
-		"Wrap": ubx.FieldSpec{WireName: "wrap"},
-	}
+	"Decrypt":        ubx.FieldSpec{WireName: "decrypt"},
+	"DeriveKey":      ubx.FieldSpec{WireName: "derive_key"},
+	"Encrypt":        ubx.FieldSpec{WireName: "encrypt"},
+	"Generate":       ubx.FieldSpec{WireName: "generate"},
+	"NoRestrictions": ubx.FieldSpec{WireName: "no_restrictions"},
+	"Sign":           ubx.FieldSpec{WireName: "sign"},
+	"Unwrap":         ubx.FieldSpec{WireName: "unwrap"},
+	"Verify":         ubx.FieldSpec{WireName: "verify"},
+	"Wrap":           ubx.FieldSpec{WireName: "wrap"},
+}
 
 var Key_KeyAttributesFields = ubx.FieldMap{
-		"KeyAlgorithm": ubx.FieldSpec{WireName: "key_algorithm"},
-		"KeyClass": ubx.FieldSpec{WireName: "key_class"},
-		"KeyModesOfUse": ubx.FieldSpec{
-			WireName: "key_modes_of_use",
-			Kind: "object",
-			Fields: Key_KeyAttributes_KeyModesOfUseFields,
-		},
-		"KeyUsage": ubx.FieldSpec{WireName: "key_usage"},
-	}
+	"KeyAlgorithm": ubx.FieldSpec{WireName: "key_algorithm"},
+	"KeyClass":     ubx.FieldSpec{WireName: "key_class"},
+	"KeyModesOfUse": ubx.FieldSpec{
+		WireName: "key_modes_of_use",
+		Kind:     "object",
+		Fields:   Key_KeyAttributes_KeyModesOfUseFields,
+	},
+	"KeyUsage": ubx.FieldSpec{WireName: "key_usage"},
+}
 
 var Key_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type KeyConfig struct {
 	// Specifies the intended cryptographic key usage for a derived key generated from this key. (AI-inferred)
@@ -119,20 +119,20 @@ var Key = ubx.ResourceBinding{
 	WireType: "aws_payment_cryptography_key",
 	Fields: ubx.FieldMap{
 		"DeriveKeyUsage": ubx.FieldSpec{WireName: "derive_key_usage"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Exportable": ubx.FieldSpec{WireName: "exportable"},
+		"Enabled":        ubx.FieldSpec{WireName: "enabled"},
+		"Exportable":     ubx.FieldSpec{WireName: "exportable"},
 		"KeyAttributes": ubx.FieldSpec{
 			WireName: "key_attributes",
-			Kind: "object",
-			Fields: Key_KeyAttributesFields,
+			Kind:     "object",
+			Fields:   Key_KeyAttributesFields,
 		},
 		"KeyCheckValueAlgorithm": ubx.FieldSpec{WireName: "key_check_value_algorithm"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"ReplicationRegions": ubx.FieldSpec{WireName: "replication_regions"},
+		"Policy":                 ubx.FieldSpec{WireName: "policy"},
+		"ReplicationRegions":     ubx.FieldSpec{WireName: "replication_regions"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Key_TagsFields,
+			Kind:     "list",
+			Fields:   Key_TagsFields,
 		},
 	},
 }

@@ -44,13 +44,13 @@ type SlackChannelConfigurationAttrs struct {
 var SlackChannelConfiguration = ubx.ResourceBinding{
 	WireType: "aws_support_app_slack_channel_configuration",
 	Fields: ubx.FieldMap{
-		"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
-		"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
-		"ChannelRoleArn": ubx.FieldSpec{WireName: "channel_role_arn"},
+		"ChannelId":                       ubx.FieldSpec{WireName: "channel_id"},
+		"ChannelName":                     ubx.FieldSpec{WireName: "channel_name"},
+		"ChannelRoleArn":                  ubx.FieldSpec{WireName: "channel_role_arn"},
 		"NotifyOnAddCorrespondenceToCase": ubx.FieldSpec{WireName: "notify_on_add_correspondence_to_case"},
-		"NotifyOnCaseSeverity": ubx.FieldSpec{WireName: "notify_on_case_severity"},
-		"NotifyOnCreateOrReopenCase": ubx.FieldSpec{WireName: "notify_on_create_or_reopen_case"},
-		"NotifyOnResolveCase": ubx.FieldSpec{WireName: "notify_on_resolve_case"},
-		"TeamId": ubx.FieldSpec{WireName: "team_id"},
+		"NotifyOnCaseSeverity":            ubx.FieldSpec{WireName: "notify_on_case_severity"},
+		"NotifyOnCreateOrReopenCase":      ubx.FieldSpec{WireName: "notify_on_create_or_reopen_case"},
+		"NotifyOnResolveCase":             ubx.FieldSpec{WireName: "notify_on_resolve_case"},
+		"TeamId":                          ubx.FieldSpec{WireName: "team_id"},
 	},
 }

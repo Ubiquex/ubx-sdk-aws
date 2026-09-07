@@ -4,34 +4,34 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PackageVersions_PackageVersionSummaries struct {
-	CreationDate any
+	CreationDate     any
 	LastModifiedDate any
-	PackageName any
-	Status any
-	VersionName any
+	PackageName      any
+	Status           any
+	VersionName      any
 }
 
 type PackageVersionsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	PackageName any
-	Status any
+	Status      any
 }
 
 type PackageVersionsAttrs struct {
-	MaxResults any
-	NextToken any
-	PackageName any
+	MaxResults              any
+	NextToken               any
+	PackageName             any
 	PackageVersionSummaries any
-	Status any
+	Status                  any
 }
 
 var PackageVersions = ubx.DataSourceBinding{
 	WireType: "aws_iot_package_versions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"PackageName": ubx.FieldSpec{WireName: "package_name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":      ubx.FieldSpec{WireName: "status"},
 	},
 }

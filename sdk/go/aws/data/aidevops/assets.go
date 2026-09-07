@@ -4,45 +4,45 @@ package aidevops
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Assets_Items struct {
-	AssetId any
+	AssetId   any
 	AssetType any
 	CreatedAt any
-	Metadata any
+	Metadata  any
 	UpdatedAt any
-	Version any
+	Version   any
 }
 
 type AssetsConfig struct {
 	AgentSpaceId any
 	// <p>The type of asset (e.g. skill, artifact)</p>
-	AssetType any
+	AssetType  any
 	MaxResults any
 	// <p>Pagination token for list operations (1-2048 characters)</p>
-	NextToken any
-	UpdatedAfter any
+	NextToken     any
+	UpdatedAfter  any
 	UpdatedBefore any
 }
 
 type AssetsAttrs struct {
 	AgentSpaceId any
 	// <p>The type of asset (e.g. skill, artifact)</p>
-	AssetType any
-	Items any
+	AssetType  any
+	Items      any
 	MaxResults any
 	// <p>Pagination token for list operations (1-2048 characters)</p>
-	NextToken any
-	UpdatedAfter any
+	NextToken     any
+	UpdatedAfter  any
 	UpdatedBefore any
 }
 
 var Assets = ubx.DataSourceBinding{
 	WireType: "aws_aidevops_assets",
 	Fields: ubx.FieldMap{
-		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
-		"AssetType": ubx.FieldSpec{WireName: "asset_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"UpdatedAfter": ubx.FieldSpec{WireName: "updated_after"},
+		"AgentSpaceId":  ubx.FieldSpec{WireName: "agent_space_id"},
+		"AssetType":     ubx.FieldSpec{WireName: "asset_type"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"UpdatedAfter":  ubx.FieldSpec{WireName: "updated_after"},
 		"UpdatedBefore": ubx.FieldSpec{WireName: "updated_before"},
 	},
 }

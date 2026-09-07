@@ -11,16 +11,16 @@ type LocalGatewayRouteTableVirtualInterfaceGroupAssociation_Tags struct {
 }
 
 var LocalGatewayRouteTableVirtualInterfaceGroupAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LocalGatewayRouteTableVirtualInterfaceGroupAssociationConfig struct {
 	// The ID of the local gateway route table.
 	LocalGatewayRouteTableId any
 	// The ID of the local gateway route table virtual interface group.
 	LocalGatewayVirtualInterfaceGroupId any
-	Tags any
+	Tags                                any
 }
 
 type LocalGatewayRouteTableVirtualInterfaceGroupAssociationAttrs struct {
@@ -38,18 +38,18 @@ type LocalGatewayRouteTableVirtualInterfaceGroupAssociationAttrs struct {
 	OwnerId any
 	// The state of the local gateway route table virtual interface group association.
 	State any
-	Tags any
+	Tags  any
 }
 
 var LocalGatewayRouteTableVirtualInterfaceGroupAssociation = ubx.ResourceBinding{
 	WireType: "aws_ec2_local_gateway_route_table_virtual_interface_group_association",
 	Fields: ubx.FieldMap{
-		"LocalGatewayRouteTableId": ubx.FieldSpec{WireName: "local_gateway_route_table_id"},
+		"LocalGatewayRouteTableId":            ubx.FieldSpec{WireName: "local_gateway_route_table_id"},
 		"LocalGatewayVirtualInterfaceGroupId": ubx.FieldSpec{WireName: "local_gateway_virtual_interface_group_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LocalGatewayRouteTableVirtualInterfaceGroupAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   LocalGatewayRouteTableVirtualInterfaceGroupAssociation_TagsFields,
 		},
 	},
 }

@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeploymentStrategies_Items struct {
 	DeploymentDurationInMinutes any
-	Description any
-	FinalBakeTimeInMinutes any
-	GrowthFactor any
-	GrowthType any
-	Id any
-	Name any
-	ReplicateTo any
+	Description                 any
+	FinalBakeTimeInMinutes      any
+	GrowthFactor                any
+	GrowthType                  any
+	Id                          any
+	Name                        any
+	ReplicateTo                 any
 }
 
 type DeploymentStrategiesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DeploymentStrategiesAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var DeploymentStrategies = ubx.DataSourceBinding{
 	WireType: "aws_appconfig_deployment_strategies",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

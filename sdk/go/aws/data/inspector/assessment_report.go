@@ -6,15 +6,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type AssessmentReportConfig struct {
 	AssessmentRunArn any
 	ReportFileFormat any
-	ReportType any
+	ReportType       any
 }
 
 type AssessmentReportAttrs struct {
 	AssessmentRunArn any
 	ReportFileFormat any
-	ReportType any
-	Status any
-	Url any
+	ReportType       any
+	Status           any
+	Url              any
 }
 
 var AssessmentReport = ubx.DataSourceBinding{
@@ -22,6 +22,6 @@ var AssessmentReport = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AssessmentRunArn": ubx.FieldSpec{WireName: "assessment_run_arn"},
 		"ReportFileFormat": ubx.FieldSpec{WireName: "report_file_format"},
-		"ReportType": ubx.FieldSpec{WireName: "report_type"},
+		"ReportType":       ubx.FieldSpec{WireName: "report_type"},
 	},
 }

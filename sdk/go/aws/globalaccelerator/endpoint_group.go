@@ -22,16 +22,16 @@ type EndpointGroup_PortOverrides struct {
 }
 
 var EndpointGroup_EndpointConfigurationsFields = ubx.FieldMap{
-		"AttachmentArn": ubx.FieldSpec{WireName: "attachment_arn"},
-		"ClientIppreservationEnabled": ubx.FieldSpec{WireName: "client_ippreservation_enabled"},
-		"EndpointId": ubx.FieldSpec{WireName: "endpoint_id"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"AttachmentArn":               ubx.FieldSpec{WireName: "attachment_arn"},
+	"ClientIppreservationEnabled": ubx.FieldSpec{WireName: "client_ippreservation_enabled"},
+	"EndpointId":                  ubx.FieldSpec{WireName: "endpoint_id"},
+	"Weight":                      ubx.FieldSpec{WireName: "weight"},
+}
 
 var EndpointGroup_PortOverridesFields = ubx.FieldMap{
-		"EndpointPort": ubx.FieldSpec{WireName: "endpoint_port"},
-		"ListenerPort": ubx.FieldSpec{WireName: "listener_port"},
-	}
+	"EndpointPort": ubx.FieldSpec{WireName: "endpoint_port"},
+	"ListenerPort": ubx.FieldSpec{WireName: "listener_port"},
+}
 
 type EndpointGroupConfig struct {
 	// The list of endpoint objects.
@@ -86,21 +86,21 @@ var EndpointGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EndpointConfigurations": ubx.FieldSpec{
 			WireName: "endpoint_configurations",
-			Kind: "list",
-			Fields: EndpointGroup_EndpointConfigurationsFields,
+			Kind:     "list",
+			Fields:   EndpointGroup_EndpointConfigurationsFields,
 		},
-		"EndpointGroupRegion": ubx.FieldSpec{WireName: "endpoint_group_region"},
+		"EndpointGroupRegion":        ubx.FieldSpec{WireName: "endpoint_group_region"},
 		"HealthCheckIntervalSeconds": ubx.FieldSpec{WireName: "health_check_interval_seconds"},
-		"HealthCheckPath": ubx.FieldSpec{WireName: "health_check_path"},
-		"HealthCheckPort": ubx.FieldSpec{WireName: "health_check_port"},
-		"HealthCheckProtocol": ubx.FieldSpec{WireName: "health_check_protocol"},
-		"ListenerArn": ubx.FieldSpec{WireName: "listener_arn"},
+		"HealthCheckPath":            ubx.FieldSpec{WireName: "health_check_path"},
+		"HealthCheckPort":            ubx.FieldSpec{WireName: "health_check_port"},
+		"HealthCheckProtocol":        ubx.FieldSpec{WireName: "health_check_protocol"},
+		"ListenerArn":                ubx.FieldSpec{WireName: "listener_arn"},
 		"PortOverrides": ubx.FieldSpec{
 			WireName: "port_overrides",
-			Kind: "list",
-			Fields: EndpointGroup_PortOverridesFields,
+			Kind:     "list",
+			Fields:   EndpointGroup_PortOverridesFields,
 		},
-		"ThresholdCount": ubx.FieldSpec{WireName: "threshold_count"},
+		"ThresholdCount":        ubx.FieldSpec{WireName: "threshold_count"},
 		"TrafficDialPercentage": ubx.FieldSpec{WireName: "traffic_dial_percentage"},
 	},
 }

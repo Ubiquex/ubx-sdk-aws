@@ -4,35 +4,35 @@ package cleanrooms_ml
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CleanroomsMlCollaborationConfiguredModelAlgorithmAssociations_CollaborationConfiguredModelAlgorithmAssociations struct {
-	CollaborationIdentifier any
-	ConfiguredModelAlgorithmArn any
+	CollaborationIdentifier                any
+	ConfiguredModelAlgorithmArn            any
 	ConfiguredModelAlgorithmAssociationArn any
-	CreateTime any
-	CreatorAccountId any
-	Description any
-	MembershipIdentifier any
-	Name any
-	UpdateTime any
+	CreateTime                             any
+	CreatorAccountId                       any
+	Description                            any
+	MembershipIdentifier                   any
+	Name                                   any
+	UpdateTime                             any
 }
 
 type CleanroomsMlCollaborationConfiguredModelAlgorithmAssociationsConfig struct {
 	CollaborationIdentifier any
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 }
 
 type CleanroomsMlCollaborationConfiguredModelAlgorithmAssociationsAttrs struct {
 	CollaborationConfiguredModelAlgorithmAssociations any
-	CollaborationIdentifier any
-	MaxResults any
-	NextToken any
+	CollaborationIdentifier                           any
+	MaxResults                                        any
+	NextToken                                         any
 }
 
 var CleanroomsMlCollaborationConfiguredModelAlgorithmAssociations = ubx.DataSourceBinding{
 	WireType: "aws_cleanrooms_ml_collaboration_configured_model_algorithm_associations",
 	Fields: ubx.FieldMap{
 		"CollaborationIdentifier": ubx.FieldSpec{WireName: "collaboration_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
 	},
 }

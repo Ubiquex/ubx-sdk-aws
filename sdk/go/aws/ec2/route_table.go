@@ -10,9 +10,9 @@ type RouteTable_Tags struct {
 }
 
 var RouteTable_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RouteTableConfig struct {
 	// Any tags assigned to the route table.
@@ -35,8 +35,8 @@ var RouteTable = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RouteTable_TagsFields,
+			Kind:     "list",
+			Fields:   RouteTable_TagsFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

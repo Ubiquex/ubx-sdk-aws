@@ -4,14 +4,14 @@ package transcribe
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TranscriptionJobs_TranscriptionJobSummaries_ContentRedaction struct {
-	PiiEntityTypes any
+	PiiEntityTypes  any
 	RedactionOutput any
-	RedactionType any
+	RedactionType   any
 }
 
 type TranscriptionJobs_TranscriptionJobSummaries_LanguageCodes struct {
 	DurationInSeconds any
-	LanguageCode any
+	LanguageCode      any
 }
 
 type TranscriptionJobs_TranscriptionJobSummaries_ModelSettings struct {
@@ -23,35 +23,35 @@ type TranscriptionJobs_TranscriptionJobSummaries_ToxicityDetection struct {
 }
 
 type TranscriptionJobs_TranscriptionJobSummaries struct {
-	CompletionTime any
-	ContentRedaction any
-	CreationTime any
-	FailureReason any
-	IdentifiedLanguageScore any
-	IdentifyLanguage any
+	CompletionTime            any
+	ContentRedaction          any
+	CreationTime              any
+	FailureReason             any
+	IdentifiedLanguageScore   any
+	IdentifyLanguage          any
 	IdentifyMultipleLanguages any
-	LanguageCode any
-	LanguageCodes any
-	ModelSettings any
-	OutputLocationType any
-	StartTime any
-	ToxicityDetection any
-	TranscriptionJobName any
-	TranscriptionJobStatus any
+	LanguageCode              any
+	LanguageCodes             any
+	ModelSettings             any
+	OutputLocationType        any
+	StartTime                 any
+	ToxicityDetection         any
+	TranscriptionJobName      any
+	TranscriptionJobStatus    any
 }
 
 type TranscriptionJobsConfig struct {
 	JobNameContains any
-	MaxResults any
-	NextToken any
-	Status any
+	MaxResults      any
+	NextToken       any
+	Status          any
 }
 
 type TranscriptionJobsAttrs struct {
-	JobNameContains any
-	MaxResults any
-	NextToken any
-	Status any
+	JobNameContains           any
+	MaxResults                any
+	NextToken                 any
+	Status                    any
 	TranscriptionJobSummaries any
 }
 
@@ -59,8 +59,8 @@ var TranscriptionJobs = ubx.DataSourceBinding{
 	WireType: "aws_transcribe_transcription_jobs",
 	Fields: ubx.FieldMap{
 		"JobNameContains": ubx.FieldSpec{WireName: "job_name_contains"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"Status":          ubx.FieldSpec{WireName: "status"},
 	},
 }

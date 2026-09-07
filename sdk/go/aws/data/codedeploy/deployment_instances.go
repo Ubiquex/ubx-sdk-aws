@@ -4,26 +4,26 @@ package codedeploy
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeploymentInstancesConfig struct {
-	DeploymentId any
+	DeploymentId         any
 	InstanceStatusFilter any
-	InstanceTypeFilter any
-	NextToken any
+	InstanceTypeFilter   any
+	NextToken            any
 }
 
 type DeploymentInstancesAttrs struct {
-	DeploymentId any
+	DeploymentId         any
 	InstanceStatusFilter any
-	InstanceTypeFilter any
-	InstancesList any
-	NextToken any
+	InstanceTypeFilter   any
+	InstancesList        any
+	NextToken            any
 }
 
 var DeploymentInstances = ubx.DataSourceBinding{
 	WireType: "aws_codedeploy_deployment_instances",
 	Fields: ubx.FieldMap{
-		"DeploymentId": ubx.FieldSpec{WireName: "deployment_id"},
+		"DeploymentId":         ubx.FieldSpec{WireName: "deployment_id"},
 		"InstanceStatusFilter": ubx.FieldSpec{WireName: "instance_status_filter"},
-		"InstanceTypeFilter": ubx.FieldSpec{WireName: "instance_type_filter"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"InstanceTypeFilter":   ubx.FieldSpec{WireName: "instance_type_filter"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 	},
 }

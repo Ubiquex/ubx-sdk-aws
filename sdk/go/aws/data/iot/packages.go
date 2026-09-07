@@ -4,20 +4,20 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Packages_PackageSummaries struct {
-	CreationDate any
+	CreationDate       any
 	DefaultVersionName any
-	LastModifiedDate any
-	PackageName any
+	LastModifiedDate   any
+	PackageName        any
 }
 
 type PackagesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type PackagesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	PackageSummaries any
 }
 
@@ -25,6 +25,6 @@ var Packages = ubx.DataSourceBinding{
 	WireType: "aws_iot_packages",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

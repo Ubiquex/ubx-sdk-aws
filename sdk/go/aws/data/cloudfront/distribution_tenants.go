@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DistributionTenants_AssociationFilter struct {
 	ConnectionGroupId any
-	DistributionId any
+	DistributionId    any
 }
 
 type DistributionTenants_DistributionTenantList_Customizations_Certificate struct {
@@ -13,19 +13,19 @@ type DistributionTenants_DistributionTenantList_Customizations_Certificate struc
 }
 
 type DistributionTenants_DistributionTenantList_Customizations_GeoRestrictions struct {
-	Locations any
+	Locations       any
 	RestrictionType any
 }
 
 type DistributionTenants_DistributionTenantList_Customizations_WebAcl struct {
 	Action any
-	Arn any
+	Arn    any
 }
 
 type DistributionTenants_DistributionTenantList_Customizations struct {
-	Certificate any
+	Certificate     any
 	GeoRestrictions any
-	WebAcl any
+	WebAcl          any
 }
 
 type DistributionTenants_DistributionTenantList_Domains struct {
@@ -34,39 +34,39 @@ type DistributionTenants_DistributionTenantList_Domains struct {
 }
 
 type DistributionTenants_DistributionTenantList struct {
-	Arn any
+	Arn               any
 	ConnectionGroupId any
-	CreatedTime any
-	Customizations any
-	DistributionId any
-	Domains any
-	Enabled any
-	Etag any
-	Id any
-	LastModifiedTime any
-	Name any
-	Status any
+	CreatedTime       any
+	Customizations    any
+	DistributionId    any
+	Domains           any
+	Enabled           any
+	Etag              any
+	Id                any
+	LastModifiedTime  any
+	Name              any
+	Status            any
 }
 
 var DistributionTenants_AssociationFilterFields = ubx.FieldMap{
-		"ConnectionGroupId": ubx.FieldSpec{WireName: "connection_group_id"},
-		"DistributionId": ubx.FieldSpec{WireName: "distribution_id"},
-	}
+	"ConnectionGroupId": ubx.FieldSpec{WireName: "connection_group_id"},
+	"DistributionId":    ubx.FieldSpec{WireName: "distribution_id"},
+}
 
 type DistributionTenantsConfig struct {
 	// <p>Filter by the associated distribution ID or connection group ID.</p>
 	AssociationFilter any
-	Marker any
-	MaxItems any
+	Marker            any
+	MaxItems          any
 }
 
 type DistributionTenantsAttrs struct {
 	// <p>Filter by the associated distribution ID or connection group ID.</p>
-	AssociationFilter any
+	AssociationFilter      any
 	DistributionTenantList any
-	Marker any
-	MaxItems any
-	NextMarker any
+	Marker                 any
+	MaxItems               any
+	NextMarker             any
 }
 
 var DistributionTenants = ubx.DataSourceBinding{
@@ -74,10 +74,10 @@ var DistributionTenants = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AssociationFilter": ubx.FieldSpec{
 			WireName: "association_filter",
-			Kind: "object",
-			Fields: DistributionTenants_AssociationFilterFields,
+			Kind:     "object",
+			Fields:   DistributionTenants_AssociationFilterFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 	},
 }

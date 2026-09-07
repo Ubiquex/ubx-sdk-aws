@@ -28,9 +28,9 @@ type BasePathMappingAttrs struct {
 var BasePathMapping = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_base_path_mapping",
 	Fields: ubx.FieldMap{
-		"BasePath": ubx.FieldSpec{WireName: "base_path"},
+		"BasePath":   ubx.FieldSpec{WireName: "base_path"},
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
-		"Stage": ubx.FieldSpec{WireName: "stage"},
+		"RestApiId":  ubx.FieldSpec{WireName: "rest_api_id"},
+		"Stage":      ubx.FieldSpec{WireName: "stage"},
 	},
 }

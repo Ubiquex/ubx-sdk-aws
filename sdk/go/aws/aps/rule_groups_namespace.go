@@ -11,9 +11,9 @@ type RuleGroupsNamespace_Tags struct {
 }
 
 var RuleGroupsNamespace_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RuleGroupsNamespaceConfig struct {
 	// The RuleGroupsNamespace data.
@@ -46,8 +46,8 @@ var RuleGroupsNamespace = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RuleGroupsNamespace_TagsFields,
+			Kind:     "list",
+			Fields:   RuleGroupsNamespace_TagsFields,
 		},
 		"Workspace": ubx.FieldSpec{WireName: "workspace"},
 	},

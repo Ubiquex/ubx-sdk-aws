@@ -8,7 +8,7 @@ type GitHubAccountTokenNamesConfig struct {
 }
 
 type GitHubAccountTokenNamesAttrs struct {
-	NextToken any
+	NextToken     any
 	TokenNameList any
 }
 

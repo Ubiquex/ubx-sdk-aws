@@ -11,9 +11,9 @@ type LogGroup_Tags struct {
 }
 
 var LogGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LogGroupConfig struct {
 	// Indicates whether bearer token authentication is enabled for this log group. When enabled, bearer token authentication is allowed on operations until it is explicitly disabled.
@@ -67,18 +67,18 @@ var LogGroup = ubx.ResourceBinding{
 	WireType: "aws_logs_log_group",
 	Fields: ubx.FieldMap{
 		"BearerTokenAuthenticationEnabled": ubx.FieldSpec{WireName: "bearer_token_authentication_enabled"},
-		"DataProtectionPolicy": ubx.FieldSpec{WireName: "data_protection_policy"},
-		"DeletionProtectionEnabled": ubx.FieldSpec{WireName: "deletion_protection_enabled"},
-		"FieldIndexPolicies": ubx.FieldSpec{WireName: "field_index_policies"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"LogGroupClass": ubx.FieldSpec{WireName: "log_group_class"},
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-		"ResourcePolicyDocument": ubx.FieldSpec{WireName: "resource_policy_document"},
-		"RetentionInDays": ubx.FieldSpec{WireName: "retention_in_days"},
+		"DataProtectionPolicy":             ubx.FieldSpec{WireName: "data_protection_policy"},
+		"DeletionProtectionEnabled":        ubx.FieldSpec{WireName: "deletion_protection_enabled"},
+		"FieldIndexPolicies":               ubx.FieldSpec{WireName: "field_index_policies"},
+		"KmsKeyId":                         ubx.FieldSpec{WireName: "kms_key_id"},
+		"LogGroupClass":                    ubx.FieldSpec{WireName: "log_group_class"},
+		"LogGroupName":                     ubx.FieldSpec{WireName: "log_group_name"},
+		"ResourcePolicyDocument":           ubx.FieldSpec{WireName: "resource_policy_document"},
+		"RetentionInDays":                  ubx.FieldSpec{WireName: "retention_in_days"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LogGroup_TagsFields,
+			Kind:     "list",
+			Fields:   LogGroup_TagsFields,
 		},
 	},
 }

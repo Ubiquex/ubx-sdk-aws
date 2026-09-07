@@ -11,9 +11,9 @@ type ServiceNetworkResourceAssociation_Tags struct {
 }
 
 var ServiceNetworkResourceAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ServiceNetworkResourceAssociationConfig struct {
 	// When enabled, this generates a private DNS hostname for the associated resource within the VPC Lattice service network, allowing it to be accessed via DNS resolution from associated VPCs. (AI-inferred)
@@ -44,13 +44,13 @@ type ServiceNetworkResourceAssociationAttrs struct {
 var ServiceNetworkResourceAssociation = ubx.ResourceBinding{
 	WireType: "aws_vpc_lattice_service_network_resource_association",
 	Fields: ubx.FieldMap{
-		"PrivateDnsEnabled": ubx.FieldSpec{WireName: "private_dns_enabled"},
+		"PrivateDnsEnabled":       ubx.FieldSpec{WireName: "private_dns_enabled"},
 		"ResourceConfigurationId": ubx.FieldSpec{WireName: "resource_configuration_id"},
-		"ServiceNetworkId": ubx.FieldSpec{WireName: "service_network_id"},
+		"ServiceNetworkId":        ubx.FieldSpec{WireName: "service_network_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ServiceNetworkResourceAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   ServiceNetworkResourceAssociation_TagsFields,
 		},
 	},
 }

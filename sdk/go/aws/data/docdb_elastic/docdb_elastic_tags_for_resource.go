@@ -9,7 +9,7 @@ type DocdbElasticTagsForResourceConfig struct {
 
 type DocdbElasticTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var DocdbElasticTagsForResource = ubx.DataSourceBinding{

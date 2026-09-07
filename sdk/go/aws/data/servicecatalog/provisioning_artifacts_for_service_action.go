@@ -4,54 +4,54 @@ package servicecatalog
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProvisioningArtifactsForServiceAction_ProvisioningArtifactViews_ProductViewSummary struct {
-	Distributor any
-	HasDefaultPath any
-	Id any
-	Name any
-	Owner any
-	ProductId any
-	ShortDescription any
+	Distributor        any
+	HasDefaultPath     any
+	Id                 any
+	Name               any
+	Owner              any
+	ProductId          any
+	ShortDescription   any
 	SupportDescription any
-	SupportEmail any
-	SupportUrl any
-	Type any
+	SupportEmail       any
+	SupportUrl         any
+	Type               any
 }
 
 type ProvisioningArtifactsForServiceAction_ProvisioningArtifactViews_ProvisioningArtifact struct {
 	CreatedTime any
 	Description any
-	Guidance any
-	Id any
-	Name any
+	Guidance    any
+	Id          any
+	Name        any
 }
 
 type ProvisioningArtifactsForServiceAction_ProvisioningArtifactViews struct {
-	ProductViewSummary any
+	ProductViewSummary   any
 	ProvisioningArtifact any
 }
 
 type ProvisioningArtifactsForServiceActionConfig struct {
-	AcceptLanguage any
-	PageSize any
-	PageToken any
+	AcceptLanguage  any
+	PageSize        any
+	PageToken       any
 	ServiceActionId any
 }
 
 type ProvisioningArtifactsForServiceActionAttrs struct {
-	AcceptLanguage any
-	NextPageToken any
-	PageSize any
-	PageToken any
+	AcceptLanguage            any
+	NextPageToken             any
+	PageSize                  any
+	PageToken                 any
 	ProvisioningArtifactViews any
-	ServiceActionId any
+	ServiceActionId           any
 }
 
 var ProvisioningArtifactsForServiceAction = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_provisioning_artifacts_for_service_action",
 	Fields: ubx.FieldMap{
-		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
+		"AcceptLanguage":  ubx.FieldSpec{WireName: "accept_language"},
+		"PageSize":        ubx.FieldSpec{WireName: "page_size"},
+		"PageToken":       ubx.FieldSpec{WireName: "page_token"},
 		"ServiceActionId": ubx.FieldSpec{WireName: "service_action_id"},
 	},
 }

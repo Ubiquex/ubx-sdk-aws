@@ -11,9 +11,9 @@ type TypeActivation_LoggingConfig struct {
 }
 
 var TypeActivation_LoggingConfigFields = ubx.FieldMap{
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-		"LogRoleArn": ubx.FieldSpec{WireName: "log_role_arn"},
-	}
+	"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
+	"LogRoleArn":   ubx.FieldSpec{WireName: "log_role_arn"},
+}
 
 type TypeActivationConfig struct {
 	// Whether to automatically update the extension in this account and region when a new minor version is published by the extension publisher. Major versions released by the publisher must be manually updated.
@@ -66,19 +66,19 @@ type TypeActivationAttrs struct {
 var TypeActivation = ubx.ResourceBinding{
 	WireType: "aws_cloud_formation_type_activation",
 	Fields: ubx.FieldMap{
-		"AutoUpdate": ubx.FieldSpec{WireName: "auto_update"},
+		"AutoUpdate":       ubx.FieldSpec{WireName: "auto_update"},
 		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
 		"LoggingConfig": ubx.FieldSpec{
 			WireName: "logging_config",
-			Kind: "object",
-			Fields: TypeActivation_LoggingConfigFields,
+			Kind:     "object",
+			Fields:   TypeActivation_LoggingConfigFields,
 		},
-		"MajorVersion": ubx.FieldSpec{WireName: "major_version"},
+		"MajorVersion":  ubx.FieldSpec{WireName: "major_version"},
 		"PublicTypeArn": ubx.FieldSpec{WireName: "public_type_arn"},
-		"PublisherId": ubx.FieldSpec{WireName: "publisher_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
+		"PublisherId":   ubx.FieldSpec{WireName: "publisher_id"},
+		"Type":          ubx.FieldSpec{WireName: "type"},
+		"TypeName":      ubx.FieldSpec{WireName: "type_name"},
 		"TypeNameAlias": ubx.FieldSpec{WireName: "type_name_alias"},
-		"VersionBump": ubx.FieldSpec{WireName: "version_bump"},
+		"VersionBump":   ubx.FieldSpec{WireName: "version_bump"},
 	},
 }

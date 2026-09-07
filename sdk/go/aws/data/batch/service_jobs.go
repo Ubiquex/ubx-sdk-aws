@@ -4,17 +4,17 @@ package batch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceJobs_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ServiceJobs_JobSummaryList_CapacityUsage struct {
 	CapacityUnit any
-	Quantity any
+	Quantity     any
 }
 
 type ServiceJobs_JobSummaryList_LatestAttempt_ServiceResourceId struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -23,42 +23,42 @@ type ServiceJobs_JobSummaryList_LatestAttempt struct {
 }
 
 type ServiceJobs_JobSummaryList struct {
-	CapacityUsage any
-	CreatedAt any
-	JobArn any
-	JobId any
-	JobName any
-	LatestAttempt any
-	QuotaShareName any
-	ScheduledAt any
-	ServiceJobType any
+	CapacityUsage   any
+	CreatedAt       any
+	JobArn          any
+	JobId           any
+	JobName         any
+	LatestAttempt   any
+	QuotaShareName  any
+	ScheduledAt     any
+	ServiceJobType  any
 	ShareIdentifier any
-	StartedAt any
-	Status any
-	StatusReason any
-	StoppedAt any
+	StartedAt       any
+	Status          any
+	StatusReason    any
+	StoppedAt       any
 }
 
 var ServiceJobs_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ServiceJobsConfig struct {
-	Filters any
-	JobQueue any
-	JobStatus any
+	Filters    any
+	JobQueue   any
+	JobStatus  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ServiceJobsAttrs struct {
-	Filters any
-	JobQueue any
-	JobStatus any
+	Filters        any
+	JobQueue       any
+	JobStatus      any
 	JobSummaryList any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 var ServiceJobs = ubx.DataSourceBinding{
@@ -66,12 +66,12 @@ var ServiceJobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ServiceJobs_FiltersFields,
+			Kind:     "list",
+			Fields:   ServiceJobs_FiltersFields,
 		},
-		"JobQueue": ubx.FieldSpec{WireName: "job_queue"},
-		"JobStatus": ubx.FieldSpec{WireName: "job_status"},
+		"JobQueue":   ubx.FieldSpec{WireName: "job_queue"},
+		"JobStatus":  ubx.FieldSpec{WireName: "job_status"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,58 +4,58 @@ package partnercentral_benefits
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PartnercentralBenefitsBenefitApplications_AssociatedResources struct {
-	ResourceArn any
+	ResourceArn        any
 	ResourceIdentifier any
-	ResourceType any
+	ResourceType       any
 }
 
 type PartnercentralBenefitsBenefitApplications_BenefitApplicationSummaries struct {
-	Arn any
-	AssociatedResources any
+	Arn                       any
+	AssociatedResources       any
 	BenefitApplicationDetails any
-	BenefitId any
-	Catalog any
-	CreatedAt any
-	FulfillmentTypes any
-	Id any
-	Name any
-	Programs any
-	Stage any
-	Status any
-	UpdatedAt any
+	BenefitId                 any
+	Catalog                   any
+	CreatedAt                 any
+	FulfillmentTypes          any
+	Id                        any
+	Name                      any
+	Programs                  any
+	Stage                     any
+	Status                    any
+	UpdatedAt                 any
 }
 
 var PartnercentralBenefitsBenefitApplications_AssociatedResourcesFields = ubx.FieldMap{
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"ResourceIdentifier": ubx.FieldSpec{WireName: "resource_identifier"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-	}
+	"ResourceArn":        ubx.FieldSpec{WireName: "resource_arn"},
+	"ResourceIdentifier": ubx.FieldSpec{WireName: "resource_identifier"},
+	"ResourceType":       ubx.FieldSpec{WireName: "resource_type"},
+}
 
 type PartnercentralBenefitsBenefitApplicationsConfig struct {
 	AssociatedResourceArns any
-	AssociatedResources any
-	BenefitIdentifiers any
-	Catalog any
-	FulfillmentTypes any
-	MaxResults any
-	NextToken any
-	Programs any
-	Stages any
-	Status any
+	AssociatedResources    any
+	BenefitIdentifiers     any
+	Catalog                any
+	FulfillmentTypes       any
+	MaxResults             any
+	NextToken              any
+	Programs               any
+	Stages                 any
+	Status                 any
 }
 
 type PartnercentralBenefitsBenefitApplicationsAttrs struct {
-	AssociatedResourceArns any
-	AssociatedResources any
+	AssociatedResourceArns      any
+	AssociatedResources         any
 	BenefitApplicationSummaries any
-	BenefitIdentifiers any
-	Catalog any
-	FulfillmentTypes any
-	MaxResults any
-	NextToken any
-	Programs any
-	Stages any
-	Status any
+	BenefitIdentifiers          any
+	Catalog                     any
+	FulfillmentTypes            any
+	MaxResults                  any
+	NextToken                   any
+	Programs                    any
+	Stages                      any
+	Status                      any
 }
 
 var PartnercentralBenefitsBenefitApplications = ubx.DataSourceBinding{
@@ -64,16 +64,16 @@ var PartnercentralBenefitsBenefitApplications = ubx.DataSourceBinding{
 		"AssociatedResourceArns": ubx.FieldSpec{WireName: "associated_resource_arns"},
 		"AssociatedResources": ubx.FieldSpec{
 			WireName: "associated_resources",
-			Kind: "list",
-			Fields: PartnercentralBenefitsBenefitApplications_AssociatedResourcesFields,
+			Kind:     "list",
+			Fields:   PartnercentralBenefitsBenefitApplications_AssociatedResourcesFields,
 		},
 		"BenefitIdentifiers": ubx.FieldSpec{WireName: "benefit_identifiers"},
-		"Catalog": ubx.FieldSpec{WireName: "catalog"},
-		"FulfillmentTypes": ubx.FieldSpec{WireName: "fulfillment_types"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Programs": ubx.FieldSpec{WireName: "programs"},
-		"Stages": ubx.FieldSpec{WireName: "stages"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Catalog":            ubx.FieldSpec{WireName: "catalog"},
+		"FulfillmentTypes":   ubx.FieldSpec{WireName: "fulfillment_types"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"Programs":           ubx.FieldSpec{WireName: "programs"},
+		"Stages":             ubx.FieldSpec{WireName: "stages"},
+		"Status":             ubx.FieldSpec{WireName: "status"},
 	},
 }

@@ -11,9 +11,9 @@ type GeoMatchSet_GeoMatchConstraints struct {
 }
 
 var GeoMatchSet_GeoMatchConstraintsFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type GeoMatchSetConfig struct {
 	// Defines the list of geographical constraints (country codes) that this WAF Regional geo match set matches against, with each constraint specifying a country to include in the match set. (AI-inferred)
@@ -36,8 +36,8 @@ var GeoMatchSet = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"GeoMatchConstraints": ubx.FieldSpec{
 			WireName: "geo_match_constraints",
-			Kind: "list",
-			Fields: GeoMatchSet_GeoMatchConstraintsFields,
+			Kind:     "list",
+			Fields:   GeoMatchSet_GeoMatchConstraintsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagedDataIdentifiers_Items struct {
 	Category any
-	Id any
+	Id       any
 }
 
 type ManagedDataIdentifiersConfig struct {
@@ -13,7 +13,7 @@ type ManagedDataIdentifiersConfig struct {
 }
 
 type ManagedDataIdentifiersAttrs struct {
-	Items any
+	Items     any
 	NextToken any
 }
 

@@ -11,9 +11,9 @@ type CompositeAlarm_Tags struct {
 }
 
 var CompositeAlarm_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CompositeAlarmConfig struct {
 	// Indicates whether actions should be executed during any changes to the alarm state. The default is TRUE.
@@ -70,20 +70,20 @@ type CompositeAlarmAttrs struct {
 var CompositeAlarm = ubx.ResourceBinding{
 	WireType: "aws_cloud_watch_composite_alarm",
 	Fields: ubx.FieldMap{
-		"ActionsEnabled": ubx.FieldSpec{WireName: "actions_enabled"},
-		"ActionsSuppressor": ubx.FieldSpec{WireName: "actions_suppressor"},
+		"ActionsEnabled":                   ubx.FieldSpec{WireName: "actions_enabled"},
+		"ActionsSuppressor":                ubx.FieldSpec{WireName: "actions_suppressor"},
 		"ActionsSuppressorExtensionPeriod": ubx.FieldSpec{WireName: "actions_suppressor_extension_period"},
-		"ActionsSuppressorWaitPeriod": ubx.FieldSpec{WireName: "actions_suppressor_wait_period"},
-		"AlarmActions": ubx.FieldSpec{WireName: "alarm_actions"},
-		"AlarmDescription": ubx.FieldSpec{WireName: "alarm_description"},
-		"AlarmName": ubx.FieldSpec{WireName: "alarm_name"},
-		"AlarmRule": ubx.FieldSpec{WireName: "alarm_rule"},
-		"InsufficientDataActions": ubx.FieldSpec{WireName: "insufficient_data_actions"},
-		"Okactions": ubx.FieldSpec{WireName: "okactions"},
+		"ActionsSuppressorWaitPeriod":      ubx.FieldSpec{WireName: "actions_suppressor_wait_period"},
+		"AlarmActions":                     ubx.FieldSpec{WireName: "alarm_actions"},
+		"AlarmDescription":                 ubx.FieldSpec{WireName: "alarm_description"},
+		"AlarmName":                        ubx.FieldSpec{WireName: "alarm_name"},
+		"AlarmRule":                        ubx.FieldSpec{WireName: "alarm_rule"},
+		"InsufficientDataActions":          ubx.FieldSpec{WireName: "insufficient_data_actions"},
+		"Okactions":                        ubx.FieldSpec{WireName: "okactions"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CompositeAlarm_TagsFields,
+			Kind:     "list",
+			Fields:   CompositeAlarm_TagsFields,
 		},
 	},
 }

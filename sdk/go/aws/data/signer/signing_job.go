@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SigningJob_Overrides_SigningConfiguration struct {
 	EncryptionAlgorithm any
-	HashAlgorithm any
+	HashAlgorithm       any
 }
 
 type SigningJob_Overrides struct {
 	// <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
 	SigningConfiguration any
-	SigningImageFormat any
+	SigningImageFormat   any
 }
 
 type SigningJob_RevocationRecord struct {
-	Reason any
+	Reason    any
 	RevokedAt any
 	RevokedBy any
 }
 
 type SigningJob_SignedObject_S3 struct {
 	BucketName any
-	Key any
+	Key        any
 }
 
 type SigningJob_SignedObject struct {
@@ -36,8 +36,8 @@ type SigningJob_SigningMaterial struct {
 
 type SigningJob_Source_S3 struct {
 	BucketName any
-	Key any
-	Version any
+	Key        any
+	Version    any
 }
 
 type SigningJob_Source struct {
@@ -51,28 +51,28 @@ type SigningJobConfig struct {
 
 type SigningJobAttrs struct {
 	CompletedAt any
-	CreatedAt any
-	JobId any
-	JobInvoker any
-	JobOwner any
+	CreatedAt   any
+	JobId       any
+	JobInvoker  any
+	JobOwner    any
 	// <p>Any overrides that are applied to the signing configuration of a signing platform.</p>
-	Overrides any
+	Overrides           any
 	PlatformDisplayName any
-	PlatformId any
-	ProfileName any
-	ProfileVersion any
-	RequestedBy any
+	PlatformId          any
+	ProfileName         any
+	ProfileVersion      any
+	RequestedBy         any
 	// <p>Revocation information for a signing job.</p>
-	RevocationRecord any
+	RevocationRecord   any
 	SignatureExpiresAt any
 	// <p>Points to an <code>S3SignedObject</code> object that contains information about your signed code image.</p>
 	SignedObject any
 	// <p>The ACM certificate that is used to sign your code.</p>
-	SigningMaterial any
+	SigningMaterial   any
 	SigningParameters any
 	// <p>An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code.</p>
-	Source any
-	Status any
+	Source       any
+	Status       any
 	StatusReason any
 }
 

@@ -8,31 +8,31 @@ type Streams_FilterBy struct {
 }
 
 type Streams_Streams struct {
-	ChannelArn any
-	Health any
-	StartTime any
-	State any
-	StreamId any
+	ChannelArn  any
+	Health      any
+	StartTime   any
+	State       any
+	StreamId    any
 	ViewerCount any
 }
 
 var Streams_FilterByFields = ubx.FieldMap{
-		"Health": ubx.FieldSpec{WireName: "health"},
-	}
+	"Health": ubx.FieldSpec{WireName: "health"},
+}
 
 type StreamsConfig struct {
 	// <p>Object specifying the stream attribute on which to filter.</p>
-	FilterBy any
+	FilterBy   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type StreamsAttrs struct {
 	// <p>Object specifying the stream attribute on which to filter.</p>
-	FilterBy any
+	FilterBy   any
 	MaxResults any
-	NextToken any
-	Streams any
+	NextToken  any
+	Streams    any
 }
 
 var Streams = ubx.DataSourceBinding{
@@ -40,10 +40,10 @@ var Streams = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"FilterBy": ubx.FieldSpec{
 			WireName: "filter_by",
-			Kind: "object",
-			Fields: Streams_FilterByFields,
+			Kind:     "object",
+			Fields:   Streams_FilterByFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

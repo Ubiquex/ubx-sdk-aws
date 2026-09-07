@@ -4,17 +4,17 @@ package cognito_idp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdpUicustomization_Uicustomization struct {
-	ClientId any
-	CreationDate any
-	Css any
-	Cssversion any
-	ImageUrl any
+	ClientId         any
+	CreationDate     any
+	Css              any
+	Cssversion       any
+	ImageUrl         any
 	LastModifiedDate any
-	UserPoolId any
+	UserPoolId       any
 }
 
 type CognitoIdpUicustomizationConfig struct {
-	ClientId any
+	ClientId   any
 	UserPoolId any
 }
 
@@ -22,13 +22,13 @@ type CognitoIdpUicustomizationAttrs struct {
 	ClientId any
 	// <p>A container for the UI customization information for the hosted UI in a user pool.</p>
 	Uicustomization any
-	UserPoolId any
+	UserPoolId      any
 }
 
 var CognitoIdpUicustomization = ubx.DataSourceBinding{
 	WireType: "aws_cognito_idp_uicustomization",
 	Fields: ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"ClientId":   ubx.FieldSpec{WireName: "client_id"},
 		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
 	},
 }

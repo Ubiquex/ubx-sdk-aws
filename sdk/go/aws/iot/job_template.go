@@ -81,75 +81,75 @@ type JobTemplate_TimeoutConfig struct {
 }
 
 var JobTemplate_AbortConfig_CriteriaListFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"FailureType": ubx.FieldSpec{WireName: "failure_type"},
-		"MinNumberOfExecutedThings": ubx.FieldSpec{WireName: "min_number_of_executed_things"},
-		"ThresholdPercentage": ubx.FieldSpec{WireName: "threshold_percentage"},
-	}
+	"Action":                    ubx.FieldSpec{WireName: "action"},
+	"FailureType":               ubx.FieldSpec{WireName: "failure_type"},
+	"MinNumberOfExecutedThings": ubx.FieldSpec{WireName: "min_number_of_executed_things"},
+	"ThresholdPercentage":       ubx.FieldSpec{WireName: "threshold_percentage"},
+}
 
 var JobTemplate_AbortConfigFields = ubx.FieldMap{
-		"CriteriaList": ubx.FieldSpec{
-			WireName: "criteria_list",
-			Kind: "list",
-			Fields: JobTemplate_AbortConfig_CriteriaListFields,
-		},
-	}
+	"CriteriaList": ubx.FieldSpec{
+		WireName: "criteria_list",
+		Kind:     "list",
+		Fields:   JobTemplate_AbortConfig_CriteriaListFields,
+	},
+}
 
 var JobTemplate_JobExecutionsRetryConfig_RetryCriteriaListFields = ubx.FieldMap{
-		"FailureType": ubx.FieldSpec{WireName: "failure_type"},
-		"NumberOfRetries": ubx.FieldSpec{WireName: "number_of_retries"},
-	}
+	"FailureType":     ubx.FieldSpec{WireName: "failure_type"},
+	"NumberOfRetries": ubx.FieldSpec{WireName: "number_of_retries"},
+}
 
 var JobTemplate_JobExecutionsRetryConfigFields = ubx.FieldMap{
-		"RetryCriteriaList": ubx.FieldSpec{
-			WireName: "retry_criteria_list",
-			Kind: "list",
-			Fields: JobTemplate_JobExecutionsRetryConfig_RetryCriteriaListFields,
-		},
-	}
+	"RetryCriteriaList": ubx.FieldSpec{
+		WireName: "retry_criteria_list",
+		Kind:     "list",
+		Fields:   JobTemplate_JobExecutionsRetryConfig_RetryCriteriaListFields,
+	},
+}
 
 var JobTemplate_JobExecutionsRolloutConfig_ExponentialRolloutRate_RateIncreaseCriteriaFields = ubx.FieldMap{
-		"NumberOfNotifiedThings": ubx.FieldSpec{WireName: "number_of_notified_things"},
-		"NumberOfSucceededThings": ubx.FieldSpec{WireName: "number_of_succeeded_things"},
-	}
+	"NumberOfNotifiedThings":  ubx.FieldSpec{WireName: "number_of_notified_things"},
+	"NumberOfSucceededThings": ubx.FieldSpec{WireName: "number_of_succeeded_things"},
+}
 
 var JobTemplate_JobExecutionsRolloutConfig_ExponentialRolloutRateFields = ubx.FieldMap{
-		"BaseRatePerMinute": ubx.FieldSpec{WireName: "base_rate_per_minute"},
-		"IncrementFactor": ubx.FieldSpec{WireName: "increment_factor"},
-		"RateIncreaseCriteria": ubx.FieldSpec{
-			WireName: "rate_increase_criteria",
-			Kind: "object",
-			Fields: JobTemplate_JobExecutionsRolloutConfig_ExponentialRolloutRate_RateIncreaseCriteriaFields,
-		},
-	}
+	"BaseRatePerMinute": ubx.FieldSpec{WireName: "base_rate_per_minute"},
+	"IncrementFactor":   ubx.FieldSpec{WireName: "increment_factor"},
+	"RateIncreaseCriteria": ubx.FieldSpec{
+		WireName: "rate_increase_criteria",
+		Kind:     "object",
+		Fields:   JobTemplate_JobExecutionsRolloutConfig_ExponentialRolloutRate_RateIncreaseCriteriaFields,
+	},
+}
 
 var JobTemplate_JobExecutionsRolloutConfigFields = ubx.FieldMap{
-		"ExponentialRolloutRate": ubx.FieldSpec{
-			WireName: "exponential_rollout_rate",
-			Kind: "object",
-			Fields: JobTemplate_JobExecutionsRolloutConfig_ExponentialRolloutRateFields,
-		},
-		"MaximumPerMinute": ubx.FieldSpec{WireName: "maximum_per_minute"},
-	}
+	"ExponentialRolloutRate": ubx.FieldSpec{
+		WireName: "exponential_rollout_rate",
+		Kind:     "object",
+		Fields:   JobTemplate_JobExecutionsRolloutConfig_ExponentialRolloutRateFields,
+	},
+	"MaximumPerMinute": ubx.FieldSpec{WireName: "maximum_per_minute"},
+}
 
 var JobTemplate_MaintenanceWindowsFields = ubx.FieldMap{
-		"DurationInMinutes": ubx.FieldSpec{WireName: "duration_in_minutes"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"DurationInMinutes": ubx.FieldSpec{WireName: "duration_in_minutes"},
+	"StartTime":         ubx.FieldSpec{WireName: "start_time"},
+}
 
 var JobTemplate_PresignedUrlConfigFields = ubx.FieldMap{
-		"ExpiresInSec": ubx.FieldSpec{WireName: "expires_in_sec"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"ExpiresInSec": ubx.FieldSpec{WireName: "expires_in_sec"},
+	"RoleArn":      ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var JobTemplate_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var JobTemplate_TimeoutConfigFields = ubx.FieldMap{
-		"InProgressTimeoutInMinutes": ubx.FieldSpec{WireName: "in_progress_timeout_in_minutes"},
-	}
+	"InProgressTimeoutInMinutes": ubx.FieldSpec{WireName: "in_progress_timeout_in_minutes"},
+}
 
 type JobTemplateConfig struct {
 	// The criteria that determine when and how a job abort takes place.
@@ -216,44 +216,44 @@ var JobTemplate = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AbortConfig": ubx.FieldSpec{
 			WireName: "abort_config",
-			Kind: "object",
-			Fields: JobTemplate_AbortConfigFields,
+			Kind:     "object",
+			Fields:   JobTemplate_AbortConfigFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":                ubx.FieldSpec{WireName: "description"},
 		"DestinationPackageVersions": ubx.FieldSpec{WireName: "destination_package_versions"},
-		"Document": ubx.FieldSpec{WireName: "document"},
-		"DocumentSource": ubx.FieldSpec{WireName: "document_source"},
-		"JobArn": ubx.FieldSpec{WireName: "job_arn"},
+		"Document":                   ubx.FieldSpec{WireName: "document"},
+		"DocumentSource":             ubx.FieldSpec{WireName: "document_source"},
+		"JobArn":                     ubx.FieldSpec{WireName: "job_arn"},
 		"JobExecutionsRetryConfig": ubx.FieldSpec{
 			WireName: "job_executions_retry_config",
-			Kind: "object",
-			Fields: JobTemplate_JobExecutionsRetryConfigFields,
+			Kind:     "object",
+			Fields:   JobTemplate_JobExecutionsRetryConfigFields,
 		},
 		"JobExecutionsRolloutConfig": ubx.FieldSpec{
 			WireName: "job_executions_rollout_config",
-			Kind: "object",
-			Fields: JobTemplate_JobExecutionsRolloutConfigFields,
+			Kind:     "object",
+			Fields:   JobTemplate_JobExecutionsRolloutConfigFields,
 		},
 		"JobTemplateId": ubx.FieldSpec{WireName: "job_template_id"},
 		"MaintenanceWindows": ubx.FieldSpec{
 			WireName: "maintenance_windows",
-			Kind: "list",
-			Fields: JobTemplate_MaintenanceWindowsFields,
+			Kind:     "list",
+			Fields:   JobTemplate_MaintenanceWindowsFields,
 		},
 		"PresignedUrlConfig": ubx.FieldSpec{
 			WireName: "presigned_url_config",
-			Kind: "object",
-			Fields: JobTemplate_PresignedUrlConfigFields,
+			Kind:     "object",
+			Fields:   JobTemplate_PresignedUrlConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: JobTemplate_TagsFields,
+			Kind:     "list",
+			Fields:   JobTemplate_TagsFields,
 		},
 		"TimeoutConfig": ubx.FieldSpec{
 			WireName: "timeout_config",
-			Kind: "object",
-			Fields: JobTemplate_TimeoutConfigFields,
+			Kind:     "object",
+			Fields:   JobTemplate_TimeoutConfigFields,
 		},
 	},
 }

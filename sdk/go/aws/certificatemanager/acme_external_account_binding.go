@@ -11,19 +11,19 @@ type AcmeExternalAccountBinding_Expiration struct {
 }
 
 type AcmeExternalAccountBinding_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var AcmeExternalAccountBinding_ExpirationFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var AcmeExternalAccountBinding_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AcmeExternalAccountBindingConfig struct {
 	// The ARN of the ACME endpoint this binding is associated with.
@@ -55,14 +55,14 @@ var AcmeExternalAccountBinding = ubx.ResourceBinding{
 		"AcmeEndpointArn": ubx.FieldSpec{WireName: "acme_endpoint_arn"},
 		"Expiration": ubx.FieldSpec{
 			WireName: "expiration",
-			Kind: "object",
-			Fields: AcmeExternalAccountBinding_ExpirationFields,
+			Kind:     "object",
+			Fields:   AcmeExternalAccountBinding_ExpirationFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AcmeExternalAccountBinding_TagsFields,
+			Kind:     "list",
+			Fields:   AcmeExternalAccountBinding_TagsFields,
 		},
 	},
 }

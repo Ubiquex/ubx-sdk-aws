@@ -4,27 +4,27 @@ package clouddirectory
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OutgoingTypedLinks_FilterAttributeRanges_Range_EndValue struct {
-	BinaryValue any
-	BooleanValue any
+	BinaryValue   any
+	BooleanValue  any
 	DatetimeValue any
-	NumberValue any
-	StringValue any
+	NumberValue   any
+	StringValue   any
 }
 
 type OutgoingTypedLinks_FilterAttributeRanges_Range struct {
-	EndMode any
-	EndValue any
-	StartMode any
+	EndMode    any
+	EndValue   any
+	StartMode  any
 	StartValue any
 }
 
 type OutgoingTypedLinks_FilterAttributeRanges struct {
 	AttributeName any
-	Range any
+	Range         any
 }
 
 type OutgoingTypedLinks_FilterTypedLink struct {
-	SchemaArn any
+	SchemaArn     any
 	TypedLinkName any
 }
 
@@ -34,79 +34,79 @@ type OutgoingTypedLinks_ObjectReference struct {
 
 type OutgoingTypedLinks_TypedLinkSpecifiers_IdentityAttributeValues struct {
 	AttributeName any
-	Value any
+	Value         any
 }
 
 type OutgoingTypedLinks_TypedLinkSpecifiers struct {
 	IdentityAttributeValues any
-	SourceObjectReference any
-	TargetObjectReference any
-	TypedLinkFacet any
+	SourceObjectReference   any
+	TargetObjectReference   any
+	TypedLinkFacet          any
 }
 
 var OutgoingTypedLinks_FilterAttributeRanges_Range_EndValueFields = ubx.FieldMap{
-		"BinaryValue": ubx.FieldSpec{WireName: "binary_value"},
-		"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
-		"DatetimeValue": ubx.FieldSpec{WireName: "datetime_value"},
-		"NumberValue": ubx.FieldSpec{WireName: "number_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"BinaryValue":   ubx.FieldSpec{WireName: "binary_value"},
+	"BooleanValue":  ubx.FieldSpec{WireName: "boolean_value"},
+	"DatetimeValue": ubx.FieldSpec{WireName: "datetime_value"},
+	"NumberValue":   ubx.FieldSpec{WireName: "number_value"},
+	"StringValue":   ubx.FieldSpec{WireName: "string_value"},
+}
 
 var OutgoingTypedLinks_FilterAttributeRanges_RangeFields = ubx.FieldMap{
-		"EndMode": ubx.FieldSpec{WireName: "end_mode"},
-		"EndValue": ubx.FieldSpec{
-			WireName: "end_value",
-			Kind: "object",
-			Fields: OutgoingTypedLinks_FilterAttributeRanges_Range_EndValueFields,
-		},
-		"StartMode": ubx.FieldSpec{WireName: "start_mode"},
-		"StartValue": ubx.FieldSpec{
-			WireName: "start_value",
-			Kind: "object",
-			Fields: OutgoingTypedLinks_FilterAttributeRanges_Range_EndValueFields,
-		},
-	}
+	"EndMode": ubx.FieldSpec{WireName: "end_mode"},
+	"EndValue": ubx.FieldSpec{
+		WireName: "end_value",
+		Kind:     "object",
+		Fields:   OutgoingTypedLinks_FilterAttributeRanges_Range_EndValueFields,
+	},
+	"StartMode": ubx.FieldSpec{WireName: "start_mode"},
+	"StartValue": ubx.FieldSpec{
+		WireName: "start_value",
+		Kind:     "object",
+		Fields:   OutgoingTypedLinks_FilterAttributeRanges_Range_EndValueFields,
+	},
+}
 
 var OutgoingTypedLinks_FilterAttributeRangesFields = ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"Range": ubx.FieldSpec{
-			WireName: "range",
-			Kind: "object",
-			Fields: OutgoingTypedLinks_FilterAttributeRanges_RangeFields,
-		},
-	}
+	"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
+	"Range": ubx.FieldSpec{
+		WireName: "range",
+		Kind:     "object",
+		Fields:   OutgoingTypedLinks_FilterAttributeRanges_RangeFields,
+	},
+}
 
 var OutgoingTypedLinks_FilterTypedLinkFields = ubx.FieldMap{
-		"SchemaArn": ubx.FieldSpec{WireName: "schema_arn"},
-		"TypedLinkName": ubx.FieldSpec{WireName: "typed_link_name"},
-	}
+	"SchemaArn":     ubx.FieldSpec{WireName: "schema_arn"},
+	"TypedLinkName": ubx.FieldSpec{WireName: "typed_link_name"},
+}
 
 var OutgoingTypedLinks_ObjectReferenceFields = ubx.FieldMap{
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"Selector": ubx.FieldSpec{WireName: "selector"},
+}
 
 type OutgoingTypedLinksConfig struct {
-	ConsistencyLevel any
-	DirectoryArn any
+	ConsistencyLevel      any
+	DirectoryArn          any
 	FilterAttributeRanges any
 	// <p>Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link.</p>
 	FilterTypedLink any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	// <p>The reference that identifies an object.</p>
 	ObjectReference any
 }
 
 type OutgoingTypedLinksAttrs struct {
-	ConsistencyLevel any
-	DirectoryArn any
+	ConsistencyLevel      any
+	DirectoryArn          any
 	FilterAttributeRanges any
 	// <p>Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link.</p>
 	FilterTypedLink any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	// <p>The reference that identifies an object.</p>
-	ObjectReference any
+	ObjectReference     any
 	TypedLinkSpecifiers any
 }
 
@@ -114,23 +114,23 @@ var OutgoingTypedLinks = ubx.DataSourceBinding{
 	WireType: "aws_clouddirectory_outgoing_typed_links",
 	Fields: ubx.FieldMap{
 		"ConsistencyLevel": ubx.FieldSpec{WireName: "consistency_level"},
-		"DirectoryArn": ubx.FieldSpec{WireName: "directory_arn"},
+		"DirectoryArn":     ubx.FieldSpec{WireName: "directory_arn"},
 		"FilterAttributeRanges": ubx.FieldSpec{
 			WireName: "filter_attribute_ranges",
-			Kind: "list",
-			Fields: OutgoingTypedLinks_FilterAttributeRangesFields,
+			Kind:     "list",
+			Fields:   OutgoingTypedLinks_FilterAttributeRangesFields,
 		},
 		"FilterTypedLink": ubx.FieldSpec{
 			WireName: "filter_typed_link",
-			Kind: "object",
-			Fields: OutgoingTypedLinks_FilterTypedLinkFields,
+			Kind:     "object",
+			Fields:   OutgoingTypedLinks_FilterTypedLinkFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ObjectReference": ubx.FieldSpec{
 			WireName: "object_reference",
-			Kind: "object",
-			Fields: OutgoingTypedLinks_ObjectReferenceFields,
+			Kind:     "object",
+			Fields:   OutgoingTypedLinks_ObjectReferenceFields,
 		},
 	},
 }

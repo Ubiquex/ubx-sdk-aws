@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContactLensRealtimeContactAnalysisSegments_Segments_Categories_MatchedDetails_PointsOfInterest struct {
 	BeginOffsetMillis any
-	EndOffsetMillis any
+	EndOffsetMillis   any
 }
 
 type ContactLensRealtimeContactAnalysisSegments_Segments_Categories_MatchedDetails struct {
@@ -14,31 +14,31 @@ type ContactLensRealtimeContactAnalysisSegments_Segments_Categories_MatchedDetai
 
 type ContactLensRealtimeContactAnalysisSegments_Segments_Categories struct {
 	MatchedCategories any
-	MatchedDetails any
+	MatchedDetails    any
 }
 
 type ContactLensRealtimeContactAnalysisSegments_Segments_ExtractedInformation_ExtractedValues struct {
-	Content any
+	Content          any
 	PointsOfInterest any
 }
 
 type ContactLensRealtimeContactAnalysisSegments_Segments_ExtractedInformation struct {
-	ExtractedValues any
+	ExtractedValues                  any
 	ExtractionDefinitionDisplayLabel any
-	ExtractionDefinitionId any
-	ExtractionDefinitionName any
-	FailureCode any
+	ExtractionDefinitionId           any
+	ExtractionDefinitionName         any
+	FailureCode                      any
 }
 
 type ContactLensRealtimeContactAnalysisSegments_Segments_PostContactSummary struct {
-	Content any
+	Content     any
 	FailureCode any
-	Status any
+	Status      any
 }
 
 type ContactLensRealtimeContactAnalysisSegments_Segments_Transcript_IssuesDetected_CharacterOffsets struct {
 	BeginOffsetChar any
-	EndOffsetChar any
+	EndOffsetChar   any
 }
 
 type ContactLensRealtimeContactAnalysisSegments_Segments_Transcript_IssuesDetected struct {
@@ -47,43 +47,43 @@ type ContactLensRealtimeContactAnalysisSegments_Segments_Transcript_IssuesDetect
 
 type ContactLensRealtimeContactAnalysisSegments_Segments_Transcript struct {
 	BeginOffsetMillis any
-	Content any
-	EndOffsetMillis any
-	Id any
-	IssuesDetected any
-	ParticipantId any
-	ParticipantRole any
-	Sentiment any
+	Content           any
+	EndOffsetMillis   any
+	Id                any
+	IssuesDetected    any
+	ParticipantId     any
+	ParticipantRole   any
+	Sentiment         any
 }
 
 type ContactLensRealtimeContactAnalysisSegments_Segments struct {
-	Categories any
+	Categories           any
 	ExtractedInformation any
-	PostContactSummary any
-	Transcript any
+	PostContactSummary   any
+	Transcript           any
 }
 
 type ContactLensRealtimeContactAnalysisSegmentsConfig struct {
-	ContactId any
+	ContactId  any
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ContactLensRealtimeContactAnalysisSegmentsAttrs struct {
-	ContactId any
+	ContactId  any
 	InstanceId any
 	MaxResults any
-	NextToken any
-	Segments any
+	NextToken  any
+	Segments   any
 }
 
 var ContactLensRealtimeContactAnalysisSegments = ubx.DataSourceBinding{
 	WireType: "aws_contact_lens_realtime_contact_analysis_segments",
 	Fields: ubx.FieldMap{
-		"ContactId": ubx.FieldSpec{WireName: "contact_id"},
+		"ContactId":  ubx.FieldSpec{WireName: "contact_id"},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

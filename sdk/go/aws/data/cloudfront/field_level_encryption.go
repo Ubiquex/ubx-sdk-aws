@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FieldLevelEncryption_FieldLevelEncryption_FieldLevelEncryptionConfig_ContentTypeProfileConfig_ContentTypeProfiles_Items struct {
 	ContentType any
-	Format any
-	ProfileId any
+	Format      any
+	ProfileId   any
 }
 
 type FieldLevelEncryption_FieldLevelEncryption_FieldLevelEncryptionConfig_ContentTypeProfileConfig_ContentTypeProfiles struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type FieldLevelEncryption_FieldLevelEncryption_FieldLevelEncryptionConfig_ContentTypeProfileConfig struct {
 	// <p>Field-level encryption content type-profile.</p>
-	ContentTypeProfiles any
+	ContentTypeProfiles             any
 	ForwardWhenContentTypeIsUnknown any
 }
 
 type FieldLevelEncryption_FieldLevelEncryption_FieldLevelEncryptionConfig_QueryArgProfileConfig_QueryArgProfiles_Items struct {
 	ProfileId any
-	QueryArg any
+	QueryArg  any
 }
 
 type FieldLevelEncryption_FieldLevelEncryption_FieldLevelEncryptionConfig_QueryArgProfileConfig_QueryArgProfiles struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
@@ -38,7 +38,7 @@ type FieldLevelEncryption_FieldLevelEncryption_FieldLevelEncryptionConfig_QueryA
 
 type FieldLevelEncryption_FieldLevelEncryption_FieldLevelEncryptionConfig struct {
 	CallerReference any
-	Comment any
+	Comment         any
 	// <p>The configuration for a field-level encryption content type-profile mapping.</p>
 	ContentTypeProfileConfig any
 	// <p>Configuration for query argument-profile mapping for field-level encryption.</p>
@@ -48,8 +48,8 @@ type FieldLevelEncryption_FieldLevelEncryption_FieldLevelEncryptionConfig struct
 type FieldLevelEncryption_FieldLevelEncryption struct {
 	// <p>A complex data type that includes the profile configurations specified for field-level encryption.</p>
 	FieldLevelEncryptionConfig any
-	Id any
-	LastModifiedTime any
+	Id                         any
+	LastModifiedTime           any
 }
 
 type FieldLevelEncryptionConfig struct {
@@ -60,7 +60,7 @@ type FieldLevelEncryptionAttrs struct {
 	Etag any
 	// <p>A complex data type that includes the profile configurations and other options specified for field-level encryption.</p>
 	FieldLevelEncryption any
-	Id any
+	Id                   any
 }
 
 var FieldLevelEncryption = ubx.DataSourceBinding{

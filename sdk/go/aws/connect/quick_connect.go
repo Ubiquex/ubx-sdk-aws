@@ -42,56 +42,56 @@ type QuickConnect_QuickConnectConfig struct {
 
 type QuickConnect_Tags struct {
 	// The key of a tag attached to the Amazon Connect quick connect resource, used to categorize and organize the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var QuickConnect_QuickConnectConfig_FlowConfigFields = ubx.FieldMap{
-		"ContactFlowArn": ubx.FieldSpec{WireName: "contact_flow_arn"},
-	}
+	"ContactFlowArn": ubx.FieldSpec{WireName: "contact_flow_arn"},
+}
 
 var QuickConnect_QuickConnectConfig_PhoneConfigFields = ubx.FieldMap{
-		"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
-	}
+	"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
+}
 
 var QuickConnect_QuickConnectConfig_QueueConfigFields = ubx.FieldMap{
-		"ContactFlowArn": ubx.FieldSpec{WireName: "contact_flow_arn"},
-		"QueueArn": ubx.FieldSpec{WireName: "queue_arn"},
-	}
+	"ContactFlowArn": ubx.FieldSpec{WireName: "contact_flow_arn"},
+	"QueueArn":       ubx.FieldSpec{WireName: "queue_arn"},
+}
 
 var QuickConnect_QuickConnectConfig_UserConfigFields = ubx.FieldMap{
-		"ContactFlowArn": ubx.FieldSpec{WireName: "contact_flow_arn"},
-		"UserArn": ubx.FieldSpec{WireName: "user_arn"},
-	}
+	"ContactFlowArn": ubx.FieldSpec{WireName: "contact_flow_arn"},
+	"UserArn":        ubx.FieldSpec{WireName: "user_arn"},
+}
 
 var QuickConnect_QuickConnectConfigFields = ubx.FieldMap{
-		"FlowConfig": ubx.FieldSpec{
-			WireName: "flow_config",
-			Kind: "object",
-			Fields: QuickConnect_QuickConnectConfig_FlowConfigFields,
-		},
-		"PhoneConfig": ubx.FieldSpec{
-			WireName: "phone_config",
-			Kind: "object",
-			Fields: QuickConnect_QuickConnectConfig_PhoneConfigFields,
-		},
-		"QueueConfig": ubx.FieldSpec{
-			WireName: "queue_config",
-			Kind: "object",
-			Fields: QuickConnect_QuickConnectConfig_QueueConfigFields,
-		},
-		"QuickConnectType": ubx.FieldSpec{WireName: "quick_connect_type"},
-		"UserConfig": ubx.FieldSpec{
-			WireName: "user_config",
-			Kind: "object",
-			Fields: QuickConnect_QuickConnectConfig_UserConfigFields,
-		},
-	}
+	"FlowConfig": ubx.FieldSpec{
+		WireName: "flow_config",
+		Kind:     "object",
+		Fields:   QuickConnect_QuickConnectConfig_FlowConfigFields,
+	},
+	"PhoneConfig": ubx.FieldSpec{
+		WireName: "phone_config",
+		Kind:     "object",
+		Fields:   QuickConnect_QuickConnectConfig_PhoneConfigFields,
+	},
+	"QueueConfig": ubx.FieldSpec{
+		WireName: "queue_config",
+		Kind:     "object",
+		Fields:   QuickConnect_QuickConnectConfig_QueueConfigFields,
+	},
+	"QuickConnectType": ubx.FieldSpec{WireName: "quick_connect_type"},
+	"UserConfig": ubx.FieldSpec{
+		WireName: "user_config",
+		Kind:     "object",
+		Fields:   QuickConnect_QuickConnectConfig_UserConfigFields,
+	},
+}
 
 var QuickConnect_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type QuickConnectConfig struct {
 	// The description of the quick connect.
@@ -128,16 +128,16 @@ var QuickConnect = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"QuickConnectConfig": ubx.FieldSpec{
 			WireName: "quick_connect_config",
-			Kind: "object",
-			Fields: QuickConnect_QuickConnectConfigFields,
+			Kind:     "object",
+			Fields:   QuickConnect_QuickConnectConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: QuickConnect_TagsFields,
+			Kind:     "list",
+			Fields:   QuickConnect_TagsFields,
 		},
 	},
 }

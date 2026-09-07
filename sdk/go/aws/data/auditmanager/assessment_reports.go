@@ -4,33 +4,33 @@ package auditmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssessmentReports_AssessmentReports struct {
-	AssessmentId any
+	AssessmentId   any
 	AssessmentName any
-	Author any
-	CreationTime any
-	Description any
-	Id any
-	Name any
-	Status any
+	Author         any
+	CreationTime   any
+	Description    any
+	Id             any
+	Name           any
+	Status         any
 }
 
 type AssessmentReportsConfig struct {
 	// Max results in the page.
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AssessmentReportsAttrs struct {
 	AssessmentReports any
 	// Max results in the page.
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var AssessmentReports = ubx.DataSourceBinding{
 	WireType: "aws_auditmanager_assessment_reports",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

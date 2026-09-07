@@ -11,9 +11,9 @@ type Tracker_Tags struct {
 }
 
 var Tracker_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TrackerConfig struct {
 	// The optional description string for the AWS Location Service tracker, allowing users to attach a human-readable note to the resource. (AI-inferred)
@@ -68,17 +68,17 @@ type TrackerAttrs struct {
 var Tracker = ubx.ResourceBinding{
 	WireType: "aws_location_tracker",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EventBridgeEnabled": ubx.FieldSpec{WireName: "event_bridge_enabled"},
+		"Description":                   ubx.FieldSpec{WireName: "description"},
+		"EventBridgeEnabled":            ubx.FieldSpec{WireName: "event_bridge_enabled"},
 		"KmsKeyEnableGeospatialQueries": ubx.FieldSpec{WireName: "kms_key_enable_geospatial_queries"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"PositionFiltering": ubx.FieldSpec{WireName: "position_filtering"},
-		"PricingPlan": ubx.FieldSpec{WireName: "pricing_plan"},
-		"PricingPlanDataSource": ubx.FieldSpec{WireName: "pricing_plan_data_source"},
+		"KmsKeyId":                      ubx.FieldSpec{WireName: "kms_key_id"},
+		"PositionFiltering":             ubx.FieldSpec{WireName: "position_filtering"},
+		"PricingPlan":                   ubx.FieldSpec{WireName: "pricing_plan"},
+		"PricingPlanDataSource":         ubx.FieldSpec{WireName: "pricing_plan_data_source"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Tracker_TagsFields,
+			Kind:     "list",
+			Fields:   Tracker_TagsFields,
 		},
 		"TrackerName": ubx.FieldSpec{WireName: "tracker_name"},
 	},

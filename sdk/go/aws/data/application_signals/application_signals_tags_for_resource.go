@@ -4,7 +4,7 @@ package application_signals
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationSignalsTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type ApplicationSignalsTagsForResourceConfig struct {
 
 type ApplicationSignalsTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var ApplicationSignalsTagsForResource = ubx.DataSourceBinding{

@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Resource_ResourceInfo struct {
 	ExpectedResourceOwnerAccount any
-	HybridAccessEnabled any
-	LastModified any
-	ResourceArn any
-	RoleArn any
-	VerificationStatus any
-	WithFederation any
-	WithPrivilegedAccess any
+	HybridAccessEnabled          any
+	LastModified                 any
+	ResourceArn                  any
+	RoleArn                      any
+	VerificationStatus           any
+	WithFederation               any
+	WithPrivilegedAccess         any
 }
 
 type ResourceConfig struct {

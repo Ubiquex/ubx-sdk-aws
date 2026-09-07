@@ -4,7 +4,7 @@ package mediaconvert
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_ResourceTags struct {
-	Arn any
+	Arn  any
 	Tags any
 }
 

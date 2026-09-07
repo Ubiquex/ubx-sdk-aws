@@ -4,24 +4,24 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssetBundleImportJob_AssetBundleImportSource struct {
-	Body any
+	Body  any
 	S3Uri any
 }
 
 type AssetBundleImportJob_Errors struct {
-	Arn any
+	Arn     any
 	Message any
-	Type any
+	Type    any
 }
 
 type AssetBundleImportJob_OverrideParameters_Analyses struct {
 	AnalysisId any
-	Name any
+	Name       any
 }
 
 type AssetBundleImportJob_OverrideParameters_Dashboards struct {
 	DashboardId any
-	Name any
+	Name        any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSets_DataSetRefreshProperties_FailureConfiguration_EmailAlert struct {
@@ -34,8 +34,8 @@ type AssetBundleImportJob_OverrideParameters_DataSets_DataSetRefreshProperties_F
 
 type AssetBundleImportJob_OverrideParameters_DataSets_DataSetRefreshProperties_RefreshConfiguration_IncrementalRefresh_LookbackWindow struct {
 	ColumnName any
-	Size any
-	SizeUnit any
+	Size       any
+	SizeUnit   any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSets_DataSetRefreshProperties_RefreshConfiguration_IncrementalRefresh struct {
@@ -52,9 +52,9 @@ type AssetBundleImportJob_OverrideParameters_DataSets_DataSetRefreshProperties s
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSets struct {
-	DataSetId any
+	DataSetId                any
 	DataSetRefreshProperties any
-	Name any
+	Name                     any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_Credentials_CredentialPair struct {
@@ -64,7 +64,7 @@ type AssetBundleImportJob_OverrideParameters_DataSources_Credentials_CredentialP
 
 type AssetBundleImportJob_OverrideParameters_DataSources_Credentials struct {
 	CredentialPair any
-	SecretArn any
+	SecretArn      any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_AmazonElasticsearchParameters struct {
@@ -76,16 +76,16 @@ type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_At
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_AthenaParameters struct {
-	ConsumerAccountRoleArn any
+	ConsumerAccountRoleArn      any
 	IdentityCenterConfiguration any
-	RoleArn any
-	WorkGroup any
+	RoleArn                     any
+	WorkGroup                   any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_AuroraParameters struct {
 	Database any
-	Host any
-	Port any
+	Host     any
+	Port     any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_AwsIotAnalyticsParameters struct {
@@ -94,7 +94,7 @@ type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_Aw
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_BigQueryParameters struct {
 	DataSetRegion any
-	ProjectId any
+	ProjectId     any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_ConfluenceParameters struct {
@@ -106,8 +106,8 @@ type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_Cu
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_DatabricksParameters struct {
-	Host any
-	Port any
+	Host            any
+	Port            any
 	SqlEndpointPath any
 }
 
@@ -117,7 +117,7 @@ type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_Ex
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_Fmkbparameters struct {
-	KnowledgeBaseArn any
+	KnowledgeBaseArn    any
 	LinkedDataSourceIds any
 }
 
@@ -126,9 +126,9 @@ type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_Go
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_ImpalaParameters struct {
-	Database any
-	Host any
-	Port any
+	Database        any
+	Host            any
+	Port            any
 	SqlEndpointPath any
 }
 
@@ -143,16 +143,16 @@ type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_On
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_OracleParameters struct {
-	Database any
-	Host any
-	Port any
+	Database       any
+	Host           any
+	Port           any
 	UseServiceName any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_PrestoParameters struct {
 	Catalog any
-	Host any
-	Port any
+	Host    any
+	Port    any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_QbusinessParameters struct {
@@ -160,40 +160,40 @@ type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_Qb
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_RdsParameters struct {
-	Database any
+	Database   any
 	InstanceId any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_RedshiftParameters_Iamparameters struct {
 	AutoCreateDatabaseUser any
-	DatabaseGroups any
-	DatabaseUser any
-	RoleArn any
+	DatabaseGroups         any
+	DatabaseUser           any
+	RoleArn                any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_RedshiftParameters struct {
-	ClusterId any
-	Database any
-	Host any
-	Iamparameters any
+	ClusterId                   any
+	Database                    any
+	Host                        any
+	Iamparameters               any
 	IdentityCenterConfiguration any
-	Port any
+	Port                        any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_S3KnowledgeBaseParameters struct {
-	BucketUrl any
+	BucketUrl             any
 	MetadataFilesLocation any
-	RoleArn any
+	RoleArn               any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_S3Parameters_ManifestFileLocation struct {
 	Bucket any
-	Key any
+	Key    any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_S3Parameters struct {
 	ManifestFileLocation any
-	RoleArn any
+	RoleArn              any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_S3TablesParameters struct {
@@ -201,10 +201,10 @@ type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_S3
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_SharePointParameters struct {
-	AuthType any
-	ClientId any
+	AuthType         any
+	ClientId         any
 	SharePointDomain any
-	TenantId any
+	TenantId         any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_SnowflakeParameters_OauthParameters_IdentityProviderVpcConnectionProperties struct {
@@ -213,85 +213,85 @@ type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_Sn
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_SnowflakeParameters_OauthParameters struct {
 	IdentityProviderCacertificatesBundleS3Uri any
-	IdentityProviderResourceUri any
-	IdentityProviderVpcConnectionProperties any
-	OauthScope any
-	TokenProviderUrl any
+	IdentityProviderResourceUri               any
+	IdentityProviderVpcConnectionProperties   any
+	OauthScope                                any
+	TokenProviderUrl                          any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_SnowflakeParameters struct {
-	AuthenticationType any
-	Database any
+	AuthenticationType        any
+	Database                  any
 	DatabaseAccessControlRole any
-	Host any
-	OauthParameters any
-	Warehouse any
+	Host                      any
+	OauthParameters           any
+	Warehouse                 any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_StarburstParameters struct {
-	AuthenticationType any
-	Catalog any
+	AuthenticationType        any
+	Catalog                   any
 	DatabaseAccessControlRole any
-	Host any
-	OauthParameters any
-	Port any
-	ProductType any
+	Host                      any
+	OauthParameters           any
+	Port                      any
+	ProductType               any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_TwitterParameters struct {
 	MaxRows any
-	Query any
+	Query   any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters_WebCrawlerParameters struct {
-	LoginPageUrl any
+	LoginPageUrl        any
 	PasswordButtonXpath any
-	PasswordFieldXpath any
+	PasswordFieldXpath  any
 	UsernameButtonXpath any
-	UsernameFieldXpath any
-	WebCrawlerAuthType any
-	WebProxyHostName any
-	WebProxyPortNumber any
+	UsernameFieldXpath  any
+	WebCrawlerAuthType  any
+	WebProxyHostName    any
+	WebProxyPortNumber  any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_DataSourceParameters struct {
 	AmazonElasticsearchParameters any
-	AmazonOpenSearchParameters any
-	AthenaParameters any
-	AuroraParameters any
-	AuroraPostgreSqlParameters any
-	AwsIotAnalyticsParameters any
-	BigQueryParameters any
-	ConfluenceParameters any
-	CustomConnectionParameters any
-	DatabricksParameters any
-	ExasolParameters any
-	Fmkbparameters any
-	GoogleDriveParameters any
-	ImpalaParameters any
-	JiraParameters any
-	MariaDbParameters any
-	MySqlParameters any
-	OneDriveParameters any
-	OracleParameters any
-	PostgreSqlParameters any
-	PrestoParameters any
-	QbusinessParameters any
-	RdsParameters any
-	RedshiftParameters any
-	S3KnowledgeBaseParameters any
-	S3Parameters any
-	S3TablesParameters any
-	ServiceNowParameters any
-	SharePointParameters any
-	SnowflakeParameters any
-	SparkParameters any
-	SqlServerParameters any
-	StarburstParameters any
-	TeradataParameters any
-	TrinoParameters any
-	TwitterParameters any
-	WebCrawlerParameters any
+	AmazonOpenSearchParameters    any
+	AthenaParameters              any
+	AuroraParameters              any
+	AuroraPostgreSqlParameters    any
+	AwsIotAnalyticsParameters     any
+	BigQueryParameters            any
+	ConfluenceParameters          any
+	CustomConnectionParameters    any
+	DatabricksParameters          any
+	ExasolParameters              any
+	Fmkbparameters                any
+	GoogleDriveParameters         any
+	ImpalaParameters              any
+	JiraParameters                any
+	MariaDbParameters             any
+	MySqlParameters               any
+	OneDriveParameters            any
+	OracleParameters              any
+	PostgreSqlParameters          any
+	PrestoParameters              any
+	QbusinessParameters           any
+	RdsParameters                 any
+	RedshiftParameters            any
+	S3KnowledgeBaseParameters     any
+	S3Parameters                  any
+	S3TablesParameters            any
+	ServiceNowParameters          any
+	SharePointParameters          any
+	SnowflakeParameters           any
+	SparkParameters               any
+	SqlServerParameters           any
+	StarburstParameters           any
+	TeradataParameters            any
+	TrinoParameters               any
+	TwitterParameters             any
+	WebCrawlerParameters          any
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources_SslProperties struct {
@@ -299,23 +299,23 @@ type AssetBundleImportJob_OverrideParameters_DataSources_SslProperties struct {
 }
 
 type AssetBundleImportJob_OverrideParameters_DataSources struct {
-	Credentials any
-	DataSourceId any
-	DataSourceParameters any
-	Name any
-	SslProperties any
+	Credentials             any
+	DataSourceId            any
+	DataSourceParameters    any
+	Name                    any
+	SslProperties           any
 	VpcConnectionProperties any
 }
 
 type AssetBundleImportJob_OverrideParameters_Folders struct {
-	FolderId any
-	Name any
+	FolderId        any
+	Name            any
 	ParentFolderArn any
 }
 
 type AssetBundleImportJob_OverrideParameters_RefreshSchedules struct {
-	DataSetId any
-	ScheduleId any
+	DataSetId          any
+	ScheduleId         any
 	StartAfterDateTime any
 }
 
@@ -324,41 +324,41 @@ type AssetBundleImportJob_OverrideParameters_ResourceIdOverrideConfiguration str
 }
 
 type AssetBundleImportJob_OverrideParameters_Themes struct {
-	Name any
+	Name    any
 	ThemeId any
 }
 
 type AssetBundleImportJob_OverrideParameters_TopicsV2 struct {
 	Description any
-	Name any
-	TopicId any
+	Name        any
+	TopicId     any
 }
 
 type AssetBundleImportJob_OverrideParameters_Vpcconnections struct {
-	DnsResolvers any
-	Name any
-	RoleArn any
+	DnsResolvers     any
+	Name             any
+	RoleArn          any
 	SecurityGroupIds any
-	SubnetIds any
-	VpcconnectionId any
+	SubnetIds        any
+	VpcconnectionId  any
 }
 
 type AssetBundleImportJob_OverrideParameters struct {
-	Analyses any
-	Dashboards any
-	DataSets any
-	DataSources any
-	Folders any
+	Analyses         any
+	Dashboards       any
+	DataSets         any
+	DataSources      any
+	Folders          any
 	RefreshSchedules any
 	// <p>An optional structure that configures resource ID overrides for the import job.</p>
 	ResourceIdOverrideConfiguration any
-	Themes any
-	TopicsV2 any
-	Vpcconnections any
+	Themes                          any
+	TopicsV2                        any
+	Vpcconnections                  any
 }
 
 type AssetBundleImportJob_OverridePermissions_Analyses_Permissions struct {
-	Actions any
+	Actions    any
 	Principals any
 }
 
@@ -372,99 +372,99 @@ type AssetBundleImportJob_OverridePermissions_Dashboards_LinkSharingConfiguratio
 }
 
 type AssetBundleImportJob_OverridePermissions_Dashboards struct {
-	DashboardIds any
+	DashboardIds             any
 	LinkSharingConfiguration any
-	Permissions any
+	Permissions              any
 }
 
 type AssetBundleImportJob_OverridePermissions_DataSets struct {
-	DataSetIds any
+	DataSetIds  any
 	Permissions any
 }
 
 type AssetBundleImportJob_OverridePermissions_DataSources struct {
 	DataSourceIds any
-	Permissions any
+	Permissions   any
 }
 
 type AssetBundleImportJob_OverridePermissions_Folders struct {
-	FolderIds any
+	FolderIds   any
 	Permissions any
 }
 
 type AssetBundleImportJob_OverridePermissions_Themes struct {
 	Permissions any
-	ThemeIds any
+	ThemeIds    any
 }
 
 type AssetBundleImportJob_OverridePermissions_TopicsV2 struct {
 	Permissions any
-	TopicIds any
+	TopicIds    any
 }
 
 type AssetBundleImportJob_OverridePermissions struct {
-	Analyses any
-	Dashboards any
-	DataSets any
+	Analyses    any
+	Dashboards  any
+	DataSets    any
 	DataSources any
-	Folders any
-	Themes any
-	TopicsV2 any
+	Folders     any
+	Themes      any
+	TopicsV2    any
 }
 
 type AssetBundleImportJob_OverrideTags_Analyses_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type AssetBundleImportJob_OverrideTags_Analyses struct {
 	AnalysisIds any
-	Tags any
+	Tags        any
 }
 
 type AssetBundleImportJob_OverrideTags_Dashboards struct {
 	DashboardIds any
-	Tags any
+	Tags         any
 }
 
 type AssetBundleImportJob_OverrideTags_DataSets struct {
 	DataSetIds any
-	Tags any
+	Tags       any
 }
 
 type AssetBundleImportJob_OverrideTags_DataSources struct {
 	DataSourceIds any
-	Tags any
+	Tags          any
 }
 
 type AssetBundleImportJob_OverrideTags_Folders struct {
 	FolderIds any
-	Tags any
+	Tags      any
 }
 
 type AssetBundleImportJob_OverrideTags_Themes struct {
-	Tags any
+	Tags     any
 	ThemeIds any
 }
 
 type AssetBundleImportJob_OverrideTags_TopicsV2 struct {
-	Tags any
+	Tags     any
 	TopicIds any
 }
 
 type AssetBundleImportJob_OverrideTags_Vpcconnections struct {
-	Tags any
+	Tags             any
 	VpcconnectionIds any
 }
 
 type AssetBundleImportJob_OverrideTags struct {
-	Analyses any
-	Dashboards any
-	DataSets any
-	DataSources any
-	Folders any
-	Themes any
-	TopicsV2 any
+	Analyses       any
+	Dashboards     any
+	DataSets       any
+	DataSources    any
+	Folders        any
+	Themes         any
+	TopicsV2       any
 	Vpcconnections any
 }
 
@@ -473,25 +473,25 @@ type AssetBundleImportJob_OverrideValidationStrategy struct {
 }
 
 type AssetBundleImportJob_Warnings struct {
-	Arn any
+	Arn     any
 	Message any
 }
 
 type AssetBundleImportJobConfig struct {
 	AssetBundleImportJobId any
-	AwsAccountId any
+	AwsAccountId           any
 }
 
 type AssetBundleImportJobAttrs struct {
-	Arn any
+	Arn                    any
 	AssetBundleImportJobId any
 	// <p>A description of the import source that you provide at the start of an import job. This value is set to either <code>Body</code> or <code>S3Uri</code>, depending on how the <code>StartAssetBundleImportJobRequest</code> is configured.</p>
 	AssetBundleImportSource any
-	AwsAccountId any
-	CreatedTime any
-	Errors any
-	FailureAction any
-	JobStatus any
+	AwsAccountId            any
+	CreatedTime             any
+	Errors                  any
+	FailureAction           any
+	JobStatus               any
 	// <p>A list of overrides that modify the asset bundle resource configuration before the resource is imported.</p>
 	OverrideParameters any
 	// <p>A structure that contains the override permission configurations that modify the permissions for specified resources before the resource is imported.</p>
@@ -500,16 +500,16 @@ type AssetBundleImportJobAttrs struct {
 	OverrideTags any
 	// <p>An optional parameter that overrides the validation strategy for all analyses and dashboards before the resource is imported.</p>
 	OverrideValidationStrategy any
-	RequestId any
-	RollbackErrors any
-	Status any
-	Warnings any
+	RequestId                  any
+	RollbackErrors             any
+	Status                     any
+	Warnings                   any
 }
 
 var AssetBundleImportJob = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_asset_bundle_import_job",
 	Fields: ubx.FieldMap{
 		"AssetBundleImportJobId": ubx.FieldSpec{WireName: "asset_bundle_import_job_id"},
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
+		"AwsAccountId":           ubx.FieldSpec{WireName: "aws_account_id"},
 	},
 }

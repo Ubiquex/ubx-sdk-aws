@@ -50,44 +50,44 @@ type Pipeline_PipelineTags struct {
 }
 
 var Pipeline_ParameterObjects_AttributesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"Key":         ubx.FieldSpec{WireName: "key"},
+	"StringValue": ubx.FieldSpec{WireName: "string_value"},
+}
 
 var Pipeline_ParameterObjectsFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "list",
-			Fields: Pipeline_ParameterObjects_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "list",
+		Fields:   Pipeline_ParameterObjects_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+}
 
 var Pipeline_ParameterValuesFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"StringValue": ubx.FieldSpec{WireName: "string_value"},
+}
 
 var Pipeline_PipelineObjects_FieldsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"RefValue": ubx.FieldSpec{WireName: "ref_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"Key":         ubx.FieldSpec{WireName: "key"},
+	"RefValue":    ubx.FieldSpec{WireName: "ref_value"},
+	"StringValue": ubx.FieldSpec{WireName: "string_value"},
+}
 
 var Pipeline_PipelineObjectsFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Pipeline_PipelineObjects_FieldsFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Pipeline_PipelineObjects_FieldsFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Pipeline_PipelineTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PipelineConfig struct {
 	// Indicates whether to validate and start the pipeline or stop an active pipeline. By default, the value is set to true.
@@ -128,28 +128,28 @@ type PipelineAttrs struct {
 var Pipeline = ubx.ResourceBinding{
 	WireType: "aws_data_pipeline_pipeline",
 	Fields: ubx.FieldMap{
-		"Activate": ubx.FieldSpec{WireName: "activate"},
+		"Activate":    ubx.FieldSpec{WireName: "activate"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"ParameterObjects": ubx.FieldSpec{
 			WireName: "parameter_objects",
-			Kind: "list",
-			Fields: Pipeline_ParameterObjectsFields,
+			Kind:     "list",
+			Fields:   Pipeline_ParameterObjectsFields,
 		},
 		"ParameterValues": ubx.FieldSpec{
 			WireName: "parameter_values",
-			Kind: "list",
-			Fields: Pipeline_ParameterValuesFields,
+			Kind:     "list",
+			Fields:   Pipeline_ParameterValuesFields,
 		},
 		"PipelineObjects": ubx.FieldSpec{
 			WireName: "pipeline_objects",
-			Kind: "list",
-			Fields: Pipeline_PipelineObjectsFields,
+			Kind:     "list",
+			Fields:   Pipeline_PipelineObjectsFields,
 		},
 		"PipelineTags": ubx.FieldSpec{
 			WireName: "pipeline_tags",
-			Kind: "list",
-			Fields: Pipeline_PipelineTagsFields,
+			Kind:     "list",
+			Fields:   Pipeline_PipelineTagsFields,
 		},
 	},
 }

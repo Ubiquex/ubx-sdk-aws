@@ -4,29 +4,29 @@ package mq
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigurationRevisions_Revisions struct {
-	Created any
+	Created     any
 	Description any
-	Revision any
+	Revision    any
 }
 
 type ConfigurationRevisionsConfig struct {
 	ConfigurationId any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 type ConfigurationRevisionsAttrs struct {
 	ConfigurationId any
-	MaxResults any
-	NextToken any
-	Revisions any
+	MaxResults      any
+	NextToken       any
+	Revisions       any
 }
 
 var ConfigurationRevisions = ubx.DataSourceBinding{
 	WireType: "aws_mq_configuration_revisions",
 	Fields: ubx.FieldMap{
 		"ConfigurationId": ubx.FieldSpec{WireName: "configuration_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

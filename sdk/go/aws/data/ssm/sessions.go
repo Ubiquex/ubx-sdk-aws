@@ -4,48 +4,48 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Sessions_Filters struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Sessions_Sessions_OutputUrl struct {
 	CloudWatchOutputUrl any
-	S3OutputUrl any
+	S3OutputUrl         any
 }
 
 type Sessions_Sessions struct {
-	AccessType any
-	Details any
-	DocumentName any
-	EndDate any
+	AccessType         any
+	Details            any
+	DocumentName       any
+	EndDate            any
 	MaxSessionDuration any
-	OutputUrl any
-	Owner any
-	Reason any
-	SessionId any
-	StartDate any
-	Status any
-	Target any
+	OutputUrl          any
+	Owner              any
+	Reason             any
+	SessionId          any
+	StartDate          any
+	Status             any
+	Target             any
 }
 
 var Sessions_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SessionsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	State any
+	NextToken  any
+	State      any
 }
 
 type SessionsAttrs struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	Sessions any
-	State any
+	NextToken  any
+	Sessions   any
+	State      any
 }
 
 var Sessions = ubx.DataSourceBinding{
@@ -53,11 +53,11 @@ var Sessions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Sessions_FiltersFields,
+			Kind:     "list",
+			Fields:   Sessions_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"State":      ubx.FieldSpec{WireName: "state"},
 	},
 }

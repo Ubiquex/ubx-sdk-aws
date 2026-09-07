@@ -21,6 +21,6 @@ var ApprovedOrigin = ubx.ResourceBinding{
 	WireType: "aws_connect_approved_origin",
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"Origin": ubx.FieldSpec{WireName: "origin"},
+		"Origin":     ubx.FieldSpec{WireName: "origin"},
 	},
 }

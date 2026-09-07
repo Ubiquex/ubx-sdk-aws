@@ -18,14 +18,14 @@ type NetworkAclEntry_PortRange struct {
 }
 
 var NetworkAclEntry_IcmpFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var NetworkAclEntry_PortRangeFields = ubx.FieldMap{
-		"From": ubx.FieldSpec{WireName: "from"},
-		"To": ubx.FieldSpec{WireName: "to"},
-	}
+	"From": ubx.FieldSpec{WireName: "from"},
+	"To":   ubx.FieldSpec{WireName: "to"},
+}
 
 type NetworkAclEntryConfig struct {
 	// The IPv4 CIDR range to allow or deny, in CIDR notation (for example, 172.16.0.0/24). Requirement is conditional: You must specify the CidrBlock or Ipv6CidrBlock property
@@ -75,20 +75,20 @@ var NetworkAclEntry = ubx.ResourceBinding{
 	WireType: "aws_ec2_network_acl_entry",
 	Fields: ubx.FieldMap{
 		"CidrBlock": ubx.FieldSpec{WireName: "cidr_block"},
-		"Egress": ubx.FieldSpec{WireName: "egress"},
+		"Egress":    ubx.FieldSpec{WireName: "egress"},
 		"Icmp": ubx.FieldSpec{
 			WireName: "icmp",
-			Kind: "object",
-			Fields: NetworkAclEntry_IcmpFields,
+			Kind:     "object",
+			Fields:   NetworkAclEntry_IcmpFields,
 		},
 		"Ipv6CidrBlock": ubx.FieldSpec{WireName: "ipv6_cidr_block"},
-		"NetworkAclId": ubx.FieldSpec{WireName: "network_acl_id"},
+		"NetworkAclId":  ubx.FieldSpec{WireName: "network_acl_id"},
 		"PortRange": ubx.FieldSpec{
 			WireName: "port_range",
-			Kind: "object",
-			Fields: NetworkAclEntry_PortRangeFields,
+			Kind:     "object",
+			Fields:   NetworkAclEntry_PortRangeFields,
 		},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
+		"Protocol":   ubx.FieldSpec{WireName: "protocol"},
 		"RuleAction": ubx.FieldSpec{WireName: "rule_action"},
 		"RuleNumber": ubx.FieldSpec{WireName: "rule_number"},
 	},

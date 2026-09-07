@@ -4,46 +4,46 @@ package imagebuilder
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Images_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type Images_ImageVersionList struct {
-	Arn any
-	BuildType any
+	Arn         any
+	BuildType   any
 	DateCreated any
 	ImageSource any
-	Name any
-	OsVersion any
-	Owner any
-	Platform any
-	Type any
-	Version any
+	Name        any
+	OsVersion   any
+	Owner       any
+	Platform    any
+	Type        any
+	Version     any
 }
 
 var Images_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ImagesConfig struct {
-	ByName any
-	Filters any
+	ByName            any
+	Filters           any
 	IncludeDeprecated any
-	MaxResults any
-	NextToken any
-	Owner any
+	MaxResults        any
+	NextToken         any
+	Owner             any
 }
 
 type ImagesAttrs struct {
-	ByName any
-	Filters any
-	ImageVersionList any
+	ByName            any
+	Filters           any
+	ImageVersionList  any
 	IncludeDeprecated any
-	MaxResults any
-	NextToken any
-	Owner any
-	RequestId any
+	MaxResults        any
+	NextToken         any
+	Owner             any
+	RequestId         any
 }
 
 var Images = ubx.DataSourceBinding{
@@ -52,12 +52,12 @@ var Images = ubx.DataSourceBinding{
 		"ByName": ubx.FieldSpec{WireName: "by_name"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Images_FiltersFields,
+			Kind:     "list",
+			Fields:   Images_FiltersFields,
 		},
 		"IncludeDeprecated": ubx.FieldSpec{WireName: "include_deprecated"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Owner": ubx.FieldSpec{WireName: "owner"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
+		"Owner":             ubx.FieldSpec{WireName: "owner"},
 	},
 }

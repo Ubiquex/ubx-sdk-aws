@@ -4,33 +4,33 @@ package voiceid
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Speakers_SpeakerSummaries struct {
-	CreatedAt any
-	CustomerSpeakerId any
-	DomainId any
+	CreatedAt          any
+	CustomerSpeakerId  any
+	DomainId           any
 	GeneratedSpeakerId any
-	LastAccessedAt any
-	Status any
-	UpdatedAt any
+	LastAccessedAt     any
+	Status             any
+	UpdatedAt          any
 }
 
 type SpeakersConfig struct {
-	DomainId any
+	DomainId   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SpeakersAttrs struct {
-	DomainId any
-	MaxResults any
-	NextToken any
+	DomainId         any
+	MaxResults       any
+	NextToken        any
 	SpeakerSummaries any
 }
 
 var Speakers = ubx.DataSourceBinding{
 	WireType: "aws_voiceid_speakers",
 	Fields: ubx.FieldMap{
-		"DomainId": ubx.FieldSpec{WireName: "domain_id"},
+		"DomainId":   ubx.FieldSpec{WireName: "domain_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

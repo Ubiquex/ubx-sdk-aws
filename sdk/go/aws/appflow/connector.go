@@ -14,16 +14,16 @@ type Connector_ConnectorProvisioningConfig struct {
 }
 
 var Connector_ConnectorProvisioningConfig_LambdaFields = ubx.FieldMap{
-		"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
-	}
+	"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
+}
 
 var Connector_ConnectorProvisioningConfigFields = ubx.FieldMap{
-		"Lambda": ubx.FieldSpec{
-			WireName: "lambda",
-			Kind: "object",
-			Fields: Connector_ConnectorProvisioningConfig_LambdaFields,
-		},
-	}
+	"Lambda": ubx.FieldSpec{
+		WireName: "lambda",
+		Kind:     "object",
+		Fields:   Connector_ConnectorProvisioningConfig_LambdaFields,
+	},
+}
 
 type ConnectorConfig struct {
 	// The name of the connector. The name is unique for each ConnectorRegistration in your AWS account.
@@ -55,10 +55,10 @@ var Connector = ubx.ResourceBinding{
 		"ConnectorLabel": ubx.FieldSpec{WireName: "connector_label"},
 		"ConnectorProvisioningConfig": ubx.FieldSpec{
 			WireName: "connector_provisioning_config",
-			Kind: "object",
-			Fields: Connector_ConnectorProvisioningConfigFields,
+			Kind:     "object",
+			Fields:   Connector_ConnectorProvisioningConfigFields,
 		},
 		"ConnectorProvisioningType": ubx.FieldSpec{WireName: "connector_provisioning_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":               ubx.FieldSpec{WireName: "description"},
 	},
 }

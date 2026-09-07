@@ -151,167 +151,167 @@ type Channel_TopicConfigurationList_RecordSchema struct {
 
 type Channel_TopicConfigurationList struct {
 	RecordConverter any
-	RecordSchema any
-	TopicArn any
+	RecordSchema    any
+	TopicArn        any
 }
 
 var Channel_EncryptionConfigurationFields = ubx.FieldMap{
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-	}
+	"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+}
 
 var Channel_IcebergDestinationConfiguration_CatalogFields = ubx.FieldMap{
-		"CatalogArn": ubx.FieldSpec{WireName: "catalog_arn"},
-		"WarehouseLocation": ubx.FieldSpec{WireName: "warehouse_location"},
-	}
+	"CatalogArn":        ubx.FieldSpec{WireName: "catalog_arn"},
+	"WarehouseLocation": ubx.FieldSpec{WireName: "warehouse_location"},
+}
 
 var Channel_IcebergDestinationConfiguration_DeadLetterQueueS3Fields = ubx.FieldMap{
-		"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
-		"ErrorOutputPrefix": ubx.FieldSpec{WireName: "error_output_prefix"},
-		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
-	}
+	"BucketArn":           ubx.FieldSpec{WireName: "bucket_arn"},
+	"ErrorOutputPrefix":   ubx.FieldSpec{WireName: "error_output_prefix"},
+	"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
+}
 
 var Channel_IcebergDestinationConfiguration_DestinationTableList_PartitionSpec_SourceListFields = ubx.FieldMap{
-		"SourceName": ubx.FieldSpec{WireName: "source_name"},
-	}
+	"SourceName": ubx.FieldSpec{WireName: "source_name"},
+}
 
 var Channel_IcebergDestinationConfiguration_DestinationTableList_PartitionSpecFields = ubx.FieldMap{
-		"PartitionStrategy": ubx.FieldSpec{WireName: "partition_strategy"},
-		"SourceList": ubx.FieldSpec{
-			WireName: "source_list",
-			Kind: "list",
-			Fields: Channel_IcebergDestinationConfiguration_DestinationTableList_PartitionSpec_SourceListFields,
-		},
-	}
+	"PartitionStrategy": ubx.FieldSpec{WireName: "partition_strategy"},
+	"SourceList": ubx.FieldSpec{
+		WireName: "source_list",
+		Kind:     "list",
+		Fields:   Channel_IcebergDestinationConfiguration_DestinationTableList_PartitionSpec_SourceListFields,
+	},
+}
 
 var Channel_IcebergDestinationConfiguration_DestinationTableListFields = ubx.FieldMap{
-		"DestinationDatabaseName": ubx.FieldSpec{WireName: "destination_database_name"},
-		"DestinationTableName": ubx.FieldSpec{WireName: "destination_table_name"},
-		"PartitionSpec": ubx.FieldSpec{
-			WireName: "partition_spec",
-			Kind: "object",
-			Fields: Channel_IcebergDestinationConfiguration_DestinationTableList_PartitionSpecFields,
-		},
-	}
+	"DestinationDatabaseName": ubx.FieldSpec{WireName: "destination_database_name"},
+	"DestinationTableName":    ubx.FieldSpec{WireName: "destination_table_name"},
+	"PartitionSpec": ubx.FieldSpec{
+		WireName: "partition_spec",
+		Kind:     "object",
+		Fields:   Channel_IcebergDestinationConfiguration_DestinationTableList_PartitionSpecFields,
+	},
+}
 
 var Channel_IcebergDestinationConfiguration_SchemaEvolutionFields = ubx.FieldMap{
-		"EnableSchemaEvolution": ubx.FieldSpec{WireName: "enable_schema_evolution"},
-	}
+	"EnableSchemaEvolution": ubx.FieldSpec{WireName: "enable_schema_evolution"},
+}
 
 var Channel_IcebergDestinationConfiguration_TableCreationFields = ubx.FieldMap{
-		"EnableTableCreation": ubx.FieldSpec{WireName: "enable_table_creation"},
-	}
+	"EnableTableCreation": ubx.FieldSpec{WireName: "enable_table_creation"},
+}
 
 var Channel_IcebergDestinationConfigurationFields = ubx.FieldMap{
-		"AppendOnly": ubx.FieldSpec{WireName: "append_only"},
-		"Catalog": ubx.FieldSpec{
-			WireName: "catalog",
-			Kind: "object",
-			Fields: Channel_IcebergDestinationConfiguration_CatalogFields,
-		},
-		"CompressionType": ubx.FieldSpec{WireName: "compression_type"},
-		"DataFreshnessInSeconds": ubx.FieldSpec{WireName: "data_freshness_in_seconds"},
-		"DeadLetterQueueS3": ubx.FieldSpec{
-			WireName: "dead_letter_queue_s3",
-			Kind: "object",
-			Fields: Channel_IcebergDestinationConfiguration_DeadLetterQueueS3Fields,
-		},
-		"DestinationTableList": ubx.FieldSpec{
-			WireName: "destination_table_list",
-			Kind: "list",
-			Fields: Channel_IcebergDestinationConfiguration_DestinationTableListFields,
-		},
-		"SchemaEvolution": ubx.FieldSpec{
-			WireName: "schema_evolution",
-			Kind: "object",
-			Fields: Channel_IcebergDestinationConfiguration_SchemaEvolutionFields,
-		},
-		"ServiceExecutionRoleArn": ubx.FieldSpec{WireName: "service_execution_role_arn"},
-		"TableCreation": ubx.FieldSpec{
-			WireName: "table_creation",
-			Kind: "object",
-			Fields: Channel_IcebergDestinationConfiguration_TableCreationFields,
-		},
-	}
+	"AppendOnly": ubx.FieldSpec{WireName: "append_only"},
+	"Catalog": ubx.FieldSpec{
+		WireName: "catalog",
+		Kind:     "object",
+		Fields:   Channel_IcebergDestinationConfiguration_CatalogFields,
+	},
+	"CompressionType":        ubx.FieldSpec{WireName: "compression_type"},
+	"DataFreshnessInSeconds": ubx.FieldSpec{WireName: "data_freshness_in_seconds"},
+	"DeadLetterQueueS3": ubx.FieldSpec{
+		WireName: "dead_letter_queue_s3",
+		Kind:     "object",
+		Fields:   Channel_IcebergDestinationConfiguration_DeadLetterQueueS3Fields,
+	},
+	"DestinationTableList": ubx.FieldSpec{
+		WireName: "destination_table_list",
+		Kind:     "list",
+		Fields:   Channel_IcebergDestinationConfiguration_DestinationTableListFields,
+	},
+	"SchemaEvolution": ubx.FieldSpec{
+		WireName: "schema_evolution",
+		Kind:     "object",
+		Fields:   Channel_IcebergDestinationConfiguration_SchemaEvolutionFields,
+	},
+	"ServiceExecutionRoleArn": ubx.FieldSpec{WireName: "service_execution_role_arn"},
+	"TableCreation": ubx.FieldSpec{
+		WireName: "table_creation",
+		Kind:     "object",
+		Fields:   Channel_IcebergDestinationConfiguration_TableCreationFields,
+	},
+}
 
 var Channel_LoggingInfo_CloudWatchLogsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
-	}
+	"Enabled":  ubx.FieldSpec{WireName: "enabled"},
+	"LogGroup": ubx.FieldSpec{WireName: "log_group"},
+}
 
 var Channel_LoggingInfo_FirehoseFields = ubx.FieldMap{
-		"DeliveryStream": ubx.FieldSpec{WireName: "delivery_stream"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"DeliveryStream": ubx.FieldSpec{WireName: "delivery_stream"},
+	"Enabled":        ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Channel_LoggingInfo_S3Fields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"Bucket":  ubx.FieldSpec{WireName: "bucket"},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Prefix":  ubx.FieldSpec{WireName: "prefix"},
+}
 
 var Channel_LoggingInfoFields = ubx.FieldMap{
-		"CloudWatchLogs": ubx.FieldSpec{
-			WireName: "cloud_watch_logs",
-			Kind: "object",
-			Fields: Channel_LoggingInfo_CloudWatchLogsFields,
-		},
-		"Firehose": ubx.FieldSpec{
-			WireName: "firehose",
-			Kind: "object",
-			Fields: Channel_LoggingInfo_FirehoseFields,
-		},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Channel_LoggingInfo_S3Fields,
-		},
-	}
+	"CloudWatchLogs": ubx.FieldSpec{
+		WireName: "cloud_watch_logs",
+		Kind:     "object",
+		Fields:   Channel_LoggingInfo_CloudWatchLogsFields,
+	},
+	"Firehose": ubx.FieldSpec{
+		WireName: "firehose",
+		Kind:     "object",
+		Fields:   Channel_LoggingInfo_FirehoseFields,
+	},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Channel_LoggingInfo_S3Fields,
+	},
+}
 
 var Channel_S3DestinationConfiguration_StorageFields = ubx.FieldMap{
-		"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
-		"CompressionType": ubx.FieldSpec{WireName: "compression_type"},
-		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
-		"OutputKeyTemplate": ubx.FieldSpec{WireName: "output_key_template"},
-		"OutputPrefix": ubx.FieldSpec{WireName: "output_prefix"},
-		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
-	}
+	"BucketArn":           ubx.FieldSpec{WireName: "bucket_arn"},
+	"CompressionType":     ubx.FieldSpec{WireName: "compression_type"},
+	"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
+	"OutputKeyTemplate":   ubx.FieldSpec{WireName: "output_key_template"},
+	"OutputPrefix":        ubx.FieldSpec{WireName: "output_prefix"},
+	"StorageClass":        ubx.FieldSpec{WireName: "storage_class"},
+}
 
 var Channel_S3DestinationConfigurationFields = ubx.FieldMap{
-		"DataFreshnessInSeconds": ubx.FieldSpec{WireName: "data_freshness_in_seconds"},
-		"DeadLetterQueueS3": ubx.FieldSpec{
-			WireName: "dead_letter_queue_s3",
-			Kind: "object",
-			Fields: Channel_IcebergDestinationConfiguration_DeadLetterQueueS3Fields,
-		},
-		"ServiceExecutionRoleArn": ubx.FieldSpec{WireName: "service_execution_role_arn"},
-		"Storage": ubx.FieldSpec{
-			WireName: "storage",
-			Kind: "object",
-			Fields: Channel_S3DestinationConfiguration_StorageFields,
-		},
-	}
+	"DataFreshnessInSeconds": ubx.FieldSpec{WireName: "data_freshness_in_seconds"},
+	"DeadLetterQueueS3": ubx.FieldSpec{
+		WireName: "dead_letter_queue_s3",
+		Kind:     "object",
+		Fields:   Channel_IcebergDestinationConfiguration_DeadLetterQueueS3Fields,
+	},
+	"ServiceExecutionRoleArn": ubx.FieldSpec{WireName: "service_execution_role_arn"},
+	"Storage": ubx.FieldSpec{
+		WireName: "storage",
+		Kind:     "object",
+		Fields:   Channel_S3DestinationConfiguration_StorageFields,
+	},
+}
 
 var Channel_TopicConfigurationList_RecordConverterFields = ubx.FieldMap{
-		"ValueConverter": ubx.FieldSpec{WireName: "value_converter"},
-	}
+	"ValueConverter": ubx.FieldSpec{WireName: "value_converter"},
+}
 
 var Channel_TopicConfigurationList_RecordSchemaFields = ubx.FieldMap{
-		"GsrArn": ubx.FieldSpec{WireName: "gsr_arn"},
-	}
+	"GsrArn": ubx.FieldSpec{WireName: "gsr_arn"},
+}
 
 var Channel_TopicConfigurationListFields = ubx.FieldMap{
-		"RecordConverter": ubx.FieldSpec{
-			WireName: "record_converter",
-			Kind: "object",
-			Fields: Channel_TopicConfigurationList_RecordConverterFields,
-		},
-		"RecordSchema": ubx.FieldSpec{
-			WireName: "record_schema",
-			Kind: "object",
-			Fields: Channel_TopicConfigurationList_RecordSchemaFields,
-		},
-		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
-	}
+	"RecordConverter": ubx.FieldSpec{
+		WireName: "record_converter",
+		Kind:     "object",
+		Fields:   Channel_TopicConfigurationList_RecordConverterFields,
+	},
+	"RecordSchema": ubx.FieldSpec{
+		WireName: "record_schema",
+		Kind:     "object",
+		Fields:   Channel_TopicConfigurationList_RecordSchemaFields,
+	},
+	"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
+}
 
 type ChannelConfig struct {
 	// Name of the channel
@@ -361,32 +361,32 @@ var Channel = ubx.ResourceBinding{
 	WireType: "aws_msk_channel",
 	Fields: ubx.FieldMap{
 		"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
-		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
+		"ClusterArn":  ubx.FieldSpec{WireName: "cluster_arn"},
 		"EncryptionConfiguration": ubx.FieldSpec{
 			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: Channel_EncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   Channel_EncryptionConfigurationFields,
 		},
 		"IcebergDestinationConfiguration": ubx.FieldSpec{
 			WireName: "iceberg_destination_configuration",
-			Kind: "object",
-			Fields: Channel_IcebergDestinationConfigurationFields,
+			Kind:     "object",
+			Fields:   Channel_IcebergDestinationConfigurationFields,
 		},
 		"LoggingInfo": ubx.FieldSpec{
 			WireName: "logging_info",
-			Kind: "object",
-			Fields: Channel_LoggingInfoFields,
+			Kind:     "object",
+			Fields:   Channel_LoggingInfoFields,
 		},
 		"S3DestinationConfiguration": ubx.FieldSpec{
 			WireName: "s3_destination_configuration",
-			Kind: "object",
-			Fields: Channel_S3DestinationConfigurationFields,
+			Kind:     "object",
+			Fields:   Channel_S3DestinationConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"TopicConfigurationList": ubx.FieldSpec{
 			WireName: "topic_configuration_list",
-			Kind: "list",
-			Fields: Channel_TopicConfigurationListFields,
+			Kind:     "list",
+			Fields:   Channel_TopicConfigurationListFields,
 		},
 	},
 }

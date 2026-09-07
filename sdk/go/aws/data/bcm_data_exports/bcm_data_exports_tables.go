@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BcmDataExportsTables_Tables_TableProperties struct {
 	DefaultValue any
-	Description any
-	Name any
-	ValidValues any
+	Description  any
+	Name         any
+	ValidValues  any
 }
 
 type BcmDataExportsTables_Tables struct {
-	Description any
-	TableName any
+	Description     any
+	TableName       any
 	TableProperties any
 }
 
 type BcmDataExportsTablesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type BcmDataExportsTablesAttrs struct {
 	MaxResults any
-	NextToken any
-	Tables any
+	NextToken  any
+	Tables     any
 }
 
 var BcmDataExportsTables = ubx.DataSourceBinding{
 	WireType: "aws_bcm_data_exports_tables",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

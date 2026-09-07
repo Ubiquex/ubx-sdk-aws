@@ -4,12 +4,12 @@ package athena
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SessionStatus_Status struct {
-	EndDateTime any
-	IdleSinceDateTime any
+	EndDateTime          any
+	IdleSinceDateTime    any
 	LastModifiedDateTime any
-	StartDateTime any
-	State any
-	StateChangeReason any
+	StartDateTime        any
+	State                any
+	StateChangeReason    any
 }
 
 type SessionStatusConfig struct {

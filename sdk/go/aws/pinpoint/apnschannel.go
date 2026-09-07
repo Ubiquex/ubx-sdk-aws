@@ -50,14 +50,14 @@ type ApnschannelAttrs struct {
 var Apnschannel = ubx.ResourceBinding{
 	WireType: "aws_pinpoint_apnschannel",
 	Fields: ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"BundleId": ubx.FieldSpec{WireName: "bundle_id"},
-		"Certificate": ubx.FieldSpec{WireName: "certificate"},
+		"ApplicationId":               ubx.FieldSpec{WireName: "application_id"},
+		"BundleId":                    ubx.FieldSpec{WireName: "bundle_id"},
+		"Certificate":                 ubx.FieldSpec{WireName: "certificate"},
 		"DefaultAuthenticationMethod": ubx.FieldSpec{WireName: "default_authentication_method"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"TeamId": ubx.FieldSpec{WireName: "team_id"},
-		"TokenKey": ubx.FieldSpec{WireName: "token_key"},
-		"TokenKeyId": ubx.FieldSpec{WireName: "token_key_id"},
+		"Enabled":                     ubx.FieldSpec{WireName: "enabled"},
+		"PrivateKey":                  ubx.FieldSpec{WireName: "private_key"},
+		"TeamId":                      ubx.FieldSpec{WireName: "team_id"},
+		"TokenKey":                    ubx.FieldSpec{WireName: "token_key"},
+		"TokenKeyId":                  ubx.FieldSpec{WireName: "token_key_id"},
 	},
 }

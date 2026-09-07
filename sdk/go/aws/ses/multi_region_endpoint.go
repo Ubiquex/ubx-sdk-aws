@@ -14,26 +14,26 @@ type MultiRegionEndpoint_Details struct {
 }
 
 type MultiRegionEndpoint_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var MultiRegionEndpoint_Details_RouteDetailsFields = ubx.FieldMap{
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"Region": ubx.FieldSpec{WireName: "region"},
+}
 
 var MultiRegionEndpoint_DetailsFields = ubx.FieldMap{
-		"RouteDetails": ubx.FieldSpec{
-			WireName: "route_details",
-			Kind: "list",
-			Fields: MultiRegionEndpoint_Details_RouteDetailsFields,
-		},
-	}
+	"RouteDetails": ubx.FieldSpec{
+		WireName: "route_details",
+		Kind:     "list",
+		Fields:   MultiRegionEndpoint_Details_RouteDetailsFields,
+	},
+}
 
 var MultiRegionEndpoint_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MultiRegionEndpointConfig struct {
 	// Contains details of a multi-region endpoint (global-endpoint) being created.
@@ -58,14 +58,14 @@ var MultiRegionEndpoint = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Details": ubx.FieldSpec{
 			WireName: "details",
-			Kind: "object",
-			Fields: MultiRegionEndpoint_DetailsFields,
+			Kind:     "object",
+			Fields:   MultiRegionEndpoint_DetailsFields,
 		},
 		"EndpointName": ubx.FieldSpec{WireName: "endpoint_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MultiRegionEndpoint_TagsFields,
+			Kind:     "list",
+			Fields:   MultiRegionEndpoint_TagsFields,
 		},
 	},
 }

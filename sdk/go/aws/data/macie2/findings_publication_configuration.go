@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FindingsPublicationConfiguration_SecurityHubConfiguration struct {
 	PublishClassificationFindings any
-	PublishPolicyFindings any
+	PublishPolicyFindings         any
 }
 
 type FindingsPublicationConfigurationConfig struct {
@@ -18,6 +18,5 @@ type FindingsPublicationConfigurationAttrs struct {
 
 var FindingsPublicationConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_macie2_findings_publication_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

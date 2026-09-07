@@ -12,30 +12,30 @@ type ManagedblockchainQueryTransactions_FromBlockchainInstant struct {
 }
 
 type ManagedblockchainQueryTransactions_Sort struct {
-	SortBy any
+	SortBy    any
 	SortOrder any
 }
 
 type ManagedblockchainQueryTransactions_Transactions struct {
-	ConfirmationStatus any
-	Network any
-	TransactionHash any
-	TransactionId any
+	ConfirmationStatus   any
+	Network              any
+	TransactionHash      any
+	TransactionId        any
 	TransactionTimestamp any
 }
 
 var ManagedblockchainQueryTransactions_ConfirmationStatusFilterFields = ubx.FieldMap{
-		"Include": ubx.FieldSpec{WireName: "include"},
-	}
+	"Include": ubx.FieldSpec{WireName: "include"},
+}
 
 var ManagedblockchainQueryTransactions_FromBlockchainInstantFields = ubx.FieldMap{
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"Time": ubx.FieldSpec{WireName: "time"},
+}
 
 var ManagedblockchainQueryTransactions_SortFields = ubx.FieldMap{
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 type ManagedblockchainQueryTransactionsConfig struct {
 	Address any
@@ -43,9 +43,9 @@ type ManagedblockchainQueryTransactionsConfig struct {
 	ConfirmationStatusFilter any
 	// <p>The container for time.</p>
 	FromBlockchainInstant any
-	MaxResults any
-	Network any
-	NextToken any
+	MaxResults            any
+	Network               any
+	NextToken             any
 	// <p>The container for determining how the list transaction result will be sorted.</p>
 	Sort any
 	// <p>The container for time.</p>
@@ -58,14 +58,14 @@ type ManagedblockchainQueryTransactionsAttrs struct {
 	ConfirmationStatusFilter any
 	// <p>The container for time.</p>
 	FromBlockchainInstant any
-	MaxResults any
-	Network any
-	NextToken any
+	MaxResults            any
+	Network               any
+	NextToken             any
 	// <p>The container for determining how the list transaction result will be sorted.</p>
 	Sort any
 	// <p>The container for time.</p>
 	ToBlockchainInstant any
-	Transactions any
+	Transactions        any
 }
 
 var ManagedblockchainQueryTransactions = ubx.DataSourceBinding{
@@ -74,26 +74,26 @@ var ManagedblockchainQueryTransactions = ubx.DataSourceBinding{
 		"Address": ubx.FieldSpec{WireName: "address"},
 		"ConfirmationStatusFilter": ubx.FieldSpec{
 			WireName: "confirmation_status_filter",
-			Kind: "object",
-			Fields: ManagedblockchainQueryTransactions_ConfirmationStatusFilterFields,
+			Kind:     "object",
+			Fields:   ManagedblockchainQueryTransactions_ConfirmationStatusFilterFields,
 		},
 		"FromBlockchainInstant": ubx.FieldSpec{
 			WireName: "from_blockchain_instant",
-			Kind: "object",
-			Fields: ManagedblockchainQueryTransactions_FromBlockchainInstantFields,
+			Kind:     "object",
+			Fields:   ManagedblockchainQueryTransactions_FromBlockchainInstantFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Network":    ubx.FieldSpec{WireName: "network"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"Sort": ubx.FieldSpec{
 			WireName: "sort",
-			Kind: "object",
-			Fields: ManagedblockchainQueryTransactions_SortFields,
+			Kind:     "object",
+			Fields:   ManagedblockchainQueryTransactions_SortFields,
 		},
 		"ToBlockchainInstant": ubx.FieldSpec{
 			WireName: "to_blockchain_instant",
-			Kind: "object",
-			Fields: ManagedblockchainQueryTransactions_FromBlockchainInstantFields,
+			Kind:     "object",
+			Fields:   ManagedblockchainQueryTransactions_FromBlockchainInstantFields,
 		},
 	},
 }

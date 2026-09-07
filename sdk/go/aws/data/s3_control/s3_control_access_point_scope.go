@@ -5,17 +5,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type S3ControlAccessPointScope_Scope struct {
 	Permissions any
-	Prefixes any
+	Prefixes    any
 }
 
 type S3ControlAccessPointScopeConfig struct {
 	AccountId any
-	Name any
+	Name      any
 }
 
 type S3ControlAccessPointScopeAttrs struct {
 	AccountId any
-	Name any
+	Name      any
 	// <p>You can use the access point scope to restrict access to specific prefixes, API operations, or a combination of both.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets-manage-scope.html">Manage the scope of your access points for directory buckets</a>.</p>
 	Scope any
 }
@@ -24,6 +24,6 @@ var S3ControlAccessPointScope = ubx.DataSourceBinding{
 	WireType: "aws_s3_control_access_point_scope",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

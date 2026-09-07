@@ -4,22 +4,22 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AuditTask_AuditDetails struct {
-	CheckCompliant any
-	CheckRunStatus any
-	ErrorCode any
-	Message any
-	NonCompliantResourcesCount any
+	CheckCompliant                       any
+	CheckRunStatus                       any
+	ErrorCode                            any
+	Message                              any
+	NonCompliantResourcesCount           any
 	SuppressedNonCompliantResourcesCount any
-	TotalResourcesCount any
+	TotalResourcesCount                  any
 }
 
 type AuditTask_TaskStatistics struct {
-	CanceledChecks any
-	CompliantChecks any
-	FailedChecks any
-	InProgressChecks any
-	NonCompliantChecks any
-	TotalChecks any
+	CanceledChecks                 any
+	CompliantChecks                any
+	FailedChecks                   any
+	InProgressChecks               any
+	NonCompliantChecks             any
+	TotalChecks                    any
 	WaitingForDataCollectionChecks any
 }
 
@@ -28,14 +28,14 @@ type AuditTaskConfig struct {
 }
 
 type AuditTaskAttrs struct {
-	AuditDetails any
+	AuditDetails       any
 	ScheduledAuditName any
-	TaskId any
-	TaskStartTime any
+	TaskId             any
+	TaskStartTime      any
 	// <p>Statistics for the checks performed during the audit.</p>
 	TaskStatistics any
-	TaskStatus any
-	TaskType any
+	TaskStatus     any
+	TaskType       any
 }
 
 var AuditTask = ubx.DataSourceBinding{

@@ -4,34 +4,34 @@ package elasticmapreduce
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SupportedInstanceTypes_SupportedInstanceTypes struct {
-	Architecture any
+	Architecture          any
 	EbsOptimizedAvailable any
 	EbsOptimizedByDefault any
-	EbsStorageOnly any
-	InstanceFamilyId any
-	Is64BitsOnly any
-	MemoryGb any
-	NumberOfDisks any
-	StorageGb any
-	Type any
-	Vcpu any
+	EbsStorageOnly        any
+	InstanceFamilyId      any
+	Is64BitsOnly          any
+	MemoryGb              any
+	NumberOfDisks         any
+	StorageGb             any
+	Type                  any
+	Vcpu                  any
 }
 
 type SupportedInstanceTypesConfig struct {
-	Marker any
+	Marker       any
 	ReleaseLabel any
 }
 
 type SupportedInstanceTypesAttrs struct {
-	Marker any
-	ReleaseLabel any
+	Marker                 any
+	ReleaseLabel           any
 	SupportedInstanceTypes any
 }
 
 var SupportedInstanceTypes = ubx.DataSourceBinding{
 	WireType: "aws_elasticmapreduce_supported_instance_types",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":       ubx.FieldSpec{WireName: "marker"},
 		"ReleaseLabel": ubx.FieldSpec{WireName: "release_label"},
 	},
 }

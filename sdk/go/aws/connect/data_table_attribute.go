@@ -35,26 +35,26 @@ type DataTableAttribute_Validation struct {
 }
 
 var DataTableAttribute_Validation_EnumFields = ubx.FieldMap{
-		"Strict": ubx.FieldSpec{WireName: "strict"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Strict": ubx.FieldSpec{WireName: "strict"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var DataTableAttribute_ValidationFields = ubx.FieldMap{
-		"Enum": ubx.FieldSpec{
-			WireName: "enum",
-			Kind: "object",
-			Fields: DataTableAttribute_Validation_EnumFields,
-		},
-		"ExclusiveMaximum": ubx.FieldSpec{WireName: "exclusive_maximum"},
-		"ExclusiveMinimum": ubx.FieldSpec{WireName: "exclusive_minimum"},
-		"MaxLength": ubx.FieldSpec{WireName: "max_length"},
-		"MaxValues": ubx.FieldSpec{WireName: "max_values"},
-		"Maximum": ubx.FieldSpec{WireName: "maximum"},
-		"MinLength": ubx.FieldSpec{WireName: "min_length"},
-		"MinValues": ubx.FieldSpec{WireName: "min_values"},
-		"Minimum": ubx.FieldSpec{WireName: "minimum"},
-		"MultipleOf": ubx.FieldSpec{WireName: "multiple_of"},
-	}
+	"Enum": ubx.FieldSpec{
+		WireName: "enum",
+		Kind:     "object",
+		Fields:   DataTableAttribute_Validation_EnumFields,
+	},
+	"ExclusiveMaximum": ubx.FieldSpec{WireName: "exclusive_maximum"},
+	"ExclusiveMinimum": ubx.FieldSpec{WireName: "exclusive_minimum"},
+	"MaxLength":        ubx.FieldSpec{WireName: "max_length"},
+	"MaxValues":        ubx.FieldSpec{WireName: "max_values"},
+	"Maximum":          ubx.FieldSpec{WireName: "maximum"},
+	"MinLength":        ubx.FieldSpec{WireName: "min_length"},
+	"MinValues":        ubx.FieldSpec{WireName: "min_values"},
+	"Minimum":          ubx.FieldSpec{WireName: "minimum"},
+	"MultipleOf":       ubx.FieldSpec{WireName: "multiple_of"},
+}
 
 type DataTableAttributeConfig struct {
 	// The Amazon Resource Name (ARN) of the data table to which this attribute is attached. (AI-inferred)
@@ -102,14 +102,14 @@ var DataTableAttribute = ubx.ResourceBinding{
 	WireType: "aws_connect_data_table_attribute",
 	Fields: ubx.FieldMap{
 		"DataTableArn": ubx.FieldSpec{WireName: "data_table_arn"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Primary": ubx.FieldSpec{WireName: "primary"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"InstanceArn":  ubx.FieldSpec{WireName: "instance_arn"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
+		"Primary":      ubx.FieldSpec{WireName: "primary"},
 		"Validation": ubx.FieldSpec{
 			WireName: "validation",
-			Kind: "object",
-			Fields: DataTableAttribute_ValidationFields,
+			Kind:     "object",
+			Fields:   DataTableAttribute_ValidationFields,
 		},
 		"ValueType": ubx.FieldSpec{WireName: "value_type"},
 	},

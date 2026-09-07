@@ -28,9 +28,9 @@ type StackUserAssociationAttrs struct {
 var StackUserAssociation = ubx.ResourceBinding{
 	WireType: "aws_app_stream_stack_user_association",
 	Fields: ubx.FieldMap{
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
+		"AuthenticationType":    ubx.FieldSpec{WireName: "authentication_type"},
 		"SendEmailNotification": ubx.FieldSpec{WireName: "send_email_notification"},
-		"StackName": ubx.FieldSpec{WireName: "stack_name"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
+		"StackName":             ubx.FieldSpec{WireName: "stack_name"},
+		"UserName":              ubx.FieldSpec{WireName: "user_name"},
 	},
 }

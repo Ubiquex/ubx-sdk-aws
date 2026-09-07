@@ -17,14 +17,14 @@ type IpAccessSettings_Tags struct {
 }
 
 var IpAccessSettings_IpRulesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IpRange": ubx.FieldSpec{WireName: "ip_range"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"IpRange":     ubx.FieldSpec{WireName: "ip_range"},
+}
 
 var IpAccessSettings_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IpAccessSettingsConfig struct {
 	// The additional_encryption_context is a dynamic map of arbitrary key-value pairs that are included as additional encryption context when AWS KMS encrypts the WorkSpaces Web IP access settings using a customer-managed KMS key. (AI-inferred)
@@ -66,18 +66,18 @@ var IpAccessSettings = ubx.ResourceBinding{
 	WireType: "aws_work_spaces_web_ip_access_settings",
 	Fields: ubx.FieldMap{
 		"AdditionalEncryptionContext": ubx.FieldSpec{WireName: "additional_encryption_context"},
-		"CustomerManagedKey": ubx.FieldSpec{WireName: "customer_managed_key"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"CustomerManagedKey":          ubx.FieldSpec{WireName: "customer_managed_key"},
+		"Description":                 ubx.FieldSpec{WireName: "description"},
+		"DisplayName":                 ubx.FieldSpec{WireName: "display_name"},
 		"IpRules": ubx.FieldSpec{
 			WireName: "ip_rules",
-			Kind: "list",
-			Fields: IpAccessSettings_IpRulesFields,
+			Kind:     "list",
+			Fields:   IpAccessSettings_IpRulesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: IpAccessSettings_TagsFields,
+			Kind:     "list",
+			Fields:   IpAccessSettings_TagsFields,
 		},
 	},
 }

@@ -4,29 +4,29 @@ package auditmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EvidenceFolder_EvidenceFolder struct {
-	AssessmentId any
-	AssessmentReportSelectionCount any
-	Author any
-	ControlId any
-	ControlName any
-	ControlSetId any
-	DataSource any
-	Date any
-	EvidenceAwsServiceSourceCount any
-	EvidenceByTypeComplianceCheckCount any
+	AssessmentId                             any
+	AssessmentReportSelectionCount           any
+	Author                                   any
+	ControlId                                any
+	ControlName                              any
+	ControlSetId                             any
+	DataSource                               any
+	Date                                     any
+	EvidenceAwsServiceSourceCount            any
+	EvidenceByTypeComplianceCheckCount       any
 	EvidenceByTypeComplianceCheckIssuesCount any
-	EvidenceByTypeConfigurationDataCount any
-	EvidenceByTypeManualCount any
-	EvidenceByTypeUserActivityCount any
-	EvidenceResourcesIncludedCount any
-	Id any
-	Name any
-	TotalEvidence any
+	EvidenceByTypeConfigurationDataCount     any
+	EvidenceByTypeManualCount                any
+	EvidenceByTypeUserActivityCount          any
+	EvidenceResourcesIncludedCount           any
+	Id                                       any
+	Name                                     any
+	TotalEvidence                            any
 }
 
 type EvidenceFolderConfig struct {
-	AssessmentId any
-	ControlSetId any
+	AssessmentId     any
+	ControlSetId     any
 	EvidenceFolderId any
 }
 
@@ -34,15 +34,15 @@ type EvidenceFolderAttrs struct {
 	AssessmentId any
 	ControlSetId any
 	// <p> The folder where Audit Manager stores evidence for an assessment. </p>
-	EvidenceFolder any
+	EvidenceFolder   any
 	EvidenceFolderId any
 }
 
 var EvidenceFolder = ubx.DataSourceBinding{
 	WireType: "aws_auditmanager_evidence_folder",
 	Fields: ubx.FieldMap{
-		"AssessmentId": ubx.FieldSpec{WireName: "assessment_id"},
-		"ControlSetId": ubx.FieldSpec{WireName: "control_set_id"},
+		"AssessmentId":     ubx.FieldSpec{WireName: "assessment_id"},
+		"ControlSetId":     ubx.FieldSpec{WireName: "control_set_id"},
 		"EvidenceFolderId": ubx.FieldSpec{WireName: "evidence_folder_id"},
 	},
 }

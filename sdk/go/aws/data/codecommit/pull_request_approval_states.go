@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PullRequestApprovalStates_Approvals struct {
 	ApprovalState any
-	UserArn any
+	UserArn       any
 }
 
 type PullRequestApprovalStatesConfig struct {
 	PullRequestId any
-	RevisionId any
+	RevisionId    any
 }
 
 type PullRequestApprovalStatesAttrs struct {
-	Approvals any
+	Approvals     any
 	PullRequestId any
-	RevisionId any
+	RevisionId    any
 }
 
 var PullRequestApprovalStates = ubx.DataSourceBinding{
 	WireType: "aws_codecommit_pull_request_approval_states",
 	Fields: ubx.FieldMap{
 		"PullRequestId": ubx.FieldSpec{WireName: "pull_request_id"},
-		"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
+		"RevisionId":    ubx.FieldSpec{WireName: "revision_id"},
 	},
 }

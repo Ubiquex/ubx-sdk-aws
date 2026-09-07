@@ -4,26 +4,26 @@ package storagegateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FileShares_FileShareInfoList struct {
-	FileShareArn any
-	FileShareId any
+	FileShareArn    any
+	FileShareId     any
 	FileShareStatus any
-	FileShareType any
-	GatewayArn any
+	FileShareType   any
+	GatewayArn      any
 }
 
 type FileSharesConfig struct {
 	// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
 	GatewayArn any
-	Limit any
-	Marker any
+	Limit      any
+	Marker     any
 }
 
 type FileSharesAttrs struct {
 	FileShareInfoList any
 	// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
 	GatewayArn any
-	Limit any
-	Marker any
+	Limit      any
+	Marker     any
 	NextMarker any
 }
 
@@ -31,7 +31,7 @@ var FileShares = ubx.DataSourceBinding{
 	WireType: "aws_storagegateway_file_shares",
 	Fields: ubx.FieldMap{
 		"GatewayArn": ubx.FieldSpec{WireName: "gateway_arn"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 	},
 }

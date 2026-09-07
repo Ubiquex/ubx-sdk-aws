@@ -4,25 +4,25 @@ package ecs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TaskDefinition_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TaskDefinitionConfig struct {
-	Include any
+	Include        any
 	TaskDefinition any
 }
 
 type TaskDefinitionAttrs struct {
-	Include any
-	Tags any
+	Include        any
+	Tags           any
 	TaskDefinition any
 }
 
 var TaskDefinition = ubx.DataSourceBinding{
 	WireType: "aws_ecs_task_definition",
 	Fields: ubx.FieldMap{
-		"Include": ubx.FieldSpec{WireName: "include"},
+		"Include":        ubx.FieldSpec{WireName: "include"},
 		"TaskDefinition": ubx.FieldSpec{WireName: "task_definition"},
 	},
 }

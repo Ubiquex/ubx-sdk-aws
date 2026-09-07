@@ -4,18 +4,18 @@ package elastic_load_balancing_v2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ElasticLoadBalancingV2LoadBalancers_LoadBalancers_AvailabilityZones_LoadBalancerAddresses struct {
-	AllocationId any
-	IpAddress any
-	Ipv6Address any
+	AllocationId       any
+	IpAddress          any
+	Ipv6Address        any
 	PrivateIpv4Address any
 }
 
 type ElasticLoadBalancingV2LoadBalancers_LoadBalancers_AvailabilityZones struct {
 	LoadBalancerAddresses any
-	OutpostId any
+	OutpostId             any
 	SourceNatIpv6Prefixes any
-	SubnetId any
-	ZoneName any
+	SubnetId              any
+	ZoneName              any
 }
 
 type ElasticLoadBalancingV2LoadBalancers_LoadBalancers_IpamPools struct {
@@ -23,51 +23,51 @@ type ElasticLoadBalancingV2LoadBalancers_LoadBalancers_IpamPools struct {
 }
 
 type ElasticLoadBalancingV2LoadBalancers_LoadBalancers_State struct {
-	Code any
+	Code   any
 	Reason any
 }
 
 type ElasticLoadBalancingV2LoadBalancers_LoadBalancers struct {
-	AvailabilityZones any
-	CanonicalHostedZoneId any
-	CreatedTime any
-	CustomerOwnedIpv4Pool any
-	Dnsname any
-	EnablePrefixForIpv6SourceNat any
+	AvailabilityZones                                    any
+	CanonicalHostedZoneId                                any
+	CreatedTime                                          any
+	CustomerOwnedIpv4Pool                                any
+	Dnsname                                              any
+	EnablePrefixForIpv6SourceNat                         any
 	EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic any
-	IpAddressType any
-	IpamPools any
-	LoadBalancerArn any
-	LoadBalancerName any
-	Scheme any
-	SecurityGroups any
-	State any
-	Type any
-	VpcId any
+	IpAddressType                                        any
+	IpamPools                                            any
+	LoadBalancerArn                                      any
+	LoadBalancerName                                     any
+	Scheme                                               any
+	SecurityGroups                                       any
+	State                                                any
+	Type                                                 any
+	VpcId                                                any
 }
 
 type ElasticLoadBalancingV2LoadBalancersConfig struct {
 	LoadBalancerArns any
-	Marker any
-	Names any
-	PageSize any
+	Marker           any
+	Names            any
+	PageSize         any
 }
 
 type ElasticLoadBalancingV2LoadBalancersAttrs struct {
 	LoadBalancerArns any
-	LoadBalancers any
-	Marker any
-	Names any
-	NextMarker any
-	PageSize any
+	LoadBalancers    any
+	Marker           any
+	Names            any
+	NextMarker       any
+	PageSize         any
 }
 
 var ElasticLoadBalancingV2LoadBalancers = ubx.DataSourceBinding{
 	WireType: "aws_elastic_load_balancing_v2_load_balancers",
 	Fields: ubx.FieldMap{
 		"LoadBalancerArns": ubx.FieldSpec{WireName: "load_balancer_arns"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"Names": ubx.FieldSpec{WireName: "names"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"Marker":           ubx.FieldSpec{WireName: "marker"},
+		"Names":            ubx.FieldSpec{WireName: "names"},
+		"PageSize":         ubx.FieldSpec{WireName: "page_size"},
 	},
 }

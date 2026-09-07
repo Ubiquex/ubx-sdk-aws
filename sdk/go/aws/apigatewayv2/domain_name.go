@@ -26,18 +26,18 @@ type DomainName_MutualTlsAuthentication struct {
 }
 
 var DomainName_DomainNameConfigurationsFields = ubx.FieldMap{
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"CertificateName": ubx.FieldSpec{WireName: "certificate_name"},
-		"EndpointType": ubx.FieldSpec{WireName: "endpoint_type"},
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"OwnershipVerificationCertificateArn": ubx.FieldSpec{WireName: "ownership_verification_certificate_arn"},
-		"SecurityPolicy": ubx.FieldSpec{WireName: "security_policy"},
-	}
+	"CertificateArn":                      ubx.FieldSpec{WireName: "certificate_arn"},
+	"CertificateName":                     ubx.FieldSpec{WireName: "certificate_name"},
+	"EndpointType":                        ubx.FieldSpec{WireName: "endpoint_type"},
+	"IpAddressType":                       ubx.FieldSpec{WireName: "ip_address_type"},
+	"OwnershipVerificationCertificateArn": ubx.FieldSpec{WireName: "ownership_verification_certificate_arn"},
+	"SecurityPolicy":                      ubx.FieldSpec{WireName: "security_policy"},
+}
 
 var DomainName_MutualTlsAuthenticationFields = ubx.FieldMap{
-		"TruststoreUri": ubx.FieldSpec{WireName: "truststore_uri"},
-		"TruststoreVersion": ubx.FieldSpec{WireName: "truststore_version"},
-	}
+	"TruststoreUri":     ubx.FieldSpec{WireName: "truststore_uri"},
+	"TruststoreVersion": ubx.FieldSpec{WireName: "truststore_version"},
+}
 
 type DomainNameConfig struct {
 	// The custom domain name for your API in Amazon API Gateway. Uppercase letters and the underscore (``_``) character are not supported.
@@ -77,15 +77,15 @@ var DomainName = ubx.ResourceBinding{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"DomainNameConfigurations": ubx.FieldSpec{
 			WireName: "domain_name_configurations",
-			Kind: "list",
-			Fields: DomainName_DomainNameConfigurationsFields,
+			Kind:     "list",
+			Fields:   DomainName_DomainNameConfigurationsFields,
 		},
 		"MutualTlsAuthentication": ubx.FieldSpec{
 			WireName: "mutual_tls_authentication",
-			Kind: "object",
-			Fields: DomainName_MutualTlsAuthenticationFields,
+			Kind:     "object",
+			Fields:   DomainName_MutualTlsAuthenticationFields,
 		},
 		"RoutingMode": ubx.FieldSpec{WireName: "routing_mode"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 	},
 }

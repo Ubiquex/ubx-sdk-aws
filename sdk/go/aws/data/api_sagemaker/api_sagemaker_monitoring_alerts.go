@@ -12,33 +12,33 @@ type ApiSagemakerMonitoringAlerts_MonitoringAlertSummaries_Actions struct {
 }
 
 type ApiSagemakerMonitoringAlerts_MonitoringAlertSummaries struct {
-	Actions any
-	AlertStatus any
-	CreationTime any
-	DatapointsToAlert any
-	EvaluationPeriod any
-	LastModifiedTime any
+	Actions             any
+	AlertStatus         any
+	CreationTime        any
+	DatapointsToAlert   any
+	EvaluationPeriod    any
+	LastModifiedTime    any
 	MonitoringAlertName any
 }
 
 type ApiSagemakerMonitoringAlertsConfig struct {
-	MaxResults any
+	MaxResults             any
 	MonitoringScheduleName any
-	NextToken any
+	NextToken              any
 }
 
 type ApiSagemakerMonitoringAlertsAttrs struct {
-	MaxResults any
+	MaxResults               any
 	MonitoringAlertSummaries any
-	MonitoringScheduleName any
-	NextToken any
+	MonitoringScheduleName   any
+	NextToken                any
 }
 
 var ApiSagemakerMonitoringAlerts = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_monitoring_alerts",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
 		"MonitoringScheduleName": ubx.FieldSpec{WireName: "monitoring_schedule_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
 	},
 }

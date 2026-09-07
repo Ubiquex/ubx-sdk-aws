@@ -9,8 +9,8 @@ type ResourcePolicyConfig struct {
 
 type ResourcePolicyAttrs struct {
 	DelegatedAdminResourcePolicy any
-	ResourceArn any
-	ResourcePolicy any
+	ResourceArn                  any
+	ResourcePolicy               any
 }
 
 var ResourcePolicy = ubx.DataSourceBinding{

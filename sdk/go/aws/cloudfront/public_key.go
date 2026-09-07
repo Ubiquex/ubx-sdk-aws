@@ -15,11 +15,11 @@ type PublicKey_PublicKeyConfig struct {
 }
 
 var PublicKey_PublicKeyConfigFields = ubx.FieldMap{
-		"CallerReference": ubx.FieldSpec{WireName: "caller_reference"},
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"EncodedKey": ubx.FieldSpec{WireName: "encoded_key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CallerReference": ubx.FieldSpec{WireName: "caller_reference"},
+	"Comment":         ubx.FieldSpec{WireName: "comment"},
+	"EncodedKey":      ubx.FieldSpec{WireName: "encoded_key"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+}
 
 type PublicKeyConfig struct {
 	// Configuration information about a public key that you can use with [signed URLs and signed cookies](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html), or with [field-level encryption](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html). CloudFront supports signed URLs and signed cookies with RSA 2048 or ECDSA 256 key signatures. Field-level encryption is only compatible with RSA 2048 key signatures.
@@ -40,8 +40,8 @@ var PublicKey = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"PublicKeyConfig": ubx.FieldSpec{
 			WireName: "public_key_config",
-			Kind: "object",
-			Fields: PublicKey_PublicKeyConfigFields,
+			Kind:     "object",
+			Fields:   PublicKey_PublicKeyConfigFields,
 		},
 	},
 }

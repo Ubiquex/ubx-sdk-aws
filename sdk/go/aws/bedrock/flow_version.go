@@ -96,7 +96,7 @@ type FlowVersion_Definition_Nodes_Configuration_KnowledgeBase_OrchestrationConfi
 	// Specifies additional model invocation parameters (as a dynamic map of key-value pairs) to pass to the underlying model when the knowledge-base orchestration step runs, allowing fine-grained control beyond the standard configured fields. (AI-inferred)
 	AdditionalModelRequestFields any
 	// Specifies the inference configuration for the knowledge base node's orchestration, such as temperature, top-p, and max output tokens, that control how the underlying foundation model generates responses from retrieved context. (AI-inferred)
-	InferenceConfig any
+	InferenceConfig   any
 	PerformanceConfig any
 	// Provides the prompt template (as an object) that the knowledge base node's orchestration configuration uses to construct the model prompt, formatting how the retrieved context and the user's query are combined, typically via placeholders like {{context}} and {{query}}. (AI-inferred)
 	PromptTemplate any
@@ -154,7 +154,7 @@ type FlowVersion_Definition_Nodes_Configuration_KnowledgeBase struct {
 	// The identifier of the foundation model used by the knowledge base node in this flow version to synthesize answers from the retrieved knowledge base context. (AI-inferred)
 	ModelId any
 	// Specifies the maximum number of results (chunks) to retrieve from the knowledge base when this flow node executes a query. (AI-inferred)
-	NumberOfResults any
+	NumberOfResults            any
 	OrchestrationConfiguration any
 	// Specifies the prompt template for the knowledge base node, which can be provided as inline text or as a reference to a stored prompt, and is used to instruct the model on how to incorporate retrieved knowledge base context into its response. (AI-inferred)
 	PromptTemplate any
@@ -273,12 +273,12 @@ type FlowVersion_Definition_Nodes_Configuration struct {
 	LoopController any
 	// In the configuration for a Loop node within a Bedrock flow definition, this field specifies the variable or expression that supplies the list of items the loop will iterate over. (AI-inferred)
 	LoopInput any
-	Output any
+	Output    any
 	// The prompt object within a node's configuration defines the prompt settings for a prompt-type node in the Bedrock flow, including the prompt template and the model configuration for generating responses. (AI-inferred)
 	Prompt any
 	// Configuration for a 'retrieval' node in a Bedrock flow, specifying the knowledge base to query when the node executes. (AI-inferred)
 	Retrieval any
-	Storage any
+	Storage   any
 }
 
 type FlowVersion_Definition_Nodes_Inputs struct {
@@ -350,6 +350,6 @@ var FlowVersion = ubx.ResourceBinding{
 	WireType: "aws_bedrock_flow_version",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"FlowArn": ubx.FieldSpec{WireName: "flow_arn"},
+		"FlowArn":     ubx.FieldSpec{WireName: "flow_arn"},
 	},
 }

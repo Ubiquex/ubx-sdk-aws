@@ -4,42 +4,42 @@ package sms_voice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SmsVoiceRegistrationFieldValues_RegistrationFieldValues struct {
-	DeniedReason any
-	Feedback any
-	FieldPath any
+	DeniedReason             any
+	Feedback                 any
+	FieldPath                any
 	RegistrationAttachmentId any
-	SelectChoices any
-	TextValue any
+	SelectChoices            any
+	TextValue                any
 }
 
 type SmsVoiceRegistrationFieldValuesConfig struct {
-	FieldPaths any
-	MaxResults any
-	NextToken any
+	FieldPaths     any
+	MaxResults     any
+	NextToken      any
 	RegistrationId any
-	SectionPath any
-	VersionNumber any
+	SectionPath    any
+	VersionNumber  any
 }
 
 type SmsVoiceRegistrationFieldValuesAttrs struct {
-	FieldPaths any
-	MaxResults any
-	NextToken any
-	RegistrationArn any
+	FieldPaths              any
+	MaxResults              any
+	NextToken               any
+	RegistrationArn         any
 	RegistrationFieldValues any
-	RegistrationId any
-	SectionPath any
-	VersionNumber any
+	RegistrationId          any
+	SectionPath             any
+	VersionNumber           any
 }
 
 var SmsVoiceRegistrationFieldValues = ubx.DataSourceBinding{
 	WireType: "aws_sms_voice_registration_field_values",
 	Fields: ubx.FieldMap{
-		"FieldPaths": ubx.FieldSpec{WireName: "field_paths"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"FieldPaths":     ubx.FieldSpec{WireName: "field_paths"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"RegistrationId": ubx.FieldSpec{WireName: "registration_id"},
-		"SectionPath": ubx.FieldSpec{WireName: "section_path"},
-		"VersionNumber": ubx.FieldSpec{WireName: "version_number"},
+		"SectionPath":    ubx.FieldSpec{WireName: "section_path"},
+		"VersionNumber":  ubx.FieldSpec{WireName: "version_number"},
 	},
 }

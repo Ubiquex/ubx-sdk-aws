@@ -4,22 +4,22 @@ package iottwinmaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Workspaces_WorkspaceSummaries struct {
-	Arn any
+	Arn              any
 	CreationDateTime any
-	Description any
-	LinkedServices any
-	UpdateDateTime any
-	WorkspaceId any
+	Description      any
+	LinkedServices   any
+	UpdateDateTime   any
+	WorkspaceId      any
 }
 
 type WorkspacesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type WorkspacesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	WorkspaceSummaries any
 }
 
@@ -27,6 +27,6 @@ var Workspaces = ubx.DataSourceBinding{
 	WireType: "aws_iottwinmaker_workspaces",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

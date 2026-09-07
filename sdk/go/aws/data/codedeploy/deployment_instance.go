@@ -4,37 +4,37 @@ package codedeploy
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeploymentInstance_InstanceSummary_LifecycleEvents_Diagnostics struct {
-	ErrorCode any
-	LogTail any
-	Message any
+	ErrorCode  any
+	LogTail    any
+	Message    any
 	ScriptName any
 }
 
 type DeploymentInstance_InstanceSummary_LifecycleEvents struct {
-	Diagnostics any
-	EndTime any
+	Diagnostics        any
+	EndTime            any
 	LifecycleEventName any
-	StartTime any
-	Status any
+	StartTime          any
+	Status             any
 }
 
 type DeploymentInstance_InstanceSummary struct {
-	DeploymentId any
-	InstanceId any
-	InstanceType any
-	LastUpdatedAt any
+	DeploymentId    any
+	InstanceId      any
+	InstanceType    any
+	LastUpdatedAt   any
 	LifecycleEvents any
-	Status any
+	Status          any
 }
 
 type DeploymentInstanceConfig struct {
 	DeploymentId any
-	InstanceId any
+	InstanceId   any
 }
 
 type DeploymentInstanceAttrs struct {
 	DeploymentId any
-	InstanceId any
+	InstanceId   any
 	// <p>Information about an instance in a deployment.</p>
 	InstanceSummary any
 }
@@ -43,6 +43,6 @@ var DeploymentInstance = ubx.DataSourceBinding{
 	WireType: "aws_codedeploy_deployment_instance",
 	Fields: ubx.FieldMap{
 		"DeploymentId": ubx.FieldSpec{WireName: "deployment_id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"InstanceId":   ubx.FieldSpec{WireName: "instance_id"},
 	},
 }

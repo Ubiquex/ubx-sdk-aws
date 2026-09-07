@@ -48,51 +48,51 @@ type AppImageConfig_KernelGatewayImageConfig struct {
 }
 
 var AppImageConfig_CodeEditorAppImageConfig_ContainerConfig_ContainerEnvironmentVariablesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var AppImageConfig_CodeEditorAppImageConfig_ContainerConfigFields = ubx.FieldMap{
-		"ContainerArguments": ubx.FieldSpec{WireName: "container_arguments"},
-		"ContainerEntrypoint": ubx.FieldSpec{WireName: "container_entrypoint"},
-		"ContainerEnvironmentVariables": ubx.FieldSpec{
-			WireName: "container_environment_variables",
-			Kind: "list",
-			Fields: AppImageConfig_CodeEditorAppImageConfig_ContainerConfig_ContainerEnvironmentVariablesFields,
-		},
-	}
+	"ContainerArguments":  ubx.FieldSpec{WireName: "container_arguments"},
+	"ContainerEntrypoint": ubx.FieldSpec{WireName: "container_entrypoint"},
+	"ContainerEnvironmentVariables": ubx.FieldSpec{
+		WireName: "container_environment_variables",
+		Kind:     "list",
+		Fields:   AppImageConfig_CodeEditorAppImageConfig_ContainerConfig_ContainerEnvironmentVariablesFields,
+	},
+}
 
 var AppImageConfig_CodeEditorAppImageConfigFields = ubx.FieldMap{
-		"ContainerConfig": ubx.FieldSpec{
-			WireName: "container_config",
-			Kind: "object",
-			Fields: AppImageConfig_CodeEditorAppImageConfig_ContainerConfigFields,
-		},
-	}
+	"ContainerConfig": ubx.FieldSpec{
+		WireName: "container_config",
+		Kind:     "object",
+		Fields:   AppImageConfig_CodeEditorAppImageConfig_ContainerConfigFields,
+	},
+}
 
 var AppImageConfig_KernelGatewayImageConfig_FileSystemConfigFields = ubx.FieldMap{
-		"DefaultGid": ubx.FieldSpec{WireName: "default_gid"},
-		"DefaultUid": ubx.FieldSpec{WireName: "default_uid"},
-		"MountPath": ubx.FieldSpec{WireName: "mount_path"},
-	}
+	"DefaultGid": ubx.FieldSpec{WireName: "default_gid"},
+	"DefaultUid": ubx.FieldSpec{WireName: "default_uid"},
+	"MountPath":  ubx.FieldSpec{WireName: "mount_path"},
+}
 
 var AppImageConfig_KernelGatewayImageConfig_KernelSpecsFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var AppImageConfig_KernelGatewayImageConfigFields = ubx.FieldMap{
-		"FileSystemConfig": ubx.FieldSpec{
-			WireName: "file_system_config",
-			Kind: "object",
-			Fields: AppImageConfig_KernelGatewayImageConfig_FileSystemConfigFields,
-		},
-		"KernelSpecs": ubx.FieldSpec{
-			WireName: "kernel_specs",
-			Kind: "list",
-			Fields: AppImageConfig_KernelGatewayImageConfig_KernelSpecsFields,
-		},
-	}
+	"FileSystemConfig": ubx.FieldSpec{
+		WireName: "file_system_config",
+		Kind:     "object",
+		Fields:   AppImageConfig_KernelGatewayImageConfig_FileSystemConfigFields,
+	},
+	"KernelSpecs": ubx.FieldSpec{
+		WireName: "kernel_specs",
+		Kind:     "list",
+		Fields:   AppImageConfig_KernelGatewayImageConfig_KernelSpecsFields,
+	},
+}
 
 type AppImageConfigConfig struct {
 	// The Name of the AppImageConfig.
@@ -128,23 +128,23 @@ var AppImageConfig = ubx.ResourceBinding{
 		"AppImageConfigName": ubx.FieldSpec{WireName: "app_image_config_name"},
 		"CodeEditorAppImageConfig": ubx.FieldSpec{
 			WireName: "code_editor_app_image_config",
-			Kind: "object",
-			Fields: AppImageConfig_CodeEditorAppImageConfigFields,
+			Kind:     "object",
+			Fields:   AppImageConfig_CodeEditorAppImageConfigFields,
 		},
 		"JupyterLabAppImageConfig": ubx.FieldSpec{
 			WireName: "jupyter_lab_app_image_config",
-			Kind: "object",
-			Fields: AppImageConfig_CodeEditorAppImageConfigFields,
+			Kind:     "object",
+			Fields:   AppImageConfig_CodeEditorAppImageConfigFields,
 		},
 		"KernelGatewayImageConfig": ubx.FieldSpec{
 			WireName: "kernel_gateway_image_config",
-			Kind: "object",
-			Fields: AppImageConfig_KernelGatewayImageConfigFields,
+			Kind:     "object",
+			Fields:   AppImageConfig_KernelGatewayImageConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AppImageConfig_CodeEditorAppImageConfig_ContainerConfig_ContainerEnvironmentVariablesFields,
+			Kind:     "list",
+			Fields:   AppImageConfig_CodeEditorAppImageConfig_ContainerConfig_ContainerEnvironmentVariablesFields,
 		},
 	},
 }

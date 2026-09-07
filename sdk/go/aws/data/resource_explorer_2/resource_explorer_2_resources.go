@@ -8,41 +8,41 @@ type ResourceExplorer2Resources_Filters struct {
 }
 
 type ResourceExplorer2Resources_Resources_Properties struct {
-	Data any
+	Data           any
 	LastReportedAt any
-	Name any
+	Name           any
 }
 
 type ResourceExplorer2Resources_Resources struct {
-	Arn any
+	Arn             any
 	CfnResourceType any
-	LastReportedAt any
+	LastReportedAt  any
 	OwningAccountId any
-	Properties any
-	Region any
-	ResourceType any
-	Service any
+	Properties      any
+	Region          any
+	ResourceType    any
+	Service         any
 }
 
 var ResourceExplorer2Resources_FiltersFields = ubx.FieldMap{
-		"FilterString": ubx.FieldSpec{WireName: "filter_string"},
-	}
+	"FilterString": ubx.FieldSpec{WireName: "filter_string"},
+}
 
 type ResourceExplorer2ResourcesConfig struct {
 	// <p>A search filter defines which resources can be part of a search query result set.</p>
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	ViewArn any
+	NextToken  any
+	ViewArn    any
 }
 
 type ResourceExplorer2ResourcesAttrs struct {
 	// <p>A search filter defines which resources can be part of a search query result set.</p>
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	Resources any
-	ViewArn any
+	NextToken  any
+	Resources  any
+	ViewArn    any
 }
 
 var ResourceExplorer2Resources = ubx.DataSourceBinding{
@@ -50,11 +50,11 @@ var ResourceExplorer2Resources = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: ResourceExplorer2Resources_FiltersFields,
+			Kind:     "object",
+			Fields:   ResourceExplorer2Resources_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ViewArn": ubx.FieldSpec{WireName: "view_arn"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"ViewArn":    ubx.FieldSpec{WireName: "view_arn"},
 	},
 }

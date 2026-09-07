@@ -4,41 +4,41 @@ package devicefarm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Projects_Projects_EnvironmentVariables struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Projects_Projects_VpcConfig struct {
 	SecurityGroupIds any
-	SubnetIds any
-	VpcId any
+	SubnetIds        any
+	VpcId            any
 }
 
 type Projects_Projects struct {
-	Arn any
-	Created any
+	Arn                      any
+	Created                  any
 	DefaultJobTimeoutMinutes any
-	EnvironmentVariables any
-	ExecutionRoleArn any
-	Name any
-	VpcConfig any
+	EnvironmentVariables     any
+	ExecutionRoleArn         any
+	Name                     any
+	VpcConfig                any
 }
 
 type ProjectsConfig struct {
-	Arn any
+	Arn       any
 	NextToken any
 }
 
 type ProjectsAttrs struct {
-	Arn any
+	Arn       any
 	NextToken any
-	Projects any
+	Projects  any
 }
 
 var Projects = ubx.DataSourceBinding{
 	WireType: "aws_devicefarm_projects",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":       ubx.FieldSpec{WireName: "arn"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,22 +4,22 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataflowGraph_DagEdges struct {
-	Source any
-	Target any
+	Source          any
+	Target          any
 	TargetParameter any
 }
 
 type DataflowGraph_DagNodes_Args struct {
-	Name any
+	Name  any
 	Param any
 	Value any
 }
 
 type DataflowGraph_DagNodes struct {
-	Args any
-	Id any
+	Args       any
+	Id         any
 	LineNumber any
-	NodeType any
+	NodeType   any
 }
 
 type DataflowGraphConfig struct {
@@ -27,8 +27,8 @@ type DataflowGraphConfig struct {
 }
 
 type DataflowGraphAttrs struct {
-	DagEdges any
-	DagNodes any
+	DagEdges     any
+	DagNodes     any
 	PythonScript any
 }
 

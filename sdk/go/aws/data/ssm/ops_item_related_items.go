@@ -4,9 +4,9 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OpsItemRelatedItems_Filters struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type OpsItemRelatedItems_Summaries_CreatedBy struct {
@@ -14,36 +14,36 @@ type OpsItemRelatedItems_Summaries_CreatedBy struct {
 }
 
 type OpsItemRelatedItems_Summaries struct {
-	AssociationId any
-	AssociationType any
-	CreatedBy any
-	CreatedTime any
-	LastModifiedBy any
+	AssociationId    any
+	AssociationType  any
+	CreatedBy        any
+	CreatedTime      any
+	LastModifiedBy   any
 	LastModifiedTime any
-	OpsItemId any
-	ResourceType any
-	ResourceUri any
+	OpsItemId        any
+	ResourceType     any
+	ResourceUri      any
 }
 
 var OpsItemRelatedItems_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 type OpsItemRelatedItemsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	OpsItemId any
+	NextToken  any
+	OpsItemId  any
 }
 
 type OpsItemRelatedItemsAttrs struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	OpsItemId any
-	Summaries any
+	NextToken  any
+	OpsItemId  any
+	Summaries  any
 }
 
 var OpsItemRelatedItems = ubx.DataSourceBinding{
@@ -51,11 +51,11 @@ var OpsItemRelatedItems = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: OpsItemRelatedItems_FiltersFields,
+			Kind:     "list",
+			Fields:   OpsItemRelatedItems_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OpsItemId": ubx.FieldSpec{WireName: "ops_item_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"OpsItemId":  ubx.FieldSpec{WireName: "ops_item_id"},
 	},
 }

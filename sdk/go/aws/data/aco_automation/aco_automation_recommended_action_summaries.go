@@ -4,42 +4,42 @@ package aco_automation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AcoAutomationRecommendedActionSummaries_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type AcoAutomationRecommendedActionSummaries_RecommendedActionSummaries_Total_EstimatedMonthlySavings struct {
-	AfterDiscountSavings any
+	AfterDiscountSavings  any
 	BeforeDiscountSavings any
-	Currency any
+	Currency              any
 	SavingsEstimationMode any
 }
 
 type AcoAutomationRecommendedActionSummaries_RecommendedActionSummaries_Total struct {
 	EstimatedMonthlySavings any
-	RecommendedActionCount any
+	RecommendedActionCount  any
 }
 
 type AcoAutomationRecommendedActionSummaries_RecommendedActionSummaries struct {
-	Key any
+	Key   any
 	Total any
 }
 
 var AcoAutomationRecommendedActionSummaries_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type AcoAutomationRecommendedActionSummariesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AcoAutomationRecommendedActionSummariesAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters                    any
+	MaxResults                 any
+	NextToken                  any
 	RecommendedActionSummaries any
 }
 
@@ -48,10 +48,10 @@ var AcoAutomationRecommendedActionSummaries = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: AcoAutomationRecommendedActionSummaries_FiltersFields,
+			Kind:     "list",
+			Fields:   AcoAutomationRecommendedActionSummaries_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

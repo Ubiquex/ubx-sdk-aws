@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceActions_ServiceActionSummaries struct {
 	DefinitionType any
-	Description any
-	Id any
-	Name any
+	Description    any
+	Id             any
+	Name           any
 }
 
 type ServiceActionsConfig struct {
 	AcceptLanguage any
-	PageSize any
-	PageToken any
+	PageSize       any
+	PageToken      any
 }
 
 type ServiceActionsAttrs struct {
-	AcceptLanguage any
-	NextPageToken any
-	PageSize any
-	PageToken any
+	AcceptLanguage         any
+	NextPageToken          any
+	PageSize               any
+	PageToken              any
 	ServiceActionSummaries any
 }
 
@@ -28,7 +28,7 @@ var ServiceActions = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_service_actions",
 	Fields: ubx.FieldMap{
 		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
+		"PageSize":       ubx.FieldSpec{WireName: "page_size"},
+		"PageToken":      ubx.FieldSpec{WireName: "page_token"},
 	},
 }

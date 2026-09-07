@@ -4,14 +4,14 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationDateRangeKpi_ApplicationDateRangeKpiResponse_KpiResult_Rows_GroupedBys struct {
-	Key any
-	Type any
+	Key   any
+	Type  any
 	Value any
 }
 
 type ApplicationDateRangeKpi_ApplicationDateRangeKpiResponse_KpiResult_Rows struct {
 	GroupedBys any
-	Values any
+	Values     any
 }
 
 type ApplicationDateRangeKpi_ApplicationDateRangeKpiResponse_KpiResult struct {
@@ -20,8 +20,8 @@ type ApplicationDateRangeKpi_ApplicationDateRangeKpiResponse_KpiResult struct {
 
 type ApplicationDateRangeKpi_ApplicationDateRangeKpiResponse struct {
 	ApplicationId any
-	EndTime any
-	KpiName any
+	EndTime       any
+	KpiName       any
 	// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
 	KpiResult any
 	NextToken any
@@ -30,32 +30,32 @@ type ApplicationDateRangeKpi_ApplicationDateRangeKpiResponse struct {
 
 type ApplicationDateRangeKpiConfig struct {
 	ApplicationId any
-	EndTime any
-	KpiName any
-	NextToken any
-	PageSize any
-	StartTime any
+	EndTime       any
+	KpiName       any
+	NextToken     any
+	PageSize      any
+	StartTime     any
 }
 
 type ApplicationDateRangeKpiAttrs struct {
 	// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
 	ApplicationDateRangeKpiResponse any
-	ApplicationId any
-	EndTime any
-	KpiName any
-	NextToken any
-	PageSize any
-	StartTime any
+	ApplicationId                   any
+	EndTime                         any
+	KpiName                         any
+	NextToken                       any
+	PageSize                        any
+	StartTime                       any
 }
 
 var ApplicationDateRangeKpi = ubx.DataSourceBinding{
 	WireType: "aws_pinpoint_application_date_range_kpi",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"KpiName": ubx.FieldSpec{WireName: "kpi_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"EndTime":       ubx.FieldSpec{WireName: "end_time"},
+		"KpiName":       ubx.FieldSpec{WireName: "kpi_name"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"PageSize":      ubx.FieldSpec{WireName: "page_size"},
+		"StartTime":     ubx.FieldSpec{WireName: "start_time"},
 	},
 }

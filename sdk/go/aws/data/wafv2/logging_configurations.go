@@ -12,19 +12,19 @@ type LoggingConfigurations_LoggingConfigurations_LoggingFilter_Filters_Condition
 }
 
 type LoggingConfigurations_LoggingConfigurations_LoggingFilter_Filters_Conditions struct {
-	ActionCondition any
+	ActionCondition    any
 	LabelNameCondition any
 }
 
 type LoggingConfigurations_LoggingConfigurations_LoggingFilter_Filters struct {
-	Behavior any
-	Conditions any
+	Behavior    any
+	Conditions  any
 	Requirement any
 }
 
 type LoggingConfigurations_LoggingConfigurations_LoggingFilter struct {
 	DefaultBehavior any
-	Filters any
+	Filters         any
 }
 
 type LoggingConfigurations_LoggingConfigurations_RedactedFields_Body struct {
@@ -32,26 +32,26 @@ type LoggingConfigurations_LoggingConfigurations_RedactedFields_Body struct {
 }
 
 type LoggingConfigurations_LoggingConfigurations_RedactedFields_Cookies_MatchPattern struct {
-	All any
+	All             any
 	ExcludedCookies any
 	IncludedCookies any
 }
 
 type LoggingConfigurations_LoggingConfigurations_RedactedFields_Cookies struct {
-	MatchPattern any
-	MatchScope any
+	MatchPattern     any
+	MatchScope       any
 	OversizeHandling any
 }
 
 type LoggingConfigurations_LoggingConfigurations_RedactedFields_Headers_MatchPattern struct {
-	All any
+	All             any
 	ExcludedHeaders any
 	IncludedHeaders any
 }
 
 type LoggingConfigurations_LoggingConfigurations_RedactedFields_Headers struct {
-	MatchPattern any
-	MatchScope any
+	MatchPattern     any
+	MatchScope       any
 	OversizeHandling any
 }
 
@@ -60,15 +60,15 @@ type LoggingConfigurations_LoggingConfigurations_RedactedFields_Ja3Fingerprint s
 }
 
 type LoggingConfigurations_LoggingConfigurations_RedactedFields_JsonBody_MatchPattern struct {
-	All any
+	All           any
 	IncludedPaths any
 }
 
 type LoggingConfigurations_LoggingConfigurations_RedactedFields_JsonBody struct {
 	InvalidFallbackBehavior any
-	MatchPattern any
-	MatchScope any
-	OversizeHandling any
+	MatchPattern            any
+	MatchScope              any
+	OversizeHandling        any
 }
 
 type LoggingConfigurations_LoggingConfigurations_RedactedFields_SingleHeader struct {
@@ -76,53 +76,53 @@ type LoggingConfigurations_LoggingConfigurations_RedactedFields_SingleHeader str
 }
 
 type LoggingConfigurations_LoggingConfigurations_RedactedFields struct {
-	AllQueryArguments any
-	Body any
-	Cookies any
-	HeaderOrder any
-	Headers any
-	Ja3Fingerprint any
-	Ja4Fingerprint any
-	JsonBody any
-	Method any
-	QueryString any
-	SingleHeader any
+	AllQueryArguments   any
+	Body                any
+	Cookies             any
+	HeaderOrder         any
+	Headers             any
+	Ja3Fingerprint      any
+	Ja4Fingerprint      any
+	JsonBody            any
+	Method              any
+	QueryString         any
+	SingleHeader        any
 	SingleQueryArgument any
-	UriFragment any
-	UriPath any
+	UriFragment         any
+	UriPath             any
 }
 
 type LoggingConfigurations_LoggingConfigurations struct {
-	LogDestinationConfigs any
-	LogScope any
-	LogType any
-	LoggingFilter any
+	LogDestinationConfigs    any
+	LogScope                 any
+	LogType                  any
+	LoggingFilter            any
 	ManagedByFirewallManager any
-	RedactedFields any
-	ResourceArn any
+	RedactedFields           any
+	ResourceArn              any
 }
 
 type LoggingConfigurationsConfig struct {
-	Limit any
-	LogScope any
+	Limit      any
+	LogScope   any
 	NextMarker any
-	Scope any
+	Scope      any
 }
 
 type LoggingConfigurationsAttrs struct {
-	Limit any
-	LogScope any
+	Limit                 any
+	LogScope              any
 	LoggingConfigurations any
-	NextMarker any
-	Scope any
+	NextMarker            any
+	Scope                 any
 }
 
 var LoggingConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_wafv2_logging_configurations",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"LogScope": ubx.FieldSpec{WireName: "log_scope"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
+		"LogScope":   ubx.FieldSpec{WireName: "log_scope"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Scope":      ubx.FieldSpec{WireName: "scope"},
 	},
 }

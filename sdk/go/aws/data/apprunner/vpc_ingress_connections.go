@@ -4,32 +4,32 @@ package apprunner
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcIngressConnections_Filter struct {
-	ServiceArn any
+	ServiceArn    any
 	VpcEndpointId any
 }
 
 type VpcIngressConnections_VpcIngressConnectionSummaryList struct {
-	ServiceArn any
+	ServiceArn              any
 	VpcIngressConnectionArn any
 }
 
 var VpcIngressConnections_FilterFields = ubx.FieldMap{
-		"ServiceArn": ubx.FieldSpec{WireName: "service_arn"},
-		"VpcEndpointId": ubx.FieldSpec{WireName: "vpc_endpoint_id"},
-	}
+	"ServiceArn":    ubx.FieldSpec{WireName: "service_arn"},
+	"VpcEndpointId": ubx.FieldSpec{WireName: "vpc_endpoint_id"},
+}
 
 type VpcIngressConnectionsConfig struct {
 	// <p>Returns a list of VPC Ingress Connections based on the filter provided. It can return either <code>ServiceArn</code> or <code>VpcEndpointId</code>, or both.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type VpcIngressConnectionsAttrs struct {
 	// <p>Returns a list of VPC Ingress Connections based on the filter provided. It can return either <code>ServiceArn</code> or <code>VpcEndpointId</code>, or both.</p>
-	Filter any
-	MaxResults any
-	NextToken any
+	Filter                          any
+	MaxResults                      any
+	NextToken                       any
 	VpcIngressConnectionSummaryList any
 }
 
@@ -38,10 +38,10 @@ var VpcIngressConnections = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: VpcIngressConnections_FilterFields,
+			Kind:     "object",
+			Fields:   VpcIngressConnections_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

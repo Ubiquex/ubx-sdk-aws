@@ -4,35 +4,35 @@ package globalaccelerator
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CrossAccountAttachments_CrossAccountAttachments_Resources struct {
-	Cidr any
+	Cidr       any
 	EndpointId any
-	Region any
+	Region     any
 }
 
 type CrossAccountAttachments_CrossAccountAttachments struct {
-	AttachmentArn any
-	CreatedTime any
+	AttachmentArn    any
+	CreatedTime      any
 	LastModifiedTime any
-	Name any
-	Principals any
-	Resources any
+	Name             any
+	Principals       any
+	Resources        any
 }
 
 type CrossAccountAttachmentsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CrossAccountAttachmentsAttrs struct {
 	CrossAccountAttachments any
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 }
 
 var CrossAccountAttachments = ubx.DataSourceBinding{
 	WireType: "aws_globalaccelerator_cross_account_attachments",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

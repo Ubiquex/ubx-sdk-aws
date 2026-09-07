@@ -5,11 +5,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodeguruReviewerRepositoryAssociation_RepositoryAssociation_KmskeyDetails struct {
 	EncryptionOption any
-	KmskeyId any
+	KmskeyId         any
 }
 
 type CodeguruReviewerRepositoryAssociation_RepositoryAssociation_S3RepositoryDetails_CodeArtifacts struct {
-	BuildArtifactsObjectKey any
+	BuildArtifactsObjectKey      any
 	SourceCodeArtifactsObjectKey any
 }
 
@@ -20,20 +20,20 @@ type CodeguruReviewerRepositoryAssociation_RepositoryAssociation_S3RepositoryDet
 }
 
 type CodeguruReviewerRepositoryAssociation_RepositoryAssociation struct {
-	AssociationArn any
-	AssociationId any
-	ConnectionArn any
+	AssociationArn   any
+	AssociationId    any
+	ConnectionArn    any
 	CreatedTimeStamp any
 	// <p>An object that contains:</p> <ul> <li> <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> <li> <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p> </li> </ul>
-	KmskeyDetails any
+	KmskeyDetails        any
 	LastUpdatedTimeStamp any
-	Name any
-	Owner any
-	ProviderType any
+	Name                 any
+	Owner                any
+	ProviderType         any
 	// <p>Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
 	S3RepositoryDetails any
-	State any
-	StateReason any
+	State               any
+	StateReason         any
 }
 
 type CodeguruReviewerRepositoryAssociationConfig struct {
@@ -44,7 +44,7 @@ type CodeguruReviewerRepositoryAssociationAttrs struct {
 	AssociationArn any
 	// <p>Information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html">DescribeRepositoryAssociation</a> operation returns a <code>RepositoryAssociation</code> object.</p>
 	RepositoryAssociation any
-	Tags any
+	Tags                  any
 }
 
 var CodeguruReviewerRepositoryAssociation = ubx.DataSourceBinding{

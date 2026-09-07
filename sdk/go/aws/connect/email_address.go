@@ -16,13 +16,13 @@ type EmailAddress_Tags struct {
 }
 
 var EmailAddress_AliasConfigurationsFields = ubx.FieldMap{
-		"EmailAddressArn": ubx.FieldSpec{WireName: "email_address_arn"},
-	}
+	"EmailAddressArn": ubx.FieldSpec{WireName: "email_address_arn"},
+}
 
 var EmailAddress_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EmailAddressConfig struct {
 	// List of alias configurations for the email address
@@ -61,17 +61,17 @@ var EmailAddress = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AliasConfigurations": ubx.FieldSpec{
 			WireName: "alias_configurations",
-			Kind: "list",
-			Fields: EmailAddress_AliasConfigurationsFields,
+			Kind:     "list",
+			Fields:   EmailAddress_AliasConfigurationsFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
 		"EmailAddress": ubx.FieldSpec{WireName: "email_address"},
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
+		"InstanceArn":  ubx.FieldSpec{WireName: "instance_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EmailAddress_TagsFields,
+			Kind:     "list",
+			Fields:   EmailAddress_TagsFields,
 		},
 	},
 }

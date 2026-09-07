@@ -12,6 +12,5 @@ type SupportedResourceTypesAttrs struct {
 
 var SupportedResourceTypes = ubx.DataSourceBinding{
 	WireType: "aws_backup_supported_resource_types",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

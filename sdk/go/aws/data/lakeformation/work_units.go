@@ -11,14 +11,14 @@ type WorkUnits_WorkUnitRanges struct {
 
 type WorkUnitsConfig struct {
 	NextToken any
-	PageSize any
-	QueryId any
+	PageSize  any
+	QueryId   any
 }
 
 type WorkUnitsAttrs struct {
-	NextToken any
-	PageSize any
-	QueryId any
+	NextToken      any
+	PageSize       any
+	QueryId        any
 	WorkUnitRanges any
 }
 
@@ -26,7 +26,7 @@ var WorkUnits = ubx.DataSourceBinding{
 	WireType: "aws_lakeformation_work_units",
 	Fields: ubx.FieldMap{
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"QueryId": ubx.FieldSpec{WireName: "query_id"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
+		"QueryId":   ubx.FieldSpec{WireName: "query_id"},
 	},
 }

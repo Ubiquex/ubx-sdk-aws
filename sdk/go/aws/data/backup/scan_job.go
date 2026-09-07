@@ -4,10 +4,10 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ScanJob_CreatedBy struct {
-	BackupPlanArn any
-	BackupPlanId any
+	BackupPlanArn     any
+	BackupPlanId      any
 	BackupPlanVersion any
-	BackupRuleId any
+	BackupRuleId      any
 }
 
 type ScanJob_ScanResult struct {
@@ -19,30 +19,30 @@ type ScanJobConfig struct {
 }
 
 type ScanJobAttrs struct {
-	AccountId any
-	BackupVaultArn any
-	BackupVaultName any
-	CompletionDate any
-	ContinuousScanEndTime any
+	AccountId               any
+	BackupVaultArn          any
+	BackupVaultName         any
+	CompletionDate          any
+	ContinuousScanEndTime   any
 	ContinuousScanStartTime any
 	// <p>Contains identifying information about the creation of a scan job, including the backup plan and rule that initiated the scan.</p>
-	CreatedBy any
-	CreationDate any
-	IamRoleArn any
-	MalwareScanner any
-	RecoveryPointArn any
-	ResourceArn any
-	ResourceName any
-	ResourceType any
+	CreatedBy                any
+	CreationDate             any
+	IamRoleArn               any
+	MalwareScanner           any
+	RecoveryPointArn         any
+	ResourceArn              any
+	ResourceName             any
+	ResourceType             any
 	ScanBaseRecoveryPointArn any
-	ScanId any
-	ScanJobId any
-	ScanMode any
+	ScanId                   any
+	ScanJobId                any
+	ScanMode                 any
 	// <p>Contains information about the results of a scan job.</p>
-	ScanResult any
+	ScanResult     any
 	ScannerRoleArn any
-	State any
-	StatusMessage any
+	State          any
+	StatusMessage  any
 }
 
 var ScanJob = ubx.DataSourceBinding{

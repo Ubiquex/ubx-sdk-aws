@@ -15,7 +15,7 @@ type DomainNamesConfig struct {
 type DomainNamesAttrs struct {
 	// <p>Contains a list of information about a domain.</p>
 	DomainNames any
-	EngineType any
+	EngineType  any
 }
 
 var DomainNames = ubx.DataSourceBinding{

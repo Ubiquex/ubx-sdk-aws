@@ -4,25 +4,25 @@ package waf
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RateBasedRules_Rules struct {
-	Name any
+	Name   any
 	RuleId any
 }
 
 type RateBasedRulesConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type RateBasedRulesAttrs struct {
-	Limit any
+	Limit      any
 	NextMarker any
-	Rules any
+	Rules      any
 }
 
 var RateBasedRules = ubx.DataSourceBinding{
 	WireType: "aws_waf_rate_based_rules",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

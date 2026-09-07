@@ -4,54 +4,54 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerTransformJobs_TransformJobSummaries struct {
-	CreationTime any
-	FailureReason any
-	LastModifiedTime any
-	TransformEndTime any
-	TransformJobArn any
-	TransformJobName any
+	CreationTime       any
+	FailureReason      any
+	LastModifiedTime   any
+	TransformEndTime   any
+	TransformJobArn    any
+	TransformJobName   any
 	TransformJobStatus any
 }
 
 type ApiSagemakerTransformJobsConfig struct {
-	CreationTimeAfter any
-	CreationTimeBefore any
-	LastModifiedTimeAfter any
+	CreationTimeAfter      any
+	CreationTimeBefore     any
+	LastModifiedTimeAfter  any
 	LastModifiedTimeBefore any
-	MaxResults any
-	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
-	StatusEquals any
+	MaxResults             any
+	NameContains           any
+	NextToken              any
+	SortBy                 any
+	SortOrder              any
+	StatusEquals           any
 }
 
 type ApiSagemakerTransformJobsAttrs struct {
-	CreationTimeAfter any
-	CreationTimeBefore any
-	LastModifiedTimeAfter any
+	CreationTimeAfter      any
+	CreationTimeBefore     any
+	LastModifiedTimeAfter  any
 	LastModifiedTimeBefore any
-	MaxResults any
-	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
-	StatusEquals any
-	TransformJobSummaries any
+	MaxResults             any
+	NameContains           any
+	NextToken              any
+	SortBy                 any
+	SortOrder              any
+	StatusEquals           any
+	TransformJobSummaries  any
 }
 
 var ApiSagemakerTransformJobs = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_transform_jobs",
 	Fields: ubx.FieldMap{
-		"CreationTimeAfter": ubx.FieldSpec{WireName: "creation_time_after"},
-		"CreationTimeBefore": ubx.FieldSpec{WireName: "creation_time_before"},
-		"LastModifiedTimeAfter": ubx.FieldSpec{WireName: "last_modified_time_after"},
+		"CreationTimeAfter":      ubx.FieldSpec{WireName: "creation_time_after"},
+		"CreationTimeBefore":     ubx.FieldSpec{WireName: "creation_time_before"},
+		"LastModifiedTimeAfter":  ubx.FieldSpec{WireName: "last_modified_time_after"},
 		"LastModifiedTimeBefore": ubx.FieldSpec{WireName: "last_modified_time_before"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"StatusEquals": ubx.FieldSpec{WireName: "status_equals"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"NameContains":           ubx.FieldSpec{WireName: "name_contains"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":                 ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":              ubx.FieldSpec{WireName: "sort_order"},
+		"StatusEquals":           ubx.FieldSpec{WireName: "status_equals"},
 	},
 }

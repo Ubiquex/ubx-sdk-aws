@@ -4,40 +4,40 @@ package transcribe
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MedicalTranscriptionJobs_MedicalTranscriptionJobSummaries struct {
-	CompletionTime any
-	ContentIdentificationType any
-	CreationTime any
-	FailureReason any
-	LanguageCode any
+	CompletionTime              any
+	ContentIdentificationType   any
+	CreationTime                any
+	FailureReason               any
+	LanguageCode                any
 	MedicalTranscriptionJobName any
-	OutputLocationType any
-	Specialty any
-	StartTime any
-	TranscriptionJobStatus any
-	Type any
+	OutputLocationType          any
+	Specialty                   any
+	StartTime                   any
+	TranscriptionJobStatus      any
+	Type                        any
 }
 
 type MedicalTranscriptionJobsConfig struct {
 	JobNameContains any
-	MaxResults any
-	NextToken any
-	Status any
+	MaxResults      any
+	NextToken       any
+	Status          any
 }
 
 type MedicalTranscriptionJobsAttrs struct {
-	JobNameContains any
-	MaxResults any
+	JobNameContains                  any
+	MaxResults                       any
 	MedicalTranscriptionJobSummaries any
-	NextToken any
-	Status any
+	NextToken                        any
+	Status                           any
 }
 
 var MedicalTranscriptionJobs = ubx.DataSourceBinding{
 	WireType: "aws_transcribe_medical_transcription_jobs",
 	Fields: ubx.FieldMap{
 		"JobNameContains": ubx.FieldSpec{WireName: "job_name_contains"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"Status":          ubx.FieldSpec{WireName: "status"},
 	},
 }

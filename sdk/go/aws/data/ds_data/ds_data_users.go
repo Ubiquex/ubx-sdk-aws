@@ -4,34 +4,34 @@ package ds_data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DsDataUsers_Users struct {
-	Enabled any
-	GivenName any
+	Enabled        any
+	GivenName      any
 	SamaccountName any
-	Sid any
-	Surname any
+	Sid            any
+	Surname        any
 }
 
 type DsDataUsersConfig struct {
 	DirectoryId any
-	MaxResults any
-	NextToken any
-	Realm any
+	MaxResults  any
+	NextToken   any
+	Realm       any
 }
 
 type DsDataUsersAttrs struct {
 	DirectoryId any
-	MaxResults any
-	NextToken any
-	Realm any
-	Users any
+	MaxResults  any
+	NextToken   any
+	Realm       any
+	Users       any
 }
 
 var DsDataUsers = ubx.DataSourceBinding{
 	WireType: "aws_ds_data_users",
 	Fields: ubx.FieldMap{
 		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Realm": ubx.FieldSpec{WireName: "realm"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"Realm":       ubx.FieldSpec{WireName: "realm"},
 	},
 }

@@ -4,33 +4,33 @@ package personalize
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SolutionVersions_SolutionVersions struct {
-	CreationDateTime any
-	FailureReason any
+	CreationDateTime    any
+	FailureReason       any
 	LastUpdatedDateTime any
-	SolutionVersionArn any
-	Status any
-	TrainingMode any
-	TrainingType any
+	SolutionVersionArn  any
+	Status              any
+	TrainingMode        any
+	TrainingType        any
 }
 
 type SolutionVersionsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	SolutionArn any
 }
 
 type SolutionVersionsAttrs struct {
-	MaxResults any
-	NextToken any
-	SolutionArn any
+	MaxResults       any
+	NextToken        any
+	SolutionArn      any
 	SolutionVersions any
 }
 
 var SolutionVersions = ubx.DataSourceBinding{
 	WireType: "aws_personalize_solution_versions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"SolutionArn": ubx.FieldSpec{WireName: "solution_arn"},
 	},
 }

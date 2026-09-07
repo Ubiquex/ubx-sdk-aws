@@ -4,7 +4,7 @@ package aidevops
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssetTypes_Items struct {
-	AssetType any
+	AssetType   any
 	Description any
 }
 
@@ -15,7 +15,7 @@ type AssetTypesConfig struct {
 }
 
 type AssetTypesAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
 	// <p>Pagination token for list operations (1-2048 characters)</p>
 	NextToken any
@@ -25,6 +25,6 @@ var AssetTypes = ubx.DataSourceBinding{
 	WireType: "aws_aidevops_asset_types",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

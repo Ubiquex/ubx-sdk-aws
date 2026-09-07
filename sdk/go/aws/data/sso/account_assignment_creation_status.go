@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountAssignmentCreationStatus_AccountAssignmentsCreationStatus struct {
 	CreatedDate any
-	RequestId any
-	Status any
+	RequestId   any
+	Status      any
 }
 
 type AccountAssignmentCreationStatus_Filter struct {
@@ -14,24 +14,24 @@ type AccountAssignmentCreationStatus_Filter struct {
 }
 
 var AccountAssignmentCreationStatus_FilterFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 type AccountAssignmentCreationStatusConfig struct {
 	// <p>Filters the operation status list based on the passed attribute value.</p>
-	Filter any
+	Filter      any
 	InstanceArn any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type AccountAssignmentCreationStatusAttrs struct {
 	AccountAssignmentsCreationStatus any
 	// <p>Filters the operation status list based on the passed attribute value.</p>
-	Filter any
+	Filter      any
 	InstanceArn any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 var AccountAssignmentCreationStatus = ubx.DataSourceBinding{
@@ -39,11 +39,11 @@ var AccountAssignmentCreationStatus = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: AccountAssignmentCreationStatus_FilterFields,
+			Kind:     "object",
+			Fields:   AccountAssignmentCreationStatus_FilterFields,
 		},
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

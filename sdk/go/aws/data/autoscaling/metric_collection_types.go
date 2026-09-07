@@ -16,11 +16,10 @@ type MetricCollectionTypesConfig struct {
 
 type MetricCollectionTypesAttrs struct {
 	Granularities any
-	Metrics any
+	Metrics       any
 }
 
 var MetricCollectionTypes = ubx.DataSourceBinding{
 	WireType: "aws_autoscaling_metric_collection_types",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

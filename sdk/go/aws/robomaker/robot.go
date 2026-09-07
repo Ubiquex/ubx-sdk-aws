@@ -34,10 +34,10 @@ type RobotAttrs struct {
 var Robot = ubx.ResourceBinding{
 	WireType: "aws_robo_maker_robot",
 	Fields: ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
-		"Fleet": ubx.FieldSpec{WireName: "fleet"},
+		"Architecture":      ubx.FieldSpec{WireName: "architecture"},
+		"Fleet":             ubx.FieldSpec{WireName: "fleet"},
 		"GreengrassGroupId": ubx.FieldSpec{WireName: "greengrass_group_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"Tags":              ubx.FieldSpec{WireName: "tags"},
 	},
 }

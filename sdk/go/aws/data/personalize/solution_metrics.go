@@ -8,7 +8,7 @@ type SolutionMetricsConfig struct {
 }
 
 type SolutionMetricsAttrs struct {
-	Metrics any
+	Metrics            any
 	SolutionVersionArn any
 }
 

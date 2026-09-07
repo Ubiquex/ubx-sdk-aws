@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ElasticsearchInstanceTypesConfig struct {
 	// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-	DomainName any
+	DomainName           any
 	ElasticsearchVersion any
 	// <p> Set this value to limit the number of results returned. </p>
 	MaxResults any
@@ -18,7 +18,7 @@ type ElasticsearchInstanceTypesAttrs struct {
 	DomainName any
 	// <p> List of instance types supported by Amazon Elasticsearch service. </p>
 	ElasticsearchInstanceTypes any
-	ElasticsearchVersion any
+	ElasticsearchVersion       any
 	// <p> Set this value to limit the number of results returned. </p>
 	MaxResults any
 	// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
@@ -28,9 +28,9 @@ type ElasticsearchInstanceTypesAttrs struct {
 var ElasticsearchInstanceTypes = ubx.DataSourceBinding{
 	WireType: "aws_es_elasticsearch_instance_types",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":           ubx.FieldSpec{WireName: "domain_name"},
 		"ElasticsearchVersion": ubx.FieldSpec{WireName: "elasticsearch_version"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 	},
 }

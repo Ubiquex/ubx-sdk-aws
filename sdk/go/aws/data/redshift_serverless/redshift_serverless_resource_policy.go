@@ -4,7 +4,7 @@ package redshift_serverless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RedshiftServerlessResourcePolicy_ResourcePolicy struct {
-	Policy any
+	Policy      any
 	ResourceArn any
 }
 

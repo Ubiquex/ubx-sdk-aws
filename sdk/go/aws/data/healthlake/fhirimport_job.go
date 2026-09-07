@@ -9,7 +9,7 @@ type FhirimportJob_ImportJobProperties_InputDataConfig struct {
 
 type FhirimportJob_ImportJobProperties_JobOutputDataConfig_S3Configuration struct {
 	KmsKeyId any
-	S3Uri any
+	S3Uri    any
 }
 
 type FhirimportJob_ImportJobProperties_JobOutputDataConfig struct {
@@ -100,6 +100,6 @@ var FhirimportJob = ubx.DataSourceBinding{
 	WireType: "aws_healthlake_fhirimport_job",
 	Fields: ubx.FieldMap{
 		"DatastoreId": ubx.FieldSpec{WireName: "datastore_id"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":       ubx.FieldSpec{WireName: "job_id"},
 	},
 }

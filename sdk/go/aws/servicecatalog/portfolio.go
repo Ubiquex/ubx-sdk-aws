@@ -11,9 +11,9 @@ type Portfolio_Tags struct {
 }
 
 var Portfolio_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PortfolioConfig struct {
 	// Specifies the language code (such as 'en' or 'jp') that AWS Service Catalog uses for localized text when returning portfolio details, ensuring the portfolio's description and related metadata appear in the requested language. (AI-inferred)
@@ -24,7 +24,7 @@ type PortfolioConfig struct {
 	DisplayName any
 	// The name of the person or organization that owns and manages the Service Catalog portfolio. (AI-inferred)
 	ProviderName any
-	Tags any
+	Tags         any
 }
 
 type PortfolioAttrs struct {
@@ -40,20 +40,20 @@ type PortfolioAttrs struct {
 	PortfolioName any
 	// The name of the person or organization that owns and manages the Service Catalog portfolio. (AI-inferred)
 	ProviderName any
-	Tags any
+	Tags         any
 }
 
 var Portfolio = ubx.ResourceBinding{
 	WireType: "aws_service_catalog_portfolio",
 	Fields: ubx.FieldMap{
 		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ProviderName": ubx.FieldSpec{WireName: "provider_name"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
+		"ProviderName":   ubx.FieldSpec{WireName: "provider_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Portfolio_TagsFields,
+			Kind:     "list",
+			Fields:   Portfolio_TagsFields,
 		},
 	},
 }

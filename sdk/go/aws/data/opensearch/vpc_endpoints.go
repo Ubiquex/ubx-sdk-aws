@@ -4,9 +4,9 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcEndpoints_VpcEndpointSummaryList struct {
-	DomainArn any
-	Status any
-	VpcEndpointId any
+	DomainArn        any
+	Status           any
+	VpcEndpointId    any
 	VpcEndpointOwner any
 }
 
@@ -17,7 +17,7 @@ type VpcEndpointsConfig struct {
 
 type VpcEndpointsAttrs struct {
 	// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
-	NextToken any
+	NextToken              any
 	VpcEndpointSummaryList any
 }
 

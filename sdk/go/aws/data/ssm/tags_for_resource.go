@@ -4,25 +4,25 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_TagList struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TagsForResourceConfig struct {
-	ResourceId any
+	ResourceId   any
 	ResourceType any
 }
 
 type TagsForResourceAttrs struct {
-	ResourceId any
+	ResourceId   any
 	ResourceType any
-	TagList any
+	TagList      any
 }
 
 var TagsForResource = ubx.DataSourceBinding{
 	WireType: "aws_ssm_tags_for_resource",
 	Fields: ubx.FieldMap{
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceId":   ubx.FieldSpec{WireName: "resource_id"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

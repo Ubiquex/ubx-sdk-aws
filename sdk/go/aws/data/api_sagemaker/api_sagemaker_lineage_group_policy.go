@@ -8,9 +8,9 @@ type ApiSagemakerLineageGroupPolicyConfig struct {
 }
 
 type ApiSagemakerLineageGroupPolicyAttrs struct {
-	LineageGroupArn any
+	LineageGroupArn  any
 	LineageGroupName any
-	ResourcePolicy any
+	ResourcePolicy   any
 }
 
 var ApiSagemakerLineageGroupPolicy = ubx.DataSourceBinding{

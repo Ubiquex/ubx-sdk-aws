@@ -4,31 +4,31 @@ package kendra
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FeaturedResultsSets_FeaturedResultsSetSummaryItems struct {
-	CreationTimestamp any
-	FeaturedResultsSetId any
+	CreationTimestamp      any
+	FeaturedResultsSetId   any
 	FeaturedResultsSetName any
-	LastUpdatedTimestamp any
-	Status any
+	LastUpdatedTimestamp   any
+	Status                 any
 }
 
 type FeaturedResultsSetsConfig struct {
-	IndexId any
+	IndexId    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FeaturedResultsSetsAttrs struct {
 	FeaturedResultsSetSummaryItems any
-	IndexId any
-	MaxResults any
-	NextToken any
+	IndexId                        any
+	MaxResults                     any
+	NextToken                      any
 }
 
 var FeaturedResultsSets = ubx.DataSourceBinding{
 	WireType: "aws_kendra_featured_results_sets",
 	Fields: ubx.FieldMap{
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
+		"IndexId":    ubx.FieldSpec{WireName: "index_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -28,9 +28,9 @@ type PreparedStatementAttrs struct {
 var PreparedStatement = ubx.ResourceBinding{
 	WireType: "aws_athena_prepared_statement",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
 		"QueryStatement": ubx.FieldSpec{WireName: "query_statement"},
-		"StatementName": ubx.FieldSpec{WireName: "statement_name"},
-		"WorkGroup": ubx.FieldSpec{WireName: "work_group"},
+		"StatementName":  ubx.FieldSpec{WireName: "statement_name"},
+		"WorkGroup":      ubx.FieldSpec{WireName: "work_group"},
 	},
 }

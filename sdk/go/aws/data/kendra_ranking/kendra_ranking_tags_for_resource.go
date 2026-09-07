@@ -4,7 +4,7 @@ package kendra_ranking
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KendraRankingTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type KendraRankingTagsForResourceConfig struct {
 
 type KendraRankingTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var KendraRankingTagsForResource = ubx.DataSourceBinding{

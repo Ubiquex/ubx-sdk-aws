@@ -4,14 +4,14 @@ package textract
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Adapter_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Adapter_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AdapterConfig struct {
 	// The name to be assigned to the adapter being created.
@@ -48,14 +48,14 @@ type AdapterAttrs struct {
 var Adapter = ubx.ResourceBinding{
 	WireType: "aws_textract_adapter",
 	Fields: ubx.FieldMap{
-		"AdapterName": ubx.FieldSpec{WireName: "adapter_name"},
-		"AutoUpdate": ubx.FieldSpec{WireName: "auto_update"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"AdapterName":  ubx.FieldSpec{WireName: "adapter_name"},
+		"AutoUpdate":   ubx.FieldSpec{WireName: "auto_update"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
 		"FeatureTypes": ubx.FieldSpec{WireName: "feature_types"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Adapter_TagsFields,
+			Kind:     "list",
+			Fields:   Adapter_TagsFields,
 		},
 	},
 }

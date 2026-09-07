@@ -5,36 +5,36 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WhatIfAnalyses_Filters struct {
 	Condition any
-	Key any
-	Value any
+	Key       any
+	Value     any
 }
 
 type WhatIfAnalyses_WhatIfAnalyses struct {
-	CreationTime any
-	ForecastArn any
+	CreationTime         any
+	ForecastArn          any
 	LastModificationTime any
-	Message any
-	Status any
-	WhatIfAnalysisArn any
-	WhatIfAnalysisName any
+	Message              any
+	Status               any
+	WhatIfAnalysisArn    any
+	WhatIfAnalysisName   any
 }
 
 var WhatIfAnalyses_FiltersFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Key":       ubx.FieldSpec{WireName: "key"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 type WhatIfAnalysesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type WhatIfAnalysesAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters        any
+	MaxResults     any
+	NextToken      any
 	WhatIfAnalyses any
 }
 
@@ -43,10 +43,10 @@ var WhatIfAnalyses = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: WhatIfAnalyses_FiltersFields,
+			Kind:     "list",
+			Fields:   WhatIfAnalyses_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

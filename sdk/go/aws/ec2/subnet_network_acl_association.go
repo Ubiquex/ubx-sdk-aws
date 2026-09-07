@@ -23,6 +23,6 @@ var SubnetNetworkAclAssociation = ubx.ResourceBinding{
 	WireType: "aws_ec2_subnet_network_acl_association",
 	Fields: ubx.FieldMap{
 		"NetworkAclId": ubx.FieldSpec{WireName: "network_acl_id"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
+		"SubnetId":     ubx.FieldSpec{WireName: "subnet_id"},
 	},
 }

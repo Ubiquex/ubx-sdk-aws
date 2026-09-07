@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RxNormInferenceJob_ComprehendMedicalAsyncJobProperties_InputDataConfig struct {
 	S3Bucket any
-	S3Key any
+	S3Key    any
 }
 
 type RxNormInferenceJob_ComprehendMedicalAsyncJobProperties struct {
 	DataAccessRoleArn any
-	EndTime any
-	ExpirationTime any
+	EndTime           any
+	ExpirationTime    any
 	// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
-	InputDataConfig any
-	JobId any
-	JobName any
-	JobStatus any
-	Kmskey any
-	LanguageCode any
+	InputDataConfig  any
+	JobId            any
+	JobName          any
+	JobStatus        any
+	Kmskey           any
+	LanguageCode     any
 	ManifestFilePath any
-	Message any
-	ModelVersion any
+	Message          any
+	ModelVersion     any
 	// <p>The output properties for a detection job.</p>
 	OutputDataConfig any
-	SubmitTime any
+	SubmitTime       any
 }
 
 type RxNormInferenceJobConfig struct {
@@ -34,7 +34,7 @@ type RxNormInferenceJobConfig struct {
 type RxNormInferenceJobAttrs struct {
 	// <p>Provides information about a detection job.</p>
 	ComprehendMedicalAsyncJobProperties any
-	JobId any
+	JobId                               any
 }
 
 var RxNormInferenceJob = ubx.DataSourceBinding{

@@ -4,12 +4,12 @@ package license_manager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseManagerLicenseConversionTask_DestinationLicenseContext_ProductCodes struct {
-	ProductCodeId any
+	ProductCodeId   any
 	ProductCodeType any
 }
 
 type LicenseManagerLicenseConversionTask_DestinationLicenseContext struct {
-	ProductCodes any
+	ProductCodes   any
 	UsageOperation any
 }
 
@@ -20,15 +20,15 @@ type LicenseManagerLicenseConversionTaskConfig struct {
 type LicenseManagerLicenseConversionTaskAttrs struct {
 	// <p>Information about a license type conversion task.</p>
 	DestinationLicenseContext any
-	EndTime any
-	LicenseConversionTaskId any
-	LicenseConversionTime any
-	ResourceArn any
+	EndTime                   any
+	LicenseConversionTaskId   any
+	LicenseConversionTime     any
+	ResourceArn               any
 	// <p>Information about a license type conversion task.</p>
 	SourceLicenseContext any
-	StartTime any
-	Status any
-	StatusMessage any
+	StartTime            any
+	Status               any
+	StatusMessage        any
 }
 
 var LicenseManagerLicenseConversionTask = ubx.DataSourceBinding{

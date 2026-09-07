@@ -4,70 +4,70 @@ package comprehend
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PiiEntitiesDetectionJobs_Filter struct {
-	JobName any
-	JobStatus any
-	SubmitTimeAfter any
+	JobName          any
+	JobStatus        any
+	SubmitTimeAfter  any
 	SubmitTimeBefore any
 }
 
 type PiiEntitiesDetectionJobs_PiiEntitiesDetectionJobPropertiesList_InputDataConfig_DocumentReaderConfig struct {
 	DocumentReadAction any
-	DocumentReadMode any
-	FeatureTypes any
+	DocumentReadMode   any
+	FeatureTypes       any
 }
 
 type PiiEntitiesDetectionJobs_PiiEntitiesDetectionJobPropertiesList_InputDataConfig struct {
 	DocumentReaderConfig any
-	InputFormat any
-	S3Uri any
+	InputFormat          any
+	S3Uri                any
 }
 
 type PiiEntitiesDetectionJobs_PiiEntitiesDetectionJobPropertiesList_OutputDataConfig struct {
 	KmsKeyId any
-	S3Uri any
+	S3Uri    any
 }
 
 type PiiEntitiesDetectionJobs_PiiEntitiesDetectionJobPropertiesList_RedactionConfig struct {
-	MaskCharacter any
-	MaskMode any
+	MaskCharacter  any
+	MaskMode       any
 	PiiEntityTypes any
 }
 
 type PiiEntitiesDetectionJobs_PiiEntitiesDetectionJobPropertiesList struct {
 	DataAccessRoleArn any
-	EndTime any
-	InputDataConfig any
-	JobArn any
-	JobId any
-	JobName any
-	JobStatus any
-	LanguageCode any
-	Message any
-	Mode any
-	OutputDataConfig any
-	RedactionConfig any
-	SubmitTime any
+	EndTime           any
+	InputDataConfig   any
+	JobArn            any
+	JobId             any
+	JobName           any
+	JobStatus         any
+	LanguageCode      any
+	Message           any
+	Mode              any
+	OutputDataConfig  any
+	RedactionConfig   any
+	SubmitTime        any
 }
 
 var PiiEntitiesDetectionJobs_FilterFields = ubx.FieldMap{
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"JobStatus": ubx.FieldSpec{WireName: "job_status"},
-		"SubmitTimeAfter": ubx.FieldSpec{WireName: "submit_time_after"},
-		"SubmitTimeBefore": ubx.FieldSpec{WireName: "submit_time_before"},
-	}
+	"JobName":          ubx.FieldSpec{WireName: "job_name"},
+	"JobStatus":        ubx.FieldSpec{WireName: "job_status"},
+	"SubmitTimeAfter":  ubx.FieldSpec{WireName: "submit_time_after"},
+	"SubmitTimeBefore": ubx.FieldSpec{WireName: "submit_time_before"},
+}
 
 type PiiEntitiesDetectionJobsConfig struct {
 	// <p>Provides information for filtering a list of PII entity detection jobs.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type PiiEntitiesDetectionJobsAttrs struct {
 	// <p>Provides information for filtering a list of PII entity detection jobs.</p>
-	Filter any
-	MaxResults any
-	NextToken any
+	Filter                                any
+	MaxResults                            any
+	NextToken                             any
 	PiiEntitiesDetectionJobPropertiesList any
 }
 
@@ -76,10 +76,10 @@ var PiiEntitiesDetectionJobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: PiiEntitiesDetectionJobs_FilterFields,
+			Kind:     "object",
+			Fields:   PiiEntitiesDetectionJobs_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

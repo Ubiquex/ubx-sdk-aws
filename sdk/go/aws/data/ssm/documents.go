@@ -4,63 +4,63 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Documents_DocumentFilterList struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Documents_DocumentIdentifiers_Requires struct {
-	Name any
+	Name        any
 	RequireType any
-	Version any
+	Version     any
 	VersionName any
 }
 
 type Documents_DocumentIdentifiers struct {
-	Author any
-	CreatedDate any
-	DisplayName any
-	DocumentFormat any
-	DocumentType any
+	Author          any
+	CreatedDate     any
+	DisplayName     any
+	DocumentFormat  any
+	DocumentType    any
 	DocumentVersion any
-	Name any
-	Owner any
-	PlatformTypes any
-	Requires any
-	ReviewStatus any
-	SchemaVersion any
-	Tags any
-	TargetType any
-	VersionName any
+	Name            any
+	Owner           any
+	PlatformTypes   any
+	Requires        any
+	ReviewStatus    any
+	SchemaVersion   any
+	Tags            any
+	TargetType      any
+	VersionName     any
 }
 
 type Documents_Filters struct {
-	Key any
+	Key    any
 	Values any
 }
 
 var Documents_DocumentFilterListFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Documents_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type DocumentsConfig struct {
 	DocumentFilterList any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters            any
+	MaxResults         any
+	NextToken          any
 }
 
 type DocumentsAttrs struct {
-	DocumentFilterList any
+	DocumentFilterList  any
 	DocumentIdentifiers any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters             any
+	MaxResults          any
+	NextToken           any
 }
 
 var Documents = ubx.DataSourceBinding{
@@ -68,15 +68,15 @@ var Documents = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DocumentFilterList": ubx.FieldSpec{
 			WireName: "document_filter_list",
-			Kind: "list",
-			Fields: Documents_DocumentFilterListFields,
+			Kind:     "list",
+			Fields:   Documents_DocumentFilterListFields,
 		},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Documents_FiltersFields,
+			Kind:     "list",
+			Fields:   Documents_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,10 +4,10 @@ package api_iotwireless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotwirelessPositionConfiguration_Solvers_SemtechGnss struct {
-	Fec any
+	Fec      any
 	Provider any
-	Status any
-	Type any
+	Status   any
+	Type     any
 }
 
 type ApiIotwirelessPositionConfiguration_Solvers struct {
@@ -17,13 +17,13 @@ type ApiIotwirelessPositionConfiguration_Solvers struct {
 
 type ApiIotwirelessPositionConfigurationConfig struct {
 	ResourceIdentifier any
-	ResourceType any
+	ResourceType       any
 }
 
 type ApiIotwirelessPositionConfigurationAttrs struct {
-	Destination any
+	Destination        any
 	ResourceIdentifier any
-	ResourceType any
+	ResourceType       any
 	// <p>The wrapper for position solver details.</p>
 	Solvers any
 }
@@ -32,6 +32,6 @@ var ApiIotwirelessPositionConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_position_configuration",
 	Fields: ubx.FieldMap{
 		"ResourceIdentifier": ubx.FieldSpec{WireName: "resource_identifier"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"ResourceType":       ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

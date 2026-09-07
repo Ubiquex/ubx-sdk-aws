@@ -5,23 +5,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Clusters_Clusters_NetworkSettings_InterfaceMappings struct {
 	LogicalInterfaceName any
-	NetworkId any
+	NetworkId            any
 }
 
 type Clusters_Clusters_NetworkSettings struct {
-	DefaultRoute any
+	DefaultRoute      any
 	InterfaceMappings any
 }
 
 type Clusters_Clusters struct {
-	Arn any
-	ChannelIds any
-	ClusterType any
-	Id any
+	Arn             any
+	ChannelIds      any
+	ClusterType     any
+	Id              any
 	InstanceRoleArn any
-	Name any
+	Name            any
 	NetworkSettings any
-	State any
+	State           any
 }
 
 type ClustersConfig struct {
@@ -44,6 +44,6 @@ var Clusters = ubx.DataSourceBinding{
 	WireType: "aws_medialive_clusters",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

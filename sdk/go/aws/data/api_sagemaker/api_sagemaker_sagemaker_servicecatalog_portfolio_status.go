@@ -12,6 +12,5 @@ type ApiSagemakerSagemakerServicecatalogPortfolioStatusAttrs struct {
 
 var ApiSagemakerSagemakerServicecatalogPortfolioStatus = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_sagemaker_servicecatalog_portfolio_status",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

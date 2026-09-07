@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsV2LexIntentStageMetrics_BinBy struct {
 	Interval any
-	Name any
-	Order any
+	Name     any
+	Order    any
 }
 
 type ModelsV2LexIntentStageMetrics_Filters struct {
-	Name any
+	Name     any
 	Operator any
-	Values any
+	Values   any
 }
 
 type ModelsV2LexIntentStageMetrics_GroupBy struct {
@@ -20,77 +20,77 @@ type ModelsV2LexIntentStageMetrics_GroupBy struct {
 }
 
 type ModelsV2LexIntentStageMetrics_Metrics struct {
-	Name any
-	Order any
+	Name      any
+	Order     any
 	Statistic any
 }
 
 type ModelsV2LexIntentStageMetrics_Results_BinKeys struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type ModelsV2LexIntentStageMetrics_Results_GroupByKeys struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type ModelsV2LexIntentStageMetrics_Results_MetricsResults struct {
-	Name any
+	Name      any
 	Statistic any
-	Value any
+	Value     any
 }
 
 type ModelsV2LexIntentStageMetrics_Results struct {
-	BinKeys any
-	GroupByKeys any
+	BinKeys        any
+	GroupByKeys    any
 	MetricsResults any
 }
 
 var ModelsV2LexIntentStageMetrics_BinByFields = ubx.FieldMap{
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-	}
+	"Interval": ubx.FieldSpec{WireName: "interval"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Order":    ubx.FieldSpec{WireName: "order"},
+}
 
 var ModelsV2LexIntentStageMetrics_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var ModelsV2LexIntentStageMetrics_GroupByFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var ModelsV2LexIntentStageMetrics_MetricsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Statistic": ubx.FieldSpec{WireName: "statistic"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Order":     ubx.FieldSpec{WireName: "order"},
+	"Statistic": ubx.FieldSpec{WireName: "statistic"},
+}
 
 type ModelsV2LexIntentStageMetricsConfig struct {
-	BinBy any
-	BotId any
-	EndDateTime any
-	Filters any
-	GroupBy any
-	MaxResults any
-	Metrics any
-	NextToken any
+	BinBy         any
+	BotId         any
+	EndDateTime   any
+	Filters       any
+	GroupBy       any
+	MaxResults    any
+	Metrics       any
+	NextToken     any
 	StartDateTime any
 }
 
 type ModelsV2LexIntentStageMetricsAttrs struct {
-	BinBy any
-	BotId any
-	EndDateTime any
-	Filters any
-	GroupBy any
-	MaxResults any
-	Metrics any
-	NextToken any
-	Results any
+	BinBy         any
+	BotId         any
+	EndDateTime   any
+	Filters       any
+	GroupBy       any
+	MaxResults    any
+	Metrics       any
+	NextToken     any
+	Results       any
 	StartDateTime any
 }
 
@@ -99,28 +99,28 @@ var ModelsV2LexIntentStageMetrics = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"BinBy": ubx.FieldSpec{
 			WireName: "bin_by",
-			Kind: "list",
-			Fields: ModelsV2LexIntentStageMetrics_BinByFields,
+			Kind:     "list",
+			Fields:   ModelsV2LexIntentStageMetrics_BinByFields,
 		},
-		"BotId": ubx.FieldSpec{WireName: "bot_id"},
+		"BotId":       ubx.FieldSpec{WireName: "bot_id"},
 		"EndDateTime": ubx.FieldSpec{WireName: "end_date_time"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ModelsV2LexIntentStageMetrics_FiltersFields,
+			Kind:     "list",
+			Fields:   ModelsV2LexIntentStageMetrics_FiltersFields,
 		},
 		"GroupBy": ubx.FieldSpec{
 			WireName: "group_by",
-			Kind: "list",
-			Fields: ModelsV2LexIntentStageMetrics_GroupByFields,
+			Kind:     "list",
+			Fields:   ModelsV2LexIntentStageMetrics_GroupByFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
 		"Metrics": ubx.FieldSpec{
 			WireName: "metrics",
-			Kind: "list",
-			Fields: ModelsV2LexIntentStageMetrics_MetricsFields,
+			Kind:     "list",
+			Fields:   ModelsV2LexIntentStageMetrics_MetricsFields,
 		},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"StartDateTime": ubx.FieldSpec{WireName: "start_date_time"},
 	},
 }

@@ -4,14 +4,14 @@ package sts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FederationToken_Credentials struct {
-	AccessKeyId any
-	Expiration any
+	AccessKeyId     any
+	Expiration      any
 	SecretAccessKey any
-	SessionToken any
+	SessionToken    any
 }
 
 type FederationToken_FederatedUser struct {
-	Arn any
+	Arn             any
 	FederatedUserId any
 }
 
@@ -20,55 +20,55 @@ type FederationToken_PolicyArns struct {
 }
 
 type FederationToken_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var FederationToken_PolicyArnsFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-	}
+	"Arn": ubx.FieldSpec{WireName: "arn"},
+}
 
 var FederationToken_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FederationTokenConfig struct {
 	DurationSeconds any
-	Name any
-	Policy any
-	PolicyArns any
-	Tags any
+	Name            any
+	Policy          any
+	PolicyArns      any
+	Tags            any
 }
 
 type FederationTokenAttrs struct {
 	// <p>Amazon Web Services credentials for API authentication.</p>
-	Credentials any
+	Credentials     any
 	DurationSeconds any
 	// <p>Identifiers for the federated user that is associated with the credentials.</p>
-	FederatedUser any
-	Name any
+	FederatedUser    any
+	Name             any
 	PackedPolicySize any
-	Policy any
-	PolicyArns any
-	Tags any
+	Policy           any
+	PolicyArns       any
+	Tags             any
 }
 
 var FederationToken = ubx.DataSourceBinding{
 	WireType: "aws_sts_federation_token",
 	Fields: ubx.FieldMap{
 		"DurationSeconds": ubx.FieldSpec{WireName: "duration_seconds"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"Policy":          ubx.FieldSpec{WireName: "policy"},
 		"PolicyArns": ubx.FieldSpec{
 			WireName: "policy_arns",
-			Kind: "list",
-			Fields: FederationToken_PolicyArnsFields,
+			Kind:     "list",
+			Fields:   FederationToken_PolicyArnsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FederationToken_TagsFields,
+			Kind:     "list",
+			Fields:   FederationToken_TagsFields,
 		},
 	},
 }

@@ -4,42 +4,42 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LockedSnapshots_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type LockedSnapshots_Snapshots struct {
-	CoolOffPeriod any
+	CoolOffPeriod          any
 	CoolOffPeriodExpiresOn any
-	LockCreatedOn any
-	LockDuration any
-	LockDurationStartTime any
-	LockExpiresOn any
-	LockState any
-	OwnerId any
-	SnapshotId any
+	LockCreatedOn          any
+	LockDuration           any
+	LockDurationStartTime  any
+	LockExpiresOn          any
+	LockState              any
+	OwnerId                any
+	SnapshotId             any
 }
 
 var LockedSnapshots_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type LockedSnapshotsConfig struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun      any
+	Filters     any
+	MaxResults  any
+	NextToken   any
 	SnapshotIds any
 }
 
 type LockedSnapshotsAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun      any
+	Filters     any
+	MaxResults  any
+	NextToken   any
 	SnapshotIds any
-	Snapshots any
+	Snapshots   any
 }
 
 var LockedSnapshots = ubx.DataSourceBinding{
@@ -48,11 +48,11 @@ var LockedSnapshots = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: LockedSnapshots_FiltersFields,
+			Kind:     "list",
+			Fields:   LockedSnapshots_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"SnapshotIds": ubx.FieldSpec{WireName: "snapshot_ids"},
 	},
 }

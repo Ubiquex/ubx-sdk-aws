@@ -4,40 +4,40 @@ package events
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Archives_Archives struct {
-	ArchiveName any
-	CreationTime any
-	EventCount any
+	ArchiveName    any
+	CreationTime   any
+	EventCount     any
 	EventSourceArn any
-	RetentionDays any
-	SizeBytes any
-	State any
-	StateReason any
+	RetentionDays  any
+	SizeBytes      any
+	State          any
+	StateReason    any
 }
 
 type ArchivesConfig struct {
 	EventSourceArn any
-	Limit any
-	NamePrefix any
-	NextToken any
-	State any
+	Limit          any
+	NamePrefix     any
+	NextToken      any
+	State          any
 }
 
 type ArchivesAttrs struct {
-	Archives any
+	Archives       any
 	EventSourceArn any
-	Limit any
-	NamePrefix any
-	NextToken any
-	State any
+	Limit          any
+	NamePrefix     any
+	NextToken      any
+	State          any
 }
 
 var Archives = ubx.DataSourceBinding{
 	WireType: "aws_events_archives",
 	Fields: ubx.FieldMap{
 		"EventSourceArn": ubx.FieldSpec{WireName: "event_source_arn"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Limit":          ubx.FieldSpec{WireName: "limit"},
+		"NamePrefix":     ubx.FieldSpec{WireName: "name_prefix"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"State":          ubx.FieldSpec{WireName: "state"},
 	},
 }

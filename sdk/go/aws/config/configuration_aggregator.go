@@ -29,21 +29,21 @@ type ConfigurationAggregator_Tags struct {
 }
 
 var ConfigurationAggregator_AccountAggregationSourcesFields = ubx.FieldMap{
-		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
-		"AllAwsRegions": ubx.FieldSpec{WireName: "all_aws_regions"},
-		"AwsRegions": ubx.FieldSpec{WireName: "aws_regions"},
-	}
+	"AccountIds":    ubx.FieldSpec{WireName: "account_ids"},
+	"AllAwsRegions": ubx.FieldSpec{WireName: "all_aws_regions"},
+	"AwsRegions":    ubx.FieldSpec{WireName: "aws_regions"},
+}
 
 var ConfigurationAggregator_OrganizationAggregationSourceFields = ubx.FieldMap{
-		"AllAwsRegions": ubx.FieldSpec{WireName: "all_aws_regions"},
-		"AwsRegions": ubx.FieldSpec{WireName: "aws_regions"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"AllAwsRegions": ubx.FieldSpec{WireName: "all_aws_regions"},
+	"AwsRegions":    ubx.FieldSpec{WireName: "aws_regions"},
+	"RoleArn":       ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var ConfigurationAggregator_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ConfigurationAggregatorConfig struct {
 	// Specifies the list of AWS accounts from which to aggregate AWS Config configuration data, optionally restricting the regions that are aggregated for each account. (AI-inferred)
@@ -74,19 +74,19 @@ var ConfigurationAggregator = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountAggregationSources": ubx.FieldSpec{
 			WireName: "account_aggregation_sources",
-			Kind: "list",
-			Fields: ConfigurationAggregator_AccountAggregationSourcesFields,
+			Kind:     "list",
+			Fields:   ConfigurationAggregator_AccountAggregationSourcesFields,
 		},
 		"ConfigurationAggregatorName": ubx.FieldSpec{WireName: "configuration_aggregator_name"},
 		"OrganizationAggregationSource": ubx.FieldSpec{
 			WireName: "organization_aggregation_source",
-			Kind: "object",
-			Fields: ConfigurationAggregator_OrganizationAggregationSourceFields,
+			Kind:     "object",
+			Fields:   ConfigurationAggregator_OrganizationAggregationSourceFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ConfigurationAggregator_TagsFields,
+			Kind:     "list",
+			Fields:   ConfigurationAggregator_TagsFields,
 		},
 	},
 }

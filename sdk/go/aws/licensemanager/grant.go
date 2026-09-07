@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Grant_Tags struct {
 	// The tag key that you assign to an AWS License Manager grant to categorize and manage the grant. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Grant_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type GrantConfig struct {
 	// Specifies the list of license operations, such as checking out, checking in, creating a grant, or extending consumption, that the grant recipient is permitted to perform on the licensed resource. (AI-inferred)
@@ -56,15 +56,15 @@ var Grant = ubx.ResourceBinding{
 	WireType: "aws_license_manager_grant",
 	Fields: ubx.FieldMap{
 		"AllowedOperations": ubx.FieldSpec{WireName: "allowed_operations"},
-		"GrantName": ubx.FieldSpec{WireName: "grant_name"},
-		"HomeRegion": ubx.FieldSpec{WireName: "home_region"},
-		"LicenseArn": ubx.FieldSpec{WireName: "license_arn"},
-		"Principals": ubx.FieldSpec{WireName: "principals"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"GrantName":         ubx.FieldSpec{WireName: "grant_name"},
+		"HomeRegion":        ubx.FieldSpec{WireName: "home_region"},
+		"LicenseArn":        ubx.FieldSpec{WireName: "license_arn"},
+		"Principals":        ubx.FieldSpec{WireName: "principals"},
+		"Status":            ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Grant_TagsFields,
+			Kind:     "list",
+			Fields:   Grant_TagsFields,
 		},
 	},
 }

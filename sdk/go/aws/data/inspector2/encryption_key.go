@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EncryptionKeyConfig struct {
 	ResourceType any
-	ScanType any
+	ScanType     any
 }
 
 type EncryptionKeyAttrs struct {
-	KmsKeyId any
+	KmsKeyId     any
 	ResourceType any
-	ScanType any
+	ScanType     any
 }
 
 var EncryptionKey = ubx.DataSourceBinding{
 	WireType: "aws_inspector2_encryption_key",
 	Fields: ubx.FieldMap{
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"ScanType": ubx.FieldSpec{WireName: "scan_type"},
+		"ScanType":     ubx.FieldSpec{WireName: "scan_type"},
 	},
 }

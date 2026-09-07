@@ -4,11 +4,11 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerSubscribedWorkteam_SubscribedWorkteam struct {
-	ListingId any
+	ListingId              any
 	MarketplaceDescription any
-	MarketplaceTitle any
-	SellerName any
-	WorkteamArn any
+	MarketplaceTitle       any
+	SellerName             any
+	WorkteamArn            any
 }
 
 type ApiSagemakerSubscribedWorkteamConfig struct {
@@ -18,7 +18,7 @@ type ApiSagemakerSubscribedWorkteamConfig struct {
 type ApiSagemakerSubscribedWorkteamAttrs struct {
 	// <p>Describes a work team of a vendor that does the labelling job.</p>
 	SubscribedWorkteam any
-	WorkteamArn any
+	WorkteamArn        any
 }
 
 var ApiSagemakerSubscribedWorkteam = ubx.DataSourceBinding{

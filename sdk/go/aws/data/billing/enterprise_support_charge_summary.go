@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EnterpriseSupportChargeSummary_SupportEffectivePricingPlan_Tiers struct {
 	AdditionalPercentageOfAggregateCharges any
-	AggregateChargesAdjustment any
-	BaseCharge any
-	Increment any
-	IncrementCharge any
-	Incremental any
-	TierMaximum any
-	TierMinimum any
+	AggregateChargesAdjustment             any
+	BaseCharge                             any
+	Increment                              any
+	IncrementCharge                        any
+	Incremental                            any
+	TierMaximum                            any
+	TierMinimum                            any
 }
 
 type EnterpriseSupportChargeSummary_SupportEffectivePricingPlan struct {
-	Description any
+	Description                    any
 	DiscountAppliesToMinimumCharge any
-	EndDate any
-	MinimumCharge any
-	Name any
-	PlanDiscountPercent any
-	PricingPlanId any
-	StartDate any
-	Tiered any
+	EndDate                        any
+	MinimumCharge                  any
+	Name                           any
+	PlanDiscountPercent            any
+	PricingPlanId                  any
+	StartDate                      any
+	Tiered                         any
 	// <p>A list of pricing plan tiers.</p>
 	Tiers any
 }
@@ -36,21 +36,21 @@ type EnterpriseSupportChargeSummaryConfig struct {
 type EnterpriseSupportChargeSummaryAttrs struct {
 	BillDate any
 	// <p>The billing month in YYYY-MM format. This must be a month in the past.</p>
-	BillingMonth any
-	BillingPeriodEndDate any
-	BillingPeriodStartDate any
-	IsEstimated any
-	PayerAccountId any
-	SupportCharge any
+	BillingMonth            any
+	BillingPeriodEndDate    any
+	BillingPeriodStartDate  any
+	IsEstimated             any
+	PayerAccountId          any
+	SupportCharge           any
 	SupportChargePercentage any
-	SupportDiscount any
+	SupportDiscount         any
 	// <p>A pricing plan for Enterprise Support billing.</p>
-	SupportEffectivePricingPlan any
-	TotalSupportCharge any
+	SupportEffectivePricingPlan               any
+	TotalSupportCharge                        any
 	TotalSupportEligibleReservedInstanceSpend any
-	TotalSupportEligibleSavingsPlanSpend any
-	TotalSupportEligibleSpend any
-	TotalSupportEligibleUsageSpend any
+	TotalSupportEligibleSavingsPlanSpend      any
+	TotalSupportEligibleSpend                 any
+	TotalSupportEligibleUsageSpend            any
 }
 
 var EnterpriseSupportChargeSummary = ubx.DataSourceBinding{

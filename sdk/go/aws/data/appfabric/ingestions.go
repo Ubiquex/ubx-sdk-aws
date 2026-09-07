@@ -4,30 +4,30 @@ package appfabric
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Ingestions_Ingestions struct {
-	App any
-	Arn any
-	State any
+	App      any
+	Arn      any
+	State    any
 	TenantId any
 }
 
 type IngestionsConfig struct {
 	AppBundleIdentifier any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 }
 
 type IngestionsAttrs struct {
 	AppBundleIdentifier any
-	Ingestions any
-	MaxResults any
-	NextToken any
+	Ingestions          any
+	MaxResults          any
+	NextToken           any
 }
 
 var Ingestions = ubx.DataSourceBinding{
 	WireType: "aws_appfabric_ingestions",
 	Fields: ubx.FieldMap{
 		"AppBundleIdentifier": ubx.FieldSpec{WireName: "app_bundle_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 	},
 }

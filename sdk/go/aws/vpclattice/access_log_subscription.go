@@ -11,9 +11,9 @@ type AccessLogSubscription_Tags struct {
 }
 
 var AccessLogSubscription_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AccessLogSubscriptionConfig struct {
 	// The Amazon Resource Name (ARN) of the destination (an S3 bucket, CloudWatch Logs log group, or Kinesis Data Firehose delivery stream) to which VPC Lattice access logs are delivered. (AI-inferred)
@@ -48,13 +48,13 @@ type AccessLogSubscriptionAttrs struct {
 var AccessLogSubscription = ubx.ResourceBinding{
 	WireType: "aws_vpc_lattice_access_log_subscription",
 	Fields: ubx.FieldMap{
-		"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
-		"ResourceIdentifier": ubx.FieldSpec{WireName: "resource_identifier"},
+		"DestinationArn":        ubx.FieldSpec{WireName: "destination_arn"},
+		"ResourceIdentifier":    ubx.FieldSpec{WireName: "resource_identifier"},
 		"ServiceNetworkLogType": ubx.FieldSpec{WireName: "service_network_log_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AccessLogSubscription_TagsFields,
+			Kind:     "list",
+			Fields:   AccessLogSubscription_TagsFields,
 		},
 	},
 }

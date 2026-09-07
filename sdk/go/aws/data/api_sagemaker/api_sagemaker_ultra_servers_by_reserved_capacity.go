@@ -4,37 +4,37 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerUltraServersByReservedCapacity_UltraServers struct {
-	AvailabilityZone any
-	AvailableInstanceCount any
-	AvailableSpareInstanceCount any
+	AvailabilityZone             any
+	AvailableInstanceCount       any
+	AvailableSpareInstanceCount  any
 	ConfiguredSpareInstanceCount any
-	HealthStatus any
-	InUseInstanceCount any
-	InstanceType any
-	TotalInstanceCount any
-	UltraServerId any
-	UltraServerType any
-	UnhealthyInstanceCount any
+	HealthStatus                 any
+	InUseInstanceCount           any
+	InstanceType                 any
+	TotalInstanceCount           any
+	UltraServerId                any
+	UltraServerType              any
+	UnhealthyInstanceCount       any
 }
 
 type ApiSagemakerUltraServersByReservedCapacityConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 	ReservedCapacityArn any
 }
 
 type ApiSagemakerUltraServersByReservedCapacityAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 	ReservedCapacityArn any
-	UltraServers any
+	UltraServers        any
 }
 
 var ApiSagemakerUltraServersByReservedCapacity = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_ultra_servers_by_reserved_capacity",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 		"ReservedCapacityArn": ubx.FieldSpec{WireName: "reserved_capacity_arn"},
 	},
 }

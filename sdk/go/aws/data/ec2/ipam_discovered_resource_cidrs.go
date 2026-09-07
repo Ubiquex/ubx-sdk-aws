@@ -4,54 +4,54 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamDiscoveredResourceCidrs_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type IpamDiscoveredResourceCidrs_IpamDiscoveredResourceCidrs_ResourceTags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type IpamDiscoveredResourceCidrs_IpamDiscoveredResourceCidrs struct {
-	AvailabilityZoneId any
-	IpSource any
-	IpUsage any
-	IpamResourceDiscoveryId any
+	AvailabilityZoneId               any
+	IpSource                         any
+	IpUsage                          any
+	IpamResourceDiscoveryId          any
 	NetworkInterfaceAttachmentStatus any
-	ResourceCidr any
-	ResourceId any
-	ResourceOwnerId any
-	ResourceRegion any
-	ResourceTags any
-	ResourceType any
-	SampleTime any
-	SubnetId any
-	VpcId any
+	ResourceCidr                     any
+	ResourceId                       any
+	ResourceOwnerId                  any
+	ResourceRegion                   any
+	ResourceTags                     any
+	ResourceType                     any
+	SampleTime                       any
+	SubnetId                         any
+	VpcId                            any
 }
 
 var IpamDiscoveredResourceCidrs_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type IpamDiscoveredResourceCidrsConfig struct {
-	DryRun any
-	Filters any
+	DryRun                  any
+	Filters                 any
 	IpamResourceDiscoveryId any
-	MaxResults any
-	NextToken any
-	ResourceRegion any
+	MaxResults              any
+	NextToken               any
+	ResourceRegion          any
 }
 
 type IpamDiscoveredResourceCidrsAttrs struct {
-	DryRun any
-	Filters any
+	DryRun                      any
+	Filters                     any
 	IpamDiscoveredResourceCidrs any
-	IpamResourceDiscoveryId any
-	MaxResults any
-	NextToken any
-	ResourceRegion any
+	IpamResourceDiscoveryId     any
+	MaxResults                  any
+	NextToken                   any
+	ResourceRegion              any
 }
 
 var IpamDiscoveredResourceCidrs = ubx.DataSourceBinding{
@@ -60,12 +60,12 @@ var IpamDiscoveredResourceCidrs = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: IpamDiscoveredResourceCidrs_FiltersFields,
+			Kind:     "list",
+			Fields:   IpamDiscoveredResourceCidrs_FiltersFields,
 		},
 		"IpamResourceDiscoveryId": ubx.FieldSpec{WireName: "ipam_resource_discovery_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResourceRegion": ubx.FieldSpec{WireName: "resource_region"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
+		"ResourceRegion":          ubx.FieldSpec{WireName: "resource_region"},
 	},
 }

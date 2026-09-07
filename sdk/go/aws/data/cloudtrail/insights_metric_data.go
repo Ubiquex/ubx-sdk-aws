@@ -4,49 +4,49 @@ package cloudtrail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InsightsMetricDataConfig struct {
-	DataType any
-	EndTime any
-	ErrorCode any
-	EventName any
+	DataType    any
+	EndTime     any
+	ErrorCode   any
+	EventName   any
 	EventSource any
 	InsightType any
-	MaxResults any
-	NextToken any
-	Period any
-	StartTime any
-	TrailName any
+	MaxResults  any
+	NextToken   any
+	Period      any
+	StartTime   any
+	TrailName   any
 }
 
 type InsightsMetricDataAttrs struct {
-	DataType any
-	EndTime any
-	ErrorCode any
-	EventName any
+	DataType    any
+	EndTime     any
+	ErrorCode   any
+	EventName   any
 	EventSource any
 	InsightType any
-	MaxResults any
-	NextToken any
-	Period any
-	StartTime any
-	Timestamps any
-	TrailArn any
-	TrailName any
-	Values any
+	MaxResults  any
+	NextToken   any
+	Period      any
+	StartTime   any
+	Timestamps  any
+	TrailArn    any
+	TrailName   any
+	Values      any
 }
 
 var InsightsMetricData = ubx.DataSourceBinding{
 	WireType: "aws_cloudtrail_insights_metric_data",
 	Fields: ubx.FieldMap{
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"ErrorCode": ubx.FieldSpec{WireName: "error_code"},
-		"EventName": ubx.FieldSpec{WireName: "event_name"},
+		"DataType":    ubx.FieldSpec{WireName: "data_type"},
+		"EndTime":     ubx.FieldSpec{WireName: "end_time"},
+		"ErrorCode":   ubx.FieldSpec{WireName: "error_code"},
+		"EventName":   ubx.FieldSpec{WireName: "event_name"},
 		"EventSource": ubx.FieldSpec{WireName: "event_source"},
 		"InsightType": ubx.FieldSpec{WireName: "insight_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"TrailName": ubx.FieldSpec{WireName: "trail_name"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"Period":      ubx.FieldSpec{WireName: "period"},
+		"StartTime":   ubx.FieldSpec{WireName: "start_time"},
+		"TrailName":   ubx.FieldSpec{WireName: "trail_name"},
 	},
 }

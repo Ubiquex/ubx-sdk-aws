@@ -28,21 +28,21 @@ type Queue_SlurmConfiguration struct {
 }
 
 var Queue_ComputeNodeGroupConfigurationsFields = ubx.FieldMap{
-		"ComputeNodeGroupId": ubx.FieldSpec{WireName: "compute_node_group_id"},
-	}
+	"ComputeNodeGroupId": ubx.FieldSpec{WireName: "compute_node_group_id"},
+}
 
 var Queue_SlurmConfiguration_SlurmCustomSettingsFields = ubx.FieldMap{
-		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
-		"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
-	}
+	"ParameterName":  ubx.FieldSpec{WireName: "parameter_name"},
+	"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
+}
 
 var Queue_SlurmConfigurationFields = ubx.FieldMap{
-		"SlurmCustomSettings": ubx.FieldSpec{
-			WireName: "slurm_custom_settings",
-			Kind: "list",
-			Fields: Queue_SlurmConfiguration_SlurmCustomSettingsFields,
-		},
-	}
+	"SlurmCustomSettings": ubx.FieldSpec{
+		WireName: "slurm_custom_settings",
+		Kind:     "list",
+		Fields:   Queue_SlurmConfiguration_SlurmCustomSettingsFields,
+	},
+}
 
 type QueueConfig struct {
 	// The ID of the cluster of the queue.
@@ -84,14 +84,14 @@ var Queue = ubx.ResourceBinding{
 		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
 		"ComputeNodeGroupConfigurations": ubx.FieldSpec{
 			WireName: "compute_node_group_configurations",
-			Kind: "list",
-			Fields: Queue_ComputeNodeGroupConfigurationsFields,
+			Kind:     "list",
+			Fields:   Queue_ComputeNodeGroupConfigurationsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"SlurmConfiguration": ubx.FieldSpec{
 			WireName: "slurm_configuration",
-			Kind: "object",
-			Fields: Queue_SlurmConfigurationFields,
+			Kind:     "object",
+			Fields:   Queue_SlurmConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

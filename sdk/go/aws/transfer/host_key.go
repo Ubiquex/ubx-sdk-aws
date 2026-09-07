@@ -4,14 +4,14 @@ package transfer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HostKey_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var HostKey_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type HostKeyConfig struct {
 	// The text description for this host key.
@@ -50,11 +50,11 @@ var HostKey = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"HostKeyBody": ubx.FieldSpec{WireName: "host_key_body"},
-		"ServerId": ubx.FieldSpec{WireName: "server_id"},
+		"ServerId":    ubx.FieldSpec{WireName: "server_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: HostKey_TagsFields,
+			Kind:     "list",
+			Fields:   HostKey_TagsFields,
 		},
 	},
 }

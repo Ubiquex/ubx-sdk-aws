@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DistributionsByCachePolicyId_DistributionIdList struct {
 	IsTruncated any
-	Items any
-	Marker any
-	MaxItems any
-	NextMarker any
-	Quantity any
+	Items       any
+	Marker      any
+	MaxItems    any
+	NextMarker  any
+	Quantity    any
 }
 
 type DistributionsByCachePolicyIdConfig struct {
 	CachePolicyId any
-	Marker any
-	MaxItems any
+	Marker        any
+	MaxItems      any
 }
 
 type DistributionsByCachePolicyIdAttrs struct {
 	CachePolicyId any
 	// <p>A list of distribution IDs.</p>
 	DistributionIdList any
-	Marker any
-	MaxItems any
+	Marker             any
+	MaxItems           any
 }
 
 var DistributionsByCachePolicyId = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_distributions_by_cache_policy_id",
 	Fields: ubx.FieldMap{
 		"CachePolicyId": ubx.FieldSpec{WireName: "cache_policy_id"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"Marker":        ubx.FieldSpec{WireName: "marker"},
+		"MaxItems":      ubx.FieldSpec{WireName: "max_items"},
 	},
 }

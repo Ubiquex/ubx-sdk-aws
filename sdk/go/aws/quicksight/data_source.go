@@ -253,7 +253,7 @@ type DataSource_Permissions struct {
 	Actions any
 	// The Amazon Resource Name (ARN) of the IAM user, group, or role to which the permissions in this entry are granted for the QuickSight data source. (AI-inferred)
 	Principal any
-	Resource any
+	Resource  any
 }
 
 type DataSource_SslProperties struct {
@@ -269,300 +269,300 @@ type DataSource_Tags struct {
 }
 
 var DataSource_AlternateDataSourceParameters_AmazonElasticsearchParametersFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-	}
+	"Domain": ubx.FieldSpec{WireName: "domain"},
+}
 
 var DataSource_AlternateDataSourceParameters_AthenaParameters_IdentityCenterConfigurationFields = ubx.FieldMap{
-		"EnableIdentityPropagation": ubx.FieldSpec{WireName: "enable_identity_propagation"},
-	}
+	"EnableIdentityPropagation": ubx.FieldSpec{WireName: "enable_identity_propagation"},
+}
 
 var DataSource_AlternateDataSourceParameters_AthenaParametersFields = ubx.FieldMap{
-		"IdentityCenterConfiguration": ubx.FieldSpec{
-			WireName: "identity_center_configuration",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_AthenaParameters_IdentityCenterConfigurationFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"WorkGroup": ubx.FieldSpec{WireName: "work_group"},
-	}
+	"IdentityCenterConfiguration": ubx.FieldSpec{
+		WireName: "identity_center_configuration",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_AthenaParameters_IdentityCenterConfigurationFields,
+	},
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+	"WorkGroup": ubx.FieldSpec{WireName: "work_group"},
+}
 
 var DataSource_AlternateDataSourceParameters_AuroraParametersFields = ubx.FieldMap{
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Database": ubx.FieldSpec{WireName: "database"},
+	"Host":     ubx.FieldSpec{WireName: "host"},
+	"Port":     ubx.FieldSpec{WireName: "port"},
+}
 
 var DataSource_AlternateDataSourceParameters_DatabricksParametersFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"SqlEndpointPath": ubx.FieldSpec{WireName: "sql_endpoint_path"},
-	}
+	"Host":            ubx.FieldSpec{WireName: "host"},
+	"Port":            ubx.FieldSpec{WireName: "port"},
+	"SqlEndpointPath": ubx.FieldSpec{WireName: "sql_endpoint_path"},
+}
 
 var DataSource_AlternateDataSourceParameters_OracleParametersFields = ubx.FieldMap{
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"UseServiceName": ubx.FieldSpec{WireName: "use_service_name"},
-	}
+	"Database":       ubx.FieldSpec{WireName: "database"},
+	"Host":           ubx.FieldSpec{WireName: "host"},
+	"Port":           ubx.FieldSpec{WireName: "port"},
+	"UseServiceName": ubx.FieldSpec{WireName: "use_service_name"},
+}
 
 var DataSource_AlternateDataSourceParameters_PrestoParametersFields = ubx.FieldMap{
-		"Catalog": ubx.FieldSpec{WireName: "catalog"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Catalog": ubx.FieldSpec{WireName: "catalog"},
+	"Host":    ubx.FieldSpec{WireName: "host"},
+	"Port":    ubx.FieldSpec{WireName: "port"},
+}
 
 var DataSource_AlternateDataSourceParameters_RdsParametersFields = ubx.FieldMap{
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-	}
+	"Database":   ubx.FieldSpec{WireName: "database"},
+	"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+}
 
 var DataSource_AlternateDataSourceParameters_RedshiftParameters_IamparametersFields = ubx.FieldMap{
-		"AutoCreateDatabaseUser": ubx.FieldSpec{WireName: "auto_create_database_user"},
-		"DatabaseGroups": ubx.FieldSpec{WireName: "database_groups"},
-		"DatabaseUser": ubx.FieldSpec{WireName: "database_user"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"AutoCreateDatabaseUser": ubx.FieldSpec{WireName: "auto_create_database_user"},
+	"DatabaseGroups":         ubx.FieldSpec{WireName: "database_groups"},
+	"DatabaseUser":           ubx.FieldSpec{WireName: "database_user"},
+	"RoleArn":                ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var DataSource_AlternateDataSourceParameters_RedshiftParametersFields = ubx.FieldMap{
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Iamparameters": ubx.FieldSpec{
-			WireName: "iamparameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_RedshiftParameters_IamparametersFields,
-		},
-		"IdentityCenterConfiguration": ubx.FieldSpec{
-			WireName: "identity_center_configuration",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_AthenaParameters_IdentityCenterConfigurationFields,
-		},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
+	"Database":  ubx.FieldSpec{WireName: "database"},
+	"Host":      ubx.FieldSpec{WireName: "host"},
+	"Iamparameters": ubx.FieldSpec{
+		WireName: "iamparameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_RedshiftParameters_IamparametersFields,
+	},
+	"IdentityCenterConfiguration": ubx.FieldSpec{
+		WireName: "identity_center_configuration",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_AthenaParameters_IdentityCenterConfigurationFields,
+	},
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 var DataSource_AlternateDataSourceParameters_S3Parameters_ManifestFileLocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Bucket": ubx.FieldSpec{WireName: "bucket"},
+	"Key":    ubx.FieldSpec{WireName: "key"},
+}
 
 var DataSource_AlternateDataSourceParameters_S3ParametersFields = ubx.FieldMap{
-		"ManifestFileLocation": ubx.FieldSpec{
-			WireName: "manifest_file_location",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_S3Parameters_ManifestFileLocationFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"ManifestFileLocation": ubx.FieldSpec{
+		WireName: "manifest_file_location",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_S3Parameters_ManifestFileLocationFields,
+	},
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var DataSource_AlternateDataSourceParameters_S3TablesParametersFields = ubx.FieldMap{
-		"TableBucketArn": ubx.FieldSpec{WireName: "table_bucket_arn"},
-	}
+	"TableBucketArn": ubx.FieldSpec{WireName: "table_bucket_arn"},
+}
 
 var DataSource_AlternateDataSourceParameters_SnowflakeParameters_OauthParameters_IdentityProviderVpcConnectionPropertiesFields = ubx.FieldMap{
-		"VpcConnectionArn": ubx.FieldSpec{WireName: "vpc_connection_arn"},
-	}
+	"VpcConnectionArn": ubx.FieldSpec{WireName: "vpc_connection_arn"},
+}
 
 var DataSource_AlternateDataSourceParameters_SnowflakeParameters_OauthParametersFields = ubx.FieldMap{
-		"IdentityProviderResourceUri": ubx.FieldSpec{WireName: "identity_provider_resource_uri"},
-		"IdentityProviderVpcConnectionProperties": ubx.FieldSpec{
-			WireName: "identity_provider_vpc_connection_properties",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_SnowflakeParameters_OauthParameters_IdentityProviderVpcConnectionPropertiesFields,
-		},
-		"OauthScope": ubx.FieldSpec{WireName: "oauth_scope"},
-		"TokenProviderUrl": ubx.FieldSpec{WireName: "token_provider_url"},
-	}
+	"IdentityProviderResourceUri": ubx.FieldSpec{WireName: "identity_provider_resource_uri"},
+	"IdentityProviderVpcConnectionProperties": ubx.FieldSpec{
+		WireName: "identity_provider_vpc_connection_properties",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_SnowflakeParameters_OauthParameters_IdentityProviderVpcConnectionPropertiesFields,
+	},
+	"OauthScope":       ubx.FieldSpec{WireName: "oauth_scope"},
+	"TokenProviderUrl": ubx.FieldSpec{WireName: "token_provider_url"},
+}
 
 var DataSource_AlternateDataSourceParameters_SnowflakeParametersFields = ubx.FieldMap{
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"DatabaseAccessControlRole": ubx.FieldSpec{WireName: "database_access_control_role"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"OauthParameters": ubx.FieldSpec{
-			WireName: "oauth_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_SnowflakeParameters_OauthParametersFields,
-		},
-		"Warehouse": ubx.FieldSpec{WireName: "warehouse"},
-	}
+	"AuthenticationType":        ubx.FieldSpec{WireName: "authentication_type"},
+	"Database":                  ubx.FieldSpec{WireName: "database"},
+	"DatabaseAccessControlRole": ubx.FieldSpec{WireName: "database_access_control_role"},
+	"Host":                      ubx.FieldSpec{WireName: "host"},
+	"OauthParameters": ubx.FieldSpec{
+		WireName: "oauth_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_SnowflakeParameters_OauthParametersFields,
+	},
+	"Warehouse": ubx.FieldSpec{WireName: "warehouse"},
+}
 
 var DataSource_AlternateDataSourceParameters_SparkParametersFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Host": ubx.FieldSpec{WireName: "host"},
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 var DataSource_AlternateDataSourceParameters_StarburstParametersFields = ubx.FieldMap{
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"Catalog": ubx.FieldSpec{WireName: "catalog"},
-		"DatabaseAccessControlRole": ubx.FieldSpec{WireName: "database_access_control_role"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"OauthParameters": ubx.FieldSpec{
-			WireName: "oauth_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_SnowflakeParameters_OauthParametersFields,
-		},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"ProductType": ubx.FieldSpec{WireName: "product_type"},
-	}
+	"AuthenticationType":        ubx.FieldSpec{WireName: "authentication_type"},
+	"Catalog":                   ubx.FieldSpec{WireName: "catalog"},
+	"DatabaseAccessControlRole": ubx.FieldSpec{WireName: "database_access_control_role"},
+	"Host":                      ubx.FieldSpec{WireName: "host"},
+	"OauthParameters": ubx.FieldSpec{
+		WireName: "oauth_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_SnowflakeParameters_OauthParametersFields,
+	},
+	"Port":        ubx.FieldSpec{WireName: "port"},
+	"ProductType": ubx.FieldSpec{WireName: "product_type"},
+}
 
 var DataSource_AlternateDataSourceParametersFields = ubx.FieldMap{
-		"AmazonElasticsearchParameters": ubx.FieldSpec{
-			WireName: "amazon_elasticsearch_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_AmazonElasticsearchParametersFields,
-		},
-		"AmazonOpenSearchParameters": ubx.FieldSpec{
-			WireName: "amazon_open_search_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_AmazonElasticsearchParametersFields,
-		},
-		"AthenaParameters": ubx.FieldSpec{
-			WireName: "athena_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_AthenaParametersFields,
-		},
-		"AuroraParameters": ubx.FieldSpec{
-			WireName: "aurora_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_AuroraParametersFields,
-		},
-		"AuroraPostgreSqlParameters": ubx.FieldSpec{
-			WireName: "aurora_postgre_sql_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_AuroraParametersFields,
-		},
-		"DatabricksParameters": ubx.FieldSpec{
-			WireName: "databricks_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_DatabricksParametersFields,
-		},
-		"MariaDbParameters": ubx.FieldSpec{
-			WireName: "maria_db_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_AuroraParametersFields,
-		},
-		"MySqlParameters": ubx.FieldSpec{
-			WireName: "my_sql_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_AuroraParametersFields,
-		},
-		"OracleParameters": ubx.FieldSpec{
-			WireName: "oracle_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_OracleParametersFields,
-		},
-		"PostgreSqlParameters": ubx.FieldSpec{
-			WireName: "postgre_sql_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_AuroraParametersFields,
-		},
-		"PrestoParameters": ubx.FieldSpec{
-			WireName: "presto_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_PrestoParametersFields,
-		},
-		"RdsParameters": ubx.FieldSpec{
-			WireName: "rds_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_RdsParametersFields,
-		},
-		"RedshiftParameters": ubx.FieldSpec{
-			WireName: "redshift_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_RedshiftParametersFields,
-		},
-		"S3Parameters": ubx.FieldSpec{
-			WireName: "s3_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_S3ParametersFields,
-		},
-		"S3TablesParameters": ubx.FieldSpec{
-			WireName: "s3_tables_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_S3TablesParametersFields,
-		},
-		"SnowflakeParameters": ubx.FieldSpec{
-			WireName: "snowflake_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_SnowflakeParametersFields,
-		},
-		"SparkParameters": ubx.FieldSpec{
-			WireName: "spark_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_SparkParametersFields,
-		},
-		"SqlServerParameters": ubx.FieldSpec{
-			WireName: "sql_server_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_AuroraParametersFields,
-		},
-		"StarburstParameters": ubx.FieldSpec{
-			WireName: "starburst_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_StarburstParametersFields,
-		},
-		"TeradataParameters": ubx.FieldSpec{
-			WireName: "teradata_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_AuroraParametersFields,
-		},
-		"TrinoParameters": ubx.FieldSpec{
-			WireName: "trino_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_PrestoParametersFields,
-		},
-	}
+	"AmazonElasticsearchParameters": ubx.FieldSpec{
+		WireName: "amazon_elasticsearch_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_AmazonElasticsearchParametersFields,
+	},
+	"AmazonOpenSearchParameters": ubx.FieldSpec{
+		WireName: "amazon_open_search_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_AmazonElasticsearchParametersFields,
+	},
+	"AthenaParameters": ubx.FieldSpec{
+		WireName: "athena_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_AthenaParametersFields,
+	},
+	"AuroraParameters": ubx.FieldSpec{
+		WireName: "aurora_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_AuroraParametersFields,
+	},
+	"AuroraPostgreSqlParameters": ubx.FieldSpec{
+		WireName: "aurora_postgre_sql_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_AuroraParametersFields,
+	},
+	"DatabricksParameters": ubx.FieldSpec{
+		WireName: "databricks_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_DatabricksParametersFields,
+	},
+	"MariaDbParameters": ubx.FieldSpec{
+		WireName: "maria_db_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_AuroraParametersFields,
+	},
+	"MySqlParameters": ubx.FieldSpec{
+		WireName: "my_sql_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_AuroraParametersFields,
+	},
+	"OracleParameters": ubx.FieldSpec{
+		WireName: "oracle_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_OracleParametersFields,
+	},
+	"PostgreSqlParameters": ubx.FieldSpec{
+		WireName: "postgre_sql_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_AuroraParametersFields,
+	},
+	"PrestoParameters": ubx.FieldSpec{
+		WireName: "presto_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_PrestoParametersFields,
+	},
+	"RdsParameters": ubx.FieldSpec{
+		WireName: "rds_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_RdsParametersFields,
+	},
+	"RedshiftParameters": ubx.FieldSpec{
+		WireName: "redshift_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_RedshiftParametersFields,
+	},
+	"S3Parameters": ubx.FieldSpec{
+		WireName: "s3_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_S3ParametersFields,
+	},
+	"S3TablesParameters": ubx.FieldSpec{
+		WireName: "s3_tables_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_S3TablesParametersFields,
+	},
+	"SnowflakeParameters": ubx.FieldSpec{
+		WireName: "snowflake_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_SnowflakeParametersFields,
+	},
+	"SparkParameters": ubx.FieldSpec{
+		WireName: "spark_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_SparkParametersFields,
+	},
+	"SqlServerParameters": ubx.FieldSpec{
+		WireName: "sql_server_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_AuroraParametersFields,
+	},
+	"StarburstParameters": ubx.FieldSpec{
+		WireName: "starburst_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_StarburstParametersFields,
+	},
+	"TeradataParameters": ubx.FieldSpec{
+		WireName: "teradata_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_AuroraParametersFields,
+	},
+	"TrinoParameters": ubx.FieldSpec{
+		WireName: "trino_parameters",
+		Kind:     "object",
+		Fields:   DataSource_AlternateDataSourceParameters_PrestoParametersFields,
+	},
+}
 
 var DataSource_Credentials_CredentialPairFields = ubx.FieldMap{
-		"AlternateDataSourceParameters": ubx.FieldSpec{
-			WireName: "alternate_data_source_parameters",
-			Kind: "list",
-			Fields: DataSource_AlternateDataSourceParametersFields,
-		},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"AlternateDataSourceParameters": ubx.FieldSpec{
+		WireName: "alternate_data_source_parameters",
+		Kind:     "list",
+		Fields:   DataSource_AlternateDataSourceParametersFields,
+	},
+	"Password": ubx.FieldSpec{WireName: "password"},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var DataSource_Credentials_KeyPairCredentialsFields = ubx.FieldMap{
-		"KeyPairUsername": ubx.FieldSpec{WireName: "key_pair_username"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"PrivateKeyPassphrase": ubx.FieldSpec{WireName: "private_key_passphrase"},
-	}
+	"KeyPairUsername":      ubx.FieldSpec{WireName: "key_pair_username"},
+	"PrivateKey":           ubx.FieldSpec{WireName: "private_key"},
+	"PrivateKeyPassphrase": ubx.FieldSpec{WireName: "private_key_passphrase"},
+}
 
 var DataSource_CredentialsFields = ubx.FieldMap{
-		"CopySourceArn": ubx.FieldSpec{WireName: "copy_source_arn"},
-		"CredentialPair": ubx.FieldSpec{
-			WireName: "credential_pair",
-			Kind: "object",
-			Fields: DataSource_Credentials_CredentialPairFields,
-		},
-		"KeyPairCredentials": ubx.FieldSpec{
-			WireName: "key_pair_credentials",
-			Kind: "object",
-			Fields: DataSource_Credentials_KeyPairCredentialsFields,
-		},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"CopySourceArn": ubx.FieldSpec{WireName: "copy_source_arn"},
+	"CredentialPair": ubx.FieldSpec{
+		WireName: "credential_pair",
+		Kind:     "object",
+		Fields:   DataSource_Credentials_CredentialPairFields,
+	},
+	"KeyPairCredentials": ubx.FieldSpec{
+		WireName: "key_pair_credentials",
+		Kind:     "object",
+		Fields:   DataSource_Credentials_KeyPairCredentialsFields,
+	},
+	"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var DataSource_ErrorInfoFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Message": ubx.FieldSpec{WireName: "message"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 var DataSource_PermissionsFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-	}
+	"Actions":   ubx.FieldSpec{WireName: "actions"},
+	"Principal": ubx.FieldSpec{WireName: "principal"},
+	"Resource":  ubx.FieldSpec{WireName: "resource"},
+}
 
 var DataSource_SslPropertiesFields = ubx.FieldMap{
-		"DisableSsl": ubx.FieldSpec{WireName: "disable_ssl"},
-	}
+	"DisableSsl": ubx.FieldSpec{WireName: "disable_ssl"},
+}
 
 var DataSource_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DataSourceConfig struct {
 	// <p>A set of alternate data source parameters that you want to share for the credentials stored with this data source. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the credentials from this existing data source. If the <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this <code>DataSourceParameters</code> are automatically allowed.</p>
@@ -635,48 +635,48 @@ var DataSource = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AlternateDataSourceParameters": ubx.FieldSpec{
 			WireName: "alternate_data_source_parameters",
-			Kind: "list",
-			Fields: DataSource_AlternateDataSourceParametersFields,
+			Kind:     "list",
+			Fields:   DataSource_AlternateDataSourceParametersFields,
 		},
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
 		"Credentials": ubx.FieldSpec{
 			WireName: "credentials",
-			Kind: "object",
-			Fields: DataSource_CredentialsFields,
+			Kind:     "object",
+			Fields:   DataSource_CredentialsFields,
 		},
 		"DataSourceId": ubx.FieldSpec{WireName: "data_source_id"},
 		"DataSourceParameters": ubx.FieldSpec{
 			WireName: "data_source_parameters",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParametersFields,
+			Kind:     "object",
+			Fields:   DataSource_AlternateDataSourceParametersFields,
 		},
 		"ErrorInfo": ubx.FieldSpec{
 			WireName: "error_info",
-			Kind: "object",
-			Fields: DataSource_ErrorInfoFields,
+			Kind:     "object",
+			Fields:   DataSource_ErrorInfoFields,
 		},
 		"FolderArns": ubx.FieldSpec{WireName: "folder_arns"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"Permissions": ubx.FieldSpec{
 			WireName: "permissions",
-			Kind: "list",
-			Fields: DataSource_PermissionsFields,
+			Kind:     "list",
+			Fields:   DataSource_PermissionsFields,
 		},
 		"SslProperties": ubx.FieldSpec{
 			WireName: "ssl_properties",
-			Kind: "object",
-			Fields: DataSource_SslPropertiesFields,
+			Kind:     "object",
+			Fields:   DataSource_SslPropertiesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataSource_TagsFields,
+			Kind:     "list",
+			Fields:   DataSource_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 		"VpcConnectionProperties": ubx.FieldSpec{
 			WireName: "vpc_connection_properties",
-			Kind: "object",
-			Fields: DataSource_AlternateDataSourceParameters_SnowflakeParameters_OauthParameters_IdentityProviderVpcConnectionPropertiesFields,
+			Kind:     "object",
+			Fields:   DataSource_AlternateDataSourceParameters_SnowflakeParameters_OauthParameters_IdentityProviderVpcConnectionPropertiesFields,
 		},
 	},
 }

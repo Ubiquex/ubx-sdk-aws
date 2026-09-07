@@ -80,82 +80,82 @@ type Queue_Tags struct {
 }
 
 var Queue_JobAttachmentSettingsFields = ubx.FieldMap{
-		"RootPrefix": ubx.FieldSpec{WireName: "root_prefix"},
-		"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
-	}
+	"RootPrefix":   ubx.FieldSpec{WireName: "root_prefix"},
+	"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
+}
 
 var Queue_JobRunAsUser_PosixFields = ubx.FieldMap{
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"User": ubx.FieldSpec{WireName: "user"},
-	}
+	"Group": ubx.FieldSpec{WireName: "group"},
+	"User":  ubx.FieldSpec{WireName: "user"},
+}
 
 var Queue_JobRunAsUser_WindowsFields = ubx.FieldMap{
-		"PasswordArn": ubx.FieldSpec{WireName: "password_arn"},
-		"User": ubx.FieldSpec{WireName: "user"},
-	}
+	"PasswordArn": ubx.FieldSpec{WireName: "password_arn"},
+	"User":        ubx.FieldSpec{WireName: "user"},
+}
 
 var Queue_JobRunAsUserFields = ubx.FieldMap{
-		"Posix": ubx.FieldSpec{
-			WireName: "posix",
-			Kind: "object",
-			Fields: Queue_JobRunAsUser_PosixFields,
-		},
-		"RunAs": ubx.FieldSpec{WireName: "run_as"},
-		"Windows": ubx.FieldSpec{
-			WireName: "windows",
-			Kind: "object",
-			Fields: Queue_JobRunAsUser_WindowsFields,
-		},
-	}
+	"Posix": ubx.FieldSpec{
+		WireName: "posix",
+		Kind:     "object",
+		Fields:   Queue_JobRunAsUser_PosixFields,
+	},
+	"RunAs": ubx.FieldSpec{WireName: "run_as"},
+	"Windows": ubx.FieldSpec{
+		WireName: "windows",
+		Kind:     "object",
+		Fields:   Queue_JobRunAsUser_WindowsFields,
+	},
+}
 
 var Queue_SchedulingConfiguration_PriorityBalancedFields = ubx.FieldMap{
-		"RenderingTaskBuffer": ubx.FieldSpec{WireName: "rendering_task_buffer"},
-	}
+	"RenderingTaskBuffer": ubx.FieldSpec{WireName: "rendering_task_buffer"},
+}
 
 var Queue_SchedulingConfiguration_WeightedBalanced_MaxPriorityOverrideFields = ubx.FieldMap{
-		"AlwaysScheduleFirst": ubx.FieldSpec{WireName: "always_schedule_first"},
-	}
+	"AlwaysScheduleFirst": ubx.FieldSpec{WireName: "always_schedule_first"},
+}
 
 var Queue_SchedulingConfiguration_WeightedBalanced_MinPriorityOverrideFields = ubx.FieldMap{
-		"AlwaysScheduleLast": ubx.FieldSpec{WireName: "always_schedule_last"},
-	}
+	"AlwaysScheduleLast": ubx.FieldSpec{WireName: "always_schedule_last"},
+}
 
 var Queue_SchedulingConfiguration_WeightedBalancedFields = ubx.FieldMap{
-		"ErrorWeight": ubx.FieldSpec{WireName: "error_weight"},
-		"MaxPriorityOverride": ubx.FieldSpec{
-			WireName: "max_priority_override",
-			Kind: "object",
-			Fields: Queue_SchedulingConfiguration_WeightedBalanced_MaxPriorityOverrideFields,
-		},
-		"MinPriorityOverride": ubx.FieldSpec{
-			WireName: "min_priority_override",
-			Kind: "object",
-			Fields: Queue_SchedulingConfiguration_WeightedBalanced_MinPriorityOverrideFields,
-		},
-		"PriorityWeight": ubx.FieldSpec{WireName: "priority_weight"},
-		"RenderingTaskBuffer": ubx.FieldSpec{WireName: "rendering_task_buffer"},
-		"RenderingTaskWeight": ubx.FieldSpec{WireName: "rendering_task_weight"},
-		"SubmissionTimeWeight": ubx.FieldSpec{WireName: "submission_time_weight"},
-	}
+	"ErrorWeight": ubx.FieldSpec{WireName: "error_weight"},
+	"MaxPriorityOverride": ubx.FieldSpec{
+		WireName: "max_priority_override",
+		Kind:     "object",
+		Fields:   Queue_SchedulingConfiguration_WeightedBalanced_MaxPriorityOverrideFields,
+	},
+	"MinPriorityOverride": ubx.FieldSpec{
+		WireName: "min_priority_override",
+		Kind:     "object",
+		Fields:   Queue_SchedulingConfiguration_WeightedBalanced_MinPriorityOverrideFields,
+	},
+	"PriorityWeight":       ubx.FieldSpec{WireName: "priority_weight"},
+	"RenderingTaskBuffer":  ubx.FieldSpec{WireName: "rendering_task_buffer"},
+	"RenderingTaskWeight":  ubx.FieldSpec{WireName: "rendering_task_weight"},
+	"SubmissionTimeWeight": ubx.FieldSpec{WireName: "submission_time_weight"},
+}
 
 var Queue_SchedulingConfigurationFields = ubx.FieldMap{
-		"PriorityBalanced": ubx.FieldSpec{
-			WireName: "priority_balanced",
-			Kind: "object",
-			Fields: Queue_SchedulingConfiguration_PriorityBalancedFields,
-		},
-		"PriorityFifo": ubx.FieldSpec{WireName: "priority_fifo"},
-		"WeightedBalanced": ubx.FieldSpec{
-			WireName: "weighted_balanced",
-			Kind: "object",
-			Fields: Queue_SchedulingConfiguration_WeightedBalancedFields,
-		},
-	}
+	"PriorityBalanced": ubx.FieldSpec{
+		WireName: "priority_balanced",
+		Kind:     "object",
+		Fields:   Queue_SchedulingConfiguration_PriorityBalancedFields,
+	},
+	"PriorityFifo": ubx.FieldSpec{WireName: "priority_fifo"},
+	"WeightedBalanced": ubx.FieldSpec{
+		WireName: "weighted_balanced",
+		Kind:     "object",
+		Fields:   Queue_SchedulingConfiguration_WeightedBalancedFields,
+	},
+}
 
 var Queue_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type QueueConfig struct {
 	// Specifies the list of storage profile IDs that are allowed to be used by this Deadline Cloud queue for job attachments. (AI-inferred)
@@ -175,7 +175,7 @@ type QueueConfig struct {
 	// Specifies the names of file system locations that must be available and mounted for jobs in this Deadline Cloud queue to run. (AI-inferred)
 	RequiredFileSystemLocationNames any
 	// The ARN of the IAM role that the queue assumes to access AWS resources such as S3 buckets. (AI-inferred)
-	RoleArn any
+	RoleArn                 any
 	SchedulingConfiguration any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
@@ -203,7 +203,7 @@ type QueueAttrs struct {
 	// Specifies the names of file system locations that must be available and mounted for jobs in this Deadline Cloud queue to run. (AI-inferred)
 	RequiredFileSystemLocationNames any
 	// The ARN of the IAM role that the queue assumes to access AWS resources such as S3 buckets. (AI-inferred)
-	RoleArn any
+	RoleArn                 any
 	SchedulingConfiguration any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
@@ -213,31 +213,31 @@ var Queue = ubx.ResourceBinding{
 	WireType: "aws_deadline_queue",
 	Fields: ubx.FieldMap{
 		"AllowedStorageProfileIds": ubx.FieldSpec{WireName: "allowed_storage_profile_ids"},
-		"DefaultBudgetAction": ubx.FieldSpec{WireName: "default_budget_action"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"FarmId": ubx.FieldSpec{WireName: "farm_id"},
+		"DefaultBudgetAction":      ubx.FieldSpec{WireName: "default_budget_action"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
+		"DisplayName":              ubx.FieldSpec{WireName: "display_name"},
+		"FarmId":                   ubx.FieldSpec{WireName: "farm_id"},
 		"JobAttachmentSettings": ubx.FieldSpec{
 			WireName: "job_attachment_settings",
-			Kind: "object",
-			Fields: Queue_JobAttachmentSettingsFields,
+			Kind:     "object",
+			Fields:   Queue_JobAttachmentSettingsFields,
 		},
 		"JobRunAsUser": ubx.FieldSpec{
 			WireName: "job_run_as_user",
-			Kind: "object",
-			Fields: Queue_JobRunAsUserFields,
+			Kind:     "object",
+			Fields:   Queue_JobRunAsUserFields,
 		},
 		"RequiredFileSystemLocationNames": ubx.FieldSpec{WireName: "required_file_system_location_names"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":                         ubx.FieldSpec{WireName: "role_arn"},
 		"SchedulingConfiguration": ubx.FieldSpec{
 			WireName: "scheduling_configuration",
-			Kind: "object",
-			Fields: Queue_SchedulingConfigurationFields,
+			Kind:     "object",
+			Fields:   Queue_SchedulingConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Queue_TagsFields,
+			Kind:     "list",
+			Fields:   Queue_TagsFields,
 		},
 	},
 }

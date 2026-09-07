@@ -18,14 +18,14 @@ type AppInstanceUser_Tags struct {
 }
 
 var AppInstanceUser_ExpirationSettingsFields = ubx.FieldMap{
-		"ExpirationCriterion": ubx.FieldSpec{WireName: "expiration_criterion"},
-		"ExpirationDays": ubx.FieldSpec{WireName: "expiration_days"},
-	}
+	"ExpirationCriterion": ubx.FieldSpec{WireName: "expiration_criterion"},
+	"ExpirationDays":      ubx.FieldSpec{WireName: "expiration_days"},
+}
 
 var AppInstanceUser_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AppInstanceUserConfig struct {
 	// The ARN of the Amazon Chime AppInstance in which this user is created, uniquely identifying the parent app instance for the user. (AI-inferred)
@@ -62,19 +62,19 @@ type AppInstanceUserAttrs struct {
 var AppInstanceUser = ubx.ResourceBinding{
 	WireType: "aws_chime_app_instance_user",
 	Fields: ubx.FieldMap{
-		"AppInstanceArn": ubx.FieldSpec{WireName: "app_instance_arn"},
+		"AppInstanceArn":    ubx.FieldSpec{WireName: "app_instance_arn"},
 		"AppInstanceUserId": ubx.FieldSpec{WireName: "app_instance_user_id"},
 		"ExpirationSettings": ubx.FieldSpec{
 			WireName: "expiration_settings",
-			Kind: "object",
-			Fields: AppInstanceUser_ExpirationSettingsFields,
+			Kind:     "object",
+			Fields:   AppInstanceUser_ExpirationSettingsFields,
 		},
 		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AppInstanceUser_TagsFields,
+			Kind:     "list",
+			Fields:   AppInstanceUser_TagsFields,
 		},
 	},
 }

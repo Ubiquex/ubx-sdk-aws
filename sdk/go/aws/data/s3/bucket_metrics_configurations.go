@@ -4,48 +4,48 @@ package s3
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BucketMetricsConfigurations_MetricsConfigurationList_Filter_And_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type BucketMetricsConfigurations_MetricsConfigurationList_Filter_And struct {
 	AccessPointArn any
-	Prefix any
-	Tags any
+	Prefix         any
+	Tags           any
 }
 
 type BucketMetricsConfigurations_MetricsConfigurationList_Filter struct {
 	AccessPointArn any
-	And any
-	Prefix any
-	Tag any
+	And            any
+	Prefix         any
+	Tag            any
 }
 
 type BucketMetricsConfigurations_MetricsConfigurationList struct {
 	Filter any
-	Id any
+	Id     any
 }
 
 type BucketMetricsConfigurationsConfig struct {
-	Bucket any
-	ContinuationToken any
+	Bucket              any
+	ContinuationToken   any
 	ExpectedBucketOwner any
 }
 
 type BucketMetricsConfigurationsAttrs struct {
-	Bucket any
-	ContinuationToken any
-	ExpectedBucketOwner any
-	IsTruncated any
+	Bucket                   any
+	ContinuationToken        any
+	ExpectedBucketOwner      any
+	IsTruncated              any
 	MetricsConfigurationList any
-	NextContinuationToken any
+	NextContinuationToken    any
 }
 
 var BucketMetricsConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_metrics_configurations",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"ContinuationToken": ubx.FieldSpec{WireName: "continuation_token"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
+		"ContinuationToken":   ubx.FieldSpec{WireName: "continuation_token"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
 	},
 }

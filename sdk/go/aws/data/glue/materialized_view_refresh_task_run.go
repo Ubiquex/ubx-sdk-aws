@@ -4,39 +4,39 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MaterializedViewRefreshTaskRun_MaterializedViewRefreshTaskRun struct {
-	CatalogId any
-	CreationTime any
-	CustomerId any
-	DatabaseName any
-	Dpuseconds any
-	EndTime any
-	ErrorMessage any
-	LastUpdated any
+	CatalogId                        any
+	CreationTime                     any
+	CustomerId                       any
+	DatabaseName                     any
+	Dpuseconds                       any
+	EndTime                          any
+	ErrorMessage                     any
+	LastUpdated                      any
 	MaterializedViewRefreshTaskRunId any
-	ProcessedBytes any
-	RefreshType any
-	Role any
-	StartTime any
-	Status any
-	TableName any
+	ProcessedBytes                   any
+	RefreshType                      any
+	Role                             any
+	StartTime                        any
+	Status                           any
+	TableName                        any
 }
 
 type MaterializedViewRefreshTaskRunConfig struct {
-	CatalogId any
+	CatalogId                        any
 	MaterializedViewRefreshTaskRunId any
 }
 
 type MaterializedViewRefreshTaskRunAttrs struct {
 	CatalogId any
 	// <p>The object that shows the details of the materialized view refresh task run.</p>
-	MaterializedViewRefreshTaskRun any
+	MaterializedViewRefreshTaskRun   any
 	MaterializedViewRefreshTaskRunId any
 }
 
 var MaterializedViewRefreshTaskRun = ubx.DataSourceBinding{
 	WireType: "aws_glue_materialized_view_refresh_task_run",
 	Fields: ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
+		"CatalogId":                        ubx.FieldSpec{WireName: "catalog_id"},
 		"MaterializedViewRefreshTaskRunId": ubx.FieldSpec{WireName: "materialized_view_refresh_task_run_id"},
 	},
 }

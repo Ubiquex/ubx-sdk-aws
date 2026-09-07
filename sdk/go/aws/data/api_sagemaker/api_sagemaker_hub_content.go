@@ -4,46 +4,46 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerHubContent_HubContentDependencies struct {
-	DependencyCopyPath any
+	DependencyCopyPath   any
 	DependencyOriginPath any
 }
 
 type ApiSagemakerHubContentConfig struct {
-	HubContentName any
-	HubContentType any
+	HubContentName    any
+	HubContentType    any
 	HubContentVersion any
-	HubName any
+	HubName           any
 }
 
 type ApiSagemakerHubContentAttrs struct {
-	CreationTime any
-	DocumentSchemaVersion any
-	FailureReason any
-	HubArn any
-	HubContentArn any
-	HubContentDependencies any
-	HubContentDescription any
-	HubContentDisplayName any
-	HubContentDocument any
-	HubContentMarkdown any
-	HubContentName any
-	HubContentSearchKeywords any
-	HubContentStatus any
-	HubContentType any
-	HubContentVersion any
-	HubName any
-	LastModifiedTime any
-	ReferenceMinVersion any
+	CreationTime                 any
+	DocumentSchemaVersion        any
+	FailureReason                any
+	HubArn                       any
+	HubContentArn                any
+	HubContentDependencies       any
+	HubContentDescription        any
+	HubContentDisplayName        any
+	HubContentDocument           any
+	HubContentMarkdown           any
+	HubContentName               any
+	HubContentSearchKeywords     any
+	HubContentStatus             any
+	HubContentType               any
+	HubContentVersion            any
+	HubName                      any
+	LastModifiedTime             any
+	ReferenceMinVersion          any
 	SageMakerPublicHubContentArn any
-	SupportStatus any
+	SupportStatus                any
 }
 
 var ApiSagemakerHubContent = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_hub_content",
 	Fields: ubx.FieldMap{
-		"HubContentName": ubx.FieldSpec{WireName: "hub_content_name"},
-		"HubContentType": ubx.FieldSpec{WireName: "hub_content_type"},
+		"HubContentName":    ubx.FieldSpec{WireName: "hub_content_name"},
+		"HubContentType":    ubx.FieldSpec{WireName: "hub_content_type"},
 		"HubContentVersion": ubx.FieldSpec{WireName: "hub_content_version"},
-		"HubName": ubx.FieldSpec{WireName: "hub_name"},
+		"HubName":           ubx.FieldSpec{WireName: "hub_name"},
 	},
 }

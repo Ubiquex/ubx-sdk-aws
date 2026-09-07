@@ -8,14 +8,14 @@ type CoreDeviceConfig struct {
 }
 
 type CoreDeviceAttrs struct {
-	Architecture any
-	CoreDeviceThingName any
-	CoreVersion any
+	Architecture              any
+	CoreDeviceThingName       any
+	CoreVersion               any
 	LastStatusUpdateTimestamp any
-	Platform any
-	Runtime any
-	Status any
-	Tags any
+	Platform                  any
+	Runtime                   any
+	Status                    any
+	Tags                      any
 }
 
 var CoreDevice = ubx.DataSourceBinding{

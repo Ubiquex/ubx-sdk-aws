@@ -4,37 +4,37 @@ package ssm_contacts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmContactsEngagements_Engagements struct {
-	ContactArn any
+	ContactArn    any
 	EngagementArn any
-	IncidentId any
-	Sender any
-	StartTime any
-	StopTime any
+	IncidentId    any
+	Sender        any
+	StartTime     any
+	StopTime      any
 }
 
 type SsmContactsEngagements_TimeRangeValue struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 var SsmContactsEngagements_TimeRangeValueFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 type SsmContactsEngagementsConfig struct {
 	IncidentId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>A range of between two set times</p>
 	TimeRangeValue any
 }
 
 type SsmContactsEngagementsAttrs struct {
 	Engagements any
-	IncidentId any
-	MaxResults any
-	NextToken any
+	IncidentId  any
+	MaxResults  any
+	NextToken   any
 	// <p>A range of between two set times</p>
 	TimeRangeValue any
 }
@@ -44,11 +44,11 @@ var SsmContactsEngagements = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"IncidentId": ubx.FieldSpec{WireName: "incident_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"TimeRangeValue": ubx.FieldSpec{
 			WireName: "time_range_value",
-			Kind: "object",
-			Fields: SsmContactsEngagements_TimeRangeValueFields,
+			Kind:     "object",
+			Fields:   SsmContactsEngagements_TimeRangeValueFields,
 		},
 	},
 }

@@ -4,7 +4,7 @@ package appconfig
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountSettings_DeletionProtection struct {
-	Enabled any
+	Enabled                   any
 	ProtectionPeriodInMinutes any
 }
 
@@ -24,6 +24,5 @@ type AccountSettingsAttrs struct {
 
 var AccountSettings = ubx.DataSourceBinding{
 	WireType: "aws_appconfig_account_settings",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

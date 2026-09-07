@@ -4,25 +4,25 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserProficiencies_UserProficiencyList struct {
-	AttributeName any
+	AttributeName  any
 	AttributeValue any
-	Level any
+	Level          any
 }
 
 type UserProficienciesConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
-	UserId any
+	NextToken  any
+	UserId     any
 }
 
 type UserProficienciesAttrs struct {
-	InstanceId any
-	LastModifiedRegion any
-	LastModifiedTime any
-	MaxResults any
-	NextToken any
-	UserId any
+	InstanceId          any
+	LastModifiedRegion  any
+	LastModifiedTime    any
+	MaxResults          any
+	NextToken           any
+	UserId              any
 	UserProficiencyList any
 }
 
@@ -31,7 +31,7 @@ var UserProficiencies = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"UserId":     ubx.FieldSpec{WireName: "user_id"},
 	},
 }

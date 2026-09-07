@@ -4,39 +4,39 @@ package imagebuilder
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LifecyclePolicies_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type LifecyclePolicies_LifecyclePolicySummaryList struct {
-	Arn any
-	DateCreated any
-	DateLastRun any
-	DateUpdated any
-	Description any
+	Arn           any
+	DateCreated   any
+	DateLastRun   any
+	DateUpdated   any
+	Description   any
 	ExecutionRole any
-	Name any
-	ResourceType any
-	Status any
-	Tags any
+	Name          any
+	ResourceType  any
+	Status        any
+	Tags          any
 }
 
 var LifecyclePolicies_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type LifecyclePoliciesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type LifecyclePoliciesAttrs struct {
-	Filters any
+	Filters                    any
 	LifecyclePolicySummaryList any
-	MaxResults any
-	NextToken any
+	MaxResults                 any
+	NextToken                  any
 }
 
 var LifecyclePolicies = ubx.DataSourceBinding{
@@ -44,10 +44,10 @@ var LifecyclePolicies = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: LifecyclePolicies_FiltersFields,
+			Kind:     "list",
+			Fields:   LifecyclePolicies_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

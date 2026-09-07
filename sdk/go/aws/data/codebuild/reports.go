@@ -8,24 +8,24 @@ type Reports_Filter struct {
 }
 
 var Reports_FilterFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 type ReportsConfig struct {
 	// <p> A filter used to return reports with the status specified by the input <code>status</code> parameter. </p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
-	SortOrder any
+	NextToken  any
+	SortOrder  any
 }
 
 type ReportsAttrs struct {
 	// <p> A filter used to return reports with the status specified by the input <code>status</code> parameter. </p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
-	Reports any
-	SortOrder any
+	NextToken  any
+	Reports    any
+	SortOrder  any
 }
 
 var Reports = ubx.DataSourceBinding{
@@ -33,11 +33,11 @@ var Reports = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: Reports_FilterFields,
+			Kind:     "object",
+			Fields:   Reports_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"SortOrder":  ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

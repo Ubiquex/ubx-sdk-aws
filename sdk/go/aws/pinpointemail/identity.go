@@ -18,14 +18,14 @@ type Identity_Tags struct {
 }
 
 var Identity_MailFromAttributesFields = ubx.FieldMap{
-		"BehaviorOnMxFailure": ubx.FieldSpec{WireName: "behavior_on_mx_failure"},
-		"MailFromDomain": ubx.FieldSpec{WireName: "mail_from_domain"},
-	}
+	"BehaviorOnMxFailure": ubx.FieldSpec{WireName: "behavior_on_mx_failure"},
+	"MailFromDomain":      ubx.FieldSpec{WireName: "mail_from_domain"},
+}
 
 var Identity_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IdentityConfig struct {
 	// Specifies whether DKIM signing is enabled for the email identity, allowing emails sent from the identity to be signed with the associated DKIM key. (AI-inferred)
@@ -70,18 +70,18 @@ type IdentityAttrs struct {
 var Identity = ubx.ResourceBinding{
 	WireType: "aws_pinpoint_email_identity",
 	Fields: ubx.FieldMap{
-		"DkimSigningEnabled": ubx.FieldSpec{WireName: "dkim_signing_enabled"},
+		"DkimSigningEnabled":        ubx.FieldSpec{WireName: "dkim_signing_enabled"},
 		"FeedbackForwardingEnabled": ubx.FieldSpec{WireName: "feedback_forwarding_enabled"},
 		"MailFromAttributes": ubx.FieldSpec{
 			WireName: "mail_from_attributes",
-			Kind: "object",
-			Fields: Identity_MailFromAttributesFields,
+			Kind:     "object",
+			Fields:   Identity_MailFromAttributesFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Identity_TagsFields,
+			Kind:     "list",
+			Fields:   Identity_TagsFields,
 		},
 	},
 }

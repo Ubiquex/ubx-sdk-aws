@@ -4,26 +4,26 @@ package auditmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Notifications_Notifications struct {
-	AssessmentId any
+	AssessmentId   any
 	AssessmentName any
-	ControlSetId any
+	ControlSetId   any
 	ControlSetName any
-	Description any
-	EventTime any
-	Id any
-	Source any
+	Description    any
+	EventTime      any
+	Id             any
+	Source         any
 }
 
 type NotificationsConfig struct {
 	// Max results in the page.
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type NotificationsAttrs struct {
 	// Max results in the page.
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 	Notifications any
 }
 
@@ -31,6 +31,6 @@ var Notifications = ubx.DataSourceBinding{
 	WireType: "aws_auditmanager_notifications",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -11,9 +11,9 @@ type Project_Tags struct {
 }
 
 var Project_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ProjectConfig struct {
 	// The name of the project
@@ -37,8 +37,8 @@ var Project = ubx.ResourceBinding{
 		"ProjectName": ubx.FieldSpec{WireName: "project_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Project_TagsFields,
+			Kind:     "list",
+			Fields:   Project_TagsFields,
 		},
 	},
 }

@@ -4,10 +4,10 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Recommendations_Recommendations_RecommendedActions struct {
-	Command any
+	Command  any
 	Database any
-	Text any
-	Type any
+	Text     any
+	Type     any
 }
 
 type Recommendations_Recommendations_ReferenceLinks struct {
@@ -16,41 +16,41 @@ type Recommendations_Recommendations_ReferenceLinks struct {
 }
 
 type Recommendations_Recommendations struct {
-	ClusterIdentifier any
-	CreatedAt any
-	Description any
-	Id any
-	ImpactRanking any
-	NamespaceArn any
-	Observation any
+	ClusterIdentifier  any
+	CreatedAt          any
+	Description        any
+	Id                 any
+	ImpactRanking      any
+	NamespaceArn       any
+	Observation        any
 	RecommendationText any
 	RecommendationType any
 	RecommendedActions any
-	ReferenceLinks any
-	Title any
+	ReferenceLinks     any
+	Title              any
 }
 
 type RecommendationsConfig struct {
 	ClusterIdentifier any
-	Marker any
-	MaxRecords any
-	NamespaceArn any
+	Marker            any
+	MaxRecords        any
+	NamespaceArn      any
 }
 
 type RecommendationsAttrs struct {
 	ClusterIdentifier any
-	Marker any
-	MaxRecords any
-	NamespaceArn any
-	Recommendations any
+	Marker            any
+	MaxRecords        any
+	NamespaceArn      any
+	Recommendations   any
 }
 
 var Recommendations = ubx.DataSourceBinding{
 	WireType: "aws_redshift_recommendations",
 	Fields: ubx.FieldMap{
 		"ClusterIdentifier": ubx.FieldSpec{WireName: "cluster_identifier"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NamespaceArn": ubx.FieldSpec{WireName: "namespace_arn"},
+		"Marker":            ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":        ubx.FieldSpec{WireName: "max_records"},
+		"NamespaceArn":      ubx.FieldSpec{WireName: "namespace_arn"},
 	},
 }

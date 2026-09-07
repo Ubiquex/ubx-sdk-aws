@@ -5,22 +5,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Account_ThrottleSettings struct {
 	BurstLimit any
-	RateLimit any
+	RateLimit  any
 }
 
 type AccountConfig struct {
 }
 
 type AccountAttrs struct {
-	ApiKeyVersion any
+	ApiKeyVersion     any
 	CloudwatchRoleArn any
-	Features any
+	Features          any
 	// <p> The API request rate limits.</p>
 	ThrottleSettings any
 }
 
 var Account = ubx.DataSourceBinding{
 	WireType: "aws_apigateway_account",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

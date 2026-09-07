@@ -82,7 +82,7 @@ type Cluster_KubeControllerManagerConfig struct {
 }
 
 type Cluster_KubeSchedulerConfig_NodeResourcesFit_ScoringStrategy_Resources struct {
-	Name any
+	Name   any
 	Weight any
 }
 
@@ -209,193 +209,193 @@ type Cluster_UpgradePolicy struct {
 }
 
 var Cluster_AccessConfigFields = ubx.FieldMap{
-		"AuthenticationMode": ubx.FieldSpec{WireName: "authentication_mode"},
-		"BootstrapClusterCreatorAdminPermissions": ubx.FieldSpec{WireName: "bootstrap_cluster_creator_admin_permissions"},
-	}
+	"AuthenticationMode":                      ubx.FieldSpec{WireName: "authentication_mode"},
+	"BootstrapClusterCreatorAdminPermissions": ubx.FieldSpec{WireName: "bootstrap_cluster_creator_admin_permissions"},
+}
 
 var Cluster_ComputeConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"NodePools": ubx.FieldSpec{WireName: "node_pools"},
-		"NodeRoleArn": ubx.FieldSpec{WireName: "node_role_arn"},
-	}
+	"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+	"NodePools":   ubx.FieldSpec{WireName: "node_pools"},
+	"NodeRoleArn": ubx.FieldSpec{WireName: "node_role_arn"},
+}
 
 var Cluster_ControlPlaneScalingConfigFields = ubx.FieldMap{
-		"Tier": ubx.FieldSpec{WireName: "tier"},
-	}
+	"Tier": ubx.FieldSpec{WireName: "tier"},
+}
 
 var Cluster_EncryptionConfig_ProviderFields = ubx.FieldMap{
-		"KeyArn": ubx.FieldSpec{WireName: "key_arn"},
-	}
+	"KeyArn": ubx.FieldSpec{WireName: "key_arn"},
+}
 
 var Cluster_EncryptionConfigFields = ubx.FieldMap{
-		"Provider": ubx.FieldSpec{
-			WireName: "provider",
-			Kind: "object",
-			Fields: Cluster_EncryptionConfig_ProviderFields,
-		},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-	}
+	"Provider": ubx.FieldSpec{
+		WireName: "provider",
+		Kind:     "object",
+		Fields:   Cluster_EncryptionConfig_ProviderFields,
+	},
+	"Resources": ubx.FieldSpec{WireName: "resources"},
+}
 
 var Cluster_KubeApiServerConfig_ServiceNodePortRangeFields = ubx.FieldMap{
-		"MaxPort": ubx.FieldSpec{WireName: "max_port"},
-		"MinPort": ubx.FieldSpec{WireName: "min_port"},
-	}
+	"MaxPort": ubx.FieldSpec{WireName: "max_port"},
+	"MinPort": ubx.FieldSpec{WireName: "min_port"},
+}
 
 var Cluster_KubeApiServerConfigFields = ubx.FieldMap{
-		"EventTtl": ubx.FieldSpec{WireName: "event_ttl"},
-		"ServiceNodePortRange": ubx.FieldSpec{
-			WireName: "service_node_port_range",
-			Kind: "object",
-			Fields: Cluster_KubeApiServerConfig_ServiceNodePortRangeFields,
-		},
-	}
+	"EventTtl": ubx.FieldSpec{WireName: "event_ttl"},
+	"ServiceNodePortRange": ubx.FieldSpec{
+		WireName: "service_node_port_range",
+		Kind:     "object",
+		Fields:   Cluster_KubeApiServerConfig_ServiceNodePortRangeFields,
+	},
+}
 
 var Cluster_KubeControllerManagerConfig_HorizontalPodAutoscalerControllerConfigFields = ubx.FieldMap{
-		"HorizontalPodAutoscalerSyncPeriod": ubx.FieldSpec{WireName: "horizontal_pod_autoscaler_sync_period"},
-	}
+	"HorizontalPodAutoscalerSyncPeriod": ubx.FieldSpec{WireName: "horizontal_pod_autoscaler_sync_period"},
+}
 
 var Cluster_KubeControllerManagerConfig_PodGcControllerConfigFields = ubx.FieldMap{
-		"TerminatedPodGcThreshold": ubx.FieldSpec{WireName: "terminated_pod_gc_threshold"},
-	}
+	"TerminatedPodGcThreshold": ubx.FieldSpec{WireName: "terminated_pod_gc_threshold"},
+}
 
 var Cluster_KubeControllerManagerConfigFields = ubx.FieldMap{
-		"HorizontalPodAutoscalerControllerConfig": ubx.FieldSpec{
-			WireName: "horizontal_pod_autoscaler_controller_config",
-			Kind: "object",
-			Fields: Cluster_KubeControllerManagerConfig_HorizontalPodAutoscalerControllerConfigFields,
-		},
-		"PodGcControllerConfig": ubx.FieldSpec{
-			WireName: "pod_gc_controller_config",
-			Kind: "object",
-			Fields: Cluster_KubeControllerManagerConfig_PodGcControllerConfigFields,
-		},
-	}
+	"HorizontalPodAutoscalerControllerConfig": ubx.FieldSpec{
+		WireName: "horizontal_pod_autoscaler_controller_config",
+		Kind:     "object",
+		Fields:   Cluster_KubeControllerManagerConfig_HorizontalPodAutoscalerControllerConfigFields,
+	},
+	"PodGcControllerConfig": ubx.FieldSpec{
+		WireName: "pod_gc_controller_config",
+		Kind:     "object",
+		Fields:   Cluster_KubeControllerManagerConfig_PodGcControllerConfigFields,
+	},
+}
 
 var Cluster_KubeSchedulerConfig_NodeResourcesFit_ScoringStrategy_ResourcesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Weight": ubx.FieldSpec{WireName: "weight"},
+}
 
 var Cluster_KubeSchedulerConfig_NodeResourcesFit_ScoringStrategyFields = ubx.FieldMap{
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "list",
-			Fields: Cluster_KubeSchedulerConfig_NodeResourcesFit_ScoringStrategy_ResourcesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "list",
+		Fields:   Cluster_KubeSchedulerConfig_NodeResourcesFit_ScoringStrategy_ResourcesFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Cluster_KubeSchedulerConfig_NodeResourcesFitFields = ubx.FieldMap{
-		"ScoringStrategy": ubx.FieldSpec{
-			WireName: "scoring_strategy",
-			Kind: "object",
-			Fields: Cluster_KubeSchedulerConfig_NodeResourcesFit_ScoringStrategyFields,
-		},
-	}
+	"ScoringStrategy": ubx.FieldSpec{
+		WireName: "scoring_strategy",
+		Kind:     "object",
+		Fields:   Cluster_KubeSchedulerConfig_NodeResourcesFit_ScoringStrategyFields,
+	},
+}
 
 var Cluster_KubeSchedulerConfigFields = ubx.FieldMap{
-		"NodeResourcesFit": ubx.FieldSpec{
-			WireName: "node_resources_fit",
-			Kind: "object",
-			Fields: Cluster_KubeSchedulerConfig_NodeResourcesFitFields,
-		},
-	}
+	"NodeResourcesFit": ubx.FieldSpec{
+		WireName: "node_resources_fit",
+		Kind:     "object",
+		Fields:   Cluster_KubeSchedulerConfig_NodeResourcesFitFields,
+	},
+}
 
 var Cluster_Logging_ClusterLogging_EnabledTypesFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Cluster_Logging_ClusterLoggingFields = ubx.FieldMap{
-		"EnabledTypes": ubx.FieldSpec{
-			WireName: "enabled_types",
-			Kind: "list",
-			Fields: Cluster_Logging_ClusterLogging_EnabledTypesFields,
-		},
-	}
+	"EnabledTypes": ubx.FieldSpec{
+		WireName: "enabled_types",
+		Kind:     "list",
+		Fields:   Cluster_Logging_ClusterLogging_EnabledTypesFields,
+	},
+}
 
 var Cluster_LoggingFields = ubx.FieldMap{
-		"ClusterLogging": ubx.FieldSpec{
-			WireName: "cluster_logging",
-			Kind: "object",
-			Fields: Cluster_Logging_ClusterLoggingFields,
-		},
-	}
+	"ClusterLogging": ubx.FieldSpec{
+		WireName: "cluster_logging",
+		Kind:     "object",
+		Fields:   Cluster_Logging_ClusterLoggingFields,
+	},
+}
 
 var Cluster_OutpostConfig_ControlPlanePlacementFields = ubx.FieldMap{
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"SpreadLevel": ubx.FieldSpec{WireName: "spread_level"},
-	}
+	"GroupName":   ubx.FieldSpec{WireName: "group_name"},
+	"SpreadLevel": ubx.FieldSpec{WireName: "spread_level"},
+}
 
 var Cluster_OutpostConfig_EtcdPlacementFields = ubx.FieldMap{
-		"SpreadLevel": ubx.FieldSpec{WireName: "spread_level"},
-	}
+	"SpreadLevel": ubx.FieldSpec{WireName: "spread_level"},
+}
 
 var Cluster_OutpostConfigFields = ubx.FieldMap{
-		"ControlPlaneInstanceType": ubx.FieldSpec{WireName: "control_plane_instance_type"},
-		"ControlPlanePlacement": ubx.FieldSpec{
-			WireName: "control_plane_placement",
-			Kind: "object",
-			Fields: Cluster_OutpostConfig_ControlPlanePlacementFields,
-		},
-		"EtcdInstanceType": ubx.FieldSpec{WireName: "etcd_instance_type"},
-		"EtcdPlacement": ubx.FieldSpec{
-			WireName: "etcd_placement",
-			Kind: "object",
-			Fields: Cluster_OutpostConfig_EtcdPlacementFields,
-		},
-		"OutpostArns": ubx.FieldSpec{WireName: "outpost_arns"},
-	}
+	"ControlPlaneInstanceType": ubx.FieldSpec{WireName: "control_plane_instance_type"},
+	"ControlPlanePlacement": ubx.FieldSpec{
+		WireName: "control_plane_placement",
+		Kind:     "object",
+		Fields:   Cluster_OutpostConfig_ControlPlanePlacementFields,
+	},
+	"EtcdInstanceType": ubx.FieldSpec{WireName: "etcd_instance_type"},
+	"EtcdPlacement": ubx.FieldSpec{
+		WireName: "etcd_placement",
+		Kind:     "object",
+		Fields:   Cluster_OutpostConfig_EtcdPlacementFields,
+	},
+	"OutpostArns": ubx.FieldSpec{WireName: "outpost_arns"},
+}
 
 var Cluster_RemoteNetworkConfig_RemoteNodeNetworksFields = ubx.FieldMap{
-		"Cidrs": ubx.FieldSpec{WireName: "cidrs"},
-	}
+	"Cidrs": ubx.FieldSpec{WireName: "cidrs"},
+}
 
 var Cluster_RemoteNetworkConfigFields = ubx.FieldMap{
-		"RemoteNodeNetworks": ubx.FieldSpec{
-			WireName: "remote_node_networks",
-			Kind: "list",
-			Fields: Cluster_RemoteNetworkConfig_RemoteNodeNetworksFields,
-		},
-		"RemotePodNetworks": ubx.FieldSpec{
-			WireName: "remote_pod_networks",
-			Kind: "list",
-			Fields: Cluster_RemoteNetworkConfig_RemoteNodeNetworksFields,
-		},
-	}
+	"RemoteNodeNetworks": ubx.FieldSpec{
+		WireName: "remote_node_networks",
+		Kind:     "list",
+		Fields:   Cluster_RemoteNetworkConfig_RemoteNodeNetworksFields,
+	},
+	"RemotePodNetworks": ubx.FieldSpec{
+		WireName: "remote_pod_networks",
+		Kind:     "list",
+		Fields:   Cluster_RemoteNetworkConfig_RemoteNodeNetworksFields,
+	},
+}
 
 var Cluster_ResourcesVpcConfigFields = ubx.FieldMap{
-		"ControlPlaneEgressMode": ubx.FieldSpec{WireName: "control_plane_egress_mode"},
-		"EndpointPrivateAccess": ubx.FieldSpec{WireName: "endpoint_private_access"},
-		"EndpointPublicAccess": ubx.FieldSpec{WireName: "endpoint_public_access"},
-		"PublicAccessCidrs": ubx.FieldSpec{WireName: "public_access_cidrs"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"ControlPlaneEgressMode": ubx.FieldSpec{WireName: "control_plane_egress_mode"},
+	"EndpointPrivateAccess":  ubx.FieldSpec{WireName: "endpoint_private_access"},
+	"EndpointPublicAccess":   ubx.FieldSpec{WireName: "endpoint_public_access"},
+	"PublicAccessCidrs":      ubx.FieldSpec{WireName: "public_access_cidrs"},
+	"SecurityGroupIds":       ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":              ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 var Cluster_RollbackConfigFields = ubx.FieldMap{
-		"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
-	}
+	"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
+}
 
 var Cluster_KubernetesNetworkConfig_ElasticLoadBalancingFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Cluster_StorageConfigFields = ubx.FieldMap{
-		"BlockStorage": ubx.FieldSpec{
-			WireName: "block_storage",
-			Kind: "object",
-			Fields: Cluster_KubernetesNetworkConfig_ElasticLoadBalancingFields,
-		},
-	}
+	"BlockStorage": ubx.FieldSpec{
+		WireName: "block_storage",
+		Kind:     "object",
+		Fields:   Cluster_KubernetesNetworkConfig_ElasticLoadBalancingFields,
+	},
+}
 
 var Cluster_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Cluster_UpgradePolicyFields = ubx.FieldMap{
-		"SupportType": ubx.FieldSpec{WireName: "support_type"},
-	}
+	"SupportType": ubx.FieldSpec{WireName: "support_type"},
+}
 
 type ClusterConfig struct {
 	// An object representing the Access Config to use for the cluster.
@@ -518,90 +518,90 @@ var Cluster = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessConfig": ubx.FieldSpec{
 			WireName: "access_config",
-			Kind: "object",
-			Fields: Cluster_AccessConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_AccessConfigFields,
 		},
 		"ActiveCertificateAuthorityId": ubx.FieldSpec{WireName: "active_certificate_authority_id"},
-		"BootstrapSelfManagedAddons": ubx.FieldSpec{WireName: "bootstrap_self_managed_addons"},
+		"BootstrapSelfManagedAddons":   ubx.FieldSpec{WireName: "bootstrap_self_managed_addons"},
 		"ComputeConfig": ubx.FieldSpec{
 			WireName: "compute_config",
-			Kind: "object",
-			Fields: Cluster_ComputeConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_ComputeConfigFields,
 		},
 		"ControlPlaneScalingConfig": ubx.FieldSpec{
 			WireName: "control_plane_scaling_config",
-			Kind: "object",
-			Fields: Cluster_ControlPlaneScalingConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_ControlPlaneScalingConfigFields,
 		},
 		"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind: "list",
-			Fields: Cluster_EncryptionConfigFields,
+			Kind:     "list",
+			Fields:   Cluster_EncryptionConfigFields,
 		},
 		"Force": ubx.FieldSpec{WireName: "force"},
 		"KubeApiServerConfig": ubx.FieldSpec{
 			WireName: "kube_api_server_config",
-			Kind: "object",
-			Fields: Cluster_KubeApiServerConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_KubeApiServerConfigFields,
 		},
 		"KubeControllerManagerConfig": ubx.FieldSpec{
 			WireName: "kube_controller_manager_config",
-			Kind: "object",
-			Fields: Cluster_KubeControllerManagerConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_KubeControllerManagerConfigFields,
 		},
 		"KubeSchedulerConfig": ubx.FieldSpec{
 			WireName: "kube_scheduler_config",
-			Kind: "object",
-			Fields: Cluster_KubeSchedulerConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_KubeSchedulerConfigFields,
 		},
 		"Logging": ubx.FieldSpec{
 			WireName: "logging",
-			Kind: "object",
-			Fields: Cluster_LoggingFields,
+			Kind:     "object",
+			Fields:   Cluster_LoggingFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"OutpostConfig": ubx.FieldSpec{
 			WireName: "outpost_config",
-			Kind: "object",
-			Fields: Cluster_OutpostConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_OutpostConfigFields,
 		},
 		"RemoteNetworkConfig": ubx.FieldSpec{
 			WireName: "remote_network_config",
-			Kind: "object",
-			Fields: Cluster_RemoteNetworkConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_RemoteNetworkConfigFields,
 		},
 		"ResourcesVpcConfig": ubx.FieldSpec{
 			WireName: "resources_vpc_config",
-			Kind: "object",
-			Fields: Cluster_ResourcesVpcConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_ResourcesVpcConfigFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"RollbackConfig": ubx.FieldSpec{
 			WireName: "rollback_config",
-			Kind: "object",
-			Fields: Cluster_RollbackConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_RollbackConfigFields,
 		},
 		"StorageConfig": ubx.FieldSpec{
 			WireName: "storage_config",
-			Kind: "object",
-			Fields: Cluster_StorageConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_StorageConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Cluster_TagsFields,
+			Kind:     "list",
+			Fields:   Cluster_TagsFields,
 		},
 		"UpgradePolicy": ubx.FieldSpec{
 			WireName: "upgrade_policy",
-			Kind: "object",
-			Fields: Cluster_UpgradePolicyFields,
+			Kind:     "object",
+			Fields:   Cluster_UpgradePolicyFields,
 		},
 		"Version": ubx.FieldSpec{WireName: "version"},
 		"ZonalShiftConfig": ubx.FieldSpec{
 			WireName: "zonal_shift_config",
-			Kind: "object",
-			Fields: Cluster_KubernetesNetworkConfig_ElasticLoadBalancingFields,
+			Kind:     "object",
+			Fields:   Cluster_KubernetesNetworkConfig_ElasticLoadBalancingFields,
 		},
 	},
 }

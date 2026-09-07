@@ -8,8 +8,8 @@ type SensitivityInspectionTemplate_Excludes struct {
 }
 
 type SensitivityInspectionTemplate_Includes struct {
-	AllowListIds any
-	CustomDataIdentifierIds any
+	AllowListIds             any
+	CustomDataIdentifierIds  any
 	ManagedDataIdentifierIds any
 }
 
@@ -21,10 +21,10 @@ type SensitivityInspectionTemplateAttrs struct {
 	Description any
 	// <p>Specifies managed data identifiers to exclude (not use) when performing automated sensitive data discovery. For information about the managed data identifiers that Amazon Macie currently provides, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
 	Excludes any
-	Id any
+	Id       any
 	// <p>Specifies the allow lists, custom data identifiers, and managed data identifiers to include (use) when performing automated sensitive data discovery. The configuration must specify at least one custom data identifier or managed data identifier. For information about the managed data identifiers that Amazon Macie currently provides, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
 	Includes any
-	Name any
+	Name     any
 	// <p>The unique identifier for the sensitivity inspection template.</p>
 	SensitivityInspectionTemplateId any
 }

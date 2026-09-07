@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CatalogImportStatus_ImportStatus struct {
 	ImportCompleted any
-	ImportTime any
-	ImportedBy any
+	ImportTime      any
+	ImportedBy      any
 }
 
 type CatalogImportStatusConfig struct {

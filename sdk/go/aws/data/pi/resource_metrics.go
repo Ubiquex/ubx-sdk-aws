@@ -5,89 +5,89 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceMetrics_MetricList_DataPoints struct {
 	Timestamp any
-	Value any
+	Value     any
 }
 
 type ResourceMetrics_MetricList_Key struct {
 	Dimensions any
-	Metric any
+	Metric     any
 }
 
 type ResourceMetrics_MetricList struct {
 	DataPoints any
-	Key any
+	Key        any
 }
 
 type ResourceMetrics_MetricQueries_GroupBy struct {
 	Dimensions any
-	Group any
-	Limit any
+	Group      any
+	Limit      any
 }
 
 type ResourceMetrics_MetricQueries struct {
-	Filter any
+	Filter  any
 	GroupBy any
-	Metric any
+	Metric  any
 }
 
 var ResourceMetrics_MetricQueries_GroupByFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-	}
+	"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
+	"Group":      ubx.FieldSpec{WireName: "group"},
+	"Limit":      ubx.FieldSpec{WireName: "limit"},
+}
 
 var ResourceMetrics_MetricQueriesFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"GroupBy": ubx.FieldSpec{
-			WireName: "group_by",
-			Kind: "object",
-			Fields: ResourceMetrics_MetricQueries_GroupByFields,
-		},
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-	}
+	"Filter": ubx.FieldSpec{WireName: "filter"},
+	"GroupBy": ubx.FieldSpec{
+		WireName: "group_by",
+		Kind:     "object",
+		Fields:   ResourceMetrics_MetricQueries_GroupByFields,
+	},
+	"Metric": ubx.FieldSpec{WireName: "metric"},
+}
 
 type ResourceMetricsConfig struct {
-	EndTime any
-	Identifier any
-	MaxResults any
-	MetricQueries any
-	NextToken any
+	EndTime         any
+	Identifier      any
+	MaxResults      any
+	MetricQueries   any
+	NextToken       any
 	PeriodAlignment any
 	PeriodInSeconds any
-	ServiceType any
-	StartTime any
+	ServiceType     any
+	StartTime       any
 }
 
 type ResourceMetricsAttrs struct {
-	AlignedEndTime any
+	AlignedEndTime   any
 	AlignedStartTime any
-	EndTime any
-	Identifier any
-	MaxResults any
-	MetricList any
-	MetricQueries any
-	NextToken any
-	PeriodAlignment any
-	PeriodInSeconds any
-	ServiceType any
-	StartTime any
+	EndTime          any
+	Identifier       any
+	MaxResults       any
+	MetricList       any
+	MetricQueries    any
+	NextToken        any
+	PeriodAlignment  any
+	PeriodInSeconds  any
+	ServiceType      any
+	StartTime        any
 }
 
 var ResourceMetrics = ubx.DataSourceBinding{
 	WireType: "aws_pi_resource_metrics",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":    ubx.FieldSpec{WireName: "end_time"},
 		"Identifier": ubx.FieldSpec{WireName: "identifier"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
 		"MetricQueries": ubx.FieldSpec{
 			WireName: "metric_queries",
-			Kind: "list",
-			Fields: ResourceMetrics_MetricQueriesFields,
+			Kind:     "list",
+			Fields:   ResourceMetrics_MetricQueriesFields,
 		},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 		"PeriodAlignment": ubx.FieldSpec{WireName: "period_alignment"},
 		"PeriodInSeconds": ubx.FieldSpec{WireName: "period_in_seconds"},
-		"ServiceType": ubx.FieldSpec{WireName: "service_type"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"ServiceType":     ubx.FieldSpec{WireName: "service_type"},
+		"StartTime":       ubx.FieldSpec{WireName: "start_time"},
 	},
 }

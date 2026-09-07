@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MigrationhubStrategyApplicationComponentDetails_ApplicationComponentDetail_AntipatternReportS3Object struct {
 	S3Bucket any
-	S3key any
+	S3key    any
 }
 
 type MigrationhubStrategyApplicationComponentDetails_ApplicationComponentDetail_AppUnitError struct {
@@ -17,87 +17,87 @@ type MigrationhubStrategyApplicationComponentDetails_ApplicationComponentDetail_
 }
 
 type MigrationhubStrategyApplicationComponentDetails_ApplicationComponentDetail_ListAntipatternSeveritySummary struct {
-	Count any
+	Count    any
 	Severity any
 }
 
 type MigrationhubStrategyApplicationComponentDetails_ApplicationComponentDetail_RecommendationSet_TransformationTool struct {
-	Description any
-	Name any
+	Description                       any
+	Name                              any
 	TranformationToolInstallationLink any
 }
 
 type MigrationhubStrategyApplicationComponentDetails_ApplicationComponentDetail_RecommendationSet struct {
-	Strategy any
+	Strategy          any
 	TargetDestination any
 	// <p> Information of the transformation tool that can be used to migrate and modernize the application. </p>
 	TransformationTool any
 }
 
 type MigrationhubStrategyApplicationComponentDetails_ApplicationComponentDetail_ResultList_AnalysisStatus struct {
-	RuntimeAnalysisStatus any
+	RuntimeAnalysisStatus     any
 	SrcCodeOrDbAnalysisStatus any
 }
 
 type MigrationhubStrategyApplicationComponentDetails_ApplicationComponentDetail_ResultList_AntipatternReportResultList_AnalyzerName struct {
-	BinaryAnalyzerName any
-	RunTimeAnalyzerName any
+	BinaryAnalyzerName     any
+	RunTimeAnalyzerName    any
 	SourceCodeAnalyzerName any
 }
 
 type MigrationhubStrategyApplicationComponentDetails_ApplicationComponentDetail_ResultList_AntipatternReportResultList struct {
-	AnalyzerName any
-	AntiPatternReportS3Object any
-	AntipatternReportStatus any
+	AnalyzerName                   any
+	AntiPatternReportS3Object      any
+	AntipatternReportStatus        any
 	AntipatternReportStatusMessage any
 }
 
 type MigrationhubStrategyApplicationComponentDetails_ApplicationComponentDetail_ResultList struct {
-	AnalysisStatus any
-	AnalysisType any
+	AnalysisStatus              any
+	AnalysisType                any
 	AntipatternReportResultList any
-	StatusMessage any
+	StatusMessage               any
 }
 
 type MigrationhubStrategyApplicationComponentDetails_ApplicationComponentDetail_SourceCodeRepositories struct {
-	Branch any
-	ProjectName any
-	Repository any
+	Branch             any
+	ProjectName        any
+	Repository         any
 	VersionControlType any
 }
 
 type MigrationhubStrategyApplicationComponentDetails_ApplicationComponentDetail struct {
 	AnalysisStatus any
 	// <p> Contains the S3 bucket name and the Amazon S3 key name. </p>
-	AntipatternReportS3Object any
-	AntipatternReportStatus any
+	AntipatternReportS3Object      any
+	AntipatternReportStatus        any
 	AntipatternReportStatusMessage any
-	AppType any
+	AppType                        any
 	// <p>Error in the analysis of the application unit.</p>
-	AppUnitError any
+	AppUnitError       any
 	AssociatedServerId any
 	// <p> Configuration information used for assessing databases. </p>
-	DatabaseConfigDetail any
-	Id any
-	InclusionStatus any
-	LastAnalyzedTimestamp any
+	DatabaseConfigDetail           any
+	Id                             any
+	InclusionStatus                any
+	LastAnalyzedTimestamp          any
 	ListAntipatternSeveritySummary any
-	MoreServerAssociationExists any
-	Name any
-	OsDriver any
-	OsVersion any
+	MoreServerAssociationExists    any
+	Name                           any
+	OsDriver                       any
+	OsVersion                      any
 	// <p> Contains a recommendation set. </p>
-	RecommendationSet any
-	ResourceSubType any
-	ResultList any
-	RuntimeStatus any
-	RuntimeStatusMessage any
+	RecommendationSet      any
+	ResourceSubType        any
+	ResultList             any
+	RuntimeStatus          any
+	RuntimeStatusMessage   any
 	SourceCodeRepositories any
-	StatusMessage any
+	StatusMessage          any
 }
 
 type MigrationhubStrategyApplicationComponentDetails_AssociatedApplications struct {
-	Id any
+	Id   any
 	Name any
 }
 
@@ -108,10 +108,10 @@ type MigrationhubStrategyApplicationComponentDetailsConfig struct {
 type MigrationhubStrategyApplicationComponentDetailsAttrs struct {
 	// <p> Contains detailed information about an application component. </p>
 	ApplicationComponentDetail any
-	ApplicationComponentId any
-	AssociatedApplications any
-	AssociatedServerIds any
-	MoreApplicationResource any
+	ApplicationComponentId     any
+	AssociatedApplications     any
+	AssociatedServerIds        any
+	MoreApplicationResource    any
 }
 
 var MigrationhubStrategyApplicationComponentDetails = ubx.DataSourceBinding{

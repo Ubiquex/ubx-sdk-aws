@@ -8,7 +8,7 @@ type TagsForResourceConfig struct {
 }
 
 type TagsForResourceAttrs struct {
-	Arn any
+	Arn  any
 	Tags any
 }
 

@@ -4,10 +4,10 @@ package sts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DelegatedAccessToken_Credentials struct {
-	AccessKeyId any
-	Expiration any
+	AccessKeyId     any
+	Expiration      any
 	SecretAccessKey any
-	SessionToken any
+	SessionToken    any
 }
 
 type DelegatedAccessTokenConfig struct {
@@ -17,9 +17,9 @@ type DelegatedAccessTokenConfig struct {
 type DelegatedAccessTokenAttrs struct {
 	AssumedPrincipal any
 	// <p>Amazon Web Services credentials for API authentication.</p>
-	Credentials any
+	Credentials      any
 	PackedPolicySize any
-	TradeInToken any
+	TradeInToken     any
 }
 
 var DelegatedAccessToken = ubx.DataSourceBinding{

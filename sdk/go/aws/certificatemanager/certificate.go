@@ -14,20 +14,20 @@ type Certificate_DomainValidationOptions struct {
 
 type Certificate_Tags struct {
 	// The key of a user-defined tag attached to the AWS Certificate Manager certificate, used for metadata, cost allocation, and resource organization. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Certificate_DomainValidationOptionsFields = ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"HostedZoneId": ubx.FieldSpec{WireName: "hosted_zone_id"},
-		"ValidationDomain": ubx.FieldSpec{WireName: "validation_domain"},
-	}
+	"DomainName":       ubx.FieldSpec{WireName: "domain_name"},
+	"HostedZoneId":     ubx.FieldSpec{WireName: "hosted_zone_id"},
+	"ValidationDomain": ubx.FieldSpec{WireName: "validation_domain"},
+}
 
 var Certificate_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CertificateConfig struct {
 	// The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate.
@@ -76,21 +76,21 @@ type CertificateAttrs struct {
 var Certificate = ubx.ResourceBinding{
 	WireType: "aws_certificate_manager_certificate",
 	Fields: ubx.FieldMap{
-		"CertificateAuthorityArn": ubx.FieldSpec{WireName: "certificate_authority_arn"},
-		"CertificateExport": ubx.FieldSpec{WireName: "certificate_export"},
+		"CertificateAuthorityArn":                  ubx.FieldSpec{WireName: "certificate_authority_arn"},
+		"CertificateExport":                        ubx.FieldSpec{WireName: "certificate_export"},
 		"CertificateTransparencyLoggingPreference": ubx.FieldSpec{WireName: "certificate_transparency_logging_preference"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":                               ubx.FieldSpec{WireName: "domain_name"},
 		"DomainValidationOptions": ubx.FieldSpec{
 			WireName: "domain_validation_options",
-			Kind: "list",
-			Fields: Certificate_DomainValidationOptionsFields,
+			Kind:     "list",
+			Fields:   Certificate_DomainValidationOptionsFields,
 		},
-		"KeyAlgorithm": ubx.FieldSpec{WireName: "key_algorithm"},
+		"KeyAlgorithm":            ubx.FieldSpec{WireName: "key_algorithm"},
 		"SubjectAlternativeNames": ubx.FieldSpec{WireName: "subject_alternative_names"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Certificate_TagsFields,
+			Kind:     "list",
+			Fields:   Certificate_TagsFields,
 		},
 		"ValidationMethod": ubx.FieldSpec{WireName: "validation_method"},
 	},

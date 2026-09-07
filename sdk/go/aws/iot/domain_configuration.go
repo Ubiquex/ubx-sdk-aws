@@ -46,28 +46,28 @@ type DomainConfiguration_TlsConfig struct {
 }
 
 var DomainConfiguration_AuthorizerConfigFields = ubx.FieldMap{
-		"AllowAuthorizerOverride": ubx.FieldSpec{WireName: "allow_authorizer_override"},
-		"DefaultAuthorizerName": ubx.FieldSpec{WireName: "default_authorizer_name"},
-	}
+	"AllowAuthorizerOverride": ubx.FieldSpec{WireName: "allow_authorizer_override"},
+	"DefaultAuthorizerName":   ubx.FieldSpec{WireName: "default_authorizer_name"},
+}
 
 var DomainConfiguration_ClientCertificateConfigFields = ubx.FieldMap{
-		"ClientCertificateCallbackArn": ubx.FieldSpec{WireName: "client_certificate_callback_arn"},
-	}
+	"ClientCertificateCallbackArn": ubx.FieldSpec{WireName: "client_certificate_callback_arn"},
+}
 
 var DomainConfiguration_ServerCertificateConfigFields = ubx.FieldMap{
-		"EnableOcspcheck": ubx.FieldSpec{WireName: "enable_ocspcheck"},
-		"OcspAuthorizedResponderArn": ubx.FieldSpec{WireName: "ocsp_authorized_responder_arn"},
-		"OcspLambdaArn": ubx.FieldSpec{WireName: "ocsp_lambda_arn"},
-	}
+	"EnableOcspcheck":            ubx.FieldSpec{WireName: "enable_ocspcheck"},
+	"OcspAuthorizedResponderArn": ubx.FieldSpec{WireName: "ocsp_authorized_responder_arn"},
+	"OcspLambdaArn":              ubx.FieldSpec{WireName: "ocsp_lambda_arn"},
+}
 
 var DomainConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var DomainConfiguration_TlsConfigFields = ubx.FieldMap{
-		"SecurityPolicy": ubx.FieldSpec{WireName: "security_policy"},
-	}
+	"SecurityPolicy": ubx.FieldSpec{WireName: "security_policy"},
+}
 
 type DomainConfigurationConfig struct {
 	// Specifies the application protocol (SECURE_MQTT or HTTPS) that the domain configuration is used for, determining which protocol traffic it serves. (AI-inferred)
@@ -137,36 +137,36 @@ var DomainConfiguration = ubx.ResourceBinding{
 	WireType: "aws_io_t_domain_configuration",
 	Fields: ubx.FieldMap{
 		"ApplicationProtocol": ubx.FieldSpec{WireName: "application_protocol"},
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
+		"AuthenticationType":  ubx.FieldSpec{WireName: "authentication_type"},
 		"AuthorizerConfig": ubx.FieldSpec{
 			WireName: "authorizer_config",
-			Kind: "object",
-			Fields: DomainConfiguration_AuthorizerConfigFields,
+			Kind:     "object",
+			Fields:   DomainConfiguration_AuthorizerConfigFields,
 		},
 		"ClientCertificateConfig": ubx.FieldSpec{
 			WireName: "client_certificate_config",
-			Kind: "object",
-			Fields: DomainConfiguration_ClientCertificateConfigFields,
+			Kind:     "object",
+			Fields:   DomainConfiguration_ClientCertificateConfigFields,
 		},
-		"DomainConfigurationName": ubx.FieldSpec{WireName: "domain_configuration_name"},
+		"DomainConfigurationName":   ubx.FieldSpec{WireName: "domain_configuration_name"},
 		"DomainConfigurationStatus": ubx.FieldSpec{WireName: "domain_configuration_status"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"ServerCertificateArns": ubx.FieldSpec{WireName: "server_certificate_arns"},
+		"DomainName":                ubx.FieldSpec{WireName: "domain_name"},
+		"ServerCertificateArns":     ubx.FieldSpec{WireName: "server_certificate_arns"},
 		"ServerCertificateConfig": ubx.FieldSpec{
 			WireName: "server_certificate_config",
-			Kind: "object",
-			Fields: DomainConfiguration_ServerCertificateConfigFields,
+			Kind:     "object",
+			Fields:   DomainConfiguration_ServerCertificateConfigFields,
 		},
 		"ServiceType": ubx.FieldSpec{WireName: "service_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DomainConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   DomainConfiguration_TagsFields,
 		},
 		"TlsConfig": ubx.FieldSpec{
 			WireName: "tls_config",
-			Kind: "object",
-			Fields: DomainConfiguration_TlsConfigFields,
+			Kind:     "object",
+			Fields:   DomainConfiguration_TlsConfigFields,
 		},
 		"ValidationCertificateArn": ubx.FieldSpec{WireName: "validation_certificate_arn"},
 	},

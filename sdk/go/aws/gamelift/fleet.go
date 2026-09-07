@@ -28,7 +28,7 @@ type Fleet_Locations_LocationCapacity_ManagedCapacityConfiguration struct {
 
 type Fleet_Locations_LocationCapacity struct {
 	// Sets the desired number of EC2 instances for a given fleet location, which GameLift uses as the scaling target for that location's capacity within its configured minimum and maximum limits. (AI-inferred)
-	DesiredEc2Instances any
+	DesiredEc2Instances          any
 	ManagedCapacityConfiguration any
 	// The maximum number of EC2 instances that can be active for this fleet location, setting the upper bound for auto-scaling capacity. (AI-inferred)
 	MaxSize any
@@ -108,73 +108,73 @@ type Fleet_ScalingPolicies struct {
 }
 
 type Fleet_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Fleet_CertificateConfigurationFields = ubx.FieldMap{
-		"CertificateType": ubx.FieldSpec{WireName: "certificate_type"},
-	}
+	"CertificateType": ubx.FieldSpec{WireName: "certificate_type"},
+}
 
 var Fleet_Ec2InboundPermissionsFields = ubx.FieldMap{
-		"FromPort": ubx.FieldSpec{WireName: "from_port"},
-		"IpRange": ubx.FieldSpec{WireName: "ip_range"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"ToPort": ubx.FieldSpec{WireName: "to_port"},
-	}
+	"FromPort": ubx.FieldSpec{WireName: "from_port"},
+	"IpRange":  ubx.FieldSpec{WireName: "ip_range"},
+	"Protocol": ubx.FieldSpec{WireName: "protocol"},
+	"ToPort":   ubx.FieldSpec{WireName: "to_port"},
+}
 
 var Fleet_PlayerGatewayConfigurationFields = ubx.FieldMap{
-		"GameServerIpProtocolSupported": ubx.FieldSpec{WireName: "game_server_ip_protocol_supported"},
-	}
+	"GameServerIpProtocolSupported": ubx.FieldSpec{WireName: "game_server_ip_protocol_supported"},
+}
 
 var Fleet_ResourceCreationLimitPolicyFields = ubx.FieldMap{
-		"NewGameSessionsPerCreator": ubx.FieldSpec{WireName: "new_game_sessions_per_creator"},
-		"PolicyPeriodInMinutes": ubx.FieldSpec{WireName: "policy_period_in_minutes"},
-	}
+	"NewGameSessionsPerCreator": ubx.FieldSpec{WireName: "new_game_sessions_per_creator"},
+	"PolicyPeriodInMinutes":     ubx.FieldSpec{WireName: "policy_period_in_minutes"},
+}
 
 var Fleet_RuntimeConfiguration_ServerProcessesFields = ubx.FieldMap{
-		"ConcurrentExecutions": ubx.FieldSpec{WireName: "concurrent_executions"},
-		"LaunchPath": ubx.FieldSpec{WireName: "launch_path"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	}
+	"ConcurrentExecutions": ubx.FieldSpec{WireName: "concurrent_executions"},
+	"LaunchPath":           ubx.FieldSpec{WireName: "launch_path"},
+	"Parameters":           ubx.FieldSpec{WireName: "parameters"},
+}
 
 var Fleet_RuntimeConfigurationFields = ubx.FieldMap{
-		"GameSessionActivationTimeoutSeconds": ubx.FieldSpec{WireName: "game_session_activation_timeout_seconds"},
-		"MaxConcurrentGameSessionActivations": ubx.FieldSpec{WireName: "max_concurrent_game_session_activations"},
-		"ServerProcesses": ubx.FieldSpec{
-			WireName: "server_processes",
-			Kind: "list",
-			Fields: Fleet_RuntimeConfiguration_ServerProcessesFields,
-		},
-	}
+	"GameSessionActivationTimeoutSeconds": ubx.FieldSpec{WireName: "game_session_activation_timeout_seconds"},
+	"MaxConcurrentGameSessionActivations": ubx.FieldSpec{WireName: "max_concurrent_game_session_activations"},
+	"ServerProcesses": ubx.FieldSpec{
+		WireName: "server_processes",
+		Kind:     "list",
+		Fields:   Fleet_RuntimeConfiguration_ServerProcessesFields,
+	},
+}
 
 var Fleet_ScalingPolicies_TargetConfigurationFields = ubx.FieldMap{
-		"TargetValue": ubx.FieldSpec{WireName: "target_value"},
-	}
+	"TargetValue": ubx.FieldSpec{WireName: "target_value"},
+}
 
 var Fleet_ScalingPoliciesFields = ubx.FieldMap{
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"EvaluationPeriods": ubx.FieldSpec{WireName: "evaluation_periods"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
-		"ScalingAdjustment": ubx.FieldSpec{WireName: "scaling_adjustment"},
-		"ScalingAdjustmentType": ubx.FieldSpec{WireName: "scaling_adjustment_type"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"TargetConfiguration": ubx.FieldSpec{
-			WireName: "target_configuration",
-			Kind: "object",
-			Fields: Fleet_ScalingPolicies_TargetConfigurationFields,
-		},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-		"UpdateStatus": ubx.FieldSpec{WireName: "update_status"},
-	}
+	"ComparisonOperator":    ubx.FieldSpec{WireName: "comparison_operator"},
+	"EvaluationPeriods":     ubx.FieldSpec{WireName: "evaluation_periods"},
+	"Location":              ubx.FieldSpec{WireName: "location"},
+	"MetricName":            ubx.FieldSpec{WireName: "metric_name"},
+	"Name":                  ubx.FieldSpec{WireName: "name"},
+	"PolicyType":            ubx.FieldSpec{WireName: "policy_type"},
+	"ScalingAdjustment":     ubx.FieldSpec{WireName: "scaling_adjustment"},
+	"ScalingAdjustmentType": ubx.FieldSpec{WireName: "scaling_adjustment_type"},
+	"Status":                ubx.FieldSpec{WireName: "status"},
+	"TargetConfiguration": ubx.FieldSpec{
+		WireName: "target_configuration",
+		Kind:     "object",
+		Fields:   Fleet_ScalingPolicies_TargetConfigurationFields,
+	},
+	"Threshold":    ubx.FieldSpec{WireName: "threshold"},
+	"UpdateStatus": ubx.FieldSpec{WireName: "update_status"},
+}
 
 var Fleet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FleetConfig struct {
 	// Configuration for Anywhere fleet.
@@ -308,61 +308,61 @@ var Fleet = ubx.ResourceBinding{
 	WireType: "aws_game_lift_fleet",
 	Fields: ubx.FieldMap{
 		"AnywhereConfiguration": ubx.FieldSpec{WireName: "anywhere_configuration"},
-		"ApplyCapacity": ubx.FieldSpec{WireName: "apply_capacity"},
-		"BuildId": ubx.FieldSpec{WireName: "build_id"},
+		"ApplyCapacity":         ubx.FieldSpec{WireName: "apply_capacity"},
+		"BuildId":               ubx.FieldSpec{WireName: "build_id"},
 		"CertificateConfiguration": ubx.FieldSpec{
 			WireName: "certificate_configuration",
-			Kind: "object",
-			Fields: Fleet_CertificateConfigurationFields,
+			Kind:     "object",
+			Fields:   Fleet_CertificateConfigurationFields,
 		},
-		"ComputeType": ubx.FieldSpec{WireName: "compute_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"ComputeType":         ubx.FieldSpec{WireName: "compute_type"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
 		"DesiredEc2Instances": ubx.FieldSpec{WireName: "desired_ec2_instances"},
 		"Ec2InboundPermissions": ubx.FieldSpec{
 			WireName: "ec2_inbound_permissions",
-			Kind: "list",
-			Fields: Fleet_Ec2InboundPermissionsFields,
+			Kind:     "list",
+			Fields:   Fleet_Ec2InboundPermissionsFields,
 		},
-		"Ec2InstanceType": ubx.FieldSpec{WireName: "ec2_instance_type"},
-		"FleetType": ubx.FieldSpec{WireName: "fleet_type"},
-		"InstanceRoleArn": ubx.FieldSpec{WireName: "instance_role_arn"},
+		"Ec2InstanceType":                 ubx.FieldSpec{WireName: "ec2_instance_type"},
+		"FleetType":                       ubx.FieldSpec{WireName: "fleet_type"},
+		"InstanceRoleArn":                 ubx.FieldSpec{WireName: "instance_role_arn"},
 		"InstanceRoleCredentialsProvider": ubx.FieldSpec{WireName: "instance_role_credentials_provider"},
-		"LogPaths": ubx.FieldSpec{WireName: "log_paths"},
-		"MaxSize": ubx.FieldSpec{WireName: "max_size"},
-		"MetricGroups": ubx.FieldSpec{WireName: "metric_groups"},
-		"MinSize": ubx.FieldSpec{WireName: "min_size"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NewGameSessionProtectionPolicy": ubx.FieldSpec{WireName: "new_game_session_protection_policy"},
-		"PeerVpcAwsAccountId": ubx.FieldSpec{WireName: "peer_vpc_aws_account_id"},
-		"PeerVpcId": ubx.FieldSpec{WireName: "peer_vpc_id"},
+		"LogPaths":                        ubx.FieldSpec{WireName: "log_paths"},
+		"MaxSize":                         ubx.FieldSpec{WireName: "max_size"},
+		"MetricGroups":                    ubx.FieldSpec{WireName: "metric_groups"},
+		"MinSize":                         ubx.FieldSpec{WireName: "min_size"},
+		"Name":                            ubx.FieldSpec{WireName: "name"},
+		"NewGameSessionProtectionPolicy":  ubx.FieldSpec{WireName: "new_game_session_protection_policy"},
+		"PeerVpcAwsAccountId":             ubx.FieldSpec{WireName: "peer_vpc_aws_account_id"},
+		"PeerVpcId":                       ubx.FieldSpec{WireName: "peer_vpc_id"},
 		"PlayerGatewayConfiguration": ubx.FieldSpec{
 			WireName: "player_gateway_configuration",
-			Kind: "object",
-			Fields: Fleet_PlayerGatewayConfigurationFields,
+			Kind:     "object",
+			Fields:   Fleet_PlayerGatewayConfigurationFields,
 		},
 		"PlayerGatewayMode": ubx.FieldSpec{WireName: "player_gateway_mode"},
 		"ResourceCreationLimitPolicy": ubx.FieldSpec{
 			WireName: "resource_creation_limit_policy",
-			Kind: "object",
-			Fields: Fleet_ResourceCreationLimitPolicyFields,
+			Kind:     "object",
+			Fields:   Fleet_ResourceCreationLimitPolicyFields,
 		},
 		"RuntimeConfiguration": ubx.FieldSpec{
 			WireName: "runtime_configuration",
-			Kind: "object",
-			Fields: Fleet_RuntimeConfigurationFields,
+			Kind:     "object",
+			Fields:   Fleet_RuntimeConfigurationFields,
 		},
 		"ScalingPolicies": ubx.FieldSpec{
 			WireName: "scaling_policies",
-			Kind: "list",
-			Fields: Fleet_ScalingPoliciesFields,
+			Kind:     "list",
+			Fields:   Fleet_ScalingPoliciesFields,
 		},
-		"ScriptId": ubx.FieldSpec{WireName: "script_id"},
+		"ScriptId":               ubx.FieldSpec{WireName: "script_id"},
 		"ServerLaunchParameters": ubx.FieldSpec{WireName: "server_launch_parameters"},
-		"ServerLaunchPath": ubx.FieldSpec{WireName: "server_launch_path"},
+		"ServerLaunchPath":       ubx.FieldSpec{WireName: "server_launch_path"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Fleet_TagsFields,
+			Kind:     "list",
+			Fields:   Fleet_TagsFields,
 		},
 	},
 }

@@ -5,23 +5,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SensorStatistics_SensorStatisticsSummaries_CategoricalValues struct {
 	NumberOfCategory any
-	Status any
+	Status           any
 }
 
 type SensorStatistics_SensorStatisticsSummaries_DuplicateTimestamps struct {
-	Count any
+	Count      any
 	Percentage any
 }
 
 type SensorStatistics_SensorStatisticsSummaries_LargeTimestampGaps struct {
-	MaxTimestampGapInDays any
+	MaxTimestampGapInDays      any
 	NumberOfLargeTimestampGaps any
-	Status any
+	Status                     any
 }
 
 type SensorStatistics_SensorStatisticsSummaries_MonotonicValues struct {
 	Monotonicity any
-	Status any
+	Status       any
 }
 
 type SensorStatistics_SensorStatisticsSummaries_MultipleOperatingModes struct {
@@ -29,42 +29,42 @@ type SensorStatistics_SensorStatisticsSummaries_MultipleOperatingModes struct {
 }
 
 type SensorStatistics_SensorStatisticsSummaries struct {
-	CategoricalValues any
-	ComponentName any
-	DataEndTime any
-	DataExists any
-	DataStartTime any
-	DuplicateTimestamps any
-	InvalidDateEntries any
-	InvalidValues any
-	LargeTimestampGaps any
-	MissingValues any
-	MonotonicValues any
+	CategoricalValues      any
+	ComponentName          any
+	DataEndTime            any
+	DataExists             any
+	DataStartTime          any
+	DuplicateTimestamps    any
+	InvalidDateEntries     any
+	InvalidValues          any
+	LargeTimestampGaps     any
+	MissingValues          any
+	MonotonicValues        any
 	MultipleOperatingModes any
-	SensorName any
+	SensorName             any
 }
 
 type SensorStatisticsConfig struct {
-	DatasetName any
+	DatasetName    any
 	IngestionJobId any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 type SensorStatisticsAttrs struct {
-	DatasetName any
-	IngestionJobId any
-	MaxResults any
-	NextToken any
+	DatasetName               any
+	IngestionJobId            any
+	MaxResults                any
+	NextToken                 any
 	SensorStatisticsSummaries any
 }
 
 var SensorStatistics = ubx.DataSourceBinding{
 	WireType: "aws_lookoutequipment_sensor_statistics",
 	Fields: ubx.FieldMap{
-		"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
+		"DatasetName":    ubx.FieldSpec{WireName: "dataset_name"},
 		"IngestionJobId": ubx.FieldSpec{WireName: "ingestion_job_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 	},
 }

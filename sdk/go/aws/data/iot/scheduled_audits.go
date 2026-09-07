@@ -4,21 +4,21 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ScheduledAudits_ScheduledAudits struct {
-	DayOfMonth any
-	DayOfWeek any
-	Frequency any
-	ScheduledAuditArn any
+	DayOfMonth         any
+	DayOfWeek          any
+	Frequency          any
+	ScheduledAuditArn  any
 	ScheduledAuditName any
 }
 
 type ScheduledAuditsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ScheduledAuditsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	ScheduledAudits any
 }
 
@@ -26,6 +26,6 @@ var ScheduledAudits = ubx.DataSourceBinding{
 	WireType: "aws_iot_scheduled_audits",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

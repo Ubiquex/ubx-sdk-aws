@@ -9,10 +9,10 @@ type CognitoSyncBulkPublishDetailsConfig struct {
 
 type CognitoSyncBulkPublishDetailsAttrs struct {
 	BulkPublishCompleteTime any
-	BulkPublishStartTime any
-	BulkPublishStatus any
-	FailureMessage any
-	IdentityPoolId any
+	BulkPublishStartTime    any
+	BulkPublishStatus       any
+	FailureMessage          any
+	IdentityPoolId          any
 }
 
 var CognitoSyncBulkPublishDetails = ubx.DataSourceBinding{

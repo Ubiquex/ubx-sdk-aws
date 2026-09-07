@@ -5,11 +5,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AuditMitigationActionsTask_ActionsDefinition_ActionParams_AddThingsToThingGroupParams struct {
 	OverrideDynamicGroups any
-	ThingGroupNames any
+	ThingGroupNames       any
 }
 
 type AuditMitigationActionsTask_ActionsDefinition_ActionParams_EnableIoTloggingParams struct {
-	LogLevel any
+	LogLevel          any
 	RoleArnForLogging any
 }
 
@@ -26,33 +26,33 @@ type AuditMitigationActionsTask_ActionsDefinition_ActionParams_UpdateCacertifica
 }
 
 type AuditMitigationActionsTask_ActionsDefinition_ActionParams struct {
-	AddThingsToThingGroupParams any
-	EnableIoTloggingParams any
-	PublishFindingToSnsParams any
+	AddThingsToThingGroupParams       any
+	EnableIoTloggingParams            any
+	PublishFindingToSnsParams         any
 	ReplaceDefaultPolicyVersionParams any
-	UpdateCacertificateParams any
-	UpdateDeviceCertificateParams any
+	UpdateCacertificateParams         any
+	UpdateDeviceCertificateParams     any
 }
 
 type AuditMitigationActionsTask_ActionsDefinition struct {
 	ActionParams any
-	Id any
-	Name any
-	RoleArn any
+	Id           any
+	Name         any
+	RoleArn      any
 }
 
 type AuditMitigationActionsTask_Target struct {
 	AuditCheckToReasonCodeFilter any
-	AuditTaskId any
-	FindingIds any
+	AuditTaskId                  any
+	FindingIds                   any
 }
 
 type AuditMitigationActionsTask_TaskStatistics struct {
-	CanceledFindingsCount any
-	FailedFindingsCount any
-	SkippedFindingsCount any
+	CanceledFindingsCount  any
+	FailedFindingsCount    any
+	SkippedFindingsCount   any
 	SucceededFindingsCount any
-	TotalFindingsCount any
+	TotalFindingsCount     any
 }
 
 type AuditMitigationActionsTaskConfig struct {
@@ -60,15 +60,15 @@ type AuditMitigationActionsTaskConfig struct {
 }
 
 type AuditMitigationActionsTaskAttrs struct {
-	ActionsDefinition any
+	ActionsDefinition          any
 	AuditCheckToActionsMapping any
-	EndTime any
-	StartTime any
+	EndTime                    any
+	StartTime                  any
 	// <p>Used in MitigationActionParams, this information identifies the target findings to which the mitigation actions are applied. Only one entry appears.</p>
-	Target any
-	TaskId any
+	Target         any
+	TaskId         any
 	TaskStatistics any
-	TaskStatus any
+	TaskStatus     any
 }
 
 var AuditMitigationActionsTask = ubx.DataSourceBinding{

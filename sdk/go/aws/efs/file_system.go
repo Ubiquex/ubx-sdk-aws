@@ -52,23 +52,23 @@ type FileSystem_ReplicationConfiguration struct {
 }
 
 var FileSystem_BackupPolicyFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var FileSystem_FileSystemProtectionFields = ubx.FieldMap{
-		"ReplicationOverwriteProtection": ubx.FieldSpec{WireName: "replication_overwrite_protection"},
-	}
+	"ReplicationOverwriteProtection": ubx.FieldSpec{WireName: "replication_overwrite_protection"},
+}
 
 var FileSystem_FileSystemTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var FileSystem_LifecyclePoliciesFields = ubx.FieldMap{
-		"TransitionToArchive": ubx.FieldSpec{WireName: "transition_to_archive"},
-		"TransitionToIa": ubx.FieldSpec{WireName: "transition_to_ia"},
-		"TransitionToPrimaryStorageClass": ubx.FieldSpec{WireName: "transition_to_primary_storage_class"},
-	}
+	"TransitionToArchive":             ubx.FieldSpec{WireName: "transition_to_archive"},
+	"TransitionToIa":                  ubx.FieldSpec{WireName: "transition_to_ia"},
+	"TransitionToPrimaryStorageClass": ubx.FieldSpec{WireName: "transition_to_primary_storage_class"},
+}
 
 type FileSystemConfig struct {
 	// For One Zone file systems, specify the AWS Availability Zone in which to create the file system. Use the format ``us-east-1a`` to specify the Availability Zone. For more information about One Zone file systems, see [EFS file system types](https://docs.aws.amazon.com/efs/latest/ug/availability-durability.html#file-system-type) in the *Amazon EFS User Guide*. One Zone file systems are not available in all Availability Zones in AWS-Regions where Amazon EFS is available.
@@ -136,30 +136,30 @@ var FileSystem = ubx.ResourceBinding{
 		"AvailabilityZoneName": ubx.FieldSpec{WireName: "availability_zone_name"},
 		"BackupPolicy": ubx.FieldSpec{
 			WireName: "backup_policy",
-			Kind: "object",
-			Fields: FileSystem_BackupPolicyFields,
+			Kind:     "object",
+			Fields:   FileSystem_BackupPolicyFields,
 		},
 		"BypassPolicyLockoutSafetyCheck": ubx.FieldSpec{WireName: "bypass_policy_lockout_safety_check"},
-		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
-		"FileSystemPolicy": ubx.FieldSpec{WireName: "file_system_policy"},
+		"Encrypted":                      ubx.FieldSpec{WireName: "encrypted"},
+		"FileSystemPolicy":               ubx.FieldSpec{WireName: "file_system_policy"},
 		"FileSystemProtection": ubx.FieldSpec{
 			WireName: "file_system_protection",
-			Kind: "object",
-			Fields: FileSystem_FileSystemProtectionFields,
+			Kind:     "object",
+			Fields:   FileSystem_FileSystemProtectionFields,
 		},
 		"FileSystemTags": ubx.FieldSpec{
 			WireName: "file_system_tags",
-			Kind: "list",
-			Fields: FileSystem_FileSystemTagsFields,
+			Kind:     "list",
+			Fields:   FileSystem_FileSystemTagsFields,
 		},
 		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
 		"LifecyclePolicies": ubx.FieldSpec{
 			WireName: "lifecycle_policies",
-			Kind: "list",
-			Fields: FileSystem_LifecyclePoliciesFields,
+			Kind:     "list",
+			Fields:   FileSystem_LifecyclePoliciesFields,
 		},
-		"PerformanceMode": ubx.FieldSpec{WireName: "performance_mode"},
+		"PerformanceMode":              ubx.FieldSpec{WireName: "performance_mode"},
 		"ProvisionedThroughputInMibps": ubx.FieldSpec{WireName: "provisioned_throughput_in_mibps"},
-		"ThroughputMode": ubx.FieldSpec{WireName: "throughput_mode"},
+		"ThroughputMode":               ubx.FieldSpec{WireName: "throughput_mode"},
 	},
 }

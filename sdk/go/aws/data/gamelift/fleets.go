@@ -4,26 +4,26 @@ package gamelift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FleetsConfig struct {
-	BuildId any
-	Limit any
+	BuildId   any
+	Limit     any
 	NextToken any
-	ScriptId any
+	ScriptId  any
 }
 
 type FleetsAttrs struct {
-	BuildId any
-	FleetIds any
-	Limit any
+	BuildId   any
+	FleetIds  any
+	Limit     any
 	NextToken any
-	ScriptId any
+	ScriptId  any
 }
 
 var Fleets = ubx.DataSourceBinding{
 	WireType: "aws_gamelift_fleets",
 	Fields: ubx.FieldMap{
-		"BuildId": ubx.FieldSpec{WireName: "build_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"BuildId":   ubx.FieldSpec{WireName: "build_id"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ScriptId": ubx.FieldSpec{WireName: "script_id"},
+		"ScriptId":  ubx.FieldSpec{WireName: "script_id"},
 	},
 }

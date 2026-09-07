@@ -4,32 +4,32 @@ package mgh
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SourceResources_SourceResourceList struct {
-	Description any
-	Name any
+	Description  any
+	Name         any
 	StatusDetail any
 }
 
 type SourceResourcesConfig struct {
-	MaxResults any
-	MigrationTaskName any
-	NextToken any
+	MaxResults           any
+	MigrationTaskName    any
+	NextToken            any
 	ProgressUpdateStream any
 }
 
 type SourceResourcesAttrs struct {
-	MaxResults any
-	MigrationTaskName any
-	NextToken any
+	MaxResults           any
+	MigrationTaskName    any
+	NextToken            any
 	ProgressUpdateStream any
-	SourceResourceList any
+	SourceResourceList   any
 }
 
 var SourceResources = ubx.DataSourceBinding{
 	WireType: "aws_mgh_source_resources",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MigrationTaskName": ubx.FieldSpec{WireName: "migration_task_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"MigrationTaskName":    ubx.FieldSpec{WireName: "migration_task_name"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 		"ProgressUpdateStream": ubx.FieldSpec{WireName: "progress_update_stream"},
 	},
 }

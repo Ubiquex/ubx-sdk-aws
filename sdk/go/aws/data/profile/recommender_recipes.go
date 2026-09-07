@@ -5,17 +5,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecommenderRecipes_RecommenderRecipes struct {
 	Description any
-	Name any
+	Name        any
 }
 
 type RecommenderRecipesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type RecommenderRecipesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	RecommenderRecipes any
 }
 
@@ -23,6 +23,6 @@ var RecommenderRecipes = ubx.DataSourceBinding{
 	WireType: "aws_profile_recommender_recipes",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

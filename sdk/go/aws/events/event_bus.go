@@ -22,18 +22,18 @@ type EventBus_Tags struct {
 }
 
 var EventBus_DeadLetterConfigFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-	}
+	"Arn": ubx.FieldSpec{WireName: "arn"},
+}
 
 var EventBus_LogConfigFields = ubx.FieldMap{
-		"IncludeDetail": ubx.FieldSpec{WireName: "include_detail"},
-		"Level": ubx.FieldSpec{WireName: "level"},
-	}
+	"IncludeDetail": ubx.FieldSpec{WireName: "include_detail"},
+	"Level":         ubx.FieldSpec{WireName: "level"},
+}
 
 var EventBus_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EventBusConfig struct {
 	// Dead Letter Queue for the event bus.
@@ -80,23 +80,23 @@ var EventBus = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DeadLetterConfig": ubx.FieldSpec{
 			WireName: "dead_letter_config",
-			Kind: "object",
-			Fields: EventBus_DeadLetterConfigFields,
+			Kind:     "object",
+			Fields:   EventBus_DeadLetterConfigFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EventSourceName": ubx.FieldSpec{WireName: "event_source_name"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"EventSourceName":  ubx.FieldSpec{WireName: "event_source_name"},
 		"KmsKeyIdentifier": ubx.FieldSpec{WireName: "kms_key_identifier"},
 		"LogConfig": ubx.FieldSpec{
 			WireName: "log_config",
-			Kind: "object",
-			Fields: EventBus_LogConfigFields,
+			Kind:     "object",
+			Fields:   EventBus_LogConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Policy": ubx.FieldSpec{WireName: "policy"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EventBus_TagsFields,
+			Kind:     "list",
+			Fields:   EventBus_TagsFields,
 		},
 	},
 }

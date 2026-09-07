@@ -51,43 +51,43 @@ type Trigger_Predicate struct {
 }
 
 var Trigger_Actions_NotificationPropertyFields = ubx.FieldMap{
-		"NotifyDelayAfter": ubx.FieldSpec{WireName: "notify_delay_after"},
-	}
+	"NotifyDelayAfter": ubx.FieldSpec{WireName: "notify_delay_after"},
+}
 
 var Trigger_ActionsFields = ubx.FieldMap{
-		"Arguments": ubx.FieldSpec{WireName: "arguments"},
-		"CrawlerName": ubx.FieldSpec{WireName: "crawler_name"},
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"NotificationProperty": ubx.FieldSpec{
-			WireName: "notification_property",
-			Kind: "object",
-			Fields: Trigger_Actions_NotificationPropertyFields,
-		},
-		"SecurityConfiguration": ubx.FieldSpec{WireName: "security_configuration"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"Arguments":   ubx.FieldSpec{WireName: "arguments"},
+	"CrawlerName": ubx.FieldSpec{WireName: "crawler_name"},
+	"JobName":     ubx.FieldSpec{WireName: "job_name"},
+	"NotificationProperty": ubx.FieldSpec{
+		WireName: "notification_property",
+		Kind:     "object",
+		Fields:   Trigger_Actions_NotificationPropertyFields,
+	},
+	"SecurityConfiguration": ubx.FieldSpec{WireName: "security_configuration"},
+	"Timeout":               ubx.FieldSpec{WireName: "timeout"},
+}
 
 var Trigger_EventBatchingConditionFields = ubx.FieldMap{
-		"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
-		"BatchWindow": ubx.FieldSpec{WireName: "batch_window"},
-	}
+	"BatchSize":   ubx.FieldSpec{WireName: "batch_size"},
+	"BatchWindow": ubx.FieldSpec{WireName: "batch_window"},
+}
 
 var Trigger_Predicate_ConditionsFields = ubx.FieldMap{
-		"CrawlState": ubx.FieldSpec{WireName: "crawl_state"},
-		"CrawlerName": ubx.FieldSpec{WireName: "crawler_name"},
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"CrawlState":      ubx.FieldSpec{WireName: "crawl_state"},
+	"CrawlerName":     ubx.FieldSpec{WireName: "crawler_name"},
+	"JobName":         ubx.FieldSpec{WireName: "job_name"},
+	"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
+	"State":           ubx.FieldSpec{WireName: "state"},
+}
 
 var Trigger_PredicateFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: Trigger_Predicate_ConditionsFields,
-		},
-		"Logical": ubx.FieldSpec{WireName: "logical"},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   Trigger_Predicate_ConditionsFields,
+	},
+	"Logical": ubx.FieldSpec{WireName: "logical"},
+}
 
 type TriggerConfig struct {
 	// The actions initiated by this trigger.
@@ -140,25 +140,25 @@ var Trigger = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Actions": ubx.FieldSpec{
 			WireName: "actions",
-			Kind: "list",
-			Fields: Trigger_ActionsFields,
+			Kind:     "list",
+			Fields:   Trigger_ActionsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EventBatchingCondition": ubx.FieldSpec{
 			WireName: "event_batching_condition",
-			Kind: "object",
-			Fields: Trigger_EventBatchingConditionFields,
+			Kind:     "object",
+			Fields:   Trigger_EventBatchingConditionFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Predicate": ubx.FieldSpec{
 			WireName: "predicate",
-			Kind: "object",
-			Fields: Trigger_PredicateFields,
+			Kind:     "object",
+			Fields:   Trigger_PredicateFields,
 		},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
+		"Schedule":        ubx.FieldSpec{WireName: "schedule"},
 		"StartOnCreation": ubx.FieldSpec{WireName: "start_on_creation"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"WorkflowName": ubx.FieldSpec{WireName: "workflow_name"},
+		"Tags":            ubx.FieldSpec{WireName: "tags"},
+		"Type":            ubx.FieldSpec{WireName: "type"},
+		"WorkflowName":    ubx.FieldSpec{WireName: "workflow_name"},
 	},
 }

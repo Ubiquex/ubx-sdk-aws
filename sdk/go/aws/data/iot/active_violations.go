@@ -12,70 +12,70 @@ type ActiveViolations_ActiveViolations_Behavior_Criteria_StatisticalThreshold st
 }
 
 type ActiveViolations_ActiveViolations_Behavior_Criteria_Value struct {
-	Cidrs any
-	Count any
-	Number any
+	Cidrs   any
+	Count   any
+	Number  any
 	Numbers any
-	Ports any
+	Ports   any
 	Strings any
 }
 
 type ActiveViolations_ActiveViolations_Behavior_Criteria struct {
-	ComparisonOperator any
+	ComparisonOperator           any
 	ConsecutiveDatapointsToAlarm any
 	ConsecutiveDatapointsToClear any
-	DurationSeconds any
-	MlDetectionConfig any
-	StatisticalThreshold any
-	Value any
+	DurationSeconds              any
+	MlDetectionConfig            any
+	StatisticalThreshold         any
+	Value                        any
 }
 
 type ActiveViolations_ActiveViolations_Behavior_MetricDimension struct {
 	DimensionName any
-	Operator any
+	Operator      any
 }
 
 type ActiveViolations_ActiveViolations_Behavior struct {
-	Criteria any
-	ExportMetric any
-	Metric any
+	Criteria        any
+	ExportMetric    any
+	Metric          any
 	MetricDimension any
-	Name any
-	SuppressAlerts any
+	Name            any
+	SuppressAlerts  any
 }
 
 type ActiveViolations_ActiveViolations struct {
-	Behavior any
-	LastViolationTime any
-	LastViolationValue any
-	SecurityProfileName any
-	ThingName any
-	VerificationState any
+	Behavior                     any
+	LastViolationTime            any
+	LastViolationValue           any
+	SecurityProfileName          any
+	ThingName                    any
+	VerificationState            any
 	VerificationStateDescription any
 	ViolationEventAdditionalInfo any
-	ViolationId any
-	ViolationStartTime any
+	ViolationId                  any
+	ViolationStartTime           any
 }
 
 type ActiveViolationsConfig struct {
 	BehaviorCriteriaType any
 	ListSuppressedAlerts any
-	MaxResults any
-	NextToken any
-	SecurityProfileName any
-	ThingName any
-	VerificationState any
+	MaxResults           any
+	NextToken            any
+	SecurityProfileName  any
+	ThingName            any
+	VerificationState    any
 }
 
 type ActiveViolationsAttrs struct {
-	ActiveViolations any
+	ActiveViolations     any
 	BehaviorCriteriaType any
 	ListSuppressedAlerts any
-	MaxResults any
-	NextToken any
-	SecurityProfileName any
-	ThingName any
-	VerificationState any
+	MaxResults           any
+	NextToken            any
+	SecurityProfileName  any
+	ThingName            any
+	VerificationState    any
 }
 
 var ActiveViolations = ubx.DataSourceBinding{
@@ -83,10 +83,10 @@ var ActiveViolations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"BehaviorCriteriaType": ubx.FieldSpec{WireName: "behavior_criteria_type"},
 		"ListSuppressedAlerts": ubx.FieldSpec{WireName: "list_suppressed_alerts"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SecurityProfileName": ubx.FieldSpec{WireName: "security_profile_name"},
-		"ThingName": ubx.FieldSpec{WireName: "thing_name"},
-		"VerificationState": ubx.FieldSpec{WireName: "verification_state"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
+		"SecurityProfileName":  ubx.FieldSpec{WireName: "security_profile_name"},
+		"ThingName":            ubx.FieldSpec{WireName: "thing_name"},
+		"VerificationState":    ubx.FieldSpec{WireName: "verification_state"},
 	},
 }

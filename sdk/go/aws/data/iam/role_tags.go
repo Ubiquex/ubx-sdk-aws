@@ -4,28 +4,28 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RoleTags_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type RoleTagsConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 	RoleName any
 }
 
 type RoleTagsAttrs struct {
 	IsTruncated any
-	Marker any
-	MaxItems any
-	RoleName any
-	Tags any
+	Marker      any
+	MaxItems    any
+	RoleName    any
+	Tags        any
 }
 
 var RoleTags = ubx.DataSourceBinding{
 	WireType: "aws_iam_role_tags",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 		"RoleName": ubx.FieldSpec{WireName: "role_name"},
 	},

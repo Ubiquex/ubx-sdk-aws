@@ -60,18 +60,18 @@ type Catalog_TargetRedshiftCatalog struct {
 }
 
 var Catalog_FederatedCatalogFields = ubx.FieldMap{
-		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-	}
+	"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
+	"Identifier":     ubx.FieldSpec{WireName: "identifier"},
+}
 
 var Catalog_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Catalog_TargetRedshiftCatalogFields = ubx.FieldMap{
-		"CatalogArn": ubx.FieldSpec{WireName: "catalog_arn"},
-	}
+	"CatalogArn": ubx.FieldSpec{WireName: "catalog_arn"},
+}
 
 type CatalogConfig struct {
 	// Allows third-party engines to access data in Amazon S3 locations that are registered with Lake Formation.
@@ -129,24 +129,24 @@ var Catalog = ubx.ResourceBinding{
 	WireType: "aws_glue_catalog",
 	Fields: ubx.FieldMap{
 		"AllowFullTableExternalDataAccess": ubx.FieldSpec{WireName: "allow_full_table_external_data_access"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":                      ubx.FieldSpec{WireName: "description"},
 		"FederatedCatalog": ubx.FieldSpec{
 			WireName: "federated_catalog",
-			Kind: "object",
-			Fields: Catalog_FederatedCatalogFields,
+			Kind:     "object",
+			Fields:   Catalog_FederatedCatalogFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"OverwriteChildResourcePermissionsWithDefault": ubx.FieldSpec{WireName: "overwrite_child_resource_permissions_with_default"},
 		"Parameters": ubx.FieldSpec{WireName: "parameters"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Catalog_TagsFields,
+			Kind:     "list",
+			Fields:   Catalog_TagsFields,
 		},
 		"TargetRedshiftCatalog": ubx.FieldSpec{
 			WireName: "target_redshift_catalog",
-			Kind: "object",
-			Fields: Catalog_TargetRedshiftCatalogFields,
+			Kind:     "object",
+			Fields:   Catalog_TargetRedshiftCatalogFields,
 		},
 	},
 }

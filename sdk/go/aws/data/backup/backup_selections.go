@@ -4,32 +4,32 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackupSelections_BackupSelectionsList struct {
-	BackupPlanId any
-	CreationDate any
+	BackupPlanId     any
+	CreationDate     any
 	CreatorRequestId any
-	IamRoleArn any
-	SelectionId any
-	SelectionName any
+	IamRoleArn       any
+	SelectionId      any
+	SelectionName    any
 }
 
 type BackupSelectionsConfig struct {
 	BackupPlanId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type BackupSelectionsAttrs struct {
-	BackupPlanId any
+	BackupPlanId         any
 	BackupSelectionsList any
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 }
 
 var BackupSelections = ubx.DataSourceBinding{
 	WireType: "aws_backup_backup_selections",
 	Fields: ubx.FieldMap{
 		"BackupPlanId": ubx.FieldSpec{WireName: "backup_plan_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -5,52 +5,52 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TextTranslationJob_TextTranslationJobProperties_InputDataConfig struct {
 	ContentType any
-	S3Uri any
+	S3Uri       any
 }
 
 type TextTranslationJob_TextTranslationJobProperties_JobDetails struct {
 	DocumentsWithErrorsCount any
-	InputDocumentsCount any
+	InputDocumentsCount      any
 	TranslatedDocumentsCount any
 }
 
 type TextTranslationJob_TextTranslationJobProperties_OutputDataConfig_EncryptionKey struct {
-	Id any
+	Id   any
 	Type any
 }
 
 type TextTranslationJob_TextTranslationJobProperties_OutputDataConfig struct {
 	// <p>The encryption key used to encrypt this object.</p>
 	EncryptionKey any
-	S3Uri any
+	S3Uri         any
 }
 
 type TextTranslationJob_TextTranslationJobProperties_Settings struct {
-	Brevity any
+	Brevity   any
 	Formality any
 	Profanity any
 }
 
 type TextTranslationJob_TextTranslationJobProperties struct {
 	DataAccessRoleArn any
-	EndTime any
+	EndTime           any
 	// <p>The input configuration properties for requesting a batch translation job.</p>
 	InputDataConfig any
 	// <p>The number of documents successfully and unsuccessfully processed during a translation job.</p>
 	JobDetails any
-	JobId any
-	JobName any
-	JobStatus any
-	Message any
+	JobId      any
+	JobName    any
+	JobStatus  any
+	Message    any
 	// <p>The output configuration properties for a batch translation job.</p>
-	OutputDataConfig any
+	OutputDataConfig  any
 	ParallelDataNames any
 	// <p>Settings to configure your translation output. You can configure the following options:</p> <ul> <li> <p>Brevity: reduces the length of the translation output for most translations. Available for <code>TranslateText</code> only.</p> </li> <li> <p>Formality: sets the formality level of the translation output.</p> </li> <li> <p>Profanity: masks profane words and phrases in the translation output.</p> </li> </ul>
-	Settings any
-	SourceLanguageCode any
-	SubmittedTime any
+	Settings            any
+	SourceLanguageCode  any
+	SubmittedTime       any
 	TargetLanguageCodes any
-	TerminologyNames any
+	TerminologyNames    any
 }
 
 type TextTranslationJobConfig struct {

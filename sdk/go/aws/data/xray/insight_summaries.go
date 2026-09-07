@@ -5,15 +5,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InsightSummaries_InsightSummaries_ClientRequestImpactStatistics struct {
 	FaultCount any
-	OkCount any
+	OkCount    any
 	TotalCount any
 }
 
 type InsightSummaries_InsightSummaries_RootCauseServiceId struct {
 	AccountId any
-	Name any
-	Names any
-	Type any
+	Name      any
+	Names     any
+	Type      any
 }
 
 type InsightSummaries_InsightSummaries_TopAnomalousServices struct {
@@ -21,51 +21,51 @@ type InsightSummaries_InsightSummaries_TopAnomalousServices struct {
 }
 
 type InsightSummaries_InsightSummaries struct {
-	Categories any
-	ClientRequestImpactStatistics any
-	EndTime any
-	GroupArn any
-	GroupName any
-	InsightId any
-	LastUpdateTime any
-	RootCauseServiceId any
+	Categories                              any
+	ClientRequestImpactStatistics           any
+	EndTime                                 any
+	GroupArn                                any
+	GroupName                               any
+	InsightId                               any
+	LastUpdateTime                          any
+	RootCauseServiceId                      any
 	RootCauseServiceRequestImpactStatistics any
-	StartTime any
-	State any
-	Summary any
-	TopAnomalousServices any
+	StartTime                               any
+	State                                   any
+	Summary                                 any
+	TopAnomalousServices                    any
 }
 
 type InsightSummariesConfig struct {
-	EndTime any
-	GroupArn any
-	GroupName any
+	EndTime    any
+	GroupArn   any
+	GroupName  any
 	MaxResults any
-	NextToken any
-	StartTime any
-	States any
+	NextToken  any
+	StartTime  any
+	States     any
 }
 
 type InsightSummariesAttrs struct {
-	EndTime any
-	GroupArn any
-	GroupName any
+	EndTime          any
+	GroupArn         any
+	GroupName        any
 	InsightSummaries any
-	MaxResults any
-	NextToken any
-	StartTime any
-	States any
+	MaxResults       any
+	NextToken        any
+	StartTime        any
+	States           any
 }
 
 var InsightSummaries = ubx.DataSourceBinding{
 	WireType: "aws_xray_insight_summaries",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"GroupArn": ubx.FieldSpec{WireName: "group_arn"},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
+		"EndTime":    ubx.FieldSpec{WireName: "end_time"},
+		"GroupArn":   ubx.FieldSpec{WireName: "group_arn"},
+		"GroupName":  ubx.FieldSpec{WireName: "group_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"States": ubx.FieldSpec{WireName: "states"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"StartTime":  ubx.FieldSpec{WireName: "start_time"},
+		"States":     ubx.FieldSpec{WireName: "states"},
 	},
 }

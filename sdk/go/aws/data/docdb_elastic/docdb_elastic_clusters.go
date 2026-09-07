@@ -4,9 +4,9 @@ package docdb_elastic
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DocdbElasticClusters_Clusters struct {
-	ClusterArn any
+	ClusterArn  any
 	ClusterName any
-	Status any
+	Status      any
 }
 
 type DocdbElasticClustersConfig struct {
@@ -16,7 +16,7 @@ type DocdbElasticClustersConfig struct {
 }
 
 type DocdbElasticClustersAttrs struct {
-	Clusters any
+	Clusters   any
 	MaxResults any
 	// Token or cursor used in paginated operations. When this value is provided as operation input, the service returns results from where the previous response left off. When this value is present in operation output, it indicates that there are more results to retrieve. This should be opaque to not expose implementation details and potentially versioned to allow evolution of pagination strategy.
 	NextToken any
@@ -26,6 +26,6 @@ var DocdbElasticClusters = ubx.DataSourceBinding{
 	WireType: "aws_docdb_elastic_clusters",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

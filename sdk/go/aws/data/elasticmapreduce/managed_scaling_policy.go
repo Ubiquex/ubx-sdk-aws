@@ -4,17 +4,17 @@ package elasticmapreduce
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagedScalingPolicy_ManagedScalingPolicy_ComputeLimits struct {
-	MaximumCapacityUnits any
-	MaximumCoreCapacityUnits any
+	MaximumCapacityUnits         any
+	MaximumCoreCapacityUnits     any
 	MaximumOnDemandCapacityUnits any
-	MinimumCapacityUnits any
-	UnitType any
+	MinimumCapacityUnits         any
+	UnitType                     any
 }
 
 type ManagedScalingPolicy_ManagedScalingPolicy struct {
 	// <p> The Amazon EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster can not be above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
-	ComputeLimits any
-	ScalingStrategy any
+	ComputeLimits               any
+	ScalingStrategy             any
 	UtilizationPerformanceIndex any
 }
 

@@ -15,7 +15,7 @@ type Workspace_QueryLoggingConfiguration_Destinations_Filters struct {
 type Workspace_QueryLoggingConfiguration_Destinations struct {
 	// Specifies the CloudWatch Logs log group that receives query logs from the Amazon Managed Prometheus workspace. (AI-inferred)
 	CloudWatchLogs any
-	Filters any
+	Filters        any
 }
 
 type Workspace_QueryLoggingConfiguration struct {
@@ -60,71 +60,71 @@ type Workspace_WorkspaceConfiguration struct {
 }
 
 var Workspace_LoggingConfigurationFields = ubx.FieldMap{
-		"LogGroupArn": ubx.FieldSpec{WireName: "log_group_arn"},
-	}
+	"LogGroupArn": ubx.FieldSpec{WireName: "log_group_arn"},
+}
 
 var Workspace_QueryLoggingConfiguration_Destinations_FiltersFields = ubx.FieldMap{
-		"QspThreshold": ubx.FieldSpec{WireName: "qsp_threshold"},
-	}
+	"QspThreshold": ubx.FieldSpec{WireName: "qsp_threshold"},
+}
 
 var Workspace_QueryLoggingConfiguration_DestinationsFields = ubx.FieldMap{
-		"CloudWatchLogs": ubx.FieldSpec{
-			WireName: "cloud_watch_logs",
-			Kind: "object",
-			Fields: Workspace_LoggingConfigurationFields,
-		},
-		"Filters": ubx.FieldSpec{
-			WireName: "filters",
-			Kind: "object",
-			Fields: Workspace_QueryLoggingConfiguration_Destinations_FiltersFields,
-		},
-	}
+	"CloudWatchLogs": ubx.FieldSpec{
+		WireName: "cloud_watch_logs",
+		Kind:     "object",
+		Fields:   Workspace_LoggingConfigurationFields,
+	},
+	"Filters": ubx.FieldSpec{
+		WireName: "filters",
+		Kind:     "object",
+		Fields:   Workspace_QueryLoggingConfiguration_Destinations_FiltersFields,
+	},
+}
 
 var Workspace_QueryLoggingConfigurationFields = ubx.FieldMap{
-		"Destinations": ubx.FieldSpec{
-			WireName: "destinations",
-			Kind: "list",
-			Fields: Workspace_QueryLoggingConfiguration_DestinationsFields,
-		},
-	}
+	"Destinations": ubx.FieldSpec{
+		WireName: "destinations",
+		Kind:     "list",
+		Fields:   Workspace_QueryLoggingConfiguration_DestinationsFields,
+	},
+}
 
 var Workspace_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Workspace_WorkspaceConfiguration_LimitsPerLabelSets_LabelSetFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Workspace_WorkspaceConfiguration_LimitsPerLabelSets_LimitsFields = ubx.FieldMap{
-		"MaxSeries": ubx.FieldSpec{WireName: "max_series"},
-	}
+	"MaxSeries": ubx.FieldSpec{WireName: "max_series"},
+}
 
 var Workspace_WorkspaceConfiguration_LimitsPerLabelSetsFields = ubx.FieldMap{
-		"LabelSet": ubx.FieldSpec{
-			WireName: "label_set",
-			Kind: "list",
-			Fields: Workspace_WorkspaceConfiguration_LimitsPerLabelSets_LabelSetFields,
-		},
-		"Limits": ubx.FieldSpec{
-			WireName: "limits",
-			Kind: "object",
-			Fields: Workspace_WorkspaceConfiguration_LimitsPerLabelSets_LimitsFields,
-		},
-	}
+	"LabelSet": ubx.FieldSpec{
+		WireName: "label_set",
+		Kind:     "list",
+		Fields:   Workspace_WorkspaceConfiguration_LimitsPerLabelSets_LabelSetFields,
+	},
+	"Limits": ubx.FieldSpec{
+		WireName: "limits",
+		Kind:     "object",
+		Fields:   Workspace_WorkspaceConfiguration_LimitsPerLabelSets_LimitsFields,
+	},
+}
 
 var Workspace_WorkspaceConfigurationFields = ubx.FieldMap{
-		"LimitsPerLabelSets": ubx.FieldSpec{
-			WireName: "limits_per_label_sets",
-			Kind: "list",
-			Fields: Workspace_WorkspaceConfiguration_LimitsPerLabelSetsFields,
-		},
-		"OutOfOrderTimeWindowInSeconds": ubx.FieldSpec{WireName: "out_of_order_time_window_in_seconds"},
-		"RetentionPeriodInDays": ubx.FieldSpec{WireName: "retention_period_in_days"},
-		"RuleQueryOffsetInSeconds": ubx.FieldSpec{WireName: "rule_query_offset_in_seconds"},
-	}
+	"LimitsPerLabelSets": ubx.FieldSpec{
+		WireName: "limits_per_label_sets",
+		Kind:     "list",
+		Fields:   Workspace_WorkspaceConfiguration_LimitsPerLabelSetsFields,
+	},
+	"OutOfOrderTimeWindowInSeconds": ubx.FieldSpec{WireName: "out_of_order_time_window_in_seconds"},
+	"RetentionPeriodInDays":         ubx.FieldSpec{WireName: "retention_period_in_days"},
+	"RuleQueryOffsetInSeconds":      ubx.FieldSpec{WireName: "rule_query_offset_in_seconds"},
+}
 
 type WorkspaceConfig struct {
 	// The AMP Workspace alert manager definition data
@@ -170,27 +170,27 @@ var Workspace = ubx.ResourceBinding{
 	WireType: "aws_aps_workspace",
 	Fields: ubx.FieldMap{
 		"AlertManagerDefinition": ubx.FieldSpec{WireName: "alert_manager_definition"},
-		"Alias": ubx.FieldSpec{WireName: "alias"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+		"Alias":                  ubx.FieldSpec{WireName: "alias"},
+		"KmsKeyArn":              ubx.FieldSpec{WireName: "kms_key_arn"},
 		"LoggingConfiguration": ubx.FieldSpec{
 			WireName: "logging_configuration",
-			Kind: "object",
-			Fields: Workspace_LoggingConfigurationFields,
+			Kind:     "object",
+			Fields:   Workspace_LoggingConfigurationFields,
 		},
 		"QueryLoggingConfiguration": ubx.FieldSpec{
 			WireName: "query_logging_configuration",
-			Kind: "object",
-			Fields: Workspace_QueryLoggingConfigurationFields,
+			Kind:     "object",
+			Fields:   Workspace_QueryLoggingConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Workspace_TagsFields,
+			Kind:     "list",
+			Fields:   Workspace_TagsFields,
 		},
 		"WorkspaceConfiguration": ubx.FieldSpec{
 			WireName: "workspace_configuration",
-			Kind: "object",
-			Fields: Workspace_WorkspaceConfigurationFields,
+			Kind:     "object",
+			Fields:   Workspace_WorkspaceConfigurationFields,
 		},
 	},
 }

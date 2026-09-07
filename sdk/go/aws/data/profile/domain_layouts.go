@@ -4,27 +4,27 @@ package profile
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainLayouts_Items struct {
-	CreatedAt any
-	Description any
-	DisplayName any
-	IsDefault any
-	LastUpdatedAt any
+	CreatedAt            any
+	Description          any
+	DisplayName          any
+	IsDefault            any
+	LastUpdatedAt        any
 	LayoutDefinitionName any
-	LayoutType any
-	Tags any
+	LayoutType           any
+	Tags                 any
 }
 
 type DomainLayoutsConfig struct {
 	DomainName any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DomainLayoutsAttrs struct {
 	DomainName any
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var DomainLayouts = ubx.DataSourceBinding{
@@ -32,6 +32,6 @@ var DomainLayouts = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,39 +4,39 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type JourneyRuns_JourneyRunsResponse_Item struct {
-	CreationTime any
+	CreationTime   any
 	LastUpdateTime any
-	RunId any
-	Status any
+	RunId          any
+	Status         any
 }
 
 type JourneyRuns_JourneyRunsResponse struct {
-	Item any
+	Item      any
 	NextToken any
 }
 
 type JourneyRunsConfig struct {
 	ApplicationId any
-	JourneyId any
-	PageSize any
-	Token any
+	JourneyId     any
+	PageSize      any
+	Token         any
 }
 
 type JourneyRunsAttrs struct {
 	ApplicationId any
-	JourneyId any
+	JourneyId     any
 	// <p>Provides information from all runs of a journey.</p>
 	JourneyRunsResponse any
-	PageSize any
-	Token any
+	PageSize            any
+	Token               any
 }
 
 var JourneyRuns = ubx.DataSourceBinding{
 	WireType: "aws_pinpoint_journey_runs",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"JourneyId": ubx.FieldSpec{WireName: "journey_id"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"Token": ubx.FieldSpec{WireName: "token"},
+		"JourneyId":     ubx.FieldSpec{WireName: "journey_id"},
+		"PageSize":      ubx.FieldSpec{WireName: "page_size"},
+		"Token":         ubx.FieldSpec{WireName: "token"},
 	},
 }

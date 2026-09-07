@@ -4,108 +4,108 @@ package elasticache
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UpdateActions_ServiceUpdateTimeRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type UpdateActions_UpdateActions_CacheNodeUpdateStatus struct {
-	CacheNodeId any
-	NodeDeletionDate any
-	NodeUpdateEndDate any
-	NodeUpdateInitiatedBy any
-	NodeUpdateInitiatedDate any
-	NodeUpdateStartDate any
-	NodeUpdateStatus any
+	CacheNodeId                  any
+	NodeDeletionDate             any
+	NodeUpdateEndDate            any
+	NodeUpdateInitiatedBy        any
+	NodeUpdateInitiatedDate      any
+	NodeUpdateStartDate          any
+	NodeUpdateStatus             any
 	NodeUpdateStatusModifiedDate any
 }
 
 type UpdateActions_UpdateActions_NodeGroupUpdateStatus_NodeGroupMemberUpdateStatus struct {
-	CacheClusterId any
-	CacheNodeId any
-	NodeDeletionDate any
-	NodeUpdateEndDate any
-	NodeUpdateInitiatedBy any
-	NodeUpdateInitiatedDate any
-	NodeUpdateStartDate any
-	NodeUpdateStatus any
+	CacheClusterId               any
+	CacheNodeId                  any
+	NodeDeletionDate             any
+	NodeUpdateEndDate            any
+	NodeUpdateInitiatedBy        any
+	NodeUpdateInitiatedDate      any
+	NodeUpdateStartDate          any
+	NodeUpdateStatus             any
 	NodeUpdateStatusModifiedDate any
 }
 
 type UpdateActions_UpdateActions_NodeGroupUpdateStatus struct {
-	NodeGroupId any
+	NodeGroupId                 any
 	NodeGroupMemberUpdateStatus any
 }
 
 type UpdateActions_UpdateActions struct {
-	CacheClusterId any
-	CacheNodeUpdateStatus any
-	Engine any
-	EstimatedUpdateTime any
-	NodeGroupUpdateStatus any
-	NodesUpdated any
-	ReplicationGroupId any
-	ServiceUpdateName any
+	CacheClusterId                      any
+	CacheNodeUpdateStatus               any
+	Engine                              any
+	EstimatedUpdateTime                 any
+	NodeGroupUpdateStatus               any
+	NodesUpdated                        any
+	ReplicationGroupId                  any
+	ServiceUpdateName                   any
 	ServiceUpdateRecommendedApplyByDate any
-	ServiceUpdateReleaseDate any
-	ServiceUpdateSeverity any
-	ServiceUpdateStatus any
-	ServiceUpdateType any
-	SlaMet any
-	UpdateActionAvailableDate any
-	UpdateActionStatus any
-	UpdateActionStatusModifiedDate any
+	ServiceUpdateReleaseDate            any
+	ServiceUpdateSeverity               any
+	ServiceUpdateStatus                 any
+	ServiceUpdateType                   any
+	SlaMet                              any
+	UpdateActionAvailableDate           any
+	UpdateActionStatus                  any
+	UpdateActionStatusModifiedDate      any
 }
 
 var UpdateActions_ServiceUpdateTimeRangeFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 type UpdateActionsConfig struct {
-	CacheClusterIds any
-	Engine any
-	Marker any
-	MaxRecords any
+	CacheClusterIds     any
+	Engine              any
+	Marker              any
+	MaxRecords          any
 	ReplicationGroupIds any
-	ServiceUpdateName any
+	ServiceUpdateName   any
 	ServiceUpdateStatus any
 	// <p>Filters update actions from the service updates that are in available status during the time range.</p>
-	ServiceUpdateTimeRange any
+	ServiceUpdateTimeRange    any
 	ShowNodeLevelUpdateStatus any
-	UpdateActionStatus any
+	UpdateActionStatus        any
 }
 
 type UpdateActionsAttrs struct {
-	CacheClusterIds any
-	Engine any
-	Marker any
-	MaxRecords any
+	CacheClusterIds     any
+	Engine              any
+	Marker              any
+	MaxRecords          any
 	ReplicationGroupIds any
-	ServiceUpdateName any
+	ServiceUpdateName   any
 	ServiceUpdateStatus any
 	// <p>Filters update actions from the service updates that are in available status during the time range.</p>
-	ServiceUpdateTimeRange any
+	ServiceUpdateTimeRange    any
 	ShowNodeLevelUpdateStatus any
-	UpdateActionStatus any
-	UpdateActions any
+	UpdateActionStatus        any
+	UpdateActions             any
 }
 
 var UpdateActions = ubx.DataSourceBinding{
 	WireType: "aws_elasticache_update_actions",
 	Fields: ubx.FieldMap{
-		"CacheClusterIds": ubx.FieldSpec{WireName: "cache_cluster_ids"},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
+		"CacheClusterIds":     ubx.FieldSpec{WireName: "cache_cluster_ids"},
+		"Engine":              ubx.FieldSpec{WireName: "engine"},
+		"Marker":              ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":          ubx.FieldSpec{WireName: "max_records"},
 		"ReplicationGroupIds": ubx.FieldSpec{WireName: "replication_group_ids"},
-		"ServiceUpdateName": ubx.FieldSpec{WireName: "service_update_name"},
+		"ServiceUpdateName":   ubx.FieldSpec{WireName: "service_update_name"},
 		"ServiceUpdateStatus": ubx.FieldSpec{WireName: "service_update_status"},
 		"ServiceUpdateTimeRange": ubx.FieldSpec{
 			WireName: "service_update_time_range",
-			Kind: "object",
-			Fields: UpdateActions_ServiceUpdateTimeRangeFields,
+			Kind:     "object",
+			Fields:   UpdateActions_ServiceUpdateTimeRangeFields,
 		},
 		"ShowNodeLevelUpdateStatus": ubx.FieldSpec{WireName: "show_node_level_update_status"},
-		"UpdateActionStatus": ubx.FieldSpec{WireName: "update_action_status"},
+		"UpdateActionStatus":        ubx.FieldSpec{WireName: "update_action_status"},
 	},
 }

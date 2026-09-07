@@ -29,8 +29,8 @@ var SecurityPolicy = ubx.ResourceBinding{
 	WireType: "aws_open_search_serverless_security_policy",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Policy":      ubx.FieldSpec{WireName: "policy"},
+		"Type":        ubx.FieldSpec{WireName: "type"},
 	},
 }

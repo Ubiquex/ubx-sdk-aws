@@ -4,7 +4,7 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainsForPackage_DomainPackageDetailsList_AssociationConfiguration_KeyStoreAccessOption struct {
-	KeyAccessRoleArn any
+	KeyAccessRoleArn      any
 	KeyStoreAccessEnabled any
 }
 
@@ -14,21 +14,21 @@ type DomainsForPackage_DomainPackageDetailsList_AssociationConfiguration struct 
 
 type DomainsForPackage_DomainPackageDetailsList_ErrorDetails struct {
 	ErrorMessage any
-	ErrorType any
+	ErrorType    any
 }
 
 type DomainsForPackage_DomainPackageDetailsList struct {
-	AssociationConfiguration any
-	DomainName any
-	DomainPackageStatus any
-	ErrorDetails any
-	LastUpdated any
-	PackageId any
-	PackageName any
-	PackageType any
-	PackageVersion any
+	AssociationConfiguration  any
+	DomainName                any
+	DomainPackageStatus       any
+	ErrorDetails              any
+	LastUpdated               any
+	PackageId                 any
+	PackageName               any
+	PackageType               any
+	PackageVersion            any
 	PrerequisitePackageIdlist any
-	ReferencePath any
+	ReferencePath             any
 }
 
 type DomainsForPackageConfig struct {
@@ -52,7 +52,7 @@ var DomainsForPackage = ubx.DataSourceBinding{
 	WireType: "aws_opensearch_domains_for_package",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PackageId": ubx.FieldSpec{WireName: "package_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"PackageId":  ubx.FieldSpec{WireName: "package_id"},
 	},
 }

@@ -8,9 +8,9 @@ type ActionConfig struct {
 }
 
 type ActionAttrs struct {
-	Action any
+	Action      any
 	Description any
-	Service any
+	Service     any
 }
 
 var Action = ubx.DataSourceBinding{

@@ -34,33 +34,33 @@ type TestCase_Tags struct {
 }
 
 var TestCase_EntryPoint_ChatEntryPointParametersFields = ubx.FieldMap{
-		"FlowId": ubx.FieldSpec{WireName: "flow_id"},
-	}
+	"FlowId": ubx.FieldSpec{WireName: "flow_id"},
+}
 
 var TestCase_EntryPoint_VoiceCallEntryPointParametersFields = ubx.FieldMap{
-		"DestinationPhoneNumber": ubx.FieldSpec{WireName: "destination_phone_number"},
-		"FlowId": ubx.FieldSpec{WireName: "flow_id"},
-		"SourcePhoneNumber": ubx.FieldSpec{WireName: "source_phone_number"},
-	}
+	"DestinationPhoneNumber": ubx.FieldSpec{WireName: "destination_phone_number"},
+	"FlowId":                 ubx.FieldSpec{WireName: "flow_id"},
+	"SourcePhoneNumber":      ubx.FieldSpec{WireName: "source_phone_number"},
+}
 
 var TestCase_EntryPointFields = ubx.FieldMap{
-		"ChatEntryPointParameters": ubx.FieldSpec{
-			WireName: "chat_entry_point_parameters",
-			Kind: "object",
-			Fields: TestCase_EntryPoint_ChatEntryPointParametersFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"VoiceCallEntryPointParameters": ubx.FieldSpec{
-			WireName: "voice_call_entry_point_parameters",
-			Kind: "object",
-			Fields: TestCase_EntryPoint_VoiceCallEntryPointParametersFields,
-		},
-	}
+	"ChatEntryPointParameters": ubx.FieldSpec{
+		WireName: "chat_entry_point_parameters",
+		Kind:     "object",
+		Fields:   TestCase_EntryPoint_ChatEntryPointParametersFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+	"VoiceCallEntryPointParameters": ubx.FieldSpec{
+		WireName: "voice_call_entry_point_parameters",
+		Kind:     "object",
+		Fields:   TestCase_EntryPoint_VoiceCallEntryPointParametersFields,
+	},
+}
 
 var TestCase_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TestCaseConfig struct {
 	// The content of the test case.
@@ -109,21 +109,21 @@ type TestCaseAttrs struct {
 var TestCase = ubx.ResourceBinding{
 	WireType: "aws_connect_test_case",
 	Fields: ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
+		"Content":     ubx.FieldSpec{WireName: "content"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EntryPoint": ubx.FieldSpec{
 			WireName: "entry_point",
-			Kind: "object",
-			Fields: TestCase_EntryPointFields,
+			Kind:     "object",
+			Fields:   TestCase_EntryPointFields,
 		},
 		"InitializationData": ubx.FieldSpec{WireName: "initialization_data"},
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"InstanceArn":        ubx.FieldSpec{WireName: "instance_arn"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"Status":             ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TestCase_TagsFields,
+			Kind:     "list",
+			Fields:   TestCase_TagsFields,
 		},
 	},
 }

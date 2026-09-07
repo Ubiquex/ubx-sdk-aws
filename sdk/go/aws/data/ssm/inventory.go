@@ -7,89 +7,88 @@ type Inventory_Aggregators_Aggregators struct {
 }
 
 type Inventory_Aggregators_Groups_Filters struct {
-	Key any
-	Type any
+	Key    any
+	Type   any
 	Values any
 }
 
 type Inventory_Aggregators_Groups struct {
 	Filters any
-	Name any
+	Name    any
 }
 
 type Inventory_Aggregators struct {
 	Aggregators any
-	Expression any
-	Groups any
+	Expression  any
+	Groups      any
 }
 
 type Inventory_Entities_Data struct {
-	CaptureTime any
-	Content any
-	ContentHash any
+	CaptureTime   any
+	Content       any
+	ContentHash   any
 	SchemaVersion any
-	TypeName any
+	TypeName      any
 }
 
 type Inventory_Entities struct {
 	Data any
-	Id any
+	Id   any
 }
 
 type Inventory_ResultAttributes struct {
 	TypeName any
 }
 
-var Inventory_Aggregators_AggregatorsFields = ubx.FieldMap{
-	}
+var Inventory_Aggregators_AggregatorsFields = ubx.FieldMap{}
 
 var Inventory_Aggregators_Groups_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Inventory_Aggregators_GroupsFields = ubx.FieldMap{
-		"Filters": ubx.FieldSpec{
-			WireName: "filters",
-			Kind: "list",
-			Fields: Inventory_Aggregators_Groups_FiltersFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Filters": ubx.FieldSpec{
+		WireName: "filters",
+		Kind:     "list",
+		Fields:   Inventory_Aggregators_Groups_FiltersFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Inventory_AggregatorsFields = ubx.FieldMap{
-		"Aggregators": ubx.FieldSpec{
-			WireName: "aggregators",
-			Kind: "list",
-			Fields: Inventory_Aggregators_AggregatorsFields,
-		},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Groups": ubx.FieldSpec{
-			WireName: "groups",
-			Kind: "list",
-			Fields: Inventory_Aggregators_GroupsFields,
-		},
-	}
+	"Aggregators": ubx.FieldSpec{
+		WireName: "aggregators",
+		Kind:     "list",
+		Fields:   Inventory_Aggregators_AggregatorsFields,
+	},
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Groups": ubx.FieldSpec{
+		WireName: "groups",
+		Kind:     "list",
+		Fields:   Inventory_Aggregators_GroupsFields,
+	},
+}
 
 var Inventory_ResultAttributesFields = ubx.FieldMap{
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
-	}
+	"TypeName": ubx.FieldSpec{WireName: "type_name"},
+}
 
 type InventoryConfig struct {
-	Aggregators any
-	Filters any
-	MaxResults any
-	NextToken any
+	Aggregators      any
+	Filters          any
+	MaxResults       any
+	NextToken        any
 	ResultAttributes any
 }
 
 type InventoryAttrs struct {
-	Aggregators any
-	Entities any
-	Filters any
-	MaxResults any
-	NextToken any
+	Aggregators      any
+	Entities         any
+	Filters          any
+	MaxResults       any
+	NextToken        any
 	ResultAttributes any
 }
 
@@ -98,20 +97,20 @@ var Inventory = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Aggregators": ubx.FieldSpec{
 			WireName: "aggregators",
-			Kind: "list",
-			Fields: Inventory_AggregatorsFields,
+			Kind:     "list",
+			Fields:   Inventory_AggregatorsFields,
 		},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Inventory_Aggregators_Groups_FiltersFields,
+			Kind:     "list",
+			Fields:   Inventory_Aggregators_Groups_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ResultAttributes": ubx.FieldSpec{
 			WireName: "result_attributes",
-			Kind: "list",
-			Fields: Inventory_ResultAttributesFields,
+			Kind:     "list",
+			Fields:   Inventory_ResultAttributesFields,
 		},
 	},
 }

@@ -37,10 +37,10 @@ var UserPoolIdentityProvider = ubx.ResourceBinding{
 	WireType: "aws_cognito_user_pool_identity_provider",
 	Fields: ubx.FieldMap{
 		"AttributeMapping": ubx.FieldSpec{WireName: "attribute_mapping"},
-		"IdpIdentifiers": ubx.FieldSpec{WireName: "idp_identifiers"},
-		"ProviderDetails": ubx.FieldSpec{WireName: "provider_details"},
-		"ProviderName": ubx.FieldSpec{WireName: "provider_name"},
-		"ProviderType": ubx.FieldSpec{WireName: "provider_type"},
-		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
+		"IdpIdentifiers":   ubx.FieldSpec{WireName: "idp_identifiers"},
+		"ProviderDetails":  ubx.FieldSpec{WireName: "provider_details"},
+		"ProviderName":     ubx.FieldSpec{WireName: "provider_name"},
+		"ProviderType":     ubx.FieldSpec{WireName: "provider_type"},
+		"UserPoolId":       ubx.FieldSpec{WireName: "user_pool_id"},
 	},
 }

@@ -4,40 +4,40 @@ package s3
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Buckets_Buckets struct {
-	BucketArn any
+	BucketArn    any
 	BucketRegion any
 	CreationDate any
-	Name any
+	Name         any
 }
 
 type Buckets_Owner struct {
 	DisplayName any
-	Id any
+	Id          any
 }
 
 type BucketsConfig struct {
-	BucketRegion any
+	BucketRegion      any
 	ContinuationToken any
-	MaxBuckets any
-	Prefix any
+	MaxBuckets        any
+	Prefix            any
 }
 
 type BucketsAttrs struct {
-	BucketRegion any
-	Buckets any
+	BucketRegion      any
+	Buckets           any
 	ContinuationToken any
-	MaxBuckets any
+	MaxBuckets        any
 	// <p>Container for the owner's display name and ID.</p>
-	Owner any
+	Owner  any
 	Prefix any
 }
 
 var Buckets = ubx.DataSourceBinding{
 	WireType: "aws_s3_buckets",
 	Fields: ubx.FieldMap{
-		"BucketRegion": ubx.FieldSpec{WireName: "bucket_region"},
+		"BucketRegion":      ubx.FieldSpec{WireName: "bucket_region"},
 		"ContinuationToken": ubx.FieldSpec{WireName: "continuation_token"},
-		"MaxBuckets": ubx.FieldSpec{WireName: "max_buckets"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
+		"MaxBuckets":        ubx.FieldSpec{WireName: "max_buckets"},
+		"Prefix":            ubx.FieldSpec{WireName: "prefix"},
 	},
 }

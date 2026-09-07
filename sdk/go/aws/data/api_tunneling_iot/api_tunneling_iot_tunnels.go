@@ -4,24 +4,24 @@ package api_tunneling_iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiTunnelingIotTunnels_TunnelSummaries struct {
-	CreatedAt any
-	Description any
+	CreatedAt     any
+	Description   any
 	LastUpdatedAt any
-	Status any
-	TunnelArn any
-	TunnelId any
+	Status        any
+	TunnelArn     any
+	TunnelId      any
 }
 
 type ApiTunnelingIotTunnelsConfig struct {
 	MaxResults any
-	NextToken any
-	ThingName any
+	NextToken  any
+	ThingName  any
 }
 
 type ApiTunnelingIotTunnelsAttrs struct {
-	MaxResults any
-	NextToken any
-	ThingName any
+	MaxResults      any
+	NextToken       any
+	ThingName       any
 	TunnelSummaries any
 }
 
@@ -29,7 +29,7 @@ var ApiTunnelingIotTunnels = ubx.DataSourceBinding{
 	WireType: "aws_api_tunneling_iot_tunnels",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ThingName": ubx.FieldSpec{WireName: "thing_name"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"ThingName":  ubx.FieldSpec{WireName: "thing_name"},
 	},
 }

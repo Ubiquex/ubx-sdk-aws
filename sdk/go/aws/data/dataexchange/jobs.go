@@ -4,7 +4,7 @@ package dataexchange
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Jobs_Jobs_AssetConfiguration_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -17,97 +17,97 @@ type Jobs_Jobs_Details_CreateS3DataAccessFromS3Bucket_AssetSource_KmsKeysToGrant
 }
 
 type Jobs_Jobs_Details_CreateS3DataAccessFromS3Bucket_AssetSource struct {
-	Bucket any
-	KeyPrefixes any
-	Keys any
+	Bucket         any
+	KeyPrefixes    any
+	Keys           any
 	KmsKeysToGrant any
 }
 
 type Jobs_Jobs_Details_CreateS3DataAccessFromS3Bucket struct {
 	AssetSource any
-	DataSetId any
-	RevisionId any
+	DataSetId   any
+	RevisionId  any
 }
 
 type Jobs_Jobs_Details_ExportAssetToSignedUrl struct {
-	AssetId any
-	DataSetId any
-	RevisionId any
-	SignedUrl any
+	AssetId            any
+	DataSetId          any
+	RevisionId         any
+	SignedUrl          any
 	SignedUrlExpiresAt any
 }
 
 type Jobs_Jobs_Details_ExportAssetsToS3_AssetDestinations struct {
 	AssetId any
-	Bucket any
-	Key any
+	Bucket  any
+	Key     any
 }
 
 type Jobs_Jobs_Details_ExportAssetsToS3_Encryption struct {
 	KmsKeyArn any
-	Type any
+	Type      any
 }
 
 type Jobs_Jobs_Details_ExportAssetsToS3 struct {
 	AssetDestinations any
-	DataSetId any
-	Encryption any
-	RevisionId any
+	DataSetId         any
+	Encryption        any
+	RevisionId        any
 }
 
 type Jobs_Jobs_Details_ExportRevisionsToS3_RevisionDestinations struct {
-	Bucket any
+	Bucket     any
 	KeyPattern any
 	RevisionId any
 }
 
 type Jobs_Jobs_Details_ExportRevisionsToS3 struct {
-	DataSetId any
-	Encryption any
-	EventActionArn any
+	DataSetId            any
+	Encryption           any
+	EventActionArn       any
 	RevisionDestinations any
 }
 
 type Jobs_Jobs_Details_ImportAssetFromApiGatewayApi struct {
-	ApiDescription any
-	ApiId any
-	ApiKey any
-	ApiName any
-	ApiSpecificationMd5Hash any
-	ApiSpecificationUploadUrl any
+	ApiDescription                     any
+	ApiId                              any
+	ApiKey                             any
+	ApiName                            any
+	ApiSpecificationMd5Hash            any
+	ApiSpecificationUploadUrl          any
 	ApiSpecificationUploadUrlExpiresAt any
-	DataSetId any
-	ProtocolType any
-	RevisionId any
-	Stage any
+	DataSetId                          any
+	ProtocolType                       any
+	RevisionId                         any
+	Stage                              any
 }
 
 type Jobs_Jobs_Details_ImportAssetFromSignedUrl struct {
-	AssetName any
-	DataSetId any
-	Md5Hash any
-	RevisionId any
-	SignedUrl any
+	AssetName          any
+	DataSetId          any
+	Md5Hash            any
+	RevisionId         any
+	SignedUrl          any
 	SignedUrlExpiresAt any
 }
 
 type Jobs_Jobs_Details_ImportAssetsFromLakeFormationTagPolicy_Database_Expression struct {
-	TagKey any
+	TagKey    any
 	TagValues any
 }
 
 type Jobs_Jobs_Details_ImportAssetsFromLakeFormationTagPolicy_Database struct {
-	Expression any
+	Expression  any
 	Permissions any
 }
 
 type Jobs_Jobs_Details_ImportAssetsFromLakeFormationTagPolicy struct {
-	CatalogId any
-	DataSetId any
-	Database any
+	CatalogId  any
+	DataSetId  any
+	Database   any
 	RevisionId any
-	RoleArn any
-	Table any
+	RoleArn    any
+	Table      any
 }
 
 type Jobs_Jobs_Details_ImportAssetsFromRedshiftDataShares_AssetSources struct {
@@ -116,31 +116,31 @@ type Jobs_Jobs_Details_ImportAssetsFromRedshiftDataShares_AssetSources struct {
 
 type Jobs_Jobs_Details_ImportAssetsFromRedshiftDataShares struct {
 	AssetSources any
-	DataSetId any
-	RevisionId any
+	DataSetId    any
+	RevisionId   any
 }
 
 type Jobs_Jobs_Details_ImportAssetsFromS3_AssetSources struct {
 	Bucket any
-	Key any
+	Key    any
 }
 
 type Jobs_Jobs_Details_ImportAssetsFromS3 struct {
 	AssetSources any
-	DataSetId any
-	RevisionId any
+	DataSetId    any
+	RevisionId   any
 }
 
 type Jobs_Jobs_Details struct {
-	CreateS3DataAccessFromS3Bucket any
-	ExportAssetToSignedUrl any
-	ExportAssetsToS3 any
-	ExportRevisionsToS3 any
-	ImportAssetFromApiGatewayApi any
-	ImportAssetFromSignedUrl any
+	CreateS3DataAccessFromS3Bucket         any
+	ExportAssetToSignedUrl                 any
+	ExportAssetsToS3                       any
+	ExportRevisionsToS3                    any
+	ImportAssetFromApiGatewayApi           any
+	ImportAssetFromSignedUrl               any
 	ImportAssetsFromLakeFormationTagPolicy any
-	ImportAssetsFromRedshiftDataShares any
-	ImportAssetsFromS3 any
+	ImportAssetsFromRedshiftDataShares     any
+	ImportAssetsFromS3                     any
 }
 
 type Jobs_Jobs_Errors_Details_ImportAssetFromSignedUrlJobErrorDetails struct {
@@ -149,52 +149,52 @@ type Jobs_Jobs_Errors_Details_ImportAssetFromSignedUrlJobErrorDetails struct {
 
 type Jobs_Jobs_Errors_Details struct {
 	ImportAssetFromSignedUrlJobErrorDetails any
-	ImportAssetsFromS3JobErrorDetails any
+	ImportAssetsFromS3JobErrorDetails       any
 }
 
 type Jobs_Jobs_Errors struct {
-	Code any
-	Details any
-	LimitName any
-	LimitValue any
-	Message any
-	ResourceId any
+	Code         any
+	Details      any
+	LimitName    any
+	LimitValue   any
+	Message      any
+	ResourceId   any
 	ResourceType any
 }
 
 type Jobs_Jobs struct {
-	Arn any
+	Arn                any
 	AssetConfiguration any
-	CreatedAt any
-	Details any
-	Errors any
-	Id any
-	State any
-	Type any
-	UpdatedAt any
+	CreatedAt          any
+	Details            any
+	Errors             any
+	Id                 any
+	State              any
+	Type               any
+	UpdatedAt          any
 }
 
 type JobsConfig struct {
-	DataSetId any
+	DataSetId  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	RevisionId any
 }
 
 type JobsAttrs struct {
-	DataSetId any
-	Jobs any
+	DataSetId  any
+	Jobs       any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	RevisionId any
 }
 
 var Jobs = ubx.DataSourceBinding{
 	WireType: "aws_dataexchange_jobs",
 	Fields: ubx.FieldMap{
-		"DataSetId": ubx.FieldSpec{WireName: "data_set_id"},
+		"DataSetId":  ubx.FieldSpec{WireName: "data_set_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
 	},
 }

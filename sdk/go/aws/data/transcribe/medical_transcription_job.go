@@ -4,21 +4,21 @@ package transcribe
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MedicalTranscriptionJob_MedicalTranscriptionJob_Media struct {
-	MediaFileUri any
+	MediaFileUri         any
 	RedactedMediaFileUri any
 }
 
 type MedicalTranscriptionJob_MedicalTranscriptionJob_Settings struct {
 	ChannelIdentification any
-	MaxAlternatives any
-	MaxSpeakerLabels any
-	ShowAlternatives any
-	ShowSpeakerLabels any
-	VocabularyName any
+	MaxAlternatives       any
+	MaxSpeakerLabels      any
+	ShowAlternatives      any
+	ShowSpeakerLabels     any
+	VocabularyName        any
 }
 
 type MedicalTranscriptionJob_MedicalTranscriptionJob_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -27,25 +27,25 @@ type MedicalTranscriptionJob_MedicalTranscriptionJob_Transcript struct {
 }
 
 type MedicalTranscriptionJob_MedicalTranscriptionJob struct {
-	CompletionTime any
+	CompletionTime            any
 	ContentIdentificationType any
-	CreationTime any
-	FailureReason any
-	LanguageCode any
+	CreationTime              any
+	FailureReason             any
+	LanguageCode              any
 	// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p> <p>For information on supported media formats, refer to the <code>MediaFormat</code> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
-	Media any
-	MediaFormat any
-	MediaSampleRateHertz any
+	Media                       any
+	MediaFormat                 any
+	MediaSampleRateHertz        any
 	MedicalTranscriptionJobName any
 	// <p>Allows additional optional settings in your request, including channel identification, alternative transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your medical transcription job.</p>
-	Settings any
+	Settings  any
 	Specialty any
 	StartTime any
-	Tags any
+	Tags      any
 	// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
-	Transcript any
+	Transcript             any
 	TranscriptionJobStatus any
-	Type any
+	Type                   any
 }
 
 type MedicalTranscriptionJobConfig struct {
@@ -54,7 +54,7 @@ type MedicalTranscriptionJobConfig struct {
 
 type MedicalTranscriptionJobAttrs struct {
 	// <p>Provides detailed information about a medical transcription job.</p> <p>To view the status of the specified medical transcription job, check the <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
-	MedicalTranscriptionJob any
+	MedicalTranscriptionJob     any
 	MedicalTranscriptionJobName any
 }
 

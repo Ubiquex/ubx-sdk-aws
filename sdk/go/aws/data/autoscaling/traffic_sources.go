@@ -4,33 +4,33 @@ package autoscaling
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrafficSources_TrafficSources struct {
-	Identifier any
-	State any
+	Identifier    any
+	State         any
 	TrafficSource any
-	Type any
+	Type          any
 }
 
 type TrafficSourcesConfig struct {
 	AutoScalingGroupName any
-	MaxRecords any
-	NextToken any
-	TrafficSourceType any
+	MaxRecords           any
+	NextToken            any
+	TrafficSourceType    any
 }
 
 type TrafficSourcesAttrs struct {
 	AutoScalingGroupName any
-	MaxRecords any
-	NextToken any
-	TrafficSourceType any
-	TrafficSources any
+	MaxRecords           any
+	NextToken            any
+	TrafficSourceType    any
+	TrafficSources       any
 }
 
 var TrafficSources = ubx.DataSourceBinding{
 	WireType: "aws_autoscaling_traffic_sources",
 	Fields: ubx.FieldMap{
 		"AutoScalingGroupName": ubx.FieldSpec{WireName: "auto_scaling_group_name"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"TrafficSourceType": ubx.FieldSpec{WireName: "traffic_source_type"},
+		"MaxRecords":           ubx.FieldSpec{WireName: "max_records"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
+		"TrafficSourceType":    ubx.FieldSpec{WireName: "traffic_source_type"},
 	},
 }

@@ -11,9 +11,9 @@ type FirewallDomainList_Tags struct {
 }
 
 var FirewallDomainList_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FirewallDomainListConfig struct {
 	// A caller-supplied token used to ensure idempotent creation of the Route 53 Resolver firewall domain list, preventing duplicates if the create request is retried. (AI-inferred)
@@ -56,7 +56,7 @@ type FirewallDomainListAttrs struct {
 	Status any
 	// A message from Route 53 Resolver DNS Firewall that provides additional detail about the current status of the domain list, such as an error explanation or confirmation of successful processing. (AI-inferred)
 	StatusMessage any
-	Tags any
+	Tags          any
 	// Indicates the timestamp (as a string) at which the Route 53 Resolver DNS Firewall domain list was last modified by AWS, matching the ModificationTime attribute returned by the service. (AI-inferred)
 	UpdatedAt any
 }
@@ -64,16 +64,16 @@ type FirewallDomainListAttrs struct {
 var FirewallDomainList = ubx.ResourceBinding{
 	WireType: "aws_route53_global_resolver_firewall_domain_list",
 	Fields: ubx.FieldMap{
-		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainFileUrl": ubx.FieldSpec{WireName: "domain_file_url"},
-		"Domains": ubx.FieldSpec{WireName: "domains"},
+		"ClientToken":      ubx.FieldSpec{WireName: "client_token"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"DomainFileUrl":    ubx.FieldSpec{WireName: "domain_file_url"},
+		"Domains":          ubx.FieldSpec{WireName: "domains"},
 		"GlobalResolverId": ubx.FieldSpec{WireName: "global_resolver_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FirewallDomainList_TagsFields,
+			Kind:     "list",
+			Fields:   FirewallDomainList_TagsFields,
 		},
 	},
 }

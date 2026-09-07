@@ -8,54 +8,54 @@ type ComputeOptimizerRdsdatabaseRecommendationProjectedMetrics_RecommendationPre
 }
 
 type ComputeOptimizerRdsdatabaseRecommendationProjectedMetrics_RecommendedOptionProjectedMetrics_ProjectedMetrics struct {
-	Name any
+	Name       any
 	Timestamps any
-	Values any
+	Values     any
 }
 
 type ComputeOptimizerRdsdatabaseRecommendationProjectedMetrics_RecommendedOptionProjectedMetrics struct {
-	ProjectedMetrics any
-	Rank any
+	ProjectedMetrics           any
+	Rank                       any
 	RecommendedDbinstanceClass any
 }
 
 var ComputeOptimizerRdsdatabaseRecommendationProjectedMetrics_RecommendationPreferencesFields = ubx.FieldMap{
-		"CpuVendorArchitectures": ubx.FieldSpec{WireName: "cpu_vendor_architectures"},
-	}
+	"CpuVendorArchitectures": ubx.FieldSpec{WireName: "cpu_vendor_architectures"},
+}
 
 type ComputeOptimizerRdsdatabaseRecommendationProjectedMetricsConfig struct {
 	EndTime any
-	Period any
+	Period  any
 	// <p>Describes the recommendation preferences to return in the response of a <a>GetAutoScalingGroupRecommendations</a>, <a>GetEC2InstanceRecommendations</a>, <a>GetEC2RecommendationProjectedMetrics</a>, <a>GetRDSDatabaseRecommendations</a>, and <a>GetRDSDatabaseRecommendationProjectedMetrics</a> request.</p>
 	RecommendationPreferences any
-	ResourceArn any
-	StartTime any
-	Stat any
+	ResourceArn               any
+	StartTime                 any
+	Stat                      any
 }
 
 type ComputeOptimizerRdsdatabaseRecommendationProjectedMetricsAttrs struct {
 	EndTime any
-	Period any
+	Period  any
 	// <p>Describes the recommendation preferences to return in the response of a <a>GetAutoScalingGroupRecommendations</a>, <a>GetEC2InstanceRecommendations</a>, <a>GetEC2RecommendationProjectedMetrics</a>, <a>GetRDSDatabaseRecommendations</a>, and <a>GetRDSDatabaseRecommendationProjectedMetrics</a> request.</p>
-	RecommendationPreferences any
+	RecommendationPreferences         any
 	RecommendedOptionProjectedMetrics any
-	ResourceArn any
-	StartTime any
-	Stat any
+	ResourceArn                       any
+	StartTime                         any
+	Stat                              any
 }
 
 var ComputeOptimizerRdsdatabaseRecommendationProjectedMetrics = ubx.DataSourceBinding{
 	WireType: "aws_compute_optimizer_rdsdatabase_recommendation_projected_metrics",
 	Fields: ubx.FieldMap{
 		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Period": ubx.FieldSpec{WireName: "period"},
+		"Period":  ubx.FieldSpec{WireName: "period"},
 		"RecommendationPreferences": ubx.FieldSpec{
 			WireName: "recommendation_preferences",
-			Kind: "object",
-			Fields: ComputeOptimizerRdsdatabaseRecommendationProjectedMetrics_RecommendationPreferencesFields,
+			Kind:     "object",
+			Fields:   ComputeOptimizerRdsdatabaseRecommendationProjectedMetrics_RecommendationPreferencesFields,
 		},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Stat": ubx.FieldSpec{WireName: "stat"},
+		"StartTime":   ubx.FieldSpec{WireName: "start_time"},
+		"Stat":        ubx.FieldSpec{WireName: "stat"},
 	},
 }

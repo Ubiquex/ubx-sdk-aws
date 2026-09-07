@@ -4,79 +4,79 @@ package health
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AffectedEntitiesForOrganization_Entities struct {
-	AwsAccountId any
-	EntityArn any
-	EntityMetadata any
-	EntityUrl any
-	EntityValue any
-	EventArn any
+	AwsAccountId    any
+	EntityArn       any
+	EntityMetadata  any
+	EntityUrl       any
+	EntityValue     any
+	EventArn        any
 	LastUpdatedTime any
-	StatusCode any
-	Tags any
+	StatusCode      any
+	Tags            any
 }
 
 type AffectedEntitiesForOrganization_FailedSet struct {
 	AwsAccountId any
 	ErrorMessage any
-	ErrorName any
-	EventArn any
+	ErrorName    any
+	EventArn     any
 }
 
 type AffectedEntitiesForOrganization_OrganizationEntityAccountFilters struct {
 	AwsAccountId any
-	EventArn any
-	StatusCodes any
+	EventArn     any
+	StatusCodes  any
 }
 
 type AffectedEntitiesForOrganization_OrganizationEntityFilters struct {
 	AwsAccountId any
-	EventArn any
+	EventArn     any
 }
 
 var AffectedEntitiesForOrganization_OrganizationEntityAccountFiltersFields = ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"EventArn": ubx.FieldSpec{WireName: "event_arn"},
-		"StatusCodes": ubx.FieldSpec{WireName: "status_codes"},
-	}
+	"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
+	"EventArn":     ubx.FieldSpec{WireName: "event_arn"},
+	"StatusCodes":  ubx.FieldSpec{WireName: "status_codes"},
+}
 
 var AffectedEntitiesForOrganization_OrganizationEntityFiltersFields = ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"EventArn": ubx.FieldSpec{WireName: "event_arn"},
-	}
+	"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
+	"EventArn":     ubx.FieldSpec{WireName: "event_arn"},
+}
 
 type AffectedEntitiesForOrganizationConfig struct {
-	Locale any
-	MaxResults any
-	NextToken any
+	Locale                           any
+	MaxResults                       any
+	NextToken                        any
 	OrganizationEntityAccountFilters any
-	OrganizationEntityFilters any
+	OrganizationEntityFilters        any
 }
 
 type AffectedEntitiesForOrganizationAttrs struct {
-	Entities any
-	FailedSet any
-	Locale any
-	MaxResults any
-	NextToken any
+	Entities                         any
+	FailedSet                        any
+	Locale                           any
+	MaxResults                       any
+	NextToken                        any
 	OrganizationEntityAccountFilters any
-	OrganizationEntityFilters any
+	OrganizationEntityFilters        any
 }
 
 var AffectedEntitiesForOrganization = ubx.DataSourceBinding{
 	WireType: "aws_health_affected_entities_for_organization",
 	Fields: ubx.FieldMap{
-		"Locale": ubx.FieldSpec{WireName: "locale"},
+		"Locale":     ubx.FieldSpec{WireName: "locale"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationEntityAccountFilters": ubx.FieldSpec{
 			WireName: "organization_entity_account_filters",
-			Kind: "list",
-			Fields: AffectedEntitiesForOrganization_OrganizationEntityAccountFiltersFields,
+			Kind:     "list",
+			Fields:   AffectedEntitiesForOrganization_OrganizationEntityAccountFiltersFields,
 		},
 		"OrganizationEntityFilters": ubx.FieldSpec{
 			WireName: "organization_entity_filters",
-			Kind: "list",
-			Fields: AffectedEntitiesForOrganization_OrganizationEntityFiltersFields,
+			Kind:     "list",
+			Fields:   AffectedEntitiesForOrganization_OrganizationEntityFiltersFields,
 		},
 	},
 }

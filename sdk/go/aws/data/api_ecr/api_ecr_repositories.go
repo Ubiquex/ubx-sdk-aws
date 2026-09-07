@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiEcrRepositories_Repositories_EncryptionConfiguration struct {
 	EncryptionType any
-	KmsKey any
+	KmsKey         any
 }
 
 type ApiEcrRepositories_Repositories_ImageScanningConfiguration struct {
@@ -13,43 +13,43 @@ type ApiEcrRepositories_Repositories_ImageScanningConfiguration struct {
 }
 
 type ApiEcrRepositories_Repositories_ImageTagMutabilityExclusionFilters struct {
-	Filter any
+	Filter     any
 	FilterType any
 }
 
 type ApiEcrRepositories_Repositories struct {
-	CreatedAt any
-	EncryptionConfiguration any
-	ImageScanningConfiguration any
-	ImageTagMutability any
+	CreatedAt                          any
+	EncryptionConfiguration            any
+	ImageScanningConfiguration         any
+	ImageTagMutability                 any
 	ImageTagMutabilityExclusionFilters any
-	RegistryId any
-	RepositoryArn any
-	RepositoryName any
-	RepositoryUri any
+	RegistryId                         any
+	RepositoryArn                      any
+	RepositoryName                     any
+	RepositoryUri                      any
 }
 
 type ApiEcrRepositoriesConfig struct {
-	MaxResults any
-	NextToken any
-	RegistryId any
+	MaxResults      any
+	NextToken       any
+	RegistryId      any
 	RepositoryNames any
 }
 
 type ApiEcrRepositoriesAttrs struct {
-	MaxResults any
-	NextToken any
-	RegistryId any
-	Repositories any
+	MaxResults      any
+	NextToken       any
+	RegistryId      any
+	Repositories    any
 	RepositoryNames any
 }
 
 var ApiEcrRepositories = ubx.DataSourceBinding{
 	WireType: "aws_api_ecr_repositories",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RegistryId": ubx.FieldSpec{WireName: "registry_id"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"RegistryId":      ubx.FieldSpec{WireName: "registry_id"},
 		"RepositoryNames": ubx.FieldSpec{WireName: "repository_names"},
 	},
 }

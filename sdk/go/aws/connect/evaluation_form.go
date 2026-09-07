@@ -51,7 +51,7 @@ type EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSel
 
 type EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Automation_Options_RuleCategory struct {
 	// Specifies the category name assigned to this multi-select answer option's automation rule, used for grouping and reporting evaluation results in Amazon Connect. (AI-inferred)
-	Category any
+	Category  any
 	Condition any
 	// Specifies the option reference IDs of the answer choices in this multi-select question that are grouped under this rule category, which are used by the automation rule to apply scoring or branching based on which of these options are selected. (AI-inferred)
 	OptionRefIds any
@@ -147,7 +147,7 @@ type EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_Numeric 
 
 type EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_SingleSelect_Automation_Options_RuleCategory struct {
 	// Specifies the name of an Amazon Connect category to be automatically assigned to the contact when the selected answer option is chosen in the single-select question's automation rule, enabling contact classification. (AI-inferred)
-	Category any
+	Category  any
 	Condition any
 	// In an automation rule for a single-select evaluation question, this field references the unique ID of an answer option so that selecting that option triggers the associated rule category. (AI-inferred)
 	OptionRefId any
@@ -286,7 +286,7 @@ type EvaluationForm_ReviewConfiguration_ReviewNotificationRecipients_Value struc
 
 type EvaluationForm_ReviewConfiguration_ReviewNotificationRecipients struct {
 	// The type of the review notification recipient (either USER or GROUP) that determines how the recipient ID is interpreted for evaluation form review notifications. (AI-inferred)
-	Type any
+	Type  any
 	Value any
 }
 
@@ -319,386 +319,386 @@ type EvaluationForm_TargetConfiguration struct {
 }
 
 var EvaluationForm_AutoEvaluationConfigurationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var EvaluationForm_Items_Section_Items_Question_Enablement_Condition_Operands_Expression_SourceFields = ubx.FieldMap{
-		"RefId": ubx.FieldSpec{WireName: "ref_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"RefId": ubx.FieldSpec{WireName: "ref_id"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+}
 
 var EvaluationForm_Items_Section_Items_Question_Enablement_Condition_Operands_ExpressionFields = ubx.FieldMap{
-		"Comparator": ubx.FieldSpec{WireName: "comparator"},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_Enablement_Condition_Operands_Expression_SourceFields,
-		},
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: EvaluationForm_Items_Section_Items_Question_Enablement_Condition_Operands_Expression_SourceFields,
-		},
-	}
+	"Comparator": ubx.FieldSpec{WireName: "comparator"},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_Enablement_Condition_Operands_Expression_SourceFields,
+	},
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   EvaluationForm_Items_Section_Items_Question_Enablement_Condition_Operands_Expression_SourceFields,
+	},
+}
 
 var EvaluationForm_Items_Section_Items_Question_Enablement_Condition_OperandsFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{
-			WireName: "expression",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_Enablement_Condition_Operands_ExpressionFields,
-		},
-	}
+	"Expression": ubx.FieldSpec{
+		WireName: "expression",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_Enablement_Condition_Operands_ExpressionFields,
+	},
+}
 
 var EvaluationForm_Items_Section_Items_Question_Enablement_ConditionFields = ubx.FieldMap{
-		"Operands": ubx.FieldSpec{
-			WireName: "operands",
-			Kind: "list",
-			Fields: EvaluationForm_Items_Section_Items_Question_Enablement_Condition_OperandsFields,
-		},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-	}
+	"Operands": ubx.FieldSpec{
+		WireName: "operands",
+		Kind:     "list",
+		Fields:   EvaluationForm_Items_Section_Items_Question_Enablement_Condition_OperandsFields,
+	},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+}
 
 var EvaluationForm_Items_Section_Items_Question_EnablementFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_Enablement_ConditionFields,
-		},
-		"DefaultAction": ubx.FieldSpec{WireName: "default_action"},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_Enablement_ConditionFields,
+	},
+	"DefaultAction": ubx.FieldSpec{WireName: "default_action"},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Automation_AnswerSourceFields = ubx.FieldMap{
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-	}
+	"SourceType": ubx.FieldSpec{WireName: "source_type"},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Automation_Options_RuleCategoryFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"OptionRefIds": ubx.FieldSpec{WireName: "option_ref_ids"},
-	}
+	"Category":     ubx.FieldSpec{WireName: "category"},
+	"Condition":    ubx.FieldSpec{WireName: "condition"},
+	"OptionRefIds": ubx.FieldSpec{WireName: "option_ref_ids"},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Automation_OptionsFields = ubx.FieldMap{
-		"RuleCategory": ubx.FieldSpec{
-			WireName: "rule_category",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Automation_Options_RuleCategoryFields,
-		},
-	}
+	"RuleCategory": ubx.FieldSpec{
+		WireName: "rule_category",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Automation_Options_RuleCategoryFields,
+	},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_AutomationFields = ubx.FieldMap{
-		"AnswerSource": ubx.FieldSpec{
-			WireName: "answer_source",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Automation_AnswerSourceFields,
-		},
-		"DefaultOptionRefIds": ubx.FieldSpec{WireName: "default_option_ref_ids"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "list",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Automation_OptionsFields,
-		},
-	}
+	"AnswerSource": ubx.FieldSpec{
+		WireName: "answer_source",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Automation_AnswerSourceFields,
+	},
+	"DefaultOptionRefIds": ubx.FieldSpec{WireName: "default_option_ref_ids"},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "list",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Automation_OptionsFields,
+	},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Options_AutomaticFailConfigurationFields = ubx.FieldMap{
-		"TargetSection": ubx.FieldSpec{WireName: "target_section"},
-	}
+	"TargetSection": ubx.FieldSpec{WireName: "target_section"},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Options_PointsConfigurationFields = ubx.FieldMap{
-		"IsBonus": ubx.FieldSpec{WireName: "is_bonus"},
-		"PointValue": ubx.FieldSpec{WireName: "point_value"},
-	}
+	"IsBonus":    ubx.FieldSpec{WireName: "is_bonus"},
+	"PointValue": ubx.FieldSpec{WireName: "point_value"},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_OptionsFields = ubx.FieldMap{
-		"AutomaticFail": ubx.FieldSpec{WireName: "automatic_fail"},
-		"AutomaticFailConfiguration": ubx.FieldSpec{
-			WireName: "automatic_fail_configuration",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Options_AutomaticFailConfigurationFields,
-		},
-		"PointsConfiguration": ubx.FieldSpec{
-			WireName: "points_configuration",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Options_PointsConfigurationFields,
-		},
-		"RefId": ubx.FieldSpec{WireName: "ref_id"},
-		"Score": ubx.FieldSpec{WireName: "score"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"AutomaticFail": ubx.FieldSpec{WireName: "automatic_fail"},
+	"AutomaticFailConfiguration": ubx.FieldSpec{
+		WireName: "automatic_fail_configuration",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Options_AutomaticFailConfigurationFields,
+	},
+	"PointsConfiguration": ubx.FieldSpec{
+		WireName: "points_configuration",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Options_PointsConfigurationFields,
+	},
+	"RefId": ubx.FieldSpec{WireName: "ref_id"},
+	"Score": ubx.FieldSpec{WireName: "score"},
+	"Text":  ubx.FieldSpec{WireName: "text"},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelectFields = ubx.FieldMap{
-		"Automation": ubx.FieldSpec{
-			WireName: "automation",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_AutomationFields,
-		},
-		"DisplayAs": ubx.FieldSpec{WireName: "display_as"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "list",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_OptionsFields,
-		},
-	}
+	"Automation": ubx.FieldSpec{
+		WireName: "automation",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_AutomationFields,
+	},
+	"DisplayAs": ubx.FieldSpec{WireName: "display_as"},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "list",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_OptionsFields,
+	},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_Numeric_Automation_PropertyValueFields = ubx.FieldMap{
-		"Label": ubx.FieldSpec{WireName: "label"},
-	}
+	"Label": ubx.FieldSpec{WireName: "label"},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_Numeric_AutomationFields = ubx.FieldMap{
-		"AnswerSource": ubx.FieldSpec{
-			WireName: "answer_source",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Automation_AnswerSourceFields,
-		},
-		"PropertyValue": ubx.FieldSpec{
-			WireName: "property_value",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_Numeric_Automation_PropertyValueFields,
-		},
-	}
+	"AnswerSource": ubx.FieldSpec{
+		WireName: "answer_source",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Automation_AnswerSourceFields,
+	},
+	"PropertyValue": ubx.FieldSpec{
+		WireName: "property_value",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_Numeric_Automation_PropertyValueFields,
+	},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_Numeric_OptionsFields = ubx.FieldMap{
-		"AutomaticFail": ubx.FieldSpec{WireName: "automatic_fail"},
-		"AutomaticFailConfiguration": ubx.FieldSpec{
-			WireName: "automatic_fail_configuration",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Options_AutomaticFailConfigurationFields,
-		},
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-		"PointsConfiguration": ubx.FieldSpec{
-			WireName: "points_configuration",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Options_PointsConfigurationFields,
-		},
-		"Score": ubx.FieldSpec{WireName: "score"},
-	}
+	"AutomaticFail": ubx.FieldSpec{WireName: "automatic_fail"},
+	"AutomaticFailConfiguration": ubx.FieldSpec{
+		WireName: "automatic_fail_configuration",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Options_AutomaticFailConfigurationFields,
+	},
+	"MaxValue": ubx.FieldSpec{WireName: "max_value"},
+	"MinValue": ubx.FieldSpec{WireName: "min_value"},
+	"PointsConfiguration": ubx.FieldSpec{
+		WireName: "points_configuration",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Options_PointsConfigurationFields,
+	},
+	"Score": ubx.FieldSpec{WireName: "score"},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_NumericFields = ubx.FieldMap{
-		"Automation": ubx.FieldSpec{
-			WireName: "automation",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_Numeric_AutomationFields,
-		},
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "list",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_Numeric_OptionsFields,
-		},
-	}
+	"Automation": ubx.FieldSpec{
+		WireName: "automation",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_Numeric_AutomationFields,
+	},
+	"MaxValue": ubx.FieldSpec{WireName: "max_value"},
+	"MinValue": ubx.FieldSpec{WireName: "min_value"},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "list",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_Numeric_OptionsFields,
+	},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_SingleSelect_Automation_Options_RuleCategoryFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"OptionRefId": ubx.FieldSpec{WireName: "option_ref_id"},
-	}
+	"Category":    ubx.FieldSpec{WireName: "category"},
+	"Condition":   ubx.FieldSpec{WireName: "condition"},
+	"OptionRefId": ubx.FieldSpec{WireName: "option_ref_id"},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_SingleSelect_Automation_OptionsFields = ubx.FieldMap{
-		"RuleCategory": ubx.FieldSpec{
-			WireName: "rule_category",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_SingleSelect_Automation_Options_RuleCategoryFields,
-		},
-	}
+	"RuleCategory": ubx.FieldSpec{
+		WireName: "rule_category",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_SingleSelect_Automation_Options_RuleCategoryFields,
+	},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_SingleSelect_AutomationFields = ubx.FieldMap{
-		"AnswerSource": ubx.FieldSpec{
-			WireName: "answer_source",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Automation_AnswerSourceFields,
-		},
-		"DefaultOptionRefId": ubx.FieldSpec{WireName: "default_option_ref_id"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "list",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_SingleSelect_Automation_OptionsFields,
-		},
-	}
+	"AnswerSource": ubx.FieldSpec{
+		WireName: "answer_source",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Automation_AnswerSourceFields,
+	},
+	"DefaultOptionRefId": ubx.FieldSpec{WireName: "default_option_ref_id"},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "list",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_SingleSelect_Automation_OptionsFields,
+	},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_SingleSelectFields = ubx.FieldMap{
-		"Automation": ubx.FieldSpec{
-			WireName: "automation",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_SingleSelect_AutomationFields,
-		},
-		"DisplayAs": ubx.FieldSpec{WireName: "display_as"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "list",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_OptionsFields,
-		},
-	}
+	"Automation": ubx.FieldSpec{
+		WireName: "automation",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_SingleSelect_AutomationFields,
+	},
+	"DisplayAs": ubx.FieldSpec{WireName: "display_as"},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "list",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_OptionsFields,
+	},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_Text_AutomationFields = ubx.FieldMap{
-		"AnswerSource": ubx.FieldSpec{
-			WireName: "answer_source",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Automation_AnswerSourceFields,
-		},
-	}
+	"AnswerSource": ubx.FieldSpec{
+		WireName: "answer_source",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelect_Automation_AnswerSourceFields,
+	},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_TextFields = ubx.FieldMap{
-		"Automation": ubx.FieldSpec{
-			WireName: "automation",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_Text_AutomationFields,
-		},
-	}
+	"Automation": ubx.FieldSpec{
+		WireName: "automation",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_Text_AutomationFields,
+	},
+}
 
 var EvaluationForm_Items_Section_Items_Question_QuestionTypePropertiesFields = ubx.FieldMap{
-		"MultiSelect": ubx.FieldSpec{
-			WireName: "multi_select",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelectFields,
-		},
-		"Numeric": ubx.FieldSpec{
-			WireName: "numeric",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_NumericFields,
-		},
-		"SingleSelect": ubx.FieldSpec{
-			WireName: "single_select",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_SingleSelectFields,
-		},
-		"Text": ubx.FieldSpec{
-			WireName: "text",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_TextFields,
-		},
-	}
+	"MultiSelect": ubx.FieldSpec{
+		WireName: "multi_select",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_MultiSelectFields,
+	},
+	"Numeric": ubx.FieldSpec{
+		WireName: "numeric",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_NumericFields,
+	},
+	"SingleSelect": ubx.FieldSpec{
+		WireName: "single_select",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_SingleSelectFields,
+	},
+	"Text": ubx.FieldSpec{
+		WireName: "text",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypeProperties_TextFields,
+	},
+}
 
 var EvaluationForm_Items_Section_Items_Question_ScoringConfiguration_PointsConfigurationFields = ubx.FieldMap{
-		"IsBonus": ubx.FieldSpec{WireName: "is_bonus"},
-		"MaxPointValue": ubx.FieldSpec{WireName: "max_point_value"},
-		"MinPointValue": ubx.FieldSpec{WireName: "min_point_value"},
-	}
+	"IsBonus":       ubx.FieldSpec{WireName: "is_bonus"},
+	"MaxPointValue": ubx.FieldSpec{WireName: "max_point_value"},
+	"MinPointValue": ubx.FieldSpec{WireName: "min_point_value"},
+}
 
 var EvaluationForm_Items_Section_Items_Question_ScoringConfiguration_ScoreThresholdsFields = ubx.FieldMap{
-		"MaxScorePercentage": ubx.FieldSpec{WireName: "max_score_percentage"},
-		"MinScorePercentage": ubx.FieldSpec{WireName: "min_score_percentage"},
-		"PerformanceCategory": ubx.FieldSpec{WireName: "performance_category"},
-	}
+	"MaxScorePercentage":  ubx.FieldSpec{WireName: "max_score_percentage"},
+	"MinScorePercentage":  ubx.FieldSpec{WireName: "min_score_percentage"},
+	"PerformanceCategory": ubx.FieldSpec{WireName: "performance_category"},
+}
 
 var EvaluationForm_Items_Section_Items_Question_ScoringConfigurationFields = ubx.FieldMap{
-		"IsExcludedFromScoring": ubx.FieldSpec{WireName: "is_excluded_from_scoring"},
-		"PointsConfiguration": ubx.FieldSpec{
-			WireName: "points_configuration",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_ScoringConfiguration_PointsConfigurationFields,
-		},
-		"ScoreThresholds": ubx.FieldSpec{
-			WireName: "score_thresholds",
-			Kind: "list",
-			Fields: EvaluationForm_Items_Section_Items_Question_ScoringConfiguration_ScoreThresholdsFields,
-		},
-	}
+	"IsExcludedFromScoring": ubx.FieldSpec{WireName: "is_excluded_from_scoring"},
+	"PointsConfiguration": ubx.FieldSpec{
+		WireName: "points_configuration",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_ScoringConfiguration_PointsConfigurationFields,
+	},
+	"ScoreThresholds": ubx.FieldSpec{
+		WireName: "score_thresholds",
+		Kind:     "list",
+		Fields:   EvaluationForm_Items_Section_Items_Question_ScoringConfiguration_ScoreThresholdsFields,
+	},
+}
 
 var EvaluationForm_Items_Section_Items_QuestionFields = ubx.FieldMap{
-		"Enablement": ubx.FieldSpec{
-			WireName: "enablement",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_EnablementFields,
-		},
-		"Instructions": ubx.FieldSpec{WireName: "instructions"},
-		"NotApplicableEnabled": ubx.FieldSpec{WireName: "not_applicable_enabled"},
-		"QuestionType": ubx.FieldSpec{WireName: "question_type"},
-		"QuestionTypeProperties": ubx.FieldSpec{
-			WireName: "question_type_properties",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_QuestionTypePropertiesFields,
-		},
-		"RefId": ubx.FieldSpec{WireName: "ref_id"},
-		"ScoringConfiguration": ubx.FieldSpec{
-			WireName: "scoring_configuration",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_Question_ScoringConfigurationFields,
-		},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"Enablement": ubx.FieldSpec{
+		WireName: "enablement",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_EnablementFields,
+	},
+	"Instructions":         ubx.FieldSpec{WireName: "instructions"},
+	"NotApplicableEnabled": ubx.FieldSpec{WireName: "not_applicable_enabled"},
+	"QuestionType":         ubx.FieldSpec{WireName: "question_type"},
+	"QuestionTypeProperties": ubx.FieldSpec{
+		WireName: "question_type_properties",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_QuestionTypePropertiesFields,
+	},
+	"RefId": ubx.FieldSpec{WireName: "ref_id"},
+	"ScoringConfiguration": ubx.FieldSpec{
+		WireName: "scoring_configuration",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_Question_ScoringConfigurationFields,
+	},
+	"Title":  ubx.FieldSpec{WireName: "title"},
+	"Weight": ubx.FieldSpec{WireName: "weight"},
+}
 
 var EvaluationForm_Items_Section_ItemsFields = ubx.FieldMap{
-		"Question": ubx.FieldSpec{
-			WireName: "question",
-			Kind: "object",
-			Fields: EvaluationForm_Items_Section_Items_QuestionFields,
-		},
-		"Section": ubx.FieldSpec{WireName: "section"},
-	}
+	"Question": ubx.FieldSpec{
+		WireName: "question",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_Section_Items_QuestionFields,
+	},
+	"Section": ubx.FieldSpec{WireName: "section"},
+}
 
 var EvaluationForm_Items_SectionFields = ubx.FieldMap{
-		"Instructions": ubx.FieldSpec{WireName: "instructions"},
-		"IsExcludedFromScoring": ubx.FieldSpec{WireName: "is_excluded_from_scoring"},
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: EvaluationForm_Items_Section_ItemsFields,
-		},
-		"RefId": ubx.FieldSpec{WireName: "ref_id"},
-		"ScoreThresholds": ubx.FieldSpec{
-			WireName: "score_thresholds",
-			Kind: "list",
-			Fields: EvaluationForm_Items_Section_Items_Question_ScoringConfiguration_ScoreThresholdsFields,
-		},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"Instructions":          ubx.FieldSpec{WireName: "instructions"},
+	"IsExcludedFromScoring": ubx.FieldSpec{WireName: "is_excluded_from_scoring"},
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   EvaluationForm_Items_Section_ItemsFields,
+	},
+	"RefId": ubx.FieldSpec{WireName: "ref_id"},
+	"ScoreThresholds": ubx.FieldSpec{
+		WireName: "score_thresholds",
+		Kind:     "list",
+		Fields:   EvaluationForm_Items_Section_Items_Question_ScoringConfiguration_ScoreThresholdsFields,
+	},
+	"Title":  ubx.FieldSpec{WireName: "title"},
+	"Weight": ubx.FieldSpec{WireName: "weight"},
+}
 
 var EvaluationForm_ItemsFields = ubx.FieldMap{
-		"Section": ubx.FieldSpec{
-			WireName: "section",
-			Kind: "object",
-			Fields: EvaluationForm_Items_SectionFields,
-		},
-	}
+	"Section": ubx.FieldSpec{
+		WireName: "section",
+		Kind:     "object",
+		Fields:   EvaluationForm_Items_SectionFields,
+	},
+}
 
 var EvaluationForm_LanguageConfigurationFields = ubx.FieldMap{
-		"FormLanguage": ubx.FieldSpec{WireName: "form_language"},
-	}
+	"FormLanguage": ubx.FieldSpec{WireName: "form_language"},
+}
 
 var EvaluationForm_ReviewConfiguration_ReviewNotificationRecipients_ValueFields = ubx.FieldMap{
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
-	}
+	"UserId": ubx.FieldSpec{WireName: "user_id"},
+}
 
 var EvaluationForm_ReviewConfiguration_ReviewNotificationRecipientsFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: EvaluationForm_ReviewConfiguration_ReviewNotificationRecipients_ValueFields,
-		},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   EvaluationForm_ReviewConfiguration_ReviewNotificationRecipients_ValueFields,
+	},
+}
 
 var EvaluationForm_ReviewConfigurationFields = ubx.FieldMap{
-		"EligibilityDays": ubx.FieldSpec{WireName: "eligibility_days"},
-		"ReviewNotificationRecipients": ubx.FieldSpec{
-			WireName: "review_notification_recipients",
-			Kind: "list",
-			Fields: EvaluationForm_ReviewConfiguration_ReviewNotificationRecipientsFields,
-		},
-	}
+	"EligibilityDays": ubx.FieldSpec{WireName: "eligibility_days"},
+	"ReviewNotificationRecipients": ubx.FieldSpec{
+		WireName: "review_notification_recipients",
+		Kind:     "list",
+		Fields:   EvaluationForm_ReviewConfiguration_ReviewNotificationRecipientsFields,
+	},
+}
 
 var EvaluationForm_ScoringStrategyFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"ScoreThresholds": ubx.FieldSpec{
-			WireName: "score_thresholds",
-			Kind: "list",
-			Fields: EvaluationForm_Items_Section_Items_Question_ScoringConfiguration_ScoreThresholdsFields,
-		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+	"ScoreThresholds": ubx.FieldSpec{
+		WireName: "score_thresholds",
+		Kind:     "list",
+		Fields:   EvaluationForm_Items_Section_Items_Question_ScoringConfiguration_ScoreThresholdsFields,
+	},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var EvaluationForm_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var EvaluationForm_TargetConfigurationFields = ubx.FieldMap{
-		"ContactInteractionType": ubx.FieldSpec{WireName: "contact_interaction_type"},
-	}
+	"ContactInteractionType": ubx.FieldSpec{WireName: "contact_interaction_type"},
+}
 
 type EvaluationFormConfig struct {
 	// Configuration information about automated evaluations.
@@ -757,41 +757,41 @@ var EvaluationForm = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoEvaluationConfiguration": ubx.FieldSpec{
 			WireName: "auto_evaluation_configuration",
-			Kind: "object",
-			Fields: EvaluationForm_AutoEvaluationConfigurationFields,
+			Kind:     "object",
+			Fields:   EvaluationForm_AutoEvaluationConfigurationFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
 		"Items": ubx.FieldSpec{
 			WireName: "items",
-			Kind: "list",
-			Fields: EvaluationForm_ItemsFields,
+			Kind:     "list",
+			Fields:   EvaluationForm_ItemsFields,
 		},
 		"LanguageConfiguration": ubx.FieldSpec{
 			WireName: "language_configuration",
-			Kind: "object",
-			Fields: EvaluationForm_LanguageConfigurationFields,
+			Kind:     "object",
+			Fields:   EvaluationForm_LanguageConfigurationFields,
 		},
 		"ReviewConfiguration": ubx.FieldSpec{
 			WireName: "review_configuration",
-			Kind: "object",
-			Fields: EvaluationForm_ReviewConfigurationFields,
+			Kind:     "object",
+			Fields:   EvaluationForm_ReviewConfigurationFields,
 		},
 		"ScoringStrategy": ubx.FieldSpec{
 			WireName: "scoring_strategy",
-			Kind: "object",
-			Fields: EvaluationForm_ScoringStrategyFields,
+			Kind:     "object",
+			Fields:   EvaluationForm_ScoringStrategyFields,
 		},
 		"Status": ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EvaluationForm_TagsFields,
+			Kind:     "list",
+			Fields:   EvaluationForm_TagsFields,
 		},
 		"TargetConfiguration": ubx.FieldSpec{
 			WireName: "target_configuration",
-			Kind: "object",
-			Fields: EvaluationForm_TargetConfigurationFields,
+			Kind:     "object",
+			Fields:   EvaluationForm_TargetConfigurationFields,
 		},
 		"Title": ubx.FieldSpec{WireName: "title"},
 	},

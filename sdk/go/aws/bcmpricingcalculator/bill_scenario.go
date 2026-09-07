@@ -17,9 +17,9 @@ type BillScenario_Tags struct {
 }
 
 var BillScenario_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type BillScenarioConfig struct {
 	// The ARN of the cost category group sharing preference
@@ -63,13 +63,13 @@ var BillScenario = ubx.ResourceBinding{
 	WireType: "aws_bcm_pricing_calculator_bill_scenario",
 	Fields: ubx.FieldMap{
 		"CostCategoryGroupSharingPreferenceArn": ubx.FieldSpec{WireName: "cost_category_group_sharing_preference_arn"},
-		"ExpiresAt": ubx.FieldSpec{WireName: "expires_at"},
-		"GroupSharingPreference": ubx.FieldSpec{WireName: "group_sharing_preference"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"ExpiresAt":                             ubx.FieldSpec{WireName: "expires_at"},
+		"GroupSharingPreference":                ubx.FieldSpec{WireName: "group_sharing_preference"},
+		"Name":                                  ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: BillScenario_TagsFields,
+			Kind:     "list",
+			Fields:   BillScenario_TagsFields,
 		},
 	},
 }

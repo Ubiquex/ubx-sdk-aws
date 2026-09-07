@@ -4,28 +4,28 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImageAncestry_ImageAncestryEntries struct {
-	CreationDate any
-	ImageId any
-	ImageOwnerAlias any
-	SourceImageId any
+	CreationDate      any
+	ImageId           any
+	ImageOwnerAlias   any
+	SourceImageId     any
 	SourceImageRegion any
 }
 
 type ImageAncestryConfig struct {
-	DryRun any
+	DryRun  any
 	ImageId any
 }
 
 type ImageAncestryAttrs struct {
-	DryRun any
+	DryRun               any
 	ImageAncestryEntries any
-	ImageId any
+	ImageId              any
 }
 
 var ImageAncestry = ubx.DataSourceBinding{
 	WireType: "aws_ec2_image_ancestry",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":  ubx.FieldSpec{WireName: "dry_run"},
 		"ImageId": ubx.FieldSpec{WireName: "image_id"},
 	},
 }

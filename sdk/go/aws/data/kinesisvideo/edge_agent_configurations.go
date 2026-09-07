@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EdgeAgentConfigurations_EdgeConfigs_EdgeConfig_DeletionConfig_LocalSizeConfig struct {
 	MaxLocalMediaSizeInMb any
-	StrategyOnFullSize any
+	StrategyOnFullSize    any
 }
 
 type EdgeAgentConfigurations_EdgeConfigs_EdgeConfig_DeletionConfig struct {
-	DeleteAfterUpload any
+	DeleteAfterUpload    any
 	EdgeRetentionInHours any
-	LocalSizeConfig any
+	LocalSizeConfig      any
 }
 
 type EdgeAgentConfigurations_EdgeConfigs_EdgeConfig_RecorderConfig_MediaSourceConfig struct {
 	MediaUriSecretArn any
-	MediaUriType any
+	MediaUriType      any
 }
 
 type EdgeAgentConfigurations_EdgeConfigs_EdgeConfig_RecorderConfig_ScheduleConfig struct {
-	DurationInSeconds any
+	DurationInSeconds  any
 	ScheduleExpression any
 }
 
 type EdgeAgentConfigurations_EdgeConfigs_EdgeConfig_RecorderConfig struct {
 	MediaSourceConfig any
-	ScheduleConfig any
+	ScheduleConfig    any
 }
 
 type EdgeAgentConfigurations_EdgeConfigs_EdgeConfig_UploaderConfig struct {
@@ -35,39 +35,39 @@ type EdgeAgentConfigurations_EdgeConfigs_EdgeConfig_UploaderConfig struct {
 
 type EdgeAgentConfigurations_EdgeConfigs_EdgeConfig struct {
 	DeletionConfig any
-	HubDeviceArn any
+	HubDeviceArn   any
 	RecorderConfig any
 	UploaderConfig any
 }
 
 type EdgeAgentConfigurations_EdgeConfigs struct {
-	CreationTime any
-	EdgeConfig any
+	CreationTime        any
+	EdgeConfig          any
 	FailedStatusDetails any
-	LastUpdatedTime any
-	StreamArn any
-	StreamName any
-	SyncStatus any
+	LastUpdatedTime     any
+	StreamArn           any
+	StreamName          any
+	SyncStatus          any
 }
 
 type EdgeAgentConfigurationsConfig struct {
 	HubDeviceArn any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type EdgeAgentConfigurationsAttrs struct {
-	EdgeConfigs any
+	EdgeConfigs  any
 	HubDeviceArn any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var EdgeAgentConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_kinesisvideo_edge_agent_configurations",
 	Fields: ubx.FieldMap{
 		"HubDeviceArn": ubx.FieldSpec{WireName: "hub_device_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

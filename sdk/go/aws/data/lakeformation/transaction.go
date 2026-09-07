@@ -4,10 +4,10 @@ package lakeformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Transaction_TransactionDescription struct {
-	TransactionEndTime any
-	TransactionId any
+	TransactionEndTime   any
+	TransactionId        any
 	TransactionStartTime any
-	TransactionStatus any
+	TransactionStatus    any
 }
 
 type TransactionConfig struct {
@@ -17,7 +17,7 @@ type TransactionConfig struct {
 type TransactionAttrs struct {
 	// <p>A structure that contains information about a transaction.</p>
 	TransactionDescription any
-	TransactionId any
+	TransactionId          any
 }
 
 var Transaction = ubx.DataSourceBinding{

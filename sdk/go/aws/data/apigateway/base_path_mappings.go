@@ -4,32 +4,32 @@ package apigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BasePathMappings_Items struct {
-	BasePath any
+	BasePath  any
 	RestApiId any
-	Stage any
+	Stage     any
 }
 
 type BasePathMappingsConfig struct {
-	DomainName any
+	DomainName   any
 	DomainNameId any
-	Limit any
-	Position any
+	Limit        any
+	Position     any
 }
 
 type BasePathMappingsAttrs struct {
-	DomainName any
+	DomainName   any
 	DomainNameId any
-	Items any
-	Limit any
-	Position any
+	Items        any
+	Limit        any
+	Position     any
 }
 
 var BasePathMappings = ubx.DataSourceBinding{
 	WireType: "aws_apigateway_base_path_mappings",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":   ubx.FieldSpec{WireName: "domain_name"},
 		"DomainNameId": ubx.FieldSpec{WireName: "domain_name_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Position": ubx.FieldSpec{WireName: "position"},
+		"Limit":        ubx.FieldSpec{WireName: "limit"},
+		"Position":     ubx.FieldSpec{WireName: "position"},
 	},
 }

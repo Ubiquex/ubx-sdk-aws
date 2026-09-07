@@ -15,6 +15,5 @@ type OtelEnrichmentAttrs struct {
 
 var OtelEnrichment = ubx.ResourceBinding{
 	WireType: "aws_cloud_watch_otel_enrichment",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

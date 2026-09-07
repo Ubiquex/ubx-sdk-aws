@@ -4,24 +4,24 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrafficDistributionGroups_TrafficDistributionGroupSummaryList struct {
-	Arn any
-	Id any
+	Arn         any
+	Id          any
 	InstanceArn any
-	IsDefault any
-	Name any
-	Status any
+	IsDefault   any
+	Name        any
+	Status      any
 }
 
 type TrafficDistributionGroupsConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type TrafficDistributionGroupsAttrs struct {
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId                          any
+	MaxResults                          any
+	NextToken                           any
 	TrafficDistributionGroupSummaryList any
 }
 
@@ -30,6 +30,6 @@ var TrafficDistributionGroups = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

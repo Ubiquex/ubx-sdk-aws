@@ -10,9 +10,9 @@ type MaintenanceWindow_Tags struct {
 }
 
 var MaintenanceWindow_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MaintenanceWindowConfig struct {
 	// Enables a maintenance window task to run on managed instances, even if you have not registered those instances as targets. If enabled, then you must specify the unregistered instances (by instance ID) when you register a task with the maintenance window.
@@ -70,19 +70,19 @@ var MaintenanceWindow = ubx.ResourceBinding{
 	WireType: "aws_ssm_maintenance_window",
 	Fields: ubx.FieldMap{
 		"AllowUnassociatedTargets": ubx.FieldSpec{WireName: "allow_unassociated_targets"},
-		"Cutoff": ubx.FieldSpec{WireName: "cutoff"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"EndDate": ubx.FieldSpec{WireName: "end_date"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-		"ScheduleOffset": ubx.FieldSpec{WireName: "schedule_offset"},
-		"ScheduleTimezone": ubx.FieldSpec{WireName: "schedule_timezone"},
-		"StartDate": ubx.FieldSpec{WireName: "start_date"},
+		"Cutoff":                   ubx.FieldSpec{WireName: "cutoff"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
+		"Duration":                 ubx.FieldSpec{WireName: "duration"},
+		"EndDate":                  ubx.FieldSpec{WireName: "end_date"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
+		"Schedule":                 ubx.FieldSpec{WireName: "schedule"},
+		"ScheduleOffset":           ubx.FieldSpec{WireName: "schedule_offset"},
+		"ScheduleTimezone":         ubx.FieldSpec{WireName: "schedule_timezone"},
+		"StartDate":                ubx.FieldSpec{WireName: "start_date"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MaintenanceWindow_TagsFields,
+			Kind:     "list",
+			Fields:   MaintenanceWindow_TagsFields,
 		},
 	},
 }

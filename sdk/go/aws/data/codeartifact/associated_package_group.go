@@ -4,14 +4,14 @@ package codeartifact
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssociatedPackageGroup_PackageGroup_OriginConfiguration_Restrictions_InheritedFrom struct {
-	Arn any
+	Arn     any
 	Pattern any
 }
 
 type AssociatedPackageGroup_PackageGroup_OriginConfiguration_Restrictions struct {
-	EffectiveMode any
-	InheritedFrom any
-	Mode any
+	EffectiveMode     any
+	InheritedFrom     any
+	Mode              any
 	RepositoriesCount any
 }
 
@@ -20,34 +20,34 @@ type AssociatedPackageGroup_PackageGroup_OriginConfiguration struct {
 }
 
 type AssociatedPackageGroup_PackageGroup struct {
-	Arn any
+	Arn         any
 	ContactInfo any
 	CreatedTime any
 	Description any
-	DomainName any
+	DomainName  any
 	DomainOwner any
 	// <p>The package group origin configuration that determines how package versions can enter repositories.</p>
 	OriginConfiguration any
 	// <p>Information about the identifiers of a package group.</p>
-	Parent any
+	Parent  any
 	Pattern any
 }
 
 type AssociatedPackageGroupConfig struct {
-	Domain any
+	Domain      any
 	DomainOwner any
-	Format any
-	Namespace any
-	Package any
+	Format      any
+	Namespace   any
+	Package     any
 }
 
 type AssociatedPackageGroupAttrs struct {
 	AssociationType any
-	Domain any
-	DomainOwner any
-	Format any
-	Namespace any
-	Package any
+	Domain          any
+	DomainOwner     any
+	Format          any
+	Namespace       any
+	Package         any
 	// <p> The description of the package group. </p>
 	PackageGroup any
 }
@@ -55,10 +55,10 @@ type AssociatedPackageGroupAttrs struct {
 var AssociatedPackageGroup = ubx.DataSourceBinding{
 	WireType: "aws_codeartifact_associated_package_group",
 	Fields: ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"Domain":      ubx.FieldSpec{WireName: "domain"},
 		"DomainOwner": ubx.FieldSpec{WireName: "domain_owner"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Package": ubx.FieldSpec{WireName: "package"},
+		"Format":      ubx.FieldSpec{WireName: "format"},
+		"Namespace":   ubx.FieldSpec{WireName: "namespace"},
+		"Package":     ubx.FieldSpec{WireName: "package"},
 	},
 }

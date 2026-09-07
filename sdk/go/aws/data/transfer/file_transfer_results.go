@@ -4,33 +4,33 @@ package transfer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FileTransferResults_FileTransferResults struct {
-	FailureCode any
+	FailureCode    any
 	FailureMessage any
-	FilePath any
-	StatusCode any
+	FilePath       any
+	StatusCode     any
 }
 
 type FileTransferResultsConfig struct {
 	ConnectorId any
-	MaxResults any
-	NextToken any
-	TransferId any
+	MaxResults  any
+	NextToken   any
+	TransferId  any
 }
 
 type FileTransferResultsAttrs struct {
-	ConnectorId any
+	ConnectorId         any
 	FileTransferResults any
-	MaxResults any
-	NextToken any
-	TransferId any
+	MaxResults          any
+	NextToken           any
+	TransferId          any
 }
 
 var FileTransferResults = ubx.DataSourceBinding{
 	WireType: "aws_transfer_file_transfer_results",
 	Fields: ubx.FieldMap{
 		"ConnectorId": ubx.FieldSpec{WireName: "connector_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"TransferId": ubx.FieldSpec{WireName: "transfer_id"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"TransferId":  ubx.FieldSpec{WireName: "transfer_id"},
 	},
 }

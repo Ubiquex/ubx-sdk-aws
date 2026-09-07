@@ -4,61 +4,61 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReservedInstances_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ReservedInstances_ReservedInstances_RecurringCharges struct {
-	Amount any
+	Amount    any
 	Frequency any
 }
 
 type ReservedInstances_ReservedInstances_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ReservedInstances_ReservedInstances struct {
-	AvailabilityZone any
-	AvailabilityZoneId any
-	CurrencyCode any
-	Duration any
-	End any
-	FixedPrice any
-	InstanceCount any
-	InstanceTenancy any
-	InstanceType any
-	OfferingClass any
-	OfferingType any
-	ProductDescription any
-	RecurringCharges any
+	AvailabilityZone    any
+	AvailabilityZoneId  any
+	CurrencyCode        any
+	Duration            any
+	End                 any
+	FixedPrice          any
+	InstanceCount       any
+	InstanceTenancy     any
+	InstanceType        any
+	OfferingClass       any
+	OfferingType        any
+	ProductDescription  any
+	RecurringCharges    any
 	ReservedInstancesId any
-	Scope any
-	Start any
-	State any
-	Tags any
-	UsagePrice any
+	Scope               any
+	Start               any
+	State               any
+	Tags                any
+	UsagePrice          any
 }
 
 var ReservedInstances_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ReservedInstancesConfig struct {
-	DryRun any
-	Filters any
-	OfferingClass any
-	OfferingType any
+	DryRun               any
+	Filters              any
+	OfferingClass        any
+	OfferingType         any
 	ReservedInstancesIds any
 }
 
 type ReservedInstancesAttrs struct {
-	DryRun any
-	Filters any
-	OfferingClass any
-	OfferingType any
-	ReservedInstances any
+	DryRun               any
+	Filters              any
+	OfferingClass        any
+	OfferingType         any
+	ReservedInstances    any
 	ReservedInstancesIds any
 }
 
@@ -68,11 +68,11 @@ var ReservedInstances = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ReservedInstances_FiltersFields,
+			Kind:     "list",
+			Fields:   ReservedInstances_FiltersFields,
 		},
-		"OfferingClass": ubx.FieldSpec{WireName: "offering_class"},
-		"OfferingType": ubx.FieldSpec{WireName: "offering_type"},
+		"OfferingClass":        ubx.FieldSpec{WireName: "offering_class"},
+		"OfferingType":         ubx.FieldSpec{WireName: "offering_type"},
 		"ReservedInstancesIds": ubx.FieldSpec{WireName: "reserved_instances_ids"},
 	},
 }

@@ -4,7 +4,7 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Samlproviders_SamlproviderList struct {
-	Arn any
+	Arn        any
 	CreateDate any
 	ValidUntil any
 }
@@ -18,6 +18,5 @@ type SamlprovidersAttrs struct {
 
 var Samlproviders = ubx.DataSourceBinding{
 	WireType: "aws_iam_samlproviders",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

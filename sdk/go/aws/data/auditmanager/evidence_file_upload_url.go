@@ -9,8 +9,8 @@ type EvidenceFileUploadUrlConfig struct {
 
 type EvidenceFileUploadUrlAttrs struct {
 	EvidenceFileName any
-	FileName any
-	UploadUrl any
+	FileName         any
+	UploadUrl        any
 }
 
 var EvidenceFileUploadUrl = ubx.DataSourceBinding{

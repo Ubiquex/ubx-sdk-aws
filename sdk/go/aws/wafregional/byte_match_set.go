@@ -24,21 +24,21 @@ type ByteMatchSet_ByteMatchTuples struct {
 }
 
 var ByteMatchSet_ByteMatchTuples_FieldToMatchFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Data": ubx.FieldSpec{WireName: "data"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var ByteMatchSet_ByteMatchTuplesFields = ubx.FieldMap{
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "object",
-			Fields: ByteMatchSet_ByteMatchTuples_FieldToMatchFields,
-		},
-		"PositionalConstraint": ubx.FieldSpec{WireName: "positional_constraint"},
-		"TargetString": ubx.FieldSpec{WireName: "target_string"},
-		"TargetStringBase64": ubx.FieldSpec{WireName: "target_string_base64"},
-		"TextTransformation": ubx.FieldSpec{WireName: "text_transformation"},
-	}
+	"FieldToMatch": ubx.FieldSpec{
+		WireName: "field_to_match",
+		Kind:     "object",
+		Fields:   ByteMatchSet_ByteMatchTuples_FieldToMatchFields,
+	},
+	"PositionalConstraint": ubx.FieldSpec{WireName: "positional_constraint"},
+	"TargetString":         ubx.FieldSpec{WireName: "target_string"},
+	"TargetStringBase64":   ubx.FieldSpec{WireName: "target_string_base64"},
+	"TextTransformation":   ubx.FieldSpec{WireName: "text_transformation"},
+}
 
 type ByteMatchSetConfig struct {
 	// Specifies the list of byte match tuples that define the filter criteria (the part of a web request to inspect, the target string, and text transformation) for the AWS WAF Regional byte match set. (AI-inferred)
@@ -61,8 +61,8 @@ var ByteMatchSet = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ByteMatchTuples": ubx.FieldSpec{
 			WireName: "byte_match_tuples",
-			Kind: "list",
-			Fields: ByteMatchSet_ByteMatchTuplesFields,
+			Kind:     "list",
+			Fields:   ByteMatchSet_ByteMatchTuplesFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

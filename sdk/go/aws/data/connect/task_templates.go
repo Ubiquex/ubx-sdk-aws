@@ -4,29 +4,29 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TaskTemplates_TaskTemplates struct {
-	Arn any
-	CreatedTime any
-	Description any
-	Id any
+	Arn              any
+	CreatedTime      any
+	Description      any
+	Id               any
 	LastModifiedTime any
-	Name any
-	Status any
+	Name             any
+	Status           any
 }
 
 type TaskTemplatesConfig struct {
 	InstanceId any
 	MaxResults any
-	Name any
-	NextToken any
-	Status any
+	Name       any
+	NextToken  any
+	Status     any
 }
 
 type TaskTemplatesAttrs struct {
-	InstanceId any
-	MaxResults any
-	Name any
-	NextToken any
-	Status any
+	InstanceId    any
+	MaxResults    any
+	Name          any
+	NextToken     any
+	Status        any
 	TaskTemplates any
 }
 
@@ -35,8 +35,8 @@ var TaskTemplates = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Status":     ubx.FieldSpec{WireName: "status"},
 	},
 }

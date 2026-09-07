@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SdkTypes_Items_ConfigurationProperties struct {
 	DefaultValue any
-	Description any
+	Description  any
 	FriendlyName any
-	Name any
-	Required any
+	Name         any
+	Required     any
 }
 
 type SdkTypes_Items struct {
 	ConfigurationProperties any
-	Description any
-	FriendlyName any
-	Id any
+	Description             any
+	FriendlyName            any
+	Id                      any
 }
 
 type SdkTypesConfig struct {
-	Limit any
+	Limit    any
 	Position any
 }
 
 type SdkTypesAttrs struct {
-	Items any
-	Limit any
+	Items    any
+	Limit    any
 	Position any
 }
 
 var SdkTypes = ubx.DataSourceBinding{
 	WireType: "aws_apigateway_sdk_types",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":    ubx.FieldSpec{WireName: "limit"},
 		"Position": ubx.FieldSpec{WireName: "position"},
 	},
 }

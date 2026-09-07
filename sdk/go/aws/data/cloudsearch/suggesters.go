@@ -4,40 +4,40 @@ package cloudsearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Suggesters_Suggesters_Options_DocumentSuggesterOptions struct {
-	FuzzyMatching any
+	FuzzyMatching  any
 	SortExpression any
-	SourceField any
+	SourceField    any
 }
 
 type Suggesters_Suggesters_Options struct {
 	DocumentSuggesterOptions any
-	SuggesterName any
+	SuggesterName            any
 }
 
 type Suggesters_Suggesters_Status struct {
-	CreationDate any
+	CreationDate    any
 	PendingDeletion any
-	State any
-	UpdateDate any
-	UpdateVersion any
+	State           any
+	UpdateDate      any
+	UpdateVersion   any
 }
 
 type Suggesters_Suggesters struct {
 	Options any
-	Status any
+	Status  any
 }
 
 type SuggestersConfig struct {
 	Deployed any
 	// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-	DomainName any
+	DomainName     any
 	SuggesterNames any
 }
 
 type SuggestersAttrs struct {
 	Deployed any
 	// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-	DomainName any
+	DomainName     any
 	SuggesterNames any
 	// <p>Contains the status of multiple suggesters.</p>
 	Suggesters any
@@ -46,8 +46,8 @@ type SuggestersAttrs struct {
 var Suggesters = ubx.DataSourceBinding{
 	WireType: "aws_cloudsearch_suggesters",
 	Fields: ubx.FieldMap{
-		"Deployed": ubx.FieldSpec{WireName: "deployed"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"Deployed":       ubx.FieldSpec{WireName: "deployed"},
+		"DomainName":     ubx.FieldSpec{WireName: "domain_name"},
 		"SuggesterNames": ubx.FieldSpec{WireName: "suggester_names"},
 	},
 }

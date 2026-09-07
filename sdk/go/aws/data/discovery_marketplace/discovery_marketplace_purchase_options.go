@@ -4,70 +4,70 @@ package discovery_marketplace
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveryMarketplacePurchaseOptions_Filters struct {
-	FilterType any
+	FilterType   any
 	FilterValues any
 }
 
 type DiscoveryMarketplacePurchaseOptions_PurchaseOptions_AssociatedEntities_Offer_SellerOfRecord struct {
-	DisplayName any
+	DisplayName     any
 	SellerProfileId any
 }
 
 type DiscoveryMarketplacePurchaseOptions_PurchaseOptions_AssociatedEntities_Offer struct {
-	OfferId any
-	OfferName any
+	OfferId        any
+	OfferName      any
 	SellerOfRecord any
 }
 
 type DiscoveryMarketplacePurchaseOptions_PurchaseOptions_AssociatedEntities_OfferSet struct {
-	OfferSetId any
+	OfferSetId     any
 	SellerOfRecord any
 }
 
 type DiscoveryMarketplacePurchaseOptions_PurchaseOptions_AssociatedEntities_Product struct {
 	Manufacturer any
-	ProductId any
-	ProductName any
+	ProductId    any
+	ProductName  any
 }
 
 type DiscoveryMarketplacePurchaseOptions_PurchaseOptions_AssociatedEntities struct {
-	Offer any
+	Offer    any
 	OfferSet any
-	Product any
+	Product  any
 }
 
 type DiscoveryMarketplacePurchaseOptions_PurchaseOptions_Badges struct {
-	BadgeType any
+	BadgeType   any
 	DisplayName any
 }
 
 type DiscoveryMarketplacePurchaseOptions_PurchaseOptions struct {
 	AssociatedEntities any
-	AvailableFromTime any
-	Badges any
-	Catalog any
-	ExpirationTime any
-	PurchaseOptionId any
+	AvailableFromTime  any
+	Badges             any
+	Catalog            any
+	ExpirationTime     any
+	PurchaseOptionId   any
 	PurchaseOptionName any
 	PurchaseOptionType any
-	SellerOfRecord any
+	SellerOfRecord     any
 }
 
 var DiscoveryMarketplacePurchaseOptions_FiltersFields = ubx.FieldMap{
-		"FilterType": ubx.FieldSpec{WireName: "filter_type"},
-		"FilterValues": ubx.FieldSpec{WireName: "filter_values"},
-	}
+	"FilterType":   ubx.FieldSpec{WireName: "filter_type"},
+	"FilterValues": ubx.FieldSpec{WireName: "filter_values"},
+}
 
 type DiscoveryMarketplacePurchaseOptionsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DiscoveryMarketplacePurchaseOptionsAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters         any
+	MaxResults      any
+	NextToken       any
 	PurchaseOptions any
 }
 
@@ -76,10 +76,10 @@ var DiscoveryMarketplacePurchaseOptions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: DiscoveryMarketplacePurchaseOptions_FiltersFields,
+			Kind:     "list",
+			Fields:   DiscoveryMarketplacePurchaseOptions_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

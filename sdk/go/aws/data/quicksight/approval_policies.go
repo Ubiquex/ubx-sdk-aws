@@ -5,37 +5,37 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApprovalPolicies_Policies_ApplicableTo struct {
 	GroupArns any
-	Type any
+	Type      any
 }
 
 type ApprovalPolicies_Policies struct {
-	Actions any
-	ApplicableTo any
+	Actions        any
+	ApplicableTo   any
 	ApprovalGroups any
-	AssetTypes any
-	CreatedAt any
-	Description any
-	Name any
-	PolicyArn any
-	PolicyId any
-	UpdatedAt any
+	AssetTypes     any
+	CreatedAt      any
+	Description    any
+	Name           any
+	PolicyArn      any
+	PolicyId       any
+	UpdatedAt      any
 }
 
 type ApprovalPoliciesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApprovalPoliciesAttrs struct {
 	MaxResults any
-	NextToken any
-	Policies any
+	NextToken  any
+	Policies   any
 }
 
 var ApprovalPolicies = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_approval_policies",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

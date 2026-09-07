@@ -4,37 +4,37 @@ package ssm_contacts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmContactsRotationOverrides_RotationOverrides struct {
-	CreateTime any
-	EndTime any
-	NewContactIds any
+	CreateTime         any
+	EndTime            any
+	NewContactIds      any
 	RotationOverrideId any
-	StartTime any
+	StartTime          any
 }
 
 type SsmContactsRotationOverridesConfig struct {
-	EndTime any
+	EndTime    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	RotationId any
-	StartTime any
+	StartTime  any
 }
 
 type SsmContactsRotationOverridesAttrs struct {
-	EndTime any
-	MaxResults any
-	NextToken any
-	RotationId any
+	EndTime           any
+	MaxResults        any
+	NextToken         any
+	RotationId        any
 	RotationOverrides any
-	StartTime any
+	StartTime         any
 }
 
 var SsmContactsRotationOverrides = ubx.DataSourceBinding{
 	WireType: "aws_ssm_contacts_rotation_overrides",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":    ubx.FieldSpec{WireName: "end_time"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"RotationId": ubx.FieldSpec{WireName: "rotation_id"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"StartTime":  ubx.FieldSpec{WireName: "start_time"},
 	},
 }

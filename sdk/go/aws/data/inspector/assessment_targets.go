@@ -8,22 +8,22 @@ type AssessmentTargets_Filter struct {
 }
 
 var AssessmentTargets_FilterFields = ubx.FieldMap{
-		"AssessmentTargetNamePattern": ubx.FieldSpec{WireName: "assessment_target_name_pattern"},
-	}
+	"AssessmentTargetNamePattern": ubx.FieldSpec{WireName: "assessment_target_name_pattern"},
+}
 
 type AssessmentTargetsConfig struct {
 	// <p>Used as the request parameter in the <a>ListAssessmentTargets</a> action.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AssessmentTargetsAttrs struct {
 	AssessmentTargetArns any
 	// <p>Used as the request parameter in the <a>ListAssessmentTargets</a> action.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var AssessmentTargets = ubx.DataSourceBinding{
@@ -31,10 +31,10 @@ var AssessmentTargets = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: AssessmentTargets_FilterFields,
+			Kind:     "object",
+			Fields:   AssessmentTargets_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

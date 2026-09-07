@@ -4,40 +4,40 @@ package route53domains
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainDetail_AdminContact_ExtraParams struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type DomainDetail_AdminContact struct {
-	AddressLine1 any
-	AddressLine2 any
-	City any
-	ContactType any
-	CountryCode any
-	Email any
-	ExtraParams any
-	Fax any
-	FirstName any
-	LastName any
+	AddressLine1     any
+	AddressLine2     any
+	City             any
+	ContactType      any
+	CountryCode      any
+	Email            any
+	ExtraParams      any
+	Fax              any
+	FirstName        any
+	LastName         any
 	OrganizationName any
-	PhoneNumber any
-	State any
-	ZipCode any
+	PhoneNumber      any
+	State            any
+	ZipCode          any
 }
 
 type DomainDetail_DnssecKeys struct {
-	Algorithm any
-	Digest any
+	Algorithm  any
+	Digest     any
 	DigestType any
-	Flags any
-	Id any
-	KeyTag any
-	PublicKey any
+	Flags      any
+	Id         any
+	KeyTag     any
+	PublicKey  any
 }
 
 type DomainDetail_Nameservers struct {
 	GlueIps any
-	Name any
+	Name    any
 }
 
 type DomainDetailConfig struct {
@@ -50,24 +50,24 @@ type DomainDetailAttrs struct {
 	// <p>ContactDetail includes the following elements.</p>
 	AdminContact any
 	AdminPrivacy any
-	AutoRenew any
+	AutoRenew    any
 	// <p>ContactDetail includes the following elements.</p>
 	BillingContact any
 	BillingPrivacy any
-	CreationDate any
-	DnsSec any
-	DnssecKeys any
-	DomainName any
+	CreationDate   any
+	DnsSec         any
+	DnssecKeys     any
+	DomainName     any
 	ExpirationDate any
-	Nameservers any
+	Nameservers    any
 	// <p>ContactDetail includes the following elements.</p>
 	RegistrantContact any
 	RegistrantPrivacy any
-	RegistrarName any
-	RegistrarUrl any
-	RegistryDomainId any
-	Reseller any
-	StatusList any
+	RegistrarName     any
+	RegistrarUrl      any
+	RegistryDomainId  any
+	Reseller          any
+	StatusList        any
 	// <p>ContactDetail includes the following elements.</p>
 	TechContact any
 	TechPrivacy any

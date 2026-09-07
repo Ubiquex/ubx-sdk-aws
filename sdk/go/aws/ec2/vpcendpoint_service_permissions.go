@@ -21,6 +21,6 @@ var VpcendpointServicePermissions = ubx.ResourceBinding{
 	WireType: "aws_ec2_vpcendpoint_service_permissions",
 	Fields: ubx.FieldMap{
 		"AllowedPrincipals": ubx.FieldSpec{WireName: "allowed_principals"},
-		"ServiceId": ubx.FieldSpec{WireName: "service_id"},
+		"ServiceId":         ubx.FieldSpec{WireName: "service_id"},
 	},
 }

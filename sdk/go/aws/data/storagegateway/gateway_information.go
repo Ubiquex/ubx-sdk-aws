@@ -6,11 +6,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type GatewayInformation_GatewayNetworkInterfaces struct {
 	Ipv4Address any
 	Ipv6Address any
-	MacAddress any
+	MacAddress  any
 }
 
 type GatewayInformation_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -21,28 +21,28 @@ type GatewayInformationConfig struct {
 
 type GatewayInformationAttrs struct {
 	CloudWatchLogGroupArn any
-	DeprecationDate any
-	Ec2InstanceId any
-	Ec2InstanceRegion any
-	EndpointType any
+	DeprecationDate       any
+	Ec2InstanceId         any
+	Ec2InstanceRegion     any
+	EndpointType          any
 	// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-	GatewayArn any
-	GatewayCapacity any
-	GatewayId any
-	GatewayName any
-	GatewayNetworkInterfaces any
-	GatewayState any
-	GatewayTimezone any
-	GatewayType any
-	HostEnvironment any
-	HostEnvironmentId any
-	LastSoftwareUpdate any
+	GatewayArn                 any
+	GatewayCapacity            any
+	GatewayId                  any
+	GatewayName                any
+	GatewayNetworkInterfaces   any
+	GatewayState               any
+	GatewayTimezone            any
+	GatewayType                any
+	HostEnvironment            any
+	HostEnvironmentId          any
+	LastSoftwareUpdate         any
 	NextUpdateAvailabilityDate any
-	SoftwareUpdatesEndDate any
-	SoftwareVersion any
+	SoftwareUpdatesEndDate     any
+	SoftwareVersion            any
 	SupportedGatewayCapacities any
-	Tags any
-	Vpcendpoint any
+	Tags                       any
+	Vpcendpoint                any
 }
 
 var GatewayInformation = ubx.DataSourceBinding{

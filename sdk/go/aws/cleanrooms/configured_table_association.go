@@ -38,49 +38,49 @@ type ConfiguredTableAssociation_Tags struct {
 }
 
 var ConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1_AggregationFields = ubx.FieldMap{
-		"AllowedAdditionalAnalyses": ubx.FieldSpec{WireName: "allowed_additional_analyses"},
-		"AllowedResultReceivers": ubx.FieldSpec{WireName: "allowed_result_receivers"},
-	}
+	"AllowedAdditionalAnalyses": ubx.FieldSpec{WireName: "allowed_additional_analyses"},
+	"AllowedResultReceivers":    ubx.FieldSpec{WireName: "allowed_result_receivers"},
+}
 
 var ConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1Fields = ubx.FieldMap{
-		"Aggregation": ubx.FieldSpec{
-			WireName: "aggregation",
-			Kind: "object",
-			Fields: ConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1_AggregationFields,
-		},
-		"Custom": ubx.FieldSpec{
-			WireName: "custom",
-			Kind: "object",
-			Fields: ConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1_AggregationFields,
-		},
-		"List": ubx.FieldSpec{
-			WireName: "list",
-			Kind: "object",
-			Fields: ConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1_AggregationFields,
-		},
-	}
+	"Aggregation": ubx.FieldSpec{
+		WireName: "aggregation",
+		Kind:     "object",
+		Fields:   ConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1_AggregationFields,
+	},
+	"Custom": ubx.FieldSpec{
+		WireName: "custom",
+		Kind:     "object",
+		Fields:   ConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1_AggregationFields,
+	},
+	"List": ubx.FieldSpec{
+		WireName: "list",
+		Kind:     "object",
+		Fields:   ConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1_AggregationFields,
+	},
+}
 
 var ConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_PolicyFields = ubx.FieldMap{
-		"V1": ubx.FieldSpec{
-			WireName: "v1",
-			Kind: "object",
-			Fields: ConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1Fields,
-		},
-	}
+	"V1": ubx.FieldSpec{
+		WireName: "v1",
+		Kind:     "object",
+		Fields:   ConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1Fields,
+	},
+}
 
 var ConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRulesFields = ubx.FieldMap{
-		"Policy": ubx.FieldSpec{
-			WireName: "policy",
-			Kind: "object",
-			Fields: ConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_PolicyFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Policy": ubx.FieldSpec{
+		WireName: "policy",
+		Kind:     "object",
+		Fields:   ConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_PolicyFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var ConfiguredTableAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ConfiguredTableAssociationConfig struct {
 	// Configures the analysis rules for the configured table association, specifying the permitted analysis types (e.g., list, aggregate, custom) and their policy constraints for querying the associated configured table within a collaboration. (AI-inferred)
@@ -125,18 +125,18 @@ var ConfiguredTableAssociation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConfiguredTableAssociationAnalysisRules": ubx.FieldSpec{
 			WireName: "configured_table_association_analysis_rules",
-			Kind: "list",
-			Fields: ConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRulesFields,
+			Kind:     "list",
+			Fields:   ConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRulesFields,
 		},
 		"ConfiguredTableIdentifier": ubx.FieldSpec{WireName: "configured_table_identifier"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"MembershipIdentifier": ubx.FieldSpec{WireName: "membership_identifier"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"Description":               ubx.FieldSpec{WireName: "description"},
+		"MembershipIdentifier":      ubx.FieldSpec{WireName: "membership_identifier"},
+		"Name":                      ubx.FieldSpec{WireName: "name"},
+		"RoleArn":                   ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ConfiguredTableAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   ConfiguredTableAssociation_TagsFields,
 		},
 	},
 }

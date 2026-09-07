@@ -4,42 +4,42 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RestoreJobSummaries_RestoreJobSummaries struct {
-	AccountId any
-	Count any
-	EndTime any
-	Region any
+	AccountId    any
+	Count        any
+	EndTime      any
+	Region       any
 	ResourceType any
-	StartTime any
-	State any
+	StartTime    any
+	State        any
 }
 
 type RestoreJobSummariesConfig struct {
-	AccountId any
+	AccountId         any
 	AggregationPeriod any
-	MaxResults any
-	NextToken any
-	ResourceType any
-	State any
+	MaxResults        any
+	NextToken         any
+	ResourceType      any
+	State             any
 }
 
 type RestoreJobSummariesAttrs struct {
-	AccountId any
-	AggregationPeriod any
-	MaxResults any
-	NextToken any
-	ResourceType any
+	AccountId           any
+	AggregationPeriod   any
+	MaxResults          any
+	NextToken           any
+	ResourceType        any
 	RestoreJobSummaries any
-	State any
+	State               any
 }
 
 var RestoreJobSummaries = ubx.DataSourceBinding{
 	WireType: "aws_backup_restore_job_summaries",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
 		"AggregationPeriod": ubx.FieldSpec{WireName: "aggregation_period"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
+		"ResourceType":      ubx.FieldSpec{WireName: "resource_type"},
+		"State":             ubx.FieldSpec{WireName: "state"},
 	},
 }

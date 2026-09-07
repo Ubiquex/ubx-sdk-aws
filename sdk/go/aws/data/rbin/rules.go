@@ -4,45 +4,45 @@ package rbin
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Rules_ExcludeResourceTags struct {
-	ResourceTagKey any
+	ResourceTagKey   any
 	ResourceTagValue any
 }
 
 type Rules_Rules_RetentionPeriod struct {
-	RetentionPeriodUnit any
+	RetentionPeriodUnit  any
 	RetentionPeriodValue any
 }
 
 type Rules_Rules struct {
-	Description any
-	Identifier any
-	LockState any
+	Description     any
+	Identifier      any
+	LockState       any
 	RetentionPeriod any
-	RuleArn any
+	RuleArn         any
 }
 
 var Rules_ExcludeResourceTagsFields = ubx.FieldMap{
-		"ResourceTagKey": ubx.FieldSpec{WireName: "resource_tag_key"},
-		"ResourceTagValue": ubx.FieldSpec{WireName: "resource_tag_value"},
-	}
+	"ResourceTagKey":   ubx.FieldSpec{WireName: "resource_tag_key"},
+	"ResourceTagValue": ubx.FieldSpec{WireName: "resource_tag_value"},
+}
 
 type RulesConfig struct {
 	ExcludeResourceTags any
-	LockState any
-	MaxResults any
-	NextToken any
-	ResourceTags any
-	ResourceType any
+	LockState           any
+	MaxResults          any
+	NextToken           any
+	ResourceTags        any
+	ResourceType        any
 }
 
 type RulesAttrs struct {
 	ExcludeResourceTags any
-	LockState any
-	MaxResults any
-	NextToken any
-	ResourceTags any
-	ResourceType any
-	Rules any
+	LockState           any
+	MaxResults          any
+	NextToken           any
+	ResourceTags        any
+	ResourceType        any
+	Rules               any
 }
 
 var Rules = ubx.DataSourceBinding{
@@ -50,16 +50,16 @@ var Rules = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ExcludeResourceTags": ubx.FieldSpec{
 			WireName: "exclude_resource_tags",
-			Kind: "list",
-			Fields: Rules_ExcludeResourceTagsFields,
+			Kind:     "list",
+			Fields:   Rules_ExcludeResourceTagsFields,
 		},
-		"LockState": ubx.FieldSpec{WireName: "lock_state"},
+		"LockState":  ubx.FieldSpec{WireName: "lock_state"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ResourceTags": ubx.FieldSpec{
 			WireName: "resource_tags",
-			Kind: "list",
-			Fields: Rules_ExcludeResourceTagsFields,
+			Kind:     "list",
+			Fields:   Rules_ExcludeResourceTagsFields,
 		},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 	},

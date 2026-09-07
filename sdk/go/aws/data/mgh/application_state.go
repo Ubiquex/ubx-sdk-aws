@@ -8,9 +8,9 @@ type ApplicationStateConfig struct {
 }
 
 type ApplicationStateAttrs struct {
-	ApplicationId any
+	ApplicationId     any
 	ApplicationStatus any
-	LastUpdatedTime any
+	LastUpdatedTime   any
 }
 
 var ApplicationState = ubx.DataSourceBinding{

@@ -17,12 +17,12 @@ type BridgeOutput_NetworkOutput struct {
 }
 
 var BridgeOutput_NetworkOutputFields = ubx.FieldMap{
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"NetworkName": ubx.FieldSpec{WireName: "network_name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-	}
+	"IpAddress":   ubx.FieldSpec{WireName: "ip_address"},
+	"NetworkName": ubx.FieldSpec{WireName: "network_name"},
+	"Port":        ubx.FieldSpec{WireName: "port"},
+	"Protocol":    ubx.FieldSpec{WireName: "protocol"},
+	"Ttl":         ubx.FieldSpec{WireName: "ttl"},
+}
 
 type BridgeOutputConfig struct {
 	// The Amazon Resource Number (ARN) of the bridge.
@@ -46,11 +46,11 @@ var BridgeOutput = ubx.ResourceBinding{
 	WireType: "aws_media_connect_bridge_output",
 	Fields: ubx.FieldMap{
 		"BridgeArn": ubx.FieldSpec{WireName: "bridge_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"NetworkOutput": ubx.FieldSpec{
 			WireName: "network_output",
-			Kind: "object",
-			Fields: BridgeOutput_NetworkOutputFields,
+			Kind:     "object",
+			Fields:   BridgeOutput_NetworkOutputFields,
 		},
 	},
 }

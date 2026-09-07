@@ -4,28 +4,28 @@ package medialive
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Offerings_Offerings_ResourceSpecification struct {
-	ChannelClass any
-	Codec any
-	MaximumBitrate any
+	ChannelClass     any
+	Codec            any
+	MaximumBitrate   any
 	MaximumFramerate any
-	Resolution any
-	ResourceType any
-	SpecialFeature any
-	VideoQuality any
+	Resolution       any
+	ResourceType     any
+	SpecialFeature   any
+	VideoQuality     any
 }
 
 type Offerings_Offerings struct {
-	Arn any
-	CurrencyCode any
-	Duration any
-	DurationUnits any
-	FixedPrice any
-	OfferingDescription any
-	OfferingId any
-	OfferingType any
-	Region any
+	Arn                   any
+	CurrencyCode          any
+	Duration              any
+	DurationUnits         any
+	FixedPrice            any
+	OfferingDescription   any
+	OfferingId            any
+	OfferingType          any
+	Region                any
 	ResourceSpecification any
-	UsagePrice any
+	UsagePrice            any
 }
 
 type OfferingsConfig struct {
@@ -87,17 +87,17 @@ type OfferingsAttrs struct {
 var Offerings = ubx.DataSourceBinding{
 	WireType: "aws_medialive_offerings",
 	Fields: ubx.FieldMap{
-		"ChannelClass": ubx.FieldSpec{WireName: "channel_class"},
+		"ChannelClass":         ubx.FieldSpec{WireName: "channel_class"},
 		"ChannelConfiguration": ubx.FieldSpec{WireName: "channel_configuration"},
-		"Codec": ubx.FieldSpec{WireName: "codec"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MaximumBitrate": ubx.FieldSpec{WireName: "maximum_bitrate"},
-		"MaximumFramerate": ubx.FieldSpec{WireName: "maximum_framerate"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Resolution": ubx.FieldSpec{WireName: "resolution"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"SpecialFeature": ubx.FieldSpec{WireName: "special_feature"},
-		"VideoQuality": ubx.FieldSpec{WireName: "video_quality"},
+		"Codec":                ubx.FieldSpec{WireName: "codec"},
+		"Duration":             ubx.FieldSpec{WireName: "duration"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"MaximumBitrate":       ubx.FieldSpec{WireName: "maximum_bitrate"},
+		"MaximumFramerate":     ubx.FieldSpec{WireName: "maximum_framerate"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
+		"Resolution":           ubx.FieldSpec{WireName: "resolution"},
+		"ResourceType":         ubx.FieldSpec{WireName: "resource_type"},
+		"SpecialFeature":       ubx.FieldSpec{WireName: "special_feature"},
+		"VideoQuality":         ubx.FieldSpec{WireName: "video_quality"},
 	},
 }

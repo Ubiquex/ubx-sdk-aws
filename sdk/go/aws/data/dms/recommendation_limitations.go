@@ -4,35 +4,35 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecommendationLimitations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type RecommendationLimitations_Limitations struct {
-	DatabaseId any
+	DatabaseId  any
 	Description any
-	EngineName any
-	Impact any
-	Name any
-	Type any
+	EngineName  any
+	Impact      any
+	Name        any
+	Type        any
 }
 
 var RecommendationLimitations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type RecommendationLimitationsConfig struct {
-	Filters any
+	Filters    any
 	MaxRecords any
-	NextToken any
+	NextToken  any
 }
 
 type RecommendationLimitationsAttrs struct {
-	Filters any
+	Filters     any
 	Limitations any
-	MaxRecords any
-	NextToken any
+	MaxRecords  any
+	NextToken   any
 }
 
 var RecommendationLimitations = ubx.DataSourceBinding{
@@ -40,10 +40,10 @@ var RecommendationLimitations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: RecommendationLimitations_FiltersFields,
+			Kind:     "list",
+			Fields:   RecommendationLimitations_FiltersFields,
 		},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -9,27 +9,27 @@ type ObjectParentPaths_ObjectReference struct {
 
 type ObjectParentPaths_PathToObjectIdentifiersList struct {
 	ObjectIdentifiers any
-	Path any
+	Path              any
 }
 
 var ObjectParentPaths_ObjectReferenceFields = ubx.FieldMap{
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"Selector": ubx.FieldSpec{WireName: "selector"},
+}
 
 type ObjectParentPathsConfig struct {
 	DirectoryArn any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	// <p>The reference that identifies an object.</p>
 	ObjectReference any
 }
 
 type ObjectParentPathsAttrs struct {
 	DirectoryArn any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	// <p>The reference that identifies an object.</p>
-	ObjectReference any
+	ObjectReference             any
 	PathToObjectIdentifiersList any
 }
 
@@ -37,12 +37,12 @@ var ObjectParentPaths = ubx.DataSourceBinding{
 	WireType: "aws_clouddirectory_object_parent_paths",
 	Fields: ubx.FieldMap{
 		"DirectoryArn": ubx.FieldSpec{WireName: "directory_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"ObjectReference": ubx.FieldSpec{
 			WireName: "object_reference",
-			Kind: "object",
-			Fields: ObjectParentPaths_ObjectReferenceFields,
+			Kind:     "object",
+			Fields:   ObjectParentPaths_ObjectReferenceFields,
 		},
 	},
 }

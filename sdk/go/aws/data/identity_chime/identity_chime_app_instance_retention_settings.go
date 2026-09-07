@@ -20,7 +20,7 @@ type IdentityChimeAppInstanceRetentionSettingsAttrs struct {
 	AppInstanceArn any
 	// <p>The details of the data-retention settings for an <code>AppInstance</code>.</p>
 	AppInstanceRetentionSettings any
-	InitiateDeletionTimestamp any
+	InitiateDeletionTimestamp    any
 }
 
 var IdentityChimeAppInstanceRetentionSettings = ubx.DataSourceBinding{

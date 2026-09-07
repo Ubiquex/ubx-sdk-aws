@@ -4,54 +4,54 @@ package resiliencehub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Metrics_Conditions struct {
-	Field any
+	Field    any
 	Operator any
-	Value any
+	Value    any
 }
 
 type Metrics_Fields struct {
 	Aggregation any
-	Name any
+	Name        any
 }
 
 type Metrics_Sorts struct {
 	Ascending any
-	Field any
+	Field     any
 }
 
 var Metrics_ConditionsFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Field":    ubx.FieldSpec{WireName: "field"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var Metrics_FieldsFields = ubx.FieldMap{
-		"Aggregation": ubx.FieldSpec{WireName: "aggregation"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Aggregation": ubx.FieldSpec{WireName: "aggregation"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var Metrics_SortsFields = ubx.FieldMap{
-		"Ascending": ubx.FieldSpec{WireName: "ascending"},
-		"Field": ubx.FieldSpec{WireName: "field"},
-	}
+	"Ascending": ubx.FieldSpec{WireName: "ascending"},
+	"Field":     ubx.FieldSpec{WireName: "field"},
+}
 
 type MetricsConfig struct {
 	Conditions any
 	DataSource any
-	Fields any
+	Fields     any
 	MaxResults any
-	NextToken any
-	Sorts any
+	NextToken  any
+	Sorts      any
 }
 
 type MetricsAttrs struct {
 	Conditions any
 	DataSource any
-	Fields any
+	Fields     any
 	MaxResults any
-	NextToken any
-	Rows any
-	Sorts any
+	NextToken  any
+	Rows       any
+	Sorts      any
 }
 
 var Metrics = ubx.DataSourceBinding{
@@ -59,21 +59,21 @@ var Metrics = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Conditions": ubx.FieldSpec{
 			WireName: "conditions",
-			Kind: "list",
-			Fields: Metrics_ConditionsFields,
+			Kind:     "list",
+			Fields:   Metrics_ConditionsFields,
 		},
 		"DataSource": ubx.FieldSpec{WireName: "data_source"},
 		"Fields": ubx.FieldSpec{
 			WireName: "fields",
-			Kind: "list",
-			Fields: Metrics_FieldsFields,
+			Kind:     "list",
+			Fields:   Metrics_FieldsFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"Sorts": ubx.FieldSpec{
 			WireName: "sorts",
-			Kind: "list",
-			Fields: Metrics_SortsFields,
+			Kind:     "list",
+			Fields:   Metrics_SortsFields,
 		},
 	},
 }

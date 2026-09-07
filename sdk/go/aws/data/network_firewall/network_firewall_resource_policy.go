@@ -8,7 +8,7 @@ type NetworkFirewallResourcePolicyConfig struct {
 }
 
 type NetworkFirewallResourcePolicyAttrs struct {
-	Policy any
+	Policy      any
 	ResourceArn any
 }
 

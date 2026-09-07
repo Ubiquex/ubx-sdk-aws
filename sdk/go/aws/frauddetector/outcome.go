@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Outcome_Tags struct {
 	// The key of a tag assigned to the AWS Fraud Detector outcome, used to organize and identify the outcome resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Outcome_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type OutcomeConfig struct {
 	// The outcome description.
@@ -42,11 +42,11 @@ var Outcome = ubx.ResourceBinding{
 	WireType: "aws_fraud_detector_outcome",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Outcome_TagsFields,
+			Kind:     "list",
+			Fields:   Outcome_TagsFields,
 		},
 	},
 }

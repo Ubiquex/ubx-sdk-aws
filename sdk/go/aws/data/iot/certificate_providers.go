@@ -4,25 +4,25 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CertificateProviders_CertificateProviders struct {
-	CertificateProviderArn any
+	CertificateProviderArn  any
 	CertificateProviderName any
 }
 
 type CertificateProvidersConfig struct {
 	AscendingOrder any
-	NextToken any
+	NextToken      any
 }
 
 type CertificateProvidersAttrs struct {
-	AscendingOrder any
+	AscendingOrder       any
 	CertificateProviders any
-	NextToken any
+	NextToken            any
 }
 
 var CertificateProviders = ubx.DataSourceBinding{
 	WireType: "aws_iot_certificate_providers",
 	Fields: ubx.FieldMap{
 		"AscendingOrder": ubx.FieldSpec{WireName: "ascending_order"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 	},
 }

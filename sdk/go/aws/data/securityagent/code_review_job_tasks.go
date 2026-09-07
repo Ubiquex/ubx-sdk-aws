@@ -4,20 +4,20 @@ package securityagent
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodeReviewJobTasks_CodeReviewJobTaskSummaries struct {
-	AgentSpaceId any
-	CodeReviewId any
+	AgentSpaceId    any
+	CodeReviewId    any
 	CodeReviewJobId any
-	CreatedAt any
+	CreatedAt       any
 	ExecutionStatus any
-	RiskType any
-	TaskId any
-	Title any
-	UpdatedAt any
+	RiskType        any
+	TaskId          any
+	Title           any
+	UpdatedAt       any
 }
 
 type CodeReviewJobTasksConfig struct {
-	AgentSpaceId any
-	CategoryName any
+	AgentSpaceId    any
+	CategoryName    any
 	CodeReviewJobId any
 	// <p>Maximum results for pagination.</p>
 	MaxResults any
@@ -28,8 +28,8 @@ type CodeReviewJobTasksConfig struct {
 }
 
 type CodeReviewJobTasksAttrs struct {
-	AgentSpaceId any
-	CategoryName any
+	AgentSpaceId    any
+	CategoryName    any
 	CodeReviewJobId any
 	// <p>List of code review job task summaries.</p>
 	CodeReviewJobTaskSummaries any
@@ -44,11 +44,11 @@ type CodeReviewJobTasksAttrs struct {
 var CodeReviewJobTasks = ubx.DataSourceBinding{
 	WireType: "aws_securityagent_code_review_job_tasks",
 	Fields: ubx.FieldMap{
-		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
-		"CategoryName": ubx.FieldSpec{WireName: "category_name"},
+		"AgentSpaceId":    ubx.FieldSpec{WireName: "agent_space_id"},
+		"CategoryName":    ubx.FieldSpec{WireName: "category_name"},
 		"CodeReviewJobId": ubx.FieldSpec{WireName: "code_review_job_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StepName": ubx.FieldSpec{WireName: "step_name"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"StepName":        ubx.FieldSpec{WireName: "step_name"},
 	},
 }

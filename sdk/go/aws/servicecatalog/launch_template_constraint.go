@@ -35,9 +35,9 @@ var LaunchTemplateConstraint = ubx.ResourceBinding{
 	WireType: "aws_service_catalog_launch_template_constraint",
 	Fields: ubx.FieldMap{
 		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"PortfolioId": ubx.FieldSpec{WireName: "portfolio_id"},
-		"ProductId": ubx.FieldSpec{WireName: "product_id"},
-		"Rules": ubx.FieldSpec{WireName: "rules"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"PortfolioId":    ubx.FieldSpec{WireName: "portfolio_id"},
+		"ProductId":      ubx.FieldSpec{WireName: "product_id"},
+		"Rules":          ubx.FieldSpec{WireName: "rules"},
 	},
 }

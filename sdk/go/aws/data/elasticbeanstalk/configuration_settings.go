@@ -4,36 +4,36 @@ package elasticbeanstalk
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigurationSettings_ConfigurationSettings_OptionSettings struct {
-	Namespace any
-	OptionName any
+	Namespace    any
+	OptionName   any
 	ResourceName any
-	Value any
+	Value        any
 }
 
 type ConfigurationSettings_ConfigurationSettings struct {
-	ApplicationName any
-	DateCreated any
-	DateUpdated any
-	DeploymentStatus any
-	Description any
-	EnvironmentName any
-	OptionSettings any
-	PlatformArn any
+	ApplicationName   any
+	DateCreated       any
+	DateUpdated       any
+	DeploymentStatus  any
+	Description       any
+	EnvironmentName   any
+	OptionSettings    any
+	PlatformArn       any
 	SolutionStackName any
-	TemplateName any
+	TemplateName      any
 }
 
 type ConfigurationSettingsConfig struct {
 	ApplicationName any
 	EnvironmentName any
-	TemplateName any
+	TemplateName    any
 }
 
 type ConfigurationSettingsAttrs struct {
-	ApplicationName any
+	ApplicationName       any
 	ConfigurationSettings any
-	EnvironmentName any
-	TemplateName any
+	EnvironmentName       any
+	TemplateName          any
 }
 
 var ConfigurationSettings = ubx.DataSourceBinding{
@@ -41,6 +41,6 @@ var ConfigurationSettings = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
 		"EnvironmentName": ubx.FieldSpec{WireName: "environment_name"},
-		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
+		"TemplateName":    ubx.FieldSpec{WireName: "template_name"},
 	},
 }

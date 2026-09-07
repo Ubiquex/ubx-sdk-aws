@@ -8,7 +8,7 @@ type WafRegionalChangeTokenStatusConfig struct {
 }
 
 type WafRegionalChangeTokenStatusAttrs struct {
-	ChangeToken any
+	ChangeToken       any
 	ChangeTokenStatus any
 }
 

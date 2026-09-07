@@ -4,28 +4,28 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BillingGroups_BillingGroups struct {
-	GroupArn any
+	GroupArn  any
 	GroupName any
 }
 
 type BillingGroupsConfig struct {
-	MaxResults any
+	MaxResults       any
 	NamePrefixFilter any
-	NextToken any
+	NextToken        any
 }
 
 type BillingGroupsAttrs struct {
-	BillingGroups any
-	MaxResults any
+	BillingGroups    any
+	MaxResults       any
 	NamePrefixFilter any
-	NextToken any
+	NextToken        any
 }
 
 var BillingGroups = ubx.DataSourceBinding{
 	WireType: "aws_iot_billing_groups",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
 		"NamePrefixFilter": ubx.FieldSpec{WireName: "name_prefix_filter"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

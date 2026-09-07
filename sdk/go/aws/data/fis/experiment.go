@@ -9,24 +9,24 @@ type Experiment_Experiment_Actions_State struct {
 }
 
 type Experiment_Experiment_Actions struct {
-	ActionId any
+	ActionId    any
 	Description any
-	EndTime any
-	Parameters any
-	StartAfter any
-	StartTime any
-	State any
-	Targets any
+	EndTime     any
+	Parameters  any
+	StartAfter  any
+	StartTime   any
+	State       any
+	Targets     any
 }
 
 type Experiment_Experiment_ExperimentOptions struct {
-	AccountTargeting any
-	ActionsMode any
+	AccountTargeting          any
+	ActionsMode               any
 	EmptyTargetResolutionMode any
 }
 
 type Experiment_Experiment_ExperimentReport_S3Reports struct {
-	Arn any
+	Arn        any
 	ReportType any
 }
 
@@ -36,7 +36,7 @@ type Experiment_Experiment_ExperimentReport_State_Error struct {
 
 type Experiment_Experiment_ExperimentReport_State struct {
 	// <p>Describes the error when experiment report generation has failed.</p>
-	Error any
+	Error  any
 	Reason any
 	Status any
 }
@@ -57,7 +57,7 @@ type Experiment_Experiment_ExperimentReportConfiguration_DataSources struct {
 
 type Experiment_Experiment_ExperimentReportConfiguration_Outputs_S3Configuration struct {
 	BucketName any
-	Prefix any
+	Prefix     any
 }
 
 type Experiment_Experiment_ExperimentReportConfiguration_Outputs struct {
@@ -69,9 +69,9 @@ type Experiment_Experiment_ExperimentReportConfiguration struct {
 	// <p>Describes the data sources for the experiment report.</p>
 	DataSources any
 	// <p>Describes the output destinations of the experiment report.</p>
-	Outputs any
+	Outputs                any
 	PostExperimentDuration any
-	PreExperimentDuration any
+	PreExperimentDuration  any
 }
 
 type Experiment_Experiment_LogConfiguration_CloudWatchLogsConfiguration struct {
@@ -81,66 +81,66 @@ type Experiment_Experiment_LogConfiguration_CloudWatchLogsConfiguration struct {
 type Experiment_Experiment_LogConfiguration struct {
 	// <p>Describes the configuration for experiment logging to Amazon CloudWatch Logs.</p>
 	CloudWatchLogsConfiguration any
-	LogSchemaVersion any
+	LogSchemaVersion            any
 	// <p>Describes the configuration for experiment logging to Amazon S3.</p>
 	S3Configuration any
 }
 
 type Experiment_Experiment_State_Error struct {
 	AccountId any
-	Code any
-	Location any
+	Code      any
+	Location  any
 }
 
 type Experiment_Experiment_State struct {
 	// <p>Describes the error when an experiment has <code>failed</code>.</p>
-	Error any
+	Error  any
 	Reason any
 	Status any
 }
 
 type Experiment_Experiment_StopConditions struct {
 	Source any
-	Value any
+	Value  any
 }
 
 type Experiment_Experiment_Targets_Filters struct {
-	Path any
+	Path   any
 	Values any
 }
 
 type Experiment_Experiment_Targets struct {
-	Filters any
-	Parameters any
-	ResourceArns any
-	ResourceTags any
-	ResourceType any
+	Filters       any
+	Parameters    any
+	ResourceArns  any
+	ResourceTags  any
+	ResourceType  any
 	SelectionMode any
 }
 
 type Experiment_Experiment struct {
-	Actions any
-	Arn any
+	Actions      any
+	Arn          any
 	CreationTime any
-	EndTime any
+	EndTime      any
 	// <p>Describes the options for an experiment.</p>
 	ExperimentOptions any
 	// <p>Describes the experiment report.</p>
 	ExperimentReport any
 	// <p>Describes the report configuration for the experiment. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-report-configuration">Experiment report configurations for AWS FIS</a>.</p>
 	ExperimentReportConfiguration any
-	ExperimentTemplateId any
-	Id any
+	ExperimentTemplateId          any
+	Id                            any
 	// <p>Describes the configuration for experiment logging.</p>
 	LogConfiguration any
-	RoleArn any
-	StartTime any
+	RoleArn          any
+	StartTime        any
 	// <p>Describes the state of an experiment.</p>
-	State any
-	StopConditions any
-	Tags any
+	State                            any
+	StopConditions                   any
+	Tags                             any
 	TargetAccountConfigurationsCount any
-	Targets any
+	Targets                          any
 }
 
 type ExperimentConfig struct {
@@ -150,7 +150,7 @@ type ExperimentConfig struct {
 type ExperimentAttrs struct {
 	// <p>Describes an experiment.</p>
 	Experiment any
-	Id any
+	Id         any
 }
 
 var Experiment = ubx.DataSourceBinding{

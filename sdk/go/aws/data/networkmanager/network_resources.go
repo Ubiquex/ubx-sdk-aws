@@ -4,60 +4,60 @@ package networkmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NetworkResources_NetworkResources_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type NetworkResources_NetworkResources struct {
-	AccountId any
-	AwsRegion any
-	CoreNetworkId any
-	Definition any
-	DefinitionTimestamp any
-	Metadata any
+	AccountId            any
+	AwsRegion            any
+	CoreNetworkId        any
+	Definition           any
+	DefinitionTimestamp  any
+	Metadata             any
 	RegisteredGatewayArn any
-	ResourceArn any
-	ResourceId any
-	ResourceType any
-	Tags any
+	ResourceArn          any
+	ResourceId           any
+	ResourceType         any
+	Tags                 any
 }
 
 type NetworkResourcesConfig struct {
-	AccountId any
-	AwsRegion any
-	CoreNetworkId any
-	GlobalNetworkId any
-	MaxResults any
-	NextToken any
+	AccountId            any
+	AwsRegion            any
+	CoreNetworkId        any
+	GlobalNetworkId      any
+	MaxResults           any
+	NextToken            any
 	RegisteredGatewayArn any
-	ResourceArn any
-	ResourceType any
+	ResourceArn          any
+	ResourceType         any
 }
 
 type NetworkResourcesAttrs struct {
-	AccountId any
-	AwsRegion any
-	CoreNetworkId any
-	GlobalNetworkId any
-	MaxResults any
-	NetworkResources any
-	NextToken any
+	AccountId            any
+	AwsRegion            any
+	CoreNetworkId        any
+	GlobalNetworkId      any
+	MaxResults           any
+	NetworkResources     any
+	NextToken            any
 	RegisteredGatewayArn any
-	ResourceArn any
-	ResourceType any
+	ResourceArn          any
+	ResourceType         any
 }
 
 var NetworkResources = ubx.DataSourceBinding{
 	WireType: "aws_networkmanager_network_resources",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
-		"CoreNetworkId": ubx.FieldSpec{WireName: "core_network_id"},
-		"GlobalNetworkId": ubx.FieldSpec{WireName: "global_network_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"AccountId":            ubx.FieldSpec{WireName: "account_id"},
+		"AwsRegion":            ubx.FieldSpec{WireName: "aws_region"},
+		"CoreNetworkId":        ubx.FieldSpec{WireName: "core_network_id"},
+		"GlobalNetworkId":      ubx.FieldSpec{WireName: "global_network_id"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 		"RegisteredGatewayArn": ubx.FieldSpec{WireName: "registered_gateway_arn"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"ResourceArn":          ubx.FieldSpec{WireName: "resource_arn"},
+		"ResourceType":         ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

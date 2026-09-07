@@ -35,7 +35,7 @@ type ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedMo
 	FilterPattern any
 	// Defines the redaction settings applied to container logs from trained model inference jobs, ensuring sensitive data is removed before logs are stored or processed, as part of the privacy configuration for the configured model algorithm association. (AI-inferred)
 	LogRedactionConfiguration any
-	LogType any
+	LogType                   any
 }
 
 type ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs struct {
@@ -51,7 +51,7 @@ type ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedMo
 
 type ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModels struct {
 	// Defines the list of container log configurations (each specifying a CloudWatch Logs log group ARN and a log type) that are permitted for the trained model container as part of this algorithm association's privacy policy. (AI-inferred)
-	ContainerLogs any
+	ContainerLogs    any
 	ContainerMetrics any
 	// Sets the maximum size limit for trained model artifacts in the privacy configuration, expressed as an object with a numeric size and a unit, to prevent overly large models from being exported. (AI-inferred)
 	MaxArtifactSize any
@@ -71,113 +71,113 @@ type ConfiguredModelAlgorithmAssociation_PrivacyConfiguration struct {
 }
 
 type ConfiguredModelAlgorithmAssociation_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExports_MaxSizeFields = ubx.FieldMap{
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Unit":  ubx.FieldSpec{WireName: "unit"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExportsFields = ubx.FieldMap{
-		"FilesToExport": ubx.FieldSpec{WireName: "files_to_export"},
-		"MaxSize": ubx.FieldSpec{
-			WireName: "max_size",
-			Kind: "object",
-			Fields: ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExports_MaxSizeFields,
-		},
-	}
+	"FilesToExport": ubx.FieldSpec{WireName: "files_to_export"},
+	"MaxSize": ubx.FieldSpec{
+		WireName: "max_size",
+		Kind:     "object",
+		Fields:   ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExports_MaxSizeFields,
+	},
+}
 
 var ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogs_LogRedactionConfiguration_CustomEntityConfigFields = ubx.FieldMap{
-		"CustomDataIdentifiers": ubx.FieldSpec{WireName: "custom_data_identifiers"},
-	}
+	"CustomDataIdentifiers": ubx.FieldSpec{WireName: "custom_data_identifiers"},
+}
 
 var ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogs_LogRedactionConfigurationFields = ubx.FieldMap{
-		"CustomEntityConfig": ubx.FieldSpec{
-			WireName: "custom_entity_config",
-			Kind: "object",
-			Fields: ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogs_LogRedactionConfiguration_CustomEntityConfigFields,
-		},
-		"EntitiesToRedact": ubx.FieldSpec{WireName: "entities_to_redact"},
-	}
+	"CustomEntityConfig": ubx.FieldSpec{
+		WireName: "custom_entity_config",
+		Kind:     "object",
+		Fields:   ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogs_LogRedactionConfiguration_CustomEntityConfigFields,
+	},
+	"EntitiesToRedact": ubx.FieldSpec{WireName: "entities_to_redact"},
+}
 
 var ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogsFields = ubx.FieldMap{
-		"AllowedAccountIds": ubx.FieldSpec{WireName: "allowed_account_ids"},
-		"FilterPattern": ubx.FieldSpec{WireName: "filter_pattern"},
-		"LogRedactionConfiguration": ubx.FieldSpec{
-			WireName: "log_redaction_configuration",
-			Kind: "object",
-			Fields: ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogs_LogRedactionConfigurationFields,
-		},
-		"LogType": ubx.FieldSpec{WireName: "log_type"},
-	}
+	"AllowedAccountIds": ubx.FieldSpec{WireName: "allowed_account_ids"},
+	"FilterPattern":     ubx.FieldSpec{WireName: "filter_pattern"},
+	"LogRedactionConfiguration": ubx.FieldSpec{
+		WireName: "log_redaction_configuration",
+		Kind:     "object",
+		Fields:   ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogs_LogRedactionConfigurationFields,
+	},
+	"LogType": ubx.FieldSpec{WireName: "log_type"},
+}
 
 var ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobsFields = ubx.FieldMap{
-		"ContainerLogs": ubx.FieldSpec{
-			WireName: "container_logs",
-			Kind: "list",
-			Fields: ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogsFields,
-		},
-		"MaxOutputSize": ubx.FieldSpec{
-			WireName: "max_output_size",
-			Kind: "object",
-			Fields: ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExports_MaxSizeFields,
-		},
-	}
+	"ContainerLogs": ubx.FieldSpec{
+		WireName: "container_logs",
+		Kind:     "list",
+		Fields:   ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogsFields,
+	},
+	"MaxOutputSize": ubx.FieldSpec{
+		WireName: "max_output_size",
+		Kind:     "object",
+		Fields:   ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExports_MaxSizeFields,
+	},
+}
 
 var ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModels_ContainerMetricsFields = ubx.FieldMap{
-		"NoiseLevel": ubx.FieldSpec{WireName: "noise_level"},
-	}
+	"NoiseLevel": ubx.FieldSpec{WireName: "noise_level"},
+}
 
 var ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelsFields = ubx.FieldMap{
-		"ContainerLogs": ubx.FieldSpec{
-			WireName: "container_logs",
-			Kind: "list",
-			Fields: ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogsFields,
-		},
-		"ContainerMetrics": ubx.FieldSpec{
-			WireName: "container_metrics",
-			Kind: "object",
-			Fields: ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModels_ContainerMetricsFields,
-		},
-		"MaxArtifactSize": ubx.FieldSpec{
-			WireName: "max_artifact_size",
-			Kind: "object",
-			Fields: ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExports_MaxSizeFields,
-		},
-	}
+	"ContainerLogs": ubx.FieldSpec{
+		WireName: "container_logs",
+		Kind:     "list",
+		Fields:   ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogsFields,
+	},
+	"ContainerMetrics": ubx.FieldSpec{
+		WireName: "container_metrics",
+		Kind:     "object",
+		Fields:   ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModels_ContainerMetricsFields,
+	},
+	"MaxArtifactSize": ubx.FieldSpec{
+		WireName: "max_artifact_size",
+		Kind:     "object",
+		Fields:   ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExports_MaxSizeFields,
+	},
+}
 
 var ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_PoliciesFields = ubx.FieldMap{
-		"TrainedModelExports": ubx.FieldSpec{
-			WireName: "trained_model_exports",
-			Kind: "object",
-			Fields: ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExportsFields,
-		},
-		"TrainedModelInferenceJobs": ubx.FieldSpec{
-			WireName: "trained_model_inference_jobs",
-			Kind: "object",
-			Fields: ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobsFields,
-		},
-		"TrainedModels": ubx.FieldSpec{
-			WireName: "trained_models",
-			Kind: "object",
-			Fields: ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelsFields,
-		},
-	}
+	"TrainedModelExports": ubx.FieldSpec{
+		WireName: "trained_model_exports",
+		Kind:     "object",
+		Fields:   ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExportsFields,
+	},
+	"TrainedModelInferenceJobs": ubx.FieldSpec{
+		WireName: "trained_model_inference_jobs",
+		Kind:     "object",
+		Fields:   ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobsFields,
+	},
+	"TrainedModels": ubx.FieldSpec{
+		WireName: "trained_models",
+		Kind:     "object",
+		Fields:   ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelsFields,
+	},
+}
 
 var ConfiguredModelAlgorithmAssociation_PrivacyConfigurationFields = ubx.FieldMap{
-		"Policies": ubx.FieldSpec{
-			WireName: "policies",
-			Kind: "object",
-			Fields: ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_PoliciesFields,
-		},
-	}
+	"Policies": ubx.FieldSpec{
+		WireName: "policies",
+		Kind:     "object",
+		Fields:   ConfiguredModelAlgorithmAssociation_PrivacyConfiguration_PoliciesFields,
+	},
+}
 
 var ConfiguredModelAlgorithmAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ConfiguredModelAlgorithmAssociationConfig struct {
 	// The ARN of the configured model algorithm that this association links to the configured model. (AI-inferred)
@@ -217,18 +217,18 @@ var ConfiguredModelAlgorithmAssociation = ubx.ResourceBinding{
 	WireType: "aws_clean_rooms_ml_configured_model_algorithm_association",
 	Fields: ubx.FieldMap{
 		"ConfiguredModelAlgorithmArn": ubx.FieldSpec{WireName: "configured_model_algorithm_arn"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"MembershipIdentifier": ubx.FieldSpec{WireName: "membership_identifier"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":                 ubx.FieldSpec{WireName: "description"},
+		"MembershipIdentifier":        ubx.FieldSpec{WireName: "membership_identifier"},
+		"Name":                        ubx.FieldSpec{WireName: "name"},
 		"PrivacyConfiguration": ubx.FieldSpec{
 			WireName: "privacy_configuration",
-			Kind: "object",
-			Fields: ConfiguredModelAlgorithmAssociation_PrivacyConfigurationFields,
+			Kind:     "object",
+			Fields:   ConfiguredModelAlgorithmAssociation_PrivacyConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ConfiguredModelAlgorithmAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   ConfiguredModelAlgorithmAssociation_TagsFields,
 		},
 	},
 }

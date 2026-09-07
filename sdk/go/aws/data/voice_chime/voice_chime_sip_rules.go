@@ -4,40 +4,40 @@ package voice_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChimeSipRules_SipRules_TargetApplications struct {
-	AwsRegion any
-	Priority any
+	AwsRegion             any
+	Priority              any
 	SipMediaApplicationId any
 }
 
 type VoiceChimeSipRules_SipRules struct {
-	CreatedTimestamp any
-	Disabled any
-	Name any
-	SipRuleId any
+	CreatedTimestamp   any
+	Disabled           any
+	Name               any
+	SipRuleId          any
 	TargetApplications any
-	TriggerType any
-	TriggerValue any
-	UpdatedTimestamp any
+	TriggerType        any
+	TriggerValue       any
+	UpdatedTimestamp   any
 }
 
 type VoiceChimeSipRulesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 	SipMediaApplicationId any
 }
 
 type VoiceChimeSipRulesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 	SipMediaApplicationId any
-	SipRules any
+	SipRules              any
 }
 
 var VoiceChimeSipRules = ubx.DataSourceBinding{
 	WireType: "aws_voice_chime_sip_rules",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 		"SipMediaApplicationId": ubx.FieldSpec{WireName: "sip_media_application_id"},
 	},
 }

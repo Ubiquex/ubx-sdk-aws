@@ -4,26 +4,26 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ThingsInThingGroupConfig struct {
-	MaxResults any
-	NextToken any
-	Recursive any
+	MaxResults     any
+	NextToken      any
+	Recursive      any
 	ThingGroupName any
 }
 
 type ThingsInThingGroupAttrs struct {
-	MaxResults any
-	NextToken any
-	Recursive any
+	MaxResults     any
+	NextToken      any
+	Recursive      any
 	ThingGroupName any
-	Things any
+	Things         any
 }
 
 var ThingsInThingGroup = ubx.DataSourceBinding{
 	WireType: "aws_iot_things_in_thing_group",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Recursive": ubx.FieldSpec{WireName: "recursive"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"Recursive":      ubx.FieldSpec{WireName: "recursive"},
 		"ThingGroupName": ubx.FieldSpec{WireName: "thing_group_name"},
 	},
 }

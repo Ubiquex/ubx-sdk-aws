@@ -55,38 +55,38 @@ type HealthCheck_HealthCheckTags struct {
 }
 
 var HealthCheck_HealthCheckConfig_AlarmIdentifierFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Region": ubx.FieldSpec{WireName: "region"},
+}
 
 var HealthCheck_HealthCheckConfigFields = ubx.FieldMap{
-		"AlarmIdentifier": ubx.FieldSpec{
-			WireName: "alarm_identifier",
-			Kind: "object",
-			Fields: HealthCheck_HealthCheckConfig_AlarmIdentifierFields,
-		},
-		"ChildHealthChecks": ubx.FieldSpec{WireName: "child_health_checks"},
-		"EnableSni": ubx.FieldSpec{WireName: "enable_sni"},
-		"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
-		"FullyQualifiedDomainName": ubx.FieldSpec{WireName: "fully_qualified_domain_name"},
-		"HealthThreshold": ubx.FieldSpec{WireName: "health_threshold"},
-		"InsufficientDataHealthStatus": ubx.FieldSpec{WireName: "insufficient_data_health_status"},
-		"Inverted": ubx.FieldSpec{WireName: "inverted"},
-		"Ipaddress": ubx.FieldSpec{WireName: "ipaddress"},
-		"MeasureLatency": ubx.FieldSpec{WireName: "measure_latency"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
-		"RequestInterval": ubx.FieldSpec{WireName: "request_interval"},
-		"ResourcePath": ubx.FieldSpec{WireName: "resource_path"},
-		"RoutingControlArn": ubx.FieldSpec{WireName: "routing_control_arn"},
-		"SearchString": ubx.FieldSpec{WireName: "search_string"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AlarmIdentifier": ubx.FieldSpec{
+		WireName: "alarm_identifier",
+		Kind:     "object",
+		Fields:   HealthCheck_HealthCheckConfig_AlarmIdentifierFields,
+	},
+	"ChildHealthChecks":            ubx.FieldSpec{WireName: "child_health_checks"},
+	"EnableSni":                    ubx.FieldSpec{WireName: "enable_sni"},
+	"FailureThreshold":             ubx.FieldSpec{WireName: "failure_threshold"},
+	"FullyQualifiedDomainName":     ubx.FieldSpec{WireName: "fully_qualified_domain_name"},
+	"HealthThreshold":              ubx.FieldSpec{WireName: "health_threshold"},
+	"InsufficientDataHealthStatus": ubx.FieldSpec{WireName: "insufficient_data_health_status"},
+	"Inverted":                     ubx.FieldSpec{WireName: "inverted"},
+	"Ipaddress":                    ubx.FieldSpec{WireName: "ipaddress"},
+	"MeasureLatency":               ubx.FieldSpec{WireName: "measure_latency"},
+	"Port":                         ubx.FieldSpec{WireName: "port"},
+	"Regions":                      ubx.FieldSpec{WireName: "regions"},
+	"RequestInterval":              ubx.FieldSpec{WireName: "request_interval"},
+	"ResourcePath":                 ubx.FieldSpec{WireName: "resource_path"},
+	"RoutingControlArn":            ubx.FieldSpec{WireName: "routing_control_arn"},
+	"SearchString":                 ubx.FieldSpec{WireName: "search_string"},
+	"Type":                         ubx.FieldSpec{WireName: "type"},
+}
 
 var HealthCheck_HealthCheckTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type HealthCheckConfig struct {
 	// A complex type that contains information about the health check.
@@ -109,13 +109,13 @@ var HealthCheck = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"HealthCheckConfig": ubx.FieldSpec{
 			WireName: "health_check_config",
-			Kind: "object",
-			Fields: HealthCheck_HealthCheckConfigFields,
+			Kind:     "object",
+			Fields:   HealthCheck_HealthCheckConfigFields,
 		},
 		"HealthCheckTags": ubx.FieldSpec{
 			WireName: "health_check_tags",
-			Kind: "list",
-			Fields: HealthCheck_HealthCheckTagsFields,
+			Kind:     "list",
+			Fields:   HealthCheck_HealthCheckTagsFields,
 		},
 	},
 }

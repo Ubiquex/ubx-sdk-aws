@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Spaces_SpaceSummaries struct {
 	ConsumedSourceDocCount any
-	ConsumedSourceSize any
-	CreatedAt any
-	CreatedBy any
-	CreatedByArn any
-	Description any
-	Name any
-	ResourcesCount any
-	SpaceArn any
-	SpaceId any
-	UpdatedAt any
+	ConsumedSourceSize     any
+	CreatedAt              any
+	CreatedBy              any
+	CreatedByArn           any
+	Description            any
+	Name                   any
+	ResourcesCount         any
+	SpaceArn               any
+	SpaceId                any
+	UpdatedAt              any
 }
 
 type SpacesConfig struct {
 	AwsAccountId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type SpacesAttrs struct {
-	AwsAccountId any
-	MaxResults any
-	NextToken any
-	RequestId any
-	SpaceArn any
-	SpaceId any
+	AwsAccountId   any
+	MaxResults     any
+	NextToken      any
+	RequestId      any
+	SpaceArn       any
+	SpaceId        any
 	SpaceSummaries any
 }
 
@@ -37,7 +37,7 @@ var Spaces = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_spaces",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

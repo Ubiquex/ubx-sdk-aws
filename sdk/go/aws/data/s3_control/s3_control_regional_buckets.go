@@ -4,34 +4,34 @@ package s3_control
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type S3ControlRegionalBuckets_RegionalBucketList struct {
-	Bucket any
-	BucketArn any
-	CreationDate any
-	OutpostId any
+	Bucket                   any
+	BucketArn                any
+	CreationDate             any
+	OutpostId                any
 	PublicAccessBlockEnabled any
 }
 
 type S3ControlRegionalBucketsConfig struct {
-	AccountId any
+	AccountId  any
 	MaxResults any
-	NextToken any
-	OutpostId any
+	NextToken  any
+	OutpostId  any
 }
 
 type S3ControlRegionalBucketsAttrs struct {
-	AccountId any
-	MaxResults any
-	NextToken any
-	OutpostId any
+	AccountId          any
+	MaxResults         any
+	NextToken          any
+	OutpostId          any
 	RegionalBucketList any
 }
 
 var S3ControlRegionalBuckets = ubx.DataSourceBinding{
 	WireType: "aws_s3_control_regional_buckets",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OutpostId": ubx.FieldSpec{WireName: "outpost_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"OutpostId":  ubx.FieldSpec{WireName: "outpost_id"},
 	},
 }

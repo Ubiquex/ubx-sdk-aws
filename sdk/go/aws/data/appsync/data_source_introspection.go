@@ -4,60 +4,60 @@ package appsync
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataSourceIntrospection_IntrospectionResult_Models_Fields_Type struct {
-	Kind any
-	Name any
-	Type any
+	Kind   any
+	Name   any
+	Type   any
 	Values any
 }
 
 type DataSourceIntrospection_IntrospectionResult_Models_Fields struct {
 	Length any
-	Name any
-	Type any
+	Name   any
+	Type   any
 }
 
 type DataSourceIntrospection_IntrospectionResult_Models_Indexes struct {
 	Fields any
-	Name any
+	Name   any
 }
 
 type DataSourceIntrospection_IntrospectionResult_Models struct {
-	Fields any
-	Indexes any
-	Name any
+	Fields     any
+	Indexes    any
+	Name       any
 	PrimaryKey any
-	Sdl any
+	Sdl        any
 }
 
 type DataSourceIntrospection_IntrospectionResult struct {
-	Models any
+	Models    any
 	NextToken any
 }
 
 type DataSourceIntrospectionConfig struct {
 	IncludeModelsSdl any
-	IntrospectionId any
-	MaxResults any
-	NextToken any
+	IntrospectionId  any
+	MaxResults       any
+	NextToken        any
 }
 
 type DataSourceIntrospectionAttrs struct {
 	IncludeModelsSdl any
-	IntrospectionId any
+	IntrospectionId  any
 	// <p>Represents the output of a <code>DataSourceIntrospectionResult</code>. This is the populated result of a <code>GetDataSourceIntrospection</code> operation.</p>
-	IntrospectionResult any
-	IntrospectionStatus any
+	IntrospectionResult       any
+	IntrospectionStatus       any
 	IntrospectionStatusDetail any
-	MaxResults any
-	NextToken any
+	MaxResults                any
+	NextToken                 any
 }
 
 var DataSourceIntrospection = ubx.DataSourceBinding{
 	WireType: "aws_appsync_data_source_introspection",
 	Fields: ubx.FieldMap{
 		"IncludeModelsSdl": ubx.FieldSpec{WireName: "include_models_sdl"},
-		"IntrospectionId": ubx.FieldSpec{WireName: "introspection_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"IntrospectionId":  ubx.FieldSpec{WireName: "introspection_id"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

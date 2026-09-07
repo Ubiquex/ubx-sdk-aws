@@ -31,24 +31,24 @@ type Pool_TimeoutSettings struct {
 }
 
 var Pool_ApplicationSettingsFields = ubx.FieldMap{
-		"SettingsGroup": ubx.FieldSpec{WireName: "settings_group"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"SettingsGroup": ubx.FieldSpec{WireName: "settings_group"},
+	"Status":        ubx.FieldSpec{WireName: "status"},
+}
 
 var Pool_CapacityFields = ubx.FieldMap{
-		"DesiredUserSessions": ubx.FieldSpec{WireName: "desired_user_sessions"},
-	}
+	"DesiredUserSessions": ubx.FieldSpec{WireName: "desired_user_sessions"},
+}
 
 var Pool_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Pool_TimeoutSettingsFields = ubx.FieldMap{
-		"DisconnectTimeoutInSeconds": ubx.FieldSpec{WireName: "disconnect_timeout_in_seconds"},
-		"IdleDisconnectTimeoutInSeconds": ubx.FieldSpec{WireName: "idle_disconnect_timeout_in_seconds"},
-		"MaxUserDurationInSeconds": ubx.FieldSpec{WireName: "max_user_duration_in_seconds"},
-	}
+	"DisconnectTimeoutInSeconds":     ubx.FieldSpec{WireName: "disconnect_timeout_in_seconds"},
+	"IdleDisconnectTimeoutInSeconds": ubx.FieldSpec{WireName: "idle_disconnect_timeout_in_seconds"},
+	"MaxUserDurationInSeconds":       ubx.FieldSpec{WireName: "max_user_duration_in_seconds"},
+}
 
 type PoolConfig struct {
 	// Determines whether persistent application settings are enabled for the pool and, if so, specifies the settings group name that stores user application preferences. (AI-inferred)
@@ -103,28 +103,28 @@ var Pool = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApplicationSettings": ubx.FieldSpec{
 			WireName: "application_settings",
-			Kind: "object",
-			Fields: Pool_ApplicationSettingsFields,
+			Kind:     "object",
+			Fields:   Pool_ApplicationSettingsFields,
 		},
 		"BundleId": ubx.FieldSpec{WireName: "bundle_id"},
 		"Capacity": ubx.FieldSpec{
 			WireName: "capacity",
-			Kind: "object",
-			Fields: Pool_CapacityFields,
+			Kind:     "object",
+			Fields:   Pool_CapacityFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
-		"PoolName": ubx.FieldSpec{WireName: "pool_name"},
+		"PoolName":    ubx.FieldSpec{WireName: "pool_name"},
 		"RunningMode": ubx.FieldSpec{WireName: "running_mode"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Pool_TagsFields,
+			Kind:     "list",
+			Fields:   Pool_TagsFields,
 		},
 		"TimeoutSettings": ubx.FieldSpec{
 			WireName: "timeout_settings",
-			Kind: "object",
-			Fields: Pool_TimeoutSettingsFields,
+			Kind:     "object",
+			Fields:   Pool_TimeoutSettingsFields,
 		},
 	},
 }

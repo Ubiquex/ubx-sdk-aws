@@ -4,9 +4,9 @@ package medical_imaging
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MedicalImagingDicomimportJob_JobProperties_ImportConfiguration_DicomJsonMetadataImportConfiguration_DicomMetadataMappings struct {
-	MetadataFilePath any
+	MetadataFilePath  any
 	SeriesInstanceUid any
-	StudyInstanceUid any
+	StudyInstanceUid  any
 }
 
 type MedicalImagingDicomimportJob_JobProperties_ImportConfiguration_DicomJsonMetadataImportConfiguration struct {
@@ -19,27 +19,27 @@ type MedicalImagingDicomimportJob_JobProperties_ImportConfiguration struct {
 
 type MedicalImagingDicomimportJob_JobProperties struct {
 	DataAccessRoleArn any
-	DatastoreId any
-	EndedAt any
+	DatastoreId       any
+	EndedAt           any
 	// <p>The configuration options for different types of import operations.</p>
 	ImportConfiguration any
-	InputS3Uri any
-	JobId any
-	JobName any
-	JobStatus any
-	Message any
-	OutputS3Uri any
-	SubmittedAt any
+	InputS3Uri          any
+	JobId               any
+	JobName             any
+	JobStatus           any
+	Message             any
+	OutputS3Uri         any
+	SubmittedAt         any
 }
 
 type MedicalImagingDicomimportJobConfig struct {
 	DatastoreId any
-	JobId any
+	JobId       any
 }
 
 type MedicalImagingDicomimportJobAttrs struct {
 	DatastoreId any
-	JobId any
+	JobId       any
 	// <p>Properties of the import job.</p>
 	JobProperties any
 }
@@ -48,6 +48,6 @@ var MedicalImagingDicomimportJob = ubx.DataSourceBinding{
 	WireType: "aws_medical_imaging_dicomimport_job",
 	Fields: ubx.FieldMap{
 		"DatastoreId": ubx.FieldSpec{WireName: "datastore_id"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":       ubx.FieldSpec{WireName: "job_id"},
 	},
 }

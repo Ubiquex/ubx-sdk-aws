@@ -4,23 +4,23 @@ package lakeformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkUnitResultsConfig struct {
-	QueryId any
-	WorkUnitId any
+	QueryId       any
+	WorkUnitId    any
 	WorkUnitToken any
 }
 
 type WorkUnitResultsAttrs struct {
-	QueryId any
-	ResultStream any
-	WorkUnitId any
+	QueryId       any
+	ResultStream  any
+	WorkUnitId    any
 	WorkUnitToken any
 }
 
 var WorkUnitResults = ubx.DataSourceBinding{
 	WireType: "aws_lakeformation_work_unit_results",
 	Fields: ubx.FieldMap{
-		"QueryId": ubx.FieldSpec{WireName: "query_id"},
-		"WorkUnitId": ubx.FieldSpec{WireName: "work_unit_id"},
+		"QueryId":       ubx.FieldSpec{WireName: "query_id"},
+		"WorkUnitId":    ubx.FieldSpec{WireName: "work_unit_id"},
 		"WorkUnitToken": ubx.FieldSpec{WireName: "work_unit_token"},
 	},
 }

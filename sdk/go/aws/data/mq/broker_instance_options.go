@@ -8,38 +8,38 @@ type BrokerInstanceOptions_BrokerInstanceOptions_AvailabilityZones struct {
 }
 
 type BrokerInstanceOptions_BrokerInstanceOptions struct {
-	AvailabilityZones any
-	EngineType any
-	HostInstanceType any
-	StorageType any
+	AvailabilityZones        any
+	EngineType               any
+	HostInstanceType         any
+	StorageType              any
 	SupportedDeploymentModes any
-	SupportedEngineVersions any
+	SupportedEngineVersions  any
 }
 
 type BrokerInstanceOptionsConfig struct {
-	EngineType any
+	EngineType       any
 	HostInstanceType any
-	MaxResults any
-	NextToken any
-	StorageType any
+	MaxResults       any
+	NextToken        any
+	StorageType      any
 }
 
 type BrokerInstanceOptionsAttrs struct {
 	BrokerInstanceOptions any
-	EngineType any
-	HostInstanceType any
-	MaxResults any
-	NextToken any
-	StorageType any
+	EngineType            any
+	HostInstanceType      any
+	MaxResults            any
+	NextToken             any
+	StorageType           any
 }
 
 var BrokerInstanceOptions = ubx.DataSourceBinding{
 	WireType: "aws_mq_broker_instance_options",
 	Fields: ubx.FieldMap{
-		"EngineType": ubx.FieldSpec{WireName: "engine_type"},
+		"EngineType":       ubx.FieldSpec{WireName: "engine_type"},
 		"HostInstanceType": ubx.FieldSpec{WireName: "host_instance_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StorageType": ubx.FieldSpec{WireName: "storage_type"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"StorageType":      ubx.FieldSpec{WireName: "storage_type"},
 	},
 }

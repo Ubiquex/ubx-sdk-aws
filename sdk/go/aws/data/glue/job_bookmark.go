@@ -4,31 +4,31 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type JobBookmark_JobBookmarkEntry struct {
-	Attempt any
-	JobBookmark any
-	JobName any
+	Attempt       any
+	JobBookmark   any
+	JobName       any
 	PreviousRunId any
-	Run any
-	RunId any
-	Version any
+	Run           any
+	RunId         any
+	Version       any
 }
 
 type JobBookmarkConfig struct {
 	JobName any
-	RunId any
+	RunId   any
 }
 
 type JobBookmarkAttrs struct {
 	// <p>Defines a point that a job can resume processing.</p>
 	JobBookmarkEntry any
-	JobName any
-	RunId any
+	JobName          any
+	RunId            any
 }
 
 var JobBookmark = ubx.DataSourceBinding{
 	WireType: "aws_glue_job_bookmark",
 	Fields: ubx.FieldMap{
 		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"RunId": ubx.FieldSpec{WireName: "run_id"},
+		"RunId":   ubx.FieldSpec{WireName: "run_id"},
 	},
 }

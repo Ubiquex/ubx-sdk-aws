@@ -4,33 +4,33 @@ package compute_optimizer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComputeOptimizerEnrollmentStatusesForOrganization_AccountEnrollmentStatuses struct {
-	AccountId any
+	AccountId            any
 	LastUpdatedTimestamp any
-	Status any
-	StatusReason any
+	Status               any
+	StatusReason         any
 }
 
 type ComputeOptimizerEnrollmentStatusesForOrganization_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var ComputeOptimizerEnrollmentStatusesForOrganization_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ComputeOptimizerEnrollmentStatusesForOrganizationConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ComputeOptimizerEnrollmentStatusesForOrganizationAttrs struct {
 	AccountEnrollmentStatuses any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters                   any
+	MaxResults                any
+	NextToken                 any
 }
 
 var ComputeOptimizerEnrollmentStatusesForOrganization = ubx.DataSourceBinding{
@@ -38,10 +38,10 @@ var ComputeOptimizerEnrollmentStatusesForOrganization = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ComputeOptimizerEnrollmentStatusesForOrganization_FiltersFields,
+			Kind:     "list",
+			Fields:   ComputeOptimizerEnrollmentStatusesForOrganization_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

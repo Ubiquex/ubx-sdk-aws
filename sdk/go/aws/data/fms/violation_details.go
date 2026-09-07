@@ -4,80 +4,80 @@ package fms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ViolationDetails_ViolationDetail_ResourceTags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_AwsEc2InstanceViolation_AwsEc2NetworkInterfaceViolations struct {
 	ViolatingSecurityGroups any
-	ViolationTarget any
+	ViolationTarget         any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_AwsEc2InstanceViolation struct {
 	AwsEc2NetworkInterfaceViolations any
-	ViolationTarget any
+	ViolationTarget                  any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_AwsVpcsecurityGroupViolation_PartialMatches struct {
-	Reference any
+	Reference              any
 	TargetViolationReasons any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_AwsVpcsecurityGroupViolation_PossibleSecurityGroupRemediationActions_RemediationResult struct {
-	FromPort any
-	Ipv4Range any
-	Ipv6Range any
+	FromPort     any
+	Ipv4Range    any
+	Ipv6Range    any
 	PrefixListId any
-	Protocol any
-	ToPort any
+	Protocol     any
+	ToPort       any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_AwsVpcsecurityGroupViolation_PossibleSecurityGroupRemediationActions struct {
-	Description any
-	IsDefaultAction any
+	Description           any
+	IsDefaultAction       any
 	RemediationActionType any
-	RemediationResult any
+	RemediationResult     any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_AwsVpcsecurityGroupViolation struct {
-	PartialMatches any
+	PartialMatches                          any
 	PossibleSecurityGroupRemediationActions any
-	ViolationTarget any
-	ViolationTargetDescription any
+	ViolationTarget                         any
+	ViolationTargetDescription              any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_DnsDuplicateRuleGroupViolation struct {
-	ViolationTarget any
+	ViolationTarget            any
 	ViolationTargetDescription any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_DnsRuleGroupLimitExceededViolation struct {
 	NumberOfRuleGroupsAlreadyAssociated any
-	ViolationTarget any
-	ViolationTargetDescription any
+	ViolationTarget                     any
+	ViolationTargetDescription          any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_DnsRuleGroupPriorityConflictViolation struct {
-	ConflictingPolicyId any
-	ConflictingPriority any
-	UnavailablePriorities any
-	ViolationTarget any
+	ConflictingPolicyId        any
+	ConflictingPriority        any
+	UnavailablePriorities      any
+	ViolationTarget            any
 	ViolationTargetDescription any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_FirewallSubnetIsOutOfScopeViolation struct {
-	FirewallSubnetId any
-	SubnetAvailabilityZone any
+	FirewallSubnetId         any
+	SubnetAvailabilityZone   any
 	SubnetAvailabilityZoneId any
-	VpcEndpointId any
-	VpcId any
+	VpcEndpointId            any
+	VpcId                    any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_FirewallSubnetMissingVpcendpointViolation struct {
-	FirewallSubnetId any
-	SubnetAvailabilityZone any
+	FirewallSubnetId         any
+	SubnetAvailabilityZone   any
 	SubnetAvailabilityZoneId any
-	VpcId any
+	VpcId                    any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_InvalidNetworkAclEntriesViolation_EntryViolations_EntriesWithConflicts_EntryDetail_IcmpTypeCode struct {
@@ -87,125 +87,125 @@ type ViolationDetails_ViolationDetail_ResourceViolations_InvalidNetworkAclEntrie
 
 type ViolationDetails_ViolationDetail_ResourceViolations_InvalidNetworkAclEntriesViolation_EntryViolations_EntriesWithConflicts_EntryDetail_PortRange struct {
 	From any
-	To any
+	To   any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_InvalidNetworkAclEntriesViolation_EntryViolations_EntriesWithConflicts_EntryDetail struct {
-	CidrBlock any
-	Egress any
-	IcmpTypeCode any
+	CidrBlock     any
+	Egress        any
+	IcmpTypeCode  any
 	Ipv6CidrBlock any
-	PortRange any
-	Protocol any
-	RuleAction any
+	PortRange     any
+	Protocol      any
+	RuleAction    any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_InvalidNetworkAclEntriesViolation_EntryViolations_EntriesWithConflicts struct {
-	EntryDetail any
+	EntryDetail     any
 	EntryRuleNumber any
-	EntryType any
+	EntryType       any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_InvalidNetworkAclEntriesViolation_EntryViolations struct {
-	ActualEvaluationOrder any
-	EntriesWithConflicts any
+	ActualEvaluationOrder          any
+	EntriesWithConflicts           any
 	EntryAtExpectedEvaluationOrder any
-	EntryViolationReasons any
-	ExpectedEntry any
-	ExpectedEvaluationOrder any
+	EntryViolationReasons          any
+	ExpectedEntry                  any
+	ExpectedEvaluationOrder        any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_InvalidNetworkAclEntriesViolation struct {
 	CurrentAssociatedNetworkAcl any
-	EntryViolations any
-	Subnet any
-	SubnetAvailabilityZone any
-	Vpc any
+	EntryViolations             any
+	Subnet                      any
+	SubnetAvailabilityZone      any
+	Vpc                         any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_NetworkFirewallBlackHoleRouteDetectedViolation_ViolatingRoutes struct {
-	Destination any
+	Destination     any
 	DestinationType any
-	Target any
-	TargetType any
+	Target          any
+	TargetType      any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_NetworkFirewallBlackHoleRouteDetectedViolation struct {
-	RouteTableId any
+	RouteTableId    any
 	ViolatingRoutes any
 	ViolationTarget any
-	VpcId any
+	VpcId           any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_NetworkFirewallInternetTrafficNotInspectedViolation_ExpectedFirewallSubnetRoutes struct {
-	AllowedTargets any
+	AllowedTargets      any
 	ContributingSubnets any
-	IpV4Cidr any
-	IpV6Cidr any
-	PrefixListId any
-	RouteTableId any
+	IpV4Cidr            any
+	IpV6Cidr            any
+	PrefixListId        any
+	RouteTableId        any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_NetworkFirewallInternetTrafficNotInspectedViolation struct {
-	ActualFirewallSubnetRoutes any
-	ActualInternetGatewayRoutes any
-	CurrentFirewallSubnetRouteTable any
+	ActualFirewallSubnetRoutes       any
+	ActualInternetGatewayRoutes      any
+	CurrentFirewallSubnetRouteTable  any
 	CurrentInternetGatewayRouteTable any
-	ExpectedFirewallEndpoint any
-	ExpectedFirewallSubnetRoutes any
-	ExpectedInternetGatewayRoutes any
-	FirewallSubnetId any
-	InternetGatewayId any
-	IsRouteTableUsedInDifferentAz any
-	RouteTableId any
-	SubnetAvailabilityZone any
-	SubnetId any
-	ViolatingRoutes any
-	VpcId any
+	ExpectedFirewallEndpoint         any
+	ExpectedFirewallSubnetRoutes     any
+	ExpectedInternetGatewayRoutes    any
+	FirewallSubnetId                 any
+	InternetGatewayId                any
+	IsRouteTableUsedInDifferentAz    any
+	RouteTableId                     any
+	SubnetAvailabilityZone           any
+	SubnetId                         any
+	ViolatingRoutes                  any
+	VpcId                            any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_NetworkFirewallInvalidRouteConfigurationViolation struct {
-	ActualFirewallEndpoint any
-	ActualFirewallSubnetId any
-	ActualFirewallSubnetRoutes any
-	ActualInternetGatewayRoutes any
-	AffectedSubnets any
-	CurrentFirewallSubnetRouteTable any
+	ActualFirewallEndpoint           any
+	ActualFirewallSubnetId           any
+	ActualFirewallSubnetRoutes       any
+	ActualInternetGatewayRoutes      any
+	AffectedSubnets                  any
+	CurrentFirewallSubnetRouteTable  any
 	CurrentInternetGatewayRouteTable any
-	ExpectedFirewallEndpoint any
-	ExpectedFirewallSubnetId any
-	ExpectedFirewallSubnetRoutes any
-	ExpectedInternetGatewayRoutes any
-	InternetGatewayId any
-	IsRouteTableUsedInDifferentAz any
-	RouteTableId any
-	ViolatingRoute any
-	VpcId any
+	ExpectedFirewallEndpoint         any
+	ExpectedFirewallSubnetId         any
+	ExpectedFirewallSubnetRoutes     any
+	ExpectedInternetGatewayRoutes    any
+	InternetGatewayId                any
+	IsRouteTableUsedInDifferentAz    any
+	RouteTableId                     any
+	ViolatingRoute                   any
+	VpcId                            any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_NetworkFirewallMissingExpectedRoutesViolation struct {
-	ExpectedRoutes any
+	ExpectedRoutes  any
 	ViolationTarget any
-	VpcId any
+	VpcId           any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_NetworkFirewallMissingExpectedRtviolation struct {
-	AvailabilityZone any
-	CurrentRouteTable any
+	AvailabilityZone   any
+	CurrentRouteTable  any
 	ExpectedRouteTable any
-	ViolationTarget any
-	Vpc any
+	ViolationTarget    any
+	Vpc                any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_NetworkFirewallMissingFirewallViolation struct {
-	AvailabilityZone any
+	AvailabilityZone      any
 	TargetViolationReason any
-	ViolationTarget any
-	Vpc any
+	ViolationTarget       any
+	Vpc                   any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_NetworkFirewallPolicyModifiedViolation_CurrentPolicyDescription_StatefulEngineOptions struct {
-	RuleOrder any
+	RuleOrder             any
 	StreamExceptionPolicy any
 }
 
@@ -214,245 +214,245 @@ type ViolationDetails_ViolationDetail_ResourceViolations_NetworkFirewallPolicyMo
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_NetworkFirewallPolicyModifiedViolation_CurrentPolicyDescription_StatefulRuleGroups struct {
-	Override any
-	Priority any
-	ResourceId any
+	Override      any
+	Priority      any
+	ResourceId    any
 	RuleGroupName any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_NetworkFirewallPolicyModifiedViolation_CurrentPolicyDescription_StatelessRuleGroups struct {
-	Priority any
-	ResourceId any
+	Priority      any
+	ResourceId    any
 	RuleGroupName any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_NetworkFirewallPolicyModifiedViolation_CurrentPolicyDescription struct {
-	StatefulDefaultActions any
-	StatefulEngineOptions any
-	StatefulRuleGroups any
-	StatelessCustomActions any
-	StatelessDefaultActions any
+	StatefulDefaultActions          any
+	StatefulEngineOptions           any
+	StatefulRuleGroups              any
+	StatelessCustomActions          any
+	StatelessDefaultActions         any
 	StatelessFragmentDefaultActions any
-	StatelessRuleGroups any
+	StatelessRuleGroups             any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_NetworkFirewallPolicyModifiedViolation struct {
-	CurrentPolicyDescription any
+	CurrentPolicyDescription  any
 	ExpectedPolicyDescription any
-	ViolationTarget any
+	ViolationTarget           any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_NetworkFirewallUnexpectedFirewallRoutesViolation struct {
 	FirewallEndpoint any
 	FirewallSubnetId any
-	RouteTableId any
-	ViolatingRoutes any
-	VpcId any
+	RouteTableId     any
+	ViolatingRoutes  any
+	VpcId            any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_NetworkFirewallUnexpectedGatewayRoutesViolation struct {
-	GatewayId any
-	RouteTableId any
+	GatewayId       any
+	RouteTableId    any
 	ViolatingRoutes any
-	VpcId any
+	VpcId           any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_PossibleRemediationActions_Actions_OrderedRemediationActions_RemediationAction_CreateNetworkAclAction_Vpc struct {
 	Description any
-	ResourceId any
+	ResourceId  any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_PossibleRemediationActions_Actions_OrderedRemediationActions_RemediationAction_CreateNetworkAclAction struct {
-	Description any
+	Description     any
 	FmscanRemediate any
-	Vpc any
+	Vpc             any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_PossibleRemediationActions_Actions_OrderedRemediationActions_RemediationAction_CreateNetworkAclEntriesAction struct {
-	Description any
-	FmscanRemediate any
+	Description                  any
+	FmscanRemediate              any
 	NetworkAclEntriesToBeCreated any
-	NetworkAclId any
+	NetworkAclId                 any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_PossibleRemediationActions_Actions_OrderedRemediationActions_RemediationAction_DeleteNetworkAclEntriesAction struct {
-	Description any
-	FmscanRemediate any
+	Description                  any
+	FmscanRemediate              any
 	NetworkAclEntriesToBeDeleted any
-	NetworkAclId any
+	NetworkAclId                 any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_PossibleRemediationActions_Actions_OrderedRemediationActions_RemediationAction_Ec2AssociateRouteTableAction struct {
-	Description any
-	GatewayId any
+	Description  any
+	GatewayId    any
 	RouteTableId any
-	SubnetId any
+	SubnetId     any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_PossibleRemediationActions_Actions_OrderedRemediationActions_RemediationAction_Ec2CopyRouteTableAction struct {
-	Description any
+	Description  any
 	RouteTableId any
-	VpcId any
+	VpcId        any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_PossibleRemediationActions_Actions_OrderedRemediationActions_RemediationAction_Ec2CreateRouteAction struct {
-	Description any
-	DestinationCidrBlock any
+	Description              any
+	DestinationCidrBlock     any
 	DestinationIpv6CidrBlock any
-	DestinationPrefixListId any
-	GatewayId any
-	RouteTableId any
-	VpcEndpointId any
+	DestinationPrefixListId  any
+	GatewayId                any
+	RouteTableId             any
+	VpcEndpointId            any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_PossibleRemediationActions_Actions_OrderedRemediationActions_RemediationAction_Ec2CreateRouteTableAction struct {
 	Description any
-	VpcId any
+	VpcId       any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_PossibleRemediationActions_Actions_OrderedRemediationActions_RemediationAction_Ec2DeleteRouteAction struct {
-	Description any
-	DestinationCidrBlock any
+	Description              any
+	DestinationCidrBlock     any
 	DestinationIpv6CidrBlock any
-	DestinationPrefixListId any
-	RouteTableId any
+	DestinationPrefixListId  any
+	RouteTableId             any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_PossibleRemediationActions_Actions_OrderedRemediationActions_RemediationAction_Ec2ReplaceRouteAction struct {
-	Description any
-	DestinationCidrBlock any
+	Description              any
+	DestinationCidrBlock     any
 	DestinationIpv6CidrBlock any
-	DestinationPrefixListId any
-	GatewayId any
-	RouteTableId any
+	DestinationPrefixListId  any
+	GatewayId                any
+	RouteTableId             any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_PossibleRemediationActions_Actions_OrderedRemediationActions_RemediationAction_Ec2ReplaceRouteTableAssociationAction struct {
 	AssociationId any
-	Description any
-	RouteTableId any
+	Description   any
+	RouteTableId  any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_PossibleRemediationActions_Actions_OrderedRemediationActions_RemediationAction_FmspolicyUpdateFirewallCreationConfigAction struct {
-	Description any
+	Description            any
 	FirewallCreationConfig any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_PossibleRemediationActions_Actions_OrderedRemediationActions_RemediationAction_ReplaceNetworkAclAssociationAction struct {
-	AssociationId any
-	Description any
+	AssociationId   any
+	Description     any
 	FmscanRemediate any
-	NetworkAclId any
+	NetworkAclId    any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_PossibleRemediationActions_Actions_OrderedRemediationActions_RemediationAction struct {
-	CreateNetworkAclAction any
-	CreateNetworkAclEntriesAction any
-	DeleteNetworkAclEntriesAction any
-	Description any
-	Ec2AssociateRouteTableAction any
-	Ec2CopyRouteTableAction any
-	Ec2CreateRouteAction any
-	Ec2CreateRouteTableAction any
-	Ec2DeleteRouteAction any
-	Ec2ReplaceRouteAction any
-	Ec2ReplaceRouteTableAssociationAction any
+	CreateNetworkAclAction                      any
+	CreateNetworkAclEntriesAction               any
+	DeleteNetworkAclEntriesAction               any
+	Description                                 any
+	Ec2AssociateRouteTableAction                any
+	Ec2CopyRouteTableAction                     any
+	Ec2CreateRouteAction                        any
+	Ec2CreateRouteTableAction                   any
+	Ec2DeleteRouteAction                        any
+	Ec2ReplaceRouteAction                       any
+	Ec2ReplaceRouteTableAssociationAction       any
 	FmspolicyUpdateFirewallCreationConfigAction any
-	ReplaceNetworkAclAssociationAction any
+	ReplaceNetworkAclAssociationAction          any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_PossibleRemediationActions_Actions_OrderedRemediationActions struct {
-	Order any
+	Order             any
 	RemediationAction any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_PossibleRemediationActions_Actions struct {
-	Description any
-	IsDefaultAction any
+	Description               any
+	IsDefaultAction           any
 	OrderedRemediationActions any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_PossibleRemediationActions struct {
-	Actions any
+	Actions     any
 	Description any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_RouteHasOutOfScopeEndpointViolation struct {
-	CurrentFirewallSubnetRouteTable any
+	CurrentFirewallSubnetRouteTable  any
 	CurrentInternetGatewayRouteTable any
-	FirewallSubnetId any
-	FirewallSubnetRoutes any
-	InternetGatewayId any
-	InternetGatewayRoutes any
-	RouteTableId any
-	SubnetAvailabilityZone any
-	SubnetAvailabilityZoneId any
-	SubnetId any
-	ViolatingRoutes any
-	VpcId any
+	FirewallSubnetId                 any
+	FirewallSubnetRoutes             any
+	InternetGatewayId                any
+	InternetGatewayRoutes            any
+	RouteTableId                     any
+	SubnetAvailabilityZone           any
+	SubnetAvailabilityZoneId         any
+	SubnetId                         any
+	ViolatingRoutes                  any
+	VpcId                            any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_WebAclhasIncompatibleConfigurationViolation struct {
 	Description any
-	WebAclarn any
+	WebAclarn   any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations_WebAclhasOutOfScopeResourcesViolation struct {
 	OutOfScopeResourceList any
-	WebAclarn any
+	WebAclarn              any
 }
 
 type ViolationDetails_ViolationDetail_ResourceViolations struct {
-	AwsEc2InstanceViolation any
-	AwsEc2NetworkInterfaceViolation any
-	AwsVpcsecurityGroupViolation any
-	DnsDuplicateRuleGroupViolation any
-	DnsRuleGroupLimitExceededViolation any
-	DnsRuleGroupPriorityConflictViolation any
-	FirewallSubnetIsOutOfScopeViolation any
-	FirewallSubnetMissingVpcendpointViolation any
-	InvalidNetworkAclEntriesViolation any
-	NetworkFirewallBlackHoleRouteDetectedViolation any
-	NetworkFirewallInternetTrafficNotInspectedViolation any
-	NetworkFirewallInvalidRouteConfigurationViolation any
-	NetworkFirewallMissingExpectedRoutesViolation any
-	NetworkFirewallMissingExpectedRtviolation any
-	NetworkFirewallMissingFirewallViolation any
-	NetworkFirewallMissingSubnetViolation any
-	NetworkFirewallPolicyModifiedViolation any
-	NetworkFirewallUnexpectedFirewallRoutesViolation any
-	NetworkFirewallUnexpectedGatewayRoutesViolation any
-	PossibleRemediationActions any
-	RouteHasOutOfScopeEndpointViolation any
+	AwsEc2InstanceViolation                              any
+	AwsEc2NetworkInterfaceViolation                      any
+	AwsVpcsecurityGroupViolation                         any
+	DnsDuplicateRuleGroupViolation                       any
+	DnsRuleGroupLimitExceededViolation                   any
+	DnsRuleGroupPriorityConflictViolation                any
+	FirewallSubnetIsOutOfScopeViolation                  any
+	FirewallSubnetMissingVpcendpointViolation            any
+	InvalidNetworkAclEntriesViolation                    any
+	NetworkFirewallBlackHoleRouteDetectedViolation       any
+	NetworkFirewallInternetTrafficNotInspectedViolation  any
+	NetworkFirewallInvalidRouteConfigurationViolation    any
+	NetworkFirewallMissingExpectedRoutesViolation        any
+	NetworkFirewallMissingExpectedRtviolation            any
+	NetworkFirewallMissingFirewallViolation              any
+	NetworkFirewallMissingSubnetViolation                any
+	NetworkFirewallPolicyModifiedViolation               any
+	NetworkFirewallUnexpectedFirewallRoutesViolation     any
+	NetworkFirewallUnexpectedGatewayRoutesViolation      any
+	PossibleRemediationActions                           any
+	RouteHasOutOfScopeEndpointViolation                  any
 	ThirdPartyFirewallMissingExpectedRouteTableViolation any
-	ThirdPartyFirewallMissingFirewallViolation any
-	ThirdPartyFirewallMissingSubnetViolation any
-	WebAclhasIncompatibleConfigurationViolation any
-	WebAclhasOutOfScopeResourcesViolation any
+	ThirdPartyFirewallMissingFirewallViolation           any
+	ThirdPartyFirewallMissingSubnetViolation             any
+	WebAclhasIncompatibleConfigurationViolation          any
+	WebAclhasOutOfScopeResourcesViolation                any
 }
 
 type ViolationDetails_ViolationDetail struct {
-	MemberAccount any
-	PolicyId any
+	MemberAccount       any
+	PolicyId            any
 	ResourceDescription any
-	ResourceId any
-	ResourceTags any
-	ResourceType any
-	ResourceViolations any
+	ResourceId          any
+	ResourceTags        any
+	ResourceType        any
+	ResourceViolations  any
 }
 
 type ViolationDetailsConfig struct {
 	MemberAccount any
-	PolicyId any
-	ResourceId any
-	ResourceType any
+	PolicyId      any
+	ResourceId    any
+	ResourceType  any
 }
 
 type ViolationDetailsAttrs struct {
 	MemberAccount any
-	PolicyId any
-	ResourceId any
-	ResourceType any
+	PolicyId      any
+	ResourceId    any
+	ResourceType  any
 	// <p>Violations for a resource based on the specified Firewall Manager policy and Amazon Web Services account.</p>
 	ViolationDetail any
 }
@@ -461,8 +461,8 @@ var ViolationDetails = ubx.DataSourceBinding{
 	WireType: "aws_fms_violation_details",
 	Fields: ubx.FieldMap{
 		"MemberAccount": ubx.FieldSpec{WireName: "member_account"},
-		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"PolicyId":      ubx.FieldSpec{WireName: "policy_id"},
+		"ResourceId":    ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceType":  ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

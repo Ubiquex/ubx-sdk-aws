@@ -4,31 +4,31 @@ package appconfig
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigurationConfig struct {
-	Application any
+	Application                any
 	ClientConfigurationVersion any
-	ClientId any
-	Configuration any
-	Environment any
+	ClientId                   any
+	Configuration              any
+	Environment                any
 }
 
 type ConfigurationAttrs struct {
-	Application any
+	Application                any
 	ClientConfigurationVersion any
-	ClientId any
-	Configuration any
-	ConfigurationVersion any
-	Content any
-	ContentType any
-	Environment any
+	ClientId                   any
+	Configuration              any
+	ConfigurationVersion       any
+	Content                    any
+	ContentType                any
+	Environment                any
 }
 
 var Configuration = ubx.DataSourceBinding{
 	WireType: "aws_appconfig_configuration",
 	Fields: ubx.FieldMap{
-		"Application": ubx.FieldSpec{WireName: "application"},
+		"Application":                ubx.FieldSpec{WireName: "application"},
 		"ClientConfigurationVersion": ubx.FieldSpec{WireName: "client_configuration_version"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"Configuration": ubx.FieldSpec{WireName: "configuration"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
+		"ClientId":                   ubx.FieldSpec{WireName: "client_id"},
+		"Configuration":              ubx.FieldSpec{WireName: "configuration"},
+		"Environment":                ubx.FieldSpec{WireName: "environment"},
 	},
 }

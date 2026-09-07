@@ -4,38 +4,38 @@ package ram
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReplacePermissionAssociationsWork_ReplacePermissionAssociationsWorks struct {
-	CreationTime any
-	FromPermissionArn any
+	CreationTime          any
+	FromPermissionArn     any
 	FromPermissionVersion any
-	Id any
-	LastUpdatedTime any
-	Status any
-	StatusMessage any
-	ToPermissionArn any
-	ToPermissionVersion any
+	Id                    any
+	LastUpdatedTime       any
+	Status                any
+	StatusMessage         any
+	ToPermissionArn       any
+	ToPermissionVersion   any
 }
 
 type ReplacePermissionAssociationsWorkConfig struct {
 	MaxResults any
-	NextToken any
-	Status any
-	WorkIds any
+	NextToken  any
+	Status     any
+	WorkIds    any
 }
 
 type ReplacePermissionAssociationsWorkAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults                         any
+	NextToken                          any
 	ReplacePermissionAssociationsWorks any
-	Status any
-	WorkIds any
+	Status                             any
+	WorkIds                            any
 }
 
 var ReplacePermissionAssociationsWork = ubx.DataSourceBinding{
 	WireType: "aws_ram_replace_permission_associations_work",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"WorkIds": ubx.FieldSpec{WireName: "work_ids"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Status":     ubx.FieldSpec{WireName: "status"},
+		"WorkIds":    ubx.FieldSpec{WireName: "work_ids"},
 	},
 }

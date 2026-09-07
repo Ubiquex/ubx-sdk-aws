@@ -35,39 +35,39 @@ type LoggingConfiguration_Tags struct {
 }
 
 var LoggingConfiguration_DestinationConfiguration_CloudWatchLogsFields = ubx.FieldMap{
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-	}
+	"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
+}
 
 var LoggingConfiguration_DestinationConfiguration_FirehoseFields = ubx.FieldMap{
-		"DeliveryStreamName": ubx.FieldSpec{WireName: "delivery_stream_name"},
-	}
+	"DeliveryStreamName": ubx.FieldSpec{WireName: "delivery_stream_name"},
+}
 
 var LoggingConfiguration_DestinationConfiguration_S3Fields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-	}
+	"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+}
 
 var LoggingConfiguration_DestinationConfigurationFields = ubx.FieldMap{
-		"CloudWatchLogs": ubx.FieldSpec{
-			WireName: "cloud_watch_logs",
-			Kind: "object",
-			Fields: LoggingConfiguration_DestinationConfiguration_CloudWatchLogsFields,
-		},
-		"Firehose": ubx.FieldSpec{
-			WireName: "firehose",
-			Kind: "object",
-			Fields: LoggingConfiguration_DestinationConfiguration_FirehoseFields,
-		},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: LoggingConfiguration_DestinationConfiguration_S3Fields,
-		},
-	}
+	"CloudWatchLogs": ubx.FieldSpec{
+		WireName: "cloud_watch_logs",
+		Kind:     "object",
+		Fields:   LoggingConfiguration_DestinationConfiguration_CloudWatchLogsFields,
+	},
+	"Firehose": ubx.FieldSpec{
+		WireName: "firehose",
+		Kind:     "object",
+		Fields:   LoggingConfiguration_DestinationConfiguration_FirehoseFields,
+	},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   LoggingConfiguration_DestinationConfiguration_S3Fields,
+	},
+}
 
 var LoggingConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LoggingConfigurationConfig struct {
 	// Destination configuration for IVS Chat logging.
@@ -98,14 +98,14 @@ var LoggingConfiguration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DestinationConfiguration": ubx.FieldSpec{
 			WireName: "destination_configuration",
-			Kind: "object",
-			Fields: LoggingConfiguration_DestinationConfigurationFields,
+			Kind:     "object",
+			Fields:   LoggingConfiguration_DestinationConfigurationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LoggingConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   LoggingConfiguration_TagsFields,
 		},
 	},
 }

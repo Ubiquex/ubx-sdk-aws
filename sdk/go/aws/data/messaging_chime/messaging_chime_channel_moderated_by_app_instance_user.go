@@ -4,12 +4,12 @@ package messaging_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MessagingChimeChannelModeratedByAppInstanceUser_Channel_ChannelSummary struct {
-	ChannelArn any
+	ChannelArn           any
 	LastMessageTimestamp any
-	Metadata any
-	Mode any
-	Name any
-	Privacy any
+	Metadata             any
+	Mode                 any
+	Name                 any
+	Privacy              any
 }
 
 type MessagingChimeChannelModeratedByAppInstanceUser_Channel struct {
@@ -19,15 +19,15 @@ type MessagingChimeChannelModeratedByAppInstanceUser_Channel struct {
 
 type MessagingChimeChannelModeratedByAppInstanceUserConfig struct {
 	AppInstanceUserArn any
-	ChannelArn any
-	ChimeBearer any
+	ChannelArn         any
+	ChimeBearer        any
 }
 
 type MessagingChimeChannelModeratedByAppInstanceUserAttrs struct {
 	AppInstanceUserArn any
 	// <p>Summary of the details of a moderated channel.</p>
-	Channel any
-	ChannelArn any
+	Channel     any
+	ChannelArn  any
 	ChimeBearer any
 }
 
@@ -35,7 +35,7 @@ var MessagingChimeChannelModeratedByAppInstanceUser = ubx.DataSourceBinding{
 	WireType: "aws_messaging_chime_channel_moderated_by_app_instance_user",
 	Fields: ubx.FieldMap{
 		"AppInstanceUserArn": ubx.FieldSpec{WireName: "app_instance_user_arn"},
-		"ChannelArn": ubx.FieldSpec{WireName: "channel_arn"},
-		"ChimeBearer": ubx.FieldSpec{WireName: "chime_bearer"},
+		"ChannelArn":         ubx.FieldSpec{WireName: "channel_arn"},
+		"ChimeBearer":        ubx.FieldSpec{WireName: "chime_bearer"},
 	},
 }

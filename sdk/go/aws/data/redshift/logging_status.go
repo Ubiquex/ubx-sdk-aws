@@ -4,11 +4,11 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LoggingStatus_S3Tables struct {
-	EnabledAll any
+	EnabledAll         any
 	LastIngestionTimes any
 	S3TableGranularity any
-	S3TableNamespace any
-	S3Tables any
+	S3TableNamespace   any
+	S3Tables           any
 }
 
 type LoggingStatusConfig struct {
@@ -16,15 +16,15 @@ type LoggingStatusConfig struct {
 }
 
 type LoggingStatusAttrs struct {
-	BucketName any
-	ClusterIdentifier any
-	LastFailureMessage any
-	LastFailureTime any
+	BucketName                 any
+	ClusterIdentifier          any
+	LastFailureMessage         any
+	LastFailureTime            any
 	LastSuccessfulDeliveryTime any
-	LogDestinationType any
-	LogExports any
-	LoggingEnabled any
-	S3KeyPrefix any
+	LogDestinationType         any
+	LogExports                 any
+	LoggingEnabled             any
+	S3KeyPrefix                any
 	// <p>Describes the status of system table publishing to S3 Tables for a cluster.</p>
 	S3Tables any
 }

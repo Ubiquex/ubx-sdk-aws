@@ -12,65 +12,65 @@ type TopicReviewedAnswers_Answers_Mir_ContributionAnalysis_TimeRanges_EndRange_A
 }
 
 type TopicReviewedAnswers_Answers_Mir_ContributionAnalysis_TimeRanges_EndRange_AggMetrics struct {
-	Function any
+	Function      any
 	MetricOperand any
 	SortDirection any
 }
 
 type TopicReviewedAnswers_Answers_Mir_ContributionAnalysis_TimeRanges_EndRange_AggregationPartitionBy struct {
-	FieldName any
+	FieldName       any
 	TimeGranularity any
 }
 
 type TopicReviewedAnswers_Answers_Mir_ContributionAnalysis_TimeRanges_EndRange_Anchor struct {
-	AnchorType any
-	Offset any
+	AnchorType      any
+	Offset          any
 	TimeGranularity any
 }
 
 type TopicReviewedAnswers_Answers_Mir_ContributionAnalysis_TimeRanges_EndRange_Constant_ValueList struct {
 	ConstantType any
-	Value any
+	Value        any
 }
 
 type TopicReviewedAnswers_Answers_Mir_ContributionAnalysis_TimeRanges_EndRange_Constant struct {
 	ConstantType any
-	Maximum any
-	Minimum any
-	Value any
-	ValueList any
+	Maximum      any
+	Minimum      any
+	Value        any
+	ValueList    any
 }
 
 type TopicReviewedAnswers_Answers_Mir_ContributionAnalysis_TimeRanges_EndRange struct {
-	AggMetrics any
-	Aggregation any
+	AggMetrics                    any
+	Aggregation                   any
 	AggregationFunctionParameters any
-	AggregationPartitionBy any
-	Anchor any
-	Constant any
-	FilterClass any
-	FilterType any
-	Function any
-	Inclusive any
-	Inverse any
-	LastNextOffset any
-	NullFilter any
-	OperandField any
-	Range any
-	SortDirection any
-	TimeGranularity any
-	TopBottomLimit any
+	AggregationPartitionBy        any
+	Anchor                        any
+	Constant                      any
+	FilterClass                   any
+	FilterType                    any
+	Function                      any
+	Inclusive                     any
+	Inverse                       any
+	LastNextOffset                any
+	NullFilter                    any
+	OperandField                  any
+	Range                         any
+	SortDirection                 any
+	TimeGranularity               any
+	TopBottomLimit                any
 }
 
 type TopicReviewedAnswers_Answers_Mir_ContributionAnalysis_TimeRanges struct {
-	EndRange any
+	EndRange   any
 	StartRange any
 }
 
 type TopicReviewedAnswers_Answers_Mir_ContributionAnalysis struct {
-	Direction any
-	Factors any
-	SortType any
+	Direction  any
+	Factors    any
+	SortType   any
 	TimeRanges any
 }
 
@@ -80,18 +80,18 @@ type TopicReviewedAnswers_Answers_Mir_GroupByList_DisplayFormatOptions_NegativeF
 }
 
 type TopicReviewedAnswers_Answers_Mir_GroupByList_DisplayFormatOptions struct {
-	BlankCellFormat any
-	CurrencySymbol any
-	DateFormat any
-	DecimalSeparator any
-	FractionDigits any
-	GroupingSeparator any
-	NegativeFormat any
-	Prefix any
-	Suffix any
-	UnitScaler any
+	BlankCellFormat    any
+	CurrencySymbol     any
+	DateFormat         any
+	DecimalSeparator   any
+	FractionDigits     any
+	GroupingSeparator  any
+	NegativeFormat     any
+	Prefix             any
+	Suffix             any
+	UnitScaler         any
 	UseBlankCellFormat any
-	UseGrouping any
+	UseGrouping        any
 }
 
 type TopicReviewedAnswers_Answers_Mir_GroupByList_NamedEntity struct {
@@ -99,42 +99,42 @@ type TopicReviewedAnswers_Answers_Mir_GroupByList_NamedEntity struct {
 }
 
 type TopicReviewedAnswers_Answers_Mir_GroupByList_Sort struct {
-	Operand any
+	Operand       any
 	SortDirection any
 }
 
 type TopicReviewedAnswers_Answers_Mir_GroupByList struct {
-	DisplayFormat any
+	DisplayFormat        any
 	DisplayFormatOptions any
-	FieldName any
-	NamedEntity any
-	Sort any
-	TimeGranularity any
+	FieldName            any
+	NamedEntity          any
+	Sort                 any
+	TimeGranularity      any
 }
 
 type TopicReviewedAnswers_Answers_Mir_Metrics_ComparisonMethod struct {
-	Period any
-	Type any
+	Period     any
+	Type       any
 	WindowSize any
 }
 
 type TopicReviewedAnswers_Answers_Mir_Metrics_Function struct {
-	Aggregation any
+	Aggregation                   any
 	AggregationFunctionParameters any
-	Period any
-	PeriodField any
+	Period                        any
+	PeriodField                   any
 }
 
 type TopicReviewedAnswers_Answers_Mir_Metrics struct {
 	CalculatedFieldReferences any
-	ComparisonMethod any
-	DisplayFormat any
-	DisplayFormatOptions any
-	Expression any
-	Function any
-	MetricId any
-	NamedEntity any
-	Operands any
+	ComparisonMethod          any
+	DisplayFormat             any
+	DisplayFormatOptions      any
+	Expression                any
+	Function                  any
+	MetricId                  any
+	NamedEntity               any
+	Operands                  any
 }
 
 type TopicReviewedAnswers_Answers_Mir_Visual struct {
@@ -143,61 +143,61 @@ type TopicReviewedAnswers_Answers_Mir_Visual struct {
 
 type TopicReviewedAnswers_Answers_Mir struct {
 	ContributionAnalysis any
-	Filters any
-	GroupByList any
-	Metrics any
-	Sort any
-	Visual any
+	Filters              any
+	GroupByList          any
+	Metrics              any
+	Sort                 any
+	Visual               any
 }
 
 type TopicReviewedAnswers_Answers_PrimaryVisual_SupportingVisuals struct {
 }
 
 type TopicReviewedAnswers_Answers_PrimaryVisual struct {
-	Ir any
-	Role any
+	Ir                any
+	Role              any
 	SupportingVisuals any
-	VisualId any
+	VisualId          any
 }
 
 type TopicReviewedAnswers_Answers_Template_Slots struct {
-	SlotId any
+	SlotId   any
 	VisualId any
 }
 
 type TopicReviewedAnswers_Answers_Template struct {
-	Slots any
+	Slots        any
 	TemplateType any
 }
 
 type TopicReviewedAnswers_Answers struct {
-	AnswerId any
-	Arn any
-	DatasetArn any
-	Mir any
+	AnswerId      any
+	Arn           any
+	DatasetArn    any
+	Mir           any
 	PrimaryVisual any
-	Question any
-	Template any
+	Question      any
+	Template      any
 }
 
 type TopicReviewedAnswersConfig struct {
 	AwsAccountId any
-	TopicId any
+	TopicId      any
 }
 
 type TopicReviewedAnswersAttrs struct {
-	Answers any
+	Answers      any
 	AwsAccountId any
-	RequestId any
-	Status any
-	TopicArn any
-	TopicId any
+	RequestId    any
+	Status       any
+	TopicArn     any
+	TopicId      any
 }
 
 var TopicReviewedAnswers = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_topic_reviewed_answers",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"TopicId": ubx.FieldSpec{WireName: "topic_id"},
+		"TopicId":      ubx.FieldSpec{WireName: "topic_id"},
 	},
 }

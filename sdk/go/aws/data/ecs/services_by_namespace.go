@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServicesByNamespaceConfig struct {
 	MaxResults any
-	Namespace any
-	NextToken any
+	Namespace  any
+	NextToken  any
 }
 
 type ServicesByNamespaceAttrs struct {
-	MaxResults any
-	Namespace any
-	NextToken any
+	MaxResults  any
+	Namespace   any
+	NextToken   any
 	ServiceArns any
 }
 
@@ -20,7 +20,7 @@ var ServicesByNamespace = ubx.DataSourceBinding{
 	WireType: "aws_ecs_services_by_namespace",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Namespace":  ubx.FieldSpec{WireName: "namespace"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

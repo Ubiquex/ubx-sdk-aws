@@ -20,19 +20,19 @@ type DeviceDefinition_InitialVersion struct {
 }
 
 var DeviceDefinition_InitialVersion_DevicesFields = ubx.FieldMap{
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"SyncShadow": ubx.FieldSpec{WireName: "sync_shadow"},
-		"ThingArn": ubx.FieldSpec{WireName: "thing_arn"},
-	}
+	"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
+	"Id":             ubx.FieldSpec{WireName: "id"},
+	"SyncShadow":     ubx.FieldSpec{WireName: "sync_shadow"},
+	"ThingArn":       ubx.FieldSpec{WireName: "thing_arn"},
+}
 
 var DeviceDefinition_InitialVersionFields = ubx.FieldMap{
-		"Devices": ubx.FieldSpec{
-			WireName: "devices",
-			Kind: "list",
-			Fields: DeviceDefinition_InitialVersion_DevicesFields,
-		},
-	}
+	"Devices": ubx.FieldSpec{
+		WireName: "devices",
+		Kind:     "list",
+		Fields:   DeviceDefinition_InitialVersion_DevicesFields,
+	},
+}
 
 type DeviceDefinitionConfig struct {
 	// Specifies the initial version of the device definition, containing a list of devices (each with an ID, certificate ARN, and optional sync shadow setting) that is created when the device definition is first created. (AI-inferred)
@@ -63,8 +63,8 @@ var DeviceDefinition = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"InitialVersion": ubx.FieldSpec{
 			WireName: "initial_version",
-			Kind: "object",
-			Fields: DeviceDefinition_InitialVersionFields,
+			Kind:     "object",
+			Fields:   DeviceDefinition_InitialVersionFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CostOptimizationHubPreferences_PreferredCommitment struct {
 	PaymentOption any
-	Term any
+	Term          any
 }
 
 type CostOptimizationHubPreferencesConfig struct {
@@ -14,12 +14,11 @@ type CostOptimizationHubPreferencesConfig struct {
 type CostOptimizationHubPreferencesAttrs struct {
 	MemberAccountDiscountVisibility any
 	// <p>The preferred configuration for Reserved Instances and Savings Plans commitment-based discounts, consisting of a payment option and a commitment duration.</p>
-	PreferredCommitment any
+	PreferredCommitment   any
 	SavingsEstimationMode any
 }
 
 var CostOptimizationHubPreferences = ubx.DataSourceBinding{
 	WireType: "aws_cost_optimization_hub_preferences",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

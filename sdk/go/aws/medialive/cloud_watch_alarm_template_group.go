@@ -35,7 +35,7 @@ var CloudWatchAlarmTemplateGroup = ubx.ResourceBinding{
 	WireType: "aws_media_live_cloud_watch_alarm_template_group",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 	},
 }

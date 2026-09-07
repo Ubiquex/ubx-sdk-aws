@@ -68,13 +68,13 @@ type EntityAttrs struct {
 var Entity = ubx.ResourceBinding{
 	WireType: "aws_io_ttwin_maker_entity",
 	Fields: ubx.FieldMap{
-		"Components": ubx.FieldSpec{WireName: "components"},
+		"Components":          ubx.FieldSpec{WireName: "components"},
 		"CompositeComponents": ubx.FieldSpec{WireName: "composite_components"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-		"EntityName": ubx.FieldSpec{WireName: "entity_name"},
-		"ParentEntityId": ubx.FieldSpec{WireName: "parent_entity_id"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"WorkspaceId": ubx.FieldSpec{WireName: "workspace_id"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"EntityId":            ubx.FieldSpec{WireName: "entity_id"},
+		"EntityName":          ubx.FieldSpec{WireName: "entity_name"},
+		"ParentEntityId":      ubx.FieldSpec{WireName: "parent_entity_id"},
+		"Tags":                ubx.FieldSpec{WireName: "tags"},
+		"WorkspaceId":         ubx.FieldSpec{WireName: "workspace_id"},
 	},
 }

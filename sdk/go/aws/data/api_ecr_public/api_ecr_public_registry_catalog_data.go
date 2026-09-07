@@ -17,6 +17,5 @@ type ApiEcrPublicRegistryCatalogDataAttrs struct {
 
 var ApiEcrPublicRegistryCatalogData = ubx.DataSourceBinding{
 	WireType: "aws_api_ecr_public_registry_catalog_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

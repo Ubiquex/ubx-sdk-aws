@@ -5,18 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountSettings_AccountSettings_TrialMinutes struct {
 	Remaining any
-	Total any
+	Total     any
 }
 
 type AccountSettings_AccountSettings struct {
-	AwsAccountNumber any
+	AwsAccountNumber         any
 	DefaultJobTimeoutMinutes any
-	MaxJobTimeoutMinutes any
-	MaxSlots any
-	SkipAppResign any
+	MaxJobTimeoutMinutes     any
+	MaxSlots                 any
+	SkipAppResign            any
 	// <p>Represents information about free trial device minutes for an AWS account.</p>
-	TrialMinutes any
-	UnmeteredDevices any
+	TrialMinutes                 any
+	UnmeteredDevices             any
 	UnmeteredRemoteAccessDevices any
 }
 
@@ -30,6 +30,5 @@ type AccountSettingsAttrs struct {
 
 var AccountSettings = ubx.DataSourceBinding{
 	WireType: "aws_devicefarm_account_settings",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,29 +4,29 @@ package route53resolver
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OutpostResolvers_OutpostResolvers struct {
-	Arn any
-	CreationTime any
-	CreatorRequestId any
-	Id any
-	InstanceCount any
-	ModificationTime any
-	Name any
-	OutpostArn any
+	Arn                   any
+	CreationTime          any
+	CreatorRequestId      any
+	Id                    any
+	InstanceCount         any
+	ModificationTime      any
+	Name                  any
+	OutpostArn            any
 	PreferredInstanceType any
-	Status any
-	StatusMessage any
+	Status                any
+	StatusMessage         any
 }
 
 type OutpostResolversConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	OutpostArn any
 }
 
 type OutpostResolversAttrs struct {
-	MaxResults any
-	NextToken any
-	OutpostArn any
+	MaxResults       any
+	NextToken        any
+	OutpostArn       any
 	OutpostResolvers any
 }
 
@@ -34,7 +34,7 @@ var OutpostResolvers = ubx.DataSourceBinding{
 	WireType: "aws_route53resolver_outpost_resolvers",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"OutpostArn": ubx.FieldSpec{WireName: "outpost_arn"},
 	},
 }

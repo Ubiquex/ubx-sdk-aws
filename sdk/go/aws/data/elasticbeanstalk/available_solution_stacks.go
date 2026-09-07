@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AvailableSolutionStacks_SolutionStackDetails struct {
 	PermittedFileTypes any
-	SolutionStackName any
+	SolutionStackName  any
 }
 
 type AvailableSolutionStacksConfig struct {
@@ -13,11 +13,10 @@ type AvailableSolutionStacksConfig struct {
 
 type AvailableSolutionStacksAttrs struct {
 	SolutionStackDetails any
-	SolutionStacks any
+	SolutionStacks       any
 }
 
 var AvailableSolutionStacks = ubx.DataSourceBinding{
 	WireType: "aws_elasticbeanstalk_available_solution_stacks",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

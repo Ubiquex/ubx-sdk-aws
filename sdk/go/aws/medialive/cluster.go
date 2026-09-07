@@ -19,28 +19,28 @@ type Cluster_NetworkSettings struct {
 
 type Cluster_Tags struct {
 	// The key of a user-defined tag attached to the AWS MediaLive cluster, used to add custom metadata for identifying, organizing, or managing the cluster in AWS. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Cluster_NetworkSettings_InterfaceMappingsFields = ubx.FieldMap{
-		"LogicalInterfaceName": ubx.FieldSpec{WireName: "logical_interface_name"},
-		"NetworkId": ubx.FieldSpec{WireName: "network_id"},
-	}
+	"LogicalInterfaceName": ubx.FieldSpec{WireName: "logical_interface_name"},
+	"NetworkId":            ubx.FieldSpec{WireName: "network_id"},
+}
 
 var Cluster_NetworkSettingsFields = ubx.FieldMap{
-		"DefaultRoute": ubx.FieldSpec{WireName: "default_route"},
-		"InterfaceMappings": ubx.FieldSpec{
-			WireName: "interface_mappings",
-			Kind: "list",
-			Fields: Cluster_NetworkSettings_InterfaceMappingsFields,
-		},
-	}
+	"DefaultRoute": ubx.FieldSpec{WireName: "default_route"},
+	"InterfaceMappings": ubx.FieldSpec{
+		WireName: "interface_mappings",
+		Kind:     "list",
+		Fields:   Cluster_NetworkSettings_InterfaceMappingsFields,
+	},
+}
 
 var Cluster_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ClusterConfig struct {
 	// The hardware type for the cluster.
@@ -79,18 +79,18 @@ type ClusterAttrs struct {
 var Cluster = ubx.ResourceBinding{
 	WireType: "aws_media_live_cluster",
 	Fields: ubx.FieldMap{
-		"ClusterType": ubx.FieldSpec{WireName: "cluster_type"},
+		"ClusterType":     ubx.FieldSpec{WireName: "cluster_type"},
 		"InstanceRoleArn": ubx.FieldSpec{WireName: "instance_role_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"NetworkSettings": ubx.FieldSpec{
 			WireName: "network_settings",
-			Kind: "object",
-			Fields: Cluster_NetworkSettingsFields,
+			Kind:     "object",
+			Fields:   Cluster_NetworkSettingsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Cluster_TagsFields,
+			Kind:     "list",
+			Fields:   Cluster_TagsFields,
 		},
 	},
 }

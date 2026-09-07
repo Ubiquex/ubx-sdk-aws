@@ -8,46 +8,46 @@ type TopicRuleDestinations_DestinationSummaries_HttpUrlSummary struct {
 }
 
 type TopicRuleDestinations_DestinationSummaries_InfluxDbsummary struct {
-	Endpoint any
+	Endpoint        any
 	InfluxDbversion any
-	SecretId any
-	SecretKey any
-	SecretType any
+	SecretId        any
+	SecretKey       any
+	SecretType      any
 }
 
 type TopicRuleDestinations_DestinationSummaries_VpcDestinationSummary struct {
-	RoleArn any
+	RoleArn        any
 	SecurityGroups any
-	SubnetIds any
-	VpcId any
+	SubnetIds      any
+	VpcId          any
 }
 
 type TopicRuleDestinations_DestinationSummaries struct {
-	Arn any
-	CreatedAt any
-	HttpUrlSummary any
-	InfluxDbsummary any
-	LastUpdatedAt any
-	Status any
-	StatusReason any
+	Arn                   any
+	CreatedAt             any
+	HttpUrlSummary        any
+	InfluxDbsummary       any
+	LastUpdatedAt         any
+	Status                any
+	StatusReason          any
 	VpcDestinationSummary any
 }
 
 type TopicRuleDestinationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type TopicRuleDestinationsAttrs struct {
 	DestinationSummaries any
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 }
 
 var TopicRuleDestinations = ubx.DataSourceBinding{
 	WireType: "aws_iot_topic_rule_destinations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

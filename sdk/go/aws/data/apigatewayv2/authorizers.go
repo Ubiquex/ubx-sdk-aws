@@ -5,41 +5,41 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Authorizers_Items_JwtConfiguration struct {
 	Audience any
-	Issuer any
+	Issuer   any
 }
 
 type Authorizers_Items struct {
-	AuthorizerCredentialsArn any
-	AuthorizerId any
+	AuthorizerCredentialsArn       any
+	AuthorizerId                   any
 	AuthorizerPayloadFormatVersion any
-	AuthorizerResultTtlInSeconds any
-	AuthorizerType any
-	AuthorizerUri any
-	EnableSimpleResponses any
-	IdentitySource any
-	IdentityValidationExpression any
-	JwtConfiguration any
-	Name any
+	AuthorizerResultTtlInSeconds   any
+	AuthorizerType                 any
+	AuthorizerUri                  any
+	EnableSimpleResponses          any
+	IdentitySource                 any
+	IdentityValidationExpression   any
+	JwtConfiguration               any
+	Name                           any
 }
 
 type AuthorizersConfig struct {
-	ApiId any
+	ApiId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AuthorizersAttrs struct {
-	ApiId any
-	Items any
+	ApiId      any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Authorizers = ubx.DataSourceBinding{
 	WireType: "aws_apigatewayv2_authorizers",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":      ubx.FieldSpec{WireName: "api_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

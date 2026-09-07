@@ -4,46 +4,46 @@ package amplifybackend
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackendJobs_Jobs struct {
-	AppId any
+	AppId                  any
 	BackendEnvironmentName any
-	CreateTime any
-	Error any
-	JobId any
-	Operation any
-	Status any
-	UpdateTime any
+	CreateTime             any
+	Error                  any
+	JobId                  any
+	Operation              any
+	Status                 any
+	UpdateTime             any
 }
 
 type BackendJobsConfig struct {
-	AppId any
+	AppId                  any
 	BackendEnvironmentName any
-	JobId any
-	MaxResults any
-	NextToken any
-	Operation any
-	Status any
+	JobId                  any
+	MaxResults             any
+	NextToken              any
+	Operation              any
+	Status                 any
 }
 
 type BackendJobsAttrs struct {
-	AppId any
+	AppId                  any
 	BackendEnvironmentName any
-	JobId any
-	Jobs any
-	MaxResults any
-	NextToken any
-	Operation any
-	Status any
+	JobId                  any
+	Jobs                   any
+	MaxResults             any
+	NextToken              any
+	Operation              any
+	Status                 any
 }
 
 var BackendJobs = ubx.DataSourceBinding{
 	WireType: "aws_amplifybackend_backend_jobs",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":                  ubx.FieldSpec{WireName: "app_id"},
 		"BackendEnvironmentName": ubx.FieldSpec{WireName: "backend_environment_name"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"JobId":                  ubx.FieldSpec{WireName: "job_id"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
+		"Operation":              ubx.FieldSpec{WireName: "operation"},
+		"Status":                 ubx.FieldSpec{WireName: "status"},
 	},
 }

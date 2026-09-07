@@ -155,172 +155,172 @@ type Job_ValidationConfigurations struct {
 }
 
 var Job_DataCatalogOutputs_DatabaseOptions_TempDirectoryFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"BucketOwner": ubx.FieldSpec{WireName: "bucket_owner"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Bucket":      ubx.FieldSpec{WireName: "bucket"},
+	"BucketOwner": ubx.FieldSpec{WireName: "bucket_owner"},
+	"Key":         ubx.FieldSpec{WireName: "key"},
+}
 
 var Job_DataCatalogOutputs_DatabaseOptionsFields = ubx.FieldMap{
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-		"TempDirectory": ubx.FieldSpec{
-			WireName: "temp_directory",
-			Kind: "object",
-			Fields: Job_DataCatalogOutputs_DatabaseOptions_TempDirectoryFields,
-		},
-	}
+	"TableName": ubx.FieldSpec{WireName: "table_name"},
+	"TempDirectory": ubx.FieldSpec{
+		WireName: "temp_directory",
+		Kind:     "object",
+		Fields:   Job_DataCatalogOutputs_DatabaseOptions_TempDirectoryFields,
+	},
+}
 
 var Job_DataCatalogOutputs_S3OptionsFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{
-			WireName: "location",
-			Kind: "object",
-			Fields: Job_DataCatalogOutputs_DatabaseOptions_TempDirectoryFields,
-		},
-	}
+	"Location": ubx.FieldSpec{
+		WireName: "location",
+		Kind:     "object",
+		Fields:   Job_DataCatalogOutputs_DatabaseOptions_TempDirectoryFields,
+	},
+}
 
 var Job_DataCatalogOutputsFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"DatabaseOptions": ubx.FieldSpec{
-			WireName: "database_options",
-			Kind: "object",
-			Fields: Job_DataCatalogOutputs_DatabaseOptionsFields,
-		},
-		"Overwrite": ubx.FieldSpec{WireName: "overwrite"},
-		"S3Options": ubx.FieldSpec{
-			WireName: "s3_options",
-			Kind: "object",
-			Fields: Job_DataCatalogOutputs_S3OptionsFields,
-		},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"CatalogId":    ubx.FieldSpec{WireName: "catalog_id"},
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"DatabaseOptions": ubx.FieldSpec{
+		WireName: "database_options",
+		Kind:     "object",
+		Fields:   Job_DataCatalogOutputs_DatabaseOptionsFields,
+	},
+	"Overwrite": ubx.FieldSpec{WireName: "overwrite"},
+	"S3Options": ubx.FieldSpec{
+		WireName: "s3_options",
+		Kind:     "object",
+		Fields:   Job_DataCatalogOutputs_S3OptionsFields,
+	},
+	"TableName": ubx.FieldSpec{WireName: "table_name"},
+}
 
 var Job_DatabaseOutputsFields = ubx.FieldMap{
-		"DatabaseOptions": ubx.FieldSpec{
-			WireName: "database_options",
-			Kind: "object",
-			Fields: Job_DataCatalogOutputs_DatabaseOptionsFields,
-		},
-		"DatabaseOutputMode": ubx.FieldSpec{WireName: "database_output_mode"},
-		"GlueConnectionName": ubx.FieldSpec{WireName: "glue_connection_name"},
-	}
+	"DatabaseOptions": ubx.FieldSpec{
+		WireName: "database_options",
+		Kind:     "object",
+		Fields:   Job_DataCatalogOutputs_DatabaseOptionsFields,
+	},
+	"DatabaseOutputMode": ubx.FieldSpec{WireName: "database_output_mode"},
+	"GlueConnectionName": ubx.FieldSpec{WireName: "glue_connection_name"},
+}
 
 var Job_JobSampleFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Size": ubx.FieldSpec{WireName: "size"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+	"Size": ubx.FieldSpec{WireName: "size"},
+}
 
 var Job_Outputs_FormatOptions_CsvFields = ubx.FieldMap{
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-	}
+	"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
+}
 
 var Job_Outputs_FormatOptionsFields = ubx.FieldMap{
-		"Csv": ubx.FieldSpec{
-			WireName: "csv",
-			Kind: "object",
-			Fields: Job_Outputs_FormatOptions_CsvFields,
-		},
-	}
+	"Csv": ubx.FieldSpec{
+		WireName: "csv",
+		Kind:     "object",
+		Fields:   Job_Outputs_FormatOptions_CsvFields,
+	},
+}
 
 var Job_OutputsFields = ubx.FieldMap{
-		"CompressionFormat": ubx.FieldSpec{WireName: "compression_format"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"FormatOptions": ubx.FieldSpec{
-			WireName: "format_options",
-			Kind: "object",
-			Fields: Job_Outputs_FormatOptionsFields,
-		},
-		"Location": ubx.FieldSpec{
-			WireName: "location",
-			Kind: "object",
-			Fields: Job_DataCatalogOutputs_DatabaseOptions_TempDirectoryFields,
-		},
-		"MaxOutputFiles": ubx.FieldSpec{WireName: "max_output_files"},
-		"Overwrite": ubx.FieldSpec{WireName: "overwrite"},
-		"PartitionColumns": ubx.FieldSpec{WireName: "partition_columns"},
-	}
+	"CompressionFormat": ubx.FieldSpec{WireName: "compression_format"},
+	"Format":            ubx.FieldSpec{WireName: "format"},
+	"FormatOptions": ubx.FieldSpec{
+		WireName: "format_options",
+		Kind:     "object",
+		Fields:   Job_Outputs_FormatOptionsFields,
+	},
+	"Location": ubx.FieldSpec{
+		WireName: "location",
+		Kind:     "object",
+		Fields:   Job_DataCatalogOutputs_DatabaseOptions_TempDirectoryFields,
+	},
+	"MaxOutputFiles":   ubx.FieldSpec{WireName: "max_output_files"},
+	"Overwrite":        ubx.FieldSpec{WireName: "overwrite"},
+	"PartitionColumns": ubx.FieldSpec{WireName: "partition_columns"},
+}
 
 var Job_ProfileConfiguration_ColumnStatisticsConfigurations_SelectorsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Regex": ubx.FieldSpec{WireName: "regex"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Regex": ubx.FieldSpec{WireName: "regex"},
+}
 
 var Job_ProfileConfiguration_ColumnStatisticsConfigurations_Statistics_OverridesFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"Statistic": ubx.FieldSpec{WireName: "statistic"},
-	}
+	"Parameters": ubx.FieldSpec{WireName: "parameters"},
+	"Statistic":  ubx.FieldSpec{WireName: "statistic"},
+}
 
 var Job_ProfileConfiguration_ColumnStatisticsConfigurations_StatisticsFields = ubx.FieldMap{
-		"IncludedStatistics": ubx.FieldSpec{WireName: "included_statistics"},
-		"Overrides": ubx.FieldSpec{
-			WireName: "overrides",
-			Kind: "list",
-			Fields: Job_ProfileConfiguration_ColumnStatisticsConfigurations_Statistics_OverridesFields,
-		},
-	}
+	"IncludedStatistics": ubx.FieldSpec{WireName: "included_statistics"},
+	"Overrides": ubx.FieldSpec{
+		WireName: "overrides",
+		Kind:     "list",
+		Fields:   Job_ProfileConfiguration_ColumnStatisticsConfigurations_Statistics_OverridesFields,
+	},
+}
 
 var Job_ProfileConfiguration_ColumnStatisticsConfigurationsFields = ubx.FieldMap{
-		"Selectors": ubx.FieldSpec{
-			WireName: "selectors",
-			Kind: "list",
-			Fields: Job_ProfileConfiguration_ColumnStatisticsConfigurations_SelectorsFields,
-		},
-		"Statistics": ubx.FieldSpec{
-			WireName: "statistics",
-			Kind: "object",
-			Fields: Job_ProfileConfiguration_ColumnStatisticsConfigurations_StatisticsFields,
-		},
-	}
+	"Selectors": ubx.FieldSpec{
+		WireName: "selectors",
+		Kind:     "list",
+		Fields:   Job_ProfileConfiguration_ColumnStatisticsConfigurations_SelectorsFields,
+	},
+	"Statistics": ubx.FieldSpec{
+		WireName: "statistics",
+		Kind:     "object",
+		Fields:   Job_ProfileConfiguration_ColumnStatisticsConfigurations_StatisticsFields,
+	},
+}
 
 var Job_ProfileConfiguration_EntityDetectorConfiguration_AllowedStatisticsFields = ubx.FieldMap{
-		"Statistics": ubx.FieldSpec{WireName: "statistics"},
-	}
+	"Statistics": ubx.FieldSpec{WireName: "statistics"},
+}
 
 var Job_ProfileConfiguration_EntityDetectorConfigurationFields = ubx.FieldMap{
-		"AllowedStatistics": ubx.FieldSpec{
-			WireName: "allowed_statistics",
-			Kind: "object",
-			Fields: Job_ProfileConfiguration_EntityDetectorConfiguration_AllowedStatisticsFields,
-		},
-		"EntityTypes": ubx.FieldSpec{WireName: "entity_types"},
-	}
+	"AllowedStatistics": ubx.FieldSpec{
+		WireName: "allowed_statistics",
+		Kind:     "object",
+		Fields:   Job_ProfileConfiguration_EntityDetectorConfiguration_AllowedStatisticsFields,
+	},
+	"EntityTypes": ubx.FieldSpec{WireName: "entity_types"},
+}
 
 var Job_ProfileConfigurationFields = ubx.FieldMap{
-		"ColumnStatisticsConfigurations": ubx.FieldSpec{
-			WireName: "column_statistics_configurations",
-			Kind: "list",
-			Fields: Job_ProfileConfiguration_ColumnStatisticsConfigurationsFields,
-		},
-		"DatasetStatisticsConfiguration": ubx.FieldSpec{
-			WireName: "dataset_statistics_configuration",
-			Kind: "object",
-			Fields: Job_ProfileConfiguration_ColumnStatisticsConfigurations_StatisticsFields,
-		},
-		"EntityDetectorConfiguration": ubx.FieldSpec{
-			WireName: "entity_detector_configuration",
-			Kind: "object",
-			Fields: Job_ProfileConfiguration_EntityDetectorConfigurationFields,
-		},
-		"ProfileColumns": ubx.FieldSpec{
-			WireName: "profile_columns",
-			Kind: "list",
-			Fields: Job_ProfileConfiguration_ColumnStatisticsConfigurations_SelectorsFields,
-		},
-	}
+	"ColumnStatisticsConfigurations": ubx.FieldSpec{
+		WireName: "column_statistics_configurations",
+		Kind:     "list",
+		Fields:   Job_ProfileConfiguration_ColumnStatisticsConfigurationsFields,
+	},
+	"DatasetStatisticsConfiguration": ubx.FieldSpec{
+		WireName: "dataset_statistics_configuration",
+		Kind:     "object",
+		Fields:   Job_ProfileConfiguration_ColumnStatisticsConfigurations_StatisticsFields,
+	},
+	"EntityDetectorConfiguration": ubx.FieldSpec{
+		WireName: "entity_detector_configuration",
+		Kind:     "object",
+		Fields:   Job_ProfileConfiguration_EntityDetectorConfigurationFields,
+	},
+	"ProfileColumns": ubx.FieldSpec{
+		WireName: "profile_columns",
+		Kind:     "list",
+		Fields:   Job_ProfileConfiguration_ColumnStatisticsConfigurations_SelectorsFields,
+	},
+}
 
 var Job_RecipeFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Job_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Job_ValidationConfigurationsFields = ubx.FieldMap{
-		"RulesetArn": ubx.FieldSpec{WireName: "ruleset_arn"},
-		"ValidationMode": ubx.FieldSpec{WireName: "validation_mode"},
-	}
+	"RulesetArn":     ubx.FieldSpec{WireName: "ruleset_arn"},
+	"ValidationMode": ubx.FieldSpec{WireName: "validation_mode"},
+}
 
 type JobConfig struct {
 	// Specifies a list of destinations where the job writes its output to AWS Glue Data Catalog tables, each defined by a database name, table name, and optional S3 storage options. (AI-inferred)
@@ -413,59 +413,59 @@ var Job = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DataCatalogOutputs": ubx.FieldSpec{
 			WireName: "data_catalog_outputs",
-			Kind: "list",
-			Fields: Job_DataCatalogOutputsFields,
+			Kind:     "list",
+			Fields:   Job_DataCatalogOutputsFields,
 		},
 		"DatabaseOutputs": ubx.FieldSpec{
 			WireName: "database_outputs",
-			Kind: "list",
-			Fields: Job_DatabaseOutputsFields,
+			Kind:     "list",
+			Fields:   Job_DatabaseOutputsFields,
 		},
-		"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
+		"DatasetName":      ubx.FieldSpec{WireName: "dataset_name"},
 		"EncryptionKeyArn": ubx.FieldSpec{WireName: "encryption_key_arn"},
-		"EncryptionMode": ubx.FieldSpec{WireName: "encryption_mode"},
+		"EncryptionMode":   ubx.FieldSpec{WireName: "encryption_mode"},
 		"JobSample": ubx.FieldSpec{
 			WireName: "job_sample",
-			Kind: "object",
-			Fields: Job_JobSampleFields,
+			Kind:     "object",
+			Fields:   Job_JobSampleFields,
 		},
 		"LogSubscription": ubx.FieldSpec{WireName: "log_subscription"},
-		"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
-		"MaxRetries": ubx.FieldSpec{WireName: "max_retries"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"MaxCapacity":     ubx.FieldSpec{WireName: "max_capacity"},
+		"MaxRetries":      ubx.FieldSpec{WireName: "max_retries"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"OutputLocation": ubx.FieldSpec{
 			WireName: "output_location",
-			Kind: "object",
-			Fields: Job_DataCatalogOutputs_DatabaseOptions_TempDirectoryFields,
+			Kind:     "object",
+			Fields:   Job_DataCatalogOutputs_DatabaseOptions_TempDirectoryFields,
 		},
 		"Outputs": ubx.FieldSpec{
 			WireName: "outputs",
-			Kind: "list",
-			Fields: Job_OutputsFields,
+			Kind:     "list",
+			Fields:   Job_OutputsFields,
 		},
 		"ProfileConfiguration": ubx.FieldSpec{
 			WireName: "profile_configuration",
-			Kind: "object",
-			Fields: Job_ProfileConfigurationFields,
+			Kind:     "object",
+			Fields:   Job_ProfileConfigurationFields,
 		},
 		"ProjectName": ubx.FieldSpec{WireName: "project_name"},
 		"Recipe": ubx.FieldSpec{
 			WireName: "recipe",
-			Kind: "object",
-			Fields: Job_RecipeFields,
+			Kind:     "object",
+			Fields:   Job_RecipeFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Job_TagsFields,
+			Kind:     "list",
+			Fields:   Job_TagsFields,
 		},
 		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":    ubx.FieldSpec{WireName: "type"},
 		"ValidationConfigurations": ubx.FieldSpec{
 			WireName: "validation_configurations",
-			Kind: "list",
-			Fields: Job_ValidationConfigurationsFields,
+			Kind:     "list",
+			Fields:   Job_ValidationConfigurationsFields,
 		},
 	},
 }

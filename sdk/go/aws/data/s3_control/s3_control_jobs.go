@@ -8,44 +8,44 @@ type S3ControlJobs_Jobs_ProgressSummary_Timers struct {
 }
 
 type S3ControlJobs_Jobs_ProgressSummary struct {
-	NumberOfTasksFailed any
+	NumberOfTasksFailed    any
 	NumberOfTasksSucceeded any
-	Timers any
-	TotalNumberOfTasks any
+	Timers                 any
+	TotalNumberOfTasks     any
 }
 
 type S3ControlJobs_Jobs struct {
-	CreationTime any
-	Description any
-	JobId any
-	Operation any
-	Priority any
+	CreationTime    any
+	Description     any
+	JobId           any
+	Operation       any
+	Priority        any
 	ProgressSummary any
-	Status any
+	Status          any
 	TerminationDate any
 }
 
 type S3ControlJobsConfig struct {
-	AccountId any
+	AccountId   any
 	JobStatuses any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type S3ControlJobsAttrs struct {
-	AccountId any
+	AccountId   any
 	JobStatuses any
-	Jobs any
-	MaxResults any
-	NextToken any
+	Jobs        any
+	MaxResults  any
+	NextToken   any
 }
 
 var S3ControlJobs = ubx.DataSourceBinding{
 	WireType: "aws_s3_control_jobs",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
 		"JobStatuses": ubx.FieldSpec{WireName: "job_statuses"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

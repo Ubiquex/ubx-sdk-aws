@@ -9,7 +9,7 @@ type DirectoryDataAccessConfig struct {
 
 type DirectoryDataAccessAttrs struct {
 	DataAccessStatus any
-	DirectoryId any
+	DirectoryId      any
 }
 
 var DirectoryDataAccess = ubx.DataSourceBinding{

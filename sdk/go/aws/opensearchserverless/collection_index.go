@@ -24,8 +24,8 @@ type CollectionIndexAttrs struct {
 var CollectionIndex = ubx.ResourceBinding{
 	WireType: "aws_open_search_serverless_collection_index",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
+		"Id":          ubx.FieldSpec{WireName: "id"},
+		"IndexName":   ubx.FieldSpec{WireName: "index_name"},
 		"IndexSchema": ubx.FieldSpec{WireName: "index_schema"},
 	},
 }

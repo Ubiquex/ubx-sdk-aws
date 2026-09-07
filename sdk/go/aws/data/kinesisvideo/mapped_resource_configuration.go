@@ -4,31 +4,31 @@ package kinesisvideo
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MappedResourceConfiguration_MappedResourceConfigurationList struct {
-	Arn any
+	Arn  any
 	Type any
 }
 
 type MappedResourceConfigurationConfig struct {
 	MaxResults any
-	NextToken any
-	StreamArn any
+	NextToken  any
+	StreamArn  any
 	StreamName any
 }
 
 type MappedResourceConfigurationAttrs struct {
 	MappedResourceConfigurationList any
-	MaxResults any
-	NextToken any
-	StreamArn any
-	StreamName any
+	MaxResults                      any
+	NextToken                       any
+	StreamArn                       any
+	StreamName                      any
 }
 
 var MappedResourceConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_kinesisvideo_mapped_resource_configuration",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"StreamArn":  ubx.FieldSpec{WireName: "stream_arn"},
 		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
 	},
 }

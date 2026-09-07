@@ -11,9 +11,9 @@ type ReferenceStore_SseConfig struct {
 }
 
 var ReferenceStore_SseConfigFields = ubx.FieldMap{
-		"KeyArn": ubx.FieldSpec{WireName: "key_arn"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"KeyArn": ubx.FieldSpec{WireName: "key_arn"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+}
 
 type ReferenceStoreConfig struct {
 	// A description for the store.
@@ -47,11 +47,11 @@ var ReferenceStore = ubx.ResourceBinding{
 	WireType: "aws_omics_reference_store",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"SseConfig": ubx.FieldSpec{
 			WireName: "sse_config",
-			Kind: "object",
-			Fields: ReferenceStore_SseConfigFields,
+			Kind:     "object",
+			Fields:   ReferenceStore_SseConfigFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

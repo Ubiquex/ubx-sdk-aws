@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountVpcEncryptionControl_AccountVpcEncryptionControl_Exclusions struct {
 	EgressOnlyInternetGateway any
-	ElasticFileSystem any
-	InternetGateway any
-	Lambda any
-	NatGateway any
-	VirtualPrivateGateway any
-	VpcLattice any
-	VpcPeering any
+	ElasticFileSystem         any
+	InternetGateway           any
+	Lambda                    any
+	NatGateway                any
+	VirtualPrivateGateway     any
+	VpcLattice                any
+	VpcPeering                any
 }
 
 type AccountVpcEncryptionControl_AccountVpcEncryptionControl struct {
 	// <p>Describes the exclusion configurations for the various resource types in the account-level VPC Encryption Control configuration.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>
-	Exclusions any
+	Exclusions          any
 	LastUpdateTimestamp any
-	ManagedBy any
-	Mode any
-	State any
+	ManagedBy           any
+	Mode                any
+	State               any
 }
 
 type AccountVpcEncryptionControlConfig struct {
@@ -30,7 +30,7 @@ type AccountVpcEncryptionControlConfig struct {
 type AccountVpcEncryptionControlAttrs struct {
 	// <p>Describes the account-level VPC Encryption Control configuration, including its mode, state, and exclusions.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>
 	AccountVpcEncryptionControl any
-	DryRun any
+	DryRun                      any
 }
 
 var AccountVpcEncryptionControl = ubx.DataSourceBinding{

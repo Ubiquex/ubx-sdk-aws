@@ -11,9 +11,9 @@ type PlaybackRestrictionPolicy_Tags struct {
 }
 
 var PlaybackRestrictionPolicy_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PlaybackRestrictionPolicyConfig struct {
 	// A list of country codes that control geoblocking restriction. Allowed values are the officially assigned ISO 3166-1 alpha-2 codes. Default: All countries (an empty array).
@@ -46,14 +46,14 @@ type PlaybackRestrictionPolicyAttrs struct {
 var PlaybackRestrictionPolicy = ubx.ResourceBinding{
 	WireType: "aws_ivs_playback_restriction_policy",
 	Fields: ubx.FieldMap{
-		"AllowedCountries": ubx.FieldSpec{WireName: "allowed_countries"},
-		"AllowedOrigins": ubx.FieldSpec{WireName: "allowed_origins"},
+		"AllowedCountries":              ubx.FieldSpec{WireName: "allowed_countries"},
+		"AllowedOrigins":                ubx.FieldSpec{WireName: "allowed_origins"},
 		"EnableStrictOriginEnforcement": ubx.FieldSpec{WireName: "enable_strict_origin_enforcement"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                          ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PlaybackRestrictionPolicy_TagsFields,
+			Kind:     "list",
+			Fields:   PlaybackRestrictionPolicy_TagsFields,
 		},
 	},
 }

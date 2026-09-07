@@ -11,9 +11,9 @@ type GlobalNetwork_Tags struct {
 }
 
 var GlobalNetwork_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type GlobalNetworkConfig struct {
 	// The date and time that the global network was created.
@@ -44,13 +44,13 @@ type GlobalNetworkAttrs struct {
 var GlobalNetwork = ubx.ResourceBinding{
 	WireType: "aws_network_manager_global_network",
 	Fields: ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"CreatedAt":   ubx.FieldSpec{WireName: "created_at"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"State":       ubx.FieldSpec{WireName: "state"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: GlobalNetwork_TagsFields,
+			Kind:     "list",
+			Fields:   GlobalNetwork_TagsFields,
 		},
 	},
 }

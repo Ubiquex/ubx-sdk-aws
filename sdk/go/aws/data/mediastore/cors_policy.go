@@ -7,8 +7,8 @@ type CorsPolicy_CorsPolicy struct {
 	AllowedHeaders any
 	AllowedMethods any
 	AllowedOrigins any
-	ExposeHeaders any
-	MaxAgeSeconds any
+	ExposeHeaders  any
+	MaxAgeSeconds  any
 }
 
 type CorsPolicyConfig struct {

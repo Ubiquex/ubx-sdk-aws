@@ -16,8 +16,8 @@ type CelebrityInfoAttrs struct {
 	Id any
 	// <p>The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.</p>
 	KnownGender any
-	Name any
-	Urls any
+	Name        any
+	Urls        any
 }
 
 var CelebrityInfo = ubx.DataSourceBinding{

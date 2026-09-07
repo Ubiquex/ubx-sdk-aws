@@ -8,7 +8,7 @@ type BcmPricingCalculatorTagsForResourceConfig struct {
 }
 
 type BcmPricingCalculatorTagsForResourceAttrs struct {
-	Arn any
+	Arn  any
 	Tags any
 }
 

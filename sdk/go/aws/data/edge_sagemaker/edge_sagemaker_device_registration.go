@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EdgeSagemakerDeviceRegistrationConfig struct {
 	DeviceFleetName any
-	DeviceName any
+	DeviceName      any
 }
 
 type EdgeSagemakerDeviceRegistrationAttrs struct {
-	CacheTtl any
-	DeviceFleetName any
-	DeviceName any
+	CacheTtl           any
+	DeviceFleetName    any
+	DeviceName         any
 	DeviceRegistration any
 }
 
@@ -19,6 +19,6 @@ var EdgeSagemakerDeviceRegistration = ubx.DataSourceBinding{
 	WireType: "aws_edge_sagemaker_device_registration",
 	Fields: ubx.FieldMap{
 		"DeviceFleetName": ubx.FieldSpec{WireName: "device_fleet_name"},
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
+		"DeviceName":      ubx.FieldSpec{WireName: "device_name"},
 	},
 }

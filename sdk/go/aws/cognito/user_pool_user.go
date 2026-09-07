@@ -11,9 +11,9 @@ type UserPoolUser_UserAttributes struct {
 }
 
 var UserPoolUser_UserAttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type UserPoolUserConfig struct {
 	// A map of custom key-value pairs that are passed to AWS Lambda triggers (such as PreSignUp, PostConfirmation, etc.) when a user is created in the Cognito user pool. (AI-inferred)
@@ -56,21 +56,21 @@ type UserPoolUserAttrs struct {
 var UserPoolUser = ubx.ResourceBinding{
 	WireType: "aws_cognito_user_pool_user",
 	Fields: ubx.FieldMap{
-		"ClientMetadata": ubx.FieldSpec{WireName: "client_metadata"},
+		"ClientMetadata":         ubx.FieldSpec{WireName: "client_metadata"},
 		"DesiredDeliveryMediums": ubx.FieldSpec{WireName: "desired_delivery_mediums"},
-		"ForceAliasCreation": ubx.FieldSpec{WireName: "force_alias_creation"},
-		"MessageAction": ubx.FieldSpec{WireName: "message_action"},
+		"ForceAliasCreation":     ubx.FieldSpec{WireName: "force_alias_creation"},
+		"MessageAction":          ubx.FieldSpec{WireName: "message_action"},
 		"UserAttributes": ubx.FieldSpec{
 			WireName: "user_attributes",
-			Kind: "list",
-			Fields: UserPoolUser_UserAttributesFields,
+			Kind:     "list",
+			Fields:   UserPoolUser_UserAttributesFields,
 		},
 		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
-		"Username": ubx.FieldSpec{WireName: "username"},
+		"Username":   ubx.FieldSpec{WireName: "username"},
 		"ValidationData": ubx.FieldSpec{
 			WireName: "validation_data",
-			Kind: "list",
-			Fields: UserPoolUser_UserAttributesFields,
+			Kind:     "list",
+			Fields:   UserPoolUser_UserAttributesFields,
 		},
 	},
 }

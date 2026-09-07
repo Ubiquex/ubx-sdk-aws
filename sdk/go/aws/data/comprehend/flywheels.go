@@ -4,42 +4,42 @@ package comprehend
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Flywheels_Filter struct {
-	CreationTimeAfter any
+	CreationTimeAfter  any
 	CreationTimeBefore any
-	Status any
+	Status             any
 }
 
 type Flywheels_FlywheelSummaryList struct {
-	ActiveModelArn any
-	CreationTime any
-	DataLakeS3Uri any
-	FlywheelArn any
-	LastModifiedTime any
+	ActiveModelArn          any
+	CreationTime            any
+	DataLakeS3Uri           any
+	FlywheelArn             any
+	LastModifiedTime        any
 	LatestFlywheelIteration any
-	Message any
-	ModelType any
-	Status any
+	Message                 any
+	ModelType               any
+	Status                  any
 }
 
 var Flywheels_FilterFields = ubx.FieldMap{
-		"CreationTimeAfter": ubx.FieldSpec{WireName: "creation_time_after"},
-		"CreationTimeBefore": ubx.FieldSpec{WireName: "creation_time_before"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"CreationTimeAfter":  ubx.FieldSpec{WireName: "creation_time_after"},
+	"CreationTimeBefore": ubx.FieldSpec{WireName: "creation_time_before"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+}
 
 type FlywheelsConfig struct {
 	// <p>Filter the flywheels based on creation time or flywheel status.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FlywheelsAttrs struct {
 	// <p>Filter the flywheels based on creation time or flywheel status.</p>
-	Filter any
+	Filter              any
 	FlywheelSummaryList any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 }
 
 var Flywheels = ubx.DataSourceBinding{
@@ -47,10 +47,10 @@ var Flywheels = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: Flywheels_FilterFields,
+			Kind:     "object",
+			Fields:   Flywheels_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

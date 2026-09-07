@@ -9,7 +9,7 @@ type PolicyConfig struct {
 
 type PolicyAttrs struct {
 	ApplicationId any
-	Policy any
+	Policy        any
 }
 
 var Policy = ubx.DataSourceBinding{

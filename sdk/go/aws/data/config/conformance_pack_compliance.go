@@ -6,33 +6,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ConformancePackCompliance_ConformancePackRuleComplianceList struct {
 	ComplianceType any
 	ConfigRuleName any
-	Controls any
+	Controls       any
 }
 
 type ConformancePackCompliance_Filters struct {
-	ComplianceType any
+	ComplianceType  any
 	ConfigRuleNames any
 }
 
 var ConformancePackCompliance_FiltersFields = ubx.FieldMap{
-		"ComplianceType": ubx.FieldSpec{WireName: "compliance_type"},
-		"ConfigRuleNames": ubx.FieldSpec{WireName: "config_rule_names"},
-	}
+	"ComplianceType":  ubx.FieldSpec{WireName: "compliance_type"},
+	"ConfigRuleNames": ubx.FieldSpec{WireName: "config_rule_names"},
+}
 
 type ConformancePackComplianceConfig struct {
 	ConformancePackName any
 	// <p>Filters the conformance pack by compliance types and Config rule names.</p>
-	Filters any
-	Limit any
+	Filters   any
+	Limit     any
 	NextToken any
 }
 
 type ConformancePackComplianceAttrs struct {
-	ConformancePackName any
+	ConformancePackName               any
 	ConformancePackRuleComplianceList any
 	// <p>Filters the conformance pack by compliance types and Config rule names.</p>
-	Filters any
-	Limit any
+	Filters   any
+	Limit     any
 	NextToken any
 }
 
@@ -42,10 +42,10 @@ var ConformancePackCompliance = ubx.DataSourceBinding{
 		"ConformancePackName": ubx.FieldSpec{WireName: "conformance_pack_name"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: ConformancePackCompliance_FiltersFields,
+			Kind:     "object",
+			Fields:   ConformancePackCompliance_FiltersFields,
 		},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

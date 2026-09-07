@@ -4,25 +4,25 @@ package servicecatalog
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProvisioningArtifacts_ProvisioningArtifactDetails struct {
-	Active any
-	CreatedTime any
-	Description any
-	Guidance any
-	Id any
-	Name any
+	Active         any
+	CreatedTime    any
+	Description    any
+	Guidance       any
+	Id             any
+	Name           any
 	SourceRevision any
-	Type any
+	Type           any
 }
 
 type ProvisioningArtifactsConfig struct {
 	AcceptLanguage any
-	ProductId any
+	ProductId      any
 }
 
 type ProvisioningArtifactsAttrs struct {
-	AcceptLanguage any
-	NextPageToken any
-	ProductId any
+	AcceptLanguage              any
+	NextPageToken               any
+	ProductId                   any
 	ProvisioningArtifactDetails any
 }
 
@@ -30,6 +30,6 @@ var ProvisioningArtifacts = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_provisioning_artifacts",
 	Fields: ubx.FieldMap{
 		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"ProductId": ubx.FieldSpec{WireName: "product_id"},
+		"ProductId":      ubx.FieldSpec{WireName: "product_id"},
 	},
 }

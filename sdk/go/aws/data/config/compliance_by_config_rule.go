@@ -10,25 +10,25 @@ type ComplianceByConfigRule_ComplianceByConfigRules_Compliance_ComplianceContrib
 
 type ComplianceByConfigRule_ComplianceByConfigRules_Compliance struct {
 	ComplianceContributorCount any
-	ComplianceType any
+	ComplianceType             any
 }
 
 type ComplianceByConfigRule_ComplianceByConfigRules struct {
-	Compliance any
+	Compliance     any
 	ConfigRuleName any
 }
 
 type ComplianceByConfigRuleConfig struct {
 	ComplianceTypes any
 	ConfigRuleNames any
-	NextToken any
+	NextToken       any
 }
 
 type ComplianceByConfigRuleAttrs struct {
 	ComplianceByConfigRules any
-	ComplianceTypes any
-	ConfigRuleNames any
-	NextToken any
+	ComplianceTypes         any
+	ConfigRuleNames         any
+	NextToken               any
 }
 
 var ComplianceByConfigRule = ubx.DataSourceBinding{
@@ -36,6 +36,6 @@ var ComplianceByConfigRule = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ComplianceTypes": ubx.FieldSpec{WireName: "compliance_types"},
 		"ConfigRuleNames": ubx.FieldSpec{WireName: "config_rule_names"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

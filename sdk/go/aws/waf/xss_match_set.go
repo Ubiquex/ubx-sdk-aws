@@ -18,18 +18,18 @@ type XssMatchSet_XssMatchTuples struct {
 }
 
 var XssMatchSet_XssMatchTuples_FieldToMatchFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Data": ubx.FieldSpec{WireName: "data"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var XssMatchSet_XssMatchTuplesFields = ubx.FieldMap{
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "object",
-			Fields: XssMatchSet_XssMatchTuples_FieldToMatchFields,
-		},
-		"TextTransformation": ubx.FieldSpec{WireName: "text_transformation"},
-	}
+	"FieldToMatch": ubx.FieldSpec{
+		WireName: "field_to_match",
+		Kind:     "object",
+		Fields:   XssMatchSet_XssMatchTuples_FieldToMatchFields,
+	},
+	"TextTransformation": ubx.FieldSpec{WireName: "text_transformation"},
+}
 
 type XssMatchSetConfig struct {
 	// A friendly name or description of the XssMatchSet, which is required and cannot be changed after creation. (AI-inferred)
@@ -53,8 +53,8 @@ var XssMatchSet = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"XssMatchTuples": ubx.FieldSpec{
 			WireName: "xss_match_tuples",
-			Kind: "list",
-			Fields: XssMatchSet_XssMatchTuplesFields,
+			Kind:     "list",
+			Fields:   XssMatchSet_XssMatchTuplesFields,
 		},
 	},
 }

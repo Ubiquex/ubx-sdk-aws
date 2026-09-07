@@ -5,56 +5,56 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AwsNetworkPerformanceData_DataQueries struct {
 	Destination any
-	Id any
-	Metric any
-	Period any
-	Source any
-	Statistic any
+	Id          any
+	Metric      any
+	Period      any
+	Source      any
+	Statistic   any
 }
 
 type AwsNetworkPerformanceData_DataResponses_MetricPoints struct {
-	EndDate any
+	EndDate   any
 	StartDate any
-	Status any
-	Value any
+	Status    any
+	Value     any
 }
 
 type AwsNetworkPerformanceData_DataResponses struct {
-	Destination any
-	Id any
-	Metric any
+	Destination  any
+	Id           any
+	Metric       any
 	MetricPoints any
-	Period any
-	Source any
-	Statistic any
+	Period       any
+	Source       any
+	Statistic    any
 }
 
 var AwsNetworkPerformanceData_DataQueriesFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Statistic": ubx.FieldSpec{WireName: "statistic"},
-	}
+	"Destination": ubx.FieldSpec{WireName: "destination"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"Metric":      ubx.FieldSpec{WireName: "metric"},
+	"Period":      ubx.FieldSpec{WireName: "period"},
+	"Source":      ubx.FieldSpec{WireName: "source"},
+	"Statistic":   ubx.FieldSpec{WireName: "statistic"},
+}
 
 type AwsNetworkPerformanceDataConfig struct {
 	DataQueries any
-	DryRun any
-	EndTime any
-	MaxResults any
-	NextToken any
-	StartTime any
+	DryRun      any
+	EndTime     any
+	MaxResults  any
+	NextToken   any
+	StartTime   any
 }
 
 type AwsNetworkPerformanceDataAttrs struct {
-	DataQueries any
+	DataQueries   any
 	DataResponses any
-	DryRun any
-	EndTime any
-	MaxResults any
-	NextToken any
-	StartTime any
+	DryRun        any
+	EndTime       any
+	MaxResults    any
+	NextToken     any
+	StartTime     any
 }
 
 var AwsNetworkPerformanceData = ubx.DataSourceBinding{
@@ -62,13 +62,13 @@ var AwsNetworkPerformanceData = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DataQueries": ubx.FieldSpec{
 			WireName: "data_queries",
-			Kind: "list",
-			Fields: AwsNetworkPerformanceData_DataQueriesFields,
+			Kind:     "list",
+			Fields:   AwsNetworkPerformanceData_DataQueriesFields,
 		},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"DryRun":     ubx.FieldSpec{WireName: "dry_run"},
+		"EndTime":    ubx.FieldSpec{WireName: "end_time"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"StartTime":  ubx.FieldSpec{WireName: "start_time"},
 	},
 }

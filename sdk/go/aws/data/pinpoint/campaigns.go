@@ -4,23 +4,23 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_CustomDeliveryConfiguration struct {
-	DeliveryUri any
+	DeliveryUri   any
 	EndpointTypes any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_MessageConfiguration_Admmessage struct {
-	Action any
-	Body any
-	ImageIconUrl any
+	Action            any
+	Body              any
+	ImageIconUrl      any
 	ImageSmallIconUrl any
-	ImageUrl any
-	JsonBody any
-	MediaUrl any
-	RawContent any
-	SilentPush any
-	TimeToLive any
-	Title any
-	Url any
+	ImageUrl          any
+	JsonBody          any
+	MediaUrl          any
+	RawContent        any
+	SilentPush        any
+	TimeToLive        any
+	Title             any
+	Url               any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_MessageConfiguration_CustomMessage struct {
@@ -28,107 +28,107 @@ type Campaigns_CampaignsResponse_Item_AdditionalTreatments_MessageConfiguration_
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_MessageConfiguration_EmailMessage_Headers struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_MessageConfiguration_EmailMessage struct {
-	Body any
+	Body        any
 	FromAddress any
-	Headers any
-	HtmlBody any
-	Title any
+	Headers     any
+	HtmlBody    any
+	Title       any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_BodyConfig struct {
 	Alignment any
-	Body any
+	Body      any
 	TextColor any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_HeaderConfig struct {
 	Alignment any
-	Header any
+	Header    any
 	TextColor any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtn_Android struct {
 	ButtonAction any
-	Link any
+	Link         any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtn_DefaultConfig struct {
 	BackgroundColor any
-	BorderRadius any
-	ButtonAction any
-	Link any
-	Text any
-	TextColor any
+	BorderRadius    any
+	ButtonAction    any
+	Link            any
+	Text            any
+	TextColor       any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtn struct {
-	Android any
+	Android       any
 	DefaultConfig any
-	Ios any
-	Web any
+	Ios           any
+	Web           any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_MessageConfiguration_InAppMessage_Content struct {
 	BackgroundColor any
-	BodyConfig any
-	HeaderConfig any
-	ImageUrl any
-	PrimaryBtn any
-	SecondaryBtn any
+	BodyConfig      any
+	HeaderConfig    any
+	ImageUrl        any
+	PrimaryBtn      any
+	SecondaryBtn    any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_MessageConfiguration_InAppMessage struct {
-	Body any
-	Content any
+	Body         any
+	Content      any
 	CustomConfig any
-	Layout any
+	Layout       any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_MessageConfiguration_Smsmessage struct {
-	Body any
-	EntityId any
-	MessageType any
+	Body              any
+	EntityId          any
+	MessageType       any
 	OriginationNumber any
-	SenderId any
-	TemplateId any
+	SenderId          any
+	TemplateId        any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_MessageConfiguration struct {
-	Admmessage any
-	Apnsmessage any
-	BaiduMessage any
-	CustomMessage any
+	Admmessage     any
+	Apnsmessage    any
+	BaiduMessage   any
+	CustomMessage  any
 	DefaultMessage any
-	EmailMessage any
-	Gcmmessage any
-	InAppMessage any
-	Smsmessage any
+	EmailMessage   any
+	Gcmmessage     any
+	InAppMessage   any
+	Smsmessage     any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_Schedule_EventFilter_Dimensions_Attributes struct {
 	AttributeType any
-	Values any
+	Values        any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_Schedule_EventFilter_Dimensions_EventType struct {
 	DimensionType any
-	Values any
+	Values        any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_Schedule_EventFilter_Dimensions_Metrics struct {
 	ComparisonOperator any
-	Value any
+	Value              any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_Schedule_EventFilter_Dimensions struct {
 	Attributes any
-	EventType any
-	Metrics any
+	EventType  any
+	Metrics    any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_Schedule_EventFilter struct {
@@ -137,18 +137,18 @@ type Campaigns_CampaignsResponse_Item_AdditionalTreatments_Schedule_EventFilter 
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_Schedule_QuietTime struct {
-	End any
+	End   any
 	Start any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_Schedule struct {
-	EndTime any
+	EndTime     any
 	EventFilter any
-	Frequency any
+	Frequency   any
 	IsLocalTime any
-	QuietTime any
-	StartTime any
-	Timezone any
+	QuietTime   any
+	StartTime   any
+	Timezone    any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_State struct {
@@ -156,96 +156,96 @@ type Campaigns_CampaignsResponse_Item_AdditionalTreatments_State struct {
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_TemplateConfiguration_EmailTemplate struct {
-	Name any
+	Name    any
 	Version any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments_TemplateConfiguration struct {
 	EmailTemplate any
 	InAppTemplate any
-	PushTemplate any
-	Smstemplate any
+	PushTemplate  any
+	Smstemplate   any
 	VoiceTemplate any
 }
 
 type Campaigns_CampaignsResponse_Item_AdditionalTreatments struct {
 	CustomDeliveryConfiguration any
-	Id any
-	MessageConfiguration any
-	Schedule any
-	SizePercent any
-	State any
-	TemplateConfiguration any
-	TreatmentDescription any
-	TreatmentName any
+	Id                          any
+	MessageConfiguration        any
+	Schedule                    any
+	SizePercent                 any
+	State                       any
+	TemplateConfiguration       any
+	TreatmentDescription        any
+	TreatmentName               any
 }
 
 type Campaigns_CampaignsResponse_Item_Hook struct {
 	LambdaFunctionName any
-	Mode any
-	WebUrl any
+	Mode               any
+	WebUrl             any
 }
 
 type Campaigns_CampaignsResponse_Item_Limits struct {
-	Daily any
-	MaximumDuration any
+	Daily             any
+	MaximumDuration   any
 	MessagesPerSecond any
-	Session any
-	Total any
+	Session           any
+	Total             any
 }
 
 type Campaigns_CampaignsResponse_Item struct {
-	AdditionalTreatments any
-	ApplicationId any
-	Arn any
-	CreationDate any
+	AdditionalTreatments        any
+	ApplicationId               any
+	Arn                         any
+	CreationDate                any
 	CustomDeliveryConfiguration any
-	DefaultState any
-	Description any
-	HoldoutPercent any
-	Hook any
-	Id any
-	IsPaused any
-	LastModifiedDate any
-	Limits any
-	MessageConfiguration any
-	Name any
-	Priority any
-	Schedule any
-	SegmentId any
-	SegmentVersion any
-	State any
-	Tags any
-	TemplateConfiguration any
-	TreatmentDescription any
-	TreatmentName any
-	Version any
+	DefaultState                any
+	Description                 any
+	HoldoutPercent              any
+	Hook                        any
+	Id                          any
+	IsPaused                    any
+	LastModifiedDate            any
+	Limits                      any
+	MessageConfiguration        any
+	Name                        any
+	Priority                    any
+	Schedule                    any
+	SegmentId                   any
+	SegmentVersion              any
+	State                       any
+	Tags                        any
+	TemplateConfiguration       any
+	TreatmentDescription        any
+	TreatmentName               any
+	Version                     any
 }
 
 type Campaigns_CampaignsResponse struct {
-	Item any
+	Item      any
 	NextToken any
 }
 
 type CampaignsConfig struct {
 	ApplicationId any
-	PageSize any
-	Token any
+	PageSize      any
+	Token         any
 }
 
 type CampaignsAttrs struct {
 	ApplicationId any
 	// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
 	CampaignsResponse any
-	PageSize any
-	Token any
+	PageSize          any
+	Token             any
 }
 
 var Campaigns = ubx.DataSourceBinding{
 	WireType: "aws_pinpoint_campaigns",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"Token": ubx.FieldSpec{WireName: "token"},
+		"PageSize":      ubx.FieldSpec{WireName: "page_size"},
+		"Token":         ubx.FieldSpec{WireName: "token"},
 	},
 }

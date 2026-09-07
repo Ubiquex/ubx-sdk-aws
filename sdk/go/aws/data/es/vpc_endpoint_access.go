@@ -4,7 +4,7 @@ package es
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcEndpointAccess_AuthorizedPrincipalList struct {
-	Principal any
+	Principal     any
 	PrincipalType any
 }
 
@@ -27,6 +27,6 @@ var VpcEndpointAccess = ubx.DataSourceBinding{
 	WireType: "aws_es_vpc_endpoint_access",
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

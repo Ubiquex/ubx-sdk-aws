@@ -4,20 +4,20 @@ package api_pricing
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiPricingPriceListFileUrlConfig struct {
-	FileFormat any
+	FileFormat   any
 	PriceListArn any
 }
 
 type ApiPricingPriceListFileUrlAttrs struct {
-	FileFormat any
+	FileFormat   any
 	PriceListArn any
-	Url any
+	Url          any
 }
 
 var ApiPricingPriceListFileUrl = ubx.DataSourceBinding{
 	WireType: "aws_api_pricing_price_list_file_url",
 	Fields: ubx.FieldMap{
-		"FileFormat": ubx.FieldSpec{WireName: "file_format"},
+		"FileFormat":   ubx.FieldSpec{WireName: "file_format"},
 		"PriceListArn": ubx.FieldSpec{WireName: "price_list_arn"},
 	},
 }

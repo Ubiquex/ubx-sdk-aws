@@ -4,29 +4,29 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveredResourceCounts_ResourceCounts struct {
-	Count any
+	Count        any
 	ResourceType any
 }
 
 type DiscoveredResourceCountsConfig struct {
-	Limit any
-	NextToken any
+	Limit         any
+	NextToken     any
 	ResourceTypes any
 }
 
 type DiscoveredResourceCountsAttrs struct {
-	Limit any
-	NextToken any
-	ResourceCounts any
-	ResourceTypes any
+	Limit                    any
+	NextToken                any
+	ResourceCounts           any
+	ResourceTypes            any
 	TotalDiscoveredResources any
 }
 
 var DiscoveredResourceCounts = ubx.DataSourceBinding{
 	WireType: "aws_config_discovered_resource_counts",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":         ubx.FieldSpec{WireName: "limit"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
 	},
 }

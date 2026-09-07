@@ -32,8 +32,8 @@ type OrganizationConfigurationAttrs struct {
 var OrganizationConfiguration = ubx.ResourceBinding{
 	WireType: "aws_security_hub_organization_configuration",
 	Fields: ubx.FieldMap{
-		"AutoEnable": ubx.FieldSpec{WireName: "auto_enable"},
+		"AutoEnable":          ubx.FieldSpec{WireName: "auto_enable"},
 		"AutoEnableStandards": ubx.FieldSpec{WireName: "auto_enable_standards"},
-		"ConfigurationType": ubx.FieldSpec{WireName: "configuration_type"},
+		"ConfigurationType":   ubx.FieldSpec{WireName: "configuration_type"},
 	},
 }

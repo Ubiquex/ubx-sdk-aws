@@ -8,23 +8,23 @@ type MedicalImagingImageFrame_ImageFrameInformation struct {
 }
 
 var MedicalImagingImageFrame_ImageFrameInformationFields = ubx.FieldMap{
-		"ImageFrameId": ubx.FieldSpec{WireName: "image_frame_id"},
-	}
+	"ImageFrameId": ubx.FieldSpec{WireName: "image_frame_id"},
+}
 
 type MedicalImagingImageFrameConfig struct {
 	DatastoreId any
 	// <p>Information about the image frame (pixel data) identifier.</p>
 	ImageFrameInformation any
-	ImageSetId any
+	ImageSetId            any
 }
 
 type MedicalImagingImageFrameAttrs struct {
-	ContentType any
-	DatastoreId any
+	ContentType    any
+	DatastoreId    any
 	ImageFrameBlob any
 	// <p>Information about the image frame (pixel data) identifier.</p>
 	ImageFrameInformation any
-	ImageSetId any
+	ImageSetId            any
 }
 
 var MedicalImagingImageFrame = ubx.DataSourceBinding{
@@ -33,8 +33,8 @@ var MedicalImagingImageFrame = ubx.DataSourceBinding{
 		"DatastoreId": ubx.FieldSpec{WireName: "datastore_id"},
 		"ImageFrameInformation": ubx.FieldSpec{
 			WireName: "image_frame_information",
-			Kind: "object",
-			Fields: MedicalImagingImageFrame_ImageFrameInformationFields,
+			Kind:     "object",
+			Fields:   MedicalImagingImageFrame_ImageFrameInformationFields,
 		},
 		"ImageSetId": ubx.FieldSpec{WireName: "image_set_id"},
 	},

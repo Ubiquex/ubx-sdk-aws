@@ -4,45 +4,45 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LoadBalancerMetricData_MetricData struct {
-	Average any
-	Maximum any
-	Minimum any
+	Average     any
+	Maximum     any
+	Minimum     any
 	SampleCount any
-	Sum any
-	Timestamp any
-	Unit any
+	Sum         any
+	Timestamp   any
+	Unit        any
 }
 
 type LoadBalancerMetricDataConfig struct {
-	EndTime any
+	EndTime          any
 	LoadBalancerName any
-	MetricName any
-	Period any
-	StartTime any
-	Statistics any
-	Unit any
+	MetricName       any
+	Period           any
+	StartTime        any
+	Statistics       any
+	Unit             any
 }
 
 type LoadBalancerMetricDataAttrs struct {
-	EndTime any
+	EndTime          any
 	LoadBalancerName any
-	MetricData any
-	MetricName any
-	Period any
-	StartTime any
-	Statistics any
-	Unit any
+	MetricData       any
+	MetricName       any
+	Period           any
+	StartTime        any
+	Statistics       any
+	Unit             any
 }
 
 var LoadBalancerMetricData = ubx.DataSourceBinding{
 	WireType: "aws_lightsail_load_balancer_metric_data",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":          ubx.FieldSpec{WireName: "end_time"},
 		"LoadBalancerName": ubx.FieldSpec{WireName: "load_balancer_name"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Statistics": ubx.FieldSpec{WireName: "statistics"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
+		"MetricName":       ubx.FieldSpec{WireName: "metric_name"},
+		"Period":           ubx.FieldSpec{WireName: "period"},
+		"StartTime":        ubx.FieldSpec{WireName: "start_time"},
+		"Statistics":       ubx.FieldSpec{WireName: "statistics"},
+		"Unit":             ubx.FieldSpec{WireName: "unit"},
 	},
 }

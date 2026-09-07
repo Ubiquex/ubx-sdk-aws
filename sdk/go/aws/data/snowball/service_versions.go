@@ -8,36 +8,36 @@ type ServiceVersions_DependentServices_ServiceVersion struct {
 }
 
 type ServiceVersions_DependentServices struct {
-	ServiceName any
+	ServiceName    any
 	ServiceVersion any
 }
 
 var ServiceVersions_DependentServices_ServiceVersionFields = ubx.FieldMap{
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var ServiceVersions_DependentServicesFields = ubx.FieldMap{
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-		"ServiceVersion": ubx.FieldSpec{
-			WireName: "service_version",
-			Kind: "object",
-			Fields: ServiceVersions_DependentServices_ServiceVersionFields,
-		},
-	}
+	"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+	"ServiceVersion": ubx.FieldSpec{
+		WireName: "service_version",
+		Kind:     "object",
+		Fields:   ServiceVersions_DependentServices_ServiceVersionFields,
+	},
+}
 
 type ServiceVersionsConfig struct {
 	DependentServices any
-	MaxResults any
-	NextToken any
-	ServiceName any
+	MaxResults        any
+	NextToken         any
+	ServiceName       any
 }
 
 type ServiceVersionsAttrs struct {
 	DependentServices any
-	MaxResults any
-	NextToken any
-	ServiceName any
-	ServiceVersions any
+	MaxResults        any
+	NextToken         any
+	ServiceName       any
+	ServiceVersions   any
 }
 
 var ServiceVersions = ubx.DataSourceBinding{
@@ -45,11 +45,11 @@ var ServiceVersions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DependentServices": ubx.FieldSpec{
 			WireName: "dependent_services",
-			Kind: "list",
-			Fields: ServiceVersions_DependentServicesFields,
+			Kind:     "list",
+			Fields:   ServiceVersions_DependentServicesFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
 	},
 }

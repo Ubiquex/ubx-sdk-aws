@@ -4,15 +4,15 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerModelMetadata_ModelMetadataSummaries struct {
-	Domain any
-	Framework any
+	Domain           any
+	Framework        any
 	FrameworkVersion any
-	Model any
-	Task any
+	Model            any
+	Task             any
 }
 
 type ApiSagemakerModelMetadata_SearchExpression_Filters struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -21,29 +21,29 @@ type ApiSagemakerModelMetadata_SearchExpression struct {
 }
 
 var ApiSagemakerModelMetadata_SearchExpression_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ApiSagemakerModelMetadata_SearchExpressionFields = ubx.FieldMap{
-		"Filters": ubx.FieldSpec{
-			WireName: "filters",
-			Kind: "list",
-			Fields: ApiSagemakerModelMetadata_SearchExpression_FiltersFields,
-		},
-	}
+	"Filters": ubx.FieldSpec{
+		WireName: "filters",
+		Kind:     "list",
+		Fields:   ApiSagemakerModelMetadata_SearchExpression_FiltersFields,
+	},
+}
 
 type ApiSagemakerModelMetadataConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results</p>
 	SearchExpression any
 }
 
 type ApiSagemakerModelMetadataAttrs struct {
-	MaxResults any
+	MaxResults             any
 	ModelMetadataSummaries any
-	NextToken any
+	NextToken              any
 	// <p>One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results</p>
 	SearchExpression any
 }
@@ -52,11 +52,11 @@ var ApiSagemakerModelMetadata = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_model_metadata",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SearchExpression": ubx.FieldSpec{
 			WireName: "search_expression",
-			Kind: "object",
-			Fields: ApiSagemakerModelMetadata_SearchExpressionFields,
+			Kind:     "object",
+			Fields:   ApiSagemakerModelMetadata_SearchExpressionFields,
 		},
 	},
 }

@@ -4,13 +4,13 @@ package databrew
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Jobs_Jobs_DataCatalogOutputs_DatabaseOptions_TempDirectory struct {
-	Bucket any
+	Bucket      any
 	BucketOwner any
-	Key any
+	Key         any
 }
 
 type Jobs_Jobs_DataCatalogOutputs_DatabaseOptions struct {
-	TableName any
+	TableName     any
 	TempDirectory any
 }
 
@@ -19,16 +19,16 @@ type Jobs_Jobs_DataCatalogOutputs_S3Options struct {
 }
 
 type Jobs_Jobs_DataCatalogOutputs struct {
-	CatalogId any
-	DatabaseName any
+	CatalogId       any
+	DatabaseName    any
 	DatabaseOptions any
-	Overwrite any
-	S3Options any
-	TableName any
+	Overwrite       any
+	S3Options       any
+	TableName       any
 }
 
 type Jobs_Jobs_DatabaseOutputs struct {
-	DatabaseOptions any
+	DatabaseOptions    any
 	DatabaseOutputMode any
 	GlueConnectionName any
 }
@@ -48,63 +48,63 @@ type Jobs_Jobs_Outputs_FormatOptions struct {
 
 type Jobs_Jobs_Outputs struct {
 	CompressionFormat any
-	Format any
-	FormatOptions any
-	Location any
-	MaxOutputFiles any
-	Overwrite any
-	PartitionColumns any
+	Format            any
+	FormatOptions     any
+	Location          any
+	MaxOutputFiles    any
+	Overwrite         any
+	PartitionColumns  any
 }
 
 type Jobs_Jobs_RecipeReference struct {
-	Name any
+	Name          any
 	RecipeVersion any
 }
 
 type Jobs_Jobs_ValidationConfigurations struct {
-	RulesetArn any
+	RulesetArn     any
 	ValidationMode any
 }
 
 type Jobs_Jobs struct {
-	AccountId any
-	CreateDate any
-	CreatedBy any
-	DataCatalogOutputs any
-	DatabaseOutputs any
-	DatasetName any
-	EncryptionKeyArn any
-	EncryptionMode any
-	JobSample any
-	LastModifiedBy any
-	LastModifiedDate any
-	LogSubscription any
-	MaxCapacity any
-	MaxRetries any
-	Name any
-	Outputs any
-	ProjectName any
-	RecipeReference any
-	ResourceArn any
-	RoleArn any
-	Tags any
-	Timeout any
-	Type any
+	AccountId                any
+	CreateDate               any
+	CreatedBy                any
+	DataCatalogOutputs       any
+	DatabaseOutputs          any
+	DatasetName              any
+	EncryptionKeyArn         any
+	EncryptionMode           any
+	JobSample                any
+	LastModifiedBy           any
+	LastModifiedDate         any
+	LogSubscription          any
+	MaxCapacity              any
+	MaxRetries               any
+	Name                     any
+	Outputs                  any
+	ProjectName              any
+	RecipeReference          any
+	ResourceArn              any
+	RoleArn                  any
+	Tags                     any
+	Timeout                  any
+	Type                     any
 	ValidationConfigurations any
 }
 
 type JobsConfig struct {
 	DatasetName any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	ProjectName any
 }
 
 type JobsAttrs struct {
 	DatasetName any
-	Jobs any
-	MaxResults any
-	NextToken any
+	Jobs        any
+	MaxResults  any
+	NextToken   any
 	ProjectName any
 }
 
@@ -112,8 +112,8 @@ var Jobs = ubx.DataSourceBinding{
 	WireType: "aws_databrew_jobs",
 	Fields: ubx.FieldMap{
 		"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ProjectName": ubx.FieldSpec{WireName: "project_name"},
 	},
 }

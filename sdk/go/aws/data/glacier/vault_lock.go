@@ -9,12 +9,12 @@ type VaultLockConfig struct {
 }
 
 type VaultLockAttrs struct {
-	AccountId any
-	CreationDate any
+	AccountId      any
+	CreationDate   any
 	ExpirationDate any
-	Policy any
-	State any
-	VaultName any
+	Policy         any
+	State          any
+	VaultName      any
 }
 
 var VaultLock = ubx.DataSourceBinding{

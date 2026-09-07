@@ -4,15 +4,15 @@ package transfer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityPolicy_SecurityPolicy struct {
-	Fips any
-	Protocols any
-	SecurityPolicyName any
-	SshCiphers any
+	Fips                 any
+	Protocols            any
+	SecurityPolicyName   any
+	SshCiphers           any
 	SshHostKeyAlgorithms any
-	SshKexs any
-	SshMacs any
-	TlsCiphers any
-	Type any
+	SshKexs              any
+	SshMacs              any
+	TlsCiphers           any
+	Type                 any
 }
 
 type SecurityPolicyConfig struct {
@@ -21,7 +21,7 @@ type SecurityPolicyConfig struct {
 
 type SecurityPolicyAttrs struct {
 	// <p>Describes the properties of a security policy that you specify. For more information about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working with security policies for servers</a> or <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies-connectors.html">Working with security policies for SFTP connectors</a>.</p>
-	SecurityPolicy any
+	SecurityPolicy     any
 	SecurityPolicyName any
 }
 

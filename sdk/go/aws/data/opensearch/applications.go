@@ -4,13 +4,13 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Applications_ApplicationSummaries struct {
-	Arn any
-	CreatedAt any
-	Endpoint any
-	Id any
+	Arn           any
+	CreatedAt     any
+	Endpoint      any
+	Id            any
 	LastUpdatedAt any
-	Name any
-	Status any
+	Name          any
+	Status        any
 }
 
 type ApplicationsConfig struct {
@@ -18,7 +18,7 @@ type ApplicationsConfig struct {
 	MaxResults any
 	// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
 	NextToken any
-	Statuses any
+	Statuses  any
 }
 
 type ApplicationsAttrs struct {
@@ -27,14 +27,14 @@ type ApplicationsAttrs struct {
 	MaxResults any
 	// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
 	NextToken any
-	Statuses any
+	Statuses  any
 }
 
 var Applications = ubx.DataSourceBinding{
 	WireType: "aws_opensearch_applications",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Statuses": ubx.FieldSpec{WireName: "statuses"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Statuses":   ubx.FieldSpec{WireName: "statuses"},
 	},
 }

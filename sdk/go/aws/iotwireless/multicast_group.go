@@ -16,14 +16,14 @@ type MulticastGroup_LoRaWan struct {
 
 type MulticastGroup_Tags struct {
 	// Defines the key of a tag applied to the IoT Wireless Multicast Group, allowing you to attach custom metadata for resource grouping and management. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var MulticastGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MulticastGroupConfig struct {
 	// Wireless device to associate. Only for update request.
@@ -62,14 +62,14 @@ type MulticastGroupAttrs struct {
 var MulticastGroup = ubx.ResourceBinding{
 	WireType: "aws_io_twireless_multicast_group",
 	Fields: ubx.FieldMap{
-		"AssociateWirelessDevice": ubx.FieldSpec{WireName: "associate_wireless_device"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"AssociateWirelessDevice":    ubx.FieldSpec{WireName: "associate_wireless_device"},
+		"Description":                ubx.FieldSpec{WireName: "description"},
 		"DisassociateWirelessDevice": ubx.FieldSpec{WireName: "disassociate_wireless_device"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                       ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MulticastGroup_TagsFields,
+			Kind:     "list",
+			Fields:   MulticastGroup_TagsFields,
 		},
 	},
 }

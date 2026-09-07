@@ -6,7 +6,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type PinpointEmailBlacklistReports_BlacklistReport struct {
 	Description any
 	ListingTime any
-	RblName any
+	RblName     any
 }
 
 type PinpointEmailBlacklistReportsConfig struct {
@@ -15,7 +15,7 @@ type PinpointEmailBlacklistReportsConfig struct {
 
 type PinpointEmailBlacklistReportsAttrs struct {
 	BlacklistItemNames any
-	BlacklistReport any
+	BlacklistReport    any
 }
 
 var PinpointEmailBlacklistReports = ubx.DataSourceBinding{

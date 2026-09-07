@@ -29,35 +29,35 @@ type AccessPoint_RootDirectory struct {
 
 type AccessPoint_Tags struct {
 	// The key of a user-defined tag attached to the S3 file access point, used for identifying and organizing the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var AccessPoint_PosixUserFields = ubx.FieldMap{
-		"Gid": ubx.FieldSpec{WireName: "gid"},
-		"SecondaryGids": ubx.FieldSpec{WireName: "secondary_gids"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Gid":           ubx.FieldSpec{WireName: "gid"},
+	"SecondaryGids": ubx.FieldSpec{WireName: "secondary_gids"},
+	"Uid":           ubx.FieldSpec{WireName: "uid"},
+}
 
 var AccessPoint_RootDirectory_CreationPermissionsFields = ubx.FieldMap{
-		"OwnerGid": ubx.FieldSpec{WireName: "owner_gid"},
-		"OwnerUid": ubx.FieldSpec{WireName: "owner_uid"},
-		"Permissions": ubx.FieldSpec{WireName: "permissions"},
-	}
+	"OwnerGid":    ubx.FieldSpec{WireName: "owner_gid"},
+	"OwnerUid":    ubx.FieldSpec{WireName: "owner_uid"},
+	"Permissions": ubx.FieldSpec{WireName: "permissions"},
+}
 
 var AccessPoint_RootDirectoryFields = ubx.FieldMap{
-		"CreationPermissions": ubx.FieldSpec{
-			WireName: "creation_permissions",
-			Kind: "object",
-			Fields: AccessPoint_RootDirectory_CreationPermissionsFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"CreationPermissions": ubx.FieldSpec{
+		WireName: "creation_permissions",
+		Kind:     "object",
+		Fields:   AccessPoint_RootDirectory_CreationPermissionsFields,
+	},
+	"Path": ubx.FieldSpec{WireName: "path"},
+}
 
 var AccessPoint_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AccessPointConfig struct {
 	// (optional) A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.
@@ -96,22 +96,22 @@ type AccessPointAttrs struct {
 var AccessPoint = ubx.ResourceBinding{
 	WireType: "aws_s3_files_access_point",
 	Fields: ubx.FieldMap{
-		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
+		"ClientToken":  ubx.FieldSpec{WireName: "client_token"},
 		"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
 		"PosixUser": ubx.FieldSpec{
 			WireName: "posix_user",
-			Kind: "object",
-			Fields: AccessPoint_PosixUserFields,
+			Kind:     "object",
+			Fields:   AccessPoint_PosixUserFields,
 		},
 		"RootDirectory": ubx.FieldSpec{
 			WireName: "root_directory",
-			Kind: "object",
-			Fields: AccessPoint_RootDirectoryFields,
+			Kind:     "object",
+			Fields:   AccessPoint_RootDirectoryFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AccessPoint_TagsFields,
+			Kind:     "list",
+			Fields:   AccessPoint_TagsFields,
 		},
 	},
 }

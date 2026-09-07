@@ -5,23 +5,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EstimatedWaterAllocationDimensionValues_Results struct {
 	Dimension any
-	Value any
+	Value     any
 }
 
 type EstimatedWaterAllocationDimensionValues_TimePeriod struct {
-	End any
+	End   any
 	Start any
 }
 
 var EstimatedWaterAllocationDimensionValues_TimePeriodFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 type EstimatedWaterAllocationDimensionValuesConfig struct {
 	Dimensions any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Represents a duration of time defined by start and end timestamps.</p>
 	TimePeriod any
 }
@@ -29,8 +29,8 @@ type EstimatedWaterAllocationDimensionValuesConfig struct {
 type EstimatedWaterAllocationDimensionValuesAttrs struct {
 	Dimensions any
 	MaxResults any
-	NextToken any
-	Results any
+	NextToken  any
+	Results    any
 	// <p>Represents a duration of time defined by start and end timestamps.</p>
 	TimePeriod any
 }
@@ -40,11 +40,11 @@ var EstimatedWaterAllocationDimensionValues = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"TimePeriod": ubx.FieldSpec{
 			WireName: "time_period",
-			Kind: "object",
-			Fields: EstimatedWaterAllocationDimensionValues_TimePeriodFields,
+			Kind:     "object",
+			Fields:   EstimatedWaterAllocationDimensionValues_TimePeriodFields,
 		},
 	},
 }

@@ -8,47 +8,47 @@ type Searches_ListSearchesFilters struct {
 	GroupIdFilter any
 	// <p>A filter on search type. Matches searches whose <code>searchType</code> is any of the listed values.</p>
 	SearchTypeFilter any
-	StartedAfter any
-	StartedBefore any
+	StartedAfter     any
+	StartedBefore    any
 	// <p>A filter on search status. Matches searches whose status is any of the listed values.</p>
 	StatusFilter any
 }
 
 type Searches_SearchSummaries struct {
-	GroupId any
+	GroupId        any
 	QueryStatement any
-	SearchId any
-	SearchType any
-	StartedAt any
-	Status any
-	StatusReason any
-	WorkspaceName any
+	SearchId       any
+	SearchType     any
+	StartedAt      any
+	Status         any
+	StatusReason   any
+	WorkspaceName  any
 }
 
 var Searches_ListSearchesFiltersFields = ubx.FieldMap{
-		"GroupIdFilter": ubx.FieldSpec{WireName: "group_id_filter"},
-		"SearchTypeFilter": ubx.FieldSpec{WireName: "search_type_filter"},
-		"StartedAfter": ubx.FieldSpec{WireName: "started_after"},
-		"StartedBefore": ubx.FieldSpec{WireName: "started_before"},
-		"StatusFilter": ubx.FieldSpec{WireName: "status_filter"},
-	}
+	"GroupIdFilter":    ubx.FieldSpec{WireName: "group_id_filter"},
+	"SearchTypeFilter": ubx.FieldSpec{WireName: "search_type_filter"},
+	"StartedAfter":     ubx.FieldSpec{WireName: "started_after"},
+	"StartedBefore":    ubx.FieldSpec{WireName: "started_before"},
+	"StatusFilter":     ubx.FieldSpec{WireName: "status_filter"},
+}
 
 type SearchesConfig struct {
 	// <p>Optional filters for ListSearches. When multiple filters are set, a search must match all of them.</p>
 	ListSearchesFilters any
-	MaxResults any
-	NextToken any
-	WorkspaceName any
+	MaxResults          any
+	NextToken           any
+	WorkspaceName       any
 }
 
 type SearchesAttrs struct {
 	// <p>Optional filters for ListSearches. When multiple filters are set, a search must match all of them.</p>
 	ListSearchesFilters any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 	// <p>A list of search summaries returned by ListSearches.</p>
 	SearchSummaries any
-	WorkspaceName any
+	WorkspaceName   any
 }
 
 var Searches = ubx.DataSourceBinding{
@@ -56,11 +56,11 @@ var Searches = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ListSearchesFilters": ubx.FieldSpec{
 			WireName: "list_searches_filters",
-			Kind: "object",
-			Fields: Searches_ListSearchesFiltersFields,
+			Kind:     "object",
+			Fields:   Searches_ListSearchesFiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"WorkspaceName": ubx.FieldSpec{WireName: "workspace_name"},
 	},
 }

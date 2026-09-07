@@ -18,26 +18,26 @@ type Schedule_ScheduleActions_ScheduleActionSettings_InputPrepareSettings_InputC
 
 type Schedule_ScheduleActions_ScheduleActionSettings_InputPrepareSettings_InputClippingSettings_StopTimecode struct {
 	LastFrameClippingBehavior any
-	Timecode any
+	Timecode                  any
 }
 
 type Schedule_ScheduleActions_ScheduleActionSettings_InputPrepareSettings_InputClippingSettings struct {
 	InputTimecodeSource any
-	StartTimecode any
-	StopTimecode any
+	StartTimecode       any
+	StopTimecode        any
 }
 
 type Schedule_ScheduleActions_ScheduleActionSettings_InputPrepareSettings struct {
 	InputAttachmentNameReference any
-	InputClippingSettings any
-	UrlPath any
+	InputClippingSettings        any
+	UrlPath                      any
 }
 
 type Schedule_ScheduleActions_ScheduleActionSettings_MotionGraphicsImageActivateSettings struct {
-	Duration any
+	Duration      any
 	PasswordParam any
-	Url any
-	Username any
+	Url           any
+	Username      any
 }
 
 type Schedule_ScheduleActions_ScheduleActionSettings_PauseStateSettings_Pipelines struct {
@@ -50,7 +50,7 @@ type Schedule_ScheduleActions_ScheduleActionSettings_PauseStateSettings struct {
 
 type Schedule_ScheduleActions_ScheduleActionSettings_Scte35InputSettings struct {
 	InputAttachmentNameReference any
-	Mode any
+	Mode                         any
 }
 
 type Schedule_ScheduleActions_ScheduleActionSettings_Scte35ReturnToNetworkSettings struct {
@@ -58,29 +58,29 @@ type Schedule_ScheduleActions_ScheduleActionSettings_Scte35ReturnToNetworkSettin
 }
 
 type Schedule_ScheduleActions_ScheduleActionSettings_Scte35SpliceInsertSettings struct {
-	Duration any
+	Duration      any
 	SpliceEventId any
 }
 
 type Schedule_ScheduleActions_ScheduleActionSettings_Scte35TimeSignalSettings_Scte35Descriptors_Scte35DescriptorSettings_SegmentationDescriptorScte35DescriptorSettings_DeliveryRestrictions struct {
-	ArchiveAllowedFlag any
-	DeviceRestrictions any
+	ArchiveAllowedFlag     any
+	DeviceRestrictions     any
 	NoRegionalBlackoutFlag any
 	WebDeliveryAllowedFlag any
 }
 
 type Schedule_ScheduleActions_ScheduleActionSettings_Scte35TimeSignalSettings_Scte35Descriptors_Scte35DescriptorSettings_SegmentationDescriptorScte35DescriptorSettings struct {
-	DeliveryRestrictions any
-	SegmentNum any
+	DeliveryRestrictions        any
+	SegmentNum                  any
 	SegmentationCancelIndicator any
-	SegmentationDuration any
-	SegmentationEventId any
-	SegmentationTypeId any
-	SegmentationUpid any
-	SegmentationUpidType any
-	SegmentsExpected any
-	SubSegmentNum any
-	SubSegmentsExpected any
+	SegmentationDuration        any
+	SegmentationEventId         any
+	SegmentationTypeId          any
+	SegmentationUpid            any
+	SegmentationUpidType        any
+	SegmentsExpected            any
+	SubSegmentNum               any
+	SubSegmentsExpected         any
 }
 
 type Schedule_ScheduleActions_ScheduleActionSettings_Scte35TimeSignalSettings_Scte35Descriptors_Scte35DescriptorSettings struct {
@@ -97,66 +97,66 @@ type Schedule_ScheduleActions_ScheduleActionSettings_Scte35TimeSignalSettings st
 
 type Schedule_ScheduleActions_ScheduleActionSettings_StaticImageActivateSettings_Image struct {
 	PasswordParam any
-	Uri any
-	Username any
+	Uri           any
+	Username      any
 }
 
 type Schedule_ScheduleActions_ScheduleActionSettings_StaticImageActivateSettings struct {
 	Duration any
-	FadeIn any
-	FadeOut any
-	Height any
-	Image any
-	ImageX any
-	ImageY any
-	Layer any
-	Opacity any
-	Width any
+	FadeIn   any
+	FadeOut  any
+	Height   any
+	Image    any
+	ImageX   any
+	ImageY   any
+	Layer    any
+	Opacity  any
+	Width    any
 }
 
 type Schedule_ScheduleActions_ScheduleActionSettings_StaticImageDeactivateSettings struct {
 	FadeOut any
-	Layer any
+	Layer   any
 }
 
 type Schedule_ScheduleActions_ScheduleActionSettings_StaticImageOutputActivateSettings struct {
-	Duration any
-	FadeIn any
-	FadeOut any
-	Height any
-	Image any
-	ImageX any
-	ImageY any
-	Layer any
-	Opacity any
+	Duration    any
+	FadeIn      any
+	FadeOut     any
+	Height      any
+	Image       any
+	ImageX      any
+	ImageY      any
+	Layer       any
+	Opacity     any
 	OutputNames any
-	Width any
+	Width       any
 }
 
 type Schedule_ScheduleActions_ScheduleActionSettings_StaticImageOutputDeactivateSettings struct {
-	FadeOut any
-	Layer any
+	FadeOut     any
+	Layer       any
 	OutputNames any
 }
 
 type Schedule_ScheduleActions_ScheduleActionSettings struct {
-	HlsId3SegmentTaggingSettings any
-	HlsTimedMetadataSettings any
-	Id3SegmentTaggingSettings any
-	InputPrepareSettings any
-	InputSwitchSettings any
-	MotionGraphicsImageActivateSettings any
+	HlsId3SegmentTaggingSettings          any
+	HlsTimedMetadataSettings              any
+	Id3SegmentTaggingSettings             any
+	InputPrepareSettings                  any
+	InputSwitchSettings                   any
+	MotionGraphicsImageActivateSettings   any
 	MotionGraphicsImageDeactivateSettings any
-	PauseStateSettings any
-	Scte35InputSettings any
-	Scte35ReturnToNetworkSettings any
-	Scte35SpliceInsertSettings any
-	Scte35TimeSignalSettings any
-	StaticImageActivateSettings any
-	StaticImageDeactivateSettings any
-	StaticImageOutputActivateSettings any
-	StaticImageOutputDeactivateSettings any
-	TimedMetadataSettings any
+	PauseStateSettings                    any
+	Scte35InputSettings                   any
+	Scte35ReturnToNetworkSettings         any
+	Scte35SpliceInsertSettings            any
+	Scte35TimeSignalSettings              any
+	StaticImageActivateSettings           any
+	StaticImageDeactivateSettings         any
+	StaticImageOutputActivateSettings     any
+	StaticImageOutputDeactivateSettings   any
+	TimedMetadataSettings                 any
 }
 
 type Schedule_ScheduleActions_ScheduleActionStartSettings_FixedModeScheduleActionStartSettings struct {
@@ -164,19 +164,19 @@ type Schedule_ScheduleActions_ScheduleActionStartSettings_FixedModeScheduleActio
 }
 
 type Schedule_ScheduleActions_ScheduleActionStartSettings_FollowModeScheduleActionStartSettings struct {
-	FollowPoint any
+	FollowPoint         any
 	ReferenceActionName any
 }
 
 type Schedule_ScheduleActions_ScheduleActionStartSettings struct {
-	FixedModeScheduleActionStartSettings any
-	FollowModeScheduleActionStartSettings any
+	FixedModeScheduleActionStartSettings     any
+	FollowModeScheduleActionStartSettings    any
 	ImmediateModeScheduleActionStartSettings any
 }
 
 type Schedule_ScheduleActions struct {
-	ActionName any
-	ScheduleActionSettings any
+	ActionName                  any
+	ScheduleActionSettings      any
 	ScheduleActionStartSettings any
 }
 
@@ -203,8 +203,8 @@ type ScheduleAttrs struct {
 var Schedule = ubx.DataSourceBinding{
 	WireType: "aws_medialive_schedule",
 	Fields: ubx.FieldMap{
-		"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
+		"ChannelId":  ubx.FieldSpec{WireName: "channel_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -26,11 +26,11 @@ type TrustStoreRevocation_TrustStoreRevocations struct {
 }
 
 var TrustStoreRevocation_RevocationContentsFields = ubx.FieldMap{
-		"RevocationType": ubx.FieldSpec{WireName: "revocation_type"},
-		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
-		"S3Key": ubx.FieldSpec{WireName: "s3_key"},
-		"S3ObjectVersion": ubx.FieldSpec{WireName: "s3_object_version"},
-	}
+	"RevocationType":  ubx.FieldSpec{WireName: "revocation_type"},
+	"S3Bucket":        ubx.FieldSpec{WireName: "s3_bucket"},
+	"S3Key":           ubx.FieldSpec{WireName: "s3_key"},
+	"S3ObjectVersion": ubx.FieldSpec{WireName: "s3_object_version"},
+}
 
 type TrustStoreRevocationConfig struct {
 	// The attributes required to create a trust store revocation.
@@ -55,8 +55,8 @@ var TrustStoreRevocation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"RevocationContents": ubx.FieldSpec{
 			WireName: "revocation_contents",
-			Kind: "list",
-			Fields: TrustStoreRevocation_RevocationContentsFields,
+			Kind:     "list",
+			Fields:   TrustStoreRevocation_RevocationContentsFields,
 		},
 		"TrustStoreArn": ubx.FieldSpec{WireName: "trust_store_arn"},
 	},

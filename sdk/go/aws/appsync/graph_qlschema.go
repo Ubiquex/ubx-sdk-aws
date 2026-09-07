@@ -26,8 +26,8 @@ type GraphQlschemaAttrs struct {
 var GraphQlschema = ubx.ResourceBinding{
 	WireType: "aws_app_sync_graph_qlschema",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
-		"Definition": ubx.FieldSpec{WireName: "definition"},
+		"ApiId":                ubx.FieldSpec{WireName: "api_id"},
+		"Definition":           ubx.FieldSpec{WireName: "definition"},
 		"DefinitionS3Location": ubx.FieldSpec{WireName: "definition_s3_location"},
 	},
 }

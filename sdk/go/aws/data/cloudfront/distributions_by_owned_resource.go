@@ -10,32 +10,32 @@ type DistributionsByOwnedResource_DistributionList_Items struct {
 
 type DistributionsByOwnedResource_DistributionList struct {
 	IsTruncated any
-	Items any
-	Marker any
-	MaxItems any
-	NextMarker any
-	Quantity any
+	Items       any
+	Marker      any
+	MaxItems    any
+	NextMarker  any
+	Quantity    any
 }
 
 type DistributionsByOwnedResourceConfig struct {
-	Marker any
-	MaxItems any
+	Marker      any
+	MaxItems    any
 	ResourceArn any
 }
 
 type DistributionsByOwnedResourceAttrs struct {
 	// <p>The list of distribution IDs and the Amazon Web Services accounts that they belong to.</p>
 	DistributionList any
-	Marker any
-	MaxItems any
-	ResourceArn any
+	Marker           any
+	MaxItems         any
+	ResourceArn      any
 }
 
 var DistributionsByOwnedResource = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_distributions_by_owned_resource",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"Marker":      ubx.FieldSpec{WireName: "marker"},
+		"MaxItems":    ubx.FieldSpec{WireName: "max_items"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

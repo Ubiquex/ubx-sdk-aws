@@ -12,6 +12,5 @@ type SmssandboxAccountStatusAttrs struct {
 
 var SmssandboxAccountStatus = ubx.DataSourceBinding{
 	WireType: "aws_sns_smssandbox_account_status",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

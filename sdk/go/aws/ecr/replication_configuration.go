@@ -30,35 +30,35 @@ type ReplicationConfiguration_ReplicationConfiguration struct {
 }
 
 var ReplicationConfiguration_ReplicationConfiguration_Rules_DestinationsFields = ubx.FieldMap{
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RegistryId": ubx.FieldSpec{WireName: "registry_id"},
-	}
+	"Region":     ubx.FieldSpec{WireName: "region"},
+	"RegistryId": ubx.FieldSpec{WireName: "registry_id"},
+}
 
 var ReplicationConfiguration_ReplicationConfiguration_Rules_RepositoryFiltersFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"FilterType": ubx.FieldSpec{WireName: "filter_type"},
-	}
+	"Filter":     ubx.FieldSpec{WireName: "filter"},
+	"FilterType": ubx.FieldSpec{WireName: "filter_type"},
+}
 
 var ReplicationConfiguration_ReplicationConfiguration_RulesFields = ubx.FieldMap{
-		"Destinations": ubx.FieldSpec{
-			WireName: "destinations",
-			Kind: "list",
-			Fields: ReplicationConfiguration_ReplicationConfiguration_Rules_DestinationsFields,
-		},
-		"RepositoryFilters": ubx.FieldSpec{
-			WireName: "repository_filters",
-			Kind: "list",
-			Fields: ReplicationConfiguration_ReplicationConfiguration_Rules_RepositoryFiltersFields,
-		},
-	}
+	"Destinations": ubx.FieldSpec{
+		WireName: "destinations",
+		Kind:     "list",
+		Fields:   ReplicationConfiguration_ReplicationConfiguration_Rules_DestinationsFields,
+	},
+	"RepositoryFilters": ubx.FieldSpec{
+		WireName: "repository_filters",
+		Kind:     "list",
+		Fields:   ReplicationConfiguration_ReplicationConfiguration_Rules_RepositoryFiltersFields,
+	},
+}
 
 var ReplicationConfiguration_ReplicationConfigurationFields = ubx.FieldMap{
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: ReplicationConfiguration_ReplicationConfiguration_RulesFields,
-		},
-	}
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   ReplicationConfiguration_ReplicationConfiguration_RulesFields,
+	},
+}
 
 type ReplicationConfigurationConfig struct {
 	// The replication configuration for a registry.
@@ -77,8 +77,8 @@ var ReplicationConfiguration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ReplicationConfiguration": ubx.FieldSpec{
 			WireName: "replication_configuration",
-			Kind: "object",
-			Fields: ReplicationConfiguration_ReplicationConfigurationFields,
+			Kind:     "object",
+			Fields:   ReplicationConfiguration_ReplicationConfigurationFields,
 		},
 	},
 }

@@ -4,54 +4,54 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CapacityReservationTopology_CapacityReservations struct {
-	AvailabilityZone any
-	AvailabilityZoneId any
-	CapacityBlockId any
+	AvailabilityZone      any
+	AvailabilityZoneId    any
+	CapacityBlockId       any
 	CapacityReservationId any
-	GroupName any
-	InstanceType any
-	NetworkNodes any
-	State any
+	GroupName             any
+	InstanceType          any
+	NetworkNodes          any
+	State                 any
 }
 
 type CapacityReservationTopology_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var CapacityReservationTopology_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type CapacityReservationTopologyConfig struct {
 	CapacityReservationIds any
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                 any
+	Filters                any
+	MaxResults             any
+	NextToken              any
 }
 
 type CapacityReservationTopologyAttrs struct {
 	CapacityReservationIds any
-	CapacityReservations any
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	CapacityReservations   any
+	DryRun                 any
+	Filters                any
+	MaxResults             any
+	NextToken              any
 }
 
 var CapacityReservationTopology = ubx.DataSourceBinding{
 	WireType: "aws_ec2_capacity_reservation_topology",
 	Fields: ubx.FieldMap{
 		"CapacityReservationIds": ubx.FieldSpec{WireName: "capacity_reservation_ids"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":                 ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: CapacityReservationTopology_FiltersFields,
+			Kind:     "list",
+			Fields:   CapacityReservationTopology_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

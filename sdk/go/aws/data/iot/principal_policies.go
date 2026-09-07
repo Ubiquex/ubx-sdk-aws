@@ -4,32 +4,32 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PrincipalPolicies_Policies struct {
-	PolicyArn any
+	PolicyArn  any
 	PolicyName any
 }
 
 type PrincipalPoliciesConfig struct {
 	AscendingOrder any
-	Marker any
-	PageSize any
-	Principal any
+	Marker         any
+	PageSize       any
+	Principal      any
 }
 
 type PrincipalPoliciesAttrs struct {
 	AscendingOrder any
-	Marker any
-	NextMarker any
-	PageSize any
-	Policies any
-	Principal any
+	Marker         any
+	NextMarker     any
+	PageSize       any
+	Policies       any
+	Principal      any
 }
 
 var PrincipalPolicies = ubx.DataSourceBinding{
 	WireType: "aws_iot_principal_policies",
 	Fields: ubx.FieldMap{
 		"AscendingOrder": ubx.FieldSpec{WireName: "ascending_order"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
+		"Marker":         ubx.FieldSpec{WireName: "marker"},
+		"PageSize":       ubx.FieldSpec{WireName: "page_size"},
+		"Principal":      ubx.FieldSpec{WireName: "principal"},
 	},
 }

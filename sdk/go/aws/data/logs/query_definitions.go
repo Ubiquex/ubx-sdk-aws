@@ -5,43 +5,43 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QueryDefinitions_QueryDefinitions_Parameters struct {
 	DefaultValue any
-	Description any
-	Name any
+	Description  any
+	Name         any
 }
 
 type QueryDefinitions_QueryDefinitions struct {
-	LastModified any
-	LogGroupNames any
-	Name any
-	Parameters any
+	LastModified      any
+	LogGroupNames     any
+	Name              any
+	Parameters        any
 	QueryDefinitionId any
-	QueryLanguage any
-	QueryString any
+	QueryLanguage     any
+	QueryString       any
 }
 
 type QueryDefinitionsConfig struct {
 	MaxResults any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-	NextToken any
+	NextToken                 any
 	QueryDefinitionNamePrefix any
-	QueryLanguage any
+	QueryLanguage             any
 }
 
 type QueryDefinitionsAttrs struct {
 	MaxResults any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-	NextToken any
+	NextToken                 any
 	QueryDefinitionNamePrefix any
-	QueryDefinitions any
-	QueryLanguage any
+	QueryDefinitions          any
+	QueryLanguage             any
 }
 
 var QueryDefinitions = ubx.DataSourceBinding{
 	WireType: "aws_logs_query_definitions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                 ubx.FieldSpec{WireName: "next_token"},
 		"QueryDefinitionNamePrefix": ubx.FieldSpec{WireName: "query_definition_name_prefix"},
-		"QueryLanguage": ubx.FieldSpec{WireName: "query_language"},
+		"QueryLanguage":             ubx.FieldSpec{WireName: "query_language"},
 	},
 }

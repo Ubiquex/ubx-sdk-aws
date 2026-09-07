@@ -21,22 +21,22 @@ type UserPoolDomain_Routing struct {
 }
 
 var UserPoolDomain_CustomDomainConfigFields = ubx.FieldMap{
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"SecurityPolicy": ubx.FieldSpec{WireName: "security_policy"},
-	}
+	"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
+	"SecurityPolicy": ubx.FieldSpec{WireName: "security_policy"},
+}
 
 var UserPoolDomain_Routing_FailoverFields = ubx.FieldMap{
-		"PrimaryRoute53HealthCheckId": ubx.FieldSpec{WireName: "primary_route53_health_check_id"},
-		"SecondaryRegion": ubx.FieldSpec{WireName: "secondary_region"},
-	}
+	"PrimaryRoute53HealthCheckId": ubx.FieldSpec{WireName: "primary_route53_health_check_id"},
+	"SecondaryRegion":             ubx.FieldSpec{WireName: "secondary_region"},
+}
 
 var UserPoolDomain_RoutingFields = ubx.FieldMap{
-		"Failover": ubx.FieldSpec{
-			WireName: "failover",
-			Kind: "object",
-			Fields: UserPoolDomain_Routing_FailoverFields,
-		},
-	}
+	"Failover": ubx.FieldSpec{
+		WireName: "failover",
+		Kind:     "object",
+		Fields:   UserPoolDomain_Routing_FailoverFields,
+	},
+}
 
 type UserPoolDomainConfig struct {
 	// Specifies the configuration for a custom domain, including the ARN of the ACM certificate to use for HTTPS. (AI-inferred)
@@ -71,15 +71,15 @@ var UserPoolDomain = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CustomDomainConfig": ubx.FieldSpec{
 			WireName: "custom_domain_config",
-			Kind: "object",
-			Fields: UserPoolDomain_CustomDomainConfigFields,
+			Kind:     "object",
+			Fields:   UserPoolDomain_CustomDomainConfigFields,
 		},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"Domain":              ubx.FieldSpec{WireName: "domain"},
 		"ManagedLoginVersion": ubx.FieldSpec{WireName: "managed_login_version"},
 		"Routing": ubx.FieldSpec{
 			WireName: "routing",
-			Kind: "object",
-			Fields: UserPoolDomain_RoutingFields,
+			Kind:     "object",
+			Fields:   UserPoolDomain_RoutingFields,
 		},
 		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
 	},

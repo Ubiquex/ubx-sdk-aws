@@ -5,29 +5,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SshpublicKeys_SshpublicKeys struct {
 	SshpublicKeyId any
-	Status any
-	UploadDate any
-	UserName any
+	Status         any
+	UploadDate     any
+	UserName       any
 }
 
 type SshpublicKeysConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 	UserName any
 }
 
 type SshpublicKeysAttrs struct {
-	IsTruncated any
-	Marker any
-	MaxItems any
+	IsTruncated   any
+	Marker        any
+	MaxItems      any
 	SshpublicKeys any
-	UserName any
+	UserName      any
 }
 
 var SshpublicKeys = ubx.DataSourceBinding{
 	WireType: "aws_iam_sshpublic_keys",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 		"UserName": ubx.FieldSpec{WireName: "user_name"},
 	},

@@ -4,13 +4,13 @@ package directconnect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Tags_ResourceTags_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Tags_ResourceTags struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 type TagsConfig struct {

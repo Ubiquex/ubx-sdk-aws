@@ -4,12 +4,12 @@ package devops_guru
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DevopsGuruAnomalousLogGroups_AnomalousLogGroups_LogAnomalyShowcases_LogAnomalyClasses struct {
-	Explanation any
-	LogAnomalyToken any
-	LogAnomalyType any
-	LogEventId any
-	LogEventTimestamp any
-	LogStreamName any
+	Explanation                 any
+	LogAnomalyToken             any
+	LogAnomalyType              any
+	LogEventId                  any
+	LogEventTimestamp           any
+	LogStreamName               any
 	NumberOfLogLinesOccurrences any
 }
 
@@ -18,31 +18,31 @@ type DevopsGuruAnomalousLogGroups_AnomalousLogGroups_LogAnomalyShowcases struct 
 }
 
 type DevopsGuruAnomalousLogGroups_AnomalousLogGroups struct {
-	ImpactEndTime any
-	ImpactStartTime any
-	LogAnomalyShowcases any
-	LogGroupName any
+	ImpactEndTime           any
+	ImpactStartTime         any
+	LogAnomalyShowcases     any
+	LogGroupName            any
 	NumberOfLogLinesScanned any
 }
 
 type DevopsGuruAnomalousLogGroupsConfig struct {
-	InsightId any
+	InsightId  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DevopsGuruAnomalousLogGroupsAttrs struct {
 	AnomalousLogGroups any
-	InsightId any
-	MaxResults any
-	NextToken any
+	InsightId          any
+	MaxResults         any
+	NextToken          any
 }
 
 var DevopsGuruAnomalousLogGroups = ubx.DataSourceBinding{
 	WireType: "aws_devops_guru_anomalous_log_groups",
 	Fields: ubx.FieldMap{
-		"InsightId": ubx.FieldSpec{WireName: "insight_id"},
+		"InsightId":  ubx.FieldSpec{WireName: "insight_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

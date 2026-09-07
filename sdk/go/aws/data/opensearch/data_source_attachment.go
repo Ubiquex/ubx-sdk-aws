@@ -6,23 +6,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type DataSourceAttachmentConfig struct {
 	// <p>The Amazon Resource Name (ARN) of the domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/index.html">Identifiers for IAM Entities </a> in <i>Using Amazon Web Services Identity and Access Management</i> for more information. </p>
 	DataSourceArn any
-	Id any
+	Id            any
 }
 
 type DataSourceAttachmentAttrs struct {
 	// <p>The Amazon Resource Name (ARN) of the domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/index.html">Identifiers for IAM Entities </a> in <i>Using Amazon Web Services Identity and Access Management</i> for more information. </p>
-	Arn any
+	Arn          any
 	AttachmentId any
 	// <p>The Amazon Resource Name (ARN) of the domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/index.html">Identifiers for IAM Entities </a> in <i>Using Amazon Web Services Identity and Access Management</i> for more information. </p>
 	DataSourceArn any
-	Id any
-	Status any
+	Id            any
+	Status        any
 }
 
 var DataSourceAttachment = ubx.DataSourceBinding{
 	WireType: "aws_opensearch_data_source_attachment",
 	Fields: ubx.FieldMap{
 		"DataSourceArn": ubx.FieldSpec{WireName: "data_source_arn"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":            ubx.FieldSpec{WireName: "id"},
 	},
 }

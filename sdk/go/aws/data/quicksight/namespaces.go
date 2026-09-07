@@ -5,40 +5,40 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Namespaces_Namespaces_NamespaceError struct {
 	Message any
-	Type any
+	Type    any
 }
 
 type Namespaces_Namespaces struct {
-	Arn any
-	CapacityRegion any
-	CreationStatus any
+	Arn                             any
+	CapacityRegion                  any
+	CreationStatus                  any
 	IamIdentityCenterApplicationArn any
-	IamIdentityCenterInstanceArn any
-	IdentityStore any
-	Name any
-	NamespaceError any
+	IamIdentityCenterInstanceArn    any
+	IdentityStore                   any
+	Name                            any
+	NamespaceError                  any
 }
 
 type NamespacesConfig struct {
 	AwsAccountId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type NamespacesAttrs struct {
 	AwsAccountId any
-	MaxResults any
-	Namespaces any
-	NextToken any
-	RequestId any
-	Status any
+	MaxResults   any
+	Namespaces   any
+	NextToken    any
+	RequestId    any
+	Status       any
 }
 
 var Namespaces = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_namespaces",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

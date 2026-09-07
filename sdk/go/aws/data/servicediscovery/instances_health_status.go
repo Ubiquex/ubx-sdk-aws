@@ -4,26 +4,26 @@ package servicediscovery
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstancesHealthStatusConfig struct {
-	Instances any
+	Instances  any
 	MaxResults any
-	NextToken any
-	ServiceId any
+	NextToken  any
+	ServiceId  any
 }
 
 type InstancesHealthStatusAttrs struct {
-	Instances any
+	Instances  any
 	MaxResults any
-	NextToken any
-	ServiceId any
-	Status any
+	NextToken  any
+	ServiceId  any
+	Status     any
 }
 
 var InstancesHealthStatus = ubx.DataSourceBinding{
 	WireType: "aws_servicediscovery_instances_health_status",
 	Fields: ubx.FieldMap{
-		"Instances": ubx.FieldSpec{WireName: "instances"},
+		"Instances":  ubx.FieldSpec{WireName: "instances"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ServiceId": ubx.FieldSpec{WireName: "service_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"ServiceId":  ubx.FieldSpec{WireName: "service_id"},
 	},
 }

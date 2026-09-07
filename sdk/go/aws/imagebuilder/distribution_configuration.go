@@ -108,107 +108,107 @@ type DistributionConfiguration_Distributions struct {
 }
 
 var DistributionConfiguration_Distributions_AmiDistributionConfiguration_LaunchPermissionConfigurationFields = ubx.FieldMap{
-		"OrganizationArns": ubx.FieldSpec{WireName: "organization_arns"},
-		"OrganizationalUnitArns": ubx.FieldSpec{WireName: "organizational_unit_arns"},
-		"UserGroups": ubx.FieldSpec{WireName: "user_groups"},
-		"UserIds": ubx.FieldSpec{WireName: "user_ids"},
-	}
+	"OrganizationArns":       ubx.FieldSpec{WireName: "organization_arns"},
+	"OrganizationalUnitArns": ubx.FieldSpec{WireName: "organizational_unit_arns"},
+	"UserGroups":             ubx.FieldSpec{WireName: "user_groups"},
+	"UserIds":                ubx.FieldSpec{WireName: "user_ids"},
+}
 
 var DistributionConfiguration_Distributions_AmiDistributionConfigurationFields = ubx.FieldMap{
-		"AmiTags": ubx.FieldSpec{WireName: "ami_tags"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"LaunchPermissionConfiguration": ubx.FieldSpec{
-			WireName: "launch_permission_configuration",
-			Kind: "object",
-			Fields: DistributionConfiguration_Distributions_AmiDistributionConfiguration_LaunchPermissionConfigurationFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TargetAccountIds": ubx.FieldSpec{WireName: "target_account_ids"},
-	}
+	"AmiTags":     ubx.FieldSpec{WireName: "ami_tags"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"KmsKeyId":    ubx.FieldSpec{WireName: "kms_key_id"},
+	"LaunchPermissionConfiguration": ubx.FieldSpec{
+		WireName: "launch_permission_configuration",
+		Kind:     "object",
+		Fields:   DistributionConfiguration_Distributions_AmiDistributionConfiguration_LaunchPermissionConfigurationFields,
+	},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"TargetAccountIds": ubx.FieldSpec{WireName: "target_account_ids"},
+}
 
 var DistributionConfiguration_Distributions_ContainerDistributionConfiguration_TargetRepositoryFields = ubx.FieldMap{
-		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
+	"Service":        ubx.FieldSpec{WireName: "service"},
+}
 
 var DistributionConfiguration_Distributions_ContainerDistributionConfigurationFields = ubx.FieldMap{
-		"ContainerTags": ubx.FieldSpec{WireName: "container_tags"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"TargetRepository": ubx.FieldSpec{
-			WireName: "target_repository",
-			Kind: "object",
-			Fields: DistributionConfiguration_Distributions_ContainerDistributionConfiguration_TargetRepositoryFields,
-		},
-	}
+	"ContainerTags": ubx.FieldSpec{WireName: "container_tags"},
+	"Description":   ubx.FieldSpec{WireName: "description"},
+	"TargetRepository": ubx.FieldSpec{
+		WireName: "target_repository",
+		Kind:     "object",
+		Fields:   DistributionConfiguration_Distributions_ContainerDistributionConfiguration_TargetRepositoryFields,
+	},
+}
 
 var DistributionConfiguration_Distributions_FastLaunchConfigurations_LaunchTemplateFields = ubx.FieldMap{
-		"LaunchTemplateId": ubx.FieldSpec{WireName: "launch_template_id"},
-		"LaunchTemplateName": ubx.FieldSpec{WireName: "launch_template_name"},
-		"LaunchTemplateVersion": ubx.FieldSpec{WireName: "launch_template_version"},
-	}
+	"LaunchTemplateId":      ubx.FieldSpec{WireName: "launch_template_id"},
+	"LaunchTemplateName":    ubx.FieldSpec{WireName: "launch_template_name"},
+	"LaunchTemplateVersion": ubx.FieldSpec{WireName: "launch_template_version"},
+}
 
 var DistributionConfiguration_Distributions_FastLaunchConfigurations_SnapshotConfigurationFields = ubx.FieldMap{
-		"TargetResourceCount": ubx.FieldSpec{WireName: "target_resource_count"},
-	}
+	"TargetResourceCount": ubx.FieldSpec{WireName: "target_resource_count"},
+}
 
 var DistributionConfiguration_Distributions_FastLaunchConfigurationsFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"LaunchTemplate": ubx.FieldSpec{
-			WireName: "launch_template",
-			Kind: "object",
-			Fields: DistributionConfiguration_Distributions_FastLaunchConfigurations_LaunchTemplateFields,
-		},
-		"MaxParallelLaunches": ubx.FieldSpec{WireName: "max_parallel_launches"},
-		"SnapshotConfiguration": ubx.FieldSpec{
-			WireName: "snapshot_configuration",
-			Kind: "object",
-			Fields: DistributionConfiguration_Distributions_FastLaunchConfigurations_SnapshotConfigurationFields,
-		},
-	}
+	"AccountId": ubx.FieldSpec{WireName: "account_id"},
+	"Enabled":   ubx.FieldSpec{WireName: "enabled"},
+	"LaunchTemplate": ubx.FieldSpec{
+		WireName: "launch_template",
+		Kind:     "object",
+		Fields:   DistributionConfiguration_Distributions_FastLaunchConfigurations_LaunchTemplateFields,
+	},
+	"MaxParallelLaunches": ubx.FieldSpec{WireName: "max_parallel_launches"},
+	"SnapshotConfiguration": ubx.FieldSpec{
+		WireName: "snapshot_configuration",
+		Kind:     "object",
+		Fields:   DistributionConfiguration_Distributions_FastLaunchConfigurations_SnapshotConfigurationFields,
+	},
+}
 
 var DistributionConfiguration_Distributions_LaunchTemplateConfigurationsFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"LaunchTemplateId": ubx.FieldSpec{WireName: "launch_template_id"},
-		"SetDefaultVersion": ubx.FieldSpec{WireName: "set_default_version"},
-	}
+	"AccountId":         ubx.FieldSpec{WireName: "account_id"},
+	"LaunchTemplateId":  ubx.FieldSpec{WireName: "launch_template_id"},
+	"SetDefaultVersion": ubx.FieldSpec{WireName: "set_default_version"},
+}
 
 var DistributionConfiguration_Distributions_SsmParameterConfigurationsFields = ubx.FieldMap{
-		"AmiAccountId": ubx.FieldSpec{WireName: "ami_account_id"},
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
-	}
+	"AmiAccountId":  ubx.FieldSpec{WireName: "ami_account_id"},
+	"DataType":      ubx.FieldSpec{WireName: "data_type"},
+	"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
+}
 
 var DistributionConfiguration_DistributionsFields = ubx.FieldMap{
-		"AmiDistributionConfiguration": ubx.FieldSpec{
-			WireName: "ami_distribution_configuration",
-			Kind: "object",
-			Fields: DistributionConfiguration_Distributions_AmiDistributionConfigurationFields,
-		},
-		"ContainerDistributionConfiguration": ubx.FieldSpec{
-			WireName: "container_distribution_configuration",
-			Kind: "object",
-			Fields: DistributionConfiguration_Distributions_ContainerDistributionConfigurationFields,
-		},
-		"FastLaunchConfigurations": ubx.FieldSpec{
-			WireName: "fast_launch_configurations",
-			Kind: "list",
-			Fields: DistributionConfiguration_Distributions_FastLaunchConfigurationsFields,
-		},
-		"LaunchTemplateConfigurations": ubx.FieldSpec{
-			WireName: "launch_template_configurations",
-			Kind: "list",
-			Fields: DistributionConfiguration_Distributions_LaunchTemplateConfigurationsFields,
-		},
-		"LicenseConfigurationArns": ubx.FieldSpec{WireName: "license_configuration_arns"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SsmParameterConfigurations": ubx.FieldSpec{
-			WireName: "ssm_parameter_configurations",
-			Kind: "list",
-			Fields: DistributionConfiguration_Distributions_SsmParameterConfigurationsFields,
-		},
-	}
+	"AmiDistributionConfiguration": ubx.FieldSpec{
+		WireName: "ami_distribution_configuration",
+		Kind:     "object",
+		Fields:   DistributionConfiguration_Distributions_AmiDistributionConfigurationFields,
+	},
+	"ContainerDistributionConfiguration": ubx.FieldSpec{
+		WireName: "container_distribution_configuration",
+		Kind:     "object",
+		Fields:   DistributionConfiguration_Distributions_ContainerDistributionConfigurationFields,
+	},
+	"FastLaunchConfigurations": ubx.FieldSpec{
+		WireName: "fast_launch_configurations",
+		Kind:     "list",
+		Fields:   DistributionConfiguration_Distributions_FastLaunchConfigurationsFields,
+	},
+	"LaunchTemplateConfigurations": ubx.FieldSpec{
+		WireName: "launch_template_configurations",
+		Kind:     "list",
+		Fields:   DistributionConfiguration_Distributions_LaunchTemplateConfigurationsFields,
+	},
+	"LicenseConfigurationArns": ubx.FieldSpec{WireName: "license_configuration_arns"},
+	"Region":                   ubx.FieldSpec{WireName: "region"},
+	"SsmParameterConfigurations": ubx.FieldSpec{
+		WireName: "ssm_parameter_configurations",
+		Kind:     "list",
+		Fields:   DistributionConfiguration_Distributions_SsmParameterConfigurationsFields,
+	},
+}
 
 type DistributionConfigurationConfig struct {
 	// The description of the distribution configuration.
@@ -240,8 +240,8 @@ var DistributionConfiguration = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Distributions": ubx.FieldSpec{
 			WireName: "distributions",
-			Kind: "list",
-			Fields: DistributionConfiguration_DistributionsFields,
+			Kind:     "list",
+			Fields:   DistributionConfiguration_DistributionsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},

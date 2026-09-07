@@ -24,8 +24,8 @@ type UserPoolUserToGroupAttachmentAttrs struct {
 var UserPoolUserToGroupAttachment = ubx.ResourceBinding{
 	WireType: "aws_cognito_user_pool_user_to_group_attachment",
 	Fields: ubx.FieldMap{
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
+		"GroupName":  ubx.FieldSpec{WireName: "group_name"},
 		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
-		"Username": ubx.FieldSpec{WireName: "username"},
+		"Username":   ubx.FieldSpec{WireName: "username"},
 	},
 }

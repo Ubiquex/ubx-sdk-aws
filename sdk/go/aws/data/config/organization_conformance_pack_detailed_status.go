@@ -5,38 +5,38 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationConformancePackDetailedStatus_Filters struct {
 	AccountId any
-	Status any
+	Status    any
 }
 
 type OrganizationConformancePackDetailedStatus_OrganizationConformancePackDetailedStatuses struct {
-	AccountId any
+	AccountId           any
 	ConformancePackName any
-	ErrorCode any
-	ErrorMessage any
-	LastUpdateTime any
-	Status any
+	ErrorCode           any
+	ErrorMessage        any
+	LastUpdateTime      any
+	Status              any
 }
 
 var OrganizationConformancePackDetailedStatus_FiltersFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"AccountId": ubx.FieldSpec{WireName: "account_id"},
+	"Status":    ubx.FieldSpec{WireName: "status"},
+}
 
 type OrganizationConformancePackDetailedStatusConfig struct {
 	// <p>Status filter object to filter results based on specific member account ID or status type for an organization conformance pack.</p>
-	Filters any
-	Limit any
-	NextToken any
+	Filters                         any
+	Limit                           any
+	NextToken                       any
 	OrganizationConformancePackName any
 }
 
 type OrganizationConformancePackDetailedStatusAttrs struct {
 	// <p>Status filter object to filter results based on specific member account ID or status type for an organization conformance pack.</p>
-	Filters any
-	Limit any
-	NextToken any
+	Filters                                     any
+	Limit                                       any
+	NextToken                                   any
 	OrganizationConformancePackDetailedStatuses any
-	OrganizationConformancePackName any
+	OrganizationConformancePackName             any
 }
 
 var OrganizationConformancePackDetailedStatus = ubx.DataSourceBinding{
@@ -44,11 +44,11 @@ var OrganizationConformancePackDetailedStatus = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: OrganizationConformancePackDetailedStatus_FiltersFields,
+			Kind:     "object",
+			Fields:   OrganizationConformancePackDetailedStatus_FiltersFields,
 		},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":                           ubx.FieldSpec{WireName: "limit"},
+		"NextToken":                       ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationConformancePackName": ubx.FieldSpec{WireName: "organization_conformance_pack_name"},
 	},
 }

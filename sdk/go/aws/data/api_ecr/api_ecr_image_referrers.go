@@ -5,16 +5,16 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiEcrImageReferrers_Filter struct {
 	ArtifactStatus any
-	ArtifactTypes any
+	ArtifactTypes  any
 }
 
 type ApiEcrImageReferrers_Referrers struct {
-	Annotations any
+	Annotations    any
 	ArtifactStatus any
-	ArtifactType any
-	Digest any
-	MediaType any
-	Size any
+	ArtifactType   any
+	Digest         any
+	MediaType      any
+	Size           any
 }
 
 type ApiEcrImageReferrers_SubjectId struct {
@@ -22,20 +22,20 @@ type ApiEcrImageReferrers_SubjectId struct {
 }
 
 var ApiEcrImageReferrers_FilterFields = ubx.FieldMap{
-		"ArtifactStatus": ubx.FieldSpec{WireName: "artifact_status"},
-		"ArtifactTypes": ubx.FieldSpec{WireName: "artifact_types"},
-	}
+	"ArtifactStatus": ubx.FieldSpec{WireName: "artifact_status"},
+	"ArtifactTypes":  ubx.FieldSpec{WireName: "artifact_types"},
+}
 
 var ApiEcrImageReferrers_SubjectIdFields = ubx.FieldMap{
-		"ImageDigest": ubx.FieldSpec{WireName: "image_digest"},
-	}
+	"ImageDigest": ubx.FieldSpec{WireName: "image_digest"},
+}
 
 type ApiEcrImageReferrersConfig struct {
 	// <p>An object representing a filter on a <a>ListImageReferrers</a> operation.</p>
-	Filter any
-	MaxResults any
-	NextToken any
-	RegistryId any
+	Filter         any
+	MaxResults     any
+	NextToken      any
+	RegistryId     any
 	RepositoryName any
 	// <p>An object that identifies an image subject.</p>
 	SubjectId any
@@ -43,11 +43,11 @@ type ApiEcrImageReferrersConfig struct {
 
 type ApiEcrImageReferrersAttrs struct {
 	// <p>An object representing a filter on a <a>ListImageReferrers</a> operation.</p>
-	Filter any
-	MaxResults any
-	NextToken any
-	Referrers any
-	RegistryId any
+	Filter         any
+	MaxResults     any
+	NextToken      any
+	Referrers      any
+	RegistryId     any
 	RepositoryName any
 	// <p>An object that identifies an image subject.</p>
 	SubjectId any
@@ -58,17 +58,17 @@ var ApiEcrImageReferrers = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: ApiEcrImageReferrers_FilterFields,
+			Kind:     "object",
+			Fields:   ApiEcrImageReferrers_FilterFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RegistryId": ubx.FieldSpec{WireName: "registry_id"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"RegistryId":     ubx.FieldSpec{WireName: "registry_id"},
 		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
 		"SubjectId": ubx.FieldSpec{
 			WireName: "subject_id",
-			Kind: "object",
-			Fields: ApiEcrImageReferrers_SubjectIdFields,
+			Kind:     "object",
+			Fields:   ApiEcrImageReferrers_SubjectIdFields,
 		},
 	},
 }

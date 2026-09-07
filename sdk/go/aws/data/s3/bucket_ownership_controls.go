@@ -12,12 +12,12 @@ type BucketOwnershipControls_OwnershipControls struct {
 }
 
 type BucketOwnershipControlsConfig struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 }
 
 type BucketOwnershipControlsAttrs struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 	// <p>The container element for a bucket's ownership controls.</p>
 	OwnershipControls any
@@ -26,7 +26,7 @@ type BucketOwnershipControlsAttrs struct {
 var BucketOwnershipControls = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_ownership_controls",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
 	},
 }

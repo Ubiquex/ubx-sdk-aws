@@ -16,13 +16,13 @@ type ContactFlowModule_Tags struct {
 }
 
 var ContactFlowModule_ExternalInvocationConfigurationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var ContactFlowModule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ContactFlowModuleConfig struct {
 	// The content of the contact flow module in JSON format.
@@ -69,21 +69,21 @@ type ContactFlowModuleAttrs struct {
 var ContactFlowModule = ubx.ResourceBinding{
 	WireType: "aws_connect_contact_flow_module",
 	Fields: ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
+		"Content":     ubx.FieldSpec{WireName: "content"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExternalInvocationConfiguration": ubx.FieldSpec{
 			WireName: "external_invocation_configuration",
-			Kind: "object",
-			Fields: ContactFlowModule_ExternalInvocationConfigurationFields,
+			Kind:     "object",
+			Fields:   ContactFlowModule_ExternalInvocationConfigurationFields,
 		},
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Settings": ubx.FieldSpec{WireName: "settings"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Settings":    ubx.FieldSpec{WireName: "settings"},
+		"State":       ubx.FieldSpec{WireName: "state"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ContactFlowModule_TagsFields,
+			Kind:     "list",
+			Fields:   ContactFlowModule_TagsFields,
 		},
 	},
 }

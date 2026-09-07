@@ -78,52 +78,52 @@ type Broker_Users struct {
 }
 
 var Broker_ConfigurationFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-	}
+	"Id":       ubx.FieldSpec{WireName: "id"},
+	"Revision": ubx.FieldSpec{WireName: "revision"},
+}
 
 var Broker_EncryptionOptionsFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"UseAwsOwnedKey": ubx.FieldSpec{WireName: "use_aws_owned_key"},
-	}
+	"KmsKeyId":       ubx.FieldSpec{WireName: "kms_key_id"},
+	"UseAwsOwnedKey": ubx.FieldSpec{WireName: "use_aws_owned_key"},
+}
 
 var Broker_LdapServerMetadataFields = ubx.FieldMap{
-		"Hosts": ubx.FieldSpec{WireName: "hosts"},
-		"RoleBase": ubx.FieldSpec{WireName: "role_base"},
-		"RoleName": ubx.FieldSpec{WireName: "role_name"},
-		"RoleSearchMatching": ubx.FieldSpec{WireName: "role_search_matching"},
-		"RoleSearchSubtree": ubx.FieldSpec{WireName: "role_search_subtree"},
-		"ServiceAccountPassword": ubx.FieldSpec{WireName: "service_account_password"},
-		"ServiceAccountUsername": ubx.FieldSpec{WireName: "service_account_username"},
-		"UserBase": ubx.FieldSpec{WireName: "user_base"},
-		"UserRoleName": ubx.FieldSpec{WireName: "user_role_name"},
-		"UserSearchMatching": ubx.FieldSpec{WireName: "user_search_matching"},
-		"UserSearchSubtree": ubx.FieldSpec{WireName: "user_search_subtree"},
-	}
+	"Hosts":                  ubx.FieldSpec{WireName: "hosts"},
+	"RoleBase":               ubx.FieldSpec{WireName: "role_base"},
+	"RoleName":               ubx.FieldSpec{WireName: "role_name"},
+	"RoleSearchMatching":     ubx.FieldSpec{WireName: "role_search_matching"},
+	"RoleSearchSubtree":      ubx.FieldSpec{WireName: "role_search_subtree"},
+	"ServiceAccountPassword": ubx.FieldSpec{WireName: "service_account_password"},
+	"ServiceAccountUsername": ubx.FieldSpec{WireName: "service_account_username"},
+	"UserBase":               ubx.FieldSpec{WireName: "user_base"},
+	"UserRoleName":           ubx.FieldSpec{WireName: "user_role_name"},
+	"UserSearchMatching":     ubx.FieldSpec{WireName: "user_search_matching"},
+	"UserSearchSubtree":      ubx.FieldSpec{WireName: "user_search_subtree"},
+}
 
 var Broker_LogsFields = ubx.FieldMap{
-		"Audit": ubx.FieldSpec{WireName: "audit"},
-		"General": ubx.FieldSpec{WireName: "general"},
-	}
+	"Audit":   ubx.FieldSpec{WireName: "audit"},
+	"General": ubx.FieldSpec{WireName: "general"},
+}
 
 var Broker_MaintenanceWindowStartTimeFields = ubx.FieldMap{
-		"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
-		"TimeOfDay": ubx.FieldSpec{WireName: "time_of_day"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
+	"TimeOfDay": ubx.FieldSpec{WireName: "time_of_day"},
+	"TimeZone":  ubx.FieldSpec{WireName: "time_zone"},
+}
 
 var Broker_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Broker_UsersFields = ubx.FieldMap{
-		"ConsoleAccess": ubx.FieldSpec{WireName: "console_access"},
-		"Groups": ubx.FieldSpec{WireName: "groups"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"ReplicationUser": ubx.FieldSpec{WireName: "replication_user"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"ConsoleAccess":   ubx.FieldSpec{WireName: "console_access"},
+	"Groups":          ubx.FieldSpec{WireName: "groups"},
+	"Password":        ubx.FieldSpec{WireName: "password"},
+	"ReplicationUser": ubx.FieldSpec{WireName: "replication_user"},
+	"Username":        ubx.FieldSpec{WireName: "username"},
+}
 
 type BrokerConfig struct {
 	// Defines the authentication strategy for the broker, where SIMPLE uses built-in username/password authentication and LDAP integrates with an external LDAP server for ActiveMQ brokers. (AI-inferred)
@@ -246,55 +246,55 @@ type BrokerAttrs struct {
 var Broker = ubx.ResourceBinding{
 	WireType: "aws_amazon_mq_broker",
 	Fields: ubx.FieldMap{
-		"AuthenticationStrategy": ubx.FieldSpec{WireName: "authentication_strategy"},
+		"AuthenticationStrategy":  ubx.FieldSpec{WireName: "authentication_strategy"},
 		"AutoMinorVersionUpgrade": ubx.FieldSpec{WireName: "auto_minor_version_upgrade"},
-		"BrokerName": ubx.FieldSpec{WireName: "broker_name"},
+		"BrokerName":              ubx.FieldSpec{WireName: "broker_name"},
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: Broker_ConfigurationFields,
+			Kind:     "object",
+			Fields:   Broker_ConfigurationFields,
 		},
-		"DataReplicationMode": ubx.FieldSpec{WireName: "data_replication_mode"},
+		"DataReplicationMode":             ubx.FieldSpec{WireName: "data_replication_mode"},
 		"DataReplicationPrimaryBrokerArn": ubx.FieldSpec{WireName: "data_replication_primary_broker_arn"},
-		"DeploymentMode": ubx.FieldSpec{WireName: "deployment_mode"},
+		"DeploymentMode":                  ubx.FieldSpec{WireName: "deployment_mode"},
 		"EncryptionOptions": ubx.FieldSpec{
 			WireName: "encryption_options",
-			Kind: "object",
-			Fields: Broker_EncryptionOptionsFields,
+			Kind:     "object",
+			Fields:   Broker_EncryptionOptionsFields,
 		},
-		"EngineType": ubx.FieldSpec{WireName: "engine_type"},
-		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
+		"EngineType":       ubx.FieldSpec{WireName: "engine_type"},
+		"EngineVersion":    ubx.FieldSpec{WireName: "engine_version"},
 		"HostInstanceType": ubx.FieldSpec{WireName: "host_instance_type"},
 		"LdapServerMetadata": ubx.FieldSpec{
 			WireName: "ldap_server_metadata",
-			Kind: "object",
-			Fields: Broker_LdapServerMetadataFields,
+			Kind:     "object",
+			Fields:   Broker_LdapServerMetadataFields,
 		},
 		"Logs": ubx.FieldSpec{
 			WireName: "logs",
-			Kind: "object",
-			Fields: Broker_LogsFields,
+			Kind:     "object",
+			Fields:   Broker_LogsFields,
 		},
 		"MaintenanceWindowStartTime": ubx.FieldSpec{
 			WireName: "maintenance_window_start_time",
-			Kind: "object",
-			Fields: Broker_MaintenanceWindowStartTimeFields,
+			Kind:     "object",
+			Fields:   Broker_MaintenanceWindowStartTimeFields,
 		},
 		"PubliclyAccessible": ubx.FieldSpec{WireName: "publicly_accessible"},
-		"ResourceShareArns": ubx.FieldSpec{WireName: "resource_share_arns"},
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"StorageSize": ubx.FieldSpec{WireName: "storage_size"},
-		"StorageType": ubx.FieldSpec{WireName: "storage_type"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"ResourceShareArns":  ubx.FieldSpec{WireName: "resource_share_arns"},
+		"SecurityGroups":     ubx.FieldSpec{WireName: "security_groups"},
+		"StorageSize":        ubx.FieldSpec{WireName: "storage_size"},
+		"StorageType":        ubx.FieldSpec{WireName: "storage_type"},
+		"SubnetIds":          ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Broker_TagsFields,
+			Kind:     "list",
+			Fields:   Broker_TagsFields,
 		},
 		"Users": ubx.FieldSpec{
 			WireName: "users",
-			Kind: "list",
-			Fields: Broker_UsersFields,
+			Kind:     "list",
+			Fields:   Broker_UsersFields,
 		},
 	},
 }

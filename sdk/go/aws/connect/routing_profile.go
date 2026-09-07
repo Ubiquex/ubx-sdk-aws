@@ -46,46 +46,46 @@ type RoutingProfile_Tags struct {
 }
 
 var RoutingProfile_ManualAssignmentQueueConfigs_QueueReferenceFields = ubx.FieldMap{
-		"Channel": ubx.FieldSpec{WireName: "channel"},
-		"QueueArn": ubx.FieldSpec{WireName: "queue_arn"},
-	}
+	"Channel":  ubx.FieldSpec{WireName: "channel"},
+	"QueueArn": ubx.FieldSpec{WireName: "queue_arn"},
+}
 
 var RoutingProfile_ManualAssignmentQueueConfigsFields = ubx.FieldMap{
-		"QueueReference": ubx.FieldSpec{
-			WireName: "queue_reference",
-			Kind: "object",
-			Fields: RoutingProfile_ManualAssignmentQueueConfigs_QueueReferenceFields,
-		},
-	}
+	"QueueReference": ubx.FieldSpec{
+		WireName: "queue_reference",
+		Kind:     "object",
+		Fields:   RoutingProfile_ManualAssignmentQueueConfigs_QueueReferenceFields,
+	},
+}
 
 var RoutingProfile_MediaConcurrencies_CrossChannelBehaviorFields = ubx.FieldMap{
-		"BehaviorType": ubx.FieldSpec{WireName: "behavior_type"},
-	}
+	"BehaviorType": ubx.FieldSpec{WireName: "behavior_type"},
+}
 
 var RoutingProfile_MediaConcurrenciesFields = ubx.FieldMap{
-		"Channel": ubx.FieldSpec{WireName: "channel"},
-		"Concurrency": ubx.FieldSpec{WireName: "concurrency"},
-		"CrossChannelBehavior": ubx.FieldSpec{
-			WireName: "cross_channel_behavior",
-			Kind: "object",
-			Fields: RoutingProfile_MediaConcurrencies_CrossChannelBehaviorFields,
-		},
-	}
+	"Channel":     ubx.FieldSpec{WireName: "channel"},
+	"Concurrency": ubx.FieldSpec{WireName: "concurrency"},
+	"CrossChannelBehavior": ubx.FieldSpec{
+		WireName: "cross_channel_behavior",
+		Kind:     "object",
+		Fields:   RoutingProfile_MediaConcurrencies_CrossChannelBehaviorFields,
+	},
+}
 
 var RoutingProfile_QueueConfigsFields = ubx.FieldMap{
-		"Delay": ubx.FieldSpec{WireName: "delay"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"QueueReference": ubx.FieldSpec{
-			WireName: "queue_reference",
-			Kind: "object",
-			Fields: RoutingProfile_ManualAssignmentQueueConfigs_QueueReferenceFields,
-		},
-	}
+	"Delay":    ubx.FieldSpec{WireName: "delay"},
+	"Priority": ubx.FieldSpec{WireName: "priority"},
+	"QueueReference": ubx.FieldSpec{
+		WireName: "queue_reference",
+		Kind:     "object",
+		Fields:   RoutingProfile_ManualAssignmentQueueConfigs_QueueReferenceFields,
+	},
+}
 
 var RoutingProfile_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RoutingProfileConfig struct {
 	// Whether agents with this routing profile will have their routing order calculated based on longest idle time or time since their last inbound contact.
@@ -134,30 +134,30 @@ type RoutingProfileAttrs struct {
 var RoutingProfile = ubx.ResourceBinding{
 	WireType: "aws_connect_routing_profile",
 	Fields: ubx.FieldMap{
-		"AgentAvailabilityTimer": ubx.FieldSpec{WireName: "agent_availability_timer"},
+		"AgentAvailabilityTimer":  ubx.FieldSpec{WireName: "agent_availability_timer"},
 		"DefaultOutboundQueueArn": ubx.FieldSpec{WireName: "default_outbound_queue_arn"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
+		"InstanceArn":             ubx.FieldSpec{WireName: "instance_arn"},
 		"ManualAssignmentQueueConfigs": ubx.FieldSpec{
 			WireName: "manual_assignment_queue_configs",
-			Kind: "list",
-			Fields: RoutingProfile_ManualAssignmentQueueConfigsFields,
+			Kind:     "list",
+			Fields:   RoutingProfile_ManualAssignmentQueueConfigsFields,
 		},
 		"MediaConcurrencies": ubx.FieldSpec{
 			WireName: "media_concurrencies",
-			Kind: "list",
-			Fields: RoutingProfile_MediaConcurrenciesFields,
+			Kind:     "list",
+			Fields:   RoutingProfile_MediaConcurrenciesFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"QueueConfigs": ubx.FieldSpec{
 			WireName: "queue_configs",
-			Kind: "list",
-			Fields: RoutingProfile_QueueConfigsFields,
+			Kind:     "list",
+			Fields:   RoutingProfile_QueueConfigsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RoutingProfile_TagsFields,
+			Kind:     "list",
+			Fields:   RoutingProfile_TagsFields,
 		},
 	},
 }

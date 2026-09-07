@@ -5,70 +5,70 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbclusterAutomatedBackups_DbclusterAutomatedBackups_RestoreWindow struct {
 	EarliestTime any
-	LatestTime any
+	LatestTime   any
 }
 
 type DbclusterAutomatedBackups_DbclusterAutomatedBackups_TagList struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type DbclusterAutomatedBackups_DbclusterAutomatedBackups struct {
-	AllocatedStorage any
-	AvailabilityZones any
-	AwsBackupRecoveryPointArn any
-	BackupRetentionPeriod any
-	ClusterCreateTime any
-	DbClusterResourceId any
-	DbclusterArn any
-	DbclusterAutomatedBackupsArn any
-	DbclusterIdentifier any
-	Engine any
-	EngineMode any
-	EngineVersion any
+	AllocatedStorage                 any
+	AvailabilityZones                any
+	AwsBackupRecoveryPointArn        any
+	BackupRetentionPeriod            any
+	ClusterCreateTime                any
+	DbClusterResourceId              any
+	DbclusterArn                     any
+	DbclusterAutomatedBackupsArn     any
+	DbclusterIdentifier              any
+	Engine                           any
+	EngineMode                       any
+	EngineVersion                    any
 	IamdatabaseAuthenticationEnabled any
-	Iops any
-	KmsKeyId any
-	LicenseModel any
-	MasterUsername any
-	Port any
-	PreferredBackupWindow any
-	Region any
-	RestoreWindow any
-	Status any
-	StorageEncrypted any
-	StorageEncryptionType any
-	StorageThroughput any
-	StorageType any
-	TagList any
-	VpcId any
+	Iops                             any
+	KmsKeyId                         any
+	LicenseModel                     any
+	MasterUsername                   any
+	Port                             any
+	PreferredBackupWindow            any
+	Region                           any
+	RestoreWindow                    any
+	Status                           any
+	StorageEncrypted                 any
+	StorageEncryptionType            any
+	StorageThroughput                any
+	StorageType                      any
+	TagList                          any
+	VpcId                            any
 }
 
 type DbclusterAutomatedBackups_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var DbclusterAutomatedBackups_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type DbclusterAutomatedBackupsConfig struct {
 	DbClusterResourceId any
 	DbclusterIdentifier any
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters             any
+	Marker              any
+	MaxRecords          any
 }
 
 type DbclusterAutomatedBackupsAttrs struct {
-	DbClusterResourceId any
+	DbClusterResourceId       any
 	DbclusterAutomatedBackups any
-	DbclusterIdentifier any
-	Filters any
-	Marker any
-	MaxRecords any
+	DbclusterIdentifier       any
+	Filters                   any
+	Marker                    any
+	MaxRecords                any
 }
 
 var DbclusterAutomatedBackups = ubx.DataSourceBinding{
@@ -78,10 +78,10 @@ var DbclusterAutomatedBackups = ubx.DataSourceBinding{
 		"DbclusterIdentifier": ubx.FieldSpec{WireName: "dbcluster_identifier"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: DbclusterAutomatedBackups_FiltersFields,
+			Kind:     "list",
+			Fields:   DbclusterAutomatedBackups_FiltersFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
 	},
 }

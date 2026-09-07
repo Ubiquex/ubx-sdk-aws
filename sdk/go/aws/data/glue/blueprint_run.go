@@ -4,34 +4,34 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BlueprintRun_BlueprintRun struct {
-	BlueprintName any
-	CompletedOn any
-	ErrorMessage any
-	Parameters any
-	RoleArn any
+	BlueprintName        any
+	CompletedOn          any
+	ErrorMessage         any
+	Parameters           any
+	RoleArn              any
 	RollbackErrorMessage any
-	RunId any
-	StartedOn any
-	State any
-	WorkflowName any
+	RunId                any
+	StartedOn            any
+	State                any
+	WorkflowName         any
 }
 
 type BlueprintRunConfig struct {
 	BlueprintName any
-	RunId any
+	RunId         any
 }
 
 type BlueprintRunAttrs struct {
 	BlueprintName any
 	// <p>The details of a blueprint run.</p>
 	BlueprintRun any
-	RunId any
+	RunId        any
 }
 
 var BlueprintRun = ubx.DataSourceBinding{
 	WireType: "aws_glue_blueprint_run",
 	Fields: ubx.FieldMap{
 		"BlueprintName": ubx.FieldSpec{WireName: "blueprint_name"},
-		"RunId": ubx.FieldSpec{WireName: "run_id"},
+		"RunId":         ubx.FieldSpec{WireName: "run_id"},
 	},
 }

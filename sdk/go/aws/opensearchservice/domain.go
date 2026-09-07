@@ -101,7 +101,7 @@ type Domain_ClusterConfig_NodeOptions_NodeConfig struct {
 	Count any
 	// This boolean determines whether the specified node configuration (for example, dedicated coordinator nodes) is enabled for the OpenSearch Service domain cluster. (AI-inferred)
 	Enabled any
-	Type any
+	Type    any
 }
 
 type Domain_ClusterConfig_NodeOptions struct {
@@ -275,148 +275,148 @@ type Domain_Vpcoptions struct {
 }
 
 var Domain_Aimloptions_S3VectorsEngineFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Domain_AimloptionsFields = ubx.FieldMap{
-		"S3VectorsEngine": ubx.FieldSpec{
-			WireName: "s3_vectors_engine",
-			Kind: "object",
-			Fields: Domain_Aimloptions_S3VectorsEngineFields,
-		},
-		"ServerlessVectorAcceleration": ubx.FieldSpec{
-			WireName: "serverless_vector_acceleration",
-			Kind: "object",
-			Fields: Domain_Aimloptions_S3VectorsEngineFields,
-		},
-	}
+	"S3VectorsEngine": ubx.FieldSpec{
+		WireName: "s3_vectors_engine",
+		Kind:     "object",
+		Fields:   Domain_Aimloptions_S3VectorsEngineFields,
+	},
+	"ServerlessVectorAcceleration": ubx.FieldSpec{
+		WireName: "serverless_vector_acceleration",
+		Kind:     "object",
+		Fields:   Domain_Aimloptions_S3VectorsEngineFields,
+	},
+}
 
 var Domain_AutomatedSnapshotPauseOptionsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"Enabled":   ubx.FieldSpec{WireName: "enabled"},
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var Domain_ClusterConfig_NodeOptions_NodeConfigFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Count":   ubx.FieldSpec{WireName: "count"},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 var Domain_ClusterConfig_NodeOptionsFields = ubx.FieldMap{
-		"NodeConfig": ubx.FieldSpec{
-			WireName: "node_config",
-			Kind: "object",
-			Fields: Domain_ClusterConfig_NodeOptions_NodeConfigFields,
-		},
-		"NodeType": ubx.FieldSpec{WireName: "node_type"},
-	}
+	"NodeConfig": ubx.FieldSpec{
+		WireName: "node_config",
+		Kind:     "object",
+		Fields:   Domain_ClusterConfig_NodeOptions_NodeConfigFields,
+	},
+	"NodeType": ubx.FieldSpec{WireName: "node_type"},
+}
 
 var Domain_ClusterConfig_ZoneAwarenessConfigFields = ubx.FieldMap{
-		"AvailabilityZoneCount": ubx.FieldSpec{WireName: "availability_zone_count"},
-	}
+	"AvailabilityZoneCount": ubx.FieldSpec{WireName: "availability_zone_count"},
+}
 
 var Domain_ClusterConfigFields = ubx.FieldMap{
-		"ColdStorageOptions": ubx.FieldSpec{
-			WireName: "cold_storage_options",
-			Kind: "object",
-			Fields: Domain_Aimloptions_S3VectorsEngineFields,
-		},
-		"DedicatedMasterCount": ubx.FieldSpec{WireName: "dedicated_master_count"},
-		"DedicatedMasterEnabled": ubx.FieldSpec{WireName: "dedicated_master_enabled"},
-		"DedicatedMasterType": ubx.FieldSpec{WireName: "dedicated_master_type"},
-		"InstanceCount": ubx.FieldSpec{WireName: "instance_count"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"MultiAzwithStandbyEnabled": ubx.FieldSpec{WireName: "multi_azwith_standby_enabled"},
-		"NodeOptions": ubx.FieldSpec{
-			WireName: "node_options",
-			Kind: "list",
-			Fields: Domain_ClusterConfig_NodeOptionsFields,
-		},
-		"WarmCount": ubx.FieldSpec{WireName: "warm_count"},
-		"WarmEnabled": ubx.FieldSpec{WireName: "warm_enabled"},
-		"WarmType": ubx.FieldSpec{WireName: "warm_type"},
-		"ZoneAwarenessConfig": ubx.FieldSpec{
-			WireName: "zone_awareness_config",
-			Kind: "object",
-			Fields: Domain_ClusterConfig_ZoneAwarenessConfigFields,
-		},
-		"ZoneAwarenessEnabled": ubx.FieldSpec{WireName: "zone_awareness_enabled"},
-	}
+	"ColdStorageOptions": ubx.FieldSpec{
+		WireName: "cold_storage_options",
+		Kind:     "object",
+		Fields:   Domain_Aimloptions_S3VectorsEngineFields,
+	},
+	"DedicatedMasterCount":      ubx.FieldSpec{WireName: "dedicated_master_count"},
+	"DedicatedMasterEnabled":    ubx.FieldSpec{WireName: "dedicated_master_enabled"},
+	"DedicatedMasterType":       ubx.FieldSpec{WireName: "dedicated_master_type"},
+	"InstanceCount":             ubx.FieldSpec{WireName: "instance_count"},
+	"InstanceType":              ubx.FieldSpec{WireName: "instance_type"},
+	"MultiAzwithStandbyEnabled": ubx.FieldSpec{WireName: "multi_azwith_standby_enabled"},
+	"NodeOptions": ubx.FieldSpec{
+		WireName: "node_options",
+		Kind:     "list",
+		Fields:   Domain_ClusterConfig_NodeOptionsFields,
+	},
+	"WarmCount":   ubx.FieldSpec{WireName: "warm_count"},
+	"WarmEnabled": ubx.FieldSpec{WireName: "warm_enabled"},
+	"WarmType":    ubx.FieldSpec{WireName: "warm_type"},
+	"ZoneAwarenessConfig": ubx.FieldSpec{
+		WireName: "zone_awareness_config",
+		Kind:     "object",
+		Fields:   Domain_ClusterConfig_ZoneAwarenessConfigFields,
+	},
+	"ZoneAwarenessEnabled": ubx.FieldSpec{WireName: "zone_awareness_enabled"},
+}
 
 var Domain_CognitoOptionsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"IdentityPoolId": ubx.FieldSpec{WireName: "identity_pool_id"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
-	}
+	"Enabled":        ubx.FieldSpec{WireName: "enabled"},
+	"IdentityPoolId": ubx.FieldSpec{WireName: "identity_pool_id"},
+	"RoleArn":        ubx.FieldSpec{WireName: "role_arn"},
+	"UserPoolId":     ubx.FieldSpec{WireName: "user_pool_id"},
+}
 
 var Domain_DeploymentStrategyOptionsFields = ubx.FieldMap{
-		"DeploymentStrategy": ubx.FieldSpec{WireName: "deployment_strategy"},
-	}
+	"DeploymentStrategy": ubx.FieldSpec{WireName: "deployment_strategy"},
+}
 
 var Domain_DomainEndpointOptionsFields = ubx.FieldMap{
-		"CustomEndpoint": ubx.FieldSpec{WireName: "custom_endpoint"},
-		"CustomEndpointCertificateArn": ubx.FieldSpec{WireName: "custom_endpoint_certificate_arn"},
-		"CustomEndpointEnabled": ubx.FieldSpec{WireName: "custom_endpoint_enabled"},
-		"EnforceHttps": ubx.FieldSpec{WireName: "enforce_https"},
-		"TlssecurityPolicy": ubx.FieldSpec{WireName: "tlssecurity_policy"},
-	}
+	"CustomEndpoint":               ubx.FieldSpec{WireName: "custom_endpoint"},
+	"CustomEndpointCertificateArn": ubx.FieldSpec{WireName: "custom_endpoint_certificate_arn"},
+	"CustomEndpointEnabled":        ubx.FieldSpec{WireName: "custom_endpoint_enabled"},
+	"EnforceHttps":                 ubx.FieldSpec{WireName: "enforce_https"},
+	"TlssecurityPolicy":            ubx.FieldSpec{WireName: "tlssecurity_policy"},
+}
 
 var Domain_EbsoptionsFields = ubx.FieldMap{
-		"Ebsenabled": ubx.FieldSpec{WireName: "ebsenabled"},
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"Throughput": ubx.FieldSpec{WireName: "throughput"},
-		"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
-	}
+	"Ebsenabled": ubx.FieldSpec{WireName: "ebsenabled"},
+	"Iops":       ubx.FieldSpec{WireName: "iops"},
+	"Throughput": ubx.FieldSpec{WireName: "throughput"},
+	"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
+	"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
+}
 
 var Domain_EncryptionAtRestOptionsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-	}
+	"Enabled":  ubx.FieldSpec{WireName: "enabled"},
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+}
 
 var Domain_OffPeakWindowOptions_OffPeakWindow_WindowStartTimeFields = ubx.FieldMap{
-		"Hours": ubx.FieldSpec{WireName: "hours"},
-		"Minutes": ubx.FieldSpec{WireName: "minutes"},
-	}
+	"Hours":   ubx.FieldSpec{WireName: "hours"},
+	"Minutes": ubx.FieldSpec{WireName: "minutes"},
+}
 
 var Domain_OffPeakWindowOptions_OffPeakWindowFields = ubx.FieldMap{
-		"WindowStartTime": ubx.FieldSpec{
-			WireName: "window_start_time",
-			Kind: "object",
-			Fields: Domain_OffPeakWindowOptions_OffPeakWindow_WindowStartTimeFields,
-		},
-	}
+	"WindowStartTime": ubx.FieldSpec{
+		WireName: "window_start_time",
+		Kind:     "object",
+		Fields:   Domain_OffPeakWindowOptions_OffPeakWindow_WindowStartTimeFields,
+	},
+}
 
 var Domain_OffPeakWindowOptionsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"OffPeakWindow": ubx.FieldSpec{
-			WireName: "off_peak_window",
-			Kind: "object",
-			Fields: Domain_OffPeakWindowOptions_OffPeakWindowFields,
-		},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"OffPeakWindow": ubx.FieldSpec{
+		WireName: "off_peak_window",
+		Kind:     "object",
+		Fields:   Domain_OffPeakWindowOptions_OffPeakWindowFields,
+	},
+}
 
 var Domain_SnapshotOptionsFields = ubx.FieldMap{
-		"AutomatedSnapshotStartHour": ubx.FieldSpec{WireName: "automated_snapshot_start_hour"},
-	}
+	"AutomatedSnapshotStartHour": ubx.FieldSpec{WireName: "automated_snapshot_start_hour"},
+}
 
 var Domain_SoftwareUpdateOptionsFields = ubx.FieldMap{
-		"AutoSoftwareUpdateEnabled": ubx.FieldSpec{WireName: "auto_software_update_enabled"},
-		"UseLatestServiceSoftwareForBlueGreen": ubx.FieldSpec{WireName: "use_latest_service_software_for_blue_green"},
-	}
+	"AutoSoftwareUpdateEnabled":            ubx.FieldSpec{WireName: "auto_software_update_enabled"},
+	"UseLatestServiceSoftwareForBlueGreen": ubx.FieldSpec{WireName: "use_latest_service_software_for_blue_green"},
+}
 
 var Domain_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Domain_VpcoptionsFields = ubx.FieldMap{
-		"EgressEnabled": ubx.FieldSpec{WireName: "egress_enabled"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"EgressEnabled":    ubx.FieldSpec{WireName: "egress_enabled"},
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 type DomainConfig struct {
 	// Configures AI/ML features for the Amazon OpenSearch Service domain, such as natural language query generation and integration with IAM Identity Center. (AI-inferred)
@@ -539,82 +539,82 @@ var Domain = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Aimloptions": ubx.FieldSpec{
 			WireName: "aimloptions",
-			Kind: "object",
-			Fields: Domain_AimloptionsFields,
+			Kind:     "object",
+			Fields:   Domain_AimloptionsFields,
 		},
-		"AccessPolicies": ubx.FieldSpec{WireName: "access_policies"},
+		"AccessPolicies":  ubx.FieldSpec{WireName: "access_policies"},
 		"AdvancedOptions": ubx.FieldSpec{WireName: "advanced_options"},
 		"AutomatedSnapshotPauseOptions": ubx.FieldSpec{
 			WireName: "automated_snapshot_pause_options",
-			Kind: "object",
-			Fields: Domain_AutomatedSnapshotPauseOptionsFields,
+			Kind:     "object",
+			Fields:   Domain_AutomatedSnapshotPauseOptionsFields,
 		},
 		"ClusterConfig": ubx.FieldSpec{
 			WireName: "cluster_config",
-			Kind: "object",
-			Fields: Domain_ClusterConfigFields,
+			Kind:     "object",
+			Fields:   Domain_ClusterConfigFields,
 		},
 		"CognitoOptions": ubx.FieldSpec{
 			WireName: "cognito_options",
-			Kind: "object",
-			Fields: Domain_CognitoOptionsFields,
+			Kind:     "object",
+			Fields:   Domain_CognitoOptionsFields,
 		},
 		"DeploymentStrategyOptions": ubx.FieldSpec{
 			WireName: "deployment_strategy_options",
-			Kind: "object",
-			Fields: Domain_DeploymentStrategyOptionsFields,
+			Kind:     "object",
+			Fields:   Domain_DeploymentStrategyOptionsFields,
 		},
 		"DomainEndpointOptions": ubx.FieldSpec{
 			WireName: "domain_endpoint_options",
-			Kind: "object",
-			Fields: Domain_DomainEndpointOptionsFields,
+			Kind:     "object",
+			Fields:   Domain_DomainEndpointOptionsFields,
 		},
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"Ebsoptions": ubx.FieldSpec{
 			WireName: "ebsoptions",
-			Kind: "object",
-			Fields: Domain_EbsoptionsFields,
+			Kind:     "object",
+			Fields:   Domain_EbsoptionsFields,
 		},
 		"EncryptionAtRestOptions": ubx.FieldSpec{
 			WireName: "encryption_at_rest_options",
-			Kind: "object",
-			Fields: Domain_EncryptionAtRestOptionsFields,
+			Kind:     "object",
+			Fields:   Domain_EncryptionAtRestOptionsFields,
 		},
-		"EngineMode": ubx.FieldSpec{WireName: "engine_mode"},
-		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
-		"IpaddressType": ubx.FieldSpec{WireName: "ipaddress_type"},
+		"EngineMode":           ubx.FieldSpec{WireName: "engine_mode"},
+		"EngineVersion":        ubx.FieldSpec{WireName: "engine_version"},
+		"IpaddressType":        ubx.FieldSpec{WireName: "ipaddress_type"},
 		"LogPublishingOptions": ubx.FieldSpec{WireName: "log_publishing_options"},
 		"NodeToNodeEncryptionOptions": ubx.FieldSpec{
 			WireName: "node_to_node_encryption_options",
-			Kind: "object",
-			Fields: Domain_Aimloptions_S3VectorsEngineFields,
+			Kind:     "object",
+			Fields:   Domain_Aimloptions_S3VectorsEngineFields,
 		},
 		"OffPeakWindowOptions": ubx.FieldSpec{
 			WireName: "off_peak_window_options",
-			Kind: "object",
-			Fields: Domain_OffPeakWindowOptionsFields,
+			Kind:     "object",
+			Fields:   Domain_OffPeakWindowOptionsFields,
 		},
 		"SkipShardMigrationWait": ubx.FieldSpec{WireName: "skip_shard_migration_wait"},
 		"SnapshotOptions": ubx.FieldSpec{
 			WireName: "snapshot_options",
-			Kind: "object",
-			Fields: Domain_SnapshotOptionsFields,
+			Kind:     "object",
+			Fields:   Domain_SnapshotOptionsFields,
 		},
 		"SoftwareUpdateOptions": ubx.FieldSpec{
 			WireName: "software_update_options",
-			Kind: "object",
-			Fields: Domain_SoftwareUpdateOptionsFields,
+			Kind:     "object",
+			Fields:   Domain_SoftwareUpdateOptionsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Domain_TagsFields,
+			Kind:     "list",
+			Fields:   Domain_TagsFields,
 		},
 		"UseCase": ubx.FieldSpec{WireName: "use_case"},
 		"Vpcoptions": ubx.FieldSpec{
 			WireName: "vpcoptions",
-			Kind: "object",
-			Fields: Domain_VpcoptionsFields,
+			Kind:     "object",
+			Fields:   Domain_VpcoptionsFields,
 		},
 	},
 }

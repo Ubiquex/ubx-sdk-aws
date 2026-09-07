@@ -4,20 +4,20 @@ package healthlake
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataTransformationJob_TransformationJobProperties_InputDataConfig struct {
-	S3Uri any
+	S3Uri        any
 	SourceFormat any
 }
 
 type DataTransformationJob_TransformationJobProperties_JobProgressReport struct {
-	TotalFilesConverted any
-	TotalFilesFailed any
-	TotalFilesScanned any
+	TotalFilesConverted     any
+	TotalFilesFailed        any
+	TotalFilesScanned       any
 	TotalResourcesGenerated any
 }
 
 type DataTransformationJob_TransformationJobProperties_OutputDataConfig_S3Configuration struct {
 	KmsKeyId any
-	S3Uri any
+	S3Uri    any
 }
 
 type DataTransformationJob_TransformationJobProperties_OutputDataConfig struct {
@@ -26,24 +26,24 @@ type DataTransformationJob_TransformationJobProperties_OutputDataConfig struct {
 }
 
 type DataTransformationJob_TransformationJobProperties struct {
-	DataAccessRoleArn any
+	DataAccessRoleArn     any
 	DriftDetectionEnabled any
-	EndTime any
+	EndTime               any
 	// <p>The Amazon S3 location and source format configuration for input data in a transformation job.</p>
 	InputDataConfig any
-	JobId any
-	JobName any
+	JobId           any
+	JobName         any
 	// <p>Contains progress metrics for a data transformation job, including counts of files scanned, converted, and failed.</p>
 	JobProgressReport any
-	JobStatus any
-	Message any
+	JobStatus         any
+	Message           any
 	// <p>The Amazon S3 output location and encryption configuration for a transformation job.</p>
-	OutputDataConfig any
-	ProfileId any
-	ProfileName any
-	ProfileVersion any
+	OutputDataConfig  any
+	ProfileId         any
+	ProfileName       any
+	ProfileVersion    any
 	ProvenanceEnabled any
-	SubmitTime any
+	SubmitTime        any
 }
 
 type DataTransformationJobConfig struct {

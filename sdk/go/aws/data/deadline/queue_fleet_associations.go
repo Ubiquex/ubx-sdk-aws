@@ -6,37 +6,37 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type QueueFleetAssociations_QueueFleetAssociations struct {
 	CreatedAt any
 	CreatedBy any
-	FleetId any
-	QueueId any
-	Status any
+	FleetId   any
+	QueueId   any
+	Status    any
 	UpdatedAt any
 	UpdatedBy any
 }
 
 type QueueFleetAssociationsConfig struct {
-	FarmId any
-	FleetId any
+	FarmId     any
+	FleetId    any
 	MaxResults any
-	NextToken any
-	QueueId any
+	NextToken  any
+	QueueId    any
 }
 
 type QueueFleetAssociationsAttrs struct {
-	FarmId any
-	FleetId any
-	MaxResults any
-	NextToken any
+	FarmId                 any
+	FleetId                any
+	MaxResults             any
+	NextToken              any
 	QueueFleetAssociations any
-	QueueId any
+	QueueId                any
 }
 
 var QueueFleetAssociations = ubx.DataSourceBinding{
 	WireType: "aws_deadline_queue_fleet_associations",
 	Fields: ubx.FieldMap{
-		"FarmId": ubx.FieldSpec{WireName: "farm_id"},
-		"FleetId": ubx.FieldSpec{WireName: "fleet_id"},
+		"FarmId":     ubx.FieldSpec{WireName: "farm_id"},
+		"FleetId":    ubx.FieldSpec{WireName: "fleet_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"QueueId": ubx.FieldSpec{WireName: "queue_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"QueueId":    ubx.FieldSpec{WireName: "queue_id"},
 	},
 }

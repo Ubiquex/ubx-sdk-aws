@@ -5,53 +5,53 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessAnalyzerFindingsStatistics_FindingsStatistics_ExternalAccessFindingsStatistics_ResourceTypeStatistics struct {
 	TotalActiveCrossAccount any
-	TotalActiveErrors any
-	TotalActivePublic any
+	TotalActiveErrors       any
+	TotalActivePublic       any
 }
 
 type AccessAnalyzerFindingsStatistics_FindingsStatistics_ExternalAccessFindingsStatistics struct {
 	ResourceTypeStatistics any
-	TotalActiveFindings any
-	TotalArchivedFindings any
-	TotalResolvedFindings any
+	TotalActiveFindings    any
+	TotalArchivedFindings  any
+	TotalResolvedFindings  any
 }
 
 type AccessAnalyzerFindingsStatistics_FindingsStatistics_InternalAccessFindingsStatistics_ResourceTypeStatistics struct {
-	TotalActiveFindings any
+	TotalActiveFindings   any
 	TotalArchivedFindings any
 	TotalResolvedFindings any
 }
 
 type AccessAnalyzerFindingsStatistics_FindingsStatistics_InternalAccessFindingsStatistics struct {
 	ResourceTypeStatistics any
-	TotalActiveFindings any
-	TotalArchivedFindings any
-	TotalResolvedFindings any
+	TotalActiveFindings    any
+	TotalArchivedFindings  any
+	TotalResolvedFindings  any
 }
 
 type AccessAnalyzerFindingsStatistics_FindingsStatistics_UnusedAccessFindingsStatistics_TopAccounts struct {
-	Account any
-	Details any
+	Account                any
+	Details                any
 	NumberOfActiveFindings any
 }
 
 type AccessAnalyzerFindingsStatistics_FindingsStatistics_UnusedAccessFindingsStatistics_UnusedAccessTypeStatistics struct {
-	Total any
+	Total            any
 	UnusedAccessType any
 }
 
 type AccessAnalyzerFindingsStatistics_FindingsStatistics_UnusedAccessFindingsStatistics struct {
-	TopAccounts any
-	TotalActiveFindings any
-	TotalArchivedFindings any
-	TotalResolvedFindings any
+	TopAccounts                any
+	TotalActiveFindings        any
+	TotalArchivedFindings      any
+	TotalResolvedFindings      any
 	UnusedAccessTypeStatistics any
 }
 
 type AccessAnalyzerFindingsStatistics_FindingsStatistics struct {
 	ExternalAccessFindingsStatistics any
 	InternalAccessFindingsStatistics any
-	UnusedAccessFindingsStatistics any
+	UnusedAccessFindingsStatistics   any
 }
 
 type AccessAnalyzerFindingsStatisticsConfig struct {
@@ -59,9 +59,9 @@ type AccessAnalyzerFindingsStatisticsConfig struct {
 }
 
 type AccessAnalyzerFindingsStatisticsAttrs struct {
-	AnalyzerArn any
+	AnalyzerArn        any
 	FindingsStatistics any
-	LastUpdatedAt any
+	LastUpdatedAt      any
 }
 
 var AccessAnalyzerFindingsStatistics = ubx.DataSourceBinding{

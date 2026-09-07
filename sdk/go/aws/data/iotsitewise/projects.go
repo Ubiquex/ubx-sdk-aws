@@ -4,23 +4,23 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Projects_ProjectSummaries struct {
-	CreationDate any
-	Description any
-	Id any
+	CreationDate   any
+	Description    any
+	Id             any
 	LastUpdateDate any
-	Name any
+	Name           any
 }
 
 type ProjectsConfig struct {
 	MaxResults any
-	NextToken any
-	PortalId any
+	NextToken  any
+	PortalId   any
 }
 
 type ProjectsAttrs struct {
-	MaxResults any
-	NextToken any
-	PortalId any
+	MaxResults       any
+	NextToken        any
+	PortalId         any
 	ProjectSummaries any
 }
 
@@ -28,7 +28,7 @@ var Projects = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_projects",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PortalId": ubx.FieldSpec{WireName: "portal_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"PortalId":   ubx.FieldSpec{WireName: "portal_id"},
 	},
 }

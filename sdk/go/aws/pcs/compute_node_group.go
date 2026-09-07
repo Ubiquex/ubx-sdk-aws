@@ -85,76 +85,76 @@ type ComputeNodeGroup_SpotOptions struct {
 }
 
 var ComputeNodeGroup_CustomLaunchTemplateFields = ubx.FieldMap{
-		"TemplateId": ubx.FieldSpec{WireName: "template_id"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"TemplateId": ubx.FieldSpec{WireName: "template_id"},
+	"Version":    ubx.FieldSpec{WireName: "version"},
+}
 
 var ComputeNodeGroup_InstanceConfigsFields = ubx.FieldMap{
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-	}
+	"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
+}
 
 var ComputeNodeGroup_NodeLifecycleActions_Stages_NodeBootstrapped_ScriptSourceFields = ubx.FieldMap{
-		"Checksum": ubx.FieldSpec{WireName: "checksum"},
-		"S3VersionId": ubx.FieldSpec{WireName: "s3_version_id"},
-		"ScriptLocation": ubx.FieldSpec{WireName: "script_location"},
-	}
+	"Checksum":       ubx.FieldSpec{WireName: "checksum"},
+	"S3VersionId":    ubx.FieldSpec{WireName: "s3_version_id"},
+	"ScriptLocation": ubx.FieldSpec{WireName: "script_location"},
+}
 
 var ComputeNodeGroup_NodeLifecycleActions_Stages_NodeBootstrappedFields = ubx.FieldMap{
-		"Arguments": ubx.FieldSpec{WireName: "arguments"},
-		"ExecutionPolicy": ubx.FieldSpec{WireName: "execution_policy"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OnError": ubx.FieldSpec{WireName: "on_error"},
-		"ScriptSource": ubx.FieldSpec{
-			WireName: "script_source",
-			Kind: "object",
-			Fields: ComputeNodeGroup_NodeLifecycleActions_Stages_NodeBootstrapped_ScriptSourceFields,
-		},
-	}
+	"Arguments":       ubx.FieldSpec{WireName: "arguments"},
+	"ExecutionPolicy": ubx.FieldSpec{WireName: "execution_policy"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"OnError":         ubx.FieldSpec{WireName: "on_error"},
+	"ScriptSource": ubx.FieldSpec{
+		WireName: "script_source",
+		Kind:     "object",
+		Fields:   ComputeNodeGroup_NodeLifecycleActions_Stages_NodeBootstrapped_ScriptSourceFields,
+	},
+}
 
 var ComputeNodeGroup_NodeLifecycleActions_StagesFields = ubx.FieldMap{
-		"NodeBootstrapped": ubx.FieldSpec{
-			WireName: "node_bootstrapped",
-			Kind: "list",
-			Fields: ComputeNodeGroup_NodeLifecycleActions_Stages_NodeBootstrappedFields,
-		},
-		"NodeReady": ubx.FieldSpec{
-			WireName: "node_ready",
-			Kind: "list",
-			Fields: ComputeNodeGroup_NodeLifecycleActions_Stages_NodeBootstrappedFields,
-		},
-	}
+	"NodeBootstrapped": ubx.FieldSpec{
+		WireName: "node_bootstrapped",
+		Kind:     "list",
+		Fields:   ComputeNodeGroup_NodeLifecycleActions_Stages_NodeBootstrappedFields,
+	},
+	"NodeReady": ubx.FieldSpec{
+		WireName: "node_ready",
+		Kind:     "list",
+		Fields:   ComputeNodeGroup_NodeLifecycleActions_Stages_NodeBootstrappedFields,
+	},
+}
 
 var ComputeNodeGroup_NodeLifecycleActionsFields = ubx.FieldMap{
-		"ScriptCachingPolicy": ubx.FieldSpec{WireName: "script_caching_policy"},
-		"Stages": ubx.FieldSpec{
-			WireName: "stages",
-			Kind: "object",
-			Fields: ComputeNodeGroup_NodeLifecycleActions_StagesFields,
-		},
-	}
+	"ScriptCachingPolicy": ubx.FieldSpec{WireName: "script_caching_policy"},
+	"Stages": ubx.FieldSpec{
+		WireName: "stages",
+		Kind:     "object",
+		Fields:   ComputeNodeGroup_NodeLifecycleActions_StagesFields,
+	},
+}
 
 var ComputeNodeGroup_ScalingConfigurationFields = ubx.FieldMap{
-		"MaxInstanceCount": ubx.FieldSpec{WireName: "max_instance_count"},
-		"MinInstanceCount": ubx.FieldSpec{WireName: "min_instance_count"},
-	}
+	"MaxInstanceCount": ubx.FieldSpec{WireName: "max_instance_count"},
+	"MinInstanceCount": ubx.FieldSpec{WireName: "min_instance_count"},
+}
 
 var ComputeNodeGroup_SlurmConfiguration_SlurmCustomSettingsFields = ubx.FieldMap{
-		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
-		"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
-	}
+	"ParameterName":  ubx.FieldSpec{WireName: "parameter_name"},
+	"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
+}
 
 var ComputeNodeGroup_SlurmConfigurationFields = ubx.FieldMap{
-		"ScaleDownIdleTimeInSeconds": ubx.FieldSpec{WireName: "scale_down_idle_time_in_seconds"},
-		"SlurmCustomSettings": ubx.FieldSpec{
-			WireName: "slurm_custom_settings",
-			Kind: "list",
-			Fields: ComputeNodeGroup_SlurmConfiguration_SlurmCustomSettingsFields,
-		},
-	}
+	"ScaleDownIdleTimeInSeconds": ubx.FieldSpec{WireName: "scale_down_idle_time_in_seconds"},
+	"SlurmCustomSettings": ubx.FieldSpec{
+		WireName: "slurm_custom_settings",
+		Kind:     "list",
+		Fields:   ComputeNodeGroup_SlurmConfiguration_SlurmCustomSettingsFields,
+	},
+}
 
 var ComputeNodeGroup_SpotOptionsFields = ubx.FieldMap{
-		"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
-	}
+	"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
+}
 
 type ComputeNodeGroupConfig struct {
 	// The ID of the Amazon Machine Image (AMI) that AWS PCS uses to launch instances. If not provided, AWS PCS uses the AMI ID specified in the custom launch template.
@@ -225,42 +225,42 @@ type ComputeNodeGroupAttrs struct {
 var ComputeNodeGroup = ubx.ResourceBinding{
 	WireType: "aws_pcs_compute_node_group",
 	Fields: ubx.FieldMap{
-		"AmiId": ubx.FieldSpec{WireName: "ami_id"},
+		"AmiId":     ubx.FieldSpec{WireName: "ami_id"},
 		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
 		"CustomLaunchTemplate": ubx.FieldSpec{
 			WireName: "custom_launch_template",
-			Kind: "object",
-			Fields: ComputeNodeGroup_CustomLaunchTemplateFields,
+			Kind:     "object",
+			Fields:   ComputeNodeGroup_CustomLaunchTemplateFields,
 		},
 		"IamInstanceProfileArn": ubx.FieldSpec{WireName: "iam_instance_profile_arn"},
 		"InstanceConfigs": ubx.FieldSpec{
 			WireName: "instance_configs",
-			Kind: "list",
-			Fields: ComputeNodeGroup_InstanceConfigsFields,
+			Kind:     "list",
+			Fields:   ComputeNodeGroup_InstanceConfigsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"NodeLifecycleActions": ubx.FieldSpec{
 			WireName: "node_lifecycle_actions",
-			Kind: "object",
-			Fields: ComputeNodeGroup_NodeLifecycleActionsFields,
+			Kind:     "object",
+			Fields:   ComputeNodeGroup_NodeLifecycleActionsFields,
 		},
 		"PurchaseOption": ubx.FieldSpec{WireName: "purchase_option"},
 		"ScalingConfiguration": ubx.FieldSpec{
 			WireName: "scaling_configuration",
-			Kind: "object",
-			Fields: ComputeNodeGroup_ScalingConfigurationFields,
+			Kind:     "object",
+			Fields:   ComputeNodeGroup_ScalingConfigurationFields,
 		},
 		"SlurmConfiguration": ubx.FieldSpec{
 			WireName: "slurm_configuration",
-			Kind: "object",
-			Fields: ComputeNodeGroup_SlurmConfigurationFields,
+			Kind:     "object",
+			Fields:   ComputeNodeGroup_SlurmConfigurationFields,
 		},
 		"SpotOptions": ubx.FieldSpec{
 			WireName: "spot_options",
-			Kind: "object",
-			Fields: ComputeNodeGroup_SpotOptionsFields,
+			Kind:     "object",
+			Fields:   ComputeNodeGroup_SpotOptionsFields,
 		},
 		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":      ubx.FieldSpec{WireName: "tags"},
 	},
 }

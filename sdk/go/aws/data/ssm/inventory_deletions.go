@@ -4,38 +4,38 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InventoryDeletions_InventoryDeletions_DeletionSummary_SummaryItems struct {
-	Count any
+	Count          any
 	RemainingCount any
-	Version any
+	Version        any
 }
 
 type InventoryDeletions_InventoryDeletions_DeletionSummary struct {
 	RemainingCount any
-	SummaryItems any
-	TotalCount any
+	SummaryItems   any
+	TotalCount     any
 }
 
 type InventoryDeletions_InventoryDeletions struct {
-	DeletionId any
-	DeletionStartTime any
-	DeletionSummary any
-	LastStatus any
-	LastStatusMessage any
+	DeletionId           any
+	DeletionStartTime    any
+	DeletionSummary      any
+	LastStatus           any
+	LastStatusMessage    any
 	LastStatusUpdateTime any
-	TypeName any
+	TypeName             any
 }
 
 type InventoryDeletionsConfig struct {
 	DeletionId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type InventoryDeletionsAttrs struct {
-	DeletionId any
+	DeletionId         any
 	InventoryDeletions any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 var InventoryDeletions = ubx.DataSourceBinding{
@@ -43,6 +43,6 @@ var InventoryDeletions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DeletionId": ubx.FieldSpec{WireName: "deletion_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

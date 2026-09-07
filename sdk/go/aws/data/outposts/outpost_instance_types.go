@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OutpostInstanceTypes_InstanceTypes struct {
 	InstanceType any
-	Vcpus any
+	Vcpus        any
 }
 
 type OutpostInstanceTypesConfig struct {
@@ -25,14 +25,14 @@ type OutpostInstanceTypesAttrs struct {
 	NextToken any
 	// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
 	OutpostArn any
-	OutpostId any
+	OutpostId  any
 }
 
 var OutpostInstanceTypes = ubx.DataSourceBinding{
 	WireType: "aws_outposts_outpost_instance_types",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OutpostId": ubx.FieldSpec{WireName: "outpost_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"OutpostId":  ubx.FieldSpec{WireName: "outpost_id"},
 	},
 }

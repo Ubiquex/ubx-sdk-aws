@@ -9,7 +9,7 @@ type CodeguruProfilerTagsForResourceConfig struct {
 
 type CodeguruProfilerTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var CodeguruProfilerTagsForResource = ubx.DataSourceBinding{

@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Ldapssettings_LdapssettingsInfo struct {
 	LastUpdatedDateTime any
-	Ldapsstatus any
-	LdapsstatusReason any
+	Ldapsstatus         any
+	LdapsstatusReason   any
 }
 
 type LdapssettingsConfig struct {
 	DirectoryId any
-	Limit any
-	NextToken any
-	Type any
+	Limit       any
+	NextToken   any
+	Type        any
 }
 
 type LdapssettingsAttrs struct {
-	DirectoryId any
+	DirectoryId       any
 	LdapssettingsInfo any
-	Limit any
-	NextToken any
-	Type any
+	Limit             any
+	NextToken         any
+	Type              any
 }
 
 var Ldapssettings = ubx.DataSourceBinding{
 	WireType: "aws_ds_ldapssettings",
 	Fields: ubx.FieldMap{
 		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Limit":       ubx.FieldSpec{WireName: "limit"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"Type":        ubx.FieldSpec{WireName: "type"},
 	},
 }

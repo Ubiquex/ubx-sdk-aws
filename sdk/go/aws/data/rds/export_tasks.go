@@ -4,51 +4,51 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExportTasks_ExportTasks struct {
-	ExportOnly any
-	ExportTaskIdentifier any
-	FailureCause any
-	IamRoleArn any
-	KmsKeyId any
-	PercentProgress any
-	S3Bucket any
-	S3Prefix any
-	SnapshotTime any
-	SourceArn any
-	SourceType any
-	Status any
-	TaskEndTime any
-	TaskStartTime any
+	ExportOnly             any
+	ExportTaskIdentifier   any
+	FailureCause           any
+	IamRoleArn             any
+	KmsKeyId               any
+	PercentProgress        any
+	S3Bucket               any
+	S3Prefix               any
+	SnapshotTime           any
+	SourceArn              any
+	SourceType             any
+	Status                 any
+	TaskEndTime            any
+	TaskStartTime          any
 	TotalExtractedDataInGb any
-	WarningMessage any
+	WarningMessage         any
 }
 
 type ExportTasks_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var ExportTasks_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ExportTasksConfig struct {
 	ExportTaskIdentifier any
-	Filters any
-	Marker any
-	MaxRecords any
-	SourceArn any
-	SourceType any
+	Filters              any
+	Marker               any
+	MaxRecords           any
+	SourceArn            any
+	SourceType           any
 }
 
 type ExportTasksAttrs struct {
 	ExportTaskIdentifier any
-	ExportTasks any
-	Filters any
-	Marker any
-	MaxRecords any
-	SourceArn any
-	SourceType any
+	ExportTasks          any
+	Filters              any
+	Marker               any
+	MaxRecords           any
+	SourceArn            any
+	SourceType           any
 }
 
 var ExportTasks = ubx.DataSourceBinding{
@@ -57,12 +57,12 @@ var ExportTasks = ubx.DataSourceBinding{
 		"ExportTaskIdentifier": ubx.FieldSpec{WireName: "export_task_identifier"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ExportTasks_FiltersFields,
+			Kind:     "list",
+			Fields:   ExportTasks_FiltersFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
+		"SourceArn":  ubx.FieldSpec{WireName: "source_arn"},
 		"SourceType": ubx.FieldSpec{WireName: "source_type"},
 	},
 }

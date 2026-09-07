@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FinspaceApiPermissionGroups_PermissionGroups struct {
 	ApplicationPermissions any
-	CreateTime any
-	Description any
-	LastModifiedTime any
-	MembershipStatus any
-	Name any
-	PermissionGroupId any
+	CreateTime             any
+	Description            any
+	LastModifiedTime       any
+	MembershipStatus       any
+	Name                   any
+	PermissionGroupId      any
 }
 
 type FinspaceApiPermissionGroupsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FinspaceApiPermissionGroupsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	PermissionGroups any
 }
 
@@ -28,6 +28,6 @@ var FinspaceApiPermissionGroups = ubx.DataSourceBinding{
 	WireType: "aws_finspace_api_permission_groups",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

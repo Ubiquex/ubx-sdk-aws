@@ -4,22 +4,22 @@ package directconnect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InterconnectLoa_Loa struct {
-	LoaContent any
+	LoaContent     any
 	LoaContentType any
 }
 
 type InterconnectLoaConfig struct {
 	InterconnectId any
 	LoaContentType any
-	ProviderName any
+	ProviderName   any
 }
 
 type InterconnectLoaAttrs struct {
 	InterconnectId any
 	// <p>Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.</p>
-	Loa any
+	Loa            any
 	LoaContentType any
-	ProviderName any
+	ProviderName   any
 }
 
 var InterconnectLoa = ubx.DataSourceBinding{
@@ -27,6 +27,6 @@ var InterconnectLoa = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InterconnectId": ubx.FieldSpec{WireName: "interconnect_id"},
 		"LoaContentType": ubx.FieldSpec{WireName: "loa_content_type"},
-		"ProviderName": ubx.FieldSpec{WireName: "provider_name"},
+		"ProviderName":   ubx.FieldSpec{WireName: "provider_name"},
 	},
 }

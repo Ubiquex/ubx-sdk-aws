@@ -4,46 +4,46 @@ package trustedadvisor
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecommendationsForResource_RecommendationForResourceSummaries struct {
-	AwsResourceArn any
-	CheckArn any
-	ExclusionStatus any
-	LastUpdatedAt any
-	Metadata any
-	Pillars any
+	AwsResourceArn    any
+	CheckArn          any
+	ExclusionStatus   any
+	LastUpdatedAt     any
+	Metadata          any
+	Pillars           any
 	RecommendationArn any
-	Status any
+	Status            any
 }
 
 type RecommendationsForResourceConfig struct {
 	AwsResourceArn any
-	CheckArn any
-	Language any
-	MaxResults any
-	NextToken any
-	Pillar any
-	Status any
+	CheckArn       any
+	Language       any
+	MaxResults     any
+	NextToken      any
+	Pillar         any
+	Status         any
 }
 
 type RecommendationsForResourceAttrs struct {
-	AwsResourceArn any
-	CheckArn any
-	Language any
-	MaxResults any
-	NextToken any
-	Pillar any
+	AwsResourceArn                     any
+	CheckArn                           any
+	Language                           any
+	MaxResults                         any
+	NextToken                          any
+	Pillar                             any
 	RecommendationForResourceSummaries any
-	Status any
+	Status                             any
 }
 
 var RecommendationsForResource = ubx.DataSourceBinding{
 	WireType: "aws_trustedadvisor_recommendations_for_resource",
 	Fields: ubx.FieldMap{
 		"AwsResourceArn": ubx.FieldSpec{WireName: "aws_resource_arn"},
-		"CheckArn": ubx.FieldSpec{WireName: "check_arn"},
-		"Language": ubx.FieldSpec{WireName: "language"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Pillar": ubx.FieldSpec{WireName: "pillar"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"CheckArn":       ubx.FieldSpec{WireName: "check_arn"},
+		"Language":       ubx.FieldSpec{WireName: "language"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"Pillar":         ubx.FieldSpec{WireName: "pillar"},
+		"Status":         ubx.FieldSpec{WireName: "status"},
 	},
 }

@@ -9,7 +9,7 @@ type RawMessageContentConfig struct {
 
 type RawMessageContentAttrs struct {
 	MessageContent any
-	MessageId any
+	MessageId      any
 }
 
 var RawMessageContent = ubx.DataSourceBinding{

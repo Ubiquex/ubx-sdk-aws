@@ -5,29 +5,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkerConfigurations_WorkerConfigurations_LatestRevision struct {
 	CreationTime any
-	Description any
-	Revision any
+	Description  any
+	Revision     any
 }
 
 type WorkerConfigurations_WorkerConfigurations struct {
-	CreationTime any
-	Description any
-	LatestRevision any
-	Name any
-	WorkerConfigurationArn any
+	CreationTime             any
+	Description              any
+	LatestRevision           any
+	Name                     any
+	WorkerConfigurationArn   any
 	WorkerConfigurationState any
 }
 
 type WorkerConfigurationsConfig struct {
 	MaxResults any
 	NamePrefix any
-	NextToken any
+	NextToken  any
 }
 
 type WorkerConfigurationsAttrs struct {
-	MaxResults any
-	NamePrefix any
-	NextToken any
+	MaxResults           any
+	NamePrefix           any
+	NextToken            any
 	WorkerConfigurations any
 }
 
@@ -36,6 +36,6 @@ var WorkerConfigurations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
 		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

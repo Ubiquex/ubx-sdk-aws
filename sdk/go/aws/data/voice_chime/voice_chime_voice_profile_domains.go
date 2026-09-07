@@ -4,22 +4,22 @@ package voice_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChimeVoiceProfileDomains_VoiceProfileDomains struct {
-	CreatedTimestamp any
-	Description any
-	Name any
-	UpdatedTimestamp any
+	CreatedTimestamp      any
+	Description           any
+	Name                  any
+	UpdatedTimestamp      any
 	VoiceProfileDomainArn any
-	VoiceProfileDomainId any
+	VoiceProfileDomainId  any
 }
 
 type VoiceChimeVoiceProfileDomainsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type VoiceChimeVoiceProfileDomainsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 	VoiceProfileDomains any
 }
 
@@ -27,6 +27,6 @@ var VoiceChimeVoiceProfileDomains = ubx.DataSourceBinding{
 	WireType: "aws_voice_chime_voice_profile_domains",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

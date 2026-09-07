@@ -4,21 +4,21 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TieringConfigurations_TieringConfigurations struct {
-	BackupVaultName any
-	CreationTime any
-	LastUpdatedTime any
-	TieringConfigurationArn any
+	BackupVaultName          any
+	CreationTime             any
+	LastUpdatedTime          any
+	TieringConfigurationArn  any
 	TieringConfigurationName any
 }
 
 type TieringConfigurationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type TieringConfigurationsAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>A list of tiering configurations.</p>
 	TieringConfigurations any
 }
@@ -27,6 +27,6 @@ var TieringConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_backup_tiering_configurations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

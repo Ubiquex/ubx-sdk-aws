@@ -12,61 +12,61 @@ type ConfigurationRecorders_ConfigurationRecorders_RecordingGroup_RecordingStrat
 }
 
 type ConfigurationRecorders_ConfigurationRecorders_RecordingGroup struct {
-	AllSupported any
-	ExclusionByResourceTypes any
+	AllSupported               any
+	ExclusionByResourceTypes   any
 	IncludeGlobalResourceTypes any
-	RecordingStrategy any
-	ResourceTypes any
+	RecordingStrategy          any
+	ResourceTypes              any
 }
 
 type ConfigurationRecorders_ConfigurationRecorders_RecordingMode_RecordingModeOverrides struct {
-	Description any
+	Description        any
 	RecordingFrequency any
-	ResourceTypes any
+	ResourceTypes      any
 }
 
 type ConfigurationRecorders_ConfigurationRecorders_RecordingMode struct {
-	RecordingFrequency any
+	RecordingFrequency     any
 	RecordingModeOverrides any
 }
 
 type ConfigurationRecorders_ConfigurationRecorders_ScopeConfiguration struct {
-	AllRegions any
+	AllRegions      any
 	IncludedRegions any
-	ScopeType any
-	ScopeValues any
+	ScopeType       any
+	ScopeValues     any
 }
 
 type ConfigurationRecorders_ConfigurationRecorders struct {
-	Arn any
-	ConnectorArn any
-	Name any
-	RecordingGroup any
-	RecordingMode any
-	RecordingScope any
-	RoleArn any
+	Arn                any
+	ConnectorArn       any
+	Name               any
+	RecordingGroup     any
+	RecordingMode      any
+	RecordingScope     any
+	RoleArn            any
 	ScopeConfiguration any
-	ServicePrincipal any
+	ServicePrincipal   any
 }
 
 type ConfigurationRecordersConfig struct {
-	Arn any
+	Arn                        any
 	ConfigurationRecorderNames any
-	ServicePrincipal any
+	ServicePrincipal           any
 }
 
 type ConfigurationRecordersAttrs struct {
-	Arn any
+	Arn                        any
 	ConfigurationRecorderNames any
-	ConfigurationRecorders any
-	ServicePrincipal any
+	ConfigurationRecorders     any
+	ServicePrincipal           any
 }
 
 var ConfigurationRecorders = ubx.DataSourceBinding{
 	WireType: "aws_config_configuration_recorders",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":                        ubx.FieldSpec{WireName: "arn"},
 		"ConfigurationRecorderNames": ubx.FieldSpec{WireName: "configuration_recorder_names"},
-		"ServicePrincipal": ubx.FieldSpec{WireName: "service_principal"},
+		"ServicePrincipal":           ubx.FieldSpec{WireName: "service_principal"},
 	},
 }

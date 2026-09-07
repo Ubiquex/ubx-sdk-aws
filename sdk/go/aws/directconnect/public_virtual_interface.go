@@ -26,9 +26,9 @@ type PublicVirtualInterface_Tags struct {
 }
 
 var PublicVirtualInterface_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PublicVirtualInterfaceConfig struct {
 	// The Amazon Resource Name (ARN) of the role to allocate the public virtual interface. Needs directconnect:AllocatePublicVirtualInterface permissions and tag permissions if applicable.
@@ -74,15 +74,15 @@ var PublicVirtualInterface = ubx.ResourceBinding{
 	WireType: "aws_direct_connect_public_virtual_interface",
 	Fields: ubx.FieldMap{
 		"AllocatePublicVirtualInterfaceRoleArn": ubx.FieldSpec{WireName: "allocate_public_virtual_interface_role_arn"},
-		"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
-		"RateLimit": ubx.FieldSpec{WireName: "rate_limit"},
-		"RouteFilterPrefixes": ubx.FieldSpec{WireName: "route_filter_prefixes"},
+		"ConnectionId":                          ubx.FieldSpec{WireName: "connection_id"},
+		"RateLimit":                             ubx.FieldSpec{WireName: "rate_limit"},
+		"RouteFilterPrefixes":                   ubx.FieldSpec{WireName: "route_filter_prefixes"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PublicVirtualInterface_TagsFields,
+			Kind:     "list",
+			Fields:   PublicVirtualInterface_TagsFields,
 		},
 		"VirtualInterfaceName": ubx.FieldSpec{WireName: "virtual_interface_name"},
-		"Vlan": ubx.FieldSpec{WireName: "vlan"},
+		"Vlan":                 ubx.FieldSpec{WireName: "vlan"},
 	},
 }

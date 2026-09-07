@@ -5,53 +5,53 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerFeatureGroups_FeatureGroupSummaries_OfflineStoreStatus struct {
 	BlockedReason any
-	Status any
+	Status        any
 }
 
 type ApiSagemakerFeatureGroups_FeatureGroupSummaries struct {
-	CreationTime any
-	FeatureGroupArn any
-	FeatureGroupName any
+	CreationTime       any
+	FeatureGroupArn    any
+	FeatureGroupName   any
 	FeatureGroupStatus any
 	OfflineStoreStatus any
 }
 
 type ApiSagemakerFeatureGroupsConfig struct {
-	CreationTimeAfter any
-	CreationTimeBefore any
+	CreationTimeAfter        any
+	CreationTimeBefore       any
 	FeatureGroupStatusEquals any
-	MaxResults any
-	NameContains any
-	NextToken any
+	MaxResults               any
+	NameContains             any
+	NextToken                any
 	OfflineStoreStatusEquals any
-	SortBy any
-	SortOrder any
+	SortBy                   any
+	SortOrder                any
 }
 
 type ApiSagemakerFeatureGroupsAttrs struct {
-	CreationTimeAfter any
-	CreationTimeBefore any
+	CreationTimeAfter        any
+	CreationTimeBefore       any
 	FeatureGroupStatusEquals any
-	FeatureGroupSummaries any
-	MaxResults any
-	NameContains any
-	NextToken any
+	FeatureGroupSummaries    any
+	MaxResults               any
+	NameContains             any
+	NextToken                any
 	OfflineStoreStatusEquals any
-	SortBy any
-	SortOrder any
+	SortBy                   any
+	SortOrder                any
 }
 
 var ApiSagemakerFeatureGroups = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_feature_groups",
 	Fields: ubx.FieldMap{
-		"CreationTimeAfter": ubx.FieldSpec{WireName: "creation_time_after"},
-		"CreationTimeBefore": ubx.FieldSpec{WireName: "creation_time_before"},
+		"CreationTimeAfter":        ubx.FieldSpec{WireName: "creation_time_after"},
+		"CreationTimeBefore":       ubx.FieldSpec{WireName: "creation_time_before"},
 		"FeatureGroupStatusEquals": ubx.FieldSpec{WireName: "feature_group_status_equals"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":               ubx.FieldSpec{WireName: "max_results"},
+		"NameContains":             ubx.FieldSpec{WireName: "name_contains"},
+		"NextToken":                ubx.FieldSpec{WireName: "next_token"},
 		"OfflineStoreStatusEquals": ubx.FieldSpec{WireName: "offline_store_status_equals"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"SortBy":                   ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":                ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

@@ -4,18 +4,18 @@ package thinclient
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SoftwareSet_SoftwareSet_Software struct {
-	Name any
+	Name    any
 	Version any
 }
 
 type SoftwareSet_SoftwareSet struct {
-	Arn any
-	Id any
-	ReleasedAt any
-	Software any
-	SupportedUntil any
+	Arn              any
+	Id               any
+	ReleasedAt       any
+	Software         any
+	SupportedUntil   any
 	ValidationStatus any
-	Version any
+	Version          any
 }
 
 type SoftwareSetConfig struct {

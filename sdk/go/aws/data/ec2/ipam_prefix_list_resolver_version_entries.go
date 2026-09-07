@@ -8,29 +8,29 @@ type IpamPrefixListResolverVersionEntries_Entries struct {
 }
 
 type IpamPrefixListResolverVersionEntriesConfig struct {
-	DryRun any
-	IpamPrefixListResolverId any
+	DryRun                        any
+	IpamPrefixListResolverId      any
 	IpamPrefixListResolverVersion any
-	MaxResults any
-	NextToken any
+	MaxResults                    any
+	NextToken                     any
 }
 
 type IpamPrefixListResolverVersionEntriesAttrs struct {
-	DryRun any
-	Entries any
-	IpamPrefixListResolverId any
+	DryRun                        any
+	Entries                       any
+	IpamPrefixListResolverId      any
 	IpamPrefixListResolverVersion any
-	MaxResults any
-	NextToken any
+	MaxResults                    any
+	NextToken                     any
 }
 
 var IpamPrefixListResolverVersionEntries = ubx.DataSourceBinding{
 	WireType: "aws_ec2_ipam_prefix_list_resolver_version_entries",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"IpamPrefixListResolverId": ubx.FieldSpec{WireName: "ipam_prefix_list_resolver_id"},
+		"DryRun":                        ubx.FieldSpec{WireName: "dry_run"},
+		"IpamPrefixListResolverId":      ubx.FieldSpec{WireName: "ipam_prefix_list_resolver_id"},
 		"IpamPrefixListResolverVersion": ubx.FieldSpec{WireName: "ipam_prefix_list_resolver_version"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

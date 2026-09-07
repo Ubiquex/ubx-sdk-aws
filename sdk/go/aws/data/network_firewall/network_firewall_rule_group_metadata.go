@@ -8,30 +8,30 @@ type NetworkFirewallRuleGroupMetadata_StatefulRuleOptions struct {
 }
 
 type NetworkFirewallRuleGroupMetadataConfig struct {
-	RuleGroupArn any
+	RuleGroupArn  any
 	RuleGroupName any
-	Type any
+	Type          any
 }
 
 type NetworkFirewallRuleGroupMetadataAttrs struct {
-	Capacity any
-	Description any
+	Capacity         any
+	Description      any
 	LastModifiedTime any
-	ListingName any
-	ProductId any
-	RuleGroupArn any
-	RuleGroupName any
+	ListingName      any
+	ProductId        any
+	RuleGroupArn     any
+	RuleGroupName    any
 	// <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
 	StatefulRuleOptions any
-	Type any
-	VendorName any
+	Type                any
+	VendorName          any
 }
 
 var NetworkFirewallRuleGroupMetadata = ubx.DataSourceBinding{
 	WireType: "aws_network_firewall_rule_group_metadata",
 	Fields: ubx.FieldMap{
-		"RuleGroupArn": ubx.FieldSpec{WireName: "rule_group_arn"},
+		"RuleGroupArn":  ubx.FieldSpec{WireName: "rule_group_arn"},
 		"RuleGroupName": ubx.FieldSpec{WireName: "rule_group_name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":          ubx.FieldSpec{WireName: "type"},
 	},
 }

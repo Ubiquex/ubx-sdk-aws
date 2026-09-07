@@ -23,6 +23,6 @@ var SubnetRouteTableAssociation = ubx.ResourceBinding{
 	WireType: "aws_ec2_subnet_route_table_association",
 	Fields: ubx.FieldMap{
 		"RouteTableId": ubx.FieldSpec{WireName: "route_table_id"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
+		"SubnetId":     ubx.FieldSpec{WireName: "subnet_id"},
 	},
 }

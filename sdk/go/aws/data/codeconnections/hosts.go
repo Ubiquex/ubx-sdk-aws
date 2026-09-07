@@ -5,36 +5,36 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Hosts_Hosts_VpcConfiguration struct {
 	SecurityGroupIds any
-	SubnetIds any
-	TlsCertificate any
-	VpcId any
+	SubnetIds        any
+	TlsCertificate   any
+	VpcId            any
 }
 
 type Hosts_Hosts struct {
-	HostArn any
-	Name any
+	HostArn          any
+	Name             any
 	ProviderEndpoint any
-	ProviderType any
-	Status any
-	StatusMessage any
+	ProviderType     any
+	Status           any
+	StatusMessage    any
 	VpcConfiguration any
 }
 
 type HostsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type HostsAttrs struct {
-	Hosts any
+	Hosts      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Hosts = ubx.DataSourceBinding{
 	WireType: "aws_codeconnections_hosts",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

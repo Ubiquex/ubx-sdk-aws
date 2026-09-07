@@ -12,6 +12,5 @@ type AccountSummaryAttrs struct {
 
 var AccountSummary = ubx.DataSourceBinding{
 	WireType: "aws_iam_account_summary",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

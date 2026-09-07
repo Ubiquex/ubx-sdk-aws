@@ -9,7 +9,7 @@ type Route53RecoveryControlConfigTagsForResourceConfig struct {
 
 type Route53RecoveryControlConfigTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var Route53RecoveryControlConfigTagsForResource = ubx.DataSourceBinding{

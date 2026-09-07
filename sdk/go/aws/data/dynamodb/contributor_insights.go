@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContributorInsights_FailureException struct {
 	ExceptionDescription any
-	ExceptionName any
+	ExceptionName        any
 }
 
 type ContributorInsightsConfig struct {
@@ -14,14 +14,14 @@ type ContributorInsightsConfig struct {
 }
 
 type ContributorInsightsAttrs struct {
-	ContributorInsightsMode any
+	ContributorInsightsMode     any
 	ContributorInsightsRuleList any
-	ContributorInsightsStatus any
+	ContributorInsightsStatus   any
 	// <p>Represents a failure a contributor insights operation.</p>
-	FailureException any
-	IndexName any
+	FailureException   any
+	IndexName          any
 	LastUpdateDateTime any
-	TableName any
+	TableName          any
 }
 
 var ContributorInsights = ubx.DataSourceBinding{

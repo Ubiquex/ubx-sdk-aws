@@ -225,234 +225,234 @@ type AutoScalingGroup_TrafficSources struct {
 }
 
 var AutoScalingGroup_AvailabilityZoneDistributionFields = ubx.FieldMap{
-		"CapacityDistributionStrategy": ubx.FieldSpec{WireName: "capacity_distribution_strategy"},
-	}
+	"CapacityDistributionStrategy": ubx.FieldSpec{WireName: "capacity_distribution_strategy"},
+}
 
 var AutoScalingGroup_AvailabilityZoneImpairmentPolicyFields = ubx.FieldMap{
-		"ImpairedZoneHealthCheckBehavior": ubx.FieldSpec{WireName: "impaired_zone_health_check_behavior"},
-		"ZonalShiftEnabled": ubx.FieldSpec{WireName: "zonal_shift_enabled"},
-	}
+	"ImpairedZoneHealthCheckBehavior": ubx.FieldSpec{WireName: "impaired_zone_health_check_behavior"},
+	"ZonalShiftEnabled":               ubx.FieldSpec{WireName: "zonal_shift_enabled"},
+}
 
 var AutoScalingGroup_CapacityReservationSpecification_CapacityReservationTargetFields = ubx.FieldMap{
-		"CapacityReservationIds": ubx.FieldSpec{WireName: "capacity_reservation_ids"},
-		"CapacityReservationResourceGroupArns": ubx.FieldSpec{WireName: "capacity_reservation_resource_group_arns"},
-	}
+	"CapacityReservationIds":               ubx.FieldSpec{WireName: "capacity_reservation_ids"},
+	"CapacityReservationResourceGroupArns": ubx.FieldSpec{WireName: "capacity_reservation_resource_group_arns"},
+}
 
 var AutoScalingGroup_CapacityReservationSpecificationFields = ubx.FieldMap{
-		"CapacityReservationPreference": ubx.FieldSpec{WireName: "capacity_reservation_preference"},
-		"CapacityReservationTarget": ubx.FieldSpec{
-			WireName: "capacity_reservation_target",
-			Kind: "object",
-			Fields: AutoScalingGroup_CapacityReservationSpecification_CapacityReservationTargetFields,
-		},
-	}
+	"CapacityReservationPreference": ubx.FieldSpec{WireName: "capacity_reservation_preference"},
+	"CapacityReservationTarget": ubx.FieldSpec{
+		WireName: "capacity_reservation_target",
+		Kind:     "object",
+		Fields:   AutoScalingGroup_CapacityReservationSpecification_CapacityReservationTargetFields,
+	},
+}
 
 var AutoScalingGroup_InstanceLifecyclePolicy_RetentionTriggersFields = ubx.FieldMap{
-		"TerminateHookAbandon": ubx.FieldSpec{WireName: "terminate_hook_abandon"},
-	}
+	"TerminateHookAbandon": ubx.FieldSpec{WireName: "terminate_hook_abandon"},
+}
 
 var AutoScalingGroup_InstanceLifecyclePolicyFields = ubx.FieldMap{
-		"RetentionTriggers": ubx.FieldSpec{
-			WireName: "retention_triggers",
-			Kind: "object",
-			Fields: AutoScalingGroup_InstanceLifecyclePolicy_RetentionTriggersFields,
-		},
-	}
+	"RetentionTriggers": ubx.FieldSpec{
+		WireName: "retention_triggers",
+		Kind:     "object",
+		Fields:   AutoScalingGroup_InstanceLifecyclePolicy_RetentionTriggersFields,
+	},
+}
 
 var AutoScalingGroup_InstanceMaintenancePolicyFields = ubx.FieldMap{
-		"MaxHealthyPercentage": ubx.FieldSpec{WireName: "max_healthy_percentage"},
-		"MinHealthyPercentage": ubx.FieldSpec{WireName: "min_healthy_percentage"},
-	}
+	"MaxHealthyPercentage": ubx.FieldSpec{WireName: "max_healthy_percentage"},
+	"MinHealthyPercentage": ubx.FieldSpec{WireName: "min_healthy_percentage"},
+}
 
 var AutoScalingGroup_LaunchTemplateFields = ubx.FieldMap{
-		"LaunchTemplateId": ubx.FieldSpec{WireName: "launch_template_id"},
-		"LaunchTemplateName": ubx.FieldSpec{WireName: "launch_template_name"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"LaunchTemplateId":   ubx.FieldSpec{WireName: "launch_template_id"},
+	"LaunchTemplateName": ubx.FieldSpec{WireName: "launch_template_name"},
+	"Version":            ubx.FieldSpec{WireName: "version"},
+}
 
 var AutoScalingGroup_LifecycleHookSpecificationListFields = ubx.FieldMap{
-		"DefaultResult": ubx.FieldSpec{WireName: "default_result"},
-		"HeartbeatTimeout": ubx.FieldSpec{WireName: "heartbeat_timeout"},
-		"LifecycleHookName": ubx.FieldSpec{WireName: "lifecycle_hook_name"},
-		"LifecycleTransition": ubx.FieldSpec{WireName: "lifecycle_transition"},
-		"NotificationMetadata": ubx.FieldSpec{WireName: "notification_metadata"},
-		"NotificationTargetArn": ubx.FieldSpec{WireName: "notification_target_arn"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"DefaultResult":         ubx.FieldSpec{WireName: "default_result"},
+	"HeartbeatTimeout":      ubx.FieldSpec{WireName: "heartbeat_timeout"},
+	"LifecycleHookName":     ubx.FieldSpec{WireName: "lifecycle_hook_name"},
+	"LifecycleTransition":   ubx.FieldSpec{WireName: "lifecycle_transition"},
+	"NotificationMetadata":  ubx.FieldSpec{WireName: "notification_metadata"},
+	"NotificationTargetArn": ubx.FieldSpec{WireName: "notification_target_arn"},
+	"RoleArn":               ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var AutoScalingGroup_MetricsCollectionFields = ubx.FieldMap{
-		"Granularity": ubx.FieldSpec{WireName: "granularity"},
-		"Metrics": ubx.FieldSpec{WireName: "metrics"},
-	}
+	"Granularity": ubx.FieldSpec{WireName: "granularity"},
+	"Metrics":     ubx.FieldSpec{WireName: "metrics"},
+}
 
 var AutoScalingGroup_MixedInstancesPolicy_InstancesDistribution_DistributionSegmentsFields = ubx.FieldMap{
-		"TargetCapacityTypes": ubx.FieldSpec{WireName: "target_capacity_types"},
-	}
+	"TargetCapacityTypes": ubx.FieldSpec{WireName: "target_capacity_types"},
+}
 
 var AutoScalingGroup_MixedInstancesPolicy_InstancesDistributionFields = ubx.FieldMap{
-		"DistributionSegments": ubx.FieldSpec{
-			WireName: "distribution_segments",
-			Kind: "list",
-			Fields: AutoScalingGroup_MixedInstancesPolicy_InstancesDistribution_DistributionSegmentsFields,
-		},
-		"OnDemandAllocationStrategy": ubx.FieldSpec{WireName: "on_demand_allocation_strategy"},
-		"OnDemandBaseCapacity": ubx.FieldSpec{WireName: "on_demand_base_capacity"},
-		"OnDemandPercentageAboveBaseCapacity": ubx.FieldSpec{WireName: "on_demand_percentage_above_base_capacity"},
-		"SpotAllocationStrategy": ubx.FieldSpec{WireName: "spot_allocation_strategy"},
-		"SpotInstancePools": ubx.FieldSpec{WireName: "spot_instance_pools"},
-		"SpotMaxPrice": ubx.FieldSpec{WireName: "spot_max_price"},
-	}
+	"DistributionSegments": ubx.FieldSpec{
+		WireName: "distribution_segments",
+		Kind:     "list",
+		Fields:   AutoScalingGroup_MixedInstancesPolicy_InstancesDistribution_DistributionSegmentsFields,
+	},
+	"OnDemandAllocationStrategy":          ubx.FieldSpec{WireName: "on_demand_allocation_strategy"},
+	"OnDemandBaseCapacity":                ubx.FieldSpec{WireName: "on_demand_base_capacity"},
+	"OnDemandPercentageAboveBaseCapacity": ubx.FieldSpec{WireName: "on_demand_percentage_above_base_capacity"},
+	"SpotAllocationStrategy":              ubx.FieldSpec{WireName: "spot_allocation_strategy"},
+	"SpotInstancePools":                   ubx.FieldSpec{WireName: "spot_instance_pools"},
+	"SpotMaxPrice":                        ubx.FieldSpec{WireName: "spot_max_price"},
+}
 
 var AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields = ubx.FieldMap{
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-	}
+	"Max": ubx.FieldSpec{WireName: "max"},
+	"Min": ubx.FieldSpec{WireName: "min"},
+}
 
 var AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_BaselinePerformanceFactors_Cpu_ReferencesFields = ubx.FieldMap{
-		"InstanceFamily": ubx.FieldSpec{WireName: "instance_family"},
-	}
+	"InstanceFamily": ubx.FieldSpec{WireName: "instance_family"},
+}
 
 var AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_BaselinePerformanceFactors_CpuFields = ubx.FieldMap{
-		"References": ubx.FieldSpec{
-			WireName: "references",
-			Kind: "list",
-			Fields: AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_BaselinePerformanceFactors_Cpu_ReferencesFields,
-		},
-	}
+	"References": ubx.FieldSpec{
+		WireName: "references",
+		Kind:     "list",
+		Fields:   AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_BaselinePerformanceFactors_Cpu_ReferencesFields,
+	},
+}
 
 var AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_BaselinePerformanceFactorsFields = ubx.FieldMap{
-		"Cpu": ubx.FieldSpec{
-			WireName: "cpu",
-			Kind: "object",
-			Fields: AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_BaselinePerformanceFactors_CpuFields,
-		},
-	}
+	"Cpu": ubx.FieldSpec{
+		WireName: "cpu",
+		Kind:     "object",
+		Fields:   AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_BaselinePerformanceFactors_CpuFields,
+	},
+}
 
 var AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirementsFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{
-			WireName: "accelerator_count",
-			Kind: "object",
-			Fields: AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields,
-		},
-		"AcceleratorManufacturers": ubx.FieldSpec{WireName: "accelerator_manufacturers"},
-		"AcceleratorNames": ubx.FieldSpec{WireName: "accelerator_names"},
-		"AcceleratorTotalMemoryMiB": ubx.FieldSpec{
-			WireName: "accelerator_total_memory_mi_b",
-			Kind: "object",
-			Fields: AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields,
-		},
-		"AcceleratorTypes": ubx.FieldSpec{WireName: "accelerator_types"},
-		"AllowedInstanceTypes": ubx.FieldSpec{WireName: "allowed_instance_types"},
-		"BareMetal": ubx.FieldSpec{WireName: "bare_metal"},
-		"BaselineEbsBandwidthMbps": ubx.FieldSpec{
-			WireName: "baseline_ebs_bandwidth_mbps",
-			Kind: "object",
-			Fields: AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields,
-		},
-		"BaselinePerformanceFactors": ubx.FieldSpec{
-			WireName: "baseline_performance_factors",
-			Kind: "object",
-			Fields: AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_BaselinePerformanceFactorsFields,
-		},
-		"BurstablePerformance": ubx.FieldSpec{WireName: "burstable_performance"},
-		"CpuManufacturers": ubx.FieldSpec{WireName: "cpu_manufacturers"},
-		"ExcludedInstanceTypes": ubx.FieldSpec{WireName: "excluded_instance_types"},
-		"InstanceGenerations": ubx.FieldSpec{WireName: "instance_generations"},
-		"LocalStorage": ubx.FieldSpec{WireName: "local_storage"},
-		"LocalStorageTypes": ubx.FieldSpec{WireName: "local_storage_types"},
-		"MaxSpotPriceAsPercentageOfOptimalOnDemandPrice": ubx.FieldSpec{WireName: "max_spot_price_as_percentage_of_optimal_on_demand_price"},
-		"MemoryGiBperVcpu": ubx.FieldSpec{
-			WireName: "memory_gi_bper_vcpu",
-			Kind: "object",
-			Fields: AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields,
-		},
-		"MemoryMiB": ubx.FieldSpec{
-			WireName: "memory_mi_b",
-			Kind: "object",
-			Fields: AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields,
-		},
-		"NetworkBandwidthGbps": ubx.FieldSpec{
-			WireName: "network_bandwidth_gbps",
-			Kind: "object",
-			Fields: AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields,
-		},
-		"NetworkInterfaceCount": ubx.FieldSpec{
-			WireName: "network_interface_count",
-			Kind: "object",
-			Fields: AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields,
-		},
-		"OnDemandMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "on_demand_max_price_percentage_over_lowest_price"},
-		"RequireHibernateSupport": ubx.FieldSpec{WireName: "require_hibernate_support"},
-		"SpotMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "spot_max_price_percentage_over_lowest_price"},
-		"TotalLocalStorageGb": ubx.FieldSpec{
-			WireName: "total_local_storage_gb",
-			Kind: "object",
-			Fields: AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields,
-		},
-		"VcpuCount": ubx.FieldSpec{
-			WireName: "vcpu_count",
-			Kind: "object",
-			Fields: AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields,
-		},
-	}
+	"AcceleratorCount": ubx.FieldSpec{
+		WireName: "accelerator_count",
+		Kind:     "object",
+		Fields:   AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields,
+	},
+	"AcceleratorManufacturers": ubx.FieldSpec{WireName: "accelerator_manufacturers"},
+	"AcceleratorNames":         ubx.FieldSpec{WireName: "accelerator_names"},
+	"AcceleratorTotalMemoryMiB": ubx.FieldSpec{
+		WireName: "accelerator_total_memory_mi_b",
+		Kind:     "object",
+		Fields:   AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields,
+	},
+	"AcceleratorTypes":     ubx.FieldSpec{WireName: "accelerator_types"},
+	"AllowedInstanceTypes": ubx.FieldSpec{WireName: "allowed_instance_types"},
+	"BareMetal":            ubx.FieldSpec{WireName: "bare_metal"},
+	"BaselineEbsBandwidthMbps": ubx.FieldSpec{
+		WireName: "baseline_ebs_bandwidth_mbps",
+		Kind:     "object",
+		Fields:   AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields,
+	},
+	"BaselinePerformanceFactors": ubx.FieldSpec{
+		WireName: "baseline_performance_factors",
+		Kind:     "object",
+		Fields:   AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_BaselinePerformanceFactorsFields,
+	},
+	"BurstablePerformance":                           ubx.FieldSpec{WireName: "burstable_performance"},
+	"CpuManufacturers":                               ubx.FieldSpec{WireName: "cpu_manufacturers"},
+	"ExcludedInstanceTypes":                          ubx.FieldSpec{WireName: "excluded_instance_types"},
+	"InstanceGenerations":                            ubx.FieldSpec{WireName: "instance_generations"},
+	"LocalStorage":                                   ubx.FieldSpec{WireName: "local_storage"},
+	"LocalStorageTypes":                              ubx.FieldSpec{WireName: "local_storage_types"},
+	"MaxSpotPriceAsPercentageOfOptimalOnDemandPrice": ubx.FieldSpec{WireName: "max_spot_price_as_percentage_of_optimal_on_demand_price"},
+	"MemoryGiBperVcpu": ubx.FieldSpec{
+		WireName: "memory_gi_bper_vcpu",
+		Kind:     "object",
+		Fields:   AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields,
+	},
+	"MemoryMiB": ubx.FieldSpec{
+		WireName: "memory_mi_b",
+		Kind:     "object",
+		Fields:   AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields,
+	},
+	"NetworkBandwidthGbps": ubx.FieldSpec{
+		WireName: "network_bandwidth_gbps",
+		Kind:     "object",
+		Fields:   AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields,
+	},
+	"NetworkInterfaceCount": ubx.FieldSpec{
+		WireName: "network_interface_count",
+		Kind:     "object",
+		Fields:   AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields,
+	},
+	"OnDemandMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "on_demand_max_price_percentage_over_lowest_price"},
+	"RequireHibernateSupport":                   ubx.FieldSpec{WireName: "require_hibernate_support"},
+	"SpotMaxPricePercentageOverLowestPrice":     ubx.FieldSpec{WireName: "spot_max_price_percentage_over_lowest_price"},
+	"TotalLocalStorageGb": ubx.FieldSpec{
+		WireName: "total_local_storage_gb",
+		Kind:     "object",
+		Fields:   AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields,
+	},
+	"VcpuCount": ubx.FieldSpec{
+		WireName: "vcpu_count",
+		Kind:     "object",
+		Fields:   AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCountFields,
+	},
+}
 
 var AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_OverridesFields = ubx.FieldMap{
-		"ImageId": ubx.FieldSpec{WireName: "image_id"},
-		"InstanceRequirements": ubx.FieldSpec{
-			WireName: "instance_requirements",
-			Kind: "object",
-			Fields: AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirementsFields,
-		},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"LaunchTemplateSpecification": ubx.FieldSpec{
-			WireName: "launch_template_specification",
-			Kind: "object",
-			Fields: AutoScalingGroup_LaunchTemplateFields,
-		},
-		"WeightedCapacity": ubx.FieldSpec{WireName: "weighted_capacity"},
-	}
+	"ImageId": ubx.FieldSpec{WireName: "image_id"},
+	"InstanceRequirements": ubx.FieldSpec{
+		WireName: "instance_requirements",
+		Kind:     "object",
+		Fields:   AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirementsFields,
+	},
+	"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
+	"LaunchTemplateSpecification": ubx.FieldSpec{
+		WireName: "launch_template_specification",
+		Kind:     "object",
+		Fields:   AutoScalingGroup_LaunchTemplateFields,
+	},
+	"WeightedCapacity": ubx.FieldSpec{WireName: "weighted_capacity"},
+}
 
 var AutoScalingGroup_MixedInstancesPolicy_LaunchTemplateFields = ubx.FieldMap{
-		"LaunchTemplateSpecification": ubx.FieldSpec{
-			WireName: "launch_template_specification",
-			Kind: "object",
-			Fields: AutoScalingGroup_LaunchTemplateFields,
-		},
-		"Overrides": ubx.FieldSpec{
-			WireName: "overrides",
-			Kind: "list",
-			Fields: AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_OverridesFields,
-		},
-	}
+	"LaunchTemplateSpecification": ubx.FieldSpec{
+		WireName: "launch_template_specification",
+		Kind:     "object",
+		Fields:   AutoScalingGroup_LaunchTemplateFields,
+	},
+	"Overrides": ubx.FieldSpec{
+		WireName: "overrides",
+		Kind:     "list",
+		Fields:   AutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_OverridesFields,
+	},
+}
 
 var AutoScalingGroup_MixedInstancesPolicyFields = ubx.FieldMap{
-		"InstancesDistribution": ubx.FieldSpec{
-			WireName: "instances_distribution",
-			Kind: "object",
-			Fields: AutoScalingGroup_MixedInstancesPolicy_InstancesDistributionFields,
-		},
-		"LaunchTemplate": ubx.FieldSpec{
-			WireName: "launch_template",
-			Kind: "object",
-			Fields: AutoScalingGroup_MixedInstancesPolicy_LaunchTemplateFields,
-		},
-	}
+	"InstancesDistribution": ubx.FieldSpec{
+		WireName: "instances_distribution",
+		Kind:     "object",
+		Fields:   AutoScalingGroup_MixedInstancesPolicy_InstancesDistributionFields,
+	},
+	"LaunchTemplate": ubx.FieldSpec{
+		WireName: "launch_template",
+		Kind:     "object",
+		Fields:   AutoScalingGroup_MixedInstancesPolicy_LaunchTemplateFields,
+	},
+}
 
 var AutoScalingGroup_NotificationConfigurationFields = ubx.FieldMap{
-		"NotificationTypes": ubx.FieldSpec{WireName: "notification_types"},
-		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
-	}
+	"NotificationTypes": ubx.FieldSpec{WireName: "notification_types"},
+	"TopicArn":          ubx.FieldSpec{WireName: "topic_arn"},
+}
 
 var AutoScalingGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"PropagateAtLaunch": ubx.FieldSpec{WireName: "propagate_at_launch"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":               ubx.FieldSpec{WireName: "key"},
+	"PropagateAtLaunch": ubx.FieldSpec{WireName: "propagate_at_launch"},
+	"Value":             ubx.FieldSpec{WireName: "value"},
+}
 
 var AutoScalingGroup_TrafficSourcesFields = ubx.FieldMap{
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Identifier": ubx.FieldSpec{WireName: "identifier"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 type AutoScalingGroupConfig struct {
 	// The name of the Auto Scaling group. This name must be unique per Region per account. The name can contain any ASCII character 33 to 126 including most punctuation characters, digits, and upper and lowercased letters. You cannot use a colon (:) in the name.
@@ -620,91 +620,91 @@ var AutoScalingGroup = ubx.ResourceBinding{
 		"AutoScalingGroupName": ubx.FieldSpec{WireName: "auto_scaling_group_name"},
 		"AvailabilityZoneDistribution": ubx.FieldSpec{
 			WireName: "availability_zone_distribution",
-			Kind: "object",
-			Fields: AutoScalingGroup_AvailabilityZoneDistributionFields,
+			Kind:     "object",
+			Fields:   AutoScalingGroup_AvailabilityZoneDistributionFields,
 		},
 		"AvailabilityZoneIds": ubx.FieldSpec{WireName: "availability_zone_ids"},
 		"AvailabilityZoneImpairmentPolicy": ubx.FieldSpec{
 			WireName: "availability_zone_impairment_policy",
-			Kind: "object",
-			Fields: AutoScalingGroup_AvailabilityZoneImpairmentPolicyFields,
+			Kind:     "object",
+			Fields:   AutoScalingGroup_AvailabilityZoneImpairmentPolicyFields,
 		},
 		"AvailabilityZones": ubx.FieldSpec{WireName: "availability_zones"},
 		"CapacityRebalance": ubx.FieldSpec{WireName: "capacity_rebalance"},
 		"CapacityReservationSpecification": ubx.FieldSpec{
 			WireName: "capacity_reservation_specification",
-			Kind: "object",
-			Fields: AutoScalingGroup_CapacityReservationSpecificationFields,
+			Kind:     "object",
+			Fields:   AutoScalingGroup_CapacityReservationSpecificationFields,
 		},
-		"Context": ubx.FieldSpec{WireName: "context"},
-		"Cooldown": ubx.FieldSpec{WireName: "cooldown"},
-		"DefaultInstanceWarmup": ubx.FieldSpec{WireName: "default_instance_warmup"},
-		"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
-		"DesiredCapacity": ubx.FieldSpec{WireName: "desired_capacity"},
-		"DesiredCapacityType": ubx.FieldSpec{WireName: "desired_capacity_type"},
+		"Context":                ubx.FieldSpec{WireName: "context"},
+		"Cooldown":               ubx.FieldSpec{WireName: "cooldown"},
+		"DefaultInstanceWarmup":  ubx.FieldSpec{WireName: "default_instance_warmup"},
+		"DeletionProtection":     ubx.FieldSpec{WireName: "deletion_protection"},
+		"DesiredCapacity":        ubx.FieldSpec{WireName: "desired_capacity"},
+		"DesiredCapacityType":    ubx.FieldSpec{WireName: "desired_capacity_type"},
 		"HealthCheckGracePeriod": ubx.FieldSpec{WireName: "health_check_grace_period"},
-		"HealthCheckType": ubx.FieldSpec{WireName: "health_check_type"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"HealthCheckType":        ubx.FieldSpec{WireName: "health_check_type"},
+		"InstanceId":             ubx.FieldSpec{WireName: "instance_id"},
 		"InstanceLifecyclePolicy": ubx.FieldSpec{
 			WireName: "instance_lifecycle_policy",
-			Kind: "object",
-			Fields: AutoScalingGroup_InstanceLifecyclePolicyFields,
+			Kind:     "object",
+			Fields:   AutoScalingGroup_InstanceLifecyclePolicyFields,
 		},
 		"InstanceMaintenancePolicy": ubx.FieldSpec{
 			WireName: "instance_maintenance_policy",
-			Kind: "object",
-			Fields: AutoScalingGroup_InstanceMaintenancePolicyFields,
+			Kind:     "object",
+			Fields:   AutoScalingGroup_InstanceMaintenancePolicyFields,
 		},
 		"LaunchConfigurationName": ubx.FieldSpec{WireName: "launch_configuration_name"},
 		"LaunchTemplate": ubx.FieldSpec{
 			WireName: "launch_template",
-			Kind: "object",
-			Fields: AutoScalingGroup_LaunchTemplateFields,
+			Kind:     "object",
+			Fields:   AutoScalingGroup_LaunchTemplateFields,
 		},
 		"LifecycleHookSpecificationList": ubx.FieldSpec{
 			WireName: "lifecycle_hook_specification_list",
-			Kind: "list",
-			Fields: AutoScalingGroup_LifecycleHookSpecificationListFields,
+			Kind:     "list",
+			Fields:   AutoScalingGroup_LifecycleHookSpecificationListFields,
 		},
-		"LoadBalancerNames": ubx.FieldSpec{WireName: "load_balancer_names"},
+		"LoadBalancerNames":   ubx.FieldSpec{WireName: "load_balancer_names"},
 		"MaxInstanceLifetime": ubx.FieldSpec{WireName: "max_instance_lifetime"},
-		"MaxSize": ubx.FieldSpec{WireName: "max_size"},
+		"MaxSize":             ubx.FieldSpec{WireName: "max_size"},
 		"MetricsCollection": ubx.FieldSpec{
 			WireName: "metrics_collection",
-			Kind: "list",
-			Fields: AutoScalingGroup_MetricsCollectionFields,
+			Kind:     "list",
+			Fields:   AutoScalingGroup_MetricsCollectionFields,
 		},
 		"MinSize": ubx.FieldSpec{WireName: "min_size"},
 		"MixedInstancesPolicy": ubx.FieldSpec{
 			WireName: "mixed_instances_policy",
-			Kind: "object",
-			Fields: AutoScalingGroup_MixedInstancesPolicyFields,
+			Kind:     "object",
+			Fields:   AutoScalingGroup_MixedInstancesPolicyFields,
 		},
 		"NewInstancesProtectedFromScaleIn": ubx.FieldSpec{WireName: "new_instances_protected_from_scale_in"},
 		"NotificationConfiguration": ubx.FieldSpec{
 			WireName: "notification_configuration",
-			Kind: "object",
-			Fields: AutoScalingGroup_NotificationConfigurationFields,
+			Kind:     "object",
+			Fields:   AutoScalingGroup_NotificationConfigurationFields,
 		},
 		"NotificationConfigurations": ubx.FieldSpec{
 			WireName: "notification_configurations",
-			Kind: "list",
-			Fields: AutoScalingGroup_NotificationConfigurationFields,
+			Kind:     "list",
+			Fields:   AutoScalingGroup_NotificationConfigurationFields,
 		},
-		"PlacementGroup": ubx.FieldSpec{WireName: "placement_group"},
-		"ServiceLinkedRoleArn": ubx.FieldSpec{WireName: "service_linked_role_arn"},
+		"PlacementGroup":           ubx.FieldSpec{WireName: "placement_group"},
+		"ServiceLinkedRoleArn":     ubx.FieldSpec{WireName: "service_linked_role_arn"},
 		"SkipZonalShiftValidation": ubx.FieldSpec{WireName: "skip_zonal_shift_validation"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AutoScalingGroup_TagsFields,
+			Kind:     "list",
+			Fields:   AutoScalingGroup_TagsFields,
 		},
-		"TargetGroupArns": ubx.FieldSpec{WireName: "target_group_arns"},
+		"TargetGroupArns":     ubx.FieldSpec{WireName: "target_group_arns"},
 		"TerminationPolicies": ubx.FieldSpec{WireName: "termination_policies"},
 		"TrafficSources": ubx.FieldSpec{
 			WireName: "traffic_sources",
-			Kind: "list",
-			Fields: AutoScalingGroup_TrafficSourcesFields,
+			Kind:     "list",
+			Fields:   AutoScalingGroup_TrafficSourcesFields,
 		},
 		"VpczoneIdentifier": ubx.FieldSpec{WireName: "vpczone_identifier"},
 	},

@@ -4,30 +4,30 @@ package route53_recovery_readiness
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Route53RecoveryReadinessCellReadinessSummary_ReadinessChecks struct {
-	Readiness any
+	Readiness          any
 	ReadinessCheckName any
 }
 
 type Route53RecoveryReadinessCellReadinessSummaryConfig struct {
-	CellName any
+	CellName   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type Route53RecoveryReadinessCellReadinessSummaryAttrs struct {
-	CellName any
+	CellName   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>The readiness status.</p>
-	Readiness any
+	Readiness       any
 	ReadinessChecks any
 }
 
 var Route53RecoveryReadinessCellReadinessSummary = ubx.DataSourceBinding{
 	WireType: "aws_route53_recovery_readiness_cell_readiness_summary",
 	Fields: ubx.FieldMap{
-		"CellName": ubx.FieldSpec{WireName: "cell_name"},
+		"CellName":   ubx.FieldSpec{WireName: "cell_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

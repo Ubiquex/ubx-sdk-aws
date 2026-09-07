@@ -206,230 +206,230 @@ type ServiceLevelObjective_Tags struct {
 }
 
 var ServiceLevelObjective_BurnRateConfigurationsFields = ubx.FieldMap{
-		"LookBackWindowMinutes": ubx.FieldSpec{WireName: "look_back_window_minutes"},
-	}
+	"LookBackWindowMinutes": ubx.FieldSpec{WireName: "look_back_window_minutes"},
+}
 
 var ServiceLevelObjective_ExclusionWindows_RecurrenceRuleFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+}
 
 var ServiceLevelObjective_ExclusionWindows_WindowFields = ubx.FieldMap{
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"DurationUnit": ubx.FieldSpec{WireName: "duration_unit"},
-	}
+	"Duration":     ubx.FieldSpec{WireName: "duration"},
+	"DurationUnit": ubx.FieldSpec{WireName: "duration_unit"},
+}
 
 var ServiceLevelObjective_ExclusionWindowsFields = ubx.FieldMap{
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"RecurrenceRule": ubx.FieldSpec{
-			WireName: "recurrence_rule",
-			Kind: "object",
-			Fields: ServiceLevelObjective_ExclusionWindows_RecurrenceRuleFields,
-		},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Window": ubx.FieldSpec{
-			WireName: "window",
-			Kind: "object",
-			Fields: ServiceLevelObjective_ExclusionWindows_WindowFields,
-		},
-	}
+	"Reason": ubx.FieldSpec{WireName: "reason"},
+	"RecurrenceRule": ubx.FieldSpec{
+		WireName: "recurrence_rule",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_ExclusionWindows_RecurrenceRuleFields,
+	},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+	"Window": ubx.FieldSpec{
+		WireName: "window",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_ExclusionWindows_WindowFields,
+	},
+}
 
 var ServiceLevelObjective_Goal_Interval_CalendarIntervalFields = ubx.FieldMap{
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"DurationUnit": ubx.FieldSpec{WireName: "duration_unit"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"Duration":     ubx.FieldSpec{WireName: "duration"},
+	"DurationUnit": ubx.FieldSpec{WireName: "duration_unit"},
+	"StartTime":    ubx.FieldSpec{WireName: "start_time"},
+}
 
 var ServiceLevelObjective_Goal_IntervalFields = ubx.FieldMap{
-		"CalendarInterval": ubx.FieldSpec{
-			WireName: "calendar_interval",
-			Kind: "object",
-			Fields: ServiceLevelObjective_Goal_Interval_CalendarIntervalFields,
-		},
-		"RollingInterval": ubx.FieldSpec{
-			WireName: "rolling_interval",
-			Kind: "object",
-			Fields: ServiceLevelObjective_ExclusionWindows_WindowFields,
-		},
-	}
+	"CalendarInterval": ubx.FieldSpec{
+		WireName: "calendar_interval",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_Goal_Interval_CalendarIntervalFields,
+	},
+	"RollingInterval": ubx.FieldSpec{
+		WireName: "rolling_interval",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_ExclusionWindows_WindowFields,
+	},
+}
 
 var ServiceLevelObjective_GoalFields = ubx.FieldMap{
-		"AttainmentGoal": ubx.FieldSpec{WireName: "attainment_goal"},
-		"Interval": ubx.FieldSpec{
-			WireName: "interval",
-			Kind: "object",
-			Fields: ServiceLevelObjective_Goal_IntervalFields,
-		},
-		"WarningThreshold": ubx.FieldSpec{WireName: "warning_threshold"},
-	}
+	"AttainmentGoal": ubx.FieldSpec{WireName: "attainment_goal"},
+	"Interval": ubx.FieldSpec{
+		WireName: "interval",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_Goal_IntervalFields,
+	},
+	"WarningThreshold": ubx.FieldSpec{WireName: "warning_threshold"},
+}
 
 var ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfig_CompositeSliComponentsFields = ubx.FieldMap{
-		"OperationName": ubx.FieldSpec{WireName: "operation_name"},
-	}
+	"OperationName": ubx.FieldSpec{WireName: "operation_name"},
+}
 
 var ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfig_SelectionConfigFields = ubx.FieldMap{
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Pattern": ubx.FieldSpec{WireName: "pattern"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 var ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfigFields = ubx.FieldMap{
-		"CompositeSliComponents": ubx.FieldSpec{
-			WireName: "composite_sli_components",
-			Kind: "list",
-			Fields: ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfig_CompositeSliComponentsFields,
-		},
-		"SelectionConfig": ubx.FieldSpec{
-			WireName: "selection_config",
-			Kind: "object",
-			Fields: ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfig_SelectionConfigFields,
-		},
-	}
+	"CompositeSliComponents": ubx.FieldSpec{
+		WireName: "composite_sli_components",
+		Kind:     "list",
+		Fields:   ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfig_CompositeSliComponentsFields,
+	},
+	"SelectionConfig": ubx.FieldSpec{
+		WireName: "selection_config",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfig_SelectionConfigFields,
+	},
+}
 
 var ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_DependencyConfigFields = ubx.FieldMap{
-		"DependencyKeyAttributes": ubx.FieldSpec{WireName: "dependency_key_attributes"},
-		"DependencyOperationName": ubx.FieldSpec{WireName: "dependency_operation_name"},
-	}
+	"DependencyKeyAttributes": ubx.FieldSpec{WireName: "dependency_key_attributes"},
+	"DependencyOperationName": ubx.FieldSpec{WireName: "dependency_operation_name"},
+}
 
 var ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MetricSourceFields = ubx.FieldMap{
-		"MetricSourceAttributes": ubx.FieldSpec{WireName: "metric_source_attributes"},
-		"MetricSourceKeyAttributes": ubx.FieldSpec{WireName: "metric_source_key_attributes"},
-	}
+	"MetricSourceAttributes":    ubx.FieldSpec{WireName: "metric_source_attributes"},
+	"MetricSourceKeyAttributes": ubx.FieldSpec{WireName: "metric_source_key_attributes"},
+}
 
 var ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric_MetricStat_Metric_DimensionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric_MetricStat_MetricFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric_MetricStat_Metric_DimensionsFields,
-		},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric_MetricStat_Metric_DimensionsFields,
+	},
+	"MetricName": ubx.FieldSpec{WireName: "metric_name"},
+	"Namespace":  ubx.FieldSpec{WireName: "namespace"},
+}
 
 var ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric_MetricStatFields = ubx.FieldMap{
-		"Metric": ubx.FieldSpec{
-			WireName: "metric",
-			Kind: "object",
-			Fields: ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric_MetricStat_MetricFields,
-		},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"Stat": ubx.FieldSpec{WireName: "stat"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-	}
+	"Metric": ubx.FieldSpec{
+		WireName: "metric",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric_MetricStat_MetricFields,
+	},
+	"Period": ubx.FieldSpec{WireName: "period"},
+	"Stat":   ubx.FieldSpec{WireName: "stat"},
+	"Unit":   ubx.FieldSpec{WireName: "unit"},
+}
 
 var ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetricFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"MetricStat": ubx.FieldSpec{
-			WireName: "metric_stat",
-			Kind: "object",
-			Fields: ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric_MetricStatFields,
-		},
-		"ReturnData": ubx.FieldSpec{WireName: "return_data"},
-	}
+	"AccountId":  ubx.FieldSpec{WireName: "account_id"},
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Id":         ubx.FieldSpec{WireName: "id"},
+	"MetricStat": ubx.FieldSpec{
+		WireName: "metric_stat",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric_MetricStatFields,
+	},
+	"ReturnData": ubx.FieldSpec{WireName: "return_data"},
+}
 
 var ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetricFields = ubx.FieldMap{
-		"BadCountMetric": ubx.FieldSpec{
-			WireName: "bad_count_metric",
-			Kind: "list",
-			Fields: ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetricFields,
-		},
-		"GoodCountMetric": ubx.FieldSpec{
-			WireName: "good_count_metric",
-			Kind: "list",
-			Fields: ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetricFields,
-		},
-	}
+	"BadCountMetric": ubx.FieldSpec{
+		WireName: "bad_count_metric",
+		Kind:     "list",
+		Fields:   ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetricFields,
+	},
+	"GoodCountMetric": ubx.FieldSpec{
+		WireName: "good_count_metric",
+		Kind:     "list",
+		Fields:   ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetricFields,
+	},
+}
 
 var ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetricFields = ubx.FieldMap{
-		"CompositeSliConfig": ubx.FieldSpec{
-			WireName: "composite_sli_config",
-			Kind: "object",
-			Fields: ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfigFields,
-		},
-		"DependencyConfig": ubx.FieldSpec{
-			WireName: "dependency_config",
-			Kind: "object",
-			Fields: ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_DependencyConfigFields,
-		},
-		"KeyAttributes": ubx.FieldSpec{WireName: "key_attributes"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"MetricSource": ubx.FieldSpec{
-			WireName: "metric_source",
-			Kind: "object",
-			Fields: ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MetricSourceFields,
-		},
-		"MetricType": ubx.FieldSpec{WireName: "metric_type"},
-		"MonitoredRequestCountMetric": ubx.FieldSpec{
-			WireName: "monitored_request_count_metric",
-			Kind: "object",
-			Fields: ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetricFields,
-		},
-		"OperationName": ubx.FieldSpec{WireName: "operation_name"},
-		"TotalRequestCountMetric": ubx.FieldSpec{
-			WireName: "total_request_count_metric",
-			Kind: "list",
-			Fields: ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetricFields,
-		},
-	}
+	"CompositeSliConfig": ubx.FieldSpec{
+		WireName: "composite_sli_config",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfigFields,
+	},
+	"DependencyConfig": ubx.FieldSpec{
+		WireName: "dependency_config",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_DependencyConfigFields,
+	},
+	"KeyAttributes": ubx.FieldSpec{WireName: "key_attributes"},
+	"MetricName":    ubx.FieldSpec{WireName: "metric_name"},
+	"MetricSource": ubx.FieldSpec{
+		WireName: "metric_source",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MetricSourceFields,
+	},
+	"MetricType": ubx.FieldSpec{WireName: "metric_type"},
+	"MonitoredRequestCountMetric": ubx.FieldSpec{
+		WireName: "monitored_request_count_metric",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetricFields,
+	},
+	"OperationName": ubx.FieldSpec{WireName: "operation_name"},
+	"TotalRequestCountMetric": ubx.FieldSpec{
+		WireName: "total_request_count_metric",
+		Kind:     "list",
+		Fields:   ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetricFields,
+	},
+}
 
 var ServiceLevelObjective_RequestBasedSliFields = ubx.FieldMap{
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"MetricThreshold": ubx.FieldSpec{WireName: "metric_threshold"},
-		"RequestBasedSliMetric": ubx.FieldSpec{
-			WireName: "request_based_sli_metric",
-			Kind: "object",
-			Fields: ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetricFields,
-		},
-	}
+	"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
+	"MetricThreshold":    ubx.FieldSpec{WireName: "metric_threshold"},
+	"RequestBasedSliMetric": ubx.FieldSpec{
+		WireName: "request_based_sli_metric",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetricFields,
+	},
+}
 
 var ServiceLevelObjective_Sli_SliMetricFields = ubx.FieldMap{
-		"CompositeSliConfig": ubx.FieldSpec{
-			WireName: "composite_sli_config",
-			Kind: "object",
-			Fields: ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfigFields,
-		},
-		"DependencyConfig": ubx.FieldSpec{
-			WireName: "dependency_config",
-			Kind: "object",
-			Fields: ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_DependencyConfigFields,
-		},
-		"KeyAttributes": ubx.FieldSpec{WireName: "key_attributes"},
-		"MetricDataQueries": ubx.FieldSpec{
-			WireName: "metric_data_queries",
-			Kind: "list",
-			Fields: ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetricFields,
-		},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"MetricSource": ubx.FieldSpec{
-			WireName: "metric_source",
-			Kind: "object",
-			Fields: ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MetricSourceFields,
-		},
-		"MetricType": ubx.FieldSpec{WireName: "metric_type"},
-		"OperationName": ubx.FieldSpec{WireName: "operation_name"},
-		"PeriodSeconds": ubx.FieldSpec{WireName: "period_seconds"},
-		"Statistic": ubx.FieldSpec{WireName: "statistic"},
-	}
+	"CompositeSliConfig": ubx.FieldSpec{
+		WireName: "composite_sli_config",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfigFields,
+	},
+	"DependencyConfig": ubx.FieldSpec{
+		WireName: "dependency_config",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_DependencyConfigFields,
+	},
+	"KeyAttributes": ubx.FieldSpec{WireName: "key_attributes"},
+	"MetricDataQueries": ubx.FieldSpec{
+		WireName: "metric_data_queries",
+		Kind:     "list",
+		Fields:   ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetricFields,
+	},
+	"MetricName": ubx.FieldSpec{WireName: "metric_name"},
+	"MetricSource": ubx.FieldSpec{
+		WireName: "metric_source",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MetricSourceFields,
+	},
+	"MetricType":    ubx.FieldSpec{WireName: "metric_type"},
+	"OperationName": ubx.FieldSpec{WireName: "operation_name"},
+	"PeriodSeconds": ubx.FieldSpec{WireName: "period_seconds"},
+	"Statistic":     ubx.FieldSpec{WireName: "statistic"},
+}
 
 var ServiceLevelObjective_SliFields = ubx.FieldMap{
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"MetricThreshold": ubx.FieldSpec{WireName: "metric_threshold"},
-		"SliMetric": ubx.FieldSpec{
-			WireName: "sli_metric",
-			Kind: "object",
-			Fields: ServiceLevelObjective_Sli_SliMetricFields,
-		},
-	}
+	"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
+	"MetricThreshold":    ubx.FieldSpec{WireName: "metric_threshold"},
+	"SliMetric": ubx.FieldSpec{
+		WireName: "sli_metric",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_Sli_SliMetricFields,
+	},
+}
 
 var ServiceLevelObjective_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ServiceLevelObjectiveConfig struct {
 	// Each object in this array defines the length of the look-back window used to calculate one burn rate metric for this SLO. The burn rate measures how fast the service is consuming the error budget, relative to the attainment goal of the SLO.
@@ -482,35 +482,35 @@ var ServiceLevelObjective = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BurnRateConfigurations": ubx.FieldSpec{
 			WireName: "burn_rate_configurations",
-			Kind: "list",
-			Fields: ServiceLevelObjective_BurnRateConfigurationsFields,
+			Kind:     "list",
+			Fields:   ServiceLevelObjective_BurnRateConfigurationsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExclusionWindows": ubx.FieldSpec{
 			WireName: "exclusion_windows",
-			Kind: "list",
-			Fields: ServiceLevelObjective_ExclusionWindowsFields,
+			Kind:     "list",
+			Fields:   ServiceLevelObjective_ExclusionWindowsFields,
 		},
 		"Goal": ubx.FieldSpec{
 			WireName: "goal",
-			Kind: "object",
-			Fields: ServiceLevelObjective_GoalFields,
+			Kind:     "object",
+			Fields:   ServiceLevelObjective_GoalFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"RequestBasedSli": ubx.FieldSpec{
 			WireName: "request_based_sli",
-			Kind: "object",
-			Fields: ServiceLevelObjective_RequestBasedSliFields,
+			Kind:     "object",
+			Fields:   ServiceLevelObjective_RequestBasedSliFields,
 		},
 		"Sli": ubx.FieldSpec{
 			WireName: "sli",
-			Kind: "object",
-			Fields: ServiceLevelObjective_SliFields,
+			Kind:     "object",
+			Fields:   ServiceLevelObjective_SliFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ServiceLevelObjective_TagsFields,
+			Kind:     "list",
+			Fields:   ServiceLevelObjective_TagsFields,
 		},
 	},
 }

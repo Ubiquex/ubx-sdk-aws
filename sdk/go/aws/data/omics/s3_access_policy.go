@@ -9,10 +9,10 @@ type S3AccessPolicyConfig struct {
 
 type S3AccessPolicyAttrs struct {
 	S3AccessPointArn any
-	S3AccessPolicy any
-	StoreId any
-	StoreType any
-	UpdateTime any
+	S3AccessPolicy   any
+	StoreId          any
+	StoreType        any
+	UpdateTime       any
 }
 
 var S3AccessPolicy = ubx.DataSourceBinding{

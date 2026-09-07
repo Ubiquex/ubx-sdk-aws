@@ -4,78 +4,78 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerTrialComponents_TrialComponentSummaries_CreatedBy_IamIdentity struct {
-	Arn any
-	PrincipalId any
+	Arn            any
+	PrincipalId    any
 	SourceIdentity any
 }
 
 type ApiSagemakerTrialComponents_TrialComponentSummaries_CreatedBy struct {
-	DomainId any
-	IamIdentity any
-	UserProfileArn any
+	DomainId        any
+	IamIdentity     any
+	UserProfileArn  any
 	UserProfileName any
 }
 
 type ApiSagemakerTrialComponents_TrialComponentSummaries_Status struct {
-	Message any
+	Message       any
 	PrimaryStatus any
 }
 
 type ApiSagemakerTrialComponents_TrialComponentSummaries_TrialComponentSource struct {
-	SourceArn any
+	SourceArn  any
 	SourceType any
 }
 
 type ApiSagemakerTrialComponents_TrialComponentSummaries struct {
-	CreatedBy any
-	CreationTime any
-	DisplayName any
-	EndTime any
-	LastModifiedBy any
-	LastModifiedTime any
-	StartTime any
-	Status any
-	TrialComponentArn any
-	TrialComponentName any
+	CreatedBy            any
+	CreationTime         any
+	DisplayName          any
+	EndTime              any
+	LastModifiedBy       any
+	LastModifiedTime     any
+	StartTime            any
+	Status               any
+	TrialComponentArn    any
+	TrialComponentName   any
 	TrialComponentSource any
 }
 
 type ApiSagemakerTrialComponentsConfig struct {
-	CreatedAfter any
-	CreatedBefore any
+	CreatedAfter   any
+	CreatedBefore  any
 	ExperimentName any
-	MaxResults any
-	NextToken any
-	SortBy any
-	SortOrder any
-	SourceArn any
-	TrialName any
+	MaxResults     any
+	NextToken      any
+	SortBy         any
+	SortOrder      any
+	SourceArn      any
+	TrialName      any
 }
 
 type ApiSagemakerTrialComponentsAttrs struct {
-	CreatedAfter any
-	CreatedBefore any
-	ExperimentName any
-	MaxResults any
-	NextToken any
-	SortBy any
-	SortOrder any
-	SourceArn any
+	CreatedAfter            any
+	CreatedBefore           any
+	ExperimentName          any
+	MaxResults              any
+	NextToken               any
+	SortBy                  any
+	SortOrder               any
+	SourceArn               any
 	TrialComponentSummaries any
-	TrialName any
+	TrialName               any
 }
 
 var ApiSagemakerTrialComponents = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_trial_components",
 	Fields: ubx.FieldMap{
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
-		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
+		"CreatedAfter":   ubx.FieldSpec{WireName: "created_after"},
+		"CreatedBefore":  ubx.FieldSpec{WireName: "created_before"},
 		"ExperimentName": ubx.FieldSpec{WireName: "experiment_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
-		"TrialName": ubx.FieldSpec{WireName: "trial_name"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":         ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":      ubx.FieldSpec{WireName: "sort_order"},
+		"SourceArn":      ubx.FieldSpec{WireName: "source_arn"},
+		"TrialName":      ubx.FieldSpec{WireName: "trial_name"},
 	},
 }

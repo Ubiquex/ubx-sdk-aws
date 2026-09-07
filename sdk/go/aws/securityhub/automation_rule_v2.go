@@ -13,7 +13,7 @@ type AutomationRuleV2_Actions_FindingFieldsUpdate struct {
 	Comment any
 	// The numeric normalized severity score (0-100) that will be assigned to the finding's severity when this automation rule action updates the finding. (AI-inferred)
 	SeverityId any
-	StatusId any
+	StatusId   any
 }
 
 type AutomationRuleV2_Actions struct {
@@ -134,155 +134,155 @@ type AutomationRuleV2_Criteria struct {
 }
 
 var AutomationRuleV2_Actions_ExternalIntegrationConfigurationFields = ubx.FieldMap{
-		"ConnectorArn": ubx.FieldSpec{WireName: "connector_arn"},
-	}
+	"ConnectorArn": ubx.FieldSpec{WireName: "connector_arn"},
+}
 
 var AutomationRuleV2_Actions_FindingFieldsUpdateFields = ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"SeverityId": ubx.FieldSpec{WireName: "severity_id"},
-		"StatusId": ubx.FieldSpec{WireName: "status_id"},
-	}
+	"Comment":    ubx.FieldSpec{WireName: "comment"},
+	"SeverityId": ubx.FieldSpec{WireName: "severity_id"},
+	"StatusId":   ubx.FieldSpec{WireName: "status_id"},
+}
 
 var AutomationRuleV2_ActionsFields = ubx.FieldMap{
-		"ExternalIntegrationConfiguration": ubx.FieldSpec{
-			WireName: "external_integration_configuration",
-			Kind: "object",
-			Fields: AutomationRuleV2_Actions_ExternalIntegrationConfigurationFields,
-		},
-		"FindingFieldsUpdate": ubx.FieldSpec{
-			WireName: "finding_fields_update",
-			Kind: "object",
-			Fields: AutomationRuleV2_Actions_FindingFieldsUpdateFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ExternalIntegrationConfiguration": ubx.FieldSpec{
+		WireName: "external_integration_configuration",
+		Kind:     "object",
+		Fields:   AutomationRuleV2_Actions_ExternalIntegrationConfigurationFields,
+	},
+	"FindingFieldsUpdate": ubx.FieldSpec{
+		WireName: "finding_fields_update",
+		Kind:     "object",
+		Fields:   AutomationRuleV2_Actions_FindingFieldsUpdateFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_BooleanFilters_FilterFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_BooleanFiltersFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_BooleanFilters_FilterFields,
-		},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_BooleanFilters_FilterFields,
+	},
+}
 
 var AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_DateFilters_Filter_DateRangeFields = ubx.FieldMap{
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Unit":  ubx.FieldSpec{WireName: "unit"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_DateFilters_FilterFields = ubx.FieldMap{
-		"DateRange": ubx.FieldSpec{
-			WireName: "date_range",
-			Kind: "object",
-			Fields: AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_DateFilters_Filter_DateRangeFields,
-		},
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"DateRange": ubx.FieldSpec{
+		WireName: "date_range",
+		Kind:     "object",
+		Fields:   AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_DateFilters_Filter_DateRangeFields,
+	},
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 var AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_DateFiltersFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_DateFilters_FilterFields,
-		},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_DateFilters_FilterFields,
+	},
+}
 
 var AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_MapFilters_FilterFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_MapFiltersFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_MapFilters_FilterFields,
-		},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_MapFilters_FilterFields,
+	},
+}
 
 var AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_NumberFilters_FilterFields = ubx.FieldMap{
-		"Eq": ubx.FieldSpec{WireName: "eq"},
-		"Gte": ubx.FieldSpec{WireName: "gte"},
-		"Lte": ubx.FieldSpec{WireName: "lte"},
-	}
+	"Eq":  ubx.FieldSpec{WireName: "eq"},
+	"Gte": ubx.FieldSpec{WireName: "gte"},
+	"Lte": ubx.FieldSpec{WireName: "lte"},
+}
 
 var AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_NumberFiltersFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_NumberFilters_FilterFields,
-		},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_NumberFilters_FilterFields,
+	},
+}
 
 var AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_StringFilters_FilterFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_StringFiltersFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_StringFilters_FilterFields,
-		},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_StringFilters_FilterFields,
+	},
+}
 
 var AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFiltersFields = ubx.FieldMap{
-		"BooleanFilters": ubx.FieldSpec{
-			WireName: "boolean_filters",
-			Kind: "list",
-			Fields: AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_BooleanFiltersFields,
-		},
-		"DateFilters": ubx.FieldSpec{
-			WireName: "date_filters",
-			Kind: "list",
-			Fields: AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_DateFiltersFields,
-		},
-		"MapFilters": ubx.FieldSpec{
-			WireName: "map_filters",
-			Kind: "list",
-			Fields: AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_MapFiltersFields,
-		},
-		"NumberFilters": ubx.FieldSpec{
-			WireName: "number_filters",
-			Kind: "list",
-			Fields: AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_NumberFiltersFields,
-		},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"StringFilters": ubx.FieldSpec{
-			WireName: "string_filters",
-			Kind: "list",
-			Fields: AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_StringFiltersFields,
-		},
-	}
+	"BooleanFilters": ubx.FieldSpec{
+		WireName: "boolean_filters",
+		Kind:     "list",
+		Fields:   AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_BooleanFiltersFields,
+	},
+	"DateFilters": ubx.FieldSpec{
+		WireName: "date_filters",
+		Kind:     "list",
+		Fields:   AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_DateFiltersFields,
+	},
+	"MapFilters": ubx.FieldSpec{
+		WireName: "map_filters",
+		Kind:     "list",
+		Fields:   AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_MapFiltersFields,
+	},
+	"NumberFilters": ubx.FieldSpec{
+		WireName: "number_filters",
+		Kind:     "list",
+		Fields:   AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_NumberFiltersFields,
+	},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"StringFilters": ubx.FieldSpec{
+		WireName: "string_filters",
+		Kind:     "list",
+		Fields:   AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_StringFiltersFields,
+	},
+}
 
 var AutomationRuleV2_Criteria_OcsfFindingCriteriaFields = ubx.FieldMap{
-		"CompositeFilters": ubx.FieldSpec{
-			WireName: "composite_filters",
-			Kind: "list",
-			Fields: AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFiltersFields,
-		},
-		"CompositeOperator": ubx.FieldSpec{WireName: "composite_operator"},
-	}
+	"CompositeFilters": ubx.FieldSpec{
+		WireName: "composite_filters",
+		Kind:     "list",
+		Fields:   AutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFiltersFields,
+	},
+	"CompositeOperator": ubx.FieldSpec{WireName: "composite_operator"},
+}
 
 var AutomationRuleV2_CriteriaFields = ubx.FieldMap{
-		"OcsfFindingCriteria": ubx.FieldSpec{
-			WireName: "ocsf_finding_criteria",
-			Kind: "object",
-			Fields: AutomationRuleV2_Criteria_OcsfFindingCriteriaFields,
-		},
-	}
+	"OcsfFindingCriteria": ubx.FieldSpec{
+		WireName: "ocsf_finding_criteria",
+		Kind:     "object",
+		Fields:   AutomationRuleV2_Criteria_OcsfFindingCriteriaFields,
+	},
+}
 
 type AutomationRuleV2Config struct {
 	// A list of actions to be performed when the rule criteria is met
@@ -331,18 +331,18 @@ var AutomationRuleV2 = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Actions": ubx.FieldSpec{
 			WireName: "actions",
-			Kind: "list",
-			Fields: AutomationRuleV2_ActionsFields,
+			Kind:     "list",
+			Fields:   AutomationRuleV2_ActionsFields,
 		},
 		"Criteria": ubx.FieldSpec{
 			WireName: "criteria",
-			Kind: "object",
-			Fields: AutomationRuleV2_CriteriaFields,
+			Kind:     "object",
+			Fields:   AutomationRuleV2_CriteriaFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-		"RuleOrder": ubx.FieldSpec{WireName: "rule_order"},
-		"RuleStatus": ubx.FieldSpec{WireName: "rule_status"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"RuleName":    ubx.FieldSpec{WireName: "rule_name"},
+		"RuleOrder":   ubx.FieldSpec{WireName: "rule_order"},
+		"RuleStatus":  ubx.FieldSpec{WireName: "rule_status"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 	},
 }

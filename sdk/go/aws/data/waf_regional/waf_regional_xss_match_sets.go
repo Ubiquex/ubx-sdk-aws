@@ -4,25 +4,25 @@ package waf_regional
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WafRegionalXssMatchSets_XssMatchSets struct {
-	Name any
+	Name          any
 	XssMatchSetId any
 }
 
 type WafRegionalXssMatchSetsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type WafRegionalXssMatchSetsAttrs struct {
-	Limit any
-	NextMarker any
+	Limit        any
+	NextMarker   any
 	XssMatchSets any
 }
 
 var WafRegionalXssMatchSets = ubx.DataSourceBinding{
 	WireType: "aws_waf_regional_xss_match_sets",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

@@ -4,8 +4,8 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AggregateIdFormat_Statuses struct {
-	Deadline any
-	Resource any
+	Deadline   any
+	Resource   any
 	UseLongIds any
 }
 
@@ -14,8 +14,8 @@ type AggregateIdFormatConfig struct {
 }
 
 type AggregateIdFormatAttrs struct {
-	DryRun any
-	Statuses any
+	DryRun               any
+	Statuses             any
 	UseLongIdsAggregated any
 }
 

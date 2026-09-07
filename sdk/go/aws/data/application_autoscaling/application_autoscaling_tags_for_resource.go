@@ -9,7 +9,7 @@ type ApplicationAutoscalingTagsForResourceConfig struct {
 
 type ApplicationAutoscalingTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var ApplicationAutoscalingTagsForResource = ubx.DataSourceBinding{

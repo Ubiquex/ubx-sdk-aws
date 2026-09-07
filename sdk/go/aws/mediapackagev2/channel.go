@@ -29,18 +29,18 @@ type Channel_Tags struct {
 }
 
 var Channel_InputSwitchConfigurationFields = ubx.FieldMap{
-		"MqcsinputSwitching": ubx.FieldSpec{WireName: "mqcsinput_switching"},
-		"PreferredInput": ubx.FieldSpec{WireName: "preferred_input"},
-	}
+	"MqcsinputSwitching": ubx.FieldSpec{WireName: "mqcsinput_switching"},
+	"PreferredInput":     ubx.FieldSpec{WireName: "preferred_input"},
+}
 
 var Channel_OutputHeaderConfigurationFields = ubx.FieldMap{
-		"PublishMqcs": ubx.FieldSpec{WireName: "publish_mqcs"},
-	}
+	"PublishMqcs": ubx.FieldSpec{WireName: "publish_mqcs"},
+}
 
 var Channel_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ChannelConfig struct {
 	// The name of the MediaPackage v2 channel group that this channel belongs to, used as part of the channel's identifier and required when creating or referencing the channel. (AI-inferred)
@@ -94,24 +94,24 @@ var Channel = ubx.ResourceBinding{
 	WireType: "aws_media_package_v2_channel",
 	Fields: ubx.FieldMap{
 		"ChannelGroupName": ubx.FieldSpec{WireName: "channel_group_name"},
-		"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"ChannelName":      ubx.FieldSpec{WireName: "channel_name"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"InputSwitchConfiguration": ubx.FieldSpec{
 			WireName: "input_switch_configuration",
-			Kind: "object",
-			Fields: Channel_InputSwitchConfigurationFields,
+			Kind:     "object",
+			Fields:   Channel_InputSwitchConfigurationFields,
 		},
 		"InputType": ubx.FieldSpec{WireName: "input_type"},
 		"OutputHeaderConfiguration": ubx.FieldSpec{
 			WireName: "output_header_configuration",
-			Kind: "object",
-			Fields: Channel_OutputHeaderConfigurationFields,
+			Kind:     "object",
+			Fields:   Channel_OutputHeaderConfigurationFields,
 		},
 		"OutputLockingMode": ubx.FieldSpec{WireName: "output_locking_mode"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Channel_TagsFields,
+			Kind:     "list",
+			Fields:   Channel_TagsFields,
 		},
 	},
 }

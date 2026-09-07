@@ -11,30 +11,30 @@ type Certificate_Certificate struct {
 	CertificateId any
 	// <p>Contains information about the client certificate authentication settings for the <code>RegisterCertificate</code> and <code>DescribeCertificate</code> operations. </p>
 	ClientCertAuthSettings any
-	CommonName any
-	ExpiryDateTime any
-	RegisteredDateTime any
-	State any
-	StateReason any
-	Type any
+	CommonName             any
+	ExpiryDateTime         any
+	RegisteredDateTime     any
+	State                  any
+	StateReason            any
+	Type                   any
 }
 
 type CertificateConfig struct {
 	CertificateId any
-	DirectoryId any
+	DirectoryId   any
 }
 
 type CertificateAttrs struct {
 	// <p>Information about the certificate.</p>
-	Certificate any
+	Certificate   any
 	CertificateId any
-	DirectoryId any
+	DirectoryId   any
 }
 
 var Certificate = ubx.DataSourceBinding{
 	WireType: "aws_ds_certificate",
 	Fields: ubx.FieldMap{
 		"CertificateId": ubx.FieldSpec{WireName: "certificate_id"},
-		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
+		"DirectoryId":   ubx.FieldSpec{WireName: "directory_id"},
 	},
 }

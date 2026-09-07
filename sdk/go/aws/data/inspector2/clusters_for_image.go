@@ -4,7 +4,7 @@ package inspector2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClustersForImage_Cluster_ClusterDetails_ClusterMetadata_AwsEcsMetadataDetails struct {
-	DetailsGroup any
+	DetailsGroup      any
 	TaskDefinitionArn any
 }
 
@@ -14,7 +14,7 @@ type ClustersForImage_Cluster_ClusterDetails_ClusterMetadata_AwsEksMetadataDetai
 }
 
 type ClustersForImage_Cluster_ClusterDetails_ClusterMetadata_AwsEksMetadataDetails struct {
-	Namespace any
+	Namespace        any
 	WorkloadInfoList any
 }
 
@@ -24,14 +24,14 @@ type ClustersForImage_Cluster_ClusterDetails_ClusterMetadata struct {
 }
 
 type ClustersForImage_Cluster_ClusterDetails struct {
-	ClusterMetadata any
-	LastInUse any
+	ClusterMetadata  any
+	LastInUse        any
 	RunningUnitCount any
 	StoppedUnitCount any
 }
 
 type ClustersForImage_Cluster struct {
-	ClusterArn any
+	ClusterArn     any
 	ClusterDetails any
 }
 
@@ -40,22 +40,22 @@ type ClustersForImage_Filter struct {
 }
 
 var ClustersForImage_FilterFields = ubx.FieldMap{
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-	}
+	"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+}
 
 type ClustersForImageConfig struct {
 	// <p>The filter criteria to be used.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ClustersForImageAttrs struct {
 	Cluster any
 	// <p>The filter criteria to be used.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ClustersForImage = ubx.DataSourceBinding{
@@ -63,10 +63,10 @@ var ClustersForImage = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: ClustersForImage_FilterFields,
+			Kind:     "object",
+			Fields:   ClustersForImage_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

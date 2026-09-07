@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainsForPackage_DomainPackageDetailsList_ErrorDetails struct {
 	ErrorMessage any
-	ErrorType any
+	ErrorType    any
 }
 
 type DomainsForPackage_DomainPackageDetailsList struct {
-	DomainName any
+	DomainName          any
 	DomainPackageStatus any
-	ErrorDetails any
-	LastUpdated any
-	PackageId any
-	PackageName any
-	PackageType any
-	PackageVersion any
-	ReferencePath any
+	ErrorDetails        any
+	LastUpdated         any
+	PackageId           any
+	PackageName         any
+	PackageType         any
+	PackageVersion      any
+	ReferencePath       any
 }
 
 type DomainsForPackageConfig struct {
@@ -41,7 +41,7 @@ var DomainsForPackage = ubx.DataSourceBinding{
 	WireType: "aws_es_domains_for_package",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PackageId": ubx.FieldSpec{WireName: "package_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"PackageId":  ubx.FieldSpec{WireName: "package_id"},
 	},
 }

@@ -4,23 +4,23 @@ package codebuild
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BuildsForProjectConfig struct {
-	NextToken any
+	NextToken   any
 	ProjectName any
-	SortOrder any
+	SortOrder   any
 }
 
 type BuildsForProjectAttrs struct {
-	Ids any
-	NextToken any
+	Ids         any
+	NextToken   any
 	ProjectName any
-	SortOrder any
+	SortOrder   any
 }
 
 var BuildsForProject = ubx.DataSourceBinding{
 	WireType: "aws_codebuild_builds_for_project",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ProjectName": ubx.FieldSpec{WireName: "project_name"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"SortOrder":   ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

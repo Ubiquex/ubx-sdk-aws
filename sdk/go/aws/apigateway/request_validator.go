@@ -30,9 +30,9 @@ type RequestValidatorAttrs struct {
 var RequestValidator = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_request_validator",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
-		"ValidateRequestBody": ubx.FieldSpec{WireName: "validate_request_body"},
+		"Name":                      ubx.FieldSpec{WireName: "name"},
+		"RestApiId":                 ubx.FieldSpec{WireName: "rest_api_id"},
+		"ValidateRequestBody":       ubx.FieldSpec{WireName: "validate_request_body"},
 		"ValidateRequestParameters": ubx.FieldSpec{WireName: "validate_request_parameters"},
 	},
 }

@@ -16,13 +16,13 @@ type Hub_Tags struct {
 }
 
 var Hub_S3StorageConfigFields = ubx.FieldMap{
-		"S3OutputPath": ubx.FieldSpec{WireName: "s3_output_path"},
-	}
+	"S3OutputPath": ubx.FieldSpec{WireName: "s3_output_path"},
+}
 
 var Hub_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type HubConfig struct {
 	// A description of the hub.
@@ -65,19 +65,19 @@ type HubAttrs struct {
 var Hub = ubx.ResourceBinding{
 	WireType: "aws_sage_maker_hub",
 	Fields: ubx.FieldMap{
-		"HubDescription": ubx.FieldSpec{WireName: "hub_description"},
-		"HubDisplayName": ubx.FieldSpec{WireName: "hub_display_name"},
-		"HubName": ubx.FieldSpec{WireName: "hub_name"},
+		"HubDescription":    ubx.FieldSpec{WireName: "hub_description"},
+		"HubDisplayName":    ubx.FieldSpec{WireName: "hub_display_name"},
+		"HubName":           ubx.FieldSpec{WireName: "hub_name"},
 		"HubSearchKeywords": ubx.FieldSpec{WireName: "hub_search_keywords"},
 		"S3StorageConfig": ubx.FieldSpec{
 			WireName: "s3_storage_config",
-			Kind: "object",
-			Fields: Hub_S3StorageConfigFields,
+			Kind:     "object",
+			Fields:   Hub_S3StorageConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Hub_TagsFields,
+			Kind:     "list",
+			Fields:   Hub_TagsFields,
 		},
 	},
 }

@@ -4,31 +4,31 @@ package wafv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuleGroups_RuleGroups struct {
-	Arn any
+	Arn         any
 	Description any
-	Id any
-	LockToken any
-	Name any
+	Id          any
+	LockToken   any
+	Name        any
 }
 
 type RuleGroupsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
-	Scope any
+	Scope      any
 }
 
 type RuleGroupsAttrs struct {
-	Limit any
+	Limit      any
 	NextMarker any
 	RuleGroups any
-	Scope any
+	Scope      any
 }
 
 var RuleGroups = ubx.DataSourceBinding{
 	WireType: "aws_wafv2_rule_groups",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Scope":      ubx.FieldSpec{WireName: "scope"},
 	},
 }

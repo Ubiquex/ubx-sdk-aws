@@ -8,29 +8,29 @@ type WorkspacesInstancesWorkspaceInstances_WorkspaceInstances_Ec2ManagedInstance
 }
 
 type WorkspacesInstancesWorkspaceInstances_WorkspaceInstances struct {
-	Ec2ManagedInstance any
-	ProvisionState any
+	Ec2ManagedInstance  any
+	ProvisionState      any
 	WorkspaceInstanceId any
 }
 
 type WorkspacesInstancesWorkspaceInstancesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	ProvisionStates any
 }
 
 type WorkspacesInstancesWorkspaceInstancesAttrs struct {
-	MaxResults any
-	NextToken any
-	ProvisionStates any
+	MaxResults         any
+	NextToken          any
+	ProvisionStates    any
 	WorkspaceInstances any
 }
 
 var WorkspacesInstancesWorkspaceInstances = ubx.DataSourceBinding{
 	WireType: "aws_workspaces_instances_workspace_instances",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 		"ProvisionStates": ubx.FieldSpec{WireName: "provision_states"},
 	},
 }

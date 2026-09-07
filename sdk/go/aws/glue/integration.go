@@ -19,15 +19,15 @@ type Integration_Tags struct {
 }
 
 var Integration_IntegrationConfigFields = ubx.FieldMap{
-		"ContinuousSync": ubx.FieldSpec{WireName: "continuous_sync"},
-		"RefreshInterval": ubx.FieldSpec{WireName: "refresh_interval"},
-		"SourceProperties": ubx.FieldSpec{WireName: "source_properties"},
-	}
+	"ContinuousSync":   ubx.FieldSpec{WireName: "continuous_sync"},
+	"RefreshInterval":  ubx.FieldSpec{WireName: "refresh_interval"},
+	"SourceProperties": ubx.FieldSpec{WireName: "source_properties"},
+}
 
 var Integration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IntegrationConfig struct {
 	// An optional set of non-secret key value pairs that contains additional contextual information about the data.
@@ -81,20 +81,20 @@ var Integration = ubx.ResourceBinding{
 	WireType: "aws_glue_integration",
 	Fields: ubx.FieldMap{
 		"AdditionalEncryptionContext": ubx.FieldSpec{WireName: "additional_encryption_context"},
-		"DataFilter": ubx.FieldSpec{WireName: "data_filter"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"DataFilter":                  ubx.FieldSpec{WireName: "data_filter"},
+		"Description":                 ubx.FieldSpec{WireName: "description"},
 		"IntegrationConfig": ubx.FieldSpec{
 			WireName: "integration_config",
-			Kind: "object",
-			Fields: Integration_IntegrationConfigFields,
+			Kind:     "object",
+			Fields:   Integration_IntegrationConfigFields,
 		},
 		"IntegrationName": ubx.FieldSpec{WireName: "integration_name"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
+		"KmsKeyId":        ubx.FieldSpec{WireName: "kms_key_id"},
+		"SourceArn":       ubx.FieldSpec{WireName: "source_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Integration_TagsFields,
+			Kind:     "list",
+			Fields:   Integration_TagsFields,
 		},
 		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
 	},

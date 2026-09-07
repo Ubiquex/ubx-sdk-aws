@@ -4,14 +4,14 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Query_Statistics struct {
-	BytesScanned any
+	BytesScanned          any
 	ExecutionTimeInMillis any
-	RowCount any
+	RowCount              any
 }
 
 type QueryConfig struct {
 	// <p>The unique identifier for a query execution.</p>
-	QueryId any
+	QueryId       any
 	WorkspaceName any
 }
 
@@ -24,15 +24,15 @@ type QueryAttrs struct {
 	// <p>Contains statistics about a completed query execution.</p>
 	Statistics any
 	// <p>The status of a query execution.</p>
-	Status any
-	SubmittedAt any
+	Status        any
+	SubmittedAt   any
 	WorkspaceName any
 }
 
 var Query = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_query",
 	Fields: ubx.FieldMap{
-		"QueryId": ubx.FieldSpec{WireName: "query_id"},
+		"QueryId":       ubx.FieldSpec{WireName: "query_id"},
 		"WorkspaceName": ubx.FieldSpec{WireName: "workspace_name"},
 	},
 }

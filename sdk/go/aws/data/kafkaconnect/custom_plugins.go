@@ -4,13 +4,13 @@ package kafkaconnect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomPlugins_CustomPlugins_LatestRevision_FileDescription struct {
-	FileMd5 any
+	FileMd5  any
 	FileSize any
 }
 
 type CustomPlugins_CustomPlugins_LatestRevision_Location_S3Location struct {
-	BucketArn any
-	FileKey any
+	BucketArn     any
+	FileKey       any
 	ObjectVersion any
 }
 
@@ -19,34 +19,34 @@ type CustomPlugins_CustomPlugins_LatestRevision_Location struct {
 }
 
 type CustomPlugins_CustomPlugins_LatestRevision struct {
-	ContentType any
-	CreationTime any
-	Description any
+	ContentType     any
+	CreationTime    any
+	Description     any
 	FileDescription any
-	Location any
-	Revision any
+	Location        any
+	Revision        any
 }
 
 type CustomPlugins_CustomPlugins struct {
-	CreationTime any
-	CustomPluginArn any
+	CreationTime      any
+	CustomPluginArn   any
 	CustomPluginState any
-	Description any
-	LatestRevision any
-	Name any
+	Description       any
+	LatestRevision    any
+	Name              any
 }
 
 type CustomPluginsConfig struct {
 	MaxResults any
 	NamePrefix any
-	NextToken any
+	NextToken  any
 }
 
 type CustomPluginsAttrs struct {
 	CustomPlugins any
-	MaxResults any
-	NamePrefix any
-	NextToken any
+	MaxResults    any
+	NamePrefix    any
+	NextToken     any
 }
 
 var CustomPlugins = ubx.DataSourceBinding{
@@ -54,6 +54,6 @@ var CustomPlugins = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
 		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

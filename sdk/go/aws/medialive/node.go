@@ -29,21 +29,21 @@ type Node_Tags struct {
 }
 
 var Node_NodeInterfaceMappingsFields = ubx.FieldMap{
-		"LogicalInterfaceName": ubx.FieldSpec{WireName: "logical_interface_name"},
-		"NetworkInterfaceMode": ubx.FieldSpec{WireName: "network_interface_mode"},
-		"PhysicalInterfaceName": ubx.FieldSpec{WireName: "physical_interface_name"},
-	}
+	"LogicalInterfaceName":  ubx.FieldSpec{WireName: "logical_interface_name"},
+	"NetworkInterfaceMode":  ubx.FieldSpec{WireName: "network_interface_mode"},
+	"PhysicalInterfaceName": ubx.FieldSpec{WireName: "physical_interface_name"},
+}
 
 var Node_SdiSourceMappingsFields = ubx.FieldMap{
-		"CardNumber": ubx.FieldSpec{WireName: "card_number"},
-		"ChannelNumber": ubx.FieldSpec{WireName: "channel_number"},
-		"SdiSource": ubx.FieldSpec{WireName: "sdi_source"},
-	}
+	"CardNumber":    ubx.FieldSpec{WireName: "card_number"},
+	"ChannelNumber": ubx.FieldSpec{WireName: "channel_number"},
+	"SdiSource":     ubx.FieldSpec{WireName: "sdi_source"},
+}
 
 var Node_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type NodeConfig struct {
 	// The ID of the Cluster that the Node belongs to.
@@ -91,22 +91,22 @@ var Node = ubx.ResourceBinding{
 	WireType: "aws_media_live_node",
 	Fields: ubx.FieldMap{
 		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"NodeInterfaceMappings": ubx.FieldSpec{
 			WireName: "node_interface_mappings",
-			Kind: "list",
-			Fields: Node_NodeInterfaceMappingsFields,
+			Kind:     "list",
+			Fields:   Node_NodeInterfaceMappingsFields,
 		},
 		"Role": ubx.FieldSpec{WireName: "role"},
 		"SdiSourceMappings": ubx.FieldSpec{
 			WireName: "sdi_source_mappings",
-			Kind: "list",
-			Fields: Node_SdiSourceMappingsFields,
+			Kind:     "list",
+			Fields:   Node_SdiSourceMappingsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Node_TagsFields,
+			Kind:     "list",
+			Fields:   Node_TagsFields,
 		},
 	},
 }

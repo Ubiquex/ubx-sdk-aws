@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallRules_FirewallRules_FirewallRuleType_DnsThreatProtection struct {
 	ConfidenceThreshold any
-	Value any
+	Value               any
 }
 
 type FirewallRules_FirewallRules_FirewallRuleType_FirewallAdvancedContentCategory struct {
@@ -17,59 +17,59 @@ type FirewallRules_FirewallRules_FirewallRuleType_PartnerThreatProtection struct
 }
 
 type FirewallRules_FirewallRules_FirewallRuleType struct {
-	DnsThreatProtection any
+	DnsThreatProtection             any
 	FirewallAdvancedContentCategory any
-	FirewallAdvancedThreatCategory any
-	PartnerThreatProtection any
+	FirewallAdvancedThreatCategory  any
+	PartnerThreatProtection         any
 }
 
 type FirewallRules_FirewallRules struct {
-	Action any
-	BlockOverrideDnsType any
-	BlockOverrideDomain any
-	BlockOverrideTtl any
-	BlockResponse any
-	ConfidenceThreshold any
-	CreationTime any
-	CreatorRequestId any
-	DnsThreatProtection any
-	FirewallDomainListId any
+	Action                          any
+	BlockOverrideDnsType            any
+	BlockOverrideDomain             any
+	BlockOverrideTtl                any
+	BlockResponse                   any
+	ConfidenceThreshold             any
+	CreationTime                    any
+	CreatorRequestId                any
+	DnsThreatProtection             any
+	FirewallDomainListId            any
 	FirewallDomainRedirectionAction any
-	FirewallRuleGroupId any
-	FirewallRuleType any
-	FirewallThreatProtectionId any
-	ModificationTime any
-	Name any
-	Priority any
-	Qtype any
-	Status any
-	StatusMessage any
+	FirewallRuleGroupId             any
+	FirewallRuleType                any
+	FirewallThreatProtectionId      any
+	ModificationTime                any
+	Name                            any
+	Priority                        any
+	Qtype                           any
+	Status                          any
+	StatusMessage                   any
 }
 
 type FirewallRulesConfig struct {
-	Action any
+	Action              any
 	FirewallRuleGroupId any
-	MaxResults any
-	NextToken any
-	Priority any
+	MaxResults          any
+	NextToken           any
+	Priority            any
 }
 
 type FirewallRulesAttrs struct {
-	Action any
+	Action              any
 	FirewallRuleGroupId any
-	FirewallRules any
-	MaxResults any
-	NextToken any
-	Priority any
+	FirewallRules       any
+	MaxResults          any
+	NextToken           any
+	Priority            any
 }
 
 var FirewallRules = ubx.DataSourceBinding{
 	WireType: "aws_route53resolver_firewall_rules",
 	Fields: ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
+		"Action":              ubx.FieldSpec{WireName: "action"},
 		"FirewallRuleGroupId": ubx.FieldSpec{WireName: "firewall_rule_group_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
+		"Priority":            ubx.FieldSpec{WireName: "priority"},
 	},
 }

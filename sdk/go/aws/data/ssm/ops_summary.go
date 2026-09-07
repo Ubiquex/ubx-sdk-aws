@@ -7,81 +7,80 @@ type OpsSummary_Aggregators_Aggregators struct {
 }
 
 type OpsSummary_Aggregators_Filters struct {
-	Key any
-	Type any
+	Key    any
+	Type   any
 	Values any
 }
 
 type OpsSummary_Aggregators struct {
 	AggregatorType any
-	Aggregators any
-	AttributeName any
-	Filters any
-	TypeName any
-	Values any
+	Aggregators    any
+	AttributeName  any
+	Filters        any
+	TypeName       any
+	Values         any
 }
 
 type OpsSummary_Entities_Data struct {
 	CaptureTime any
-	Content any
+	Content     any
 }
 
 type OpsSummary_Entities struct {
 	Data any
-	Id any
+	Id   any
 }
 
 type OpsSummary_ResultAttributes struct {
 	TypeName any
 }
 
-var OpsSummary_Aggregators_AggregatorsFields = ubx.FieldMap{
-	}
+var OpsSummary_Aggregators_AggregatorsFields = ubx.FieldMap{}
 
 var OpsSummary_Aggregators_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var OpsSummary_AggregatorsFields = ubx.FieldMap{
-		"AggregatorType": ubx.FieldSpec{WireName: "aggregator_type"},
-		"Aggregators": ubx.FieldSpec{
-			WireName: "aggregators",
-			Kind: "list",
-			Fields: OpsSummary_Aggregators_AggregatorsFields,
-		},
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"Filters": ubx.FieldSpec{
-			WireName: "filters",
-			Kind: "list",
-			Fields: OpsSummary_Aggregators_FiltersFields,
-		},
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"AggregatorType": ubx.FieldSpec{WireName: "aggregator_type"},
+	"Aggregators": ubx.FieldSpec{
+		WireName: "aggregators",
+		Kind:     "list",
+		Fields:   OpsSummary_Aggregators_AggregatorsFields,
+	},
+	"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
+	"Filters": ubx.FieldSpec{
+		WireName: "filters",
+		Kind:     "list",
+		Fields:   OpsSummary_Aggregators_FiltersFields,
+	},
+	"TypeName": ubx.FieldSpec{WireName: "type_name"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var OpsSummary_ResultAttributesFields = ubx.FieldMap{
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
-	}
+	"TypeName": ubx.FieldSpec{WireName: "type_name"},
+}
 
 type OpsSummaryConfig struct {
-	Aggregators any
-	Filters any
-	MaxResults any
-	NextToken any
+	Aggregators      any
+	Filters          any
+	MaxResults       any
+	NextToken        any
 	ResultAttributes any
-	SyncName any
+	SyncName         any
 }
 
 type OpsSummaryAttrs struct {
-	Aggregators any
-	Entities any
-	Filters any
-	MaxResults any
-	NextToken any
+	Aggregators      any
+	Entities         any
+	Filters          any
+	MaxResults       any
+	NextToken        any
 	ResultAttributes any
-	SyncName any
+	SyncName         any
 }
 
 var OpsSummary = ubx.DataSourceBinding{
@@ -89,20 +88,20 @@ var OpsSummary = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Aggregators": ubx.FieldSpec{
 			WireName: "aggregators",
-			Kind: "list",
-			Fields: OpsSummary_AggregatorsFields,
+			Kind:     "list",
+			Fields:   OpsSummary_AggregatorsFields,
 		},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: OpsSummary_Aggregators_FiltersFields,
+			Kind:     "list",
+			Fields:   OpsSummary_Aggregators_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ResultAttributes": ubx.FieldSpec{
 			WireName: "result_attributes",
-			Kind: "list",
-			Fields: OpsSummary_ResultAttributesFields,
+			Kind:     "list",
+			Fields:   OpsSummary_ResultAttributesFields,
 		},
 		"SyncName": ubx.FieldSpec{WireName: "sync_name"},
 	},

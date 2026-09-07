@@ -4,58 +4,58 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrunkInterfaceAssociations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type TrunkInterfaceAssociations_InterfaceAssociations_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TrunkInterfaceAssociations_InterfaceAssociations struct {
-	AssociationId any
+	AssociationId     any
 	BranchInterfaceId any
-	GreKey any
+	GreKey            any
 	InterfaceProtocol any
-	Tags any
-	TrunkInterfaceId any
-	VlanId any
+	Tags              any
+	TrunkInterfaceId  any
+	VlanId            any
 }
 
 var TrunkInterfaceAssociations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type TrunkInterfaceAssociationsConfig struct {
 	AssociationIds any
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun         any
+	Filters        any
+	MaxResults     any
+	NextToken      any
 }
 
 type TrunkInterfaceAssociationsAttrs struct {
-	AssociationIds any
-	DryRun any
-	Filters any
+	AssociationIds        any
+	DryRun                any
+	Filters               any
 	InterfaceAssociations any
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 }
 
 var TrunkInterfaceAssociations = ubx.DataSourceBinding{
 	WireType: "aws_ec2_trunk_interface_associations",
 	Fields: ubx.FieldMap{
 		"AssociationIds": ubx.FieldSpec{WireName: "association_ids"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":         ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: TrunkInterfaceAssociations_FiltersFields,
+			Kind:     "list",
+			Fields:   TrunkInterfaceAssociations_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

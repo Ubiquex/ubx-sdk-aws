@@ -13,10 +13,10 @@ type EventBusPolicy_Condition struct {
 }
 
 var EventBusPolicy_ConditionFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EventBusPolicyConfig struct {
 	// The action that you are enabling the other account to perform.
@@ -54,12 +54,12 @@ var EventBusPolicy = ubx.ResourceBinding{
 		"Action": ubx.FieldSpec{WireName: "action"},
 		"Condition": ubx.FieldSpec{
 			WireName: "condition",
-			Kind: "object",
-			Fields: EventBusPolicy_ConditionFields,
+			Kind:     "object",
+			Fields:   EventBusPolicy_ConditionFields,
 		},
 		"EventBusName": ubx.FieldSpec{WireName: "event_bus_name"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-		"Statement": ubx.FieldSpec{WireName: "statement"},
-		"StatementId": ubx.FieldSpec{WireName: "statement_id"},
+		"Principal":    ubx.FieldSpec{WireName: "principal"},
+		"Statement":    ubx.FieldSpec{WireName: "statement"},
+		"StatementId":  ubx.FieldSpec{WireName: "statement_id"},
 	},
 }

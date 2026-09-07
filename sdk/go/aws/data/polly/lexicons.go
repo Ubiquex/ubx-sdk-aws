@@ -4,17 +4,17 @@ package polly
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Lexicons_Lexicons_Attributes struct {
-	Alphabet any
+	Alphabet     any
 	LanguageCode any
 	LastModified any
 	LexemesCount any
-	LexiconArn any
-	Size any
+	LexiconArn   any
+	Size         any
 }
 
 type Lexicons_Lexicons struct {
 	Attributes any
-	Name any
+	Name       any
 }
 
 type LexiconsConfig struct {
@@ -22,7 +22,7 @@ type LexiconsConfig struct {
 }
 
 type LexiconsAttrs struct {
-	Lexicons any
+	Lexicons  any
 	NextToken any
 }
 

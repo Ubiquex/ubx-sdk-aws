@@ -9,7 +9,7 @@ type HealthAgentTagsForResourceConfig struct {
 
 type HealthAgentTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var HealthAgentTagsForResource = ubx.DataSourceBinding{

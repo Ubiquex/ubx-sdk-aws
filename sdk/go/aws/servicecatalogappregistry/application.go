@@ -35,7 +35,7 @@ var Application = ubx.ResourceBinding{
 	WireType: "aws_service_catalog_app_registry_application",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 	},
 }

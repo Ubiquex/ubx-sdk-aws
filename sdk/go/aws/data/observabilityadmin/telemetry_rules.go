@@ -4,33 +4,33 @@ package observabilityadmin
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TelemetryRules_TelemetryRuleSummaries struct {
-	CreatedTimeStamp any
-	LastUpdateTimeStamp any
-	ResourceType any
-	RuleArn any
-	RuleName any
+	CreatedTimeStamp     any
+	LastUpdateTimeStamp  any
+	ResourceType         any
+	RuleArn              any
+	RuleName             any
 	TelemetrySourceTypes any
-	TelemetryType any
+	TelemetryType        any
 }
 
 type TelemetryRulesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	RuleNamePrefix any
 }
 
 type TelemetryRulesAttrs struct {
-	MaxResults any
-	NextToken any
-	RuleNamePrefix any
+	MaxResults             any
+	NextToken              any
+	RuleNamePrefix         any
 	TelemetryRuleSummaries any
 }
 
 var TelemetryRules = ubx.DataSourceBinding{
 	WireType: "aws_observabilityadmin_telemetry_rules",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"RuleNamePrefix": ubx.FieldSpec{WireName: "rule_name_prefix"},
 	},
 }

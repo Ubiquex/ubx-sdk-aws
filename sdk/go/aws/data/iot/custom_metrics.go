@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomMetricsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CustomMetricsAttrs struct {
-	MaxResults any
+	MaxResults  any
 	MetricNames any
-	NextToken any
+	NextToken   any
 }
 
 var CustomMetrics = ubx.DataSourceBinding{
 	WireType: "aws_iot_custom_metrics",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

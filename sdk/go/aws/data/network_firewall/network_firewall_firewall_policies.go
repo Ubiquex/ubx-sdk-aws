@@ -4,25 +4,25 @@ package network_firewall
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NetworkFirewallFirewallPolicies_FirewallPolicies struct {
-	Arn any
+	Arn  any
 	Name any
 }
 
 type NetworkFirewallFirewallPoliciesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type NetworkFirewallFirewallPoliciesAttrs struct {
 	FirewallPolicies any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 var NetworkFirewallFirewallPolicies = ubx.DataSourceBinding{
 	WireType: "aws_network_firewall_firewall_policies",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

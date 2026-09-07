@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Export_ExportDescription_IncrementalExportSpecification struct {
 	ExportFromTime any
-	ExportToTime any
+	ExportToTime   any
 	ExportViewType any
 }
 
 type Export_ExportDescription struct {
 	BilledSizeBytes any
-	ClientToken any
-	EndTime any
-	ExportArn any
-	ExportFormat any
-	ExportManifest any
-	ExportStatus any
-	ExportTime any
-	ExportType any
-	FailureCode any
-	FailureMessage any
+	ClientToken     any
+	EndTime         any
+	ExportArn       any
+	ExportFormat    any
+	ExportManifest  any
+	ExportStatus    any
+	ExportTime      any
+	ExportType      any
+	FailureCode     any
+	FailureMessage  any
 	// <p>Optional object containing the parameters specific to an incremental export.</p>
 	IncrementalExportSpecification any
-	ItemCount any
-	S3Bucket any
-	S3BucketOwner any
-	S3Prefix any
-	S3SseAlgorithm any
-	S3SseKmsKeyId any
-	StartTime any
-	TableArn any
-	TableId any
+	ItemCount                      any
+	S3Bucket                       any
+	S3BucketOwner                  any
+	S3Prefix                       any
+	S3SseAlgorithm                 any
+	S3SseKmsKeyId                  any
+	StartTime                      any
+	TableArn                       any
+	TableId                        any
 }
 
 type ExportConfig struct {

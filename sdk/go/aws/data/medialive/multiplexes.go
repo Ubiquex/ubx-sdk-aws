@@ -8,15 +8,15 @@ type Multiplexes_Multiplexes_MultiplexSettings struct {
 }
 
 type Multiplexes_Multiplexes struct {
-	Arn any
-	AvailabilityZones any
-	Id any
-	MultiplexSettings any
-	Name any
+	Arn                   any
+	AvailabilityZones     any
+	Id                    any
+	MultiplexSettings     any
+	Name                  any
 	PipelinesRunningCount any
-	ProgramCount any
-	State any
-	Tags any
+	ProgramCount          any
+	State                 any
+	Tags                  any
 }
 
 type MultiplexesConfig struct {
@@ -39,6 +39,6 @@ var Multiplexes = ubx.DataSourceBinding{
 	WireType: "aws_medialive_multiplexes",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

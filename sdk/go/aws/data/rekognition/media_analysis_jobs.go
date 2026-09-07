@@ -4,13 +4,13 @@ package rekognition
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MediaAnalysisJobs_MediaAnalysisJobs_FailureDetails struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type MediaAnalysisJobs_MediaAnalysisJobs_Input_S3Object struct {
-	Bucket any
-	Name any
+	Bucket  any
+	Name    any
 	Version any
 }
 
@@ -19,7 +19,7 @@ type MediaAnalysisJobs_MediaAnalysisJobs_Input struct {
 }
 
 type MediaAnalysisJobs_MediaAnalysisJobs_OperationsConfig_DetectModerationLabels struct {
-	MinConfidence any
+	MinConfidence  any
 	ProjectVersion any
 }
 
@@ -28,7 +28,7 @@ type MediaAnalysisJobs_MediaAnalysisJobs_OperationsConfig struct {
 }
 
 type MediaAnalysisJobs_MediaAnalysisJobs_OutputConfig struct {
-	S3Bucket any
+	S3Bucket    any
 	S3KeyPrefix any
 }
 
@@ -38,39 +38,39 @@ type MediaAnalysisJobs_MediaAnalysisJobs_Results_ModelVersions struct {
 
 type MediaAnalysisJobs_MediaAnalysisJobs_Results struct {
 	ModelVersions any
-	S3Object any
+	S3Object      any
 }
 
 type MediaAnalysisJobs_MediaAnalysisJobs struct {
 	CompletionTimestamp any
-	CreationTimestamp any
-	FailureDetails any
-	Input any
-	JobId any
-	JobName any
-	KmsKeyId any
-	ManifestSummary any
-	OperationsConfig any
-	OutputConfig any
-	Results any
-	Status any
+	CreationTimestamp   any
+	FailureDetails      any
+	Input               any
+	JobId               any
+	JobName             any
+	KmsKeyId            any
+	ManifestSummary     any
+	OperationsConfig    any
+	OutputConfig        any
+	Results             any
+	Status              any
 }
 
 type MediaAnalysisJobsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type MediaAnalysisJobsAttrs struct {
-	MaxResults any
+	MaxResults        any
 	MediaAnalysisJobs any
-	NextToken any
+	NextToken         any
 }
 
 var MediaAnalysisJobs = ubx.DataSourceBinding{
 	WireType: "aws_rekognition_media_analysis_jobs",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,25 +4,25 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackupPlanTemplates_BackupPlanTemplatesList struct {
-	BackupPlanTemplateId any
+	BackupPlanTemplateId   any
 	BackupPlanTemplateName any
 }
 
 type BackupPlanTemplatesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type BackupPlanTemplatesAttrs struct {
 	BackupPlanTemplatesList any
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 }
 
 var BackupPlanTemplates = ubx.DataSourceBinding{
 	WireType: "aws_backup_backup_plan_templates",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,20 +4,20 @@ package elastic_load_balancing_v2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ElasticLoadBalancingV2TrustStoreRevocationContentConfig struct {
-	RevocationId any
+	RevocationId  any
 	TrustStoreArn any
 }
 
 type ElasticLoadBalancingV2TrustStoreRevocationContentAttrs struct {
-	Location any
-	RevocationId any
+	Location      any
+	RevocationId  any
 	TrustStoreArn any
 }
 
 var ElasticLoadBalancingV2TrustStoreRevocationContent = ubx.DataSourceBinding{
 	WireType: "aws_elastic_load_balancing_v2_trust_store_revocation_content",
 	Fields: ubx.FieldMap{
-		"RevocationId": ubx.FieldSpec{WireName: "revocation_id"},
+		"RevocationId":  ubx.FieldSpec{WireName: "revocation_id"},
 		"TrustStoreArn": ubx.FieldSpec{WireName: "trust_store_arn"},
 	},
 }

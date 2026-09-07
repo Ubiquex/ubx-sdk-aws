@@ -10,33 +10,33 @@ type Resources_ResourceDescriptions struct {
 
 type ResourcesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// Allow up to 256K length of Resource properties
 	ResourceModel any
-	RoleArn any
-	TypeName any
+	RoleArn       any
+	TypeName      any
 	TypeVersionId any
 }
 
 type ResourcesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 	ResourceDescriptions any
 	// Allow up to 256K length of Resource properties
 	ResourceModel any
-	RoleArn any
-	TypeName any
+	RoleArn       any
+	TypeName      any
 	TypeVersionId any
 }
 
 var Resources = ubx.DataSourceBinding{
 	WireType: "aws_cloudcontrolapi_resources",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"ResourceModel": ubx.FieldSpec{WireName: "resource_model"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
+		"RoleArn":       ubx.FieldSpec{WireName: "role_arn"},
+		"TypeName":      ubx.FieldSpec{WireName: "type_name"},
 		"TypeVersionId": ubx.FieldSpec{WireName: "type_version_id"},
 	},
 }

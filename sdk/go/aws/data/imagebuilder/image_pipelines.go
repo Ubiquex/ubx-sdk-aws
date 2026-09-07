@@ -4,27 +4,27 @@ package imagebuilder
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImagePipelines_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ImagePipelines_ImagePipelineList_ImageScanningConfiguration_EcrConfiguration struct {
-	ContainerTags any
+	ContainerTags  any
 	RepositoryName any
 }
 
 type ImagePipelines_ImagePipelineList_ImageScanningConfiguration struct {
-	EcrConfiguration any
+	EcrConfiguration     any
 	ImageScanningEnabled any
 }
 
 type ImagePipelines_ImagePipelineList_ImageTestsConfiguration struct {
 	ImageTestsEnabled any
-	TimeoutMinutes any
+	TimeoutMinutes    any
 }
 
 type ImagePipelines_ImagePipelineList_LoggingConfiguration struct {
-	ImageLogGroupName any
+	ImageLogGroupName    any
 	PipelineLogGroupName any
 }
 
@@ -33,68 +33,68 @@ type ImagePipelines_ImagePipelineList_Schedule_AutoDisablePolicy struct {
 }
 
 type ImagePipelines_ImagePipelineList_Schedule struct {
-	AutoDisablePolicy any
+	AutoDisablePolicy               any
 	PipelineExecutionStartCondition any
-	ScheduleExpression any
-	Timezone any
+	ScheduleExpression              any
+	Timezone                        any
 }
 
 type ImagePipelines_ImagePipelineList_Workflows_Parameters struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type ImagePipelines_ImagePipelineList_Workflows struct {
-	OnFailure any
+	OnFailure     any
 	ParallelGroup any
-	Parameters any
-	WorkflowArn any
+	Parameters    any
+	WorkflowArn   any
 }
 
 type ImagePipelines_ImagePipelineList struct {
-	Arn any
-	ConsecutiveFailures any
-	ContainerRecipeArn any
-	DateCreated any
-	DateLastRun any
-	DateNextRun any
-	DateUpdated any
-	Description any
-	DistributionConfigurationArn any
-	EnhancedImageMetadataEnabled any
-	ExecutionRole any
-	ImageRecipeArn any
-	ImageScanningConfiguration any
-	ImageTags any
-	ImageTestsConfiguration any
+	Arn                            any
+	ConsecutiveFailures            any
+	ContainerRecipeArn             any
+	DateCreated                    any
+	DateLastRun                    any
+	DateNextRun                    any
+	DateUpdated                    any
+	Description                    any
+	DistributionConfigurationArn   any
+	EnhancedImageMetadataEnabled   any
+	ExecutionRole                  any
+	ImageRecipeArn                 any
+	ImageScanningConfiguration     any
+	ImageTags                      any
+	ImageTestsConfiguration        any
 	InfrastructureConfigurationArn any
-	LastRunStatus any
-	LoggingConfiguration any
-	Name any
-	Platform any
-	Schedule any
-	Status any
-	Tags any
-	Workflows any
+	LastRunStatus                  any
+	LoggingConfiguration           any
+	Name                           any
+	Platform                       any
+	Schedule                       any
+	Status                         any
+	Tags                           any
+	Workflows                      any
 }
 
 var ImagePipelines_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ImagePipelinesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ImagePipelinesAttrs struct {
-	Filters any
+	Filters           any
 	ImagePipelineList any
-	MaxResults any
-	NextToken any
-	RequestId any
+	MaxResults        any
+	NextToken         any
+	RequestId         any
 }
 
 var ImagePipelines = ubx.DataSourceBinding{
@@ -102,10 +102,10 @@ var ImagePipelines = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ImagePipelines_FiltersFields,
+			Kind:     "list",
+			Fields:   ImagePipelines_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

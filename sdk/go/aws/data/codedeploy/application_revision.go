@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationRevision_Revision_AppSpecContent struct {
 	Content any
-	Sha256 any
+	Sha256  any
 }
 
 type ApplicationRevision_Revision_GitHubLocation struct {
-	CommitId any
+	CommitId   any
 	Repository any
 }
 
 type ApplicationRevision_Revision_S3Location struct {
-	Bucket any
+	Bucket     any
 	BundleType any
-	ETag any
-	Key any
-	Version any
+	ETag       any
+	Key        any
+	Version    any
 }
 
 type ApplicationRevision_Revision struct {
@@ -26,7 +26,7 @@ type ApplicationRevision_Revision struct {
 	AppSpecContent any
 	// <p>Information about the location of application artifacts stored in GitHub.</p>
 	GitHubLocation any
-	RevisionType any
+	RevisionType   any
 	// <p>Information about the location of application artifacts stored in Amazon S3.</p>
 	S3Location any
 	// <p>A revision for an Lambda deployment that is a YAML-formatted or JSON-formatted string. For Lambda deployments, the revision is the same as the AppSpec file.</p>
@@ -35,53 +35,53 @@ type ApplicationRevision_Revision struct {
 
 type ApplicationRevision_RevisionInfo struct {
 	DeploymentGroups any
-	Description any
-	FirstUsedTime any
-	LastUsedTime any
-	RegisterTime any
+	Description      any
+	FirstUsedTime    any
+	LastUsedTime     any
+	RegisterTime     any
 }
 
 var ApplicationRevision_Revision_AppSpecContentFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Sha256": ubx.FieldSpec{WireName: "sha256"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+	"Sha256":  ubx.FieldSpec{WireName: "sha256"},
+}
 
 var ApplicationRevision_Revision_GitHubLocationFields = ubx.FieldMap{
-		"CommitId": ubx.FieldSpec{WireName: "commit_id"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-	}
+	"CommitId":   ubx.FieldSpec{WireName: "commit_id"},
+	"Repository": ubx.FieldSpec{WireName: "repository"},
+}
 
 var ApplicationRevision_Revision_S3LocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"BundleType": ubx.FieldSpec{WireName: "bundle_type"},
-		"ETag": ubx.FieldSpec{WireName: "e_tag"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Bucket":     ubx.FieldSpec{WireName: "bucket"},
+	"BundleType": ubx.FieldSpec{WireName: "bundle_type"},
+	"ETag":       ubx.FieldSpec{WireName: "e_tag"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"Version":    ubx.FieldSpec{WireName: "version"},
+}
 
 var ApplicationRevision_RevisionFields = ubx.FieldMap{
-		"AppSpecContent": ubx.FieldSpec{
-			WireName: "app_spec_content",
-			Kind: "object",
-			Fields: ApplicationRevision_Revision_AppSpecContentFields,
-		},
-		"GitHubLocation": ubx.FieldSpec{
-			WireName: "git_hub_location",
-			Kind: "object",
-			Fields: ApplicationRevision_Revision_GitHubLocationFields,
-		},
-		"RevisionType": ubx.FieldSpec{WireName: "revision_type"},
-		"S3Location": ubx.FieldSpec{
-			WireName: "s3_location",
-			Kind: "object",
-			Fields: ApplicationRevision_Revision_S3LocationFields,
-		},
-		"String": ubx.FieldSpec{
-			WireName: "string",
-			Kind: "object",
-			Fields: ApplicationRevision_Revision_AppSpecContentFields,
-		},
-	}
+	"AppSpecContent": ubx.FieldSpec{
+		WireName: "app_spec_content",
+		Kind:     "object",
+		Fields:   ApplicationRevision_Revision_AppSpecContentFields,
+	},
+	"GitHubLocation": ubx.FieldSpec{
+		WireName: "git_hub_location",
+		Kind:     "object",
+		Fields:   ApplicationRevision_Revision_GitHubLocationFields,
+	},
+	"RevisionType": ubx.FieldSpec{WireName: "revision_type"},
+	"S3Location": ubx.FieldSpec{
+		WireName: "s3_location",
+		Kind:     "object",
+		Fields:   ApplicationRevision_Revision_S3LocationFields,
+	},
+	"String": ubx.FieldSpec{
+		WireName: "string",
+		Kind:     "object",
+		Fields:   ApplicationRevision_Revision_AppSpecContentFields,
+	},
+}
 
 type ApplicationRevisionConfig struct {
 	ApplicationName any
@@ -103,8 +103,8 @@ var ApplicationRevision = ubx.DataSourceBinding{
 		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
 		"Revision": ubx.FieldSpec{
 			WireName: "revision",
-			Kind: "object",
-			Fields: ApplicationRevision_RevisionFields,
+			Kind:     "object",
+			Fields:   ApplicationRevision_RevisionFields,
 		},
 	},
 }

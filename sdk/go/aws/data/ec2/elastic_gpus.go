@@ -8,58 +8,58 @@ type ElasticGpus_ElasticGpuSet_ElasticGpuHealth struct {
 }
 
 type ElasticGpus_ElasticGpuSet_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ElasticGpus_ElasticGpuSet struct {
 	AvailabilityZone any
 	ElasticGpuHealth any
-	ElasticGpuId any
-	ElasticGpuState any
-	ElasticGpuType any
-	InstanceId any
-	Tags any
+	ElasticGpuId     any
+	ElasticGpuState  any
+	ElasticGpuType   any
+	InstanceId       any
+	Tags             any
 }
 
 type ElasticGpus_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var ElasticGpus_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ElasticGpusConfig struct {
-	DryRun any
+	DryRun        any
 	ElasticGpuIds any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters       any
+	MaxResults    any
+	NextToken     any
 }
 
 type ElasticGpusAttrs struct {
-	DryRun any
+	DryRun        any
 	ElasticGpuIds any
 	ElasticGpuSet any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters       any
+	MaxResults    any
+	NextToken     any
 }
 
 var ElasticGpus = ubx.DataSourceBinding{
 	WireType: "aws_ec2_elastic_gpus",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":        ubx.FieldSpec{WireName: "dry_run"},
 		"ElasticGpuIds": ubx.FieldSpec{WireName: "elastic_gpu_ids"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ElasticGpus_FiltersFields,
+			Kind:     "list",
+			Fields:   ElasticGpus_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

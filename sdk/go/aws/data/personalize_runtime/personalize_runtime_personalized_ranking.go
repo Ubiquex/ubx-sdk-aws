@@ -4,44 +4,44 @@ package personalize_runtime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PersonalizeRuntimePersonalizedRanking_PersonalizedRanking struct {
-	ItemId any
-	Metadata any
+	ItemId        any
+	Metadata      any
 	PromotionName any
-	Reason any
-	Score any
+	Reason        any
+	Score         any
 }
 
 type PersonalizeRuntimePersonalizedRankingConfig struct {
-	CampaignArn any
-	Context any
-	FilterArn any
-	FilterValues any
-	InputList any
+	CampaignArn     any
+	Context         any
+	FilterArn       any
+	FilterValues    any
+	InputList       any
 	MetadataColumns any
-	UserId any
+	UserId          any
 }
 
 type PersonalizeRuntimePersonalizedRankingAttrs struct {
-	CampaignArn any
-	Context any
-	FilterArn any
-	FilterValues any
-	InputList any
-	MetadataColumns any
+	CampaignArn         any
+	Context             any
+	FilterArn           any
+	FilterValues        any
+	InputList           any
+	MetadataColumns     any
 	PersonalizedRanking any
-	RecommendationId any
-	UserId any
+	RecommendationId    any
+	UserId              any
 }
 
 var PersonalizeRuntimePersonalizedRanking = ubx.DataSourceBinding{
 	WireType: "aws_personalize_runtime_personalized_ranking",
 	Fields: ubx.FieldMap{
-		"CampaignArn": ubx.FieldSpec{WireName: "campaign_arn"},
-		"Context": ubx.FieldSpec{WireName: "context"},
-		"FilterArn": ubx.FieldSpec{WireName: "filter_arn"},
-		"FilterValues": ubx.FieldSpec{WireName: "filter_values"},
-		"InputList": ubx.FieldSpec{WireName: "input_list"},
+		"CampaignArn":     ubx.FieldSpec{WireName: "campaign_arn"},
+		"Context":         ubx.FieldSpec{WireName: "context"},
+		"FilterArn":       ubx.FieldSpec{WireName: "filter_arn"},
+		"FilterValues":    ubx.FieldSpec{WireName: "filter_values"},
+		"InputList":       ubx.FieldSpec{WireName: "input_list"},
 		"MetadataColumns": ubx.FieldSpec{WireName: "metadata_columns"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":          ubx.FieldSpec{WireName: "user_id"},
 	},
 }

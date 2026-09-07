@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkspaceMedia_Media struct {
 	Source any
-	Type any
+	Type   any
 }
 
 type WorkspaceMediaConfig struct {
-	InstanceId any
+	InstanceId  any
 	WorkspaceId any
 }
 
 type WorkspaceMediaAttrs struct {
-	InstanceId any
-	Media any
+	InstanceId  any
+	Media       any
 	WorkspaceId any
 }
 
 var WorkspaceMedia = ubx.DataSourceBinding{
 	WireType: "aws_connect_workspace_media",
 	Fields: ubx.FieldMap{
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"InstanceId":  ubx.FieldSpec{WireName: "instance_id"},
 		"WorkspaceId": ubx.FieldSpec{WireName: "workspace_id"},
 	},
 }

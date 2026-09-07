@@ -4,33 +4,33 @@ package elasticmapreduce
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Step_Step_Config struct {
-	Args any
-	Jar any
-	MainClass any
+	Args       any
+	Jar        any
+	MainClass  any
 	Properties any
 }
 
 type Step_Step_Status_FailureDetails struct {
 	LogFile any
 	Message any
-	Reason any
+	Reason  any
 }
 
 type Step_Step_Status_StateChangeReason struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type Step_Step_Status_Timeline struct {
 	CreationDateTime any
-	EndDateTime any
-	StartDateTime any
+	EndDateTime      any
+	StartDateTime    any
 }
 
 type Step_Step_Status struct {
 	// <p>The details of the step failure. The service attempts to detect the root cause for many common failures.</p>
 	FailureDetails any
-	State any
+	State          any
 	// <p>The details of the step state change reason.</p>
 	StateChangeReason any
 	// <p>The timeline of the cluster step lifecycle.</p>
@@ -40,25 +40,25 @@ type Step_Step_Status struct {
 type Step_Step struct {
 	ActionOnFailure any
 	// <p>A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.</p>
-	Config any
+	Config           any
 	EncryptionKeyArn any
 	ExecutionRoleArn any
-	Id any
-	LogUri any
-	Name any
+	Id               any
+	LogUri           any
+	Name             any
 	// <p>The execution status details of the cluster step.</p>
 	Status any
 }
 
 type StepConfig struct {
 	ClusterId any
-	StepId any
+	StepId    any
 }
 
 type StepAttrs struct {
 	ClusterId any
 	// <p>This represents a step in a cluster.</p>
-	Step any
+	Step   any
 	StepId any
 }
 
@@ -66,6 +66,6 @@ var Step = ubx.DataSourceBinding{
 	WireType: "aws_elasticmapreduce_step",
 	Fields: ubx.FieldMap{
 		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
-		"StepId": ubx.FieldSpec{WireName: "step_id"},
+		"StepId":    ubx.FieldSpec{WireName: "step_id"},
 	},
 }

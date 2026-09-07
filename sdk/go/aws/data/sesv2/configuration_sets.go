@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigurationSetsConfig struct {
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 type ConfigurationSetsAttrs struct {
 	ConfigurationSets any
-	NextToken any
-	PageSize any
+	NextToken         any
+	PageSize          any
 }
 
 var ConfigurationSets = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_configuration_sets",
 	Fields: ubx.FieldMap{
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 	},
 }

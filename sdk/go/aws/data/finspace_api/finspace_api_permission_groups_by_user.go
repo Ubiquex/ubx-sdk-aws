@@ -4,29 +4,29 @@ package finspace_api
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FinspaceApiPermissionGroupsByUser_PermissionGroups struct {
-	MembershipStatus any
-	Name any
+	MembershipStatus  any
+	Name              any
 	PermissionGroupId any
 }
 
 type FinspaceApiPermissionGroupsByUserConfig struct {
 	MaxResults any
-	NextToken any
-	UserId any
+	NextToken  any
+	UserId     any
 }
 
 type FinspaceApiPermissionGroupsByUserAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	PermissionGroups any
-	UserId any
+	UserId           any
 }
 
 var FinspaceApiPermissionGroupsByUser = ubx.DataSourceBinding{
 	WireType: "aws_finspace_api_permission_groups_by_user",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"UserId":     ubx.FieldSpec{WireName: "user_id"},
 	},
 }

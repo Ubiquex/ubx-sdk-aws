@@ -4,24 +4,24 @@ package mpa
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourcePolicyConfig struct {
-	PolicyName any
-	PolicyType any
+	PolicyName  any
+	PolicyType  any
 	ResourceArn any
 }
 
 type ResourcePolicyAttrs struct {
-	PolicyDocument any
-	PolicyName any
-	PolicyType any
+	PolicyDocument   any
+	PolicyName       any
+	PolicyType       any
 	PolicyVersionArn any
-	ResourceArn any
+	ResourceArn      any
 }
 
 var ResourcePolicy = ubx.DataSourceBinding{
 	WireType: "aws_mpa_resource_policy",
 	Fields: ubx.FieldMap{
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
+		"PolicyName":  ubx.FieldSpec{WireName: "policy_name"},
+		"PolicyType":  ubx.FieldSpec{WireName: "policy_type"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

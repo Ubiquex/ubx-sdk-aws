@@ -9,20 +9,20 @@ type DataQualityRuleRecommendationRun_AdditionalRunOptions struct {
 
 type DataQualityRuleRecommendationRun_DataSource_DataQualityGlueTable struct {
 	AdditionalOptions any
-	CatalogId any
-	ConnectionName any
-	DatabaseName any
+	CatalogId         any
+	ConnectionName    any
+	DatabaseName      any
 	// <p>SQL Query of SparkSQL format that can be used to pre-process data before running Data Quality Operations.</p>
 	PreProcessingQuery any
-	TableName any
+	TableName          any
 }
 
 type DataQualityRuleRecommendationRun_DataSource_GlueTable struct {
 	AdditionalOptions any
-	CatalogId any
-	ConnectionName any
-	DatabaseName any
-	TableName any
+	CatalogId         any
+	ConnectionName    any
+	DatabaseName      any
+	TableName         any
 }
 
 type DataQualityRuleRecommendationRun_DataSource struct {
@@ -38,22 +38,22 @@ type DataQualityRuleRecommendationRunConfig struct {
 
 type DataQualityRuleRecommendationRunAttrs struct {
 	// <p>Additional run options you can specify for a recommendation run.</p>
-	AdditionalRunOptions any
-	CompletedOn any
-	CreatedRulesetName any
+	AdditionalRunOptions             any
+	CompletedOn                      any
+	CreatedRulesetName               any
 	DataQualitySecurityConfiguration any
 	// <p>A data source (an Glue table) for which you want data quality results.</p>
-	DataSource any
-	ErrorString any
-	ExecutionTime any
-	LastModifiedOn any
-	NumberOfWorkers any
+	DataSource         any
+	ErrorString        any
+	ExecutionTime      any
+	LastModifiedOn     any
+	NumberOfWorkers    any
 	RecommendedRuleset any
-	Role any
-	RunId any
-	StartedOn any
-	Status any
-	Timeout any
+	Role               any
+	RunId              any
+	StartedOn          any
+	Status             any
+	Timeout            any
 }
 
 var DataQualityRuleRecommendationRun = ubx.DataSourceBinding{

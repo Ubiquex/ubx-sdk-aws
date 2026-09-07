@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataQappsCategories_Categories struct {
 	AppCount any
-	Color any
-	Id any
-	Title any
+	Color    any
+	Id       any
+	Title    any
 }
 
 type DataQappsCategoriesConfig struct {

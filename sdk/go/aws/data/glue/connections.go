@@ -10,74 +10,74 @@ type Connections_ConnectionList_AuthenticationConfiguration_Oauth2Properties_Oau
 
 type Connections_ConnectionList_AuthenticationConfiguration_Oauth2Properties struct {
 	Oauth2ClientApplication any
-	Oauth2GrantType any
-	TokenUrl any
-	TokenUrlParametersMap any
+	Oauth2GrantType         any
+	TokenUrl                any
+	TokenUrlParametersMap   any
 }
 
 type Connections_ConnectionList_AuthenticationConfiguration struct {
 	AuthenticationType any
-	KmsKeyArn any
-	Oauth2Properties any
-	SecretArn any
+	KmsKeyArn          any
+	Oauth2Properties   any
+	SecretArn          any
 }
 
 type Connections_ConnectionList_PhysicalConnectionRequirements struct {
-	AvailabilityZone any
+	AvailabilityZone    any
 	SecurityGroupIdList any
-	SubnetId any
+	SubnetId            any
 }
 
 type Connections_ConnectionList struct {
-	AthenaProperties any
-	AuthenticationConfiguration any
-	CompatibleComputeEnvironments any
-	ConnectionProperties any
-	ConnectionSchemaVersion any
-	ConnectionType any
-	CreationTime any
-	Description any
-	LastConnectionValidationTime any
-	LastUpdatedBy any
-	LastUpdatedTime any
-	MatchCriteria any
-	Name any
+	AthenaProperties               any
+	AuthenticationConfiguration    any
+	CompatibleComputeEnvironments  any
+	ConnectionProperties           any
+	ConnectionSchemaVersion        any
+	ConnectionType                 any
+	CreationTime                   any
+	Description                    any
+	LastConnectionValidationTime   any
+	LastUpdatedBy                  any
+	LastUpdatedTime                any
+	MatchCriteria                  any
+	Name                           any
 	PhysicalConnectionRequirements any
-	PythonProperties any
-	SparkProperties any
-	Status any
-	StatusReason any
+	PythonProperties               any
+	SparkProperties                any
+	Status                         any
+	StatusReason                   any
 }
 
 type Connections_Filter struct {
 	ConnectionSchemaVersion any
-	ConnectionType any
-	MatchCriteria any
+	ConnectionType          any
+	MatchCriteria           any
 }
 
 var Connections_FilterFields = ubx.FieldMap{
-		"ConnectionSchemaVersion": ubx.FieldSpec{WireName: "connection_schema_version"},
-		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
-		"MatchCriteria": ubx.FieldSpec{WireName: "match_criteria"},
-	}
+	"ConnectionSchemaVersion": ubx.FieldSpec{WireName: "connection_schema_version"},
+	"ConnectionType":          ubx.FieldSpec{WireName: "connection_type"},
+	"MatchCriteria":           ubx.FieldSpec{WireName: "match_criteria"},
+}
 
 type ConnectionsConfig struct {
 	CatalogId any
 	// <p>Filters the connection definitions that are returned by the <code>GetConnections</code> API operation.</p>
-	Filter any
+	Filter       any
 	HidePassword any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type ConnectionsAttrs struct {
-	CatalogId any
+	CatalogId      any
 	ConnectionList any
 	// <p>Filters the connection definitions that are returned by the <code>GetConnections</code> API operation.</p>
-	Filter any
+	Filter       any
 	HidePassword any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var Connections = ubx.DataSourceBinding{
@@ -86,11 +86,11 @@ var Connections = ubx.DataSourceBinding{
 		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: Connections_FilterFields,
+			Kind:     "object",
+			Fields:   Connections_FilterFields,
 		},
 		"HidePassword": ubx.FieldSpec{WireName: "hide_password"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

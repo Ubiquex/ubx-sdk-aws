@@ -4,26 +4,26 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeliveryChannelStatus_DeliveryChannelsStatus_ConfigHistoryDeliveryInfo struct {
-	LastAttemptTime any
-	LastErrorCode any
-	LastErrorMessage any
-	LastStatus any
+	LastAttemptTime    any
+	LastErrorCode      any
+	LastErrorMessage   any
+	LastStatus         any
 	LastSuccessfulTime any
-	NextDeliveryTime any
+	NextDeliveryTime   any
 }
 
 type DeliveryChannelStatus_DeliveryChannelsStatus_ConfigStreamDeliveryInfo struct {
-	LastErrorCode any
-	LastErrorMessage any
-	LastStatus any
+	LastErrorCode        any
+	LastErrorMessage     any
+	LastStatus           any
 	LastStatusChangeTime any
 }
 
 type DeliveryChannelStatus_DeliveryChannelsStatus struct {
-	ConfigHistoryDeliveryInfo any
+	ConfigHistoryDeliveryInfo  any
 	ConfigSnapshotDeliveryInfo any
-	ConfigStreamDeliveryInfo any
-	Name any
+	ConfigStreamDeliveryInfo   any
+	Name                       any
 }
 
 type DeliveryChannelStatusConfig struct {
@@ -31,7 +31,7 @@ type DeliveryChannelStatusConfig struct {
 }
 
 type DeliveryChannelStatusAttrs struct {
-	DeliveryChannelNames any
+	DeliveryChannelNames   any
 	DeliveryChannelsStatus any
 }
 

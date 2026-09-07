@@ -4,47 +4,47 @@ package workdocs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DocumentVersion_Metadata struct {
-	ContentCreatedTimestamp any
+	ContentCreatedTimestamp  any
 	ContentModifiedTimestamp any
-	ContentType any
-	CreatedTimestamp any
-	CreatorId any
-	Id any
-	ModifiedTimestamp any
-	Name any
-	Signature any
-	Size any
-	Source any
-	Status any
-	Thumbnail any
+	ContentType              any
+	CreatedTimestamp         any
+	CreatorId                any
+	Id                       any
+	ModifiedTimestamp        any
+	Name                     any
+	Signature                any
+	Size                     any
+	Source                   any
+	Status                   any
+	Thumbnail                any
 }
 
 type DocumentVersionConfig struct {
-	AuthenticationToken any
-	DocumentId any
-	Fields any
+	AuthenticationToken   any
+	DocumentId            any
+	Fields                any
 	IncludeCustomMetadata any
-	VersionId any
+	VersionId             any
 }
 
 type DocumentVersionAttrs struct {
-	AuthenticationToken any
-	CustomMetadata any
-	DocumentId any
-	Fields any
+	AuthenticationToken   any
+	CustomMetadata        any
+	DocumentId            any
+	Fields                any
 	IncludeCustomMetadata any
 	// <p>Describes a version of a document.</p>
-	Metadata any
+	Metadata  any
 	VersionId any
 }
 
 var DocumentVersion = ubx.DataSourceBinding{
 	WireType: "aws_workdocs_document_version",
 	Fields: ubx.FieldMap{
-		"AuthenticationToken": ubx.FieldSpec{WireName: "authentication_token"},
-		"DocumentId": ubx.FieldSpec{WireName: "document_id"},
-		"Fields": ubx.FieldSpec{WireName: "fields"},
+		"AuthenticationToken":   ubx.FieldSpec{WireName: "authentication_token"},
+		"DocumentId":            ubx.FieldSpec{WireName: "document_id"},
+		"Fields":                ubx.FieldSpec{WireName: "fields"},
 		"IncludeCustomMetadata": ubx.FieldSpec{WireName: "include_custom_metadata"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
+		"VersionId":             ubx.FieldSpec{WireName: "version_id"},
 	},
 }

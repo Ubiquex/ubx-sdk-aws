@@ -4,19 +4,19 @@ package ivsrealtime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PublicKeys_PublicKeys struct {
-	Arn any
+	Arn  any
 	Name any
 	Tags any
 }
 
 type PublicKeysConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type PublicKeysAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	PublicKeys any
 }
 
@@ -24,6 +24,6 @@ var PublicKeys = ubx.DataSourceBinding{
 	WireType: "aws_ivsrealtime_public_keys",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

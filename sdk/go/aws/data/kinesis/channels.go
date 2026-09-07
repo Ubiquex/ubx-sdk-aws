@@ -4,48 +4,48 @@ package kinesis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Channels_ChannelSummaries_Streams struct {
-	StreamArn any
+	StreamArn               any
 	StreamCreationTimestamp any
 }
 
 type Channels_ChannelSummaries struct {
-	ChannelArn any
+	ChannelArn               any
 	ChannelCreationTimestamp any
-	ChannelDestinationType any
-	ChannelId any
-	ChannelName any
-	ChannelStatus any
-	ChannelStatusReason any
-	Streams any
+	ChannelDestinationType   any
+	ChannelId                any
+	ChannelName              any
+	ChannelStatus            any
+	ChannelStatusReason      any
+	Streams                  any
 }
 
 var Channels_ChannelSummaries_StreamsFields = ubx.FieldMap{
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
-		"StreamCreationTimestamp": ubx.FieldSpec{WireName: "stream_creation_timestamp"},
-	}
+	"StreamArn":               ubx.FieldSpec{WireName: "stream_arn"},
+	"StreamCreationTimestamp": ubx.FieldSpec{WireName: "stream_creation_timestamp"},
+}
 
 type ChannelsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	StreamFilter any
 }
 
 type ChannelsAttrs struct {
 	ChannelSummaries any
-	MaxResults any
-	NextToken any
-	StreamFilter any
+	MaxResults       any
+	NextToken        any
+	StreamFilter     any
 }
 
 var Channels = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_channels",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"StreamFilter": ubx.FieldSpec{
 			WireName: "stream_filter",
-			Kind: "list",
-			Fields: Channels_ChannelSummaries_StreamsFields,
+			Kind:     "list",
+			Fields:   Channels_ChannelSummaries_StreamsFields,
 		},
 	},
 }

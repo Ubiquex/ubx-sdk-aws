@@ -4,32 +4,32 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RelationalDatabaseParameters_Parameters struct {
-	AllowedValues any
-	ApplyMethod any
-	ApplyType any
-	DataType any
-	Description any
-	IsModifiable any
-	ParameterName any
+	AllowedValues  any
+	ApplyMethod    any
+	ApplyType      any
+	DataType       any
+	Description    any
+	IsModifiable   any
+	ParameterName  any
 	ParameterValue any
 }
 
 type RelationalDatabaseParametersConfig struct {
-	PageToken any
+	PageToken              any
 	RelationalDatabaseName any
 }
 
 type RelationalDatabaseParametersAttrs struct {
-	NextPageToken any
-	PageToken any
-	Parameters any
+	NextPageToken          any
+	PageToken              any
+	Parameters             any
 	RelationalDatabaseName any
 }
 
 var RelationalDatabaseParameters = ubx.DataSourceBinding{
 	WireType: "aws_lightsail_relational_database_parameters",
 	Fields: ubx.FieldMap{
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
+		"PageToken":              ubx.FieldSpec{WireName: "page_token"},
 		"RelationalDatabaseName": ubx.FieldSpec{WireName: "relational_database_name"},
 	},
 }

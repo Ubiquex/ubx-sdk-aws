@@ -4,23 +4,23 @@ package kinesis_analytics_v2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KinesisAnalyticsV2ApplicationSnapshots_SnapshotSummaries_ApplicationEncryptionConfigurationDescription struct {
-	KeyId any
+	KeyId   any
 	KeyType any
 }
 
 type KinesisAnalyticsV2ApplicationSnapshots_SnapshotSummaries struct {
 	ApplicationEncryptionConfigurationDescription any
-	ApplicationVersionId any
-	RuntimeEnvironment any
-	SnapshotCreationTimestamp any
-	SnapshotName any
-	SnapshotStatus any
+	ApplicationVersionId                          any
+	RuntimeEnvironment                            any
+	SnapshotCreationTimestamp                     any
+	SnapshotName                                  any
+	SnapshotStatus                                any
 }
 
 type KinesisAnalyticsV2ApplicationSnapshotsConfig struct {
 	// <p>The name of the application.</p>
 	ApplicationName any
-	Limit any
+	Limit           any
 	// <p>A pagination token that can be used in a subsequent request.</p>
 	NextToken any
 }
@@ -28,9 +28,9 @@ type KinesisAnalyticsV2ApplicationSnapshotsConfig struct {
 type KinesisAnalyticsV2ApplicationSnapshotsAttrs struct {
 	// <p>The name of the application.</p>
 	ApplicationName any
-	Limit any
+	Limit           any
 	// <p>A pagination token that can be used in a subsequent request.</p>
-	NextToken any
+	NextToken         any
 	SnapshotSummaries any
 }
 
@@ -38,7 +38,7 @@ var KinesisAnalyticsV2ApplicationSnapshots = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_analytics_v2_application_snapshots",
 	Fields: ubx.FieldMap{
 		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":           ubx.FieldSpec{WireName: "limit"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -15,9 +15,9 @@ type MetricsExportConfig struct {
 type MetricsExportAttrs struct {
 	ErrorMessage any
 	// <p>The location of the Amazon S3 bucket.</p>
-	ExportLocation any
+	ExportLocation  any
 	MetricsExportId any
-	Status any
+	Status          any
 }
 
 var MetricsExport = ubx.DataSourceBinding{

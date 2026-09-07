@@ -12,16 +12,16 @@ type DataSources_DataSources_AlternateDataSourceParameters_AthenaParameters_Iden
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_AthenaParameters struct {
-	ConsumerAccountRoleArn any
+	ConsumerAccountRoleArn      any
 	IdentityCenterConfiguration any
-	RoleArn any
-	WorkGroup any
+	RoleArn                     any
+	WorkGroup                   any
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_AuroraParameters struct {
 	Database any
-	Host any
-	Port any
+	Host     any
+	Port     any
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_AwsIotAnalyticsParameters struct {
@@ -30,7 +30,7 @@ type DataSources_DataSources_AlternateDataSourceParameters_AwsIotAnalyticsParame
 
 type DataSources_DataSources_AlternateDataSourceParameters_BigQueryParameters struct {
 	DataSetRegion any
-	ProjectId any
+	ProjectId     any
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_ConfluenceParameters struct {
@@ -42,8 +42,8 @@ type DataSources_DataSources_AlternateDataSourceParameters_CustomConnectionParam
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_DatabricksParameters struct {
-	Host any
-	Port any
+	Host            any
+	Port            any
 	SqlEndpointPath any
 }
 
@@ -53,7 +53,7 @@ type DataSources_DataSources_AlternateDataSourceParameters_ExasolParameters stru
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_Fmkbparameters struct {
-	KnowledgeBaseArn any
+	KnowledgeBaseArn    any
 	LinkedDataSourceIds any
 }
 
@@ -62,9 +62,9 @@ type DataSources_DataSources_AlternateDataSourceParameters_GoogleDriveParameters
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_ImpalaParameters struct {
-	Database any
-	Host any
-	Port any
+	Database        any
+	Host            any
+	Port            any
 	SqlEndpointPath any
 }
 
@@ -79,16 +79,16 @@ type DataSources_DataSources_AlternateDataSourceParameters_OneDriveParameters st
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_OracleParameters struct {
-	Database any
-	Host any
-	Port any
+	Database       any
+	Host           any
+	Port           any
 	UseServiceName any
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_PrestoParameters struct {
 	Catalog any
-	Host any
-	Port any
+	Host    any
+	Port    any
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_QbusinessParameters struct {
@@ -96,40 +96,40 @@ type DataSources_DataSources_AlternateDataSourceParameters_QbusinessParameters s
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_RdsParameters struct {
-	Database any
+	Database   any
 	InstanceId any
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_RedshiftParameters_Iamparameters struct {
 	AutoCreateDatabaseUser any
-	DatabaseGroups any
-	DatabaseUser any
-	RoleArn any
+	DatabaseGroups         any
+	DatabaseUser           any
+	RoleArn                any
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_RedshiftParameters struct {
-	ClusterId any
-	Database any
-	Host any
-	Iamparameters any
+	ClusterId                   any
+	Database                    any
+	Host                        any
+	Iamparameters               any
 	IdentityCenterConfiguration any
-	Port any
+	Port                        any
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_S3KnowledgeBaseParameters struct {
-	BucketUrl any
+	BucketUrl             any
 	MetadataFilesLocation any
-	RoleArn any
+	RoleArn               any
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_S3Parameters_ManifestFileLocation struct {
 	Bucket any
-	Key any
+	Key    any
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_S3Parameters struct {
 	ManifestFileLocation any
-	RoleArn any
+	RoleArn              any
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_S3TablesParameters struct {
@@ -137,10 +137,10 @@ type DataSources_DataSources_AlternateDataSourceParameters_S3TablesParameters st
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_SharePointParameters struct {
-	AuthType any
-	ClientId any
+	AuthType         any
+	ClientId         any
 	SharePointDomain any
-	TenantId any
+	TenantId         any
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_SnowflakeParameters_OauthParameters_IdentityProviderVpcConnectionProperties struct {
@@ -149,90 +149,90 @@ type DataSources_DataSources_AlternateDataSourceParameters_SnowflakeParameters_O
 
 type DataSources_DataSources_AlternateDataSourceParameters_SnowflakeParameters_OauthParameters struct {
 	IdentityProviderCacertificatesBundleS3Uri any
-	IdentityProviderResourceUri any
-	IdentityProviderVpcConnectionProperties any
-	OauthScope any
-	TokenProviderUrl any
+	IdentityProviderResourceUri               any
+	IdentityProviderVpcConnectionProperties   any
+	OauthScope                                any
+	TokenProviderUrl                          any
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_SnowflakeParameters struct {
-	AuthenticationType any
-	Database any
+	AuthenticationType        any
+	Database                  any
 	DatabaseAccessControlRole any
-	Host any
-	OauthParameters any
-	Warehouse any
+	Host                      any
+	OauthParameters           any
+	Warehouse                 any
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_StarburstParameters struct {
-	AuthenticationType any
-	Catalog any
+	AuthenticationType        any
+	Catalog                   any
 	DatabaseAccessControlRole any
-	Host any
-	OauthParameters any
-	Port any
-	ProductType any
+	Host                      any
+	OauthParameters           any
+	Port                      any
+	ProductType               any
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_TwitterParameters struct {
 	MaxRows any
-	Query any
+	Query   any
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters_WebCrawlerParameters struct {
-	LoginPageUrl any
+	LoginPageUrl        any
 	PasswordButtonXpath any
-	PasswordFieldXpath any
+	PasswordFieldXpath  any
 	UsernameButtonXpath any
-	UsernameFieldXpath any
-	WebCrawlerAuthType any
-	WebProxyHostName any
-	WebProxyPortNumber any
+	UsernameFieldXpath  any
+	WebCrawlerAuthType  any
+	WebProxyHostName    any
+	WebProxyPortNumber  any
 }
 
 type DataSources_DataSources_AlternateDataSourceParameters struct {
 	AmazonElasticsearchParameters any
-	AmazonOpenSearchParameters any
-	AthenaParameters any
-	AuroraParameters any
-	AuroraPostgreSqlParameters any
-	AwsIotAnalyticsParameters any
-	BigQueryParameters any
-	ConfluenceParameters any
-	CustomConnectionParameters any
-	DatabricksParameters any
-	ExasolParameters any
-	Fmkbparameters any
-	GoogleDriveParameters any
-	ImpalaParameters any
-	JiraParameters any
-	MariaDbParameters any
-	MySqlParameters any
-	OneDriveParameters any
-	OracleParameters any
-	PostgreSqlParameters any
-	PrestoParameters any
-	QbusinessParameters any
-	RdsParameters any
-	RedshiftParameters any
-	S3KnowledgeBaseParameters any
-	S3Parameters any
-	S3TablesParameters any
-	ServiceNowParameters any
-	SharePointParameters any
-	SnowflakeParameters any
-	SparkParameters any
-	SqlServerParameters any
-	StarburstParameters any
-	TeradataParameters any
-	TrinoParameters any
-	TwitterParameters any
-	WebCrawlerParameters any
+	AmazonOpenSearchParameters    any
+	AthenaParameters              any
+	AuroraParameters              any
+	AuroraPostgreSqlParameters    any
+	AwsIotAnalyticsParameters     any
+	BigQueryParameters            any
+	ConfluenceParameters          any
+	CustomConnectionParameters    any
+	DatabricksParameters          any
+	ExasolParameters              any
+	Fmkbparameters                any
+	GoogleDriveParameters         any
+	ImpalaParameters              any
+	JiraParameters                any
+	MariaDbParameters             any
+	MySqlParameters               any
+	OneDriveParameters            any
+	OracleParameters              any
+	PostgreSqlParameters          any
+	PrestoParameters              any
+	QbusinessParameters           any
+	RdsParameters                 any
+	RedshiftParameters            any
+	S3KnowledgeBaseParameters     any
+	S3Parameters                  any
+	S3TablesParameters            any
+	ServiceNowParameters          any
+	SharePointParameters          any
+	SnowflakeParameters           any
+	SparkParameters               any
+	SqlServerParameters           any
+	StarburstParameters           any
+	TeradataParameters            any
+	TrinoParameters               any
+	TwitterParameters             any
+	WebCrawlerParameters          any
 }
 
 type DataSources_DataSources_ErrorInfo struct {
 	Message any
-	Type any
+	Type    any
 }
 
 type DataSources_DataSources_SslProperties struct {
@@ -241,42 +241,42 @@ type DataSources_DataSources_SslProperties struct {
 
 type DataSources_DataSources struct {
 	AlternateDataSourceParameters any
-	Arn any
-	CreatedTime any
-	CredentialStatus any
-	DataSourceId any
-	DataSourceParameters any
-	ErrorInfo any
-	LastCredentialVerifiedAt any
-	LastUpdatedTime any
-	Name any
-	SecretArn any
-	SslProperties any
-	Status any
-	Type any
-	VpcConnectionProperties any
+	Arn                           any
+	CreatedTime                   any
+	CredentialStatus              any
+	DataSourceId                  any
+	DataSourceParameters          any
+	ErrorInfo                     any
+	LastCredentialVerifiedAt      any
+	LastUpdatedTime               any
+	Name                          any
+	SecretArn                     any
+	SslProperties                 any
+	Status                        any
+	Type                          any
+	VpcConnectionProperties       any
 }
 
 type DataSourcesConfig struct {
 	AwsAccountId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type DataSourcesAttrs struct {
 	AwsAccountId any
-	DataSources any
-	MaxResults any
-	NextToken any
-	RequestId any
-	Status any
+	DataSources  any
+	MaxResults   any
+	NextToken    any
+	RequestId    any
+	Status       any
 }
 
 var DataSources = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_data_sources",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

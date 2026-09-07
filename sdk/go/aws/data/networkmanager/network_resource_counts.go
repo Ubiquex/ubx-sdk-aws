@@ -4,31 +4,31 @@ package networkmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NetworkResourceCounts_NetworkResourceCounts struct {
-	Count any
+	Count        any
 	ResourceType any
 }
 
 type NetworkResourceCountsConfig struct {
 	GlobalNetworkId any
-	MaxResults any
-	NextToken any
-	ResourceType any
+	MaxResults      any
+	NextToken       any
+	ResourceType    any
 }
 
 type NetworkResourceCountsAttrs struct {
-	GlobalNetworkId any
-	MaxResults any
+	GlobalNetworkId       any
+	MaxResults            any
 	NetworkResourceCounts any
-	NextToken any
-	ResourceType any
+	NextToken             any
+	ResourceType          any
 }
 
 var NetworkResourceCounts = ubx.DataSourceBinding{
 	WireType: "aws_networkmanager_network_resource_counts",
 	Fields: ubx.FieldMap{
 		"GlobalNetworkId": ubx.FieldSpec{WireName: "global_network_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"ResourceType":    ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

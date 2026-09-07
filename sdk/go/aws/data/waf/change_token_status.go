@@ -8,7 +8,7 @@ type ChangeTokenStatusConfig struct {
 }
 
 type ChangeTokenStatusAttrs struct {
-	ChangeToken any
+	ChangeToken       any
 	ChangeTokenStatus any
 }
 

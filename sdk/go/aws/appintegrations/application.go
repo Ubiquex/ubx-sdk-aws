@@ -38,39 +38,39 @@ type Application_Tags struct {
 }
 
 var Application_ApplicationConfig_ContactHandlingFields = ubx.FieldMap{
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-	}
+	"Scope": ubx.FieldSpec{WireName: "scope"},
+}
 
 var Application_ApplicationConfigFields = ubx.FieldMap{
-		"ContactHandling": ubx.FieldSpec{
-			WireName: "contact_handling",
-			Kind: "object",
-			Fields: Application_ApplicationConfig_ContactHandlingFields,
-		},
-	}
+	"ContactHandling": ubx.FieldSpec{
+		WireName: "contact_handling",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfig_ContactHandlingFields,
+	},
+}
 
 var Application_ApplicationSourceConfig_ExternalUrlConfigFields = ubx.FieldMap{
-		"AccessUrl": ubx.FieldSpec{WireName: "access_url"},
-		"ApprovedOrigins": ubx.FieldSpec{WireName: "approved_origins"},
-	}
+	"AccessUrl":       ubx.FieldSpec{WireName: "access_url"},
+	"ApprovedOrigins": ubx.FieldSpec{WireName: "approved_origins"},
+}
 
 var Application_ApplicationSourceConfigFields = ubx.FieldMap{
-		"ExternalUrlConfig": ubx.FieldSpec{
-			WireName: "external_url_config",
-			Kind: "object",
-			Fields: Application_ApplicationSourceConfig_ExternalUrlConfigFields,
-		},
-	}
+	"ExternalUrlConfig": ubx.FieldSpec{
+		WireName: "external_url_config",
+		Kind:     "object",
+		Fields:   Application_ApplicationSourceConfig_ExternalUrlConfigFields,
+	},
+}
 
 var Application_IframeConfigFields = ubx.FieldMap{
-		"Allow": ubx.FieldSpec{WireName: "allow"},
-		"Sandbox": ubx.FieldSpec{WireName: "sandbox"},
-	}
+	"Allow":   ubx.FieldSpec{WireName: "allow"},
+	"Sandbox": ubx.FieldSpec{WireName: "sandbox"},
+}
 
 var Application_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApplicationConfig struct {
 	ApplicationConfig any
@@ -98,7 +98,7 @@ type ApplicationConfig struct {
 
 type ApplicationAttrs struct {
 	// The Amazon Resource Name (ARN) of the application.
-	ApplicationArn any
+	ApplicationArn    any
 	ApplicationConfig any
 	// Application source config
 	ApplicationSourceConfig any
@@ -129,30 +129,30 @@ var Application = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApplicationConfig": ubx.FieldSpec{
 			WireName: "application_config",
-			Kind: "object",
-			Fields: Application_ApplicationConfigFields,
+			Kind:     "object",
+			Fields:   Application_ApplicationConfigFields,
 		},
 		"ApplicationSourceConfig": ubx.FieldSpec{
 			WireName: "application_source_config",
-			Kind: "object",
-			Fields: Application_ApplicationSourceConfigFields,
+			Kind:     "object",
+			Fields:   Application_ApplicationSourceConfigFields,
 		},
 		"ApplicationType": ubx.FieldSpec{WireName: "application_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"IframeConfig": ubx.FieldSpec{
 			WireName: "iframe_config",
-			Kind: "object",
-			Fields: Application_IframeConfigFields,
+			Kind:     "object",
+			Fields:   Application_IframeConfigFields,
 		},
 		"InitializationTimeout": ubx.FieldSpec{WireName: "initialization_timeout"},
-		"IsService": ubx.FieldSpec{WireName: "is_service"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Permissions": ubx.FieldSpec{WireName: "permissions"},
+		"IsService":             ubx.FieldSpec{WireName: "is_service"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"Namespace":             ubx.FieldSpec{WireName: "namespace"},
+		"Permissions":           ubx.FieldSpec{WireName: "permissions"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Application_TagsFields,
+			Kind:     "list",
+			Fields:   Application_TagsFields,
 		},
 	},
 }

@@ -4,30 +4,30 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OriginAccessControls_OriginAccessControlList_Items struct {
-	Description any
-	Id any
-	Name any
+	Description                   any
+	Id                            any
+	Name                          any
 	OriginAccessControlOriginType any
-	SigningBehavior any
-	SigningProtocol any
+	SigningBehavior               any
+	SigningProtocol               any
 }
 
 type OriginAccessControls_OriginAccessControlList struct {
 	IsTruncated any
-	Items any
-	Marker any
-	MaxItems any
-	NextMarker any
-	Quantity any
+	Items       any
+	Marker      any
+	MaxItems    any
+	NextMarker  any
+	Quantity    any
 }
 
 type OriginAccessControlsConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 }
 
 type OriginAccessControlsAttrs struct {
-	Marker any
+	Marker   any
 	MaxItems any
 	// <p>A list of CloudFront origin access controls.</p>
 	OriginAccessControlList any
@@ -36,7 +36,7 @@ type OriginAccessControlsAttrs struct {
 var OriginAccessControls = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_origin_access_controls",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 	},
 }

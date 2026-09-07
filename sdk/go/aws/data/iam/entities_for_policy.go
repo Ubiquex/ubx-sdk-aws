@@ -4,25 +4,25 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EntitiesForPolicy_PolicyGroups struct {
-	GroupId any
+	GroupId   any
 	GroupName any
 }
 
 type EntitiesForPolicy_PolicyRoles struct {
-	RoleId any
+	RoleId   any
 	RoleName any
 }
 
 type EntitiesForPolicy_PolicyUsers struct {
-	UserId any
+	UserId   any
 	UserName any
 }
 
 type EntitiesForPolicyConfig struct {
 	EntityFilter any
-	Marker any
-	MaxItems any
-	PathPrefix any
+	Marker       any
+	MaxItems     any
+	PathPrefix   any
 	// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
 	PolicyArn any
 	// <p>The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
@@ -31,27 +31,27 @@ type EntitiesForPolicyConfig struct {
 
 type EntitiesForPolicyAttrs struct {
 	EntityFilter any
-	IsTruncated any
-	Marker any
-	MaxItems any
-	PathPrefix any
+	IsTruncated  any
+	Marker       any
+	MaxItems     any
+	PathPrefix   any
 	// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
-	PolicyArn any
+	PolicyArn    any
 	PolicyGroups any
-	PolicyRoles any
+	PolicyRoles  any
 	// <p>The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
 	PolicyUsageFilter any
-	PolicyUsers any
+	PolicyUsers       any
 }
 
 var EntitiesForPolicy = ubx.DataSourceBinding{
 	WireType: "aws_iam_entities_for_policy",
 	Fields: ubx.FieldMap{
-		"EntityFilter": ubx.FieldSpec{WireName: "entity_filter"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"PathPrefix": ubx.FieldSpec{WireName: "path_prefix"},
-		"PolicyArn": ubx.FieldSpec{WireName: "policy_arn"},
+		"EntityFilter":      ubx.FieldSpec{WireName: "entity_filter"},
+		"Marker":            ubx.FieldSpec{WireName: "marker"},
+		"MaxItems":          ubx.FieldSpec{WireName: "max_items"},
+		"PathPrefix":        ubx.FieldSpec{WireName: "path_prefix"},
+		"PolicyArn":         ubx.FieldSpec{WireName: "policy_arn"},
 		"PolicyUsageFilter": ubx.FieldSpec{WireName: "policy_usage_filter"},
 	},
 }

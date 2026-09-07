@@ -4,37 +4,37 @@ package applicationinsights
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Applications_ApplicationInfoList struct {
-	AccountId any
+	AccountId               any
 	AttachMissingPermission any
-	AutoConfigEnabled any
-	CwemonitorEnabled any
-	DiscoveryType any
-	LifeCycle any
-	OpsCenterEnabled any
-	OpsItemSnstopicArn any
-	Remarks any
-	ResourceGroupName any
-	SnsnotificationArn any
+	AutoConfigEnabled       any
+	CwemonitorEnabled       any
+	DiscoveryType           any
+	LifeCycle               any
+	OpsCenterEnabled        any
+	OpsItemSnstopicArn      any
+	Remarks                 any
+	ResourceGroupName       any
+	SnsnotificationArn      any
 }
 
 type ApplicationsConfig struct {
-	AccountId any
+	AccountId  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApplicationsAttrs struct {
-	AccountId any
+	AccountId           any
 	ApplicationInfoList any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 }
 
 var Applications = ubx.DataSourceBinding{
 	WireType: "aws_applicationinsights_applications",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

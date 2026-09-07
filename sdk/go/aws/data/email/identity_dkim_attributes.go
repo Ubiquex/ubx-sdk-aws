@@ -4,8 +4,8 @@ package email
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityDkimAttributes_DkimAttributes struct {
-	DkimEnabled any
-	DkimTokens any
+	DkimEnabled            any
+	DkimTokens             any
 	DkimVerificationStatus any
 }
 
@@ -15,7 +15,7 @@ type IdentityDkimAttributesConfig struct {
 
 type IdentityDkimAttributesAttrs struct {
 	DkimAttributes any
-	Identities any
+	Identities     any
 }
 
 var IdentityDkimAttributes = ubx.DataSourceBinding{

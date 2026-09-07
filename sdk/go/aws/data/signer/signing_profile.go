@@ -5,23 +5,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SigningProfile_Overrides_SigningConfiguration struct {
 	EncryptionAlgorithm any
-	HashAlgorithm any
+	HashAlgorithm       any
 }
 
 type SigningProfile_Overrides struct {
 	// <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
 	SigningConfiguration any
-	SigningImageFormat any
+	SigningImageFormat   any
 }
 
 type SigningProfile_RevocationRecord struct {
 	RevocationEffectiveFrom any
-	RevokedAt any
-	RevokedBy any
+	RevokedAt               any
+	RevokedBy               any
 }
 
 type SigningProfile_SignatureValidityPeriod struct {
-	Type any
+	Type  any
 	Value any
 }
 
@@ -30,36 +30,36 @@ type SigningProfile_SigningMaterial struct {
 }
 
 type SigningProfileConfig struct {
-	ProfileName any
+	ProfileName  any
 	ProfileOwner any
 }
 
 type SigningProfileAttrs struct {
 	Arn any
 	// <p>Any overrides that are applied to the signing configuration of a signing platform.</p>
-	Overrides any
+	Overrides           any
 	PlatformDisplayName any
-	PlatformId any
-	ProfileName any
-	ProfileOwner any
-	ProfileVersion any
-	ProfileVersionArn any
+	PlatformId          any
+	ProfileName         any
+	ProfileOwner        any
+	ProfileVersion      any
+	ProfileVersionArn   any
 	// <p>Revocation information for a signing profile.</p>
 	RevocationRecord any
 	// <p>The validity period for a signing job.</p>
 	SignatureValidityPeriod any
 	// <p>The ACM certificate that is used to sign your code.</p>
-	SigningMaterial any
+	SigningMaterial   any
 	SigningParameters any
-	Status any
-	StatusReason any
-	Tags any
+	Status            any
+	StatusReason      any
+	Tags              any
 }
 
 var SigningProfile = ubx.DataSourceBinding{
 	WireType: "aws_signer_signing_profile",
 	Fields: ubx.FieldMap{
-		"ProfileName": ubx.FieldSpec{WireName: "profile_name"},
+		"ProfileName":  ubx.FieldSpec{WireName: "profile_name"},
 		"ProfileOwner": ubx.FieldSpec{WireName: "profile_owner"},
 	},
 }

@@ -4,7 +4,7 @@ package mediastore
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type TagsForResourceConfig struct {
 
 type TagsForResourceAttrs struct {
 	Resource any
-	Tags any
+	Tags     any
 }
 
 var TagsForResource = ubx.DataSourceBinding{

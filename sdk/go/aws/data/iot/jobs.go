@@ -4,47 +4,47 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Jobs_Jobs struct {
-	CompletedAt any
-	CreatedAt any
-	IsConcurrent any
-	JobArn any
-	JobId any
-	LastUpdatedAt any
-	Status any
+	CompletedAt     any
+	CreatedAt       any
+	IsConcurrent    any
+	JobArn          any
+	JobId           any
+	LastUpdatedAt   any
+	Status          any
 	TargetSelection any
-	ThingGroupId any
+	ThingGroupId    any
 }
 
 type JobsConfig struct {
-	MaxResults any
-	NamespaceId any
-	NextToken any
-	Status any
+	MaxResults      any
+	NamespaceId     any
+	NextToken       any
+	Status          any
 	TargetSelection any
-	ThingGroupId any
-	ThingGroupName any
+	ThingGroupId    any
+	ThingGroupName  any
 }
 
 type JobsAttrs struct {
-	Jobs any
-	MaxResults any
-	NamespaceId any
-	NextToken any
-	Status any
+	Jobs            any
+	MaxResults      any
+	NamespaceId     any
+	NextToken       any
+	Status          any
 	TargetSelection any
-	ThingGroupId any
-	ThingGroupName any
+	ThingGroupId    any
+	ThingGroupName  any
 }
 
 var Jobs = ubx.DataSourceBinding{
 	WireType: "aws_iot_jobs",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NamespaceId": ubx.FieldSpec{WireName: "namespace_id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NamespaceId":     ubx.FieldSpec{WireName: "namespace_id"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"Status":          ubx.FieldSpec{WireName: "status"},
 		"TargetSelection": ubx.FieldSpec{WireName: "target_selection"},
-		"ThingGroupId": ubx.FieldSpec{WireName: "thing_group_id"},
-		"ThingGroupName": ubx.FieldSpec{WireName: "thing_group_name"},
+		"ThingGroupId":    ubx.FieldSpec{WireName: "thing_group_id"},
+		"ThingGroupName":  ubx.FieldSpec{WireName: "thing_group_name"},
 	},
 }

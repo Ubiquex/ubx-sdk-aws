@@ -4,7 +4,7 @@ package api_ecr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiEcrSigningConfiguration_SigningConfiguration_Rules_RepositoryFilters struct {
-	Filter any
+	Filter     any
 	FilterType any
 }
 
@@ -28,6 +28,5 @@ type ApiEcrSigningConfigurationAttrs struct {
 
 var ApiEcrSigningConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_api_ecr_signing_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

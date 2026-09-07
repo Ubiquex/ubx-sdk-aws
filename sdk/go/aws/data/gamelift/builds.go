@@ -4,35 +4,35 @@ package gamelift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Builds_Builds struct {
-	BuildArn any
-	BuildId any
-	CreationTime any
-	Name any
-	OperatingSystem any
+	BuildArn         any
+	BuildId          any
+	CreationTime     any
+	Name             any
+	OperatingSystem  any
 	ServerSdkVersion any
-	SizeOnDisk any
-	Status any
-	Version any
+	SizeOnDisk       any
+	Status           any
+	Version          any
 }
 
 type BuildsConfig struct {
-	Limit any
+	Limit     any
 	NextToken any
-	Status any
+	Status    any
 }
 
 type BuildsAttrs struct {
-	Builds any
-	Limit any
+	Builds    any
+	Limit     any
 	NextToken any
-	Status any
+	Status    any
 }
 
 var Builds = ubx.DataSourceBinding{
 	WireType: "aws_gamelift_builds",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":    ubx.FieldSpec{WireName: "status"},
 	},
 }

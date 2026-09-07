@@ -9,7 +9,7 @@ type Registry_ApprovalConfiguration struct {
 }
 
 type Registry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValue struct {
-	MatchValueString any
+	MatchValueString     any
 	MatchValueStringList any
 }
 
@@ -22,7 +22,7 @@ type Registry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer
 type Registry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims struct {
 	AuthorizingClaimMatchValue any
 	// The name of the claim in the incoming JWT token that the custom authorizer extracts to evaluate as a custom claim for access control decisions. (AI-inferred)
-	InboundTokenClaimName any
+	InboundTokenClaimName      any
 	InboundTokenClaimValueType any
 }
 
@@ -50,70 +50,70 @@ type Registry_DiscoveryConfiguration struct {
 }
 
 type Registry_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Registry_ApprovalConfigurationFields = ubx.FieldMap{
-		"AutoApprovalRules": ubx.FieldSpec{WireName: "auto_approval_rules"},
-	}
+	"AutoApprovalRules": ubx.FieldSpec{WireName: "auto_approval_rules"},
+}
 
 var Registry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValueFields = ubx.FieldMap{
-		"MatchValueString": ubx.FieldSpec{WireName: "match_value_string"},
-		"MatchValueStringList": ubx.FieldSpec{WireName: "match_value_string_list"},
-	}
+	"MatchValueString":     ubx.FieldSpec{WireName: "match_value_string"},
+	"MatchValueStringList": ubx.FieldSpec{WireName: "match_value_string_list"},
+}
 
 var Registry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValueFields = ubx.FieldMap{
-		"ClaimMatchOperator": ubx.FieldSpec{WireName: "claim_match_operator"},
-		"ClaimMatchValue": ubx.FieldSpec{
-			WireName: "claim_match_value",
-			Kind: "object",
-			Fields: Registry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValueFields,
-		},
-	}
+	"ClaimMatchOperator": ubx.FieldSpec{WireName: "claim_match_operator"},
+	"ClaimMatchValue": ubx.FieldSpec{
+		WireName: "claim_match_value",
+		Kind:     "object",
+		Fields:   Registry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValueFields,
+	},
+}
 
 var Registry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaimsFields = ubx.FieldMap{
-		"AuthorizingClaimMatchValue": ubx.FieldSpec{
-			WireName: "authorizing_claim_match_value",
-			Kind: "object",
-			Fields: Registry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValueFields,
-		},
-		"InboundTokenClaimName": ubx.FieldSpec{WireName: "inbound_token_claim_name"},
-		"InboundTokenClaimValueType": ubx.FieldSpec{WireName: "inbound_token_claim_value_type"},
-	}
+	"AuthorizingClaimMatchValue": ubx.FieldSpec{
+		WireName: "authorizing_claim_match_value",
+		Kind:     "object",
+		Fields:   Registry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValueFields,
+	},
+	"InboundTokenClaimName":      ubx.FieldSpec{WireName: "inbound_token_claim_name"},
+	"InboundTokenClaimValueType": ubx.FieldSpec{WireName: "inbound_token_claim_value_type"},
+}
 
 var Registry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizerFields = ubx.FieldMap{
-		"AllowedAudience": ubx.FieldSpec{WireName: "allowed_audience"},
-		"AllowedClients": ubx.FieldSpec{WireName: "allowed_clients"},
-		"AllowedScopes": ubx.FieldSpec{WireName: "allowed_scopes"},
-		"CustomClaims": ubx.FieldSpec{
-			WireName: "custom_claims",
-			Kind: "list",
-			Fields: Registry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaimsFields,
-		},
-		"DiscoveryUrl": ubx.FieldSpec{WireName: "discovery_url"},
-	}
+	"AllowedAudience": ubx.FieldSpec{WireName: "allowed_audience"},
+	"AllowedClients":  ubx.FieldSpec{WireName: "allowed_clients"},
+	"AllowedScopes":   ubx.FieldSpec{WireName: "allowed_scopes"},
+	"CustomClaims": ubx.FieldSpec{
+		WireName: "custom_claims",
+		Kind:     "list",
+		Fields:   Registry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaimsFields,
+	},
+	"DiscoveryUrl": ubx.FieldSpec{WireName: "discovery_url"},
+}
 
 var Registry_DiscoveryConfiguration_AuthorizerConfigurationFields = ubx.FieldMap{
-		"CustomJwtauthorizer": ubx.FieldSpec{
-			WireName: "custom_jwtauthorizer",
-			Kind: "object",
-			Fields: Registry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizerFields,
-		},
-	}
+	"CustomJwtauthorizer": ubx.FieldSpec{
+		WireName: "custom_jwtauthorizer",
+		Kind:     "object",
+		Fields:   Registry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizerFields,
+	},
+}
 
 var Registry_DiscoveryConfigurationFields = ubx.FieldMap{
-		"AuthorizerConfiguration": ubx.FieldSpec{
-			WireName: "authorizer_configuration",
-			Kind: "object",
-			Fields: Registry_DiscoveryConfiguration_AuthorizerConfigurationFields,
-		},
-	}
+	"AuthorizerConfiguration": ubx.FieldSpec{
+		WireName: "authorizer_configuration",
+		Kind:     "object",
+		Fields:   Registry_DiscoveryConfiguration_AuthorizerConfigurationFields,
+	},
+}
 
 var Registry_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RegistryConfig struct {
 	// Configuration for the registry's record approval workflow.
@@ -160,21 +160,21 @@ var Registry = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApprovalConfiguration": ubx.FieldSpec{
 			WireName: "approval_configuration",
-			Kind: "object",
-			Fields: Registry_ApprovalConfigurationFields,
+			Kind:     "object",
+			Fields:   Registry_ApprovalConfigurationFields,
 		},
 		"AuthorizerType": ubx.FieldSpec{WireName: "authorizer_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
 		"DiscoveryConfiguration": ubx.FieldSpec{
 			WireName: "discovery_configuration",
-			Kind: "object",
-			Fields: Registry_DiscoveryConfigurationFields,
+			Kind:     "object",
+			Fields:   Registry_DiscoveryConfigurationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Registry_TagsFields,
+			Kind:     "list",
+			Fields:   Registry_TagsFields,
 		},
 	},
 }

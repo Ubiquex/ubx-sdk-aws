@@ -5,36 +5,36 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AppAuthorizations_AppAuthorizationSummaryList_Tenant struct {
 	TenantDisplayName any
-	TenantIdentifier any
+	TenantIdentifier  any
 }
 
 type AppAuthorizations_AppAuthorizationSummaryList struct {
-	App any
+	App                 any
 	AppAuthorizationArn any
-	AppBundleArn any
-	Status any
-	Tenant any
-	UpdatedAt any
+	AppBundleArn        any
+	Status              any
+	Tenant              any
+	UpdatedAt           any
 }
 
 type AppAuthorizationsConfig struct {
 	AppBundleIdentifier any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 }
 
 type AppAuthorizationsAttrs struct {
 	AppAuthorizationSummaryList any
-	AppBundleIdentifier any
-	MaxResults any
-	NextToken any
+	AppBundleIdentifier         any
+	MaxResults                  any
+	NextToken                   any
 }
 
 var AppAuthorizations = ubx.DataSourceBinding{
 	WireType: "aws_appfabric_app_authorizations",
 	Fields: ubx.FieldMap{
 		"AppBundleIdentifier": ubx.FieldSpec{WireName: "app_bundle_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 	},
 }

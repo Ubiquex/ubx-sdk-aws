@@ -13,32 +13,32 @@ type StreamSummary_StreamDescriptionSummary_StreamModeDetails struct {
 
 type StreamSummary_StreamDescriptionSummary_WarmThroughput struct {
 	CurrentMiBps any
-	TargetMiBps any
+	TargetMiBps  any
 }
 
 type StreamSummary_StreamDescriptionSummary struct {
-	ChannelCount any
-	ConsumerCount any
-	EncryptionType any
-	EnhancedMonitoring any
-	KeyId any
-	MaxRecordSizeInKiB any
-	OpenShardCount any
-	RetentionPeriodHours any
-	StreamArn any
+	ChannelCount            any
+	ConsumerCount           any
+	EncryptionType          any
+	EnhancedMonitoring      any
+	KeyId                   any
+	MaxRecordSizeInKiB      any
+	OpenShardCount          any
+	RetentionPeriodHours    any
+	StreamArn               any
 	StreamCreationTimestamp any
-	StreamId any
+	StreamId                any
 	// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
 	StreamModeDetails any
-	StreamName any
-	StreamStatus any
+	StreamName        any
+	StreamStatus      any
 	// <p>Represents the warm throughput configuration on the stream. This is only present for On-Demand Kinesis Data Streams in accounts that have <code>MinimumThroughputBillingCommitment</code> enabled.</p>
 	WarmThroughput any
 }
 
 type StreamSummaryConfig struct {
-	StreamArn any
-	StreamId any
+	StreamArn  any
+	StreamId   any
 	StreamName any
 }
 
@@ -46,15 +46,15 @@ type StreamSummaryAttrs struct {
 	StreamArn any
 	// <p>Represents the output for <a>DescribeStreamSummary</a> </p>
 	StreamDescriptionSummary any
-	StreamId any
-	StreamName any
+	StreamId                 any
+	StreamName               any
 }
 
 var StreamSummary = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_stream_summary",
 	Fields: ubx.FieldMap{
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
-		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
+		"StreamArn":  ubx.FieldSpec{WireName: "stream_arn"},
+		"StreamId":   ubx.FieldSpec{WireName: "stream_id"},
 		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
 	},
 }

@@ -4,26 +4,26 @@ package devicefarm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Samples_Samples struct {
-	Arn any
+	Arn  any
 	Type any
-	Url any
+	Url  any
 }
 
 type SamplesConfig struct {
-	Arn any
+	Arn       any
 	NextToken any
 }
 
 type SamplesAttrs struct {
-	Arn any
+	Arn       any
 	NextToken any
-	Samples any
+	Samples   any
 }
 
 var Samples = ubx.DataSourceBinding{
 	WireType: "aws_devicefarm_samples",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":       ubx.FieldSpec{WireName: "arn"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

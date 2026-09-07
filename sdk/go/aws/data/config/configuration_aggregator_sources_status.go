@@ -4,36 +4,36 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigurationAggregatorSourcesStatus_AggregatedSourceStatusList struct {
-	AwsRegion any
-	LastErrorCode any
+	AwsRegion        any
+	LastErrorCode    any
 	LastErrorMessage any
 	LastUpdateStatus any
-	LastUpdateTime any
-	SourceId any
-	SourceType any
+	LastUpdateTime   any
+	SourceId         any
+	SourceType       any
 }
 
 type ConfigurationAggregatorSourcesStatusConfig struct {
 	ConfigurationAggregatorName any
-	Limit any
-	NextToken any
-	UpdateStatus any
+	Limit                       any
+	NextToken                   any
+	UpdateStatus                any
 }
 
 type ConfigurationAggregatorSourcesStatusAttrs struct {
-	AggregatedSourceStatusList any
+	AggregatedSourceStatusList  any
 	ConfigurationAggregatorName any
-	Limit any
-	NextToken any
-	UpdateStatus any
+	Limit                       any
+	NextToken                   any
+	UpdateStatus                any
 }
 
 var ConfigurationAggregatorSourcesStatus = ubx.DataSourceBinding{
 	WireType: "aws_config_configuration_aggregator_sources_status",
 	Fields: ubx.FieldMap{
 		"ConfigurationAggregatorName": ubx.FieldSpec{WireName: "configuration_aggregator_name"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"UpdateStatus": ubx.FieldSpec{WireName: "update_status"},
+		"Limit":                       ubx.FieldSpec{WireName: "limit"},
+		"NextToken":                   ubx.FieldSpec{WireName: "next_token"},
+		"UpdateStatus":                ubx.FieldSpec{WireName: "update_status"},
 	},
 }

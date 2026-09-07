@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeploymentGroupsConfig struct {
 	ApplicationName any
-	NextToken any
+	NextToken       any
 }
 
 type DeploymentGroupsAttrs struct {
-	ApplicationName any
+	ApplicationName  any
 	DeploymentGroups any
-	NextToken any
+	NextToken        any
 }
 
 var DeploymentGroups = ubx.DataSourceBinding{
 	WireType: "aws_codedeploy_deployment_groups",
 	Fields: ubx.FieldMap{
 		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

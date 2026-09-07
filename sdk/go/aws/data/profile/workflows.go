@@ -4,44 +4,44 @@ package profile
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Workflows_Items struct {
-	CreatedAt any
-	LastUpdatedAt any
-	Status any
+	CreatedAt         any
+	LastUpdatedAt     any
+	Status            any
 	StatusDescription any
-	WorkflowId any
-	WorkflowType any
+	WorkflowId        any
+	WorkflowType      any
 }
 
 type WorkflowsConfig struct {
-	DomainName any
-	MaxResults any
-	NextToken any
-	QueryEndDate any
+	DomainName     any
+	MaxResults     any
+	NextToken      any
+	QueryEndDate   any
 	QueryStartDate any
-	Status any
-	WorkflowType any
+	Status         any
+	WorkflowType   any
 }
 
 type WorkflowsAttrs struct {
-	DomainName any
-	Items any
-	MaxResults any
-	NextToken any
-	QueryEndDate any
+	DomainName     any
+	Items          any
+	MaxResults     any
+	NextToken      any
+	QueryEndDate   any
 	QueryStartDate any
-	Status any
-	WorkflowType any
+	Status         any
+	WorkflowType   any
 }
 
 var Workflows = ubx.DataSourceBinding{
 	WireType: "aws_profile_workflows",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"QueryEndDate": ubx.FieldSpec{WireName: "query_end_date"},
+		"DomainName":     ubx.FieldSpec{WireName: "domain_name"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"QueryEndDate":   ubx.FieldSpec{WireName: "query_end_date"},
 		"QueryStartDate": ubx.FieldSpec{WireName: "query_start_date"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"WorkflowType": ubx.FieldSpec{WireName: "workflow_type"},
+		"Status":         ubx.FieldSpec{WireName: "status"},
+		"WorkflowType":   ubx.FieldSpec{WireName: "workflow_type"},
 	},
 }

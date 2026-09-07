@@ -17,36 +17,36 @@ type LoggingConfigurations_LoggingConfigurations_DestinationConfiguration_S3 str
 
 type LoggingConfigurations_LoggingConfigurations_DestinationConfiguration struct {
 	CloudWatchLogs any
-	Firehose any
-	S3 any
+	Firehose       any
+	S3             any
 }
 
 type LoggingConfigurations_LoggingConfigurations struct {
-	Arn any
-	CreateTime any
+	Arn                      any
+	CreateTime               any
 	DestinationConfiguration any
-	Id any
-	Name any
-	State any
-	Tags any
-	UpdateTime any
+	Id                       any
+	Name                     any
+	State                    any
+	Tags                     any
+	UpdateTime               any
 }
 
 type LoggingConfigurationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type LoggingConfigurationsAttrs struct {
 	LoggingConfigurations any
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 }
 
 var LoggingConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_ivschat_logging_configurations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

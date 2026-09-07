@@ -4,29 +4,29 @@ package ds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SharedDirectories_SharedDirectories struct {
-	CreatedDateTime any
+	CreatedDateTime     any
 	LastUpdatedDateTime any
-	OwnerAccountId any
-	OwnerDirectoryId any
-	ShareMethod any
-	ShareNotes any
-	ShareStatus any
-	SharedAccountId any
-	SharedDirectoryId any
+	OwnerAccountId      any
+	OwnerDirectoryId    any
+	ShareMethod         any
+	ShareNotes          any
+	ShareStatus         any
+	SharedAccountId     any
+	SharedDirectoryId   any
 }
 
 type SharedDirectoriesConfig struct {
-	Limit any
-	NextToken any
+	Limit            any
+	NextToken        any
 	OwnerDirectoryId any
 	// <p>A list of directory identifiers.</p>
 	SharedDirectoryIds any
 }
 
 type SharedDirectoriesAttrs struct {
-	Limit any
-	NextToken any
-	OwnerDirectoryId any
+	Limit             any
+	NextToken         any
+	OwnerDirectoryId  any
 	SharedDirectories any
 	// <p>A list of directory identifiers.</p>
 	SharedDirectoryIds any
@@ -35,9 +35,9 @@ type SharedDirectoriesAttrs struct {
 var SharedDirectories = ubx.DataSourceBinding{
 	WireType: "aws_ds_shared_directories",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OwnerDirectoryId": ubx.FieldSpec{WireName: "owner_directory_id"},
+		"Limit":              ubx.FieldSpec{WireName: "limit"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"OwnerDirectoryId":   ubx.FieldSpec{WireName: "owner_directory_id"},
 		"SharedDirectoryIds": ubx.FieldSpec{WireName: "shared_directory_ids"},
 	},
 }

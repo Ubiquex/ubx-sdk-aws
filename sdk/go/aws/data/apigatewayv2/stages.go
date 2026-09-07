@@ -5,52 +5,52 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Stages_Items_AccessLogSettings struct {
 	DestinationArn any
-	Format any
+	Format         any
 }
 
 type Stages_Items_DefaultRouteSettings struct {
-	DataTraceEnabled any
+	DataTraceEnabled       any
 	DetailedMetricsEnabled any
-	LoggingLevel any
-	ThrottlingBurstLimit any
-	ThrottlingRateLimit any
+	LoggingLevel           any
+	ThrottlingBurstLimit   any
+	ThrottlingRateLimit    any
 }
 
 type Stages_Items struct {
-	AccessLogSettings any
-	ApiGatewayManaged any
-	AutoDeploy any
-	ClientCertificateId any
-	CreatedDate any
-	DefaultRouteSettings any
-	DeploymentId any
-	Description any
+	AccessLogSettings           any
+	ApiGatewayManaged           any
+	AutoDeploy                  any
+	ClientCertificateId         any
+	CreatedDate                 any
+	DefaultRouteSettings        any
+	DeploymentId                any
+	Description                 any
 	LastDeploymentStatusMessage any
-	LastUpdatedDate any
-	RouteSettings any
-	StageName any
-	StageVariables any
-	Tags any
+	LastUpdatedDate             any
+	RouteSettings               any
+	StageName                   any
+	StageVariables              any
+	Tags                        any
 }
 
 type StagesConfig struct {
-	ApiId any
+	ApiId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type StagesAttrs struct {
-	ApiId any
-	Items any
+	ApiId      any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Stages = ubx.DataSourceBinding{
 	WireType: "aws_apigatewayv2_stages",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":      ubx.FieldSpec{WireName: "api_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

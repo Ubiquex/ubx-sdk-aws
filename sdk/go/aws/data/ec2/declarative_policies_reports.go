@@ -4,42 +4,42 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeclarativePoliciesReports_Reports_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type DeclarativePoliciesReports_Reports struct {
-	EndTime any
-	ReportId any
-	S3Bucket any
-	S3Prefix any
+	EndTime   any
+	ReportId  any
+	S3Bucket  any
+	S3Prefix  any
 	StartTime any
-	Status any
-	Tags any
-	TargetId any
+	Status    any
+	Tags      any
+	TargetId  any
 }
 
 type DeclarativePoliciesReportsConfig struct {
-	DryRun any
+	DryRun     any
 	MaxResults any
-	NextToken any
-	ReportIds any
+	NextToken  any
+	ReportIds  any
 }
 
 type DeclarativePoliciesReportsAttrs struct {
-	DryRun any
+	DryRun     any
 	MaxResults any
-	NextToken any
-	ReportIds any
-	Reports any
+	NextToken  any
+	ReportIds  any
+	Reports    any
 }
 
 var DeclarativePoliciesReports = ubx.DataSourceBinding{
 	WireType: "aws_ec2_declarative_policies_reports",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":     ubx.FieldSpec{WireName: "dry_run"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ReportIds": ubx.FieldSpec{WireName: "report_ids"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"ReportIds":  ubx.FieldSpec{WireName: "report_ids"},
 	},
 }

@@ -4,50 +4,50 @@ package apigatewayv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainNames_Items_DomainNameConfigurations struct {
-	ApiGatewayDomainName any
-	CertificateArn any
-	CertificateName any
-	CertificateUploadDate any
-	DomainNameStatus any
-	DomainNameStatusMessage any
-	EndpointType any
-	HostedZoneId any
-	IpAddressType any
+	ApiGatewayDomainName                any
+	CertificateArn                      any
+	CertificateName                     any
+	CertificateUploadDate               any
+	DomainNameStatus                    any
+	DomainNameStatusMessage             any
+	EndpointType                        any
+	HostedZoneId                        any
+	IpAddressType                       any
 	OwnershipVerificationCertificateArn any
-	SecurityPolicy any
+	SecurityPolicy                      any
 }
 
 type DomainNames_Items_MutualTlsAuthentication struct {
-	TruststoreUri any
-	TruststoreVersion any
+	TruststoreUri      any
+	TruststoreVersion  any
 	TruststoreWarnings any
 }
 
 type DomainNames_Items struct {
 	ApiMappingSelectionExpression any
-	DomainName any
-	DomainNameArn any
-	DomainNameConfigurations any
-	MutualTlsAuthentication any
-	RoutingMode any
-	Tags any
+	DomainName                    any
+	DomainNameArn                 any
+	DomainNameConfigurations      any
+	MutualTlsAuthentication       any
+	RoutingMode                   any
+	Tags                          any
 }
 
 type DomainNamesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DomainNamesAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var DomainNames = ubx.DataSourceBinding{
 	WireType: "aws_apigatewayv2_domain_names",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

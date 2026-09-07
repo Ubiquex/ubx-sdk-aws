@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotwirelessQueuedMessages_DownlinkQueueMessagesList_LoRaWan_ParticipatingGateways_GatewayList struct {
 	DownlinkFrequency any
-	GatewayId any
+	GatewayId         any
 }
 
 type ApiIotwirelessQueuedMessages_DownlinkQueueMessagesList_LoRaWan_ParticipatingGateways struct {
-	DownlinkMode any
-	GatewayList any
+	DownlinkMode         any
+	GatewayList          any
 	TransmissionInterval any
 }
 
 type ApiIotwirelessQueuedMessages_DownlinkQueueMessagesList_LoRaWan struct {
-	Fport any
+	Fport                 any
 	ParticipatingGateways any
 }
 
 type ApiIotwirelessQueuedMessages_DownlinkQueueMessagesList struct {
-	LoRaWan any
-	MessageId any
-	ReceivedAt any
+	LoRaWan      any
+	MessageId    any
+	ReceivedAt   any
 	TransmitMode any
 }
 
@@ -30,8 +30,8 @@ type ApiIotwirelessQueuedMessagesConfig struct {
 	// <p>The ID of the wireless device.</p>
 	Id any
 	// <p>The maximum number of results to return in this operation.</p>
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	WirelessDeviceType any
 }
 
@@ -40,17 +40,17 @@ type ApiIotwirelessQueuedMessagesAttrs struct {
 	// <p>The ID of the wireless device.</p>
 	Id any
 	// <p>The maximum number of results to return in this operation.</p>
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	WirelessDeviceType any
 }
 
 var ApiIotwirelessQueuedMessages = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_queued_messages",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Id":                 ubx.FieldSpec{WireName: "id"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 		"WirelessDeviceType": ubx.FieldSpec{WireName: "wireless_device_type"},
 	},
 }

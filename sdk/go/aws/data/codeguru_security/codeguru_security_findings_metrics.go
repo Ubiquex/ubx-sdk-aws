@@ -5,41 +5,41 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodeguruSecurityFindingsMetrics_FindingsMetrics_ClosedFindings struct {
 	Critical any
-	High any
-	Info any
-	Low any
-	Medium any
+	High     any
+	Info     any
+	Low      any
+	Medium   any
 }
 
 type CodeguruSecurityFindingsMetrics_FindingsMetrics struct {
-	ClosedFindings any
-	Date any
+	ClosedFindings  any
+	Date            any
 	MeanTimeToClose any
-	NewFindings any
-	OpenFindings any
+	NewFindings     any
+	OpenFindings    any
 }
 
 type CodeguruSecurityFindingsMetricsConfig struct {
-	EndDate any
+	EndDate    any
 	MaxResults any
-	NextToken any
-	StartDate any
+	NextToken  any
+	StartDate  any
 }
 
 type CodeguruSecurityFindingsMetricsAttrs struct {
-	EndDate any
+	EndDate         any
 	FindingsMetrics any
-	MaxResults any
-	NextToken any
-	StartDate any
+	MaxResults      any
+	NextToken       any
+	StartDate       any
 }
 
 var CodeguruSecurityFindingsMetrics = ubx.DataSourceBinding{
 	WireType: "aws_codeguru_security_findings_metrics",
 	Fields: ubx.FieldMap{
-		"EndDate": ubx.FieldSpec{WireName: "end_date"},
+		"EndDate":    ubx.FieldSpec{WireName: "end_date"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StartDate": ubx.FieldSpec{WireName: "start_date"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"StartDate":  ubx.FieldSpec{WireName: "start_date"},
 	},
 }

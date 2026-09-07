@@ -71,7 +71,7 @@ type Table_OpenTableFormatInput_IcebergInput_IcebergTableInput struct {
 	// A map of key-value pairs specifying Iceberg table properties (e.g., `format-version`, `write.format.default`) to be applied to the Iceberg table when the Glue table uses the Iceberg open table format. (AI-inferred)
 	Properties any
 	// Defines the Iceberg table's schema, including its columns, data types, and structure, as required when using the Iceberg open table format for the Glue table. (AI-inferred)
-	Schema any
+	Schema     any
 	WriteOrder any
 }
 
@@ -233,225 +233,225 @@ type Table_TableInput struct {
 }
 
 var Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_PartitionSpec_FieldsFields = ubx.FieldMap{
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SourceId": ubx.FieldSpec{WireName: "source_id"},
-		"Transform": ubx.FieldSpec{WireName: "transform"},
-	}
+	"FieldId":   ubx.FieldSpec{WireName: "field_id"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"SourceId":  ubx.FieldSpec{WireName: "source_id"},
+	"Transform": ubx.FieldSpec{WireName: "transform"},
+}
 
 var Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_PartitionSpecFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_PartitionSpec_FieldsFields,
-		},
-		"SpecId": ubx.FieldSpec{WireName: "spec_id"},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_PartitionSpec_FieldsFields,
+	},
+	"SpecId": ubx.FieldSpec{WireName: "spec_id"},
+}
 
 var Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_Schema_FieldsFields = ubx.FieldMap{
-		"Doc": ubx.FieldSpec{WireName: "doc"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Doc":      ubx.FieldSpec{WireName: "doc"},
+	"Id":       ubx.FieldSpec{WireName: "id"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Required": ubx.FieldSpec{WireName: "required"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_SchemaFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_Schema_FieldsFields,
-		},
-		"IdentifierFieldIds": ubx.FieldSpec{WireName: "identifier_field_ids"},
-		"SchemaId": ubx.FieldSpec{WireName: "schema_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_Schema_FieldsFields,
+	},
+	"IdentifierFieldIds": ubx.FieldSpec{WireName: "identifier_field_ids"},
+	"SchemaId":           ubx.FieldSpec{WireName: "schema_id"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_WriteOrder_FieldsFields = ubx.FieldMap{
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"NullOrder": ubx.FieldSpec{WireName: "null_order"},
-		"SourceId": ubx.FieldSpec{WireName: "source_id"},
-		"Transform": ubx.FieldSpec{WireName: "transform"},
-	}
+	"Direction": ubx.FieldSpec{WireName: "direction"},
+	"NullOrder": ubx.FieldSpec{WireName: "null_order"},
+	"SourceId":  ubx.FieldSpec{WireName: "source_id"},
+	"Transform": ubx.FieldSpec{WireName: "transform"},
+}
 
 var Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_WriteOrderFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_WriteOrder_FieldsFields,
-		},
-		"OrderId": ubx.FieldSpec{WireName: "order_id"},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_WriteOrder_FieldsFields,
+	},
+	"OrderId": ubx.FieldSpec{WireName: "order_id"},
+}
 
 var Table_OpenTableFormatInput_IcebergInput_IcebergTableInputFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"PartitionSpec": ubx.FieldSpec{
-			WireName: "partition_spec",
-			Kind: "object",
-			Fields: Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_PartitionSpecFields,
-		},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "object",
-			Fields: Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_SchemaFields,
-		},
-		"WriteOrder": ubx.FieldSpec{
-			WireName: "write_order",
-			Kind: "object",
-			Fields: Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_WriteOrderFields,
-		},
-	}
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"PartitionSpec": ubx.FieldSpec{
+		WireName: "partition_spec",
+		Kind:     "object",
+		Fields:   Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_PartitionSpecFields,
+	},
+	"Properties": ubx.FieldSpec{WireName: "properties"},
+	"Schema": ubx.FieldSpec{
+		WireName: "schema",
+		Kind:     "object",
+		Fields:   Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_SchemaFields,
+	},
+	"WriteOrder": ubx.FieldSpec{
+		WireName: "write_order",
+		Kind:     "object",
+		Fields:   Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_WriteOrderFields,
+	},
+}
 
 var Table_OpenTableFormatInput_IcebergInputFields = ubx.FieldMap{
-		"IcebergTableInput": ubx.FieldSpec{
-			WireName: "iceberg_table_input",
-			Kind: "object",
-			Fields: Table_OpenTableFormatInput_IcebergInput_IcebergTableInputFields,
-		},
-		"MetadataOperation": ubx.FieldSpec{WireName: "metadata_operation"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"IcebergTableInput": ubx.FieldSpec{
+		WireName: "iceberg_table_input",
+		Kind:     "object",
+		Fields:   Table_OpenTableFormatInput_IcebergInput_IcebergTableInputFields,
+	},
+	"MetadataOperation": ubx.FieldSpec{WireName: "metadata_operation"},
+	"Version":           ubx.FieldSpec{WireName: "version"},
+}
 
 var Table_OpenTableFormatInputFields = ubx.FieldMap{
-		"IcebergInput": ubx.FieldSpec{
-			WireName: "iceberg_input",
-			Kind: "object",
-			Fields: Table_OpenTableFormatInput_IcebergInputFields,
-		},
-	}
+	"IcebergInput": ubx.FieldSpec{
+		WireName: "iceberg_input",
+		Kind:     "object",
+		Fields:   Table_OpenTableFormatInput_IcebergInputFields,
+	},
+}
 
 var Table_TableInput_PartitionKeysFields = ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Comment": ubx.FieldSpec{WireName: "comment"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 var Table_TableInput_StorageDescriptor_SchemaReference_SchemaIdFields = ubx.FieldMap{
-		"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
-		"SchemaArn": ubx.FieldSpec{WireName: "schema_arn"},
-		"SchemaName": ubx.FieldSpec{WireName: "schema_name"},
-	}
+	"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
+	"SchemaArn":    ubx.FieldSpec{WireName: "schema_arn"},
+	"SchemaName":   ubx.FieldSpec{WireName: "schema_name"},
+}
 
 var Table_TableInput_StorageDescriptor_SchemaReferenceFields = ubx.FieldMap{
-		"SchemaId": ubx.FieldSpec{
-			WireName: "schema_id",
-			Kind: "object",
-			Fields: Table_TableInput_StorageDescriptor_SchemaReference_SchemaIdFields,
-		},
-		"SchemaVersionId": ubx.FieldSpec{WireName: "schema_version_id"},
-		"SchemaVersionNumber": ubx.FieldSpec{WireName: "schema_version_number"},
-	}
+	"SchemaId": ubx.FieldSpec{
+		WireName: "schema_id",
+		Kind:     "object",
+		Fields:   Table_TableInput_StorageDescriptor_SchemaReference_SchemaIdFields,
+	},
+	"SchemaVersionId":     ubx.FieldSpec{WireName: "schema_version_id"},
+	"SchemaVersionNumber": ubx.FieldSpec{WireName: "schema_version_number"},
+}
 
 var Table_TableInput_StorageDescriptor_SerdeInfoFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"SerializationLibrary": ubx.FieldSpec{WireName: "serialization_library"},
-	}
+	"Name":                 ubx.FieldSpec{WireName: "name"},
+	"Parameters":           ubx.FieldSpec{WireName: "parameters"},
+	"SerializationLibrary": ubx.FieldSpec{WireName: "serialization_library"},
+}
 
 var Table_TableInput_StorageDescriptor_SkewedInfoFields = ubx.FieldMap{
-		"SkewedColumnNames": ubx.FieldSpec{WireName: "skewed_column_names"},
-		"SkewedColumnValueLocationMaps": ubx.FieldSpec{WireName: "skewed_column_value_location_maps"},
-		"SkewedColumnValues": ubx.FieldSpec{WireName: "skewed_column_values"},
-	}
+	"SkewedColumnNames":             ubx.FieldSpec{WireName: "skewed_column_names"},
+	"SkewedColumnValueLocationMaps": ubx.FieldSpec{WireName: "skewed_column_value_location_maps"},
+	"SkewedColumnValues":            ubx.FieldSpec{WireName: "skewed_column_values"},
+}
 
 var Table_TableInput_StorageDescriptor_SortColumnsFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"Column":    ubx.FieldSpec{WireName: "column"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 var Table_TableInput_StorageDescriptorFields = ubx.FieldMap{
-		"BucketColumns": ubx.FieldSpec{WireName: "bucket_columns"},
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: Table_TableInput_PartitionKeysFields,
-		},
-		"Compressed": ubx.FieldSpec{WireName: "compressed"},
-		"InputFormat": ubx.FieldSpec{WireName: "input_format"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"NumberOfBuckets": ubx.FieldSpec{WireName: "number_of_buckets"},
-		"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"SchemaReference": ubx.FieldSpec{
-			WireName: "schema_reference",
-			Kind: "object",
-			Fields: Table_TableInput_StorageDescriptor_SchemaReferenceFields,
-		},
-		"SerdeInfo": ubx.FieldSpec{
-			WireName: "serde_info",
-			Kind: "object",
-			Fields: Table_TableInput_StorageDescriptor_SerdeInfoFields,
-		},
-		"SkewedInfo": ubx.FieldSpec{
-			WireName: "skewed_info",
-			Kind: "object",
-			Fields: Table_TableInput_StorageDescriptor_SkewedInfoFields,
-		},
-		"SortColumns": ubx.FieldSpec{
-			WireName: "sort_columns",
-			Kind: "list",
-			Fields: Table_TableInput_StorageDescriptor_SortColumnsFields,
-		},
-		"StoredAsSubDirectories": ubx.FieldSpec{WireName: "stored_as_sub_directories"},
-	}
+	"BucketColumns": ubx.FieldSpec{WireName: "bucket_columns"},
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   Table_TableInput_PartitionKeysFields,
+	},
+	"Compressed":      ubx.FieldSpec{WireName: "compressed"},
+	"InputFormat":     ubx.FieldSpec{WireName: "input_format"},
+	"Location":        ubx.FieldSpec{WireName: "location"},
+	"NumberOfBuckets": ubx.FieldSpec{WireName: "number_of_buckets"},
+	"OutputFormat":    ubx.FieldSpec{WireName: "output_format"},
+	"Parameters":      ubx.FieldSpec{WireName: "parameters"},
+	"SchemaReference": ubx.FieldSpec{
+		WireName: "schema_reference",
+		Kind:     "object",
+		Fields:   Table_TableInput_StorageDescriptor_SchemaReferenceFields,
+	},
+	"SerdeInfo": ubx.FieldSpec{
+		WireName: "serde_info",
+		Kind:     "object",
+		Fields:   Table_TableInput_StorageDescriptor_SerdeInfoFields,
+	},
+	"SkewedInfo": ubx.FieldSpec{
+		WireName: "skewed_info",
+		Kind:     "object",
+		Fields:   Table_TableInput_StorageDescriptor_SkewedInfoFields,
+	},
+	"SortColumns": ubx.FieldSpec{
+		WireName: "sort_columns",
+		Kind:     "list",
+		Fields:   Table_TableInput_StorageDescriptor_SortColumnsFields,
+	},
+	"StoredAsSubDirectories": ubx.FieldSpec{WireName: "stored_as_sub_directories"},
+}
 
 var Table_TableInput_TargetTableFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"CatalogId":    ubx.FieldSpec{WireName: "catalog_id"},
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"Region":       ubx.FieldSpec{WireName: "region"},
+}
 
 var Table_TableInput_ViewDefinition_RepresentationsFields = ubx.FieldMap{
-		"Dialect": ubx.FieldSpec{WireName: "dialect"},
-		"DialectVersion": ubx.FieldSpec{WireName: "dialect_version"},
-		"ValidationConnection": ubx.FieldSpec{WireName: "validation_connection"},
-		"ViewExpandedText": ubx.FieldSpec{WireName: "view_expanded_text"},
-		"ViewOriginalText": ubx.FieldSpec{WireName: "view_original_text"},
-	}
+	"Dialect":              ubx.FieldSpec{WireName: "dialect"},
+	"DialectVersion":       ubx.FieldSpec{WireName: "dialect_version"},
+	"ValidationConnection": ubx.FieldSpec{WireName: "validation_connection"},
+	"ViewExpandedText":     ubx.FieldSpec{WireName: "view_expanded_text"},
+	"ViewOriginalText":     ubx.FieldSpec{WireName: "view_original_text"},
+}
 
 var Table_TableInput_ViewDefinitionFields = ubx.FieldMap{
-		"Definer": ubx.FieldSpec{WireName: "definer"},
-		"IsProtected": ubx.FieldSpec{WireName: "is_protected"},
-		"Representations": ubx.FieldSpec{
-			WireName: "representations",
-			Kind: "list",
-			Fields: Table_TableInput_ViewDefinition_RepresentationsFields,
-		},
-		"SubObjects": ubx.FieldSpec{WireName: "sub_objects"},
-	}
+	"Definer":     ubx.FieldSpec{WireName: "definer"},
+	"IsProtected": ubx.FieldSpec{WireName: "is_protected"},
+	"Representations": ubx.FieldSpec{
+		WireName: "representations",
+		Kind:     "list",
+		Fields:   Table_TableInput_ViewDefinition_RepresentationsFields,
+	},
+	"SubObjects": ubx.FieldSpec{WireName: "sub_objects"},
+}
 
 var Table_TableInputFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Owner": ubx.FieldSpec{WireName: "owner"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"PartitionKeys": ubx.FieldSpec{
-			WireName: "partition_keys",
-			Kind: "list",
-			Fields: Table_TableInput_PartitionKeysFields,
-		},
-		"Retention": ubx.FieldSpec{WireName: "retention"},
-		"StorageDescriptor": ubx.FieldSpec{
-			WireName: "storage_descriptor",
-			Kind: "object",
-			Fields: Table_TableInput_StorageDescriptorFields,
-		},
-		"TableType": ubx.FieldSpec{WireName: "table_type"},
-		"TargetTable": ubx.FieldSpec{
-			WireName: "target_table",
-			Kind: "object",
-			Fields: Table_TableInput_TargetTableFields,
-		},
-		"ViewDefinition": ubx.FieldSpec{
-			WireName: "view_definition",
-			Kind: "object",
-			Fields: Table_TableInput_ViewDefinitionFields,
-		},
-		"ViewExpandedText": ubx.FieldSpec{WireName: "view_expanded_text"},
-		"ViewOriginalText": ubx.FieldSpec{WireName: "view_original_text"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Owner":       ubx.FieldSpec{WireName: "owner"},
+	"Parameters":  ubx.FieldSpec{WireName: "parameters"},
+	"PartitionKeys": ubx.FieldSpec{
+		WireName: "partition_keys",
+		Kind:     "list",
+		Fields:   Table_TableInput_PartitionKeysFields,
+	},
+	"Retention": ubx.FieldSpec{WireName: "retention"},
+	"StorageDescriptor": ubx.FieldSpec{
+		WireName: "storage_descriptor",
+		Kind:     "object",
+		Fields:   Table_TableInput_StorageDescriptorFields,
+	},
+	"TableType": ubx.FieldSpec{WireName: "table_type"},
+	"TargetTable": ubx.FieldSpec{
+		WireName: "target_table",
+		Kind:     "object",
+		Fields:   Table_TableInput_TargetTableFields,
+	},
+	"ViewDefinition": ubx.FieldSpec{
+		WireName: "view_definition",
+		Kind:     "object",
+		Fields:   Table_TableInput_ViewDefinitionFields,
+	},
+	"ViewExpandedText": ubx.FieldSpec{WireName: "view_expanded_text"},
+	"ViewOriginalText": ubx.FieldSpec{WireName: "view_original_text"},
+}
 
 type TableConfig struct {
 	// The ID of the AWS Glue Data Catalog (typically the AWS account ID) in which the table and its parent database reside. (AI-inferred)
@@ -484,18 +484,18 @@ type TableAttrs struct {
 var Table = ubx.ResourceBinding{
 	WireType: "aws_glue_table",
 	Fields: ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
+		"CatalogId":    ubx.FieldSpec{WireName: "catalog_id"},
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"OpenTableFormatInput": ubx.FieldSpec{
 			WireName: "open_table_format_input",
-			Kind: "object",
-			Fields: Table_OpenTableFormatInputFields,
+			Kind:     "object",
+			Fields:   Table_OpenTableFormatInputFields,
 		},
 		"TableInput": ubx.FieldSpec{
 			WireName: "table_input",
-			Kind: "object",
-			Fields: Table_TableInputFields,
+			Kind:     "object",
+			Fields:   Table_TableInputFields,
 		},
 	},
 }

@@ -28,9 +28,9 @@ type VolumeAttachmentAttrs struct {
 var VolumeAttachment = ubx.ResourceBinding{
 	WireType: "aws_volume_attachment",
 	Fields: ubx.FieldMap{
-		"Device": ubx.FieldSpec{WireName: "device"},
+		"Device":       ubx.FieldSpec{WireName: "device"},
 		"EbsCardIndex": ubx.FieldSpec{WireName: "ebs_card_index"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
+		"InstanceId":   ubx.FieldSpec{WireName: "instance_id"},
+		"VolumeId":     ubx.FieldSpec{WireName: "volume_id"},
 	},
 }

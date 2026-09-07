@@ -10,9 +10,9 @@ type Portal_Tags struct {
 }
 
 var Portal_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PortalConfig struct {
 	// Specifies a map of additional encryption context (key-value pairs) that is included in the encryption context when AWS KMS encrypts the portal's data using a customer-managed key. (AI-inferred)
@@ -104,24 +104,24 @@ var Portal = ubx.ResourceBinding{
 	WireType: "aws_work_spaces_web_portal",
 	Fields: ubx.FieldMap{
 		"AdditionalEncryptionContext": ubx.FieldSpec{WireName: "additional_encryption_context"},
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"BrowserSettingsArn": ubx.FieldSpec{WireName: "browser_settings_arn"},
-		"CustomerManagedKey": ubx.FieldSpec{WireName: "customer_managed_key"},
-		"DataProtectionSettingsArn": ubx.FieldSpec{WireName: "data_protection_settings_arn"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"IpAccessSettingsArn": ubx.FieldSpec{WireName: "ip_access_settings_arn"},
-		"MaxConcurrentSessions": ubx.FieldSpec{WireName: "max_concurrent_sessions"},
-		"NetworkSettingsArn": ubx.FieldSpec{WireName: "network_settings_arn"},
-		"PortalCustomDomain": ubx.FieldSpec{WireName: "portal_custom_domain"},
-		"SessionLoggerArn": ubx.FieldSpec{WireName: "session_logger_arn"},
+		"AuthenticationType":          ubx.FieldSpec{WireName: "authentication_type"},
+		"BrowserSettingsArn":          ubx.FieldSpec{WireName: "browser_settings_arn"},
+		"CustomerManagedKey":          ubx.FieldSpec{WireName: "customer_managed_key"},
+		"DataProtectionSettingsArn":   ubx.FieldSpec{WireName: "data_protection_settings_arn"},
+		"DisplayName":                 ubx.FieldSpec{WireName: "display_name"},
+		"InstanceType":                ubx.FieldSpec{WireName: "instance_type"},
+		"IpAccessSettingsArn":         ubx.FieldSpec{WireName: "ip_access_settings_arn"},
+		"MaxConcurrentSessions":       ubx.FieldSpec{WireName: "max_concurrent_sessions"},
+		"NetworkSettingsArn":          ubx.FieldSpec{WireName: "network_settings_arn"},
+		"PortalCustomDomain":          ubx.FieldSpec{WireName: "portal_custom_domain"},
+		"SessionLoggerArn":            ubx.FieldSpec{WireName: "session_logger_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Portal_TagsFields,
+			Kind:     "list",
+			Fields:   Portal_TagsFields,
 		},
-		"TrustStoreArn": ubx.FieldSpec{WireName: "trust_store_arn"},
+		"TrustStoreArn":                ubx.FieldSpec{WireName: "trust_store_arn"},
 		"UserAccessLoggingSettingsArn": ubx.FieldSpec{WireName: "user_access_logging_settings_arn"},
-		"UserSettingsArn": ubx.FieldSpec{WireName: "user_settings_arn"},
+		"UserSettingsArn":              ubx.FieldSpec{WireName: "user_settings_arn"},
 	},
 }

@@ -32,9 +32,9 @@ type DictionaryAttrs struct {
 var Dictionary = ubx.ResourceBinding{
 	WireType: "aws_elemental_inference_dictionary",
 	Fields: ubx.FieldMap{
-		"Entries": ubx.FieldSpec{WireName: "entries"},
+		"Entries":  ubx.FieldSpec{WireName: "entries"},
 		"Language": ubx.FieldSpec{WireName: "language"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
+		"Tags":     ubx.FieldSpec{WireName: "tags"},
 	},
 }

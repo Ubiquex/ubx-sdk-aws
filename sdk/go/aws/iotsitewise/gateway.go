@@ -37,36 +37,36 @@ type Gateway_Tags struct {
 }
 
 var Gateway_GatewayCapabilitySummariesFields = ubx.FieldMap{
-		"CapabilityConfiguration": ubx.FieldSpec{WireName: "capability_configuration"},
-		"CapabilityNamespace": ubx.FieldSpec{WireName: "capability_namespace"},
-	}
+	"CapabilityConfiguration": ubx.FieldSpec{WireName: "capability_configuration"},
+	"CapabilityNamespace":     ubx.FieldSpec{WireName: "capability_namespace"},
+}
 
 var Gateway_GatewayPlatform_GreengrassV2Fields = ubx.FieldMap{
-		"CoreDeviceOperatingSystem": ubx.FieldSpec{WireName: "core_device_operating_system"},
-		"CoreDeviceThingName": ubx.FieldSpec{WireName: "core_device_thing_name"},
-	}
+	"CoreDeviceOperatingSystem": ubx.FieldSpec{WireName: "core_device_operating_system"},
+	"CoreDeviceThingName":       ubx.FieldSpec{WireName: "core_device_thing_name"},
+}
 
 var Gateway_GatewayPlatform_SiemensIeFields = ubx.FieldMap{
-		"IotCoreThingName": ubx.FieldSpec{WireName: "iot_core_thing_name"},
-	}
+	"IotCoreThingName": ubx.FieldSpec{WireName: "iot_core_thing_name"},
+}
 
 var Gateway_GatewayPlatformFields = ubx.FieldMap{
-		"GreengrassV2": ubx.FieldSpec{
-			WireName: "greengrass_v2",
-			Kind: "object",
-			Fields: Gateway_GatewayPlatform_GreengrassV2Fields,
-		},
-		"SiemensIe": ubx.FieldSpec{
-			WireName: "siemens_ie",
-			Kind: "object",
-			Fields: Gateway_GatewayPlatform_SiemensIeFields,
-		},
-	}
+	"GreengrassV2": ubx.FieldSpec{
+		WireName: "greengrass_v2",
+		Kind:     "object",
+		Fields:   Gateway_GatewayPlatform_GreengrassV2Fields,
+	},
+	"SiemensIe": ubx.FieldSpec{
+		WireName: "siemens_ie",
+		Kind:     "object",
+		Fields:   Gateway_GatewayPlatform_SiemensIeFields,
+	},
+}
 
 var Gateway_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type GatewayConfig struct {
 	// A list of gateway capability summaries that each contain a namespace and status.
@@ -101,20 +101,20 @@ var Gateway = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"GatewayCapabilitySummaries": ubx.FieldSpec{
 			WireName: "gateway_capability_summaries",
-			Kind: "list",
-			Fields: Gateway_GatewayCapabilitySummariesFields,
+			Kind:     "list",
+			Fields:   Gateway_GatewayCapabilitySummariesFields,
 		},
 		"GatewayName": ubx.FieldSpec{WireName: "gateway_name"},
 		"GatewayPlatform": ubx.FieldSpec{
 			WireName: "gateway_platform",
-			Kind: "object",
-			Fields: Gateway_GatewayPlatformFields,
+			Kind:     "object",
+			Fields:   Gateway_GatewayPlatformFields,
 		},
 		"GatewayVersion": ubx.FieldSpec{WireName: "gateway_version"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Gateway_TagsFields,
+			Kind:     "list",
+			Fields:   Gateway_TagsFields,
 		},
 	},
 }

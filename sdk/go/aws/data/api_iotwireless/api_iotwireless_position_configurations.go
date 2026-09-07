@@ -4,10 +4,10 @@ package api_iotwireless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotwirelessPositionConfigurations_PositionConfigurationList_Solvers_SemtechGnss struct {
-	Fec any
+	Fec      any
 	Provider any
-	Status any
-	Type any
+	Status   any
+	Type     any
 }
 
 type ApiIotwirelessPositionConfigurations_PositionConfigurationList_Solvers struct {
@@ -15,32 +15,32 @@ type ApiIotwirelessPositionConfigurations_PositionConfigurationList_Solvers stru
 }
 
 type ApiIotwirelessPositionConfigurations_PositionConfigurationList struct {
-	Destination any
+	Destination        any
 	ResourceIdentifier any
-	ResourceType any
-	Solvers any
+	ResourceType       any
+	Solvers            any
 }
 
 type ApiIotwirelessPositionConfigurationsConfig struct {
 	// <p>The maximum number of results to return in this operation.</p>
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	ResourceType any
 }
 
 type ApiIotwirelessPositionConfigurationsAttrs struct {
 	// <p>The maximum number of results to return in this operation.</p>
-	MaxResults any
-	NextToken any
+	MaxResults                any
+	NextToken                 any
 	PositionConfigurationList any
-	ResourceType any
+	ResourceType              any
 }
 
 var ApiIotwirelessPositionConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_position_configurations",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

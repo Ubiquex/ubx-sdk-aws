@@ -4,8 +4,8 @@ package api_iotwireless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotwirelessDeviceProfiles_DeviceProfileList struct {
-	Arn any
-	Id any
+	Arn  any
+	Id   any
 	Name any
 }
 
@@ -13,7 +13,7 @@ type ApiIotwirelessDeviceProfilesConfig struct {
 	DeviceProfileType any
 	// <p>The maximum number of results to return in this operation.</p>
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApiIotwirelessDeviceProfilesAttrs struct {
@@ -21,14 +21,14 @@ type ApiIotwirelessDeviceProfilesAttrs struct {
 	DeviceProfileType any
 	// <p>The maximum number of results to return in this operation.</p>
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ApiIotwirelessDeviceProfiles = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_device_profiles",
 	Fields: ubx.FieldMap{
 		"DeviceProfileType": ubx.FieldSpec{WireName: "device_profile_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -5,15 +5,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QueryResults_ResultSet_ResultSetMetadata_ColumnInfo struct {
 	CaseSensitive any
-	CatalogName any
-	Label any
-	Name any
-	Nullable any
-	Precision any
-	Scale any
-	SchemaName any
-	TableName any
-	Type any
+	CatalogName   any
+	Label         any
+	Name          any
+	Nullable      any
+	Precision     any
+	Scale         any
+	SchemaName    any
+	TableName     any
+	Type          any
 }
 
 type QueryResults_ResultSet_ResultSetMetadata struct {
@@ -31,32 +31,32 @@ type QueryResults_ResultSet_Rows struct {
 type QueryResults_ResultSet struct {
 	// <p>The metadata that describes the column structure and data types of a table of query results. To return a <code>ResultSetMetadata</code> object, use <a>GetQueryResults</a>.</p>
 	ResultSetMetadata any
-	Rows any
+	Rows              any
 }
 
 type QueryResultsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	QueryExecutionId any
-	QueryResultType any
+	QueryResultType  any
 }
 
 type QueryResultsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	QueryExecutionId any
-	QueryResultType any
+	QueryResultType  any
 	// <p>The metadata and rows that make up a query result set. The metadata describes the column structure and data types. To return a <code>ResultSet</code> object, use <a>GetQueryResults</a>.</p>
-	ResultSet any
+	ResultSet   any
 	UpdateCount any
 }
 
 var QueryResults = ubx.DataSourceBinding{
 	WireType: "aws_athena_query_results",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"QueryExecutionId": ubx.FieldSpec{WireName: "query_execution_id"},
-		"QueryResultType": ubx.FieldSpec{WireName: "query_result_type"},
+		"QueryResultType":  ubx.FieldSpec{WireName: "query_result_type"},
 	},
 }

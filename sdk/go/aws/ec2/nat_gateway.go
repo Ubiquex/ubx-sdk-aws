@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NatGateway_AvailabilityZoneAddresses struct {
 	// The allocation IDs of the Elastic IPs to associate with the NAT Gateway for each usable Availability Zone, so that a specific public IP is assigned per AZ. (AI-inferred)
-	AllocationIds any
-	AvailabilityZone any
+	AllocationIds      any
+	AvailabilityZone   any
 	AvailabilityZoneId any
 }
 
@@ -18,15 +18,15 @@ type NatGateway_Tags struct {
 }
 
 var NatGateway_AvailabilityZoneAddressesFields = ubx.FieldMap{
-		"AllocationIds": ubx.FieldSpec{WireName: "allocation_ids"},
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"AvailabilityZoneId": ubx.FieldSpec{WireName: "availability_zone_id"},
-	}
+	"AllocationIds":      ubx.FieldSpec{WireName: "allocation_ids"},
+	"AvailabilityZone":   ubx.FieldSpec{WireName: "availability_zone"},
+	"AvailabilityZoneId": ubx.FieldSpec{WireName: "availability_zone_id"},
+}
 
 var NatGateway_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type NatGatewayConfig struct {
 	// [Public NAT gateway only] The allocation ID of the Elastic IP address that's associated with the NAT gateway. This property is required for a public NAT gateway and cannot be specified with a private NAT gateway.
@@ -95,24 +95,24 @@ type NatGatewayAttrs struct {
 var NatGateway = ubx.ResourceBinding{
 	WireType: "aws_nat_gateway",
 	Fields: ubx.FieldMap{
-		"AllocationId": ubx.FieldSpec{WireName: "allocation_id"},
+		"AllocationId":     ubx.FieldSpec{WireName: "allocation_id"},
 		"AvailabilityMode": ubx.FieldSpec{WireName: "availability_mode"},
 		"AvailabilityZoneAddresses": ubx.FieldSpec{
 			WireName: "availability_zone_addresses",
-			Kind: "list",
-			Fields: NatGateway_AvailabilityZoneAddressesFields,
+			Kind:     "list",
+			Fields:   NatGateway_AvailabilityZoneAddressesFields,
 		},
-		"ConnectivityType": ubx.FieldSpec{WireName: "connectivity_type"},
-		"MaxDrainDurationSeconds": ubx.FieldSpec{WireName: "max_drain_duration_seconds"},
-		"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
-		"SecondaryAllocationIds": ubx.FieldSpec{WireName: "secondary_allocation_ids"},
+		"ConnectivityType":               ubx.FieldSpec{WireName: "connectivity_type"},
+		"MaxDrainDurationSeconds":        ubx.FieldSpec{WireName: "max_drain_duration_seconds"},
+		"PrivateIpAddress":               ubx.FieldSpec{WireName: "private_ip_address"},
+		"SecondaryAllocationIds":         ubx.FieldSpec{WireName: "secondary_allocation_ids"},
 		"SecondaryPrivateIpAddressCount": ubx.FieldSpec{WireName: "secondary_private_ip_address_count"},
-		"SecondaryPrivateIpAddresses": ubx.FieldSpec{WireName: "secondary_private_ip_addresses"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
+		"SecondaryPrivateIpAddresses":    ubx.FieldSpec{WireName: "secondary_private_ip_addresses"},
+		"SubnetId":                       ubx.FieldSpec{WireName: "subnet_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: NatGateway_TagsFields,
+			Kind:     "list",
+			Fields:   NatGateway_TagsFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

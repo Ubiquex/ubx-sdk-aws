@@ -119,7 +119,7 @@ type CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_StorageCon
 
 type CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate struct {
 	// Determines whether the capacity provider launches On-Demand or Spot instances for the managed instances using this launch template. (AI-inferred)
-	CapacityOptionType any
+	CapacityOptionType   any
 	CapacityReservations any
 	// The ARN of the IAM instance profile that the EC2 instances launched by this capacity provider's managed instances will use to interact with AWS services. (AI-inferred)
 	Ec2InstanceProfileArn any
@@ -128,9 +128,9 @@ type CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate struct {
 	// Controls whether instance tags are propagated to the instance metadata service (IMDS) on EC2 instances launched from the launch template specified in the managed instances provider of the ECS capacity provider. (AI-inferred)
 	InstanceMetadataTagsPropagation any
 	// Defines the instance requirements (e.g., vCPU count, memory, and other attributes) that the Auto Scaling group uses to automatically select EC2 instance types for the managed instances of the ECS capacity provider. (AI-inferred)
-	InstanceRequirements any
+	InstanceRequirements      any
 	LocalStorageConfiguration any
-	Monitoring any
+	Monitoring                any
 	// Specifies the VPC networking configuration for the EC2 instances launched by the capacity provider, including subnets, security groups, and whether to assign a public IP address, as part of the instance launch template in the managed instances provider. (AI-inferred)
 	NetworkConfiguration any
 	StorageConfiguration any
@@ -157,181 +157,181 @@ type CapacityProvider_Tags struct {
 }
 
 var CapacityProvider_AutoScalingGroupProvider_ManagedScalingFields = ubx.FieldMap{
-		"InstanceWarmupPeriod": ubx.FieldSpec{WireName: "instance_warmup_period"},
-		"MaximumScalingStepSize": ubx.FieldSpec{WireName: "maximum_scaling_step_size"},
-		"MinimumScalingStepSize": ubx.FieldSpec{WireName: "minimum_scaling_step_size"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"TargetCapacity": ubx.FieldSpec{WireName: "target_capacity"},
-	}
+	"InstanceWarmupPeriod":   ubx.FieldSpec{WireName: "instance_warmup_period"},
+	"MaximumScalingStepSize": ubx.FieldSpec{WireName: "maximum_scaling_step_size"},
+	"MinimumScalingStepSize": ubx.FieldSpec{WireName: "minimum_scaling_step_size"},
+	"Status":                 ubx.FieldSpec{WireName: "status"},
+	"TargetCapacity":         ubx.FieldSpec{WireName: "target_capacity"},
+}
 
 var CapacityProvider_AutoScalingGroupProviderFields = ubx.FieldMap{
-		"AutoScalingGroupArn": ubx.FieldSpec{WireName: "auto_scaling_group_arn"},
-		"ManagedDraining": ubx.FieldSpec{WireName: "managed_draining"},
-		"ManagedScaling": ubx.FieldSpec{
-			WireName: "managed_scaling",
-			Kind: "object",
-			Fields: CapacityProvider_AutoScalingGroupProvider_ManagedScalingFields,
-		},
-		"ManagedTerminationProtection": ubx.FieldSpec{WireName: "managed_termination_protection"},
-	}
+	"AutoScalingGroupArn": ubx.FieldSpec{WireName: "auto_scaling_group_arn"},
+	"ManagedDraining":     ubx.FieldSpec{WireName: "managed_draining"},
+	"ManagedScaling": ubx.FieldSpec{
+		WireName: "managed_scaling",
+		Kind:     "object",
+		Fields:   CapacityProvider_AutoScalingGroupProvider_ManagedScalingFields,
+	},
+	"ManagedTerminationProtection": ubx.FieldSpec{WireName: "managed_termination_protection"},
+}
 
 var CapacityProvider_ManagedInstancesProvider_AutoRepairConfigurationFields = ubx.FieldMap{
-		"ActionsStatus": ubx.FieldSpec{WireName: "actions_status"},
-	}
+	"ActionsStatus": ubx.FieldSpec{WireName: "actions_status"},
+}
 
 var CapacityProvider_ManagedInstancesProvider_InfrastructureOptimizationFields = ubx.FieldMap{
-		"ScaleInAfter": ubx.FieldSpec{WireName: "scale_in_after"},
-	}
+	"ScaleInAfter": ubx.FieldSpec{WireName: "scale_in_after"},
+}
 
 var CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_CapacityReservationsFields = ubx.FieldMap{
-		"ReservationGroupArn": ubx.FieldSpec{WireName: "reservation_group_arn"},
-		"ReservationPreference": ubx.FieldSpec{WireName: "reservation_preference"},
-	}
+	"ReservationGroupArn":   ubx.FieldSpec{WireName: "reservation_group_arn"},
+	"ReservationPreference": ubx.FieldSpec{WireName: "reservation_preference"},
+}
 
 var CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields = ubx.FieldMap{
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-	}
+	"Max": ubx.FieldSpec{WireName: "max"},
+	"Min": ubx.FieldSpec{WireName: "min"},
+}
 
 var CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirementsFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{
-			WireName: "accelerator_count",
-			Kind: "object",
-			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
-		},
-		"AcceleratorManufacturers": ubx.FieldSpec{WireName: "accelerator_manufacturers"},
-		"AcceleratorNames": ubx.FieldSpec{WireName: "accelerator_names"},
-		"AcceleratorTotalMemoryMiB": ubx.FieldSpec{
-			WireName: "accelerator_total_memory_mi_b",
-			Kind: "object",
-			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
-		},
-		"AcceleratorTypes": ubx.FieldSpec{WireName: "accelerator_types"},
-		"AllowedInstanceTypes": ubx.FieldSpec{WireName: "allowed_instance_types"},
-		"BareMetal": ubx.FieldSpec{WireName: "bare_metal"},
-		"BaselineEbsBandwidthMbps": ubx.FieldSpec{
-			WireName: "baseline_ebs_bandwidth_mbps",
-			Kind: "object",
-			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
-		},
-		"BurstablePerformance": ubx.FieldSpec{WireName: "burstable_performance"},
-		"CpuManufacturers": ubx.FieldSpec{WireName: "cpu_manufacturers"},
-		"ExcludedInstanceTypes": ubx.FieldSpec{WireName: "excluded_instance_types"},
-		"InstanceGenerations": ubx.FieldSpec{WireName: "instance_generations"},
-		"LocalStorage": ubx.FieldSpec{WireName: "local_storage"},
-		"LocalStorageTypes": ubx.FieldSpec{WireName: "local_storage_types"},
-		"MaxSpotPriceAsPercentageOfOptimalOnDemandPrice": ubx.FieldSpec{WireName: "max_spot_price_as_percentage_of_optimal_on_demand_price"},
-		"MemoryGiBperVcpu": ubx.FieldSpec{
-			WireName: "memory_gi_bper_vcpu",
-			Kind: "object",
-			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
-		},
-		"MemoryMiB": ubx.FieldSpec{
-			WireName: "memory_mi_b",
-			Kind: "object",
-			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
-		},
-		"NetworkBandwidthGbps": ubx.FieldSpec{
-			WireName: "network_bandwidth_gbps",
-			Kind: "object",
-			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
-		},
-		"NetworkInterfaceCount": ubx.FieldSpec{
-			WireName: "network_interface_count",
-			Kind: "object",
-			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
-		},
-		"OnDemandMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "on_demand_max_price_percentage_over_lowest_price"},
-		"RequireHibernateSupport": ubx.FieldSpec{WireName: "require_hibernate_support"},
-		"SpotMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "spot_max_price_percentage_over_lowest_price"},
-		"TotalLocalStorageGb": ubx.FieldSpec{
-			WireName: "total_local_storage_gb",
-			Kind: "object",
-			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
-		},
-		"VcpuCount": ubx.FieldSpec{
-			WireName: "vcpu_count",
-			Kind: "object",
-			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
-		},
-	}
+	"AcceleratorCount": ubx.FieldSpec{
+		WireName: "accelerator_count",
+		Kind:     "object",
+		Fields:   CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
+	},
+	"AcceleratorManufacturers": ubx.FieldSpec{WireName: "accelerator_manufacturers"},
+	"AcceleratorNames":         ubx.FieldSpec{WireName: "accelerator_names"},
+	"AcceleratorTotalMemoryMiB": ubx.FieldSpec{
+		WireName: "accelerator_total_memory_mi_b",
+		Kind:     "object",
+		Fields:   CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
+	},
+	"AcceleratorTypes":     ubx.FieldSpec{WireName: "accelerator_types"},
+	"AllowedInstanceTypes": ubx.FieldSpec{WireName: "allowed_instance_types"},
+	"BareMetal":            ubx.FieldSpec{WireName: "bare_metal"},
+	"BaselineEbsBandwidthMbps": ubx.FieldSpec{
+		WireName: "baseline_ebs_bandwidth_mbps",
+		Kind:     "object",
+		Fields:   CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
+	},
+	"BurstablePerformance":                           ubx.FieldSpec{WireName: "burstable_performance"},
+	"CpuManufacturers":                               ubx.FieldSpec{WireName: "cpu_manufacturers"},
+	"ExcludedInstanceTypes":                          ubx.FieldSpec{WireName: "excluded_instance_types"},
+	"InstanceGenerations":                            ubx.FieldSpec{WireName: "instance_generations"},
+	"LocalStorage":                                   ubx.FieldSpec{WireName: "local_storage"},
+	"LocalStorageTypes":                              ubx.FieldSpec{WireName: "local_storage_types"},
+	"MaxSpotPriceAsPercentageOfOptimalOnDemandPrice": ubx.FieldSpec{WireName: "max_spot_price_as_percentage_of_optimal_on_demand_price"},
+	"MemoryGiBperVcpu": ubx.FieldSpec{
+		WireName: "memory_gi_bper_vcpu",
+		Kind:     "object",
+		Fields:   CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
+	},
+	"MemoryMiB": ubx.FieldSpec{
+		WireName: "memory_mi_b",
+		Kind:     "object",
+		Fields:   CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
+	},
+	"NetworkBandwidthGbps": ubx.FieldSpec{
+		WireName: "network_bandwidth_gbps",
+		Kind:     "object",
+		Fields:   CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
+	},
+	"NetworkInterfaceCount": ubx.FieldSpec{
+		WireName: "network_interface_count",
+		Kind:     "object",
+		Fields:   CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
+	},
+	"OnDemandMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "on_demand_max_price_percentage_over_lowest_price"},
+	"RequireHibernateSupport":                   ubx.FieldSpec{WireName: "require_hibernate_support"},
+	"SpotMaxPricePercentageOverLowestPrice":     ubx.FieldSpec{WireName: "spot_max_price_percentage_over_lowest_price"},
+	"TotalLocalStorageGb": ubx.FieldSpec{
+		WireName: "total_local_storage_gb",
+		Kind:     "object",
+		Fields:   CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
+	},
+	"VcpuCount": ubx.FieldSpec{
+		WireName: "vcpu_count",
+		Kind:     "object",
+		Fields:   CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCountFields,
+	},
+}
 
 var CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_LocalStorageConfigurationFields = ubx.FieldMap{
-		"UseLocalStorage": ubx.FieldSpec{WireName: "use_local_storage"},
-	}
+	"UseLocalStorage": ubx.FieldSpec{WireName: "use_local_storage"},
+}
 
 var CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_NetworkConfigurationFields = ubx.FieldMap{
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
+	"Subnets":        ubx.FieldSpec{WireName: "subnets"},
+}
 
 var CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_StorageConfigurationFields = ubx.FieldMap{
-		"StorageSizeGiB": ubx.FieldSpec{WireName: "storage_size_gi_b"},
-	}
+	"StorageSizeGiB": ubx.FieldSpec{WireName: "storage_size_gi_b"},
+}
 
 var CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplateFields = ubx.FieldMap{
-		"CapacityOptionType": ubx.FieldSpec{WireName: "capacity_option_type"},
-		"CapacityReservations": ubx.FieldSpec{
-			WireName: "capacity_reservations",
-			Kind: "object",
-			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_CapacityReservationsFields,
-		},
-		"Ec2InstanceProfileArn": ubx.FieldSpec{WireName: "ec2_instance_profile_arn"},
-		"FipsEnabled": ubx.FieldSpec{WireName: "fips_enabled"},
-		"InstanceMetadataTagsPropagation": ubx.FieldSpec{WireName: "instance_metadata_tags_propagation"},
-		"InstanceRequirements": ubx.FieldSpec{
-			WireName: "instance_requirements",
-			Kind: "object",
-			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirementsFields,
-		},
-		"LocalStorageConfiguration": ubx.FieldSpec{
-			WireName: "local_storage_configuration",
-			Kind: "object",
-			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_LocalStorageConfigurationFields,
-		},
-		"Monitoring": ubx.FieldSpec{WireName: "monitoring"},
-		"NetworkConfiguration": ubx.FieldSpec{
-			WireName: "network_configuration",
-			Kind: "object",
-			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_NetworkConfigurationFields,
-		},
-		"StorageConfiguration": ubx.FieldSpec{
-			WireName: "storage_configuration",
-			Kind: "object",
-			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_StorageConfigurationFields,
-		},
-	}
+	"CapacityOptionType": ubx.FieldSpec{WireName: "capacity_option_type"},
+	"CapacityReservations": ubx.FieldSpec{
+		WireName: "capacity_reservations",
+		Kind:     "object",
+		Fields:   CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_CapacityReservationsFields,
+	},
+	"Ec2InstanceProfileArn":           ubx.FieldSpec{WireName: "ec2_instance_profile_arn"},
+	"FipsEnabled":                     ubx.FieldSpec{WireName: "fips_enabled"},
+	"InstanceMetadataTagsPropagation": ubx.FieldSpec{WireName: "instance_metadata_tags_propagation"},
+	"InstanceRequirements": ubx.FieldSpec{
+		WireName: "instance_requirements",
+		Kind:     "object",
+		Fields:   CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirementsFields,
+	},
+	"LocalStorageConfiguration": ubx.FieldSpec{
+		WireName: "local_storage_configuration",
+		Kind:     "object",
+		Fields:   CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_LocalStorageConfigurationFields,
+	},
+	"Monitoring": ubx.FieldSpec{WireName: "monitoring"},
+	"NetworkConfiguration": ubx.FieldSpec{
+		WireName: "network_configuration",
+		Kind:     "object",
+		Fields:   CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_NetworkConfigurationFields,
+	},
+	"StorageConfiguration": ubx.FieldSpec{
+		WireName: "storage_configuration",
+		Kind:     "object",
+		Fields:   CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_StorageConfigurationFields,
+	},
+}
 
 var CapacityProvider_ManagedInstancesProviderFields = ubx.FieldMap{
-		"AutoRepairConfiguration": ubx.FieldSpec{
-			WireName: "auto_repair_configuration",
-			Kind: "object",
-			Fields: CapacityProvider_ManagedInstancesProvider_AutoRepairConfigurationFields,
-		},
-		"InfrastructureOptimization": ubx.FieldSpec{
-			WireName: "infrastructure_optimization",
-			Kind: "object",
-			Fields: CapacityProvider_ManagedInstancesProvider_InfrastructureOptimizationFields,
-		},
-		"InfrastructureRoleArn": ubx.FieldSpec{WireName: "infrastructure_role_arn"},
-		"InstanceLaunchTemplate": ubx.FieldSpec{
-			WireName: "instance_launch_template",
-			Kind: "object",
-			Fields: CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplateFields,
-		},
-		"PropagateTags": ubx.FieldSpec{WireName: "propagate_tags"},
-	}
+	"AutoRepairConfiguration": ubx.FieldSpec{
+		WireName: "auto_repair_configuration",
+		Kind:     "object",
+		Fields:   CapacityProvider_ManagedInstancesProvider_AutoRepairConfigurationFields,
+	},
+	"InfrastructureOptimization": ubx.FieldSpec{
+		WireName: "infrastructure_optimization",
+		Kind:     "object",
+		Fields:   CapacityProvider_ManagedInstancesProvider_InfrastructureOptimizationFields,
+	},
+	"InfrastructureRoleArn": ubx.FieldSpec{WireName: "infrastructure_role_arn"},
+	"InstanceLaunchTemplate": ubx.FieldSpec{
+		WireName: "instance_launch_template",
+		Kind:     "object",
+		Fields:   CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplateFields,
+	},
+	"PropagateTags": ubx.FieldSpec{WireName: "propagate_tags"},
+}
 
 var CapacityProvider_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CapacityProviderConfig struct {
 	// Configures the Auto Scaling group that backs this ECS capacity provider, including its ARN, optional managed scaling parameters, and managed termination protection settings. (AI-inferred)
 	AutoScalingGroupProvider any
 	// The cluster this capacity provider is associated with. Required for Amazon ECS Managed Instances capacity providers, which are scoped to a single cluster. (AI-inferred)
-	ClusterName any
+	ClusterName              any
 	ManagedInstancesProvider any
 	// Specifies the name of the capacity provider, which must be unique within the account and Region and contain only letters, numbers, underscores, and hyphens (up to 255 characters); if omitted, CloudFormation generates a unique name. (AI-inferred)
 	Name any
@@ -343,7 +343,7 @@ type CapacityProviderAttrs struct {
 	// Configures the Auto Scaling group that backs this ECS capacity provider, including its ARN, optional managed scaling parameters, and managed termination protection settings. (AI-inferred)
 	AutoScalingGroupProvider any
 	// The cluster this capacity provider is associated with. Required for Amazon ECS Managed Instances capacity providers, which are scoped to a single cluster. (AI-inferred)
-	ClusterName any
+	ClusterName              any
 	ManagedInstancesProvider any
 	// Specifies the name of the capacity provider, which must be unique within the account and Region and contain only letters, numbers, underscores, and hyphens (up to 255 characters); if omitted, CloudFormation generates a unique name. (AI-inferred)
 	Name any
@@ -356,20 +356,20 @@ var CapacityProvider = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoScalingGroupProvider": ubx.FieldSpec{
 			WireName: "auto_scaling_group_provider",
-			Kind: "object",
-			Fields: CapacityProvider_AutoScalingGroupProviderFields,
+			Kind:     "object",
+			Fields:   CapacityProvider_AutoScalingGroupProviderFields,
 		},
 		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
 		"ManagedInstancesProvider": ubx.FieldSpec{
 			WireName: "managed_instances_provider",
-			Kind: "object",
-			Fields: CapacityProvider_ManagedInstancesProviderFields,
+			Kind:     "object",
+			Fields:   CapacityProvider_ManagedInstancesProviderFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CapacityProvider_TagsFields,
+			Kind:     "list",
+			Fields:   CapacityProvider_TagsFields,
 		},
 	},
 }

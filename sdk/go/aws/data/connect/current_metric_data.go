@@ -5,94 +5,94 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CurrentMetricData_CurrentMetrics struct {
 	MetricId any
-	Name any
-	Unit any
+	Name     any
+	Unit     any
 }
 
 type CurrentMetricData_Filters struct {
-	AgentStatuses any
-	Channels any
-	Queues any
-	RoutingProfiles any
+	AgentStatuses          any
+	Channels               any
+	Queues                 any
+	RoutingProfiles        any
 	RoutingStepExpressions any
-	Subtypes any
-	ValidationTestTypes any
+	Subtypes               any
+	ValidationTestTypes    any
 }
 
 type CurrentMetricData_MetricResults_Collections struct {
 	Metric any
-	Value any
+	Value  any
 }
 
 type CurrentMetricData_MetricResults_Dimensions_AgentStatus struct {
 	Arn any
-	Id any
+	Id  any
 }
 
 type CurrentMetricData_MetricResults_Dimensions struct {
-	AgentStatus any
-	Channel any
-	Queue any
-	RoutingProfile any
+	AgentStatus           any
+	Channel               any
+	Queue                 any
+	RoutingProfile        any
 	RoutingStepExpression any
-	Subtype any
-	ValidationTestType any
+	Subtype               any
+	ValidationTestType    any
 }
 
 type CurrentMetricData_MetricResults struct {
 	Collections any
-	Dimensions any
+	Dimensions  any
 }
 
 type CurrentMetricData_SortCriteria struct {
 	SortByMetric any
-	SortOrder any
+	SortOrder    any
 }
 
 var CurrentMetricData_CurrentMetricsFields = ubx.FieldMap{
-		"MetricId": ubx.FieldSpec{WireName: "metric_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-	}
+	"MetricId": ubx.FieldSpec{WireName: "metric_id"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Unit":     ubx.FieldSpec{WireName: "unit"},
+}
 
 var CurrentMetricData_FiltersFields = ubx.FieldMap{
-		"AgentStatuses": ubx.FieldSpec{WireName: "agent_statuses"},
-		"Channels": ubx.FieldSpec{WireName: "channels"},
-		"Queues": ubx.FieldSpec{WireName: "queues"},
-		"RoutingProfiles": ubx.FieldSpec{WireName: "routing_profiles"},
-		"RoutingStepExpressions": ubx.FieldSpec{WireName: "routing_step_expressions"},
-		"Subtypes": ubx.FieldSpec{WireName: "subtypes"},
-		"ValidationTestTypes": ubx.FieldSpec{WireName: "validation_test_types"},
-	}
+	"AgentStatuses":          ubx.FieldSpec{WireName: "agent_statuses"},
+	"Channels":               ubx.FieldSpec{WireName: "channels"},
+	"Queues":                 ubx.FieldSpec{WireName: "queues"},
+	"RoutingProfiles":        ubx.FieldSpec{WireName: "routing_profiles"},
+	"RoutingStepExpressions": ubx.FieldSpec{WireName: "routing_step_expressions"},
+	"Subtypes":               ubx.FieldSpec{WireName: "subtypes"},
+	"ValidationTestTypes":    ubx.FieldSpec{WireName: "validation_test_types"},
+}
 
 var CurrentMetricData_SortCriteriaFields = ubx.FieldMap{
-		"SortByMetric": ubx.FieldSpec{WireName: "sort_by_metric"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"SortByMetric": ubx.FieldSpec{WireName: "sort_by_metric"},
+	"SortOrder":    ubx.FieldSpec{WireName: "sort_order"},
+}
 
 type CurrentMetricDataConfig struct {
 	CurrentMetrics any
 	// <p>Contains the filter to apply when retrieving metrics.</p>
-	Filters any
-	Groupings any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	Filters      any
+	Groupings    any
+	InstanceId   any
+	MaxResults   any
+	NextToken    any
 	SortCriteria any
 }
 
 type CurrentMetricDataAttrs struct {
 	ApproximateTotalCount any
-	CurrentMetrics any
-	DataSnapshotTime any
+	CurrentMetrics        any
+	DataSnapshotTime      any
 	// <p>Contains the filter to apply when retrieving metrics.</p>
-	Filters any
-	Groupings any
-	InstanceId any
-	MaxResults any
+	Filters       any
+	Groupings     any
+	InstanceId    any
+	MaxResults    any
 	MetricResults any
-	NextToken any
-	SortCriteria any
+	NextToken     any
+	SortCriteria  any
 }
 
 var CurrentMetricData = ubx.DataSourceBinding{
@@ -100,22 +100,22 @@ var CurrentMetricData = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"CurrentMetrics": ubx.FieldSpec{
 			WireName: "current_metrics",
-			Kind: "list",
-			Fields: CurrentMetricData_CurrentMetricsFields,
+			Kind:     "list",
+			Fields:   CurrentMetricData_CurrentMetricsFields,
 		},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: CurrentMetricData_FiltersFields,
+			Kind:     "object",
+			Fields:   CurrentMetricData_FiltersFields,
 		},
-		"Groupings": ubx.FieldSpec{WireName: "groupings"},
+		"Groupings":  ubx.FieldSpec{WireName: "groupings"},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SortCriteria": ubx.FieldSpec{
 			WireName: "sort_criteria",
-			Kind: "list",
-			Fields: CurrentMetricData_SortCriteriaFields,
+			Kind:     "list",
+			Fields:   CurrentMetricData_SortCriteriaFields,
 		},
 	},
 }

@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigurationRevisions_Revisions struct {
 	CreationTime any
-	Description any
-	Revision any
+	Description  any
+	Revision     any
 }
 
 type ConfigurationRevisionsConfig struct {
-	Arn any
+	Arn        any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ConfigurationRevisionsAttrs struct {
-	Arn any
+	Arn        any
 	MaxResults any
-	NextToken any
-	Revisions any
+	NextToken  any
+	Revisions  any
 }
 
 var ConfigurationRevisions = ubx.DataSourceBinding{
 	WireType: "aws_kafka_configuration_revisions",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":        ubx.FieldSpec{WireName: "arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

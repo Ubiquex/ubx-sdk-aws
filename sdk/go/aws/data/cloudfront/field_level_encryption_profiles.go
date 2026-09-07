@@ -4,52 +4,52 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FieldLevelEncryptionProfiles_FieldLevelEncryptionProfileList_Items_EncryptionEntities_Items_FieldPatterns struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type FieldLevelEncryptionProfiles_FieldLevelEncryptionProfileList_Items_EncryptionEntities_Items struct {
 	FieldPatterns any
-	ProviderId any
-	PublicKeyId any
+	ProviderId    any
+	PublicKeyId   any
 }
 
 type FieldLevelEncryptionProfiles_FieldLevelEncryptionProfileList_Items_EncryptionEntities struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type FieldLevelEncryptionProfiles_FieldLevelEncryptionProfileList_Items struct {
-	Comment any
+	Comment            any
 	EncryptionEntities any
-	Id any
-	LastModifiedTime any
-	Name any
+	Id                 any
+	LastModifiedTime   any
+	Name               any
 }
 
 type FieldLevelEncryptionProfiles_FieldLevelEncryptionProfileList struct {
-	Items any
-	MaxItems any
+	Items      any
+	MaxItems   any
 	NextMarker any
-	Quantity any
+	Quantity   any
 }
 
 type FieldLevelEncryptionProfilesConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 }
 
 type FieldLevelEncryptionProfilesAttrs struct {
 	// <p>List of field-level encryption profiles.</p>
 	FieldLevelEncryptionProfileList any
-	Marker any
-	MaxItems any
+	Marker                          any
+	MaxItems                        any
 }
 
 var FieldLevelEncryptionProfiles = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_field_level_encryption_profiles",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 	},
 }

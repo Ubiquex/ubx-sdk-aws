@@ -4,11 +4,11 @@ package es
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ElasticsearchDomainConfig_DomainConfig_AccessPolicies_Status struct {
-	CreationDate any
+	CreationDate    any
 	PendingDeletion any
 	// <p>The state of a requested change. One of the following:</p> <ul> <li>Processing: The request change is still in-process.</li> <li>Active: The request change is processed and deployed to the Elasticsearch domain.</li> </ul>
-	State any
-	UpdateDate any
+	State         any
+	UpdateDate    any
 	UpdateVersion any
 }
 
@@ -27,23 +27,23 @@ type ElasticsearchDomainConfig_DomainConfig_AdvancedOptions struct {
 }
 
 type ElasticsearchDomainConfig_DomainConfig_AdvancedSecurityOptions_Options_Samloptions_Idp struct {
-	EntityId any
+	EntityId        any
 	MetadataContent any
 }
 
 type ElasticsearchDomainConfig_DomainConfig_AdvancedSecurityOptions_Options_Samloptions struct {
 	Enabled any
 	// <p>Specifies the SAML Identity Provider's information.</p>
-	Idp any
-	RolesKey any
+	Idp                   any
+	RolesKey              any
 	SessionTimeoutMinutes any
-	SubjectKey any
+	SubjectKey            any
 }
 
 type ElasticsearchDomainConfig_DomainConfig_AdvancedSecurityOptions_Options struct {
-	AnonymousAuthDisableDate any
-	AnonymousAuthEnabled any
-	Enabled any
+	AnonymousAuthDisableDate    any
+	AnonymousAuthEnabled        any
+	Enabled                     any
 	InternalUserDatabaseEnabled any
 	// <p>Describes the SAML application configured for the domain.</p>
 	Samloptions any
@@ -57,31 +57,31 @@ type ElasticsearchDomainConfig_DomainConfig_AdvancedSecurityOptions struct {
 }
 
 type ElasticsearchDomainConfig_DomainConfig_AutoTuneOptions_Options_MaintenanceSchedules_Duration struct {
-	Unit any
+	Unit  any
 	Value any
 }
 
 type ElasticsearchDomainConfig_DomainConfig_AutoTuneOptions_Options_MaintenanceSchedules struct {
 	CronExpressionForRecurrence any
-	Duration any
-	StartAt any
+	Duration                    any
+	StartAt                     any
 }
 
 type ElasticsearchDomainConfig_DomainConfig_AutoTuneOptions_Options struct {
 	// <p>Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED.</p>
-	DesiredState any
+	DesiredState         any
 	MaintenanceSchedules any
 	// <p>Specifies the rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK, DEFAULT_ROLLBACK.</p>
 	RollbackOnDisable any
 }
 
 type ElasticsearchDomainConfig_DomainConfig_AutoTuneOptions_Status struct {
-	CreationDate any
-	ErrorMessage any
+	CreationDate    any
+	ErrorMessage    any
 	PendingDeletion any
 	// <p>Specifies the Auto-Tune state for the Elasticsearch domain. For valid states see the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a>.</p>
-	State any
-	UpdateDate any
+	State         any
+	UpdateDate    any
 	UpdateVersion any
 }
 
@@ -93,10 +93,10 @@ type ElasticsearchDomainConfig_DomainConfig_AutoTuneOptions struct {
 }
 
 type ElasticsearchDomainConfig_DomainConfig_AutomatedSnapshotPauseOptions_Options struct {
-	Enabled any
-	EndTime any
+	Enabled   any
+	EndTime   any
 	StartTime any
-	State any
+	State     any
 }
 
 type ElasticsearchDomainConfig_DomainConfig_AutomatedSnapshotPauseOptions struct {
@@ -107,19 +107,19 @@ type ElasticsearchDomainConfig_DomainConfig_AutomatedSnapshotPauseOptions struct
 }
 
 type ElasticsearchDomainConfig_DomainConfig_ChangeProgressDetails struct {
-	ChangeId any
+	ChangeId           any
 	ConfigChangeStatus any
-	InitiatedBy any
-	LastUpdatedTime any
-	Message any
-	StartTime any
+	InitiatedBy        any
+	LastUpdatedTime    any
+	Message            any
+	StartTime          any
 }
 
 type ElasticsearchDomainConfig_DomainConfig_CognitoOptions_Options struct {
-	Enabled any
+	Enabled        any
 	IdentityPoolId any
-	RoleArn any
-	UserPoolId any
+	RoleArn        any
+	UserPoolId     any
 }
 
 type ElasticsearchDomainConfig_DomainConfig_CognitoOptions struct {
@@ -145,9 +145,9 @@ type ElasticsearchDomainConfig_DomainConfig_DomainEndpointOptions_Options struct
 	CustomEndpoint any
 	// <p>The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
 	CustomEndpointCertificateArn any
-	CustomEndpointEnabled any
-	EnforceHttps any
-	TlssecurityPolicy any
+	CustomEndpointEnabled        any
+	EnforceHttps                 any
+	TlssecurityPolicy            any
 }
 
 type ElasticsearchDomainConfig_DomainConfig_DomainEndpointOptions struct {
@@ -159,7 +159,7 @@ type ElasticsearchDomainConfig_DomainConfig_DomainEndpointOptions struct {
 
 type ElasticsearchDomainConfig_DomainConfig_Ebsoptions_Options struct {
 	Ebsenabled any
-	Iops any
+	Iops       any
 	Throughput any
 	VolumeSize any
 	// <p> The type of EBS volume, standard, gp2, gp3 or io1. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a>for more information.</p>
@@ -183,17 +183,17 @@ type ElasticsearchDomainConfig_DomainConfig_ElasticsearchClusterConfig_Options_Z
 
 type ElasticsearchDomainConfig_DomainConfig_ElasticsearchClusterConfig_Options struct {
 	// <p>Specifies the configuration for cold storage options such as enabled</p>
-	ColdStorageOptions any
-	DedicatedMasterCount any
+	ColdStorageOptions     any
+	DedicatedMasterCount   any
 	DedicatedMasterEnabled any
-	DedicatedMasterType any
-	InstanceCount any
-	InstanceType any
-	WarmCount any
-	WarmEnabled any
-	WarmType any
+	DedicatedMasterType    any
+	InstanceCount          any
+	InstanceType           any
+	WarmCount              any
+	WarmEnabled            any
+	WarmType               any
 	// <p>Specifies the zone awareness configuration for the domain cluster, such as the number of availability zones.</p>
-	ZoneAwarenessConfig any
+	ZoneAwarenessConfig  any
 	ZoneAwarenessEnabled any
 }
 
@@ -205,7 +205,7 @@ type ElasticsearchDomainConfig_DomainConfig_ElasticsearchClusterConfig struct {
 }
 
 type ElasticsearchDomainConfig_DomainConfig_EncryptionAtRestOptions_Options struct {
-	Enabled any
+	Enabled  any
 	KmsKeyId any
 }
 
@@ -218,7 +218,7 @@ type ElasticsearchDomainConfig_DomainConfig_EncryptionAtRestOptions struct {
 
 type ElasticsearchDomainConfig_DomainConfig_LogPublishingOptions_Options struct {
 	CloudWatchLogsLogGroupArn any
-	Enabled any
+	Enabled                   any
 }
 
 type ElasticsearchDomainConfig_DomainConfig_LogPublishingOptions struct {
@@ -228,10 +228,10 @@ type ElasticsearchDomainConfig_DomainConfig_LogPublishingOptions struct {
 }
 
 type ElasticsearchDomainConfig_DomainConfig_ModifyingProperties struct {
-	ActiveValue any
-	Name any
+	ActiveValue  any
+	Name         any
 	PendingValue any
-	ValueType any
+	ValueType    any
 }
 
 type ElasticsearchDomainConfig_DomainConfig_NodeToNodeEncryptionOptions struct {
@@ -254,9 +254,9 @@ type ElasticsearchDomainConfig_DomainConfig_SnapshotOptions struct {
 
 type ElasticsearchDomainConfig_DomainConfig_Vpcoptions_Options struct {
 	AvailabilityZones any
-	SecurityGroupIds any
-	SubnetIds any
-	Vpcid any
+	SecurityGroupIds  any
+	SubnetIds         any
+	Vpcid             any
 }
 
 type ElasticsearchDomainConfig_DomainConfig_Vpcoptions struct {
@@ -297,7 +297,7 @@ type ElasticsearchDomainConfig_DomainConfig struct {
 	EngineMode any
 	// <p>The configured log publishing options for the domain and their current status.</p>
 	LogPublishingOptions any
-	ModifyingProperties any
+	ModifyingProperties  any
 	// <p>Status of the node-to-node encryption options for the specified Elasticsearch domain.</p>
 	NodeToNodeEncryptionOptions any
 	// <p>Status of a daily automated snapshot.</p>

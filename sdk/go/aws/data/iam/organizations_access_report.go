@@ -4,48 +4,48 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationsAccessReport_AccessDetails struct {
-	EntityPath any
-	LastAuthenticatedTime any
-	Region any
-	ServiceName any
-	ServiceNamespace any
+	EntityPath                 any
+	LastAuthenticatedTime      any
+	Region                     any
+	ServiceName                any
+	ServiceNamespace           any
 	TotalAuthenticatedEntities any
 }
 
 type OrganizationsAccessReport_ErrorDetails struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type OrganizationsAccessReportConfig struct {
-	JobId any
-	Marker any
+	JobId    any
+	Marker   any
 	MaxItems any
-	SortKey any
+	SortKey  any
 }
 
 type OrganizationsAccessReportAttrs struct {
 	AccessDetails any
 	// <p>Contains information about the reason that the operation failed.</p> <p>This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html">GetOrganizationsAccessReport</a>, <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetails.html">GetServiceLastAccessedDetails</a>, and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetailsWithEntities.html">GetServiceLastAccessedDetailsWithEntities</a> operations.</p>
-	ErrorDetails any
-	IsTruncated any
-	JobCompletionDate any
-	JobCreationDate any
-	JobId any
-	JobStatus any
-	Marker any
-	MaxItems any
-	NumberOfServicesAccessible any
+	ErrorDetails                any
+	IsTruncated                 any
+	JobCompletionDate           any
+	JobCreationDate             any
+	JobId                       any
+	JobStatus                   any
+	Marker                      any
+	MaxItems                    any
+	NumberOfServicesAccessible  any
 	NumberOfServicesNotAccessed any
-	SortKey any
+	SortKey                     any
 }
 
 var OrganizationsAccessReport = ubx.DataSourceBinding{
 	WireType: "aws_iam_organizations_access_report",
 	Fields: ubx.FieldMap{
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"JobId":    ubx.FieldSpec{WireName: "job_id"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"SortKey": ubx.FieldSpec{WireName: "sort_key"},
+		"SortKey":  ubx.FieldSpec{WireName: "sort_key"},
 	},
 }

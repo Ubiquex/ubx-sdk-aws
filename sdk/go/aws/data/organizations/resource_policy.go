@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourcePolicy_ResourcePolicy_ResourcePolicySummary struct {
 	Arn any
-	Id any
+	Id  any
 }
 
 type ResourcePolicy_ResourcePolicy struct {
@@ -24,6 +24,5 @@ type ResourcePolicyAttrs struct {
 
 var ResourcePolicy = ubx.DataSourceBinding{
 	WireType: "aws_organizations_resource_policy",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

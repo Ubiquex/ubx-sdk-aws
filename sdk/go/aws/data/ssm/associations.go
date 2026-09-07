@@ -4,53 +4,53 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Associations_AssociationFilterList struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Associations_Associations_Overview struct {
 	AssociationStatusAggregatedCount any
-	DetailedStatus any
-	Status any
+	DetailedStatus                   any
+	Status                           any
 }
 
 type Associations_Associations_Targets struct {
-	Key any
+	Key    any
 	Values any
 }
 
 type Associations_Associations struct {
-	AssociationId any
-	AssociationName any
+	AssociationId      any
+	AssociationName    any
 	AssociationVersion any
-	DocumentVersion any
-	Duration any
-	InstanceId any
-	LastExecutionDate any
-	Name any
-	Overview any
+	DocumentVersion    any
+	Duration           any
+	InstanceId         any
+	LastExecutionDate  any
+	Name               any
+	Overview           any
 	ScheduleExpression any
-	ScheduleOffset any
-	TargetMaps any
-	Targets any
+	ScheduleOffset     any
+	TargetMaps         any
+	Targets            any
 }
 
 var Associations_AssociationFilterListFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AssociationsConfig struct {
 	AssociationFilterList any
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 }
 
 type AssociationsAttrs struct {
 	AssociationFilterList any
-	Associations any
-	MaxResults any
-	NextToken any
+	Associations          any
+	MaxResults            any
+	NextToken             any
 }
 
 var Associations = ubx.DataSourceBinding{
@@ -58,10 +58,10 @@ var Associations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AssociationFilterList": ubx.FieldSpec{
 			WireName: "association_filter_list",
-			Kind: "list",
-			Fields: Associations_AssociationFilterListFields,
+			Kind:     "list",
+			Fields:   Associations_AssociationFilterListFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

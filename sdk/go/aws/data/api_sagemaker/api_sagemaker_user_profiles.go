@@ -4,40 +4,40 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerUserProfiles_UserProfiles struct {
-	CreationTime any
-	DomainId any
+	CreationTime     any
+	DomainId         any
 	LastModifiedTime any
-	Status any
-	UserProfileName any
+	Status           any
+	UserProfileName  any
 }
 
 type ApiSagemakerUserProfilesConfig struct {
-	DomainIdEquals any
-	MaxResults any
-	NextToken any
-	SortBy any
-	SortOrder any
+	DomainIdEquals          any
+	MaxResults              any
+	NextToken               any
+	SortBy                  any
+	SortOrder               any
 	UserProfileNameContains any
 }
 
 type ApiSagemakerUserProfilesAttrs struct {
-	DomainIdEquals any
-	MaxResults any
-	NextToken any
-	SortBy any
-	SortOrder any
+	DomainIdEquals          any
+	MaxResults              any
+	NextToken               any
+	SortBy                  any
+	SortOrder               any
 	UserProfileNameContains any
-	UserProfiles any
+	UserProfiles            any
 }
 
 var ApiSagemakerUserProfiles = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_user_profiles",
 	Fields: ubx.FieldMap{
-		"DomainIdEquals": ubx.FieldSpec{WireName: "domain_id_equals"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"DomainIdEquals":          ubx.FieldSpec{WireName: "domain_id_equals"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":                  ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":               ubx.FieldSpec{WireName: "sort_order"},
 		"UserProfileNameContains": ubx.FieldSpec{WireName: "user_profile_name_contains"},
 	},
 }

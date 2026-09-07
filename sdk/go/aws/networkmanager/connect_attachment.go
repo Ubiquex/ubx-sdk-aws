@@ -34,33 +34,33 @@ type ConnectAttachment_ProposedSegmentChange struct {
 }
 
 var ConnectAttachment_OptionsFields = ubx.FieldMap{
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-	}
+	"Protocol": ubx.FieldSpec{WireName: "protocol"},
+}
 
 var ConnectAttachment_ProposedNetworkFunctionGroupChange_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ConnectAttachment_ProposedNetworkFunctionGroupChangeFields = ubx.FieldMap{
-		"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
-		"NetworkFunctionGroupName": ubx.FieldSpec{WireName: "network_function_group_name"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: ConnectAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
-		},
-	}
+	"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
+	"NetworkFunctionGroupName":   ubx.FieldSpec{WireName: "network_function_group_name"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   ConnectAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
+	},
+}
 
 var ConnectAttachment_ProposedSegmentChangeFields = ubx.FieldMap{
-		"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
-		"SegmentName": ubx.FieldSpec{WireName: "segment_name"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: ConnectAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
-		},
-	}
+	"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
+	"SegmentName":                ubx.FieldSpec{WireName: "segment_name"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   ConnectAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
+	},
+}
 
 type ConnectAttachmentConfig struct {
 	// ID of the CoreNetwork that the attachment will be attached to.
@@ -129,29 +129,29 @@ type ConnectAttachmentAttrs struct {
 var ConnectAttachment = ubx.ResourceBinding{
 	WireType: "aws_network_manager_connect_attachment",
 	Fields: ubx.FieldMap{
-		"CoreNetworkId": ubx.FieldSpec{WireName: "core_network_id"},
-		"EdgeLocation": ubx.FieldSpec{WireName: "edge_location"},
+		"CoreNetworkId":            ubx.FieldSpec{WireName: "core_network_id"},
+		"EdgeLocation":             ubx.FieldSpec{WireName: "edge_location"},
 		"NetworkFunctionGroupName": ubx.FieldSpec{WireName: "network_function_group_name"},
 		"Options": ubx.FieldSpec{
 			WireName: "options",
-			Kind: "object",
-			Fields: ConnectAttachment_OptionsFields,
+			Kind:     "object",
+			Fields:   ConnectAttachment_OptionsFields,
 		},
 		"ProposedNetworkFunctionGroupChange": ubx.FieldSpec{
 			WireName: "proposed_network_function_group_change",
-			Kind: "object",
-			Fields: ConnectAttachment_ProposedNetworkFunctionGroupChangeFields,
+			Kind:     "object",
+			Fields:   ConnectAttachment_ProposedNetworkFunctionGroupChangeFields,
 		},
 		"ProposedSegmentChange": ubx.FieldSpec{
 			WireName: "proposed_segment_change",
-			Kind: "object",
-			Fields: ConnectAttachment_ProposedSegmentChangeFields,
+			Kind:     "object",
+			Fields:   ConnectAttachment_ProposedSegmentChangeFields,
 		},
 		"RoutingPolicyLabel": ubx.FieldSpec{WireName: "routing_policy_label"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ConnectAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
+			Kind:     "list",
+			Fields:   ConnectAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
 		},
 		"TransportAttachmentId": ubx.FieldSpec{WireName: "transport_attachment_id"},
 	},

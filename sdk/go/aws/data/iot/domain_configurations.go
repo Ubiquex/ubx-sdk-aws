@@ -4,30 +4,30 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainConfigurations_DomainConfigurations struct {
-	DomainConfigurationArn any
+	DomainConfigurationArn  any
 	DomainConfigurationName any
-	ServiceType any
+	ServiceType             any
 }
 
 type DomainConfigurationsConfig struct {
-	Marker any
-	PageSize any
+	Marker      any
+	PageSize    any
 	ServiceType any
 }
 
 type DomainConfigurationsAttrs struct {
 	DomainConfigurations any
-	Marker any
-	NextMarker any
-	PageSize any
-	ServiceType any
+	Marker               any
+	NextMarker           any
+	PageSize             any
+	ServiceType          any
 }
 
 var DomainConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_iot_domain_configurations",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"Marker":      ubx.FieldSpec{WireName: "marker"},
+		"PageSize":    ubx.FieldSpec{WireName: "page_size"},
 		"ServiceType": ubx.FieldSpec{WireName: "service_type"},
 	},
 }

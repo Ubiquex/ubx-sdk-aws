@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainObjectType_Tags struct {
 	// The key of a tag attached to the AWS Customer Profiles domain object type, used to organize and identify the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var DomainObjectType_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DomainObjectTypeConfig struct {
 	// Description of the domain object type.
@@ -51,15 +51,15 @@ type DomainObjectTypeAttrs struct {
 var DomainObjectType = ubx.ResourceBinding{
 	WireType: "aws_customer_profiles_domain_object_type",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"EncryptionKey": ubx.FieldSpec{WireName: "encryption_key"},
-		"Fields": ubx.FieldSpec{WireName: "fields"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"DomainName":     ubx.FieldSpec{WireName: "domain_name"},
+		"EncryptionKey":  ubx.FieldSpec{WireName: "encryption_key"},
+		"Fields":         ubx.FieldSpec{WireName: "fields"},
 		"ObjectTypeName": ubx.FieldSpec{WireName: "object_type_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DomainObjectType_TagsFields,
+			Kind:     "list",
+			Fields:   DomainObjectType_TagsFields,
 		},
 	},
 }

@@ -5,16 +5,16 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestGridProjects_TestGridProjects_VpcConfig struct {
 	SecurityGroupIds any
-	SubnetIds any
-	VpcId any
+	SubnetIds        any
+	VpcId            any
 }
 
 type TestGridProjects_TestGridProjects struct {
-	Arn any
-	Created any
+	Arn         any
+	Created     any
 	Description any
-	Name any
-	VpcConfig any
+	Name        any
+	VpcConfig   any
 }
 
 type TestGridProjectsConfig struct {
@@ -23,8 +23,8 @@ type TestGridProjectsConfig struct {
 }
 
 type TestGridProjectsAttrs struct {
-	MaxResult any
-	NextToken any
+	MaxResult        any
+	NextToken        any
 	TestGridProjects any
 }
 

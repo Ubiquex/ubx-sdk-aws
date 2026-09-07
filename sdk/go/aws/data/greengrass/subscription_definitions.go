@@ -4,31 +4,31 @@ package greengrass
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SubscriptionDefinitions_Definitions struct {
-	Arn any
-	CreationTimestamp any
-	Id any
+	Arn                  any
+	CreationTimestamp    any
+	Id                   any
 	LastUpdatedTimestamp any
-	LatestVersion any
-	LatestVersionArn any
-	Name any
-	Tags any
+	LatestVersion        any
+	LatestVersionArn     any
+	Name                 any
+	Tags                 any
 }
 
 type SubscriptionDefinitionsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SubscriptionDefinitionsAttrs struct {
 	Definitions any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 var SubscriptionDefinitions = ubx.DataSourceBinding{
 	WireType: "aws_greengrass_subscription_definitions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

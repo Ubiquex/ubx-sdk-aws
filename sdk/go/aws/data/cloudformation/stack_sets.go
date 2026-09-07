@@ -4,8 +4,8 @@ package cloudformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StackSets_Summaries_AutoDeployment struct {
-	DependsOn any
-	Enabled any
+	DependsOn                    any
+	Enabled                      any
 	RetainStacksOnAccountRemoval any
 }
 
@@ -14,38 +14,38 @@ type StackSets_Summaries_ManagedExecution struct {
 }
 
 type StackSets_Summaries struct {
-	AutoDeployment any
-	Description any
-	DriftStatus any
+	AutoDeployment          any
+	Description             any
+	DriftStatus             any
 	LastDriftCheckTimestamp any
-	ManagedExecution any
-	PermissionModel any
-	StackSetId any
-	StackSetName any
-	Status any
+	ManagedExecution        any
+	PermissionModel         any
+	StackSetId              any
+	StackSetName            any
+	Status                  any
 }
 
 type StackSetsConfig struct {
-	CallAs any
+	CallAs     any
 	MaxResults any
-	NextToken any
-	Status any
+	NextToken  any
+	Status     any
 }
 
 type StackSetsAttrs struct {
-	CallAs any
+	CallAs     any
 	MaxResults any
-	NextToken any
-	Status any
-	Summaries any
+	NextToken  any
+	Status     any
+	Summaries  any
 }
 
 var StackSets = ubx.DataSourceBinding{
 	WireType: "aws_cloudformation_stack_sets",
 	Fields: ubx.FieldMap{
-		"CallAs": ubx.FieldSpec{WireName: "call_as"},
+		"CallAs":     ubx.FieldSpec{WireName: "call_as"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Status":     ubx.FieldSpec{WireName: "status"},
 	},
 }

@@ -24,7 +24,7 @@ type MessageTemplateVersionAttrs struct {
 var MessageTemplateVersion = ubx.ResourceBinding{
 	WireType: "aws_wisdom_message_template_version",
 	Fields: ubx.FieldMap{
-		"MessageTemplateArn": ubx.FieldSpec{WireName: "message_template_arn"},
+		"MessageTemplateArn":           ubx.FieldSpec{WireName: "message_template_arn"},
 		"MessageTemplateContentSha256": ubx.FieldSpec{WireName: "message_template_content_sha256"},
 	},
 }

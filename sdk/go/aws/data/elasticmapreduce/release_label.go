@@ -4,7 +4,7 @@ package elasticmapreduce
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReleaseLabel_Applications struct {
-	Name any
+	Name    any
 	Version any
 }
 
@@ -13,24 +13,24 @@ type ReleaseLabel_AvailableOsreleases struct {
 }
 
 type ReleaseLabelConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	ReleaseLabel any
 }
 
 type ReleaseLabelAttrs struct {
-	Applications any
+	Applications        any
 	AvailableOsreleases any
-	MaxResults any
-	NextToken any
-	ReleaseLabel any
+	MaxResults          any
+	NextToken           any
+	ReleaseLabel        any
 }
 
 var ReleaseLabel = ubx.DataSourceBinding{
 	WireType: "aws_elasticmapreduce_release_label",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"ReleaseLabel": ubx.FieldSpec{WireName: "release_label"},
 	},
 }

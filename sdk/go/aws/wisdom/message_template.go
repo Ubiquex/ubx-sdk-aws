@@ -217,187 +217,187 @@ type MessageTemplate_MessageTemplateAttachments struct {
 
 type MessageTemplate_Tags struct {
 	// The key of a metadata tag attached to the Wisdom message template, allowing users to organize and identify the template within AWS. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var MessageTemplate_Content_EmailMessageTemplateContent_Body_HtmlFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+}
 
 var MessageTemplate_Content_EmailMessageTemplateContent_BodyFields = ubx.FieldMap{
-		"Html": ubx.FieldSpec{
-			WireName: "html",
-			Kind: "object",
-			Fields: MessageTemplate_Content_EmailMessageTemplateContent_Body_HtmlFields,
-		},
-		"PlainText": ubx.FieldSpec{
-			WireName: "plain_text",
-			Kind: "object",
-			Fields: MessageTemplate_Content_EmailMessageTemplateContent_Body_HtmlFields,
-		},
-	}
+	"Html": ubx.FieldSpec{
+		WireName: "html",
+		Kind:     "object",
+		Fields:   MessageTemplate_Content_EmailMessageTemplateContent_Body_HtmlFields,
+	},
+	"PlainText": ubx.FieldSpec{
+		WireName: "plain_text",
+		Kind:     "object",
+		Fields:   MessageTemplate_Content_EmailMessageTemplateContent_Body_HtmlFields,
+	},
+}
 
 var MessageTemplate_Content_EmailMessageTemplateContent_HeadersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var MessageTemplate_Content_EmailMessageTemplateContentFields = ubx.FieldMap{
-		"Body": ubx.FieldSpec{
-			WireName: "body",
-			Kind: "object",
-			Fields: MessageTemplate_Content_EmailMessageTemplateContent_BodyFields,
-		},
-		"Headers": ubx.FieldSpec{
-			WireName: "headers",
-			Kind: "list",
-			Fields: MessageTemplate_Content_EmailMessageTemplateContent_HeadersFields,
-		},
-		"Subject": ubx.FieldSpec{WireName: "subject"},
-	}
+	"Body": ubx.FieldSpec{
+		WireName: "body",
+		Kind:     "object",
+		Fields:   MessageTemplate_Content_EmailMessageTemplateContent_BodyFields,
+	},
+	"Headers": ubx.FieldSpec{
+		WireName: "headers",
+		Kind:     "list",
+		Fields:   MessageTemplate_Content_EmailMessageTemplateContent_HeadersFields,
+	},
+	"Subject": ubx.FieldSpec{WireName: "subject"},
+}
 
 var MessageTemplate_Content_SmsMessageTemplateContent_BodyFields = ubx.FieldMap{
-		"PlainText": ubx.FieldSpec{
-			WireName: "plain_text",
-			Kind: "object",
-			Fields: MessageTemplate_Content_EmailMessageTemplateContent_Body_HtmlFields,
-		},
-	}
+	"PlainText": ubx.FieldSpec{
+		WireName: "plain_text",
+		Kind:     "object",
+		Fields:   MessageTemplate_Content_EmailMessageTemplateContent_Body_HtmlFields,
+	},
+}
 
 var MessageTemplate_Content_SmsMessageTemplateContentFields = ubx.FieldMap{
-		"Body": ubx.FieldSpec{
-			WireName: "body",
-			Kind: "object",
-			Fields: MessageTemplate_Content_SmsMessageTemplateContent_BodyFields,
-		},
-	}
+	"Body": ubx.FieldSpec{
+		WireName: "body",
+		Kind:     "object",
+		Fields:   MessageTemplate_Content_SmsMessageTemplateContent_BodyFields,
+	},
+}
 
 var MessageTemplate_ContentFields = ubx.FieldMap{
-		"EmailMessageTemplateContent": ubx.FieldSpec{
-			WireName: "email_message_template_content",
-			Kind: "object",
-			Fields: MessageTemplate_Content_EmailMessageTemplateContentFields,
-		},
-		"SmsMessageTemplateContent": ubx.FieldSpec{
-			WireName: "sms_message_template_content",
-			Kind: "object",
-			Fields: MessageTemplate_Content_SmsMessageTemplateContentFields,
-		},
-	}
+	"EmailMessageTemplateContent": ubx.FieldSpec{
+		WireName: "email_message_template_content",
+		Kind:     "object",
+		Fields:   MessageTemplate_Content_EmailMessageTemplateContentFields,
+	},
+	"SmsMessageTemplateContent": ubx.FieldSpec{
+		WireName: "sms_message_template_content",
+		Kind:     "object",
+		Fields:   MessageTemplate_Content_SmsMessageTemplateContentFields,
+	},
+}
 
 var MessageTemplate_DefaultAttributes_AgentAttributesFields = ubx.FieldMap{
-		"FirstName": ubx.FieldSpec{WireName: "first_name"},
-		"LastName": ubx.FieldSpec{WireName: "last_name"},
-	}
+	"FirstName": ubx.FieldSpec{WireName: "first_name"},
+	"LastName":  ubx.FieldSpec{WireName: "last_name"},
+}
 
 var MessageTemplate_DefaultAttributes_CustomerProfileAttributesFields = ubx.FieldMap{
-		"AccountNumber": ubx.FieldSpec{WireName: "account_number"},
-		"AdditionalInformation": ubx.FieldSpec{WireName: "additional_information"},
-		"Address1": ubx.FieldSpec{WireName: "address1"},
-		"Address2": ubx.FieldSpec{WireName: "address2"},
-		"Address3": ubx.FieldSpec{WireName: "address3"},
-		"Address4": ubx.FieldSpec{WireName: "address4"},
-		"BillingAddress1": ubx.FieldSpec{WireName: "billing_address1"},
-		"BillingAddress2": ubx.FieldSpec{WireName: "billing_address2"},
-		"BillingAddress3": ubx.FieldSpec{WireName: "billing_address3"},
-		"BillingAddress4": ubx.FieldSpec{WireName: "billing_address4"},
-		"BillingCity": ubx.FieldSpec{WireName: "billing_city"},
-		"BillingCountry": ubx.FieldSpec{WireName: "billing_country"},
-		"BillingCounty": ubx.FieldSpec{WireName: "billing_county"},
-		"BillingPostalCode": ubx.FieldSpec{WireName: "billing_postal_code"},
-		"BillingProvince": ubx.FieldSpec{WireName: "billing_province"},
-		"BillingState": ubx.FieldSpec{WireName: "billing_state"},
-		"BirthDate": ubx.FieldSpec{WireName: "birth_date"},
-		"BusinessEmailAddress": ubx.FieldSpec{WireName: "business_email_address"},
-		"BusinessName": ubx.FieldSpec{WireName: "business_name"},
-		"BusinessPhoneNumber": ubx.FieldSpec{WireName: "business_phone_number"},
-		"City": ubx.FieldSpec{WireName: "city"},
-		"Country": ubx.FieldSpec{WireName: "country"},
-		"County": ubx.FieldSpec{WireName: "county"},
-		"Custom": ubx.FieldSpec{WireName: "custom"},
-		"EmailAddress": ubx.FieldSpec{WireName: "email_address"},
-		"FirstName": ubx.FieldSpec{WireName: "first_name"},
-		"Gender": ubx.FieldSpec{WireName: "gender"},
-		"HomePhoneNumber": ubx.FieldSpec{WireName: "home_phone_number"},
-		"LastName": ubx.FieldSpec{WireName: "last_name"},
-		"MailingAddress1": ubx.FieldSpec{WireName: "mailing_address1"},
-		"MailingAddress2": ubx.FieldSpec{WireName: "mailing_address2"},
-		"MailingAddress3": ubx.FieldSpec{WireName: "mailing_address3"},
-		"MailingAddress4": ubx.FieldSpec{WireName: "mailing_address4"},
-		"MailingCity": ubx.FieldSpec{WireName: "mailing_city"},
-		"MailingCountry": ubx.FieldSpec{WireName: "mailing_country"},
-		"MailingCounty": ubx.FieldSpec{WireName: "mailing_county"},
-		"MailingPostalCode": ubx.FieldSpec{WireName: "mailing_postal_code"},
-		"MailingProvince": ubx.FieldSpec{WireName: "mailing_province"},
-		"MailingState": ubx.FieldSpec{WireName: "mailing_state"},
-		"MiddleName": ubx.FieldSpec{WireName: "middle_name"},
-		"MobilePhoneNumber": ubx.FieldSpec{WireName: "mobile_phone_number"},
-		"PartyType": ubx.FieldSpec{WireName: "party_type"},
-		"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
-		"PostalCode": ubx.FieldSpec{WireName: "postal_code"},
-		"ProfileArn": ubx.FieldSpec{WireName: "profile_arn"},
-		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
-		"Province": ubx.FieldSpec{WireName: "province"},
-		"ShippingAddress1": ubx.FieldSpec{WireName: "shipping_address1"},
-		"ShippingAddress2": ubx.FieldSpec{WireName: "shipping_address2"},
-		"ShippingAddress3": ubx.FieldSpec{WireName: "shipping_address3"},
-		"ShippingAddress4": ubx.FieldSpec{WireName: "shipping_address4"},
-		"ShippingCity": ubx.FieldSpec{WireName: "shipping_city"},
-		"ShippingCountry": ubx.FieldSpec{WireName: "shipping_country"},
-		"ShippingCounty": ubx.FieldSpec{WireName: "shipping_county"},
-		"ShippingPostalCode": ubx.FieldSpec{WireName: "shipping_postal_code"},
-		"ShippingProvince": ubx.FieldSpec{WireName: "shipping_province"},
-		"ShippingState": ubx.FieldSpec{WireName: "shipping_state"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"AccountNumber":         ubx.FieldSpec{WireName: "account_number"},
+	"AdditionalInformation": ubx.FieldSpec{WireName: "additional_information"},
+	"Address1":              ubx.FieldSpec{WireName: "address1"},
+	"Address2":              ubx.FieldSpec{WireName: "address2"},
+	"Address3":              ubx.FieldSpec{WireName: "address3"},
+	"Address4":              ubx.FieldSpec{WireName: "address4"},
+	"BillingAddress1":       ubx.FieldSpec{WireName: "billing_address1"},
+	"BillingAddress2":       ubx.FieldSpec{WireName: "billing_address2"},
+	"BillingAddress3":       ubx.FieldSpec{WireName: "billing_address3"},
+	"BillingAddress4":       ubx.FieldSpec{WireName: "billing_address4"},
+	"BillingCity":           ubx.FieldSpec{WireName: "billing_city"},
+	"BillingCountry":        ubx.FieldSpec{WireName: "billing_country"},
+	"BillingCounty":         ubx.FieldSpec{WireName: "billing_county"},
+	"BillingPostalCode":     ubx.FieldSpec{WireName: "billing_postal_code"},
+	"BillingProvince":       ubx.FieldSpec{WireName: "billing_province"},
+	"BillingState":          ubx.FieldSpec{WireName: "billing_state"},
+	"BirthDate":             ubx.FieldSpec{WireName: "birth_date"},
+	"BusinessEmailAddress":  ubx.FieldSpec{WireName: "business_email_address"},
+	"BusinessName":          ubx.FieldSpec{WireName: "business_name"},
+	"BusinessPhoneNumber":   ubx.FieldSpec{WireName: "business_phone_number"},
+	"City":                  ubx.FieldSpec{WireName: "city"},
+	"Country":               ubx.FieldSpec{WireName: "country"},
+	"County":                ubx.FieldSpec{WireName: "county"},
+	"Custom":                ubx.FieldSpec{WireName: "custom"},
+	"EmailAddress":          ubx.FieldSpec{WireName: "email_address"},
+	"FirstName":             ubx.FieldSpec{WireName: "first_name"},
+	"Gender":                ubx.FieldSpec{WireName: "gender"},
+	"HomePhoneNumber":       ubx.FieldSpec{WireName: "home_phone_number"},
+	"LastName":              ubx.FieldSpec{WireName: "last_name"},
+	"MailingAddress1":       ubx.FieldSpec{WireName: "mailing_address1"},
+	"MailingAddress2":       ubx.FieldSpec{WireName: "mailing_address2"},
+	"MailingAddress3":       ubx.FieldSpec{WireName: "mailing_address3"},
+	"MailingAddress4":       ubx.FieldSpec{WireName: "mailing_address4"},
+	"MailingCity":           ubx.FieldSpec{WireName: "mailing_city"},
+	"MailingCountry":        ubx.FieldSpec{WireName: "mailing_country"},
+	"MailingCounty":         ubx.FieldSpec{WireName: "mailing_county"},
+	"MailingPostalCode":     ubx.FieldSpec{WireName: "mailing_postal_code"},
+	"MailingProvince":       ubx.FieldSpec{WireName: "mailing_province"},
+	"MailingState":          ubx.FieldSpec{WireName: "mailing_state"},
+	"MiddleName":            ubx.FieldSpec{WireName: "middle_name"},
+	"MobilePhoneNumber":     ubx.FieldSpec{WireName: "mobile_phone_number"},
+	"PartyType":             ubx.FieldSpec{WireName: "party_type"},
+	"PhoneNumber":           ubx.FieldSpec{WireName: "phone_number"},
+	"PostalCode":            ubx.FieldSpec{WireName: "postal_code"},
+	"ProfileArn":            ubx.FieldSpec{WireName: "profile_arn"},
+	"ProfileId":             ubx.FieldSpec{WireName: "profile_id"},
+	"Province":              ubx.FieldSpec{WireName: "province"},
+	"ShippingAddress1":      ubx.FieldSpec{WireName: "shipping_address1"},
+	"ShippingAddress2":      ubx.FieldSpec{WireName: "shipping_address2"},
+	"ShippingAddress3":      ubx.FieldSpec{WireName: "shipping_address3"},
+	"ShippingAddress4":      ubx.FieldSpec{WireName: "shipping_address4"},
+	"ShippingCity":          ubx.FieldSpec{WireName: "shipping_city"},
+	"ShippingCountry":       ubx.FieldSpec{WireName: "shipping_country"},
+	"ShippingCounty":        ubx.FieldSpec{WireName: "shipping_county"},
+	"ShippingPostalCode":    ubx.FieldSpec{WireName: "shipping_postal_code"},
+	"ShippingProvince":      ubx.FieldSpec{WireName: "shipping_province"},
+	"ShippingState":         ubx.FieldSpec{WireName: "shipping_state"},
+	"State":                 ubx.FieldSpec{WireName: "state"},
+}
 
 var MessageTemplate_DefaultAttributes_SystemAttributes_CustomerEndpointFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-	}
+	"Address": ubx.FieldSpec{WireName: "address"},
+}
 
 var MessageTemplate_DefaultAttributes_SystemAttributesFields = ubx.FieldMap{
-		"CustomerEndpoint": ubx.FieldSpec{
-			WireName: "customer_endpoint",
-			Kind: "object",
-			Fields: MessageTemplate_DefaultAttributes_SystemAttributes_CustomerEndpointFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SystemEndpoint": ubx.FieldSpec{
-			WireName: "system_endpoint",
-			Kind: "object",
-			Fields: MessageTemplate_DefaultAttributes_SystemAttributes_CustomerEndpointFields,
-		},
-	}
+	"CustomerEndpoint": ubx.FieldSpec{
+		WireName: "customer_endpoint",
+		Kind:     "object",
+		Fields:   MessageTemplate_DefaultAttributes_SystemAttributes_CustomerEndpointFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"SystemEndpoint": ubx.FieldSpec{
+		WireName: "system_endpoint",
+		Kind:     "object",
+		Fields:   MessageTemplate_DefaultAttributes_SystemAttributes_CustomerEndpointFields,
+	},
+}
 
 var MessageTemplate_DefaultAttributesFields = ubx.FieldMap{
-		"AgentAttributes": ubx.FieldSpec{
-			WireName: "agent_attributes",
-			Kind: "object",
-			Fields: MessageTemplate_DefaultAttributes_AgentAttributesFields,
-		},
-		"CustomAttributes": ubx.FieldSpec{WireName: "custom_attributes"},
-		"CustomerProfileAttributes": ubx.FieldSpec{
-			WireName: "customer_profile_attributes",
-			Kind: "object",
-			Fields: MessageTemplate_DefaultAttributes_CustomerProfileAttributesFields,
-		},
-		"SystemAttributes": ubx.FieldSpec{
-			WireName: "system_attributes",
-			Kind: "object",
-			Fields: MessageTemplate_DefaultAttributes_SystemAttributesFields,
-		},
-	}
+	"AgentAttributes": ubx.FieldSpec{
+		WireName: "agent_attributes",
+		Kind:     "object",
+		Fields:   MessageTemplate_DefaultAttributes_AgentAttributesFields,
+	},
+	"CustomAttributes": ubx.FieldSpec{WireName: "custom_attributes"},
+	"CustomerProfileAttributes": ubx.FieldSpec{
+		WireName: "customer_profile_attributes",
+		Kind:     "object",
+		Fields:   MessageTemplate_DefaultAttributes_CustomerProfileAttributesFields,
+	},
+	"SystemAttributes": ubx.FieldSpec{
+		WireName: "system_attributes",
+		Kind:     "object",
+		Fields:   MessageTemplate_DefaultAttributes_SystemAttributesFields,
+	},
+}
 
 var MessageTemplate_GroupingConfigurationFields = ubx.FieldMap{
-		"Criteria": ubx.FieldSpec{WireName: "criteria"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Criteria": ubx.FieldSpec{WireName: "criteria"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var MessageTemplate_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MessageTemplateConfig struct {
 	// The channel subtype this message template applies to.
@@ -455,27 +455,27 @@ var MessageTemplate = ubx.ResourceBinding{
 		"ChannelSubtype": ubx.FieldSpec{WireName: "channel_subtype"},
 		"Content": ubx.FieldSpec{
 			WireName: "content",
-			Kind: "object",
-			Fields: MessageTemplate_ContentFields,
+			Kind:     "object",
+			Fields:   MessageTemplate_ContentFields,
 		},
 		"DefaultAttributes": ubx.FieldSpec{
 			WireName: "default_attributes",
-			Kind: "object",
-			Fields: MessageTemplate_DefaultAttributesFields,
+			Kind:     "object",
+			Fields:   MessageTemplate_DefaultAttributesFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"GroupingConfiguration": ubx.FieldSpec{
 			WireName: "grouping_configuration",
-			Kind: "object",
-			Fields: MessageTemplate_GroupingConfigurationFields,
+			Kind:     "object",
+			Fields:   MessageTemplate_GroupingConfigurationFields,
 		},
 		"KnowledgeBaseArn": ubx.FieldSpec{WireName: "knowledge_base_arn"},
-		"Language": ubx.FieldSpec{WireName: "language"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Language":         ubx.FieldSpec{WireName: "language"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MessageTemplate_TagsFields,
+			Kind:     "list",
+			Fields:   MessageTemplate_TagsFields,
 		},
 	},
 }

@@ -4,14 +4,14 @@ package health_agent
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HealthAgentMedicalScribeListeningSession_MedicalScribeListeningSessionDetails_ChannelDefinitions struct {
-	ChannelId any
+	ChannelId       any
 	ParticipantRole any
 }
 
 type HealthAgentMedicalScribeListeningSession_MedicalScribeListeningSessionDetails_PostStreamActionResult_ClinicalNoteGenerationResult_AfterVisitSummaryResult struct {
-	FailureReason any
+	FailureReason  any
 	OutputLocation any
-	Status any
+	Status         any
 }
 
 type HealthAgentMedicalScribeListeningSession_MedicalScribeListeningSessionDetails_PostStreamActionResult_ClinicalNoteGenerationResult struct {
@@ -33,7 +33,7 @@ type HealthAgentMedicalScribeListeningSession_MedicalScribeListeningSessionDetai
 }
 
 type HealthAgentMedicalScribeListeningSession_MedicalScribeListeningSessionDetails_PostStreamActionSettings_ClinicalNoteGenerationSettings_NoteTemplateSettings struct {
-	CustomTemplate any
+	CustomTemplate  any
 	ManagedTemplate any
 }
 
@@ -45,30 +45,30 @@ type HealthAgentMedicalScribeListeningSession_MedicalScribeListeningSessionDetai
 type HealthAgentMedicalScribeListeningSession_MedicalScribeListeningSessionDetails_PostStreamActionSettings struct {
 	// <p>Response containing settings for clinical note generation</p>
 	ClinicalNoteGenerationSettings any
-	OutputS3Uri any
+	OutputS3Uri                    any
 }
 
 type HealthAgentMedicalScribeListeningSession_MedicalScribeListeningSessionDetails struct {
-	ChannelDefinitions any
-	DomainId any
+	ChannelDefinitions       any
+	DomainId                 any
 	EncounterContextProvided any
-	LanguageCode any
-	MediaEncoding any
-	MediaSampleRateHertz any
+	LanguageCode             any
+	MediaEncoding            any
+	MediaSampleRateHertz     any
 	// <p>Results of post-stream actions performed after the audio stream ended</p>
 	PostStreamActionResult any
 	// <p>Response containing settings for post-stream actions</p>
 	PostStreamActionSettings any
-	SessionId any
-	StreamCreationTime any
-	StreamEndTime any
-	StreamStatus any
-	SubscriptionId any
+	SessionId                any
+	StreamCreationTime       any
+	StreamEndTime            any
+	StreamStatus             any
+	SubscriptionId           any
 }
 
 type HealthAgentMedicalScribeListeningSessionConfig struct {
-	DomainId any
-	SessionId any
+	DomainId       any
+	SessionId      any
 	SubscriptionId any
 }
 
@@ -76,15 +76,15 @@ type HealthAgentMedicalScribeListeningSessionAttrs struct {
 	DomainId any
 	// <p>Detailed information about a Medical Scribe listening session</p>
 	MedicalScribeListeningSessionDetails any
-	SessionId any
-	SubscriptionId any
+	SessionId                            any
+	SubscriptionId                       any
 }
 
 var HealthAgentMedicalScribeListeningSession = ubx.DataSourceBinding{
 	WireType: "aws_health_agent_medical_scribe_listening_session",
 	Fields: ubx.FieldMap{
-		"DomainId": ubx.FieldSpec{WireName: "domain_id"},
-		"SessionId": ubx.FieldSpec{WireName: "session_id"},
+		"DomainId":       ubx.FieldSpec{WireName: "domain_id"},
+		"SessionId":      ubx.FieldSpec{WireName: "session_id"},
 		"SubscriptionId": ubx.FieldSpec{WireName: "subscription_id"},
 	},
 }

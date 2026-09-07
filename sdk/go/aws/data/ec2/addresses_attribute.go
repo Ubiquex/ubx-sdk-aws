@@ -6,40 +6,40 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type AddressesAttribute_Addresses_PtrRecordUpdate struct {
 	Reason any
 	Status any
-	Value any
+	Value  any
 }
 
 type AddressesAttribute_Addresses struct {
-	AllocationId any
-	PtrRecord any
+	AllocationId    any
+	PtrRecord       any
 	PtrRecordUpdate any
-	PublicIp any
+	PublicIp        any
 }
 
 type AddressesAttributeConfig struct {
 	AllocationIds any
-	Attribute any
-	DryRun any
-	MaxResults any
-	NextToken any
+	Attribute     any
+	DryRun        any
+	MaxResults    any
+	NextToken     any
 }
 
 type AddressesAttributeAttrs struct {
-	Addresses any
+	Addresses     any
 	AllocationIds any
-	Attribute any
-	DryRun any
-	MaxResults any
-	NextToken any
+	Attribute     any
+	DryRun        any
+	MaxResults    any
+	NextToken     any
 }
 
 var AddressesAttribute = ubx.DataSourceBinding{
 	WireType: "aws_ec2_addresses_attribute",
 	Fields: ubx.FieldMap{
 		"AllocationIds": ubx.FieldSpec{WireName: "allocation_ids"},
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Attribute":     ubx.FieldSpec{WireName: "attribute"},
+		"DryRun":        ubx.FieldSpec{WireName: "dry_run"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

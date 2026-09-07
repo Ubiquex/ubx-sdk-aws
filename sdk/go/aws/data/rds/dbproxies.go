@@ -4,58 +4,58 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dbproxies_Dbproxies_Auth struct {
-	AuthScheme any
+	AuthScheme             any
 	ClientPasswordAuthType any
-	Description any
-	Iamauth any
-	SecretArn any
-	UserName any
+	Description            any
+	Iamauth                any
+	SecretArn              any
+	UserName               any
 }
 
 type Dbproxies_Dbproxies struct {
-	Auth any
-	CreatedDate any
-	DbproxyArn any
-	DbproxyName any
-	DebugLogging any
-	DefaultAuthScheme any
-	Endpoint any
-	EndpointNetworkType any
-	EngineFamily any
-	IdleClientTimeout any
-	RequireTls any
-	RoleArn any
-	Status any
+	Auth                        any
+	CreatedDate                 any
+	DbproxyArn                  any
+	DbproxyName                 any
+	DebugLogging                any
+	DefaultAuthScheme           any
+	Endpoint                    any
+	EndpointNetworkType         any
+	EngineFamily                any
+	IdleClientTimeout           any
+	RequireTls                  any
+	RoleArn                     any
+	Status                      any
 	TargetConnectionNetworkType any
-	UpdatedDate any
-	VpcId any
-	VpcSecurityGroupIds any
-	VpcSubnetIds any
+	UpdatedDate                 any
+	VpcId                       any
+	VpcSecurityGroupIds         any
+	VpcSubnetIds                any
 }
 
 type Dbproxies_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var Dbproxies_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type DbproxiesConfig struct {
 	DbproxyName any
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters     any
+	Marker      any
+	MaxRecords  any
 }
 
 type DbproxiesAttrs struct {
-	Dbproxies any
+	Dbproxies   any
 	DbproxyName any
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters     any
+	Marker      any
+	MaxRecords  any
 }
 
 var Dbproxies = ubx.DataSourceBinding{
@@ -64,10 +64,10 @@ var Dbproxies = ubx.DataSourceBinding{
 		"DbproxyName": ubx.FieldSpec{WireName: "dbproxy_name"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Dbproxies_FiltersFields,
+			Kind:     "list",
+			Fields:   Dbproxies_FiltersFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
 	},
 }

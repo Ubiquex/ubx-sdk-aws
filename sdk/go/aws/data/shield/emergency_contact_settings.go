@@ -6,7 +6,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type EmergencyContactSettings_EmergencyContactList struct {
 	ContactNotes any
 	EmailAddress any
-	PhoneNumber any
+	PhoneNumber  any
 }
 
 type EmergencyContactSettingsConfig struct {
@@ -18,6 +18,5 @@ type EmergencyContactSettingsAttrs struct {
 
 var EmergencyContactSettings = ubx.DataSourceBinding{
 	WireType: "aws_shield_emergency_contact_settings",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

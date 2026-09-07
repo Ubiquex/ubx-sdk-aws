@@ -4,35 +4,35 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Connections_Connections struct {
-	EndpointArn any
-	EndpointIdentifier any
-	LastFailureMessage any
-	ReplicationInstanceArn any
+	EndpointArn                   any
+	EndpointIdentifier            any
+	LastFailureMessage            any
+	ReplicationInstanceArn        any
 	ReplicationInstanceIdentifier any
-	Status any
+	Status                        any
 }
 
 type Connections_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var Connections_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ConnectionsConfig struct {
-	Filters any
-	Marker any
+	Filters    any
+	Marker     any
 	MaxRecords any
 }
 
 type ConnectionsAttrs struct {
 	Connections any
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters     any
+	Marker      any
+	MaxRecords  any
 }
 
 var Connections = ubx.DataSourceBinding{
@@ -40,10 +40,10 @@ var Connections = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Connections_FiltersFields,
+			Kind:     "list",
+			Fields:   Connections_FiltersFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
 	},
 }

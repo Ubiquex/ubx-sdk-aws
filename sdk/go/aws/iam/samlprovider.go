@@ -4,7 +4,7 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Samlprovider_PrivateKeyList struct {
-	KeyId any
+	KeyId     any
 	Timestamp any
 }
 
@@ -16,14 +16,14 @@ type Samlprovider_Tags struct {
 }
 
 var Samlprovider_PrivateKeyListFields = ubx.FieldMap{
-		"KeyId": ubx.FieldSpec{WireName: "key_id"},
-		"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
-	}
+	"KeyId":     ubx.FieldSpec{WireName: "key_id"},
+	"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
+}
 
 var Samlprovider_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SamlproviderConfig struct {
 	// The private key from your external identity provider
@@ -66,20 +66,20 @@ type SamlproviderAttrs struct {
 var Samlprovider = ubx.ResourceBinding{
 	WireType: "aws_iam_samlprovider",
 	Fields: ubx.FieldMap{
-		"AddPrivateKey": ubx.FieldSpec{WireName: "add_private_key"},
+		"AddPrivateKey":           ubx.FieldSpec{WireName: "add_private_key"},
 		"AssertionEncryptionMode": ubx.FieldSpec{WireName: "assertion_encryption_mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
 		"PrivateKeyList": ubx.FieldSpec{
 			WireName: "private_key_list",
-			Kind: "list",
-			Fields: Samlprovider_PrivateKeyListFields,
+			Kind:     "list",
+			Fields:   Samlprovider_PrivateKeyListFields,
 		},
-		"RemovePrivateKey": ubx.FieldSpec{WireName: "remove_private_key"},
+		"RemovePrivateKey":     ubx.FieldSpec{WireName: "remove_private_key"},
 		"SamlMetadataDocument": ubx.FieldSpec{WireName: "saml_metadata_document"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Samlprovider_TagsFields,
+			Kind:     "list",
+			Fields:   Samlprovider_TagsFields,
 		},
 	},
 }

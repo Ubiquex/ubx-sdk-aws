@@ -8,56 +8,56 @@ type Functions_FunctionList_Items_FunctionConfig_KeyValueStoreAssociations_Items
 }
 
 type Functions_FunctionList_Items_FunctionConfig_KeyValueStoreAssociations struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type Functions_FunctionList_Items_FunctionConfig struct {
-	Comment any
+	Comment                   any
 	KeyValueStoreAssociations any
-	Runtime any
+	Runtime                   any
 }
 
 type Functions_FunctionList_Items_FunctionMetadata struct {
-	CreatedTime any
-	FunctionArn any
+	CreatedTime      any
+	FunctionArn      any
 	LastModifiedTime any
-	Stage any
+	Stage            any
 }
 
 type Functions_FunctionList_Items struct {
-	FunctionConfig any
+	FunctionConfig   any
 	FunctionMetadata any
-	Name any
-	Status any
+	Name             any
+	Status           any
 }
 
 type Functions_FunctionList struct {
-	Items any
-	MaxItems any
+	Items      any
+	MaxItems   any
 	NextMarker any
-	Quantity any
+	Quantity   any
 }
 
 type FunctionsConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
-	Stage any
+	Stage    any
 }
 
 type FunctionsAttrs struct {
 	// <p>A list of CloudFront functions.</p>
 	FunctionList any
-	Marker any
-	MaxItems any
-	Stage any
+	Marker       any
+	MaxItems     any
+	Stage        any
 }
 
 var Functions = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_functions",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"Stage": ubx.FieldSpec{WireName: "stage"},
+		"Stage":    ubx.FieldSpec{WireName: "stage"},
 	},
 }

@@ -4,26 +4,26 @@ package workmail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MobileDeviceAccessOverrideConfig struct {
-	DeviceId any
+	DeviceId       any
 	OrganizationId any
-	UserId any
+	UserId         any
 }
 
 type MobileDeviceAccessOverrideAttrs struct {
-	DateCreated any
-	DateModified any
-	Description any
-	DeviceId any
-	Effect any
+	DateCreated    any
+	DateModified   any
+	Description    any
+	DeviceId       any
+	Effect         any
 	OrganizationId any
-	UserId any
+	UserId         any
 }
 
 var MobileDeviceAccessOverride = ubx.DataSourceBinding{
 	WireType: "aws_workmail_mobile_device_access_override",
 	Fields: ubx.FieldMap{
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
+		"DeviceId":       ubx.FieldSpec{WireName: "device_id"},
 		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":         ubx.FieldSpec{WireName: "user_id"},
 	},
 }

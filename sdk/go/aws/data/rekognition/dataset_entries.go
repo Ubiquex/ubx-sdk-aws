@@ -4,35 +4,35 @@ package rekognition
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DatasetEntriesConfig struct {
-	ContainsLabels any
-	DatasetArn any
-	HasErrors any
-	Labeled any
-	MaxResults any
-	NextToken any
+	ContainsLabels    any
+	DatasetArn        any
+	HasErrors         any
+	Labeled           any
+	MaxResults        any
+	NextToken         any
 	SourceRefContains any
 }
 
 type DatasetEntriesAttrs struct {
-	ContainsLabels any
-	DatasetArn any
-	DatasetEntries any
-	HasErrors any
-	Labeled any
-	MaxResults any
-	NextToken any
+	ContainsLabels    any
+	DatasetArn        any
+	DatasetEntries    any
+	HasErrors         any
+	Labeled           any
+	MaxResults        any
+	NextToken         any
 	SourceRefContains any
 }
 
 var DatasetEntries = ubx.DataSourceBinding{
 	WireType: "aws_rekognition_dataset_entries",
 	Fields: ubx.FieldMap{
-		"ContainsLabels": ubx.FieldSpec{WireName: "contains_labels"},
-		"DatasetArn": ubx.FieldSpec{WireName: "dataset_arn"},
-		"HasErrors": ubx.FieldSpec{WireName: "has_errors"},
-		"Labeled": ubx.FieldSpec{WireName: "labeled"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ContainsLabels":    ubx.FieldSpec{WireName: "contains_labels"},
+		"DatasetArn":        ubx.FieldSpec{WireName: "dataset_arn"},
+		"HasErrors":         ubx.FieldSpec{WireName: "has_errors"},
+		"Labeled":           ubx.FieldSpec{WireName: "labeled"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"SourceRefContains": ubx.FieldSpec{WireName: "source_ref_contains"},
 	},
 }

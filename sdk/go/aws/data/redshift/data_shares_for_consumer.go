@@ -5,44 +5,44 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataSharesForConsumer_DataShares_DataShareAssociations struct {
 	ConsumerAcceptedWrites any
-	ConsumerIdentifier any
-	ConsumerRegion any
-	CreatedDate any
-	ProducerAllowedWrites any
-	Status any
-	StatusChangeDate any
+	ConsumerIdentifier     any
+	ConsumerRegion         any
+	CreatedDate            any
+	ProducerAllowedWrites  any
+	Status                 any
+	StatusChangeDate       any
 }
 
 type DataSharesForConsumer_DataShares struct {
 	AllowPubliclyAccessibleConsumers any
-	DataShareArn any
-	DataShareAssociations any
-	DataShareType any
-	ManagedBy any
-	ProducerArn any
+	DataShareArn                     any
+	DataShareAssociations            any
+	DataShareType                    any
+	ManagedBy                        any
+	ProducerArn                      any
 }
 
 type DataSharesForConsumerConfig struct {
 	ConsumerArn any
-	Marker any
-	MaxRecords any
-	Status any
+	Marker      any
+	MaxRecords  any
+	Status      any
 }
 
 type DataSharesForConsumerAttrs struct {
 	ConsumerArn any
-	DataShares any
-	Marker any
-	MaxRecords any
-	Status any
+	DataShares  any
+	Marker      any
+	MaxRecords  any
+	Status      any
 }
 
 var DataSharesForConsumer = ubx.DataSourceBinding{
 	WireType: "aws_redshift_data_shares_for_consumer",
 	Fields: ubx.FieldMap{
 		"ConsumerArn": ubx.FieldSpec{WireName: "consumer_arn"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Marker":      ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":  ubx.FieldSpec{WireName: "max_records"},
+		"Status":      ubx.FieldSpec{WireName: "status"},
 	},
 }

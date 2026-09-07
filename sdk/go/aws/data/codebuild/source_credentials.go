@@ -4,9 +4,9 @@ package codebuild
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SourceCredentials_SourceCredentialsInfos struct {
-	Arn any
-	AuthType any
-	Resource any
+	Arn        any
+	AuthType   any
+	Resource   any
 	ServerType any
 }
 
@@ -19,6 +19,5 @@ type SourceCredentialsAttrs struct {
 
 var SourceCredentials = ubx.DataSourceBinding{
 	WireType: "aws_codebuild_source_credentials",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -49,50 +49,50 @@ type Database_DatabaseInput struct {
 }
 
 var Database_DatabaseInput_CreateTableDefaultPermissions_PrincipalFields = ubx.FieldMap{
-		"DataLakePrincipalIdentifier": ubx.FieldSpec{WireName: "data_lake_principal_identifier"},
-	}
+	"DataLakePrincipalIdentifier": ubx.FieldSpec{WireName: "data_lake_principal_identifier"},
+}
 
 var Database_DatabaseInput_CreateTableDefaultPermissionsFields = ubx.FieldMap{
-		"Permissions": ubx.FieldSpec{WireName: "permissions"},
-		"Principal": ubx.FieldSpec{
-			WireName: "principal",
-			Kind: "object",
-			Fields: Database_DatabaseInput_CreateTableDefaultPermissions_PrincipalFields,
-		},
-	}
+	"Permissions": ubx.FieldSpec{WireName: "permissions"},
+	"Principal": ubx.FieldSpec{
+		WireName: "principal",
+		Kind:     "object",
+		Fields:   Database_DatabaseInput_CreateTableDefaultPermissions_PrincipalFields,
+	},
+}
 
 var Database_DatabaseInput_FederatedDatabaseFields = ubx.FieldMap{
-		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-	}
+	"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
+	"Identifier":     ubx.FieldSpec{WireName: "identifier"},
+}
 
 var Database_DatabaseInput_TargetDatabaseFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"CatalogId":    ubx.FieldSpec{WireName: "catalog_id"},
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"Region":       ubx.FieldSpec{WireName: "region"},
+}
 
 var Database_DatabaseInputFields = ubx.FieldMap{
-		"CreateTableDefaultPermissions": ubx.FieldSpec{
-			WireName: "create_table_default_permissions",
-			Kind: "list",
-			Fields: Database_DatabaseInput_CreateTableDefaultPermissionsFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FederatedDatabase": ubx.FieldSpec{
-			WireName: "federated_database",
-			Kind: "object",
-			Fields: Database_DatabaseInput_FederatedDatabaseFields,
-		},
-		"LocationUri": ubx.FieldSpec{WireName: "location_uri"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"TargetDatabase": ubx.FieldSpec{
-			WireName: "target_database",
-			Kind: "object",
-			Fields: Database_DatabaseInput_TargetDatabaseFields,
-		},
-	}
+	"CreateTableDefaultPermissions": ubx.FieldSpec{
+		WireName: "create_table_default_permissions",
+		Kind:     "list",
+		Fields:   Database_DatabaseInput_CreateTableDefaultPermissionsFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"FederatedDatabase": ubx.FieldSpec{
+		WireName: "federated_database",
+		Kind:     "object",
+		Fields:   Database_DatabaseInput_FederatedDatabaseFields,
+	},
+	"LocationUri": ubx.FieldSpec{WireName: "location_uri"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Parameters":  ubx.FieldSpec{WireName: "parameters"},
+	"TargetDatabase": ubx.FieldSpec{
+		WireName: "target_database",
+		Kind:     "object",
+		Fields:   Database_DatabaseInput_TargetDatabaseFields,
+	},
+}
 
 type DatabaseConfig struct {
 	// The AWS account ID for the account in which to create the catalog object.
@@ -118,8 +118,8 @@ var Database = ubx.ResourceBinding{
 		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
 		"DatabaseInput": ubx.FieldSpec{
 			WireName: "database_input",
-			Kind: "object",
-			Fields: Database_DatabaseInputFields,
+			Kind:     "object",
+			Fields:   Database_DatabaseInputFields,
 		},
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
 	},

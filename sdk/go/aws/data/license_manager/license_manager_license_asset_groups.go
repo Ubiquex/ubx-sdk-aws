@@ -4,7 +4,7 @@ package license_manager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseManagerLicenseAssetGroups_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -13,39 +13,39 @@ type LicenseManagerLicenseAssetGroups_LicenseAssetGroups_LicenseAssetGroupConfig
 }
 
 type LicenseManagerLicenseAssetGroups_LicenseAssetGroups_Properties struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type LicenseManagerLicenseAssetGroups_LicenseAssetGroups struct {
 	AssociatedLicenseAssetRulesetArns any
-	Description any
-	LatestResourceDiscoveryTime any
-	LatestUsageAnalysisTime any
-	LicenseAssetGroupArn any
-	LicenseAssetGroupConfigurations any
-	Name any
-	Properties any
-	Status any
-	StatusMessage any
+	Description                       any
+	LatestResourceDiscoveryTime       any
+	LatestUsageAnalysisTime           any
+	LicenseAssetGroupArn              any
+	LicenseAssetGroupConfigurations   any
+	Name                              any
+	Properties                        any
+	Status                            any
+	StatusMessage                     any
 }
 
 var LicenseManagerLicenseAssetGroups_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type LicenseManagerLicenseAssetGroupsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type LicenseManagerLicenseAssetGroupsAttrs struct {
-	Filters any
+	Filters            any
 	LicenseAssetGroups any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 var LicenseManagerLicenseAssetGroups = ubx.DataSourceBinding{
@@ -53,10 +53,10 @@ var LicenseManagerLicenseAssetGroups = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: LicenseManagerLicenseAssetGroups_FiltersFields,
+			Kind:     "list",
+			Fields:   LicenseManagerLicenseAssetGroups_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

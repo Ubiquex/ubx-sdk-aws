@@ -4,7 +4,7 @@ package emr_containers
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EmrContainersManagedEndpoints_Endpoints_CertificateAuthority struct {
-	CertificateArn any
+	CertificateArn  any
 	CertificateData any
 }
 
@@ -14,94 +14,94 @@ type EmrContainersManagedEndpoints_Endpoints_ConfigurationOverrides_ApplicationC
 type EmrContainersManagedEndpoints_Endpoints_ConfigurationOverrides_ApplicationConfiguration struct {
 	Classification any
 	Configurations any
-	Properties any
+	Properties     any
 }
 
 type EmrContainersManagedEndpoints_Endpoints_ConfigurationOverrides_MonitoringConfiguration_CloudWatchMonitoringConfiguration struct {
-	LogGroupName any
+	LogGroupName        any
 	LogStreamNamePrefix any
 }
 
 type EmrContainersManagedEndpoints_Endpoints_ConfigurationOverrides_MonitoringConfiguration_ContainerLogRotationConfiguration struct {
 	MaxFilesToKeep any
-	RotationSize any
+	RotationSize   any
 }
 
 type EmrContainersManagedEndpoints_Endpoints_ConfigurationOverrides_MonitoringConfiguration_ManagedLogs struct {
 	AllowAwstoRetainLogs any
-	EncryptionKeyArn any
+	EncryptionKeyArn     any
 }
 
 type EmrContainersManagedEndpoints_Endpoints_ConfigurationOverrides_MonitoringConfiguration_S3MonitoringConfiguration struct {
 	EncryptionKeyArn any
-	LogUri any
+	LogUri           any
 }
 
 type EmrContainersManagedEndpoints_Endpoints_ConfigurationOverrides_MonitoringConfiguration struct {
 	CloudWatchMonitoringConfiguration any
 	ContainerLogRotationConfiguration any
-	ManagedLogs any
-	PersistentAppUi any
-	S3MonitoringConfiguration any
+	ManagedLogs                       any
+	PersistentAppUi                   any
+	S3MonitoringConfiguration         any
 }
 
 type EmrContainersManagedEndpoints_Endpoints_ConfigurationOverrides struct {
 	ApplicationConfiguration any
-	MonitoringConfiguration any
+	MonitoringConfiguration  any
 }
 
 type EmrContainersManagedEndpoints_Endpoints struct {
-	Arn any
-	AuthProxyUrl any
-	CertificateArn any
-	CertificateAuthority any
+	Arn                    any
+	AuthProxyUrl           any
+	CertificateArn         any
+	CertificateAuthority   any
 	ConfigurationOverrides any
-	CreatedAt any
-	ExecutionRoleArn any
-	FailureReason any
-	Id any
-	Name any
-	ReleaseLabel any
-	SecurityGroup any
-	ServerUrl any
-	State any
-	StateDetails any
-	SubnetIds any
-	Tags any
-	Type any
-	VirtualClusterId any
+	CreatedAt              any
+	ExecutionRoleArn       any
+	FailureReason          any
+	Id                     any
+	Name                   any
+	ReleaseLabel           any
+	SecurityGroup          any
+	ServerUrl              any
+	State                  any
+	StateDetails           any
+	SubnetIds              any
+	Tags                   any
+	Type                   any
+	VirtualClusterId       any
 }
 
 type EmrContainersManagedEndpointsConfig struct {
-	CreatedAfter any
-	CreatedBefore any
-	MaxResults any
-	NextToken any
-	States any
-	Types any
+	CreatedAfter     any
+	CreatedBefore    any
+	MaxResults       any
+	NextToken        any
+	States           any
+	Types            any
 	VirtualClusterId any
 }
 
 type EmrContainersManagedEndpointsAttrs struct {
-	CreatedAfter any
-	CreatedBefore any
-	Endpoints any
-	MaxResults any
-	NextToken any
-	States any
-	Types any
+	CreatedAfter     any
+	CreatedBefore    any
+	Endpoints        any
+	MaxResults       any
+	NextToken        any
+	States           any
+	Types            any
 	VirtualClusterId any
 }
 
 var EmrContainersManagedEndpoints = ubx.DataSourceBinding{
 	WireType: "aws_emr_containers_managed_endpoints",
 	Fields: ubx.FieldMap{
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
-		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"States": ubx.FieldSpec{WireName: "states"},
-		"Types": ubx.FieldSpec{WireName: "types"},
+		"CreatedAfter":     ubx.FieldSpec{WireName: "created_after"},
+		"CreatedBefore":    ubx.FieldSpec{WireName: "created_before"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"States":           ubx.FieldSpec{WireName: "states"},
+		"Types":            ubx.FieldSpec{WireName: "types"},
 		"VirtualClusterId": ubx.FieldSpec{WireName: "virtual_cluster_id"},
 	},
 }

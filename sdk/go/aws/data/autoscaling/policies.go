@@ -4,31 +4,31 @@ package autoscaling
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Policies_ScalingPolicies_Alarms struct {
-	AlarmArn any
+	AlarmArn  any
 	AlarmName any
 }
 
 type Policies_ScalingPolicies_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_Metric_Dimensions struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Policies_ScalingPolicies_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_Metric struct {
 	Dimensions any
 	MetricName any
-	Namespace any
+	Namespace  any
 }
 
 type Policies_ScalingPolicies_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat struct {
 	Metric any
-	Stat any
-	Unit any
+	Stat   any
+	Unit   any
 }
 
 type Policies_ScalingPolicies_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries struct {
 	Expression any
-	Id any
-	Label any
+	Id         any
+	Label      any
 	MetricStat any
 	ReturnData any
 }
@@ -39,109 +39,109 @@ type Policies_ScalingPolicies_PredictiveScalingConfiguration_MetricSpecification
 
 type Policies_ScalingPolicies_PredictiveScalingConfiguration_MetricSpecifications_PredefinedLoadMetricSpecification struct {
 	PredefinedMetricType any
-	ResourceLabel any
+	ResourceLabel        any
 }
 
 type Policies_ScalingPolicies_PredictiveScalingConfiguration_MetricSpecifications struct {
 	CustomizedCapacityMetricSpecification any
-	CustomizedLoadMetricSpecification any
-	CustomizedScalingMetricSpecification any
-	PredefinedLoadMetricSpecification any
-	PredefinedMetricPairSpecification any
-	PredefinedScalingMetricSpecification any
-	TargetValue any
+	CustomizedLoadMetricSpecification     any
+	CustomizedScalingMetricSpecification  any
+	PredefinedLoadMetricSpecification     any
+	PredefinedMetricPairSpecification     any
+	PredefinedScalingMetricSpecification  any
+	TargetValue                           any
 }
 
 type Policies_ScalingPolicies_PredictiveScalingConfiguration struct {
 	MaxCapacityBreachBehavior any
-	MaxCapacityBuffer any
-	MetricSpecifications any
-	Mode any
-	SchedulingBufferTime any
+	MaxCapacityBuffer         any
+	MetricSpecifications      any
+	Mode                      any
+	SchedulingBufferTime      any
 }
 
 type Policies_ScalingPolicies_StepAdjustments struct {
 	MetricIntervalLowerBound any
 	MetricIntervalUpperBound any
-	ScalingAdjustment any
+	ScalingAdjustment        any
 }
 
 type Policies_ScalingPolicies_TargetTrackingConfiguration_CustomizedMetricSpecification_Metrics_MetricStat struct {
 	Metric any
 	Period any
-	Stat any
-	Unit any
+	Stat   any
+	Unit   any
 }
 
 type Policies_ScalingPolicies_TargetTrackingConfiguration_CustomizedMetricSpecification_Metrics struct {
 	Expression any
-	Id any
-	Label any
+	Id         any
+	Label      any
 	MetricStat any
-	Period any
+	Period     any
 	ReturnData any
 }
 
 type Policies_ScalingPolicies_TargetTrackingConfiguration_CustomizedMetricSpecification struct {
 	Dimensions any
 	MetricName any
-	Metrics any
-	Namespace any
-	Period any
-	Statistic any
-	Unit any
+	Metrics    any
+	Namespace  any
+	Period     any
+	Statistic  any
+	Unit       any
 }
 
 type Policies_ScalingPolicies_TargetTrackingConfiguration struct {
 	CustomizedMetricSpecification any
-	DisableScaleIn any
+	DisableScaleIn                any
 	PredefinedMetricSpecification any
-	TargetValue any
+	TargetValue                   any
 }
 
 type Policies_ScalingPolicies struct {
-	AdjustmentType any
-	Alarms any
-	AutoScalingGroupName any
-	Cooldown any
-	Enabled any
-	EstimatedInstanceWarmup any
-	MetricAggregationType any
-	MinAdjustmentMagnitude any
-	MinAdjustmentStep any
-	PolicyArn any
-	PolicyName any
-	PolicyType any
+	AdjustmentType                 any
+	Alarms                         any
+	AutoScalingGroupName           any
+	Cooldown                       any
+	Enabled                        any
+	EstimatedInstanceWarmup        any
+	MetricAggregationType          any
+	MinAdjustmentMagnitude         any
+	MinAdjustmentStep              any
+	PolicyArn                      any
+	PolicyName                     any
+	PolicyType                     any
 	PredictiveScalingConfiguration any
-	ScalingAdjustment any
-	StepAdjustments any
-	TargetTrackingConfiguration any
+	ScalingAdjustment              any
+	StepAdjustments                any
+	TargetTrackingConfiguration    any
 }
 
 type PoliciesConfig struct {
 	AutoScalingGroupName any
-	MaxRecords any
-	NextToken any
-	PolicyNames any
-	PolicyTypes any
+	MaxRecords           any
+	NextToken            any
+	PolicyNames          any
+	PolicyTypes          any
 }
 
 type PoliciesAttrs struct {
 	AutoScalingGroupName any
-	MaxRecords any
-	NextToken any
-	PolicyNames any
-	PolicyTypes any
-	ScalingPolicies any
+	MaxRecords           any
+	NextToken            any
+	PolicyNames          any
+	PolicyTypes          any
+	ScalingPolicies      any
 }
 
 var Policies = ubx.DataSourceBinding{
 	WireType: "aws_autoscaling_policies",
 	Fields: ubx.FieldMap{
 		"AutoScalingGroupName": ubx.FieldSpec{WireName: "auto_scaling_group_name"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PolicyNames": ubx.FieldSpec{WireName: "policy_names"},
-		"PolicyTypes": ubx.FieldSpec{WireName: "policy_types"},
+		"MaxRecords":           ubx.FieldSpec{WireName: "max_records"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
+		"PolicyNames":          ubx.FieldSpec{WireName: "policy_names"},
+		"PolicyTypes":          ubx.FieldSpec{WireName: "policy_types"},
 	},
 }

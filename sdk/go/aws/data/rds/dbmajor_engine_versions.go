@@ -4,38 +4,38 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbmajorEngineVersions_DbmajorEngineVersions_SupportedEngineLifecycles struct {
-	LifecycleSupportEndDate any
-	LifecycleSupportName any
+	LifecycleSupportEndDate   any
+	LifecycleSupportName      any
 	LifecycleSupportStartDate any
 }
 
 type DbmajorEngineVersions_DbmajorEngineVersions struct {
-	Engine any
-	MajorEngineVersion any
+	Engine                    any
+	MajorEngineVersion        any
 	SupportedEngineLifecycles any
 }
 
 type DbmajorEngineVersionsConfig struct {
-	Engine any
+	Engine             any
 	MajorEngineVersion any
-	Marker any
-	MaxRecords any
+	Marker             any
+	MaxRecords         any
 }
 
 type DbmajorEngineVersionsAttrs struct {
 	DbmajorEngineVersions any
-	Engine any
-	MajorEngineVersion any
-	Marker any
-	MaxRecords any
+	Engine                any
+	MajorEngineVersion    any
+	Marker                any
+	MaxRecords            any
 }
 
 var DbmajorEngineVersions = ubx.DataSourceBinding{
 	WireType: "aws_rds_dbmajor_engine_versions",
 	Fields: ubx.FieldMap{
-		"Engine": ubx.FieldSpec{WireName: "engine"},
+		"Engine":             ubx.FieldSpec{WireName: "engine"},
 		"MajorEngineVersion": ubx.FieldSpec{WireName: "major_engine_version"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
+		"Marker":             ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":         ubx.FieldSpec{WireName: "max_records"},
 	},
 }

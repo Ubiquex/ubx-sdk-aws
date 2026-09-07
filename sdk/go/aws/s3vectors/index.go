@@ -17,23 +17,23 @@ type Index_MetadataConfiguration struct {
 
 type Index_Tags struct {
 	// Defines the user-supplied key of a tag attached to the S3 Vectors Index resource, which is used to organize and identify the index through metadata and cost-allocation tags. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Index_EncryptionConfigurationFields = ubx.FieldMap{
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"SseType": ubx.FieldSpec{WireName: "sse_type"},
-	}
+	"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+	"SseType":   ubx.FieldSpec{WireName: "sse_type"},
+}
 
 var Index_MetadataConfigurationFields = ubx.FieldMap{
-		"NonFilterableMetadataKeys": ubx.FieldSpec{WireName: "non_filterable_metadata_keys"},
-	}
+	"NonFilterableMetadataKeys": ubx.FieldSpec{WireName: "non_filterable_metadata_keys"},
+}
 
 var Index_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IndexConfig struct {
 	// The data type of the vectors to be inserted into the vector index.
@@ -84,26 +84,26 @@ type IndexAttrs struct {
 var Index = ubx.ResourceBinding{
 	WireType: "aws_s3_vectors_index",
 	Fields: ubx.FieldMap{
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"Dimension": ubx.FieldSpec{WireName: "dimension"},
+		"DataType":       ubx.FieldSpec{WireName: "data_type"},
+		"Dimension":      ubx.FieldSpec{WireName: "dimension"},
 		"DistanceMetric": ubx.FieldSpec{WireName: "distance_metric"},
 		"EncryptionConfiguration": ubx.FieldSpec{
 			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: Index_EncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   Index_EncryptionConfigurationFields,
 		},
 		"IndexName": ubx.FieldSpec{WireName: "index_name"},
 		"MetadataConfiguration": ubx.FieldSpec{
 			WireName: "metadata_configuration",
-			Kind: "object",
-			Fields: Index_MetadataConfigurationFields,
+			Kind:     "object",
+			Fields:   Index_MetadataConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Index_TagsFields,
+			Kind:     "list",
+			Fields:   Index_TagsFields,
 		},
-		"VectorBucketArn": ubx.FieldSpec{WireName: "vector_bucket_arn"},
+		"VectorBucketArn":  ubx.FieldSpec{WireName: "vector_bucket_arn"},
 		"VectorBucketName": ubx.FieldSpec{WireName: "vector_bucket_name"},
 	},
 }

@@ -34,7 +34,7 @@ type UserPoolRegionalConfigurationAttachment_LambdaConfig struct {
 	CustomSmssender any
 	// The ARN of an AWS Lambda function that serves as the DefineAuthChallenge trigger, enabling custom authentication challenge definition for the user pool. (AI-inferred)
 	DefineAuthChallenge any
-	InboundFederation any
+	InboundFederation   any
 	// Specifies the KMS key ID or ARN that Amazon Cognito uses to encrypt the code delivery messages to users, within the lambda_config block of this regional configuration attachment. (AI-inferred)
 	KmskeyId any
 	// The ARN of a Lambda function that Amazon Cognito invokes after a user is successfully authenticated, enabling custom logic like auditing or post-login workflows. (AI-inferred)
@@ -60,13 +60,13 @@ type UserPoolRegionalConfigurationAttachment_SmsConfiguration_EumsSms struct {
 	CallerArn any
 	// Name of the Amazon SNS configuration set used to track and manage SMS messages sent by the user pool for this regional configuration, enabling message delivery status and event logging. (AI-inferred)
 	ConfigurationSetName any
-	ExternalId any
+	ExternalId           any
 	// The `in_entity_id` field specifies the India-specific DLT entity ID that is passed as the `AWS.SNS.SMS.EntityId` SMS attribute when Cognito sends SMS messages for this user pool's regional configuration, satisfying TRAI compliance for Indian phone numbers. (AI-inferred)
-	InEntityId any
+	InEntityId   any
 	InTemplateId any
 	// Specifies the SMS origination identity (e.g., a sender ID or origination number) used by this regional SMS configuration when Cognito sends SMS messages for the associated user pool. (AI-inferred)
 	OriginationIdentity any
-	Region any
+	Region              any
 }
 
 type UserPoolRegionalConfigurationAttachment_SmsConfiguration struct {
@@ -80,72 +80,72 @@ type UserPoolRegionalConfigurationAttachment_SmsConfiguration struct {
 }
 
 var UserPoolRegionalConfigurationAttachment_EmailConfigurationFields = ubx.FieldMap{
-		"ConfigurationSet": ubx.FieldSpec{WireName: "configuration_set"},
-		"EmailSendingAccount": ubx.FieldSpec{WireName: "email_sending_account"},
-		"From": ubx.FieldSpec{WireName: "from"},
-		"ReplyToEmailAddress": ubx.FieldSpec{WireName: "reply_to_email_address"},
-		"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
-	}
+	"ConfigurationSet":    ubx.FieldSpec{WireName: "configuration_set"},
+	"EmailSendingAccount": ubx.FieldSpec{WireName: "email_sending_account"},
+	"From":                ubx.FieldSpec{WireName: "from"},
+	"ReplyToEmailAddress": ubx.FieldSpec{WireName: "reply_to_email_address"},
+	"SourceArn":           ubx.FieldSpec{WireName: "source_arn"},
+}
 
 var UserPoolRegionalConfigurationAttachment_LambdaConfig_CustomEmailSenderFields = ubx.FieldMap{
-		"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
-		"LambdaVersion": ubx.FieldSpec{WireName: "lambda_version"},
-	}
+	"LambdaArn":     ubx.FieldSpec{WireName: "lambda_arn"},
+	"LambdaVersion": ubx.FieldSpec{WireName: "lambda_version"},
+}
 
 var UserPoolRegionalConfigurationAttachment_LambdaConfigFields = ubx.FieldMap{
-		"CreateAuthChallenge": ubx.FieldSpec{WireName: "create_auth_challenge"},
-		"CustomEmailSender": ubx.FieldSpec{
-			WireName: "custom_email_sender",
-			Kind: "object",
-			Fields: UserPoolRegionalConfigurationAttachment_LambdaConfig_CustomEmailSenderFields,
-		},
-		"CustomMessage": ubx.FieldSpec{WireName: "custom_message"},
-		"CustomSmssender": ubx.FieldSpec{
-			WireName: "custom_smssender",
-			Kind: "object",
-			Fields: UserPoolRegionalConfigurationAttachment_LambdaConfig_CustomEmailSenderFields,
-		},
-		"DefineAuthChallenge": ubx.FieldSpec{WireName: "define_auth_challenge"},
-		"InboundFederation": ubx.FieldSpec{
-			WireName: "inbound_federation",
-			Kind: "object",
-			Fields: UserPoolRegionalConfigurationAttachment_LambdaConfig_CustomEmailSenderFields,
-		},
-		"KmskeyId": ubx.FieldSpec{WireName: "kmskey_id"},
-		"PostAuthentication": ubx.FieldSpec{WireName: "post_authentication"},
-		"PostConfirmation": ubx.FieldSpec{WireName: "post_confirmation"},
-		"PreAuthentication": ubx.FieldSpec{WireName: "pre_authentication"},
-		"PreSignUp": ubx.FieldSpec{WireName: "pre_sign_up"},
-		"PreTokenGeneration": ubx.FieldSpec{WireName: "pre_token_generation"},
-		"PreTokenGenerationConfig": ubx.FieldSpec{
-			WireName: "pre_token_generation_config",
-			Kind: "object",
-			Fields: UserPoolRegionalConfigurationAttachment_LambdaConfig_CustomEmailSenderFields,
-		},
-		"UserMigration": ubx.FieldSpec{WireName: "user_migration"},
-		"VerifyAuthChallengeResponse": ubx.FieldSpec{WireName: "verify_auth_challenge_response"},
-	}
+	"CreateAuthChallenge": ubx.FieldSpec{WireName: "create_auth_challenge"},
+	"CustomEmailSender": ubx.FieldSpec{
+		WireName: "custom_email_sender",
+		Kind:     "object",
+		Fields:   UserPoolRegionalConfigurationAttachment_LambdaConfig_CustomEmailSenderFields,
+	},
+	"CustomMessage": ubx.FieldSpec{WireName: "custom_message"},
+	"CustomSmssender": ubx.FieldSpec{
+		WireName: "custom_smssender",
+		Kind:     "object",
+		Fields:   UserPoolRegionalConfigurationAttachment_LambdaConfig_CustomEmailSenderFields,
+	},
+	"DefineAuthChallenge": ubx.FieldSpec{WireName: "define_auth_challenge"},
+	"InboundFederation": ubx.FieldSpec{
+		WireName: "inbound_federation",
+		Kind:     "object",
+		Fields:   UserPoolRegionalConfigurationAttachment_LambdaConfig_CustomEmailSenderFields,
+	},
+	"KmskeyId":           ubx.FieldSpec{WireName: "kmskey_id"},
+	"PostAuthentication": ubx.FieldSpec{WireName: "post_authentication"},
+	"PostConfirmation":   ubx.FieldSpec{WireName: "post_confirmation"},
+	"PreAuthentication":  ubx.FieldSpec{WireName: "pre_authentication"},
+	"PreSignUp":          ubx.FieldSpec{WireName: "pre_sign_up"},
+	"PreTokenGeneration": ubx.FieldSpec{WireName: "pre_token_generation"},
+	"PreTokenGenerationConfig": ubx.FieldSpec{
+		WireName: "pre_token_generation_config",
+		Kind:     "object",
+		Fields:   UserPoolRegionalConfigurationAttachment_LambdaConfig_CustomEmailSenderFields,
+	},
+	"UserMigration":               ubx.FieldSpec{WireName: "user_migration"},
+	"VerifyAuthChallengeResponse": ubx.FieldSpec{WireName: "verify_auth_challenge_response"},
+}
 
 var UserPoolRegionalConfigurationAttachment_SmsConfiguration_EumsSmsFields = ubx.FieldMap{
-		"CallerArn": ubx.FieldSpec{WireName: "caller_arn"},
-		"ConfigurationSetName": ubx.FieldSpec{WireName: "configuration_set_name"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"InEntityId": ubx.FieldSpec{WireName: "in_entity_id"},
-		"InTemplateId": ubx.FieldSpec{WireName: "in_template_id"},
-		"OriginationIdentity": ubx.FieldSpec{WireName: "origination_identity"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"CallerArn":            ubx.FieldSpec{WireName: "caller_arn"},
+	"ConfigurationSetName": ubx.FieldSpec{WireName: "configuration_set_name"},
+	"ExternalId":           ubx.FieldSpec{WireName: "external_id"},
+	"InEntityId":           ubx.FieldSpec{WireName: "in_entity_id"},
+	"InTemplateId":         ubx.FieldSpec{WireName: "in_template_id"},
+	"OriginationIdentity":  ubx.FieldSpec{WireName: "origination_identity"},
+	"Region":               ubx.FieldSpec{WireName: "region"},
+}
 
 var UserPoolRegionalConfigurationAttachment_SmsConfigurationFields = ubx.FieldMap{
-		"EumsSms": ubx.FieldSpec{
-			WireName: "eums_sms",
-			Kind: "object",
-			Fields: UserPoolRegionalConfigurationAttachment_SmsConfiguration_EumsSmsFields,
-		},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"SnsCallerArn": ubx.FieldSpec{WireName: "sns_caller_arn"},
-		"SnsRegion": ubx.FieldSpec{WireName: "sns_region"},
-	}
+	"EumsSms": ubx.FieldSpec{
+		WireName: "eums_sms",
+		Kind:     "object",
+		Fields:   UserPoolRegionalConfigurationAttachment_SmsConfiguration_EumsSmsFields,
+	},
+	"ExternalId":   ubx.FieldSpec{WireName: "external_id"},
+	"SnsCallerArn": ubx.FieldSpec{WireName: "sns_caller_arn"},
+	"SnsRegion":    ubx.FieldSpec{WireName: "sns_region"},
+}
 
 type UserPoolRegionalConfigurationAttachmentConfig struct {
 	// Configures the email delivery settings for the Cognito user pool, including the sender address, reply-to address, and the Amazon SES configuration set or source ARN used to send emails. (AI-inferred)
@@ -182,21 +182,21 @@ var UserPoolRegionalConfigurationAttachment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EmailConfiguration": ubx.FieldSpec{
 			WireName: "email_configuration",
-			Kind: "object",
-			Fields: UserPoolRegionalConfigurationAttachment_EmailConfigurationFields,
+			Kind:     "object",
+			Fields:   UserPoolRegionalConfigurationAttachment_EmailConfigurationFields,
 		},
 		"LambdaConfig": ubx.FieldSpec{
 			WireName: "lambda_config",
-			Kind: "object",
-			Fields: UserPoolRegionalConfigurationAttachment_LambdaConfigFields,
+			Kind:     "object",
+			Fields:   UserPoolRegionalConfigurationAttachment_LambdaConfigFields,
 		},
 		"SmsConfiguration": ubx.FieldSpec{
 			WireName: "sms_configuration",
-			Kind: "object",
-			Fields: UserPoolRegionalConfigurationAttachment_SmsConfigurationFields,
+			Kind:     "object",
+			Fields:   UserPoolRegionalConfigurationAttachment_SmsConfigurationFields,
 		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
+		"Status":       ubx.FieldSpec{WireName: "status"},
+		"UserPoolId":   ubx.FieldSpec{WireName: "user_pool_id"},
 		"UserPoolTags": ubx.FieldSpec{WireName: "user_pool_tags"},
 	},
 }

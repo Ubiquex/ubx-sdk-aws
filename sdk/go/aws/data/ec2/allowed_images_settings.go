@@ -13,18 +13,18 @@ type AllowedImagesSettings_ImageCriteria_DeprecationTimeCondition struct {
 
 type AllowedImagesSettings_ImageCriteria_ImageWatermarks struct {
 	MaximumDaysSinceSourceImageCreated any
-	MaximumDaysSinceWatermarkCreated any
-	SourceImageRegion any
-	WatermarkKey any
+	MaximumDaysSinceWatermarkCreated   any
+	SourceImageRegion                  any
+	WatermarkKey                       any
 }
 
 type AllowedImagesSettings_ImageCriteria struct {
-	CreationDateCondition any
+	CreationDateCondition    any
 	DeprecationTimeCondition any
-	ImageNames any
-	ImageProviders any
-	ImageWatermarks any
-	MarketplaceProductCodes any
+	ImageNames               any
+	ImageProviders           any
+	ImageWatermarks          any
+	MarketplaceProductCodes  any
 }
 
 type AllowedImagesSettingsConfig struct {
@@ -32,10 +32,10 @@ type AllowedImagesSettingsConfig struct {
 }
 
 type AllowedImagesSettingsAttrs struct {
-	DryRun any
+	DryRun        any
 	ImageCriteria any
-	ManagedBy any
-	State any
+	ManagedBy     any
+	State         any
 }
 
 var AllowedImagesSettings = ubx.DataSourceBinding{

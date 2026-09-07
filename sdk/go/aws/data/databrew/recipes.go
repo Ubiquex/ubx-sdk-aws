@@ -4,55 +4,55 @@ package databrew
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Recipes_Recipes_Steps_Action struct {
-	Operation any
+	Operation  any
 	Parameters any
 }
 
 type Recipes_Recipes_Steps_ConditionExpressions struct {
-	Condition any
+	Condition    any
 	TargetColumn any
-	Value any
+	Value        any
 }
 
 type Recipes_Recipes_Steps struct {
-	Action any
+	Action               any
 	ConditionExpressions any
 }
 
 type Recipes_Recipes struct {
-	CreateDate any
-	CreatedBy any
-	Description any
-	LastModifiedBy any
+	CreateDate       any
+	CreatedBy        any
+	Description      any
+	LastModifiedBy   any
 	LastModifiedDate any
-	Name any
-	ProjectName any
-	PublishedBy any
-	PublishedDate any
-	RecipeVersion any
-	ResourceArn any
-	Steps any
-	Tags any
+	Name             any
+	ProjectName      any
+	PublishedBy      any
+	PublishedDate    any
+	RecipeVersion    any
+	ResourceArn      any
+	Steps            any
+	Tags             any
 }
 
 type RecipesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 	RecipeVersion any
 }
 
 type RecipesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 	RecipeVersion any
-	Recipes any
+	Recipes       any
 }
 
 var Recipes = ubx.DataSourceBinding{
 	WireType: "aws_databrew_recipes",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"RecipeVersion": ubx.FieldSpec{WireName: "recipe_version"},
 	},
 }

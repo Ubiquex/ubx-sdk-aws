@@ -4,36 +4,36 @@ package meetings_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MeetingsChimeAttendees_Attendees_Capabilities struct {
-	Audio any
+	Audio   any
 	Content any
-	Video any
+	Video   any
 }
 
 type MeetingsChimeAttendees_Attendees struct {
-	AttendeeId any
-	Capabilities any
+	AttendeeId     any
+	Capabilities   any
 	ExternalUserId any
-	JoinToken any
+	JoinToken      any
 }
 
 type MeetingsChimeAttendeesConfig struct {
 	MaxResults any
-	MeetingId any
-	NextToken any
+	MeetingId  any
+	NextToken  any
 }
 
 type MeetingsChimeAttendeesAttrs struct {
-	Attendees any
+	Attendees  any
 	MaxResults any
-	MeetingId any
-	NextToken any
+	MeetingId  any
+	NextToken  any
 }
 
 var MeetingsChimeAttendees = ubx.DataSourceBinding{
 	WireType: "aws_meetings_chime_attendees",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MeetingId": ubx.FieldSpec{WireName: "meeting_id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MeetingId":  ubx.FieldSpec{WireName: "meeting_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

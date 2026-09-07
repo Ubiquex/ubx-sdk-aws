@@ -4,30 +4,30 @@ package streams_dynamodb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamsDynamodbStreams_Streams struct {
-	StreamArn any
+	StreamArn   any
 	StreamLabel any
-	TableName any
+	TableName   any
 }
 
 type StreamsDynamodbStreamsConfig struct {
 	ExclusiveStartStreamArn any
-	Limit any
-	TableName any
+	Limit                   any
+	TableName               any
 }
 
 type StreamsDynamodbStreamsAttrs struct {
 	ExclusiveStartStreamArn any
-	LastEvaluatedStreamArn any
-	Limit any
-	Streams any
-	TableName any
+	LastEvaluatedStreamArn  any
+	Limit                   any
+	Streams                 any
+	TableName               any
 }
 
 var StreamsDynamodbStreams = ubx.DataSourceBinding{
 	WireType: "aws_streams_dynamodb_streams",
 	Fields: ubx.FieldMap{
 		"ExclusiveStartStreamArn": ubx.FieldSpec{WireName: "exclusive_start_stream_arn"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
+		"Limit":                   ubx.FieldSpec{WireName: "limit"},
+		"TableName":               ubx.FieldSpec{WireName: "table_name"},
 	},
 }

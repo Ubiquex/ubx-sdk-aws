@@ -4,29 +4,29 @@ package securityhub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigurationPolicies_ConfigurationPolicySummaries struct {
-	Arn any
-	Description any
-	Id any
-	Name any
+	Arn            any
+	Description    any
+	Id             any
+	Name           any
 	ServiceEnabled any
-	UpdatedAt any
+	UpdatedAt      any
 }
 
 type ConfigurationPoliciesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ConfigurationPoliciesAttrs struct {
 	ConfigurationPolicySummaries any
-	MaxResults any
-	NextToken any
+	MaxResults                   any
+	NextToken                    any
 }
 
 var ConfigurationPolicies = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_configuration_policies",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

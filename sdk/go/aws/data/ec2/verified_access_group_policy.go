@@ -4,21 +4,21 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VerifiedAccessGroupPolicyConfig struct {
-	DryRun any
+	DryRun                any
 	VerifiedAccessGroupId any
 }
 
 type VerifiedAccessGroupPolicyAttrs struct {
-	DryRun any
-	PolicyDocument any
-	PolicyEnabled any
+	DryRun                any
+	PolicyDocument        any
+	PolicyEnabled         any
 	VerifiedAccessGroupId any
 }
 
 var VerifiedAccessGroupPolicy = ubx.DataSourceBinding{
 	WireType: "aws_ec2_verified_access_group_policy",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":                ubx.FieldSpec{WireName: "dry_run"},
 		"VerifiedAccessGroupId": ubx.FieldSpec{WireName: "verified_access_group_id"},
 	},
 }

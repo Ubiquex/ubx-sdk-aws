@@ -4,33 +4,33 @@ package cognito_idp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdpGroups_Groups struct {
-	CreationDate any
-	Description any
-	GroupName any
+	CreationDate     any
+	Description      any
+	GroupName        any
 	LastModifiedDate any
-	Precedence any
-	RoleArn any
-	UserPoolId any
+	Precedence       any
+	RoleArn          any
+	UserPoolId       any
 }
 
 type CognitoIdpGroupsConfig struct {
-	Limit any
-	NextToken any
+	Limit      any
+	NextToken  any
 	UserPoolId any
 }
 
 type CognitoIdpGroupsAttrs struct {
-	Groups any
-	Limit any
-	NextToken any
+	Groups     any
+	Limit      any
+	NextToken  any
 	UserPoolId any
 }
 
 var CognitoIdpGroups = ubx.DataSourceBinding{
 	WireType: "aws_cognito_idp_groups",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
 	},
 }

@@ -4,18 +4,18 @@ package s3
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BucketIntelligentTieringConfiguration_IntelligentTieringConfiguration_Filter_And_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type BucketIntelligentTieringConfiguration_IntelligentTieringConfiguration_Filter_And struct {
 	Prefix any
-	Tags any
+	Tags   any
 }
 
 type BucketIntelligentTieringConfiguration_IntelligentTieringConfiguration_Filter struct {
 	// <p>A container for specifying S3 Intelligent-Tiering filters. The filters determine the subset of objects to which the rule applies.</p>
-	And any
+	And    any
 	Prefix any
 	// <p>A container of a key value name pair.</p>
 	Tag any
@@ -23,27 +23,27 @@ type BucketIntelligentTieringConfiguration_IntelligentTieringConfiguration_Filte
 
 type BucketIntelligentTieringConfiguration_IntelligentTieringConfiguration_Tierings struct {
 	AccessTier any
-	Days any
+	Days       any
 }
 
 type BucketIntelligentTieringConfiguration_IntelligentTieringConfiguration struct {
 	// <p>The <code>Filter</code> is used to identify objects that the S3 Intelligent-Tiering configuration applies to.</p>
-	Filter any
-	Id any
-	Status any
+	Filter   any
+	Id       any
+	Status   any
 	Tierings any
 }
 
 type BucketIntelligentTieringConfigurationConfig struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
-	Id any
+	Id                  any
 }
 
 type BucketIntelligentTieringConfigurationAttrs struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
-	Id any
+	Id                  any
 	// <p>Specifies the S3 Intelligent-Tiering configuration for an Amazon S3 bucket.</p> <p>For information about the S3 Intelligent-Tiering storage class, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
 	IntelligentTieringConfiguration any
 }
@@ -51,8 +51,8 @@ type BucketIntelligentTieringConfigurationAttrs struct {
 var BucketIntelligentTieringConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_intelligent_tiering_configuration",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":                  ubx.FieldSpec{WireName: "id"},
 	},
 }

@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ParticipantConnectAuthenticationUrlConfig struct {
 	ConnectionToken any
-	RedirectUri any
-	SessionId any
+	RedirectUri     any
+	SessionId       any
 }
 
 type ParticipantConnectAuthenticationUrlAttrs struct {
 	AuthenticationUrl any
-	ConnectionToken any
-	RedirectUri any
-	SessionId any
+	ConnectionToken   any
+	RedirectUri       any
+	SessionId         any
 }
 
 var ParticipantConnectAuthenticationUrl = ubx.DataSourceBinding{
 	WireType: "aws_participant_connect_authentication_url",
 	Fields: ubx.FieldMap{
 		"ConnectionToken": ubx.FieldSpec{WireName: "connection_token"},
-		"RedirectUri": ubx.FieldSpec{WireName: "redirect_uri"},
-		"SessionId": ubx.FieldSpec{WireName: "session_id"},
+		"RedirectUri":     ubx.FieldSpec{WireName: "redirect_uri"},
+		"SessionId":       ubx.FieldSpec{WireName: "session_id"},
 	},
 }

@@ -5,42 +5,42 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TableMetadata_TableMetadata_Columns struct {
 	Comment any
-	Name any
-	Type any
+	Name    any
+	Type    any
 }
 
 type TableMetadata_TableMetadata struct {
-	Columns any
-	CreateTime any
+	Columns        any
+	CreateTime     any
 	LastAccessTime any
-	Name any
-	Parameters any
-	PartitionKeys any
-	TableType any
+	Name           any
+	Parameters     any
+	PartitionKeys  any
+	TableType      any
 }
 
 type TableMetadataConfig struct {
-	CatalogName any
+	CatalogName  any
 	DatabaseName any
-	TableName any
-	WorkGroup any
+	TableName    any
+	WorkGroup    any
 }
 
 type TableMetadataAttrs struct {
-	CatalogName any
+	CatalogName  any
 	DatabaseName any
 	// <p>Contains metadata for a table.</p>
 	TableMetadata any
-	TableName any
-	WorkGroup any
+	TableName     any
+	WorkGroup     any
 }
 
 var TableMetadata = ubx.DataSourceBinding{
 	WireType: "aws_athena_table_metadata",
 	Fields: ubx.FieldMap{
-		"CatalogName": ubx.FieldSpec{WireName: "catalog_name"},
+		"CatalogName":  ubx.FieldSpec{WireName: "catalog_name"},
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-		"WorkGroup": ubx.FieldSpec{WireName: "work_group"},
+		"TableName":    ubx.FieldSpec{WireName: "table_name"},
+		"WorkGroup":    ubx.FieldSpec{WireName: "work_group"},
 	},
 }

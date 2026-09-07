@@ -4,15 +4,15 @@ package datazone
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Subscription_SubscribedListing_Item_AssetListing_AssetScope struct {
-	AssetId any
+	AssetId      any
 	ErrorMessage any
-	FilterIds any
-	ScopeName any
-	Status any
+	FilterIds    any
+	ScopeName    any
+	Status       any
 }
 
 type Subscription_SubscribedListing_Item_AssetListing_GlossaryTerms struct {
-	Name any
+	Name             any
 	ShortDescription any
 }
 
@@ -21,48 +21,48 @@ type Subscription_SubscribedListing_Item_AssetListing_Permissions struct {
 }
 
 type Subscription_SubscribedListing_Item_AssetListing struct {
-	AssetScope any
-	EntityId any
+	AssetScope     any
+	EntityId       any
 	EntityRevision any
-	EntityType any
-	Forms any
-	GlossaryTerms any
-	Permissions any
+	EntityType     any
+	Forms          any
+	GlossaryTerms  any
+	Permissions    any
 }
 
 type Subscription_SubscribedListing_Item_ProductListing_AssetListings struct {
-	EntityId any
+	EntityId       any
 	EntityRevision any
-	EntityType any
+	EntityType     any
 }
 
 type Subscription_SubscribedListing_Item_ProductListing struct {
-	AssetListings any
-	Description any
-	EntityId any
+	AssetListings  any
+	Description    any
+	EntityId       any
 	EntityRevision any
-	GlossaryTerms any
-	Name any
+	GlossaryTerms  any
+	Name           any
 }
 
 type Subscription_SubscribedListing_Item struct {
-	AssetListing any
+	AssetListing   any
 	ProductListing any
 }
 
 type Subscription_SubscribedListing struct {
 	Description any
-	Id any
+	Id          any
 	// <p>The published asset for which the subscription grant is created.</p>
-	Item any
-	Name any
-	OwnerProjectId any
+	Item             any
+	Name             any
+	OwnerProjectId   any
 	OwnerProjectName any
-	Revision any
+	Revision         any
 }
 
 type Subscription_SubscribedPrincipal_Group struct {
-	Id any
+	Id   any
 	Name any
 }
 
@@ -71,16 +71,16 @@ type Subscription_SubscribedPrincipal_Iam struct {
 }
 
 type Subscription_SubscribedPrincipal_User_Details_Iam struct {
-	Arn any
+	Arn            any
 	GroupProfileId any
-	PrincipalId any
-	SessionName any
+	PrincipalId    any
+	SessionName    any
 }
 
 type Subscription_SubscribedPrincipal_User_Details_Sso struct {
 	FirstName any
-	LastName any
-	Username any
+	LastName  any
+	Username  any
 }
 
 type Subscription_SubscribedPrincipal_User_Details struct {
@@ -90,43 +90,43 @@ type Subscription_SubscribedPrincipal_User_Details struct {
 
 type Subscription_SubscribedPrincipal_User struct {
 	Details any
-	Id any
+	Id      any
 }
 
 type Subscription_SubscribedPrincipal struct {
-	Group any
-	Iam any
+	Group   any
+	Iam     any
 	Project any
-	User any
+	User    any
 }
 
 type SubscriptionConfig struct {
 	DomainIdentifier any
-	Identifier any
+	Identifier       any
 }
 
 type SubscriptionAttrs struct {
-	CreatedAt any
-	CreatedBy any
-	DomainId any
-	DomainIdentifier any
-	Id any
-	Identifier any
+	CreatedAt         any
+	CreatedBy         any
+	DomainId          any
+	DomainIdentifier  any
+	Id                any
+	Identifier        any
 	RetainPermissions any
-	Status any
+	Status            any
 	// <p>The details of the published asset for which the subscription grant is created.</p>
 	SubscribedListing any
 	// <p>The principal that has the subscription grant for the asset.</p>
-	SubscribedPrincipal any
+	SubscribedPrincipal   any
 	SubscriptionRequestId any
-	UpdatedAt any
-	UpdatedBy any
+	UpdatedAt             any
+	UpdatedBy             any
 }
 
 var Subscription = ubx.DataSourceBinding{
 	WireType: "aws_datazone_subscription",
 	Fields: ubx.FieldMap{
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
+		"Identifier":       ubx.FieldSpec{WireName: "identifier"},
 	},
 }

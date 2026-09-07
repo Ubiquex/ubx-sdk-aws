@@ -4,43 +4,43 @@ package license_manager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseManagerLicenseAssetRulesets_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type LicenseManagerLicenseAssetRulesets_LicenseAssetRulesets_Rules_RuleStatement_InstanceRuleStatement_AndRuleStatement_MatchingRuleStatements struct {
-	Constraint any
-	KeyToMatch any
+	Constraint   any
+	KeyToMatch   any
 	ValueToMatch any
 }
 
 type LicenseManagerLicenseAssetRulesets_LicenseAssetRulesets_Rules_RuleStatement_InstanceRuleStatement_AndRuleStatement_ScriptRuleStatements struct {
 	KeyToMatch any
-	Script any
+	Script     any
 }
 
 type LicenseManagerLicenseAssetRulesets_LicenseAssetRulesets_Rules_RuleStatement_InstanceRuleStatement_AndRuleStatement struct {
 	MatchingRuleStatements any
-	ScriptRuleStatements any
+	ScriptRuleStatements   any
 }
 
 type LicenseManagerLicenseAssetRulesets_LicenseAssetRulesets_Rules_RuleStatement_InstanceRuleStatement struct {
-	AndRuleStatement any
+	AndRuleStatement      any
 	MatchingRuleStatement any
-	OrRuleStatement any
-	ScriptRuleStatement any
+	OrRuleStatement       any
+	ScriptRuleStatement   any
 }
 
 type LicenseManagerLicenseAssetRulesets_LicenseAssetRulesets_Rules_RuleStatement_LicenseConfigurationRuleStatement struct {
-	AndRuleStatement any
+	AndRuleStatement      any
 	MatchingRuleStatement any
-	OrRuleStatement any
+	OrRuleStatement       any
 }
 
 type LicenseManagerLicenseAssetRulesets_LicenseAssetRulesets_Rules_RuleStatement struct {
-	InstanceRuleStatement any
+	InstanceRuleStatement             any
 	LicenseConfigurationRuleStatement any
-	LicenseRuleStatement any
+	LicenseRuleStatement              any
 }
 
 type LicenseManagerLicenseAssetRulesets_LicenseAssetRulesets_Rules struct {
@@ -48,29 +48,29 @@ type LicenseManagerLicenseAssetRulesets_LicenseAssetRulesets_Rules struct {
 }
 
 type LicenseManagerLicenseAssetRulesets_LicenseAssetRulesets struct {
-	Description any
+	Description            any
 	LicenseAssetRulesetArn any
-	Name any
-	Rules any
+	Name                   any
+	Rules                  any
 }
 
 var LicenseManagerLicenseAssetRulesets_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type LicenseManagerLicenseAssetRulesetsConfig struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters                            any
+	MaxResults                         any
+	NextToken                          any
 	ShowAwsmanagedLicenseAssetRulesets any
 }
 
 type LicenseManagerLicenseAssetRulesetsAttrs struct {
-	Filters any
-	LicenseAssetRulesets any
-	MaxResults any
-	NextToken any
+	Filters                            any
+	LicenseAssetRulesets               any
+	MaxResults                         any
+	NextToken                          any
 	ShowAwsmanagedLicenseAssetRulesets any
 }
 
@@ -79,11 +79,11 @@ var LicenseManagerLicenseAssetRulesets = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: LicenseManagerLicenseAssetRulesets_FiltersFields,
+			Kind:     "list",
+			Fields:   LicenseManagerLicenseAssetRulesets_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                          ubx.FieldSpec{WireName: "next_token"},
 		"ShowAwsmanagedLicenseAssetRulesets": ubx.FieldSpec{WireName: "show_awsmanaged_license_asset_rulesets"},
 	},
 }

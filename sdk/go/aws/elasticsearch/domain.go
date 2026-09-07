@@ -107,7 +107,7 @@ type Domain_SnapshotOptions struct {
 
 type Domain_Tags struct {
 	// The key of a tag attached to the Elasticsearch domain, which is a user-defined label used for resource organization and cost allocation. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -119,92 +119,92 @@ type Domain_Vpcoptions struct {
 }
 
 var Domain_AdvancedSecurityOptions_MasterUserOptionsFields = ubx.FieldMap{
-		"MasterUserArn": ubx.FieldSpec{WireName: "master_user_arn"},
-		"MasterUserName": ubx.FieldSpec{WireName: "master_user_name"},
-		"MasterUserPassword": ubx.FieldSpec{WireName: "master_user_password"},
-	}
+	"MasterUserArn":      ubx.FieldSpec{WireName: "master_user_arn"},
+	"MasterUserName":     ubx.FieldSpec{WireName: "master_user_name"},
+	"MasterUserPassword": ubx.FieldSpec{WireName: "master_user_password"},
+}
 
 var Domain_AdvancedSecurityOptionsFields = ubx.FieldMap{
-		"AnonymousAuthEnabled": ubx.FieldSpec{WireName: "anonymous_auth_enabled"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"InternalUserDatabaseEnabled": ubx.FieldSpec{WireName: "internal_user_database_enabled"},
-		"MasterUserOptions": ubx.FieldSpec{
-			WireName: "master_user_options",
-			Kind: "object",
-			Fields: Domain_AdvancedSecurityOptions_MasterUserOptionsFields,
-		},
-	}
+	"AnonymousAuthEnabled":        ubx.FieldSpec{WireName: "anonymous_auth_enabled"},
+	"Enabled":                     ubx.FieldSpec{WireName: "enabled"},
+	"InternalUserDatabaseEnabled": ubx.FieldSpec{WireName: "internal_user_database_enabled"},
+	"MasterUserOptions": ubx.FieldSpec{
+		WireName: "master_user_options",
+		Kind:     "object",
+		Fields:   Domain_AdvancedSecurityOptions_MasterUserOptionsFields,
+	},
+}
 
 var Domain_CognitoOptionsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"IdentityPoolId": ubx.FieldSpec{WireName: "identity_pool_id"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
-	}
+	"Enabled":        ubx.FieldSpec{WireName: "enabled"},
+	"IdentityPoolId": ubx.FieldSpec{WireName: "identity_pool_id"},
+	"RoleArn":        ubx.FieldSpec{WireName: "role_arn"},
+	"UserPoolId":     ubx.FieldSpec{WireName: "user_pool_id"},
+}
 
 var Domain_DomainEndpointOptionsFields = ubx.FieldMap{
-		"CustomEndpoint": ubx.FieldSpec{WireName: "custom_endpoint"},
-		"CustomEndpointCertificateArn": ubx.FieldSpec{WireName: "custom_endpoint_certificate_arn"},
-		"CustomEndpointEnabled": ubx.FieldSpec{WireName: "custom_endpoint_enabled"},
-		"EnforceHttps": ubx.FieldSpec{WireName: "enforce_https"},
-		"TlssecurityPolicy": ubx.FieldSpec{WireName: "tlssecurity_policy"},
-	}
+	"CustomEndpoint":               ubx.FieldSpec{WireName: "custom_endpoint"},
+	"CustomEndpointCertificateArn": ubx.FieldSpec{WireName: "custom_endpoint_certificate_arn"},
+	"CustomEndpointEnabled":        ubx.FieldSpec{WireName: "custom_endpoint_enabled"},
+	"EnforceHttps":                 ubx.FieldSpec{WireName: "enforce_https"},
+	"TlssecurityPolicy":            ubx.FieldSpec{WireName: "tlssecurity_policy"},
+}
 
 var Domain_EbsoptionsFields = ubx.FieldMap{
-		"Ebsenabled": ubx.FieldSpec{WireName: "ebsenabled"},
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
-	}
+	"Ebsenabled": ubx.FieldSpec{WireName: "ebsenabled"},
+	"Iops":       ubx.FieldSpec{WireName: "iops"},
+	"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
+	"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
+}
 
 var Domain_ElasticsearchClusterConfig_ColdStorageOptionsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Domain_ElasticsearchClusterConfig_ZoneAwarenessConfigFields = ubx.FieldMap{
-		"AvailabilityZoneCount": ubx.FieldSpec{WireName: "availability_zone_count"},
-	}
+	"AvailabilityZoneCount": ubx.FieldSpec{WireName: "availability_zone_count"},
+}
 
 var Domain_ElasticsearchClusterConfigFields = ubx.FieldMap{
-		"ColdStorageOptions": ubx.FieldSpec{
-			WireName: "cold_storage_options",
-			Kind: "object",
-			Fields: Domain_ElasticsearchClusterConfig_ColdStorageOptionsFields,
-		},
-		"DedicatedMasterCount": ubx.FieldSpec{WireName: "dedicated_master_count"},
-		"DedicatedMasterEnabled": ubx.FieldSpec{WireName: "dedicated_master_enabled"},
-		"DedicatedMasterType": ubx.FieldSpec{WireName: "dedicated_master_type"},
-		"InstanceCount": ubx.FieldSpec{WireName: "instance_count"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"WarmCount": ubx.FieldSpec{WireName: "warm_count"},
-		"WarmEnabled": ubx.FieldSpec{WireName: "warm_enabled"},
-		"WarmType": ubx.FieldSpec{WireName: "warm_type"},
-		"ZoneAwarenessConfig": ubx.FieldSpec{
-			WireName: "zone_awareness_config",
-			Kind: "object",
-			Fields: Domain_ElasticsearchClusterConfig_ZoneAwarenessConfigFields,
-		},
-		"ZoneAwarenessEnabled": ubx.FieldSpec{WireName: "zone_awareness_enabled"},
-	}
+	"ColdStorageOptions": ubx.FieldSpec{
+		WireName: "cold_storage_options",
+		Kind:     "object",
+		Fields:   Domain_ElasticsearchClusterConfig_ColdStorageOptionsFields,
+	},
+	"DedicatedMasterCount":   ubx.FieldSpec{WireName: "dedicated_master_count"},
+	"DedicatedMasterEnabled": ubx.FieldSpec{WireName: "dedicated_master_enabled"},
+	"DedicatedMasterType":    ubx.FieldSpec{WireName: "dedicated_master_type"},
+	"InstanceCount":          ubx.FieldSpec{WireName: "instance_count"},
+	"InstanceType":           ubx.FieldSpec{WireName: "instance_type"},
+	"WarmCount":              ubx.FieldSpec{WireName: "warm_count"},
+	"WarmEnabled":            ubx.FieldSpec{WireName: "warm_enabled"},
+	"WarmType":               ubx.FieldSpec{WireName: "warm_type"},
+	"ZoneAwarenessConfig": ubx.FieldSpec{
+		WireName: "zone_awareness_config",
+		Kind:     "object",
+		Fields:   Domain_ElasticsearchClusterConfig_ZoneAwarenessConfigFields,
+	},
+	"ZoneAwarenessEnabled": ubx.FieldSpec{WireName: "zone_awareness_enabled"},
+}
 
 var Domain_EncryptionAtRestOptionsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-	}
+	"Enabled":  ubx.FieldSpec{WireName: "enabled"},
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+}
 
 var Domain_SnapshotOptionsFields = ubx.FieldMap{
-		"AutomatedSnapshotStartHour": ubx.FieldSpec{WireName: "automated_snapshot_start_hour"},
-	}
+	"AutomatedSnapshotStartHour": ubx.FieldSpec{WireName: "automated_snapshot_start_hour"},
+}
 
 var Domain_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Domain_VpcoptionsFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 type DomainConfig struct {
 	// The access_policies field specifies the IAM policy document in JSON format that controls access to the Amazon Elasticsearch domain, defining which principals can perform allowed actions on the domain. (AI-inferred)
@@ -283,60 +283,60 @@ type DomainAttrs struct {
 var Domain = ubx.ResourceBinding{
 	WireType: "aws_elasticsearch_domain",
 	Fields: ubx.FieldMap{
-		"AccessPolicies": ubx.FieldSpec{WireName: "access_policies"},
+		"AccessPolicies":  ubx.FieldSpec{WireName: "access_policies"},
 		"AdvancedOptions": ubx.FieldSpec{WireName: "advanced_options"},
 		"AdvancedSecurityOptions": ubx.FieldSpec{
 			WireName: "advanced_security_options",
-			Kind: "object",
-			Fields: Domain_AdvancedSecurityOptionsFields,
+			Kind:     "object",
+			Fields:   Domain_AdvancedSecurityOptionsFields,
 		},
 		"CognitoOptions": ubx.FieldSpec{
 			WireName: "cognito_options",
-			Kind: "object",
-			Fields: Domain_CognitoOptionsFields,
+			Kind:     "object",
+			Fields:   Domain_CognitoOptionsFields,
 		},
 		"DomainEndpointOptions": ubx.FieldSpec{
 			WireName: "domain_endpoint_options",
-			Kind: "object",
-			Fields: Domain_DomainEndpointOptionsFields,
+			Kind:     "object",
+			Fields:   Domain_DomainEndpointOptionsFields,
 		},
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"Ebsoptions": ubx.FieldSpec{
 			WireName: "ebsoptions",
-			Kind: "object",
-			Fields: Domain_EbsoptionsFields,
+			Kind:     "object",
+			Fields:   Domain_EbsoptionsFields,
 		},
 		"ElasticsearchClusterConfig": ubx.FieldSpec{
 			WireName: "elasticsearch_cluster_config",
-			Kind: "object",
-			Fields: Domain_ElasticsearchClusterConfigFields,
+			Kind:     "object",
+			Fields:   Domain_ElasticsearchClusterConfigFields,
 		},
 		"ElasticsearchVersion": ubx.FieldSpec{WireName: "elasticsearch_version"},
 		"EncryptionAtRestOptions": ubx.FieldSpec{
 			WireName: "encryption_at_rest_options",
-			Kind: "object",
-			Fields: Domain_EncryptionAtRestOptionsFields,
+			Kind:     "object",
+			Fields:   Domain_EncryptionAtRestOptionsFields,
 		},
 		"LogPublishingOptions": ubx.FieldSpec{WireName: "log_publishing_options"},
 		"NodeToNodeEncryptionOptions": ubx.FieldSpec{
 			WireName: "node_to_node_encryption_options",
-			Kind: "object",
-			Fields: Domain_ElasticsearchClusterConfig_ColdStorageOptionsFields,
+			Kind:     "object",
+			Fields:   Domain_ElasticsearchClusterConfig_ColdStorageOptionsFields,
 		},
 		"SnapshotOptions": ubx.FieldSpec{
 			WireName: "snapshot_options",
-			Kind: "object",
-			Fields: Domain_SnapshotOptionsFields,
+			Kind:     "object",
+			Fields:   Domain_SnapshotOptionsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Domain_TagsFields,
+			Kind:     "list",
+			Fields:   Domain_TagsFields,
 		},
 		"Vpcoptions": ubx.FieldSpec{
 			WireName: "vpcoptions",
-			Kind: "object",
-			Fields: Domain_VpcoptionsFields,
+			Kind:     "object",
+			Fields:   Domain_VpcoptionsFields,
 		},
 	},
 }

@@ -41,38 +41,38 @@ type PhoneNumber_TwoWay struct {
 }
 
 var PhoneNumber_MandatoryKeywords_HelpFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var PhoneNumber_MandatoryKeywordsFields = ubx.FieldMap{
-		"Help": ubx.FieldSpec{
-			WireName: "help",
-			Kind: "object",
-			Fields: PhoneNumber_MandatoryKeywords_HelpFields,
-		},
-		"Stop": ubx.FieldSpec{
-			WireName: "stop",
-			Kind: "object",
-			Fields: PhoneNumber_MandatoryKeywords_HelpFields,
-		},
-	}
+	"Help": ubx.FieldSpec{
+		WireName: "help",
+		Kind:     "object",
+		Fields:   PhoneNumber_MandatoryKeywords_HelpFields,
+	},
+	"Stop": ubx.FieldSpec{
+		WireName: "stop",
+		Kind:     "object",
+		Fields:   PhoneNumber_MandatoryKeywords_HelpFields,
+	},
+}
 
 var PhoneNumber_OptionalKeywordsFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Keyword": ubx.FieldSpec{WireName: "keyword"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Action":  ubx.FieldSpec{WireName: "action"},
+	"Keyword": ubx.FieldSpec{WireName: "keyword"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var PhoneNumber_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var PhoneNumber_TwoWayFields = ubx.FieldMap{
-		"ChannelArn": ubx.FieldSpec{WireName: "channel_arn"},
-		"ChannelRole": ubx.FieldSpec{WireName: "channel_role"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"ChannelArn":  ubx.FieldSpec{WireName: "channel_arn"},
+	"ChannelRole": ubx.FieldSpec{WireName: "channel_role"},
+	"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+}
 
 type PhoneNumberConfig struct {
 	// When set to true the sender ID can't be deleted. By default this is set to false.
@@ -130,30 +130,30 @@ var PhoneNumber = ubx.ResourceBinding{
 	WireType: "aws_smsvoice_phone_number",
 	Fields: ubx.FieldMap{
 		"DeletionProtectionEnabled": ubx.FieldSpec{WireName: "deletion_protection_enabled"},
-		"IsoCountryCode": ubx.FieldSpec{WireName: "iso_country_code"},
+		"IsoCountryCode":            ubx.FieldSpec{WireName: "iso_country_code"},
 		"MandatoryKeywords": ubx.FieldSpec{
 			WireName: "mandatory_keywords",
-			Kind: "object",
-			Fields: PhoneNumber_MandatoryKeywordsFields,
+			Kind:     "object",
+			Fields:   PhoneNumber_MandatoryKeywordsFields,
 		},
 		"NumberCapabilities": ubx.FieldSpec{WireName: "number_capabilities"},
-		"NumberType": ubx.FieldSpec{WireName: "number_type"},
-		"OptOutListName": ubx.FieldSpec{WireName: "opt_out_list_name"},
+		"NumberType":         ubx.FieldSpec{WireName: "number_type"},
+		"OptOutListName":     ubx.FieldSpec{WireName: "opt_out_list_name"},
 		"OptionalKeywords": ubx.FieldSpec{
 			WireName: "optional_keywords",
-			Kind: "list",
-			Fields: PhoneNumber_OptionalKeywordsFields,
+			Kind:     "list",
+			Fields:   PhoneNumber_OptionalKeywordsFields,
 		},
 		"SelfManagedOptOutsEnabled": ubx.FieldSpec{WireName: "self_managed_opt_outs_enabled"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PhoneNumber_TagsFields,
+			Kind:     "list",
+			Fields:   PhoneNumber_TagsFields,
 		},
 		"TwoWay": ubx.FieldSpec{
 			WireName: "two_way",
-			Kind: "object",
-			Fields: PhoneNumber_TwoWayFields,
+			Kind:     "object",
+			Fields:   PhoneNumber_TwoWayFields,
 		},
 	},
 }

@@ -10,7 +10,7 @@ type SubscriptionConfig struct {
 	PlanTier any
 	// The ARNs of resources associated with the subscription.
 	ResourceArns any
-	UsageLevel any
+	UsageLevel   any
 }
 
 type SubscriptionAttrs struct {
@@ -31,16 +31,16 @@ type SubscriptionAttrs struct {
 	// A human-readable explanation of why the subscription is in its current status. Populated only when Status is FAILED, where it carries the reason the subscription could not be provisioned. Empty for all other statuses.
 	StatusReason any
 	// The time the subscription was last modified, in ISO 8601 format.
-	UpdatedAt any
+	UpdatedAt  any
 	UsageLevel any
 }
 
 var Subscription = ubx.ResourceBinding{
 	WireType: "aws_pricing_plan_manager_subscription",
 	Fields: ubx.FieldMap{
-		"PlanFamily": ubx.FieldSpec{WireName: "plan_family"},
-		"PlanTier": ubx.FieldSpec{WireName: "plan_tier"},
+		"PlanFamily":   ubx.FieldSpec{WireName: "plan_family"},
+		"PlanTier":     ubx.FieldSpec{WireName: "plan_tier"},
 		"ResourceArns": ubx.FieldSpec{WireName: "resource_arns"},
-		"UsageLevel": ubx.FieldSpec{WireName: "usage_level"},
+		"UsageLevel":   ubx.FieldSpec{WireName: "usage_level"},
 	},
 }

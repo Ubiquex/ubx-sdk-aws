@@ -4,23 +4,23 @@ package eks
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClustersConfig struct {
-	Include any
+	Include    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ClustersAttrs struct {
-	Clusters any
-	Include any
+	Clusters   any
+	Include    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Clusters = ubx.DataSourceBinding{
 	WireType: "aws_eks_clusters",
 	Fields: ubx.FieldMap{
-		"Include": ubx.FieldSpec{WireName: "include"},
+		"Include":    ubx.FieldSpec{WireName: "include"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

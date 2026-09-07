@@ -21,6 +21,6 @@ var VpcdhcpoptionsAssociation = ubx.ResourceBinding{
 	WireType: "aws_ec2_vpcdhcpoptions_association",
 	Fields: ubx.FieldMap{
 		"DhcpOptionsId": ubx.FieldSpec{WireName: "dhcp_options_id"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
+		"VpcId":         ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

@@ -4,29 +4,29 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MfadeviceTags_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type MfadeviceTagsConfig struct {
-	Marker any
-	MaxItems any
+	Marker       any
+	MaxItems     any
 	SerialNumber any
 }
 
 type MfadeviceTagsAttrs struct {
-	IsTruncated any
-	Marker any
-	MaxItems any
+	IsTruncated  any
+	Marker       any
+	MaxItems     any
 	SerialNumber any
-	Tags any
+	Tags         any
 }
 
 var MfadeviceTags = ubx.DataSourceBinding{
 	WireType: "aws_iam_mfadevice_tags",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"Marker":       ubx.FieldSpec{WireName: "marker"},
+		"MaxItems":     ubx.FieldSpec{WireName: "max_items"},
 		"SerialNumber": ubx.FieldSpec{WireName: "serial_number"},
 	},
 }

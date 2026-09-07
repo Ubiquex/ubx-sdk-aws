@@ -5,36 +5,36 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CapacityReservations_CapacityReservations_LastAllocation struct {
 	RequestCompletionTime any
-	RequestTime any
-	Status any
-	StatusMessage any
+	RequestTime           any
+	Status                any
+	StatusMessage         any
 }
 
 type CapacityReservations_CapacityReservations struct {
-	AllocatedDpus any
-	CreationTime any
-	LastAllocation any
+	AllocatedDpus                any
+	CreationTime                 any
+	LastAllocation               any
 	LastSuccessfulAllocationTime any
-	Name any
-	Status any
-	TargetDpus any
+	Name                         any
+	Status                       any
+	TargetDpus                   any
 }
 
 type CapacityReservationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CapacityReservationsAttrs struct {
 	CapacityReservations any
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 }
 
 var CapacityReservations = ubx.DataSourceBinding{
 	WireType: "aws_athena_capacity_reservations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

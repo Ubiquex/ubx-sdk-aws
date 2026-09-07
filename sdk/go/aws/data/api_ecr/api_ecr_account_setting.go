@@ -8,7 +8,7 @@ type ApiEcrAccountSettingConfig struct {
 }
 
 type ApiEcrAccountSettingAttrs struct {
-	Name any
+	Name  any
 	Value any
 }
 

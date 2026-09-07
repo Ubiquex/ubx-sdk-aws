@@ -4,34 +4,34 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConformancePackStatus_ConformancePackStatusDetails struct {
-	ConformancePackArn any
-	ConformancePackId any
-	ConformancePackName any
-	ConformancePackState any
+	ConformancePackArn          any
+	ConformancePackId           any
+	ConformancePackName         any
+	ConformancePackState        any
 	ConformancePackStatusReason any
-	LastUpdateCompletedTime any
-	LastUpdateRequestedTime any
-	StackArn any
+	LastUpdateCompletedTime     any
+	LastUpdateRequestedTime     any
+	StackArn                    any
 }
 
 type ConformancePackStatusConfig struct {
 	ConformancePackNames any
-	Limit any
-	NextToken any
+	Limit                any
+	NextToken            any
 }
 
 type ConformancePackStatusAttrs struct {
-	ConformancePackNames any
+	ConformancePackNames         any
 	ConformancePackStatusDetails any
-	Limit any
-	NextToken any
+	Limit                        any
+	NextToken                    any
 }
 
 var ConformancePackStatus = ubx.DataSourceBinding{
 	WireType: "aws_config_conformance_pack_status",
 	Fields: ubx.FieldMap{
 		"ConformancePackNames": ubx.FieldSpec{WireName: "conformance_pack_names"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":                ubx.FieldSpec{WireName: "limit"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 	},
 }

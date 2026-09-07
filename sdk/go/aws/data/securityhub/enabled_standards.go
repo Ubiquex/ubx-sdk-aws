@@ -8,36 +8,36 @@ type EnabledStandards_StandardsSubscriptions_StandardsStatusReason struct {
 }
 
 type EnabledStandards_StandardsSubscriptions struct {
-	Provider any
-	StandardsArn any
+	Provider                   any
+	StandardsArn               any
 	StandardsControlsUpdatable any
-	StandardsInput any
-	StandardsStatus any
-	StandardsStatusReason any
-	StandardsSubscriptionArn any
+	StandardsInput             any
+	StandardsStatus            any
+	StandardsStatusReason      any
+	StandardsSubscriptionArn   any
 }
 
 type EnabledStandardsConfig struct {
-	MaxResults any
-	NextToken any
-	Providers any
+	MaxResults                any
+	NextToken                 any
+	Providers                 any
 	StandardsSubscriptionArns any
 }
 
 type EnabledStandardsAttrs struct {
-	MaxResults any
-	NextToken any
-	Providers any
+	MaxResults                any
+	NextToken                 any
+	Providers                 any
 	StandardsSubscriptionArns any
-	StandardsSubscriptions any
+	StandardsSubscriptions    any
 }
 
 var EnabledStandards = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_enabled_standards",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Providers": ubx.FieldSpec{WireName: "providers"},
+		"MaxResults":                ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                 ubx.FieldSpec{WireName: "next_token"},
+		"Providers":                 ubx.FieldSpec{WireName: "providers"},
 		"StandardsSubscriptionArns": ubx.FieldSpec{WireName: "standards_subscription_arns"},
 	},
 }

@@ -4,7 +4,7 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Workspaces_WorkspaceSummaries_Status_Error struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -14,21 +14,21 @@ type Workspaces_WorkspaceSummaries_Status struct {
 }
 
 type Workspaces_WorkspaceSummaries struct {
-	Arn any
+	Arn       any
 	CreatedAt any
-	Name any
-	Status any
+	Name      any
+	Status    any
 	UpdatedAt any
 }
 
 type WorkspacesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type WorkspacesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	WorkspaceSummaries any
 }
 
@@ -36,6 +36,6 @@ var Workspaces = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_workspaces",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

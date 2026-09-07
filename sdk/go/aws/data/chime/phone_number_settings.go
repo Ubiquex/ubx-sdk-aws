@@ -7,12 +7,11 @@ type PhoneNumberSettingsConfig struct {
 }
 
 type PhoneNumberSettingsAttrs struct {
-	CallingName any
+	CallingName                 any
 	CallingNameUpdatedTimestamp any
 }
 
 var PhoneNumberSettings = ubx.DataSourceBinding{
 	WireType: "aws_chime_phone_number_settings",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

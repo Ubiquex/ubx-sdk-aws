@@ -20,7 +20,7 @@ type AnycastIpList_AnycastIpList struct {
 	// The Amazon Resource Name (ARN) of the Anycast static IP list.
 	Arn any
 	// The ID of the Anycast static IP list.
-	Id any
+	Id            any
 	IpAddressType any
 	// The number of IP addresses in the Anycast static IP list.
 	IpCount any
@@ -54,22 +54,22 @@ type AnycastIpList_Tags struct {
 }
 
 var AnycastIpList_IpamCidrConfigsFields = ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"IpamPoolArn": ubx.FieldSpec{WireName: "ipam_pool_arn"},
-	}
+	"Cidr":        ubx.FieldSpec{WireName: "cidr"},
+	"IpamPoolArn": ubx.FieldSpec{WireName: "ipam_pool_arn"},
+}
 
 var AnycastIpList_Tags_ItemsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var AnycastIpList_TagsFields = ubx.FieldMap{
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: AnycastIpList_Tags_ItemsFields,
-		},
-	}
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   AnycastIpList_Tags_ItemsFields,
+	},
+}
 
 type AnycastIpListConfig struct {
 	// Specifies whether the anycast IP list contains IPv4 or IPv6 addresses, determining which type of IPs can be included in the IpList property. (AI-inferred)
@@ -109,17 +109,17 @@ var AnycastIpList = ubx.ResourceBinding{
 	WireType: "aws_cloud_front_anycast_ip_list",
 	Fields: ubx.FieldMap{
 		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"IpCount": ubx.FieldSpec{WireName: "ip_count"},
+		"IpCount":       ubx.FieldSpec{WireName: "ip_count"},
 		"IpamCidrConfigs": ubx.FieldSpec{
 			WireName: "ipam_cidr_configs",
-			Kind: "list",
-			Fields: AnycastIpList_IpamCidrConfigsFields,
+			Kind:     "list",
+			Fields:   AnycastIpList_IpamCidrConfigsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "object",
-			Fields: AnycastIpList_TagsFields,
+			Kind:     "object",
+			Fields:   AnycastIpList_TagsFields,
 		},
 	},
 }

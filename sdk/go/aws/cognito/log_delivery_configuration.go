@@ -32,36 +32,36 @@ type LogDeliveryConfiguration_LogConfigurations struct {
 }
 
 var LogDeliveryConfiguration_LogConfigurations_CloudWatchLogsConfigurationFields = ubx.FieldMap{
-		"LogGroupArn": ubx.FieldSpec{WireName: "log_group_arn"},
-	}
+	"LogGroupArn": ubx.FieldSpec{WireName: "log_group_arn"},
+}
 
 var LogDeliveryConfiguration_LogConfigurations_FirehoseConfigurationFields = ubx.FieldMap{
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
-	}
+	"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
+}
 
 var LogDeliveryConfiguration_LogConfigurations_S3ConfigurationFields = ubx.FieldMap{
-		"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
-	}
+	"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
+}
 
 var LogDeliveryConfiguration_LogConfigurationsFields = ubx.FieldMap{
-		"CloudWatchLogsConfiguration": ubx.FieldSpec{
-			WireName: "cloud_watch_logs_configuration",
-			Kind: "object",
-			Fields: LogDeliveryConfiguration_LogConfigurations_CloudWatchLogsConfigurationFields,
-		},
-		"EventSource": ubx.FieldSpec{WireName: "event_source"},
-		"FirehoseConfiguration": ubx.FieldSpec{
-			WireName: "firehose_configuration",
-			Kind: "object",
-			Fields: LogDeliveryConfiguration_LogConfigurations_FirehoseConfigurationFields,
-		},
-		"LogLevel": ubx.FieldSpec{WireName: "log_level"},
-		"S3Configuration": ubx.FieldSpec{
-			WireName: "s3_configuration",
-			Kind: "object",
-			Fields: LogDeliveryConfiguration_LogConfigurations_S3ConfigurationFields,
-		},
-	}
+	"CloudWatchLogsConfiguration": ubx.FieldSpec{
+		WireName: "cloud_watch_logs_configuration",
+		Kind:     "object",
+		Fields:   LogDeliveryConfiguration_LogConfigurations_CloudWatchLogsConfigurationFields,
+	},
+	"EventSource": ubx.FieldSpec{WireName: "event_source"},
+	"FirehoseConfiguration": ubx.FieldSpec{
+		WireName: "firehose_configuration",
+		Kind:     "object",
+		Fields:   LogDeliveryConfiguration_LogConfigurations_FirehoseConfigurationFields,
+	},
+	"LogLevel": ubx.FieldSpec{WireName: "log_level"},
+	"S3Configuration": ubx.FieldSpec{
+		WireName: "s3_configuration",
+		Kind:     "object",
+		Fields:   LogDeliveryConfiguration_LogConfigurations_S3ConfigurationFields,
+	},
+}
 
 type LogDeliveryConfigurationConfig struct {
 	// Specifies the list of log delivery configurations for the user pool, each defining the event source (e.g., userNotification, userAuthEvents), the log level (e.g., ERROR, INFO), and the destination CloudWatch log group to which Amazon Cognito delivers user activity logs. (AI-inferred)
@@ -84,8 +84,8 @@ var LogDeliveryConfiguration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"LogConfigurations": ubx.FieldSpec{
 			WireName: "log_configurations",
-			Kind: "list",
-			Fields: LogDeliveryConfiguration_LogConfigurationsFields,
+			Kind:     "list",
+			Fields:   LogDeliveryConfiguration_LogConfigurationsFields,
 		},
 		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
 	},

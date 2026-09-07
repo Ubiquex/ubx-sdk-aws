@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Repositories_Repositories struct {
 	AdministratorAccount any
-	Arn any
-	CreatedTime any
-	Description any
-	DomainName any
-	DomainOwner any
-	Name any
+	Arn                  any
+	CreatedTime          any
+	Description          any
+	DomainName           any
+	DomainOwner          any
+	Name                 any
 }
 
 type RepositoriesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	RepositoryPrefix any
 }
 
 type RepositoriesAttrs struct {
-	MaxResults any
-	NextToken any
-	Repositories any
+	MaxResults       any
+	NextToken        any
+	Repositories     any
 	RepositoryPrefix any
 }
 
 var Repositories = ubx.DataSourceBinding{
 	WireType: "aws_codeartifact_repositories",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"RepositoryPrefix": ubx.FieldSpec{WireName: "repository_prefix"},
 	},
 }

@@ -4,7 +4,7 @@ package kinesisvideo
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Clip_ClipFragmentSelector_TimestampRange struct {
-	EndTimestamp any
+	EndTimestamp   any
 	StartTimestamp any
 }
 
@@ -15,33 +15,33 @@ type Clip_ClipFragmentSelector struct {
 }
 
 var Clip_ClipFragmentSelector_TimestampRangeFields = ubx.FieldMap{
-		"EndTimestamp": ubx.FieldSpec{WireName: "end_timestamp"},
-		"StartTimestamp": ubx.FieldSpec{WireName: "start_timestamp"},
-	}
+	"EndTimestamp":   ubx.FieldSpec{WireName: "end_timestamp"},
+	"StartTimestamp": ubx.FieldSpec{WireName: "start_timestamp"},
+}
 
 var Clip_ClipFragmentSelectorFields = ubx.FieldMap{
-		"FragmentSelectorType": ubx.FieldSpec{WireName: "fragment_selector_type"},
-		"TimestampRange": ubx.FieldSpec{
-			WireName: "timestamp_range",
-			Kind: "object",
-			Fields: Clip_ClipFragmentSelector_TimestampRangeFields,
-		},
-	}
+	"FragmentSelectorType": ubx.FieldSpec{WireName: "fragment_selector_type"},
+	"TimestampRange": ubx.FieldSpec{
+		WireName: "timestamp_range",
+		Kind:     "object",
+		Fields:   Clip_ClipFragmentSelector_TimestampRangeFields,
+	},
+}
 
 type ClipConfig struct {
 	// <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the clip will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
 	ClipFragmentSelector any
-	StreamArn any
-	StreamName any
+	StreamArn            any
+	StreamName           any
 }
 
 type ClipAttrs struct {
 	// <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the clip will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
 	ClipFragmentSelector any
-	ContentType any
-	Payload any
-	StreamArn any
-	StreamName any
+	ContentType          any
+	Payload              any
+	StreamArn            any
+	StreamName           any
 }
 
 var Clip = ubx.DataSourceBinding{
@@ -49,10 +49,10 @@ var Clip = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ClipFragmentSelector": ubx.FieldSpec{
 			WireName: "clip_fragment_selector",
-			Kind: "object",
-			Fields: Clip_ClipFragmentSelectorFields,
+			Kind:     "object",
+			Fields:   Clip_ClipFragmentSelectorFields,
 		},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
+		"StreamArn":  ubx.FieldSpec{WireName: "stream_arn"},
 		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
 	},
 }

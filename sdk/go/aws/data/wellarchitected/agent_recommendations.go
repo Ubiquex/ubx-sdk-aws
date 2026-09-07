@@ -4,42 +4,42 @@ package wellarchitected
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentRecommendations_Items_Roi struct {
-	Detail any
+	Detail   any
 	Estimate any
 }
 
 type AgentRecommendations_Items struct {
-	Applications any
-	AwsServices any
-	BusinessUnits any
-	CreatedAt any
-	CreatedBy any
-	Description any
-	Effort any
-	Impact any
-	LastModifiedAt any
-	LastModifiedBy any
+	Applications      any
+	AwsServices       any
+	BusinessUnits     any
+	CreatedAt         any
+	CreatedBy         any
+	Description       any
+	Effort            any
+	Impact            any
+	LastModifiedAt    any
+	LastModifiedBy    any
 	NumberOfResources any
-	Pillar any
-	Priority any
-	ProfileArn any
+	Pillar            any
+	Priority          any
+	ProfileArn        any
 	RecommendationArn any
-	Roi any
-	State any
-	Status any
-	Title any
-	Type any
-	UpdateReason any
+	Roi               any
+	State             any
+	Status            any
+	Title             any
+	Type              any
+	UpdateReason      any
 }
 
 type AgentRecommendationsConfig struct {
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
-	NextToken any
-	Pillar any
+	NextToken  any
+	Pillar     any
 	ProfileArn any
-	State any
+	State      any
 }
 
 type AgentRecommendationsAttrs struct {
@@ -47,19 +47,19 @@ type AgentRecommendationsAttrs struct {
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
-	NextToken any
-	Pillar any
+	NextToken  any
+	Pillar     any
 	ProfileArn any
-	State any
+	State      any
 }
 
 var AgentRecommendations = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_agent_recommendations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Pillar": ubx.FieldSpec{WireName: "pillar"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Pillar":     ubx.FieldSpec{WireName: "pillar"},
 		"ProfileArn": ubx.FieldSpec{WireName: "profile_arn"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"State":      ubx.FieldSpec{WireName: "state"},
 	},
 }

@@ -35,28 +35,28 @@ type ScalableTarget_SuspendedState struct {
 }
 
 var ScalableTarget_ScheduledActions_ScalableTargetActionFields = ubx.FieldMap{
-		"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
-		"MinCapacity": ubx.FieldSpec{WireName: "min_capacity"},
-	}
+	"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
+	"MinCapacity": ubx.FieldSpec{WireName: "min_capacity"},
+}
 
 var ScalableTarget_ScheduledActionsFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"ScalableTargetAction": ubx.FieldSpec{
-			WireName: "scalable_target_action",
-			Kind: "object",
-			Fields: ScalableTarget_ScheduledActions_ScalableTargetActionFields,
-		},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-		"ScheduledActionName": ubx.FieldSpec{WireName: "scheduled_action_name"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-	}
+	"EndTime": ubx.FieldSpec{WireName: "end_time"},
+	"ScalableTargetAction": ubx.FieldSpec{
+		WireName: "scalable_target_action",
+		Kind:     "object",
+		Fields:   ScalableTarget_ScheduledActions_ScalableTargetActionFields,
+	},
+	"Schedule":            ubx.FieldSpec{WireName: "schedule"},
+	"ScheduledActionName": ubx.FieldSpec{WireName: "scheduled_action_name"},
+	"StartTime":           ubx.FieldSpec{WireName: "start_time"},
+	"Timezone":            ubx.FieldSpec{WireName: "timezone"},
+}
 
 var ScalableTarget_SuspendedStateFields = ubx.FieldMap{
-		"DynamicScalingInSuspended": ubx.FieldSpec{WireName: "dynamic_scaling_in_suspended"},
-		"DynamicScalingOutSuspended": ubx.FieldSpec{WireName: "dynamic_scaling_out_suspended"},
-		"ScheduledScalingSuspended": ubx.FieldSpec{WireName: "scheduled_scaling_suspended"},
-	}
+	"DynamicScalingInSuspended":  ubx.FieldSpec{WireName: "dynamic_scaling_in_suspended"},
+	"DynamicScalingOutSuspended": ubx.FieldSpec{WireName: "dynamic_scaling_out_suspended"},
+	"ScheduledScalingSuspended":  ubx.FieldSpec{WireName: "scheduled_scaling_suspended"},
+}
 
 type ScalableTargetConfig struct {
 	// The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto Scaling can scale out (expand) as needed to the maximum capacity limit in response to changing demand.
@@ -101,21 +101,21 @@ type ScalableTargetAttrs struct {
 var ScalableTarget = ubx.ResourceBinding{
 	WireType: "aws_application_auto_scaling_scalable_target",
 	Fields: ubx.FieldMap{
-		"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
-		"MinCapacity": ubx.FieldSpec{WireName: "min_capacity"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"MaxCapacity":       ubx.FieldSpec{WireName: "max_capacity"},
+		"MinCapacity":       ubx.FieldSpec{WireName: "min_capacity"},
+		"ResourceId":        ubx.FieldSpec{WireName: "resource_id"},
+		"RoleArn":           ubx.FieldSpec{WireName: "role_arn"},
 		"ScalableDimension": ubx.FieldSpec{WireName: "scalable_dimension"},
 		"ScheduledActions": ubx.FieldSpec{
 			WireName: "scheduled_actions",
-			Kind: "list",
-			Fields: ScalableTarget_ScheduledActionsFields,
+			Kind:     "list",
+			Fields:   ScalableTarget_ScheduledActionsFields,
 		},
 		"ServiceNamespace": ubx.FieldSpec{WireName: "service_namespace"},
 		"SuspendedState": ubx.FieldSpec{
 			WireName: "suspended_state",
-			Kind: "object",
-			Fields: ScalableTarget_SuspendedStateFields,
+			Kind:     "object",
+			Fields:   ScalableTarget_SuspendedStateFields,
 		},
 	},
 }

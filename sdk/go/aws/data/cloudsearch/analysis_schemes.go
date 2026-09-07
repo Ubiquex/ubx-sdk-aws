@@ -4,35 +4,35 @@ package cloudsearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnalysisSchemes_AnalysisSchemes_Options_AnalysisOptions struct {
-	AlgorithmicStemming any
+	AlgorithmicStemming            any
 	JapaneseTokenizationDictionary any
-	StemmingDictionary any
-	Stopwords any
-	Synonyms any
+	StemmingDictionary             any
+	Stopwords                      any
+	Synonyms                       any
 }
 
 type AnalysisSchemes_AnalysisSchemes_Options struct {
-	AnalysisOptions any
+	AnalysisOptions        any
 	AnalysisSchemeLanguage any
-	AnalysisSchemeName any
+	AnalysisSchemeName     any
 }
 
 type AnalysisSchemes_AnalysisSchemes_Status struct {
-	CreationDate any
+	CreationDate    any
 	PendingDeletion any
-	State any
-	UpdateDate any
-	UpdateVersion any
+	State           any
+	UpdateDate      any
+	UpdateVersion   any
 }
 
 type AnalysisSchemes_AnalysisSchemes struct {
 	Options any
-	Status any
+	Status  any
 }
 
 type AnalysisSchemesConfig struct {
 	AnalysisSchemeNames any
-	Deployed any
+	Deployed            any
 	// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
 	DomainName any
 }
@@ -41,7 +41,7 @@ type AnalysisSchemesAttrs struct {
 	AnalysisSchemeNames any
 	// <p>A list of the analysis schemes configured for a domain.</p>
 	AnalysisSchemes any
-	Deployed any
+	Deployed        any
 	// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
 	DomainName any
 }
@@ -50,7 +50,7 @@ var AnalysisSchemes = ubx.DataSourceBinding{
 	WireType: "aws_cloudsearch_analysis_schemes",
 	Fields: ubx.FieldMap{
 		"AnalysisSchemeNames": ubx.FieldSpec{WireName: "analysis_scheme_names"},
-		"Deployed": ubx.FieldSpec{WireName: "deployed"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"Deployed":            ubx.FieldSpec{WireName: "deployed"},
+		"DomainName":          ubx.FieldSpec{WireName: "domain_name"},
 	},
 }

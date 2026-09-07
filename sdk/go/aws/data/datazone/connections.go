@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Connections_Items_Configurations struct {
 	Classification any
-	Properties any
+	Properties     any
 }
 
 type Connections_Items_PhysicalEndpoints_AwsLocation struct {
-	AccessRole any
-	AwsAccountId any
-	AwsRegion any
+	AccessRole      any
+	AwsAccountId    any
+	AwsRegion       any
 	IamConnectionId any
 }
 
 type Connections_Items_PhysicalEndpoints_GlueConnection_AuthenticationConfiguration_OAuth2Properties_AuthorizationCodeProperties struct {
 	AuthorizationCode any
-	RedirectUri any
+	RedirectUri       any
 }
 
 type Connections_Items_PhysicalEndpoints_GlueConnection_AuthenticationConfiguration_OAuth2Properties_OAuth2ClientApplication struct {
@@ -26,70 +26,70 @@ type Connections_Items_PhysicalEndpoints_GlueConnection_AuthenticationConfigurat
 }
 
 type Connections_Items_PhysicalEndpoints_GlueConnection_AuthenticationConfiguration_OAuth2Properties_OAuth2Credentials struct {
-	AccessToken any
-	JwtToken any
-	RefreshToken any
+	AccessToken                              any
+	JwtToken                                 any
+	RefreshToken                             any
 	UserManagedClientApplicationClientSecret any
 }
 
 type Connections_Items_PhysicalEndpoints_GlueConnection_AuthenticationConfiguration_OAuth2Properties struct {
 	AuthorizationCodeProperties any
-	OAuth2ClientApplication any
-	OAuth2Credentials any
-	OAuth2GrantType any
-	TokenUrl any
-	TokenUrlParametersMap any
+	OAuth2ClientApplication     any
+	OAuth2Credentials           any
+	OAuth2GrantType             any
+	TokenUrl                    any
+	TokenUrlParametersMap       any
 }
 
 type Connections_Items_PhysicalEndpoints_GlueConnection_AuthenticationConfiguration struct {
 	AuthenticationType any
-	OAuth2Properties any
-	SecretArn any
+	OAuth2Properties   any
+	SecretArn          any
 }
 
 type Connections_Items_PhysicalEndpoints_GlueConnection_PhysicalConnectionRequirements struct {
-	AvailabilityZone any
+	AvailabilityZone    any
 	SecurityGroupIdList any
-	SubnetId any
-	SubnetIdList any
+	SubnetId            any
+	SubnetIdList        any
 }
 
 type Connections_Items_PhysicalEndpoints_GlueConnection struct {
-	AthenaProperties any
-	AuthenticationConfiguration any
-	CompatibleComputeEnvironments any
-	ConnectionProperties any
-	ConnectionSchemaVersion any
-	ConnectionType any
-	CreationTime any
-	Description any
-	LastConnectionValidationTime any
-	LastUpdatedBy any
-	LastUpdatedTime any
-	MatchCriteria any
-	Name any
+	AthenaProperties               any
+	AuthenticationConfiguration    any
+	CompatibleComputeEnvironments  any
+	ConnectionProperties           any
+	ConnectionSchemaVersion        any
+	ConnectionType                 any
+	CreationTime                   any
+	Description                    any
+	LastConnectionValidationTime   any
+	LastUpdatedBy                  any
+	LastUpdatedTime                any
+	MatchCriteria                  any
+	Name                           any
 	PhysicalConnectionRequirements any
-	PythonProperties any
-	SparkProperties any
-	Status any
-	StatusReason any
+	PythonProperties               any
+	SparkProperties                any
+	Status                         any
+	StatusReason                   any
 }
 
 type Connections_Items_PhysicalEndpoints struct {
-	AwsLocation any
+	AwsLocation                      any
 	EnableTrustedIdentityPropagation any
-	GlueConnection any
-	GlueConnectionName any
-	GlueConnectionNames any
-	Host any
-	Port any
-	Protocol any
-	Stage any
+	GlueConnection                   any
+	GlueConnectionName               any
+	GlueConnectionNames              any
+	Host                             any
+	Port                             any
+	Protocol                         any
+	Stage                            any
 }
 
 type Connections_Items_Props_AmazonQproperties struct {
-	AuthMode any
-	IsEnabled any
+	AuthMode   any
+	IsEnabled  any
 	ProfileArn any
 }
 
@@ -99,25 +99,25 @@ type Connections_Items_Props_AthenaProperties struct {
 
 type Connections_Items_Props_GitProperties struct {
 	CodeConnectionArn any
-	DefaultBranch any
-	ErrorMessage any
-	RepositoryId any
-	Status any
+	DefaultBranch     any
+	ErrorMessage      any
+	RepositoryId      any
+	Status            any
 }
 
 type Connections_Items_Props_GlueProperties struct {
 	ErrorMessage any
-	Status any
+	Status       any
 }
 
 type Connections_Items_Props_HyperPodProperties struct {
-	ClusterArn any
-	ClusterName any
+	ClusterArn   any
+	ClusterName  any
 	Orchestrator any
 }
 
 type Connections_Items_Props_IamProperties struct {
-	EnvironmentId any
+	EnvironmentId          any
 	GlueLineageSyncEnabled any
 }
 
@@ -135,7 +135,7 @@ type Connections_Items_Props_RedshiftProperties_Credentials_UsernamePassword str
 }
 
 type Connections_Items_Props_RedshiftProperties_Credentials struct {
-	SecretArn any
+	SecretArn        any
 	UsernamePassword any
 }
 
@@ -144,76 +144,76 @@ type Connections_Items_Props_RedshiftProperties_LineageSync_Schedule struct {
 }
 
 type Connections_Items_Props_RedshiftProperties_LineageSync struct {
-	Enabled any
+	Enabled      any
 	LineageJobId any
-	Schedule any
+	Schedule     any
 }
 
 type Connections_Items_Props_RedshiftProperties_Storage struct {
-	ClusterName any
+	ClusterName   any
 	WorkgroupName any
 }
 
 type Connections_Items_Props_RedshiftProperties struct {
-	Credentials any
-	DatabaseName any
+	Credentials         any
+	DatabaseName        any
 	IsProvisionedSecret any
-	JdbcIamUrl any
-	JdbcUrl any
-	LineageSync any
-	RedshiftTempDir any
-	Status any
-	Storage any
+	JdbcIamUrl          any
+	JdbcUrl             any
+	LineageSync         any
+	RedshiftTempDir     any
+	Status              any
+	Storage             any
 }
 
 type Connections_Items_Props_S3Properties struct {
-	ErrorMessage any
+	ErrorMessage                  any
 	RegisterS3AccessGrantLocation any
-	S3AccessGrantLocationId any
-	S3Uri any
-	Status any
+	S3AccessGrantLocationId       any
+	S3Uri                         any
+	Status                        any
 }
 
 type Connections_Items_Props_SnowflakeProperties_IdentityMapping struct {
-	Prefix any
+	Prefix            any
 	UsernameAttribute any
 }
 
 type Connections_Items_Props_SnowflakeProperties_LineageSync struct {
-	Enabled any
+	Enabled      any
 	LineageJobId any
-	Schedule any
-	Timezone any
+	Schedule     any
+	Timezone     any
 }
 
 type Connections_Items_Props_SnowflakeProperties struct {
-	ErrorMessage any
+	ErrorMessage    any
 	IdentityMapping any
-	LineageSync any
-	SnowflakeRole any
-	Status any
+	LineageSync     any
+	SnowflakeRole   any
+	Status          any
 }
 
 type Connections_Items_Props_SparkEmrProperties_ManagedEndpointCredentials struct {
-	Id any
+	Id    any
 	Token any
 }
 
 type Connections_Items_Props_SparkEmrProperties struct {
-	CertificateData any
-	ComputeArn any
-	Credentials any
-	CredentialsExpiration any
-	GovernanceType any
-	InstanceProfileArn any
-	JavaVirtualEnv any
-	LivyEndpoint any
-	LogUri any
-	ManagedEndpointArn any
+	CertificateData            any
+	ComputeArn                 any
+	Credentials                any
+	CredentialsExpiration      any
+	GovernanceType             any
+	InstanceProfileArn         any
+	JavaVirtualEnv             any
+	LivyEndpoint               any
+	LogUri                     any
+	ManagedEndpointArn         any
 	ManagedEndpointCredentials any
-	PythonVirtualEnv any
-	RuntimeRole any
-	TrustedCertificatesS3Uri any
+	PythonVirtualEnv           any
+	RuntimeRole                any
+	TrustedCertificatesS3Uri   any
 }
 
 type Connections_Items_Props_SparkGlueProperties_AdditionalArgs struct {
@@ -221,23 +221,23 @@ type Connections_Items_Props_SparkGlueProperties_AdditionalArgs struct {
 }
 
 type Connections_Items_Props_SparkGlueProperties struct {
-	AdditionalArgs any
-	GlueConnectionName any
+	AdditionalArgs      any
+	GlueConnectionName  any
 	GlueConnectionNames any
-	GlueVersion any
-	IdleTimeout any
-	JavaVirtualEnv any
-	NumberOfWorkers any
-	PythonVirtualEnv any
-	WorkerType any
+	GlueVersion         any
+	IdleTimeout         any
+	JavaVirtualEnv      any
+	NumberOfWorkers     any
+	PythonVirtualEnv    any
+	WorkerType          any
 }
 
 type Connections_Items_Props_VpcProperties struct {
 	GlueConnectionNames any
-	SecurityGroupId any
-	Status any
-	SubnetIds any
-	VpcId any
+	SecurityGroupId     any
+	Status              any
+	SubnetIds           any
+	VpcId               any
 }
 
 type Connections_Items_Props_WorkflowsMwaaProperties struct {
@@ -245,77 +245,77 @@ type Connections_Items_Props_WorkflowsMwaaProperties struct {
 }
 
 type Connections_Items_Props struct {
-	AmazonQproperties any
-	AthenaProperties any
-	GitProperties any
-	GlueProperties any
-	HyperPodProperties any
-	IamProperties any
-	LakehouseProperties any
-	MlflowProperties any
-	RedshiftProperties any
-	S3Properties any
-	SnowflakeProperties any
-	SparkEmrProperties any
-	SparkGlueProperties any
-	VpcProperties any
-	WorkflowsMwaaProperties any
+	AmazonQproperties             any
+	AthenaProperties              any
+	GitProperties                 any
+	GlueProperties                any
+	HyperPodProperties            any
+	IamProperties                 any
+	LakehouseProperties           any
+	MlflowProperties              any
+	RedshiftProperties            any
+	S3Properties                  any
+	SnowflakeProperties           any
+	SparkEmrProperties            any
+	SparkGlueProperties           any
+	VpcProperties                 any
+	WorkflowsMwaaProperties       any
 	WorkflowsServerlessProperties any
 }
 
 type Connections_Items struct {
-	Configurations any
-	ConnectionId any
-	DomainId any
-	DomainUnitId any
-	EnvironmentId any
-	Name any
+	Configurations    any
+	ConnectionId      any
+	DomainId          any
+	DomainUnitId      any
+	EnvironmentId     any
+	Name              any
 	PhysicalEndpoints any
-	ProjectId any
-	Props any
-	Scope any
-	Type any
+	ProjectId         any
+	Props             any
+	Scope             any
+	Type              any
 }
 
 type ConnectionsConfig struct {
-	DomainIdentifier any
+	DomainIdentifier      any
 	EnvironmentIdentifier any
-	MaxResults any
-	Name any
-	NextToken any
-	ProjectIdentifier any
-	Scope any
-	SortBy any
-	SortOrder any
-	Type any
+	MaxResults            any
+	Name                  any
+	NextToken             any
+	ProjectIdentifier     any
+	Scope                 any
+	SortBy                any
+	SortOrder             any
+	Type                  any
 }
 
 type ConnectionsAttrs struct {
-	DomainIdentifier any
+	DomainIdentifier      any
 	EnvironmentIdentifier any
-	Items any
-	MaxResults any
-	Name any
-	NextToken any
-	ProjectIdentifier any
-	Scope any
-	SortBy any
-	SortOrder any
-	Type any
+	Items                 any
+	MaxResults            any
+	Name                  any
+	NextToken             any
+	ProjectIdentifier     any
+	Scope                 any
+	SortBy                any
+	SortOrder             any
+	Type                  any
 }
 
 var Connections = ubx.DataSourceBinding{
 	WireType: "aws_datazone_connections",
 	Fields: ubx.FieldMap{
-		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
+		"DomainIdentifier":      ubx.FieldSpec{WireName: "domain_identifier"},
 		"EnvironmentIdentifier": ubx.FieldSpec{WireName: "environment_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ProjectIdentifier": ubx.FieldSpec{WireName: "project_identifier"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
+		"ProjectIdentifier":     ubx.FieldSpec{WireName: "project_identifier"},
+		"Scope":                 ubx.FieldSpec{WireName: "scope"},
+		"SortBy":                ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":             ubx.FieldSpec{WireName: "sort_order"},
+		"Type":                  ubx.FieldSpec{WireName: "type"},
 	},
 }

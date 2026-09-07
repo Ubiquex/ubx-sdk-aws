@@ -25,19 +25,19 @@ type Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredent
 }
 
 type Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsAssertion struct {
-	Audience any
-	SigningAlgorithm any
+	Audience              any
+	SigningAlgorithm      any
 	TokenRequestSecretArn any
 }
 
 type Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer struct {
-	ClientCredentials any
-	ClientCredentialsAssertion any
-	IamJwtBearer any
-	Scope any
+	ClientCredentials                 any
+	ClientCredentialsAssertion        any
+	IamJwtBearer                      any
+	Scope                             any
 	TokenEndpointAuthenticationMethod any
-	TokenEndpointTlsCertificateArn any
-	TokenEndpointUrl any
+	TokenEndpointTlsCertificateArn    any
+	TokenEndpointUrl                  any
 }
 
 type Replicator_KafkaClusters_ClientAuthentication_SaslScram struct {
@@ -48,7 +48,7 @@ type Replicator_KafkaClusters_ClientAuthentication_SaslScram struct {
 }
 
 type Replicator_KafkaClusters_ClientAuthentication struct {
-	Mtls any
+	Mtls            any
 	SaslOauthBearer any
 	// Specifies SASL/SCRAM authentication settings for the associated Kafka cluster, including an 'Enabled' flag that determines whether the replicator uses SASL/SCRAM authentication when connecting to the cluster. (AI-inferred)
 	SaslScram any
@@ -171,210 +171,210 @@ type Replicator_ReplicationInfoList struct {
 }
 
 type Replicator_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Replicator_KafkaClusters_AmazonMskClusterFields = ubx.FieldMap{
-		"MskClusterArn": ubx.FieldSpec{WireName: "msk_cluster_arn"},
-	}
+	"MskClusterArn": ubx.FieldSpec{WireName: "msk_cluster_arn"},
+}
 
 var Replicator_KafkaClusters_ApacheKafkaClusterFields = ubx.FieldMap{
-		"ApacheKafkaClusterId": ubx.FieldSpec{WireName: "apache_kafka_cluster_id"},
-		"BootstrapBrokerString": ubx.FieldSpec{WireName: "bootstrap_broker_string"},
-	}
+	"ApacheKafkaClusterId":  ubx.FieldSpec{WireName: "apache_kafka_cluster_id"},
+	"BootstrapBrokerString": ubx.FieldSpec{WireName: "bootstrap_broker_string"},
+}
 
 var Replicator_KafkaClusters_ClientAuthentication_MtlsFields = ubx.FieldMap{
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsFields = ubx.FieldMap{
-		"TokenRequestSecretArn": ubx.FieldSpec{WireName: "token_request_secret_arn"},
-	}
+	"TokenRequestSecretArn": ubx.FieldSpec{WireName: "token_request_secret_arn"},
+}
 
 var Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsAssertionFields = ubx.FieldMap{
-		"Audience": ubx.FieldSpec{WireName: "audience"},
-		"SigningAlgorithm": ubx.FieldSpec{WireName: "signing_algorithm"},
-		"TokenRequestSecretArn": ubx.FieldSpec{WireName: "token_request_secret_arn"},
-	}
+	"Audience":              ubx.FieldSpec{WireName: "audience"},
+	"SigningAlgorithm":      ubx.FieldSpec{WireName: "signing_algorithm"},
+	"TokenRequestSecretArn": ubx.FieldSpec{WireName: "token_request_secret_arn"},
+}
 
 var Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearerFields = ubx.FieldMap{
-		"ClientCredentials": ubx.FieldSpec{
-			WireName: "client_credentials",
-			Kind: "object",
-			Fields: Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsFields,
-		},
-		"ClientCredentialsAssertion": ubx.FieldSpec{
-			WireName: "client_credentials_assertion",
-			Kind: "object",
-			Fields: Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsAssertionFields,
-		},
-		"IamJwtBearer": ubx.FieldSpec{
-			WireName: "iam_jwt_bearer",
-			Kind: "object",
-			Fields: Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsAssertionFields,
-		},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"TokenEndpointAuthenticationMethod": ubx.FieldSpec{WireName: "token_endpoint_authentication_method"},
-		"TokenEndpointTlsCertificateArn": ubx.FieldSpec{WireName: "token_endpoint_tls_certificate_arn"},
-		"TokenEndpointUrl": ubx.FieldSpec{WireName: "token_endpoint_url"},
-	}
+	"ClientCredentials": ubx.FieldSpec{
+		WireName: "client_credentials",
+		Kind:     "object",
+		Fields:   Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsFields,
+	},
+	"ClientCredentialsAssertion": ubx.FieldSpec{
+		WireName: "client_credentials_assertion",
+		Kind:     "object",
+		Fields:   Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsAssertionFields,
+	},
+	"IamJwtBearer": ubx.FieldSpec{
+		WireName: "iam_jwt_bearer",
+		Kind:     "object",
+		Fields:   Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsAssertionFields,
+	},
+	"Scope":                             ubx.FieldSpec{WireName: "scope"},
+	"TokenEndpointAuthenticationMethod": ubx.FieldSpec{WireName: "token_endpoint_authentication_method"},
+	"TokenEndpointTlsCertificateArn":    ubx.FieldSpec{WireName: "token_endpoint_tls_certificate_arn"},
+	"TokenEndpointUrl":                  ubx.FieldSpec{WireName: "token_endpoint_url"},
+}
 
 var Replicator_KafkaClusters_ClientAuthentication_SaslScramFields = ubx.FieldMap{
-		"Mechanism": ubx.FieldSpec{WireName: "mechanism"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"Mechanism": ubx.FieldSpec{WireName: "mechanism"},
+	"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var Replicator_KafkaClusters_ClientAuthenticationFields = ubx.FieldMap{
-		"Mtls": ubx.FieldSpec{
-			WireName: "mtls",
-			Kind: "object",
-			Fields: Replicator_KafkaClusters_ClientAuthentication_MtlsFields,
-		},
-		"SaslOauthBearer": ubx.FieldSpec{
-			WireName: "sasl_oauth_bearer",
-			Kind: "object",
-			Fields: Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearerFields,
-		},
-		"SaslScram": ubx.FieldSpec{
-			WireName: "sasl_scram",
-			Kind: "object",
-			Fields: Replicator_KafkaClusters_ClientAuthentication_SaslScramFields,
-		},
-	}
+	"Mtls": ubx.FieldSpec{
+		WireName: "mtls",
+		Kind:     "object",
+		Fields:   Replicator_KafkaClusters_ClientAuthentication_MtlsFields,
+	},
+	"SaslOauthBearer": ubx.FieldSpec{
+		WireName: "sasl_oauth_bearer",
+		Kind:     "object",
+		Fields:   Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearerFields,
+	},
+	"SaslScram": ubx.FieldSpec{
+		WireName: "sasl_scram",
+		Kind:     "object",
+		Fields:   Replicator_KafkaClusters_ClientAuthentication_SaslScramFields,
+	},
+}
 
 var Replicator_KafkaClusters_EncryptionInTransitFields = ubx.FieldMap{
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"RootCaCertificate": ubx.FieldSpec{WireName: "root_ca_certificate"},
-	}
+	"EncryptionType":    ubx.FieldSpec{WireName: "encryption_type"},
+	"RootCaCertificate": ubx.FieldSpec{WireName: "root_ca_certificate"},
+}
 
 var Replicator_KafkaClusters_VpcConfigFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 var Replicator_KafkaClustersFields = ubx.FieldMap{
-		"AmazonMskCluster": ubx.FieldSpec{
-			WireName: "amazon_msk_cluster",
-			Kind: "object",
-			Fields: Replicator_KafkaClusters_AmazonMskClusterFields,
-		},
-		"ApacheKafkaCluster": ubx.FieldSpec{
-			WireName: "apache_kafka_cluster",
-			Kind: "object",
-			Fields: Replicator_KafkaClusters_ApacheKafkaClusterFields,
-		},
-		"ClientAuthentication": ubx.FieldSpec{
-			WireName: "client_authentication",
-			Kind: "object",
-			Fields: Replicator_KafkaClusters_ClientAuthenticationFields,
-		},
-		"EncryptionInTransit": ubx.FieldSpec{
-			WireName: "encryption_in_transit",
-			Kind: "object",
-			Fields: Replicator_KafkaClusters_EncryptionInTransitFields,
-		},
-		"VpcConfig": ubx.FieldSpec{
-			WireName: "vpc_config",
-			Kind: "object",
-			Fields: Replicator_KafkaClusters_VpcConfigFields,
-		},
-	}
+	"AmazonMskCluster": ubx.FieldSpec{
+		WireName: "amazon_msk_cluster",
+		Kind:     "object",
+		Fields:   Replicator_KafkaClusters_AmazonMskClusterFields,
+	},
+	"ApacheKafkaCluster": ubx.FieldSpec{
+		WireName: "apache_kafka_cluster",
+		Kind:     "object",
+		Fields:   Replicator_KafkaClusters_ApacheKafkaClusterFields,
+	},
+	"ClientAuthentication": ubx.FieldSpec{
+		WireName: "client_authentication",
+		Kind:     "object",
+		Fields:   Replicator_KafkaClusters_ClientAuthenticationFields,
+	},
+	"EncryptionInTransit": ubx.FieldSpec{
+		WireName: "encryption_in_transit",
+		Kind:     "object",
+		Fields:   Replicator_KafkaClusters_EncryptionInTransitFields,
+	},
+	"VpcConfig": ubx.FieldSpec{
+		WireName: "vpc_config",
+		Kind:     "object",
+		Fields:   Replicator_KafkaClusters_VpcConfigFields,
+	},
+}
 
 var Replicator_LogDelivery_ReplicatorLogDelivery_CloudWatchLogsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
-	}
+	"Enabled":  ubx.FieldSpec{WireName: "enabled"},
+	"LogGroup": ubx.FieldSpec{WireName: "log_group"},
+}
 
 var Replicator_LogDelivery_ReplicatorLogDelivery_FirehoseFields = ubx.FieldMap{
-		"DeliveryStream": ubx.FieldSpec{WireName: "delivery_stream"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"DeliveryStream": ubx.FieldSpec{WireName: "delivery_stream"},
+	"Enabled":        ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Replicator_LogDelivery_ReplicatorLogDelivery_S3Fields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"Bucket":  ubx.FieldSpec{WireName: "bucket"},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Prefix":  ubx.FieldSpec{WireName: "prefix"},
+}
 
 var Replicator_LogDelivery_ReplicatorLogDeliveryFields = ubx.FieldMap{
-		"CloudWatchLogs": ubx.FieldSpec{
-			WireName: "cloud_watch_logs",
-			Kind: "object",
-			Fields: Replicator_LogDelivery_ReplicatorLogDelivery_CloudWatchLogsFields,
-		},
-		"Firehose": ubx.FieldSpec{
-			WireName: "firehose",
-			Kind: "object",
-			Fields: Replicator_LogDelivery_ReplicatorLogDelivery_FirehoseFields,
-		},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Replicator_LogDelivery_ReplicatorLogDelivery_S3Fields,
-		},
-	}
+	"CloudWatchLogs": ubx.FieldSpec{
+		WireName: "cloud_watch_logs",
+		Kind:     "object",
+		Fields:   Replicator_LogDelivery_ReplicatorLogDelivery_CloudWatchLogsFields,
+	},
+	"Firehose": ubx.FieldSpec{
+		WireName: "firehose",
+		Kind:     "object",
+		Fields:   Replicator_LogDelivery_ReplicatorLogDelivery_FirehoseFields,
+	},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Replicator_LogDelivery_ReplicatorLogDelivery_S3Fields,
+	},
+}
 
 var Replicator_LogDeliveryFields = ubx.FieldMap{
-		"ReplicatorLogDelivery": ubx.FieldSpec{
-			WireName: "replicator_log_delivery",
-			Kind: "object",
-			Fields: Replicator_LogDelivery_ReplicatorLogDeliveryFields,
-		},
-	}
+	"ReplicatorLogDelivery": ubx.FieldSpec{
+		WireName: "replicator_log_delivery",
+		Kind:     "object",
+		Fields:   Replicator_LogDelivery_ReplicatorLogDeliveryFields,
+	},
+}
 
 var Replicator_ReplicationInfoList_ConsumerGroupReplicationFields = ubx.FieldMap{
-		"ConsumerGroupOffsetSyncMode": ubx.FieldSpec{WireName: "consumer_group_offset_sync_mode"},
-		"ConsumerGroupsToExclude": ubx.FieldSpec{WireName: "consumer_groups_to_exclude"},
-		"ConsumerGroupsToReplicate": ubx.FieldSpec{WireName: "consumer_groups_to_replicate"},
-		"DetectAndCopyNewConsumerGroups": ubx.FieldSpec{WireName: "detect_and_copy_new_consumer_groups"},
-		"SynchroniseConsumerGroupOffsets": ubx.FieldSpec{WireName: "synchronise_consumer_group_offsets"},
-	}
+	"ConsumerGroupOffsetSyncMode":     ubx.FieldSpec{WireName: "consumer_group_offset_sync_mode"},
+	"ConsumerGroupsToExclude":         ubx.FieldSpec{WireName: "consumer_groups_to_exclude"},
+	"ConsumerGroupsToReplicate":       ubx.FieldSpec{WireName: "consumer_groups_to_replicate"},
+	"DetectAndCopyNewConsumerGroups":  ubx.FieldSpec{WireName: "detect_and_copy_new_consumer_groups"},
+	"SynchroniseConsumerGroupOffsets": ubx.FieldSpec{WireName: "synchronise_consumer_group_offsets"},
+}
 
 var Replicator_ReplicationInfoList_TopicReplication_StartingPositionFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Replicator_ReplicationInfoList_TopicReplicationFields = ubx.FieldMap{
-		"CopyAccessControlListsForTopics": ubx.FieldSpec{WireName: "copy_access_control_lists_for_topics"},
-		"CopyTopicConfigurations": ubx.FieldSpec{WireName: "copy_topic_configurations"},
-		"DetectAndCopyNewTopics": ubx.FieldSpec{WireName: "detect_and_copy_new_topics"},
-		"StartingPosition": ubx.FieldSpec{
-			WireName: "starting_position",
-			Kind: "object",
-			Fields: Replicator_ReplicationInfoList_TopicReplication_StartingPositionFields,
-		},
-		"TopicNameConfiguration": ubx.FieldSpec{
-			WireName: "topic_name_configuration",
-			Kind: "object",
-			Fields: Replicator_ReplicationInfoList_TopicReplication_StartingPositionFields,
-		},
-		"TopicsToExclude": ubx.FieldSpec{WireName: "topics_to_exclude"},
-		"TopicsToReplicate": ubx.FieldSpec{WireName: "topics_to_replicate"},
-	}
+	"CopyAccessControlListsForTopics": ubx.FieldSpec{WireName: "copy_access_control_lists_for_topics"},
+	"CopyTopicConfigurations":         ubx.FieldSpec{WireName: "copy_topic_configurations"},
+	"DetectAndCopyNewTopics":          ubx.FieldSpec{WireName: "detect_and_copy_new_topics"},
+	"StartingPosition": ubx.FieldSpec{
+		WireName: "starting_position",
+		Kind:     "object",
+		Fields:   Replicator_ReplicationInfoList_TopicReplication_StartingPositionFields,
+	},
+	"TopicNameConfiguration": ubx.FieldSpec{
+		WireName: "topic_name_configuration",
+		Kind:     "object",
+		Fields:   Replicator_ReplicationInfoList_TopicReplication_StartingPositionFields,
+	},
+	"TopicsToExclude":   ubx.FieldSpec{WireName: "topics_to_exclude"},
+	"TopicsToReplicate": ubx.FieldSpec{WireName: "topics_to_replicate"},
+}
 
 var Replicator_ReplicationInfoListFields = ubx.FieldMap{
-		"ConsumerGroupReplication": ubx.FieldSpec{
-			WireName: "consumer_group_replication",
-			Kind: "object",
-			Fields: Replicator_ReplicationInfoList_ConsumerGroupReplicationFields,
-		},
-		"SourceKafkaClusterArn": ubx.FieldSpec{WireName: "source_kafka_cluster_arn"},
-		"SourceKafkaClusterId": ubx.FieldSpec{WireName: "source_kafka_cluster_id"},
-		"TargetCompressionType": ubx.FieldSpec{WireName: "target_compression_type"},
-		"TargetKafkaClusterArn": ubx.FieldSpec{WireName: "target_kafka_cluster_arn"},
-		"TargetKafkaClusterId": ubx.FieldSpec{WireName: "target_kafka_cluster_id"},
-		"TopicReplication": ubx.FieldSpec{
-			WireName: "topic_replication",
-			Kind: "object",
-			Fields: Replicator_ReplicationInfoList_TopicReplicationFields,
-		},
-	}
+	"ConsumerGroupReplication": ubx.FieldSpec{
+		WireName: "consumer_group_replication",
+		Kind:     "object",
+		Fields:   Replicator_ReplicationInfoList_ConsumerGroupReplicationFields,
+	},
+	"SourceKafkaClusterArn": ubx.FieldSpec{WireName: "source_kafka_cluster_arn"},
+	"SourceKafkaClusterId":  ubx.FieldSpec{WireName: "source_kafka_cluster_id"},
+	"TargetCompressionType": ubx.FieldSpec{WireName: "target_compression_type"},
+	"TargetKafkaClusterArn": ubx.FieldSpec{WireName: "target_kafka_cluster_arn"},
+	"TargetKafkaClusterId":  ubx.FieldSpec{WireName: "target_kafka_cluster_id"},
+	"TopicReplication": ubx.FieldSpec{
+		WireName: "topic_replication",
+		Kind:     "object",
+		Fields:   Replicator_ReplicationInfoList_TopicReplicationFields,
+	},
+}
 
 var Replicator_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ReplicatorConfig struct {
 	// A summary description of the replicator.
@@ -420,25 +420,25 @@ var Replicator = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"KafkaClusters": ubx.FieldSpec{
 			WireName: "kafka_clusters",
-			Kind: "list",
-			Fields: Replicator_KafkaClustersFields,
+			Kind:     "list",
+			Fields:   Replicator_KafkaClustersFields,
 		},
 		"LogDelivery": ubx.FieldSpec{
 			WireName: "log_delivery",
-			Kind: "object",
-			Fields: Replicator_LogDeliveryFields,
+			Kind:     "object",
+			Fields:   Replicator_LogDeliveryFields,
 		},
 		"ReplicationInfoList": ubx.FieldSpec{
 			WireName: "replication_info_list",
-			Kind: "list",
-			Fields: Replicator_ReplicationInfoListFields,
+			Kind:     "list",
+			Fields:   Replicator_ReplicationInfoListFields,
 		},
-		"ReplicatorName": ubx.FieldSpec{WireName: "replicator_name"},
+		"ReplicatorName":          ubx.FieldSpec{WireName: "replicator_name"},
 		"ServiceExecutionRoleArn": ubx.FieldSpec{WireName: "service_execution_role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Replicator_TagsFields,
+			Kind:     "list",
+			Fields:   Replicator_TagsFields,
 		},
 	},
 }

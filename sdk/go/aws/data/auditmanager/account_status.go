@@ -12,6 +12,5 @@ type AccountStatusAttrs struct {
 
 var AccountStatus = ubx.DataSourceBinding{
 	WireType: "aws_auditmanager_account_status",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

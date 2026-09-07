@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Entitlements_Entitlements struct {
 	DataTransferSubscriberFeePercent any
-	EntitlementArn any
-	EntitlementName any
+	EntitlementArn                   any
+	EntitlementName                  any
 }
 
 type EntitlementsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EntitlementsAttrs struct {
 	Entitlements any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var Entitlements = ubx.DataSourceBinding{
 	WireType: "aws_mediaconnect_entitlements",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

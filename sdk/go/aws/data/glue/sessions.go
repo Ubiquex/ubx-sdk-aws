@@ -4,7 +4,7 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Sessions_Sessions_Command struct {
-	Name any
+	Name          any
 	PythonVersion any
 }
 
@@ -13,51 +13,51 @@ type Sessions_Sessions_Connections struct {
 }
 
 type Sessions_Sessions struct {
-	Command any
-	CompletedOn any
-	Connections any
-	CreatedOn any
-	DefaultArguments any
-	Description any
-	Dpuseconds any
-	ErrorMessage any
-	ExecutionTime any
-	GlueVersion any
-	Id any
-	IdleTimeout any
-	MaxCapacity any
-	NumberOfWorkers any
-	ProfileName any
-	Progress any
-	Role any
+	Command               any
+	CompletedOn           any
+	Connections           any
+	CreatedOn             any
+	DefaultArguments      any
+	Description           any
+	Dpuseconds            any
+	ErrorMessage          any
+	ExecutionTime         any
+	GlueVersion           any
+	Id                    any
+	IdleTimeout           any
+	MaxCapacity           any
+	NumberOfWorkers       any
+	ProfileName           any
+	Progress              any
+	Role                  any
 	SecurityConfiguration any
-	SessionType any
-	Status any
-	WorkerType any
+	SessionType           any
+	Status                any
+	WorkerType            any
 }
 
 type SessionsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 	RequestOrigin any
-	Tags any
+	Tags          any
 }
 
 type SessionsAttrs struct {
-	Ids any
-	MaxResults any
-	NextToken any
+	Ids           any
+	MaxResults    any
+	NextToken     any
 	RequestOrigin any
-	Sessions any
-	Tags any
+	Sessions      any
+	Tags          any
 }
 
 var Sessions = ubx.DataSourceBinding{
 	WireType: "aws_glue_sessions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"RequestOrigin": ubx.FieldSpec{WireName: "request_origin"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":          ubx.FieldSpec{WireName: "tags"},
 	},
 }

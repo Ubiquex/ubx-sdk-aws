@@ -5,41 +5,41 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KeyPairs_KeyPairs_Location struct {
 	AvailabilityZone any
-	RegionName any
+	RegionName       any
 }
 
 type KeyPairs_KeyPairs_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type KeyPairs_KeyPairs struct {
-	Arn any
-	CreatedAt any
-	Fingerprint any
-	Location any
-	Name any
+	Arn          any
+	CreatedAt    any
+	Fingerprint  any
+	Location     any
+	Name         any
 	ResourceType any
-	SupportCode any
-	Tags any
+	SupportCode  any
+	Tags         any
 }
 
 type KeyPairsConfig struct {
 	IncludeDefaultKeyPair any
-	PageToken any
+	PageToken             any
 }
 
 type KeyPairsAttrs struct {
 	IncludeDefaultKeyPair any
-	KeyPairs any
-	NextPageToken any
-	PageToken any
+	KeyPairs              any
+	NextPageToken         any
+	PageToken             any
 }
 
 var KeyPairs = ubx.DataSourceBinding{
 	WireType: "aws_lightsail_key_pairs",
 	Fields: ubx.FieldMap{
 		"IncludeDefaultKeyPair": ubx.FieldSpec{WireName: "include_default_key_pair"},
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
+		"PageToken":             ubx.FieldSpec{WireName: "page_token"},
 	},
 }

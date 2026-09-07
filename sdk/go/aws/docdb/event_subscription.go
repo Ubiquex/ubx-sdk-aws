@@ -36,11 +36,11 @@ type EventSubscriptionAttrs struct {
 var EventSubscription = ubx.ResourceBinding{
 	WireType: "aws_doc_db_event_subscription",
 	Fields: ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EventCategories": ubx.FieldSpec{WireName: "event_categories"},
-		"SnsTopicArn": ubx.FieldSpec{WireName: "sns_topic_arn"},
-		"SourceIds": ubx.FieldSpec{WireName: "source_ids"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
+		"Enabled":          ubx.FieldSpec{WireName: "enabled"},
+		"EventCategories":  ubx.FieldSpec{WireName: "event_categories"},
+		"SnsTopicArn":      ubx.FieldSpec{WireName: "sns_topic_arn"},
+		"SourceIds":        ubx.FieldSpec{WireName: "source_ids"},
+		"SourceType":       ubx.FieldSpec{WireName: "source_type"},
 		"SubscriptionName": ubx.FieldSpec{WireName: "subscription_name"},
 	},
 }

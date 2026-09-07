@@ -4,34 +4,34 @@ package admin_wickr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AdminWickrUserConfig struct {
-	EndTime any
+	EndTime   any
 	NetworkId any
 	StartTime any
-	UserId any
+	UserId    any
 }
 
 type AdminWickrUserAttrs struct {
-	EndTime any
-	FirstName any
-	IsAdmin any
-	LastActivity any
-	LastLogin any
-	LastName any
-	NetworkId any
+	EndTime          any
+	FirstName        any
+	IsAdmin          any
+	LastActivity     any
+	LastLogin        any
+	LastName         any
+	NetworkId        any
 	SecurityGroupIds any
-	StartTime any
-	Status any
-	Suspended any
-	UserId any
-	Username any
+	StartTime        any
+	Status           any
+	Suspended        any
+	UserId           any
+	Username         any
 }
 
 var AdminWickrUser = ubx.DataSourceBinding{
 	WireType: "aws_admin_wickr_user",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":   ubx.FieldSpec{WireName: "end_time"},
 		"NetworkId": ubx.FieldSpec{WireName: "network_id"},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":    ubx.FieldSpec{WireName: "user_id"},
 	},
 }

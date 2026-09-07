@@ -11,9 +11,9 @@ type Ipset_Tags struct {
 }
 
 var Ipset_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IpsetConfig struct {
 	// Indicates whether the GuardDuty IP set is activated (enabled) for use in threat detection, where true activates the set and false deactivates it. (AI-inferred)
@@ -54,16 +54,16 @@ type IpsetAttrs struct {
 var Ipset = ubx.ResourceBinding{
 	WireType: "aws_guard_duty_ipset",
 	Fields: ubx.FieldMap{
-		"Activate": ubx.FieldSpec{WireName: "activate"},
-		"DetectorId": ubx.FieldSpec{WireName: "detector_id"},
+		"Activate":            ubx.FieldSpec{WireName: "activate"},
+		"DetectorId":          ubx.FieldSpec{WireName: "detector_id"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Format":              ubx.FieldSpec{WireName: "format"},
+		"Location":            ubx.FieldSpec{WireName: "location"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Ipset_TagsFields,
+			Kind:     "list",
+			Fields:   Ipset_TagsFields,
 		},
 	},
 }

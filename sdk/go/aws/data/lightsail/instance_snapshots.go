@@ -4,62 +4,62 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceSnapshots_InstanceSnapshots_FromAttachedDisks_AddOns struct {
-	Duration any
-	Name any
+	Duration              any
+	Name                  any
 	NextSnapshotTimeOfDay any
-	SnapshotTimeOfDay any
-	Status any
-	Threshold any
+	SnapshotTimeOfDay     any
+	Status                any
+	Threshold             any
 }
 
 type InstanceSnapshots_InstanceSnapshots_FromAttachedDisks_Location struct {
 	AvailabilityZone any
-	RegionName any
+	RegionName       any
 }
 
 type InstanceSnapshots_InstanceSnapshots_FromAttachedDisks_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type InstanceSnapshots_InstanceSnapshots_FromAttachedDisks struct {
-	AddOns any
-	Arn any
-	AttachedTo any
+	AddOns          any
+	Arn             any
+	AttachedTo      any
 	AttachmentState any
 	AutoMountStatus any
-	CreatedAt any
-	GbInUse any
-	Iops any
-	IsAttached any
-	IsSystemDisk any
-	Location any
-	Name any
-	Path any
-	ResourceType any
-	SizeInGb any
-	State any
-	SupportCode any
-	Tags any
+	CreatedAt       any
+	GbInUse         any
+	Iops            any
+	IsAttached      any
+	IsSystemDisk    any
+	Location        any
+	Name            any
+	Path            any
+	ResourceType    any
+	SizeInGb        any
+	State           any
+	SupportCode     any
+	Tags            any
 }
 
 type InstanceSnapshots_InstanceSnapshots struct {
-	Arn any
-	CreatedAt any
-	FromAttachedDisks any
-	FromBlueprintId any
-	FromBundleId any
-	FromInstanceArn any
-	FromInstanceName any
+	Arn                any
+	CreatedAt          any
+	FromAttachedDisks  any
+	FromBlueprintId    any
+	FromBundleId       any
+	FromInstanceArn    any
+	FromInstanceName   any
 	IsFromAutoSnapshot any
-	Location any
-	Name any
-	Progress any
-	ResourceType any
-	SizeInGb any
-	State any
-	SupportCode any
-	Tags any
+	Location           any
+	Name               any
+	Progress           any
+	ResourceType       any
+	SizeInGb           any
+	State              any
+	SupportCode        any
+	Tags               any
 }
 
 type InstanceSnapshotsConfig struct {
@@ -68,8 +68,8 @@ type InstanceSnapshotsConfig struct {
 
 type InstanceSnapshotsAttrs struct {
 	InstanceSnapshots any
-	NextPageToken any
-	PageToken any
+	NextPageToken     any
+	PageToken         any
 }
 
 var InstanceSnapshots = ubx.DataSourceBinding{

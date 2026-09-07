@@ -16,27 +16,27 @@ type ComputationModel_ComputationModelConfiguration struct {
 }
 
 type ComputationModel_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var ComputationModel_ComputationModelConfiguration_AnomalyDetectionFields = ubx.FieldMap{
-		"InputProperties": ubx.FieldSpec{WireName: "input_properties"},
-		"ResultProperty": ubx.FieldSpec{WireName: "result_property"},
-	}
+	"InputProperties": ubx.FieldSpec{WireName: "input_properties"},
+	"ResultProperty":  ubx.FieldSpec{WireName: "result_property"},
+}
 
 var ComputationModel_ComputationModelConfigurationFields = ubx.FieldMap{
-		"AnomalyDetection": ubx.FieldSpec{
-			WireName: "anomaly_detection",
-			Kind: "object",
-			Fields: ComputationModel_ComputationModelConfiguration_AnomalyDetectionFields,
-		},
-	}
+	"AnomalyDetection": ubx.FieldSpec{
+		WireName: "anomaly_detection",
+		Kind:     "object",
+		Fields:   ComputationModel_ComputationModelConfiguration_AnomalyDetectionFields,
+	},
+}
 
 var ComputationModel_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ComputationModelConfig struct {
 	ComputationModelConfiguration any
@@ -52,7 +52,7 @@ type ComputationModelConfig struct {
 
 type ComputationModelAttrs struct {
 	// The ARN of the computation model.
-	ComputationModelArn any
+	ComputationModelArn           any
 	ComputationModelConfiguration any
 	// The data binding for this computation model: for each variable defined in its own configuration, the real data source value that variable is bound to. (AI-inferred)
 	ComputationModelDataBinding any
@@ -71,16 +71,16 @@ var ComputationModel = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ComputationModelConfiguration": ubx.FieldSpec{
 			WireName: "computation_model_configuration",
-			Kind: "object",
-			Fields: ComputationModel_ComputationModelConfigurationFields,
+			Kind:     "object",
+			Fields:   ComputationModel_ComputationModelConfigurationFields,
 		},
 		"ComputationModelDataBinding": ubx.FieldSpec{WireName: "computation_model_data_binding"},
 		"ComputationModelDescription": ubx.FieldSpec{WireName: "computation_model_description"},
-		"ComputationModelName": ubx.FieldSpec{WireName: "computation_model_name"},
+		"ComputationModelName":        ubx.FieldSpec{WireName: "computation_model_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ComputationModel_TagsFields,
+			Kind:     "list",
+			Fields:   ComputationModel_TagsFields,
 		},
 	},
 }

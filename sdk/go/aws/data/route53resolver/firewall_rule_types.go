@@ -4,29 +4,29 @@ package route53resolver
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallRuleTypes_FirewallRuleTypes_SubscriptionInfo struct {
-	ProductId any
+	ProductId  any
 	VendorName any
 }
 
 type FirewallRuleTypes_FirewallRuleTypes struct {
-	Description any
-	DisplayName any
-	RuleType any
+	Description      any
+	DisplayName      any
+	RuleType         any
 	SubscriptionInfo any
-	Value any
+	Value            any
 }
 
 type FirewallRuleTypesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>The variant name of a rule type. Known values are <code>FirewallAdvancedContentCategory</code>, <code>FirewallAdvancedThreatCategory</code>, <code>DnsThreatProtection</code>, and <code>PartnerThreatProtection</code>. Returned in the <code>RuleType</code> field of a <a>FirewallRuleTypeDefinition</a>.</p>
 	RuleType any
 }
 
 type FirewallRuleTypesAttrs struct {
 	FirewallRuleTypes any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 	// <p>The variant name of a rule type. Known values are <code>FirewallAdvancedContentCategory</code>, <code>FirewallAdvancedThreatCategory</code>, <code>DnsThreatProtection</code>, and <code>PartnerThreatProtection</code>. Returned in the <code>RuleType</code> field of a <a>FirewallRuleTypeDefinition</a>.</p>
 	RuleType any
 }
@@ -35,7 +35,7 @@ var FirewallRuleTypes = ubx.DataSourceBinding{
 	WireType: "aws_route53resolver_firewall_rule_types",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RuleType": ubx.FieldSpec{WireName: "rule_type"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"RuleType":   ubx.FieldSpec{WireName: "rule_type"},
 	},
 }

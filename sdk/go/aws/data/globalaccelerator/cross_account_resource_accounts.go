@@ -12,6 +12,5 @@ type CrossAccountResourceAccountsAttrs struct {
 
 var CrossAccountResourceAccounts = ubx.DataSourceBinding{
 	WireType: "aws_globalaccelerator_cross_account_resource_accounts",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

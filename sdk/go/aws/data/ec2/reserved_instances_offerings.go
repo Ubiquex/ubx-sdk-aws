@@ -4,7 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReservedInstancesOfferings_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -14,95 +14,95 @@ type ReservedInstancesOfferings_ReservedInstancesOfferings_PricingDetails struct
 }
 
 type ReservedInstancesOfferings_ReservedInstancesOfferings_RecurringCharges struct {
-	Amount any
+	Amount    any
 	Frequency any
 }
 
 type ReservedInstancesOfferings_ReservedInstancesOfferings struct {
-	AvailabilityZone any
-	AvailabilityZoneId any
-	CurrencyCode any
-	Duration any
-	FixedPrice any
-	InstanceTenancy any
-	InstanceType any
-	Marketplace any
-	OfferingClass any
-	OfferingType any
-	PricingDetails any
-	ProductDescription any
-	RecurringCharges any
+	AvailabilityZone            any
+	AvailabilityZoneId          any
+	CurrencyCode                any
+	Duration                    any
+	FixedPrice                  any
+	InstanceTenancy             any
+	InstanceType                any
+	Marketplace                 any
+	OfferingClass               any
+	OfferingType                any
+	PricingDetails              any
+	ProductDescription          any
+	RecurringCharges            any
 	ReservedInstancesOfferingId any
-	Scope any
-	UsagePrice any
+	Scope                       any
+	UsagePrice                  any
 }
 
 var ReservedInstancesOfferings_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ReservedInstancesOfferingsConfig struct {
-	AvailabilityZone any
-	AvailabilityZoneId any
-	DryRun any
-	Filters any
-	IncludeMarketplace any
-	InstanceTenancy any
-	InstanceType any
-	MaxDuration any
-	MaxInstanceCount any
-	MaxResults any
-	MinDuration any
-	NextToken any
-	OfferingClass any
-	OfferingType any
-	ProductDescription any
+	AvailabilityZone             any
+	AvailabilityZoneId           any
+	DryRun                       any
+	Filters                      any
+	IncludeMarketplace           any
+	InstanceTenancy              any
+	InstanceType                 any
+	MaxDuration                  any
+	MaxInstanceCount             any
+	MaxResults                   any
+	MinDuration                  any
+	NextToken                    any
+	OfferingClass                any
+	OfferingType                 any
+	ProductDescription           any
 	ReservedInstancesOfferingIds any
 }
 
 type ReservedInstancesOfferingsAttrs struct {
-	AvailabilityZone any
-	AvailabilityZoneId any
-	DryRun any
-	Filters any
-	IncludeMarketplace any
-	InstanceTenancy any
-	InstanceType any
-	MaxDuration any
-	MaxInstanceCount any
-	MaxResults any
-	MinDuration any
-	NextToken any
-	OfferingClass any
-	OfferingType any
-	ProductDescription any
+	AvailabilityZone             any
+	AvailabilityZoneId           any
+	DryRun                       any
+	Filters                      any
+	IncludeMarketplace           any
+	InstanceTenancy              any
+	InstanceType                 any
+	MaxDuration                  any
+	MaxInstanceCount             any
+	MaxResults                   any
+	MinDuration                  any
+	NextToken                    any
+	OfferingClass                any
+	OfferingType                 any
+	ProductDescription           any
 	ReservedInstancesOfferingIds any
-	ReservedInstancesOfferings any
+	ReservedInstancesOfferings   any
 }
 
 var ReservedInstancesOfferings = ubx.DataSourceBinding{
 	WireType: "aws_ec2_reserved_instances_offerings",
 	Fields: ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
+		"AvailabilityZone":   ubx.FieldSpec{WireName: "availability_zone"},
 		"AvailabilityZoneId": ubx.FieldSpec{WireName: "availability_zone_id"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":             ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ReservedInstancesOfferings_FiltersFields,
+			Kind:     "list",
+			Fields:   ReservedInstancesOfferings_FiltersFields,
 		},
-		"IncludeMarketplace": ubx.FieldSpec{WireName: "include_marketplace"},
-		"InstanceTenancy": ubx.FieldSpec{WireName: "instance_tenancy"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"MaxDuration": ubx.FieldSpec{WireName: "max_duration"},
-		"MaxInstanceCount": ubx.FieldSpec{WireName: "max_instance_count"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MinDuration": ubx.FieldSpec{WireName: "min_duration"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OfferingClass": ubx.FieldSpec{WireName: "offering_class"},
-		"OfferingType": ubx.FieldSpec{WireName: "offering_type"},
-		"ProductDescription": ubx.FieldSpec{WireName: "product_description"},
+		"IncludeMarketplace":           ubx.FieldSpec{WireName: "include_marketplace"},
+		"InstanceTenancy":              ubx.FieldSpec{WireName: "instance_tenancy"},
+		"InstanceType":                 ubx.FieldSpec{WireName: "instance_type"},
+		"MaxDuration":                  ubx.FieldSpec{WireName: "max_duration"},
+		"MaxInstanceCount":             ubx.FieldSpec{WireName: "max_instance_count"},
+		"MaxResults":                   ubx.FieldSpec{WireName: "max_results"},
+		"MinDuration":                  ubx.FieldSpec{WireName: "min_duration"},
+		"NextToken":                    ubx.FieldSpec{WireName: "next_token"},
+		"OfferingClass":                ubx.FieldSpec{WireName: "offering_class"},
+		"OfferingType":                 ubx.FieldSpec{WireName: "offering_type"},
+		"ProductDescription":           ubx.FieldSpec{WireName: "product_description"},
 		"ReservedInstancesOfferingIds": ubx.FieldSpec{WireName: "reserved_instances_offering_ids"},
 	},
 }

@@ -19,40 +19,40 @@ type PrivateDnsNamespace_Properties struct {
 }
 
 type PrivateDnsNamespace_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var PrivateDnsNamespace_Properties_DnsProperties_SoaFields = ubx.FieldMap{
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-	}
+	"Ttl": ubx.FieldSpec{WireName: "ttl"},
+}
 
 var PrivateDnsNamespace_Properties_DnsPropertiesFields = ubx.FieldMap{
-		"Soa": ubx.FieldSpec{
-			WireName: "soa",
-			Kind: "object",
-			Fields: PrivateDnsNamespace_Properties_DnsProperties_SoaFields,
-		},
-	}
+	"Soa": ubx.FieldSpec{
+		WireName: "soa",
+		Kind:     "object",
+		Fields:   PrivateDnsNamespace_Properties_DnsProperties_SoaFields,
+	},
+}
 
 var PrivateDnsNamespace_PropertiesFields = ubx.FieldMap{
-		"DnsProperties": ubx.FieldSpec{
-			WireName: "dns_properties",
-			Kind: "object",
-			Fields: PrivateDnsNamespace_Properties_DnsPropertiesFields,
-		},
-	}
+	"DnsProperties": ubx.FieldSpec{
+		WireName: "dns_properties",
+		Kind:     "object",
+		Fields:   PrivateDnsNamespace_Properties_DnsPropertiesFields,
+	},
+}
 
 var PrivateDnsNamespace_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PrivateDnsNamespaceConfig struct {
 	// A description of the namespace.
 	Description any
 	// The name that you want to assign to this namespace. When you create a private DNS namespace, AWS Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
-	Name any
+	Name       any
 	Properties any
 	// The tags for the namespace. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
 	Tags any
@@ -70,7 +70,7 @@ type PrivateDnsNamespaceAttrs struct {
 	// The ID of the private namespace.
 	Id any
 	// The name that you want to assign to this namespace. When you create a private DNS namespace, AWS Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
-	Name any
+	Name       any
 	Properties any
 	// The tags for the namespace. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
 	Tags any
@@ -82,16 +82,16 @@ var PrivateDnsNamespace = ubx.ResourceBinding{
 	WireType: "aws_service_discovery_private_dns_namespace",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Properties": ubx.FieldSpec{
 			WireName: "properties",
-			Kind: "object",
-			Fields: PrivateDnsNamespace_PropertiesFields,
+			Kind:     "object",
+			Fields:   PrivateDnsNamespace_PropertiesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PrivateDnsNamespace_TagsFields,
+			Kind:     "list",
+			Fields:   PrivateDnsNamespace_TagsFields,
 		},
 		"Vpc": ubx.FieldSpec{WireName: "vpc"},
 	},

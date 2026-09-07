@@ -4,32 +4,32 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AttachedPolicies_Policies struct {
-	PolicyArn any
+	PolicyArn  any
 	PolicyName any
 }
 
 type AttachedPoliciesConfig struct {
-	Marker any
-	PageSize any
+	Marker    any
+	PageSize  any
 	Recursive any
-	Target any
+	Target    any
 }
 
 type AttachedPoliciesAttrs struct {
-	Marker any
+	Marker     any
 	NextMarker any
-	PageSize any
-	Policies any
-	Recursive any
-	Target any
+	PageSize   any
+	Policies   any
+	Recursive  any
+	Target     any
 }
 
 var AttachedPolicies = ubx.DataSourceBinding{
 	WireType: "aws_iot_attached_policies",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"Marker":    ubx.FieldSpec{WireName: "marker"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 		"Recursive": ubx.FieldSpec{WireName: "recursive"},
-		"Target": ubx.FieldSpec{WireName: "target"},
+		"Target":    ubx.FieldSpec{WireName: "target"},
 	},
 }

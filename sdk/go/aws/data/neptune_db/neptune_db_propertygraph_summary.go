@@ -4,38 +4,38 @@ package neptune_db
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NeptuneDbPropertygraphSummary_Payload_GraphSummary_EdgeStructures struct {
-	Count any
+	Count          any
 	EdgeProperties any
 }
 
 type NeptuneDbPropertygraphSummary_Payload_GraphSummary_NodeStructures struct {
-	Count any
+	Count                      any
 	DistinctOutgoingEdgeLabels any
-	NodeProperties any
+	NodeProperties             any
 }
 
 type NeptuneDbPropertygraphSummary_Payload_GraphSummary struct {
-	EdgeLabels any
-	EdgeProperties any
-	EdgeStructures any
-	NodeLabels any
-	NodeProperties any
-	NodeStructures any
-	NumEdgeLabels any
-	NumEdgeProperties any
-	NumEdges any
-	NumNodeLabels any
-	NumNodeProperties any
-	NumNodes any
+	EdgeLabels              any
+	EdgeProperties          any
+	EdgeStructures          any
+	NodeLabels              any
+	NodeProperties          any
+	NodeStructures          any
+	NumEdgeLabels           any
+	NumEdgeProperties       any
+	NumEdges                any
+	NumNodeLabels           any
+	NumNodeProperties       any
+	NumNodes                any
 	TotalEdgePropertyValues any
 	TotalNodePropertyValues any
 }
 
 type NeptuneDbPropertygraphSummary_Payload struct {
 	// <p>The graph summary API returns a read-only list of node and edge labels and property keys, along with counts of nodes, edges, and properties. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-pg-response">Graph summary response for a property graph (PG)</a>.</p>
-	GraphSummary any
+	GraphSummary                  any
 	LastStatisticsComputationTime any
-	Version any
+	Version                       any
 }
 
 type NeptuneDbPropertygraphSummaryConfig struct {
@@ -45,7 +45,7 @@ type NeptuneDbPropertygraphSummaryConfig struct {
 type NeptuneDbPropertygraphSummaryAttrs struct {
 	Mode any
 	// <p>Payload for the property graph summary response.</p>
-	Payload any
+	Payload    any
 	StatusCode any
 }
 

@@ -4,39 +4,39 @@ package imagebuilder
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Workflows_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type Workflows_WorkflowVersionList struct {
-	Arn any
+	Arn         any
 	DateCreated any
 	Description any
-	Name any
-	Owner any
-	Type any
-	Version any
+	Name        any
+	Owner       any
+	Type        any
+	Version     any
 }
 
 var Workflows_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type WorkflowsConfig struct {
-	ByName any
-	Filters any
+	ByName     any
+	Filters    any
 	MaxResults any
-	NextToken any
-	Owner any
+	NextToken  any
+	Owner      any
 }
 
 type WorkflowsAttrs struct {
-	ByName any
-	Filters any
-	MaxResults any
-	NextToken any
-	Owner any
+	ByName              any
+	Filters             any
+	MaxResults          any
+	NextToken           any
+	Owner               any
 	WorkflowVersionList any
 }
 
@@ -46,11 +46,11 @@ var Workflows = ubx.DataSourceBinding{
 		"ByName": ubx.FieldSpec{WireName: "by_name"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Workflows_FiltersFields,
+			Kind:     "list",
+			Fields:   Workflows_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Owner": ubx.FieldSpec{WireName: "owner"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Owner":      ubx.FieldSpec{WireName: "owner"},
 	},
 }

@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EffectivePolicy_EffectivePolicy struct {
 	LastUpdatedTimestamp any
-	PolicyContent any
-	PolicyType any
-	TargetId any
+	PolicyContent        any
+	PolicyType           any
+	TargetId             any
 }
 
 type EffectivePolicyConfig struct {
 	PolicyType any
-	TargetId any
+	TargetId   any
 }
 
 type EffectivePolicyAttrs struct {
 	// <p>Contains rules to be applied to the affected accounts. The effective policy is the aggregation of any policies the account inherits, plus any policy directly attached to the account.</p>
 	EffectivePolicy any
-	PolicyType any
-	TargetId any
+	PolicyType      any
+	TargetId        any
 }
 
 var EffectivePolicy = ubx.DataSourceBinding{
 	WireType: "aws_organizations_effective_policy",
 	Fields: ubx.FieldMap{
 		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
-		"TargetId": ubx.FieldSpec{WireName: "target_id"},
+		"TargetId":   ubx.FieldSpec{WireName: "target_id"},
 	},
 }

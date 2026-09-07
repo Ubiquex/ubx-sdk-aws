@@ -23,6 +23,6 @@ var KnowledgeBasePolicy = ubx.ResourceBinding{
 	WireType: "aws_bedrock_knowledge_base_policy",
 	Fields: ubx.FieldMap{
 		"KnowledgeBaseId": ubx.FieldSpec{WireName: "knowledge_base_id"},
-		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
+		"PolicyDocument":  ubx.FieldSpec{WireName: "policy_document"},
 	},
 }

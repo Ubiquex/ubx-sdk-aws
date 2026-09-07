@@ -30,7 +30,7 @@ type InputDeviceThumbnailAttrs struct {
 var InputDeviceThumbnail = ubx.DataSourceBinding{
 	WireType: "aws_medialive_input_device_thumbnail",
 	Fields: ubx.FieldMap{
-		"Accept": ubx.FieldSpec{WireName: "accept"},
+		"Accept":        ubx.FieldSpec{WireName: "accept"},
 		"InputDeviceId": ubx.FieldSpec{WireName: "input_device_id"},
 	},
 }

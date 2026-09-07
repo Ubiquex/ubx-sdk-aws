@@ -4,36 +4,36 @@ package fms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AppsLists_AppsLists_AppsList struct {
-	AppName any
-	Port any
+	AppName  any
+	Port     any
 	Protocol any
 }
 
 type AppsLists_AppsLists struct {
 	AppsList any
-	ListArn any
-	ListId any
+	ListArn  any
+	ListId   any
 	ListName any
 }
 
 type AppsListsConfig struct {
 	DefaultLists any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type AppsListsAttrs struct {
-	AppsLists any
+	AppsLists    any
 	DefaultLists any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var AppsLists = ubx.DataSourceBinding{
 	WireType: "aws_fms_apps_lists",
 	Fields: ubx.FieldMap{
 		"DefaultLists": ubx.FieldSpec{WireName: "default_lists"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

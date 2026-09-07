@@ -20,7 +20,7 @@ type Endpoints_Endpoints_RoutingConfig_FailoverConfig_Secondary struct {
 }
 
 type Endpoints_Endpoints_RoutingConfig_FailoverConfig struct {
-	Primary any
+	Primary   any
 	Secondary any
 }
 
@@ -29,34 +29,34 @@ type Endpoints_Endpoints_RoutingConfig struct {
 }
 
 type Endpoints_Endpoints struct {
-	Arn any
-	CreationTime any
-	Description any
-	EndpointId any
-	EndpointUrl any
-	EventBuses any
-	LastModifiedTime any
-	Name any
+	Arn               any
+	CreationTime      any
+	Description       any
+	EndpointId        any
+	EndpointUrl       any
+	EventBuses        any
+	LastModifiedTime  any
+	Name              any
 	ReplicationConfig any
-	RoleArn any
-	RoutingConfig any
-	State any
-	StateReason any
+	RoleArn           any
+	RoutingConfig     any
+	State             any
+	StateReason       any
 }
 
 type EndpointsConfig struct {
 	HomeRegion any
 	MaxResults any
 	NamePrefix any
-	NextToken any
+	NextToken  any
 }
 
 type EndpointsAttrs struct {
-	Endpoints any
+	Endpoints  any
 	HomeRegion any
 	MaxResults any
 	NamePrefix any
-	NextToken any
+	NextToken  any
 }
 
 var Endpoints = ubx.DataSourceBinding{
@@ -65,6 +65,6 @@ var Endpoints = ubx.DataSourceBinding{
 		"HomeRegion": ubx.FieldSpec{WireName: "home_region"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
 		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

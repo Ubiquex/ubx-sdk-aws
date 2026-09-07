@@ -32,9 +32,9 @@ type LocalGatewayRouteAttrs struct {
 var LocalGatewayRoute = ubx.ResourceBinding{
 	WireType: "aws_ec2_local_gateway_route",
 	Fields: ubx.FieldMap{
-		"DestinationCidrBlock": ubx.FieldSpec{WireName: "destination_cidr_block"},
-		"LocalGatewayRouteTableId": ubx.FieldSpec{WireName: "local_gateway_route_table_id"},
+		"DestinationCidrBlock":                ubx.FieldSpec{WireName: "destination_cidr_block"},
+		"LocalGatewayRouteTableId":            ubx.FieldSpec{WireName: "local_gateway_route_table_id"},
 		"LocalGatewayVirtualInterfaceGroupId": ubx.FieldSpec{WireName: "local_gateway_virtual_interface_group_id"},
-		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
+		"NetworkInterfaceId":                  ubx.FieldSpec{WireName: "network_interface_id"},
 	},
 }

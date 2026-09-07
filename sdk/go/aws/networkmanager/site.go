@@ -20,15 +20,15 @@ type Site_Tags struct {
 }
 
 var Site_LocationFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"Latitude": ubx.FieldSpec{WireName: "latitude"},
-		"Longitude": ubx.FieldSpec{WireName: "longitude"},
-	}
+	"Address":   ubx.FieldSpec{WireName: "address"},
+	"Latitude":  ubx.FieldSpec{WireName: "latitude"},
+	"Longitude": ubx.FieldSpec{WireName: "longitude"},
+}
 
 var Site_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SiteConfig struct {
 	// The description of the site.
@@ -63,17 +63,17 @@ type SiteAttrs struct {
 var Site = ubx.ResourceBinding{
 	WireType: "aws_network_manager_site",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"GlobalNetworkId": ubx.FieldSpec{WireName: "global_network_id"},
 		"Location": ubx.FieldSpec{
 			WireName: "location",
-			Kind: "object",
-			Fields: Site_LocationFields,
+			Kind:     "object",
+			Fields:   Site_LocationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Site_TagsFields,
+			Kind:     "list",
+			Fields:   Site_TagsFields,
 		},
 	},
 }

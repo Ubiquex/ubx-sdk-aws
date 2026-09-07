@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SigningJobs_Jobs_SignedObject_S3 struct {
 	BucketName any
-	Key any
+	Key        any
 }
 
 type SigningJobs_Jobs_SignedObject struct {
@@ -18,8 +18,8 @@ type SigningJobs_Jobs_SigningMaterial struct {
 
 type SigningJobs_Jobs_Source_S3 struct {
 	BucketName any
-	Key any
-	Version any
+	Key        any
+	Version    any
 }
 
 type SigningJobs_Jobs_Source struct {
@@ -27,58 +27,58 @@ type SigningJobs_Jobs_Source struct {
 }
 
 type SigningJobs_Jobs struct {
-	CreatedAt any
-	IsRevoked any
-	JobId any
-	JobInvoker any
-	JobOwner any
+	CreatedAt           any
+	IsRevoked           any
+	JobId               any
+	JobInvoker          any
+	JobOwner            any
 	PlatformDisplayName any
-	PlatformId any
-	ProfileName any
-	ProfileVersion any
-	SignatureExpiresAt any
-	SignedObject any
-	SigningMaterial any
-	Source any
-	Status any
+	PlatformId          any
+	ProfileName         any
+	ProfileVersion      any
+	SignatureExpiresAt  any
+	SignedObject        any
+	SigningMaterial     any
+	Source              any
+	Status              any
 }
 
 type SigningJobsConfig struct {
-	IsRevoked any
-	JobInvoker any
-	MaxResults any
-	NextToken any
-	PlatformId any
-	RequestedBy any
-	SignatureExpiresAfter any
+	IsRevoked              any
+	JobInvoker             any
+	MaxResults             any
+	NextToken              any
+	PlatformId             any
+	RequestedBy            any
+	SignatureExpiresAfter  any
 	SignatureExpiresBefore any
-	Status any
+	Status                 any
 }
 
 type SigningJobsAttrs struct {
-	IsRevoked any
-	JobInvoker any
-	Jobs any
-	MaxResults any
-	NextToken any
-	PlatformId any
-	RequestedBy any
-	SignatureExpiresAfter any
+	IsRevoked              any
+	JobInvoker             any
+	Jobs                   any
+	MaxResults             any
+	NextToken              any
+	PlatformId             any
+	RequestedBy            any
+	SignatureExpiresAfter  any
 	SignatureExpiresBefore any
-	Status any
+	Status                 any
 }
 
 var SigningJobs = ubx.DataSourceBinding{
 	WireType: "aws_signer_signing_jobs",
 	Fields: ubx.FieldMap{
-		"IsRevoked": ubx.FieldSpec{WireName: "is_revoked"},
-		"JobInvoker": ubx.FieldSpec{WireName: "job_invoker"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PlatformId": ubx.FieldSpec{WireName: "platform_id"},
-		"RequestedBy": ubx.FieldSpec{WireName: "requested_by"},
-		"SignatureExpiresAfter": ubx.FieldSpec{WireName: "signature_expires_after"},
+		"IsRevoked":              ubx.FieldSpec{WireName: "is_revoked"},
+		"JobInvoker":             ubx.FieldSpec{WireName: "job_invoker"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
+		"PlatformId":             ubx.FieldSpec{WireName: "platform_id"},
+		"RequestedBy":            ubx.FieldSpec{WireName: "requested_by"},
+		"SignatureExpiresAfter":  ubx.FieldSpec{WireName: "signature_expires_after"},
 		"SignatureExpiresBefore": ubx.FieldSpec{WireName: "signature_expires_before"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":                 ubx.FieldSpec{WireName: "status"},
 	},
 }

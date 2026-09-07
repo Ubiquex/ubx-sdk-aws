@@ -4,39 +4,39 @@ package models_v2_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsV2LexBotResourceGenerations_GenerationSummaries struct {
-	CreationDateTime any
-	GenerationId any
-	GenerationStatus any
+	CreationDateTime    any
+	GenerationId        any
+	GenerationStatus    any
 	LastUpdatedDateTime any
 }
 
 type ModelsV2LexBotResourceGenerations_SortBy struct {
 	Attribute any
-	Order any
+	Order     any
 }
 
 var ModelsV2LexBotResourceGenerations_SortByFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Order":     ubx.FieldSpec{WireName: "order"},
+}
 
 type ModelsV2LexBotResourceGenerationsConfig struct {
-	BotId any
+	BotId      any
 	BotVersion any
-	LocaleId any
+	LocaleId   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Specifies the attribute and method by which to sort the generation request information.</p>
 	SortBy any
 }
 
 type ModelsV2LexBotResourceGenerationsAttrs struct {
-	BotId any
-	BotVersion any
+	BotId               any
+	BotVersion          any
 	GenerationSummaries any
-	LocaleId any
-	MaxResults any
-	NextToken any
+	LocaleId            any
+	MaxResults          any
+	NextToken           any
 	// <p>Specifies the attribute and method by which to sort the generation request information.</p>
 	SortBy any
 }
@@ -44,15 +44,15 @@ type ModelsV2LexBotResourceGenerationsAttrs struct {
 var ModelsV2LexBotResourceGenerations = ubx.DataSourceBinding{
 	WireType: "aws_models_v2_lex_bot_resource_generations",
 	Fields: ubx.FieldMap{
-		"BotId": ubx.FieldSpec{WireName: "bot_id"},
+		"BotId":      ubx.FieldSpec{WireName: "bot_id"},
 		"BotVersion": ubx.FieldSpec{WireName: "bot_version"},
-		"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
+		"LocaleId":   ubx.FieldSpec{WireName: "locale_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SortBy": ubx.FieldSpec{
 			WireName: "sort_by",
-			Kind: "object",
-			Fields: ModelsV2LexBotResourceGenerations_SortByFields,
+			Kind:     "object",
+			Fields:   ModelsV2LexBotResourceGenerations_SortByFields,
 		},
 	},
 }

@@ -26,8 +26,8 @@ type SubnetGroupAttrs struct {
 var SubnetGroup = ubx.ResourceBinding{
 	WireType: "aws_dax_subnet_group",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"SubnetGroupName": ubx.FieldSpec{WireName: "subnet_group_name"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"SubnetIds":       ubx.FieldSpec{WireName: "subnet_ids"},
 	},
 }

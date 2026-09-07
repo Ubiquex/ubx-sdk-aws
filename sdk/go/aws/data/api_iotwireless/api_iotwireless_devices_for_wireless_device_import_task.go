@@ -4,9 +4,9 @@ package api_iotwireless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotwirelessDevicesForWirelessDeviceImportTask_ImportedWirelessDeviceList_Sidewalk struct {
-	LastUpdateTime any
-	OnboardingStatus any
-	OnboardingStatusReason any
+	LastUpdateTime          any
+	OnboardingStatus        any
+	OnboardingStatusReason  any
 	SidewalkManufacturingSn any
 }
 
@@ -27,29 +27,29 @@ type ApiIotwirelessDevicesForWirelessDeviceImportTaskConfig struct {
 	Id any
 	// <p>The maximum number of results to return in this operation.</p>
 	MaxResults any
-	NextToken any
-	Status any
+	NextToken  any
+	Status     any
 }
 
 type ApiIotwirelessDevicesForWirelessDeviceImportTaskAttrs struct {
-	DestinationName any
-	Id any
+	DestinationName            any
+	Id                         any
 	ImportedWirelessDeviceList any
 	// <p>The maximum number of results to return in this operation.</p>
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	Positioning any
 	// <p>The Sidewalk-related object containing positioning information used to configure Sidewalk devices during import.</p>
 	Sidewalk any
-	Status any
+	Status   any
 }
 
 var ApiIotwirelessDevicesForWirelessDeviceImportTask = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_devices_for_wireless_device_import_task",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":         ubx.FieldSpec{WireName: "id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Status":     ubx.FieldSpec{WireName: "status"},
 	},
 }

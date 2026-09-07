@@ -27,7 +27,7 @@ var IdentityPoolRoleAttachment = ubx.ResourceBinding{
 	WireType: "aws_cognito_identity_pool_role_attachment",
 	Fields: ubx.FieldMap{
 		"IdentityPoolId": ubx.FieldSpec{WireName: "identity_pool_id"},
-		"RoleMappings": ubx.FieldSpec{WireName: "role_mappings"},
-		"Roles": ubx.FieldSpec{WireName: "roles"},
+		"RoleMappings":   ubx.FieldSpec{WireName: "role_mappings"},
+		"Roles":          ubx.FieldSpec{WireName: "roles"},
 	},
 }

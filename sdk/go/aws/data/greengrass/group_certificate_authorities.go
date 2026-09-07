@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupCertificateAuthorities_GroupCertificateAuthorities struct {
 	GroupCertificateAuthorityArn any
-	GroupCertificateAuthorityId any
+	GroupCertificateAuthorityId  any
 }
 
 type GroupCertificateAuthoritiesConfig struct {
@@ -14,7 +14,7 @@ type GroupCertificateAuthoritiesConfig struct {
 
 type GroupCertificateAuthoritiesAttrs struct {
 	GroupCertificateAuthorities any
-	GroupId any
+	GroupId                     any
 }
 
 var GroupCertificateAuthorities = ubx.DataSourceBinding{

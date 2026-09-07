@@ -8,43 +8,43 @@ type NetworkFirewallAnalysisReportResults_AnalysisReportResults_Hits struct {
 }
 
 type NetworkFirewallAnalysisReportResults_AnalysisReportResults struct {
-	Domain any
+	Domain        any
 	FirstAccessed any
-	Hits any
-	LastAccessed any
-	Protocol any
+	Hits          any
+	LastAccessed  any
+	Protocol      any
 	UniqueSources any
 }
 
 type NetworkFirewallAnalysisReportResultsConfig struct {
 	AnalysisReportId any
-	FirewallArn any
-	FirewallName any
-	MaxResults any
-	NextToken any
+	FirewallArn      any
+	FirewallName     any
+	MaxResults       any
+	NextToken        any
 }
 
 type NetworkFirewallAnalysisReportResultsAttrs struct {
-	AnalysisReportId any
+	AnalysisReportId      any
 	AnalysisReportResults any
-	AnalysisType any
-	EndTime any
-	FirewallArn any
-	FirewallName any
-	MaxResults any
-	NextToken any
-	ReportTime any
-	StartTime any
-	Status any
+	AnalysisType          any
+	EndTime               any
+	FirewallArn           any
+	FirewallName          any
+	MaxResults            any
+	NextToken             any
+	ReportTime            any
+	StartTime             any
+	Status                any
 }
 
 var NetworkFirewallAnalysisReportResults = ubx.DataSourceBinding{
 	WireType: "aws_network_firewall_analysis_report_results",
 	Fields: ubx.FieldMap{
 		"AnalysisReportId": ubx.FieldSpec{WireName: "analysis_report_id"},
-		"FirewallArn": ubx.FieldSpec{WireName: "firewall_arn"},
-		"FirewallName": ubx.FieldSpec{WireName: "firewall_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"FirewallArn":      ubx.FieldSpec{WireName: "firewall_arn"},
+		"FirewallName":     ubx.FieldSpec{WireName: "firewall_name"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

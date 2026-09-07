@@ -4,39 +4,39 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AggregateDiscoveredResourceCounts_Filters struct {
-	AccountId any
-	Region any
+	AccountId    any
+	Region       any
 	ResourceType any
 }
 
 type AggregateDiscoveredResourceCounts_GroupedResourceCounts struct {
-	GroupName any
+	GroupName     any
 	ResourceCount any
 }
 
 var AggregateDiscoveredResourceCounts_FiltersFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-	}
+	"AccountId":    ubx.FieldSpec{WireName: "account_id"},
+	"Region":       ubx.FieldSpec{WireName: "region"},
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+}
 
 type AggregateDiscoveredResourceCountsConfig struct {
 	ConfigurationAggregatorName any
 	// <p>Filters the resource count based on account ID, region, and resource type.</p>
-	Filters any
+	Filters    any
 	GroupByKey any
-	Limit any
-	NextToken any
+	Limit      any
+	NextToken  any
 }
 
 type AggregateDiscoveredResourceCountsAttrs struct {
 	ConfigurationAggregatorName any
 	// <p>Filters the resource count based on account ID, region, and resource type.</p>
-	Filters any
-	GroupByKey any
-	GroupedResourceCounts any
-	Limit any
-	NextToken any
+	Filters                  any
+	GroupByKey               any
+	GroupedResourceCounts    any
+	Limit                    any
+	NextToken                any
 	TotalDiscoveredResources any
 }
 
@@ -46,11 +46,11 @@ var AggregateDiscoveredResourceCounts = ubx.DataSourceBinding{
 		"ConfigurationAggregatorName": ubx.FieldSpec{WireName: "configuration_aggregator_name"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: AggregateDiscoveredResourceCounts_FiltersFields,
+			Kind:     "object",
+			Fields:   AggregateDiscoveredResourceCounts_FiltersFields,
 		},
 		"GroupByKey": ubx.FieldSpec{WireName: "group_by_key"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

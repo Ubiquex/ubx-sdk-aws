@@ -4,28 +4,28 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Nodes_Filters struct {
-	Key any
-	Type any
+	Key    any
+	Type   any
 	Values any
 }
 
 type Nodes_Nodes_NodeType_Instance struct {
-	AgentType any
-	AgentVersion any
-	AvailabilityZone any
+	AgentType          any
+	AgentVersion       any
+	AvailabilityZone   any
 	AvailabilityZoneId any
-	ComputerName any
-	InstanceStatus any
-	IpAddress any
-	ManagedStatus any
-	Name any
-	PlatformName any
-	PlatformType any
-	PlatformVersion any
-	ResourceType any
-	SourceId any
-	SourceLocation any
-	SourceType any
+	ComputerName       any
+	InstanceStatus     any
+	IpAddress          any
+	ManagedStatus      any
+	Name               any
+	PlatformName       any
+	PlatformType       any
+	PlatformVersion    any
+	ResourceType       any
+	SourceId           any
+	SourceLocation     any
+	SourceType         any
 }
 
 type Nodes_Nodes_NodeType struct {
@@ -33,38 +33,38 @@ type Nodes_Nodes_NodeType struct {
 }
 
 type Nodes_Nodes_Owner struct {
-	AccountId any
-	OrganizationalUnitId any
+	AccountId              any
+	OrganizationalUnitId   any
 	OrganizationalUnitPath any
 }
 
 type Nodes_Nodes struct {
 	CaptureTime any
-	Id any
-	NodeType any
-	Owner any
-	Region any
+	Id          any
+	NodeType    any
+	Owner       any
+	Region      any
 }
 
 var Nodes_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type NodesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	SyncName any
+	NextToken  any
+	SyncName   any
 }
 
 type NodesAttrs struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	Nodes any
-	SyncName any
+	NextToken  any
+	Nodes      any
+	SyncName   any
 }
 
 var Nodes = ubx.DataSourceBinding{
@@ -72,11 +72,11 @@ var Nodes = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Nodes_FiltersFields,
+			Kind:     "list",
+			Fields:   Nodes_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SyncName": ubx.FieldSpec{WireName: "sync_name"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"SyncName":   ubx.FieldSpec{WireName: "sync_name"},
 	},
 }

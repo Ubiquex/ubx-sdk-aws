@@ -21,6 +21,6 @@ var VpnconnectionRoute = ubx.ResourceBinding{
 	WireType: "aws_ec2_vpnconnection_route",
 	Fields: ubx.FieldMap{
 		"DestinationCidrBlock": ubx.FieldSpec{WireName: "destination_cidr_block"},
-		"VpnConnectionId": ubx.FieldSpec{WireName: "vpn_connection_id"},
+		"VpnConnectionId":      ubx.FieldSpec{WireName: "vpn_connection_id"},
 	},
 }

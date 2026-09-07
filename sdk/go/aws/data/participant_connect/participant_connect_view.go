@@ -4,29 +4,29 @@ package participant_connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ParticipantConnectView_View_Content struct {
-	Actions any
+	Actions     any
 	InputSchema any
-	Template any
+	Template    any
 }
 
 type ParticipantConnectView_View struct {
 	Arn any
 	// <p>View content containing all content necessary to render a view except for runtime input data.</p>
 	Content any
-	Id any
-	Name any
+	Id      any
+	Name    any
 	Version any
 }
 
 type ParticipantConnectViewConfig struct {
 	ConnectionToken any
-	ViewToken any
+	ViewToken       any
 }
 
 type ParticipantConnectViewAttrs struct {
 	ConnectionToken any
 	// <p>A view resource object. Contains metadata and content necessary to render the view.</p>
-	View any
+	View      any
 	ViewToken any
 }
 
@@ -34,6 +34,6 @@ var ParticipantConnectView = ubx.DataSourceBinding{
 	WireType: "aws_participant_connect_view",
 	Fields: ubx.FieldMap{
 		"ConnectionToken": ubx.FieldSpec{WireName: "connection_token"},
-		"ViewToken": ubx.FieldSpec{WireName: "view_token"},
+		"ViewToken":       ubx.FieldSpec{WireName: "view_token"},
 	},
 }

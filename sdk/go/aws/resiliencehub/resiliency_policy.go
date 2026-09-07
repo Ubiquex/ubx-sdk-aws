@@ -22,32 +22,32 @@ type ResiliencyPolicy_Policy struct {
 }
 
 var ResiliencyPolicy_Policy_AzFields = ubx.FieldMap{
-		"RpoInSecs": ubx.FieldSpec{WireName: "rpo_in_secs"},
-		"RtoInSecs": ubx.FieldSpec{WireName: "rto_in_secs"},
-	}
+	"RpoInSecs": ubx.FieldSpec{WireName: "rpo_in_secs"},
+	"RtoInSecs": ubx.FieldSpec{WireName: "rto_in_secs"},
+}
 
 var ResiliencyPolicy_PolicyFields = ubx.FieldMap{
-		"Az": ubx.FieldSpec{
-			WireName: "az",
-			Kind: "object",
-			Fields: ResiliencyPolicy_Policy_AzFields,
-		},
-		"Hardware": ubx.FieldSpec{
-			WireName: "hardware",
-			Kind: "object",
-			Fields: ResiliencyPolicy_Policy_AzFields,
-		},
-		"Region": ubx.FieldSpec{
-			WireName: "region",
-			Kind: "object",
-			Fields: ResiliencyPolicy_Policy_AzFields,
-		},
-		"Software": ubx.FieldSpec{
-			WireName: "software",
-			Kind: "object",
-			Fields: ResiliencyPolicy_Policy_AzFields,
-		},
-	}
+	"Az": ubx.FieldSpec{
+		WireName: "az",
+		Kind:     "object",
+		Fields:   ResiliencyPolicy_Policy_AzFields,
+	},
+	"Hardware": ubx.FieldSpec{
+		WireName: "hardware",
+		Kind:     "object",
+		Fields:   ResiliencyPolicy_Policy_AzFields,
+	},
+	"Region": ubx.FieldSpec{
+		WireName: "region",
+		Kind:     "object",
+		Fields:   ResiliencyPolicy_Policy_AzFields,
+	},
+	"Software": ubx.FieldSpec{
+		WireName: "software",
+		Kind:     "object",
+		Fields:   ResiliencyPolicy_Policy_AzFields,
+	},
+}
 
 type ResiliencyPolicyConfig struct {
 	// Data Location Constraint of the Policy.
@@ -87,12 +87,12 @@ var ResiliencyPolicy = ubx.ResourceBinding{
 		"DataLocationConstraint": ubx.FieldSpec{WireName: "data_location_constraint"},
 		"Policy": ubx.FieldSpec{
 			WireName: "policy",
-			Kind: "object",
-			Fields: ResiliencyPolicy_PolicyFields,
+			Kind:     "object",
+			Fields:   ResiliencyPolicy_PolicyFields,
 		},
 		"PolicyDescription": ubx.FieldSpec{WireName: "policy_description"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Tier": ubx.FieldSpec{WireName: "tier"},
+		"PolicyName":        ubx.FieldSpec{WireName: "policy_name"},
+		"Tags":              ubx.FieldSpec{WireName: "tags"},
+		"Tier":              ubx.FieldSpec{WireName: "tier"},
 	},
 }

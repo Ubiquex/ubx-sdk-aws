@@ -6,7 +6,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type BlacklistReports_BlacklistReport struct {
 	Description any
 	ListingTime any
-	RblName any
+	RblName     any
 }
 
 type BlacklistReportsConfig struct {
@@ -15,7 +15,7 @@ type BlacklistReportsConfig struct {
 
 type BlacklistReportsAttrs struct {
 	BlacklistItemNames any
-	BlacklistReport any
+	BlacklistReport    any
 }
 
 var BlacklistReports = ubx.DataSourceBinding{

@@ -5,61 +5,61 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ScheduledQueries_ScheduledQueries_DestinationConfiguration_LookupTableConfiguration struct {
 	Description any
-	KmsKeyId any
-	RoleArn any
-	TableName any
-	Tags any
+	KmsKeyId    any
+	RoleArn     any
+	TableName   any
+	Tags        any
 }
 
 type ScheduledQueries_ScheduledQueries_DestinationConfiguration_S3Configuration struct {
 	DestinationIdentifier any
-	KmsKeyId any
-	OwnerAccountId any
-	RoleArn any
+	KmsKeyId              any
+	OwnerAccountId        any
+	RoleArn               any
 }
 
 type ScheduledQueries_ScheduledQueries_DestinationConfiguration struct {
 	LookupTableConfiguration any
-	S3Configuration any
+	S3Configuration          any
 }
 
 type ScheduledQueries_ScheduledQueries struct {
-	CreationTime any
+	CreationTime             any
 	DestinationConfiguration any
-	LastExecutionStatus any
-	LastTriggeredTime any
-	LastUpdatedTime any
-	Name any
-	ScheduleExpression any
-	ScheduleType any
-	ScheduledQueryArn any
-	State any
-	Timezone any
+	LastExecutionStatus      any
+	LastTriggeredTime        any
+	LastUpdatedTime          any
+	Name                     any
+	ScheduleExpression       any
+	ScheduleType             any
+	ScheduledQueryArn        any
+	State                    any
+	Timezone                 any
 }
 
 type ScheduledQueriesConfig struct {
 	MaxResults any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-	NextToken any
+	NextToken    any
 	ScheduleType any
-	State any
+	State        any
 }
 
 type ScheduledQueriesAttrs struct {
 	MaxResults any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-	NextToken any
-	ScheduleType any
+	NextToken        any
+	ScheduleType     any
 	ScheduledQueries any
-	State any
+	State            any
 }
 
 var ScheduledQueries = ubx.DataSourceBinding{
 	WireType: "aws_logs_scheduled_queries",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"ScheduleType": ubx.FieldSpec{WireName: "schedule_type"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"State":        ubx.FieldSpec{WireName: "state"},
 	},
 }

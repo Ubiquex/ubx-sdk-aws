@@ -4,24 +4,24 @@ package rekognition
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProjectPolicies_ProjectPolicies struct {
-	CreationTimestamp any
+	CreationTimestamp    any
 	LastUpdatedTimestamp any
-	PolicyDocument any
-	PolicyName any
-	PolicyRevisionId any
-	ProjectArn any
+	PolicyDocument       any
+	PolicyName           any
+	PolicyRevisionId     any
+	ProjectArn           any
 }
 
 type ProjectPoliciesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	ProjectArn any
 }
 
 type ProjectPoliciesAttrs struct {
-	MaxResults any
-	NextToken any
-	ProjectArn any
+	MaxResults      any
+	NextToken       any
+	ProjectArn      any
 	ProjectPolicies any
 }
 
@@ -29,7 +29,7 @@ var ProjectPolicies = ubx.DataSourceBinding{
 	WireType: "aws_rekognition_project_policies",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ProjectArn": ubx.FieldSpec{WireName: "project_arn"},
 	},
 }

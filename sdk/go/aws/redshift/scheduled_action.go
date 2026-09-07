@@ -48,13 +48,13 @@ type ScheduledActionAttrs struct {
 var ScheduledAction = ubx.ResourceBinding{
 	WireType: "aws_redshift_scheduled_action",
 	Fields: ubx.FieldMap{
-		"Enable": ubx.FieldSpec{WireName: "enable"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"IamRole": ubx.FieldSpec{WireName: "iam_role"},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
+		"Enable":                     ubx.FieldSpec{WireName: "enable"},
+		"EndTime":                    ubx.FieldSpec{WireName: "end_time"},
+		"IamRole":                    ubx.FieldSpec{WireName: "iam_role"},
+		"Schedule":                   ubx.FieldSpec{WireName: "schedule"},
 		"ScheduledActionDescription": ubx.FieldSpec{WireName: "scheduled_action_description"},
-		"ScheduledActionName": ubx.FieldSpec{WireName: "scheduled_action_name"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"TargetAction": ubx.FieldSpec{WireName: "target_action"},
+		"ScheduledActionName":        ubx.FieldSpec{WireName: "scheduled_action_name"},
+		"StartTime":                  ubx.FieldSpec{WireName: "start_time"},
+		"TargetAction":               ubx.FieldSpec{WireName: "target_action"},
 	},
 }

@@ -5,37 +5,37 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DevicePools_DevicePools_Rules struct {
 	Attribute any
-	Operator any
-	Value any
+	Operator  any
+	Value     any
 }
 
 type DevicePools_DevicePools struct {
-	Arn any
+	Arn         any
 	Description any
-	MaxDevices any
-	Name any
-	Rules any
-	Type any
+	MaxDevices  any
+	Name        any
+	Rules       any
+	Type        any
 }
 
 type DevicePoolsConfig struct {
-	Arn any
+	Arn       any
 	NextToken any
-	Type any
+	Type      any
 }
 
 type DevicePoolsAttrs struct {
-	Arn any
+	Arn         any
 	DevicePools any
-	NextToken any
-	Type any
+	NextToken   any
+	Type        any
 }
 
 var DevicePools = ubx.DataSourceBinding{
 	WireType: "aws_devicefarm_device_pools",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":       ubx.FieldSpec{WireName: "arn"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":      ubx.FieldSpec{WireName: "type"},
 	},
 }

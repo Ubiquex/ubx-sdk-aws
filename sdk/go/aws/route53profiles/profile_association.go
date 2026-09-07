@@ -10,9 +10,9 @@ type ProfileAssociation_Tags struct {
 }
 
 var ProfileAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ProfileAssociationConfig struct {
 	// The Amazon Resource Name (ARN) of the profile association.
@@ -45,14 +45,14 @@ type ProfileAssociationAttrs struct {
 var ProfileAssociation = ubx.ResourceBinding{
 	WireType: "aws_route53_profiles_profile_association",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
+		"Arn":        ubx.FieldSpec{WireName: "arn"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"ProfileId":  ubx.FieldSpec{WireName: "profile_id"},
 		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ProfileAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   ProfileAssociation_TagsFields,
 		},
 	},
 }

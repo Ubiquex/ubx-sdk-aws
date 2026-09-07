@@ -4,29 +4,29 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserNotifications_UserNotifications struct {
-	Content any
-	CreatedAt any
-	ExpiresAt any
-	InstanceId any
-	NotificationId any
+	Content            any
+	CreatedAt          any
+	ExpiresAt          any
+	InstanceId         any
+	NotificationId     any
 	NotificationStatus any
-	Priority any
-	RecipientId any
-	Source any
+	Priority           any
+	RecipientId        any
+	Source             any
 }
 
 type UserNotificationsConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
-	UserId any
+	NextToken  any
+	UserId     any
 }
 
 type UserNotificationsAttrs struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
-	UserId any
+	NextToken  any
+	UserId     any
 	// <p>A list of user notification summaries.</p>
 	UserNotifications any
 }
@@ -36,7 +36,7 @@ var UserNotifications = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"UserId":     ubx.FieldSpec{WireName: "user_id"},
 	},
 }

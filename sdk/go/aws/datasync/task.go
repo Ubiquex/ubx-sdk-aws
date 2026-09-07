@@ -126,119 +126,119 @@ type Task_TaskReportConfig struct {
 }
 
 var Task_ExcludesFields = ubx.FieldMap{
-		"FilterType": ubx.FieldSpec{WireName: "filter_type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"FilterType": ubx.FieldSpec{WireName: "filter_type"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var Task_ManifestConfig_Source_S3Fields = ubx.FieldMap{
-		"BucketAccessRoleArn": ubx.FieldSpec{WireName: "bucket_access_role_arn"},
-		"ManifestObjectPath": ubx.FieldSpec{WireName: "manifest_object_path"},
-		"ManifestObjectVersionId": ubx.FieldSpec{WireName: "manifest_object_version_id"},
-		"S3BucketArn": ubx.FieldSpec{WireName: "s3_bucket_arn"},
-	}
+	"BucketAccessRoleArn":     ubx.FieldSpec{WireName: "bucket_access_role_arn"},
+	"ManifestObjectPath":      ubx.FieldSpec{WireName: "manifest_object_path"},
+	"ManifestObjectVersionId": ubx.FieldSpec{WireName: "manifest_object_version_id"},
+	"S3BucketArn":             ubx.FieldSpec{WireName: "s3_bucket_arn"},
+}
 
 var Task_ManifestConfig_SourceFields = ubx.FieldMap{
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Task_ManifestConfig_Source_S3Fields,
-		},
-	}
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Task_ManifestConfig_Source_S3Fields,
+	},
+}
 
 var Task_ManifestConfigFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: Task_ManifestConfig_SourceFields,
-		},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+	"Format": ubx.FieldSpec{WireName: "format"},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   Task_ManifestConfig_SourceFields,
+	},
+}
 
 var Task_OptionsFields = ubx.FieldMap{
-		"Atime": ubx.FieldSpec{WireName: "atime"},
-		"BytesPerSecond": ubx.FieldSpec{WireName: "bytes_per_second"},
-		"Gid": ubx.FieldSpec{WireName: "gid"},
-		"LogLevel": ubx.FieldSpec{WireName: "log_level"},
-		"Mtime": ubx.FieldSpec{WireName: "mtime"},
-		"ObjectTags": ubx.FieldSpec{WireName: "object_tags"},
-		"OverwriteMode": ubx.FieldSpec{WireName: "overwrite_mode"},
-		"PosixPermissions": ubx.FieldSpec{WireName: "posix_permissions"},
-		"PreserveDeletedFiles": ubx.FieldSpec{WireName: "preserve_deleted_files"},
-		"PreserveDevices": ubx.FieldSpec{WireName: "preserve_devices"},
-		"SecurityDescriptorCopyFlags": ubx.FieldSpec{WireName: "security_descriptor_copy_flags"},
-		"TaskQueueing": ubx.FieldSpec{WireName: "task_queueing"},
-		"TransferMode": ubx.FieldSpec{WireName: "transfer_mode"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"VerifyMode": ubx.FieldSpec{WireName: "verify_mode"},
-	}
+	"Atime":                       ubx.FieldSpec{WireName: "atime"},
+	"BytesPerSecond":              ubx.FieldSpec{WireName: "bytes_per_second"},
+	"Gid":                         ubx.FieldSpec{WireName: "gid"},
+	"LogLevel":                    ubx.FieldSpec{WireName: "log_level"},
+	"Mtime":                       ubx.FieldSpec{WireName: "mtime"},
+	"ObjectTags":                  ubx.FieldSpec{WireName: "object_tags"},
+	"OverwriteMode":               ubx.FieldSpec{WireName: "overwrite_mode"},
+	"PosixPermissions":            ubx.FieldSpec{WireName: "posix_permissions"},
+	"PreserveDeletedFiles":        ubx.FieldSpec{WireName: "preserve_deleted_files"},
+	"PreserveDevices":             ubx.FieldSpec{WireName: "preserve_devices"},
+	"SecurityDescriptorCopyFlags": ubx.FieldSpec{WireName: "security_descriptor_copy_flags"},
+	"TaskQueueing":                ubx.FieldSpec{WireName: "task_queueing"},
+	"TransferMode":                ubx.FieldSpec{WireName: "transfer_mode"},
+	"Uid":                         ubx.FieldSpec{WireName: "uid"},
+	"VerifyMode":                  ubx.FieldSpec{WireName: "verify_mode"},
+}
 
 var Task_ScheduleFields = ubx.FieldMap{
-		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+}
 
 var Task_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Task_TaskReportConfig_Destination_S3Fields = ubx.FieldMap{
-		"BucketAccessRoleArn": ubx.FieldSpec{WireName: "bucket_access_role_arn"},
-		"S3BucketArn": ubx.FieldSpec{WireName: "s3_bucket_arn"},
-		"Subdirectory": ubx.FieldSpec{WireName: "subdirectory"},
-	}
+	"BucketAccessRoleArn": ubx.FieldSpec{WireName: "bucket_access_role_arn"},
+	"S3BucketArn":         ubx.FieldSpec{WireName: "s3_bucket_arn"},
+	"Subdirectory":        ubx.FieldSpec{WireName: "subdirectory"},
+}
 
 var Task_TaskReportConfig_DestinationFields = ubx.FieldMap{
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Task_TaskReportConfig_Destination_S3Fields,
-		},
-	}
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Task_TaskReportConfig_Destination_S3Fields,
+	},
+}
 
 var Task_TaskReportConfig_Overrides_DeletedFields = ubx.FieldMap{
-		"ReportLevel": ubx.FieldSpec{WireName: "report_level"},
-	}
+	"ReportLevel": ubx.FieldSpec{WireName: "report_level"},
+}
 
 var Task_TaskReportConfig_OverridesFields = ubx.FieldMap{
-		"Deleted": ubx.FieldSpec{
-			WireName: "deleted",
-			Kind: "object",
-			Fields: Task_TaskReportConfig_Overrides_DeletedFields,
-		},
-		"Skipped": ubx.FieldSpec{
-			WireName: "skipped",
-			Kind: "object",
-			Fields: Task_TaskReportConfig_Overrides_DeletedFields,
-		},
-		"Transferred": ubx.FieldSpec{
-			WireName: "transferred",
-			Kind: "object",
-			Fields: Task_TaskReportConfig_Overrides_DeletedFields,
-		},
-		"Verified": ubx.FieldSpec{
-			WireName: "verified",
-			Kind: "object",
-			Fields: Task_TaskReportConfig_Overrides_DeletedFields,
-		},
-	}
+	"Deleted": ubx.FieldSpec{
+		WireName: "deleted",
+		Kind:     "object",
+		Fields:   Task_TaskReportConfig_Overrides_DeletedFields,
+	},
+	"Skipped": ubx.FieldSpec{
+		WireName: "skipped",
+		Kind:     "object",
+		Fields:   Task_TaskReportConfig_Overrides_DeletedFields,
+	},
+	"Transferred": ubx.FieldSpec{
+		WireName: "transferred",
+		Kind:     "object",
+		Fields:   Task_TaskReportConfig_Overrides_DeletedFields,
+	},
+	"Verified": ubx.FieldSpec{
+		WireName: "verified",
+		Kind:     "object",
+		Fields:   Task_TaskReportConfig_Overrides_DeletedFields,
+	},
+}
 
 var Task_TaskReportConfigFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: Task_TaskReportConfig_DestinationFields,
-		},
-		"ObjectVersionIds": ubx.FieldSpec{WireName: "object_version_ids"},
-		"OutputType": ubx.FieldSpec{WireName: "output_type"},
-		"Overrides": ubx.FieldSpec{
-			WireName: "overrides",
-			Kind: "object",
-			Fields: Task_TaskReportConfig_OverridesFields,
-		},
-		"ReportLevel": ubx.FieldSpec{WireName: "report_level"},
-	}
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   Task_TaskReportConfig_DestinationFields,
+	},
+	"ObjectVersionIds": ubx.FieldSpec{WireName: "object_version_ids"},
+	"OutputType":       ubx.FieldSpec{WireName: "output_type"},
+	"Overrides": ubx.FieldSpec{
+		WireName: "overrides",
+		Kind:     "object",
+		Fields:   Task_TaskReportConfig_OverridesFields,
+	},
+	"ReportLevel": ubx.FieldSpec{WireName: "report_level"},
+}
 
 type TaskConfig struct {
 	// The ARN of the Amazon CloudWatch log group that is used to monitor and log events in the task.
@@ -305,45 +305,45 @@ type TaskAttrs struct {
 var Task = ubx.ResourceBinding{
 	WireType: "aws_data_sync_task",
 	Fields: ubx.FieldMap{
-		"CloudWatchLogGroupArn": ubx.FieldSpec{WireName: "cloud_watch_log_group_arn"},
+		"CloudWatchLogGroupArn":  ubx.FieldSpec{WireName: "cloud_watch_log_group_arn"},
 		"DestinationLocationArn": ubx.FieldSpec{WireName: "destination_location_arn"},
 		"Excludes": ubx.FieldSpec{
 			WireName: "excludes",
-			Kind: "list",
-			Fields: Task_ExcludesFields,
+			Kind:     "list",
+			Fields:   Task_ExcludesFields,
 		},
 		"Includes": ubx.FieldSpec{
 			WireName: "includes",
-			Kind: "list",
-			Fields: Task_ExcludesFields,
+			Kind:     "list",
+			Fields:   Task_ExcludesFields,
 		},
 		"ManifestConfig": ubx.FieldSpec{
 			WireName: "manifest_config",
-			Kind: "object",
-			Fields: Task_ManifestConfigFields,
+			Kind:     "object",
+			Fields:   Task_ManifestConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Options": ubx.FieldSpec{
 			WireName: "options",
-			Kind: "object",
-			Fields: Task_OptionsFields,
+			Kind:     "object",
+			Fields:   Task_OptionsFields,
 		},
 		"Schedule": ubx.FieldSpec{
 			WireName: "schedule",
-			Kind: "object",
-			Fields: Task_ScheduleFields,
+			Kind:     "object",
+			Fields:   Task_ScheduleFields,
 		},
 		"SourceLocationArn": ubx.FieldSpec{WireName: "source_location_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Task_TagsFields,
+			Kind:     "list",
+			Fields:   Task_TagsFields,
 		},
 		"TaskMode": ubx.FieldSpec{WireName: "task_mode"},
 		"TaskReportConfig": ubx.FieldSpec{
 			WireName: "task_report_config",
-			Kind: "object",
-			Fields: Task_TaskReportConfigFields,
+			Kind:     "object",
+			Fields:   Task_TaskReportConfigFields,
 		},
 	},
 }

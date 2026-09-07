@@ -4,16 +4,16 @@ package states
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MapRun_ExecutionCounts struct {
-	Aborted any
-	Failed any
+	Aborted               any
+	Failed                any
 	FailuresNotRedrivable any
-	Pending any
-	PendingRedrive any
-	ResultsWritten any
-	Running any
-	Succeeded any
-	TimedOut any
-	Total any
+	Pending               any
+	PendingRedrive        any
+	ResultsWritten        any
+	Running               any
+	Succeeded             any
+	TimedOut              any
+	Total                 any
 }
 
 type MapRunConfig struct {
@@ -25,15 +25,15 @@ type MapRunAttrs struct {
 	// <p>Contains details about all of the child workflow executions started by a Map Run.</p>
 	ExecutionCounts any
 	// <p>Contains details about items that were processed in all of the child workflow executions that were started by a Map Run.</p>
-	ItemCounts any
-	MapRunArn any
-	MaxConcurrency any
-	RedriveCount any
-	RedriveDate any
-	StartDate any
-	Status any
-	StopDate any
-	ToleratedFailureCount any
+	ItemCounts                 any
+	MapRunArn                  any
+	MaxConcurrency             any
+	RedriveCount               any
+	RedriveDate                any
+	StartDate                  any
+	Status                     any
+	StopDate                   any
+	ToleratedFailureCount      any
 	ToleratedFailurePercentage any
 }
 

@@ -12,30 +12,30 @@ type RestoreJobConfig struct {
 }
 
 type RestoreJobAttrs struct {
-	AccountId any
+	AccountId         any
 	BackupSizeInBytes any
-	BackupVaultArn any
-	CompletionDate any
+	BackupVaultArn    any
+	CompletionDate    any
 	// <p>Contains information about the restore testing plan that Backup used to initiate the restore job.</p>
-	CreatedBy any
-	CreatedResourceArn any
-	CreationDate any
-	DeletionStatus any
-	DeletionStatusMessage any
+	CreatedBy                     any
+	CreatedResourceArn            any
+	CreationDate                  any
+	DeletionStatus                any
+	DeletionStatusMessage         any
 	ExpectedCompletionTimeMinutes any
-	IamRoleArn any
-	IsParent any
-	ParentJobId any
-	PercentDone any
-	RecoveryPointArn any
-	RecoveryPointCreationDate any
-	ResourceType any
-	RestoreJobId any
-	SourceResourceArn any
-	Status any
-	StatusMessage any
-	ValidationStatus any
-	ValidationStatusMessage any
+	IamRoleArn                    any
+	IsParent                      any
+	ParentJobId                   any
+	PercentDone                   any
+	RecoveryPointArn              any
+	RecoveryPointCreationDate     any
+	ResourceType                  any
+	RestoreJobId                  any
+	SourceResourceArn             any
+	Status                        any
+	StatusMessage                 any
+	ValidationStatus              any
+	ValidationStatusMessage       any
 }
 
 var RestoreJob = ubx.DataSourceBinding{

@@ -4,43 +4,43 @@ package workspaces
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkspacesPoolSessions_Sessions_NetworkAccessConfiguration struct {
-	EniId any
+	EniId               any
 	EniPrivateIpAddress any
 }
 
 type WorkspacesPoolSessions_Sessions struct {
-	AuthenticationType any
-	ConnectionState any
-	ExpirationTime any
-	InstanceId any
+	AuthenticationType         any
+	ConnectionState            any
+	ExpirationTime             any
+	InstanceId                 any
 	NetworkAccessConfiguration any
-	PoolId any
-	SessionId any
-	StartTime any
-	UserId any
+	PoolId                     any
+	SessionId                  any
+	StartTime                  any
+	UserId                     any
 }
 
 type WorkspacesPoolSessionsConfig struct {
-	Limit any
+	Limit     any
 	NextToken any
-	PoolId any
-	UserId any
+	PoolId    any
+	UserId    any
 }
 
 type WorkspacesPoolSessionsAttrs struct {
-	Limit any
+	Limit     any
 	NextToken any
-	PoolId any
-	Sessions any
-	UserId any
+	PoolId    any
+	Sessions  any
+	UserId    any
 }
 
 var WorkspacesPoolSessions = ubx.DataSourceBinding{
 	WireType: "aws_workspaces_workspaces_pool_sessions",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PoolId": ubx.FieldSpec{WireName: "pool_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"PoolId":    ubx.FieldSpec{WireName: "pool_id"},
+		"UserId":    ubx.FieldSpec{WireName: "user_id"},
 	},
 }

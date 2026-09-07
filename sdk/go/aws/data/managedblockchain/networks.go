@@ -4,40 +4,40 @@ package managedblockchain
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Networks_Networks struct {
-	Arn any
-	CreationDate any
-	Description any
-	Framework any
+	Arn              any
+	CreationDate     any
+	Description      any
+	Framework        any
 	FrameworkVersion any
-	Id any
-	Name any
-	Status any
+	Id               any
+	Name             any
+	Status           any
 }
 
 type NetworksConfig struct {
-	Framework any
+	Framework  any
 	MaxResults any
-	Name any
-	NextToken any
-	Status any
+	Name       any
+	NextToken  any
+	Status     any
 }
 
 type NetworksAttrs struct {
-	Framework any
+	Framework  any
 	MaxResults any
-	Name any
-	Networks any
-	NextToken any
-	Status any
+	Name       any
+	Networks   any
+	NextToken  any
+	Status     any
 }
 
 var Networks = ubx.DataSourceBinding{
 	WireType: "aws_managedblockchain_networks",
 	Fields: ubx.FieldMap{
-		"Framework": ubx.FieldSpec{WireName: "framework"},
+		"Framework":  ubx.FieldSpec{WireName: "framework"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Status":     ubx.FieldSpec{WireName: "status"},
 	},
 }

@@ -36,26 +36,26 @@ type IdentityPool_PushSync struct {
 }
 
 var IdentityPool_CognitoIdentityProvidersFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ProviderName": ubx.FieldSpec{WireName: "provider_name"},
-		"ServerSideTokenCheck": ubx.FieldSpec{WireName: "server_side_token_check"},
-	}
+	"ClientId":             ubx.FieldSpec{WireName: "client_id"},
+	"ProviderName":         ubx.FieldSpec{WireName: "provider_name"},
+	"ServerSideTokenCheck": ubx.FieldSpec{WireName: "server_side_token_check"},
+}
 
 var IdentityPool_CognitoStreamsFields = ubx.FieldMap{
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
-		"StreamingStatus": ubx.FieldSpec{WireName: "streaming_status"},
-	}
+	"RoleArn":         ubx.FieldSpec{WireName: "role_arn"},
+	"StreamName":      ubx.FieldSpec{WireName: "stream_name"},
+	"StreamingStatus": ubx.FieldSpec{WireName: "streaming_status"},
+}
 
 var IdentityPool_IdentityPoolTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var IdentityPool_PushSyncFields = ubx.FieldMap{
-		"ApplicationArns": ubx.FieldSpec{WireName: "application_arns"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"ApplicationArns": ubx.FieldSpec{WireName: "application_arns"},
+	"RoleArn":         ubx.FieldSpec{WireName: "role_arn"},
+}
 
 type IdentityPoolConfig struct {
 	// Determines whether the identity pool permits the classic authentication flow for unauthenticated identities, distinct from the enhanced flow; when false, only the enhanced flow is allowed. (AI-inferred)
@@ -118,33 +118,33 @@ type IdentityPoolAttrs struct {
 var IdentityPool = ubx.ResourceBinding{
 	WireType: "aws_cognito_identity_pool",
 	Fields: ubx.FieldMap{
-		"AllowClassicFlow": ubx.FieldSpec{WireName: "allow_classic_flow"},
+		"AllowClassicFlow":               ubx.FieldSpec{WireName: "allow_classic_flow"},
 		"AllowUnauthenticatedIdentities": ubx.FieldSpec{WireName: "allow_unauthenticated_identities"},
-		"CognitoEvents": ubx.FieldSpec{WireName: "cognito_events"},
+		"CognitoEvents":                  ubx.FieldSpec{WireName: "cognito_events"},
 		"CognitoIdentityProviders": ubx.FieldSpec{
 			WireName: "cognito_identity_providers",
-			Kind: "list",
-			Fields: IdentityPool_CognitoIdentityProvidersFields,
+			Kind:     "list",
+			Fields:   IdentityPool_CognitoIdentityProvidersFields,
 		},
 		"CognitoStreams": ubx.FieldSpec{
 			WireName: "cognito_streams",
-			Kind: "object",
-			Fields: IdentityPool_CognitoStreamsFields,
+			Kind:     "object",
+			Fields:   IdentityPool_CognitoStreamsFields,
 		},
 		"DeveloperProviderName": ubx.FieldSpec{WireName: "developer_provider_name"},
-		"IdentityPoolName": ubx.FieldSpec{WireName: "identity_pool_name"},
+		"IdentityPoolName":      ubx.FieldSpec{WireName: "identity_pool_name"},
 		"IdentityPoolTags": ubx.FieldSpec{
 			WireName: "identity_pool_tags",
-			Kind: "list",
-			Fields: IdentityPool_IdentityPoolTagsFields,
+			Kind:     "list",
+			Fields:   IdentityPool_IdentityPoolTagsFields,
 		},
 		"OpenIdConnectProviderArns": ubx.FieldSpec{WireName: "open_id_connect_provider_arns"},
 		"PushSync": ubx.FieldSpec{
 			WireName: "push_sync",
-			Kind: "object",
-			Fields: IdentityPool_PushSyncFields,
+			Kind:     "object",
+			Fields:   IdentityPool_PushSyncFields,
 		},
-		"SamlProviderArns": ubx.FieldSpec{WireName: "saml_provider_arns"},
+		"SamlProviderArns":        ubx.FieldSpec{WireName: "saml_provider_arns"},
 		"SupportedLoginProviders": ubx.FieldSpec{WireName: "supported_login_providers"},
 	},
 }

@@ -20,9 +20,9 @@ type AnomalySubscription_Subscribers struct {
 }
 
 var AnomalySubscription_ResourceTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AnomalySubscriptionConfig struct {
 	// The frequency at which anomaly reports are sent over email.
@@ -63,15 +63,15 @@ type AnomalySubscriptionAttrs struct {
 var AnomalySubscription = ubx.ResourceBinding{
 	WireType: "aws_ce_anomaly_subscription",
 	Fields: ubx.FieldMap{
-		"Frequency": ubx.FieldSpec{WireName: "frequency"},
+		"Frequency":      ubx.FieldSpec{WireName: "frequency"},
 		"MonitorArnList": ubx.FieldSpec{WireName: "monitor_arn_list"},
 		"ResourceTags": ubx.FieldSpec{
 			WireName: "resource_tags",
-			Kind: "list",
-			Fields: AnomalySubscription_ResourceTagsFields,
+			Kind:     "list",
+			Fields:   AnomalySubscription_ResourceTagsFields,
 		},
-		"SubscriptionName": ubx.FieldSpec{WireName: "subscription_name"},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
+		"SubscriptionName":    ubx.FieldSpec{WireName: "subscription_name"},
+		"Threshold":           ubx.FieldSpec{WireName: "threshold"},
 		"ThresholdExpression": ubx.FieldSpec{WireName: "threshold_expression"},
 	},
 }

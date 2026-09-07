@@ -18,18 +18,18 @@ type GitHubRepository_Code struct {
 }
 
 var GitHubRepository_Code_S3Fields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ObjectVersion": ubx.FieldSpec{WireName: "object_version"},
-	}
+	"Bucket":        ubx.FieldSpec{WireName: "bucket"},
+	"Key":           ubx.FieldSpec{WireName: "key"},
+	"ObjectVersion": ubx.FieldSpec{WireName: "object_version"},
+}
 
 var GitHubRepository_CodeFields = ubx.FieldMap{
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: GitHubRepository_Code_S3Fields,
-		},
-	}
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   GitHubRepository_Code_S3Fields,
+	},
+}
 
 type GitHubRepositoryConfig struct {
 	// Specifies the S3 bucket, key, and optional object version of a ZIP file containing the source code to be initially committed to the GitHub repository. (AI-inferred)
@@ -76,15 +76,15 @@ var GitHubRepository = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Code": ubx.FieldSpec{
 			WireName: "code",
-			Kind: "object",
-			Fields: GitHubRepository_CodeFields,
+			Kind:     "object",
+			Fields:   GitHubRepository_CodeFields,
 		},
-		"ConnectionArn": ubx.FieldSpec{WireName: "connection_arn"},
-		"EnableIssues": ubx.FieldSpec{WireName: "enable_issues"},
-		"IsPrivate": ubx.FieldSpec{WireName: "is_private"},
+		"ConnectionArn":         ubx.FieldSpec{WireName: "connection_arn"},
+		"EnableIssues":          ubx.FieldSpec{WireName: "enable_issues"},
+		"IsPrivate":             ubx.FieldSpec{WireName: "is_private"},
 		"RepositoryAccessToken": ubx.FieldSpec{WireName: "repository_access_token"},
 		"RepositoryDescription": ubx.FieldSpec{WireName: "repository_description"},
-		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
-		"RepositoryOwner": ubx.FieldSpec{WireName: "repository_owner"},
+		"RepositoryName":        ubx.FieldSpec{WireName: "repository_name"},
+		"RepositoryOwner":       ubx.FieldSpec{WireName: "repository_owner"},
 	},
 }

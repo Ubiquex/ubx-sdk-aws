@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReputationEntity_ReputationEntity_AwsSesManagedStatus struct {
 	// <p>A description of the reason for a status change, such as automated actions taken due to reputation findings or manual status updates.</p>
-	Cause any
+	Cause                any
 	LastUpdatedTimestamp any
 	// <p>The sending status for a reputation entity. This can be one of the following:</p> <ul> <li> <p> <code>ENABLED</code> – Sending is allowed for this entity.</p> </li> <li> <p> <code>DISABLED</code> – Sending is prevented for this entity.</p> </li> <li> <p> <code>REINSTATED</code> – Sending is allowed even if there are active reputation findings.</p> </li> </ul>
 	Status any
@@ -19,8 +19,8 @@ type ReputationEntity_ReputationEntity struct {
 	// <p>The unique identifier for a reputation entity. For resource-type entities, this is the Amazon Resource Name (ARN) of the resource.</p>
 	ReputationEntityReference any
 	// <p>The type of reputation entity. Currently, only <code>RESOURCE</code> type entities are supported, which represent resources in your Amazon SES account that have reputation tracking capabilities.</p>
-	ReputationEntityType any
-	ReputationImpact any
+	ReputationEntityType       any
+	ReputationImpact           any
 	ReputationManagementPolicy any
 	// <p>The sending status for a reputation entity. This can be one of the following:</p> <ul> <li> <p> <code>ENABLED</code> – Sending is allowed for this entity.</p> </li> <li> <p> <code>DISABLED</code> – Sending is prevented for this entity.</p> </li> <li> <p> <code>REINSTATED</code> – Sending is allowed even if there are active reputation findings.</p> </li> </ul>
 	SendingStatusAggregate any
@@ -46,6 +46,6 @@ var ReputationEntity = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_reputation_entity",
 	Fields: ubx.FieldMap{
 		"ReputationEntityReference": ubx.FieldSpec{WireName: "reputation_entity_reference"},
-		"ReputationEntityType": ubx.FieldSpec{WireName: "reputation_entity_type"},
+		"ReputationEntityType":      ubx.FieldSpec{WireName: "reputation_entity_type"},
 	},
 }

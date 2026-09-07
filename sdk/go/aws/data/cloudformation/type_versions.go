@@ -4,46 +4,46 @@ package cloudformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TypeVersions_TypeVersionSummaries struct {
-	Arn any
-	Description any
-	IsDefaultVersion any
+	Arn                 any
+	Description         any
+	IsDefaultVersion    any
 	PublicVersionNumber any
-	TimeCreated any
-	Type any
-	TypeName any
-	VersionId any
+	TimeCreated         any
+	Type                any
+	TypeName            any
+	VersionId           any
 }
 
 type TypeVersionsConfig struct {
-	Arn any
+	Arn              any
 	DeprecatedStatus any
-	MaxResults any
-	NextToken any
-	PublisherId any
-	Type any
-	TypeName any
+	MaxResults       any
+	NextToken        any
+	PublisherId      any
+	Type             any
+	TypeName         any
 }
 
 type TypeVersionsAttrs struct {
-	Arn any
-	DeprecatedStatus any
-	MaxResults any
-	NextToken any
-	PublisherId any
-	Type any
-	TypeName any
+	Arn                  any
+	DeprecatedStatus     any
+	MaxResults           any
+	NextToken            any
+	PublisherId          any
+	Type                 any
+	TypeName             any
 	TypeVersionSummaries any
 }
 
 var TypeVersions = ubx.DataSourceBinding{
 	WireType: "aws_cloudformation_type_versions",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":              ubx.FieldSpec{WireName: "arn"},
 		"DeprecatedStatus": ubx.FieldSpec{WireName: "deprecated_status"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PublisherId": ubx.FieldSpec{WireName: "publisher_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"PublisherId":      ubx.FieldSpec{WireName: "publisher_id"},
+		"Type":             ubx.FieldSpec{WireName: "type"},
+		"TypeName":         ubx.FieldSpec{WireName: "type_name"},
 	},
 }

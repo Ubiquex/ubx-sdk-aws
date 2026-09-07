@@ -4,16 +4,16 @@ package voice_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChimeVoiceConnectorOrigination_Origination_Routes struct {
-	Host any
-	Port any
+	Host     any
+	Port     any
 	Priority any
 	Protocol any
-	Weight any
+	Weight   any
 }
 
 type VoiceChimeVoiceConnectorOrigination_Origination struct {
 	Disabled any
-	Routes any
+	Routes   any
 }
 
 type VoiceChimeVoiceConnectorOriginationConfig struct {
@@ -22,7 +22,7 @@ type VoiceChimeVoiceConnectorOriginationConfig struct {
 
 type VoiceChimeVoiceConnectorOriginationAttrs struct {
 	// <p>Origination settings enable your SIP hosts to receive inbound calls using your Amazon Chime SDK Voice Connector.</p> <note> <p>The parameters listed below are not required, but you must use at least one.</p> </note>
-	Origination any
+	Origination      any
 	VoiceConnectorId any
 }
 

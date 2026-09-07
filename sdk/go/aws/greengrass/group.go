@@ -21,14 +21,14 @@ type Group_InitialVersion struct {
 }
 
 var Group_InitialVersionFields = ubx.FieldMap{
-		"ConnectorDefinitionVersionArn": ubx.FieldSpec{WireName: "connector_definition_version_arn"},
-		"CoreDefinitionVersionArn": ubx.FieldSpec{WireName: "core_definition_version_arn"},
-		"DeviceDefinitionVersionArn": ubx.FieldSpec{WireName: "device_definition_version_arn"},
-		"FunctionDefinitionVersionArn": ubx.FieldSpec{WireName: "function_definition_version_arn"},
-		"LoggerDefinitionVersionArn": ubx.FieldSpec{WireName: "logger_definition_version_arn"},
-		"ResourceDefinitionVersionArn": ubx.FieldSpec{WireName: "resource_definition_version_arn"},
-		"SubscriptionDefinitionVersionArn": ubx.FieldSpec{WireName: "subscription_definition_version_arn"},
-	}
+	"ConnectorDefinitionVersionArn":    ubx.FieldSpec{WireName: "connector_definition_version_arn"},
+	"CoreDefinitionVersionArn":         ubx.FieldSpec{WireName: "core_definition_version_arn"},
+	"DeviceDefinitionVersionArn":       ubx.FieldSpec{WireName: "device_definition_version_arn"},
+	"FunctionDefinitionVersionArn":     ubx.FieldSpec{WireName: "function_definition_version_arn"},
+	"LoggerDefinitionVersionArn":       ubx.FieldSpec{WireName: "logger_definition_version_arn"},
+	"ResourceDefinitionVersionArn":     ubx.FieldSpec{WireName: "resource_definition_version_arn"},
+	"SubscriptionDefinitionVersionArn": ubx.FieldSpec{WireName: "subscription_definition_version_arn"},
+}
 
 type GroupConfig struct {
 	// Specifies the initial version of the Greengrass group, which includes references to the core, devices, functions, loggers, subscriptions, and resource definitions that define the group's initial configuration. (AI-inferred)
@@ -65,11 +65,11 @@ var Group = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"InitialVersion": ubx.FieldSpec{
 			WireName: "initial_version",
-			Kind: "object",
-			Fields: Group_InitialVersionFields,
+			Kind:     "object",
+			Fields:   Group_InitialVersionFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":    ubx.FieldSpec{WireName: "tags"},
 	},
 }

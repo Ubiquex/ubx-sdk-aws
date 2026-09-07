@@ -11,9 +11,9 @@ type Connector_VpcInformation struct {
 }
 
 var Connector_VpcInformationFields = ubx.FieldMap{
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-	}
+	"IpAddressType":    ubx.FieldSpec{WireName: "ip_address_type"},
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+}
 
 type ConnectorConfig struct {
 	// The Amazon Resource Name (ARN) of the AWS Private CA certificate authority that will issue certificates for the Active Directory connector. (AI-inferred)
@@ -43,12 +43,12 @@ var Connector = ubx.ResourceBinding{
 	WireType: "aws_pcaconnector_ad_connector",
 	Fields: ubx.FieldMap{
 		"CertificateAuthorityArn": ubx.FieldSpec{WireName: "certificate_authority_arn"},
-		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"DirectoryId":             ubx.FieldSpec{WireName: "directory_id"},
+		"Tags":                    ubx.FieldSpec{WireName: "tags"},
 		"VpcInformation": ubx.FieldSpec{
 			WireName: "vpc_information",
-			Kind: "object",
-			Fields: Connector_VpcInformationFields,
+			Kind:     "object",
+			Fields:   Connector_VpcInformationFields,
 		},
 	},
 }

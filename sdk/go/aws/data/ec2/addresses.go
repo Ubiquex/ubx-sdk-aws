@@ -4,63 +4,63 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Addresses_Addresses_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Addresses_Addresses struct {
-	AllocationId any
-	AssociationId any
-	CarrierIp any
-	CustomerOwnedIp any
-	CustomerOwnedIpv4Pool any
-	Domain any
-	InstanceId any
-	NetworkBorderGroup any
-	NetworkInterfaceId any
+	AllocationId            any
+	AssociationId           any
+	CarrierIp               any
+	CustomerOwnedIp         any
+	CustomerOwnedIpv4Pool   any
+	Domain                  any
+	InstanceId              any
+	NetworkBorderGroup      any
+	NetworkInterfaceId      any
 	NetworkInterfaceOwnerId any
-	PrivateIpAddress any
-	PublicIp any
-	PublicIpv4Pool any
-	ServiceManaged any
-	SubnetId any
-	Tags any
+	PrivateIpAddress        any
+	PublicIp                any
+	PublicIpv4Pool          any
+	ServiceManaged          any
+	SubnetId                any
+	Tags                    any
 }
 
 type Addresses_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var Addresses_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type AddressesConfig struct {
 	AllocationIds any
-	DryRun any
-	Filters any
-	PublicIps any
+	DryRun        any
+	Filters       any
+	PublicIps     any
 }
 
 type AddressesAttrs struct {
-	Addresses any
+	Addresses     any
 	AllocationIds any
-	DryRun any
-	Filters any
-	PublicIps any
+	DryRun        any
+	Filters       any
+	PublicIps     any
 }
 
 var Addresses = ubx.DataSourceBinding{
 	WireType: "aws_ec2_addresses",
 	Fields: ubx.FieldMap{
 		"AllocationIds": ubx.FieldSpec{WireName: "allocation_ids"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":        ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Addresses_FiltersFields,
+			Kind:     "list",
+			Fields:   Addresses_FiltersFields,
 		},
 		"PublicIps": ubx.FieldSpec{WireName: "public_ips"},
 	},

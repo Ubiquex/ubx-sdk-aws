@@ -9,27 +9,27 @@ type SearchResults_SearchResults_EndTimestamp struct {
 }
 
 type SearchResults_SearchResults struct {
-	DatasetId any
-	EndTimestamp any
-	Score any
-	SearchId any
+	DatasetId      any
+	EndTimestamp   any
+	Score          any
+	SearchId       any
 	StartTimestamp any
-	TimeSeriesId any
-	TopTimestamp any
-	WorkspaceName any
+	TimeSeriesId   any
+	TopTimestamp   any
+	WorkspaceName  any
 }
 
 type SearchResultsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>The unique identifier of a search, assigned by the service when the search is started.</p>
-	SearchId any
+	SearchId      any
 	WorkspaceName any
 }
 
 type SearchResultsAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>The unique identifier of a search, assigned by the service when the search is started.</p>
 	SearchId any
 	// <p>A list of search results, ordered by descending relevance score.</p>
@@ -40,9 +40,9 @@ type SearchResultsAttrs struct {
 var SearchResults = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_search_results",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SearchId": ubx.FieldSpec{WireName: "search_id"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"SearchId":      ubx.FieldSpec{WireName: "search_id"},
 		"WorkspaceName": ubx.FieldSpec{WireName: "workspace_name"},
 	},
 }

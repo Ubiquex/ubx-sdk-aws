@@ -13,7 +13,7 @@ type CloudVmCluster_DataCollectionOptions struct {
 }
 
 type CloudVmCluster_DbNodes_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -22,41 +22,41 @@ type CloudVmCluster_DbNodes struct {
 	// The Oracle Cloud Identifier (OCID) of the second backup virtual network interface card (VNIC) assigned to the database node in the cloud VM cluster. (AI-inferred)
 	BackupVnic2Id any
 	// Specifies the number of CPU cores allocated to each database node in the cloud VM cluster. (AI-inferred)
-	CpuCoreCount any
-	DbNodeArn any
-	DbNodeId any
+	CpuCoreCount           any
+	DbNodeArn              any
+	DbNodeId               any
 	DbNodeStorageSizeInGbs any
-	DbServerId any
-	DbSystemId any
-	HostIpId any
-	Hostname any
+	DbServerId             any
+	DbSystemId             any
+	HostIpId               any
+	Hostname               any
 	// Specifies the memory size in gigabytes to allocate to each database node in the cloud VM cluster. (AI-inferred)
 	MemorySizeInGbs any
 	// For each database node in the Cloud VM Cluster, this field contains the node's Oracle Cloud Identifier (OCID), which uniquely identifies the node within Oracle Cloud Infrastructure. (AI-inferred)
-	Ocid any
+	Ocid   any
 	Status any
-	Tags any
+	Tags   any
 	// The `vnic2_id` field stores the OCID (unique identifier) of the secondary virtual network interface (VNIC) attached to the database node, providing an additional network connection for that node. (AI-inferred)
 	Vnic2Id any
-	VnicId any
+	VnicId  any
 }
 
 type CloudVmCluster_IamRoles struct {
 	AwsIntegration any
-	IamRoleArn any
-	Status any
+	IamRoleArn     any
+	Status         any
 }
 
 var CloudVmCluster_DataCollectionOptionsFields = ubx.FieldMap{
-		"IsDiagnosticsEventsEnabled": ubx.FieldSpec{WireName: "is_diagnostics_events_enabled"},
-		"IsHealthMonitoringEnabled": ubx.FieldSpec{WireName: "is_health_monitoring_enabled"},
-		"IsIncidentLogsEnabled": ubx.FieldSpec{WireName: "is_incident_logs_enabled"},
-	}
+	"IsDiagnosticsEventsEnabled": ubx.FieldSpec{WireName: "is_diagnostics_events_enabled"},
+	"IsHealthMonitoringEnabled":  ubx.FieldSpec{WireName: "is_health_monitoring_enabled"},
+	"IsIncidentLogsEnabled":      ubx.FieldSpec{WireName: "is_incident_logs_enabled"},
+}
 
 var CloudVmCluster_DbNodes_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CloudVmClusterConfig struct {
 	// The unique identifier of the Exadata infrastructure that this VM cluster belongs to.
@@ -182,31 +182,31 @@ var CloudVmCluster = ubx.ResourceBinding{
 	WireType: "aws_odb_cloud_vm_cluster",
 	Fields: ubx.FieldMap{
 		"CloudExadataInfrastructureId": ubx.FieldSpec{WireName: "cloud_exadata_infrastructure_id"},
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"CpuCoreCount": ubx.FieldSpec{WireName: "cpu_core_count"},
+		"ClusterName":                  ubx.FieldSpec{WireName: "cluster_name"},
+		"CpuCoreCount":                 ubx.FieldSpec{WireName: "cpu_core_count"},
 		"DataCollectionOptions": ubx.FieldSpec{
 			WireName: "data_collection_options",
-			Kind: "object",
-			Fields: CloudVmCluster_DataCollectionOptionsFields,
+			Kind:     "object",
+			Fields:   CloudVmCluster_DataCollectionOptionsFields,
 		},
-		"DataStorageSizeInTbs": ubx.FieldSpec{WireName: "data_storage_size_in_tbs"},
-		"DbNodeStorageSizeInGbs": ubx.FieldSpec{WireName: "db_node_storage_size_in_gbs"},
-		"DbServers": ubx.FieldSpec{WireName: "db_servers"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"GiVersion": ubx.FieldSpec{WireName: "gi_version"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"IsLocalBackupEnabled": ubx.FieldSpec{WireName: "is_local_backup_enabled"},
+		"DataStorageSizeInTbs":     ubx.FieldSpec{WireName: "data_storage_size_in_tbs"},
+		"DbNodeStorageSizeInGbs":   ubx.FieldSpec{WireName: "db_node_storage_size_in_gbs"},
+		"DbServers":                ubx.FieldSpec{WireName: "db_servers"},
+		"DisplayName":              ubx.FieldSpec{WireName: "display_name"},
+		"GiVersion":                ubx.FieldSpec{WireName: "gi_version"},
+		"Hostname":                 ubx.FieldSpec{WireName: "hostname"},
+		"IsLocalBackupEnabled":     ubx.FieldSpec{WireName: "is_local_backup_enabled"},
 		"IsSparseDiskgroupEnabled": ubx.FieldSpec{WireName: "is_sparse_diskgroup_enabled"},
-		"LicenseModel": ubx.FieldSpec{WireName: "license_model"},
-		"MemorySizeInGbs": ubx.FieldSpec{WireName: "memory_size_in_gbs"},
-		"OdbNetworkId": ubx.FieldSpec{WireName: "odb_network_id"},
-		"ScanListenerPortTcp": ubx.FieldSpec{WireName: "scan_listener_port_tcp"},
-		"SshPublicKeys": ubx.FieldSpec{WireName: "ssh_public_keys"},
-		"SystemVersion": ubx.FieldSpec{WireName: "system_version"},
+		"LicenseModel":             ubx.FieldSpec{WireName: "license_model"},
+		"MemorySizeInGbs":          ubx.FieldSpec{WireName: "memory_size_in_gbs"},
+		"OdbNetworkId":             ubx.FieldSpec{WireName: "odb_network_id"},
+		"ScanListenerPortTcp":      ubx.FieldSpec{WireName: "scan_listener_port_tcp"},
+		"SshPublicKeys":            ubx.FieldSpec{WireName: "ssh_public_keys"},
+		"SystemVersion":            ubx.FieldSpec{WireName: "system_version"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CloudVmCluster_DbNodes_TagsFields,
+			Kind:     "list",
+			Fields:   CloudVmCluster_DbNodes_TagsFields,
 		},
 		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
 	},

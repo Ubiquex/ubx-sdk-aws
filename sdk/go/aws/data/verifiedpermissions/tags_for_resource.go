@@ -11,7 +11,7 @@ type TagsForResourceConfig struct {
 type TagsForResourceAttrs struct {
 	// An Amazon Resource Name (ARN) uniquely identifies an AWS resource.
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var TagsForResource = ubx.DataSourceBinding{

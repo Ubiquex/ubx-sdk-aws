@@ -82,7 +82,7 @@ type Runtime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_Managed
 	SecurityGroupIds any
 	// The subnet IDs in the managed VPC where AWS deploys the VPC endpoint for the private endpoint configuration of the custom JWT authorizer in the Bedrock Agent Core Runtime. (AI-inferred)
 	SubnetIds any
-	Tags any
+	Tags      any
 	// The ID of the VPC in which AWS creates the managed VPC resource (e.g., an elastic network interface) to privately connect the Bedrock agent runtime to the custom JWT authorizer's private endpoint. (AI-inferred)
 	VpcIdentifier any
 }
@@ -93,7 +93,7 @@ type Runtime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_SelfMan
 }
 
 type Runtime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint struct {
-	ManagedVpcResource any
+	ManagedVpcResource         any
 	SelfManagedLatticeResource any
 }
 
@@ -134,7 +134,7 @@ type Runtime_CapacityProviderConfiguration struct {
 }
 
 type Runtime_FilesystemConfigurations_CapacityProviderVolume struct {
-	MountPath any
+	MountPath  any
 	VolumeName any
 }
 
@@ -192,216 +192,216 @@ type Runtime_WorkloadIdentityDetails struct {
 }
 
 var Runtime_AgentRuntimeArtifact_CodeConfiguration_Code_S3Fields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
-	}
+	"Bucket":    ubx.FieldSpec{WireName: "bucket"},
+	"Prefix":    ubx.FieldSpec{WireName: "prefix"},
+	"VersionId": ubx.FieldSpec{WireName: "version_id"},
+}
 
 var Runtime_AgentRuntimeArtifact_CodeConfiguration_CodeFields = ubx.FieldMap{
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Runtime_AgentRuntimeArtifact_CodeConfiguration_Code_S3Fields,
-		},
-	}
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Runtime_AgentRuntimeArtifact_CodeConfiguration_Code_S3Fields,
+	},
+}
 
 var Runtime_AgentRuntimeArtifact_CodeConfigurationFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{
-			WireName: "code",
-			Kind: "object",
-			Fields: Runtime_AgentRuntimeArtifact_CodeConfiguration_CodeFields,
-		},
-		"EntryPoint": ubx.FieldSpec{WireName: "entry_point"},
-		"Runtime": ubx.FieldSpec{WireName: "runtime"},
-	}
+	"Code": ubx.FieldSpec{
+		WireName: "code",
+		Kind:     "object",
+		Fields:   Runtime_AgentRuntimeArtifact_CodeConfiguration_CodeFields,
+	},
+	"EntryPoint": ubx.FieldSpec{WireName: "entry_point"},
+	"Runtime":    ubx.FieldSpec{WireName: "runtime"},
+}
 
 var Runtime_AgentRuntimeArtifact_ContainerConfigurationFields = ubx.FieldMap{
-		"ContainerUri": ubx.FieldSpec{WireName: "container_uri"},
-	}
+	"ContainerUri": ubx.FieldSpec{WireName: "container_uri"},
+}
 
 var Runtime_AgentRuntimeArtifactFields = ubx.FieldMap{
-		"CodeConfiguration": ubx.FieldSpec{
-			WireName: "code_configuration",
-			Kind: "object",
-			Fields: Runtime_AgentRuntimeArtifact_CodeConfigurationFields,
-		},
-		"ContainerConfiguration": ubx.FieldSpec{
-			WireName: "container_configuration",
-			Kind: "object",
-			Fields: Runtime_AgentRuntimeArtifact_ContainerConfigurationFields,
-		},
-	}
+	"CodeConfiguration": ubx.FieldSpec{
+		WireName: "code_configuration",
+		Kind:     "object",
+		Fields:   Runtime_AgentRuntimeArtifact_CodeConfigurationFields,
+	},
+	"ContainerConfiguration": ubx.FieldSpec{
+		WireName: "container_configuration",
+		Kind:     "object",
+		Fields:   Runtime_AgentRuntimeArtifact_ContainerConfigurationFields,
+	},
+}
 
 var Runtime_AuthorizerConfiguration_CustomJwtauthorizer_AllowedWorkloadConfiguration_HostingEnvironmentsFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-	}
+	"Arn": ubx.FieldSpec{WireName: "arn"},
+}
 
 var Runtime_AuthorizerConfiguration_CustomJwtauthorizer_AllowedWorkloadConfigurationFields = ubx.FieldMap{
-		"HostingEnvironments": ubx.FieldSpec{
-			WireName: "hosting_environments",
-			Kind: "list",
-			Fields: Runtime_AuthorizerConfiguration_CustomJwtauthorizer_AllowedWorkloadConfiguration_HostingEnvironmentsFields,
-		},
-		"WorkloadIdentities": ubx.FieldSpec{WireName: "workload_identities"},
-	}
+	"HostingEnvironments": ubx.FieldSpec{
+		WireName: "hosting_environments",
+		Kind:     "list",
+		Fields:   Runtime_AuthorizerConfiguration_CustomJwtauthorizer_AllowedWorkloadConfiguration_HostingEnvironmentsFields,
+	},
+	"WorkloadIdentities": ubx.FieldSpec{WireName: "workload_identities"},
+}
 
 var Runtime_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValueFields = ubx.FieldMap{
-		"MatchValueString": ubx.FieldSpec{WireName: "match_value_string"},
-		"MatchValueStringList": ubx.FieldSpec{WireName: "match_value_string_list"},
-	}
+	"MatchValueString":     ubx.FieldSpec{WireName: "match_value_string"},
+	"MatchValueStringList": ubx.FieldSpec{WireName: "match_value_string_list"},
+}
 
 var Runtime_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValueFields = ubx.FieldMap{
-		"ClaimMatchOperator": ubx.FieldSpec{WireName: "claim_match_operator"},
-		"ClaimMatchValue": ubx.FieldSpec{
-			WireName: "claim_match_value",
-			Kind: "object",
-			Fields: Runtime_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValueFields,
-		},
-	}
+	"ClaimMatchOperator": ubx.FieldSpec{WireName: "claim_match_operator"},
+	"ClaimMatchValue": ubx.FieldSpec{
+		WireName: "claim_match_value",
+		Kind:     "object",
+		Fields:   Runtime_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValueFields,
+	},
+}
 
 var Runtime_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaimsFields = ubx.FieldMap{
-		"AuthorizingClaimMatchValue": ubx.FieldSpec{
-			WireName: "authorizing_claim_match_value",
-			Kind: "object",
-			Fields: Runtime_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValueFields,
-		},
-		"InboundTokenClaimName": ubx.FieldSpec{WireName: "inbound_token_claim_name"},
-		"InboundTokenClaimValueType": ubx.FieldSpec{WireName: "inbound_token_claim_value_type"},
-	}
+	"AuthorizingClaimMatchValue": ubx.FieldSpec{
+		WireName: "authorizing_claim_match_value",
+		Kind:     "object",
+		Fields:   Runtime_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValueFields,
+	},
+	"InboundTokenClaimName":      ubx.FieldSpec{WireName: "inbound_token_claim_name"},
+	"InboundTokenClaimValueType": ubx.FieldSpec{WireName: "inbound_token_claim_value_type"},
+}
 
 var Runtime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_ManagedVpcResourceFields = ubx.FieldMap{
-		"EndpointIpAddressType": ubx.FieldSpec{WireName: "endpoint_ip_address_type"},
-		"RoutingDomain": ubx.FieldSpec{WireName: "routing_domain"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"VpcIdentifier": ubx.FieldSpec{WireName: "vpc_identifier"},
-	}
+	"EndpointIpAddressType": ubx.FieldSpec{WireName: "endpoint_ip_address_type"},
+	"RoutingDomain":         ubx.FieldSpec{WireName: "routing_domain"},
+	"SecurityGroupIds":      ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":             ubx.FieldSpec{WireName: "subnet_ids"},
+	"Tags":                  ubx.FieldSpec{WireName: "tags"},
+	"VpcIdentifier":         ubx.FieldSpec{WireName: "vpc_identifier"},
+}
 
 var Runtime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_SelfManagedLatticeResourceFields = ubx.FieldMap{
-		"ResourceConfigurationIdentifier": ubx.FieldSpec{WireName: "resource_configuration_identifier"},
-	}
+	"ResourceConfigurationIdentifier": ubx.FieldSpec{WireName: "resource_configuration_identifier"},
+}
 
 var Runtime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointFields = ubx.FieldMap{
-		"ManagedVpcResource": ubx.FieldSpec{
-			WireName: "managed_vpc_resource",
-			Kind: "object",
-			Fields: Runtime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_ManagedVpcResourceFields,
-		},
-		"SelfManagedLatticeResource": ubx.FieldSpec{
-			WireName: "self_managed_lattice_resource",
-			Kind: "object",
-			Fields: Runtime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_SelfManagedLatticeResourceFields,
-		},
-	}
+	"ManagedVpcResource": ubx.FieldSpec{
+		WireName: "managed_vpc_resource",
+		Kind:     "object",
+		Fields:   Runtime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_ManagedVpcResourceFields,
+	},
+	"SelfManagedLatticeResource": ubx.FieldSpec{
+		WireName: "self_managed_lattice_resource",
+		Kind:     "object",
+		Fields:   Runtime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_SelfManagedLatticeResourceFields,
+	},
+}
 
 var Runtime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointOverridesFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"PrivateEndpoint": ubx.FieldSpec{
-			WireName: "private_endpoint",
-			Kind: "object",
-			Fields: Runtime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointFields,
-		},
-	}
+	"Domain": ubx.FieldSpec{WireName: "domain"},
+	"PrivateEndpoint": ubx.FieldSpec{
+		WireName: "private_endpoint",
+		Kind:     "object",
+		Fields:   Runtime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointFields,
+	},
+}
 
 var Runtime_AuthorizerConfiguration_CustomJwtauthorizerFields = ubx.FieldMap{
-		"AllowedAudience": ubx.FieldSpec{WireName: "allowed_audience"},
-		"AllowedClients": ubx.FieldSpec{WireName: "allowed_clients"},
-		"AllowedScopes": ubx.FieldSpec{WireName: "allowed_scopes"},
-		"AllowedWorkloadConfiguration": ubx.FieldSpec{
-			WireName: "allowed_workload_configuration",
-			Kind: "object",
-			Fields: Runtime_AuthorizerConfiguration_CustomJwtauthorizer_AllowedWorkloadConfigurationFields,
-		},
-		"CustomClaims": ubx.FieldSpec{
-			WireName: "custom_claims",
-			Kind: "list",
-			Fields: Runtime_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaimsFields,
-		},
-		"DiscoveryUrl": ubx.FieldSpec{WireName: "discovery_url"},
-		"PrivateEndpoint": ubx.FieldSpec{
-			WireName: "private_endpoint",
-			Kind: "object",
-			Fields: Runtime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointFields,
-		},
-		"PrivateEndpointOverrides": ubx.FieldSpec{
-			WireName: "private_endpoint_overrides",
-			Kind: "list",
-			Fields: Runtime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointOverridesFields,
-		},
-	}
+	"AllowedAudience": ubx.FieldSpec{WireName: "allowed_audience"},
+	"AllowedClients":  ubx.FieldSpec{WireName: "allowed_clients"},
+	"AllowedScopes":   ubx.FieldSpec{WireName: "allowed_scopes"},
+	"AllowedWorkloadConfiguration": ubx.FieldSpec{
+		WireName: "allowed_workload_configuration",
+		Kind:     "object",
+		Fields:   Runtime_AuthorizerConfiguration_CustomJwtauthorizer_AllowedWorkloadConfigurationFields,
+	},
+	"CustomClaims": ubx.FieldSpec{
+		WireName: "custom_claims",
+		Kind:     "list",
+		Fields:   Runtime_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaimsFields,
+	},
+	"DiscoveryUrl": ubx.FieldSpec{WireName: "discovery_url"},
+	"PrivateEndpoint": ubx.FieldSpec{
+		WireName: "private_endpoint",
+		Kind:     "object",
+		Fields:   Runtime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointFields,
+	},
+	"PrivateEndpointOverrides": ubx.FieldSpec{
+		WireName: "private_endpoint_overrides",
+		Kind:     "list",
+		Fields:   Runtime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointOverridesFields,
+	},
+}
 
 var Runtime_AuthorizerConfigurationFields = ubx.FieldMap{
-		"CustomJwtauthorizer": ubx.FieldSpec{
-			WireName: "custom_jwtauthorizer",
-			Kind: "object",
-			Fields: Runtime_AuthorizerConfiguration_CustomJwtauthorizerFields,
-		},
-	}
+	"CustomJwtauthorizer": ubx.FieldSpec{
+		WireName: "custom_jwtauthorizer",
+		Kind:     "object",
+		Fields:   Runtime_AuthorizerConfiguration_CustomJwtauthorizerFields,
+	},
+}
 
 var Runtime_CapacityProviderConfigurationFields = ubx.FieldMap{
-		"CapacityProviderArn": ubx.FieldSpec{WireName: "capacity_provider_arn"},
-	}
+	"CapacityProviderArn": ubx.FieldSpec{WireName: "capacity_provider_arn"},
+}
 
 var Runtime_FilesystemConfigurations_CapacityProviderVolumeFields = ubx.FieldMap{
-		"MountPath": ubx.FieldSpec{WireName: "mount_path"},
-		"VolumeName": ubx.FieldSpec{WireName: "volume_name"},
-	}
+	"MountPath":  ubx.FieldSpec{WireName: "mount_path"},
+	"VolumeName": ubx.FieldSpec{WireName: "volume_name"},
+}
 
 var Runtime_FilesystemConfigurations_EfsAccessPointFields = ubx.FieldMap{
-		"AccessPointArn": ubx.FieldSpec{WireName: "access_point_arn"},
-		"MountPath": ubx.FieldSpec{WireName: "mount_path"},
-	}
+	"AccessPointArn": ubx.FieldSpec{WireName: "access_point_arn"},
+	"MountPath":      ubx.FieldSpec{WireName: "mount_path"},
+}
 
 var Runtime_FilesystemConfigurations_SessionStorageFields = ubx.FieldMap{
-		"MountPath": ubx.FieldSpec{WireName: "mount_path"},
-	}
+	"MountPath": ubx.FieldSpec{WireName: "mount_path"},
+}
 
 var Runtime_FilesystemConfigurationsFields = ubx.FieldMap{
-		"CapacityProviderVolume": ubx.FieldSpec{
-			WireName: "capacity_provider_volume",
-			Kind: "object",
-			Fields: Runtime_FilesystemConfigurations_CapacityProviderVolumeFields,
-		},
-		"EfsAccessPoint": ubx.FieldSpec{
-			WireName: "efs_access_point",
-			Kind: "object",
-			Fields: Runtime_FilesystemConfigurations_EfsAccessPointFields,
-		},
-		"S3FilesAccessPoint": ubx.FieldSpec{
-			WireName: "s3_files_access_point",
-			Kind: "object",
-			Fields: Runtime_FilesystemConfigurations_EfsAccessPointFields,
-		},
-		"SessionStorage": ubx.FieldSpec{
-			WireName: "session_storage",
-			Kind: "object",
-			Fields: Runtime_FilesystemConfigurations_SessionStorageFields,
-		},
-	}
+	"CapacityProviderVolume": ubx.FieldSpec{
+		WireName: "capacity_provider_volume",
+		Kind:     "object",
+		Fields:   Runtime_FilesystemConfigurations_CapacityProviderVolumeFields,
+	},
+	"EfsAccessPoint": ubx.FieldSpec{
+		WireName: "efs_access_point",
+		Kind:     "object",
+		Fields:   Runtime_FilesystemConfigurations_EfsAccessPointFields,
+	},
+	"S3FilesAccessPoint": ubx.FieldSpec{
+		WireName: "s3_files_access_point",
+		Kind:     "object",
+		Fields:   Runtime_FilesystemConfigurations_EfsAccessPointFields,
+	},
+	"SessionStorage": ubx.FieldSpec{
+		WireName: "session_storage",
+		Kind:     "object",
+		Fields:   Runtime_FilesystemConfigurations_SessionStorageFields,
+	},
+}
 
 var Runtime_LifecycleConfigurationFields = ubx.FieldMap{
-		"IdleRuntimeSessionTimeout": ubx.FieldSpec{WireName: "idle_runtime_session_timeout"},
-		"MaxLifetime": ubx.FieldSpec{WireName: "max_lifetime"},
-	}
+	"IdleRuntimeSessionTimeout": ubx.FieldSpec{WireName: "idle_runtime_session_timeout"},
+	"MaxLifetime":               ubx.FieldSpec{WireName: "max_lifetime"},
+}
 
 var Runtime_NetworkConfiguration_NetworkModeConfigFields = ubx.FieldMap{
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
+	"Subnets":        ubx.FieldSpec{WireName: "subnets"},
+}
 
 var Runtime_NetworkConfigurationFields = ubx.FieldMap{
-		"NetworkMode": ubx.FieldSpec{WireName: "network_mode"},
-		"NetworkModeConfig": ubx.FieldSpec{
-			WireName: "network_mode_config",
-			Kind: "object",
-			Fields: Runtime_NetworkConfiguration_NetworkModeConfigFields,
-		},
-	}
+	"NetworkMode": ubx.FieldSpec{WireName: "network_mode"},
+	"NetworkModeConfig": ubx.FieldSpec{
+		WireName: "network_mode_config",
+		Kind:     "object",
+		Fields:   Runtime_NetworkConfiguration_NetworkModeConfigFields,
+	},
+}
 
 var Runtime_RequestHeaderConfigurationFields = ubx.FieldMap{
-		"RequestHeaderAllowlist": ubx.FieldSpec{WireName: "request_header_allowlist"},
-	}
+	"RequestHeaderAllowlist": ubx.FieldSpec{WireName: "request_header_allowlist"},
+}
 
 type RuntimeConfig struct {
 	AgentRuntimeArtifact any
@@ -433,7 +433,7 @@ type RuntimeConfig struct {
 
 type RuntimeAttrs struct {
 	// The Amazon Resource Name (ARN) that uniquely identifies this Bedrock agent core runtime resource. (AI-inferred)
-	AgentRuntimeArn any
+	AgentRuntimeArn      any
 	AgentRuntimeArtifact any
 	// The unique identifier of the AgentCore Runtime. (AI-inferred)
 	AgentRuntimeId any
@@ -480,44 +480,44 @@ var Runtime = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AgentRuntimeArtifact": ubx.FieldSpec{
 			WireName: "agent_runtime_artifact",
-			Kind: "object",
-			Fields: Runtime_AgentRuntimeArtifactFields,
+			Kind:     "object",
+			Fields:   Runtime_AgentRuntimeArtifactFields,
 		},
 		"AgentRuntimeName": ubx.FieldSpec{WireName: "agent_runtime_name"},
 		"AuthorizerConfiguration": ubx.FieldSpec{
 			WireName: "authorizer_configuration",
-			Kind: "object",
-			Fields: Runtime_AuthorizerConfigurationFields,
+			Kind:     "object",
+			Fields:   Runtime_AuthorizerConfigurationFields,
 		},
 		"CapacityProviderConfiguration": ubx.FieldSpec{
 			WireName: "capacity_provider_configuration",
-			Kind: "object",
-			Fields: Runtime_CapacityProviderConfigurationFields,
+			Kind:     "object",
+			Fields:   Runtime_CapacityProviderConfigurationFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
 		"EnvironmentVariables": ubx.FieldSpec{WireName: "environment_variables"},
 		"FilesystemConfigurations": ubx.FieldSpec{
 			WireName: "filesystem_configurations",
-			Kind: "list",
-			Fields: Runtime_FilesystemConfigurationsFields,
+			Kind:     "list",
+			Fields:   Runtime_FilesystemConfigurationsFields,
 		},
 		"LifecycleConfiguration": ubx.FieldSpec{
 			WireName: "lifecycle_configuration",
-			Kind: "object",
-			Fields: Runtime_LifecycleConfigurationFields,
+			Kind:     "object",
+			Fields:   Runtime_LifecycleConfigurationFields,
 		},
 		"NetworkConfiguration": ubx.FieldSpec{
 			WireName: "network_configuration",
-			Kind: "object",
-			Fields: Runtime_NetworkConfigurationFields,
+			Kind:     "object",
+			Fields:   Runtime_NetworkConfigurationFields,
 		},
 		"ProtocolConfiguration": ubx.FieldSpec{WireName: "protocol_configuration"},
 		"RequestHeaderConfiguration": ubx.FieldSpec{
 			WireName: "request_header_configuration",
-			Kind: "object",
-			Fields: Runtime_RequestHeaderConfigurationFields,
+			Kind:     "object",
+			Fields:   Runtime_RequestHeaderConfigurationFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":    ubx.FieldSpec{WireName: "tags"},
 	},
 }

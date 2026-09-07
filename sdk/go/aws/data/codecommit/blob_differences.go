@@ -4,53 +4,53 @@ package codecommit
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BlobDifferences_Hunks_Changes struct {
-	AfterLineNumber any
+	AfterLineNumber  any
 	BeforeLineNumber any
-	Content any
-	Type any
+	Content          any
+	Type             any
 }
 
 type BlobDifferences_Hunks struct {
-	AfterLineCount any
-	AfterStartLine any
+	AfterLineCount  any
+	AfterStartLine  any
 	BeforeLineCount any
 	BeforeStartLine any
-	Changes any
+	Changes         any
 }
 
 type BlobDifferencesConfig struct {
-	AfterBlobId any
-	BeforeBlobId any
-	ContextLines any
+	AfterBlobId      any
+	BeforeBlobId     any
+	ContextLines     any
 	IgnoreWhitespace any
-	MaxResults any
-	NextToken any
-	RepositoryName any
+	MaxResults       any
+	NextToken        any
+	RepositoryName   any
 }
 
 type BlobDifferencesAttrs struct {
-	AfterBlobId any
-	AfterBlobSize any
-	BeforeBlobId any
-	BeforeBlobSize any
-	ContextLines any
-	Hunks any
+	AfterBlobId      any
+	AfterBlobSize    any
+	BeforeBlobId     any
+	BeforeBlobSize   any
+	ContextLines     any
+	Hunks            any
 	IgnoreWhitespace any
-	IsBinary any
-	MaxResults any
-	NextToken any
-	RepositoryName any
+	IsBinary         any
+	MaxResults       any
+	NextToken        any
+	RepositoryName   any
 }
 
 var BlobDifferences = ubx.DataSourceBinding{
 	WireType: "aws_codecommit_blob_differences",
 	Fields: ubx.FieldMap{
-		"AfterBlobId": ubx.FieldSpec{WireName: "after_blob_id"},
-		"BeforeBlobId": ubx.FieldSpec{WireName: "before_blob_id"},
-		"ContextLines": ubx.FieldSpec{WireName: "context_lines"},
+		"AfterBlobId":      ubx.FieldSpec{WireName: "after_blob_id"},
+		"BeforeBlobId":     ubx.FieldSpec{WireName: "before_blob_id"},
+		"ContextLines":     ubx.FieldSpec{WireName: "context_lines"},
 		"IgnoreWhitespace": ubx.FieldSpec{WireName: "ignore_whitespace"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"RepositoryName":   ubx.FieldSpec{WireName: "repository_name"},
 	},
 }

@@ -4,34 +4,34 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Connectors_ConnectorSummaries struct {
-	Arn any
-	CreatedTime any
-	Name any
-	Provider any
+	Arn              any
+	CreatedTime      any
+	Name             any
+	Provider         any
 	TenantIdentifier any
 }
 
 type Connectors_Filters struct {
-	FilterName any
+	FilterName   any
 	FilterValues any
 }
 
 var Connectors_FiltersFields = ubx.FieldMap{
-		"FilterName": ubx.FieldSpec{WireName: "filter_name"},
-		"FilterValues": ubx.FieldSpec{WireName: "filter_values"},
-	}
+	"FilterName":   ubx.FieldSpec{WireName: "filter_name"},
+	"FilterValues": ubx.FieldSpec{WireName: "filter_values"},
+}
 
 type ConnectorsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ConnectorsAttrs struct {
 	ConnectorSummaries any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters            any
+	MaxResults         any
+	NextToken          any
 }
 
 var Connectors = ubx.DataSourceBinding{
@@ -39,10 +39,10 @@ var Connectors = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Connectors_FiltersFields,
+			Kind:     "list",
+			Fields:   Connectors_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

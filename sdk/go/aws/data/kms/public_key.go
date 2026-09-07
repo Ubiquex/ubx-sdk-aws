@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PublicKeyConfig struct {
 	GrantTokens any
-	KeyId any
+	KeyId       any
 }
 
 type PublicKeyAttrs struct {
-	CustomerMasterKeySpec any
-	EncryptionAlgorithms any
-	GrantTokens any
+	CustomerMasterKeySpec  any
+	EncryptionAlgorithms   any
+	GrantTokens            any
 	KeyAgreementAlgorithms any
-	KeyId any
-	KeySpec any
-	KeyUsage any
-	PublicKey any
-	SigningAlgorithms any
+	KeyId                  any
+	KeySpec                any
+	KeyUsage               any
+	PublicKey              any
+	SigningAlgorithms      any
 }
 
 var PublicKey = ubx.DataSourceBinding{
 	WireType: "aws_kms_public_key",
 	Fields: ubx.FieldMap{
 		"GrantTokens": ubx.FieldSpec{WireName: "grant_tokens"},
-		"KeyId": ubx.FieldSpec{WireName: "key_id"},
+		"KeyId":       ubx.FieldSpec{WireName: "key_id"},
 	},
 }

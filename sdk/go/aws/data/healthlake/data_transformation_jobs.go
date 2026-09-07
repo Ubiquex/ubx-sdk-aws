@@ -4,41 +4,41 @@ package healthlake
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataTransformationJobs_Items struct {
-	EndTime any
-	JobId any
-	JobName any
-	JobStatus any
+	EndTime      any
+	JobId        any
+	JobName      any
+	JobStatus    any
 	SourceFormat any
-	SubmitTime any
+	SubmitTime   any
 }
 
 type DataTransformationJobsConfig struct {
-	JobName any
-	JobStatus any
-	MaxResults any
-	NextToken any
-	SubmittedAfter any
+	JobName         any
+	JobStatus       any
+	MaxResults      any
+	NextToken       any
+	SubmittedAfter  any
 	SubmittedBefore any
 }
 
 type DataTransformationJobsAttrs struct {
-	Items any
-	JobName any
-	JobStatus any
-	MaxResults any
-	NextToken any
-	SubmittedAfter any
+	Items           any
+	JobName         any
+	JobStatus       any
+	MaxResults      any
+	NextToken       any
+	SubmittedAfter  any
 	SubmittedBefore any
 }
 
 var DataTransformationJobs = ubx.DataSourceBinding{
 	WireType: "aws_healthlake_data_transformation_jobs",
 	Fields: ubx.FieldMap{
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"JobStatus": ubx.FieldSpec{WireName: "job_status"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SubmittedAfter": ubx.FieldSpec{WireName: "submitted_after"},
+		"JobName":         ubx.FieldSpec{WireName: "job_name"},
+		"JobStatus":       ubx.FieldSpec{WireName: "job_status"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"SubmittedAfter":  ubx.FieldSpec{WireName: "submitted_after"},
 		"SubmittedBefore": ubx.FieldSpec{WireName: "submitted_before"},
 	},
 }

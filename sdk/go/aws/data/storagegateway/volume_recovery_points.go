@@ -4,10 +4,10 @@ package storagegateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VolumeRecoveryPoints_VolumeRecoveryPointInfos struct {
-	VolumeArn any
+	VolumeArn               any
 	VolumeRecoveryPointTime any
-	VolumeSizeInBytes any
-	VolumeUsageInBytes any
+	VolumeSizeInBytes       any
+	VolumeUsageInBytes      any
 }
 
 type VolumeRecoveryPointsConfig struct {
@@ -17,7 +17,7 @@ type VolumeRecoveryPointsConfig struct {
 
 type VolumeRecoveryPointsAttrs struct {
 	// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-	GatewayArn any
+	GatewayArn               any
 	VolumeRecoveryPointInfos any
 }
 

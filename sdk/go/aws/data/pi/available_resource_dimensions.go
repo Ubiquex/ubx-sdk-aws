@@ -9,7 +9,7 @@ type AvailableResourceDimensions_MetricDimensions_Groups_Dimensions struct {
 
 type AvailableResourceDimensions_MetricDimensions_Groups struct {
 	Dimensions any
-	Group any
+	Group      any
 }
 
 type AvailableResourceDimensions_MetricDimensions struct {
@@ -19,31 +19,31 @@ type AvailableResourceDimensions_MetricDimensions struct {
 
 type AvailableResourceDimensionsConfig struct {
 	AuthorizedActions any
-	Identifier any
-	MaxResults any
-	Metrics any
-	NextToken any
-	ServiceType any
+	Identifier        any
+	MaxResults        any
+	Metrics           any
+	NextToken         any
+	ServiceType       any
 }
 
 type AvailableResourceDimensionsAttrs struct {
 	AuthorizedActions any
-	Identifier any
-	MaxResults any
-	MetricDimensions any
-	Metrics any
-	NextToken any
-	ServiceType any
+	Identifier        any
+	MaxResults        any
+	MetricDimensions  any
+	Metrics           any
+	NextToken         any
+	ServiceType       any
 }
 
 var AvailableResourceDimensions = ubx.DataSourceBinding{
 	WireType: "aws_pi_available_resource_dimensions",
 	Fields: ubx.FieldMap{
 		"AuthorizedActions": ubx.FieldSpec{WireName: "authorized_actions"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Metrics": ubx.FieldSpec{WireName: "metrics"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ServiceType": ubx.FieldSpec{WireName: "service_type"},
+		"Identifier":        ubx.FieldSpec{WireName: "identifier"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"Metrics":           ubx.FieldSpec{WireName: "metrics"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
+		"ServiceType":       ubx.FieldSpec{WireName: "service_type"},
 	},
 }

@@ -4,45 +4,45 @@ package inspector
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssessmentRuns_AssessmentRuns_Notifications struct {
-	Date any
-	Error any
-	Event any
-	Message any
+	Date                 any
+	Error                any
+	Event                any
+	Message              any
 	SnsPublishStatusCode any
-	SnsTopicArn any
+	SnsTopicArn          any
 }
 
 type AssessmentRuns_AssessmentRuns_StateChanges struct {
-	State any
+	State          any
 	StateChangedAt any
 }
 
 type AssessmentRuns_AssessmentRuns_UserAttributesForFindings struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type AssessmentRuns_AssessmentRuns struct {
-	Arn any
-	AssessmentTemplateArn any
-	CompletedAt any
-	CreatedAt any
-	DataCollected any
-	DurationInSeconds any
-	FindingCounts any
-	Name any
-	Notifications any
-	RulesPackageArns any
-	StartedAt any
-	State any
-	StateChangedAt any
-	StateChanges any
+	Arn                       any
+	AssessmentTemplateArn     any
+	CompletedAt               any
+	CreatedAt                 any
+	DataCollected             any
+	DurationInSeconds         any
+	FindingCounts             any
+	Name                      any
+	Notifications             any
+	RulesPackageArns          any
+	StartedAt                 any
+	State                     any
+	StateChangedAt            any
+	StateChanges              any
 	UserAttributesForFindings any
 }
 
 type AssessmentRuns_FailedItems struct {
 	FailureCode any
-	Retryable any
+	Retryable   any
 }
 
 type AssessmentRunsConfig struct {
@@ -51,8 +51,8 @@ type AssessmentRunsConfig struct {
 
 type AssessmentRunsAttrs struct {
 	AssessmentRunArns any
-	AssessmentRuns any
-	FailedItems any
+	AssessmentRuns    any
+	FailedItems       any
 }
 
 var AssessmentRuns = ubx.DataSourceBinding{

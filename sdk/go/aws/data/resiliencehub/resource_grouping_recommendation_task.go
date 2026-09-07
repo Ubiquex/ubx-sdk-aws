@@ -4,21 +4,21 @@ package resiliencehub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceGroupingRecommendationTaskConfig struct {
-	AppArn any
+	AppArn     any
 	GroupingId any
 }
 
 type ResourceGroupingRecommendationTaskAttrs struct {
-	AppArn any
+	AppArn       any
 	ErrorMessage any
-	GroupingId any
-	Status any
+	GroupingId   any
+	Status       any
 }
 
 var ResourceGroupingRecommendationTask = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehub_resource_grouping_recommendation_task",
 	Fields: ubx.FieldMap{
-		"AppArn": ubx.FieldSpec{WireName: "app_arn"},
+		"AppArn":     ubx.FieldSpec{WireName: "app_arn"},
 		"GroupingId": ubx.FieldSpec{WireName: "grouping_id"},
 	},
 }

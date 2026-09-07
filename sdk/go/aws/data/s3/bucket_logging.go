@@ -4,15 +4,15 @@ package s3
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BucketLogging_LoggingEnabled_TargetGrants_Grantee struct {
-	DisplayName any
+	DisplayName  any
 	EmailAddress any
-	Id any
-	Type any
-	Uri any
+	Id           any
+	Type         any
+	Uri          any
 }
 
 type BucketLogging_LoggingEnabled_TargetGrants struct {
-	Grantee any
+	Grantee    any
 	Permission any
 }
 
@@ -32,16 +32,16 @@ type BucketLogging_LoggingEnabled struct {
 	TargetGrants any
 	// <p>Amazon S3 key format for log objects. Only one format, PartitionedPrefix or SimplePrefix, is allowed.</p>
 	TargetObjectKeyFormat any
-	TargetPrefix any
+	TargetPrefix          any
 }
 
 type BucketLoggingConfig struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 }
 
 type BucketLoggingAttrs struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 	// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
 	LoggingEnabled any
@@ -50,7 +50,7 @@ type BucketLoggingAttrs struct {
 var BucketLogging = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_logging",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
 	},
 }

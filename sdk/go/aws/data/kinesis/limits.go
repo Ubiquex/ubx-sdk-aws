@@ -7,16 +7,15 @@ type LimitsConfig struct {
 }
 
 type LimitsAttrs struct {
-	ChannelCount any
-	ChannelCountLimit any
-	OnDemandStreamCount any
+	ChannelCount             any
+	ChannelCountLimit        any
+	OnDemandStreamCount      any
 	OnDemandStreamCountLimit any
-	OpenShardCount any
-	ShardLimit any
+	OpenShardCount           any
+	ShardLimit               any
 }
 
 var Limits = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_limits",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

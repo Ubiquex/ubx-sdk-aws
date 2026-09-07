@@ -5,47 +5,47 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LineageNode_DownstreamNodes struct {
 	EventTimestamp any
-	Id any
+	Id             any
 }
 
 type LineageNode_FormsOutput struct {
-	Content any
-	FormName any
-	TypeName any
+	Content      any
+	FormName     any
+	TypeName     any
 	TypeRevision any
 }
 
 type LineageNodeConfig struct {
 	DomainIdentifier any
-	EventTimestamp any
-	Identifier any
+	EventTimestamp   any
+	Identifier       any
 }
 
 type LineageNodeAttrs struct {
-	CreatedAt any
-	CreatedBy any
-	Description any
-	DomainId any
+	CreatedAt        any
+	CreatedBy        any
+	Description      any
+	DomainId         any
 	DomainIdentifier any
-	DownstreamNodes any
-	EventTimestamp any
-	FormsOutput any
-	Id any
-	Identifier any
-	Name any
+	DownstreamNodes  any
+	EventTimestamp   any
+	FormsOutput      any
+	Id               any
+	Identifier       any
+	Name             any
 	SourceIdentifier any
-	TypeName any
-	TypeRevision any
-	UpdatedAt any
-	UpdatedBy any
-	UpstreamNodes any
+	TypeName         any
+	TypeRevision     any
+	UpdatedAt        any
+	UpdatedBy        any
+	UpstreamNodes    any
 }
 
 var LineageNode = ubx.DataSourceBinding{
 	WireType: "aws_datazone_lineage_node",
 	Fields: ubx.FieldMap{
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
-		"EventTimestamp": ubx.FieldSpec{WireName: "event_timestamp"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
+		"EventTimestamp":   ubx.FieldSpec{WireName: "event_timestamp"},
+		"Identifier":       ubx.FieldSpec{WireName: "identifier"},
 	},
 }

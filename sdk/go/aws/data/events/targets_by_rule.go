@@ -13,9 +13,9 @@ type TargetsByRule_Targets_BatchParameters_RetryStrategy struct {
 
 type TargetsByRule_Targets_BatchParameters struct {
 	ArrayProperties any
-	JobDefinition any
-	JobName any
-	RetryStrategy any
+	JobDefinition   any
+	JobName         any
+	RetryStrategy   any
 }
 
 type TargetsByRule_Targets_DeadLetterConfig struct {
@@ -23,15 +23,15 @@ type TargetsByRule_Targets_DeadLetterConfig struct {
 }
 
 type TargetsByRule_Targets_EcsParameters_CapacityProviderStrategy struct {
-	Base any
+	Base             any
 	CapacityProvider any
-	Weight any
+	Weight           any
 }
 
 type TargetsByRule_Targets_EcsParameters_NetworkConfiguration_AwsvpcConfiguration struct {
 	AssignPublicIp any
 	SecurityGroups any
-	Subnets any
+	Subnets        any
 }
 
 type TargetsByRule_Targets_EcsParameters_NetworkConfiguration struct {
@@ -40,39 +40,39 @@ type TargetsByRule_Targets_EcsParameters_NetworkConfiguration struct {
 
 type TargetsByRule_Targets_EcsParameters_PlacementConstraints struct {
 	Expression any
-	Type any
+	Type       any
 }
 
 type TargetsByRule_Targets_EcsParameters_PlacementStrategy struct {
 	Field any
-	Type any
+	Type  any
 }
 
 type TargetsByRule_Targets_EcsParameters_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TargetsByRule_Targets_EcsParameters struct {
 	CapacityProviderStrategy any
-	EnableEcsmanagedTags any
-	EnableExecuteCommand any
-	Group any
-	LaunchType any
-	NetworkConfiguration any
-	PlacementConstraints any
-	PlacementStrategy any
-	PlatformVersion any
-	PropagateTags any
-	ReferenceId any
-	Tags any
-	TaskCount any
-	TaskDefinitionArn any
+	EnableEcsmanagedTags     any
+	EnableExecuteCommand     any
+	Group                    any
+	LaunchType               any
+	NetworkConfiguration     any
+	PlacementConstraints     any
+	PlacementStrategy        any
+	PlatformVersion          any
+	PropagateTags            any
+	ReferenceId              any
+	Tags                     any
+	TaskCount                any
+	TaskDefinitionArn        any
 }
 
 type TargetsByRule_Targets_HttpParameters struct {
-	HeaderParameters any
-	PathParameterValues any
+	HeaderParameters      any
+	PathParameterValues   any
 	QueryStringParameters any
 }
 
@@ -86,21 +86,21 @@ type TargetsByRule_Targets_KinesisParameters struct {
 }
 
 type TargetsByRule_Targets_RedshiftDataParameters struct {
-	Database any
-	DbUser any
+	Database         any
+	DbUser           any
 	SecretManagerArn any
-	Sql any
-	StatementName any
-	WithEvent any
+	Sql              any
+	StatementName    any
+	WithEvent        any
 }
 
 type TargetsByRule_Targets_RetryPolicy struct {
 	MaximumEventAgeInSeconds any
-	MaximumRetryAttempts any
+	MaximumRetryAttempts     any
 }
 
 type TargetsByRule_Targets_RunCommandParameters_RunCommandTargets struct {
-	Key any
+	Key    any
 	Values any
 }
 
@@ -109,7 +109,7 @@ type TargetsByRule_Targets_RunCommandParameters struct {
 }
 
 type TargetsByRule_Targets_SageMakerPipelineParameters_PipelineParameterList struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -122,45 +122,45 @@ type TargetsByRule_Targets_SqsParameters struct {
 }
 
 type TargetsByRule_Targets struct {
-	Arn any
-	BatchParameters any
-	DeadLetterConfig any
-	EcsParameters any
-	HttpParameters any
-	Id any
-	Input any
-	InputPath any
-	InputTransformer any
-	KinesisParameters any
-	RedshiftDataParameters any
-	RetryPolicy any
-	RoleArn any
-	RunCommandParameters any
+	Arn                         any
+	BatchParameters             any
+	DeadLetterConfig            any
+	EcsParameters               any
+	HttpParameters              any
+	Id                          any
+	Input                       any
+	InputPath                   any
+	InputTransformer            any
+	KinesisParameters           any
+	RedshiftDataParameters      any
+	RetryPolicy                 any
+	RoleArn                     any
+	RunCommandParameters        any
 	SageMakerPipelineParameters any
-	SqsParameters any
+	SqsParameters               any
 }
 
 type TargetsByRuleConfig struct {
 	EventBusName any
-	Limit any
-	NextToken any
-	Rule any
+	Limit        any
+	NextToken    any
+	Rule         any
 }
 
 type TargetsByRuleAttrs struct {
 	EventBusName any
-	Limit any
-	NextToken any
-	Rule any
-	Targets any
+	Limit        any
+	NextToken    any
+	Rule         any
+	Targets      any
 }
 
 var TargetsByRule = ubx.DataSourceBinding{
 	WireType: "aws_events_targets_by_rule",
 	Fields: ubx.FieldMap{
 		"EventBusName": ubx.FieldSpec{WireName: "event_bus_name"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Rule": ubx.FieldSpec{WireName: "rule"},
+		"Limit":        ubx.FieldSpec{WireName: "limit"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"Rule":         ubx.FieldSpec{WireName: "rule"},
 	},
 }

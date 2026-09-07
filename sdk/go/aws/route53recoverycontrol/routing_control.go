@@ -28,8 +28,8 @@ type RoutingControlAttrs struct {
 var RoutingControl = ubx.ResourceBinding{
 	WireType: "aws_route53_recovery_control_routing_control",
 	Fields: ubx.FieldMap{
-		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
+		"ClusterArn":      ubx.FieldSpec{WireName: "cluster_arn"},
 		"ControlPanelArn": ubx.FieldSpec{WireName: "control_panel_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 	},
 }

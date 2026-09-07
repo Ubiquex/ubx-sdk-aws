@@ -26,8 +26,8 @@ type GroupAttrs struct {
 var Group = ubx.ResourceBinding{
 	WireType: "aws_identity_store_group",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
 		"IdentityStoreId": ubx.FieldSpec{WireName: "identity_store_id"},
 	},
 }

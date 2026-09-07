@@ -9,31 +9,31 @@ type DevopsGuruResourceCollection_ResourceCollection_CloudFormation struct {
 
 type DevopsGuruResourceCollection_ResourceCollection_Tags struct {
 	AppBoundaryKey any
-	TagValues any
+	TagValues      any
 }
 
 type DevopsGuruResourceCollection_ResourceCollection struct {
 	// <p> Information about Amazon Web Services CloudFormation stacks. You can use up to 500 stacks to specify which Amazon Web Services resources in your account to analyze. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>Amazon Web Services CloudFormation User Guide</i>. </p>
 	CloudFormation any
-	Tags any
+	Tags           any
 }
 
 type DevopsGuruResourceCollectionConfig struct {
-	NextToken any
+	NextToken              any
 	ResourceCollectionType any
 }
 
 type DevopsGuruResourceCollectionAttrs struct {
 	NextToken any
 	// <p> Information about a filter used to specify which Amazon Web Services resources are analyzed for anomalous behavior by DevOps Guru. </p>
-	ResourceCollection any
+	ResourceCollection     any
 	ResourceCollectionType any
 }
 
 var DevopsGuruResourceCollection = ubx.DataSourceBinding{
 	WireType: "aws_devops_guru_resource_collection",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
 		"ResourceCollectionType": ubx.FieldSpec{WireName: "resource_collection_type"},
 	},
 }

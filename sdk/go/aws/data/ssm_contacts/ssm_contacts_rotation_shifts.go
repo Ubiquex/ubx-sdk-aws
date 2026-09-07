@@ -8,37 +8,37 @@ type SsmContactsRotationShifts_RotationShifts_ShiftDetails struct {
 }
 
 type SsmContactsRotationShifts_RotationShifts struct {
-	ContactIds any
-	EndTime any
+	ContactIds   any
+	EndTime      any
 	ShiftDetails any
-	StartTime any
-	Type any
+	StartTime    any
+	Type         any
 }
 
 type SsmContactsRotationShiftsConfig struct {
-	EndTime any
+	EndTime    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	RotationId any
-	StartTime any
+	StartTime  any
 }
 
 type SsmContactsRotationShiftsAttrs struct {
-	EndTime any
-	MaxResults any
-	NextToken any
-	RotationId any
+	EndTime        any
+	MaxResults     any
+	NextToken      any
+	RotationId     any
 	RotationShifts any
-	StartTime any
+	StartTime      any
 }
 
 var SsmContactsRotationShifts = ubx.DataSourceBinding{
 	WireType: "aws_ssm_contacts_rotation_shifts",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":    ubx.FieldSpec{WireName: "end_time"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"RotationId": ubx.FieldSpec{WireName: "rotation_id"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"StartTime":  ubx.FieldSpec{WireName: "start_time"},
 	},
 }

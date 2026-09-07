@@ -4,28 +4,28 @@ package agreement_marketplace
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgreementMarketplaceAgreementPaymentRequestConfig struct {
-	AgreementId any
+	AgreementId      any
 	PaymentRequestId any
 }
 
 type AgreementMarketplaceAgreementPaymentRequestAttrs struct {
-	AgreementId any
-	ChargeAmount any
-	ChargeId any
-	CreatedAt any
-	CurrencyCode any
-	Description any
-	Name any
+	AgreementId      any
+	ChargeAmount     any
+	ChargeId         any
+	CreatedAt        any
+	CurrencyCode     any
+	Description      any
+	Name             any
 	PaymentRequestId any
-	Status any
-	StatusMessage any
-	UpdatedAt any
+	Status           any
+	StatusMessage    any
+	UpdatedAt        any
 }
 
 var AgreementMarketplaceAgreementPaymentRequest = ubx.DataSourceBinding{
 	WireType: "aws_agreement_marketplace_agreement_payment_request",
 	Fields: ubx.FieldMap{
-		"AgreementId": ubx.FieldSpec{WireName: "agreement_id"},
+		"AgreementId":      ubx.FieldSpec{WireName: "agreement_id"},
 		"PaymentRequestId": ubx.FieldSpec{WireName: "payment_request_id"},
 	},
 }

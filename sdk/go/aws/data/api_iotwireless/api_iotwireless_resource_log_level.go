@@ -6,7 +6,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ApiIotwirelessResourceLogLevelConfig struct {
 	// <p>The unique identifier of the resource, which can be the wireless gateway ID, the wireless device ID, or the FUOTA task ID.</p>
 	ResourceIdentifier any
-	ResourceType any
+	ResourceType       any
 }
 
 type ApiIotwirelessResourceLogLevelAttrs struct {
@@ -14,13 +14,13 @@ type ApiIotwirelessResourceLogLevelAttrs struct {
 	LogLevel any
 	// <p>The unique identifier of the resource, which can be the wireless gateway ID, the wireless device ID, or the FUOTA task ID.</p>
 	ResourceIdentifier any
-	ResourceType any
+	ResourceType       any
 }
 
 var ApiIotwirelessResourceLogLevel = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_resource_log_level",
 	Fields: ubx.FieldMap{
 		"ResourceIdentifier": ubx.FieldSpec{WireName: "resource_identifier"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"ResourceType":       ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

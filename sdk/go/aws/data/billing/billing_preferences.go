@@ -5,41 +5,41 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BillingPreferences_BillingPreferences_BillingPeriod struct {
 	Month any
-	Year any
+	Year  any
 }
 
 type BillingPreferences_BillingPreferences struct {
-	AccountId any
-	AccountName any
+	AccountId     any
+	AccountName   any
 	BillingPeriod any
-	Feature any
-	Key any
-	Value any
+	Feature       any
+	Key           any
+	Value         any
 }
 
 type BillingPreferences_Filters struct {
-	Name any
+	Name  any
 	Value any
 }
 
 var BillingPreferences_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type BillingPreferencesConfig struct {
-	Features any
-	Filters any
+	Features   any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type BillingPreferencesAttrs struct {
 	BillingPreferences any
-	Features any
-	Filters any
-	MaxResults any
-	NextToken any
+	Features           any
+	Filters            any
+	MaxResults         any
+	NextToken          any
 }
 
 var BillingPreferences = ubx.DataSourceBinding{
@@ -48,10 +48,10 @@ var BillingPreferences = ubx.DataSourceBinding{
 		"Features": ubx.FieldSpec{WireName: "features"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: BillingPreferences_FiltersFields,
+			Kind:     "list",
+			Fields:   BillingPreferences_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

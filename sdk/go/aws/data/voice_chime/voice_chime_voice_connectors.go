@@ -4,26 +4,26 @@ package voice_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChimeVoiceConnectors_VoiceConnectors struct {
-	AwsRegion any
-	CreatedTimestamp any
-	IntegrationType any
-	Name any
-	NetworkType any
-	OutboundHostName any
+	AwsRegion         any
+	CreatedTimestamp  any
+	IntegrationType   any
+	Name              any
+	NetworkType       any
+	OutboundHostName  any
 	RequireEncryption any
-	UpdatedTimestamp any
+	UpdatedTimestamp  any
 	VoiceConnectorArn any
-	VoiceConnectorId any
+	VoiceConnectorId  any
 }
 
 type VoiceChimeVoiceConnectorsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type VoiceChimeVoiceConnectorsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	VoiceConnectors any
 }
 
@@ -31,6 +31,6 @@ var VoiceChimeVoiceConnectors = ubx.DataSourceBinding{
 	WireType: "aws_voice_chime_voice_connectors",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -40,7 +40,7 @@ type InferenceComponent_DeploymentConfig struct {
 
 type InferenceComponent_RuntimeConfig_PlacementStatus struct {
 	CurrentCopyCount any
-	InstanceType any
+	InstanceType     any
 }
 
 type InferenceComponent_RuntimeConfig struct {
@@ -67,7 +67,7 @@ type InferenceComponent_Specification_ComputeResourceRequirements struct {
 
 type InferenceComponent_Specification_Container_ContainerMetricsConfig_MetricsEndpoints struct {
 	MetricPublishFrequencyInSeconds any
-	MetricsEndpointPath any
+	MetricsEndpointPath             any
 }
 
 type InferenceComponent_Specification_Container_ContainerMetricsConfig struct {
@@ -110,7 +110,7 @@ type InferenceComponent_Specification_SchedulingConfig_AvailabilityZoneBalance s
 type InferenceComponent_Specification_SchedulingConfig struct {
 	// Configuration for balancing inference component copies across Availability Zones
 	AvailabilityZoneBalance any
-	PlacementStrategy any
+	PlacementStrategy       any
 }
 
 type InferenceComponent_Specification_StartupParameters struct {
@@ -140,21 +140,21 @@ type InferenceComponent_Specification struct {
 }
 
 type InferenceComponent_Specifications_Container struct {
-	ArtifactUrl any
+	ArtifactUrl            any
 	ContainerMetricsConfig any
-	Environment any
-	Image any
+	Environment            any
+	Image                  any
 }
 
 type InferenceComponent_Specifications struct {
 	ComputeResourceRequirements any
-	Container any
-	CurrentDataCacheConfig any
-	DataCacheConfig any
-	InstanceType any
-	ModelName any
-	SchedulingConfig any
-	StartupParameters any
+	Container                   any
+	CurrentDataCacheConfig      any
+	DataCacheConfig             any
+	InstanceType                any
+	ModelName                   any
+	SchedulingConfig            any
+	StartupParameters           any
 }
 
 type InferenceComponent_Tags struct {
@@ -165,54 +165,54 @@ type InferenceComponent_Tags struct {
 }
 
 var InferenceComponent_DeploymentConfig_AutoRollbackConfiguration_AlarmsFields = ubx.FieldMap{
-		"AlarmName": ubx.FieldSpec{WireName: "alarm_name"},
-	}
+	"AlarmName": ubx.FieldSpec{WireName: "alarm_name"},
+}
 
 var InferenceComponent_DeploymentConfig_AutoRollbackConfigurationFields = ubx.FieldMap{
-		"Alarms": ubx.FieldSpec{
-			WireName: "alarms",
-			Kind: "list",
-			Fields: InferenceComponent_DeploymentConfig_AutoRollbackConfiguration_AlarmsFields,
-		},
-	}
+	"Alarms": ubx.FieldSpec{
+		WireName: "alarms",
+		Kind:     "list",
+		Fields:   InferenceComponent_DeploymentConfig_AutoRollbackConfiguration_AlarmsFields,
+	},
+}
 
 var InferenceComponent_DeploymentConfig_RollingUpdatePolicy_MaximumBatchSizeFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var InferenceComponent_DeploymentConfig_RollingUpdatePolicyFields = ubx.FieldMap{
-		"MaximumBatchSize": ubx.FieldSpec{
-			WireName: "maximum_batch_size",
-			Kind: "object",
-			Fields: InferenceComponent_DeploymentConfig_RollingUpdatePolicy_MaximumBatchSizeFields,
-		},
-		"MaximumExecutionTimeoutInSeconds": ubx.FieldSpec{WireName: "maximum_execution_timeout_in_seconds"},
-		"RollbackMaximumBatchSize": ubx.FieldSpec{
-			WireName: "rollback_maximum_batch_size",
-			Kind: "object",
-			Fields: InferenceComponent_DeploymentConfig_RollingUpdatePolicy_MaximumBatchSizeFields,
-		},
-		"WaitIntervalInSeconds": ubx.FieldSpec{WireName: "wait_interval_in_seconds"},
-	}
+	"MaximumBatchSize": ubx.FieldSpec{
+		WireName: "maximum_batch_size",
+		Kind:     "object",
+		Fields:   InferenceComponent_DeploymentConfig_RollingUpdatePolicy_MaximumBatchSizeFields,
+	},
+	"MaximumExecutionTimeoutInSeconds": ubx.FieldSpec{WireName: "maximum_execution_timeout_in_seconds"},
+	"RollbackMaximumBatchSize": ubx.FieldSpec{
+		WireName: "rollback_maximum_batch_size",
+		Kind:     "object",
+		Fields:   InferenceComponent_DeploymentConfig_RollingUpdatePolicy_MaximumBatchSizeFields,
+	},
+	"WaitIntervalInSeconds": ubx.FieldSpec{WireName: "wait_interval_in_seconds"},
+}
 
 var InferenceComponent_DeploymentConfigFields = ubx.FieldMap{
-		"AutoRollbackConfiguration": ubx.FieldSpec{
-			WireName: "auto_rollback_configuration",
-			Kind: "object",
-			Fields: InferenceComponent_DeploymentConfig_AutoRollbackConfigurationFields,
-		},
-		"RollingUpdatePolicy": ubx.FieldSpec{
-			WireName: "rolling_update_policy",
-			Kind: "object",
-			Fields: InferenceComponent_DeploymentConfig_RollingUpdatePolicyFields,
-		},
-	}
+	"AutoRollbackConfiguration": ubx.FieldSpec{
+		WireName: "auto_rollback_configuration",
+		Kind:     "object",
+		Fields:   InferenceComponent_DeploymentConfig_AutoRollbackConfigurationFields,
+	},
+	"RollingUpdatePolicy": ubx.FieldSpec{
+		WireName: "rolling_update_policy",
+		Kind:     "object",
+		Fields:   InferenceComponent_DeploymentConfig_RollingUpdatePolicyFields,
+	},
+}
 
 var InferenceComponent_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type InferenceComponentConfig struct {
 	// The deployment config for the inference component
@@ -265,16 +265,16 @@ var InferenceComponent = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DeploymentConfig": ubx.FieldSpec{
 			WireName: "deployment_config",
-			Kind: "object",
-			Fields: InferenceComponent_DeploymentConfigFields,
+			Kind:     "object",
+			Fields:   InferenceComponent_DeploymentConfigFields,
 		},
-		"EndpointArn": ubx.FieldSpec{WireName: "endpoint_arn"},
-		"EndpointName": ubx.FieldSpec{WireName: "endpoint_name"},
+		"EndpointArn":            ubx.FieldSpec{WireName: "endpoint_arn"},
+		"EndpointName":           ubx.FieldSpec{WireName: "endpoint_name"},
 		"InferenceComponentName": ubx.FieldSpec{WireName: "inference_component_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: InferenceComponent_TagsFields,
+			Kind:     "list",
+			Fields:   InferenceComponent_TagsFields,
 		},
 		"VariantName": ubx.FieldSpec{WireName: "variant_name"},
 	},

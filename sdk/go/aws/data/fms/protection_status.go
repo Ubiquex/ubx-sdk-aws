@@ -4,34 +4,34 @@ package fms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProtectionStatusConfig struct {
-	EndTime any
-	MaxResults any
+	EndTime         any
+	MaxResults      any
 	MemberAccountId any
-	NextToken any
-	PolicyId any
-	StartTime any
+	NextToken       any
+	PolicyId        any
+	StartTime       any
 }
 
 type ProtectionStatusAttrs struct {
-	AdminAccountId any
-	Data any
-	EndTime any
-	MaxResults any
+	AdminAccountId  any
+	Data            any
+	EndTime         any
+	MaxResults      any
 	MemberAccountId any
-	NextToken any
-	PolicyId any
-	ServiceType any
-	StartTime any
+	NextToken       any
+	PolicyId        any
+	ServiceType     any
+	StartTime       any
 }
 
 var ProtectionStatus = ubx.DataSourceBinding{
 	WireType: "aws_fms_protection_status",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"EndTime":         ubx.FieldSpec{WireName: "end_time"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
 		"MemberAccountId": ubx.FieldSpec{WireName: "member_account_id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"PolicyId":        ubx.FieldSpec{WireName: "policy_id"},
+		"StartTime":       ubx.FieldSpec{WireName: "start_time"},
 	},
 }

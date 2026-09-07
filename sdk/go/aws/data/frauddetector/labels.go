@@ -4,31 +4,31 @@ package frauddetector
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Labels_Labels struct {
-	Arn any
-	CreatedTime any
-	Description any
+	Arn             any
+	CreatedTime     any
+	Description     any
 	LastUpdatedTime any
-	Name any
+	Name            any
 }
 
 type LabelsConfig struct {
 	MaxResults any
-	Name any
-	NextToken any
+	Name       any
+	NextToken  any
 }
 
 type LabelsAttrs struct {
-	Labels any
+	Labels     any
 	MaxResults any
-	Name any
-	NextToken any
+	Name       any
+	NextToken  any
 }
 
 var Labels = ubx.DataSourceBinding{
 	WireType: "aws_frauddetector_labels",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

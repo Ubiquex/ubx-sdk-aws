@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CreatedArtifacts_CreatedArtifactList struct {
 	Description any
-	Name any
+	Name        any
 }
 
 type CreatedArtifactsConfig struct {
-	MaxResults any
-	MigrationTaskName any
-	NextToken any
+	MaxResults           any
+	MigrationTaskName    any
+	NextToken            any
 	ProgressUpdateStream any
 }
 
 type CreatedArtifactsAttrs struct {
-	CreatedArtifactList any
-	MaxResults any
-	MigrationTaskName any
-	NextToken any
+	CreatedArtifactList  any
+	MaxResults           any
+	MigrationTaskName    any
+	NextToken            any
 	ProgressUpdateStream any
 }
 
 var CreatedArtifacts = ubx.DataSourceBinding{
 	WireType: "aws_mgh_created_artifacts",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MigrationTaskName": ubx.FieldSpec{WireName: "migration_task_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"MigrationTaskName":    ubx.FieldSpec{WireName: "migration_task_name"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 		"ProgressUpdateStream": ubx.FieldSpec{WireName: "progress_update_stream"},
 	},
 }

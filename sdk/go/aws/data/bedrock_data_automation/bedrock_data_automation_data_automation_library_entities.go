@@ -4,11 +4,11 @@ package bedrock_data_automation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BedrockDataAutomationDataAutomationLibraryEntities_Entities_Vocabulary struct {
-	Description any
-	EntityId any
-	Language any
+	Description      any
+	EntityId         any
+	Language         any
 	LastModifiedTime any
-	NumOfPhrases any
+	NumOfPhrases     any
 }
 
 type BedrockDataAutomationDataAutomationLibraryEntities_Entities struct {
@@ -45,6 +45,6 @@ var BedrockDataAutomationDataAutomationLibraryEntities = ubx.DataSourceBinding{
 		"EntityType": ubx.FieldSpec{WireName: "entity_type"},
 		"LibraryArn": ubx.FieldSpec{WireName: "library_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcpeeringConnection_Tags struct {
 	// The user-defined key of a tag attached to the AWS EC2 VPC Peering Connection, used to label and organize the peering resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var VpcpeeringConnection_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VpcpeeringConnectionConfig struct {
 	// The Region code to use when calling Security Token Service (STS) to assume the PeerRoleArn, if provided.
@@ -54,14 +54,14 @@ var VpcpeeringConnection = ubx.ResourceBinding{
 	WireType: "aws_ec2_vpcpeering_connection",
 	Fields: ubx.FieldMap{
 		"AssumeRoleRegion": ubx.FieldSpec{WireName: "assume_role_region"},
-		"PeerOwnerId": ubx.FieldSpec{WireName: "peer_owner_id"},
-		"PeerRegion": ubx.FieldSpec{WireName: "peer_region"},
-		"PeerRoleArn": ubx.FieldSpec{WireName: "peer_role_arn"},
-		"PeerVpcId": ubx.FieldSpec{WireName: "peer_vpc_id"},
+		"PeerOwnerId":      ubx.FieldSpec{WireName: "peer_owner_id"},
+		"PeerRegion":       ubx.FieldSpec{WireName: "peer_region"},
+		"PeerRoleArn":      ubx.FieldSpec{WireName: "peer_role_arn"},
+		"PeerVpcId":        ubx.FieldSpec{WireName: "peer_vpc_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VpcpeeringConnection_TagsFields,
+			Kind:     "list",
+			Fields:   VpcpeeringConnection_TagsFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

@@ -4,27 +4,27 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dnssec_KeySigningKeys struct {
-	CreatedDate any
-	DigestAlgorithmMnemonic any
-	DigestAlgorithmType any
-	DigestValue any
-	Dnskeyrecord any
-	Dsrecord any
-	Flag any
-	KeyTag any
-	KmsArn any
-	LastModifiedDate any
-	Name any
-	PublicKey any
+	CreatedDate              any
+	DigestAlgorithmMnemonic  any
+	DigestAlgorithmType      any
+	DigestValue              any
+	Dnskeyrecord             any
+	Dsrecord                 any
+	Flag                     any
+	KeyTag                   any
+	KmsArn                   any
+	LastModifiedDate         any
+	Name                     any
+	PublicKey                any
 	SigningAlgorithmMnemonic any
-	SigningAlgorithmType any
-	Status any
-	StatusMessage any
+	SigningAlgorithmType     any
+	Status                   any
+	StatusMessage            any
 }
 
 type Dnssec_Status struct {
 	ServeSignature any
-	StatusMessage any
+	StatusMessage  any
 }
 
 type DnssecConfig struct {
@@ -32,7 +32,7 @@ type DnssecConfig struct {
 }
 
 type DnssecAttrs struct {
-	HostedZoneId any
+	HostedZoneId   any
 	KeySigningKeys any
 	// <p>A string representing the status of DNSSEC signing.</p>
 	Status any

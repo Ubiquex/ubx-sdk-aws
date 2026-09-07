@@ -5,10 +5,10 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationConfiguration_AutoEnable struct {
 	CodeRepository any
-	Ec2 any
-	Ecr any
-	Lambda any
-	LambdaCode any
+	Ec2            any
+	Ecr            any
+	Lambda         any
+	LambdaCode     any
 }
 
 type OrganizationConfigurationConfig struct {
@@ -16,12 +16,11 @@ type OrganizationConfigurationConfig struct {
 
 type OrganizationConfigurationAttrs struct {
 	// <p>Represents which scan types are automatically enabled for new members of your Amazon Inspector organization.</p>
-	AutoEnable any
+	AutoEnable             any
 	MaxAccountLimitReached any
 }
 
 var OrganizationConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_inspector2_organization_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

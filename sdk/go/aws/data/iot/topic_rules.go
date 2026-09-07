@@ -4,34 +4,34 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TopicRules_Rules struct {
-	CreatedAt any
-	RuleArn any
+	CreatedAt    any
+	RuleArn      any
 	RuleDisabled any
-	RuleName any
+	RuleName     any
 	TopicPattern any
 }
 
 type TopicRulesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	RuleDisabled any
-	Topic any
+	Topic        any
 }
 
 type TopicRulesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	RuleDisabled any
-	Rules any
-	Topic any
+	Rules        any
+	Topic        any
 }
 
 var TopicRules = ubx.DataSourceBinding{
 	WireType: "aws_iot_topic_rules",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"RuleDisabled": ubx.FieldSpec{WireName: "rule_disabled"},
-		"Topic": ubx.FieldSpec{WireName: "topic"},
+		"Topic":        ubx.FieldSpec{WireName: "topic"},
 	},
 }

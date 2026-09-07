@@ -26,20 +26,20 @@ type AccessPoint_VpcConfiguration struct {
 }
 
 var AccessPoint_PublicAccessBlockConfigurationFields = ubx.FieldMap{
-		"BlockPublicAcls": ubx.FieldSpec{WireName: "block_public_acls"},
-		"BlockPublicPolicy": ubx.FieldSpec{WireName: "block_public_policy"},
-		"IgnorePublicAcls": ubx.FieldSpec{WireName: "ignore_public_acls"},
-		"RestrictPublicBuckets": ubx.FieldSpec{WireName: "restrict_public_buckets"},
-	}
+	"BlockPublicAcls":       ubx.FieldSpec{WireName: "block_public_acls"},
+	"BlockPublicPolicy":     ubx.FieldSpec{WireName: "block_public_policy"},
+	"IgnorePublicAcls":      ubx.FieldSpec{WireName: "ignore_public_acls"},
+	"RestrictPublicBuckets": ubx.FieldSpec{WireName: "restrict_public_buckets"},
+}
 
 var AccessPoint_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var AccessPoint_VpcConfigurationFields = ubx.FieldMap{
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-	}
+	"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
+}
 
 type AccessPointConfig struct {
 	// The name of the bucket that you want to associate this Access Point with.
@@ -84,24 +84,24 @@ type AccessPointAttrs struct {
 var AccessPoint = ubx.ResourceBinding{
 	WireType: "aws_s3_access_point",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":          ubx.FieldSpec{WireName: "bucket"},
 		"BucketAccountId": ubx.FieldSpec{WireName: "bucket_account_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"Policy":          ubx.FieldSpec{WireName: "policy"},
 		"PublicAccessBlockConfiguration": ubx.FieldSpec{
 			WireName: "public_access_block_configuration",
-			Kind: "object",
-			Fields: AccessPoint_PublicAccessBlockConfigurationFields,
+			Kind:     "object",
+			Fields:   AccessPoint_PublicAccessBlockConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AccessPoint_TagsFields,
+			Kind:     "list",
+			Fields:   AccessPoint_TagsFields,
 		},
 		"VpcConfiguration": ubx.FieldSpec{
 			WireName: "vpc_configuration",
-			Kind: "object",
-			Fields: AccessPoint_VpcConfigurationFields,
+			Kind:     "object",
+			Fields:   AccessPoint_VpcConfigurationFields,
 		},
 	},
 }

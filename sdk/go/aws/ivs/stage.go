@@ -48,51 +48,51 @@ type Stage_Tags struct {
 }
 
 var Stage_AutoParticipantRecordingConfiguration_HlsConfiguration_ParticipantRecordingHlsConfigurationFields = ubx.FieldMap{
-		"TargetSegmentDurationSeconds": ubx.FieldSpec{WireName: "target_segment_duration_seconds"},
-	}
+	"TargetSegmentDurationSeconds": ubx.FieldSpec{WireName: "target_segment_duration_seconds"},
+}
 
 var Stage_AutoParticipantRecordingConfiguration_HlsConfigurationFields = ubx.FieldMap{
-		"ParticipantRecordingHlsConfiguration": ubx.FieldSpec{
-			WireName: "participant_recording_hls_configuration",
-			Kind: "object",
-			Fields: Stage_AutoParticipantRecordingConfiguration_HlsConfiguration_ParticipantRecordingHlsConfigurationFields,
-		},
-	}
+	"ParticipantRecordingHlsConfiguration": ubx.FieldSpec{
+		WireName: "participant_recording_hls_configuration",
+		Kind:     "object",
+		Fields:   Stage_AutoParticipantRecordingConfiguration_HlsConfiguration_ParticipantRecordingHlsConfigurationFields,
+	},
+}
 
 var Stage_AutoParticipantRecordingConfiguration_ThumbnailConfiguration_ParticipantThumbnailConfigurationFields = ubx.FieldMap{
-		"RecordingMode": ubx.FieldSpec{WireName: "recording_mode"},
-		"Storage": ubx.FieldSpec{WireName: "storage"},
-		"TargetIntervalSeconds": ubx.FieldSpec{WireName: "target_interval_seconds"},
-	}
+	"RecordingMode":         ubx.FieldSpec{WireName: "recording_mode"},
+	"Storage":               ubx.FieldSpec{WireName: "storage"},
+	"TargetIntervalSeconds": ubx.FieldSpec{WireName: "target_interval_seconds"},
+}
 
 var Stage_AutoParticipantRecordingConfiguration_ThumbnailConfigurationFields = ubx.FieldMap{
-		"ParticipantThumbnailConfiguration": ubx.FieldSpec{
-			WireName: "participant_thumbnail_configuration",
-			Kind: "object",
-			Fields: Stage_AutoParticipantRecordingConfiguration_ThumbnailConfiguration_ParticipantThumbnailConfigurationFields,
-		},
-	}
+	"ParticipantThumbnailConfiguration": ubx.FieldSpec{
+		WireName: "participant_thumbnail_configuration",
+		Kind:     "object",
+		Fields:   Stage_AutoParticipantRecordingConfiguration_ThumbnailConfiguration_ParticipantThumbnailConfigurationFields,
+	},
+}
 
 var Stage_AutoParticipantRecordingConfigurationFields = ubx.FieldMap{
-		"HlsConfiguration": ubx.FieldSpec{
-			WireName: "hls_configuration",
-			Kind: "object",
-			Fields: Stage_AutoParticipantRecordingConfiguration_HlsConfigurationFields,
-		},
-		"MediaTypes": ubx.FieldSpec{WireName: "media_types"},
-		"RecordingReconnectWindowSeconds": ubx.FieldSpec{WireName: "recording_reconnect_window_seconds"},
-		"StorageConfigurationArn": ubx.FieldSpec{WireName: "storage_configuration_arn"},
-		"ThumbnailConfiguration": ubx.FieldSpec{
-			WireName: "thumbnail_configuration",
-			Kind: "object",
-			Fields: Stage_AutoParticipantRecordingConfiguration_ThumbnailConfigurationFields,
-		},
-	}
+	"HlsConfiguration": ubx.FieldSpec{
+		WireName: "hls_configuration",
+		Kind:     "object",
+		Fields:   Stage_AutoParticipantRecordingConfiguration_HlsConfigurationFields,
+	},
+	"MediaTypes":                      ubx.FieldSpec{WireName: "media_types"},
+	"RecordingReconnectWindowSeconds": ubx.FieldSpec{WireName: "recording_reconnect_window_seconds"},
+	"StorageConfigurationArn":         ubx.FieldSpec{WireName: "storage_configuration_arn"},
+	"ThumbnailConfiguration": ubx.FieldSpec{
+		WireName: "thumbnail_configuration",
+		Kind:     "object",
+		Fields:   Stage_AutoParticipantRecordingConfiguration_ThumbnailConfigurationFields,
+	},
+}
 
 var Stage_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StageConfig struct {
 	// Configuration object for individual participant recording, to attach to the new stage.
@@ -121,14 +121,14 @@ var Stage = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoParticipantRecordingConfiguration": ubx.FieldSpec{
 			WireName: "auto_participant_recording_configuration",
-			Kind: "object",
-			Fields: Stage_AutoParticipantRecordingConfigurationFields,
+			Kind:     "object",
+			Fields:   Stage_AutoParticipantRecordingConfigurationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Stage_TagsFields,
+			Kind:     "list",
+			Fields:   Stage_TagsFields,
 		},
 	},
 }

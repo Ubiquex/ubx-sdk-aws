@@ -9,7 +9,7 @@ type MedicalImagingTagsForResourceConfig struct {
 
 type MedicalImagingTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var MedicalImagingTagsForResource = ubx.DataSourceBinding{

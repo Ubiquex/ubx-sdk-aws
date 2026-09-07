@@ -4,9 +4,9 @@ package support
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrustedAdvisorCheckRefreshStatuses_Statuses struct {
-	CheckId any
+	CheckId                    any
 	MillisUntilNextRefreshable any
-	Status any
+	Status                     any
 }
 
 type TrustedAdvisorCheckRefreshStatusesConfig struct {

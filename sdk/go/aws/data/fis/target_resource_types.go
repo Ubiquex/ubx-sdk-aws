@@ -4,18 +4,18 @@ package fis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TargetResourceTypes_TargetResourceTypes struct {
-	Description any
+	Description  any
 	ResourceType any
 }
 
 type TargetResourceTypesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type TargetResourceTypesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 	TargetResourceTypes any
 }
 
@@ -23,6 +23,6 @@ var TargetResourceTypes = ubx.DataSourceBinding{
 	WireType: "aws_fis_target_resource_types",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

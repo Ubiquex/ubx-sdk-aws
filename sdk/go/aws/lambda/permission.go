@@ -50,14 +50,14 @@ type PermissionAttrs struct {
 var Permission = ubx.ResourceBinding{
 	WireType: "aws_lambda_permission",
 	Fields: ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"EventSourceToken": ubx.FieldSpec{WireName: "event_source_token"},
-		"FunctionName": ubx.FieldSpec{WireName: "function_name"},
-		"FunctionUrlAuthType": ubx.FieldSpec{WireName: "function_url_auth_type"},
+		"Action":                ubx.FieldSpec{WireName: "action"},
+		"EventSourceToken":      ubx.FieldSpec{WireName: "event_source_token"},
+		"FunctionName":          ubx.FieldSpec{WireName: "function_name"},
+		"FunctionUrlAuthType":   ubx.FieldSpec{WireName: "function_url_auth_type"},
 		"InvokedViaFunctionUrl": ubx.FieldSpec{WireName: "invoked_via_function_url"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-		"PrincipalOrgId": ubx.FieldSpec{WireName: "principal_org_id"},
-		"SourceAccount": ubx.FieldSpec{WireName: "source_account"},
-		"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
+		"Principal":             ubx.FieldSpec{WireName: "principal"},
+		"PrincipalOrgId":        ubx.FieldSpec{WireName: "principal_org_id"},
+		"SourceAccount":         ubx.FieldSpec{WireName: "source_account"},
+		"SourceArn":             ubx.FieldSpec{WireName: "source_arn"},
 	},
 }

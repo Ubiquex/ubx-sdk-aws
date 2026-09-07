@@ -4,39 +4,39 @@ package models_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsLexBotAlias_ConversationLogs_LogSettings struct {
-	Destination any
-	KmsKeyArn any
-	LogType any
-	ResourceArn any
+	Destination    any
+	KmsKeyArn      any
+	LogType        any
+	ResourceArn    any
 	ResourcePrefix any
 }
 
 type ModelsLexBotAlias_ConversationLogs struct {
-	IamRoleArn any
+	IamRoleArn  any
 	LogSettings any
 }
 
 type ModelsLexBotAliasConfig struct {
 	BotName any
-	Name any
+	Name    any
 }
 
 type ModelsLexBotAliasAttrs struct {
-	BotName any
+	BotName    any
 	BotVersion any
-	Checksum any
+	Checksum   any
 	// <p>Contains information about conversation log settings.</p>
 	ConversationLogs any
-	CreatedDate any
-	Description any
-	LastUpdatedDate any
-	Name any
+	CreatedDate      any
+	Description      any
+	LastUpdatedDate  any
+	Name             any
 }
 
 var ModelsLexBotAlias = ubx.DataSourceBinding{
 	WireType: "aws_models_lex_bot_alias",
 	Fields: ubx.FieldMap{
 		"BotName": ubx.FieldSpec{WireName: "bot_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 	},
 }

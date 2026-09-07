@@ -11,9 +11,9 @@ type LocalGatewayRouteTableVpcassociation_Tags struct {
 }
 
 var LocalGatewayRouteTableVpcassociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LocalGatewayRouteTableVpcassociationConfig struct {
 	// The ID of the local gateway route table.
@@ -45,8 +45,8 @@ var LocalGatewayRouteTableVpcassociation = ubx.ResourceBinding{
 		"LocalGatewayRouteTableId": ubx.FieldSpec{WireName: "local_gateway_route_table_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LocalGatewayRouteTableVpcassociation_TagsFields,
+			Kind:     "list",
+			Fields:   LocalGatewayRouteTableVpcassociation_TagsFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

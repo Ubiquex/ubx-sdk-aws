@@ -5,85 +5,85 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProvisioningParameters_ConstraintSummaries struct {
 	Description any
-	Type any
+	Type        any
 }
 
 type ProvisioningParameters_ProvisioningArtifactOutputKeys struct {
 	Description any
-	Key any
+	Key         any
 }
 
 type ProvisioningParameters_ProvisioningArtifactParameters_ParameterConstraints struct {
-	AllowedPattern any
-	AllowedValues any
+	AllowedPattern        any
+	AllowedValues         any
 	ConstraintDescription any
-	MaxLength any
-	MaxValue any
-	MinLength any
-	MinValue any
+	MaxLength             any
+	MaxValue              any
+	MinLength             any
+	MinValue              any
 }
 
 type ProvisioningParameters_ProvisioningArtifactParameters struct {
-	DefaultValue any
-	Description any
-	IsNoEcho any
+	DefaultValue         any
+	Description          any
+	IsNoEcho             any
 	ParameterConstraints any
-	ParameterKey any
-	ParameterType any
+	ParameterKey         any
+	ParameterType        any
 }
 
 type ProvisioningParameters_ProvisioningArtifactPreferences struct {
 	StackSetAccounts any
-	StackSetRegions any
+	StackSetRegions  any
 }
 
 type ProvisioningParameters_TagOptions struct {
-	Key any
+	Key    any
 	Values any
 }
 
 type ProvisioningParameters_UsageInstructions struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type ProvisioningParametersConfig struct {
-	AcceptLanguage any
-	PathId any
-	PathName any
-	ProductId any
-	ProductName any
-	ProvisioningArtifactId any
+	AcceptLanguage           any
+	PathId                   any
+	PathName                 any
+	ProductId                any
+	ProductName              any
+	ProvisioningArtifactId   any
 	ProvisioningArtifactName any
 }
 
 type ProvisioningParametersAttrs struct {
-	AcceptLanguage any
-	ConstraintSummaries any
-	PathId any
-	PathName any
-	ProductId any
-	ProductName any
-	ProvisioningArtifactId any
-	ProvisioningArtifactName any
+	AcceptLanguage                 any
+	ConstraintSummaries            any
+	PathId                         any
+	PathName                       any
+	ProductId                      any
+	ProductName                    any
+	ProvisioningArtifactId         any
+	ProvisioningArtifactName       any
 	ProvisioningArtifactOutputKeys any
-	ProvisioningArtifactOutputs any
+	ProvisioningArtifactOutputs    any
 	ProvisioningArtifactParameters any
 	// <p>The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>.</p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a> in the <i>CloudFormation User Guide</i>.</p>
 	ProvisioningArtifactPreferences any
-	TagOptions any
-	UsageInstructions any
+	TagOptions                      any
+	UsageInstructions               any
 }
 
 var ProvisioningParameters = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_provisioning_parameters",
 	Fields: ubx.FieldMap{
-		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"PathId": ubx.FieldSpec{WireName: "path_id"},
-		"PathName": ubx.FieldSpec{WireName: "path_name"},
-		"ProductId": ubx.FieldSpec{WireName: "product_id"},
-		"ProductName": ubx.FieldSpec{WireName: "product_name"},
-		"ProvisioningArtifactId": ubx.FieldSpec{WireName: "provisioning_artifact_id"},
+		"AcceptLanguage":           ubx.FieldSpec{WireName: "accept_language"},
+		"PathId":                   ubx.FieldSpec{WireName: "path_id"},
+		"PathName":                 ubx.FieldSpec{WireName: "path_name"},
+		"ProductId":                ubx.FieldSpec{WireName: "product_id"},
+		"ProductName":              ubx.FieldSpec{WireName: "product_name"},
+		"ProvisioningArtifactId":   ubx.FieldSpec{WireName: "provisioning_artifact_id"},
 		"ProvisioningArtifactName": ubx.FieldSpec{WireName: "provisioning_artifact_name"},
 	},
 }

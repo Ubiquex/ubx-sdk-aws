@@ -4,39 +4,39 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbclusterBacktracks_DbclusterBacktracks struct {
-	BacktrackIdentifier any
+	BacktrackIdentifier          any
 	BacktrackRequestCreationTime any
-	BacktrackTo any
-	BacktrackedFrom any
-	DbclusterIdentifier any
-	Status any
+	BacktrackTo                  any
+	BacktrackedFrom              any
+	DbclusterIdentifier          any
+	Status                       any
 }
 
 type DbclusterBacktracks_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var DbclusterBacktracks_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type DbclusterBacktracksConfig struct {
 	BacktrackIdentifier any
 	DbclusterIdentifier any
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters             any
+	Marker              any
+	MaxRecords          any
 }
 
 type DbclusterBacktracksAttrs struct {
 	BacktrackIdentifier any
 	DbclusterBacktracks any
 	DbclusterIdentifier any
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters             any
+	Marker              any
+	MaxRecords          any
 }
 
 var DbclusterBacktracks = ubx.DataSourceBinding{
@@ -46,10 +46,10 @@ var DbclusterBacktracks = ubx.DataSourceBinding{
 		"DbclusterIdentifier": ubx.FieldSpec{WireName: "dbcluster_identifier"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: DbclusterBacktracks_FiltersFields,
+			Kind:     "list",
+			Fields:   DbclusterBacktracks_FiltersFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
 	},
 }

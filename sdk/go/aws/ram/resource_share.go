@@ -18,14 +18,14 @@ type ResourceShare_Tags struct {
 }
 
 var ResourceShare_ResourceShareConfigurationFields = ubx.FieldMap{
-		"ExclusiveAccountAccess": ubx.FieldSpec{WireName: "exclusive_account_access"},
-		"RetainSharingOnAccountLeaveOrganization": ubx.FieldSpec{WireName: "retain_sharing_on_account_leave_organization"},
-	}
+	"ExclusiveAccountAccess":                  ubx.FieldSpec{WireName: "exclusive_account_access"},
+	"RetainSharingOnAccountLeaveOrganization": ubx.FieldSpec{WireName: "retain_sharing_on_account_leave_organization"},
+}
 
 var ResourceShare_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ResourceShareConfig struct {
 	// Specifies whether principals outside your organization in AWS Organizations can be associated with a resource share. A value of `true` lets you share with individual AWS accounts that are not in your organization. A value of `false` only has meaning if your account is a member of an AWS Organization. The default value is `true`.
@@ -81,20 +81,20 @@ var ResourceShare = ubx.ResourceBinding{
 	WireType: "aws_ram_resource_share",
 	Fields: ubx.FieldMap{
 		"AllowExternalPrincipals": ubx.FieldSpec{WireName: "allow_external_principals"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PermissionArns": ubx.FieldSpec{WireName: "permission_arns"},
-		"Principals": ubx.FieldSpec{WireName: "principals"},
-		"ResourceArns": ubx.FieldSpec{WireName: "resource_arns"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
+		"PermissionArns":          ubx.FieldSpec{WireName: "permission_arns"},
+		"Principals":              ubx.FieldSpec{WireName: "principals"},
+		"ResourceArns":            ubx.FieldSpec{WireName: "resource_arns"},
 		"ResourceShareConfiguration": ubx.FieldSpec{
 			WireName: "resource_share_configuration",
-			Kind: "object",
-			Fields: ResourceShare_ResourceShareConfigurationFields,
+			Kind:     "object",
+			Fields:   ResourceShare_ResourceShareConfigurationFields,
 		},
 		"Sources": ubx.FieldSpec{WireName: "sources"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ResourceShare_TagsFields,
+			Kind:     "list",
+			Fields:   ResourceShare_TagsFields,
 		},
 	},
 }

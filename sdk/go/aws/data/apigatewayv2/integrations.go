@@ -8,46 +8,46 @@ type Integrations_Items_TlsConfig struct {
 }
 
 type Integrations_Items struct {
-	ApiGatewayManaged any
-	ConnectionId any
-	ConnectionType any
-	ContentHandlingStrategy any
-	CredentialsArn any
-	Description any
-	IntegrationId any
-	IntegrationMethod any
+	ApiGatewayManaged                      any
+	ConnectionId                           any
+	ConnectionType                         any
+	ContentHandlingStrategy                any
+	CredentialsArn                         any
+	Description                            any
+	IntegrationId                          any
+	IntegrationMethod                      any
 	IntegrationResponseSelectionExpression any
-	IntegrationSubtype any
-	IntegrationType any
-	IntegrationUri any
-	PassthroughBehavior any
-	PayloadFormatVersion any
-	RequestParameters any
-	RequestTemplates any
-	ResponseParameters any
-	TemplateSelectionExpression any
-	TimeoutInMillis any
-	TlsConfig any
+	IntegrationSubtype                     any
+	IntegrationType                        any
+	IntegrationUri                         any
+	PassthroughBehavior                    any
+	PayloadFormatVersion                   any
+	RequestParameters                      any
+	RequestTemplates                       any
+	ResponseParameters                     any
+	TemplateSelectionExpression            any
+	TimeoutInMillis                        any
+	TlsConfig                              any
 }
 
 type IntegrationsConfig struct {
-	ApiId any
+	ApiId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type IntegrationsAttrs struct {
-	ApiId any
-	Items any
+	ApiId      any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Integrations = ubx.DataSourceBinding{
 	WireType: "aws_apigatewayv2_integrations",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":      ubx.FieldSpec{WireName: "api_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

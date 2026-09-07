@@ -11,9 +11,9 @@ type AppInstance_Tags struct {
 }
 
 var AppInstance_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AppInstanceConfig struct {
 	// The metadata of the AppInstance. Limited to a 1KB string in UTF-8.
@@ -43,11 +43,11 @@ var AppInstance = ubx.ResourceBinding{
 	WireType: "aws_chime_app_instance",
 	Fields: ubx.FieldMap{
 		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AppInstance_TagsFields,
+			Kind:     "list",
+			Fields:   AppInstance_TagsFields,
 		},
 	},
 }

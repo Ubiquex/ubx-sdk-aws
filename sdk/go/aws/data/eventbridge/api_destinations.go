@@ -4,38 +4,38 @@ package eventbridge
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiDestinations_ApiDestinations struct {
-	ApiDestinationArn any
-	ApiDestinationState any
-	ConnectionArn any
-	CreationTime any
-	HttpMethod any
-	InvocationEndpoint any
+	ApiDestinationArn            any
+	ApiDestinationState          any
+	ConnectionArn                any
+	CreationTime                 any
+	HttpMethod                   any
+	InvocationEndpoint           any
 	InvocationRateLimitPerSecond any
-	LastModifiedTime any
-	Name any
+	LastModifiedTime             any
+	Name                         any
 }
 
 type ApiDestinationsConfig struct {
 	ConnectionArn any
-	Limit any
-	NamePrefix any
-	NextToken any
+	Limit         any
+	NamePrefix    any
+	NextToken     any
 }
 
 type ApiDestinationsAttrs struct {
 	ApiDestinations any
-	ConnectionArn any
-	Limit any
-	NamePrefix any
-	NextToken any
+	ConnectionArn   any
+	Limit           any
+	NamePrefix      any
+	NextToken       any
 }
 
 var ApiDestinations = ubx.DataSourceBinding{
 	WireType: "aws_eventbridge_api_destinations",
 	Fields: ubx.FieldMap{
 		"ConnectionArn": ubx.FieldSpec{WireName: "connection_arn"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":         ubx.FieldSpec{WireName: "limit"},
+		"NamePrefix":    ubx.FieldSpec{WireName: "name_prefix"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

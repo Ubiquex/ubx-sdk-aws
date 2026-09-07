@@ -4,31 +4,31 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EngineVersions_EngineVersions struct {
-	AutoUpgradeDate any
+	AutoUpgradeDate   any
 	AvailableUpgrades any
-	DeprecationDate any
-	ForceUpgradeDate any
-	LaunchDate any
-	Lifecycle any
-	ReleaseStatus any
-	Version any
+	DeprecationDate   any
+	ForceUpgradeDate  any
+	LaunchDate        any
+	Lifecycle         any
+	ReleaseStatus     any
+	Version           any
 }
 
 type EngineVersionsConfig struct {
-	Marker any
+	Marker     any
 	MaxRecords any
 }
 
 type EngineVersionsAttrs struct {
 	EngineVersions any
-	Marker any
-	MaxRecords any
+	Marker         any
+	MaxRecords     any
 }
 
 var EngineVersions = ubx.DataSourceBinding{
 	WireType: "aws_dms_engine_versions",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
 	},
 }

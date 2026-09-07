@@ -231,273 +231,273 @@ type Campaign_Tags struct {
 }
 
 var Campaign_ChannelSubtypeConfig_Email_DefaultOutboundConfigFields = ubx.FieldMap{
-		"ConnectSourceEmailAddress": ubx.FieldSpec{WireName: "connect_source_email_address"},
-		"SourceEmailAddressDisplayName": ubx.FieldSpec{WireName: "source_email_address_display_name"},
-		"WisdomTemplateArn": ubx.FieldSpec{WireName: "wisdom_template_arn"},
-	}
+	"ConnectSourceEmailAddress":     ubx.FieldSpec{WireName: "connect_source_email_address"},
+	"SourceEmailAddressDisplayName": ubx.FieldSpec{WireName: "source_email_address_display_name"},
+	"WisdomTemplateArn":             ubx.FieldSpec{WireName: "wisdom_template_arn"},
+}
 
 var Campaign_ChannelSubtypeConfig_Email_OutboundModeFields = ubx.FieldMap{
-		"AgentlessConfig": ubx.FieldSpec{WireName: "agentless_config"},
-	}
+	"AgentlessConfig": ubx.FieldSpec{WireName: "agentless_config"},
+}
 
 var Campaign_ChannelSubtypeConfig_EmailFields = ubx.FieldMap{
-		"Capacity": ubx.FieldSpec{WireName: "capacity"},
-		"DefaultOutboundConfig": ubx.FieldSpec{
-			WireName: "default_outbound_config",
-			Kind: "object",
-			Fields: Campaign_ChannelSubtypeConfig_Email_DefaultOutboundConfigFields,
-		},
-		"OutboundMode": ubx.FieldSpec{
-			WireName: "outbound_mode",
-			Kind: "object",
-			Fields: Campaign_ChannelSubtypeConfig_Email_OutboundModeFields,
-		},
-	}
+	"Capacity": ubx.FieldSpec{WireName: "capacity"},
+	"DefaultOutboundConfig": ubx.FieldSpec{
+		WireName: "default_outbound_config",
+		Kind:     "object",
+		Fields:   Campaign_ChannelSubtypeConfig_Email_DefaultOutboundConfigFields,
+	},
+	"OutboundMode": ubx.FieldSpec{
+		WireName: "outbound_mode",
+		Kind:     "object",
+		Fields:   Campaign_ChannelSubtypeConfig_Email_OutboundModeFields,
+	},
+}
 
 var Campaign_ChannelSubtypeConfig_Sms_DefaultOutboundConfigFields = ubx.FieldMap{
-		"ConnectSourcePhoneNumberArn": ubx.FieldSpec{WireName: "connect_source_phone_number_arn"},
-		"WisdomTemplateArn": ubx.FieldSpec{WireName: "wisdom_template_arn"},
-	}
+	"ConnectSourcePhoneNumberArn": ubx.FieldSpec{WireName: "connect_source_phone_number_arn"},
+	"WisdomTemplateArn":           ubx.FieldSpec{WireName: "wisdom_template_arn"},
+}
 
 var Campaign_ChannelSubtypeConfig_SmsFields = ubx.FieldMap{
-		"Capacity": ubx.FieldSpec{WireName: "capacity"},
-		"DefaultOutboundConfig": ubx.FieldSpec{
-			WireName: "default_outbound_config",
-			Kind: "object",
-			Fields: Campaign_ChannelSubtypeConfig_Sms_DefaultOutboundConfigFields,
-		},
-		"OutboundMode": ubx.FieldSpec{
-			WireName: "outbound_mode",
-			Kind: "object",
-			Fields: Campaign_ChannelSubtypeConfig_Email_OutboundModeFields,
-		},
-	}
+	"Capacity": ubx.FieldSpec{WireName: "capacity"},
+	"DefaultOutboundConfig": ubx.FieldSpec{
+		WireName: "default_outbound_config",
+		Kind:     "object",
+		Fields:   Campaign_ChannelSubtypeConfig_Sms_DefaultOutboundConfigFields,
+	},
+	"OutboundMode": ubx.FieldSpec{
+		WireName: "outbound_mode",
+		Kind:     "object",
+		Fields:   Campaign_ChannelSubtypeConfig_Email_OutboundModeFields,
+	},
+}
 
 var Campaign_ChannelSubtypeConfig_Telephony_DefaultOutboundConfig_AnswerMachineDetectionConfigFields = ubx.FieldMap{
-		"AwaitAnswerMachinePrompt": ubx.FieldSpec{WireName: "await_answer_machine_prompt"},
-		"EnableAnswerMachineDetection": ubx.FieldSpec{WireName: "enable_answer_machine_detection"},
-	}
+	"AwaitAnswerMachinePrompt":     ubx.FieldSpec{WireName: "await_answer_machine_prompt"},
+	"EnableAnswerMachineDetection": ubx.FieldSpec{WireName: "enable_answer_machine_detection"},
+}
 
 var Campaign_ChannelSubtypeConfig_Telephony_DefaultOutboundConfigFields = ubx.FieldMap{
-		"AnswerMachineDetectionConfig": ubx.FieldSpec{
-			WireName: "answer_machine_detection_config",
-			Kind: "object",
-			Fields: Campaign_ChannelSubtypeConfig_Telephony_DefaultOutboundConfig_AnswerMachineDetectionConfigFields,
-		},
-		"ConnectContactFlowId": ubx.FieldSpec{WireName: "connect_contact_flow_id"},
-		"ConnectSourcePhoneNumber": ubx.FieldSpec{WireName: "connect_source_phone_number"},
-		"RingTimeout": ubx.FieldSpec{WireName: "ring_timeout"},
-	}
+	"AnswerMachineDetectionConfig": ubx.FieldSpec{
+		WireName: "answer_machine_detection_config",
+		Kind:     "object",
+		Fields:   Campaign_ChannelSubtypeConfig_Telephony_DefaultOutboundConfig_AnswerMachineDetectionConfigFields,
+	},
+	"ConnectContactFlowId":     ubx.FieldSpec{WireName: "connect_contact_flow_id"},
+	"ConnectSourcePhoneNumber": ubx.FieldSpec{WireName: "connect_source_phone_number"},
+	"RingTimeout":              ubx.FieldSpec{WireName: "ring_timeout"},
+}
 
 var Campaign_ChannelSubtypeConfig_Telephony_OutboundMode_PredictiveConfigFields = ubx.FieldMap{
-		"BandwidthAllocation": ubx.FieldSpec{WireName: "bandwidth_allocation"},
-	}
+	"BandwidthAllocation": ubx.FieldSpec{WireName: "bandwidth_allocation"},
+}
 
 var Campaign_ChannelSubtypeConfig_Telephony_OutboundMode_PreviewConfig_TimeoutConfigFields = ubx.FieldMap{
-		"DurationInSeconds": ubx.FieldSpec{WireName: "duration_in_seconds"},
-	}
+	"DurationInSeconds": ubx.FieldSpec{WireName: "duration_in_seconds"},
+}
 
 var Campaign_ChannelSubtypeConfig_Telephony_OutboundMode_PreviewConfigFields = ubx.FieldMap{
-		"AgentActions": ubx.FieldSpec{WireName: "agent_actions"},
-		"BandwidthAllocation": ubx.FieldSpec{WireName: "bandwidth_allocation"},
-		"TimeoutConfig": ubx.FieldSpec{
-			WireName: "timeout_config",
-			Kind: "object",
-			Fields: Campaign_ChannelSubtypeConfig_Telephony_OutboundMode_PreviewConfig_TimeoutConfigFields,
-		},
-	}
+	"AgentActions":        ubx.FieldSpec{WireName: "agent_actions"},
+	"BandwidthAllocation": ubx.FieldSpec{WireName: "bandwidth_allocation"},
+	"TimeoutConfig": ubx.FieldSpec{
+		WireName: "timeout_config",
+		Kind:     "object",
+		Fields:   Campaign_ChannelSubtypeConfig_Telephony_OutboundMode_PreviewConfig_TimeoutConfigFields,
+	},
+}
 
 var Campaign_ChannelSubtypeConfig_Telephony_OutboundModeFields = ubx.FieldMap{
-		"AgentlessConfig": ubx.FieldSpec{WireName: "agentless_config"},
-		"PredictiveConfig": ubx.FieldSpec{
-			WireName: "predictive_config",
-			Kind: "object",
-			Fields: Campaign_ChannelSubtypeConfig_Telephony_OutboundMode_PredictiveConfigFields,
-		},
-		"PreviewConfig": ubx.FieldSpec{
-			WireName: "preview_config",
-			Kind: "object",
-			Fields: Campaign_ChannelSubtypeConfig_Telephony_OutboundMode_PreviewConfigFields,
-		},
-		"ProgressiveConfig": ubx.FieldSpec{
-			WireName: "progressive_config",
-			Kind: "object",
-			Fields: Campaign_ChannelSubtypeConfig_Telephony_OutboundMode_PredictiveConfigFields,
-		},
-	}
+	"AgentlessConfig": ubx.FieldSpec{WireName: "agentless_config"},
+	"PredictiveConfig": ubx.FieldSpec{
+		WireName: "predictive_config",
+		Kind:     "object",
+		Fields:   Campaign_ChannelSubtypeConfig_Telephony_OutboundMode_PredictiveConfigFields,
+	},
+	"PreviewConfig": ubx.FieldSpec{
+		WireName: "preview_config",
+		Kind:     "object",
+		Fields:   Campaign_ChannelSubtypeConfig_Telephony_OutboundMode_PreviewConfigFields,
+	},
+	"ProgressiveConfig": ubx.FieldSpec{
+		WireName: "progressive_config",
+		Kind:     "object",
+		Fields:   Campaign_ChannelSubtypeConfig_Telephony_OutboundMode_PredictiveConfigFields,
+	},
+}
 
 var Campaign_ChannelSubtypeConfig_TelephonyFields = ubx.FieldMap{
-		"Capacity": ubx.FieldSpec{WireName: "capacity"},
-		"ConnectQueueId": ubx.FieldSpec{WireName: "connect_queue_id"},
-		"DefaultOutboundConfig": ubx.FieldSpec{
-			WireName: "default_outbound_config",
-			Kind: "object",
-			Fields: Campaign_ChannelSubtypeConfig_Telephony_DefaultOutboundConfigFields,
-		},
-		"OutboundMode": ubx.FieldSpec{
-			WireName: "outbound_mode",
-			Kind: "object",
-			Fields: Campaign_ChannelSubtypeConfig_Telephony_OutboundModeFields,
-		},
-	}
+	"Capacity":       ubx.FieldSpec{WireName: "capacity"},
+	"ConnectQueueId": ubx.FieldSpec{WireName: "connect_queue_id"},
+	"DefaultOutboundConfig": ubx.FieldSpec{
+		WireName: "default_outbound_config",
+		Kind:     "object",
+		Fields:   Campaign_ChannelSubtypeConfig_Telephony_DefaultOutboundConfigFields,
+	},
+	"OutboundMode": ubx.FieldSpec{
+		WireName: "outbound_mode",
+		Kind:     "object",
+		Fields:   Campaign_ChannelSubtypeConfig_Telephony_OutboundModeFields,
+	},
+}
 
 var Campaign_ChannelSubtypeConfigFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{
-			WireName: "email",
-			Kind: "object",
-			Fields: Campaign_ChannelSubtypeConfig_EmailFields,
-		},
-		"Sms": ubx.FieldSpec{
-			WireName: "sms",
-			Kind: "object",
-			Fields: Campaign_ChannelSubtypeConfig_SmsFields,
-		},
-		"Telephony": ubx.FieldSpec{
-			WireName: "telephony",
-			Kind: "object",
-			Fields: Campaign_ChannelSubtypeConfig_TelephonyFields,
-		},
-		"WhatsApp": ubx.FieldSpec{
-			WireName: "whats_app",
-			Kind: "object",
-			Fields: Campaign_ChannelSubtypeConfig_SmsFields,
-		},
-	}
+	"Email": ubx.FieldSpec{
+		WireName: "email",
+		Kind:     "object",
+		Fields:   Campaign_ChannelSubtypeConfig_EmailFields,
+	},
+	"Sms": ubx.FieldSpec{
+		WireName: "sms",
+		Kind:     "object",
+		Fields:   Campaign_ChannelSubtypeConfig_SmsFields,
+	},
+	"Telephony": ubx.FieldSpec{
+		WireName: "telephony",
+		Kind:     "object",
+		Fields:   Campaign_ChannelSubtypeConfig_TelephonyFields,
+	},
+	"WhatsApp": ubx.FieldSpec{
+		WireName: "whats_app",
+		Kind:     "object",
+		Fields:   Campaign_ChannelSubtypeConfig_SmsFields,
+	},
+}
 
 var Campaign_CommunicationLimitsOverride_AllChannelsSubtypes_CommunicationLimitListFields = ubx.FieldMap{
-		"Frequency": ubx.FieldSpec{WireName: "frequency"},
-		"MaxCountPerRecipient": ubx.FieldSpec{WireName: "max_count_per_recipient"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-	}
+	"Frequency":            ubx.FieldSpec{WireName: "frequency"},
+	"MaxCountPerRecipient": ubx.FieldSpec{WireName: "max_count_per_recipient"},
+	"Unit":                 ubx.FieldSpec{WireName: "unit"},
+}
 
 var Campaign_CommunicationLimitsOverride_AllChannelsSubtypesFields = ubx.FieldMap{
-		"CommunicationLimitList": ubx.FieldSpec{
-			WireName: "communication_limit_list",
-			Kind: "list",
-			Fields: Campaign_CommunicationLimitsOverride_AllChannelsSubtypes_CommunicationLimitListFields,
-		},
-	}
+	"CommunicationLimitList": ubx.FieldSpec{
+		WireName: "communication_limit_list",
+		Kind:     "list",
+		Fields:   Campaign_CommunicationLimitsOverride_AllChannelsSubtypes_CommunicationLimitListFields,
+	},
+}
 
 var Campaign_CommunicationLimitsOverrideFields = ubx.FieldMap{
-		"AllChannelsSubtypes": ubx.FieldSpec{
-			WireName: "all_channels_subtypes",
-			Kind: "object",
-			Fields: Campaign_CommunicationLimitsOverride_AllChannelsSubtypesFields,
-		},
-		"InstanceLimitsHandling": ubx.FieldSpec{WireName: "instance_limits_handling"},
-	}
+	"AllChannelsSubtypes": ubx.FieldSpec{
+		WireName: "all_channels_subtypes",
+		Kind:     "object",
+		Fields:   Campaign_CommunicationLimitsOverride_AllChannelsSubtypesFields,
+	},
+	"InstanceLimitsHandling": ubx.FieldSpec{WireName: "instance_limits_handling"},
+}
 
 var Campaign_CommunicationTimeConfig_Email_OpenHours_DailyHours_ValueFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var Campaign_CommunicationTimeConfig_Email_OpenHours_DailyHoursFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "list",
-			Fields: Campaign_CommunicationTimeConfig_Email_OpenHours_DailyHours_ValueFields,
-		},
-	}
+	"Key": ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "list",
+		Fields:   Campaign_CommunicationTimeConfig_Email_OpenHours_DailyHours_ValueFields,
+	},
+}
 
 var Campaign_CommunicationTimeConfig_Email_OpenHoursFields = ubx.FieldMap{
-		"DailyHours": ubx.FieldSpec{
-			WireName: "daily_hours",
-			Kind: "list",
-			Fields: Campaign_CommunicationTimeConfig_Email_OpenHours_DailyHoursFields,
-		},
-	}
+	"DailyHours": ubx.FieldSpec{
+		WireName: "daily_hours",
+		Kind:     "list",
+		Fields:   Campaign_CommunicationTimeConfig_Email_OpenHours_DailyHoursFields,
+	},
+}
 
 var Campaign_CommunicationTimeConfig_Email_RestrictedPeriods_RestrictedPeriodListFields = ubx.FieldMap{
-		"EndDate": ubx.FieldSpec{WireName: "end_date"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"StartDate": ubx.FieldSpec{WireName: "start_date"},
-	}
+	"EndDate":   ubx.FieldSpec{WireName: "end_date"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"StartDate": ubx.FieldSpec{WireName: "start_date"},
+}
 
 var Campaign_CommunicationTimeConfig_Email_RestrictedPeriodsFields = ubx.FieldMap{
-		"RestrictedPeriodList": ubx.FieldSpec{
-			WireName: "restricted_period_list",
-			Kind: "list",
-			Fields: Campaign_CommunicationTimeConfig_Email_RestrictedPeriods_RestrictedPeriodListFields,
-		},
-	}
+	"RestrictedPeriodList": ubx.FieldSpec{
+		WireName: "restricted_period_list",
+		Kind:     "list",
+		Fields:   Campaign_CommunicationTimeConfig_Email_RestrictedPeriods_RestrictedPeriodListFields,
+	},
+}
 
 var Campaign_CommunicationTimeConfig_EmailFields = ubx.FieldMap{
-		"OpenHours": ubx.FieldSpec{
-			WireName: "open_hours",
-			Kind: "object",
-			Fields: Campaign_CommunicationTimeConfig_Email_OpenHoursFields,
-		},
-		"RestrictedPeriods": ubx.FieldSpec{
-			WireName: "restricted_periods",
-			Kind: "object",
-			Fields: Campaign_CommunicationTimeConfig_Email_RestrictedPeriodsFields,
-		},
-	}
+	"OpenHours": ubx.FieldSpec{
+		WireName: "open_hours",
+		Kind:     "object",
+		Fields:   Campaign_CommunicationTimeConfig_Email_OpenHoursFields,
+	},
+	"RestrictedPeriods": ubx.FieldSpec{
+		WireName: "restricted_periods",
+		Kind:     "object",
+		Fields:   Campaign_CommunicationTimeConfig_Email_RestrictedPeriodsFields,
+	},
+}
 
 var Campaign_CommunicationTimeConfig_LocalTimeZoneConfigFields = ubx.FieldMap{
-		"DefaultTimeZone": ubx.FieldSpec{WireName: "default_time_zone"},
-		"LocalTimeZoneDetection": ubx.FieldSpec{WireName: "local_time_zone_detection"},
-		"LocalTimeZoneDetectionScope": ubx.FieldSpec{WireName: "local_time_zone_detection_scope"},
-	}
+	"DefaultTimeZone":             ubx.FieldSpec{WireName: "default_time_zone"},
+	"LocalTimeZoneDetection":      ubx.FieldSpec{WireName: "local_time_zone_detection"},
+	"LocalTimeZoneDetectionScope": ubx.FieldSpec{WireName: "local_time_zone_detection_scope"},
+}
 
 var Campaign_CommunicationTimeConfigFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{
-			WireName: "email",
-			Kind: "object",
-			Fields: Campaign_CommunicationTimeConfig_EmailFields,
-		},
-		"LocalTimeZoneConfig": ubx.FieldSpec{
-			WireName: "local_time_zone_config",
-			Kind: "object",
-			Fields: Campaign_CommunicationTimeConfig_LocalTimeZoneConfigFields,
-		},
-		"Sms": ubx.FieldSpec{
-			WireName: "sms",
-			Kind: "object",
-			Fields: Campaign_CommunicationTimeConfig_EmailFields,
-		},
-		"Telephony": ubx.FieldSpec{
-			WireName: "telephony",
-			Kind: "object",
-			Fields: Campaign_CommunicationTimeConfig_EmailFields,
-		},
-		"WhatsApp": ubx.FieldSpec{
-			WireName: "whats_app",
-			Kind: "object",
-			Fields: Campaign_CommunicationTimeConfig_EmailFields,
-		},
-	}
+	"Email": ubx.FieldSpec{
+		WireName: "email",
+		Kind:     "object",
+		Fields:   Campaign_CommunicationTimeConfig_EmailFields,
+	},
+	"LocalTimeZoneConfig": ubx.FieldSpec{
+		WireName: "local_time_zone_config",
+		Kind:     "object",
+		Fields:   Campaign_CommunicationTimeConfig_LocalTimeZoneConfigFields,
+	},
+	"Sms": ubx.FieldSpec{
+		WireName: "sms",
+		Kind:     "object",
+		Fields:   Campaign_CommunicationTimeConfig_EmailFields,
+	},
+	"Telephony": ubx.FieldSpec{
+		WireName: "telephony",
+		Kind:     "object",
+		Fields:   Campaign_CommunicationTimeConfig_EmailFields,
+	},
+	"WhatsApp": ubx.FieldSpec{
+		WireName: "whats_app",
+		Kind:     "object",
+		Fields:   Campaign_CommunicationTimeConfig_EmailFields,
+	},
+}
 
 var Campaign_EntryLimitsConfigFields = ubx.FieldMap{
-		"MaxEntryCount": ubx.FieldSpec{WireName: "max_entry_count"},
-		"MinEntryInterval": ubx.FieldSpec{WireName: "min_entry_interval"},
-	}
+	"MaxEntryCount":    ubx.FieldSpec{WireName: "max_entry_count"},
+	"MinEntryInterval": ubx.FieldSpec{WireName: "min_entry_interval"},
+}
 
 var Campaign_ScheduleFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"RefreshFrequency": ubx.FieldSpec{WireName: "refresh_frequency"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":          ubx.FieldSpec{WireName: "end_time"},
+	"RefreshFrequency": ubx.FieldSpec{WireName: "refresh_frequency"},
+	"StartTime":        ubx.FieldSpec{WireName: "start_time"},
+}
 
 var Campaign_Source_EventTriggerFields = ubx.FieldMap{
-		"CustomerProfilesDomainArn": ubx.FieldSpec{WireName: "customer_profiles_domain_arn"},
-	}
+	"CustomerProfilesDomainArn": ubx.FieldSpec{WireName: "customer_profiles_domain_arn"},
+}
 
 var Campaign_SourceFields = ubx.FieldMap{
-		"CustomerProfilesSegmentArn": ubx.FieldSpec{WireName: "customer_profiles_segment_arn"},
-		"EventTrigger": ubx.FieldSpec{
-			WireName: "event_trigger",
-			Kind: "object",
-			Fields: Campaign_Source_EventTriggerFields,
-		},
-	}
+	"CustomerProfilesSegmentArn": ubx.FieldSpec{WireName: "customer_profiles_segment_arn"},
+	"EventTrigger": ubx.FieldSpec{
+		WireName: "event_trigger",
+		Kind:     "object",
+		Fields:   Campaign_Source_EventTriggerFields,
+	},
+}
 
 var Campaign_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CampaignConfig struct {
 	// The possible types of channel subtype config parameters
@@ -556,41 +556,41 @@ var Campaign = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ChannelSubtypeConfig": ubx.FieldSpec{
 			WireName: "channel_subtype_config",
-			Kind: "object",
-			Fields: Campaign_ChannelSubtypeConfigFields,
+			Kind:     "object",
+			Fields:   Campaign_ChannelSubtypeConfigFields,
 		},
 		"CommunicationLimitsOverride": ubx.FieldSpec{
 			WireName: "communication_limits_override",
-			Kind: "object",
-			Fields: Campaign_CommunicationLimitsOverrideFields,
+			Kind:     "object",
+			Fields:   Campaign_CommunicationLimitsOverrideFields,
 		},
 		"CommunicationTimeConfig": ubx.FieldSpec{
 			WireName: "communication_time_config",
-			Kind: "object",
-			Fields: Campaign_CommunicationTimeConfigFields,
+			Kind:     "object",
+			Fields:   Campaign_CommunicationTimeConfigFields,
 		},
 		"ConnectCampaignFlowArn": ubx.FieldSpec{WireName: "connect_campaign_flow_arn"},
-		"ConnectInstanceId": ubx.FieldSpec{WireName: "connect_instance_id"},
+		"ConnectInstanceId":      ubx.FieldSpec{WireName: "connect_instance_id"},
 		"EntryLimitsConfig": ubx.FieldSpec{
 			WireName: "entry_limits_config",
-			Kind: "object",
-			Fields: Campaign_EntryLimitsConfigFields,
+			Kind:     "object",
+			Fields:   Campaign_EntryLimitsConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Schedule": ubx.FieldSpec{
 			WireName: "schedule",
-			Kind: "object",
-			Fields: Campaign_ScheduleFields,
+			Kind:     "object",
+			Fields:   Campaign_ScheduleFields,
 		},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: Campaign_SourceFields,
+			Kind:     "object",
+			Fields:   Campaign_SourceFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Campaign_TagsFields,
+			Kind:     "list",
+			Fields:   Campaign_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

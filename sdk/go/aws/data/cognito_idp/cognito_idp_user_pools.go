@@ -4,53 +4,53 @@ package cognito_idp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdpUserPools_UserPools_LambdaConfig_CustomEmailSender struct {
-	LambdaArn any
+	LambdaArn     any
 	LambdaVersion any
 }
 
 type CognitoIdpUserPools_UserPools_LambdaConfig struct {
-	CreateAuthChallenge any
-	CustomEmailSender any
-	CustomMessage any
-	CustomSmssender any
-	DefineAuthChallenge any
-	InboundFederation any
-	KmskeyId any
-	PostAuthentication any
-	PostConfirmation any
-	PreAuthentication any
-	PreSignUp any
-	PreTokenGeneration any
-	PreTokenGenerationConfig any
-	UserMigration any
+	CreateAuthChallenge         any
+	CustomEmailSender           any
+	CustomMessage               any
+	CustomSmssender             any
+	DefineAuthChallenge         any
+	InboundFederation           any
+	KmskeyId                    any
+	PostAuthentication          any
+	PostConfirmation            any
+	PreAuthentication           any
+	PreSignUp                   any
+	PreTokenGeneration          any
+	PreTokenGenerationConfig    any
+	UserMigration               any
 	VerifyAuthChallengeResponse any
 }
 
 type CognitoIdpUserPools_UserPools struct {
-	CreationDate any
-	Id any
-	LambdaConfig any
+	CreationDate     any
+	Id               any
+	LambdaConfig     any
 	LastModifiedDate any
-	Name any
-	ReplicaRegions any
-	Status any
+	Name             any
+	ReplicaRegions   any
+	Status           any
 }
 
 type CognitoIdpUserPoolsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CognitoIdpUserPoolsAttrs struct {
 	MaxResults any
-	NextToken any
-	UserPools any
+	NextToken  any
+	UserPools  any
 }
 
 var CognitoIdpUserPools = ubx.DataSourceBinding{
 	WireType: "aws_cognito_idp_user_pools",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

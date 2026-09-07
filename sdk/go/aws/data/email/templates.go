@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Templates_TemplatesMetadata struct {
 	CreatedTimestamp any
-	Name any
+	Name             any
 }
 
 type TemplatesConfig struct {
-	MaxItems any
+	MaxItems  any
 	NextToken any
 }
 
 type TemplatesAttrs struct {
-	MaxItems any
-	NextToken any
+	MaxItems          any
+	NextToken         any
 	TemplatesMetadata any
 }
 
 var Templates = ubx.DataSourceBinding{
 	WireType: "aws_email_templates",
 	Fields: ubx.FieldMap{
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"MaxItems":  ubx.FieldSpec{WireName: "max_items"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

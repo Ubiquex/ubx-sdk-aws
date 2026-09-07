@@ -4,34 +4,34 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TemplateAliases_TemplateAliasList struct {
-	AliasName any
-	Arn any
+	AliasName             any
+	Arn                   any
 	TemplateVersionNumber any
 }
 
 type TemplateAliasesConfig struct {
 	AwsAccountId any
-	MaxResults any
-	NextToken any
-	TemplateId any
+	MaxResults   any
+	NextToken    any
+	TemplateId   any
 }
 
 type TemplateAliasesAttrs struct {
-	AwsAccountId any
-	MaxResults any
-	NextToken any
-	RequestId any
-	Status any
+	AwsAccountId      any
+	MaxResults        any
+	NextToken         any
+	RequestId         any
+	Status            any
 	TemplateAliasList any
-	TemplateId any
+	TemplateId        any
 }
 
 var TemplateAliases = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_template_aliases",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"TemplateId": ubx.FieldSpec{WireName: "template_id"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"TemplateId":   ubx.FieldSpec{WireName: "template_id"},
 	},
 }

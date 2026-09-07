@@ -4,14 +4,14 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PolicyVersions_Versions struct {
-	CreateDate any
-	Document any
+	CreateDate       any
+	Document         any
 	IsDefaultVersion any
-	VersionId any
+	VersionId        any
 }
 
 type PolicyVersionsConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 	// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
 	PolicyArn any
@@ -19,18 +19,18 @@ type PolicyVersionsConfig struct {
 
 type PolicyVersionsAttrs struct {
 	IsTruncated any
-	Marker any
-	MaxItems any
+	Marker      any
+	MaxItems    any
 	// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
 	PolicyArn any
-	Versions any
+	Versions  any
 }
 
 var PolicyVersions = ubx.DataSourceBinding{
 	WireType: "aws_iam_policy_versions",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"Marker":    ubx.FieldSpec{WireName: "marker"},
+		"MaxItems":  ubx.FieldSpec{WireName: "max_items"},
 		"PolicyArn": ubx.FieldSpec{WireName: "policy_arn"},
 	},
 }

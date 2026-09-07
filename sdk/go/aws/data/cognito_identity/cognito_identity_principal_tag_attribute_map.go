@@ -4,21 +4,21 @@ package cognito_identity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdentityPrincipalTagAttributeMapConfig struct {
-	IdentityPoolId any
+	IdentityPoolId       any
 	IdentityProviderName any
 }
 
 type CognitoIdentityPrincipalTagAttributeMapAttrs struct {
-	IdentityPoolId any
+	IdentityPoolId       any
 	IdentityProviderName any
-	PrincipalTags any
-	UseDefaults any
+	PrincipalTags        any
+	UseDefaults          any
 }
 
 var CognitoIdentityPrincipalTagAttributeMap = ubx.DataSourceBinding{
 	WireType: "aws_cognito_identity_principal_tag_attribute_map",
 	Fields: ubx.FieldMap{
-		"IdentityPoolId": ubx.FieldSpec{WireName: "identity_pool_id"},
+		"IdentityPoolId":       ubx.FieldSpec{WireName: "identity_pool_id"},
 		"IdentityProviderName": ubx.FieldSpec{WireName: "identity_provider_name"},
 	},
 }

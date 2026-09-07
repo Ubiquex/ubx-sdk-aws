@@ -61,7 +61,7 @@ type Memory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride
 type Memory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema struct {
 	// Determines how metadata for the memory record is extracted from the input data, specifying either a foundation model prompt or a regex pattern to populate the metadata schema fields. (AI-inferred)
 	ExtractionConfig any
-	ExtractionType any
+	ExtractionType   any
 	// Defines the name (key) of a metadata attribute in the schema for episodic memory records, used to structure the metadata stored with each memory. (AI-inferred)
 	Key any
 	// Specifies the JSON Schema type (e.g., 'object') for the metadata schema associated with a memory record schema in the reflection configuration of an episodic override for a custom memory strategy. (AI-inferred)
@@ -79,7 +79,7 @@ type Memory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride
 	// Specifies the JSON schema object that defines the structure and validation constraints for memory records produced by the reflection step of the episodic override in a custom memory strategy for an AWS Bedrock Agent Core Memory resource. (AI-inferred)
 	MemoryRecordSchema any
 	// The Amazon Bedrock foundation model ID used to generate reflective insights or summaries from episodic memory in the custom memory strategy. (AI-inferred)
-	ModelId any
+	ModelId            any
 	NamespaceTemplates any
 	// Specifies the list of namespaces that the reflection process uses to group and consolidate episodic memories within the custom memory strategy's episodic override configuration, enabling the agent to synthesize and retrieve across those namespaces. (AI-inferred)
 	Namespaces any
@@ -128,7 +128,7 @@ type Memory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfi
 	HistoricalContextWindowSize any
 	// Specifies the invocation configuration for the self-managed memory strategy, including the AWS Lambda function ARN and method used to execute memory fetch and update operations. (AI-inferred)
 	InvocationConfiguration any
-	TriggerConditions any
+	TriggerConditions       any
 }
 
 type Memory_MemoryStrategies_CustomMemoryStrategy_Configuration_SemanticOverride struct {
@@ -146,9 +146,9 @@ type Memory_MemoryStrategies_CustomMemoryStrategy_Configuration struct {
 	EpisodicOverride any
 	// Configures the self-managed vector store (typically Amazon OpenSearch Serverless) used by the agent's custom memory, including connection details like the collection ARN, vector index name, and field mappings for storing and retrieving conversation memory. (AI-inferred)
 	SelfManagedConfiguration any
-	SemanticOverride any
+	SemanticOverride         any
 	// Specifies a custom prompt and token limits that override the default summary generation for the core memory custom strategy, enabling you to control how conversation sessions are summarized into memory. (AI-inferred)
-	SummaryOverride any
+	SummaryOverride        any
 	UserPreferenceOverride any
 }
 
@@ -190,17 +190,17 @@ type Memory_MemoryStrategies_EpisodicMemoryStrategy struct {
 	Description any
 	// For the Bedrock agent's episodic memory strategy, this object specifies the record schema that defines the fields (name and type) for each stored memory entry, enabling the agent to store and recall structured interaction data. (AI-inferred)
 	MemoryRecordSchema any
-	Name any
+	Name               any
 	NamespaceTemplates any
 	// For the Bedrock Agent Core Memory resource, this field defines the list of namespaces used by the episodic memory strategy to partition memories into distinct logical scopes for targeted storage and retrieval. (AI-inferred)
 	Namespaces any
 	// Configures how often the agent reflects on past episodes and the maximum number of reflection summaries to retain, enabling episodic memory to distill insights from prior interactions. (AI-inferred)
 	ReflectionConfiguration any
 	// Indicates whether the episodic memory strategy is enabled or disabled for the agent's core memory. (AI-inferred)
-	Status any
+	Status     any
 	StrategyId any
 	// The type of the episodic memory strategy, which must be set to the value 'EPISODIC_MEMORY' for the agent to use episodic memory. (AI-inferred)
-	Type any
+	Type      any
 	UpdatedAt any
 }
 
@@ -242,7 +242,7 @@ type Memory_MemoryStrategies struct {
 
 type Memory_StreamDeliveryResources_Resources_Kinesis_ContentConfigurations struct {
 	Level any
-	Type any
+	Type  any
 }
 
 type Memory_StreamDeliveryResources_Resources_Kinesis struct {
@@ -260,39 +260,39 @@ type Memory_StreamDeliveryResources struct {
 }
 
 var Memory_IndexedKeysFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Key":  ubx.FieldSpec{WireName: "key"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Memory_StreamDeliveryResources_Resources_Kinesis_ContentConfigurationsFields = ubx.FieldMap{
-		"Level": ubx.FieldSpec{WireName: "level"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Level": ubx.FieldSpec{WireName: "level"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+}
 
 var Memory_StreamDeliveryResources_Resources_KinesisFields = ubx.FieldMap{
-		"ContentConfigurations": ubx.FieldSpec{
-			WireName: "content_configurations",
-			Kind: "list",
-			Fields: Memory_StreamDeliveryResources_Resources_Kinesis_ContentConfigurationsFields,
-		},
-		"DataStreamArn": ubx.FieldSpec{WireName: "data_stream_arn"},
-	}
+	"ContentConfigurations": ubx.FieldSpec{
+		WireName: "content_configurations",
+		Kind:     "list",
+		Fields:   Memory_StreamDeliveryResources_Resources_Kinesis_ContentConfigurationsFields,
+	},
+	"DataStreamArn": ubx.FieldSpec{WireName: "data_stream_arn"},
+}
 
 var Memory_StreamDeliveryResources_ResourcesFields = ubx.FieldMap{
-		"Kinesis": ubx.FieldSpec{
-			WireName: "kinesis",
-			Kind: "object",
-			Fields: Memory_StreamDeliveryResources_Resources_KinesisFields,
-		},
-	}
+	"Kinesis": ubx.FieldSpec{
+		WireName: "kinesis",
+		Kind:     "object",
+		Fields:   Memory_StreamDeliveryResources_Resources_KinesisFields,
+	},
+}
 
 var Memory_StreamDeliveryResourcesFields = ubx.FieldMap{
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "list",
-			Fields: Memory_StreamDeliveryResources_ResourcesFields,
-		},
-	}
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "list",
+		Fields:   Memory_StreamDeliveryResources_ResourcesFields,
+	},
+}
 
 type MemoryConfig struct {
 	// Description of the Memory resource
@@ -349,20 +349,20 @@ type MemoryAttrs struct {
 var Memory = ubx.ResourceBinding{
 	WireType: "aws_bedrock_agent_core_memory",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EncryptionKeyArn": ubx.FieldSpec{WireName: "encryption_key_arn"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"EncryptionKeyArn":    ubx.FieldSpec{WireName: "encryption_key_arn"},
 		"EventExpiryDuration": ubx.FieldSpec{WireName: "event_expiry_duration"},
 		"IndexedKeys": ubx.FieldSpec{
 			WireName: "indexed_keys",
-			Kind: "list",
-			Fields: Memory_IndexedKeysFields,
+			Kind:     "list",
+			Fields:   Memory_IndexedKeysFields,
 		},
 		"MemoryExecutionRoleArn": ubx.FieldSpec{WireName: "memory_execution_role_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
 		"StreamDeliveryResources": ubx.FieldSpec{
 			WireName: "stream_delivery_resources",
-			Kind: "object",
-			Fields: Memory_StreamDeliveryResourcesFields,
+			Kind:     "object",
+			Fields:   Memory_StreamDeliveryResourcesFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

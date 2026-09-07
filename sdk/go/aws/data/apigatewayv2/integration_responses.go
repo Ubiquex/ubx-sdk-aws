@@ -4,35 +4,35 @@ package apigatewayv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IntegrationResponses_Items struct {
-	ContentHandlingStrategy any
-	IntegrationResponseId any
-	IntegrationResponseKey any
-	ResponseParameters any
-	ResponseTemplates any
+	ContentHandlingStrategy     any
+	IntegrationResponseId       any
+	IntegrationResponseKey      any
+	ResponseParameters          any
+	ResponseTemplates           any
 	TemplateSelectionExpression any
 }
 
 type IntegrationResponsesConfig struct {
-	ApiId any
+	ApiId         any
 	IntegrationId any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type IntegrationResponsesAttrs struct {
-	ApiId any
+	ApiId         any
 	IntegrationId any
-	Items any
-	MaxResults any
-	NextToken any
+	Items         any
+	MaxResults    any
+	NextToken     any
 }
 
 var IntegrationResponses = ubx.DataSourceBinding{
 	WireType: "aws_apigatewayv2_integration_responses",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":         ubx.FieldSpec{WireName: "api_id"},
 		"IntegrationId": ubx.FieldSpec{WireName: "integration_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -30,18 +30,18 @@ type Stream_WarmThroughputObject struct {
 }
 
 var Stream_StreamEncryptionFields = ubx.FieldMap{
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"KeyId": ubx.FieldSpec{WireName: "key_id"},
-	}
+	"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+	"KeyId":          ubx.FieldSpec{WireName: "key_id"},
+}
 
 var Stream_StreamModeDetailsFields = ubx.FieldMap{
-		"StreamMode": ubx.FieldSpec{WireName: "stream_mode"},
-	}
+	"StreamMode": ubx.FieldSpec{WireName: "stream_mode"},
+}
 
 var Stream_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StreamConfig struct {
 	// The final list of shard-level metrics
@@ -93,24 +93,24 @@ var Stream = ubx.ResourceBinding{
 	WireType: "aws_kinesis_stream",
 	Fields: ubx.FieldMap{
 		"DesiredShardLevelMetrics": ubx.FieldSpec{WireName: "desired_shard_level_metrics"},
-		"MaxRecordSizeInKiB": ubx.FieldSpec{WireName: "max_record_size_in_ki_b"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RetentionPeriodHours": ubx.FieldSpec{WireName: "retention_period_hours"},
-		"ShardCount": ubx.FieldSpec{WireName: "shard_count"},
+		"MaxRecordSizeInKiB":       ubx.FieldSpec{WireName: "max_record_size_in_ki_b"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
+		"RetentionPeriodHours":     ubx.FieldSpec{WireName: "retention_period_hours"},
+		"ShardCount":               ubx.FieldSpec{WireName: "shard_count"},
 		"StreamEncryption": ubx.FieldSpec{
 			WireName: "stream_encryption",
-			Kind: "object",
-			Fields: Stream_StreamEncryptionFields,
+			Kind:     "object",
+			Fields:   Stream_StreamEncryptionFields,
 		},
 		"StreamModeDetails": ubx.FieldSpec{
 			WireName: "stream_mode_details",
-			Kind: "object",
-			Fields: Stream_StreamModeDetailsFields,
+			Kind:     "object",
+			Fields:   Stream_StreamModeDetailsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Stream_TagsFields,
+			Kind:     "list",
+			Fields:   Stream_TagsFields,
 		},
 		"WarmThroughputMiBps": ubx.FieldSpec{WireName: "warm_throughput_mi_bps"},
 	},

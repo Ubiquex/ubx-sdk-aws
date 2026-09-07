@@ -13,43 +13,43 @@ type MicrovmImage_CpuConfigurations struct {
 }
 
 type MicrovmImage_EnvironmentVariables struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type MicrovmImage_Hooks_MicrovmHooks struct {
 	// Specifies the command to execute when the microVM resumes from a paused state, enabling custom lifecycle actions. (AI-inferred)
-	Resume any
-	ResumeTimeoutInSeconds any
-	Run any
-	RunTimeoutInSeconds any
-	Suspend any
-	SuspendTimeoutInSeconds any
-	Terminate any
+	Resume                    any
+	ResumeTimeoutInSeconds    any
+	Run                       any
+	RunTimeoutInSeconds       any
+	Suspend                   any
+	SuspendTimeoutInSeconds   any
+	Terminate                 any
 	TerminateTimeoutInSeconds any
 }
 
 type MicrovmImage_Hooks_MicrovmImageHooks struct {
-	Ready any
-	ReadyTimeoutInSeconds any
-	Validate any
+	Ready                    any
+	ReadyTimeoutInSeconds    any
+	Validate                 any
 	ValidateTimeoutInSeconds any
 }
 
 type MicrovmImage_Hooks struct {
-	MicrovmHooks any
+	MicrovmHooks      any
 	MicrovmImageHooks any
-	Port any
+	Port              any
 }
 
 type MicrovmImage_Logging_CloudWatch struct {
-	LogGroup any
+	LogGroup  any
 	LogStream any
 }
 
 type MicrovmImage_Logging struct {
 	CloudWatch any
-	Disabled any
+	Disabled   any
 }
 
 type MicrovmImage_Resources struct {
@@ -57,67 +57,67 @@ type MicrovmImage_Resources struct {
 }
 
 var MicrovmImage_CodeArtifactFields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 var MicrovmImage_CpuConfigurationsFields = ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
-	}
+	"Architecture": ubx.FieldSpec{WireName: "architecture"},
+}
 
 var MicrovmImage_EnvironmentVariablesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var MicrovmImage_Hooks_MicrovmHooksFields = ubx.FieldMap{
-		"Resume": ubx.FieldSpec{WireName: "resume"},
-		"ResumeTimeoutInSeconds": ubx.FieldSpec{WireName: "resume_timeout_in_seconds"},
-		"Run": ubx.FieldSpec{WireName: "run"},
-		"RunTimeoutInSeconds": ubx.FieldSpec{WireName: "run_timeout_in_seconds"},
-		"Suspend": ubx.FieldSpec{WireName: "suspend"},
-		"SuspendTimeoutInSeconds": ubx.FieldSpec{WireName: "suspend_timeout_in_seconds"},
-		"Terminate": ubx.FieldSpec{WireName: "terminate"},
-		"TerminateTimeoutInSeconds": ubx.FieldSpec{WireName: "terminate_timeout_in_seconds"},
-	}
+	"Resume":                    ubx.FieldSpec{WireName: "resume"},
+	"ResumeTimeoutInSeconds":    ubx.FieldSpec{WireName: "resume_timeout_in_seconds"},
+	"Run":                       ubx.FieldSpec{WireName: "run"},
+	"RunTimeoutInSeconds":       ubx.FieldSpec{WireName: "run_timeout_in_seconds"},
+	"Suspend":                   ubx.FieldSpec{WireName: "suspend"},
+	"SuspendTimeoutInSeconds":   ubx.FieldSpec{WireName: "suspend_timeout_in_seconds"},
+	"Terminate":                 ubx.FieldSpec{WireName: "terminate"},
+	"TerminateTimeoutInSeconds": ubx.FieldSpec{WireName: "terminate_timeout_in_seconds"},
+}
 
 var MicrovmImage_Hooks_MicrovmImageHooksFields = ubx.FieldMap{
-		"Ready": ubx.FieldSpec{WireName: "ready"},
-		"ReadyTimeoutInSeconds": ubx.FieldSpec{WireName: "ready_timeout_in_seconds"},
-		"Validate": ubx.FieldSpec{WireName: "validate"},
-		"ValidateTimeoutInSeconds": ubx.FieldSpec{WireName: "validate_timeout_in_seconds"},
-	}
+	"Ready":                    ubx.FieldSpec{WireName: "ready"},
+	"ReadyTimeoutInSeconds":    ubx.FieldSpec{WireName: "ready_timeout_in_seconds"},
+	"Validate":                 ubx.FieldSpec{WireName: "validate"},
+	"ValidateTimeoutInSeconds": ubx.FieldSpec{WireName: "validate_timeout_in_seconds"},
+}
 
 var MicrovmImage_HooksFields = ubx.FieldMap{
-		"MicrovmHooks": ubx.FieldSpec{
-			WireName: "microvm_hooks",
-			Kind: "object",
-			Fields: MicrovmImage_Hooks_MicrovmHooksFields,
-		},
-		"MicrovmImageHooks": ubx.FieldSpec{
-			WireName: "microvm_image_hooks",
-			Kind: "object",
-			Fields: MicrovmImage_Hooks_MicrovmImageHooksFields,
-		},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"MicrovmHooks": ubx.FieldSpec{
+		WireName: "microvm_hooks",
+		Kind:     "object",
+		Fields:   MicrovmImage_Hooks_MicrovmHooksFields,
+	},
+	"MicrovmImageHooks": ubx.FieldSpec{
+		WireName: "microvm_image_hooks",
+		Kind:     "object",
+		Fields:   MicrovmImage_Hooks_MicrovmImageHooksFields,
+	},
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 var MicrovmImage_Logging_CloudWatchFields = ubx.FieldMap{
-		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
-		"LogStream": ubx.FieldSpec{WireName: "log_stream"},
-	}
+	"LogGroup":  ubx.FieldSpec{WireName: "log_group"},
+	"LogStream": ubx.FieldSpec{WireName: "log_stream"},
+}
 
 var MicrovmImage_LoggingFields = ubx.FieldMap{
-		"CloudWatch": ubx.FieldSpec{
-			WireName: "cloud_watch",
-			Kind: "object",
-			Fields: MicrovmImage_Logging_CloudWatchFields,
-		},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-	}
+	"CloudWatch": ubx.FieldSpec{
+		WireName: "cloud_watch",
+		Kind:     "object",
+		Fields:   MicrovmImage_Logging_CloudWatchFields,
+	},
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+}
 
 var MicrovmImage_ResourcesFields = ubx.FieldMap{
-		"MinimumMemoryInMiB": ubx.FieldSpec{WireName: "minimum_memory_in_mi_b"},
-	}
+	"MinimumMemoryInMiB": ubx.FieldSpec{WireName: "minimum_memory_in_mi_b"},
+}
 
 type MicrovmImageConfig struct {
 	// Additional OS capabilities granted to this MicroVM's own runtime environment. (AI-inferred)
@@ -195,46 +195,46 @@ var MicrovmImage = ubx.ResourceBinding{
 	WireType: "aws_lambda_microvm_image",
 	Fields: ubx.FieldMap{
 		"AdditionalOsCapabilities": ubx.FieldSpec{WireName: "additional_os_capabilities"},
-		"BaseImageArn": ubx.FieldSpec{WireName: "base_image_arn"},
-		"BaseImageVersion": ubx.FieldSpec{WireName: "base_image_version"},
-		"BuildRoleArn": ubx.FieldSpec{WireName: "build_role_arn"},
+		"BaseImageArn":             ubx.FieldSpec{WireName: "base_image_arn"},
+		"BaseImageVersion":         ubx.FieldSpec{WireName: "base_image_version"},
+		"BuildRoleArn":             ubx.FieldSpec{WireName: "build_role_arn"},
 		"CodeArtifact": ubx.FieldSpec{
 			WireName: "code_artifact",
-			Kind: "object",
-			Fields: MicrovmImage_CodeArtifactFields,
+			Kind:     "object",
+			Fields:   MicrovmImage_CodeArtifactFields,
 		},
 		"CpuConfigurations": ubx.FieldSpec{
 			WireName: "cpu_configurations",
-			Kind: "list",
-			Fields: MicrovmImage_CpuConfigurationsFields,
+			Kind:     "list",
+			Fields:   MicrovmImage_CpuConfigurationsFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
 		"EgressNetworkConnectors": ubx.FieldSpec{WireName: "egress_network_connectors"},
 		"EnvironmentVariables": ubx.FieldSpec{
 			WireName: "environment_variables",
-			Kind: "list",
-			Fields: MicrovmImage_EnvironmentVariablesFields,
+			Kind:     "list",
+			Fields:   MicrovmImage_EnvironmentVariablesFields,
 		},
 		"Hooks": ubx.FieldSpec{
 			WireName: "hooks",
-			Kind: "object",
-			Fields: MicrovmImage_HooksFields,
+			Kind:     "object",
+			Fields:   MicrovmImage_HooksFields,
 		},
 		"Logging": ubx.FieldSpec{
 			WireName: "logging",
-			Kind: "object",
-			Fields: MicrovmImage_LoggingFields,
+			Kind:     "object",
+			Fields:   MicrovmImage_LoggingFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Resources": ubx.FieldSpec{
 			WireName: "resources",
-			Kind: "list",
-			Fields: MicrovmImage_ResourcesFields,
+			Kind:     "list",
+			Fields:   MicrovmImage_ResourcesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MicrovmImage_EnvironmentVariablesFields,
+			Kind:     "list",
+			Fields:   MicrovmImage_EnvironmentVariablesFields,
 		},
 	},
 }

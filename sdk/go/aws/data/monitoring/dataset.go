@@ -8,10 +8,10 @@ type DatasetConfig struct {
 }
 
 type DatasetAttrs struct {
-	Arn any
-	DatasetId any
+	Arn               any
+	DatasetId         any
 	DatasetIdentifier any
-	KmsKeyArn any
+	KmsKeyArn         any
 }
 
 var Dataset = ubx.DataSourceBinding{

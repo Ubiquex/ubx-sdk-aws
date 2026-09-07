@@ -8,62 +8,62 @@ type MaintenanceWindowTask_AlarmConfiguration_Alarms struct {
 }
 
 type MaintenanceWindowTask_AlarmConfiguration struct {
-	Alarms any
+	Alarms                 any
 	IgnorePollAlarmFailure any
 }
 
 type MaintenanceWindowTask_LoggingInfo struct {
 	S3BucketName any
-	S3KeyPrefix any
-	S3Region any
+	S3KeyPrefix  any
+	S3Region     any
 }
 
 type MaintenanceWindowTask_Targets struct {
-	Key any
+	Key    any
 	Values any
 }
 
 type MaintenanceWindowTask_TaskInvocationParameters_Automation struct {
 	DocumentVersion any
-	Parameters any
+	Parameters      any
 }
 
 type MaintenanceWindowTask_TaskInvocationParameters_Lambda struct {
 	ClientContext any
-	Payload any
-	Qualifier any
+	Payload       any
+	Qualifier     any
 }
 
 type MaintenanceWindowTask_TaskInvocationParameters_RunCommand_CloudWatchOutputConfig struct {
-	CloudWatchLogGroupName any
+	CloudWatchLogGroupName  any
 	CloudWatchOutputEnabled any
 }
 
 type MaintenanceWindowTask_TaskInvocationParameters_RunCommand_NotificationConfig struct {
-	NotificationArn any
+	NotificationArn    any
 	NotificationEvents any
-	NotificationType any
+	NotificationType   any
 }
 
 type MaintenanceWindowTask_TaskInvocationParameters_RunCommand struct {
 	// <p>Configuration options for sending command output to Amazon CloudWatch Logs.</p>
 	CloudWatchOutputConfig any
-	Comment any
-	DocumentHash any
-	DocumentHashType any
-	DocumentVersion any
+	Comment                any
+	DocumentHash           any
+	DocumentHashType       any
+	DocumentVersion        any
 	// <p>Configurations for sending notifications.</p>
 	NotificationConfig any
 	OutputS3BucketName any
-	OutputS3KeyPrefix any
-	Parameters any
-	ServiceRoleArn any
-	TimeoutSeconds any
+	OutputS3KeyPrefix  any
+	Parameters         any
+	ServiceRoleArn     any
+	TimeoutSeconds     any
 }
 
 type MaintenanceWindowTask_TaskInvocationParameters_StepFunctions struct {
 	Input any
-	Name any
+	Name  any
 }
 
 type MaintenanceWindowTask_TaskInvocationParameters struct {
@@ -82,36 +82,36 @@ type MaintenanceWindowTask_TaskParameters struct {
 }
 
 type MaintenanceWindowTaskConfig struct {
-	WindowId any
+	WindowId     any
 	WindowTaskId any
 }
 
 type MaintenanceWindowTaskAttrs struct {
 	// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
 	AlarmConfiguration any
-	CutoffBehavior any
-	Description any
+	CutoffBehavior     any
+	Description        any
 	// <p>Information about an Amazon Simple Storage Service (Amazon S3) bucket to write managed node-level logs to.</p> <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
-	LoggingInfo any
+	LoggingInfo    any
 	MaxConcurrency any
-	MaxErrors any
-	Name any
-	Priority any
+	MaxErrors      any
+	Name           any
+	Priority       any
 	ServiceRoleArn any
-	Targets any
-	TaskArn any
+	Targets        any
+	TaskArn        any
 	// <p>The parameters for task execution.</p>
 	TaskInvocationParameters any
-	TaskParameters any
-	TaskType any
-	WindowId any
-	WindowTaskId any
+	TaskParameters           any
+	TaskType                 any
+	WindowId                 any
+	WindowTaskId             any
 }
 
 var MaintenanceWindowTask = ubx.DataSourceBinding{
 	WireType: "aws_ssm_maintenance_window_task",
 	Fields: ubx.FieldMap{
-		"WindowId": ubx.FieldSpec{WireName: "window_id"},
+		"WindowId":     ubx.FieldSpec{WireName: "window_id"},
 		"WindowTaskId": ubx.FieldSpec{WireName: "window_task_id"},
 	},
 }

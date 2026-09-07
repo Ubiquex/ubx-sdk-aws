@@ -4,33 +4,33 @@ package kendra
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Faqs_FaqSummaryItems struct {
-	CreatedAt any
-	FileFormat any
-	Id any
+	CreatedAt    any
+	FileFormat   any
+	Id           any
 	LanguageCode any
-	Name any
-	Status any
-	UpdatedAt any
+	Name         any
+	Status       any
+	UpdatedAt    any
 }
 
 type FaqsConfig struct {
-	IndexId any
+	IndexId    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FaqsAttrs struct {
 	FaqSummaryItems any
-	IndexId any
-	MaxResults any
-	NextToken any
+	IndexId         any
+	MaxResults      any
+	NextToken       any
 }
 
 var Faqs = ubx.DataSourceBinding{
 	WireType: "aws_kendra_faqs",
 	Fields: ubx.FieldMap{
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
+		"IndexId":    ubx.FieldSpec{WireName: "index_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

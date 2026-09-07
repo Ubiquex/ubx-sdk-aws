@@ -4,29 +4,29 @@ package mgh
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationStates_ApplicationStateList struct {
-	ApplicationId any
+	ApplicationId     any
 	ApplicationStatus any
-	LastUpdatedTime any
+	LastUpdatedTime   any
 }
 
 type ApplicationStatesConfig struct {
 	ApplicationIds any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 type ApplicationStatesAttrs struct {
-	ApplicationIds any
+	ApplicationIds       any
 	ApplicationStateList any
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 }
 
 var ApplicationStates = ubx.DataSourceBinding{
 	WireType: "aws_mgh_application_states",
 	Fields: ubx.FieldMap{
 		"ApplicationIds": ubx.FieldSpec{WireName: "application_ids"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 	},
 }

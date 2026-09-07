@@ -17,7 +17,7 @@ type Repository_ImageScanningConfiguration struct {
 
 type Repository_ImageTagMutabilityExclusionFilters struct {
 	// This field determines the kind of tag (ANY, TAGGED, or UNTAGGED) to which the image tag mutability exclusion filter applies, allowing certain image tags to bypass the repository's immutable tag setting. (AI-inferred)
-	ImageTagMutabilityExclusionFilterType any
+	ImageTagMutabilityExclusionFilterType  any
 	ImageTagMutabilityExclusionFilterValue any
 }
 
@@ -36,28 +36,28 @@ type Repository_Tags struct {
 }
 
 var Repository_EncryptionConfigurationFields = ubx.FieldMap{
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+	"KmsKey":         ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var Repository_ImageScanningConfigurationFields = ubx.FieldMap{
-		"ScanOnPush": ubx.FieldSpec{WireName: "scan_on_push"},
-	}
+	"ScanOnPush": ubx.FieldSpec{WireName: "scan_on_push"},
+}
 
 var Repository_ImageTagMutabilityExclusionFiltersFields = ubx.FieldMap{
-		"ImageTagMutabilityExclusionFilterType": ubx.FieldSpec{WireName: "image_tag_mutability_exclusion_filter_type"},
-		"ImageTagMutabilityExclusionFilterValue": ubx.FieldSpec{WireName: "image_tag_mutability_exclusion_filter_value"},
-	}
+	"ImageTagMutabilityExclusionFilterType":  ubx.FieldSpec{WireName: "image_tag_mutability_exclusion_filter_type"},
+	"ImageTagMutabilityExclusionFilterValue": ubx.FieldSpec{WireName: "image_tag_mutability_exclusion_filter_value"},
+}
 
 var Repository_LifecyclePolicyFields = ubx.FieldMap{
-		"LifecyclePolicyText": ubx.FieldSpec{WireName: "lifecycle_policy_text"},
-		"RegistryId": ubx.FieldSpec{WireName: "registry_id"},
-	}
+	"LifecyclePolicyText": ubx.FieldSpec{WireName: "lifecycle_policy_text"},
+	"RegistryId":          ubx.FieldSpec{WireName: "registry_id"},
+}
 
 var Repository_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RepositoryConfig struct {
 	// If true, deleting the repository force deletes the contents of the repository. Without a force delete, you can only delete empty repositories.
@@ -111,31 +111,31 @@ var Repository = ubx.ResourceBinding{
 		"EmptyOnDelete": ubx.FieldSpec{WireName: "empty_on_delete"},
 		"EncryptionConfiguration": ubx.FieldSpec{
 			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: Repository_EncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   Repository_EncryptionConfigurationFields,
 		},
 		"ImageScanningConfiguration": ubx.FieldSpec{
 			WireName: "image_scanning_configuration",
-			Kind: "object",
-			Fields: Repository_ImageScanningConfigurationFields,
+			Kind:     "object",
+			Fields:   Repository_ImageScanningConfigurationFields,
 		},
 		"ImageTagMutability": ubx.FieldSpec{WireName: "image_tag_mutability"},
 		"ImageTagMutabilityExclusionFilters": ubx.FieldSpec{
 			WireName: "image_tag_mutability_exclusion_filters",
-			Kind: "list",
-			Fields: Repository_ImageTagMutabilityExclusionFiltersFields,
+			Kind:     "list",
+			Fields:   Repository_ImageTagMutabilityExclusionFiltersFields,
 		},
 		"LifecyclePolicy": ubx.FieldSpec{
 			WireName: "lifecycle_policy",
-			Kind: "object",
-			Fields: Repository_LifecyclePolicyFields,
+			Kind:     "object",
+			Fields:   Repository_LifecyclePolicyFields,
 		},
-		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
+		"RepositoryName":       ubx.FieldSpec{WireName: "repository_name"},
 		"RepositoryPolicyText": ubx.FieldSpec{WireName: "repository_policy_text"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Repository_TagsFields,
+			Kind:     "list",
+			Fields:   Repository_TagsFields,
 		},
 	},
 }

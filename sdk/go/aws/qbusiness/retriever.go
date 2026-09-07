@@ -17,31 +17,31 @@ type Retriever_Configuration struct {
 
 type Retriever_Tags struct {
 	// The key of a tag to attach to the Amazon Q Business retriever resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Retriever_Configuration_KendraIndexConfigurationFields = ubx.FieldMap{
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
-	}
+	"IndexId": ubx.FieldSpec{WireName: "index_id"},
+}
 
 var Retriever_ConfigurationFields = ubx.FieldMap{
-		"KendraIndexConfiguration": ubx.FieldSpec{
-			WireName: "kendra_index_configuration",
-			Kind: "object",
-			Fields: Retriever_Configuration_KendraIndexConfigurationFields,
-		},
-		"NativeIndexConfiguration": ubx.FieldSpec{
-			WireName: "native_index_configuration",
-			Kind: "object",
-			Fields: Retriever_Configuration_KendraIndexConfigurationFields,
-		},
-	}
+	"KendraIndexConfiguration": ubx.FieldSpec{
+		WireName: "kendra_index_configuration",
+		Kind:     "object",
+		Fields:   Retriever_Configuration_KendraIndexConfigurationFields,
+	},
+	"NativeIndexConfiguration": ubx.FieldSpec{
+		WireName: "native_index_configuration",
+		Kind:     "object",
+		Fields:   Retriever_Configuration_KendraIndexConfigurationFields,
+	},
+}
 
 var Retriever_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RetrieverConfig struct {
 	// The unique identifier of the Amazon Q Business application to which this retriever belongs. (AI-inferred)
@@ -89,15 +89,15 @@ var Retriever = ubx.ResourceBinding{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: Retriever_ConfigurationFields,
+			Kind:     "object",
+			Fields:   Retriever_ConfigurationFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":     ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Retriever_TagsFields,
+			Kind:     "list",
+			Fields:   Retriever_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

@@ -16,18 +16,18 @@ type Volume_TagSpecifications struct {
 }
 
 var Volume_TagSpecifications_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Volume_TagSpecificationsFields = ubx.FieldMap{
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: Volume_TagSpecifications_TagsFields,
-		},
-	}
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   Volume_TagSpecifications_TagsFields,
+	},
+}
 
 type VolumeConfig struct {
 	// The Availability Zone in which to create the volume
@@ -77,15 +77,15 @@ var Volume = ubx.ResourceBinding{
 	WireType: "aws_workspaces_instances_volume",
 	Fields: ubx.FieldMap{
 		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"SizeInGb": ubx.FieldSpec{WireName: "size_in_gb"},
-		"SnapshotId": ubx.FieldSpec{WireName: "snapshot_id"},
+		"Encrypted":        ubx.FieldSpec{WireName: "encrypted"},
+		"Iops":             ubx.FieldSpec{WireName: "iops"},
+		"KmsKeyId":         ubx.FieldSpec{WireName: "kms_key_id"},
+		"SizeInGb":         ubx.FieldSpec{WireName: "size_in_gb"},
+		"SnapshotId":       ubx.FieldSpec{WireName: "snapshot_id"},
 		"TagSpecifications": ubx.FieldSpec{
 			WireName: "tag_specifications",
-			Kind: "list",
-			Fields: Volume_TagSpecificationsFields,
+			Kind:     "list",
+			Fields:   Volume_TagSpecificationsFields,
 		},
 		"Throughput": ubx.FieldSpec{WireName: "throughput"},
 		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},

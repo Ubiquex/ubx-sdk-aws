@@ -42,12 +42,12 @@ type HostedConfigurationVersionAttrs struct {
 var HostedConfigurationVersion = ubx.ResourceBinding{
 	WireType: "aws_app_config_hosted_configuration_version",
 	Fields: ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"ApplicationId":          ubx.FieldSpec{WireName: "application_id"},
 		"ConfigurationProfileId": ubx.FieldSpec{WireName: "configuration_profile_id"},
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"LatestVersionNumber": ubx.FieldSpec{WireName: "latest_version_number"},
-		"VersionLabel": ubx.FieldSpec{WireName: "version_label"},
+		"Content":                ubx.FieldSpec{WireName: "content"},
+		"ContentType":            ubx.FieldSpec{WireName: "content_type"},
+		"Description":            ubx.FieldSpec{WireName: "description"},
+		"LatestVersionNumber":    ubx.FieldSpec{WireName: "latest_version_number"},
+		"VersionLabel":           ubx.FieldSpec{WireName: "version_label"},
 	},
 }

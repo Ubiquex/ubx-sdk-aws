@@ -4,20 +4,20 @@ package neptune_db
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NeptuneDbMlmodelTransformJobsConfig struct {
-	MaxItems any
+	MaxItems          any
 	NeptuneIamRoleArn any
 }
 
 type NeptuneDbMlmodelTransformJobsAttrs struct {
-	Ids any
-	MaxItems any
+	Ids               any
+	MaxItems          any
 	NeptuneIamRoleArn any
 }
 
 var NeptuneDbMlmodelTransformJobs = ubx.DataSourceBinding{
 	WireType: "aws_neptune_db_mlmodel_transform_jobs",
 	Fields: ubx.FieldMap{
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"MaxItems":          ubx.FieldSpec{WireName: "max_items"},
 		"NeptuneIamRoleArn": ubx.FieldSpec{WireName: "neptune_iam_role_arn"},
 	},
 }

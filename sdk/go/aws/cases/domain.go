@@ -11,9 +11,9 @@ type Domain_Tags struct {
 }
 
 var Domain_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DomainConfig struct {
 	// The name for your Cases domain. It must be unique for your AWS account.
@@ -43,8 +43,8 @@ var Domain = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Domain_TagsFields,
+			Kind:     "list",
+			Fields:   Domain_TagsFields,
 		},
 	},
 }

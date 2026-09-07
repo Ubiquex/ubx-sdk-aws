@@ -4,7 +4,7 @@ package bedrockagentcore
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GatewayRule_Actions_ConfigurationBundle_StaticOverride struct {
-	BundleArn any
+	BundleArn     any
 	BundleVersion any
 }
 
@@ -12,9 +12,9 @@ type GatewayRule_Actions_ConfigurationBundle_WeightedOverride_TrafficSplit struc
 	ConfigurationBundle any
 	// Provides a human-readable note about this traffic split entry, used within a weighted override of an action's configuration bundle to document the purpose of routing a portion of traffic to a particular agent configuration in the core gateway rule. (AI-inferred)
 	Description any
-	Metadata any
-	Name any
-	Weight any
+	Metadata    any
+	Name        any
+	Weight      any
 }
 
 type GatewayRule_Actions_ConfigurationBundle_WeightedOverride struct {
@@ -36,11 +36,11 @@ type GatewayRule_Actions_RouteToTarget_StaticRoute struct {
 type GatewayRule_Actions_RouteToTarget_WeightedRoute_TrafficSplit struct {
 	// A description for this individual traffic split entry, allowing you to annotate the purpose or intended target of the portion of traffic routed through this weighted route path. (AI-inferred)
 	Description any
-	Metadata any
+	Metadata    any
 	// In the weighted route action of a Bedrock core gateway rule, this field provides a human-readable name for each traffic split, distinguishing the multiple targets (such as agents or agent versions) that receive a portion of the request traffic. (AI-inferred)
-	Name any
+	Name       any
 	TargetName any
-	Weight any
+	Weight     any
 }
 
 type GatewayRule_Actions_RouteToTarget_WeightedRoute struct {
@@ -55,7 +55,7 @@ type GatewayRule_Actions_RouteToTarget struct {
 
 type GatewayRule_Actions struct {
 	ConfigurationBundle any
-	RouteToTarget any
+	RouteToTarget       any
 }
 
 type GatewayRule_Conditions_MatchPaths struct {
@@ -65,7 +65,7 @@ type GatewayRule_Conditions_MatchPaths struct {
 
 type GatewayRule_Conditions_MatchPrincipals_AnyOf_IamPrincipal struct {
 	// The ARN of the IAM principal that the condition matches against, within an 'any_of' list in the match_principals block of the gateway rule. (AI-inferred)
-	Arn any
+	Arn      any
 	Operator any
 }
 
@@ -80,7 +80,7 @@ type GatewayRule_Conditions_MatchPrincipals struct {
 }
 
 type GatewayRule_Conditions struct {
-	MatchPaths any
+	MatchPaths      any
 	MatchPrincipals any
 }
 
@@ -89,126 +89,126 @@ type GatewayRule_System struct {
 }
 
 var GatewayRule_Actions_ConfigurationBundle_StaticOverrideFields = ubx.FieldMap{
-		"BundleArn": ubx.FieldSpec{WireName: "bundle_arn"},
-		"BundleVersion": ubx.FieldSpec{WireName: "bundle_version"},
-	}
+	"BundleArn":     ubx.FieldSpec{WireName: "bundle_arn"},
+	"BundleVersion": ubx.FieldSpec{WireName: "bundle_version"},
+}
 
 var GatewayRule_Actions_ConfigurationBundle_WeightedOverride_TrafficSplitFields = ubx.FieldMap{
-		"ConfigurationBundle": ubx.FieldSpec{
-			WireName: "configuration_bundle",
-			Kind: "object",
-			Fields: GatewayRule_Actions_ConfigurationBundle_StaticOverrideFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"ConfigurationBundle": ubx.FieldSpec{
+		WireName: "configuration_bundle",
+		Kind:     "object",
+		Fields:   GatewayRule_Actions_ConfigurationBundle_StaticOverrideFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Metadata":    ubx.FieldSpec{WireName: "metadata"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Weight":      ubx.FieldSpec{WireName: "weight"},
+}
 
 var GatewayRule_Actions_ConfigurationBundle_WeightedOverrideFields = ubx.FieldMap{
-		"TrafficSplit": ubx.FieldSpec{
-			WireName: "traffic_split",
-			Kind: "list",
-			Fields: GatewayRule_Actions_ConfigurationBundle_WeightedOverride_TrafficSplitFields,
-		},
-	}
+	"TrafficSplit": ubx.FieldSpec{
+		WireName: "traffic_split",
+		Kind:     "list",
+		Fields:   GatewayRule_Actions_ConfigurationBundle_WeightedOverride_TrafficSplitFields,
+	},
+}
 
 var GatewayRule_Actions_ConfigurationBundleFields = ubx.FieldMap{
-		"StaticOverride": ubx.FieldSpec{
-			WireName: "static_override",
-			Kind: "object",
-			Fields: GatewayRule_Actions_ConfigurationBundle_StaticOverrideFields,
-		},
-		"WeightedOverride": ubx.FieldSpec{
-			WireName: "weighted_override",
-			Kind: "object",
-			Fields: GatewayRule_Actions_ConfigurationBundle_WeightedOverrideFields,
-		},
-	}
+	"StaticOverride": ubx.FieldSpec{
+		WireName: "static_override",
+		Kind:     "object",
+		Fields:   GatewayRule_Actions_ConfigurationBundle_StaticOverrideFields,
+	},
+	"WeightedOverride": ubx.FieldSpec{
+		WireName: "weighted_override",
+		Kind:     "object",
+		Fields:   GatewayRule_Actions_ConfigurationBundle_WeightedOverrideFields,
+	},
+}
 
 var GatewayRule_Actions_RouteToTarget_StaticRouteFields = ubx.FieldMap{
-		"TargetName": ubx.FieldSpec{WireName: "target_name"},
-	}
+	"TargetName": ubx.FieldSpec{WireName: "target_name"},
+}
 
 var GatewayRule_Actions_RouteToTarget_WeightedRoute_TrafficSplitFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TargetName": ubx.FieldSpec{WireName: "target_name"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Metadata":    ubx.FieldSpec{WireName: "metadata"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"TargetName":  ubx.FieldSpec{WireName: "target_name"},
+	"Weight":      ubx.FieldSpec{WireName: "weight"},
+}
 
 var GatewayRule_Actions_RouteToTarget_WeightedRouteFields = ubx.FieldMap{
-		"TrafficSplit": ubx.FieldSpec{
-			WireName: "traffic_split",
-			Kind: "list",
-			Fields: GatewayRule_Actions_RouteToTarget_WeightedRoute_TrafficSplitFields,
-		},
-	}
+	"TrafficSplit": ubx.FieldSpec{
+		WireName: "traffic_split",
+		Kind:     "list",
+		Fields:   GatewayRule_Actions_RouteToTarget_WeightedRoute_TrafficSplitFields,
+	},
+}
 
 var GatewayRule_Actions_RouteToTargetFields = ubx.FieldMap{
-		"StaticRoute": ubx.FieldSpec{
-			WireName: "static_route",
-			Kind: "object",
-			Fields: GatewayRule_Actions_RouteToTarget_StaticRouteFields,
-		},
-		"WeightedRoute": ubx.FieldSpec{
-			WireName: "weighted_route",
-			Kind: "object",
-			Fields: GatewayRule_Actions_RouteToTarget_WeightedRouteFields,
-		},
-	}
+	"StaticRoute": ubx.FieldSpec{
+		WireName: "static_route",
+		Kind:     "object",
+		Fields:   GatewayRule_Actions_RouteToTarget_StaticRouteFields,
+	},
+	"WeightedRoute": ubx.FieldSpec{
+		WireName: "weighted_route",
+		Kind:     "object",
+		Fields:   GatewayRule_Actions_RouteToTarget_WeightedRouteFields,
+	},
+}
 
 var GatewayRule_ActionsFields = ubx.FieldMap{
-		"ConfigurationBundle": ubx.FieldSpec{
-			WireName: "configuration_bundle",
-			Kind: "object",
-			Fields: GatewayRule_Actions_ConfigurationBundleFields,
-		},
-		"RouteToTarget": ubx.FieldSpec{
-			WireName: "route_to_target",
-			Kind: "object",
-			Fields: GatewayRule_Actions_RouteToTargetFields,
-		},
-	}
+	"ConfigurationBundle": ubx.FieldSpec{
+		WireName: "configuration_bundle",
+		Kind:     "object",
+		Fields:   GatewayRule_Actions_ConfigurationBundleFields,
+	},
+	"RouteToTarget": ubx.FieldSpec{
+		WireName: "route_to_target",
+		Kind:     "object",
+		Fields:   GatewayRule_Actions_RouteToTargetFields,
+	},
+}
 
 var GatewayRule_Conditions_MatchPathsFields = ubx.FieldMap{
-		"AnyOf": ubx.FieldSpec{WireName: "any_of"},
-	}
+	"AnyOf": ubx.FieldSpec{WireName: "any_of"},
+}
 
 var GatewayRule_Conditions_MatchPrincipals_AnyOf_IamPrincipalFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-	}
+	"Arn":      ubx.FieldSpec{WireName: "arn"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+}
 
 var GatewayRule_Conditions_MatchPrincipals_AnyOfFields = ubx.FieldMap{
-		"IamPrincipal": ubx.FieldSpec{
-			WireName: "iam_principal",
-			Kind: "object",
-			Fields: GatewayRule_Conditions_MatchPrincipals_AnyOf_IamPrincipalFields,
-		},
-	}
+	"IamPrincipal": ubx.FieldSpec{
+		WireName: "iam_principal",
+		Kind:     "object",
+		Fields:   GatewayRule_Conditions_MatchPrincipals_AnyOf_IamPrincipalFields,
+	},
+}
 
 var GatewayRule_Conditions_MatchPrincipalsFields = ubx.FieldMap{
-		"AnyOf": ubx.FieldSpec{
-			WireName: "any_of",
-			Kind: "list",
-			Fields: GatewayRule_Conditions_MatchPrincipals_AnyOfFields,
-		},
-	}
+	"AnyOf": ubx.FieldSpec{
+		WireName: "any_of",
+		Kind:     "list",
+		Fields:   GatewayRule_Conditions_MatchPrincipals_AnyOfFields,
+	},
+}
 
 var GatewayRule_ConditionsFields = ubx.FieldMap{
-		"MatchPaths": ubx.FieldSpec{
-			WireName: "match_paths",
-			Kind: "object",
-			Fields: GatewayRule_Conditions_MatchPathsFields,
-		},
-		"MatchPrincipals": ubx.FieldSpec{
-			WireName: "match_principals",
-			Kind: "object",
-			Fields: GatewayRule_Conditions_MatchPrincipalsFields,
-		},
-	}
+	"MatchPaths": ubx.FieldSpec{
+		WireName: "match_paths",
+		Kind:     "object",
+		Fields:   GatewayRule_Conditions_MatchPathsFields,
+	},
+	"MatchPrincipals": ubx.FieldSpec{
+		WireName: "match_principals",
+		Kind:     "object",
+		Fields:   GatewayRule_Conditions_MatchPrincipalsFields,
+	},
+}
 
 type GatewayRuleConfig struct {
 	// The action(s) this gateway rule applies, e.g. routing a portion of traffic to a particular target configuration. (AI-inferred)
@@ -252,16 +252,16 @@ var GatewayRule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Actions": ubx.FieldSpec{
 			WireName: "actions",
-			Kind: "list",
-			Fields: GatewayRule_ActionsFields,
+			Kind:     "list",
+			Fields:   GatewayRule_ActionsFields,
 		},
 		"Conditions": ubx.FieldSpec{
 			WireName: "conditions",
-			Kind: "list",
-			Fields: GatewayRule_ConditionsFields,
+			Kind:     "list",
+			Fields:   GatewayRule_ConditionsFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
 		"GatewayIdentifier": ubx.FieldSpec{WireName: "gateway_identifier"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"Priority":          ubx.FieldSpec{WireName: "priority"},
 	},
 }

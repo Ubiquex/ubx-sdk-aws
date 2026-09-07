@@ -37,28 +37,28 @@ type ImageBuilder_VpcConfig struct {
 }
 
 var ImageBuilder_AccessEndpointsFields = ubx.FieldMap{
-		"EndpointType": ubx.FieldSpec{WireName: "endpoint_type"},
-		"VpceId": ubx.FieldSpec{WireName: "vpce_id"},
-	}
+	"EndpointType": ubx.FieldSpec{WireName: "endpoint_type"},
+	"VpceId":       ubx.FieldSpec{WireName: "vpce_id"},
+}
 
 var ImageBuilder_DomainJoinInfoFields = ubx.FieldMap{
-		"DirectoryName": ubx.FieldSpec{WireName: "directory_name"},
-		"OrganizationalUnitDistinguishedName": ubx.FieldSpec{WireName: "organizational_unit_distinguished_name"},
-	}
+	"DirectoryName":                       ubx.FieldSpec{WireName: "directory_name"},
+	"OrganizationalUnitDistinguishedName": ubx.FieldSpec{WireName: "organizational_unit_distinguished_name"},
+}
 
 var ImageBuilder_RootVolumeConfigFields = ubx.FieldMap{
-		"VolumeSizeInGb": ubx.FieldSpec{WireName: "volume_size_in_gb"},
-	}
+	"VolumeSizeInGb": ubx.FieldSpec{WireName: "volume_size_in_gb"},
+}
 
 var ImageBuilder_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ImageBuilder_VpcConfigFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 type ImageBuilderConfig struct {
 	// Specifies the VPC endpoints (via endpoint type and VPC endpoint ID) used for the image builder's streaming sessions, controlling the network access for the image builder. (AI-inferred)
@@ -137,39 +137,39 @@ var ImageBuilder = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessEndpoints": ubx.FieldSpec{
 			WireName: "access_endpoints",
-			Kind: "list",
-			Fields: ImageBuilder_AccessEndpointsFields,
+			Kind:     "list",
+			Fields:   ImageBuilder_AccessEndpointsFields,
 		},
 		"AppstreamAgentVersion": ubx.FieldSpec{WireName: "appstream_agent_version"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
 		"DomainJoinInfo": ubx.FieldSpec{
 			WireName: "domain_join_info",
-			Kind: "object",
-			Fields: ImageBuilder_DomainJoinInfoFields,
+			Kind:     "object",
+			Fields:   ImageBuilder_DomainJoinInfoFields,
 		},
 		"EnableDefaultInternetAccess": ubx.FieldSpec{WireName: "enable_default_internet_access"},
-		"IamRoleArn": ubx.FieldSpec{WireName: "iam_role_arn"},
-		"ImageArn": ubx.FieldSpec{WireName: "image_arn"},
-		"ImageName": ubx.FieldSpec{WireName: "image_name"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"IamRoleArn":                  ubx.FieldSpec{WireName: "iam_role_arn"},
+		"ImageArn":                    ubx.FieldSpec{WireName: "image_arn"},
+		"ImageName":                   ubx.FieldSpec{WireName: "image_name"},
+		"InstanceType":                ubx.FieldSpec{WireName: "instance_type"},
+		"Name":                        ubx.FieldSpec{WireName: "name"},
 		"RootVolumeConfig": ubx.FieldSpec{
 			WireName: "root_volume_config",
-			Kind: "object",
-			Fields: ImageBuilder_RootVolumeConfigFields,
+			Kind:     "object",
+			Fields:   ImageBuilder_RootVolumeConfigFields,
 		},
-		"SoftwaresToInstall": ubx.FieldSpec{WireName: "softwares_to_install"},
+		"SoftwaresToInstall":   ubx.FieldSpec{WireName: "softwares_to_install"},
 		"SoftwaresToUninstall": ubx.FieldSpec{WireName: "softwares_to_uninstall"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ImageBuilder_TagsFields,
+			Kind:     "list",
+			Fields:   ImageBuilder_TagsFields,
 		},
 		"VpcConfig": ubx.FieldSpec{
 			WireName: "vpc_config",
-			Kind: "object",
-			Fields: ImageBuilder_VpcConfigFields,
+			Kind:     "object",
+			Fields:   ImageBuilder_VpcConfigFields,
 		},
 	},
 }

@@ -11,7 +11,7 @@ type Application_IconS3Location struct {
 }
 
 type Application_Tags struct {
-	Key any
+	Key    any
 	TagKey any
 	// The value of a tag assigned to the AppStream application, paired with the corresponding tag key in the tags list. (AI-inferred)
 	TagValue any
@@ -20,16 +20,16 @@ type Application_Tags struct {
 }
 
 var Application_IconS3LocationFields = ubx.FieldMap{
-		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
-		"S3Key": ubx.FieldSpec{WireName: "s3_key"},
-	}
+	"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
+	"S3Key":    ubx.FieldSpec{WireName: "s3_key"},
+}
 
 var Application_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"TagKey": ubx.FieldSpec{WireName: "tag_key"},
-		"TagValue": ubx.FieldSpec{WireName: "tag_value"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"TagKey":   ubx.FieldSpec{WireName: "tag_key"},
+	"TagValue": ubx.FieldSpec{WireName: "tag_value"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 type ApplicationConfig struct {
 	// The Amazon Resource Name (ARN) of the app block that the application is associated with. (AI-inferred)
@@ -92,24 +92,24 @@ type ApplicationAttrs struct {
 var Application = ubx.ResourceBinding{
 	WireType: "aws_app_stream_application",
 	Fields: ubx.FieldMap{
-		"AppBlockArn": ubx.FieldSpec{WireName: "app_block_arn"},
+		"AppBlockArn":        ubx.FieldSpec{WireName: "app_block_arn"},
 		"AttributesToDelete": ubx.FieldSpec{WireName: "attributes_to_delete"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Description":        ubx.FieldSpec{WireName: "description"},
+		"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
 		"IconS3Location": ubx.FieldSpec{
 			WireName: "icon_s3_location",
-			Kind: "object",
-			Fields: Application_IconS3LocationFields,
+			Kind:     "object",
+			Fields:   Application_IconS3LocationFields,
 		},
 		"InstanceFamilies": ubx.FieldSpec{WireName: "instance_families"},
 		"LaunchParameters": ubx.FieldSpec{WireName: "launch_parameters"},
-		"LaunchPath": ubx.FieldSpec{WireName: "launch_path"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Platforms": ubx.FieldSpec{WireName: "platforms"},
+		"LaunchPath":       ubx.FieldSpec{WireName: "launch_path"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Platforms":        ubx.FieldSpec{WireName: "platforms"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Application_TagsFields,
+			Kind:     "list",
+			Fields:   Application_TagsFields,
 		},
 		"WorkingDirectory": ubx.FieldSpec{WireName: "working_directory"},
 	},

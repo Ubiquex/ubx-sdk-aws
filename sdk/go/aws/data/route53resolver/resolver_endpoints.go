@@ -4,48 +4,48 @@ package route53resolver
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResolverEndpoints_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ResolverEndpoints_ResolverEndpoints struct {
-	Arn any
-	CreationTime any
-	CreatorRequestId any
-	Direction any
-	Dns64Enabled any
-	HostVpcid any
-	Id any
-	IpAddressCount any
-	Ipv6InternetAccessEnabled any
-	ModificationTime any
-	Name any
-	OutpostArn any
-	PreferredInstanceType any
-	Protocols any
-	ResolverEndpointType any
-	RniEnhancedMetricsEnabled any
-	SecurityGroupIds any
-	Status any
-	StatusMessage any
+	Arn                            any
+	CreationTime                   any
+	CreatorRequestId               any
+	Direction                      any
+	Dns64Enabled                   any
+	HostVpcid                      any
+	Id                             any
+	IpAddressCount                 any
+	Ipv6InternetAccessEnabled      any
+	ModificationTime               any
+	Name                           any
+	OutpostArn                     any
+	PreferredInstanceType          any
+	Protocols                      any
+	ResolverEndpointType           any
+	RniEnhancedMetricsEnabled      any
+	SecurityGroupIds               any
+	Status                         any
+	StatusMessage                  any
 	TargetNameServerMetricsEnabled any
 }
 
 var ResolverEndpoints_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ResolverEndpointsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ResolverEndpointsAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters           any
+	MaxResults        any
+	NextToken         any
 	ResolverEndpoints any
 }
 
@@ -54,10 +54,10 @@ var ResolverEndpoints = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ResolverEndpoints_FiltersFields,
+			Kind:     "list",
+			Fields:   ResolverEndpoints_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

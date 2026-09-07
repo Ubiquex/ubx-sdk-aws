@@ -4,28 +4,28 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnalysisPermissions_Permissions struct {
-	Actions any
+	Actions   any
 	Principal any
 }
 
 type AnalysisPermissionsConfig struct {
-	AnalysisId any
+	AnalysisId   any
 	AwsAccountId any
 }
 
 type AnalysisPermissionsAttrs struct {
-	AnalysisArn any
-	AnalysisId any
+	AnalysisArn  any
+	AnalysisId   any
 	AwsAccountId any
-	Permissions any
-	RequestId any
-	Status any
+	Permissions  any
+	RequestId    any
+	Status       any
 }
 
 var AnalysisPermissions = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_analysis_permissions",
 	Fields: ubx.FieldMap{
-		"AnalysisId": ubx.FieldSpec{WireName: "analysis_id"},
+		"AnalysisId":   ubx.FieldSpec{WireName: "analysis_id"},
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
 	},
 }

@@ -18,14 +18,14 @@ type Environment_Tags struct {
 }
 
 var Environment_MonitorsFields = ubx.FieldMap{
-		"AlarmArn": ubx.FieldSpec{WireName: "alarm_arn"},
-		"AlarmRoleArn": ubx.FieldSpec{WireName: "alarm_role_arn"},
-	}
+	"AlarmArn":     ubx.FieldSpec{WireName: "alarm_arn"},
+	"AlarmRoleArn": ubx.FieldSpec{WireName: "alarm_role_arn"},
+}
 
 var Environment_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EnvironmentConfig struct {
 	// The application ID.
@@ -62,19 +62,19 @@ type EnvironmentAttrs struct {
 var Environment = ubx.ResourceBinding{
 	WireType: "aws_app_config_environment",
 	Fields: ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"ApplicationId":           ubx.FieldSpec{WireName: "application_id"},
 		"DeletionProtectionCheck": ubx.FieldSpec{WireName: "deletion_protection_check"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
 		"Monitors": ubx.FieldSpec{
 			WireName: "monitors",
-			Kind: "list",
-			Fields: Environment_MonitorsFields,
+			Kind:     "list",
+			Fields:   Environment_MonitorsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Environment_TagsFields,
+			Kind:     "list",
+			Fields:   Environment_TagsFields,
 		},
 	},
 }

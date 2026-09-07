@@ -14,20 +14,20 @@ type ResolverEndpoint_IpAddresses struct {
 
 type ResolverEndpoint_Tags struct {
 	// The key of a tag attached to the Route53 Resolver endpoint, enabling you to label the endpoint for filtering, cost tracking, and access control. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var ResolverEndpoint_IpAddressesFields = ubx.FieldMap{
-		"Ip": ubx.FieldSpec{WireName: "ip"},
-		"Ipv6": ubx.FieldSpec{WireName: "ipv6"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-	}
+	"Ip":       ubx.FieldSpec{WireName: "ip"},
+	"Ipv6":     ubx.FieldSpec{WireName: "ipv6"},
+	"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
+}
 
 var ResolverEndpoint_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ResolverEndpointConfig struct {
 	// Indicates whether the Resolver endpoint allows inbound or outbound DNS queries: - INBOUND: allows DNS queries to your VPC from your network - OUTBOUND: allows DNS queries from your VPC to your network - INBOUND_DELEGATION: allows DNS queries to your VPC from your network with authoritative answers from private hosted zones
@@ -98,25 +98,25 @@ type ResolverEndpointAttrs struct {
 var ResolverEndpoint = ubx.ResourceBinding{
 	WireType: "aws_route53_resolver_resolver_endpoint",
 	Fields: ubx.FieldMap{
-		"Direction": ubx.FieldSpec{WireName: "direction"},
+		"Direction":    ubx.FieldSpec{WireName: "direction"},
 		"Dns64Enabled": ubx.FieldSpec{WireName: "dns64_enabled"},
 		"IpAddresses": ubx.FieldSpec{
 			WireName: "ip_addresses",
-			Kind: "list",
-			Fields: ResolverEndpoint_IpAddressesFields,
+			Kind:     "list",
+			Fields:   ResolverEndpoint_IpAddressesFields,
 		},
 		"Ipv6InternetAccessEnabled": ubx.FieldSpec{WireName: "ipv6_internet_access_enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutpostArn": ubx.FieldSpec{WireName: "outpost_arn"},
-		"PreferredInstanceType": ubx.FieldSpec{WireName: "preferred_instance_type"},
-		"Protocols": ubx.FieldSpec{WireName: "protocols"},
-		"ResolverEndpointType": ubx.FieldSpec{WireName: "resolver_endpoint_type"},
+		"Name":                      ubx.FieldSpec{WireName: "name"},
+		"OutpostArn":                ubx.FieldSpec{WireName: "outpost_arn"},
+		"PreferredInstanceType":     ubx.FieldSpec{WireName: "preferred_instance_type"},
+		"Protocols":                 ubx.FieldSpec{WireName: "protocols"},
+		"ResolverEndpointType":      ubx.FieldSpec{WireName: "resolver_endpoint_type"},
 		"RniEnhancedMetricsEnabled": ubx.FieldSpec{WireName: "rni_enhanced_metrics_enabled"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+		"SecurityGroupIds":          ubx.FieldSpec{WireName: "security_group_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ResolverEndpoint_TagsFields,
+			Kind:     "list",
+			Fields:   ResolverEndpoint_TagsFields,
 		},
 		"TargetNameServerMetricsEnabled": ubx.FieldSpec{WireName: "target_name_server_metrics_enabled"},
 	},

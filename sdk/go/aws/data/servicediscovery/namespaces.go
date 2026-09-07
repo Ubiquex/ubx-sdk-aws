@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Namespaces_Filters struct {
 	Condition any
-	Name any
-	Values any
+	Name      any
+	Values    any
 }
 
 type Namespaces_Namespaces_Properties_DnsProperties_Soa struct {
@@ -15,7 +15,7 @@ type Namespaces_Namespaces_Properties_DnsProperties_Soa struct {
 
 type Namespaces_Namespaces_Properties_DnsProperties struct {
 	HostedZoneId any
-	Soa any
+	Soa          any
 }
 
 type Namespaces_Namespaces_Properties_HttpProperties struct {
@@ -23,39 +23,39 @@ type Namespaces_Namespaces_Properties_HttpProperties struct {
 }
 
 type Namespaces_Namespaces_Properties struct {
-	DnsProperties any
+	DnsProperties  any
 	HttpProperties any
 }
 
 type Namespaces_Namespaces struct {
-	Arn any
-	CreateDate any
-	Description any
-	Id any
-	Name any
-	Properties any
+	Arn           any
+	CreateDate    any
+	Description   any
+	Id            any
+	Name          any
+	Properties    any
 	ResourceOwner any
-	ServiceCount any
-	Type any
+	ServiceCount  any
+	Type          any
 }
 
 var Namespaces_FiltersFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Values":    ubx.FieldSpec{WireName: "values"},
+}
 
 type NamespacesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type NamespacesAttrs struct {
-	Filters any
+	Filters    any
 	MaxResults any
 	Namespaces any
-	NextToken any
+	NextToken  any
 }
 
 var Namespaces = ubx.DataSourceBinding{
@@ -63,10 +63,10 @@ var Namespaces = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Namespaces_FiltersFields,
+			Kind:     "list",
+			Fields:   Namespaces_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

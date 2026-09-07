@@ -5,48 +5,48 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ChangeSetHooks_Hooks_TargetDetails_ResourceTargetDetails struct {
 	LogicalResourceId any
-	ResourceAction any
-	ResourceType any
+	ResourceAction    any
+	ResourceType      any
 }
 
 type ChangeSetHooks_Hooks_TargetDetails struct {
 	ResourceTargetDetails any
-	TargetType any
+	TargetType            any
 }
 
 type ChangeSetHooks_Hooks struct {
-	FailureMode any
-	InvocationPoint any
-	TargetDetails any
+	FailureMode                any
+	InvocationPoint            any
+	TargetDetails              any
 	TypeConfigurationVersionId any
-	TypeName any
-	TypeVersionId any
+	TypeName                   any
+	TypeVersionId              any
 }
 
 type ChangeSetHooksConfig struct {
-	ChangeSetName any
+	ChangeSetName     any
 	LogicalResourceId any
-	NextToken any
-	StackName any
+	NextToken         any
+	StackName         any
 }
 
 type ChangeSetHooksAttrs struct {
-	ChangeSetId any
-	ChangeSetName any
-	Hooks any
+	ChangeSetId       any
+	ChangeSetName     any
+	Hooks             any
 	LogicalResourceId any
-	NextToken any
-	StackId any
-	StackName any
-	Status any
+	NextToken         any
+	StackId           any
+	StackName         any
+	Status            any
 }
 
 var ChangeSetHooks = ubx.DataSourceBinding{
 	WireType: "aws_cloudformation_change_set_hooks",
 	Fields: ubx.FieldMap{
-		"ChangeSetName": ubx.FieldSpec{WireName: "change_set_name"},
+		"ChangeSetName":     ubx.FieldSpec{WireName: "change_set_name"},
 		"LogicalResourceId": ubx.FieldSpec{WireName: "logical_resource_id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StackName": ubx.FieldSpec{WireName: "stack_name"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
+		"StackName":         ubx.FieldSpec{WireName: "stack_name"},
 	},
 }

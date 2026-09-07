@@ -4,46 +4,46 @@ package agent_registry
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentRegistryDiscoverableRegistryRecords_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type AgentRegistryDiscoverableRegistryRecords_RegistryRecords struct {
-	CreatedAt any
-	Description any
+	CreatedAt       any
+	Description     any
 	DescriptorTypes any
-	DisplayName any
-	Name any
-	RecordArn any
-	RecordId any
-	RecordType any
-	RecordVersion any
-	RegistryArn any
-	Status any
-	UpdatedAt any
+	DisplayName     any
+	Name            any
+	RecordArn       any
+	RecordId        any
+	RecordType      any
+	RecordVersion   any
+	RegistryArn     any
+	Status          any
+	UpdatedAt       any
 }
 
 var AgentRegistryDiscoverableRegistryRecords_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type AgentRegistryDiscoverableRegistryRecordsConfig struct {
 	// <p> The list of filters applied to a <code>ListDiscoverableRegistryRecords</code> request.</p>
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Registry identifier that accepts either ARN or ID format</p>
 	RegistryId any
 }
 
 type AgentRegistryDiscoverableRegistryRecordsAttrs struct {
 	// <p> The list of filters applied to a <code>ListDiscoverableRegistryRecords</code> request.</p>
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Registry identifier that accepts either ARN or ID format</p>
-	RegistryId any
+	RegistryId      any
 	RegistryRecords any
 }
 
@@ -52,11 +52,11 @@ var AgentRegistryDiscoverableRegistryRecords = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: AgentRegistryDiscoverableRegistryRecords_FiltersFields,
+			Kind:     "list",
+			Fields:   AgentRegistryDiscoverableRegistryRecords_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"RegistryId": ubx.FieldSpec{WireName: "registry_id"},
 	},
 }

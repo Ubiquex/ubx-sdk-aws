@@ -12,19 +12,19 @@ type Subscriber_SubscriberIdentity struct {
 
 type Subscriber_Tags struct {
 	// The key of a tag attached to the Security Lake subscriber, used to define the tag's name for organizing and identifying the subscriber resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Subscriber_SubscriberIdentityFields = ubx.FieldMap{
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-	}
+	"ExternalId": ubx.FieldSpec{WireName: "external_id"},
+	"Principal":  ubx.FieldSpec{WireName: "principal"},
+}
 
 var Subscriber_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SubscriberConfig struct {
 	// The Amazon S3 or AWS Lake Formation access type.
@@ -73,20 +73,20 @@ type SubscriberAttrs struct {
 var Subscriber = ubx.ResourceBinding{
 	WireType: "aws_security_lake_subscriber",
 	Fields: ubx.FieldMap{
-		"AccessTypes": ubx.FieldSpec{WireName: "access_types"},
-		"DataLakeArn": ubx.FieldSpec{WireName: "data_lake_arn"},
-		"Sources": ubx.FieldSpec{WireName: "sources"},
+		"AccessTypes":           ubx.FieldSpec{WireName: "access_types"},
+		"DataLakeArn":           ubx.FieldSpec{WireName: "data_lake_arn"},
+		"Sources":               ubx.FieldSpec{WireName: "sources"},
 		"SubscriberDescription": ubx.FieldSpec{WireName: "subscriber_description"},
 		"SubscriberIdentity": ubx.FieldSpec{
 			WireName: "subscriber_identity",
-			Kind: "object",
-			Fields: Subscriber_SubscriberIdentityFields,
+			Kind:     "object",
+			Fields:   Subscriber_SubscriberIdentityFields,
 		},
 		"SubscriberName": ubx.FieldSpec{WireName: "subscriber_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Subscriber_TagsFields,
+			Kind:     "list",
+			Fields:   Subscriber_TagsFields,
 		},
 	},
 }

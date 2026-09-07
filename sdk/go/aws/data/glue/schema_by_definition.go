@@ -5,15 +5,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SchemaByDefinition_SchemaId struct {
 	RegistryName any
-	SchemaArn any
-	SchemaName any
+	SchemaArn    any
+	SchemaName   any
 }
 
 var SchemaByDefinition_SchemaIdFields = ubx.FieldMap{
-		"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
-		"SchemaArn": ubx.FieldSpec{WireName: "schema_arn"},
-		"SchemaName": ubx.FieldSpec{WireName: "schema_name"},
-	}
+	"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
+	"SchemaArn":    ubx.FieldSpec{WireName: "schema_arn"},
+	"SchemaName":   ubx.FieldSpec{WireName: "schema_name"},
+}
 
 type SchemaByDefinitionConfig struct {
 	SchemaDefinition any
@@ -22,14 +22,14 @@ type SchemaByDefinitionConfig struct {
 }
 
 type SchemaByDefinitionAttrs struct {
-	CreatedTime any
-	DataFormat any
-	SchemaArn any
+	CreatedTime      any
+	DataFormat       any
+	SchemaArn        any
 	SchemaDefinition any
 	// <p>The unique ID of the schema in the Glue schema registry.</p>
-	SchemaId any
+	SchemaId        any
 	SchemaVersionId any
-	Status any
+	Status          any
 }
 
 var SchemaByDefinition = ubx.DataSourceBinding{
@@ -38,8 +38,8 @@ var SchemaByDefinition = ubx.DataSourceBinding{
 		"SchemaDefinition": ubx.FieldSpec{WireName: "schema_definition"},
 		"SchemaId": ubx.FieldSpec{
 			WireName: "schema_id",
-			Kind: "object",
-			Fields: SchemaByDefinition_SchemaIdFields,
+			Kind:     "object",
+			Fields:   SchemaByDefinition_SchemaIdFields,
 		},
 	},
 }

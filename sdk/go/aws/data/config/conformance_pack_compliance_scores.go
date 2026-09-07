@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConformancePackComplianceScores_ConformancePackComplianceScores struct {
 	ConformancePackName any
-	LastUpdatedTime any
-	Score any
+	LastUpdatedTime     any
+	Score               any
 }
 
 type ConformancePackComplianceScores_Filters struct {
@@ -14,25 +14,25 @@ type ConformancePackComplianceScores_Filters struct {
 }
 
 var ConformancePackComplianceScores_FiltersFields = ubx.FieldMap{
-		"ConformancePackNames": ubx.FieldSpec{WireName: "conformance_pack_names"},
-	}
+	"ConformancePackNames": ubx.FieldSpec{WireName: "conformance_pack_names"},
+}
 
 type ConformancePackComplianceScoresConfig struct {
 	// <p>A list of filters to apply to the conformance pack compliance score result set. </p>
-	Filters any
-	Limit any
+	Filters   any
+	Limit     any
 	NextToken any
-	SortBy any
+	SortBy    any
 	SortOrder any
 }
 
 type ConformancePackComplianceScoresAttrs struct {
 	ConformancePackComplianceScores any
 	// <p>A list of filters to apply to the conformance pack compliance score result set. </p>
-	Filters any
-	Limit any
+	Filters   any
+	Limit     any
 	NextToken any
-	SortBy any
+	SortBy    any
 	SortOrder any
 }
 
@@ -41,12 +41,12 @@ var ConformancePackComplianceScores = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: ConformancePackComplianceScores_FiltersFields,
+			Kind:     "object",
+			Fields:   ConformancePackComplianceScores_FiltersFields,
 		},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
+		"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
 		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

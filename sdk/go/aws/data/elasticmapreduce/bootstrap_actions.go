@@ -4,26 +4,26 @@ package elasticmapreduce
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BootstrapActions_BootstrapActions struct {
-	Args any
-	Name any
+	Args       any
+	Name       any
 	ScriptPath any
 }
 
 type BootstrapActionsConfig struct {
 	ClusterId any
-	Marker any
+	Marker    any
 }
 
 type BootstrapActionsAttrs struct {
 	BootstrapActions any
-	ClusterId any
-	Marker any
+	ClusterId        any
+	Marker           any
 }
 
 var BootstrapActions = ubx.DataSourceBinding{
 	WireType: "aws_elasticmapreduce_bootstrap_actions",
 	Fields: ubx.FieldMap{
 		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":    ubx.FieldSpec{WireName: "marker"},
 	},
 }

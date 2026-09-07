@@ -4,52 +4,52 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerTrials_TrialSummaries_TrialSource struct {
-	SourceArn any
+	SourceArn  any
 	SourceType any
 }
 
 type ApiSagemakerTrials_TrialSummaries struct {
-	CreationTime any
-	DisplayName any
+	CreationTime     any
+	DisplayName      any
 	LastModifiedTime any
-	TrialArn any
-	TrialName any
-	TrialSource any
+	TrialArn         any
+	TrialName        any
+	TrialSource      any
 }
 
 type ApiSagemakerTrialsConfig struct {
-	CreatedAfter any
-	CreatedBefore any
-	ExperimentName any
-	MaxResults any
-	NextToken any
-	SortBy any
-	SortOrder any
+	CreatedAfter       any
+	CreatedBefore      any
+	ExperimentName     any
+	MaxResults         any
+	NextToken          any
+	SortBy             any
+	SortOrder          any
 	TrialComponentName any
 }
 
 type ApiSagemakerTrialsAttrs struct {
-	CreatedAfter any
-	CreatedBefore any
-	ExperimentName any
-	MaxResults any
-	NextToken any
-	SortBy any
-	SortOrder any
+	CreatedAfter       any
+	CreatedBefore      any
+	ExperimentName     any
+	MaxResults         any
+	NextToken          any
+	SortBy             any
+	SortOrder          any
 	TrialComponentName any
-	TrialSummaries any
+	TrialSummaries     any
 }
 
 var ApiSagemakerTrials = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_trials",
 	Fields: ubx.FieldMap{
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
-		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
-		"ExperimentName": ubx.FieldSpec{WireName: "experiment_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"CreatedAfter":       ubx.FieldSpec{WireName: "created_after"},
+		"CreatedBefore":      ubx.FieldSpec{WireName: "created_before"},
+		"ExperimentName":     ubx.FieldSpec{WireName: "experiment_name"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":             ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":          ubx.FieldSpec{WireName: "sort_order"},
 		"TrialComponentName": ubx.FieldSpec{WireName: "trial_component_name"},
 	},
 }

@@ -4,33 +4,33 @@ package polly
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SpeechSynthesisTasks_SynthesisTasks struct {
-	CreationTime any
-	Engine any
-	LanguageCode any
-	LexiconNames any
-	OutputFormat any
-	OutputUri any
+	CreationTime      any
+	Engine            any
+	LanguageCode      any
+	LexiconNames      any
+	OutputFormat      any
+	OutputUri         any
 	RequestCharacters any
-	SampleRate any
-	SnsTopicArn any
-	SpeechMarkTypes any
-	TaskId any
-	TaskStatus any
-	TaskStatusReason any
-	TextType any
-	VoiceId any
+	SampleRate        any
+	SnsTopicArn       any
+	SpeechMarkTypes   any
+	TaskId            any
+	TaskStatus        any
+	TaskStatusReason  any
+	TextType          any
+	VoiceId           any
 }
 
 type SpeechSynthesisTasksConfig struct {
 	MaxResults any
-	NextToken any
-	Status any
+	NextToken  any
+	Status     any
 }
 
 type SpeechSynthesisTasksAttrs struct {
-	MaxResults any
-	NextToken any
-	Status any
+	MaxResults     any
+	NextToken      any
+	Status         any
 	SynthesisTasks any
 }
 
@@ -38,7 +38,7 @@ var SpeechSynthesisTasks = ubx.DataSourceBinding{
 	WireType: "aws_polly_speech_synthesis_tasks",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Status":     ubx.FieldSpec{WireName: "status"},
 	},
 }

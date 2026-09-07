@@ -16,13 +16,13 @@ type InvoiceUnit_Rule struct {
 }
 
 var InvoiceUnit_ResourceTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var InvoiceUnit_RuleFields = ubx.FieldMap{
-		"LinkedAccounts": ubx.FieldSpec{WireName: "linked_accounts"},
-	}
+	"LinkedAccounts": ubx.FieldSpec{WireName: "linked_accounts"},
+}
 
 type InvoiceUnitConfig struct {
 	// The description field provides an optional, user-defined textual description for the invoice unit, allowing you to record the purpose or context of this billing grouping. (AI-inferred)
@@ -61,18 +61,18 @@ type InvoiceUnitAttrs struct {
 var InvoiceUnit = ubx.ResourceBinding{
 	WireType: "aws_invoicing_invoice_unit",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"InvoiceReceiver": ubx.FieldSpec{WireName: "invoice_receiver"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"ResourceTags": ubx.FieldSpec{
 			WireName: "resource_tags",
-			Kind: "list",
-			Fields: InvoiceUnit_ResourceTagsFields,
+			Kind:     "list",
+			Fields:   InvoiceUnit_ResourceTagsFields,
 		},
 		"Rule": ubx.FieldSpec{
 			WireName: "rule",
-			Kind: "object",
-			Fields: InvoiceUnit_RuleFields,
+			Kind:     "object",
+			Fields:   InvoiceUnit_RuleFields,
 		},
 		"TaxInheritanceDisabled": ubx.FieldSpec{WireName: "tax_inheritance_disabled"},
 	},

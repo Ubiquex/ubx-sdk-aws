@@ -52,7 +52,7 @@ type Plan_BackupPlan_BackupPlanRule struct {
 	// Specifies the key-value tags that AWS Backup applies to recovery points created by this backup plan rule. (AI-inferred)
 	RecoveryPointTags any
 	// A human-readable name for the backup rule that uniquely identifies it within the backup plan. (AI-inferred)
-	RuleName any
+	RuleName    any
 	ScanActions any
 	// Defines the schedule for the backup rule using a cron or rate expression, such as `cron(0 5 * * ? *)` or `rate(12 hours)`. (AI-inferred)
 	ScheduleExpression any
@@ -87,90 +87,90 @@ type Plan_BackupPlan struct {
 }
 
 var Plan_BackupPlan_AdvancedBackupSettingsFields = ubx.FieldMap{
-		"BackupOptions": ubx.FieldSpec{WireName: "backup_options"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-	}
+	"BackupOptions": ubx.FieldSpec{WireName: "backup_options"},
+	"ResourceType":  ubx.FieldSpec{WireName: "resource_type"},
+}
 
 var Plan_BackupPlan_BackupPlanRule_CopyActions_LifecycleFields = ubx.FieldMap{
-		"DeleteAfterDays": ubx.FieldSpec{WireName: "delete_after_days"},
-		"MoveToColdStorageAfterDays": ubx.FieldSpec{WireName: "move_to_cold_storage_after_days"},
-		"OptInToArchiveForSupportedResources": ubx.FieldSpec{WireName: "opt_in_to_archive_for_supported_resources"},
-	}
+	"DeleteAfterDays":                     ubx.FieldSpec{WireName: "delete_after_days"},
+	"MoveToColdStorageAfterDays":          ubx.FieldSpec{WireName: "move_to_cold_storage_after_days"},
+	"OptInToArchiveForSupportedResources": ubx.FieldSpec{WireName: "opt_in_to_archive_for_supported_resources"},
+}
 
 var Plan_BackupPlan_BackupPlanRule_CopyActionsFields = ubx.FieldMap{
-		"DestinationBackupVaultArn": ubx.FieldSpec{WireName: "destination_backup_vault_arn"},
-		"Lifecycle": ubx.FieldSpec{
-			WireName: "lifecycle",
-			Kind: "object",
-			Fields: Plan_BackupPlan_BackupPlanRule_CopyActions_LifecycleFields,
-		},
-	}
+	"DestinationBackupVaultArn": ubx.FieldSpec{WireName: "destination_backup_vault_arn"},
+	"Lifecycle": ubx.FieldSpec{
+		WireName: "lifecycle",
+		Kind:     "object",
+		Fields:   Plan_BackupPlan_BackupPlanRule_CopyActions_LifecycleFields,
+	},
+}
 
 var Plan_BackupPlan_BackupPlanRule_IndexActionsFields = ubx.FieldMap{
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-	}
+	"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
+}
 
 var Plan_BackupPlan_BackupPlanRule_ScanActionsFields = ubx.FieldMap{
-		"MalwareScanner": ubx.FieldSpec{WireName: "malware_scanner"},
-		"ScanMode": ubx.FieldSpec{WireName: "scan_mode"},
-	}
+	"MalwareScanner": ubx.FieldSpec{WireName: "malware_scanner"},
+	"ScanMode":       ubx.FieldSpec{WireName: "scan_mode"},
+}
 
 var Plan_BackupPlan_BackupPlanRuleFields = ubx.FieldMap{
-		"CompletionWindowMinutes": ubx.FieldSpec{WireName: "completion_window_minutes"},
-		"CopyActions": ubx.FieldSpec{
-			WireName: "copy_actions",
-			Kind: "list",
-			Fields: Plan_BackupPlan_BackupPlanRule_CopyActionsFields,
-		},
-		"EnableContinuousBackup": ubx.FieldSpec{WireName: "enable_continuous_backup"},
-		"IndexActions": ubx.FieldSpec{
-			WireName: "index_actions",
-			Kind: "list",
-			Fields: Plan_BackupPlan_BackupPlanRule_IndexActionsFields,
-		},
-		"Lifecycle": ubx.FieldSpec{
-			WireName: "lifecycle",
-			Kind: "object",
-			Fields: Plan_BackupPlan_BackupPlanRule_CopyActions_LifecycleFields,
-		},
-		"RecoveryPointTags": ubx.FieldSpec{WireName: "recovery_point_tags"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-		"ScanActions": ubx.FieldSpec{
-			WireName: "scan_actions",
-			Kind: "list",
-			Fields: Plan_BackupPlan_BackupPlanRule_ScanActionsFields,
-		},
-		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
-		"ScheduleExpressionTimezone": ubx.FieldSpec{WireName: "schedule_expression_timezone"},
-		"StartWindowMinutes": ubx.FieldSpec{WireName: "start_window_minutes"},
-		"TargetBackupVault": ubx.FieldSpec{WireName: "target_backup_vault"},
-		"TargetLogicallyAirGappedBackupVaultArn": ubx.FieldSpec{WireName: "target_logically_air_gapped_backup_vault_arn"},
-	}
+	"CompletionWindowMinutes": ubx.FieldSpec{WireName: "completion_window_minutes"},
+	"CopyActions": ubx.FieldSpec{
+		WireName: "copy_actions",
+		Kind:     "list",
+		Fields:   Plan_BackupPlan_BackupPlanRule_CopyActionsFields,
+	},
+	"EnableContinuousBackup": ubx.FieldSpec{WireName: "enable_continuous_backup"},
+	"IndexActions": ubx.FieldSpec{
+		WireName: "index_actions",
+		Kind:     "list",
+		Fields:   Plan_BackupPlan_BackupPlanRule_IndexActionsFields,
+	},
+	"Lifecycle": ubx.FieldSpec{
+		WireName: "lifecycle",
+		Kind:     "object",
+		Fields:   Plan_BackupPlan_BackupPlanRule_CopyActions_LifecycleFields,
+	},
+	"RecoveryPointTags": ubx.FieldSpec{WireName: "recovery_point_tags"},
+	"RuleName":          ubx.FieldSpec{WireName: "rule_name"},
+	"ScanActions": ubx.FieldSpec{
+		WireName: "scan_actions",
+		Kind:     "list",
+		Fields:   Plan_BackupPlan_BackupPlanRule_ScanActionsFields,
+	},
+	"ScheduleExpression":                     ubx.FieldSpec{WireName: "schedule_expression"},
+	"ScheduleExpressionTimezone":             ubx.FieldSpec{WireName: "schedule_expression_timezone"},
+	"StartWindowMinutes":                     ubx.FieldSpec{WireName: "start_window_minutes"},
+	"TargetBackupVault":                      ubx.FieldSpec{WireName: "target_backup_vault"},
+	"TargetLogicallyAirGappedBackupVaultArn": ubx.FieldSpec{WireName: "target_logically_air_gapped_backup_vault_arn"},
+}
 
 var Plan_BackupPlan_ScanSettingsFields = ubx.FieldMap{
-		"MalwareScanner": ubx.FieldSpec{WireName: "malware_scanner"},
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-		"ScannerRoleArn": ubx.FieldSpec{WireName: "scanner_role_arn"},
-	}
+	"MalwareScanner": ubx.FieldSpec{WireName: "malware_scanner"},
+	"ResourceTypes":  ubx.FieldSpec{WireName: "resource_types"},
+	"ScannerRoleArn": ubx.FieldSpec{WireName: "scanner_role_arn"},
+}
 
 var Plan_BackupPlanFields = ubx.FieldMap{
-		"AdvancedBackupSettings": ubx.FieldSpec{
-			WireName: "advanced_backup_settings",
-			Kind: "list",
-			Fields: Plan_BackupPlan_AdvancedBackupSettingsFields,
-		},
-		"BackupPlanName": ubx.FieldSpec{WireName: "backup_plan_name"},
-		"BackupPlanRule": ubx.FieldSpec{
-			WireName: "backup_plan_rule",
-			Kind: "list",
-			Fields: Plan_BackupPlan_BackupPlanRuleFields,
-		},
-		"ScanSettings": ubx.FieldSpec{
-			WireName: "scan_settings",
-			Kind: "list",
-			Fields: Plan_BackupPlan_ScanSettingsFields,
-		},
-	}
+	"AdvancedBackupSettings": ubx.FieldSpec{
+		WireName: "advanced_backup_settings",
+		Kind:     "list",
+		Fields:   Plan_BackupPlan_AdvancedBackupSettingsFields,
+	},
+	"BackupPlanName": ubx.FieldSpec{WireName: "backup_plan_name"},
+	"BackupPlanRule": ubx.FieldSpec{
+		WireName: "backup_plan_rule",
+		Kind:     "list",
+		Fields:   Plan_BackupPlan_BackupPlanRuleFields,
+	},
+	"ScanSettings": ubx.FieldSpec{
+		WireName: "scan_settings",
+		Kind:     "list",
+		Fields:   Plan_BackupPlan_ScanSettingsFields,
+	},
+}
 
 type PlanConfig struct {
 	// Provides the backup plan configuration, including the plan name and the set of backup rules that define the backup schedule, lifecycle, and vault. (AI-inferred)
@@ -197,8 +197,8 @@ var Plan = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BackupPlan": ubx.FieldSpec{
 			WireName: "backup_plan",
-			Kind: "object",
-			Fields: Plan_BackupPlanFields,
+			Kind:     "object",
+			Fields:   Plan_BackupPlanFields,
 		},
 		"BackupPlanTags": ubx.FieldSpec{WireName: "backup_plan_tags"},
 	},

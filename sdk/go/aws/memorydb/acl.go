@@ -11,9 +11,9 @@ type Acl_Tags struct {
 }
 
 var Acl_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AclConfig struct {
 	// The name of the acl.
@@ -43,8 +43,8 @@ var Acl = ubx.ResourceBinding{
 		"Aclname": ubx.FieldSpec{WireName: "aclname"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Acl_TagsFields,
+			Kind:     "list",
+			Fields:   Acl_TagsFields,
 		},
 		"UserNames": ubx.FieldSpec{WireName: "user_names"},
 	},

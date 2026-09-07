@@ -26,18 +26,18 @@ type Component_Variants struct {
 }
 
 var Component_ChildrenFields = ubx.FieldMap{
-		"Children": ubx.FieldSpec{WireName: "children"},
-		"ComponentType": ubx.FieldSpec{WireName: "component_type"},
-		"Events": ubx.FieldSpec{WireName: "events"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"SourceId": ubx.FieldSpec{WireName: "source_id"},
-	}
+	"Children":      ubx.FieldSpec{WireName: "children"},
+	"ComponentType": ubx.FieldSpec{WireName: "component_type"},
+	"Events":        ubx.FieldSpec{WireName: "events"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"Properties":    ubx.FieldSpec{WireName: "properties"},
+	"SourceId":      ubx.FieldSpec{WireName: "source_id"},
+}
 
 var Component_VariantsFields = ubx.FieldMap{
-		"Overrides": ubx.FieldSpec{WireName: "overrides"},
-		"VariantValues": ubx.FieldSpec{WireName: "variant_values"},
-	}
+	"Overrides":     ubx.FieldSpec{WireName: "overrides"},
+	"VariantValues": ubx.FieldSpec{WireName: "variant_values"},
+}
 
 type ComponentConfig struct {
 	// The unique ID of the Amplify app that this UI Builder component is associated with, scoping the component to the correct application. (AI-inferred)
@@ -110,27 +110,27 @@ type ComponentAttrs struct {
 var Component = ubx.ResourceBinding{
 	WireType: "aws_amplify_uibuilder_component",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":             ubx.FieldSpec{WireName: "app_id"},
 		"BindingProperties": ubx.FieldSpec{WireName: "binding_properties"},
 		"Children": ubx.FieldSpec{
 			WireName: "children",
-			Kind: "list",
-			Fields: Component_ChildrenFields,
+			Kind:     "list",
+			Fields:   Component_ChildrenFields,
 		},
 		"CollectionProperties": ubx.FieldSpec{WireName: "collection_properties"},
-		"ComponentType": ubx.FieldSpec{WireName: "component_type"},
-		"EnvironmentName": ubx.FieldSpec{WireName: "environment_name"},
-		"Events": ubx.FieldSpec{WireName: "events"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Overrides": ubx.FieldSpec{WireName: "overrides"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
-		"SourceId": ubx.FieldSpec{WireName: "source_id"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"ComponentType":        ubx.FieldSpec{WireName: "component_type"},
+		"EnvironmentName":      ubx.FieldSpec{WireName: "environment_name"},
+		"Events":               ubx.FieldSpec{WireName: "events"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
+		"Overrides":            ubx.FieldSpec{WireName: "overrides"},
+		"Properties":           ubx.FieldSpec{WireName: "properties"},
+		"SchemaVersion":        ubx.FieldSpec{WireName: "schema_version"},
+		"SourceId":             ubx.FieldSpec{WireName: "source_id"},
+		"Tags":                 ubx.FieldSpec{WireName: "tags"},
 		"Variants": ubx.FieldSpec{
 			WireName: "variants",
-			Kind: "list",
-			Fields: Component_VariantsFields,
+			Kind:     "list",
+			Fields:   Component_VariantsFields,
 		},
 	},
 }

@@ -17,8 +17,8 @@ type Connector_Connector struct {
 	Arn any
 	// <p>The provider-specific configuration for connecting to the third-party cloud service provider. You must specify exactly one provider configuration.</p>
 	ConnectorConfiguration any
-	CreatedTime any
-	Name any
+	CreatedTime            any
+	Name                   any
 }
 
 type ConnectorConfig struct {

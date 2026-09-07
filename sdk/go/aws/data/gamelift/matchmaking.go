@@ -4,45 +4,45 @@ package gamelift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Matchmaking_TicketList_GameSessionConnectionInfo_MatchedPlayerSessions struct {
-	PlayerId any
+	PlayerId        any
 	PlayerSessionId any
 }
 
 type Matchmaking_TicketList_GameSessionConnectionInfo struct {
-	DnsName any
-	GameSessionArn any
-	IpAddress any
+	DnsName               any
+	GameSessionArn        any
+	IpAddress             any
 	MatchedPlayerSessions any
-	PlayerGatewayStatus any
-	Port any
+	PlayerGatewayStatus   any
+	Port                  any
 }
 
 type Matchmaking_TicketList_Players_PlayerAttributes struct {
-	N any
-	S any
+	N   any
+	S   any
 	Sdm any
-	Sl any
+	Sl  any
 }
 
 type Matchmaking_TicketList_Players struct {
-	LatencyInMs any
+	LatencyInMs      any
 	PlayerAttributes any
-	PlayerId any
-	Team any
+	PlayerId         any
+	Team             any
 }
 
 type Matchmaking_TicketList struct {
-	ConfigurationArn any
-	ConfigurationName any
-	EndTime any
-	EstimatedWaitTime any
+	ConfigurationArn          any
+	ConfigurationName         any
+	EndTime                   any
+	EstimatedWaitTime         any
 	GameSessionConnectionInfo any
-	Players any
-	StartTime any
-	Status any
-	StatusMessage any
-	StatusReason any
-	TicketId any
+	Players                   any
+	StartTime                 any
+	Status                    any
+	StatusMessage             any
+	StatusReason              any
+	TicketId                  any
 }
 
 type MatchmakingConfig struct {
@@ -50,7 +50,7 @@ type MatchmakingConfig struct {
 }
 
 type MatchmakingAttrs struct {
-	TicketIds any
+	TicketIds  any
 	TicketList any
 }
 

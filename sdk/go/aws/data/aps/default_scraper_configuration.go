@@ -12,6 +12,5 @@ type DefaultScraperConfigurationAttrs struct {
 
 var DefaultScraperConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_aps_default_scraper_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

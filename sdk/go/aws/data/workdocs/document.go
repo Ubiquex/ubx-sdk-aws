@@ -4,43 +4,43 @@ package workdocs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Document_Metadata_LatestVersionMetadata struct {
-	ContentCreatedTimestamp any
+	ContentCreatedTimestamp  any
 	ContentModifiedTimestamp any
-	ContentType any
-	CreatedTimestamp any
-	CreatorId any
-	Id any
-	ModifiedTimestamp any
-	Name any
-	Signature any
-	Size any
-	Source any
-	Status any
-	Thumbnail any
+	ContentType              any
+	CreatedTimestamp         any
+	CreatorId                any
+	Id                       any
+	ModifiedTimestamp        any
+	Name                     any
+	Signature                any
+	Size                     any
+	Source                   any
+	Status                   any
+	Thumbnail                any
 }
 
 type Document_Metadata struct {
 	CreatedTimestamp any
-	CreatorId any
-	Id any
-	Labels any
+	CreatorId        any
+	Id               any
+	Labels           any
 	// <p>Describes a version of a document.</p>
 	LatestVersionMetadata any
-	ModifiedTimestamp any
-	ParentFolderId any
-	ResourceState any
+	ModifiedTimestamp     any
+	ParentFolderId        any
+	ResourceState         any
 }
 
 type DocumentConfig struct {
-	AuthenticationToken any
-	DocumentId any
+	AuthenticationToken   any
+	DocumentId            any
 	IncludeCustomMetadata any
 }
 
 type DocumentAttrs struct {
-	AuthenticationToken any
-	CustomMetadata any
-	DocumentId any
+	AuthenticationToken   any
+	CustomMetadata        any
+	DocumentId            any
 	IncludeCustomMetadata any
 	// <p>Describes the document.</p>
 	Metadata any
@@ -49,8 +49,8 @@ type DocumentAttrs struct {
 var Document = ubx.DataSourceBinding{
 	WireType: "aws_workdocs_document",
 	Fields: ubx.FieldMap{
-		"AuthenticationToken": ubx.FieldSpec{WireName: "authentication_token"},
-		"DocumentId": ubx.FieldSpec{WireName: "document_id"},
+		"AuthenticationToken":   ubx.FieldSpec{WireName: "authentication_token"},
+		"DocumentId":            ubx.FieldSpec{WireName: "document_id"},
 		"IncludeCustomMetadata": ubx.FieldSpec{WireName: "include_custom_metadata"},
 	},
 }

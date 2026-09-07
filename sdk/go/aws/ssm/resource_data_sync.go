@@ -35,28 +35,28 @@ type ResourceDataSync_SyncSource struct {
 }
 
 var ResourceDataSync_S3DestinationFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
-		"BucketRegion": ubx.FieldSpec{WireName: "bucket_region"},
-		"KmskeyArn": ubx.FieldSpec{WireName: "kmskey_arn"},
-		"SyncFormat": ubx.FieldSpec{WireName: "sync_format"},
-	}
+	"BucketName":   ubx.FieldSpec{WireName: "bucket_name"},
+	"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
+	"BucketRegion": ubx.FieldSpec{WireName: "bucket_region"},
+	"KmskeyArn":    ubx.FieldSpec{WireName: "kmskey_arn"},
+	"SyncFormat":   ubx.FieldSpec{WireName: "sync_format"},
+}
 
 var ResourceDataSync_SyncSource_AwsOrganizationsSourceFields = ubx.FieldMap{
-		"OrganizationSourceType": ubx.FieldSpec{WireName: "organization_source_type"},
-		"OrganizationalUnits": ubx.FieldSpec{WireName: "organizational_units"},
-	}
+	"OrganizationSourceType": ubx.FieldSpec{WireName: "organization_source_type"},
+	"OrganizationalUnits":    ubx.FieldSpec{WireName: "organizational_units"},
+}
 
 var ResourceDataSync_SyncSourceFields = ubx.FieldMap{
-		"AwsOrganizationsSource": ubx.FieldSpec{
-			WireName: "aws_organizations_source",
-			Kind: "object",
-			Fields: ResourceDataSync_SyncSource_AwsOrganizationsSourceFields,
-		},
-		"IncludeFutureRegions": ubx.FieldSpec{WireName: "include_future_regions"},
-		"SourceRegions": ubx.FieldSpec{WireName: "source_regions"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-	}
+	"AwsOrganizationsSource": ubx.FieldSpec{
+		WireName: "aws_organizations_source",
+		Kind:     "object",
+		Fields:   ResourceDataSync_SyncSource_AwsOrganizationsSourceFields,
+	},
+	"IncludeFutureRegions": ubx.FieldSpec{WireName: "include_future_regions"},
+	"SourceRegions":        ubx.FieldSpec{WireName: "source_regions"},
+	"SourceType":           ubx.FieldSpec{WireName: "source_type"},
+}
 
 type ResourceDataSyncConfig struct {
 	// The name of the S3 bucket used as the destination for the resource data sync, where Systems Manager delivers the synced configuration and inventory data. (AI-inferred)
@@ -103,21 +103,21 @@ type ResourceDataSyncAttrs struct {
 var ResourceDataSync = ubx.ResourceBinding{
 	WireType: "aws_ssm_resource_data_sync",
 	Fields: ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+		"BucketName":   ubx.FieldSpec{WireName: "bucket_name"},
 		"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
 		"BucketRegion": ubx.FieldSpec{WireName: "bucket_region"},
-		"KmskeyArn": ubx.FieldSpec{WireName: "kmskey_arn"},
+		"KmskeyArn":    ubx.FieldSpec{WireName: "kmskey_arn"},
 		"S3Destination": ubx.FieldSpec{
 			WireName: "s3_destination",
-			Kind: "object",
-			Fields: ResourceDataSync_S3DestinationFields,
+			Kind:     "object",
+			Fields:   ResourceDataSync_S3DestinationFields,
 		},
 		"SyncFormat": ubx.FieldSpec{WireName: "sync_format"},
-		"SyncName": ubx.FieldSpec{WireName: "sync_name"},
+		"SyncName":   ubx.FieldSpec{WireName: "sync_name"},
 		"SyncSource": ubx.FieldSpec{
 			WireName: "sync_source",
-			Kind: "object",
-			Fields: ResourceDataSync_SyncSourceFields,
+			Kind:     "object",
+			Fields:   ResourceDataSync_SyncSourceFields,
 		},
 		"SyncType": ubx.FieldSpec{WireName: "sync_type"},
 	},

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChimeVoiceConnectorLoggingConfiguration_LoggingConfiguration struct {
 	EnableMediaMetricLogs any
-	EnableSiplogs any
+	EnableSiplogs         any
 }
 
 type VoiceChimeVoiceConnectorLoggingConfigurationConfig struct {
@@ -15,7 +15,7 @@ type VoiceChimeVoiceConnectorLoggingConfigurationConfig struct {
 type VoiceChimeVoiceConnectorLoggingConfigurationAttrs struct {
 	// <p>The logging configuration associated with an Amazon Chime SDK Voice Connector. Specifies whether SIP message logs can be sent to Amazon CloudWatch Logs.</p>
 	LoggingConfiguration any
-	VoiceConnectorId any
+	VoiceConnectorId     any
 }
 
 var VoiceChimeVoiceConnectorLoggingConfiguration = ubx.DataSourceBinding{

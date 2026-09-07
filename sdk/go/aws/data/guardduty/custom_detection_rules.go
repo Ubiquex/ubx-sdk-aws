@@ -5,43 +5,43 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomDetectionRules_Filters struct {
 	Condition any
-	Name any
-	Values any
+	Name      any
+	Values    any
 }
 
 type CustomDetectionRules_Rules struct {
-	Arn any
-	CreatedAt any
-	DataSource any
+	Arn         any
+	CreatedAt   any
+	DataSource  any
 	Description any
-	Language any
-	Name any
-	RuleId any
-	Schema any
-	Service any
-	Severity any
-	Tactic any
-	Technique any
-	UpdatedAt any
+	Language    any
+	Name        any
+	RuleId      any
+	Schema      any
+	Service     any
+	Severity    any
+	Tactic      any
+	Technique   any
+	UpdatedAt   any
 }
 
 var CustomDetectionRules_FiltersFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Values":    ubx.FieldSpec{WireName: "values"},
+}
 
 type CustomDetectionRulesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CustomDetectionRulesAttrs struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	Rules any
+	NextToken  any
+	Rules      any
 }
 
 var CustomDetectionRules = ubx.DataSourceBinding{
@@ -49,10 +49,10 @@ var CustomDetectionRules = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: CustomDetectionRules_FiltersFields,
+			Kind:     "list",
+			Fields:   CustomDetectionRules_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

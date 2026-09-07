@@ -21,35 +21,35 @@ type VirtualRouter_Spec struct {
 }
 
 type VirtualRouter_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var VirtualRouter_Spec_Listeners_PortMappingFields = ubx.FieldMap{
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-	}
+	"Port":     ubx.FieldSpec{WireName: "port"},
+	"Protocol": ubx.FieldSpec{WireName: "protocol"},
+}
 
 var VirtualRouter_Spec_ListenersFields = ubx.FieldMap{
-		"PortMapping": ubx.FieldSpec{
-			WireName: "port_mapping",
-			Kind: "object",
-			Fields: VirtualRouter_Spec_Listeners_PortMappingFields,
-		},
-	}
+	"PortMapping": ubx.FieldSpec{
+		WireName: "port_mapping",
+		Kind:     "object",
+		Fields:   VirtualRouter_Spec_Listeners_PortMappingFields,
+	},
+}
 
 var VirtualRouter_SpecFields = ubx.FieldMap{
-		"Listeners": ubx.FieldSpec{
-			WireName: "listeners",
-			Kind: "list",
-			Fields: VirtualRouter_Spec_ListenersFields,
-		},
-	}
+	"Listeners": ubx.FieldSpec{
+		WireName: "listeners",
+		Kind:     "list",
+		Fields:   VirtualRouter_Spec_ListenersFields,
+	},
+}
 
 var VirtualRouter_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VirtualRouterConfig struct {
 	// The name of the service mesh in which the virtual router is defined. (AI-inferred)
@@ -88,17 +88,17 @@ type VirtualRouterAttrs struct {
 var VirtualRouter = ubx.ResourceBinding{
 	WireType: "aws_app_mesh_virtual_router",
 	Fields: ubx.FieldMap{
-		"MeshName": ubx.FieldSpec{WireName: "mesh_name"},
+		"MeshName":  ubx.FieldSpec{WireName: "mesh_name"},
 		"MeshOwner": ubx.FieldSpec{WireName: "mesh_owner"},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: VirtualRouter_SpecFields,
+			Kind:     "object",
+			Fields:   VirtualRouter_SpecFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VirtualRouter_TagsFields,
+			Kind:     "list",
+			Fields:   VirtualRouter_TagsFields,
 		},
 		"VirtualRouterName": ubx.FieldSpec{WireName: "virtual_router_name"},
 	},

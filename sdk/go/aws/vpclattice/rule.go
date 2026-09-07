@@ -75,96 +75,96 @@ type Rule_Match struct {
 
 type Rule_Tags struct {
 	// The key of a tag attached to this VPC Lattice rule, used to identify and organize the rule. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Rule_Action_FixedResponseFields = ubx.FieldMap{
-		"StatusCode": ubx.FieldSpec{WireName: "status_code"},
-	}
+	"StatusCode": ubx.FieldSpec{WireName: "status_code"},
+}
 
 var Rule_Action_Forward_TargetGroupsFields = ubx.FieldMap{
-		"TargetGroupIdentifier": ubx.FieldSpec{WireName: "target_group_identifier"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"TargetGroupIdentifier": ubx.FieldSpec{WireName: "target_group_identifier"},
+	"Weight":                ubx.FieldSpec{WireName: "weight"},
+}
 
 var Rule_Action_ForwardFields = ubx.FieldMap{
-		"TargetGroups": ubx.FieldSpec{
-			WireName: "target_groups",
-			Kind: "list",
-			Fields: Rule_Action_Forward_TargetGroupsFields,
-		},
-	}
+	"TargetGroups": ubx.FieldSpec{
+		WireName: "target_groups",
+		Kind:     "list",
+		Fields:   Rule_Action_Forward_TargetGroupsFields,
+	},
+}
 
 var Rule_ActionFields = ubx.FieldMap{
-		"FixedResponse": ubx.FieldSpec{
-			WireName: "fixed_response",
-			Kind: "object",
-			Fields: Rule_Action_FixedResponseFields,
-		},
-		"Forward": ubx.FieldSpec{
-			WireName: "forward",
-			Kind: "object",
-			Fields: Rule_Action_ForwardFields,
-		},
-	}
+	"FixedResponse": ubx.FieldSpec{
+		WireName: "fixed_response",
+		Kind:     "object",
+		Fields:   Rule_Action_FixedResponseFields,
+	},
+	"Forward": ubx.FieldSpec{
+		WireName: "forward",
+		Kind:     "object",
+		Fields:   Rule_Action_ForwardFields,
+	},
+}
 
 var Rule_Match_HttpMatch_HeaderMatches_MatchFields = ubx.FieldMap{
-		"Contains": ubx.FieldSpec{WireName: "contains"},
-		"Exact": ubx.FieldSpec{WireName: "exact"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"Contains": ubx.FieldSpec{WireName: "contains"},
+	"Exact":    ubx.FieldSpec{WireName: "exact"},
+	"Prefix":   ubx.FieldSpec{WireName: "prefix"},
+}
 
 var Rule_Match_HttpMatch_HeaderMatchesFields = ubx.FieldMap{
-		"CaseSensitive": ubx.FieldSpec{WireName: "case_sensitive"},
-		"Match": ubx.FieldSpec{
-			WireName: "match",
-			Kind: "object",
-			Fields: Rule_Match_HttpMatch_HeaderMatches_MatchFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CaseSensitive": ubx.FieldSpec{WireName: "case_sensitive"},
+	"Match": ubx.FieldSpec{
+		WireName: "match",
+		Kind:     "object",
+		Fields:   Rule_Match_HttpMatch_HeaderMatches_MatchFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Rule_Match_HttpMatch_PathMatch_MatchFields = ubx.FieldMap{
-		"Exact": ubx.FieldSpec{WireName: "exact"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"Exact":  ubx.FieldSpec{WireName: "exact"},
+	"Prefix": ubx.FieldSpec{WireName: "prefix"},
+}
 
 var Rule_Match_HttpMatch_PathMatchFields = ubx.FieldMap{
-		"CaseSensitive": ubx.FieldSpec{WireName: "case_sensitive"},
-		"Match": ubx.FieldSpec{
-			WireName: "match",
-			Kind: "object",
-			Fields: Rule_Match_HttpMatch_PathMatch_MatchFields,
-		},
-	}
+	"CaseSensitive": ubx.FieldSpec{WireName: "case_sensitive"},
+	"Match": ubx.FieldSpec{
+		WireName: "match",
+		Kind:     "object",
+		Fields:   Rule_Match_HttpMatch_PathMatch_MatchFields,
+	},
+}
 
 var Rule_Match_HttpMatchFields = ubx.FieldMap{
-		"HeaderMatches": ubx.FieldSpec{
-			WireName: "header_matches",
-			Kind: "list",
-			Fields: Rule_Match_HttpMatch_HeaderMatchesFields,
-		},
-		"Method": ubx.FieldSpec{WireName: "method"},
-		"PathMatch": ubx.FieldSpec{
-			WireName: "path_match",
-			Kind: "object",
-			Fields: Rule_Match_HttpMatch_PathMatchFields,
-		},
-	}
+	"HeaderMatches": ubx.FieldSpec{
+		WireName: "header_matches",
+		Kind:     "list",
+		Fields:   Rule_Match_HttpMatch_HeaderMatchesFields,
+	},
+	"Method": ubx.FieldSpec{WireName: "method"},
+	"PathMatch": ubx.FieldSpec{
+		WireName: "path_match",
+		Kind:     "object",
+		Fields:   Rule_Match_HttpMatch_PathMatchFields,
+	},
+}
 
 var Rule_MatchFields = ubx.FieldMap{
-		"HttpMatch": ubx.FieldSpec{
-			WireName: "http_match",
-			Kind: "object",
-			Fields: Rule_Match_HttpMatchFields,
-		},
-	}
+	"HttpMatch": ubx.FieldSpec{
+		WireName: "http_match",
+		Kind:     "object",
+		Fields:   Rule_Match_HttpMatchFields,
+	},
+}
 
 var Rule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RuleConfig struct {
 	// Defines how the rule handles matching traffic, such as forwarding to a target group with weighted targets or returning a fixed HTTP response. (AI-inferred)
@@ -209,22 +209,22 @@ var Rule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Action": ubx.FieldSpec{
 			WireName: "action",
-			Kind: "object",
-			Fields: Rule_ActionFields,
+			Kind:     "object",
+			Fields:   Rule_ActionFields,
 		},
 		"ListenerIdentifier": ubx.FieldSpec{WireName: "listener_identifier"},
 		"Match": ubx.FieldSpec{
 			WireName: "match",
-			Kind: "object",
-			Fields: Rule_MatchFields,
+			Kind:     "object",
+			Fields:   Rule_MatchFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"Priority":          ubx.FieldSpec{WireName: "priority"},
 		"ServiceIdentifier": ubx.FieldSpec{WireName: "service_identifier"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Rule_TagsFields,
+			Kind:     "list",
+			Fields:   Rule_TagsFields,
 		},
 	},
 }

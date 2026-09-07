@@ -11,9 +11,9 @@ type Blueprint_Tags struct {
 }
 
 var Blueprint_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type BlueprintConfig struct {
 	// Specifies a path in Amazon S3 where the blueprint is published.
@@ -51,12 +51,12 @@ var Blueprint = ubx.ResourceBinding{
 	WireType: "aws_glue_blueprint",
 	Fields: ubx.FieldMap{
 		"BlueprintLocation": ubx.FieldSpec{WireName: "blueprint_location"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Blueprint_TagsFields,
+			Kind:     "list",
+			Fields:   Blueprint_TagsFields,
 		},
 	},
 }

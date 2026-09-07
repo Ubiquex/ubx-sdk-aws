@@ -8,31 +8,31 @@ type Rules_RuleSummaryList_ActionSummaries struct {
 }
 
 type Rules_RuleSummaryList struct {
-	ActionSummaries any
-	CreatedTime any
-	EventSourceName any
-	LastUpdatedTime any
-	Name any
-	PublishStatus any
-	RuleArn any
+	ActionSummaries     any
+	CreatedTime         any
+	EventSourceName     any
+	LastUpdatedTime     any
+	Name                any
+	PublishStatus       any
+	RuleArn             any
 	RuleCapabilityTiers any
-	RuleId any
+	RuleId              any
 }
 
 type RulesConfig struct {
 	EventSourceName any
-	InstanceId any
-	MaxResults any
-	NextToken any
-	PublishStatus any
+	InstanceId      any
+	MaxResults      any
+	NextToken       any
+	PublishStatus   any
 }
 
 type RulesAttrs struct {
 	EventSourceName any
-	InstanceId any
-	MaxResults any
-	NextToken any
-	PublishStatus any
+	InstanceId      any
+	MaxResults      any
+	NextToken       any
+	PublishStatus   any
 	RuleSummaryList any
 }
 
@@ -40,9 +40,9 @@ var Rules = ubx.DataSourceBinding{
 	WireType: "aws_connect_rules",
 	Fields: ubx.FieldMap{
 		"EventSourceName": ubx.FieldSpec{WireName: "event_source_name"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PublishStatus": ubx.FieldSpec{WireName: "publish_status"},
+		"InstanceId":      ubx.FieldSpec{WireName: "instance_id"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"PublishStatus":   ubx.FieldSpec{WireName: "publish_status"},
 	},
 }

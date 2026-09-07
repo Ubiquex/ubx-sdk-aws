@@ -4,35 +4,35 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContactFlows_ContactFlowSummaryList struct {
-	Arn any
-	ContactFlowState any
+	Arn               any
+	ContactFlowState  any
 	ContactFlowStatus any
-	ContactFlowType any
-	Id any
-	Name any
+	ContactFlowType   any
+	Id                any
+	Name              any
 }
 
 type ContactFlowsConfig struct {
 	ContactFlowTypes any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId       any
+	MaxResults       any
+	NextToken        any
 }
 
 type ContactFlowsAttrs struct {
 	ContactFlowSummaryList any
-	ContactFlowTypes any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	ContactFlowTypes       any
+	InstanceId             any
+	MaxResults             any
+	NextToken              any
 }
 
 var ContactFlows = ubx.DataSourceBinding{
 	WireType: "aws_connect_contact_flows",
 	Fields: ubx.FieldMap{
 		"ContactFlowTypes": ubx.FieldSpec{WireName: "contact_flow_types"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"InstanceId":       ubx.FieldSpec{WireName: "instance_id"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -16,19 +16,19 @@ type ModelsV2LexTestSetRecords_TestSetRecords_TurnSpecification_UserTurn_Expecte
 
 type ModelsV2LexTestSetRecords_TestSetRecords_TurnSpecification_UserTurn_Expected_Intent_Slots struct {
 	SubSlots any
-	Value any
-	Values any
+	Value    any
+	Values   any
 }
 
 type ModelsV2LexTestSetRecords_TestSetRecords_TurnSpecification_UserTurn_Expected_Intent struct {
-	Name any
+	Name  any
 	Slots any
 }
 
 type ModelsV2LexTestSetRecords_TestSetRecords_TurnSpecification_UserTurn_Expected struct {
 	ActiveContexts any
-	Intent any
-	Transcript any
+	Intent         any
+	Transcript     any
 }
 
 type ModelsV2LexTestSetRecords_TestSetRecords_TurnSpecification_UserTurn_Input_SessionState_RuntimeHints_SlotHints_RuntimeHintValues struct {
@@ -37,7 +37,7 @@ type ModelsV2LexTestSetRecords_TestSetRecords_TurnSpecification_UserTurn_Input_S
 
 type ModelsV2LexTestSetRecords_TestSetRecords_TurnSpecification_UserTurn_Input_SessionState_RuntimeHints_SlotHints struct {
 	RuntimeHintValues any
-	SubSlotHints any
+	SubSlotHints      any
 }
 
 type ModelsV2LexTestSetRecords_TestSetRecords_TurnSpecification_UserTurn_Input_SessionState_RuntimeHints struct {
@@ -45,8 +45,8 @@ type ModelsV2LexTestSetRecords_TestSetRecords_TurnSpecification_UserTurn_Input_S
 }
 
 type ModelsV2LexTestSetRecords_TestSetRecords_TurnSpecification_UserTurn_Input_SessionState struct {
-	ActiveContexts any
-	RuntimeHints any
+	ActiveContexts    any
+	RuntimeHints      any
 	SessionAttributes any
 }
 
@@ -56,42 +56,42 @@ type ModelsV2LexTestSetRecords_TestSetRecords_TurnSpecification_UserTurn_Input_U
 
 type ModelsV2LexTestSetRecords_TestSetRecords_TurnSpecification_UserTurn_Input_UtteranceInput struct {
 	AudioInput any
-	TextInput any
+	TextInput  any
 }
 
 type ModelsV2LexTestSetRecords_TestSetRecords_TurnSpecification_UserTurn_Input struct {
 	RequestAttributes any
-	SessionState any
-	UtteranceInput any
+	SessionState      any
+	UtteranceInput    any
 }
 
 type ModelsV2LexTestSetRecords_TestSetRecords_TurnSpecification_UserTurn struct {
 	Expected any
-	Input any
+	Input    any
 }
 
 type ModelsV2LexTestSetRecords_TestSetRecords_TurnSpecification struct {
 	AgentTurn any
-	UserTurn any
+	UserTurn  any
 }
 
 type ModelsV2LexTestSetRecords_TestSetRecords struct {
-	ConversationId any
-	RecordNumber any
-	TurnNumber any
+	ConversationId    any
+	RecordNumber      any
+	TurnNumber        any
 	TurnSpecification any
 }
 
 type ModelsV2LexTestSetRecordsConfig struct {
 	MaxResults any
-	NextToken any
-	TestSetId any
+	NextToken  any
+	TestSetId  any
 }
 
 type ModelsV2LexTestSetRecordsAttrs struct {
-	MaxResults any
-	NextToken any
-	TestSetId any
+	MaxResults     any
+	NextToken      any
+	TestSetId      any
 	TestSetRecords any
 }
 
@@ -99,7 +99,7 @@ var ModelsV2LexTestSetRecords = ubx.DataSourceBinding{
 	WireType: "aws_models_v2_lex_test_set_records",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"TestSetId": ubx.FieldSpec{WireName: "test_set_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"TestSetId":  ubx.FieldSpec{WireName: "test_set_id"},
 	},
 }

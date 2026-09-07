@@ -4,26 +4,26 @@ package synthetics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Groups_Groups struct {
-	Arn any
-	Id any
+	Arn  any
+	Id   any
 	Name any
 }
 
 type GroupsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type GroupsAttrs struct {
-	Groups any
+	Groups     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Groups = ubx.DataSourceBinding{
 	WireType: "aws_synthetics_groups",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

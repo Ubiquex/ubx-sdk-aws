@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupMembers_Members struct {
 	DisabledDate any
-	EnabledDate any
-	Id any
-	Name any
-	State any
-	Type any
+	EnabledDate  any
+	Id           any
+	Name         any
+	State        any
+	Type         any
 }
 
 type GroupMembersConfig struct {
-	GroupId any
-	MaxResults any
-	NextToken any
+	GroupId        any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
 }
 
 type GroupMembersAttrs struct {
-	GroupId any
-	MaxResults any
-	Members any
-	NextToken any
+	GroupId        any
+	MaxResults     any
+	Members        any
+	NextToken      any
 	OrganizationId any
 }
 
 var GroupMembers = ubx.DataSourceBinding{
 	WireType: "aws_workmail_group_members",
 	Fields: ubx.FieldMap{
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"GroupId":        ubx.FieldSpec{WireName: "group_id"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
 	},
 }

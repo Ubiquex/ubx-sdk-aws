@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AutomatedDiscoveryAccounts_Items struct {
 	AccountId any
-	Status any
+	Status    any
 }
 
 type AutomatedDiscoveryAccountsConfig struct {
 	AccountIds any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AutomatedDiscoveryAccountsAttrs struct {
 	AccountIds any
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var AutomatedDiscoveryAccounts = ubx.DataSourceBinding{
@@ -26,6 +26,6 @@ var AutomatedDiscoveryAccounts = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

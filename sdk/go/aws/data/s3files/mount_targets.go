@@ -5,39 +5,39 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MountTargets_MountTargets struct {
 	AvailabilityZoneId any
-	FileSystemId any
-	Ipv4Address any
-	Ipv6Address any
-	MountTargetId any
+	FileSystemId       any
+	Ipv4Address        any
+	Ipv6Address        any
+	MountTargetId      any
 	NetworkInterfaceId any
-	OwnerId any
-	Status any
-	StatusMessage any
-	SubnetId any
-	VpcId any
+	OwnerId            any
+	Status             any
+	StatusMessage      any
+	SubnetId           any
+	VpcId              any
 }
 
 type MountTargetsConfig struct {
 	AccessPointId any
-	FileSystemId any
-	MaxResults any
-	NextToken any
+	FileSystemId  any
+	MaxResults    any
+	NextToken     any
 }
 
 type MountTargetsAttrs struct {
 	AccessPointId any
-	FileSystemId any
-	MaxResults any
-	MountTargets any
-	NextToken any
+	FileSystemId  any
+	MaxResults    any
+	MountTargets  any
+	NextToken     any
 }
 
 var MountTargets = ubx.DataSourceBinding{
 	WireType: "aws_s3files_mount_targets",
 	Fields: ubx.FieldMap{
 		"AccessPointId": ubx.FieldSpec{WireName: "access_point_id"},
-		"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"FileSystemId":  ubx.FieldSpec{WireName: "file_system_id"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -16,14 +16,14 @@ type WirelessDeviceImportTask_Sidewalk struct {
 
 type WirelessDeviceImportTask_Tags struct {
 	// The key of a tag applied to the AWS IoT Wireless device import task, used for organizing, identifying, and managing the import task via AWS tagging. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var WirelessDeviceImportTask_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type WirelessDeviceImportTaskConfig struct {
 	// Destination Name for import task
@@ -65,8 +65,8 @@ var WirelessDeviceImportTask = ubx.ResourceBinding{
 		"DestinationName": ubx.FieldSpec{WireName: "destination_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: WirelessDeviceImportTask_TagsFields,
+			Kind:     "list",
+			Fields:   WirelessDeviceImportTask_TagsFields,
 		},
 	},
 }

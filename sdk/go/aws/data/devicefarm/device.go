@@ -5,55 +5,55 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Device_Device_Cpu struct {
 	Architecture any
-	Clock any
-	Frequency any
+	Clock        any
+	Frequency    any
 }
 
 type Device_Device_Instances_InstanceProfile struct {
-	Arn any
-	Description any
+	Arn                           any
+	Description                   any
 	ExcludeAppPackagesFromCleanup any
-	Name any
-	PackageCleanup any
-	RebootAfterUse any
+	Name                          any
+	PackageCleanup                any
+	RebootAfterUse                any
 }
 
 type Device_Device_Instances struct {
-	Arn any
-	DeviceArn any
+	Arn             any
+	DeviceArn       any
 	InstanceProfile any
-	Labels any
-	Status any
-	Udid any
+	Labels          any
+	Status          any
+	Udid            any
 }
 
 type Device_Device_Resolution struct {
 	Height any
-	Width any
+	Width  any
 }
 
 type Device_Device struct {
-	Arn any
+	Arn          any
 	Availability any
-	Carrier any
+	Carrier      any
 	// <p>Represents the amount of CPU that an app is using on a physical device. Does not represent system-wide CPU usage.</p>
-	Cpu any
-	FleetName any
-	FleetType any
-	FormFactor any
-	HeapSize any
-	Image any
-	Instances any
-	Manufacturer any
-	Memory any
-	Model any
-	ModelId any
-	Name any
-	Os any
-	Platform any
-	Radio any
+	Cpu                 any
+	FleetName           any
+	FleetType           any
+	FormFactor          any
+	HeapSize            any
+	Image               any
+	Instances           any
+	Manufacturer        any
+	Memory              any
+	Model               any
+	ModelId             any
+	Name                any
+	Os                  any
+	Platform            any
+	Radio               any
 	RemoteAccessEnabled any
-	RemoteDebugEnabled any
+	RemoteDebugEnabled  any
 	// <p>Represents the screen resolution of a device in height and width, expressed in pixels.</p>
 	Resolution any
 }

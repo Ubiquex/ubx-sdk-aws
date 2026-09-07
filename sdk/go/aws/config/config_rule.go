@@ -54,42 +54,42 @@ type ConfigRule_Source struct {
 }
 
 var ConfigRule_EvaluationModesFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var ConfigRule_ScopeFields = ubx.FieldMap{
-		"ComplianceResourceId": ubx.FieldSpec{WireName: "compliance_resource_id"},
-		"ComplianceResourceTypes": ubx.FieldSpec{WireName: "compliance_resource_types"},
-		"TagKey": ubx.FieldSpec{WireName: "tag_key"},
-		"TagValue": ubx.FieldSpec{WireName: "tag_value"},
-	}
+	"ComplianceResourceId":    ubx.FieldSpec{WireName: "compliance_resource_id"},
+	"ComplianceResourceTypes": ubx.FieldSpec{WireName: "compliance_resource_types"},
+	"TagKey":                  ubx.FieldSpec{WireName: "tag_key"},
+	"TagValue":                ubx.FieldSpec{WireName: "tag_value"},
+}
 
 var ConfigRule_Source_CustomPolicyDetailsFields = ubx.FieldMap{
-		"EnableDebugLogDelivery": ubx.FieldSpec{WireName: "enable_debug_log_delivery"},
-		"PolicyRuntime": ubx.FieldSpec{WireName: "policy_runtime"},
-		"PolicyText": ubx.FieldSpec{WireName: "policy_text"},
-	}
+	"EnableDebugLogDelivery": ubx.FieldSpec{WireName: "enable_debug_log_delivery"},
+	"PolicyRuntime":          ubx.FieldSpec{WireName: "policy_runtime"},
+	"PolicyText":             ubx.FieldSpec{WireName: "policy_text"},
+}
 
 var ConfigRule_Source_SourceDetailsFields = ubx.FieldMap{
-		"EventSource": ubx.FieldSpec{WireName: "event_source"},
-		"MaximumExecutionFrequency": ubx.FieldSpec{WireName: "maximum_execution_frequency"},
-		"MessageType": ubx.FieldSpec{WireName: "message_type"},
-	}
+	"EventSource":               ubx.FieldSpec{WireName: "event_source"},
+	"MaximumExecutionFrequency": ubx.FieldSpec{WireName: "maximum_execution_frequency"},
+	"MessageType":               ubx.FieldSpec{WireName: "message_type"},
+}
 
 var ConfigRule_SourceFields = ubx.FieldMap{
-		"CustomPolicyDetails": ubx.FieldSpec{
-			WireName: "custom_policy_details",
-			Kind: "object",
-			Fields: ConfigRule_Source_CustomPolicyDetailsFields,
-		},
-		"Owner": ubx.FieldSpec{WireName: "owner"},
-		"SourceDetails": ubx.FieldSpec{
-			WireName: "source_details",
-			Kind: "list",
-			Fields: ConfigRule_Source_SourceDetailsFields,
-		},
-		"SourceIdentifier": ubx.FieldSpec{WireName: "source_identifier"},
-	}
+	"CustomPolicyDetails": ubx.FieldSpec{
+		WireName: "custom_policy_details",
+		Kind:     "object",
+		Fields:   ConfigRule_Source_CustomPolicyDetailsFields,
+	},
+	"Owner": ubx.FieldSpec{WireName: "owner"},
+	"SourceDetails": ubx.FieldSpec{
+		WireName: "source_details",
+		Kind:     "list",
+		Fields:   ConfigRule_Source_SourceDetailsFields,
+	},
+	"SourceIdentifier": ubx.FieldSpec{WireName: "source_identifier"},
+}
 
 type ConfigRuleConfig struct {
 	// A name for the CC rule. If you don't specify a name, CFN generates a unique physical ID and uses that ID for the rule name. For more information, see [Name Type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html).
@@ -135,23 +135,23 @@ var ConfigRule = ubx.ResourceBinding{
 	WireType: "aws_config_config_rule",
 	Fields: ubx.FieldMap{
 		"ConfigRuleName": ubx.FieldSpec{WireName: "config_rule_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
 		"EvaluationModes": ubx.FieldSpec{
 			WireName: "evaluation_modes",
-			Kind: "list",
-			Fields: ConfigRule_EvaluationModesFields,
+			Kind:     "list",
+			Fields:   ConfigRule_EvaluationModesFields,
 		},
-		"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
+		"InputParameters":           ubx.FieldSpec{WireName: "input_parameters"},
 		"MaximumExecutionFrequency": ubx.FieldSpec{WireName: "maximum_execution_frequency"},
 		"Scope": ubx.FieldSpec{
 			WireName: "scope",
-			Kind: "object",
-			Fields: ConfigRule_ScopeFields,
+			Kind:     "object",
+			Fields:   ConfigRule_ScopeFields,
 		},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: ConfigRule_SourceFields,
+			Kind:     "object",
+			Fields:   ConfigRule_SourceFields,
 		},
 	},
 }

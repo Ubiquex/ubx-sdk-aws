@@ -131,7 +131,7 @@ type Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_
 type Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OutputFilters_OutputConfiguration struct {
 	// Overrides the default variable name used for a tool's output within the output filter's output configuration, enabling the agent to reference the result via a custom variable name. (AI-inferred)
 	OutputVariableNameOverride any
-	SessionDataNamespace any
+	SessionDataNamespace       any
 }
 
 type Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OutputFilters struct {
@@ -237,278 +237,278 @@ type Aiagent_Configuration struct {
 }
 
 var Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_AndConditionsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_OrConditionsFields = ubx.FieldMap{
-		"AndConditions": ubx.FieldSpec{
-			WireName: "and_conditions",
-			Kind: "list",
-			Fields: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_AndConditionsFields,
-		},
-		"TagCondition": ubx.FieldSpec{
-			WireName: "tag_condition",
-			Kind: "object",
-			Fields: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_AndConditionsFields,
-		},
-	}
+	"AndConditions": ubx.FieldSpec{
+		WireName: "and_conditions",
+		Kind:     "list",
+		Fields:   Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_AndConditionsFields,
+	},
+	"TagCondition": ubx.FieldSpec{
+		WireName: "tag_condition",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_AndConditionsFields,
+	},
+}
 
 var Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilterFields = ubx.FieldMap{
-		"AndConditions": ubx.FieldSpec{
-			WireName: "and_conditions",
-			Kind: "list",
-			Fields: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_AndConditionsFields,
-		},
-		"OrConditions": ubx.FieldSpec{
-			WireName: "or_conditions",
-			Kind: "list",
-			Fields: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_OrConditionsFields,
-		},
-		"TagCondition": ubx.FieldSpec{
-			WireName: "tag_condition",
-			Kind: "object",
-			Fields: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_AndConditionsFields,
-		},
-	}
+	"AndConditions": ubx.FieldSpec{
+		WireName: "and_conditions",
+		Kind:     "list",
+		Fields:   Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_AndConditionsFields,
+	},
+	"OrConditions": ubx.FieldSpec{
+		WireName: "or_conditions",
+		Kind:     "list",
+		Fields:   Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_OrConditionsFields,
+	},
+	"TagCondition": ubx.FieldSpec{
+		WireName: "tag_condition",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_AndConditionsFields,
+	},
+}
 
 var Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationDataFields = ubx.FieldMap{
-		"ContentTagFilter": ubx.FieldSpec{
-			WireName: "content_tag_filter",
-			Kind: "object",
-			Fields: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilterFields,
-		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"OverrideKnowledgeBaseSearchType": ubx.FieldSpec{WireName: "override_knowledge_base_search_type"},
-	}
+	"ContentTagFilter": ubx.FieldSpec{
+		WireName: "content_tag_filter",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilterFields,
+	},
+	"MaxResults":                      ubx.FieldSpec{WireName: "max_results"},
+	"OverrideKnowledgeBaseSearchType": ubx.FieldSpec{WireName: "override_knowledge_base_search_type"},
+}
 
 var Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationDataFields = ubx.FieldMap{
-		"KnowledgeBaseAssociationConfigurationData": ubx.FieldSpec{
-			WireName: "knowledge_base_association_configuration_data",
-			Kind: "object",
-			Fields: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationDataFields,
-		},
-	}
+	"KnowledgeBaseAssociationConfigurationData": ubx.FieldSpec{
+		WireName: "knowledge_base_association_configuration_data",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationDataFields,
+	},
+}
 
 var Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurationsFields = ubx.FieldMap{
-		"AssociationConfigurationData": ubx.FieldSpec{
-			WireName: "association_configuration_data",
-			Kind: "object",
-			Fields: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationDataFields,
-		},
-		"AssociationId": ubx.FieldSpec{WireName: "association_id"},
-		"AssociationType": ubx.FieldSpec{WireName: "association_type"},
-	}
+	"AssociationConfigurationData": ubx.FieldSpec{
+		WireName: "association_configuration_data",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationDataFields,
+	},
+	"AssociationId":   ubx.FieldSpec{WireName: "association_id"},
+	"AssociationType": ubx.FieldSpec{WireName: "association_type"},
+}
 
 var Aiagent_Configuration_AnswerRecommendationAiagentConfigurationFields = ubx.FieldMap{
-		"AnswerGenerationAiguardrailId": ubx.FieldSpec{WireName: "answer_generation_aiguardrail_id"},
-		"AnswerGenerationAipromptId": ubx.FieldSpec{WireName: "answer_generation_aiprompt_id"},
-		"AssociationConfigurations": ubx.FieldSpec{
-			WireName: "association_configurations",
-			Kind: "list",
-			Fields: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurationsFields,
-		},
-		"IntentLabelingGenerationAipromptId": ubx.FieldSpec{WireName: "intent_labeling_generation_aiprompt_id"},
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"QueryReformulationAipromptId": ubx.FieldSpec{WireName: "query_reformulation_aiprompt_id"},
-	}
+	"AnswerGenerationAiguardrailId": ubx.FieldSpec{WireName: "answer_generation_aiguardrail_id"},
+	"AnswerGenerationAipromptId":    ubx.FieldSpec{WireName: "answer_generation_aiprompt_id"},
+	"AssociationConfigurations": ubx.FieldSpec{
+		WireName: "association_configurations",
+		Kind:     "list",
+		Fields:   Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurationsFields,
+	},
+	"IntentLabelingGenerationAipromptId": ubx.FieldSpec{WireName: "intent_labeling_generation_aiprompt_id"},
+	"Locale":                             ubx.FieldSpec{WireName: "locale"},
+	"QueryReformulationAipromptId":       ubx.FieldSpec{WireName: "query_reformulation_aiprompt_id"},
+}
 
 var Aiagent_Configuration_CaseSummarizationAiagentConfigurationFields = ubx.FieldMap{
-		"CaseSummarizationAiguardrailId": ubx.FieldSpec{WireName: "case_summarization_aiguardrail_id"},
-		"CaseSummarizationAipromptId": ubx.FieldSpec{WireName: "case_summarization_aiprompt_id"},
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-	}
+	"CaseSummarizationAiguardrailId": ubx.FieldSpec{WireName: "case_summarization_aiguardrail_id"},
+	"CaseSummarizationAipromptId":    ubx.FieldSpec{WireName: "case_summarization_aiprompt_id"},
+	"Locale":                         ubx.FieldSpec{WireName: "locale"},
+}
 
 var Aiagent_Configuration_EmailGenerativeAnswerAiagentConfigurationFields = ubx.FieldMap{
-		"AssociationConfigurations": ubx.FieldSpec{
-			WireName: "association_configurations",
-			Kind: "list",
-			Fields: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurationsFields,
-		},
-		"EmailGenerativeAnswerAipromptId": ubx.FieldSpec{WireName: "email_generative_answer_aiprompt_id"},
-		"EmailQueryReformulationAipromptId": ubx.FieldSpec{WireName: "email_query_reformulation_aiprompt_id"},
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-	}
+	"AssociationConfigurations": ubx.FieldSpec{
+		WireName: "association_configurations",
+		Kind:     "list",
+		Fields:   Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurationsFields,
+	},
+	"EmailGenerativeAnswerAipromptId":   ubx.FieldSpec{WireName: "email_generative_answer_aiprompt_id"},
+	"EmailQueryReformulationAipromptId": ubx.FieldSpec{WireName: "email_query_reformulation_aiprompt_id"},
+	"Locale":                            ubx.FieldSpec{WireName: "locale"},
+}
 
 var Aiagent_Configuration_EmailOverviewAiagentConfigurationFields = ubx.FieldMap{
-		"EmailOverviewAipromptId": ubx.FieldSpec{WireName: "email_overview_aiprompt_id"},
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-	}
+	"EmailOverviewAipromptId": ubx.FieldSpec{WireName: "email_overview_aiprompt_id"},
+	"Locale":                  ubx.FieldSpec{WireName: "locale"},
+}
 
 var Aiagent_Configuration_EmailResponseAiagentConfigurationFields = ubx.FieldMap{
-		"AssociationConfigurations": ubx.FieldSpec{
-			WireName: "association_configurations",
-			Kind: "list",
-			Fields: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurationsFields,
-		},
-		"EmailQueryReformulationAipromptId": ubx.FieldSpec{WireName: "email_query_reformulation_aiprompt_id"},
-		"EmailResponseAipromptId": ubx.FieldSpec{WireName: "email_response_aiprompt_id"},
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-	}
+	"AssociationConfigurations": ubx.FieldSpec{
+		WireName: "association_configurations",
+		Kind:     "list",
+		Fields:   Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurationsFields,
+	},
+	"EmailQueryReformulationAipromptId": ubx.FieldSpec{WireName: "email_query_reformulation_aiprompt_id"},
+	"EmailResponseAipromptId":           ubx.FieldSpec{WireName: "email_response_aiprompt_id"},
+	"Locale":                            ubx.FieldSpec{WireName: "locale"},
+}
 
 var Aiagent_Configuration_ManualSearchAiagentConfigurationFields = ubx.FieldMap{
-		"AnswerGenerationAiguardrailId": ubx.FieldSpec{WireName: "answer_generation_aiguardrail_id"},
-		"AnswerGenerationAipromptId": ubx.FieldSpec{WireName: "answer_generation_aiprompt_id"},
-		"AssociationConfigurations": ubx.FieldSpec{
-			WireName: "association_configurations",
-			Kind: "list",
-			Fields: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurationsFields,
-		},
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-	}
+	"AnswerGenerationAiguardrailId": ubx.FieldSpec{WireName: "answer_generation_aiguardrail_id"},
+	"AnswerGenerationAipromptId":    ubx.FieldSpec{WireName: "answer_generation_aiprompt_id"},
+	"AssociationConfigurations": ubx.FieldSpec{
+		WireName: "association_configurations",
+		Kind:     "list",
+		Fields:   Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurationsFields,
+	},
+	"Locale": ubx.FieldSpec{WireName: "locale"},
+}
 
 var Aiagent_Configuration_NoteTakingAiagentConfigurationFields = ubx.FieldMap{
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"NoteTakingAiguardrailId": ubx.FieldSpec{WireName: "note_taking_aiguardrail_id"},
-		"NoteTakingAipromptId": ubx.FieldSpec{WireName: "note_taking_aiprompt_id"},
-	}
+	"Locale":                  ubx.FieldSpec{WireName: "locale"},
+	"NoteTakingAiguardrailId": ubx.FieldSpec{WireName: "note_taking_aiguardrail_id"},
+	"NoteTakingAipromptId":    ubx.FieldSpec{WireName: "note_taking_aiprompt_id"},
+}
 
 var Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_InstructionFields = ubx.FieldMap{
-		"Examples": ubx.FieldSpec{WireName: "examples"},
-		"Instruction": ubx.FieldSpec{WireName: "instruction"},
-	}
+	"Examples":    ubx.FieldSpec{WireName: "examples"},
+	"Instruction": ubx.FieldSpec{WireName: "instruction"},
+}
 
 var Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OutputFilters_OutputConfigurationFields = ubx.FieldMap{
-		"OutputVariableNameOverride": ubx.FieldSpec{WireName: "output_variable_name_override"},
-		"SessionDataNamespace": ubx.FieldSpec{WireName: "session_data_namespace"},
-	}
+	"OutputVariableNameOverride": ubx.FieldSpec{WireName: "output_variable_name_override"},
+	"SessionDataNamespace":       ubx.FieldSpec{WireName: "session_data_namespace"},
+}
 
 var Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OutputFiltersFields = ubx.FieldMap{
-		"JsonPath": ubx.FieldSpec{WireName: "json_path"},
-		"OutputConfiguration": ubx.FieldSpec{
-			WireName: "output_configuration",
-			Kind: "object",
-			Fields: Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OutputFilters_OutputConfigurationFields,
-		},
-	}
+	"JsonPath": ubx.FieldSpec{WireName: "json_path"},
+	"OutputConfiguration": ubx.FieldSpec{
+		WireName: "output_configuration",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OutputFilters_OutputConfigurationFields,
+	},
+}
 
 var Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OverrideInputValues_Value_ConstantFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OverrideInputValues_ValueFields = ubx.FieldMap{
-		"Constant": ubx.FieldSpec{
-			WireName: "constant",
-			Kind: "object",
-			Fields: Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OverrideInputValues_Value_ConstantFields,
-		},
-	}
+	"Constant": ubx.FieldSpec{
+		WireName: "constant",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OverrideInputValues_Value_ConstantFields,
+	},
+}
 
 var Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OverrideInputValuesFields = ubx.FieldMap{
-		"JsonPath": ubx.FieldSpec{WireName: "json_path"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OverrideInputValues_ValueFields,
-		},
-	}
+	"JsonPath": ubx.FieldSpec{WireName: "json_path"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OverrideInputValues_ValueFields,
+	},
+}
 
 var Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_UserInteractionConfigurationFields = ubx.FieldMap{
-		"IsUserConfirmationRequired": ubx.FieldSpec{WireName: "is_user_confirmation_required"},
-	}
+	"IsUserConfirmationRequired": ubx.FieldSpec{WireName: "is_user_confirmation_required"},
+}
 
 var Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurationsFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InputSchema": ubx.FieldSpec{WireName: "input_schema"},
-		"Instruction": ubx.FieldSpec{
-			WireName: "instruction",
-			Kind: "object",
-			Fields: Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_InstructionFields,
-		},
-		"OutputFilters": ubx.FieldSpec{
-			WireName: "output_filters",
-			Kind: "list",
-			Fields: Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OutputFiltersFields,
-		},
-		"OutputSchema": ubx.FieldSpec{WireName: "output_schema"},
-		"OverrideInputValues": ubx.FieldSpec{
-			WireName: "override_input_values",
-			Kind: "list",
-			Fields: Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OverrideInputValuesFields,
-		},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"ToolId": ubx.FieldSpec{WireName: "tool_id"},
-		"ToolName": ubx.FieldSpec{WireName: "tool_name"},
-		"ToolType": ubx.FieldSpec{WireName: "tool_type"},
-		"UserInteractionConfiguration": ubx.FieldSpec{
-			WireName: "user_interaction_configuration",
-			Kind: "object",
-			Fields: Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_UserInteractionConfigurationFields,
-		},
-	}
+	"Annotations": ubx.FieldSpec{WireName: "annotations"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"InputSchema": ubx.FieldSpec{WireName: "input_schema"},
+	"Instruction": ubx.FieldSpec{
+		WireName: "instruction",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_InstructionFields,
+	},
+	"OutputFilters": ubx.FieldSpec{
+		WireName: "output_filters",
+		Kind:     "list",
+		Fields:   Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OutputFiltersFields,
+	},
+	"OutputSchema": ubx.FieldSpec{WireName: "output_schema"},
+	"OverrideInputValues": ubx.FieldSpec{
+		WireName: "override_input_values",
+		Kind:     "list",
+		Fields:   Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OverrideInputValuesFields,
+	},
+	"Title":    ubx.FieldSpec{WireName: "title"},
+	"ToolId":   ubx.FieldSpec{WireName: "tool_id"},
+	"ToolName": ubx.FieldSpec{WireName: "tool_name"},
+	"ToolType": ubx.FieldSpec{WireName: "tool_type"},
+	"UserInteractionConfiguration": ubx.FieldSpec{
+		WireName: "user_interaction_configuration",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_UserInteractionConfigurationFields,
+	},
+}
 
 var Aiagent_Configuration_OrchestrationAiagentConfigurationFields = ubx.FieldMap{
-		"ConnectInstanceArn": ubx.FieldSpec{WireName: "connect_instance_arn"},
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"OrchestrationAiguardrailId": ubx.FieldSpec{WireName: "orchestration_aiguardrail_id"},
-		"OrchestrationAipromptId": ubx.FieldSpec{WireName: "orchestration_aiprompt_id"},
-		"ToolConfigurations": ubx.FieldSpec{
-			WireName: "tool_configurations",
-			Kind: "list",
-			Fields: Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurationsFields,
-		},
-	}
+	"ConnectInstanceArn":         ubx.FieldSpec{WireName: "connect_instance_arn"},
+	"Locale":                     ubx.FieldSpec{WireName: "locale"},
+	"OrchestrationAiguardrailId": ubx.FieldSpec{WireName: "orchestration_aiguardrail_id"},
+	"OrchestrationAipromptId":    ubx.FieldSpec{WireName: "orchestration_aiprompt_id"},
+	"ToolConfigurations": ubx.FieldSpec{
+		WireName: "tool_configurations",
+		Kind:     "list",
+		Fields:   Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurationsFields,
+	},
+}
 
 var Aiagent_Configuration_SelfServiceAiagentConfigurationFields = ubx.FieldMap{
-		"AssociationConfigurations": ubx.FieldSpec{
-			WireName: "association_configurations",
-			Kind: "list",
-			Fields: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurationsFields,
-		},
-		"SelfServiceAiguardrailId": ubx.FieldSpec{WireName: "self_service_aiguardrail_id"},
-		"SelfServiceAnswerGenerationAipromptId": ubx.FieldSpec{WireName: "self_service_answer_generation_aiprompt_id"},
-		"SelfServicePreProcessingAipromptId": ubx.FieldSpec{WireName: "self_service_pre_processing_aiprompt_id"},
-	}
+	"AssociationConfigurations": ubx.FieldSpec{
+		WireName: "association_configurations",
+		Kind:     "list",
+		Fields:   Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurationsFields,
+	},
+	"SelfServiceAiguardrailId":              ubx.FieldSpec{WireName: "self_service_aiguardrail_id"},
+	"SelfServiceAnswerGenerationAipromptId": ubx.FieldSpec{WireName: "self_service_answer_generation_aiprompt_id"},
+	"SelfServicePreProcessingAipromptId":    ubx.FieldSpec{WireName: "self_service_pre_processing_aiprompt_id"},
+}
 
 var Aiagent_ConfigurationFields = ubx.FieldMap{
-		"AnswerRecommendationAiagentConfiguration": ubx.FieldSpec{
-			WireName: "answer_recommendation_aiagent_configuration",
-			Kind: "object",
-			Fields: Aiagent_Configuration_AnswerRecommendationAiagentConfigurationFields,
-		},
-		"CaseSummarizationAiagentConfiguration": ubx.FieldSpec{
-			WireName: "case_summarization_aiagent_configuration",
-			Kind: "object",
-			Fields: Aiagent_Configuration_CaseSummarizationAiagentConfigurationFields,
-		},
-		"EmailGenerativeAnswerAiagentConfiguration": ubx.FieldSpec{
-			WireName: "email_generative_answer_aiagent_configuration",
-			Kind: "object",
-			Fields: Aiagent_Configuration_EmailGenerativeAnswerAiagentConfigurationFields,
-		},
-		"EmailOverviewAiagentConfiguration": ubx.FieldSpec{
-			WireName: "email_overview_aiagent_configuration",
-			Kind: "object",
-			Fields: Aiagent_Configuration_EmailOverviewAiagentConfigurationFields,
-		},
-		"EmailResponseAiagentConfiguration": ubx.FieldSpec{
-			WireName: "email_response_aiagent_configuration",
-			Kind: "object",
-			Fields: Aiagent_Configuration_EmailResponseAiagentConfigurationFields,
-		},
-		"ManualSearchAiagentConfiguration": ubx.FieldSpec{
-			WireName: "manual_search_aiagent_configuration",
-			Kind: "object",
-			Fields: Aiagent_Configuration_ManualSearchAiagentConfigurationFields,
-		},
-		"NoteTakingAiagentConfiguration": ubx.FieldSpec{
-			WireName: "note_taking_aiagent_configuration",
-			Kind: "object",
-			Fields: Aiagent_Configuration_NoteTakingAiagentConfigurationFields,
-		},
-		"OrchestrationAiagentConfiguration": ubx.FieldSpec{
-			WireName: "orchestration_aiagent_configuration",
-			Kind: "object",
-			Fields: Aiagent_Configuration_OrchestrationAiagentConfigurationFields,
-		},
-		"SelfServiceAiagentConfiguration": ubx.FieldSpec{
-			WireName: "self_service_aiagent_configuration",
-			Kind: "object",
-			Fields: Aiagent_Configuration_SelfServiceAiagentConfigurationFields,
-		},
-	}
+	"AnswerRecommendationAiagentConfiguration": ubx.FieldSpec{
+		WireName: "answer_recommendation_aiagent_configuration",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_AnswerRecommendationAiagentConfigurationFields,
+	},
+	"CaseSummarizationAiagentConfiguration": ubx.FieldSpec{
+		WireName: "case_summarization_aiagent_configuration",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_CaseSummarizationAiagentConfigurationFields,
+	},
+	"EmailGenerativeAnswerAiagentConfiguration": ubx.FieldSpec{
+		WireName: "email_generative_answer_aiagent_configuration",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_EmailGenerativeAnswerAiagentConfigurationFields,
+	},
+	"EmailOverviewAiagentConfiguration": ubx.FieldSpec{
+		WireName: "email_overview_aiagent_configuration",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_EmailOverviewAiagentConfigurationFields,
+	},
+	"EmailResponseAiagentConfiguration": ubx.FieldSpec{
+		WireName: "email_response_aiagent_configuration",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_EmailResponseAiagentConfigurationFields,
+	},
+	"ManualSearchAiagentConfiguration": ubx.FieldSpec{
+		WireName: "manual_search_aiagent_configuration",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_ManualSearchAiagentConfigurationFields,
+	},
+	"NoteTakingAiagentConfiguration": ubx.FieldSpec{
+		WireName: "note_taking_aiagent_configuration",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_NoteTakingAiagentConfigurationFields,
+	},
+	"OrchestrationAiagentConfiguration": ubx.FieldSpec{
+		WireName: "orchestration_aiagent_configuration",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_OrchestrationAiagentConfigurationFields,
+	},
+	"SelfServiceAiagentConfiguration": ubx.FieldSpec{
+		WireName: "self_service_aiagent_configuration",
+		Kind:     "object",
+		Fields:   Aiagent_Configuration_SelfServiceAiagentConfigurationFields,
+	},
+}
 
 type AiagentConfig struct {
 	// The assistant_id specifies the unique identifier of the Amazon Connect Wisdom assistant with which this AI agent is associated. (AI-inferred)
@@ -554,12 +554,12 @@ var Aiagent = ubx.ResourceBinding{
 		"AssistantId": ubx.FieldSpec{WireName: "assistant_id"},
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: Aiagent_ConfigurationFields,
+			Kind:     "object",
+			Fields:   Aiagent_ConfigurationFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
+		"Type":        ubx.FieldSpec{WireName: "type"},
 	},
 }

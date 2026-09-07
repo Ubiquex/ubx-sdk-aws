@@ -5,18 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RequiredTags_RequiredTags struct {
 	CloudFormationResourceTypes any
-	ReportingTagKeys any
-	ResourceType any
+	ReportingTagKeys            any
+	ResourceType                any
 }
 
 type RequiredTagsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type RequiredTagsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	RequiredTags any
 }
 
@@ -24,6 +24,6 @@ var RequiredTags = ubx.DataSourceBinding{
 	WireType: "aws_tagging_required_tags",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

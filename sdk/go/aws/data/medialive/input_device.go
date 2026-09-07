@@ -38,7 +38,7 @@ type InputDevice_NetworkSettings struct {
 }
 
 type InputDevice_UhdDeviceSettings_AudioChannelPairs struct {
-	Id any
+	Id      any
 	Profile any
 }
 

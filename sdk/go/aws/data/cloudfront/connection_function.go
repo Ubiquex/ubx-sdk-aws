@@ -8,7 +8,7 @@ type ConnectionFunction_ConnectionFunctionSummary_ConnectionFunctionConfig_KeyVa
 }
 
 type ConnectionFunction_ConnectionFunctionSummary_ConnectionFunctionConfig_KeyValueStoreAssociations struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
@@ -16,38 +16,38 @@ type ConnectionFunction_ConnectionFunctionSummary_ConnectionFunctionConfig struc
 	Comment any
 	// <p>The key value store associations.</p>
 	KeyValueStoreAssociations any
-	Runtime any
+	Runtime                   any
 }
 
 type ConnectionFunction_ConnectionFunctionSummary struct {
 	ConnectionFunctionArn any
 	// <p>Contains configuration information about a CloudFront function.</p>
 	ConnectionFunctionConfig any
-	CreatedTime any
-	Id any
-	LastModifiedTime any
-	Name any
-	Stage any
-	Status any
+	CreatedTime              any
+	Id                       any
+	LastModifiedTime         any
+	Name                     any
+	Stage                    any
+	Status                   any
 }
 
 type ConnectionFunctionConfig struct {
 	Identifier any
-	Stage any
+	Stage      any
 }
 
 type ConnectionFunctionAttrs struct {
 	// <p>A connection function summary.</p>
 	ConnectionFunctionSummary any
-	Etag any
-	Identifier any
-	Stage any
+	Etag                      any
+	Identifier                any
+	Stage                     any
 }
 
 var ConnectionFunction = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_connection_function",
 	Fields: ubx.FieldMap{
 		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"Stage": ubx.FieldSpec{WireName: "stage"},
+		"Stage":      ubx.FieldSpec{WireName: "stage"},
 	},
 }

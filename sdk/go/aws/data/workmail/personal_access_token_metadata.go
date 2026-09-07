@@ -4,25 +4,25 @@ package workmail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PersonalAccessTokenMetadataConfig struct {
-	OrganizationId any
+	OrganizationId        any
 	PersonalAccessTokenId any
 }
 
 type PersonalAccessTokenMetadataAttrs struct {
-	DateCreated any
-	DateLastUsed any
-	ExpiresTime any
-	Name any
-	OrganizationId any
+	DateCreated           any
+	DateLastUsed          any
+	ExpiresTime           any
+	Name                  any
+	OrganizationId        any
 	PersonalAccessTokenId any
-	Scopes any
-	UserId any
+	Scopes                any
+	UserId                any
 }
 
 var PersonalAccessTokenMetadata = ubx.DataSourceBinding{
 	WireType: "aws_workmail_personal_access_token_metadata",
 	Fields: ubx.FieldMap{
-		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
+		"OrganizationId":        ubx.FieldSpec{WireName: "organization_id"},
 		"PersonalAccessTokenId": ubx.FieldSpec{WireName: "personal_access_token_id"},
 	},
 }

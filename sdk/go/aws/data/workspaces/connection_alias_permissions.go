@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectionAliasPermissions_ConnectionAliasPermissions struct {
 	AllowAssociation any
-	SharedAccountId any
+	SharedAccountId  any
 }
 
 type ConnectionAliasPermissionsConfig struct {
-	AliasId any
+	AliasId    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ConnectionAliasPermissionsAttrs struct {
-	AliasId any
+	AliasId                    any
 	ConnectionAliasPermissions any
-	MaxResults any
-	NextToken any
+	MaxResults                 any
+	NextToken                  any
 }
 
 var ConnectionAliasPermissions = ubx.DataSourceBinding{
 	WireType: "aws_workspaces_connection_alias_permissions",
 	Fields: ubx.FieldMap{
-		"AliasId": ubx.FieldSpec{WireName: "alias_id"},
+		"AliasId":    ubx.FieldSpec{WireName: "alias_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

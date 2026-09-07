@@ -54,67 +54,67 @@ type Form_Style struct {
 }
 
 var Form_Cta_Cancel_PositionFields = ubx.FieldMap{
-		"Below": ubx.FieldSpec{WireName: "below"},
-		"Fixed": ubx.FieldSpec{WireName: "fixed"},
-		"RightOf": ubx.FieldSpec{WireName: "right_of"},
-	}
+	"Below":   ubx.FieldSpec{WireName: "below"},
+	"Fixed":   ubx.FieldSpec{WireName: "fixed"},
+	"RightOf": ubx.FieldSpec{WireName: "right_of"},
+}
 
 var Form_Cta_CancelFields = ubx.FieldMap{
-		"Children": ubx.FieldSpec{WireName: "children"},
-		"Excluded": ubx.FieldSpec{WireName: "excluded"},
-		"Position": ubx.FieldSpec{
-			WireName: "position",
-			Kind: "object",
-			Fields: Form_Cta_Cancel_PositionFields,
-		},
-	}
+	"Children": ubx.FieldSpec{WireName: "children"},
+	"Excluded": ubx.FieldSpec{WireName: "excluded"},
+	"Position": ubx.FieldSpec{
+		WireName: "position",
+		Kind:     "object",
+		Fields:   Form_Cta_Cancel_PositionFields,
+	},
+}
 
 var Form_CtaFields = ubx.FieldMap{
-		"Cancel": ubx.FieldSpec{
-			WireName: "cancel",
-			Kind: "object",
-			Fields: Form_Cta_CancelFields,
-		},
-		"Clear": ubx.FieldSpec{
-			WireName: "clear",
-			Kind: "object",
-			Fields: Form_Cta_CancelFields,
-		},
-		"Position": ubx.FieldSpec{WireName: "position"},
-		"Submit": ubx.FieldSpec{
-			WireName: "submit",
-			Kind: "object",
-			Fields: Form_Cta_CancelFields,
-		},
-	}
+	"Cancel": ubx.FieldSpec{
+		WireName: "cancel",
+		Kind:     "object",
+		Fields:   Form_Cta_CancelFields,
+	},
+	"Clear": ubx.FieldSpec{
+		WireName: "clear",
+		Kind:     "object",
+		Fields:   Form_Cta_CancelFields,
+	},
+	"Position": ubx.FieldSpec{WireName: "position"},
+	"Submit": ubx.FieldSpec{
+		WireName: "submit",
+		Kind:     "object",
+		Fields:   Form_Cta_CancelFields,
+	},
+}
 
 var Form_DataTypeFields = ubx.FieldMap{
-		"DataSourceType": ubx.FieldSpec{WireName: "data_source_type"},
-		"DataTypeName": ubx.FieldSpec{WireName: "data_type_name"},
-	}
+	"DataSourceType": ubx.FieldSpec{WireName: "data_source_type"},
+	"DataTypeName":   ubx.FieldSpec{WireName: "data_type_name"},
+}
 
 var Form_Style_HorizontalGapFields = ubx.FieldMap{
-		"TokenReference": ubx.FieldSpec{WireName: "token_reference"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"TokenReference": ubx.FieldSpec{WireName: "token_reference"},
+	"Value":          ubx.FieldSpec{WireName: "value"},
+}
 
 var Form_StyleFields = ubx.FieldMap{
-		"HorizontalGap": ubx.FieldSpec{
-			WireName: "horizontal_gap",
-			Kind: "object",
-			Fields: Form_Style_HorizontalGapFields,
-		},
-		"OuterPadding": ubx.FieldSpec{
-			WireName: "outer_padding",
-			Kind: "object",
-			Fields: Form_Style_HorizontalGapFields,
-		},
-		"VerticalGap": ubx.FieldSpec{
-			WireName: "vertical_gap",
-			Kind: "object",
-			Fields: Form_Style_HorizontalGapFields,
-		},
-	}
+	"HorizontalGap": ubx.FieldSpec{
+		WireName: "horizontal_gap",
+		Kind:     "object",
+		Fields:   Form_Style_HorizontalGapFields,
+	},
+	"OuterPadding": ubx.FieldSpec{
+		WireName: "outer_padding",
+		Kind:     "object",
+		Fields:   Form_Style_HorizontalGapFields,
+	},
+	"VerticalGap": ubx.FieldSpec{
+		WireName: "vertical_gap",
+		Kind:     "object",
+		Fields:   Form_Style_HorizontalGapFields,
+	},
+}
 
 type FormConfig struct {
 	// The unique identifier of the Amplify application to which this UI Builder form belongs, scoping the form resource to a specific app. (AI-inferred)
@@ -178,25 +178,25 @@ var Form = ubx.ResourceBinding{
 		"AppId": ubx.FieldSpec{WireName: "app_id"},
 		"Cta": ubx.FieldSpec{
 			WireName: "cta",
-			Kind: "object",
-			Fields: Form_CtaFields,
+			Kind:     "object",
+			Fields:   Form_CtaFields,
 		},
 		"DataType": ubx.FieldSpec{
 			WireName: "data_type",
-			Kind: "object",
-			Fields: Form_DataTypeFields,
+			Kind:     "object",
+			Fields:   Form_DataTypeFields,
 		},
-		"EnvironmentName": ubx.FieldSpec{WireName: "environment_name"},
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"FormActionType": ubx.FieldSpec{WireName: "form_action_type"},
-		"LabelDecorator": ubx.FieldSpec{WireName: "label_decorator"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
+		"EnvironmentName":   ubx.FieldSpec{WireName: "environment_name"},
+		"Fields":            ubx.FieldSpec{WireName: "fields"},
+		"FormActionType":    ubx.FieldSpec{WireName: "form_action_type"},
+		"LabelDecorator":    ubx.FieldSpec{WireName: "label_decorator"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"SchemaVersion":     ubx.FieldSpec{WireName: "schema_version"},
 		"SectionalElements": ubx.FieldSpec{WireName: "sectional_elements"},
 		"Style": ubx.FieldSpec{
 			WireName: "style",
-			Kind: "object",
-			Fields: Form_StyleFields,
+			Kind:     "object",
+			Fields:   Form_StyleFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

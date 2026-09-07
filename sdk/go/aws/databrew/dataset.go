@@ -149,166 +149,166 @@ type Dataset_Tags struct {
 }
 
 var Dataset_FormatOptions_CsvFields = ubx.FieldMap{
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-		"HeaderRow": ubx.FieldSpec{WireName: "header_row"},
-	}
+	"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
+	"HeaderRow": ubx.FieldSpec{WireName: "header_row"},
+}
 
 var Dataset_FormatOptions_ExcelFields = ubx.FieldMap{
-		"HeaderRow": ubx.FieldSpec{WireName: "header_row"},
-		"SheetIndexes": ubx.FieldSpec{WireName: "sheet_indexes"},
-		"SheetNames": ubx.FieldSpec{WireName: "sheet_names"},
-	}
+	"HeaderRow":    ubx.FieldSpec{WireName: "header_row"},
+	"SheetIndexes": ubx.FieldSpec{WireName: "sheet_indexes"},
+	"SheetNames":   ubx.FieldSpec{WireName: "sheet_names"},
+}
 
 var Dataset_FormatOptions_JsonFields = ubx.FieldMap{
-		"MultiLine": ubx.FieldSpec{WireName: "multi_line"},
-	}
+	"MultiLine": ubx.FieldSpec{WireName: "multi_line"},
+}
 
 var Dataset_FormatOptionsFields = ubx.FieldMap{
-		"Csv": ubx.FieldSpec{
-			WireName: "csv",
-			Kind: "object",
-			Fields: Dataset_FormatOptions_CsvFields,
-		},
-		"Excel": ubx.FieldSpec{
-			WireName: "excel",
-			Kind: "object",
-			Fields: Dataset_FormatOptions_ExcelFields,
-		},
-		"Json": ubx.FieldSpec{
-			WireName: "json",
-			Kind: "object",
-			Fields: Dataset_FormatOptions_JsonFields,
-		},
-	}
+	"Csv": ubx.FieldSpec{
+		WireName: "csv",
+		Kind:     "object",
+		Fields:   Dataset_FormatOptions_CsvFields,
+	},
+	"Excel": ubx.FieldSpec{
+		WireName: "excel",
+		Kind:     "object",
+		Fields:   Dataset_FormatOptions_ExcelFields,
+	},
+	"Json": ubx.FieldSpec{
+		WireName: "json",
+		Kind:     "object",
+		Fields:   Dataset_FormatOptions_JsonFields,
+	},
+}
 
 var Dataset_Input_DataCatalogInputDefinition_TempDirectoryFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"BucketOwner": ubx.FieldSpec{WireName: "bucket_owner"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Bucket":      ubx.FieldSpec{WireName: "bucket"},
+	"BucketOwner": ubx.FieldSpec{WireName: "bucket_owner"},
+	"Key":         ubx.FieldSpec{WireName: "key"},
+}
 
 var Dataset_Input_DataCatalogInputDefinitionFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-		"TempDirectory": ubx.FieldSpec{
-			WireName: "temp_directory",
-			Kind: "object",
-			Fields: Dataset_Input_DataCatalogInputDefinition_TempDirectoryFields,
-		},
-	}
+	"CatalogId":    ubx.FieldSpec{WireName: "catalog_id"},
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"TableName":    ubx.FieldSpec{WireName: "table_name"},
+	"TempDirectory": ubx.FieldSpec{
+		WireName: "temp_directory",
+		Kind:     "object",
+		Fields:   Dataset_Input_DataCatalogInputDefinition_TempDirectoryFields,
+	},
+}
 
 var Dataset_Input_DatabaseInputDefinitionFields = ubx.FieldMap{
-		"DatabaseTableName": ubx.FieldSpec{WireName: "database_table_name"},
-		"GlueConnectionName": ubx.FieldSpec{WireName: "glue_connection_name"},
-		"QueryString": ubx.FieldSpec{WireName: "query_string"},
-		"TempDirectory": ubx.FieldSpec{
-			WireName: "temp_directory",
-			Kind: "object",
-			Fields: Dataset_Input_DataCatalogInputDefinition_TempDirectoryFields,
-		},
-	}
+	"DatabaseTableName":  ubx.FieldSpec{WireName: "database_table_name"},
+	"GlueConnectionName": ubx.FieldSpec{WireName: "glue_connection_name"},
+	"QueryString":        ubx.FieldSpec{WireName: "query_string"},
+	"TempDirectory": ubx.FieldSpec{
+		WireName: "temp_directory",
+		Kind:     "object",
+		Fields:   Dataset_Input_DataCatalogInputDefinition_TempDirectoryFields,
+	},
+}
 
 var Dataset_Input_MetadataFields = ubx.FieldMap{
-		"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
-	}
+	"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
+}
 
 var Dataset_InputFields = ubx.FieldMap{
-		"DataCatalogInputDefinition": ubx.FieldSpec{
-			WireName: "data_catalog_input_definition",
-			Kind: "object",
-			Fields: Dataset_Input_DataCatalogInputDefinitionFields,
-		},
-		"DatabaseInputDefinition": ubx.FieldSpec{
-			WireName: "database_input_definition",
-			Kind: "object",
-			Fields: Dataset_Input_DatabaseInputDefinitionFields,
-		},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: Dataset_Input_MetadataFields,
-		},
-		"S3InputDefinition": ubx.FieldSpec{
-			WireName: "s3_input_definition",
-			Kind: "object",
-			Fields: Dataset_Input_DataCatalogInputDefinition_TempDirectoryFields,
-		},
-	}
+	"DataCatalogInputDefinition": ubx.FieldSpec{
+		WireName: "data_catalog_input_definition",
+		Kind:     "object",
+		Fields:   Dataset_Input_DataCatalogInputDefinitionFields,
+	},
+	"DatabaseInputDefinition": ubx.FieldSpec{
+		WireName: "database_input_definition",
+		Kind:     "object",
+		Fields:   Dataset_Input_DatabaseInputDefinitionFields,
+	},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   Dataset_Input_MetadataFields,
+	},
+	"S3InputDefinition": ubx.FieldSpec{
+		WireName: "s3_input_definition",
+		Kind:     "object",
+		Fields:   Dataset_Input_DataCatalogInputDefinition_TempDirectoryFields,
+	},
+}
 
 var Dataset_PathOptions_FilesLimitFields = ubx.FieldMap{
-		"MaxFiles": ubx.FieldSpec{WireName: "max_files"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"OrderedBy": ubx.FieldSpec{WireName: "ordered_by"},
-	}
+	"MaxFiles":  ubx.FieldSpec{WireName: "max_files"},
+	"Order":     ubx.FieldSpec{WireName: "order"},
+	"OrderedBy": ubx.FieldSpec{WireName: "ordered_by"},
+}
 
 var Dataset_PathOptions_LastModifiedDateCondition_ValuesMapFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"ValueReference": ubx.FieldSpec{WireName: "value_reference"},
-	}
+	"Value":          ubx.FieldSpec{WireName: "value"},
+	"ValueReference": ubx.FieldSpec{WireName: "value_reference"},
+}
 
 var Dataset_PathOptions_LastModifiedDateConditionFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"ValuesMap": ubx.FieldSpec{
-			WireName: "values_map",
-			Kind: "list",
-			Fields: Dataset_PathOptions_LastModifiedDateCondition_ValuesMapFields,
-		},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"ValuesMap": ubx.FieldSpec{
+		WireName: "values_map",
+		Kind:     "list",
+		Fields:   Dataset_PathOptions_LastModifiedDateCondition_ValuesMapFields,
+	},
+}
 
 var Dataset_PathOptions_Parameters_DatasetParameter_DatetimeOptionsFields = ubx.FieldMap{
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"LocaleCode": ubx.FieldSpec{WireName: "locale_code"},
-		"TimezoneOffset": ubx.FieldSpec{WireName: "timezone_offset"},
-	}
+	"Format":         ubx.FieldSpec{WireName: "format"},
+	"LocaleCode":     ubx.FieldSpec{WireName: "locale_code"},
+	"TimezoneOffset": ubx.FieldSpec{WireName: "timezone_offset"},
+}
 
 var Dataset_PathOptions_Parameters_DatasetParameterFields = ubx.FieldMap{
-		"CreateColumn": ubx.FieldSpec{WireName: "create_column"},
-		"DatetimeOptions": ubx.FieldSpec{
-			WireName: "datetime_options",
-			Kind: "object",
-			Fields: Dataset_PathOptions_Parameters_DatasetParameter_DatetimeOptionsFields,
-		},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: Dataset_PathOptions_LastModifiedDateConditionFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CreateColumn": ubx.FieldSpec{WireName: "create_column"},
+	"DatetimeOptions": ubx.FieldSpec{
+		WireName: "datetime_options",
+		Kind:     "object",
+		Fields:   Dataset_PathOptions_Parameters_DatasetParameter_DatetimeOptionsFields,
+	},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   Dataset_PathOptions_LastModifiedDateConditionFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Dataset_PathOptions_ParametersFields = ubx.FieldMap{
-		"DatasetParameter": ubx.FieldSpec{
-			WireName: "dataset_parameter",
-			Kind: "object",
-			Fields: Dataset_PathOptions_Parameters_DatasetParameterFields,
-		},
-		"PathParameterName": ubx.FieldSpec{WireName: "path_parameter_name"},
-	}
+	"DatasetParameter": ubx.FieldSpec{
+		WireName: "dataset_parameter",
+		Kind:     "object",
+		Fields:   Dataset_PathOptions_Parameters_DatasetParameterFields,
+	},
+	"PathParameterName": ubx.FieldSpec{WireName: "path_parameter_name"},
+}
 
 var Dataset_PathOptionsFields = ubx.FieldMap{
-		"FilesLimit": ubx.FieldSpec{
-			WireName: "files_limit",
-			Kind: "object",
-			Fields: Dataset_PathOptions_FilesLimitFields,
-		},
-		"LastModifiedDateCondition": ubx.FieldSpec{
-			WireName: "last_modified_date_condition",
-			Kind: "object",
-			Fields: Dataset_PathOptions_LastModifiedDateConditionFields,
-		},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "list",
-			Fields: Dataset_PathOptions_ParametersFields,
-		},
-	}
+	"FilesLimit": ubx.FieldSpec{
+		WireName: "files_limit",
+		Kind:     "object",
+		Fields:   Dataset_PathOptions_FilesLimitFields,
+	},
+	"LastModifiedDateCondition": ubx.FieldSpec{
+		WireName: "last_modified_date_condition",
+		Kind:     "object",
+		Fields:   Dataset_PathOptions_LastModifiedDateConditionFields,
+	},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "list",
+		Fields:   Dataset_PathOptions_ParametersFields,
+	},
+}
 
 var Dataset_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DatasetConfig struct {
 	// Dataset format
@@ -350,25 +350,25 @@ var Dataset = ubx.ResourceBinding{
 		"Format": ubx.FieldSpec{WireName: "format"},
 		"FormatOptions": ubx.FieldSpec{
 			WireName: "format_options",
-			Kind: "object",
-			Fields: Dataset_FormatOptionsFields,
+			Kind:     "object",
+			Fields:   Dataset_FormatOptionsFields,
 		},
 		"Input": ubx.FieldSpec{
 			WireName: "input",
-			Kind: "object",
-			Fields: Dataset_InputFields,
+			Kind:     "object",
+			Fields:   Dataset_InputFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PathOptions": ubx.FieldSpec{
 			WireName: "path_options",
-			Kind: "object",
-			Fields: Dataset_PathOptionsFields,
+			Kind:     "object",
+			Fields:   Dataset_PathOptionsFields,
 		},
 		"Source": ubx.FieldSpec{WireName: "source"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dataset_TagsFields,
+			Kind:     "list",
+			Fields:   Dataset_TagsFields,
 		},
 	},
 }

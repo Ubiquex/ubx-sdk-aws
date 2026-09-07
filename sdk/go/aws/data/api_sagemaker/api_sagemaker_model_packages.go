@@ -4,63 +4,63 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerModelPackages_ModelPackageSummaryList_ModelLifeCycle struct {
-	Stage any
+	Stage            any
 	StageDescription any
-	StageStatus any
+	StageStatus      any
 }
 
 type ApiSagemakerModelPackages_ModelPackageSummaryList struct {
-	CreationTime any
-	ModelApprovalStatus any
-	ModelLifeCycle any
-	ModelPackageArn any
-	ModelPackageDescription any
-	ModelPackageGroupName any
-	ModelPackageName any
+	CreationTime                 any
+	ModelApprovalStatus          any
+	ModelLifeCycle               any
+	ModelPackageArn              any
+	ModelPackageDescription      any
+	ModelPackageGroupName        any
+	ModelPackageName             any
 	ModelPackageRegistrationType any
-	ModelPackageStatus any
-	ModelPackageVersion any
+	ModelPackageStatus           any
+	ModelPackageVersion          any
 }
 
 type ApiSagemakerModelPackagesConfig struct {
-	CreationTimeAfter any
-	CreationTimeBefore any
-	MaxResults any
-	ModelApprovalStatus any
+	CreationTimeAfter     any
+	CreationTimeBefore    any
+	MaxResults            any
+	ModelApprovalStatus   any
 	ModelPackageGroupName any
-	ModelPackageType any
-	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
+	ModelPackageType      any
+	NameContains          any
+	NextToken             any
+	SortBy                any
+	SortOrder             any
 }
 
 type ApiSagemakerModelPackagesAttrs struct {
-	CreationTimeAfter any
-	CreationTimeBefore any
-	MaxResults any
-	ModelApprovalStatus any
-	ModelPackageGroupName any
+	CreationTimeAfter       any
+	CreationTimeBefore      any
+	MaxResults              any
+	ModelApprovalStatus     any
+	ModelPackageGroupName   any
 	ModelPackageSummaryList any
-	ModelPackageType any
-	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
+	ModelPackageType        any
+	NameContains            any
+	NextToken               any
+	SortBy                  any
+	SortOrder               any
 }
 
 var ApiSagemakerModelPackages = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_model_packages",
 	Fields: ubx.FieldMap{
-		"CreationTimeAfter": ubx.FieldSpec{WireName: "creation_time_after"},
-		"CreationTimeBefore": ubx.FieldSpec{WireName: "creation_time_before"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"ModelApprovalStatus": ubx.FieldSpec{WireName: "model_approval_status"},
+		"CreationTimeAfter":     ubx.FieldSpec{WireName: "creation_time_after"},
+		"CreationTimeBefore":    ubx.FieldSpec{WireName: "creation_time_before"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"ModelApprovalStatus":   ubx.FieldSpec{WireName: "model_approval_status"},
 		"ModelPackageGroupName": ubx.FieldSpec{WireName: "model_package_group_name"},
-		"ModelPackageType": ubx.FieldSpec{WireName: "model_package_type"},
-		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"ModelPackageType":      ubx.FieldSpec{WireName: "model_package_type"},
+		"NameContains":          ubx.FieldSpec{WireName: "name_contains"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":                ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":             ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

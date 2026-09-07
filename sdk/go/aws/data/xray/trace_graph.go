@@ -9,15 +9,15 @@ type TraceGraph_Services_DurationHistogram struct {
 }
 
 type TraceGraph_Services_Edges_Aliases struct {
-	Name any
+	Name  any
 	Names any
-	Type any
+	Type  any
 }
 
 type TraceGraph_Services_Edges_SummaryStatistics_ErrorStatistics struct {
-	OtherCount any
+	OtherCount    any
 	ThrottleCount any
-	TotalCount any
+	TotalCount    any
 }
 
 type TraceGraph_Services_Edges_SummaryStatistics_FaultStatistics struct {
@@ -26,55 +26,55 @@ type TraceGraph_Services_Edges_SummaryStatistics_FaultStatistics struct {
 }
 
 type TraceGraph_Services_Edges_SummaryStatistics struct {
-	ErrorStatistics any
-	FaultStatistics any
-	OkCount any
-	TotalCount any
+	ErrorStatistics   any
+	FaultStatistics   any
+	OkCount           any
+	TotalCount        any
 	TotalResponseTime any
 }
 
 type TraceGraph_Services_Edges struct {
-	Aliases any
-	EdgeType any
-	EndTime any
+	Aliases                   any
+	EdgeType                  any
+	EndTime                   any
 	ReceivedEventAgeHistogram any
-	ReferenceId any
-	ResponseTimeHistogram any
-	StartTime any
-	SummaryStatistics any
+	ReferenceId               any
+	ResponseTimeHistogram     any
+	StartTime                 any
+	SummaryStatistics         any
 }
 
 type TraceGraph_Services struct {
-	AccountId any
-	DurationHistogram any
-	Edges any
-	EndTime any
-	Name any
-	Names any
-	ReferenceId any
+	AccountId             any
+	DurationHistogram     any
+	Edges                 any
+	EndTime               any
+	Name                  any
+	Names                 any
+	ReferenceId           any
 	ResponseTimeHistogram any
-	Root any
-	StartTime any
-	State any
-	SummaryStatistics any
-	Type any
+	Root                  any
+	StartTime             any
+	State                 any
+	SummaryStatistics     any
+	Type                  any
 }
 
 type TraceGraphConfig struct {
 	NextToken any
-	TraceIds any
+	TraceIds  any
 }
 
 type TraceGraphAttrs struct {
 	NextToken any
-	Services any
-	TraceIds any
+	Services  any
+	TraceIds  any
 }
 
 var TraceGraph = ubx.DataSourceBinding{
 	WireType: "aws_xray_trace_graph",
 	Fields: ubx.FieldMap{
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"TraceIds": ubx.FieldSpec{WireName: "trace_ids"},
+		"TraceIds":  ubx.FieldSpec{WireName: "trace_ids"},
 	},
 }

@@ -4,37 +4,37 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackupAccessPointsByResource_BackupAccessPoints struct {
-	AccessPointArn any
+	AccessPointArn      any
 	AccessPointMetadata any
-	BackupVaultArn any
-	BackupVaultName any
-	CreationTime any
-	Name any
-	RecoveryPointArn any
-	ResourceArn any
-	ResourceType any
-	Status any
-	StatusMessage any
+	BackupVaultArn      any
+	BackupVaultName     any
+	CreationTime        any
+	Name                any
+	RecoveryPointArn    any
+	ResourceArn         any
+	ResourceType        any
+	Status              any
+	StatusMessage       any
 }
 
 type BackupAccessPointsByResourceConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	ResourceArn any
 }
 
 type BackupAccessPointsByResourceAttrs struct {
 	BackupAccessPoints any
-	MaxResults any
-	NextToken any
-	ResourceArn any
+	MaxResults         any
+	NextToken          any
+	ResourceArn        any
 }
 
 var BackupAccessPointsByResource = ubx.DataSourceBinding{
 	WireType: "aws_backup_backup_access_points_by_resource",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

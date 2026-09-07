@@ -4,40 +4,40 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Certificates_Certificates struct {
-	CertificateArn any
+	CertificateArn          any
 	CertificateCreationDate any
-	CertificateIdentifier any
-	CertificateOwner any
-	CertificatePem any
-	CertificateWallet any
-	KeyLength any
-	KmsKeyId any
-	SigningAlgorithm any
-	ValidFromDate any
-	ValidToDate any
+	CertificateIdentifier   any
+	CertificateOwner        any
+	CertificatePem          any
+	CertificateWallet       any
+	KeyLength               any
+	KmsKeyId                any
+	SigningAlgorithm        any
+	ValidFromDate           any
+	ValidToDate             any
 }
 
 type Certificates_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var Certificates_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type CertificatesConfig struct {
-	Filters any
-	Marker any
+	Filters    any
+	Marker     any
 	MaxRecords any
 }
 
 type CertificatesAttrs struct {
 	Certificates any
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters      any
+	Marker       any
+	MaxRecords   any
 }
 
 var Certificates = ubx.DataSourceBinding{
@@ -45,10 +45,10 @@ var Certificates = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Certificates_FiltersFields,
+			Kind:     "list",
+			Fields:   Certificates_FiltersFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
 	},
 }

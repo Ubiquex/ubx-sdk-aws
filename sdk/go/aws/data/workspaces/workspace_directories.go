@@ -4,150 +4,150 @@ package workspaces
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkspaceDirectories_Directories_ActiveDirectoryConfig struct {
-	DomainName any
+	DomainName              any
 	ServiceAccountSecretArn any
 }
 
 type WorkspaceDirectories_Directories_CertificateBasedAuthProperties struct {
 	CertificateAuthorityArn any
-	Status any
+	Status                  any
 }
 
 type WorkspaceDirectories_Directories_Idcconfig struct {
 	ApplicationArn any
-	InstanceArn any
+	InstanceArn    any
 }
 
 type WorkspaceDirectories_Directories_MicrosoftEntraConfig struct {
 	ApplicationConfigSecretArn any
-	TenantId any
+	TenantId                   any
 }
 
 type WorkspaceDirectories_Directories_SamlProperties struct {
 	RelayStateParameterName any
-	Status any
-	UserAccessUrl any
+	Status                  any
+	UserAccessUrl           any
 }
 
 type WorkspaceDirectories_Directories_SelfservicePermissions struct {
-	ChangeComputeType any
+	ChangeComputeType  any
 	IncreaseVolumeSize any
-	RebuildWorkspace any
-	RestartWorkspace any
-	SwitchRunningMode any
+	RebuildWorkspace   any
+	RestartWorkspace   any
+	SwitchRunningMode  any
 }
 
 type WorkspaceDirectories_Directories_StreamingProperties_GlobalAccelerator struct {
-	Mode any
+	Mode              any
 	PreferredProtocol any
 }
 
 type WorkspaceDirectories_Directories_StreamingProperties_StorageConnectors struct {
 	ConnectorType any
-	Status any
+	Status        any
 }
 
 type WorkspaceDirectories_Directories_StreamingProperties_UserSettings struct {
-	Action any
+	Action        any
 	MaximumLength any
-	Permission any
+	Permission    any
 }
 
 type WorkspaceDirectories_Directories_StreamingProperties struct {
-	GlobalAccelerator any
-	StorageConnectors any
+	GlobalAccelerator                    any
+	StorageConnectors                    any
 	StreamingExperiencePreferredProtocol any
-	UserSettings any
+	UserSettings                         any
 }
 
 type WorkspaceDirectories_Directories_WorkspaceAccessProperties_AccessEndpointConfig_AccessEndpoints struct {
 	AccessEndpointType any
-	VpcEndpointId any
+	VpcEndpointId      any
 }
 
 type WorkspaceDirectories_Directories_WorkspaceAccessProperties_AccessEndpointConfig struct {
-	AccessEndpoints any
+	AccessEndpoints           any
 	InternetFallbackProtocols any
 }
 
 type WorkspaceDirectories_Directories_WorkspaceAccessProperties struct {
-	AccessEndpointConfig any
-	DeviceTypeAndroid any
-	DeviceTypeChromeOs any
-	DeviceTypeIos any
-	DeviceTypeLinux any
-	DeviceTypeOsx any
-	DeviceTypeWeb any
-	DeviceTypeWindows any
+	AccessEndpointConfig           any
+	DeviceTypeAndroid              any
+	DeviceTypeChromeOs             any
+	DeviceTypeIos                  any
+	DeviceTypeLinux                any
+	DeviceTypeOsx                  any
+	DeviceTypeWeb                  any
+	DeviceTypeWindows              any
 	DeviceTypeWorkSpacesThinClient any
-	DeviceTypeZeroClient any
+	DeviceTypeZeroClient           any
 }
 
 type WorkspaceDirectories_Directories_WorkspaceCreationProperties struct {
-	CustomSecurityGroupId any
-	DefaultOu any
-	EnableInternetAccess any
-	EnableMaintenanceMode any
-	InstanceIamRoleArn any
+	CustomSecurityGroupId           any
+	DefaultOu                       any
+	EnableInternetAccess            any
+	EnableMaintenanceMode           any
+	InstanceIamRoleArn              any
 	UserEnabledAsLocalAdministrator any
 }
 
 type WorkspaceDirectories_Directories struct {
-	ActiveDirectoryConfig any
-	Alias any
+	ActiveDirectoryConfig          any
+	Alias                          any
 	CertificateBasedAuthProperties any
-	CustomerUserName any
-	DirectoryId any
-	DirectoryName any
-	DirectoryType any
-	DnsIpAddresses any
-	DnsIpv6Addresses any
-	EndpointEncryptionMode any
-	ErrorMessage any
-	IamRoleId any
-	Idcconfig any
-	IpGroupIds any
-	MicrosoftEntraConfig any
-	RegistrationCode any
-	SamlProperties any
-	SelfservicePermissions any
-	State any
-	StreamingProperties any
-	SubnetIds any
-	Tenancy any
-	UserIdentityType any
-	WorkspaceAccessProperties any
-	WorkspaceCreationProperties any
-	WorkspaceDirectoryDescription any
-	WorkspaceDirectoryName any
-	WorkspaceSecurityGroupId any
-	WorkspaceType any
+	CustomerUserName               any
+	DirectoryId                    any
+	DirectoryName                  any
+	DirectoryType                  any
+	DnsIpAddresses                 any
+	DnsIpv6Addresses               any
+	EndpointEncryptionMode         any
+	ErrorMessage                   any
+	IamRoleId                      any
+	Idcconfig                      any
+	IpGroupIds                     any
+	MicrosoftEntraConfig           any
+	RegistrationCode               any
+	SamlProperties                 any
+	SelfservicePermissions         any
+	State                          any
+	StreamingProperties            any
+	SubnetIds                      any
+	Tenancy                        any
+	UserIdentityType               any
+	WorkspaceAccessProperties      any
+	WorkspaceCreationProperties    any
+	WorkspaceDirectoryDescription  any
+	WorkspaceDirectoryName         any
+	WorkspaceSecurityGroupId       any
+	WorkspaceType                  any
 }
 
 type WorkspaceDirectories_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var WorkspaceDirectories_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type WorkspaceDirectoriesConfig struct {
-	DirectoryIds any
-	Filters any
-	Limit any
-	NextToken any
+	DirectoryIds            any
+	Filters                 any
+	Limit                   any
+	NextToken               any
 	WorkspaceDirectoryNames any
 }
 
 type WorkspaceDirectoriesAttrs struct {
-	Directories any
-	DirectoryIds any
-	Filters any
-	Limit any
-	NextToken any
+	Directories             any
+	DirectoryIds            any
+	Filters                 any
+	Limit                   any
+	NextToken               any
 	WorkspaceDirectoryNames any
 }
 
@@ -157,11 +157,11 @@ var WorkspaceDirectories = ubx.DataSourceBinding{
 		"DirectoryIds": ubx.FieldSpec{WireName: "directory_ids"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: WorkspaceDirectories_FiltersFields,
+			Kind:     "list",
+			Fields:   WorkspaceDirectories_FiltersFields,
 		},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":                   ubx.FieldSpec{WireName: "limit"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
 		"WorkspaceDirectoryNames": ubx.FieldSpec{WireName: "workspace_directory_names"},
 	},
 }

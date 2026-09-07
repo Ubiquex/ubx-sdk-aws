@@ -24,19 +24,19 @@ type Space_Tags struct {
 }
 
 var Space_PermissionsFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-	}
+	"Actions":   ubx.FieldSpec{WireName: "actions"},
+	"Principal": ubx.FieldSpec{WireName: "principal"},
+}
 
 var Space_ResourcesFields = ubx.FieldMap{
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-	}
+	"ResourceArn":  ubx.FieldSpec{WireName: "resource_arn"},
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+}
 
 var Space_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SpaceConfig struct {
 	// The ID of the Amazon Web Services account where the space is being created.
@@ -84,23 +84,23 @@ var Space = ubx.ResourceBinding{
 	WireType: "aws_quick_sight_space",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"Permissions": ubx.FieldSpec{
 			WireName: "permissions",
-			Kind: "list",
-			Fields: Space_PermissionsFields,
+			Kind:     "list",
+			Fields:   Space_PermissionsFields,
 		},
 		"Resources": ubx.FieldSpec{
 			WireName: "resources",
-			Kind: "list",
-			Fields: Space_ResourcesFields,
+			Kind:     "list",
+			Fields:   Space_ResourcesFields,
 		},
 		"SpaceId": ubx.FieldSpec{WireName: "space_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Space_TagsFields,
+			Kind:     "list",
+			Fields:   Space_TagsFields,
 		},
 	},
 }

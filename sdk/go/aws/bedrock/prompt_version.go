@@ -31,7 +31,7 @@ type PromptVersion_Variants_InferenceConfiguration struct {
 
 type PromptVersion_Variants_Metadata struct {
 	// The key of a metadata entry for a prompt variant, representing a user-defined string key in the variant's metadata map. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -182,7 +182,7 @@ var PromptVersion = ubx.ResourceBinding{
 	WireType: "aws_bedrock_prompt_version",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"PromptArn": ubx.FieldSpec{WireName: "prompt_arn"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"PromptArn":   ubx.FieldSpec{WireName: "prompt_arn"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 	},
 }

@@ -4,32 +4,32 @@ package managedblockchain
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Accessors_Accessors struct {
-	Arn any
+	Arn          any
 	CreationDate any
-	Id any
-	NetworkType any
-	Status any
-	Type any
+	Id           any
+	NetworkType  any
+	Status       any
+	Type         any
 }
 
 type AccessorsConfig struct {
-	MaxResults any
+	MaxResults  any
 	NetworkType any
-	NextToken any
+	NextToken   any
 }
 
 type AccessorsAttrs struct {
-	Accessors any
-	MaxResults any
+	Accessors   any
+	MaxResults  any
 	NetworkType any
-	NextToken any
+	NextToken   any
 }
 
 var Accessors = ubx.DataSourceBinding{
 	WireType: "aws_managedblockchain_accessors",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
 		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

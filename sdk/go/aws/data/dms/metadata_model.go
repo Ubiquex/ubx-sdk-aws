@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetadataModel_TargetMetadataModels struct {
 	MetadataModelName any
-	SelectionRules any
+	SelectionRules    any
 }
 
 type MetadataModelConfig struct {
 	MigrationProjectIdentifier any
-	Origin any
-	SelectionRules any
+	Origin                     any
+	SelectionRules             any
 }
 
 type MetadataModelAttrs struct {
-	Definition any
-	MetadataModelName any
-	MetadataModelType any
+	Definition                 any
+	MetadataModelName          any
+	MetadataModelType          any
 	MigrationProjectIdentifier any
-	Origin any
-	SelectionRules any
-	TargetMetadataModels any
+	Origin                     any
+	SelectionRules             any
+	TargetMetadataModels       any
 }
 
 var MetadataModel = ubx.DataSourceBinding{
 	WireType: "aws_dms_metadata_model",
 	Fields: ubx.FieldMap{
 		"MigrationProjectIdentifier": ubx.FieldSpec{WireName: "migration_project_identifier"},
-		"Origin": ubx.FieldSpec{WireName: "origin"},
-		"SelectionRules": ubx.FieldSpec{WireName: "selection_rules"},
+		"Origin":                     ubx.FieldSpec{WireName: "origin"},
+		"SelectionRules":             ubx.FieldSpec{WireName: "selection_rules"},
 	},
 }

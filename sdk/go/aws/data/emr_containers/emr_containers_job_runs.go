@@ -9,55 +9,55 @@ type EmrContainersJobRuns_JobRuns_ConfigurationOverrides_ApplicationConfiguratio
 type EmrContainersJobRuns_JobRuns_ConfigurationOverrides_ApplicationConfiguration struct {
 	Classification any
 	Configurations any
-	Properties any
+	Properties     any
 }
 
 type EmrContainersJobRuns_JobRuns_ConfigurationOverrides_MonitoringConfiguration_CloudWatchMonitoringConfiguration struct {
-	LogGroupName any
+	LogGroupName        any
 	LogStreamNamePrefix any
 }
 
 type EmrContainersJobRuns_JobRuns_ConfigurationOverrides_MonitoringConfiguration_ContainerLogRotationConfiguration struct {
 	MaxFilesToKeep any
-	RotationSize any
+	RotationSize   any
 }
 
 type EmrContainersJobRuns_JobRuns_ConfigurationOverrides_MonitoringConfiguration_ManagedLogs struct {
 	AllowAwstoRetainLogs any
-	EncryptionKeyArn any
+	EncryptionKeyArn     any
 }
 
 type EmrContainersJobRuns_JobRuns_ConfigurationOverrides_MonitoringConfiguration_S3MonitoringConfiguration struct {
 	EncryptionKeyArn any
-	LogUri any
+	LogUri           any
 }
 
 type EmrContainersJobRuns_JobRuns_ConfigurationOverrides_MonitoringConfiguration struct {
 	CloudWatchMonitoringConfiguration any
 	ContainerLogRotationConfiguration any
-	ManagedLogs any
-	PersistentAppUi any
-	S3MonitoringConfiguration any
+	ManagedLogs                       any
+	PersistentAppUi                   any
+	S3MonitoringConfiguration         any
 }
 
 type EmrContainersJobRuns_JobRuns_ConfigurationOverrides struct {
 	ApplicationConfiguration any
-	MonitoringConfiguration any
+	MonitoringConfiguration  any
 }
 
 type EmrContainersJobRuns_JobRuns_JobDriver_SparkSqlJobDriver struct {
-	EntryPoint any
+	EntryPoint         any
 	SparkSqlParameters any
 }
 
 type EmrContainersJobRuns_JobRuns_JobDriver_SparkSubmitJobDriver struct {
-	EntryPoint any
-	EntryPointArguments any
+	EntryPoint            any
+	EntryPointArguments   any
 	SparkSubmitParameters any
 }
 
 type EmrContainersJobRuns_JobRuns_JobDriver struct {
-	SparkSqlJobDriver any
+	SparkSqlJobDriver    any
 	SparkSubmitJobDriver any
 }
 
@@ -70,56 +70,56 @@ type EmrContainersJobRuns_JobRuns_RetryPolicyExecution struct {
 }
 
 type EmrContainersJobRuns_JobRuns struct {
-	Arn any
-	ClientToken any
-	ConfigurationOverrides any
-	CreatedAt any
-	CreatedBy any
-	ExecutionRoleArn any
-	FailureReason any
-	FinishedAt any
-	Id any
-	JobDriver any
-	Name any
-	ReleaseLabel any
+	Arn                      any
+	ClientToken              any
+	ConfigurationOverrides   any
+	CreatedAt                any
+	CreatedBy                any
+	ExecutionRoleArn         any
+	FailureReason            any
+	FinishedAt               any
+	Id                       any
+	JobDriver                any
+	Name                     any
+	ReleaseLabel             any
 	RetryPolicyConfiguration any
-	RetryPolicyExecution any
-	State any
-	StateDetails any
-	Tags any
-	VirtualClusterId any
+	RetryPolicyExecution     any
+	State                    any
+	StateDetails             any
+	Tags                     any
+	VirtualClusterId         any
 }
 
 type EmrContainersJobRunsConfig struct {
-	CreatedAfter any
-	CreatedBefore any
-	MaxResults any
-	Name any
-	NextToken any
-	States any
+	CreatedAfter     any
+	CreatedBefore    any
+	MaxResults       any
+	Name             any
+	NextToken        any
+	States           any
 	VirtualClusterId any
 }
 
 type EmrContainersJobRunsAttrs struct {
-	CreatedAfter any
-	CreatedBefore any
-	JobRuns any
-	MaxResults any
-	Name any
-	NextToken any
-	States any
+	CreatedAfter     any
+	CreatedBefore    any
+	JobRuns          any
+	MaxResults       any
+	Name             any
+	NextToken        any
+	States           any
 	VirtualClusterId any
 }
 
 var EmrContainersJobRuns = ubx.DataSourceBinding{
 	WireType: "aws_emr_containers_job_runs",
 	Fields: ubx.FieldMap{
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
-		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"States": ubx.FieldSpec{WireName: "states"},
+		"CreatedAfter":     ubx.FieldSpec{WireName: "created_after"},
+		"CreatedBefore":    ubx.FieldSpec{WireName: "created_before"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"States":           ubx.FieldSpec{WireName: "states"},
 		"VirtualClusterId": ubx.FieldSpec{WireName: "virtual_cluster_id"},
 	},
 }

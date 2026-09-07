@@ -8,7 +8,7 @@ type DefaultPatchBaselineConfig struct {
 }
 
 type DefaultPatchBaselineAttrs struct {
-	BaselineId any
+	BaselineId      any
 	OperatingSystem any
 }
 

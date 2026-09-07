@@ -5,17 +5,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BedrockAgentcoreResourcePaymentToken_PaymentTokenRequest_CoinbaseCdpTokenRequest struct {
 	IncludeWalletAuthToken any
-	RequestBody any
-	RequestHost any
-	RequestMethod any
-	RequestPath any
+	RequestBody            any
+	RequestHost            any
+	RequestMethod          any
+	RequestPath            any
 }
 
 type BedrockAgentcoreResourcePaymentToken_PaymentTokenRequest_StripePrivyTokenRequest struct {
 	IncludeAuthorizationSignature any
-	RequestBody any
-	RequestHost any
-	RequestPath any
+	RequestBody                   any
+	RequestHost                   any
+	RequestPath                   any
 }
 
 type BedrockAgentcoreResourcePaymentToken_PaymentTokenRequest struct {
@@ -24,15 +24,15 @@ type BedrockAgentcoreResourcePaymentToken_PaymentTokenRequest struct {
 }
 
 type BedrockAgentcoreResourcePaymentToken_PaymentTokenResponse_CoinbaseCdpTokenResponse struct {
-	BearerToken any
+	BearerToken     any
 	WalletAuthToken any
 }
 
 type BedrockAgentcoreResourcePaymentToken_PaymentTokenResponse_StripePrivyTokenResponse struct {
-	AppId any
+	AppId                  any
 	AuthorizationSignature any
-	BasicAuthToken any
-	RequestExpiry any
+	BasicAuthToken         any
+	RequestExpiry          any
 }
 
 type BedrockAgentcoreResourcePaymentToken_PaymentTokenResponse struct {
@@ -41,47 +41,47 @@ type BedrockAgentcoreResourcePaymentToken_PaymentTokenResponse struct {
 }
 
 var BedrockAgentcoreResourcePaymentToken_PaymentTokenRequest_CoinbaseCdpTokenRequestFields = ubx.FieldMap{
-		"IncludeWalletAuthToken": ubx.FieldSpec{WireName: "include_wallet_auth_token"},
-		"RequestBody": ubx.FieldSpec{WireName: "request_body"},
-		"RequestHost": ubx.FieldSpec{WireName: "request_host"},
-		"RequestMethod": ubx.FieldSpec{WireName: "request_method"},
-		"RequestPath": ubx.FieldSpec{WireName: "request_path"},
-	}
+	"IncludeWalletAuthToken": ubx.FieldSpec{WireName: "include_wallet_auth_token"},
+	"RequestBody":            ubx.FieldSpec{WireName: "request_body"},
+	"RequestHost":            ubx.FieldSpec{WireName: "request_host"},
+	"RequestMethod":          ubx.FieldSpec{WireName: "request_method"},
+	"RequestPath":            ubx.FieldSpec{WireName: "request_path"},
+}
 
 var BedrockAgentcoreResourcePaymentToken_PaymentTokenRequest_StripePrivyTokenRequestFields = ubx.FieldMap{
-		"IncludeAuthorizationSignature": ubx.FieldSpec{WireName: "include_authorization_signature"},
-		"RequestBody": ubx.FieldSpec{WireName: "request_body"},
-		"RequestHost": ubx.FieldSpec{WireName: "request_host"},
-		"RequestPath": ubx.FieldSpec{WireName: "request_path"},
-	}
+	"IncludeAuthorizationSignature": ubx.FieldSpec{WireName: "include_authorization_signature"},
+	"RequestBody":                   ubx.FieldSpec{WireName: "request_body"},
+	"RequestHost":                   ubx.FieldSpec{WireName: "request_host"},
+	"RequestPath":                   ubx.FieldSpec{WireName: "request_path"},
+}
 
 var BedrockAgentcoreResourcePaymentToken_PaymentTokenRequestFields = ubx.FieldMap{
-		"CoinbaseCdpTokenRequest": ubx.FieldSpec{
-			WireName: "coinbase_cdp_token_request",
-			Kind: "object",
-			Fields: BedrockAgentcoreResourcePaymentToken_PaymentTokenRequest_CoinbaseCdpTokenRequestFields,
-		},
-		"StripePrivyTokenRequest": ubx.FieldSpec{
-			WireName: "stripe_privy_token_request",
-			Kind: "object",
-			Fields: BedrockAgentcoreResourcePaymentToken_PaymentTokenRequest_StripePrivyTokenRequestFields,
-		},
-	}
+	"CoinbaseCdpTokenRequest": ubx.FieldSpec{
+		WireName: "coinbase_cdp_token_request",
+		Kind:     "object",
+		Fields:   BedrockAgentcoreResourcePaymentToken_PaymentTokenRequest_CoinbaseCdpTokenRequestFields,
+	},
+	"StripePrivyTokenRequest": ubx.FieldSpec{
+		WireName: "stripe_privy_token_request",
+		Kind:     "object",
+		Fields:   BedrockAgentcoreResourcePaymentToken_PaymentTokenRequest_StripePrivyTokenRequestFields,
+	},
+}
 
 type BedrockAgentcoreResourcePaymentTokenConfig struct {
 	// <p>Vendor-specific token request configuration.</p>
-	PaymentTokenRequest any
+	PaymentTokenRequest            any
 	ResourceCredentialProviderName any
-	WorkloadIdentityToken any
+	WorkloadIdentityToken          any
 }
 
 type BedrockAgentcoreResourcePaymentTokenAttrs struct {
 	// <p>Vendor-specific token request configuration.</p>
 	PaymentTokenRequest any
 	// <p>Vendor-specific token response configuration.</p>
-	PaymentTokenResponse any
+	PaymentTokenResponse           any
 	ResourceCredentialProviderName any
-	WorkloadIdentityToken any
+	WorkloadIdentityToken          any
 }
 
 var BedrockAgentcoreResourcePaymentToken = ubx.DataSourceBinding{
@@ -89,10 +89,10 @@ var BedrockAgentcoreResourcePaymentToken = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"PaymentTokenRequest": ubx.FieldSpec{
 			WireName: "payment_token_request",
-			Kind: "object",
-			Fields: BedrockAgentcoreResourcePaymentToken_PaymentTokenRequestFields,
+			Kind:     "object",
+			Fields:   BedrockAgentcoreResourcePaymentToken_PaymentTokenRequestFields,
 		},
 		"ResourceCredentialProviderName": ubx.FieldSpec{WireName: "resource_credential_provider_name"},
-		"WorkloadIdentityToken": ubx.FieldSpec{WireName: "workload_identity_token"},
+		"WorkloadIdentityToken":          ubx.FieldSpec{WireName: "workload_identity_token"},
 	},
 }

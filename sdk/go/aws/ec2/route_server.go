@@ -4,14 +4,14 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RouteServer_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var RouteServer_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RouteServerConfig struct {
 	// The Amazon-side ASN of the Route Server.
@@ -46,14 +46,14 @@ type RouteServerAttrs struct {
 var RouteServer = ubx.ResourceBinding{
 	WireType: "aws_ec2_route_server",
 	Fields: ubx.FieldMap{
-		"AmazonSideAsn": ubx.FieldSpec{WireName: "amazon_side_asn"},
-		"PersistRoutes": ubx.FieldSpec{WireName: "persist_routes"},
-		"PersistRoutesDuration": ubx.FieldSpec{WireName: "persist_routes_duration"},
+		"AmazonSideAsn":           ubx.FieldSpec{WireName: "amazon_side_asn"},
+		"PersistRoutes":           ubx.FieldSpec{WireName: "persist_routes"},
+		"PersistRoutesDuration":   ubx.FieldSpec{WireName: "persist_routes_duration"},
 		"SnsNotificationsEnabled": ubx.FieldSpec{WireName: "sns_notifications_enabled"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RouteServer_TagsFields,
+			Kind:     "list",
+			Fields:   RouteServer_TagsFields,
 		},
 	},
 }

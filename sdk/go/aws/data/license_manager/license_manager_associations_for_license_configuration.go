@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseManagerAssociationsForLicenseConfiguration_LicenseConfigurationAssociations struct {
 	AmiAssociationScope any
-	AssociationTime any
-	ResourceArn any
-	ResourceOwnerId any
-	ResourceType any
+	AssociationTime     any
+	ResourceArn         any
+	ResourceOwnerId     any
+	ResourceType        any
 }
 
 type LicenseManagerAssociationsForLicenseConfigurationConfig struct {
 	LicenseConfigurationArn any
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 }
 
 type LicenseManagerAssociationsForLicenseConfigurationAttrs struct {
-	LicenseConfigurationArn any
+	LicenseConfigurationArn          any
 	LicenseConfigurationAssociations any
-	MaxResults any
-	NextToken any
+	MaxResults                       any
+	NextToken                        any
 }
 
 var LicenseManagerAssociationsForLicenseConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_license_manager_associations_for_license_configuration",
 	Fields: ubx.FieldMap{
 		"LicenseConfigurationArn": ubx.FieldSpec{WireName: "license_configuration_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
 	},
 }

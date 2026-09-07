@@ -18,18 +18,18 @@ type RealtimeLogConfig_EndPoints struct {
 }
 
 var RealtimeLogConfig_EndPoints_KinesisStreamConfigFields = ubx.FieldMap{
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
-	}
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+	"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
+}
 
 var RealtimeLogConfig_EndPointsFields = ubx.FieldMap{
-		"KinesisStreamConfig": ubx.FieldSpec{
-			WireName: "kinesis_stream_config",
-			Kind: "object",
-			Fields: RealtimeLogConfig_EndPoints_KinesisStreamConfigFields,
-		},
-		"StreamType": ubx.FieldSpec{WireName: "stream_type"},
-	}
+	"KinesisStreamConfig": ubx.FieldSpec{
+		WireName: "kinesis_stream_config",
+		Kind:     "object",
+		Fields:   RealtimeLogConfig_EndPoints_KinesisStreamConfigFields,
+	},
+	"StreamType": ubx.FieldSpec{WireName: "stream_type"},
+}
 
 type RealtimeLogConfigConfig struct {
 	// Contains information about the Amazon Kinesis data stream where you are sending real-time log data for this real-time log configuration.
@@ -60,11 +60,11 @@ var RealtimeLogConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EndPoints": ubx.FieldSpec{
 			WireName: "end_points",
-			Kind: "list",
-			Fields: RealtimeLogConfig_EndPointsFields,
+			Kind:     "list",
+			Fields:   RealtimeLogConfig_EndPointsFields,
 		},
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Fields":       ubx.FieldSpec{WireName: "fields"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"SamplingRate": ubx.FieldSpec{WireName: "sampling_rate"},
 	},
 }

@@ -4,10 +4,10 @@ package appsync
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiAssociation_ApiAssociation struct {
-	ApiId any
+	ApiId             any
 	AssociationStatus any
-	DeploymentDetail any
-	DomainName any
+	DeploymentDetail  any
+	DomainName        any
 }
 
 type ApiAssociationConfig struct {
@@ -17,7 +17,7 @@ type ApiAssociationConfig struct {
 type ApiAssociationAttrs struct {
 	// <p>Describes an <code>ApiAssociation</code> object.</p>
 	ApiAssociation any
-	DomainName any
+	DomainName     any
 }
 
 var ApiAssociation = ubx.DataSourceBinding{

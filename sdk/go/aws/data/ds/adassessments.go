@@ -4,34 +4,34 @@ package ds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Adassessments_Assessments struct {
-	AssessmentId any
-	CustomerDnsIps any
-	DirectoryId any
-	DnsName any
+	AssessmentId       any
+	CustomerDnsIps     any
+	DirectoryId        any
+	DnsName            any
 	LastUpdateDateTime any
-	ReportType any
-	StartTime any
-	Status any
+	ReportType         any
+	StartTime          any
+	Status             any
 }
 
 type AdassessmentsConfig struct {
 	DirectoryId any
-	Limit any
-	NextToken any
+	Limit       any
+	NextToken   any
 }
 
 type AdassessmentsAttrs struct {
 	Assessments any
 	DirectoryId any
-	Limit any
-	NextToken any
+	Limit       any
+	NextToken   any
 }
 
 var Adassessments = ubx.DataSourceBinding{
 	WireType: "aws_ds_adassessments",
 	Fields: ubx.FieldMap{
 		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":       ubx.FieldSpec{WireName: "limit"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,40 +4,40 @@ package agreement_marketplace
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgreementMarketplaceAgreementCharges_Items struct {
-	AgreementId any
-	AgreementType any
-	Amount any
-	CurrencyCode any
-	Id any
+	AgreementId            any
+	AgreementType          any
+	Amount                 any
+	CurrencyCode           any
+	Id                     any
 	PurchaseOrderReference any
-	Revision any
-	Time any
+	Revision               any
+	Time                   any
 }
 
 type AgreementMarketplaceAgreementChargesConfig struct {
-	AgreementId any
+	AgreementId   any
 	AgreementType any
-	Catalog any
-	MaxResults any
-	NextToken any
+	Catalog       any
+	MaxResults    any
+	NextToken     any
 }
 
 type AgreementMarketplaceAgreementChargesAttrs struct {
-	AgreementId any
+	AgreementId   any
 	AgreementType any
-	Catalog any
-	Items any
-	MaxResults any
-	NextToken any
+	Catalog       any
+	Items         any
+	MaxResults    any
+	NextToken     any
 }
 
 var AgreementMarketplaceAgreementCharges = ubx.DataSourceBinding{
 	WireType: "aws_agreement_marketplace_agreement_charges",
 	Fields: ubx.FieldMap{
-		"AgreementId": ubx.FieldSpec{WireName: "agreement_id"},
+		"AgreementId":   ubx.FieldSpec{WireName: "agreement_id"},
 		"AgreementType": ubx.FieldSpec{WireName: "agreement_type"},
-		"Catalog": ubx.FieldSpec{WireName: "catalog"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Catalog":       ubx.FieldSpec{WireName: "catalog"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

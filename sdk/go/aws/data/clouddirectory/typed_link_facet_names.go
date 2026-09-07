@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TypedLinkFacetNamesConfig struct {
 	MaxResults any
-	NextToken any
-	SchemaArn any
+	NextToken  any
+	SchemaArn  any
 }
 
 type TypedLinkFacetNamesAttrs struct {
 	FacetNames any
 	MaxResults any
-	NextToken any
-	SchemaArn any
+	NextToken  any
+	SchemaArn  any
 }
 
 var TypedLinkFacetNames = ubx.DataSourceBinding{
 	WireType: "aws_clouddirectory_typed_link_facet_names",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SchemaArn": ubx.FieldSpec{WireName: "schema_arn"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"SchemaArn":  ubx.FieldSpec{WireName: "schema_arn"},
 	},
 }

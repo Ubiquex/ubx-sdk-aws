@@ -4,43 +4,43 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LocalGateways_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type LocalGateways_LocalGateways_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type LocalGateways_LocalGateways struct {
 	LocalGatewayId any
-	OutpostArn any
-	OwnerId any
-	State any
-	Tags any
+	OutpostArn     any
+	OwnerId        any
+	State          any
+	Tags           any
 }
 
 var LocalGateways_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type LocalGatewaysConfig struct {
-	DryRun any
-	Filters any
+	DryRun          any
+	Filters         any
 	LocalGatewayIds any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 type LocalGatewaysAttrs struct {
-	DryRun any
-	Filters any
+	DryRun          any
+	Filters         any
 	LocalGatewayIds any
-	LocalGateways any
-	MaxResults any
-	NextToken any
+	LocalGateways   any
+	MaxResults      any
+	NextToken       any
 }
 
 var LocalGateways = ubx.DataSourceBinding{
@@ -49,11 +49,11 @@ var LocalGateways = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: LocalGateways_FiltersFields,
+			Kind:     "list",
+			Fields:   LocalGateways_FiltersFields,
 		},
 		"LocalGatewayIds": ubx.FieldSpec{WireName: "local_gateway_ids"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

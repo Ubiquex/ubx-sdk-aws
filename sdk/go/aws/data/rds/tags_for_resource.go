@@ -4,27 +4,27 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type TagsForResource_TagList struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var TagsForResource_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type TagsForResourceConfig struct {
-	Filters any
+	Filters      any
 	ResourceName any
 }
 
 type TagsForResourceAttrs struct {
-	Filters any
+	Filters      any
 	ResourceName any
 	// <p>A list of tags.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>. </p>
 	TagList any
@@ -35,8 +35,8 @@ var TagsForResource = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: TagsForResource_FiltersFields,
+			Kind:     "list",
+			Fields:   TagsForResource_FiltersFields,
 		},
 		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
 	},

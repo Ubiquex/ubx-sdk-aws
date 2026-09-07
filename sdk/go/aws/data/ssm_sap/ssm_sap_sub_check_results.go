@@ -5,29 +5,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmSapSubCheckResults_SubCheckResults struct {
 	Description any
-	Id any
-	Name any
-	References any
+	Id          any
+	Name        any
+	References  any
 }
 
 type SsmSapSubCheckResultsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	OperationId any
 }
 
 type SsmSapSubCheckResultsAttrs struct {
-	MaxResults any
-	NextToken any
-	OperationId any
+	MaxResults      any
+	NextToken       any
+	OperationId     any
 	SubCheckResults any
 }
 
 var SsmSapSubCheckResults = ubx.DataSourceBinding{
 	WireType: "aws_ssm_sap_sub_check_results",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"OperationId": ubx.FieldSpec{WireName: "operation_id"},
 	},
 }

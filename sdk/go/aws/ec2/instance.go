@@ -192,150 +192,150 @@ type Instance_Volumes struct {
 }
 
 var Instance_BlockDeviceMappings_EbsFields = ubx.FieldMap{
-		"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
-		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"SnapshotId": ubx.FieldSpec{WireName: "snapshot_id"},
-		"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
-	}
+	"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
+	"Encrypted":           ubx.FieldSpec{WireName: "encrypted"},
+	"Iops":                ubx.FieldSpec{WireName: "iops"},
+	"KmsKeyId":            ubx.FieldSpec{WireName: "kms_key_id"},
+	"SnapshotId":          ubx.FieldSpec{WireName: "snapshot_id"},
+	"VolumeSize":          ubx.FieldSpec{WireName: "volume_size"},
+	"VolumeType":          ubx.FieldSpec{WireName: "volume_type"},
+}
 
 var Instance_BlockDeviceMappingsFields = ubx.FieldMap{
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"Ebs": ubx.FieldSpec{
-			WireName: "ebs",
-			Kind: "object",
-			Fields: Instance_BlockDeviceMappings_EbsFields,
-		},
-		"NoDevice": ubx.FieldSpec{WireName: "no_device"},
-		"VirtualName": ubx.FieldSpec{WireName: "virtual_name"},
-	}
+	"DeviceName": ubx.FieldSpec{WireName: "device_name"},
+	"Ebs": ubx.FieldSpec{
+		WireName: "ebs",
+		Kind:     "object",
+		Fields:   Instance_BlockDeviceMappings_EbsFields,
+	},
+	"NoDevice":    ubx.FieldSpec{WireName: "no_device"},
+	"VirtualName": ubx.FieldSpec{WireName: "virtual_name"},
+}
 
 var Instance_CpuOptionsFields = ubx.FieldMap{
-		"CoreCount": ubx.FieldSpec{WireName: "core_count"},
-		"ThreadsPerCore": ubx.FieldSpec{WireName: "threads_per_core"},
-	}
+	"CoreCount":      ubx.FieldSpec{WireName: "core_count"},
+	"ThreadsPerCore": ubx.FieldSpec{WireName: "threads_per_core"},
+}
 
 var Instance_CreditSpecificationFields = ubx.FieldMap{
-		"Cpucredits": ubx.FieldSpec{WireName: "cpucredits"},
-	}
+	"Cpucredits": ubx.FieldSpec{WireName: "cpucredits"},
+}
 
 var Instance_ElasticGpuSpecificationsFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Instance_ElasticInferenceAcceleratorsFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Count": ubx.FieldSpec{WireName: "count"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+}
 
 var Instance_EnclaveOptionsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Instance_HibernationOptionsFields = ubx.FieldMap{
-		"Configured": ubx.FieldSpec{WireName: "configured"},
-	}
+	"Configured": ubx.FieldSpec{WireName: "configured"},
+}
 
 var Instance_Ipv6AddressesFields = ubx.FieldMap{
-		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
-	}
+	"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
+}
 
 var Instance_LaunchTemplateFields = ubx.FieldMap{
-		"LaunchTemplateId": ubx.FieldSpec{WireName: "launch_template_id"},
-		"LaunchTemplateName": ubx.FieldSpec{WireName: "launch_template_name"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"LaunchTemplateId":   ubx.FieldSpec{WireName: "launch_template_id"},
+	"LaunchTemplateName": ubx.FieldSpec{WireName: "launch_template_name"},
+	"Version":            ubx.FieldSpec{WireName: "version"},
+}
 
 var Instance_LicenseSpecificationsFields = ubx.FieldMap{
-		"LicenseConfigurationArn": ubx.FieldSpec{WireName: "license_configuration_arn"},
-	}
+	"LicenseConfigurationArn": ubx.FieldSpec{WireName: "license_configuration_arn"},
+}
 
 var Instance_MetadataOptionsFields = ubx.FieldMap{
-		"HttpEndpoint": ubx.FieldSpec{WireName: "http_endpoint"},
-		"HttpProtocolIpv6": ubx.FieldSpec{WireName: "http_protocol_ipv6"},
-		"HttpPutResponseHopLimit": ubx.FieldSpec{WireName: "http_put_response_hop_limit"},
-		"HttpTokens": ubx.FieldSpec{WireName: "http_tokens"},
-		"InstanceMetadataTags": ubx.FieldSpec{WireName: "instance_metadata_tags"},
-	}
+	"HttpEndpoint":            ubx.FieldSpec{WireName: "http_endpoint"},
+	"HttpProtocolIpv6":        ubx.FieldSpec{WireName: "http_protocol_ipv6"},
+	"HttpPutResponseHopLimit": ubx.FieldSpec{WireName: "http_put_response_hop_limit"},
+	"HttpTokens":              ubx.FieldSpec{WireName: "http_tokens"},
+	"InstanceMetadataTags":    ubx.FieldSpec{WireName: "instance_metadata_tags"},
+}
 
 var Instance_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecificationFields = ubx.FieldMap{
-		"EnaSrdUdpEnabled": ubx.FieldSpec{WireName: "ena_srd_udp_enabled"},
-	}
+	"EnaSrdUdpEnabled": ubx.FieldSpec{WireName: "ena_srd_udp_enabled"},
+}
 
 var Instance_NetworkInterfaces_EnaSrdSpecificationFields = ubx.FieldMap{
-		"EnaSrdEnabled": ubx.FieldSpec{WireName: "ena_srd_enabled"},
-		"EnaSrdUdpSpecification": ubx.FieldSpec{
-			WireName: "ena_srd_udp_specification",
-			Kind: "object",
-			Fields: Instance_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecificationFields,
-		},
-	}
+	"EnaSrdEnabled": ubx.FieldSpec{WireName: "ena_srd_enabled"},
+	"EnaSrdUdpSpecification": ubx.FieldSpec{
+		WireName: "ena_srd_udp_specification",
+		Kind:     "object",
+		Fields:   Instance_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecificationFields,
+	},
+}
 
 var Instance_NetworkInterfaces_PrivateIpAddressesFields = ubx.FieldMap{
-		"Primary": ubx.FieldSpec{WireName: "primary"},
-		"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
-	}
+	"Primary":          ubx.FieldSpec{WireName: "primary"},
+	"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
+}
 
 var Instance_NetworkInterfacesFields = ubx.FieldMap{
-		"AssociateCarrierIpAddress": ubx.FieldSpec{WireName: "associate_carrier_ip_address"},
-		"AssociatePublicIpAddress": ubx.FieldSpec{WireName: "associate_public_ip_address"},
-		"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DeviceIndex": ubx.FieldSpec{WireName: "device_index"},
-		"EnaSrdSpecification": ubx.FieldSpec{
-			WireName: "ena_srd_specification",
-			Kind: "object",
-			Fields: Instance_NetworkInterfaces_EnaSrdSpecificationFields,
-		},
-		"GroupSet": ubx.FieldSpec{WireName: "group_set"},
-		"Ipv6AddressCount": ubx.FieldSpec{WireName: "ipv6_address_count"},
-		"Ipv6Addresses": ubx.FieldSpec{
-			WireName: "ipv6_addresses",
-			Kind: "list",
-			Fields: Instance_Ipv6AddressesFields,
-		},
-		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
-		"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
-		"PrivateIpAddresses": ubx.FieldSpec{
-			WireName: "private_ip_addresses",
-			Kind: "list",
-			Fields: Instance_NetworkInterfaces_PrivateIpAddressesFields,
-		},
-		"SecondaryPrivateIpAddressCount": ubx.FieldSpec{WireName: "secondary_private_ip_address_count"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-	}
+	"AssociateCarrierIpAddress": ubx.FieldSpec{WireName: "associate_carrier_ip_address"},
+	"AssociatePublicIpAddress":  ubx.FieldSpec{WireName: "associate_public_ip_address"},
+	"DeleteOnTermination":       ubx.FieldSpec{WireName: "delete_on_termination"},
+	"Description":               ubx.FieldSpec{WireName: "description"},
+	"DeviceIndex":               ubx.FieldSpec{WireName: "device_index"},
+	"EnaSrdSpecification": ubx.FieldSpec{
+		WireName: "ena_srd_specification",
+		Kind:     "object",
+		Fields:   Instance_NetworkInterfaces_EnaSrdSpecificationFields,
+	},
+	"GroupSet":         ubx.FieldSpec{WireName: "group_set"},
+	"Ipv6AddressCount": ubx.FieldSpec{WireName: "ipv6_address_count"},
+	"Ipv6Addresses": ubx.FieldSpec{
+		WireName: "ipv6_addresses",
+		Kind:     "list",
+		Fields:   Instance_Ipv6AddressesFields,
+	},
+	"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
+	"PrivateIpAddress":   ubx.FieldSpec{WireName: "private_ip_address"},
+	"PrivateIpAddresses": ubx.FieldSpec{
+		WireName: "private_ip_addresses",
+		Kind:     "list",
+		Fields:   Instance_NetworkInterfaces_PrivateIpAddressesFields,
+	},
+	"SecondaryPrivateIpAddressCount": ubx.FieldSpec{WireName: "secondary_private_ip_address_count"},
+	"SubnetId":                       ubx.FieldSpec{WireName: "subnet_id"},
+}
 
 var Instance_PrivateDnsNameOptionsFields = ubx.FieldMap{
-		"EnableResourceNameDnsAaaarecord": ubx.FieldSpec{WireName: "enable_resource_name_dns_aaaarecord"},
-		"EnableResourceNameDnsArecord": ubx.FieldSpec{WireName: "enable_resource_name_dns_arecord"},
-		"HostnameType": ubx.FieldSpec{WireName: "hostname_type"},
-	}
+	"EnableResourceNameDnsAaaarecord": ubx.FieldSpec{WireName: "enable_resource_name_dns_aaaarecord"},
+	"EnableResourceNameDnsArecord":    ubx.FieldSpec{WireName: "enable_resource_name_dns_arecord"},
+	"HostnameType":                    ubx.FieldSpec{WireName: "hostname_type"},
+}
 
 var Instance_SsmAssociations_AssociationParametersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Instance_SsmAssociationsFields = ubx.FieldMap{
-		"AssociationParameters": ubx.FieldSpec{
-			WireName: "association_parameters",
-			Kind: "list",
-			Fields: Instance_SsmAssociations_AssociationParametersFields,
-		},
-		"DocumentName": ubx.FieldSpec{WireName: "document_name"},
-	}
+	"AssociationParameters": ubx.FieldSpec{
+		WireName: "association_parameters",
+		Kind:     "list",
+		Fields:   Instance_SsmAssociations_AssociationParametersFields,
+	},
+	"DocumentName": ubx.FieldSpec{WireName: "document_name"},
+}
 
 var Instance_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Instance_VolumesFields = ubx.FieldMap{
-		"Device": ubx.FieldSpec{WireName: "device"},
-		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
-	}
+	"Device":   ubx.FieldSpec{WireName: "device"},
+	"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
+}
 
 type InstanceConfig struct {
 	// This property is reserved for internal use. If you use it, the stack fails with this error: Bad property set: [Testing this property] (Service: AmazonEC2; Status Code: 400; Error Code: InvalidParameterCombination; Request ID: 0XXXXXX-49c7-4b40-8bcc-76885dcXXXXX).
@@ -524,110 +524,110 @@ type InstanceAttrs struct {
 var Instance = ubx.ResourceBinding{
 	WireType: "aws_instance",
 	Fields: ubx.FieldMap{
-		"AdditionalInfo": ubx.FieldSpec{WireName: "additional_info"},
-		"Affinity": ubx.FieldSpec{WireName: "affinity"},
+		"AdditionalInfo":   ubx.FieldSpec{WireName: "additional_info"},
+		"Affinity":         ubx.FieldSpec{WireName: "affinity"},
 		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
 		"BlockDeviceMappings": ubx.FieldSpec{
 			WireName: "block_device_mappings",
-			Kind: "list",
-			Fields: Instance_BlockDeviceMappingsFields,
+			Kind:     "list",
+			Fields:   Instance_BlockDeviceMappingsFields,
 		},
 		"CpuOptions": ubx.FieldSpec{
 			WireName: "cpu_options",
-			Kind: "object",
-			Fields: Instance_CpuOptionsFields,
+			Kind:     "object",
+			Fields:   Instance_CpuOptionsFields,
 		},
 		"CreditSpecification": ubx.FieldSpec{
 			WireName: "credit_specification",
-			Kind: "object",
-			Fields: Instance_CreditSpecificationFields,
+			Kind:     "object",
+			Fields:   Instance_CreditSpecificationFields,
 		},
 		"DisableApiTermination": ubx.FieldSpec{WireName: "disable_api_termination"},
-		"EbsOptimized": ubx.FieldSpec{WireName: "ebs_optimized"},
+		"EbsOptimized":          ubx.FieldSpec{WireName: "ebs_optimized"},
 		"ElasticGpuSpecifications": ubx.FieldSpec{
 			WireName: "elastic_gpu_specifications",
-			Kind: "list",
-			Fields: Instance_ElasticGpuSpecificationsFields,
+			Kind:     "list",
+			Fields:   Instance_ElasticGpuSpecificationsFields,
 		},
 		"ElasticInferenceAccelerators": ubx.FieldSpec{
 			WireName: "elastic_inference_accelerators",
-			Kind: "list",
-			Fields: Instance_ElasticInferenceAcceleratorsFields,
+			Kind:     "list",
+			Fields:   Instance_ElasticInferenceAcceleratorsFields,
 		},
 		"EnclaveOptions": ubx.FieldSpec{
 			WireName: "enclave_options",
-			Kind: "object",
-			Fields: Instance_EnclaveOptionsFields,
+			Kind:     "object",
+			Fields:   Instance_EnclaveOptionsFields,
 		},
 		"HibernationOptions": ubx.FieldSpec{
 			WireName: "hibernation_options",
-			Kind: "object",
-			Fields: Instance_HibernationOptionsFields,
+			Kind:     "object",
+			Fields:   Instance_HibernationOptionsFields,
 		},
-		"HostId": ubx.FieldSpec{WireName: "host_id"},
-		"HostResourceGroupArn": ubx.FieldSpec{WireName: "host_resource_group_arn"},
-		"IamInstanceProfile": ubx.FieldSpec{WireName: "iam_instance_profile"},
-		"ImageId": ubx.FieldSpec{WireName: "image_id"},
+		"HostId":                            ubx.FieldSpec{WireName: "host_id"},
+		"HostResourceGroupArn":              ubx.FieldSpec{WireName: "host_resource_group_arn"},
+		"IamInstanceProfile":                ubx.FieldSpec{WireName: "iam_instance_profile"},
+		"ImageId":                           ubx.FieldSpec{WireName: "image_id"},
 		"InstanceInitiatedShutdownBehavior": ubx.FieldSpec{WireName: "instance_initiated_shutdown_behavior"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"Ipv6AddressCount": ubx.FieldSpec{WireName: "ipv6_address_count"},
+		"InstanceType":                      ubx.FieldSpec{WireName: "instance_type"},
+		"Ipv6AddressCount":                  ubx.FieldSpec{WireName: "ipv6_address_count"},
 		"Ipv6Addresses": ubx.FieldSpec{
 			WireName: "ipv6_addresses",
-			Kind: "list",
-			Fields: Instance_Ipv6AddressesFields,
+			Kind:     "list",
+			Fields:   Instance_Ipv6AddressesFields,
 		},
 		"KernelId": ubx.FieldSpec{WireName: "kernel_id"},
-		"KeyName": ubx.FieldSpec{WireName: "key_name"},
+		"KeyName":  ubx.FieldSpec{WireName: "key_name"},
 		"LaunchTemplate": ubx.FieldSpec{
 			WireName: "launch_template",
-			Kind: "object",
-			Fields: Instance_LaunchTemplateFields,
+			Kind:     "object",
+			Fields:   Instance_LaunchTemplateFields,
 		},
 		"LicenseSpecifications": ubx.FieldSpec{
 			WireName: "license_specifications",
-			Kind: "list",
-			Fields: Instance_LicenseSpecificationsFields,
+			Kind:     "list",
+			Fields:   Instance_LicenseSpecificationsFields,
 		},
 		"MetadataOptions": ubx.FieldSpec{
 			WireName: "metadata_options",
-			Kind: "object",
-			Fields: Instance_MetadataOptionsFields,
+			Kind:     "object",
+			Fields:   Instance_MetadataOptionsFields,
 		},
 		"Monitoring": ubx.FieldSpec{WireName: "monitoring"},
 		"NetworkInterfaces": ubx.FieldSpec{
 			WireName: "network_interfaces",
-			Kind: "list",
-			Fields: Instance_NetworkInterfacesFields,
+			Kind:     "list",
+			Fields:   Instance_NetworkInterfacesFields,
 		},
 		"PlacementGroupName": ubx.FieldSpec{WireName: "placement_group_name"},
 		"PrivateDnsNameOptions": ubx.FieldSpec{
 			WireName: "private_dns_name_options",
-			Kind: "object",
-			Fields: Instance_PrivateDnsNameOptionsFields,
+			Kind:     "object",
+			Fields:   Instance_PrivateDnsNameOptionsFields,
 		},
-		"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
+		"PrivateIpAddress":                ubx.FieldSpec{WireName: "private_ip_address"},
 		"PropagateTagsToVolumeOnCreation": ubx.FieldSpec{WireName: "propagate_tags_to_volume_on_creation"},
-		"RamdiskId": ubx.FieldSpec{WireName: "ramdisk_id"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"SourceDestCheck": ubx.FieldSpec{WireName: "source_dest_check"},
+		"RamdiskId":                       ubx.FieldSpec{WireName: "ramdisk_id"},
+		"SecurityGroupIds":                ubx.FieldSpec{WireName: "security_group_ids"},
+		"SecurityGroups":                  ubx.FieldSpec{WireName: "security_groups"},
+		"SourceDestCheck":                 ubx.FieldSpec{WireName: "source_dest_check"},
 		"SsmAssociations": ubx.FieldSpec{
 			WireName: "ssm_associations",
-			Kind: "list",
-			Fields: Instance_SsmAssociationsFields,
+			Kind:     "list",
+			Fields:   Instance_SsmAssociationsFields,
 		},
 		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Instance_TagsFields,
+			Kind:     "list",
+			Fields:   Instance_TagsFields,
 		},
-		"Tenancy": ubx.FieldSpec{WireName: "tenancy"},
+		"Tenancy":  ubx.FieldSpec{WireName: "tenancy"},
 		"UserData": ubx.FieldSpec{WireName: "user_data"},
 		"Volumes": ubx.FieldSpec{
 			WireName: "volumes",
-			Kind: "list",
-			Fields: Instance_VolumesFields,
+			Kind:     "list",
+			Fields:   Instance_VolumesFields,
 		},
 	},
 }

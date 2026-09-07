@@ -26,6 +26,5 @@ type ComplianceSummaryByConfigRuleAttrs struct {
 
 var ComplianceSummaryByConfigRule = ubx.DataSourceBinding{
 	WireType: "aws_config_compliance_summary_by_config_rule",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

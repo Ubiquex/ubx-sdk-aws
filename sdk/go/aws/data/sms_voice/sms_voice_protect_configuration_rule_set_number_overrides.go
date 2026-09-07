@@ -4,37 +4,37 @@ package sms_voice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SmsVoiceProtectConfigurationRuleSetNumberOverrides_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type SmsVoiceProtectConfigurationRuleSetNumberOverrides_RuleSetNumberOverrides struct {
-	Action any
-	CreatedTimestamp any
+	Action                 any
+	CreatedTimestamp       any
 	DestinationPhoneNumber any
-	ExpirationTimestamp any
-	IsoCountryCode any
+	ExpirationTimestamp    any
+	IsoCountryCode         any
 }
 
 var SmsVoiceProtectConfigurationRuleSetNumberOverrides_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type SmsVoiceProtectConfigurationRuleSetNumberOverridesConfig struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters                any
+	MaxResults             any
+	NextToken              any
 	ProtectConfigurationId any
 }
 
 type SmsVoiceProtectConfigurationRuleSetNumberOverridesAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters                 any
+	MaxResults              any
+	NextToken               any
 	ProtectConfigurationArn any
-	ProtectConfigurationId any
-	RuleSetNumberOverrides any
+	ProtectConfigurationId  any
+	RuleSetNumberOverrides  any
 }
 
 var SmsVoiceProtectConfigurationRuleSetNumberOverrides = ubx.DataSourceBinding{
@@ -42,11 +42,11 @@ var SmsVoiceProtectConfigurationRuleSetNumberOverrides = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SmsVoiceProtectConfigurationRuleSetNumberOverrides_FiltersFields,
+			Kind:     "list",
+			Fields:   SmsVoiceProtectConfigurationRuleSetNumberOverrides_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
 		"ProtectConfigurationId": ubx.FieldSpec{WireName: "protect_configuration_id"},
 	},
 }

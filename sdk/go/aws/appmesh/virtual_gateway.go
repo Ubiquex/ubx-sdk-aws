@@ -213,292 +213,292 @@ type VirtualGateway_Spec struct {
 }
 
 var VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Certificate_FileFields = ubx.FieldMap{
-		"CertificateChain": ubx.FieldSpec{WireName: "certificate_chain"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-	}
+	"CertificateChain": ubx.FieldSpec{WireName: "certificate_chain"},
+	"PrivateKey":       ubx.FieldSpec{WireName: "private_key"},
+}
 
 var VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Certificate_SdsFields = ubx.FieldMap{
-		"SecretName": ubx.FieldSpec{WireName: "secret_name"},
-	}
+	"SecretName": ubx.FieldSpec{WireName: "secret_name"},
+}
 
 var VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_CertificateFields = ubx.FieldMap{
-		"File": ubx.FieldSpec{
-			WireName: "file",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Certificate_FileFields,
-		},
-		"Sds": ubx.FieldSpec{
-			WireName: "sds",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Certificate_SdsFields,
-		},
-	}
+	"File": ubx.FieldSpec{
+		WireName: "file",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Certificate_FileFields,
+	},
+	"Sds": ubx.FieldSpec{
+		WireName: "sds",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Certificate_SdsFields,
+	},
+}
 
 var VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_SubjectAlternativeNames_MatchFields = ubx.FieldMap{
-		"Exact": ubx.FieldSpec{WireName: "exact"},
-	}
+	"Exact": ubx.FieldSpec{WireName: "exact"},
+}
 
 var VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_SubjectAlternativeNamesFields = ubx.FieldMap{
-		"Match": ubx.FieldSpec{
-			WireName: "match",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_SubjectAlternativeNames_MatchFields,
-		},
-	}
+	"Match": ubx.FieldSpec{
+		WireName: "match",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_SubjectAlternativeNames_MatchFields,
+	},
+}
 
 var VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_Trust_AcmFields = ubx.FieldMap{
-		"CertificateAuthorityArns": ubx.FieldSpec{WireName: "certificate_authority_arns"},
-	}
+	"CertificateAuthorityArns": ubx.FieldSpec{WireName: "certificate_authority_arns"},
+}
 
 var VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_Trust_FileFields = ubx.FieldMap{
-		"CertificateChain": ubx.FieldSpec{WireName: "certificate_chain"},
-	}
+	"CertificateChain": ubx.FieldSpec{WireName: "certificate_chain"},
+}
 
 var VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_TrustFields = ubx.FieldMap{
-		"Acm": ubx.FieldSpec{
-			WireName: "acm",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_Trust_AcmFields,
-		},
-		"File": ubx.FieldSpec{
-			WireName: "file",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_Trust_FileFields,
-		},
-		"Sds": ubx.FieldSpec{
-			WireName: "sds",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Certificate_SdsFields,
-		},
-	}
+	"Acm": ubx.FieldSpec{
+		WireName: "acm",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_Trust_AcmFields,
+	},
+	"File": ubx.FieldSpec{
+		WireName: "file",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_Trust_FileFields,
+	},
+	"Sds": ubx.FieldSpec{
+		WireName: "sds",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Certificate_SdsFields,
+	},
+}
 
 var VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_ValidationFields = ubx.FieldMap{
-		"SubjectAlternativeNames": ubx.FieldSpec{
-			WireName: "subject_alternative_names",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_SubjectAlternativeNamesFields,
-		},
-		"Trust": ubx.FieldSpec{
-			WireName: "trust",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_TrustFields,
-		},
-	}
+	"SubjectAlternativeNames": ubx.FieldSpec{
+		WireName: "subject_alternative_names",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_SubjectAlternativeNamesFields,
+	},
+	"Trust": ubx.FieldSpec{
+		WireName: "trust",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_TrustFields,
+	},
+}
 
 var VirtualGateway_Spec_BackendDefaults_ClientPolicy_TlsFields = ubx.FieldMap{
-		"Certificate": ubx.FieldSpec{
-			WireName: "certificate",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_CertificateFields,
-		},
-		"Enforce": ubx.FieldSpec{WireName: "enforce"},
-		"Ports": ubx.FieldSpec{WireName: "ports"},
-		"Validation": ubx.FieldSpec{
-			WireName: "validation",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_ValidationFields,
-		},
-	}
+	"Certificate": ubx.FieldSpec{
+		WireName: "certificate",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_CertificateFields,
+	},
+	"Enforce": ubx.FieldSpec{WireName: "enforce"},
+	"Ports":   ubx.FieldSpec{WireName: "ports"},
+	"Validation": ubx.FieldSpec{
+		WireName: "validation",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_ValidationFields,
+	},
+}
 
 var VirtualGateway_Spec_BackendDefaults_ClientPolicyFields = ubx.FieldMap{
-		"Tls": ubx.FieldSpec{
-			WireName: "tls",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_BackendDefaults_ClientPolicy_TlsFields,
-		},
-	}
+	"Tls": ubx.FieldSpec{
+		WireName: "tls",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_BackendDefaults_ClientPolicy_TlsFields,
+	},
+}
 
 var VirtualGateway_Spec_BackendDefaultsFields = ubx.FieldMap{
-		"ClientPolicy": ubx.FieldSpec{
-			WireName: "client_policy",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_BackendDefaults_ClientPolicyFields,
-		},
-	}
+	"ClientPolicy": ubx.FieldSpec{
+		WireName: "client_policy",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_BackendDefaults_ClientPolicyFields,
+	},
+}
 
 var VirtualGateway_Spec_Listeners_ConnectionPool_GrpcFields = ubx.FieldMap{
-		"MaxRequests": ubx.FieldSpec{WireName: "max_requests"},
-	}
+	"MaxRequests": ubx.FieldSpec{WireName: "max_requests"},
+}
 
 var VirtualGateway_Spec_Listeners_ConnectionPool_HttpFields = ubx.FieldMap{
-		"MaxConnections": ubx.FieldSpec{WireName: "max_connections"},
-		"MaxPendingRequests": ubx.FieldSpec{WireName: "max_pending_requests"},
-	}
+	"MaxConnections":     ubx.FieldSpec{WireName: "max_connections"},
+	"MaxPendingRequests": ubx.FieldSpec{WireName: "max_pending_requests"},
+}
 
 var VirtualGateway_Spec_Listeners_ConnectionPoolFields = ubx.FieldMap{
-		"Grpc": ubx.FieldSpec{
-			WireName: "grpc",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_Listeners_ConnectionPool_GrpcFields,
-		},
-		"Http": ubx.FieldSpec{
-			WireName: "http",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_Listeners_ConnectionPool_HttpFields,
-		},
-		"Http2": ubx.FieldSpec{
-			WireName: "http2",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_Listeners_ConnectionPool_GrpcFields,
-		},
-	}
+	"Grpc": ubx.FieldSpec{
+		WireName: "grpc",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_Listeners_ConnectionPool_GrpcFields,
+	},
+	"Http": ubx.FieldSpec{
+		WireName: "http",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_Listeners_ConnectionPool_HttpFields,
+	},
+	"Http2": ubx.FieldSpec{
+		WireName: "http2",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_Listeners_ConnectionPool_GrpcFields,
+	},
+}
 
 var VirtualGateway_Spec_Listeners_HealthCheckFields = ubx.FieldMap{
-		"HealthyThreshold": ubx.FieldSpec{WireName: "healthy_threshold"},
-		"IntervalMillis": ubx.FieldSpec{WireName: "interval_millis"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"TimeoutMillis": ubx.FieldSpec{WireName: "timeout_millis"},
-		"UnhealthyThreshold": ubx.FieldSpec{WireName: "unhealthy_threshold"},
-	}
+	"HealthyThreshold":   ubx.FieldSpec{WireName: "healthy_threshold"},
+	"IntervalMillis":     ubx.FieldSpec{WireName: "interval_millis"},
+	"Path":               ubx.FieldSpec{WireName: "path"},
+	"Port":               ubx.FieldSpec{WireName: "port"},
+	"Protocol":           ubx.FieldSpec{WireName: "protocol"},
+	"TimeoutMillis":      ubx.FieldSpec{WireName: "timeout_millis"},
+	"UnhealthyThreshold": ubx.FieldSpec{WireName: "unhealthy_threshold"},
+}
 
 var VirtualGateway_Spec_Listeners_PortMappingFields = ubx.FieldMap{
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-	}
+	"Port":     ubx.FieldSpec{WireName: "port"},
+	"Protocol": ubx.FieldSpec{WireName: "protocol"},
+}
 
 var VirtualGateway_Spec_Listeners_Tls_Certificate_AcmFields = ubx.FieldMap{
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-	}
+	"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
+}
 
 var VirtualGateway_Spec_Listeners_Tls_CertificateFields = ubx.FieldMap{
-		"Acm": ubx.FieldSpec{
-			WireName: "acm",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_Listeners_Tls_Certificate_AcmFields,
-		},
-		"File": ubx.FieldSpec{
-			WireName: "file",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Certificate_FileFields,
-		},
-		"Sds": ubx.FieldSpec{
-			WireName: "sds",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Certificate_SdsFields,
-		},
-	}
+	"Acm": ubx.FieldSpec{
+		WireName: "acm",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_Listeners_Tls_Certificate_AcmFields,
+	},
+	"File": ubx.FieldSpec{
+		WireName: "file",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Certificate_FileFields,
+	},
+	"Sds": ubx.FieldSpec{
+		WireName: "sds",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Certificate_SdsFields,
+	},
+}
 
 var VirtualGateway_Spec_Listeners_Tls_Validation_TrustFields = ubx.FieldMap{
-		"File": ubx.FieldSpec{
-			WireName: "file",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_Trust_FileFields,
-		},
-		"Sds": ubx.FieldSpec{
-			WireName: "sds",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Certificate_SdsFields,
-		},
-	}
+	"File": ubx.FieldSpec{
+		WireName: "file",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_Trust_FileFields,
+	},
+	"Sds": ubx.FieldSpec{
+		WireName: "sds",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Certificate_SdsFields,
+	},
+}
 
 var VirtualGateway_Spec_Listeners_Tls_ValidationFields = ubx.FieldMap{
-		"SubjectAlternativeNames": ubx.FieldSpec{
-			WireName: "subject_alternative_names",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_SubjectAlternativeNamesFields,
-		},
-		"Trust": ubx.FieldSpec{
-			WireName: "trust",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_Listeners_Tls_Validation_TrustFields,
-		},
-	}
+	"SubjectAlternativeNames": ubx.FieldSpec{
+		WireName: "subject_alternative_names",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_SubjectAlternativeNamesFields,
+	},
+	"Trust": ubx.FieldSpec{
+		WireName: "trust",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_Listeners_Tls_Validation_TrustFields,
+	},
+}
 
 var VirtualGateway_Spec_Listeners_TlsFields = ubx.FieldMap{
-		"Certificate": ubx.FieldSpec{
-			WireName: "certificate",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_Listeners_Tls_CertificateFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Validation": ubx.FieldSpec{
-			WireName: "validation",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_Listeners_Tls_ValidationFields,
-		},
-	}
+	"Certificate": ubx.FieldSpec{
+		WireName: "certificate",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_Listeners_Tls_CertificateFields,
+	},
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+	"Validation": ubx.FieldSpec{
+		WireName: "validation",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_Listeners_Tls_ValidationFields,
+	},
+}
 
 var VirtualGateway_Spec_ListenersFields = ubx.FieldMap{
-		"ConnectionPool": ubx.FieldSpec{
-			WireName: "connection_pool",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_Listeners_ConnectionPoolFields,
-		},
-		"HealthCheck": ubx.FieldSpec{
-			WireName: "health_check",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_Listeners_HealthCheckFields,
-		},
-		"PortMapping": ubx.FieldSpec{
-			WireName: "port_mapping",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_Listeners_PortMappingFields,
-		},
-		"Tls": ubx.FieldSpec{
-			WireName: "tls",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_Listeners_TlsFields,
-		},
-	}
+	"ConnectionPool": ubx.FieldSpec{
+		WireName: "connection_pool",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_Listeners_ConnectionPoolFields,
+	},
+	"HealthCheck": ubx.FieldSpec{
+		WireName: "health_check",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_Listeners_HealthCheckFields,
+	},
+	"PortMapping": ubx.FieldSpec{
+		WireName: "port_mapping",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_Listeners_PortMappingFields,
+	},
+	"Tls": ubx.FieldSpec{
+		WireName: "tls",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_Listeners_TlsFields,
+	},
+}
 
 var VirtualGateway_Spec_Logging_AccessLog_File_Format_JsonFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var VirtualGateway_Spec_Logging_AccessLog_File_FormatFields = ubx.FieldMap{
-		"Json": ubx.FieldSpec{
-			WireName: "json",
-			Kind: "list",
-			Fields: VirtualGateway_Spec_Logging_AccessLog_File_Format_JsonFields,
-		},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Json": ubx.FieldSpec{
+		WireName: "json",
+		Kind:     "list",
+		Fields:   VirtualGateway_Spec_Logging_AccessLog_File_Format_JsonFields,
+	},
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 var VirtualGateway_Spec_Logging_AccessLog_FileFields = ubx.FieldMap{
-		"Format": ubx.FieldSpec{
-			WireName: "format",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_Logging_AccessLog_File_FormatFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Format": ubx.FieldSpec{
+		WireName: "format",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_Logging_AccessLog_File_FormatFields,
+	},
+	"Path": ubx.FieldSpec{WireName: "path"},
+}
 
 var VirtualGateway_Spec_Logging_AccessLogFields = ubx.FieldMap{
-		"File": ubx.FieldSpec{
-			WireName: "file",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_Logging_AccessLog_FileFields,
-		},
-	}
+	"File": ubx.FieldSpec{
+		WireName: "file",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_Logging_AccessLog_FileFields,
+	},
+}
 
 var VirtualGateway_Spec_LoggingFields = ubx.FieldMap{
-		"AccessLog": ubx.FieldSpec{
-			WireName: "access_log",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_Logging_AccessLogFields,
-		},
-	}
+	"AccessLog": ubx.FieldSpec{
+		WireName: "access_log",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_Logging_AccessLogFields,
+	},
+}
 
 var VirtualGateway_SpecFields = ubx.FieldMap{
-		"BackendDefaults": ubx.FieldSpec{
-			WireName: "backend_defaults",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_BackendDefaultsFields,
-		},
-		"Listeners": ubx.FieldSpec{
-			WireName: "listeners",
-			Kind: "list",
-			Fields: VirtualGateway_Spec_ListenersFields,
-		},
-		"Logging": ubx.FieldSpec{
-			WireName: "logging",
-			Kind: "object",
-			Fields: VirtualGateway_Spec_LoggingFields,
-		},
-	}
+	"BackendDefaults": ubx.FieldSpec{
+		WireName: "backend_defaults",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_BackendDefaultsFields,
+	},
+	"Listeners": ubx.FieldSpec{
+		WireName: "listeners",
+		Kind:     "list",
+		Fields:   VirtualGateway_Spec_ListenersFields,
+	},
+	"Logging": ubx.FieldSpec{
+		WireName: "logging",
+		Kind:     "object",
+		Fields:   VirtualGateway_Spec_LoggingFields,
+	},
+}
 
 type VirtualGatewayConfig struct {
 	// The name of the AWS App Mesh service mesh that this virtual gateway belongs to. (AI-inferred)
@@ -537,17 +537,17 @@ type VirtualGatewayAttrs struct {
 var VirtualGateway = ubx.ResourceBinding{
 	WireType: "aws_app_mesh_virtual_gateway",
 	Fields: ubx.FieldMap{
-		"MeshName": ubx.FieldSpec{WireName: "mesh_name"},
+		"MeshName":  ubx.FieldSpec{WireName: "mesh_name"},
 		"MeshOwner": ubx.FieldSpec{WireName: "mesh_owner"},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: VirtualGateway_SpecFields,
+			Kind:     "object",
+			Fields:   VirtualGateway_SpecFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VirtualGateway_Spec_Logging_AccessLog_File_Format_JsonFields,
+			Kind:     "list",
+			Fields:   VirtualGateway_Spec_Logging_AccessLog_File_Format_JsonFields,
 		},
 		"VirtualGatewayName": ubx.FieldSpec{WireName: "virtual_gateway_name"},
 	},

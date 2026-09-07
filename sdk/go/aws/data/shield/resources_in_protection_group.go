@@ -4,23 +4,23 @@ package shield
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourcesInProtectionGroupConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 	ProtectionGroupId any
 }
 
 type ResourcesInProtectionGroupAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 	ProtectionGroupId any
-	ResourceArns any
+	ResourceArns      any
 }
 
 var ResourcesInProtectionGroup = ubx.DataSourceBinding{
 	WireType: "aws_shield_resources_in_protection_group",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"ProtectionGroupId": ubx.FieldSpec{WireName: "protection_group_id"},
 	},
 }

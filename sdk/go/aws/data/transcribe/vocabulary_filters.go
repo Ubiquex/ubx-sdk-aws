@@ -4,29 +4,29 @@ package transcribe
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VocabularyFilters_VocabularyFilters struct {
-	LanguageCode any
-	LastModifiedTime any
+	LanguageCode         any
+	LastModifiedTime     any
 	VocabularyFilterName any
 }
 
 type VocabularyFiltersConfig struct {
-	MaxResults any
+	MaxResults   any
 	NameContains any
-	NextToken any
+	NextToken    any
 }
 
 type VocabularyFiltersAttrs struct {
-	MaxResults any
-	NameContains any
-	NextToken any
+	MaxResults        any
+	NameContains      any
+	NextToken         any
 	VocabularyFilters any
 }
 
 var VocabularyFilters = ubx.DataSourceBinding{
 	WireType: "aws_transcribe_vocabulary_filters",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
 		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

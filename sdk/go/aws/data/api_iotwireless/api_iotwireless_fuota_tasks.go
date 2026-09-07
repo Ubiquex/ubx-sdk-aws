@@ -4,15 +4,15 @@ package api_iotwireless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotwirelessFuotaTasks_FuotaTaskList struct {
-	Arn any
-	Id any
+	Arn  any
+	Id   any
 	Name any
 }
 
 type ApiIotwirelessFuotaTasksConfig struct {
 	// <p>The maximum number of results to return in this operation.</p>
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApiIotwirelessFuotaTasksAttrs struct {
@@ -20,13 +20,13 @@ type ApiIotwirelessFuotaTasksAttrs struct {
 	FuotaTaskList any
 	// <p>The maximum number of results to return in this operation.</p>
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ApiIotwirelessFuotaTasks = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_fuota_tasks",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,43 +4,43 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Crawls_Crawls struct {
-	CrawlId any
-	Dpuhour any
-	EndTime any
-	ErrorMessage any
-	LogGroup any
-	LogStream any
+	CrawlId       any
+	Dpuhour       any
+	EndTime       any
+	ErrorMessage  any
+	LogGroup      any
+	LogStream     any
 	MessagePrefix any
-	StartTime any
-	State any
-	Summary any
+	StartTime     any
+	State         any
+	Summary       any
 }
 
 type Crawls_Filters struct {
-	FieldName any
-	FieldValue any
+	FieldName      any
+	FieldValue     any
 	FilterOperator any
 }
 
 var Crawls_FiltersFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"FieldValue": ubx.FieldSpec{WireName: "field_value"},
-		"FilterOperator": ubx.FieldSpec{WireName: "filter_operator"},
-	}
+	"FieldName":      ubx.FieldSpec{WireName: "field_name"},
+	"FieldValue":     ubx.FieldSpec{WireName: "field_value"},
+	"FilterOperator": ubx.FieldSpec{WireName: "filter_operator"},
+}
 
 type CrawlsConfig struct {
 	CrawlerName any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters     any
+	MaxResults  any
+	NextToken   any
 }
 
 type CrawlsAttrs struct {
 	CrawlerName any
-	Crawls any
-	Filters any
-	MaxResults any
-	NextToken any
+	Crawls      any
+	Filters     any
+	MaxResults  any
+	NextToken   any
 }
 
 var Crawls = ubx.DataSourceBinding{
@@ -49,10 +49,10 @@ var Crawls = ubx.DataSourceBinding{
 		"CrawlerName": ubx.FieldSpec{WireName: "crawler_name"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Crawls_FiltersFields,
+			Kind:     "list",
+			Fields:   Crawls_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

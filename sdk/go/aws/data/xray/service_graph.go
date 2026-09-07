@@ -9,15 +9,15 @@ type ServiceGraph_Services_DurationHistogram struct {
 }
 
 type ServiceGraph_Services_Edges_Aliases struct {
-	Name any
+	Name  any
 	Names any
-	Type any
+	Type  any
 }
 
 type ServiceGraph_Services_Edges_SummaryStatistics_ErrorStatistics struct {
-	OtherCount any
+	OtherCount    any
 	ThrottleCount any
-	TotalCount any
+	TotalCount    any
 }
 
 type ServiceGraph_Services_Edges_SummaryStatistics_FaultStatistics struct {
@@ -26,43 +26,43 @@ type ServiceGraph_Services_Edges_SummaryStatistics_FaultStatistics struct {
 }
 
 type ServiceGraph_Services_Edges_SummaryStatistics struct {
-	ErrorStatistics any
-	FaultStatistics any
-	OkCount any
-	TotalCount any
+	ErrorStatistics   any
+	FaultStatistics   any
+	OkCount           any
+	TotalCount        any
 	TotalResponseTime any
 }
 
 type ServiceGraph_Services_Edges struct {
-	Aliases any
-	EdgeType any
-	EndTime any
+	Aliases                   any
+	EdgeType                  any
+	EndTime                   any
 	ReceivedEventAgeHistogram any
-	ReferenceId any
-	ResponseTimeHistogram any
-	StartTime any
-	SummaryStatistics any
+	ReferenceId               any
+	ResponseTimeHistogram     any
+	StartTime                 any
+	SummaryStatistics         any
 }
 
 type ServiceGraph_Services struct {
-	AccountId any
-	DurationHistogram any
-	Edges any
-	EndTime any
-	Name any
-	Names any
-	ReferenceId any
+	AccountId             any
+	DurationHistogram     any
+	Edges                 any
+	EndTime               any
+	Name                  any
+	Names                 any
+	ReferenceId           any
 	ResponseTimeHistogram any
-	Root any
-	StartTime any
-	State any
-	SummaryStatistics any
-	Type any
+	Root                  any
+	StartTime             any
+	State                 any
+	SummaryStatistics     any
+	Type                  any
 }
 
 type ServiceGraphConfig struct {
-	EndTime any
-	GroupArn any
+	EndTime   any
+	GroupArn  any
 	GroupName any
 	NextToken any
 	StartTime any
@@ -70,19 +70,19 @@ type ServiceGraphConfig struct {
 
 type ServiceGraphAttrs struct {
 	ContainsOldGroupVersions any
-	EndTime any
-	GroupArn any
-	GroupName any
-	NextToken any
-	Services any
-	StartTime any
+	EndTime                  any
+	GroupArn                 any
+	GroupName                any
+	NextToken                any
+	Services                 any
+	StartTime                any
 }
 
 var ServiceGraph = ubx.DataSourceBinding{
 	WireType: "aws_xray_service_graph",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"GroupArn": ubx.FieldSpec{WireName: "group_arn"},
+		"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+		"GroupArn":  ubx.FieldSpec{WireName: "group_arn"},
 		"GroupName": ubx.FieldSpec{WireName: "group_name"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},

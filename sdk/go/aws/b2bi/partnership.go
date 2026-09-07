@@ -84,7 +84,7 @@ type Partnership_CapabilityOptions_OutboundEdi_X12_WrapOptions struct {
 	LineLength any
 	// Specifies the line terminator character (such as '\n') used to separate lines in the wrapped X12 EDI payload for outbound transmissions. (AI-inferred)
 	LineTerminator any
-	WrapBy any
+	WrapBy         any
 }
 
 type Partnership_CapabilityOptions_OutboundEdi_X12 struct {
@@ -114,123 +114,123 @@ type Partnership_Tags struct {
 }
 
 var Partnership_CapabilityOptions_InboundEdi_X12_AcknowledgmentOptionsFields = ubx.FieldMap{
-		"FunctionalAcknowledgment": ubx.FieldSpec{WireName: "functional_acknowledgment"},
-		"TechnicalAcknowledgment": ubx.FieldSpec{WireName: "technical_acknowledgment"},
-	}
+	"FunctionalAcknowledgment": ubx.FieldSpec{WireName: "functional_acknowledgment"},
+	"TechnicalAcknowledgment":  ubx.FieldSpec{WireName: "technical_acknowledgment"},
+}
 
 var Partnership_CapabilityOptions_InboundEdi_X12Fields = ubx.FieldMap{
-		"AcknowledgmentOptions": ubx.FieldSpec{
-			WireName: "acknowledgment_options",
-			Kind: "object",
-			Fields: Partnership_CapabilityOptions_InboundEdi_X12_AcknowledgmentOptionsFields,
-		},
-	}
+	"AcknowledgmentOptions": ubx.FieldSpec{
+		WireName: "acknowledgment_options",
+		Kind:     "object",
+		Fields:   Partnership_CapabilityOptions_InboundEdi_X12_AcknowledgmentOptionsFields,
+	},
+}
 
 var Partnership_CapabilityOptions_InboundEdiFields = ubx.FieldMap{
-		"X12": ubx.FieldSpec{
-			WireName: "x12",
-			Kind: "object",
-			Fields: Partnership_CapabilityOptions_InboundEdi_X12Fields,
-		},
-	}
+	"X12": ubx.FieldSpec{
+		WireName: "x12",
+		Kind:     "object",
+		Fields:   Partnership_CapabilityOptions_InboundEdi_X12Fields,
+	},
+}
 
 var Partnership_CapabilityOptions_OutboundEdi_X12_Common_ControlNumbersFields = ubx.FieldMap{
-		"StartingFunctionalGroupControlNumber": ubx.FieldSpec{WireName: "starting_functional_group_control_number"},
-		"StartingInterchangeControlNumber": ubx.FieldSpec{WireName: "starting_interchange_control_number"},
-		"StartingTransactionSetControlNumber": ubx.FieldSpec{WireName: "starting_transaction_set_control_number"},
-	}
+	"StartingFunctionalGroupControlNumber": ubx.FieldSpec{WireName: "starting_functional_group_control_number"},
+	"StartingInterchangeControlNumber":     ubx.FieldSpec{WireName: "starting_interchange_control_number"},
+	"StartingTransactionSetControlNumber":  ubx.FieldSpec{WireName: "starting_transaction_set_control_number"},
+}
 
 var Partnership_CapabilityOptions_OutboundEdi_X12_Common_DelimitersFields = ubx.FieldMap{
-		"ComponentSeparator": ubx.FieldSpec{WireName: "component_separator"},
-		"DataElementSeparator": ubx.FieldSpec{WireName: "data_element_separator"},
-		"SegmentTerminator": ubx.FieldSpec{WireName: "segment_terminator"},
-	}
+	"ComponentSeparator":   ubx.FieldSpec{WireName: "component_separator"},
+	"DataElementSeparator": ubx.FieldSpec{WireName: "data_element_separator"},
+	"SegmentTerminator":    ubx.FieldSpec{WireName: "segment_terminator"},
+}
 
 var Partnership_CapabilityOptions_OutboundEdi_X12_Common_FunctionalGroupHeadersFields = ubx.FieldMap{
-		"ApplicationReceiverCode": ubx.FieldSpec{WireName: "application_receiver_code"},
-		"ApplicationSenderCode": ubx.FieldSpec{WireName: "application_sender_code"},
-		"ResponsibleAgencyCode": ubx.FieldSpec{WireName: "responsible_agency_code"},
-	}
+	"ApplicationReceiverCode": ubx.FieldSpec{WireName: "application_receiver_code"},
+	"ApplicationSenderCode":   ubx.FieldSpec{WireName: "application_sender_code"},
+	"ResponsibleAgencyCode":   ubx.FieldSpec{WireName: "responsible_agency_code"},
+}
 
 var Partnership_CapabilityOptions_OutboundEdi_X12_Common_InterchangeControlHeadersFields = ubx.FieldMap{
-		"AcknowledgmentRequestedCode": ubx.FieldSpec{WireName: "acknowledgment_requested_code"},
-		"ReceiverId": ubx.FieldSpec{WireName: "receiver_id"},
-		"ReceiverIdQualifier": ubx.FieldSpec{WireName: "receiver_id_qualifier"},
-		"RepetitionSeparator": ubx.FieldSpec{WireName: "repetition_separator"},
-		"SenderId": ubx.FieldSpec{WireName: "sender_id"},
-		"SenderIdQualifier": ubx.FieldSpec{WireName: "sender_id_qualifier"},
-		"UsageIndicatorCode": ubx.FieldSpec{WireName: "usage_indicator_code"},
-	}
+	"AcknowledgmentRequestedCode": ubx.FieldSpec{WireName: "acknowledgment_requested_code"},
+	"ReceiverId":                  ubx.FieldSpec{WireName: "receiver_id"},
+	"ReceiverIdQualifier":         ubx.FieldSpec{WireName: "receiver_id_qualifier"},
+	"RepetitionSeparator":         ubx.FieldSpec{WireName: "repetition_separator"},
+	"SenderId":                    ubx.FieldSpec{WireName: "sender_id"},
+	"SenderIdQualifier":           ubx.FieldSpec{WireName: "sender_id_qualifier"},
+	"UsageIndicatorCode":          ubx.FieldSpec{WireName: "usage_indicator_code"},
+}
 
 var Partnership_CapabilityOptions_OutboundEdi_X12_CommonFields = ubx.FieldMap{
-		"ControlNumbers": ubx.FieldSpec{
-			WireName: "control_numbers",
-			Kind: "object",
-			Fields: Partnership_CapabilityOptions_OutboundEdi_X12_Common_ControlNumbersFields,
-		},
-		"Delimiters": ubx.FieldSpec{
-			WireName: "delimiters",
-			Kind: "object",
-			Fields: Partnership_CapabilityOptions_OutboundEdi_X12_Common_DelimitersFields,
-		},
-		"FunctionalGroupHeaders": ubx.FieldSpec{
-			WireName: "functional_group_headers",
-			Kind: "object",
-			Fields: Partnership_CapabilityOptions_OutboundEdi_X12_Common_FunctionalGroupHeadersFields,
-		},
-		"Gs05TimeFormat": ubx.FieldSpec{WireName: "gs05_time_format"},
-		"InterchangeControlHeaders": ubx.FieldSpec{
-			WireName: "interchange_control_headers",
-			Kind: "object",
-			Fields: Partnership_CapabilityOptions_OutboundEdi_X12_Common_InterchangeControlHeadersFields,
-		},
-		"ValidateEdi": ubx.FieldSpec{WireName: "validate_edi"},
-	}
+	"ControlNumbers": ubx.FieldSpec{
+		WireName: "control_numbers",
+		Kind:     "object",
+		Fields:   Partnership_CapabilityOptions_OutboundEdi_X12_Common_ControlNumbersFields,
+	},
+	"Delimiters": ubx.FieldSpec{
+		WireName: "delimiters",
+		Kind:     "object",
+		Fields:   Partnership_CapabilityOptions_OutboundEdi_X12_Common_DelimitersFields,
+	},
+	"FunctionalGroupHeaders": ubx.FieldSpec{
+		WireName: "functional_group_headers",
+		Kind:     "object",
+		Fields:   Partnership_CapabilityOptions_OutboundEdi_X12_Common_FunctionalGroupHeadersFields,
+	},
+	"Gs05TimeFormat": ubx.FieldSpec{WireName: "gs05_time_format"},
+	"InterchangeControlHeaders": ubx.FieldSpec{
+		WireName: "interchange_control_headers",
+		Kind:     "object",
+		Fields:   Partnership_CapabilityOptions_OutboundEdi_X12_Common_InterchangeControlHeadersFields,
+	},
+	"ValidateEdi": ubx.FieldSpec{WireName: "validate_edi"},
+}
 
 var Partnership_CapabilityOptions_OutboundEdi_X12_WrapOptionsFields = ubx.FieldMap{
-		"LineLength": ubx.FieldSpec{WireName: "line_length"},
-		"LineTerminator": ubx.FieldSpec{WireName: "line_terminator"},
-		"WrapBy": ubx.FieldSpec{WireName: "wrap_by"},
-	}
+	"LineLength":     ubx.FieldSpec{WireName: "line_length"},
+	"LineTerminator": ubx.FieldSpec{WireName: "line_terminator"},
+	"WrapBy":         ubx.FieldSpec{WireName: "wrap_by"},
+}
 
 var Partnership_CapabilityOptions_OutboundEdi_X12Fields = ubx.FieldMap{
-		"Common": ubx.FieldSpec{
-			WireName: "common",
-			Kind: "object",
-			Fields: Partnership_CapabilityOptions_OutboundEdi_X12_CommonFields,
-		},
-		"WrapOptions": ubx.FieldSpec{
-			WireName: "wrap_options",
-			Kind: "object",
-			Fields: Partnership_CapabilityOptions_OutboundEdi_X12_WrapOptionsFields,
-		},
-	}
+	"Common": ubx.FieldSpec{
+		WireName: "common",
+		Kind:     "object",
+		Fields:   Partnership_CapabilityOptions_OutboundEdi_X12_CommonFields,
+	},
+	"WrapOptions": ubx.FieldSpec{
+		WireName: "wrap_options",
+		Kind:     "object",
+		Fields:   Partnership_CapabilityOptions_OutboundEdi_X12_WrapOptionsFields,
+	},
+}
 
 var Partnership_CapabilityOptions_OutboundEdiFields = ubx.FieldMap{
-		"X12": ubx.FieldSpec{
-			WireName: "x12",
-			Kind: "object",
-			Fields: Partnership_CapabilityOptions_OutboundEdi_X12Fields,
-		},
-	}
+	"X12": ubx.FieldSpec{
+		WireName: "x12",
+		Kind:     "object",
+		Fields:   Partnership_CapabilityOptions_OutboundEdi_X12Fields,
+	},
+}
 
 var Partnership_CapabilityOptionsFields = ubx.FieldMap{
-		"InboundEdi": ubx.FieldSpec{
-			WireName: "inbound_edi",
-			Kind: "object",
-			Fields: Partnership_CapabilityOptions_InboundEdiFields,
-		},
-		"OutboundEdi": ubx.FieldSpec{
-			WireName: "outbound_edi",
-			Kind: "object",
-			Fields: Partnership_CapabilityOptions_OutboundEdiFields,
-		},
-	}
+	"InboundEdi": ubx.FieldSpec{
+		WireName: "inbound_edi",
+		Kind:     "object",
+		Fields:   Partnership_CapabilityOptions_InboundEdiFields,
+	},
+	"OutboundEdi": ubx.FieldSpec{
+		WireName: "outbound_edi",
+		Kind:     "object",
+		Fields:   Partnership_CapabilityOptions_OutboundEdiFields,
+	},
+}
 
 var Partnership_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PartnershipConfig struct {
 	// The list of EDI capability identifiers (e.g., X12 850 or X12 810) that this partnership supports, determining the business document formats and transformations that can be exchanged with the trading partner. (AI-inferred)
@@ -282,17 +282,17 @@ var Partnership = ubx.ResourceBinding{
 		"Capabilities": ubx.FieldSpec{WireName: "capabilities"},
 		"CapabilityOptions": ubx.FieldSpec{
 			WireName: "capability_options",
-			Kind: "object",
-			Fields: Partnership_CapabilityOptionsFields,
+			Kind:     "object",
+			Fields:   Partnership_CapabilityOptionsFields,
 		},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Phone": ubx.FieldSpec{WireName: "phone"},
+		"Email":     ubx.FieldSpec{WireName: "email"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Phone":     ubx.FieldSpec{WireName: "phone"},
 		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Partnership_TagsFields,
+			Kind:     "list",
+			Fields:   Partnership_TagsFields,
 		},
 	},
 }

@@ -548,578 +548,578 @@ type Pipe_TargetParameters struct {
 }
 
 var Pipe_EnrichmentParameters_HttpParametersFields = ubx.FieldMap{
-		"HeaderParameters": ubx.FieldSpec{WireName: "header_parameters"},
-		"PathParameterValues": ubx.FieldSpec{WireName: "path_parameter_values"},
-		"QueryStringParameters": ubx.FieldSpec{WireName: "query_string_parameters"},
-	}
+	"HeaderParameters":      ubx.FieldSpec{WireName: "header_parameters"},
+	"PathParameterValues":   ubx.FieldSpec{WireName: "path_parameter_values"},
+	"QueryStringParameters": ubx.FieldSpec{WireName: "query_string_parameters"},
+}
 
 var Pipe_EnrichmentParametersFields = ubx.FieldMap{
-		"HttpParameters": ubx.FieldSpec{
-			WireName: "http_parameters",
-			Kind: "object",
-			Fields: Pipe_EnrichmentParameters_HttpParametersFields,
-		},
-		"InputTemplate": ubx.FieldSpec{WireName: "input_template"},
-	}
+	"HttpParameters": ubx.FieldSpec{
+		WireName: "http_parameters",
+		Kind:     "object",
+		Fields:   Pipe_EnrichmentParameters_HttpParametersFields,
+	},
+	"InputTemplate": ubx.FieldSpec{WireName: "input_template"},
+}
 
 var Pipe_LogConfiguration_CloudwatchLogsLogDestinationFields = ubx.FieldMap{
-		"LogGroupArn": ubx.FieldSpec{WireName: "log_group_arn"},
-	}
+	"LogGroupArn": ubx.FieldSpec{WireName: "log_group_arn"},
+}
 
 var Pipe_LogConfiguration_FirehoseLogDestinationFields = ubx.FieldMap{
-		"DeliveryStreamArn": ubx.FieldSpec{WireName: "delivery_stream_arn"},
-	}
+	"DeliveryStreamArn": ubx.FieldSpec{WireName: "delivery_stream_arn"},
+}
 
 var Pipe_LogConfiguration_S3LogDestinationFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"BucketOwner": ubx.FieldSpec{WireName: "bucket_owner"},
-		"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"BucketName":   ubx.FieldSpec{WireName: "bucket_name"},
+	"BucketOwner":  ubx.FieldSpec{WireName: "bucket_owner"},
+	"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
+	"Prefix":       ubx.FieldSpec{WireName: "prefix"},
+}
 
 var Pipe_LogConfigurationFields = ubx.FieldMap{
-		"CloudwatchLogsLogDestination": ubx.FieldSpec{
-			WireName: "cloudwatch_logs_log_destination",
-			Kind: "object",
-			Fields: Pipe_LogConfiguration_CloudwatchLogsLogDestinationFields,
-		},
-		"FirehoseLogDestination": ubx.FieldSpec{
-			WireName: "firehose_log_destination",
-			Kind: "object",
-			Fields: Pipe_LogConfiguration_FirehoseLogDestinationFields,
-		},
-		"IncludeExecutionData": ubx.FieldSpec{WireName: "include_execution_data"},
-		"Level": ubx.FieldSpec{WireName: "level"},
-		"S3LogDestination": ubx.FieldSpec{
-			WireName: "s3_log_destination",
-			Kind: "object",
-			Fields: Pipe_LogConfiguration_S3LogDestinationFields,
-		},
-	}
+	"CloudwatchLogsLogDestination": ubx.FieldSpec{
+		WireName: "cloudwatch_logs_log_destination",
+		Kind:     "object",
+		Fields:   Pipe_LogConfiguration_CloudwatchLogsLogDestinationFields,
+	},
+	"FirehoseLogDestination": ubx.FieldSpec{
+		WireName: "firehose_log_destination",
+		Kind:     "object",
+		Fields:   Pipe_LogConfiguration_FirehoseLogDestinationFields,
+	},
+	"IncludeExecutionData": ubx.FieldSpec{WireName: "include_execution_data"},
+	"Level":                ubx.FieldSpec{WireName: "level"},
+	"S3LogDestination": ubx.FieldSpec{
+		WireName: "s3_log_destination",
+		Kind:     "object",
+		Fields:   Pipe_LogConfiguration_S3LogDestinationFields,
+	},
+}
 
 var Pipe_SourceParameters_ActiveMqbrokerParameters_CredentialsFields = ubx.FieldMap{
-		"BasicAuth": ubx.FieldSpec{WireName: "basic_auth"},
-	}
+	"BasicAuth": ubx.FieldSpec{WireName: "basic_auth"},
+}
 
 var Pipe_SourceParameters_ActiveMqbrokerParametersFields = ubx.FieldMap{
-		"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
-		"Credentials": ubx.FieldSpec{
-			WireName: "credentials",
-			Kind: "object",
-			Fields: Pipe_SourceParameters_ActiveMqbrokerParameters_CredentialsFields,
-		},
-		"MaximumBatchingWindowInSeconds": ubx.FieldSpec{WireName: "maximum_batching_window_in_seconds"},
-		"QueueName": ubx.FieldSpec{WireName: "queue_name"},
-	}
+	"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
+	"Credentials": ubx.FieldSpec{
+		WireName: "credentials",
+		Kind:     "object",
+		Fields:   Pipe_SourceParameters_ActiveMqbrokerParameters_CredentialsFields,
+	},
+	"MaximumBatchingWindowInSeconds": ubx.FieldSpec{WireName: "maximum_batching_window_in_seconds"},
+	"QueueName":                      ubx.FieldSpec{WireName: "queue_name"},
+}
 
 var Pipe_SourceParameters_DynamoDbstreamParameters_DeadLetterConfigFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-	}
+	"Arn": ubx.FieldSpec{WireName: "arn"},
+}
 
 var Pipe_SourceParameters_DynamoDbstreamParametersFields = ubx.FieldMap{
-		"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
-		"DeadLetterConfig": ubx.FieldSpec{
-			WireName: "dead_letter_config",
-			Kind: "object",
-			Fields: Pipe_SourceParameters_DynamoDbstreamParameters_DeadLetterConfigFields,
-		},
-		"MaximumBatchingWindowInSeconds": ubx.FieldSpec{WireName: "maximum_batching_window_in_seconds"},
-		"MaximumRecordAgeInSeconds": ubx.FieldSpec{WireName: "maximum_record_age_in_seconds"},
-		"MaximumRetryAttempts": ubx.FieldSpec{WireName: "maximum_retry_attempts"},
-		"OnPartialBatchItemFailure": ubx.FieldSpec{WireName: "on_partial_batch_item_failure"},
-		"ParallelizationFactor": ubx.FieldSpec{WireName: "parallelization_factor"},
-		"StartingPosition": ubx.FieldSpec{WireName: "starting_position"},
-	}
+	"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
+	"DeadLetterConfig": ubx.FieldSpec{
+		WireName: "dead_letter_config",
+		Kind:     "object",
+		Fields:   Pipe_SourceParameters_DynamoDbstreamParameters_DeadLetterConfigFields,
+	},
+	"MaximumBatchingWindowInSeconds": ubx.FieldSpec{WireName: "maximum_batching_window_in_seconds"},
+	"MaximumRecordAgeInSeconds":      ubx.FieldSpec{WireName: "maximum_record_age_in_seconds"},
+	"MaximumRetryAttempts":           ubx.FieldSpec{WireName: "maximum_retry_attempts"},
+	"OnPartialBatchItemFailure":      ubx.FieldSpec{WireName: "on_partial_batch_item_failure"},
+	"ParallelizationFactor":          ubx.FieldSpec{WireName: "parallelization_factor"},
+	"StartingPosition":               ubx.FieldSpec{WireName: "starting_position"},
+}
 
 var Pipe_SourceParameters_FilterCriteria_FiltersFields = ubx.FieldMap{
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-	}
+	"Pattern": ubx.FieldSpec{WireName: "pattern"},
+}
 
 var Pipe_SourceParameters_FilterCriteriaFields = ubx.FieldMap{
-		"Filters": ubx.FieldSpec{
-			WireName: "filters",
-			Kind: "list",
-			Fields: Pipe_SourceParameters_FilterCriteria_FiltersFields,
-		},
-	}
+	"Filters": ubx.FieldSpec{
+		WireName: "filters",
+		Kind:     "list",
+		Fields:   Pipe_SourceParameters_FilterCriteria_FiltersFields,
+	},
+}
 
 var Pipe_SourceParameters_KinesisStreamParametersFields = ubx.FieldMap{
-		"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
-		"DeadLetterConfig": ubx.FieldSpec{
-			WireName: "dead_letter_config",
-			Kind: "object",
-			Fields: Pipe_SourceParameters_DynamoDbstreamParameters_DeadLetterConfigFields,
-		},
-		"MaximumBatchingWindowInSeconds": ubx.FieldSpec{WireName: "maximum_batching_window_in_seconds"},
-		"MaximumRecordAgeInSeconds": ubx.FieldSpec{WireName: "maximum_record_age_in_seconds"},
-		"MaximumRetryAttempts": ubx.FieldSpec{WireName: "maximum_retry_attempts"},
-		"OnPartialBatchItemFailure": ubx.FieldSpec{WireName: "on_partial_batch_item_failure"},
-		"ParallelizationFactor": ubx.FieldSpec{WireName: "parallelization_factor"},
-		"StartingPosition": ubx.FieldSpec{WireName: "starting_position"},
-		"StartingPositionTimestamp": ubx.FieldSpec{WireName: "starting_position_timestamp"},
-	}
+	"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
+	"DeadLetterConfig": ubx.FieldSpec{
+		WireName: "dead_letter_config",
+		Kind:     "object",
+		Fields:   Pipe_SourceParameters_DynamoDbstreamParameters_DeadLetterConfigFields,
+	},
+	"MaximumBatchingWindowInSeconds": ubx.FieldSpec{WireName: "maximum_batching_window_in_seconds"},
+	"MaximumRecordAgeInSeconds":      ubx.FieldSpec{WireName: "maximum_record_age_in_seconds"},
+	"MaximumRetryAttempts":           ubx.FieldSpec{WireName: "maximum_retry_attempts"},
+	"OnPartialBatchItemFailure":      ubx.FieldSpec{WireName: "on_partial_batch_item_failure"},
+	"ParallelizationFactor":          ubx.FieldSpec{WireName: "parallelization_factor"},
+	"StartingPosition":               ubx.FieldSpec{WireName: "starting_position"},
+	"StartingPositionTimestamp":      ubx.FieldSpec{WireName: "starting_position_timestamp"},
+}
 
 var Pipe_SourceParameters_ManagedStreamingKafkaParameters_CredentialsFields = ubx.FieldMap{
-		"ClientCertificateTlsAuth": ubx.FieldSpec{WireName: "client_certificate_tls_auth"},
-		"SaslScram512Auth": ubx.FieldSpec{WireName: "sasl_scram512_auth"},
-	}
+	"ClientCertificateTlsAuth": ubx.FieldSpec{WireName: "client_certificate_tls_auth"},
+	"SaslScram512Auth":         ubx.FieldSpec{WireName: "sasl_scram512_auth"},
+}
 
 var Pipe_SourceParameters_ManagedStreamingKafkaParametersFields = ubx.FieldMap{
-		"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
-		"ConsumerGroupId": ubx.FieldSpec{WireName: "consumer_group_id"},
-		"Credentials": ubx.FieldSpec{
-			WireName: "credentials",
-			Kind: "object",
-			Fields: Pipe_SourceParameters_ManagedStreamingKafkaParameters_CredentialsFields,
-		},
-		"MaximumBatchingWindowInSeconds": ubx.FieldSpec{WireName: "maximum_batching_window_in_seconds"},
-		"StartingPosition": ubx.FieldSpec{WireName: "starting_position"},
-		"TopicName": ubx.FieldSpec{WireName: "topic_name"},
-	}
+	"BatchSize":       ubx.FieldSpec{WireName: "batch_size"},
+	"ConsumerGroupId": ubx.FieldSpec{WireName: "consumer_group_id"},
+	"Credentials": ubx.FieldSpec{
+		WireName: "credentials",
+		Kind:     "object",
+		Fields:   Pipe_SourceParameters_ManagedStreamingKafkaParameters_CredentialsFields,
+	},
+	"MaximumBatchingWindowInSeconds": ubx.FieldSpec{WireName: "maximum_batching_window_in_seconds"},
+	"StartingPosition":               ubx.FieldSpec{WireName: "starting_position"},
+	"TopicName":                      ubx.FieldSpec{WireName: "topic_name"},
+}
 
 var Pipe_SourceParameters_RabbitMqbrokerParametersFields = ubx.FieldMap{
-		"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
-		"Credentials": ubx.FieldSpec{
-			WireName: "credentials",
-			Kind: "object",
-			Fields: Pipe_SourceParameters_ActiveMqbrokerParameters_CredentialsFields,
-		},
-		"MaximumBatchingWindowInSeconds": ubx.FieldSpec{WireName: "maximum_batching_window_in_seconds"},
-		"QueueName": ubx.FieldSpec{WireName: "queue_name"},
-		"VirtualHost": ubx.FieldSpec{WireName: "virtual_host"},
-	}
+	"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
+	"Credentials": ubx.FieldSpec{
+		WireName: "credentials",
+		Kind:     "object",
+		Fields:   Pipe_SourceParameters_ActiveMqbrokerParameters_CredentialsFields,
+	},
+	"MaximumBatchingWindowInSeconds": ubx.FieldSpec{WireName: "maximum_batching_window_in_seconds"},
+	"QueueName":                      ubx.FieldSpec{WireName: "queue_name"},
+	"VirtualHost":                    ubx.FieldSpec{WireName: "virtual_host"},
+}
 
 var Pipe_SourceParameters_SelfManagedKafkaParameters_CredentialsFields = ubx.FieldMap{
-		"BasicAuth": ubx.FieldSpec{WireName: "basic_auth"},
-		"ClientCertificateTlsAuth": ubx.FieldSpec{WireName: "client_certificate_tls_auth"},
-		"SaslScram256Auth": ubx.FieldSpec{WireName: "sasl_scram256_auth"},
-		"SaslScram512Auth": ubx.FieldSpec{WireName: "sasl_scram512_auth"},
-	}
+	"BasicAuth":                ubx.FieldSpec{WireName: "basic_auth"},
+	"ClientCertificateTlsAuth": ubx.FieldSpec{WireName: "client_certificate_tls_auth"},
+	"SaslScram256Auth":         ubx.FieldSpec{WireName: "sasl_scram256_auth"},
+	"SaslScram512Auth":         ubx.FieldSpec{WireName: "sasl_scram512_auth"},
+}
 
 var Pipe_SourceParameters_SelfManagedKafkaParameters_VpcFields = ubx.FieldMap{
-		"SecurityGroup": ubx.FieldSpec{WireName: "security_group"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"SecurityGroup": ubx.FieldSpec{WireName: "security_group"},
+	"Subnets":       ubx.FieldSpec{WireName: "subnets"},
+}
 
 var Pipe_SourceParameters_SelfManagedKafkaParametersFields = ubx.FieldMap{
-		"AdditionalBootstrapServers": ubx.FieldSpec{WireName: "additional_bootstrap_servers"},
-		"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
-		"ConsumerGroupId": ubx.FieldSpec{WireName: "consumer_group_id"},
-		"Credentials": ubx.FieldSpec{
-			WireName: "credentials",
-			Kind: "object",
-			Fields: Pipe_SourceParameters_SelfManagedKafkaParameters_CredentialsFields,
-		},
-		"MaximumBatchingWindowInSeconds": ubx.FieldSpec{WireName: "maximum_batching_window_in_seconds"},
-		"ServerRootCaCertificate": ubx.FieldSpec{WireName: "server_root_ca_certificate"},
-		"StartingPosition": ubx.FieldSpec{WireName: "starting_position"},
-		"TopicName": ubx.FieldSpec{WireName: "topic_name"},
-		"Vpc": ubx.FieldSpec{
-			WireName: "vpc",
-			Kind: "object",
-			Fields: Pipe_SourceParameters_SelfManagedKafkaParameters_VpcFields,
-		},
-	}
+	"AdditionalBootstrapServers": ubx.FieldSpec{WireName: "additional_bootstrap_servers"},
+	"BatchSize":                  ubx.FieldSpec{WireName: "batch_size"},
+	"ConsumerGroupId":            ubx.FieldSpec{WireName: "consumer_group_id"},
+	"Credentials": ubx.FieldSpec{
+		WireName: "credentials",
+		Kind:     "object",
+		Fields:   Pipe_SourceParameters_SelfManagedKafkaParameters_CredentialsFields,
+	},
+	"MaximumBatchingWindowInSeconds": ubx.FieldSpec{WireName: "maximum_batching_window_in_seconds"},
+	"ServerRootCaCertificate":        ubx.FieldSpec{WireName: "server_root_ca_certificate"},
+	"StartingPosition":               ubx.FieldSpec{WireName: "starting_position"},
+	"TopicName":                      ubx.FieldSpec{WireName: "topic_name"},
+	"Vpc": ubx.FieldSpec{
+		WireName: "vpc",
+		Kind:     "object",
+		Fields:   Pipe_SourceParameters_SelfManagedKafkaParameters_VpcFields,
+	},
+}
 
 var Pipe_SourceParameters_SqsQueueParametersFields = ubx.FieldMap{
-		"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
-		"MaximumBatchingWindowInSeconds": ubx.FieldSpec{WireName: "maximum_batching_window_in_seconds"},
-	}
+	"BatchSize":                      ubx.FieldSpec{WireName: "batch_size"},
+	"MaximumBatchingWindowInSeconds": ubx.FieldSpec{WireName: "maximum_batching_window_in_seconds"},
+}
 
 var Pipe_SourceParametersFields = ubx.FieldMap{
-		"ActiveMqbrokerParameters": ubx.FieldSpec{
-			WireName: "active_mqbroker_parameters",
-			Kind: "object",
-			Fields: Pipe_SourceParameters_ActiveMqbrokerParametersFields,
-		},
-		"DynamoDbstreamParameters": ubx.FieldSpec{
-			WireName: "dynamo_dbstream_parameters",
-			Kind: "object",
-			Fields: Pipe_SourceParameters_DynamoDbstreamParametersFields,
-		},
-		"FilterCriteria": ubx.FieldSpec{
-			WireName: "filter_criteria",
-			Kind: "object",
-			Fields: Pipe_SourceParameters_FilterCriteriaFields,
-		},
-		"KinesisStreamParameters": ubx.FieldSpec{
-			WireName: "kinesis_stream_parameters",
-			Kind: "object",
-			Fields: Pipe_SourceParameters_KinesisStreamParametersFields,
-		},
-		"ManagedStreamingKafkaParameters": ubx.FieldSpec{
-			WireName: "managed_streaming_kafka_parameters",
-			Kind: "object",
-			Fields: Pipe_SourceParameters_ManagedStreamingKafkaParametersFields,
-		},
-		"RabbitMqbrokerParameters": ubx.FieldSpec{
-			WireName: "rabbit_mqbroker_parameters",
-			Kind: "object",
-			Fields: Pipe_SourceParameters_RabbitMqbrokerParametersFields,
-		},
-		"SelfManagedKafkaParameters": ubx.FieldSpec{
-			WireName: "self_managed_kafka_parameters",
-			Kind: "object",
-			Fields: Pipe_SourceParameters_SelfManagedKafkaParametersFields,
-		},
-		"SqsQueueParameters": ubx.FieldSpec{
-			WireName: "sqs_queue_parameters",
-			Kind: "object",
-			Fields: Pipe_SourceParameters_SqsQueueParametersFields,
-		},
-	}
+	"ActiveMqbrokerParameters": ubx.FieldSpec{
+		WireName: "active_mqbroker_parameters",
+		Kind:     "object",
+		Fields:   Pipe_SourceParameters_ActiveMqbrokerParametersFields,
+	},
+	"DynamoDbstreamParameters": ubx.FieldSpec{
+		WireName: "dynamo_dbstream_parameters",
+		Kind:     "object",
+		Fields:   Pipe_SourceParameters_DynamoDbstreamParametersFields,
+	},
+	"FilterCriteria": ubx.FieldSpec{
+		WireName: "filter_criteria",
+		Kind:     "object",
+		Fields:   Pipe_SourceParameters_FilterCriteriaFields,
+	},
+	"KinesisStreamParameters": ubx.FieldSpec{
+		WireName: "kinesis_stream_parameters",
+		Kind:     "object",
+		Fields:   Pipe_SourceParameters_KinesisStreamParametersFields,
+	},
+	"ManagedStreamingKafkaParameters": ubx.FieldSpec{
+		WireName: "managed_streaming_kafka_parameters",
+		Kind:     "object",
+		Fields:   Pipe_SourceParameters_ManagedStreamingKafkaParametersFields,
+	},
+	"RabbitMqbrokerParameters": ubx.FieldSpec{
+		WireName: "rabbit_mqbroker_parameters",
+		Kind:     "object",
+		Fields:   Pipe_SourceParameters_RabbitMqbrokerParametersFields,
+	},
+	"SelfManagedKafkaParameters": ubx.FieldSpec{
+		WireName: "self_managed_kafka_parameters",
+		Kind:     "object",
+		Fields:   Pipe_SourceParameters_SelfManagedKafkaParametersFields,
+	},
+	"SqsQueueParameters": ubx.FieldSpec{
+		WireName: "sqs_queue_parameters",
+		Kind:     "object",
+		Fields:   Pipe_SourceParameters_SqsQueueParametersFields,
+	},
+}
 
 var Pipe_TargetParameters_BatchJobParameters_ArrayPropertiesFields = ubx.FieldMap{
-		"Size": ubx.FieldSpec{WireName: "size"},
-	}
+	"Size": ubx.FieldSpec{WireName: "size"},
+}
 
 var Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_EnvironmentFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirementsFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Pipe_TargetParameters_BatchJobParameters_ContainerOverridesFields = ubx.FieldMap{
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "list",
-			Fields: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_EnvironmentFields,
-		},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"ResourceRequirements": ubx.FieldSpec{
-			WireName: "resource_requirements",
-			Kind: "list",
-			Fields: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirementsFields,
-		},
-	}
+	"Command": ubx.FieldSpec{WireName: "command"},
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "list",
+		Fields:   Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_EnvironmentFields,
+	},
+	"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
+	"ResourceRequirements": ubx.FieldSpec{
+		WireName: "resource_requirements",
+		Kind:     "list",
+		Fields:   Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirementsFields,
+	},
+}
 
 var Pipe_TargetParameters_BatchJobParameters_DependsOnFields = ubx.FieldMap{
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"JobId": ubx.FieldSpec{WireName: "job_id"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+}
 
 var Pipe_TargetParameters_BatchJobParameters_RetryStrategyFields = ubx.FieldMap{
-		"Attempts": ubx.FieldSpec{WireName: "attempts"},
-	}
+	"Attempts": ubx.FieldSpec{WireName: "attempts"},
+}
 
 var Pipe_TargetParameters_BatchJobParametersFields = ubx.FieldMap{
-		"ArrayProperties": ubx.FieldSpec{
-			WireName: "array_properties",
-			Kind: "object",
-			Fields: Pipe_TargetParameters_BatchJobParameters_ArrayPropertiesFields,
-		},
-		"ContainerOverrides": ubx.FieldSpec{
-			WireName: "container_overrides",
-			Kind: "object",
-			Fields: Pipe_TargetParameters_BatchJobParameters_ContainerOverridesFields,
-		},
-		"DependsOn": ubx.FieldSpec{
-			WireName: "depends_on",
-			Kind: "list",
-			Fields: Pipe_TargetParameters_BatchJobParameters_DependsOnFields,
-		},
-		"JobDefinition": ubx.FieldSpec{WireName: "job_definition"},
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"RetryStrategy": ubx.FieldSpec{
-			WireName: "retry_strategy",
-			Kind: "object",
-			Fields: Pipe_TargetParameters_BatchJobParameters_RetryStrategyFields,
-		},
-	}
+	"ArrayProperties": ubx.FieldSpec{
+		WireName: "array_properties",
+		Kind:     "object",
+		Fields:   Pipe_TargetParameters_BatchJobParameters_ArrayPropertiesFields,
+	},
+	"ContainerOverrides": ubx.FieldSpec{
+		WireName: "container_overrides",
+		Kind:     "object",
+		Fields:   Pipe_TargetParameters_BatchJobParameters_ContainerOverridesFields,
+	},
+	"DependsOn": ubx.FieldSpec{
+		WireName: "depends_on",
+		Kind:     "list",
+		Fields:   Pipe_TargetParameters_BatchJobParameters_DependsOnFields,
+	},
+	"JobDefinition": ubx.FieldSpec{WireName: "job_definition"},
+	"JobName":       ubx.FieldSpec{WireName: "job_name"},
+	"Parameters":    ubx.FieldSpec{WireName: "parameters"},
+	"RetryStrategy": ubx.FieldSpec{
+		WireName: "retry_strategy",
+		Kind:     "object",
+		Fields:   Pipe_TargetParameters_BatchJobParameters_RetryStrategyFields,
+	},
+}
 
 var Pipe_TargetParameters_CloudWatchLogsParametersFields = ubx.FieldMap{
-		"LogStreamName": ubx.FieldSpec{WireName: "log_stream_name"},
-		"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
-	}
+	"LogStreamName": ubx.FieldSpec{WireName: "log_stream_name"},
+	"Timestamp":     ubx.FieldSpec{WireName: "timestamp"},
+}
 
 var Pipe_TargetParameters_EcsTaskParameters_CapacityProviderStrategyFields = ubx.FieldMap{
-		"Base": ubx.FieldSpec{WireName: "base"},
-		"CapacityProvider": ubx.FieldSpec{WireName: "capacity_provider"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"Base":             ubx.FieldSpec{WireName: "base"},
+	"CapacityProvider": ubx.FieldSpec{WireName: "capacity_provider"},
+	"Weight":           ubx.FieldSpec{WireName: "weight"},
+}
 
 var Pipe_TargetParameters_EcsTaskParameters_NetworkConfiguration_AwsvpcConfigurationFields = ubx.FieldMap{
-		"AssignPublicIp": ubx.FieldSpec{WireName: "assign_public_ip"},
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"AssignPublicIp": ubx.FieldSpec{WireName: "assign_public_ip"},
+	"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
+	"Subnets":        ubx.FieldSpec{WireName: "subnets"},
+}
 
 var Pipe_TargetParameters_EcsTaskParameters_NetworkConfigurationFields = ubx.FieldMap{
-		"AwsvpcConfiguration": ubx.FieldSpec{
-			WireName: "awsvpc_configuration",
-			Kind: "object",
-			Fields: Pipe_TargetParameters_EcsTaskParameters_NetworkConfiguration_AwsvpcConfigurationFields,
-		},
-	}
+	"AwsvpcConfiguration": ubx.FieldSpec{
+		WireName: "awsvpc_configuration",
+		Kind:     "object",
+		Fields:   Pipe_TargetParameters_EcsTaskParameters_NetworkConfiguration_AwsvpcConfigurationFields,
+	},
+}
 
 var Pipe_TargetParameters_EcsTaskParameters_Overrides_ContainerOverridesFields = ubx.FieldMap{
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"Cpu": ubx.FieldSpec{WireName: "cpu"},
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "list",
-			Fields: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_EnvironmentFields,
-		},
-		"EnvironmentFiles": ubx.FieldSpec{
-			WireName: "environment_files",
-			Kind: "list",
-			Fields: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirementsFields,
-		},
-		"Memory": ubx.FieldSpec{WireName: "memory"},
-		"MemoryReservation": ubx.FieldSpec{WireName: "memory_reservation"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResourceRequirements": ubx.FieldSpec{
-			WireName: "resource_requirements",
-			Kind: "list",
-			Fields: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirementsFields,
-		},
-	}
+	"Command": ubx.FieldSpec{WireName: "command"},
+	"Cpu":     ubx.FieldSpec{WireName: "cpu"},
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "list",
+		Fields:   Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_EnvironmentFields,
+	},
+	"EnvironmentFiles": ubx.FieldSpec{
+		WireName: "environment_files",
+		Kind:     "list",
+		Fields:   Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirementsFields,
+	},
+	"Memory":            ubx.FieldSpec{WireName: "memory"},
+	"MemoryReservation": ubx.FieldSpec{WireName: "memory_reservation"},
+	"Name":              ubx.FieldSpec{WireName: "name"},
+	"ResourceRequirements": ubx.FieldSpec{
+		WireName: "resource_requirements",
+		Kind:     "list",
+		Fields:   Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirementsFields,
+	},
+}
 
 var Pipe_TargetParameters_EcsTaskParameters_Overrides_EphemeralStorageFields = ubx.FieldMap{
-		"SizeInGiB": ubx.FieldSpec{WireName: "size_in_gi_b"},
-	}
+	"SizeInGiB": ubx.FieldSpec{WireName: "size_in_gi_b"},
+}
 
 var Pipe_TargetParameters_EcsTaskParameters_Overrides_InferenceAcceleratorOverridesFields = ubx.FieldMap{
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"DeviceType": ubx.FieldSpec{WireName: "device_type"},
-	}
+	"DeviceName": ubx.FieldSpec{WireName: "device_name"},
+	"DeviceType": ubx.FieldSpec{WireName: "device_type"},
+}
 
 var Pipe_TargetParameters_EcsTaskParameters_OverridesFields = ubx.FieldMap{
-		"ContainerOverrides": ubx.FieldSpec{
-			WireName: "container_overrides",
-			Kind: "list",
-			Fields: Pipe_TargetParameters_EcsTaskParameters_Overrides_ContainerOverridesFields,
-		},
-		"Cpu": ubx.FieldSpec{WireName: "cpu"},
-		"EphemeralStorage": ubx.FieldSpec{
-			WireName: "ephemeral_storage",
-			Kind: "object",
-			Fields: Pipe_TargetParameters_EcsTaskParameters_Overrides_EphemeralStorageFields,
-		},
-		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"InferenceAcceleratorOverrides": ubx.FieldSpec{
-			WireName: "inference_accelerator_overrides",
-			Kind: "list",
-			Fields: Pipe_TargetParameters_EcsTaskParameters_Overrides_InferenceAcceleratorOverridesFields,
-		},
-		"Memory": ubx.FieldSpec{WireName: "memory"},
-		"TaskRoleArn": ubx.FieldSpec{WireName: "task_role_arn"},
-	}
+	"ContainerOverrides": ubx.FieldSpec{
+		WireName: "container_overrides",
+		Kind:     "list",
+		Fields:   Pipe_TargetParameters_EcsTaskParameters_Overrides_ContainerOverridesFields,
+	},
+	"Cpu": ubx.FieldSpec{WireName: "cpu"},
+	"EphemeralStorage": ubx.FieldSpec{
+		WireName: "ephemeral_storage",
+		Kind:     "object",
+		Fields:   Pipe_TargetParameters_EcsTaskParameters_Overrides_EphemeralStorageFields,
+	},
+	"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
+	"InferenceAcceleratorOverrides": ubx.FieldSpec{
+		WireName: "inference_accelerator_overrides",
+		Kind:     "list",
+		Fields:   Pipe_TargetParameters_EcsTaskParameters_Overrides_InferenceAcceleratorOverridesFields,
+	},
+	"Memory":      ubx.FieldSpec{WireName: "memory"},
+	"TaskRoleArn": ubx.FieldSpec{WireName: "task_role_arn"},
+}
 
 var Pipe_TargetParameters_EcsTaskParameters_PlacementConstraintsFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var Pipe_TargetParameters_EcsTaskParameters_PlacementStrategyFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Field": ubx.FieldSpec{WireName: "field"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+}
 
 var Pipe_TargetParameters_EcsTaskParameters_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Pipe_TargetParameters_EcsTaskParametersFields = ubx.FieldMap{
-		"CapacityProviderStrategy": ubx.FieldSpec{
-			WireName: "capacity_provider_strategy",
-			Kind: "list",
-			Fields: Pipe_TargetParameters_EcsTaskParameters_CapacityProviderStrategyFields,
-		},
-		"EnableEcsmanagedTags": ubx.FieldSpec{WireName: "enable_ecsmanaged_tags"},
-		"EnableExecuteCommand": ubx.FieldSpec{WireName: "enable_execute_command"},
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"LaunchType": ubx.FieldSpec{WireName: "launch_type"},
-		"NetworkConfiguration": ubx.FieldSpec{
-			WireName: "network_configuration",
-			Kind: "object",
-			Fields: Pipe_TargetParameters_EcsTaskParameters_NetworkConfigurationFields,
-		},
-		"Overrides": ubx.FieldSpec{
-			WireName: "overrides",
-			Kind: "object",
-			Fields: Pipe_TargetParameters_EcsTaskParameters_OverridesFields,
-		},
-		"PlacementConstraints": ubx.FieldSpec{
-			WireName: "placement_constraints",
-			Kind: "list",
-			Fields: Pipe_TargetParameters_EcsTaskParameters_PlacementConstraintsFields,
-		},
-		"PlacementStrategy": ubx.FieldSpec{
-			WireName: "placement_strategy",
-			Kind: "list",
-			Fields: Pipe_TargetParameters_EcsTaskParameters_PlacementStrategyFields,
-		},
-		"PlatformVersion": ubx.FieldSpec{WireName: "platform_version"},
-		"PropagateTags": ubx.FieldSpec{WireName: "propagate_tags"},
-		"ReferenceId": ubx.FieldSpec{WireName: "reference_id"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: Pipe_TargetParameters_EcsTaskParameters_TagsFields,
-		},
-		"TaskCount": ubx.FieldSpec{WireName: "task_count"},
-		"TaskDefinitionArn": ubx.FieldSpec{WireName: "task_definition_arn"},
-	}
+	"CapacityProviderStrategy": ubx.FieldSpec{
+		WireName: "capacity_provider_strategy",
+		Kind:     "list",
+		Fields:   Pipe_TargetParameters_EcsTaskParameters_CapacityProviderStrategyFields,
+	},
+	"EnableEcsmanagedTags": ubx.FieldSpec{WireName: "enable_ecsmanaged_tags"},
+	"EnableExecuteCommand": ubx.FieldSpec{WireName: "enable_execute_command"},
+	"Group":                ubx.FieldSpec{WireName: "group"},
+	"LaunchType":           ubx.FieldSpec{WireName: "launch_type"},
+	"NetworkConfiguration": ubx.FieldSpec{
+		WireName: "network_configuration",
+		Kind:     "object",
+		Fields:   Pipe_TargetParameters_EcsTaskParameters_NetworkConfigurationFields,
+	},
+	"Overrides": ubx.FieldSpec{
+		WireName: "overrides",
+		Kind:     "object",
+		Fields:   Pipe_TargetParameters_EcsTaskParameters_OverridesFields,
+	},
+	"PlacementConstraints": ubx.FieldSpec{
+		WireName: "placement_constraints",
+		Kind:     "list",
+		Fields:   Pipe_TargetParameters_EcsTaskParameters_PlacementConstraintsFields,
+	},
+	"PlacementStrategy": ubx.FieldSpec{
+		WireName: "placement_strategy",
+		Kind:     "list",
+		Fields:   Pipe_TargetParameters_EcsTaskParameters_PlacementStrategyFields,
+	},
+	"PlatformVersion": ubx.FieldSpec{WireName: "platform_version"},
+	"PropagateTags":   ubx.FieldSpec{WireName: "propagate_tags"},
+	"ReferenceId":     ubx.FieldSpec{WireName: "reference_id"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   Pipe_TargetParameters_EcsTaskParameters_TagsFields,
+	},
+	"TaskCount":         ubx.FieldSpec{WireName: "task_count"},
+	"TaskDefinitionArn": ubx.FieldSpec{WireName: "task_definition_arn"},
+}
 
 var Pipe_TargetParameters_EventBridgeEventBusParametersFields = ubx.FieldMap{
-		"DetailType": ubx.FieldSpec{WireName: "detail_type"},
-		"EndpointId": ubx.FieldSpec{WireName: "endpoint_id"},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"DetailType": ubx.FieldSpec{WireName: "detail_type"},
+	"EndpointId": ubx.FieldSpec{WireName: "endpoint_id"},
+	"Resources":  ubx.FieldSpec{WireName: "resources"},
+	"Source":     ubx.FieldSpec{WireName: "source"},
+	"Time":       ubx.FieldSpec{WireName: "time"},
+}
 
 var Pipe_TargetParameters_KinesisStreamParametersFields = ubx.FieldMap{
-		"PartitionKey": ubx.FieldSpec{WireName: "partition_key"},
-	}
+	"PartitionKey": ubx.FieldSpec{WireName: "partition_key"},
+}
 
 var Pipe_TargetParameters_LambdaFunctionParametersFields = ubx.FieldMap{
-		"InvocationType": ubx.FieldSpec{WireName: "invocation_type"},
-	}
+	"InvocationType": ubx.FieldSpec{WireName: "invocation_type"},
+}
 
 var Pipe_TargetParameters_RedshiftDataParametersFields = ubx.FieldMap{
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"DbUser": ubx.FieldSpec{WireName: "db_user"},
-		"SecretManagerArn": ubx.FieldSpec{WireName: "secret_manager_arn"},
-		"Sqls": ubx.FieldSpec{WireName: "sqls"},
-		"StatementName": ubx.FieldSpec{WireName: "statement_name"},
-		"WithEvent": ubx.FieldSpec{WireName: "with_event"},
-	}
+	"Database":         ubx.FieldSpec{WireName: "database"},
+	"DbUser":           ubx.FieldSpec{WireName: "db_user"},
+	"SecretManagerArn": ubx.FieldSpec{WireName: "secret_manager_arn"},
+	"Sqls":             ubx.FieldSpec{WireName: "sqls"},
+	"StatementName":    ubx.FieldSpec{WireName: "statement_name"},
+	"WithEvent":        ubx.FieldSpec{WireName: "with_event"},
+}
 
 var Pipe_TargetParameters_SageMakerPipelineParametersFields = ubx.FieldMap{
-		"PipelineParameterList": ubx.FieldSpec{
-			WireName: "pipeline_parameter_list",
-			Kind: "list",
-			Fields: Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_EnvironmentFields,
-		},
-	}
+	"PipelineParameterList": ubx.FieldSpec{
+		WireName: "pipeline_parameter_list",
+		Kind:     "list",
+		Fields:   Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_EnvironmentFields,
+	},
+}
 
 var Pipe_TargetParameters_SqsQueueParametersFields = ubx.FieldMap{
-		"MessageDeduplicationId": ubx.FieldSpec{WireName: "message_deduplication_id"},
-		"MessageGroupId": ubx.FieldSpec{WireName: "message_group_id"},
-	}
+	"MessageDeduplicationId": ubx.FieldSpec{WireName: "message_deduplication_id"},
+	"MessageGroupId":         ubx.FieldSpec{WireName: "message_group_id"},
+}
 
 var Pipe_TargetParameters_TimestreamParameters_DimensionMappingsFields = ubx.FieldMap{
-		"DimensionName": ubx.FieldSpec{WireName: "dimension_name"},
-		"DimensionValue": ubx.FieldSpec{WireName: "dimension_value"},
-		"DimensionValueType": ubx.FieldSpec{WireName: "dimension_value_type"},
-	}
+	"DimensionName":      ubx.FieldSpec{WireName: "dimension_name"},
+	"DimensionValue":     ubx.FieldSpec{WireName: "dimension_value"},
+	"DimensionValueType": ubx.FieldSpec{WireName: "dimension_value_type"},
+}
 
 var Pipe_TargetParameters_TimestreamParameters_MultiMeasureMappings_MultiMeasureAttributeMappingsFields = ubx.FieldMap{
-		"MeasureValue": ubx.FieldSpec{WireName: "measure_value"},
-		"MeasureValueType": ubx.FieldSpec{WireName: "measure_value_type"},
-		"MultiMeasureAttributeName": ubx.FieldSpec{WireName: "multi_measure_attribute_name"},
-	}
+	"MeasureValue":              ubx.FieldSpec{WireName: "measure_value"},
+	"MeasureValueType":          ubx.FieldSpec{WireName: "measure_value_type"},
+	"MultiMeasureAttributeName": ubx.FieldSpec{WireName: "multi_measure_attribute_name"},
+}
 
 var Pipe_TargetParameters_TimestreamParameters_MultiMeasureMappingsFields = ubx.FieldMap{
-		"MultiMeasureAttributeMappings": ubx.FieldSpec{
-			WireName: "multi_measure_attribute_mappings",
-			Kind: "list",
-			Fields: Pipe_TargetParameters_TimestreamParameters_MultiMeasureMappings_MultiMeasureAttributeMappingsFields,
-		},
-		"MultiMeasureName": ubx.FieldSpec{WireName: "multi_measure_name"},
-	}
+	"MultiMeasureAttributeMappings": ubx.FieldSpec{
+		WireName: "multi_measure_attribute_mappings",
+		Kind:     "list",
+		Fields:   Pipe_TargetParameters_TimestreamParameters_MultiMeasureMappings_MultiMeasureAttributeMappingsFields,
+	},
+	"MultiMeasureName": ubx.FieldSpec{WireName: "multi_measure_name"},
+}
 
 var Pipe_TargetParameters_TimestreamParameters_SingleMeasureMappingsFields = ubx.FieldMap{
-		"MeasureName": ubx.FieldSpec{WireName: "measure_name"},
-		"MeasureValue": ubx.FieldSpec{WireName: "measure_value"},
-		"MeasureValueType": ubx.FieldSpec{WireName: "measure_value_type"},
-	}
+	"MeasureName":      ubx.FieldSpec{WireName: "measure_name"},
+	"MeasureValue":     ubx.FieldSpec{WireName: "measure_value"},
+	"MeasureValueType": ubx.FieldSpec{WireName: "measure_value_type"},
+}
 
 var Pipe_TargetParameters_TimestreamParametersFields = ubx.FieldMap{
-		"DimensionMappings": ubx.FieldSpec{
-			WireName: "dimension_mappings",
-			Kind: "list",
-			Fields: Pipe_TargetParameters_TimestreamParameters_DimensionMappingsFields,
-		},
-		"EpochTimeUnit": ubx.FieldSpec{WireName: "epoch_time_unit"},
-		"MultiMeasureMappings": ubx.FieldSpec{
-			WireName: "multi_measure_mappings",
-			Kind: "list",
-			Fields: Pipe_TargetParameters_TimestreamParameters_MultiMeasureMappingsFields,
-		},
-		"SingleMeasureMappings": ubx.FieldSpec{
-			WireName: "single_measure_mappings",
-			Kind: "list",
-			Fields: Pipe_TargetParameters_TimestreamParameters_SingleMeasureMappingsFields,
-		},
-		"TimeFieldType": ubx.FieldSpec{WireName: "time_field_type"},
-		"TimeValue": ubx.FieldSpec{WireName: "time_value"},
-		"TimestampFormat": ubx.FieldSpec{WireName: "timestamp_format"},
-		"VersionValue": ubx.FieldSpec{WireName: "version_value"},
-	}
+	"DimensionMappings": ubx.FieldSpec{
+		WireName: "dimension_mappings",
+		Kind:     "list",
+		Fields:   Pipe_TargetParameters_TimestreamParameters_DimensionMappingsFields,
+	},
+	"EpochTimeUnit": ubx.FieldSpec{WireName: "epoch_time_unit"},
+	"MultiMeasureMappings": ubx.FieldSpec{
+		WireName: "multi_measure_mappings",
+		Kind:     "list",
+		Fields:   Pipe_TargetParameters_TimestreamParameters_MultiMeasureMappingsFields,
+	},
+	"SingleMeasureMappings": ubx.FieldSpec{
+		WireName: "single_measure_mappings",
+		Kind:     "list",
+		Fields:   Pipe_TargetParameters_TimestreamParameters_SingleMeasureMappingsFields,
+	},
+	"TimeFieldType":   ubx.FieldSpec{WireName: "time_field_type"},
+	"TimeValue":       ubx.FieldSpec{WireName: "time_value"},
+	"TimestampFormat": ubx.FieldSpec{WireName: "timestamp_format"},
+	"VersionValue":    ubx.FieldSpec{WireName: "version_value"},
+}
 
 var Pipe_TargetParametersFields = ubx.FieldMap{
-		"BatchJobParameters": ubx.FieldSpec{
-			WireName: "batch_job_parameters",
-			Kind: "object",
-			Fields: Pipe_TargetParameters_BatchJobParametersFields,
-		},
-		"CloudWatchLogsParameters": ubx.FieldSpec{
-			WireName: "cloud_watch_logs_parameters",
-			Kind: "object",
-			Fields: Pipe_TargetParameters_CloudWatchLogsParametersFields,
-		},
-		"EcsTaskParameters": ubx.FieldSpec{
-			WireName: "ecs_task_parameters",
-			Kind: "object",
-			Fields: Pipe_TargetParameters_EcsTaskParametersFields,
-		},
-		"EventBridgeEventBusParameters": ubx.FieldSpec{
-			WireName: "event_bridge_event_bus_parameters",
-			Kind: "object",
-			Fields: Pipe_TargetParameters_EventBridgeEventBusParametersFields,
-		},
-		"HttpParameters": ubx.FieldSpec{
-			WireName: "http_parameters",
-			Kind: "object",
-			Fields: Pipe_EnrichmentParameters_HttpParametersFields,
-		},
-		"InputTemplate": ubx.FieldSpec{WireName: "input_template"},
-		"KinesisStreamParameters": ubx.FieldSpec{
-			WireName: "kinesis_stream_parameters",
-			Kind: "object",
-			Fields: Pipe_TargetParameters_KinesisStreamParametersFields,
-		},
-		"LambdaFunctionParameters": ubx.FieldSpec{
-			WireName: "lambda_function_parameters",
-			Kind: "object",
-			Fields: Pipe_TargetParameters_LambdaFunctionParametersFields,
-		},
-		"RedshiftDataParameters": ubx.FieldSpec{
-			WireName: "redshift_data_parameters",
-			Kind: "object",
-			Fields: Pipe_TargetParameters_RedshiftDataParametersFields,
-		},
-		"SageMakerPipelineParameters": ubx.FieldSpec{
-			WireName: "sage_maker_pipeline_parameters",
-			Kind: "object",
-			Fields: Pipe_TargetParameters_SageMakerPipelineParametersFields,
-		},
-		"SqsQueueParameters": ubx.FieldSpec{
-			WireName: "sqs_queue_parameters",
-			Kind: "object",
-			Fields: Pipe_TargetParameters_SqsQueueParametersFields,
-		},
-		"StepFunctionStateMachineParameters": ubx.FieldSpec{
-			WireName: "step_function_state_machine_parameters",
-			Kind: "object",
-			Fields: Pipe_TargetParameters_LambdaFunctionParametersFields,
-		},
-		"TimestreamParameters": ubx.FieldSpec{
-			WireName: "timestream_parameters",
-			Kind: "object",
-			Fields: Pipe_TargetParameters_TimestreamParametersFields,
-		},
-	}
+	"BatchJobParameters": ubx.FieldSpec{
+		WireName: "batch_job_parameters",
+		Kind:     "object",
+		Fields:   Pipe_TargetParameters_BatchJobParametersFields,
+	},
+	"CloudWatchLogsParameters": ubx.FieldSpec{
+		WireName: "cloud_watch_logs_parameters",
+		Kind:     "object",
+		Fields:   Pipe_TargetParameters_CloudWatchLogsParametersFields,
+	},
+	"EcsTaskParameters": ubx.FieldSpec{
+		WireName: "ecs_task_parameters",
+		Kind:     "object",
+		Fields:   Pipe_TargetParameters_EcsTaskParametersFields,
+	},
+	"EventBridgeEventBusParameters": ubx.FieldSpec{
+		WireName: "event_bridge_event_bus_parameters",
+		Kind:     "object",
+		Fields:   Pipe_TargetParameters_EventBridgeEventBusParametersFields,
+	},
+	"HttpParameters": ubx.FieldSpec{
+		WireName: "http_parameters",
+		Kind:     "object",
+		Fields:   Pipe_EnrichmentParameters_HttpParametersFields,
+	},
+	"InputTemplate": ubx.FieldSpec{WireName: "input_template"},
+	"KinesisStreamParameters": ubx.FieldSpec{
+		WireName: "kinesis_stream_parameters",
+		Kind:     "object",
+		Fields:   Pipe_TargetParameters_KinesisStreamParametersFields,
+	},
+	"LambdaFunctionParameters": ubx.FieldSpec{
+		WireName: "lambda_function_parameters",
+		Kind:     "object",
+		Fields:   Pipe_TargetParameters_LambdaFunctionParametersFields,
+	},
+	"RedshiftDataParameters": ubx.FieldSpec{
+		WireName: "redshift_data_parameters",
+		Kind:     "object",
+		Fields:   Pipe_TargetParameters_RedshiftDataParametersFields,
+	},
+	"SageMakerPipelineParameters": ubx.FieldSpec{
+		WireName: "sage_maker_pipeline_parameters",
+		Kind:     "object",
+		Fields:   Pipe_TargetParameters_SageMakerPipelineParametersFields,
+	},
+	"SqsQueueParameters": ubx.FieldSpec{
+		WireName: "sqs_queue_parameters",
+		Kind:     "object",
+		Fields:   Pipe_TargetParameters_SqsQueueParametersFields,
+	},
+	"StepFunctionStateMachineParameters": ubx.FieldSpec{
+		WireName: "step_function_state_machine_parameters",
+		Kind:     "object",
+		Fields:   Pipe_TargetParameters_LambdaFunctionParametersFields,
+	},
+	"TimestreamParameters": ubx.FieldSpec{
+		WireName: "timestream_parameters",
+		Kind:     "object",
+		Fields:   Pipe_TargetParameters_TimestreamParametersFields,
+	},
+}
 
 type PipeConfig struct {
 	// The description field is an optional user-defined text description for the AWS Pipes pipe, used to identify the pipe's purpose or distinguish it from other pipes. (AI-inferred)
@@ -1192,34 +1192,34 @@ type PipeAttrs struct {
 var Pipe = ubx.ResourceBinding{
 	WireType: "aws_pipes_pipe",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
 		"DesiredState": ubx.FieldSpec{WireName: "desired_state"},
-		"Enrichment": ubx.FieldSpec{WireName: "enrichment"},
+		"Enrichment":   ubx.FieldSpec{WireName: "enrichment"},
 		"EnrichmentParameters": ubx.FieldSpec{
 			WireName: "enrichment_parameters",
-			Kind: "object",
-			Fields: Pipe_EnrichmentParametersFields,
+			Kind:     "object",
+			Fields:   Pipe_EnrichmentParametersFields,
 		},
 		"KmsKeyIdentifier": ubx.FieldSpec{WireName: "kms_key_identifier"},
 		"LogConfiguration": ubx.FieldSpec{
 			WireName: "log_configuration",
-			Kind: "object",
-			Fields: Pipe_LogConfigurationFields,
+			Kind:     "object",
+			Fields:   Pipe_LogConfigurationFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"Source": ubx.FieldSpec{WireName: "source"},
+		"Source":  ubx.FieldSpec{WireName: "source"},
 		"SourceParameters": ubx.FieldSpec{
 			WireName: "source_parameters",
-			Kind: "object",
-			Fields: Pipe_SourceParametersFields,
+			Kind:     "object",
+			Fields:   Pipe_SourceParametersFields,
 		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":   ubx.FieldSpec{WireName: "tags"},
 		"Target": ubx.FieldSpec{WireName: "target"},
 		"TargetParameters": ubx.FieldSpec{
 			WireName: "target_parameters",
-			Kind: "object",
-			Fields: Pipe_TargetParametersFields,
+			Kind:     "object",
+			Fields:   Pipe_TargetParametersFields,
 		},
 	},
 }

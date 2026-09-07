@@ -11,9 +11,9 @@ type RoleAlias_Tags struct {
 }
 
 var RoleAlias_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RoleAliasConfig struct {
 	// Specifies the duration, in seconds, for which the temporary credentials returned by the AWS IoT role alias remain valid when the role is assumed via the alias. (AI-inferred)
@@ -43,12 +43,12 @@ var RoleAlias = ubx.ResourceBinding{
 	WireType: "aws_io_t_role_alias",
 	Fields: ubx.FieldMap{
 		"CredentialDurationSeconds": ubx.FieldSpec{WireName: "credential_duration_seconds"},
-		"RoleAlias": ubx.FieldSpec{WireName: "role_alias"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleAlias":                 ubx.FieldSpec{WireName: "role_alias"},
+		"RoleArn":                   ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RoleAlias_TagsFields,
+			Kind:     "list",
+			Fields:   RoleAlias_TagsFields,
 		},
 	},
 }

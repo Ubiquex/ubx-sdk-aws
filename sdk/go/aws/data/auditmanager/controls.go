@@ -4,37 +4,37 @@ package auditmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Controls_ControlMetadataList struct {
-	Arn any
+	Arn            any
 	ControlSources any
-	CreatedAt any
-	Id any
-	LastUpdatedAt any
-	Name any
+	CreatedAt      any
+	Id             any
+	LastUpdatedAt  any
+	Name           any
 }
 
 type ControlsConfig struct {
 	ControlCatalogId any
-	ControlType any
+	ControlType      any
 	// Max results in the page.
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ControlsAttrs struct {
-	ControlCatalogId any
+	ControlCatalogId    any
 	ControlMetadataList any
-	ControlType any
+	ControlType         any
 	// Max results in the page.
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Controls = ubx.DataSourceBinding{
 	WireType: "aws_auditmanager_controls",
 	Fields: ubx.FieldMap{
 		"ControlCatalogId": ubx.FieldSpec{WireName: "control_catalog_id"},
-		"ControlType": ubx.FieldSpec{WireName: "control_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ControlType":      ubx.FieldSpec{WireName: "control_type"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

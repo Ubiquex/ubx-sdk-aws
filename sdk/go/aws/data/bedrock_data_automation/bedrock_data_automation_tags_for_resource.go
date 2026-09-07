@@ -4,7 +4,7 @@ package bedrock_data_automation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BedrockDataAutomationTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 

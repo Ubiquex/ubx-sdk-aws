@@ -9,7 +9,7 @@ type HsmsConfig struct {
 
 type HsmsAttrs struct {
 	// <p>Contains a list of ARNs that identify the HSMs.</p>
-	HsmList any
+	HsmList   any
 	NextToken any
 }
 

@@ -34,18 +34,18 @@ type LocationAzureBlob_Tags struct {
 }
 
 var LocationAzureBlob_AzureBlobSasConfigurationFields = ubx.FieldMap{
-		"AzureBlobSasToken": ubx.FieldSpec{WireName: "azure_blob_sas_token"},
-	}
+	"AzureBlobSasToken": ubx.FieldSpec{WireName: "azure_blob_sas_token"},
+}
 
 var LocationAzureBlob_CustomSecretConfigFields = ubx.FieldMap{
-		"SecretAccessRoleArn": ubx.FieldSpec{WireName: "secret_access_role_arn"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"SecretAccessRoleArn": ubx.FieldSpec{WireName: "secret_access_role_arn"},
+	"SecretArn":           ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var LocationAzureBlob_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LocationAzureBlobConfig struct {
 	// Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.
@@ -100,26 +100,26 @@ type LocationAzureBlobAttrs struct {
 var LocationAzureBlob = ubx.ResourceBinding{
 	WireType: "aws_data_sync_location_azure_blob",
 	Fields: ubx.FieldMap{
-		"AgentArns": ubx.FieldSpec{WireName: "agent_arns"},
-		"AzureAccessTier": ubx.FieldSpec{WireName: "azure_access_tier"},
+		"AgentArns":                   ubx.FieldSpec{WireName: "agent_arns"},
+		"AzureAccessTier":             ubx.FieldSpec{WireName: "azure_access_tier"},
 		"AzureBlobAuthenticationType": ubx.FieldSpec{WireName: "azure_blob_authentication_type"},
-		"AzureBlobContainerUrl": ubx.FieldSpec{WireName: "azure_blob_container_url"},
+		"AzureBlobContainerUrl":       ubx.FieldSpec{WireName: "azure_blob_container_url"},
 		"AzureBlobSasConfiguration": ubx.FieldSpec{
 			WireName: "azure_blob_sas_configuration",
-			Kind: "object",
-			Fields: LocationAzureBlob_AzureBlobSasConfigurationFields,
+			Kind:     "object",
+			Fields:   LocationAzureBlob_AzureBlobSasConfigurationFields,
 		},
 		"AzureBlobType": ubx.FieldSpec{WireName: "azure_blob_type"},
 		"CustomSecretConfig": ubx.FieldSpec{
 			WireName: "custom_secret_config",
-			Kind: "object",
-			Fields: LocationAzureBlob_CustomSecretConfigFields,
+			Kind:     "object",
+			Fields:   LocationAzureBlob_CustomSecretConfigFields,
 		},
 		"Subdirectory": ubx.FieldSpec{WireName: "subdirectory"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LocationAzureBlob_TagsFields,
+			Kind:     "list",
+			Fields:   LocationAzureBlob_TagsFields,
 		},
 	},
 }

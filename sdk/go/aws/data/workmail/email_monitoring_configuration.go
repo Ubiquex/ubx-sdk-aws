@@ -8,9 +8,9 @@ type EmailMonitoringConfigurationConfig struct {
 }
 
 type EmailMonitoringConfigurationAttrs struct {
-	LogGroupArn any
+	LogGroupArn    any
 	OrganizationId any
-	RoleArn any
+	RoleArn        any
 }
 
 var EmailMonitoringConfiguration = ubx.DataSourceBinding{

@@ -9,8 +9,8 @@ type EventBridgeRuleTemplate_EventTargets struct {
 }
 
 var EventBridgeRuleTemplate_EventTargetsFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-	}
+	"Arn": ubx.FieldSpec{WireName: "arn"},
+}
 
 type EventBridgeRuleTemplateConfig struct {
 	// A resource's optional description.
@@ -60,12 +60,12 @@ var EventBridgeRuleTemplate = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EventTargets": ubx.FieldSpec{
 			WireName: "event_targets",
-			Kind: "list",
-			Fields: EventBridgeRuleTemplate_EventTargetsFields,
+			Kind:     "list",
+			Fields:   EventBridgeRuleTemplate_EventTargetsFields,
 		},
-		"EventType": ubx.FieldSpec{WireName: "event_type"},
+		"EventType":       ubx.FieldSpec{WireName: "event_type"},
 		"GroupIdentifier": ubx.FieldSpec{WireName: "group_identifier"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"Tags":            ubx.FieldSpec{WireName: "tags"},
 	},
 }

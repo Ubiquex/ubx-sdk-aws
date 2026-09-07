@@ -4,31 +4,31 @@ package api_ecr_public
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiEcrPublicRepositoryCatalogData_CatalogData struct {
-	AboutText any
-	Architectures any
-	Description any
-	LogoUrl any
+	AboutText            any
+	Architectures        any
+	Description          any
+	LogoUrl              any
 	MarketplaceCertified any
-	OperatingSystems any
-	UsageText any
+	OperatingSystems     any
+	UsageText            any
 }
 
 type ApiEcrPublicRepositoryCatalogDataConfig struct {
-	RegistryId any
+	RegistryId     any
 	RepositoryName any
 }
 
 type ApiEcrPublicRepositoryCatalogDataAttrs struct {
 	// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
-	CatalogData any
-	RegistryId any
+	CatalogData    any
+	RegistryId     any
 	RepositoryName any
 }
 
 var ApiEcrPublicRepositoryCatalogData = ubx.DataSourceBinding{
 	WireType: "aws_api_ecr_public_repository_catalog_data",
 	Fields: ubx.FieldMap{
-		"RegistryId": ubx.FieldSpec{WireName: "registry_id"},
+		"RegistryId":     ubx.FieldSpec{WireName: "registry_id"},
 		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
 	},
 }

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Workspace_Tags struct {
 	// The key of a tag assigned to the WorkSpace, used to categorize and identify the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -23,17 +23,17 @@ type Workspace_WorkspaceProperties struct {
 }
 
 var Workspace_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Workspace_WorkspacePropertiesFields = ubx.FieldMap{
-		"ComputeTypeName": ubx.FieldSpec{WireName: "compute_type_name"},
-		"RootVolumeSizeGib": ubx.FieldSpec{WireName: "root_volume_size_gib"},
-		"RunningMode": ubx.FieldSpec{WireName: "running_mode"},
-		"RunningModeAutoStopTimeoutInMinutes": ubx.FieldSpec{WireName: "running_mode_auto_stop_timeout_in_minutes"},
-		"UserVolumeSizeGib": ubx.FieldSpec{WireName: "user_volume_size_gib"},
-	}
+	"ComputeTypeName":                     ubx.FieldSpec{WireName: "compute_type_name"},
+	"RootVolumeSizeGib":                   ubx.FieldSpec{WireName: "root_volume_size_gib"},
+	"RunningMode":                         ubx.FieldSpec{WireName: "running_mode"},
+	"RunningModeAutoStopTimeoutInMinutes": ubx.FieldSpec{WireName: "running_mode_auto_stop_timeout_in_minutes"},
+	"UserVolumeSizeGib":                   ubx.FieldSpec{WireName: "user_volume_size_gib"},
+}
 
 type WorkspaceConfig struct {
 	// The ID of the WorkSpace bundle that defines the operating system, software, and compute resources for the WorkSpace. (AI-inferred)
@@ -80,21 +80,21 @@ type WorkspaceAttrs struct {
 var Workspace = ubx.ResourceBinding{
 	WireType: "aws_work_spaces_workspace",
 	Fields: ubx.FieldMap{
-		"BundleId": ubx.FieldSpec{WireName: "bundle_id"},
-		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
+		"BundleId":                    ubx.FieldSpec{WireName: "bundle_id"},
+		"DirectoryId":                 ubx.FieldSpec{WireName: "directory_id"},
 		"RootVolumeEncryptionEnabled": ubx.FieldSpec{WireName: "root_volume_encryption_enabled"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Workspace_TagsFields,
+			Kind:     "list",
+			Fields:   Workspace_TagsFields,
 		},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
+		"UserName":                    ubx.FieldSpec{WireName: "user_name"},
 		"UserVolumeEncryptionEnabled": ubx.FieldSpec{WireName: "user_volume_encryption_enabled"},
-		"VolumeEncryptionKey": ubx.FieldSpec{WireName: "volume_encryption_key"},
+		"VolumeEncryptionKey":         ubx.FieldSpec{WireName: "volume_encryption_key"},
 		"WorkspaceProperties": ubx.FieldSpec{
 			WireName: "workspace_properties",
-			Kind: "object",
-			Fields: Workspace_WorkspacePropertiesFields,
+			Kind:     "object",
+			Fields:   Workspace_WorkspacePropertiesFields,
 		},
 	},
 }

@@ -4,93 +4,93 @@ package budgets
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Budgets_Budgets_AutoAdjustData_HistoricalOptions struct {
-	BudgetAdjustmentPeriod any
+	BudgetAdjustmentPeriod   any
 	LookBackAvailablePeriods any
 }
 
 type Budgets_Budgets_AutoAdjustData struct {
-	AutoAdjustType any
-	HistoricalOptions any
+	AutoAdjustType     any
+	HistoricalOptions  any
 	LastAutoAdjustTime any
 }
 
 type Budgets_Budgets_BudgetLimit struct {
 	Amount any
-	Unit any
+	Unit   any
 }
 
 type Budgets_Budgets_CalculatedSpend struct {
-	ActualSpend any
+	ActualSpend     any
 	ForecastedSpend any
 }
 
 type Budgets_Budgets_CostTypes struct {
-	IncludeCredit any
-	IncludeDiscount any
+	IncludeCredit            any
+	IncludeDiscount          any
 	IncludeOtherSubscription any
-	IncludeRecurring any
-	IncludeRefund any
-	IncludeSubscription any
-	IncludeSupport any
-	IncludeTax any
-	IncludeUpfront any
-	UseAmortized any
-	UseBlended any
+	IncludeRecurring         any
+	IncludeRefund            any
+	IncludeSubscription      any
+	IncludeSupport           any
+	IncludeTax               any
+	IncludeUpfront           any
+	UseAmortized             any
+	UseBlended               any
 }
 
 type Budgets_Budgets_FilterExpression_And struct {
 }
 
 type Budgets_Budgets_FilterExpression_CostCategories struct {
-	Key any
+	Key          any
 	MatchOptions any
-	Values any
+	Values       any
 }
 
 type Budgets_Budgets_FilterExpression struct {
-	And any
+	And            any
 	CostCategories any
-	Dimensions any
-	Not any
-	Or any
-	Tags any
+	Dimensions     any
+	Not            any
+	Or             any
+	Tags           any
 }
 
 type Budgets_Budgets_HealthStatus struct {
 	LastUpdatedTime any
-	Status any
-	StatusReason any
+	Status          any
+	StatusReason    any
 }
 
 type Budgets_Budgets_TimePeriod struct {
-	End any
+	End   any
 	Start any
 }
 
 type Budgets_Budgets struct {
-	AutoAdjustData any
-	BillingViewArn any
-	BudgetLimit any
-	BudgetName any
-	BudgetType any
-	CalculatedSpend any
-	CostFilters any
-	CostTypes any
-	FilterExpression any
-	HealthStatus any
-	LastUpdatedTime any
-	Metrics any
+	AutoAdjustData      any
+	BillingViewArn      any
+	BudgetLimit         any
+	BudgetName          any
+	BudgetType          any
+	CalculatedSpend     any
+	CostFilters         any
+	CostTypes           any
+	FilterExpression    any
+	HealthStatus        any
+	LastUpdatedTime     any
+	Metrics             any
 	PlannedBudgetLimits any
-	TimePeriod any
-	TimeUnit any
+	TimePeriod          any
+	TimeUnit            any
 }
 
 type BudgetsConfig struct {
 	// <p>The account ID of the user. It's a 12-digit number.</p>
-	AccountId any
+	AccountId  any
 	MaxResults any
 	// <p> A generic string.</p>
-	NextToken any
+	NextToken            any
 	ShowFilterExpression any
 }
 
@@ -98,19 +98,19 @@ type BudgetsAttrs struct {
 	// <p>The account ID of the user. It's a 12-digit number.</p>
 	AccountId any
 	// <p> A list of budgets.</p>
-	Budgets any
+	Budgets    any
 	MaxResults any
 	// <p> A generic string.</p>
-	NextToken any
+	NextToken            any
 	ShowFilterExpression any
 }
 
 var Budgets = ubx.DataSourceBinding{
 	WireType: "aws_budgets_budgets",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"AccountId":            ubx.FieldSpec{WireName: "account_id"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 		"ShowFilterExpression": ubx.FieldSpec{WireName: "show_filter_expression"},
 	},
 }

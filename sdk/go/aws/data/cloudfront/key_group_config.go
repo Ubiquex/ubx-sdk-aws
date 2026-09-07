@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KeyGroupConfig_KeyGroupConfig struct {
 	Comment any
-	Items any
-	Name any
+	Items   any
+	Name    any
 }
 
 type KeyGroupConfigConfig struct {
@@ -15,7 +15,7 @@ type KeyGroupConfigConfig struct {
 
 type KeyGroupConfigAttrs struct {
 	Etag any
-	Id any
+	Id   any
 	// <p>A key group configuration.</p> <p>A key group contains a list of public keys that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront signed URLs and signed cookies</a>.</p>
 	KeyGroupConfig any
 }

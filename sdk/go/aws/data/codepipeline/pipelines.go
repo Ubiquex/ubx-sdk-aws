@@ -4,29 +4,29 @@ package codepipeline
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Pipelines_Pipelines struct {
-	Created any
+	Created       any
 	ExecutionMode any
-	Name any
-	PipelineType any
-	Updated any
-	Version any
+	Name          any
+	PipelineType  any
+	Updated       any
+	Version       any
 }
 
 type PipelinesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type PipelinesAttrs struct {
 	MaxResults any
-	NextToken any
-	Pipelines any
+	NextToken  any
+	Pipelines  any
 }
 
 var Pipelines = ubx.DataSourceBinding{
 	WireType: "aws_codepipeline_pipelines",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

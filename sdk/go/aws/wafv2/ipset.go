@@ -11,9 +11,9 @@ type Ipset_Tags struct {
 }
 
 var Ipset_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IpsetConfig struct {
 	// List of IPAddresses.
@@ -52,15 +52,15 @@ type IpsetAttrs struct {
 var Ipset = ubx.ResourceBinding{
 	WireType: "aws_wafv2_ipset",
 	Fields: ubx.FieldMap{
-		"Addresses": ubx.FieldSpec{WireName: "addresses"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Addresses":        ubx.FieldSpec{WireName: "addresses"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"IpaddressVersion": ubx.FieldSpec{WireName: "ipaddress_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Scope":            ubx.FieldSpec{WireName: "scope"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Ipset_TagsFields,
+			Kind:     "list",
+			Fields:   Ipset_TagsFields,
 		},
 	},
 }

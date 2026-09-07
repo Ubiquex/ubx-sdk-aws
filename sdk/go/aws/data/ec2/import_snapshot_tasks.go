@@ -4,61 +4,61 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImportSnapshotTasks_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ImportSnapshotTasks_ImportSnapshotTasks_SnapshotTaskDetail_UserBucket struct {
 	S3Bucket any
-	S3Key any
+	S3Key    any
 }
 
 type ImportSnapshotTasks_ImportSnapshotTasks_SnapshotTaskDetail struct {
-	Description any
+	Description   any
 	DiskImageSize any
-	Encrypted any
-	Format any
-	KmsKeyId any
-	Progress any
-	SnapshotId any
-	Status any
+	Encrypted     any
+	Format        any
+	KmsKeyId      any
+	Progress      any
+	SnapshotId    any
+	Status        any
 	StatusMessage any
-	Url any
-	UserBucket any
+	Url           any
+	UserBucket    any
 }
 
 type ImportSnapshotTasks_ImportSnapshotTasks_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ImportSnapshotTasks_ImportSnapshotTasks struct {
-	Description any
-	ImportTaskId any
+	Description        any
+	ImportTaskId       any
 	SnapshotTaskDetail any
-	Tags any
+	Tags               any
 }
 
 var ImportSnapshotTasks_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ImportSnapshotTasksConfig struct {
-	DryRun any
-	Filters any
+	DryRun        any
+	Filters       any
 	ImportTaskIds any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type ImportSnapshotTasksAttrs struct {
-	DryRun any
-	Filters any
+	DryRun              any
+	Filters             any
 	ImportSnapshotTasks any
-	ImportTaskIds any
-	MaxResults any
-	NextToken any
+	ImportTaskIds       any
+	MaxResults          any
+	NextToken           any
 }
 
 var ImportSnapshotTasks = ubx.DataSourceBinding{
@@ -67,11 +67,11 @@ var ImportSnapshotTasks = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ImportSnapshotTasks_FiltersFields,
+			Kind:     "list",
+			Fields:   ImportSnapshotTasks_FiltersFields,
 		},
 		"ImportTaskIds": ubx.FieldSpec{WireName: "import_task_ids"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

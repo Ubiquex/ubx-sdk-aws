@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LambdaMicrovmsManagedMicrovmImages_Items struct {
 	CreatedAt any
-	ImageArn any
+	ImageArn  any
 	UpdatedAt any
 }
 
 type LambdaMicrovmsManagedMicrovmImagesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type LambdaMicrovmsManagedMicrovmImagesAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var LambdaMicrovmsManagedMicrovmImages = ubx.DataSourceBinding{
 	WireType: "aws_lambda_microvms_managed_microvm_images",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

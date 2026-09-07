@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Profile_Partner struct {
 	EnrolledAt any
-	Status any
-	TierName any
+	Status     any
+	TierName   any
 }
 
 type ProfileConfig struct {
@@ -14,12 +14,11 @@ type ProfileConfig struct {
 
 type ProfileAttrs struct {
 	// <p>An object that contains information about the Lightsail partner program membership of an Amazon Lightsail account.</p>
-	Partner any
+	Partner     any
 	ProfileType any
 }
 
 var Profile = ubx.DataSourceBinding{
 	WireType: "aws_lightsail_profile",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

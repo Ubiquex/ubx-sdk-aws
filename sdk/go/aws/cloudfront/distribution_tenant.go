@@ -46,62 +46,62 @@ type DistributionTenant_ManagedCertificateRequest struct {
 }
 
 type DistributionTenant_Parameters struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type DistributionTenant_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var DistributionTenant_Customizations_CertificateFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-	}
+	"Arn": ubx.FieldSpec{WireName: "arn"},
+}
 
 var DistributionTenant_Customizations_GeoRestrictionsFields = ubx.FieldMap{
-		"Locations": ubx.FieldSpec{WireName: "locations"},
-		"RestrictionType": ubx.FieldSpec{WireName: "restriction_type"},
-	}
+	"Locations":       ubx.FieldSpec{WireName: "locations"},
+	"RestrictionType": ubx.FieldSpec{WireName: "restriction_type"},
+}
 
 var DistributionTenant_Customizations_WebAclFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+	"Arn":    ubx.FieldSpec{WireName: "arn"},
+}
 
 var DistributionTenant_CustomizationsFields = ubx.FieldMap{
-		"Certificate": ubx.FieldSpec{
-			WireName: "certificate",
-			Kind: "object",
-			Fields: DistributionTenant_Customizations_CertificateFields,
-		},
-		"GeoRestrictions": ubx.FieldSpec{
-			WireName: "geo_restrictions",
-			Kind: "object",
-			Fields: DistributionTenant_Customizations_GeoRestrictionsFields,
-		},
-		"WebAcl": ubx.FieldSpec{
-			WireName: "web_acl",
-			Kind: "object",
-			Fields: DistributionTenant_Customizations_WebAclFields,
-		},
-	}
+	"Certificate": ubx.FieldSpec{
+		WireName: "certificate",
+		Kind:     "object",
+		Fields:   DistributionTenant_Customizations_CertificateFields,
+	},
+	"GeoRestrictions": ubx.FieldSpec{
+		WireName: "geo_restrictions",
+		Kind:     "object",
+		Fields:   DistributionTenant_Customizations_GeoRestrictionsFields,
+	},
+	"WebAcl": ubx.FieldSpec{
+		WireName: "web_acl",
+		Kind:     "object",
+		Fields:   DistributionTenant_Customizations_WebAclFields,
+	},
+}
 
 var DistributionTenant_ManagedCertificateRequestFields = ubx.FieldMap{
-		"CertificateTransparencyLoggingPreference": ubx.FieldSpec{WireName: "certificate_transparency_logging_preference"},
-		"PrimaryDomainName": ubx.FieldSpec{WireName: "primary_domain_name"},
-		"ValidationTokenHost": ubx.FieldSpec{WireName: "validation_token_host"},
-	}
+	"CertificateTransparencyLoggingPreference": ubx.FieldSpec{WireName: "certificate_transparency_logging_preference"},
+	"PrimaryDomainName":                        ubx.FieldSpec{WireName: "primary_domain_name"},
+	"ValidationTokenHost":                      ubx.FieldSpec{WireName: "validation_token_host"},
+}
 
 var DistributionTenant_ParametersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var DistributionTenant_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DistributionTenantConfig struct {
 	// The ID of the connection group for the distribution tenant. If you don't specify a connection group, CloudFront uses the default connection group.
@@ -165,27 +165,27 @@ var DistributionTenant = ubx.ResourceBinding{
 		"ConnectionGroupId": ubx.FieldSpec{WireName: "connection_group_id"},
 		"Customizations": ubx.FieldSpec{
 			WireName: "customizations",
-			Kind: "object",
-			Fields: DistributionTenant_CustomizationsFields,
+			Kind:     "object",
+			Fields:   DistributionTenant_CustomizationsFields,
 		},
 		"DistributionId": ubx.FieldSpec{WireName: "distribution_id"},
-		"Domains": ubx.FieldSpec{WireName: "domains"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Domains":        ubx.FieldSpec{WireName: "domains"},
+		"Enabled":        ubx.FieldSpec{WireName: "enabled"},
 		"ManagedCertificateRequest": ubx.FieldSpec{
 			WireName: "managed_certificate_request",
-			Kind: "object",
-			Fields: DistributionTenant_ManagedCertificateRequestFields,
+			Kind:     "object",
+			Fields:   DistributionTenant_ManagedCertificateRequestFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Parameters": ubx.FieldSpec{
 			WireName: "parameters",
-			Kind: "list",
-			Fields: DistributionTenant_ParametersFields,
+			Kind:     "list",
+			Fields:   DistributionTenant_ParametersFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DistributionTenant_TagsFields,
+			Kind:     "list",
+			Fields:   DistributionTenant_TagsFields,
 		},
 	},
 }

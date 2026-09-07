@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestGridSessionArtifacts_Artifacts struct {
 	Filename any
-	Type any
-	Url any
+	Type     any
+	Url      any
 }
 
 type TestGridSessionArtifactsConfig struct {
-	MaxResult any
-	NextToken any
+	MaxResult  any
+	NextToken  any
 	SessionArn any
-	Type any
+	Type       any
 }
 
 type TestGridSessionArtifactsAttrs struct {
-	Artifacts any
-	MaxResult any
-	NextToken any
+	Artifacts  any
+	MaxResult  any
+	NextToken  any
 	SessionArn any
-	Type any
+	Type       any
 }
 
 var TestGridSessionArtifacts = ubx.DataSourceBinding{
 	WireType: "aws_devicefarm_test_grid_session_artifacts",
 	Fields: ubx.FieldMap{
-		"MaxResult": ubx.FieldSpec{WireName: "max_result"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResult":  ubx.FieldSpec{WireName: "max_result"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SessionArn": ubx.FieldSpec{WireName: "session_arn"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":       ubx.FieldSpec{WireName: "type"},
 	},
 }

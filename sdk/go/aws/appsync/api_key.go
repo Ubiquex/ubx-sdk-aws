@@ -30,8 +30,8 @@ type ApiKeyAttrs struct {
 var ApiKey = ubx.ResourceBinding{
 	WireType: "aws_app_sync_api_key",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":       ubx.FieldSpec{WireName: "api_id"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expires": ubx.FieldSpec{WireName: "expires"},
+		"Expires":     ubx.FieldSpec{WireName: "expires"},
 	},
 }

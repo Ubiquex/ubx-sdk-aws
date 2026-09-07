@@ -4,47 +4,47 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClassicLinkInstances_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ClassicLinkInstances_Instances_Groups struct {
-	GroupId any
+	GroupId   any
 	GroupName any
 }
 
 type ClassicLinkInstances_Instances_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ClassicLinkInstances_Instances struct {
-	Groups any
+	Groups     any
 	InstanceId any
-	Tags any
-	VpcId any
+	Tags       any
+	VpcId      any
 }
 
 var ClassicLinkInstances_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ClassicLinkInstancesConfig struct {
-	DryRun any
-	Filters any
+	DryRun      any
+	Filters     any
 	InstanceIds any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type ClassicLinkInstancesAttrs struct {
-	DryRun any
-	Filters any
+	DryRun      any
+	Filters     any
 	InstanceIds any
-	Instances any
-	MaxResults any
-	NextToken any
+	Instances   any
+	MaxResults  any
+	NextToken   any
 }
 
 var ClassicLinkInstances = ubx.DataSourceBinding{
@@ -53,11 +53,11 @@ var ClassicLinkInstances = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ClassicLinkInstances_FiltersFields,
+			Kind:     "list",
+			Fields:   ClassicLinkInstances_FiltersFields,
 		},
 		"InstanceIds": ubx.FieldSpec{WireName: "instance_ids"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

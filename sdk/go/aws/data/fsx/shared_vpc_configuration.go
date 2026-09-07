@@ -12,6 +12,5 @@ type SharedVpcConfigurationAttrs struct {
 
 var SharedVpcConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_fsx_shared_vpc_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

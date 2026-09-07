@@ -4,32 +4,32 @@ package organizations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Policies_Policies struct {
-	Arn any
-	AwsManaged any
+	Arn         any
+	AwsManaged  any
 	Description any
-	Id any
-	Name any
-	Type any
+	Id          any
+	Name        any
+	Type        any
 }
 
 type PoliciesConfig struct {
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type PoliciesAttrs struct {
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
-	Policies any
+	NextToken  any
+	Policies   any
 }
 
 var Policies = ubx.DataSourceBinding{
 	WireType: "aws_organizations_policies",
 	Fields: ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Filter":     ubx.FieldSpec{WireName: "filter"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

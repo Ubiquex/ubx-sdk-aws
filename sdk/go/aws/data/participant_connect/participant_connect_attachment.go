@@ -4,25 +4,25 @@ package participant_connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ParticipantConnectAttachmentConfig struct {
-	AttachmentId any
-	ConnectionToken any
+	AttachmentId       any
+	ConnectionToken    any
 	UrlExpiryInSeconds any
 }
 
 type ParticipantConnectAttachmentAttrs struct {
-	AttachmentId any
+	AttachmentId          any
 	AttachmentSizeInBytes any
-	ConnectionToken any
-	Url any
-	UrlExpiry any
-	UrlExpiryInSeconds any
+	ConnectionToken       any
+	Url                   any
+	UrlExpiry             any
+	UrlExpiryInSeconds    any
 }
 
 var ParticipantConnectAttachment = ubx.DataSourceBinding{
 	WireType: "aws_participant_connect_attachment",
 	Fields: ubx.FieldMap{
-		"AttachmentId": ubx.FieldSpec{WireName: "attachment_id"},
-		"ConnectionToken": ubx.FieldSpec{WireName: "connection_token"},
+		"AttachmentId":       ubx.FieldSpec{WireName: "attachment_id"},
+		"ConnectionToken":    ubx.FieldSpec{WireName: "connection_token"},
 		"UrlExpiryInSeconds": ubx.FieldSpec{WireName: "url_expiry_in_seconds"},
 	},
 }

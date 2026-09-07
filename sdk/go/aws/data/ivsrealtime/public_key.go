@@ -4,11 +4,11 @@ package ivsrealtime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PublicKey_PublicKey struct {
-	Arn any
-	Fingerprint any
-	Name any
+	Arn               any
+	Fingerprint       any
+	Name              any
 	PublicKeyMaterial any
-	Tags any
+	Tags              any
 }
 
 type PublicKeyConfig struct {

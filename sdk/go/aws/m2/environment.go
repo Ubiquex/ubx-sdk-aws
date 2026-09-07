@@ -9,8 +9,8 @@ type Environment_HighAvailabilityConfig struct {
 }
 
 var Environment_HighAvailabilityConfigFields = ubx.FieldMap{
-		"DesiredCapacity": ubx.FieldSpec{WireName: "desired_capacity"},
-	}
+	"DesiredCapacity": ubx.FieldSpec{WireName: "desired_capacity"},
+}
 
 type EnvironmentConfig struct {
 	// The description of the environment.
@@ -81,23 +81,23 @@ type EnvironmentAttrs struct {
 var Environment = ubx.ResourceBinding{
 	WireType: "aws_m2_environment",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EngineType": ubx.FieldSpec{WireName: "engine_type"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"EngineType":    ubx.FieldSpec{WireName: "engine_type"},
 		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
 		"HighAvailabilityConfig": ubx.FieldSpec{
 			WireName: "high_availability_config",
-			Kind: "object",
-			Fields: Environment_HighAvailabilityConfigFields,
+			Kind:     "object",
+			Fields:   Environment_HighAvailabilityConfigFields,
 		},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
+		"InstanceType":               ubx.FieldSpec{WireName: "instance_type"},
+		"KmsKeyId":                   ubx.FieldSpec{WireName: "kms_key_id"},
+		"Name":                       ubx.FieldSpec{WireName: "name"},
+		"NetworkType":                ubx.FieldSpec{WireName: "network_type"},
 		"PreferredMaintenanceWindow": ubx.FieldSpec{WireName: "preferred_maintenance_window"},
-		"PubliclyAccessible": ubx.FieldSpec{WireName: "publicly_accessible"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"StorageConfigurations": ubx.FieldSpec{WireName: "storage_configurations"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"PubliclyAccessible":         ubx.FieldSpec{WireName: "publicly_accessible"},
+		"SecurityGroupIds":           ubx.FieldSpec{WireName: "security_group_ids"},
+		"StorageConfigurations":      ubx.FieldSpec{WireName: "storage_configurations"},
+		"SubnetIds":                  ubx.FieldSpec{WireName: "subnet_ids"},
+		"Tags":                       ubx.FieldSpec{WireName: "tags"},
 	},
 }

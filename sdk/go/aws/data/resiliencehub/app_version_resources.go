@@ -5,62 +5,62 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AppVersionResources_PhysicalResources_AppComponents struct {
 	AdditionalInfo any
-	Id any
-	Name any
-	Type any
+	Id             any
+	Name           any
+	Type           any
 }
 
 type AppVersionResources_PhysicalResources_LogicalResourceId struct {
-	EksSourceName any
-	Identifier any
-	LogicalStackName any
-	ResourceGroupName any
+	EksSourceName       any
+	Identifier          any
+	LogicalStackName    any
+	ResourceGroupName   any
 	TerraformSourceName any
 }
 
 type AppVersionResources_PhysicalResources_PhysicalResourceId struct {
 	AwsAccountId any
-	AwsRegion any
-	Identifier any
-	Type any
+	AwsRegion    any
+	Identifier   any
+	Type         any
 }
 
 type AppVersionResources_PhysicalResources struct {
-	AdditionalInfo any
-	AppComponents any
-	Excluded any
-	LogicalResourceId any
+	AdditionalInfo     any
+	AppComponents      any
+	Excluded           any
+	LogicalResourceId  any
 	ParentResourceName any
 	PhysicalResourceId any
-	ResourceName any
-	ResourceType any
-	SourceType any
+	ResourceName       any
+	ResourceType       any
+	SourceType         any
 }
 
 type AppVersionResourcesConfig struct {
-	AppArn any
-	AppVersion any
-	MaxResults any
-	NextToken any
+	AppArn       any
+	AppVersion   any
+	MaxResults   any
+	NextToken    any
 	ResolutionId any
 }
 
 type AppVersionResourcesAttrs struct {
-	AppArn any
-	AppVersion any
-	MaxResults any
-	NextToken any
+	AppArn            any
+	AppVersion        any
+	MaxResults        any
+	NextToken         any
 	PhysicalResources any
-	ResolutionId any
+	ResolutionId      any
 }
 
 var AppVersionResources = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehub_app_version_resources",
 	Fields: ubx.FieldMap{
-		"AppArn": ubx.FieldSpec{WireName: "app_arn"},
-		"AppVersion": ubx.FieldSpec{WireName: "app_version"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"AppArn":       ubx.FieldSpec{WireName: "app_arn"},
+		"AppVersion":   ubx.FieldSpec{WireName: "app_version"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"ResolutionId": ubx.FieldSpec{WireName: "resolution_id"},
 	},
 }

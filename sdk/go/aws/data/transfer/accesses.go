@@ -4,30 +4,30 @@ package transfer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Accesses_Accesses struct {
-	ExternalId any
-	HomeDirectory any
+	ExternalId        any
+	HomeDirectory     any
 	HomeDirectoryType any
-	Role any
+	Role              any
 }
 
 type AccessesConfig struct {
 	MaxResults any
-	NextToken any
-	ServerId any
+	NextToken  any
+	ServerId   any
 }
 
 type AccessesAttrs struct {
-	Accesses any
+	Accesses   any
 	MaxResults any
-	NextToken any
-	ServerId any
+	NextToken  any
+	ServerId   any
 }
 
 var Accesses = ubx.DataSourceBinding{
 	WireType: "aws_transfer_accesses",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ServerId": ubx.FieldSpec{WireName: "server_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"ServerId":   ubx.FieldSpec{WireName: "server_id"},
 	},
 }

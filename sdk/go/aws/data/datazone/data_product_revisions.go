@@ -6,32 +6,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type DataProductRevisions_Items struct {
 	CreatedAt any
 	CreatedBy any
-	DomainId any
-	Id any
-	Revision any
+	DomainId  any
+	Id        any
+	Revision  any
 }
 
 type DataProductRevisionsConfig struct {
 	DomainIdentifier any
-	Identifier any
-	MaxResults any
-	NextToken any
+	Identifier       any
+	MaxResults       any
+	NextToken        any
 }
 
 type DataProductRevisionsAttrs struct {
 	DomainIdentifier any
-	Identifier any
-	Items any
-	MaxResults any
-	NextToken any
+	Identifier       any
+	Items            any
+	MaxResults       any
+	NextToken        any
 }
 
 var DataProductRevisions = ubx.DataSourceBinding{
 	WireType: "aws_datazone_data_product_revisions",
 	Fields: ubx.FieldMap{
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Identifier":       ubx.FieldSpec{WireName: "identifier"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

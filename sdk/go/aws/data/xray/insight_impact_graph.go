@@ -8,35 +8,35 @@ type InsightImpactGraph_Services_Edges struct {
 }
 
 type InsightImpactGraph_Services struct {
-	AccountId any
-	Edges any
-	Name any
-	Names any
+	AccountId   any
+	Edges       any
+	Name        any
+	Names       any
 	ReferenceId any
-	Type any
+	Type        any
 }
 
 type InsightImpactGraphConfig struct {
-	EndTime any
+	EndTime   any
 	InsightId any
 	NextToken any
 	StartTime any
 }
 
 type InsightImpactGraphAttrs struct {
-	EndTime any
-	InsightId any
-	NextToken any
-	ServiceGraphEndTime any
+	EndTime               any
+	InsightId             any
+	NextToken             any
+	ServiceGraphEndTime   any
 	ServiceGraphStartTime any
-	Services any
-	StartTime any
+	Services              any
+	StartTime             any
 }
 
 var InsightImpactGraph = ubx.DataSourceBinding{
 	WireType: "aws_xray_insight_impact_graph",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":   ubx.FieldSpec{WireName: "end_time"},
 		"InsightId": ubx.FieldSpec{WireName: "insight_id"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},

@@ -13,10 +13,10 @@ type ClusterCapacityProviderAssociations_DefaultCapacityProviderStrategy struct 
 }
 
 var ClusterCapacityProviderAssociations_DefaultCapacityProviderStrategyFields = ubx.FieldMap{
-		"Base": ubx.FieldSpec{WireName: "base"},
-		"CapacityProvider": ubx.FieldSpec{WireName: "capacity_provider"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"Base":             ubx.FieldSpec{WireName: "base"},
+	"CapacityProvider": ubx.FieldSpec{WireName: "capacity_provider"},
+	"Weight":           ubx.FieldSpec{WireName: "weight"},
+}
 
 type ClusterCapacityProviderAssociationsConfig struct {
 	// List of capacity providers to associate with the cluster
@@ -40,11 +40,11 @@ var ClusterCapacityProviderAssociations = ubx.ResourceBinding{
 	WireType: "aws_ecs_cluster_capacity_provider_associations",
 	Fields: ubx.FieldMap{
 		"CapacityProviders": ubx.FieldSpec{WireName: "capacity_providers"},
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
+		"Cluster":           ubx.FieldSpec{WireName: "cluster"},
 		"DefaultCapacityProviderStrategy": ubx.FieldSpec{
 			WireName: "default_capacity_provider_strategy",
-			Kind: "list",
-			Fields: ClusterCapacityProviderAssociations_DefaultCapacityProviderStrategyFields,
+			Kind:     "list",
+			Fields:   ClusterCapacityProviderAssociations_DefaultCapacityProviderStrategyFields,
 		},
 	},
 }

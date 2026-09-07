@@ -12,14 +12,14 @@ type InstanceSnapshot_Location struct {
 
 type InstanceSnapshot_Tags struct {
 	// Specifies the key of a tag applied to the AWS Lightsail instance snapshot, used for organizing and identifying the snapshot. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var InstanceSnapshot_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type InstanceSnapshotConfig struct {
 	// The instance from which the snapshot was created.
@@ -60,12 +60,12 @@ type InstanceSnapshotAttrs struct {
 var InstanceSnapshot = ubx.ResourceBinding{
 	WireType: "aws_lightsail_instance_snapshot",
 	Fields: ubx.FieldMap{
-		"InstanceName": ubx.FieldSpec{WireName: "instance_name"},
+		"InstanceName":         ubx.FieldSpec{WireName: "instance_name"},
 		"InstanceSnapshotName": ubx.FieldSpec{WireName: "instance_snapshot_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: InstanceSnapshot_TagsFields,
+			Kind:     "list",
+			Fields:   InstanceSnapshot_TagsFields,
 		},
 	},
 }

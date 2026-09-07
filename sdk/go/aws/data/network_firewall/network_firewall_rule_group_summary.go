@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NetworkFirewallRuleGroupSummary_Summary_RuleSummaries struct {
 	Metadata any
-	Msg any
-	Sid any
+	Msg      any
+	Sid      any
 }
 
 type NetworkFirewallRuleGroupSummary_Summary struct {
@@ -14,25 +14,25 @@ type NetworkFirewallRuleGroupSummary_Summary struct {
 }
 
 type NetworkFirewallRuleGroupSummaryConfig struct {
-	RuleGroupArn any
+	RuleGroupArn  any
 	RuleGroupName any
-	Type any
+	Type          any
 }
 
 type NetworkFirewallRuleGroupSummaryAttrs struct {
-	Description any
-	RuleGroupArn any
+	Description   any
+	RuleGroupArn  any
 	RuleGroupName any
 	// <p>A complex type containing summaries of security protections provided by a rule group.</p> <p>Network Firewall extracts this information from selected fields in the rule group's Suricata rules, based on your <a>SummaryConfiguration</a> settings.</p>
 	Summary any
-	Type any
+	Type    any
 }
 
 var NetworkFirewallRuleGroupSummary = ubx.DataSourceBinding{
 	WireType: "aws_network_firewall_rule_group_summary",
 	Fields: ubx.FieldMap{
-		"RuleGroupArn": ubx.FieldSpec{WireName: "rule_group_arn"},
+		"RuleGroupArn":  ubx.FieldSpec{WireName: "rule_group_arn"},
 		"RuleGroupName": ubx.FieldSpec{WireName: "rule_group_name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":          ubx.FieldSpec{WireName: "type"},
 	},
 }

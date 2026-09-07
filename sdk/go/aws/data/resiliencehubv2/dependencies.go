@@ -5,38 +5,38 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dependencies_DependencySummaries_QueryRange_DataPoints struct {
 	QueryCount any
-	Timestamp any
+	Timestamp  any
 }
 
 type Dependencies_DependencySummaries_QueryRange struct {
-	DataPoints any
-	EndTime any
+	DataPoints  any
+	EndTime     any
 	Granularity any
-	StartTime any
+	StartTime   any
 }
 
 type Dependencies_DependencySummaries struct {
-	Comment any
-	Criticality any
-	DependencyId any
-	DependencyName any
-	DnsName any
+	Comment          any
+	Criticality      any
+	DependencyId     any
+	DependencyName   any
+	DnsName          any
 	LastDetectedTime any
-	Location any
-	Provider any
-	QueryRange any
-	ServiceArn any
-	SourceRegions any
+	Location         any
+	Provider         any
+	QueryRange       any
+	ServiceArn       any
+	SourceRegions    any
 }
 
 type DependenciesConfig struct {
 	// <p>Pagination page size.</p>
 	MaxResults any
 	// <p>Pagination token.</p>
-	NextToken any
-	QueryRangeEndTime any
+	NextToken             any
+	QueryRangeEndTime     any
 	QueryRangeGranularity any
-	QueryRangeStartTime any
+	QueryRangeStartTime   any
 	// <p>ARN identifier.</p>
 	ServiceArn any
 }
@@ -46,10 +46,10 @@ type DependenciesAttrs struct {
 	// <p>Pagination page size.</p>
 	MaxResults any
 	// <p>Pagination token.</p>
-	NextToken any
-	QueryRangeEndTime any
+	NextToken             any
+	QueryRangeEndTime     any
 	QueryRangeGranularity any
-	QueryRangeStartTime any
+	QueryRangeStartTime   any
 	// <p>ARN identifier.</p>
 	ServiceArn any
 }
@@ -57,11 +57,11 @@ type DependenciesAttrs struct {
 var Dependencies = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehubv2_dependencies",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"QueryRangeEndTime": ubx.FieldSpec{WireName: "query_range_end_time"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
+		"QueryRangeEndTime":     ubx.FieldSpec{WireName: "query_range_end_time"},
 		"QueryRangeGranularity": ubx.FieldSpec{WireName: "query_range_granularity"},
-		"QueryRangeStartTime": ubx.FieldSpec{WireName: "query_range_start_time"},
-		"ServiceArn": ubx.FieldSpec{WireName: "service_arn"},
+		"QueryRangeStartTime":   ubx.FieldSpec{WireName: "query_range_start_time"},
+		"ServiceArn":            ubx.FieldSpec{WireName: "service_arn"},
 	},
 }

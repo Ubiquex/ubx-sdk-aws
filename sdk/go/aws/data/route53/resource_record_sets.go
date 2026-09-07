@@ -4,9 +4,9 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceRecordSets_ResourceRecordSets_AliasTarget struct {
-	Dnsname any
+	Dnsname              any
 	EvaluateTargetHealth any
-	HostedZoneId any
+	HostedZoneId         any
 }
 
 type ResourceRecordSets_ResourceRecordSets_CidrRoutingConfig struct {
@@ -15,20 +15,20 @@ type ResourceRecordSets_ResourceRecordSets_CidrRoutingConfig struct {
 }
 
 type ResourceRecordSets_ResourceRecordSets_GeoLocation struct {
-	ContinentCode any
-	CountryCode any
+	ContinentCode   any
+	CountryCode     any
 	SubdivisionCode any
 }
 
 type ResourceRecordSets_ResourceRecordSets_GeoProximityLocation_Coordinates struct {
-	Latitude any
+	Latitude  any
 	Longitude any
 }
 
 type ResourceRecordSets_ResourceRecordSets_GeoProximityLocation struct {
-	Awsregion any
-	Bias any
-	Coordinates any
+	Awsregion      any
+	Bias           any
+	Coordinates    any
 	LocalZoneGroup any
 }
 
@@ -37,51 +37,51 @@ type ResourceRecordSets_ResourceRecordSets_ResourceRecords struct {
 }
 
 type ResourceRecordSets_ResourceRecordSets struct {
-	AliasTarget any
-	CidrRoutingConfig any
-	Failover any
-	GeoLocation any
-	GeoProximityLocation any
-	HealthCheckId any
-	MultiValueAnswer any
-	Name any
-	Region any
-	ResourceRecords any
-	SetIdentifier any
+	AliasTarget             any
+	CidrRoutingConfig       any
+	Failover                any
+	GeoLocation             any
+	GeoProximityLocation    any
+	HealthCheckId           any
+	MultiValueAnswer        any
+	Name                    any
+	Region                  any
+	ResourceRecords         any
+	SetIdentifier           any
 	TrafficPolicyInstanceId any
-	Ttl any
-	Type any
-	Weight any
+	Ttl                     any
+	Type                    any
+	Weight                  any
 }
 
 type ResourceRecordSetsConfig struct {
-	HostedZoneId any
-	MaxItems any
+	HostedZoneId          any
+	MaxItems              any
 	StartRecordIdentifier any
-	StartRecordName any
-	StartRecordType any
+	StartRecordName       any
+	StartRecordType       any
 }
 
 type ResourceRecordSetsAttrs struct {
-	HostedZoneId any
-	IsTruncated any
-	MaxItems any
-	NextRecordIdentifier any
-	NextRecordName any
-	NextRecordType any
-	ResourceRecordSets any
+	HostedZoneId          any
+	IsTruncated           any
+	MaxItems              any
+	NextRecordIdentifier  any
+	NextRecordName        any
+	NextRecordType        any
+	ResourceRecordSets    any
 	StartRecordIdentifier any
-	StartRecordName any
-	StartRecordType any
+	StartRecordName       any
+	StartRecordType       any
 }
 
 var ResourceRecordSets = ubx.DataSourceBinding{
 	WireType: "aws_route53_resource_record_sets",
 	Fields: ubx.FieldMap{
-		"HostedZoneId": ubx.FieldSpec{WireName: "hosted_zone_id"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"HostedZoneId":          ubx.FieldSpec{WireName: "hosted_zone_id"},
+		"MaxItems":              ubx.FieldSpec{WireName: "max_items"},
 		"StartRecordIdentifier": ubx.FieldSpec{WireName: "start_record_identifier"},
-		"StartRecordName": ubx.FieldSpec{WireName: "start_record_name"},
-		"StartRecordType": ubx.FieldSpec{WireName: "start_record_type"},
+		"StartRecordName":       ubx.FieldSpec{WireName: "start_record_name"},
+		"StartRecordType":       ubx.FieldSpec{WireName: "start_record_type"},
 	},
 }

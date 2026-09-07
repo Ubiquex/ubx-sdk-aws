@@ -4,37 +4,37 @@ package dataexchange
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataSetRevisions_Revisions struct {
-	Arn any
-	Comment any
-	CreatedAt any
-	DataSetId any
-	Finalized any
-	Id any
+	Arn               any
+	Comment           any
+	CreatedAt         any
+	DataSetId         any
+	Finalized         any
+	Id                any
 	RevocationComment any
-	Revoked any
-	RevokedAt any
-	SourceId any
-	UpdatedAt any
+	Revoked           any
+	RevokedAt         any
+	SourceId          any
+	UpdatedAt         any
 }
 
 type DataSetRevisionsConfig struct {
-	DataSetId any
+	DataSetId  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DataSetRevisionsAttrs struct {
-	DataSetId any
+	DataSetId  any
 	MaxResults any
-	NextToken any
-	Revisions any
+	NextToken  any
+	Revisions  any
 }
 
 var DataSetRevisions = ubx.DataSourceBinding{
 	WireType: "aws_dataexchange_data_set_revisions",
 	Fields: ubx.FieldMap{
-		"DataSetId": ubx.FieldSpec{WireName: "data_set_id"},
+		"DataSetId":  ubx.FieldSpec{WireName: "data_set_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

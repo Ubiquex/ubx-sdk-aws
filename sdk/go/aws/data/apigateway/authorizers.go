@@ -4,36 +4,36 @@ package apigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Authorizers_Items struct {
-	AuthType any
-	AuthorizerCredentials any
+	AuthType                     any
+	AuthorizerCredentials        any
 	AuthorizerResultTtlInSeconds any
-	AuthorizerUri any
-	Id any
-	IdentitySource any
+	AuthorizerUri                any
+	Id                           any
+	IdentitySource               any
 	IdentityValidationExpression any
-	Name any
-	ProviderArns any
-	Type any
+	Name                         any
+	ProviderArns                 any
+	Type                         any
 }
 
 type AuthorizersConfig struct {
-	Limit any
-	Position any
+	Limit     any
+	Position  any
 	RestApiId any
 }
 
 type AuthorizersAttrs struct {
-	Items any
-	Limit any
-	Position any
+	Items     any
+	Limit     any
+	Position  any
 	RestApiId any
 }
 
 var Authorizers = ubx.DataSourceBinding{
 	WireType: "aws_apigateway_authorizers",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Position": ubx.FieldSpec{WireName: "position"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Position":  ubx.FieldSpec{WireName: "position"},
 		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
 	},
 }

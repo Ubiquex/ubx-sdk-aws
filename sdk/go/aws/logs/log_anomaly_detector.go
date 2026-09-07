@@ -48,12 +48,12 @@ type LogAnomalyDetectorAttrs struct {
 var LogAnomalyDetector = ubx.ResourceBinding{
 	WireType: "aws_logs_log_anomaly_detector",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":             ubx.FieldSpec{WireName: "account_id"},
 		"AnomalyVisibilityTime": ubx.FieldSpec{WireName: "anomaly_visibility_time"},
-		"DetectorName": ubx.FieldSpec{WireName: "detector_name"},
-		"EvaluationFrequency": ubx.FieldSpec{WireName: "evaluation_frequency"},
-		"FilterPattern": ubx.FieldSpec{WireName: "filter_pattern"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"LogGroupArnList": ubx.FieldSpec{WireName: "log_group_arn_list"},
+		"DetectorName":          ubx.FieldSpec{WireName: "detector_name"},
+		"EvaluationFrequency":   ubx.FieldSpec{WireName: "evaluation_frequency"},
+		"FilterPattern":         ubx.FieldSpec{WireName: "filter_pattern"},
+		"KmsKeyId":              ubx.FieldSpec{WireName: "kms_key_id"},
+		"LogGroupArnList":       ubx.FieldSpec{WireName: "log_group_arn_list"},
 	},
 }

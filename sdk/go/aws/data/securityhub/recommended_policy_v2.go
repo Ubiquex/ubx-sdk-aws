@@ -4,14 +4,14 @@ package securityhub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecommendedPolicyV2_Error struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type RecommendedPolicyV2_RecommendationSteps_UnusedPermissions struct {
-	ExistingPolicy any
-	ExistingPolicyId any
-	PolicyUpdatedAt any
+	ExistingPolicy    any
+	ExistingPolicyId  any
+	PolicyUpdatedAt   any
 	RecommendedAction any
 	RecommendedPolicy any
 }
@@ -21,28 +21,28 @@ type RecommendedPolicyV2_RecommendationSteps struct {
 }
 
 type RecommendedPolicyV2Config struct {
-	MaxResults any
+	MaxResults  any
 	MetadataUid any
-	NextToken any
+	NextToken   any
 }
 
 type RecommendedPolicyV2Attrs struct {
 	// <p>Contains information about the reason that the retrieval of a recommended policy for a finding failed.</p>
-	Error any
-	MaxResults any
-	MetadataUid any
-	NextToken any
+	Error               any
+	MaxResults          any
+	MetadataUid         any
+	NextToken           any
 	RecommendationSteps any
-	RecommendationType any
-	ResourceArn any
-	Status any
+	RecommendationType  any
+	ResourceArn         any
+	Status              any
 }
 
 var RecommendedPolicyV2 = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_recommended_policy_v2",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
 		"MetadataUid": ubx.FieldSpec{WireName: "metadata_uid"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

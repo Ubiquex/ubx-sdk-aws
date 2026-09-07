@@ -17,14 +17,14 @@ type DeviceFleet_Tags struct {
 }
 
 var DeviceFleet_OutputConfigFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"S3OutputLocation": ubx.FieldSpec{WireName: "s3_output_location"},
-	}
+	"KmsKeyId":         ubx.FieldSpec{WireName: "kms_key_id"},
+	"S3OutputLocation": ubx.FieldSpec{WireName: "s3_output_location"},
+}
 
 var DeviceFleet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DeviceFleetConfig struct {
 	// Description for the edge device fleet
@@ -55,18 +55,18 @@ type DeviceFleetAttrs struct {
 var DeviceFleet = ubx.ResourceBinding{
 	WireType: "aws_sage_maker_device_fleet",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"DeviceFleetName": ubx.FieldSpec{WireName: "device_fleet_name"},
 		"OutputConfig": ubx.FieldSpec{
 			WireName: "output_config",
-			Kind: "object",
-			Fields: DeviceFleet_OutputConfigFields,
+			Kind:     "object",
+			Fields:   DeviceFleet_OutputConfigFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DeviceFleet_TagsFields,
+			Kind:     "list",
+			Fields:   DeviceFleet_TagsFields,
 		},
 	},
 }

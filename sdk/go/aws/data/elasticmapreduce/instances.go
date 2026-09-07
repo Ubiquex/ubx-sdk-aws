@@ -4,72 +4,72 @@ package elasticmapreduce
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Instances_Instances_EbsVolumes struct {
-	Device any
+	Device   any
 	VolumeId any
 }
 
 type Instances_Instances_Status_StateChangeReason struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type Instances_Instances_Status_Timeline struct {
 	CreationDateTime any
-	EndDateTime any
-	ReadyDateTime any
+	EndDateTime      any
+	ReadyDateTime    any
 }
 
 type Instances_Instances_Status struct {
-	State any
+	State             any
 	StateChangeReason any
-	Timeline any
+	Timeline          any
 }
 
 type Instances_Instances struct {
-	EbsVolumes any
-	Ec2InstanceId any
-	Id any
-	InstanceFleetId any
-	InstanceGroupId any
-	InstanceType any
-	Market any
-	PrivateDnsName any
+	EbsVolumes       any
+	Ec2InstanceId    any
+	Id               any
+	InstanceFleetId  any
+	InstanceGroupId  any
+	InstanceType     any
+	Market           any
+	PrivateDnsName   any
 	PrivateIpAddress any
-	PublicDnsName any
-	PublicIpAddress any
-	Status any
+	PublicDnsName    any
+	PublicIpAddress  any
+	Status           any
 }
 
 type InstancesConfig struct {
-	ClusterId any
-	InstanceFleetId any
-	InstanceFleetType any
-	InstanceGroupId any
+	ClusterId          any
+	InstanceFleetId    any
+	InstanceFleetType  any
+	InstanceGroupId    any
 	InstanceGroupTypes any
-	InstanceStates any
-	Marker any
+	InstanceStates     any
+	Marker             any
 }
 
 type InstancesAttrs struct {
-	ClusterId any
-	InstanceFleetId any
-	InstanceFleetType any
-	InstanceGroupId any
+	ClusterId          any
+	InstanceFleetId    any
+	InstanceFleetType  any
+	InstanceGroupId    any
 	InstanceGroupTypes any
-	InstanceStates any
-	Instances any
-	Marker any
+	InstanceStates     any
+	Instances          any
+	Marker             any
 }
 
 var Instances = ubx.DataSourceBinding{
 	WireType: "aws_elasticmapreduce_instances",
 	Fields: ubx.FieldMap{
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
-		"InstanceFleetId": ubx.FieldSpec{WireName: "instance_fleet_id"},
-		"InstanceFleetType": ubx.FieldSpec{WireName: "instance_fleet_type"},
-		"InstanceGroupId": ubx.FieldSpec{WireName: "instance_group_id"},
+		"ClusterId":          ubx.FieldSpec{WireName: "cluster_id"},
+		"InstanceFleetId":    ubx.FieldSpec{WireName: "instance_fleet_id"},
+		"InstanceFleetType":  ubx.FieldSpec{WireName: "instance_fleet_type"},
+		"InstanceGroupId":    ubx.FieldSpec{WireName: "instance_group_id"},
 		"InstanceGroupTypes": ubx.FieldSpec{WireName: "instance_group_types"},
-		"InstanceStates": ubx.FieldSpec{WireName: "instance_states"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"InstanceStates":     ubx.FieldSpec{WireName: "instance_states"},
+		"Marker":             ubx.FieldSpec{WireName: "marker"},
 	},
 }

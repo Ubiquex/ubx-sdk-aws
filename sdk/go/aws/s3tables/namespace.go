@@ -20,7 +20,7 @@ type NamespaceAttrs struct {
 var Namespace = ubx.ResourceBinding{
 	WireType: "aws_s3_tables_namespace",
 	Fields: ubx.FieldMap{
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
+		"Namespace":      ubx.FieldSpec{WireName: "namespace"},
 		"TableBucketArn": ubx.FieldSpec{WireName: "table_bucket_arn"},
 	},
 }

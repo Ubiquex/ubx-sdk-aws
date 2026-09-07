@@ -4,18 +4,18 @@ package waf
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SubscribedRuleGroups_RuleGroups struct {
-	MetricName any
-	Name any
+	MetricName  any
+	Name        any
 	RuleGroupId any
 }
 
 type SubscribedRuleGroupsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type SubscribedRuleGroupsAttrs struct {
-	Limit any
+	Limit      any
 	NextMarker any
 	RuleGroups any
 }
@@ -23,7 +23,7 @@ type SubscribedRuleGroupsAttrs struct {
 var SubscribedRuleGroups = ubx.DataSourceBinding{
 	WireType: "aws_waf_subscribed_rule_groups",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

@@ -4,31 +4,31 @@ package codeartifact
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PackageConfig struct {
-	Domain any
+	Domain      any
 	DomainOwner any
-	Format any
-	Namespace any
-	Package any
-	Repository any
+	Format      any
+	Namespace   any
+	Package     any
+	Repository  any
 }
 
 type PackageAttrs struct {
-	Domain any
+	Domain      any
 	DomainOwner any
-	Format any
-	Namespace any
-	Package any
-	Repository any
+	Format      any
+	Namespace   any
+	Package     any
+	Repository  any
 }
 
 var Package = ubx.DataSourceBinding{
 	WireType: "aws_codeartifact_package",
 	Fields: ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"Domain":      ubx.FieldSpec{WireName: "domain"},
 		"DomainOwner": ubx.FieldSpec{WireName: "domain_owner"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Package": ubx.FieldSpec{WireName: "package"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
+		"Format":      ubx.FieldSpec{WireName: "format"},
+		"Namespace":   ubx.FieldSpec{WireName: "namespace"},
+		"Package":     ubx.FieldSpec{WireName: "package"},
+		"Repository":  ubx.FieldSpec{WireName: "repository"},
 	},
 }

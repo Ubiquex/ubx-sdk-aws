@@ -5,36 +5,36 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ArcRegionSwitchRoute53HealthChecks_HealthChecks struct {
 	HealthCheckId any
-	HostedZoneId any
-	RecordName any
-	Region any
-	Status any
+	HostedZoneId  any
+	RecordName    any
+	Region        any
+	Status        any
 }
 
 type ArcRegionSwitchRoute53HealthChecksConfig struct {
-	Arn any
+	Arn          any
 	HostedZoneId any
-	MaxResults any
-	NextToken any
-	RecordName any
+	MaxResults   any
+	NextToken    any
+	RecordName   any
 }
 
 type ArcRegionSwitchRoute53HealthChecksAttrs struct {
-	Arn any
+	Arn          any
 	HealthChecks any
 	HostedZoneId any
-	MaxResults any
-	NextToken any
-	RecordName any
+	MaxResults   any
+	NextToken    any
+	RecordName   any
 }
 
 var ArcRegionSwitchRoute53HealthChecks = ubx.DataSourceBinding{
 	WireType: "aws_arc_region_switch_route53_health_checks",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":          ubx.FieldSpec{WireName: "arn"},
 		"HostedZoneId": ubx.FieldSpec{WireName: "hosted_zone_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RecordName": ubx.FieldSpec{WireName: "record_name"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"RecordName":   ubx.FieldSpec{WireName: "record_name"},
 	},
 }

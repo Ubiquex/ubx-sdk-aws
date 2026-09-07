@@ -4,47 +4,47 @@ package apigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RestApis_Items_EndpointConfiguration struct {
-	IpAddressType any
-	Types any
+	IpAddressType  any
+	Types          any
 	VpcEndpointIds any
 }
 
 type RestApis_Items struct {
-	ApiKeySource any
-	ApiStatus any
-	ApiStatusMessage any
-	BinaryMediaTypes any
-	CreatedDate any
-	Description any
+	ApiKeySource              any
+	ApiStatus                 any
+	ApiStatusMessage          any
+	BinaryMediaTypes          any
+	CreatedDate               any
+	Description               any
 	DisableExecuteApiEndpoint any
-	EndpointAccessMode any
-	EndpointConfiguration any
-	Id any
-	MinimumCompressionSize any
-	Name any
-	Policy any
-	RootResourceId any
-	SecurityPolicy any
-	Tags any
-	Version any
-	Warnings any
+	EndpointAccessMode        any
+	EndpointConfiguration     any
+	Id                        any
+	MinimumCompressionSize    any
+	Name                      any
+	Policy                    any
+	RootResourceId            any
+	SecurityPolicy            any
+	Tags                      any
+	Version                   any
+	Warnings                  any
 }
 
 type RestApisConfig struct {
-	Limit any
+	Limit    any
 	Position any
 }
 
 type RestApisAttrs struct {
-	Items any
-	Limit any
+	Items    any
+	Limit    any
 	Position any
 }
 
 var RestApis = ubx.DataSourceBinding{
 	WireType: "aws_apigateway_rest_apis",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":    ubx.FieldSpec{WireName: "limit"},
 		"Position": ubx.FieldSpec{WireName: "position"},
 	},
 }

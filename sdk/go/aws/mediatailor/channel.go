@@ -57,49 +57,49 @@ type Channel_TimeShiftConfiguration struct {
 }
 
 var Channel_FillerSlateFields = ubx.FieldMap{
-		"SourceLocationName": ubx.FieldSpec{WireName: "source_location_name"},
-		"VodSourceName": ubx.FieldSpec{WireName: "vod_source_name"},
-	}
+	"SourceLocationName": ubx.FieldSpec{WireName: "source_location_name"},
+	"VodSourceName":      ubx.FieldSpec{WireName: "vod_source_name"},
+}
 
 var Channel_LogConfigurationFields = ubx.FieldMap{
-		"LogTypes": ubx.FieldSpec{WireName: "log_types"},
-	}
+	"LogTypes": ubx.FieldSpec{WireName: "log_types"},
+}
 
 var Channel_Outputs_DashPlaylistSettingsFields = ubx.FieldMap{
-		"ManifestWindowSeconds": ubx.FieldSpec{WireName: "manifest_window_seconds"},
-		"MinBufferTimeSeconds": ubx.FieldSpec{WireName: "min_buffer_time_seconds"},
-		"MinUpdatePeriodSeconds": ubx.FieldSpec{WireName: "min_update_period_seconds"},
-		"SuggestedPresentationDelaySeconds": ubx.FieldSpec{WireName: "suggested_presentation_delay_seconds"},
-	}
+	"ManifestWindowSeconds":             ubx.FieldSpec{WireName: "manifest_window_seconds"},
+	"MinBufferTimeSeconds":              ubx.FieldSpec{WireName: "min_buffer_time_seconds"},
+	"MinUpdatePeriodSeconds":            ubx.FieldSpec{WireName: "min_update_period_seconds"},
+	"SuggestedPresentationDelaySeconds": ubx.FieldSpec{WireName: "suggested_presentation_delay_seconds"},
+}
 
 var Channel_Outputs_HlsPlaylistSettingsFields = ubx.FieldMap{
-		"AdMarkupType": ubx.FieldSpec{WireName: "ad_markup_type"},
-		"ManifestWindowSeconds": ubx.FieldSpec{WireName: "manifest_window_seconds"},
-	}
+	"AdMarkupType":          ubx.FieldSpec{WireName: "ad_markup_type"},
+	"ManifestWindowSeconds": ubx.FieldSpec{WireName: "manifest_window_seconds"},
+}
 
 var Channel_OutputsFields = ubx.FieldMap{
-		"DashPlaylistSettings": ubx.FieldSpec{
-			WireName: "dash_playlist_settings",
-			Kind: "object",
-			Fields: Channel_Outputs_DashPlaylistSettingsFields,
-		},
-		"HlsPlaylistSettings": ubx.FieldSpec{
-			WireName: "hls_playlist_settings",
-			Kind: "object",
-			Fields: Channel_Outputs_HlsPlaylistSettingsFields,
-		},
-		"ManifestName": ubx.FieldSpec{WireName: "manifest_name"},
-		"SourceGroup": ubx.FieldSpec{WireName: "source_group"},
-	}
+	"DashPlaylistSettings": ubx.FieldSpec{
+		WireName: "dash_playlist_settings",
+		Kind:     "object",
+		Fields:   Channel_Outputs_DashPlaylistSettingsFields,
+	},
+	"HlsPlaylistSettings": ubx.FieldSpec{
+		WireName: "hls_playlist_settings",
+		Kind:     "object",
+		Fields:   Channel_Outputs_HlsPlaylistSettingsFields,
+	},
+	"ManifestName": ubx.FieldSpec{WireName: "manifest_name"},
+	"SourceGroup":  ubx.FieldSpec{WireName: "source_group"},
+}
 
 var Channel_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Channel_TimeShiftConfigurationFields = ubx.FieldMap{
-		"MaxTimeDelaySeconds": ubx.FieldSpec{WireName: "max_time_delay_seconds"},
-	}
+	"MaxTimeDelaySeconds": ubx.FieldSpec{WireName: "max_time_delay_seconds"},
+}
 
 type ChannelConfig struct {
 	// <p>The list of audiences defined in channel.</p>
@@ -148,34 +148,34 @@ type ChannelAttrs struct {
 var Channel = ubx.ResourceBinding{
 	WireType: "aws_media_tailor_channel",
 	Fields: ubx.FieldMap{
-		"Audiences": ubx.FieldSpec{WireName: "audiences"},
+		"Audiences":   ubx.FieldSpec{WireName: "audiences"},
 		"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
 		"FillerSlate": ubx.FieldSpec{
 			WireName: "filler_slate",
-			Kind: "object",
-			Fields: Channel_FillerSlateFields,
+			Kind:     "object",
+			Fields:   Channel_FillerSlateFields,
 		},
 		"LogConfiguration": ubx.FieldSpec{
 			WireName: "log_configuration",
-			Kind: "object",
-			Fields: Channel_LogConfigurationFields,
+			Kind:     "object",
+			Fields:   Channel_LogConfigurationFields,
 		},
 		"Outputs": ubx.FieldSpec{
 			WireName: "outputs",
-			Kind: "list",
-			Fields: Channel_OutputsFields,
+			Kind:     "list",
+			Fields:   Channel_OutputsFields,
 		},
 		"PlaybackMode": ubx.FieldSpec{WireName: "playback_mode"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Channel_TagsFields,
+			Kind:     "list",
+			Fields:   Channel_TagsFields,
 		},
 		"Tier": ubx.FieldSpec{WireName: "tier"},
 		"TimeShiftConfiguration": ubx.FieldSpec{
 			WireName: "time_shift_configuration",
-			Kind: "object",
-			Fields: Channel_TimeShiftConfigurationFields,
+			Kind:     "object",
+			Fields:   Channel_TimeShiftConfigurationFields,
 		},
 	},
 }

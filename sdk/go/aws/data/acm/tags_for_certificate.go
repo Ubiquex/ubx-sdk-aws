@@ -4,7 +4,7 @@ package acm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForCertificate_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type TagsForCertificateConfig struct {
 
 type TagsForCertificateAttrs struct {
 	CertificateArn any
-	Tags any
+	Tags           any
 }
 
 var TagsForCertificate = ubx.DataSourceBinding{

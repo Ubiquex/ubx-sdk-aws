@@ -4,24 +4,24 @@ package codeartifact
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AuthorizationTokenConfig struct {
-	Domain any
-	DomainOwner any
+	Domain          any
+	DomainOwner     any
 	DurationSeconds any
 }
 
 type AuthorizationTokenAttrs struct {
 	AuthorizationToken any
-	Domain any
-	DomainOwner any
-	DurationSeconds any
-	Expiration any
+	Domain             any
+	DomainOwner        any
+	DurationSeconds    any
+	Expiration         any
 }
 
 var AuthorizationToken = ubx.DataSourceBinding{
 	WireType: "aws_codeartifact_authorization_token",
 	Fields: ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"DomainOwner": ubx.FieldSpec{WireName: "domain_owner"},
+		"Domain":          ubx.FieldSpec{WireName: "domain"},
+		"DomainOwner":     ubx.FieldSpec{WireName: "domain_owner"},
 		"DurationSeconds": ubx.FieldSpec{WireName: "duration_seconds"},
 	},
 }

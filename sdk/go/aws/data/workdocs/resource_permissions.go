@@ -9,35 +9,35 @@ type ResourcePermissions_Principals_Roles struct {
 }
 
 type ResourcePermissions_Principals struct {
-	Id any
+	Id    any
 	Roles any
-	Type any
+	Type  any
 }
 
 type ResourcePermissionsConfig struct {
 	AuthenticationToken any
-	Limit any
-	Marker any
-	PrincipalId any
-	ResourceId any
+	Limit               any
+	Marker              any
+	PrincipalId         any
+	ResourceId          any
 }
 
 type ResourcePermissionsAttrs struct {
 	AuthenticationToken any
-	Limit any
-	Marker any
-	PrincipalId any
-	Principals any
-	ResourceId any
+	Limit               any
+	Marker              any
+	PrincipalId         any
+	Principals          any
+	ResourceId          any
 }
 
 var ResourcePermissions = ubx.DataSourceBinding{
 	WireType: "aws_workdocs_resource_permissions",
 	Fields: ubx.FieldMap{
 		"AuthenticationToken": ubx.FieldSpec{WireName: "authentication_token"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"PrincipalId": ubx.FieldSpec{WireName: "principal_id"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+		"Limit":               ubx.FieldSpec{WireName: "limit"},
+		"Marker":              ubx.FieldSpec{WireName: "marker"},
+		"PrincipalId":         ubx.FieldSpec{WireName: "principal_id"},
+		"ResourceId":          ubx.FieldSpec{WireName: "resource_id"},
 	},
 }

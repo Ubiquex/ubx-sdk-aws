@@ -4,30 +4,30 @@ package sesv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EmailIdentityCertificates_Certificates struct {
-	CertificateArn any
+	CertificateArn        any
 	CertificateExpiryTime any
-	FromAddress any
-	Status any
+	FromAddress           any
+	Status                any
 }
 
 type EmailIdentityCertificatesConfig struct {
 	EmailIdentity any
-	NextToken any
-	PageSize any
+	NextToken     any
+	PageSize      any
 }
 
 type EmailIdentityCertificatesAttrs struct {
-	Certificates any
+	Certificates  any
 	EmailIdentity any
-	NextToken any
-	PageSize any
+	NextToken     any
+	PageSize      any
 }
 
 var EmailIdentityCertificates = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_email_identity_certificates",
 	Fields: ubx.FieldMap{
 		"EmailIdentity": ubx.FieldSpec{WireName: "email_identity"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"PageSize":      ubx.FieldSpec{WireName: "page_size"},
 	},
 }

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestCase_LatestVersion struct {
 	// The status of the latest version of the AWS AppTest test case, indicating whether that version is in a draft state or has been activated for use. (AI-inferred)
-	Status any
+	Status  any
 	Version any
 }
 
@@ -16,7 +16,7 @@ type TestCase_Steps_Action_CompareAction_Input_File_FileMetadata_DataSets struct
 	Format any
 	// The record length (in bytes) for each data set in the file metadata, used by the compare action to validate the data set during the test case step. (AI-inferred)
 	Length any
-	Name any
+	Name   any
 	// Specifies the type of the mainframe data set (such as physical sequential or partitioned) that the file metadata describes in the compare action's input. (AI-inferred)
 	Type any
 }
@@ -165,203 +165,203 @@ type TestCase_Steps struct {
 }
 
 var TestCase_Steps_Action_CompareAction_Input_File_FileMetadata_DataSetsFields = ubx.FieldMap{
-		"Ccsid": ubx.FieldSpec{WireName: "ccsid"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Length": ubx.FieldSpec{WireName: "length"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Ccsid":  ubx.FieldSpec{WireName: "ccsid"},
+	"Format": ubx.FieldSpec{WireName: "format"},
+	"Length": ubx.FieldSpec{WireName: "length"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+}
 
 var TestCase_Steps_Action_CompareAction_Input_File_FileMetadata_DatabaseCdc_SourceMetadataFields = ubx.FieldMap{
-		"CaptureTool": ubx.FieldSpec{WireName: "capture_tool"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CaptureTool": ubx.FieldSpec{WireName: "capture_tool"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var TestCase_Steps_Action_CompareAction_Input_File_FileMetadata_DatabaseCdcFields = ubx.FieldMap{
-		"SourceMetadata": ubx.FieldSpec{
-			WireName: "source_metadata",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_CompareAction_Input_File_FileMetadata_DatabaseCdc_SourceMetadataFields,
-		},
-		"TargetMetadata": ubx.FieldSpec{
-			WireName: "target_metadata",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_CompareAction_Input_File_FileMetadata_DatabaseCdc_SourceMetadataFields,
-		},
-	}
+	"SourceMetadata": ubx.FieldSpec{
+		WireName: "source_metadata",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_CompareAction_Input_File_FileMetadata_DatabaseCdc_SourceMetadataFields,
+	},
+	"TargetMetadata": ubx.FieldSpec{
+		WireName: "target_metadata",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_CompareAction_Input_File_FileMetadata_DatabaseCdc_SourceMetadataFields,
+	},
+}
 
 var TestCase_Steps_Action_CompareAction_Input_File_FileMetadataFields = ubx.FieldMap{
-		"DataSets": ubx.FieldSpec{
-			WireName: "data_sets",
-			Kind: "list",
-			Fields: TestCase_Steps_Action_CompareAction_Input_File_FileMetadata_DataSetsFields,
-		},
-		"DatabaseCdc": ubx.FieldSpec{
-			WireName: "database_cdc",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_CompareAction_Input_File_FileMetadata_DatabaseCdcFields,
-		},
-	}
+	"DataSets": ubx.FieldSpec{
+		WireName: "data_sets",
+		Kind:     "list",
+		Fields:   TestCase_Steps_Action_CompareAction_Input_File_FileMetadata_DataSetsFields,
+	},
+	"DatabaseCdc": ubx.FieldSpec{
+		WireName: "database_cdc",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_CompareAction_Input_File_FileMetadata_DatabaseCdcFields,
+	},
+}
 
 var TestCase_Steps_Action_CompareAction_Input_FileFields = ubx.FieldMap{
-		"FileMetadata": ubx.FieldSpec{
-			WireName: "file_metadata",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_CompareAction_Input_File_FileMetadataFields,
-		},
-		"SourceLocation": ubx.FieldSpec{WireName: "source_location"},
-		"TargetLocation": ubx.FieldSpec{WireName: "target_location"},
-	}
+	"FileMetadata": ubx.FieldSpec{
+		WireName: "file_metadata",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_CompareAction_Input_File_FileMetadataFields,
+	},
+	"SourceLocation": ubx.FieldSpec{WireName: "source_location"},
+	"TargetLocation": ubx.FieldSpec{WireName: "target_location"},
+}
 
 var TestCase_Steps_Action_CompareAction_InputFields = ubx.FieldMap{
-		"File": ubx.FieldSpec{
-			WireName: "file",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_CompareAction_Input_FileFields,
-		},
-	}
+	"File": ubx.FieldSpec{
+		WireName: "file",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_CompareAction_Input_FileFields,
+	},
+}
 
 var TestCase_Steps_Action_CompareAction_Output_FileFields = ubx.FieldMap{
-		"FileLocation": ubx.FieldSpec{WireName: "file_location"},
-	}
+	"FileLocation": ubx.FieldSpec{WireName: "file_location"},
+}
 
 var TestCase_Steps_Action_CompareAction_OutputFields = ubx.FieldMap{
-		"File": ubx.FieldSpec{
-			WireName: "file",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_CompareAction_Output_FileFields,
-		},
-	}
+	"File": ubx.FieldSpec{
+		WireName: "file",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_CompareAction_Output_FileFields,
+	},
+}
 
 var TestCase_Steps_Action_CompareActionFields = ubx.FieldMap{
-		"Input": ubx.FieldSpec{
-			WireName: "input",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_CompareAction_InputFields,
-		},
-		"Output": ubx.FieldSpec{
-			WireName: "output",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_CompareAction_OutputFields,
-		},
-	}
+	"Input": ubx.FieldSpec{
+		WireName: "input",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_CompareAction_InputFields,
+	},
+	"Output": ubx.FieldSpec{
+		WireName: "output",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_CompareAction_OutputFields,
+	},
+}
 
 var TestCase_Steps_Action_MainframeAction_ActionType_BatchFields = ubx.FieldMap{
-		"BatchJobName": ubx.FieldSpec{WireName: "batch_job_name"},
-		"BatchJobParameters": ubx.FieldSpec{WireName: "batch_job_parameters"},
-		"ExportDataSetNames": ubx.FieldSpec{WireName: "export_data_set_names"},
-	}
+	"BatchJobName":       ubx.FieldSpec{WireName: "batch_job_name"},
+	"BatchJobParameters": ubx.FieldSpec{WireName: "batch_job_parameters"},
+	"ExportDataSetNames": ubx.FieldSpec{WireName: "export_data_set_names"},
+}
 
 var TestCase_Steps_Action_MainframeAction_ActionType_Tn3270_ScriptFields = ubx.FieldMap{
-		"ScriptLocation": ubx.FieldSpec{WireName: "script_location"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ScriptLocation": ubx.FieldSpec{WireName: "script_location"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+}
 
 var TestCase_Steps_Action_MainframeAction_ActionType_Tn3270Fields = ubx.FieldMap{
-		"ExportDataSetNames": ubx.FieldSpec{WireName: "export_data_set_names"},
-		"Script": ubx.FieldSpec{
-			WireName: "script",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_MainframeAction_ActionType_Tn3270_ScriptFields,
-		},
-	}
+	"ExportDataSetNames": ubx.FieldSpec{WireName: "export_data_set_names"},
+	"Script": ubx.FieldSpec{
+		WireName: "script",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_MainframeAction_ActionType_Tn3270_ScriptFields,
+	},
+}
 
 var TestCase_Steps_Action_MainframeAction_ActionTypeFields = ubx.FieldMap{
-		"Batch": ubx.FieldSpec{
-			WireName: "batch",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_MainframeAction_ActionType_BatchFields,
-		},
-		"Tn3270": ubx.FieldSpec{
-			WireName: "tn3270",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_MainframeAction_ActionType_Tn3270Fields,
-		},
-	}
+	"Batch": ubx.FieldSpec{
+		WireName: "batch",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_MainframeAction_ActionType_BatchFields,
+	},
+	"Tn3270": ubx.FieldSpec{
+		WireName: "tn3270",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_MainframeAction_ActionType_Tn3270Fields,
+	},
+}
 
 var TestCase_Steps_Action_MainframeAction_PropertiesFields = ubx.FieldMap{
-		"DmsTaskArn": ubx.FieldSpec{WireName: "dms_task_arn"},
-	}
+	"DmsTaskArn": ubx.FieldSpec{WireName: "dms_task_arn"},
+}
 
 var TestCase_Steps_Action_MainframeActionFields = ubx.FieldMap{
-		"ActionType": ubx.FieldSpec{
-			WireName: "action_type",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_MainframeAction_ActionTypeFields,
-		},
-		"Properties": ubx.FieldSpec{
-			WireName: "properties",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_MainframeAction_PropertiesFields,
-		},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-	}
+	"ActionType": ubx.FieldSpec{
+		WireName: "action_type",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_MainframeAction_ActionTypeFields,
+	},
+	"Properties": ubx.FieldSpec{
+		WireName: "properties",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_MainframeAction_PropertiesFields,
+	},
+	"Resource": ubx.FieldSpec{WireName: "resource"},
+}
 
 var TestCase_Steps_Action_ResourceAction_CloudFormationActionFields = ubx.FieldMap{
-		"ActionType": ubx.FieldSpec{WireName: "action_type"},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-	}
+	"ActionType": ubx.FieldSpec{WireName: "action_type"},
+	"Resource":   ubx.FieldSpec{WireName: "resource"},
+}
 
 var TestCase_Steps_Action_ResourceAction_M2ManagedApplicationAction_PropertiesFields = ubx.FieldMap{
-		"ForceStop": ubx.FieldSpec{WireName: "force_stop"},
-		"ImportDataSetLocation": ubx.FieldSpec{WireName: "import_data_set_location"},
-	}
+	"ForceStop":             ubx.FieldSpec{WireName: "force_stop"},
+	"ImportDataSetLocation": ubx.FieldSpec{WireName: "import_data_set_location"},
+}
 
 var TestCase_Steps_Action_ResourceAction_M2ManagedApplicationActionFields = ubx.FieldMap{
-		"ActionType": ubx.FieldSpec{WireName: "action_type"},
-		"Properties": ubx.FieldSpec{
-			WireName: "properties",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_ResourceAction_M2ManagedApplicationAction_PropertiesFields,
-		},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-	}
+	"ActionType": ubx.FieldSpec{WireName: "action_type"},
+	"Properties": ubx.FieldSpec{
+		WireName: "properties",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_ResourceAction_M2ManagedApplicationAction_PropertiesFields,
+	},
+	"Resource": ubx.FieldSpec{WireName: "resource"},
+}
 
 var TestCase_Steps_Action_ResourceActionFields = ubx.FieldMap{
-		"CloudFormationAction": ubx.FieldSpec{
-			WireName: "cloud_formation_action",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_ResourceAction_CloudFormationActionFields,
-		},
-		"M2ManagedApplicationAction": ubx.FieldSpec{
-			WireName: "m2_managed_application_action",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_ResourceAction_M2ManagedApplicationActionFields,
-		},
-		"M2NonManagedApplicationAction": ubx.FieldSpec{
-			WireName: "m2_non_managed_application_action",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_ResourceAction_CloudFormationActionFields,
-		},
-	}
+	"CloudFormationAction": ubx.FieldSpec{
+		WireName: "cloud_formation_action",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_ResourceAction_CloudFormationActionFields,
+	},
+	"M2ManagedApplicationAction": ubx.FieldSpec{
+		WireName: "m2_managed_application_action",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_ResourceAction_M2ManagedApplicationActionFields,
+	},
+	"M2NonManagedApplicationAction": ubx.FieldSpec{
+		WireName: "m2_non_managed_application_action",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_ResourceAction_CloudFormationActionFields,
+	},
+}
 
 var TestCase_Steps_ActionFields = ubx.FieldMap{
-		"CompareAction": ubx.FieldSpec{
-			WireName: "compare_action",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_CompareActionFields,
-		},
-		"MainframeAction": ubx.FieldSpec{
-			WireName: "mainframe_action",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_MainframeActionFields,
-		},
-		"ResourceAction": ubx.FieldSpec{
-			WireName: "resource_action",
-			Kind: "object",
-			Fields: TestCase_Steps_Action_ResourceActionFields,
-		},
-	}
+	"CompareAction": ubx.FieldSpec{
+		WireName: "compare_action",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_CompareActionFields,
+	},
+	"MainframeAction": ubx.FieldSpec{
+		WireName: "mainframe_action",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_MainframeActionFields,
+	},
+	"ResourceAction": ubx.FieldSpec{
+		WireName: "resource_action",
+		Kind:     "object",
+		Fields:   TestCase_Steps_Action_ResourceActionFields,
+	},
+}
 
 var TestCase_StepsFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: TestCase_Steps_ActionFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   TestCase_Steps_ActionFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 type TestCaseConfig struct {
 	// The description of this test case. (AI-inferred)
@@ -403,11 +403,11 @@ var TestCase = ubx.ResourceBinding{
 	WireType: "aws_app_test_test_case",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Steps": ubx.FieldSpec{
 			WireName: "steps",
-			Kind: "list",
-			Fields: TestCase_StepsFields,
+			Kind:     "list",
+			Fields:   TestCase_StepsFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

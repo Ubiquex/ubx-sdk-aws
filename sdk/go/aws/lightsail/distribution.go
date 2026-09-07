@@ -72,62 +72,62 @@ type Distribution_Tags struct {
 }
 
 var Distribution_CacheBehaviorSettings_ForwardedCookiesFields = ubx.FieldMap{
-		"CookiesAllowList": ubx.FieldSpec{WireName: "cookies_allow_list"},
-		"Option": ubx.FieldSpec{WireName: "option"},
-	}
+	"CookiesAllowList": ubx.FieldSpec{WireName: "cookies_allow_list"},
+	"Option":           ubx.FieldSpec{WireName: "option"},
+}
 
 var Distribution_CacheBehaviorSettings_ForwardedHeadersFields = ubx.FieldMap{
-		"HeadersAllowList": ubx.FieldSpec{WireName: "headers_allow_list"},
-		"Option": ubx.FieldSpec{WireName: "option"},
-	}
+	"HeadersAllowList": ubx.FieldSpec{WireName: "headers_allow_list"},
+	"Option":           ubx.FieldSpec{WireName: "option"},
+}
 
 var Distribution_CacheBehaviorSettings_ForwardedQueryStringsFields = ubx.FieldMap{
-		"Option": ubx.FieldSpec{WireName: "option"},
-		"QueryStringsAllowList": ubx.FieldSpec{WireName: "query_strings_allow_list"},
-	}
+	"Option":                ubx.FieldSpec{WireName: "option"},
+	"QueryStringsAllowList": ubx.FieldSpec{WireName: "query_strings_allow_list"},
+}
 
 var Distribution_CacheBehaviorSettingsFields = ubx.FieldMap{
-		"AllowedHttpmethods": ubx.FieldSpec{WireName: "allowed_httpmethods"},
-		"CachedHttpmethods": ubx.FieldSpec{WireName: "cached_httpmethods"},
-		"DefaultTtl": ubx.FieldSpec{WireName: "default_ttl"},
-		"ForwardedCookies": ubx.FieldSpec{
-			WireName: "forwarded_cookies",
-			Kind: "object",
-			Fields: Distribution_CacheBehaviorSettings_ForwardedCookiesFields,
-		},
-		"ForwardedHeaders": ubx.FieldSpec{
-			WireName: "forwarded_headers",
-			Kind: "object",
-			Fields: Distribution_CacheBehaviorSettings_ForwardedHeadersFields,
-		},
-		"ForwardedQueryStrings": ubx.FieldSpec{
-			WireName: "forwarded_query_strings",
-			Kind: "object",
-			Fields: Distribution_CacheBehaviorSettings_ForwardedQueryStringsFields,
-		},
-		"MaximumTtl": ubx.FieldSpec{WireName: "maximum_ttl"},
-		"MinimumTtl": ubx.FieldSpec{WireName: "minimum_ttl"},
-	}
+	"AllowedHttpmethods": ubx.FieldSpec{WireName: "allowed_httpmethods"},
+	"CachedHttpmethods":  ubx.FieldSpec{WireName: "cached_httpmethods"},
+	"DefaultTtl":         ubx.FieldSpec{WireName: "default_ttl"},
+	"ForwardedCookies": ubx.FieldSpec{
+		WireName: "forwarded_cookies",
+		Kind:     "object",
+		Fields:   Distribution_CacheBehaviorSettings_ForwardedCookiesFields,
+	},
+	"ForwardedHeaders": ubx.FieldSpec{
+		WireName: "forwarded_headers",
+		Kind:     "object",
+		Fields:   Distribution_CacheBehaviorSettings_ForwardedHeadersFields,
+	},
+	"ForwardedQueryStrings": ubx.FieldSpec{
+		WireName: "forwarded_query_strings",
+		Kind:     "object",
+		Fields:   Distribution_CacheBehaviorSettings_ForwardedQueryStringsFields,
+	},
+	"MaximumTtl": ubx.FieldSpec{WireName: "maximum_ttl"},
+	"MinimumTtl": ubx.FieldSpec{WireName: "minimum_ttl"},
+}
 
 var Distribution_CacheBehaviorsFields = ubx.FieldMap{
-		"Behavior": ubx.FieldSpec{WireName: "behavior"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Behavior": ubx.FieldSpec{WireName: "behavior"},
+	"Path":     ubx.FieldSpec{WireName: "path"},
+}
 
 var Distribution_DefaultCacheBehaviorFields = ubx.FieldMap{
-		"Behavior": ubx.FieldSpec{WireName: "behavior"},
-	}
+	"Behavior": ubx.FieldSpec{WireName: "behavior"},
+}
 
 var Distribution_OriginFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProtocolPolicy": ubx.FieldSpec{WireName: "protocol_policy"},
-		"RegionName": ubx.FieldSpec{WireName: "region_name"},
-	}
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"ProtocolPolicy": ubx.FieldSpec{WireName: "protocol_policy"},
+	"RegionName":     ubx.FieldSpec{WireName: "region_name"},
+}
 
 var Distribution_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DistributionConfig struct {
 	// The bundle ID to use for the distribution.
@@ -187,32 +187,32 @@ var Distribution = ubx.ResourceBinding{
 		"BundleId": ubx.FieldSpec{WireName: "bundle_id"},
 		"CacheBehaviorSettings": ubx.FieldSpec{
 			WireName: "cache_behavior_settings",
-			Kind: "object",
-			Fields: Distribution_CacheBehaviorSettingsFields,
+			Kind:     "object",
+			Fields:   Distribution_CacheBehaviorSettingsFields,
 		},
 		"CacheBehaviors": ubx.FieldSpec{
 			WireName: "cache_behaviors",
-			Kind: "list",
-			Fields: Distribution_CacheBehaviorsFields,
+			Kind:     "list",
+			Fields:   Distribution_CacheBehaviorsFields,
 		},
 		"CertificateName": ubx.FieldSpec{WireName: "certificate_name"},
 		"DefaultCacheBehavior": ubx.FieldSpec{
 			WireName: "default_cache_behavior",
-			Kind: "object",
-			Fields: Distribution_DefaultCacheBehaviorFields,
+			Kind:     "object",
+			Fields:   Distribution_DefaultCacheBehaviorFields,
 		},
 		"DistributionName": ubx.FieldSpec{WireName: "distribution_name"},
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"IsEnabled": ubx.FieldSpec{WireName: "is_enabled"},
+		"IpAddressType":    ubx.FieldSpec{WireName: "ip_address_type"},
+		"IsEnabled":        ubx.FieldSpec{WireName: "is_enabled"},
 		"Origin": ubx.FieldSpec{
 			WireName: "origin",
-			Kind: "object",
-			Fields: Distribution_OriginFields,
+			Kind:     "object",
+			Fields:   Distribution_OriginFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Distribution_TagsFields,
+			Kind:     "list",
+			Fields:   Distribution_TagsFields,
 		},
 	},
 }

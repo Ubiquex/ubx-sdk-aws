@@ -4,49 +4,49 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EngineDefaultClusterParameters_EngineDefaults_Parameters struct {
-	AllowedValues any
-	ApplyMethod any
-	ApplyType any
-	DataType any
-	Description any
-	IsModifiable any
+	AllowedValues        any
+	ApplyMethod          any
+	ApplyType            any
+	DataType             any
+	Description          any
+	IsModifiable         any
 	MinimumEngineVersion any
-	ParameterName any
-	ParameterValue any
-	Source any
+	ParameterName        any
+	ParameterValue       any
+	Source               any
 	SupportedEngineModes any
 }
 
 type EngineDefaultClusterParameters_EngineDefaults struct {
 	DbparameterGroupFamily any
-	Marker any
-	Parameters any
+	Marker                 any
+	Parameters             any
 }
 
 type EngineDefaultClusterParameters_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var EngineDefaultClusterParameters_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type EngineDefaultClusterParametersConfig struct {
 	DbparameterGroupFamily any
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters                any
+	Marker                 any
+	MaxRecords             any
 }
 
 type EngineDefaultClusterParametersAttrs struct {
 	DbparameterGroupFamily any
 	// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
 	EngineDefaults any
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters        any
+	Marker         any
+	MaxRecords     any
 }
 
 var EngineDefaultClusterParameters = ubx.DataSourceBinding{
@@ -55,10 +55,10 @@ var EngineDefaultClusterParameters = ubx.DataSourceBinding{
 		"DbparameterGroupFamily": ubx.FieldSpec{WireName: "dbparameter_group_family"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: EngineDefaultClusterParameters_FiltersFields,
+			Kind:     "list",
+			Fields:   EngineDefaultClusterParameters_FiltersFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
 	},
 }

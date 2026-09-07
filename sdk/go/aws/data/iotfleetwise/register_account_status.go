@@ -4,36 +4,35 @@ package iotfleetwise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegisterAccountStatus_IamRegistrationResponse struct {
-	ErrorMessage any
+	ErrorMessage       any
 	RegistrationStatus any
-	RoleArn any
+	RoleArn            any
 }
 
 type RegisterAccountStatus_TimestreamRegistrationResponse struct {
-	ErrorMessage any
-	RegistrationStatus any
-	TimestreamDatabaseArn any
+	ErrorMessage           any
+	RegistrationStatus     any
+	TimestreamDatabaseArn  any
 	TimestreamDatabaseName any
-	TimestreamTableArn any
-	TimestreamTableName any
+	TimestreamTableArn     any
+	TimestreamTableName    any
 }
 
 type RegisterAccountStatusConfig struct {
 }
 
 type RegisterAccountStatusAttrs struct {
-	AccountStatus any
-	CreationTime any
+	AccountStatus     any
+	CreationTime      any
 	CustomerAccountId any
 	// <p>Information about registering an Identity and Access Management (IAM) resource so Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to Amazon Timestream.</p>
 	IamRegistrationResponse any
-	LastModificationTime any
+	LastModificationTime    any
 	// <p>Information about the registered Amazon Timestream resources or errors, if any.</p>
 	TimestreamRegistrationResponse any
 }
 
 var RegisterAccountStatus = ubx.DataSourceBinding{
 	WireType: "aws_iotfleetwise_register_account_status",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

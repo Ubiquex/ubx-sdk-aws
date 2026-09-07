@@ -4,7 +4,7 @@ package trustedadvisor
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationRecommendations_OrganizationRecommendationSummaries_PillarSpecificAggregates_CostOptimizing struct {
-	EstimatedMonthlySavings any
+	EstimatedMonthlySavings        any
 	EstimatedPercentMonthlySavings any
 }
 
@@ -13,68 +13,68 @@ type OrganizationRecommendations_OrganizationRecommendationSummaries_PillarSpeci
 }
 
 type OrganizationRecommendations_OrganizationRecommendationSummaries_ResourcesAggregates struct {
-	ErrorCount any
+	ErrorCount    any
 	ExcludedCount any
-	OkCount any
-	WarningCount any
+	OkCount       any
+	WarningCount  any
 }
 
 type OrganizationRecommendations_OrganizationRecommendationSummaries struct {
-	Arn any
-	AwsServices any
-	CheckArn any
-	CreatedAt any
-	Id any
-	LastUpdatedAt any
-	LifecycleStage any
-	Name any
+	Arn                      any
+	AwsServices              any
+	CheckArn                 any
+	CreatedAt                any
+	Id                       any
+	LastUpdatedAt            any
+	LifecycleStage           any
+	Name                     any
 	PillarSpecificAggregates any
-	Pillars any
-	ResourcesAggregates any
-	Source any
-	Status any
-	Type any
+	Pillars                  any
+	ResourcesAggregates      any
+	Source                   any
+	Status                   any
+	Type                     any
 }
 
 type OrganizationRecommendationsConfig struct {
-	AfterLastUpdatedAt any
-	AwsService any
+	AfterLastUpdatedAt  any
+	AwsService          any
 	BeforeLastUpdatedAt any
-	CheckIdentifier any
-	MaxResults any
-	NextToken any
-	Pillar any
-	Source any
-	Status any
-	Type any
+	CheckIdentifier     any
+	MaxResults          any
+	NextToken           any
+	Pillar              any
+	Source              any
+	Status              any
+	Type                any
 }
 
 type OrganizationRecommendationsAttrs struct {
-	AfterLastUpdatedAt any
-	AwsService any
-	BeforeLastUpdatedAt any
-	CheckIdentifier any
-	MaxResults any
-	NextToken any
+	AfterLastUpdatedAt                  any
+	AwsService                          any
+	BeforeLastUpdatedAt                 any
+	CheckIdentifier                     any
+	MaxResults                          any
+	NextToken                           any
 	OrganizationRecommendationSummaries any
-	Pillar any
-	Source any
-	Status any
-	Type any
+	Pillar                              any
+	Source                              any
+	Status                              any
+	Type                                any
 }
 
 var OrganizationRecommendations = ubx.DataSourceBinding{
 	WireType: "aws_trustedadvisor_organization_recommendations",
 	Fields: ubx.FieldMap{
-		"AfterLastUpdatedAt": ubx.FieldSpec{WireName: "after_last_updated_at"},
-		"AwsService": ubx.FieldSpec{WireName: "aws_service"},
+		"AfterLastUpdatedAt":  ubx.FieldSpec{WireName: "after_last_updated_at"},
+		"AwsService":          ubx.FieldSpec{WireName: "aws_service"},
 		"BeforeLastUpdatedAt": ubx.FieldSpec{WireName: "before_last_updated_at"},
-		"CheckIdentifier": ubx.FieldSpec{WireName: "check_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Pillar": ubx.FieldSpec{WireName: "pillar"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"CheckIdentifier":     ubx.FieldSpec{WireName: "check_identifier"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
+		"Pillar":              ubx.FieldSpec{WireName: "pillar"},
+		"Source":              ubx.FieldSpec{WireName: "source"},
+		"Status":              ubx.FieldSpec{WireName: "status"},
+		"Type":                ubx.FieldSpec{WireName: "type"},
 	},
 }

@@ -10,9 +10,9 @@ type DbclusterParameterGroup_Tags struct {
 }
 
 var DbclusterParameterGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DbclusterParameterGroupConfig struct {
 	// Provides the customer-specified description for this DB cluster parameter group.
@@ -44,13 +44,13 @@ var DbclusterParameterGroup = ubx.ResourceBinding{
 	WireType: "aws_neptune_dbcluster_parameter_group",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Family": ubx.FieldSpec{WireName: "family"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
+		"Family":      ubx.FieldSpec{WireName: "family"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Parameters":  ubx.FieldSpec{WireName: "parameters"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DbclusterParameterGroup_TagsFields,
+			Kind:     "list",
+			Fields:   DbclusterParameterGroup_TagsFields,
 		},
 	},
 }

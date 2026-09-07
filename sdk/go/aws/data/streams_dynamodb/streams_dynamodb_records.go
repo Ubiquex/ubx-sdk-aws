@@ -4,59 +4,59 @@ package streams_dynamodb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamsDynamodbRecords_Records_Dynamodb_Keys struct {
-	B any
+	B    any
 	Bool any
-	Bs any
-	L any
-	M any
-	N any
-	Ns any
+	Bs   any
+	L    any
+	M    any
+	N    any
+	Ns   any
 	Null any
-	S any
-	Ss any
+	S    any
+	Ss   any
 }
 
 type StreamsDynamodbRecords_Records_Dynamodb struct {
 	ApproximateCreationDateTime any
-	Keys any
-	NewImage any
-	OldImage any
-	SequenceNumber any
-	SizeBytes any
-	StreamViewType any
+	Keys                        any
+	NewImage                    any
+	OldImage                    any
+	SequenceNumber              any
+	SizeBytes                   any
+	StreamViewType              any
 }
 
 type StreamsDynamodbRecords_Records_UserIdentity struct {
 	PrincipalId any
-	Type any
+	Type        any
 }
 
 type StreamsDynamodbRecords_Records struct {
-	AwsRegion any
-	Dynamodb any
-	EventId any
-	EventName any
-	EventSource any
+	AwsRegion    any
+	Dynamodb     any
+	EventId      any
+	EventName    any
+	EventSource  any
 	EventVersion any
 	UserIdentity any
 }
 
 type StreamsDynamodbRecordsConfig struct {
-	Limit any
+	Limit         any
 	ShardIterator any
 }
 
 type StreamsDynamodbRecordsAttrs struct {
-	Limit any
+	Limit             any
 	NextShardIterator any
-	Records any
-	ShardIterator any
+	Records           any
+	ShardIterator     any
 }
 
 var StreamsDynamodbRecords = ubx.DataSourceBinding{
 	WireType: "aws_streams_dynamodb_records",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":         ubx.FieldSpec{WireName: "limit"},
 		"ShardIterator": ubx.FieldSpec{WireName: "shard_iterator"},
 	},
 }

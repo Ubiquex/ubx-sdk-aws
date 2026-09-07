@@ -9,49 +9,49 @@ type LogGroups_DataSources struct {
 }
 
 type LogGroups_LogGroupTags struct {
-	Key any
+	Key    any
 	Values any
 }
 
 type LogGroups_LogGroups struct {
-	LogGroupArn any
+	LogGroupArn   any
 	LogGroupClass any
-	LogGroupName any
+	LogGroupName  any
 }
 
 var LogGroups_DataSourcesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var LogGroups_LogGroupTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type LogGroupsConfig struct {
-	AccountIdentifiers any
-	DataSources any
-	FieldIndexNames any
+	AccountIdentifiers    any
+	DataSources           any
+	FieldIndexNames       any
 	IncludeLinkedAccounts any
-	Limit any
-	LogGroupClass any
-	LogGroupNamePattern any
-	LogGroupTags any
+	Limit                 any
+	LogGroupClass         any
+	LogGroupNamePattern   any
+	LogGroupTags          any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
 }
 
 type LogGroupsAttrs struct {
-	AccountIdentifiers any
-	DataSources any
-	FieldIndexNames any
+	AccountIdentifiers    any
+	DataSources           any
+	FieldIndexNames       any
 	IncludeLinkedAccounts any
-	Limit any
-	LogGroupClass any
-	LogGroupNamePattern any
-	LogGroupTags any
-	LogGroups any
+	Limit                 any
+	LogGroupClass         any
+	LogGroupNamePattern   any
+	LogGroupTags          any
+	LogGroups             any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
 }
@@ -62,18 +62,18 @@ var LogGroups = ubx.DataSourceBinding{
 		"AccountIdentifiers": ubx.FieldSpec{WireName: "account_identifiers"},
 		"DataSources": ubx.FieldSpec{
 			WireName: "data_sources",
-			Kind: "list",
-			Fields: LogGroups_DataSourcesFields,
+			Kind:     "list",
+			Fields:   LogGroups_DataSourcesFields,
 		},
-		"FieldIndexNames": ubx.FieldSpec{WireName: "field_index_names"},
+		"FieldIndexNames":       ubx.FieldSpec{WireName: "field_index_names"},
 		"IncludeLinkedAccounts": ubx.FieldSpec{WireName: "include_linked_accounts"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"LogGroupClass": ubx.FieldSpec{WireName: "log_group_class"},
-		"LogGroupNamePattern": ubx.FieldSpec{WireName: "log_group_name_pattern"},
+		"Limit":                 ubx.FieldSpec{WireName: "limit"},
+		"LogGroupClass":         ubx.FieldSpec{WireName: "log_group_class"},
+		"LogGroupNamePattern":   ubx.FieldSpec{WireName: "log_group_name_pattern"},
 		"LogGroupTags": ubx.FieldSpec{
 			WireName: "log_group_tags",
-			Kind: "list",
-			Fields: LogGroups_LogGroupTagsFields,
+			Kind:     "list",
+			Fields:   LogGroups_LogGroupTagsFields,
 		},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},

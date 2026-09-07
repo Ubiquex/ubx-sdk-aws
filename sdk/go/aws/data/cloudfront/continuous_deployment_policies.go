@@ -4,41 +4,41 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContinuousDeploymentPolicies_ContinuousDeploymentPolicyList_Items_ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_StagingDistributionDnsNames struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type ContinuousDeploymentPolicies_ContinuousDeploymentPolicyList_Items_ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_TrafficConfig_SingleHeaderConfig struct {
 	Header any
-	Value any
+	Value  any
 }
 
 type ContinuousDeploymentPolicies_ContinuousDeploymentPolicyList_Items_ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_TrafficConfig_SingleWeightConfig_SessionStickinessConfig struct {
-	IdleTtl any
+	IdleTtl    any
 	MaximumTtl any
 }
 
 type ContinuousDeploymentPolicies_ContinuousDeploymentPolicyList_Items_ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_TrafficConfig_SingleWeightConfig struct {
 	SessionStickinessConfig any
-	Weight any
+	Weight                  any
 }
 
 type ContinuousDeploymentPolicies_ContinuousDeploymentPolicyList_Items_ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_TrafficConfig struct {
 	SingleHeaderConfig any
 	SingleWeightConfig any
-	Type any
+	Type               any
 }
 
 type ContinuousDeploymentPolicies_ContinuousDeploymentPolicyList_Items_ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig struct {
-	Enabled any
+	Enabled                     any
 	StagingDistributionDnsNames any
-	TrafficConfig any
+	TrafficConfig               any
 }
 
 type ContinuousDeploymentPolicies_ContinuousDeploymentPolicyList_Items_ContinuousDeploymentPolicy struct {
 	ContinuousDeploymentPolicyConfig any
-	Id any
-	LastModifiedTime any
+	Id                               any
+	LastModifiedTime                 any
 }
 
 type ContinuousDeploymentPolicies_ContinuousDeploymentPolicyList_Items struct {
@@ -46,28 +46,28 @@ type ContinuousDeploymentPolicies_ContinuousDeploymentPolicyList_Items struct {
 }
 
 type ContinuousDeploymentPolicies_ContinuousDeploymentPolicyList struct {
-	Items any
-	MaxItems any
+	Items      any
+	MaxItems   any
 	NextMarker any
-	Quantity any
+	Quantity   any
 }
 
 type ContinuousDeploymentPoliciesConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 }
 
 type ContinuousDeploymentPoliciesAttrs struct {
 	// <p>Contains a list of continuous deployment policies.</p>
 	ContinuousDeploymentPolicyList any
-	Marker any
-	MaxItems any
+	Marker                         any
+	MaxItems                       any
 }
 
 var ContinuousDeploymentPolicies = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_continuous_deployment_policies",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 	},
 }

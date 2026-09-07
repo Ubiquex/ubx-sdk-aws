@@ -4,20 +4,20 @@ package codeguru_reviewer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodeguruReviewerCodeReviews_CodeReviewSummaries_MetricsSummary struct {
-	FindingsCount any
-	MeteredLinesOfCodeCount any
+	FindingsCount              any
+	MeteredLinesOfCodeCount    any
 	SuppressedLinesOfCodeCount any
 }
 
 type CodeguruReviewerCodeReviews_CodeReviewSummaries_SourceCodeType_BranchDiff struct {
 	DestinationBranchName any
-	SourceBranchName any
+	SourceBranchName      any
 }
 
 type CodeguruReviewerCodeReviews_CodeReviewSummaries_SourceCodeType_CommitDiff struct {
 	DestinationCommit any
-	MergeBaseCommit any
-	SourceCommit any
+	MergeBaseCommit   any
+	SourceCommit      any
 }
 
 type CodeguruReviewerCodeReviews_CodeReviewSummaries_SourceCodeType_RepositoryHead struct {
@@ -25,82 +25,82 @@ type CodeguruReviewerCodeReviews_CodeReviewSummaries_SourceCodeType_RepositoryHe
 }
 
 type CodeguruReviewerCodeReviews_CodeReviewSummaries_SourceCodeType_RequestMetadata_EventInfo struct {
-	Name any
+	Name  any
 	State any
 }
 
 type CodeguruReviewerCodeReviews_CodeReviewSummaries_SourceCodeType_RequestMetadata struct {
-	EventInfo any
-	RequestId any
-	Requester any
+	EventInfo  any
+	RequestId  any
+	Requester  any
 	VendorName any
 }
 
 type CodeguruReviewerCodeReviews_CodeReviewSummaries_SourceCodeType_S3BucketRepository_Details_CodeArtifacts struct {
-	BuildArtifactsObjectKey any
+	BuildArtifactsObjectKey      any
 	SourceCodeArtifactsObjectKey any
 }
 
 type CodeguruReviewerCodeReviews_CodeReviewSummaries_SourceCodeType_S3BucketRepository_Details struct {
-	BucketName any
+	BucketName    any
 	CodeArtifacts any
 }
 
 type CodeguruReviewerCodeReviews_CodeReviewSummaries_SourceCodeType_S3BucketRepository struct {
 	Details any
-	Name any
+	Name    any
 }
 
 type CodeguruReviewerCodeReviews_CodeReviewSummaries_SourceCodeType struct {
-	BranchDiff any
-	CommitDiff any
-	RepositoryHead any
-	RequestMetadata any
+	BranchDiff         any
+	CommitDiff         any
+	RepositoryHead     any
+	RequestMetadata    any
 	S3BucketRepository any
 }
 
 type CodeguruReviewerCodeReviews_CodeReviewSummaries struct {
-	CodeReviewArn any
-	CreatedTimeStamp any
+	CodeReviewArn        any
+	CreatedTimeStamp     any
 	LastUpdatedTimeStamp any
-	MetricsSummary any
-	Name any
-	Owner any
-	ProviderType any
-	PullRequestId any
-	RepositoryName any
-	SourceCodeType any
-	State any
-	Type any
+	MetricsSummary       any
+	Name                 any
+	Owner                any
+	ProviderType         any
+	PullRequestId        any
+	RepositoryName       any
+	SourceCodeType       any
+	State                any
+	Type                 any
 }
 
 type CodeguruReviewerCodeReviewsConfig struct {
-	MaxResults any
-	NextToken any
-	ProviderTypes any
+	MaxResults      any
+	NextToken       any
+	ProviderTypes   any
 	RepositoryNames any
-	States any
-	Type any
+	States          any
+	Type            any
 }
 
 type CodeguruReviewerCodeReviewsAttrs struct {
 	CodeReviewSummaries any
-	MaxResults any
-	NextToken any
-	ProviderTypes any
-	RepositoryNames any
-	States any
-	Type any
+	MaxResults          any
+	NextToken           any
+	ProviderTypes       any
+	RepositoryNames     any
+	States              any
+	Type                any
 }
 
 var CodeguruReviewerCodeReviews = ubx.DataSourceBinding{
 	WireType: "aws_codeguru_reviewer_code_reviews",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ProviderTypes": ubx.FieldSpec{WireName: "provider_types"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"ProviderTypes":   ubx.FieldSpec{WireName: "provider_types"},
 		"RepositoryNames": ubx.FieldSpec{WireName: "repository_names"},
-		"States": ubx.FieldSpec{WireName: "states"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"States":          ubx.FieldSpec{WireName: "states"},
+		"Type":            ubx.FieldSpec{WireName: "type"},
 	},
 }

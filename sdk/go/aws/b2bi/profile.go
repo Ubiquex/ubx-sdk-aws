@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Profile_Tags struct {
 	// The key of a tag assigned to the AWS B2B Data Interchange profile, used for cost allocation, organizing resources, and access control. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Profile_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ProfileConfig struct {
 	// The name of the business organization that this B2BI profile represents, used to identify the company in B2B EDI interchanges. (AI-inferred)
@@ -58,14 +58,14 @@ var Profile = ubx.ResourceBinding{
 	WireType: "aws_b2_bi_profile",
 	Fields: ubx.FieldMap{
 		"BusinessName": ubx.FieldSpec{WireName: "business_name"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Logging": ubx.FieldSpec{WireName: "logging"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Phone": ubx.FieldSpec{WireName: "phone"},
+		"Email":        ubx.FieldSpec{WireName: "email"},
+		"Logging":      ubx.FieldSpec{WireName: "logging"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
+		"Phone":        ubx.FieldSpec{WireName: "phone"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Profile_TagsFields,
+			Kind:     "list",
+			Fields:   Profile_TagsFields,
 		},
 	},
 }

@@ -30,9 +30,9 @@ type ClientVpnRouteAttrs struct {
 var ClientVpnRoute = ubx.ResourceBinding{
 	WireType: "aws_ec2_client_vpn_route",
 	Fields: ubx.FieldMap{
-		"ClientVpnEndpointId": ubx.FieldSpec{WireName: "client_vpn_endpoint_id"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"ClientVpnEndpointId":  ubx.FieldSpec{WireName: "client_vpn_endpoint_id"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
 		"DestinationCidrBlock": ubx.FieldSpec{WireName: "destination_cidr_block"},
-		"TargetVpcSubnetId": ubx.FieldSpec{WireName: "target_vpc_subnet_id"},
+		"TargetVpcSubnetId":    ubx.FieldSpec{WireName: "target_vpc_subnet_id"},
 	},
 }

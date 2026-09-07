@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ActionTypes_ActionTypes_ActionConfigurationProperties struct {
 	Description any
-	Key any
-	Name any
-	Queryable any
-	Required any
-	Secret any
-	Type any
+	Key         any
+	Name        any
+	Queryable   any
+	Required    any
+	Secret      any
+	Type        any
 }
 
 type ActionTypes_ActionTypes_Id struct {
 	Category any
-	Owner any
+	Owner    any
 	Provider any
-	Version any
+	Version  any
 }
 
 type ActionTypes_ActionTypes_InputArtifactDetails struct {
@@ -26,38 +26,38 @@ type ActionTypes_ActionTypes_InputArtifactDetails struct {
 }
 
 type ActionTypes_ActionTypes_Settings struct {
-	EntityUrlTemplate any
-	ExecutionUrlTemplate any
-	RevisionUrlTemplate any
+	EntityUrlTemplate          any
+	ExecutionUrlTemplate       any
+	RevisionUrlTemplate        any
 	ThirdPartyConfigurationUrl any
 }
 
 type ActionTypes_ActionTypes struct {
 	ActionConfigurationProperties any
-	Id any
-	InputArtifactDetails any
-	OutputArtifactDetails any
-	Settings any
+	Id                            any
+	InputArtifactDetails          any
+	OutputArtifactDetails         any
+	Settings                      any
 }
 
 type ActionTypesConfig struct {
 	ActionOwnerFilter any
-	NextToken any
-	RegionFilter any
+	NextToken         any
+	RegionFilter      any
 }
 
 type ActionTypesAttrs struct {
 	ActionOwnerFilter any
-	ActionTypes any
-	NextToken any
-	RegionFilter any
+	ActionTypes       any
+	NextToken         any
+	RegionFilter      any
 }
 
 var ActionTypes = ubx.DataSourceBinding{
 	WireType: "aws_codepipeline_action_types",
 	Fields: ubx.FieldMap{
 		"ActionOwnerFilter": ubx.FieldSpec{WireName: "action_owner_filter"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RegionFilter": ubx.FieldSpec{WireName: "region_filter"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
+		"RegionFilter":      ubx.FieldSpec{WireName: "region_filter"},
 	},
 }

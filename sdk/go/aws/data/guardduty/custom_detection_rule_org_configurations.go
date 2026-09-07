@@ -4,33 +4,33 @@ package guardduty
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomDetectionRuleOrgConfigurations_Configurations struct {
-	CreatedAt any
-	ExpiresAt any
-	Mode any
-	RuleId any
-	Status any
+	CreatedAt    any
+	ExpiresAt    any
+	Mode         any
+	RuleId       any
+	Status       any
 	StatusReason any
-	UpdatedAt any
+	UpdatedAt    any
 }
 
 type CustomDetectionRuleOrgConfigurationsConfig struct {
 	MaxResults any
-	NextToken any
-	Status any
+	NextToken  any
+	Status     any
 }
 
 type CustomDetectionRuleOrgConfigurationsAttrs struct {
 	Configurations any
-	MaxResults any
-	NextToken any
-	Status any
+	MaxResults     any
+	NextToken      any
+	Status         any
 }
 
 var CustomDetectionRuleOrgConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_guardduty_custom_detection_rule_org_configurations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Status":     ubx.FieldSpec{WireName: "status"},
 	},
 }

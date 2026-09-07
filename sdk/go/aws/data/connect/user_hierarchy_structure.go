@@ -4,11 +4,11 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserHierarchyStructure_HierarchyStructure_LevelFive struct {
-	Arn any
-	Id any
+	Arn                any
+	Id                 any
 	LastModifiedRegion any
-	LastModifiedTime any
-	Name any
+	LastModifiedTime   any
+	Name               any
 }
 
 type UserHierarchyStructure_HierarchyStructure struct {
@@ -31,7 +31,7 @@ type UserHierarchyStructureConfig struct {
 type UserHierarchyStructureAttrs struct {
 	// <p>Contains information about a hierarchy structure.</p>
 	HierarchyStructure any
-	InstanceId any
+	InstanceId         any
 }
 
 var UserHierarchyStructure = ubx.DataSourceBinding{

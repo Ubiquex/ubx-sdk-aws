@@ -4,35 +4,35 @@ package workspaces_instances
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkspacesInstancesInstanceTypes_InstanceConfigurationFilter struct {
-	BillingMode any
+	BillingMode  any
 	PlatformType any
-	Tenancy any
+	Tenancy      any
 }
 
 type WorkspacesInstancesInstanceTypes_InstanceTypes struct {
-	InstanceType any
+	InstanceType                    any
 	SupportedInstanceConfigurations any
 }
 
 var WorkspacesInstancesInstanceTypes_InstanceConfigurationFilterFields = ubx.FieldMap{
-		"BillingMode": ubx.FieldSpec{WireName: "billing_mode"},
-		"PlatformType": ubx.FieldSpec{WireName: "platform_type"},
-		"Tenancy": ubx.FieldSpec{WireName: "tenancy"},
-	}
+	"BillingMode":  ubx.FieldSpec{WireName: "billing_mode"},
+	"PlatformType": ubx.FieldSpec{WireName: "platform_type"},
+	"Tenancy":      ubx.FieldSpec{WireName: "tenancy"},
+}
 
 type WorkspacesInstancesInstanceTypesConfig struct {
 	// <p>Defines filtering criteria for WorkSpace Instance type searches. Combines multiple filter conditions including billing mode, platform type, and tenancy to help customers find instance types that meet their specific requirements.</p>
 	InstanceConfigurationFilter any
-	MaxResults any
-	NextToken any
+	MaxResults                  any
+	NextToken                   any
 }
 
 type WorkspacesInstancesInstanceTypesAttrs struct {
 	// <p>Defines filtering criteria for WorkSpace Instance type searches. Combines multiple filter conditions including billing mode, platform type, and tenancy to help customers find instance types that meet their specific requirements.</p>
 	InstanceConfigurationFilter any
-	InstanceTypes any
-	MaxResults any
-	NextToken any
+	InstanceTypes               any
+	MaxResults                  any
+	NextToken                   any
 }
 
 var WorkspacesInstancesInstanceTypes = ubx.DataSourceBinding{
@@ -40,10 +40,10 @@ var WorkspacesInstancesInstanceTypes = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceConfigurationFilter": ubx.FieldSpec{
 			WireName: "instance_configuration_filter",
-			Kind: "object",
-			Fields: WorkspacesInstancesInstanceTypes_InstanceConfigurationFilterFields,
+			Kind:     "object",
+			Fields:   WorkspacesInstancesInstanceTypes_InstanceConfigurationFilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

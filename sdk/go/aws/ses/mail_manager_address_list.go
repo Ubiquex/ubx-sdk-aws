@@ -10,9 +10,9 @@ type MailManagerAddressList_Tags struct {
 }
 
 var MailManagerAddressList_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MailManagerAddressListConfig struct {
 	// Sets the name of the address list, which identifies it in the SES Mail Manager console and API. (AI-inferred)
@@ -38,8 +38,8 @@ var MailManagerAddressList = ubx.ResourceBinding{
 		"AddressListName": ubx.FieldSpec{WireName: "address_list_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MailManagerAddressList_TagsFields,
+			Kind:     "list",
+			Fields:   MailManagerAddressList_TagsFields,
 		},
 	},
 }

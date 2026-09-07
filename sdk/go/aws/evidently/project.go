@@ -32,28 +32,28 @@ type Project_Tags struct {
 }
 
 var Project_AppConfigResourceFields = ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
-	}
+	"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+	"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
+}
 
 var Project_DataDelivery_S3Fields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+	"Prefix":     ubx.FieldSpec{WireName: "prefix"},
+}
 
 var Project_DataDeliveryFields = ubx.FieldMap{
-		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Project_DataDelivery_S3Fields,
-		},
-	}
+	"LogGroup": ubx.FieldSpec{WireName: "log_group"},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Project_DataDelivery_S3Fields,
+	},
+}
 
 var Project_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ProjectConfig struct {
 	// Specifies the AWS AppConfig application and configuration profile to associate with this Evidently project, enabling the project to use AppConfig as the source for feature flag variations. (AI-inferred)
@@ -88,20 +88,20 @@ var Project = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AppConfigResource": ubx.FieldSpec{
 			WireName: "app_config_resource",
-			Kind: "object",
-			Fields: Project_AppConfigResourceFields,
+			Kind:     "object",
+			Fields:   Project_AppConfigResourceFields,
 		},
 		"DataDelivery": ubx.FieldSpec{
 			WireName: "data_delivery",
-			Kind: "object",
-			Fields: Project_DataDeliveryFields,
+			Kind:     "object",
+			Fields:   Project_DataDeliveryFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Project_TagsFields,
+			Kind:     "list",
+			Fields:   Project_TagsFields,
 		},
 	},
 }

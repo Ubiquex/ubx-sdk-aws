@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QuerySuggestionsBlockLists_BlockListSummaryItems struct {
 	CreatedAt any
-	Id any
+	Id        any
 	ItemCount any
-	Name any
-	Status any
+	Name      any
+	Status    any
 	UpdatedAt any
 }
 
 type QuerySuggestionsBlockListsConfig struct {
-	IndexId any
+	IndexId    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type QuerySuggestionsBlockListsAttrs struct {
 	BlockListSummaryItems any
-	IndexId any
-	MaxResults any
-	NextToken any
+	IndexId               any
+	MaxResults            any
+	NextToken             any
 }
 
 var QuerySuggestionsBlockLists = ubx.DataSourceBinding{
 	WireType: "aws_kendra_query_suggestions_block_lists",
 	Fields: ubx.FieldMap{
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
+		"IndexId":    ubx.FieldSpec{WireName: "index_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

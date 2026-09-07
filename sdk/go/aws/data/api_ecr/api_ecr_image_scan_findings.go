@@ -5,44 +5,44 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiEcrImageScanFindings_ImageId struct {
 	ImageDigest any
-	ImageTag any
+	ImageTag    any
 }
 
 type ApiEcrImageScanFindings_ImageScanFindings_EnhancedFindings_PackageVulnerabilityDetails_Cvss struct {
-	BaseScore any
+	BaseScore     any
 	ScoringVector any
-	Source any
-	Version any
+	Source        any
+	Version       any
 }
 
 type ApiEcrImageScanFindings_ImageScanFindings_EnhancedFindings_PackageVulnerabilityDetails_VulnerablePackages struct {
-	Arch any
-	Epoch any
-	FilePath any
-	FixedInVersion any
-	Name any
-	PackageManager any
-	Release any
+	Arch            any
+	Epoch           any
+	FilePath        any
+	FixedInVersion  any
+	Name            any
+	PackageManager  any
+	Release         any
 	SourceLayerHash any
-	Version any
+	Version         any
 }
 
 type ApiEcrImageScanFindings_ImageScanFindings_EnhancedFindings_PackageVulnerabilityDetails struct {
-	Cvss any
-	ReferenceUrls any
+	Cvss                   any
+	ReferenceUrls          any
 	RelatedVulnerabilities any
-	Source any
-	SourceUrl any
-	VendorCreatedAt any
-	VendorSeverity any
-	VendorUpdatedAt any
-	VulnerabilityId any
-	VulnerablePackages any
+	Source                 any
+	SourceUrl              any
+	VendorCreatedAt        any
+	VendorSeverity         any
+	VendorUpdatedAt        any
+	VulnerabilityId        any
+	VulnerablePackages     any
 }
 
 type ApiEcrImageScanFindings_ImageScanFindings_EnhancedFindings_Remediation_Recommendation struct {
 	Text any
-	Url any
+	Url  any
 }
 
 type ApiEcrImageScanFindings_ImageScanFindings_EnhancedFindings_Remediation struct {
@@ -50,15 +50,15 @@ type ApiEcrImageScanFindings_ImageScanFindings_EnhancedFindings_Remediation stru
 }
 
 type ApiEcrImageScanFindings_ImageScanFindings_EnhancedFindings_Resources_Details_AwsEcrContainerImage struct {
-	Architecture any
-	Author any
-	ImageHash any
-	ImageTags any
-	InUseCount any
-	LastInUseAt any
-	Platform any
-	PushedAt any
-	Registry any
+	Architecture   any
+	Author         any
+	ImageHash      any
+	ImageTags      any
+	InUseCount     any
+	LastInUseAt    any
+	Platform       any
+	PushedAt       any
+	Registry       any
 	RepositoryName any
 }
 
@@ -68,9 +68,9 @@ type ApiEcrImageScanFindings_ImageScanFindings_EnhancedFindings_Resources_Detail
 
 type ApiEcrImageScanFindings_ImageScanFindings_EnhancedFindings_Resources struct {
 	Details any
-	Id any
-	Tags any
-	Type any
+	Id      any
+	Tags    any
+	Type    any
 }
 
 type ApiEcrImageScanFindings_ImageScanFindings_EnhancedFindings_ScoreDetails_Cvss_Adjustments struct {
@@ -79,11 +79,11 @@ type ApiEcrImageScanFindings_ImageScanFindings_EnhancedFindings_ScoreDetails_Cvs
 }
 
 type ApiEcrImageScanFindings_ImageScanFindings_EnhancedFindings_ScoreDetails_Cvss struct {
-	Adjustments any
-	Score any
-	ScoreSource any
+	Adjustments   any
+	Score         any
+	ScoreSource   any
 	ScoringVector any
-	Version any
+	Version       any
 }
 
 type ApiEcrImageScanFindings_ImageScanFindings_EnhancedFindings_ScoreDetails struct {
@@ -91,62 +91,62 @@ type ApiEcrImageScanFindings_ImageScanFindings_EnhancedFindings_ScoreDetails str
 }
 
 type ApiEcrImageScanFindings_ImageScanFindings_EnhancedFindings struct {
-	AwsAccountId any
-	Description any
-	ExploitAvailable any
-	FindingArn any
-	FirstObservedAt any
-	FixAvailable any
-	LastObservedAt any
+	AwsAccountId                any
+	Description                 any
+	ExploitAvailable            any
+	FindingArn                  any
+	FirstObservedAt             any
+	FixAvailable                any
+	LastObservedAt              any
 	PackageVulnerabilityDetails any
-	Remediation any
-	Resources any
-	Score any
-	ScoreDetails any
-	Severity any
-	Status any
-	Title any
-	Type any
-	UpdatedAt any
+	Remediation                 any
+	Resources                   any
+	Score                       any
+	ScoreDetails                any
+	Severity                    any
+	Status                      any
+	Title                       any
+	Type                        any
+	UpdatedAt                   any
 }
 
 type ApiEcrImageScanFindings_ImageScanFindings_Findings_Attributes struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ApiEcrImageScanFindings_ImageScanFindings_Findings struct {
-	Attributes any
+	Attributes  any
 	Description any
-	Name any
-	Severity any
-	Uri any
+	Name        any
+	Severity    any
+	Uri         any
 }
 
 type ApiEcrImageScanFindings_ImageScanFindings struct {
-	EnhancedFindings any
-	FindingSeverityCounts any
-	Findings any
-	ImageScanCompletedAt any
+	EnhancedFindings             any
+	FindingSeverityCounts        any
+	Findings                     any
+	ImageScanCompletedAt         any
 	VulnerabilitySourceUpdatedAt any
 }
 
 type ApiEcrImageScanFindings_ImageScanStatus struct {
 	Description any
-	Status any
+	Status      any
 }
 
 var ApiEcrImageScanFindings_ImageIdFields = ubx.FieldMap{
-		"ImageDigest": ubx.FieldSpec{WireName: "image_digest"},
-		"ImageTag": ubx.FieldSpec{WireName: "image_tag"},
-	}
+	"ImageDigest": ubx.FieldSpec{WireName: "image_digest"},
+	"ImageTag":    ubx.FieldSpec{WireName: "image_tag"},
+}
 
 type ApiEcrImageScanFindingsConfig struct {
 	// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-	ImageId any
-	MaxResults any
-	NextToken any
-	RegistryId any
+	ImageId        any
+	MaxResults     any
+	NextToken      any
+	RegistryId     any
 	RepositoryName any
 }
 
@@ -157,10 +157,10 @@ type ApiEcrImageScanFindingsAttrs struct {
 	ImageScanFindings any
 	// <p>The current status of an image scan.</p>
 	ImageScanStatus any
-	MaxResults any
-	NextToken any
-	RegistryId any
-	RepositoryName any
+	MaxResults      any
+	NextToken       any
+	RegistryId      any
+	RepositoryName  any
 }
 
 var ApiEcrImageScanFindings = ubx.DataSourceBinding{
@@ -168,12 +168,12 @@ var ApiEcrImageScanFindings = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ImageId": ubx.FieldSpec{
 			WireName: "image_id",
-			Kind: "object",
-			Fields: ApiEcrImageScanFindings_ImageIdFields,
+			Kind:     "object",
+			Fields:   ApiEcrImageScanFindings_ImageIdFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RegistryId": ubx.FieldSpec{WireName: "registry_id"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"RegistryId":     ubx.FieldSpec{WireName: "registry_id"},
 		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
 	},
 }

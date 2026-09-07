@@ -4,30 +4,30 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EvaluationForms_EvaluationFormSummaryList struct {
-	ActiveVersion any
-	CreatedBy any
-	CreatedTime any
+	ActiveVersion     any
+	CreatedBy         any
+	CreatedTime       any
 	EvaluationFormArn any
-	EvaluationFormId any
-	LastActivatedBy any
+	EvaluationFormId  any
+	LastActivatedBy   any
 	LastActivatedTime any
-	LastModifiedBy any
-	LastModifiedTime any
-	LatestVersion any
-	Title any
+	LastModifiedBy    any
+	LastModifiedTime  any
+	LatestVersion     any
+	Title             any
 }
 
 type EvaluationFormsConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EvaluationFormsAttrs struct {
 	EvaluationFormSummaryList any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId                any
+	MaxResults                any
+	NextToken                 any
 }
 
 var EvaluationForms = ubx.DataSourceBinding{
@@ -35,6 +35,6 @@ var EvaluationForms = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

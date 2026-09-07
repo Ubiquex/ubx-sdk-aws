@@ -4,14 +4,14 @@ package models_v2_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsV2LexExports_ExportSummaries_ResourceSpecification_BotExportSpecification struct {
-	BotId any
+	BotId      any
 	BotVersion any
 }
 
 type ModelsV2LexExports_ExportSummaries_ResourceSpecification_BotLocaleExportSpecification struct {
-	BotId any
+	BotId      any
 	BotVersion any
-	LocaleId any
+	LocaleId   any
 }
 
 type ModelsV2LexExports_ExportSummaries_ResourceSpecification_TestSetExportSpecification struct {
@@ -19,62 +19,62 @@ type ModelsV2LexExports_ExportSummaries_ResourceSpecification_TestSetExportSpeci
 }
 
 type ModelsV2LexExports_ExportSummaries_ResourceSpecification struct {
-	BotExportSpecification any
-	BotLocaleExportSpecification any
+	BotExportSpecification              any
+	BotLocaleExportSpecification        any
 	CustomVocabularyExportSpecification any
-	TestSetExportSpecification any
+	TestSetExportSpecification          any
 }
 
 type ModelsV2LexExports_ExportSummaries struct {
-	CreationDateTime any
-	ExportId any
-	ExportStatus any
-	FileFormat any
-	LastUpdatedDateTime any
+	CreationDateTime      any
+	ExportId              any
+	ExportStatus          any
+	FileFormat            any
+	LastUpdatedDateTime   any
 	ResourceSpecification any
 }
 
 type ModelsV2LexExports_Filters struct {
-	Name any
+	Name     any
 	Operator any
-	Values any
+	Values   any
 }
 
 type ModelsV2LexExports_SortBy struct {
 	Attribute any
-	Order any
+	Order     any
 }
 
 var ModelsV2LexExports_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var ModelsV2LexExports_SortByFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Order":     ubx.FieldSpec{WireName: "order"},
+}
 
 type ModelsV2LexExportsConfig struct {
-	BotId any
+	BotId      any
 	BotVersion any
-	Filters any
-	LocaleId any
+	Filters    any
+	LocaleId   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Provides information about sorting a list of exports.</p>
 	SortBy any
 }
 
 type ModelsV2LexExportsAttrs struct {
-	BotId any
-	BotVersion any
+	BotId           any
+	BotVersion      any
 	ExportSummaries any
-	Filters any
-	LocaleId any
-	MaxResults any
-	NextToken any
+	Filters         any
+	LocaleId        any
+	MaxResults      any
+	NextToken       any
 	// <p>Provides information about sorting a list of exports.</p>
 	SortBy any
 }
@@ -82,20 +82,20 @@ type ModelsV2LexExportsAttrs struct {
 var ModelsV2LexExports = ubx.DataSourceBinding{
 	WireType: "aws_models_v2_lex_exports",
 	Fields: ubx.FieldMap{
-		"BotId": ubx.FieldSpec{WireName: "bot_id"},
+		"BotId":      ubx.FieldSpec{WireName: "bot_id"},
 		"BotVersion": ubx.FieldSpec{WireName: "bot_version"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ModelsV2LexExports_FiltersFields,
+			Kind:     "list",
+			Fields:   ModelsV2LexExports_FiltersFields,
 		},
-		"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
+		"LocaleId":   ubx.FieldSpec{WireName: "locale_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SortBy": ubx.FieldSpec{
 			WireName: "sort_by",
-			Kind: "object",
-			Fields: ModelsV2LexExports_SortByFields,
+			Kind:     "object",
+			Fields:   ModelsV2LexExports_SortByFields,
 		},
 	},
 }

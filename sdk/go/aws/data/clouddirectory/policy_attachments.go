@@ -8,23 +8,23 @@ type PolicyAttachments_PolicyReference struct {
 }
 
 var PolicyAttachments_PolicyReferenceFields = ubx.FieldMap{
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"Selector": ubx.FieldSpec{WireName: "selector"},
+}
 
 type PolicyAttachmentsConfig struct {
 	ConsistencyLevel any
-	DirectoryArn any
-	MaxResults any
-	NextToken any
+	DirectoryArn     any
+	MaxResults       any
+	NextToken        any
 	// <p>The reference that identifies an object.</p>
 	PolicyReference any
 }
 
 type PolicyAttachmentsAttrs struct {
-	ConsistencyLevel any
-	DirectoryArn any
-	MaxResults any
-	NextToken any
+	ConsistencyLevel  any
+	DirectoryArn      any
+	MaxResults        any
+	NextToken         any
 	ObjectIdentifiers any
 	// <p>The reference that identifies an object.</p>
 	PolicyReference any
@@ -34,13 +34,13 @@ var PolicyAttachments = ubx.DataSourceBinding{
 	WireType: "aws_clouddirectory_policy_attachments",
 	Fields: ubx.FieldMap{
 		"ConsistencyLevel": ubx.FieldSpec{WireName: "consistency_level"},
-		"DirectoryArn": ubx.FieldSpec{WireName: "directory_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"DirectoryArn":     ubx.FieldSpec{WireName: "directory_arn"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"PolicyReference": ubx.FieldSpec{
 			WireName: "policy_reference",
-			Kind: "object",
-			Fields: PolicyAttachments_PolicyReferenceFields,
+			Kind:     "object",
+			Fields:   PolicyAttachments_PolicyReferenceFields,
 		},
 	},
 }

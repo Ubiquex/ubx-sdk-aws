@@ -4,32 +4,32 @@ package workmail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MailboxPermissions_Permissions struct {
-	GranteeId any
-	GranteeType any
+	GranteeId        any
+	GranteeType      any
 	PermissionValues any
 }
 
 type MailboxPermissionsConfig struct {
-	EntityId any
-	MaxResults any
-	NextToken any
+	EntityId       any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
 }
 
 type MailboxPermissionsAttrs struct {
-	EntityId any
-	MaxResults any
-	NextToken any
+	EntityId       any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
-	Permissions any
+	Permissions    any
 }
 
 var MailboxPermissions = ubx.DataSourceBinding{
 	WireType: "aws_workmail_mailbox_permissions",
 	Fields: ubx.FieldMap{
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"EntityId":       ubx.FieldSpec{WireName: "entity_id"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
 	},
 }

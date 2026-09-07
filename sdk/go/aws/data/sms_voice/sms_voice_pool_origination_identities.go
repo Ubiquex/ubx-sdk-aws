@@ -4,37 +4,37 @@ package sms_voice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SmsVoicePoolOriginationIdentities_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type SmsVoicePoolOriginationIdentities_OriginationIdentities struct {
-	IsoCountryCode any
-	NumberCapabilities any
-	OriginationIdentity any
+	IsoCountryCode         any
+	NumberCapabilities     any
+	OriginationIdentity    any
 	OriginationIdentityArn any
-	PhoneNumber any
+	PhoneNumber            any
 }
 
 var SmsVoicePoolOriginationIdentities_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type SmsVoicePoolOriginationIdentitiesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	PoolId any
+	NextToken  any
+	PoolId     any
 }
 
 type SmsVoicePoolOriginationIdentitiesAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters               any
+	MaxResults            any
+	NextToken             any
 	OriginationIdentities any
-	PoolArn any
-	PoolId any
+	PoolArn               any
+	PoolId                any
 }
 
 var SmsVoicePoolOriginationIdentities = ubx.DataSourceBinding{
@@ -42,11 +42,11 @@ var SmsVoicePoolOriginationIdentities = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SmsVoicePoolOriginationIdentities_FiltersFields,
+			Kind:     "list",
+			Fields:   SmsVoicePoolOriginationIdentities_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PoolId": ubx.FieldSpec{WireName: "pool_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"PoolId":     ubx.FieldSpec{WireName: "pool_id"},
 	},
 }

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SnapshotLimits_SnapshotLimits struct {
 	ManualSnapshotsCurrentCount any
-	ManualSnapshotsLimit any
+	ManualSnapshotsLimit        any
 	ManualSnapshotsLimitReached any
 }
 

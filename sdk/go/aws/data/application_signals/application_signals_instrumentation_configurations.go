@@ -7,18 +7,18 @@ type ApplicationSignalsInstrumentationConfigurations_LatestConfigurations_Captur
 	MaxCollectionDepth any
 	MaxCollectionWidth any
 	MaxFieldsPerObject any
-	MaxHits any
-	MaxObjectDepth any
-	MaxStackFrames any
-	MaxStackTraceSize any
-	MaxStringLength any
+	MaxHits            any
+	MaxObjectDepth     any
+	MaxStackFrames     any
+	MaxStackTraceSize  any
+	MaxStringLength    any
 }
 
 type ApplicationSignalsInstrumentationConfigurations_LatestConfigurations_CaptureConfiguration_CodeCapture struct {
-	CaptureArguments any
-	CaptureLimits any
-	CaptureLocals any
-	CaptureReturn any
+	CaptureArguments  any
+	CaptureLimits     any
+	CaptureLocals     any
+	CaptureReturn     any
 	CaptureStackTrace any
 }
 
@@ -27,10 +27,10 @@ type ApplicationSignalsInstrumentationConfigurations_LatestConfigurations_Captur
 }
 
 type ApplicationSignalsInstrumentationConfigurations_LatestConfigurations_Location_CodeLocation struct {
-	ClassName any
-	CodeUnit any
-	FilePath any
-	Language any
+	ClassName  any
+	CodeUnit   any
+	FilePath   any
+	Language   any
 	LineNumber any
 	MethodName any
 }
@@ -40,50 +40,50 @@ type ApplicationSignalsInstrumentationConfigurations_LatestConfigurations_Locati
 }
 
 type ApplicationSignalsInstrumentationConfigurations_LatestConfigurations struct {
-	Arn any
-	AttributeFilters any
+	Arn                  any
+	AttributeFilters     any
 	CaptureConfiguration any
-	CreatedAt any
-	Description any
-	ExpiresAt any
-	InstrumentationType any
-	Location any
-	LocationHash any
-	SignalType any
+	CreatedAt            any
+	Description          any
+	ExpiresAt            any
+	InstrumentationType  any
+	Location             any
+	LocationHash         any
+	SignalType           any
 }
 
 type ApplicationSignalsInstrumentationConfigurationsConfig struct {
 	Environment any
 	// Type of instrumentation configuration
 	InstrumentationType any
-	MaxResults any
-	NextToken any
-	Service any
-	SyncedAt any
+	MaxResults          any
+	NextToken           any
+	Service             any
+	SyncedAt            any
 }
 
 type ApplicationSignalsInstrumentationConfigurationsAttrs struct {
-	Changed any
+	Changed     any
 	Environment any
 	// Type of instrumentation configuration
 	InstrumentationType any
 	// <p>An array of instrumentation configurations that omit service and environment, used when those values are provided elsewhere in the response.</p>
 	LatestConfigurations any
-	MaxResults any
-	NextToken any
-	Service any
-	SyncInterval any
-	SyncedAt any
+	MaxResults           any
+	NextToken            any
+	Service              any
+	SyncInterval         any
+	SyncedAt             any
 }
 
 var ApplicationSignalsInstrumentationConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_application_signals_instrumentation_configurations",
 	Fields: ubx.FieldMap{
-		"Environment": ubx.FieldSpec{WireName: "environment"},
+		"Environment":         ubx.FieldSpec{WireName: "environment"},
 		"InstrumentationType": ubx.FieldSpec{WireName: "instrumentation_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"SyncedAt": ubx.FieldSpec{WireName: "synced_at"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
+		"Service":             ubx.FieldSpec{WireName: "service"},
+		"SyncedAt":            ubx.FieldSpec{WireName: "synced_at"},
 	},
 }

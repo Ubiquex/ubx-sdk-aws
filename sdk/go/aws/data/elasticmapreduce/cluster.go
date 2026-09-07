@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Cluster_Cluster_Applications struct {
 	AdditionalInfo any
-	Args any
-	Name any
-	Version any
+	Args           any
+	Name           any
+	Version        any
 }
 
 type Cluster_Cluster_Configurations_Configurations struct {
@@ -16,37 +16,37 @@ type Cluster_Cluster_Configurations_Configurations struct {
 type Cluster_Cluster_Configurations struct {
 	Classification any
 	Configurations any
-	Properties any
+	Properties     any
 }
 
 type Cluster_Cluster_Ec2InstanceAttributes struct {
 	AdditionalMasterSecurityGroups any
-	AdditionalSlaveSecurityGroups any
-	Ec2AvailabilityZone any
-	Ec2KeyName any
-	Ec2SubnetId any
-	EmrManagedMasterSecurityGroup any
-	EmrManagedSlaveSecurityGroup any
-	IamInstanceProfile any
-	RequestedEc2AvailabilityZones any
-	RequestedEc2SubnetIds any
-	ServiceAccessSecurityGroup any
+	AdditionalSlaveSecurityGroups  any
+	Ec2AvailabilityZone            any
+	Ec2KeyName                     any
+	Ec2SubnetId                    any
+	EmrManagedMasterSecurityGroup  any
+	EmrManagedSlaveSecurityGroup   any
+	IamInstanceProfile             any
+	RequestedEc2AvailabilityZones  any
+	RequestedEc2SubnetIds          any
+	ServiceAccessSecurityGroup     any
 }
 
 type Cluster_Cluster_KerberosAttributes struct {
-	AddomainJoinPassword any
-	AddomainJoinUser any
+	AddomainJoinPassword             any
+	AddomainJoinUser                 any
 	CrossRealmTrustPrincipalPassword any
-	KdcAdminPassword any
-	Realm any
+	KdcAdminPassword                 any
+	Realm                            any
 }
 
 type Cluster_Cluster_MonitoringConfiguration_CloudWatchLogConfiguration struct {
-	Enabled any
-	EncryptionKeyArn any
-	LogGroupName any
+	Enabled             any
+	EncryptionKeyArn    any
+	LogGroupName        any
 	LogStreamNamePrefix any
-	LogTypes any
+	LogTypes            any
 }
 
 type Cluster_Cluster_MonitoringConfiguration_S3LoggingConfiguration struct {
@@ -61,30 +61,30 @@ type Cluster_Cluster_MonitoringConfiguration struct {
 }
 
 type Cluster_Cluster_PlacementGroups struct {
-	InstanceRole any
+	InstanceRole      any
 	PlacementStrategy any
 }
 
 type Cluster_Cluster_Status_ErrorDetails struct {
-	ErrorCode any
-	ErrorData any
+	ErrorCode    any
+	ErrorData    any
 	ErrorMessage any
 }
 
 type Cluster_Cluster_Status_StateChangeReason struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type Cluster_Cluster_Status_Timeline struct {
 	CreationDateTime any
-	EndDateTime any
-	ReadyDateTime any
+	EndDateTime      any
+	ReadyDateTime    any
 }
 
 type Cluster_Cluster_Status struct {
 	ErrorDetails any
-	State any
+	State        any
 	// <p>The reason that the cluster changed to its current state.</p>
 	StateChangeReason any
 	// <p>Represents the timeline of the cluster's lifecycle.</p>
@@ -92,52 +92,52 @@ type Cluster_Cluster_Status struct {
 }
 
 type Cluster_Cluster_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Cluster_Cluster struct {
-	Applications any
-	AutoScalingRole any
-	AutoTerminate any
-	ClusterArn any
-	Configurations any
-	CustomAmiId any
-	EbsRootVolumeIops any
-	EbsRootVolumeSize any
+	Applications            any
+	AutoScalingRole         any
+	AutoTerminate           any
+	ClusterArn              any
+	Configurations          any
+	CustomAmiId             any
+	EbsRootVolumeIops       any
+	EbsRootVolumeSize       any
 	EbsRootVolumeThroughput any
 	// <p>Provides information about the Amazon EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
-	Ec2InstanceAttributes any
-	ExtendedSupport any
-	Id any
+	Ec2InstanceAttributes  any
+	ExtendedSupport        any
+	Id                     any
 	InstanceCollectionType any
 	// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
-	KerberosAttributes any
+	KerberosAttributes    any
 	LogEncryptionKmsKeyId any
-	LogUri any
-	MasterPublicDnsName any
+	LogUri                any
+	MasterPublicDnsName   any
 	// <p>Contains CloudWatch log configuration and S3 logging configuration metadata and settings.</p>
 	MonitoringConfiguration any
-	Name any
+	Name                    any
 	NormalizedInstanceHours any
-	OsreleaseLabel any
-	OutpostArn any
-	PlacementGroups any
-	ReleaseLabel any
-	RepoUpgradeOnBoot any
-	RequestedAmiVersion any
-	RunningAmiVersion any
-	ScaleDownBehavior any
-	SecurityConfiguration any
-	ServiceRole any
-	SessionEnabled any
+	OsreleaseLabel          any
+	OutpostArn              any
+	PlacementGroups         any
+	ReleaseLabel            any
+	RepoUpgradeOnBoot       any
+	RequestedAmiVersion     any
+	RunningAmiVersion       any
+	ScaleDownBehavior       any
+	SecurityConfiguration   any
+	ServiceRole             any
+	SessionEnabled          any
 	// <p>The detailed status of the cluster.</p>
-	Status any
-	StepConcurrencyLevel any
-	Tags any
-	TerminationProtected any
+	Status                   any
+	StepConcurrencyLevel     any
+	Tags                     any
+	TerminationProtected     any
 	UnhealthyNodeReplacement any
-	VisibleToAllUsers any
+	VisibleToAllUsers        any
 }
 
 type ClusterConfig struct {
@@ -146,7 +146,7 @@ type ClusterConfig struct {
 
 type ClusterAttrs struct {
 	// <p>The detailed description of the cluster.</p>
-	Cluster any
+	Cluster   any
 	ClusterId any
 }
 

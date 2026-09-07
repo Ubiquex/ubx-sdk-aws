@@ -4,51 +4,51 @@ package s3files
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessPoints_AccessPoints_PosixUser struct {
-	Gid any
+	Gid           any
 	SecondaryGids any
-	Uid any
+	Uid           any
 }
 
 type AccessPoints_AccessPoints_RootDirectory_CreationPermissions struct {
-	OwnerGid any
-	OwnerUid any
+	OwnerGid    any
+	OwnerUid    any
 	Permissions any
 }
 
 type AccessPoints_AccessPoints_RootDirectory struct {
 	CreationPermissions any
-	Path any
+	Path                any
 }
 
 type AccessPoints_AccessPoints struct {
 	AccessPointArn any
-	AccessPointId any
-	FileSystemId any
-	Name any
-	OwnerId any
-	PosixUser any
-	RootDirectory any
-	Status any
+	AccessPointId  any
+	FileSystemId   any
+	Name           any
+	OwnerId        any
+	PosixUser      any
+	RootDirectory  any
+	Status         any
 }
 
 type AccessPointsConfig struct {
 	FileSystemId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type AccessPointsAttrs struct {
 	AccessPoints any
 	FileSystemId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var AccessPoints = ubx.DataSourceBinding{
 	WireType: "aws_s3files_access_points",
 	Fields: ubx.FieldMap{
 		"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

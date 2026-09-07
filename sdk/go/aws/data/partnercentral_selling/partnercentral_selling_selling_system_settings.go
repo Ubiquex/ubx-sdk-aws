@@ -10,7 +10,7 @@ type PartnercentralSellingSellingSystemSettingsConfig struct {
 
 type PartnercentralSellingSellingSystemSettingsAttrs struct {
 	// Value space is validated at runtime against an allowlist, so the model keeps only a coarse character-class pattern.
-	Catalog any
+	Catalog                    any
 	ResourceSnapshotJobRoleArn any
 }
 

@@ -4,50 +4,50 @@ package models_v2_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsV2LexBots_BotSummaries struct {
-	BotId any
-	BotName any
-	BotStatus any
-	BotType any
-	Description any
+	BotId               any
+	BotName             any
+	BotStatus           any
+	BotType             any
+	Description         any
 	LastUpdatedDateTime any
-	LatestBotVersion any
+	LatestBotVersion    any
 }
 
 type ModelsV2LexBots_Filters struct {
-	Name any
+	Name     any
 	Operator any
-	Values any
+	Values   any
 }
 
 type ModelsV2LexBots_SortBy struct {
 	Attribute any
-	Order any
+	Order     any
 }
 
 var ModelsV2LexBots_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var ModelsV2LexBots_SortByFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Order":     ubx.FieldSpec{WireName: "order"},
+}
 
 type ModelsV2LexBotsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Specifies attributes for sorting a list of bots.</p>
 	SortBy any
 }
 
 type ModelsV2LexBotsAttrs struct {
 	BotSummaries any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters      any
+	MaxResults   any
+	NextToken    any
 	// <p>Specifies attributes for sorting a list of bots.</p>
 	SortBy any
 }
@@ -57,15 +57,15 @@ var ModelsV2LexBots = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ModelsV2LexBots_FiltersFields,
+			Kind:     "list",
+			Fields:   ModelsV2LexBots_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SortBy": ubx.FieldSpec{
 			WireName: "sort_by",
-			Kind: "object",
-			Fields: ModelsV2LexBots_SortByFields,
+			Kind:     "object",
+			Fields:   ModelsV2LexBots_SortByFields,
 		},
 	},
 }

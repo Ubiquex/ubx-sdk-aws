@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Accessor_Tags struct {
 	// The key of a tag assigned to the Managed Blockchain Accessor, used to organize, identify, and manage accessor resources. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Accessor_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AccessorConfig struct {
 	// Specifies the accessor type (BILLING_TOKEN, ETHEREUM_GOERLI, or ETHEREUM_MAINNET), which determines whether the accessor is a billing token or grants access to a specific Ethereum network. (AI-inferred)
@@ -46,11 +46,11 @@ var Accessor = ubx.ResourceBinding{
 	WireType: "aws_managed_blockchain_accessor",
 	Fields: ubx.FieldMap{
 		"AccessorType": ubx.FieldSpec{WireName: "accessor_type"},
-		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
+		"NetworkType":  ubx.FieldSpec{WireName: "network_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Accessor_TagsFields,
+			Kind:     "list",
+			Fields:   Accessor_TagsFields,
 		},
 	},
 }

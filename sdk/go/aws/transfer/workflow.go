@@ -103,114 +103,114 @@ type Workflow_OnExceptionSteps struct {
 }
 
 var Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation_S3FileLocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Bucket": ubx.FieldSpec{WireName: "bucket"},
+	"Key":    ubx.FieldSpec{WireName: "key"},
+}
 
 var Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocationFields = ubx.FieldMap{
-		"S3FileLocation": ubx.FieldSpec{
-			WireName: "s3_file_location",
-			Kind: "object",
-			Fields: Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation_S3FileLocationFields,
-		},
-	}
+	"S3FileLocation": ubx.FieldSpec{
+		WireName: "s3_file_location",
+		Kind:     "object",
+		Fields:   Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation_S3FileLocationFields,
+	},
+}
 
 var Workflow_OnExceptionSteps_CopyStepDetailsFields = ubx.FieldMap{
-		"DestinationFileLocation": ubx.FieldSpec{
-			WireName: "destination_file_location",
-			Kind: "object",
-			Fields: Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocationFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OverwriteExisting": ubx.FieldSpec{WireName: "overwrite_existing"},
-		"SourceFileLocation": ubx.FieldSpec{WireName: "source_file_location"},
-	}
+	"DestinationFileLocation": ubx.FieldSpec{
+		WireName: "destination_file_location",
+		Kind:     "object",
+		Fields:   Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocationFields,
+	},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"OverwriteExisting":  ubx.FieldSpec{WireName: "overwrite_existing"},
+	"SourceFileLocation": ubx.FieldSpec{WireName: "source_file_location"},
+}
 
 var Workflow_OnExceptionSteps_CustomStepDetailsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SourceFileLocation": ubx.FieldSpec{WireName: "source_file_location"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-	}
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"SourceFileLocation": ubx.FieldSpec{WireName: "source_file_location"},
+	"Target":             ubx.FieldSpec{WireName: "target"},
+	"TimeoutSeconds":     ubx.FieldSpec{WireName: "timeout_seconds"},
+}
 
 var Workflow_OnExceptionSteps_DecryptStepDetails_DestinationFileLocation_EfsFileLocationFields = ubx.FieldMap{
-		"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
+	"Path":         ubx.FieldSpec{WireName: "path"},
+}
 
 var Workflow_OnExceptionSteps_DecryptStepDetails_DestinationFileLocationFields = ubx.FieldMap{
-		"EfsFileLocation": ubx.FieldSpec{
-			WireName: "efs_file_location",
-			Kind: "object",
-			Fields: Workflow_OnExceptionSteps_DecryptStepDetails_DestinationFileLocation_EfsFileLocationFields,
-		},
-		"S3FileLocation": ubx.FieldSpec{
-			WireName: "s3_file_location",
-			Kind: "object",
-			Fields: Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation_S3FileLocationFields,
-		},
-	}
+	"EfsFileLocation": ubx.FieldSpec{
+		WireName: "efs_file_location",
+		Kind:     "object",
+		Fields:   Workflow_OnExceptionSteps_DecryptStepDetails_DestinationFileLocation_EfsFileLocationFields,
+	},
+	"S3FileLocation": ubx.FieldSpec{
+		WireName: "s3_file_location",
+		Kind:     "object",
+		Fields:   Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation_S3FileLocationFields,
+	},
+}
 
 var Workflow_OnExceptionSteps_DecryptStepDetailsFields = ubx.FieldMap{
-		"DestinationFileLocation": ubx.FieldSpec{
-			WireName: "destination_file_location",
-			Kind: "object",
-			Fields: Workflow_OnExceptionSteps_DecryptStepDetails_DestinationFileLocationFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OverwriteExisting": ubx.FieldSpec{WireName: "overwrite_existing"},
-		"SourceFileLocation": ubx.FieldSpec{WireName: "source_file_location"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DestinationFileLocation": ubx.FieldSpec{
+		WireName: "destination_file_location",
+		Kind:     "object",
+		Fields:   Workflow_OnExceptionSteps_DecryptStepDetails_DestinationFileLocationFields,
+	},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"OverwriteExisting":  ubx.FieldSpec{WireName: "overwrite_existing"},
+	"SourceFileLocation": ubx.FieldSpec{WireName: "source_file_location"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var Workflow_OnExceptionSteps_DeleteStepDetailsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SourceFileLocation": ubx.FieldSpec{WireName: "source_file_location"},
-	}
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"SourceFileLocation": ubx.FieldSpec{WireName: "source_file_location"},
+}
 
 var Workflow_OnExceptionSteps_TagStepDetails_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Workflow_OnExceptionSteps_TagStepDetailsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SourceFileLocation": ubx.FieldSpec{WireName: "source_file_location"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: Workflow_OnExceptionSteps_TagStepDetails_TagsFields,
-		},
-	}
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"SourceFileLocation": ubx.FieldSpec{WireName: "source_file_location"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   Workflow_OnExceptionSteps_TagStepDetails_TagsFields,
+	},
+}
 
 var Workflow_OnExceptionStepsFields = ubx.FieldMap{
-		"CopyStepDetails": ubx.FieldSpec{
-			WireName: "copy_step_details",
-			Kind: "object",
-			Fields: Workflow_OnExceptionSteps_CopyStepDetailsFields,
-		},
-		"CustomStepDetails": ubx.FieldSpec{
-			WireName: "custom_step_details",
-			Kind: "object",
-			Fields: Workflow_OnExceptionSteps_CustomStepDetailsFields,
-		},
-		"DecryptStepDetails": ubx.FieldSpec{
-			WireName: "decrypt_step_details",
-			Kind: "object",
-			Fields: Workflow_OnExceptionSteps_DecryptStepDetailsFields,
-		},
-		"DeleteStepDetails": ubx.FieldSpec{
-			WireName: "delete_step_details",
-			Kind: "object",
-			Fields: Workflow_OnExceptionSteps_DeleteStepDetailsFields,
-		},
-		"TagStepDetails": ubx.FieldSpec{
-			WireName: "tag_step_details",
-			Kind: "object",
-			Fields: Workflow_OnExceptionSteps_TagStepDetailsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CopyStepDetails": ubx.FieldSpec{
+		WireName: "copy_step_details",
+		Kind:     "object",
+		Fields:   Workflow_OnExceptionSteps_CopyStepDetailsFields,
+	},
+	"CustomStepDetails": ubx.FieldSpec{
+		WireName: "custom_step_details",
+		Kind:     "object",
+		Fields:   Workflow_OnExceptionSteps_CustomStepDetailsFields,
+	},
+	"DecryptStepDetails": ubx.FieldSpec{
+		WireName: "decrypt_step_details",
+		Kind:     "object",
+		Fields:   Workflow_OnExceptionSteps_DecryptStepDetailsFields,
+	},
+	"DeleteStepDetails": ubx.FieldSpec{
+		WireName: "delete_step_details",
+		Kind:     "object",
+		Fields:   Workflow_OnExceptionSteps_DeleteStepDetailsFields,
+	},
+	"TagStepDetails": ubx.FieldSpec{
+		WireName: "tag_step_details",
+		Kind:     "object",
+		Fields:   Workflow_OnExceptionSteps_TagStepDetailsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type WorkflowConfig struct {
 	// A textual description for the workflow.
@@ -244,18 +244,18 @@ var Workflow = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"OnExceptionSteps": ubx.FieldSpec{
 			WireName: "on_exception_steps",
-			Kind: "list",
-			Fields: Workflow_OnExceptionStepsFields,
+			Kind:     "list",
+			Fields:   Workflow_OnExceptionStepsFields,
 		},
 		"Steps": ubx.FieldSpec{
 			WireName: "steps",
-			Kind: "list",
-			Fields: Workflow_OnExceptionStepsFields,
+			Kind:     "list",
+			Fields:   Workflow_OnExceptionStepsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Workflow_OnExceptionSteps_TagStepDetails_TagsFields,
+			Kind:     "list",
+			Fields:   Workflow_OnExceptionSteps_TagStepDetails_TagsFields,
 		},
 	},
 }

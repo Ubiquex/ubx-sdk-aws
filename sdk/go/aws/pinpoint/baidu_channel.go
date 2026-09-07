@@ -30,9 +30,9 @@ type BaiduChannelAttrs struct {
 var BaiduChannel = ubx.ResourceBinding{
 	WireType: "aws_pinpoint_baidu_channel",
 	Fields: ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
+		"ApiKey":        ubx.FieldSpec{WireName: "api_key"},
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"SecretKey": ubx.FieldSpec{WireName: "secret_key"},
+		"Enabled":       ubx.FieldSpec{WireName: "enabled"},
+		"SecretKey":     ubx.FieldSpec{WireName: "secret_key"},
 	},
 }

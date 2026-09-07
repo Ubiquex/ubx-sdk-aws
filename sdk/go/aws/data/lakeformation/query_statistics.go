@@ -5,15 +5,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QueryStatistics_ExecutionStatistics struct {
 	AverageExecutionTimeMillis any
-	DataScannedBytes any
-	WorkUnitsExecutedCount any
+	DataScannedBytes           any
+	WorkUnitsExecutedCount     any
 }
 
 type QueryStatistics_PlanningStatistics struct {
 	EstimatedDataToScanBytes any
-	PlanningTimeMillis any
-	QueueTimeMillis any
-	WorkUnitsGeneratedCount any
+	PlanningTimeMillis       any
+	QueueTimeMillis          any
+	WorkUnitsGeneratedCount  any
 }
 
 type QueryStatisticsConfig struct {
@@ -24,8 +24,8 @@ type QueryStatisticsAttrs struct {
 	// <p>Statistics related to the processing of a query statement.</p>
 	ExecutionStatistics any
 	// <p>Statistics related to the processing of a query statement.</p>
-	PlanningStatistics any
-	QueryId any
+	PlanningStatistics  any
+	QueryId             any
 	QuerySubmissionTime any
 }
 

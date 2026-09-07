@@ -9,41 +9,41 @@ type ComponentBuildVersions_ComponentSummaryList_State struct {
 }
 
 type ComponentBuildVersions_ComponentSummaryList struct {
-	Arn any
-	ChangeDescription any
-	DateCreated any
-	Description any
-	Name any
-	Obfuscate any
-	Owner any
-	Platform any
-	Publisher any
-	State any
+	Arn                 any
+	ChangeDescription   any
+	DateCreated         any
+	Description         any
+	Name                any
+	Obfuscate           any
+	Owner               any
+	Platform            any
+	Publisher           any
+	State               any
 	SupportedOsVersions any
-	Tags any
-	Type any
-	Version any
+	Tags                any
+	Type                any
+	Version             any
 }
 
 type ComponentBuildVersionsConfig struct {
 	ComponentVersionArn any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 }
 
 type ComponentBuildVersionsAttrs struct {
 	ComponentSummaryList any
-	ComponentVersionArn any
-	MaxResults any
-	NextToken any
-	RequestId any
+	ComponentVersionArn  any
+	MaxResults           any
+	NextToken            any
+	RequestId            any
 }
 
 var ComponentBuildVersions = ubx.DataSourceBinding{
 	WireType: "aws_imagebuilder_component_build_versions",
 	Fields: ubx.FieldMap{
 		"ComponentVersionArn": ubx.FieldSpec{WireName: "component_version_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 	},
 }

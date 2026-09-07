@@ -5,102 +5,102 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourcesV2_Filters_CompositeFilters_DateFilters_Filter_DateRange struct {
 	Comparison any
-	Unit any
-	Value any
+	Unit       any
+	Value      any
 }
 
 type ResourcesV2_Filters_CompositeFilters_DateFilters_Filter struct {
 	DateRange any
-	End any
-	Start any
+	End       any
+	Start     any
 }
 
 type ResourcesV2_Filters_CompositeFilters_DateFilters struct {
 	FieldName any
-	Filter any
+	Filter    any
 }
 
 type ResourcesV2_Filters_CompositeFilters_MapFilters_Filter struct {
 	Comparison any
-	Key any
-	Value any
+	Key        any
+	Value      any
 }
 
 type ResourcesV2_Filters_CompositeFilters_MapFilters struct {
 	FieldName any
-	Filter any
+	Filter    any
 }
 
 type ResourcesV2_Filters_CompositeFilters_NestedCompositeFilters struct {
 }
 
 type ResourcesV2_Filters_CompositeFilters_NumberFilters_Filter struct {
-	Eq any
-	Gt any
+	Eq  any
+	Gt  any
 	Gte any
-	Lt any
+	Lt  any
 	Lte any
 }
 
 type ResourcesV2_Filters_CompositeFilters_NumberFilters struct {
 	FieldName any
-	Filter any
+	Filter    any
 }
 
 type ResourcesV2_Filters_CompositeFilters_StringFilters_Filter struct {
 	Comparison any
-	Value any
+	Value      any
 }
 
 type ResourcesV2_Filters_CompositeFilters_StringFilters struct {
 	FieldName any
-	Filter any
+	Filter    any
 }
 
 type ResourcesV2_Filters_CompositeFilters struct {
-	DateFilters any
-	MapFilters any
+	DateFilters            any
+	MapFilters             any
 	NestedCompositeFilters any
-	NumberFilters any
-	Operator any
-	StringFilters any
+	NumberFilters          any
+	Operator               any
+	StringFilters          any
 }
 
 type ResourcesV2_Filters struct {
-	CompositeFilters any
+	CompositeFilters  any
 	CompositeOperator any
 }
 
 type ResourcesV2_Resources_FindingsSummary_Severities struct {
-	Critical any
-	Fatal any
-	High any
+	Critical      any
+	Fatal         any
+	High          any
 	Informational any
-	Low any
-	Medium any
-	Other any
-	Unknown any
+	Low           any
+	Medium        any
+	Other         any
+	Unknown       any
 }
 
 type ResourcesV2_Resources_FindingsSummary struct {
-	FindingType any
-	ProductName any
-	Severities any
+	FindingType   any
+	ProductName   any
+	Severities    any
 	TotalFindings any
 }
 
 type ResourcesV2_Resources_ResourceInfo_Aidetails struct {
-	CanonicalId any
-	HostResourceGuid any
-	HostResourceType any
-	SelfHostedAiagentFrameworkResourceCount any
-	SelfHostedAiagentResourceCount any
+	CanonicalId                                    any
+	HostResourceGuid                               any
+	HostResourceType                               any
+	SelfHostedAiagentFrameworkResourceCount        any
+	SelfHostedAiagentResourceCount                 any
 	SelfHostedAiagentToolsAndIdentityResourceCount any
-	SelfHostedAidevelopmentResourceCount any
-	SelfHostedAiexternalEndpointResourceCount any
-	SelfHostedAimodelResourceCount any
-	SelfHostedAimodelServingResourceCount any
-	SelfHostedTotalAiresourceCount any
+	SelfHostedAidevelopmentResourceCount           any
+	SelfHostedAiexternalEndpointResourceCount      any
+	SelfHostedAimodelResourceCount                 any
+	SelfHostedAimodelServingResourceCount          any
+	SelfHostedTotalAiresourceCount                 any
 }
 
 type ResourcesV2_Resources_ResourceInfo struct {
@@ -108,36 +108,36 @@ type ResourcesV2_Resources_ResourceInfo struct {
 }
 
 type ResourcesV2_Resources_ResourceTags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ResourcesV2_Resources struct {
-	AccountId any
-	AccountName any
-	DiscoveryType any
-	FindingsSummary any
-	Region any
-	ResourceCategory any
-	ResourceCloudPartition any
-	ResourceConfig any
-	ResourceCreationTimeDt any
+	AccountId                   any
+	AccountName                 any
+	DiscoveryType               any
+	FindingsSummary             any
+	Region                      any
+	ResourceCategory            any
+	ResourceCloudPartition      any
+	ResourceConfig              any
+	ResourceCreationTimeDt      any
 	ResourceDetailCaptureTimeDt any
-	ResourceGuid any
-	ResourceId any
-	ResourceInfo any
-	ResourceName any
-	ResourceOwnerAccountId any
-	ResourceOwnerOrgId any
-	ResourceProvider any
-	ResourceRegion any
-	ResourceSubCategory any
-	ResourceTags any
-	ResourceType any
+	ResourceGuid                any
+	ResourceId                  any
+	ResourceInfo                any
+	ResourceName                any
+	ResourceOwnerAccountId      any
+	ResourceOwnerOrgId          any
+	ResourceProvider            any
+	ResourceRegion              any
+	ResourceSubCategory         any
+	ResourceTags                any
+	ResourceType                any
 }
 
 type ResourcesV2_Scopes_AwsOrganizations struct {
-	OrganizationId any
+	OrganizationId       any
 	OrganizationalUnitId any
 }
 
@@ -147,158 +147,157 @@ type ResourcesV2_Scopes struct {
 }
 
 type ResourcesV2_SortCriteria struct {
-	Field any
+	Field     any
 	SortOrder any
 }
 
 var ResourcesV2_Filters_CompositeFilters_DateFilters_Filter_DateRangeFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Unit":       ubx.FieldSpec{WireName: "unit"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var ResourcesV2_Filters_CompositeFilters_DateFilters_FilterFields = ubx.FieldMap{
-		"DateRange": ubx.FieldSpec{
-			WireName: "date_range",
-			Kind: "object",
-			Fields: ResourcesV2_Filters_CompositeFilters_DateFilters_Filter_DateRangeFields,
-		},
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"DateRange": ubx.FieldSpec{
+		WireName: "date_range",
+		Kind:     "object",
+		Fields:   ResourcesV2_Filters_CompositeFilters_DateFilters_Filter_DateRangeFields,
+	},
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 var ResourcesV2_Filters_CompositeFilters_DateFiltersFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: ResourcesV2_Filters_CompositeFilters_DateFilters_FilterFields,
-		},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   ResourcesV2_Filters_CompositeFilters_DateFilters_FilterFields,
+	},
+}
 
 var ResourcesV2_Filters_CompositeFilters_MapFilters_FilterFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var ResourcesV2_Filters_CompositeFilters_MapFiltersFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: ResourcesV2_Filters_CompositeFilters_MapFilters_FilterFields,
-		},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   ResourcesV2_Filters_CompositeFilters_MapFilters_FilterFields,
+	},
+}
 
-var ResourcesV2_Filters_CompositeFilters_NestedCompositeFiltersFields = ubx.FieldMap{
-	}
+var ResourcesV2_Filters_CompositeFilters_NestedCompositeFiltersFields = ubx.FieldMap{}
 
 var ResourcesV2_Filters_CompositeFilters_NumberFilters_FilterFields = ubx.FieldMap{
-		"Eq": ubx.FieldSpec{WireName: "eq"},
-		"Gt": ubx.FieldSpec{WireName: "gt"},
-		"Gte": ubx.FieldSpec{WireName: "gte"},
-		"Lt": ubx.FieldSpec{WireName: "lt"},
-		"Lte": ubx.FieldSpec{WireName: "lte"},
-	}
+	"Eq":  ubx.FieldSpec{WireName: "eq"},
+	"Gt":  ubx.FieldSpec{WireName: "gt"},
+	"Gte": ubx.FieldSpec{WireName: "gte"},
+	"Lt":  ubx.FieldSpec{WireName: "lt"},
+	"Lte": ubx.FieldSpec{WireName: "lte"},
+}
 
 var ResourcesV2_Filters_CompositeFilters_NumberFiltersFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: ResourcesV2_Filters_CompositeFilters_NumberFilters_FilterFields,
-		},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   ResourcesV2_Filters_CompositeFilters_NumberFilters_FilterFields,
+	},
+}
 
 var ResourcesV2_Filters_CompositeFilters_StringFilters_FilterFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var ResourcesV2_Filters_CompositeFilters_StringFiltersFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: ResourcesV2_Filters_CompositeFilters_StringFilters_FilterFields,
-		},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   ResourcesV2_Filters_CompositeFilters_StringFilters_FilterFields,
+	},
+}
 
 var ResourcesV2_Filters_CompositeFiltersFields = ubx.FieldMap{
-		"DateFilters": ubx.FieldSpec{
-			WireName: "date_filters",
-			Kind: "list",
-			Fields: ResourcesV2_Filters_CompositeFilters_DateFiltersFields,
-		},
-		"MapFilters": ubx.FieldSpec{
-			WireName: "map_filters",
-			Kind: "list",
-			Fields: ResourcesV2_Filters_CompositeFilters_MapFiltersFields,
-		},
-		"NestedCompositeFilters": ubx.FieldSpec{
-			WireName: "nested_composite_filters",
-			Kind: "list",
-			Fields: ResourcesV2_Filters_CompositeFilters_NestedCompositeFiltersFields,
-		},
-		"NumberFilters": ubx.FieldSpec{
-			WireName: "number_filters",
-			Kind: "list",
-			Fields: ResourcesV2_Filters_CompositeFilters_NumberFiltersFields,
-		},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"StringFilters": ubx.FieldSpec{
-			WireName: "string_filters",
-			Kind: "list",
-			Fields: ResourcesV2_Filters_CompositeFilters_StringFiltersFields,
-		},
-	}
+	"DateFilters": ubx.FieldSpec{
+		WireName: "date_filters",
+		Kind:     "list",
+		Fields:   ResourcesV2_Filters_CompositeFilters_DateFiltersFields,
+	},
+	"MapFilters": ubx.FieldSpec{
+		WireName: "map_filters",
+		Kind:     "list",
+		Fields:   ResourcesV2_Filters_CompositeFilters_MapFiltersFields,
+	},
+	"NestedCompositeFilters": ubx.FieldSpec{
+		WireName: "nested_composite_filters",
+		Kind:     "list",
+		Fields:   ResourcesV2_Filters_CompositeFilters_NestedCompositeFiltersFields,
+	},
+	"NumberFilters": ubx.FieldSpec{
+		WireName: "number_filters",
+		Kind:     "list",
+		Fields:   ResourcesV2_Filters_CompositeFilters_NumberFiltersFields,
+	},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"StringFilters": ubx.FieldSpec{
+		WireName: "string_filters",
+		Kind:     "list",
+		Fields:   ResourcesV2_Filters_CompositeFilters_StringFiltersFields,
+	},
+}
 
 var ResourcesV2_FiltersFields = ubx.FieldMap{
-		"CompositeFilters": ubx.FieldSpec{
-			WireName: "composite_filters",
-			Kind: "list",
-			Fields: ResourcesV2_Filters_CompositeFiltersFields,
-		},
-		"CompositeOperator": ubx.FieldSpec{WireName: "composite_operator"},
-	}
+	"CompositeFilters": ubx.FieldSpec{
+		WireName: "composite_filters",
+		Kind:     "list",
+		Fields:   ResourcesV2_Filters_CompositeFiltersFields,
+	},
+	"CompositeOperator": ubx.FieldSpec{WireName: "composite_operator"},
+}
 
 var ResourcesV2_Scopes_AwsOrganizationsFields = ubx.FieldMap{
-		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
-		"OrganizationalUnitId": ubx.FieldSpec{WireName: "organizational_unit_id"},
-	}
+	"OrganizationId":       ubx.FieldSpec{WireName: "organization_id"},
+	"OrganizationalUnitId": ubx.FieldSpec{WireName: "organizational_unit_id"},
+}
 
 var ResourcesV2_ScopesFields = ubx.FieldMap{
-		"AwsOrganizations": ubx.FieldSpec{
-			WireName: "aws_organizations",
-			Kind: "list",
-			Fields: ResourcesV2_Scopes_AwsOrganizationsFields,
-		},
-	}
+	"AwsOrganizations": ubx.FieldSpec{
+		WireName: "aws_organizations",
+		Kind:     "list",
+		Fields:   ResourcesV2_Scopes_AwsOrganizationsFields,
+	},
+}
 
 var ResourcesV2_SortCriteriaFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"Field":     ubx.FieldSpec{WireName: "field"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 type ResourcesV2Config struct {
 	// <p>Enables filtering of Amazon Web Services resources based on data.</p>
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Defines the data boundary for a resources query. Scopes determine which organizational units or organizations to retrieve data from.</p>
-	Scopes any
+	Scopes       any
 	SortCriteria any
 }
 
 type ResourcesV2Attrs struct {
 	// <p>Enables filtering of Amazon Web Services resources based on data.</p>
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	Resources any
+	NextToken  any
+	Resources  any
 	// <p>Defines the data boundary for a resources query. Scopes determine which organizational units or organizations to retrieve data from.</p>
-	Scopes any
+	Scopes       any
 	SortCriteria any
 }
 
@@ -307,20 +306,20 @@ var ResourcesV2 = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: ResourcesV2_FiltersFields,
+			Kind:     "object",
+			Fields:   ResourcesV2_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"Scopes": ubx.FieldSpec{
 			WireName: "scopes",
-			Kind: "object",
-			Fields: ResourcesV2_ScopesFields,
+			Kind:     "object",
+			Fields:   ResourcesV2_ScopesFields,
 		},
 		"SortCriteria": ubx.FieldSpec{
 			WireName: "sort_criteria",
-			Kind: "list",
-			Fields: ResourcesV2_SortCriteriaFields,
+			Kind:     "list",
+			Fields:   ResourcesV2_SortCriteriaFields,
 		},
 	},
 }

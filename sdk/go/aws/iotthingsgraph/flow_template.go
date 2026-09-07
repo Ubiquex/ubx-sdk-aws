@@ -11,9 +11,9 @@ type FlowTemplate_Definition struct {
 }
 
 var FlowTemplate_DefinitionFields = ubx.FieldMap{
-		"Language": ubx.FieldSpec{WireName: "language"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Language": ubx.FieldSpec{WireName: "language"},
+	"Text":     ubx.FieldSpec{WireName: "text"},
+}
 
 type FlowTemplateConfig struct {
 	// The version of the user's namespace that the flow template is compatible with, used to ensure the flow definition aligns with a specific published namespace version. (AI-inferred)
@@ -37,8 +37,8 @@ var FlowTemplate = ubx.ResourceBinding{
 		"CompatibleNamespaceVersion": ubx.FieldSpec{WireName: "compatible_namespace_version"},
 		"Definition": ubx.FieldSpec{
 			WireName: "definition",
-			Kind: "object",
-			Fields: FlowTemplate_DefinitionFields,
+			Kind:     "object",
+			Fields:   FlowTemplate_DefinitionFields,
 		},
 	},
 }

@@ -36,34 +36,34 @@ type AppInstanceBot_Tags struct {
 }
 
 var AppInstanceBot_Configuration_Lex_InvokedByFields = ubx.FieldMap{
-		"StandardMessages": ubx.FieldSpec{WireName: "standard_messages"},
-		"TargetedMessages": ubx.FieldSpec{WireName: "targeted_messages"},
-	}
+	"StandardMessages": ubx.FieldSpec{WireName: "standard_messages"},
+	"TargetedMessages": ubx.FieldSpec{WireName: "targeted_messages"},
+}
 
 var AppInstanceBot_Configuration_LexFields = ubx.FieldMap{
-		"InvokedBy": ubx.FieldSpec{
-			WireName: "invoked_by",
-			Kind: "object",
-			Fields: AppInstanceBot_Configuration_Lex_InvokedByFields,
-		},
-		"LexBotAliasArn": ubx.FieldSpec{WireName: "lex_bot_alias_arn"},
-		"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
-		"RespondsTo": ubx.FieldSpec{WireName: "responds_to"},
-		"WelcomeIntent": ubx.FieldSpec{WireName: "welcome_intent"},
-	}
+	"InvokedBy": ubx.FieldSpec{
+		WireName: "invoked_by",
+		Kind:     "object",
+		Fields:   AppInstanceBot_Configuration_Lex_InvokedByFields,
+	},
+	"LexBotAliasArn": ubx.FieldSpec{WireName: "lex_bot_alias_arn"},
+	"LocaleId":       ubx.FieldSpec{WireName: "locale_id"},
+	"RespondsTo":     ubx.FieldSpec{WireName: "responds_to"},
+	"WelcomeIntent":  ubx.FieldSpec{WireName: "welcome_intent"},
+}
 
 var AppInstanceBot_ConfigurationFields = ubx.FieldMap{
-		"Lex": ubx.FieldSpec{
-			WireName: "lex",
-			Kind: "object",
-			Fields: AppInstanceBot_Configuration_LexFields,
-		},
-	}
+	"Lex": ubx.FieldSpec{
+		WireName: "lex",
+		Kind:     "object",
+		Fields:   AppInstanceBot_Configuration_LexFields,
+	},
+}
 
 var AppInstanceBot_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AppInstanceBotConfig struct {
 	// The ARN of the AppInstance.
@@ -103,15 +103,15 @@ var AppInstanceBot = ubx.ResourceBinding{
 		"AppInstanceArn": ubx.FieldSpec{WireName: "app_instance_arn"},
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: AppInstanceBot_ConfigurationFields,
+			Kind:     "object",
+			Fields:   AppInstanceBot_ConfigurationFields,
 		},
 		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AppInstanceBot_TagsFields,
+			Kind:     "list",
+			Fields:   AppInstanceBot_TagsFields,
 		},
 	},
 }

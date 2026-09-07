@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdentityOpenIdTokenConfig struct {
 	IdentityId any
-	Logins any
+	Logins     any
 }
 
 type CognitoIdentityOpenIdTokenAttrs struct {
 	IdentityId any
-	Logins any
-	Token any
+	Logins     any
+	Token      any
 }
 
 var CognitoIdentityOpenIdToken = ubx.DataSourceBinding{
 	WireType: "aws_cognito_identity_open_id_token",
 	Fields: ubx.FieldMap{
 		"IdentityId": ubx.FieldSpec{WireName: "identity_id"},
-		"Logins": ubx.FieldSpec{WireName: "logins"},
+		"Logins":     ubx.FieldSpec{WireName: "logins"},
 	},
 }

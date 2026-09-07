@@ -4,9 +4,9 @@ package lookoutequipment
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataIngestionJobs_DataIngestionJobSummaries_IngestionInputConfiguration_S3InputConfiguration struct {
-	Bucket any
+	Bucket     any
 	KeyPattern any
-	Prefix any
+	Prefix     any
 }
 
 type DataIngestionJobs_DataIngestionJobSummaries_IngestionInputConfiguration struct {
@@ -14,34 +14,34 @@ type DataIngestionJobs_DataIngestionJobSummaries_IngestionInputConfiguration str
 }
 
 type DataIngestionJobs_DataIngestionJobSummaries struct {
-	DatasetArn any
-	DatasetName any
+	DatasetArn                  any
+	DatasetName                 any
 	IngestionInputConfiguration any
-	JobId any
-	Status any
+	JobId                       any
+	Status                      any
 }
 
 type DataIngestionJobsConfig struct {
 	DatasetName any
-	MaxResults any
-	NextToken any
-	Status any
+	MaxResults  any
+	NextToken   any
+	Status      any
 }
 
 type DataIngestionJobsAttrs struct {
 	DataIngestionJobSummaries any
-	DatasetName any
-	MaxResults any
-	NextToken any
-	Status any
+	DatasetName               any
+	MaxResults                any
+	NextToken                 any
+	Status                    any
 }
 
 var DataIngestionJobs = ubx.DataSourceBinding{
 	WireType: "aws_lookoutequipment_data_ingestion_jobs",
 	Fields: ubx.FieldMap{
 		"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"Status":      ubx.FieldSpec{WireName: "status"},
 	},
 }

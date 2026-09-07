@@ -221,235 +221,235 @@ type Rule_Targets struct {
 }
 
 var Rule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Rule_Targets_AppSyncParametersFields = ubx.FieldMap{
-		"GraphQloperation": ubx.FieldSpec{WireName: "graph_qloperation"},
-	}
+	"GraphQloperation": ubx.FieldSpec{WireName: "graph_qloperation"},
+}
 
 var Rule_Targets_BatchParameters_ArrayPropertiesFields = ubx.FieldMap{
-		"Size": ubx.FieldSpec{WireName: "size"},
-	}
+	"Size": ubx.FieldSpec{WireName: "size"},
+}
 
 var Rule_Targets_BatchParameters_RetryStrategyFields = ubx.FieldMap{
-		"Attempts": ubx.FieldSpec{WireName: "attempts"},
-	}
+	"Attempts": ubx.FieldSpec{WireName: "attempts"},
+}
 
 var Rule_Targets_BatchParametersFields = ubx.FieldMap{
-		"ArrayProperties": ubx.FieldSpec{
-			WireName: "array_properties",
-			Kind: "object",
-			Fields: Rule_Targets_BatchParameters_ArrayPropertiesFields,
-		},
-		"JobDefinition": ubx.FieldSpec{WireName: "job_definition"},
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"RetryStrategy": ubx.FieldSpec{
-			WireName: "retry_strategy",
-			Kind: "object",
-			Fields: Rule_Targets_BatchParameters_RetryStrategyFields,
-		},
-	}
+	"ArrayProperties": ubx.FieldSpec{
+		WireName: "array_properties",
+		Kind:     "object",
+		Fields:   Rule_Targets_BatchParameters_ArrayPropertiesFields,
+	},
+	"JobDefinition": ubx.FieldSpec{WireName: "job_definition"},
+	"JobName":       ubx.FieldSpec{WireName: "job_name"},
+	"RetryStrategy": ubx.FieldSpec{
+		WireName: "retry_strategy",
+		Kind:     "object",
+		Fields:   Rule_Targets_BatchParameters_RetryStrategyFields,
+	},
+}
 
 var Rule_Targets_DeadLetterConfigFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-	}
+	"Arn": ubx.FieldSpec{WireName: "arn"},
+}
 
 var Rule_Targets_EcsParameters_CapacityProviderStrategyFields = ubx.FieldMap{
-		"Base": ubx.FieldSpec{WireName: "base"},
-		"CapacityProvider": ubx.FieldSpec{WireName: "capacity_provider"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"Base":             ubx.FieldSpec{WireName: "base"},
+	"CapacityProvider": ubx.FieldSpec{WireName: "capacity_provider"},
+	"Weight":           ubx.FieldSpec{WireName: "weight"},
+}
 
 var Rule_Targets_EcsParameters_NetworkConfiguration_AwsVpcConfigurationFields = ubx.FieldMap{
-		"AssignPublicIp": ubx.FieldSpec{WireName: "assign_public_ip"},
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"AssignPublicIp": ubx.FieldSpec{WireName: "assign_public_ip"},
+	"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
+	"Subnets":        ubx.FieldSpec{WireName: "subnets"},
+}
 
 var Rule_Targets_EcsParameters_NetworkConfigurationFields = ubx.FieldMap{
-		"AwsVpcConfiguration": ubx.FieldSpec{
-			WireName: "aws_vpc_configuration",
-			Kind: "object",
-			Fields: Rule_Targets_EcsParameters_NetworkConfiguration_AwsVpcConfigurationFields,
-		},
-	}
+	"AwsVpcConfiguration": ubx.FieldSpec{
+		WireName: "aws_vpc_configuration",
+		Kind:     "object",
+		Fields:   Rule_Targets_EcsParameters_NetworkConfiguration_AwsVpcConfigurationFields,
+	},
+}
 
 var Rule_Targets_EcsParameters_PlacementConstraintsFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var Rule_Targets_EcsParameters_PlacementStrategiesFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Field": ubx.FieldSpec{WireName: "field"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+}
 
 var Rule_Targets_EcsParametersFields = ubx.FieldMap{
-		"CapacityProviderStrategy": ubx.FieldSpec{
-			WireName: "capacity_provider_strategy",
-			Kind: "list",
-			Fields: Rule_Targets_EcsParameters_CapacityProviderStrategyFields,
-		},
-		"EnableEcsmanagedTags": ubx.FieldSpec{WireName: "enable_ecsmanaged_tags"},
-		"EnableExecuteCommand": ubx.FieldSpec{WireName: "enable_execute_command"},
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"LaunchType": ubx.FieldSpec{WireName: "launch_type"},
-		"NetworkConfiguration": ubx.FieldSpec{
-			WireName: "network_configuration",
-			Kind: "object",
-			Fields: Rule_Targets_EcsParameters_NetworkConfigurationFields,
-		},
-		"PlacementConstraints": ubx.FieldSpec{
-			WireName: "placement_constraints",
-			Kind: "list",
-			Fields: Rule_Targets_EcsParameters_PlacementConstraintsFields,
-		},
-		"PlacementStrategies": ubx.FieldSpec{
-			WireName: "placement_strategies",
-			Kind: "list",
-			Fields: Rule_Targets_EcsParameters_PlacementStrategiesFields,
-		},
-		"PlatformVersion": ubx.FieldSpec{WireName: "platform_version"},
-		"PropagateTags": ubx.FieldSpec{WireName: "propagate_tags"},
-		"ReferenceId": ubx.FieldSpec{WireName: "reference_id"},
-		"TagList": ubx.FieldSpec{
-			WireName: "tag_list",
-			Kind: "list",
-			Fields: Rule_TagsFields,
-		},
-		"TaskCount": ubx.FieldSpec{WireName: "task_count"},
-		"TaskDefinitionArn": ubx.FieldSpec{WireName: "task_definition_arn"},
-	}
+	"CapacityProviderStrategy": ubx.FieldSpec{
+		WireName: "capacity_provider_strategy",
+		Kind:     "list",
+		Fields:   Rule_Targets_EcsParameters_CapacityProviderStrategyFields,
+	},
+	"EnableEcsmanagedTags": ubx.FieldSpec{WireName: "enable_ecsmanaged_tags"},
+	"EnableExecuteCommand": ubx.FieldSpec{WireName: "enable_execute_command"},
+	"Group":                ubx.FieldSpec{WireName: "group"},
+	"LaunchType":           ubx.FieldSpec{WireName: "launch_type"},
+	"NetworkConfiguration": ubx.FieldSpec{
+		WireName: "network_configuration",
+		Kind:     "object",
+		Fields:   Rule_Targets_EcsParameters_NetworkConfigurationFields,
+	},
+	"PlacementConstraints": ubx.FieldSpec{
+		WireName: "placement_constraints",
+		Kind:     "list",
+		Fields:   Rule_Targets_EcsParameters_PlacementConstraintsFields,
+	},
+	"PlacementStrategies": ubx.FieldSpec{
+		WireName: "placement_strategies",
+		Kind:     "list",
+		Fields:   Rule_Targets_EcsParameters_PlacementStrategiesFields,
+	},
+	"PlatformVersion": ubx.FieldSpec{WireName: "platform_version"},
+	"PropagateTags":   ubx.FieldSpec{WireName: "propagate_tags"},
+	"ReferenceId":     ubx.FieldSpec{WireName: "reference_id"},
+	"TagList": ubx.FieldSpec{
+		WireName: "tag_list",
+		Kind:     "list",
+		Fields:   Rule_TagsFields,
+	},
+	"TaskCount":         ubx.FieldSpec{WireName: "task_count"},
+	"TaskDefinitionArn": ubx.FieldSpec{WireName: "task_definition_arn"},
+}
 
 var Rule_Targets_HttpParametersFields = ubx.FieldMap{
-		"HeaderParameters": ubx.FieldSpec{WireName: "header_parameters"},
-		"PathParameterValues": ubx.FieldSpec{WireName: "path_parameter_values"},
-		"QueryStringParameters": ubx.FieldSpec{WireName: "query_string_parameters"},
-	}
+	"HeaderParameters":      ubx.FieldSpec{WireName: "header_parameters"},
+	"PathParameterValues":   ubx.FieldSpec{WireName: "path_parameter_values"},
+	"QueryStringParameters": ubx.FieldSpec{WireName: "query_string_parameters"},
+}
 
 var Rule_Targets_InputTransformerFields = ubx.FieldMap{
-		"InputPathsMap": ubx.FieldSpec{WireName: "input_paths_map"},
-		"InputTemplate": ubx.FieldSpec{WireName: "input_template"},
-	}
+	"InputPathsMap": ubx.FieldSpec{WireName: "input_paths_map"},
+	"InputTemplate": ubx.FieldSpec{WireName: "input_template"},
+}
 
 var Rule_Targets_KinesisParametersFields = ubx.FieldMap{
-		"PartitionKeyPath": ubx.FieldSpec{WireName: "partition_key_path"},
-	}
+	"PartitionKeyPath": ubx.FieldSpec{WireName: "partition_key_path"},
+}
 
 var Rule_Targets_RedshiftDataParametersFields = ubx.FieldMap{
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"DbUser": ubx.FieldSpec{WireName: "db_user"},
-		"SecretManagerArn": ubx.FieldSpec{WireName: "secret_manager_arn"},
-		"Sql": ubx.FieldSpec{WireName: "sql"},
-		"Sqls": ubx.FieldSpec{WireName: "sqls"},
-		"StatementName": ubx.FieldSpec{WireName: "statement_name"},
-		"WithEvent": ubx.FieldSpec{WireName: "with_event"},
-	}
+	"Database":         ubx.FieldSpec{WireName: "database"},
+	"DbUser":           ubx.FieldSpec{WireName: "db_user"},
+	"SecretManagerArn": ubx.FieldSpec{WireName: "secret_manager_arn"},
+	"Sql":              ubx.FieldSpec{WireName: "sql"},
+	"Sqls":             ubx.FieldSpec{WireName: "sqls"},
+	"StatementName":    ubx.FieldSpec{WireName: "statement_name"},
+	"WithEvent":        ubx.FieldSpec{WireName: "with_event"},
+}
 
 var Rule_Targets_RetryPolicyFields = ubx.FieldMap{
-		"MaximumEventAgeInSeconds": ubx.FieldSpec{WireName: "maximum_event_age_in_seconds"},
-		"MaximumRetryAttempts": ubx.FieldSpec{WireName: "maximum_retry_attempts"},
-	}
+	"MaximumEventAgeInSeconds": ubx.FieldSpec{WireName: "maximum_event_age_in_seconds"},
+	"MaximumRetryAttempts":     ubx.FieldSpec{WireName: "maximum_retry_attempts"},
+}
 
 var Rule_Targets_RunCommandParameters_RunCommandTargetsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Rule_Targets_RunCommandParametersFields = ubx.FieldMap{
-		"RunCommandTargets": ubx.FieldSpec{
-			WireName: "run_command_targets",
-			Kind: "list",
-			Fields: Rule_Targets_RunCommandParameters_RunCommandTargetsFields,
-		},
-	}
+	"RunCommandTargets": ubx.FieldSpec{
+		WireName: "run_command_targets",
+		Kind:     "list",
+		Fields:   Rule_Targets_RunCommandParameters_RunCommandTargetsFields,
+	},
+}
 
 var Rule_Targets_SageMakerPipelineParameters_PipelineParameterListFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Rule_Targets_SageMakerPipelineParametersFields = ubx.FieldMap{
-		"PipelineParameterList": ubx.FieldSpec{
-			WireName: "pipeline_parameter_list",
-			Kind: "list",
-			Fields: Rule_Targets_SageMakerPipelineParameters_PipelineParameterListFields,
-		},
-	}
+	"PipelineParameterList": ubx.FieldSpec{
+		WireName: "pipeline_parameter_list",
+		Kind:     "list",
+		Fields:   Rule_Targets_SageMakerPipelineParameters_PipelineParameterListFields,
+	},
+}
 
 var Rule_Targets_SqsParametersFields = ubx.FieldMap{
-		"MessageGroupId": ubx.FieldSpec{WireName: "message_group_id"},
-	}
+	"MessageGroupId": ubx.FieldSpec{WireName: "message_group_id"},
+}
 
 var Rule_TargetsFields = ubx.FieldMap{
-		"AppSyncParameters": ubx.FieldSpec{
-			WireName: "app_sync_parameters",
-			Kind: "object",
-			Fields: Rule_Targets_AppSyncParametersFields,
-		},
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"BatchParameters": ubx.FieldSpec{
-			WireName: "batch_parameters",
-			Kind: "object",
-			Fields: Rule_Targets_BatchParametersFields,
-		},
-		"DeadLetterConfig": ubx.FieldSpec{
-			WireName: "dead_letter_config",
-			Kind: "object",
-			Fields: Rule_Targets_DeadLetterConfigFields,
-		},
-		"EcsParameters": ubx.FieldSpec{
-			WireName: "ecs_parameters",
-			Kind: "object",
-			Fields: Rule_Targets_EcsParametersFields,
-		},
-		"HttpParameters": ubx.FieldSpec{
-			WireName: "http_parameters",
-			Kind: "object",
-			Fields: Rule_Targets_HttpParametersFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Input": ubx.FieldSpec{WireName: "input"},
-		"InputPath": ubx.FieldSpec{WireName: "input_path"},
-		"InputTransformer": ubx.FieldSpec{
-			WireName: "input_transformer",
-			Kind: "object",
-			Fields: Rule_Targets_InputTransformerFields,
-		},
-		"KinesisParameters": ubx.FieldSpec{
-			WireName: "kinesis_parameters",
-			Kind: "object",
-			Fields: Rule_Targets_KinesisParametersFields,
-		},
-		"RedshiftDataParameters": ubx.FieldSpec{
-			WireName: "redshift_data_parameters",
-			Kind: "object",
-			Fields: Rule_Targets_RedshiftDataParametersFields,
-		},
-		"RetryPolicy": ubx.FieldSpec{
-			WireName: "retry_policy",
-			Kind: "object",
-			Fields: Rule_Targets_RetryPolicyFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"RunCommandParameters": ubx.FieldSpec{
-			WireName: "run_command_parameters",
-			Kind: "object",
-			Fields: Rule_Targets_RunCommandParametersFields,
-		},
-		"SageMakerPipelineParameters": ubx.FieldSpec{
-			WireName: "sage_maker_pipeline_parameters",
-			Kind: "object",
-			Fields: Rule_Targets_SageMakerPipelineParametersFields,
-		},
-		"SqsParameters": ubx.FieldSpec{
-			WireName: "sqs_parameters",
-			Kind: "object",
-			Fields: Rule_Targets_SqsParametersFields,
-		},
-	}
+	"AppSyncParameters": ubx.FieldSpec{
+		WireName: "app_sync_parameters",
+		Kind:     "object",
+		Fields:   Rule_Targets_AppSyncParametersFields,
+	},
+	"Arn": ubx.FieldSpec{WireName: "arn"},
+	"BatchParameters": ubx.FieldSpec{
+		WireName: "batch_parameters",
+		Kind:     "object",
+		Fields:   Rule_Targets_BatchParametersFields,
+	},
+	"DeadLetterConfig": ubx.FieldSpec{
+		WireName: "dead_letter_config",
+		Kind:     "object",
+		Fields:   Rule_Targets_DeadLetterConfigFields,
+	},
+	"EcsParameters": ubx.FieldSpec{
+		WireName: "ecs_parameters",
+		Kind:     "object",
+		Fields:   Rule_Targets_EcsParametersFields,
+	},
+	"HttpParameters": ubx.FieldSpec{
+		WireName: "http_parameters",
+		Kind:     "object",
+		Fields:   Rule_Targets_HttpParametersFields,
+	},
+	"Id":        ubx.FieldSpec{WireName: "id"},
+	"Input":     ubx.FieldSpec{WireName: "input"},
+	"InputPath": ubx.FieldSpec{WireName: "input_path"},
+	"InputTransformer": ubx.FieldSpec{
+		WireName: "input_transformer",
+		Kind:     "object",
+		Fields:   Rule_Targets_InputTransformerFields,
+	},
+	"KinesisParameters": ubx.FieldSpec{
+		WireName: "kinesis_parameters",
+		Kind:     "object",
+		Fields:   Rule_Targets_KinesisParametersFields,
+	},
+	"RedshiftDataParameters": ubx.FieldSpec{
+		WireName: "redshift_data_parameters",
+		Kind:     "object",
+		Fields:   Rule_Targets_RedshiftDataParametersFields,
+	},
+	"RetryPolicy": ubx.FieldSpec{
+		WireName: "retry_policy",
+		Kind:     "object",
+		Fields:   Rule_Targets_RetryPolicyFields,
+	},
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+	"RunCommandParameters": ubx.FieldSpec{
+		WireName: "run_command_parameters",
+		Kind:     "object",
+		Fields:   Rule_Targets_RunCommandParametersFields,
+	},
+	"SageMakerPipelineParameters": ubx.FieldSpec{
+		WireName: "sage_maker_pipeline_parameters",
+		Kind:     "object",
+		Fields:   Rule_Targets_SageMakerPipelineParametersFields,
+	},
+	"SqsParameters": ubx.FieldSpec{
+		WireName: "sqs_parameters",
+		Kind:     "object",
+		Fields:   Rule_Targets_SqsParametersFields,
+	},
+}
 
 type RuleConfig struct {
 	// The description of the rule.
@@ -500,22 +500,22 @@ type RuleAttrs struct {
 var Rule = ubx.ResourceBinding{
 	WireType: "aws_events_rule",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EventBusName": ubx.FieldSpec{WireName: "event_bus_name"},
-		"EventPattern": ubx.FieldSpec{WireName: "event_pattern"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"Description":        ubx.FieldSpec{WireName: "description"},
+		"EventBusName":       ubx.FieldSpec{WireName: "event_bus_name"},
+		"EventPattern":       ubx.FieldSpec{WireName: "event_pattern"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"RoleArn":            ubx.FieldSpec{WireName: "role_arn"},
 		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"State":              ubx.FieldSpec{WireName: "state"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Rule_TagsFields,
+			Kind:     "list",
+			Fields:   Rule_TagsFields,
 		},
 		"Targets": ubx.FieldSpec{
 			WireName: "targets",
-			Kind: "list",
-			Fields: Rule_TargetsFields,
+			Kind:     "list",
+			Fields:   Rule_TargetsFields,
 		},
 	},
 }

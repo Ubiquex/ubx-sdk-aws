@@ -4,30 +4,30 @@ package migrationhub_strategy
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MigrationhubStrategyAnalyzableServers_AnalyzableServers struct {
-	Hostname any
+	Hostname  any
 	IpAddress any
-	Source any
-	VmId any
+	Source    any
+	VmId      any
 }
 
 type MigrationhubStrategyAnalyzableServersConfig struct {
 	MaxResults any
-	NextToken any
-	Sort any
+	NextToken  any
+	Sort       any
 }
 
 type MigrationhubStrategyAnalyzableServersAttrs struct {
 	AnalyzableServers any
-	MaxResults any
-	NextToken any
-	Sort any
+	MaxResults        any
+	NextToken         any
+	Sort              any
 }
 
 var MigrationhubStrategyAnalyzableServers = ubx.DataSourceBinding{
 	WireType: "aws_migrationhub_strategy_analyzable_servers",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Sort":       ubx.FieldSpec{WireName: "sort"},
 	},
 }

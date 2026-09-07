@@ -5,36 +5,36 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EventsDetectionJob_EventsDetectionJobProperties_InputDataConfig_DocumentReaderConfig struct {
 	DocumentReadAction any
-	DocumentReadMode any
-	FeatureTypes any
+	DocumentReadMode   any
+	FeatureTypes       any
 }
 
 type EventsDetectionJob_EventsDetectionJobProperties_InputDataConfig struct {
 	// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files. </p> <p> By default, Amazon Comprehend performs the following actions to extract text from files, based on the input file type: </p> <ul> <li> <p> <b>Word files</b> - Amazon Comprehend parser extracts the text. </p> </li> <li> <p> <b>Digital PDF files</b> - Amazon Comprehend parser extracts the text. </p> </li> <li> <p> <b>Image files and scanned PDF files</b> - Amazon Comprehend uses the Amazon Textract <code>DetectDocumentText</code> API to extract the text. </p> </li> </ul> <p> <code>DocumentReaderConfig</code> does not apply to plain text files or Word files.</p> <p> For image files and PDF documents, you can override these default actions using the fields listed below. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-set-textract-options.html"> Setting text extraction options</a> in the Comprehend Developer Guide. </p>
 	DocumentReaderConfig any
-	InputFormat any
-	S3Uri any
+	InputFormat          any
+	S3Uri                any
 }
 
 type EventsDetectionJob_EventsDetectionJobProperties_OutputDataConfig struct {
 	KmsKeyId any
-	S3Uri any
+	S3Uri    any
 }
 
 type EventsDetectionJob_EventsDetectionJobProperties struct {
 	DataAccessRoleArn any
-	EndTime any
+	EndTime           any
 	// <p>The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis.</p>
 	InputDataConfig any
-	JobArn any
-	JobId any
-	JobName any
-	JobStatus any
-	LanguageCode any
-	Message any
+	JobArn          any
+	JobId           any
+	JobName         any
+	JobStatus       any
+	LanguageCode    any
+	Message         any
 	// <p>Provides configuration parameters for the output of inference jobs.</p> <p></p>
 	OutputDataConfig any
-	SubmitTime any
+	SubmitTime       any
 	TargetEventTypes any
 }
 
@@ -45,7 +45,7 @@ type EventsDetectionJobConfig struct {
 type EventsDetectionJobAttrs struct {
 	// <p>Provides information about an events detection job.</p>
 	EventsDetectionJobProperties any
-	JobId any
+	JobId                        any
 }
 
 var EventsDetectionJob = ubx.DataSourceBinding{

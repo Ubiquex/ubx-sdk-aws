@@ -4,14 +4,14 @@ package devopsagent
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PrivateConnection_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var PrivateConnection_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PrivateConnectionConfig struct {
 	// Certificate for the Private Connection.
@@ -44,13 +44,13 @@ type PrivateConnectionAttrs struct {
 var PrivateConnection = ubx.ResourceBinding{
 	WireType: "aws_dev_ops_agent_private_connection",
 	Fields: ubx.FieldMap{
-		"Certificate": ubx.FieldSpec{WireName: "certificate"},
+		"Certificate":             ubx.FieldSpec{WireName: "certificate"},
 		"ConnectionConfiguration": ubx.FieldSpec{WireName: "connection_configuration"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PrivateConnection_TagsFields,
+			Kind:     "list",
+			Fields:   PrivateConnection_TagsFields,
 		},
 	},
 }

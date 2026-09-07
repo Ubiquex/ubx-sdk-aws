@@ -13,6 +13,5 @@ type DefaultApplicationSettingAttrs struct {
 
 var DefaultApplicationSetting = ubx.DataSourceBinding{
 	WireType: "aws_opensearch_default_application_setting",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

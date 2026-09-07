@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Attack_Attack_AttackCounters struct {
 	Average any
-	Max any
-	N any
-	Name any
-	Sum any
-	Unit any
+	Max     any
+	N       any
+	Name    any
+	Sum     any
+	Unit    any
 }
 
 type Attack_Attack_AttackProperties_TopContributors struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Attack_Attack_AttackProperties struct {
-	AttackLayer any
+	AttackLayer              any
 	AttackPropertyIdentifier any
-	TopContributors any
-	Total any
-	Unit any
+	TopContributors          any
+	Total                    any
+	Unit                     any
 }
 
 type Attack_Attack_Mitigations struct {
@@ -31,25 +31,25 @@ type Attack_Attack_Mitigations struct {
 
 type Attack_Attack_SubResources_AttackVectors struct {
 	VectorCounters any
-	VectorType any
+	VectorType     any
 }
 
 type Attack_Attack_SubResources struct {
 	AttackVectors any
-	Counters any
-	Id any
-	Type any
+	Counters      any
+	Id            any
+	Type          any
 }
 
 type Attack_Attack struct {
-	AttackCounters any
-	AttackId any
+	AttackCounters   any
+	AttackId         any
 	AttackProperties any
-	EndTime any
-	Mitigations any
-	ResourceArn any
-	StartTime any
-	SubResources any
+	EndTime          any
+	Mitigations      any
+	ResourceArn      any
+	StartTime        any
+	SubResources     any
 }
 
 type AttackConfig struct {
@@ -58,7 +58,7 @@ type AttackConfig struct {
 
 type AttackAttrs struct {
 	// <p>The details of a DDoS attack.</p>
-	Attack any
+	Attack   any
 	AttackId any
 }
 

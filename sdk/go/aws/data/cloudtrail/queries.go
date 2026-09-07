@@ -5,37 +5,37 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Queries_Queries struct {
 	CreationTime any
-	QueryId any
-	QueryStatus any
+	QueryId      any
+	QueryStatus  any
 }
 
 type QueriesConfig struct {
-	EndTime any
+	EndTime        any
 	EventDataStore any
-	MaxResults any
-	NextToken any
-	QueryStatus any
-	StartTime any
+	MaxResults     any
+	NextToken      any
+	QueryStatus    any
+	StartTime      any
 }
 
 type QueriesAttrs struct {
-	EndTime any
+	EndTime        any
 	EventDataStore any
-	MaxResults any
-	NextToken any
-	Queries any
-	QueryStatus any
-	StartTime any
+	MaxResults     any
+	NextToken      any
+	Queries        any
+	QueryStatus    any
+	StartTime      any
 }
 
 var Queries = ubx.DataSourceBinding{
 	WireType: "aws_cloudtrail_queries",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":        ubx.FieldSpec{WireName: "end_time"},
 		"EventDataStore": ubx.FieldSpec{WireName: "event_data_store"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"QueryStatus": ubx.FieldSpec{WireName: "query_status"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"QueryStatus":    ubx.FieldSpec{WireName: "query_status"},
+		"StartTime":      ubx.FieldSpec{WireName: "start_time"},
 	},
 }

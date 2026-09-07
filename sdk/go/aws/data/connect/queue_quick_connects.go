@@ -4,28 +4,28 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QueueQuickConnects_QuickConnectSummaryList struct {
-	Arn any
-	Id any
+	Arn                any
+	Id                 any
 	LastModifiedRegion any
-	LastModifiedTime any
-	Name any
-	QuickConnectType any
+	LastModifiedTime   any
+	Name               any
+	QuickConnectType   any
 }
 
 type QueueQuickConnectsConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
-	QueueId any
+	NextToken  any
+	QueueId    any
 }
 
 type QueueQuickConnectsAttrs struct {
-	InstanceId any
-	LastModifiedRegion any
-	LastModifiedTime any
-	MaxResults any
-	NextToken any
-	QueueId any
+	InstanceId              any
+	LastModifiedRegion      any
+	LastModifiedTime        any
+	MaxResults              any
+	NextToken               any
+	QueueId                 any
 	QuickConnectSummaryList any
 }
 
@@ -34,7 +34,7 @@ var QueueQuickConnects = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"QueueId": ubx.FieldSpec{WireName: "queue_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"QueueId":    ubx.FieldSpec{WireName: "queue_id"},
 	},
 }

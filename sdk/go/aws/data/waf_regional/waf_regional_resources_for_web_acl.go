@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WafRegionalResourcesForWebAclConfig struct {
 	ResourceType any
-	WebAclid any
+	WebAclid     any
 }
 
 type WafRegionalResourcesForWebAclAttrs struct {
 	ResourceArns any
 	ResourceType any
-	WebAclid any
+	WebAclid     any
 }
 
 var WafRegionalResourcesForWebAcl = ubx.DataSourceBinding{
 	WireType: "aws_waf_regional_resources_for_web_acl",
 	Fields: ubx.FieldMap{
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"WebAclid": ubx.FieldSpec{WireName: "web_aclid"},
+		"WebAclid":     ubx.FieldSpec{WireName: "web_aclid"},
 	},
 }

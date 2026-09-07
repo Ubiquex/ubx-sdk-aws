@@ -4,30 +4,30 @@ package workmail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessControlEffectConfig struct {
-	Action any
+	Action              any
 	ImpersonationRoleId any
-	IpAddress any
-	OrganizationId any
-	UserId any
+	IpAddress           any
+	OrganizationId      any
+	UserId              any
 }
 
 type AccessControlEffectAttrs struct {
-	Action any
-	Effect any
+	Action              any
+	Effect              any
 	ImpersonationRoleId any
-	IpAddress any
-	MatchedRules any
-	OrganizationId any
-	UserId any
+	IpAddress           any
+	MatchedRules        any
+	OrganizationId      any
+	UserId              any
 }
 
 var AccessControlEffect = ubx.DataSourceBinding{
 	WireType: "aws_workmail_access_control_effect",
 	Fields: ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
+		"Action":              ubx.FieldSpec{WireName: "action"},
 		"ImpersonationRoleId": ubx.FieldSpec{WireName: "impersonation_role_id"},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"IpAddress":           ubx.FieldSpec{WireName: "ip_address"},
+		"OrganizationId":      ubx.FieldSpec{WireName: "organization_id"},
+		"UserId":              ubx.FieldSpec{WireName: "user_id"},
 	},
 }

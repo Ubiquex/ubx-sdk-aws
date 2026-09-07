@@ -11,9 +11,9 @@ type Queue_Tags struct {
 }
 
 var Queue_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type QueueConfig struct {
 	// For first-in-first-out (FIFO) queues, specifies whether to enable content-based deduplication. During the deduplication interval, SQS treats messages that are sent with identical content as duplicates and delivers only one copy of the message. For more information, see the ``ContentBasedDeduplication`` attribute for the ``CreateQueue`` action in the *API Reference*.
@@ -92,24 +92,24 @@ type QueueAttrs struct {
 var Queue = ubx.ResourceBinding{
 	WireType: "aws_sqs_queue",
 	Fields: ubx.FieldMap{
-		"ContentBasedDeduplication": ubx.FieldSpec{WireName: "content_based_deduplication"},
-		"DeduplicationScope": ubx.FieldSpec{WireName: "deduplication_scope"},
-		"DelaySeconds": ubx.FieldSpec{WireName: "delay_seconds"},
-		"FifoQueue": ubx.FieldSpec{WireName: "fifo_queue"},
-		"FifoThroughputLimit": ubx.FieldSpec{WireName: "fifo_throughput_limit"},
-		"KmsDataKeyReusePeriodSeconds": ubx.FieldSpec{WireName: "kms_data_key_reuse_period_seconds"},
-		"KmsMasterKeyId": ubx.FieldSpec{WireName: "kms_master_key_id"},
-		"MaximumMessageSize": ubx.FieldSpec{WireName: "maximum_message_size"},
-		"MessageRetentionPeriod": ubx.FieldSpec{WireName: "message_retention_period"},
-		"QueueName": ubx.FieldSpec{WireName: "queue_name"},
+		"ContentBasedDeduplication":     ubx.FieldSpec{WireName: "content_based_deduplication"},
+		"DeduplicationScope":            ubx.FieldSpec{WireName: "deduplication_scope"},
+		"DelaySeconds":                  ubx.FieldSpec{WireName: "delay_seconds"},
+		"FifoQueue":                     ubx.FieldSpec{WireName: "fifo_queue"},
+		"FifoThroughputLimit":           ubx.FieldSpec{WireName: "fifo_throughput_limit"},
+		"KmsDataKeyReusePeriodSeconds":  ubx.FieldSpec{WireName: "kms_data_key_reuse_period_seconds"},
+		"KmsMasterKeyId":                ubx.FieldSpec{WireName: "kms_master_key_id"},
+		"MaximumMessageSize":            ubx.FieldSpec{WireName: "maximum_message_size"},
+		"MessageRetentionPeriod":        ubx.FieldSpec{WireName: "message_retention_period"},
+		"QueueName":                     ubx.FieldSpec{WireName: "queue_name"},
 		"ReceiveMessageWaitTimeSeconds": ubx.FieldSpec{WireName: "receive_message_wait_time_seconds"},
-		"RedriveAllowPolicy": ubx.FieldSpec{WireName: "redrive_allow_policy"},
-		"RedrivePolicy": ubx.FieldSpec{WireName: "redrive_policy"},
-		"SqsManagedSseEnabled": ubx.FieldSpec{WireName: "sqs_managed_sse_enabled"},
+		"RedriveAllowPolicy":            ubx.FieldSpec{WireName: "redrive_allow_policy"},
+		"RedrivePolicy":                 ubx.FieldSpec{WireName: "redrive_policy"},
+		"SqsManagedSseEnabled":          ubx.FieldSpec{WireName: "sqs_managed_sse_enabled"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Queue_TagsFields,
+			Kind:     "list",
+			Fields:   Queue_TagsFields,
 		},
 		"VisibilityTimeout": ubx.FieldSpec{WireName: "visibility_timeout"},
 	},

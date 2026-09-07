@@ -4,13 +4,13 @@ package batch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type JobsByConsumableResource_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type JobsByConsumableResource_Jobs_ConsumableResourceProperties_ConsumableResourceList struct {
 	ConsumableResource any
-	Quantity any
+	Quantity           any
 }
 
 type JobsByConsumableResource_Jobs_ConsumableResourceProperties struct {
@@ -19,36 +19,36 @@ type JobsByConsumableResource_Jobs_ConsumableResourceProperties struct {
 
 type JobsByConsumableResource_Jobs struct {
 	ConsumableResourceProperties any
-	CreatedAt any
-	JobArn any
-	JobDefinitionArn any
-	JobName any
-	JobQueueArn any
-	JobStatus any
-	Quantity any
-	ShareIdentifier any
-	StartedAt any
-	StatusReason any
+	CreatedAt                    any
+	JobArn                       any
+	JobDefinitionArn             any
+	JobName                      any
+	JobQueueArn                  any
+	JobStatus                    any
+	Quantity                     any
+	ShareIdentifier              any
+	StartedAt                    any
+	StatusReason                 any
 }
 
 var JobsByConsumableResource_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type JobsByConsumableResourceConfig struct {
 	ConsumableResource any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters            any
+	MaxResults         any
+	NextToken          any
 }
 
 type JobsByConsumableResourceAttrs struct {
 	ConsumableResource any
-	Filters any
-	Jobs any
-	MaxResults any
-	NextToken any
+	Filters            any
+	Jobs               any
+	MaxResults         any
+	NextToken          any
 }
 
 var JobsByConsumableResource = ubx.DataSourceBinding{
@@ -57,10 +57,10 @@ var JobsByConsumableResource = ubx.DataSourceBinding{
 		"ConsumableResource": ubx.FieldSpec{WireName: "consumable_resource"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: JobsByConsumableResource_FiltersFields,
+			Kind:     "list",
+			Fields:   JobsByConsumableResource_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

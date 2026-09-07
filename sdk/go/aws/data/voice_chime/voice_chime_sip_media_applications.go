@@ -8,23 +8,23 @@ type VoiceChimeSipMediaApplications_SipMediaApplications_Endpoints struct {
 }
 
 type VoiceChimeSipMediaApplications_SipMediaApplications struct {
-	AwsRegion any
-	CreatedTimestamp any
-	Endpoints any
-	Name any
+	AwsRegion              any
+	CreatedTimestamp       any
+	Endpoints              any
+	Name                   any
 	SipMediaApplicationArn any
-	SipMediaApplicationId any
-	UpdatedTimestamp any
+	SipMediaApplicationId  any
+	UpdatedTimestamp       any
 }
 
 type VoiceChimeSipMediaApplicationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type VoiceChimeSipMediaApplicationsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 	SipMediaApplications any
 }
 
@@ -32,6 +32,6 @@ var VoiceChimeSipMediaApplications = ubx.DataSourceBinding{
 	WireType: "aws_voice_chime_sip_media_applications",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

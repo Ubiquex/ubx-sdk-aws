@@ -9,7 +9,7 @@ type QueueTagsConfig struct {
 
 type QueueTagsAttrs struct {
 	QueueUrl any
-	Tags any
+	Tags     any
 }
 
 var QueueTags = ubx.DataSourceBinding{

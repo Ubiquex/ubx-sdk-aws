@@ -77,7 +77,7 @@ type ReceiptRule_Rule_Actions struct {
 	// Specifies an action that adds a header to an incoming email when the receipt rule matches, using the provided header name and value. (AI-inferred)
 	AddHeaderAction any
 	// Configures a bounce action that rejects an incoming email and sends a bounce response to the sender, with configurable message text and optional notification to an SNS topic. (AI-inferred)
-	BounceAction any
+	BounceAction  any
 	ConnectAction any
 	// Specifies a Lambda action that invokes an AWS Lambda function when the receipt rule matches an incoming email, with properties for the function ARN, invocation type (Event or RequestResponse), and an optional SNS topic for error notifications. (AI-inferred)
 	LambdaAction any
@@ -107,107 +107,107 @@ type ReceiptRule_Rule struct {
 }
 
 var ReceiptRule_Rule_Actions_AddHeaderActionFields = ubx.FieldMap{
-		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
-		"HeaderValue": ubx.FieldSpec{WireName: "header_value"},
-	}
+	"HeaderName":  ubx.FieldSpec{WireName: "header_name"},
+	"HeaderValue": ubx.FieldSpec{WireName: "header_value"},
+}
 
 var ReceiptRule_Rule_Actions_BounceActionFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Sender": ubx.FieldSpec{WireName: "sender"},
-		"SmtpReplyCode": ubx.FieldSpec{WireName: "smtp_reply_code"},
-		"StatusCode": ubx.FieldSpec{WireName: "status_code"},
-		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
-	}
+	"Message":       ubx.FieldSpec{WireName: "message"},
+	"Sender":        ubx.FieldSpec{WireName: "sender"},
+	"SmtpReplyCode": ubx.FieldSpec{WireName: "smtp_reply_code"},
+	"StatusCode":    ubx.FieldSpec{WireName: "status_code"},
+	"TopicArn":      ubx.FieldSpec{WireName: "topic_arn"},
+}
 
 var ReceiptRule_Rule_Actions_ConnectActionFields = ubx.FieldMap{
-		"IamroleArn": ubx.FieldSpec{WireName: "iamrole_arn"},
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-	}
+	"IamroleArn":  ubx.FieldSpec{WireName: "iamrole_arn"},
+	"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
+}
 
 var ReceiptRule_Rule_Actions_LambdaActionFields = ubx.FieldMap{
-		"FunctionArn": ubx.FieldSpec{WireName: "function_arn"},
-		"InvocationType": ubx.FieldSpec{WireName: "invocation_type"},
-		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
-	}
+	"FunctionArn":    ubx.FieldSpec{WireName: "function_arn"},
+	"InvocationType": ubx.FieldSpec{WireName: "invocation_type"},
+	"TopicArn":       ubx.FieldSpec{WireName: "topic_arn"},
+}
 
 var ReceiptRule_Rule_Actions_S3ActionFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"IamRoleArn": ubx.FieldSpec{WireName: "iam_role_arn"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"ObjectKeyPrefix": ubx.FieldSpec{WireName: "object_key_prefix"},
-		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
-	}
+	"BucketName":      ubx.FieldSpec{WireName: "bucket_name"},
+	"IamRoleArn":      ubx.FieldSpec{WireName: "iam_role_arn"},
+	"KmsKeyArn":       ubx.FieldSpec{WireName: "kms_key_arn"},
+	"ObjectKeyPrefix": ubx.FieldSpec{WireName: "object_key_prefix"},
+	"TopicArn":        ubx.FieldSpec{WireName: "topic_arn"},
+}
 
 var ReceiptRule_Rule_Actions_SnsactionFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
-	}
+	"Encoding": ubx.FieldSpec{WireName: "encoding"},
+	"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
+}
 
 var ReceiptRule_Rule_Actions_StopActionFields = ubx.FieldMap{
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
-	}
+	"Scope":    ubx.FieldSpec{WireName: "scope"},
+	"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
+}
 
 var ReceiptRule_Rule_Actions_WorkmailActionFields = ubx.FieldMap{
-		"OrganizationArn": ubx.FieldSpec{WireName: "organization_arn"},
-		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
-	}
+	"OrganizationArn": ubx.FieldSpec{WireName: "organization_arn"},
+	"TopicArn":        ubx.FieldSpec{WireName: "topic_arn"},
+}
 
 var ReceiptRule_Rule_ActionsFields = ubx.FieldMap{
-		"AddHeaderAction": ubx.FieldSpec{
-			WireName: "add_header_action",
-			Kind: "object",
-			Fields: ReceiptRule_Rule_Actions_AddHeaderActionFields,
-		},
-		"BounceAction": ubx.FieldSpec{
-			WireName: "bounce_action",
-			Kind: "object",
-			Fields: ReceiptRule_Rule_Actions_BounceActionFields,
-		},
-		"ConnectAction": ubx.FieldSpec{
-			WireName: "connect_action",
-			Kind: "object",
-			Fields: ReceiptRule_Rule_Actions_ConnectActionFields,
-		},
-		"LambdaAction": ubx.FieldSpec{
-			WireName: "lambda_action",
-			Kind: "object",
-			Fields: ReceiptRule_Rule_Actions_LambdaActionFields,
-		},
-		"S3Action": ubx.FieldSpec{
-			WireName: "s3_action",
-			Kind: "object",
-			Fields: ReceiptRule_Rule_Actions_S3ActionFields,
-		},
-		"Snsaction": ubx.FieldSpec{
-			WireName: "snsaction",
-			Kind: "object",
-			Fields: ReceiptRule_Rule_Actions_SnsactionFields,
-		},
-		"StopAction": ubx.FieldSpec{
-			WireName: "stop_action",
-			Kind: "object",
-			Fields: ReceiptRule_Rule_Actions_StopActionFields,
-		},
-		"WorkmailAction": ubx.FieldSpec{
-			WireName: "workmail_action",
-			Kind: "object",
-			Fields: ReceiptRule_Rule_Actions_WorkmailActionFields,
-		},
-	}
+	"AddHeaderAction": ubx.FieldSpec{
+		WireName: "add_header_action",
+		Kind:     "object",
+		Fields:   ReceiptRule_Rule_Actions_AddHeaderActionFields,
+	},
+	"BounceAction": ubx.FieldSpec{
+		WireName: "bounce_action",
+		Kind:     "object",
+		Fields:   ReceiptRule_Rule_Actions_BounceActionFields,
+	},
+	"ConnectAction": ubx.FieldSpec{
+		WireName: "connect_action",
+		Kind:     "object",
+		Fields:   ReceiptRule_Rule_Actions_ConnectActionFields,
+	},
+	"LambdaAction": ubx.FieldSpec{
+		WireName: "lambda_action",
+		Kind:     "object",
+		Fields:   ReceiptRule_Rule_Actions_LambdaActionFields,
+	},
+	"S3Action": ubx.FieldSpec{
+		WireName: "s3_action",
+		Kind:     "object",
+		Fields:   ReceiptRule_Rule_Actions_S3ActionFields,
+	},
+	"Snsaction": ubx.FieldSpec{
+		WireName: "snsaction",
+		Kind:     "object",
+		Fields:   ReceiptRule_Rule_Actions_SnsactionFields,
+	},
+	"StopAction": ubx.FieldSpec{
+		WireName: "stop_action",
+		Kind:     "object",
+		Fields:   ReceiptRule_Rule_Actions_StopActionFields,
+	},
+	"WorkmailAction": ubx.FieldSpec{
+		WireName: "workmail_action",
+		Kind:     "object",
+		Fields:   ReceiptRule_Rule_Actions_WorkmailActionFields,
+	},
+}
 
 var ReceiptRule_RuleFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: ReceiptRule_Rule_ActionsFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Recipients": ubx.FieldSpec{WireName: "recipients"},
-		"ScanEnabled": ubx.FieldSpec{WireName: "scan_enabled"},
-		"TlsPolicy": ubx.FieldSpec{WireName: "tls_policy"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   ReceiptRule_Rule_ActionsFields,
+	},
+	"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Recipients":  ubx.FieldSpec{WireName: "recipients"},
+	"ScanEnabled": ubx.FieldSpec{WireName: "scan_enabled"},
+	"TlsPolicy":   ubx.FieldSpec{WireName: "tls_policy"},
+}
 
 type ReceiptRuleConfig struct {
 	// The name of an existing rule after which the new rule is placed. If this parameter is null, the new rule is inserted at the beginning of the rule list.
@@ -235,8 +235,8 @@ var ReceiptRule = ubx.ResourceBinding{
 		"After": ubx.FieldSpec{WireName: "after"},
 		"Rule": ubx.FieldSpec{
 			WireName: "rule",
-			Kind: "object",
-			Fields: ReceiptRule_RuleFields,
+			Kind:     "object",
+			Fields:   ReceiptRule_RuleFields,
 		},
 		"RuleSetName": ubx.FieldSpec{WireName: "rule_set_name"},
 	},

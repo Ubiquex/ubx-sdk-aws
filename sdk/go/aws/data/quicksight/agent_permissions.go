@@ -4,27 +4,27 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentPermissions_Permissions struct {
-	Actions any
+	Actions   any
 	Principal any
 }
 
 type AgentPermissionsConfig struct {
-	AgentId any
+	AgentId      any
 	AwsAccountId any
 }
 
 type AgentPermissionsAttrs struct {
-	AgentId any
-	Arn any
+	AgentId      any
+	Arn          any
 	AwsAccountId any
-	Permissions any
-	RequestId any
+	Permissions  any
+	RequestId    any
 }
 
 var AgentPermissions = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_agent_permissions",
 	Fields: ubx.FieldMap{
-		"AgentId": ubx.FieldSpec{WireName: "agent_id"},
+		"AgentId":      ubx.FieldSpec{WireName: "agent_id"},
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
 	},
 }

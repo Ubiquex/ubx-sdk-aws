@@ -4,7 +4,7 @@ package codeconnections
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Host_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -20,16 +20,16 @@ type Host_VpcConfiguration struct {
 }
 
 var Host_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Host_VpcConfigurationFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"TlsCertificate": ubx.FieldSpec{WireName: "tls_certificate"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+	"TlsCertificate":   ubx.FieldSpec{WireName: "tls_certificate"},
+	"VpcId":            ubx.FieldSpec{WireName: "vpc_id"},
+}
 
 type HostConfig struct {
 	// The name of the host.
@@ -66,18 +66,18 @@ type HostAttrs struct {
 var Host = ubx.ResourceBinding{
 	WireType: "aws_code_connections_host",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"ProviderEndpoint": ubx.FieldSpec{WireName: "provider_endpoint"},
-		"ProviderType": ubx.FieldSpec{WireName: "provider_type"},
+		"ProviderType":     ubx.FieldSpec{WireName: "provider_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Host_TagsFields,
+			Kind:     "list",
+			Fields:   Host_TagsFields,
 		},
 		"VpcConfiguration": ubx.FieldSpec{
 			WireName: "vpc_configuration",
-			Kind: "object",
-			Fields: Host_VpcConfigurationFields,
+			Kind:     "object",
+			Fields:   Host_VpcConfigurationFields,
 		},
 	},
 }

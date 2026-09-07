@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PackagesForDomain_DomainPackageDetailsList_ErrorDetails struct {
 	ErrorMessage any
-	ErrorType any
+	ErrorType    any
 }
 
 type PackagesForDomain_DomainPackageDetailsList struct {
-	DomainName any
+	DomainName          any
 	DomainPackageStatus any
-	ErrorDetails any
-	LastUpdated any
-	PackageId any
-	PackageName any
-	PackageType any
-	PackageVersion any
-	ReferencePath any
+	ErrorDetails        any
+	LastUpdated         any
+	PackageId           any
+	PackageName         any
+	PackageType         any
+	PackageVersion      any
+	ReferencePath       any
 }
 
 type PackagesForDomainConfig struct {
@@ -31,7 +31,7 @@ type PackagesForDomainConfig struct {
 
 type PackagesForDomainAttrs struct {
 	// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-	DomainName any
+	DomainName               any
 	DomainPackageDetailsList any
 	// <p> Set this value to limit the number of results returned. </p>
 	MaxResults any
@@ -44,6 +44,6 @@ var PackagesForDomain = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

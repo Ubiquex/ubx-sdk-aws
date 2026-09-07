@@ -22,16 +22,16 @@ type ConfigurationTemplate_SourceConfiguration struct {
 }
 
 var ConfigurationTemplate_OptionSettingsFields = ubx.FieldMap{
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OptionName": ubx.FieldSpec{WireName: "option_name"},
-		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Namespace":    ubx.FieldSpec{WireName: "namespace"},
+	"OptionName":   ubx.FieldSpec{WireName: "option_name"},
+	"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
+	"Value":        ubx.FieldSpec{WireName: "value"},
+}
 
 var ConfigurationTemplate_SourceConfigurationFields = ubx.FieldMap{
-		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
-		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
-	}
+	"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
+	"TemplateName":    ubx.FieldSpec{WireName: "template_name"},
+}
 
 type ConfigurationTemplateConfig struct {
 	// The name of the Elastic Beanstalk application to associate with this configuration template.
@@ -73,19 +73,19 @@ var ConfigurationTemplate = ubx.ResourceBinding{
 	WireType: "aws_elastic_beanstalk_configuration_template",
 	Fields: ubx.FieldMap{
 		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"EnvironmentId":   ubx.FieldSpec{WireName: "environment_id"},
 		"OptionSettings": ubx.FieldSpec{
 			WireName: "option_settings",
-			Kind: "list",
-			Fields: ConfigurationTemplate_OptionSettingsFields,
+			Kind:     "list",
+			Fields:   ConfigurationTemplate_OptionSettingsFields,
 		},
-		"PlatformArn": ubx.FieldSpec{WireName: "platform_arn"},
+		"PlatformArn":       ubx.FieldSpec{WireName: "platform_arn"},
 		"SolutionStackName": ubx.FieldSpec{WireName: "solution_stack_name"},
 		"SourceConfiguration": ubx.FieldSpec{
 			WireName: "source_configuration",
-			Kind: "object",
-			Fields: ConfigurationTemplate_SourceConfigurationFields,
+			Kind:     "object",
+			Fields:   ConfigurationTemplate_SourceConfigurationFields,
 		},
 	},
 }

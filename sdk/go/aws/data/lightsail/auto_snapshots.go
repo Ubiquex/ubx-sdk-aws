@@ -4,15 +4,15 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AutoSnapshots_AutoSnapshots_FromAttachedDisks struct {
-	Path any
+	Path     any
 	SizeInGb any
 }
 
 type AutoSnapshots_AutoSnapshots struct {
-	CreatedAt any
-	Date any
+	CreatedAt         any
+	Date              any
 	FromAttachedDisks any
-	Status any
+	Status            any
 }
 
 type AutoSnapshotsConfig struct {
@@ -21,8 +21,8 @@ type AutoSnapshotsConfig struct {
 
 type AutoSnapshotsAttrs struct {
 	AutoSnapshots any
-	ResourceName any
-	ResourceType any
+	ResourceName  any
+	ResourceType  any
 }
 
 var AutoSnapshots = ubx.DataSourceBinding{

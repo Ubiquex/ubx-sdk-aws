@@ -53,54 +53,54 @@ type ResourceSet_Tags struct {
 }
 
 var ResourceSet_Resources_DnsTargetResource_TargetResource_NlbresourceFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-	}
+	"Arn": ubx.FieldSpec{WireName: "arn"},
+}
 
 var ResourceSet_Resources_DnsTargetResource_TargetResource_R53ResourceFields = ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"RecordSetId": ubx.FieldSpec{WireName: "record_set_id"},
-	}
+	"DomainName":  ubx.FieldSpec{WireName: "domain_name"},
+	"RecordSetId": ubx.FieldSpec{WireName: "record_set_id"},
+}
 
 var ResourceSet_Resources_DnsTargetResource_TargetResourceFields = ubx.FieldMap{
-		"Nlbresource": ubx.FieldSpec{
-			WireName: "nlbresource",
-			Kind: "object",
-			Fields: ResourceSet_Resources_DnsTargetResource_TargetResource_NlbresourceFields,
-		},
-		"R53Resource": ubx.FieldSpec{
-			WireName: "r53_resource",
-			Kind: "object",
-			Fields: ResourceSet_Resources_DnsTargetResource_TargetResource_R53ResourceFields,
-		},
-	}
+	"Nlbresource": ubx.FieldSpec{
+		WireName: "nlbresource",
+		Kind:     "object",
+		Fields:   ResourceSet_Resources_DnsTargetResource_TargetResource_NlbresourceFields,
+	},
+	"R53Resource": ubx.FieldSpec{
+		WireName: "r53_resource",
+		Kind:     "object",
+		Fields:   ResourceSet_Resources_DnsTargetResource_TargetResource_R53ResourceFields,
+	},
+}
 
 var ResourceSet_Resources_DnsTargetResourceFields = ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"HostedZoneArn": ubx.FieldSpec{WireName: "hosted_zone_arn"},
-		"RecordSetId": ubx.FieldSpec{WireName: "record_set_id"},
-		"RecordType": ubx.FieldSpec{WireName: "record_type"},
-		"TargetResource": ubx.FieldSpec{
-			WireName: "target_resource",
-			Kind: "object",
-			Fields: ResourceSet_Resources_DnsTargetResource_TargetResourceFields,
-		},
-	}
+	"DomainName":    ubx.FieldSpec{WireName: "domain_name"},
+	"HostedZoneArn": ubx.FieldSpec{WireName: "hosted_zone_arn"},
+	"RecordSetId":   ubx.FieldSpec{WireName: "record_set_id"},
+	"RecordType":    ubx.FieldSpec{WireName: "record_type"},
+	"TargetResource": ubx.FieldSpec{
+		WireName: "target_resource",
+		Kind:     "object",
+		Fields:   ResourceSet_Resources_DnsTargetResource_TargetResourceFields,
+	},
+}
 
 var ResourceSet_ResourcesFields = ubx.FieldMap{
-		"ComponentId": ubx.FieldSpec{WireName: "component_id"},
-		"DnsTargetResource": ubx.FieldSpec{
-			WireName: "dns_target_resource",
-			Kind: "object",
-			Fields: ResourceSet_Resources_DnsTargetResourceFields,
-		},
-		"ReadinessScopes": ubx.FieldSpec{WireName: "readiness_scopes"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-	}
+	"ComponentId": ubx.FieldSpec{WireName: "component_id"},
+	"DnsTargetResource": ubx.FieldSpec{
+		WireName: "dns_target_resource",
+		Kind:     "object",
+		Fields:   ResourceSet_Resources_DnsTargetResourceFields,
+	},
+	"ReadinessScopes": ubx.FieldSpec{WireName: "readiness_scopes"},
+	"ResourceArn":     ubx.FieldSpec{WireName: "resource_arn"},
+}
 
 var ResourceSet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ResourceSetConfig struct {
 	// The name of the resource set to create.
@@ -133,13 +133,13 @@ var ResourceSet = ubx.ResourceBinding{
 		"ResourceSetType": ubx.FieldSpec{WireName: "resource_set_type"},
 		"Resources": ubx.FieldSpec{
 			WireName: "resources",
-			Kind: "list",
-			Fields: ResourceSet_ResourcesFields,
+			Kind:     "list",
+			Fields:   ResourceSet_ResourcesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ResourceSet_TagsFields,
+			Kind:     "list",
+			Fields:   ResourceSet_TagsFields,
 		},
 	},
 }

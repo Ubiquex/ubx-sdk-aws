@@ -4,34 +4,34 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TransitGatewayAttachmentPropagations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type TransitGatewayAttachmentPropagations_TransitGatewayAttachmentPropagations struct {
-	State any
+	State                      any
 	TransitGatewayRouteTableId any
 }
 
 var TransitGatewayAttachmentPropagations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type TransitGatewayAttachmentPropagationsConfig struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                     any
+	Filters                    any
+	MaxResults                 any
+	NextToken                  any
 	TransitGatewayAttachmentId any
 }
 
 type TransitGatewayAttachmentPropagationsAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
-	TransitGatewayAttachmentId any
+	DryRun                               any
+	Filters                              any
+	MaxResults                           any
+	NextToken                            any
+	TransitGatewayAttachmentId           any
 	TransitGatewayAttachmentPropagations any
 }
 
@@ -41,11 +41,11 @@ var TransitGatewayAttachmentPropagations = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: TransitGatewayAttachmentPropagations_FiltersFields,
+			Kind:     "list",
+			Fields:   TransitGatewayAttachmentPropagations_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                 ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                  ubx.FieldSpec{WireName: "next_token"},
 		"TransitGatewayAttachmentId": ubx.FieldSpec{WireName: "transit_gateway_attachment_id"},
 	},
 }

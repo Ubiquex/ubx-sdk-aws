@@ -22,7 +22,7 @@ type GatewayRouteTableAssociationAttrs struct {
 var GatewayRouteTableAssociation = ubx.ResourceBinding{
 	WireType: "aws_ec2_gateway_route_table_association",
 	Fields: ubx.FieldMap{
-		"GatewayId": ubx.FieldSpec{WireName: "gateway_id"},
+		"GatewayId":    ubx.FieldSpec{WireName: "gateway_id"},
 		"RouteTableId": ubx.FieldSpec{WireName: "route_table_id"},
 	},
 }

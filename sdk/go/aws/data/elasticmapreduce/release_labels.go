@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReleaseLabels_Filters struct {
 	Application any
-	Prefix any
+	Prefix      any
 }
 
 var ReleaseLabels_FiltersFields = ubx.FieldMap{
-		"Application": ubx.FieldSpec{WireName: "application"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"Application": ubx.FieldSpec{WireName: "application"},
+	"Prefix":      ubx.FieldSpec{WireName: "prefix"},
+}
 
 type ReleaseLabelsConfig struct {
 	// <p>The release label filters by application or version prefix.</p>
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ReleaseLabelsAttrs struct {
 	// <p>The release label filters by application or version prefix.</p>
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters       any
+	MaxResults    any
+	NextToken     any
 	ReleaseLabels any
 }
 
@@ -33,10 +33,10 @@ var ReleaseLabels = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: ReleaseLabels_FiltersFields,
+			Kind:     "object",
+			Fields:   ReleaseLabels_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

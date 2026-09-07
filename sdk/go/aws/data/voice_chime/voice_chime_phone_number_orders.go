@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChimePhoneNumberOrders_PhoneNumberOrders_OrderedPhoneNumbers struct {
 	E164PhoneNumber any
-	Status any
+	Status          any
 }
 
 type VoiceChimePhoneNumberOrders_PhoneNumberOrders struct {
-	CreatedTimestamp any
-	FocDate any
-	OrderType any
+	CreatedTimestamp    any
+	FocDate             any
+	OrderType           any
 	OrderedPhoneNumbers any
-	PhoneNumberOrderId any
-	ProductType any
-	Status any
-	UpdatedTimestamp any
+	PhoneNumberOrderId  any
+	ProductType         any
+	Status              any
+	UpdatedTimestamp    any
 }
 
 type VoiceChimePhoneNumberOrdersConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type VoiceChimePhoneNumberOrdersAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 	PhoneNumberOrders any
 }
 
@@ -34,6 +34,6 @@ var VoiceChimePhoneNumberOrders = ubx.DataSourceBinding{
 	WireType: "aws_voice_chime_phone_number_orders",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

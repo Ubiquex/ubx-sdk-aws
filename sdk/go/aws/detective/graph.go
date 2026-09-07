@@ -11,9 +11,9 @@ type Graph_Tags struct {
 }
 
 var Graph_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type GraphConfig struct {
 	// Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.
@@ -37,8 +37,8 @@ var Graph = ubx.ResourceBinding{
 		"AutoEnableMembers": ubx.FieldSpec{WireName: "auto_enable_members"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Graph_TagsFields,
+			Kind:     "list",
+			Fields:   Graph_TagsFields,
 		},
 	},
 }

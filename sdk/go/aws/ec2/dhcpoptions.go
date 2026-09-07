@@ -11,9 +11,9 @@ type Dhcpoptions_Tags struct {
 }
 
 var Dhcpoptions_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DhcpoptionsConfig struct {
 	// This value is used to complete unqualified DNS hostnames.
@@ -54,16 +54,16 @@ type DhcpoptionsAttrs struct {
 var Dhcpoptions = ubx.ResourceBinding{
 	WireType: "aws_ec2_dhcpoptions",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"DomainNameServers": ubx.FieldSpec{WireName: "domain_name_servers"},
+		"DomainName":                    ubx.FieldSpec{WireName: "domain_name"},
+		"DomainNameServers":             ubx.FieldSpec{WireName: "domain_name_servers"},
 		"Ipv6AddressPreferredLeaseTime": ubx.FieldSpec{WireName: "ipv6_address_preferred_lease_time"},
-		"NetbiosNameServers": ubx.FieldSpec{WireName: "netbios_name_servers"},
-		"NetbiosNodeType": ubx.FieldSpec{WireName: "netbios_node_type"},
-		"NtpServers": ubx.FieldSpec{WireName: "ntp_servers"},
+		"NetbiosNameServers":            ubx.FieldSpec{WireName: "netbios_name_servers"},
+		"NetbiosNodeType":               ubx.FieldSpec{WireName: "netbios_node_type"},
+		"NtpServers":                    ubx.FieldSpec{WireName: "ntp_servers"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dhcpoptions_TagsFields,
+			Kind:     "list",
+			Fields:   Dhcpoptions_TagsFields,
 		},
 	},
 }

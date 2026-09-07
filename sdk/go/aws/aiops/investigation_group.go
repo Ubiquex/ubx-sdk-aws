@@ -29,23 +29,23 @@ type InvestigationGroup_Tags struct {
 }
 
 var InvestigationGroup_ChatbotNotificationChannelsFields = ubx.FieldMap{
-		"ChatConfigurationArns": ubx.FieldSpec{WireName: "chat_configuration_arns"},
-		"SnstopicArn": ubx.FieldSpec{WireName: "snstopic_arn"},
-	}
+	"ChatConfigurationArns": ubx.FieldSpec{WireName: "chat_configuration_arns"},
+	"SnstopicArn":           ubx.FieldSpec{WireName: "snstopic_arn"},
+}
 
 var InvestigationGroup_CrossAccountConfigurationsFields = ubx.FieldMap{
-		"SourceRoleArn": ubx.FieldSpec{WireName: "source_role_arn"},
-	}
+	"SourceRoleArn": ubx.FieldSpec{WireName: "source_role_arn"},
+}
 
 var InvestigationGroup_EncryptionConfigFields = ubx.FieldMap{
-		"EncryptionConfigurationType": ubx.FieldSpec{WireName: "encryption_configuration_type"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-	}
+	"EncryptionConfigurationType": ubx.FieldSpec{WireName: "encryption_configuration_type"},
+	"KmsKeyId":                    ubx.FieldSpec{WireName: "kms_key_id"},
+}
 
 var InvestigationGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type InvestigationGroupConfig struct {
 	// An array of key-value pairs of notification channels to apply to this resource.
@@ -108,29 +108,29 @@ var InvestigationGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ChatbotNotificationChannels": ubx.FieldSpec{
 			WireName: "chatbot_notification_channels",
-			Kind: "list",
-			Fields: InvestigationGroup_ChatbotNotificationChannelsFields,
+			Kind:     "list",
+			Fields:   InvestigationGroup_ChatbotNotificationChannelsFields,
 		},
 		"CrossAccountConfigurations": ubx.FieldSpec{
 			WireName: "cross_account_configurations",
-			Kind: "list",
-			Fields: InvestigationGroup_CrossAccountConfigurationsFields,
+			Kind:     "list",
+			Fields:   InvestigationGroup_CrossAccountConfigurationsFields,
 		},
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind: "object",
-			Fields: InvestigationGroup_EncryptionConfigFields,
+			Kind:     "object",
+			Fields:   InvestigationGroup_EncryptionConfigFields,
 		},
-		"InvestigationGroupPolicy": ubx.FieldSpec{WireName: "investigation_group_policy"},
+		"InvestigationGroupPolicy":        ubx.FieldSpec{WireName: "investigation_group_policy"},
 		"IsCloudTrailEventHistoryEnabled": ubx.FieldSpec{WireName: "is_cloud_trail_event_history_enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RetentionInDays": ubx.FieldSpec{WireName: "retention_in_days"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"TagKeyBoundaries": ubx.FieldSpec{WireName: "tag_key_boundaries"},
+		"Name":                            ubx.FieldSpec{WireName: "name"},
+		"RetentionInDays":                 ubx.FieldSpec{WireName: "retention_in_days"},
+		"RoleArn":                         ubx.FieldSpec{WireName: "role_arn"},
+		"TagKeyBoundaries":                ubx.FieldSpec{WireName: "tag_key_boundaries"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: InvestigationGroup_TagsFields,
+			Kind:     "list",
+			Fields:   InvestigationGroup_TagsFields,
 		},
 	},
 }

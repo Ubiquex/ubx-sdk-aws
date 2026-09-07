@@ -9,7 +9,7 @@ type HealthAgentPatientInsightsJob_EncounterContext struct {
 
 type HealthAgentPatientInsightsJob_InputDataConfig_FhirServer struct {
 	FhirEndpoint any
-	OauthToken any
+	OauthToken   any
 }
 
 type HealthAgentPatientInsightsJob_InputDataConfig_S3Sources struct {
@@ -19,7 +19,7 @@ type HealthAgentPatientInsightsJob_InputDataConfig_S3Sources struct {
 type HealthAgentPatientInsightsJob_InputDataConfig struct {
 	// <p>FHIR server configuration for input data source</p>
 	FhirServer any
-	S3Sources any
+	S3Sources  any
 }
 
 type HealthAgentPatientInsightsJob_InsightsContext struct {
@@ -32,24 +32,24 @@ type HealthAgentPatientInsightsJob_OutputDataConfig struct {
 
 type HealthAgentPatientInsightsJob_PatientContext struct {
 	DateOfBirth any
-	PatientId any
-	Pronouns any
+	PatientId   any
+	Pronouns    any
 }
 
 type HealthAgentPatientInsightsJob_UserContext struct {
-	Role any
+	Role      any
 	Specialty any
-	UserId any
+	UserId    any
 }
 
 type HealthAgentPatientInsightsJobConfig struct {
 	DomainId any
-	JobId any
+	JobId    any
 }
 
 type HealthAgentPatientInsightsJobAttrs struct {
 	CreationTime any
-	DomainId any
+	DomainId     any
 	// <p>Details for an encounter</p>
 	EncounterContext any
 	// <p>Configuration details for input patient data</p>
@@ -58,15 +58,15 @@ type HealthAgentPatientInsightsJobAttrs struct {
 	InsightsContext any
 	// <p>Output of patient insights job</p>
 	InsightsOutput any
-	JobArn any
-	JobId any
-	JobStatus any
+	JobArn         any
+	JobId          any
+	JobStatus      any
 	// <p>Configuration details for insights output.</p>
 	OutputDataConfig any
 	// <p>Details for a patient</p>
 	PatientContext any
-	StatusDetails any
-	UpdatedTime any
+	StatusDetails  any
+	UpdatedTime    any
 	// <p>Details for user initiating insights job</p>
 	UserContext any
 }
@@ -75,6 +75,6 @@ var HealthAgentPatientInsightsJob = ubx.DataSourceBinding{
 	WireType: "aws_health_agent_patient_insights_job",
 	Fields: ubx.FieldMap{
 		"DomainId": ubx.FieldSpec{WireName: "domain_id"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":    ubx.FieldSpec{WireName: "job_id"},
 	},
 }

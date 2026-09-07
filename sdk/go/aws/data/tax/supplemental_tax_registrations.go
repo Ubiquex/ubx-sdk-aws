@@ -4,33 +4,33 @@ package tax
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SupplementalTaxRegistrations_TaxRegistrations_Address struct {
-	AddressLine1 any
-	AddressLine2 any
-	AddressLine3 any
-	City any
-	CountryCode any
+	AddressLine1     any
+	AddressLine2     any
+	AddressLine3     any
+	City             any
+	CountryCode      any
 	DistrictOrCounty any
-	PostalCode any
-	StateOrRegion any
+	PostalCode       any
+	StateOrRegion    any
 }
 
 type SupplementalTaxRegistrations_TaxRegistrations struct {
-	Address any
-	AuthorityId any
-	LegalName any
-	RegistrationId any
+	Address          any
+	AuthorityId      any
+	LegalName        any
+	RegistrationId   any
 	RegistrationType any
-	Status any
+	Status           any
 }
 
 type SupplementalTaxRegistrationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SupplementalTaxRegistrationsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	TaxRegistrations any
 }
 
@@ -38,6 +38,6 @@ var SupplementalTaxRegistrations = ubx.DataSourceBinding{
 	WireType: "aws_tax_supplemental_tax_registrations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

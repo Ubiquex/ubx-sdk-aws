@@ -5,39 +5,39 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InferenceSchedulers_InferenceSchedulerSummaries struct {
 	DataDelayOffsetInMinutes any
-	DataUploadFrequency any
-	InferenceSchedulerArn any
-	InferenceSchedulerName any
-	LatestInferenceResult any
-	ModelArn any
-	ModelName any
-	Status any
+	DataUploadFrequency      any
+	InferenceSchedulerArn    any
+	InferenceSchedulerName   any
+	LatestInferenceResult    any
+	ModelArn                 any
+	ModelName                any
+	Status                   any
 }
 
 type InferenceSchedulersConfig struct {
 	InferenceSchedulerNameBeginsWith any
-	MaxResults any
-	ModelName any
-	NextToken any
-	Status any
+	MaxResults                       any
+	ModelName                        any
+	NextToken                        any
+	Status                           any
 }
 
 type InferenceSchedulersAttrs struct {
 	InferenceSchedulerNameBeginsWith any
-	InferenceSchedulerSummaries any
-	MaxResults any
-	ModelName any
-	NextToken any
-	Status any
+	InferenceSchedulerSummaries      any
+	MaxResults                       any
+	ModelName                        any
+	NextToken                        any
+	Status                           any
 }
 
 var InferenceSchedulers = ubx.DataSourceBinding{
 	WireType: "aws_lookoutequipment_inference_schedulers",
 	Fields: ubx.FieldMap{
 		"InferenceSchedulerNameBeginsWith": ubx.FieldSpec{WireName: "inference_scheduler_name_begins_with"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"ModelName": ubx.FieldSpec{WireName: "model_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"MaxResults":                       ubx.FieldSpec{WireName: "max_results"},
+		"ModelName":                        ubx.FieldSpec{WireName: "model_name"},
+		"NextToken":                        ubx.FieldSpec{WireName: "next_token"},
+		"Status":                           ubx.FieldSpec{WireName: "status"},
 	},
 }

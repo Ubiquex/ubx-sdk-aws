@@ -11,9 +11,9 @@ type EventSubscription_Tags struct {
 }
 
 var EventSubscription_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EventSubscriptionConfig struct {
 	// A boolean value; set to true to activate the subscription, and set to false to create the subscription but not activate it.
@@ -68,17 +68,17 @@ type EventSubscriptionAttrs struct {
 var EventSubscription = ubx.ResourceBinding{
 	WireType: "aws_redshift_event_subscription",
 	Fields: ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EventCategories": ubx.FieldSpec{WireName: "event_categories"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-		"SnsTopicArn": ubx.FieldSpec{WireName: "sns_topic_arn"},
-		"SourceIds": ubx.FieldSpec{WireName: "source_ids"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
+		"Enabled":          ubx.FieldSpec{WireName: "enabled"},
+		"EventCategories":  ubx.FieldSpec{WireName: "event_categories"},
+		"Severity":         ubx.FieldSpec{WireName: "severity"},
+		"SnsTopicArn":      ubx.FieldSpec{WireName: "sns_topic_arn"},
+		"SourceIds":        ubx.FieldSpec{WireName: "source_ids"},
+		"SourceType":       ubx.FieldSpec{WireName: "source_type"},
 		"SubscriptionName": ubx.FieldSpec{WireName: "subscription_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EventSubscription_TagsFields,
+			Kind:     "list",
+			Fields:   EventSubscription_TagsFields,
 		},
 	},
 }

@@ -5,88 +5,88 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CisScanResultDetails_FilterCriteria_CheckIdFilters struct {
 	Comparison any
-	Value any
+	Value      any
 }
 
 type CisScanResultDetails_FilterCriteria struct {
-	CheckIdFilters any
-	FindingArnFilters any
+	CheckIdFilters       any
+	FindingArnFilters    any
 	FindingStatusFilters any
 	SecurityLevelFilters any
-	TitleFilters any
+	TitleFilters         any
 }
 
 type CisScanResultDetails_ScanResultDetails struct {
-	AccountId any
+	AccountId        any
 	CheckDescription any
-	CheckId any
-	FindingArn any
-	Level any
-	Platform any
-	Remediation any
-	ScanArn any
-	Status any
-	StatusReason any
+	CheckId          any
+	FindingArn       any
+	Level            any
+	Platform         any
+	Remediation      any
+	ScanArn          any
+	Status           any
+	StatusReason     any
 	TargetResourceId any
-	Title any
+	Title            any
 }
 
 var CisScanResultDetails_FilterCriteria_CheckIdFiltersFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var CisScanResultDetails_FilterCriteriaFields = ubx.FieldMap{
-		"CheckIdFilters": ubx.FieldSpec{
-			WireName: "check_id_filters",
-			Kind: "list",
-			Fields: CisScanResultDetails_FilterCriteria_CheckIdFiltersFields,
-		},
-		"FindingArnFilters": ubx.FieldSpec{
-			WireName: "finding_arn_filters",
-			Kind: "list",
-			Fields: CisScanResultDetails_FilterCriteria_CheckIdFiltersFields,
-		},
-		"FindingStatusFilters": ubx.FieldSpec{
-			WireName: "finding_status_filters",
-			Kind: "list",
-			Fields: CisScanResultDetails_FilterCriteria_CheckIdFiltersFields,
-		},
-		"SecurityLevelFilters": ubx.FieldSpec{
-			WireName: "security_level_filters",
-			Kind: "list",
-			Fields: CisScanResultDetails_FilterCriteria_CheckIdFiltersFields,
-		},
-		"TitleFilters": ubx.FieldSpec{
-			WireName: "title_filters",
-			Kind: "list",
-			Fields: CisScanResultDetails_FilterCriteria_CheckIdFiltersFields,
-		},
-	}
+	"CheckIdFilters": ubx.FieldSpec{
+		WireName: "check_id_filters",
+		Kind:     "list",
+		Fields:   CisScanResultDetails_FilterCriteria_CheckIdFiltersFields,
+	},
+	"FindingArnFilters": ubx.FieldSpec{
+		WireName: "finding_arn_filters",
+		Kind:     "list",
+		Fields:   CisScanResultDetails_FilterCriteria_CheckIdFiltersFields,
+	},
+	"FindingStatusFilters": ubx.FieldSpec{
+		WireName: "finding_status_filters",
+		Kind:     "list",
+		Fields:   CisScanResultDetails_FilterCriteria_CheckIdFiltersFields,
+	},
+	"SecurityLevelFilters": ubx.FieldSpec{
+		WireName: "security_level_filters",
+		Kind:     "list",
+		Fields:   CisScanResultDetails_FilterCriteria_CheckIdFiltersFields,
+	},
+	"TitleFilters": ubx.FieldSpec{
+		WireName: "title_filters",
+		Kind:     "list",
+		Fields:   CisScanResultDetails_FilterCriteria_CheckIdFiltersFields,
+	},
+}
 
 type CisScanResultDetailsConfig struct {
 	AccountId any
 	// <p>The CIS scan result details filter criteria.</p>
-	FilterCriteria any
-	MaxResults any
-	NextToken any
-	ScanArn any
-	SortBy any
-	SortOrder any
+	FilterCriteria   any
+	MaxResults       any
+	NextToken        any
+	ScanArn          any
+	SortBy           any
+	SortOrder        any
 	TargetResourceId any
 }
 
 type CisScanResultDetailsAttrs struct {
 	AccountId any
 	// <p>The CIS scan result details filter criteria.</p>
-	FilterCriteria any
-	MaxResults any
-	NextToken any
-	ScanArn any
+	FilterCriteria    any
+	MaxResults        any
+	NextToken         any
+	ScanArn           any
 	ScanResultDetails any
-	SortBy any
-	SortOrder any
-	TargetResourceId any
+	SortBy            any
+	SortOrder         any
+	TargetResourceId  any
 }
 
 var CisScanResultDetails = ubx.DataSourceBinding{
@@ -95,14 +95,14 @@ var CisScanResultDetails = ubx.DataSourceBinding{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"FilterCriteria": ubx.FieldSpec{
 			WireName: "filter_criteria",
-			Kind: "object",
-			Fields: CisScanResultDetails_FilterCriteriaFields,
+			Kind:     "object",
+			Fields:   CisScanResultDetails_FilterCriteriaFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ScanArn": ubx.FieldSpec{WireName: "scan_arn"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"ScanArn":          ubx.FieldSpec{WireName: "scan_arn"},
+		"SortBy":           ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":        ubx.FieldSpec{WireName: "sort_order"},
 		"TargetResourceId": ubx.FieldSpec{WireName: "target_resource_id"},
 	},
 }

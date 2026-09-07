@@ -4,7 +4,7 @@ package glacier
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VaultNotifications_VaultNotificationConfig struct {
-	Events any
+	Events   any
 	Snstopic any
 }
 

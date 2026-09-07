@@ -4,14 +4,14 @@ package inspector2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Configuration_Ec2Configuration_ScanModeState struct {
-	ScanMode any
+	ScanMode       any
 	ScanModeStatus any
 }
 
 type Configuration_Ec2Configuration_VmScannerState struct {
-	Activated any
+	Activated   any
 	ActivatedAt any
-	Status any
+	Status      any
 }
 
 type Configuration_Ec2Configuration struct {
@@ -23,10 +23,10 @@ type Configuration_Ec2Configuration struct {
 
 type Configuration_EcrConfiguration_RescanDurationState struct {
 	PullDateRescanDuration any
-	PullDateRescanMode any
-	RescanDuration any
-	Status any
-	UpdatedAt any
+	PullDateRescanMode     any
+	RescanDuration         any
+	Status                 any
+	UpdatedAt              any
 }
 
 type Configuration_EcrConfiguration struct {

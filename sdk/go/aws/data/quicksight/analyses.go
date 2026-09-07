@@ -4,34 +4,34 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Analyses_AnalysisSummaryList struct {
-	AnalysisId any
-	Arn any
-	CreatedTime any
+	AnalysisId      any
+	Arn             any
+	CreatedTime     any
 	LastUpdatedTime any
-	Name any
-	Status any
+	Name            any
+	Status          any
 }
 
 type AnalysesConfig struct {
 	AwsAccountId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type AnalysesAttrs struct {
 	AnalysisSummaryList any
-	AwsAccountId any
-	MaxResults any
-	NextToken any
-	RequestId any
-	Status any
+	AwsAccountId        any
+	MaxResults          any
+	NextToken           any
+	RequestId           any
+	Status              any
 }
 
 var Analyses = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_analyses",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -5,47 +5,47 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ValidDbinstanceModifications_ValidDbinstanceModificationsMessage_AdditionalStorage_Volumes_Storage_IopsToStorageRatio struct {
 	From any
-	To any
+	To   any
 }
 
 type ValidDbinstanceModifications_ValidDbinstanceModificationsMessage_AdditionalStorage_Volumes_Storage_ProvisionedIops struct {
 	From any
 	Step any
-	To any
+	To   any
 }
 
 type ValidDbinstanceModifications_ValidDbinstanceModificationsMessage_AdditionalStorage_Volumes_Storage struct {
-	IopsToStorageRatio any
-	ProvisionedIops any
+	IopsToStorageRatio           any
+	ProvisionedIops              any
 	ProvisionedStorageThroughput any
-	StorageSize any
+	StorageSize                  any
 	StorageThroughputToIopsRatio any
-	StorageType any
-	SupportsStorageAutoscaling any
+	StorageType                  any
+	SupportsStorageAutoscaling   any
 }
 
 type ValidDbinstanceModifications_ValidDbinstanceModificationsMessage_AdditionalStorage_Volumes struct {
-	Storage any
+	Storage    any
 	VolumeName any
 }
 
 type ValidDbinstanceModifications_ValidDbinstanceModificationsMessage_AdditionalStorage struct {
 	SupportsAdditionalStorageVolumes any
-	Volumes any
+	Volumes                          any
 }
 
 type ValidDbinstanceModifications_ValidDbinstanceModificationsMessage_ValidProcessorFeatures struct {
 	AllowedValues any
-	DefaultValue any
-	Name any
+	DefaultValue  any
+	Name          any
 }
 
 type ValidDbinstanceModifications_ValidDbinstanceModificationsMessage struct {
 	// <p>Contains the valid options for additional storage volumes for a DB instance. </p>
-	AdditionalStorage any
-	Storage any
+	AdditionalStorage          any
+	Storage                    any
 	SupportsDedicatedLogVolume any
-	ValidProcessorFeatures any
+	ValidProcessorFeatures     any
 }
 
 type ValidDbinstanceModificationsConfig struct {

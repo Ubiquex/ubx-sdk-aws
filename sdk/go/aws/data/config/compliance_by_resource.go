@@ -10,39 +10,39 @@ type ComplianceByResource_ComplianceByResources_Compliance_ComplianceContributor
 
 type ComplianceByResource_ComplianceByResources_Compliance struct {
 	ComplianceContributorCount any
-	ComplianceType any
+	ComplianceType             any
 }
 
 type ComplianceByResource_ComplianceByResources struct {
-	Compliance any
-	ResourceId any
+	Compliance   any
+	ResourceId   any
 	ResourceType any
 }
 
 type ComplianceByResourceConfig struct {
 	ComplianceTypes any
-	Limit any
-	NextToken any
-	ResourceId any
-	ResourceType any
+	Limit           any
+	NextToken       any
+	ResourceId      any
+	ResourceType    any
 }
 
 type ComplianceByResourceAttrs struct {
 	ComplianceByResources any
-	ComplianceTypes any
-	Limit any
-	NextToken any
-	ResourceId any
-	ResourceType any
+	ComplianceTypes       any
+	Limit                 any
+	NextToken             any
+	ResourceId            any
+	ResourceType          any
 }
 
 var ComplianceByResource = ubx.DataSourceBinding{
 	WireType: "aws_config_compliance_by_resource",
 	Fields: ubx.FieldMap{
 		"ComplianceTypes": ubx.FieldSpec{WireName: "compliance_types"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"Limit":           ubx.FieldSpec{WireName: "limit"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"ResourceId":      ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceType":    ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

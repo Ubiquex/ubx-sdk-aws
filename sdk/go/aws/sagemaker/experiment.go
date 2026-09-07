@@ -11,9 +11,9 @@ type Experiment_Tags struct {
 }
 
 var Experiment_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ExperimentConfig struct {
 	// The description of the experiment.
@@ -46,13 +46,13 @@ type ExperimentAttrs struct {
 var Experiment = ubx.ResourceBinding{
 	WireType: "aws_sage_maker_experiment",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
 		"ExperimentName": ubx.FieldSpec{WireName: "experiment_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Experiment_TagsFields,
+			Kind:     "list",
+			Fields:   Experiment_TagsFields,
 		},
 	},
 }

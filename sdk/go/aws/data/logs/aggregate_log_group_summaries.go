@@ -4,13 +4,13 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AggregateLogGroupSummaries_AggregateLogGroupSummaries_GroupingIdentifiers struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type AggregateLogGroupSummaries_AggregateLogGroupSummaries struct {
 	GroupingIdentifiers any
-	LogGroupCount any
+	LogGroupCount       any
 }
 
 type AggregateLogGroupSummaries_DataSources struct {
@@ -19,31 +19,31 @@ type AggregateLogGroupSummaries_DataSources struct {
 }
 
 var AggregateLogGroupSummaries_DataSourcesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type AggregateLogGroupSummariesConfig struct {
-	AccountIdentifiers any
-	DataSources any
-	GroupBy any
+	AccountIdentifiers    any
+	DataSources           any
+	GroupBy               any
 	IncludeLinkedAccounts any
-	Limit any
-	LogGroupClass any
-	LogGroupNamePattern any
+	Limit                 any
+	LogGroupClass         any
+	LogGroupNamePattern   any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
 }
 
 type AggregateLogGroupSummariesAttrs struct {
-	AccountIdentifiers any
+	AccountIdentifiers         any
 	AggregateLogGroupSummaries any
-	DataSources any
-	GroupBy any
-	IncludeLinkedAccounts any
-	Limit any
-	LogGroupClass any
-	LogGroupNamePattern any
+	DataSources                any
+	GroupBy                    any
+	IncludeLinkedAccounts      any
+	Limit                      any
+	LogGroupClass              any
+	LogGroupNamePattern        any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
 }
@@ -54,14 +54,14 @@ var AggregateLogGroupSummaries = ubx.DataSourceBinding{
 		"AccountIdentifiers": ubx.FieldSpec{WireName: "account_identifiers"},
 		"DataSources": ubx.FieldSpec{
 			WireName: "data_sources",
-			Kind: "list",
-			Fields: AggregateLogGroupSummaries_DataSourcesFields,
+			Kind:     "list",
+			Fields:   AggregateLogGroupSummaries_DataSourcesFields,
 		},
-		"GroupBy": ubx.FieldSpec{WireName: "group_by"},
+		"GroupBy":               ubx.FieldSpec{WireName: "group_by"},
 		"IncludeLinkedAccounts": ubx.FieldSpec{WireName: "include_linked_accounts"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"LogGroupClass": ubx.FieldSpec{WireName: "log_group_class"},
-		"LogGroupNamePattern": ubx.FieldSpec{WireName: "log_group_name_pattern"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":                 ubx.FieldSpec{WireName: "limit"},
+		"LogGroupClass":         ubx.FieldSpec{WireName: "log_group_class"},
+		"LogGroupNamePattern":   ubx.FieldSpec{WireName: "log_group_name_pattern"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,29 +4,29 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerAliasesConfig struct {
-	Alias any
-	ImageName any
+	Alias      any
+	ImageName  any
 	MaxResults any
-	NextToken any
-	Version any
+	NextToken  any
+	Version    any
 }
 
 type ApiSagemakerAliasesAttrs struct {
-	Alias any
-	ImageName any
-	MaxResults any
-	NextToken any
+	Alias                        any
+	ImageName                    any
+	MaxResults                   any
+	NextToken                    any
 	SageMakerImageVersionAliases any
-	Version any
+	Version                      any
 }
 
 var ApiSagemakerAliases = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_aliases",
 	Fields: ubx.FieldMap{
-		"Alias": ubx.FieldSpec{WireName: "alias"},
-		"ImageName": ubx.FieldSpec{WireName: "image_name"},
+		"Alias":      ubx.FieldSpec{WireName: "alias"},
+		"ImageName":  ubx.FieldSpec{WireName: "image_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Version": ubx.FieldSpec{WireName: "version"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Version":    ubx.FieldSpec{WireName: "version"},
 	},
 }

@@ -6,14 +6,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type FinspaceApiExternalDataViewAccessDetails_Credentials struct {
 	AccessKeyId any
 	// Milliseconds since UTC epoch
-	Expiration any
+	Expiration      any
 	SecretAccessKey any
-	SessionToken any
+	SessionToken    any
 }
 
 type FinspaceApiExternalDataViewAccessDetails_S3Location struct {
 	Bucket any
-	Key any
+	Key    any
 }
 
 type FinspaceApiExternalDataViewAccessDetailsConfig struct {
@@ -38,6 +38,6 @@ var FinspaceApiExternalDataViewAccessDetails = ubx.DataSourceBinding{
 	WireType: "aws_finspace_api_external_data_view_access_details",
 	Fields: ubx.FieldMap{
 		"DataViewId": ubx.FieldSpec{WireName: "data_view_id"},
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+		"DatasetId":  ubx.FieldSpec{WireName: "dataset_id"},
 	},
 }

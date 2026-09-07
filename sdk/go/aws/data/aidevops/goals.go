@@ -5,35 +5,35 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Goals_Goals_Content struct {
 	Description any
-	Objectives any
+	Objectives  any
 }
 
 type Goals_Goals_EvaluationSchedule struct {
 	Expression any
-	State any
+	State      any
 }
 
 type Goals_Goals struct {
-	AgentSpaceArn any
-	Content any
-	CreatedAt any
-	EvaluationSchedule any
-	GoalId any
-	GoalType any
-	LastEvaluatedAt any
+	AgentSpaceArn        any
+	Content              any
+	CreatedAt            any
+	EvaluationSchedule   any
+	GoalId               any
+	GoalType             any
+	LastEvaluatedAt      any
 	LastSuccessfulTaskId any
-	LastTaskId any
-	Status any
-	Title any
-	UpdatedAt any
-	Version any
+	LastTaskId           any
+	Status               any
+	Title                any
+	UpdatedAt            any
+	Version              any
 }
 
 type GoalsConfig struct {
 	AgentSpaceId any
 	// <p>Type of goal based on its origin</p>
 	GoalType any
-	Limit any
+	Limit    any
 	// <p>Pagination token for list operations (1-2048 characters)</p>
 	NextToken any
 	// <p>Possible states of a goal throughout its lifecycle</p>
@@ -57,9 +57,9 @@ var Goals = ubx.DataSourceBinding{
 	WireType: "aws_aidevops_goals",
 	Fields: ubx.FieldMap{
 		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
-		"GoalType": ubx.FieldSpec{WireName: "goal_type"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"GoalType":     ubx.FieldSpec{WireName: "goal_type"},
+		"Limit":        ubx.FieldSpec{WireName: "limit"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"Status":       ubx.FieldSpec{WireName: "status"},
 	},
 }

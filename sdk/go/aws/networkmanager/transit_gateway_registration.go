@@ -20,7 +20,7 @@ type TransitGatewayRegistrationAttrs struct {
 var TransitGatewayRegistration = ubx.ResourceBinding{
 	WireType: "aws_network_manager_transit_gateway_registration",
 	Fields: ubx.FieldMap{
-		"GlobalNetworkId": ubx.FieldSpec{WireName: "global_network_id"},
+		"GlobalNetworkId":   ubx.FieldSpec{WireName: "global_network_id"},
 		"TransitGatewayArn": ubx.FieldSpec{WireName: "transit_gateway_arn"},
 	},
 }

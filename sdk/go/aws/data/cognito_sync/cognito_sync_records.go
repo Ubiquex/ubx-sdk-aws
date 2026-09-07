@@ -5,49 +5,49 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoSyncRecords_Records struct {
 	DeviceLastModifiedDate any
-	Key any
-	LastModifiedBy any
-	LastModifiedDate any
-	SyncCount any
-	Value any
+	Key                    any
+	LastModifiedBy         any
+	LastModifiedDate       any
+	SyncCount              any
+	Value                  any
 }
 
 type CognitoSyncRecordsConfig struct {
-	DatasetName any
-	IdentityId any
-	IdentityPoolId any
-	LastSyncCount any
-	MaxResults any
-	NextToken any
+	DatasetName      any
+	IdentityId       any
+	IdentityPoolId   any
+	LastSyncCount    any
+	MaxResults       any
+	NextToken        any
 	SyncSessionToken any
 }
 
 type CognitoSyncRecordsAttrs struct {
-	Count any
+	Count                                 any
 	DatasetDeletedAfterRequestedSyncCount any
-	DatasetExists any
-	DatasetName any
-	DatasetSyncCount any
-	IdentityId any
-	IdentityPoolId any
-	LastModifiedBy any
-	LastSyncCount any
-	MaxResults any
-	MergedDatasetNames any
-	NextToken any
-	Records any
-	SyncSessionToken any
+	DatasetExists                         any
+	DatasetName                           any
+	DatasetSyncCount                      any
+	IdentityId                            any
+	IdentityPoolId                        any
+	LastModifiedBy                        any
+	LastSyncCount                         any
+	MaxResults                            any
+	MergedDatasetNames                    any
+	NextToken                             any
+	Records                               any
+	SyncSessionToken                      any
 }
 
 var CognitoSyncRecords = ubx.DataSourceBinding{
 	WireType: "aws_cognito_sync_records",
 	Fields: ubx.FieldMap{
-		"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
-		"IdentityId": ubx.FieldSpec{WireName: "identity_id"},
-		"IdentityPoolId": ubx.FieldSpec{WireName: "identity_pool_id"},
-		"LastSyncCount": ubx.FieldSpec{WireName: "last_sync_count"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"DatasetName":      ubx.FieldSpec{WireName: "dataset_name"},
+		"IdentityId":       ubx.FieldSpec{WireName: "identity_id"},
+		"IdentityPoolId":   ubx.FieldSpec{WireName: "identity_pool_id"},
+		"LastSyncCount":    ubx.FieldSpec{WireName: "last_sync_count"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"SyncSessionToken": ubx.FieldSpec{WireName: "sync_session_token"},
 	},
 }

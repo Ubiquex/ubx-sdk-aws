@@ -4,26 +4,26 @@ package es
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReservedElasticsearchInstanceOfferings_ReservedElasticsearchInstanceOfferings_RecurringCharges struct {
-	RecurringChargeAmount any
+	RecurringChargeAmount    any
 	RecurringChargeFrequency any
 }
 
 type ReservedElasticsearchInstanceOfferings_ReservedElasticsearchInstanceOfferings struct {
-	CurrencyCode any
-	Duration any
-	ElasticsearchInstanceType any
-	FixedPrice any
-	PaymentOption any
-	RecurringCharges any
+	CurrencyCode                            any
+	Duration                                any
+	ElasticsearchInstanceType               any
+	FixedPrice                              any
+	PaymentOption                           any
+	RecurringCharges                        any
 	ReservedElasticsearchInstanceOfferingId any
-	UsagePrice any
+	UsagePrice                              any
 }
 
 type ReservedElasticsearchInstanceOfferingsConfig struct {
 	// <p> Set this value to limit the number of results returned. </p>
 	MaxResults any
 	// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
-	NextToken any
+	NextToken                               any
 	ReservedElasticsearchInstanceOfferingId any
 }
 
@@ -31,16 +31,16 @@ type ReservedElasticsearchInstanceOfferingsAttrs struct {
 	// <p> Set this value to limit the number of results returned. </p>
 	MaxResults any
 	// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
-	NextToken any
+	NextToken                               any
 	ReservedElasticsearchInstanceOfferingId any
-	ReservedElasticsearchInstanceOfferings any
+	ReservedElasticsearchInstanceOfferings  any
 }
 
 var ReservedElasticsearchInstanceOfferings = ubx.DataSourceBinding{
 	WireType: "aws_es_reserved_elasticsearch_instance_offerings",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ReservedElasticsearchInstanceOfferingId": ubx.FieldSpec{WireName: "reserved_elasticsearch_instance_offering_id"},
 	},
 }

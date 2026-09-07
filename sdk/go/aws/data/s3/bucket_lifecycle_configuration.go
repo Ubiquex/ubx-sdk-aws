@@ -8,76 +8,76 @@ type BucketLifecycleConfiguration_Rules_AbortIncompleteMultipartUpload struct {
 }
 
 type BucketLifecycleConfiguration_Rules_Expiration struct {
-	Date any
-	Days any
+	Date                      any
+	Days                      any
 	ExpiredObjectDeleteMarker any
 }
 
 type BucketLifecycleConfiguration_Rules_Filter_And_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type BucketLifecycleConfiguration_Rules_Filter_And struct {
 	ObjectSizeGreaterThan any
-	ObjectSizeLessThan any
-	Prefix any
-	Tags any
+	ObjectSizeLessThan    any
+	Prefix                any
+	Tags                  any
 }
 
 type BucketLifecycleConfiguration_Rules_Filter struct {
-	And any
+	And                   any
 	ObjectSizeGreaterThan any
-	ObjectSizeLessThan any
-	Prefix any
-	Tag any
+	ObjectSizeLessThan    any
+	Prefix                any
+	Tag                   any
 }
 
 type BucketLifecycleConfiguration_Rules_NoncurrentVersionExpiration struct {
 	NewerNoncurrentVersions any
-	NoncurrentDays any
+	NoncurrentDays          any
 }
 
 type BucketLifecycleConfiguration_Rules_NoncurrentVersionTransitions struct {
 	NewerNoncurrentVersions any
-	NoncurrentDays any
-	StorageClass any
+	NoncurrentDays          any
+	StorageClass            any
 }
 
 type BucketLifecycleConfiguration_Rules_Transitions struct {
-	Date any
-	Days any
+	Date         any
+	Days         any
 	StorageClass any
 }
 
 type BucketLifecycleConfiguration_Rules struct {
 	AbortIncompleteMultipartUpload any
-	Expiration any
-	Filter any
-	Id any
-	NoncurrentVersionExpiration any
-	NoncurrentVersionTransitions any
-	Prefix any
-	Status any
-	Transitions any
+	Expiration                     any
+	Filter                         any
+	Id                             any
+	NoncurrentVersionExpiration    any
+	NoncurrentVersionTransitions   any
+	Prefix                         any
+	Status                         any
+	Transitions                    any
 }
 
 type BucketLifecycleConfigurationConfig struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 }
 
 type BucketLifecycleConfigurationAttrs struct {
-	Bucket any
-	ExpectedBucketOwner any
-	Rules any
+	Bucket                             any
+	ExpectedBucketOwner                any
+	Rules                              any
 	TransitionDefaultMinimumObjectSize any
 }
 
 var BucketLifecycleConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_lifecycle_configuration",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
 	},
 }

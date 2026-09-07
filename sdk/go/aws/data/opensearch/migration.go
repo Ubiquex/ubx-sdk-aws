@@ -4,7 +4,7 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Migration_Error struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -19,15 +19,15 @@ type MigrationConfig struct {
 
 type MigrationAttrs struct {
 	ApplicationId any
-	CreatedAt any
+	CreatedAt     any
 	// <p>Contains error details for a migration that failed or completed with errors.</p>
-	Error any
+	Error         any
 	ExportedCount any
 	ImportedCount any
-	MigrationId any
+	MigrationId   any
 	// <p>The source configuration for a migration, specifying the data source from which to export saved objects.</p>
-	Source any
-	Status any
+	Source    any
+	Status    any
 	UpdatedAt any
 }
 

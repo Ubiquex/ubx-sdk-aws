@@ -11,14 +11,14 @@ type CognitoIdpProvisionedLimit_Limit_LimitDefinition struct {
 type CognitoIdpProvisionedLimit_Limit struct {
 	FreeLimitValue any
 	// <p>The class and attributes that identify a specific limit at the account level.</p>
-	LimitDefinition any
+	LimitDefinition       any
 	ProvisionedLimitValue any
 }
 
 var CognitoIdpProvisionedLimit_Limit_LimitDefinitionFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"LimitClass": ubx.FieldSpec{WireName: "limit_class"},
-	}
+	"Attributes": ubx.FieldSpec{WireName: "attributes"},
+	"LimitClass": ubx.FieldSpec{WireName: "limit_class"},
+}
 
 type CognitoIdpProvisionedLimitConfig struct {
 	// <p>The class and attributes that identify a specific limit at the account level.</p>
@@ -37,8 +37,8 @@ var CognitoIdpProvisionedLimit = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"LimitDefinition": ubx.FieldSpec{
 			WireName: "limit_definition",
-			Kind: "object",
-			Fields: CognitoIdpProvisionedLimit_Limit_LimitDefinitionFields,
+			Kind:     "object",
+			Fields:   CognitoIdpProvisionedLimit_Limit_LimitDefinitionFields,
 		},
 	},
 }

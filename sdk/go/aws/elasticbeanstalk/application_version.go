@@ -11,9 +11,9 @@ type ApplicationVersion_SourceBundle struct {
 }
 
 var ApplicationVersion_SourceBundleFields = ubx.FieldMap{
-		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
-		"S3Key": ubx.FieldSpec{WireName: "s3_key"},
-	}
+	"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
+	"S3Key":    ubx.FieldSpec{WireName: "s3_key"},
+}
 
 type ApplicationVersionConfig struct {
 	// The name of the Elastic Beanstalk application that is associated with this application version.
@@ -39,11 +39,11 @@ var ApplicationVersion = ubx.ResourceBinding{
 	WireType: "aws_elastic_beanstalk_application_version",
 	Fields: ubx.FieldMap{
 		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"SourceBundle": ubx.FieldSpec{
 			WireName: "source_bundle",
-			Kind: "object",
-			Fields: ApplicationVersion_SourceBundleFields,
+			Kind:     "object",
+			Fields:   ApplicationVersion_SourceBundleFields,
 		},
 	},
 }

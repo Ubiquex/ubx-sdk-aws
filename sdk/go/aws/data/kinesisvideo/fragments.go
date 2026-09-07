@@ -4,7 +4,7 @@ package kinesisvideo
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Fragments_FragmentSelector_TimestampRange struct {
-	EndTimestamp any
+	EndTimestamp   any
 	StartTimestamp any
 }
 
@@ -16,43 +16,43 @@ type Fragments_FragmentSelector struct {
 
 type Fragments_Fragments struct {
 	FragmentLengthInMilliseconds any
-	FragmentNumber any
-	FragmentSizeInBytes any
-	ProducerTimestamp any
-	ServerTimestamp any
+	FragmentNumber               any
+	FragmentSizeInBytes          any
+	ProducerTimestamp            any
+	ServerTimestamp              any
 }
 
 var Fragments_FragmentSelector_TimestampRangeFields = ubx.FieldMap{
-		"EndTimestamp": ubx.FieldSpec{WireName: "end_timestamp"},
-		"StartTimestamp": ubx.FieldSpec{WireName: "start_timestamp"},
-	}
+	"EndTimestamp":   ubx.FieldSpec{WireName: "end_timestamp"},
+	"StartTimestamp": ubx.FieldSpec{WireName: "start_timestamp"},
+}
 
 var Fragments_FragmentSelectorFields = ubx.FieldMap{
-		"FragmentSelectorType": ubx.FieldSpec{WireName: "fragment_selector_type"},
-		"TimestampRange": ubx.FieldSpec{
-			WireName: "timestamp_range",
-			Kind: "object",
-			Fields: Fragments_FragmentSelector_TimestampRangeFields,
-		},
-	}
+	"FragmentSelectorType": ubx.FieldSpec{WireName: "fragment_selector_type"},
+	"TimestampRange": ubx.FieldSpec{
+		WireName: "timestamp_range",
+		Kind:     "object",
+		Fields:   Fragments_FragmentSelector_TimestampRangeFields,
+	},
+}
 
 type FragmentsConfig struct {
 	// <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Only fragments with a start timestamp greater than or equal to the given start time and less than or equal to the end time are returned. For example, if a stream contains fragments with the following start timestamps: </p> <ul> <li> <p>00:00:00</p> </li> <li> <p>00:00:02</p> </li> <li> <p>00:00:04</p> </li> <li> <p>00:00:06</p> </li> </ul> <p> A fragment selector range with a start time of 00:00:01 and end time of 00:00:04 would return the fragments with start times of 00:00:02 and 00:00:04. </p>
 	FragmentSelector any
-	MaxResults any
-	NextToken any
-	StreamArn any
-	StreamName any
+	MaxResults       any
+	NextToken        any
+	StreamArn        any
+	StreamName       any
 }
 
 type FragmentsAttrs struct {
 	// <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Only fragments with a start timestamp greater than or equal to the given start time and less than or equal to the end time are returned. For example, if a stream contains fragments with the following start timestamps: </p> <ul> <li> <p>00:00:00</p> </li> <li> <p>00:00:02</p> </li> <li> <p>00:00:04</p> </li> <li> <p>00:00:06</p> </li> </ul> <p> A fragment selector range with a start time of 00:00:01 and end time of 00:00:04 would return the fragments with start times of 00:00:02 and 00:00:04. </p>
 	FragmentSelector any
-	Fragments any
-	MaxResults any
-	NextToken any
-	StreamArn any
-	StreamName any
+	Fragments        any
+	MaxResults       any
+	NextToken        any
+	StreamArn        any
+	StreamName       any
 }
 
 var Fragments = ubx.DataSourceBinding{
@@ -60,12 +60,12 @@ var Fragments = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"FragmentSelector": ubx.FieldSpec{
 			WireName: "fragment_selector",
-			Kind: "object",
-			Fields: Fragments_FragmentSelectorFields,
+			Kind:     "object",
+			Fields:   Fragments_FragmentSelectorFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"StreamArn":  ubx.FieldSpec{WireName: "stream_arn"},
 		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
 	},
 }

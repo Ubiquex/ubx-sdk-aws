@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PersonalizeRuntimeActionRecommendations_ActionList struct {
 	ActionId any
-	Score any
+	Score    any
 }
 
 type PersonalizeRuntimeActionRecommendationsConfig struct {
-	CampaignArn any
-	FilterArn any
+	CampaignArn  any
+	FilterArn    any
 	FilterValues any
-	NumResults any
-	UserId any
+	NumResults   any
+	UserId       any
 }
 
 type PersonalizeRuntimeActionRecommendationsAttrs struct {
-	ActionList any
-	CampaignArn any
-	FilterArn any
-	FilterValues any
-	NumResults any
+	ActionList       any
+	CampaignArn      any
+	FilterArn        any
+	FilterValues     any
+	NumResults       any
 	RecommendationId any
-	UserId any
+	UserId           any
 }
 
 var PersonalizeRuntimeActionRecommendations = ubx.DataSourceBinding{
 	WireType: "aws_personalize_runtime_action_recommendations",
 	Fields: ubx.FieldMap{
-		"CampaignArn": ubx.FieldSpec{WireName: "campaign_arn"},
-		"FilterArn": ubx.FieldSpec{WireName: "filter_arn"},
+		"CampaignArn":  ubx.FieldSpec{WireName: "campaign_arn"},
+		"FilterArn":    ubx.FieldSpec{WireName: "filter_arn"},
 		"FilterValues": ubx.FieldSpec{WireName: "filter_values"},
-		"NumResults": ubx.FieldSpec{WireName: "num_results"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"NumResults":   ubx.FieldSpec{WireName: "num_results"},
+		"UserId":       ubx.FieldSpec{WireName: "user_id"},
 	},
 }

@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsLexBotChannelAssociationConfig struct {
 	BotAlias any
-	BotName any
-	Name any
+	BotName  any
+	Name     any
 }
 
 type ModelsLexBotChannelAssociationAttrs struct {
-	BotAlias any
+	BotAlias         any
 	BotConfiguration any
-	BotName any
-	CreatedDate any
-	Description any
-	FailureReason any
-	Name any
-	Status any
-	Type any
+	BotName          any
+	CreatedDate      any
+	Description      any
+	FailureReason    any
+	Name             any
+	Status           any
+	Type             any
 }
 
 var ModelsLexBotChannelAssociation = ubx.DataSourceBinding{
 	WireType: "aws_models_lex_bot_channel_association",
 	Fields: ubx.FieldMap{
 		"BotAlias": ubx.FieldSpec{WireName: "bot_alias"},
-		"BotName": ubx.FieldSpec{WireName: "bot_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"BotName":  ubx.FieldSpec{WireName: "bot_name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 	},
 }

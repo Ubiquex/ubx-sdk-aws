@@ -52,61 +52,61 @@ type Bucket_LifecycleConfiguration struct {
 }
 
 var Bucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUploadFields = ubx.FieldMap{
-		"DaysAfterInitiation": ubx.FieldSpec{WireName: "days_after_initiation"},
-	}
+	"DaysAfterInitiation": ubx.FieldSpec{WireName: "days_after_initiation"},
+}
 
 var Bucket_LifecycleConfiguration_Rules_Filter_AndOperator_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Bucket_LifecycleConfiguration_Rules_Filter_AndOperatorFields = ubx.FieldMap{
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: Bucket_LifecycleConfiguration_Rules_Filter_AndOperator_TagsFields,
-		},
-	}
+	"Prefix": ubx.FieldSpec{WireName: "prefix"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   Bucket_LifecycleConfiguration_Rules_Filter_AndOperator_TagsFields,
+	},
+}
 
 var Bucket_LifecycleConfiguration_Rules_FilterFields = ubx.FieldMap{
-		"AndOperator": ubx.FieldSpec{
-			WireName: "and_operator",
-			Kind: "object",
-			Fields: Bucket_LifecycleConfiguration_Rules_Filter_AndOperatorFields,
-		},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"Tag": ubx.FieldSpec{
-			WireName: "tag",
-			Kind: "object",
-			Fields: Bucket_LifecycleConfiguration_Rules_Filter_AndOperator_TagsFields,
-		},
-	}
+	"AndOperator": ubx.FieldSpec{
+		WireName: "and_operator",
+		Kind:     "object",
+		Fields:   Bucket_LifecycleConfiguration_Rules_Filter_AndOperatorFields,
+	},
+	"Prefix": ubx.FieldSpec{WireName: "prefix"},
+	"Tag": ubx.FieldSpec{
+		WireName: "tag",
+		Kind:     "object",
+		Fields:   Bucket_LifecycleConfiguration_Rules_Filter_AndOperator_TagsFields,
+	},
+}
 
 var Bucket_LifecycleConfiguration_RulesFields = ubx.FieldMap{
-		"AbortIncompleteMultipartUpload": ubx.FieldSpec{
-			WireName: "abort_incomplete_multipart_upload",
-			Kind: "object",
-			Fields: Bucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUploadFields,
-		},
-		"ExpirationDate": ubx.FieldSpec{WireName: "expiration_date"},
-		"ExpirationInDays": ubx.FieldSpec{WireName: "expiration_in_days"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: Bucket_LifecycleConfiguration_Rules_FilterFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"AbortIncompleteMultipartUpload": ubx.FieldSpec{
+		WireName: "abort_incomplete_multipart_upload",
+		Kind:     "object",
+		Fields:   Bucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUploadFields,
+	},
+	"ExpirationDate":   ubx.FieldSpec{WireName: "expiration_date"},
+	"ExpirationInDays": ubx.FieldSpec{WireName: "expiration_in_days"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   Bucket_LifecycleConfiguration_Rules_FilterFields,
+	},
+	"Id":     ubx.FieldSpec{WireName: "id"},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var Bucket_LifecycleConfigurationFields = ubx.FieldMap{
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: Bucket_LifecycleConfiguration_RulesFields,
-		},
-	}
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   Bucket_LifecycleConfiguration_RulesFields,
+	},
+}
 
 type BucketConfig struct {
 	// A name for the bucket.
@@ -138,14 +138,14 @@ var Bucket = ubx.ResourceBinding{
 		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
 		"LifecycleConfiguration": ubx.FieldSpec{
 			WireName: "lifecycle_configuration",
-			Kind: "object",
-			Fields: Bucket_LifecycleConfigurationFields,
+			Kind:     "object",
+			Fields:   Bucket_LifecycleConfigurationFields,
 		},
 		"OutpostId": ubx.FieldSpec{WireName: "outpost_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Bucket_LifecycleConfiguration_Rules_Filter_AndOperator_TagsFields,
+			Kind:     "list",
+			Fields:   Bucket_LifecycleConfiguration_Rules_Filter_AndOperator_TagsFields,
 		},
 	},
 }

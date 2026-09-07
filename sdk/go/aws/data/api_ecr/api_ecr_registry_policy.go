@@ -13,6 +13,5 @@ type ApiEcrRegistryPolicyAttrs struct {
 
 var ApiEcrRegistryPolicy = ubx.DataSourceBinding{
 	WireType: "aws_api_ecr_registry_policy",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

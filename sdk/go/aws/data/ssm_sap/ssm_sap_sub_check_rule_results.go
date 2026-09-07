@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmSapSubCheckRuleResults_RuleResults struct {
 	Description any
-	Id any
-	Message any
-	Metadata any
-	Status any
+	Id          any
+	Message     any
+	Metadata    any
+	Status      any
 }
 
 type SsmSapSubCheckRuleResultsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	SubCheckResultId any
 }
 
 type SsmSapSubCheckRuleResultsAttrs struct {
-	MaxResults any
-	NextToken any
-	RuleResults any
+	MaxResults       any
+	NextToken        any
+	RuleResults      any
 	SubCheckResultId any
 }
 
 var SsmSapSubCheckRuleResults = ubx.DataSourceBinding{
 	WireType: "aws_ssm_sap_sub_check_rule_results",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"SubCheckResultId": ubx.FieldSpec{WireName: "sub_check_result_id"},
 	},
 }

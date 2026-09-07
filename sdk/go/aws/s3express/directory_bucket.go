@@ -93,84 +93,84 @@ type DirectoryBucket_Tags struct {
 }
 
 var DirectoryBucket_BucketEncryption_ServerSideEncryptionConfiguration_ServerSideEncryptionByDefaultFields = ubx.FieldMap{
-		"KmsmasterKeyId": ubx.FieldSpec{WireName: "kmsmaster_key_id"},
-		"Ssealgorithm": ubx.FieldSpec{WireName: "ssealgorithm"},
-	}
+	"KmsmasterKeyId": ubx.FieldSpec{WireName: "kmsmaster_key_id"},
+	"Ssealgorithm":   ubx.FieldSpec{WireName: "ssealgorithm"},
+}
 
 var DirectoryBucket_BucketEncryption_ServerSideEncryptionConfigurationFields = ubx.FieldMap{
-		"BucketKeyEnabled": ubx.FieldSpec{WireName: "bucket_key_enabled"},
-		"ServerSideEncryptionByDefault": ubx.FieldSpec{
-			WireName: "server_side_encryption_by_default",
-			Kind: "object",
-			Fields: DirectoryBucket_BucketEncryption_ServerSideEncryptionConfiguration_ServerSideEncryptionByDefaultFields,
-		},
-	}
+	"BucketKeyEnabled": ubx.FieldSpec{WireName: "bucket_key_enabled"},
+	"ServerSideEncryptionByDefault": ubx.FieldSpec{
+		WireName: "server_side_encryption_by_default",
+		Kind:     "object",
+		Fields:   DirectoryBucket_BucketEncryption_ServerSideEncryptionConfiguration_ServerSideEncryptionByDefaultFields,
+	},
+}
 
 var DirectoryBucket_BucketEncryptionFields = ubx.FieldMap{
-		"ServerSideEncryptionConfiguration": ubx.FieldSpec{
-			WireName: "server_side_encryption_configuration",
-			Kind: "list",
-			Fields: DirectoryBucket_BucketEncryption_ServerSideEncryptionConfigurationFields,
-		},
-	}
+	"ServerSideEncryptionConfiguration": ubx.FieldSpec{
+		WireName: "server_side_encryption_configuration",
+		Kind:     "list",
+		Fields:   DirectoryBucket_BucketEncryption_ServerSideEncryptionConfigurationFields,
+	},
+}
 
 var DirectoryBucket_InventoryConfigurations_DestinationFields = ubx.FieldMap{
-		"BucketAccountId": ubx.FieldSpec{WireName: "bucket_account_id"},
-		"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"BucketAccountId": ubx.FieldSpec{WireName: "bucket_account_id"},
+	"BucketArn":       ubx.FieldSpec{WireName: "bucket_arn"},
+	"Format":          ubx.FieldSpec{WireName: "format"},
+	"Prefix":          ubx.FieldSpec{WireName: "prefix"},
+}
 
 var DirectoryBucket_InventoryConfigurationsFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: DirectoryBucket_InventoryConfigurations_DestinationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IncludedObjectVersions": ubx.FieldSpec{WireName: "included_object_versions"},
-		"OptionalFields": ubx.FieldSpec{WireName: "optional_fields"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"ScheduleFrequency": ubx.FieldSpec{WireName: "schedule_frequency"},
-	}
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   DirectoryBucket_InventoryConfigurations_DestinationFields,
+	},
+	"Enabled":                ubx.FieldSpec{WireName: "enabled"},
+	"Id":                     ubx.FieldSpec{WireName: "id"},
+	"IncludedObjectVersions": ubx.FieldSpec{WireName: "included_object_versions"},
+	"OptionalFields":         ubx.FieldSpec{WireName: "optional_fields"},
+	"Prefix":                 ubx.FieldSpec{WireName: "prefix"},
+	"ScheduleFrequency":      ubx.FieldSpec{WireName: "schedule_frequency"},
+}
 
 var DirectoryBucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUploadFields = ubx.FieldMap{
-		"DaysAfterInitiation": ubx.FieldSpec{WireName: "days_after_initiation"},
-	}
+	"DaysAfterInitiation": ubx.FieldSpec{WireName: "days_after_initiation"},
+}
 
 var DirectoryBucket_LifecycleConfiguration_RulesFields = ubx.FieldMap{
-		"AbortIncompleteMultipartUpload": ubx.FieldSpec{
-			WireName: "abort_incomplete_multipart_upload",
-			Kind: "object",
-			Fields: DirectoryBucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUploadFields,
-		},
-		"ExpirationInDays": ubx.FieldSpec{WireName: "expiration_in_days"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"ObjectSizeGreaterThan": ubx.FieldSpec{WireName: "object_size_greater_than"},
-		"ObjectSizeLessThan": ubx.FieldSpec{WireName: "object_size_less_than"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"AbortIncompleteMultipartUpload": ubx.FieldSpec{
+		WireName: "abort_incomplete_multipart_upload",
+		Kind:     "object",
+		Fields:   DirectoryBucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUploadFields,
+	},
+	"ExpirationInDays":      ubx.FieldSpec{WireName: "expiration_in_days"},
+	"Id":                    ubx.FieldSpec{WireName: "id"},
+	"ObjectSizeGreaterThan": ubx.FieldSpec{WireName: "object_size_greater_than"},
+	"ObjectSizeLessThan":    ubx.FieldSpec{WireName: "object_size_less_than"},
+	"Prefix":                ubx.FieldSpec{WireName: "prefix"},
+	"Status":                ubx.FieldSpec{WireName: "status"},
+}
 
 var DirectoryBucket_LifecycleConfigurationFields = ubx.FieldMap{
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: DirectoryBucket_LifecycleConfiguration_RulesFields,
-		},
-	}
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   DirectoryBucket_LifecycleConfiguration_RulesFields,
+	},
+}
 
 var DirectoryBucket_MetricsConfigurationsFields = ubx.FieldMap{
-		"AccessPointArn": ubx.FieldSpec{WireName: "access_point_arn"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"AccessPointArn": ubx.FieldSpec{WireName: "access_point_arn"},
+	"Id":             ubx.FieldSpec{WireName: "id"},
+	"Prefix":         ubx.FieldSpec{WireName: "prefix"},
+}
 
 var DirectoryBucket_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DirectoryBucketConfig struct {
 	// Specifies default encryption for a bucket using server-side encryption with Amazon S3 managed keys (SSE-S3) or AWS KMS keys (SSE-KMS).
@@ -219,31 +219,31 @@ var DirectoryBucket = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BucketEncryption": ubx.FieldSpec{
 			WireName: "bucket_encryption",
-			Kind: "object",
-			Fields: DirectoryBucket_BucketEncryptionFields,
+			Kind:     "object",
+			Fields:   DirectoryBucket_BucketEncryptionFields,
 		},
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+		"BucketName":     ubx.FieldSpec{WireName: "bucket_name"},
 		"DataRedundancy": ubx.FieldSpec{WireName: "data_redundancy"},
 		"InventoryConfigurations": ubx.FieldSpec{
 			WireName: "inventory_configurations",
-			Kind: "list",
-			Fields: DirectoryBucket_InventoryConfigurationsFields,
+			Kind:     "list",
+			Fields:   DirectoryBucket_InventoryConfigurationsFields,
 		},
 		"LifecycleConfiguration": ubx.FieldSpec{
 			WireName: "lifecycle_configuration",
-			Kind: "object",
-			Fields: DirectoryBucket_LifecycleConfigurationFields,
+			Kind:     "object",
+			Fields:   DirectoryBucket_LifecycleConfigurationFields,
 		},
 		"LocationName": ubx.FieldSpec{WireName: "location_name"},
 		"MetricsConfigurations": ubx.FieldSpec{
 			WireName: "metrics_configurations",
-			Kind: "list",
-			Fields: DirectoryBucket_MetricsConfigurationsFields,
+			Kind:     "list",
+			Fields:   DirectoryBucket_MetricsConfigurationsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DirectoryBucket_TagsFields,
+			Kind:     "list",
+			Fields:   DirectoryBucket_TagsFields,
 		},
 	},
 }

@@ -42,11 +42,11 @@ type RunGroupAttrs struct {
 var RunGroup = ubx.ResourceBinding{
 	WireType: "aws_omics_run_group",
 	Fields: ubx.FieldMap{
-		"MaxCpus": ubx.FieldSpec{WireName: "max_cpus"},
+		"MaxCpus":     ubx.FieldSpec{WireName: "max_cpus"},
 		"MaxDuration": ubx.FieldSpec{WireName: "max_duration"},
-		"MaxGpus": ubx.FieldSpec{WireName: "max_gpus"},
-		"MaxRuns": ubx.FieldSpec{WireName: "max_runs"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"MaxGpus":     ubx.FieldSpec{WireName: "max_gpus"},
+		"MaxRuns":     ubx.FieldSpec{WireName: "max_runs"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 	},
 }

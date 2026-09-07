@@ -83,83 +83,83 @@ type ConfigurationSet_VdmOptions struct {
 }
 
 var ConfigurationSet_ArchivingOptionsFields = ubx.FieldMap{
-		"ArchiveArn": ubx.FieldSpec{WireName: "archive_arn"},
-	}
+	"ArchiveArn": ubx.FieldSpec{WireName: "archive_arn"},
+}
 
 var ConfigurationSet_DeliveryOptionsFields = ubx.FieldMap{
-		"MaxDeliverySeconds": ubx.FieldSpec{WireName: "max_delivery_seconds"},
-		"SendingPoolName": ubx.FieldSpec{WireName: "sending_pool_name"},
-		"TlsPolicy": ubx.FieldSpec{WireName: "tls_policy"},
-	}
+	"MaxDeliverySeconds": ubx.FieldSpec{WireName: "max_delivery_seconds"},
+	"SendingPoolName":    ubx.FieldSpec{WireName: "sending_pool_name"},
+	"TlsPolicy":          ubx.FieldSpec{WireName: "tls_policy"},
+}
 
 var ConfigurationSet_ReputationOptionsFields = ubx.FieldMap{
-		"ReputationMetricsEnabled": ubx.FieldSpec{WireName: "reputation_metrics_enabled"},
-	}
+	"ReputationMetricsEnabled": ubx.FieldSpec{WireName: "reputation_metrics_enabled"},
+}
 
 var ConfigurationSet_SendingOptionsFields = ubx.FieldMap{
-		"SendingEnabled": ubx.FieldSpec{WireName: "sending_enabled"},
-	}
+	"SendingEnabled": ubx.FieldSpec{WireName: "sending_enabled"},
+}
 
 var ConfigurationSet_SuppressionOptions_ValidationOptions_ConditionThreshold_OverallConfidenceThresholdFields = ubx.FieldMap{
-		"ConfidenceVerdictThreshold": ubx.FieldSpec{WireName: "confidence_verdict_threshold"},
-	}
+	"ConfidenceVerdictThreshold": ubx.FieldSpec{WireName: "confidence_verdict_threshold"},
+}
 
 var ConfigurationSet_SuppressionOptions_ValidationOptions_ConditionThresholdFields = ubx.FieldMap{
-		"ConditionThresholdEnabled": ubx.FieldSpec{WireName: "condition_threshold_enabled"},
-		"OverallConfidenceThreshold": ubx.FieldSpec{
-			WireName: "overall_confidence_threshold",
-			Kind: "object",
-			Fields: ConfigurationSet_SuppressionOptions_ValidationOptions_ConditionThreshold_OverallConfidenceThresholdFields,
-		},
-	}
+	"ConditionThresholdEnabled": ubx.FieldSpec{WireName: "condition_threshold_enabled"},
+	"OverallConfidenceThreshold": ubx.FieldSpec{
+		WireName: "overall_confidence_threshold",
+		Kind:     "object",
+		Fields:   ConfigurationSet_SuppressionOptions_ValidationOptions_ConditionThreshold_OverallConfidenceThresholdFields,
+	},
+}
 
 var ConfigurationSet_SuppressionOptions_ValidationOptionsFields = ubx.FieldMap{
-		"ConditionThreshold": ubx.FieldSpec{
-			WireName: "condition_threshold",
-			Kind: "object",
-			Fields: ConfigurationSet_SuppressionOptions_ValidationOptions_ConditionThresholdFields,
-		},
-	}
+	"ConditionThreshold": ubx.FieldSpec{
+		WireName: "condition_threshold",
+		Kind:     "object",
+		Fields:   ConfigurationSet_SuppressionOptions_ValidationOptions_ConditionThresholdFields,
+	},
+}
 
 var ConfigurationSet_SuppressionOptionsFields = ubx.FieldMap{
-		"SuppressedReasons": ubx.FieldSpec{WireName: "suppressed_reasons"},
-		"ValidationOptions": ubx.FieldSpec{
-			WireName: "validation_options",
-			Kind: "object",
-			Fields: ConfigurationSet_SuppressionOptions_ValidationOptionsFields,
-		},
-	}
+	"SuppressedReasons": ubx.FieldSpec{WireName: "suppressed_reasons"},
+	"ValidationOptions": ubx.FieldSpec{
+		WireName: "validation_options",
+		Kind:     "object",
+		Fields:   ConfigurationSet_SuppressionOptions_ValidationOptionsFields,
+	},
+}
 
 var ConfigurationSet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ConfigurationSet_TrackingOptionsFields = ubx.FieldMap{
-		"CustomRedirectDomain": ubx.FieldSpec{WireName: "custom_redirect_domain"},
-		"HttpsPolicy": ubx.FieldSpec{WireName: "https_policy"},
-	}
+	"CustomRedirectDomain": ubx.FieldSpec{WireName: "custom_redirect_domain"},
+	"HttpsPolicy":          ubx.FieldSpec{WireName: "https_policy"},
+}
 
 var ConfigurationSet_VdmOptions_DashboardOptionsFields = ubx.FieldMap{
-		"EngagementMetrics": ubx.FieldSpec{WireName: "engagement_metrics"},
-	}
+	"EngagementMetrics": ubx.FieldSpec{WireName: "engagement_metrics"},
+}
 
 var ConfigurationSet_VdmOptions_GuardianOptionsFields = ubx.FieldMap{
-		"OptimizedSharedDelivery": ubx.FieldSpec{WireName: "optimized_shared_delivery"},
-	}
+	"OptimizedSharedDelivery": ubx.FieldSpec{WireName: "optimized_shared_delivery"},
+}
 
 var ConfigurationSet_VdmOptionsFields = ubx.FieldMap{
-		"DashboardOptions": ubx.FieldSpec{
-			WireName: "dashboard_options",
-			Kind: "object",
-			Fields: ConfigurationSet_VdmOptions_DashboardOptionsFields,
-		},
-		"GuardianOptions": ubx.FieldSpec{
-			WireName: "guardian_options",
-			Kind: "object",
-			Fields: ConfigurationSet_VdmOptions_GuardianOptionsFields,
-		},
-	}
+	"DashboardOptions": ubx.FieldSpec{
+		WireName: "dashboard_options",
+		Kind:     "object",
+		Fields:   ConfigurationSet_VdmOptions_DashboardOptionsFields,
+	},
+	"GuardianOptions": ubx.FieldSpec{
+		WireName: "guardian_options",
+		Kind:     "object",
+		Fields:   ConfigurationSet_VdmOptions_GuardianOptionsFields,
+	},
+}
 
 type ConfigurationSetConfig struct {
 	// An object that defines a MailManager archive that is used to preserve emails that you send using the configuration set.
@@ -208,44 +208,44 @@ var ConfigurationSet = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ArchivingOptions": ubx.FieldSpec{
 			WireName: "archiving_options",
-			Kind: "object",
-			Fields: ConfigurationSet_ArchivingOptionsFields,
+			Kind:     "object",
+			Fields:   ConfigurationSet_ArchivingOptionsFields,
 		},
 		"DeliveryOptions": ubx.FieldSpec{
 			WireName: "delivery_options",
-			Kind: "object",
-			Fields: ConfigurationSet_DeliveryOptionsFields,
+			Kind:     "object",
+			Fields:   ConfigurationSet_DeliveryOptionsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ReputationOptions": ubx.FieldSpec{
 			WireName: "reputation_options",
-			Kind: "object",
-			Fields: ConfigurationSet_ReputationOptionsFields,
+			Kind:     "object",
+			Fields:   ConfigurationSet_ReputationOptionsFields,
 		},
 		"SendingOptions": ubx.FieldSpec{
 			WireName: "sending_options",
-			Kind: "object",
-			Fields: ConfigurationSet_SendingOptionsFields,
+			Kind:     "object",
+			Fields:   ConfigurationSet_SendingOptionsFields,
 		},
 		"SuppressionOptions": ubx.FieldSpec{
 			WireName: "suppression_options",
-			Kind: "object",
-			Fields: ConfigurationSet_SuppressionOptionsFields,
+			Kind:     "object",
+			Fields:   ConfigurationSet_SuppressionOptionsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ConfigurationSet_TagsFields,
+			Kind:     "list",
+			Fields:   ConfigurationSet_TagsFields,
 		},
 		"TrackingOptions": ubx.FieldSpec{
 			WireName: "tracking_options",
-			Kind: "object",
-			Fields: ConfigurationSet_TrackingOptionsFields,
+			Kind:     "object",
+			Fields:   ConfigurationSet_TrackingOptionsFields,
 		},
 		"VdmOptions": ubx.FieldSpec{
 			WireName: "vdm_options",
-			Kind: "object",
-			Fields: ConfigurationSet_VdmOptionsFields,
+			Kind:     "object",
+			Fields:   ConfigurationSet_VdmOptionsFields,
 		},
 	},
 }

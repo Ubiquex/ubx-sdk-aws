@@ -24,8 +24,8 @@ type CoreNetworkPrefixListAssociationAttrs struct {
 var CoreNetworkPrefixListAssociation = ubx.ResourceBinding{
 	WireType: "aws_network_manager_core_network_prefix_list_association",
 	Fields: ubx.FieldMap{
-		"CoreNetworkId": ubx.FieldSpec{WireName: "core_network_id"},
+		"CoreNetworkId":   ubx.FieldSpec{WireName: "core_network_id"},
 		"PrefixListAlias": ubx.FieldSpec{WireName: "prefix_list_alias"},
-		"PrefixListArn": ubx.FieldSpec{WireName: "prefix_list_arn"},
+		"PrefixListArn":   ubx.FieldSpec{WireName: "prefix_list_arn"},
 	},
 }

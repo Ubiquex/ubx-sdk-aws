@@ -4,33 +4,33 @@ package migrationhub_strategy
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MigrationhubStrategyServerDetails_AssociatedApplications struct {
-	Id any
+	Id   any
 	Name any
 }
 
 type MigrationhubStrategyServerDetails_ServerDetail_AntipatternReportS3Object struct {
 	S3Bucket any
-	S3key any
+	S3key    any
 }
 
 type MigrationhubStrategyServerDetails_ServerDetail_ApplicationComponentStrategySummary struct {
-	Count any
+	Count    any
 	Strategy any
 }
 
 type MigrationhubStrategyServerDetails_ServerDetail_ListAntipatternSeveritySummary struct {
-	Count any
+	Count    any
 	Severity any
 }
 
 type MigrationhubStrategyServerDetails_ServerDetail_RecommendationSet_TransformationTool struct {
-	Description any
-	Name any
+	Description                       any
+	Name                              any
 	TranformationToolInstallationLink any
 }
 
 type MigrationhubStrategyServerDetails_ServerDetail_RecommendationSet struct {
-	Strategy any
+	Strategy          any
 	TargetDestination any
 	// <p> Information of the transformation tool that can be used to migrate and modernize the application. </p>
 	TransformationTool any
@@ -42,19 +42,19 @@ type MigrationhubStrategyServerDetails_ServerDetail_ServerError struct {
 
 type MigrationhubStrategyServerDetails_ServerDetail_SystemInfo_NetworkInfoList struct {
 	InterfaceName any
-	IpAddress any
-	MacAddress any
-	NetMask any
+	IpAddress     any
+	MacAddress    any
+	NetMask       any
 }
 
 type MigrationhubStrategyServerDetails_ServerDetail_SystemInfo_OsInfo struct {
-	Type any
+	Type    any
 	Version any
 }
 
 type MigrationhubStrategyServerDetails_ServerDetail_SystemInfo struct {
 	CpuArchitecture any
-	FileSystemType any
+	FileSystemType  any
 	NetworkInfoList any
 	// <p> Information about the operating system. </p>
 	OsInfo any
@@ -62,20 +62,20 @@ type MigrationhubStrategyServerDetails_ServerDetail_SystemInfo struct {
 
 type MigrationhubStrategyServerDetails_ServerDetail struct {
 	// <p> Contains the S3 bucket name and the Amazon S3 key name. </p>
-	AntipatternReportS3Object any
-	AntipatternReportStatus any
-	AntipatternReportStatusMessage any
+	AntipatternReportS3Object           any
+	AntipatternReportStatus             any
+	AntipatternReportStatusMessage      any
 	ApplicationComponentStrategySummary any
-	DataCollectionStatus any
-	Id any
-	LastAnalyzedTimestamp any
-	ListAntipatternSeveritySummary any
-	Name any
+	DataCollectionStatus                any
+	Id                                  any
+	LastAnalyzedTimestamp               any
+	ListAntipatternSeveritySummary      any
+	Name                                any
 	// <p> Contains a recommendation set. </p>
 	RecommendationSet any
 	// <p>The error in server analysis.</p>
-	ServerError any
-	ServerType any
+	ServerError   any
+	ServerType    any
 	StatusMessage any
 	// <p> Information about the server that hosts application components. </p>
 	SystemInfo any
@@ -83,24 +83,24 @@ type MigrationhubStrategyServerDetails_ServerDetail struct {
 
 type MigrationhubStrategyServerDetailsConfig struct {
 	MaxResults any
-	NextToken any
-	ServerId any
+	NextToken  any
+	ServerId   any
 }
 
 type MigrationhubStrategyServerDetailsAttrs struct {
 	AssociatedApplications any
-	MaxResults any
-	NextToken any
+	MaxResults             any
+	NextToken              any
 	// <p> Detailed information about a server. </p>
 	ServerDetail any
-	ServerId any
+	ServerId     any
 }
 
 var MigrationhubStrategyServerDetails = ubx.DataSourceBinding{
 	WireType: "aws_migrationhub_strategy_server_details",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ServerId": ubx.FieldSpec{WireName: "server_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"ServerId":   ubx.FieldSpec{WireName: "server_id"},
 	},
 }

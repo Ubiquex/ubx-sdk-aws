@@ -28,38 +28,38 @@ type ChannelFlow_Processors struct {
 
 type ChannelFlow_Tags struct {
 	// The key of a tag attached to the Chime ChannelFlow resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var ChannelFlow_Processors_Configuration_LambdaFields = ubx.FieldMap{
-		"InvocationType": ubx.FieldSpec{WireName: "invocation_type"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-	}
+	"InvocationType": ubx.FieldSpec{WireName: "invocation_type"},
+	"ResourceArn":    ubx.FieldSpec{WireName: "resource_arn"},
+}
 
 var ChannelFlow_Processors_ConfigurationFields = ubx.FieldMap{
-		"Lambda": ubx.FieldSpec{
-			WireName: "lambda",
-			Kind: "object",
-			Fields: ChannelFlow_Processors_Configuration_LambdaFields,
-		},
-	}
+	"Lambda": ubx.FieldSpec{
+		WireName: "lambda",
+		Kind:     "object",
+		Fields:   ChannelFlow_Processors_Configuration_LambdaFields,
+	},
+}
 
 var ChannelFlow_ProcessorsFields = ubx.FieldMap{
-		"Configuration": ubx.FieldSpec{
-			WireName: "configuration",
-			Kind: "object",
-			Fields: ChannelFlow_Processors_ConfigurationFields,
-		},
-		"ExecutionOrder": ubx.FieldSpec{WireName: "execution_order"},
-		"FallbackAction": ubx.FieldSpec{WireName: "fallback_action"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Configuration": ubx.FieldSpec{
+		WireName: "configuration",
+		Kind:     "object",
+		Fields:   ChannelFlow_Processors_ConfigurationFields,
+	},
+	"ExecutionOrder": ubx.FieldSpec{WireName: "execution_order"},
+	"FallbackAction": ubx.FieldSpec{WireName: "fallback_action"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+}
 
 var ChannelFlow_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ChannelFlowConfig struct {
 	// The ARN of the app instance.
@@ -97,16 +97,16 @@ var ChannelFlow = ubx.ResourceBinding{
 	WireType: "aws_chime_channel_flow",
 	Fields: ubx.FieldMap{
 		"AppInstanceArn": ubx.FieldSpec{WireName: "app_instance_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"Processors": ubx.FieldSpec{
 			WireName: "processors",
-			Kind: "list",
-			Fields: ChannelFlow_ProcessorsFields,
+			Kind:     "list",
+			Fields:   ChannelFlow_ProcessorsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ChannelFlow_TagsFields,
+			Kind:     "list",
+			Fields:   ChannelFlow_TagsFields,
 		},
 	},
 }

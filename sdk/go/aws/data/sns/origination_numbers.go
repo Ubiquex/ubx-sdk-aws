@@ -4,22 +4,22 @@ package sns
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OriginationNumbers_PhoneNumbers struct {
-	CreatedAt any
-	Iso2CountryCode any
+	CreatedAt          any
+	Iso2CountryCode    any
 	NumberCapabilities any
-	PhoneNumber any
-	RouteType any
-	Status any
+	PhoneNumber        any
+	RouteType          any
+	Status             any
 }
 
 type OriginationNumbersConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type OriginationNumbersAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// List of customer owned phone numbers.
 	PhoneNumbers any
 }
@@ -28,6 +28,6 @@ var OriginationNumbers = ubx.DataSourceBinding{
 	WireType: "aws_sns_origination_numbers",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -18,18 +18,18 @@ type FargateProfile_Selectors struct {
 }
 
 var FargateProfile_Selectors_LabelsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var FargateProfile_SelectorsFields = ubx.FieldMap{
-		"Labels": ubx.FieldSpec{
-			WireName: "labels",
-			Kind: "list",
-			Fields: FargateProfile_Selectors_LabelsFields,
-		},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Labels": ubx.FieldSpec{
+		WireName: "labels",
+		Kind:     "list",
+		Fields:   FargateProfile_Selectors_LabelsFields,
+	},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+}
 
 type FargateProfileConfig struct {
 	// Name of the Cluster
@@ -66,19 +66,19 @@ type FargateProfileAttrs struct {
 var FargateProfile = ubx.ResourceBinding{
 	WireType: "aws_eks_fargate_profile",
 	Fields: ubx.FieldMap{
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"FargateProfileName": ubx.FieldSpec{WireName: "fargate_profile_name"},
+		"ClusterName":         ubx.FieldSpec{WireName: "cluster_name"},
+		"FargateProfileName":  ubx.FieldSpec{WireName: "fargate_profile_name"},
 		"PodExecutionRoleArn": ubx.FieldSpec{WireName: "pod_execution_role_arn"},
 		"Selectors": ubx.FieldSpec{
 			WireName: "selectors",
-			Kind: "list",
-			Fields: FargateProfile_SelectorsFields,
+			Kind:     "list",
+			Fields:   FargateProfile_SelectorsFields,
 		},
 		"Subnets": ubx.FieldSpec{WireName: "subnets"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FargateProfile_Selectors_LabelsFields,
+			Kind:     "list",
+			Fields:   FargateProfile_Selectors_LabelsFields,
 		},
 	},
 }

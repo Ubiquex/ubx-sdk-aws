@@ -4,32 +4,32 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BehaviorModelTrainingSummaries_Summaries struct {
-	BehaviorName any
-	DatapointsCollectionPercentage any
-	LastModelRefreshDate any
-	ModelStatus any
-	SecurityProfileName any
+	BehaviorName                    any
+	DatapointsCollectionPercentage  any
+	LastModelRefreshDate            any
+	ModelStatus                     any
+	SecurityProfileName             any
 	TrainingDataCollectionStartDate any
 }
 
 type BehaviorModelTrainingSummariesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 	SecurityProfileName any
 }
 
 type BehaviorModelTrainingSummariesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 	SecurityProfileName any
-	Summaries any
+	Summaries           any
 }
 
 var BehaviorModelTrainingSummaries = ubx.DataSourceBinding{
 	WireType: "aws_iot_behavior_model_training_summaries",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 		"SecurityProfileName": ubx.FieldSpec{WireName: "security_profile_name"},
 	},
 }

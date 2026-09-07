@@ -28,9 +28,9 @@ type PortfolioShareAttrs struct {
 var PortfolioShare = ubx.ResourceBinding{
 	WireType: "aws_service_catalog_portfolio_share",
 	Fields: ubx.FieldMap{
-		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PortfolioId": ubx.FieldSpec{WireName: "portfolio_id"},
+		"AcceptLanguage":  ubx.FieldSpec{WireName: "accept_language"},
+		"AccountId":       ubx.FieldSpec{WireName: "account_id"},
+		"PortfolioId":     ubx.FieldSpec{WireName: "portfolio_id"},
 		"ShareTagOptions": ubx.FieldSpec{WireName: "share_tag_options"},
 	},
 }

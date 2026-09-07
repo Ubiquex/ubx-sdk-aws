@@ -4,49 +4,49 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Schemas_RegistryId struct {
-	RegistryArn any
+	RegistryArn  any
 	RegistryName any
 }
 
 type Schemas_Schemas struct {
-	CreatedTime any
-	Description any
+	CreatedTime  any
+	Description  any
 	RegistryName any
-	SchemaArn any
-	SchemaName any
+	SchemaArn    any
+	SchemaName   any
 	SchemaStatus any
-	UpdatedTime any
+	UpdatedTime  any
 }
 
 var Schemas_RegistryIdFields = ubx.FieldMap{
-		"RegistryArn": ubx.FieldSpec{WireName: "registry_arn"},
-		"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
-	}
+	"RegistryArn":  ubx.FieldSpec{WireName: "registry_arn"},
+	"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
+}
 
 type SchemasConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
 	RegistryId any
 }
 
 type SchemasAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
 	RegistryId any
-	Schemas any
+	Schemas    any
 }
 
 var Schemas = ubx.DataSourceBinding{
 	WireType: "aws_glue_schemas",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"RegistryId": ubx.FieldSpec{
 			WireName: "registry_id",
-			Kind: "object",
-			Fields: Schemas_RegistryIdFields,
+			Kind:     "object",
+			Fields:   Schemas_RegistryIdFields,
 		},
 	},
 }

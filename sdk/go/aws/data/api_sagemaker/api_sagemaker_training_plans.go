@@ -4,68 +4,68 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerTrainingPlans_Filters struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type ApiSagemakerTrainingPlans_TrainingPlanSummaries_ReservedCapacitySummaries struct {
-	AvailabilityZone any
-	AvailabilityZoneId any
-	DurationHours any
-	DurationMinutes any
-	EndTime any
-	InstanceType any
-	ReservedCapacityArn any
+	AvailabilityZone     any
+	AvailabilityZoneId   any
+	DurationHours        any
+	DurationMinutes      any
+	EndTime              any
+	InstanceType         any
+	ReservedCapacityArn  any
 	ReservedCapacityType any
-	StartTime any
-	Status any
-	TotalInstanceCount any
-	UltraServerCount any
-	UltraServerType any
+	StartTime            any
+	Status               any
+	TotalInstanceCount   any
+	UltraServerCount     any
+	UltraServerType      any
 }
 
 type ApiSagemakerTrainingPlans_TrainingPlanSummaries struct {
-	AvailableInstanceCount any
-	CurrencyCode any
-	DurationHours any
-	DurationMinutes any
-	EndTime any
-	InUseInstanceCount any
+	AvailableInstanceCount    any
+	CurrencyCode              any
+	DurationHours             any
+	DurationMinutes           any
+	EndTime                   any
+	InUseInstanceCount        any
 	ReservedCapacitySummaries any
-	StartTime any
-	Status any
-	StatusMessage any
-	TargetResources any
-	TotalInstanceCount any
-	TotalUltraServerCount any
-	TrainingPlanArn any
-	TrainingPlanName any
-	UpfrontFee any
+	StartTime                 any
+	Status                    any
+	StatusMessage             any
+	TargetResources           any
+	TotalInstanceCount        any
+	TotalUltraServerCount     any
+	TrainingPlanArn           any
+	TrainingPlanName          any
+	UpfrontFee                any
 }
 
 var ApiSagemakerTrainingPlans_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApiSagemakerTrainingPlansConfig struct {
-	Filters any
-	MaxResults any
-	NextToken any
-	SortBy any
-	SortOrder any
-	StartTimeAfter any
+	Filters         any
+	MaxResults      any
+	NextToken       any
+	SortBy          any
+	SortOrder       any
+	StartTimeAfter  any
 	StartTimeBefore any
 }
 
 type ApiSagemakerTrainingPlansAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
-	SortBy any
-	SortOrder any
-	StartTimeAfter any
-	StartTimeBefore any
+	Filters               any
+	MaxResults            any
+	NextToken             any
+	SortBy                any
+	SortOrder             any
+	StartTimeAfter        any
+	StartTimeBefore       any
 	TrainingPlanSummaries any
 }
 
@@ -74,14 +74,14 @@ var ApiSagemakerTrainingPlans = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ApiSagemakerTrainingPlans_FiltersFields,
+			Kind:     "list",
+			Fields:   ApiSagemakerTrainingPlans_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"StartTimeAfter": ubx.FieldSpec{WireName: "start_time_after"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":          ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":       ubx.FieldSpec{WireName: "sort_order"},
+		"StartTimeAfter":  ubx.FieldSpec{WireName: "start_time_after"},
 		"StartTimeBefore": ubx.FieldSpec{WireName: "start_time_before"},
 	},
 }

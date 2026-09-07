@@ -10,9 +10,9 @@ type RepositoryLink_Tags struct {
 }
 
 var RepositoryLink_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RepositoryLinkConfig struct {
 	// The Amazon Resource Name (ARN) of the CodeStarConnection. The ARN is used as the connection reference when the connection is shared between AWS services.
@@ -49,14 +49,14 @@ type RepositoryLinkAttrs struct {
 var RepositoryLink = ubx.ResourceBinding{
 	WireType: "aws_code_star_connections_repository_link",
 	Fields: ubx.FieldMap{
-		"ConnectionArn": ubx.FieldSpec{WireName: "connection_arn"},
+		"ConnectionArn":    ubx.FieldSpec{WireName: "connection_arn"},
 		"EncryptionKeyArn": ubx.FieldSpec{WireName: "encryption_key_arn"},
-		"OwnerId": ubx.FieldSpec{WireName: "owner_id"},
-		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
+		"OwnerId":          ubx.FieldSpec{WireName: "owner_id"},
+		"RepositoryName":   ubx.FieldSpec{WireName: "repository_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RepositoryLink_TagsFields,
+			Kind:     "list",
+			Fields:   RepositoryLink_TagsFields,
 		},
 	},
 }

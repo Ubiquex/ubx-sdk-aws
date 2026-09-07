@@ -5,11 +5,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DetectMitigationActionsTasks_Tasks_ActionsDefinition_ActionParams_AddThingsToThingGroupParams struct {
 	OverrideDynamicGroups any
-	ThingGroupNames any
+	ThingGroupNames       any
 }
 
 type DetectMitigationActionsTasks_Tasks_ActionsDefinition_ActionParams_EnableIoTloggingParams struct {
-	LogLevel any
+	LogLevel          any
 	RoleArnForLogging any
 }
 
@@ -26,72 +26,72 @@ type DetectMitigationActionsTasks_Tasks_ActionsDefinition_ActionParams_UpdateCac
 }
 
 type DetectMitigationActionsTasks_Tasks_ActionsDefinition_ActionParams struct {
-	AddThingsToThingGroupParams any
-	EnableIoTloggingParams any
-	PublishFindingToSnsParams any
+	AddThingsToThingGroupParams       any
+	EnableIoTloggingParams            any
+	PublishFindingToSnsParams         any
 	ReplaceDefaultPolicyVersionParams any
-	UpdateCacertificateParams any
-	UpdateDeviceCertificateParams any
+	UpdateCacertificateParams         any
+	UpdateDeviceCertificateParams     any
 }
 
 type DetectMitigationActionsTasks_Tasks_ActionsDefinition struct {
 	ActionParams any
-	Id any
-	Name any
-	RoleArn any
+	Id           any
+	Name         any
+	RoleArn      any
 }
 
 type DetectMitigationActionsTasks_Tasks_Target struct {
-	BehaviorName any
+	BehaviorName        any
 	SecurityProfileName any
-	ViolationIds any
+	ViolationIds        any
 }
 
 type DetectMitigationActionsTasks_Tasks_TaskStatistics struct {
 	ActionsExecuted any
-	ActionsFailed any
-	ActionsSkipped any
+	ActionsFailed   any
+	ActionsSkipped  any
 }
 
 type DetectMitigationActionsTasks_Tasks_ViolationEventOccurrenceRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type DetectMitigationActionsTasks_Tasks struct {
-	ActionsDefinition any
-	OnlyActiveViolationsIncluded any
-	SuppressedAlertsIncluded any
-	Target any
-	TaskEndTime any
-	TaskId any
-	TaskStartTime any
-	TaskStatistics any
-	TaskStatus any
+	ActionsDefinition             any
+	OnlyActiveViolationsIncluded  any
+	SuppressedAlertsIncluded      any
+	Target                        any
+	TaskEndTime                   any
+	TaskId                        any
+	TaskStartTime                 any
+	TaskStatistics                any
+	TaskStatus                    any
 	ViolationEventOccurrenceRange any
 }
 
 type DetectMitigationActionsTasksConfig struct {
-	EndTime any
+	EndTime    any
 	MaxResults any
-	NextToken any
-	StartTime any
+	NextToken  any
+	StartTime  any
 }
 
 type DetectMitigationActionsTasksAttrs struct {
-	EndTime any
+	EndTime    any
 	MaxResults any
-	NextToken any
-	StartTime any
-	Tasks any
+	NextToken  any
+	StartTime  any
+	Tasks      any
 }
 
 var DetectMitigationActionsTasks = ubx.DataSourceBinding{
 	WireType: "aws_iot_detect_mitigation_actions_tasks",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":    ubx.FieldSpec{WireName: "end_time"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"StartTime":  ubx.FieldSpec{WireName: "start_time"},
 	},
 }

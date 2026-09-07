@@ -11,9 +11,9 @@ type LocalGatewayVirtualInterface_Tags struct {
 }
 
 var LocalGatewayVirtualInterface_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LocalGatewayVirtualInterfaceConfig struct {
 	// The local address.
@@ -66,16 +66,16 @@ type LocalGatewayVirtualInterfaceAttrs struct {
 var LocalGatewayVirtualInterface = ubx.ResourceBinding{
 	WireType: "aws_ec2_local_gateway_virtual_interface",
 	Fields: ubx.FieldMap{
-		"LocalAddress": ubx.FieldSpec{WireName: "local_address"},
+		"LocalAddress":                        ubx.FieldSpec{WireName: "local_address"},
 		"LocalGatewayVirtualInterfaceGroupId": ubx.FieldSpec{WireName: "local_gateway_virtual_interface_group_id"},
-		"OutpostLagId": ubx.FieldSpec{WireName: "outpost_lag_id"},
-		"PeerAddress": ubx.FieldSpec{WireName: "peer_address"},
-		"PeerBgpAsn": ubx.FieldSpec{WireName: "peer_bgp_asn"},
-		"PeerBgpAsnExtended": ubx.FieldSpec{WireName: "peer_bgp_asn_extended"},
+		"OutpostLagId":                        ubx.FieldSpec{WireName: "outpost_lag_id"},
+		"PeerAddress":                         ubx.FieldSpec{WireName: "peer_address"},
+		"PeerBgpAsn":                          ubx.FieldSpec{WireName: "peer_bgp_asn"},
+		"PeerBgpAsnExtended":                  ubx.FieldSpec{WireName: "peer_bgp_asn_extended"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LocalGatewayVirtualInterface_TagsFields,
+			Kind:     "list",
+			Fields:   LocalGatewayVirtualInterface_TagsFields,
 		},
 		"Vlan": ubx.FieldSpec{WireName: "vlan"},
 	},

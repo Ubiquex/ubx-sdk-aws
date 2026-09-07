@@ -18,14 +18,14 @@ type Link_Tags struct {
 }
 
 var Link_BandwidthFields = ubx.FieldMap{
-		"DownloadSpeed": ubx.FieldSpec{WireName: "download_speed"},
-		"UploadSpeed": ubx.FieldSpec{WireName: "upload_speed"},
-	}
+	"DownloadSpeed": ubx.FieldSpec{WireName: "download_speed"},
+	"UploadSpeed":   ubx.FieldSpec{WireName: "upload_speed"},
+}
 
 var Link_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LinkConfig struct {
 	// The bandwidth for the link.
@@ -74,17 +74,17 @@ var Link = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Bandwidth": ubx.FieldSpec{
 			WireName: "bandwidth",
-			Kind: "object",
-			Fields: Link_BandwidthFields,
+			Kind:     "object",
+			Fields:   Link_BandwidthFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"GlobalNetworkId": ubx.FieldSpec{WireName: "global_network_id"},
-		"Provider": ubx.FieldSpec{WireName: "provider"},
-		"SiteId": ubx.FieldSpec{WireName: "site_id"},
+		"Provider":        ubx.FieldSpec{WireName: "provider"},
+		"SiteId":          ubx.FieldSpec{WireName: "site_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Link_TagsFields,
+			Kind:     "list",
+			Fields:   Link_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

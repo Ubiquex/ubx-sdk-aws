@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RemediationConfigurations_RemediationConfigurations_ExecutionControls_SsmControls struct {
 	ConcurrentExecutionRatePercentage any
-	ErrorPercentage any
+	ErrorPercentage                   any
 }
 
 type RemediationConfigurations_RemediationConfigurations_ExecutionControls struct {
@@ -22,22 +22,22 @@ type RemediationConfigurations_RemediationConfigurations_Parameters_StaticValue 
 
 type RemediationConfigurations_RemediationConfigurations_Parameters struct {
 	ResourceValue any
-	StaticValue any
+	StaticValue   any
 }
 
 type RemediationConfigurations_RemediationConfigurations struct {
-	Arn any
-	Automatic any
-	ConfigRuleName any
-	CreatedByService any
-	ExecutionControls any
+	Arn                      any
+	Automatic                any
+	ConfigRuleName           any
+	CreatedByService         any
+	ExecutionControls        any
 	MaximumAutomaticAttempts any
-	Parameters any
-	ResourceType any
-	RetryAttemptSeconds any
-	TargetId any
-	TargetType any
-	TargetVersion any
+	Parameters               any
+	ResourceType             any
+	RetryAttemptSeconds      any
+	TargetId                 any
+	TargetType               any
+	TargetVersion            any
 }
 
 type RemediationConfigurationsConfig struct {
@@ -45,7 +45,7 @@ type RemediationConfigurationsConfig struct {
 }
 
 type RemediationConfigurationsAttrs struct {
-	ConfigRuleNames any
+	ConfigRuleNames           any
 	RemediationConfigurations any
 }
 

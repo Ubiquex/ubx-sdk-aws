@@ -36,10 +36,10 @@ type SmsTemplateAttrs struct {
 var SmsTemplate = ubx.ResourceBinding{
 	WireType: "aws_pinpoint_sms_template",
 	Fields: ubx.FieldMap{
-		"Body": ubx.FieldSpec{WireName: "body"},
+		"Body":                 ubx.FieldSpec{WireName: "body"},
 		"DefaultSubstitutions": ubx.FieldSpec{WireName: "default_substitutions"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TemplateDescription": ubx.FieldSpec{WireName: "template_description"},
-		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
+		"Tags":                 ubx.FieldSpec{WireName: "tags"},
+		"TemplateDescription":  ubx.FieldSpec{WireName: "template_description"},
+		"TemplateName":         ubx.FieldSpec{WireName: "template_name"},
 	},
 }

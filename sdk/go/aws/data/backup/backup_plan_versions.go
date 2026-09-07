@@ -5,39 +5,39 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackupPlanVersions_BackupPlanVersionsList_AdvancedBackupSettings struct {
 	BackupOptions any
-	ResourceType any
+	ResourceType  any
 }
 
 type BackupPlanVersions_BackupPlanVersionsList struct {
 	AdvancedBackupSettings any
-	BackupPlanArn any
-	BackupPlanId any
-	BackupPlanName any
-	CreationDate any
-	CreatorRequestId any
-	DeletionDate any
-	LastExecutionDate any
-	VersionId any
+	BackupPlanArn          any
+	BackupPlanId           any
+	BackupPlanName         any
+	CreationDate           any
+	CreatorRequestId       any
+	DeletionDate           any
+	LastExecutionDate      any
+	VersionId              any
 }
 
 type BackupPlanVersionsConfig struct {
 	BackupPlanId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type BackupPlanVersionsAttrs struct {
-	BackupPlanId any
+	BackupPlanId           any
 	BackupPlanVersionsList any
-	MaxResults any
-	NextToken any
+	MaxResults             any
+	NextToken              any
 }
 
 var BackupPlanVersions = ubx.DataSourceBinding{
 	WireType: "aws_backup_backup_plan_versions",
 	Fields: ubx.FieldMap{
 		"BackupPlanId": ubx.FieldSpec{WireName: "backup_plan_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -8,8 +8,8 @@ type SerialConsoleAccessStatusConfig struct {
 }
 
 type SerialConsoleAccessStatusAttrs struct {
-	DryRun any
-	ManagedBy any
+	DryRun                     any
+	ManagedBy                  any
 	SerialConsoleAccessEnabled any
 }
 

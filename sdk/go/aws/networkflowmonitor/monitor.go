@@ -11,19 +11,19 @@ type Monitor_LocalResources struct {
 }
 
 type Monitor_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Monitor_LocalResourcesFields = ubx.FieldMap{
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Identifier": ubx.FieldSpec{WireName: "identifier"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var Monitor_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MonitorConfig struct {
 	// The local resources to monitor.
@@ -64,20 +64,20 @@ var Monitor = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"LocalResources": ubx.FieldSpec{
 			WireName: "local_resources",
-			Kind: "list",
-			Fields: Monitor_LocalResourcesFields,
+			Kind:     "list",
+			Fields:   Monitor_LocalResourcesFields,
 		},
 		"MonitorName": ubx.FieldSpec{WireName: "monitor_name"},
 		"RemoteResources": ubx.FieldSpec{
 			WireName: "remote_resources",
-			Kind: "list",
-			Fields: Monitor_LocalResourcesFields,
+			Kind:     "list",
+			Fields:   Monitor_LocalResourcesFields,
 		},
 		"ScopeArn": ubx.FieldSpec{WireName: "scope_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Monitor_TagsFields,
+			Kind:     "list",
+			Fields:   Monitor_TagsFields,
 		},
 	},
 }

@@ -4,22 +4,22 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecoveryPointsByLegalHold_RecoveryPoints struct {
-	BackupVaultName any
+	BackupVaultName  any
 	RecoveryPointArn any
-	ResourceArn any
-	ResourceType any
+	ResourceArn      any
+	ResourceType     any
 }
 
 type RecoveryPointsByLegalHoldConfig struct {
 	LegalHoldId any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type RecoveryPointsByLegalHoldAttrs struct {
-	LegalHoldId any
-	MaxResults any
-	NextToken any
+	LegalHoldId    any
+	MaxResults     any
+	NextToken      any
 	RecoveryPoints any
 }
 
@@ -27,7 +27,7 @@ var RecoveryPointsByLegalHold = ubx.DataSourceBinding{
 	WireType: "aws_backup_recovery_points_by_legal_hold",
 	Fields: ubx.FieldMap{
 		"LegalHoldId": ubx.FieldSpec{WireName: "legal_hold_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

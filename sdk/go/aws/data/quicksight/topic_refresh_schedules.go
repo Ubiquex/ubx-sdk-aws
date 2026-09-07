@@ -5,38 +5,38 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TopicRefreshSchedules_RefreshSchedules_RefreshSchedule struct {
 	BasedOnSpiceSchedule any
-	IsEnabled any
-	RepeatAt any
-	StartingAt any
-	Timezone any
-	TopicScheduleType any
+	IsEnabled            any
+	RepeatAt             any
+	StartingAt           any
+	Timezone             any
+	TopicScheduleType    any
 }
 
 type TopicRefreshSchedules_RefreshSchedules struct {
-	DatasetArn any
-	DatasetId any
-	DatasetName any
+	DatasetArn      any
+	DatasetId       any
+	DatasetName     any
 	RefreshSchedule any
 }
 
 type TopicRefreshSchedulesConfig struct {
 	AwsAccountId any
-	TopicId any
+	TopicId      any
 }
 
 type TopicRefreshSchedulesAttrs struct {
-	AwsAccountId any
+	AwsAccountId     any
 	RefreshSchedules any
-	RequestId any
-	Status any
-	TopicArn any
-	TopicId any
+	RequestId        any
+	Status           any
+	TopicArn         any
+	TopicId          any
 }
 
 var TopicRefreshSchedules = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_topic_refresh_schedules",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"TopicId": ubx.FieldSpec{WireName: "topic_id"},
+		"TopicId":      ubx.FieldSpec{WireName: "topic_id"},
 	},
 }

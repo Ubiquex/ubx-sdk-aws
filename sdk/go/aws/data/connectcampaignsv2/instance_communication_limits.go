@@ -4,9 +4,9 @@ package connectcampaignsv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceCommunicationLimits_CommunicationLimitsConfig_AllChannelSubtypes_CommunicationLimitsList struct {
-	Frequency any
+	Frequency            any
 	MaxCountPerRecipient any
-	Unit any
+	Unit                 any
 }
 
 type InstanceCommunicationLimits_CommunicationLimitsConfig_AllChannelSubtypes struct {

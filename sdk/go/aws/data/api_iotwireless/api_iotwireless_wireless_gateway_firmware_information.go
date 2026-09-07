@@ -4,9 +4,9 @@ package api_iotwireless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotwirelessWirelessGatewayFirmwareInformation_LoRaWan_CurrentVersion struct {
-	Model any
+	Model          any
 	PackageVersion any
-	Station any
+	Station        any
 }
 
 type ApiIotwirelessWirelessGatewayFirmwareInformation_LoRaWan struct {

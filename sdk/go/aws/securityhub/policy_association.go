@@ -35,7 +35,7 @@ var PolicyAssociation = ubx.ResourceBinding{
 	WireType: "aws_security_hub_policy_association",
 	Fields: ubx.FieldMap{
 		"ConfigurationPolicyId": ubx.FieldSpec{WireName: "configuration_policy_id"},
-		"TargetId": ubx.FieldSpec{WireName: "target_id"},
-		"TargetType": ubx.FieldSpec{WireName: "target_type"},
+		"TargetId":              ubx.FieldSpec{WireName: "target_id"},
+		"TargetType":            ubx.FieldSpec{WireName: "target_type"},
 	},
 }

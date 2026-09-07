@@ -284,341 +284,341 @@ type Domain_Tags struct {
 }
 
 var Domain_DefaultSpaceSettings_CustomFileSystemConfigs_EfsfileSystemConfigFields = ubx.FieldMap{
-		"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
-		"FileSystemPath": ubx.FieldSpec{WireName: "file_system_path"},
-	}
+	"FileSystemId":   ubx.FieldSpec{WireName: "file_system_id"},
+	"FileSystemPath": ubx.FieldSpec{WireName: "file_system_path"},
+}
 
 var Domain_DefaultSpaceSettings_CustomFileSystemConfigs_S3FileSystemConfigFields = ubx.FieldMap{
-		"MountPath": ubx.FieldSpec{WireName: "mount_path"},
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"MountPath": ubx.FieldSpec{WireName: "mount_path"},
+	"S3Uri":     ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var Domain_DefaultSpaceSettings_CustomFileSystemConfigsFields = ubx.FieldMap{
-		"EfsfileSystemConfig": ubx.FieldSpec{
-			WireName: "efsfile_system_config",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_CustomFileSystemConfigs_EfsfileSystemConfigFields,
-		},
-		"FsxLustreFileSystemConfig": ubx.FieldSpec{
-			WireName: "fsx_lustre_file_system_config",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_CustomFileSystemConfigs_EfsfileSystemConfigFields,
-		},
-		"S3FileSystemConfig": ubx.FieldSpec{
-			WireName: "s3_file_system_config",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_CustomFileSystemConfigs_S3FileSystemConfigFields,
-		},
-	}
+	"EfsfileSystemConfig": ubx.FieldSpec{
+		WireName: "efsfile_system_config",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_CustomFileSystemConfigs_EfsfileSystemConfigFields,
+	},
+	"FsxLustreFileSystemConfig": ubx.FieldSpec{
+		WireName: "fsx_lustre_file_system_config",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_CustomFileSystemConfigs_EfsfileSystemConfigFields,
+	},
+	"S3FileSystemConfig": ubx.FieldSpec{
+		WireName: "s3_file_system_config",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_CustomFileSystemConfigs_S3FileSystemConfigFields,
+	},
+}
 
 var Domain_DefaultSpaceSettings_CustomPosixUserConfigFields = ubx.FieldMap{
-		"Gid": ubx.FieldSpec{WireName: "gid"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Gid": ubx.FieldSpec{WireName: "gid"},
+	"Uid": ubx.FieldSpec{WireName: "uid"},
+}
 
 var Domain_DefaultSpaceSettings_JupyterLabAppSettings_AppLifecycleManagement_IdleSettingsFields = ubx.FieldMap{
-		"IdleTimeoutInMinutes": ubx.FieldSpec{WireName: "idle_timeout_in_minutes"},
-		"LifecycleManagement": ubx.FieldSpec{WireName: "lifecycle_management"},
-		"MaxIdleTimeoutInMinutes": ubx.FieldSpec{WireName: "max_idle_timeout_in_minutes"},
-		"MinIdleTimeoutInMinutes": ubx.FieldSpec{WireName: "min_idle_timeout_in_minutes"},
-	}
+	"IdleTimeoutInMinutes":    ubx.FieldSpec{WireName: "idle_timeout_in_minutes"},
+	"LifecycleManagement":     ubx.FieldSpec{WireName: "lifecycle_management"},
+	"MaxIdleTimeoutInMinutes": ubx.FieldSpec{WireName: "max_idle_timeout_in_minutes"},
+	"MinIdleTimeoutInMinutes": ubx.FieldSpec{WireName: "min_idle_timeout_in_minutes"},
+}
 
 var Domain_DefaultSpaceSettings_JupyterLabAppSettings_AppLifecycleManagementFields = ubx.FieldMap{
-		"IdleSettings": ubx.FieldSpec{
-			WireName: "idle_settings",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_JupyterLabAppSettings_AppLifecycleManagement_IdleSettingsFields,
-		},
-	}
+	"IdleSettings": ubx.FieldSpec{
+		WireName: "idle_settings",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_JupyterLabAppSettings_AppLifecycleManagement_IdleSettingsFields,
+	},
+}
 
 var Domain_DefaultSpaceSettings_JupyterLabAppSettings_CodeRepositoriesFields = ubx.FieldMap{
-		"RepositoryUrl": ubx.FieldSpec{WireName: "repository_url"},
-	}
+	"RepositoryUrl": ubx.FieldSpec{WireName: "repository_url"},
+}
 
 var Domain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImagesFields = ubx.FieldMap{
-		"AppImageConfigName": ubx.FieldSpec{WireName: "app_image_config_name"},
-		"ImageName": ubx.FieldSpec{WireName: "image_name"},
-		"ImageVersionNumber": ubx.FieldSpec{WireName: "image_version_number"},
-	}
+	"AppImageConfigName": ubx.FieldSpec{WireName: "app_image_config_name"},
+	"ImageName":          ubx.FieldSpec{WireName: "image_name"},
+	"ImageVersionNumber": ubx.FieldSpec{WireName: "image_version_number"},
+}
 
 var Domain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpecFields = ubx.FieldMap{
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"LifecycleConfigArn": ubx.FieldSpec{WireName: "lifecycle_config_arn"},
-		"SageMakerImageArn": ubx.FieldSpec{WireName: "sage_maker_image_arn"},
-		"SageMakerImageVersionArn": ubx.FieldSpec{WireName: "sage_maker_image_version_arn"},
-		"TrainingPlanArn": ubx.FieldSpec{WireName: "training_plan_arn"},
-	}
+	"InstanceType":             ubx.FieldSpec{WireName: "instance_type"},
+	"LifecycleConfigArn":       ubx.FieldSpec{WireName: "lifecycle_config_arn"},
+	"SageMakerImageArn":        ubx.FieldSpec{WireName: "sage_maker_image_arn"},
+	"SageMakerImageVersionArn": ubx.FieldSpec{WireName: "sage_maker_image_version_arn"},
+	"TrainingPlanArn":          ubx.FieldSpec{WireName: "training_plan_arn"},
+}
 
 var Domain_DefaultSpaceSettings_JupyterLabAppSettingsFields = ubx.FieldMap{
-		"AppLifecycleManagement": ubx.FieldSpec{
-			WireName: "app_lifecycle_management",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_JupyterLabAppSettings_AppLifecycleManagementFields,
-		},
-		"BuiltInLifecycleConfigArn": ubx.FieldSpec{WireName: "built_in_lifecycle_config_arn"},
-		"CodeRepositories": ubx.FieldSpec{
-			WireName: "code_repositories",
-			Kind: "list",
-			Fields: Domain_DefaultSpaceSettings_JupyterLabAppSettings_CodeRepositoriesFields,
-		},
-		"CustomImages": ubx.FieldSpec{
-			WireName: "custom_images",
-			Kind: "list",
-			Fields: Domain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImagesFields,
-		},
-		"DefaultResourceSpec": ubx.FieldSpec{
-			WireName: "default_resource_spec",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpecFields,
-		},
-		"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
-	}
+	"AppLifecycleManagement": ubx.FieldSpec{
+		WireName: "app_lifecycle_management",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_JupyterLabAppSettings_AppLifecycleManagementFields,
+	},
+	"BuiltInLifecycleConfigArn": ubx.FieldSpec{WireName: "built_in_lifecycle_config_arn"},
+	"CodeRepositories": ubx.FieldSpec{
+		WireName: "code_repositories",
+		Kind:     "list",
+		Fields:   Domain_DefaultSpaceSettings_JupyterLabAppSettings_CodeRepositoriesFields,
+	},
+	"CustomImages": ubx.FieldSpec{
+		WireName: "custom_images",
+		Kind:     "list",
+		Fields:   Domain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImagesFields,
+	},
+	"DefaultResourceSpec": ubx.FieldSpec{
+		WireName: "default_resource_spec",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpecFields,
+	},
+	"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
+}
 
 var Domain_DefaultSpaceSettings_JupyterServerAppSettingsFields = ubx.FieldMap{
-		"DefaultResourceSpec": ubx.FieldSpec{
-			WireName: "default_resource_spec",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpecFields,
-		},
-		"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
-	}
+	"DefaultResourceSpec": ubx.FieldSpec{
+		WireName: "default_resource_spec",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpecFields,
+	},
+	"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
+}
 
 var Domain_DefaultSpaceSettings_KernelGatewayAppSettingsFields = ubx.FieldMap{
-		"CustomImages": ubx.FieldSpec{
-			WireName: "custom_images",
-			Kind: "list",
-			Fields: Domain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImagesFields,
-		},
-		"DefaultResourceSpec": ubx.FieldSpec{
-			WireName: "default_resource_spec",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpecFields,
-		},
-		"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
-	}
+	"CustomImages": ubx.FieldSpec{
+		WireName: "custom_images",
+		Kind:     "list",
+		Fields:   Domain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImagesFields,
+	},
+	"DefaultResourceSpec": ubx.FieldSpec{
+		WireName: "default_resource_spec",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpecFields,
+	},
+	"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
+}
 
 var Domain_DefaultSpaceSettings_SpaceStorageSettings_DefaultEbsStorageSettingsFields = ubx.FieldMap{
-		"DefaultEbsVolumeSizeInGb": ubx.FieldSpec{WireName: "default_ebs_volume_size_in_gb"},
-		"MaximumEbsVolumeSizeInGb": ubx.FieldSpec{WireName: "maximum_ebs_volume_size_in_gb"},
-	}
+	"DefaultEbsVolumeSizeInGb": ubx.FieldSpec{WireName: "default_ebs_volume_size_in_gb"},
+	"MaximumEbsVolumeSizeInGb": ubx.FieldSpec{WireName: "maximum_ebs_volume_size_in_gb"},
+}
 
 var Domain_DefaultSpaceSettings_SpaceStorageSettingsFields = ubx.FieldMap{
-		"DefaultEbsStorageSettings": ubx.FieldSpec{
-			WireName: "default_ebs_storage_settings",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_SpaceStorageSettings_DefaultEbsStorageSettingsFields,
-		},
-	}
+	"DefaultEbsStorageSettings": ubx.FieldSpec{
+		WireName: "default_ebs_storage_settings",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_SpaceStorageSettings_DefaultEbsStorageSettingsFields,
+	},
+}
 
 var Domain_DefaultSpaceSettingsFields = ubx.FieldMap{
-		"CustomFileSystemConfigs": ubx.FieldSpec{
-			WireName: "custom_file_system_configs",
-			Kind: "list",
-			Fields: Domain_DefaultSpaceSettings_CustomFileSystemConfigsFields,
-		},
-		"CustomPosixUserConfig": ubx.FieldSpec{
-			WireName: "custom_posix_user_config",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_CustomPosixUserConfigFields,
-		},
-		"ExecutionRole": ubx.FieldSpec{WireName: "execution_role"},
-		"JupyterLabAppSettings": ubx.FieldSpec{
-			WireName: "jupyter_lab_app_settings",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_JupyterLabAppSettingsFields,
-		},
-		"JupyterServerAppSettings": ubx.FieldSpec{
-			WireName: "jupyter_server_app_settings",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_JupyterServerAppSettingsFields,
-		},
-		"KernelGatewayAppSettings": ubx.FieldSpec{
-			WireName: "kernel_gateway_app_settings",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_KernelGatewayAppSettingsFields,
-		},
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"SpaceStorageSettings": ubx.FieldSpec{
-			WireName: "space_storage_settings",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_SpaceStorageSettingsFields,
-		},
-	}
+	"CustomFileSystemConfigs": ubx.FieldSpec{
+		WireName: "custom_file_system_configs",
+		Kind:     "list",
+		Fields:   Domain_DefaultSpaceSettings_CustomFileSystemConfigsFields,
+	},
+	"CustomPosixUserConfig": ubx.FieldSpec{
+		WireName: "custom_posix_user_config",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_CustomPosixUserConfigFields,
+	},
+	"ExecutionRole": ubx.FieldSpec{WireName: "execution_role"},
+	"JupyterLabAppSettings": ubx.FieldSpec{
+		WireName: "jupyter_lab_app_settings",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_JupyterLabAppSettingsFields,
+	},
+	"JupyterServerAppSettings": ubx.FieldSpec{
+		WireName: "jupyter_server_app_settings",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_JupyterServerAppSettingsFields,
+	},
+	"KernelGatewayAppSettings": ubx.FieldSpec{
+		WireName: "kernel_gateway_app_settings",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_KernelGatewayAppSettingsFields,
+	},
+	"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
+	"SpaceStorageSettings": ubx.FieldSpec{
+		WireName: "space_storage_settings",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_SpaceStorageSettingsFields,
+	},
+}
 
 var Domain_DefaultUserSettings_CodeEditorAppSettingsFields = ubx.FieldMap{
-		"AppLifecycleManagement": ubx.FieldSpec{
-			WireName: "app_lifecycle_management",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_JupyterLabAppSettings_AppLifecycleManagementFields,
-		},
-		"BuiltInLifecycleConfigArn": ubx.FieldSpec{WireName: "built_in_lifecycle_config_arn"},
-		"CustomImages": ubx.FieldSpec{
-			WireName: "custom_images",
-			Kind: "list",
-			Fields: Domain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImagesFields,
-		},
-		"DefaultResourceSpec": ubx.FieldSpec{
-			WireName: "default_resource_spec",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpecFields,
-		},
-		"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
-	}
+	"AppLifecycleManagement": ubx.FieldSpec{
+		WireName: "app_lifecycle_management",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_JupyterLabAppSettings_AppLifecycleManagementFields,
+	},
+	"BuiltInLifecycleConfigArn": ubx.FieldSpec{WireName: "built_in_lifecycle_config_arn"},
+	"CustomImages": ubx.FieldSpec{
+		WireName: "custom_images",
+		Kind:     "list",
+		Fields:   Domain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImagesFields,
+	},
+	"DefaultResourceSpec": ubx.FieldSpec{
+		WireName: "default_resource_spec",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpecFields,
+	},
+	"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
+}
 
 var Domain_DefaultUserSettings_RsessionAppSettingsFields = ubx.FieldMap{
-		"CustomImages": ubx.FieldSpec{
-			WireName: "custom_images",
-			Kind: "list",
-			Fields: Domain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImagesFields,
-		},
-		"DefaultResourceSpec": ubx.FieldSpec{
-			WireName: "default_resource_spec",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpecFields,
-		},
-	}
+	"CustomImages": ubx.FieldSpec{
+		WireName: "custom_images",
+		Kind:     "list",
+		Fields:   Domain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImagesFields,
+	},
+	"DefaultResourceSpec": ubx.FieldSpec{
+		WireName: "default_resource_spec",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpecFields,
+	},
+}
 
 var Domain_DefaultUserSettings_RstudioServerProAppSettingsFields = ubx.FieldMap{
-		"AccessStatus": ubx.FieldSpec{WireName: "access_status"},
-		"UserGroup": ubx.FieldSpec{WireName: "user_group"},
-	}
+	"AccessStatus": ubx.FieldSpec{WireName: "access_status"},
+	"UserGroup":    ubx.FieldSpec{WireName: "user_group"},
+}
 
 var Domain_DefaultUserSettings_SharingSettingsFields = ubx.FieldMap{
-		"NotebookOutputOption": ubx.FieldSpec{WireName: "notebook_output_option"},
-		"S3KmsKeyId": ubx.FieldSpec{WireName: "s3_kms_key_id"},
-		"S3OutputPath": ubx.FieldSpec{WireName: "s3_output_path"},
-	}
+	"NotebookOutputOption": ubx.FieldSpec{WireName: "notebook_output_option"},
+	"S3KmsKeyId":           ubx.FieldSpec{WireName: "s3_kms_key_id"},
+	"S3OutputPath":         ubx.FieldSpec{WireName: "s3_output_path"},
+}
 
 var Domain_DefaultUserSettings_StudioWebPortalSettings_HiddenSageMakerImageVersionAliasesFields = ubx.FieldMap{
-		"SageMakerImageName": ubx.FieldSpec{WireName: "sage_maker_image_name"},
-		"VersionAliases": ubx.FieldSpec{WireName: "version_aliases"},
-	}
+	"SageMakerImageName": ubx.FieldSpec{WireName: "sage_maker_image_name"},
+	"VersionAliases":     ubx.FieldSpec{WireName: "version_aliases"},
+}
 
 var Domain_DefaultUserSettings_StudioWebPortalSettingsFields = ubx.FieldMap{
-		"HiddenAppTypes": ubx.FieldSpec{WireName: "hidden_app_types"},
-		"HiddenInstanceTypes": ubx.FieldSpec{WireName: "hidden_instance_types"},
-		"HiddenMlTools": ubx.FieldSpec{WireName: "hidden_ml_tools"},
-		"HiddenSageMakerImageVersionAliases": ubx.FieldSpec{
-			WireName: "hidden_sage_maker_image_version_aliases",
-			Kind: "list",
-			Fields: Domain_DefaultUserSettings_StudioWebPortalSettings_HiddenSageMakerImageVersionAliasesFields,
-		},
-	}
+	"HiddenAppTypes":      ubx.FieldSpec{WireName: "hidden_app_types"},
+	"HiddenInstanceTypes": ubx.FieldSpec{WireName: "hidden_instance_types"},
+	"HiddenMlTools":       ubx.FieldSpec{WireName: "hidden_ml_tools"},
+	"HiddenSageMakerImageVersionAliases": ubx.FieldSpec{
+		WireName: "hidden_sage_maker_image_version_aliases",
+		Kind:     "list",
+		Fields:   Domain_DefaultUserSettings_StudioWebPortalSettings_HiddenSageMakerImageVersionAliasesFields,
+	},
+}
 
 var Domain_DefaultUserSettingsFields = ubx.FieldMap{
-		"AutoMountHomeEfs": ubx.FieldSpec{WireName: "auto_mount_home_efs"},
-		"CodeEditorAppSettings": ubx.FieldSpec{
-			WireName: "code_editor_app_settings",
-			Kind: "object",
-			Fields: Domain_DefaultUserSettings_CodeEditorAppSettingsFields,
-		},
-		"CustomFileSystemConfigs": ubx.FieldSpec{
-			WireName: "custom_file_system_configs",
-			Kind: "list",
-			Fields: Domain_DefaultSpaceSettings_CustomFileSystemConfigsFields,
-		},
-		"CustomPosixUserConfig": ubx.FieldSpec{
-			WireName: "custom_posix_user_config",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_CustomPosixUserConfigFields,
-		},
-		"DefaultLandingUri": ubx.FieldSpec{WireName: "default_landing_uri"},
-		"ExecutionRole": ubx.FieldSpec{WireName: "execution_role"},
-		"JupyterLabAppSettings": ubx.FieldSpec{
-			WireName: "jupyter_lab_app_settings",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_JupyterLabAppSettingsFields,
-		},
-		"JupyterServerAppSettings": ubx.FieldSpec{
-			WireName: "jupyter_server_app_settings",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_JupyterServerAppSettingsFields,
-		},
-		"KernelGatewayAppSettings": ubx.FieldSpec{
-			WireName: "kernel_gateway_app_settings",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_KernelGatewayAppSettingsFields,
-		},
-		"RsessionAppSettings": ubx.FieldSpec{
-			WireName: "rsession_app_settings",
-			Kind: "object",
-			Fields: Domain_DefaultUserSettings_RsessionAppSettingsFields,
-		},
-		"RstudioServerProAppSettings": ubx.FieldSpec{
-			WireName: "rstudio_server_pro_app_settings",
-			Kind: "object",
-			Fields: Domain_DefaultUserSettings_RstudioServerProAppSettingsFields,
-		},
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"SharingSettings": ubx.FieldSpec{
-			WireName: "sharing_settings",
-			Kind: "object",
-			Fields: Domain_DefaultUserSettings_SharingSettingsFields,
-		},
-		"SpaceStorageSettings": ubx.FieldSpec{
-			WireName: "space_storage_settings",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_SpaceStorageSettingsFields,
-		},
-		"StudioWebPortal": ubx.FieldSpec{WireName: "studio_web_portal"},
-		"StudioWebPortalSettings": ubx.FieldSpec{
-			WireName: "studio_web_portal_settings",
-			Kind: "object",
-			Fields: Domain_DefaultUserSettings_StudioWebPortalSettingsFields,
-		},
-	}
+	"AutoMountHomeEfs": ubx.FieldSpec{WireName: "auto_mount_home_efs"},
+	"CodeEditorAppSettings": ubx.FieldSpec{
+		WireName: "code_editor_app_settings",
+		Kind:     "object",
+		Fields:   Domain_DefaultUserSettings_CodeEditorAppSettingsFields,
+	},
+	"CustomFileSystemConfigs": ubx.FieldSpec{
+		WireName: "custom_file_system_configs",
+		Kind:     "list",
+		Fields:   Domain_DefaultSpaceSettings_CustomFileSystemConfigsFields,
+	},
+	"CustomPosixUserConfig": ubx.FieldSpec{
+		WireName: "custom_posix_user_config",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_CustomPosixUserConfigFields,
+	},
+	"DefaultLandingUri": ubx.FieldSpec{WireName: "default_landing_uri"},
+	"ExecutionRole":     ubx.FieldSpec{WireName: "execution_role"},
+	"JupyterLabAppSettings": ubx.FieldSpec{
+		WireName: "jupyter_lab_app_settings",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_JupyterLabAppSettingsFields,
+	},
+	"JupyterServerAppSettings": ubx.FieldSpec{
+		WireName: "jupyter_server_app_settings",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_JupyterServerAppSettingsFields,
+	},
+	"KernelGatewayAppSettings": ubx.FieldSpec{
+		WireName: "kernel_gateway_app_settings",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_KernelGatewayAppSettingsFields,
+	},
+	"RsessionAppSettings": ubx.FieldSpec{
+		WireName: "rsession_app_settings",
+		Kind:     "object",
+		Fields:   Domain_DefaultUserSettings_RsessionAppSettingsFields,
+	},
+	"RstudioServerProAppSettings": ubx.FieldSpec{
+		WireName: "rstudio_server_pro_app_settings",
+		Kind:     "object",
+		Fields:   Domain_DefaultUserSettings_RstudioServerProAppSettingsFields,
+	},
+	"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
+	"SharingSettings": ubx.FieldSpec{
+		WireName: "sharing_settings",
+		Kind:     "object",
+		Fields:   Domain_DefaultUserSettings_SharingSettingsFields,
+	},
+	"SpaceStorageSettings": ubx.FieldSpec{
+		WireName: "space_storage_settings",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_SpaceStorageSettingsFields,
+	},
+	"StudioWebPortal": ubx.FieldSpec{WireName: "studio_web_portal"},
+	"StudioWebPortalSettings": ubx.FieldSpec{
+		WireName: "studio_web_portal_settings",
+		Kind:     "object",
+		Fields:   Domain_DefaultUserSettings_StudioWebPortalSettingsFields,
+	},
+}
 
 var Domain_DomainSettings_DockerSettingsFields = ubx.FieldMap{
-		"EnableDockerAccess": ubx.FieldSpec{WireName: "enable_docker_access"},
-		"VpcOnlyTrustedAccounts": ubx.FieldSpec{WireName: "vpc_only_trusted_accounts"},
-	}
+	"EnableDockerAccess":     ubx.FieldSpec{WireName: "enable_docker_access"},
+	"VpcOnlyTrustedAccounts": ubx.FieldSpec{WireName: "vpc_only_trusted_accounts"},
+}
 
 var Domain_DomainSettings_RstudioServerProDomainSettingsFields = ubx.FieldMap{
-		"DefaultResourceSpec": ubx.FieldSpec{
-			WireName: "default_resource_spec",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpecFields,
-		},
-		"DomainExecutionRoleArn": ubx.FieldSpec{WireName: "domain_execution_role_arn"},
-		"RstudioConnectUrl": ubx.FieldSpec{WireName: "rstudio_connect_url"},
-		"RstudioPackageManagerUrl": ubx.FieldSpec{WireName: "rstudio_package_manager_url"},
-	}
+	"DefaultResourceSpec": ubx.FieldSpec{
+		WireName: "default_resource_spec",
+		Kind:     "object",
+		Fields:   Domain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpecFields,
+	},
+	"DomainExecutionRoleArn":   ubx.FieldSpec{WireName: "domain_execution_role_arn"},
+	"RstudioConnectUrl":        ubx.FieldSpec{WireName: "rstudio_connect_url"},
+	"RstudioPackageManagerUrl": ubx.FieldSpec{WireName: "rstudio_package_manager_url"},
+}
 
 var Domain_DomainSettings_UnifiedStudioSettingsFields = ubx.FieldMap{
-		"DomainAccountId": ubx.FieldSpec{WireName: "domain_account_id"},
-		"DomainId": ubx.FieldSpec{WireName: "domain_id"},
-		"DomainRegion": ubx.FieldSpec{WireName: "domain_region"},
-		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"ProjectS3Path": ubx.FieldSpec{WireName: "project_s3_path"},
-		"StudioWebPortalAccess": ubx.FieldSpec{WireName: "studio_web_portal_access"},
-	}
+	"DomainAccountId":       ubx.FieldSpec{WireName: "domain_account_id"},
+	"DomainId":              ubx.FieldSpec{WireName: "domain_id"},
+	"DomainRegion":          ubx.FieldSpec{WireName: "domain_region"},
+	"EnvironmentId":         ubx.FieldSpec{WireName: "environment_id"},
+	"ProjectId":             ubx.FieldSpec{WireName: "project_id"},
+	"ProjectS3Path":         ubx.FieldSpec{WireName: "project_s3_path"},
+	"StudioWebPortalAccess": ubx.FieldSpec{WireName: "studio_web_portal_access"},
+}
 
 var Domain_DomainSettingsFields = ubx.FieldMap{
-		"DockerSettings": ubx.FieldSpec{
-			WireName: "docker_settings",
-			Kind: "object",
-			Fields: Domain_DomainSettings_DockerSettingsFields,
-		},
-		"ExecutionRoleIdentityConfig": ubx.FieldSpec{WireName: "execution_role_identity_config"},
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"RstudioServerProDomainSettings": ubx.FieldSpec{
-			WireName: "rstudio_server_pro_domain_settings",
-			Kind: "object",
-			Fields: Domain_DomainSettings_RstudioServerProDomainSettingsFields,
-		},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"UnifiedStudioSettings": ubx.FieldSpec{
-			WireName: "unified_studio_settings",
-			Kind: "object",
-			Fields: Domain_DomainSettings_UnifiedStudioSettingsFields,
-		},
-	}
+	"DockerSettings": ubx.FieldSpec{
+		WireName: "docker_settings",
+		Kind:     "object",
+		Fields:   Domain_DomainSettings_DockerSettingsFields,
+	},
+	"ExecutionRoleIdentityConfig": ubx.FieldSpec{WireName: "execution_role_identity_config"},
+	"IpAddressType":               ubx.FieldSpec{WireName: "ip_address_type"},
+	"RstudioServerProDomainSettings": ubx.FieldSpec{
+		WireName: "rstudio_server_pro_domain_settings",
+		Kind:     "object",
+		Fields:   Domain_DomainSettings_RstudioServerProDomainSettingsFields,
+	},
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"UnifiedStudioSettings": ubx.FieldSpec{
+		WireName: "unified_studio_settings",
+		Kind:     "object",
+		Fields:   Domain_DomainSettings_UnifiedStudioSettingsFields,
+	},
+}
 
 var Domain_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DomainConfig struct {
 	// Specifies the VPC used for non-EFS traffic. The default value is PublicInternetOnly.
@@ -695,33 +695,33 @@ type DomainAttrs struct {
 var Domain = ubx.ResourceBinding{
 	WireType: "aws_sage_maker_domain",
 	Fields: ubx.FieldMap{
-		"AppNetworkAccessType": ubx.FieldSpec{WireName: "app_network_access_type"},
+		"AppNetworkAccessType":       ubx.FieldSpec{WireName: "app_network_access_type"},
 		"AppSecurityGroupManagement": ubx.FieldSpec{WireName: "app_security_group_management"},
-		"AuthMode": ubx.FieldSpec{WireName: "auth_mode"},
+		"AuthMode":                   ubx.FieldSpec{WireName: "auth_mode"},
 		"DefaultSpaceSettings": ubx.FieldSpec{
 			WireName: "default_space_settings",
-			Kind: "object",
-			Fields: Domain_DefaultSpaceSettingsFields,
+			Kind:     "object",
+			Fields:   Domain_DefaultSpaceSettingsFields,
 		},
 		"DefaultUserSettings": ubx.FieldSpec{
 			WireName: "default_user_settings",
-			Kind: "object",
-			Fields: Domain_DefaultUserSettingsFields,
+			Kind:     "object",
+			Fields:   Domain_DefaultUserSettingsFields,
 		},
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"DomainSettings": ubx.FieldSpec{
 			WireName: "domain_settings",
-			Kind: "object",
-			Fields: Domain_DomainSettingsFields,
+			Kind:     "object",
+			Fields:   Domain_DomainSettingsFields,
 		},
 		"HomeEfsFileSystemCreation": ubx.FieldSpec{WireName: "home_efs_file_system_creation"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"TagPropagation": ubx.FieldSpec{WireName: "tag_propagation"},
+		"KmsKeyId":                  ubx.FieldSpec{WireName: "kms_key_id"},
+		"SubnetIds":                 ubx.FieldSpec{WireName: "subnet_ids"},
+		"TagPropagation":            ubx.FieldSpec{WireName: "tag_propagation"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Domain_TagsFields,
+			Kind:     "list",
+			Fields:   Domain_TagsFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

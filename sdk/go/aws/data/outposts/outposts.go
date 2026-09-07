@@ -4,24 +4,24 @@ package outposts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Outposts_Outposts struct {
-	AvailabilityZone any
-	AvailabilityZoneId any
-	Description any
-	LifeCycleStatus any
-	Name any
-	OutpostArn any
-	OutpostId any
-	OwnerId any
-	SiteArn any
-	SiteId any
+	AvailabilityZone      any
+	AvailabilityZoneId    any
+	Description           any
+	LifeCycleStatus       any
+	Name                  any
+	OutpostArn            any
+	OutpostId             any
+	OwnerId               any
+	SiteArn               any
+	SiteId                any
 	SupportedHardwareType any
-	Tags any
+	Tags                  any
 }
 
 type OutpostsConfig struct {
-	AvailabilityZoneFilter any
+	AvailabilityZoneFilter   any
 	AvailabilityZoneIdFilter any
-	LifeCycleStatusFilter any
+	LifeCycleStatusFilter    any
 	// <p>The maximum page size.</p>
 	MaxResults any
 	// <p>The pagination token.</p>
@@ -29,9 +29,9 @@ type OutpostsConfig struct {
 }
 
 type OutpostsAttrs struct {
-	AvailabilityZoneFilter any
+	AvailabilityZoneFilter   any
 	AvailabilityZoneIdFilter any
-	LifeCycleStatusFilter any
+	LifeCycleStatusFilter    any
 	// <p>The maximum page size.</p>
 	MaxResults any
 	// <p>The pagination token.</p>
@@ -43,10 +43,10 @@ type OutpostsAttrs struct {
 var Outposts = ubx.DataSourceBinding{
 	WireType: "aws_outposts_outposts",
 	Fields: ubx.FieldMap{
-		"AvailabilityZoneFilter": ubx.FieldSpec{WireName: "availability_zone_filter"},
+		"AvailabilityZoneFilter":   ubx.FieldSpec{WireName: "availability_zone_filter"},
 		"AvailabilityZoneIdFilter": ubx.FieldSpec{WireName: "availability_zone_id_filter"},
-		"LifeCycleStatusFilter": ubx.FieldSpec{WireName: "life_cycle_status_filter"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"LifeCycleStatusFilter":    ubx.FieldSpec{WireName: "life_cycle_status_filter"},
+		"MaxResults":               ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                ubx.FieldSpec{WireName: "next_token"},
 	},
 }

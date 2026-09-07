@@ -8,14 +8,14 @@ type MltaskRun_Properties_ExportLabelsTaskRunProperties struct {
 }
 
 type MltaskRun_Properties_FindMatchesTaskRunProperties struct {
-	JobId any
-	JobName any
+	JobId    any
+	JobName  any
 	JobRunId any
 }
 
 type MltaskRun_Properties_ImportLabelsTaskRunProperties struct {
 	InputS3Path any
-	Replace any
+	Replace     any
 }
 
 type MltaskRun_Properties struct {
@@ -27,32 +27,32 @@ type MltaskRun_Properties struct {
 	ImportLabelsTaskRunProperties any
 	// <p>Specifies configuration properties for a labeling set generation task run.</p>
 	LabelingSetGenerationTaskRunProperties any
-	TaskType any
+	TaskType                               any
 }
 
 type MltaskRunConfig struct {
-	TaskRunId any
+	TaskRunId   any
 	TransformId any
 }
 
 type MltaskRunAttrs struct {
-	CompletedOn any
-	ErrorString any
-	ExecutionTime any
+	CompletedOn    any
+	ErrorString    any
+	ExecutionTime  any
 	LastModifiedOn any
-	LogGroupName any
+	LogGroupName   any
 	// <p>The configuration properties for the task run.</p>
-	Properties any
-	StartedOn any
-	Status any
-	TaskRunId any
+	Properties  any
+	StartedOn   any
+	Status      any
+	TaskRunId   any
 	TransformId any
 }
 
 var MltaskRun = ubx.DataSourceBinding{
 	WireType: "aws_glue_mltask_run",
 	Fields: ubx.FieldMap{
-		"TaskRunId": ubx.FieldSpec{WireName: "task_run_id"},
+		"TaskRunId":   ubx.FieldSpec{WireName: "task_run_id"},
 		"TransformId": ubx.FieldSpec{WireName: "transform_id"},
 	},
 }

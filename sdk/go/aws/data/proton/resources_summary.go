@@ -6,9 +6,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ResourcesSummary_Counts_Components struct {
 	BehindMajor any
 	BehindMinor any
-	Failed any
-	Total any
-	UpToDate any
+	Failed      any
+	Total       any
+	UpToDate    any
 }
 
 type ResourcesSummary_Counts struct {
@@ -38,6 +38,5 @@ type ResourcesSummaryAttrs struct {
 
 var ResourcesSummary = ubx.DataSourceBinding{
 	WireType: "aws_proton_resources_summary",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

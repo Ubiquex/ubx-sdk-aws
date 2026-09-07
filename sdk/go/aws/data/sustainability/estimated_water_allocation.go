@@ -8,30 +8,30 @@ type EstimatedWaterAllocation_FilterBy struct {
 }
 
 type EstimatedWaterAllocation_Results_AllocationValues struct {
-	Unit any
+	Unit  any
 	Value any
 }
 
 type EstimatedWaterAllocation_Results_TimePeriod struct {
-	End any
+	End   any
 	Start any
 }
 
 type EstimatedWaterAllocation_Results struct {
 	AllocationValues any
 	DimensionsValues any
-	ModelVersion any
-	TimePeriod any
+	ModelVersion     any
+	TimePeriod       any
 }
 
 var EstimatedWaterAllocation_FilterByFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
-	}
+	"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
+}
 
 var EstimatedWaterAllocation_Results_TimePeriodFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 type EstimatedWaterAllocationConfig struct {
 	AllocationTypes any
@@ -39,9 +39,9 @@ type EstimatedWaterAllocationConfig struct {
 	FilterBy any
 	// <p>Specifies the time period over which environmental impact data is aggregated.</p>
 	Granularity any
-	GroupBy any
-	MaxResults any
-	NextToken any
+	GroupBy     any
+	MaxResults  any
+	NextToken   any
 	// <p>Represents a duration of time defined by start and end timestamps.</p>
 	TimePeriod any
 }
@@ -52,10 +52,10 @@ type EstimatedWaterAllocationAttrs struct {
 	FilterBy any
 	// <p>Specifies the time period over which environmental impact data is aggregated.</p>
 	Granularity any
-	GroupBy any
-	MaxResults any
-	NextToken any
-	Results any
+	GroupBy     any
+	MaxResults  any
+	NextToken   any
+	Results     any
 	// <p>Represents a duration of time defined by start and end timestamps.</p>
 	TimePeriod any
 }
@@ -66,17 +66,17 @@ var EstimatedWaterAllocation = ubx.DataSourceBinding{
 		"AllocationTypes": ubx.FieldSpec{WireName: "allocation_types"},
 		"FilterBy": ubx.FieldSpec{
 			WireName: "filter_by",
-			Kind: "object",
-			Fields: EstimatedWaterAllocation_FilterByFields,
+			Kind:     "object",
+			Fields:   EstimatedWaterAllocation_FilterByFields,
 		},
 		"Granularity": ubx.FieldSpec{WireName: "granularity"},
-		"GroupBy": ubx.FieldSpec{WireName: "group_by"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"GroupBy":     ubx.FieldSpec{WireName: "group_by"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"TimePeriod": ubx.FieldSpec{
 			WireName: "time_period",
-			Kind: "object",
-			Fields: EstimatedWaterAllocation_Results_TimePeriodFields,
+			Kind:     "object",
+			Fields:   EstimatedWaterAllocation_Results_TimePeriodFields,
 		},
 	},
 }

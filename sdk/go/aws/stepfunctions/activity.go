@@ -20,15 +20,15 @@ type Activity_Tags struct {
 }
 
 var Activity_EncryptionConfigurationFields = ubx.FieldMap{
-		"KmsDataKeyReusePeriodSeconds": ubx.FieldSpec{WireName: "kms_data_key_reuse_period_seconds"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"KmsDataKeyReusePeriodSeconds": ubx.FieldSpec{WireName: "kms_data_key_reuse_period_seconds"},
+	"KmsKeyId":                     ubx.FieldSpec{WireName: "kms_key_id"},
+	"Type":                         ubx.FieldSpec{WireName: "type"},
+}
 
 var Activity_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ActivityConfig struct {
 	EncryptionConfiguration any
@@ -40,7 +40,7 @@ type ActivityConfig struct {
 
 type ActivityAttrs struct {
 	// The Amazon Resource Name (ARN) uniquely identifying this AWS Step Functions activity, which is used to reference the activity in state machine definitions. (AI-inferred)
-	Arn any
+	Arn                     any
 	EncryptionConfiguration any
 	// The name of the Step Functions activity, which must be unique within the AWS account and region. (AI-inferred)
 	Name any
@@ -53,14 +53,14 @@ var Activity = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EncryptionConfiguration": ubx.FieldSpec{
 			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: Activity_EncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   Activity_EncryptionConfigurationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Activity_TagsFields,
+			Kind:     "list",
+			Fields:   Activity_TagsFields,
 		},
 	},
 }

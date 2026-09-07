@@ -4,26 +4,26 @@ package budgets
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BudgetActionsForBudget_Actions_ActionThreshold struct {
-	ActionThresholdType any
+	ActionThresholdType  any
 	ActionThresholdValue any
 }
 
 type BudgetActionsForBudget_Actions_Definition_IamActionDefinition struct {
-	Groups any
+	Groups    any
 	PolicyArn any
-	Roles any
-	Users any
+	Roles     any
+	Users     any
 }
 
 type BudgetActionsForBudget_Actions_Definition_ScpActionDefinition struct {
-	PolicyId any
+	PolicyId  any
 	TargetIds any
 }
 
 type BudgetActionsForBudget_Actions_Definition_SsmActionDefinition struct {
 	ActionSubType any
-	InstanceIds any
-	Region any
+	InstanceIds   any
+	Region        any
 }
 
 type BudgetActionsForBudget_Actions_Definition struct {
@@ -33,21 +33,21 @@ type BudgetActionsForBudget_Actions_Definition struct {
 }
 
 type BudgetActionsForBudget_Actions_Subscribers struct {
-	Address any
+	Address          any
 	SubscriptionType any
 }
 
 type BudgetActionsForBudget_Actions struct {
-	ActionId any
-	ActionThreshold any
-	ActionType any
-	ApprovalModel any
-	BudgetName any
-	Definition any
+	ActionId         any
+	ActionThreshold  any
+	ActionType       any
+	ApprovalModel    any
+	BudgetName       any
+	Definition       any
 	ExecutionRoleArn any
 	NotificationType any
-	Status any
-	Subscribers any
+	Status           any
+	Subscribers      any
 }
 
 type BudgetActionsForBudgetConfig struct {
@@ -64,7 +64,7 @@ type BudgetActionsForBudgetConfig struct {
 type BudgetActionsForBudgetAttrs struct {
 	// <p>The account ID of the user. It's a 12-digit number.</p>
 	AccountId any
-	Actions any
+	Actions   any
 	// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p> <p>Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.</p>
 	BudgetName any
 	// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -76,9 +76,9 @@ type BudgetActionsForBudgetAttrs struct {
 var BudgetActionsForBudget = ubx.DataSourceBinding{
 	WireType: "aws_budgets_budget_actions_for_budget",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"BudgetName": ubx.FieldSpec{WireName: "budget_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

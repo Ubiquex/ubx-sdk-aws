@@ -5,100 +5,100 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CassandraStreamsRecords_ChangeRecords_ClusteringKeys_ListT_Metadata struct {
 	ExpirationTime any
-	WriteTime any
+	WriteTime      any
 }
 
 type CassandraStreamsRecords_ChangeRecords_ClusteringKeys_ListT struct {
 	Metadata any
-	Value any
+	Value    any
 }
 
 type CassandraStreamsRecords_ChangeRecords_ClusteringKeys_MapT struct {
-	Key any
+	Key      any
 	Metadata any
-	Value any
+	Value    any
 }
 
 type CassandraStreamsRecords_ChangeRecords_ClusteringKeys struct {
-	AsciiT any
-	BigintT any
-	BlobT any
-	BoolT any
-	CounterT any
-	DateT any
-	DecimalT any
-	DoubleT any
-	DurationT any
-	FloatT any
-	InetT any
-	IntT any
-	ListT any
-	MapT any
-	SetT any
-	SmallintT any
-	TextT any
-	TimeT any
+	AsciiT     any
+	BigintT    any
+	BlobT      any
+	BoolT      any
+	CounterT   any
+	DateT      any
+	DecimalT   any
+	DoubleT    any
+	DurationT  any
+	FloatT     any
+	InetT      any
+	IntT       any
+	ListT      any
+	MapT       any
+	SetT       any
+	SmallintT  any
+	TextT      any
+	TimeT      any
 	TimestampT any
-	TimeuuidT any
-	TinyintT any
-	TupleT any
-	UdtT any
-	UuidT any
-	VarcharT any
-	VarintT any
+	TimeuuidT  any
+	TinyintT   any
+	TupleT     any
+	UdtT       any
+	UuidT      any
+	VarcharT   any
+	VarintT    any
 }
 
 type CassandraStreamsRecords_ChangeRecords_NewImage_StaticCells_Value_ListT struct {
 }
 
 type CassandraStreamsRecords_ChangeRecords_NewImage_StaticCells_Value struct {
-	AsciiT any
-	BigintT any
-	BlobT any
-	BoolT any
-	CounterT any
-	DateT any
-	DecimalT any
-	DoubleT any
-	DurationT any
-	FloatT any
-	InetT any
-	IntT any
-	ListT any
-	MapT any
-	SetT any
-	SmallintT any
-	TextT any
-	TimeT any
+	AsciiT     any
+	BigintT    any
+	BlobT      any
+	BoolT      any
+	CounterT   any
+	DateT      any
+	DecimalT   any
+	DoubleT    any
+	DurationT  any
+	FloatT     any
+	InetT      any
+	IntT       any
+	ListT      any
+	MapT       any
+	SetT       any
+	SmallintT  any
+	TextT      any
+	TimeT      any
 	TimestampT any
-	TimeuuidT any
-	TinyintT any
-	TupleT any
-	UdtT any
-	UuidT any
-	VarcharT any
-	VarintT any
+	TimeuuidT  any
+	TinyintT   any
+	TupleT     any
+	UdtT       any
+	UuidT      any
+	VarcharT   any
+	VarintT    any
 }
 
 type CassandraStreamsRecords_ChangeRecords_NewImage_StaticCells struct {
 	Metadata any
-	Value any
+	Value    any
 }
 
 type CassandraStreamsRecords_ChangeRecords_NewImage struct {
 	RowMetadata any
 	StaticCells any
-	ValueCells any
+	ValueCells  any
 }
 
 type CassandraStreamsRecords_ChangeRecords struct {
 	ClusteringKeys any
-	CreatedAt any
-	EventVersion any
-	NewImage any
-	OldImage any
-	Origin any
-	PartitionKeys any
+	CreatedAt      any
+	EventVersion   any
+	NewImage       any
+	OldImage       any
+	Origin         any
+	PartitionKeys  any
 	SequenceNumber any
 }
 
@@ -107,7 +107,7 @@ type CassandraStreamsRecords_IteratorDescription struct {
 }
 
 type CassandraStreamsRecordsConfig struct {
-	MaxResults any
+	MaxResults    any
 	ShardIterator any
 }
 
@@ -115,15 +115,15 @@ type CassandraStreamsRecordsAttrs struct {
 	ChangeRecords any
 	// <p>Provides information about the current iterator.</p>
 	IteratorDescription any
-	MaxResults any
-	NextShardIterator any
-	ShardIterator any
+	MaxResults          any
+	NextShardIterator   any
+	ShardIterator       any
 }
 
 var CassandraStreamsRecords = ubx.DataSourceBinding{
 	WireType: "aws_cassandra_streams_records",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
 		"ShardIterator": ubx.FieldSpec{WireName: "shard_iterator"},
 	},
 }

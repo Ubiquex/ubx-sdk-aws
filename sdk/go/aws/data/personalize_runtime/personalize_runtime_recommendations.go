@@ -4,71 +4,71 @@ package personalize_runtime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PersonalizeRuntimeRecommendations_ItemList struct {
-	ItemId any
-	Metadata any
+	ItemId        any
+	Metadata      any
 	PromotionName any
-	Reason any
-	Score any
+	Reason        any
+	Score         any
 }
 
 type PersonalizeRuntimeRecommendations_Promotions struct {
-	FilterArn any
-	FilterValues any
-	Name any
+	FilterArn            any
+	FilterValues         any
+	Name                 any
 	PercentPromotedItems any
 }
 
 var PersonalizeRuntimeRecommendations_PromotionsFields = ubx.FieldMap{
-		"FilterArn": ubx.FieldSpec{WireName: "filter_arn"},
-		"FilterValues": ubx.FieldSpec{WireName: "filter_values"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PercentPromotedItems": ubx.FieldSpec{WireName: "percent_promoted_items"},
-	}
+	"FilterArn":            ubx.FieldSpec{WireName: "filter_arn"},
+	"FilterValues":         ubx.FieldSpec{WireName: "filter_values"},
+	"Name":                 ubx.FieldSpec{WireName: "name"},
+	"PercentPromotedItems": ubx.FieldSpec{WireName: "percent_promoted_items"},
+}
 
 type PersonalizeRuntimeRecommendationsConfig struct {
-	CampaignArn any
-	Context any
-	FilterArn any
-	FilterValues any
-	ItemId any
+	CampaignArn     any
+	Context         any
+	FilterArn       any
+	FilterValues    any
+	ItemId          any
 	MetadataColumns any
-	NumResults any
-	Promotions any
-	RecommenderArn any
-	UserId any
+	NumResults      any
+	Promotions      any
+	RecommenderArn  any
+	UserId          any
 }
 
 type PersonalizeRuntimeRecommendationsAttrs struct {
-	CampaignArn any
-	Context any
-	FilterArn any
-	FilterValues any
-	ItemId any
-	ItemList any
-	MetadataColumns any
-	NumResults any
-	Promotions any
+	CampaignArn      any
+	Context          any
+	FilterArn        any
+	FilterValues     any
+	ItemId           any
+	ItemList         any
+	MetadataColumns  any
+	NumResults       any
+	Promotions       any
 	RecommendationId any
-	RecommenderArn any
-	UserId any
+	RecommenderArn   any
+	UserId           any
 }
 
 var PersonalizeRuntimeRecommendations = ubx.DataSourceBinding{
 	WireType: "aws_personalize_runtime_recommendations",
 	Fields: ubx.FieldMap{
-		"CampaignArn": ubx.FieldSpec{WireName: "campaign_arn"},
-		"Context": ubx.FieldSpec{WireName: "context"},
-		"FilterArn": ubx.FieldSpec{WireName: "filter_arn"},
-		"FilterValues": ubx.FieldSpec{WireName: "filter_values"},
-		"ItemId": ubx.FieldSpec{WireName: "item_id"},
+		"CampaignArn":     ubx.FieldSpec{WireName: "campaign_arn"},
+		"Context":         ubx.FieldSpec{WireName: "context"},
+		"FilterArn":       ubx.FieldSpec{WireName: "filter_arn"},
+		"FilterValues":    ubx.FieldSpec{WireName: "filter_values"},
+		"ItemId":          ubx.FieldSpec{WireName: "item_id"},
 		"MetadataColumns": ubx.FieldSpec{WireName: "metadata_columns"},
-		"NumResults": ubx.FieldSpec{WireName: "num_results"},
+		"NumResults":      ubx.FieldSpec{WireName: "num_results"},
 		"Promotions": ubx.FieldSpec{
 			WireName: "promotions",
-			Kind: "list",
-			Fields: PersonalizeRuntimeRecommendations_PromotionsFields,
+			Kind:     "list",
+			Fields:   PersonalizeRuntimeRecommendations_PromotionsFields,
 		},
 		"RecommenderArn": ubx.FieldSpec{WireName: "recommender_arn"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":         ubx.FieldSpec{WireName: "user_id"},
 	},
 }

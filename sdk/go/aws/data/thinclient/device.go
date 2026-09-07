@@ -4,27 +4,27 @@ package thinclient
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Device_Device struct {
-	Arn any
-	CreatedAt any
-	CurrentSoftwareSetId any
-	CurrentSoftwareSetVersion any
-	DesiredSoftwareSetId any
-	EnvironmentId any
-	Id any
-	KmsKeyArn any
-	LastConnectedAt any
-	LastPostureAt any
-	LastUserId any
-	Model any
-	Name any
-	PendingSoftwareSetId any
-	PendingSoftwareSetVersion any
-	SerialNumber any
+	Arn                         any
+	CreatedAt                   any
+	CurrentSoftwareSetId        any
+	CurrentSoftwareSetVersion   any
+	DesiredSoftwareSetId        any
+	EnvironmentId               any
+	Id                          any
+	KmsKeyArn                   any
+	LastConnectedAt             any
+	LastPostureAt               any
+	LastUserId                  any
+	Model                       any
+	Name                        any
+	PendingSoftwareSetId        any
+	PendingSoftwareSetVersion   any
+	SerialNumber                any
 	SoftwareSetComplianceStatus any
-	SoftwareSetUpdateSchedule any
-	SoftwareSetUpdateStatus any
-	Status any
-	UpdatedAt any
+	SoftwareSetUpdateSchedule   any
+	SoftwareSetUpdateStatus     any
+	Status                      any
+	UpdatedAt                   any
 }
 
 type DeviceConfig struct {
@@ -34,7 +34,7 @@ type DeviceConfig struct {
 type DeviceAttrs struct {
 	// <p>Describes a thin client device.</p>
 	Device any
-	Id any
+	Id     any
 }
 
 var Device = ubx.DataSourceBinding{

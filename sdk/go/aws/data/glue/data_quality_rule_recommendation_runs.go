@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataQualityRuleRecommendationRuns_Filter_DataSource_DataQualityGlueTable struct {
 	AdditionalOptions any
-	CatalogId any
-	ConnectionName any
-	DatabaseName any
+	CatalogId         any
+	ConnectionName    any
+	DatabaseName      any
 	// <p>SQL Query of SparkSQL format that can be used to pre-process data before running Data Quality Operations.</p>
 	PreProcessingQuery any
-	TableName any
+	TableName          any
 }
 
 type DataQualityRuleRecommendationRuns_Filter_DataSource_GlueTable struct {
 	AdditionalOptions any
-	CatalogId any
-	ConnectionName any
-	DatabaseName any
-	TableName any
+	CatalogId         any
+	ConnectionName    any
+	DatabaseName      any
+	TableName         any
 }
 
 type DataQualityRuleRecommendationRuns_Filter_DataSource struct {
@@ -30,74 +30,74 @@ type DataQualityRuleRecommendationRuns_Filter_DataSource struct {
 
 type DataQualityRuleRecommendationRuns_Filter struct {
 	// <p>A data source (an Glue table) for which you want data quality results.</p>
-	DataSource any
-	StartedAfter any
+	DataSource    any
+	StartedAfter  any
 	StartedBefore any
 }
 
 type DataQualityRuleRecommendationRuns_Runs struct {
 	CreatedRulesetName any
-	DataSource any
-	RunId any
-	StartedOn any
-	Status any
+	DataSource         any
+	RunId              any
+	StartedOn          any
+	Status             any
 }
 
 var DataQualityRuleRecommendationRuns_Filter_DataSource_DataQualityGlueTableFields = ubx.FieldMap{
-		"AdditionalOptions": ubx.FieldSpec{WireName: "additional_options"},
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"PreProcessingQuery": ubx.FieldSpec{WireName: "pre_processing_query"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"AdditionalOptions":  ubx.FieldSpec{WireName: "additional_options"},
+	"CatalogId":          ubx.FieldSpec{WireName: "catalog_id"},
+	"ConnectionName":     ubx.FieldSpec{WireName: "connection_name"},
+	"DatabaseName":       ubx.FieldSpec{WireName: "database_name"},
+	"PreProcessingQuery": ubx.FieldSpec{WireName: "pre_processing_query"},
+	"TableName":          ubx.FieldSpec{WireName: "table_name"},
+}
 
 var DataQualityRuleRecommendationRuns_Filter_DataSource_GlueTableFields = ubx.FieldMap{
-		"AdditionalOptions": ubx.FieldSpec{WireName: "additional_options"},
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"AdditionalOptions": ubx.FieldSpec{WireName: "additional_options"},
+	"CatalogId":         ubx.FieldSpec{WireName: "catalog_id"},
+	"ConnectionName":    ubx.FieldSpec{WireName: "connection_name"},
+	"DatabaseName":      ubx.FieldSpec{WireName: "database_name"},
+	"TableName":         ubx.FieldSpec{WireName: "table_name"},
+}
 
 var DataQualityRuleRecommendationRuns_Filter_DataSourceFields = ubx.FieldMap{
-		"DataQualityGlueTable": ubx.FieldSpec{
-			WireName: "data_quality_glue_table",
-			Kind: "object",
-			Fields: DataQualityRuleRecommendationRuns_Filter_DataSource_DataQualityGlueTableFields,
-		},
-		"GlueTable": ubx.FieldSpec{
-			WireName: "glue_table",
-			Kind: "object",
-			Fields: DataQualityRuleRecommendationRuns_Filter_DataSource_GlueTableFields,
-		},
-	}
+	"DataQualityGlueTable": ubx.FieldSpec{
+		WireName: "data_quality_glue_table",
+		Kind:     "object",
+		Fields:   DataQualityRuleRecommendationRuns_Filter_DataSource_DataQualityGlueTableFields,
+	},
+	"GlueTable": ubx.FieldSpec{
+		WireName: "glue_table",
+		Kind:     "object",
+		Fields:   DataQualityRuleRecommendationRuns_Filter_DataSource_GlueTableFields,
+	},
+}
 
 var DataQualityRuleRecommendationRuns_FilterFields = ubx.FieldMap{
-		"DataSource": ubx.FieldSpec{
-			WireName: "data_source",
-			Kind: "object",
-			Fields: DataQualityRuleRecommendationRuns_Filter_DataSourceFields,
-		},
-		"StartedAfter": ubx.FieldSpec{WireName: "started_after"},
-		"StartedBefore": ubx.FieldSpec{WireName: "started_before"},
-	}
+	"DataSource": ubx.FieldSpec{
+		WireName: "data_source",
+		Kind:     "object",
+		Fields:   DataQualityRuleRecommendationRuns_Filter_DataSourceFields,
+	},
+	"StartedAfter":  ubx.FieldSpec{WireName: "started_after"},
+	"StartedBefore": ubx.FieldSpec{WireName: "started_before"},
+}
 
 type DataQualityRuleRecommendationRunsConfig struct {
 	// <p>A filter for listing data quality recommendation runs.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
-	Tags any
+	NextToken  any
+	Tags       any
 }
 
 type DataQualityRuleRecommendationRunsAttrs struct {
 	// <p>A filter for listing data quality recommendation runs.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
-	Runs any
-	Tags any
+	NextToken  any
+	Runs       any
+	Tags       any
 }
 
 var DataQualityRuleRecommendationRuns = ubx.DataSourceBinding{
@@ -105,11 +105,11 @@ var DataQualityRuleRecommendationRuns = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: DataQualityRuleRecommendationRuns_FilterFields,
+			Kind:     "object",
+			Fields:   DataQualityRuleRecommendationRuns_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Tags":       ubx.FieldSpec{WireName: "tags"},
 	},
 }

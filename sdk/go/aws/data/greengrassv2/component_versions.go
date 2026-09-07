@@ -4,29 +4,29 @@ package greengrassv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComponentVersions_ComponentVersions struct {
-	Arn any
-	ComponentName any
+	Arn              any
+	ComponentName    any
 	ComponentVersion any
 }
 
 type ComponentVersionsConfig struct {
-	Arn any
+	Arn        any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ComponentVersionsAttrs struct {
-	Arn any
+	Arn               any
 	ComponentVersions any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 var ComponentVersions = ubx.DataSourceBinding{
 	WireType: "aws_greengrassv2_component_versions",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":        ubx.FieldSpec{WireName: "arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

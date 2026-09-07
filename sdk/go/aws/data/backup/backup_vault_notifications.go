@@ -8,10 +8,10 @@ type BackupVaultNotificationsConfig struct {
 }
 
 type BackupVaultNotificationsAttrs struct {
-	BackupVaultArn any
+	BackupVaultArn    any
 	BackupVaultEvents any
-	BackupVaultName any
-	SnstopicArn any
+	BackupVaultName   any
+	SnstopicArn       any
 }
 
 var BackupVaultNotifications = ubx.DataSourceBinding{

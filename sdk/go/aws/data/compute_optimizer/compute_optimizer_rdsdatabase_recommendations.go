@@ -4,22 +4,22 @@ package compute_optimizer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComputeOptimizerRdsdatabaseRecommendations_Errors struct {
-	Code any
+	Code       any
 	Identifier any
-	Message any
+	Message    any
 }
 
 type ComputeOptimizerRdsdatabaseRecommendations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ComputeOptimizerRdsdatabaseRecommendations_RdsDbrecommendations_CurrentStorageConfiguration struct {
-	AllocatedStorage any
-	Iops any
+	AllocatedStorage    any
+	Iops                any
 	MaxAllocatedStorage any
-	StorageThroughput any
-	StorageType any
+	StorageThroughput   any
+	StorageType         any
 }
 
 type ComputeOptimizerRdsdatabaseRecommendations_RdsDbrecommendations_EffectiveRecommendationPreferences_SavingsEstimationMode struct {
@@ -27,73 +27,73 @@ type ComputeOptimizerRdsdatabaseRecommendations_RdsDbrecommendations_EffectiveRe
 }
 
 type ComputeOptimizerRdsdatabaseRecommendations_RdsDbrecommendations_EffectiveRecommendationPreferences struct {
-	CpuVendorArchitectures any
+	CpuVendorArchitectures        any
 	EnhancedInfrastructureMetrics any
-	LookBackPeriod any
-	SavingsEstimationMode any
+	LookBackPeriod                any
+	SavingsEstimationMode         any
 }
 
 type ComputeOptimizerRdsdatabaseRecommendations_RdsDbrecommendations_InstanceRecommendationOptions_ProjectedUtilizationMetrics struct {
-	Name any
+	Name      any
 	Statistic any
-	Value any
+	Value     any
 }
 
 type ComputeOptimizerRdsdatabaseRecommendations_RdsDbrecommendations_InstanceRecommendationOptions_SavingsOpportunity_EstimatedMonthlySavings struct {
 	Currency any
-	Value any
+	Value    any
 }
 
 type ComputeOptimizerRdsdatabaseRecommendations_RdsDbrecommendations_InstanceRecommendationOptions_SavingsOpportunity struct {
-	EstimatedMonthlySavings any
+	EstimatedMonthlySavings      any
 	SavingsOpportunityPercentage any
 }
 
 type ComputeOptimizerRdsdatabaseRecommendations_RdsDbrecommendations_InstanceRecommendationOptions struct {
-	DbInstanceClass any
-	PerformanceRisk any
-	ProjectedUtilizationMetrics any
-	Rank any
-	SavingsOpportunity any
+	DbInstanceClass                  any
+	PerformanceRisk                  any
+	ProjectedUtilizationMetrics      any
+	Rank                             any
+	SavingsOpportunity               any
 	SavingsOpportunityAfterDiscounts any
 }
 
 type ComputeOptimizerRdsdatabaseRecommendations_RdsDbrecommendations_StorageRecommendationOptions struct {
 	EstimatedMonthlyVolumeIopsCostVariation any
-	Rank any
-	SavingsOpportunity any
-	SavingsOpportunityAfterDiscounts any
-	StorageConfiguration any
+	Rank                                    any
+	SavingsOpportunity                      any
+	SavingsOpportunityAfterDiscounts        any
+	StorageConfiguration                    any
 }
 
 type ComputeOptimizerRdsdatabaseRecommendations_RdsDbrecommendations_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ComputeOptimizerRdsdatabaseRecommendations_RdsDbrecommendations struct {
-	AccountId any
-	CurrentDbinstanceClass any
-	CurrentInstancePerformanceRisk any
-	CurrentStorageConfiguration any
+	AccountId                                             any
+	CurrentDbinstanceClass                                any
+	CurrentInstancePerformanceRisk                        any
+	CurrentStorageConfiguration                           any
 	CurrentStorageEstimatedMonthlyVolumeIopsCostVariation any
-	DbClusterIdentifier any
-	EffectiveRecommendationPreferences any
-	Engine any
-	EngineVersion any
-	Idle any
-	InstanceFinding any
-	InstanceFindingReasonCodes any
-	InstanceRecommendationOptions any
-	LastRefreshTimestamp any
-	LookbackPeriodInDays any
-	PromotionTier any
-	ResourceArn any
-	StorageFinding any
-	StorageFindingReasonCodes any
-	StorageRecommendationOptions any
-	Tags any
-	UtilizationMetrics any
+	DbClusterIdentifier                                   any
+	EffectiveRecommendationPreferences                    any
+	Engine                                                any
+	EngineVersion                                         any
+	Idle                                                  any
+	InstanceFinding                                       any
+	InstanceFindingReasonCodes                            any
+	InstanceRecommendationOptions                         any
+	LastRefreshTimestamp                                  any
+	LookbackPeriodInDays                                  any
+	PromotionTier                                         any
+	ResourceArn                                           any
+	StorageFinding                                        any
+	StorageFindingReasonCodes                             any
+	StorageRecommendationOptions                          any
+	Tags                                                  any
+	UtilizationMetrics                                    any
 }
 
 type ComputeOptimizerRdsdatabaseRecommendations_RecommendationPreferences struct {
@@ -101,34 +101,34 @@ type ComputeOptimizerRdsdatabaseRecommendations_RecommendationPreferences struct
 }
 
 var ComputeOptimizerRdsdatabaseRecommendations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var ComputeOptimizerRdsdatabaseRecommendations_RecommendationPreferencesFields = ubx.FieldMap{
-		"CpuVendorArchitectures": ubx.FieldSpec{WireName: "cpu_vendor_architectures"},
-	}
+	"CpuVendorArchitectures": ubx.FieldSpec{WireName: "cpu_vendor_architectures"},
+}
 
 type ComputeOptimizerRdsdatabaseRecommendationsConfig struct {
 	AccountIds any
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Describes the recommendation preferences to return in the response of a <a>GetAutoScalingGroupRecommendations</a>, <a>GetEC2InstanceRecommendations</a>, <a>GetEC2RecommendationProjectedMetrics</a>, <a>GetRDSDatabaseRecommendations</a>, and <a>GetRDSDatabaseRecommendationProjectedMetrics</a> request.</p>
 	RecommendationPreferences any
-	ResourceArns any
+	ResourceArns              any
 }
 
 type ComputeOptimizerRdsdatabaseRecommendationsAttrs struct {
-	AccountIds any
-	Errors any
-	Filters any
-	MaxResults any
-	NextToken any
+	AccountIds           any
+	Errors               any
+	Filters              any
+	MaxResults           any
+	NextToken            any
 	RdsDbrecommendations any
 	// <p>Describes the recommendation preferences to return in the response of a <a>GetAutoScalingGroupRecommendations</a>, <a>GetEC2InstanceRecommendations</a>, <a>GetEC2RecommendationProjectedMetrics</a>, <a>GetRDSDatabaseRecommendations</a>, and <a>GetRDSDatabaseRecommendationProjectedMetrics</a> request.</p>
 	RecommendationPreferences any
-	ResourceArns any
+	ResourceArns              any
 }
 
 var ComputeOptimizerRdsdatabaseRecommendations = ubx.DataSourceBinding{
@@ -137,15 +137,15 @@ var ComputeOptimizerRdsdatabaseRecommendations = ubx.DataSourceBinding{
 		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ComputeOptimizerRdsdatabaseRecommendations_FiltersFields,
+			Kind:     "list",
+			Fields:   ComputeOptimizerRdsdatabaseRecommendations_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"RecommendationPreferences": ubx.FieldSpec{
 			WireName: "recommendation_preferences",
-			Kind: "object",
-			Fields: ComputeOptimizerRdsdatabaseRecommendations_RecommendationPreferencesFields,
+			Kind:     "object",
+			Fields:   ComputeOptimizerRdsdatabaseRecommendations_RecommendationPreferencesFields,
 		},
 		"ResourceArns": ubx.FieldSpec{WireName: "resource_arns"},
 	},

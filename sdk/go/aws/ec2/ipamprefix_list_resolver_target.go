@@ -10,9 +10,9 @@ type IpamprefixListResolverTarget_Tags struct {
 }
 
 var IpamprefixListResolverTarget_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IpamprefixListResolverTargetConfig struct {
 	// The desired version of the Prefix List Resolver that this Target should synchronize with.
@@ -51,14 +51,14 @@ type IpamprefixListResolverTargetAttrs struct {
 var IpamprefixListResolverTarget = ubx.ResourceBinding{
 	WireType: "aws_ec2_ipamprefix_list_resolver_target",
 	Fields: ubx.FieldMap{
-		"DesiredVersion": ubx.FieldSpec{WireName: "desired_version"},
+		"DesiredVersion":           ubx.FieldSpec{WireName: "desired_version"},
 		"IpamPrefixListResolverId": ubx.FieldSpec{WireName: "ipam_prefix_list_resolver_id"},
-		"PrefixListId": ubx.FieldSpec{WireName: "prefix_list_id"},
-		"PrefixListRegion": ubx.FieldSpec{WireName: "prefix_list_region"},
+		"PrefixListId":             ubx.FieldSpec{WireName: "prefix_list_id"},
+		"PrefixListRegion":         ubx.FieldSpec{WireName: "prefix_list_region"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: IpamprefixListResolverTarget_TagsFields,
+			Kind:     "list",
+			Fields:   IpamprefixListResolverTarget_TagsFields,
 		},
 		"TrackLatestVersion": ubx.FieldSpec{WireName: "track_latest_version"},
 	},

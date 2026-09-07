@@ -8,7 +8,7 @@ type ControlplanePaymentCryptographyResourcePolicyConfig struct {
 }
 
 type ControlplanePaymentCryptographyResourcePolicyAttrs struct {
-	Policy any
+	Policy      any
 	ResourceArn any
 }
 

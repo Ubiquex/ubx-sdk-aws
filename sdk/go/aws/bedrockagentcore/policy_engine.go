@@ -4,14 +4,14 @@ package bedrockagentcore
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PolicyEngine_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var PolicyEngine_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PolicyEngineConfig struct {
 	// A human-readable description of the policy engine's purpose and scope
@@ -50,13 +50,13 @@ type PolicyEngineAttrs struct {
 var PolicyEngine = ubx.ResourceBinding{
 	WireType: "aws_bedrock_agent_core_policy_engine",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"EncryptionKeyArn": ubx.FieldSpec{WireName: "encryption_key_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PolicyEngine_TagsFields,
+			Kind:     "list",
+			Fields:   PolicyEngine_TagsFields,
 		},
 	},
 }

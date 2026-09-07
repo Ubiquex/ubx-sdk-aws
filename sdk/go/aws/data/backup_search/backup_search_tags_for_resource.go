@@ -9,7 +9,7 @@ type BackupSearchTagsForResourceConfig struct {
 
 type BackupSearchTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var BackupSearchTagsForResource = ubx.DataSourceBinding{

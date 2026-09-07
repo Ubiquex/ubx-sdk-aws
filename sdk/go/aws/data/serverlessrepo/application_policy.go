@@ -4,10 +4,10 @@ package serverlessrepo
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationPolicy_Statements struct {
-	Actions any
+	Actions         any
 	PrincipalOrgIds any
-	Principals any
-	StatementId any
+	Principals      any
+	StatementId     any
 }
 
 type ApplicationPolicyConfig struct {
@@ -16,7 +16,7 @@ type ApplicationPolicyConfig struct {
 
 type ApplicationPolicyAttrs struct {
 	ApplicationId any
-	Statements any
+	Statements    any
 }
 
 var ApplicationPolicy = ubx.DataSourceBinding{

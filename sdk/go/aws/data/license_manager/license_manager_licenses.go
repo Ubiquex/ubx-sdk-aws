@@ -4,12 +4,12 @@ package license_manager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseManagerLicenses_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type LicenseManagerLicenses_Licenses_ConsumptionConfiguration_BorrowConfiguration struct {
-	AllowEarlyCheckIn any
+	AllowEarlyCheckIn      any
 	MaxTimeToLiveInMinutes any
 }
 
@@ -18,71 +18,71 @@ type LicenseManagerLicenses_Licenses_ConsumptionConfiguration_ProvisionalConfigu
 }
 
 type LicenseManagerLicenses_Licenses_ConsumptionConfiguration struct {
-	BorrowConfiguration any
+	BorrowConfiguration      any
 	ProvisionalConfiguration any
-	RenewType any
+	RenewType                any
 }
 
 type LicenseManagerLicenses_Licenses_Entitlements struct {
 	AllowCheckIn any
-	MaxCount any
-	Name any
-	Overage any
-	Unit any
-	Value any
+	MaxCount     any
+	Name         any
+	Overage      any
+	Unit         any
+	Value        any
 }
 
 type LicenseManagerLicenses_Licenses_Issuer struct {
 	KeyFingerprint any
-	Name any
-	SignKey any
+	Name           any
+	SignKey        any
 }
 
 type LicenseManagerLicenses_Licenses_LicenseMetadata struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type LicenseManagerLicenses_Licenses_Validity struct {
 	Begin any
-	End any
+	End   any
 }
 
 type LicenseManagerLicenses_Licenses struct {
-	Beneficiary any
+	Beneficiary              any
 	ConsumptionConfiguration any
-	CreateTime any
-	Entitlements any
-	HomeRegion any
-	Issuer any
-	LicenseArn any
-	LicenseMetadata any
-	LicenseName any
-	ProductName any
-	ProductSku any
-	Status any
-	Validity any
-	Version any
+	CreateTime               any
+	Entitlements             any
+	HomeRegion               any
+	Issuer                   any
+	LicenseArn               any
+	LicenseMetadata          any
+	LicenseName              any
+	ProductName              any
+	ProductSku               any
+	Status                   any
+	Validity                 any
+	Version                  any
 }
 
 var LicenseManagerLicenses_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type LicenseManagerLicensesConfig struct {
-	Filters any
+	Filters     any
 	LicenseArns any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type LicenseManagerLicensesAttrs struct {
-	Filters any
+	Filters     any
 	LicenseArns any
-	Licenses any
-	MaxResults any
-	NextToken any
+	Licenses    any
+	MaxResults  any
+	NextToken   any
 }
 
 var LicenseManagerLicenses = ubx.DataSourceBinding{
@@ -90,11 +90,11 @@ var LicenseManagerLicenses = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: LicenseManagerLicenses_FiltersFields,
+			Kind:     "list",
+			Fields:   LicenseManagerLicenses_FiltersFields,
 		},
 		"LicenseArns": ubx.FieldSpec{WireName: "license_arns"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

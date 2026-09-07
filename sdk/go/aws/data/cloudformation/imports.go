@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImportsConfig struct {
 	ExportName any
-	NextToken any
+	NextToken  any
 }
 
 type ImportsAttrs struct {
 	ExportName any
-	Imports any
-	NextToken any
+	Imports    any
+	NextToken  any
 }
 
 var Imports = ubx.DataSourceBinding{
 	WireType: "aws_cloudformation_imports",
 	Fields: ubx.FieldMap{
 		"ExportName": ubx.FieldSpec{WireName: "export_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

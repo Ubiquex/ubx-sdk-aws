@@ -4,34 +4,34 @@ package storagegateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Gateways_Gateways struct {
-	DeprecationDate any
-	Ec2InstanceId any
-	Ec2InstanceRegion any
-	GatewayArn any
-	GatewayId any
-	GatewayName any
+	DeprecationDate         any
+	Ec2InstanceId           any
+	Ec2InstanceRegion       any
+	GatewayArn              any
+	GatewayId               any
+	GatewayName             any
 	GatewayOperationalState any
-	GatewayType any
-	HostEnvironment any
-	HostEnvironmentId any
-	SoftwareVersion any
+	GatewayType             any
+	HostEnvironment         any
+	HostEnvironmentId       any
+	SoftwareVersion         any
 }
 
 type GatewaysConfig struct {
-	Limit any
+	Limit  any
 	Marker any
 }
 
 type GatewaysAttrs struct {
 	Gateways any
-	Limit any
-	Marker any
+	Limit    any
+	Marker   any
 }
 
 var Gateways = ubx.DataSourceBinding{
 	WireType: "aws_storagegateway_gateways",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":  ubx.FieldSpec{WireName: "limit"},
 		"Marker": ubx.FieldSpec{WireName: "marker"},
 	},
 }

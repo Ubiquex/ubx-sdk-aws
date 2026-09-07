@@ -28,9 +28,9 @@ type SecurityControlAttrs struct {
 var SecurityControl = ubx.ResourceBinding{
 	WireType: "aws_security_hub_security_control",
 	Fields: ubx.FieldMap{
-		"LastUpdateReason": ubx.FieldSpec{WireName: "last_update_reason"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
+		"LastUpdateReason":   ubx.FieldSpec{WireName: "last_update_reason"},
+		"Parameters":         ubx.FieldSpec{WireName: "parameters"},
 		"SecurityControlArn": ubx.FieldSpec{WireName: "security_control_arn"},
-		"SecurityControlId": ubx.FieldSpec{WireName: "security_control_id"},
+		"SecurityControlId":  ubx.FieldSpec{WireName: "security_control_id"},
 	},
 }

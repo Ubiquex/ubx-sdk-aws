@@ -4,7 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceCreditSpecifications_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -14,25 +14,25 @@ type InstanceCreditSpecifications_InstanceCreditSpecifications struct {
 }
 
 var InstanceCreditSpecifications_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type InstanceCreditSpecificationsConfig struct {
-	DryRun any
-	Filters any
+	DryRun      any
+	Filters     any
 	InstanceIds any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type InstanceCreditSpecificationsAttrs struct {
-	DryRun any
-	Filters any
+	DryRun                       any
+	Filters                      any
 	InstanceCreditSpecifications any
-	InstanceIds any
-	MaxResults any
-	NextToken any
+	InstanceIds                  any
+	MaxResults                   any
+	NextToken                    any
 }
 
 var InstanceCreditSpecifications = ubx.DataSourceBinding{
@@ -41,11 +41,11 @@ var InstanceCreditSpecifications = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: InstanceCreditSpecifications_FiltersFields,
+			Kind:     "list",
+			Fields:   InstanceCreditSpecifications_FiltersFields,
 		},
 		"InstanceIds": ubx.FieldSpec{WireName: "instance_ids"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

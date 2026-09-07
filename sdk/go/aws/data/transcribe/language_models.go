@@ -5,43 +5,43 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LanguageModels_Models_InputDataConfig struct {
 	DataAccessRoleArn any
-	S3Uri any
-	TuningDataS3Uri any
+	S3Uri             any
+	TuningDataS3Uri   any
 }
 
 type LanguageModels_Models struct {
-	BaseModelName any
-	CreateTime any
-	FailureReason any
-	InputDataConfig any
-	LanguageCode any
-	LastModifiedTime any
-	ModelName any
-	ModelStatus any
+	BaseModelName       any
+	CreateTime          any
+	FailureReason       any
+	InputDataConfig     any
+	LanguageCode        any
+	LastModifiedTime    any
+	ModelName           any
+	ModelStatus         any
 	UpgradeAvailability any
 }
 
 type LanguageModelsConfig struct {
-	MaxResults any
+	MaxResults   any
 	NameContains any
-	NextToken any
+	NextToken    any
 	StatusEquals any
 }
 
 type LanguageModelsAttrs struct {
-	MaxResults any
-	Models any
+	MaxResults   any
+	Models       any
 	NameContains any
-	NextToken any
+	NextToken    any
 	StatusEquals any
 }
 
 var LanguageModels = ubx.DataSourceBinding{
 	WireType: "aws_transcribe_language_models",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
 		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"StatusEquals": ubx.FieldSpec{WireName: "status_equals"},
 	},
 }

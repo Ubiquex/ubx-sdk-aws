@@ -4,38 +4,38 @@ package models_v2_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsV2LexRecommendedIntents_SummaryList struct {
-	IntentId any
-	IntentName any
+	IntentId              any
+	IntentName            any
 	SampleUtterancesCount any
 }
 
 type ModelsV2LexRecommendedIntentsConfig struct {
-	BotId any
+	BotId               any
 	BotRecommendationId any
-	BotVersion any
-	LocaleId any
-	MaxResults any
-	NextToken any
+	BotVersion          any
+	LocaleId            any
+	MaxResults          any
+	NextToken           any
 }
 
 type ModelsV2LexRecommendedIntentsAttrs struct {
-	BotId any
+	BotId               any
 	BotRecommendationId any
-	BotVersion any
-	LocaleId any
-	MaxResults any
-	NextToken any
-	SummaryList any
+	BotVersion          any
+	LocaleId            any
+	MaxResults          any
+	NextToken           any
+	SummaryList         any
 }
 
 var ModelsV2LexRecommendedIntents = ubx.DataSourceBinding{
 	WireType: "aws_models_v2_lex_recommended_intents",
 	Fields: ubx.FieldMap{
-		"BotId": ubx.FieldSpec{WireName: "bot_id"},
+		"BotId":               ubx.FieldSpec{WireName: "bot_id"},
 		"BotRecommendationId": ubx.FieldSpec{WireName: "bot_recommendation_id"},
-		"BotVersion": ubx.FieldSpec{WireName: "bot_version"},
-		"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"BotVersion":          ubx.FieldSpec{WireName: "bot_version"},
+		"LocaleId":            ubx.FieldSpec{WireName: "locale_id"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 	},
 }

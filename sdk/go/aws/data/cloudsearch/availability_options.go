@@ -4,11 +4,11 @@ package cloudsearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AvailabilityOptions_AvailabilityOptions_Status struct {
-	CreationDate any
+	CreationDate    any
 	PendingDeletion any
 	// <p>The state of processing a change to an option. One of:</p> <ul> <li>RequiresIndexDocuments: The option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li>Processing: The option's latest value is in the process of being activated.</li> <li>Active: The option's latest value is fully deployed. </li> <li>FailedToValidate: The option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> </ul>
-	State any
-	UpdateDate any
+	State         any
+	UpdateDate    any
 	UpdateVersion any
 }
 
@@ -27,7 +27,7 @@ type AvailabilityOptionsConfig struct {
 type AvailabilityOptionsAttrs struct {
 	// <p>The status and configuration of the domain's availability options.</p>
 	AvailabilityOptions any
-	Deployed any
+	Deployed            any
 	// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
 	DomainName any
 }
@@ -35,7 +35,7 @@ type AvailabilityOptionsAttrs struct {
 var AvailabilityOptions = ubx.DataSourceBinding{
 	WireType: "aws_cloudsearch_availability_options",
 	Fields: ubx.FieldMap{
-		"Deployed": ubx.FieldSpec{WireName: "deployed"},
+		"Deployed":   ubx.FieldSpec{WireName: "deployed"},
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 	},
 }

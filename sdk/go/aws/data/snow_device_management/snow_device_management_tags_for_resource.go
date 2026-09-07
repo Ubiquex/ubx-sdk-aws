@@ -9,7 +9,7 @@ type SnowDeviceManagementTagsForResourceConfig struct {
 
 type SnowDeviceManagementTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var SnowDeviceManagementTagsForResource = ubx.DataSourceBinding{

@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EncryptionConfiguration_ConfigurationDetails struct {
 	ConfigurationStatus any
-	ErrorCode any
-	ErrorMessage any
+	ErrorCode           any
+	ErrorMessage        any
 }
 
 type EncryptionConfigurationConfig struct {
@@ -36,8 +36,8 @@ type EncryptionConfigurationAttrs struct {
 var EncryptionConfiguration = ubx.ResourceBinding{
 	WireType: "aws_io_t_encryption_configuration",
 	Fields: ubx.FieldMap{
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+		"EncryptionType":   ubx.FieldSpec{WireName: "encryption_type"},
 		"KmsAccessRoleArn": ubx.FieldSpec{WireName: "kms_access_role_arn"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+		"KmsKeyArn":        ubx.FieldSpec{WireName: "kms_key_arn"},
 	},
 }

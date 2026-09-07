@@ -11,9 +11,9 @@ type TransitGateway_Tags struct {
 }
 
 var TransitGateway_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TransitGatewayConfig struct {
 	// The private Autonomous System Number (ASN) for the Amazon side of a BGP session, used when the transit gateway is attached to a Direct Connect gateway. (AI-inferred)
@@ -86,23 +86,23 @@ type TransitGatewayAttrs struct {
 var TransitGateway = ubx.ResourceBinding{
 	WireType: "aws_ec2_transit_gateway",
 	Fields: ubx.FieldMap{
-		"AmazonSideAsn": ubx.FieldSpec{WireName: "amazon_side_asn"},
-		"AssociationDefaultRouteTableId": ubx.FieldSpec{WireName: "association_default_route_table_id"},
-		"AutoAcceptSharedAttachments": ubx.FieldSpec{WireName: "auto_accept_shared_attachments"},
-		"DefaultRouteTableAssociation": ubx.FieldSpec{WireName: "default_route_table_association"},
-		"DefaultRouteTablePropagation": ubx.FieldSpec{WireName: "default_route_table_propagation"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DnsSupport": ubx.FieldSpec{WireName: "dns_support"},
-		"EncryptionSupport": ubx.FieldSpec{WireName: "encryption_support"},
-		"MulticastSupport": ubx.FieldSpec{WireName: "multicast_support"},
-		"PropagationDefaultRouteTableId": ubx.FieldSpec{WireName: "propagation_default_route_table_id"},
+		"AmazonSideAsn":                   ubx.FieldSpec{WireName: "amazon_side_asn"},
+		"AssociationDefaultRouteTableId":  ubx.FieldSpec{WireName: "association_default_route_table_id"},
+		"AutoAcceptSharedAttachments":     ubx.FieldSpec{WireName: "auto_accept_shared_attachments"},
+		"DefaultRouteTableAssociation":    ubx.FieldSpec{WireName: "default_route_table_association"},
+		"DefaultRouteTablePropagation":    ubx.FieldSpec{WireName: "default_route_table_propagation"},
+		"Description":                     ubx.FieldSpec{WireName: "description"},
+		"DnsSupport":                      ubx.FieldSpec{WireName: "dns_support"},
+		"EncryptionSupport":               ubx.FieldSpec{WireName: "encryption_support"},
+		"MulticastSupport":                ubx.FieldSpec{WireName: "multicast_support"},
+		"PropagationDefaultRouteTableId":  ubx.FieldSpec{WireName: "propagation_default_route_table_id"},
 		"SecurityGroupReferencingSupport": ubx.FieldSpec{WireName: "security_group_referencing_support"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TransitGateway_TagsFields,
+			Kind:     "list",
+			Fields:   TransitGateway_TagsFields,
 		},
 		"TransitGatewayCidrBlocks": ubx.FieldSpec{WireName: "transit_gateway_cidr_blocks"},
-		"VpnEcmpSupport": ubx.FieldSpec{WireName: "vpn_ecmp_support"},
+		"VpnEcmpSupport":           ubx.FieldSpec{WireName: "vpn_ecmp_support"},
 	},
 }

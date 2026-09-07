@@ -10,9 +10,9 @@ type ReplicationInstance_Tags struct {
 }
 
 var ReplicationInstance_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ReplicationInstanceConfig struct {
 	// Specifies the amount of storage (in gigabytes) to allocate for the AWS DMS replication instance. (AI-inferred)
@@ -97,25 +97,25 @@ type ReplicationInstanceAttrs struct {
 var ReplicationInstance = ubx.ResourceBinding{
 	WireType: "aws_dms_replication_instance",
 	Fields: ubx.FieldMap{
-		"AllocatedStorage": ubx.FieldSpec{WireName: "allocated_storage"},
-		"AllowMajorVersionUpgrade": ubx.FieldSpec{WireName: "allow_major_version_upgrade"},
-		"AutoMinorVersionUpgrade": ubx.FieldSpec{WireName: "auto_minor_version_upgrade"},
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"DnsNameServers": ubx.FieldSpec{WireName: "dns_name_servers"},
-		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"MultiAz": ubx.FieldSpec{WireName: "multi_az"},
-		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
-		"PreferredMaintenanceWindow": ubx.FieldSpec{WireName: "preferred_maintenance_window"},
-		"PubliclyAccessible": ubx.FieldSpec{WireName: "publicly_accessible"},
-		"ReplicationInstanceClass": ubx.FieldSpec{WireName: "replication_instance_class"},
-		"ReplicationInstanceIdentifier": ubx.FieldSpec{WireName: "replication_instance_identifier"},
+		"AllocatedStorage":                 ubx.FieldSpec{WireName: "allocated_storage"},
+		"AllowMajorVersionUpgrade":         ubx.FieldSpec{WireName: "allow_major_version_upgrade"},
+		"AutoMinorVersionUpgrade":          ubx.FieldSpec{WireName: "auto_minor_version_upgrade"},
+		"AvailabilityZone":                 ubx.FieldSpec{WireName: "availability_zone"},
+		"DnsNameServers":                   ubx.FieldSpec{WireName: "dns_name_servers"},
+		"EngineVersion":                    ubx.FieldSpec{WireName: "engine_version"},
+		"KmsKeyId":                         ubx.FieldSpec{WireName: "kms_key_id"},
+		"MultiAz":                          ubx.FieldSpec{WireName: "multi_az"},
+		"NetworkType":                      ubx.FieldSpec{WireName: "network_type"},
+		"PreferredMaintenanceWindow":       ubx.FieldSpec{WireName: "preferred_maintenance_window"},
+		"PubliclyAccessible":               ubx.FieldSpec{WireName: "publicly_accessible"},
+		"ReplicationInstanceClass":         ubx.FieldSpec{WireName: "replication_instance_class"},
+		"ReplicationInstanceIdentifier":    ubx.FieldSpec{WireName: "replication_instance_identifier"},
 		"ReplicationSubnetGroupIdentifier": ubx.FieldSpec{WireName: "replication_subnet_group_identifier"},
-		"ResourceIdentifier": ubx.FieldSpec{WireName: "resource_identifier"},
+		"ResourceIdentifier":               ubx.FieldSpec{WireName: "resource_identifier"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ReplicationInstance_TagsFields,
+			Kind:     "list",
+			Fields:   ReplicationInstance_TagsFields,
 		},
 		"VpcSecurityGroupIds": ubx.FieldSpec{WireName: "vpc_security_group_ids"},
 	},

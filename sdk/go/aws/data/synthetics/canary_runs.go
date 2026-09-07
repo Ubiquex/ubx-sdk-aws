@@ -8,55 +8,55 @@ type CanaryRuns_CanaryRuns_DryRunConfig struct {
 }
 
 type CanaryRuns_CanaryRuns_Status struct {
-	State any
-	StateReason any
+	State           any
+	StateReason     any
 	StateReasonCode any
-	TestResult any
+	TestResult      any
 }
 
 type CanaryRuns_CanaryRuns_Timeline struct {
-	Completed any
+	Completed                       any
 	MetricTimestampForRunAndRetries any
-	Started any
+	Started                         any
 }
 
 type CanaryRuns_CanaryRuns struct {
 	ArtifactS3Location any
-	BrowserType any
-	DryRunConfig any
-	Id any
-	Location any
-	Name any
-	RetryAttempt any
-	ScheduledRunId any
-	Status any
-	Timeline any
+	BrowserType        any
+	DryRunConfig       any
+	Id                 any
+	Location           any
+	Name               any
+	RetryAttempt       any
+	ScheduledRunId     any
+	Status             any
+	Timeline           any
 }
 
 type CanaryRunsConfig struct {
-	DryRunId any
+	DryRunId   any
 	MaxResults any
-	Name any
-	NextToken any
-	RunType any
+	Name       any
+	NextToken  any
+	RunType    any
 }
 
 type CanaryRunsAttrs struct {
 	CanaryRuns any
-	DryRunId any
+	DryRunId   any
 	MaxResults any
-	Name any
-	NextToken any
-	RunType any
+	Name       any
+	NextToken  any
+	RunType    any
 }
 
 var CanaryRuns = ubx.DataSourceBinding{
 	WireType: "aws_synthetics_canary_runs",
 	Fields: ubx.FieldMap{
-		"DryRunId": ubx.FieldSpec{WireName: "dry_run_id"},
+		"DryRunId":   ubx.FieldSpec{WireName: "dry_run_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RunType": ubx.FieldSpec{WireName: "run_type"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"RunType":    ubx.FieldSpec{WireName: "run_type"},
 	},
 }

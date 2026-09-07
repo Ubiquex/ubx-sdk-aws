@@ -4,21 +4,21 @@ package s3
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BucketVersioningConfig struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 }
 
 type BucketVersioningAttrs struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
-	Mfadelete any
-	Status any
+	Mfadelete           any
+	Status              any
 }
 
 var BucketVersioning = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_versioning",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
 	},
 }

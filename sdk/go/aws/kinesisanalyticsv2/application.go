@@ -285,358 +285,358 @@ type Application_RunConfiguration struct {
 }
 
 type Application_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Application_ApplicationConfiguration_ApplicationCodeConfiguration_CodeContent_S3ContentLocationFields = ubx.FieldMap{
-		"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
-		"FileKey": ubx.FieldSpec{WireName: "file_key"},
-		"ObjectVersion": ubx.FieldSpec{WireName: "object_version"},
-	}
+	"BucketArn":     ubx.FieldSpec{WireName: "bucket_arn"},
+	"FileKey":       ubx.FieldSpec{WireName: "file_key"},
+	"ObjectVersion": ubx.FieldSpec{WireName: "object_version"},
+}
 
 var Application_ApplicationConfiguration_ApplicationCodeConfiguration_CodeContentFields = ubx.FieldMap{
-		"S3ContentLocation": ubx.FieldSpec{
-			WireName: "s3_content_location",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_ApplicationCodeConfiguration_CodeContent_S3ContentLocationFields,
-		},
-		"TextContent": ubx.FieldSpec{WireName: "text_content"},
-		"ZipFileContent": ubx.FieldSpec{WireName: "zip_file_content"},
-	}
+	"S3ContentLocation": ubx.FieldSpec{
+		WireName: "s3_content_location",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_ApplicationCodeConfiguration_CodeContent_S3ContentLocationFields,
+	},
+	"TextContent":    ubx.FieldSpec{WireName: "text_content"},
+	"ZipFileContent": ubx.FieldSpec{WireName: "zip_file_content"},
+}
 
 var Application_ApplicationConfiguration_ApplicationCodeConfigurationFields = ubx.FieldMap{
-		"CodeContent": ubx.FieldSpec{
-			WireName: "code_content",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_ApplicationCodeConfiguration_CodeContentFields,
-		},
-		"CodeContentType": ubx.FieldSpec{WireName: "code_content_type"},
-	}
+	"CodeContent": ubx.FieldSpec{
+		WireName: "code_content",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_ApplicationCodeConfiguration_CodeContentFields,
+	},
+	"CodeContentType": ubx.FieldSpec{WireName: "code_content_type"},
+}
 
 var Application_ApplicationConfiguration_ApplicationEncryptionConfigurationFields = ubx.FieldMap{
-		"KeyId": ubx.FieldSpec{WireName: "key_id"},
-		"KeyType": ubx.FieldSpec{WireName: "key_type"},
-	}
+	"KeyId":   ubx.FieldSpec{WireName: "key_id"},
+	"KeyType": ubx.FieldSpec{WireName: "key_type"},
+}
 
 var Application_ApplicationConfiguration_ApplicationSnapshotConfigurationFields = ubx.FieldMap{
-		"SnapshotsEnabled": ubx.FieldSpec{WireName: "snapshots_enabled"},
-	}
+	"SnapshotsEnabled": ubx.FieldSpec{WireName: "snapshots_enabled"},
+}
 
 var Application_ApplicationConfiguration_ApplicationSystemRollbackConfigurationFields = ubx.FieldMap{
-		"RollbackEnabled": ubx.FieldSpec{WireName: "rollback_enabled"},
-	}
+	"RollbackEnabled": ubx.FieldSpec{WireName: "rollback_enabled"},
+}
 
 var Application_ApplicationConfiguration_EnvironmentProperties_PropertyGroupsFields = ubx.FieldMap{
-		"PropertyGroupId": ubx.FieldSpec{WireName: "property_group_id"},
-		"PropertyMap": ubx.FieldSpec{WireName: "property_map"},
-	}
+	"PropertyGroupId": ubx.FieldSpec{WireName: "property_group_id"},
+	"PropertyMap":     ubx.FieldSpec{WireName: "property_map"},
+}
 
 var Application_ApplicationConfiguration_EnvironmentPropertiesFields = ubx.FieldMap{
-		"PropertyGroups": ubx.FieldSpec{
-			WireName: "property_groups",
-			Kind: "list",
-			Fields: Application_ApplicationConfiguration_EnvironmentProperties_PropertyGroupsFields,
-		},
-	}
+	"PropertyGroups": ubx.FieldSpec{
+		WireName: "property_groups",
+		Kind:     "list",
+		Fields:   Application_ApplicationConfiguration_EnvironmentProperties_PropertyGroupsFields,
+	},
+}
 
 var Application_ApplicationConfiguration_FlinkApplicationConfiguration_CheckpointConfigurationFields = ubx.FieldMap{
-		"CheckpointInterval": ubx.FieldSpec{WireName: "checkpoint_interval"},
-		"CheckpointingEnabled": ubx.FieldSpec{WireName: "checkpointing_enabled"},
-		"ConfigurationType": ubx.FieldSpec{WireName: "configuration_type"},
-		"MinPauseBetweenCheckpoints": ubx.FieldSpec{WireName: "min_pause_between_checkpoints"},
-	}
+	"CheckpointInterval":         ubx.FieldSpec{WireName: "checkpoint_interval"},
+	"CheckpointingEnabled":       ubx.FieldSpec{WireName: "checkpointing_enabled"},
+	"ConfigurationType":          ubx.FieldSpec{WireName: "configuration_type"},
+	"MinPauseBetweenCheckpoints": ubx.FieldSpec{WireName: "min_pause_between_checkpoints"},
+}
 
 var Application_ApplicationConfiguration_FlinkApplicationConfiguration_MonitoringConfigurationFields = ubx.FieldMap{
-		"ConfigurationType": ubx.FieldSpec{WireName: "configuration_type"},
-		"LogLevel": ubx.FieldSpec{WireName: "log_level"},
-		"MetricsLevel": ubx.FieldSpec{WireName: "metrics_level"},
-	}
+	"ConfigurationType": ubx.FieldSpec{WireName: "configuration_type"},
+	"LogLevel":          ubx.FieldSpec{WireName: "log_level"},
+	"MetricsLevel":      ubx.FieldSpec{WireName: "metrics_level"},
+}
 
 var Application_ApplicationConfiguration_FlinkApplicationConfiguration_ParallelismConfigurationFields = ubx.FieldMap{
-		"AutoScalingEnabled": ubx.FieldSpec{WireName: "auto_scaling_enabled"},
-		"ConfigurationType": ubx.FieldSpec{WireName: "configuration_type"},
-		"Parallelism": ubx.FieldSpec{WireName: "parallelism"},
-		"ParallelismPerKpu": ubx.FieldSpec{WireName: "parallelism_per_kpu"},
-	}
+	"AutoScalingEnabled": ubx.FieldSpec{WireName: "auto_scaling_enabled"},
+	"ConfigurationType":  ubx.FieldSpec{WireName: "configuration_type"},
+	"Parallelism":        ubx.FieldSpec{WireName: "parallelism"},
+	"ParallelismPerKpu":  ubx.FieldSpec{WireName: "parallelism_per_kpu"},
+}
 
 var Application_ApplicationConfiguration_FlinkApplicationConfigurationFields = ubx.FieldMap{
-		"CheckpointConfiguration": ubx.FieldSpec{
-			WireName: "checkpoint_configuration",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_FlinkApplicationConfiguration_CheckpointConfigurationFields,
-		},
-		"MonitoringConfiguration": ubx.FieldSpec{
-			WireName: "monitoring_configuration",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_FlinkApplicationConfiguration_MonitoringConfigurationFields,
-		},
-		"ParallelismConfiguration": ubx.FieldSpec{
-			WireName: "parallelism_configuration",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_FlinkApplicationConfiguration_ParallelismConfigurationFields,
-		},
-	}
+	"CheckpointConfiguration": ubx.FieldSpec{
+		WireName: "checkpoint_configuration",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_FlinkApplicationConfiguration_CheckpointConfigurationFields,
+	},
+	"MonitoringConfiguration": ubx.FieldSpec{
+		WireName: "monitoring_configuration",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_FlinkApplicationConfiguration_MonitoringConfigurationFields,
+	},
+	"ParallelismConfiguration": ubx.FieldSpec{
+		WireName: "parallelism_configuration",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_FlinkApplicationConfiguration_ParallelismConfigurationFields,
+	},
+}
 
 var Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputParallelismFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-	}
+	"Count": ubx.FieldSpec{WireName: "count"},
+}
 
 var Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputProcessingConfiguration_InputLambdaProcessorFields = ubx.FieldMap{
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-	}
+	"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+}
 
 var Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputProcessingConfigurationFields = ubx.FieldMap{
-		"InputLambdaProcessor": ubx.FieldSpec{
-			WireName: "input_lambda_processor",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputProcessingConfiguration_InputLambdaProcessorFields,
-		},
-	}
+	"InputLambdaProcessor": ubx.FieldSpec{
+		WireName: "input_lambda_processor",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputProcessingConfiguration_InputLambdaProcessorFields,
+	},
+}
 
 var Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordColumnsFields = ubx.FieldMap{
-		"Mapping": ubx.FieldSpec{WireName: "mapping"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SqlType": ubx.FieldSpec{WireName: "sql_type"},
-	}
+	"Mapping": ubx.FieldSpec{WireName: "mapping"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"SqlType": ubx.FieldSpec{WireName: "sql_type"},
+}
 
 var Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordFormat_MappingParameters_CsvmappingParametersFields = ubx.FieldMap{
-		"RecordColumnDelimiter": ubx.FieldSpec{WireName: "record_column_delimiter"},
-		"RecordRowDelimiter": ubx.FieldSpec{WireName: "record_row_delimiter"},
-	}
+	"RecordColumnDelimiter": ubx.FieldSpec{WireName: "record_column_delimiter"},
+	"RecordRowDelimiter":    ubx.FieldSpec{WireName: "record_row_delimiter"},
+}
 
 var Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordFormat_MappingParameters_JsonmappingParametersFields = ubx.FieldMap{
-		"RecordRowPath": ubx.FieldSpec{WireName: "record_row_path"},
-	}
+	"RecordRowPath": ubx.FieldSpec{WireName: "record_row_path"},
+}
 
 var Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordFormat_MappingParametersFields = ubx.FieldMap{
-		"CsvmappingParameters": ubx.FieldSpec{
-			WireName: "csvmapping_parameters",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordFormat_MappingParameters_CsvmappingParametersFields,
-		},
-		"JsonmappingParameters": ubx.FieldSpec{
-			WireName: "jsonmapping_parameters",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordFormat_MappingParameters_JsonmappingParametersFields,
-		},
-	}
+	"CsvmappingParameters": ubx.FieldSpec{
+		WireName: "csvmapping_parameters",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordFormat_MappingParameters_CsvmappingParametersFields,
+	},
+	"JsonmappingParameters": ubx.FieldSpec{
+		WireName: "jsonmapping_parameters",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordFormat_MappingParameters_JsonmappingParametersFields,
+	},
+}
 
 var Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordFormatFields = ubx.FieldMap{
-		"MappingParameters": ubx.FieldSpec{
-			WireName: "mapping_parameters",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordFormat_MappingParametersFields,
-		},
-		"RecordFormatType": ubx.FieldSpec{WireName: "record_format_type"},
-	}
+	"MappingParameters": ubx.FieldSpec{
+		WireName: "mapping_parameters",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordFormat_MappingParametersFields,
+	},
+	"RecordFormatType": ubx.FieldSpec{WireName: "record_format_type"},
+}
 
 var Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchemaFields = ubx.FieldMap{
-		"RecordColumns": ubx.FieldSpec{
-			WireName: "record_columns",
-			Kind: "list",
-			Fields: Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordColumnsFields,
-		},
-		"RecordEncoding": ubx.FieldSpec{WireName: "record_encoding"},
-		"RecordFormat": ubx.FieldSpec{
-			WireName: "record_format",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordFormatFields,
-		},
-	}
+	"RecordColumns": ubx.FieldSpec{
+		WireName: "record_columns",
+		Kind:     "list",
+		Fields:   Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordColumnsFields,
+	},
+	"RecordEncoding": ubx.FieldSpec{WireName: "record_encoding"},
+	"RecordFormat": ubx.FieldSpec{
+		WireName: "record_format",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordFormatFields,
+	},
+}
 
 var Application_ApplicationConfiguration_SqlApplicationConfiguration_InputsFields = ubx.FieldMap{
-		"InputParallelism": ubx.FieldSpec{
-			WireName: "input_parallelism",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputParallelismFields,
-		},
-		"InputProcessingConfiguration": ubx.FieldSpec{
-			WireName: "input_processing_configuration",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputProcessingConfigurationFields,
-		},
-		"InputSchema": ubx.FieldSpec{
-			WireName: "input_schema",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchemaFields,
-		},
-		"KinesisFirehoseInput": ubx.FieldSpec{
-			WireName: "kinesis_firehose_input",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputProcessingConfiguration_InputLambdaProcessorFields,
-		},
-		"KinesisStreamsInput": ubx.FieldSpec{
-			WireName: "kinesis_streams_input",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputProcessingConfiguration_InputLambdaProcessorFields,
-		},
-		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-	}
+	"InputParallelism": ubx.FieldSpec{
+		WireName: "input_parallelism",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputParallelismFields,
+	},
+	"InputProcessingConfiguration": ubx.FieldSpec{
+		WireName: "input_processing_configuration",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputProcessingConfigurationFields,
+	},
+	"InputSchema": ubx.FieldSpec{
+		WireName: "input_schema",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchemaFields,
+	},
+	"KinesisFirehoseInput": ubx.FieldSpec{
+		WireName: "kinesis_firehose_input",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputProcessingConfiguration_InputLambdaProcessorFields,
+	},
+	"KinesisStreamsInput": ubx.FieldSpec{
+		WireName: "kinesis_streams_input",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputProcessingConfiguration_InputLambdaProcessorFields,
+	},
+	"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
+}
 
 var Application_ApplicationConfiguration_SqlApplicationConfigurationFields = ubx.FieldMap{
-		"Inputs": ubx.FieldSpec{
-			WireName: "inputs",
-			Kind: "list",
-			Fields: Application_ApplicationConfiguration_SqlApplicationConfiguration_InputsFields,
-		},
-	}
+	"Inputs": ubx.FieldSpec{
+		WireName: "inputs",
+		Kind:     "list",
+		Fields:   Application_ApplicationConfiguration_SqlApplicationConfiguration_InputsFields,
+	},
+}
 
 var Application_ApplicationConfiguration_VpcConfigurationsFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 var Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_CatalogConfiguration_GlueDataCatalogConfigurationFields = ubx.FieldMap{
-		"DatabaseArn": ubx.FieldSpec{WireName: "database_arn"},
-	}
+	"DatabaseArn": ubx.FieldSpec{WireName: "database_arn"},
+}
 
 var Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_CatalogConfigurationFields = ubx.FieldMap{
-		"GlueDataCatalogConfiguration": ubx.FieldSpec{
-			WireName: "glue_data_catalog_configuration",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_CatalogConfiguration_GlueDataCatalogConfigurationFields,
-		},
-	}
+	"GlueDataCatalogConfiguration": ubx.FieldSpec{
+		WireName: "glue_data_catalog_configuration",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_CatalogConfiguration_GlueDataCatalogConfigurationFields,
+	},
+}
 
 var Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_CustomArtifactsConfiguration_MavenReferenceFields = ubx.FieldMap{
-		"ArtifactId": ubx.FieldSpec{WireName: "artifact_id"},
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"ArtifactId": ubx.FieldSpec{WireName: "artifact_id"},
+	"GroupId":    ubx.FieldSpec{WireName: "group_id"},
+	"Version":    ubx.FieldSpec{WireName: "version"},
+}
 
 var Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_CustomArtifactsConfigurationFields = ubx.FieldMap{
-		"ArtifactType": ubx.FieldSpec{WireName: "artifact_type"},
-		"MavenReference": ubx.FieldSpec{
-			WireName: "maven_reference",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_CustomArtifactsConfiguration_MavenReferenceFields,
-		},
-		"S3ContentLocation": ubx.FieldSpec{
-			WireName: "s3_content_location",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_ApplicationCodeConfiguration_CodeContent_S3ContentLocationFields,
-		},
-	}
+	"ArtifactType": ubx.FieldSpec{WireName: "artifact_type"},
+	"MavenReference": ubx.FieldSpec{
+		WireName: "maven_reference",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_CustomArtifactsConfiguration_MavenReferenceFields,
+	},
+	"S3ContentLocation": ubx.FieldSpec{
+		WireName: "s3_content_location",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_ApplicationCodeConfiguration_CodeContent_S3ContentLocationFields,
+	},
+}
 
 var Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_DeployAsApplicationConfiguration_S3ContentLocationFields = ubx.FieldMap{
-		"BasePath": ubx.FieldSpec{WireName: "base_path"},
-		"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
-	}
+	"BasePath":  ubx.FieldSpec{WireName: "base_path"},
+	"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
+}
 
 var Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_DeployAsApplicationConfigurationFields = ubx.FieldMap{
-		"S3ContentLocation": ubx.FieldSpec{
-			WireName: "s3_content_location",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_DeployAsApplicationConfiguration_S3ContentLocationFields,
-		},
-	}
+	"S3ContentLocation": ubx.FieldSpec{
+		WireName: "s3_content_location",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_DeployAsApplicationConfiguration_S3ContentLocationFields,
+	},
+}
 
 var Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_MonitoringConfigurationFields = ubx.FieldMap{
-		"LogLevel": ubx.FieldSpec{WireName: "log_level"},
-	}
+	"LogLevel": ubx.FieldSpec{WireName: "log_level"},
+}
 
 var Application_ApplicationConfiguration_ZeppelinApplicationConfigurationFields = ubx.FieldMap{
-		"CatalogConfiguration": ubx.FieldSpec{
-			WireName: "catalog_configuration",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_CatalogConfigurationFields,
-		},
-		"CustomArtifactsConfiguration": ubx.FieldSpec{
-			WireName: "custom_artifacts_configuration",
-			Kind: "list",
-			Fields: Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_CustomArtifactsConfigurationFields,
-		},
-		"DeployAsApplicationConfiguration": ubx.FieldSpec{
-			WireName: "deploy_as_application_configuration",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_DeployAsApplicationConfigurationFields,
-		},
-		"MonitoringConfiguration": ubx.FieldSpec{
-			WireName: "monitoring_configuration",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_MonitoringConfigurationFields,
-		},
-	}
+	"CatalogConfiguration": ubx.FieldSpec{
+		WireName: "catalog_configuration",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_CatalogConfigurationFields,
+	},
+	"CustomArtifactsConfiguration": ubx.FieldSpec{
+		WireName: "custom_artifacts_configuration",
+		Kind:     "list",
+		Fields:   Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_CustomArtifactsConfigurationFields,
+	},
+	"DeployAsApplicationConfiguration": ubx.FieldSpec{
+		WireName: "deploy_as_application_configuration",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_DeployAsApplicationConfigurationFields,
+	},
+	"MonitoringConfiguration": ubx.FieldSpec{
+		WireName: "monitoring_configuration",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_MonitoringConfigurationFields,
+	},
+}
 
 var Application_ApplicationConfigurationFields = ubx.FieldMap{
-		"ApplicationCodeConfiguration": ubx.FieldSpec{
-			WireName: "application_code_configuration",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_ApplicationCodeConfigurationFields,
-		},
-		"ApplicationEncryptionConfiguration": ubx.FieldSpec{
-			WireName: "application_encryption_configuration",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_ApplicationEncryptionConfigurationFields,
-		},
-		"ApplicationSnapshotConfiguration": ubx.FieldSpec{
-			WireName: "application_snapshot_configuration",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_ApplicationSnapshotConfigurationFields,
-		},
-		"ApplicationSystemRollbackConfiguration": ubx.FieldSpec{
-			WireName: "application_system_rollback_configuration",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_ApplicationSystemRollbackConfigurationFields,
-		},
-		"EnvironmentProperties": ubx.FieldSpec{
-			WireName: "environment_properties",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_EnvironmentPropertiesFields,
-		},
-		"FlinkApplicationConfiguration": ubx.FieldSpec{
-			WireName: "flink_application_configuration",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_FlinkApplicationConfigurationFields,
-		},
-		"SqlApplicationConfiguration": ubx.FieldSpec{
-			WireName: "sql_application_configuration",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_SqlApplicationConfigurationFields,
-		},
-		"VpcConfigurations": ubx.FieldSpec{
-			WireName: "vpc_configurations",
-			Kind: "list",
-			Fields: Application_ApplicationConfiguration_VpcConfigurationsFields,
-		},
-		"ZeppelinApplicationConfiguration": ubx.FieldSpec{
-			WireName: "zeppelin_application_configuration",
-			Kind: "object",
-			Fields: Application_ApplicationConfiguration_ZeppelinApplicationConfigurationFields,
-		},
-	}
+	"ApplicationCodeConfiguration": ubx.FieldSpec{
+		WireName: "application_code_configuration",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_ApplicationCodeConfigurationFields,
+	},
+	"ApplicationEncryptionConfiguration": ubx.FieldSpec{
+		WireName: "application_encryption_configuration",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_ApplicationEncryptionConfigurationFields,
+	},
+	"ApplicationSnapshotConfiguration": ubx.FieldSpec{
+		WireName: "application_snapshot_configuration",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_ApplicationSnapshotConfigurationFields,
+	},
+	"ApplicationSystemRollbackConfiguration": ubx.FieldSpec{
+		WireName: "application_system_rollback_configuration",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_ApplicationSystemRollbackConfigurationFields,
+	},
+	"EnvironmentProperties": ubx.FieldSpec{
+		WireName: "environment_properties",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_EnvironmentPropertiesFields,
+	},
+	"FlinkApplicationConfiguration": ubx.FieldSpec{
+		WireName: "flink_application_configuration",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_FlinkApplicationConfigurationFields,
+	},
+	"SqlApplicationConfiguration": ubx.FieldSpec{
+		WireName: "sql_application_configuration",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_SqlApplicationConfigurationFields,
+	},
+	"VpcConfigurations": ubx.FieldSpec{
+		WireName: "vpc_configurations",
+		Kind:     "list",
+		Fields:   Application_ApplicationConfiguration_VpcConfigurationsFields,
+	},
+	"ZeppelinApplicationConfiguration": ubx.FieldSpec{
+		WireName: "zeppelin_application_configuration",
+		Kind:     "object",
+		Fields:   Application_ApplicationConfiguration_ZeppelinApplicationConfigurationFields,
+	},
+}
 
 var Application_ApplicationMaintenanceConfigurationFields = ubx.FieldMap{
-		"ApplicationMaintenanceWindowStartTime": ubx.FieldSpec{WireName: "application_maintenance_window_start_time"},
-	}
+	"ApplicationMaintenanceWindowStartTime": ubx.FieldSpec{WireName: "application_maintenance_window_start_time"},
+}
 
 var Application_RunConfiguration_ApplicationRestoreConfigurationFields = ubx.FieldMap{
-		"ApplicationRestoreType": ubx.FieldSpec{WireName: "application_restore_type"},
-		"SnapshotName": ubx.FieldSpec{WireName: "snapshot_name"},
-	}
+	"ApplicationRestoreType": ubx.FieldSpec{WireName: "application_restore_type"},
+	"SnapshotName":           ubx.FieldSpec{WireName: "snapshot_name"},
+}
 
 var Application_RunConfiguration_FlinkRunConfigurationFields = ubx.FieldMap{
-		"AllowNonRestoredState": ubx.FieldSpec{WireName: "allow_non_restored_state"},
-	}
+	"AllowNonRestoredState": ubx.FieldSpec{WireName: "allow_non_restored_state"},
+}
 
 var Application_RunConfigurationFields = ubx.FieldMap{
-		"ApplicationRestoreConfiguration": ubx.FieldSpec{
-			WireName: "application_restore_configuration",
-			Kind: "object",
-			Fields: Application_RunConfiguration_ApplicationRestoreConfigurationFields,
-		},
-		"FlinkRunConfiguration": ubx.FieldSpec{
-			WireName: "flink_run_configuration",
-			Kind: "object",
-			Fields: Application_RunConfiguration_FlinkRunConfigurationFields,
-		},
-	}
+	"ApplicationRestoreConfiguration": ubx.FieldSpec{
+		WireName: "application_restore_configuration",
+		Kind:     "object",
+		Fields:   Application_RunConfiguration_ApplicationRestoreConfigurationFields,
+	},
+	"FlinkRunConfiguration": ubx.FieldSpec{
+		WireName: "flink_run_configuration",
+		Kind:     "object",
+		Fields:   Application_RunConfiguration_FlinkRunConfigurationFields,
+	},
+}
 
 var Application_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApplicationConfig struct {
 	// Specifies the creation parameters for a Kinesis Data Analytics application.
@@ -685,28 +685,28 @@ var Application = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApplicationConfiguration": ubx.FieldSpec{
 			WireName: "application_configuration",
-			Kind: "object",
-			Fields: Application_ApplicationConfigurationFields,
+			Kind:     "object",
+			Fields:   Application_ApplicationConfigurationFields,
 		},
 		"ApplicationDescription": ubx.FieldSpec{WireName: "application_description"},
 		"ApplicationMaintenanceConfiguration": ubx.FieldSpec{
 			WireName: "application_maintenance_configuration",
-			Kind: "object",
-			Fields: Application_ApplicationMaintenanceConfigurationFields,
+			Kind:     "object",
+			Fields:   Application_ApplicationMaintenanceConfigurationFields,
 		},
 		"ApplicationMode": ubx.FieldSpec{WireName: "application_mode"},
 		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
 		"RunConfiguration": ubx.FieldSpec{
 			WireName: "run_configuration",
-			Kind: "object",
-			Fields: Application_RunConfigurationFields,
+			Kind:     "object",
+			Fields:   Application_RunConfigurationFields,
 		},
-		"RuntimeEnvironment": ubx.FieldSpec{WireName: "runtime_environment"},
+		"RuntimeEnvironment":   ubx.FieldSpec{WireName: "runtime_environment"},
 		"ServiceExecutionRole": ubx.FieldSpec{WireName: "service_execution_role"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Application_TagsFields,
+			Kind:     "list",
+			Fields:   Application_TagsFields,
 		},
 	},
 }

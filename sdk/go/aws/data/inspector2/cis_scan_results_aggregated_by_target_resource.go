@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CisScanResultsAggregatedByTargetResource_FilterCriteria_AccountIdFilters struct {
 	Comparison any
-	Value any
+	Value      any
 }
 
 type CisScanResultsAggregatedByTargetResource_FilterCriteria_FailedChecksFilters struct {
@@ -15,121 +15,121 @@ type CisScanResultsAggregatedByTargetResource_FilterCriteria_FailedChecksFilters
 
 type CisScanResultsAggregatedByTargetResource_FilterCriteria_TargetResourceTagFilters struct {
 	Comparison any
-	Key any
-	Value any
+	Key        any
+	Value      any
 }
 
 type CisScanResultsAggregatedByTargetResource_FilterCriteria struct {
-	AccountIdFilters any
-	CheckIdFilters any
-	FailedChecksFilters any
-	PlatformFilters any
-	StatusFilters any
-	TargetResourceIdFilters any
-	TargetResourceTagFilters any
-	TargetStatusFilters any
+	AccountIdFilters          any
+	CheckIdFilters            any
+	FailedChecksFilters       any
+	PlatformFilters           any
+	StatusFilters             any
+	TargetResourceIdFilters   any
+	TargetResourceTagFilters  any
+	TargetStatusFilters       any
 	TargetStatusReasonFilters any
 }
 
 type CisScanResultsAggregatedByTargetResource_TargetResourceAggregations_StatusCounts struct {
-	Failed any
-	Passed any
+	Failed  any
+	Passed  any
 	Skipped any
 }
 
 type CisScanResultsAggregatedByTargetResource_TargetResourceAggregations struct {
-	AccountId any
-	Platform any
-	ScanArn any
-	StatusCounts any
-	TargetResourceId any
+	AccountId          any
+	Platform           any
+	ScanArn            any
+	StatusCounts       any
+	TargetResourceId   any
 	TargetResourceTags any
-	TargetStatus any
+	TargetStatus       any
 	TargetStatusReason any
 }
 
 var CisScanResultsAggregatedByTargetResource_FilterCriteria_AccountIdFiltersFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var CisScanResultsAggregatedByTargetResource_FilterCriteria_FailedChecksFiltersFields = ubx.FieldMap{
-		"LowerInclusive": ubx.FieldSpec{WireName: "lower_inclusive"},
-		"UpperInclusive": ubx.FieldSpec{WireName: "upper_inclusive"},
-	}
+	"LowerInclusive": ubx.FieldSpec{WireName: "lower_inclusive"},
+	"UpperInclusive": ubx.FieldSpec{WireName: "upper_inclusive"},
+}
 
 var CisScanResultsAggregatedByTargetResource_FilterCriteria_TargetResourceTagFiltersFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var CisScanResultsAggregatedByTargetResource_FilterCriteriaFields = ubx.FieldMap{
-		"AccountIdFilters": ubx.FieldSpec{
-			WireName: "account_id_filters",
-			Kind: "list",
-			Fields: CisScanResultsAggregatedByTargetResource_FilterCriteria_AccountIdFiltersFields,
-		},
-		"CheckIdFilters": ubx.FieldSpec{
-			WireName: "check_id_filters",
-			Kind: "list",
-			Fields: CisScanResultsAggregatedByTargetResource_FilterCriteria_AccountIdFiltersFields,
-		},
-		"FailedChecksFilters": ubx.FieldSpec{
-			WireName: "failed_checks_filters",
-			Kind: "list",
-			Fields: CisScanResultsAggregatedByTargetResource_FilterCriteria_FailedChecksFiltersFields,
-		},
-		"PlatformFilters": ubx.FieldSpec{
-			WireName: "platform_filters",
-			Kind: "list",
-			Fields: CisScanResultsAggregatedByTargetResource_FilterCriteria_AccountIdFiltersFields,
-		},
-		"StatusFilters": ubx.FieldSpec{
-			WireName: "status_filters",
-			Kind: "list",
-			Fields: CisScanResultsAggregatedByTargetResource_FilterCriteria_AccountIdFiltersFields,
-		},
-		"TargetResourceIdFilters": ubx.FieldSpec{
-			WireName: "target_resource_id_filters",
-			Kind: "list",
-			Fields: CisScanResultsAggregatedByTargetResource_FilterCriteria_AccountIdFiltersFields,
-		},
-		"TargetResourceTagFilters": ubx.FieldSpec{
-			WireName: "target_resource_tag_filters",
-			Kind: "list",
-			Fields: CisScanResultsAggregatedByTargetResource_FilterCriteria_TargetResourceTagFiltersFields,
-		},
-		"TargetStatusFilters": ubx.FieldSpec{
-			WireName: "target_status_filters",
-			Kind: "list",
-			Fields: CisScanResultsAggregatedByTargetResource_FilterCriteria_AccountIdFiltersFields,
-		},
-		"TargetStatusReasonFilters": ubx.FieldSpec{
-			WireName: "target_status_reason_filters",
-			Kind: "list",
-			Fields: CisScanResultsAggregatedByTargetResource_FilterCriteria_AccountIdFiltersFields,
-		},
-	}
+	"AccountIdFilters": ubx.FieldSpec{
+		WireName: "account_id_filters",
+		Kind:     "list",
+		Fields:   CisScanResultsAggregatedByTargetResource_FilterCriteria_AccountIdFiltersFields,
+	},
+	"CheckIdFilters": ubx.FieldSpec{
+		WireName: "check_id_filters",
+		Kind:     "list",
+		Fields:   CisScanResultsAggregatedByTargetResource_FilterCriteria_AccountIdFiltersFields,
+	},
+	"FailedChecksFilters": ubx.FieldSpec{
+		WireName: "failed_checks_filters",
+		Kind:     "list",
+		Fields:   CisScanResultsAggregatedByTargetResource_FilterCriteria_FailedChecksFiltersFields,
+	},
+	"PlatformFilters": ubx.FieldSpec{
+		WireName: "platform_filters",
+		Kind:     "list",
+		Fields:   CisScanResultsAggregatedByTargetResource_FilterCriteria_AccountIdFiltersFields,
+	},
+	"StatusFilters": ubx.FieldSpec{
+		WireName: "status_filters",
+		Kind:     "list",
+		Fields:   CisScanResultsAggregatedByTargetResource_FilterCriteria_AccountIdFiltersFields,
+	},
+	"TargetResourceIdFilters": ubx.FieldSpec{
+		WireName: "target_resource_id_filters",
+		Kind:     "list",
+		Fields:   CisScanResultsAggregatedByTargetResource_FilterCriteria_AccountIdFiltersFields,
+	},
+	"TargetResourceTagFilters": ubx.FieldSpec{
+		WireName: "target_resource_tag_filters",
+		Kind:     "list",
+		Fields:   CisScanResultsAggregatedByTargetResource_FilterCriteria_TargetResourceTagFiltersFields,
+	},
+	"TargetStatusFilters": ubx.FieldSpec{
+		WireName: "target_status_filters",
+		Kind:     "list",
+		Fields:   CisScanResultsAggregatedByTargetResource_FilterCriteria_AccountIdFiltersFields,
+	},
+	"TargetStatusReasonFilters": ubx.FieldSpec{
+		WireName: "target_status_reason_filters",
+		Kind:     "list",
+		Fields:   CisScanResultsAggregatedByTargetResource_FilterCriteria_AccountIdFiltersFields,
+	},
+}
 
 type CisScanResultsAggregatedByTargetResourceConfig struct {
 	// <p>The scan results aggregated by target resource filter criteria.</p>
 	FilterCriteria any
-	MaxResults any
-	NextToken any
-	ScanArn any
-	SortBy any
-	SortOrder any
+	MaxResults     any
+	NextToken      any
+	ScanArn        any
+	SortBy         any
+	SortOrder      any
 }
 
 type CisScanResultsAggregatedByTargetResourceAttrs struct {
 	// <p>The scan results aggregated by target resource filter criteria.</p>
-	FilterCriteria any
-	MaxResults any
-	NextToken any
-	ScanArn any
-	SortBy any
-	SortOrder any
+	FilterCriteria             any
+	MaxResults                 any
+	NextToken                  any
+	ScanArn                    any
+	SortBy                     any
+	SortOrder                  any
 	TargetResourceAggregations any
 }
 
@@ -138,13 +138,13 @@ var CisScanResultsAggregatedByTargetResource = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"FilterCriteria": ubx.FieldSpec{
 			WireName: "filter_criteria",
-			Kind: "object",
-			Fields: CisScanResultsAggregatedByTargetResource_FilterCriteriaFields,
+			Kind:     "object",
+			Fields:   CisScanResultsAggregatedByTargetResource_FilterCriteriaFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ScanArn": ubx.FieldSpec{WireName: "scan_arn"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"ScanArn":    ubx.FieldSpec{WireName: "scan_arn"},
+		"SortBy":     ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":  ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

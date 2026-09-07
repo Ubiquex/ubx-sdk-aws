@@ -5,21 +5,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AutonomousDatabaseVersions_AutonomousDatabaseVersions struct {
 	DbWorkload any
-	Details any
-	Version any
+	Details    any
+	Version    any
 }
 
 type AutonomousDatabaseVersionsConfig struct {
 	DbWorkload any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AutonomousDatabaseVersionsAttrs struct {
 	AutonomousDatabaseVersions any
-	DbWorkload any
-	MaxResults any
-	NextToken any
+	DbWorkload                 any
+	MaxResults                 any
+	NextToken                  any
 }
 
 var AutonomousDatabaseVersions = ubx.DataSourceBinding{
@@ -27,6 +27,6 @@ var AutonomousDatabaseVersions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DbWorkload": ubx.FieldSpec{WireName: "db_workload"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

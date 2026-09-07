@@ -15,13 +15,13 @@ type ApplicationInstance_Tags struct {
 }
 
 var ApplicationInstance_ManifestOverridesPayloadFields = ubx.FieldMap{
-		"PayloadData": ubx.FieldSpec{WireName: "payload_data"},
-	}
+	"PayloadData": ubx.FieldSpec{WireName: "payload_data"},
+}
 
 var ApplicationInstance_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApplicationInstanceConfig struct {
 	// The unique ID of a previously deployed AWS Panorama application instance that this new instance should replace, enabling a replacement deployment. (AI-inferred)
@@ -81,24 +81,24 @@ var ApplicationInstance = ubx.ResourceBinding{
 	WireType: "aws_panorama_application_instance",
 	Fields: ubx.FieldMap{
 		"ApplicationInstanceIdToReplace": ubx.FieldSpec{WireName: "application_instance_id_to_replace"},
-		"DefaultRuntimeContextDevice": ubx.FieldSpec{WireName: "default_runtime_context_device"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"DefaultRuntimeContextDevice":    ubx.FieldSpec{WireName: "default_runtime_context_device"},
+		"Description":                    ubx.FieldSpec{WireName: "description"},
 		"ManifestOverridesPayload": ubx.FieldSpec{
 			WireName: "manifest_overrides_payload",
-			Kind: "object",
-			Fields: ApplicationInstance_ManifestOverridesPayloadFields,
+			Kind:     "object",
+			Fields:   ApplicationInstance_ManifestOverridesPayloadFields,
 		},
 		"ManifestPayload": ubx.FieldSpec{
 			WireName: "manifest_payload",
-			Kind: "object",
-			Fields: ApplicationInstance_ManifestOverridesPayloadFields,
+			Kind:     "object",
+			Fields:   ApplicationInstance_ManifestOverridesPayloadFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"RuntimeRoleArn": ubx.FieldSpec{WireName: "runtime_role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ApplicationInstance_TagsFields,
+			Kind:     "list",
+			Fields:   ApplicationInstance_TagsFields,
 		},
 	},
 }

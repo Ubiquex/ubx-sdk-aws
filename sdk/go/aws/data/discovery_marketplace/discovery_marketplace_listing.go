@@ -4,64 +4,64 @@ package discovery_marketplace
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveryMarketplaceListing_AssociatedEntities_Offer_SellerOfRecord struct {
-	DisplayName any
+	DisplayName     any
 	SellerProfileId any
 }
 
 type DiscoveryMarketplaceListing_AssociatedEntities_Offer struct {
-	OfferId any
-	OfferName any
+	OfferId        any
+	OfferName      any
 	SellerOfRecord any
 }
 
 type DiscoveryMarketplaceListing_AssociatedEntities_Product struct {
 	Manufacturer any
-	ProductId any
-	ProductName any
+	ProductId    any
+	ProductName  any
 }
 
 type DiscoveryMarketplaceListing_AssociatedEntities struct {
-	Offer any
+	Offer   any
 	Product any
 }
 
 type DiscoveryMarketplaceListing_Badges struct {
-	BadgeType any
+	BadgeType   any
 	DisplayName any
 }
 
 type DiscoveryMarketplaceListing_Categories struct {
-	CategoryId any
+	CategoryId  any
 	DisplayName any
 }
 
 type DiscoveryMarketplaceListing_FulfillmentOptionSummaries struct {
-	DisplayName any
+	DisplayName           any
 	FulfillmentOptionType any
 }
 
 type DiscoveryMarketplaceListing_PricingModels struct {
-	DisplayName any
+	DisplayName      any
 	PricingModelType any
 }
 
 type DiscoveryMarketplaceListing_PricingUnits struct {
-	DisplayName any
+	DisplayName     any
 	PricingUnitType any
 }
 
 type DiscoveryMarketplaceListing_PromotionalMedia_EmbeddedImage struct {
 	Description any
-	Title any
-	Url any
+	Title       any
+	Url         any
 }
 
 type DiscoveryMarketplaceListing_PromotionalMedia_EmbeddedVideo struct {
 	Description any
-	Preview any
-	Thumbnail any
-	Title any
-	Url any
+	Preview     any
+	Thumbnail   any
+	Title       any
+	Url         any
 }
 
 type DiscoveryMarketplaceListing_PromotionalMedia struct {
@@ -70,18 +70,18 @@ type DiscoveryMarketplaceListing_PromotionalMedia struct {
 }
 
 type DiscoveryMarketplaceListing_Resources struct {
-	ContentType any
-	DisplayName any
+	ContentType  any
+	DisplayName  any
 	ResourceType any
-	Value any
+	Value        any
 }
 
 type DiscoveryMarketplaceListing_ReviewSummary_ReviewSourceSummaries struct {
 	AverageRating any
-	SourceId any
-	SourceName any
-	SourceUrl any
-	TotalReviews any
+	SourceId      any
+	SourceName    any
+	SourceUrl     any
+	TotalReviews  any
 }
 
 type DiscoveryMarketplaceListing_ReviewSummary struct {
@@ -89,15 +89,15 @@ type DiscoveryMarketplaceListing_ReviewSummary struct {
 }
 
 type DiscoveryMarketplaceListing_SellerEngagements struct {
-	ContentType any
+	ContentType    any
 	EngagementType any
-	Value any
+	Value          any
 }
 
 type DiscoveryMarketplaceListing_UseCases_UseCase struct {
 	Description any
 	DisplayName any
-	Value any
+	Value       any
 }
 
 type DiscoveryMarketplaceListing_UseCases struct {
@@ -109,28 +109,28 @@ type DiscoveryMarketplaceListingConfig struct {
 }
 
 type DiscoveryMarketplaceListingAttrs struct {
-	AssociatedEntities any
-	Badges any
-	Catalog any
-	Categories any
+	AssociatedEntities         any
+	Badges                     any
+	Catalog                    any
+	Categories                 any
 	FulfillmentOptionSummaries any
-	Highlights any
-	IntegrationGuide any
-	ListingId any
-	ListingName any
-	LogoThumbnailUrl any
-	LongDescription any
-	PricingModels any
-	PricingUnits any
-	PromotionalMedia any
+	Highlights                 any
+	IntegrationGuide           any
+	ListingId                  any
+	ListingName                any
+	LogoThumbnailUrl           any
+	LongDescription            any
+	PricingModels              any
+	PricingUnits               any
+	PromotionalMedia           any
 	// <p>Information about a seller, including the profile identifier and display name.</p>
 	Publisher any
 	Resources any
 	// <p>A summary of customer reviews available for a listing, aggregated by review source.</p>
-	ReviewSummary any
+	ReviewSummary     any
 	SellerEngagements any
-	ShortDescription any
-	UseCases any
+	ShortDescription  any
+	UseCases          any
 }
 
 var DiscoveryMarketplaceListing = ubx.DataSourceBinding{

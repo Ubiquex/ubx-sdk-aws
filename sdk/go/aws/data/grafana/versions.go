@@ -4,23 +4,23 @@ package grafana
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VersionsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	WorkspaceId any
 }
 
 type VersionsAttrs struct {
 	GrafanaVersions any
-	MaxResults any
-	NextToken any
-	WorkspaceId any
+	MaxResults      any
+	NextToken       any
+	WorkspaceId     any
 }
 
 var Versions = ubx.DataSourceBinding{
 	WireType: "aws_grafana_versions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"WorkspaceId": ubx.FieldSpec{WireName: "workspace_id"},
 	},
 }

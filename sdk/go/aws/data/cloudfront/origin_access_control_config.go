@@ -4,11 +4,11 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OriginAccessControlConfig_OriginAccessControlConfig struct {
-	Description any
-	Name any
+	Description                   any
+	Name                          any
 	OriginAccessControlOriginType any
-	SigningBehavior any
-	SigningProtocol any
+	SigningBehavior               any
+	SigningProtocol               any
 }
 
 type OriginAccessControlConfigConfig struct {
@@ -17,7 +17,7 @@ type OriginAccessControlConfigConfig struct {
 
 type OriginAccessControlConfigAttrs struct {
 	Etag any
-	Id any
+	Id   any
 	// <p>A CloudFront origin access control configuration.</p>
 	OriginAccessControlConfig any
 }

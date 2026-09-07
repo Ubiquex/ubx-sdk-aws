@@ -22,6 +22,5 @@ type ServicecatalogAppregistryConfigurationAttrs struct {
 
 var ServicecatalogAppregistryConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_appregistry_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

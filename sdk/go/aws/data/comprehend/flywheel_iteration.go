@@ -4,35 +4,35 @@ package comprehend
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FlywheelIteration_FlywheelIterationProperties_EvaluatedModelMetrics struct {
-	AverageAccuracy any
-	AverageF1Score any
+	AverageAccuracy  any
+	AverageF1Score   any
 	AveragePrecision any
-	AverageRecall any
+	AverageRecall    any
 }
 
 type FlywheelIteration_FlywheelIterationProperties struct {
-	CreationTime any
-	EndTime any
+	CreationTime      any
+	EndTime           any
 	EvaluatedModelArn any
 	// <p>The evaluation metrics associated with the evaluated model.</p>
-	EvaluatedModelMetrics any
+	EvaluatedModelMetrics      any
 	EvaluationManifestS3Prefix any
-	FlywheelArn any
-	FlywheelIterationId any
-	Message any
-	Status any
-	TrainedModelArn any
+	FlywheelArn                any
+	FlywheelIterationId        any
+	Message                    any
+	Status                     any
+	TrainedModelArn            any
 	// <p>The evaluation metrics associated with the evaluated model.</p>
 	TrainedModelMetrics any
 }
 
 type FlywheelIterationConfig struct {
-	FlywheelArn any
+	FlywheelArn         any
 	FlywheelIterationId any
 }
 
 type FlywheelIterationAttrs struct {
-	FlywheelArn any
+	FlywheelArn         any
 	FlywheelIterationId any
 	// <p>The configuration properties of a flywheel iteration.</p>
 	FlywheelIterationProperties any
@@ -41,7 +41,7 @@ type FlywheelIterationAttrs struct {
 var FlywheelIteration = ubx.DataSourceBinding{
 	WireType: "aws_comprehend_flywheel_iteration",
 	Fields: ubx.FieldMap{
-		"FlywheelArn": ubx.FieldSpec{WireName: "flywheel_arn"},
+		"FlywheelArn":         ubx.FieldSpec{WireName: "flywheel_arn"},
 		"FlywheelIterationId": ubx.FieldSpec{WireName: "flywheel_iteration_id"},
 	},
 }

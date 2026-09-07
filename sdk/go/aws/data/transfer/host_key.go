@@ -4,36 +4,36 @@ package transfer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HostKey_HostKey_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type HostKey_HostKey struct {
-	Arn any
-	DateImported any
-	Description any
+	Arn                any
+	DateImported       any
+	Description        any
 	HostKeyFingerprint any
-	HostKeyId any
-	Tags any
-	Type any
+	HostKeyId          any
+	Tags               any
+	Type               any
 }
 
 type HostKeyConfig struct {
 	HostKeyId any
-	ServerId any
+	ServerId  any
 }
 
 type HostKeyAttrs struct {
 	// <p>The details for a server host key.</p>
-	HostKey any
+	HostKey   any
 	HostKeyId any
-	ServerId any
+	ServerId  any
 }
 
 var HostKey = ubx.DataSourceBinding{
 	WireType: "aws_transfer_host_key",
 	Fields: ubx.FieldMap{
 		"HostKeyId": ubx.FieldSpec{WireName: "host_key_id"},
-		"ServerId": ubx.FieldSpec{WireName: "server_id"},
+		"ServerId":  ubx.FieldSpec{WireName: "server_id"},
 	},
 }

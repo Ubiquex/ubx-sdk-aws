@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResponsibilityTransfer_ResponsibilityTransfer_Source struct {
 	ManagementAccountEmail any
-	ManagementAccountId any
+	ManagementAccountId    any
 }
 
 type ResponsibilityTransfer_ResponsibilityTransfer struct {
 	ActiveHandshakeId any
-	Arn any
-	EndTimestamp any
-	Id any
-	Name any
+	Arn               any
+	EndTimestamp      any
+	Id                any
+	Name              any
 	// <p>Contains details for a participant in a transfer. A <i>transfer</i> is the arrangement between two management accounts where one account designates the other with specified responsibilities for their organization.</p>
-	Source any
+	Source         any
 	StartTimestamp any
-	Status any
+	Status         any
 	// <p>Contains details for a participant in a transfer. A <i>transfer</i> is the arrangement between two management accounts where one account designates the other with specified responsibilities for their organization.</p>
 	Target any
-	Type any
+	Type   any
 }
 
 type ResponsibilityTransferConfig struct {

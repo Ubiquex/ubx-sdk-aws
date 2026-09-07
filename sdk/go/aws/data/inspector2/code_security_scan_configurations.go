@@ -9,30 +9,30 @@ type CodeSecurityScanConfigurations_Configurations_ScopeSettings struct {
 
 type CodeSecurityScanConfigurations_Configurations struct {
 	ContinuousIntegrationScanSupportedEvents any
-	FrequencyExpression any
-	Name any
-	OwnerAccountId any
-	PeriodicScanFrequency any
-	RuleSetCategories any
-	ScanConfigurationArn any
-	ScopeSettings any
+	FrequencyExpression                      any
+	Name                                     any
+	OwnerAccountId                           any
+	PeriodicScanFrequency                    any
+	RuleSetCategories                        any
+	ScanConfigurationArn                     any
+	ScopeSettings                            any
 }
 
 type CodeSecurityScanConfigurationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CodeSecurityScanConfigurationsAttrs struct {
 	Configurations any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 var CodeSecurityScanConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_inspector2_code_security_scan_configurations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

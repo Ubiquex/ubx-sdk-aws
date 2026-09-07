@@ -4,19 +4,19 @@ package route53resolver
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallRuleGroupAssociation_FirewallRuleGroupAssociation struct {
-	Arn any
-	CreationTime any
-	CreatorRequestId any
+	Arn                 any
+	CreationTime        any
+	CreatorRequestId    any
 	FirewallRuleGroupId any
-	Id any
-	ManagedOwnerName any
-	ModificationTime any
-	MutationProtection any
-	Name any
-	Priority any
-	Status any
-	StatusMessage any
-	VpcId any
+	Id                  any
+	ManagedOwnerName    any
+	ModificationTime    any
+	MutationProtection  any
+	Name                any
+	Priority            any
+	Status              any
+	StatusMessage       any
+	VpcId               any
 }
 
 type FirewallRuleGroupAssociationConfig struct {
@@ -25,7 +25,7 @@ type FirewallRuleGroupAssociationConfig struct {
 
 type FirewallRuleGroupAssociationAttrs struct {
 	// <p>An association between a firewall rule group and a VPC, which enables DNS filtering for the VPC. </p>
-	FirewallRuleGroupAssociation any
+	FirewallRuleGroupAssociation   any
 	FirewallRuleGroupAssociationId any
 }
 

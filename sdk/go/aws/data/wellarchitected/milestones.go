@@ -4,27 +4,27 @@ package wellarchitected
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Milestones_MilestoneSummaries_WorkloadSummary_Profiles struct {
-	ProfileArn any
+	ProfileArn     any
 	ProfileVersion any
 }
 
 type Milestones_MilestoneSummaries_WorkloadSummary struct {
-	ImprovementStatus any
-	Lenses any
-	Owner any
+	ImprovementStatus     any
+	Lenses                any
+	Owner                 any
 	PrioritizedRiskCounts any
-	Profiles any
-	RiskCounts any
-	UpdatedAt any
-	WorkloadArn any
-	WorkloadId any
-	WorkloadName any
+	Profiles              any
+	RiskCounts            any
+	UpdatedAt             any
+	WorkloadArn           any
+	WorkloadId            any
+	WorkloadName          any
 }
 
 type Milestones_MilestoneSummaries struct {
-	MilestoneName any
+	MilestoneName   any
 	MilestoneNumber any
-	RecordedAt any
+	RecordedAt      any
 	WorkloadSummary any
 }
 
@@ -52,7 +52,7 @@ var Milestones = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_milestones",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"WorkloadId": ubx.FieldSpec{WireName: "workload_id"},
 	},
 }

@@ -4,28 +4,28 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerPartnerApps_Summaries struct {
-	Arn any
+	Arn          any
 	CreationTime any
-	Name any
-	Status any
-	Type any
+	Name         any
+	Status       any
+	Type         any
 }
 
 type ApiSagemakerPartnerAppsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApiSagemakerPartnerAppsAttrs struct {
 	MaxResults any
-	NextToken any
-	Summaries any
+	NextToken  any
+	Summaries  any
 }
 
 var ApiSagemakerPartnerApps = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_partner_apps",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -26,60 +26,60 @@ type ModelVersion_ModelDiagnosticsOutputConfiguration struct {
 
 type ModelVersion_ModelDiagnosticsResultsObject struct {
 	Bucket any
-	Key any
+	Key    any
 }
 
 type ModelVersionConfig struct {
-	ModelName any
+	ModelName    any
 	ModelVersion any
 }
 
 type ModelVersionAttrs struct {
-	AutoPromotionResult any
+	AutoPromotionResult       any
 	AutoPromotionResultReason any
-	CreatedAt any
+	CreatedAt                 any
 	// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
 	DataPreProcessingConfiguration any
-	DatasetArn any
-	DatasetName any
-	EvaluationDataEndTime any
-	EvaluationDataStartTime any
-	FailedReason any
-	ImportJobEndTime any
-	ImportJobStartTime any
-	ImportedDataSizeInBytes any
+	DatasetArn                     any
+	DatasetName                    any
+	EvaluationDataEndTime          any
+	EvaluationDataStartTime        any
+	FailedReason                   any
+	ImportJobEndTime               any
+	ImportJobStartTime             any
+	ImportedDataSizeInBytes        any
 	// <p>Contains the configuration information for the S3 location being used to hold label data. </p>
 	LabelsInputConfiguration any
-	LastUpdatedTime any
-	ModelArn any
+	LastUpdatedTime          any
+	ModelArn                 any
 	// <p>Output configuration information for the pointwise model diagnostics for an Amazon Lookout for Equipment model.</p>
 	ModelDiagnosticsOutputConfiguration any
 	// <p>Contains information about an S3 bucket. </p>
 	ModelDiagnosticsResultsObject any
-	ModelMetrics any
-	ModelName any
-	ModelQuality any
-	ModelVersion any
-	ModelVersionArn any
-	OffCondition any
-	PriorModelMetrics any
+	ModelMetrics                  any
+	ModelName                     any
+	ModelQuality                  any
+	ModelVersion                  any
+	ModelVersionArn               any
+	OffCondition                  any
+	PriorModelMetrics             any
 	RetrainingAvailableDataInDays any
-	RoleArn any
-	Schema any
-	ServerSideKmsKeyId any
-	SourceModelVersionArn any
-	SourceType any
-	Status any
-	TrainingDataEndTime any
-	TrainingDataStartTime any
-	TrainingExecutionEndTime any
-	TrainingExecutionStartTime any
+	RoleArn                       any
+	Schema                        any
+	ServerSideKmsKeyId            any
+	SourceModelVersionArn         any
+	SourceType                    any
+	Status                        any
+	TrainingDataEndTime           any
+	TrainingDataStartTime         any
+	TrainingExecutionEndTime      any
+	TrainingExecutionStartTime    any
 }
 
 var ModelVersion = ubx.DataSourceBinding{
 	WireType: "aws_lookoutequipment_model_version",
 	Fields: ubx.FieldMap{
-		"ModelName": ubx.FieldSpec{WireName: "model_name"},
+		"ModelName":    ubx.FieldSpec{WireName: "model_name"},
 		"ModelVersion": ubx.FieldSpec{WireName: "model_version"},
 	},
 }

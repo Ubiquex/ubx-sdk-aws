@@ -5,58 +5,58 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MonitorEvaluations_Filters struct {
 	Condition any
-	Key any
-	Value any
+	Key       any
+	Value     any
 }
 
 type MonitorEvaluations_PredictorMonitorEvaluations_MetricResults struct {
-	MetricName any
+	MetricName  any
 	MetricValue any
 }
 
 type MonitorEvaluations_PredictorMonitorEvaluations_MonitorDataSource struct {
 	DatasetImportJobArn any
-	ForecastArn any
-	PredictorArn any
+	ForecastArn         any
+	PredictorArn        any
 }
 
 type MonitorEvaluations_PredictorMonitorEvaluations_PredictorEvent struct {
 	Datetime any
-	Detail any
+	Detail   any
 }
 
 type MonitorEvaluations_PredictorMonitorEvaluations struct {
-	EvaluationState any
-	EvaluationTime any
-	Message any
-	MetricResults any
-	MonitorArn any
-	MonitorDataSource any
-	NumItemsEvaluated any
-	PredictorEvent any
-	ResourceArn any
-	WindowEndDatetime any
+	EvaluationState     any
+	EvaluationTime      any
+	Message             any
+	MetricResults       any
+	MonitorArn          any
+	MonitorDataSource   any
+	NumItemsEvaluated   any
+	PredictorEvent      any
+	ResourceArn         any
+	WindowEndDatetime   any
 	WindowStartDatetime any
 }
 
 var MonitorEvaluations_FiltersFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Key":       ubx.FieldSpec{WireName: "key"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 type MonitorEvaluationsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
 	MonitorArn any
-	NextToken any
+	NextToken  any
 }
 
 type MonitorEvaluationsAttrs struct {
-	Filters any
-	MaxResults any
-	MonitorArn any
-	NextToken any
+	Filters                     any
+	MaxResults                  any
+	MonitorArn                  any
+	NextToken                   any
 	PredictorMonitorEvaluations any
 }
 
@@ -65,11 +65,11 @@ var MonitorEvaluations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: MonitorEvaluations_FiltersFields,
+			Kind:     "list",
+			Fields:   MonitorEvaluations_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
 		"MonitorArn": ubx.FieldSpec{WireName: "monitor_arn"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

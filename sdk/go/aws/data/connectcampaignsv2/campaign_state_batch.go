@@ -4,13 +4,13 @@ package connectcampaignsv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CampaignStateBatch_FailedRequests struct {
-	CampaignId any
+	CampaignId  any
 	FailureCode any
 }
 
 type CampaignStateBatch_SuccessfulRequests struct {
 	CampaignId any
-	State any
+	State      any
 }
 
 type CampaignStateBatchConfig struct {

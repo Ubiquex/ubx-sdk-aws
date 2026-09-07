@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Workflow_Attributes_AppflowIntegration struct {
 	ConnectorProfileName any
-	RoleArn any
-	SourceConnectorType any
+	RoleArn              any
+	SourceConnectorType  any
 }
 
 type Workflow_Attributes struct {
@@ -16,8 +16,8 @@ type Workflow_Attributes struct {
 
 type Workflow_Metrics_AppflowIntegration struct {
 	RecordsProcessed any
-	StepsCompleted any
-	TotalSteps any
+	StepsCompleted   any
+	TotalSteps       any
 }
 
 type Workflow_Metrics struct {
@@ -32,15 +32,15 @@ type WorkflowConfig struct {
 
 type WorkflowAttrs struct {
 	// <p>Structure to hold workflow attributes.</p>
-	Attributes any
-	DomainName any
+	Attributes       any
+	DomainName       any
 	ErrorDescription any
-	LastUpdatedAt any
+	LastUpdatedAt    any
 	// <p>Generic object containing workflow execution metrics.</p>
-	Metrics any
-	StartDate any
-	Status any
-	WorkflowId any
+	Metrics      any
+	StartDate    any
+	Status       any
+	WorkflowId   any
 	WorkflowType any
 }
 

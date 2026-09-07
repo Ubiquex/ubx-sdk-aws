@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InsightRule_Tags struct {
 	// The key of a tag attached to the CloudWatch Contributor Insights rule, used for resource categorization, cost allocation, and access management. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var InsightRule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type InsightRuleConfig struct {
 	// When set to true, this boolean indicates that the Contributor Insights rule evaluates logs after they have been processed by a CloudWatch Logs transformation, rather than the original raw logs. (AI-inferred)
@@ -46,13 +46,13 @@ var InsightRule = ubx.ResourceBinding{
 	WireType: "aws_cloud_watch_insight_rule",
 	Fields: ubx.FieldMap{
 		"ApplyOnTransformedLogs": ubx.FieldSpec{WireName: "apply_on_transformed_logs"},
-		"RuleBody": ubx.FieldSpec{WireName: "rule_body"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-		"RuleState": ubx.FieldSpec{WireName: "rule_state"},
+		"RuleBody":               ubx.FieldSpec{WireName: "rule_body"},
+		"RuleName":               ubx.FieldSpec{WireName: "rule_name"},
+		"RuleState":              ubx.FieldSpec{WireName: "rule_state"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: InsightRule_TagsFields,
+			Kind:     "list",
+			Fields:   InsightRule_TagsFields,
 		},
 	},
 }

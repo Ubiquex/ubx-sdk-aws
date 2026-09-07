@@ -23,30 +23,30 @@ type Dataset_DatasetImportJob struct {
 
 type Dataset_Tags struct {
 	// The key of a tag assigned to an Amazon Personalize dataset, used to organize and identify the dataset in AWS. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Dataset_DatasetImportJob_DataSourceFields = ubx.FieldMap{
-		"DataLocation": ubx.FieldSpec{WireName: "data_location"},
-	}
+	"DataLocation": ubx.FieldSpec{WireName: "data_location"},
+}
 
 var Dataset_DatasetImportJobFields = ubx.FieldMap{
-		"DataSource": ubx.FieldSpec{
-			WireName: "data_source",
-			Kind: "object",
-			Fields: Dataset_DatasetImportJob_DataSourceFields,
-		},
-		"DatasetArn": ubx.FieldSpec{WireName: "dataset_arn"},
-		"DatasetImportJobArn": ubx.FieldSpec{WireName: "dataset_import_job_arn"},
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"DataSource": ubx.FieldSpec{
+		WireName: "data_source",
+		Kind:     "object",
+		Fields:   Dataset_DatasetImportJob_DataSourceFields,
+	},
+	"DatasetArn":          ubx.FieldSpec{WireName: "dataset_arn"},
+	"DatasetImportJobArn": ubx.FieldSpec{WireName: "dataset_import_job_arn"},
+	"JobName":             ubx.FieldSpec{WireName: "job_name"},
+	"RoleArn":             ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var Dataset_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DatasetConfig struct {
 	// The Amazon Resource Name (ARN) of the dataset group to add the dataset to
@@ -86,16 +86,16 @@ var Dataset = ubx.ResourceBinding{
 		"DatasetGroupArn": ubx.FieldSpec{WireName: "dataset_group_arn"},
 		"DatasetImportJob": ubx.FieldSpec{
 			WireName: "dataset_import_job",
-			Kind: "object",
-			Fields: Dataset_DatasetImportJobFields,
+			Kind:     "object",
+			Fields:   Dataset_DatasetImportJobFields,
 		},
 		"DatasetType": ubx.FieldSpec{WireName: "dataset_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SchemaArn": ubx.FieldSpec{WireName: "schema_arn"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"SchemaArn":   ubx.FieldSpec{WireName: "schema_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dataset_TagsFields,
+			Kind:     "list",
+			Fields:   Dataset_TagsFields,
 		},
 	},
 }

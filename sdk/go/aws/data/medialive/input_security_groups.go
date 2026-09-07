@@ -8,12 +8,12 @@ type InputSecurityGroups_InputSecurityGroups_WhitelistRules struct {
 }
 
 type InputSecurityGroups_InputSecurityGroups struct {
-	Arn any
-	Channels any
-	Id any
-	Inputs any
-	State any
-	Tags any
+	Arn            any
+	Channels       any
+	Id             any
+	Inputs         any
+	State          any
+	Tags           any
 	WhitelistRules any
 }
 
@@ -37,6 +37,6 @@ var InputSecurityGroups = ubx.DataSourceBinding{
 	WireType: "aws_medialive_input_security_groups",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

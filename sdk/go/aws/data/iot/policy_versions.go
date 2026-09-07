@@ -4,9 +4,9 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PolicyVersions_PolicyVersions struct {
-	CreateDate any
+	CreateDate       any
 	IsDefaultVersion any
-	VersionId any
+	VersionId        any
 }
 
 type PolicyVersionsConfig struct {
@@ -14,7 +14,7 @@ type PolicyVersionsConfig struct {
 }
 
 type PolicyVersionsAttrs struct {
-	PolicyName any
+	PolicyName     any
 	PolicyVersions any
 }
 

@@ -4,56 +4,56 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContactReferences_ReferenceSummaryList_Attachment struct {
-	Arn any
-	Name any
+	Arn    any
+	Name   any
 	Status any
-	Value any
+	Value  any
 }
 
 type ContactReferences_ReferenceSummaryList_Date struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type ContactReferences_ReferenceSummaryList_EmailMessage struct {
-	Arn any
+	Arn  any
 	Name any
 }
 
 type ContactReferences_ReferenceSummaryList struct {
-	Attachment any
-	Date any
-	Email any
-	EmailMessage any
-	EmailMessagePlainText any
+	Attachment                    any
+	Date                          any
+	Email                         any
+	EmailMessage                  any
+	EmailMessagePlainText         any
 	EmailMessagePlainTextRedacted any
-	EmailMessageRedacted any
-	Number any
-	String any
-	Url any
+	EmailMessageRedacted          any
+	Number                        any
+	String                        any
+	Url                           any
 }
 
 type ContactReferencesConfig struct {
-	ContactId any
-	InstanceId any
-	NextToken any
+	ContactId      any
+	InstanceId     any
+	NextToken      any
 	ReferenceTypes any
 }
 
 type ContactReferencesAttrs struct {
-	ContactId any
-	InstanceId any
-	NextToken any
+	ContactId            any
+	InstanceId           any
+	NextToken            any
 	ReferenceSummaryList any
-	ReferenceTypes any
+	ReferenceTypes       any
 }
 
 var ContactReferences = ubx.DataSourceBinding{
 	WireType: "aws_connect_contact_references",
 	Fields: ubx.FieldMap{
-		"ContactId": ubx.FieldSpec{WireName: "contact_id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ContactId":      ubx.FieldSpec{WireName: "contact_id"},
+		"InstanceId":     ubx.FieldSpec{WireName: "instance_id"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"ReferenceTypes": ubx.FieldSpec{WireName: "reference_types"},
 	},
 }

@@ -4,14 +4,14 @@ package smsvoice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SenderId_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var SenderId_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SenderIdConfig struct {
 	// When set to true the sender ID can't be deleted. By default this is set to false.
@@ -41,12 +41,12 @@ var SenderId = ubx.ResourceBinding{
 	WireType: "aws_smsvoice_sender_id",
 	Fields: ubx.FieldMap{
 		"DeletionProtectionEnabled": ubx.FieldSpec{WireName: "deletion_protection_enabled"},
-		"IsoCountryCode": ubx.FieldSpec{WireName: "iso_country_code"},
-		"SenderId": ubx.FieldSpec{WireName: "sender_id"},
+		"IsoCountryCode":            ubx.FieldSpec{WireName: "iso_country_code"},
+		"SenderId":                  ubx.FieldSpec{WireName: "sender_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SenderId_TagsFields,
+			Kind:     "list",
+			Fields:   SenderId_TagsFields,
 		},
 	},
 }

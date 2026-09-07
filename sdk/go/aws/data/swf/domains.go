@@ -4,33 +4,33 @@ package swf
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Domains_DomainInfos struct {
-	Arn any
+	Arn         any
 	Description any
-	Name any
-	Status any
+	Name        any
+	Status      any
 }
 
 type DomainsConfig struct {
-	MaximumPageSize any
-	NextPageToken any
+	MaximumPageSize    any
+	NextPageToken      any
 	RegistrationStatus any
-	ReverseOrder any
+	ReverseOrder       any
 }
 
 type DomainsAttrs struct {
-	DomainInfos any
-	MaximumPageSize any
-	NextPageToken any
+	DomainInfos        any
+	MaximumPageSize    any
+	NextPageToken      any
 	RegistrationStatus any
-	ReverseOrder any
+	ReverseOrder       any
 }
 
 var Domains = ubx.DataSourceBinding{
 	WireType: "aws_swf_domains",
 	Fields: ubx.FieldMap{
-		"MaximumPageSize": ubx.FieldSpec{WireName: "maximum_page_size"},
-		"NextPageToken": ubx.FieldSpec{WireName: "next_page_token"},
+		"MaximumPageSize":    ubx.FieldSpec{WireName: "maximum_page_size"},
+		"NextPageToken":      ubx.FieldSpec{WireName: "next_page_token"},
 		"RegistrationStatus": ubx.FieldSpec{WireName: "registration_status"},
-		"ReverseOrder": ubx.FieldSpec{WireName: "reverse_order"},
+		"ReverseOrder":       ubx.FieldSpec{WireName: "reverse_order"},
 	},
 }

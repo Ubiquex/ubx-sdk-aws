@@ -8,10 +8,10 @@ type QuickSightQsearchConfigurationConfig struct {
 }
 
 type QuickSightQsearchConfigurationAttrs struct {
-	AwsAccountId any
+	AwsAccountId  any
 	QsearchStatus any
-	RequestId any
-	Status any
+	RequestId     any
+	Status        any
 }
 
 var QuickSightQsearchConfiguration = ubx.DataSourceBinding{

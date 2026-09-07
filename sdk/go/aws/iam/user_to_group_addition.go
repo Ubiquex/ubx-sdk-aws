@@ -23,6 +23,6 @@ var UserToGroupAddition = ubx.ResourceBinding{
 	WireType: "aws_iam_user_to_group_addition",
 	Fields: ubx.FieldMap{
 		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"Users": ubx.FieldSpec{WireName: "users"},
+		"Users":     ubx.FieldSpec{WireName: "users"},
 	},
 }

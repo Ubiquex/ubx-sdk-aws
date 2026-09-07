@@ -6,14 +6,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type IpsetsConfig struct {
 	DetectorId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type IpsetsAttrs struct {
 	DetectorId any
-	IpSetIds any
+	IpSetIds   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Ipsets = ubx.DataSourceBinding{
@@ -21,6 +21,6 @@ var Ipsets = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DetectorId": ubx.FieldSpec{WireName: "detector_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

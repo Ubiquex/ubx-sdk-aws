@@ -4,14 +4,14 @@ package securityhub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Connectors_Connectors_ProviderSummary_ProviderConfiguration_Azure_ScopeConfiguration struct {
-	ScopeType any
+	ScopeType   any
 	ScopeValues any
 }
 
 type Connectors_Connectors_ProviderSummary_ProviderConfiguration_Azure struct {
 	AwsconfigConnectorArn any
-	AzureRegions any
-	ScopeConfiguration any
+	AzureRegions          any
+	ScopeConfiguration    any
 }
 
 type Connectors_Connectors_ProviderSummary_ProviderConfiguration struct {
@@ -19,20 +19,20 @@ type Connectors_Connectors_ProviderSummary_ProviderConfiguration struct {
 }
 
 type Connectors_Connectors_ProviderSummary struct {
-	ConnectorStatus any
+	ConnectorStatus       any
 	ProviderConfiguration any
-	ProviderName any
+	ProviderName          any
 }
 
 type Connectors_Connectors struct {
-	ConnectorArn any
-	ConnectorId any
-	CreatedAt any
-	CreatedBy any
-	Description any
+	ConnectorArn     any
+	ConnectorId      any
+	CreatedAt        any
+	CreatedBy        any
+	Description      any
 	EnablementStatus any
-	Name any
-	ProviderSummary any
+	Name             any
+	ProviderSummary  any
 }
 
 type ConnectorsConfig struct {
@@ -40,8 +40,8 @@ type ConnectorsConfig struct {
 	ConnectorStatus any
 	// <p>The enablement status of a CSPM connector. Indicates the lifecycle state of the connector resource.</p>
 	EnablementStatus any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	// <p>The name of the cloud provider for a CSPM connector.</p>
 	ProviderName any
 }
@@ -49,11 +49,11 @@ type ConnectorsConfig struct {
 type ConnectorsAttrs struct {
 	// <p>The connectivity status of a CSPM connector.</p>
 	ConnectorStatus any
-	Connectors any
+	Connectors      any
 	// <p>The enablement status of a CSPM connector. Indicates the lifecycle state of the connector resource.</p>
 	EnablementStatus any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	// <p>The name of the cloud provider for a CSPM connector.</p>
 	ProviderName any
 }
@@ -61,10 +61,10 @@ type ConnectorsAttrs struct {
 var Connectors = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_connectors",
 	Fields: ubx.FieldMap{
-		"ConnectorStatus": ubx.FieldSpec{WireName: "connector_status"},
+		"ConnectorStatus":  ubx.FieldSpec{WireName: "connector_status"},
 		"EnablementStatus": ubx.FieldSpec{WireName: "enablement_status"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ProviderName": ubx.FieldSpec{WireName: "provider_name"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"ProviderName":     ubx.FieldSpec{WireName: "provider_name"},
 	},
 }

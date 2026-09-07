@@ -11,19 +11,19 @@ type MediaPipelineKinesisVideoStreamPool_StreamConfiguration struct {
 }
 
 type MediaPipelineKinesisVideoStreamPool_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var MediaPipelineKinesisVideoStreamPool_StreamConfigurationFields = ubx.FieldMap{
-		"DataRetentionInHours": ubx.FieldSpec{WireName: "data_retention_in_hours"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"DataRetentionInHours": ubx.FieldSpec{WireName: "data_retention_in_hours"},
+	"Region":               ubx.FieldSpec{WireName: "region"},
+}
 
 var MediaPipelineKinesisVideoStreamPool_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MediaPipelineKinesisVideoStreamPoolConfig struct {
 	// The name of the Kinesis Video Stream Pool.
@@ -59,13 +59,13 @@ var MediaPipelineKinesisVideoStreamPool = ubx.ResourceBinding{
 		"PoolName": ubx.FieldSpec{WireName: "pool_name"},
 		"StreamConfiguration": ubx.FieldSpec{
 			WireName: "stream_configuration",
-			Kind: "object",
-			Fields: MediaPipelineKinesisVideoStreamPool_StreamConfigurationFields,
+			Kind:     "object",
+			Fields:   MediaPipelineKinesisVideoStreamPool_StreamConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MediaPipelineKinesisVideoStreamPool_TagsFields,
+			Kind:     "list",
+			Fields:   MediaPipelineKinesisVideoStreamPool_TagsFields,
 		},
 	},
 }

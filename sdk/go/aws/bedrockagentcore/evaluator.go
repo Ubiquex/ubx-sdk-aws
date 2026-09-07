@@ -68,7 +68,7 @@ type Evaluator_EvaluatorConfig_LlmAsAjudge_RatingScale_Categorical struct {
 type Evaluator_EvaluatorConfig_LlmAsAjudge_RatingScale_Numerical struct {
 	// Provides a textual description that defines the meaning of a specific numerical rating value in the LLM-as-judge rating scale, guiding the judge model's evaluation criteria. (AI-inferred)
 	Definition any
-	Label any
+	Label      any
 	// The numeric score assigned to a particular rating level in the numerical rating scale used by the LLM-as-judge evaluator for the Bedrock agent core evaluation. (AI-inferred)
 	Value any
 }
@@ -97,123 +97,123 @@ type Evaluator_EvaluatorConfig struct {
 }
 
 type Evaluator_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Evaluator_EvaluatorConfig_CodeBased_LambdaConfigFields = ubx.FieldMap{
-		"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
-		"LambdaTimeoutInSeconds": ubx.FieldSpec{WireName: "lambda_timeout_in_seconds"},
-	}
+	"LambdaArn":              ubx.FieldSpec{WireName: "lambda_arn"},
+	"LambdaTimeoutInSeconds": ubx.FieldSpec{WireName: "lambda_timeout_in_seconds"},
+}
 
 var Evaluator_EvaluatorConfig_CodeBasedFields = ubx.FieldMap{
-		"LambdaConfig": ubx.FieldSpec{
-			WireName: "lambda_config",
-			Kind: "object",
-			Fields: Evaluator_EvaluatorConfig_CodeBased_LambdaConfigFields,
-		},
-	}
+	"LambdaConfig": ubx.FieldSpec{
+		WireName: "lambda_config",
+		Kind:     "object",
+		Fields:   Evaluator_EvaluatorConfig_CodeBased_LambdaConfigFields,
+	},
+}
 
 var Evaluator_EvaluatorConfig_LlmAsAjudge_ModelConfig_BedrockEvaluatorModelConfig_InferenceConfigFields = ubx.FieldMap{
-		"MaxTokens": ubx.FieldSpec{WireName: "max_tokens"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-		"TopP": ubx.FieldSpec{WireName: "top_p"},
-	}
+	"MaxTokens":   ubx.FieldSpec{WireName: "max_tokens"},
+	"Temperature": ubx.FieldSpec{WireName: "temperature"},
+	"TopP":        ubx.FieldSpec{WireName: "top_p"},
+}
 
 var Evaluator_EvaluatorConfig_LlmAsAjudge_ModelConfig_BedrockEvaluatorModelConfigFields = ubx.FieldMap{
-		"AdditionalModelRequestFields": ubx.FieldSpec{WireName: "additional_model_request_fields"},
-		"InferenceConfig": ubx.FieldSpec{
-			WireName: "inference_config",
-			Kind: "object",
-			Fields: Evaluator_EvaluatorConfig_LlmAsAjudge_ModelConfig_BedrockEvaluatorModelConfig_InferenceConfigFields,
-		},
-		"ModelId": ubx.FieldSpec{WireName: "model_id"},
-	}
+	"AdditionalModelRequestFields": ubx.FieldSpec{WireName: "additional_model_request_fields"},
+	"InferenceConfig": ubx.FieldSpec{
+		WireName: "inference_config",
+		Kind:     "object",
+		Fields:   Evaluator_EvaluatorConfig_LlmAsAjudge_ModelConfig_BedrockEvaluatorModelConfig_InferenceConfigFields,
+	},
+	"ModelId": ubx.FieldSpec{WireName: "model_id"},
+}
 
 var Evaluator_EvaluatorConfig_LlmAsAjudge_ModelConfig_ResponsesEvaluatorModelConfig_ReasoningFields = ubx.FieldMap{
-		"Effort": ubx.FieldSpec{WireName: "effort"},
-	}
+	"Effort": ubx.FieldSpec{WireName: "effort"},
+}
 
 var Evaluator_EvaluatorConfig_LlmAsAjudge_ModelConfig_ResponsesEvaluatorModelConfigFields = ubx.FieldMap{
-		"MaxOutputTokens": ubx.FieldSpec{WireName: "max_output_tokens"},
-		"ModelId": ubx.FieldSpec{WireName: "model_id"},
-		"Reasoning": ubx.FieldSpec{
-			WireName: "reasoning",
-			Kind: "object",
-			Fields: Evaluator_EvaluatorConfig_LlmAsAjudge_ModelConfig_ResponsesEvaluatorModelConfig_ReasoningFields,
-		},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-		"TopP": ubx.FieldSpec{WireName: "top_p"},
-	}
+	"MaxOutputTokens": ubx.FieldSpec{WireName: "max_output_tokens"},
+	"ModelId":         ubx.FieldSpec{WireName: "model_id"},
+	"Reasoning": ubx.FieldSpec{
+		WireName: "reasoning",
+		Kind:     "object",
+		Fields:   Evaluator_EvaluatorConfig_LlmAsAjudge_ModelConfig_ResponsesEvaluatorModelConfig_ReasoningFields,
+	},
+	"Temperature": ubx.FieldSpec{WireName: "temperature"},
+	"TopP":        ubx.FieldSpec{WireName: "top_p"},
+}
 
 var Evaluator_EvaluatorConfig_LlmAsAjudge_ModelConfigFields = ubx.FieldMap{
-		"BedrockEvaluatorModelConfig": ubx.FieldSpec{
-			WireName: "bedrock_evaluator_model_config",
-			Kind: "object",
-			Fields: Evaluator_EvaluatorConfig_LlmAsAjudge_ModelConfig_BedrockEvaluatorModelConfigFields,
-		},
-		"ResponsesEvaluatorModelConfig": ubx.FieldSpec{
-			WireName: "responses_evaluator_model_config",
-			Kind: "object",
-			Fields: Evaluator_EvaluatorConfig_LlmAsAjudge_ModelConfig_ResponsesEvaluatorModelConfigFields,
-		},
-	}
+	"BedrockEvaluatorModelConfig": ubx.FieldSpec{
+		WireName: "bedrock_evaluator_model_config",
+		Kind:     "object",
+		Fields:   Evaluator_EvaluatorConfig_LlmAsAjudge_ModelConfig_BedrockEvaluatorModelConfigFields,
+	},
+	"ResponsesEvaluatorModelConfig": ubx.FieldSpec{
+		WireName: "responses_evaluator_model_config",
+		Kind:     "object",
+		Fields:   Evaluator_EvaluatorConfig_LlmAsAjudge_ModelConfig_ResponsesEvaluatorModelConfigFields,
+	},
+}
 
 var Evaluator_EvaluatorConfig_LlmAsAjudge_RatingScale_CategoricalFields = ubx.FieldMap{
-		"Definition": ubx.FieldSpec{WireName: "definition"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-	}
+	"Definition": ubx.FieldSpec{WireName: "definition"},
+	"Label":      ubx.FieldSpec{WireName: "label"},
+}
 
 var Evaluator_EvaluatorConfig_LlmAsAjudge_RatingScale_NumericalFields = ubx.FieldMap{
-		"Definition": ubx.FieldSpec{WireName: "definition"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Definition": ubx.FieldSpec{WireName: "definition"},
+	"Label":      ubx.FieldSpec{WireName: "label"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var Evaluator_EvaluatorConfig_LlmAsAjudge_RatingScaleFields = ubx.FieldMap{
-		"Categorical": ubx.FieldSpec{
-			WireName: "categorical",
-			Kind: "list",
-			Fields: Evaluator_EvaluatorConfig_LlmAsAjudge_RatingScale_CategoricalFields,
-		},
-		"Numerical": ubx.FieldSpec{
-			WireName: "numerical",
-			Kind: "list",
-			Fields: Evaluator_EvaluatorConfig_LlmAsAjudge_RatingScale_NumericalFields,
-		},
-	}
+	"Categorical": ubx.FieldSpec{
+		WireName: "categorical",
+		Kind:     "list",
+		Fields:   Evaluator_EvaluatorConfig_LlmAsAjudge_RatingScale_CategoricalFields,
+	},
+	"Numerical": ubx.FieldSpec{
+		WireName: "numerical",
+		Kind:     "list",
+		Fields:   Evaluator_EvaluatorConfig_LlmAsAjudge_RatingScale_NumericalFields,
+	},
+}
 
 var Evaluator_EvaluatorConfig_LlmAsAjudgeFields = ubx.FieldMap{
-		"Instructions": ubx.FieldSpec{WireName: "instructions"},
-		"ModelConfig": ubx.FieldSpec{
-			WireName: "model_config",
-			Kind: "object",
-			Fields: Evaluator_EvaluatorConfig_LlmAsAjudge_ModelConfigFields,
-		},
-		"RatingScale": ubx.FieldSpec{
-			WireName: "rating_scale",
-			Kind: "object",
-			Fields: Evaluator_EvaluatorConfig_LlmAsAjudge_RatingScaleFields,
-		},
-	}
+	"Instructions": ubx.FieldSpec{WireName: "instructions"},
+	"ModelConfig": ubx.FieldSpec{
+		WireName: "model_config",
+		Kind:     "object",
+		Fields:   Evaluator_EvaluatorConfig_LlmAsAjudge_ModelConfigFields,
+	},
+	"RatingScale": ubx.FieldSpec{
+		WireName: "rating_scale",
+		Kind:     "object",
+		Fields:   Evaluator_EvaluatorConfig_LlmAsAjudge_RatingScaleFields,
+	},
+}
 
 var Evaluator_EvaluatorConfigFields = ubx.FieldMap{
-		"CodeBased": ubx.FieldSpec{
-			WireName: "code_based",
-			Kind: "object",
-			Fields: Evaluator_EvaluatorConfig_CodeBasedFields,
-		},
-		"LlmAsAjudge": ubx.FieldSpec{
-			WireName: "llm_as_ajudge",
-			Kind: "object",
-			Fields: Evaluator_EvaluatorConfig_LlmAsAjudgeFields,
-		},
-	}
+	"CodeBased": ubx.FieldSpec{
+		WireName: "code_based",
+		Kind:     "object",
+		Fields:   Evaluator_EvaluatorConfig_CodeBasedFields,
+	},
+	"LlmAsAjudge": ubx.FieldSpec{
+		WireName: "llm_as_ajudge",
+		Kind:     "object",
+		Fields:   Evaluator_EvaluatorConfig_LlmAsAjudgeFields,
+	},
+}
 
 var Evaluator_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EvaluatorConfig struct {
 	// The description of the evaluator.
@@ -261,16 +261,16 @@ var Evaluator = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EvaluatorConfig": ubx.FieldSpec{
 			WireName: "evaluator_config",
-			Kind: "object",
-			Fields: Evaluator_EvaluatorConfigFields,
+			Kind:     "object",
+			Fields:   Evaluator_EvaluatorConfigFields,
 		},
 		"EvaluatorName": ubx.FieldSpec{WireName: "evaluator_name"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"Level": ubx.FieldSpec{WireName: "level"},
+		"KmsKeyArn":     ubx.FieldSpec{WireName: "kms_key_arn"},
+		"Level":         ubx.FieldSpec{WireName: "level"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Evaluator_TagsFields,
+			Kind:     "list",
+			Fields:   Evaluator_TagsFields,
 		},
 	},
 }

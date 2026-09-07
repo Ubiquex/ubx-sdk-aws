@@ -29,6 +29,6 @@ var MeteredProduct = ubx.ResourceBinding{
 	WireType: "aws_deadline_metered_product",
 	Fields: ubx.FieldMap{
 		"LicenseEndpointId": ubx.FieldSpec{WireName: "license_endpoint_id"},
-		"ProductId": ubx.FieldSpec{WireName: "product_id"},
+		"ProductId":         ubx.FieldSpec{WireName: "product_id"},
 	},
 }

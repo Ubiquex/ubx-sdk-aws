@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LocationFsxLustre_Tags struct {
 	// The key of a tag to apply to the DataSync location for an FSx for Lustre file system, used for identifying and organizing the location. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var LocationFsxLustre_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LocationFsxLustreConfig struct {
 	// The Amazon Resource Name (ARN) for the FSx for Lustre file system.
@@ -43,13 +43,13 @@ type LocationFsxLustreAttrs struct {
 var LocationFsxLustre = ubx.ResourceBinding{
 	WireType: "aws_data_sync_location_fsx_lustre",
 	Fields: ubx.FieldMap{
-		"FsxFilesystemArn": ubx.FieldSpec{WireName: "fsx_filesystem_arn"},
+		"FsxFilesystemArn":  ubx.FieldSpec{WireName: "fsx_filesystem_arn"},
 		"SecurityGroupArns": ubx.FieldSpec{WireName: "security_group_arns"},
-		"Subdirectory": ubx.FieldSpec{WireName: "subdirectory"},
+		"Subdirectory":      ubx.FieldSpec{WireName: "subdirectory"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LocationFsxLustre_TagsFields,
+			Kind:     "list",
+			Fields:   LocationFsxLustre_TagsFields,
 		},
 	},
 }

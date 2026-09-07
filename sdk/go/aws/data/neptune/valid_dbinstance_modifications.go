@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ValidDbinstanceModifications_ValidDbinstanceModificationsMessage_Storage_IopsToStorageRatio struct {
 	From any
-	To any
+	To   any
 }
 
 type ValidDbinstanceModifications_ValidDbinstanceModificationsMessage_Storage_ProvisionedIops struct {
 	From any
 	Step any
-	To any
+	To   any
 }
 
 type ValidDbinstanceModifications_ValidDbinstanceModificationsMessage_Storage struct {
 	IopsToStorageRatio any
-	ProvisionedIops any
-	StorageSize any
-	StorageType any
+	ProvisionedIops    any
+	StorageSize        any
+	StorageType        any
 }
 
 type ValidDbinstanceModifications_ValidDbinstanceModificationsMessage struct {

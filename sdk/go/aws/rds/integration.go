@@ -10,9 +10,9 @@ type Integration_Tags struct {
 }
 
 var Integration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IntegrationConfig struct {
 	// An optional set of non-secret key–value pairs that contains additional contextual information about the data.
@@ -60,15 +60,15 @@ var Integration = ubx.ResourceBinding{
 	WireType: "aws_rds_integration",
 	Fields: ubx.FieldMap{
 		"AdditionalEncryptionContext": ubx.FieldSpec{WireName: "additional_encryption_context"},
-		"DataFilter": ubx.FieldSpec{WireName: "data_filter"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IntegrationName": ubx.FieldSpec{WireName: "integration_name"},
-		"KmskeyId": ubx.FieldSpec{WireName: "kmskey_id"},
-		"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
+		"DataFilter":                  ubx.FieldSpec{WireName: "data_filter"},
+		"Description":                 ubx.FieldSpec{WireName: "description"},
+		"IntegrationName":             ubx.FieldSpec{WireName: "integration_name"},
+		"KmskeyId":                    ubx.FieldSpec{WireName: "kmskey_id"},
+		"SourceArn":                   ubx.FieldSpec{WireName: "source_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Integration_TagsFields,
+			Kind:     "list",
+			Fields:   Integration_TagsFields,
 		},
 		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
 	},

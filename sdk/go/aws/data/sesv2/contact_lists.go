@@ -4,25 +4,25 @@ package sesv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContactLists_ContactLists struct {
-	ContactListName any
+	ContactListName      any
 	LastUpdatedTimestamp any
 }
 
 type ContactListsConfig struct {
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 type ContactListsAttrs struct {
 	ContactLists any
-	NextToken any
-	PageSize any
+	NextToken    any
+	PageSize     any
 }
 
 var ContactLists = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_contact_lists",
 	Fields: ubx.FieldMap{
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 	},
 }

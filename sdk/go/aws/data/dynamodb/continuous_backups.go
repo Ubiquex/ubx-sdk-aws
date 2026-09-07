@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContinuousBackups_ContinuousBackupsDescription_PointInTimeRecoveryDescription struct {
 	EarliestRestorableDateTime any
-	LatestRestorableDateTime any
-	PointInTimeRecoveryStatus any
-	RecoveryPeriodInDays any
+	LatestRestorableDateTime   any
+	PointInTimeRecoveryStatus  any
+	RecoveryPeriodInDays       any
 }
 
 type ContinuousBackups_ContinuousBackupsDescription struct {
@@ -23,7 +23,7 @@ type ContinuousBackupsConfig struct {
 type ContinuousBackupsAttrs struct {
 	// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
 	ContinuousBackupsDescription any
-	TableName any
+	TableName                    any
 }
 
 var ContinuousBackups = ubx.DataSourceBinding{

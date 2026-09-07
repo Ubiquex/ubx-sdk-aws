@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ThingRegistrationTasksConfig struct {
 	MaxResults any
-	NextToken any
-	Status any
+	NextToken  any
+	Status     any
 }
 
 type ThingRegistrationTasksAttrs struct {
 	MaxResults any
-	NextToken any
-	Status any
-	TaskIds any
+	NextToken  any
+	Status     any
+	TaskIds    any
 }
 
 var ThingRegistrationTasks = ubx.DataSourceBinding{
 	WireType: "aws_iot_thing_registration_tasks",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Status":     ubx.FieldSpec{WireName: "status"},
 	},
 }

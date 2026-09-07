@@ -4,24 +4,24 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RestoreTestingPlans_RestoreTestingPlans struct {
-	CreationTime any
-	LastExecutionTime any
-	LastUpdateTime any
-	RestoreTestingPlanArn any
-	RestoreTestingPlanName any
-	ScheduleExpression any
+	CreationTime               any
+	LastExecutionTime          any
+	LastUpdateTime             any
+	RestoreTestingPlanArn      any
+	RestoreTestingPlanName     any
+	ScheduleExpression         any
 	ScheduleExpressionTimezone any
-	StartWindowHours any
+	StartWindowHours           any
 }
 
 type RestoreTestingPlansConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type RestoreTestingPlansAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 	RestoreTestingPlans any
 }
 
@@ -29,6 +29,6 @@ var RestoreTestingPlans = ubx.DataSourceBinding{
 	WireType: "aws_backup_restore_testing_plans",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

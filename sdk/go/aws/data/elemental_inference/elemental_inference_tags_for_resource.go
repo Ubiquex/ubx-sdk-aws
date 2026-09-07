@@ -9,7 +9,7 @@ type ElementalInferenceTagsForResourceConfig struct {
 
 type ElementalInferenceTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var ElementalInferenceTagsForResource = ubx.DataSourceBinding{

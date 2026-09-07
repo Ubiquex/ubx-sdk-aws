@@ -8,12 +8,12 @@ type StreamStorageConfiguration_StreamStorageConfiguration struct {
 }
 
 type StreamStorageConfigurationConfig struct {
-	StreamArn any
+	StreamArn  any
 	StreamName any
 }
 
 type StreamStorageConfigurationAttrs struct {
-	StreamArn any
+	StreamArn  any
 	StreamName any
 	// <p>The configuration for stream storage, including the default storage tier for stream data. This configuration determines how stream data is stored and accessed, with different tiers offering varying levels of performance and cost optimization.</p>
 	StreamStorageConfiguration any
@@ -22,7 +22,7 @@ type StreamStorageConfigurationAttrs struct {
 var StreamStorageConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_kinesisvideo_stream_storage_configuration",
 	Fields: ubx.FieldMap{
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
+		"StreamArn":  ubx.FieldSpec{WireName: "stream_arn"},
 		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
 	},
 }

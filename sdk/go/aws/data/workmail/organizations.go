@@ -4,21 +4,21 @@ package workmail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Organizations_OrganizationSummaries struct {
-	Alias any
+	Alias             any
 	DefaultMailDomain any
-	ErrorMessage any
-	OrganizationId any
-	State any
+	ErrorMessage      any
+	OrganizationId    any
+	State             any
 }
 
 type OrganizationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type OrganizationsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 	OrganizationSummaries any
 }
 
@@ -26,6 +26,6 @@ var Organizations = ubx.DataSourceBinding{
 	WireType: "aws_workmail_organizations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

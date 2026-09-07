@@ -12,19 +12,19 @@ type EnabledControl_Parameters struct {
 
 type EnabledControl_Tags struct {
 	// The key of a tag attached to the AWS Control Tower enabled control, enabling you to organize and identify the control with custom metadata. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var EnabledControl_ParametersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var EnabledControl_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EnabledControlConfig struct {
 	// Arn of the control.
@@ -54,13 +54,13 @@ var EnabledControl = ubx.ResourceBinding{
 		"ControlIdentifier": ubx.FieldSpec{WireName: "control_identifier"},
 		"Parameters": ubx.FieldSpec{
 			WireName: "parameters",
-			Kind: "list",
-			Fields: EnabledControl_ParametersFields,
+			Kind:     "list",
+			Fields:   EnabledControl_ParametersFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EnabledControl_TagsFields,
+			Kind:     "list",
+			Fields:   EnabledControl_TagsFields,
 		},
 		"TargetIdentifier": ubx.FieldSpec{WireName: "target_identifier"},
 	},

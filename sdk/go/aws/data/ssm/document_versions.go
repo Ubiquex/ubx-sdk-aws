@@ -4,36 +4,36 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DocumentVersions_DocumentVersions struct {
-	CreatedDate any
-	DisplayName any
-	DocumentFormat any
-	DocumentVersion any
-	IsDefaultVersion any
-	Name any
-	ReviewStatus any
-	Status any
+	CreatedDate       any
+	DisplayName       any
+	DocumentFormat    any
+	DocumentVersion   any
+	IsDefaultVersion  any
+	Name              any
+	ReviewStatus      any
+	Status            any
 	StatusInformation any
-	VersionName any
+	VersionName       any
 }
 
 type DocumentVersionsConfig struct {
 	MaxResults any
-	Name any
-	NextToken any
+	Name       any
+	NextToken  any
 }
 
 type DocumentVersionsAttrs struct {
 	DocumentVersions any
-	MaxResults any
-	Name any
-	NextToken any
+	MaxResults       any
+	Name             any
+	NextToken        any
 }
 
 var DocumentVersions = ubx.DataSourceBinding{
 	WireType: "aws_ssm_document_versions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

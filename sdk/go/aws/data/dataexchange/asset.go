@@ -4,19 +4,19 @@ package dataexchange
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Asset_AssetDetails_ApiGatewayApiAsset struct {
-	ApiDescription any
-	ApiEndpoint any
-	ApiId any
-	ApiKey any
-	ApiName any
-	ApiSpecificationDownloadUrl any
+	ApiDescription                       any
+	ApiEndpoint                          any
+	ApiId                                any
+	ApiKey                               any
+	ApiName                              any
+	ApiSpecificationDownloadUrl          any
 	ApiSpecificationDownloadUrlExpiresAt any
-	ProtocolType any
-	Stage any
+	ProtocolType                         any
+	Stage                                any
 }
 
 type Asset_AssetDetails_LakeFormationDataPermissionAsset_LakeFormationDataPermissionDetails_LftagPolicy_ResourceDetails_Database_Expression struct {
-	TagKey any
+	TagKey    any
 	TagValues any
 }
 
@@ -35,7 +35,7 @@ type Asset_AssetDetails_LakeFormationDataPermissionAsset_LakeFormationDataPermis
 	CatalogId any
 	// <p>Details about the AWS Lake Formation resource (Table or Database) included in the AWS Lake Formation data permission.</p>
 	ResourceDetails any
-	ResourceType any
+	ResourceType    any
 }
 
 type Asset_AssetDetails_LakeFormationDataPermissionAsset_LakeFormationDataPermissionDetails struct {
@@ -46,9 +46,9 @@ type Asset_AssetDetails_LakeFormationDataPermissionAsset_LakeFormationDataPermis
 type Asset_AssetDetails_LakeFormationDataPermissionAsset struct {
 	// <p>Details about the AWS Lake Formation data permission.</p>
 	LakeFormationDataPermissionDetails any
-	LakeFormationDataPermissionType any
-	Permissions any
-	RoleArn any
+	LakeFormationDataPermissionType    any
+	Permissions                        any
+	RoleArn                            any
 }
 
 type Asset_AssetDetails_RedshiftDataShareAsset struct {
@@ -60,12 +60,12 @@ type Asset_AssetDetails_S3DataAccessAsset_KmsKeysToGrant struct {
 }
 
 type Asset_AssetDetails_S3DataAccessAsset struct {
-	Bucket any
-	KeyPrefixes any
-	Keys any
-	KmsKeysToGrant any
+	Bucket             any
+	KeyPrefixes        any
+	Keys               any
+	KmsKeysToGrant     any
 	S3AccessPointAlias any
-	S3AccessPointArn any
+	S3AccessPointArn   any
 }
 
 type Asset_AssetDetails_S3SnapshotAsset struct {
@@ -86,8 +86,8 @@ type Asset_AssetDetails struct {
 }
 
 type AssetConfig struct {
-	AssetId any
-	DataSetId any
+	AssetId    any
+	DataSetId  any
 	RevisionId any
 }
 
@@ -95,23 +95,23 @@ type AssetAttrs struct {
 	Arn any
 	// <p>Details about the asset.</p>
 	AssetDetails any
-	AssetId any
-	AssetType any
-	CreatedAt any
-	DataSetId any
-	Id any
-	Name any
-	RevisionId any
-	SourceId any
-	Tags any
-	UpdatedAt any
+	AssetId      any
+	AssetType    any
+	CreatedAt    any
+	DataSetId    any
+	Id           any
+	Name         any
+	RevisionId   any
+	SourceId     any
+	Tags         any
+	UpdatedAt    any
 }
 
 var Asset = ubx.DataSourceBinding{
 	WireType: "aws_dataexchange_asset",
 	Fields: ubx.FieldMap{
-		"AssetId": ubx.FieldSpec{WireName: "asset_id"},
-		"DataSetId": ubx.FieldSpec{WireName: "data_set_id"},
+		"AssetId":    ubx.FieldSpec{WireName: "asset_id"},
+		"DataSetId":  ubx.FieldSpec{WireName: "data_set_id"},
 		"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
 	},
 }

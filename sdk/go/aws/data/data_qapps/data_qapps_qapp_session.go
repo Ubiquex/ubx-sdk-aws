@@ -5,37 +5,37 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataQappsQappSession_CardStatus_Submissions struct {
 	SubmissionId any
-	Timestamp any
-	Value any
+	Timestamp    any
+	Value        any
 }
 
 type DataQappsQappSession_CardStatus struct {
 	CurrentState any
 	CurrentValue any
-	Submissions any
+	Submissions  any
 }
 
 type DataQappsQappSessionConfig struct {
 	InstanceId any
-	SessionId any
+	SessionId  any
 }
 
 type DataQappsQappSessionAttrs struct {
-	AppVersion any
-	CardStatus any
-	InstanceId any
+	AppVersion                any
+	CardStatus                any
+	InstanceId                any
 	LatestPublishedAppVersion any
-	SessionArn any
-	SessionId any
-	SessionName any
-	Status any
-	UserIsHost any
+	SessionArn                any
+	SessionId                 any
+	SessionName               any
+	Status                    any
+	UserIsHost                any
 }
 
 var DataQappsQappSession = ubx.DataSourceBinding{
 	WireType: "aws_data_qapps_qapp_session",
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"SessionId": ubx.FieldSpec{WireName: "session_id"},
+		"SessionId":  ubx.FieldSpec{WireName: "session_id"},
 	},
 }

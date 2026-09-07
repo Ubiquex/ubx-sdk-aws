@@ -9,7 +9,7 @@ type ApiMediatailorTagsForResourceConfig struct {
 
 type ApiMediatailorTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var ApiMediatailorTagsForResource = ubx.DataSourceBinding{

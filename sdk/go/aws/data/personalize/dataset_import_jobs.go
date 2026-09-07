@@ -4,26 +4,26 @@ package personalize
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DatasetImportJobs_DatasetImportJobs struct {
-	CreationDateTime any
+	CreationDateTime    any
 	DatasetImportJobArn any
-	FailureReason any
-	ImportMode any
-	JobName any
+	FailureReason       any
+	ImportMode          any
+	JobName             any
 	LastUpdatedDateTime any
-	Status any
+	Status              any
 }
 
 type DatasetImportJobsConfig struct {
 	DatasetArn any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DatasetImportJobsAttrs struct {
-	DatasetArn any
+	DatasetArn        any
 	DatasetImportJobs any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 var DatasetImportJobs = ubx.DataSourceBinding{
@@ -31,6 +31,6 @@ var DatasetImportJobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DatasetArn": ubx.FieldSpec{WireName: "dataset_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

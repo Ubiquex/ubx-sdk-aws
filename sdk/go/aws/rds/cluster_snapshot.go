@@ -11,9 +11,9 @@ type ClusterSnapshot_Tags struct {
 }
 
 var ClusterSnapshot_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ClusterSnapshotConfig struct {
 	// The identifier of the DB cluster to create a snapshot for.
@@ -72,12 +72,12 @@ type ClusterSnapshotAttrs struct {
 var ClusterSnapshot = ubx.ResourceBinding{
 	WireType: "aws_rds_cluster_snapshot",
 	Fields: ubx.FieldMap{
-		"DbclusterIdentifier": ubx.FieldSpec{WireName: "dbcluster_identifier"},
+		"DbclusterIdentifier":         ubx.FieldSpec{WireName: "dbcluster_identifier"},
 		"DbclusterSnapshotIdentifier": ubx.FieldSpec{WireName: "dbcluster_snapshot_identifier"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ClusterSnapshot_TagsFields,
+			Kind:     "list",
+			Fields:   ClusterSnapshot_TagsFields,
 		},
 	},
 }

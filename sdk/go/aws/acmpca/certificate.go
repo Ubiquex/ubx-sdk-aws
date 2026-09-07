@@ -160,155 +160,155 @@ type Certificate_Validity struct {
 }
 
 var Certificate_ApiPassthrough_Extensions_CertificatePolicies_PolicyQualifiers_QualifierFields = ubx.FieldMap{
-		"CpsUri": ubx.FieldSpec{WireName: "cps_uri"},
-	}
+	"CpsUri": ubx.FieldSpec{WireName: "cps_uri"},
+}
 
 var Certificate_ApiPassthrough_Extensions_CertificatePolicies_PolicyQualifiersFields = ubx.FieldMap{
-		"PolicyQualifierId": ubx.FieldSpec{WireName: "policy_qualifier_id"},
-		"Qualifier": ubx.FieldSpec{
-			WireName: "qualifier",
-			Kind: "object",
-			Fields: Certificate_ApiPassthrough_Extensions_CertificatePolicies_PolicyQualifiers_QualifierFields,
-		},
-	}
+	"PolicyQualifierId": ubx.FieldSpec{WireName: "policy_qualifier_id"},
+	"Qualifier": ubx.FieldSpec{
+		WireName: "qualifier",
+		Kind:     "object",
+		Fields:   Certificate_ApiPassthrough_Extensions_CertificatePolicies_PolicyQualifiers_QualifierFields,
+	},
+}
 
 var Certificate_ApiPassthrough_Extensions_CertificatePoliciesFields = ubx.FieldMap{
-		"CertPolicyId": ubx.FieldSpec{WireName: "cert_policy_id"},
-		"PolicyQualifiers": ubx.FieldSpec{
-			WireName: "policy_qualifiers",
-			Kind: "list",
-			Fields: Certificate_ApiPassthrough_Extensions_CertificatePolicies_PolicyQualifiersFields,
-		},
-	}
+	"CertPolicyId": ubx.FieldSpec{WireName: "cert_policy_id"},
+	"PolicyQualifiers": ubx.FieldSpec{
+		WireName: "policy_qualifiers",
+		Kind:     "list",
+		Fields:   Certificate_ApiPassthrough_Extensions_CertificatePolicies_PolicyQualifiersFields,
+	},
+}
 
 var Certificate_ApiPassthrough_Extensions_CustomExtensionsFields = ubx.FieldMap{
-		"Critical": ubx.FieldSpec{WireName: "critical"},
-		"ObjectIdentifier": ubx.FieldSpec{WireName: "object_identifier"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Critical":         ubx.FieldSpec{WireName: "critical"},
+	"ObjectIdentifier": ubx.FieldSpec{WireName: "object_identifier"},
+	"Value":            ubx.FieldSpec{WireName: "value"},
+}
 
 var Certificate_ApiPassthrough_Extensions_ExtendedKeyUsageFields = ubx.FieldMap{
-		"ExtendedKeyUsageObjectIdentifier": ubx.FieldSpec{WireName: "extended_key_usage_object_identifier"},
-		"ExtendedKeyUsageType": ubx.FieldSpec{WireName: "extended_key_usage_type"},
-	}
+	"ExtendedKeyUsageObjectIdentifier": ubx.FieldSpec{WireName: "extended_key_usage_object_identifier"},
+	"ExtendedKeyUsageType":             ubx.FieldSpec{WireName: "extended_key_usage_type"},
+}
 
 var Certificate_ApiPassthrough_Extensions_KeyUsageFields = ubx.FieldMap{
-		"Crlsign": ubx.FieldSpec{WireName: "crlsign"},
-		"DataEncipherment": ubx.FieldSpec{WireName: "data_encipherment"},
-		"DecipherOnly": ubx.FieldSpec{WireName: "decipher_only"},
-		"DigitalSignature": ubx.FieldSpec{WireName: "digital_signature"},
-		"EncipherOnly": ubx.FieldSpec{WireName: "encipher_only"},
-		"KeyAgreement": ubx.FieldSpec{WireName: "key_agreement"},
-		"KeyCertSign": ubx.FieldSpec{WireName: "key_cert_sign"},
-		"KeyEncipherment": ubx.FieldSpec{WireName: "key_encipherment"},
-		"NonRepudiation": ubx.FieldSpec{WireName: "non_repudiation"},
-	}
+	"Crlsign":          ubx.FieldSpec{WireName: "crlsign"},
+	"DataEncipherment": ubx.FieldSpec{WireName: "data_encipherment"},
+	"DecipherOnly":     ubx.FieldSpec{WireName: "decipher_only"},
+	"DigitalSignature": ubx.FieldSpec{WireName: "digital_signature"},
+	"EncipherOnly":     ubx.FieldSpec{WireName: "encipher_only"},
+	"KeyAgreement":     ubx.FieldSpec{WireName: "key_agreement"},
+	"KeyCertSign":      ubx.FieldSpec{WireName: "key_cert_sign"},
+	"KeyEncipherment":  ubx.FieldSpec{WireName: "key_encipherment"},
+	"NonRepudiation":   ubx.FieldSpec{WireName: "non_repudiation"},
+}
 
 var Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_DirectoryName_CustomAttributesFields = ubx.FieldMap{
-		"ObjectIdentifier": ubx.FieldSpec{WireName: "object_identifier"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"ObjectIdentifier": ubx.FieldSpec{WireName: "object_identifier"},
+	"Value":            ubx.FieldSpec{WireName: "value"},
+}
 
 var Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_DirectoryNameFields = ubx.FieldMap{
-		"CommonName": ubx.FieldSpec{WireName: "common_name"},
-		"Country": ubx.FieldSpec{WireName: "country"},
-		"CustomAttributes": ubx.FieldSpec{
-			WireName: "custom_attributes",
-			Kind: "list",
-			Fields: Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_DirectoryName_CustomAttributesFields,
-		},
-		"DistinguishedNameQualifier": ubx.FieldSpec{WireName: "distinguished_name_qualifier"},
-		"GenerationQualifier": ubx.FieldSpec{WireName: "generation_qualifier"},
-		"GivenName": ubx.FieldSpec{WireName: "given_name"},
-		"Initials": ubx.FieldSpec{WireName: "initials"},
-		"Locality": ubx.FieldSpec{WireName: "locality"},
-		"Organization": ubx.FieldSpec{WireName: "organization"},
-		"OrganizationalUnit": ubx.FieldSpec{WireName: "organizational_unit"},
-		"Pseudonym": ubx.FieldSpec{WireName: "pseudonym"},
-		"SerialNumber": ubx.FieldSpec{WireName: "serial_number"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Surname": ubx.FieldSpec{WireName: "surname"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"CommonName": ubx.FieldSpec{WireName: "common_name"},
+	"Country":    ubx.FieldSpec{WireName: "country"},
+	"CustomAttributes": ubx.FieldSpec{
+		WireName: "custom_attributes",
+		Kind:     "list",
+		Fields:   Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_DirectoryName_CustomAttributesFields,
+	},
+	"DistinguishedNameQualifier": ubx.FieldSpec{WireName: "distinguished_name_qualifier"},
+	"GenerationQualifier":        ubx.FieldSpec{WireName: "generation_qualifier"},
+	"GivenName":                  ubx.FieldSpec{WireName: "given_name"},
+	"Initials":                   ubx.FieldSpec{WireName: "initials"},
+	"Locality":                   ubx.FieldSpec{WireName: "locality"},
+	"Organization":               ubx.FieldSpec{WireName: "organization"},
+	"OrganizationalUnit":         ubx.FieldSpec{WireName: "organizational_unit"},
+	"Pseudonym":                  ubx.FieldSpec{WireName: "pseudonym"},
+	"SerialNumber":               ubx.FieldSpec{WireName: "serial_number"},
+	"State":                      ubx.FieldSpec{WireName: "state"},
+	"Surname":                    ubx.FieldSpec{WireName: "surname"},
+	"Title":                      ubx.FieldSpec{WireName: "title"},
+}
 
 var Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_EdiPartyNameFields = ubx.FieldMap{
-		"NameAssigner": ubx.FieldSpec{WireName: "name_assigner"},
-		"PartyName": ubx.FieldSpec{WireName: "party_name"},
-	}
+	"NameAssigner": ubx.FieldSpec{WireName: "name_assigner"},
+	"PartyName":    ubx.FieldSpec{WireName: "party_name"},
+}
 
 var Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_OtherNameFields = ubx.FieldMap{
-		"TypeId": ubx.FieldSpec{WireName: "type_id"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"TypeId": ubx.FieldSpec{WireName: "type_id"},
+	"Value":  ubx.FieldSpec{WireName: "value"},
+}
 
 var Certificate_ApiPassthrough_Extensions_SubjectAlternativeNamesFields = ubx.FieldMap{
-		"DirectoryName": ubx.FieldSpec{
-			WireName: "directory_name",
-			Kind: "object",
-			Fields: Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_DirectoryNameFields,
-		},
-		"DnsName": ubx.FieldSpec{WireName: "dns_name"},
-		"EdiPartyName": ubx.FieldSpec{
-			WireName: "edi_party_name",
-			Kind: "object",
-			Fields: Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_EdiPartyNameFields,
-		},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"OtherName": ubx.FieldSpec{
-			WireName: "other_name",
-			Kind: "object",
-			Fields: Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_OtherNameFields,
-		},
-		"RegisteredId": ubx.FieldSpec{WireName: "registered_id"},
-		"Rfc822Name": ubx.FieldSpec{WireName: "rfc822_name"},
-		"UniformResourceIdentifier": ubx.FieldSpec{WireName: "uniform_resource_identifier"},
-	}
+	"DirectoryName": ubx.FieldSpec{
+		WireName: "directory_name",
+		Kind:     "object",
+		Fields:   Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_DirectoryNameFields,
+	},
+	"DnsName": ubx.FieldSpec{WireName: "dns_name"},
+	"EdiPartyName": ubx.FieldSpec{
+		WireName: "edi_party_name",
+		Kind:     "object",
+		Fields:   Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_EdiPartyNameFields,
+	},
+	"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
+	"OtherName": ubx.FieldSpec{
+		WireName: "other_name",
+		Kind:     "object",
+		Fields:   Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_OtherNameFields,
+	},
+	"RegisteredId":              ubx.FieldSpec{WireName: "registered_id"},
+	"Rfc822Name":                ubx.FieldSpec{WireName: "rfc822_name"},
+	"UniformResourceIdentifier": ubx.FieldSpec{WireName: "uniform_resource_identifier"},
+}
 
 var Certificate_ApiPassthrough_ExtensionsFields = ubx.FieldMap{
-		"CertificatePolicies": ubx.FieldSpec{
-			WireName: "certificate_policies",
-			Kind: "list",
-			Fields: Certificate_ApiPassthrough_Extensions_CertificatePoliciesFields,
-		},
-		"CustomExtensions": ubx.FieldSpec{
-			WireName: "custom_extensions",
-			Kind: "list",
-			Fields: Certificate_ApiPassthrough_Extensions_CustomExtensionsFields,
-		},
-		"ExtendedKeyUsage": ubx.FieldSpec{
-			WireName: "extended_key_usage",
-			Kind: "list",
-			Fields: Certificate_ApiPassthrough_Extensions_ExtendedKeyUsageFields,
-		},
-		"KeyUsage": ubx.FieldSpec{
-			WireName: "key_usage",
-			Kind: "object",
-			Fields: Certificate_ApiPassthrough_Extensions_KeyUsageFields,
-		},
-		"SubjectAlternativeNames": ubx.FieldSpec{
-			WireName: "subject_alternative_names",
-			Kind: "list",
-			Fields: Certificate_ApiPassthrough_Extensions_SubjectAlternativeNamesFields,
-		},
-	}
+	"CertificatePolicies": ubx.FieldSpec{
+		WireName: "certificate_policies",
+		Kind:     "list",
+		Fields:   Certificate_ApiPassthrough_Extensions_CertificatePoliciesFields,
+	},
+	"CustomExtensions": ubx.FieldSpec{
+		WireName: "custom_extensions",
+		Kind:     "list",
+		Fields:   Certificate_ApiPassthrough_Extensions_CustomExtensionsFields,
+	},
+	"ExtendedKeyUsage": ubx.FieldSpec{
+		WireName: "extended_key_usage",
+		Kind:     "list",
+		Fields:   Certificate_ApiPassthrough_Extensions_ExtendedKeyUsageFields,
+	},
+	"KeyUsage": ubx.FieldSpec{
+		WireName: "key_usage",
+		Kind:     "object",
+		Fields:   Certificate_ApiPassthrough_Extensions_KeyUsageFields,
+	},
+	"SubjectAlternativeNames": ubx.FieldSpec{
+		WireName: "subject_alternative_names",
+		Kind:     "list",
+		Fields:   Certificate_ApiPassthrough_Extensions_SubjectAlternativeNamesFields,
+	},
+}
 
 var Certificate_ApiPassthroughFields = ubx.FieldMap{
-		"Extensions": ubx.FieldSpec{
-			WireName: "extensions",
-			Kind: "object",
-			Fields: Certificate_ApiPassthrough_ExtensionsFields,
-		},
-		"Subject": ubx.FieldSpec{
-			WireName: "subject",
-			Kind: "object",
-			Fields: Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_DirectoryNameFields,
-		},
-	}
+	"Extensions": ubx.FieldSpec{
+		WireName: "extensions",
+		Kind:     "object",
+		Fields:   Certificate_ApiPassthrough_ExtensionsFields,
+	},
+	"Subject": ubx.FieldSpec{
+		WireName: "subject",
+		Kind:     "object",
+		Fields:   Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_DirectoryNameFields,
+	},
+}
 
 var Certificate_ValidityFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CertificateConfig struct {
 	// Contains X.509 certificate information to be placed in an issued certificate. An ``APIPassthrough`` or ``APICSRPassthrough`` template variant must be selected, or else this parameter is ignored. If conflicting or duplicate certificate information is supplied from other sources, AWS Private CA applies [order of operation rules](https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-order-of-operations) to determine what information is used.
@@ -353,22 +353,22 @@ var Certificate = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApiPassthrough": ubx.FieldSpec{
 			WireName: "api_passthrough",
-			Kind: "object",
-			Fields: Certificate_ApiPassthroughFields,
+			Kind:     "object",
+			Fields:   Certificate_ApiPassthroughFields,
 		},
-		"CertificateAuthorityArn": ubx.FieldSpec{WireName: "certificate_authority_arn"},
+		"CertificateAuthorityArn":   ubx.FieldSpec{WireName: "certificate_authority_arn"},
 		"CertificateSigningRequest": ubx.FieldSpec{WireName: "certificate_signing_request"},
-		"SigningAlgorithm": ubx.FieldSpec{WireName: "signing_algorithm"},
-		"TemplateArn": ubx.FieldSpec{WireName: "template_arn"},
+		"SigningAlgorithm":          ubx.FieldSpec{WireName: "signing_algorithm"},
+		"TemplateArn":               ubx.FieldSpec{WireName: "template_arn"},
 		"Validity": ubx.FieldSpec{
 			WireName: "validity",
-			Kind: "object",
-			Fields: Certificate_ValidityFields,
+			Kind:     "object",
+			Fields:   Certificate_ValidityFields,
 		},
 		"ValidityNotBefore": ubx.FieldSpec{
 			WireName: "validity_not_before",
-			Kind: "object",
-			Fields: Certificate_ValidityFields,
+			Kind:     "object",
+			Fields:   Certificate_ValidityFields,
 		},
 	},
 }

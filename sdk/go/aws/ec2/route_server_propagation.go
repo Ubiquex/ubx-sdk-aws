@@ -21,6 +21,6 @@ var RouteServerPropagation = ubx.ResourceBinding{
 	WireType: "aws_ec2_route_server_propagation",
 	Fields: ubx.FieldMap{
 		"RouteServerId": ubx.FieldSpec{WireName: "route_server_id"},
-		"RouteTableId": ubx.FieldSpec{WireName: "route_table_id"},
+		"RouteTableId":  ubx.FieldSpec{WireName: "route_table_id"},
 	},
 }

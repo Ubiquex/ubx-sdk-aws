@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagedblockchainQueryAssetContract_ContractIdentifier struct {
 	ContractAddress any
-	Network any
+	Network         any
 }
 
 type ManagedblockchainQueryAssetContract_Metadata struct {
 	Decimals any
-	Name any
-	Symbol any
+	Name     any
+	Symbol   any
 }
 
 var ManagedblockchainQueryAssetContract_ContractIdentifierFields = ubx.FieldMap{
-		"ContractAddress": ubx.FieldSpec{WireName: "contract_address"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-	}
+	"ContractAddress": ubx.FieldSpec{WireName: "contract_address"},
+	"Network":         ubx.FieldSpec{WireName: "network"},
+}
 
 type ManagedblockchainQueryAssetContractConfig struct {
 	// <p>Container for the blockchain address and network information about a contract.</p>
@@ -27,9 +27,9 @@ type ManagedblockchainQueryAssetContractConfig struct {
 type ManagedblockchainQueryAssetContractAttrs struct {
 	// <p>Container for the blockchain address and network information about a contract.</p>
 	ContractIdentifier any
-	DeployerAddress any
+	DeployerAddress    any
 	// <p>The metadata of the contract.</p>
-	Metadata any
+	Metadata      any
 	TokenStandard any
 }
 
@@ -38,8 +38,8 @@ var ManagedblockchainQueryAssetContract = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ContractIdentifier": ubx.FieldSpec{
 			WireName: "contract_identifier",
-			Kind: "object",
-			Fields: ManagedblockchainQueryAssetContract_ContractIdentifierFields,
+			Kind:     "object",
+			Fields:   ManagedblockchainQueryAssetContract_ContractIdentifierFields,
 		},
 	},
 }

@@ -4,64 +4,64 @@ package datazone
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Notifications_Notifications_Topic_Resource struct {
-	Id any
+	Id   any
 	Name any
 	Type any
 }
 
 type Notifications_Notifications_Topic struct {
 	Resource any
-	Role any
-	Subject any
+	Role     any
+	Subject  any
 }
 
 type Notifications_Notifications struct {
-	ActionLink any
-	CreationTimestamp any
-	DomainIdentifier any
-	Identifier any
+	ActionLink           any
+	CreationTimestamp    any
+	DomainIdentifier     any
+	Identifier           any
 	LastUpdatedTimestamp any
-	Message any
-	Metadata any
-	Status any
-	Title any
-	Topic any
-	Type any
+	Message              any
+	Metadata             any
+	Status               any
+	Title                any
+	Topic                any
+	Type                 any
 }
 
 type NotificationsConfig struct {
-	AfterTimestamp any
-	BeforeTimestamp any
+	AfterTimestamp   any
+	BeforeTimestamp  any
 	DomainIdentifier any
-	MaxResults any
-	NextToken any
-	Subjects any
-	TaskStatus any
-	Type any
+	MaxResults       any
+	NextToken        any
+	Subjects         any
+	TaskStatus       any
+	Type             any
 }
 
 type NotificationsAttrs struct {
-	AfterTimestamp any
-	BeforeTimestamp any
+	AfterTimestamp   any
+	BeforeTimestamp  any
 	DomainIdentifier any
-	MaxResults any
-	NextToken any
-	Notifications any
-	Subjects any
-	TaskStatus any
-	Type any
+	MaxResults       any
+	NextToken        any
+	Notifications    any
+	Subjects         any
+	TaskStatus       any
+	Type             any
 }
 
 var Notifications = ubx.DataSourceBinding{
 	WireType: "aws_datazone_notifications",
 	Fields: ubx.FieldMap{
-		"AfterTimestamp": ubx.FieldSpec{WireName: "after_timestamp"},
-		"BeforeTimestamp": ubx.FieldSpec{WireName: "before_timestamp"},
+		"AfterTimestamp":   ubx.FieldSpec{WireName: "after_timestamp"},
+		"BeforeTimestamp":  ubx.FieldSpec{WireName: "before_timestamp"},
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Subjects": ubx.FieldSpec{WireName: "subjects"},
-		"TaskStatus": ubx.FieldSpec{WireName: "task_status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"Subjects":         ubx.FieldSpec{WireName: "subjects"},
+		"TaskStatus":       ubx.FieldSpec{WireName: "task_status"},
+		"Type":             ubx.FieldSpec{WireName: "type"},
 	},
 }

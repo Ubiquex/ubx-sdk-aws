@@ -11,9 +11,9 @@ type Lag_Tags struct {
 }
 
 var Lag_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LagConfig struct {
 	// The bandwidth of the individual physical dedicated connections bundled by the LAG.
@@ -59,15 +59,15 @@ var Lag = ubx.ResourceBinding{
 	WireType: "aws_direct_connect_lag",
 	Fields: ubx.FieldMap{
 		"ConnectionsBandwidth": ubx.FieldSpec{WireName: "connections_bandwidth"},
-		"LagName": ubx.FieldSpec{WireName: "lag_name"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"MinimumLinks": ubx.FieldSpec{WireName: "minimum_links"},
-		"ProviderName": ubx.FieldSpec{WireName: "provider_name"},
-		"RequestMacsec": ubx.FieldSpec{WireName: "request_macsec"},
+		"LagName":              ubx.FieldSpec{WireName: "lag_name"},
+		"Location":             ubx.FieldSpec{WireName: "location"},
+		"MinimumLinks":         ubx.FieldSpec{WireName: "minimum_links"},
+		"ProviderName":         ubx.FieldSpec{WireName: "provider_name"},
+		"RequestMacsec":        ubx.FieldSpec{WireName: "request_macsec"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Lag_TagsFields,
+			Kind:     "list",
+			Fields:   Lag_TagsFields,
 		},
 	},
 }

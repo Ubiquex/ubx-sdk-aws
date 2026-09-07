@@ -25,7 +25,7 @@ type DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoD
 	// Specifies the DynamoDB write operation to perform when this action is triggered, with valid values of INSERT, UPDATE, or DELETE. (AI-inferred)
 	Operation any
 	// Configures the payload object (defining the content expression and its type) that determines the JSON data written to the DynamoDB item for this detector model action. (AI-inferred)
-	Payload any
+	Payload      any
 	PayloadField any
 	// Specifies the DynamoDB attribute name that serves as the range (sort) key for the table entry written by this IoT Events DynamoDB action. (AI-inferred)
 	RangeKeyField any
@@ -226,292 +226,292 @@ type DetectorModel_DetectorModelDefinition struct {
 }
 
 type DetectorModel_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_ClearTimerFields = ubx.FieldMap{
-		"TimerName": ubx.FieldSpec{WireName: "timer_name"},
-	}
+	"TimerName": ubx.FieldSpec{WireName: "timer_name"},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb_PayloadFields = ubx.FieldMap{
-		"ContentExpression": ubx.FieldSpec{WireName: "content_expression"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ContentExpression": ubx.FieldSpec{WireName: "content_expression"},
+	"Type":              ubx.FieldSpec{WireName: "type"},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDbFields = ubx.FieldMap{
-		"HashKeyField": ubx.FieldSpec{WireName: "hash_key_field"},
-		"HashKeyType": ubx.FieldSpec{WireName: "hash_key_type"},
-		"HashKeyValue": ubx.FieldSpec{WireName: "hash_key_value"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Payload": ubx.FieldSpec{
-			WireName: "payload",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb_PayloadFields,
-		},
-		"PayloadField": ubx.FieldSpec{WireName: "payload_field"},
-		"RangeKeyField": ubx.FieldSpec{WireName: "range_key_field"},
-		"RangeKeyType": ubx.FieldSpec{WireName: "range_key_type"},
-		"RangeKeyValue": ubx.FieldSpec{WireName: "range_key_value"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"HashKeyField": ubx.FieldSpec{WireName: "hash_key_field"},
+	"HashKeyType":  ubx.FieldSpec{WireName: "hash_key_type"},
+	"HashKeyValue": ubx.FieldSpec{WireName: "hash_key_value"},
+	"Operation":    ubx.FieldSpec{WireName: "operation"},
+	"Payload": ubx.FieldSpec{
+		WireName: "payload",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb_PayloadFields,
+	},
+	"PayloadField":  ubx.FieldSpec{WireName: "payload_field"},
+	"RangeKeyField": ubx.FieldSpec{WireName: "range_key_field"},
+	"RangeKeyType":  ubx.FieldSpec{WireName: "range_key_type"},
+	"RangeKeyValue": ubx.FieldSpec{WireName: "range_key_value"},
+	"TableName":     ubx.FieldSpec{WireName: "table_name"},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDbv2Fields = ubx.FieldMap{
-		"Payload": ubx.FieldSpec{
-			WireName: "payload",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb_PayloadFields,
-		},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"Payload": ubx.FieldSpec{
+		WireName: "payload",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb_PayloadFields,
+	},
+	"TableName": ubx.FieldSpec{WireName: "table_name"},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_FirehoseFields = ubx.FieldMap{
-		"DeliveryStreamName": ubx.FieldSpec{WireName: "delivery_stream_name"},
-		"Payload": ubx.FieldSpec{
-			WireName: "payload",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb_PayloadFields,
-		},
-		"Separator": ubx.FieldSpec{WireName: "separator"},
-	}
+	"DeliveryStreamName": ubx.FieldSpec{WireName: "delivery_stream_name"},
+	"Payload": ubx.FieldSpec{
+		WireName: "payload",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb_PayloadFields,
+	},
+	"Separator": ubx.FieldSpec{WireName: "separator"},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotEventsFields = ubx.FieldMap{
-		"InputName": ubx.FieldSpec{WireName: "input_name"},
-		"Payload": ubx.FieldSpec{
-			WireName: "payload",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb_PayloadFields,
-		},
-	}
+	"InputName": ubx.FieldSpec{WireName: "input_name"},
+	"Payload": ubx.FieldSpec{
+		WireName: "payload",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb_PayloadFields,
+	},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotSiteWise_PropertyValue_TimestampFields = ubx.FieldMap{
-		"OffsetInNanos": ubx.FieldSpec{WireName: "offset_in_nanos"},
-		"TimeInSeconds": ubx.FieldSpec{WireName: "time_in_seconds"},
-	}
+	"OffsetInNanos": ubx.FieldSpec{WireName: "offset_in_nanos"},
+	"TimeInSeconds": ubx.FieldSpec{WireName: "time_in_seconds"},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotSiteWise_PropertyValue_ValueFields = ubx.FieldMap{
-		"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
-		"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
-		"IntegerValue": ubx.FieldSpec{WireName: "integer_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
+	"DoubleValue":  ubx.FieldSpec{WireName: "double_value"},
+	"IntegerValue": ubx.FieldSpec{WireName: "integer_value"},
+	"StringValue":  ubx.FieldSpec{WireName: "string_value"},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotSiteWise_PropertyValueFields = ubx.FieldMap{
-		"Quality": ubx.FieldSpec{WireName: "quality"},
-		"Timestamp": ubx.FieldSpec{
-			WireName: "timestamp",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotSiteWise_PropertyValue_TimestampFields,
-		},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotSiteWise_PropertyValue_ValueFields,
-		},
-	}
+	"Quality": ubx.FieldSpec{WireName: "quality"},
+	"Timestamp": ubx.FieldSpec{
+		WireName: "timestamp",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotSiteWise_PropertyValue_TimestampFields,
+	},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotSiteWise_PropertyValue_ValueFields,
+	},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotSiteWiseFields = ubx.FieldMap{
-		"AssetId": ubx.FieldSpec{WireName: "asset_id"},
-		"EntryId": ubx.FieldSpec{WireName: "entry_id"},
-		"PropertyAlias": ubx.FieldSpec{WireName: "property_alias"},
-		"PropertyId": ubx.FieldSpec{WireName: "property_id"},
-		"PropertyValue": ubx.FieldSpec{
-			WireName: "property_value",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotSiteWise_PropertyValueFields,
-		},
-	}
+	"AssetId":       ubx.FieldSpec{WireName: "asset_id"},
+	"EntryId":       ubx.FieldSpec{WireName: "entry_id"},
+	"PropertyAlias": ubx.FieldSpec{WireName: "property_alias"},
+	"PropertyId":    ubx.FieldSpec{WireName: "property_id"},
+	"PropertyValue": ubx.FieldSpec{
+		WireName: "property_value",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotSiteWise_PropertyValueFields,
+	},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotTopicPublishFields = ubx.FieldMap{
-		"MqttTopic": ubx.FieldSpec{WireName: "mqtt_topic"},
-		"Payload": ubx.FieldSpec{
-			WireName: "payload",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb_PayloadFields,
-		},
-	}
+	"MqttTopic": ubx.FieldSpec{WireName: "mqtt_topic"},
+	"Payload": ubx.FieldSpec{
+		WireName: "payload",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb_PayloadFields,
+	},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_LambdaFields = ubx.FieldMap{
-		"FunctionArn": ubx.FieldSpec{WireName: "function_arn"},
-		"Payload": ubx.FieldSpec{
-			WireName: "payload",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb_PayloadFields,
-		},
-	}
+	"FunctionArn": ubx.FieldSpec{WireName: "function_arn"},
+	"Payload": ubx.FieldSpec{
+		WireName: "payload",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb_PayloadFields,
+	},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_SetTimerFields = ubx.FieldMap{
-		"DurationExpression": ubx.FieldSpec{WireName: "duration_expression"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-		"TimerName": ubx.FieldSpec{WireName: "timer_name"},
-	}
+	"DurationExpression": ubx.FieldSpec{WireName: "duration_expression"},
+	"Seconds":            ubx.FieldSpec{WireName: "seconds"},
+	"TimerName":          ubx.FieldSpec{WireName: "timer_name"},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_SetVariableFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"VariableName": ubx.FieldSpec{WireName: "variable_name"},
-	}
+	"Value":        ubx.FieldSpec{WireName: "value"},
+	"VariableName": ubx.FieldSpec{WireName: "variable_name"},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_SnsFields = ubx.FieldMap{
-		"Payload": ubx.FieldSpec{
-			WireName: "payload",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb_PayloadFields,
-		},
-		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
-	}
+	"Payload": ubx.FieldSpec{
+		WireName: "payload",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb_PayloadFields,
+	},
+	"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_SqsFields = ubx.FieldMap{
-		"Payload": ubx.FieldSpec{
-			WireName: "payload",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb_PayloadFields,
-		},
-		"QueueUrl": ubx.FieldSpec{WireName: "queue_url"},
-		"UseBase64": ubx.FieldSpec{WireName: "use_base64"},
-	}
+	"Payload": ubx.FieldSpec{
+		WireName: "payload",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb_PayloadFields,
+	},
+	"QueueUrl":  ubx.FieldSpec{WireName: "queue_url"},
+	"UseBase64": ubx.FieldSpec{WireName: "use_base64"},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnEnter_Events_ActionsFields = ubx.FieldMap{
-		"ClearTimer": ubx.FieldSpec{
-			WireName: "clear_timer",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_ClearTimerFields,
-		},
-		"DynamoDb": ubx.FieldSpec{
-			WireName: "dynamo_db",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDbFields,
-		},
-		"DynamoDbv2": ubx.FieldSpec{
-			WireName: "dynamo_dbv2",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDbv2Fields,
-		},
-		"Firehose": ubx.FieldSpec{
-			WireName: "firehose",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_FirehoseFields,
-		},
-		"IotEvents": ubx.FieldSpec{
-			WireName: "iot_events",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotEventsFields,
-		},
-		"IotSiteWise": ubx.FieldSpec{
-			WireName: "iot_site_wise",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotSiteWiseFields,
-		},
-		"IotTopicPublish": ubx.FieldSpec{
-			WireName: "iot_topic_publish",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotTopicPublishFields,
-		},
-		"Lambda": ubx.FieldSpec{
-			WireName: "lambda",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_LambdaFields,
-		},
-		"ResetTimer": ubx.FieldSpec{
-			WireName: "reset_timer",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_ClearTimerFields,
-		},
-		"SetTimer": ubx.FieldSpec{
-			WireName: "set_timer",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_SetTimerFields,
-		},
-		"SetVariable": ubx.FieldSpec{
-			WireName: "set_variable",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_SetVariableFields,
-		},
-		"Sns": ubx.FieldSpec{
-			WireName: "sns",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_SnsFields,
-		},
-		"Sqs": ubx.FieldSpec{
-			WireName: "sqs",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_SqsFields,
-		},
-	}
+	"ClearTimer": ubx.FieldSpec{
+		WireName: "clear_timer",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_ClearTimerFields,
+	},
+	"DynamoDb": ubx.FieldSpec{
+		WireName: "dynamo_db",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDbFields,
+	},
+	"DynamoDbv2": ubx.FieldSpec{
+		WireName: "dynamo_dbv2",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDbv2Fields,
+	},
+	"Firehose": ubx.FieldSpec{
+		WireName: "firehose",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_FirehoseFields,
+	},
+	"IotEvents": ubx.FieldSpec{
+		WireName: "iot_events",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotEventsFields,
+	},
+	"IotSiteWise": ubx.FieldSpec{
+		WireName: "iot_site_wise",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotSiteWiseFields,
+	},
+	"IotTopicPublish": ubx.FieldSpec{
+		WireName: "iot_topic_publish",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotTopicPublishFields,
+	},
+	"Lambda": ubx.FieldSpec{
+		WireName: "lambda",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_LambdaFields,
+	},
+	"ResetTimer": ubx.FieldSpec{
+		WireName: "reset_timer",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_ClearTimerFields,
+	},
+	"SetTimer": ubx.FieldSpec{
+		WireName: "set_timer",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_SetTimerFields,
+	},
+	"SetVariable": ubx.FieldSpec{
+		WireName: "set_variable",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_SetVariableFields,
+	},
+	"Sns": ubx.FieldSpec{
+		WireName: "sns",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_SnsFields,
+	},
+	"Sqs": ubx.FieldSpec{
+		WireName: "sqs",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_SqsFields,
+	},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnEnter_EventsFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_ActionsFields,
-		},
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"EventName": ubx.FieldSpec{WireName: "event_name"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_ActionsFields,
+	},
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"EventName": ubx.FieldSpec{WireName: "event_name"},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnEnterFields = ubx.FieldMap{
-		"Events": ubx.FieldSpec{
-			WireName: "events",
-			Kind: "list",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_EventsFields,
-		},
-	}
+	"Events": ubx.FieldSpec{
+		WireName: "events",
+		Kind:     "list",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_EventsFields,
+	},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnInput_TransitionEventsFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_Events_ActionsFields,
-		},
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"EventName": ubx.FieldSpec{WireName: "event_name"},
-		"NextState": ubx.FieldSpec{WireName: "next_state"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_Events_ActionsFields,
+	},
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"EventName": ubx.FieldSpec{WireName: "event_name"},
+	"NextState": ubx.FieldSpec{WireName: "next_state"},
+}
 
 var DetectorModel_DetectorModelDefinition_States_OnInputFields = ubx.FieldMap{
-		"Events": ubx.FieldSpec{
-			WireName: "events",
-			Kind: "list",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnter_EventsFields,
-		},
-		"TransitionEvents": ubx.FieldSpec{
-			WireName: "transition_events",
-			Kind: "list",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnInput_TransitionEventsFields,
-		},
-	}
+	"Events": ubx.FieldSpec{
+		WireName: "events",
+		Kind:     "list",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnter_EventsFields,
+	},
+	"TransitionEvents": ubx.FieldSpec{
+		WireName: "transition_events",
+		Kind:     "list",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnInput_TransitionEventsFields,
+	},
+}
 
 var DetectorModel_DetectorModelDefinition_StatesFields = ubx.FieldMap{
-		"OnEnter": ubx.FieldSpec{
-			WireName: "on_enter",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnterFields,
-		},
-		"OnExit": ubx.FieldSpec{
-			WireName: "on_exit",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnEnterFields,
-		},
-		"OnInput": ubx.FieldSpec{
-			WireName: "on_input",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinition_States_OnInputFields,
-		},
-		"StateName": ubx.FieldSpec{WireName: "state_name"},
-	}
+	"OnEnter": ubx.FieldSpec{
+		WireName: "on_enter",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnterFields,
+	},
+	"OnExit": ubx.FieldSpec{
+		WireName: "on_exit",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnEnterFields,
+	},
+	"OnInput": ubx.FieldSpec{
+		WireName: "on_input",
+		Kind:     "object",
+		Fields:   DetectorModel_DetectorModelDefinition_States_OnInputFields,
+	},
+	"StateName": ubx.FieldSpec{WireName: "state_name"},
+}
 
 var DetectorModel_DetectorModelDefinitionFields = ubx.FieldMap{
-		"InitialStateName": ubx.FieldSpec{WireName: "initial_state_name"},
-		"States": ubx.FieldSpec{
-			WireName: "states",
-			Kind: "list",
-			Fields: DetectorModel_DetectorModelDefinition_StatesFields,
-		},
-	}
+	"InitialStateName": ubx.FieldSpec{WireName: "initial_state_name"},
+	"States": ubx.FieldSpec{
+		WireName: "states",
+		Kind:     "list",
+		Fields:   DetectorModel_DetectorModelDefinition_StatesFields,
+	},
+}
 
 var DetectorModel_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DetectorModelConfig struct {
 	// Information that defines how a detector operates.
@@ -552,18 +552,18 @@ var DetectorModel = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DetectorModelDefinition": ubx.FieldSpec{
 			WireName: "detector_model_definition",
-			Kind: "object",
-			Fields: DetectorModel_DetectorModelDefinitionFields,
+			Kind:     "object",
+			Fields:   DetectorModel_DetectorModelDefinitionFields,
 		},
 		"DetectorModelDescription": ubx.FieldSpec{WireName: "detector_model_description"},
-		"DetectorModelName": ubx.FieldSpec{WireName: "detector_model_name"},
-		"EvaluationMethod": ubx.FieldSpec{WireName: "evaluation_method"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"DetectorModelName":        ubx.FieldSpec{WireName: "detector_model_name"},
+		"EvaluationMethod":         ubx.FieldSpec{WireName: "evaluation_method"},
+		"Key":                      ubx.FieldSpec{WireName: "key"},
+		"RoleArn":                  ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DetectorModel_TagsFields,
+			Kind:     "list",
+			Fields:   DetectorModel_TagsFields,
 		},
 	},
 }

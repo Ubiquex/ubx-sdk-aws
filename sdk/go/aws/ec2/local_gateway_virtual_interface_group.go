@@ -10,9 +10,9 @@ type LocalGatewayVirtualInterfaceGroup_Tags struct {
 }
 
 var LocalGatewayVirtualInterfaceGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LocalGatewayVirtualInterfaceGroupConfig struct {
 	// The Autonomous System Number(ASN) for the local Border Gateway Protocol (BGP)
@@ -49,13 +49,13 @@ type LocalGatewayVirtualInterfaceGroupAttrs struct {
 var LocalGatewayVirtualInterfaceGroup = ubx.ResourceBinding{
 	WireType: "aws_ec2_local_gateway_virtual_interface_group",
 	Fields: ubx.FieldMap{
-		"LocalBgpAsn": ubx.FieldSpec{WireName: "local_bgp_asn"},
+		"LocalBgpAsn":         ubx.FieldSpec{WireName: "local_bgp_asn"},
 		"LocalBgpAsnExtended": ubx.FieldSpec{WireName: "local_bgp_asn_extended"},
-		"LocalGatewayId": ubx.FieldSpec{WireName: "local_gateway_id"},
+		"LocalGatewayId":      ubx.FieldSpec{WireName: "local_gateway_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LocalGatewayVirtualInterfaceGroup_TagsFields,
+			Kind:     "list",
+			Fields:   LocalGatewayVirtualInterfaceGroup_TagsFields,
 		},
 	},
 }

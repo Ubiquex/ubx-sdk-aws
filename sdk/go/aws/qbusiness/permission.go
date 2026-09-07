@@ -13,10 +13,10 @@ type Permission_Conditions struct {
 }
 
 var Permission_ConditionsFields = ubx.FieldMap{
-		"ConditionKey": ubx.FieldSpec{WireName: "condition_key"},
-		"ConditionOperator": ubx.FieldSpec{WireName: "condition_operator"},
-		"ConditionValues": ubx.FieldSpec{WireName: "condition_values"},
-	}
+	"ConditionKey":      ubx.FieldSpec{WireName: "condition_key"},
+	"ConditionOperator": ubx.FieldSpec{WireName: "condition_operator"},
+	"ConditionValues":   ubx.FieldSpec{WireName: "condition_values"},
+}
 
 type PermissionConfig struct {
 	// Lists the Amazon Q Business API actions (e.g., 'qbusiness:Query') that the principal is authorized to perform on the associated Q Business application. (AI-inferred)
@@ -47,14 +47,14 @@ type PermissionAttrs struct {
 var Permission = ubx.ResourceBinding{
 	WireType: "aws_qbusiness_permission",
 	Fields: ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
+		"Actions":       ubx.FieldSpec{WireName: "actions"},
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
 		"Conditions": ubx.FieldSpec{
 			WireName: "conditions",
-			Kind: "list",
-			Fields: Permission_ConditionsFields,
+			Kind:     "list",
+			Fields:   Permission_ConditionsFields,
 		},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
+		"Principal":   ubx.FieldSpec{WireName: "principal"},
 		"StatementId": ubx.FieldSpec{WireName: "statement_id"},
 	},
 }

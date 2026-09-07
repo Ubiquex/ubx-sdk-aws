@@ -14,10 +14,10 @@ type AssetPropertyValue_PropertyValue_Value_NullValue struct {
 
 type AssetPropertyValue_PropertyValue_Value struct {
 	BooleanValue any
-	DoubleValue any
+	DoubleValue  any
 	IntegerValue any
 	// <p>The value type of null asset property data with BAD and UNCERTAIN qualities.</p>
-	NullValue any
+	NullValue   any
 	StringValue any
 }
 
@@ -30,15 +30,15 @@ type AssetPropertyValue_PropertyValue struct {
 }
 
 type AssetPropertyValueConfig struct {
-	AssetId any
+	AssetId       any
 	PropertyAlias any
-	PropertyId any
+	PropertyId    any
 }
 
 type AssetPropertyValueAttrs struct {
-	AssetId any
+	AssetId       any
 	PropertyAlias any
-	PropertyId any
+	PropertyId    any
 	// <p>Contains asset property value information.</p>
 	PropertyValue any
 }
@@ -46,8 +46,8 @@ type AssetPropertyValueAttrs struct {
 var AssetPropertyValue = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_asset_property_value",
 	Fields: ubx.FieldMap{
-		"AssetId": ubx.FieldSpec{WireName: "asset_id"},
+		"AssetId":       ubx.FieldSpec{WireName: "asset_id"},
 		"PropertyAlias": ubx.FieldSpec{WireName: "property_alias"},
-		"PropertyId": ubx.FieldSpec{WireName: "property_id"},
+		"PropertyId":    ubx.FieldSpec{WireName: "property_id"},
 	},
 }

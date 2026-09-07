@@ -4,14 +4,14 @@ package bedrock
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Blueprint_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Blueprint_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type BlueprintConfig struct {
 	// Name of the Blueprint
@@ -54,14 +54,14 @@ type BlueprintAttrs struct {
 var Blueprint = ubx.ResourceBinding{
 	WireType: "aws_bedrock_blueprint",
 	Fields: ubx.FieldMap{
-		"BlueprintName": ubx.FieldSpec{WireName: "blueprint_name"},
+		"BlueprintName":        ubx.FieldSpec{WireName: "blueprint_name"},
 		"KmsEncryptionContext": ubx.FieldSpec{WireName: "kms_encryption_context"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
+		"KmsKeyId":             ubx.FieldSpec{WireName: "kms_key_id"},
+		"Schema":               ubx.FieldSpec{WireName: "schema"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Blueprint_TagsFields,
+			Kind:     "list",
+			Fields:   Blueprint_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

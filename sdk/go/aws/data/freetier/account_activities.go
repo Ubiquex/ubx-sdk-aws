@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountActivities_Activities_Reward_Credit struct {
 	Amount any
-	Unit any
+	Unit   any
 }
 
 type AccountActivities_Activities_Reward struct {
@@ -14,32 +14,32 @@ type AccountActivities_Activities_Reward struct {
 
 type AccountActivities_Activities struct {
 	ActivityId any
-	Reward any
-	Status any
-	Title any
+	Reward     any
+	Status     any
+	Title      any
 }
 
 type AccountActivitiesConfig struct {
 	FilterActivityStatuses any
-	LanguageCode any
-	MaxResults any
-	NextToken any
+	LanguageCode           any
+	MaxResults             any
+	NextToken              any
 }
 
 type AccountActivitiesAttrs struct {
-	Activities any
+	Activities             any
 	FilterActivityStatuses any
-	LanguageCode any
-	MaxResults any
-	NextToken any
+	LanguageCode           any
+	MaxResults             any
+	NextToken              any
 }
 
 var AccountActivities = ubx.DataSourceBinding{
 	WireType: "aws_freetier_account_activities",
 	Fields: ubx.FieldMap{
 		"FilterActivityStatuses": ubx.FieldSpec{WireName: "filter_activity_statuses"},
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"LanguageCode":           ubx.FieldSpec{WireName: "language_code"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
 	},
 }

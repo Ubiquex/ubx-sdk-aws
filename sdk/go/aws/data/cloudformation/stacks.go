@@ -5,44 +5,44 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Stacks_StackSummaries_DriftInformation struct {
 	LastCheckTimestamp any
-	StackDriftStatus any
+	StackDriftStatus   any
 }
 
 type Stacks_StackSummaries_LastOperations struct {
-	OperationId any
+	OperationId   any
 	OperationType any
 }
 
 type Stacks_StackSummaries struct {
-	CreationTime any
-	DeletionTime any
-	DriftInformation any
-	LastOperations any
-	LastUpdatedTime any
-	ParentId any
-	RootId any
-	StackId any
-	StackName any
-	StackStatus any
-	StackStatusReason any
+	CreationTime        any
+	DeletionTime        any
+	DriftInformation    any
+	LastOperations      any
+	LastUpdatedTime     any
+	ParentId            any
+	RootId              any
+	StackId             any
+	StackName           any
+	StackStatus         any
+	StackStatusReason   any
 	TemplateDescription any
 }
 
 type StacksConfig struct {
-	NextToken any
+	NextToken         any
 	StackStatusFilter any
 }
 
 type StacksAttrs struct {
-	NextToken any
+	NextToken         any
 	StackStatusFilter any
-	StackSummaries any
+	StackSummaries    any
 }
 
 var Stacks = ubx.DataSourceBinding{
 	WireType: "aws_cloudformation_stacks",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"StackStatusFilter": ubx.FieldSpec{WireName: "stack_status_filter"},
 	},
 }

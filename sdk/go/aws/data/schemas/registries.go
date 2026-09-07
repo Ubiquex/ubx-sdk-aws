@@ -4,32 +4,32 @@ package schemas
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Registries_Registries struct {
-	RegistryArn any
+	RegistryArn  any
 	RegistryName any
-	Tags any
+	Tags         any
 }
 
 type RegistriesConfig struct {
-	Limit any
-	NextToken any
+	Limit              any
+	NextToken          any
 	RegistryNamePrefix any
-	Scope any
+	Scope              any
 }
 
 type RegistriesAttrs struct {
-	Limit any
-	NextToken any
-	Registries any
+	Limit              any
+	NextToken          any
+	Registries         any
 	RegistryNamePrefix any
-	Scope any
+	Scope              any
 }
 
 var Registries = ubx.DataSourceBinding{
 	WireType: "aws_schemas_registries",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":              ubx.FieldSpec{WireName: "limit"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 		"RegistryNamePrefix": ubx.FieldSpec{WireName: "registry_name_prefix"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Scope":              ubx.FieldSpec{WireName: "scope"},
 	},
 }

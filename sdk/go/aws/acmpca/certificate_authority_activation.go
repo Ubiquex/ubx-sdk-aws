@@ -30,9 +30,9 @@ type CertificateAuthorityActivationAttrs struct {
 var CertificateAuthorityActivation = ubx.ResourceBinding{
 	WireType: "aws_acmpca_certificate_authority_activation",
 	Fields: ubx.FieldMap{
-		"Certificate": ubx.FieldSpec{WireName: "certificate"},
+		"Certificate":             ubx.FieldSpec{WireName: "certificate"},
 		"CertificateAuthorityArn": ubx.FieldSpec{WireName: "certificate_authority_arn"},
-		"CertificateChain": ubx.FieldSpec{WireName: "certificate_chain"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"CertificateChain":        ubx.FieldSpec{WireName: "certificate_chain"},
+		"Status":                  ubx.FieldSpec{WireName: "status"},
 	},
 }

@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KeyGroups_KeyGroupList_Items_KeyGroup_KeyGroupConfig struct {
 	Comment any
-	Items any
-	Name any
+	Items   any
+	Name    any
 }
 
 type KeyGroups_KeyGroupList_Items_KeyGroup struct {
-	Id any
-	KeyGroupConfig any
+	Id               any
+	KeyGroupConfig   any
 	LastModifiedTime any
 }
 
@@ -20,28 +20,28 @@ type KeyGroups_KeyGroupList_Items struct {
 }
 
 type KeyGroups_KeyGroupList struct {
-	Items any
-	MaxItems any
+	Items      any
+	MaxItems   any
 	NextMarker any
-	Quantity any
+	Quantity   any
 }
 
 type KeyGroupsConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 }
 
 type KeyGroupsAttrs struct {
 	// <p>A list of key groups.</p>
 	KeyGroupList any
-	Marker any
-	MaxItems any
+	Marker       any
+	MaxItems     any
 }
 
 var KeyGroups = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_key_groups",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 	},
 }

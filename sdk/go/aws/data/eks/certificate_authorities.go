@@ -4,33 +4,33 @@ package eks
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CertificateAuthorities_CertificateAuthorities struct {
-	ActivatedAt any
-	ActivatedBy any
-	CreatedAt any
-	CreatedBy any
+	ActivatedAt        any
+	ActivatedBy        any
+	CreatedAt          any
+	CreatedBy          any
 	DistributionStatus any
-	Id any
-	SigningStatus any
+	Id                 any
+	SigningStatus      any
 }
 
 type CertificateAuthoritiesConfig struct {
 	ClusterName any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type CertificateAuthoritiesAttrs struct {
 	CertificateAuthorities any
-	ClusterName any
-	MaxResults any
-	NextToken any
+	ClusterName            any
+	MaxResults             any
+	NextToken              any
 }
 
 var CertificateAuthorities = ubx.DataSourceBinding{
 	WireType: "aws_eks_certificate_authorities",
 	Fields: ubx.FieldMap{
 		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

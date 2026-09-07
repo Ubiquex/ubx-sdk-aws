@@ -21,6 +21,6 @@ var TopicInlinePolicy = ubx.ResourceBinding{
 	WireType: "aws_sns_topic_inline_policy",
 	Fields: ubx.FieldMap{
 		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
+		"TopicArn":       ubx.FieldSpec{WireName: "topic_arn"},
 	},
 }

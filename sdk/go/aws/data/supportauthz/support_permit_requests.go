@@ -4,53 +4,53 @@ package supportauthz
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SupportPermitRequests_SupportPermitRequests_Permit_Actions struct {
-	Actions any
+	Actions    any
 	AllActions any
 }
 
 type SupportPermitRequests_SupportPermitRequests_Permit_Conditions struct {
-	AllowAfter any
+	AllowAfter  any
 	AllowBefore any
 }
 
 type SupportPermitRequests_SupportPermitRequests_Permit_Resources struct {
 	AllResourcesInRegion any
-	Resources any
+	Resources            any
 }
 
 type SupportPermitRequests_SupportPermitRequests_Permit struct {
-	Actions any
+	Actions    any
 	Conditions any
-	Resources any
+	Resources  any
 }
 
 type SupportPermitRequests_SupportPermitRequests struct {
-	CreatedAt any
-	Permit any
-	RequestArn any
-	Status any
+	CreatedAt            any
+	Permit               any
+	RequestArn           any
+	Status               any
 	SupportCaseDisplayId any
-	UpdatedAt any
+	UpdatedAt            any
 }
 
 type SupportPermitRequestsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 	SupportCaseDisplayId any
 }
 
 type SupportPermitRequestsAttrs struct {
-	MaxResults any
-	NextToken any
-	SupportCaseDisplayId any
+	MaxResults            any
+	NextToken             any
+	SupportCaseDisplayId  any
 	SupportPermitRequests any
 }
 
 var SupportPermitRequests = ubx.DataSourceBinding{
 	WireType: "aws_supportauthz_support_permit_requests",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 		"SupportCaseDisplayId": ubx.FieldSpec{WireName: "support_case_display_id"},
 	},
 }

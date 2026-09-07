@@ -4,30 +4,30 @@ package inspector2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodeSecurityIntegrations_Integrations struct {
-	CreatedOn any
+	CreatedOn      any
 	IntegrationArn any
-	LastUpdateOn any
-	Name any
-	Status any
-	StatusReason any
-	Type any
+	LastUpdateOn   any
+	Name           any
+	Status         any
+	StatusReason   any
+	Type           any
 }
 
 type CodeSecurityIntegrationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CodeSecurityIntegrationsAttrs struct {
 	Integrations any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var CodeSecurityIntegrations = ubx.DataSourceBinding{
 	WireType: "aws_inspector2_code_security_integrations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

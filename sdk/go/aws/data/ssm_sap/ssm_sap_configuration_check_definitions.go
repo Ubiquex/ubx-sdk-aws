@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmSapConfigurationCheckDefinitions_ConfigurationChecks struct {
 	ApplicableApplicationTypes any
-	Description any
-	Id any
-	Name any
+	Description                any
+	Id                         any
+	Name                       any
 }
 
 type SsmSapConfigurationCheckDefinitionsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SsmSapConfigurationCheckDefinitionsAttrs struct {
 	ConfigurationChecks any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 }
 
 var SsmSapConfigurationCheckDefinitions = ubx.DataSourceBinding{
 	WireType: "aws_ssm_sap_configuration_check_definitions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

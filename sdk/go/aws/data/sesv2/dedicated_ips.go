@@ -4,15 +4,15 @@ package sesv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DedicatedIps_DedicatedIps struct {
-	Ip any
-	PoolName any
+	Ip               any
+	PoolName         any
 	WarmupPercentage any
-	WarmupStatus any
+	WarmupStatus     any
 }
 
 type DedicatedIpsConfig struct {
 	NextToken any
-	PageSize any
+	PageSize  any
 	// <p>The name of a dedicated IP pool.</p>
 	PoolName any
 }
@@ -20,8 +20,8 @@ type DedicatedIpsConfig struct {
 type DedicatedIpsAttrs struct {
 	// <p>A list of dedicated IP addresses that are associated with your Amazon Web Services account.</p>
 	DedicatedIps any
-	NextToken any
-	PageSize any
+	NextToken    any
+	PageSize     any
 	// <p>The name of a dedicated IP pool.</p>
 	PoolName any
 }
@@ -30,7 +30,7 @@ var DedicatedIps = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_dedicated_ips",
 	Fields: ubx.FieldMap{
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"PoolName": ubx.FieldSpec{WireName: "pool_name"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
+		"PoolName":  ubx.FieldSpec{WireName: "pool_name"},
 	},
 }

@@ -4,31 +4,31 @@ package es
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReservedElasticsearchInstances_ReservedElasticsearchInstances_RecurringCharges struct {
-	RecurringChargeAmount any
+	RecurringChargeAmount    any
 	RecurringChargeFrequency any
 }
 
 type ReservedElasticsearchInstances_ReservedElasticsearchInstances struct {
-	CurrencyCode any
-	Duration any
-	ElasticsearchInstanceCount any
-	ElasticsearchInstanceType any
-	FixedPrice any
-	PaymentOption any
-	RecurringCharges any
-	ReservationName any
-	ReservedElasticsearchInstanceId any
+	CurrencyCode                            any
+	Duration                                any
+	ElasticsearchInstanceCount              any
+	ElasticsearchInstanceType               any
+	FixedPrice                              any
+	PaymentOption                           any
+	RecurringCharges                        any
+	ReservationName                         any
+	ReservedElasticsearchInstanceId         any
 	ReservedElasticsearchInstanceOfferingId any
-	StartTime any
-	State any
-	UsagePrice any
+	StartTime                               any
+	State                                   any
+	UsagePrice                              any
 }
 
 type ReservedElasticsearchInstancesConfig struct {
 	// <p> Set this value to limit the number of results returned. </p>
 	MaxResults any
 	// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
-	NextToken any
+	NextToken                       any
 	ReservedElasticsearchInstanceId any
 }
 
@@ -36,16 +36,16 @@ type ReservedElasticsearchInstancesAttrs struct {
 	// <p> Set this value to limit the number of results returned. </p>
 	MaxResults any
 	// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
-	NextToken any
+	NextToken                       any
 	ReservedElasticsearchInstanceId any
-	ReservedElasticsearchInstances any
+	ReservedElasticsearchInstances  any
 }
 
 var ReservedElasticsearchInstances = ubx.DataSourceBinding{
 	WireType: "aws_es_reserved_elasticsearch_instances",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                       ubx.FieldSpec{WireName: "next_token"},
 		"ReservedElasticsearchInstanceId": ubx.FieldSpec{WireName: "reserved_elasticsearch_instance_id"},
 	},
 }

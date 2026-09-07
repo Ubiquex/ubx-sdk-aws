@@ -4,35 +4,35 @@ package networkmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CoreNetworks_CoreNetworks_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type CoreNetworks_CoreNetworks struct {
-	CoreNetworkArn any
-	CoreNetworkId any
-	Description any
+	CoreNetworkArn  any
+	CoreNetworkId   any
+	Description     any
 	GlobalNetworkId any
-	OwnerAccountId any
-	State any
-	Tags any
+	OwnerAccountId  any
+	State           any
+	Tags            any
 }
 
 type CoreNetworksConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CoreNetworksAttrs struct {
 	CoreNetworks any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var CoreNetworks = ubx.DataSourceBinding{
 	WireType: "aws_networkmanager_core_networks",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

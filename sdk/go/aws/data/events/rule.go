@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuleConfig struct {
 	EventBusName any
-	Name any
+	Name         any
 }
 
 type RuleAttrs struct {
-	Arn any
-	CreatedBy any
-	Description any
-	EventBusName any
-	EventPattern any
-	ManagedBy any
-	Name any
-	RoleArn any
+	Arn                any
+	CreatedBy          any
+	Description        any
+	EventBusName       any
+	EventPattern       any
+	ManagedBy          any
+	Name               any
+	RoleArn            any
 	ScheduleExpression any
-	State any
+	State              any
 }
 
 var Rule = ubx.DataSourceBinding{
 	WireType: "aws_events_rule",
 	Fields: ubx.FieldMap{
 		"EventBusName": ubx.FieldSpec{WireName: "event_bus_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 	},
 }

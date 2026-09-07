@@ -4,38 +4,38 @@ package textract
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AdapterVersions_AdapterVersions struct {
-	AdapterId any
+	AdapterId      any
 	AdapterVersion any
-	CreationTime any
-	FeatureTypes any
-	Status any
-	StatusMessage any
+	CreationTime   any
+	FeatureTypes   any
+	Status         any
+	StatusMessage  any
 }
 
 type AdapterVersionsConfig struct {
-	AdapterId any
-	AfterCreationTime any
+	AdapterId          any
+	AfterCreationTime  any
 	BeforeCreationTime any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 type AdapterVersionsAttrs struct {
-	AdapterId any
-	AdapterVersions any
-	AfterCreationTime any
+	AdapterId          any
+	AdapterVersions    any
+	AfterCreationTime  any
 	BeforeCreationTime any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 var AdapterVersions = ubx.DataSourceBinding{
 	WireType: "aws_textract_adapter_versions",
 	Fields: ubx.FieldMap{
-		"AdapterId": ubx.FieldSpec{WireName: "adapter_id"},
-		"AfterCreationTime": ubx.FieldSpec{WireName: "after_creation_time"},
+		"AdapterId":          ubx.FieldSpec{WireName: "adapter_id"},
+		"AfterCreationTime":  ubx.FieldSpec{WireName: "after_creation_time"},
 		"BeforeCreationTime": ubx.FieldSpec{WireName: "before_creation_time"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -68,74 +68,74 @@ type IdMappingWorkflow_OutputSourceConfig struct {
 }
 
 type IdMappingWorkflow_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var IdMappingWorkflow_IdMappingIncrementalRunConfigFields = ubx.FieldMap{
-		"IncrementalRunType": ubx.FieldSpec{WireName: "incremental_run_type"},
-	}
+	"IncrementalRunType": ubx.FieldSpec{WireName: "incremental_run_type"},
+}
 
 var IdMappingWorkflow_IdMappingTechniques_ProviderProperties_IntermediateSourceConfigurationFields = ubx.FieldMap{
-		"IntermediateS3Path": ubx.FieldSpec{WireName: "intermediate_s3_path"},
-	}
+	"IntermediateS3Path": ubx.FieldSpec{WireName: "intermediate_s3_path"},
+}
 
 var IdMappingWorkflow_IdMappingTechniques_ProviderPropertiesFields = ubx.FieldMap{
-		"IntermediateSourceConfiguration": ubx.FieldSpec{
-			WireName: "intermediate_source_configuration",
-			Kind: "object",
-			Fields: IdMappingWorkflow_IdMappingTechniques_ProviderProperties_IntermediateSourceConfigurationFields,
-		},
-		"ProviderConfiguration": ubx.FieldSpec{WireName: "provider_configuration"},
-		"ProviderServiceArn": ubx.FieldSpec{WireName: "provider_service_arn"},
-	}
+	"IntermediateSourceConfiguration": ubx.FieldSpec{
+		WireName: "intermediate_source_configuration",
+		Kind:     "object",
+		Fields:   IdMappingWorkflow_IdMappingTechniques_ProviderProperties_IntermediateSourceConfigurationFields,
+	},
+	"ProviderConfiguration": ubx.FieldSpec{WireName: "provider_configuration"},
+	"ProviderServiceArn":    ubx.FieldSpec{WireName: "provider_service_arn"},
+}
 
 var IdMappingWorkflow_IdMappingTechniques_RuleBasedProperties_RulesFields = ubx.FieldMap{
-		"MatchingKeys": ubx.FieldSpec{WireName: "matching_keys"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-	}
+	"MatchingKeys": ubx.FieldSpec{WireName: "matching_keys"},
+	"RuleName":     ubx.FieldSpec{WireName: "rule_name"},
+}
 
 var IdMappingWorkflow_IdMappingTechniques_RuleBasedPropertiesFields = ubx.FieldMap{
-		"AttributeMatchingModel": ubx.FieldSpec{WireName: "attribute_matching_model"},
-		"RecordMatchingModel": ubx.FieldSpec{WireName: "record_matching_model"},
-		"RuleDefinitionType": ubx.FieldSpec{WireName: "rule_definition_type"},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: IdMappingWorkflow_IdMappingTechniques_RuleBasedProperties_RulesFields,
-		},
-	}
+	"AttributeMatchingModel": ubx.FieldSpec{WireName: "attribute_matching_model"},
+	"RecordMatchingModel":    ubx.FieldSpec{WireName: "record_matching_model"},
+	"RuleDefinitionType":     ubx.FieldSpec{WireName: "rule_definition_type"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   IdMappingWorkflow_IdMappingTechniques_RuleBasedProperties_RulesFields,
+	},
+}
 
 var IdMappingWorkflow_IdMappingTechniquesFields = ubx.FieldMap{
-		"IdMappingType": ubx.FieldSpec{WireName: "id_mapping_type"},
-		"NormalizationVersion": ubx.FieldSpec{WireName: "normalization_version"},
-		"ProviderProperties": ubx.FieldSpec{
-			WireName: "provider_properties",
-			Kind: "object",
-			Fields: IdMappingWorkflow_IdMappingTechniques_ProviderPropertiesFields,
-		},
-		"RuleBasedProperties": ubx.FieldSpec{
-			WireName: "rule_based_properties",
-			Kind: "object",
-			Fields: IdMappingWorkflow_IdMappingTechniques_RuleBasedPropertiesFields,
-		},
-	}
+	"IdMappingType":        ubx.FieldSpec{WireName: "id_mapping_type"},
+	"NormalizationVersion": ubx.FieldSpec{WireName: "normalization_version"},
+	"ProviderProperties": ubx.FieldSpec{
+		WireName: "provider_properties",
+		Kind:     "object",
+		Fields:   IdMappingWorkflow_IdMappingTechniques_ProviderPropertiesFields,
+	},
+	"RuleBasedProperties": ubx.FieldSpec{
+		WireName: "rule_based_properties",
+		Kind:     "object",
+		Fields:   IdMappingWorkflow_IdMappingTechniques_RuleBasedPropertiesFields,
+	},
+}
 
 var IdMappingWorkflow_InputSourceConfigFields = ubx.FieldMap{
-		"InputSourceArn": ubx.FieldSpec{WireName: "input_source_arn"},
-		"SchemaArn": ubx.FieldSpec{WireName: "schema_arn"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"InputSourceArn": ubx.FieldSpec{WireName: "input_source_arn"},
+	"SchemaArn":      ubx.FieldSpec{WireName: "schema_arn"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+}
 
 var IdMappingWorkflow_OutputSourceConfigFields = ubx.FieldMap{
-		"Kmsarn": ubx.FieldSpec{WireName: "kmsarn"},
-		"OutputS3Path": ubx.FieldSpec{WireName: "output_s3_path"},
-	}
+	"Kmsarn":       ubx.FieldSpec{WireName: "kmsarn"},
+	"OutputS3Path": ubx.FieldSpec{WireName: "output_s3_path"},
+}
 
 var IdMappingWorkflow_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IdMappingWorkflowConfig struct {
 	// Describes the ID mapping workflow, providing a human-readable summary of its purpose and configuration for management and identification in AWS Entity Resolution. (AI-inferred)
@@ -187,29 +187,29 @@ var IdMappingWorkflow = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"IdMappingIncrementalRunConfig": ubx.FieldSpec{
 			WireName: "id_mapping_incremental_run_config",
-			Kind: "object",
-			Fields: IdMappingWorkflow_IdMappingIncrementalRunConfigFields,
+			Kind:     "object",
+			Fields:   IdMappingWorkflow_IdMappingIncrementalRunConfigFields,
 		},
 		"IdMappingTechniques": ubx.FieldSpec{
 			WireName: "id_mapping_techniques",
-			Kind: "object",
-			Fields: IdMappingWorkflow_IdMappingTechniquesFields,
+			Kind:     "object",
+			Fields:   IdMappingWorkflow_IdMappingTechniquesFields,
 		},
 		"InputSourceConfig": ubx.FieldSpec{
 			WireName: "input_source_config",
-			Kind: "list",
-			Fields: IdMappingWorkflow_InputSourceConfigFields,
+			Kind:     "list",
+			Fields:   IdMappingWorkflow_InputSourceConfigFields,
 		},
 		"OutputSourceConfig": ubx.FieldSpec{
 			WireName: "output_source_config",
-			Kind: "list",
-			Fields: IdMappingWorkflow_OutputSourceConfigFields,
+			Kind:     "list",
+			Fields:   IdMappingWorkflow_OutputSourceConfigFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: IdMappingWorkflow_TagsFields,
+			Kind:     "list",
+			Fields:   IdMappingWorkflow_TagsFields,
 		},
 		"WorkflowName": ubx.FieldSpec{WireName: "workflow_name"},
 	},

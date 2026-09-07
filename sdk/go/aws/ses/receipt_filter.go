@@ -18,18 +18,18 @@ type ReceiptFilter_Filter struct {
 }
 
 var ReceiptFilter_Filter_IpFilterFields = ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-	}
+	"Cidr":   ubx.FieldSpec{WireName: "cidr"},
+	"Policy": ubx.FieldSpec{WireName: "policy"},
+}
 
 var ReceiptFilter_FilterFields = ubx.FieldMap{
-		"IpFilter": ubx.FieldSpec{
-			WireName: "ip_filter",
-			Kind: "object",
-			Fields: ReceiptFilter_Filter_IpFilterFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"IpFilter": ubx.FieldSpec{
+		WireName: "ip_filter",
+		Kind:     "object",
+		Fields:   ReceiptFilter_Filter_IpFilterFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 type ReceiptFilterConfig struct {
 	// A structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.
@@ -48,8 +48,8 @@ var ReceiptFilter = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: ReceiptFilter_FilterFields,
+			Kind:     "object",
+			Fields:   ReceiptFilter_FilterFields,
 		},
 	},
 }

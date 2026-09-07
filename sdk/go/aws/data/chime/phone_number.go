@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PhoneNumber_PhoneNumber_Associations struct {
 	AssociatedTimestamp any
-	Name any
-	Value any
+	Name                any
+	Value               any
 }
 
 type PhoneNumber_PhoneNumber_Capabilities struct {
-	InboundCall any
-	InboundMms any
-	InboundSms any
+	InboundCall  any
+	InboundMms   any
+	InboundSms   any
 	OutboundCall any
-	OutboundMms any
-	OutboundSms any
+	OutboundMms  any
+	OutboundSms  any
 }
 
 type PhoneNumber_PhoneNumber struct {
-	Associations any
-	CallingName any
+	Associations      any
+	CallingName       any
 	CallingNameStatus any
 	// <p>The phone number capabilities for Amazon Chime Business Calling phone numbers, such as enabled inbound and outbound calling and text messaging.</p>
-	Capabilities any
-	Country any
-	CreatedTimestamp any
+	Capabilities      any
+	Country           any
+	CreatedTimestamp  any
 	DeletionTimestamp any
-	E164PhoneNumber any
-	PhoneNumberId any
-	ProductType any
-	Status any
-	Type any
-	UpdatedTimestamp any
+	E164PhoneNumber   any
+	PhoneNumberId     any
+	ProductType       any
+	Status            any
+	Type              any
+	UpdatedTimestamp  any
 }
 
 type PhoneNumberConfig struct {
@@ -41,7 +41,7 @@ type PhoneNumberConfig struct {
 
 type PhoneNumberAttrs struct {
 	// <p>A phone number used for Amazon Chime Business Calling or an Amazon Chime Voice Connector.</p>
-	PhoneNumber any
+	PhoneNumber   any
 	PhoneNumberId any
 }
 

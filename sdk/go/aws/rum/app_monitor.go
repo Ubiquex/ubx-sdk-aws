@@ -84,68 +84,68 @@ type AppMonitor_Tags struct {
 }
 
 var AppMonitor_AppMonitorConfiguration_MetricDestinations_MetricDefinitionsFields = ubx.FieldMap{
-		"DimensionKeys": ubx.FieldSpec{WireName: "dimension_keys"},
-		"EventPattern": ubx.FieldSpec{WireName: "event_pattern"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"UnitLabel": ubx.FieldSpec{WireName: "unit_label"},
-		"ValueKey": ubx.FieldSpec{WireName: "value_key"},
-	}
+	"DimensionKeys": ubx.FieldSpec{WireName: "dimension_keys"},
+	"EventPattern":  ubx.FieldSpec{WireName: "event_pattern"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"Namespace":     ubx.FieldSpec{WireName: "namespace"},
+	"UnitLabel":     ubx.FieldSpec{WireName: "unit_label"},
+	"ValueKey":      ubx.FieldSpec{WireName: "value_key"},
+}
 
 var AppMonitor_AppMonitorConfiguration_MetricDestinationsFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
-		"IamRoleArn": ubx.FieldSpec{WireName: "iam_role_arn"},
-		"MetricDefinitions": ubx.FieldSpec{
-			WireName: "metric_definitions",
-			Kind: "list",
-			Fields: AppMonitor_AppMonitorConfiguration_MetricDestinations_MetricDefinitionsFields,
-		},
-	}
+	"Destination":    ubx.FieldSpec{WireName: "destination"},
+	"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
+	"IamRoleArn":     ubx.FieldSpec{WireName: "iam_role_arn"},
+	"MetricDefinitions": ubx.FieldSpec{
+		WireName: "metric_definitions",
+		Kind:     "list",
+		Fields:   AppMonitor_AppMonitorConfiguration_MetricDestinations_MetricDefinitionsFields,
+	},
+}
 
 var AppMonitor_AppMonitorConfigurationFields = ubx.FieldMap{
-		"AllowCookies": ubx.FieldSpec{WireName: "allow_cookies"},
-		"EnableXray": ubx.FieldSpec{WireName: "enable_xray"},
-		"ExcludedPages": ubx.FieldSpec{WireName: "excluded_pages"},
-		"FavoritePages": ubx.FieldSpec{WireName: "favorite_pages"},
-		"GuestRoleArn": ubx.FieldSpec{WireName: "guest_role_arn"},
-		"IdentityPoolId": ubx.FieldSpec{WireName: "identity_pool_id"},
-		"IncludedPages": ubx.FieldSpec{WireName: "included_pages"},
-		"MetricDestinations": ubx.FieldSpec{
-			WireName: "metric_destinations",
-			Kind: "list",
-			Fields: AppMonitor_AppMonitorConfiguration_MetricDestinationsFields,
-		},
-		"SessionSampleRate": ubx.FieldSpec{WireName: "session_sample_rate"},
-		"Telemetries": ubx.FieldSpec{WireName: "telemetries"},
-	}
+	"AllowCookies":   ubx.FieldSpec{WireName: "allow_cookies"},
+	"EnableXray":     ubx.FieldSpec{WireName: "enable_xray"},
+	"ExcludedPages":  ubx.FieldSpec{WireName: "excluded_pages"},
+	"FavoritePages":  ubx.FieldSpec{WireName: "favorite_pages"},
+	"GuestRoleArn":   ubx.FieldSpec{WireName: "guest_role_arn"},
+	"IdentityPoolId": ubx.FieldSpec{WireName: "identity_pool_id"},
+	"IncludedPages":  ubx.FieldSpec{WireName: "included_pages"},
+	"MetricDestinations": ubx.FieldSpec{
+		WireName: "metric_destinations",
+		Kind:     "list",
+		Fields:   AppMonitor_AppMonitorConfiguration_MetricDestinationsFields,
+	},
+	"SessionSampleRate": ubx.FieldSpec{WireName: "session_sample_rate"},
+	"Telemetries":       ubx.FieldSpec{WireName: "telemetries"},
+}
 
 var AppMonitor_CustomEventsFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var AppMonitor_DeobfuscationConfiguration_JavaScriptSourceMapsFields = ubx.FieldMap{
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"S3Uri":  ubx.FieldSpec{WireName: "s3_uri"},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var AppMonitor_DeobfuscationConfigurationFields = ubx.FieldMap{
-		"JavaScriptSourceMaps": ubx.FieldSpec{
-			WireName: "java_script_source_maps",
-			Kind: "object",
-			Fields: AppMonitor_DeobfuscationConfiguration_JavaScriptSourceMapsFields,
-		},
-	}
+	"JavaScriptSourceMaps": ubx.FieldSpec{
+		WireName: "java_script_source_maps",
+		Kind:     "object",
+		Fields:   AppMonitor_DeobfuscationConfiguration_JavaScriptSourceMapsFields,
+	},
+}
 
 var AppMonitor_ResourcePolicyFields = ubx.FieldMap{
-		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"PolicyRevisionId": ubx.FieldSpec{WireName: "policy_revision_id"},
-	}
+	"PolicyDocument":   ubx.FieldSpec{WireName: "policy_document"},
+	"PolicyRevisionId": ubx.FieldSpec{WireName: "policy_revision_id"},
+}
 
 var AppMonitor_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AppMonitorConfig struct {
 	// AppMonitor configuration
@@ -200,33 +200,33 @@ var AppMonitor = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AppMonitorConfiguration": ubx.FieldSpec{
 			WireName: "app_monitor_configuration",
-			Kind: "object",
-			Fields: AppMonitor_AppMonitorConfigurationFields,
+			Kind:     "object",
+			Fields:   AppMonitor_AppMonitorConfigurationFields,
 		},
 		"CustomEvents": ubx.FieldSpec{
 			WireName: "custom_events",
-			Kind: "object",
-			Fields: AppMonitor_CustomEventsFields,
+			Kind:     "object",
+			Fields:   AppMonitor_CustomEventsFields,
 		},
 		"CwLogEnabled": ubx.FieldSpec{WireName: "cw_log_enabled"},
 		"DeobfuscationConfiguration": ubx.FieldSpec{
 			WireName: "deobfuscation_configuration",
-			Kind: "object",
-			Fields: AppMonitor_DeobfuscationConfigurationFields,
+			Kind:     "object",
+			Fields:   AppMonitor_DeobfuscationConfigurationFields,
 		},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"Domain":     ubx.FieldSpec{WireName: "domain"},
 		"DomainList": ubx.FieldSpec{WireName: "domain_list"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Platform": ubx.FieldSpec{WireName: "platform"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"Platform":   ubx.FieldSpec{WireName: "platform"},
 		"ResourcePolicy": ubx.FieldSpec{
 			WireName: "resource_policy",
-			Kind: "object",
-			Fields: AppMonitor_ResourcePolicyFields,
+			Kind:     "object",
+			Fields:   AppMonitor_ResourcePolicyFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AppMonitor_TagsFields,
+			Kind:     "list",
+			Fields:   AppMonitor_TagsFields,
 		},
 	},
 }

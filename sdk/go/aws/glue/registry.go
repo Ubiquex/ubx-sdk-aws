@@ -11,9 +11,9 @@ type Registry_Tags struct {
 }
 
 var Registry_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RegistryConfig struct {
 	// A description of the registry. If description is not provided, there will not be any default value for this.
@@ -39,11 +39,11 @@ var Registry = ubx.ResourceBinding{
 	WireType: "aws_glue_registry",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Registry_TagsFields,
+			Kind:     "list",
+			Fields:   Registry_TagsFields,
 		},
 	},
 }

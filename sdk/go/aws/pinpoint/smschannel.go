@@ -31,8 +31,8 @@ var Smschannel = ubx.ResourceBinding{
 	WireType: "aws_pinpoint_smschannel",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"SenderId": ubx.FieldSpec{WireName: "sender_id"},
-		"ShortCode": ubx.FieldSpec{WireName: "short_code"},
+		"Enabled":       ubx.FieldSpec{WireName: "enabled"},
+		"SenderId":      ubx.FieldSpec{WireName: "sender_id"},
+		"ShortCode":     ubx.FieldSpec{WireName: "short_code"},
 	},
 }

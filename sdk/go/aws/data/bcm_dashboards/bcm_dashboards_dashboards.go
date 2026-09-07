@@ -4,29 +4,29 @@ package bcm_dashboards
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BcmDashboardsDashboards_Dashboards struct {
-	Arn any
-	CreatedAt any
+	Arn         any
+	CreatedAt   any
 	Description any
-	Name any
-	Type any
-	UpdatedAt any
+	Name        any
+	Type        any
+	UpdatedAt   any
 }
 
 type BcmDashboardsDashboardsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type BcmDashboardsDashboardsAttrs struct {
 	Dashboards any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var BcmDashboardsDashboards = ubx.DataSourceBinding{
 	WireType: "aws_bcm_dashboards_dashboards",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

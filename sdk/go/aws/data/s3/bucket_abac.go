@@ -8,21 +8,21 @@ type BucketAbac_AbacStatus struct {
 }
 
 type BucketAbacConfig struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 }
 
 type BucketAbacAttrs struct {
 	// <p>The ABAC status of the general purpose bucket. When ABAC is enabled for the general purpose bucket, you can use tags to manage access to the general purpose buckets as well as for cost tracking purposes. When ABAC is disabled for the general purpose buckets, you can only use tags for cost tracking purposes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html">Using tags with S3 general purpose buckets</a>. </p>
-	AbacStatus any
-	Bucket any
+	AbacStatus          any
+	Bucket              any
 	ExpectedBucketOwner any
 }
 
 var BucketAbac = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_abac",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
 	},
 }

@@ -11,9 +11,9 @@ type Dbsnapshot_Tags struct {
 }
 
 var Dbsnapshot_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DbsnapshotConfig struct {
 	// The identifier of the DB instance that you want to create the snapshot of.
@@ -84,8 +84,8 @@ var Dbsnapshot = ubx.ResourceBinding{
 		"DbsnapshotIdentifier": ubx.FieldSpec{WireName: "dbsnapshot_identifier"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dbsnapshot_TagsFields,
+			Kind:     "list",
+			Fields:   Dbsnapshot_TagsFields,
 		},
 	},
 }

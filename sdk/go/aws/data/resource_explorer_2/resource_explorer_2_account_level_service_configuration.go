@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceExplorer2AccountLevelServiceConfiguration_OrgConfiguration struct {
 	AwsserviceAccessStatus any
-	ServiceLinkedRole any
+	ServiceLinkedRole      any
 }
 
 type ResourceExplorer2AccountLevelServiceConfigurationConfig struct {
@@ -18,6 +18,5 @@ type ResourceExplorer2AccountLevelServiceConfigurationAttrs struct {
 
 var ResourceExplorer2AccountLevelServiceConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_resource_explorer_2_account_level_service_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

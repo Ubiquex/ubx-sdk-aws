@@ -100,92 +100,92 @@ type ScalingPlan_ScalingInstructions struct {
 }
 
 var ScalingPlan_ApplicationSource_TagFiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var ScalingPlan_ApplicationSourceFields = ubx.FieldMap{
-		"CloudFormationStackArn": ubx.FieldSpec{WireName: "cloud_formation_stack_arn"},
-		"TagFilters": ubx.FieldSpec{
-			WireName: "tag_filters",
-			Kind: "list",
-			Fields: ScalingPlan_ApplicationSource_TagFiltersFields,
-		},
-	}
+	"CloudFormationStackArn": ubx.FieldSpec{WireName: "cloud_formation_stack_arn"},
+	"TagFilters": ubx.FieldSpec{
+		WireName: "tag_filters",
+		Kind:     "list",
+		Fields:   ScalingPlan_ApplicationSource_TagFiltersFields,
+	},
+}
 
 var ScalingPlan_ScalingInstructions_CustomizedLoadMetricSpecification_DimensionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ScalingPlan_ScalingInstructions_CustomizedLoadMetricSpecificationFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: ScalingPlan_ScalingInstructions_CustomizedLoadMetricSpecification_DimensionsFields,
-		},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Statistic": ubx.FieldSpec{WireName: "statistic"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-	}
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   ScalingPlan_ScalingInstructions_CustomizedLoadMetricSpecification_DimensionsFields,
+	},
+	"MetricName": ubx.FieldSpec{WireName: "metric_name"},
+	"Namespace":  ubx.FieldSpec{WireName: "namespace"},
+	"Statistic":  ubx.FieldSpec{WireName: "statistic"},
+	"Unit":       ubx.FieldSpec{WireName: "unit"},
+}
 
 var ScalingPlan_ScalingInstructions_PredefinedLoadMetricSpecificationFields = ubx.FieldMap{
-		"PredefinedLoadMetricType": ubx.FieldSpec{WireName: "predefined_load_metric_type"},
-		"ResourceLabel": ubx.FieldSpec{WireName: "resource_label"},
-	}
+	"PredefinedLoadMetricType": ubx.FieldSpec{WireName: "predefined_load_metric_type"},
+	"ResourceLabel":            ubx.FieldSpec{WireName: "resource_label"},
+}
 
 var ScalingPlan_ScalingInstructions_TargetTrackingConfigurations_PredefinedScalingMetricSpecificationFields = ubx.FieldMap{
-		"PredefinedScalingMetricType": ubx.FieldSpec{WireName: "predefined_scaling_metric_type"},
-		"ResourceLabel": ubx.FieldSpec{WireName: "resource_label"},
-	}
+	"PredefinedScalingMetricType": ubx.FieldSpec{WireName: "predefined_scaling_metric_type"},
+	"ResourceLabel":               ubx.FieldSpec{WireName: "resource_label"},
+}
 
 var ScalingPlan_ScalingInstructions_TargetTrackingConfigurationsFields = ubx.FieldMap{
-		"CustomizedScalingMetricSpecification": ubx.FieldSpec{
-			WireName: "customized_scaling_metric_specification",
-			Kind: "object",
-			Fields: ScalingPlan_ScalingInstructions_CustomizedLoadMetricSpecificationFields,
-		},
-		"DisableScaleIn": ubx.FieldSpec{WireName: "disable_scale_in"},
-		"EstimatedInstanceWarmup": ubx.FieldSpec{WireName: "estimated_instance_warmup"},
-		"PredefinedScalingMetricSpecification": ubx.FieldSpec{
-			WireName: "predefined_scaling_metric_specification",
-			Kind: "object",
-			Fields: ScalingPlan_ScalingInstructions_TargetTrackingConfigurations_PredefinedScalingMetricSpecificationFields,
-		},
-		"ScaleInCooldown": ubx.FieldSpec{WireName: "scale_in_cooldown"},
-		"ScaleOutCooldown": ubx.FieldSpec{WireName: "scale_out_cooldown"},
-		"TargetValue": ubx.FieldSpec{WireName: "target_value"},
-	}
+	"CustomizedScalingMetricSpecification": ubx.FieldSpec{
+		WireName: "customized_scaling_metric_specification",
+		Kind:     "object",
+		Fields:   ScalingPlan_ScalingInstructions_CustomizedLoadMetricSpecificationFields,
+	},
+	"DisableScaleIn":          ubx.FieldSpec{WireName: "disable_scale_in"},
+	"EstimatedInstanceWarmup": ubx.FieldSpec{WireName: "estimated_instance_warmup"},
+	"PredefinedScalingMetricSpecification": ubx.FieldSpec{
+		WireName: "predefined_scaling_metric_specification",
+		Kind:     "object",
+		Fields:   ScalingPlan_ScalingInstructions_TargetTrackingConfigurations_PredefinedScalingMetricSpecificationFields,
+	},
+	"ScaleInCooldown":  ubx.FieldSpec{WireName: "scale_in_cooldown"},
+	"ScaleOutCooldown": ubx.FieldSpec{WireName: "scale_out_cooldown"},
+	"TargetValue":      ubx.FieldSpec{WireName: "target_value"},
+}
 
 var ScalingPlan_ScalingInstructionsFields = ubx.FieldMap{
-		"CustomizedLoadMetricSpecification": ubx.FieldSpec{
-			WireName: "customized_load_metric_specification",
-			Kind: "object",
-			Fields: ScalingPlan_ScalingInstructions_CustomizedLoadMetricSpecificationFields,
-		},
-		"DisableDynamicScaling": ubx.FieldSpec{WireName: "disable_dynamic_scaling"},
-		"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
-		"MinCapacity": ubx.FieldSpec{WireName: "min_capacity"},
-		"PredefinedLoadMetricSpecification": ubx.FieldSpec{
-			WireName: "predefined_load_metric_specification",
-			Kind: "object",
-			Fields: ScalingPlan_ScalingInstructions_PredefinedLoadMetricSpecificationFields,
-		},
-		"PredictiveScalingMaxCapacityBehavior": ubx.FieldSpec{WireName: "predictive_scaling_max_capacity_behavior"},
-		"PredictiveScalingMaxCapacityBuffer": ubx.FieldSpec{WireName: "predictive_scaling_max_capacity_buffer"},
-		"PredictiveScalingMode": ubx.FieldSpec{WireName: "predictive_scaling_mode"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ScalableDimension": ubx.FieldSpec{WireName: "scalable_dimension"},
-		"ScalingPolicyUpdateBehavior": ubx.FieldSpec{WireName: "scaling_policy_update_behavior"},
-		"ScheduledActionBufferTime": ubx.FieldSpec{WireName: "scheduled_action_buffer_time"},
-		"ServiceNamespace": ubx.FieldSpec{WireName: "service_namespace"},
-		"TargetTrackingConfigurations": ubx.FieldSpec{
-			WireName: "target_tracking_configurations",
-			Kind: "list",
-			Fields: ScalingPlan_ScalingInstructions_TargetTrackingConfigurationsFields,
-		},
-	}
+	"CustomizedLoadMetricSpecification": ubx.FieldSpec{
+		WireName: "customized_load_metric_specification",
+		Kind:     "object",
+		Fields:   ScalingPlan_ScalingInstructions_CustomizedLoadMetricSpecificationFields,
+	},
+	"DisableDynamicScaling": ubx.FieldSpec{WireName: "disable_dynamic_scaling"},
+	"MaxCapacity":           ubx.FieldSpec{WireName: "max_capacity"},
+	"MinCapacity":           ubx.FieldSpec{WireName: "min_capacity"},
+	"PredefinedLoadMetricSpecification": ubx.FieldSpec{
+		WireName: "predefined_load_metric_specification",
+		Kind:     "object",
+		Fields:   ScalingPlan_ScalingInstructions_PredefinedLoadMetricSpecificationFields,
+	},
+	"PredictiveScalingMaxCapacityBehavior": ubx.FieldSpec{WireName: "predictive_scaling_max_capacity_behavior"},
+	"PredictiveScalingMaxCapacityBuffer":   ubx.FieldSpec{WireName: "predictive_scaling_max_capacity_buffer"},
+	"PredictiveScalingMode":                ubx.FieldSpec{WireName: "predictive_scaling_mode"},
+	"ResourceId":                           ubx.FieldSpec{WireName: "resource_id"},
+	"ScalableDimension":                    ubx.FieldSpec{WireName: "scalable_dimension"},
+	"ScalingPolicyUpdateBehavior":          ubx.FieldSpec{WireName: "scaling_policy_update_behavior"},
+	"ScheduledActionBufferTime":            ubx.FieldSpec{WireName: "scheduled_action_buffer_time"},
+	"ServiceNamespace":                     ubx.FieldSpec{WireName: "service_namespace"},
+	"TargetTrackingConfigurations": ubx.FieldSpec{
+		WireName: "target_tracking_configurations",
+		Kind:     "list",
+		Fields:   ScalingPlan_ScalingInstructions_TargetTrackingConfigurationsFields,
+	},
+}
 
 type ScalingPlanConfig struct {
 	// Defines the application source for the scaling plan, including either CloudFormation stack names or tag filters that identify the resources to scale. (AI-inferred)
@@ -212,13 +212,13 @@ var ScalingPlan = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApplicationSource": ubx.FieldSpec{
 			WireName: "application_source",
-			Kind: "object",
-			Fields: ScalingPlan_ApplicationSourceFields,
+			Kind:     "object",
+			Fields:   ScalingPlan_ApplicationSourceFields,
 		},
 		"ScalingInstructions": ubx.FieldSpec{
 			WireName: "scaling_instructions",
-			Kind: "list",
-			Fields: ScalingPlan_ScalingInstructionsFields,
+			Kind:     "list",
+			Fields:   ScalingPlan_ScalingInstructionsFields,
 		},
 	},
 }

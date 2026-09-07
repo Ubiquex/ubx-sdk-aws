@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChimeVoiceConnectorStreamingConfiguration_StreamingConfiguration_MediaInsightsConfiguration struct {
 	ConfigurationArn any
-	Disabled any
+	Disabled         any
 }
 
 type VoiceChimeVoiceConnectorStreamingConfiguration_StreamingConfiguration_StreamingNotificationTargets struct {
@@ -14,9 +14,9 @@ type VoiceChimeVoiceConnectorStreamingConfiguration_StreamingConfiguration_Strea
 
 type VoiceChimeVoiceConnectorStreamingConfiguration_StreamingConfiguration struct {
 	DataRetentionInHours any
-	Disabled any
+	Disabled             any
 	// <p>The configuration for a call analytics task.</p>
-	MediaInsightsConfiguration any
+	MediaInsightsConfiguration   any
 	StreamingNotificationTargets any
 }
 
@@ -27,7 +27,7 @@ type VoiceChimeVoiceConnectorStreamingConfigurationConfig struct {
 type VoiceChimeVoiceConnectorStreamingConfigurationAttrs struct {
 	// <p>The streaming configuration associated with an Amazon Chime SDK Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours.</p>
 	StreamingConfiguration any
-	VoiceConnectorId any
+	VoiceConnectorId       any
 }
 
 var VoiceChimeVoiceConnectorStreamingConfiguration = ubx.DataSourceBinding{

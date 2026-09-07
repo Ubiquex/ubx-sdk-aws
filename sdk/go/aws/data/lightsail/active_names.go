@@ -8,9 +8,9 @@ type ActiveNamesConfig struct {
 }
 
 type ActiveNamesAttrs struct {
-	ActiveNames any
+	ActiveNames   any
 	NextPageToken any
-	PageToken any
+	PageToken     any
 }
 
 var ActiveNames = ubx.DataSourceBinding{

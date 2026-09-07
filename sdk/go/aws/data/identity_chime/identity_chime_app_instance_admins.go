@@ -4,7 +4,7 @@ package identity_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityChimeAppInstanceAdmins_AppInstanceAdmins_Admin struct {
-	Arn any
+	Arn  any
 	Name any
 }
 
@@ -14,22 +14,22 @@ type IdentityChimeAppInstanceAdmins_AppInstanceAdmins struct {
 
 type IdentityChimeAppInstanceAdminsConfig struct {
 	AppInstanceArn any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 type IdentityChimeAppInstanceAdminsAttrs struct {
 	AppInstanceAdmins any
-	AppInstanceArn any
-	MaxResults any
-	NextToken any
+	AppInstanceArn    any
+	MaxResults        any
+	NextToken         any
 }
 
 var IdentityChimeAppInstanceAdmins = ubx.DataSourceBinding{
 	WireType: "aws_identity_chime_app_instance_admins",
 	Fields: ubx.FieldMap{
 		"AppInstanceArn": ubx.FieldSpec{WireName: "app_instance_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 	},
 }

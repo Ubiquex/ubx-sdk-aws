@@ -5,23 +5,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReportDefinitions_ReportDefinitions_ReportStatus struct {
 	LastDelivery any
-	LastStatus any
+	LastStatus   any
 }
 
 type ReportDefinitions_ReportDefinitions struct {
-	AdditionalArtifacts any
+	AdditionalArtifacts      any
 	AdditionalSchemaElements any
-	BillingViewArn any
-	Compression any
-	Format any
-	RefreshClosedReports any
-	ReportName any
-	ReportStatus any
-	ReportVersioning any
-	S3Bucket any
-	S3Prefix any
-	S3Region any
-	TimeUnit any
+	BillingViewArn           any
+	Compression              any
+	Format                   any
+	RefreshClosedReports     any
+	ReportName               any
+	ReportStatus             any
+	ReportVersioning         any
+	S3Bucket                 any
+	S3Prefix                 any
+	S3Region                 any
+	TimeUnit                 any
 }
 
 type ReportDefinitionsConfig struct {
@@ -44,6 +44,6 @@ var ReportDefinitions = ubx.DataSourceBinding{
 	WireType: "aws_cur_report_definitions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

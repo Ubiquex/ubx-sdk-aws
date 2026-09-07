@@ -4,45 +4,45 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrafficPolicyInstancesByPolicy_TrafficPolicyInstances struct {
-	HostedZoneId any
-	Id any
-	Message any
-	Name any
-	State any
-	TrafficPolicyId any
-	TrafficPolicyType any
+	HostedZoneId         any
+	Id                   any
+	Message              any
+	Name                 any
+	State                any
+	TrafficPolicyId      any
+	TrafficPolicyType    any
 	TrafficPolicyVersion any
-	Ttl any
+	Ttl                  any
 }
 
 type TrafficPolicyInstancesByPolicyConfig struct {
-	HostedZoneIdMarker any
-	MaxItems any
-	TrafficPolicyId any
+	HostedZoneIdMarker              any
+	MaxItems                        any
+	TrafficPolicyId                 any
 	TrafficPolicyInstanceNameMarker any
 	TrafficPolicyInstanceTypeMarker any
-	TrafficPolicyVersion any
+	TrafficPolicyVersion            any
 }
 
 type TrafficPolicyInstancesByPolicyAttrs struct {
-	HostedZoneIdMarker any
-	IsTruncated any
-	MaxItems any
-	TrafficPolicyId any
+	HostedZoneIdMarker              any
+	IsTruncated                     any
+	MaxItems                        any
+	TrafficPolicyId                 any
 	TrafficPolicyInstanceNameMarker any
 	TrafficPolicyInstanceTypeMarker any
-	TrafficPolicyInstances any
-	TrafficPolicyVersion any
+	TrafficPolicyInstances          any
+	TrafficPolicyVersion            any
 }
 
 var TrafficPolicyInstancesByPolicy = ubx.DataSourceBinding{
 	WireType: "aws_route53_traffic_policy_instances_by_policy",
 	Fields: ubx.FieldMap{
-		"HostedZoneIdMarker": ubx.FieldSpec{WireName: "hosted_zone_id_marker"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"TrafficPolicyId": ubx.FieldSpec{WireName: "traffic_policy_id"},
+		"HostedZoneIdMarker":              ubx.FieldSpec{WireName: "hosted_zone_id_marker"},
+		"MaxItems":                        ubx.FieldSpec{WireName: "max_items"},
+		"TrafficPolicyId":                 ubx.FieldSpec{WireName: "traffic_policy_id"},
 		"TrafficPolicyInstanceNameMarker": ubx.FieldSpec{WireName: "traffic_policy_instance_name_marker"},
 		"TrafficPolicyInstanceTypeMarker": ubx.FieldSpec{WireName: "traffic_policy_instance_type_marker"},
-		"TrafficPolicyVersion": ubx.FieldSpec{WireName: "traffic_policy_version"},
+		"TrafficPolicyVersion":            ubx.FieldSpec{WireName: "traffic_policy_version"},
 	},
 }

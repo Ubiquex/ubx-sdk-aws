@@ -17,14 +17,14 @@ type WorkspaceIpGroup_UserRules struct {
 }
 
 var WorkspaceIpGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var WorkspaceIpGroup_UserRulesFields = ubx.FieldMap{
-		"IpRule": ubx.FieldSpec{WireName: "ip_rule"},
-		"RuleDesc": ubx.FieldSpec{WireName: "rule_desc"},
-	}
+	"IpRule":   ubx.FieldSpec{WireName: "ip_rule"},
+	"RuleDesc": ubx.FieldSpec{WireName: "rule_desc"},
+}
 
 type WorkspaceIpGroupConfig struct {
 	// The description of the group.
@@ -59,13 +59,13 @@ var WorkspaceIpGroup = ubx.ResourceBinding{
 		"GroupName": ubx.FieldSpec{WireName: "group_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: WorkspaceIpGroup_TagsFields,
+			Kind:     "list",
+			Fields:   WorkspaceIpGroup_TagsFields,
 		},
 		"UserRules": ubx.FieldSpec{
 			WireName: "user_rules",
-			Kind: "list",
-			Fields: WorkspaceIpGroup_UserRulesFields,
+			Kind:     "list",
+			Fields:   WorkspaceIpGroup_UserRulesFields,
 		},
 	},
 }

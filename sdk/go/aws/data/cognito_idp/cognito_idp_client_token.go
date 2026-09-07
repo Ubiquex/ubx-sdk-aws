@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdpClientToken_ClientAuthenticationResult struct {
 	AccessToken any
-	ExpiresIn any
-	TokenType any
+	ExpiresIn   any
+	TokenType   any
 }
 
 type CognitoIdpClientTokenConfig struct {
-	ClientId any
+	ClientId       any
 	ClientMetadata any
-	Scopes any
-	Secret any
+	Scopes         any
+	Secret         any
 }
 
 type CognitoIdpClientTokenAttrs struct {
 	// <p>The access token and its metadata from a machine-to-machine (M2M) client credentials grant.</p>
 	ClientAuthenticationResult any
-	ClientId any
-	ClientMetadata any
-	Scopes any
-	Secret any
+	ClientId                   any
+	ClientMetadata             any
+	Scopes                     any
+	Secret                     any
 }
 
 var CognitoIdpClientToken = ubx.DataSourceBinding{
 	WireType: "aws_cognito_idp_client_token",
 	Fields: ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"ClientId":       ubx.FieldSpec{WireName: "client_id"},
 		"ClientMetadata": ubx.FieldSpec{WireName: "client_metadata"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"Secret": ubx.FieldSpec{WireName: "secret"},
+		"Scopes":         ubx.FieldSpec{WireName: "scopes"},
+		"Secret":         ubx.FieldSpec{WireName: "secret"},
 	},
 }

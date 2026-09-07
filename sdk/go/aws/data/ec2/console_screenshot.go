@@ -4,23 +4,23 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConsoleScreenshotConfig struct {
-	DryRun any
+	DryRun     any
 	InstanceId any
-	WakeUp any
+	WakeUp     any
 }
 
 type ConsoleScreenshotAttrs struct {
-	DryRun any
-	ImageData any
+	DryRun     any
+	ImageData  any
 	InstanceId any
-	WakeUp any
+	WakeUp     any
 }
 
 var ConsoleScreenshot = ubx.DataSourceBinding{
 	WireType: "aws_ec2_console_screenshot",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":     ubx.FieldSpec{WireName: "dry_run"},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"WakeUp": ubx.FieldSpec{WireName: "wake_up"},
+		"WakeUp":     ubx.FieldSpec{WireName: "wake_up"},
 	},
 }

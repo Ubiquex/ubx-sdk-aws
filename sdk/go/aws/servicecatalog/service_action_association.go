@@ -24,8 +24,8 @@ type ServiceActionAssociationAttrs struct {
 var ServiceActionAssociation = ubx.ResourceBinding{
 	WireType: "aws_service_catalog_service_action_association",
 	Fields: ubx.FieldMap{
-		"ProductId": ubx.FieldSpec{WireName: "product_id"},
+		"ProductId":              ubx.FieldSpec{WireName: "product_id"},
 		"ProvisioningArtifactId": ubx.FieldSpec{WireName: "provisioning_artifact_id"},
-		"ServiceActionId": ubx.FieldSpec{WireName: "service_action_id"},
+		"ServiceActionId":        ubx.FieldSpec{WireName: "service_action_id"},
 	},
 }

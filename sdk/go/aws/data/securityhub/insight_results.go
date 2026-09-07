@@ -4,14 +4,14 @@ package securityhub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InsightResults_InsightResults_ResultValues struct {
-	Count any
+	Count                 any
 	GroupByAttributeValue any
 }
 
 type InsightResults_InsightResults struct {
 	GroupByAttribute any
-	InsightArn any
-	ResultValues any
+	InsightArn       any
+	ResultValues     any
 }
 
 type InsightResultsConfig struct {

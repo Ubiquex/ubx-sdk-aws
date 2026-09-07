@@ -4,34 +4,34 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImagesInRecycleBin_Images struct {
-	Description any
-	ImageId any
-	Name any
+	Description         any
+	ImageId             any
+	Name                any
 	RecycleBinEnterTime any
-	RecycleBinExitTime any
+	RecycleBinExitTime  any
 }
 
 type ImagesInRecycleBinConfig struct {
-	DryRun any
-	ImageIds any
+	DryRun     any
+	ImageIds   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ImagesInRecycleBinAttrs struct {
-	DryRun any
-	ImageIds any
-	Images any
+	DryRun     any
+	ImageIds   any
+	Images     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ImagesInRecycleBin = ubx.DataSourceBinding{
 	WireType: "aws_ec2_images_in_recycle_bin",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"ImageIds": ubx.FieldSpec{WireName: "image_ids"},
+		"DryRun":     ubx.FieldSpec{WireName: "dry_run"},
+		"ImageIds":   ubx.FieldSpec{WireName: "image_ids"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

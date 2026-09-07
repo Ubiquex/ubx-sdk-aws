@@ -4,26 +4,26 @@ package s3
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BucketAnalyticsConfigurations_AnalyticsConfigurationList_Filter_And_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type BucketAnalyticsConfigurations_AnalyticsConfigurationList_Filter_And struct {
 	Prefix any
-	Tags any
+	Tags   any
 }
 
 type BucketAnalyticsConfigurations_AnalyticsConfigurationList_Filter struct {
-	And any
+	And    any
 	Prefix any
-	Tag any
+	Tag    any
 }
 
 type BucketAnalyticsConfigurations_AnalyticsConfigurationList_StorageClassAnalysis_DataExport_Destination_S3BucketDestination struct {
-	Bucket any
+	Bucket          any
 	BucketAccountId any
-	Format any
-	Prefix any
+	Format          any
+	Prefix          any
 }
 
 type BucketAnalyticsConfigurations_AnalyticsConfigurationList_StorageClassAnalysis_DataExport_Destination struct {
@@ -31,7 +31,7 @@ type BucketAnalyticsConfigurations_AnalyticsConfigurationList_StorageClassAnalys
 }
 
 type BucketAnalyticsConfigurations_AnalyticsConfigurationList_StorageClassAnalysis_DataExport struct {
-	Destination any
+	Destination         any
 	OutputSchemaVersion any
 }
 
@@ -40,31 +40,31 @@ type BucketAnalyticsConfigurations_AnalyticsConfigurationList_StorageClassAnalys
 }
 
 type BucketAnalyticsConfigurations_AnalyticsConfigurationList struct {
-	Filter any
-	Id any
+	Filter               any
+	Id                   any
 	StorageClassAnalysis any
 }
 
 type BucketAnalyticsConfigurationsConfig struct {
-	Bucket any
-	ContinuationToken any
+	Bucket              any
+	ContinuationToken   any
 	ExpectedBucketOwner any
 }
 
 type BucketAnalyticsConfigurationsAttrs struct {
 	AnalyticsConfigurationList any
-	Bucket any
-	ContinuationToken any
-	ExpectedBucketOwner any
-	IsTruncated any
-	NextContinuationToken any
+	Bucket                     any
+	ContinuationToken          any
+	ExpectedBucketOwner        any
+	IsTruncated                any
+	NextContinuationToken      any
 }
 
 var BucketAnalyticsConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_analytics_configurations",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"ContinuationToken": ubx.FieldSpec{WireName: "continuation_token"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
+		"ContinuationToken":   ubx.FieldSpec{WireName: "continuation_token"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
 	},
 }

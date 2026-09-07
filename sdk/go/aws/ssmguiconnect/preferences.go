@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Preferences_ConnectionRecordingPreferences_RecordingDestinations_S3Buckets struct {
 	// The name of the S3 bucket used as a destination where connection recording sessions are stored. (AI-inferred)
-	BucketName any
+	BucketName  any
 	BucketOwner any
 }
 
@@ -22,26 +22,26 @@ type Preferences_ConnectionRecordingPreferences struct {
 }
 
 var Preferences_ConnectionRecordingPreferences_RecordingDestinations_S3BucketsFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"BucketOwner": ubx.FieldSpec{WireName: "bucket_owner"},
-	}
+	"BucketName":  ubx.FieldSpec{WireName: "bucket_name"},
+	"BucketOwner": ubx.FieldSpec{WireName: "bucket_owner"},
+}
 
 var Preferences_ConnectionRecordingPreferences_RecordingDestinationsFields = ubx.FieldMap{
-		"S3Buckets": ubx.FieldSpec{
-			WireName: "s3_buckets",
-			Kind: "list",
-			Fields: Preferences_ConnectionRecordingPreferences_RecordingDestinations_S3BucketsFields,
-		},
-	}
+	"S3Buckets": ubx.FieldSpec{
+		WireName: "s3_buckets",
+		Kind:     "list",
+		Fields:   Preferences_ConnectionRecordingPreferences_RecordingDestinations_S3BucketsFields,
+	},
+}
 
 var Preferences_ConnectionRecordingPreferencesFields = ubx.FieldMap{
-		"KmskeyArn": ubx.FieldSpec{WireName: "kmskey_arn"},
-		"RecordingDestinations": ubx.FieldSpec{
-			WireName: "recording_destinations",
-			Kind: "object",
-			Fields: Preferences_ConnectionRecordingPreferences_RecordingDestinationsFields,
-		},
-	}
+	"KmskeyArn": ubx.FieldSpec{WireName: "kmskey_arn"},
+	"RecordingDestinations": ubx.FieldSpec{
+		WireName: "recording_destinations",
+		Kind:     "object",
+		Fields:   Preferences_ConnectionRecordingPreferences_RecordingDestinationsFields,
+	},
+}
 
 type PreferencesConfig struct {
 	// The set of preferences used for recording RDP connections in the requesting AWS account and AWS Region. This includes details such as which S3 bucket recordings are stored in.
@@ -60,8 +60,8 @@ var Preferences = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConnectionRecordingPreferences": ubx.FieldSpec{
 			WireName: "connection_recording_preferences",
-			Kind: "object",
-			Fields: Preferences_ConnectionRecordingPreferencesFields,
+			Kind:     "object",
+			Fields:   Preferences_ConnectionRecordingPreferencesFields,
 		},
 	},
 }

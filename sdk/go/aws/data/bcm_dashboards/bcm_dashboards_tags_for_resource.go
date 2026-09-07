@@ -4,7 +4,7 @@ package bcm_dashboards
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BcmDashboardsTagsForResource_ResourceTags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -13,7 +13,7 @@ type BcmDashboardsTagsForResourceConfig struct {
 }
 
 type BcmDashboardsTagsForResourceAttrs struct {
-	ResourceArn any
+	ResourceArn  any
 	ResourceTags any
 }
 

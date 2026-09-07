@@ -8,31 +8,31 @@ type AccessAnalyzerAccessPreviews_AccessPreviews_StatusReason struct {
 }
 
 type AccessAnalyzerAccessPreviews_AccessPreviews struct {
-	AnalyzerArn any
-	CreatedAt any
-	Id any
-	Status any
+	AnalyzerArn  any
+	CreatedAt    any
+	Id           any
+	Status       any
 	StatusReason any
 }
 
 type AccessAnalyzerAccessPreviewsConfig struct {
 	AnalyzerArn any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type AccessAnalyzerAccessPreviewsAttrs struct {
 	AccessPreviews any
-	AnalyzerArn any
-	MaxResults any
-	NextToken any
+	AnalyzerArn    any
+	MaxResults     any
+	NextToken      any
 }
 
 var AccessAnalyzerAccessPreviews = ubx.DataSourceBinding{
 	WireType: "aws_access_analyzer_access_previews",
 	Fields: ubx.FieldMap{
 		"AnalyzerArn": ubx.FieldSpec{WireName: "analyzer_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

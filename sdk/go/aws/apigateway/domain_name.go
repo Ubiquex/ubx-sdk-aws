@@ -18,24 +18,24 @@ type DomainName_MutualTlsAuthentication struct {
 }
 
 type DomainName_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var DomainName_EndpointConfigurationFields = ubx.FieldMap{
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"Types": ubx.FieldSpec{WireName: "types"},
-	}
+	"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
+	"Types":         ubx.FieldSpec{WireName: "types"},
+}
 
 var DomainName_MutualTlsAuthenticationFields = ubx.FieldMap{
-		"TruststoreUri": ubx.FieldSpec{WireName: "truststore_uri"},
-		"TruststoreVersion": ubx.FieldSpec{WireName: "truststore_version"},
-	}
+	"TruststoreUri":     ubx.FieldSpec{WireName: "truststore_uri"},
+	"TruststoreVersion": ubx.FieldSpec{WireName: "truststore_version"},
+}
 
 var DomainName_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DomainNameConfig struct {
 	// The ARN of an AWS Certificate Manager (ACM) certificate used to secure the edge-optimized domain name's TLS/SSL connections. (AI-inferred)
@@ -96,27 +96,27 @@ type DomainNameAttrs struct {
 var DomainName = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_domain_name",
 	Fields: ubx.FieldMap{
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"CertificateArn":     ubx.FieldSpec{WireName: "certificate_arn"},
+		"DomainName":         ubx.FieldSpec{WireName: "domain_name"},
 		"EndpointAccessMode": ubx.FieldSpec{WireName: "endpoint_access_mode"},
 		"EndpointConfiguration": ubx.FieldSpec{
 			WireName: "endpoint_configuration",
-			Kind: "object",
-			Fields: DomainName_EndpointConfigurationFields,
+			Kind:     "object",
+			Fields:   DomainName_EndpointConfigurationFields,
 		},
 		"MutualTlsAuthentication": ubx.FieldSpec{
 			WireName: "mutual_tls_authentication",
-			Kind: "object",
-			Fields: DomainName_MutualTlsAuthenticationFields,
+			Kind:     "object",
+			Fields:   DomainName_MutualTlsAuthenticationFields,
 		},
 		"OwnershipVerificationCertificateArn": ubx.FieldSpec{WireName: "ownership_verification_certificate_arn"},
-		"RegionalCertificateArn": ubx.FieldSpec{WireName: "regional_certificate_arn"},
-		"RoutingMode": ubx.FieldSpec{WireName: "routing_mode"},
-		"SecurityPolicy": ubx.FieldSpec{WireName: "security_policy"},
+		"RegionalCertificateArn":              ubx.FieldSpec{WireName: "regional_certificate_arn"},
+		"RoutingMode":                         ubx.FieldSpec{WireName: "routing_mode"},
+		"SecurityPolicy":                      ubx.FieldSpec{WireName: "security_policy"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DomainName_TagsFields,
+			Kind:     "list",
+			Fields:   DomainName_TagsFields,
 		},
 	},
 }

@@ -4,12 +4,12 @@ package guardduty
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Coverage_FilterCriteria_FilterCriterion_FilterCondition struct {
-	Equals any
+	Equals    any
 	NotEquals any
 }
 
 type Coverage_FilterCriteria_FilterCriterion struct {
-	CriterionKey any
+	CriterionKey    any
 	FilterCondition any
 }
 
@@ -22,97 +22,97 @@ type Coverage_Resources_ResourceDetails_Ec2InstanceDetails_AgentDetails struct {
 }
 
 type Coverage_Resources_ResourceDetails_Ec2InstanceDetails struct {
-	AgentDetails any
-	ClusterArn any
-	InstanceId any
-	InstanceType any
+	AgentDetails   any
+	ClusterArn     any
+	InstanceId     any
+	InstanceType   any
 	ManagementType any
 }
 
 type Coverage_Resources_ResourceDetails_EcsClusterDetails_ContainerInstanceDetails struct {
 	CompatibleContainerInstances any
-	CoveredContainerInstances any
+	CoveredContainerInstances    any
 }
 
 type Coverage_Resources_ResourceDetails_EcsClusterDetails_FargateDetails struct {
-	Issues any
+	Issues         any
 	ManagementType any
 }
 
 type Coverage_Resources_ResourceDetails_EcsClusterDetails struct {
-	ClusterName any
+	ClusterName              any
 	ContainerInstanceDetails any
-	FargateDetails any
+	FargateDetails           any
 }
 
 type Coverage_Resources_ResourceDetails_EksClusterDetails_AddonDetails struct {
-	AddonStatus any
+	AddonStatus  any
 	AddonVersion any
 }
 
 type Coverage_Resources_ResourceDetails_EksClusterDetails struct {
-	AddonDetails any
-	ClusterName any
+	AddonDetails    any
+	ClusterName     any
 	CompatibleNodes any
-	CoveredNodes any
-	ManagementType any
+	CoveredNodes    any
+	ManagementType  any
 }
 
 type Coverage_Resources_ResourceDetails struct {
 	Ec2InstanceDetails any
-	EcsClusterDetails any
-	EksClusterDetails any
-	ResourceType any
+	EcsClusterDetails  any
+	EksClusterDetails  any
+	ResourceType       any
 }
 
 type Coverage_Resources struct {
-	AccountId any
-	CoverageStatus any
-	DetectorId any
-	Issue any
+	AccountId       any
+	CoverageStatus  any
+	DetectorId      any
+	Issue           any
 	ResourceDetails any
-	ResourceId any
-	UpdatedAt any
+	ResourceId      any
+	UpdatedAt       any
 }
 
 type Coverage_SortCriteria struct {
 	AttributeName any
-	OrderBy any
+	OrderBy       any
 }
 
 var Coverage_FilterCriteria_FilterCriterion_FilterConditionFields = ubx.FieldMap{
-		"Equals": ubx.FieldSpec{WireName: "equals"},
-		"NotEquals": ubx.FieldSpec{WireName: "not_equals"},
-	}
+	"Equals":    ubx.FieldSpec{WireName: "equals"},
+	"NotEquals": ubx.FieldSpec{WireName: "not_equals"},
+}
 
 var Coverage_FilterCriteria_FilterCriterionFields = ubx.FieldMap{
-		"CriterionKey": ubx.FieldSpec{WireName: "criterion_key"},
-		"FilterCondition": ubx.FieldSpec{
-			WireName: "filter_condition",
-			Kind: "object",
-			Fields: Coverage_FilterCriteria_FilterCriterion_FilterConditionFields,
-		},
-	}
+	"CriterionKey": ubx.FieldSpec{WireName: "criterion_key"},
+	"FilterCondition": ubx.FieldSpec{
+		WireName: "filter_condition",
+		Kind:     "object",
+		Fields:   Coverage_FilterCriteria_FilterCriterion_FilterConditionFields,
+	},
+}
 
 var Coverage_FilterCriteriaFields = ubx.FieldMap{
-		"FilterCriterion": ubx.FieldSpec{
-			WireName: "filter_criterion",
-			Kind: "list",
-			Fields: Coverage_FilterCriteria_FilterCriterionFields,
-		},
-	}
+	"FilterCriterion": ubx.FieldSpec{
+		WireName: "filter_criterion",
+		Kind:     "list",
+		Fields:   Coverage_FilterCriteria_FilterCriterionFields,
+	},
+}
 
 var Coverage_SortCriteriaFields = ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-	}
+	"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
+	"OrderBy":       ubx.FieldSpec{WireName: "order_by"},
+}
 
 type CoverageConfig struct {
 	DetectorId any
 	// <p>Represents the criteria used in the filter.</p>
 	FilterCriteria any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	// <p>Information about the sorting criteria used in the coverage statistics.</p>
 	SortCriteria any
 }
@@ -121,9 +121,9 @@ type CoverageAttrs struct {
 	DetectorId any
 	// <p>Represents the criteria used in the filter.</p>
 	FilterCriteria any
-	MaxResults any
-	NextToken any
-	Resources any
+	MaxResults     any
+	NextToken      any
+	Resources      any
 	// <p>Information about the sorting criteria used in the coverage statistics.</p>
 	SortCriteria any
 }
@@ -134,15 +134,15 @@ var Coverage = ubx.DataSourceBinding{
 		"DetectorId": ubx.FieldSpec{WireName: "detector_id"},
 		"FilterCriteria": ubx.FieldSpec{
 			WireName: "filter_criteria",
-			Kind: "object",
-			Fields: Coverage_FilterCriteriaFields,
+			Kind:     "object",
+			Fields:   Coverage_FilterCriteriaFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SortCriteria": ubx.FieldSpec{
 			WireName: "sort_criteria",
-			Kind: "object",
-			Fields: Coverage_SortCriteriaFields,
+			Kind:     "object",
+			Fields:   Coverage_SortCriteriaFields,
 		},
 	},
 }

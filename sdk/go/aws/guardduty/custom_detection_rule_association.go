@@ -11,9 +11,9 @@ type CustomDetectionRuleAssociation_Tags struct {
 }
 
 var CustomDetectionRuleAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CustomDetectionRuleAssociationConfig struct {
 	// Whether the rule runs in LIVE mode (generates findings) or DRY_RUN mode (evaluates without generating findings).
@@ -46,12 +46,12 @@ type CustomDetectionRuleAssociationAttrs struct {
 var CustomDetectionRuleAssociation = ubx.ResourceBinding{
 	WireType: "aws_guard_duty_custom_detection_rule_association",
 	Fields: ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
+		"Mode":   ubx.FieldSpec{WireName: "mode"},
 		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CustomDetectionRuleAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   CustomDetectionRuleAssociation_TagsFields,
 		},
 	},
 }

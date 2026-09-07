@@ -4,7 +4,7 @@ package identity_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityChimeTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type IdentityChimeTagsForResourceConfig struct {
 
 type IdentityChimeTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var IdentityChimeTagsForResource = ubx.DataSourceBinding{

@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BudgetNotificationsForAccount_BudgetNotificationsForAccount_Notifications struct {
 	ComparisonOperator any
-	NotificationState any
-	NotificationType any
-	Threshold any
-	ThresholdType any
+	NotificationState  any
+	NotificationType   any
+	Threshold          any
+	ThresholdType      any
 }
 
 type BudgetNotificationsForAccount_BudgetNotificationsForAccount struct {
-	BudgetName any
+	BudgetName    any
 	Notifications any
 }
 
 type BudgetNotificationsForAccountConfig struct {
 	// <p>The account ID of the user. It's a 12-digit number.</p>
-	AccountId any
+	AccountId  any
 	MaxResults any
 	// <p> A generic string.</p>
 	NextToken any
@@ -26,9 +26,9 @@ type BudgetNotificationsForAccountConfig struct {
 
 type BudgetNotificationsForAccountAttrs struct {
 	// <p>The account ID of the user. It's a 12-digit number.</p>
-	AccountId any
+	AccountId                     any
 	BudgetNotificationsForAccount any
-	MaxResults any
+	MaxResults                    any
 	// <p> A generic string.</p>
 	NextToken any
 }
@@ -36,8 +36,8 @@ type BudgetNotificationsForAccountAttrs struct {
 var BudgetNotificationsForAccount = ubx.DataSourceBinding{
 	WireType: "aws_budgets_budget_notifications_for_account",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

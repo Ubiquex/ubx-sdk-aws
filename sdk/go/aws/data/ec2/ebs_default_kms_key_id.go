@@ -8,7 +8,7 @@ type EbsDefaultKmsKeyIdConfig struct {
 }
 
 type EbsDefaultKmsKeyIdAttrs struct {
-	DryRun any
+	DryRun   any
 	KmsKeyId any
 }
 

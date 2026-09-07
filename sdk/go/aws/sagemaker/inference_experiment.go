@@ -80,67 +80,67 @@ type InferenceExperiment_Tags struct {
 }
 
 var InferenceExperiment_DataStorageConfig_ContentTypeFields = ubx.FieldMap{
-		"CsvContentTypes": ubx.FieldSpec{WireName: "csv_content_types"},
-		"JsonContentTypes": ubx.FieldSpec{WireName: "json_content_types"},
-	}
+	"CsvContentTypes":  ubx.FieldSpec{WireName: "csv_content_types"},
+	"JsonContentTypes": ubx.FieldSpec{WireName: "json_content_types"},
+}
 
 var InferenceExperiment_DataStorageConfigFields = ubx.FieldMap{
-		"ContentType": ubx.FieldSpec{
-			WireName: "content_type",
-			Kind: "object",
-			Fields: InferenceExperiment_DataStorageConfig_ContentTypeFields,
-		},
-		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"ContentType": ubx.FieldSpec{
+		WireName: "content_type",
+		Kind:     "object",
+		Fields:   InferenceExperiment_DataStorageConfig_ContentTypeFields,
+	},
+	"Destination": ubx.FieldSpec{WireName: "destination"},
+	"KmsKey":      ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var InferenceExperiment_ModelVariants_InfrastructureConfig_RealTimeInferenceConfigFields = ubx.FieldMap{
-		"InstanceCount": ubx.FieldSpec{WireName: "instance_count"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-	}
+	"InstanceCount": ubx.FieldSpec{WireName: "instance_count"},
+	"InstanceType":  ubx.FieldSpec{WireName: "instance_type"},
+}
 
 var InferenceExperiment_ModelVariants_InfrastructureConfigFields = ubx.FieldMap{
-		"InfrastructureType": ubx.FieldSpec{WireName: "infrastructure_type"},
-		"RealTimeInferenceConfig": ubx.FieldSpec{
-			WireName: "real_time_inference_config",
-			Kind: "object",
-			Fields: InferenceExperiment_ModelVariants_InfrastructureConfig_RealTimeInferenceConfigFields,
-		},
-	}
+	"InfrastructureType": ubx.FieldSpec{WireName: "infrastructure_type"},
+	"RealTimeInferenceConfig": ubx.FieldSpec{
+		WireName: "real_time_inference_config",
+		Kind:     "object",
+		Fields:   InferenceExperiment_ModelVariants_InfrastructureConfig_RealTimeInferenceConfigFields,
+	},
+}
 
 var InferenceExperiment_ModelVariantsFields = ubx.FieldMap{
-		"InfrastructureConfig": ubx.FieldSpec{
-			WireName: "infrastructure_config",
-			Kind: "object",
-			Fields: InferenceExperiment_ModelVariants_InfrastructureConfigFields,
-		},
-		"ModelName": ubx.FieldSpec{WireName: "model_name"},
-		"VariantName": ubx.FieldSpec{WireName: "variant_name"},
-	}
+	"InfrastructureConfig": ubx.FieldSpec{
+		WireName: "infrastructure_config",
+		Kind:     "object",
+		Fields:   InferenceExperiment_ModelVariants_InfrastructureConfigFields,
+	},
+	"ModelName":   ubx.FieldSpec{WireName: "model_name"},
+	"VariantName": ubx.FieldSpec{WireName: "variant_name"},
+}
 
 var InferenceExperiment_ScheduleFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var InferenceExperiment_ShadowModeConfig_ShadowModelVariantsFields = ubx.FieldMap{
-		"SamplingPercentage": ubx.FieldSpec{WireName: "sampling_percentage"},
-		"ShadowModelVariantName": ubx.FieldSpec{WireName: "shadow_model_variant_name"},
-	}
+	"SamplingPercentage":     ubx.FieldSpec{WireName: "sampling_percentage"},
+	"ShadowModelVariantName": ubx.FieldSpec{WireName: "shadow_model_variant_name"},
+}
 
 var InferenceExperiment_ShadowModeConfigFields = ubx.FieldMap{
-		"ShadowModelVariants": ubx.FieldSpec{
-			WireName: "shadow_model_variants",
-			Kind: "list",
-			Fields: InferenceExperiment_ShadowModeConfig_ShadowModelVariantsFields,
-		},
-		"SourceModelVariantName": ubx.FieldSpec{WireName: "source_model_variant_name"},
-	}
+	"ShadowModelVariants": ubx.FieldSpec{
+		WireName: "shadow_model_variants",
+		Kind:     "list",
+		Fields:   InferenceExperiment_ShadowModeConfig_ShadowModelVariantsFields,
+	},
+	"SourceModelVariantName": ubx.FieldSpec{WireName: "source_model_variant_name"},
+}
 
 var InferenceExperiment_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type InferenceExperimentConfig struct {
 	// The Amazon S3 location and configuration for storing inference request and response data.
@@ -215,35 +215,35 @@ var InferenceExperiment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DataStorageConfig": ubx.FieldSpec{
 			WireName: "data_storage_config",
-			Kind: "object",
-			Fields: InferenceExperiment_DataStorageConfigFields,
+			Kind:     "object",
+			Fields:   InferenceExperiment_DataStorageConfigFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
 		"DesiredState": ubx.FieldSpec{WireName: "desired_state"},
 		"EndpointName": ubx.FieldSpec{WireName: "endpoint_name"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+		"KmsKey":       ubx.FieldSpec{WireName: "kms_key"},
 		"ModelVariants": ubx.FieldSpec{
 			WireName: "model_variants",
-			Kind: "list",
-			Fields: InferenceExperiment_ModelVariantsFields,
+			Kind:     "list",
+			Fields:   InferenceExperiment_ModelVariantsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"Schedule": ubx.FieldSpec{
 			WireName: "schedule",
-			Kind: "object",
-			Fields: InferenceExperiment_ScheduleFields,
+			Kind:     "object",
+			Fields:   InferenceExperiment_ScheduleFields,
 		},
 		"ShadowModeConfig": ubx.FieldSpec{
 			WireName: "shadow_mode_config",
-			Kind: "object",
-			Fields: InferenceExperiment_ShadowModeConfigFields,
+			Kind:     "object",
+			Fields:   InferenceExperiment_ShadowModeConfigFields,
 		},
 		"StatusReason": ubx.FieldSpec{WireName: "status_reason"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: InferenceExperiment_TagsFields,
+			Kind:     "list",
+			Fields:   InferenceExperiment_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

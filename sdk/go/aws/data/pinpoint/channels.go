@@ -4,15 +4,15 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Channels_ChannelsResponse_Channels struct {
-	ApplicationId any
-	CreationDate any
-	Enabled any
-	HasCredential any
-	Id any
-	IsArchived any
-	LastModifiedBy any
+	ApplicationId    any
+	CreationDate     any
+	Enabled          any
+	HasCredential    any
+	Id               any
+	IsArchived       any
+	LastModifiedBy   any
 	LastModifiedDate any
-	Version any
+	Version          any
 }
 
 type Channels_ChannelsResponse struct {

@@ -8,85 +8,85 @@ type Commands_Commands_AlarmConfiguration_Alarms struct {
 }
 
 type Commands_Commands_AlarmConfiguration struct {
-	Alarms any
+	Alarms                 any
 	IgnorePollAlarmFailure any
 }
 
 type Commands_Commands_CloudWatchOutputConfig struct {
-	CloudWatchLogGroupName any
+	CloudWatchLogGroupName  any
 	CloudWatchOutputEnabled any
 }
 
 type Commands_Commands_NotificationConfig struct {
-	NotificationArn any
+	NotificationArn    any
 	NotificationEvents any
-	NotificationType any
+	NotificationType   any
 }
 
 type Commands_Commands_Targets struct {
-	Key any
+	Key    any
 	Values any
 }
 
 type Commands_Commands_TriggeredAlarms struct {
-	Name any
+	Name  any
 	State any
 }
 
 type Commands_Commands struct {
-	AlarmConfiguration any
+	AlarmConfiguration     any
 	CloudWatchOutputConfig any
-	CommandId any
-	Comment any
-	CompletedCount any
-	DeliveryTimedOutCount any
-	DocumentName any
-	DocumentVersion any
-	ErrorCount any
-	ExpiresAfter any
-	InstanceIds any
-	MaxConcurrency any
-	MaxErrors any
-	NotificationConfig any
-	OutputS3BucketName any
-	OutputS3KeyPrefix any
-	OutputS3Region any
-	Parameters any
-	RequestedDateTime any
-	ServiceRole any
-	Status any
-	StatusDetails any
-	TargetCount any
-	Targets any
-	TimeoutSeconds any
-	TriggeredAlarms any
+	CommandId              any
+	Comment                any
+	CompletedCount         any
+	DeliveryTimedOutCount  any
+	DocumentName           any
+	DocumentVersion        any
+	ErrorCount             any
+	ExpiresAfter           any
+	InstanceIds            any
+	MaxConcurrency         any
+	MaxErrors              any
+	NotificationConfig     any
+	OutputS3BucketName     any
+	OutputS3KeyPrefix      any
+	OutputS3Region         any
+	Parameters             any
+	RequestedDateTime      any
+	ServiceRole            any
+	Status                 any
+	StatusDetails          any
+	TargetCount            any
+	Targets                any
+	TimeoutSeconds         any
+	TriggeredAlarms        any
 }
 
 type Commands_Filters struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Commands_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CommandsConfig struct {
-	CommandId any
-	Filters any
+	CommandId  any
+	Filters    any
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CommandsAttrs struct {
-	CommandId any
-	Commands any
-	Filters any
+	CommandId  any
+	Commands   any
+	Filters    any
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Commands = ubx.DataSourceBinding{
@@ -95,11 +95,11 @@ var Commands = ubx.DataSourceBinding{
 		"CommandId": ubx.FieldSpec{WireName: "command_id"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Commands_FiltersFields,
+			Kind:     "list",
+			Fields:   Commands_FiltersFields,
 		},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

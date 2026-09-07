@@ -36,38 +36,38 @@ type Framework_FrameworkControls struct {
 }
 
 var Framework_FrameworkControls_ControlInputParametersFields = ubx.FieldMap{
-		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
-		"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
-	}
+	"ParameterName":  ubx.FieldSpec{WireName: "parameter_name"},
+	"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
+}
 
 var Framework_FrameworkControls_ControlScope_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Framework_FrameworkControls_ControlScopeFields = ubx.FieldMap{
-		"ComplianceResourceIds": ubx.FieldSpec{WireName: "compliance_resource_ids"},
-		"ComplianceResourceTypes": ubx.FieldSpec{WireName: "compliance_resource_types"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: Framework_FrameworkControls_ControlScope_TagsFields,
-		},
-	}
+	"ComplianceResourceIds":   ubx.FieldSpec{WireName: "compliance_resource_ids"},
+	"ComplianceResourceTypes": ubx.FieldSpec{WireName: "compliance_resource_types"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   Framework_FrameworkControls_ControlScope_TagsFields,
+	},
+}
 
 var Framework_FrameworkControlsFields = ubx.FieldMap{
-		"ControlInputParameters": ubx.FieldSpec{
-			WireName: "control_input_parameters",
-			Kind: "list",
-			Fields: Framework_FrameworkControls_ControlInputParametersFields,
-		},
-		"ControlName": ubx.FieldSpec{WireName: "control_name"},
-		"ControlScope": ubx.FieldSpec{
-			WireName: "control_scope",
-			Kind: "object",
-			Fields: Framework_FrameworkControls_ControlScopeFields,
-		},
-	}
+	"ControlInputParameters": ubx.FieldSpec{
+		WireName: "control_input_parameters",
+		Kind:     "list",
+		Fields:   Framework_FrameworkControls_ControlInputParametersFields,
+	},
+	"ControlName": ubx.FieldSpec{WireName: "control_name"},
+	"ControlScope": ubx.FieldSpec{
+		WireName: "control_scope",
+		Kind:     "object",
+		Fields:   Framework_FrameworkControls_ControlScopeFields,
+	},
+}
 
 type FrameworkConfig struct {
 	// Contains detailed information about all of the controls of a framework. Each framework must contain at least one control.
@@ -104,15 +104,15 @@ var Framework = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"FrameworkControls": ubx.FieldSpec{
 			WireName: "framework_controls",
-			Kind: "list",
-			Fields: Framework_FrameworkControlsFields,
+			Kind:     "list",
+			Fields:   Framework_FrameworkControlsFields,
 		},
 		"FrameworkDescription": ubx.FieldSpec{WireName: "framework_description"},
-		"FrameworkName": ubx.FieldSpec{WireName: "framework_name"},
+		"FrameworkName":        ubx.FieldSpec{WireName: "framework_name"},
 		"FrameworkTags": ubx.FieldSpec{
 			WireName: "framework_tags",
-			Kind: "list",
-			Fields: Framework_FrameworkControls_ControlScope_TagsFields,
+			Kind:     "list",
+			Fields:   Framework_FrameworkControls_ControlScope_TagsFields,
 		},
 	},
 }

@@ -4,33 +4,33 @@ package discovery_marketplace
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveryMarketplaceOffer_AssociatedEntities_OfferSet_SellerOfRecord struct {
-	DisplayName any
+	DisplayName     any
 	SellerProfileId any
 }
 
 type DiscoveryMarketplaceOffer_AssociatedEntities_OfferSet struct {
-	OfferSetId any
+	OfferSetId     any
 	SellerOfRecord any
 }
 
 type DiscoveryMarketplaceOffer_AssociatedEntities_Product struct {
 	Manufacturer any
-	ProductId any
-	ProductName any
+	ProductId    any
+	ProductName  any
 }
 
 type DiscoveryMarketplaceOffer_AssociatedEntities struct {
 	OfferSet any
-	Product any
+	Product  any
 }
 
 type DiscoveryMarketplaceOffer_Badges struct {
-	BadgeType any
+	BadgeType   any
 	DisplayName any
 }
 
 type DiscoveryMarketplaceOffer_PricingModel struct {
-	DisplayName any
+	DisplayName      any
 	PricingModelType any
 }
 
@@ -40,15 +40,15 @@ type DiscoveryMarketplaceOfferConfig struct {
 
 type DiscoveryMarketplaceOfferAttrs struct {
 	AgreementProposalId any
-	AssociatedEntities any
-	AvailableFromTime any
-	Badges any
-	Catalog any
-	ExpirationTime any
-	OfferId any
-	OfferName any
+	AssociatedEntities  any
+	AvailableFromTime   any
+	Badges              any
+	Catalog             any
+	ExpirationTime      any
+	OfferId             any
+	OfferName           any
 	// <p>A pricing model that determines how buyers are charged for a listing, such as usage-based, contract, BYOL, or free.</p>
-	PricingModel any
+	PricingModel           any
 	ReplacementAgreementId any
 	// <p>Information about a seller, including the profile identifier and display name.</p>
 	SellerOfRecord any

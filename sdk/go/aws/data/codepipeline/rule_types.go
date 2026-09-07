@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuleTypes_RuleTypes_Id struct {
 	Category any
-	Owner any
+	Owner    any
 	Provider any
-	Version any
+	Version  any
 }
 
 type RuleTypes_RuleTypes_InputArtifactDetails struct {
@@ -17,43 +17,43 @@ type RuleTypes_RuleTypes_InputArtifactDetails struct {
 
 type RuleTypes_RuleTypes_RuleConfigurationProperties struct {
 	Description any
-	Key any
-	Name any
-	Queryable any
-	Required any
-	Secret any
-	Type any
+	Key         any
+	Name        any
+	Queryable   any
+	Required    any
+	Secret      any
+	Type        any
 }
 
 type RuleTypes_RuleTypes_Settings struct {
-	EntityUrlTemplate any
-	ExecutionUrlTemplate any
-	RevisionUrlTemplate any
+	EntityUrlTemplate          any
+	ExecutionUrlTemplate       any
+	RevisionUrlTemplate        any
 	ThirdPartyConfigurationUrl any
 }
 
 type RuleTypes_RuleTypes struct {
-	Id any
-	InputArtifactDetails any
+	Id                          any
+	InputArtifactDetails        any
 	RuleConfigurationProperties any
-	Settings any
+	Settings                    any
 }
 
 type RuleTypesConfig struct {
-	RegionFilter any
+	RegionFilter    any
 	RuleOwnerFilter any
 }
 
 type RuleTypesAttrs struct {
-	RegionFilter any
+	RegionFilter    any
 	RuleOwnerFilter any
-	RuleTypes any
+	RuleTypes       any
 }
 
 var RuleTypes = ubx.DataSourceBinding{
 	WireType: "aws_codepipeline_rule_types",
 	Fields: ubx.FieldMap{
-		"RegionFilter": ubx.FieldSpec{WireName: "region_filter"},
+		"RegionFilter":    ubx.FieldSpec{WireName: "region_filter"},
 		"RuleOwnerFilter": ubx.FieldSpec{WireName: "rule_owner_filter"},
 	},
 }

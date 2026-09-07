@@ -5,29 +5,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Database_Database struct {
 	Description any
-	Name any
-	Parameters any
+	Name        any
+	Parameters  any
 }
 
 type DatabaseConfig struct {
-	CatalogName any
+	CatalogName  any
 	DatabaseName any
-	WorkGroup any
+	WorkGroup    any
 }
 
 type DatabaseAttrs struct {
 	CatalogName any
 	// <p>Contains metadata information for a database in a data catalog.</p>
-	Database any
+	Database     any
 	DatabaseName any
-	WorkGroup any
+	WorkGroup    any
 }
 
 var Database = ubx.DataSourceBinding{
 	WireType: "aws_athena_database",
 	Fields: ubx.FieldMap{
-		"CatalogName": ubx.FieldSpec{WireName: "catalog_name"},
+		"CatalogName":  ubx.FieldSpec{WireName: "catalog_name"},
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"WorkGroup": ubx.FieldSpec{WireName: "work_group"},
+		"WorkGroup":    ubx.FieldSpec{WireName: "work_group"},
 	},
 }

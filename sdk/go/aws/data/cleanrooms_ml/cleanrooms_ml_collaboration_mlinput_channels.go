@@ -4,42 +4,42 @@ package cleanrooms_ml
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CleanroomsMlCollaborationMlinputChannels_CollaborationMlinputChannelsList_PayerConfiguration struct {
-	ComputePayerAccountId any
+	ComputePayerAccountId       any
 	SyntheticDataPayerAccountId any
 }
 
 type CleanroomsMlCollaborationMlinputChannels_CollaborationMlinputChannelsList struct {
-	CollaborationIdentifier any
+	CollaborationIdentifier              any
 	ConfiguredModelAlgorithmAssociations any
-	CreateTime any
-	CreatorAccountId any
-	Description any
-	MembershipIdentifier any
-	MlInputChannelArn any
-	Name any
-	PayerConfiguration any
-	Status any
-	UpdateTime any
+	CreateTime                           any
+	CreatorAccountId                     any
+	Description                          any
+	MembershipIdentifier                 any
+	MlInputChannelArn                    any
+	Name                                 any
+	PayerConfiguration                   any
+	Status                               any
+	UpdateTime                           any
 }
 
 type CleanroomsMlCollaborationMlinputChannelsConfig struct {
 	CollaborationIdentifier any
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 }
 
 type CleanroomsMlCollaborationMlinputChannelsAttrs struct {
-	CollaborationIdentifier any
+	CollaborationIdentifier          any
 	CollaborationMlinputChannelsList any
-	MaxResults any
-	NextToken any
+	MaxResults                       any
+	NextToken                        any
 }
 
 var CleanroomsMlCollaborationMlinputChannels = ubx.DataSourceBinding{
 	WireType: "aws_cleanrooms_ml_collaboration_mlinput_channels",
 	Fields: ubx.FieldMap{
 		"CollaborationIdentifier": ubx.FieldSpec{WireName: "collaboration_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BucketEncryption_ServerSideEncryptionConfiguration_Rules_ApplyServerSideEncryptionByDefault struct {
 	KmsmasterKeyId any
-	Ssealgorithm any
+	Ssealgorithm   any
 }
 
 type BucketEncryption_ServerSideEncryptionConfiguration_Rules_BlockedEncryptionTypes struct {
@@ -14,8 +14,8 @@ type BucketEncryption_ServerSideEncryptionConfiguration_Rules_BlockedEncryptionT
 
 type BucketEncryption_ServerSideEncryptionConfiguration_Rules struct {
 	ApplyServerSideEncryptionByDefault any
-	BlockedEncryptionTypes any
-	BucketKeyEnabled any
+	BlockedEncryptionTypes             any
+	BucketKeyEnabled                   any
 }
 
 type BucketEncryption_ServerSideEncryptionConfiguration struct {
@@ -23,12 +23,12 @@ type BucketEncryption_ServerSideEncryptionConfiguration struct {
 }
 
 type BucketEncryptionConfig struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 }
 
 type BucketEncryptionAttrs struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 	// <p>Specifies the default server-side-encryption configuration.</p>
 	ServerSideEncryptionConfiguration any
@@ -37,7 +37,7 @@ type BucketEncryptionAttrs struct {
 var BucketEncryption = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_encryption",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
 	},
 }

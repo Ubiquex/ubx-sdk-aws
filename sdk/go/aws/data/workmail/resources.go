@@ -4,43 +4,43 @@ package workmail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Resources_Filters struct {
-	NamePrefix any
+	NamePrefix         any
 	PrimaryEmailPrefix any
-	State any
+	State              any
 }
 
 type Resources_Resources struct {
-	Description any
+	Description  any
 	DisabledDate any
-	Email any
-	EnabledDate any
-	Id any
-	Name any
-	State any
-	Type any
+	Email        any
+	EnabledDate  any
+	Id           any
+	Name         any
+	State        any
+	Type         any
 }
 
 var Resources_FiltersFields = ubx.FieldMap{
-		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-		"PrimaryEmailPrefix": ubx.FieldSpec{WireName: "primary_email_prefix"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"NamePrefix":         ubx.FieldSpec{WireName: "name_prefix"},
+	"PrimaryEmailPrefix": ubx.FieldSpec{WireName: "primary_email_prefix"},
+	"State":              ubx.FieldSpec{WireName: "state"},
+}
 
 type ResourcesConfig struct {
 	// <p>Filtering options for <i>ListResources</i> operation. This is only used as input to Operation.</p>
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters        any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
 }
 
 type ResourcesAttrs struct {
 	// <p>Filtering options for <i>ListResources</i> operation. This is only used as input to Operation.</p>
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters        any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
-	Resources any
+	Resources      any
 }
 
 var Resources = ubx.DataSourceBinding{
@@ -48,11 +48,11 @@ var Resources = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: Resources_FiltersFields,
+			Kind:     "object",
+			Fields:   Resources_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
 	},
 }

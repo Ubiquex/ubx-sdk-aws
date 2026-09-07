@@ -4,26 +4,26 @@ package api_detective
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiDetectiveOrganizationAdminAccounts_Administrators struct {
-	AccountId any
+	AccountId      any
 	DelegationTime any
-	GraphArn any
+	GraphArn       any
 }
 
 type ApiDetectiveOrganizationAdminAccountsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApiDetectiveOrganizationAdminAccountsAttrs struct {
 	Administrators any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 var ApiDetectiveOrganizationAdminAccounts = ubx.DataSourceBinding{
 	WireType: "aws_api_detective_organization_admin_accounts",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

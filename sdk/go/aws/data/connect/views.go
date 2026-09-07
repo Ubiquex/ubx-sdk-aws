@@ -4,26 +4,26 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Views_ViewsSummaryList struct {
-	Arn any
+	Arn         any
 	Description any
-	Id any
-	Name any
-	Status any
-	Type any
+	Id          any
+	Name        any
+	Status      any
+	Type        any
 }
 
 type ViewsConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
-	Type any
+	NextToken  any
+	Type       any
 }
 
 type ViewsAttrs struct {
-	InstanceId any
-	MaxResults any
-	NextToken any
-	Type any
+	InstanceId       any
+	MaxResults       any
+	NextToken        any
+	Type             any
 	ViewsSummaryList any
 }
 
@@ -32,7 +32,7 @@ var Views = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Type":       ubx.FieldSpec{WireName: "type"},
 	},
 }

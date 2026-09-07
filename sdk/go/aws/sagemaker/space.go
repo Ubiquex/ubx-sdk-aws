@@ -51,7 +51,7 @@ type Space_SpaceSettings_CustomFileSystems struct {
 	EfsfileSystem any
 	// Specifies the FSx for Lustre file system configuration to attach to the SageMaker Space's custom file systems, identifying the file system by its unique ID. (AI-inferred)
 	FsxLustreFileSystem any
-	S3FileSystem any
+	S3FileSystem        any
 }
 
 type Space_SpaceSettings_JupyterLabAppSettings_CodeRepositories struct {
@@ -137,174 +137,174 @@ type Space_Tags struct {
 }
 
 var Space_OwnershipSettingsFields = ubx.FieldMap{
-		"OwnerUserProfileName": ubx.FieldSpec{WireName: "owner_user_profile_name"},
-	}
+	"OwnerUserProfileName": ubx.FieldSpec{WireName: "owner_user_profile_name"},
+}
 
 var Space_SpaceSettings_CodeEditorAppSettings_AppLifecycleManagement_IdleSettingsFields = ubx.FieldMap{
-		"IdleTimeoutInMinutes": ubx.FieldSpec{WireName: "idle_timeout_in_minutes"},
-	}
+	"IdleTimeoutInMinutes": ubx.FieldSpec{WireName: "idle_timeout_in_minutes"},
+}
 
 var Space_SpaceSettings_CodeEditorAppSettings_AppLifecycleManagementFields = ubx.FieldMap{
-		"IdleSettings": ubx.FieldSpec{
-			WireName: "idle_settings",
-			Kind: "object",
-			Fields: Space_SpaceSettings_CodeEditorAppSettings_AppLifecycleManagement_IdleSettingsFields,
-		},
-	}
+	"IdleSettings": ubx.FieldSpec{
+		WireName: "idle_settings",
+		Kind:     "object",
+		Fields:   Space_SpaceSettings_CodeEditorAppSettings_AppLifecycleManagement_IdleSettingsFields,
+	},
+}
 
 var Space_SpaceSettings_CodeEditorAppSettings_DefaultResourceSpecFields = ubx.FieldMap{
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"LifecycleConfigArn": ubx.FieldSpec{WireName: "lifecycle_config_arn"},
-		"SageMakerImageArn": ubx.FieldSpec{WireName: "sage_maker_image_arn"},
-		"SageMakerImageVersionArn": ubx.FieldSpec{WireName: "sage_maker_image_version_arn"},
-	}
+	"InstanceType":             ubx.FieldSpec{WireName: "instance_type"},
+	"LifecycleConfigArn":       ubx.FieldSpec{WireName: "lifecycle_config_arn"},
+	"SageMakerImageArn":        ubx.FieldSpec{WireName: "sage_maker_image_arn"},
+	"SageMakerImageVersionArn": ubx.FieldSpec{WireName: "sage_maker_image_version_arn"},
+}
 
 var Space_SpaceSettings_CodeEditorAppSettingsFields = ubx.FieldMap{
-		"AppLifecycleManagement": ubx.FieldSpec{
-			WireName: "app_lifecycle_management",
-			Kind: "object",
-			Fields: Space_SpaceSettings_CodeEditorAppSettings_AppLifecycleManagementFields,
-		},
-		"DefaultResourceSpec": ubx.FieldSpec{
-			WireName: "default_resource_spec",
-			Kind: "object",
-			Fields: Space_SpaceSettings_CodeEditorAppSettings_DefaultResourceSpecFields,
-		},
-	}
+	"AppLifecycleManagement": ubx.FieldSpec{
+		WireName: "app_lifecycle_management",
+		Kind:     "object",
+		Fields:   Space_SpaceSettings_CodeEditorAppSettings_AppLifecycleManagementFields,
+	},
+	"DefaultResourceSpec": ubx.FieldSpec{
+		WireName: "default_resource_spec",
+		Kind:     "object",
+		Fields:   Space_SpaceSettings_CodeEditorAppSettings_DefaultResourceSpecFields,
+	},
+}
 
 var Space_SpaceSettings_CustomFileSystems_EfsfileSystemFields = ubx.FieldMap{
-		"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
-	}
+	"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
+}
 
 var Space_SpaceSettings_CustomFileSystems_S3FileSystemFields = ubx.FieldMap{
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var Space_SpaceSettings_CustomFileSystemsFields = ubx.FieldMap{
-		"EfsfileSystem": ubx.FieldSpec{
-			WireName: "efsfile_system",
-			Kind: "object",
-			Fields: Space_SpaceSettings_CustomFileSystems_EfsfileSystemFields,
-		},
-		"FsxLustreFileSystem": ubx.FieldSpec{
-			WireName: "fsx_lustre_file_system",
-			Kind: "object",
-			Fields: Space_SpaceSettings_CustomFileSystems_EfsfileSystemFields,
-		},
-		"S3FileSystem": ubx.FieldSpec{
-			WireName: "s3_file_system",
-			Kind: "object",
-			Fields: Space_SpaceSettings_CustomFileSystems_S3FileSystemFields,
-		},
-	}
+	"EfsfileSystem": ubx.FieldSpec{
+		WireName: "efsfile_system",
+		Kind:     "object",
+		Fields:   Space_SpaceSettings_CustomFileSystems_EfsfileSystemFields,
+	},
+	"FsxLustreFileSystem": ubx.FieldSpec{
+		WireName: "fsx_lustre_file_system",
+		Kind:     "object",
+		Fields:   Space_SpaceSettings_CustomFileSystems_EfsfileSystemFields,
+	},
+	"S3FileSystem": ubx.FieldSpec{
+		WireName: "s3_file_system",
+		Kind:     "object",
+		Fields:   Space_SpaceSettings_CustomFileSystems_S3FileSystemFields,
+	},
+}
 
 var Space_SpaceSettings_JupyterLabAppSettings_CodeRepositoriesFields = ubx.FieldMap{
-		"RepositoryUrl": ubx.FieldSpec{WireName: "repository_url"},
-	}
+	"RepositoryUrl": ubx.FieldSpec{WireName: "repository_url"},
+}
 
 var Space_SpaceSettings_JupyterLabAppSettingsFields = ubx.FieldMap{
-		"AppLifecycleManagement": ubx.FieldSpec{
-			WireName: "app_lifecycle_management",
-			Kind: "object",
-			Fields: Space_SpaceSettings_CodeEditorAppSettings_AppLifecycleManagementFields,
-		},
-		"CodeRepositories": ubx.FieldSpec{
-			WireName: "code_repositories",
-			Kind: "list",
-			Fields: Space_SpaceSettings_JupyterLabAppSettings_CodeRepositoriesFields,
-		},
-		"DefaultResourceSpec": ubx.FieldSpec{
-			WireName: "default_resource_spec",
-			Kind: "object",
-			Fields: Space_SpaceSettings_CodeEditorAppSettings_DefaultResourceSpecFields,
-		},
-	}
+	"AppLifecycleManagement": ubx.FieldSpec{
+		WireName: "app_lifecycle_management",
+		Kind:     "object",
+		Fields:   Space_SpaceSettings_CodeEditorAppSettings_AppLifecycleManagementFields,
+	},
+	"CodeRepositories": ubx.FieldSpec{
+		WireName: "code_repositories",
+		Kind:     "list",
+		Fields:   Space_SpaceSettings_JupyterLabAppSettings_CodeRepositoriesFields,
+	},
+	"DefaultResourceSpec": ubx.FieldSpec{
+		WireName: "default_resource_spec",
+		Kind:     "object",
+		Fields:   Space_SpaceSettings_CodeEditorAppSettings_DefaultResourceSpecFields,
+	},
+}
 
 var Space_SpaceSettings_JupyterServerAppSettingsFields = ubx.FieldMap{
-		"DefaultResourceSpec": ubx.FieldSpec{
-			WireName: "default_resource_spec",
-			Kind: "object",
-			Fields: Space_SpaceSettings_CodeEditorAppSettings_DefaultResourceSpecFields,
-		},
-		"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
-	}
+	"DefaultResourceSpec": ubx.FieldSpec{
+		WireName: "default_resource_spec",
+		Kind:     "object",
+		Fields:   Space_SpaceSettings_CodeEditorAppSettings_DefaultResourceSpecFields,
+	},
+	"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
+}
 
 var Space_SpaceSettings_KernelGatewayAppSettings_CustomImagesFields = ubx.FieldMap{
-		"AppImageConfigName": ubx.FieldSpec{WireName: "app_image_config_name"},
-		"ImageName": ubx.FieldSpec{WireName: "image_name"},
-		"ImageVersionNumber": ubx.FieldSpec{WireName: "image_version_number"},
-	}
+	"AppImageConfigName": ubx.FieldSpec{WireName: "app_image_config_name"},
+	"ImageName":          ubx.FieldSpec{WireName: "image_name"},
+	"ImageVersionNumber": ubx.FieldSpec{WireName: "image_version_number"},
+}
 
 var Space_SpaceSettings_KernelGatewayAppSettingsFields = ubx.FieldMap{
-		"CustomImages": ubx.FieldSpec{
-			WireName: "custom_images",
-			Kind: "list",
-			Fields: Space_SpaceSettings_KernelGatewayAppSettings_CustomImagesFields,
-		},
-		"DefaultResourceSpec": ubx.FieldSpec{
-			WireName: "default_resource_spec",
-			Kind: "object",
-			Fields: Space_SpaceSettings_CodeEditorAppSettings_DefaultResourceSpecFields,
-		},
-		"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
-	}
+	"CustomImages": ubx.FieldSpec{
+		WireName: "custom_images",
+		Kind:     "list",
+		Fields:   Space_SpaceSettings_KernelGatewayAppSettings_CustomImagesFields,
+	},
+	"DefaultResourceSpec": ubx.FieldSpec{
+		WireName: "default_resource_spec",
+		Kind:     "object",
+		Fields:   Space_SpaceSettings_CodeEditorAppSettings_DefaultResourceSpecFields,
+	},
+	"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
+}
 
 var Space_SpaceSettings_SpaceStorageSettings_EbsStorageSettingsFields = ubx.FieldMap{
-		"EbsVolumeSizeInGb": ubx.FieldSpec{WireName: "ebs_volume_size_in_gb"},
-	}
+	"EbsVolumeSizeInGb": ubx.FieldSpec{WireName: "ebs_volume_size_in_gb"},
+}
 
 var Space_SpaceSettings_SpaceStorageSettingsFields = ubx.FieldMap{
-		"EbsStorageSettings": ubx.FieldSpec{
-			WireName: "ebs_storage_settings",
-			Kind: "object",
-			Fields: Space_SpaceSettings_SpaceStorageSettings_EbsStorageSettingsFields,
-		},
-	}
+	"EbsStorageSettings": ubx.FieldSpec{
+		WireName: "ebs_storage_settings",
+		Kind:     "object",
+		Fields:   Space_SpaceSettings_SpaceStorageSettings_EbsStorageSettingsFields,
+	},
+}
 
 var Space_SpaceSettingsFields = ubx.FieldMap{
-		"AppType": ubx.FieldSpec{WireName: "app_type"},
-		"CodeEditorAppSettings": ubx.FieldSpec{
-			WireName: "code_editor_app_settings",
-			Kind: "object",
-			Fields: Space_SpaceSettings_CodeEditorAppSettingsFields,
-		},
-		"CustomFileSystems": ubx.FieldSpec{
-			WireName: "custom_file_systems",
-			Kind: "list",
-			Fields: Space_SpaceSettings_CustomFileSystemsFields,
-		},
-		"JupyterLabAppSettings": ubx.FieldSpec{
-			WireName: "jupyter_lab_app_settings",
-			Kind: "object",
-			Fields: Space_SpaceSettings_JupyterLabAppSettingsFields,
-		},
-		"JupyterServerAppSettings": ubx.FieldSpec{
-			WireName: "jupyter_server_app_settings",
-			Kind: "object",
-			Fields: Space_SpaceSettings_JupyterServerAppSettingsFields,
-		},
-		"KernelGatewayAppSettings": ubx.FieldSpec{
-			WireName: "kernel_gateway_app_settings",
-			Kind: "object",
-			Fields: Space_SpaceSettings_KernelGatewayAppSettingsFields,
-		},
-		"RemoteAccess": ubx.FieldSpec{WireName: "remote_access"},
-		"SpaceManagedResources": ubx.FieldSpec{WireName: "space_managed_resources"},
-		"SpaceStorageSettings": ubx.FieldSpec{
-			WireName: "space_storage_settings",
-			Kind: "object",
-			Fields: Space_SpaceSettings_SpaceStorageSettingsFields,
-		},
-	}
+	"AppType": ubx.FieldSpec{WireName: "app_type"},
+	"CodeEditorAppSettings": ubx.FieldSpec{
+		WireName: "code_editor_app_settings",
+		Kind:     "object",
+		Fields:   Space_SpaceSettings_CodeEditorAppSettingsFields,
+	},
+	"CustomFileSystems": ubx.FieldSpec{
+		WireName: "custom_file_systems",
+		Kind:     "list",
+		Fields:   Space_SpaceSettings_CustomFileSystemsFields,
+	},
+	"JupyterLabAppSettings": ubx.FieldSpec{
+		WireName: "jupyter_lab_app_settings",
+		Kind:     "object",
+		Fields:   Space_SpaceSettings_JupyterLabAppSettingsFields,
+	},
+	"JupyterServerAppSettings": ubx.FieldSpec{
+		WireName: "jupyter_server_app_settings",
+		Kind:     "object",
+		Fields:   Space_SpaceSettings_JupyterServerAppSettingsFields,
+	},
+	"KernelGatewayAppSettings": ubx.FieldSpec{
+		WireName: "kernel_gateway_app_settings",
+		Kind:     "object",
+		Fields:   Space_SpaceSettings_KernelGatewayAppSettingsFields,
+	},
+	"RemoteAccess":          ubx.FieldSpec{WireName: "remote_access"},
+	"SpaceManagedResources": ubx.FieldSpec{WireName: "space_managed_resources"},
+	"SpaceStorageSettings": ubx.FieldSpec{
+		WireName: "space_storage_settings",
+		Kind:     "object",
+		Fields:   Space_SpaceSettings_SpaceStorageSettingsFields,
+	},
+}
 
 var Space_SpaceSharingSettingsFields = ubx.FieldMap{
-		"SharingType": ubx.FieldSpec{WireName: "sharing_type"},
-	}
+	"SharingType": ubx.FieldSpec{WireName: "sharing_type"},
+}
 
 var Space_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SpaceConfig struct {
 	// The ID of the associated Domain.
@@ -350,25 +350,25 @@ var Space = ubx.ResourceBinding{
 		"DomainId": ubx.FieldSpec{WireName: "domain_id"},
 		"OwnershipSettings": ubx.FieldSpec{
 			WireName: "ownership_settings",
-			Kind: "object",
-			Fields: Space_OwnershipSettingsFields,
+			Kind:     "object",
+			Fields:   Space_OwnershipSettingsFields,
 		},
 		"SpaceDisplayName": ubx.FieldSpec{WireName: "space_display_name"},
-		"SpaceName": ubx.FieldSpec{WireName: "space_name"},
+		"SpaceName":        ubx.FieldSpec{WireName: "space_name"},
 		"SpaceSettings": ubx.FieldSpec{
 			WireName: "space_settings",
-			Kind: "object",
-			Fields: Space_SpaceSettingsFields,
+			Kind:     "object",
+			Fields:   Space_SpaceSettingsFields,
 		},
 		"SpaceSharingSettings": ubx.FieldSpec{
 			WireName: "space_sharing_settings",
-			Kind: "object",
-			Fields: Space_SpaceSharingSettingsFields,
+			Kind:     "object",
+			Fields:   Space_SpaceSharingSettingsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Space_TagsFields,
+			Kind:     "list",
+			Fields:   Space_TagsFields,
 		},
 	},
 }

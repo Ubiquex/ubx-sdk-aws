@@ -8,21 +8,21 @@ type BrokerEngineTypes_BrokerEngineTypes_EngineVersions struct {
 }
 
 type BrokerEngineTypes_BrokerEngineTypes struct {
-	EngineType any
+	EngineType     any
 	EngineVersions any
 }
 
 type BrokerEngineTypesConfig struct {
 	EngineType any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type BrokerEngineTypesAttrs struct {
 	BrokerEngineTypes any
-	EngineType any
-	MaxResults any
-	NextToken any
+	EngineType        any
+	MaxResults        any
+	NextToken         any
 }
 
 var BrokerEngineTypes = ubx.DataSourceBinding{
@@ -30,6 +30,6 @@ var BrokerEngineTypes = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"EngineType": ubx.FieldSpec{WireName: "engine_type"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

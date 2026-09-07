@@ -4,13 +4,13 @@ package databrew
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Job_DataCatalogOutputs_DatabaseOptions_TempDirectory struct {
-	Bucket any
+	Bucket      any
 	BucketOwner any
-	Key any
+	Key         any
 }
 
 type Job_DataCatalogOutputs_DatabaseOptions struct {
-	TableName any
+	TableName     any
 	TempDirectory any
 }
 
@@ -19,16 +19,16 @@ type Job_DataCatalogOutputs_S3Options struct {
 }
 
 type Job_DataCatalogOutputs struct {
-	CatalogId any
-	DatabaseName any
+	CatalogId       any
+	DatabaseName    any
 	DatabaseOptions any
-	Overwrite any
-	S3Options any
-	TableName any
+	Overwrite       any
+	S3Options       any
+	TableName       any
 }
 
 type Job_DatabaseOutputs struct {
-	DatabaseOptions any
+	DatabaseOptions    any
 	DatabaseOutputMode any
 	GlueConnectionName any
 }
@@ -48,31 +48,31 @@ type Job_Outputs_FormatOptions struct {
 
 type Job_Outputs struct {
 	CompressionFormat any
-	Format any
-	FormatOptions any
-	Location any
-	MaxOutputFiles any
-	Overwrite any
-	PartitionColumns any
+	Format            any
+	FormatOptions     any
+	Location          any
+	MaxOutputFiles    any
+	Overwrite         any
+	PartitionColumns  any
 }
 
 type Job_ProfileConfiguration_ColumnStatisticsConfigurations_Selectors struct {
-	Name any
+	Name  any
 	Regex any
 }
 
 type Job_ProfileConfiguration_ColumnStatisticsConfigurations_Statistics_Overrides struct {
 	Parameters any
-	Statistic any
+	Statistic  any
 }
 
 type Job_ProfileConfiguration_ColumnStatisticsConfigurations_Statistics struct {
 	IncludedStatistics any
-	Overrides any
+	Overrides          any
 }
 
 type Job_ProfileConfiguration_ColumnStatisticsConfigurations struct {
-	Selectors any
+	Selectors  any
 	Statistics any
 }
 
@@ -82,7 +82,7 @@ type Job_ProfileConfiguration_EntityDetectorConfiguration_AllowedStatistics stru
 
 type Job_ProfileConfiguration_EntityDetectorConfiguration struct {
 	AllowedStatistics any
-	EntityTypes any
+	EntityTypes       any
 }
 
 type Job_ProfileConfiguration struct {
@@ -91,16 +91,16 @@ type Job_ProfileConfiguration struct {
 	DatasetStatisticsConfiguration any
 	// <p>Configuration of entity detection for a profile job. When undefined, entity detection is disabled.</p>
 	EntityDetectorConfiguration any
-	ProfileColumns any
+	ProfileColumns              any
 }
 
 type Job_RecipeReference struct {
-	Name any
+	Name          any
 	RecipeVersion any
 }
 
 type Job_ValidationConfigurations struct {
-	RulesetArn any
+	RulesetArn     any
 	ValidationMode any
 }
 
@@ -109,32 +109,32 @@ type JobConfig struct {
 }
 
 type JobAttrs struct {
-	CreateDate any
-	CreatedBy any
+	CreateDate         any
+	CreatedBy          any
 	DataCatalogOutputs any
-	DatabaseOutputs any
-	DatasetName any
-	EncryptionKeyArn any
-	EncryptionMode any
+	DatabaseOutputs    any
+	DatasetName        any
+	EncryptionKeyArn   any
+	EncryptionMode     any
 	// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
-	JobSample any
-	LastModifiedBy any
+	JobSample        any
+	LastModifiedBy   any
 	LastModifiedDate any
-	LogSubscription any
-	MaxCapacity any
-	MaxRetries any
-	Name any
-	Outputs any
+	LogSubscription  any
+	MaxCapacity      any
+	MaxRetries       any
+	Name             any
+	Outputs          any
 	// <p>Configuration for profile jobs. Configuration can be used to select columns, do evaluations, and override default parameters of evaluations. When configuration is undefined, the profile job will apply default settings to all supported columns. </p>
 	ProfileConfiguration any
-	ProjectName any
+	ProjectName          any
 	// <p>Represents the name and version of a DataBrew recipe.</p>
-	RecipeReference any
-	ResourceArn any
-	RoleArn any
-	Tags any
-	Timeout any
-	Type any
+	RecipeReference          any
+	ResourceArn              any
+	RoleArn                  any
+	Tags                     any
+	Timeout                  any
+	Type                     any
 	ValidationConfigurations any
 }
 

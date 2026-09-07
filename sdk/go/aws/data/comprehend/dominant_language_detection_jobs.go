@@ -5,68 +5,68 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DominantLanguageDetectionJobs_DominantLanguageDetectionJobPropertiesList_InputDataConfig_DocumentReaderConfig struct {
 	DocumentReadAction any
-	DocumentReadMode any
-	FeatureTypes any
+	DocumentReadMode   any
+	FeatureTypes       any
 }
 
 type DominantLanguageDetectionJobs_DominantLanguageDetectionJobPropertiesList_InputDataConfig struct {
 	DocumentReaderConfig any
-	InputFormat any
-	S3Uri any
+	InputFormat          any
+	S3Uri                any
 }
 
 type DominantLanguageDetectionJobs_DominantLanguageDetectionJobPropertiesList_OutputDataConfig struct {
 	KmsKeyId any
-	S3Uri any
+	S3Uri    any
 }
 
 type DominantLanguageDetectionJobs_DominantLanguageDetectionJobPropertiesList_VpcConfig struct {
 	SecurityGroupIds any
-	Subnets any
+	Subnets          any
 }
 
 type DominantLanguageDetectionJobs_DominantLanguageDetectionJobPropertiesList struct {
 	DataAccessRoleArn any
-	EndTime any
-	InputDataConfig any
-	JobArn any
-	JobId any
-	JobName any
-	JobStatus any
-	Message any
-	OutputDataConfig any
-	SubmitTime any
-	VolumeKmsKeyId any
-	VpcConfig any
+	EndTime           any
+	InputDataConfig   any
+	JobArn            any
+	JobId             any
+	JobName           any
+	JobStatus         any
+	Message           any
+	OutputDataConfig  any
+	SubmitTime        any
+	VolumeKmsKeyId    any
+	VpcConfig         any
 }
 
 type DominantLanguageDetectionJobs_Filter struct {
-	JobName any
-	JobStatus any
-	SubmitTimeAfter any
+	JobName          any
+	JobStatus        any
+	SubmitTimeAfter  any
 	SubmitTimeBefore any
 }
 
 var DominantLanguageDetectionJobs_FilterFields = ubx.FieldMap{
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"JobStatus": ubx.FieldSpec{WireName: "job_status"},
-		"SubmitTimeAfter": ubx.FieldSpec{WireName: "submit_time_after"},
-		"SubmitTimeBefore": ubx.FieldSpec{WireName: "submit_time_before"},
-	}
+	"JobName":          ubx.FieldSpec{WireName: "job_name"},
+	"JobStatus":        ubx.FieldSpec{WireName: "job_status"},
+	"SubmitTimeAfter":  ubx.FieldSpec{WireName: "submit_time_after"},
+	"SubmitTimeBefore": ubx.FieldSpec{WireName: "submit_time_before"},
+}
 
 type DominantLanguageDetectionJobsConfig struct {
 	// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DominantLanguageDetectionJobsAttrs struct {
 	DominantLanguageDetectionJobPropertiesList any
 	// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var DominantLanguageDetectionJobs = ubx.DataSourceBinding{
@@ -74,10 +74,10 @@ var DominantLanguageDetectionJobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: DominantLanguageDetectionJobs_FilterFields,
+			Kind:     "object",
+			Fields:   DominantLanguageDetectionJobs_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -34,10 +34,10 @@ type ResourceAttrs struct {
 var Resource = ubx.ResourceBinding{
 	WireType: "aws_lake_formation_resource",
 	Fields: ubx.FieldMap{
-		"HybridAccessEnabled": ubx.FieldSpec{WireName: "hybrid_access_enabled"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"HybridAccessEnabled":  ubx.FieldSpec{WireName: "hybrid_access_enabled"},
+		"ResourceArn":          ubx.FieldSpec{WireName: "resource_arn"},
+		"RoleArn":              ubx.FieldSpec{WireName: "role_arn"},
 		"UseServiceLinkedRole": ubx.FieldSpec{WireName: "use_service_linked_role"},
-		"WithFederation": ubx.FieldSpec{WireName: "with_federation"},
+		"WithFederation":       ubx.FieldSpec{WireName: "with_federation"},
 	},
 }

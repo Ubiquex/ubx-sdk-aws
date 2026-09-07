@@ -5,11 +5,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SegmentVersion_SegmentResponse_Dimensions_Attributes struct {
 	AttributeType any
-	Values any
+	Values        any
 }
 
 type SegmentVersion_SegmentResponse_Dimensions_Behavior_Recency struct {
-	Duration any
+	Duration    any
 	RecencyType any
 }
 
@@ -20,7 +20,7 @@ type SegmentVersion_SegmentResponse_Dimensions_Behavior struct {
 
 type SegmentVersion_SegmentResponse_Dimensions_Demographic_AppVersion struct {
 	DimensionType any
-	Values any
+	Values        any
 }
 
 type SegmentVersion_SegmentResponse_Dimensions_Demographic struct {
@@ -39,13 +39,13 @@ type SegmentVersion_SegmentResponse_Dimensions_Demographic struct {
 }
 
 type SegmentVersion_SegmentResponse_Dimensions_Location_Gpspoint_Coordinates struct {
-	Latitude any
+	Latitude  any
 	Longitude any
 }
 
 type SegmentVersion_SegmentResponse_Dimensions_Location_Gpspoint struct {
 	// <p>Specifies the GPS coordinates of a location.</p>
-	Coordinates any
+	Coordinates       any
 	RangeInKilometers any
 }
 
@@ -58,7 +58,7 @@ type SegmentVersion_SegmentResponse_Dimensions_Location struct {
 
 type SegmentVersion_SegmentResponse_Dimensions_Metrics struct {
 	ComparisonOperator any
-	Value any
+	Value              any
 }
 
 type SegmentVersion_SegmentResponse_Dimensions struct {
@@ -68,74 +68,74 @@ type SegmentVersion_SegmentResponse_Dimensions struct {
 	// <p>Specifies demographic-based dimension settings for including or excluding endpoints from a segment. These settings derive from characteristics of endpoint devices, such as platform, make, and model.</p>
 	Demographic any
 	// <p>Specifies geographical dimension settings for a segment.</p>
-	Location any
-	Metrics any
+	Location       any
+	Metrics        any
 	UserAttributes any
 }
 
 type SegmentVersion_SegmentResponse_ImportDefinition struct {
 	ChannelCounts any
-	ExternalId any
-	Format any
-	RoleArn any
-	S3Url any
-	Size any
+	ExternalId    any
+	Format        any
+	RoleArn       any
+	S3Url         any
+	Size          any
 }
 
 type SegmentVersion_SegmentResponse_SegmentGroups_Groups_SourceSegments struct {
-	Id any
+	Id      any
 	Version any
 }
 
 type SegmentVersion_SegmentResponse_SegmentGroups_Groups struct {
-	Dimensions any
+	Dimensions     any
 	SourceSegments any
-	SourceType any
-	Type any
+	SourceType     any
+	Type           any
 }
 
 type SegmentVersion_SegmentResponse_SegmentGroups struct {
-	Groups any
+	Groups  any
 	Include any
 }
 
 type SegmentVersion_SegmentResponse struct {
 	ApplicationId any
-	Arn any
-	CreationDate any
+	Arn           any
+	CreationDate  any
 	// <p>Specifies the dimension settings for a segment.</p>
 	Dimensions any
-	Id any
+	Id         any
 	// <p>Provides information about the import job that created a segment. An import job is a job that creates a user segment by importing endpoint definitions.</p>
 	ImportDefinition any
 	LastModifiedDate any
-	Name any
+	Name             any
 	// <p>Specifies the settings that define the relationships between segment groups for a segment.</p>
 	SegmentGroups any
-	SegmentType any
-	Tags any
-	Version any
+	SegmentType   any
+	Tags          any
+	Version       any
 }
 
 type SegmentVersionConfig struct {
 	ApplicationId any
-	SegmentId any
-	Version any
+	SegmentId     any
+	Version       any
 }
 
 type SegmentVersionAttrs struct {
 	ApplicationId any
-	SegmentId any
+	SegmentId     any
 	// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
 	SegmentResponse any
-	Version any
+	Version         any
 }
 
 var SegmentVersion = ubx.DataSourceBinding{
 	WireType: "aws_pinpoint_segment_version",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"SegmentId": ubx.FieldSpec{WireName: "segment_id"},
-		"Version": ubx.FieldSpec{WireName: "version"},
+		"SegmentId":     ubx.FieldSpec{WireName: "segment_id"},
+		"Version":       ubx.FieldSpec{WireName: "version"},
 	},
 }

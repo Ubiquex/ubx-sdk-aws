@@ -4,9 +4,9 @@ package bcm_recommended_actions
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BcmRecommendedActionsRecommendedActions_Filter_Actions struct {
-	Key any
+	Key         any
 	MatchOption any
-	Values any
+	Values      any
 }
 
 type BcmRecommendedActionsRecommendedActions_Filter struct {
@@ -14,42 +14,42 @@ type BcmRecommendedActionsRecommendedActions_Filter struct {
 }
 
 type BcmRecommendedActionsRecommendedActions_RecommendedActions struct {
-	AccountId any
-	Context any
-	Feature any
-	Id any
+	AccountId            any
+	Context              any
+	Feature              any
+	Id                   any
 	LastUpdatedTimeStamp any
-	NextSteps any
-	Severity any
-	Type any
+	NextSteps            any
+	Severity             any
+	Type                 any
 }
 
 var BcmRecommendedActionsRecommendedActions_Filter_ActionsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"MatchOption": ubx.FieldSpec{WireName: "match_option"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":         ubx.FieldSpec{WireName: "key"},
+	"MatchOption": ubx.FieldSpec{WireName: "match_option"},
+	"Values":      ubx.FieldSpec{WireName: "values"},
+}
 
 var BcmRecommendedActionsRecommendedActions_FilterFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: BcmRecommendedActionsRecommendedActions_Filter_ActionsFields,
-		},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   BcmRecommendedActionsRecommendedActions_Filter_ActionsFields,
+	},
+}
 
 type BcmRecommendedActionsRecommendedActionsConfig struct {
 	// <p>Enables filtering of results based on specified action criteria. You can define multiple action filters to refine results using combinations of feature type, severity level, and recommendation type.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type BcmRecommendedActionsRecommendedActionsAttrs struct {
 	// <p>Enables filtering of results based on specified action criteria. You can define multiple action filters to refine results using combinations of feature type, severity level, and recommendation type.</p>
-	Filter any
-	MaxResults any
-	NextToken any
+	Filter             any
+	MaxResults         any
+	NextToken          any
 	RecommendedActions any
 }
 
@@ -58,10 +58,10 @@ var BcmRecommendedActionsRecommendedActions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: BcmRecommendedActionsRecommendedActions_FilterFields,
+			Kind:     "object",
+			Fields:   BcmRecommendedActionsRecommendedActions_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

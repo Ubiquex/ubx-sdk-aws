@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuntimeVersions_RuntimeVersions struct {
 	DeprecationDate any
-	Description any
-	ReleaseDate any
-	VersionName any
+	Description     any
+	ReleaseDate     any
+	VersionName     any
 }
 
 type RuntimeVersionsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type RuntimeVersionsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	RuntimeVersions any
 }
 
@@ -25,6 +25,6 @@ var RuntimeVersions = ubx.DataSourceBinding{
 	WireType: "aws_synthetics_runtime_versions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -26,7 +26,7 @@ type GuardrailVersionAttrs struct {
 var GuardrailVersion = ubx.ResourceBinding{
 	WireType: "aws_bedrock_guardrail_version",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
 		"GuardrailIdentifier": ubx.FieldSpec{WireName: "guardrail_identifier"},
 	},
 }

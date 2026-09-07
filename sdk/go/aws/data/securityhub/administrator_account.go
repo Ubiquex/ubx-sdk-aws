@@ -4,9 +4,9 @@ package securityhub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AdministratorAccount_Administrator struct {
-	AccountId any
+	AccountId    any
 	InvitationId any
-	InvitedAt any
+	InvitedAt    any
 	MemberStatus any
 }
 
@@ -20,6 +20,5 @@ type AdministratorAccountAttrs struct {
 
 var AdministratorAccount = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_administrator_account",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

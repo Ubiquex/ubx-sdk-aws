@@ -4,21 +4,21 @@ package entityresolution
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SchemaMappings_SchemaList struct {
-	CreatedAt any
+	CreatedAt    any
 	HasWorkflows any
-	SchemaArn any
-	SchemaName any
-	UpdatedAt any
+	SchemaArn    any
+	SchemaName   any
+	UpdatedAt    any
 }
 
 type SchemaMappingsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SchemaMappingsAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	SchemaList any
 }
 
@@ -26,6 +26,6 @@ var SchemaMappings = ubx.DataSourceBinding{
 	WireType: "aws_entityresolution_schema_mappings",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -5,82 +5,82 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FaceDetection_Faces_Face_AgeRange struct {
 	High any
-	Low any
+	Low  any
 }
 
 type FaceDetection_Faces_Face_Beard struct {
 	Confidence any
-	Value any
+	Value      any
 }
 
 type FaceDetection_Faces_Face_BoundingBox struct {
 	Height any
-	Left any
-	Top any
-	Width any
+	Left   any
+	Top    any
+	Width  any
 }
 
 type FaceDetection_Faces_Face_Emotions struct {
 	Confidence any
-	Type any
+	Type       any
 }
 
 type FaceDetection_Faces_Face_EyeDirection struct {
 	Confidence any
-	Pitch any
-	Yaw any
+	Pitch      any
+	Yaw        any
 }
 
 type FaceDetection_Faces_Face_Gender struct {
 	Confidence any
-	Value any
+	Value      any
 }
 
 type FaceDetection_Faces_Face_Landmarks struct {
 	Type any
-	X any
-	Y any
+	X    any
+	Y    any
 }
 
 type FaceDetection_Faces_Face_Pose struct {
 	Pitch any
-	Roll any
-	Yaw any
+	Roll  any
+	Yaw   any
 }
 
 type FaceDetection_Faces_Face_Quality struct {
 	Brightness any
-	Sharpness any
+	Sharpness  any
 }
 
 type FaceDetection_Faces_Face struct {
-	AgeRange any
-	Beard any
-	BoundingBox any
-	Confidence any
-	Emotions any
+	AgeRange     any
+	Beard        any
+	BoundingBox  any
+	Confidence   any
+	Emotions     any
 	EyeDirection any
-	Eyeglasses any
-	EyesOpen any
+	Eyeglasses   any
+	EyesOpen     any
 	FaceOccluded any
-	Gender any
-	Landmarks any
-	MouthOpen any
-	Mustache any
-	Pose any
-	Quality any
-	Smile any
-	Sunglasses any
+	Gender       any
+	Landmarks    any
+	MouthOpen    any
+	Mustache     any
+	Pose         any
+	Quality      any
+	Smile        any
+	Sunglasses   any
 }
 
 type FaceDetection_Faces struct {
-	Face any
+	Face      any
 	Timestamp any
 }
 
 type FaceDetection_Video_S3Object struct {
-	Bucket any
-	Name any
+	Bucket  any
+	Name    any
 	Version any
 }
 
@@ -90,28 +90,28 @@ type FaceDetection_Video struct {
 }
 
 type FaceDetection_VideoMetadata struct {
-	Codec any
-	ColorRange any
+	Codec          any
+	ColorRange     any
 	DurationMillis any
-	Format any
-	FrameHeight any
-	FrameRate any
-	FrameWidth any
+	Format         any
+	FrameHeight    any
+	FrameRate      any
+	FrameWidth     any
 }
 
 type FaceDetectionConfig struct {
-	JobId any
+	JobId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FaceDetectionAttrs struct {
-	Faces any
-	JobId any
-	JobStatus any
-	JobTag any
-	MaxResults any
-	NextToken any
+	Faces         any
+	JobId         any
+	JobStatus     any
+	JobTag        any
+	MaxResults    any
+	NextToken     any
 	StatusMessage any
 	// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
 	Video any
@@ -122,8 +122,8 @@ type FaceDetectionAttrs struct {
 var FaceDetection = ubx.DataSourceBinding{
 	WireType: "aws_rekognition_face_detection",
 	Fields: ubx.FieldMap{
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":      ubx.FieldSpec{WireName: "job_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

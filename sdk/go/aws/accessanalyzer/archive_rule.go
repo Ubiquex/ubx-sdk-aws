@@ -31,7 +31,7 @@ var ArchiveRule = ubx.ResourceBinding{
 	WireType: "aws_access_analyzer_archive_rule",
 	Fields: ubx.FieldMap{
 		"AnalyzerName": ubx.FieldSpec{WireName: "analyzer_name"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
+		"Filter":       ubx.FieldSpec{WireName: "filter"},
+		"RuleName":     ubx.FieldSpec{WireName: "rule_name"},
 	},
 }

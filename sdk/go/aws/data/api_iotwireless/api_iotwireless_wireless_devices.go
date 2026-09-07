@@ -9,7 +9,7 @@ type ApiIotwirelessWirelessDevices_WirelessDeviceList_LoRaWan struct {
 
 type ApiIotwirelessWirelessDevices_WirelessDeviceList_Sidewalk_DeviceCertificates struct {
 	SigningAlg any
-	Value any
+	Value      any
 }
 
 type ApiIotwirelessWirelessDevices_WirelessDeviceList_Sidewalk_Positioning struct {
@@ -17,28 +17,28 @@ type ApiIotwirelessWirelessDevices_WirelessDeviceList_Sidewalk_Positioning struc
 }
 
 type ApiIotwirelessWirelessDevices_WirelessDeviceList_Sidewalk struct {
-	AmazonId any
-	DeviceCertificates any
-	DeviceProfileId any
-	Positioning any
-	SidewalkId any
+	AmazonId                any
+	DeviceCertificates      any
+	DeviceProfileId         any
+	Positioning             any
+	SidewalkId              any
 	SidewalkManufacturingSn any
-	Status any
+	Status                  any
 }
 
 type ApiIotwirelessWirelessDevices_WirelessDeviceList struct {
-	Arn any
-	DestinationName any
-	FuotaDeviceStatus any
-	Id any
-	LastUplinkReceivedAt any
-	LoRaWan any
-	McGroupId any
+	Arn                   any
+	DestinationName       any
+	FuotaDeviceStatus     any
+	Id                    any
+	LastUplinkReceivedAt  any
+	LoRaWan               any
+	McGroupId             any
 	MulticastDeviceStatus any
-	Name any
-	Positioning any
-	Sidewalk any
-	Type any
+	Name                  any
+	Positioning           any
+	Sidewalk              any
+	Type                  any
 }
 
 type ApiIotwirelessWirelessDevicesConfig struct {
@@ -49,9 +49,9 @@ type ApiIotwirelessWirelessDevicesConfig struct {
 	// <p>The maximum number of results to return in this operation.</p>
 	MaxResults any
 	// <p>The ID of the multicast group.</p>
-	MulticastGroupId any
-	NextToken any
-	ServiceProfileId any
+	MulticastGroupId   any
+	NextToken          any
+	ServiceProfileId   any
 	WirelessDeviceType any
 }
 
@@ -63,9 +63,9 @@ type ApiIotwirelessWirelessDevicesAttrs struct {
 	// <p>The maximum number of results to return in this operation.</p>
 	MaxResults any
 	// <p>The ID of the multicast group.</p>
-	MulticastGroupId any
-	NextToken any
-	ServiceProfileId any
+	MulticastGroupId   any
+	NextToken          any
+	ServiceProfileId   any
 	WirelessDeviceList any
 	WirelessDeviceType any
 }
@@ -73,13 +73,13 @@ type ApiIotwirelessWirelessDevicesAttrs struct {
 var ApiIotwirelessWirelessDevices = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_wireless_devices",
 	Fields: ubx.FieldMap{
-		"DestinationName": ubx.FieldSpec{WireName: "destination_name"},
-		"DeviceProfileId": ubx.FieldSpec{WireName: "device_profile_id"},
-		"FuotaTaskId": ubx.FieldSpec{WireName: "fuota_task_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MulticastGroupId": ubx.FieldSpec{WireName: "multicast_group_id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ServiceProfileId": ubx.FieldSpec{WireName: "service_profile_id"},
+		"DestinationName":    ubx.FieldSpec{WireName: "destination_name"},
+		"DeviceProfileId":    ubx.FieldSpec{WireName: "device_profile_id"},
+		"FuotaTaskId":        ubx.FieldSpec{WireName: "fuota_task_id"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"MulticastGroupId":   ubx.FieldSpec{WireName: "multicast_group_id"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"ServiceProfileId":   ubx.FieldSpec{WireName: "service_profile_id"},
 		"WirelessDeviceType": ubx.FieldSpec{WireName: "wireless_device_type"},
 	},
 }

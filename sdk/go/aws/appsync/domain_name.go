@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainName_Tags struct {
 	// The key portion of a user-defined tag attached to the AWS::AppSync::DomainName resource, used to assign metadata for filtering, access control, or cost allocation to the AppSync custom domain. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var DomainName_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DomainNameConfig struct {
 	// The Amazon Resource Name (ARN) of an AWS Certificate Manager certificate to associate with the AppSync custom domain name. (AI-inferred)
@@ -46,12 +46,12 @@ var DomainName = ubx.ResourceBinding{
 	WireType: "aws_app_sync_domain_name",
 	Fields: ubx.FieldMap{
 		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"DomainName":     ubx.FieldSpec{WireName: "domain_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DomainName_TagsFields,
+			Kind:     "list",
+			Fields:   DomainName_TagsFields,
 		},
 	},
 }

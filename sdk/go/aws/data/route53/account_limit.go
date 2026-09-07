@@ -4,7 +4,7 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountLimit_Limit struct {
-	Type any
+	Type  any
 	Value any
 }
 
@@ -16,7 +16,7 @@ type AccountLimitAttrs struct {
 	Count any
 	// <p>A complex type that contains the type of limit that you specified in the request and the current value for that limit.</p>
 	Limit any
-	Type any
+	Type  any
 }
 
 var AccountLimit = ubx.DataSourceBinding{

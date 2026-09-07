@@ -46,9 +46,9 @@ type SourceApiAssociationAttrs struct {
 var SourceApiAssociation = ubx.ResourceBinding{
 	WireType: "aws_app_sync_source_api_association",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"MergedApiIdentifier": ubx.FieldSpec{WireName: "merged_api_identifier"},
+		"Description":                ubx.FieldSpec{WireName: "description"},
+		"MergedApiIdentifier":        ubx.FieldSpec{WireName: "merged_api_identifier"},
 		"SourceApiAssociationConfig": ubx.FieldSpec{WireName: "source_api_association_config"},
-		"SourceApiIdentifier": ubx.FieldSpec{WireName: "source_api_identifier"},
+		"SourceApiIdentifier":        ubx.FieldSpec{WireName: "source_api_identifier"},
 	},
 }

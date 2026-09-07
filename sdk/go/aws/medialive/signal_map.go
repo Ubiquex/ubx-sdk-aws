@@ -87,11 +87,11 @@ var SignalMap = ubx.ResourceBinding{
 	WireType: "aws_media_live_signal_map",
 	Fields: ubx.FieldMap{
 		"CloudWatchAlarmTemplateGroupIdentifiers": ubx.FieldSpec{WireName: "cloud_watch_alarm_template_group_identifiers"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DiscoveryEntryPointArn": ubx.FieldSpec{WireName: "discovery_entry_point_arn"},
+		"Description":                             ubx.FieldSpec{WireName: "description"},
+		"DiscoveryEntryPointArn":                  ubx.FieldSpec{WireName: "discovery_entry_point_arn"},
 		"EventBridgeRuleTemplateGroupIdentifiers": ubx.FieldSpec{WireName: "event_bridge_rule_template_group_identifiers"},
-		"ForceRediscovery": ubx.FieldSpec{WireName: "force_rediscovery"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"ForceRediscovery":                        ubx.FieldSpec{WireName: "force_rediscovery"},
+		"Name":                                    ubx.FieldSpec{WireName: "name"},
+		"Tags":                                    ubx.FieldSpec{WireName: "tags"},
 	},
 }

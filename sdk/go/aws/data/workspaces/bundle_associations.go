@@ -4,35 +4,35 @@ package workspaces
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BundleAssociations_Associations_StateReason struct {
-	ErrorCode any
+	ErrorCode    any
 	ErrorMessage any
 }
 
 type BundleAssociations_Associations struct {
-	AssociatedResourceId any
+	AssociatedResourceId   any
 	AssociatedResourceType any
-	BundleId any
-	Created any
-	LastUpdatedTime any
-	State any
-	StateReason any
+	BundleId               any
+	Created                any
+	LastUpdatedTime        any
+	State                  any
+	StateReason            any
 }
 
 type BundleAssociationsConfig struct {
 	AssociatedResourceTypes any
-	BundleId any
+	BundleId                any
 }
 
 type BundleAssociationsAttrs struct {
 	AssociatedResourceTypes any
-	Associations any
-	BundleId any
+	Associations            any
+	BundleId                any
 }
 
 var BundleAssociations = ubx.DataSourceBinding{
 	WireType: "aws_workspaces_bundle_associations",
 	Fields: ubx.FieldMap{
 		"AssociatedResourceTypes": ubx.FieldSpec{WireName: "associated_resource_types"},
-		"BundleId": ubx.FieldSpec{WireName: "bundle_id"},
+		"BundleId":                ubx.FieldSpec{WireName: "bundle_id"},
 	},
 }

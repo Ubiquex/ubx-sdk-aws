@@ -34,10 +34,10 @@ type TopicAttrs struct {
 var Topic = ubx.ResourceBinding{
 	WireType: "aws_msk_topic",
 	Fields: ubx.FieldMap{
-		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
-		"Configs": ubx.FieldSpec{WireName: "configs"},
-		"PartitionCount": ubx.FieldSpec{WireName: "partition_count"},
+		"ClusterArn":        ubx.FieldSpec{WireName: "cluster_arn"},
+		"Configs":           ubx.FieldSpec{WireName: "configs"},
+		"PartitionCount":    ubx.FieldSpec{WireName: "partition_count"},
 		"ReplicationFactor": ubx.FieldSpec{WireName: "replication_factor"},
-		"TopicName": ubx.FieldSpec{WireName: "topic_name"},
+		"TopicName":         ubx.FieldSpec{WireName: "topic_name"},
 	},
 }

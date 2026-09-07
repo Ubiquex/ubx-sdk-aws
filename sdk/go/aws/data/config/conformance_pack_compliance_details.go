@@ -6,52 +6,52 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ConformancePackComplianceDetails_ConformancePackRuleEvaluationResults_EvaluationResultIdentifier_EvaluationResultQualifier struct {
 	ConfigRuleName any
 	EvaluationMode any
-	ResourceId any
-	ResourceType any
+	ResourceId     any
+	ResourceType   any
 }
 
 type ConformancePackComplianceDetails_ConformancePackRuleEvaluationResults_EvaluationResultIdentifier struct {
 	EvaluationResultQualifier any
-	OrderingTimestamp any
-	ResourceEvaluationId any
+	OrderingTimestamp         any
+	ResourceEvaluationId      any
 }
 
 type ConformancePackComplianceDetails_ConformancePackRuleEvaluationResults struct {
-	Annotation any
-	ComplianceType any
-	ConfigRuleInvokedTime any
+	Annotation                 any
+	ComplianceType             any
+	ConfigRuleInvokedTime      any
 	EvaluationResultIdentifier any
-	ResultRecordedTime any
+	ResultRecordedTime         any
 }
 
 type ConformancePackComplianceDetails_Filters struct {
-	ComplianceType any
+	ComplianceType  any
 	ConfigRuleNames any
-	ResourceIds any
-	ResourceType any
+	ResourceIds     any
+	ResourceType    any
 }
 
 var ConformancePackComplianceDetails_FiltersFields = ubx.FieldMap{
-		"ComplianceType": ubx.FieldSpec{WireName: "compliance_type"},
-		"ConfigRuleNames": ubx.FieldSpec{WireName: "config_rule_names"},
-		"ResourceIds": ubx.FieldSpec{WireName: "resource_ids"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-	}
+	"ComplianceType":  ubx.FieldSpec{WireName: "compliance_type"},
+	"ConfigRuleNames": ubx.FieldSpec{WireName: "config_rule_names"},
+	"ResourceIds":     ubx.FieldSpec{WireName: "resource_ids"},
+	"ResourceType":    ubx.FieldSpec{WireName: "resource_type"},
+}
 
 type ConformancePackComplianceDetailsConfig struct {
 	ConformancePackName any
 	// <p>Filters a conformance pack by Config rule names, compliance types, Amazon Web Services resource types, and resource IDs.</p>
-	Filters any
-	Limit any
+	Filters   any
+	Limit     any
 	NextToken any
 }
 
 type ConformancePackComplianceDetailsAttrs struct {
-	ConformancePackName any
+	ConformancePackName                  any
 	ConformancePackRuleEvaluationResults any
 	// <p>Filters a conformance pack by Config rule names, compliance types, Amazon Web Services resource types, and resource IDs.</p>
-	Filters any
-	Limit any
+	Filters   any
+	Limit     any
 	NextToken any
 }
 
@@ -61,10 +61,10 @@ var ConformancePackComplianceDetails = ubx.DataSourceBinding{
 		"ConformancePackName": ubx.FieldSpec{WireName: "conformance_pack_name"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: ConformancePackComplianceDetails_FiltersFields,
+			Kind:     "object",
+			Fields:   ConformancePackComplianceDetails_FiltersFields,
 		},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

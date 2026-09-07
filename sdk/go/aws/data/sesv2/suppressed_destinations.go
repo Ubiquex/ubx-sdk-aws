@@ -4,27 +4,27 @@ package sesv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SuppressedDestinations_SuppressedDestinationSummaries struct {
-	EmailAddress any
+	EmailAddress   any
 	LastUpdateTime any
-	Reason any
+	Reason         any
 }
 
 type SuppressedDestinationsConfig struct {
-	EndDate any
+	EndDate   any
 	NextToken any
-	PageSize any
-	Reasons any
+	PageSize  any
+	Reasons   any
 	StartDate any
 	// <p>The name of a tenant. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
 	TenantName any
 }
 
 type SuppressedDestinationsAttrs struct {
-	EndDate any
-	NextToken any
-	PageSize any
-	Reasons any
-	StartDate any
+	EndDate                        any
+	NextToken                      any
+	PageSize                       any
+	Reasons                        any
+	StartDate                      any
 	SuppressedDestinationSummaries any
 	// <p>The name of a tenant. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
 	TenantName any
@@ -33,11 +33,11 @@ type SuppressedDestinationsAttrs struct {
 var SuppressedDestinations = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_suppressed_destinations",
 	Fields: ubx.FieldMap{
-		"EndDate": ubx.FieldSpec{WireName: "end_date"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"Reasons": ubx.FieldSpec{WireName: "reasons"},
-		"StartDate": ubx.FieldSpec{WireName: "start_date"},
+		"EndDate":    ubx.FieldSpec{WireName: "end_date"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"PageSize":   ubx.FieldSpec{WireName: "page_size"},
+		"Reasons":    ubx.FieldSpec{WireName: "reasons"},
+		"StartDate":  ubx.FieldSpec{WireName: "start_date"},
 		"TenantName": ubx.FieldSpec{WireName: "tenant_name"},
 	},
 }

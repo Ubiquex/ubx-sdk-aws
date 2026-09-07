@@ -46,8 +46,8 @@ var Connector = ubx.ResourceBinding{
 	WireType: "aws_pcaconnector_scep_connector",
 	Fields: ubx.FieldMap{
 		"CertificateAuthorityArn": ubx.FieldSpec{WireName: "certificate_authority_arn"},
-		"MobileDeviceManagement": ubx.FieldSpec{WireName: "mobile_device_management"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"VpcEndpointId": ubx.FieldSpec{WireName: "vpc_endpoint_id"},
+		"MobileDeviceManagement":  ubx.FieldSpec{WireName: "mobile_device_management"},
+		"Tags":                    ubx.FieldSpec{WireName: "tags"},
+		"VpcEndpointId":           ubx.FieldSpec{WireName: "vpc_endpoint_id"},
 	},
 }

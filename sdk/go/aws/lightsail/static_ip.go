@@ -26,7 +26,7 @@ type StaticIpAttrs struct {
 var StaticIp = ubx.ResourceBinding{
 	WireType: "aws_lightsail_static_ip",
 	Fields: ubx.FieldMap{
-		"AttachedTo": ubx.FieldSpec{WireName: "attached_to"},
+		"AttachedTo":   ubx.FieldSpec{WireName: "attached_to"},
 		"StaticIpName": ubx.FieldSpec{WireName: "static_ip_name"},
 	},
 }

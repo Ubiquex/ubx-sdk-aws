@@ -4,29 +4,29 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EffectivePolicies_EffectivePolicies struct {
-	PolicyArn any
+	PolicyArn      any
 	PolicyDocument any
-	PolicyName any
+	PolicyName     any
 }
 
 type EffectivePoliciesConfig struct {
 	CognitoIdentityPoolId any
-	Principal any
-	ThingName any
+	Principal             any
+	ThingName             any
 }
 
 type EffectivePoliciesAttrs struct {
 	CognitoIdentityPoolId any
-	EffectivePolicies any
-	Principal any
-	ThingName any
+	EffectivePolicies     any
+	Principal             any
+	ThingName             any
 }
 
 var EffectivePolicies = ubx.DataSourceBinding{
 	WireType: "aws_iot_effective_policies",
 	Fields: ubx.FieldMap{
 		"CognitoIdentityPoolId": ubx.FieldSpec{WireName: "cognito_identity_pool_id"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-		"ThingName": ubx.FieldSpec{WireName: "thing_name"},
+		"Principal":             ubx.FieldSpec{WireName: "principal"},
+		"ThingName":             ubx.FieldSpec{WireName: "thing_name"},
 	},
 }

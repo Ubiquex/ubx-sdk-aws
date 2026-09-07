@@ -4,28 +4,28 @@ package ssm_incidents
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmIncidentsIncidentFindings_Findings struct {
-	Id any
+	Id               any
 	LastModifiedTime any
 }
 
 type SsmIncidentsIncidentFindingsConfig struct {
 	IncidentRecordArn any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 type SsmIncidentsIncidentFindingsAttrs struct {
-	Findings any
+	Findings          any
 	IncidentRecordArn any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 var SsmIncidentsIncidentFindings = ubx.DataSourceBinding{
 	WireType: "aws_ssm_incidents_incident_findings",
 	Fields: ubx.FieldMap{
 		"IncidentRecordArn": ubx.FieldSpec{WireName: "incident_record_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 	},
 }

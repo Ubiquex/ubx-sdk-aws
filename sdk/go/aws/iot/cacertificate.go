@@ -20,15 +20,15 @@ type Cacertificate_Tags struct {
 }
 
 var Cacertificate_RegistrationConfigFields = ubx.FieldMap{
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"TemplateBody": ubx.FieldSpec{WireName: "template_body"},
-		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
-	}
+	"RoleArn":      ubx.FieldSpec{WireName: "role_arn"},
+	"TemplateBody": ubx.FieldSpec{WireName: "template_body"},
+	"TemplateName": ubx.FieldSpec{WireName: "template_name"},
+}
 
 var Cacertificate_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CacertificateConfig struct {
 	// Controls whether certificates signed by this CA certificate are automatically registered with AWS IoT upon first use, with allowed values such as 'ENABLE' and 'DISABLE'. (AI-inferred)
@@ -76,19 +76,19 @@ var Cacertificate = ubx.ResourceBinding{
 	WireType: "aws_io_t_cacertificate",
 	Fields: ubx.FieldMap{
 		"AutoRegistrationStatus": ubx.FieldSpec{WireName: "auto_registration_status"},
-		"CacertificatePem": ubx.FieldSpec{WireName: "cacertificate_pem"},
-		"CertificateMode": ubx.FieldSpec{WireName: "certificate_mode"},
+		"CacertificatePem":       ubx.FieldSpec{WireName: "cacertificate_pem"},
+		"CertificateMode":        ubx.FieldSpec{WireName: "certificate_mode"},
 		"RegistrationConfig": ubx.FieldSpec{
 			WireName: "registration_config",
-			Kind: "object",
-			Fields: Cacertificate_RegistrationConfigFields,
+			Kind:     "object",
+			Fields:   Cacertificate_RegistrationConfigFields,
 		},
 		"RemoveAutoRegistration": ubx.FieldSpec{WireName: "remove_auto_registration"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":                 ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Cacertificate_TagsFields,
+			Kind:     "list",
+			Fields:   Cacertificate_TagsFields,
 		},
 		"VerificationCertificatePem": ubx.FieldSpec{WireName: "verification_certificate_pem"},
 	},

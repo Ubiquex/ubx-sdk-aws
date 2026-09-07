@@ -48,66 +48,65 @@ type MailManagerIngressPoint_NetworkConfiguration struct {
 
 type MailManagerIngressPoint_Tags struct {
 	// The key of a metadata tag that can be applied to this SES Mail Manager ingress point to help organize, identify, and manage the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var MailManagerIngressPoint_IngressPointConfiguration_TlsAuthConfiguration_TrustStoreFields = ubx.FieldMap{
-		"Cacontent": ubx.FieldSpec{WireName: "cacontent"},
-		"CrlContent": ubx.FieldSpec{WireName: "crl_content"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-	}
+	"Cacontent":  ubx.FieldSpec{WireName: "cacontent"},
+	"CrlContent": ubx.FieldSpec{WireName: "crl_content"},
+	"KmsKeyArn":  ubx.FieldSpec{WireName: "kms_key_arn"},
+}
 
 var MailManagerIngressPoint_IngressPointConfiguration_TlsAuthConfigurationFields = ubx.FieldMap{
-		"TrustStore": ubx.FieldSpec{
-			WireName: "trust_store",
-			Kind: "object",
-			Fields: MailManagerIngressPoint_IngressPointConfiguration_TlsAuthConfiguration_TrustStoreFields,
-		},
-	}
+	"TrustStore": ubx.FieldSpec{
+		WireName: "trust_store",
+		Kind:     "object",
+		Fields:   MailManagerIngressPoint_IngressPointConfiguration_TlsAuthConfiguration_TrustStoreFields,
+	},
+}
 
 var MailManagerIngressPoint_IngressPointConfigurationFields = ubx.FieldMap{
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-		"SmtpPassword": ubx.FieldSpec{WireName: "smtp_password"},
-		"TlsAuthConfiguration": ubx.FieldSpec{
-			WireName: "tls_auth_configuration",
-			Kind: "object",
-			Fields: MailManagerIngressPoint_IngressPointConfiguration_TlsAuthConfigurationFields,
-		},
-	}
+	"SecretArn":    ubx.FieldSpec{WireName: "secret_arn"},
+	"SmtpPassword": ubx.FieldSpec{WireName: "smtp_password"},
+	"TlsAuthConfiguration": ubx.FieldSpec{
+		WireName: "tls_auth_configuration",
+		Kind:     "object",
+		Fields:   MailManagerIngressPoint_IngressPointConfiguration_TlsAuthConfigurationFields,
+	},
+}
 
 var MailManagerIngressPoint_NetworkConfiguration_PrivateNetworkConfigurationFields = ubx.FieldMap{
-		"VpcEndpointId": ubx.FieldSpec{WireName: "vpc_endpoint_id"},
-	}
+	"VpcEndpointId": ubx.FieldSpec{WireName: "vpc_endpoint_id"},
+}
 
-var MailManagerIngressPoint_NetworkConfiguration_PublicNetworkConfiguration_IpTypeFields = ubx.FieldMap{
-	}
+var MailManagerIngressPoint_NetworkConfiguration_PublicNetworkConfiguration_IpTypeFields = ubx.FieldMap{}
 
 var MailManagerIngressPoint_NetworkConfiguration_PublicNetworkConfigurationFields = ubx.FieldMap{
-		"IpType": ubx.FieldSpec{
-			WireName: "ip_type",
-			Kind: "object",
-			Fields: MailManagerIngressPoint_NetworkConfiguration_PublicNetworkConfiguration_IpTypeFields,
-		},
-	}
+	"IpType": ubx.FieldSpec{
+		WireName: "ip_type",
+		Kind:     "object",
+		Fields:   MailManagerIngressPoint_NetworkConfiguration_PublicNetworkConfiguration_IpTypeFields,
+	},
+}
 
 var MailManagerIngressPoint_NetworkConfigurationFields = ubx.FieldMap{
-		"PrivateNetworkConfiguration": ubx.FieldSpec{
-			WireName: "private_network_configuration",
-			Kind: "object",
-			Fields: MailManagerIngressPoint_NetworkConfiguration_PrivateNetworkConfigurationFields,
-		},
-		"PublicNetworkConfiguration": ubx.FieldSpec{
-			WireName: "public_network_configuration",
-			Kind: "object",
-			Fields: MailManagerIngressPoint_NetworkConfiguration_PublicNetworkConfigurationFields,
-		},
-	}
+	"PrivateNetworkConfiguration": ubx.FieldSpec{
+		WireName: "private_network_configuration",
+		Kind:     "object",
+		Fields:   MailManagerIngressPoint_NetworkConfiguration_PrivateNetworkConfigurationFields,
+	},
+	"PublicNetworkConfiguration": ubx.FieldSpec{
+		WireName: "public_network_configuration",
+		Kind:     "object",
+		Fields:   MailManagerIngressPoint_NetworkConfiguration_PublicNetworkConfigurationFields,
+	},
+}
 
 var MailManagerIngressPoint_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MailManagerIngressPointConfig struct {
 	// Specifies the SMTP authentication configuration for the ingress point, containing the ARN of the AWS Secrets Manager secret that stores the credentials used for SMTP client authentication. (AI-inferred)
@@ -164,24 +163,24 @@ var MailManagerIngressPoint = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"IngressPointConfiguration": ubx.FieldSpec{
 			WireName: "ingress_point_configuration",
-			Kind: "object",
-			Fields: MailManagerIngressPoint_IngressPointConfigurationFields,
+			Kind:     "object",
+			Fields:   MailManagerIngressPoint_IngressPointConfigurationFields,
 		},
 		"IngressPointName": ubx.FieldSpec{WireName: "ingress_point_name"},
 		"NetworkConfiguration": ubx.FieldSpec{
 			WireName: "network_configuration",
-			Kind: "object",
-			Fields: MailManagerIngressPoint_NetworkConfigurationFields,
+			Kind:     "object",
+			Fields:   MailManagerIngressPoint_NetworkConfigurationFields,
 		},
-		"RuleSetId": ubx.FieldSpec{WireName: "rule_set_id"},
+		"RuleSetId":      ubx.FieldSpec{WireName: "rule_set_id"},
 		"StatusToUpdate": ubx.FieldSpec{WireName: "status_to_update"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MailManagerIngressPoint_TagsFields,
+			Kind:     "list",
+			Fields:   MailManagerIngressPoint_TagsFields,
 		},
-		"TlsPolicy": ubx.FieldSpec{WireName: "tls_policy"},
+		"TlsPolicy":       ubx.FieldSpec{WireName: "tls_policy"},
 		"TrafficPolicyId": ubx.FieldSpec{WireName: "traffic_policy_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":            ubx.FieldSpec{WireName: "type"},
 	},
 }

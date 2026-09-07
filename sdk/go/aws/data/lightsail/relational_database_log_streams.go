@@ -8,7 +8,7 @@ type RelationalDatabaseLogStreamsConfig struct {
 }
 
 type RelationalDatabaseLogStreamsAttrs struct {
-	LogStreams any
+	LogStreams             any
 	RelationalDatabaseName any
 }
 

@@ -16,20 +16,20 @@ type FileSystemAssociations_FileSystemAssociationInfoList_FileSystemAssociationS
 }
 
 type FileSystemAssociations_FileSystemAssociationInfoList_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type FileSystemAssociations_FileSystemAssociationInfoList struct {
-	AuditDestinationArn any
-	CacheAttributes any
-	EndpointNetworkConfiguration any
-	FileSystemAssociationArn any
-	FileSystemAssociationStatus any
+	AuditDestinationArn                any
+	CacheAttributes                    any
+	EndpointNetworkConfiguration       any
+	FileSystemAssociationArn           any
+	FileSystemAssociationStatus        any
 	FileSystemAssociationStatusDetails any
-	GatewayArn any
-	LocationArn any
-	Tags any
+	GatewayArn                         any
+	LocationArn                        any
+	Tags                               any
 }
 
 type FileSystemAssociationsConfig struct {
@@ -37,7 +37,7 @@ type FileSystemAssociationsConfig struct {
 }
 
 type FileSystemAssociationsAttrs struct {
-	FileSystemAssociationArnlist any
+	FileSystemAssociationArnlist  any
 	FileSystemAssociationInfoList any
 }
 

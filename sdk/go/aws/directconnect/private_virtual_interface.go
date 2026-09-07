@@ -20,14 +20,14 @@ type PrivateVirtualInterface_BgpPeers struct {
 
 type PrivateVirtualInterface_Tags struct {
 	// The key of a tag attached to the Direct Connect private virtual interface, used to identify the tag in a key-value pair. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var PrivateVirtualInterface_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PrivateVirtualInterfaceConfig struct {
 	// The Amazon Resource Name (ARN) of the role to allocate the private virtual interface. Needs directconnect:AllocatePrivateVirtualInterface permissions and tag permissions if applicable.
@@ -85,18 +85,18 @@ var PrivateVirtualInterface = ubx.ResourceBinding{
 	WireType: "aws_direct_connect_private_virtual_interface",
 	Fields: ubx.FieldMap{
 		"AllocatePrivateVirtualInterfaceRoleArn": ubx.FieldSpec{WireName: "allocate_private_virtual_interface_role_arn"},
-		"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
-		"DirectConnectGatewayId": ubx.FieldSpec{WireName: "direct_connect_gateway_id"},
-		"EnableSiteLink": ubx.FieldSpec{WireName: "enable_site_link"},
-		"Mtu": ubx.FieldSpec{WireName: "mtu"},
-		"RateLimit": ubx.FieldSpec{WireName: "rate_limit"},
+		"ConnectionId":                           ubx.FieldSpec{WireName: "connection_id"},
+		"DirectConnectGatewayId":                 ubx.FieldSpec{WireName: "direct_connect_gateway_id"},
+		"EnableSiteLink":                         ubx.FieldSpec{WireName: "enable_site_link"},
+		"Mtu":                                    ubx.FieldSpec{WireName: "mtu"},
+		"RateLimit":                              ubx.FieldSpec{WireName: "rate_limit"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PrivateVirtualInterface_TagsFields,
+			Kind:     "list",
+			Fields:   PrivateVirtualInterface_TagsFields,
 		},
-		"VirtualGatewayId": ubx.FieldSpec{WireName: "virtual_gateway_id"},
+		"VirtualGatewayId":     ubx.FieldSpec{WireName: "virtual_gateway_id"},
 		"VirtualInterfaceName": ubx.FieldSpec{WireName: "virtual_interface_name"},
-		"Vlan": ubx.FieldSpec{WireName: "vlan"},
+		"Vlan":                 ubx.FieldSpec{WireName: "vlan"},
 	},
 }

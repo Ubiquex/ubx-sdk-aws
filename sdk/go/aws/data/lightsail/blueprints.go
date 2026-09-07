@@ -7,37 +7,37 @@ type Blueprints_Blueprints struct {
 	AppCategory any
 	BlueprintId any
 	Description any
-	Group any
-	IsActive any
-	LicenseUrl any
-	MinPower any
-	Name any
-	Platform any
-	ProductUrl any
-	Type any
-	Version any
+	Group       any
+	IsActive    any
+	LicenseUrl  any
+	MinPower    any
+	Name        any
+	Platform    any
+	ProductUrl  any
+	Type        any
+	Version     any
 	VersionCode any
 }
 
 type BlueprintsConfig struct {
-	AppCategory any
+	AppCategory     any
 	IncludeInactive any
-	PageToken any
+	PageToken       any
 }
 
 type BlueprintsAttrs struct {
-	AppCategory any
-	Blueprints any
+	AppCategory     any
+	Blueprints      any
 	IncludeInactive any
-	NextPageToken any
-	PageToken any
+	NextPageToken   any
+	PageToken       any
 }
 
 var Blueprints = ubx.DataSourceBinding{
 	WireType: "aws_lightsail_blueprints",
 	Fields: ubx.FieldMap{
-		"AppCategory": ubx.FieldSpec{WireName: "app_category"},
+		"AppCategory":     ubx.FieldSpec{WireName: "app_category"},
 		"IncludeInactive": ubx.FieldSpec{WireName: "include_inactive"},
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
+		"PageToken":       ubx.FieldSpec{WireName: "page_token"},
 	},
 }

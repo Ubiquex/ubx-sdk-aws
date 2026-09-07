@@ -32,9 +32,9 @@ type ProfileResourceAssociationAttrs struct {
 var ProfileResourceAssociation = ubx.ResourceBinding{
 	WireType: "aws_route53_profiles_profile_resource_association",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"ProfileId":          ubx.FieldSpec{WireName: "profile_id"},
+		"ResourceArn":        ubx.FieldSpec{WireName: "resource_arn"},
 		"ResourceProperties": ubx.FieldSpec{WireName: "resource_properties"},
 	},
 }

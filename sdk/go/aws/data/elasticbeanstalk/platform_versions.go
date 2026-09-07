@@ -5,41 +5,41 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PlatformVersions_Filters struct {
 	Operator any
-	Type any
-	Values any
+	Type     any
+	Values   any
 }
 
 type PlatformVersions_PlatformSummaryList struct {
-	OperatingSystemName any
-	OperatingSystemVersion any
-	PlatformArn any
+	OperatingSystemName          any
+	OperatingSystemVersion       any
+	PlatformArn                  any
 	PlatformBranchLifecycleState any
-	PlatformBranchName any
-	PlatformCategory any
-	PlatformLifecycleState any
-	PlatformOwner any
-	PlatformStatus any
-	PlatformVersion any
-	SupportedAddonList any
-	SupportedTierList any
+	PlatformBranchName           any
+	PlatformCategory             any
+	PlatformLifecycleState       any
+	PlatformOwner                any
+	PlatformStatus               any
+	PlatformVersion              any
+	SupportedAddonList           any
+	SupportedTierList            any
 }
 
 var PlatformVersions_FiltersFields = ubx.FieldMap{
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 type PlatformVersionsConfig struct {
-	Filters any
+	Filters    any
 	MaxRecords any
-	NextToken any
+	NextToken  any
 }
 
 type PlatformVersionsAttrs struct {
-	Filters any
-	MaxRecords any
-	NextToken any
+	Filters             any
+	MaxRecords          any
+	NextToken           any
 	PlatformSummaryList any
 }
 
@@ -48,10 +48,10 @@ var PlatformVersions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: PlatformVersions_FiltersFields,
+			Kind:     "list",
+			Fields:   PlatformVersions_FiltersFields,
 		},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

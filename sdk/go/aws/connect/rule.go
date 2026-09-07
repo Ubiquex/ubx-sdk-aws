@@ -72,7 +72,7 @@ type Rule_Actions_SendNotificationActions struct {
 	ContentType any
 	// Specifies the delivery channel for the notification, such as EMAIL or SMS, in a send-notification action of an AWS Connect rule. (AI-inferred)
 	DeliveryMethod any
-	Exclusion any
+	Exclusion      any
 	// Specifies the recipient of the notification sent by this send notification action, allowing you to target users, queues, or a contact in the Amazon Connect contact flow. (AI-inferred)
 	Recipient any
 	// The subject line for the email notification sent by this action, used when the delivery method is EMAIL. (AI-inferred)
@@ -136,149 +136,149 @@ type Rule_TriggerEventSource struct {
 }
 
 var Rule_Actions_AssignSlaActions_CaseSlaConfiguration_TargetFieldValuesFields = ubx.FieldMap{
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"StringValue": ubx.FieldSpec{WireName: "string_value"},
+}
 
 var Rule_Actions_AssignSlaActions_CaseSlaConfigurationFields = ubx.FieldMap{
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TargetFieldValues": ubx.FieldSpec{
-			WireName: "target_field_values",
-			Kind: "list",
-			Fields: Rule_Actions_AssignSlaActions_CaseSlaConfiguration_TargetFieldValuesFields,
-		},
-		"TargetSlaMinutes": ubx.FieldSpec{WireName: "target_sla_minutes"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"FieldId": ubx.FieldSpec{WireName: "field_id"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"TargetFieldValues": ubx.FieldSpec{
+		WireName: "target_field_values",
+		Kind:     "list",
+		Fields:   Rule_Actions_AssignSlaActions_CaseSlaConfiguration_TargetFieldValuesFields,
+	},
+	"TargetSlaMinutes": ubx.FieldSpec{WireName: "target_sla_minutes"},
+	"Type":             ubx.FieldSpec{WireName: "type"},
+}
 
 var Rule_Actions_AssignSlaActionsFields = ubx.FieldMap{
-		"CaseSlaConfiguration": ubx.FieldSpec{
-			WireName: "case_sla_configuration",
-			Kind: "object",
-			Fields: Rule_Actions_AssignSlaActions_CaseSlaConfigurationFields,
-		},
-		"SlaAssignmentType": ubx.FieldSpec{WireName: "sla_assignment_type"},
-	}
+	"CaseSlaConfiguration": ubx.FieldSpec{
+		WireName: "case_sla_configuration",
+		Kind:     "object",
+		Fields:   Rule_Actions_AssignSlaActions_CaseSlaConfigurationFields,
+	},
+	"SlaAssignmentType": ubx.FieldSpec{WireName: "sla_assignment_type"},
+}
 
 var Rule_Actions_CreateCaseActions_Fields_ValueFields = ubx.FieldMap{
-		"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
-		"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
-		"EmptyValue": ubx.FieldSpec{WireName: "empty_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
+	"DoubleValue":  ubx.FieldSpec{WireName: "double_value"},
+	"EmptyValue":   ubx.FieldSpec{WireName: "empty_value"},
+	"StringValue":  ubx.FieldSpec{WireName: "string_value"},
+}
 
 var Rule_Actions_CreateCaseActions_FieldsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Rule_Actions_CreateCaseActions_Fields_ValueFields,
-		},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Rule_Actions_CreateCaseActions_Fields_ValueFields,
+	},
+}
 
 var Rule_Actions_CreateCaseActionsFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Rule_Actions_CreateCaseActions_FieldsFields,
-		},
-		"TemplateId": ubx.FieldSpec{WireName: "template_id"},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Rule_Actions_CreateCaseActions_FieldsFields,
+	},
+	"TemplateId": ubx.FieldSpec{WireName: "template_id"},
+}
 
 var Rule_Actions_EventBridgeActionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Rule_Actions_SendNotificationActions_ExclusionFields = ubx.FieldMap{
-		"UserArns": ubx.FieldSpec{WireName: "user_arns"},
-		"UserTags": ubx.FieldSpec{WireName: "user_tags"},
-	}
+	"UserArns": ubx.FieldSpec{WireName: "user_arns"},
+	"UserTags": ubx.FieldSpec{WireName: "user_tags"},
+}
 
 var Rule_Actions_SendNotificationActionsFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"DeliveryMethod": ubx.FieldSpec{WireName: "delivery_method"},
-		"Exclusion": ubx.FieldSpec{
-			WireName: "exclusion",
-			Kind: "object",
-			Fields: Rule_Actions_SendNotificationActions_ExclusionFields,
-		},
-		"Recipient": ubx.FieldSpec{
-			WireName: "recipient",
-			Kind: "object",
-			Fields: Rule_Actions_SendNotificationActions_ExclusionFields,
-		},
-		"Subject": ubx.FieldSpec{WireName: "subject"},
-	}
+	"Content":        ubx.FieldSpec{WireName: "content"},
+	"ContentType":    ubx.FieldSpec{WireName: "content_type"},
+	"DeliveryMethod": ubx.FieldSpec{WireName: "delivery_method"},
+	"Exclusion": ubx.FieldSpec{
+		WireName: "exclusion",
+		Kind:     "object",
+		Fields:   Rule_Actions_SendNotificationActions_ExclusionFields,
+	},
+	"Recipient": ubx.FieldSpec{
+		WireName: "recipient",
+		Kind:     "object",
+		Fields:   Rule_Actions_SendNotificationActions_ExclusionFields,
+	},
+	"Subject": ubx.FieldSpec{WireName: "subject"},
+}
 
 var Rule_Actions_SubmitAutoEvaluationActionsFields = ubx.FieldMap{
-		"EvaluationFormArn": ubx.FieldSpec{WireName: "evaluation_form_arn"},
-	}
+	"EvaluationFormArn": ubx.FieldSpec{WireName: "evaluation_form_arn"},
+}
 
 var Rule_Actions_TaskActionsFields = ubx.FieldMap{
-		"ContactFlowArn": ubx.FieldSpec{WireName: "contact_flow_arn"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"References": ubx.FieldSpec{WireName: "references"},
-	}
+	"ContactFlowArn": ubx.FieldSpec{WireName: "contact_flow_arn"},
+	"Description":    ubx.FieldSpec{WireName: "description"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"References":     ubx.FieldSpec{WireName: "references"},
+}
 
 var Rule_Actions_UpdateCaseActionsFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Rule_Actions_CreateCaseActions_FieldsFields,
-		},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Rule_Actions_CreateCaseActions_FieldsFields,
+	},
+}
 
 var Rule_ActionsFields = ubx.FieldMap{
-		"AssignContactCategoryActions": ubx.FieldSpec{WireName: "assign_contact_category_actions"},
-		"AssignSlaActions": ubx.FieldSpec{
-			WireName: "assign_sla_actions",
-			Kind: "list",
-			Fields: Rule_Actions_AssignSlaActionsFields,
-		},
-		"CreateCaseActions": ubx.FieldSpec{
-			WireName: "create_case_actions",
-			Kind: "list",
-			Fields: Rule_Actions_CreateCaseActionsFields,
-		},
-		"EndAssociatedTasksActions": ubx.FieldSpec{WireName: "end_associated_tasks_actions"},
-		"EventBridgeActions": ubx.FieldSpec{
-			WireName: "event_bridge_actions",
-			Kind: "list",
-			Fields: Rule_Actions_EventBridgeActionsFields,
-		},
-		"SendNotificationActions": ubx.FieldSpec{
-			WireName: "send_notification_actions",
-			Kind: "list",
-			Fields: Rule_Actions_SendNotificationActionsFields,
-		},
-		"SubmitAutoEvaluationActions": ubx.FieldSpec{
-			WireName: "submit_auto_evaluation_actions",
-			Kind: "list",
-			Fields: Rule_Actions_SubmitAutoEvaluationActionsFields,
-		},
-		"TaskActions": ubx.FieldSpec{
-			WireName: "task_actions",
-			Kind: "list",
-			Fields: Rule_Actions_TaskActionsFields,
-		},
-		"UpdateCaseActions": ubx.FieldSpec{
-			WireName: "update_case_actions",
-			Kind: "list",
-			Fields: Rule_Actions_UpdateCaseActionsFields,
-		},
-	}
+	"AssignContactCategoryActions": ubx.FieldSpec{WireName: "assign_contact_category_actions"},
+	"AssignSlaActions": ubx.FieldSpec{
+		WireName: "assign_sla_actions",
+		Kind:     "list",
+		Fields:   Rule_Actions_AssignSlaActionsFields,
+	},
+	"CreateCaseActions": ubx.FieldSpec{
+		WireName: "create_case_actions",
+		Kind:     "list",
+		Fields:   Rule_Actions_CreateCaseActionsFields,
+	},
+	"EndAssociatedTasksActions": ubx.FieldSpec{WireName: "end_associated_tasks_actions"},
+	"EventBridgeActions": ubx.FieldSpec{
+		WireName: "event_bridge_actions",
+		Kind:     "list",
+		Fields:   Rule_Actions_EventBridgeActionsFields,
+	},
+	"SendNotificationActions": ubx.FieldSpec{
+		WireName: "send_notification_actions",
+		Kind:     "list",
+		Fields:   Rule_Actions_SendNotificationActionsFields,
+	},
+	"SubmitAutoEvaluationActions": ubx.FieldSpec{
+		WireName: "submit_auto_evaluation_actions",
+		Kind:     "list",
+		Fields:   Rule_Actions_SubmitAutoEvaluationActionsFields,
+	},
+	"TaskActions": ubx.FieldSpec{
+		WireName: "task_actions",
+		Kind:     "list",
+		Fields:   Rule_Actions_TaskActionsFields,
+	},
+	"UpdateCaseActions": ubx.FieldSpec{
+		WireName: "update_case_actions",
+		Kind:     "list",
+		Fields:   Rule_Actions_UpdateCaseActionsFields,
+	},
+}
 
 var Rule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Rule_TriggerEventSourceFields = ubx.FieldMap{
-		"EventSourceName": ubx.FieldSpec{WireName: "event_source_name"},
-		"IntegrationAssociationArn": ubx.FieldSpec{WireName: "integration_association_arn"},
-	}
+	"EventSourceName":           ubx.FieldSpec{WireName: "event_source_name"},
+	"IntegrationAssociationArn": ubx.FieldSpec{WireName: "integration_association_arn"},
+}
 
 type RuleConfig struct {
 	// A list of actions to be run when the rule is triggered.
@@ -321,22 +321,22 @@ var Rule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Actions": ubx.FieldSpec{
 			WireName: "actions",
-			Kind: "object",
-			Fields: Rule_ActionsFields,
+			Kind:     "object",
+			Fields:   Rule_ActionsFields,
 		},
-		"Function": ubx.FieldSpec{WireName: "function"},
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Function":      ubx.FieldSpec{WireName: "function"},
+		"InstanceArn":   ubx.FieldSpec{WireName: "instance_arn"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"PublishStatus": ubx.FieldSpec{WireName: "publish_status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Rule_TagsFields,
+			Kind:     "list",
+			Fields:   Rule_TagsFields,
 		},
 		"TriggerEventSource": ubx.FieldSpec{
 			WireName: "trigger_event_source",
-			Kind: "object",
-			Fields: Rule_TriggerEventSourceFields,
+			Kind:     "object",
+			Fields:   Rule_TriggerEventSourceFields,
 		},
 	},
 }

@@ -4,7 +4,7 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BucketsAggregation_Buckets struct {
-	Count any
+	Count    any
 	KeyValue any
 }
 
@@ -18,35 +18,35 @@ type BucketsAggregation_BucketsAggregationType struct {
 }
 
 var BucketsAggregation_BucketsAggregationType_TermsAggregationFields = ubx.FieldMap{
-		"MaxBuckets": ubx.FieldSpec{WireName: "max_buckets"},
-	}
+	"MaxBuckets": ubx.FieldSpec{WireName: "max_buckets"},
+}
 
 var BucketsAggregation_BucketsAggregationTypeFields = ubx.FieldMap{
-		"TermsAggregation": ubx.FieldSpec{
-			WireName: "terms_aggregation",
-			Kind: "object",
-			Fields: BucketsAggregation_BucketsAggregationType_TermsAggregationFields,
-		},
-	}
+	"TermsAggregation": ubx.FieldSpec{
+		WireName: "terms_aggregation",
+		Kind:     "object",
+		Fields:   BucketsAggregation_BucketsAggregationType_TermsAggregationFields,
+	},
+}
 
 type BucketsAggregationConfig struct {
 	AggregationField any
 	// <p>The type of bucketed aggregation performed.</p>
 	BucketsAggregationType any
-	IndexName any
-	QueryString any
-	QueryVersion any
+	IndexName              any
+	QueryString            any
+	QueryVersion           any
 }
 
 type BucketsAggregationAttrs struct {
 	AggregationField any
-	Buckets any
+	Buckets          any
 	// <p>The type of bucketed aggregation performed.</p>
 	BucketsAggregationType any
-	IndexName any
-	QueryString any
-	QueryVersion any
-	TotalCount any
+	IndexName              any
+	QueryString            any
+	QueryVersion           any
+	TotalCount             any
 }
 
 var BucketsAggregation = ubx.DataSourceBinding{
@@ -55,11 +55,11 @@ var BucketsAggregation = ubx.DataSourceBinding{
 		"AggregationField": ubx.FieldSpec{WireName: "aggregation_field"},
 		"BucketsAggregationType": ubx.FieldSpec{
 			WireName: "buckets_aggregation_type",
-			Kind: "object",
-			Fields: BucketsAggregation_BucketsAggregationTypeFields,
+			Kind:     "object",
+			Fields:   BucketsAggregation_BucketsAggregationTypeFields,
 		},
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
-		"QueryString": ubx.FieldSpec{WireName: "query_string"},
+		"IndexName":    ubx.FieldSpec{WireName: "index_name"},
+		"QueryString":  ubx.FieldSpec{WireName: "query_string"},
 		"QueryVersion": ubx.FieldSpec{WireName: "query_version"},
 	},
 }

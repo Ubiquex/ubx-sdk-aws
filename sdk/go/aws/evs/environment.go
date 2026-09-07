@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Environment_Checks struct {
 	ImpairedSince any
-	Result any
-	Type any
+	Result        any
+	Type          any
 }
 
 type Environment_ConnectivityInfo struct {
@@ -20,11 +20,11 @@ type Environment_Credentials struct {
 
 type Environment_Hosts struct {
 	DedicatedHostId any
-	HostName any
+	HostName        any
 	// The EC2 instance type of a host in an AWS Elastic Video System (EVS) environment, which determines the compute and memory capacity available for video processing workloads. (AI-inferred)
 	InstanceType any
 	// The name of the EC2 key pair used for SSH access to the host nodes in the EVS environment. (AI-inferred)
-	KeyName any
+	KeyName          any
 	PlacementGroupId any
 }
 
@@ -33,28 +33,28 @@ type Environment_InitialVlans_EdgeVtep struct {
 }
 
 type Environment_InitialVlans struct {
-	EdgeVtep any
+	EdgeVtep       any
 	ExpansionVlan1 any
 	ExpansionVlan2 any
-	Hcx any
+	Hcx            any
 	// The ID of the Amazon EC2 network ACL that controls HCX (Hybrid Cloud Extension) traffic on this initial VLAN in the EVS environment. (AI-inferred)
 	HcxNetworkAclId any
 	// Indicates whether the initial VLAN is marked as public for VMware HCX, enabling its use for hybrid cloud network extension. (AI-inferred)
 	IsHcxPublic any
-	NsxUpLink any
+	NsxUpLink   any
 	// The vm_management object under initial_vlans specifies the VLAN configuration used for managing virtual machines within the AWS EVS environment. (AI-inferred)
 	VmManagement any
 	// Configures the VMkernel management interface for the specified initial VLAN, providing networking details for management traffic within the AWS EVS environment. (AI-inferred)
 	VmkManagement any
 	// Specifies the VLAN configuration used for VMware vMotion traffic in the initial VLAN setup for the environment. (AI-inferred)
 	Vmotion any
-	Vsan any
-	Vtep any
+	Vsan    any
+	Vtep    any
 }
 
 type Environment_LicenseInfo struct {
 	SolutionKey any
-	VsanKey any
+	VsanKey     any
 }
 
 type Environment_ServiceAccessSecurityGroups struct {
@@ -62,16 +62,16 @@ type Environment_ServiceAccessSecurityGroups struct {
 }
 
 type Environment_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Environment_VcfHostnames struct {
 	// The hostname of the Cloud Builder virtual appliance in the VMware Cloud Foundation (VCF) environment, which is used to deploy and manage the software-defined data center (SDDC) infrastructure. (AI-inferred)
 	CloudBuilder any
-	Nsx any
-	NsxEdge1 any
-	NsxEdge2 any
+	Nsx          any
+	NsxEdge1     any
+	NsxEdge2     any
 	// Specifies the fully-qualified domain name (FQDN) for the second NSX Manager node (index 1) in the VMware Cloud Foundation environment's hostname configuration block. (AI-inferred)
 	NsxManager1 any
 	// The fully qualified hostname of the second NSX Manager node in the VMware Cloud Foundation (VCF) environment, required by the EVS environment to connect to your VCF management cluster. (AI-inferred)
@@ -85,101 +85,101 @@ type Environment_VcfHostnames struct {
 }
 
 var Environment_ConnectivityInfoFields = ubx.FieldMap{
-		"PrivateRouteServerPeerings": ubx.FieldSpec{WireName: "private_route_server_peerings"},
-	}
+	"PrivateRouteServerPeerings": ubx.FieldSpec{WireName: "private_route_server_peerings"},
+}
 
 var Environment_HostsFields = ubx.FieldMap{
-		"DedicatedHostId": ubx.FieldSpec{WireName: "dedicated_host_id"},
-		"HostName": ubx.FieldSpec{WireName: "host_name"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"KeyName": ubx.FieldSpec{WireName: "key_name"},
-		"PlacementGroupId": ubx.FieldSpec{WireName: "placement_group_id"},
-	}
+	"DedicatedHostId":  ubx.FieldSpec{WireName: "dedicated_host_id"},
+	"HostName":         ubx.FieldSpec{WireName: "host_name"},
+	"InstanceType":     ubx.FieldSpec{WireName: "instance_type"},
+	"KeyName":          ubx.FieldSpec{WireName: "key_name"},
+	"PlacementGroupId": ubx.FieldSpec{WireName: "placement_group_id"},
+}
 
 var Environment_InitialVlans_EdgeVtepFields = ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-	}
+	"Cidr": ubx.FieldSpec{WireName: "cidr"},
+}
 
 var Environment_InitialVlansFields = ubx.FieldMap{
-		"EdgeVtep": ubx.FieldSpec{
-			WireName: "edge_vtep",
-			Kind: "object",
-			Fields: Environment_InitialVlans_EdgeVtepFields,
-		},
-		"ExpansionVlan1": ubx.FieldSpec{
-			WireName: "expansion_vlan1",
-			Kind: "object",
-			Fields: Environment_InitialVlans_EdgeVtepFields,
-		},
-		"ExpansionVlan2": ubx.FieldSpec{
-			WireName: "expansion_vlan2",
-			Kind: "object",
-			Fields: Environment_InitialVlans_EdgeVtepFields,
-		},
-		"Hcx": ubx.FieldSpec{
-			WireName: "hcx",
-			Kind: "object",
-			Fields: Environment_InitialVlans_EdgeVtepFields,
-		},
-		"HcxNetworkAclId": ubx.FieldSpec{WireName: "hcx_network_acl_id"},
-		"IsHcxPublic": ubx.FieldSpec{WireName: "is_hcx_public"},
-		"NsxUpLink": ubx.FieldSpec{
-			WireName: "nsx_up_link",
-			Kind: "object",
-			Fields: Environment_InitialVlans_EdgeVtepFields,
-		},
-		"VmManagement": ubx.FieldSpec{
-			WireName: "vm_management",
-			Kind: "object",
-			Fields: Environment_InitialVlans_EdgeVtepFields,
-		},
-		"VmkManagement": ubx.FieldSpec{
-			WireName: "vmk_management",
-			Kind: "object",
-			Fields: Environment_InitialVlans_EdgeVtepFields,
-		},
-		"Vmotion": ubx.FieldSpec{
-			WireName: "vmotion",
-			Kind: "object",
-			Fields: Environment_InitialVlans_EdgeVtepFields,
-		},
-		"Vsan": ubx.FieldSpec{
-			WireName: "vsan",
-			Kind: "object",
-			Fields: Environment_InitialVlans_EdgeVtepFields,
-		},
-		"Vtep": ubx.FieldSpec{
-			WireName: "vtep",
-			Kind: "object",
-			Fields: Environment_InitialVlans_EdgeVtepFields,
-		},
-	}
+	"EdgeVtep": ubx.FieldSpec{
+		WireName: "edge_vtep",
+		Kind:     "object",
+		Fields:   Environment_InitialVlans_EdgeVtepFields,
+	},
+	"ExpansionVlan1": ubx.FieldSpec{
+		WireName: "expansion_vlan1",
+		Kind:     "object",
+		Fields:   Environment_InitialVlans_EdgeVtepFields,
+	},
+	"ExpansionVlan2": ubx.FieldSpec{
+		WireName: "expansion_vlan2",
+		Kind:     "object",
+		Fields:   Environment_InitialVlans_EdgeVtepFields,
+	},
+	"Hcx": ubx.FieldSpec{
+		WireName: "hcx",
+		Kind:     "object",
+		Fields:   Environment_InitialVlans_EdgeVtepFields,
+	},
+	"HcxNetworkAclId": ubx.FieldSpec{WireName: "hcx_network_acl_id"},
+	"IsHcxPublic":     ubx.FieldSpec{WireName: "is_hcx_public"},
+	"NsxUpLink": ubx.FieldSpec{
+		WireName: "nsx_up_link",
+		Kind:     "object",
+		Fields:   Environment_InitialVlans_EdgeVtepFields,
+	},
+	"VmManagement": ubx.FieldSpec{
+		WireName: "vm_management",
+		Kind:     "object",
+		Fields:   Environment_InitialVlans_EdgeVtepFields,
+	},
+	"VmkManagement": ubx.FieldSpec{
+		WireName: "vmk_management",
+		Kind:     "object",
+		Fields:   Environment_InitialVlans_EdgeVtepFields,
+	},
+	"Vmotion": ubx.FieldSpec{
+		WireName: "vmotion",
+		Kind:     "object",
+		Fields:   Environment_InitialVlans_EdgeVtepFields,
+	},
+	"Vsan": ubx.FieldSpec{
+		WireName: "vsan",
+		Kind:     "object",
+		Fields:   Environment_InitialVlans_EdgeVtepFields,
+	},
+	"Vtep": ubx.FieldSpec{
+		WireName: "vtep",
+		Kind:     "object",
+		Fields:   Environment_InitialVlans_EdgeVtepFields,
+	},
+}
 
 var Environment_LicenseInfoFields = ubx.FieldMap{
-		"SolutionKey": ubx.FieldSpec{WireName: "solution_key"},
-		"VsanKey": ubx.FieldSpec{WireName: "vsan_key"},
-	}
+	"SolutionKey": ubx.FieldSpec{WireName: "solution_key"},
+	"VsanKey":     ubx.FieldSpec{WireName: "vsan_key"},
+}
 
 var Environment_ServiceAccessSecurityGroupsFields = ubx.FieldMap{
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-	}
+	"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
+}
 
 var Environment_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Environment_VcfHostnamesFields = ubx.FieldMap{
-		"CloudBuilder": ubx.FieldSpec{WireName: "cloud_builder"},
-		"Nsx": ubx.FieldSpec{WireName: "nsx"},
-		"NsxEdge1": ubx.FieldSpec{WireName: "nsx_edge1"},
-		"NsxEdge2": ubx.FieldSpec{WireName: "nsx_edge2"},
-		"NsxManager1": ubx.FieldSpec{WireName: "nsx_manager1"},
-		"NsxManager2": ubx.FieldSpec{WireName: "nsx_manager2"},
-		"NsxManager3": ubx.FieldSpec{WireName: "nsx_manager3"},
-		"SddcManager": ubx.FieldSpec{WireName: "sddc_manager"},
-		"Vcenter": ubx.FieldSpec{WireName: "vcenter"},
-	}
+	"CloudBuilder": ubx.FieldSpec{WireName: "cloud_builder"},
+	"Nsx":          ubx.FieldSpec{WireName: "nsx"},
+	"NsxEdge1":     ubx.FieldSpec{WireName: "nsx_edge1"},
+	"NsxEdge2":     ubx.FieldSpec{WireName: "nsx_edge2"},
+	"NsxManager1":  ubx.FieldSpec{WireName: "nsx_manager1"},
+	"NsxManager2":  ubx.FieldSpec{WireName: "nsx_manager2"},
+	"NsxManager3":  ubx.FieldSpec{WireName: "nsx_manager3"},
+	"SddcManager":  ubx.FieldSpec{WireName: "sddc_manager"},
+	"Vcenter":      ubx.FieldSpec{WireName: "vcenter"},
+}
 
 type EnvironmentConfig struct {
 	ConnectivityInfo any
@@ -213,7 +213,7 @@ type EnvironmentConfig struct {
 
 type EnvironmentAttrs struct {
 	// The results of the health and licensing checks Amazon EVS runs against this environment, e.g. key reuse, key coverage, reachability, and host count. (AI-inferred)
-	Checks any
+	Checks           any
 	ConnectivityInfo any
 	// This read-only string contains the ISO 8601 timestamp of when the EVS environment was created. (AI-inferred)
 	CreatedAt any
@@ -262,45 +262,45 @@ var Environment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConnectivityInfo": ubx.FieldSpec{
 			WireName: "connectivity_info",
-			Kind: "object",
-			Fields: Environment_ConnectivityInfoFields,
+			Kind:     "object",
+			Fields:   Environment_ConnectivityInfoFields,
 		},
 		"EnvironmentName": ubx.FieldSpec{WireName: "environment_name"},
 		"Hosts": ubx.FieldSpec{
 			WireName: "hosts",
-			Kind: "list",
-			Fields: Environment_HostsFields,
+			Kind:     "list",
+			Fields:   Environment_HostsFields,
 		},
 		"InitialVlans": ubx.FieldSpec{
 			WireName: "initial_vlans",
-			Kind: "object",
-			Fields: Environment_InitialVlansFields,
+			Kind:     "object",
+			Fields:   Environment_InitialVlansFields,
 		},
 		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
 		"LicenseInfo": ubx.FieldSpec{
 			WireName: "license_info",
-			Kind: "object",
-			Fields: Environment_LicenseInfoFields,
+			Kind:     "object",
+			Fields:   Environment_LicenseInfoFields,
 		},
 		"ServiceAccessSecurityGroups": ubx.FieldSpec{
 			WireName: "service_access_security_groups",
-			Kind: "object",
-			Fields: Environment_ServiceAccessSecurityGroupsFields,
+			Kind:     "object",
+			Fields:   Environment_ServiceAccessSecurityGroupsFields,
 		},
 		"ServiceAccessSubnetId": ubx.FieldSpec{WireName: "service_access_subnet_id"},
-		"SiteId": ubx.FieldSpec{WireName: "site_id"},
+		"SiteId":                ubx.FieldSpec{WireName: "site_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Environment_TagsFields,
+			Kind:     "list",
+			Fields:   Environment_TagsFields,
 		},
 		"TermsAccepted": ubx.FieldSpec{WireName: "terms_accepted"},
 		"VcfHostnames": ubx.FieldSpec{
 			WireName: "vcf_hostnames",
-			Kind: "object",
-			Fields: Environment_VcfHostnamesFields,
+			Kind:     "object",
+			Fields:   Environment_VcfHostnamesFields,
 		},
 		"VcfVersion": ubx.FieldSpec{WireName: "vcf_version"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
+		"VpcId":      ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

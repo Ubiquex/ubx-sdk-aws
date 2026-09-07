@@ -8,23 +8,23 @@ type TrafficDistributionGroupUsers_TrafficDistributionGroupUserSummaryList struc
 }
 
 type TrafficDistributionGroupUsersConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults                 any
+	NextToken                  any
 	TrafficDistributionGroupId any
 }
 
 type TrafficDistributionGroupUsersAttrs struct {
-	MaxResults any
-	NextToken any
-	TrafficDistributionGroupId any
+	MaxResults                              any
+	NextToken                               any
+	TrafficDistributionGroupId              any
 	TrafficDistributionGroupUserSummaryList any
 }
 
 var TrafficDistributionGroupUsers = ubx.DataSourceBinding{
 	WireType: "aws_connect_traffic_distribution_group_users",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                 ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                  ubx.FieldSpec{WireName: "next_token"},
 		"TrafficDistributionGroupId": ubx.FieldSpec{WireName: "traffic_distribution_group_id"},
 	},
 }

@@ -4,12 +4,12 @@ package refactor_spaces
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RefactorSpacesServices_ServiceSummaryList_Error struct {
-	AccountId any
-	AdditionalDetails any
-	Code any
-	Message any
+	AccountId          any
+	AdditionalDetails  any
+	Code               any
+	Message            any
 	ResourceIdentifier any
-	ResourceType any
+	ResourceType       any
 }
 
 type RefactorSpacesServices_ServiceSummaryList_LambdaEndpoint struct {
@@ -18,42 +18,42 @@ type RefactorSpacesServices_ServiceSummaryList_LambdaEndpoint struct {
 
 type RefactorSpacesServices_ServiceSummaryList_UrlEndpoint struct {
 	HealthUrl any
-	Url any
+	Url       any
 }
 
 type RefactorSpacesServices_ServiceSummaryList struct {
-	ApplicationId any
-	Arn any
+	ApplicationId      any
+	Arn                any
 	CreatedByAccountId any
-	CreatedTime any
-	Description any
-	EndpointType any
-	EnvironmentId any
-	Error any
-	LambdaEndpoint any
-	LastUpdatedTime any
-	Name any
-	OwnerAccountId any
-	ServiceId any
-	State any
-	Tags any
-	UrlEndpoint any
-	VpcId any
+	CreatedTime        any
+	Description        any
+	EndpointType       any
+	EnvironmentId      any
+	Error              any
+	LambdaEndpoint     any
+	LastUpdatedTime    any
+	Name               any
+	OwnerAccountId     any
+	ServiceId          any
+	State              any
+	Tags               any
+	UrlEndpoint        any
+	VpcId              any
 }
 
 type RefactorSpacesServicesConfig struct {
 	ApplicationIdentifier any
 	EnvironmentIdentifier any
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 }
 
 type RefactorSpacesServicesAttrs struct {
 	ApplicationIdentifier any
 	EnvironmentIdentifier any
-	MaxResults any
-	NextToken any
-	ServiceSummaryList any
+	MaxResults            any
+	NextToken             any
+	ServiceSummaryList    any
 }
 
 var RefactorSpacesServices = ubx.DataSourceBinding{
@@ -61,7 +61,7 @@ var RefactorSpacesServices = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ApplicationIdentifier": ubx.FieldSpec{WireName: "application_identifier"},
 		"EnvironmentIdentifier": ubx.FieldSpec{WireName: "environment_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -28,7 +28,7 @@ type ServiceSettingAttrs struct {
 var ServiceSetting = ubx.ResourceBinding{
 	WireType: "aws_ssm_service_setting",
 	Fields: ubx.FieldMap{
-		"SettingId": ubx.FieldSpec{WireName: "setting_id"},
+		"SettingId":    ubx.FieldSpec{WireName: "setting_id"},
 		"SettingValue": ubx.FieldSpec{WireName: "setting_value"},
 	},
 }

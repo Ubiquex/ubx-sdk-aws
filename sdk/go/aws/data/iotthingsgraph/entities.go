@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Entities_Descriptions_Definition struct {
 	Language any
-	Text any
+	Text     any
 }
 
 type Entities_Descriptions struct {
-	Arn any
-	CreatedAt any
+	Arn        any
+	CreatedAt  any
 	Definition any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type EntitiesConfig struct {
-	Ids any
+	Ids              any
 	NamespaceVersion any
 }
 
 type EntitiesAttrs struct {
-	Descriptions any
-	Ids any
+	Descriptions     any
+	Ids              any
 	NamespaceVersion any
 }
 
 var Entities = ubx.DataSourceBinding{
 	WireType: "aws_iotthingsgraph_entities",
 	Fields: ubx.FieldMap{
-		"Ids": ubx.FieldSpec{WireName: "ids"},
+		"Ids":              ubx.FieldSpec{WireName: "ids"},
 		"NamespaceVersion": ubx.FieldSpec{WireName: "namespace_version"},
 	},
 }

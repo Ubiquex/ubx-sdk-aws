@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReplicationInstanceTaskLogs_ReplicationInstanceTaskLogs struct {
 	ReplicationInstanceTaskLogSize any
-	ReplicationTaskArn any
-	ReplicationTaskName any
+	ReplicationTaskArn             any
+	ReplicationTaskName            any
 }
 
 type ReplicationInstanceTaskLogsConfig struct {
-	Marker any
-	MaxRecords any
+	Marker                 any
+	MaxRecords             any
 	ReplicationInstanceArn any
 }
 
 type ReplicationInstanceTaskLogsAttrs struct {
-	Marker any
-	MaxRecords any
-	ReplicationInstanceArn any
+	Marker                      any
+	MaxRecords                  any
+	ReplicationInstanceArn      any
 	ReplicationInstanceTaskLogs any
 }
 
 var ReplicationInstanceTaskLogs = ubx.DataSourceBinding{
 	WireType: "aws_dms_replication_instance_task_logs",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
+		"Marker":                 ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":             ubx.FieldSpec{WireName: "max_records"},
 		"ReplicationInstanceArn": ubx.FieldSpec{WireName: "replication_instance_arn"},
 	},
 }

@@ -4,47 +4,47 @@ package workspaces
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Applications_Applications struct {
-	ApplicationId any
-	Created any
-	Description any
-	LicenseType any
-	Name any
-	Owner any
-	State any
-	SupportedComputeTypeNames any
+	ApplicationId                 any
+	Created                       any
+	Description                   any
+	LicenseType                   any
+	Name                          any
+	Owner                         any
+	State                         any
+	SupportedComputeTypeNames     any
 	SupportedOperatingSystemNames any
 }
 
 type ApplicationsConfig struct {
-	ApplicationIds any
-	ComputeTypeNames any
-	LicenseType any
-	MaxResults any
-	NextToken any
+	ApplicationIds       any
+	ComputeTypeNames     any
+	LicenseType          any
+	MaxResults           any
+	NextToken            any
 	OperatingSystemNames any
-	Owner any
+	Owner                any
 }
 
 type ApplicationsAttrs struct {
-	ApplicationIds any
-	Applications any
-	ComputeTypeNames any
-	LicenseType any
-	MaxResults any
-	NextToken any
+	ApplicationIds       any
+	Applications         any
+	ComputeTypeNames     any
+	LicenseType          any
+	MaxResults           any
+	NextToken            any
 	OperatingSystemNames any
-	Owner any
+	Owner                any
 }
 
 var Applications = ubx.DataSourceBinding{
 	WireType: "aws_workspaces_applications",
 	Fields: ubx.FieldMap{
-		"ApplicationIds": ubx.FieldSpec{WireName: "application_ids"},
-		"ComputeTypeNames": ubx.FieldSpec{WireName: "compute_type_names"},
-		"LicenseType": ubx.FieldSpec{WireName: "license_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ApplicationIds":       ubx.FieldSpec{WireName: "application_ids"},
+		"ComputeTypeNames":     ubx.FieldSpec{WireName: "compute_type_names"},
+		"LicenseType":          ubx.FieldSpec{WireName: "license_type"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 		"OperatingSystemNames": ubx.FieldSpec{WireName: "operating_system_names"},
-		"Owner": ubx.FieldSpec{WireName: "owner"},
+		"Owner":                ubx.FieldSpec{WireName: "owner"},
 	},
 }

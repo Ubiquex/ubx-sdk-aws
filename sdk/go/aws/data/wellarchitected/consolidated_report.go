@@ -4,41 +4,41 @@ package wellarchitected
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConsolidatedReport_Metrics_Lenses_Pillars_Questions_BestPractices struct {
-	ChoiceId any
+	ChoiceId    any
 	ChoiceTitle any
 }
 
 type ConsolidatedReport_Metrics_Lenses_Pillars_Questions struct {
 	BestPractices any
-	QuestionId any
-	Risk any
+	QuestionId    any
+	Risk          any
 }
 
 type ConsolidatedReport_Metrics_Lenses_Pillars struct {
-	PillarId any
-	Questions any
+	PillarId   any
+	Questions  any
 	RiskCounts any
 }
 
 type ConsolidatedReport_Metrics_Lenses struct {
-	LensArn any
-	Pillars any
+	LensArn    any
+	Pillars    any
 	RiskCounts any
 }
 
 type ConsolidatedReport_Metrics struct {
-	Lenses any
+	Lenses             any
 	LensesAppliedCount any
-	MetricType any
-	RiskCounts any
-	UpdatedAt any
-	WorkloadArn any
-	WorkloadId any
-	WorkloadName any
+	MetricType         any
+	RiskCounts         any
+	UpdatedAt          any
+	WorkloadArn        any
+	WorkloadId         any
+	WorkloadName       any
 }
 
 type ConsolidatedReportConfig struct {
-	Format any
+	Format                 any
 	IncludeSharedResources any
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
@@ -48,12 +48,12 @@ type ConsolidatedReportConfig struct {
 
 type ConsolidatedReportAttrs struct {
 	// <p>The Base64-encoded string representation of a lens review report.</p> <p>This data can be used to create a PDF file.</p> <p>Only returned by <a>GetConsolidatedReport</a> when <code>PDF</code> format is requested.</p>
-	Base64String any
-	Format any
+	Base64String           any
+	Format                 any
 	IncludeSharedResources any
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
-	Metrics any
+	Metrics    any
 	// <p>The token to use to retrieve the next set of results.</p>
 	NextToken any
 }
@@ -61,9 +61,9 @@ type ConsolidatedReportAttrs struct {
 var ConsolidatedReport = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_consolidated_report",
 	Fields: ubx.FieldMap{
-		"Format": ubx.FieldSpec{WireName: "format"},
+		"Format":                 ubx.FieldSpec{WireName: "format"},
 		"IncludeSharedResources": ubx.FieldSpec{WireName: "include_shared_resources"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
 	},
 }

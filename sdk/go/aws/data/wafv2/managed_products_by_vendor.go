@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagedProductsByVendor_ManagedProducts struct {
 	IsAdvancedManagedRuleSet any
-	IsVersioningSupported any
-	ManagedRuleSetName any
-	ProductDescription any
-	ProductId any
-	ProductLink any
-	ProductTitle any
-	SnsTopicArn any
-	VendorName any
+	IsVersioningSupported    any
+	ManagedRuleSetName       any
+	ProductDescription       any
+	ProductId                any
+	ProductLink              any
+	ProductTitle             any
+	SnsTopicArn              any
+	VendorName               any
 }
 
 type ManagedProductsByVendorConfig struct {
-	Scope any
+	Scope      any
 	VendorName any
 }
 
 type ManagedProductsByVendorAttrs struct {
 	ManagedProducts any
-	Scope any
-	VendorName any
+	Scope           any
+	VendorName      any
 }
 
 var ManagedProductsByVendor = ubx.DataSourceBinding{
 	WireType: "aws_wafv2_managed_products_by_vendor",
 	Fields: ubx.FieldMap{
-		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Scope":      ubx.FieldSpec{WireName: "scope"},
 		"VendorName": ubx.FieldSpec{WireName: "vendor_name"},
 	},
 }

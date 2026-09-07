@@ -4,11 +4,11 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DatasetExportJobs_Jobs struct {
-	CompletedAt any
+	CompletedAt      any
 	DestinationS3Uri any
-	JobId any
-	StartedAt any
-	Status any
+	JobId            any
+	StartedAt        any
+	Status           any
 }
 
 type DatasetExportJobsConfig struct {
@@ -17,7 +17,7 @@ type DatasetExportJobsConfig struct {
 	// <p>The maximum number of results to return for each paginated request.</p>
 	MaxResults any
 	// <p>The token to be used for the next set of paginated results.</p>
-	NextToken any
+	NextToken     any
 	WorkspaceName any
 }
 
@@ -29,16 +29,16 @@ type DatasetExportJobsAttrs struct {
 	// <p>The maximum number of results to return for each paginated request.</p>
 	MaxResults any
 	// <p>The token to be used for the next set of paginated results.</p>
-	NextToken any
+	NextToken     any
 	WorkspaceName any
 }
 
 var DatasetExportJobs = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_dataset_export_jobs",
 	Fields: ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Filter":        ubx.FieldSpec{WireName: "filter"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"WorkspaceName": ubx.FieldSpec{WireName: "workspace_name"},
 	},
 }

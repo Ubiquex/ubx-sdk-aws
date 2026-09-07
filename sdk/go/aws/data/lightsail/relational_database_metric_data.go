@@ -4,45 +4,45 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RelationalDatabaseMetricData_MetricData struct {
-	Average any
-	Maximum any
-	Minimum any
+	Average     any
+	Maximum     any
+	Minimum     any
 	SampleCount any
-	Sum any
-	Timestamp any
-	Unit any
+	Sum         any
+	Timestamp   any
+	Unit        any
 }
 
 type RelationalDatabaseMetricDataConfig struct {
-	EndTime any
-	MetricName any
-	Period any
+	EndTime                any
+	MetricName             any
+	Period                 any
 	RelationalDatabaseName any
-	StartTime any
-	Statistics any
-	Unit any
+	StartTime              any
+	Statistics             any
+	Unit                   any
 }
 
 type RelationalDatabaseMetricDataAttrs struct {
-	EndTime any
-	MetricData any
-	MetricName any
-	Period any
+	EndTime                any
+	MetricData             any
+	MetricName             any
+	Period                 any
 	RelationalDatabaseName any
-	StartTime any
-	Statistics any
-	Unit any
+	StartTime              any
+	Statistics             any
+	Unit                   any
 }
 
 var RelationalDatabaseMetricData = ubx.DataSourceBinding{
 	WireType: "aws_lightsail_relational_database_metric_data",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Period": ubx.FieldSpec{WireName: "period"},
+		"EndTime":                ubx.FieldSpec{WireName: "end_time"},
+		"MetricName":             ubx.FieldSpec{WireName: "metric_name"},
+		"Period":                 ubx.FieldSpec{WireName: "period"},
 		"RelationalDatabaseName": ubx.FieldSpec{WireName: "relational_database_name"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Statistics": ubx.FieldSpec{WireName: "statistics"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
+		"StartTime":              ubx.FieldSpec{WireName: "start_time"},
+		"Statistics":             ubx.FieldSpec{WireName: "statistics"},
+		"Unit":                   ubx.FieldSpec{WireName: "unit"},
 	},
 }

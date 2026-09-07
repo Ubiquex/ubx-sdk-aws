@@ -4,14 +4,14 @@ package workspacesweb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityProvider_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var IdentityProvider_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IdentityProviderConfig struct {
 	// Provides the identity provider-specific configuration details, such as SAML metadata or OIDC client credentials (e.g., clientId, clientSecret, authorizeScopes), required to integrate the provider with WorkSpaces Web. (AI-inferred)
@@ -45,13 +45,13 @@ var IdentityProvider = ubx.ResourceBinding{
 	WireType: "aws_work_spaces_web_identity_provider",
 	Fields: ubx.FieldMap{
 		"IdentityProviderDetails": ubx.FieldSpec{WireName: "identity_provider_details"},
-		"IdentityProviderName": ubx.FieldSpec{WireName: "identity_provider_name"},
-		"IdentityProviderType": ubx.FieldSpec{WireName: "identity_provider_type"},
-		"PortalArn": ubx.FieldSpec{WireName: "portal_arn"},
+		"IdentityProviderName":    ubx.FieldSpec{WireName: "identity_provider_name"},
+		"IdentityProviderType":    ubx.FieldSpec{WireName: "identity_provider_type"},
+		"PortalArn":               ubx.FieldSpec{WireName: "portal_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: IdentityProvider_TagsFields,
+			Kind:     "list",
+			Fields:   IdentityProvider_TagsFields,
 		},
 	},
 }

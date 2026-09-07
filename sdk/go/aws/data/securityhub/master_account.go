@@ -4,9 +4,9 @@ package securityhub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MasterAccount_Master struct {
-	AccountId any
+	AccountId    any
 	InvitationId any
-	InvitedAt any
+	InvitedAt    any
 	MemberStatus any
 }
 
@@ -20,6 +20,5 @@ type MasterAccountAttrs struct {
 
 var MasterAccount = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_master_account",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

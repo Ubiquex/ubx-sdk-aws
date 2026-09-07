@@ -4,38 +4,38 @@ package greengrassv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CoreDevices_CoreDevices struct {
-	Architecture any
-	CoreDeviceThingName any
+	Architecture              any
+	CoreDeviceThingName       any
 	LastStatusUpdateTimestamp any
-	Platform any
-	Runtime any
-	Status any
+	Platform                  any
+	Runtime                   any
+	Status                    any
 }
 
 type CoreDevicesConfig struct {
-	MaxResults any
-	NextToken any
-	Runtime any
-	Status any
+	MaxResults    any
+	NextToken     any
+	Runtime       any
+	Status        any
 	ThingGroupArn any
 }
 
 type CoreDevicesAttrs struct {
-	CoreDevices any
-	MaxResults any
-	NextToken any
-	Runtime any
-	Status any
+	CoreDevices   any
+	MaxResults    any
+	NextToken     any
+	Runtime       any
+	Status        any
 	ThingGroupArn any
 }
 
 var CoreDevices = ubx.DataSourceBinding{
 	WireType: "aws_greengrassv2_core_devices",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Runtime": ubx.FieldSpec{WireName: "runtime"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"Runtime":       ubx.FieldSpec{WireName: "runtime"},
+		"Status":        ubx.FieldSpec{WireName: "status"},
 		"ThingGroupArn": ubx.FieldSpec{WireName: "thing_group_arn"},
 	},
 }

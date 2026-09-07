@@ -5,57 +5,57 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataTablePrimaryValues_PrimaryAttributeValues struct {
 	AttributeName any
-	Values any
+	Values        any
 }
 
 type DataTablePrimaryValues_PrimaryValuesList_PrimaryValues struct {
-	AttributeId any
+	AttributeId   any
 	AttributeName any
-	Value any
+	Value         any
 }
 
 type DataTablePrimaryValues_PrimaryValuesList struct {
 	LastModifiedRegion any
-	LastModifiedTime any
-	PrimaryValues any
-	RecordId any
+	LastModifiedTime   any
+	PrimaryValues      any
+	RecordId           any
 }
 
 var DataTablePrimaryValues_PrimaryAttributeValuesFields = ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
+	"Values":        ubx.FieldSpec{WireName: "values"},
+}
 
 type DataTablePrimaryValuesConfig struct {
-	DataTableId any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	DataTableId            any
+	InstanceId             any
+	MaxResults             any
+	NextToken              any
 	PrimaryAttributeValues any
-	RecordIds any
+	RecordIds              any
 }
 
 type DataTablePrimaryValuesAttrs struct {
-	DataTableId any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	DataTableId            any
+	InstanceId             any
+	MaxResults             any
+	NextToken              any
 	PrimaryAttributeValues any
-	PrimaryValuesList any
-	RecordIds any
+	PrimaryValuesList      any
+	RecordIds              any
 }
 
 var DataTablePrimaryValues = ubx.DataSourceBinding{
 	WireType: "aws_connect_data_table_primary_values",
 	Fields: ubx.FieldMap{
 		"DataTableId": ubx.FieldSpec{WireName: "data_table_id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"InstanceId":  ubx.FieldSpec{WireName: "instance_id"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"PrimaryAttributeValues": ubx.FieldSpec{
 			WireName: "primary_attribute_values",
-			Kind: "list",
-			Fields: DataTablePrimaryValues_PrimaryAttributeValuesFields,
+			Kind:     "list",
+			Fields:   DataTablePrimaryValues_PrimaryAttributeValuesFields,
 		},
 		"RecordIds": ubx.FieldSpec{WireName: "record_ids"},
 	},

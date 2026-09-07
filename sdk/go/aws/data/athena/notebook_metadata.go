@@ -8,33 +8,33 @@ type NotebookMetadata_Filters struct {
 }
 
 type NotebookMetadata_NotebookMetadataList struct {
-	CreationTime any
+	CreationTime     any
 	LastModifiedTime any
-	Name any
-	NotebookId any
-	Type any
-	WorkGroup any
+	Name             any
+	NotebookId       any
+	Type             any
+	WorkGroup        any
 }
 
 var NotebookMetadata_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 type NotebookMetadataConfig struct {
 	// <p>A string for searching notebook names.</p>
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	WorkGroup any
+	NextToken  any
+	WorkGroup  any
 }
 
 type NotebookMetadataAttrs struct {
 	// <p>A string for searching notebook names.</p>
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters              any
+	MaxResults           any
+	NextToken            any
 	NotebookMetadataList any
-	WorkGroup any
+	WorkGroup            any
 }
 
 var NotebookMetadata = ubx.DataSourceBinding{
@@ -42,11 +42,11 @@ var NotebookMetadata = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: NotebookMetadata_FiltersFields,
+			Kind:     "object",
+			Fields:   NotebookMetadata_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"WorkGroup": ubx.FieldSpec{WireName: "work_group"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"WorkGroup":  ubx.FieldSpec{WireName: "work_group"},
 	},
 }

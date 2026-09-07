@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourcePolicyConfig struct {
 	ResourceArn any
-	StreamId any
+	StreamId    any
 }
 
 type ResourcePolicyAttrs struct {
-	Policy any
+	Policy      any
 	ResourceArn any
-	StreamId any
+	StreamId    any
 }
 
 var ResourcePolicy = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_resource_policy",
 	Fields: ubx.FieldMap{
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
+		"StreamId":    ubx.FieldSpec{WireName: "stream_id"},
 	},
 }

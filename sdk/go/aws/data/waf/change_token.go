@@ -12,6 +12,5 @@ type ChangeTokenAttrs struct {
 
 var ChangeToken = ubx.DataSourceBinding{
 	WireType: "aws_waf_change_token",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

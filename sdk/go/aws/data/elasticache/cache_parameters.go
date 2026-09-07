@@ -5,55 +5,55 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CacheParameters_CacheNodeTypeSpecificParameters_CacheNodeTypeSpecificValues struct {
 	CacheNodeType any
-	Value any
+	Value         any
 }
 
 type CacheParameters_CacheNodeTypeSpecificParameters struct {
-	AllowedValues any
+	AllowedValues               any
 	CacheNodeTypeSpecificValues any
-	ChangeType any
-	DataType any
-	Description any
-	IsModifiable any
-	MinimumEngineVersion any
-	ParameterName any
-	Source any
+	ChangeType                  any
+	DataType                    any
+	Description                 any
+	IsModifiable                any
+	MinimumEngineVersion        any
+	ParameterName               any
+	Source                      any
 }
 
 type CacheParameters_Parameters struct {
-	AllowedValues any
-	ChangeType any
-	DataType any
-	Description any
-	IsModifiable any
+	AllowedValues        any
+	ChangeType           any
+	DataType             any
+	Description          any
+	IsModifiable         any
 	MinimumEngineVersion any
-	ParameterName any
-	ParameterValue any
-	Source any
+	ParameterName        any
+	ParameterValue       any
+	Source               any
 }
 
 type CacheParametersConfig struct {
 	CacheParameterGroupName any
-	Marker any
-	MaxRecords any
-	Source any
+	Marker                  any
+	MaxRecords              any
+	Source                  any
 }
 
 type CacheParametersAttrs struct {
 	CacheNodeTypeSpecificParameters any
-	CacheParameterGroupName any
-	Marker any
-	MaxRecords any
-	Parameters any
-	Source any
+	CacheParameterGroupName         any
+	Marker                          any
+	MaxRecords                      any
+	Parameters                      any
+	Source                          any
 }
 
 var CacheParameters = ubx.DataSourceBinding{
 	WireType: "aws_elasticache_cache_parameters",
 	Fields: ubx.FieldMap{
 		"CacheParameterGroupName": ubx.FieldSpec{WireName: "cache_parameter_group_name"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"Source": ubx.FieldSpec{WireName: "source"},
+		"Marker":                  ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":              ubx.FieldSpec{WireName: "max_records"},
+		"Source":                  ubx.FieldSpec{WireName: "source"},
 	},
 }

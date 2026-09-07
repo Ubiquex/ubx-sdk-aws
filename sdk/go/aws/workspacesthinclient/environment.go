@@ -28,19 +28,19 @@ type Environment_MaintenanceWindow struct {
 }
 
 var Environment_DeviceCreationTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Environment_MaintenanceWindowFields = ubx.FieldMap{
-		"ApplyTimeOf": ubx.FieldSpec{WireName: "apply_time_of"},
-		"DaysOfTheWeek": ubx.FieldSpec{WireName: "days_of_the_week"},
-		"EndTimeHour": ubx.FieldSpec{WireName: "end_time_hour"},
-		"EndTimeMinute": ubx.FieldSpec{WireName: "end_time_minute"},
-		"StartTimeHour": ubx.FieldSpec{WireName: "start_time_hour"},
-		"StartTimeMinute": ubx.FieldSpec{WireName: "start_time_minute"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ApplyTimeOf":     ubx.FieldSpec{WireName: "apply_time_of"},
+	"DaysOfTheWeek":   ubx.FieldSpec{WireName: "days_of_the_week"},
+	"EndTimeHour":     ubx.FieldSpec{WireName: "end_time_hour"},
+	"EndTimeMinute":   ubx.FieldSpec{WireName: "end_time_minute"},
+	"StartTimeHour":   ubx.FieldSpec{WireName: "start_time_hour"},
+	"StartTimeMinute": ubx.FieldSpec{WireName: "start_time_minute"},
+	"Type":            ubx.FieldSpec{WireName: "type"},
+}
 
 type EnvironmentConfig struct {
 	// The ID of the software set to apply.
@@ -112,26 +112,26 @@ var Environment = ubx.ResourceBinding{
 	WireType: "aws_work_spaces_thin_client_environment",
 	Fields: ubx.FieldMap{
 		"DesiredSoftwareSetId": ubx.FieldSpec{WireName: "desired_software_set_id"},
-		"DesktopArn": ubx.FieldSpec{WireName: "desktop_arn"},
-		"DesktopEndpoint": ubx.FieldSpec{WireName: "desktop_endpoint"},
+		"DesktopArn":           ubx.FieldSpec{WireName: "desktop_arn"},
+		"DesktopEndpoint":      ubx.FieldSpec{WireName: "desktop_endpoint"},
 		"DeviceCreationTags": ubx.FieldSpec{
 			WireName: "device_creation_tags",
-			Kind: "list",
-			Fields: Environment_DeviceCreationTagsFields,
+			Kind:     "list",
+			Fields:   Environment_DeviceCreationTagsFields,
 		},
 		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
 		"MaintenanceWindow": ubx.FieldSpec{
 			WireName: "maintenance_window",
-			Kind: "object",
-			Fields: Environment_MaintenanceWindowFields,
+			Kind:     "object",
+			Fields:   Environment_MaintenanceWindowFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SoftwareSetUpdateMode": ubx.FieldSpec{WireName: "software_set_update_mode"},
+		"Name":                      ubx.FieldSpec{WireName: "name"},
+		"SoftwareSetUpdateMode":     ubx.FieldSpec{WireName: "software_set_update_mode"},
 		"SoftwareSetUpdateSchedule": ubx.FieldSpec{WireName: "software_set_update_schedule"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Environment_DeviceCreationTagsFields,
+			Kind:     "list",
+			Fields:   Environment_DeviceCreationTagsFields,
 		},
 	},
 }

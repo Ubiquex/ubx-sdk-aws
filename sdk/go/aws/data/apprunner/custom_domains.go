@@ -4,37 +4,37 @@ package apprunner
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomDomains_CustomDomains_CertificateValidationRecords struct {
-	Name any
+	Name   any
 	Status any
-	Type any
-	Value any
+	Type   any
+	Value  any
 }
 
 type CustomDomains_CustomDomains struct {
 	CertificateValidationRecords any
-	DomainName any
-	EnableWwwsubdomain any
-	Status any
+	DomainName                   any
+	EnableWwwsubdomain           any
+	Status                       any
 }
 
 type CustomDomains_VpcDnstargets struct {
-	DomainName any
-	VpcId any
+	DomainName              any
+	VpcId                   any
 	VpcIngressConnectionArn any
 }
 
 type CustomDomainsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	ServiceArn any
 }
 
 type CustomDomainsAttrs struct {
 	CustomDomains any
-	Dnstarget any
-	MaxResults any
-	NextToken any
-	ServiceArn any
+	Dnstarget     any
+	MaxResults    any
+	NextToken     any
+	ServiceArn    any
 	VpcDnstargets any
 }
 
@@ -42,7 +42,7 @@ var CustomDomains = ubx.DataSourceBinding{
 	WireType: "aws_apprunner_custom_domains",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ServiceArn": ubx.FieldSpec{WireName: "service_arn"},
 	},
 }

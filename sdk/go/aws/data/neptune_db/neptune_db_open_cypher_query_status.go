@@ -4,10 +4,10 @@ package neptune_db
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NeptuneDbOpenCypherQueryStatus_QueryEvalStats struct {
-	Cancelled any
-	Elapsed any
+	Cancelled  any
+	Elapsed    any
 	Subqueries any
-	Waited any
+	Waited     any
 }
 
 type NeptuneDbOpenCypherQueryStatusConfig struct {
@@ -17,8 +17,8 @@ type NeptuneDbOpenCypherQueryStatusConfig struct {
 type NeptuneDbOpenCypherQueryStatusAttrs struct {
 	// <p>Structure to capture query statistics such as how many queries are running, accepted or waiting and their details.</p>
 	QueryEvalStats any
-	QueryId any
-	QueryString any
+	QueryId        any
+	QueryString    any
 }
 
 var NeptuneDbOpenCypherQueryStatus = ubx.DataSourceBinding{

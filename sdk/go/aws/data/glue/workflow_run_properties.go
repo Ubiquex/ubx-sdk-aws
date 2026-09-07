@@ -4,20 +4,20 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkflowRunPropertiesConfig struct {
-	Name any
+	Name  any
 	RunId any
 }
 
 type WorkflowRunPropertiesAttrs struct {
-	Name any
-	RunId any
+	Name          any
+	RunId         any
 	RunProperties any
 }
 
 var WorkflowRunProperties = ubx.DataSourceBinding{
 	WireType: "aws_glue_workflow_run_properties",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":  ubx.FieldSpec{WireName: "name"},
 		"RunId": ubx.FieldSpec{WireName: "run_id"},
 	},
 }

@@ -4,7 +4,7 @@ package health
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EntityAggregates_EntityAggregates struct {
-	Count any
+	Count    any
 	EventArn any
 	Statuses any
 }
@@ -15,7 +15,7 @@ type EntityAggregatesConfig struct {
 
 type EntityAggregatesAttrs struct {
 	EntityAggregates any
-	EventArns any
+	EventArns        any
 }
 
 var EntityAggregates = ubx.DataSourceBinding{

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FileSystemAliases_Aliases struct {
 	Lifecycle any
-	Name any
+	Name      any
 }
 
 type FileSystemAliasesConfig struct {
@@ -36,8 +36,8 @@ var FileSystemAliases = ubx.DataSourceBinding{
 	WireType: "aws_fsx_file_system_aliases",
 	Fields: ubx.FieldMap{
 		"ClientRequestToken": ubx.FieldSpec{WireName: "client_request_token"},
-		"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"FileSystemId":       ubx.FieldSpec{WireName: "file_system_id"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 	},
 }

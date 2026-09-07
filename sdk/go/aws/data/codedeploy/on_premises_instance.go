@@ -4,18 +4,18 @@ package codedeploy
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OnPremisesInstance_InstanceInfo_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type OnPremisesInstance_InstanceInfo struct {
 	DeregisterTime any
-	IamSessionArn any
-	IamUserArn any
-	InstanceArn any
-	InstanceName any
-	RegisterTime any
-	Tags any
+	IamSessionArn  any
+	IamUserArn     any
+	InstanceArn    any
+	InstanceName   any
+	RegisterTime   any
+	Tags           any
 }
 
 type OnPremisesInstanceConfig struct {

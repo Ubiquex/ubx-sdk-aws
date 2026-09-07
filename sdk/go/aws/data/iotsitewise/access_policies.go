@@ -12,56 +12,56 @@ type AccessPolicies_AccessPolicySummaries_Identity_IamRole struct {
 }
 
 type AccessPolicies_AccessPolicySummaries_Identity struct {
-	Group any
+	Group   any
 	IamRole any
 	IamUser any
-	User any
+	User    any
 }
 
 type AccessPolicies_AccessPolicySummaries_Resource struct {
-	Portal any
+	Portal  any
 	Project any
 }
 
 type AccessPolicies_AccessPolicySummaries struct {
-	CreationDate any
-	Id any
-	Identity any
+	CreationDate   any
+	Id             any
+	Identity       any
 	LastUpdateDate any
-	Permission any
-	Resource any
+	Permission     any
+	Resource       any
 }
 
 type AccessPoliciesConfig struct {
-	IamArn any
-	IdentityId any
+	IamArn       any
+	IdentityId   any
 	IdentityType any
-	MaxResults any
-	NextToken any
-	ResourceId any
+	MaxResults   any
+	NextToken    any
+	ResourceId   any
 	ResourceType any
 }
 
 type AccessPoliciesAttrs struct {
 	AccessPolicySummaries any
-	IamArn any
-	IdentityId any
-	IdentityType any
-	MaxResults any
-	NextToken any
-	ResourceId any
-	ResourceType any
+	IamArn                any
+	IdentityId            any
+	IdentityType          any
+	MaxResults            any
+	NextToken             any
+	ResourceId            any
+	ResourceType          any
 }
 
 var AccessPolicies = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_access_policies",
 	Fields: ubx.FieldMap{
-		"IamArn": ubx.FieldSpec{WireName: "iam_arn"},
-		"IdentityId": ubx.FieldSpec{WireName: "identity_id"},
+		"IamArn":       ubx.FieldSpec{WireName: "iam_arn"},
+		"IdentityId":   ubx.FieldSpec{WireName: "identity_id"},
 		"IdentityType": ubx.FieldSpec{WireName: "identity_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"ResourceId":   ubx.FieldSpec{WireName: "resource_id"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

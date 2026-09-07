@@ -16,23 +16,23 @@ type PartnerApp_MaintenanceConfig struct {
 }
 
 type PartnerApp_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var PartnerApp_ApplicationConfigFields = ubx.FieldMap{
-		"AdminUsers": ubx.FieldSpec{WireName: "admin_users"},
-		"Arguments": ubx.FieldSpec{WireName: "arguments"},
-	}
+	"AdminUsers": ubx.FieldSpec{WireName: "admin_users"},
+	"Arguments":  ubx.FieldSpec{WireName: "arguments"},
+}
 
 var PartnerApp_MaintenanceConfigFields = ubx.FieldMap{
-		"MaintenanceWindowStart": ubx.FieldSpec{WireName: "maintenance_window_start"},
-	}
+	"MaintenanceWindowStart": ubx.FieldSpec{WireName: "maintenance_window_start"},
+}
 
 var PartnerApp_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PartnerAppConfig struct {
 	// The version of the PartnerApp.
@@ -104,25 +104,25 @@ var PartnerApp = ubx.ResourceBinding{
 		"AppVersion": ubx.FieldSpec{WireName: "app_version"},
 		"ApplicationConfig": ubx.FieldSpec{
 			WireName: "application_config",
-			Kind: "object",
-			Fields: PartnerApp_ApplicationConfigFields,
+			Kind:     "object",
+			Fields:   PartnerApp_ApplicationConfigFields,
 		},
-		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
+		"AuthType":                      ubx.FieldSpec{WireName: "auth_type"},
+		"ClientToken":                   ubx.FieldSpec{WireName: "client_token"},
 		"EnableAutoMinorVersionUpgrade": ubx.FieldSpec{WireName: "enable_auto_minor_version_upgrade"},
 		"EnableIamSessionBasedIdentity": ubx.FieldSpec{WireName: "enable_iam_session_based_identity"},
-		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+		"ExecutionRoleArn":              ubx.FieldSpec{WireName: "execution_role_arn"},
+		"KmsKeyId":                      ubx.FieldSpec{WireName: "kms_key_id"},
 		"MaintenanceConfig": ubx.FieldSpec{
 			WireName: "maintenance_config",
-			Kind: "object",
-			Fields: PartnerApp_MaintenanceConfigFields,
+			Kind:     "object",
+			Fields:   PartnerApp_MaintenanceConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PartnerApp_TagsFields,
+			Kind:     "list",
+			Fields:   PartnerApp_TagsFields,
 		},
 		"Tier": ubx.FieldSpec{WireName: "tier"},
 		"Type": ubx.FieldSpec{WireName: "type"},

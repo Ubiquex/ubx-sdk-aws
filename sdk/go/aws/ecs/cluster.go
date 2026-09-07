@@ -67,60 +67,60 @@ type Cluster_Tags struct {
 }
 
 var Cluster_ClusterSettingsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Cluster_Configuration_ExecuteCommandConfiguration_LogConfigurationFields = ubx.FieldMap{
-		"CloudWatchEncryptionEnabled": ubx.FieldSpec{WireName: "cloud_watch_encryption_enabled"},
-		"CloudWatchLogGroupName": ubx.FieldSpec{WireName: "cloud_watch_log_group_name"},
-		"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
-		"S3EncryptionEnabled": ubx.FieldSpec{WireName: "s3_encryption_enabled"},
-		"S3KeyPrefix": ubx.FieldSpec{WireName: "s3_key_prefix"},
-	}
+	"CloudWatchEncryptionEnabled": ubx.FieldSpec{WireName: "cloud_watch_encryption_enabled"},
+	"CloudWatchLogGroupName":      ubx.FieldSpec{WireName: "cloud_watch_log_group_name"},
+	"S3BucketName":                ubx.FieldSpec{WireName: "s3_bucket_name"},
+	"S3EncryptionEnabled":         ubx.FieldSpec{WireName: "s3_encryption_enabled"},
+	"S3KeyPrefix":                 ubx.FieldSpec{WireName: "s3_key_prefix"},
+}
 
 var Cluster_Configuration_ExecuteCommandConfigurationFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"LogConfiguration": ubx.FieldSpec{
-			WireName: "log_configuration",
-			Kind: "object",
-			Fields: Cluster_Configuration_ExecuteCommandConfiguration_LogConfigurationFields,
-		},
-		"Logging": ubx.FieldSpec{WireName: "logging"},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+	"LogConfiguration": ubx.FieldSpec{
+		WireName: "log_configuration",
+		Kind:     "object",
+		Fields:   Cluster_Configuration_ExecuteCommandConfiguration_LogConfigurationFields,
+	},
+	"Logging": ubx.FieldSpec{WireName: "logging"},
+}
 
 var Cluster_Configuration_ManagedStorageConfigurationFields = ubx.FieldMap{
-		"FargateEphemeralStorageKmsKeyId": ubx.FieldSpec{WireName: "fargate_ephemeral_storage_kms_key_id"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-	}
+	"FargateEphemeralStorageKmsKeyId": ubx.FieldSpec{WireName: "fargate_ephemeral_storage_kms_key_id"},
+	"KmsKeyId":                        ubx.FieldSpec{WireName: "kms_key_id"},
+}
 
 var Cluster_ConfigurationFields = ubx.FieldMap{
-		"ExecuteCommandConfiguration": ubx.FieldSpec{
-			WireName: "execute_command_configuration",
-			Kind: "object",
-			Fields: Cluster_Configuration_ExecuteCommandConfigurationFields,
-		},
-		"ManagedStorageConfiguration": ubx.FieldSpec{
-			WireName: "managed_storage_configuration",
-			Kind: "object",
-			Fields: Cluster_Configuration_ManagedStorageConfigurationFields,
-		},
-	}
+	"ExecuteCommandConfiguration": ubx.FieldSpec{
+		WireName: "execute_command_configuration",
+		Kind:     "object",
+		Fields:   Cluster_Configuration_ExecuteCommandConfigurationFields,
+	},
+	"ManagedStorageConfiguration": ubx.FieldSpec{
+		WireName: "managed_storage_configuration",
+		Kind:     "object",
+		Fields:   Cluster_Configuration_ManagedStorageConfigurationFields,
+	},
+}
 
 var Cluster_DefaultCapacityProviderStrategyFields = ubx.FieldMap{
-		"Base": ubx.FieldSpec{WireName: "base"},
-		"CapacityProvider": ubx.FieldSpec{WireName: "capacity_provider"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"Base":             ubx.FieldSpec{WireName: "base"},
+	"CapacityProvider": ubx.FieldSpec{WireName: "capacity_provider"},
+	"Weight":           ubx.FieldSpec{WireName: "weight"},
+}
 
 var Cluster_ServiceConnectDefaultsFields = ubx.FieldMap{
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+}
 
 var Cluster_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ClusterConfig struct {
 	// The short name of one or more capacity providers to associate with the cluster. A capacity provider must be associated with a cluster before it can be included as part of the default capacity provider strategy of the cluster or used in a capacity provider strategy when calling the [CreateService](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html) or [RunTask](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html) actions. If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created but not associated with another cluster. New Auto Scaling group capacity providers can be created with the [CreateCapacityProvider](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html) API operation. To use a FARGATElong capacity provider, specify either the ``FARGATE`` or ``FARGATE_SPOT`` capacity providers. The FARGATElong capacity providers are available to all accounts and only need to be associated with a cluster to be used. The [PutCapacityProvider](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProvider.html) API operation is used to update the list of available capacity providers for a cluster after the cluster is created.
@@ -162,31 +162,31 @@ var Cluster = ubx.ResourceBinding{
 	WireType: "aws_ecs_cluster",
 	Fields: ubx.FieldMap{
 		"CapacityProviders": ubx.FieldSpec{WireName: "capacity_providers"},
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
+		"ClusterName":       ubx.FieldSpec{WireName: "cluster_name"},
 		"ClusterSettings": ubx.FieldSpec{
 			WireName: "cluster_settings",
-			Kind: "list",
-			Fields: Cluster_ClusterSettingsFields,
+			Kind:     "list",
+			Fields:   Cluster_ClusterSettingsFields,
 		},
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: Cluster_ConfigurationFields,
+			Kind:     "object",
+			Fields:   Cluster_ConfigurationFields,
 		},
 		"DefaultCapacityProviderStrategy": ubx.FieldSpec{
 			WireName: "default_capacity_provider_strategy",
-			Kind: "list",
-			Fields: Cluster_DefaultCapacityProviderStrategyFields,
+			Kind:     "list",
+			Fields:   Cluster_DefaultCapacityProviderStrategyFields,
 		},
 		"ServiceConnectDefaults": ubx.FieldSpec{
 			WireName: "service_connect_defaults",
-			Kind: "object",
-			Fields: Cluster_ServiceConnectDefaultsFields,
+			Kind:     "object",
+			Fields:   Cluster_ServiceConnectDefaultsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Cluster_TagsFields,
+			Kind:     "list",
+			Fields:   Cluster_TagsFields,
 		},
 	},
 }

@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KxClusterNodes_Nodes struct {
 	AvailabilityZoneId any
-	LaunchTime any
-	NodeId any
-	Status any
+	LaunchTime         any
+	NodeId             any
+	Status             any
 }
 
 type KxClusterNodesConfig struct {
-	ClusterName any
+	ClusterName   any
 	EnvironmentId any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type KxClusterNodesAttrs struct {
-	ClusterName any
+	ClusterName   any
 	EnvironmentId any
-	MaxResults any
-	NextToken any
-	Nodes any
+	MaxResults    any
+	NextToken     any
+	Nodes         any
 }
 
 var KxClusterNodes = ubx.DataSourceBinding{
 	WireType: "aws_finspace_kx_cluster_nodes",
 	Fields: ubx.FieldMap{
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
+		"ClusterName":   ubx.FieldSpec{WireName: "cluster_name"},
 		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

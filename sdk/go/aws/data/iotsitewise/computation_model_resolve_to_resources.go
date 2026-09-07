@@ -13,22 +13,22 @@ type ComputationModelResolveToResources_ComputationModelResolveToResourceSummari
 
 type ComputationModelResolveToResourcesConfig struct {
 	ComputationModelId any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 type ComputationModelResolveToResourcesAttrs struct {
-	ComputationModelId any
+	ComputationModelId                         any
 	ComputationModelResolveToResourceSummaries any
-	MaxResults any
-	NextToken any
+	MaxResults                                 any
+	NextToken                                  any
 }
 
 var ComputationModelResolveToResources = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_computation_model_resolve_to_resources",
 	Fields: ubx.FieldMap{
 		"ComputationModelId": ubx.FieldSpec{WireName: "computation_model_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 	},
 }

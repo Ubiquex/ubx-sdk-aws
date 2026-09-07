@@ -12,24 +12,24 @@ type AttachedFilesConfigurations_AttachedFilesConfigurations_ExtensionConfigurat
 }
 
 type AttachedFilesConfigurations_AttachedFilesConfigurations struct {
-	AttachmentScope any
-	ExtensionConfiguration any
-	InstanceId any
+	AttachmentScope         any
+	ExtensionConfiguration  any
+	InstanceId              any
 	MaximumSizeLimitInBytes any
 }
 
 type AttachedFilesConfigurationsConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AttachedFilesConfigurationsAttrs struct {
 	// <p>A list of attached files configuration summaries.</p>
 	AttachedFilesConfigurations any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId                  any
+	MaxResults                  any
+	NextToken                   any
 }
 
 var AttachedFilesConfigurations = ubx.DataSourceBinding{
@@ -37,6 +37,6 @@ var AttachedFilesConfigurations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

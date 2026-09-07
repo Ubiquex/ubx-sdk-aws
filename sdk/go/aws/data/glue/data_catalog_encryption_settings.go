@@ -4,14 +4,14 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_ConnectionPasswordEncryption struct {
-	AwsKmsKeyId any
+	AwsKmsKeyId                       any
 	ReturnConnectionPasswordEncrypted any
 }
 
 type DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_EncryptionAtRest struct {
-	CatalogEncryptionMode any
+	CatalogEncryptionMode        any
 	CatalogEncryptionServiceRole any
-	SseAwsKmsKeyId any
+	SseAwsKmsKeyId               any
 }
 
 type DataCatalogEncryptionSettings_DataCatalogEncryptionSettings struct {

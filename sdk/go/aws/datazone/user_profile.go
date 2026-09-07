@@ -66,9 +66,9 @@ var UserProfile = ubx.ResourceBinding{
 	WireType: "aws_data_zone_user_profile",
 	Fields: ubx.FieldMap{
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
-		"SessionName": ubx.FieldSpec{WireName: "session_name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"UserIdentifier": ubx.FieldSpec{WireName: "user_identifier"},
-		"UserType": ubx.FieldSpec{WireName: "user_type"},
+		"SessionName":      ubx.FieldSpec{WireName: "session_name"},
+		"Status":           ubx.FieldSpec{WireName: "status"},
+		"UserIdentifier":   ubx.FieldSpec{WireName: "user_identifier"},
+		"UserType":         ubx.FieldSpec{WireName: "user_type"},
 	},
 }

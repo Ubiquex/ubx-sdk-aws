@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SmsVoicePinpointConfigurationSetsConfig struct {
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 type SmsVoicePinpointConfigurationSetsAttrs struct {
 	// An array that contains all of the configuration sets in your Amazon Pinpoint account in the current AWS Region.
 	ConfigurationSets any
-	NextToken any
-	PageSize any
+	NextToken         any
+	PageSize          any
 }
 
 var SmsVoicePinpointConfigurationSets = ubx.DataSourceBinding{
 	WireType: "aws_sms_voice_pinpoint_configuration_sets",
 	Fields: ubx.FieldMap{
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 	},
 }

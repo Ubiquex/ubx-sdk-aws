@@ -4,36 +4,36 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceTypeOfferings_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type InstanceTypeOfferings_InstanceTypeOfferings struct {
 	InstanceType any
-	Location any
+	Location     any
 	LocationType any
 }
 
 var InstanceTypeOfferings_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type InstanceTypeOfferingsConfig struct {
-	DryRun any
-	Filters any
+	DryRun       any
+	Filters      any
 	LocationType any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type InstanceTypeOfferingsAttrs struct {
-	DryRun any
-	Filters any
+	DryRun                any
+	Filters               any
 	InstanceTypeOfferings any
-	LocationType any
-	MaxResults any
-	NextToken any
+	LocationType          any
+	MaxResults            any
+	NextToken             any
 }
 
 var InstanceTypeOfferings = ubx.DataSourceBinding{
@@ -42,11 +42,11 @@ var InstanceTypeOfferings = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: InstanceTypeOfferings_FiltersFields,
+			Kind:     "list",
+			Fields:   InstanceTypeOfferings_FiltersFields,
 		},
 		"LocationType": ubx.FieldSpec{WireName: "location_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

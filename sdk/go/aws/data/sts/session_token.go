@@ -4,31 +4,31 @@ package sts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SessionToken_Credentials struct {
-	AccessKeyId any
-	Expiration any
+	AccessKeyId     any
+	Expiration      any
 	SecretAccessKey any
-	SessionToken any
+	SessionToken    any
 }
 
 type SessionTokenConfig struct {
 	DurationSeconds any
-	SerialNumber any
-	TokenCode any
+	SerialNumber    any
+	TokenCode       any
 }
 
 type SessionTokenAttrs struct {
 	// <p>Amazon Web Services credentials for API authentication.</p>
-	Credentials any
+	Credentials     any
 	DurationSeconds any
-	SerialNumber any
-	TokenCode any
+	SerialNumber    any
+	TokenCode       any
 }
 
 var SessionToken = ubx.DataSourceBinding{
 	WireType: "aws_sts_session_token",
 	Fields: ubx.FieldMap{
 		"DurationSeconds": ubx.FieldSpec{WireName: "duration_seconds"},
-		"SerialNumber": ubx.FieldSpec{WireName: "serial_number"},
-		"TokenCode": ubx.FieldSpec{WireName: "token_code"},
+		"SerialNumber":    ubx.FieldSpec{WireName: "serial_number"},
+		"TokenCode":       ubx.FieldSpec{WireName: "token_code"},
 	},
 }

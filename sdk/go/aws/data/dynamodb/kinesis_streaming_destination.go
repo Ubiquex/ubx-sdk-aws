@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KinesisStreamingDestination_KinesisDataStreamDestinations struct {
 	ApproximateCreationDateTimePrecision any
-	DestinationStatus any
-	DestinationStatusDescription any
-	StreamArn any
+	DestinationStatus                    any
+	DestinationStatusDescription         any
+	StreamArn                            any
 }
 
 type KinesisStreamingDestinationConfig struct {
@@ -16,7 +16,7 @@ type KinesisStreamingDestinationConfig struct {
 
 type KinesisStreamingDestinationAttrs struct {
 	KinesisDataStreamDestinations any
-	TableName any
+	TableName                     any
 }
 
 var KinesisStreamingDestination = ubx.DataSourceBinding{

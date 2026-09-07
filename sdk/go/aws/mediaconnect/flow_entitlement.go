@@ -32,21 +32,21 @@ type FlowEntitlement_Tags struct {
 }
 
 var FlowEntitlement_EncryptionFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"ConstantInitializationVector": ubx.FieldSpec{WireName: "constant_initialization_vector"},
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"KeyType": ubx.FieldSpec{WireName: "key_type"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Algorithm":                    ubx.FieldSpec{WireName: "algorithm"},
+	"ConstantInitializationVector": ubx.FieldSpec{WireName: "constant_initialization_vector"},
+	"DeviceId":                     ubx.FieldSpec{WireName: "device_id"},
+	"KeyType":                      ubx.FieldSpec{WireName: "key_type"},
+	"Region":                       ubx.FieldSpec{WireName: "region"},
+	"ResourceId":                   ubx.FieldSpec{WireName: "resource_id"},
+	"RoleArn":                      ubx.FieldSpec{WireName: "role_arn"},
+	"SecretArn":                    ubx.FieldSpec{WireName: "secret_arn"},
+	"Url":                          ubx.FieldSpec{WireName: "url"},
+}
 
 var FlowEntitlement_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FlowEntitlementConfig struct {
 	// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
@@ -92,20 +92,20 @@ var FlowEntitlement = ubx.ResourceBinding{
 	WireType: "aws_media_connect_flow_entitlement",
 	Fields: ubx.FieldMap{
 		"DataTransferSubscriberFeePercent": ubx.FieldSpec{WireName: "data_transfer_subscriber_fee_percent"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":                      ubx.FieldSpec{WireName: "description"},
 		"Encryption": ubx.FieldSpec{
 			WireName: "encryption",
-			Kind: "object",
-			Fields: FlowEntitlement_EncryptionFields,
+			Kind:     "object",
+			Fields:   FlowEntitlement_EncryptionFields,
 		},
 		"EntitlementStatus": ubx.FieldSpec{WireName: "entitlement_status"},
-		"FlowArn": ubx.FieldSpec{WireName: "flow_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Subscribers": ubx.FieldSpec{WireName: "subscribers"},
+		"FlowArn":           ubx.FieldSpec{WireName: "flow_arn"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"Subscribers":       ubx.FieldSpec{WireName: "subscribers"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FlowEntitlement_TagsFields,
+			Kind:     "list",
+			Fields:   FlowEntitlement_TagsFields,
 		},
 	},
 }

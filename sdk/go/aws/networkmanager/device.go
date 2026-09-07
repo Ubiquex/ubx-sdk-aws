@@ -26,20 +26,20 @@ type Device_Tags struct {
 }
 
 var Device_AwslocationFields = ubx.FieldMap{
-		"SubnetArn": ubx.FieldSpec{WireName: "subnet_arn"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"SubnetArn": ubx.FieldSpec{WireName: "subnet_arn"},
+	"Zone":      ubx.FieldSpec{WireName: "zone"},
+}
 
 var Device_LocationFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"Latitude": ubx.FieldSpec{WireName: "latitude"},
-		"Longitude": ubx.FieldSpec{WireName: "longitude"},
-	}
+	"Address":   ubx.FieldSpec{WireName: "address"},
+	"Latitude":  ubx.FieldSpec{WireName: "latitude"},
+	"Longitude": ubx.FieldSpec{WireName: "longitude"},
+}
 
 var Device_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DeviceConfig struct {
 	// The Amazon Web Services location of the device, if applicable.
@@ -100,25 +100,25 @@ var Device = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Awslocation": ubx.FieldSpec{
 			WireName: "awslocation",
-			Kind: "object",
-			Fields: Device_AwslocationFields,
+			Kind:     "object",
+			Fields:   Device_AwslocationFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"GlobalNetworkId": ubx.FieldSpec{WireName: "global_network_id"},
 		"Location": ubx.FieldSpec{
 			WireName: "location",
-			Kind: "object",
-			Fields: Device_LocationFields,
+			Kind:     "object",
+			Fields:   Device_LocationFields,
 		},
-		"Model": ubx.FieldSpec{WireName: "model"},
+		"Model":        ubx.FieldSpec{WireName: "model"},
 		"SerialNumber": ubx.FieldSpec{WireName: "serial_number"},
-		"SiteId": ubx.FieldSpec{WireName: "site_id"},
+		"SiteId":       ubx.FieldSpec{WireName: "site_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Device_TagsFields,
+			Kind:     "list",
+			Fields:   Device_TagsFields,
 		},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":   ubx.FieldSpec{WireName: "type"},
 		"Vendor": ubx.FieldSpec{WireName: "vendor"},
 	},
 }

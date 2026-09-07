@@ -10,9 +10,9 @@ type ParameterGroup_Tags struct {
 }
 
 var ParameterGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ParameterGroupConfig struct {
 	// The name of the cache parameter group family that this cache parameter group is compatible with.
@@ -42,12 +42,12 @@ var ParameterGroup = ubx.ResourceBinding{
 	WireType: "aws_elasti_cache_parameter_group",
 	Fields: ubx.FieldMap{
 		"CacheParameterGroupFamily": ubx.FieldSpec{WireName: "cache_parameter_group_family"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
+		"Description":               ubx.FieldSpec{WireName: "description"},
+		"Properties":                ubx.FieldSpec{WireName: "properties"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ParameterGroup_TagsFields,
+			Kind:     "list",
+			Fields:   ParameterGroup_TagsFields,
 		},
 	},
 }

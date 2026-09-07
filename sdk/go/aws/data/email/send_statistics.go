@@ -4,11 +4,11 @@ package email
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SendStatistics_SendDataPoints struct {
-	Bounces any
-	Complaints any
+	Bounces          any
+	Complaints       any
 	DeliveryAttempts any
-	Rejects any
-	Timestamp any
+	Rejects          any
+	Timestamp        any
 }
 
 type SendStatisticsConfig struct {
@@ -20,6 +20,5 @@ type SendStatisticsAttrs struct {
 
 var SendStatistics = ubx.DataSourceBinding{
 	WireType: "aws_email_send_statistics",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

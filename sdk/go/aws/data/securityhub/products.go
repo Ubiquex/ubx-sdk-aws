@@ -4,35 +4,35 @@ package securityhub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Products_Products struct {
-	ActivationUrl any
-	Categories any
-	CompanyName any
-	Description any
-	IntegrationTypes any
-	MarketplaceUrl any
-	ProductArn any
-	ProductName any
+	ActivationUrl                     any
+	Categories                        any
+	CompanyName                       any
+	Description                       any
+	IntegrationTypes                  any
+	MarketplaceUrl                    any
+	ProductArn                        any
+	ProductName                       any
 	ProductSubscriptionResourcePolicy any
 }
 
 type ProductsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	ProductArn any
 }
 
 type ProductsAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	ProductArn any
-	Products any
+	Products   any
 }
 
 var Products = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_products",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ProductArn": ubx.FieldSpec{WireName: "product_arn"},
 	},
 }

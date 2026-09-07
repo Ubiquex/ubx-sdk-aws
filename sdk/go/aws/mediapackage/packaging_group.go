@@ -22,18 +22,18 @@ type PackagingGroup_Tags struct {
 }
 
 var PackagingGroup_AuthorizationFields = ubx.FieldMap{
-		"CdnIdentifierSecret": ubx.FieldSpec{WireName: "cdn_identifier_secret"},
-		"SecretsRoleArn": ubx.FieldSpec{WireName: "secrets_role_arn"},
-	}
+	"CdnIdentifierSecret": ubx.FieldSpec{WireName: "cdn_identifier_secret"},
+	"SecretsRoleArn":      ubx.FieldSpec{WireName: "secrets_role_arn"},
+}
 
 var PackagingGroup_EgressAccessLogsFields = ubx.FieldMap{
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-	}
+	"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
+}
 
 var PackagingGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PackagingGroupConfig struct {
 	// Defines the CDN authorization configuration for the packaging group, specifying the identifier secret and the IAM role that MediaPackage uses to access AWS Secrets Manager for rotating credentials. (AI-inferred)
@@ -66,19 +66,19 @@ var PackagingGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Authorization": ubx.FieldSpec{
 			WireName: "authorization",
-			Kind: "object",
-			Fields: PackagingGroup_AuthorizationFields,
+			Kind:     "object",
+			Fields:   PackagingGroup_AuthorizationFields,
 		},
 		"EgressAccessLogs": ubx.FieldSpec{
 			WireName: "egress_access_logs",
-			Kind: "object",
-			Fields: PackagingGroup_EgressAccessLogsFields,
+			Kind:     "object",
+			Fields:   PackagingGroup_EgressAccessLogsFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PackagingGroup_TagsFields,
+			Kind:     "list",
+			Fields:   PackagingGroup_TagsFields,
 		},
 	},
 }

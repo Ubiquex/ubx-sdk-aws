@@ -5,49 +5,49 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmQuicksetupConfigurationManagers_ConfigurationManagersList_ConfigurationDefinitionSummaries struct {
 	FirstClassParameters any
-	Id any
-	Type any
-	TypeVersion any
+	Id                   any
+	Type                 any
+	TypeVersion          any
 }
 
 type SsmQuicksetupConfigurationManagers_ConfigurationManagersList_StatusSummaries struct {
 	LastUpdatedAt any
-	Status any
+	Status        any
 	StatusDetails any
 	StatusMessage any
-	StatusType any
+	StatusType    any
 }
 
 type SsmQuicksetupConfigurationManagers_ConfigurationManagersList struct {
 	ConfigurationDefinitionSummaries any
-	Description any
-	ManagerArn any
-	Name any
-	StatusSummaries any
+	Description                      any
+	ManagerArn                       any
+	Name                             any
+	StatusSummaries                  any
 }
 
 type SsmQuicksetupConfigurationManagers_Filters struct {
-	Key any
+	Key    any
 	Values any
 }
 
 var SsmQuicksetupConfigurationManagers_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type SsmQuicksetupConfigurationManagersConfig struct {
-	Filters any
-	MaxItems any
+	Filters       any
+	MaxItems      any
 	StartingToken any
 }
 
 type SsmQuicksetupConfigurationManagersAttrs struct {
 	ConfigurationManagersList any
-	Filters any
-	MaxItems any
-	NextToken any
-	StartingToken any
+	Filters                   any
+	MaxItems                  any
+	NextToken                 any
+	StartingToken             any
 }
 
 var SsmQuicksetupConfigurationManagers = ubx.DataSourceBinding{
@@ -55,10 +55,10 @@ var SsmQuicksetupConfigurationManagers = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SsmQuicksetupConfigurationManagers_FiltersFields,
+			Kind:     "list",
+			Fields:   SsmQuicksetupConfigurationManagers_FiltersFields,
 		},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"MaxItems":      ubx.FieldSpec{WireName: "max_items"},
 		"StartingToken": ubx.FieldSpec{WireName: "starting_token"},
 	},
 }

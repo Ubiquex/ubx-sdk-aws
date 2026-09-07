@@ -4,20 +4,20 @@ package apigatewayv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelTemplateConfig struct {
-	ApiId any
+	ApiId   any
 	ModelId any
 }
 
 type ModelTemplateAttrs struct {
-	ApiId any
+	ApiId   any
 	ModelId any
-	Value any
+	Value   any
 }
 
 var ModelTemplate = ubx.DataSourceBinding{
 	WireType: "aws_apigatewayv2_model_template",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":   ubx.FieldSpec{WireName: "api_id"},
 		"ModelId": ubx.FieldSpec{WireName: "model_id"},
 	},
 }

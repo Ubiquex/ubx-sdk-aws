@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ElasticLoadBalancingV2ListenerCertificates_Certificates struct {
 	CertificateArn any
-	IsDefault any
+	IsDefault      any
 }
 
 type ElasticLoadBalancingV2ListenerCertificatesConfig struct {
 	ListenerArn any
-	Marker any
-	PageSize any
+	Marker      any
+	PageSize    any
 }
 
 type ElasticLoadBalancingV2ListenerCertificatesAttrs struct {
 	Certificates any
-	ListenerArn any
-	Marker any
-	NextMarker any
-	PageSize any
+	ListenerArn  any
+	Marker       any
+	NextMarker   any
+	PageSize     any
 }
 
 var ElasticLoadBalancingV2ListenerCertificates = ubx.DataSourceBinding{
 	WireType: "aws_elastic_load_balancing_v2_listener_certificates",
 	Fields: ubx.FieldMap{
 		"ListenerArn": ubx.FieldSpec{WireName: "listener_arn"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"Marker":      ubx.FieldSpec{WireName: "marker"},
+		"PageSize":    ubx.FieldSpec{WireName: "page_size"},
 	},
 }

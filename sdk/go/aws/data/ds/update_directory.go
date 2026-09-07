@@ -12,37 +12,37 @@ type UpdateDirectory_UpdateActivities_NewValue struct {
 }
 
 type UpdateDirectory_UpdateActivities struct {
-	InitiatedBy any
+	InitiatedBy         any
 	LastUpdatedDateTime any
-	NewValue any
-	PreviousValue any
-	Region any
-	StartTime any
-	Status any
-	StatusReason any
+	NewValue            any
+	PreviousValue       any
+	Region              any
+	StartTime           any
+	Status              any
+	StatusReason        any
 }
 
 type UpdateDirectoryConfig struct {
 	DirectoryId any
-	NextToken any
-	RegionName any
-	UpdateType any
+	NextToken   any
+	RegionName  any
+	UpdateType  any
 }
 
 type UpdateDirectoryAttrs struct {
-	DirectoryId any
-	NextToken any
-	RegionName any
+	DirectoryId      any
+	NextToken        any
+	RegionName       any
 	UpdateActivities any
-	UpdateType any
+	UpdateType       any
 }
 
 var UpdateDirectory = ubx.DataSourceBinding{
 	WireType: "aws_ds_update_directory",
 	Fields: ubx.FieldMap{
 		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RegionName": ubx.FieldSpec{WireName: "region_name"},
-		"UpdateType": ubx.FieldSpec{WireName: "update_type"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"RegionName":  ubx.FieldSpec{WireName: "region_name"},
+		"UpdateType":  ubx.FieldSpec{WireName: "update_type"},
 	},
 }

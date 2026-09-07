@@ -24,8 +24,8 @@ type ParameterGroupAttrs struct {
 var ParameterGroup = ubx.ResourceBinding{
 	WireType: "aws_dax_parameter_group",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ParameterGroupName": ubx.FieldSpec{WireName: "parameter_group_name"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"ParameterGroupName":  ubx.FieldSpec{WireName: "parameter_group_name"},
 		"ParameterNameValues": ubx.FieldSpec{WireName: "parameter_name_values"},
 	},
 }

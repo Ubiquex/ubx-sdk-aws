@@ -5,10 +5,10 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StoredQuery_StoredQuery struct {
 	Description any
-	Expression any
-	QueryArn any
-	QueryId any
-	QueryName any
+	Expression  any
+	QueryArn    any
+	QueryId     any
+	QueryName   any
 }
 
 type StoredQueryConfig struct {

@@ -4,48 +4,48 @@ package license_manager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseManagerLicenseConversionTasks_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type LicenseManagerLicenseConversionTasks_LicenseConversionTasks_DestinationLicenseContext_ProductCodes struct {
-	ProductCodeId any
+	ProductCodeId   any
 	ProductCodeType any
 }
 
 type LicenseManagerLicenseConversionTasks_LicenseConversionTasks_DestinationLicenseContext struct {
-	ProductCodes any
+	ProductCodes   any
 	UsageOperation any
 }
 
 type LicenseManagerLicenseConversionTasks_LicenseConversionTasks struct {
 	DestinationLicenseContext any
-	EndTime any
-	LicenseConversionTaskId any
-	LicenseConversionTime any
-	ResourceArn any
-	SourceLicenseContext any
-	StartTime any
-	Status any
-	StatusMessage any
+	EndTime                   any
+	LicenseConversionTaskId   any
+	LicenseConversionTime     any
+	ResourceArn               any
+	SourceLicenseContext      any
+	StartTime                 any
+	Status                    any
+	StatusMessage             any
 }
 
 var LicenseManagerLicenseConversionTasks_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type LicenseManagerLicenseConversionTasksConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type LicenseManagerLicenseConversionTasksAttrs struct {
-	Filters any
+	Filters                any
 	LicenseConversionTasks any
-	MaxResults any
-	NextToken any
+	MaxResults             any
+	NextToken              any
 }
 
 var LicenseManagerLicenseConversionTasks = ubx.DataSourceBinding{
@@ -53,10 +53,10 @@ var LicenseManagerLicenseConversionTasks = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: LicenseManagerLicenseConversionTasks_FiltersFields,
+			Kind:     "list",
+			Fields:   LicenseManagerLicenseConversionTasks_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

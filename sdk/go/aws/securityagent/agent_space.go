@@ -50,7 +50,7 @@ type AgentSpace_IntegratedResources_ProviderResources_BitbucketRepository struct
 type AgentSpace_IntegratedResources_ProviderResources_ConfluenceCapabilities struct {
 	// Enables or disables the Confluence provider resource's ability to create documents within the integrated Confluence instance for this agent space. (AI-inferred)
 	CreateDocument any
-	FetchDocument any
+	FetchDocument  any
 	UpdateDocument any
 }
 
@@ -58,11 +58,11 @@ type AgentSpace_IntegratedResources_ProviderResources_ConfluenceDocument struct 
 	// The name of the Confluence document that is configured as a provider resource within the integrated resource settings for the agent space. (AI-inferred)
 	Name any
 	// The page_id specifies the unique Confluence page identifier that identifies the document used as a provider resource in the agent space's integrated resource configuration. (AI-inferred)
-	PageId any
+	PageId   any
 	SpaceKey any
 	// Specifies the title of the Confluence space that the Confluence document provider resource is scoped to, enabling the agent space to reference documents within that specific space. (AI-inferred)
 	SpaceTitle any
-	Title any
+	Title      any
 }
 
 type AgentSpace_IntegratedResources_ProviderResources_GitHubRepository struct {
@@ -80,55 +80,55 @@ type AgentSpace_IntegratedResources_ProviderResources_GitLabRepository struct {
 type AgentSpace_IntegratedResources_ProviderResources struct {
 	BitbucketCapabilities any
 	// A nested object representing a Bitbucket repository configured as an integrated resource provider within the security agent's agent space, containing fields that define the repository connection and integration settings. (AI-inferred)
-	BitbucketRepository any
+	BitbucketRepository    any
 	ConfluenceCapabilities any
 	// Configures an Atlassian Confluence document source for the agent space's integrated resources, specifying how Confluence documents are accessed and ingested by the security agent. (AI-inferred)
 	ConfluenceDocument any
 	// Specifies the GitHub-specific capabilities and permissions that the security agent can use when integrating with GitHub through the agent space's provider resources. (AI-inferred)
 	GitHubCapabilities any
-	GitHubRepository any
+	GitHubRepository   any
 	GitLabCapabilities any
-	GitLabRepository any
+	GitLabRepository   any
 }
 
 type AgentSpace_IntegratedResources struct {
-	Integration any
+	Integration       any
 	ProviderResources any
 }
 
 type AgentSpace_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var AgentSpace_AwsResources_VpcsFields = ubx.FieldMap{
-		"SecurityGroupArns": ubx.FieldSpec{WireName: "security_group_arns"},
-		"SubnetArns": ubx.FieldSpec{WireName: "subnet_arns"},
-		"VpcArn": ubx.FieldSpec{WireName: "vpc_arn"},
-	}
+	"SecurityGroupArns": ubx.FieldSpec{WireName: "security_group_arns"},
+	"SubnetArns":        ubx.FieldSpec{WireName: "subnet_arns"},
+	"VpcArn":            ubx.FieldSpec{WireName: "vpc_arn"},
+}
 
 var AgentSpace_AwsResourcesFields = ubx.FieldMap{
-		"IamRoles": ubx.FieldSpec{WireName: "iam_roles"},
-		"LambdaFunctionArns": ubx.FieldSpec{WireName: "lambda_function_arns"},
-		"LogGroups": ubx.FieldSpec{WireName: "log_groups"},
-		"S3Buckets": ubx.FieldSpec{WireName: "s3_buckets"},
-		"SecretArns": ubx.FieldSpec{WireName: "secret_arns"},
-		"Vpcs": ubx.FieldSpec{
-			WireName: "vpcs",
-			Kind: "list",
-			Fields: AgentSpace_AwsResources_VpcsFields,
-		},
-	}
+	"IamRoles":           ubx.FieldSpec{WireName: "iam_roles"},
+	"LambdaFunctionArns": ubx.FieldSpec{WireName: "lambda_function_arns"},
+	"LogGroups":          ubx.FieldSpec{WireName: "log_groups"},
+	"S3Buckets":          ubx.FieldSpec{WireName: "s3_buckets"},
+	"SecretArns":         ubx.FieldSpec{WireName: "secret_arns"},
+	"Vpcs": ubx.FieldSpec{
+		WireName: "vpcs",
+		Kind:     "list",
+		Fields:   AgentSpace_AwsResources_VpcsFields,
+	},
+}
 
 var AgentSpace_CodeReviewSettingsFields = ubx.FieldMap{
-		"ControlsScanning": ubx.FieldSpec{WireName: "controls_scanning"},
-		"GeneralPurposeScanning": ubx.FieldSpec{WireName: "general_purpose_scanning"},
-	}
+	"ControlsScanning":       ubx.FieldSpec{WireName: "controls_scanning"},
+	"GeneralPurposeScanning": ubx.FieldSpec{WireName: "general_purpose_scanning"},
+}
 
 var AgentSpace_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AgentSpaceConfig struct {
 	// AWS resource configuration
@@ -177,21 +177,21 @@ var AgentSpace = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AwsResources": ubx.FieldSpec{
 			WireName: "aws_resources",
-			Kind: "object",
-			Fields: AgentSpace_AwsResourcesFields,
+			Kind:     "object",
+			Fields:   AgentSpace_AwsResourcesFields,
 		},
 		"CodeReviewSettings": ubx.FieldSpec{
 			WireName: "code_review_settings",
-			Kind: "object",
-			Fields: AgentSpace_CodeReviewSettingsFields,
+			Kind:     "object",
+			Fields:   AgentSpace_CodeReviewSettingsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"KmsKeyId":    ubx.FieldSpec{WireName: "kms_key_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AgentSpace_TagsFields,
+			Kind:     "list",
+			Fields:   AgentSpace_TagsFields,
 		},
 		"TargetDomainIds": ubx.FieldSpec{WireName: "target_domain_ids"},
 	},

@@ -4,47 +4,47 @@ package cloudformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StackResources_StackResources_DriftInformation struct {
-	LastCheckTimestamp any
+	LastCheckTimestamp       any
 	StackResourceDriftStatus any
 }
 
 type StackResources_StackResources_ModuleInfo struct {
 	LogicalIdHierarchy any
-	TypeHierarchy any
+	TypeHierarchy      any
 }
 
 type StackResources_StackResources struct {
-	Description any
-	DriftInformation any
-	LogicalResourceId any
-	ModuleInfo any
-	PhysicalResourceId any
-	ResourceStatus any
+	Description          any
+	DriftInformation     any
+	LogicalResourceId    any
+	ModuleInfo           any
+	PhysicalResourceId   any
+	ResourceStatus       any
 	ResourceStatusReason any
-	ResourceType any
-	StackId any
-	StackName any
-	Timestamp any
+	ResourceType         any
+	StackId              any
+	StackName            any
+	Timestamp            any
 }
 
 type StackResourcesConfig struct {
-	LogicalResourceId any
+	LogicalResourceId  any
 	PhysicalResourceId any
-	StackName any
+	StackName          any
 }
 
 type StackResourcesAttrs struct {
-	LogicalResourceId any
+	LogicalResourceId  any
 	PhysicalResourceId any
-	StackName any
-	StackResources any
+	StackName          any
+	StackResources     any
 }
 
 var StackResources = ubx.DataSourceBinding{
 	WireType: "aws_cloudformation_stack_resources",
 	Fields: ubx.FieldMap{
-		"LogicalResourceId": ubx.FieldSpec{WireName: "logical_resource_id"},
+		"LogicalResourceId":  ubx.FieldSpec{WireName: "logical_resource_id"},
 		"PhysicalResourceId": ubx.FieldSpec{WireName: "physical_resource_id"},
-		"StackName": ubx.FieldSpec{WireName: "stack_name"},
+		"StackName":          ubx.FieldSpec{WireName: "stack_name"},
 	},
 }

@@ -7,15 +7,14 @@ type ComputeOptimizerEnrollmentStatusConfig struct {
 }
 
 type ComputeOptimizerEnrollmentStatusAttrs struct {
-	LastUpdatedTimestamp any
-	MemberAccountsEnrolled any
+	LastUpdatedTimestamp          any
+	MemberAccountsEnrolled        any
 	NumberOfMemberAccountsOptedIn any
-	Status any
-	StatusReason any
+	Status                        any
+	StatusReason                  any
 }
 
 var ComputeOptimizerEnrollmentStatus = ubx.DataSourceBinding{
 	WireType: "aws_compute_optimizer_enrollment_status",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -37,40 +37,40 @@ type Vehicle_Tags struct {
 }
 
 var Vehicle_StateTemplates_StateTemplateUpdateStrategy_Periodic_StateTemplateUpdateRateFields = ubx.FieldMap{
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Unit":  ubx.FieldSpec{WireName: "unit"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Vehicle_StateTemplates_StateTemplateUpdateStrategy_PeriodicFields = ubx.FieldMap{
-		"StateTemplateUpdateRate": ubx.FieldSpec{
-			WireName: "state_template_update_rate",
-			Kind: "object",
-			Fields: Vehicle_StateTemplates_StateTemplateUpdateStrategy_Periodic_StateTemplateUpdateRateFields,
-		},
-	}
+	"StateTemplateUpdateRate": ubx.FieldSpec{
+		WireName: "state_template_update_rate",
+		Kind:     "object",
+		Fields:   Vehicle_StateTemplates_StateTemplateUpdateStrategy_Periodic_StateTemplateUpdateRateFields,
+	},
+}
 
 var Vehicle_StateTemplates_StateTemplateUpdateStrategyFields = ubx.FieldMap{
-		"OnChange": ubx.FieldSpec{WireName: "on_change"},
-		"Periodic": ubx.FieldSpec{
-			WireName: "periodic",
-			Kind: "object",
-			Fields: Vehicle_StateTemplates_StateTemplateUpdateStrategy_PeriodicFields,
-		},
-	}
+	"OnChange": ubx.FieldSpec{WireName: "on_change"},
+	"Periodic": ubx.FieldSpec{
+		WireName: "periodic",
+		Kind:     "object",
+		Fields:   Vehicle_StateTemplates_StateTemplateUpdateStrategy_PeriodicFields,
+	},
+}
 
 var Vehicle_StateTemplatesFields = ubx.FieldMap{
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"StateTemplateUpdateStrategy": ubx.FieldSpec{
-			WireName: "state_template_update_strategy",
-			Kind: "object",
-			Fields: Vehicle_StateTemplates_StateTemplateUpdateStrategyFields,
-		},
-	}
+	"Identifier": ubx.FieldSpec{WireName: "identifier"},
+	"StateTemplateUpdateStrategy": ubx.FieldSpec{
+		WireName: "state_template_update_strategy",
+		Kind:     "object",
+		Fields:   Vehicle_StateTemplates_StateTemplateUpdateStrategyFields,
+	},
+}
 
 var Vehicle_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VehicleConfig struct {
 	// Specifies whether to create or update the association between the vehicle and its associated fleet, with valid values being CREATE or UPDATE. (AI-inferred)
@@ -116,19 +116,19 @@ var Vehicle = ubx.ResourceBinding{
 	WireType: "aws_io_tfleet_wise_vehicle",
 	Fields: ubx.FieldMap{
 		"AssociationBehavior": ubx.FieldSpec{WireName: "association_behavior"},
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"DecoderManifestArn": ubx.FieldSpec{WireName: "decoder_manifest_arn"},
-		"ModelManifestArn": ubx.FieldSpec{WireName: "model_manifest_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Attributes":          ubx.FieldSpec{WireName: "attributes"},
+		"DecoderManifestArn":  ubx.FieldSpec{WireName: "decoder_manifest_arn"},
+		"ModelManifestArn":    ubx.FieldSpec{WireName: "model_manifest_arn"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 		"StateTemplates": ubx.FieldSpec{
 			WireName: "state_templates",
-			Kind: "list",
-			Fields: Vehicle_StateTemplatesFields,
+			Kind:     "list",
+			Fields:   Vehicle_StateTemplatesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Vehicle_TagsFields,
+			Kind:     "list",
+			Fields:   Vehicle_TagsFields,
 		},
 	},
 }

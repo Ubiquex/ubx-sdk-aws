@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServicesForAutoScalingConfigurationConfig struct {
 	AutoScalingConfigurationArn any
-	MaxResults any
-	NextToken any
+	MaxResults                  any
+	NextToken                   any
 }
 
 type ServicesForAutoScalingConfigurationAttrs struct {
 	AutoScalingConfigurationArn any
-	MaxResults any
-	NextToken any
-	ServiceArnList any
+	MaxResults                  any
+	NextToken                   any
+	ServiceArnList              any
 }
 
 var ServicesForAutoScalingConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_apprunner_services_for_auto_scaling_configuration",
 	Fields: ubx.FieldMap{
 		"AutoScalingConfigurationArn": ubx.FieldSpec{WireName: "auto_scaling_configuration_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

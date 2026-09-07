@@ -4,29 +4,29 @@ package finspace
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KxDatabases_KxDatabases struct {
-	CreatedTimestamp any
-	DatabaseName any
+	CreatedTimestamp      any
+	DatabaseName          any
 	LastModifiedTimestamp any
 }
 
 type KxDatabasesConfig struct {
 	EnvironmentId any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type KxDatabasesAttrs struct {
 	EnvironmentId any
-	KxDatabases any
-	MaxResults any
-	NextToken any
+	KxDatabases   any
+	MaxResults    any
+	NextToken     any
 }
 
 var KxDatabases = ubx.DataSourceBinding{
 	WireType: "aws_finspace_kx_databases",
 	Fields: ubx.FieldMap{
 		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

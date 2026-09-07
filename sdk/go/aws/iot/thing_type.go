@@ -32,33 +32,33 @@ type ThingType_ThingTypeProperties struct {
 }
 
 var ThingType_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ThingType_ThingTypeProperties_Mqtt5Configuration_PropagatingAttributesFields = ubx.FieldMap{
-		"ConnectionAttribute": ubx.FieldSpec{WireName: "connection_attribute"},
-		"ThingAttribute": ubx.FieldSpec{WireName: "thing_attribute"},
-		"UserPropertyKey": ubx.FieldSpec{WireName: "user_property_key"},
-	}
+	"ConnectionAttribute": ubx.FieldSpec{WireName: "connection_attribute"},
+	"ThingAttribute":      ubx.FieldSpec{WireName: "thing_attribute"},
+	"UserPropertyKey":     ubx.FieldSpec{WireName: "user_property_key"},
+}
 
 var ThingType_ThingTypeProperties_Mqtt5ConfigurationFields = ubx.FieldMap{
-		"PropagatingAttributes": ubx.FieldSpec{
-			WireName: "propagating_attributes",
-			Kind: "list",
-			Fields: ThingType_ThingTypeProperties_Mqtt5Configuration_PropagatingAttributesFields,
-		},
-	}
+	"PropagatingAttributes": ubx.FieldSpec{
+		WireName: "propagating_attributes",
+		Kind:     "list",
+		Fields:   ThingType_ThingTypeProperties_Mqtt5Configuration_PropagatingAttributesFields,
+	},
+}
 
 var ThingType_ThingTypePropertiesFields = ubx.FieldMap{
-		"Mqtt5Configuration": ubx.FieldSpec{
-			WireName: "mqtt5_configuration",
-			Kind: "object",
-			Fields: ThingType_ThingTypeProperties_Mqtt5ConfigurationFields,
-		},
-		"SearchableAttributes": ubx.FieldSpec{WireName: "searchable_attributes"},
-		"ThingTypeDescription": ubx.FieldSpec{WireName: "thing_type_description"},
-	}
+	"Mqtt5Configuration": ubx.FieldSpec{
+		WireName: "mqtt5_configuration",
+		Kind:     "object",
+		Fields:   ThingType_ThingTypeProperties_Mqtt5ConfigurationFields,
+	},
+	"SearchableAttributes": ubx.FieldSpec{WireName: "searchable_attributes"},
+	"ThingTypeDescription": ubx.FieldSpec{WireName: "thing_type_description"},
+}
 
 type ThingTypeConfig struct {
 	// Indicates whether the thing type should be deprecated, which prevents new things from being associated with it after the type is created. (AI-inferred)
@@ -92,14 +92,14 @@ var ThingType = ubx.ResourceBinding{
 		"DeprecateThingType": ubx.FieldSpec{WireName: "deprecate_thing_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ThingType_TagsFields,
+			Kind:     "list",
+			Fields:   ThingType_TagsFields,
 		},
 		"ThingTypeName": ubx.FieldSpec{WireName: "thing_type_name"},
 		"ThingTypeProperties": ubx.FieldSpec{
 			WireName: "thing_type_properties",
-			Kind: "object",
-			Fields: ThingType_ThingTypePropertiesFields,
+			Kind:     "object",
+			Fields:   ThingType_ThingTypePropertiesFields,
 		},
 	},
 }

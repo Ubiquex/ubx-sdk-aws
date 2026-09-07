@@ -21,6 +21,6 @@ var QueueInlinePolicy = ubx.ResourceBinding{
 	WireType: "aws_sqs_queue_inline_policy",
 	Fields: ubx.FieldMap{
 		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"Queue": ubx.FieldSpec{WireName: "queue"},
+		"Queue":          ubx.FieldSpec{WireName: "queue"},
 	},
 }

@@ -16,7 +16,7 @@ type WorkGroup_WorkGroupConfiguration_CustomerContentEncryptionConfiguration str
 }
 
 type WorkGroup_WorkGroupConfiguration_EngineConfiguration_Classifications struct {
-	Name any
+	Name       any
 	Properties any
 }
 
@@ -186,9 +186,9 @@ type WorkGroup_WorkGroupConfigurationUpdates struct {
 }
 
 var WorkGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type WorkGroupConfig struct {
 	// The workgroup description.
@@ -225,14 +225,14 @@ type WorkGroupAttrs struct {
 var WorkGroup = ubx.ResourceBinding{
 	WireType: "aws_athena_work_group",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
 		"RecursiveDeleteOption": ubx.FieldSpec{WireName: "recursive_delete_option"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"State":                 ubx.FieldSpec{WireName: "state"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: WorkGroup_TagsFields,
+			Kind:     "list",
+			Fields:   WorkGroup_TagsFields,
 		},
 	},
 }

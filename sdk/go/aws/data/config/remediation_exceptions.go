@@ -6,46 +6,46 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type RemediationExceptions_RemediationExceptions struct {
 	ConfigRuleName any
 	ExpirationTime any
-	Message any
-	ResourceId any
-	ResourceType any
+	Message        any
+	ResourceId     any
+	ResourceType   any
 }
 
 type RemediationExceptions_ResourceKeys struct {
-	ResourceId any
+	ResourceId   any
 	ResourceType any
 }
 
 var RemediationExceptions_ResourceKeysFields = ubx.FieldMap{
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-	}
+	"ResourceId":   ubx.FieldSpec{WireName: "resource_id"},
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+}
 
 type RemediationExceptionsConfig struct {
 	ConfigRuleName any
-	Limit any
-	NextToken any
-	ResourceKeys any
+	Limit          any
+	NextToken      any
+	ResourceKeys   any
 }
 
 type RemediationExceptionsAttrs struct {
-	ConfigRuleName any
-	Limit any
-	NextToken any
+	ConfigRuleName        any
+	Limit                 any
+	NextToken             any
 	RemediationExceptions any
-	ResourceKeys any
+	ResourceKeys          any
 }
 
 var RemediationExceptions = ubx.DataSourceBinding{
 	WireType: "aws_config_remediation_exceptions",
 	Fields: ubx.FieldMap{
 		"ConfigRuleName": ubx.FieldSpec{WireName: "config_rule_name"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":          ubx.FieldSpec{WireName: "limit"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"ResourceKeys": ubx.FieldSpec{
 			WireName: "resource_keys",
-			Kind: "list",
-			Fields: RemediationExceptions_ResourceKeysFields,
+			Kind:     "list",
+			Fields:   RemediationExceptions_ResourceKeysFields,
 		},
 	},
 }

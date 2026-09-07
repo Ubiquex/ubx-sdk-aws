@@ -4,32 +4,32 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AttachedGroupPolicies_AttachedPolicies struct {
-	PolicyArn any
+	PolicyArn  any
 	PolicyName any
 }
 
 type AttachedGroupPoliciesConfig struct {
-	GroupName any
-	Marker any
-	MaxItems any
+	GroupName  any
+	Marker     any
+	MaxItems   any
 	PathPrefix any
 }
 
 type AttachedGroupPoliciesAttrs struct {
 	AttachedPolicies any
-	GroupName any
-	IsTruncated any
-	Marker any
-	MaxItems any
-	PathPrefix any
+	GroupName        any
+	IsTruncated      any
+	Marker           any
+	MaxItems         any
+	PathPrefix       any
 }
 
 var AttachedGroupPolicies = ubx.DataSourceBinding{
 	WireType: "aws_iam_attached_group_policies",
 	Fields: ubx.FieldMap{
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"GroupName":  ubx.FieldSpec{WireName: "group_name"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
+		"MaxItems":   ubx.FieldSpec{WireName: "max_items"},
 		"PathPrefix": ubx.FieldSpec{WireName: "path_prefix"},
 	},
 }

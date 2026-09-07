@@ -26,7 +26,7 @@ type SqlHaStandbyDetectedInstanceAttrs struct {
 var SqlHaStandbyDetectedInstance = ubx.ResourceBinding{
 	WireType: "aws_ec2_sql_ha_standby_detected_instance",
 	Fields: ubx.FieldMap{
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"InstanceId":           ubx.FieldSpec{WireName: "instance_id"},
 		"SqlServerCredentials": ubx.FieldSpec{WireName: "sql_server_credentials"},
 	},
 }

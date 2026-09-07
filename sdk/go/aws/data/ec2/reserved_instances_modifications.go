@@ -4,17 +4,17 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReservedInstancesModifications_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ReservedInstancesModifications_ReservedInstancesModifications_ModificationResults_TargetConfiguration struct {
-	AvailabilityZone any
+	AvailabilityZone   any
 	AvailabilityZoneId any
-	InstanceCount any
-	InstanceType any
-	Platform any
-	Scope any
+	InstanceCount      any
+	InstanceType       any
+	Platform           any
+	Scope              any
 }
 
 type ReservedInstancesModifications_ReservedInstancesModifications_ModificationResults struct {
@@ -27,33 +27,33 @@ type ReservedInstancesModifications_ReservedInstancesModifications_ReservedInsta
 }
 
 type ReservedInstancesModifications_ReservedInstancesModifications struct {
-	ClientToken any
-	CreateDate any
-	EffectiveDate any
-	ModificationResults any
-	ReservedInstancesIds any
+	ClientToken                     any
+	CreateDate                      any
+	EffectiveDate                   any
+	ModificationResults             any
+	ReservedInstancesIds            any
 	ReservedInstancesModificationId any
-	Status any
-	StatusMessage any
-	UpdateDate any
+	Status                          any
+	StatusMessage                   any
+	UpdateDate                      any
 }
 
 var ReservedInstancesModifications_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ReservedInstancesModificationsConfig struct {
-	Filters any
-	NextToken any
+	Filters                          any
+	NextToken                        any
 	ReservedInstancesModificationIds any
 }
 
 type ReservedInstancesModificationsAttrs struct {
-	Filters any
-	NextToken any
+	Filters                          any
+	NextToken                        any
 	ReservedInstancesModificationIds any
-	ReservedInstancesModifications any
+	ReservedInstancesModifications   any
 }
 
 var ReservedInstancesModifications = ubx.DataSourceBinding{
@@ -61,10 +61,10 @@ var ReservedInstancesModifications = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ReservedInstancesModifications_FiltersFields,
+			Kind:     "list",
+			Fields:   ReservedInstancesModifications_FiltersFields,
 		},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":                        ubx.FieldSpec{WireName: "next_token"},
 		"ReservedInstancesModificationIds": ubx.FieldSpec{WireName: "reserved_instances_modification_ids"},
 	},
 }

@@ -87,72 +87,72 @@ type Container_Tags struct {
 }
 
 var Container_ContainerServiceDeployment_Containers_EnvironmentFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"Variable": ubx.FieldSpec{WireName: "variable"},
-	}
+	"Value":    ubx.FieldSpec{WireName: "value"},
+	"Variable": ubx.FieldSpec{WireName: "variable"},
+}
 
 var Container_ContainerServiceDeployment_Containers_PortsFields = ubx.FieldMap{
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-	}
+	"Port":     ubx.FieldSpec{WireName: "port"},
+	"Protocol": ubx.FieldSpec{WireName: "protocol"},
+}
 
 var Container_ContainerServiceDeployment_ContainersFields = ubx.FieldMap{
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"ContainerName": ubx.FieldSpec{WireName: "container_name"},
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "list",
-			Fields: Container_ContainerServiceDeployment_Containers_EnvironmentFields,
-		},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"Ports": ubx.FieldSpec{
-			WireName: "ports",
-			Kind: "list",
-			Fields: Container_ContainerServiceDeployment_Containers_PortsFields,
-		},
-	}
+	"Command":       ubx.FieldSpec{WireName: "command"},
+	"ContainerName": ubx.FieldSpec{WireName: "container_name"},
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "list",
+		Fields:   Container_ContainerServiceDeployment_Containers_EnvironmentFields,
+	},
+	"Image": ubx.FieldSpec{WireName: "image"},
+	"Ports": ubx.FieldSpec{
+		WireName: "ports",
+		Kind:     "list",
+		Fields:   Container_ContainerServiceDeployment_Containers_PortsFields,
+	},
+}
 
 var Container_ContainerServiceDeployment_PublicEndpoint_HealthCheckConfigFields = ubx.FieldMap{
-		"HealthyThreshold": ubx.FieldSpec{WireName: "healthy_threshold"},
-		"IntervalSeconds": ubx.FieldSpec{WireName: "interval_seconds"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"SuccessCodes": ubx.FieldSpec{WireName: "success_codes"},
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-		"UnhealthyThreshold": ubx.FieldSpec{WireName: "unhealthy_threshold"},
-	}
+	"HealthyThreshold":   ubx.FieldSpec{WireName: "healthy_threshold"},
+	"IntervalSeconds":    ubx.FieldSpec{WireName: "interval_seconds"},
+	"Path":               ubx.FieldSpec{WireName: "path"},
+	"SuccessCodes":       ubx.FieldSpec{WireName: "success_codes"},
+	"TimeoutSeconds":     ubx.FieldSpec{WireName: "timeout_seconds"},
+	"UnhealthyThreshold": ubx.FieldSpec{WireName: "unhealthy_threshold"},
+}
 
 var Container_ContainerServiceDeployment_PublicEndpointFields = ubx.FieldMap{
-		"ContainerName": ubx.FieldSpec{WireName: "container_name"},
-		"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
-		"HealthCheckConfig": ubx.FieldSpec{
-			WireName: "health_check_config",
-			Kind: "object",
-			Fields: Container_ContainerServiceDeployment_PublicEndpoint_HealthCheckConfigFields,
-		},
-	}
+	"ContainerName": ubx.FieldSpec{WireName: "container_name"},
+	"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
+	"HealthCheckConfig": ubx.FieldSpec{
+		WireName: "health_check_config",
+		Kind:     "object",
+		Fields:   Container_ContainerServiceDeployment_PublicEndpoint_HealthCheckConfigFields,
+	},
+}
 
 var Container_ContainerServiceDeploymentFields = ubx.FieldMap{
-		"Containers": ubx.FieldSpec{
-			WireName: "containers",
-			Kind: "list",
-			Fields: Container_ContainerServiceDeployment_ContainersFields,
-		},
-		"PublicEndpoint": ubx.FieldSpec{
-			WireName: "public_endpoint",
-			Kind: "object",
-			Fields: Container_ContainerServiceDeployment_PublicEndpointFields,
-		},
-	}
+	"Containers": ubx.FieldSpec{
+		WireName: "containers",
+		Kind:     "list",
+		Fields:   Container_ContainerServiceDeployment_ContainersFields,
+	},
+	"PublicEndpoint": ubx.FieldSpec{
+		WireName: "public_endpoint",
+		Kind:     "object",
+		Fields:   Container_ContainerServiceDeployment_PublicEndpointFields,
+	},
+}
 
 var Container_PublicDomainNamesFields = ubx.FieldMap{
-		"CertificateName": ubx.FieldSpec{WireName: "certificate_name"},
-		"DomainNames": ubx.FieldSpec{WireName: "domain_names"},
-	}
+	"CertificateName": ubx.FieldSpec{WireName: "certificate_name"},
+	"DomainNames":     ubx.FieldSpec{WireName: "domain_names"},
+}
 
 var Container_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ContainerConfig struct {
 	// Describes a container deployment configuration of an Amazon Lightsail container service.
@@ -201,22 +201,22 @@ var Container = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ContainerServiceDeployment": ubx.FieldSpec{
 			WireName: "container_service_deployment",
-			Kind: "object",
-			Fields: Container_ContainerServiceDeploymentFields,
+			Kind:     "object",
+			Fields:   Container_ContainerServiceDeploymentFields,
 		},
 		"IsDisabled": ubx.FieldSpec{WireName: "is_disabled"},
-		"Power": ubx.FieldSpec{WireName: "power"},
+		"Power":      ubx.FieldSpec{WireName: "power"},
 		"PublicDomainNames": ubx.FieldSpec{
 			WireName: "public_domain_names",
-			Kind: "list",
-			Fields: Container_PublicDomainNamesFields,
+			Kind:     "list",
+			Fields:   Container_PublicDomainNamesFields,
 		},
-		"Scale": ubx.FieldSpec{WireName: "scale"},
+		"Scale":       ubx.FieldSpec{WireName: "scale"},
 		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Container_TagsFields,
+			Kind:     "list",
+			Fields:   Container_TagsFields,
 		},
 	},
 }

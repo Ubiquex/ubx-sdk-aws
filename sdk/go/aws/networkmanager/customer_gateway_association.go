@@ -29,8 +29,8 @@ var CustomerGatewayAssociation = ubx.ResourceBinding{
 	WireType: "aws_network_manager_customer_gateway_association",
 	Fields: ubx.FieldMap{
 		"CustomerGatewayArn": ubx.FieldSpec{WireName: "customer_gateway_arn"},
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"GlobalNetworkId": ubx.FieldSpec{WireName: "global_network_id"},
-		"LinkId": ubx.FieldSpec{WireName: "link_id"},
+		"DeviceId":           ubx.FieldSpec{WireName: "device_id"},
+		"GlobalNetworkId":    ubx.FieldSpec{WireName: "global_network_id"},
+		"LinkId":             ubx.FieldSpec{WireName: "link_id"},
 	},
 }

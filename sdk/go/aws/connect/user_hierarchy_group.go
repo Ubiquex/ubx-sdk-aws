@@ -11,9 +11,9 @@ type UserHierarchyGroup_Tags struct {
 }
 
 var UserHierarchyGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type UserHierarchyGroupConfig struct {
 	// The identifier of the Amazon Connect instance.
@@ -42,13 +42,13 @@ type UserHierarchyGroupAttrs struct {
 var UserHierarchyGroup = ubx.ResourceBinding{
 	WireType: "aws_connect_user_hierarchy_group",
 	Fields: ubx.FieldMap{
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"InstanceArn":    ubx.FieldSpec{WireName: "instance_arn"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"ParentGroupArn": ubx.FieldSpec{WireName: "parent_group_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: UserHierarchyGroup_TagsFields,
+			Kind:     "list",
+			Fields:   UserHierarchyGroup_TagsFields,
 		},
 	},
 }

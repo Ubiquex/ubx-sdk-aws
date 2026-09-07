@@ -4,61 +4,61 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerInferenceComponents_InferenceComponents struct {
-	CreationTime any
-	EndpointArn any
-	EndpointName any
-	InferenceComponentArn any
-	InferenceComponentName any
+	CreationTime             any
+	EndpointArn              any
+	EndpointName             any
+	InferenceComponentArn    any
+	InferenceComponentName   any
 	InferenceComponentStatus any
-	LastModifiedTime any
-	VariantName any
+	LastModifiedTime         any
+	VariantName              any
 }
 
 type ApiSagemakerInferenceComponentsConfig struct {
-	CreationTimeAfter any
-	CreationTimeBefore any
-	EndpointNameEquals any
-	LastModifiedTimeAfter any
+	CreationTimeAfter      any
+	CreationTimeBefore     any
+	EndpointNameEquals     any
+	LastModifiedTimeAfter  any
 	LastModifiedTimeBefore any
-	MaxResults any
-	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
-	StatusEquals any
-	VariantNameEquals any
+	MaxResults             any
+	NameContains           any
+	NextToken              any
+	SortBy                 any
+	SortOrder              any
+	StatusEquals           any
+	VariantNameEquals      any
 }
 
 type ApiSagemakerInferenceComponentsAttrs struct {
-	CreationTimeAfter any
-	CreationTimeBefore any
-	EndpointNameEquals any
-	InferenceComponents any
-	LastModifiedTimeAfter any
+	CreationTimeAfter      any
+	CreationTimeBefore     any
+	EndpointNameEquals     any
+	InferenceComponents    any
+	LastModifiedTimeAfter  any
 	LastModifiedTimeBefore any
-	MaxResults any
-	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
-	StatusEquals any
-	VariantNameEquals any
+	MaxResults             any
+	NameContains           any
+	NextToken              any
+	SortBy                 any
+	SortOrder              any
+	StatusEquals           any
+	VariantNameEquals      any
 }
 
 var ApiSagemakerInferenceComponents = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_inference_components",
 	Fields: ubx.FieldMap{
-		"CreationTimeAfter": ubx.FieldSpec{WireName: "creation_time_after"},
-		"CreationTimeBefore": ubx.FieldSpec{WireName: "creation_time_before"},
-		"EndpointNameEquals": ubx.FieldSpec{WireName: "endpoint_name_equals"},
-		"LastModifiedTimeAfter": ubx.FieldSpec{WireName: "last_modified_time_after"},
+		"CreationTimeAfter":      ubx.FieldSpec{WireName: "creation_time_after"},
+		"CreationTimeBefore":     ubx.FieldSpec{WireName: "creation_time_before"},
+		"EndpointNameEquals":     ubx.FieldSpec{WireName: "endpoint_name_equals"},
+		"LastModifiedTimeAfter":  ubx.FieldSpec{WireName: "last_modified_time_after"},
 		"LastModifiedTimeBefore": ubx.FieldSpec{WireName: "last_modified_time_before"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"StatusEquals": ubx.FieldSpec{WireName: "status_equals"},
-		"VariantNameEquals": ubx.FieldSpec{WireName: "variant_name_equals"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"NameContains":           ubx.FieldSpec{WireName: "name_contains"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":                 ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":              ubx.FieldSpec{WireName: "sort_order"},
+		"StatusEquals":           ubx.FieldSpec{WireName: "status_equals"},
+		"VariantNameEquals":      ubx.FieldSpec{WireName: "variant_name_equals"},
 	},
 }

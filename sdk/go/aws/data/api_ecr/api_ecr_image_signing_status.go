@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiEcrImageSigningStatus_ImageId struct {
 	ImageDigest any
-	ImageTag any
+	ImageTag    any
 }
 
 type ApiEcrImageSigningStatus_SigningStatuses struct {
-	FailureCode any
-	FailureReason any
+	FailureCode       any
+	FailureReason     any
 	SigningProfileArn any
-	Status any
+	Status            any
 }
 
 var ApiEcrImageSigningStatus_ImageIdFields = ubx.FieldMap{
-		"ImageDigest": ubx.FieldSpec{WireName: "image_digest"},
-		"ImageTag": ubx.FieldSpec{WireName: "image_tag"},
-	}
+	"ImageDigest": ubx.FieldSpec{WireName: "image_digest"},
+	"ImageTag":    ubx.FieldSpec{WireName: "image_tag"},
+}
 
 type ApiEcrImageSigningStatusConfig struct {
 	// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-	ImageId any
-	RegistryId any
+	ImageId        any
+	RegistryId     any
 	RepositoryName any
 }
 
 type ApiEcrImageSigningStatusAttrs struct {
 	// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-	ImageId any
-	RegistryId any
-	RepositoryName any
+	ImageId         any
+	RegistryId      any
+	RepositoryName  any
 	SigningStatuses any
 }
 
@@ -40,10 +40,10 @@ var ApiEcrImageSigningStatus = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ImageId": ubx.FieldSpec{
 			WireName: "image_id",
-			Kind: "object",
-			Fields: ApiEcrImageSigningStatus_ImageIdFields,
+			Kind:     "object",
+			Fields:   ApiEcrImageSigningStatus_ImageIdFields,
 		},
-		"RegistryId": ubx.FieldSpec{WireName: "registry_id"},
+		"RegistryId":     ubx.FieldSpec{WireName: "registry_id"},
 		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
 	},
 }

@@ -42,47 +42,47 @@ type Recommender_Tags struct {
 
 type Recommender_TrainingMetrics_Metrics struct {
 	// The coverage metric in the recommender's training metrics, indicating the proportion of distinct items from the catalog that appear in at least one recommendation. (AI-inferred)
-	Coverage any
+	Coverage  any
 	Freshness any
 	// The hit rate of the recommender model, representing the percentage of times the model's predicted recommendation matched the actual outcome during training. (AI-inferred)
 	Hit any
 	// The popularity metric value indicates the model's predictive performance on popularity-based next-best-action recommendations within the recommender's training metrics. (AI-inferred)
 	Popularity any
 	// The recall metric in the recommender's training metrics indicates the proportion of relevant recommendations that were correctly retrieved out of all relevant items in the training data, providing an evaluation of the recommender model's performance. (AI-inferred)
-	Recall any
+	Recall     any
 	Similarity any
 }
 
 type Recommender_TrainingMetrics struct {
 	Metrics any
-	Time any
+	Time    any
 }
 
 var Recommender_LatestRecommenderUpdate_RecommenderConfig_EventsConfig_EventParametersListFields = ubx.FieldMap{
-		"EventType": ubx.FieldSpec{WireName: "event_type"},
-		"EventValueThreshold": ubx.FieldSpec{WireName: "event_value_threshold"},
-	}
+	"EventType":           ubx.FieldSpec{WireName: "event_type"},
+	"EventValueThreshold": ubx.FieldSpec{WireName: "event_value_threshold"},
+}
 
 var Recommender_LatestRecommenderUpdate_RecommenderConfig_EventsConfigFields = ubx.FieldMap{
-		"EventParametersList": ubx.FieldSpec{
-			WireName: "event_parameters_list",
-			Kind: "list",
-			Fields: Recommender_LatestRecommenderUpdate_RecommenderConfig_EventsConfig_EventParametersListFields,
-		},
-	}
+	"EventParametersList": ubx.FieldSpec{
+		WireName: "event_parameters_list",
+		Kind:     "list",
+		Fields:   Recommender_LatestRecommenderUpdate_RecommenderConfig_EventsConfig_EventParametersListFields,
+	},
+}
 
 var Recommender_LatestRecommenderUpdate_RecommenderConfigFields = ubx.FieldMap{
-		"EventsConfig": ubx.FieldSpec{
-			WireName: "events_config",
-			Kind: "object",
-			Fields: Recommender_LatestRecommenderUpdate_RecommenderConfig_EventsConfigFields,
-		},
-	}
+	"EventsConfig": ubx.FieldSpec{
+		WireName: "events_config",
+		Kind:     "object",
+		Fields:   Recommender_LatestRecommenderUpdate_RecommenderConfig_EventsConfigFields,
+	},
+}
 
 var Recommender_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RecommenderConfig struct {
 	// The description of the recommender.
@@ -132,18 +132,18 @@ var Recommender = ubx.ResourceBinding{
 	WireType: "aws_customer_profiles_recommender",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":  ubx.FieldSpec{WireName: "domain_name"},
 		"RecommenderConfig": ubx.FieldSpec{
 			WireName: "recommender_config",
-			Kind: "object",
-			Fields: Recommender_LatestRecommenderUpdate_RecommenderConfigFields,
+			Kind:     "object",
+			Fields:   Recommender_LatestRecommenderUpdate_RecommenderConfigFields,
 		},
-		"RecommenderName": ubx.FieldSpec{WireName: "recommender_name"},
+		"RecommenderName":       ubx.FieldSpec{WireName: "recommender_name"},
 		"RecommenderRecipeName": ubx.FieldSpec{WireName: "recommender_recipe_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Recommender_TagsFields,
+			Kind:     "list",
+			Fields:   Recommender_TagsFields,
 		},
 	},
 }

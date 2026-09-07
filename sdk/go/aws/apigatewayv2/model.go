@@ -34,10 +34,10 @@ type ModelAttrs struct {
 var Model = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_v2_model",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":       ubx.FieldSpec{WireName: "api_id"},
 		"ContentType": ubx.FieldSpec{WireName: "content_type"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Schema":      ubx.FieldSpec{WireName: "schema"},
 	},
 }

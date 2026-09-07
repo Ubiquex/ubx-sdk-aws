@@ -4,10 +4,10 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessToken_Credentials struct {
-	AccessKeyId any
-	ExpirationTime any
+	AccessKeyId     any
+	ExpirationTime  any
 	SecretAccessKey any
-	SessionToken any
+	SessionToken    any
 }
 
 type AccessTokenConfig struct {
@@ -15,7 +15,7 @@ type AccessTokenConfig struct {
 }
 
 type AccessTokenAttrs struct {
-	AccessRequestId any
+	AccessRequestId     any
 	AccessRequestStatus any
 	// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p>
 	Credentials any

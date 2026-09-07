@@ -20,7 +20,7 @@ type ResourcePolicyAttrs struct {
 var ResourcePolicy = ubx.ResourceBinding{
 	WireType: "aws_kinesis_resource_policy",
 	Fields: ubx.FieldMap{
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+		"ResourceArn":    ubx.FieldSpec{WireName: "resource_arn"},
 		"ResourcePolicy": ubx.FieldSpec{WireName: "resource_policy"},
 	},
 }

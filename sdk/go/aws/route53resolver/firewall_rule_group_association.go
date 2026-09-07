@@ -10,9 +10,9 @@ type FirewallRuleGroupAssociation_Tags struct {
 }
 
 var FirewallRuleGroupAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FirewallRuleGroupAssociationConfig struct {
 	// FirewallRuleGroupId
@@ -64,13 +64,13 @@ var FirewallRuleGroupAssociation = ubx.ResourceBinding{
 	WireType: "aws_route53_resolver_firewall_rule_group_association",
 	Fields: ubx.FieldMap{
 		"FirewallRuleGroupId": ubx.FieldSpec{WireName: "firewall_rule_group_id"},
-		"MutationProtection": ubx.FieldSpec{WireName: "mutation_protection"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"MutationProtection":  ubx.FieldSpec{WireName: "mutation_protection"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"Priority":            ubx.FieldSpec{WireName: "priority"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FirewallRuleGroupAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   FirewallRuleGroupAssociation_TagsFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

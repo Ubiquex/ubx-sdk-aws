@@ -4,21 +4,21 @@ package ivsrealtime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StageSessions_StageSessions struct {
-	EndTime any
+	EndTime   any
 	SessionId any
 	StartTime any
 }
 
 type StageSessionsConfig struct {
 	MaxResults any
-	NextToken any
-	StageArn any
+	NextToken  any
+	StageArn   any
 }
 
 type StageSessionsAttrs struct {
-	MaxResults any
-	NextToken any
-	StageArn any
+	MaxResults    any
+	NextToken     any
+	StageArn      any
 	StageSessions any
 }
 
@@ -26,7 +26,7 @@ var StageSessions = ubx.DataSourceBinding{
 	WireType: "aws_ivsrealtime_stage_sessions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StageArn": ubx.FieldSpec{WireName: "stage_arn"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"StageArn":   ubx.FieldSpec{WireName: "stage_arn"},
 	},
 }

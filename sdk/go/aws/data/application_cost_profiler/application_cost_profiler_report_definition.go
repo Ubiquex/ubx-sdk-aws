@@ -16,11 +16,11 @@ type ApplicationCostProfilerReportDefinitionAttrs struct {
 	CreatedAt any
 	// <p>Represents the Amazon Simple Storage Service (Amazon S3) location where AWS Application Cost Profiler reports are generated and then written to.</p>
 	DestinationS3Location any
-	Format any
-	LastUpdated any
-	ReportDescription any
-	ReportFrequency any
-	ReportId any
+	Format                any
+	LastUpdated           any
+	ReportDescription     any
+	ReportFrequency       any
+	ReportId              any
 }
 
 var ApplicationCostProfilerReportDefinition = ubx.DataSourceBinding{

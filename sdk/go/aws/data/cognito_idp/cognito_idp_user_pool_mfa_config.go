@@ -9,21 +9,21 @@ type CognitoIdpUserPoolMfaConfig_EmailMfaConfiguration struct {
 }
 
 type CognitoIdpUserPoolMfaConfig_SmsMfaConfiguration_SmsConfiguration_EumsSms struct {
-	CallerArn any
+	CallerArn            any
 	ConfigurationSetName any
-	ExternalId any
-	InEntityId any
-	InTemplateId any
-	OriginationIdentity any
-	Region any
+	ExternalId           any
+	InEntityId           any
+	InTemplateId         any
+	OriginationIdentity  any
+	Region               any
 }
 
 type CognitoIdpUserPoolMfaConfig_SmsMfaConfiguration_SmsConfiguration struct {
 	// <p>The configuration that Amazon Cognito uses to send SMS messages through Amazon Web Services End User Messaging SMS. Provide this structure in the <code>EumsSms</code> member of <code>SmsConfigurationType</code> to use Amazon Web Services End User Messaging SMS instead of Amazon SNS.</p>
-	EumsSms any
-	ExternalId any
+	EumsSms      any
+	ExternalId   any
 	SnsCallerArn any
-	SnsRegion any
+	SnsRegion    any
 }
 
 type CognitoIdpUserPoolMfaConfig_SmsMfaConfiguration struct {
@@ -39,8 +39,8 @@ type CognitoIdpUserPoolMfaConfig_SoftwareTokenMfaConfiguration struct {
 type CognitoIdpUserPoolMfaConfig_WebAuthnConfiguration struct {
 	// <p>The configuration of passkey authentication as a single factor or a multi-factor authentication (MFA) method. When set to <code>MULTI_FACTOR_WITH_USER_VERIFICATION</code>, your user pool requires passkey authenticators to perform <a href="https://www.w3.org/TR/webauthn-2/#user-verification">user verification</a>, for example a biometric or PIN. User verification combined with the passkey constitutes multi-factor authentication. When set to <code>SINGLE_FACTOR</code>, passkeys are a single authentication factor.</p>
 	FactorConfiguration any
-	RelyingPartyId any
-	UserVerification any
+	RelyingPartyId      any
+	UserVerification    any
 }
 
 type CognitoIdpUserPoolMfaConfigConfig struct {
@@ -50,12 +50,12 @@ type CognitoIdpUserPoolMfaConfigConfig struct {
 type CognitoIdpUserPoolMfaConfigAttrs struct {
 	// <p>Sets or shows configuration for user pool email message MFA and sign-in with one-time passwords (OTPs). Includes the subject and body of the email message template for sign-in and MFA messages. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
 	EmailMfaConfiguration any
-	MfaConfiguration any
+	MfaConfiguration      any
 	// <p>The configuration of multi-factor authentication (MFA) with SMS messages in a user pool.</p>
 	SmsMfaConfiguration any
 	// <p>Settings for time-based one-time password (TOTP) multi-factor authentication (MFA) in a user pool. Enables and disables availability of this feature.</p>
 	SoftwareTokenMfaConfiguration any
-	UserPoolId any
+	UserPoolId                    any
 	// <p>Settings for authentication (MFA) with passkey, or webauthN, biometric and security-key devices in a user pool. Configures the following:</p> <ul> <li> <p>Configuration for requiring user-verification support in passkeys.</p> </li> <li> <p>The user pool relying-party ID. This is the domain, typically your user pool domain, that user's passkey providers should trust as a receiver of passkey authentication.</p> </li> <li> <p>The providers that you want to allow as origins for passkey authentication.</p> </li> </ul>
 	WebAuthnConfiguration any
 }

@@ -4,57 +4,57 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Instances_Instances_AddOns struct {
-	Duration any
-	Name any
+	Duration              any
+	Name                  any
 	NextSnapshotTimeOfDay any
-	SnapshotTimeOfDay any
-	Status any
-	Threshold any
+	SnapshotTimeOfDay     any
+	Status                any
+	Threshold             any
 }
 
 type Instances_Instances_Hardware_Disks_Location struct {
 	AvailabilityZone any
-	RegionName any
+	RegionName       any
 }
 
 type Instances_Instances_Hardware_Disks_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Instances_Instances_Hardware_Disks struct {
-	AddOns any
-	Arn any
-	AttachedTo any
+	AddOns          any
+	Arn             any
+	AttachedTo      any
 	AttachmentState any
 	AutoMountStatus any
-	CreatedAt any
-	GbInUse any
-	Iops any
-	IsAttached any
-	IsSystemDisk any
-	Location any
-	Name any
-	Path any
-	ResourceType any
-	SizeInGb any
-	State any
-	SupportCode any
-	Tags any
+	CreatedAt       any
+	GbInUse         any
+	Iops            any
+	IsAttached      any
+	IsSystemDisk    any
+	Location        any
+	Name            any
+	Path            any
+	ResourceType    any
+	SizeInGb        any
+	State           any
+	SupportCode     any
+	Tags            any
 }
 
 type Instances_Instances_Hardware struct {
-	CpuCount any
-	Disks any
+	CpuCount    any
+	Disks       any
 	RamSizeInGb any
 }
 
 type Instances_Instances_MetadataOptions struct {
-	HttpEndpoint any
-	HttpProtocolIpv6 any
+	HttpEndpoint            any
+	HttpProtocolIpv6        any
 	HttpPutResponseHopLimit any
-	HttpTokens any
-	State any
+	HttpTokens              any
+	State                   any
 }
 
 type Instances_Instances_Networking_MonthlyTransfer struct {
@@ -63,20 +63,20 @@ type Instances_Instances_Networking_MonthlyTransfer struct {
 
 type Instances_Instances_Networking_Ports struct {
 	AccessDirection any
-	AccessFrom any
-	AccessType any
+	AccessFrom      any
+	AccessType      any
 	CidrListAliases any
-	Cidrs any
-	CommonName any
-	FromPort any
-	Ipv6Cidrs any
-	Protocol any
-	ToPort any
+	Cidrs           any
+	CommonName      any
+	FromPort        any
+	Ipv6Cidrs       any
+	Protocol        any
+	ToPort          any
 }
 
 type Instances_Instances_Networking struct {
 	MonthlyTransfer any
-	Ports any
+	Ports           any
 }
 
 type Instances_Instances_State struct {
@@ -85,28 +85,28 @@ type Instances_Instances_State struct {
 }
 
 type Instances_Instances struct {
-	AddOns any
-	Arn any
-	BlueprintId any
-	BlueprintName any
-	BundleId any
-	CreatedAt any
-	Hardware any
-	IpAddressType any
-	Ipv6Addresses any
-	IsStaticIp any
-	Location any
-	MetadataOptions any
-	Name any
-	Networking any
+	AddOns           any
+	Arn              any
+	BlueprintId      any
+	BlueprintName    any
+	BundleId         any
+	CreatedAt        any
+	Hardware         any
+	IpAddressType    any
+	Ipv6Addresses    any
+	IsStaticIp       any
+	Location         any
+	MetadataOptions  any
+	Name             any
+	Networking       any
 	PrivateIpAddress any
-	PublicIpAddress any
-	ResourceType any
-	SshKeyName any
-	State any
-	SupportCode any
-	Tags any
-	Username any
+	PublicIpAddress  any
+	ResourceType     any
+	SshKeyName       any
+	State            any
+	SupportCode      any
+	Tags             any
+	Username         any
 }
 
 type InstancesConfig struct {
@@ -114,9 +114,9 @@ type InstancesConfig struct {
 }
 
 type InstancesAttrs struct {
-	Instances any
+	Instances     any
 	NextPageToken any
-	PageToken any
+	PageToken     any
 }
 
 var Instances = ubx.DataSourceBinding{

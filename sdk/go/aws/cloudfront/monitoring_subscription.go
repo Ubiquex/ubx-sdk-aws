@@ -14,16 +14,16 @@ type MonitoringSubscription_MonitoringSubscription struct {
 }
 
 var MonitoringSubscription_MonitoringSubscription_RealtimeMetricsSubscriptionConfigFields = ubx.FieldMap{
-		"RealtimeMetricsSubscriptionStatus": ubx.FieldSpec{WireName: "realtime_metrics_subscription_status"},
-	}
+	"RealtimeMetricsSubscriptionStatus": ubx.FieldSpec{WireName: "realtime_metrics_subscription_status"},
+}
 
 var MonitoringSubscription_MonitoringSubscriptionFields = ubx.FieldMap{
-		"RealtimeMetricsSubscriptionConfig": ubx.FieldSpec{
-			WireName: "realtime_metrics_subscription_config",
-			Kind: "object",
-			Fields: MonitoringSubscription_MonitoringSubscription_RealtimeMetricsSubscriptionConfigFields,
-		},
-	}
+	"RealtimeMetricsSubscriptionConfig": ubx.FieldSpec{
+		WireName: "realtime_metrics_subscription_config",
+		Kind:     "object",
+		Fields:   MonitoringSubscription_MonitoringSubscription_RealtimeMetricsSubscriptionConfigFields,
+	},
+}
 
 type MonitoringSubscriptionConfig struct {
 	// The ID of the distribution that you are enabling metrics for.
@@ -45,8 +45,8 @@ var MonitoringSubscription = ubx.ResourceBinding{
 		"DistributionId": ubx.FieldSpec{WireName: "distribution_id"},
 		"MonitoringSubscription": ubx.FieldSpec{
 			WireName: "monitoring_subscription",
-			Kind: "object",
-			Fields: MonitoringSubscription_MonitoringSubscriptionFields,
+			Kind:     "object",
+			Fields:   MonitoringSubscription_MonitoringSubscriptionFields,
 		},
 	},
 }

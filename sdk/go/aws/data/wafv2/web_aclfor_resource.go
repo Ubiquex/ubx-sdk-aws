@@ -4,7 +4,7 @@ package wafv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WebAclforResource_WebAcl_ApplicationConfig_Attributes struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -30,7 +30,7 @@ type WebAclforResource_WebAcl_CaptchaConfig struct {
 }
 
 type WebAclforResource_WebAcl_CustomResponseBodies struct {
-	Content any
+	Content     any
 	ContentType any
 }
 
@@ -40,10 +40,10 @@ type WebAclforResource_WebAcl_DataProtectionConfig_DataProtections_Field struct 
 }
 
 type WebAclforResource_WebAcl_DataProtectionConfig_DataProtections struct {
-	Action any
+	Action                  any
 	ExcludeRateBasedDetails any
 	ExcludeRuleMatchDetails any
-	Field any
+	Field                   any
 }
 
 type WebAclforResource_WebAcl_DataProtectionConfig struct {
@@ -51,7 +51,7 @@ type WebAclforResource_WebAcl_DataProtectionConfig struct {
 }
 
 type WebAclforResource_WebAcl_DefaultAction_Allow_CustomRequestHandling_InsertHeaders struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -66,8 +66,8 @@ type WebAclforResource_WebAcl_DefaultAction_Allow struct {
 
 type WebAclforResource_WebAcl_DefaultAction_Block_CustomResponse struct {
 	CustomResponseBodyKey any
-	ResponseCode any
-	ResponseHeaders any
+	ResponseCode          any
+	ResponseHeaders       any
 }
 
 type WebAclforResource_WebAcl_DefaultAction_Block struct {
@@ -83,13 +83,13 @@ type WebAclforResource_WebAcl_DefaultAction struct {
 }
 
 type WebAclforResource_WebAcl_MonetizationConfig_CryptoConfig_PaymentNetworks_Prices struct {
-	Amount any
+	Amount   any
 	Currency any
 }
 
 type WebAclforResource_WebAcl_MonetizationConfig_CryptoConfig_PaymentNetworks struct {
-	Chain any
-	Prices any
+	Chain         any
+	Prices        any
 	WalletAddress any
 }
 
@@ -116,12 +116,12 @@ type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManag
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection struct {
-	AddressFields any
-	EmailField any
-	PasswordField any
-	PayloadType any
+	AddressFields     any
+	EmailField        any
+	PasswordField     any
+	PayloadType       any
 	PhoneNumberFields any
-	UsernameField any
+	UsernameField     any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_BodyContains struct {
@@ -131,13 +131,13 @@ type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManag
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_Header struct {
 	FailureValues any
-	Name any
+	Name          any
 	SuccessValues any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_Json struct {
 	FailureValues any
-	Identifier any
+	Identifier    any
 	SuccessValues any
 }
 
@@ -148,17 +148,17 @@ type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManag
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection struct {
 	BodyContains any
-	Header any
-	Json any
-	StatusCode any
+	Header       any
+	Json         any
+	StatusCode   any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet struct {
-	CreationPath any
-	EnableRegexInPath any
+	CreationPath         any
+	EnableRegexInPath    any
 	RegistrationPagePath any
-	RequestInspection any
-	ResponseInspection any
+	RequestInspection    any
+	ResponseInspection   any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_Challenge_ExemptUriRegularExpressions struct {
@@ -167,8 +167,8 @@ type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManag
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_Challenge struct {
 	ExemptUriRegularExpressions any
-	Sensitivity any
-	UsageOfAction any
+	Sensitivity                 any
+	UsageOfAction               any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig struct {
@@ -177,36 +177,36 @@ type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManag
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet struct {
 	ClientSideActionConfig any
-	SensitivityToBlock any
+	SensitivityToBlock     any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSet_RequestInspection struct {
 	PasswordField any
-	PayloadType any
+	PayloadType   any
 	UsernameField any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSet struct {
-	EnableRegexInPath any
-	LoginPath any
-	RequestInspection any
+	EnableRegexInPath  any
+	LoginPath          any
+	RequestInspection  any
 	ResponseInspection any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesBotControlRuleSet struct {
 	EnableMachineLearning any
-	InspectionLevel any
+	InspectionLevel       any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs struct {
-	AwsmanagedRulesAcfpruleSet any
-	AwsmanagedRulesAntiDdoSruleSet any
-	AwsmanagedRulesAtpruleSet any
+	AwsmanagedRulesAcfpruleSet       any
+	AwsmanagedRulesAntiDdoSruleSet   any
+	AwsmanagedRulesAtpruleSet        any
 	AwsmanagedRulesBotControlRuleSet any
-	LoginPath any
-	PasswordField any
-	PayloadType any
-	UsernameField any
+	LoginPath                        any
+	PasswordField                    any
+	PayloadType                      any
+	UsernameField                    any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_RuleActionOverrides_ActionToUse_Monetize struct {
@@ -214,17 +214,17 @@ type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManag
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_RuleActionOverrides_ActionToUse struct {
-	Allow any
-	Block any
-	Captcha any
+	Allow     any
+	Block     any
+	Captcha   any
 	Challenge any
-	Count any
-	Monetize any
+	Count     any
+	Monetize  any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_RuleActionOverrides struct {
 	ActionToUse any
-	Name any
+	Name        any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_AndStatement_Statements struct {
@@ -236,11 +236,11 @@ type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManag
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_AsnMatchStatement_ForwardedIpconfig struct {
 	FallbackBehavior any
-	HeaderName any
+	HeaderName       any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_AsnMatchStatement struct {
-	AsnList any
+	AsnList           any
 	ForwardedIpconfig any
 }
 
@@ -249,26 +249,26 @@ type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManag
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_ByteMatchStatement_FieldToMatch_Cookies_MatchPattern struct {
-	All any
+	All             any
 	ExcludedCookies any
 	IncludedCookies any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_ByteMatchStatement_FieldToMatch_Cookies struct {
-	MatchPattern any
-	MatchScope any
+	MatchPattern     any
+	MatchScope       any
 	OversizeHandling any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_ByteMatchStatement_FieldToMatch_Headers_MatchPattern struct {
-	All any
+	All             any
 	ExcludedHeaders any
 	IncludedHeaders any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_ByteMatchStatement_FieldToMatch_Headers struct {
-	MatchPattern any
-	MatchScope any
+	MatchPattern     any
+	MatchScope       any
 	OversizeHandling any
 }
 
@@ -277,65 +277,65 @@ type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManag
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPattern struct {
-	All any
+	All           any
 	IncludedPaths any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_ByteMatchStatement_FieldToMatch_JsonBody struct {
 	InvalidFallbackBehavior any
-	MatchPattern any
-	MatchScope any
-	OversizeHandling any
+	MatchPattern            any
+	MatchScope              any
+	OversizeHandling        any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_ByteMatchStatement_FieldToMatch struct {
-	AllQueryArguments any
-	Body any
-	Cookies any
-	HeaderOrder any
-	Headers any
-	Ja3Fingerprint any
-	Ja4Fingerprint any
-	JsonBody any
-	Method any
-	QueryString any
-	SingleHeader any
+	AllQueryArguments   any
+	Body                any
+	Cookies             any
+	HeaderOrder         any
+	Headers             any
+	Ja3Fingerprint      any
+	Ja4Fingerprint      any
+	JsonBody            any
+	Method              any
+	QueryString         any
+	SingleHeader        any
 	SingleQueryArgument any
-	UriFragment any
-	UriPath any
+	UriFragment         any
+	UriPath             any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_ByteMatchStatement_PreParseTextTransformations struct {
 	Priority any
-	Type any
+	Type     any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_ByteMatchStatement struct {
-	FieldToMatch any
-	PositionalConstraint any
+	FieldToMatch                any
+	PositionalConstraint        any
 	PreParseTextTransformations any
-	SearchString any
-	TextTransformations any
+	SearchString                any
+	TextTransformations         any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_GeoMatchStatement struct {
-	CountryCodes any
+	CountryCodes      any
 	ForwardedIpconfig any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_IpsetReferenceStatement_IpsetForwardedIpconfig struct {
 	FallbackBehavior any
-	HeaderName any
-	Position any
+	HeaderName       any
+	Position         any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_IpsetReferenceStatement struct {
-	Arn any
+	Arn                    any
 	IpsetForwardedIpconfig any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_LabelMatchStatement struct {
-	Key any
+	Key   any
 	Scope any
 }
 
@@ -344,7 +344,7 @@ type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManag
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_RateBasedStatement_CustomKeys_Cookie struct {
-	Name any
+	Name                any
 	TextTransformations any
 }
 
@@ -357,194 +357,194 @@ type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManag
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_RateBasedStatement_CustomKeys struct {
-	Asn any
-	Cookie any
-	ForwardedIp any
-	Header any
-	Httpmethod any
-	Ip any
+	Asn            any
+	Cookie         any
+	ForwardedIp    any
+	Header         any
+	Httpmethod     any
+	Ip             any
 	Ja3Fingerprint any
 	Ja4Fingerprint any
 	LabelNamespace any
-	QueryArgument any
-	QueryString any
-	UriPath any
+	QueryArgument  any
+	QueryString    any
+	UriPath        any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_RateBasedStatement struct {
-	AggregateKeyType any
-	CustomKeys any
+	AggregateKeyType    any
+	CustomKeys          any
 	EvaluationWindowSec any
-	ForwardedIpconfig any
-	Limit any
-	ScopeDownStatement any
+	ForwardedIpconfig   any
+	Limit               any
+	ScopeDownStatement  any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_RegexMatchStatement struct {
-	FieldToMatch any
+	FieldToMatch                any
 	PreParseTextTransformations any
-	RegexString any
-	TextTransformations any
+	RegexString                 any
+	TextTransformations         any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_RegexPatternSetReferenceStatement struct {
-	Arn any
-	FieldToMatch any
+	Arn                         any
+	FieldToMatch                any
 	PreParseTextTransformations any
-	TextTransformations any
+	TextTransformations         any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_RuleGroupReferenceStatement struct {
-	Arn any
-	ExcludedRules any
+	Arn                 any
+	ExcludedRules       any
 	RuleActionOverrides any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_SizeConstraintStatement struct {
-	ComparisonOperator any
-	FieldToMatch any
+	ComparisonOperator          any
+	FieldToMatch                any
 	PreParseTextTransformations any
-	Size any
-	TextTransformations any
+	Size                        any
+	TextTransformations         any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_SqliMatchStatement struct {
-	FieldToMatch any
+	FieldToMatch                any
 	PreParseTextTransformations any
-	SensitivityLevel any
-	TextTransformations any
+	SensitivityLevel            any
+	TextTransformations         any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement_XssMatchStatement struct {
-	FieldToMatch any
+	FieldToMatch                any
 	PreParseTextTransformations any
-	TextTransformations any
+	TextTransformations         any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement_ScopeDownStatement struct {
-	AndStatement any
-	AsnMatchStatement any
-	ByteMatchStatement any
-	GeoMatchStatement any
-	IpsetReferenceStatement any
-	LabelMatchStatement any
-	ManagedRuleGroupStatement any
-	NotStatement any
-	OrStatement any
-	RateBasedStatement any
-	RegexMatchStatement any
+	AndStatement                      any
+	AsnMatchStatement                 any
+	ByteMatchStatement                any
+	GeoMatchStatement                 any
+	IpsetReferenceStatement           any
+	LabelMatchStatement               any
+	ManagedRuleGroupStatement         any
+	NotStatement                      any
+	OrStatement                       any
+	RateBasedStatement                any
+	RegexMatchStatement               any
 	RegexPatternSetReferenceStatement any
-	RuleGroupReferenceStatement any
-	SizeConstraintStatement any
-	SqliMatchStatement any
-	XssMatchStatement any
+	RuleGroupReferenceStatement       any
+	SizeConstraintStatement           any
+	SqliMatchStatement                any
+	XssMatchStatement                 any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement_ManagedRuleGroupStatement struct {
-	ExcludedRules any
+	ExcludedRules           any
 	ManagedRuleGroupConfigs any
-	Name any
-	RuleActionOverrides any
-	ScopeDownStatement any
-	VendorName any
-	Version any
+	Name                    any
+	RuleActionOverrides     any
+	ScopeDownStatement      any
+	VendorName              any
+	Version                 any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_FirewallManagerStatement struct {
-	ManagedRuleGroupStatement any
+	ManagedRuleGroupStatement   any
 	RuleGroupReferenceStatement any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_OverrideAction struct {
 	Count any
-	None any
+	None  any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups_VisibilityConfig struct {
 	CloudWatchMetricsEnabled any
-	MetricName any
-	SampledRequestsEnabled any
+	MetricName               any
+	SampledRequestsEnabled   any
 }
 
 type WebAclforResource_WebAcl_PostProcessFirewallManagerRuleGroups struct {
 	FirewallManagerStatement any
-	Name any
-	OverrideAction any
-	Priority any
-	VisibilityConfig any
+	Name                     any
+	OverrideAction           any
+	Priority                 any
+	VisibilityConfig         any
 }
 
 type WebAclforResource_WebAcl_Rules_Statement_ManagedRuleGroupStatement struct {
-	ExcludedRules any
+	ExcludedRules           any
 	ManagedRuleGroupConfigs any
-	Name any
-	RuleActionOverrides any
-	ScopeDownStatement any
-	VendorName any
-	Version any
+	Name                    any
+	RuleActionOverrides     any
+	ScopeDownStatement      any
+	VendorName              any
+	Version                 any
 }
 
 type WebAclforResource_WebAcl_Rules_Statement struct {
-	AndStatement any
-	AsnMatchStatement any
-	ByteMatchStatement any
-	GeoMatchStatement any
-	IpsetReferenceStatement any
-	LabelMatchStatement any
-	ManagedRuleGroupStatement any
-	NotStatement any
-	OrStatement any
-	RateBasedStatement any
-	RegexMatchStatement any
+	AndStatement                      any
+	AsnMatchStatement                 any
+	ByteMatchStatement                any
+	GeoMatchStatement                 any
+	IpsetReferenceStatement           any
+	LabelMatchStatement               any
+	ManagedRuleGroupStatement         any
+	NotStatement                      any
+	OrStatement                       any
+	RateBasedStatement                any
+	RegexMatchStatement               any
 	RegexPatternSetReferenceStatement any
-	RuleGroupReferenceStatement any
-	SizeConstraintStatement any
-	SqliMatchStatement any
-	XssMatchStatement any
+	RuleGroupReferenceStatement       any
+	SizeConstraintStatement           any
+	SqliMatchStatement                any
+	XssMatchStatement                 any
 }
 
 type WebAclforResource_WebAcl_Rules struct {
-	Action any
-	CaptchaConfig any
-	ChallengeConfig any
-	Name any
-	OverrideAction any
-	Priority any
-	RuleLabels any
-	Statement any
+	Action           any
+	CaptchaConfig    any
+	ChallengeConfig  any
+	Name             any
+	OverrideAction   any
+	Priority         any
+	RuleLabels       any
+	Statement        any
 	VisibilityConfig any
 }
 
 type WebAclforResource_WebAcl struct {
 	// <p>A list of <code>ApplicationAttribute</code>s that contains information about the application.</p>
 	ApplicationConfig any
-	Arn any
+	Arn               any
 	// <p>Specifies custom configurations for the associations between the web ACL and protected resources. </p> <p>Use this to customize the maximum size of the request body that your protected resources forward to WAF for inspection. You can customize this setting for CloudFront, API Gateway, Amazon Cognito, App Runner, or Verified Access resources. The default setting is 16 KB (16,384 bytes). </p> <note> <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> </note> <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
 	AssociationConfig any
-	Capacity any
+	Capacity          any
 	// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations. This is available at the web ACL level and in each rule. </p>
 	CaptchaConfig any
 	// <p>Specifies how WAF should handle <code>Challenge</code> evaluations. This is available at the web ACL level and in each rule. </p>
-	ChallengeConfig any
+	ChallengeConfig      any
 	CustomResponseBodies any
 	// <p>Specifies data protection to apply to the web request data for the web ACL. This is a web ACL level data protection option. </p> <p>The data protection that you configure for the web ACL alters the data that's available for any other data collection activity, including your WAF logging destinations, web ACL request sampling, and Amazon Security Lake data collection and management. Your other option for data protection is in the logging configuration, which only affects logging. </p> <p>This is part of the data protection configuration for a web ACL. </p>
 	DataProtectionConfig any
 	// <p>In a <a>WebACL</a>, this is the action that you want WAF to perform when a web request doesn't match any of the rules in the <code>WebACL</code>. The default action must be a terminating action.</p>
-	DefaultAction any
-	Description any
-	Id any
-	LabelNamespace any
+	DefaultAction            any
+	Description              any
+	Id                       any
+	LabelNamespace           any
 	ManagedByFirewallManager any
 	// <p>The monetization configuration for a web ACL or rule group. Specifies the cryptocurrency payment networks and currency mode for AI bot monetization. You must provide this configuration when any rule in the web ACL or rule group uses the <code>Monetize</code> action.</p>
 	MonetizationConfig any
-	Name any
+	Name               any
 	// <p>Configures the level of DDoS protection that applies to web ACLs associated with Application Load Balancers.</p>
-	OnSourceDdoSprotectionConfig any
+	OnSourceDdoSprotectionConfig         any
 	PostProcessFirewallManagerRuleGroups any
-	PreProcessFirewallManagerRuleGroups any
-	RetrofittedByFirewallManager any
-	Rules any
-	TokenDomains any
+	PreProcessFirewallManagerRuleGroups  any
+	RetrofittedByFirewallManager         any
+	Rules                                any
+	TokenDomains                         any
 	// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
 	VisibilityConfig any
 }

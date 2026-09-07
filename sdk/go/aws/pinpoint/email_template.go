@@ -45,11 +45,11 @@ var EmailTemplate = ubx.ResourceBinding{
 	WireType: "aws_pinpoint_email_template",
 	Fields: ubx.FieldMap{
 		"DefaultSubstitutions": ubx.FieldSpec{WireName: "default_substitutions"},
-		"HtmlPart": ubx.FieldSpec{WireName: "html_part"},
-		"Subject": ubx.FieldSpec{WireName: "subject"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TemplateDescription": ubx.FieldSpec{WireName: "template_description"},
-		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
-		"TextPart": ubx.FieldSpec{WireName: "text_part"},
+		"HtmlPart":             ubx.FieldSpec{WireName: "html_part"},
+		"Subject":              ubx.FieldSpec{WireName: "subject"},
+		"Tags":                 ubx.FieldSpec{WireName: "tags"},
+		"TemplateDescription":  ubx.FieldSpec{WireName: "template_description"},
+		"TemplateName":         ubx.FieldSpec{WireName: "template_name"},
+		"TextPart":             ubx.FieldSpec{WireName: "text_part"},
 	},
 }

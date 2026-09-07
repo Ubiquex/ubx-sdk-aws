@@ -4,37 +4,37 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FolderResolvedPermissions_Permissions struct {
-	Actions any
+	Actions   any
 	Principal any
 }
 
 type FolderResolvedPermissionsConfig struct {
 	AwsAccountId any
-	FolderId any
-	MaxResults any
-	Namespace any
-	NextToken any
+	FolderId     any
+	MaxResults   any
+	Namespace    any
+	NextToken    any
 }
 
 type FolderResolvedPermissionsAttrs struct {
-	Arn any
+	Arn          any
 	AwsAccountId any
-	FolderId any
-	MaxResults any
-	Namespace any
-	NextToken any
-	Permissions any
-	RequestId any
-	Status any
+	FolderId     any
+	MaxResults   any
+	Namespace    any
+	NextToken    any
+	Permissions  any
+	RequestId    any
+	Status       any
 }
 
 var FolderResolvedPermissions = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_folder_resolved_permissions",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"FolderId": ubx.FieldSpec{WireName: "folder_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"FolderId":     ubx.FieldSpec{WireName: "folder_id"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"Namespace":    ubx.FieldSpec{WireName: "namespace"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

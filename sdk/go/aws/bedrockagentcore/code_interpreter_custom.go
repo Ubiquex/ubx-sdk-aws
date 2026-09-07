@@ -28,30 +28,30 @@ type CodeInterpreterCustom_NetworkConfiguration struct {
 }
 
 var CodeInterpreterCustom_Certificates_CertificateLocationFields = ubx.FieldMap{
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var CodeInterpreterCustom_CertificatesFields = ubx.FieldMap{
-		"CertificateLocation": ubx.FieldSpec{
-			WireName: "certificate_location",
-			Kind: "object",
-			Fields: CodeInterpreterCustom_Certificates_CertificateLocationFields,
-		},
-	}
+	"CertificateLocation": ubx.FieldSpec{
+		WireName: "certificate_location",
+		Kind:     "object",
+		Fields:   CodeInterpreterCustom_Certificates_CertificateLocationFields,
+	},
+}
 
 var CodeInterpreterCustom_NetworkConfiguration_VpcConfigFields = ubx.FieldMap{
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
+	"Subnets":        ubx.FieldSpec{WireName: "subnets"},
+}
 
 var CodeInterpreterCustom_NetworkConfigurationFields = ubx.FieldMap{
-		"NetworkMode": ubx.FieldSpec{WireName: "network_mode"},
-		"VpcConfig": ubx.FieldSpec{
-			WireName: "vpc_config",
-			Kind: "object",
-			Fields: CodeInterpreterCustom_NetworkConfiguration_VpcConfigFields,
-		},
-	}
+	"NetworkMode": ubx.FieldSpec{WireName: "network_mode"},
+	"VpcConfig": ubx.FieldSpec{
+		WireName: "vpc_config",
+		Kind:     "object",
+		Fields:   CodeInterpreterCustom_NetworkConfiguration_VpcConfigFields,
+	},
+}
 
 type CodeInterpreterCustomConfig struct {
 	// List of root CA certificates.
@@ -100,16 +100,16 @@ var CodeInterpreterCustom = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Certificates": ubx.FieldSpec{
 			WireName: "certificates",
-			Kind: "list",
-			Fields: CodeInterpreterCustom_CertificatesFields,
+			Kind:     "list",
+			Fields:   CodeInterpreterCustom_CertificatesFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"NetworkConfiguration": ubx.FieldSpec{
 			WireName: "network_configuration",
-			Kind: "object",
-			Fields: CodeInterpreterCustom_NetworkConfigurationFields,
+			Kind:     "object",
+			Fields:   CodeInterpreterCustom_NetworkConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

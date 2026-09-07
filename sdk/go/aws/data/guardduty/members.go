@@ -4,37 +4,37 @@ package guardduty
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Members_Members struct {
-	AccountId any
-	AdministratorId any
-	DetectorId any
-	Email any
-	InvitedAt any
-	MasterId any
+	AccountId          any
+	AdministratorId    any
+	DetectorId         any
+	Email              any
+	InvitedAt          any
+	MasterId           any
 	RelationshipStatus any
-	UpdatedAt any
+	UpdatedAt          any
 }
 
 type MembersConfig struct {
-	DetectorId any
-	MaxResults any
-	NextToken any
+	DetectorId     any
+	MaxResults     any
+	NextToken      any
 	OnlyAssociated any
 }
 
 type MembersAttrs struct {
-	DetectorId any
-	MaxResults any
-	Members any
-	NextToken any
+	DetectorId     any
+	MaxResults     any
+	Members        any
+	NextToken      any
 	OnlyAssociated any
 }
 
 var Members = ubx.DataSourceBinding{
 	WireType: "aws_guardduty_members",
 	Fields: ubx.FieldMap{
-		"DetectorId": ubx.FieldSpec{WireName: "detector_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"DetectorId":     ubx.FieldSpec{WireName: "detector_id"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"OnlyAssociated": ubx.FieldSpec{WireName: "only_associated"},
 	},
 }

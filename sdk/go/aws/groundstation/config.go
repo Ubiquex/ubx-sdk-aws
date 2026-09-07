@@ -111,7 +111,7 @@ type Config_ConfigData struct {
 	// Provides the dataflow endpoint configuration for the Ground Station config, identifying the named endpoint (with its socket address and port) to use for data exchange. (AI-inferred)
 	DataflowEndpointConfig any
 	// Specifies the Amazon S3 bucket and prefix where the Ground Station service stores recorded antenna data when this config is used for S3 recording. (AI-inferred)
-	S3RecordingConfig any
+	S3RecordingConfig   any
 	TelemetrySinkConfig any
 	// Defines the tracking behavior for the ground station antenna, including the autotrack setting that controls whether automatic satellite tracking is required, preferred, or removed. (AI-inferred)
 	TrackingConfig any
@@ -127,166 +127,166 @@ type Config_Tags struct {
 }
 
 var Config_ConfigData_AntennaDownlinkConfig_SpectrumConfig_BandwidthFields = ubx.FieldMap{
-		"Units": ubx.FieldSpec{WireName: "units"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Units": ubx.FieldSpec{WireName: "units"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Config_ConfigData_AntennaDownlinkConfig_SpectrumConfigFields = ubx.FieldMap{
-		"Bandwidth": ubx.FieldSpec{
-			WireName: "bandwidth",
-			Kind: "object",
-			Fields: Config_ConfigData_AntennaDownlinkConfig_SpectrumConfig_BandwidthFields,
-		},
-		"CenterFrequency": ubx.FieldSpec{
-			WireName: "center_frequency",
-			Kind: "object",
-			Fields: Config_ConfigData_AntennaDownlinkConfig_SpectrumConfig_BandwidthFields,
-		},
-		"Polarization": ubx.FieldSpec{WireName: "polarization"},
-	}
+	"Bandwidth": ubx.FieldSpec{
+		WireName: "bandwidth",
+		Kind:     "object",
+		Fields:   Config_ConfigData_AntennaDownlinkConfig_SpectrumConfig_BandwidthFields,
+	},
+	"CenterFrequency": ubx.FieldSpec{
+		WireName: "center_frequency",
+		Kind:     "object",
+		Fields:   Config_ConfigData_AntennaDownlinkConfig_SpectrumConfig_BandwidthFields,
+	},
+	"Polarization": ubx.FieldSpec{WireName: "polarization"},
+}
 
 var Config_ConfigData_AntennaDownlinkConfigFields = ubx.FieldMap{
-		"SpectrumConfig": ubx.FieldSpec{
-			WireName: "spectrum_config",
-			Kind: "object",
-			Fields: Config_ConfigData_AntennaDownlinkConfig_SpectrumConfigFields,
-		},
-	}
+	"SpectrumConfig": ubx.FieldSpec{
+		WireName: "spectrum_config",
+		Kind:     "object",
+		Fields:   Config_ConfigData_AntennaDownlinkConfig_SpectrumConfigFields,
+	},
+}
 
 var Config_ConfigData_AntennaDownlinkDemodDecodeConfig_DecodeConfigFields = ubx.FieldMap{
-		"UnvalidatedJson": ubx.FieldSpec{WireName: "unvalidated_json"},
-	}
+	"UnvalidatedJson": ubx.FieldSpec{WireName: "unvalidated_json"},
+}
 
 var Config_ConfigData_AntennaDownlinkDemodDecodeConfigFields = ubx.FieldMap{
-		"DecodeConfig": ubx.FieldSpec{
-			WireName: "decode_config",
-			Kind: "object",
-			Fields: Config_ConfigData_AntennaDownlinkDemodDecodeConfig_DecodeConfigFields,
-		},
-		"DemodulationConfig": ubx.FieldSpec{
-			WireName: "demodulation_config",
-			Kind: "object",
-			Fields: Config_ConfigData_AntennaDownlinkDemodDecodeConfig_DecodeConfigFields,
-		},
-		"SpectrumConfig": ubx.FieldSpec{
-			WireName: "spectrum_config",
-			Kind: "object",
-			Fields: Config_ConfigData_AntennaDownlinkConfig_SpectrumConfigFields,
-		},
-	}
+	"DecodeConfig": ubx.FieldSpec{
+		WireName: "decode_config",
+		Kind:     "object",
+		Fields:   Config_ConfigData_AntennaDownlinkDemodDecodeConfig_DecodeConfigFields,
+	},
+	"DemodulationConfig": ubx.FieldSpec{
+		WireName: "demodulation_config",
+		Kind:     "object",
+		Fields:   Config_ConfigData_AntennaDownlinkDemodDecodeConfig_DecodeConfigFields,
+	},
+	"SpectrumConfig": ubx.FieldSpec{
+		WireName: "spectrum_config",
+		Kind:     "object",
+		Fields:   Config_ConfigData_AntennaDownlinkConfig_SpectrumConfigFields,
+	},
+}
 
 var Config_ConfigData_AntennaUplinkConfig_SpectrumConfigFields = ubx.FieldMap{
-		"CenterFrequency": ubx.FieldSpec{
-			WireName: "center_frequency",
-			Kind: "object",
-			Fields: Config_ConfigData_AntennaDownlinkConfig_SpectrumConfig_BandwidthFields,
-		},
-		"Polarization": ubx.FieldSpec{WireName: "polarization"},
-	}
+	"CenterFrequency": ubx.FieldSpec{
+		WireName: "center_frequency",
+		Kind:     "object",
+		Fields:   Config_ConfigData_AntennaDownlinkConfig_SpectrumConfig_BandwidthFields,
+	},
+	"Polarization": ubx.FieldSpec{WireName: "polarization"},
+}
 
 var Config_ConfigData_AntennaUplinkConfigFields = ubx.FieldMap{
-		"SpectrumConfig": ubx.FieldSpec{
-			WireName: "spectrum_config",
-			Kind: "object",
-			Fields: Config_ConfigData_AntennaUplinkConfig_SpectrumConfigFields,
-		},
-		"TargetEirp": ubx.FieldSpec{
-			WireName: "target_eirp",
-			Kind: "object",
-			Fields: Config_ConfigData_AntennaDownlinkConfig_SpectrumConfig_BandwidthFields,
-		},
-		"TransmitDisabled": ubx.FieldSpec{WireName: "transmit_disabled"},
-	}
+	"SpectrumConfig": ubx.FieldSpec{
+		WireName: "spectrum_config",
+		Kind:     "object",
+		Fields:   Config_ConfigData_AntennaUplinkConfig_SpectrumConfigFields,
+	},
+	"TargetEirp": ubx.FieldSpec{
+		WireName: "target_eirp",
+		Kind:     "object",
+		Fields:   Config_ConfigData_AntennaDownlinkConfig_SpectrumConfig_BandwidthFields,
+	},
+	"TransmitDisabled": ubx.FieldSpec{WireName: "transmit_disabled"},
+}
 
 var Config_ConfigData_DataflowEndpointConfigFields = ubx.FieldMap{
-		"DataflowEndpointName": ubx.FieldSpec{WireName: "dataflow_endpoint_name"},
-		"DataflowEndpointRegion": ubx.FieldSpec{WireName: "dataflow_endpoint_region"},
-	}
+	"DataflowEndpointName":   ubx.FieldSpec{WireName: "dataflow_endpoint_name"},
+	"DataflowEndpointRegion": ubx.FieldSpec{WireName: "dataflow_endpoint_region"},
+}
 
 var Config_ConfigData_S3RecordingConfigFields = ubx.FieldMap{
-		"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
+	"Prefix":    ubx.FieldSpec{WireName: "prefix"},
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var Config_ConfigData_TelemetrySinkConfig_TelemetrySinkData_KinesisDataStreamDataFields = ubx.FieldMap{
-		"KinesisDataStreamArn": ubx.FieldSpec{WireName: "kinesis_data_stream_arn"},
-		"KinesisRoleArn": ubx.FieldSpec{WireName: "kinesis_role_arn"},
-	}
+	"KinesisDataStreamArn": ubx.FieldSpec{WireName: "kinesis_data_stream_arn"},
+	"KinesisRoleArn":       ubx.FieldSpec{WireName: "kinesis_role_arn"},
+}
 
 var Config_ConfigData_TelemetrySinkConfig_TelemetrySinkDataFields = ubx.FieldMap{
-		"KinesisDataStreamData": ubx.FieldSpec{
-			WireName: "kinesis_data_stream_data",
-			Kind: "object",
-			Fields: Config_ConfigData_TelemetrySinkConfig_TelemetrySinkData_KinesisDataStreamDataFields,
-		},
-	}
+	"KinesisDataStreamData": ubx.FieldSpec{
+		WireName: "kinesis_data_stream_data",
+		Kind:     "object",
+		Fields:   Config_ConfigData_TelemetrySinkConfig_TelemetrySinkData_KinesisDataStreamDataFields,
+	},
+}
 
 var Config_ConfigData_TelemetrySinkConfigFields = ubx.FieldMap{
-		"TelemetrySinkData": ubx.FieldSpec{
-			WireName: "telemetry_sink_data",
-			Kind: "object",
-			Fields: Config_ConfigData_TelemetrySinkConfig_TelemetrySinkDataFields,
-		},
-		"TelemetrySinkType": ubx.FieldSpec{WireName: "telemetry_sink_type"},
-	}
+	"TelemetrySinkData": ubx.FieldSpec{
+		WireName: "telemetry_sink_data",
+		Kind:     "object",
+		Fields:   Config_ConfigData_TelemetrySinkConfig_TelemetrySinkDataFields,
+	},
+	"TelemetrySinkType": ubx.FieldSpec{WireName: "telemetry_sink_type"},
+}
 
 var Config_ConfigData_TrackingConfigFields = ubx.FieldMap{
-		"Autotrack": ubx.FieldSpec{WireName: "autotrack"},
-	}
+	"Autotrack": ubx.FieldSpec{WireName: "autotrack"},
+}
 
 var Config_ConfigData_UplinkEchoConfigFields = ubx.FieldMap{
-		"AntennaUplinkConfigArn": ubx.FieldSpec{WireName: "antenna_uplink_config_arn"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"AntennaUplinkConfigArn": ubx.FieldSpec{WireName: "antenna_uplink_config_arn"},
+	"Enabled":                ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Config_ConfigDataFields = ubx.FieldMap{
-		"AntennaDownlinkConfig": ubx.FieldSpec{
-			WireName: "antenna_downlink_config",
-			Kind: "object",
-			Fields: Config_ConfigData_AntennaDownlinkConfigFields,
-		},
-		"AntennaDownlinkDemodDecodeConfig": ubx.FieldSpec{
-			WireName: "antenna_downlink_demod_decode_config",
-			Kind: "object",
-			Fields: Config_ConfigData_AntennaDownlinkDemodDecodeConfigFields,
-		},
-		"AntennaUplinkConfig": ubx.FieldSpec{
-			WireName: "antenna_uplink_config",
-			Kind: "object",
-			Fields: Config_ConfigData_AntennaUplinkConfigFields,
-		},
-		"DataflowEndpointConfig": ubx.FieldSpec{
-			WireName: "dataflow_endpoint_config",
-			Kind: "object",
-			Fields: Config_ConfigData_DataflowEndpointConfigFields,
-		},
-		"S3RecordingConfig": ubx.FieldSpec{
-			WireName: "s3_recording_config",
-			Kind: "object",
-			Fields: Config_ConfigData_S3RecordingConfigFields,
-		},
-		"TelemetrySinkConfig": ubx.FieldSpec{
-			WireName: "telemetry_sink_config",
-			Kind: "object",
-			Fields: Config_ConfigData_TelemetrySinkConfigFields,
-		},
-		"TrackingConfig": ubx.FieldSpec{
-			WireName: "tracking_config",
-			Kind: "object",
-			Fields: Config_ConfigData_TrackingConfigFields,
-		},
-		"UplinkEchoConfig": ubx.FieldSpec{
-			WireName: "uplink_echo_config",
-			Kind: "object",
-			Fields: Config_ConfigData_UplinkEchoConfigFields,
-		},
-	}
+	"AntennaDownlinkConfig": ubx.FieldSpec{
+		WireName: "antenna_downlink_config",
+		Kind:     "object",
+		Fields:   Config_ConfigData_AntennaDownlinkConfigFields,
+	},
+	"AntennaDownlinkDemodDecodeConfig": ubx.FieldSpec{
+		WireName: "antenna_downlink_demod_decode_config",
+		Kind:     "object",
+		Fields:   Config_ConfigData_AntennaDownlinkDemodDecodeConfigFields,
+	},
+	"AntennaUplinkConfig": ubx.FieldSpec{
+		WireName: "antenna_uplink_config",
+		Kind:     "object",
+		Fields:   Config_ConfigData_AntennaUplinkConfigFields,
+	},
+	"DataflowEndpointConfig": ubx.FieldSpec{
+		WireName: "dataflow_endpoint_config",
+		Kind:     "object",
+		Fields:   Config_ConfigData_DataflowEndpointConfigFields,
+	},
+	"S3RecordingConfig": ubx.FieldSpec{
+		WireName: "s3_recording_config",
+		Kind:     "object",
+		Fields:   Config_ConfigData_S3RecordingConfigFields,
+	},
+	"TelemetrySinkConfig": ubx.FieldSpec{
+		WireName: "telemetry_sink_config",
+		Kind:     "object",
+		Fields:   Config_ConfigData_TelemetrySinkConfigFields,
+	},
+	"TrackingConfig": ubx.FieldSpec{
+		WireName: "tracking_config",
+		Kind:     "object",
+		Fields:   Config_ConfigData_TrackingConfigFields,
+	},
+	"UplinkEchoConfig": ubx.FieldSpec{
+		WireName: "uplink_echo_config",
+		Kind:     "object",
+		Fields:   Config_ConfigData_UplinkEchoConfigFields,
+	},
+}
 
 var Config_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ConfigConfig struct {
 	// The required config data that defines this Ground Station config, containing one of the supported configuration types (such as antenna downlink, antenna uplink, antenna downlink demod decode, tracking, dataflow endpoint, or uplink echo) along with its specific parameters. (AI-inferred)
@@ -315,14 +315,14 @@ var Config = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConfigData": ubx.FieldSpec{
 			WireName: "config_data",
-			Kind: "object",
-			Fields: Config_ConfigDataFields,
+			Kind:     "object",
+			Fields:   Config_ConfigDataFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Config_TagsFields,
+			Kind:     "list",
+			Fields:   Config_TagsFields,
 		},
 	},
 }

@@ -20,29 +20,29 @@ type Daemon_DeploymentConfiguration struct {
 }
 
 type Daemon_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Daemon_DeploymentConfiguration_AlarmsFields = ubx.FieldMap{
-		"AlarmNames": ubx.FieldSpec{WireName: "alarm_names"},
-		"Enable": ubx.FieldSpec{WireName: "enable"},
-	}
+	"AlarmNames": ubx.FieldSpec{WireName: "alarm_names"},
+	"Enable":     ubx.FieldSpec{WireName: "enable"},
+}
 
 var Daemon_DeploymentConfigurationFields = ubx.FieldMap{
-		"Alarms": ubx.FieldSpec{
-			WireName: "alarms",
-			Kind: "object",
-			Fields: Daemon_DeploymentConfiguration_AlarmsFields,
-		},
-		"BakeTimeInMinutes": ubx.FieldSpec{WireName: "bake_time_in_minutes"},
-		"DrainPercent": ubx.FieldSpec{WireName: "drain_percent"},
-	}
+	"Alarms": ubx.FieldSpec{
+		WireName: "alarms",
+		Kind:     "object",
+		Fields:   Daemon_DeploymentConfiguration_AlarmsFields,
+	},
+	"BakeTimeInMinutes": ubx.FieldSpec{WireName: "bake_time_in_minutes"},
+	"DrainPercent":      ubx.FieldSpec{WireName: "drain_percent"},
+}
 
 var Daemon_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DaemonConfig struct {
 	// The Amazon Resource Names (ARNs) of the capacity providers associated with the daemon.
@@ -99,22 +99,22 @@ type DaemonAttrs struct {
 var Daemon = ubx.ResourceBinding{
 	WireType: "aws_ecs_daemon",
 	Fields: ubx.FieldMap{
-		"CapacityProviderArns": ubx.FieldSpec{WireName: "capacity_provider_arns"},
-		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
-		"DaemonName": ubx.FieldSpec{WireName: "daemon_name"},
+		"CapacityProviderArns":    ubx.FieldSpec{WireName: "capacity_provider_arns"},
+		"ClusterArn":              ubx.FieldSpec{WireName: "cluster_arn"},
+		"DaemonName":              ubx.FieldSpec{WireName: "daemon_name"},
 		"DaemonTaskDefinitionArn": ubx.FieldSpec{WireName: "daemon_task_definition_arn"},
 		"DeploymentConfiguration": ubx.FieldSpec{
 			WireName: "deployment_configuration",
-			Kind: "object",
-			Fields: Daemon_DeploymentConfigurationFields,
+			Kind:     "object",
+			Fields:   Daemon_DeploymentConfigurationFields,
 		},
 		"EnableEcsmanagedTags": ubx.FieldSpec{WireName: "enable_ecsmanaged_tags"},
 		"EnableExecuteCommand": ubx.FieldSpec{WireName: "enable_execute_command"},
-		"PropagateTags": ubx.FieldSpec{WireName: "propagate_tags"},
+		"PropagateTags":        ubx.FieldSpec{WireName: "propagate_tags"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Daemon_TagsFields,
+			Kind:     "list",
+			Fields:   Daemon_TagsFields,
 		},
 	},
 }

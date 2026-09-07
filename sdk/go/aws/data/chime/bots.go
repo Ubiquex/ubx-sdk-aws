@@ -4,35 +4,35 @@ package chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Bots_Bots struct {
-	BotEmail any
-	BotId any
-	BotType any
+	BotEmail         any
+	BotId            any
+	BotType          any
 	CreatedTimestamp any
-	Disabled any
-	DisplayName any
-	SecurityToken any
+	Disabled         any
+	DisplayName      any
+	SecurityToken    any
 	UpdatedTimestamp any
-	UserId any
+	UserId           any
 }
 
 type BotsConfig struct {
-	AccountId any
+	AccountId  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type BotsAttrs struct {
-	AccountId any
-	Bots any
+	AccountId  any
+	Bots       any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Bots = ubx.DataSourceBinding{
 	WireType: "aws_chime_bots",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

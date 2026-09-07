@@ -4,25 +4,25 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RetentionConfigurations_RetentionConfigurations struct {
-	Name any
+	Name                  any
 	RetentionPeriodInDays any
 }
 
 type RetentionConfigurationsConfig struct {
-	NextToken any
+	NextToken                   any
 	RetentionConfigurationNames any
 }
 
 type RetentionConfigurationsAttrs struct {
-	NextToken any
+	NextToken                   any
 	RetentionConfigurationNames any
-	RetentionConfigurations any
+	RetentionConfigurations     any
 }
 
 var RetentionConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_config_retention_configurations",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":                   ubx.FieldSpec{WireName: "next_token"},
 		"RetentionConfigurationNames": ubx.FieldSpec{WireName: "retention_configuration_names"},
 	},
 }

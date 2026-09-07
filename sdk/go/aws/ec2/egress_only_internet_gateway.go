@@ -11,9 +11,9 @@ type EgressOnlyInternetGateway_Tags struct {
 }
 
 var EgressOnlyInternetGateway_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EgressOnlyInternetGatewayConfig struct {
 	// Any tags assigned to the egress only internet gateway.
@@ -36,8 +36,8 @@ var EgressOnlyInternetGateway = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EgressOnlyInternetGateway_TagsFields,
+			Kind:     "list",
+			Fields:   EgressOnlyInternetGateway_TagsFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

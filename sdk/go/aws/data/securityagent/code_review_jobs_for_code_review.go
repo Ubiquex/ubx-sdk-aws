@@ -4,12 +4,12 @@ package securityagent
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodeReviewJobsForCodeReview_CodeReviewJobSummaries struct {
-	CodeReviewId any
+	CodeReviewId    any
 	CodeReviewJobId any
-	CreatedAt any
-	Status any
-	Title any
-	UpdatedAt any
+	CreatedAt       any
+	Status          any
+	Title           any
+	UpdatedAt       any
 }
 
 type CodeReviewJobsForCodeReviewConfig struct {
@@ -37,7 +37,7 @@ var CodeReviewJobsForCodeReview = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
 		"CodeReviewId": ubx.FieldSpec{WireName: "code_review_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,40 +4,40 @@ package gamelift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GameServerGroups_GameServerGroups_InstanceDefinitions struct {
-	InstanceType any
+	InstanceType     any
 	WeightedCapacity any
 }
 
 type GameServerGroups_GameServerGroups struct {
-	AutoScalingGroupArn any
-	BalancingStrategy any
-	CreationTime any
-	GameServerGroupArn any
-	GameServerGroupName any
+	AutoScalingGroupArn        any
+	BalancingStrategy          any
+	CreationTime               any
+	GameServerGroupArn         any
+	GameServerGroupName        any
 	GameServerProtectionPolicy any
-	InstanceDefinitions any
-	LastUpdatedTime any
-	RoleArn any
-	Status any
-	StatusReason any
-	SuspendedActions any
+	InstanceDefinitions        any
+	LastUpdatedTime            any
+	RoleArn                    any
+	Status                     any
+	StatusReason               any
+	SuspendedActions           any
 }
 
 type GameServerGroupsConfig struct {
-	Limit any
+	Limit     any
 	NextToken any
 }
 
 type GameServerGroupsAttrs struct {
 	GameServerGroups any
-	Limit any
-	NextToken any
+	Limit            any
+	NextToken        any
 }
 
 var GameServerGroups = ubx.DataSourceBinding{
 	WireType: "aws_gamelift_game_server_groups",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

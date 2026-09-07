@@ -4,27 +4,27 @@ package profile
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfileObjectTypes_Items struct {
-	CreatedAt any
-	Description any
-	LastUpdatedAt any
+	CreatedAt                      any
+	Description                    any
+	LastUpdatedAt                  any
 	MaxAvailableProfileObjectCount any
-	MaxProfileObjectCount any
-	ObjectTypeName any
-	SourcePriority any
-	Tags any
+	MaxProfileObjectCount          any
+	ObjectTypeName                 any
+	SourcePriority                 any
+	Tags                           any
 }
 
 type ProfileObjectTypesConfig struct {
 	DomainName any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ProfileObjectTypesAttrs struct {
 	DomainName any
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ProfileObjectTypes = ubx.DataSourceBinding{
@@ -32,6 +32,6 @@ var ProfileObjectTypes = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectivityInfo_ConnectivityInfo struct {
 	HostAddress any
-	Id any
-	Metadata any
-	PortNumber any
+	Id          any
+	Metadata    any
+	PortNumber  any
 }
 
 type ConnectivityInfoConfig struct {
@@ -16,8 +16,8 @@ type ConnectivityInfoConfig struct {
 
 type ConnectivityInfoAttrs struct {
 	ConnectivityInfo any
-	Message any
-	ThingName any
+	Message          any
+	ThingName        any
 }
 
 var ConnectivityInfo = ubx.DataSourceBinding{

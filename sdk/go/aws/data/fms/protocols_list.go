@@ -4,25 +4,25 @@ package fms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProtocolsList_ProtocolsList struct {
-	CreateTime any
-	LastUpdateTime any
-	ListId any
-	ListName any
-	ListUpdateToken any
+	CreateTime            any
+	LastUpdateTime        any
+	ListId                any
+	ListName              any
+	ListUpdateToken       any
 	PreviousProtocolsList any
-	ProtocolsList any
+	ProtocolsList         any
 }
 
 type ProtocolsListConfig struct {
 	DefaultList any
-	ListId any
+	ListId      any
 }
 
 type ProtocolsListAttrs struct {
 	DefaultList any
-	ListId any
+	ListId      any
 	// <p>An Firewall Manager protocols list.</p>
-	ProtocolsList any
+	ProtocolsList    any
 	ProtocolsListArn any
 }
 
@@ -30,6 +30,6 @@ var ProtocolsList = ubx.DataSourceBinding{
 	WireType: "aws_fms_protocols_list",
 	Fields: ubx.FieldMap{
 		"DefaultList": ubx.FieldSpec{WireName: "default_list"},
-		"ListId": ubx.FieldSpec{WireName: "list_id"},
+		"ListId":      ubx.FieldSpec{WireName: "list_id"},
 	},
 }

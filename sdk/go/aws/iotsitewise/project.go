@@ -11,9 +11,9 @@ type Project_Tags struct {
 }
 
 var Project_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ProjectConfig struct {
 	// The IDs of the assets to be associated to the project.
@@ -48,14 +48,14 @@ type ProjectAttrs struct {
 var Project = ubx.ResourceBinding{
 	WireType: "aws_io_tsite_wise_project",
 	Fields: ubx.FieldMap{
-		"AssetIds": ubx.FieldSpec{WireName: "asset_ids"},
-		"PortalId": ubx.FieldSpec{WireName: "portal_id"},
+		"AssetIds":           ubx.FieldSpec{WireName: "asset_ids"},
+		"PortalId":           ubx.FieldSpec{WireName: "portal_id"},
 		"ProjectDescription": ubx.FieldSpec{WireName: "project_description"},
-		"ProjectName": ubx.FieldSpec{WireName: "project_name"},
+		"ProjectName":        ubx.FieldSpec{WireName: "project_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Project_TagsFields,
+			Kind:     "list",
+			Fields:   Project_TagsFields,
 		},
 	},
 }

@@ -21,6 +21,6 @@ var ChannelPolicy = ubx.ResourceBinding{
 	WireType: "aws_media_tailor_channel_policy",
 	Fields: ubx.FieldMap{
 		"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
+		"Policy":      ubx.FieldSpec{WireName: "policy"},
 	},
 }

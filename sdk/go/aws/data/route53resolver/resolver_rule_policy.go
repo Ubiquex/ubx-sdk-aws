@@ -8,7 +8,7 @@ type ResolverRulePolicyConfig struct {
 }
 
 type ResolverRulePolicyAttrs struct {
-	Arn any
+	Arn                any
 	ResolverRulePolicy any
 }
 

@@ -4,18 +4,18 @@ package kafka
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Nodes_NodeInfoList_BrokerNodeInfo_CurrentBrokerSoftwareInfo struct {
-	ConfigurationArn any
+	ConfigurationArn      any
 	ConfigurationRevision any
-	KafkaVersion any
+	KafkaVersion          any
 }
 
 type Nodes_NodeInfoList_BrokerNodeInfo struct {
-	AttachedEniid any
-	BrokerId any
-	ClientSubnet any
-	ClientVpcIpAddress any
+	AttachedEniid             any
+	BrokerId                  any
+	ClientSubnet              any
+	ClientVpcIpAddress        any
 	CurrentBrokerSoftwareInfo any
-	Endpoints any
+	Endpoints                 any
 }
 
 type Nodes_NodeInfoList_ControllerNodeInfo struct {
@@ -23,33 +23,33 @@ type Nodes_NodeInfoList_ControllerNodeInfo struct {
 }
 
 type Nodes_NodeInfoList_ZookeeperNodeInfo struct {
-	AttachedEniid any
+	AttachedEniid      any
 	ClientVpcIpAddress any
-	Endpoints any
-	ZookeeperId any
-	ZookeeperVersion any
+	Endpoints          any
+	ZookeeperId        any
+	ZookeeperVersion   any
 }
 
 type Nodes_NodeInfoList struct {
 	AddedToClusterTime any
-	BrokerNodeInfo any
+	BrokerNodeInfo     any
 	ControllerNodeInfo any
-	InstanceType any
-	NodeArn any
-	NodeType any
-	ZookeeperNodeInfo any
+	InstanceType       any
+	NodeArn            any
+	NodeType           any
+	ZookeeperNodeInfo  any
 }
 
 type NodesConfig struct {
 	ClusterArn any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type NodesAttrs struct {
-	ClusterArn any
-	MaxResults any
-	NextToken any
+	ClusterArn   any
+	MaxResults   any
+	NextToken    any
 	NodeInfoList any
 }
 
@@ -58,6 +58,6 @@ var Nodes = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

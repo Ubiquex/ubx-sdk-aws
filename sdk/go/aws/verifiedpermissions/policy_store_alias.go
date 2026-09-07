@@ -20,7 +20,7 @@ type PolicyStoreAliasAttrs struct {
 var PolicyStoreAlias = ubx.ResourceBinding{
 	WireType: "aws_verified_permissions_policy_store_alias",
 	Fields: ubx.FieldMap{
-		"AliasName": ubx.FieldSpec{WireName: "alias_name"},
+		"AliasName":     ubx.FieldSpec{WireName: "alias_name"},
 		"PolicyStoreId": ubx.FieldSpec{WireName: "policy_store_id"},
 	},
 }

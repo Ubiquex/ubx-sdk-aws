@@ -4,55 +4,55 @@ package auditmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Assessments_AssessmentMetadata_Delegations struct {
-	AssessmentId any
+	AssessmentId   any
 	AssessmentName any
-	Comment any
-	ControlSetId any
-	CreatedBy any
-	CreationTime any
-	Id any
-	LastUpdated any
-	RoleArn any
-	RoleType any
-	Status any
+	Comment        any
+	ControlSetId   any
+	CreatedBy      any
+	CreationTime   any
+	Id             any
+	LastUpdated    any
+	RoleArn        any
+	RoleType       any
+	Status         any
 }
 
 type Assessments_AssessmentMetadata_Roles struct {
-	RoleArn any
+	RoleArn  any
 	RoleType any
 }
 
 type Assessments_AssessmentMetadata struct {
 	ComplianceType any
-	CreationTime any
-	Delegations any
-	Id any
-	LastUpdated any
-	Name any
-	Roles any
-	Status any
+	CreationTime   any
+	Delegations    any
+	Id             any
+	LastUpdated    any
+	Name           any
+	Roles          any
+	Status         any
 }
 
 type AssessmentsConfig struct {
 	// Max results in the page.
 	MaxResults any
-	NextToken any
-	Status any
+	NextToken  any
+	Status     any
 }
 
 type AssessmentsAttrs struct {
 	AssessmentMetadata any
 	// Max results in the page.
 	MaxResults any
-	NextToken any
-	Status any
+	NextToken  any
+	Status     any
 }
 
 var Assessments = ubx.DataSourceBinding{
 	WireType: "aws_auditmanager_assessments",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Status":     ubx.FieldSpec{WireName: "status"},
 	},
 }

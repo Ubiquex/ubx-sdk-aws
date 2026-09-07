@@ -4,38 +4,38 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AuditTasks_Tasks struct {
-	TaskId any
+	TaskId     any
 	TaskStatus any
-	TaskType any
+	TaskType   any
 }
 
 type AuditTasksConfig struct {
-	EndTime any
+	EndTime    any
 	MaxResults any
-	NextToken any
-	StartTime any
+	NextToken  any
+	StartTime  any
 	TaskStatus any
-	TaskType any
+	TaskType   any
 }
 
 type AuditTasksAttrs struct {
-	EndTime any
+	EndTime    any
 	MaxResults any
-	NextToken any
-	StartTime any
+	NextToken  any
+	StartTime  any
 	TaskStatus any
-	TaskType any
-	Tasks any
+	TaskType   any
+	Tasks      any
 }
 
 var AuditTasks = ubx.DataSourceBinding{
 	WireType: "aws_iot_audit_tasks",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":    ubx.FieldSpec{WireName: "end_time"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"StartTime":  ubx.FieldSpec{WireName: "start_time"},
 		"TaskStatus": ubx.FieldSpec{WireName: "task_status"},
-		"TaskType": ubx.FieldSpec{WireName: "task_type"},
+		"TaskType":   ubx.FieldSpec{WireName: "task_type"},
 	},
 }

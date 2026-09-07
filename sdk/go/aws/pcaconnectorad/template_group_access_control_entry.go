@@ -11,9 +11,9 @@ type TemplateGroupAccessControlEntry_AccessRights struct {
 }
 
 var TemplateGroupAccessControlEntry_AccessRightsFields = ubx.FieldMap{
-		"AutoEnroll": ubx.FieldSpec{WireName: "auto_enroll"},
-		"Enroll": ubx.FieldSpec{WireName: "enroll"},
-	}
+	"AutoEnroll": ubx.FieldSpec{WireName: "auto_enroll"},
+	"Enroll":     ubx.FieldSpec{WireName: "enroll"},
+}
 
 type TemplateGroupAccessControlEntryConfig struct {
 	// Specifies the permissions for the group on the certificate template, including which operations are allowed or denied (such as enroll and autoenroll) via nested Allow and Deny blocks. (AI-inferred)
@@ -42,11 +42,11 @@ var TemplateGroupAccessControlEntry = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessRights": ubx.FieldSpec{
 			WireName: "access_rights",
-			Kind: "object",
-			Fields: TemplateGroupAccessControlEntry_AccessRightsFields,
+			Kind:     "object",
+			Fields:   TemplateGroupAccessControlEntry_AccessRightsFields,
 		},
-		"GroupDisplayName": ubx.FieldSpec{WireName: "group_display_name"},
+		"GroupDisplayName":        ubx.FieldSpec{WireName: "group_display_name"},
 		"GroupSecurityIdentifier": ubx.FieldSpec{WireName: "group_security_identifier"},
-		"TemplateArn": ubx.FieldSpec{WireName: "template_arn"},
+		"TemplateArn":             ubx.FieldSpec{WireName: "template_arn"},
 	},
 }

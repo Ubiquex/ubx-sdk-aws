@@ -4,28 +4,28 @@ package media_pipelines_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MediaPipelinesChimeVoiceToneAnalysisTask_VoiceToneAnalysisTask struct {
-	CreatedTimestamp any
-	UpdatedTimestamp any
-	VoiceToneAnalysisTaskId any
+	CreatedTimestamp            any
+	UpdatedTimestamp            any
+	VoiceToneAnalysisTaskId     any
 	VoiceToneAnalysisTaskStatus any
 }
 
 type MediaPipelinesChimeVoiceToneAnalysisTaskConfig struct {
-	Identifier any
+	Identifier              any
 	VoiceToneAnalysisTaskId any
 }
 
 type MediaPipelinesChimeVoiceToneAnalysisTaskAttrs struct {
 	Identifier any
 	// <p>A representation of an asynchronous request to perform voice tone analysis on a media insights pipeline.</p>
-	VoiceToneAnalysisTask any
+	VoiceToneAnalysisTask   any
 	VoiceToneAnalysisTaskId any
 }
 
 var MediaPipelinesChimeVoiceToneAnalysisTask = ubx.DataSourceBinding{
 	WireType: "aws_media_pipelines_chime_voice_tone_analysis_task",
 	Fields: ubx.FieldMap{
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
+		"Identifier":              ubx.FieldSpec{WireName: "identifier"},
 		"VoiceToneAnalysisTaskId": ubx.FieldSpec{WireName: "voice_tone_analysis_task_id"},
 	},
 }

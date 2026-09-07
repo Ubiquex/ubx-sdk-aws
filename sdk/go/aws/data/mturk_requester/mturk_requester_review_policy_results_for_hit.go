@@ -4,14 +4,14 @@ package mturk_requester
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MturkRequesterReviewPolicyResultsForHit_AssignmentReviewPolicy_Parameters_MapEntries struct {
-	Key any
+	Key    any
 	Values any
 }
 
 type MturkRequesterReviewPolicyResultsForHit_AssignmentReviewPolicy_Parameters struct {
-	Key any
+	Key        any
 	MapEntries any
-	Values any
+	Values     any
 }
 
 type MturkRequesterReviewPolicyResultsForHit_AssignmentReviewPolicy struct {
@@ -20,23 +20,23 @@ type MturkRequesterReviewPolicyResultsForHit_AssignmentReviewPolicy struct {
 }
 
 type MturkRequesterReviewPolicyResultsForHit_AssignmentReviewReport_ReviewActions struct {
-	ActionId any
-	ActionName any
+	ActionId     any
+	ActionName   any
 	CompleteTime any
-	ErrorCode any
-	Result any
-	Status any
-	TargetId any
-	TargetType any
+	ErrorCode    any
+	Result       any
+	Status       any
+	TargetId     any
+	TargetType   any
 }
 
 type MturkRequesterReviewPolicyResultsForHit_AssignmentReviewReport_ReviewResults struct {
-	ActionId any
-	Key any
-	QuestionId any
-	SubjectId any
+	ActionId    any
+	Key         any
+	QuestionId  any
+	SubjectId   any
 	SubjectType any
-	Value any
+	Value       any
 }
 
 type MturkRequesterReviewPolicyResultsForHit_AssignmentReviewReport struct {
@@ -45,11 +45,11 @@ type MturkRequesterReviewPolicyResultsForHit_AssignmentReviewReport struct {
 }
 
 type MturkRequesterReviewPolicyResultsForHitConfig struct {
-	Hitid any
+	Hitid      any
 	MaxResults any
 	// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-	NextToken any
-	PolicyLevels any
+	NextToken       any
+	PolicyLevels    any
 	RetrieveActions any
 	RetrieveResults any
 }
@@ -59,15 +59,15 @@ type MturkRequesterReviewPolicyResultsForHitAttrs struct {
 	AssignmentReviewPolicy any
 	// <p> Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
 	AssignmentReviewReport any
-	Hitid any
+	Hitid                  any
 	// <p> HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT. </p>
 	HitreviewPolicy any
 	// <p> Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
 	HitreviewReport any
-	MaxResults any
+	MaxResults      any
 	// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-	NextToken any
-	PolicyLevels any
+	NextToken       any
+	PolicyLevels    any
 	RetrieveActions any
 	RetrieveResults any
 }
@@ -75,10 +75,10 @@ type MturkRequesterReviewPolicyResultsForHitAttrs struct {
 var MturkRequesterReviewPolicyResultsForHit = ubx.DataSourceBinding{
 	WireType: "aws_mturk_requester_review_policy_results_for_hit",
 	Fields: ubx.FieldMap{
-		"Hitid": ubx.FieldSpec{WireName: "hitid"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PolicyLevels": ubx.FieldSpec{WireName: "policy_levels"},
+		"Hitid":           ubx.FieldSpec{WireName: "hitid"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"PolicyLevels":    ubx.FieldSpec{WireName: "policy_levels"},
 		"RetrieveActions": ubx.FieldSpec{WireName: "retrieve_actions"},
 		"RetrieveResults": ubx.FieldSpec{WireName: "retrieve_results"},
 	},

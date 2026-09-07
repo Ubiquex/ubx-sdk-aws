@@ -4,18 +4,18 @@ package macie2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FindingStatistics_CountsByGroup struct {
-	Count any
+	Count    any
 	GroupKey any
 }
 
 type FindingStatistics_FindingCriteria_Criterion struct {
-	Eq any
+	Eq           any
 	EqExactMatch any
-	Gt any
-	Gte any
-	Lt any
-	Lte any
-	Neq any
+	Gt           any
+	Gte          any
+	Lt           any
+	Lte          any
+	Neq          any
 }
 
 type FindingStatistics_FindingCriteria struct {
@@ -26,37 +26,37 @@ type FindingStatistics_FindingCriteria struct {
 type FindingStatistics_SortCriteria struct {
 	// <p>The grouping to sort the results by. Valid values are:</p>
 	AttributeName any
-	OrderBy any
+	OrderBy       any
 }
 
 var FindingStatistics_FindingCriteria_CriterionFields = ubx.FieldMap{
-		"Eq": ubx.FieldSpec{WireName: "eq"},
-		"EqExactMatch": ubx.FieldSpec{WireName: "eq_exact_match"},
-		"Gt": ubx.FieldSpec{WireName: "gt"},
-		"Gte": ubx.FieldSpec{WireName: "gte"},
-		"Lt": ubx.FieldSpec{WireName: "lt"},
-		"Lte": ubx.FieldSpec{WireName: "lte"},
-		"Neq": ubx.FieldSpec{WireName: "neq"},
-	}
+	"Eq":           ubx.FieldSpec{WireName: "eq"},
+	"EqExactMatch": ubx.FieldSpec{WireName: "eq_exact_match"},
+	"Gt":           ubx.FieldSpec{WireName: "gt"},
+	"Gte":          ubx.FieldSpec{WireName: "gte"},
+	"Lt":           ubx.FieldSpec{WireName: "lt"},
+	"Lte":          ubx.FieldSpec{WireName: "lte"},
+	"Neq":          ubx.FieldSpec{WireName: "neq"},
+}
 
 var FindingStatistics_FindingCriteriaFields = ubx.FieldMap{
-		"Criterion": ubx.FieldSpec{
-			WireName: "criterion",
-			Kind: "map",
-			Fields: FindingStatistics_FindingCriteria_CriterionFields,
-		},
-	}
+	"Criterion": ubx.FieldSpec{
+		WireName: "criterion",
+		Kind:     "map",
+		Fields:   FindingStatistics_FindingCriteria_CriterionFields,
+	},
+}
 
 var FindingStatistics_SortCriteriaFields = ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-	}
+	"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
+	"OrderBy":       ubx.FieldSpec{WireName: "order_by"},
+}
 
 type FindingStatisticsConfig struct {
 	// <p>Specifies, as a map, one or more property-based conditions that filter the results of a query for findings.</p>
 	FindingCriteria any
-	GroupBy any
-	Size any
+	GroupBy         any
+	Size            any
 	// <p>Specifies criteria for sorting the results of a query that retrieves aggregated statistical data about findings.</p>
 	SortCriteria any
 }
@@ -65,8 +65,8 @@ type FindingStatisticsAttrs struct {
 	CountsByGroup any
 	// <p>Specifies, as a map, one or more property-based conditions that filter the results of a query for findings.</p>
 	FindingCriteria any
-	GroupBy any
-	Size any
+	GroupBy         any
+	Size            any
 	// <p>Specifies criteria for sorting the results of a query that retrieves aggregated statistical data about findings.</p>
 	SortCriteria any
 }
@@ -76,15 +76,15 @@ var FindingStatistics = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"FindingCriteria": ubx.FieldSpec{
 			WireName: "finding_criteria",
-			Kind: "object",
-			Fields: FindingStatistics_FindingCriteriaFields,
+			Kind:     "object",
+			Fields:   FindingStatistics_FindingCriteriaFields,
 		},
 		"GroupBy": ubx.FieldSpec{WireName: "group_by"},
-		"Size": ubx.FieldSpec{WireName: "size"},
+		"Size":    ubx.FieldSpec{WireName: "size"},
 		"SortCriteria": ubx.FieldSpec{
 			WireName: "sort_criteria",
-			Kind: "object",
-			Fields: FindingStatistics_SortCriteriaFields,
+			Kind:     "object",
+			Fields:   FindingStatistics_SortCriteriaFields,
 		},
 	},
 }

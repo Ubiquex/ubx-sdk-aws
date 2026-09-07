@@ -7,7 +7,7 @@ type BillingGroup_AccountGrouping struct {
 	// When enabled, accounts in the organization that are not already associated with another billing group are automatically added to this billing group. (AI-inferred)
 	AutoAssociate any
 	// Identifies the AWS accounts that are members of this billing group by their linked account IDs, determining which accounts are billed together under the group's pricing rules. (AI-inferred)
-	LinkedAccountIds any
+	LinkedAccountIds          any
 	ResponsibilityTransferArn any
 }
 
@@ -18,24 +18,24 @@ type BillingGroup_ComputationPreference struct {
 
 type BillingGroup_Tags struct {
 	// The key of a user-defined tag assigned to an AWS Billing Conductor billing group, used to organize and identify the group for cost tracking and management. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var BillingGroup_AccountGroupingFields = ubx.FieldMap{
-		"AutoAssociate": ubx.FieldSpec{WireName: "auto_associate"},
-		"LinkedAccountIds": ubx.FieldSpec{WireName: "linked_account_ids"},
-		"ResponsibilityTransferArn": ubx.FieldSpec{WireName: "responsibility_transfer_arn"},
-	}
+	"AutoAssociate":             ubx.FieldSpec{WireName: "auto_associate"},
+	"LinkedAccountIds":          ubx.FieldSpec{WireName: "linked_account_ids"},
+	"ResponsibilityTransferArn": ubx.FieldSpec{WireName: "responsibility_transfer_arn"},
+}
 
 var BillingGroup_ComputationPreferenceFields = ubx.FieldMap{
-		"PricingPlanArn": ubx.FieldSpec{WireName: "pricing_plan_arn"},
-	}
+	"PricingPlanArn": ubx.FieldSpec{WireName: "pricing_plan_arn"},
+}
 
 var BillingGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type BillingGroupConfig struct {
 	// Specifies the linked accounts (by their account IDs) that are grouped together in this AWS Billing Conductor billing group for consolidated billing and custom pricing. (AI-inferred)
@@ -84,21 +84,21 @@ var BillingGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountGrouping": ubx.FieldSpec{
 			WireName: "account_grouping",
-			Kind: "object",
-			Fields: BillingGroup_AccountGroupingFields,
+			Kind:     "object",
+			Fields:   BillingGroup_AccountGroupingFields,
 		},
 		"ComputationPreference": ubx.FieldSpec{
 			WireName: "computation_preference",
-			Kind: "object",
-			Fields: BillingGroup_ComputationPreferenceFields,
+			Kind:     "object",
+			Fields:   BillingGroup_ComputationPreferenceFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"PrimaryAccountId": ubx.FieldSpec{WireName: "primary_account_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: BillingGroup_TagsFields,
+			Kind:     "list",
+			Fields:   BillingGroup_TagsFields,
 		},
 	},
 }

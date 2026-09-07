@@ -84,75 +84,75 @@ type DataSource_RelationalDatabaseConfig struct {
 }
 
 var DataSource_DynamoDbconfig_DeltaSyncConfigFields = ubx.FieldMap{
-		"BaseTableTtl": ubx.FieldSpec{WireName: "base_table_ttl"},
-		"DeltaSyncTableName": ubx.FieldSpec{WireName: "delta_sync_table_name"},
-		"DeltaSyncTableTtl": ubx.FieldSpec{WireName: "delta_sync_table_ttl"},
-	}
+	"BaseTableTtl":       ubx.FieldSpec{WireName: "base_table_ttl"},
+	"DeltaSyncTableName": ubx.FieldSpec{WireName: "delta_sync_table_name"},
+	"DeltaSyncTableTtl":  ubx.FieldSpec{WireName: "delta_sync_table_ttl"},
+}
 
 var DataSource_DynamoDbconfigFields = ubx.FieldMap{
-		"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
-		"DeltaSyncConfig": ubx.FieldSpec{
-			WireName: "delta_sync_config",
-			Kind: "object",
-			Fields: DataSource_DynamoDbconfig_DeltaSyncConfigFields,
-		},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-		"UseCallerCredentials": ubx.FieldSpec{WireName: "use_caller_credentials"},
-		"Versioned": ubx.FieldSpec{WireName: "versioned"},
-	}
+	"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
+	"DeltaSyncConfig": ubx.FieldSpec{
+		WireName: "delta_sync_config",
+		Kind:     "object",
+		Fields:   DataSource_DynamoDbconfig_DeltaSyncConfigFields,
+	},
+	"TableName":            ubx.FieldSpec{WireName: "table_name"},
+	"UseCallerCredentials": ubx.FieldSpec{WireName: "use_caller_credentials"},
+	"Versioned":            ubx.FieldSpec{WireName: "versioned"},
+}
 
 var DataSource_ElasticsearchConfigFields = ubx.FieldMap{
-		"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-	}
+	"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
+	"Endpoint":  ubx.FieldSpec{WireName: "endpoint"},
+}
 
 var DataSource_EventBridgeConfigFields = ubx.FieldMap{
-		"EventBusArn": ubx.FieldSpec{WireName: "event_bus_arn"},
-	}
+	"EventBusArn": ubx.FieldSpec{WireName: "event_bus_arn"},
+}
 
 var DataSource_HttpConfig_AuthorizationConfig_AwsIamConfigFields = ubx.FieldMap{
-		"SigningRegion": ubx.FieldSpec{WireName: "signing_region"},
-		"SigningServiceName": ubx.FieldSpec{WireName: "signing_service_name"},
-	}
+	"SigningRegion":      ubx.FieldSpec{WireName: "signing_region"},
+	"SigningServiceName": ubx.FieldSpec{WireName: "signing_service_name"},
+}
 
 var DataSource_HttpConfig_AuthorizationConfigFields = ubx.FieldMap{
-		"AuthorizationType": ubx.FieldSpec{WireName: "authorization_type"},
-		"AwsIamConfig": ubx.FieldSpec{
-			WireName: "aws_iam_config",
-			Kind: "object",
-			Fields: DataSource_HttpConfig_AuthorizationConfig_AwsIamConfigFields,
-		},
-	}
+	"AuthorizationType": ubx.FieldSpec{WireName: "authorization_type"},
+	"AwsIamConfig": ubx.FieldSpec{
+		WireName: "aws_iam_config",
+		Kind:     "object",
+		Fields:   DataSource_HttpConfig_AuthorizationConfig_AwsIamConfigFields,
+	},
+}
 
 var DataSource_HttpConfigFields = ubx.FieldMap{
-		"AuthorizationConfig": ubx.FieldSpec{
-			WireName: "authorization_config",
-			Kind: "object",
-			Fields: DataSource_HttpConfig_AuthorizationConfigFields,
-		},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-	}
+	"AuthorizationConfig": ubx.FieldSpec{
+		WireName: "authorization_config",
+		Kind:     "object",
+		Fields:   DataSource_HttpConfig_AuthorizationConfigFields,
+	},
+	"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
+}
 
 var DataSource_LambdaConfigFields = ubx.FieldMap{
-		"LambdaFunctionArn": ubx.FieldSpec{WireName: "lambda_function_arn"},
-	}
+	"LambdaFunctionArn": ubx.FieldSpec{WireName: "lambda_function_arn"},
+}
 
 var DataSource_RelationalDatabaseConfig_RdsHttpEndpointConfigFields = ubx.FieldMap{
-		"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
-		"AwsSecretStoreArn": ubx.FieldSpec{WireName: "aws_secret_store_arn"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"DbClusterIdentifier": ubx.FieldSpec{WireName: "db_cluster_identifier"},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-	}
+	"AwsRegion":           ubx.FieldSpec{WireName: "aws_region"},
+	"AwsSecretStoreArn":   ubx.FieldSpec{WireName: "aws_secret_store_arn"},
+	"DatabaseName":        ubx.FieldSpec{WireName: "database_name"},
+	"DbClusterIdentifier": ubx.FieldSpec{WireName: "db_cluster_identifier"},
+	"Schema":              ubx.FieldSpec{WireName: "schema"},
+}
 
 var DataSource_RelationalDatabaseConfigFields = ubx.FieldMap{
-		"RdsHttpEndpointConfig": ubx.FieldSpec{
-			WireName: "rds_http_endpoint_config",
-			Kind: "object",
-			Fields: DataSource_RelationalDatabaseConfig_RdsHttpEndpointConfigFields,
-		},
-		"RelationalDatabaseSourceType": ubx.FieldSpec{WireName: "relational_database_source_type"},
-	}
+	"RdsHttpEndpointConfig": ubx.FieldSpec{
+		WireName: "rds_http_endpoint_config",
+		Kind:     "object",
+		Fields:   DataSource_RelationalDatabaseConfig_RdsHttpEndpointConfigFields,
+	},
+	"RelationalDatabaseSourceType": ubx.FieldSpec{WireName: "relational_database_source_type"},
+}
 
 type DataSourceConfig struct {
 	// Unique AWS AppSync GraphQL API identifier where this data source will be created.
@@ -217,46 +217,46 @@ type DataSourceAttrs struct {
 var DataSource = ubx.ResourceBinding{
 	WireType: "aws_app_sync_data_source",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":       ubx.FieldSpec{WireName: "api_id"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DynamoDbconfig": ubx.FieldSpec{
 			WireName: "dynamo_dbconfig",
-			Kind: "object",
-			Fields: DataSource_DynamoDbconfigFields,
+			Kind:     "object",
+			Fields:   DataSource_DynamoDbconfigFields,
 		},
 		"ElasticsearchConfig": ubx.FieldSpec{
 			WireName: "elasticsearch_config",
-			Kind: "object",
-			Fields: DataSource_ElasticsearchConfigFields,
+			Kind:     "object",
+			Fields:   DataSource_ElasticsearchConfigFields,
 		},
 		"EventBridgeConfig": ubx.FieldSpec{
 			WireName: "event_bridge_config",
-			Kind: "object",
-			Fields: DataSource_EventBridgeConfigFields,
+			Kind:     "object",
+			Fields:   DataSource_EventBridgeConfigFields,
 		},
 		"HttpConfig": ubx.FieldSpec{
 			WireName: "http_config",
-			Kind: "object",
-			Fields: DataSource_HttpConfigFields,
+			Kind:     "object",
+			Fields:   DataSource_HttpConfigFields,
 		},
 		"LambdaConfig": ubx.FieldSpec{
 			WireName: "lambda_config",
-			Kind: "object",
-			Fields: DataSource_LambdaConfigFields,
+			Kind:     "object",
+			Fields:   DataSource_LambdaConfigFields,
 		},
 		"MetricsConfig": ubx.FieldSpec{WireName: "metrics_config"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"OpenSearchServiceConfig": ubx.FieldSpec{
 			WireName: "open_search_service_config",
-			Kind: "object",
-			Fields: DataSource_ElasticsearchConfigFields,
+			Kind:     "object",
+			Fields:   DataSource_ElasticsearchConfigFields,
 		},
 		"RelationalDatabaseConfig": ubx.FieldSpec{
 			WireName: "relational_database_config",
-			Kind: "object",
-			Fields: DataSource_RelationalDatabaseConfigFields,
+			Kind:     "object",
+			Fields:   DataSource_RelationalDatabaseConfigFields,
 		},
 		"ServiceRoleArn": ubx.FieldSpec{WireName: "service_role_arn"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":           ubx.FieldSpec{WireName: "type"},
 	},
 }

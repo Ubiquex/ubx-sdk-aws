@@ -23,26 +23,26 @@ type NotificationChannel_Config struct {
 }
 
 var NotificationChannel_Config_FiltersFields = ubx.FieldMap{
-		"MessageTypes": ubx.FieldSpec{WireName: "message_types"},
-		"Severities": ubx.FieldSpec{WireName: "severities"},
-	}
+	"MessageTypes": ubx.FieldSpec{WireName: "message_types"},
+	"Severities":   ubx.FieldSpec{WireName: "severities"},
+}
 
 var NotificationChannel_Config_SnsFields = ubx.FieldMap{
-		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
-	}
+	"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
+}
 
 var NotificationChannel_ConfigFields = ubx.FieldMap{
-		"Filters": ubx.FieldSpec{
-			WireName: "filters",
-			Kind: "object",
-			Fields: NotificationChannel_Config_FiltersFields,
-		},
-		"Sns": ubx.FieldSpec{
-			WireName: "sns",
-			Kind: "object",
-			Fields: NotificationChannel_Config_SnsFields,
-		},
-	}
+	"Filters": ubx.FieldSpec{
+		WireName: "filters",
+		Kind:     "object",
+		Fields:   NotificationChannel_Config_FiltersFields,
+	},
+	"Sns": ubx.FieldSpec{
+		WireName: "sns",
+		Kind:     "object",
+		Fields:   NotificationChannel_Config_SnsFields,
+	},
+}
 
 type NotificationChannelConfig struct {
 	// Information about notification channels you have configured with DevOps Guru.
@@ -61,8 +61,8 @@ var NotificationChannel = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind: "object",
-			Fields: NotificationChannel_ConfigFields,
+			Kind:     "object",
+			Fields:   NotificationChannel_ConfigFields,
 		},
 	},
 }

@@ -4,44 +4,44 @@ package cost_optimization_hub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CostOptimizationHubEfficiencyMetrics_EfficiencyMetricsByGroup_MetricsByTime struct {
-	Savings any
-	Score any
-	Spend any
+	Savings   any
+	Score     any
+	Spend     any
 	Timestamp any
 }
 
 type CostOptimizationHubEfficiencyMetrics_EfficiencyMetricsByGroup struct {
-	Group any
-	Message any
+	Group         any
+	Message       any
 	MetricsByTime any
 }
 
 type CostOptimizationHubEfficiencyMetrics_OrderBy struct {
 	Dimension any
-	Order any
+	Order     any
 }
 
 type CostOptimizationHubEfficiencyMetrics_TimePeriod struct {
-	End any
+	End   any
 	Start any
 }
 
 var CostOptimizationHubEfficiencyMetrics_OrderByFields = ubx.FieldMap{
-		"Dimension": ubx.FieldSpec{WireName: "dimension"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-	}
+	"Dimension": ubx.FieldSpec{WireName: "dimension"},
+	"Order":     ubx.FieldSpec{WireName: "order"},
+}
 
 var CostOptimizationHubEfficiencyMetrics_TimePeriodFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 type CostOptimizationHubEfficiencyMetricsConfig struct {
 	// <p>The time granularity for aggregating the cost efficiency metrics.</p>
 	Granularity any
-	GroupBy any
-	MaxResults any
-	NextToken any
+	GroupBy     any
+	MaxResults  any
+	NextToken   any
 	// <p>Defines how rows will be sorted in the response.</p>
 	OrderBy any
 	// <p>Specifies a date range for retrieving efficiency metrics. The start date is inclusive and the end date is exclusive.</p>
@@ -53,9 +53,9 @@ type CostOptimizationHubEfficiencyMetricsAttrs struct {
 	EfficiencyMetricsByGroup any
 	// <p>The time granularity for aggregating the cost efficiency metrics.</p>
 	Granularity any
-	GroupBy any
-	MaxResults any
-	NextToken any
+	GroupBy     any
+	MaxResults  any
+	NextToken   any
 	// <p>Defines how rows will be sorted in the response.</p>
 	OrderBy any
 	// <p>Specifies a date range for retrieving efficiency metrics. The start date is inclusive and the end date is exclusive.</p>
@@ -66,18 +66,18 @@ var CostOptimizationHubEfficiencyMetrics = ubx.DataSourceBinding{
 	WireType: "aws_cost_optimization_hub_efficiency_metrics",
 	Fields: ubx.FieldMap{
 		"Granularity": ubx.FieldSpec{WireName: "granularity"},
-		"GroupBy": ubx.FieldSpec{WireName: "group_by"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"GroupBy":     ubx.FieldSpec{WireName: "group_by"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"OrderBy": ubx.FieldSpec{
 			WireName: "order_by",
-			Kind: "object",
-			Fields: CostOptimizationHubEfficiencyMetrics_OrderByFields,
+			Kind:     "object",
+			Fields:   CostOptimizationHubEfficiencyMetrics_OrderByFields,
 		},
 		"TimePeriod": ubx.FieldSpec{
 			WireName: "time_period",
-			Kind: "object",
-			Fields: CostOptimizationHubEfficiencyMetrics_TimePeriodFields,
+			Kind:     "object",
+			Fields:   CostOptimizationHubEfficiencyMetrics_TimePeriodFields,
 		},
 	},
 }

@@ -6,49 +6,49 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ComplianceDetailsByResource_EvaluationResults_EvaluationResultIdentifier_EvaluationResultQualifier struct {
 	ConfigRuleName any
 	EvaluationMode any
-	ResourceId any
-	ResourceType any
+	ResourceId     any
+	ResourceType   any
 }
 
 type ComplianceDetailsByResource_EvaluationResults_EvaluationResultIdentifier struct {
 	EvaluationResultQualifier any
-	OrderingTimestamp any
-	ResourceEvaluationId any
+	OrderingTimestamp         any
+	ResourceEvaluationId      any
 }
 
 type ComplianceDetailsByResource_EvaluationResults struct {
-	Annotation any
-	ComplianceType any
-	ConfigRuleInvokedTime any
+	Annotation                 any
+	ComplianceType             any
+	ConfigRuleInvokedTime      any
 	EvaluationResultIdentifier any
-	ResultRecordedTime any
-	ResultToken any
+	ResultRecordedTime         any
+	ResultToken                any
 }
 
 type ComplianceDetailsByResourceConfig struct {
-	ComplianceTypes any
-	NextToken any
+	ComplianceTypes      any
+	NextToken            any
 	ResourceEvaluationId any
-	ResourceId any
-	ResourceType any
+	ResourceId           any
+	ResourceType         any
 }
 
 type ComplianceDetailsByResourceAttrs struct {
-	ComplianceTypes any
-	EvaluationResults any
-	NextToken any
+	ComplianceTypes      any
+	EvaluationResults    any
+	NextToken            any
 	ResourceEvaluationId any
-	ResourceId any
-	ResourceType any
+	ResourceId           any
+	ResourceType         any
 }
 
 var ComplianceDetailsByResource = ubx.DataSourceBinding{
 	WireType: "aws_config_compliance_details_by_resource",
 	Fields: ubx.FieldMap{
-		"ComplianceTypes": ubx.FieldSpec{WireName: "compliance_types"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ComplianceTypes":      ubx.FieldSpec{WireName: "compliance_types"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 		"ResourceEvaluationId": ubx.FieldSpec{WireName: "resource_evaluation_id"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"ResourceId":           ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceType":         ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

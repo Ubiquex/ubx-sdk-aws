@@ -36,10 +36,10 @@ type CertificateAttrs struct {
 var Certificate = ubx.ResourceBinding{
 	WireType: "aws_io_t_certificate",
 	Fields: ubx.FieldMap{
-		"CacertificatePem": ubx.FieldSpec{WireName: "cacertificate_pem"},
-		"CertificateMode": ubx.FieldSpec{WireName: "certificate_mode"},
-		"CertificatePem": ubx.FieldSpec{WireName: "certificate_pem"},
+		"CacertificatePem":          ubx.FieldSpec{WireName: "cacertificate_pem"},
+		"CertificateMode":           ubx.FieldSpec{WireName: "certificate_mode"},
+		"CertificatePem":            ubx.FieldSpec{WireName: "certificate_pem"},
 		"CertificateSigningRequest": ubx.FieldSpec{WireName: "certificate_signing_request"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":                    ubx.FieldSpec{WireName: "status"},
 	},
 }

@@ -15,23 +15,23 @@ type MailManagerArchiveSearch_Filters_Include_BooleanExpression struct {
 type MailManagerArchiveSearch_Filters_Include_StringExpression struct {
 	Evaluate any
 	Operator any
-	Values any
+	Values   any
 }
 
 type MailManagerArchiveSearch_Filters_Include struct {
 	BooleanExpression any
-	StringExpression any
+	StringExpression  any
 }
 
 type MailManagerArchiveSearch_Filters struct {
 	Include any
-	Unless any
+	Unless  any
 }
 
 type MailManagerArchiveSearch_Status struct {
 	CompletionTimestamp any
-	ErrorMessage any
-	State any
+	ErrorMessage        any
+	State               any
 	SubmissionTimestamp any
 }
 
@@ -42,12 +42,12 @@ type MailManagerArchiveSearchConfig struct {
 type MailManagerArchiveSearchAttrs struct {
 	ArchiveId any
 	// <p>A set of filter conditions to include and/or exclude emails.</p>
-	Filters any
+	Filters       any
 	FromTimestamp any
-	MaxResults any
-	SearchId any
+	MaxResults    any
+	SearchId      any
 	// <p>The current status of an archive search job.</p>
-	Status any
+	Status      any
 	ToTimestamp any
 }
 

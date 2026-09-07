@@ -9,22 +9,22 @@ type SelfUpgradeConfiguration_SelfUpgradeConfiguration struct {
 
 type SelfUpgradeConfigurationConfig struct {
 	AwsAccountId any
-	Namespace any
+	Namespace    any
 }
 
 type SelfUpgradeConfigurationAttrs struct {
 	AwsAccountId any
-	Namespace any
-	RequestId any
+	Namespace    any
+	RequestId    any
 	// <p>The self-upgrade configuration for the Quick account.</p>
 	SelfUpgradeConfiguration any
-	Status any
+	Status                   any
 }
 
 var SelfUpgradeConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_self_upgrade_configuration",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
+		"Namespace":    ubx.FieldSpec{WireName: "namespace"},
 	},
 }

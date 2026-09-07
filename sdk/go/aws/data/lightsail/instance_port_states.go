@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstancePortStates_PortStates struct {
 	CidrListAliases any
-	Cidrs any
-	FromPort any
-	Ipv6Cidrs any
-	Protocol any
-	State any
-	ToPort any
+	Cidrs           any
+	FromPort        any
+	Ipv6Cidrs       any
+	Protocol        any
+	State           any
+	ToPort          any
 }
 
 type InstancePortStatesConfig struct {
@@ -19,7 +19,7 @@ type InstancePortStatesConfig struct {
 
 type InstancePortStatesAttrs struct {
 	InstanceName any
-	PortStates any
+	PortStates   any
 }
 
 var InstancePortStates = ubx.DataSourceBinding{

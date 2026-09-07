@@ -4,56 +4,56 @@ package sms_voice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SmsVoiceNotifyTemplates_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type SmsVoiceNotifyTemplates_NotifyTemplates_Variables struct {
 	DefaultValue any
-	Description any
-	MaxLength any
-	MaxValue any
-	MinValue any
-	Pattern any
-	Required any
-	Sample any
-	Source any
-	Type any
+	Description  any
+	MaxLength    any
+	MaxValue     any
+	MinValue     any
+	Pattern      any
+	Required     any
+	Sample       any
+	Source       any
+	Type         any
 }
 
 type SmsVoiceNotifyTemplates_NotifyTemplates struct {
-	Channels any
-	Content any
-	CreatedTimestamp any
-	LanguageCode any
-	Status any
+	Channels           any
+	Content            any
+	CreatedTimestamp   any
+	LanguageCode       any
+	Status             any
 	SupportedCountries any
-	SupportedVoiceIds any
-	TemplateId any
-	TemplateType any
-	TierAccess any
-	Variables any
-	Version any
+	SupportedVoiceIds  any
+	TemplateId         any
+	TemplateType       any
+	TierAccess         any
+	Variables          any
+	Version            any
 }
 
 var SmsVoiceNotifyTemplates_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type SmsVoiceNotifyTemplatesConfig struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters     any
+	MaxResults  any
+	NextToken   any
 	TemplateIds any
 }
 
 type SmsVoiceNotifyTemplatesAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters         any
+	MaxResults      any
+	NextToken       any
 	NotifyTemplates any
-	TemplateIds any
+	TemplateIds     any
 }
 
 var SmsVoiceNotifyTemplates = ubx.DataSourceBinding{
@@ -61,11 +61,11 @@ var SmsVoiceNotifyTemplates = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SmsVoiceNotifyTemplates_FiltersFields,
+			Kind:     "list",
+			Fields:   SmsVoiceNotifyTemplates_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"TemplateIds": ubx.FieldSpec{WireName: "template_ids"},
 	},
 }

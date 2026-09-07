@@ -8,10 +8,10 @@ type CognitoIdentityIdentityConfig struct {
 }
 
 type CognitoIdentityIdentityAttrs struct {
-	CreationDate any
-	IdentityId any
+	CreationDate     any
+	IdentityId       any
 	LastModifiedDate any
-	Logins any
+	Logins           any
 }
 
 var CognitoIdentityIdentity = ubx.DataSourceBinding{

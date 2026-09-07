@@ -18,14 +18,14 @@ type Thesaurus_Tags struct {
 }
 
 var Thesaurus_SourceS3PathFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Bucket": ubx.FieldSpec{WireName: "bucket"},
+	"Key":    ubx.FieldSpec{WireName: "key"},
+}
 
 var Thesaurus_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ThesaurusConfig struct {
 	// A description for the thesaurus.
@@ -65,18 +65,18 @@ var Thesaurus = ubx.ResourceBinding{
 	WireType: "aws_kendra_thesaurus",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"IndexId":     ubx.FieldSpec{WireName: "index_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"RoleArn":     ubx.FieldSpec{WireName: "role_arn"},
 		"SourceS3Path": ubx.FieldSpec{
 			WireName: "source_s3_path",
-			Kind: "object",
-			Fields: Thesaurus_SourceS3PathFields,
+			Kind:     "object",
+			Fields:   Thesaurus_SourceS3PathFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Thesaurus_TagsFields,
+			Kind:     "list",
+			Fields:   Thesaurus_TagsFields,
 		},
 	},
 }

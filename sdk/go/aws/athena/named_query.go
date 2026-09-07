@@ -34,10 +34,10 @@ type NamedQueryAttrs struct {
 var NamedQuery = ubx.ResourceBinding{
 	WireType: "aws_athena_named_query",
 	Fields: ubx.FieldMap{
-		"Database": ubx.FieldSpec{WireName: "database"},
+		"Database":    ubx.FieldSpec{WireName: "database"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"QueryString": ubx.FieldSpec{WireName: "query_string"},
-		"WorkGroup": ubx.FieldSpec{WireName: "work_group"},
+		"WorkGroup":   ubx.FieldSpec{WireName: "work_group"},
 	},
 }

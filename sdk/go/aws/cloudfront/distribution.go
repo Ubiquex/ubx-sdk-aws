@@ -203,7 +203,7 @@ type Distribution_DistributionConfig_OriginGroups_Items struct {
 	// A unique identifier for the origin group, used to reference the origin group when associating it with cache behaviors or in the origin groups' failover configuration. (AI-inferred)
 	Id any
 	// Specifies the set of origins in this origin group, including the number of origins (Quantity) and the list of origin identifiers (Items) that CloudFront can fail over between. (AI-inferred)
-	Members any
+	Members           any
 	SelectionCriteria any
 }
 
@@ -317,9 +317,9 @@ type Distribution_DistributionConfig_S3Origin struct {
 }
 
 type Distribution_DistributionConfig_TenantConfig_ParameterDefinitions_Definition_StringSchema struct {
-	Comment any
+	Comment      any
 	DefaultValue any
-	Required any
+	Required     any
 }
 
 type Distribution_DistributionConfig_TenantConfig_ParameterDefinitions_Definition struct {
@@ -328,7 +328,7 @@ type Distribution_DistributionConfig_TenantConfig_ParameterDefinitions_Definitio
 
 type Distribution_DistributionConfig_TenantConfig_ParameterDefinitions struct {
 	Definition any
-	Name any
+	Name       any
 }
 
 type Distribution_DistributionConfig_TenantConfig struct {
@@ -379,7 +379,7 @@ type Distribution_DistributionConfig struct {
 	Comment any
 	// A connection function association.
 	ConnectionFunctionAssociation any
-	ConnectionMode any
+	ConnectionMode                any
 	// This field only supports standard distributions. You can't specify this field for multi-tenant distributions. For more information, see [Unsupported features for SaaS Manager for Amazon CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas) in the *Amazon CloudFront Developer Guide*. The identifier of a continuous deployment policy. For more information, see ``CreateContinuousDeploymentPolicy``.
 	ContinuousDeploymentPolicyId any
 	// A complex type that controls the following: + Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer. + How long CloudFront caches HTTP status codes in the 4xx and 5xx range. For more information about custom error pages, see [Customizing Error Responses](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html) in the *Amazon CloudFront Developer Guide*.
@@ -422,437 +422,437 @@ type Distribution_DistributionConfig struct {
 
 type Distribution_Tags struct {
 	// The key of a key-value tag applied to the CloudFront distribution, used for organizing and identifying the AWS resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Distribution_DistributionConfig_CacheBehaviors_ForwardedValues_CookiesFields = ubx.FieldMap{
-		"Forward": ubx.FieldSpec{WireName: "forward"},
-		"WhitelistedNames": ubx.FieldSpec{WireName: "whitelisted_names"},
-	}
+	"Forward":          ubx.FieldSpec{WireName: "forward"},
+	"WhitelistedNames": ubx.FieldSpec{WireName: "whitelisted_names"},
+}
 
 var Distribution_DistributionConfig_CacheBehaviors_ForwardedValuesFields = ubx.FieldMap{
-		"Cookies": ubx.FieldSpec{
-			WireName: "cookies",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_CacheBehaviors_ForwardedValues_CookiesFields,
-		},
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-		"QueryString": ubx.FieldSpec{WireName: "query_string"},
-		"QueryStringCacheKeys": ubx.FieldSpec{WireName: "query_string_cache_keys"},
-	}
+	"Cookies": ubx.FieldSpec{
+		WireName: "cookies",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_CacheBehaviors_ForwardedValues_CookiesFields,
+	},
+	"Headers":              ubx.FieldSpec{WireName: "headers"},
+	"QueryString":          ubx.FieldSpec{WireName: "query_string"},
+	"QueryStringCacheKeys": ubx.FieldSpec{WireName: "query_string_cache_keys"},
+}
 
 var Distribution_DistributionConfig_CacheBehaviors_FunctionAssociationsFields = ubx.FieldMap{
-		"EventType": ubx.FieldSpec{WireName: "event_type"},
-		"FunctionArn": ubx.FieldSpec{WireName: "function_arn"},
-	}
+	"EventType":   ubx.FieldSpec{WireName: "event_type"},
+	"FunctionArn": ubx.FieldSpec{WireName: "function_arn"},
+}
 
 var Distribution_DistributionConfig_CacheBehaviors_GrpcConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Distribution_DistributionConfig_CacheBehaviors_LambdaFunctionAssociationsFields = ubx.FieldMap{
-		"EventType": ubx.FieldSpec{WireName: "event_type"},
-		"IncludeBody": ubx.FieldSpec{WireName: "include_body"},
-		"LambdaFunctionArn": ubx.FieldSpec{WireName: "lambda_function_arn"},
-	}
+	"EventType":         ubx.FieldSpec{WireName: "event_type"},
+	"IncludeBody":       ubx.FieldSpec{WireName: "include_body"},
+	"LambdaFunctionArn": ubx.FieldSpec{WireName: "lambda_function_arn"},
+}
 
 var Distribution_DistributionConfig_CacheBehaviorsFields = ubx.FieldMap{
-		"AllowedMethods": ubx.FieldSpec{WireName: "allowed_methods"},
-		"CachePolicyId": ubx.FieldSpec{WireName: "cache_policy_id"},
-		"CachedMethods": ubx.FieldSpec{WireName: "cached_methods"},
-		"Compress": ubx.FieldSpec{WireName: "compress"},
-		"DefaultTtl": ubx.FieldSpec{WireName: "default_ttl"},
-		"FieldLevelEncryptionId": ubx.FieldSpec{WireName: "field_level_encryption_id"},
-		"ForwardedValues": ubx.FieldSpec{
-			WireName: "forwarded_values",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_CacheBehaviors_ForwardedValuesFields,
-		},
-		"FunctionAssociations": ubx.FieldSpec{
-			WireName: "function_associations",
-			Kind: "list",
-			Fields: Distribution_DistributionConfig_CacheBehaviors_FunctionAssociationsFields,
-		},
-		"GrpcConfig": ubx.FieldSpec{
-			WireName: "grpc_config",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_CacheBehaviors_GrpcConfigFields,
-		},
-		"LambdaFunctionAssociations": ubx.FieldSpec{
-			WireName: "lambda_function_associations",
-			Kind: "list",
-			Fields: Distribution_DistributionConfig_CacheBehaviors_LambdaFunctionAssociationsFields,
-		},
-		"MaxTtl": ubx.FieldSpec{WireName: "max_ttl"},
-		"MinTtl": ubx.FieldSpec{WireName: "min_ttl"},
-		"OriginRequestPolicyId": ubx.FieldSpec{WireName: "origin_request_policy_id"},
-		"PathPattern": ubx.FieldSpec{WireName: "path_pattern"},
-		"RealtimeLogConfigArn": ubx.FieldSpec{WireName: "realtime_log_config_arn"},
-		"ResponseHeadersPolicyId": ubx.FieldSpec{WireName: "response_headers_policy_id"},
-		"SmoothStreaming": ubx.FieldSpec{WireName: "smooth_streaming"},
-		"TargetOriginId": ubx.FieldSpec{WireName: "target_origin_id"},
-		"TrustedKeyGroups": ubx.FieldSpec{WireName: "trusted_key_groups"},
-		"TrustedSigners": ubx.FieldSpec{WireName: "trusted_signers"},
-		"ViewerProtocolPolicy": ubx.FieldSpec{WireName: "viewer_protocol_policy"},
-	}
+	"AllowedMethods":         ubx.FieldSpec{WireName: "allowed_methods"},
+	"CachePolicyId":          ubx.FieldSpec{WireName: "cache_policy_id"},
+	"CachedMethods":          ubx.FieldSpec{WireName: "cached_methods"},
+	"Compress":               ubx.FieldSpec{WireName: "compress"},
+	"DefaultTtl":             ubx.FieldSpec{WireName: "default_ttl"},
+	"FieldLevelEncryptionId": ubx.FieldSpec{WireName: "field_level_encryption_id"},
+	"ForwardedValues": ubx.FieldSpec{
+		WireName: "forwarded_values",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_CacheBehaviors_ForwardedValuesFields,
+	},
+	"FunctionAssociations": ubx.FieldSpec{
+		WireName: "function_associations",
+		Kind:     "list",
+		Fields:   Distribution_DistributionConfig_CacheBehaviors_FunctionAssociationsFields,
+	},
+	"GrpcConfig": ubx.FieldSpec{
+		WireName: "grpc_config",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_CacheBehaviors_GrpcConfigFields,
+	},
+	"LambdaFunctionAssociations": ubx.FieldSpec{
+		WireName: "lambda_function_associations",
+		Kind:     "list",
+		Fields:   Distribution_DistributionConfig_CacheBehaviors_LambdaFunctionAssociationsFields,
+	},
+	"MaxTtl":                  ubx.FieldSpec{WireName: "max_ttl"},
+	"MinTtl":                  ubx.FieldSpec{WireName: "min_ttl"},
+	"OriginRequestPolicyId":   ubx.FieldSpec{WireName: "origin_request_policy_id"},
+	"PathPattern":             ubx.FieldSpec{WireName: "path_pattern"},
+	"RealtimeLogConfigArn":    ubx.FieldSpec{WireName: "realtime_log_config_arn"},
+	"ResponseHeadersPolicyId": ubx.FieldSpec{WireName: "response_headers_policy_id"},
+	"SmoothStreaming":         ubx.FieldSpec{WireName: "smooth_streaming"},
+	"TargetOriginId":          ubx.FieldSpec{WireName: "target_origin_id"},
+	"TrustedKeyGroups":        ubx.FieldSpec{WireName: "trusted_key_groups"},
+	"TrustedSigners":          ubx.FieldSpec{WireName: "trusted_signers"},
+	"ViewerProtocolPolicy":    ubx.FieldSpec{WireName: "viewer_protocol_policy"},
+}
 
 var Distribution_DistributionConfig_CacheTagConfigFields = ubx.FieldMap{
-		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
-	}
+	"HeaderName": ubx.FieldSpec{WireName: "header_name"},
+}
 
 var Distribution_DistributionConfig_ConnectionFunctionAssociationFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+}
 
 var Distribution_DistributionConfig_CustomErrorResponsesFields = ubx.FieldMap{
-		"ErrorCachingMinTtl": ubx.FieldSpec{WireName: "error_caching_min_ttl"},
-		"ErrorCode": ubx.FieldSpec{WireName: "error_code"},
-		"ResponseCode": ubx.FieldSpec{WireName: "response_code"},
-		"ResponsePagePath": ubx.FieldSpec{WireName: "response_page_path"},
-	}
+	"ErrorCachingMinTtl": ubx.FieldSpec{WireName: "error_caching_min_ttl"},
+	"ErrorCode":          ubx.FieldSpec{WireName: "error_code"},
+	"ResponseCode":       ubx.FieldSpec{WireName: "response_code"},
+	"ResponsePagePath":   ubx.FieldSpec{WireName: "response_page_path"},
+}
 
 var Distribution_DistributionConfig_CustomOriginFields = ubx.FieldMap{
-		"Dnsname": ubx.FieldSpec{WireName: "dnsname"},
-		"Httpport": ubx.FieldSpec{WireName: "httpport"},
-		"Httpsport": ubx.FieldSpec{WireName: "httpsport"},
-		"OriginProtocolPolicy": ubx.FieldSpec{WireName: "origin_protocol_policy"},
-		"OriginSslprotocols": ubx.FieldSpec{WireName: "origin_sslprotocols"},
-	}
+	"Dnsname":              ubx.FieldSpec{WireName: "dnsname"},
+	"Httpport":             ubx.FieldSpec{WireName: "httpport"},
+	"Httpsport":            ubx.FieldSpec{WireName: "httpsport"},
+	"OriginProtocolPolicy": ubx.FieldSpec{WireName: "origin_protocol_policy"},
+	"OriginSslprotocols":   ubx.FieldSpec{WireName: "origin_sslprotocols"},
+}
 
 var Distribution_DistributionConfig_DefaultCacheBehaviorFields = ubx.FieldMap{
-		"AllowedMethods": ubx.FieldSpec{WireName: "allowed_methods"},
-		"CachePolicyId": ubx.FieldSpec{WireName: "cache_policy_id"},
-		"CachedMethods": ubx.FieldSpec{WireName: "cached_methods"},
-		"Compress": ubx.FieldSpec{WireName: "compress"},
-		"DefaultTtl": ubx.FieldSpec{WireName: "default_ttl"},
-		"FieldLevelEncryptionId": ubx.FieldSpec{WireName: "field_level_encryption_id"},
-		"ForwardedValues": ubx.FieldSpec{
-			WireName: "forwarded_values",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_CacheBehaviors_ForwardedValuesFields,
-		},
-		"FunctionAssociations": ubx.FieldSpec{
-			WireName: "function_associations",
-			Kind: "list",
-			Fields: Distribution_DistributionConfig_CacheBehaviors_FunctionAssociationsFields,
-		},
-		"GrpcConfig": ubx.FieldSpec{
-			WireName: "grpc_config",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_CacheBehaviors_GrpcConfigFields,
-		},
-		"LambdaFunctionAssociations": ubx.FieldSpec{
-			WireName: "lambda_function_associations",
-			Kind: "list",
-			Fields: Distribution_DistributionConfig_CacheBehaviors_LambdaFunctionAssociationsFields,
-		},
-		"MaxTtl": ubx.FieldSpec{WireName: "max_ttl"},
-		"MinTtl": ubx.FieldSpec{WireName: "min_ttl"},
-		"OriginRequestPolicyId": ubx.FieldSpec{WireName: "origin_request_policy_id"},
-		"RealtimeLogConfigArn": ubx.FieldSpec{WireName: "realtime_log_config_arn"},
-		"ResponseHeadersPolicyId": ubx.FieldSpec{WireName: "response_headers_policy_id"},
-		"SmoothStreaming": ubx.FieldSpec{WireName: "smooth_streaming"},
-		"TargetOriginId": ubx.FieldSpec{WireName: "target_origin_id"},
-		"TrustedKeyGroups": ubx.FieldSpec{WireName: "trusted_key_groups"},
-		"TrustedSigners": ubx.FieldSpec{WireName: "trusted_signers"},
-		"ViewerProtocolPolicy": ubx.FieldSpec{WireName: "viewer_protocol_policy"},
-	}
+	"AllowedMethods":         ubx.FieldSpec{WireName: "allowed_methods"},
+	"CachePolicyId":          ubx.FieldSpec{WireName: "cache_policy_id"},
+	"CachedMethods":          ubx.FieldSpec{WireName: "cached_methods"},
+	"Compress":               ubx.FieldSpec{WireName: "compress"},
+	"DefaultTtl":             ubx.FieldSpec{WireName: "default_ttl"},
+	"FieldLevelEncryptionId": ubx.FieldSpec{WireName: "field_level_encryption_id"},
+	"ForwardedValues": ubx.FieldSpec{
+		WireName: "forwarded_values",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_CacheBehaviors_ForwardedValuesFields,
+	},
+	"FunctionAssociations": ubx.FieldSpec{
+		WireName: "function_associations",
+		Kind:     "list",
+		Fields:   Distribution_DistributionConfig_CacheBehaviors_FunctionAssociationsFields,
+	},
+	"GrpcConfig": ubx.FieldSpec{
+		WireName: "grpc_config",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_CacheBehaviors_GrpcConfigFields,
+	},
+	"LambdaFunctionAssociations": ubx.FieldSpec{
+		WireName: "lambda_function_associations",
+		Kind:     "list",
+		Fields:   Distribution_DistributionConfig_CacheBehaviors_LambdaFunctionAssociationsFields,
+	},
+	"MaxTtl":                  ubx.FieldSpec{WireName: "max_ttl"},
+	"MinTtl":                  ubx.FieldSpec{WireName: "min_ttl"},
+	"OriginRequestPolicyId":   ubx.FieldSpec{WireName: "origin_request_policy_id"},
+	"RealtimeLogConfigArn":    ubx.FieldSpec{WireName: "realtime_log_config_arn"},
+	"ResponseHeadersPolicyId": ubx.FieldSpec{WireName: "response_headers_policy_id"},
+	"SmoothStreaming":         ubx.FieldSpec{WireName: "smooth_streaming"},
+	"TargetOriginId":          ubx.FieldSpec{WireName: "target_origin_id"},
+	"TrustedKeyGroups":        ubx.FieldSpec{WireName: "trusted_key_groups"},
+	"TrustedSigners":          ubx.FieldSpec{WireName: "trusted_signers"},
+	"ViewerProtocolPolicy":    ubx.FieldSpec{WireName: "viewer_protocol_policy"},
+}
 
 var Distribution_DistributionConfig_LoggingFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"IncludeCookies": ubx.FieldSpec{WireName: "include_cookies"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"Bucket":         ubx.FieldSpec{WireName: "bucket"},
+	"IncludeCookies": ubx.FieldSpec{WireName: "include_cookies"},
+	"Prefix":         ubx.FieldSpec{WireName: "prefix"},
+}
 
 var Distribution_DistributionConfig_OriginGroups_Items_FailoverCriteria_StatusCodesFields = ubx.FieldMap{
-		"Items": ubx.FieldSpec{WireName: "items"},
-		"Quantity": ubx.FieldSpec{WireName: "quantity"},
-	}
+	"Items":    ubx.FieldSpec{WireName: "items"},
+	"Quantity": ubx.FieldSpec{WireName: "quantity"},
+}
 
 var Distribution_DistributionConfig_OriginGroups_Items_FailoverCriteriaFields = ubx.FieldMap{
-		"StatusCodes": ubx.FieldSpec{
-			WireName: "status_codes",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_OriginGroups_Items_FailoverCriteria_StatusCodesFields,
-		},
-	}
+	"StatusCodes": ubx.FieldSpec{
+		WireName: "status_codes",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_OriginGroups_Items_FailoverCriteria_StatusCodesFields,
+	},
+}
 
 var Distribution_DistributionConfig_OriginGroups_Items_Members_ItemsFields = ubx.FieldMap{
-		"OriginId": ubx.FieldSpec{WireName: "origin_id"},
-	}
+	"OriginId": ubx.FieldSpec{WireName: "origin_id"},
+}
 
 var Distribution_DistributionConfig_OriginGroups_Items_MembersFields = ubx.FieldMap{
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: Distribution_DistributionConfig_OriginGroups_Items_Members_ItemsFields,
-		},
-		"Quantity": ubx.FieldSpec{WireName: "quantity"},
-	}
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   Distribution_DistributionConfig_OriginGroups_Items_Members_ItemsFields,
+	},
+	"Quantity": ubx.FieldSpec{WireName: "quantity"},
+}
 
 var Distribution_DistributionConfig_OriginGroups_ItemsFields = ubx.FieldMap{
-		"FailoverCriteria": ubx.FieldSpec{
-			WireName: "failover_criteria",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_OriginGroups_Items_FailoverCriteriaFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Members": ubx.FieldSpec{
-			WireName: "members",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_OriginGroups_Items_MembersFields,
-		},
-		"SelectionCriteria": ubx.FieldSpec{WireName: "selection_criteria"},
-	}
+	"FailoverCriteria": ubx.FieldSpec{
+		WireName: "failover_criteria",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_OriginGroups_Items_FailoverCriteriaFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Members": ubx.FieldSpec{
+		WireName: "members",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_OriginGroups_Items_MembersFields,
+	},
+	"SelectionCriteria": ubx.FieldSpec{WireName: "selection_criteria"},
+}
 
 var Distribution_DistributionConfig_OriginGroupsFields = ubx.FieldMap{
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: Distribution_DistributionConfig_OriginGroups_ItemsFields,
-		},
-		"Quantity": ubx.FieldSpec{WireName: "quantity"},
-	}
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   Distribution_DistributionConfig_OriginGroups_ItemsFields,
+	},
+	"Quantity": ubx.FieldSpec{WireName: "quantity"},
+}
 
 var Distribution_DistributionConfig_Origins_CustomOriginConfig_OriginMtlsConfigFields = ubx.FieldMap{
-		"ClientCertificateArn": ubx.FieldSpec{WireName: "client_certificate_arn"},
-	}
+	"ClientCertificateArn": ubx.FieldSpec{WireName: "client_certificate_arn"},
+}
 
 var Distribution_DistributionConfig_Origins_CustomOriginConfigFields = ubx.FieldMap{
-		"Httpport": ubx.FieldSpec{WireName: "httpport"},
-		"Httpsport": ubx.FieldSpec{WireName: "httpsport"},
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"OriginKeepaliveTimeout": ubx.FieldSpec{WireName: "origin_keepalive_timeout"},
-		"OriginMtlsConfig": ubx.FieldSpec{
-			WireName: "origin_mtls_config",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_Origins_CustomOriginConfig_OriginMtlsConfigFields,
-		},
-		"OriginProtocolPolicy": ubx.FieldSpec{WireName: "origin_protocol_policy"},
-		"OriginReadTimeout": ubx.FieldSpec{WireName: "origin_read_timeout"},
-		"OriginSslprotocols": ubx.FieldSpec{WireName: "origin_sslprotocols"},
-	}
+	"Httpport":               ubx.FieldSpec{WireName: "httpport"},
+	"Httpsport":              ubx.FieldSpec{WireName: "httpsport"},
+	"IpAddressType":          ubx.FieldSpec{WireName: "ip_address_type"},
+	"OriginKeepaliveTimeout": ubx.FieldSpec{WireName: "origin_keepalive_timeout"},
+	"OriginMtlsConfig": ubx.FieldSpec{
+		WireName: "origin_mtls_config",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_Origins_CustomOriginConfig_OriginMtlsConfigFields,
+	},
+	"OriginProtocolPolicy": ubx.FieldSpec{WireName: "origin_protocol_policy"},
+	"OriginReadTimeout":    ubx.FieldSpec{WireName: "origin_read_timeout"},
+	"OriginSslprotocols":   ubx.FieldSpec{WireName: "origin_sslprotocols"},
+}
 
 var Distribution_DistributionConfig_Origins_OriginCustomHeadersFields = ubx.FieldMap{
-		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
-		"HeaderValue": ubx.FieldSpec{WireName: "header_value"},
-	}
+	"HeaderName":  ubx.FieldSpec{WireName: "header_name"},
+	"HeaderValue": ubx.FieldSpec{WireName: "header_value"},
+}
 
 var Distribution_DistributionConfig_Origins_OriginShieldFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"OriginShieldRegion": ubx.FieldSpec{WireName: "origin_shield_region"},
-	}
+	"Enabled":            ubx.FieldSpec{WireName: "enabled"},
+	"OriginShieldRegion": ubx.FieldSpec{WireName: "origin_shield_region"},
+}
 
 var Distribution_DistributionConfig_Origins_S3OriginConfigFields = ubx.FieldMap{
-		"OriginAccessIdentity": ubx.FieldSpec{WireName: "origin_access_identity"},
-		"OriginReadTimeout": ubx.FieldSpec{WireName: "origin_read_timeout"},
-	}
+	"OriginAccessIdentity": ubx.FieldSpec{WireName: "origin_access_identity"},
+	"OriginReadTimeout":    ubx.FieldSpec{WireName: "origin_read_timeout"},
+}
 
 var Distribution_DistributionConfig_Origins_VpcOriginConfigFields = ubx.FieldMap{
-		"OriginKeepaliveTimeout": ubx.FieldSpec{WireName: "origin_keepalive_timeout"},
-		"OriginReadTimeout": ubx.FieldSpec{WireName: "origin_read_timeout"},
-		"OwnerAccountId": ubx.FieldSpec{WireName: "owner_account_id"},
-		"VpcOriginId": ubx.FieldSpec{WireName: "vpc_origin_id"},
-	}
+	"OriginKeepaliveTimeout": ubx.FieldSpec{WireName: "origin_keepalive_timeout"},
+	"OriginReadTimeout":      ubx.FieldSpec{WireName: "origin_read_timeout"},
+	"OwnerAccountId":         ubx.FieldSpec{WireName: "owner_account_id"},
+	"VpcOriginId":            ubx.FieldSpec{WireName: "vpc_origin_id"},
+}
 
 var Distribution_DistributionConfig_OriginsFields = ubx.FieldMap{
-		"ConnectionAttempts": ubx.FieldSpec{WireName: "connection_attempts"},
-		"ConnectionTimeout": ubx.FieldSpec{WireName: "connection_timeout"},
-		"CustomOriginConfig": ubx.FieldSpec{
-			WireName: "custom_origin_config",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_Origins_CustomOriginConfigFields,
-		},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"OriginAccessControlId": ubx.FieldSpec{WireName: "origin_access_control_id"},
-		"OriginCustomHeaders": ubx.FieldSpec{
-			WireName: "origin_custom_headers",
-			Kind: "list",
-			Fields: Distribution_DistributionConfig_Origins_OriginCustomHeadersFields,
-		},
-		"OriginPath": ubx.FieldSpec{WireName: "origin_path"},
-		"OriginShield": ubx.FieldSpec{
-			WireName: "origin_shield",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_Origins_OriginShieldFields,
-		},
-		"ResponseCompletionTimeout": ubx.FieldSpec{WireName: "response_completion_timeout"},
-		"S3OriginConfig": ubx.FieldSpec{
-			WireName: "s3_origin_config",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_Origins_S3OriginConfigFields,
-		},
-		"VpcOriginConfig": ubx.FieldSpec{
-			WireName: "vpc_origin_config",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_Origins_VpcOriginConfigFields,
-		},
-	}
+	"ConnectionAttempts": ubx.FieldSpec{WireName: "connection_attempts"},
+	"ConnectionTimeout":  ubx.FieldSpec{WireName: "connection_timeout"},
+	"CustomOriginConfig": ubx.FieldSpec{
+		WireName: "custom_origin_config",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_Origins_CustomOriginConfigFields,
+	},
+	"DomainName":            ubx.FieldSpec{WireName: "domain_name"},
+	"Id":                    ubx.FieldSpec{WireName: "id"},
+	"OriginAccessControlId": ubx.FieldSpec{WireName: "origin_access_control_id"},
+	"OriginCustomHeaders": ubx.FieldSpec{
+		WireName: "origin_custom_headers",
+		Kind:     "list",
+		Fields:   Distribution_DistributionConfig_Origins_OriginCustomHeadersFields,
+	},
+	"OriginPath": ubx.FieldSpec{WireName: "origin_path"},
+	"OriginShield": ubx.FieldSpec{
+		WireName: "origin_shield",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_Origins_OriginShieldFields,
+	},
+	"ResponseCompletionTimeout": ubx.FieldSpec{WireName: "response_completion_timeout"},
+	"S3OriginConfig": ubx.FieldSpec{
+		WireName: "s3_origin_config",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_Origins_S3OriginConfigFields,
+	},
+	"VpcOriginConfig": ubx.FieldSpec{
+		WireName: "vpc_origin_config",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_Origins_VpcOriginConfigFields,
+	},
+}
 
 var Distribution_DistributionConfig_Restrictions_GeoRestrictionFields = ubx.FieldMap{
-		"Locations": ubx.FieldSpec{WireName: "locations"},
-		"RestrictionType": ubx.FieldSpec{WireName: "restriction_type"},
-	}
+	"Locations":       ubx.FieldSpec{WireName: "locations"},
+	"RestrictionType": ubx.FieldSpec{WireName: "restriction_type"},
+}
 
 var Distribution_DistributionConfig_RestrictionsFields = ubx.FieldMap{
-		"GeoRestriction": ubx.FieldSpec{
-			WireName: "geo_restriction",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_Restrictions_GeoRestrictionFields,
-		},
-	}
+	"GeoRestriction": ubx.FieldSpec{
+		WireName: "geo_restriction",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_Restrictions_GeoRestrictionFields,
+	},
+}
 
 var Distribution_DistributionConfig_S3OriginFields = ubx.FieldMap{
-		"Dnsname": ubx.FieldSpec{WireName: "dnsname"},
-		"OriginAccessIdentity": ubx.FieldSpec{WireName: "origin_access_identity"},
-	}
+	"Dnsname":              ubx.FieldSpec{WireName: "dnsname"},
+	"OriginAccessIdentity": ubx.FieldSpec{WireName: "origin_access_identity"},
+}
 
 var Distribution_DistributionConfig_TenantConfig_ParameterDefinitions_Definition_StringSchemaFields = ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-	}
+	"Comment":      ubx.FieldSpec{WireName: "comment"},
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"Required":     ubx.FieldSpec{WireName: "required"},
+}
 
 var Distribution_DistributionConfig_TenantConfig_ParameterDefinitions_DefinitionFields = ubx.FieldMap{
-		"StringSchema": ubx.FieldSpec{
-			WireName: "string_schema",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_TenantConfig_ParameterDefinitions_Definition_StringSchemaFields,
-		},
-	}
+	"StringSchema": ubx.FieldSpec{
+		WireName: "string_schema",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_TenantConfig_ParameterDefinitions_Definition_StringSchemaFields,
+	},
+}
 
 var Distribution_DistributionConfig_TenantConfig_ParameterDefinitionsFields = ubx.FieldMap{
-		"Definition": ubx.FieldSpec{
-			WireName: "definition",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_TenantConfig_ParameterDefinitions_DefinitionFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Definition": ubx.FieldSpec{
+		WireName: "definition",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_TenantConfig_ParameterDefinitions_DefinitionFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Distribution_DistributionConfig_TenantConfigFields = ubx.FieldMap{
-		"ParameterDefinitions": ubx.FieldSpec{
-			WireName: "parameter_definitions",
-			Kind: "list",
-			Fields: Distribution_DistributionConfig_TenantConfig_ParameterDefinitionsFields,
-		},
-	}
+	"ParameterDefinitions": ubx.FieldSpec{
+		WireName: "parameter_definitions",
+		Kind:     "list",
+		Fields:   Distribution_DistributionConfig_TenantConfig_ParameterDefinitionsFields,
+	},
+}
 
 var Distribution_DistributionConfig_ViewerCertificateFields = ubx.FieldMap{
-		"AcmCertificateArn": ubx.FieldSpec{WireName: "acm_certificate_arn"},
-		"CloudFrontDefaultCertificate": ubx.FieldSpec{WireName: "cloud_front_default_certificate"},
-		"IamCertificateId": ubx.FieldSpec{WireName: "iam_certificate_id"},
-		"MinimumProtocolVersion": ubx.FieldSpec{WireName: "minimum_protocol_version"},
-		"SslSupportMethod": ubx.FieldSpec{WireName: "ssl_support_method"},
-	}
+	"AcmCertificateArn":            ubx.FieldSpec{WireName: "acm_certificate_arn"},
+	"CloudFrontDefaultCertificate": ubx.FieldSpec{WireName: "cloud_front_default_certificate"},
+	"IamCertificateId":             ubx.FieldSpec{WireName: "iam_certificate_id"},
+	"MinimumProtocolVersion":       ubx.FieldSpec{WireName: "minimum_protocol_version"},
+	"SslSupportMethod":             ubx.FieldSpec{WireName: "ssl_support_method"},
+}
 
 var Distribution_DistributionConfig_ViewerMtlsConfig_TrustStoreConfigFields = ubx.FieldMap{
-		"AdvertiseTrustStoreCaNames": ubx.FieldSpec{WireName: "advertise_trust_store_ca_names"},
-		"IgnoreCertificateExpiry": ubx.FieldSpec{WireName: "ignore_certificate_expiry"},
-		"TrustStoreId": ubx.FieldSpec{WireName: "trust_store_id"},
-	}
+	"AdvertiseTrustStoreCaNames": ubx.FieldSpec{WireName: "advertise_trust_store_ca_names"},
+	"IgnoreCertificateExpiry":    ubx.FieldSpec{WireName: "ignore_certificate_expiry"},
+	"TrustStoreId":               ubx.FieldSpec{WireName: "trust_store_id"},
+}
 
 var Distribution_DistributionConfig_ViewerMtlsConfigFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"TrustStoreConfig": ubx.FieldSpec{
-			WireName: "trust_store_config",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_ViewerMtlsConfig_TrustStoreConfigFields,
-		},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+	"TrustStoreConfig": ubx.FieldSpec{
+		WireName: "trust_store_config",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_ViewerMtlsConfig_TrustStoreConfigFields,
+	},
+}
 
 var Distribution_DistributionConfigFields = ubx.FieldMap{
-		"Aliases": ubx.FieldSpec{WireName: "aliases"},
-		"AnycastIpListId": ubx.FieldSpec{WireName: "anycast_ip_list_id"},
-		"CacheBehaviors": ubx.FieldSpec{
-			WireName: "cache_behaviors",
-			Kind: "list",
-			Fields: Distribution_DistributionConfig_CacheBehaviorsFields,
-		},
-		"CacheTagConfig": ubx.FieldSpec{
-			WireName: "cache_tag_config",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_CacheTagConfigFields,
-		},
-		"Cnames": ubx.FieldSpec{WireName: "cnames"},
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"ConnectionFunctionAssociation": ubx.FieldSpec{
-			WireName: "connection_function_association",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_ConnectionFunctionAssociationFields,
-		},
-		"ConnectionMode": ubx.FieldSpec{WireName: "connection_mode"},
-		"ContinuousDeploymentPolicyId": ubx.FieldSpec{WireName: "continuous_deployment_policy_id"},
-		"CustomErrorResponses": ubx.FieldSpec{
-			WireName: "custom_error_responses",
-			Kind: "list",
-			Fields: Distribution_DistributionConfig_CustomErrorResponsesFields,
-		},
-		"CustomOrigin": ubx.FieldSpec{
-			WireName: "custom_origin",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_CustomOriginFields,
-		},
-		"DefaultCacheBehavior": ubx.FieldSpec{
-			WireName: "default_cache_behavior",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_DefaultCacheBehaviorFields,
-		},
-		"DefaultRootObject": ubx.FieldSpec{WireName: "default_root_object"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"HttpVersion": ubx.FieldSpec{WireName: "http_version"},
-		"Ipv6Enabled": ubx.FieldSpec{WireName: "ipv6_enabled"},
-		"Logging": ubx.FieldSpec{
-			WireName: "logging",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_LoggingFields,
-		},
-		"OriginGroups": ubx.FieldSpec{
-			WireName: "origin_groups",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_OriginGroupsFields,
-		},
-		"Origins": ubx.FieldSpec{
-			WireName: "origins",
-			Kind: "list",
-			Fields: Distribution_DistributionConfig_OriginsFields,
-		},
-		"PriceClass": ubx.FieldSpec{WireName: "price_class"},
-		"Restrictions": ubx.FieldSpec{
-			WireName: "restrictions",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_RestrictionsFields,
-		},
-		"S3Origin": ubx.FieldSpec{
-			WireName: "s3_origin",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_S3OriginFields,
-		},
-		"Staging": ubx.FieldSpec{WireName: "staging"},
-		"TenantConfig": ubx.FieldSpec{
-			WireName: "tenant_config",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_TenantConfigFields,
-		},
-		"ViewerCertificate": ubx.FieldSpec{
-			WireName: "viewer_certificate",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_ViewerCertificateFields,
-		},
-		"ViewerMtlsConfig": ubx.FieldSpec{
-			WireName: "viewer_mtls_config",
-			Kind: "object",
-			Fields: Distribution_DistributionConfig_ViewerMtlsConfigFields,
-		},
-		"WebAclid": ubx.FieldSpec{WireName: "web_aclid"},
-	}
+	"Aliases":         ubx.FieldSpec{WireName: "aliases"},
+	"AnycastIpListId": ubx.FieldSpec{WireName: "anycast_ip_list_id"},
+	"CacheBehaviors": ubx.FieldSpec{
+		WireName: "cache_behaviors",
+		Kind:     "list",
+		Fields:   Distribution_DistributionConfig_CacheBehaviorsFields,
+	},
+	"CacheTagConfig": ubx.FieldSpec{
+		WireName: "cache_tag_config",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_CacheTagConfigFields,
+	},
+	"Cnames":  ubx.FieldSpec{WireName: "cnames"},
+	"Comment": ubx.FieldSpec{WireName: "comment"},
+	"ConnectionFunctionAssociation": ubx.FieldSpec{
+		WireName: "connection_function_association",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_ConnectionFunctionAssociationFields,
+	},
+	"ConnectionMode":               ubx.FieldSpec{WireName: "connection_mode"},
+	"ContinuousDeploymentPolicyId": ubx.FieldSpec{WireName: "continuous_deployment_policy_id"},
+	"CustomErrorResponses": ubx.FieldSpec{
+		WireName: "custom_error_responses",
+		Kind:     "list",
+		Fields:   Distribution_DistributionConfig_CustomErrorResponsesFields,
+	},
+	"CustomOrigin": ubx.FieldSpec{
+		WireName: "custom_origin",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_CustomOriginFields,
+	},
+	"DefaultCacheBehavior": ubx.FieldSpec{
+		WireName: "default_cache_behavior",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_DefaultCacheBehaviorFields,
+	},
+	"DefaultRootObject": ubx.FieldSpec{WireName: "default_root_object"},
+	"Enabled":           ubx.FieldSpec{WireName: "enabled"},
+	"HttpVersion":       ubx.FieldSpec{WireName: "http_version"},
+	"Ipv6Enabled":       ubx.FieldSpec{WireName: "ipv6_enabled"},
+	"Logging": ubx.FieldSpec{
+		WireName: "logging",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_LoggingFields,
+	},
+	"OriginGroups": ubx.FieldSpec{
+		WireName: "origin_groups",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_OriginGroupsFields,
+	},
+	"Origins": ubx.FieldSpec{
+		WireName: "origins",
+		Kind:     "list",
+		Fields:   Distribution_DistributionConfig_OriginsFields,
+	},
+	"PriceClass": ubx.FieldSpec{WireName: "price_class"},
+	"Restrictions": ubx.FieldSpec{
+		WireName: "restrictions",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_RestrictionsFields,
+	},
+	"S3Origin": ubx.FieldSpec{
+		WireName: "s3_origin",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_S3OriginFields,
+	},
+	"Staging": ubx.FieldSpec{WireName: "staging"},
+	"TenantConfig": ubx.FieldSpec{
+		WireName: "tenant_config",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_TenantConfigFields,
+	},
+	"ViewerCertificate": ubx.FieldSpec{
+		WireName: "viewer_certificate",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_ViewerCertificateFields,
+	},
+	"ViewerMtlsConfig": ubx.FieldSpec{
+		WireName: "viewer_mtls_config",
+		Kind:     "object",
+		Fields:   Distribution_DistributionConfig_ViewerMtlsConfigFields,
+	},
+	"WebAclid": ubx.FieldSpec{WireName: "web_aclid"},
+}
 
 var Distribution_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DistributionConfig struct {
 	// A distribution configuration.
@@ -877,13 +877,13 @@ var Distribution = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DistributionConfig": ubx.FieldSpec{
 			WireName: "distribution_config",
-			Kind: "object",
-			Fields: Distribution_DistributionConfigFields,
+			Kind:     "object",
+			Fields:   Distribution_DistributionConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Distribution_TagsFields,
+			Kind:     "list",
+			Fields:   Distribution_TagsFields,
 		},
 	},
 }

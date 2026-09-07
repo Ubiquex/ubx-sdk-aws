@@ -4,26 +4,26 @@ package s3
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BucketAnalyticsConfiguration_AnalyticsConfiguration_Filter_And_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type BucketAnalyticsConfiguration_AnalyticsConfiguration_Filter_And struct {
 	Prefix any
-	Tags any
+	Tags   any
 }
 
 type BucketAnalyticsConfiguration_AnalyticsConfiguration_Filter struct {
-	And any
+	And    any
 	Prefix any
-	Tag any
+	Tag    any
 }
 
 type BucketAnalyticsConfiguration_AnalyticsConfiguration_StorageClassAnalysis_DataExport_Destination_S3BucketDestination struct {
-	Bucket any
+	Bucket          any
 	BucketAccountId any
-	Format any
-	Prefix any
+	Format          any
+	Prefix          any
 }
 
 type BucketAnalyticsConfiguration_AnalyticsConfiguration_StorageClassAnalysis_DataExport_Destination struct {
@@ -33,7 +33,7 @@ type BucketAnalyticsConfiguration_AnalyticsConfiguration_StorageClassAnalysis_Da
 
 type BucketAnalyticsConfiguration_AnalyticsConfiguration_StorageClassAnalysis_DataExport struct {
 	// <p>Where to publish the analytics results.</p>
-	Destination any
+	Destination         any
 	OutputSchemaVersion any
 }
 
@@ -45,30 +45,30 @@ type BucketAnalyticsConfiguration_AnalyticsConfiguration_StorageClassAnalysis st
 type BucketAnalyticsConfiguration_AnalyticsConfiguration struct {
 	// <p>The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.</p>
 	Filter any
-	Id any
+	Id     any
 	// <p>Specifies data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes for an Amazon S3 bucket.</p>
 	StorageClassAnalysis any
 }
 
 type BucketAnalyticsConfigurationConfig struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
-	Id any
+	Id                  any
 }
 
 type BucketAnalyticsConfigurationAttrs struct {
 	// <p>Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.</p>
 	AnalyticsConfiguration any
-	Bucket any
-	ExpectedBucketOwner any
-	Id any
+	Bucket                 any
+	ExpectedBucketOwner    any
+	Id                     any
 }
 
 var BucketAnalyticsConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_analytics_configuration",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":                  ubx.FieldSpec{WireName: "id"},
 	},
 }

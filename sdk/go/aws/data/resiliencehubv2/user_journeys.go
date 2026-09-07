@@ -4,9 +4,9 @@ package resiliencehubv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserJourneys_UserJourneySummaries struct {
-	CreatedAt any
-	Name any
-	UpdatedAt any
+	CreatedAt     any
+	Name          any
+	UpdatedAt     any
 	UserJourneyId any
 }
 
@@ -25,7 +25,7 @@ type UserJourneysAttrs struct {
 	// <p>Pagination token.</p>
 	NextToken any
 	// <p>ARN identifier.</p>
-	SystemArn any
+	SystemArn            any
 	UserJourneySummaries any
 }
 
@@ -33,7 +33,7 @@ var UserJourneys = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehubv2_user_journeys",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SystemArn": ubx.FieldSpec{WireName: "system_arn"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"SystemArn":  ubx.FieldSpec{WireName: "system_arn"},
 	},
 }

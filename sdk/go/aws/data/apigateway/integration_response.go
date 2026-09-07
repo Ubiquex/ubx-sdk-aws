@@ -6,19 +6,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type IntegrationResponseConfig struct {
 	HttpMethod any
 	ResourceId any
-	RestApiId any
+	RestApiId  any
 	// <p>The status code.</p>
 	StatusCode any
 }
 
 type IntegrationResponseAttrs struct {
-	ContentHandling any
-	HttpMethod any
-	ResourceId any
+	ContentHandling    any
+	HttpMethod         any
+	ResourceId         any
 	ResponseParameters any
-	ResponseTemplates any
-	RestApiId any
-	SelectionPattern any
+	ResponseTemplates  any
+	RestApiId          any
+	SelectionPattern   any
 	// <p>The status code.</p>
 	StatusCode any
 }
@@ -28,7 +28,7 @@ var IntegrationResponse = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
 		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
+		"RestApiId":  ubx.FieldSpec{WireName: "rest_api_id"},
 		"StatusCode": ubx.FieldSpec{WireName: "status_code"},
 	},
 }

@@ -4,20 +4,20 @@ package resiliencehubv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestRun_TestRun_Experiments struct {
-	Details any
+	Details       any
 	ExperimentArn any
 }
 
 type TestRun_TestRun_LoggingConfiguration struct {
 	// <p>ARN identifier.</p>
 	CloudWatchLogGroupArn any
-	LogSchemaVersion any
-	S3BucketName any
+	LogSchemaVersion      any
+	S3BucketName          any
 }
 
 type TestRun_TestRun_PermissionModel_CrossAccountRoles struct {
 	CrossAccountRoleArn any
-	ExternalId any
+	ExternalId          any
 }
 
 type TestRun_TestRun_PermissionModel struct {
@@ -36,8 +36,8 @@ type TestRun_TestRun_Policy_DataRecovery struct {
 
 type TestRun_TestRun_Policy_MultiAz struct {
 	DisasterRecoveryApproach any
-	RpoInMinutes any
-	RtoInMinutes any
+	RpoInMinutes             any
+	RtoInMinutes             any
 }
 
 type TestRun_TestRun_Policy struct {
@@ -57,7 +57,7 @@ type TestRun_TestRun_Policy struct {
 
 type TestRun_TestRun_ReportConfiguration_ReportOutput_S3 struct {
 	BucketOwner any
-	BucketPath any
+	BucketPath  any
 }
 
 type TestRun_TestRun_ReportConfiguration_ReportOutput struct {
@@ -70,7 +70,7 @@ type TestRun_TestRun_ReportConfiguration struct {
 }
 
 type TestRun_TestRun_ReportOutput_ReportOutput_FailedReportOutput struct {
-	ErrorCode any
+	ErrorCode    any
 	ErrorMessage any
 }
 
@@ -80,15 +80,15 @@ type TestRun_TestRun_ReportOutput_ReportOutput_S3ReportOutput struct {
 
 type TestRun_TestRun_ReportOutput_ReportOutput struct {
 	FailedReportOutput any
-	S3ReportOutput any
+	S3ReportOutput     any
 }
 
 type TestRun_TestRun_ReportOutput struct {
 	AssessmentId any
-	CreatedAt any
+	CreatedAt    any
 	// <p>Union of possible report outputs.</p>
 	ReportOutput any
-	ReportType any
+	ReportType   any
 	// <p>ARN identifier.</p>
 	ServiceArn any
 	// <p>Status of report generation.</p>
@@ -101,19 +101,19 @@ type TestRun_TestRun_ReportOutput struct {
 
 type TestRun_TestRun_StopConditions struct {
 	Source any
-	Value any
+	Value  any
 }
 
 type TestRun_TestRun struct {
 	// Whether a test run targets resources in a single AWS account or across multiple accounts.
 	AccountTargeting any
-	EndedAt any
-	ErrorMessage any
-	EventCount any
-	Experiments any
+	EndedAt          any
+	ErrorMessage     any
+	EventCount       any
+	Experiments      any
 	// <p>Configuration for test execution logging destinations.</p>
 	LoggingConfiguration any
-	Parameters any
+	Parameters           any
 	// <p>Defines the permission model for a service.</p>
 	PermissionModel any
 	// <p>A snapshot of the resilience policy captured onto a test run from the service when the run was started.</p>
@@ -122,7 +122,7 @@ type TestRun_TestRun struct {
 	RegionSwitchExecutionId any
 	// <p>ARN identifier.</p>
 	RegionSwitchPlanArn any
-	Regions any
+	Regions             any
 	// <p>A snapshot of the report configuration captured onto a test run from the service when the run was started.</p>
 	ReportConfiguration any
 	// <p>Result of a report generation attempt.</p>
@@ -131,9 +131,9 @@ type TestRun_TestRun struct {
 	RoleName any
 	// <p>ARN identifier.</p>
 	ServiceArn any
-	StartedAt any
+	StartedAt  any
 	// <p>The status of a test run through its lifecycle.</p>
-	Status any
+	Status         any
 	StopConditions any
 	// <p>The unique identifier of a test.</p>
 	TestId any
@@ -163,6 +163,6 @@ var TestRun = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehubv2_test_run",
 	Fields: ubx.FieldMap{
 		"ServiceArn": ubx.FieldSpec{WireName: "service_arn"},
-		"TestRunId": ubx.FieldSpec{WireName: "test_run_id"},
+		"TestRunId":  ubx.FieldSpec{WireName: "test_run_id"},
 	},
 }

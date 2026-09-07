@@ -4,7 +4,7 @@ package mwaaserverless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Workflow_Code_S3Location struct {
-	Bucket any
+	Bucket    any
 	ObjectKey any
 	VersionId any
 }
@@ -16,7 +16,7 @@ type Workflow_Code struct {
 type Workflow_EncryptionConfiguration struct {
 	// Specifies the customer-managed AWS KMS key ID (or ARN/alias) that Amazon MWAA uses to encrypt the serverless workflow's definition and related data at rest. (AI-inferred)
 	KmsKeyId any
-	Type any
+	Type     any
 }
 
 type Workflow_LoggingConfiguration struct {
@@ -36,36 +36,36 @@ type Workflow_ScheduleConfiguration struct {
 }
 
 var Workflow_Code_S3LocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"ObjectKey": ubx.FieldSpec{WireName: "object_key"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
-	}
+	"Bucket":    ubx.FieldSpec{WireName: "bucket"},
+	"ObjectKey": ubx.FieldSpec{WireName: "object_key"},
+	"VersionId": ubx.FieldSpec{WireName: "version_id"},
+}
 
 var Workflow_CodeFields = ubx.FieldMap{
-		"S3Location": ubx.FieldSpec{
-			WireName: "s3_location",
-			Kind: "object",
-			Fields: Workflow_Code_S3LocationFields,
-		},
-	}
+	"S3Location": ubx.FieldSpec{
+		WireName: "s3_location",
+		Kind:     "object",
+		Fields:   Workflow_Code_S3LocationFields,
+	},
+}
 
 var Workflow_EncryptionConfigurationFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var Workflow_LoggingConfigurationFields = ubx.FieldMap{
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-	}
+	"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
+}
 
 var Workflow_NetworkConfigurationFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 type WorkflowConfig struct {
 	// The location of code artifacts in Amazon S3 for the workflow. Modeled as a single-member container so it stays extensible to future artifact types (e.g. OCI images).
-	Code any
+	Code                 any
 	DefinitionS3Location any
 	// The description of this workflow. (AI-inferred)
 	Description any
@@ -91,7 +91,7 @@ type WorkflowAttrs struct {
 	// The date and time when this workflow's own code was snapshotted for this version. (AI-inferred)
 	CodeSnapshottedAt any
 	// The timestamp, in ISO 8601 format, that indicates when the serverless workflow was created. (AI-inferred)
-	CreatedAt any
+	CreatedAt            any
 	DefinitionS3Location any
 	// The description of this workflow. (AI-inferred)
 	Description any
@@ -106,7 +106,7 @@ type WorkflowAttrs struct {
 	// Defines the VPC network configuration, including the subnet IDs and security group IDs, that the serverless workflow uses to run and access resources within your VPC. (AI-inferred)
 	NetworkConfiguration any
 	// The Amazon Resource Name (ARN) of the IAM role that Amazon MWAA (Managed Workflows for Apache Airflow) assumes to access resources in your account, such as S3 buckets and CloudWatch Logs, on behalf of the serverless workflow. (AI-inferred)
-	RoleArn any
+	RoleArn               any
 	ScheduleConfiguration any
 	// A map of key-value pairs to be applied as tags
 	Tags any
@@ -125,33 +125,33 @@ var Workflow = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Code": ubx.FieldSpec{
 			WireName: "code",
-			Kind: "object",
-			Fields: Workflow_CodeFields,
+			Kind:     "object",
+			Fields:   Workflow_CodeFields,
 		},
 		"DefinitionS3Location": ubx.FieldSpec{
 			WireName: "definition_s3_location",
-			Kind: "object",
-			Fields: Workflow_Code_S3LocationFields,
+			Kind:     "object",
+			Fields:   Workflow_Code_S3LocationFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EncryptionConfiguration": ubx.FieldSpec{
 			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: Workflow_EncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   Workflow_EncryptionConfigurationFields,
 		},
 		"LoggingConfiguration": ubx.FieldSpec{
 			WireName: "logging_configuration",
-			Kind: "object",
-			Fields: Workflow_LoggingConfigurationFields,
+			Kind:     "object",
+			Fields:   Workflow_LoggingConfigurationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"NetworkConfiguration": ubx.FieldSpec{
 			WireName: "network_configuration",
-			Kind: "object",
-			Fields: Workflow_NetworkConfigurationFields,
+			Kind:     "object",
+			Fields:   Workflow_NetworkConfigurationFields,
 		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"RoleArn":     ubx.FieldSpec{WireName: "role_arn"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 		"TriggerMode": ubx.FieldSpec{WireName: "trigger_mode"},
 	},
 }

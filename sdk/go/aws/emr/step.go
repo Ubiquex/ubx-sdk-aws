@@ -22,20 +22,20 @@ type Step_HadoopJarStep struct {
 }
 
 var Step_HadoopJarStep_StepPropertiesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Step_HadoopJarStepFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Jar": ubx.FieldSpec{WireName: "jar"},
-		"MainClass": ubx.FieldSpec{WireName: "main_class"},
-		"StepProperties": ubx.FieldSpec{
-			WireName: "step_properties",
-			Kind: "list",
-			Fields: Step_HadoopJarStep_StepPropertiesFields,
-		},
-	}
+	"Args":      ubx.FieldSpec{WireName: "args"},
+	"Jar":       ubx.FieldSpec{WireName: "jar"},
+	"MainClass": ubx.FieldSpec{WireName: "main_class"},
+	"StepProperties": ubx.FieldSpec{
+		WireName: "step_properties",
+		Kind:     "list",
+		Fields:   Step_HadoopJarStep_StepPropertiesFields,
+	},
+}
 
 type StepConfig struct {
 	// This specifies what action to take when the cluster step fails. Possible values are CANCEL_AND_WAIT and CONTINUE.
@@ -72,15 +72,15 @@ type StepAttrs struct {
 var Step = ubx.ResourceBinding{
 	WireType: "aws_emr_step",
 	Fields: ubx.FieldMap{
-		"ActionOnFailure": ubx.FieldSpec{WireName: "action_on_failure"},
+		"ActionOnFailure":  ubx.FieldSpec{WireName: "action_on_failure"},
 		"EncryptionKeyArn": ubx.FieldSpec{WireName: "encryption_key_arn"},
 		"HadoopJarStep": ubx.FieldSpec{
 			WireName: "hadoop_jar_step",
-			Kind: "object",
-			Fields: Step_HadoopJarStepFields,
+			Kind:     "object",
+			Fields:   Step_HadoopJarStepFields,
 		},
 		"JobFlowId": ubx.FieldSpec{WireName: "job_flow_id"},
-		"LogUri": ubx.FieldSpec{WireName: "log_uri"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"LogUri":    ubx.FieldSpec{WireName: "log_uri"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

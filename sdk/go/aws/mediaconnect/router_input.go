@@ -51,9 +51,9 @@ type RouterInput_Configuration_Failover_ProtocolConfigurations_SrtListener struc
 }
 
 type RouterInput_Configuration_Failover_ProtocolConfigurations struct {
-	Rist any
-	Rtp any
-	SrtCaller any
+	Rist        any
+	Rtp         any
+	SrtCaller   any
 	SrtListener any
 }
 
@@ -61,13 +61,13 @@ type RouterInput_Configuration_Failover struct {
 	// Specifies the Amazon Resource Name (ARN) of the elastic network interface (ENI) that the MediaConnect router input uses for failover, allowing the input to switch to this interface if the primary network interface becomes unavailable. (AI-inferred)
 	NetworkInterfaceArn any
 	// The zero-based index of the source input that serves as the primary source in the failover configuration, ensuring that traffic is routed to this source first and to the secondary source if the primary becomes unavailable. (AI-inferred)
-	PrimarySourceIndex any
+	PrimarySourceIndex     any
 	ProtocolConfigurations any
-	SourcePriorityMode any
+	SourcePriorityMode     any
 }
 
 type RouterInput_Configuration_MediaConnectFlow_SourceTransitDecryption_EncryptionKeyConfiguration struct {
-	Automatic any
+	Automatic      any
 	SecretsManager any
 }
 
@@ -81,7 +81,7 @@ type RouterInput_Configuration_MediaConnectFlow_SourceTransitDecryption struct {
 type RouterInput_Configuration_MediaConnectFlow struct {
 	FlowArn any
 	// The Amazon Resource Name (ARN) of the AWS Elemental MediaConnect flow output that serves as the media source for this router input. (AI-inferred)
-	FlowOutputArn any
+	FlowOutputArn           any
 	SourceTransitDecryption any
 }
 
@@ -90,8 +90,8 @@ type RouterInput_Configuration_MediaLiveChannel struct {
 	MediaLiveChannelArn any
 	// Specifies the name of the MediaLive channel output that this router input is configured to receive media from. (AI-inferred)
 	MediaLiveChannelOutputName any
-	MediaLivePipelineId any
-	SourceTransitDecryption any
+	MediaLivePipelineId        any
+	SourceTransitDecryption    any
 }
 
 type RouterInput_Configuration_Merge_ProtocolConfigurations struct {
@@ -104,7 +104,7 @@ type RouterInput_Configuration_Merge_ProtocolConfigurations struct {
 type RouterInput_Configuration_Merge struct {
 	// Specifies the number of milliseconds that the MediaConnect router input waits for a merged input stream to recover after a loss before it switches to the secondary/failover stream, controlling the smoothness of the transition. (AI-inferred)
 	MergeRecoveryWindowMilliseconds any
-	NetworkInterfaceArn any
+	NetworkInterfaceArn             any
 	// Specifies the list of protocol configurations that are merged together to allow the router input to accept and combine multiple media streams from different protocols into a single logical input. (AI-inferred)
 	ProtocolConfigurations any
 }
@@ -112,29 +112,29 @@ type RouterInput_Configuration_Merge struct {
 type RouterInput_Configuration_Standard struct {
 	// The ARN of the network interface used by the standard configuration of this MediaConnect router input to receive media traffic. (AI-inferred)
 	NetworkInterfaceArn any
-	Protocol any
+	Protocol            any
 	// Specifies the protocol-specific settings (such as transport protocol and network parameters) for the standard input of a MediaConnect router. (AI-inferred)
 	ProtocolConfiguration any
 }
 
 type RouterInput_Configuration struct {
 	// The failover configuration for the MediaConnect router input, defining whether the input participates in automatic failover and its priority relative to other router inputs. (AI-inferred)
-	Failover any
+	Failover         any
 	MediaConnectFlow any
 	MediaLiveChannel any
-	Merge any
-	Standard any
+	Merge            any
+	Standard         any
 }
 
 type RouterInput_ContentQualityAnalysisConfiguration_ContentLevel_BlackFrames struct {
 	// Specifies whether black frame detection is enabled or disabled in the content level of the content quality analysis configuration for this MediaConnect router input. (AI-inferred)
-	State any
+	State            any
 	ThresholdSeconds any
 }
 
 type RouterInput_ContentQualityAnalysisConfiguration_ContentLevel struct {
 	// Configures content-level detection settings for black frames in the incoming video stream, allowing you to define when a frame is considered black and how to respond. (AI-inferred)
-	BlackFrames any
+	BlackFrames  any
 	FrozenFrames any
 	// Specifies the detection parameters for silent audio within the content level of the media input, allowing adjustment of silence thresholds and durations for quality analysis. (AI-inferred)
 	SilentAudio any
@@ -145,7 +145,7 @@ type RouterInput_ContentQualityAnalysisConfiguration struct {
 }
 
 type RouterInput_MaintenanceConfiguration_PreferredDayTime struct {
-	Day any
+	Day  any
 	Time any
 }
 
@@ -156,238 +156,238 @@ type RouterInput_MaintenanceConfiguration struct {
 }
 
 type RouterInput_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var RouterInput_Configuration_Failover_ProtocolConfigurations_RistFields = ubx.FieldMap{
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"RecoveryLatencyMilliseconds": ubx.FieldSpec{WireName: "recovery_latency_milliseconds"},
-	}
+	"Port":                        ubx.FieldSpec{WireName: "port"},
+	"RecoveryLatencyMilliseconds": ubx.FieldSpec{WireName: "recovery_latency_milliseconds"},
+}
 
 var RouterInput_Configuration_Failover_ProtocolConfigurations_RtpFields = ubx.FieldMap{
-		"ForwardErrorCorrection": ubx.FieldSpec{WireName: "forward_error_correction"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"ForwardErrorCorrection": ubx.FieldSpec{WireName: "forward_error_correction"},
+	"Port":                   ubx.FieldSpec{WireName: "port"},
+}
 
 var RouterInput_Configuration_Failover_ProtocolConfigurations_SrtCaller_DecryptionConfiguration_EncryptionKeyFields = ubx.FieldMap{
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+	"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var RouterInput_Configuration_Failover_ProtocolConfigurations_SrtCaller_DecryptionConfigurationFields = ubx.FieldMap{
-		"EncryptionKey": ubx.FieldSpec{
-			WireName: "encryption_key",
-			Kind: "object",
-			Fields: RouterInput_Configuration_Failover_ProtocolConfigurations_SrtCaller_DecryptionConfiguration_EncryptionKeyFields,
-		},
-	}
+	"EncryptionKey": ubx.FieldSpec{
+		WireName: "encryption_key",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_Failover_ProtocolConfigurations_SrtCaller_DecryptionConfiguration_EncryptionKeyFields,
+	},
+}
 
 var RouterInput_Configuration_Failover_ProtocolConfigurations_SrtCallerFields = ubx.FieldMap{
-		"DecryptionConfiguration": ubx.FieldSpec{
-			WireName: "decryption_configuration",
-			Kind: "object",
-			Fields: RouterInput_Configuration_Failover_ProtocolConfigurations_SrtCaller_DecryptionConfigurationFields,
-		},
-		"MinimumLatencyMilliseconds": ubx.FieldSpec{WireName: "minimum_latency_milliseconds"},
-		"SourceAddress": ubx.FieldSpec{WireName: "source_address"},
-		"SourcePort": ubx.FieldSpec{WireName: "source_port"},
-		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
-	}
+	"DecryptionConfiguration": ubx.FieldSpec{
+		WireName: "decryption_configuration",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_Failover_ProtocolConfigurations_SrtCaller_DecryptionConfigurationFields,
+	},
+	"MinimumLatencyMilliseconds": ubx.FieldSpec{WireName: "minimum_latency_milliseconds"},
+	"SourceAddress":              ubx.FieldSpec{WireName: "source_address"},
+	"SourcePort":                 ubx.FieldSpec{WireName: "source_port"},
+	"StreamId":                   ubx.FieldSpec{WireName: "stream_id"},
+}
 
 var RouterInput_Configuration_Failover_ProtocolConfigurations_SrtListenerFields = ubx.FieldMap{
-		"DecryptionConfiguration": ubx.FieldSpec{
-			WireName: "decryption_configuration",
-			Kind: "object",
-			Fields: RouterInput_Configuration_Failover_ProtocolConfigurations_SrtCaller_DecryptionConfigurationFields,
-		},
-		"MinimumLatencyMilliseconds": ubx.FieldSpec{WireName: "minimum_latency_milliseconds"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"DecryptionConfiguration": ubx.FieldSpec{
+		WireName: "decryption_configuration",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_Failover_ProtocolConfigurations_SrtCaller_DecryptionConfigurationFields,
+	},
+	"MinimumLatencyMilliseconds": ubx.FieldSpec{WireName: "minimum_latency_milliseconds"},
+	"Port":                       ubx.FieldSpec{WireName: "port"},
+}
 
 var RouterInput_Configuration_Failover_ProtocolConfigurationsFields = ubx.FieldMap{
-		"Rist": ubx.FieldSpec{
-			WireName: "rist",
-			Kind: "object",
-			Fields: RouterInput_Configuration_Failover_ProtocolConfigurations_RistFields,
-		},
-		"Rtp": ubx.FieldSpec{
-			WireName: "rtp",
-			Kind: "object",
-			Fields: RouterInput_Configuration_Failover_ProtocolConfigurations_RtpFields,
-		},
-		"SrtCaller": ubx.FieldSpec{
-			WireName: "srt_caller",
-			Kind: "object",
-			Fields: RouterInput_Configuration_Failover_ProtocolConfigurations_SrtCallerFields,
-		},
-		"SrtListener": ubx.FieldSpec{
-			WireName: "srt_listener",
-			Kind: "object",
-			Fields: RouterInput_Configuration_Failover_ProtocolConfigurations_SrtListenerFields,
-		},
-	}
+	"Rist": ubx.FieldSpec{
+		WireName: "rist",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_Failover_ProtocolConfigurations_RistFields,
+	},
+	"Rtp": ubx.FieldSpec{
+		WireName: "rtp",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_Failover_ProtocolConfigurations_RtpFields,
+	},
+	"SrtCaller": ubx.FieldSpec{
+		WireName: "srt_caller",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_Failover_ProtocolConfigurations_SrtCallerFields,
+	},
+	"SrtListener": ubx.FieldSpec{
+		WireName: "srt_listener",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_Failover_ProtocolConfigurations_SrtListenerFields,
+	},
+}
 
 var RouterInput_Configuration_FailoverFields = ubx.FieldMap{
-		"NetworkInterfaceArn": ubx.FieldSpec{WireName: "network_interface_arn"},
-		"PrimarySourceIndex": ubx.FieldSpec{WireName: "primary_source_index"},
-		"ProtocolConfigurations": ubx.FieldSpec{
-			WireName: "protocol_configurations",
-			Kind: "list",
-			Fields: RouterInput_Configuration_Failover_ProtocolConfigurationsFields,
-		},
-		"SourcePriorityMode": ubx.FieldSpec{WireName: "source_priority_mode"},
-	}
+	"NetworkInterfaceArn": ubx.FieldSpec{WireName: "network_interface_arn"},
+	"PrimarySourceIndex":  ubx.FieldSpec{WireName: "primary_source_index"},
+	"ProtocolConfigurations": ubx.FieldSpec{
+		WireName: "protocol_configurations",
+		Kind:     "list",
+		Fields:   RouterInput_Configuration_Failover_ProtocolConfigurationsFields,
+	},
+	"SourcePriorityMode": ubx.FieldSpec{WireName: "source_priority_mode"},
+}
 
 var RouterInput_Configuration_MediaConnectFlow_SourceTransitDecryption_EncryptionKeyConfigurationFields = ubx.FieldMap{
-		"Automatic": ubx.FieldSpec{WireName: "automatic"},
-		"SecretsManager": ubx.FieldSpec{
-			WireName: "secrets_manager",
-			Kind: "object",
-			Fields: RouterInput_Configuration_Failover_ProtocolConfigurations_SrtCaller_DecryptionConfiguration_EncryptionKeyFields,
-		},
-	}
+	"Automatic": ubx.FieldSpec{WireName: "automatic"},
+	"SecretsManager": ubx.FieldSpec{
+		WireName: "secrets_manager",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_Failover_ProtocolConfigurations_SrtCaller_DecryptionConfiguration_EncryptionKeyFields,
+	},
+}
 
 var RouterInput_Configuration_MediaConnectFlow_SourceTransitDecryptionFields = ubx.FieldMap{
-		"EncryptionKeyConfiguration": ubx.FieldSpec{
-			WireName: "encryption_key_configuration",
-			Kind: "object",
-			Fields: RouterInput_Configuration_MediaConnectFlow_SourceTransitDecryption_EncryptionKeyConfigurationFields,
-		},
-		"EncryptionKeyType": ubx.FieldSpec{WireName: "encryption_key_type"},
-	}
+	"EncryptionKeyConfiguration": ubx.FieldSpec{
+		WireName: "encryption_key_configuration",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_MediaConnectFlow_SourceTransitDecryption_EncryptionKeyConfigurationFields,
+	},
+	"EncryptionKeyType": ubx.FieldSpec{WireName: "encryption_key_type"},
+}
 
 var RouterInput_Configuration_MediaConnectFlowFields = ubx.FieldMap{
-		"FlowArn": ubx.FieldSpec{WireName: "flow_arn"},
-		"FlowOutputArn": ubx.FieldSpec{WireName: "flow_output_arn"},
-		"SourceTransitDecryption": ubx.FieldSpec{
-			WireName: "source_transit_decryption",
-			Kind: "object",
-			Fields: RouterInput_Configuration_MediaConnectFlow_SourceTransitDecryptionFields,
-		},
-	}
+	"FlowArn":       ubx.FieldSpec{WireName: "flow_arn"},
+	"FlowOutputArn": ubx.FieldSpec{WireName: "flow_output_arn"},
+	"SourceTransitDecryption": ubx.FieldSpec{
+		WireName: "source_transit_decryption",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_MediaConnectFlow_SourceTransitDecryptionFields,
+	},
+}
 
 var RouterInput_Configuration_MediaLiveChannelFields = ubx.FieldMap{
-		"MediaLiveChannelArn": ubx.FieldSpec{WireName: "media_live_channel_arn"},
-		"MediaLiveChannelOutputName": ubx.FieldSpec{WireName: "media_live_channel_output_name"},
-		"MediaLivePipelineId": ubx.FieldSpec{WireName: "media_live_pipeline_id"},
-		"SourceTransitDecryption": ubx.FieldSpec{
-			WireName: "source_transit_decryption",
-			Kind: "object",
-			Fields: RouterInput_Configuration_MediaConnectFlow_SourceTransitDecryptionFields,
-		},
-	}
+	"MediaLiveChannelArn":        ubx.FieldSpec{WireName: "media_live_channel_arn"},
+	"MediaLiveChannelOutputName": ubx.FieldSpec{WireName: "media_live_channel_output_name"},
+	"MediaLivePipelineId":        ubx.FieldSpec{WireName: "media_live_pipeline_id"},
+	"SourceTransitDecryption": ubx.FieldSpec{
+		WireName: "source_transit_decryption",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_MediaConnectFlow_SourceTransitDecryptionFields,
+	},
+}
 
 var RouterInput_Configuration_Merge_ProtocolConfigurationsFields = ubx.FieldMap{
-		"Rist": ubx.FieldSpec{
-			WireName: "rist",
-			Kind: "object",
-			Fields: RouterInput_Configuration_Failover_ProtocolConfigurations_RistFields,
-		},
-		"Rtp": ubx.FieldSpec{
-			WireName: "rtp",
-			Kind: "object",
-			Fields: RouterInput_Configuration_Failover_ProtocolConfigurations_RtpFields,
-		},
-	}
+	"Rist": ubx.FieldSpec{
+		WireName: "rist",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_Failover_ProtocolConfigurations_RistFields,
+	},
+	"Rtp": ubx.FieldSpec{
+		WireName: "rtp",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_Failover_ProtocolConfigurations_RtpFields,
+	},
+}
 
 var RouterInput_Configuration_MergeFields = ubx.FieldMap{
-		"MergeRecoveryWindowMilliseconds": ubx.FieldSpec{WireName: "merge_recovery_window_milliseconds"},
-		"NetworkInterfaceArn": ubx.FieldSpec{WireName: "network_interface_arn"},
-		"ProtocolConfigurations": ubx.FieldSpec{
-			WireName: "protocol_configurations",
-			Kind: "list",
-			Fields: RouterInput_Configuration_Merge_ProtocolConfigurationsFields,
-		},
-	}
+	"MergeRecoveryWindowMilliseconds": ubx.FieldSpec{WireName: "merge_recovery_window_milliseconds"},
+	"NetworkInterfaceArn":             ubx.FieldSpec{WireName: "network_interface_arn"},
+	"ProtocolConfigurations": ubx.FieldSpec{
+		WireName: "protocol_configurations",
+		Kind:     "list",
+		Fields:   RouterInput_Configuration_Merge_ProtocolConfigurationsFields,
+	},
+}
 
 var RouterInput_Configuration_StandardFields = ubx.FieldMap{
-		"NetworkInterfaceArn": ubx.FieldSpec{WireName: "network_interface_arn"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"ProtocolConfiguration": ubx.FieldSpec{
-			WireName: "protocol_configuration",
-			Kind: "object",
-			Fields: RouterInput_Configuration_Failover_ProtocolConfigurationsFields,
-		},
-	}
+	"NetworkInterfaceArn": ubx.FieldSpec{WireName: "network_interface_arn"},
+	"Protocol":            ubx.FieldSpec{WireName: "protocol"},
+	"ProtocolConfiguration": ubx.FieldSpec{
+		WireName: "protocol_configuration",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_Failover_ProtocolConfigurationsFields,
+	},
+}
 
 var RouterInput_ConfigurationFields = ubx.FieldMap{
-		"Failover": ubx.FieldSpec{
-			WireName: "failover",
-			Kind: "object",
-			Fields: RouterInput_Configuration_FailoverFields,
-		},
-		"MediaConnectFlow": ubx.FieldSpec{
-			WireName: "media_connect_flow",
-			Kind: "object",
-			Fields: RouterInput_Configuration_MediaConnectFlowFields,
-		},
-		"MediaLiveChannel": ubx.FieldSpec{
-			WireName: "media_live_channel",
-			Kind: "object",
-			Fields: RouterInput_Configuration_MediaLiveChannelFields,
-		},
-		"Merge": ubx.FieldSpec{
-			WireName: "merge",
-			Kind: "object",
-			Fields: RouterInput_Configuration_MergeFields,
-		},
-		"Standard": ubx.FieldSpec{
-			WireName: "standard",
-			Kind: "object",
-			Fields: RouterInput_Configuration_StandardFields,
-		},
-	}
+	"Failover": ubx.FieldSpec{
+		WireName: "failover",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_FailoverFields,
+	},
+	"MediaConnectFlow": ubx.FieldSpec{
+		WireName: "media_connect_flow",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_MediaConnectFlowFields,
+	},
+	"MediaLiveChannel": ubx.FieldSpec{
+		WireName: "media_live_channel",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_MediaLiveChannelFields,
+	},
+	"Merge": ubx.FieldSpec{
+		WireName: "merge",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_MergeFields,
+	},
+	"Standard": ubx.FieldSpec{
+		WireName: "standard",
+		Kind:     "object",
+		Fields:   RouterInput_Configuration_StandardFields,
+	},
+}
 
 var RouterInput_ContentQualityAnalysisConfiguration_ContentLevel_BlackFramesFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-		"ThresholdSeconds": ubx.FieldSpec{WireName: "threshold_seconds"},
-	}
+	"State":            ubx.FieldSpec{WireName: "state"},
+	"ThresholdSeconds": ubx.FieldSpec{WireName: "threshold_seconds"},
+}
 
 var RouterInput_ContentQualityAnalysisConfiguration_ContentLevelFields = ubx.FieldMap{
-		"BlackFrames": ubx.FieldSpec{
-			WireName: "black_frames",
-			Kind: "object",
-			Fields: RouterInput_ContentQualityAnalysisConfiguration_ContentLevel_BlackFramesFields,
-		},
-		"FrozenFrames": ubx.FieldSpec{
-			WireName: "frozen_frames",
-			Kind: "object",
-			Fields: RouterInput_ContentQualityAnalysisConfiguration_ContentLevel_BlackFramesFields,
-		},
-		"SilentAudio": ubx.FieldSpec{
-			WireName: "silent_audio",
-			Kind: "object",
-			Fields: RouterInput_ContentQualityAnalysisConfiguration_ContentLevel_BlackFramesFields,
-		},
-	}
+	"BlackFrames": ubx.FieldSpec{
+		WireName: "black_frames",
+		Kind:     "object",
+		Fields:   RouterInput_ContentQualityAnalysisConfiguration_ContentLevel_BlackFramesFields,
+	},
+	"FrozenFrames": ubx.FieldSpec{
+		WireName: "frozen_frames",
+		Kind:     "object",
+		Fields:   RouterInput_ContentQualityAnalysisConfiguration_ContentLevel_BlackFramesFields,
+	},
+	"SilentAudio": ubx.FieldSpec{
+		WireName: "silent_audio",
+		Kind:     "object",
+		Fields:   RouterInput_ContentQualityAnalysisConfiguration_ContentLevel_BlackFramesFields,
+	},
+}
 
 var RouterInput_ContentQualityAnalysisConfigurationFields = ubx.FieldMap{
-		"ContentLevel": ubx.FieldSpec{
-			WireName: "content_level",
-			Kind: "object",
-			Fields: RouterInput_ContentQualityAnalysisConfiguration_ContentLevelFields,
-		},
-	}
+	"ContentLevel": ubx.FieldSpec{
+		WireName: "content_level",
+		Kind:     "object",
+		Fields:   RouterInput_ContentQualityAnalysisConfiguration_ContentLevelFields,
+	},
+}
 
 var RouterInput_MaintenanceConfiguration_PreferredDayTimeFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"Day":  ubx.FieldSpec{WireName: "day"},
+	"Time": ubx.FieldSpec{WireName: "time"},
+}
 
 var RouterInput_MaintenanceConfigurationFields = ubx.FieldMap{
-		"Default": ubx.FieldSpec{WireName: "default"},
-		"PreferredDayTime": ubx.FieldSpec{
-			WireName: "preferred_day_time",
-			Kind: "object",
-			Fields: RouterInput_MaintenanceConfiguration_PreferredDayTimeFields,
-		},
-	}
+	"Default": ubx.FieldSpec{WireName: "default"},
+	"PreferredDayTime": ubx.FieldSpec{
+		WireName: "preferred_day_time",
+		Kind:     "object",
+		Fields:   RouterInput_MaintenanceConfiguration_PreferredDayTimeFields,
+	},
+}
 
 var RouterInput_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RouterInputConfig struct {
 	// The Availability Zone where you want to create the router input. This must be a valid Availability Zone for the region specified by regionName, or the current region if no regionName is provided.
@@ -465,33 +465,33 @@ var RouterInput = ubx.ResourceBinding{
 		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: RouterInput_ConfigurationFields,
+			Kind:     "object",
+			Fields:   RouterInput_ConfigurationFields,
 		},
 		"ContentQualityAnalysisConfiguration": ubx.FieldSpec{
 			WireName: "content_quality_analysis_configuration",
-			Kind: "object",
-			Fields: RouterInput_ContentQualityAnalysisConfigurationFields,
+			Kind:     "object",
+			Fields:   RouterInput_ContentQualityAnalysisConfigurationFields,
 		},
 		"MaintenanceConfiguration": ubx.FieldSpec{
 			WireName: "maintenance_configuration",
-			Kind: "object",
-			Fields: RouterInput_MaintenanceConfigurationFields,
+			Kind:     "object",
+			Fields:   RouterInput_MaintenanceConfigurationFields,
 		},
 		"MaximumBitrate": ubx.FieldSpec{WireName: "maximum_bitrate"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RegionName": ubx.FieldSpec{WireName: "region_name"},
-		"RoutingScope": ubx.FieldSpec{WireName: "routing_scope"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"RegionName":     ubx.FieldSpec{WireName: "region_name"},
+		"RoutingScope":   ubx.FieldSpec{WireName: "routing_scope"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RouterInput_TagsFields,
+			Kind:     "list",
+			Fields:   RouterInput_TagsFields,
 		},
 		"Tier": ubx.FieldSpec{WireName: "tier"},
 		"TransitEncryption": ubx.FieldSpec{
 			WireName: "transit_encryption",
-			Kind: "object",
-			Fields: RouterInput_Configuration_MediaConnectFlow_SourceTransitDecryptionFields,
+			Kind:     "object",
+			Fields:   RouterInput_Configuration_MediaConnectFlow_SourceTransitDecryptionFields,
 		},
 	},
 }

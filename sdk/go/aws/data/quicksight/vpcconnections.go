@@ -4,40 +4,40 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Vpcconnections_VpcconnectionSummaries_NetworkInterfaces struct {
-	AvailabilityZone any
-	ErrorMessage any
+	AvailabilityZone   any
+	ErrorMessage       any
 	NetworkInterfaceId any
-	Status any
-	SubnetId any
+	Status             any
+	SubnetId           any
 }
 
 type Vpcconnections_VpcconnectionSummaries struct {
-	Arn any
+	Arn                any
 	AvailabilityStatus any
-	CreatedTime any
-	DnsResolvers any
-	LastUpdatedTime any
-	Name any
-	NetworkInterfaces any
-	RoleArn any
-	SecurityGroupIds any
-	Status any
-	VpcconnectionId any
-	Vpcid any
+	CreatedTime        any
+	DnsResolvers       any
+	LastUpdatedTime    any
+	Name               any
+	NetworkInterfaces  any
+	RoleArn            any
+	SecurityGroupIds   any
+	Status             any
+	VpcconnectionId    any
+	Vpcid              any
 }
 
 type VpcconnectionsConfig struct {
 	AwsAccountId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type VpcconnectionsAttrs struct {
-	AwsAccountId any
-	MaxResults any
-	NextToken any
-	RequestId any
-	Status any
+	AwsAccountId           any
+	MaxResults             any
+	NextToken              any
+	RequestId              any
+	Status                 any
 	VpcconnectionSummaries any
 }
 
@@ -45,7 +45,7 @@ var Vpcconnections = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_vpcconnections",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,34 +4,34 @@ package data_qapps
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataQappsQapps_Apps struct {
-	AppArn any
-	AppId any
-	CanEdit any
-	CreatedAt any
+	AppArn      any
+	AppId       any
+	CanEdit     any
+	CreatedAt   any
 	Description any
-	IsVerified any
-	Status any
-	Title any
+	IsVerified  any
+	Status      any
+	Title       any
 }
 
 type DataQappsQappsConfig struct {
 	InstanceId any
-	Limit any
-	NextToken any
+	Limit      any
+	NextToken  any
 }
 
 type DataQappsQappsAttrs struct {
-	Apps any
+	Apps       any
 	InstanceId any
-	Limit any
-	NextToken any
+	Limit      any
+	NextToken  any
 }
 
 var DataQappsQapps = ubx.DataSourceBinding{
 	WireType: "aws_data_qapps_qapps",
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

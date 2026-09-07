@@ -18,14 +18,14 @@ type Bucket_Tags struct {
 }
 
 var Bucket_AccessRulesFields = ubx.FieldMap{
-		"AllowPublicOverrides": ubx.FieldSpec{WireName: "allow_public_overrides"},
-		"GetObject": ubx.FieldSpec{WireName: "get_object"},
-	}
+	"AllowPublicOverrides": ubx.FieldSpec{WireName: "allow_public_overrides"},
+	"GetObject":            ubx.FieldSpec{WireName: "get_object"},
+}
 
 var Bucket_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type BucketConfig struct {
 	// An object that sets the public accessibility of objects in the specified bucket.
@@ -72,18 +72,18 @@ var Bucket = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessRules": ubx.FieldSpec{
 			WireName: "access_rules",
-			Kind: "object",
-			Fields: Bucket_AccessRulesFields,
+			Kind:     "object",
+			Fields:   Bucket_AccessRulesFields,
 		},
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"BundleId": ubx.FieldSpec{WireName: "bundle_id"},
-		"ObjectVersioning": ubx.FieldSpec{WireName: "object_versioning"},
-		"ReadOnlyAccessAccounts": ubx.FieldSpec{WireName: "read_only_access_accounts"},
+		"BucketName":               ubx.FieldSpec{WireName: "bucket_name"},
+		"BundleId":                 ubx.FieldSpec{WireName: "bundle_id"},
+		"ObjectVersioning":         ubx.FieldSpec{WireName: "object_versioning"},
+		"ReadOnlyAccessAccounts":   ubx.FieldSpec{WireName: "read_only_access_accounts"},
 		"ResourcesReceivingAccess": ubx.FieldSpec{WireName: "resources_receiving_access"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Bucket_TagsFields,
+			Kind:     "list",
+			Fields:   Bucket_TagsFields,
 		},
 	},
 }

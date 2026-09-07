@@ -11,9 +11,9 @@ type Label_Tags struct {
 }
 
 var Label_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LabelConfig struct {
 	// The label description.
@@ -43,11 +43,11 @@ var Label = ubx.ResourceBinding{
 	WireType: "aws_fraud_detector_label",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Label_TagsFields,
+			Kind:     "list",
+			Fields:   Label_TagsFields,
 		},
 	},
 }

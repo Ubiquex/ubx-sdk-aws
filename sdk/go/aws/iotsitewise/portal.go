@@ -17,14 +17,14 @@ type Portal_Tags struct {
 }
 
 var Portal_AlarmsFields = ubx.FieldMap{
-		"AlarmRoleArn": ubx.FieldSpec{WireName: "alarm_role_arn"},
-		"NotificationLambdaArn": ubx.FieldSpec{WireName: "notification_lambda_arn"},
-	}
+	"AlarmRoleArn":          ubx.FieldSpec{WireName: "alarm_role_arn"},
+	"NotificationLambdaArn": ubx.FieldSpec{WireName: "notification_lambda_arn"},
+}
 
 var Portal_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PortalConfig struct {
 	// Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
@@ -85,21 +85,21 @@ var Portal = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Alarms": ubx.FieldSpec{
 			WireName: "alarms",
-			Kind: "object",
-			Fields: Portal_AlarmsFields,
+			Kind:     "object",
+			Fields:   Portal_AlarmsFields,
 		},
 		"NotificationSenderEmail": ubx.FieldSpec{WireName: "notification_sender_email"},
-		"PortalAuthMode": ubx.FieldSpec{WireName: "portal_auth_mode"},
-		"PortalContactEmail": ubx.FieldSpec{WireName: "portal_contact_email"},
-		"PortalDescription": ubx.FieldSpec{WireName: "portal_description"},
-		"PortalName": ubx.FieldSpec{WireName: "portal_name"},
-		"PortalType": ubx.FieldSpec{WireName: "portal_type"},
+		"PortalAuthMode":          ubx.FieldSpec{WireName: "portal_auth_mode"},
+		"PortalContactEmail":      ubx.FieldSpec{WireName: "portal_contact_email"},
+		"PortalDescription":       ubx.FieldSpec{WireName: "portal_description"},
+		"PortalName":              ubx.FieldSpec{WireName: "portal_name"},
+		"PortalType":              ubx.FieldSpec{WireName: "portal_type"},
 		"PortalTypeConfiguration": ubx.FieldSpec{WireName: "portal_type_configuration"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":                 ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Portal_TagsFields,
+			Kind:     "list",
+			Fields:   Portal_TagsFields,
 		},
 	},
 }

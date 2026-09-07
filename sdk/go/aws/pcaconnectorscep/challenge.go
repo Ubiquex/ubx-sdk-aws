@@ -23,6 +23,6 @@ var Challenge = ubx.ResourceBinding{
 	WireType: "aws_pcaconnector_scep_challenge",
 	Fields: ubx.FieldMap{
 		"ConnectorArn": ubx.FieldSpec{WireName: "connector_arn"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":         ubx.FieldSpec{WireName: "tags"},
 	},
 }

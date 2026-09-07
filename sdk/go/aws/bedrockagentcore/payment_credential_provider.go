@@ -102,69 +102,69 @@ type PaymentCredentialProvider_ProviderConfigurationOutput struct {
 }
 
 type PaymentCredentialProvider_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var PaymentCredentialProvider_ProviderConfigurationInput_CoinbaseCdpConfiguration_ApiKeySecretConfigFields = ubx.FieldMap{
-		"JsonKey": ubx.FieldSpec{WireName: "json_key"},
-		"SecretId": ubx.FieldSpec{WireName: "secret_id"},
-	}
+	"JsonKey":  ubx.FieldSpec{WireName: "json_key"},
+	"SecretId": ubx.FieldSpec{WireName: "secret_id"},
+}
 
 var PaymentCredentialProvider_ProviderConfigurationInput_CoinbaseCdpConfigurationFields = ubx.FieldMap{
-		"ApiKeyId": ubx.FieldSpec{WireName: "api_key_id"},
-		"ApiKeySecret": ubx.FieldSpec{WireName: "api_key_secret"},
-		"ApiKeySecretConfig": ubx.FieldSpec{
-			WireName: "api_key_secret_config",
-			Kind: "object",
-			Fields: PaymentCredentialProvider_ProviderConfigurationInput_CoinbaseCdpConfiguration_ApiKeySecretConfigFields,
-		},
-		"ApiKeySecretSource": ubx.FieldSpec{WireName: "api_key_secret_source"},
-		"WalletSecret": ubx.FieldSpec{WireName: "wallet_secret"},
-		"WalletSecretConfig": ubx.FieldSpec{
-			WireName: "wallet_secret_config",
-			Kind: "object",
-			Fields: PaymentCredentialProvider_ProviderConfigurationInput_CoinbaseCdpConfiguration_ApiKeySecretConfigFields,
-		},
-		"WalletSecretSource": ubx.FieldSpec{WireName: "wallet_secret_source"},
-	}
+	"ApiKeyId":     ubx.FieldSpec{WireName: "api_key_id"},
+	"ApiKeySecret": ubx.FieldSpec{WireName: "api_key_secret"},
+	"ApiKeySecretConfig": ubx.FieldSpec{
+		WireName: "api_key_secret_config",
+		Kind:     "object",
+		Fields:   PaymentCredentialProvider_ProviderConfigurationInput_CoinbaseCdpConfiguration_ApiKeySecretConfigFields,
+	},
+	"ApiKeySecretSource": ubx.FieldSpec{WireName: "api_key_secret_source"},
+	"WalletSecret":       ubx.FieldSpec{WireName: "wallet_secret"},
+	"WalletSecretConfig": ubx.FieldSpec{
+		WireName: "wallet_secret_config",
+		Kind:     "object",
+		Fields:   PaymentCredentialProvider_ProviderConfigurationInput_CoinbaseCdpConfiguration_ApiKeySecretConfigFields,
+	},
+	"WalletSecretSource": ubx.FieldSpec{WireName: "wallet_secret_source"},
+}
 
 var PaymentCredentialProvider_ProviderConfigurationInput_StripePrivyConfigurationFields = ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"AppSecret": ubx.FieldSpec{WireName: "app_secret"},
-		"AppSecretConfig": ubx.FieldSpec{
-			WireName: "app_secret_config",
-			Kind: "object",
-			Fields: PaymentCredentialProvider_ProviderConfigurationInput_CoinbaseCdpConfiguration_ApiKeySecretConfigFields,
-		},
-		"AppSecretSource": ubx.FieldSpec{WireName: "app_secret_source"},
-		"AuthorizationId": ubx.FieldSpec{WireName: "authorization_id"},
-		"AuthorizationPrivateKey": ubx.FieldSpec{WireName: "authorization_private_key"},
-		"AuthorizationPrivateKeyConfig": ubx.FieldSpec{
-			WireName: "authorization_private_key_config",
-			Kind: "object",
-			Fields: PaymentCredentialProvider_ProviderConfigurationInput_CoinbaseCdpConfiguration_ApiKeySecretConfigFields,
-		},
-		"AuthorizationPrivateKeySource": ubx.FieldSpec{WireName: "authorization_private_key_source"},
-	}
+	"AppId":     ubx.FieldSpec{WireName: "app_id"},
+	"AppSecret": ubx.FieldSpec{WireName: "app_secret"},
+	"AppSecretConfig": ubx.FieldSpec{
+		WireName: "app_secret_config",
+		Kind:     "object",
+		Fields:   PaymentCredentialProvider_ProviderConfigurationInput_CoinbaseCdpConfiguration_ApiKeySecretConfigFields,
+	},
+	"AppSecretSource":         ubx.FieldSpec{WireName: "app_secret_source"},
+	"AuthorizationId":         ubx.FieldSpec{WireName: "authorization_id"},
+	"AuthorizationPrivateKey": ubx.FieldSpec{WireName: "authorization_private_key"},
+	"AuthorizationPrivateKeyConfig": ubx.FieldSpec{
+		WireName: "authorization_private_key_config",
+		Kind:     "object",
+		Fields:   PaymentCredentialProvider_ProviderConfigurationInput_CoinbaseCdpConfiguration_ApiKeySecretConfigFields,
+	},
+	"AuthorizationPrivateKeySource": ubx.FieldSpec{WireName: "authorization_private_key_source"},
+}
 
 var PaymentCredentialProvider_ProviderConfigurationInputFields = ubx.FieldMap{
-		"CoinbaseCdpConfiguration": ubx.FieldSpec{
-			WireName: "coinbase_cdp_configuration",
-			Kind: "object",
-			Fields: PaymentCredentialProvider_ProviderConfigurationInput_CoinbaseCdpConfigurationFields,
-		},
-		"StripePrivyConfiguration": ubx.FieldSpec{
-			WireName: "stripe_privy_configuration",
-			Kind: "object",
-			Fields: PaymentCredentialProvider_ProviderConfigurationInput_StripePrivyConfigurationFields,
-		},
-	}
+	"CoinbaseCdpConfiguration": ubx.FieldSpec{
+		WireName: "coinbase_cdp_configuration",
+		Kind:     "object",
+		Fields:   PaymentCredentialProvider_ProviderConfigurationInput_CoinbaseCdpConfigurationFields,
+	},
+	"StripePrivyConfiguration": ubx.FieldSpec{
+		WireName: "stripe_privy_configuration",
+		Kind:     "object",
+		Fields:   PaymentCredentialProvider_ProviderConfigurationInput_StripePrivyConfigurationFields,
+	},
+}
 
 var PaymentCredentialProvider_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PaymentCredentialProviderConfig struct {
 	// Supported vendor types for payment providers
@@ -200,16 +200,16 @@ var PaymentCredentialProvider = ubx.ResourceBinding{
 	WireType: "aws_bedrock_agent_core_payment_credential_provider",
 	Fields: ubx.FieldMap{
 		"CredentialProviderVendor": ubx.FieldSpec{WireName: "credential_provider_vendor"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
 		"ProviderConfigurationInput": ubx.FieldSpec{
 			WireName: "provider_configuration_input",
-			Kind: "object",
-			Fields: PaymentCredentialProvider_ProviderConfigurationInputFields,
+			Kind:     "object",
+			Fields:   PaymentCredentialProvider_ProviderConfigurationInputFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PaymentCredentialProvider_TagsFields,
+			Kind:     "list",
+			Fields:   PaymentCredentialProvider_TagsFields,
 		},
 	},
 }

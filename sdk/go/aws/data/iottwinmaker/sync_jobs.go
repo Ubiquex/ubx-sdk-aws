@@ -4,7 +4,7 @@ package iottwinmaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SyncJobs_SyncJobSummaries_Status_Error struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -14,32 +14,32 @@ type SyncJobs_SyncJobSummaries_Status struct {
 }
 
 type SyncJobs_SyncJobSummaries struct {
-	Arn any
+	Arn              any
 	CreationDateTime any
-	Status any
-	SyncSource any
-	UpdateDateTime any
-	WorkspaceId any
+	Status           any
+	SyncSource       any
+	UpdateDateTime   any
+	WorkspaceId      any
 }
 
 type SyncJobsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	WorkspaceId any
 }
 
 type SyncJobsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	SyncJobSummaries any
-	WorkspaceId any
+	WorkspaceId      any
 }
 
 var SyncJobs = ubx.DataSourceBinding{
 	WireType: "aws_iottwinmaker_sync_jobs",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"WorkspaceId": ubx.FieldSpec{WireName: "workspace_id"},
 	},
 }

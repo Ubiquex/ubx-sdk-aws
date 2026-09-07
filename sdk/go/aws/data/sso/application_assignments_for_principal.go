@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationAssignmentsForPrincipal_ApplicationAssignments struct {
 	ApplicationArn any
-	PrincipalId any
-	PrincipalType any
+	PrincipalId    any
+	PrincipalType  any
 }
 
 type ApplicationAssignmentsForPrincipal_Filter struct {
@@ -14,27 +14,27 @@ type ApplicationAssignmentsForPrincipal_Filter struct {
 }
 
 var ApplicationAssignmentsForPrincipal_FilterFields = ubx.FieldMap{
-		"ApplicationArn": ubx.FieldSpec{WireName: "application_arn"},
-	}
+	"ApplicationArn": ubx.FieldSpec{WireName: "application_arn"},
+}
 
 type ApplicationAssignmentsForPrincipalConfig struct {
 	// <p>A structure that describes a filter for application assignments.</p>
-	Filter any
-	InstanceArn any
-	MaxResults any
-	NextToken any
-	PrincipalId any
+	Filter        any
+	InstanceArn   any
+	MaxResults    any
+	NextToken     any
+	PrincipalId   any
 	PrincipalType any
 }
 
 type ApplicationAssignmentsForPrincipalAttrs struct {
 	ApplicationAssignments any
 	// <p>A structure that describes a filter for application assignments.</p>
-	Filter any
-	InstanceArn any
-	MaxResults any
-	NextToken any
-	PrincipalId any
+	Filter        any
+	InstanceArn   any
+	MaxResults    any
+	NextToken     any
+	PrincipalId   any
 	PrincipalType any
 }
 
@@ -43,13 +43,13 @@ var ApplicationAssignmentsForPrincipal = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: ApplicationAssignmentsForPrincipal_FilterFields,
+			Kind:     "object",
+			Fields:   ApplicationAssignmentsForPrincipal_FilterFields,
 		},
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PrincipalId": ubx.FieldSpec{WireName: "principal_id"},
+		"InstanceArn":   ubx.FieldSpec{WireName: "instance_arn"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"PrincipalId":   ubx.FieldSpec{WireName: "principal_id"},
 		"PrincipalType": ubx.FieldSpec{WireName: "principal_type"},
 	},
 }

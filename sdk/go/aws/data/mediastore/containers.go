@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Containers_Containers struct {
 	AccessLoggingEnabled any
-	Arn any
-	CreationTime any
-	Endpoint any
-	Name any
-	Status any
+	Arn                  any
+	CreationTime         any
+	Endpoint             any
+	Name                 any
+	Status               any
 }
 
 type ContainersConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ContainersAttrs struct {
 	Containers any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Containers = ubx.DataSourceBinding{
 	WireType: "aws_mediastore_containers",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

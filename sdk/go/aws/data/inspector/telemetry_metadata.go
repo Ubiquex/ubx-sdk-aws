@@ -4,8 +4,8 @@ package inspector
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TelemetryMetadata_TelemetryMetadata struct {
-	Count any
-	DataSize any
+	Count       any
+	DataSize    any
 	MessageType any
 }
 
@@ -14,7 +14,7 @@ type TelemetryMetadataConfig struct {
 }
 
 type TelemetryMetadataAttrs struct {
-	AssessmentRunArn any
+	AssessmentRunArn  any
 	TelemetryMetadata any
 }
 

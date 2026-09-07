@@ -4,28 +4,28 @@ package codestar_connections
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodestarConnectionsRepositorySyncDefinitions_RepositorySyncDefinitions struct {
-	Branch any
+	Branch    any
 	Directory any
-	Parent any
-	Target any
+	Parent    any
+	Target    any
 }
 
 type CodestarConnectionsRepositorySyncDefinitionsConfig struct {
 	RepositoryLinkId any
-	SyncType any
+	SyncType         any
 }
 
 type CodestarConnectionsRepositorySyncDefinitionsAttrs struct {
-	NextToken any
-	RepositoryLinkId any
+	NextToken                 any
+	RepositoryLinkId          any
 	RepositorySyncDefinitions any
-	SyncType any
+	SyncType                  any
 }
 
 var CodestarConnectionsRepositorySyncDefinitions = ubx.DataSourceBinding{
 	WireType: "aws_codestar_connections_repository_sync_definitions",
 	Fields: ubx.FieldMap{
 		"RepositoryLinkId": ubx.FieldSpec{WireName: "repository_link_id"},
-		"SyncType": ubx.FieldSpec{WireName: "sync_type"},
+		"SyncType":         ubx.FieldSpec{WireName: "sync_type"},
 	},
 }

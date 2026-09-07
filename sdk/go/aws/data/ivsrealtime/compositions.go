@@ -4,43 +4,43 @@ package ivsrealtime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Compositions_Compositions_Destinations struct {
-	EndTime any
-	Id any
+	EndTime   any
+	Id        any
 	StartTime any
-	State any
+	State     any
 }
 
 type Compositions_Compositions struct {
-	Arn any
+	Arn          any
 	Destinations any
-	EndTime any
-	StageArn any
-	StartTime any
-	State any
-	Tags any
+	EndTime      any
+	StageArn     any
+	StartTime    any
+	State        any
+	Tags         any
 }
 
 type CompositionsConfig struct {
 	FilterByEncoderConfigurationArn any
-	FilterByStageArn any
-	MaxResults any
-	NextToken any
+	FilterByStageArn                any
+	MaxResults                      any
+	NextToken                       any
 }
 
 type CompositionsAttrs struct {
-	Compositions any
+	Compositions                    any
 	FilterByEncoderConfigurationArn any
-	FilterByStageArn any
-	MaxResults any
-	NextToken any
+	FilterByStageArn                any
+	MaxResults                      any
+	NextToken                       any
 }
 
 var Compositions = ubx.DataSourceBinding{
 	WireType: "aws_ivsrealtime_compositions",
 	Fields: ubx.FieldMap{
 		"FilterByEncoderConfigurationArn": ubx.FieldSpec{WireName: "filter_by_encoder_configuration_arn"},
-		"FilterByStageArn": ubx.FieldSpec{WireName: "filter_by_stage_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"FilterByStageArn":                ubx.FieldSpec{WireName: "filter_by_stage_arn"},
+		"MaxResults":                      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

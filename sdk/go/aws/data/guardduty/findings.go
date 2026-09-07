@@ -6,48 +6,48 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Findings_Findings_Resource_AccessKeyDetails struct {
 	AccessKeyId any
 	PrincipalId any
-	UserName any
-	UserType any
+	UserName    any
+	UserType    any
 }
 
 type Findings_Findings_Resource_BedrockGuardrailDetails_ContentPolicyFilters struct {
-	Action any
+	Action     any
 	Confidence any
-	Type any
+	Type       any
 }
 
 type Findings_Findings_Resource_BedrockGuardrailDetails_Guardrails struct {
-	Arn any
+	Arn     any
 	Version any
 }
 
 type Findings_Findings_Resource_BedrockGuardrailDetails struct {
 	ContentPolicyFilters any
-	GuardrailAction any
-	GuardrailArn any
-	GuardrailSource any
-	GuardrailVersion any
-	Guardrails any
+	GuardrailAction      any
+	GuardrailArn         any
+	GuardrailSource      any
+	GuardrailVersion     any
+	Guardrails           any
 }
 
 type Findings_Findings_Resource_ContainerDetails_SecurityContext struct {
 	AllowPrivilegeEscalation any
-	Privileged any
+	Privileged               any
 }
 
 type Findings_Findings_Resource_ContainerDetails_VolumeMounts struct {
 	MountPath any
-	Name any
+	Name      any
 }
 
 type Findings_Findings_Resource_ContainerDetails struct {
 	ContainerRuntime any
-	Id any
-	Image any
-	ImagePrefix any
-	Name any
-	SecurityContext any
-	VolumeMounts any
+	Id               any
+	Image            any
+	ImagePrefix      any
+	Name             any
+	SecurityContext  any
+	VolumeMounts     any
 }
 
 type Findings_Findings_Resource_EbsSnapshotDetails struct {
@@ -55,13 +55,13 @@ type Findings_Findings_Resource_EbsSnapshotDetails struct {
 }
 
 type Findings_Findings_Resource_EbsVolumeDetails_ScannedVolumeDetails struct {
-	DeviceName any
+	DeviceName     any
 	EncryptionType any
-	KmsKeyArn any
-	SnapshotArn any
-	VolumeArn any
+	KmsKeyArn      any
+	SnapshotArn    any
+	VolumeArn      any
 	VolumeSizeInGb any
-	VolumeType any
+	VolumeType     any
 }
 
 type Findings_Findings_Resource_EbsVolumeDetails struct {
@@ -74,7 +74,7 @@ type Findings_Findings_Resource_Ec2ImageDetails struct {
 }
 
 type Findings_Findings_Resource_EcsClusterDetails_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -84,139 +84,139 @@ type Findings_Findings_Resource_EcsClusterDetails_TaskDetails_Volumes_HostPath s
 
 type Findings_Findings_Resource_EcsClusterDetails_TaskDetails_Volumes struct {
 	HostPath any
-	Name any
+	Name     any
 }
 
 type Findings_Findings_Resource_EcsClusterDetails_TaskDetails struct {
-	Arn any
-	Containers any
+	Arn           any
+	Containers    any
 	DefinitionArn any
-	Group any
-	LaunchType any
-	StartedAt any
-	StartedBy any
-	Tags any
+	Group         any
+	LaunchType    any
+	StartedAt     any
+	StartedBy     any
+	Tags          any
 	TaskCreatedAt any
-	Version any
-	Volumes any
+	Version       any
+	Volumes       any
 }
 
 type Findings_Findings_Resource_EcsClusterDetails struct {
-	ActiveServicesCount any
-	Arn any
-	Name any
+	ActiveServicesCount               any
+	Arn                               any
+	Name                              any
 	RegisteredContainerInstancesCount any
-	RunningTasksCount any
-	Status any
-	Tags any
-	TaskDetails any
+	RunningTasksCount                 any
+	Status                            any
+	Tags                              any
+	TaskDetails                       any
 }
 
 type Findings_Findings_Resource_EksClusterDetails struct {
-	Arn any
+	Arn       any
 	CreatedAt any
-	Name any
-	Status any
-	Tags any
-	VpcId any
+	Name      any
+	Status    any
+	Tags      any
+	VpcId     any
 }
 
 type Findings_Findings_Resource_InstanceDetails_IamInstanceProfile struct {
 	Arn any
-	Id any
+	Id  any
 }
 
 type Findings_Findings_Resource_InstanceDetails_NetworkInterfaces_PrivateIpAddresses struct {
-	PrivateDnsName any
+	PrivateDnsName   any
 	PrivateIpAddress any
 }
 
 type Findings_Findings_Resource_InstanceDetails_NetworkInterfaces_SecurityGroups struct {
-	GroupId any
+	GroupId   any
 	GroupName any
 }
 
 type Findings_Findings_Resource_InstanceDetails_NetworkInterfaces struct {
-	Ipv6Addresses any
+	Ipv6Addresses      any
 	NetworkInterfaceId any
-	PrivateDnsName any
-	PrivateIpAddress any
+	PrivateDnsName     any
+	PrivateIpAddress   any
 	PrivateIpAddresses any
-	PublicDnsName any
-	PublicIp any
-	SecurityGroups any
-	SubnetId any
-	VpcId any
+	PublicDnsName      any
+	PublicIp           any
+	SecurityGroups     any
+	SubnetId           any
+	VpcId              any
 }
 
 type Findings_Findings_Resource_InstanceDetails_ProductCodes struct {
-	Code any
+	Code        any
 	ProductType any
 }
 
 type Findings_Findings_Resource_InstanceDetails struct {
-	AvailabilityZone any
+	AvailabilityZone   any
 	IamInstanceProfile any
-	ImageDescription any
-	ImageId any
-	InstanceId any
-	InstanceState any
-	InstanceType any
-	LaunchTime any
-	NetworkInterfaces any
-	OutpostArn any
-	Platform any
-	ProductCodes any
-	Tags any
+	ImageDescription   any
+	ImageId            any
+	InstanceId         any
+	InstanceState      any
+	InstanceType       any
+	LaunchTime         any
+	NetworkInterfaces  any
+	OutpostArn         any
+	Platform           any
+	ProductCodes       any
+	Tags               any
 }
 
 type Findings_Findings_Resource_KubernetesDetails_KubernetesUserDetails_ImpersonatedUser struct {
-	Groups any
+	Groups   any
 	Username any
 }
 
 type Findings_Findings_Resource_KubernetesDetails_KubernetesUserDetails struct {
-	Groups any
+	Groups           any
 	ImpersonatedUser any
-	SessionName any
-	Uid any
-	Username any
+	SessionName      any
+	Uid              any
+	Username         any
 }
 
 type Findings_Findings_Resource_KubernetesDetails_KubernetesWorkloadDetails struct {
-	Containers any
-	HostIpc any
-	HostNetwork any
-	HostPid any
-	Name any
-	Namespace any
+	Containers         any
+	HostIpc            any
+	HostNetwork        any
+	HostPid            any
+	Name               any
+	Namespace          any
 	ServiceAccountName any
-	Type any
-	Uid any
-	Volumes any
+	Type               any
+	Uid                any
+	Volumes            any
 }
 
 type Findings_Findings_Resource_KubernetesDetails struct {
-	KubernetesUserDetails any
+	KubernetesUserDetails     any
 	KubernetesWorkloadDetails any
 }
 
 type Findings_Findings_Resource_LambdaDetails_VpcConfig struct {
 	SecurityGroups any
-	SubnetIds any
-	VpcId any
+	SubnetIds      any
+	VpcId          any
 }
 
 type Findings_Findings_Resource_LambdaDetails struct {
-	Description any
-	FunctionArn any
-	FunctionName any
+	Description     any
+	FunctionArn     any
+	FunctionName    any
 	FunctionVersion any
-	LastModifiedAt any
-	RevisionId any
-	Role any
-	Tags any
-	VpcConfig any
+	LastModifiedAt  any
+	RevisionId      any
+	Role            any
+	Tags            any
+	VpcConfig       any
 }
 
 type Findings_Findings_Resource_ModelDetails struct {
@@ -224,46 +224,46 @@ type Findings_Findings_Resource_ModelDetails struct {
 }
 
 type Findings_Findings_Resource_RdsDbInstanceDetails struct {
-	DbClusterIdentifier any
-	DbInstanceArn any
+	DbClusterIdentifier  any
+	DbInstanceArn        any
 	DbInstanceIdentifier any
-	DbiResourceId any
-	Engine any
-	EngineVersion any
-	Tags any
+	DbiResourceId        any
+	Engine               any
+	EngineVersion        any
+	Tags                 any
 }
 
 type Findings_Findings_Resource_RdsDbUserDetails struct {
 	Application any
-	AuthMethod any
-	Database any
-	Ssl any
-	User any
+	AuthMethod  any
+	Database    any
+	Ssl         any
+	User        any
 }
 
 type Findings_Findings_Resource_RdsLimitlessDbDetails struct {
-	DbClusterIdentifier any
-	DbShardGroupArn any
+	DbClusterIdentifier    any
+	DbShardGroupArn        any
 	DbShardGroupIdentifier any
 	DbShardGroupResourceId any
-	Engine any
-	EngineVersion any
-	Tags any
+	Engine                 any
+	EngineVersion          any
+	Tags                   any
 }
 
 type Findings_Findings_Resource_RecoveryPointDetails_ContinuousScanDetails struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type Findings_Findings_Resource_RecoveryPointDetails struct {
-	BackupVaultName any
+	BackupVaultName       any
 	ContinuousScanDetails any
-	RecoveryPointArn any
+	RecoveryPointArn      any
 }
 
 type Findings_Findings_Resource_S3BucketDetails_DefaultServerSideEncryption struct {
-	EncryptionType any
+	EncryptionType  any
 	KmsMasterKeyArn any
 }
 
@@ -272,9 +272,9 @@ type Findings_Findings_Resource_S3BucketDetails_Owner struct {
 }
 
 type Findings_Findings_Resource_S3BucketDetails_PublicAccess_PermissionConfiguration_AccountLevelPermissions_BlockPublicAccess struct {
-	BlockPublicAcls any
-	BlockPublicPolicy any
-	IgnorePublicAcls any
+	BlockPublicAcls       any
+	BlockPublicPolicy     any
+	IgnorePublicAcls      any
 	RestrictPublicBuckets any
 }
 
@@ -283,65 +283,65 @@ type Findings_Findings_Resource_S3BucketDetails_PublicAccess_PermissionConfigura
 }
 
 type Findings_Findings_Resource_S3BucketDetails_PublicAccess_PermissionConfiguration_BucketLevelPermissions_AccessControlList struct {
-	AllowsPublicReadAccess any
+	AllowsPublicReadAccess  any
 	AllowsPublicWriteAccess any
 }
 
 type Findings_Findings_Resource_S3BucketDetails_PublicAccess_PermissionConfiguration_BucketLevelPermissions struct {
 	AccessControlList any
 	BlockPublicAccess any
-	BucketPolicy any
+	BucketPolicy      any
 }
 
 type Findings_Findings_Resource_S3BucketDetails_PublicAccess_PermissionConfiguration struct {
 	AccountLevelPermissions any
-	BucketLevelPermissions any
+	BucketLevelPermissions  any
 }
 
 type Findings_Findings_Resource_S3BucketDetails_PublicAccess struct {
-	EffectivePermission any
+	EffectivePermission     any
 	PermissionConfiguration any
 }
 
 type Findings_Findings_Resource_S3BucketDetails_S3ObjectDetails struct {
-	Etag any
-	Hash any
-	Key any
+	Etag      any
+	Hash      any
+	Key       any
 	ObjectArn any
 	VersionId any
 }
 
 type Findings_Findings_Resource_S3BucketDetails struct {
-	Arn any
-	CreatedAt any
+	Arn                         any
+	CreatedAt                   any
 	DefaultServerSideEncryption any
-	Name any
-	Owner any
-	PublicAccess any
-	S3ObjectDetails any
-	Tags any
-	Type any
+	Name                        any
+	Owner                       any
+	PublicAccess                any
+	S3ObjectDetails             any
+	Tags                        any
+	Type                        any
 }
 
 type Findings_Findings_Resource struct {
-	AccessKeyDetails any
+	AccessKeyDetails        any
 	BedrockGuardrailDetails any
-	ContainerDetails any
-	EbsSnapshotDetails any
-	EbsVolumeDetails any
-	Ec2ImageDetails any
-	EcsClusterDetails any
-	EksClusterDetails any
-	InstanceDetails any
-	KubernetesDetails any
-	LambdaDetails any
-	ModelDetails any
-	RdsDbInstanceDetails any
-	RdsDbUserDetails any
-	RdsLimitlessDbDetails any
-	RecoveryPointDetails any
-	ResourceType any
-	S3BucketDetails any
+	ContainerDetails        any
+	EbsSnapshotDetails      any
+	EbsVolumeDetails        any
+	Ec2ImageDetails         any
+	EcsClusterDetails       any
+	EksClusterDetails       any
+	InstanceDetails         any
+	KubernetesDetails       any
+	LambdaDetails           any
+	ModelDetails            any
+	RdsDbInstanceDetails    any
+	RdsDbUserDetails        any
+	RdsLimitlessDbDetails   any
+	RecoveryPointDetails    any
+	ResourceType            any
+	S3BucketDetails         any
 }
 
 type Findings_Findings_Service_Action_AwsApiCallAction_DomainDetails struct {
@@ -349,7 +349,7 @@ type Findings_Findings_Service_Action_AwsApiCallAction_DomainDetails struct {
 }
 
 type Findings_Findings_Service_Action_AwsApiCallAction_RemoteAccountDetails struct {
-	AccountId any
+	AccountId  any
 	Affiliated any
 }
 
@@ -368,74 +368,74 @@ type Findings_Findings_Service_Action_AwsApiCallAction_RemoteIpDetails_GeoLocati
 }
 
 type Findings_Findings_Service_Action_AwsApiCallAction_RemoteIpDetails_Organization struct {
-	Asn any
+	Asn    any
 	AsnOrg any
-	Isp any
-	Org any
+	Isp    any
+	Org    any
 }
 
 type Findings_Findings_Service_Action_AwsApiCallAction_RemoteIpDetails struct {
-	City any
-	Country any
-	GeoLocation any
-	IpAddressV4 any
-	IpAddressV6 any
+	City         any
+	Country      any
+	GeoLocation  any
+	IpAddressV4  any
+	IpAddressV6  any
 	Organization any
 }
 
 type Findings_Findings_Service_Action_AwsApiCallAction struct {
-	AffectedResources any
-	Api any
-	CallerType any
-	DomainDetails any
-	ErrorCode any
+	AffectedResources    any
+	Api                  any
+	CallerType           any
+	DomainDetails        any
+	ErrorCode            any
 	RemoteAccountDetails any
-	RemoteIpDetails any
-	ServiceName any
-	UserAgent any
+	RemoteIpDetails      any
+	ServiceName          any
+	UserAgent            any
 }
 
 type Findings_Findings_Service_Action_DnsRequestAction struct {
-	Blocked any
-	Domain any
-	DomainWithSuffix any
-	Protocol any
+	Blocked           any
+	Domain            any
+	DomainWithSuffix  any
+	Protocol          any
 	VpcOwnerAccountId any
 }
 
 type Findings_Findings_Service_Action_KubernetesApiCallAction struct {
-	Namespace any
-	Parameters any
+	Namespace       any
+	Parameters      any
 	RemoteIpDetails any
-	RequestUri any
-	Resource any
-	ResourceName any
-	SourceIps any
-	StatusCode any
-	Subresource any
-	UserAgent any
-	Verb any
+	RequestUri      any
+	Resource        any
+	ResourceName    any
+	SourceIps       any
+	StatusCode      any
+	Subresource     any
+	UserAgent       any
+	Verb            any
 }
 
 type Findings_Findings_Service_Action_KubernetesPermissionCheckedDetails struct {
-	Allowed any
+	Allowed   any
 	Namespace any
-	Resource any
-	Verb any
+	Resource  any
+	Verb      any
 }
 
 type Findings_Findings_Service_Action_KubernetesRoleBindingDetails struct {
-	Kind any
-	Name any
+	Kind        any
+	Name        any
 	RoleRefKind any
 	RoleRefName any
-	Uid any
+	Uid         any
 }
 
 type Findings_Findings_Service_Action_KubernetesRoleDetails struct {
 	Kind any
 	Name any
-	Uid any
+	Uid  any
 }
 
 type Findings_Findings_Service_Action_NetworkConnectionAction_LocalIpDetails struct {
@@ -444,37 +444,37 @@ type Findings_Findings_Service_Action_NetworkConnectionAction_LocalIpDetails str
 }
 
 type Findings_Findings_Service_Action_NetworkConnectionAction_LocalPortDetails struct {
-	Port any
+	Port     any
 	PortName any
 }
 
 type Findings_Findings_Service_Action_NetworkConnectionAction struct {
-	Blocked any
-	ConnectionDirection any
-	LocalIpDetails any
+	Blocked               any
+	ConnectionDirection   any
+	LocalIpDetails        any
 	LocalNetworkInterface any
-	LocalPortDetails any
-	Protocol any
-	RemoteIpDetails any
-	RemotePortDetails any
+	LocalPortDetails      any
+	Protocol              any
+	RemoteIpDetails       any
+	RemotePortDetails     any
 }
 
 type Findings_Findings_Service_Action_PortProbeAction_PortProbeDetails struct {
-	LocalIpDetails any
+	LocalIpDetails   any
 	LocalPortDetails any
-	RemoteIpDetails any
+	RemoteIpDetails  any
 }
 
 type Findings_Findings_Service_Action_PortProbeAction struct {
-	Blocked any
+	Blocked          any
 	PortProbeDetails any
 }
 
 type Findings_Findings_Service_Action_RdsLoginAttemptAction_LoginAttributes struct {
-	Application any
-	FailedLoginAttempts any
+	Application             any
+	FailedLoginAttempts     any
 	SuccessfulLoginAttempts any
-	User any
+	User                    any
 }
 
 type Findings_Findings_Service_Action_RdsLoginAttemptAction struct {
@@ -483,32 +483,32 @@ type Findings_Findings_Service_Action_RdsLoginAttemptAction struct {
 }
 
 type Findings_Findings_Service_Action struct {
-	ActionType any
-	AwsApiCallAction any
-	DnsRequestAction any
-	KubernetesApiCallAction any
+	ActionType                         any
+	AwsApiCallAction                   any
+	DnsRequestAction                   any
+	KubernetesApiCallAction            any
 	KubernetesPermissionCheckedDetails any
-	KubernetesRoleBindingDetails any
-	KubernetesRoleDetails any
-	NetworkConnectionAction any
-	PortProbeAction any
-	RdsLoginAttemptAction any
+	KubernetesRoleBindingDetails       any
+	KubernetesRoleDetails              any
+	NetworkConnectionAction            any
+	PortProbeAction                    any
+	RdsLoginAttemptAction              any
 }
 
 type Findings_Findings_Service_AdditionalInfo struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type Findings_Findings_Service_Detection_Anomaly_Profiles_Observations struct {
 	Number any
-	Text any
+	Text   any
 }
 
 type Findings_Findings_Service_Detection_Anomaly_Profiles struct {
-	Observations any
+	Observations   any
 	ProfileSubtype any
-	ProfileType any
+	ProfileType    any
 }
 
 type Findings_Findings_Service_Detection_Anomaly_Unusual struct {
@@ -517,44 +517,44 @@ type Findings_Findings_Service_Detection_Anomaly_Unusual struct {
 
 type Findings_Findings_Service_Detection_Anomaly struct {
 	Profiles any
-	Unusual any
+	Unusual  any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Actors_Process struct {
-	Name any
-	Path any
+	Name   any
+	Path   any
 	Sha256 any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Actors_Session struct {
 	CreatedTime any
-	Issuer any
-	MfaStatus any
-	Uid any
+	Issuer      any
+	MfaStatus   any
+	Uid         any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Actors_User_Account struct {
 	Name any
-	Uid any
+	Uid  any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Actors_User struct {
-	Account any
+	Account       any
 	CredentialUid any
-	Name any
-	Type any
-	Uid any
+	Name          any
+	Type          any
+	Uid           any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Actors struct {
-	Id any
+	Id      any
 	Process any
 	Session any
-	User any
+	User    any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Endpoints_AutonomousSystem struct {
-	Name any
+	Name   any
 	Number any
 }
 
@@ -563,26 +563,26 @@ type Findings_Findings_Service_Detection_Sequence_Endpoints_Connection struct {
 }
 
 type Findings_Findings_Service_Detection_Sequence_Endpoints_Location struct {
-	City any
-	Country any
-	Latitude any
+	City      any
+	Country   any
+	Latitude  any
 	Longitude any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Endpoints struct {
 	AutonomousSystem any
-	Connection any
-	Domain any
-	Id any
-	Ip any
-	Location any
-	Port any
+	Connection       any
+	Domain           any
+	Id               any
+	Ip               any
+	Location         any
+	Port             any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Resources_Data_AccessKey struct {
 	PrincipalId any
-	UserName any
-	UserType any
+	UserName    any
+	UserType    any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Resources_Data_AutoscalingAutoScalingGroup struct {
@@ -590,201 +590,201 @@ type Findings_Findings_Service_Detection_Sequence_Resources_Data_AutoscalingAuto
 }
 
 type Findings_Findings_Service_Detection_Sequence_Resources_Data_Container struct {
-	Image any
+	Image    any
 	ImageUid any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Resources_Data_Ec2Instance struct {
-	AvailabilityZone any
+	AvailabilityZone        any
 	Ec2NetworkInterfaceUids any
-	IamInstanceProfile any
-	ImageDescription any
-	InstanceState any
-	InstanceType any
-	OutpostArn any
-	Platform any
-	ProductCodes any
+	IamInstanceProfile      any
+	ImageDescription        any
+	InstanceState           any
+	InstanceType            any
+	OutpostArn              any
+	Platform                any
+	ProductCodes            any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Resources_Data_Ec2LaunchTemplate struct {
 	Ec2InstanceUids any
-	Version any
+	Version         any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Resources_Data_Ec2NetworkInterface struct {
-	Ipv6Addresses any
+	Ipv6Addresses      any
 	PrivateIpAddresses any
-	PublicIp any
-	SecurityGroups any
-	SubNetId any
-	VpcId any
+	PublicIp           any
+	SecurityGroups     any
+	SubNetId           any
+	VpcId              any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Resources_Data_EcsCluster struct {
 	Ec2InstanceUids any
-	Status any
+	Status          any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Resources_Data_EcsTask struct {
-	ContainerUids any
-	CreatedAt any
-	LaunchType any
+	ContainerUids     any
+	CreatedAt         any
+	LaunchType        any
 	TaskDefinitionArn any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Resources_Data_EksCluster struct {
-	Arn any
-	CreatedAt any
+	Arn             any
+	CreatedAt       any
 	Ec2InstanceUids any
-	Status any
-	VpcId any
+	Status          any
+	VpcId           any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Resources_Data_KubernetesWorkload struct {
-	ContainerUids any
+	ContainerUids            any
 	KubernetesResourcesTypes any
-	Namespace any
+	Namespace                any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Resources_Data_S3Bucket_AccountPublicAccess struct {
-	PublicAclAccess any
-	PublicAclIgnoreBehavior any
+	PublicAclAccess              any
+	PublicAclIgnoreBehavior      any
 	PublicBucketRestrictBehavior any
-	PublicPolicyAccess any
+	PublicPolicyAccess           any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Resources_Data_S3Bucket struct {
 	AccountPublicAccess any
-	BucketPublicAccess any
-	CreatedAt any
+	BucketPublicAccess  any
+	CreatedAt           any
 	EffectivePermission any
-	EncryptionKeyArn any
-	EncryptionType any
-	OwnerId any
-	PublicReadAccess any
-	PublicWriteAccess any
-	S3ObjectUids any
+	EncryptionKeyArn    any
+	EncryptionType      any
+	OwnerId             any
+	PublicReadAccess    any
+	PublicWriteAccess   any
+	S3ObjectUids        any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Resources_Data_S3Object struct {
-	Etag any
-	Key any
+	Etag      any
+	Key       any
 	VersionId any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Resources_Data struct {
-	AccessKey any
+	AccessKey                   any
 	AutoscalingAutoScalingGroup any
-	CloudformationStack any
-	Container any
-	Ec2Image any
-	Ec2Instance any
-	Ec2LaunchTemplate any
-	Ec2NetworkInterface any
-	Ec2Vpc any
-	EcsCluster any
-	EcsTask any
-	EksCluster any
-	IamInstanceProfile any
-	KubernetesWorkload any
-	S3Bucket any
-	S3Object any
+	CloudformationStack         any
+	Container                   any
+	Ec2Image                    any
+	Ec2Instance                 any
+	Ec2LaunchTemplate           any
+	Ec2NetworkInterface         any
+	Ec2Vpc                      any
+	EcsCluster                  any
+	EcsTask                     any
+	EksCluster                  any
+	IamInstanceProfile          any
+	KubernetesWorkload          any
+	S3Bucket                    any
+	S3Object                    any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Resources struct {
-	AccountId any
+	AccountId      any
 	CloudPartition any
-	Data any
-	Name any
-	Region any
-	ResourceType any
-	Service any
-	Tags any
-	Uid any
+	Data           any
+	Name           any
+	Region         any
+	ResourceType   any
+	Service        any
+	Tags           any
+	Uid            any
 }
 
 type Findings_Findings_Service_Detection_Sequence_SequenceIndicators struct {
-	Key any
-	Title any
+	Key    any
+	Title  any
 	Values any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Signals_Activities_Api struct {
-	Error any
+	Error     any
 	Operation any
-	Service any
+	Service   any
 	UserAgent any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Signals_Activities struct {
-	Api any
+	Api  any
 	Type any
 }
 
 type Findings_Findings_Service_Detection_Sequence_Signals struct {
-	Activities any
-	ActorIds any
-	Count any
-	CreatedAt any
-	Description any
-	EndpointIds any
-	FirstSeenAt any
-	LastSeenAt any
-	Name any
-	ResourceUids any
-	Severity any
+	Activities       any
+	ActorIds         any
+	Count            any
+	CreatedAt        any
+	Description      any
+	EndpointIds      any
+	FirstSeenAt      any
+	LastSeenAt       any
+	Name             any
+	ResourceUids     any
+	Severity         any
 	SignalIndicators any
-	Type any
-	Uid any
-	UpdatedAt any
+	Type             any
+	Uid              any
+	UpdatedAt        any
 }
 
 type Findings_Findings_Service_Detection_Sequence struct {
-	Actors any
+	Actors                  any
 	AdditionalSequenceTypes any
-	Description any
-	Endpoints any
-	Resources any
-	SequenceIndicators any
-	Signals any
-	Uid any
+	Description             any
+	Endpoints               any
+	Resources               any
+	SequenceIndicators      any
+	Signals                 any
+	Uid                     any
 }
 
 type Findings_Findings_Service_Detection struct {
-	Anomaly any
+	Anomaly  any
 	Sequence any
 }
 
 type Findings_Findings_Service_EbsVolumeScanDetails_ScanDetections_HighestSeverityThreatDetails struct {
-	Count any
-	Severity any
+	Count      any
+	Severity   any
 	ThreatName any
 }
 
 type Findings_Findings_Service_EbsVolumeScanDetails_ScanDetections_ScannedItemCount struct {
-	Files any
+	Files   any
 	TotalGb any
 	Volumes any
 }
 
 type Findings_Findings_Service_EbsVolumeScanDetails_ScanDetections_ThreatDetectedByName_ThreatNames_FilePaths struct {
-	FileName any
-	FilePath any
-	Hash any
+	FileName  any
+	FilePath  any
+	Hash      any
 	VolumeArn any
 }
 
 type Findings_Findings_Service_EbsVolumeScanDetails_ScanDetections_ThreatDetectedByName_ThreatNames struct {
 	FilePaths any
 	ItemCount any
-	Name any
-	Severity any
+	Name      any
+	Severity  any
 }
 
 type Findings_Findings_Service_EbsVolumeScanDetails_ScanDetections_ThreatDetectedByName struct {
-	ItemCount any
-	Shortened any
-	ThreatNames any
+	ItemCount             any
+	Shortened             any
+	ThreatNames           any
 	UniqueThreatNameCount any
 }
 
@@ -794,25 +794,25 @@ type Findings_Findings_Service_EbsVolumeScanDetails_ScanDetections_ThreatsDetect
 
 type Findings_Findings_Service_EbsVolumeScanDetails_ScanDetections struct {
 	HighestSeverityThreatDetails any
-	ScannedItemCount any
-	ThreatDetectedByName any
-	ThreatsDetectedItemCount any
+	ScannedItemCount             any
+	ThreatDetectedByName         any
+	ThreatsDetectedItemCount     any
 }
 
 type Findings_Findings_Service_EbsVolumeScanDetails struct {
-	ScanCompletedAt any
-	ScanDetections any
-	ScanId any
-	ScanStartedAt any
-	ScanType any
-	Sources any
+	ScanCompletedAt  any
+	ScanDetections   any
+	ScanId           any
+	ScanStartedAt    any
+	ScanType         any
+	Sources          any
 	TriggerFindingId any
 }
 
 type Findings_Findings_Service_Evidence_ThreatIntelligenceDetails struct {
 	ThreatFileSha256 any
-	ThreatListName any
-	ThreatNames any
+	ThreatListName   any
+	ThreatNames      any
 }
 
 type Findings_Findings_Service_Evidence struct {
@@ -825,101 +825,101 @@ type Findings_Findings_Service_MalwareScanDetails_ScanConfiguration_IncrementalS
 
 type Findings_Findings_Service_MalwareScanDetails_ScanConfiguration struct {
 	IncrementalScanDetails any
-	TriggerType any
+	TriggerType            any
 }
 
 type Findings_Findings_Service_MalwareScanDetails_Threats_ItemDetails_AdditionalInfo struct {
 	DeviceName any
-	VersionId any
+	VersionId  any
 }
 
 type Findings_Findings_Service_MalwareScanDetails_Threats_ItemDetails struct {
 	AdditionalInfo any
-	Hash any
-	ItemPath any
-	ResourceArn any
+	Hash           any
+	ItemPath       any
+	ResourceArn    any
 }
 
 type Findings_Findings_Service_MalwareScanDetails_Threats_ItemPaths struct {
-	Hash any
+	Hash           any
 	NestedItemPath any
 }
 
 type Findings_Findings_Service_MalwareScanDetails_Threats struct {
-	Count any
-	Hash any
+	Count       any
+	Hash        any
 	ItemDetails any
-	ItemPaths any
-	Name any
-	Source any
+	ItemPaths   any
+	Name        any
+	Source      any
 }
 
 type Findings_Findings_Service_MalwareScanDetails struct {
-	ScanCategory any
+	ScanCategory      any
 	ScanConfiguration any
-	ScanId any
-	ScanType any
-	Threats any
+	ScanId            any
+	ScanType          any
+	Threats           any
 	UniqueThreatCount any
 }
 
 type Findings_Findings_Service_RuntimeDetails_Context_ModifyingProcess_Lineage struct {
-	Euid any
+	Euid           any
 	ExecutablePath any
-	Name any
-	NamespacePid any
-	ParentUuid any
-	Pid any
-	StartTime any
-	UserId any
-	Uuid any
+	Name           any
+	NamespacePid   any
+	ParentUuid     any
+	Pid            any
+	StartTime      any
+	UserId         any
+	Uuid           any
 }
 
 type Findings_Findings_Service_RuntimeDetails_Context_ModifyingProcess struct {
-	Euid any
-	ExecutablePath any
+	Euid             any
+	ExecutablePath   any
 	ExecutableSha256 any
-	Lineage any
-	Name any
-	NamespacePid any
-	ParentUuid any
-	Pid any
-	Pwd any
-	StartTime any
-	User any
-	UserId any
-	Uuid any
+	Lineage          any
+	Name             any
+	NamespacePid     any
+	ParentUuid       any
+	Pid              any
+	Pwd              any
+	StartTime        any
+	User             any
+	UserId           any
+	Uuid             any
 }
 
 type Findings_Findings_Service_RuntimeDetails_Context struct {
-	AddressFamily any
-	CommandLineExample any
-	FileOperation any
-	FilePath any
-	FileSystemType any
-	Flags any
-	IanaProtocolNumber any
-	LdPreloadValue any
-	LibraryPath any
-	MemoryRegions any
-	ModifiedAt any
-	ModifyingProcess any
-	ModuleFilePath any
-	ModuleName any
-	ModuleSha256 any
-	MountSource any
-	MountTarget any
-	RelatedFilePaths any
-	ReleaseAgentPath any
-	RuncBinaryPath any
-	ScriptPath any
-	ServiceName any
+	AddressFamily        any
+	CommandLineExample   any
+	FileOperation        any
+	FilePath             any
+	FileSystemType       any
+	Flags                any
+	IanaProtocolNumber   any
+	LdPreloadValue       any
+	LibraryPath          any
+	MemoryRegions        any
+	ModifiedAt           any
+	ModifyingProcess     any
+	ModuleFilePath       any
+	ModuleName           any
+	ModuleSha256         any
+	MountSource          any
+	MountTarget          any
+	RelatedFilePaths     any
+	ReleaseAgentPath     any
+	RuncBinaryPath       any
+	ScriptPath           any
+	ServiceName          any
 	ShellHistoryFilePath any
-	SocketPath any
-	TargetProcess any
-	ThreatFilePath any
-	ToolCategory any
-	ToolName any
+	SocketPath           any
+	TargetProcess        any
+	ThreatFilePath       any
+	ToolCategory         any
+	ToolName             any
 }
 
 type Findings_Findings_Service_RuntimeDetails struct {
@@ -928,52 +928,52 @@ type Findings_Findings_Service_RuntimeDetails struct {
 }
 
 type Findings_Findings_Service struct {
-	Action any
-	AdditionalInfo any
-	Archived any
-	Count any
-	Detection any
-	DetectorId any
+	Action               any
+	AdditionalInfo       any
+	Archived             any
+	Count                any
+	Detection            any
+	DetectorId           any
 	EbsVolumeScanDetails any
-	EventFirstSeen any
-	EventLastSeen any
-	Evidence any
-	FeatureName any
-	MalwareScanDetails any
-	ResourceRole any
-	RuntimeDetails any
-	ServiceName any
-	UserFeedback any
+	EventFirstSeen       any
+	EventLastSeen        any
+	Evidence             any
+	FeatureName          any
+	MalwareScanDetails   any
+	ResourceRole         any
+	RuntimeDetails       any
+	ServiceName          any
+	UserFeedback         any
 }
 
 type Findings_Findings struct {
-	AccountId any
-	Arn any
+	AccountId                   any
+	Arn                         any
 	AssociatedAttackSequenceArn any
-	Confidence any
-	CreatedAt any
-	Description any
-	Id any
-	Partition any
-	Region any
-	Resource any
-	SchemaVersion any
-	Service any
-	Severity any
-	Title any
-	Type any
-	UpdatedAt any
+	Confidence                  any
+	CreatedAt                   any
+	Description                 any
+	Id                          any
+	Partition                   any
+	Region                      any
+	Resource                    any
+	SchemaVersion               any
+	Service                     any
+	Severity                    any
+	Title                       any
+	Type                        any
+	UpdatedAt                   any
 }
 
 type Findings_SortCriteria struct {
 	AttributeName any
-	OrderBy any
+	OrderBy       any
 }
 
 var Findings_SortCriteriaFields = ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-	}
+	"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
+	"OrderBy":       ubx.FieldSpec{WireName: "order_by"},
+}
 
 type FindingsConfig struct {
 	DetectorId any
@@ -985,7 +985,7 @@ type FindingsConfig struct {
 type FindingsAttrs struct {
 	DetectorId any
 	FindingIds any
-	Findings any
+	Findings   any
 	// <p>Contains information about the criteria used for sorting findings.</p>
 	SortCriteria any
 }
@@ -997,8 +997,8 @@ var Findings = ubx.DataSourceBinding{
 		"FindingIds": ubx.FieldSpec{WireName: "finding_ids"},
 		"SortCriteria": ubx.FieldSpec{
 			WireName: "sort_criteria",
-			Kind: "object",
-			Fields: Findings_SortCriteriaFields,
+			Kind:     "object",
+			Fields:   Findings_SortCriteriaFields,
 		},
 	},
 }

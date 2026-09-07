@@ -7,18 +7,17 @@ type ResourceExplorer2IndexConfig struct {
 }
 
 type ResourceExplorer2IndexAttrs struct {
-	Arn any
-	CreatedAt any
-	LastUpdatedAt any
+	Arn             any
+	CreatedAt       any
+	LastUpdatedAt   any
 	ReplicatingFrom any
-	ReplicatingTo any
-	State any
-	Tags any
-	Type any
+	ReplicatingTo   any
+	State           any
+	Tags            any
+	Type            any
 }
 
 var ResourceExplorer2Index = ubx.DataSourceBinding{
 	WireType: "aws_resource_explorer_2_index",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

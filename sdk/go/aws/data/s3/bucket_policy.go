@@ -4,20 +4,20 @@ package s3
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BucketPolicyConfig struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 }
 
 type BucketPolicyAttrs struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
-	Policy any
+	Policy              any
 }
 
 var BucketPolicy = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_policy",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
 	},
 }

@@ -4,20 +4,20 @@ package resource_groups
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceGroupsGroupConfiguration_GroupConfiguration_Configuration_Parameters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ResourceGroupsGroupConfiguration_GroupConfiguration_Configuration struct {
 	Parameters any
-	Type any
+	Type       any
 }
 
 type ResourceGroupsGroupConfiguration_GroupConfiguration struct {
-	Configuration any
-	FailureReason any
+	Configuration         any
+	FailureReason         any
 	ProposedConfiguration any
-	Status any
+	Status                any
 }
 
 type ResourceGroupsGroupConfigurationConfig struct {

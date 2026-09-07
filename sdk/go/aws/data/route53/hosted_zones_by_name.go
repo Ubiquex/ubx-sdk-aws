@@ -4,7 +4,7 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HostedZonesByName_HostedZones_Config struct {
-	Comment any
+	Comment     any
 	PrivateZone any
 }
 
@@ -14,45 +14,45 @@ type HostedZonesByName_HostedZones_Features_FailureReasons struct {
 
 type HostedZonesByName_HostedZones_Features struct {
 	AcceleratedRecoveryStatus any
-	FailureReasons any
+	FailureReasons            any
 }
 
 type HostedZonesByName_HostedZones_LinkedService struct {
-	Description any
+	Description      any
 	ServicePrincipal any
 }
 
 type HostedZonesByName_HostedZones struct {
-	CallerReference any
-	Config any
-	Features any
-	Id any
-	LinkedService any
-	Name any
+	CallerReference        any
+	Config                 any
+	Features               any
+	Id                     any
+	LinkedService          any
+	Name                   any
 	ResourceRecordSetCount any
 }
 
 type HostedZonesByNameConfig struct {
-	Dnsname any
+	Dnsname      any
 	HostedZoneId any
-	MaxItems any
+	MaxItems     any
 }
 
 type HostedZonesByNameAttrs struct {
-	Dnsname any
-	HostedZoneId any
-	HostedZones any
-	IsTruncated any
-	MaxItems any
-	NextDnsname any
+	Dnsname          any
+	HostedZoneId     any
+	HostedZones      any
+	IsTruncated      any
+	MaxItems         any
+	NextDnsname      any
 	NextHostedZoneId any
 }
 
 var HostedZonesByName = ubx.DataSourceBinding{
 	WireType: "aws_route53_hosted_zones_by_name",
 	Fields: ubx.FieldMap{
-		"Dnsname": ubx.FieldSpec{WireName: "dnsname"},
+		"Dnsname":      ubx.FieldSpec{WireName: "dnsname"},
 		"HostedZoneId": ubx.FieldSpec{WireName: "hosted_zone_id"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"MaxItems":     ubx.FieldSpec{WireName: "max_items"},
 	},
 }

@@ -4,12 +4,12 @@ package route53resolver
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResolverRuleAssociation_ResolverRuleAssociation struct {
-	Id any
-	Name any
+	Id             any
+	Name           any
 	ResolverRuleId any
-	Status any
-	StatusMessage any
-	Vpcid any
+	Status         any
+	StatusMessage  any
+	Vpcid          any
 }
 
 type ResolverRuleAssociationConfig struct {
@@ -18,7 +18,7 @@ type ResolverRuleAssociationConfig struct {
 
 type ResolverRuleAssociationAttrs struct {
 	// <p>In the response to an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">AssociateResolverRule</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html">DisassociateResolverRule</a>, or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a> request, provides information about an association between a Resolver rule and a VPC. The association determines which DNS queries that originate in the VPC are forwarded to your network. </p>
-	ResolverRuleAssociation any
+	ResolverRuleAssociation   any
 	ResolverRuleAssociationId any
 }
 

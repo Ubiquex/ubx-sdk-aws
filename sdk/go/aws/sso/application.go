@@ -19,28 +19,28 @@ type Application_PortalOptions struct {
 
 type Application_Tags struct {
 	// The key of a tag to be attached to the AWS SSO application. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Application_PortalOptions_SignInOptionsFields = ubx.FieldMap{
-		"ApplicationUrl": ubx.FieldSpec{WireName: "application_url"},
-		"Origin": ubx.FieldSpec{WireName: "origin"},
-	}
+	"ApplicationUrl": ubx.FieldSpec{WireName: "application_url"},
+	"Origin":         ubx.FieldSpec{WireName: "origin"},
+}
 
 var Application_PortalOptionsFields = ubx.FieldMap{
-		"SignInOptions": ubx.FieldSpec{
-			WireName: "sign_in_options",
-			Kind: "object",
-			Fields: Application_PortalOptions_SignInOptionsFields,
-		},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"SignInOptions": ubx.FieldSpec{
+		WireName: "sign_in_options",
+		Kind:     "object",
+		Fields:   Application_PortalOptions_SignInOptionsFields,
+	},
+	"Visibility": ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Application_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApplicationConfig struct {
 	// The ARN of the application provider under which the operation will run
@@ -84,19 +84,19 @@ var Application = ubx.ResourceBinding{
 	WireType: "aws_sso_application",
 	Fields: ubx.FieldMap{
 		"ApplicationProviderArn": ubx.FieldSpec{WireName: "application_provider_arn"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":            ubx.FieldSpec{WireName: "description"},
+		"InstanceArn":            ubx.FieldSpec{WireName: "instance_arn"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
 		"PortalOptions": ubx.FieldSpec{
 			WireName: "portal_options",
-			Kind: "object",
-			Fields: Application_PortalOptionsFields,
+			Kind:     "object",
+			Fields:   Application_PortalOptionsFields,
 		},
 		"Status": ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Application_TagsFields,
+			Kind:     "list",
+			Fields:   Application_TagsFields,
 		},
 	},
 }

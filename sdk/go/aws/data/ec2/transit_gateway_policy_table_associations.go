@@ -4,37 +4,37 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TransitGatewayPolicyTableAssociations_Associations struct {
-	ResourceId any
-	ResourceType any
-	State any
-	TransitGatewayAttachmentId any
+	ResourceId                  any
+	ResourceType                any
+	State                       any
+	TransitGatewayAttachmentId  any
 	TransitGatewayPolicyTableId any
 }
 
 type TransitGatewayPolicyTableAssociations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var TransitGatewayPolicyTableAssociations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type TransitGatewayPolicyTableAssociationsConfig struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                      any
+	Filters                     any
+	MaxResults                  any
+	NextToken                   any
 	TransitGatewayPolicyTableId any
 }
 
 type TransitGatewayPolicyTableAssociationsAttrs struct {
-	Associations any
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	Associations                any
+	DryRun                      any
+	Filters                     any
+	MaxResults                  any
+	NextToken                   any
 	TransitGatewayPolicyTableId any
 }
 
@@ -44,11 +44,11 @@ var TransitGatewayPolicyTableAssociations = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: TransitGatewayPolicyTableAssociations_FiltersFields,
+			Kind:     "list",
+			Fields:   TransitGatewayPolicyTableAssociations_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                   ubx.FieldSpec{WireName: "next_token"},
 		"TransitGatewayPolicyTableId": ubx.FieldSpec{WireName: "transit_gateway_policy_table_id"},
 	},
 }

@@ -228,265 +228,265 @@ type Transformer_TransformerConfig struct {
 }
 
 var Transformer_TransformerConfig_AddKeys_EntriesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"OverwriteIfExists": ubx.FieldSpec{WireName: "overwrite_if_exists"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":               ubx.FieldSpec{WireName: "key"},
+	"OverwriteIfExists": ubx.FieldSpec{WireName: "overwrite_if_exists"},
+	"Value":             ubx.FieldSpec{WireName: "value"},
+}
 
 var Transformer_TransformerConfig_AddKeysFields = ubx.FieldMap{
-		"Entries": ubx.FieldSpec{
-			WireName: "entries",
-			Kind: "list",
-			Fields: Transformer_TransformerConfig_AddKeys_EntriesFields,
-		},
-	}
+	"Entries": ubx.FieldSpec{
+		WireName: "entries",
+		Kind:     "list",
+		Fields:   Transformer_TransformerConfig_AddKeys_EntriesFields,
+	},
+}
 
 var Transformer_TransformerConfig_CopyValue_EntriesFields = ubx.FieldMap{
-		"OverwriteIfExists": ubx.FieldSpec{WireName: "overwrite_if_exists"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
+	"OverwriteIfExists": ubx.FieldSpec{WireName: "overwrite_if_exists"},
+	"Source":            ubx.FieldSpec{WireName: "source"},
+	"Target":            ubx.FieldSpec{WireName: "target"},
+}
 
 var Transformer_TransformerConfig_CopyValueFields = ubx.FieldMap{
-		"Entries": ubx.FieldSpec{
-			WireName: "entries",
-			Kind: "list",
-			Fields: Transformer_TransformerConfig_CopyValue_EntriesFields,
-		},
-	}
+	"Entries": ubx.FieldSpec{
+		WireName: "entries",
+		Kind:     "list",
+		Fields:   Transformer_TransformerConfig_CopyValue_EntriesFields,
+	},
+}
 
 var Transformer_TransformerConfig_CsvFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{WireName: "columns"},
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-		"QuoteCharacter": ubx.FieldSpec{WireName: "quote_character"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"Columns":        ubx.FieldSpec{WireName: "columns"},
+	"Delimiter":      ubx.FieldSpec{WireName: "delimiter"},
+	"QuoteCharacter": ubx.FieldSpec{WireName: "quote_character"},
+	"Source":         ubx.FieldSpec{WireName: "source"},
+}
 
 var Transformer_TransformerConfig_DateTimeConverterFields = ubx.FieldMap{
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"MatchPatterns": ubx.FieldSpec{WireName: "match_patterns"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"SourceTimezone": ubx.FieldSpec{WireName: "source_timezone"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"TargetFormat": ubx.FieldSpec{WireName: "target_format"},
-		"TargetTimezone": ubx.FieldSpec{WireName: "target_timezone"},
-	}
+	"Locale":         ubx.FieldSpec{WireName: "locale"},
+	"MatchPatterns":  ubx.FieldSpec{WireName: "match_patterns"},
+	"Source":         ubx.FieldSpec{WireName: "source"},
+	"SourceTimezone": ubx.FieldSpec{WireName: "source_timezone"},
+	"Target":         ubx.FieldSpec{WireName: "target"},
+	"TargetFormat":   ubx.FieldSpec{WireName: "target_format"},
+	"TargetTimezone": ubx.FieldSpec{WireName: "target_timezone"},
+}
 
 var Transformer_TransformerConfig_DeleteKeysFields = ubx.FieldMap{
-		"WithKeys": ubx.FieldSpec{WireName: "with_keys"},
-	}
+	"WithKeys": ubx.FieldSpec{WireName: "with_keys"},
+}
 
 var Transformer_TransformerConfig_GrokFields = ubx.FieldMap{
-		"Match": ubx.FieldSpec{WireName: "match"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"Match":  ubx.FieldSpec{WireName: "match"},
+	"Source": ubx.FieldSpec{WireName: "source"},
+}
 
 var Transformer_TransformerConfig_ListToMapFields = ubx.FieldMap{
-		"Flatten": ubx.FieldSpec{WireName: "flatten"},
-		"FlattenedElement": ubx.FieldSpec{WireName: "flattened_element"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"ValueKey": ubx.FieldSpec{WireName: "value_key"},
-	}
+	"Flatten":          ubx.FieldSpec{WireName: "flatten"},
+	"FlattenedElement": ubx.FieldSpec{WireName: "flattened_element"},
+	"Key":              ubx.FieldSpec{WireName: "key"},
+	"Source":           ubx.FieldSpec{WireName: "source"},
+	"Target":           ubx.FieldSpec{WireName: "target"},
+	"ValueKey":         ubx.FieldSpec{WireName: "value_key"},
+}
 
 var Transformer_TransformerConfig_ParseCloudfrontFields = ubx.FieldMap{
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"Source": ubx.FieldSpec{WireName: "source"},
+}
 
 var Transformer_TransformerConfig_ParseJsonFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"Destination": ubx.FieldSpec{WireName: "destination"},
+	"Source":      ubx.FieldSpec{WireName: "source"},
+}
 
 var Transformer_TransformerConfig_ParseKeyValueFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"FieldDelimiter": ubx.FieldSpec{WireName: "field_delimiter"},
-		"KeyPrefix": ubx.FieldSpec{WireName: "key_prefix"},
-		"KeyValueDelimiter": ubx.FieldSpec{WireName: "key_value_delimiter"},
-		"NonMatchValue": ubx.FieldSpec{WireName: "non_match_value"},
-		"OverwriteIfExists": ubx.FieldSpec{WireName: "overwrite_if_exists"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"Destination":       ubx.FieldSpec{WireName: "destination"},
+	"FieldDelimiter":    ubx.FieldSpec{WireName: "field_delimiter"},
+	"KeyPrefix":         ubx.FieldSpec{WireName: "key_prefix"},
+	"KeyValueDelimiter": ubx.FieldSpec{WireName: "key_value_delimiter"},
+	"NonMatchValue":     ubx.FieldSpec{WireName: "non_match_value"},
+	"OverwriteIfExists": ubx.FieldSpec{WireName: "overwrite_if_exists"},
+	"Source":            ubx.FieldSpec{WireName: "source"},
+}
 
 var Transformer_TransformerConfig_ParseToOcsfFields = ubx.FieldMap{
-		"EventSource": ubx.FieldSpec{WireName: "event_source"},
-		"MappingVersion": ubx.FieldSpec{WireName: "mapping_version"},
-		"OcsfVersion": ubx.FieldSpec{WireName: "ocsf_version"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"EventSource":    ubx.FieldSpec{WireName: "event_source"},
+	"MappingVersion": ubx.FieldSpec{WireName: "mapping_version"},
+	"OcsfVersion":    ubx.FieldSpec{WireName: "ocsf_version"},
+	"Source":         ubx.FieldSpec{WireName: "source"},
+}
 
 var Transformer_TransformerConfig_RenameKeys_EntriesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"OverwriteIfExists": ubx.FieldSpec{WireName: "overwrite_if_exists"},
-		"RenameTo": ubx.FieldSpec{WireName: "rename_to"},
-	}
+	"Key":               ubx.FieldSpec{WireName: "key"},
+	"OverwriteIfExists": ubx.FieldSpec{WireName: "overwrite_if_exists"},
+	"RenameTo":          ubx.FieldSpec{WireName: "rename_to"},
+}
 
 var Transformer_TransformerConfig_RenameKeysFields = ubx.FieldMap{
-		"Entries": ubx.FieldSpec{
-			WireName: "entries",
-			Kind: "list",
-			Fields: Transformer_TransformerConfig_RenameKeys_EntriesFields,
-		},
-	}
+	"Entries": ubx.FieldSpec{
+		WireName: "entries",
+		Kind:     "list",
+		Fields:   Transformer_TransformerConfig_RenameKeys_EntriesFields,
+	},
+}
 
 var Transformer_TransformerConfig_SplitString_EntriesFields = ubx.FieldMap{
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
+	"Source":    ubx.FieldSpec{WireName: "source"},
+}
 
 var Transformer_TransformerConfig_SplitStringFields = ubx.FieldMap{
-		"Entries": ubx.FieldSpec{
-			WireName: "entries",
-			Kind: "list",
-			Fields: Transformer_TransformerConfig_SplitString_EntriesFields,
-		},
-	}
+	"Entries": ubx.FieldSpec{
+		WireName: "entries",
+		Kind:     "list",
+		Fields:   Transformer_TransformerConfig_SplitString_EntriesFields,
+	},
+}
 
 var Transformer_TransformerConfig_SubstituteString_EntriesFields = ubx.FieldMap{
-		"From": ubx.FieldSpec{WireName: "from"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"To": ubx.FieldSpec{WireName: "to"},
-	}
+	"From":   ubx.FieldSpec{WireName: "from"},
+	"Source": ubx.FieldSpec{WireName: "source"},
+	"To":     ubx.FieldSpec{WireName: "to"},
+}
 
 var Transformer_TransformerConfig_SubstituteStringFields = ubx.FieldMap{
-		"Entries": ubx.FieldSpec{
-			WireName: "entries",
-			Kind: "list",
-			Fields: Transformer_TransformerConfig_SubstituteString_EntriesFields,
-		},
-	}
+	"Entries": ubx.FieldSpec{
+		WireName: "entries",
+		Kind:     "list",
+		Fields:   Transformer_TransformerConfig_SubstituteString_EntriesFields,
+	},
+}
 
 var Transformer_TransformerConfig_TypeConverter_EntriesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Key":  ubx.FieldSpec{WireName: "key"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Transformer_TransformerConfig_TypeConverterFields = ubx.FieldMap{
-		"Entries": ubx.FieldSpec{
-			WireName: "entries",
-			Kind: "list",
-			Fields: Transformer_TransformerConfig_TypeConverter_EntriesFields,
-		},
-	}
+	"Entries": ubx.FieldSpec{
+		WireName: "entries",
+		Kind:     "list",
+		Fields:   Transformer_TransformerConfig_TypeConverter_EntriesFields,
+	},
+}
 
 var Transformer_TransformerConfigFields = ubx.FieldMap{
-		"AddKeys": ubx.FieldSpec{
-			WireName: "add_keys",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_AddKeysFields,
-		},
-		"CopyValue": ubx.FieldSpec{
-			WireName: "copy_value",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_CopyValueFields,
-		},
-		"Csv": ubx.FieldSpec{
-			WireName: "csv",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_CsvFields,
-		},
-		"DateTimeConverter": ubx.FieldSpec{
-			WireName: "date_time_converter",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_DateTimeConverterFields,
-		},
-		"DeleteKeys": ubx.FieldSpec{
-			WireName: "delete_keys",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_DeleteKeysFields,
-		},
-		"Grok": ubx.FieldSpec{
-			WireName: "grok",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_GrokFields,
-		},
-		"ListToMap": ubx.FieldSpec{
-			WireName: "list_to_map",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_ListToMapFields,
-		},
-		"LowerCaseString": ubx.FieldSpec{
-			WireName: "lower_case_string",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_DeleteKeysFields,
-		},
-		"MoveKeys": ubx.FieldSpec{
-			WireName: "move_keys",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_CopyValueFields,
-		},
-		"ParseCloudfront": ubx.FieldSpec{
-			WireName: "parse_cloudfront",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_ParseCloudfrontFields,
-		},
-		"ParseJson": ubx.FieldSpec{
-			WireName: "parse_json",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_ParseJsonFields,
-		},
-		"ParseKeyValue": ubx.FieldSpec{
-			WireName: "parse_key_value",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_ParseKeyValueFields,
-		},
-		"ParsePostgres": ubx.FieldSpec{
-			WireName: "parse_postgres",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_ParseCloudfrontFields,
-		},
-		"ParseRoute53": ubx.FieldSpec{
-			WireName: "parse_route53",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_ParseCloudfrontFields,
-		},
-		"ParseToOcsf": ubx.FieldSpec{
-			WireName: "parse_to_ocsf",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_ParseToOcsfFields,
-		},
-		"ParseVpc": ubx.FieldSpec{
-			WireName: "parse_vpc",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_ParseCloudfrontFields,
-		},
-		"ParseWaf": ubx.FieldSpec{
-			WireName: "parse_waf",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_ParseCloudfrontFields,
-		},
-		"RenameKeys": ubx.FieldSpec{
-			WireName: "rename_keys",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_RenameKeysFields,
-		},
-		"SplitString": ubx.FieldSpec{
-			WireName: "split_string",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_SplitStringFields,
-		},
-		"SubstituteString": ubx.FieldSpec{
-			WireName: "substitute_string",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_SubstituteStringFields,
-		},
-		"TrimString": ubx.FieldSpec{
-			WireName: "trim_string",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_DeleteKeysFields,
-		},
-		"TypeConverter": ubx.FieldSpec{
-			WireName: "type_converter",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_TypeConverterFields,
-		},
-		"UpperCaseString": ubx.FieldSpec{
-			WireName: "upper_case_string",
-			Kind: "object",
-			Fields: Transformer_TransformerConfig_DeleteKeysFields,
-		},
-	}
+	"AddKeys": ubx.FieldSpec{
+		WireName: "add_keys",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_AddKeysFields,
+	},
+	"CopyValue": ubx.FieldSpec{
+		WireName: "copy_value",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_CopyValueFields,
+	},
+	"Csv": ubx.FieldSpec{
+		WireName: "csv",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_CsvFields,
+	},
+	"DateTimeConverter": ubx.FieldSpec{
+		WireName: "date_time_converter",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_DateTimeConverterFields,
+	},
+	"DeleteKeys": ubx.FieldSpec{
+		WireName: "delete_keys",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_DeleteKeysFields,
+	},
+	"Grok": ubx.FieldSpec{
+		WireName: "grok",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_GrokFields,
+	},
+	"ListToMap": ubx.FieldSpec{
+		WireName: "list_to_map",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_ListToMapFields,
+	},
+	"LowerCaseString": ubx.FieldSpec{
+		WireName: "lower_case_string",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_DeleteKeysFields,
+	},
+	"MoveKeys": ubx.FieldSpec{
+		WireName: "move_keys",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_CopyValueFields,
+	},
+	"ParseCloudfront": ubx.FieldSpec{
+		WireName: "parse_cloudfront",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_ParseCloudfrontFields,
+	},
+	"ParseJson": ubx.FieldSpec{
+		WireName: "parse_json",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_ParseJsonFields,
+	},
+	"ParseKeyValue": ubx.FieldSpec{
+		WireName: "parse_key_value",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_ParseKeyValueFields,
+	},
+	"ParsePostgres": ubx.FieldSpec{
+		WireName: "parse_postgres",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_ParseCloudfrontFields,
+	},
+	"ParseRoute53": ubx.FieldSpec{
+		WireName: "parse_route53",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_ParseCloudfrontFields,
+	},
+	"ParseToOcsf": ubx.FieldSpec{
+		WireName: "parse_to_ocsf",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_ParseToOcsfFields,
+	},
+	"ParseVpc": ubx.FieldSpec{
+		WireName: "parse_vpc",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_ParseCloudfrontFields,
+	},
+	"ParseWaf": ubx.FieldSpec{
+		WireName: "parse_waf",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_ParseCloudfrontFields,
+	},
+	"RenameKeys": ubx.FieldSpec{
+		WireName: "rename_keys",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_RenameKeysFields,
+	},
+	"SplitString": ubx.FieldSpec{
+		WireName: "split_string",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_SplitStringFields,
+	},
+	"SubstituteString": ubx.FieldSpec{
+		WireName: "substitute_string",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_SubstituteStringFields,
+	},
+	"TrimString": ubx.FieldSpec{
+		WireName: "trim_string",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_DeleteKeysFields,
+	},
+	"TypeConverter": ubx.FieldSpec{
+		WireName: "type_converter",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_TypeConverterFields,
+	},
+	"UpperCaseString": ubx.FieldSpec{
+		WireName: "upper_case_string",
+		Kind:     "object",
+		Fields:   Transformer_TransformerConfig_DeleteKeysFields,
+	},
+}
 
 type TransformerConfig struct {
 	// Existing log group that you want to associate with this transformer.
@@ -508,8 +508,8 @@ var Transformer = ubx.ResourceBinding{
 		"LogGroupIdentifier": ubx.FieldSpec{WireName: "log_group_identifier"},
 		"TransformerConfig": ubx.FieldSpec{
 			WireName: "transformer_config",
-			Kind: "list",
-			Fields: Transformer_TransformerConfigFields,
+			Kind:     "list",
+			Fields:   Transformer_TransformerConfigFields,
 		},
 	},
 }

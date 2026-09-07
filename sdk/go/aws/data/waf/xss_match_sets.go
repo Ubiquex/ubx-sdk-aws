@@ -4,25 +4,25 @@ package waf
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type XssMatchSets_XssMatchSets struct {
-	Name any
+	Name          any
 	XssMatchSetId any
 }
 
 type XssMatchSetsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type XssMatchSetsAttrs struct {
-	Limit any
-	NextMarker any
+	Limit        any
+	NextMarker   any
 	XssMatchSets any
 }
 
 var XssMatchSets = ubx.DataSourceBinding{
 	WireType: "aws_waf_xss_match_sets",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

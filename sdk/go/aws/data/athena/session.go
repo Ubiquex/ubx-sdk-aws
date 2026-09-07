@@ -4,34 +4,34 @@ package athena
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Session_EngineConfiguration_Classifications struct {
-	Name any
+	Name       any
 	Properties any
 }
 
 type Session_EngineConfiguration struct {
-	AdditionalConfigs any
-	Classifications any
-	CoordinatorDpuSize any
+	AdditionalConfigs      any
+	Classifications        any
+	CoordinatorDpuSize     any
 	DefaultExecutorDpuSize any
-	MaxConcurrentDpus any
-	SparkProperties any
+	MaxConcurrentDpus      any
+	SparkProperties        any
 }
 
 type Session_MonitoringConfiguration_CloudWatchLoggingConfiguration struct {
-	Enabled any
-	LogGroup any
+	Enabled             any
+	LogGroup            any
 	LogStreamNamePrefix any
-	LogTypes any
+	LogTypes            any
 }
 
 type Session_MonitoringConfiguration_ManagedLoggingConfiguration struct {
 	Enabled any
-	KmsKey any
+	KmsKey  any
 }
 
 type Session_MonitoringConfiguration_S3LoggingConfiguration struct {
-	Enabled any
-	KmsKey any
+	Enabled     any
+	KmsKey      any
 	LogLocation any
 }
 
@@ -46,16 +46,16 @@ type Session_MonitoringConfiguration struct {
 
 type Session_SessionConfiguration_EncryptionConfiguration struct {
 	EncryptionOption any
-	KmsKey any
+	KmsKey           any
 }
 
 type Session_SessionConfiguration struct {
 	// <p>If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
-	EncryptionConfiguration any
-	ExecutionRole any
-	IdleTimeoutSeconds any
+	EncryptionConfiguration     any
+	ExecutionRole               any
+	IdleTimeoutSeconds          any
 	SessionIdleTimeoutInMinutes any
-	WorkingDirectory any
+	WorkingDirectory            any
 }
 
 type Session_Statistics struct {
@@ -63,12 +63,12 @@ type Session_Statistics struct {
 }
 
 type Session_Status struct {
-	EndDateTime any
-	IdleSinceDateTime any
+	EndDateTime          any
+	IdleSinceDateTime    any
 	LastModifiedDateTime any
-	StartDateTime any
-	State any
-	StateChangeReason any
+	StartDateTime        any
+	State                any
+	StateChangeReason    any
 }
 
 type SessionConfig struct {
@@ -79,17 +79,17 @@ type SessionAttrs struct {
 	Description any
 	// <p>The engine configuration for the workgroup, which includes the minimum/maximum number of Data Processing Units (DPU) that queries should use when running in provisioned capacity. If not specified, Athena uses default values (Default value for min is 4 and for max is Minimum of 124 and allocated DPUs).</p> <p>To specify DPU values for PC queries the WG containing EngineConfiguration should have the following values: The name of the Classifications should be <code>athena-query-engine-properties</code>, with the only allowed properties as <code>max-dpu-count</code> and <code>min-dpu-count</code>.</p>
 	EngineConfiguration any
-	EngineVersion any
+	EngineVersion       any
 	// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
 	MonitoringConfiguration any
-	NotebookVersion any
+	NotebookVersion         any
 	// <p>Contains session configuration information.</p>
 	SessionConfiguration any
-	SessionId any
+	SessionId            any
 	// <p>Contains statistics for a session.</p>
 	Statistics any
 	// <p>Contains information about the status of a session.</p>
-	Status any
+	Status    any
 	WorkGroup any
 }
 

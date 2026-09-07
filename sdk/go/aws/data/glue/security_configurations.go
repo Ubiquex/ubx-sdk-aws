@@ -5,45 +5,45 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityConfigurations_SecurityConfigurations_EncryptionConfiguration_CloudWatchEncryption struct {
 	CloudWatchEncryptionMode any
-	KmsKeyArn any
+	KmsKeyArn                any
 }
 
 type SecurityConfigurations_SecurityConfigurations_EncryptionConfiguration_DataQualityEncryption struct {
 	DataQualityEncryptionMode any
-	KmsKeyArn any
+	KmsKeyArn                 any
 }
 
 type SecurityConfigurations_SecurityConfigurations_EncryptionConfiguration_JobBookmarksEncryption struct {
 	JobBookmarksEncryptionMode any
-	KmsKeyArn any
+	KmsKeyArn                  any
 }
 
 type SecurityConfigurations_SecurityConfigurations_EncryptionConfiguration_S3Encryption struct {
-	KmsKeyArn any
+	KmsKeyArn        any
 	S3EncryptionMode any
 }
 
 type SecurityConfigurations_SecurityConfigurations_EncryptionConfiguration struct {
-	CloudWatchEncryption any
-	DataQualityEncryption any
+	CloudWatchEncryption   any
+	DataQualityEncryption  any
 	JobBookmarksEncryption any
-	S3Encryption any
+	S3Encryption           any
 }
 
 type SecurityConfigurations_SecurityConfigurations struct {
-	CreatedTimeStamp any
+	CreatedTimeStamp        any
 	EncryptionConfiguration any
-	Name any
+	Name                    any
 }
 
 type SecurityConfigurationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SecurityConfigurationsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults             any
+	NextToken              any
 	SecurityConfigurations any
 }
 
@@ -51,6 +51,6 @@ var SecurityConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_glue_security_configurations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

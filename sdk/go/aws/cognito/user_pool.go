@@ -83,7 +83,7 @@ type UserPool_LambdaConfig struct {
 	CustomSmssender any
 	// The ARN of the Lambda function invoked for the Define Auth Challenge trigger, which determines whether a custom authentication challenge is required and defines the challenge presented to the user. (AI-inferred)
 	DefineAuthChallenge any
-	InboundFederation any
+	InboundFederation   any
 	// The KMS key ID to use for encrypting the Lambda environment variables of the user pool's Lambda trigger functions. (AI-inferred)
 	KmskeyId any
 	// The ARN of a Lambda function that Amazon Cognito invokes after a user is authenticated, enabling custom post-authentication logic such as logging or modifying the authentication response. (AI-inferred)
@@ -165,14 +165,14 @@ type UserPool_Schema struct {
 }
 
 type UserPool_SmsConfiguration_EumsSms struct {
-	CallerArn any
+	CallerArn            any
 	ConfigurationSetName any
 	// The external ID that AWS Cognito includes when it assumes the IAM role for sending SMS messages, preventing confused-deputy attacks and must match the external ID on the role's trust policy. (AI-inferred)
-	ExternalId any
-	InEntityId any
-	InTemplateId any
+	ExternalId          any
+	InEntityId          any
+	InTemplateId        any
 	OriginationIdentity any
-	Region any
+	Region              any
 }
 
 type UserPool_SmsConfiguration struct {
@@ -223,200 +223,200 @@ type UserPool_VerificationMessageTemplate struct {
 }
 
 var UserPool_AccountRecoverySetting_RecoveryMechanismsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Priority": ubx.FieldSpec{WireName: "priority"},
+}
 
 var UserPool_AccountRecoverySettingFields = ubx.FieldMap{
-		"RecoveryMechanisms": ubx.FieldSpec{
-			WireName: "recovery_mechanisms",
-			Kind: "list",
-			Fields: UserPool_AccountRecoverySetting_RecoveryMechanismsFields,
-		},
-	}
+	"RecoveryMechanisms": ubx.FieldSpec{
+		WireName: "recovery_mechanisms",
+		Kind:     "list",
+		Fields:   UserPool_AccountRecoverySetting_RecoveryMechanismsFields,
+	},
+}
 
 var UserPool_AdminCreateUserConfig_InviteMessageTemplateFields = ubx.FieldMap{
-		"EmailMessage": ubx.FieldSpec{WireName: "email_message"},
-		"EmailSubject": ubx.FieldSpec{WireName: "email_subject"},
-		"Smsmessage": ubx.FieldSpec{WireName: "smsmessage"},
-	}
+	"EmailMessage": ubx.FieldSpec{WireName: "email_message"},
+	"EmailSubject": ubx.FieldSpec{WireName: "email_subject"},
+	"Smsmessage":   ubx.FieldSpec{WireName: "smsmessage"},
+}
 
 var UserPool_AdminCreateUserConfigFields = ubx.FieldMap{
-		"AllowAdminCreateUserOnly": ubx.FieldSpec{WireName: "allow_admin_create_user_only"},
-		"InviteMessageTemplate": ubx.FieldSpec{
-			WireName: "invite_message_template",
-			Kind: "object",
-			Fields: UserPool_AdminCreateUserConfig_InviteMessageTemplateFields,
-		},
-		"UnusedAccountValidityDays": ubx.FieldSpec{WireName: "unused_account_validity_days"},
-	}
+	"AllowAdminCreateUserOnly": ubx.FieldSpec{WireName: "allow_admin_create_user_only"},
+	"InviteMessageTemplate": ubx.FieldSpec{
+		WireName: "invite_message_template",
+		Kind:     "object",
+		Fields:   UserPool_AdminCreateUserConfig_InviteMessageTemplateFields,
+	},
+	"UnusedAccountValidityDays": ubx.FieldSpec{WireName: "unused_account_validity_days"},
+}
 
 var UserPool_DeviceConfigurationFields = ubx.FieldMap{
-		"ChallengeRequiredOnNewDevice": ubx.FieldSpec{WireName: "challenge_required_on_new_device"},
-		"DeviceOnlyRememberedOnUserPrompt": ubx.FieldSpec{WireName: "device_only_remembered_on_user_prompt"},
-	}
+	"ChallengeRequiredOnNewDevice":     ubx.FieldSpec{WireName: "challenge_required_on_new_device"},
+	"DeviceOnlyRememberedOnUserPrompt": ubx.FieldSpec{WireName: "device_only_remembered_on_user_prompt"},
+}
 
 var UserPool_EmailConfigurationFields = ubx.FieldMap{
-		"ConfigurationSet": ubx.FieldSpec{WireName: "configuration_set"},
-		"EmailSendingAccount": ubx.FieldSpec{WireName: "email_sending_account"},
-		"From": ubx.FieldSpec{WireName: "from"},
-		"ReplyToEmailAddress": ubx.FieldSpec{WireName: "reply_to_email_address"},
-		"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
-	}
+	"ConfigurationSet":    ubx.FieldSpec{WireName: "configuration_set"},
+	"EmailSendingAccount": ubx.FieldSpec{WireName: "email_sending_account"},
+	"From":                ubx.FieldSpec{WireName: "from"},
+	"ReplyToEmailAddress": ubx.FieldSpec{WireName: "reply_to_email_address"},
+	"SourceArn":           ubx.FieldSpec{WireName: "source_arn"},
+}
 
 var UserPool_IssuerConfigurationFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var UserPool_KeyConfigurationFields = ubx.FieldMap{
-		"KeyType": ubx.FieldSpec{WireName: "key_type"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-	}
+	"KeyType":   ubx.FieldSpec{WireName: "key_type"},
+	"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+}
 
 var UserPool_LambdaConfig_CustomEmailSenderFields = ubx.FieldMap{
-		"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
-		"LambdaVersion": ubx.FieldSpec{WireName: "lambda_version"},
-	}
+	"LambdaArn":     ubx.FieldSpec{WireName: "lambda_arn"},
+	"LambdaVersion": ubx.FieldSpec{WireName: "lambda_version"},
+}
 
 var UserPool_LambdaConfigFields = ubx.FieldMap{
-		"CreateAuthChallenge": ubx.FieldSpec{WireName: "create_auth_challenge"},
-		"CustomEmailSender": ubx.FieldSpec{
-			WireName: "custom_email_sender",
-			Kind: "object",
-			Fields: UserPool_LambdaConfig_CustomEmailSenderFields,
-		},
-		"CustomMessage": ubx.FieldSpec{WireName: "custom_message"},
-		"CustomSmssender": ubx.FieldSpec{
-			WireName: "custom_smssender",
-			Kind: "object",
-			Fields: UserPool_LambdaConfig_CustomEmailSenderFields,
-		},
-		"DefineAuthChallenge": ubx.FieldSpec{WireName: "define_auth_challenge"},
-		"InboundFederation": ubx.FieldSpec{
-			WireName: "inbound_federation",
-			Kind: "object",
-			Fields: UserPool_LambdaConfig_CustomEmailSenderFields,
-		},
-		"KmskeyId": ubx.FieldSpec{WireName: "kmskey_id"},
-		"PostAuthentication": ubx.FieldSpec{WireName: "post_authentication"},
-		"PostConfirmation": ubx.FieldSpec{WireName: "post_confirmation"},
-		"PreAuthentication": ubx.FieldSpec{WireName: "pre_authentication"},
-		"PreSignUp": ubx.FieldSpec{WireName: "pre_sign_up"},
-		"PreTokenGeneration": ubx.FieldSpec{WireName: "pre_token_generation"},
-		"PreTokenGenerationConfig": ubx.FieldSpec{
-			WireName: "pre_token_generation_config",
-			Kind: "object",
-			Fields: UserPool_LambdaConfig_CustomEmailSenderFields,
-		},
-		"UserMigration": ubx.FieldSpec{WireName: "user_migration"},
-		"VerifyAuthChallengeResponse": ubx.FieldSpec{WireName: "verify_auth_challenge_response"},
-	}
+	"CreateAuthChallenge": ubx.FieldSpec{WireName: "create_auth_challenge"},
+	"CustomEmailSender": ubx.FieldSpec{
+		WireName: "custom_email_sender",
+		Kind:     "object",
+		Fields:   UserPool_LambdaConfig_CustomEmailSenderFields,
+	},
+	"CustomMessage": ubx.FieldSpec{WireName: "custom_message"},
+	"CustomSmssender": ubx.FieldSpec{
+		WireName: "custom_smssender",
+		Kind:     "object",
+		Fields:   UserPool_LambdaConfig_CustomEmailSenderFields,
+	},
+	"DefineAuthChallenge": ubx.FieldSpec{WireName: "define_auth_challenge"},
+	"InboundFederation": ubx.FieldSpec{
+		WireName: "inbound_federation",
+		Kind:     "object",
+		Fields:   UserPool_LambdaConfig_CustomEmailSenderFields,
+	},
+	"KmskeyId":           ubx.FieldSpec{WireName: "kmskey_id"},
+	"PostAuthentication": ubx.FieldSpec{WireName: "post_authentication"},
+	"PostConfirmation":   ubx.FieldSpec{WireName: "post_confirmation"},
+	"PreAuthentication":  ubx.FieldSpec{WireName: "pre_authentication"},
+	"PreSignUp":          ubx.FieldSpec{WireName: "pre_sign_up"},
+	"PreTokenGeneration": ubx.FieldSpec{WireName: "pre_token_generation"},
+	"PreTokenGenerationConfig": ubx.FieldSpec{
+		WireName: "pre_token_generation_config",
+		Kind:     "object",
+		Fields:   UserPool_LambdaConfig_CustomEmailSenderFields,
+	},
+	"UserMigration":               ubx.FieldSpec{WireName: "user_migration"},
+	"VerifyAuthChallengeResponse": ubx.FieldSpec{WireName: "verify_auth_challenge_response"},
+}
 
 var UserPool_Policies_PasswordPolicyFields = ubx.FieldMap{
-		"MinimumLength": ubx.FieldSpec{WireName: "minimum_length"},
-		"PasswordHistorySize": ubx.FieldSpec{WireName: "password_history_size"},
-		"RequireLowercase": ubx.FieldSpec{WireName: "require_lowercase"},
-		"RequireNumbers": ubx.FieldSpec{WireName: "require_numbers"},
-		"RequireSymbols": ubx.FieldSpec{WireName: "require_symbols"},
-		"RequireUppercase": ubx.FieldSpec{WireName: "require_uppercase"},
-		"TemporaryPasswordValidityDays": ubx.FieldSpec{WireName: "temporary_password_validity_days"},
-	}
+	"MinimumLength":                 ubx.FieldSpec{WireName: "minimum_length"},
+	"PasswordHistorySize":           ubx.FieldSpec{WireName: "password_history_size"},
+	"RequireLowercase":              ubx.FieldSpec{WireName: "require_lowercase"},
+	"RequireNumbers":                ubx.FieldSpec{WireName: "require_numbers"},
+	"RequireSymbols":                ubx.FieldSpec{WireName: "require_symbols"},
+	"RequireUppercase":              ubx.FieldSpec{WireName: "require_uppercase"},
+	"TemporaryPasswordValidityDays": ubx.FieldSpec{WireName: "temporary_password_validity_days"},
+}
 
 var UserPool_Policies_SignInPolicyFields = ubx.FieldMap{
-		"AllowedFirstAuthFactors": ubx.FieldSpec{WireName: "allowed_first_auth_factors"},
-	}
+	"AllowedFirstAuthFactors": ubx.FieldSpec{WireName: "allowed_first_auth_factors"},
+}
 
 var UserPool_PoliciesFields = ubx.FieldMap{
-		"PasswordPolicy": ubx.FieldSpec{
-			WireName: "password_policy",
-			Kind: "object",
-			Fields: UserPool_Policies_PasswordPolicyFields,
-		},
-		"SignInPolicy": ubx.FieldSpec{
-			WireName: "sign_in_policy",
-			Kind: "object",
-			Fields: UserPool_Policies_SignInPolicyFields,
-		},
-	}
+	"PasswordPolicy": ubx.FieldSpec{
+		WireName: "password_policy",
+		Kind:     "object",
+		Fields:   UserPool_Policies_PasswordPolicyFields,
+	},
+	"SignInPolicy": ubx.FieldSpec{
+		WireName: "sign_in_policy",
+		Kind:     "object",
+		Fields:   UserPool_Policies_SignInPolicyFields,
+	},
+}
 
 var UserPool_Schema_NumberAttributeConstraintsFields = ubx.FieldMap{
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-	}
+	"MaxValue": ubx.FieldSpec{WireName: "max_value"},
+	"MinValue": ubx.FieldSpec{WireName: "min_value"},
+}
 
 var UserPool_Schema_StringAttributeConstraintsFields = ubx.FieldMap{
-		"MaxLength": ubx.FieldSpec{WireName: "max_length"},
-		"MinLength": ubx.FieldSpec{WireName: "min_length"},
-	}
+	"MaxLength": ubx.FieldSpec{WireName: "max_length"},
+	"MinLength": ubx.FieldSpec{WireName: "min_length"},
+}
 
 var UserPool_SchemaFields = ubx.FieldMap{
-		"AttributeDataType": ubx.FieldSpec{WireName: "attribute_data_type"},
-		"DeveloperOnlyAttribute": ubx.FieldSpec{WireName: "developer_only_attribute"},
-		"Mutable": ubx.FieldSpec{WireName: "mutable"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NumberAttributeConstraints": ubx.FieldSpec{
-			WireName: "number_attribute_constraints",
-			Kind: "object",
-			Fields: UserPool_Schema_NumberAttributeConstraintsFields,
-		},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"StringAttributeConstraints": ubx.FieldSpec{
-			WireName: "string_attribute_constraints",
-			Kind: "object",
-			Fields: UserPool_Schema_StringAttributeConstraintsFields,
-		},
-	}
+	"AttributeDataType":      ubx.FieldSpec{WireName: "attribute_data_type"},
+	"DeveloperOnlyAttribute": ubx.FieldSpec{WireName: "developer_only_attribute"},
+	"Mutable":                ubx.FieldSpec{WireName: "mutable"},
+	"Name":                   ubx.FieldSpec{WireName: "name"},
+	"NumberAttributeConstraints": ubx.FieldSpec{
+		WireName: "number_attribute_constraints",
+		Kind:     "object",
+		Fields:   UserPool_Schema_NumberAttributeConstraintsFields,
+	},
+	"Required": ubx.FieldSpec{WireName: "required"},
+	"StringAttributeConstraints": ubx.FieldSpec{
+		WireName: "string_attribute_constraints",
+		Kind:     "object",
+		Fields:   UserPool_Schema_StringAttributeConstraintsFields,
+	},
+}
 
 var UserPool_SmsConfiguration_EumsSmsFields = ubx.FieldMap{
-		"CallerArn": ubx.FieldSpec{WireName: "caller_arn"},
-		"ConfigurationSetName": ubx.FieldSpec{WireName: "configuration_set_name"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"InEntityId": ubx.FieldSpec{WireName: "in_entity_id"},
-		"InTemplateId": ubx.FieldSpec{WireName: "in_template_id"},
-		"OriginationIdentity": ubx.FieldSpec{WireName: "origination_identity"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"CallerArn":            ubx.FieldSpec{WireName: "caller_arn"},
+	"ConfigurationSetName": ubx.FieldSpec{WireName: "configuration_set_name"},
+	"ExternalId":           ubx.FieldSpec{WireName: "external_id"},
+	"InEntityId":           ubx.FieldSpec{WireName: "in_entity_id"},
+	"InTemplateId":         ubx.FieldSpec{WireName: "in_template_id"},
+	"OriginationIdentity":  ubx.FieldSpec{WireName: "origination_identity"},
+	"Region":               ubx.FieldSpec{WireName: "region"},
+}
 
 var UserPool_SmsConfigurationFields = ubx.FieldMap{
-		"EumsSms": ubx.FieldSpec{
-			WireName: "eums_sms",
-			Kind: "object",
-			Fields: UserPool_SmsConfiguration_EumsSmsFields,
-		},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"SnsCallerArn": ubx.FieldSpec{WireName: "sns_caller_arn"},
-		"SnsRegion": ubx.FieldSpec{WireName: "sns_region"},
-	}
+	"EumsSms": ubx.FieldSpec{
+		WireName: "eums_sms",
+		Kind:     "object",
+		Fields:   UserPool_SmsConfiguration_EumsSmsFields,
+	},
+	"ExternalId":   ubx.FieldSpec{WireName: "external_id"},
+	"SnsCallerArn": ubx.FieldSpec{WireName: "sns_caller_arn"},
+	"SnsRegion":    ubx.FieldSpec{WireName: "sns_region"},
+}
 
 var UserPool_UserAttributeUpdateSettingsFields = ubx.FieldMap{
-		"AttributesRequireVerificationBeforeUpdate": ubx.FieldSpec{WireName: "attributes_require_verification_before_update"},
-	}
+	"AttributesRequireVerificationBeforeUpdate": ubx.FieldSpec{WireName: "attributes_require_verification_before_update"},
+}
 
 var UserPool_UserPoolAddOns_AdvancedSecurityAdditionalFlowsFields = ubx.FieldMap{
-		"CustomAuthMode": ubx.FieldSpec{WireName: "custom_auth_mode"},
-	}
+	"CustomAuthMode": ubx.FieldSpec{WireName: "custom_auth_mode"},
+}
 
 var UserPool_UserPoolAddOnsFields = ubx.FieldMap{
-		"AdvancedSecurityAdditionalFlows": ubx.FieldSpec{
-			WireName: "advanced_security_additional_flows",
-			Kind: "object",
-			Fields: UserPool_UserPoolAddOns_AdvancedSecurityAdditionalFlowsFields,
-		},
-		"AdvancedSecurityMode": ubx.FieldSpec{WireName: "advanced_security_mode"},
-	}
+	"AdvancedSecurityAdditionalFlows": ubx.FieldSpec{
+		WireName: "advanced_security_additional_flows",
+		Kind:     "object",
+		Fields:   UserPool_UserPoolAddOns_AdvancedSecurityAdditionalFlowsFields,
+	},
+	"AdvancedSecurityMode": ubx.FieldSpec{WireName: "advanced_security_mode"},
+}
 
 var UserPool_UsernameConfigurationFields = ubx.FieldMap{
-		"CaseSensitive": ubx.FieldSpec{WireName: "case_sensitive"},
-	}
+	"CaseSensitive": ubx.FieldSpec{WireName: "case_sensitive"},
+}
 
 var UserPool_VerificationMessageTemplateFields = ubx.FieldMap{
-		"DefaultEmailOption": ubx.FieldSpec{WireName: "default_email_option"},
-		"EmailMessage": ubx.FieldSpec{WireName: "email_message"},
-		"EmailMessageByLink": ubx.FieldSpec{WireName: "email_message_by_link"},
-		"EmailSubject": ubx.FieldSpec{WireName: "email_subject"},
-		"EmailSubjectByLink": ubx.FieldSpec{WireName: "email_subject_by_link"},
-		"SmsMessage": ubx.FieldSpec{WireName: "sms_message"},
-	}
+	"DefaultEmailOption": ubx.FieldSpec{WireName: "default_email_option"},
+	"EmailMessage":       ubx.FieldSpec{WireName: "email_message"},
+	"EmailMessageByLink": ubx.FieldSpec{WireName: "email_message_by_link"},
+	"EmailSubject":       ubx.FieldSpec{WireName: "email_subject"},
+	"EmailSubjectByLink": ubx.FieldSpec{WireName: "email_subject_by_link"},
+	"SmsMessage":         ubx.FieldSpec{WireName: "sms_message"},
+}
 
 type UserPoolConfig struct {
 	// Configures the account recovery methods (such as email verification, SMS, or admin-only) that users can use to regain access to their accounts in the Cognito user pool. (AI-inferred)
@@ -565,91 +565,91 @@ var UserPool = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountRecoverySetting": ubx.FieldSpec{
 			WireName: "account_recovery_setting",
-			Kind: "object",
-			Fields: UserPool_AccountRecoverySettingFields,
+			Kind:     "object",
+			Fields:   UserPool_AccountRecoverySettingFields,
 		},
 		"AdminCreateUserConfig": ubx.FieldSpec{
 			WireName: "admin_create_user_config",
-			Kind: "object",
-			Fields: UserPool_AdminCreateUserConfigFields,
+			Kind:     "object",
+			Fields:   UserPool_AdminCreateUserConfigFields,
 		},
-		"AliasAttributes": ubx.FieldSpec{WireName: "alias_attributes"},
+		"AliasAttributes":        ubx.FieldSpec{WireName: "alias_attributes"},
 		"AutoVerifiedAttributes": ubx.FieldSpec{WireName: "auto_verified_attributes"},
-		"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
+		"DeletionProtection":     ubx.FieldSpec{WireName: "deletion_protection"},
 		"DeviceConfiguration": ubx.FieldSpec{
 			WireName: "device_configuration",
-			Kind: "object",
-			Fields: UserPool_DeviceConfigurationFields,
+			Kind:     "object",
+			Fields:   UserPool_DeviceConfigurationFields,
 		},
 		"EmailAuthenticationMessage": ubx.FieldSpec{WireName: "email_authentication_message"},
 		"EmailAuthenticationSubject": ubx.FieldSpec{WireName: "email_authentication_subject"},
 		"EmailConfiguration": ubx.FieldSpec{
 			WireName: "email_configuration",
-			Kind: "object",
-			Fields: UserPool_EmailConfigurationFields,
+			Kind:     "object",
+			Fields:   UserPool_EmailConfigurationFields,
 		},
 		"EmailVerificationMessage": ubx.FieldSpec{WireName: "email_verification_message"},
 		"EmailVerificationSubject": ubx.FieldSpec{WireName: "email_verification_subject"},
-		"EnabledMfas": ubx.FieldSpec{WireName: "enabled_mfas"},
+		"EnabledMfas":              ubx.FieldSpec{WireName: "enabled_mfas"},
 		"IssuerConfiguration": ubx.FieldSpec{
 			WireName: "issuer_configuration",
-			Kind: "object",
-			Fields: UserPool_IssuerConfigurationFields,
+			Kind:     "object",
+			Fields:   UserPool_IssuerConfigurationFields,
 		},
 		"KeyConfiguration": ubx.FieldSpec{
 			WireName: "key_configuration",
-			Kind: "object",
-			Fields: UserPool_KeyConfigurationFields,
+			Kind:     "object",
+			Fields:   UserPool_KeyConfigurationFields,
 		},
 		"LambdaConfig": ubx.FieldSpec{
 			WireName: "lambda_config",
-			Kind: "object",
-			Fields: UserPool_LambdaConfigFields,
+			Kind:     "object",
+			Fields:   UserPool_LambdaConfigFields,
 		},
 		"MfaConfiguration": ubx.FieldSpec{WireName: "mfa_configuration"},
 		"Policies": ubx.FieldSpec{
 			WireName: "policies",
-			Kind: "object",
-			Fields: UserPool_PoliciesFields,
+			Kind:     "object",
+			Fields:   UserPool_PoliciesFields,
 		},
 		"Schema": ubx.FieldSpec{
 			WireName: "schema",
-			Kind: "list",
-			Fields: UserPool_SchemaFields,
+			Kind:     "list",
+			Fields:   UserPool_SchemaFields,
 		},
 		"SmsAuthenticationMessage": ubx.FieldSpec{WireName: "sms_authentication_message"},
 		"SmsConfiguration": ubx.FieldSpec{
 			WireName: "sms_configuration",
-			Kind: "object",
-			Fields: UserPool_SmsConfigurationFields,
+			Kind:     "object",
+			Fields:   UserPool_SmsConfigurationFields,
 		},
 		"SmsVerificationMessage": ubx.FieldSpec{WireName: "sms_verification_message"},
 		"UserAttributeUpdateSettings": ubx.FieldSpec{
 			WireName: "user_attribute_update_settings",
-			Kind: "object",
-			Fields: UserPool_UserAttributeUpdateSettingsFields,
+			Kind:     "object",
+			Fields:   UserPool_UserAttributeUpdateSettingsFields,
 		},
 		"UserPoolAddOns": ubx.FieldSpec{
 			WireName: "user_pool_add_ons",
-			Kind: "object",
-			Fields: UserPool_UserPoolAddOnsFields,
+			Kind:     "object",
+			Fields:   UserPool_UserPoolAddOnsFields,
 		},
-		"UserPoolName": ubx.FieldSpec{WireName: "user_pool_name"},
-		"UserPoolTags": ubx.FieldSpec{WireName: "user_pool_tags"},
-		"UserPoolTier": ubx.FieldSpec{WireName: "user_pool_tier"},
+		"UserPoolName":       ubx.FieldSpec{WireName: "user_pool_name"},
+		"UserPoolTags":       ubx.FieldSpec{WireName: "user_pool_tags"},
+		"UserPoolTier":       ubx.FieldSpec{WireName: "user_pool_tier"},
 		"UsernameAttributes": ubx.FieldSpec{WireName: "username_attributes"},
 		"UsernameConfiguration": ubx.FieldSpec{
 			WireName: "username_configuration",
-			Kind: "object",
-			Fields: UserPool_UsernameConfigurationFields,
+			Kind:     "object",
+			Fields:   UserPool_UsernameConfigurationFields,
 		},
 		"VerificationMessageTemplate": ubx.FieldSpec{
 			WireName: "verification_message_template",
-			Kind: "object",
-			Fields: UserPool_VerificationMessageTemplateFields,
+			Kind:     "object",
+			Fields:   UserPool_VerificationMessageTemplateFields,
 		},
 		"WebAuthnFactorConfiguration": ubx.FieldSpec{WireName: "web_authn_factor_configuration"},
-		"WebAuthnRelyingPartyId": ubx.FieldSpec{WireName: "web_authn_relying_party_id"},
-		"WebAuthnUserVerification": ubx.FieldSpec{WireName: "web_authn_user_verification"},
+		"WebAuthnRelyingPartyId":      ubx.FieldSpec{WireName: "web_authn_relying_party_id"},
+		"WebAuthnUserVerification":    ubx.FieldSpec{WireName: "web_authn_user_verification"},
 	},
 }

@@ -4,28 +4,28 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LogGroupFields_LogGroupFields struct {
-	Name any
+	Name    any
 	Percent any
 }
 
 type LogGroupFieldsConfig struct {
 	LogGroupIdentifier any
-	LogGroupName any
-	Time any
+	LogGroupName       any
+	Time               any
 }
 
 type LogGroupFieldsAttrs struct {
-	LogGroupFields any
+	LogGroupFields     any
 	LogGroupIdentifier any
-	LogGroupName any
-	Time any
+	LogGroupName       any
+	Time               any
 }
 
 var LogGroupFields = ubx.DataSourceBinding{
 	WireType: "aws_logs_log_group_fields",
 	Fields: ubx.FieldMap{
 		"LogGroupIdentifier": ubx.FieldSpec{WireName: "log_group_identifier"},
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-		"Time": ubx.FieldSpec{WireName: "time"},
+		"LogGroupName":       ubx.FieldSpec{WireName: "log_group_name"},
+		"Time":               ubx.FieldSpec{WireName: "time"},
 	},
 }

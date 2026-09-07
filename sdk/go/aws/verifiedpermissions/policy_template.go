@@ -30,9 +30,9 @@ type PolicyTemplateAttrs struct {
 var PolicyTemplate = ubx.ResourceBinding{
 	WireType: "aws_verified_permissions_policy_template",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"PolicyStoreId": ubx.FieldSpec{WireName: "policy_store_id"},
-		"Statement": ubx.FieldSpec{WireName: "statement"},
+		"Statement":     ubx.FieldSpec{WireName: "statement"},
 	},
 }

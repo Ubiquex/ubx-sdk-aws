@@ -4,16 +4,16 @@ package neptune_db
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NeptuneDbGremlinQueries_Queries_QueryEvalStats struct {
-	Cancelled any
-	Elapsed any
+	Cancelled  any
+	Elapsed    any
 	Subqueries any
-	Waited any
+	Waited     any
 }
 
 type NeptuneDbGremlinQueries_Queries struct {
 	QueryEvalStats any
-	QueryId any
-	QueryString any
+	QueryId        any
+	QueryString    any
 }
 
 type NeptuneDbGremlinQueriesConfig struct {
@@ -22,9 +22,9 @@ type NeptuneDbGremlinQueriesConfig struct {
 
 type NeptuneDbGremlinQueriesAttrs struct {
 	AcceptedQueryCount any
-	IncludeWaiting any
-	Queries any
-	RunningQueryCount any
+	IncludeWaiting     any
+	Queries            any
+	RunningQueryCount  any
 }
 
 var NeptuneDbGremlinQueries = ubx.DataSourceBinding{

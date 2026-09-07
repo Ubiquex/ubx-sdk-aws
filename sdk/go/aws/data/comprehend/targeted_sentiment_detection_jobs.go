@@ -4,69 +4,69 @@ package comprehend
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TargetedSentimentDetectionJobs_Filter struct {
-	JobName any
-	JobStatus any
-	SubmitTimeAfter any
+	JobName          any
+	JobStatus        any
+	SubmitTimeAfter  any
 	SubmitTimeBefore any
 }
 
 type TargetedSentimentDetectionJobs_TargetedSentimentDetectionJobPropertiesList_InputDataConfig_DocumentReaderConfig struct {
 	DocumentReadAction any
-	DocumentReadMode any
-	FeatureTypes any
+	DocumentReadMode   any
+	FeatureTypes       any
 }
 
 type TargetedSentimentDetectionJobs_TargetedSentimentDetectionJobPropertiesList_InputDataConfig struct {
 	DocumentReaderConfig any
-	InputFormat any
-	S3Uri any
+	InputFormat          any
+	S3Uri                any
 }
 
 type TargetedSentimentDetectionJobs_TargetedSentimentDetectionJobPropertiesList_OutputDataConfig struct {
 	KmsKeyId any
-	S3Uri any
+	S3Uri    any
 }
 
 type TargetedSentimentDetectionJobs_TargetedSentimentDetectionJobPropertiesList_VpcConfig struct {
 	SecurityGroupIds any
-	Subnets any
+	Subnets          any
 }
 
 type TargetedSentimentDetectionJobs_TargetedSentimentDetectionJobPropertiesList struct {
 	DataAccessRoleArn any
-	EndTime any
-	InputDataConfig any
-	JobArn any
-	JobId any
-	JobName any
-	JobStatus any
-	LanguageCode any
-	Message any
-	OutputDataConfig any
-	SubmitTime any
-	VolumeKmsKeyId any
-	VpcConfig any
+	EndTime           any
+	InputDataConfig   any
+	JobArn            any
+	JobId             any
+	JobName           any
+	JobStatus         any
+	LanguageCode      any
+	Message           any
+	OutputDataConfig  any
+	SubmitTime        any
+	VolumeKmsKeyId    any
+	VpcConfig         any
 }
 
 var TargetedSentimentDetectionJobs_FilterFields = ubx.FieldMap{
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"JobStatus": ubx.FieldSpec{WireName: "job_status"},
-		"SubmitTimeAfter": ubx.FieldSpec{WireName: "submit_time_after"},
-		"SubmitTimeBefore": ubx.FieldSpec{WireName: "submit_time_before"},
-	}
+	"JobName":          ubx.FieldSpec{WireName: "job_name"},
+	"JobStatus":        ubx.FieldSpec{WireName: "job_status"},
+	"SubmitTimeAfter":  ubx.FieldSpec{WireName: "submit_time_after"},
+	"SubmitTimeBefore": ubx.FieldSpec{WireName: "submit_time_before"},
+}
 
 type TargetedSentimentDetectionJobsConfig struct {
 	// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the <code>ListTargetedSentimentDetectionJobs</code> operation.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type TargetedSentimentDetectionJobsAttrs struct {
 	// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the <code>ListTargetedSentimentDetectionJobs</code> operation.</p>
-	Filter any
-	MaxResults any
-	NextToken any
+	Filter                                      any
+	MaxResults                                  any
+	NextToken                                   any
 	TargetedSentimentDetectionJobPropertiesList any
 }
 
@@ -75,10 +75,10 @@ var TargetedSentimentDetectionJobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: TargetedSentimentDetectionJobs_FilterFields,
+			Kind:     "object",
+			Fields:   TargetedSentimentDetectionJobs_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

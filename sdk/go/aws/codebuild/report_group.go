@@ -32,27 +32,27 @@ type ReportGroup_Tags struct {
 }
 
 var ReportGroup_ExportConfig_S3DestinationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"BucketOwner": ubx.FieldSpec{WireName: "bucket_owner"},
-		"EncryptionDisabled": ubx.FieldSpec{WireName: "encryption_disabled"},
-		"EncryptionKey": ubx.FieldSpec{WireName: "encryption_key"},
-		"Packaging": ubx.FieldSpec{WireName: "packaging"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Bucket":             ubx.FieldSpec{WireName: "bucket"},
+	"BucketOwner":        ubx.FieldSpec{WireName: "bucket_owner"},
+	"EncryptionDisabled": ubx.FieldSpec{WireName: "encryption_disabled"},
+	"EncryptionKey":      ubx.FieldSpec{WireName: "encryption_key"},
+	"Packaging":          ubx.FieldSpec{WireName: "packaging"},
+	"Path":               ubx.FieldSpec{WireName: "path"},
+}
 
 var ReportGroup_ExportConfigFields = ubx.FieldMap{
-		"ExportConfigType": ubx.FieldSpec{WireName: "export_config_type"},
-		"S3Destination": ubx.FieldSpec{
-			WireName: "s3_destination",
-			Kind: "object",
-			Fields: ReportGroup_ExportConfig_S3DestinationFields,
-		},
-	}
+	"ExportConfigType": ubx.FieldSpec{WireName: "export_config_type"},
+	"S3Destination": ubx.FieldSpec{
+		WireName: "s3_destination",
+		Kind:     "object",
+		Fields:   ReportGroup_ExportConfig_S3DestinationFields,
+	},
+}
 
 var ReportGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ReportGroupConfig struct {
 	// Indicates whether all reports associated with the report group are deleted when the CloudFormation stack deletes the report group. (AI-inferred)
@@ -88,14 +88,14 @@ var ReportGroup = ubx.ResourceBinding{
 		"DeleteReports": ubx.FieldSpec{WireName: "delete_reports"},
 		"ExportConfig": ubx.FieldSpec{
 			WireName: "export_config",
-			Kind: "object",
-			Fields: ReportGroup_ExportConfigFields,
+			Kind:     "object",
+			Fields:   ReportGroup_ExportConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ReportGroup_TagsFields,
+			Kind:     "list",
+			Fields:   ReportGroup_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

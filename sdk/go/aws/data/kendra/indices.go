@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Indices_IndexConfigurationSummaryItems struct {
 	CreatedAt any
-	Edition any
-	Id any
-	Name any
-	Status any
+	Edition   any
+	Id        any
+	Name      any
+	Status    any
 	UpdatedAt any
 }
 
 type IndicesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type IndicesAttrs struct {
 	IndexConfigurationSummaryItems any
-	MaxResults any
-	NextToken any
+	MaxResults                     any
+	NextToken                      any
 }
 
 var Indices = ubx.DataSourceBinding{
 	WireType: "aws_kendra_indices",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -72,7 +72,7 @@ type Guardrail_SensitiveInformationPolicyConfig_PiiEntitiesConfig struct {
 	// Indicates whether the PII filter for this entity type is enabled on input (prompt) text in the guardrail's sensitive information policy. (AI-inferred)
 	InputEnabled any
 	// Specifies the action (e.g., BLOCK or ANONYMIZE) the guardrail applies when the configured PII entity type is detected in the model's output. (AI-inferred)
-	OutputAction any
+	OutputAction  any
 	OutputEnabled any
 	// Specifies the type of PII entity (e.g., EMAIL, PHONE, SSN) to be filtered by the guardrail's sensitive information policy. (AI-inferred)
 	Type any
@@ -106,7 +106,7 @@ type Guardrail_SensitiveInformationPolicyConfig struct {
 
 type Guardrail_Tags struct {
 	// The key of a tag to apply to the Bedrock guardrail, used for organizing and identifying the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -116,12 +116,12 @@ type Guardrail_TopicPolicyConfig_TopicsConfig struct {
 	// Specifies a list of sample phrases that illustrate the topic, used to improve the accuracy of the guardrail's detection of the topic. (AI-inferred)
 	Examples any
 	// Specifies the action the guardrail takes when user input matches this topic, such as BLOCK or ALLOW. (AI-inferred)
-	InputAction any
+	InputAction  any
 	InputEnabled any
 	// The user-defined name of a topic configured in the guardrail's topic policy, used to identify a specific subject (e.g., 'investment advice') that the model is instructed to avoid discussing. (AI-inferred)
 	Name any
 	// Specifies the action taken on the output when a user query or model response matches the topic, with allowed values 'BLOCK' to deny the content and 'NONE' to allow it. (AI-inferred)
-	OutputAction any
+	OutputAction  any
 	OutputEnabled any
 	// Specifies whether the topic is defined as a denied (DENY) or allowed (ALLOW) topic in the guardrail's topic policy. (AI-inferred)
 	Type any
@@ -168,148 +168,148 @@ type Guardrail_WordPolicyConfig struct {
 }
 
 var Guardrail_AutomatedReasoningPolicyConfigFields = ubx.FieldMap{
-		"ConfidenceThreshold": ubx.FieldSpec{WireName: "confidence_threshold"},
-		"Policies": ubx.FieldSpec{WireName: "policies"},
-	}
+	"ConfidenceThreshold": ubx.FieldSpec{WireName: "confidence_threshold"},
+	"Policies":            ubx.FieldSpec{WireName: "policies"},
+}
 
 var Guardrail_ContentPolicyConfig_ContentFiltersTierConfigFields = ubx.FieldMap{
-		"TierName": ubx.FieldSpec{WireName: "tier_name"},
-	}
+	"TierName": ubx.FieldSpec{WireName: "tier_name"},
+}
 
 var Guardrail_ContentPolicyConfig_FiltersConfigFields = ubx.FieldMap{
-		"InputAction": ubx.FieldSpec{WireName: "input_action"},
-		"InputEnabled": ubx.FieldSpec{WireName: "input_enabled"},
-		"InputModalities": ubx.FieldSpec{WireName: "input_modalities"},
-		"InputStrength": ubx.FieldSpec{WireName: "input_strength"},
-		"OutputAction": ubx.FieldSpec{WireName: "output_action"},
-		"OutputEnabled": ubx.FieldSpec{WireName: "output_enabled"},
-		"OutputModalities": ubx.FieldSpec{WireName: "output_modalities"},
-		"OutputStrength": ubx.FieldSpec{WireName: "output_strength"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"InputAction":      ubx.FieldSpec{WireName: "input_action"},
+	"InputEnabled":     ubx.FieldSpec{WireName: "input_enabled"},
+	"InputModalities":  ubx.FieldSpec{WireName: "input_modalities"},
+	"InputStrength":    ubx.FieldSpec{WireName: "input_strength"},
+	"OutputAction":     ubx.FieldSpec{WireName: "output_action"},
+	"OutputEnabled":    ubx.FieldSpec{WireName: "output_enabled"},
+	"OutputModalities": ubx.FieldSpec{WireName: "output_modalities"},
+	"OutputStrength":   ubx.FieldSpec{WireName: "output_strength"},
+	"Type":             ubx.FieldSpec{WireName: "type"},
+}
 
 var Guardrail_ContentPolicyConfigFields = ubx.FieldMap{
-		"ContentFiltersTierConfig": ubx.FieldSpec{
-			WireName: "content_filters_tier_config",
-			Kind: "object",
-			Fields: Guardrail_ContentPolicyConfig_ContentFiltersTierConfigFields,
-		},
-		"FiltersConfig": ubx.FieldSpec{
-			WireName: "filters_config",
-			Kind: "list",
-			Fields: Guardrail_ContentPolicyConfig_FiltersConfigFields,
-		},
-	}
+	"ContentFiltersTierConfig": ubx.FieldSpec{
+		WireName: "content_filters_tier_config",
+		Kind:     "object",
+		Fields:   Guardrail_ContentPolicyConfig_ContentFiltersTierConfigFields,
+	},
+	"FiltersConfig": ubx.FieldSpec{
+		WireName: "filters_config",
+		Kind:     "list",
+		Fields:   Guardrail_ContentPolicyConfig_FiltersConfigFields,
+	},
+}
 
 var Guardrail_ContextualGroundingPolicyConfig_FiltersConfigFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Action":    ubx.FieldSpec{WireName: "action"},
+	"Enabled":   ubx.FieldSpec{WireName: "enabled"},
+	"Threshold": ubx.FieldSpec{WireName: "threshold"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 var Guardrail_ContextualGroundingPolicyConfigFields = ubx.FieldMap{
-		"FiltersConfig": ubx.FieldSpec{
-			WireName: "filters_config",
-			Kind: "list",
-			Fields: Guardrail_ContextualGroundingPolicyConfig_FiltersConfigFields,
-		},
-	}
+	"FiltersConfig": ubx.FieldSpec{
+		WireName: "filters_config",
+		Kind:     "list",
+		Fields:   Guardrail_ContextualGroundingPolicyConfig_FiltersConfigFields,
+	},
+}
 
 var Guardrail_CrossRegionConfigFields = ubx.FieldMap{
-		"GuardrailProfileArn": ubx.FieldSpec{WireName: "guardrail_profile_arn"},
-	}
+	"GuardrailProfileArn": ubx.FieldSpec{WireName: "guardrail_profile_arn"},
+}
 
 var Guardrail_SensitiveInformationPolicyConfig_PiiEntitiesConfigFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"InputAction": ubx.FieldSpec{WireName: "input_action"},
-		"InputEnabled": ubx.FieldSpec{WireName: "input_enabled"},
-		"OutputAction": ubx.FieldSpec{WireName: "output_action"},
-		"OutputEnabled": ubx.FieldSpec{WireName: "output_enabled"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Action":        ubx.FieldSpec{WireName: "action"},
+	"InputAction":   ubx.FieldSpec{WireName: "input_action"},
+	"InputEnabled":  ubx.FieldSpec{WireName: "input_enabled"},
+	"OutputAction":  ubx.FieldSpec{WireName: "output_action"},
+	"OutputEnabled": ubx.FieldSpec{WireName: "output_enabled"},
+	"Type":          ubx.FieldSpec{WireName: "type"},
+}
 
 var Guardrail_SensitiveInformationPolicyConfig_RegexesConfigFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InputAction": ubx.FieldSpec{WireName: "input_action"},
-		"InputEnabled": ubx.FieldSpec{WireName: "input_enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutputAction": ubx.FieldSpec{WireName: "output_action"},
-		"OutputEnabled": ubx.FieldSpec{WireName: "output_enabled"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-	}
+	"Action":        ubx.FieldSpec{WireName: "action"},
+	"Description":   ubx.FieldSpec{WireName: "description"},
+	"InputAction":   ubx.FieldSpec{WireName: "input_action"},
+	"InputEnabled":  ubx.FieldSpec{WireName: "input_enabled"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"OutputAction":  ubx.FieldSpec{WireName: "output_action"},
+	"OutputEnabled": ubx.FieldSpec{WireName: "output_enabled"},
+	"Pattern":       ubx.FieldSpec{WireName: "pattern"},
+}
 
 var Guardrail_SensitiveInformationPolicyConfigFields = ubx.FieldMap{
-		"PiiEntitiesConfig": ubx.FieldSpec{
-			WireName: "pii_entities_config",
-			Kind: "list",
-			Fields: Guardrail_SensitiveInformationPolicyConfig_PiiEntitiesConfigFields,
-		},
-		"RegexesConfig": ubx.FieldSpec{
-			WireName: "regexes_config",
-			Kind: "list",
-			Fields: Guardrail_SensitiveInformationPolicyConfig_RegexesConfigFields,
-		},
-	}
+	"PiiEntitiesConfig": ubx.FieldSpec{
+		WireName: "pii_entities_config",
+		Kind:     "list",
+		Fields:   Guardrail_SensitiveInformationPolicyConfig_PiiEntitiesConfigFields,
+	},
+	"RegexesConfig": ubx.FieldSpec{
+		WireName: "regexes_config",
+		Kind:     "list",
+		Fields:   Guardrail_SensitiveInformationPolicyConfig_RegexesConfigFields,
+	},
+}
 
 var Guardrail_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Guardrail_TopicPolicyConfig_TopicsConfigFields = ubx.FieldMap{
-		"Definition": ubx.FieldSpec{WireName: "definition"},
-		"Examples": ubx.FieldSpec{WireName: "examples"},
-		"InputAction": ubx.FieldSpec{WireName: "input_action"},
-		"InputEnabled": ubx.FieldSpec{WireName: "input_enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutputAction": ubx.FieldSpec{WireName: "output_action"},
-		"OutputEnabled": ubx.FieldSpec{WireName: "output_enabled"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Definition":    ubx.FieldSpec{WireName: "definition"},
+	"Examples":      ubx.FieldSpec{WireName: "examples"},
+	"InputAction":   ubx.FieldSpec{WireName: "input_action"},
+	"InputEnabled":  ubx.FieldSpec{WireName: "input_enabled"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"OutputAction":  ubx.FieldSpec{WireName: "output_action"},
+	"OutputEnabled": ubx.FieldSpec{WireName: "output_enabled"},
+	"Type":          ubx.FieldSpec{WireName: "type"},
+}
 
 var Guardrail_TopicPolicyConfigFields = ubx.FieldMap{
-		"TopicsConfig": ubx.FieldSpec{
-			WireName: "topics_config",
-			Kind: "list",
-			Fields: Guardrail_TopicPolicyConfig_TopicsConfigFields,
-		},
-		"TopicsTierConfig": ubx.FieldSpec{
-			WireName: "topics_tier_config",
-			Kind: "object",
-			Fields: Guardrail_ContentPolicyConfig_ContentFiltersTierConfigFields,
-		},
-	}
+	"TopicsConfig": ubx.FieldSpec{
+		WireName: "topics_config",
+		Kind:     "list",
+		Fields:   Guardrail_TopicPolicyConfig_TopicsConfigFields,
+	},
+	"TopicsTierConfig": ubx.FieldSpec{
+		WireName: "topics_tier_config",
+		Kind:     "object",
+		Fields:   Guardrail_ContentPolicyConfig_ContentFiltersTierConfigFields,
+	},
+}
 
 var Guardrail_WordPolicyConfig_ManagedWordListsConfigFields = ubx.FieldMap{
-		"InputAction": ubx.FieldSpec{WireName: "input_action"},
-		"InputEnabled": ubx.FieldSpec{WireName: "input_enabled"},
-		"OutputAction": ubx.FieldSpec{WireName: "output_action"},
-		"OutputEnabled": ubx.FieldSpec{WireName: "output_enabled"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"InputAction":   ubx.FieldSpec{WireName: "input_action"},
+	"InputEnabled":  ubx.FieldSpec{WireName: "input_enabled"},
+	"OutputAction":  ubx.FieldSpec{WireName: "output_action"},
+	"OutputEnabled": ubx.FieldSpec{WireName: "output_enabled"},
+	"Type":          ubx.FieldSpec{WireName: "type"},
+}
 
 var Guardrail_WordPolicyConfig_WordsConfigFields = ubx.FieldMap{
-		"InputAction": ubx.FieldSpec{WireName: "input_action"},
-		"InputEnabled": ubx.FieldSpec{WireName: "input_enabled"},
-		"OutputAction": ubx.FieldSpec{WireName: "output_action"},
-		"OutputEnabled": ubx.FieldSpec{WireName: "output_enabled"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"InputAction":   ubx.FieldSpec{WireName: "input_action"},
+	"InputEnabled":  ubx.FieldSpec{WireName: "input_enabled"},
+	"OutputAction":  ubx.FieldSpec{WireName: "output_action"},
+	"OutputEnabled": ubx.FieldSpec{WireName: "output_enabled"},
+	"Text":          ubx.FieldSpec{WireName: "text"},
+}
 
 var Guardrail_WordPolicyConfigFields = ubx.FieldMap{
-		"ManagedWordListsConfig": ubx.FieldSpec{
-			WireName: "managed_word_lists_config",
-			Kind: "list",
-			Fields: Guardrail_WordPolicyConfig_ManagedWordListsConfigFields,
-		},
-		"WordsConfig": ubx.FieldSpec{
-			WireName: "words_config",
-			Kind: "list",
-			Fields: Guardrail_WordPolicyConfig_WordsConfigFields,
-		},
-	}
+	"ManagedWordListsConfig": ubx.FieldSpec{
+		WireName: "managed_word_lists_config",
+		Kind:     "list",
+		Fields:   Guardrail_WordPolicyConfig_ManagedWordListsConfigFields,
+	},
+	"WordsConfig": ubx.FieldSpec{
+		WireName: "words_config",
+		Kind:     "list",
+		Fields:   Guardrail_WordPolicyConfig_WordsConfigFields,
+	},
+}
 
 type GuardrailConfig struct {
 	// Optional configuration for integrating Automated Reasoning policies with the guardrail.
@@ -390,48 +390,48 @@ var Guardrail = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutomatedReasoningPolicyConfig": ubx.FieldSpec{
 			WireName: "automated_reasoning_policy_config",
-			Kind: "object",
-			Fields: Guardrail_AutomatedReasoningPolicyConfigFields,
+			Kind:     "object",
+			Fields:   Guardrail_AutomatedReasoningPolicyConfigFields,
 		},
-		"BlockedInputMessaging": ubx.FieldSpec{WireName: "blocked_input_messaging"},
+		"BlockedInputMessaging":   ubx.FieldSpec{WireName: "blocked_input_messaging"},
 		"BlockedOutputsMessaging": ubx.FieldSpec{WireName: "blocked_outputs_messaging"},
 		"ContentPolicyConfig": ubx.FieldSpec{
 			WireName: "content_policy_config",
-			Kind: "object",
-			Fields: Guardrail_ContentPolicyConfigFields,
+			Kind:     "object",
+			Fields:   Guardrail_ContentPolicyConfigFields,
 		},
 		"ContextualGroundingPolicyConfig": ubx.FieldSpec{
 			WireName: "contextual_grounding_policy_config",
-			Kind: "object",
-			Fields: Guardrail_ContextualGroundingPolicyConfigFields,
+			Kind:     "object",
+			Fields:   Guardrail_ContextualGroundingPolicyConfigFields,
 		},
 		"CrossRegionConfig": ubx.FieldSpec{
 			WireName: "cross_region_config",
-			Kind: "object",
-			Fields: Guardrail_CrossRegionConfigFields,
+			Kind:     "object",
+			Fields:   Guardrail_CrossRegionConfigFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"KmsKeyArn":   ubx.FieldSpec{WireName: "kms_key_arn"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"SensitiveInformationPolicyConfig": ubx.FieldSpec{
 			WireName: "sensitive_information_policy_config",
-			Kind: "object",
-			Fields: Guardrail_SensitiveInformationPolicyConfigFields,
+			Kind:     "object",
+			Fields:   Guardrail_SensitiveInformationPolicyConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Guardrail_TagsFields,
+			Kind:     "list",
+			Fields:   Guardrail_TagsFields,
 		},
 		"TopicPolicyConfig": ubx.FieldSpec{
 			WireName: "topic_policy_config",
-			Kind: "object",
-			Fields: Guardrail_TopicPolicyConfigFields,
+			Kind:     "object",
+			Fields:   Guardrail_TopicPolicyConfigFields,
 		},
 		"WordPolicyConfig": ubx.FieldSpec{
 			WireName: "word_policy_config",
-			Kind: "object",
-			Fields: Guardrail_WordPolicyConfigFields,
+			Kind:     "object",
+			Fields:   Guardrail_WordPolicyConfigFields,
 		},
 	},
 }

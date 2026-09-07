@@ -20,7 +20,7 @@ type ManagedNotificationAdditionalChannelAssociationAttrs struct {
 var ManagedNotificationAdditionalChannelAssociation = ubx.ResourceBinding{
 	WireType: "aws_notifications_managed_notification_additional_channel_association",
 	Fields: ubx.FieldMap{
-		"ChannelArn": ubx.FieldSpec{WireName: "channel_arn"},
+		"ChannelArn":                          ubx.FieldSpec{WireName: "channel_arn"},
 		"ManagedNotificationConfigurationArn": ubx.FieldSpec{WireName: "managed_notification_configuration_arn"},
 	},
 }

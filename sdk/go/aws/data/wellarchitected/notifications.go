@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Notifications_NotificationSummaries_LensUpgradeSummary struct {
 	CurrentLensVersion any
-	LatestLensVersion any
-	LensAlias any
-	LensArn any
-	ResourceArn any
-	ResourceName any
-	WorkloadId any
-	WorkloadName any
+	LatestLensVersion  any
+	LensAlias          any
+	LensArn            any
+	ResourceArn        any
+	ResourceName       any
+	WorkloadId         any
+	WorkloadName       any
 }
 
 type Notifications_NotificationSummaries struct {
 	LensUpgradeSummary any
-	Type any
+	Type               any
 }
 
 type NotificationsConfig struct {
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
-	NextToken any
+	NextToken   any
 	ResourceArn any
 	// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
 	WorkloadId any
@@ -33,9 +33,9 @@ type NotificationsAttrs struct {
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
-	NextToken any
+	NextToken             any
 	NotificationSummaries any
-	ResourceArn any
+	ResourceArn           any
 	// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
 	WorkloadId any
 }
@@ -43,9 +43,9 @@ type NotificationsAttrs struct {
 var Notifications = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_notifications",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"WorkloadId": ubx.FieldSpec{WireName: "workload_id"},
+		"WorkloadId":  ubx.FieldSpec{WireName: "workload_id"},
 	},
 }

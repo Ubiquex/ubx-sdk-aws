@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfileNotifications_NotificationSummaries struct {
 	CurrentProfileVersion any
-	LatestProfileVersion any
-	ProfileArn any
-	ProfileName any
-	Type any
-	WorkloadId any
-	WorkloadName any
+	LatestProfileVersion  any
+	ProfileArn            any
+	ProfileName           any
+	Type                  any
+	WorkloadId            any
+	WorkloadName          any
 }
 
 type ProfileNotificationsConfig struct {
@@ -26,7 +26,7 @@ type ProfileNotificationsAttrs struct {
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
-	NextToken any
+	NextToken             any
 	NotificationSummaries any
 	// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
 	WorkloadId any
@@ -36,7 +36,7 @@ var ProfileNotifications = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_profile_notifications",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"WorkloadId": ubx.FieldSpec{WireName: "workload_id"},
 	},
 }

@@ -14,12 +14,12 @@ type VdmAttributes_GuardianAttributes struct {
 }
 
 var VdmAttributes_DashboardAttributesFields = ubx.FieldMap{
-		"EngagementMetrics": ubx.FieldSpec{WireName: "engagement_metrics"},
-	}
+	"EngagementMetrics": ubx.FieldSpec{WireName: "engagement_metrics"},
+}
 
 var VdmAttributes_GuardianAttributesFields = ubx.FieldMap{
-		"OptimizedSharedDelivery": ubx.FieldSpec{WireName: "optimized_shared_delivery"},
-	}
+	"OptimizedSharedDelivery": ubx.FieldSpec{WireName: "optimized_shared_delivery"},
+}
 
 type VdmAttributesConfig struct {
 	// Preferences regarding the Dashboard feature.
@@ -42,13 +42,13 @@ var VdmAttributes = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DashboardAttributes": ubx.FieldSpec{
 			WireName: "dashboard_attributes",
-			Kind: "object",
-			Fields: VdmAttributes_DashboardAttributesFields,
+			Kind:     "object",
+			Fields:   VdmAttributes_DashboardAttributesFields,
 		},
 		"GuardianAttributes": ubx.FieldSpec{
 			WireName: "guardian_attributes",
-			Kind: "object",
-			Fields: VdmAttributes_GuardianAttributesFields,
+			Kind:     "object",
+			Fields:   VdmAttributes_GuardianAttributesFields,
 		},
 	},
 }

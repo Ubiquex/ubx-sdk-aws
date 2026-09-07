@@ -8,23 +8,23 @@ type ResizeConfig struct {
 }
 
 type ResizeAttrs struct {
-	AvgResizeRateInMegaBytesPerSecond any
-	ClusterIdentifier any
-	DataTransferProgressPercent any
-	ElapsedTimeInSeconds any
+	AvgResizeRateInMegaBytesPerSecond  any
+	ClusterIdentifier                  any
+	DataTransferProgressPercent        any
+	ElapsedTimeInSeconds               any
 	EstimatedTimeToCompletionInSeconds any
-	ImportTablesCompleted any
-	ImportTablesInProgress any
-	ImportTablesNotStarted any
-	Message any
-	ProgressInMegaBytes any
-	ResizeType any
-	Status any
-	TargetClusterType any
-	TargetEncryptionType any
-	TargetNodeType any
-	TargetNumberOfNodes any
-	TotalResizeDataInMegaBytes any
+	ImportTablesCompleted              any
+	ImportTablesInProgress             any
+	ImportTablesNotStarted             any
+	Message                            any
+	ProgressInMegaBytes                any
+	ResizeType                         any
+	Status                             any
+	TargetClusterType                  any
+	TargetEncryptionType               any
+	TargetNodeType                     any
+	TargetNumberOfNodes                any
+	TotalResizeDataInMegaBytes         any
 }
 
 var Resize = ubx.DataSourceBinding{

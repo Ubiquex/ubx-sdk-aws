@@ -41,33 +41,33 @@ type ServerlessCache_Tags struct {
 }
 
 var ServerlessCache_CacheUsageLimits_DataStorageFields = ubx.FieldMap{
-		"Maximum": ubx.FieldSpec{WireName: "maximum"},
-		"Minimum": ubx.FieldSpec{WireName: "minimum"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-	}
+	"Maximum": ubx.FieldSpec{WireName: "maximum"},
+	"Minimum": ubx.FieldSpec{WireName: "minimum"},
+	"Unit":    ubx.FieldSpec{WireName: "unit"},
+}
 
 var ServerlessCache_CacheUsageLimits_EcpuperSecondFields = ubx.FieldMap{
-		"Maximum": ubx.FieldSpec{WireName: "maximum"},
-		"Minimum": ubx.FieldSpec{WireName: "minimum"},
-	}
+	"Maximum": ubx.FieldSpec{WireName: "maximum"},
+	"Minimum": ubx.FieldSpec{WireName: "minimum"},
+}
 
 var ServerlessCache_CacheUsageLimitsFields = ubx.FieldMap{
-		"DataStorage": ubx.FieldSpec{
-			WireName: "data_storage",
-			Kind: "object",
-			Fields: ServerlessCache_CacheUsageLimits_DataStorageFields,
-		},
-		"EcpuperSecond": ubx.FieldSpec{
-			WireName: "ecpuper_second",
-			Kind: "object",
-			Fields: ServerlessCache_CacheUsageLimits_EcpuperSecondFields,
-		},
-	}
+	"DataStorage": ubx.FieldSpec{
+		WireName: "data_storage",
+		Kind:     "object",
+		Fields:   ServerlessCache_CacheUsageLimits_DataStorageFields,
+	},
+	"EcpuperSecond": ubx.FieldSpec{
+		WireName: "ecpuper_second",
+		Kind:     "object",
+		Fields:   ServerlessCache_CacheUsageLimits_EcpuperSecondFields,
+	},
+}
 
 var ServerlessCache_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ServerlessCacheConfig struct {
 	// The cache capacity limit of the Serverless Cache.
@@ -148,24 +148,24 @@ var ServerlessCache = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CacheUsageLimits": ubx.FieldSpec{
 			WireName: "cache_usage_limits",
-			Kind: "object",
-			Fields: ServerlessCache_CacheUsageLimitsFields,
+			Kind:     "object",
+			Fields:   ServerlessCache_CacheUsageLimitsFields,
 		},
-		"DailySnapshotTime": ubx.FieldSpec{WireName: "daily_snapshot_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"FinalSnapshotName": ubx.FieldSpec{WireName: "final_snapshot_name"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"MajorEngineVersion": ubx.FieldSpec{WireName: "major_engine_version"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"ServerlessCacheName": ubx.FieldSpec{WireName: "serverless_cache_name"},
-		"SnapshotArnsToRestore": ubx.FieldSpec{WireName: "snapshot_arns_to_restore"},
+		"DailySnapshotTime":      ubx.FieldSpec{WireName: "daily_snapshot_time"},
+		"Description":            ubx.FieldSpec{WireName: "description"},
+		"Engine":                 ubx.FieldSpec{WireName: "engine"},
+		"FinalSnapshotName":      ubx.FieldSpec{WireName: "final_snapshot_name"},
+		"KmsKeyId":               ubx.FieldSpec{WireName: "kms_key_id"},
+		"MajorEngineVersion":     ubx.FieldSpec{WireName: "major_engine_version"},
+		"SecurityGroupIds":       ubx.FieldSpec{WireName: "security_group_ids"},
+		"ServerlessCacheName":    ubx.FieldSpec{WireName: "serverless_cache_name"},
+		"SnapshotArnsToRestore":  ubx.FieldSpec{WireName: "snapshot_arns_to_restore"},
 		"SnapshotRetentionLimit": ubx.FieldSpec{WireName: "snapshot_retention_limit"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"SubnetIds":              ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ServerlessCache_TagsFields,
+			Kind:     "list",
+			Fields:   ServerlessCache_TagsFields,
 		},
 		"UserGroupId": ubx.FieldSpec{WireName: "user_group_id"},
 	},

@@ -5,44 +5,44 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Rooms_Rooms_MessageReviewHandler struct {
 	FallbackResult any
-	Uri any
+	Uri            any
 }
 
 type Rooms_Rooms struct {
-	Arn any
-	CreateTime any
-	Id any
+	Arn                             any
+	CreateTime                      any
+	Id                              any
 	LoggingConfigurationIdentifiers any
-	MessageReviewHandler any
-	Name any
-	Tags any
-	UpdateTime any
+	MessageReviewHandler            any
+	Name                            any
+	Tags                            any
+	UpdateTime                      any
 }
 
 type RoomsConfig struct {
 	LoggingConfigurationIdentifier any
-	MaxResults any
-	MessageReviewHandlerUri any
-	Name any
-	NextToken any
+	MaxResults                     any
+	MessageReviewHandlerUri        any
+	Name                           any
+	NextToken                      any
 }
 
 type RoomsAttrs struct {
 	LoggingConfigurationIdentifier any
-	MaxResults any
-	MessageReviewHandlerUri any
-	Name any
-	NextToken any
-	Rooms any
+	MaxResults                     any
+	MessageReviewHandlerUri        any
+	Name                           any
+	NextToken                      any
+	Rooms                          any
 }
 
 var Rooms = ubx.DataSourceBinding{
 	WireType: "aws_ivschat_rooms",
 	Fields: ubx.FieldMap{
 		"LoggingConfigurationIdentifier": ubx.FieldSpec{WireName: "logging_configuration_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MessageReviewHandlerUri": ubx.FieldSpec{WireName: "message_review_handler_uri"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                     ubx.FieldSpec{WireName: "max_results"},
+		"MessageReviewHandlerUri":        ubx.FieldSpec{WireName: "message_review_handler_uri"},
+		"Name":                           ubx.FieldSpec{WireName: "name"},
+		"NextToken":                      ubx.FieldSpec{WireName: "next_token"},
 	},
 }

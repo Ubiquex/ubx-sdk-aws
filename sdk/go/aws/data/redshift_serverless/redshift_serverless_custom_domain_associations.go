@@ -4,33 +4,33 @@ package redshift_serverless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RedshiftServerlessCustomDomainAssociations_Associations struct {
-	CustomDomainCertificateArn any
+	CustomDomainCertificateArn        any
 	CustomDomainCertificateExpiryTime any
-	CustomDomainName any
-	WorkgroupName any
+	CustomDomainName                  any
+	WorkgroupName                     any
 }
 
 type RedshiftServerlessCustomDomainAssociationsConfig struct {
 	CustomDomainCertificateArn any
-	CustomDomainName any
-	MaxResults any
-	NextToken any
+	CustomDomainName           any
+	MaxResults                 any
+	NextToken                  any
 }
 
 type RedshiftServerlessCustomDomainAssociationsAttrs struct {
-	Associations any
+	Associations               any
 	CustomDomainCertificateArn any
-	CustomDomainName any
-	MaxResults any
-	NextToken any
+	CustomDomainName           any
+	MaxResults                 any
+	NextToken                  any
 }
 
 var RedshiftServerlessCustomDomainAssociations = ubx.DataSourceBinding{
 	WireType: "aws_redshift_serverless_custom_domain_associations",
 	Fields: ubx.FieldMap{
 		"CustomDomainCertificateArn": ubx.FieldSpec{WireName: "custom_domain_certificate_arn"},
-		"CustomDomainName": ubx.FieldSpec{WireName: "custom_domain_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"CustomDomainName":           ubx.FieldSpec{WireName: "custom_domain_name"},
+		"MaxResults":                 ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

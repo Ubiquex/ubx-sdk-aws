@@ -9,9 +9,9 @@ type MetricWidgetImageConfig struct {
 }
 
 type MetricWidgetImageAttrs struct {
-	MetricWidget any
+	MetricWidget      any
 	MetricWidgetImage any
-	OutputFormat any
+	OutputFormat      any
 }
 
 var MetricWidgetImage = ubx.DataSourceBinding{

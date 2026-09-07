@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CloudAutonomousVmCluster_IamRoles struct {
 	AwsIntegration any
-	IamRoleArn any
-	Status any
+	IamRoleArn     any
+	Status         any
 }
 
 type CloudAutonomousVmCluster_MaintenanceWindow struct {
@@ -25,23 +25,23 @@ type CloudAutonomousVmCluster_MaintenanceWindow struct {
 }
 
 type CloudAutonomousVmCluster_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var CloudAutonomousVmCluster_MaintenanceWindowFields = ubx.FieldMap{
-		"DaysOfWeek": ubx.FieldSpec{WireName: "days_of_week"},
-		"HoursOfDay": ubx.FieldSpec{WireName: "hours_of_day"},
-		"LeadTimeInWeeks": ubx.FieldSpec{WireName: "lead_time_in_weeks"},
-		"Months": ubx.FieldSpec{WireName: "months"},
-		"Preference": ubx.FieldSpec{WireName: "preference"},
-		"WeeksOfMonth": ubx.FieldSpec{WireName: "weeks_of_month"},
-	}
+	"DaysOfWeek":      ubx.FieldSpec{WireName: "days_of_week"},
+	"HoursOfDay":      ubx.FieldSpec{WireName: "hours_of_day"},
+	"LeadTimeInWeeks": ubx.FieldSpec{WireName: "lead_time_in_weeks"},
+	"Months":          ubx.FieldSpec{WireName: "months"},
+	"Preference":      ubx.FieldSpec{WireName: "preference"},
+	"WeeksOfMonth":    ubx.FieldSpec{WireName: "weeks_of_month"},
+}
 
 var CloudAutonomousVmCluster_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CloudAutonomousVmClusterConfig struct {
 	// The data storage size allocated for Autonomous Databases in the Autonomous VM cluster, in TB.
@@ -175,28 +175,28 @@ var CloudAutonomousVmCluster = ubx.ResourceBinding{
 	WireType: "aws_odb_cloud_autonomous_vm_cluster",
 	Fields: ubx.FieldMap{
 		"AutonomousDataStorageSizeInTbs": ubx.FieldSpec{WireName: "autonomous_data_storage_size_in_tbs"},
-		"CloudExadataInfrastructureId": ubx.FieldSpec{WireName: "cloud_exadata_infrastructure_id"},
-		"CpuCoreCountPerNode": ubx.FieldSpec{WireName: "cpu_core_count_per_node"},
-		"DbServers": ubx.FieldSpec{WireName: "db_servers"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"IsMtlsEnabledVmCluster": ubx.FieldSpec{WireName: "is_mtls_enabled_vm_cluster"},
-		"LicenseModel": ubx.FieldSpec{WireName: "license_model"},
+		"CloudExadataInfrastructureId":   ubx.FieldSpec{WireName: "cloud_exadata_infrastructure_id"},
+		"CpuCoreCountPerNode":            ubx.FieldSpec{WireName: "cpu_core_count_per_node"},
+		"DbServers":                      ubx.FieldSpec{WireName: "db_servers"},
+		"Description":                    ubx.FieldSpec{WireName: "description"},
+		"DisplayName":                    ubx.FieldSpec{WireName: "display_name"},
+		"IsMtlsEnabledVmCluster":         ubx.FieldSpec{WireName: "is_mtls_enabled_vm_cluster"},
+		"LicenseModel":                   ubx.FieldSpec{WireName: "license_model"},
 		"MaintenanceWindow": ubx.FieldSpec{
 			WireName: "maintenance_window",
-			Kind: "object",
-			Fields: CloudAutonomousVmCluster_MaintenanceWindowFields,
+			Kind:     "object",
+			Fields:   CloudAutonomousVmCluster_MaintenanceWindowFields,
 		},
 		"MemoryPerOracleComputeUnitInGbs": ubx.FieldSpec{WireName: "memory_per_oracle_compute_unit_in_gbs"},
-		"OdbNetworkId": ubx.FieldSpec{WireName: "odb_network_id"},
-		"ScanListenerPortNonTls": ubx.FieldSpec{WireName: "scan_listener_port_non_tls"},
-		"ScanListenerPortTls": ubx.FieldSpec{WireName: "scan_listener_port_tls"},
+		"OdbNetworkId":                    ubx.FieldSpec{WireName: "odb_network_id"},
+		"ScanListenerPortNonTls":          ubx.FieldSpec{WireName: "scan_listener_port_non_tls"},
+		"ScanListenerPortTls":             ubx.FieldSpec{WireName: "scan_listener_port_tls"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CloudAutonomousVmCluster_TagsFields,
+			Kind:     "list",
+			Fields:   CloudAutonomousVmCluster_TagsFields,
 		},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
+		"TimeZone":                ubx.FieldSpec{WireName: "time_zone"},
 		"TotalContainerDatabases": ubx.FieldSpec{WireName: "total_container_databases"},
 	},
 }

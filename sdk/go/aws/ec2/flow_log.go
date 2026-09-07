@@ -14,7 +14,7 @@ type FlowLog_DestinationOptions struct {
 
 type FlowLog_TagFieldSpecifications struct {
 	ResourceType any
-	TagKeys any
+	TagKeys      any
 }
 
 type FlowLog_Tags struct {
@@ -25,20 +25,20 @@ type FlowLog_Tags struct {
 }
 
 var FlowLog_DestinationOptionsFields = ubx.FieldMap{
-		"FileFormat": ubx.FieldSpec{WireName: "file_format"},
-		"HiveCompatiblePartitions": ubx.FieldSpec{WireName: "hive_compatible_partitions"},
-		"PerHourPartition": ubx.FieldSpec{WireName: "per_hour_partition"},
-	}
+	"FileFormat":               ubx.FieldSpec{WireName: "file_format"},
+	"HiveCompatiblePartitions": ubx.FieldSpec{WireName: "hive_compatible_partitions"},
+	"PerHourPartition":         ubx.FieldSpec{WireName: "per_hour_partition"},
+}
 
 var FlowLog_TagFieldSpecificationsFields = ubx.FieldMap{
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"TagKeys": ubx.FieldSpec{WireName: "tag_keys"},
-	}
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	"TagKeys":      ubx.FieldSpec{WireName: "tag_keys"},
+}
 
 var FlowLog_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FlowLogConfig struct {
 	// The ARN of the IAM role that allows Amazon EC2 to publish flow logs across accounts.
@@ -103,29 +103,29 @@ type FlowLogAttrs struct {
 var FlowLog = ubx.ResourceBinding{
 	WireType: "aws_flow_log",
 	Fields: ubx.FieldMap{
-		"DeliverCrossAccountRole": ubx.FieldSpec{WireName: "deliver_cross_account_role"},
+		"DeliverCrossAccountRole":  ubx.FieldSpec{WireName: "deliver_cross_account_role"},
 		"DeliverLogsPermissionArn": ubx.FieldSpec{WireName: "deliver_logs_permission_arn"},
 		"DestinationOptions": ubx.FieldSpec{
 			WireName: "destination_options",
-			Kind: "object",
-			Fields: FlowLog_DestinationOptionsFields,
+			Kind:     "object",
+			Fields:   FlowLog_DestinationOptionsFields,
 		},
-		"LogDestination": ubx.FieldSpec{WireName: "log_destination"},
-		"LogDestinationType": ubx.FieldSpec{WireName: "log_destination_type"},
-		"LogFormat": ubx.FieldSpec{WireName: "log_format"},
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
+		"LogDestination":         ubx.FieldSpec{WireName: "log_destination"},
+		"LogDestinationType":     ubx.FieldSpec{WireName: "log_destination_type"},
+		"LogFormat":              ubx.FieldSpec{WireName: "log_format"},
+		"LogGroupName":           ubx.FieldSpec{WireName: "log_group_name"},
 		"MaxAggregationInterval": ubx.FieldSpec{WireName: "max_aggregation_interval"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"ResourceId":             ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceType":           ubx.FieldSpec{WireName: "resource_type"},
 		"TagFieldSpecifications": ubx.FieldSpec{
 			WireName: "tag_field_specifications",
-			Kind: "list",
-			Fields: FlowLog_TagFieldSpecificationsFields,
+			Kind:     "list",
+			Fields:   FlowLog_TagFieldSpecificationsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FlowLog_TagsFields,
+			Kind:     "list",
+			Fields:   FlowLog_TagsFields,
 		},
 		"TrafficType": ubx.FieldSpec{WireName: "traffic_type"},
 	},

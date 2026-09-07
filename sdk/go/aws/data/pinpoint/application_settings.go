@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationSettings_ApplicationSettingsResource_CampaignHook struct {
 	LambdaFunctionName any
-	Mode any
-	WebUrl any
+	Mode               any
+	WebUrl             any
 }
 
 type ApplicationSettings_ApplicationSettingsResource_JourneyLimits_TimeframeCap struct {
-	Cap any
+	Cap  any
 	Days any
 }
 
@@ -18,19 +18,19 @@ type ApplicationSettings_ApplicationSettingsResource_JourneyLimits struct {
 	DailyCap any
 	// <p>The number of messages that can be sent to an endpoint during the specified timeframe for all journeys.</p>
 	TimeframeCap any
-	TotalCap any
+	TotalCap     any
 }
 
 type ApplicationSettings_ApplicationSettingsResource_Limits struct {
-	Daily any
-	MaximumDuration any
+	Daily             any
+	MaximumDuration   any
 	MessagesPerSecond any
-	Session any
-	Total any
+	Session           any
+	Total             any
 }
 
 type ApplicationSettings_ApplicationSettingsResource_QuietTime struct {
-	End any
+	End   any
 	Start any
 }
 
@@ -39,7 +39,7 @@ type ApplicationSettings_ApplicationSettingsResource struct {
 	// <p>Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign.</p>
 	CampaignHook any
 	// <p>The default sending limits for journeys in the application. To override these limits and define custom limits for a specific journey, use the Journey resource.</p>
-	JourneyLimits any
+	JourneyLimits    any
 	LastModifiedDate any
 	// <p>For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns in the application can send.</p>
 	Limits any

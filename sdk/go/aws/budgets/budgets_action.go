@@ -61,55 +61,55 @@ type BudgetsAction_Subscribers struct {
 }
 
 var BudgetsAction_ActionThresholdFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var BudgetsAction_Definition_IamActionDefinitionFields = ubx.FieldMap{
-		"Groups": ubx.FieldSpec{WireName: "groups"},
-		"PolicyArn": ubx.FieldSpec{WireName: "policy_arn"},
-		"Roles": ubx.FieldSpec{WireName: "roles"},
-		"Users": ubx.FieldSpec{WireName: "users"},
-	}
+	"Groups":    ubx.FieldSpec{WireName: "groups"},
+	"PolicyArn": ubx.FieldSpec{WireName: "policy_arn"},
+	"Roles":     ubx.FieldSpec{WireName: "roles"},
+	"Users":     ubx.FieldSpec{WireName: "users"},
+}
 
 var BudgetsAction_Definition_ScpActionDefinitionFields = ubx.FieldMap{
-		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
-		"TargetIds": ubx.FieldSpec{WireName: "target_ids"},
-	}
+	"PolicyId":  ubx.FieldSpec{WireName: "policy_id"},
+	"TargetIds": ubx.FieldSpec{WireName: "target_ids"},
+}
 
 var BudgetsAction_Definition_SsmActionDefinitionFields = ubx.FieldMap{
-		"InstanceIds": ubx.FieldSpec{WireName: "instance_ids"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Subtype": ubx.FieldSpec{WireName: "subtype"},
-	}
+	"InstanceIds": ubx.FieldSpec{WireName: "instance_ids"},
+	"Region":      ubx.FieldSpec{WireName: "region"},
+	"Subtype":     ubx.FieldSpec{WireName: "subtype"},
+}
 
 var BudgetsAction_DefinitionFields = ubx.FieldMap{
-		"IamActionDefinition": ubx.FieldSpec{
-			WireName: "iam_action_definition",
-			Kind: "object",
-			Fields: BudgetsAction_Definition_IamActionDefinitionFields,
-		},
-		"ScpActionDefinition": ubx.FieldSpec{
-			WireName: "scp_action_definition",
-			Kind: "object",
-			Fields: BudgetsAction_Definition_ScpActionDefinitionFields,
-		},
-		"SsmActionDefinition": ubx.FieldSpec{
-			WireName: "ssm_action_definition",
-			Kind: "object",
-			Fields: BudgetsAction_Definition_SsmActionDefinitionFields,
-		},
-	}
+	"IamActionDefinition": ubx.FieldSpec{
+		WireName: "iam_action_definition",
+		Kind:     "object",
+		Fields:   BudgetsAction_Definition_IamActionDefinitionFields,
+	},
+	"ScpActionDefinition": ubx.FieldSpec{
+		WireName: "scp_action_definition",
+		Kind:     "object",
+		Fields:   BudgetsAction_Definition_ScpActionDefinitionFields,
+	},
+	"SsmActionDefinition": ubx.FieldSpec{
+		WireName: "ssm_action_definition",
+		Kind:     "object",
+		Fields:   BudgetsAction_Definition_SsmActionDefinitionFields,
+	},
+}
 
 var BudgetsAction_ResourceTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var BudgetsAction_SubscribersFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Address": ubx.FieldSpec{WireName: "address"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 type BudgetsActionConfig struct {
 	// Defines the threshold (a numeric value and type, either absolute dollar amount or percentage) that triggers the budget action when the actual or forecasted budget usage exceeds it. (AI-inferred)
@@ -160,28 +160,28 @@ var BudgetsAction = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ActionThreshold": ubx.FieldSpec{
 			WireName: "action_threshold",
-			Kind: "object",
-			Fields: BudgetsAction_ActionThresholdFields,
+			Kind:     "object",
+			Fields:   BudgetsAction_ActionThresholdFields,
 		},
-		"ActionType": ubx.FieldSpec{WireName: "action_type"},
+		"ActionType":    ubx.FieldSpec{WireName: "action_type"},
 		"ApprovalModel": ubx.FieldSpec{WireName: "approval_model"},
-		"BudgetName": ubx.FieldSpec{WireName: "budget_name"},
+		"BudgetName":    ubx.FieldSpec{WireName: "budget_name"},
 		"Definition": ubx.FieldSpec{
 			WireName: "definition",
-			Kind: "object",
-			Fields: BudgetsAction_DefinitionFields,
+			Kind:     "object",
+			Fields:   BudgetsAction_DefinitionFields,
 		},
 		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
 		"NotificationType": ubx.FieldSpec{WireName: "notification_type"},
 		"ResourceTags": ubx.FieldSpec{
 			WireName: "resource_tags",
-			Kind: "list",
-			Fields: BudgetsAction_ResourceTagsFields,
+			Kind:     "list",
+			Fields:   BudgetsAction_ResourceTagsFields,
 		},
 		"Subscribers": ubx.FieldSpec{
 			WireName: "subscribers",
-			Kind: "list",
-			Fields: BudgetsAction_SubscribersFields,
+			Kind:     "list",
+			Fields:   BudgetsAction_SubscribersFields,
 		},
 	},
 }

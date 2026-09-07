@@ -12,14 +12,14 @@ type ServiceNetworkServiceAssociation_DnsEntry struct {
 
 type ServiceNetworkServiceAssociation_Tags struct {
 	// The key of a tag assigned to the VPC Lattice service network service association, used for organizing and managing the resource in AWS. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var ServiceNetworkServiceAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ServiceNetworkServiceAssociationConfig struct {
 	// The ID or Amazon Resource Name (ARN) of the VPC Lattice service that is associated with the service network. (AI-inferred)
@@ -64,12 +64,12 @@ type ServiceNetworkServiceAssociationAttrs struct {
 var ServiceNetworkServiceAssociation = ubx.ResourceBinding{
 	WireType: "aws_vpc_lattice_service_network_service_association",
 	Fields: ubx.FieldMap{
-		"ServiceIdentifier": ubx.FieldSpec{WireName: "service_identifier"},
+		"ServiceIdentifier":        ubx.FieldSpec{WireName: "service_identifier"},
 		"ServiceNetworkIdentifier": ubx.FieldSpec{WireName: "service_network_identifier"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ServiceNetworkServiceAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   ServiceNetworkServiceAssociation_TagsFields,
 		},
 	},
 }

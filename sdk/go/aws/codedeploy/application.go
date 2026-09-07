@@ -10,9 +10,9 @@ type Application_Tags struct {
 }
 
 var Application_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApplicationConfig struct {
 	// A name for the application. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the application name.
@@ -39,8 +39,8 @@ var Application = ubx.ResourceBinding{
 		"ComputePlatform": ubx.FieldSpec{WireName: "compute_platform"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Application_TagsFields,
+			Kind:     "list",
+			Fields:   Application_TagsFields,
 		},
 	},
 }

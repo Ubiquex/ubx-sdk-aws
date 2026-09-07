@@ -8,7 +8,7 @@ type Function_FunctionSummary_FunctionConfig_KeyValueStoreAssociations_Items str
 }
 
 type Function_FunctionSummary_FunctionConfig_KeyValueStoreAssociations struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
@@ -16,14 +16,14 @@ type Function_FunctionSummary_FunctionConfig struct {
 	Comment any
 	// <p>The key value store associations.</p>
 	KeyValueStoreAssociations any
-	Runtime any
+	Runtime                   any
 }
 
 type Function_FunctionSummary_FunctionMetadata struct {
-	CreatedTime any
-	FunctionArn any
+	CreatedTime      any
+	FunctionArn      any
 	LastModifiedTime any
-	Stage any
+	Stage            any
 }
 
 type Function_FunctionSummary struct {
@@ -31,12 +31,12 @@ type Function_FunctionSummary struct {
 	FunctionConfig any
 	// <p>Contains metadata about a CloudFront function.</p>
 	FunctionMetadata any
-	Name any
-	Status any
+	Name             any
+	Status           any
 }
 
 type FunctionConfig struct {
-	Name any
+	Name  any
 	Stage any
 }
 
@@ -44,14 +44,14 @@ type FunctionAttrs struct {
 	Etag any
 	// <p>Contains configuration information and metadata about a CloudFront function.</p>
 	FunctionSummary any
-	Name any
-	Stage any
+	Name            any
+	Stage           any
 }
 
 var Function = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_function",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":  ubx.FieldSpec{WireName: "name"},
 		"Stage": ubx.FieldSpec{WireName: "stage"},
 	},
 }

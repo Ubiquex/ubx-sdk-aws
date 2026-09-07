@@ -9,32 +9,32 @@ type AdConfigurations_AdConfigurations_MediaTailorPlaybackConfigurations struct 
 
 type AdConfigurations_AdConfigurations_PostRollConfiguration struct {
 	DurationSeconds any
-	Enabled any
+	Enabled         any
 }
 
 type AdConfigurations_AdConfigurations struct {
-	Arn any
+	Arn                               any
 	MediaTailorPlaybackConfigurations any
-	Name any
-	PostRollConfiguration any
-	Tags any
+	Name                              any
+	PostRollConfiguration             any
+	Tags                              any
 }
 
 type AdConfigurationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AdConfigurationsAttrs struct {
 	AdConfigurations any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 var AdConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_ivs_ad_configurations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

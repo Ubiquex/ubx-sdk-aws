@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityProviderConfiguration_IdentityCenterConfiguration struct {
 	ApplicationArn any
-	InstanceArn any
+	InstanceArn    any
 }
 
 type IdentityProviderConfiguration_PersonalAccessTokenConfiguration struct {
 	LifetimeInDays any
-	Status any
+	Status         any
 }
 
 type IdentityProviderConfigurationConfig struct {
@@ -21,7 +21,7 @@ type IdentityProviderConfigurationAttrs struct {
 	AuthenticationMode any
 	// <p> The IAM Identity Center configuration. </p>
 	IdentityCenterConfiguration any
-	OrganizationId any
+	OrganizationId              any
 	// <p> Displays the Personal Access Token status. </p>
 	PersonalAccessTokenConfiguration any
 }

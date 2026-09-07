@@ -4,86 +4,86 @@ package apigatewayv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Portals_Items_Authorization_CognitoConfig struct {
-	AppClientId any
-	UserPoolArn any
+	AppClientId    any
+	UserPoolArn    any
 	UserPoolDomain any
 }
 
 type Portals_Items_Authorization struct {
 	CognitoConfig any
-	None any
+	None          any
 }
 
 type Portals_Items_EndpointConfiguration struct {
-	CertificateArn any
-	DomainName any
-	PortalDefaultDomainName any
+	CertificateArn           any
+	DomainName               any
+	PortalDefaultDomainName  any
 	PortalDomainHostedZoneId any
 }
 
 type Portals_Items_PortalContent_Theme_CustomColors struct {
-	AccentColor any
-	BackgroundColor any
+	AccentColor          any
+	BackgroundColor      any
 	ErrorValidationColor any
-	HeaderColor any
-	NavigationColor any
-	TextColor any
+	HeaderColor          any
+	NavigationColor      any
+	TextColor            any
 }
 
 type Portals_Items_PortalContent_Theme struct {
-	CustomColors any
+	CustomColors     any
 	LogoLastUploaded any
 }
 
 type Portals_Items_PortalContent struct {
 	Description any
 	DisplayName any
-	Theme any
+	Theme       any
 }
 
 type Portals_Items_Preview_StatusException struct {
 	Exception any
-	Message any
+	Message   any
 }
 
 type Portals_Items_Preview struct {
-	PreviewStatus any
-	PreviewUrl any
+	PreviewStatus   any
+	PreviewUrl      any
 	StatusException any
 }
 
 type Portals_Items struct {
-	Authorization any
-	EndpointConfiguration any
+	Authorization             any
+	EndpointConfiguration     any
 	IncludedPortalProductArns any
-	LastModified any
-	LastPublished any
-	LastPublishedDescription any
-	PortalArn any
-	PortalContent any
-	PortalId any
-	Preview any
-	PublishStatus any
-	RumAppMonitorName any
-	StatusException any
-	Tags any
+	LastModified              any
+	LastPublished             any
+	LastPublishedDescription  any
+	PortalArn                 any
+	PortalContent             any
+	PortalId                  any
+	Preview                   any
+	PublishStatus             any
+	RumAppMonitorName         any
+	StatusException           any
+	Tags                      any
 }
 
 type PortalsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type PortalsAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Portals = ubx.DataSourceBinding{
 	WireType: "aws_apigatewayv2_portals",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

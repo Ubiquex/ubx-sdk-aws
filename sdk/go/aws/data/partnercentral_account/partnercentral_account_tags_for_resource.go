@@ -4,7 +4,7 @@ package partnercentral_account
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PartnercentralAccountTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type PartnercentralAccountTagsForResourceConfig struct {
 
 type PartnercentralAccountTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var PartnercentralAccountTagsForResource = ubx.DataSourceBinding{

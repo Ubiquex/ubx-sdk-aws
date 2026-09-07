@@ -4,20 +4,20 @@ package rtbfabric
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InboundExternalLink_LinkAttributes_ResponderErrorMasking struct {
-	Action any
-	HttpCode any
-	LoggingTypes any
+	Action                    any
+	HttpCode                  any
+	LoggingTypes              any
 	ResponseLoggingPercentage any
 }
 
 type InboundExternalLink_LinkAttributes struct {
 	// In the AWS RTB Fabric inbound external link, the customer_provided_id field within link_attributes is a customer-assigned string identifier for the link, intended for the customer's own tracking and correlation purposes. (AI-inferred)
-	CustomerProvidedId any
+	CustomerProvidedId    any
 	ResponderErrorMasking any
 }
 
 type InboundExternalLink_LinkLogSettings_ApplicationLogs_LinkApplicationLogSampling struct {
-	ErrorLog any
+	ErrorLog  any
 	FilterLog any
 }
 
@@ -30,51 +30,51 @@ type InboundExternalLink_LinkLogSettings struct {
 }
 
 type InboundExternalLink_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var InboundExternalLink_LinkAttributes_ResponderErrorMaskingFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"HttpCode": ubx.FieldSpec{WireName: "http_code"},
-		"LoggingTypes": ubx.FieldSpec{WireName: "logging_types"},
-		"ResponseLoggingPercentage": ubx.FieldSpec{WireName: "response_logging_percentage"},
-	}
+	"Action":                    ubx.FieldSpec{WireName: "action"},
+	"HttpCode":                  ubx.FieldSpec{WireName: "http_code"},
+	"LoggingTypes":              ubx.FieldSpec{WireName: "logging_types"},
+	"ResponseLoggingPercentage": ubx.FieldSpec{WireName: "response_logging_percentage"},
+}
 
 var InboundExternalLink_LinkAttributesFields = ubx.FieldMap{
-		"CustomerProvidedId": ubx.FieldSpec{WireName: "customer_provided_id"},
-		"ResponderErrorMasking": ubx.FieldSpec{
-			WireName: "responder_error_masking",
-			Kind: "list",
-			Fields: InboundExternalLink_LinkAttributes_ResponderErrorMaskingFields,
-		},
-	}
+	"CustomerProvidedId": ubx.FieldSpec{WireName: "customer_provided_id"},
+	"ResponderErrorMasking": ubx.FieldSpec{
+		WireName: "responder_error_masking",
+		Kind:     "list",
+		Fields:   InboundExternalLink_LinkAttributes_ResponderErrorMaskingFields,
+	},
+}
 
 var InboundExternalLink_LinkLogSettings_ApplicationLogs_LinkApplicationLogSamplingFields = ubx.FieldMap{
-		"ErrorLog": ubx.FieldSpec{WireName: "error_log"},
-		"FilterLog": ubx.FieldSpec{WireName: "filter_log"},
-	}
+	"ErrorLog":  ubx.FieldSpec{WireName: "error_log"},
+	"FilterLog": ubx.FieldSpec{WireName: "filter_log"},
+}
 
 var InboundExternalLink_LinkLogSettings_ApplicationLogsFields = ubx.FieldMap{
-		"LinkApplicationLogSampling": ubx.FieldSpec{
-			WireName: "link_application_log_sampling",
-			Kind: "object",
-			Fields: InboundExternalLink_LinkLogSettings_ApplicationLogs_LinkApplicationLogSamplingFields,
-		},
-	}
+	"LinkApplicationLogSampling": ubx.FieldSpec{
+		WireName: "link_application_log_sampling",
+		Kind:     "object",
+		Fields:   InboundExternalLink_LinkLogSettings_ApplicationLogs_LinkApplicationLogSamplingFields,
+	},
+}
 
 var InboundExternalLink_LinkLogSettingsFields = ubx.FieldMap{
-		"ApplicationLogs": ubx.FieldSpec{
-			WireName: "application_logs",
-			Kind: "object",
-			Fields: InboundExternalLink_LinkLogSettings_ApplicationLogsFields,
-		},
-	}
+	"ApplicationLogs": ubx.FieldSpec{
+		WireName: "application_logs",
+		Kind:     "object",
+		Fields:   InboundExternalLink_LinkLogSettings_ApplicationLogsFields,
+	},
+}
 
 var InboundExternalLink_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type InboundExternalLinkConfig struct {
 	// A reference to the RTB Fabric gateway this inbound external link connects an outside bid requester to. (AI-inferred)
@@ -116,18 +116,18 @@ var InboundExternalLink = ubx.ResourceBinding{
 		"GatewayId": ubx.FieldSpec{WireName: "gateway_id"},
 		"LinkAttributes": ubx.FieldSpec{
 			WireName: "link_attributes",
-			Kind: "object",
-			Fields: InboundExternalLink_LinkAttributesFields,
+			Kind:     "object",
+			Fields:   InboundExternalLink_LinkAttributesFields,
 		},
 		"LinkLogSettings": ubx.FieldSpec{
 			WireName: "link_log_settings",
-			Kind: "object",
-			Fields: InboundExternalLink_LinkLogSettingsFields,
+			Kind:     "object",
+			Fields:   InboundExternalLink_LinkLogSettingsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: InboundExternalLink_TagsFields,
+			Kind:     "list",
+			Fields:   InboundExternalLink_TagsFields,
 		},
 	},
 }

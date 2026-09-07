@@ -15,11 +15,11 @@ type SubscriptionDefinitionVersion_Subscriptions struct {
 }
 
 var SubscriptionDefinitionVersion_SubscriptionsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Subject": ubx.FieldSpec{WireName: "subject"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
+	"Id":      ubx.FieldSpec{WireName: "id"},
+	"Source":  ubx.FieldSpec{WireName: "source"},
+	"Subject": ubx.FieldSpec{WireName: "subject"},
+	"Target":  ubx.FieldSpec{WireName: "target"},
+}
 
 type SubscriptionDefinitionVersionConfig struct {
 	// The ID of the Greengrass subscription definition that this subscription definition version belongs to. (AI-inferred)
@@ -43,8 +43,8 @@ var SubscriptionDefinitionVersion = ubx.ResourceBinding{
 		"SubscriptionDefinitionId": ubx.FieldSpec{WireName: "subscription_definition_id"},
 		"Subscriptions": ubx.FieldSpec{
 			WireName: "subscriptions",
-			Kind: "list",
-			Fields: SubscriptionDefinitionVersion_SubscriptionsFields,
+			Kind:     "list",
+			Fields:   SubscriptionDefinitionVersion_SubscriptionsFields,
 		},
 	},
 }

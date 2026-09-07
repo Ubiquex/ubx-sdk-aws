@@ -17,6 +17,5 @@ type VoiceChimeGlobalSettingsAttrs struct {
 
 var VoiceChimeGlobalSettings = ubx.DataSourceBinding{
 	WireType: "aws_voice_chime_global_settings",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

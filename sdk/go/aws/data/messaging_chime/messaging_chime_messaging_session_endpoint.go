@@ -13,7 +13,7 @@ type MessagingChimeMessagingSessionEndpointConfig struct {
 
 type MessagingChimeMessagingSessionEndpointAttrs struct {
 	// <p>The websocket endpoint used to connect to Amazon Chime SDK messaging.</p>
-	Endpoint any
+	Endpoint    any
 	NetworkType any
 }
 

@@ -9,7 +9,7 @@ type RedshiftServerlessIdentityCenterAuthTokenConfig struct {
 
 type RedshiftServerlessIdentityCenterAuthTokenAttrs struct {
 	ExpirationTime any
-	Token any
+	Token          any
 	WorkgroupNames any
 }
 

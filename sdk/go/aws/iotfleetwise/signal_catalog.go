@@ -51,7 +51,7 @@ type SignalCatalog_Nodes_Attribute struct {
 	// The maximum allowed value for the attribute node, defining the upper bound of the valid numeric range for the attribute in the AWS IoT FleetWise signal catalog. (AI-inferred)
 	Max any
 	// Specifies the minimum value permitted for an attribute node with a numeric data type, enforcing a lower bound on the attribute's allowed range. (AI-inferred)
-	Min any
+	Min  any
 	Unit any
 }
 
@@ -98,70 +98,70 @@ type SignalCatalog_Tags struct {
 }
 
 var SignalCatalog_Nodes_ActuatorFields = ubx.FieldMap{
-		"AllowedValues": ubx.FieldSpec{WireName: "allowed_values"},
-		"AssignedValue": ubx.FieldSpec{WireName: "assigned_value"},
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FullyQualifiedName": ubx.FieldSpec{WireName: "fully_qualified_name"},
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-	}
+	"AllowedValues":      ubx.FieldSpec{WireName: "allowed_values"},
+	"AssignedValue":      ubx.FieldSpec{WireName: "assigned_value"},
+	"DataType":           ubx.FieldSpec{WireName: "data_type"},
+	"Description":        ubx.FieldSpec{WireName: "description"},
+	"FullyQualifiedName": ubx.FieldSpec{WireName: "fully_qualified_name"},
+	"Max":                ubx.FieldSpec{WireName: "max"},
+	"Min":                ubx.FieldSpec{WireName: "min"},
+	"Unit":               ubx.FieldSpec{WireName: "unit"},
+}
 
 var SignalCatalog_Nodes_AttributeFields = ubx.FieldMap{
-		"AllowedValues": ubx.FieldSpec{WireName: "allowed_values"},
-		"AssignedValue": ubx.FieldSpec{WireName: "assigned_value"},
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FullyQualifiedName": ubx.FieldSpec{WireName: "fully_qualified_name"},
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-	}
+	"AllowedValues":      ubx.FieldSpec{WireName: "allowed_values"},
+	"AssignedValue":      ubx.FieldSpec{WireName: "assigned_value"},
+	"DataType":           ubx.FieldSpec{WireName: "data_type"},
+	"DefaultValue":       ubx.FieldSpec{WireName: "default_value"},
+	"Description":        ubx.FieldSpec{WireName: "description"},
+	"FullyQualifiedName": ubx.FieldSpec{WireName: "fully_qualified_name"},
+	"Max":                ubx.FieldSpec{WireName: "max"},
+	"Min":                ubx.FieldSpec{WireName: "min"},
+	"Unit":               ubx.FieldSpec{WireName: "unit"},
+}
 
 var SignalCatalog_Nodes_BranchFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FullyQualifiedName": ubx.FieldSpec{WireName: "fully_qualified_name"},
-	}
+	"Description":        ubx.FieldSpec{WireName: "description"},
+	"FullyQualifiedName": ubx.FieldSpec{WireName: "fully_qualified_name"},
+}
 
 var SignalCatalog_Nodes_SensorFields = ubx.FieldMap{
-		"AllowedValues": ubx.FieldSpec{WireName: "allowed_values"},
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FullyQualifiedName": ubx.FieldSpec{WireName: "fully_qualified_name"},
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-	}
+	"AllowedValues":      ubx.FieldSpec{WireName: "allowed_values"},
+	"DataType":           ubx.FieldSpec{WireName: "data_type"},
+	"Description":        ubx.FieldSpec{WireName: "description"},
+	"FullyQualifiedName": ubx.FieldSpec{WireName: "fully_qualified_name"},
+	"Max":                ubx.FieldSpec{WireName: "max"},
+	"Min":                ubx.FieldSpec{WireName: "min"},
+	"Unit":               ubx.FieldSpec{WireName: "unit"},
+}
 
 var SignalCatalog_NodesFields = ubx.FieldMap{
-		"Actuator": ubx.FieldSpec{
-			WireName: "actuator",
-			Kind: "object",
-			Fields: SignalCatalog_Nodes_ActuatorFields,
-		},
-		"Attribute": ubx.FieldSpec{
-			WireName: "attribute",
-			Kind: "object",
-			Fields: SignalCatalog_Nodes_AttributeFields,
-		},
-		"Branch": ubx.FieldSpec{
-			WireName: "branch",
-			Kind: "object",
-			Fields: SignalCatalog_Nodes_BranchFields,
-		},
-		"Sensor": ubx.FieldSpec{
-			WireName: "sensor",
-			Kind: "object",
-			Fields: SignalCatalog_Nodes_SensorFields,
-		},
-	}
+	"Actuator": ubx.FieldSpec{
+		WireName: "actuator",
+		Kind:     "object",
+		Fields:   SignalCatalog_Nodes_ActuatorFields,
+	},
+	"Attribute": ubx.FieldSpec{
+		WireName: "attribute",
+		Kind:     "object",
+		Fields:   SignalCatalog_Nodes_AttributeFields,
+	},
+	"Branch": ubx.FieldSpec{
+		WireName: "branch",
+		Kind:     "object",
+		Fields:   SignalCatalog_Nodes_BranchFields,
+	},
+	"Sensor": ubx.FieldSpec{
+		WireName: "sensor",
+		Kind:     "object",
+		Fields:   SignalCatalog_Nodes_SensorFields,
+	},
+}
 
 var SignalCatalog_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SignalCatalogConfig struct {
 	// A brief, user-defined description of the signal catalog, used to identify the catalog's purpose and contents. (AI-inferred)
@@ -197,16 +197,16 @@ var SignalCatalog = ubx.ResourceBinding{
 	WireType: "aws_io_tfleet_wise_signal_catalog",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Nodes": ubx.FieldSpec{
 			WireName: "nodes",
-			Kind: "list",
-			Fields: SignalCatalog_NodesFields,
+			Kind:     "list",
+			Fields:   SignalCatalog_NodesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SignalCatalog_TagsFields,
+			Kind:     "list",
+			Fields:   SignalCatalog_TagsFields,
 		},
 	},
 }

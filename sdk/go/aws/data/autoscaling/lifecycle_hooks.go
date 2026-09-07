@@ -4,32 +4,32 @@ package autoscaling
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LifecycleHooks_LifecycleHooks struct {
-	AutoScalingGroupName any
-	DefaultResult any
-	GlobalTimeout any
-	HeartbeatTimeout any
-	LifecycleHookName any
-	LifecycleTransition any
-	NotificationMetadata any
+	AutoScalingGroupName  any
+	DefaultResult         any
+	GlobalTimeout         any
+	HeartbeatTimeout      any
+	LifecycleHookName     any
+	LifecycleTransition   any
+	NotificationMetadata  any
 	NotificationTargetArn any
-	RoleArn any
+	RoleArn               any
 }
 
 type LifecycleHooksConfig struct {
 	AutoScalingGroupName any
-	LifecycleHookNames any
+	LifecycleHookNames   any
 }
 
 type LifecycleHooksAttrs struct {
 	AutoScalingGroupName any
-	LifecycleHookNames any
-	LifecycleHooks any
+	LifecycleHookNames   any
+	LifecycleHooks       any
 }
 
 var LifecycleHooks = ubx.DataSourceBinding{
 	WireType: "aws_autoscaling_lifecycle_hooks",
 	Fields: ubx.FieldMap{
 		"AutoScalingGroupName": ubx.FieldSpec{WireName: "auto_scaling_group_name"},
-		"LifecycleHookNames": ubx.FieldSpec{WireName: "lifecycle_hook_names"},
+		"LifecycleHookNames":   ubx.FieldSpec{WireName: "lifecycle_hook_names"},
 	},
 }

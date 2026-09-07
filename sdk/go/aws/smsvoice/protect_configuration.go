@@ -20,37 +20,37 @@ type ProtectConfiguration_CountryRuleSet struct {
 }
 
 type ProtectConfiguration_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var ProtectConfiguration_CountryRuleSet_MmsFields = ubx.FieldMap{
-		"CountryCode": ubx.FieldSpec{WireName: "country_code"},
-		"ProtectStatus": ubx.FieldSpec{WireName: "protect_status"},
-	}
+	"CountryCode":   ubx.FieldSpec{WireName: "country_code"},
+	"ProtectStatus": ubx.FieldSpec{WireName: "protect_status"},
+}
 
 var ProtectConfiguration_CountryRuleSetFields = ubx.FieldMap{
-		"Mms": ubx.FieldSpec{
-			WireName: "mms",
-			Kind: "list",
-			Fields: ProtectConfiguration_CountryRuleSet_MmsFields,
-		},
-		"Sms": ubx.FieldSpec{
-			WireName: "sms",
-			Kind: "list",
-			Fields: ProtectConfiguration_CountryRuleSet_MmsFields,
-		},
-		"Voice": ubx.FieldSpec{
-			WireName: "voice",
-			Kind: "list",
-			Fields: ProtectConfiguration_CountryRuleSet_MmsFields,
-		},
-	}
+	"Mms": ubx.FieldSpec{
+		WireName: "mms",
+		Kind:     "list",
+		Fields:   ProtectConfiguration_CountryRuleSet_MmsFields,
+	},
+	"Sms": ubx.FieldSpec{
+		WireName: "sms",
+		Kind:     "list",
+		Fields:   ProtectConfiguration_CountryRuleSet_MmsFields,
+	},
+	"Voice": ubx.FieldSpec{
+		WireName: "voice",
+		Kind:     "list",
+		Fields:   ProtectConfiguration_CountryRuleSet_MmsFields,
+	},
+}
 
 var ProtectConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ProtectConfigurationConfig struct {
 	// Defines the per-country rules for the protect configuration, where each key is a two-letter country code and the value is a rule object containing Boolean flags for Sms, Voice, and Send that control whether messages can be sent to that destination. (AI-inferred)
@@ -79,14 +79,14 @@ var ProtectConfiguration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CountryRuleSet": ubx.FieldSpec{
 			WireName: "country_rule_set",
-			Kind: "object",
-			Fields: ProtectConfiguration_CountryRuleSetFields,
+			Kind:     "object",
+			Fields:   ProtectConfiguration_CountryRuleSetFields,
 		},
 		"DeletionProtectionEnabled": ubx.FieldSpec{WireName: "deletion_protection_enabled"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ProtectConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   ProtectConfiguration_TagsFields,
 		},
 	},
 }

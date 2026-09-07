@@ -8,44 +8,44 @@ type Actions_ActionSummaries_ResolveTo struct {
 }
 
 type Actions_ActionSummaries_TargetResource struct {
-	AssetId any
+	AssetId            any
 	ComputationModelId any
 }
 
 type Actions_ActionSummaries struct {
 	ActionDefinitionId any
-	ActionId any
-	ResolveTo any
-	TargetResource any
+	ActionId           any
+	ResolveTo          any
+	TargetResource     any
 }
 
 type ActionsConfig struct {
-	MaxResults any
-	NextToken any
-	ResolveToResourceId any
+	MaxResults            any
+	NextToken             any
+	ResolveToResourceId   any
 	ResolveToResourceType any
-	TargetResourceId any
-	TargetResourceType any
+	TargetResourceId      any
+	TargetResourceType    any
 }
 
 type ActionsAttrs struct {
-	ActionSummaries any
-	MaxResults any
-	NextToken any
-	ResolveToResourceId any
+	ActionSummaries       any
+	MaxResults            any
+	NextToken             any
+	ResolveToResourceId   any
 	ResolveToResourceType any
-	TargetResourceId any
-	TargetResourceType any
+	TargetResourceId      any
+	TargetResourceType    any
 }
 
 var Actions = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_actions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResolveToResourceId": ubx.FieldSpec{WireName: "resolve_to_resource_id"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
+		"ResolveToResourceId":   ubx.FieldSpec{WireName: "resolve_to_resource_id"},
 		"ResolveToResourceType": ubx.FieldSpec{WireName: "resolve_to_resource_type"},
-		"TargetResourceId": ubx.FieldSpec{WireName: "target_resource_id"},
-		"TargetResourceType": ubx.FieldSpec{WireName: "target_resource_type"},
+		"TargetResourceId":      ubx.FieldSpec{WireName: "target_resource_id"},
+		"TargetResourceType":    ubx.FieldSpec{WireName: "target_resource_type"},
 	},
 }

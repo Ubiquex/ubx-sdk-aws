@@ -4,56 +4,56 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReplicationTaskAssessmentRuns_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ReplicationTaskAssessmentRuns_ReplicationTaskAssessmentRuns_AssessmentProgress struct {
 	IndividualAssessmentCompletedCount any
-	IndividualAssessmentCount any
+	IndividualAssessmentCount          any
 }
 
 type ReplicationTaskAssessmentRuns_ReplicationTaskAssessmentRuns_ResultStatistic struct {
 	Cancelled any
-	Error any
-	Failed any
-	Passed any
-	Skipped any
-	Warning any
+	Error     any
+	Failed    any
+	Passed    any
+	Skipped   any
+	Warning   any
 }
 
 type ReplicationTaskAssessmentRuns_ReplicationTaskAssessmentRuns struct {
-	AssessmentProgress any
-	AssessmentRunName any
-	IsLatestTaskAssessmentRun any
-	LastFailureMessage any
-	ReplicationTaskArn any
-	ReplicationTaskAssessmentRunArn any
+	AssessmentProgress                       any
+	AssessmentRunName                        any
+	IsLatestTaskAssessmentRun                any
+	LastFailureMessage                       any
+	ReplicationTaskArn                       any
+	ReplicationTaskAssessmentRunArn          any
 	ReplicationTaskAssessmentRunCreationDate any
-	ResultEncryptionMode any
-	ResultKmsKeyArn any
-	ResultLocationBucket any
-	ResultLocationFolder any
-	ResultStatistic any
-	ServiceAccessRoleArn any
-	Status any
+	ResultEncryptionMode                     any
+	ResultKmsKeyArn                          any
+	ResultLocationBucket                     any
+	ResultLocationFolder                     any
+	ResultStatistic                          any
+	ServiceAccessRoleArn                     any
+	Status                                   any
 }
 
 var ReplicationTaskAssessmentRuns_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ReplicationTaskAssessmentRunsConfig struct {
-	Filters any
-	Marker any
+	Filters    any
+	Marker     any
 	MaxRecords any
 }
 
 type ReplicationTaskAssessmentRunsAttrs struct {
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters                       any
+	Marker                        any
+	MaxRecords                    any
 	ReplicationTaskAssessmentRuns any
 }
 
@@ -62,10 +62,10 @@ var ReplicationTaskAssessmentRuns = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ReplicationTaskAssessmentRuns_FiltersFields,
+			Kind:     "list",
+			Fields:   ReplicationTaskAssessmentRuns_FiltersFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
 	},
 }

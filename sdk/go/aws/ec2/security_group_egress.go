@@ -50,14 +50,14 @@ type SecurityGroupEgressAttrs struct {
 var SecurityGroupEgress = ubx.ResourceBinding{
 	WireType: "aws_ec2_security_group_egress",
 	Fields: ubx.FieldMap{
-		"CidrIp": ubx.FieldSpec{WireName: "cidr_ip"},
-		"CidrIpv6": ubx.FieldSpec{WireName: "cidr_ipv6"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DestinationPrefixListId": ubx.FieldSpec{WireName: "destination_prefix_list_id"},
+		"CidrIp":                     ubx.FieldSpec{WireName: "cidr_ip"},
+		"CidrIpv6":                   ubx.FieldSpec{WireName: "cidr_ipv6"},
+		"Description":                ubx.FieldSpec{WireName: "description"},
+		"DestinationPrefixListId":    ubx.FieldSpec{WireName: "destination_prefix_list_id"},
 		"DestinationSecurityGroupId": ubx.FieldSpec{WireName: "destination_security_group_id"},
-		"FromPort": ubx.FieldSpec{WireName: "from_port"},
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
-		"IpProtocol": ubx.FieldSpec{WireName: "ip_protocol"},
-		"ToPort": ubx.FieldSpec{WireName: "to_port"},
+		"FromPort":                   ubx.FieldSpec{WireName: "from_port"},
+		"GroupId":                    ubx.FieldSpec{WireName: "group_id"},
+		"IpProtocol":                 ubx.FieldSpec{WireName: "ip_protocol"},
+		"ToPort":                     ubx.FieldSpec{WireName: "to_port"},
 	},
 }

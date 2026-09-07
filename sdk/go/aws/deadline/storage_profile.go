@@ -13,10 +13,10 @@ type StorageProfile_FileSystemLocations struct {
 }
 
 var StorageProfile_FileSystemLocationsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type StorageProfileConfig struct {
 	// The human-readable name of the storage profile, used to identify it in the Deadline Cloud console and API. (AI-inferred)
@@ -46,11 +46,11 @@ var StorageProfile = ubx.ResourceBinding{
 	WireType: "aws_deadline_storage_profile",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"FarmId": ubx.FieldSpec{WireName: "farm_id"},
+		"FarmId":      ubx.FieldSpec{WireName: "farm_id"},
 		"FileSystemLocations": ubx.FieldSpec{
 			WireName: "file_system_locations",
-			Kind: "list",
-			Fields: StorageProfile_FileSystemLocationsFields,
+			Kind:     "list",
+			Fields:   StorageProfile_FileSystemLocationsFields,
 		},
 		"OsFamily": ubx.FieldSpec{WireName: "os_family"},
 	},

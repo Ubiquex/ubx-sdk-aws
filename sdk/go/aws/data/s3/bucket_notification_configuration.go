@@ -4,7 +4,7 @@ package s3
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BucketNotificationConfiguration_LambdaFunctionConfigurations_Filter_Key_FilterRules struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -17,45 +17,45 @@ type BucketNotificationConfiguration_LambdaFunctionConfigurations_Filter struct 
 }
 
 type BucketNotificationConfiguration_LambdaFunctionConfigurations struct {
-	Events any
-	Filter any
-	Id any
+	Events            any
+	Filter            any
+	Id                any
 	LambdaFunctionArn any
 }
 
 type BucketNotificationConfiguration_QueueConfigurations struct {
-	Events any
-	Filter any
-	Id any
+	Events   any
+	Filter   any
+	Id       any
 	QueueArn any
 }
 
 type BucketNotificationConfiguration_TopicConfigurations struct {
-	Events any
-	Filter any
-	Id any
+	Events   any
+	Filter   any
+	Id       any
 	TopicArn any
 }
 
 type BucketNotificationConfigurationConfig struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 }
 
 type BucketNotificationConfigurationAttrs struct {
 	Bucket any
 	// <p>A container for specifying the configuration for Amazon EventBridge.</p>
-	EventBridgeConfiguration any
-	ExpectedBucketOwner any
+	EventBridgeConfiguration     any
+	ExpectedBucketOwner          any
 	LambdaFunctionConfigurations any
-	QueueConfigurations any
-	TopicConfigurations any
+	QueueConfigurations          any
+	TopicConfigurations          any
 }
 
 var BucketNotificationConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_notification_configuration",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
 	},
 }

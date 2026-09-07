@@ -6,13 +6,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ServiceEnvironment_CapacityLimits struct {
 	// Specifies the unit of measure (for example, vCPU or memory) used to interpret the capacity limit value in the AWS Batch service environment's capacity limits configuration. (AI-inferred)
 	CapacityUnit any
-	MaxCapacity any
+	MaxCapacity  any
 }
 
 var ServiceEnvironment_CapacityLimitsFields = ubx.FieldMap{
-		"CapacityUnit": ubx.FieldSpec{WireName: "capacity_unit"},
-		"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
-	}
+	"CapacityUnit": ubx.FieldSpec{WireName: "capacity_unit"},
+	"MaxCapacity":  ubx.FieldSpec{WireName: "max_capacity"},
+}
 
 type ServiceEnvironmentConfig struct {
 	// The maximum resources service jobs in this service environment can use. (AI-inferred)
@@ -47,12 +47,12 @@ var ServiceEnvironment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CapacityLimits": ubx.FieldSpec{
 			WireName: "capacity_limits",
-			Kind: "list",
-			Fields: ServiceEnvironment_CapacityLimitsFields,
+			Kind:     "list",
+			Fields:   ServiceEnvironment_CapacityLimitsFields,
 		},
 		"ServiceEnvironmentName": ubx.FieldSpec{WireName: "service_environment_name"},
 		"ServiceEnvironmentType": ubx.FieldSpec{WireName: "service_environment_type"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"State":                  ubx.FieldSpec{WireName: "state"},
+		"Tags":                   ubx.FieldSpec{WireName: "tags"},
 	},
 }

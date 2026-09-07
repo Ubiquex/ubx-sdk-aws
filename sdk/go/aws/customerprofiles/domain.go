@@ -124,70 +124,70 @@ type Domain_Tags struct {
 }
 
 var Domain_Matching_AutoMerging_ConflictResolutionFields = ubx.FieldMap{
-		"ConflictResolvingModel": ubx.FieldSpec{WireName: "conflict_resolving_model"},
-		"SourceName": ubx.FieldSpec{WireName: "source_name"},
-	}
+	"ConflictResolvingModel": ubx.FieldSpec{WireName: "conflict_resolving_model"},
+	"SourceName":             ubx.FieldSpec{WireName: "source_name"},
+}
 
 var Domain_Matching_AutoMerging_ConsolidationFields = ubx.FieldMap{
-		"MatchingAttributesList": ubx.FieldSpec{WireName: "matching_attributes_list"},
-	}
+	"MatchingAttributesList": ubx.FieldSpec{WireName: "matching_attributes_list"},
+}
 
 var Domain_Matching_AutoMergingFields = ubx.FieldMap{
-		"ConflictResolution": ubx.FieldSpec{
-			WireName: "conflict_resolution",
-			Kind: "object",
-			Fields: Domain_Matching_AutoMerging_ConflictResolutionFields,
-		},
-		"Consolidation": ubx.FieldSpec{
-			WireName: "consolidation",
-			Kind: "object",
-			Fields: Domain_Matching_AutoMerging_ConsolidationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MinAllowedConfidenceScoreForMerging": ubx.FieldSpec{WireName: "min_allowed_confidence_score_for_merging"},
-	}
+	"ConflictResolution": ubx.FieldSpec{
+		WireName: "conflict_resolution",
+		Kind:     "object",
+		Fields:   Domain_Matching_AutoMerging_ConflictResolutionFields,
+	},
+	"Consolidation": ubx.FieldSpec{
+		WireName: "consolidation",
+		Kind:     "object",
+		Fields:   Domain_Matching_AutoMerging_ConsolidationFields,
+	},
+	"Enabled":                             ubx.FieldSpec{WireName: "enabled"},
+	"MinAllowedConfidenceScoreForMerging": ubx.FieldSpec{WireName: "min_allowed_confidence_score_for_merging"},
+}
 
 var Domain_Matching_ExportingConfig_S3ExportingFields = ubx.FieldMap{
-		"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
-		"S3KeyName": ubx.FieldSpec{WireName: "s3_key_name"},
-	}
+	"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
+	"S3KeyName":    ubx.FieldSpec{WireName: "s3_key_name"},
+}
 
 var Domain_Matching_ExportingConfigFields = ubx.FieldMap{
-		"S3Exporting": ubx.FieldSpec{
-			WireName: "s3_exporting",
-			Kind: "object",
-			Fields: Domain_Matching_ExportingConfig_S3ExportingFields,
-		},
-	}
+	"S3Exporting": ubx.FieldSpec{
+		WireName: "s3_exporting",
+		Kind:     "object",
+		Fields:   Domain_Matching_ExportingConfig_S3ExportingFields,
+	},
+}
 
 var Domain_Matching_JobScheduleFields = ubx.FieldMap{
-		"DayOfTheWeek": ubx.FieldSpec{WireName: "day_of_the_week"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"DayOfTheWeek": ubx.FieldSpec{WireName: "day_of_the_week"},
+	"Time":         ubx.FieldSpec{WireName: "time"},
+}
 
 var Domain_MatchingFields = ubx.FieldMap{
-		"AutoMerging": ubx.FieldSpec{
-			WireName: "auto_merging",
-			Kind: "object",
-			Fields: Domain_Matching_AutoMergingFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"ExportingConfig": ubx.FieldSpec{
-			WireName: "exporting_config",
-			Kind: "object",
-			Fields: Domain_Matching_ExportingConfigFields,
-		},
-		"JobSchedule": ubx.FieldSpec{
-			WireName: "job_schedule",
-			Kind: "object",
-			Fields: Domain_Matching_JobScheduleFields,
-		},
-	}
+	"AutoMerging": ubx.FieldSpec{
+		WireName: "auto_merging",
+		Kind:     "object",
+		Fields:   Domain_Matching_AutoMergingFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"ExportingConfig": ubx.FieldSpec{
+		WireName: "exporting_config",
+		Kind:     "object",
+		Fields:   Domain_Matching_ExportingConfigFields,
+	},
+	"JobSchedule": ubx.FieldSpec{
+		WireName: "job_schedule",
+		Kind:     "object",
+		Fields:   Domain_Matching_JobScheduleFields,
+	},
+}
 
 var Domain_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DomainConfig struct {
 	// The URL of the SQS dead letter queue
@@ -232,19 +232,19 @@ type DomainAttrs struct {
 var Domain = ubx.ResourceBinding{
 	WireType: "aws_customer_profiles_domain",
 	Fields: ubx.FieldMap{
-		"DeadLetterQueueUrl": ubx.FieldSpec{WireName: "dead_letter_queue_url"},
-		"DefaultEncryptionKey": ubx.FieldSpec{WireName: "default_encryption_key"},
+		"DeadLetterQueueUrl":    ubx.FieldSpec{WireName: "dead_letter_queue_url"},
+		"DefaultEncryptionKey":  ubx.FieldSpec{WireName: "default_encryption_key"},
 		"DefaultExpirationDays": ubx.FieldSpec{WireName: "default_expiration_days"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":            ubx.FieldSpec{WireName: "domain_name"},
 		"Matching": ubx.FieldSpec{
 			WireName: "matching",
-			Kind: "object",
-			Fields: Domain_MatchingFields,
+			Kind:     "object",
+			Fields:   Domain_MatchingFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Domain_TagsFields,
+			Kind:     "list",
+			Fields:   Domain_TagsFields,
 		},
 	},
 }

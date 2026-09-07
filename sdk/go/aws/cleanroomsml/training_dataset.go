@@ -45,50 +45,50 @@ type TrainingDataset_TrainingData struct {
 }
 
 var TrainingDataset_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var TrainingDataset_TrainingData_InputConfig_DataSource_GlueDataSourceFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"CatalogId":    ubx.FieldSpec{WireName: "catalog_id"},
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"TableName":    ubx.FieldSpec{WireName: "table_name"},
+}
 
 var TrainingDataset_TrainingData_InputConfig_DataSourceFields = ubx.FieldMap{
-		"GlueDataSource": ubx.FieldSpec{
-			WireName: "glue_data_source",
-			Kind: "object",
-			Fields: TrainingDataset_TrainingData_InputConfig_DataSource_GlueDataSourceFields,
-		},
-	}
+	"GlueDataSource": ubx.FieldSpec{
+		WireName: "glue_data_source",
+		Kind:     "object",
+		Fields:   TrainingDataset_TrainingData_InputConfig_DataSource_GlueDataSourceFields,
+	},
+}
 
 var TrainingDataset_TrainingData_InputConfig_SchemaFields = ubx.FieldMap{
-		"ColumnName": ubx.FieldSpec{WireName: "column_name"},
-		"ColumnTypes": ubx.FieldSpec{WireName: "column_types"},
-	}
+	"ColumnName":  ubx.FieldSpec{WireName: "column_name"},
+	"ColumnTypes": ubx.FieldSpec{WireName: "column_types"},
+}
 
 var TrainingDataset_TrainingData_InputConfigFields = ubx.FieldMap{
-		"DataSource": ubx.FieldSpec{
-			WireName: "data_source",
-			Kind: "object",
-			Fields: TrainingDataset_TrainingData_InputConfig_DataSourceFields,
-		},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "list",
-			Fields: TrainingDataset_TrainingData_InputConfig_SchemaFields,
-		},
-	}
+	"DataSource": ubx.FieldSpec{
+		WireName: "data_source",
+		Kind:     "object",
+		Fields:   TrainingDataset_TrainingData_InputConfig_DataSourceFields,
+	},
+	"Schema": ubx.FieldSpec{
+		WireName: "schema",
+		Kind:     "list",
+		Fields:   TrainingDataset_TrainingData_InputConfig_SchemaFields,
+	},
+}
 
 var TrainingDataset_TrainingDataFields = ubx.FieldMap{
-		"InputConfig": ubx.FieldSpec{
-			WireName: "input_config",
-			Kind: "object",
-			Fields: TrainingDataset_TrainingData_InputConfigFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"InputConfig": ubx.FieldSpec{
+		WireName: "input_config",
+		Kind:     "object",
+		Fields:   TrainingDataset_TrainingData_InputConfigFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type TrainingDatasetConfig struct {
 	// A user-provided free-form description of the training dataset in AWS Clean Rooms ML, used to annotate and identify the dataset's purpose or contents. (AI-inferred)
@@ -124,17 +124,17 @@ var TrainingDataset = ubx.ResourceBinding{
 	WireType: "aws_clean_rooms_ml_training_dataset",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"RoleArn":     ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TrainingDataset_TagsFields,
+			Kind:     "list",
+			Fields:   TrainingDataset_TagsFields,
 		},
 		"TrainingData": ubx.FieldSpec{
 			WireName: "training_data",
-			Kind: "list",
-			Fields: TrainingDataset_TrainingDataFields,
+			Kind:     "list",
+			Fields:   TrainingDataset_TrainingDataFields,
 		},
 	},
 }

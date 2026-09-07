@@ -4,18 +4,18 @@ package compute_optimizer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComputeOptimizerEc2InstanceRecommendations_Errors struct {
-	Code any
+	Code       any
 	Identifier any
-	Message any
+	Message    any
 }
 
 type ComputeOptimizerEc2InstanceRecommendations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ComputeOptimizerEc2InstanceRecommendations_InstanceRecommendations_CurrentInstanceGpuInfo_Gpus struct {
-	GpuCount any
+	GpuCount           any
 	GpuMemorySizeInMiB any
 }
 
@@ -29,95 +29,95 @@ type ComputeOptimizerEc2InstanceRecommendations_InstanceRecommendations_Effectiv
 
 type ComputeOptimizerEc2InstanceRecommendations_InstanceRecommendations_EffectiveRecommendationPreferences_PreferredResources struct {
 	EffectiveIncludeList any
-	ExcludeList any
-	IncludeList any
-	Name any
+	ExcludeList          any
+	IncludeList          any
+	Name                 any
 }
 
 type ComputeOptimizerEc2InstanceRecommendations_InstanceRecommendations_EffectiveRecommendationPreferences_UtilizationPreferences_MetricParameters struct {
-	Headroom any
+	Headroom  any
 	Threshold any
 }
 
 type ComputeOptimizerEc2InstanceRecommendations_InstanceRecommendations_EffectiveRecommendationPreferences_UtilizationPreferences struct {
-	MetricName any
+	MetricName       any
 	MetricParameters any
 }
 
 type ComputeOptimizerEc2InstanceRecommendations_InstanceRecommendations_EffectiveRecommendationPreferences struct {
-	CpuVendorArchitectures any
+	CpuVendorArchitectures        any
 	EnhancedInfrastructureMetrics any
-	ExternalMetricsPreference any
-	InferredWorkloadTypes any
-	LookBackPeriod any
-	PreferredResources any
-	SavingsEstimationMode any
-	UtilizationPreferences any
+	ExternalMetricsPreference     any
+	InferredWorkloadTypes         any
+	LookBackPeriod                any
+	PreferredResources            any
+	SavingsEstimationMode         any
+	UtilizationPreferences        any
 }
 
 type ComputeOptimizerEc2InstanceRecommendations_InstanceRecommendations_ExternalMetricStatus struct {
-	StatusCode any
+	StatusCode   any
 	StatusReason any
 }
 
 type ComputeOptimizerEc2InstanceRecommendations_InstanceRecommendations_RecommendationOptions_ProjectedUtilizationMetrics struct {
-	Name any
+	Name      any
 	Statistic any
-	Value any
+	Value     any
 }
 
 type ComputeOptimizerEc2InstanceRecommendations_InstanceRecommendations_RecommendationOptions_SavingsOpportunity_EstimatedMonthlySavings struct {
 	Currency any
-	Value any
+	Value    any
 }
 
 type ComputeOptimizerEc2InstanceRecommendations_InstanceRecommendations_RecommendationOptions_SavingsOpportunity struct {
-	EstimatedMonthlySavings any
+	EstimatedMonthlySavings      any
 	SavingsOpportunityPercentage any
 }
 
 type ComputeOptimizerEc2InstanceRecommendations_InstanceRecommendations_RecommendationOptions struct {
-	InstanceGpuInfo any
-	InstanceType any
-	MigrationEffort any
-	PerformanceRisk any
-	PlatformDifferences any
-	ProjectedUtilizationMetrics any
-	Rank any
-	SavingsOpportunity any
+	InstanceGpuInfo                  any
+	InstanceType                     any
+	MigrationEffort                  any
+	PerformanceRisk                  any
+	PlatformDifferences              any
+	ProjectedUtilizationMetrics      any
+	Rank                             any
+	SavingsOpportunity               any
 	SavingsOpportunityAfterDiscounts any
 }
 
 type ComputeOptimizerEc2InstanceRecommendations_InstanceRecommendations_RecommendationSources struct {
-	RecommendationSourceArn any
+	RecommendationSourceArn  any
 	RecommendationSourceType any
 }
 
 type ComputeOptimizerEc2InstanceRecommendations_InstanceRecommendations_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ComputeOptimizerEc2InstanceRecommendations_InstanceRecommendations struct {
-	AccountId any
-	CurrentInstanceGpuInfo any
-	CurrentInstanceType any
-	CurrentPerformanceRisk any
+	AccountId                          any
+	CurrentInstanceGpuInfo             any
+	CurrentInstanceType                any
+	CurrentPerformanceRisk             any
 	EffectiveRecommendationPreferences any
-	ExternalMetricStatus any
-	Finding any
-	FindingReasonCodes any
-	Idle any
-	InferredWorkloadTypes any
-	InstanceArn any
-	InstanceName any
-	InstanceState any
-	LastRefreshTimestamp any
-	LookBackPeriodInDays any
-	RecommendationOptions any
-	RecommendationSources any
-	Tags any
-	UtilizationMetrics any
+	ExternalMetricStatus               any
+	Finding                            any
+	FindingReasonCodes                 any
+	Idle                               any
+	InferredWorkloadTypes              any
+	InstanceArn                        any
+	InstanceName                       any
+	InstanceState                      any
+	LastRefreshTimestamp               any
+	LookBackPeriodInDays               any
+	RecommendationOptions              any
+	RecommendationSources              any
+	Tags                               any
+	UtilizationMetrics                 any
 }
 
 type ComputeOptimizerEc2InstanceRecommendations_RecommendationPreferences struct {
@@ -125,32 +125,32 @@ type ComputeOptimizerEc2InstanceRecommendations_RecommendationPreferences struct
 }
 
 var ComputeOptimizerEc2InstanceRecommendations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var ComputeOptimizerEc2InstanceRecommendations_RecommendationPreferencesFields = ubx.FieldMap{
-		"CpuVendorArchitectures": ubx.FieldSpec{WireName: "cpu_vendor_architectures"},
-	}
+	"CpuVendorArchitectures": ubx.FieldSpec{WireName: "cpu_vendor_architectures"},
+}
 
 type ComputeOptimizerEc2InstanceRecommendationsConfig struct {
-	AccountIds any
-	Filters any
+	AccountIds   any
+	Filters      any
 	InstanceArns any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	// <p>Describes the recommendation preferences to return in the response of a <a>GetAutoScalingGroupRecommendations</a>, <a>GetEC2InstanceRecommendations</a>, <a>GetEC2RecommendationProjectedMetrics</a>, <a>GetRDSDatabaseRecommendations</a>, and <a>GetRDSDatabaseRecommendationProjectedMetrics</a> request.</p>
 	RecommendationPreferences any
 }
 
 type ComputeOptimizerEc2InstanceRecommendationsAttrs struct {
-	AccountIds any
-	Errors any
-	Filters any
-	InstanceArns any
+	AccountIds              any
+	Errors                  any
+	Filters                 any
+	InstanceArns            any
 	InstanceRecommendations any
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 	// <p>Describes the recommendation preferences to return in the response of a <a>GetAutoScalingGroupRecommendations</a>, <a>GetEC2InstanceRecommendations</a>, <a>GetEC2RecommendationProjectedMetrics</a>, <a>GetRDSDatabaseRecommendations</a>, and <a>GetRDSDatabaseRecommendationProjectedMetrics</a> request.</p>
 	RecommendationPreferences any
 }
@@ -161,16 +161,16 @@ var ComputeOptimizerEc2InstanceRecommendations = ubx.DataSourceBinding{
 		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ComputeOptimizerEc2InstanceRecommendations_FiltersFields,
+			Kind:     "list",
+			Fields:   ComputeOptimizerEc2InstanceRecommendations_FiltersFields,
 		},
 		"InstanceArns": ubx.FieldSpec{WireName: "instance_arns"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"RecommendationPreferences": ubx.FieldSpec{
 			WireName: "recommendation_preferences",
-			Kind: "object",
-			Fields: ComputeOptimizerEc2InstanceRecommendations_RecommendationPreferencesFields,
+			Kind:     "object",
+			Fields:   ComputeOptimizerEc2InstanceRecommendations_RecommendationPreferencesFields,
 		},
 	},
 }

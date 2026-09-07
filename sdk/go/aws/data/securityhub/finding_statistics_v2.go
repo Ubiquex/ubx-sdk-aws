@@ -4,12 +4,12 @@ package securityhub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FindingStatisticsV2_GroupByResults_GroupByValues struct {
-	Count any
+	Count      any
 	FieldValue any
 }
 
 type FindingStatisticsV2_GroupByResults struct {
-	GroupByField any
+	GroupByField  any
 	GroupByValues any
 }
 
@@ -19,24 +19,24 @@ type FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_BooleanFilters_Fi
 
 type FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_BooleanFilters struct {
 	FieldName any
-	Filter any
+	Filter    any
 }
 
 type FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_DateFilters_Filter_DateRange struct {
 	Comparison any
-	Unit any
-	Value any
+	Unit       any
+	Value      any
 }
 
 type FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_DateFilters_Filter struct {
 	DateRange any
-	End any
-	Start any
+	End       any
+	Start     any
 }
 
 type FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_DateFilters struct {
 	FieldName any
-	Filter any
+	Filter    any
 }
 
 type FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_IpFilters_Filter struct {
@@ -45,69 +45,69 @@ type FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_IpFilters_Filter 
 
 type FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_IpFilters struct {
 	FieldName any
-	Filter any
+	Filter    any
 }
 
 type FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_MapFilters_Filter struct {
 	Comparison any
-	Key any
-	Value any
+	Key        any
+	Value      any
 }
 
 type FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_MapFilters struct {
 	FieldName any
-	Filter any
+	Filter    any
 }
 
 type FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_NestedCompositeFilters struct {
 }
 
 type FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_NumberFilters_Filter struct {
-	Eq any
-	Gt any
+	Eq  any
+	Gt  any
 	Gte any
-	Lt any
+	Lt  any
 	Lte any
 }
 
 type FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_NumberFilters struct {
 	FieldName any
-	Filter any
+	Filter    any
 }
 
 type FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_StringFilters_Filter struct {
 	Comparison any
-	Value any
+	Value      any
 }
 
 type FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_StringFilters struct {
 	FieldName any
-	Filter any
+	Filter    any
 }
 
 type FindingStatisticsV2_GroupByRules_Filters_CompositeFilters struct {
-	BooleanFilters any
-	DateFilters any
-	IpFilters any
-	MapFilters any
+	BooleanFilters         any
+	DateFilters            any
+	IpFilters              any
+	MapFilters             any
 	NestedCompositeFilters any
-	NumberFilters any
-	Operator any
-	StringFilters any
+	NumberFilters          any
+	Operator               any
+	StringFilters          any
 }
 
 type FindingStatisticsV2_GroupByRules_Filters struct {
-	CompositeFilters any
+	CompositeFilters  any
 	CompositeOperator any
 }
 
 type FindingStatisticsV2_GroupByRules struct {
-	Filters any
+	Filters      any
 	GroupByField any
 }
 
 type FindingStatisticsV2_Scopes_AwsOrganizations struct {
-	OrganizationId any
+	OrganizationId       any
 	OrganizationalUnitId any
 }
 
@@ -117,189 +117,188 @@ type FindingStatisticsV2_Scopes struct {
 }
 
 var FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_BooleanFilters_FilterFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_BooleanFiltersFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_BooleanFilters_FilterFields,
-		},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_BooleanFilters_FilterFields,
+	},
+}
 
 var FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_DateFilters_Filter_DateRangeFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Unit":       ubx.FieldSpec{WireName: "unit"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_DateFilters_FilterFields = ubx.FieldMap{
-		"DateRange": ubx.FieldSpec{
-			WireName: "date_range",
-			Kind: "object",
-			Fields: FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_DateFilters_Filter_DateRangeFields,
-		},
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"DateRange": ubx.FieldSpec{
+		WireName: "date_range",
+		Kind:     "object",
+		Fields:   FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_DateFilters_Filter_DateRangeFields,
+	},
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 var FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_DateFiltersFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_DateFilters_FilterFields,
-		},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_DateFilters_FilterFields,
+	},
+}
 
 var FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_IpFilters_FilterFields = ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-	}
+	"Cidr": ubx.FieldSpec{WireName: "cidr"},
+}
 
 var FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_IpFiltersFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_IpFilters_FilterFields,
-		},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_IpFilters_FilterFields,
+	},
+}
 
 var FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_MapFilters_FilterFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_MapFiltersFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_MapFilters_FilterFields,
-		},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_MapFilters_FilterFields,
+	},
+}
 
-var FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_NestedCompositeFiltersFields = ubx.FieldMap{
-	}
+var FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_NestedCompositeFiltersFields = ubx.FieldMap{}
 
 var FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_NumberFilters_FilterFields = ubx.FieldMap{
-		"Eq": ubx.FieldSpec{WireName: "eq"},
-		"Gt": ubx.FieldSpec{WireName: "gt"},
-		"Gte": ubx.FieldSpec{WireName: "gte"},
-		"Lt": ubx.FieldSpec{WireName: "lt"},
-		"Lte": ubx.FieldSpec{WireName: "lte"},
-	}
+	"Eq":  ubx.FieldSpec{WireName: "eq"},
+	"Gt":  ubx.FieldSpec{WireName: "gt"},
+	"Gte": ubx.FieldSpec{WireName: "gte"},
+	"Lt":  ubx.FieldSpec{WireName: "lt"},
+	"Lte": ubx.FieldSpec{WireName: "lte"},
+}
 
 var FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_NumberFiltersFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_NumberFilters_FilterFields,
-		},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_NumberFilters_FilterFields,
+	},
+}
 
 var FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_StringFilters_FilterFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_StringFiltersFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_StringFilters_FilterFields,
-		},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_StringFilters_FilterFields,
+	},
+}
 
 var FindingStatisticsV2_GroupByRules_Filters_CompositeFiltersFields = ubx.FieldMap{
-		"BooleanFilters": ubx.FieldSpec{
-			WireName: "boolean_filters",
-			Kind: "list",
-			Fields: FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_BooleanFiltersFields,
-		},
-		"DateFilters": ubx.FieldSpec{
-			WireName: "date_filters",
-			Kind: "list",
-			Fields: FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_DateFiltersFields,
-		},
-		"IpFilters": ubx.FieldSpec{
-			WireName: "ip_filters",
-			Kind: "list",
-			Fields: FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_IpFiltersFields,
-		},
-		"MapFilters": ubx.FieldSpec{
-			WireName: "map_filters",
-			Kind: "list",
-			Fields: FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_MapFiltersFields,
-		},
-		"NestedCompositeFilters": ubx.FieldSpec{
-			WireName: "nested_composite_filters",
-			Kind: "list",
-			Fields: FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_NestedCompositeFiltersFields,
-		},
-		"NumberFilters": ubx.FieldSpec{
-			WireName: "number_filters",
-			Kind: "list",
-			Fields: FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_NumberFiltersFields,
-		},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"StringFilters": ubx.FieldSpec{
-			WireName: "string_filters",
-			Kind: "list",
-			Fields: FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_StringFiltersFields,
-		},
-	}
+	"BooleanFilters": ubx.FieldSpec{
+		WireName: "boolean_filters",
+		Kind:     "list",
+		Fields:   FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_BooleanFiltersFields,
+	},
+	"DateFilters": ubx.FieldSpec{
+		WireName: "date_filters",
+		Kind:     "list",
+		Fields:   FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_DateFiltersFields,
+	},
+	"IpFilters": ubx.FieldSpec{
+		WireName: "ip_filters",
+		Kind:     "list",
+		Fields:   FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_IpFiltersFields,
+	},
+	"MapFilters": ubx.FieldSpec{
+		WireName: "map_filters",
+		Kind:     "list",
+		Fields:   FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_MapFiltersFields,
+	},
+	"NestedCompositeFilters": ubx.FieldSpec{
+		WireName: "nested_composite_filters",
+		Kind:     "list",
+		Fields:   FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_NestedCompositeFiltersFields,
+	},
+	"NumberFilters": ubx.FieldSpec{
+		WireName: "number_filters",
+		Kind:     "list",
+		Fields:   FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_NumberFiltersFields,
+	},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"StringFilters": ubx.FieldSpec{
+		WireName: "string_filters",
+		Kind:     "list",
+		Fields:   FindingStatisticsV2_GroupByRules_Filters_CompositeFilters_StringFiltersFields,
+	},
+}
 
 var FindingStatisticsV2_GroupByRules_FiltersFields = ubx.FieldMap{
-		"CompositeFilters": ubx.FieldSpec{
-			WireName: "composite_filters",
-			Kind: "list",
-			Fields: FindingStatisticsV2_GroupByRules_Filters_CompositeFiltersFields,
-		},
-		"CompositeOperator": ubx.FieldSpec{WireName: "composite_operator"},
-	}
+	"CompositeFilters": ubx.FieldSpec{
+		WireName: "composite_filters",
+		Kind:     "list",
+		Fields:   FindingStatisticsV2_GroupByRules_Filters_CompositeFiltersFields,
+	},
+	"CompositeOperator": ubx.FieldSpec{WireName: "composite_operator"},
+}
 
 var FindingStatisticsV2_GroupByRulesFields = ubx.FieldMap{
-		"Filters": ubx.FieldSpec{
-			WireName: "filters",
-			Kind: "object",
-			Fields: FindingStatisticsV2_GroupByRules_FiltersFields,
-		},
-		"GroupByField": ubx.FieldSpec{WireName: "group_by_field"},
-	}
+	"Filters": ubx.FieldSpec{
+		WireName: "filters",
+		Kind:     "object",
+		Fields:   FindingStatisticsV2_GroupByRules_FiltersFields,
+	},
+	"GroupByField": ubx.FieldSpec{WireName: "group_by_field"},
+}
 
 var FindingStatisticsV2_Scopes_AwsOrganizationsFields = ubx.FieldMap{
-		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
-		"OrganizationalUnitId": ubx.FieldSpec{WireName: "organizational_unit_id"},
-	}
+	"OrganizationId":       ubx.FieldSpec{WireName: "organization_id"},
+	"OrganizationalUnitId": ubx.FieldSpec{WireName: "organizational_unit_id"},
+}
 
 var FindingStatisticsV2_ScopesFields = ubx.FieldMap{
-		"AwsOrganizations": ubx.FieldSpec{
-			WireName: "aws_organizations",
-			Kind: "list",
-			Fields: FindingStatisticsV2_Scopes_AwsOrganizationsFields,
-		},
-	}
+	"AwsOrganizations": ubx.FieldSpec{
+		WireName: "aws_organizations",
+		Kind:     "list",
+		Fields:   FindingStatisticsV2_Scopes_AwsOrganizationsFields,
+	},
+}
 
 type FindingStatisticsV2Config struct {
-	GroupByRules any
+	GroupByRules        any
 	MaxStatisticResults any
 	// <p>Defines the data boundary for a findings query. Scopes determine which organizational units or organizations to retrieve data from.</p>
-	Scopes any
+	Scopes    any
 	SortOrder any
 }
 
 type FindingStatisticsV2Attrs struct {
-	GroupByResults any
-	GroupByRules any
+	GroupByResults      any
+	GroupByRules        any
 	MaxStatisticResults any
 	// <p>Defines the data boundary for a findings query. Scopes determine which organizational units or organizations to retrieve data from.</p>
-	Scopes any
+	Scopes    any
 	SortOrder any
 }
 
@@ -308,14 +307,14 @@ var FindingStatisticsV2 = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"GroupByRules": ubx.FieldSpec{
 			WireName: "group_by_rules",
-			Kind: "list",
-			Fields: FindingStatisticsV2_GroupByRulesFields,
+			Kind:     "list",
+			Fields:   FindingStatisticsV2_GroupByRulesFields,
 		},
 		"MaxStatisticResults": ubx.FieldSpec{WireName: "max_statistic_results"},
 		"Scopes": ubx.FieldSpec{
 			WireName: "scopes",
-			Kind: "object",
-			Fields: FindingStatisticsV2_ScopesFields,
+			Kind:     "object",
+			Fields:   FindingStatisticsV2_ScopesFields,
 		},
 		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
 	},

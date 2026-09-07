@@ -24,7 +24,7 @@ type AttributeGroupAssociationAttrs struct {
 var AttributeGroupAssociation = ubx.ResourceBinding{
 	WireType: "aws_service_catalog_app_registry_attribute_group_association",
 	Fields: ubx.FieldMap{
-		"Application": ubx.FieldSpec{WireName: "application"},
+		"Application":    ubx.FieldSpec{WireName: "application"},
 		"AttributeGroup": ubx.FieldSpec{WireName: "attribute_group"},
 	},
 }

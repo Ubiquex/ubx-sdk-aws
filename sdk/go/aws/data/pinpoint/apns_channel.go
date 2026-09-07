@@ -4,18 +4,18 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApnsChannel_ApnschannelResponse struct {
-	ApplicationId any
-	CreationDate any
+	ApplicationId               any
+	CreationDate                any
 	DefaultAuthenticationMethod any
-	Enabled any
-	HasCredential any
-	HasTokenKey any
-	Id any
-	IsArchived any
-	LastModifiedBy any
-	LastModifiedDate any
-	Platform any
-	Version any
+	Enabled                     any
+	HasCredential               any
+	HasTokenKey                 any
+	Id                          any
+	IsArchived                  any
+	LastModifiedBy              any
+	LastModifiedDate            any
+	Platform                    any
+	Version                     any
 }
 
 type ApnsChannelConfig struct {
@@ -25,7 +25,7 @@ type ApnsChannelConfig struct {
 type ApnsChannelAttrs struct {
 	// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
 	ApnschannelResponse any
-	ApplicationId any
+	ApplicationId       any
 }
 
 var ApnsChannel = ubx.DataSourceBinding{

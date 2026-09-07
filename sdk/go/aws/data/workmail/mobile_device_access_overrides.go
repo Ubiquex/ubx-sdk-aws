@@ -4,38 +4,38 @@ package workmail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MobileDeviceAccessOverrides_Overrides struct {
-	DateCreated any
+	DateCreated  any
 	DateModified any
-	Description any
-	DeviceId any
-	Effect any
-	UserId any
+	Description  any
+	DeviceId     any
+	Effect       any
+	UserId       any
 }
 
 type MobileDeviceAccessOverridesConfig struct {
-	DeviceId any
-	MaxResults any
-	NextToken any
+	DeviceId       any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
-	UserId any
+	UserId         any
 }
 
 type MobileDeviceAccessOverridesAttrs struct {
-	DeviceId any
-	MaxResults any
-	NextToken any
+	DeviceId       any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
-	Overrides any
-	UserId any
+	Overrides      any
+	UserId         any
 }
 
 var MobileDeviceAccessOverrides = ubx.DataSourceBinding{
 	WireType: "aws_workmail_mobile_device_access_overrides",
 	Fields: ubx.FieldMap{
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"DeviceId":       ubx.FieldSpec{WireName: "device_id"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":         ubx.FieldSpec{WireName: "user_id"},
 	},
 }

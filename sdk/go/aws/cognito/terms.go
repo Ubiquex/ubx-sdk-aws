@@ -38,11 +38,11 @@ type TermsAttrs struct {
 var Terms = ubx.ResourceBinding{
 	WireType: "aws_cognito_terms",
 	Fields: ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"ClientId":    ubx.FieldSpec{WireName: "client_id"},
 		"Enforcement": ubx.FieldSpec{WireName: "enforcement"},
-		"Links": ubx.FieldSpec{WireName: "links"},
-		"TermsName": ubx.FieldSpec{WireName: "terms_name"},
+		"Links":       ubx.FieldSpec{WireName: "links"},
+		"TermsName":   ubx.FieldSpec{WireName: "terms_name"},
 		"TermsSource": ubx.FieldSpec{WireName: "terms_source"},
-		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
+		"UserPoolId":  ubx.FieldSpec{WireName: "user_pool_id"},
 	},
 }

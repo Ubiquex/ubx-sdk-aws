@@ -11,9 +11,9 @@ type Dataset_Tags struct {
 }
 
 var Dataset_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DatasetConfig struct {
 	// The type of the dataset. Specify TRAIN to create a training dataset. Specify TEST to create a test dataset.
@@ -39,11 +39,11 @@ var Dataset = ubx.ResourceBinding{
 	WireType: "aws_rekognition_dataset",
 	Fields: ubx.FieldMap{
 		"DatasetType": ubx.FieldSpec{WireName: "dataset_type"},
-		"ProjectArn": ubx.FieldSpec{WireName: "project_arn"},
+		"ProjectArn":  ubx.FieldSpec{WireName: "project_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dataset_TagsFields,
+			Kind:     "list",
+			Fields:   Dataset_TagsFields,
 		},
 	},
 }

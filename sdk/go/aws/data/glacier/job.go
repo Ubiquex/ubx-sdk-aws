@@ -4,41 +4,41 @@ package glacier
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Job_InventoryRetrievalParameters struct {
-	EndDate any
-	Format any
-	Limit any
-	Marker any
+	EndDate   any
+	Format    any
+	Limit     any
+	Marker    any
 	StartDate any
 }
 
 type Job_OutputLocation_S3_AccessControlList_Grantee struct {
-	DisplayName any
+	DisplayName  any
 	EmailAddress any
-	Id any
-	Type any
-	Uri any
+	Id           any
+	Type         any
+	Uri          any
 }
 
 type Job_OutputLocation_S3_AccessControlList struct {
-	Grantee any
+	Grantee    any
 	Permission any
 }
 
 type Job_OutputLocation_S3_Encryption struct {
 	EncryptionType any
-	Kmscontext any
-	KmskeyId any
+	Kmscontext     any
+	KmskeyId       any
 }
 
 type Job_OutputLocation_S3 struct {
 	AccessControlList any
-	BucketName any
-	CannedAcl any
+	BucketName        any
+	CannedAcl         any
 	// <p>Contains information about the encryption used to store the job results in Amazon S3. </p>
-	Encryption any
-	Prefix any
+	Encryption   any
+	Prefix       any
 	StorageClass any
-	Tagging any
+	Tagging      any
 	UserMetadata any
 }
 
@@ -48,12 +48,12 @@ type Job_OutputLocation struct {
 }
 
 type Job_SelectParameters_InputSerialization_Csv struct {
-	Comments any
-	FieldDelimiter any
-	FileHeaderInfo any
-	QuoteCharacter any
+	Comments             any
+	FieldDelimiter       any
+	FileHeaderInfo       any
+	QuoteCharacter       any
 	QuoteEscapeCharacter any
-	RecordDelimiter any
+	RecordDelimiter      any
 }
 
 type Job_SelectParameters_InputSerialization struct {
@@ -62,11 +62,11 @@ type Job_SelectParameters_InputSerialization struct {
 }
 
 type Job_SelectParameters_OutputSerialization_Csv struct {
-	FieldDelimiter any
-	QuoteCharacter any
+	FieldDelimiter       any
+	QuoteCharacter       any
 	QuoteEscapeCharacter any
-	QuoteFields any
-	RecordDelimiter any
+	QuoteFields          any
+	RecordDelimiter      any
 }
 
 type Job_SelectParameters_OutputSerialization struct {
@@ -75,7 +75,7 @@ type Job_SelectParameters_OutputSerialization struct {
 }
 
 type Job_SelectParameters struct {
-	Expression any
+	Expression     any
 	ExpressionType any
 	// <p>Describes how the archive is serialized.</p>
 	InputSerialization any
@@ -85,44 +85,44 @@ type Job_SelectParameters struct {
 
 type JobConfig struct {
 	AccountId any
-	JobId any
+	JobId     any
 	VaultName any
 }
 
 type JobAttrs struct {
-	AccountId any
-	Action any
-	ArchiveId any
+	AccountId             any
+	Action                any
+	ArchiveId             any
 	ArchiveSha256TreeHash any
-	ArchiveSizeInBytes any
-	Completed any
-	CompletionDate any
-	CreationDate any
+	ArchiveSizeInBytes    any
+	Completed             any
+	CompletionDate        any
+	CreationDate          any
 	// <p>Describes the options for a range inventory retrieval job.</p>
 	InventoryRetrievalParameters any
-	InventorySizeInBytes any
-	JobDescription any
-	JobId any
-	JobOutputPath any
+	InventorySizeInBytes         any
+	JobDescription               any
+	JobId                        any
+	JobOutputPath                any
 	// <p>Contains information about the location where the select job results are stored.</p>
-	OutputLocation any
+	OutputLocation     any
 	RetrievalByteRange any
 	// <p>Contains information about the parameters used for a select.</p>
 	SelectParameters any
-	Sha256TreeHash any
-	Snstopic any
-	StatusCode any
-	StatusMessage any
-	Tier any
-	VaultArn any
-	VaultName any
+	Sha256TreeHash   any
+	Snstopic         any
+	StatusCode       any
+	StatusMessage    any
+	Tier             any
+	VaultArn         any
+	VaultName        any
 }
 
 var Job = ubx.DataSourceBinding{
 	WireType: "aws_glacier_job",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":     ubx.FieldSpec{WireName: "job_id"},
 		"VaultName": ubx.FieldSpec{WireName: "vault_name"},
 	},
 }

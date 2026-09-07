@@ -65,53 +65,53 @@ type Fleet_Tags struct {
 }
 
 var Fleet_ComputeConfigurationFields = ubx.FieldMap{
-		"Disk": ubx.FieldSpec{WireName: "disk"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"Memory": ubx.FieldSpec{WireName: "memory"},
-		"VCpu": ubx.FieldSpec{WireName: "v_cpu"},
-	}
+	"Disk":         ubx.FieldSpec{WireName: "disk"},
+	"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
+	"MachineType":  ubx.FieldSpec{WireName: "machine_type"},
+	"Memory":       ubx.FieldSpec{WireName: "memory"},
+	"VCpu":         ubx.FieldSpec{WireName: "v_cpu"},
+}
 
 var Fleet_FleetProxyConfiguration_OrderedProxyRulesFields = ubx.FieldMap{
-		"Effect": ubx.FieldSpec{WireName: "effect"},
-		"Entities": ubx.FieldSpec{WireName: "entities"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Effect":   ubx.FieldSpec{WireName: "effect"},
+	"Entities": ubx.FieldSpec{WireName: "entities"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var Fleet_FleetProxyConfigurationFields = ubx.FieldMap{
-		"DefaultBehavior": ubx.FieldSpec{WireName: "default_behavior"},
-		"OrderedProxyRules": ubx.FieldSpec{
-			WireName: "ordered_proxy_rules",
-			Kind: "list",
-			Fields: Fleet_FleetProxyConfiguration_OrderedProxyRulesFields,
-		},
-	}
+	"DefaultBehavior": ubx.FieldSpec{WireName: "default_behavior"},
+	"OrderedProxyRules": ubx.FieldSpec{
+		WireName: "ordered_proxy_rules",
+		Kind:     "list",
+		Fields:   Fleet_FleetProxyConfiguration_OrderedProxyRulesFields,
+	},
+}
 
 var Fleet_FleetVpcConfigFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"Subnets":          ubx.FieldSpec{WireName: "subnets"},
+	"VpcId":            ubx.FieldSpec{WireName: "vpc_id"},
+}
 
 var Fleet_ScalingConfiguration_TargetTrackingScalingConfigsFields = ubx.FieldMap{
-		"MetricType": ubx.FieldSpec{WireName: "metric_type"},
-		"TargetValue": ubx.FieldSpec{WireName: "target_value"},
-	}
+	"MetricType":  ubx.FieldSpec{WireName: "metric_type"},
+	"TargetValue": ubx.FieldSpec{WireName: "target_value"},
+}
 
 var Fleet_ScalingConfigurationFields = ubx.FieldMap{
-		"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
-		"ScalingType": ubx.FieldSpec{WireName: "scaling_type"},
-		"TargetTrackingScalingConfigs": ubx.FieldSpec{
-			WireName: "target_tracking_scaling_configs",
-			Kind: "list",
-			Fields: Fleet_ScalingConfiguration_TargetTrackingScalingConfigsFields,
-		},
-	}
+	"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
+	"ScalingType": ubx.FieldSpec{WireName: "scaling_type"},
+	"TargetTrackingScalingConfigs": ubx.FieldSpec{
+		WireName: "target_tracking_scaling_configs",
+		Kind:     "list",
+		Fields:   Fleet_ScalingConfiguration_TargetTrackingScalingConfigsFields,
+	},
+}
 
 var Fleet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FleetConfig struct {
 	// The initial number of compute instances allocated to the CodeBuild fleet, serving as the baseline from which the fleet scales toward its maximum capacity. (AI-inferred)
@@ -175,34 +175,34 @@ var Fleet = ubx.ResourceBinding{
 		"BaseCapacity": ubx.FieldSpec{WireName: "base_capacity"},
 		"ComputeConfiguration": ubx.FieldSpec{
 			WireName: "compute_configuration",
-			Kind: "object",
-			Fields: Fleet_ComputeConfigurationFields,
+			Kind:     "object",
+			Fields:   Fleet_ComputeConfigurationFields,
 		},
-		"ComputeType": ubx.FieldSpec{WireName: "compute_type"},
+		"ComputeType":     ubx.FieldSpec{WireName: "compute_type"},
 		"EnvironmentType": ubx.FieldSpec{WireName: "environment_type"},
 		"FleetProxyConfiguration": ubx.FieldSpec{
 			WireName: "fleet_proxy_configuration",
-			Kind: "object",
-			Fields: Fleet_FleetProxyConfigurationFields,
+			Kind:     "object",
+			Fields:   Fleet_FleetProxyConfigurationFields,
 		},
 		"FleetServiceRole": ubx.FieldSpec{WireName: "fleet_service_role"},
 		"FleetVpcConfig": ubx.FieldSpec{
 			WireName: "fleet_vpc_config",
-			Kind: "object",
-			Fields: Fleet_FleetVpcConfigFields,
+			Kind:     "object",
+			Fields:   Fleet_FleetVpcConfigFields,
 		},
-		"ImageId": ubx.FieldSpec{WireName: "image_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"ImageId":          ubx.FieldSpec{WireName: "image_id"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"OverflowBehavior": ubx.FieldSpec{WireName: "overflow_behavior"},
 		"ScalingConfiguration": ubx.FieldSpec{
 			WireName: "scaling_configuration",
-			Kind: "object",
-			Fields: Fleet_ScalingConfigurationFields,
+			Kind:     "object",
+			Fields:   Fleet_ScalingConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Fleet_TagsFields,
+			Kind:     "list",
+			Fields:   Fleet_TagsFields,
 		},
 	},
 }

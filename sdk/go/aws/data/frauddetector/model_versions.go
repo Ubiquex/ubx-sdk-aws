@@ -5,11 +5,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelVersions_ModelVersionDetails_ExternalEventsDetail struct {
 	DataAccessRoleArn any
-	DataLocation any
+	DataLocation      any
 }
 
 type ModelVersions_ModelVersionDetails_IngestedEventsDetail_IngestedEventsTimeWindow struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
@@ -18,50 +18,50 @@ type ModelVersions_ModelVersionDetails_IngestedEventsDetail struct {
 }
 
 type ModelVersions_ModelVersionDetails_TrainingDataSchema_LabelSchema struct {
-	LabelMapper any
+	LabelMapper              any
 	UnlabeledEventsTreatment any
 }
 
 type ModelVersions_ModelVersionDetails_TrainingDataSchema struct {
-	LabelSchema any
+	LabelSchema    any
 	ModelVariables any
 }
 
 type ModelVersions_ModelVersionDetails_TrainingResult_DataValidationMetrics_FieldLevelMessages struct {
-	Content any
-	FieldName any
+	Content    any
+	FieldName  any
 	Identifier any
-	Title any
-	Type any
+	Title      any
+	Type       any
 }
 
 type ModelVersions_ModelVersionDetails_TrainingResult_DataValidationMetrics_FileLevelMessages struct {
 	Content any
-	Title any
-	Type any
+	Title   any
+	Type    any
 }
 
 type ModelVersions_ModelVersionDetails_TrainingResult_DataValidationMetrics struct {
 	FieldLevelMessages any
-	FileLevelMessages any
+	FileLevelMessages  any
 }
 
 type ModelVersions_ModelVersionDetails_TrainingResult_TrainingMetrics_MetricDataPoints struct {
-	Fpr any
+	Fpr       any
 	Precision any
 	Threshold any
-	Tpr any
+	Tpr       any
 }
 
 type ModelVersions_ModelVersionDetails_TrainingResult_TrainingMetrics struct {
-	Auc any
+	Auc              any
 	MetricDataPoints any
 }
 
 type ModelVersions_ModelVersionDetails_TrainingResult_VariableImportanceMetrics_LogOddsMetrics struct {
 	VariableImportance any
-	VariableName any
-	VariableType any
+	VariableName       any
+	VariableType       any
 }
 
 type ModelVersions_ModelVersionDetails_TrainingResult_VariableImportanceMetrics struct {
@@ -69,14 +69,14 @@ type ModelVersions_ModelVersionDetails_TrainingResult_VariableImportanceMetrics 
 }
 
 type ModelVersions_ModelVersionDetails_TrainingResult struct {
-	DataValidationMetrics any
-	TrainingMetrics any
+	DataValidationMetrics     any
+	TrainingMetrics           any
 	VariableImportanceMetrics any
 }
 
 type ModelVersions_ModelVersionDetails_TrainingResultV2_AggregatedVariablesImportanceMetrics_LogOddsMetrics struct {
 	AggregatedVariablesImportance any
-	VariableNames any
+	VariableNames                 any
 }
 
 type ModelVersions_ModelVersionDetails_TrainingResultV2_AggregatedVariablesImportanceMetrics struct {
@@ -84,9 +84,9 @@ type ModelVersions_ModelVersionDetails_TrainingResultV2_AggregatedVariablesImpor
 }
 
 type ModelVersions_ModelVersionDetails_TrainingResultV2_TrainingMetricsV2_Ati_MetricDataPoints struct {
-	Adr any
-	Atodr any
-	Cr any
+	Adr       any
+	Atodr     any
+	Cr        any
 	Threshold any
 }
 
@@ -105,7 +105,7 @@ type ModelVersions_ModelVersionDetails_TrainingResultV2_TrainingMetricsV2_Ofi_Mo
 }
 
 type ModelVersions_ModelVersionDetails_TrainingResultV2_TrainingMetricsV2_Ofi_ModelPerformance struct {
-	Auc any
+	Auc              any
 	UncertaintyRange any
 }
 
@@ -122,51 +122,51 @@ type ModelVersions_ModelVersionDetails_TrainingResultV2_TrainingMetricsV2 struct
 
 type ModelVersions_ModelVersionDetails_TrainingResultV2 struct {
 	AggregatedVariablesImportanceMetrics any
-	DataValidationMetrics any
-	TrainingMetricsV2 any
-	VariableImportanceMetrics any
+	DataValidationMetrics                any
+	TrainingMetricsV2                    any
+	VariableImportanceMetrics            any
 }
 
 type ModelVersions_ModelVersionDetails struct {
-	Arn any
-	CreatedTime any
+	Arn                  any
+	CreatedTime          any
 	ExternalEventsDetail any
 	IngestedEventsDetail any
-	LastUpdatedTime any
-	ModelId any
-	ModelType any
-	ModelVersionNumber any
-	Status any
-	TrainingDataSchema any
-	TrainingDataSource any
-	TrainingResult any
-	TrainingResultV2 any
+	LastUpdatedTime      any
+	ModelId              any
+	ModelType            any
+	ModelVersionNumber   any
+	Status               any
+	TrainingDataSchema   any
+	TrainingDataSource   any
+	TrainingResult       any
+	TrainingResultV2     any
 }
 
 type ModelVersionsConfig struct {
-	MaxResults any
-	ModelId any
-	ModelType any
+	MaxResults         any
+	ModelId            any
+	ModelType          any
 	ModelVersionNumber any
-	NextToken any
+	NextToken          any
 }
 
 type ModelVersionsAttrs struct {
-	MaxResults any
-	ModelId any
-	ModelType any
+	MaxResults          any
+	ModelId             any
+	ModelType           any
 	ModelVersionDetails any
-	ModelVersionNumber any
-	NextToken any
+	ModelVersionNumber  any
+	NextToken           any
 }
 
 var ModelVersions = ubx.DataSourceBinding{
 	WireType: "aws_frauddetector_model_versions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"ModelId": ubx.FieldSpec{WireName: "model_id"},
-		"ModelType": ubx.FieldSpec{WireName: "model_type"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"ModelId":            ubx.FieldSpec{WireName: "model_id"},
+		"ModelType":          ubx.FieldSpec{WireName: "model_type"},
 		"ModelVersionNumber": ubx.FieldSpec{WireName: "model_version_number"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 	},
 }

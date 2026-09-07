@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type JobDefinitionsConfig struct {
 	JobDefinitionName any
-	JobDefinitions any
-	MaxResults any
-	NextToken any
-	Status any
+	JobDefinitions    any
+	MaxResults        any
+	NextToken         any
+	Status            any
 }
 
 type JobDefinitionsAttrs struct {
 	JobDefinitionName any
-	JobDefinitions any
-	MaxResults any
-	NextToken any
-	Status any
+	JobDefinitions    any
+	MaxResults        any
+	NextToken         any
+	Status            any
 }
 
 var JobDefinitions = ubx.DataSourceBinding{
 	WireType: "aws_batch_job_definitions",
 	Fields: ubx.FieldMap{
 		"JobDefinitionName": ubx.FieldSpec{WireName: "job_definition_name"},
-		"JobDefinitions": ubx.FieldSpec{WireName: "job_definitions"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"JobDefinitions":    ubx.FieldSpec{WireName: "job_definitions"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
+		"Status":            ubx.FieldSpec{WireName: "status"},
 	},
 }

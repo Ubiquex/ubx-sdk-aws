@@ -64,78 +64,78 @@ type TlsinspectionConfiguration_Tags struct {
 }
 
 var TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_CheckCertificateRevocationStatusFields = ubx.FieldMap{
-		"RevokedStatusAction": ubx.FieldSpec{WireName: "revoked_status_action"},
-		"UnknownStatusAction": ubx.FieldSpec{WireName: "unknown_status_action"},
-	}
+	"RevokedStatusAction": ubx.FieldSpec{WireName: "revoked_status_action"},
+	"UnknownStatusAction": ubx.FieldSpec{WireName: "unknown_status_action"},
+}
 
 var TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_Scopes_DestinationPortsFields = ubx.FieldMap{
-		"FromPort": ubx.FieldSpec{WireName: "from_port"},
-		"ToPort": ubx.FieldSpec{WireName: "to_port"},
-	}
+	"FromPort": ubx.FieldSpec{WireName: "from_port"},
+	"ToPort":   ubx.FieldSpec{WireName: "to_port"},
+}
 
 var TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_Scopes_DestinationsFields = ubx.FieldMap{
-		"AddressDefinition": ubx.FieldSpec{WireName: "address_definition"},
-	}
+	"AddressDefinition": ubx.FieldSpec{WireName: "address_definition"},
+}
 
 var TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_ScopesFields = ubx.FieldMap{
-		"DestinationPorts": ubx.FieldSpec{
-			WireName: "destination_ports",
-			Kind: "list",
-			Fields: TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_Scopes_DestinationPortsFields,
-		},
-		"Destinations": ubx.FieldSpec{
-			WireName: "destinations",
-			Kind: "list",
-			Fields: TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_Scopes_DestinationsFields,
-		},
-		"Protocols": ubx.FieldSpec{WireName: "protocols"},
-		"SourcePorts": ubx.FieldSpec{
-			WireName: "source_ports",
-			Kind: "list",
-			Fields: TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_Scopes_DestinationPortsFields,
-		},
-		"Sources": ubx.FieldSpec{
-			WireName: "sources",
-			Kind: "list",
-			Fields: TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_Scopes_DestinationsFields,
-		},
-	}
+	"DestinationPorts": ubx.FieldSpec{
+		WireName: "destination_ports",
+		Kind:     "list",
+		Fields:   TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_Scopes_DestinationPortsFields,
+	},
+	"Destinations": ubx.FieldSpec{
+		WireName: "destinations",
+		Kind:     "list",
+		Fields:   TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_Scopes_DestinationsFields,
+	},
+	"Protocols": ubx.FieldSpec{WireName: "protocols"},
+	"SourcePorts": ubx.FieldSpec{
+		WireName: "source_ports",
+		Kind:     "list",
+		Fields:   TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_Scopes_DestinationPortsFields,
+	},
+	"Sources": ubx.FieldSpec{
+		WireName: "sources",
+		Kind:     "list",
+		Fields:   TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_Scopes_DestinationsFields,
+	},
+}
 
 var TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_ServerCertificatesFields = ubx.FieldMap{
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-	}
+	"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+}
 
 var TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurationsFields = ubx.FieldMap{
-		"CertificateAuthorityArn": ubx.FieldSpec{WireName: "certificate_authority_arn"},
-		"CheckCertificateRevocationStatus": ubx.FieldSpec{
-			WireName: "check_certificate_revocation_status",
-			Kind: "object",
-			Fields: TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_CheckCertificateRevocationStatusFields,
-		},
-		"Scopes": ubx.FieldSpec{
-			WireName: "scopes",
-			Kind: "list",
-			Fields: TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_ScopesFields,
-		},
-		"ServerCertificates": ubx.FieldSpec{
-			WireName: "server_certificates",
-			Kind: "list",
-			Fields: TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_ServerCertificatesFields,
-		},
-	}
+	"CertificateAuthorityArn": ubx.FieldSpec{WireName: "certificate_authority_arn"},
+	"CheckCertificateRevocationStatus": ubx.FieldSpec{
+		WireName: "check_certificate_revocation_status",
+		Kind:     "object",
+		Fields:   TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_CheckCertificateRevocationStatusFields,
+	},
+	"Scopes": ubx.FieldSpec{
+		WireName: "scopes",
+		Kind:     "list",
+		Fields:   TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_ScopesFields,
+	},
+	"ServerCertificates": ubx.FieldSpec{
+		WireName: "server_certificates",
+		Kind:     "list",
+		Fields:   TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_ServerCertificatesFields,
+	},
+}
 
 var TlsinspectionConfiguration_TlsinspectionConfigurationFields = ubx.FieldMap{
-		"ServerCertificateConfigurations": ubx.FieldSpec{
-			WireName: "server_certificate_configurations",
-			Kind: "list",
-			Fields: TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurationsFields,
-		},
-	}
+	"ServerCertificateConfigurations": ubx.FieldSpec{
+		WireName: "server_certificate_configurations",
+		Kind:     "list",
+		Fields:   TlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurationsFields,
+	},
+}
 
 var TlsinspectionConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TlsinspectionConfigurationConfig struct {
 	// An optional user-defined description for the TLS inspection configuration, helping to identify the resource within AWS Network Firewall. (AI-inferred)
@@ -169,14 +169,14 @@ var TlsinspectionConfiguration = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"TlsinspectionConfiguration": ubx.FieldSpec{
 			WireName: "tlsinspection_configuration",
-			Kind: "object",
-			Fields: TlsinspectionConfiguration_TlsinspectionConfigurationFields,
+			Kind:     "object",
+			Fields:   TlsinspectionConfiguration_TlsinspectionConfigurationFields,
 		},
 		"TlsinspectionConfigurationName": ubx.FieldSpec{WireName: "tlsinspection_configuration_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TlsinspectionConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   TlsinspectionConfiguration_TagsFields,
 		},
 	},
 }

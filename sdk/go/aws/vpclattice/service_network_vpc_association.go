@@ -17,14 +17,14 @@ type ServiceNetworkVpcAssociation_Tags struct {
 }
 
 var ServiceNetworkVpcAssociation_DnsOptionsFields = ubx.FieldMap{
-		"PrivateDnsPreference": ubx.FieldSpec{WireName: "private_dns_preference"},
-		"PrivateDnsSpecifiedDomains": ubx.FieldSpec{WireName: "private_dns_specified_domains"},
-	}
+	"PrivateDnsPreference":       ubx.FieldSpec{WireName: "private_dns_preference"},
+	"PrivateDnsSpecifiedDomains": ubx.FieldSpec{WireName: "private_dns_specified_domains"},
+}
 
 var ServiceNetworkVpcAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ServiceNetworkVpcAssociationConfig struct {
 	// DNS options for the VPC association, specifying the DNS type (IPv4 or IPv6) used to resolve service network domains within the associated VPC. (AI-inferred)
@@ -77,16 +77,16 @@ var ServiceNetworkVpcAssociation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DnsOptions": ubx.FieldSpec{
 			WireName: "dns_options",
-			Kind: "object",
-			Fields: ServiceNetworkVpcAssociation_DnsOptionsFields,
+			Kind:     "object",
+			Fields:   ServiceNetworkVpcAssociation_DnsOptionsFields,
 		},
-		"PrivateDnsEnabled": ubx.FieldSpec{WireName: "private_dns_enabled"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+		"PrivateDnsEnabled":        ubx.FieldSpec{WireName: "private_dns_enabled"},
+		"SecurityGroupIds":         ubx.FieldSpec{WireName: "security_group_ids"},
 		"ServiceNetworkIdentifier": ubx.FieldSpec{WireName: "service_network_identifier"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ServiceNetworkVpcAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   ServiceNetworkVpcAssociation_TagsFields,
 		},
 		"VpcIdentifier": ubx.FieldSpec{WireName: "vpc_identifier"},
 	},

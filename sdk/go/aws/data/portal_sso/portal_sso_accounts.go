@@ -4,29 +4,29 @@ package portal_sso
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PortalSsoAccounts_AccountList struct {
-	AccountId any
-	AccountName any
+	AccountId    any
+	AccountName  any
 	EmailAddress any
 }
 
 type PortalSsoAccountsConfig struct {
 	AccessToken any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type PortalSsoAccountsAttrs struct {
 	AccessToken any
 	AccountList any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 var PortalSsoAccounts = ubx.DataSourceBinding{
 	WireType: "aws_portal_sso_accounts",
 	Fields: ubx.FieldMap{
 		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

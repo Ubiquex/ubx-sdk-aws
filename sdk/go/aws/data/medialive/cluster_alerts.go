@@ -4,14 +4,14 @@ package medialive
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClusterAlerts_Alerts struct {
-	AlertType any
-	ChannelId any
+	AlertType        any
+	ChannelId        any
 	ClearedTimestamp any
-	Id any
-	Message any
-	NodeId any
-	SetTimestamp any
-	State any
+	Id               any
+	Message          any
+	NodeId           any
+	SetTimestamp     any
+	State            any
 }
 
 type ClusterAlertsConfig struct {
@@ -41,9 +41,9 @@ type ClusterAlertsAttrs struct {
 var ClusterAlerts = ubx.DataSourceBinding{
 	WireType: "aws_medialive_cluster_alerts",
 	Fields: ubx.FieldMap{
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ClusterId":   ubx.FieldSpec{WireName: "cluster_id"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"StateFilter": ubx.FieldSpec{WireName: "state_filter"},
 	},
 }

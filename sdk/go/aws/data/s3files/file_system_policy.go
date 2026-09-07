@@ -9,7 +9,7 @@ type FileSystemPolicyConfig struct {
 
 type FileSystemPolicyAttrs struct {
 	FileSystemId any
-	Policy any
+	Policy       any
 }
 
 var FileSystemPolicy = ubx.DataSourceBinding{

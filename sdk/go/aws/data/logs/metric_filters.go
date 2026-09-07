@@ -4,31 +4,31 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetricFilters_MetricFilters_MetricTransformations struct {
-	DefaultValue any
-	Dimensions any
-	MetricName any
+	DefaultValue    any
+	Dimensions      any
+	MetricName      any
 	MetricNamespace any
-	MetricValue any
-	Unit any
+	MetricValue     any
+	Unit            any
 }
 
 type MetricFilters_MetricFilters struct {
-	ApplyOnTransformedLogs any
-	CreationTime any
+	ApplyOnTransformedLogs    any
+	CreationTime              any
 	EmitSystemFieldDimensions any
-	FieldSelectionCriteria any
-	FilterName any
-	FilterPattern any
-	LogGroupName any
-	MetricTransformations any
+	FieldSelectionCriteria    any
+	FilterName                any
+	FilterPattern             any
+	LogGroupName              any
+	MetricTransformations     any
 }
 
 type MetricFiltersConfig struct {
 	FilterNamePrefix any
-	Limit any
-	LogGroupName any
+	Limit            any
+	LogGroupName     any
 	// <p>The name of the CloudWatch metric to which the monitored log information should be published. For example, you might publish to a metric named ErrorCount.</p>
-	MetricName any
+	MetricName      any
 	MetricNamespace any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
@@ -36,11 +36,11 @@ type MetricFiltersConfig struct {
 
 type MetricFiltersAttrs struct {
 	FilterNamePrefix any
-	Limit any
-	LogGroupName any
-	MetricFilters any
+	Limit            any
+	LogGroupName     any
+	MetricFilters    any
 	// <p>The name of the CloudWatch metric to which the monitored log information should be published. For example, you might publish to a metric named ErrorCount.</p>
-	MetricName any
+	MetricName      any
 	MetricNamespace any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
@@ -50,10 +50,10 @@ var MetricFilters = ubx.DataSourceBinding{
 	WireType: "aws_logs_metric_filters",
 	Fields: ubx.FieldMap{
 		"FilterNamePrefix": ubx.FieldSpec{WireName: "filter_name_prefix"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"MetricNamespace": ubx.FieldSpec{WireName: "metric_namespace"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":            ubx.FieldSpec{WireName: "limit"},
+		"LogGroupName":     ubx.FieldSpec{WireName: "log_group_name"},
+		"MetricName":       ubx.FieldSpec{WireName: "metric_name"},
+		"MetricNamespace":  ubx.FieldSpec{WireName: "metric_namespace"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

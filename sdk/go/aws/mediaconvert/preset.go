@@ -34,10 +34,10 @@ type PresetAttrs struct {
 var Preset = ubx.ResourceBinding{
 	WireType: "aws_media_convert_preset",
 	Fields: ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Category":     ubx.FieldSpec{WireName: "category"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"SettingsJson": ubx.FieldSpec{WireName: "settings_json"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":         ubx.FieldSpec{WireName: "tags"},
 	},
 }

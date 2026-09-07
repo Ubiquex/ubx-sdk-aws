@@ -4,26 +4,26 @@ package featurestore_runtime_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FeaturestoreRuntimeSagemakerRecordsConfig struct {
-	FeatureGroupName any
+	FeatureGroupName          any
 	IncludeSoftDeletedRecords any
-	MaxResults any
-	NextToken any
+	MaxResults                any
+	NextToken                 any
 }
 
 type FeaturestoreRuntimeSagemakerRecordsAttrs struct {
-	FeatureGroupName any
+	FeatureGroupName          any
 	IncludeSoftDeletedRecords any
-	MaxResults any
-	NextToken any
-	RecordIdentifiers any
+	MaxResults                any
+	NextToken                 any
+	RecordIdentifiers         any
 }
 
 var FeaturestoreRuntimeSagemakerRecords = ubx.DataSourceBinding{
 	WireType: "aws_featurestore_runtime_sagemaker_records",
 	Fields: ubx.FieldMap{
-		"FeatureGroupName": ubx.FieldSpec{WireName: "feature_group_name"},
+		"FeatureGroupName":          ubx.FieldSpec{WireName: "feature_group_name"},
 		"IncludeSoftDeletedRecords": ubx.FieldSpec{WireName: "include_soft_deleted_records"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                 ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -49,15 +49,15 @@ type Namespace_Tags struct {
 }
 
 var Namespace_SnapshotCopyConfigurationsFields = ubx.FieldMap{
-		"DestinationKmsKeyId": ubx.FieldSpec{WireName: "destination_kms_key_id"},
-		"DestinationRegion": ubx.FieldSpec{WireName: "destination_region"},
-		"SnapshotRetentionPeriod": ubx.FieldSpec{WireName: "snapshot_retention_period"},
-	}
+	"DestinationKmsKeyId":     ubx.FieldSpec{WireName: "destination_kms_key_id"},
+	"DestinationRegion":       ubx.FieldSpec{WireName: "destination_region"},
+	"SnapshotRetentionPeriod": ubx.FieldSpec{WireName: "snapshot_retention_period"},
+}
 
 var Namespace_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type NamespaceConfig struct {
 	// The ID of the AWS Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if manageAdminPassword is true.
@@ -134,29 +134,29 @@ type NamespaceAttrs struct {
 var Namespace = ubx.ResourceBinding{
 	WireType: "aws_redshift_serverless_namespace",
 	Fields: ubx.FieldMap{
-		"AdminPasswordSecretKmsKeyId": ubx.FieldSpec{WireName: "admin_password_secret_kms_key_id"},
-		"AdminUserPassword": ubx.FieldSpec{WireName: "admin_user_password"},
-		"AdminUsername": ubx.FieldSpec{WireName: "admin_username"},
-		"DbName": ubx.FieldSpec{WireName: "db_name"},
-		"DefaultIamRoleArn": ubx.FieldSpec{WireName: "default_iam_role_arn"},
-		"FinalSnapshotName": ubx.FieldSpec{WireName: "final_snapshot_name"},
+		"AdminPasswordSecretKmsKeyId":  ubx.FieldSpec{WireName: "admin_password_secret_kms_key_id"},
+		"AdminUserPassword":            ubx.FieldSpec{WireName: "admin_user_password"},
+		"AdminUsername":                ubx.FieldSpec{WireName: "admin_username"},
+		"DbName":                       ubx.FieldSpec{WireName: "db_name"},
+		"DefaultIamRoleArn":            ubx.FieldSpec{WireName: "default_iam_role_arn"},
+		"FinalSnapshotName":            ubx.FieldSpec{WireName: "final_snapshot_name"},
 		"FinalSnapshotRetentionPeriod": ubx.FieldSpec{WireName: "final_snapshot_retention_period"},
-		"IamRoles": ubx.FieldSpec{WireName: "iam_roles"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"LogExports": ubx.FieldSpec{WireName: "log_exports"},
-		"ManageAdminPassword": ubx.FieldSpec{WireName: "manage_admin_password"},
-		"NamespaceName": ubx.FieldSpec{WireName: "namespace_name"},
-		"NamespaceResourcePolicy": ubx.FieldSpec{WireName: "namespace_resource_policy"},
-		"RedshiftIdcApplicationArn": ubx.FieldSpec{WireName: "redshift_idc_application_arn"},
+		"IamRoles":                     ubx.FieldSpec{WireName: "iam_roles"},
+		"KmsKeyId":                     ubx.FieldSpec{WireName: "kms_key_id"},
+		"LogExports":                   ubx.FieldSpec{WireName: "log_exports"},
+		"ManageAdminPassword":          ubx.FieldSpec{WireName: "manage_admin_password"},
+		"NamespaceName":                ubx.FieldSpec{WireName: "namespace_name"},
+		"NamespaceResourcePolicy":      ubx.FieldSpec{WireName: "namespace_resource_policy"},
+		"RedshiftIdcApplicationArn":    ubx.FieldSpec{WireName: "redshift_idc_application_arn"},
 		"SnapshotCopyConfigurations": ubx.FieldSpec{
 			WireName: "snapshot_copy_configurations",
-			Kind: "list",
-			Fields: Namespace_SnapshotCopyConfigurationsFields,
+			Kind:     "list",
+			Fields:   Namespace_SnapshotCopyConfigurationsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Namespace_TagsFields,
+			Kind:     "list",
+			Fields:   Namespace_TagsFields,
 		},
 	},
 }

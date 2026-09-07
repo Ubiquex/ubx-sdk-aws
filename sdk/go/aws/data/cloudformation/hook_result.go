@@ -4,18 +4,18 @@ package cloudformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HookResult_Annotations struct {
-	AnnotationName any
-	RemediationLink any
+	AnnotationName     any
+	RemediationLink    any
 	RemediationMessage any
-	SeverityLevel any
-	Status any
-	StatusMessage any
+	SeverityLevel      any
+	Status             any
+	StatusMessage      any
 }
 
 type HookResult_Target struct {
-	Action any
-	TargetId any
-	TargetType any
+	Action         any
+	TargetId       any
+	TargetType     any
 	TargetTypeName any
 }
 
@@ -24,20 +24,20 @@ type HookResultConfig struct {
 }
 
 type HookResultAttrs struct {
-	Annotations any
-	FailureMode any
-	HookResultId any
+	Annotations      any
+	FailureMode      any
+	HookResultId     any
 	HookStatusReason any
-	InvocationPoint any
-	InvokedAt any
+	InvocationPoint  any
+	InvokedAt        any
 	OriginalTypeName any
-	Status any
+	Status           any
 	// <p>The <code>HookTarget</code> data type.</p>
-	Target any
-	TypeArn any
+	Target                     any
+	TypeArn                    any
 	TypeConfigurationVersionId any
-	TypeName any
-	TypeVersionId any
+	TypeName                   any
+	TypeVersionId              any
 }
 
 var HookResult = ubx.DataSourceBinding{

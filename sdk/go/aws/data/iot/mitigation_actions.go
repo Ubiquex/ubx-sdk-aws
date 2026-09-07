@@ -4,22 +4,22 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MitigationActions_ActionIdentifiers struct {
-	ActionArn any
-	ActionName any
+	ActionArn    any
+	ActionName   any
 	CreationDate any
 }
 
 type MitigationActionsConfig struct {
 	ActionType any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type MitigationActionsAttrs struct {
 	ActionIdentifiers any
-	ActionType any
-	MaxResults any
-	NextToken any
+	ActionType        any
+	MaxResults        any
+	NextToken         any
 }
 
 var MitigationActions = ubx.DataSourceBinding{
@@ -27,6 +27,6 @@ var MitigationActions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ActionType": ubx.FieldSpec{WireName: "action_type"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

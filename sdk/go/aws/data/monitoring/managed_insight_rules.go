@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagedInsightRules_ManagedRules_RuleState struct {
 	RuleName any
-	State any
+	State    any
 }
 
 type ManagedInsightRules_ManagedRules struct {
-	ResourceArn any
-	RuleState any
+	ResourceArn  any
+	RuleState    any
 	TemplateName any
 }
 
 type ManagedInsightRulesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	ResourceArn any
 }
 
 type ManagedInsightRulesAttrs struct {
 	ManagedRules any
-	MaxResults any
-	NextToken any
-	ResourceArn any
+	MaxResults   any
+	NextToken    any
+	ResourceArn  any
 }
 
 var ManagedInsightRules = ubx.DataSourceBinding{
 	WireType: "aws_monitoring_managed_insight_rules",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

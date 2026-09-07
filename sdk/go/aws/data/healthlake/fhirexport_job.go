@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FhirexportJob_ExportJobProperties_OutputDataConfig_S3Configuration struct {
 	KmsKeyId any
-	S3Uri any
+	S3Uri    any
 }
 
 type FhirexportJob_ExportJobProperties_OutputDataConfig struct {
@@ -53,6 +53,6 @@ var FhirexportJob = ubx.DataSourceBinding{
 	WireType: "aws_healthlake_fhirexport_job",
 	Fields: ubx.FieldMap{
 		"DatastoreId": ubx.FieldSpec{WireName: "datastore_id"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":       ubx.FieldSpec{WireName: "job_id"},
 	},
 }

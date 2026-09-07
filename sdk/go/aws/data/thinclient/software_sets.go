@@ -4,22 +4,22 @@ package thinclient
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SoftwareSets_SoftwareSets struct {
-	Arn any
-	Id any
-	ReleasedAt any
-	SupportedUntil any
+	Arn              any
+	Id               any
+	ReleasedAt       any
+	SupportedUntil   any
 	ValidationStatus any
-	Version any
+	Version          any
 }
 
 type SoftwareSetsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SoftwareSetsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	SoftwareSets any
 }
 
@@ -27,6 +27,6 @@ var SoftwareSets = ubx.DataSourceBinding{
 	WireType: "aws_thinclient_software_sets",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

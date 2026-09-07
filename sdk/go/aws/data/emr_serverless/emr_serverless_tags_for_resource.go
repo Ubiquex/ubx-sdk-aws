@@ -9,7 +9,7 @@ type EmrServerlessTagsForResourceConfig struct {
 
 type EmrServerlessTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var EmrServerlessTagsForResource = ubx.DataSourceBinding{

@@ -4,46 +4,46 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserEndpoints_EndpointsResponse_Item_Demographic struct {
-	AppVersion any
-	Locale any
-	Make any
-	Model any
-	ModelVersion any
-	Platform any
+	AppVersion      any
+	Locale          any
+	Make            any
+	Model           any
+	ModelVersion    any
+	Platform        any
 	PlatformVersion any
-	Timezone any
+	Timezone        any
 }
 
 type UserEndpoints_EndpointsResponse_Item_Location struct {
-	City any
-	Country any
-	Latitude any
-	Longitude any
+	City       any
+	Country    any
+	Latitude   any
+	Longitude  any
 	PostalCode any
-	Region any
+	Region     any
 }
 
 type UserEndpoints_EndpointsResponse_Item_User struct {
 	UserAttributes any
-	UserId any
+	UserId         any
 }
 
 type UserEndpoints_EndpointsResponse_Item struct {
-	Address any
-	ApplicationId any
-	Attributes any
-	ChannelType any
-	CohortId any
-	CreationDate any
-	Demographic any
-	EffectiveDate any
+	Address        any
+	ApplicationId  any
+	Attributes     any
+	ChannelType    any
+	CohortId       any
+	CreationDate   any
+	Demographic    any
+	EffectiveDate  any
 	EndpointStatus any
-	Id any
-	Location any
-	Metrics any
-	OptOut any
-	RequestId any
-	User any
+	Id             any
+	Location       any
+	Metrics        any
+	OptOut         any
+	RequestId      any
+	User           any
 }
 
 type UserEndpoints_EndpointsResponse struct {
@@ -52,20 +52,20 @@ type UserEndpoints_EndpointsResponse struct {
 
 type UserEndpointsConfig struct {
 	ApplicationId any
-	UserId any
+	UserId        any
 }
 
 type UserEndpointsAttrs struct {
 	ApplicationId any
 	// <p>Provides information about all the endpoints that are associated with a user ID.</p>
 	EndpointsResponse any
-	UserId any
+	UserId            any
 }
 
 var UserEndpoints = ubx.DataSourceBinding{
 	WireType: "aws_pinpoint_user_endpoints",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":        ubx.FieldSpec{WireName: "user_id"},
 	},
 }

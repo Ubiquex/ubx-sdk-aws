@@ -5,70 +5,70 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DocumentClassificationJobs_DocumentClassificationJobPropertiesList_InputDataConfig_DocumentReaderConfig struct {
 	DocumentReadAction any
-	DocumentReadMode any
-	FeatureTypes any
+	DocumentReadMode   any
+	FeatureTypes       any
 }
 
 type DocumentClassificationJobs_DocumentClassificationJobPropertiesList_InputDataConfig struct {
 	DocumentReaderConfig any
-	InputFormat any
-	S3Uri any
+	InputFormat          any
+	S3Uri                any
 }
 
 type DocumentClassificationJobs_DocumentClassificationJobPropertiesList_OutputDataConfig struct {
 	KmsKeyId any
-	S3Uri any
+	S3Uri    any
 }
 
 type DocumentClassificationJobs_DocumentClassificationJobPropertiesList_VpcConfig struct {
 	SecurityGroupIds any
-	Subnets any
+	Subnets          any
 }
 
 type DocumentClassificationJobs_DocumentClassificationJobPropertiesList struct {
-	DataAccessRoleArn any
+	DataAccessRoleArn     any
 	DocumentClassifierArn any
-	EndTime any
-	FlywheelArn any
-	InputDataConfig any
-	JobArn any
-	JobId any
-	JobName any
-	JobStatus any
-	Message any
-	OutputDataConfig any
-	SubmitTime any
-	VolumeKmsKeyId any
-	VpcConfig any
+	EndTime               any
+	FlywheelArn           any
+	InputDataConfig       any
+	JobArn                any
+	JobId                 any
+	JobName               any
+	JobStatus             any
+	Message               any
+	OutputDataConfig      any
+	SubmitTime            any
+	VolumeKmsKeyId        any
+	VpcConfig             any
 }
 
 type DocumentClassificationJobs_Filter struct {
-	JobName any
-	JobStatus any
-	SubmitTimeAfter any
+	JobName          any
+	JobStatus        any
+	SubmitTimeAfter  any
 	SubmitTimeBefore any
 }
 
 var DocumentClassificationJobs_FilterFields = ubx.FieldMap{
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"JobStatus": ubx.FieldSpec{WireName: "job_status"},
-		"SubmitTimeAfter": ubx.FieldSpec{WireName: "submit_time_after"},
-		"SubmitTimeBefore": ubx.FieldSpec{WireName: "submit_time_before"},
-	}
+	"JobName":          ubx.FieldSpec{WireName: "job_name"},
+	"JobStatus":        ubx.FieldSpec{WireName: "job_status"},
+	"SubmitTimeAfter":  ubx.FieldSpec{WireName: "submit_time_after"},
+	"SubmitTimeBefore": ubx.FieldSpec{WireName: "submit_time_before"},
+}
 
 type DocumentClassificationJobsConfig struct {
 	// <p>Provides information for filtering a list of document classification jobs. For more information, see the operation. You can provide only one filter parameter in each request.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DocumentClassificationJobsAttrs struct {
 	DocumentClassificationJobPropertiesList any
 	// <p>Provides information for filtering a list of document classification jobs. For more information, see the operation. You can provide only one filter parameter in each request.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var DocumentClassificationJobs = ubx.DataSourceBinding{
@@ -76,10 +76,10 @@ var DocumentClassificationJobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: DocumentClassificationJobs_FilterFields,
+			Kind:     "object",
+			Fields:   DocumentClassificationJobs_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

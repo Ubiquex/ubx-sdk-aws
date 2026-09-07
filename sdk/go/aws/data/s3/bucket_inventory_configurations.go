@@ -9,15 +9,15 @@ type BucketInventoryConfigurations_InventoryConfigurationList_Destination_S3Buck
 
 type BucketInventoryConfigurations_InventoryConfigurationList_Destination_S3BucketDestination_Encryption struct {
 	Ssekms any
-	Sses3 any
+	Sses3  any
 }
 
 type BucketInventoryConfigurations_InventoryConfigurationList_Destination_S3BucketDestination struct {
-	AccountId any
-	Bucket any
+	AccountId  any
+	Bucket     any
 	Encryption any
-	Format any
-	Prefix any
+	Format     any
+	Prefix     any
 }
 
 type BucketInventoryConfigurations_InventoryConfigurationList_Destination struct {
@@ -33,35 +33,35 @@ type BucketInventoryConfigurations_InventoryConfigurationList_Schedule struct {
 }
 
 type BucketInventoryConfigurations_InventoryConfigurationList struct {
-	Destination any
-	Filter any
-	Id any
+	Destination            any
+	Filter                 any
+	Id                     any
 	IncludedObjectVersions any
-	IsEnabled any
-	OptionalFields any
-	Schedule any
+	IsEnabled              any
+	OptionalFields         any
+	Schedule               any
 }
 
 type BucketInventoryConfigurationsConfig struct {
-	Bucket any
-	ContinuationToken any
+	Bucket              any
+	ContinuationToken   any
 	ExpectedBucketOwner any
 }
 
 type BucketInventoryConfigurationsAttrs struct {
-	Bucket any
-	ContinuationToken any
-	ExpectedBucketOwner any
+	Bucket                     any
+	ContinuationToken          any
+	ExpectedBucketOwner        any
 	InventoryConfigurationList any
-	IsTruncated any
-	NextContinuationToken any
+	IsTruncated                any
+	NextContinuationToken      any
 }
 
 var BucketInventoryConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_inventory_configurations",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"ContinuationToken": ubx.FieldSpec{WireName: "continuation_token"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
+		"ContinuationToken":   ubx.FieldSpec{WireName: "continuation_token"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
 	},
 }

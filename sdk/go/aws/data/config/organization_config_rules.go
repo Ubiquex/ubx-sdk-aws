@@ -4,69 +4,69 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationConfigRules_OrganizationConfigRules_OrganizationCustomPolicyRuleMetadata struct {
-	DebugLogDeliveryAccounts any
-	Description any
-	InputParameters any
-	MaximumExecutionFrequency any
+	DebugLogDeliveryAccounts           any
+	Description                        any
+	InputParameters                    any
+	MaximumExecutionFrequency          any
 	OrganizationConfigRuleTriggerTypes any
-	PolicyRuntime any
-	ResourceIdScope any
-	ResourceTypesScope any
-	TagKeyScope any
-	TagValueScope any
+	PolicyRuntime                      any
+	ResourceIdScope                    any
+	ResourceTypesScope                 any
+	TagKeyScope                        any
+	TagValueScope                      any
 }
 
 type OrganizationConfigRules_OrganizationConfigRules_OrganizationCustomRuleMetadata struct {
-	Description any
-	InputParameters any
-	LambdaFunctionArn any
-	MaximumExecutionFrequency any
+	Description                        any
+	InputParameters                    any
+	LambdaFunctionArn                  any
+	MaximumExecutionFrequency          any
 	OrganizationConfigRuleTriggerTypes any
-	ResourceIdScope any
-	ResourceTypesScope any
-	TagKeyScope any
-	TagValueScope any
+	ResourceIdScope                    any
+	ResourceTypesScope                 any
+	TagKeyScope                        any
+	TagValueScope                      any
 }
 
 type OrganizationConfigRules_OrganizationConfigRules_OrganizationManagedRuleMetadata struct {
-	Description any
-	InputParameters any
+	Description               any
+	InputParameters           any
 	MaximumExecutionFrequency any
-	ResourceIdScope any
-	ResourceTypesScope any
-	RuleIdentifier any
-	TagKeyScope any
-	TagValueScope any
+	ResourceIdScope           any
+	ResourceTypesScope        any
+	RuleIdentifier            any
+	TagKeyScope               any
+	TagValueScope             any
 }
 
 type OrganizationConfigRules_OrganizationConfigRules struct {
-	ExcludedAccounts any
-	LastUpdateTime any
-	OrganizationConfigRuleArn any
-	OrganizationConfigRuleName any
+	ExcludedAccounts                     any
+	LastUpdateTime                       any
+	OrganizationConfigRuleArn            any
+	OrganizationConfigRuleName           any
 	OrganizationCustomPolicyRuleMetadata any
-	OrganizationCustomRuleMetadata any
-	OrganizationManagedRuleMetadata any
+	OrganizationCustomRuleMetadata       any
+	OrganizationManagedRuleMetadata      any
 }
 
 type OrganizationConfigRulesConfig struct {
-	Limit any
-	NextToken any
+	Limit                       any
+	NextToken                   any
 	OrganizationConfigRuleNames any
 }
 
 type OrganizationConfigRulesAttrs struct {
-	Limit any
-	NextToken any
+	Limit                       any
+	NextToken                   any
 	OrganizationConfigRuleNames any
-	OrganizationConfigRules any
+	OrganizationConfigRules     any
 }
 
 var OrganizationConfigRules = ubx.DataSourceBinding{
 	WireType: "aws_config_organization_config_rules",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":                       ubx.FieldSpec{WireName: "limit"},
+		"NextToken":                   ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationConfigRuleNames": ubx.FieldSpec{WireName: "organization_config_rule_names"},
 	},
 }

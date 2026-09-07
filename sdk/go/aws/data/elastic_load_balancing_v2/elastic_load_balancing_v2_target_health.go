@@ -5,59 +5,59 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ElasticLoadBalancingV2TargetHealth_TargetHealthDescriptions_AdministrativeOverride struct {
 	Description any
-	Reason any
-	State any
+	Reason      any
+	State       any
 }
 
 type ElasticLoadBalancingV2TargetHealth_TargetHealthDescriptions_AnomalyDetection struct {
 	MitigationInEffect any
-	Result any
+	Result             any
 }
 
 type ElasticLoadBalancingV2TargetHealth_TargetHealthDescriptions_Target struct {
 	AvailabilityZone any
-	Id any
-	Port any
-	QuicServerId any
+	Id               any
+	Port             any
+	QuicServerId     any
 }
 
 type ElasticLoadBalancingV2TargetHealth_TargetHealthDescriptions struct {
 	AdministrativeOverride any
-	AnomalyDetection any
-	HealthCheckPort any
-	Target any
-	TargetHealth any
+	AnomalyDetection       any
+	HealthCheckPort        any
+	Target                 any
+	TargetHealth           any
 }
 
 var ElasticLoadBalancingV2TargetHealth_TargetHealthDescriptions_TargetFields = ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"QuicServerId": ubx.FieldSpec{WireName: "quic_server_id"},
-	}
+	"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
+	"Id":               ubx.FieldSpec{WireName: "id"},
+	"Port":             ubx.FieldSpec{WireName: "port"},
+	"QuicServerId":     ubx.FieldSpec{WireName: "quic_server_id"},
+}
 
 type ElasticLoadBalancingV2TargetHealthConfig struct {
-	Include any
+	Include        any
 	TargetGroupArn any
-	Targets any
+	Targets        any
 }
 
 type ElasticLoadBalancingV2TargetHealthAttrs struct {
-	Include any
-	TargetGroupArn any
+	Include                  any
+	TargetGroupArn           any
 	TargetHealthDescriptions any
-	Targets any
+	Targets                  any
 }
 
 var ElasticLoadBalancingV2TargetHealth = ubx.DataSourceBinding{
 	WireType: "aws_elastic_load_balancing_v2_target_health",
 	Fields: ubx.FieldMap{
-		"Include": ubx.FieldSpec{WireName: "include"},
+		"Include":        ubx.FieldSpec{WireName: "include"},
 		"TargetGroupArn": ubx.FieldSpec{WireName: "target_group_arn"},
 		"Targets": ubx.FieldSpec{
 			WireName: "targets",
-			Kind: "list",
-			Fields: ElasticLoadBalancingV2TargetHealth_TargetHealthDescriptions_TargetFields,
+			Kind:     "list",
+			Fields:   ElasticLoadBalancingV2TargetHealth_TargetHealthDescriptions_TargetFields,
 		},
 	},
 }

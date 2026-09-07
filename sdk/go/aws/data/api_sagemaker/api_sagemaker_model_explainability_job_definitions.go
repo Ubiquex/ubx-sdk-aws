@@ -4,45 +4,45 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerModelExplainabilityJobDefinitions_JobDefinitionSummaries struct {
-	CreationTime any
-	EndpointName any
-	MonitoringJobDefinitionArn any
+	CreationTime                any
+	EndpointName                any
+	MonitoringJobDefinitionArn  any
 	MonitoringJobDefinitionName any
 }
 
 type ApiSagemakerModelExplainabilityJobDefinitionsConfig struct {
-	CreationTimeAfter any
+	CreationTimeAfter  any
 	CreationTimeBefore any
-	EndpointName any
-	MaxResults any
-	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
+	EndpointName       any
+	MaxResults         any
+	NameContains       any
+	NextToken          any
+	SortBy             any
+	SortOrder          any
 }
 
 type ApiSagemakerModelExplainabilityJobDefinitionsAttrs struct {
-	CreationTimeAfter any
-	CreationTimeBefore any
-	EndpointName any
+	CreationTimeAfter      any
+	CreationTimeBefore     any
+	EndpointName           any
 	JobDefinitionSummaries any
-	MaxResults any
-	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
+	MaxResults             any
+	NameContains           any
+	NextToken              any
+	SortBy                 any
+	SortOrder              any
 }
 
 var ApiSagemakerModelExplainabilityJobDefinitions = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_model_explainability_job_definitions",
 	Fields: ubx.FieldMap{
-		"CreationTimeAfter": ubx.FieldSpec{WireName: "creation_time_after"},
+		"CreationTimeAfter":  ubx.FieldSpec{WireName: "creation_time_after"},
 		"CreationTimeBefore": ubx.FieldSpec{WireName: "creation_time_before"},
-		"EndpointName": ubx.FieldSpec{WireName: "endpoint_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"EndpointName":       ubx.FieldSpec{WireName: "endpoint_name"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NameContains":       ubx.FieldSpec{WireName: "name_contains"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":             ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":          ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

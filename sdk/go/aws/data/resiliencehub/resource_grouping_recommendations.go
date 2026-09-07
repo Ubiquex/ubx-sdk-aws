@@ -4,64 +4,64 @@ package resiliencehub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceGroupingRecommendations_GroupingRecommendations_GroupingAppComponent struct {
-	AppComponentId any
+	AppComponentId   any
 	AppComponentName any
 	AppComponentType any
 }
 
 type ResourceGroupingRecommendations_GroupingRecommendations_Resources_LogicalResourceId struct {
-	EksSourceName any
-	Identifier any
-	LogicalStackName any
-	ResourceGroupName any
+	EksSourceName       any
+	Identifier          any
+	LogicalStackName    any
+	ResourceGroupName   any
 	TerraformSourceName any
 }
 
 type ResourceGroupingRecommendations_GroupingRecommendations_Resources_PhysicalResourceId struct {
 	AwsAccountId any
-	AwsRegion any
-	Identifier any
-	Type any
+	AwsRegion    any
+	Identifier   any
+	Type         any
 }
 
 type ResourceGroupingRecommendations_GroupingRecommendations_Resources struct {
-	LogicalResourceId any
-	PhysicalResourceId any
-	ResourceName any
-	ResourceType any
+	LogicalResourceId     any
+	PhysicalResourceId    any
+	ResourceName          any
+	ResourceType          any
 	SourceAppComponentIds any
 }
 
 type ResourceGroupingRecommendations_GroupingRecommendations struct {
-	ConfidenceLevel any
-	CreationTime any
-	GroupingAppComponent any
+	ConfidenceLevel          any
+	CreationTime             any
+	GroupingAppComponent     any
 	GroupingRecommendationId any
-	RecommendationReasons any
-	RejectionReason any
-	Resources any
-	Score any
-	Status any
+	RecommendationReasons    any
+	RejectionReason          any
+	Resources                any
+	Score                    any
+	Status                   any
 }
 
 type ResourceGroupingRecommendationsConfig struct {
-	AppArn any
+	AppArn     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ResourceGroupingRecommendationsAttrs struct {
-	AppArn any
+	AppArn                  any
 	GroupingRecommendations any
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 }
 
 var ResourceGroupingRecommendations = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehub_resource_grouping_recommendations",
 	Fields: ubx.FieldMap{
-		"AppArn": ubx.FieldSpec{WireName: "app_arn"},
+		"AppArn":     ubx.FieldSpec{WireName: "app_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

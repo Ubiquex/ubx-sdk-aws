@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TaskDefinitionFamiliesConfig struct {
 	FamilyPrefix any
-	MaxResults any
-	NextToken any
-	Status any
+	MaxResults   any
+	NextToken    any
+	Status       any
 }
 
 type TaskDefinitionFamiliesAttrs struct {
-	Families any
+	Families     any
 	FamilyPrefix any
-	MaxResults any
-	NextToken any
-	Status any
+	MaxResults   any
+	NextToken    any
+	Status       any
 }
 
 var TaskDefinitionFamilies = ubx.DataSourceBinding{
 	WireType: "aws_ecs_task_definition_families",
 	Fields: ubx.FieldMap{
 		"FamilyPrefix": ubx.FieldSpec{WireName: "family_prefix"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"Status":       ubx.FieldSpec{WireName: "status"},
 	},
 }

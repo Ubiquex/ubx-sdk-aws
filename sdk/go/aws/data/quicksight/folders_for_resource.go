@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FoldersForResourceConfig struct {
 	AwsAccountId any
-	MaxResults any
-	NextToken any
-	ResourceArn any
+	MaxResults   any
+	NextToken    any
+	ResourceArn  any
 }
 
 type FoldersForResourceAttrs struct {
 	AwsAccountId any
-	Folders any
-	MaxResults any
-	NextToken any
-	RequestId any
-	ResourceArn any
-	Status any
+	Folders      any
+	MaxResults   any
+	NextToken    any
+	RequestId    any
+	ResourceArn  any
+	Status       any
 }
 
 var FoldersForResource = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_folders_for_resource",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"ResourceArn":  ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

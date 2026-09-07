@@ -4,28 +4,28 @@ package ce
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CommitmentPurchaseAnalyses_AnalysisSummaryList_CommitmentPurchaseAnalysisConfiguration_SavingsPlansPurchaseAnalysisConfiguration_LookBackTimePeriod struct {
-	End any
+	End   any
 	Start any
 }
 
 type CommitmentPurchaseAnalyses_AnalysisSummaryList_CommitmentPurchaseAnalysisConfiguration_SavingsPlansPurchaseAnalysisConfiguration_SavingsPlansToAdd struct {
-	InstanceFamily any
-	OfferingId any
-	PaymentOption any
-	Region any
+	InstanceFamily         any
+	OfferingId             any
+	PaymentOption          any
+	Region                 any
 	SavingsPlansCommitment any
-	SavingsPlansType any
-	TermInYears any
+	SavingsPlansType       any
+	TermInYears            any
 }
 
 type CommitmentPurchaseAnalyses_AnalysisSummaryList_CommitmentPurchaseAnalysisConfiguration_SavingsPlansPurchaseAnalysisConfiguration struct {
-	AccountId any
-	AccountScope any
-	AnalysisType any
-	LookBackTimePeriod any
+	AccountId                  any
+	AccountScope               any
+	AnalysisType               any
+	LookBackTimePeriod         any
 	SavingsPlansTargetCoverage any
-	SavingsPlansToAdd any
-	SavingsPlansToExclude any
+	SavingsPlansToAdd          any
+	SavingsPlansToExclude      any
 }
 
 type CommitmentPurchaseAnalyses_AnalysisSummaryList_CommitmentPurchaseAnalysisConfiguration struct {
@@ -33,36 +33,36 @@ type CommitmentPurchaseAnalyses_AnalysisSummaryList_CommitmentPurchaseAnalysisCo
 }
 
 type CommitmentPurchaseAnalyses_AnalysisSummaryList struct {
-	AnalysisCompletionTime any
-	AnalysisId any
-	AnalysisStartedTime any
-	AnalysisStatus any
+	AnalysisCompletionTime                  any
+	AnalysisId                              any
+	AnalysisStartedTime                     any
+	AnalysisStatus                          any
 	CommitmentPurchaseAnalysisConfiguration any
-	ErrorCode any
-	EstimatedCompletionTime any
+	ErrorCode                               any
+	EstimatedCompletionTime                 any
 }
 
 type CommitmentPurchaseAnalysesConfig struct {
-	AnalysisIds any
+	AnalysisIds    any
 	AnalysisStatus any
-	NextPageToken any
-	PageSize any
+	NextPageToken  any
+	PageSize       any
 }
 
 type CommitmentPurchaseAnalysesAttrs struct {
-	AnalysisIds any
-	AnalysisStatus any
+	AnalysisIds         any
+	AnalysisStatus      any
 	AnalysisSummaryList any
-	NextPageToken any
-	PageSize any
+	NextPageToken       any
+	PageSize            any
 }
 
 var CommitmentPurchaseAnalyses = ubx.DataSourceBinding{
 	WireType: "aws_ce_commitment_purchase_analyses",
 	Fields: ubx.FieldMap{
-		"AnalysisIds": ubx.FieldSpec{WireName: "analysis_ids"},
+		"AnalysisIds":    ubx.FieldSpec{WireName: "analysis_ids"},
 		"AnalysisStatus": ubx.FieldSpec{WireName: "analysis_status"},
-		"NextPageToken": ubx.FieldSpec{WireName: "next_page_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"NextPageToken":  ubx.FieldSpec{WireName: "next_page_token"},
+		"PageSize":       ubx.FieldSpec{WireName: "page_size"},
 	},
 }

@@ -4,10 +4,10 @@ package inspector2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Member_Member struct {
-	AccountId any
+	AccountId               any
 	DelegatedAdminAccountId any
-	RelationshipStatus any
-	UpdatedAt any
+	RelationshipStatus      any
+	UpdatedAt               any
 }
 
 type MemberConfig struct {

@@ -25,7 +25,7 @@ var RolePolicy = ubx.ResourceBinding{
 	WireType: "aws_iam_role_policy",
 	Fields: ubx.FieldMap{
 		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-		"RoleName": ubx.FieldSpec{WireName: "role_name"},
+		"PolicyName":     ubx.FieldSpec{WireName: "policy_name"},
+		"RoleName":       ubx.FieldSpec{WireName: "role_name"},
 	},
 }

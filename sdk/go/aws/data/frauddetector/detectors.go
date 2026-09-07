@@ -4,25 +4,25 @@ package frauddetector
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Detectors_Detectors struct {
-	Arn any
-	CreatedTime any
-	Description any
-	DetectorId any
-	EventTypeName any
+	Arn             any
+	CreatedTime     any
+	Description     any
+	DetectorId      any
+	EventTypeName   any
 	LastUpdatedTime any
 }
 
 type DetectorsConfig struct {
 	DetectorId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DetectorsAttrs struct {
 	DetectorId any
-	Detectors any
+	Detectors  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Detectors = ubx.DataSourceBinding{
@@ -30,6 +30,6 @@ var Detectors = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DetectorId": ubx.FieldSpec{WireName: "detector_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

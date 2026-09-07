@@ -4,33 +4,33 @@ package models_v2_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsV2LexBuiltInSlotTypes_BuiltInSlotTypeSummaries struct {
-	Description any
+	Description       any
 	SlotTypeSignature any
 }
 
 type ModelsV2LexBuiltInSlotTypes_SortBy struct {
 	Attribute any
-	Order any
+	Order     any
 }
 
 var ModelsV2LexBuiltInSlotTypes_SortByFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Order":     ubx.FieldSpec{WireName: "order"},
+}
 
 type ModelsV2LexBuiltInSlotTypesConfig struct {
-	LocaleId any
+	LocaleId   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Specifies attributes for sorting a list of built-in slot types.</p>
 	SortBy any
 }
 
 type ModelsV2LexBuiltInSlotTypesAttrs struct {
 	BuiltInSlotTypeSummaries any
-	LocaleId any
-	MaxResults any
-	NextToken any
+	LocaleId                 any
+	MaxResults               any
+	NextToken                any
 	// <p>Specifies attributes for sorting a list of built-in slot types.</p>
 	SortBy any
 }
@@ -38,13 +38,13 @@ type ModelsV2LexBuiltInSlotTypesAttrs struct {
 var ModelsV2LexBuiltInSlotTypes = ubx.DataSourceBinding{
 	WireType: "aws_models_v2_lex_built_in_slot_types",
 	Fields: ubx.FieldMap{
-		"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
+		"LocaleId":   ubx.FieldSpec{WireName: "locale_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SortBy": ubx.FieldSpec{
 			WireName: "sort_by",
-			Kind: "object",
-			Fields: ModelsV2LexBuiltInSlotTypes_SortByFields,
+			Kind:     "object",
+			Fields:   ModelsV2LexBuiltInSlotTypes_SortByFields,
 		},
 	},
 }

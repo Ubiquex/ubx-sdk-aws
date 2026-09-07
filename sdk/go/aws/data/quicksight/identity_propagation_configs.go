@@ -5,29 +5,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityPropagationConfigs_Services struct {
 	AuthorizedTargets any
-	Service any
+	Service           any
 }
 
 type IdentityPropagationConfigsConfig struct {
 	AwsAccountId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type IdentityPropagationConfigsAttrs struct {
 	AwsAccountId any
-	MaxResults any
-	NextToken any
-	RequestId any
-	Services any
-	Status any
+	MaxResults   any
+	NextToken    any
+	RequestId    any
+	Services     any
+	Status       any
 }
 
 var IdentityPropagationConfigs = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_identity_propagation_configs",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

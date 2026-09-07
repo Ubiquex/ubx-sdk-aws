@@ -4,14 +4,14 @@ package xray
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Groups_Groups_InsightsConfiguration struct {
-	InsightsEnabled any
+	InsightsEnabled      any
 	NotificationsEnabled any
 }
 
 type Groups_Groups struct {
-	FilterExpression any
-	GroupArn any
-	GroupName any
+	FilterExpression      any
+	GroupArn              any
+	GroupName             any
 	InsightsConfiguration any
 }
 
@@ -20,7 +20,7 @@ type GroupsConfig struct {
 }
 
 type GroupsAttrs struct {
-	Groups any
+	Groups    any
 	NextToken any
 }
 

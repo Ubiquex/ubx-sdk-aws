@@ -9,31 +9,31 @@ type InstanceGroups_InstanceGroups_AutoScalingPolicy_Constraints struct {
 }
 
 type InstanceGroups_InstanceGroups_AutoScalingPolicy_Rules_Action_SimpleScalingPolicyConfiguration struct {
-	AdjustmentType any
-	CoolDown any
+	AdjustmentType    any
+	CoolDown          any
 	ScalingAdjustment any
 }
 
 type InstanceGroups_InstanceGroups_AutoScalingPolicy_Rules_Action struct {
-	Market any
+	Market                           any
 	SimpleScalingPolicyConfiguration any
 }
 
 type InstanceGroups_InstanceGroups_AutoScalingPolicy_Rules_Trigger_CloudWatchAlarmDefinition_Dimensions struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type InstanceGroups_InstanceGroups_AutoScalingPolicy_Rules_Trigger_CloudWatchAlarmDefinition struct {
 	ComparisonOperator any
-	Dimensions any
-	EvaluationPeriods any
-	MetricName any
-	Namespace any
-	Period any
-	Statistic any
-	Threshold any
-	Unit any
+	Dimensions         any
+	EvaluationPeriods  any
+	MetricName         any
+	Namespace          any
+	Period             any
+	Statistic          any
+	Threshold          any
+	Unit               any
 }
 
 type InstanceGroups_InstanceGroups_AutoScalingPolicy_Rules_Trigger struct {
@@ -41,26 +41,26 @@ type InstanceGroups_InstanceGroups_AutoScalingPolicy_Rules_Trigger struct {
 }
 
 type InstanceGroups_InstanceGroups_AutoScalingPolicy_Rules struct {
-	Action any
+	Action      any
 	Description any
-	Name any
-	Trigger any
+	Name        any
+	Trigger     any
 }
 
 type InstanceGroups_InstanceGroups_AutoScalingPolicy_Status_StateChangeReason struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type InstanceGroups_InstanceGroups_AutoScalingPolicy_Status struct {
-	State any
+	State             any
 	StateChangeReason any
 }
 
 type InstanceGroups_InstanceGroups_AutoScalingPolicy struct {
 	Constraints any
-	Rules any
-	Status any
+	Rules       any
+	Status      any
 }
 
 type InstanceGroups_InstanceGroups_Configurations_Configurations struct {
@@ -69,80 +69,80 @@ type InstanceGroups_InstanceGroups_Configurations_Configurations struct {
 type InstanceGroups_InstanceGroups_Configurations struct {
 	Classification any
 	Configurations any
-	Properties any
+	Properties     any
 }
 
 type InstanceGroups_InstanceGroups_EbsBlockDevices_VolumeSpecification struct {
-	Iops any
-	SizeInGb any
+	Iops       any
+	SizeInGb   any
 	Throughput any
 	VolumeType any
 }
 
 type InstanceGroups_InstanceGroups_EbsBlockDevices struct {
-	Device any
+	Device              any
 	VolumeSpecification any
 }
 
 type InstanceGroups_InstanceGroups_ShrinkPolicy_InstanceResizePolicy struct {
 	InstanceTerminationTimeout any
-	InstancesToProtect any
-	InstancesToTerminate any
+	InstancesToProtect         any
+	InstancesToTerminate       any
 }
 
 type InstanceGroups_InstanceGroups_ShrinkPolicy struct {
-	DecommissionTimeout any
+	DecommissionTimeout  any
 	InstanceResizePolicy any
 }
 
 type InstanceGroups_InstanceGroups_Status_Timeline struct {
 	CreationDateTime any
-	EndDateTime any
-	ReadyDateTime any
+	EndDateTime      any
+	ReadyDateTime    any
 }
 
 type InstanceGroups_InstanceGroups_Status struct {
-	State any
+	State             any
 	StateChangeReason any
-	Timeline any
+	Timeline          any
 }
 
 type InstanceGroups_InstanceGroups struct {
-	AutoScalingPolicy any
-	BidPrice any
-	Configurations any
-	ConfigurationsVersion any
-	CustomAmiId any
-	EbsBlockDevices any
-	EbsOptimized any
-	Id any
-	InstanceGroupType any
-	InstanceType any
-	LastSuccessfullyAppliedConfigurations any
+	AutoScalingPolicy                            any
+	BidPrice                                     any
+	Configurations                               any
+	ConfigurationsVersion                        any
+	CustomAmiId                                  any
+	EbsBlockDevices                              any
+	EbsOptimized                                 any
+	Id                                           any
+	InstanceGroupType                            any
+	InstanceType                                 any
+	LastSuccessfullyAppliedConfigurations        any
 	LastSuccessfullyAppliedConfigurationsVersion any
-	Market any
-	Name any
-	RequestedInstanceCount any
-	RunningInstanceCount any
-	ShrinkPolicy any
-	Status any
+	Market                                       any
+	Name                                         any
+	RequestedInstanceCount                       any
+	RunningInstanceCount                         any
+	ShrinkPolicy                                 any
+	Status                                       any
 }
 
 type InstanceGroupsConfig struct {
 	ClusterId any
-	Marker any
+	Marker    any
 }
 
 type InstanceGroupsAttrs struct {
-	ClusterId any
+	ClusterId      any
 	InstanceGroups any
-	Marker any
+	Marker         any
 }
 
 var InstanceGroups = ubx.DataSourceBinding{
 	WireType: "aws_elasticmapreduce_instance_groups",
 	Fields: ubx.FieldMap{
 		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":    ubx.FieldSpec{WireName: "marker"},
 	},
 }

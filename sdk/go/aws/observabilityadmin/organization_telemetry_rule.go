@@ -83,7 +83,7 @@ type OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameter
 	// Determines whether log records that match the filter's condition are kept (KEEP) or dropped (DROP) from the WAF logging output. (AI-inferred)
 	Behavior any
 	// Specifies the match conditions (such as AWS WAF action, label, or country) applied to each log record to determine whether it is kept or dropped by this logging filter for WAF log delivery. (AI-inferred)
-	Conditions any
+	Conditions  any
 	Requirement any
 }
 
@@ -101,11 +101,11 @@ type OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameter
 
 type OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_RedactedFields struct {
 	// This field indicates that the HTTP method (such as GET or POST) is redacted (omitted) from AWS WAF logs in the telemetry rule's WAF logging destination configuration. (AI-inferred)
-	Method any
+	Method      any
 	QueryString any
 	// Configures a single HTTP header to redact from AWS WAF logging output, using a field-match type that identifies the header by its name. (AI-inferred)
 	SingleHeader any
-	UriPath any
+	UriPath      any
 }
 
 type OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters struct {
@@ -160,173 +160,173 @@ type OrganizationTelemetryRule_Rule struct {
 }
 
 type OrganizationTelemetryRule_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var OrganizationTelemetryRule_Rule_DestinationConfiguration_CloudtrailParameters_AdvancedEventSelectors_FieldSelectorsFields = ubx.FieldMap{
-		"EndsWith": ubx.FieldSpec{WireName: "ends_with"},
-		"Equals": ubx.FieldSpec{WireName: "equals"},
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"NotEndsWith": ubx.FieldSpec{WireName: "not_ends_with"},
-		"NotEquals": ubx.FieldSpec{WireName: "not_equals"},
-		"NotStartsWith": ubx.FieldSpec{WireName: "not_starts_with"},
-		"StartsWith": ubx.FieldSpec{WireName: "starts_with"},
-	}
+	"EndsWith":      ubx.FieldSpec{WireName: "ends_with"},
+	"Equals":        ubx.FieldSpec{WireName: "equals"},
+	"Field":         ubx.FieldSpec{WireName: "field"},
+	"NotEndsWith":   ubx.FieldSpec{WireName: "not_ends_with"},
+	"NotEquals":     ubx.FieldSpec{WireName: "not_equals"},
+	"NotStartsWith": ubx.FieldSpec{WireName: "not_starts_with"},
+	"StartsWith":    ubx.FieldSpec{WireName: "starts_with"},
+}
 
 var OrganizationTelemetryRule_Rule_DestinationConfiguration_CloudtrailParameters_AdvancedEventSelectorsFields = ubx.FieldMap{
-		"FieldSelectors": ubx.FieldSpec{
-			WireName: "field_selectors",
-			Kind: "list",
-			Fields: OrganizationTelemetryRule_Rule_DestinationConfiguration_CloudtrailParameters_AdvancedEventSelectors_FieldSelectorsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"FieldSelectors": ubx.FieldSpec{
+		WireName: "field_selectors",
+		Kind:     "list",
+		Fields:   OrganizationTelemetryRule_Rule_DestinationConfiguration_CloudtrailParameters_AdvancedEventSelectors_FieldSelectorsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var OrganizationTelemetryRule_Rule_DestinationConfiguration_CloudtrailParametersFields = ubx.FieldMap{
-		"AdvancedEventSelectors": ubx.FieldSpec{
-			WireName: "advanced_event_selectors",
-			Kind: "list",
-			Fields: OrganizationTelemetryRule_Rule_DestinationConfiguration_CloudtrailParameters_AdvancedEventSelectorsFields,
-		},
-	}
+	"AdvancedEventSelectors": ubx.FieldSpec{
+		WireName: "advanced_event_selectors",
+		Kind:     "list",
+		Fields:   OrganizationTelemetryRule_Rule_DestinationConfiguration_CloudtrailParameters_AdvancedEventSelectorsFields,
+	},
+}
 
 var OrganizationTelemetryRule_Rule_DestinationConfiguration_ElbloadBalancerLoggingParametersFields = ubx.FieldMap{
-		"FieldDelimiter": ubx.FieldSpec{WireName: "field_delimiter"},
-		"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
-	}
+	"FieldDelimiter": ubx.FieldSpec{WireName: "field_delimiter"},
+	"OutputFormat":   ubx.FieldSpec{WireName: "output_format"},
+}
 
 var OrganizationTelemetryRule_Rule_DestinationConfiguration_LogDeliveryParametersFields = ubx.FieldMap{
-		"LogTypes": ubx.FieldSpec{WireName: "log_types"},
-	}
+	"LogTypes": ubx.FieldSpec{WireName: "log_types"},
+}
 
 var OrganizationTelemetryRule_Rule_DestinationConfiguration_VpcflowLogParametersFields = ubx.FieldMap{
-		"LogFormat": ubx.FieldSpec{WireName: "log_format"},
-		"MaxAggregationInterval": ubx.FieldSpec{WireName: "max_aggregation_interval"},
-		"TrafficType": ubx.FieldSpec{WireName: "traffic_type"},
-	}
+	"LogFormat":              ubx.FieldSpec{WireName: "log_format"},
+	"MaxAggregationInterval": ubx.FieldSpec{WireName: "max_aggregation_interval"},
+	"TrafficType":            ubx.FieldSpec{WireName: "traffic_type"},
+}
 
 var OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions_ActionConditionFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+}
 
 var OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions_LabelNameConditionFields = ubx.FieldMap{
-		"LabelName": ubx.FieldSpec{WireName: "label_name"},
-	}
+	"LabelName": ubx.FieldSpec{WireName: "label_name"},
+}
 
 var OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_ConditionsFields = ubx.FieldMap{
-		"ActionCondition": ubx.FieldSpec{
-			WireName: "action_condition",
-			Kind: "object",
-			Fields: OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions_ActionConditionFields,
-		},
-		"LabelNameCondition": ubx.FieldSpec{
-			WireName: "label_name_condition",
-			Kind: "object",
-			Fields: OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions_LabelNameConditionFields,
-		},
-	}
+	"ActionCondition": ubx.FieldSpec{
+		WireName: "action_condition",
+		Kind:     "object",
+		Fields:   OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions_ActionConditionFields,
+	},
+	"LabelNameCondition": ubx.FieldSpec{
+		WireName: "label_name_condition",
+		Kind:     "object",
+		Fields:   OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions_LabelNameConditionFields,
+	},
+}
 
 var OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_FiltersFields = ubx.FieldMap{
-		"Behavior": ubx.FieldSpec{WireName: "behavior"},
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_ConditionsFields,
-		},
-		"Requirement": ubx.FieldSpec{WireName: "requirement"},
-	}
+	"Behavior": ubx.FieldSpec{WireName: "behavior"},
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_ConditionsFields,
+	},
+	"Requirement": ubx.FieldSpec{WireName: "requirement"},
+}
 
 var OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilterFields = ubx.FieldMap{
-		"DefaultBehavior": ubx.FieldSpec{WireName: "default_behavior"},
-		"Filters": ubx.FieldSpec{
-			WireName: "filters",
-			Kind: "list",
-			Fields: OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_FiltersFields,
-		},
-	}
+	"DefaultBehavior": ubx.FieldSpec{WireName: "default_behavior"},
+	"Filters": ubx.FieldSpec{
+		WireName: "filters",
+		Kind:     "list",
+		Fields:   OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_FiltersFields,
+	},
+}
 
 var OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_RedactedFields_SingleHeaderFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_RedactedFieldsFields = ubx.FieldMap{
-		"Method": ubx.FieldSpec{WireName: "method"},
-		"QueryString": ubx.FieldSpec{WireName: "query_string"},
-		"SingleHeader": ubx.FieldSpec{
-			WireName: "single_header",
-			Kind: "object",
-			Fields: OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_RedactedFields_SingleHeaderFields,
-		},
-		"UriPath": ubx.FieldSpec{WireName: "uri_path"},
-	}
+	"Method":      ubx.FieldSpec{WireName: "method"},
+	"QueryString": ubx.FieldSpec{WireName: "query_string"},
+	"SingleHeader": ubx.FieldSpec{
+		WireName: "single_header",
+		Kind:     "object",
+		Fields:   OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_RedactedFields_SingleHeaderFields,
+	},
+	"UriPath": ubx.FieldSpec{WireName: "uri_path"},
+}
 
 var OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParametersFields = ubx.FieldMap{
-		"LogType": ubx.FieldSpec{WireName: "log_type"},
-		"LoggingFilter": ubx.FieldSpec{
-			WireName: "logging_filter",
-			Kind: "object",
-			Fields: OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilterFields,
-		},
-		"RedactedFields": ubx.FieldSpec{
-			WireName: "redacted_fields",
-			Kind: "list",
-			Fields: OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_RedactedFieldsFields,
-		},
-	}
+	"LogType": ubx.FieldSpec{WireName: "log_type"},
+	"LoggingFilter": ubx.FieldSpec{
+		WireName: "logging_filter",
+		Kind:     "object",
+		Fields:   OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilterFields,
+	},
+	"RedactedFields": ubx.FieldSpec{
+		WireName: "redacted_fields",
+		Kind:     "list",
+		Fields:   OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_RedactedFieldsFields,
+	},
+}
 
 var OrganizationTelemetryRule_Rule_DestinationConfigurationFields = ubx.FieldMap{
-		"CloudtrailParameters": ubx.FieldSpec{
-			WireName: "cloudtrail_parameters",
-			Kind: "object",
-			Fields: OrganizationTelemetryRule_Rule_DestinationConfiguration_CloudtrailParametersFields,
-		},
-		"DestinationPattern": ubx.FieldSpec{WireName: "destination_pattern"},
-		"DestinationType": ubx.FieldSpec{WireName: "destination_type"},
-		"ElbloadBalancerLoggingParameters": ubx.FieldSpec{
-			WireName: "elbload_balancer_logging_parameters",
-			Kind: "object",
-			Fields: OrganizationTelemetryRule_Rule_DestinationConfiguration_ElbloadBalancerLoggingParametersFields,
-		},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"LogDeliveryParameters": ubx.FieldSpec{
-			WireName: "log_delivery_parameters",
-			Kind: "object",
-			Fields: OrganizationTelemetryRule_Rule_DestinationConfiguration_LogDeliveryParametersFields,
-		},
-		"RetentionInDays": ubx.FieldSpec{WireName: "retention_in_days"},
-		"VpcflowLogParameters": ubx.FieldSpec{
-			WireName: "vpcflow_log_parameters",
-			Kind: "object",
-			Fields: OrganizationTelemetryRule_Rule_DestinationConfiguration_VpcflowLogParametersFields,
-		},
-		"WafloggingParameters": ubx.FieldSpec{
-			WireName: "waflogging_parameters",
-			Kind: "object",
-			Fields: OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParametersFields,
-		},
-	}
+	"CloudtrailParameters": ubx.FieldSpec{
+		WireName: "cloudtrail_parameters",
+		Kind:     "object",
+		Fields:   OrganizationTelemetryRule_Rule_DestinationConfiguration_CloudtrailParametersFields,
+	},
+	"DestinationPattern": ubx.FieldSpec{WireName: "destination_pattern"},
+	"DestinationType":    ubx.FieldSpec{WireName: "destination_type"},
+	"ElbloadBalancerLoggingParameters": ubx.FieldSpec{
+		WireName: "elbload_balancer_logging_parameters",
+		Kind:     "object",
+		Fields:   OrganizationTelemetryRule_Rule_DestinationConfiguration_ElbloadBalancerLoggingParametersFields,
+	},
+	"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+	"LogDeliveryParameters": ubx.FieldSpec{
+		WireName: "log_delivery_parameters",
+		Kind:     "object",
+		Fields:   OrganizationTelemetryRule_Rule_DestinationConfiguration_LogDeliveryParametersFields,
+	},
+	"RetentionInDays": ubx.FieldSpec{WireName: "retention_in_days"},
+	"VpcflowLogParameters": ubx.FieldSpec{
+		WireName: "vpcflow_log_parameters",
+		Kind:     "object",
+		Fields:   OrganizationTelemetryRule_Rule_DestinationConfiguration_VpcflowLogParametersFields,
+	},
+	"WafloggingParameters": ubx.FieldSpec{
+		WireName: "waflogging_parameters",
+		Kind:     "object",
+		Fields:   OrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParametersFields,
+	},
+}
 
 var OrganizationTelemetryRule_RuleFields = ubx.FieldMap{
-		"AllRegions": ubx.FieldSpec{WireName: "all_regions"},
-		"AllowFieldUpdates": ubx.FieldSpec{WireName: "allow_field_updates"},
-		"DestinationConfiguration": ubx.FieldSpec{
-			WireName: "destination_configuration",
-			Kind: "object",
-			Fields: OrganizationTelemetryRule_Rule_DestinationConfigurationFields,
-		},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"SelectionCriteria": ubx.FieldSpec{WireName: "selection_criteria"},
-		"TelemetrySourceTypes": ubx.FieldSpec{WireName: "telemetry_source_types"},
-		"TelemetryType": ubx.FieldSpec{WireName: "telemetry_type"},
-	}
+	"AllRegions":        ubx.FieldSpec{WireName: "all_regions"},
+	"AllowFieldUpdates": ubx.FieldSpec{WireName: "allow_field_updates"},
+	"DestinationConfiguration": ubx.FieldSpec{
+		WireName: "destination_configuration",
+		Kind:     "object",
+		Fields:   OrganizationTelemetryRule_Rule_DestinationConfigurationFields,
+	},
+	"Regions":              ubx.FieldSpec{WireName: "regions"},
+	"ResourceType":         ubx.FieldSpec{WireName: "resource_type"},
+	"Scope":                ubx.FieldSpec{WireName: "scope"},
+	"SelectionCriteria":    ubx.FieldSpec{WireName: "selection_criteria"},
+	"TelemetrySourceTypes": ubx.FieldSpec{WireName: "telemetry_source_types"},
+	"TelemetryType":        ubx.FieldSpec{WireName: "telemetry_type"},
+}
 
 var OrganizationTelemetryRule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type OrganizationTelemetryRuleConfig struct {
 	// The telemetry rule
@@ -355,14 +355,14 @@ var OrganizationTelemetryRule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Rule": ubx.FieldSpec{
 			WireName: "rule",
-			Kind: "object",
-			Fields: OrganizationTelemetryRule_RuleFields,
+			Kind:     "object",
+			Fields:   OrganizationTelemetryRule_RuleFields,
 		},
 		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: OrganizationTelemetryRule_TagsFields,
+			Kind:     "list",
+			Fields:   OrganizationTelemetryRule_TagsFields,
 		},
 	},
 }

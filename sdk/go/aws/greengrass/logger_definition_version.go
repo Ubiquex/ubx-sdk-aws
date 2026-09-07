@@ -17,12 +17,12 @@ type LoggerDefinitionVersion_Loggers struct {
 }
 
 var LoggerDefinitionVersion_LoggersFields = ubx.FieldMap{
-		"Component": ubx.FieldSpec{WireName: "component"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Level": ubx.FieldSpec{WireName: "level"},
-		"Space": ubx.FieldSpec{WireName: "space"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Component": ubx.FieldSpec{WireName: "component"},
+	"Id":        ubx.FieldSpec{WireName: "id"},
+	"Level":     ubx.FieldSpec{WireName: "level"},
+	"Space":     ubx.FieldSpec{WireName: "space"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 type LoggerDefinitionVersionConfig struct {
 	// The ID of the Greengrass logger definition that this version belongs to, required when creating a logger definition version. (AI-inferred)
@@ -46,8 +46,8 @@ var LoggerDefinitionVersion = ubx.ResourceBinding{
 		"LoggerDefinitionId": ubx.FieldSpec{WireName: "logger_definition_id"},
 		"Loggers": ubx.FieldSpec{
 			WireName: "loggers",
-			Kind: "list",
-			Fields: LoggerDefinitionVersion_LoggersFields,
+			Kind:     "list",
+			Fields:   LoggerDefinitionVersion_LoggersFields,
 		},
 	},
 }

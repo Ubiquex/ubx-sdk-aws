@@ -4,36 +4,36 @@ package devicefarm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Uploads_Uploads struct {
-	Arn any
-	Category any
+	Arn         any
+	Category    any
 	ContentType any
-	Created any
-	Message any
-	Metadata any
-	Name any
-	Status any
-	Type any
-	Url any
+	Created     any
+	Message     any
+	Metadata    any
+	Name        any
+	Status      any
+	Type        any
+	Url         any
 }
 
 type UploadsConfig struct {
-	Arn any
+	Arn       any
 	NextToken any
-	Type any
+	Type      any
 }
 
 type UploadsAttrs struct {
-	Arn any
+	Arn       any
 	NextToken any
-	Type any
-	Uploads any
+	Type      any
+	Uploads   any
 }
 
 var Uploads = ubx.DataSourceBinding{
 	WireType: "aws_devicefarm_uploads",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":       ubx.FieldSpec{WireName: "arn"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":      ubx.FieldSpec{WireName: "type"},
 	},
 }

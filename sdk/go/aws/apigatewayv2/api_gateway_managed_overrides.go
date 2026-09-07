@@ -59,47 +59,47 @@ type ApiGatewayManagedOverrides_Stage struct {
 }
 
 var ApiGatewayManagedOverrides_IntegrationFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IntegrationMethod": ubx.FieldSpec{WireName: "integration_method"},
-		"PayloadFormatVersion": ubx.FieldSpec{WireName: "payload_format_version"},
-		"TimeoutInMillis": ubx.FieldSpec{WireName: "timeout_in_millis"},
-	}
+	"Description":          ubx.FieldSpec{WireName: "description"},
+	"IntegrationMethod":    ubx.FieldSpec{WireName: "integration_method"},
+	"PayloadFormatVersion": ubx.FieldSpec{WireName: "payload_format_version"},
+	"TimeoutInMillis":      ubx.FieldSpec{WireName: "timeout_in_millis"},
+}
 
 var ApiGatewayManagedOverrides_RouteFields = ubx.FieldMap{
-		"AuthorizationScopes": ubx.FieldSpec{WireName: "authorization_scopes"},
-		"AuthorizationType": ubx.FieldSpec{WireName: "authorization_type"},
-		"AuthorizerId": ubx.FieldSpec{WireName: "authorizer_id"},
-		"OperationName": ubx.FieldSpec{WireName: "operation_name"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
+	"AuthorizationScopes": ubx.FieldSpec{WireName: "authorization_scopes"},
+	"AuthorizationType":   ubx.FieldSpec{WireName: "authorization_type"},
+	"AuthorizerId":        ubx.FieldSpec{WireName: "authorizer_id"},
+	"OperationName":       ubx.FieldSpec{WireName: "operation_name"},
+	"Target":              ubx.FieldSpec{WireName: "target"},
+}
 
 var ApiGatewayManagedOverrides_Stage_AccessLogSettingsFields = ubx.FieldMap{
-		"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-	}
+	"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
+	"Format":         ubx.FieldSpec{WireName: "format"},
+}
 
 var ApiGatewayManagedOverrides_Stage_DefaultRouteSettingsFields = ubx.FieldMap{
-		"DetailedMetricsEnabled": ubx.FieldSpec{WireName: "detailed_metrics_enabled"},
-		"ThrottlingBurstLimit": ubx.FieldSpec{WireName: "throttling_burst_limit"},
-		"ThrottlingRateLimit": ubx.FieldSpec{WireName: "throttling_rate_limit"},
-	}
+	"DetailedMetricsEnabled": ubx.FieldSpec{WireName: "detailed_metrics_enabled"},
+	"ThrottlingBurstLimit":   ubx.FieldSpec{WireName: "throttling_burst_limit"},
+	"ThrottlingRateLimit":    ubx.FieldSpec{WireName: "throttling_rate_limit"},
+}
 
 var ApiGatewayManagedOverrides_StageFields = ubx.FieldMap{
-		"AccessLogSettings": ubx.FieldSpec{
-			WireName: "access_log_settings",
-			Kind: "object",
-			Fields: ApiGatewayManagedOverrides_Stage_AccessLogSettingsFields,
-		},
-		"AutoDeploy": ubx.FieldSpec{WireName: "auto_deploy"},
-		"DefaultRouteSettings": ubx.FieldSpec{
-			WireName: "default_route_settings",
-			Kind: "object",
-			Fields: ApiGatewayManagedOverrides_Stage_DefaultRouteSettingsFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"RouteSettings": ubx.FieldSpec{WireName: "route_settings"},
-		"StageVariables": ubx.FieldSpec{WireName: "stage_variables"},
-	}
+	"AccessLogSettings": ubx.FieldSpec{
+		WireName: "access_log_settings",
+		Kind:     "object",
+		Fields:   ApiGatewayManagedOverrides_Stage_AccessLogSettingsFields,
+	},
+	"AutoDeploy": ubx.FieldSpec{WireName: "auto_deploy"},
+	"DefaultRouteSettings": ubx.FieldSpec{
+		WireName: "default_route_settings",
+		Kind:     "object",
+		Fields:   ApiGatewayManagedOverrides_Stage_DefaultRouteSettingsFields,
+	},
+	"Description":    ubx.FieldSpec{WireName: "description"},
+	"RouteSettings":  ubx.FieldSpec{WireName: "route_settings"},
+	"StageVariables": ubx.FieldSpec{WireName: "stage_variables"},
+}
 
 type ApiGatewayManagedOverridesConfig struct {
 	// The ID of the API for which to override the configuration of API Gateway-managed resources.
@@ -131,18 +131,18 @@ var ApiGatewayManagedOverrides = ubx.ResourceBinding{
 		"ApiId": ubx.FieldSpec{WireName: "api_id"},
 		"Integration": ubx.FieldSpec{
 			WireName: "integration",
-			Kind: "object",
-			Fields: ApiGatewayManagedOverrides_IntegrationFields,
+			Kind:     "object",
+			Fields:   ApiGatewayManagedOverrides_IntegrationFields,
 		},
 		"Route": ubx.FieldSpec{
 			WireName: "route",
-			Kind: "object",
-			Fields: ApiGatewayManagedOverrides_RouteFields,
+			Kind:     "object",
+			Fields:   ApiGatewayManagedOverrides_RouteFields,
 		},
 		"Stage": ubx.FieldSpec{
 			WireName: "stage",
-			Kind: "object",
-			Fields: ApiGatewayManagedOverrides_StageFields,
+			Kind:     "object",
+			Fields:   ApiGatewayManagedOverrides_StageFields,
 		},
 	},
 }

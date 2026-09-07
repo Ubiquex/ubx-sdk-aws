@@ -29,31 +29,31 @@ type VirtualCluster_Tags struct {
 }
 
 var VirtualCluster_ContainerProvider_Info_EksInfoFields = ubx.FieldMap{
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+}
 
 var VirtualCluster_ContainerProvider_InfoFields = ubx.FieldMap{
-		"EksInfo": ubx.FieldSpec{
-			WireName: "eks_info",
-			Kind: "object",
-			Fields: VirtualCluster_ContainerProvider_Info_EksInfoFields,
-		},
-	}
+	"EksInfo": ubx.FieldSpec{
+		WireName: "eks_info",
+		Kind:     "object",
+		Fields:   VirtualCluster_ContainerProvider_Info_EksInfoFields,
+	},
+}
 
 var VirtualCluster_ContainerProviderFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Info": ubx.FieldSpec{
-			WireName: "info",
-			Kind: "object",
-			Fields: VirtualCluster_ContainerProvider_InfoFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Info": ubx.FieldSpec{
+		WireName: "info",
+		Kind:     "object",
+		Fields:   VirtualCluster_ContainerProvider_InfoFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var VirtualCluster_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VirtualClusterConfig struct {
 	// The container provider configuration that defines the underlying container platform (e.g., Amazon EKS) on which the virtual cluster runs, including the provider type and the Amazon EKS cluster information. (AI-inferred)
@@ -90,16 +90,16 @@ var VirtualCluster = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ContainerProvider": ubx.FieldSpec{
 			WireName: "container_provider",
-			Kind: "object",
-			Fields: VirtualCluster_ContainerProviderFields,
+			Kind:     "object",
+			Fields:   VirtualCluster_ContainerProviderFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
 		"SecurityConfigurationId": ubx.FieldSpec{WireName: "security_configuration_id"},
-		"SessionEnabled": ubx.FieldSpec{WireName: "session_enabled"},
+		"SessionEnabled":          ubx.FieldSpec{WireName: "session_enabled"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VirtualCluster_TagsFields,
+			Kind:     "list",
+			Fields:   VirtualCluster_TagsFields,
 		},
 	},
 }

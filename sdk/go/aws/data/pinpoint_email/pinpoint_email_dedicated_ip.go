@@ -7,7 +7,7 @@ type PinpointEmailDedicatedIp_DedicatedIp struct {
 	// <p>A dedicated IP address that is associated with your Amazon Pinpoint account.</p>
 	Ip any
 	// <p>The name of a dedicated IP pool.</p>
-	PoolName any
+	PoolName         any
 	WarmupPercentage any
 	// <p>The warmup status of a dedicated IP.</p>
 	WarmupStatus any

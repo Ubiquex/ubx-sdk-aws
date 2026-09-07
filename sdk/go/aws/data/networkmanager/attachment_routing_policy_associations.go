@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AttachmentRoutingPolicyAssociations_AttachmentRoutingPolicyAssociations struct {
 	AssociatedRoutingPolicies any
-	AttachmentId any
-	PendingRoutingPolicies any
-	RoutingPolicyLabel any
+	AttachmentId              any
+	PendingRoutingPolicies    any
+	RoutingPolicyLabel        any
 }
 
 type AttachmentRoutingPolicyAssociationsConfig struct {
-	AttachmentId any
+	AttachmentId  any
 	CoreNetworkId any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type AttachmentRoutingPolicyAssociationsAttrs struct {
-	AttachmentId any
+	AttachmentId                        any
 	AttachmentRoutingPolicyAssociations any
-	CoreNetworkId any
-	MaxResults any
-	NextToken any
+	CoreNetworkId                       any
+	MaxResults                          any
+	NextToken                           any
 }
 
 var AttachmentRoutingPolicyAssociations = ubx.DataSourceBinding{
 	WireType: "aws_networkmanager_attachment_routing_policy_associations",
 	Fields: ubx.FieldMap{
-		"AttachmentId": ubx.FieldSpec{WireName: "attachment_id"},
+		"AttachmentId":  ubx.FieldSpec{WireName: "attachment_id"},
 		"CoreNetworkId": ubx.FieldSpec{WireName: "core_network_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

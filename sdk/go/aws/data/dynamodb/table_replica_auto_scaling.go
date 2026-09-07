@@ -4,43 +4,43 @@ package dynamodb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TableReplicaAutoScaling_TableAutoScalingDescription_Replicas_GlobalSecondaryIndexes_ProvisionedReadCapacityAutoScalingSettings_ScalingPolicies_TargetTrackingScalingPolicyConfiguration struct {
-	DisableScaleIn any
-	ScaleInCooldown any
+	DisableScaleIn   any
+	ScaleInCooldown  any
 	ScaleOutCooldown any
-	TargetValue any
+	TargetValue      any
 }
 
 type TableReplicaAutoScaling_TableAutoScalingDescription_Replicas_GlobalSecondaryIndexes_ProvisionedReadCapacityAutoScalingSettings_ScalingPolicies struct {
-	PolicyName any
+	PolicyName                               any
 	TargetTrackingScalingPolicyConfiguration any
 }
 
 type TableReplicaAutoScaling_TableAutoScalingDescription_Replicas_GlobalSecondaryIndexes_ProvisionedReadCapacityAutoScalingSettings struct {
 	AutoScalingDisabled any
-	AutoScalingRoleArn any
-	MaximumUnits any
-	MinimumUnits any
-	ScalingPolicies any
+	AutoScalingRoleArn  any
+	MaximumUnits        any
+	MinimumUnits        any
+	ScalingPolicies     any
 }
 
 type TableReplicaAutoScaling_TableAutoScalingDescription_Replicas_GlobalSecondaryIndexes struct {
-	IndexName any
-	IndexStatus any
-	ProvisionedReadCapacityAutoScalingSettings any
+	IndexName                                   any
+	IndexStatus                                 any
+	ProvisionedReadCapacityAutoScalingSettings  any
 	ProvisionedWriteCapacityAutoScalingSettings any
 }
 
 type TableReplicaAutoScaling_TableAutoScalingDescription_Replicas struct {
-	GlobalSecondaryIndexes any
-	RegionName any
-	ReplicaProvisionedReadCapacityAutoScalingSettings any
+	GlobalSecondaryIndexes                             any
+	RegionName                                         any
+	ReplicaProvisionedReadCapacityAutoScalingSettings  any
 	ReplicaProvisionedWriteCapacityAutoScalingSettings any
-	ReplicaStatus any
+	ReplicaStatus                                      any
 }
 
 type TableReplicaAutoScaling_TableAutoScalingDescription struct {
-	Replicas any
-	TableName any
+	Replicas    any
+	TableName   any
 	TableStatus any
 }
 
@@ -51,7 +51,7 @@ type TableReplicaAutoScalingConfig struct {
 type TableReplicaAutoScalingAttrs struct {
 	// <p>Represents the auto scaling configuration for a global table.</p>
 	TableAutoScalingDescription any
-	TableName any
+	TableName                   any
 }
 
 var TableReplicaAutoScaling = ubx.DataSourceBinding{

@@ -16,13 +16,13 @@ type ExecutionPlan_Tags struct {
 }
 
 var ExecutionPlan_CapacityUnitsFields = ubx.FieldMap{
-		"RescoreCapacityUnits": ubx.FieldSpec{WireName: "rescore_capacity_units"},
-	}
+	"RescoreCapacityUnits": ubx.FieldSpec{WireName: "rescore_capacity_units"},
+}
 
 var ExecutionPlan_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ExecutionPlanConfig struct {
 	// Specifies the capacity configuration for the execution plan, including the number of rescore capacity units allocated to handle query processing for Amazon Kendra Intelligent Ranking. (AI-inferred)
@@ -55,15 +55,15 @@ var ExecutionPlan = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CapacityUnits": ubx.FieldSpec{
 			WireName: "capacity_units",
-			Kind: "object",
-			Fields: ExecutionPlan_CapacityUnitsFields,
+			Kind:     "object",
+			Fields:   ExecutionPlan_CapacityUnitsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ExecutionPlan_TagsFields,
+			Kind:     "list",
+			Fields:   ExecutionPlan_TagsFields,
 		},
 	},
 }

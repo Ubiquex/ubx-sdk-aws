@@ -11,9 +11,9 @@ type NotificationRule_Targets struct {
 }
 
 var NotificationRule_TargetsFields = ubx.FieldMap{
-		"TargetAddress": ubx.FieldSpec{WireName: "target_address"},
-		"TargetType": ubx.FieldSpec{WireName: "target_type"},
-	}
+	"TargetAddress": ubx.FieldSpec{WireName: "target_address"},
+	"TargetType":    ubx.FieldSpec{WireName: "target_type"},
+}
 
 type NotificationRuleConfig struct {
 	// The ARN of the IAM user or role that created the notification rule. (AI-inferred)
@@ -66,19 +66,19 @@ type NotificationRuleAttrs struct {
 var NotificationRule = ubx.ResourceBinding{
 	WireType: "aws_code_star_notifications_notification_rule",
 	Fields: ubx.FieldMap{
-		"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
-		"DetailType": ubx.FieldSpec{WireName: "detail_type"},
-		"EventTypeId": ubx.FieldSpec{WireName: "event_type_id"},
-		"EventTypeIds": ubx.FieldSpec{WireName: "event_type_ids"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"CreatedBy":     ubx.FieldSpec{WireName: "created_by"},
+		"DetailType":    ubx.FieldSpec{WireName: "detail_type"},
+		"EventTypeId":   ubx.FieldSpec{WireName: "event_type_id"},
+		"EventTypeIds":  ubx.FieldSpec{WireName: "event_type_ids"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Resource":      ubx.FieldSpec{WireName: "resource"},
+		"Status":        ubx.FieldSpec{WireName: "status"},
+		"Tags":          ubx.FieldSpec{WireName: "tags"},
 		"TargetAddress": ubx.FieldSpec{WireName: "target_address"},
 		"Targets": ubx.FieldSpec{
 			WireName: "targets",
-			Kind: "list",
-			Fields: NotificationRule_TargetsFields,
+			Kind:     "list",
+			Fields:   NotificationRule_TargetsFields,
 		},
 	},
 }

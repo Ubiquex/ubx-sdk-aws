@@ -4,84 +4,84 @@ package resiliencehubv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Services_ServiceSummaries_Achievability struct {
-	AvailabilitySlo any
+	AvailabilitySlo                any
 	DataRecoveryTimeBetweenBackups any
-	MultiAzRtoRpo any
-	MultiRegionRtoRpo any
+	MultiAzRtoRpo                  any
+	MultiRegionRtoRpo              any
 }
 
 type Services_ServiceSummaries_AssociatedSystems struct {
-	SystemArn any
-	SystemName any
+	SystemArn      any
+	SystemName     any
 	UserJourneyIds any
 }
 
 type Services_ServiceSummaries_DependencyDiscovery struct {
 	EligibleResourceCount any
-	Message any
-	Status any
-	UpdatedAt any
+	Message               any
+	Status                any
+	UpdatedAt             any
 }
 
 type Services_ServiceSummaries struct {
-	AccountId any
-	Achievability any
-	AssessmentStatus any
-	AssociatedSystems any
-	CreatedAt any
-	DependencyDiscovery any
-	Name any
-	OpenFindingsCount any
-	OrganizationId any
-	OuId any
-	PolicyArn any
-	Regions any
+	AccountId             any
+	Achievability         any
+	AssessmentStatus      any
+	AssociatedSystems     any
+	CreatedAt             any
+	DependencyDiscovery   any
+	Name                  any
+	OpenFindingsCount     any
+	OrganizationId        any
+	OuId                  any
+	PolicyArn             any
+	Regions               any
 	ResolvedFindingsCount any
-	ServiceArn any
-	UpdatedAt any
+	ServiceArn            any
+	UpdatedAt             any
 }
 
 type ServicesConfig struct {
-	AccountId any
+	AccountId        any
 	AssessmentStatus any
 	// <p>Pagination page size.</p>
 	MaxResults any
 	// <p>Pagination token.</p>
 	NextToken any
-	OuId any
+	OuId      any
 	// <p>ARN identifier.</p>
 	PolicyArn any
 	// <p>ARN identifier.</p>
-	SystemArn any
+	SystemArn     any
 	UserJourneyId any
 }
 
 type ServicesAttrs struct {
-	AccountId any
+	AccountId        any
 	AssessmentStatus any
 	// <p>Pagination page size.</p>
 	MaxResults any
 	// <p>Pagination token.</p>
 	NextToken any
-	OuId any
+	OuId      any
 	// <p>ARN identifier.</p>
-	PolicyArn any
+	PolicyArn        any
 	ServiceSummaries any
 	// <p>ARN identifier.</p>
-	SystemArn any
+	SystemArn     any
 	UserJourneyId any
 }
 
 var Services = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehubv2_services",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":        ubx.FieldSpec{WireName: "account_id"},
 		"AssessmentStatus": ubx.FieldSpec{WireName: "assessment_status"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OuId": ubx.FieldSpec{WireName: "ou_id"},
-		"PolicyArn": ubx.FieldSpec{WireName: "policy_arn"},
-		"SystemArn": ubx.FieldSpec{WireName: "system_arn"},
-		"UserJourneyId": ubx.FieldSpec{WireName: "user_journey_id"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"OuId":             ubx.FieldSpec{WireName: "ou_id"},
+		"PolicyArn":        ubx.FieldSpec{WireName: "policy_arn"},
+		"SystemArn":        ubx.FieldSpec{WireName: "system_arn"},
+		"UserJourneyId":    ubx.FieldSpec{WireName: "user_journey_id"},
 	},
 }

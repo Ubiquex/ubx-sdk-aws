@@ -23,23 +23,23 @@ type MailManagerArchiveExport_Filters_Include_BooleanExpression struct {
 type MailManagerArchiveExport_Filters_Include_StringExpression struct {
 	Evaluate any
 	Operator any
-	Values any
+	Values   any
 }
 
 type MailManagerArchiveExport_Filters_Include struct {
 	BooleanExpression any
-	StringExpression any
+	StringExpression  any
 }
 
 type MailManagerArchiveExport_Filters struct {
 	Include any
-	Unless any
+	Unless  any
 }
 
 type MailManagerArchiveExport_Status struct {
 	CompletionTimestamp any
-	ErrorMessage any
-	State any
+	ErrorMessage        any
+	State               any
 	SubmissionTimestamp any
 }
 
@@ -51,13 +51,13 @@ type MailManagerArchiveExportAttrs struct {
 	ArchiveId any
 	// <p>The destination configuration for delivering exported email data.</p>
 	ExportDestinationConfiguration any
-	ExportId any
+	ExportId                       any
 	// <p>A set of filter conditions to include and/or exclude emails.</p>
-	Filters any
+	Filters       any
 	FromTimestamp any
-	MaxResults any
+	MaxResults    any
 	// <p>The current status of an archive export job.</p>
-	Status any
+	Status      any
 	ToTimestamp any
 }
 

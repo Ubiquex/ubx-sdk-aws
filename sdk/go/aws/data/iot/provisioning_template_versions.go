@@ -4,29 +4,29 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProvisioningTemplateVersions_Versions struct {
-	CreationDate any
+	CreationDate     any
 	IsDefaultVersion any
-	VersionId any
+	VersionId        any
 }
 
 type ProvisioningTemplateVersionsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	TemplateName any
 }
 
 type ProvisioningTemplateVersionsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	TemplateName any
-	Versions any
+	Versions     any
 }
 
 var ProvisioningTemplateVersions = ubx.DataSourceBinding{
 	WireType: "aws_iot_provisioning_template_versions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
 	},
 }

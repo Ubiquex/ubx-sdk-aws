@@ -27,7 +27,7 @@ var ResourcePolicy = ubx.ResourceBinding{
 	WireType: "aws_secrets_manager_resource_policy",
 	Fields: ubx.FieldMap{
 		"BlockPublicPolicy": ubx.FieldSpec{WireName: "block_public_policy"},
-		"ResourcePolicy": ubx.FieldSpec{WireName: "resource_policy"},
-		"SecretId": ubx.FieldSpec{WireName: "secret_id"},
+		"ResourcePolicy":    ubx.FieldSpec{WireName: "resource_policy"},
+		"SecretId":          ubx.FieldSpec{WireName: "secret_id"},
 	},
 }

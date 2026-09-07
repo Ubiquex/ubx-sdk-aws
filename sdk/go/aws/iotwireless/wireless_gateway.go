@@ -18,14 +18,14 @@ type WirelessGateway_Tags struct {
 }
 
 var WirelessGateway_LoRaWanFields = ubx.FieldMap{
-		"GatewayEui": ubx.FieldSpec{WireName: "gateway_eui"},
-		"RfRegion": ubx.FieldSpec{WireName: "rf_region"},
-	}
+	"GatewayEui": ubx.FieldSpec{WireName: "gateway_eui"},
+	"RfRegion":   ubx.FieldSpec{WireName: "rf_region"},
+}
 
 var WirelessGateway_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type WirelessGatewayConfig struct {
 	// Description of Wireless Gateway.
@@ -68,20 +68,20 @@ type WirelessGatewayAttrs struct {
 var WirelessGateway = ubx.ResourceBinding{
 	WireType: "aws_io_twireless_wireless_gateway",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
 		"LastUplinkReceivedAt": ubx.FieldSpec{WireName: "last_uplink_received_at"},
 		"LoRaWan": ubx.FieldSpec{
 			WireName: "lo_ra_wan",
-			Kind: "object",
-			Fields: WirelessGateway_LoRaWanFields,
+			Kind:     "object",
+			Fields:   WirelessGateway_LoRaWanFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: WirelessGateway_TagsFields,
+			Kind:     "list",
+			Fields:   WirelessGateway_TagsFields,
 		},
-		"ThingArn": ubx.FieldSpec{WireName: "thing_arn"},
+		"ThingArn":  ubx.FieldSpec{WireName: "thing_arn"},
 		"ThingName": ubx.FieldSpec{WireName: "thing_name"},
 	},
 }

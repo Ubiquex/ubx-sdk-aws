@@ -17,14 +17,14 @@ type OrganizationConformancePack_Tags struct {
 }
 
 var OrganizationConformancePack_ConformancePackInputParametersFields = ubx.FieldMap{
-		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
-		"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
-	}
+	"ParameterName":  ubx.FieldSpec{WireName: "parameter_name"},
+	"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
+}
 
 var OrganizationConformancePack_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type OrganizationConformancePackConfig struct {
 	// A list of ConformancePackInputParameter objects.
@@ -71,19 +71,19 @@ var OrganizationConformancePack = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConformancePackInputParameters": ubx.FieldSpec{
 			WireName: "conformance_pack_input_parameters",
-			Kind: "list",
-			Fields: OrganizationConformancePack_ConformancePackInputParametersFields,
+			Kind:     "list",
+			Fields:   OrganizationConformancePack_ConformancePackInputParametersFields,
 		},
-		"DeliveryS3Bucket": ubx.FieldSpec{WireName: "delivery_s3_bucket"},
-		"DeliveryS3KeyPrefix": ubx.FieldSpec{WireName: "delivery_s3_key_prefix"},
-		"ExcludedAccounts": ubx.FieldSpec{WireName: "excluded_accounts"},
+		"DeliveryS3Bucket":                ubx.FieldSpec{WireName: "delivery_s3_bucket"},
+		"DeliveryS3KeyPrefix":             ubx.FieldSpec{WireName: "delivery_s3_key_prefix"},
+		"ExcludedAccounts":                ubx.FieldSpec{WireName: "excluded_accounts"},
 		"OrganizationConformancePackName": ubx.FieldSpec{WireName: "organization_conformance_pack_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: OrganizationConformancePack_TagsFields,
+			Kind:     "list",
+			Fields:   OrganizationConformancePack_TagsFields,
 		},
-		"TemplateBody": ubx.FieldSpec{WireName: "template_body"},
+		"TemplateBody":  ubx.FieldSpec{WireName: "template_body"},
 		"TemplateS3Uri": ubx.FieldSpec{WireName: "template_s3_uri"},
 	},
 }

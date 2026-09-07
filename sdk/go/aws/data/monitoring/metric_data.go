@@ -8,113 +8,113 @@ type MetricData_LabelOptions struct {
 }
 
 type MetricData_Messages struct {
-	Code any
+	Code  any
 	Value any
 }
 
 type MetricData_MetricDataQueries_MetricStat_Metric_Dimensions struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type MetricData_MetricDataQueries_MetricStat_Metric struct {
 	Dimensions any
 	MetricName any
-	Namespace any
+	Namespace  any
 }
 
 type MetricData_MetricDataQueries_MetricStat struct {
 	Metric any
 	Period any
-	Stat any
-	Unit any
+	Stat   any
+	Unit   any
 }
 
 type MetricData_MetricDataQueries struct {
-	AccountId any
+	AccountId  any
 	Expression any
-	Id any
-	Label any
+	Id         any
+	Label      any
 	MetricStat any
-	Period any
+	Period     any
 	ReturnData any
 }
 
 type MetricData_MetricDataResults struct {
-	Id any
-	Label any
-	Messages any
+	Id         any
+	Label      any
+	Messages   any
 	StatusCode any
 	Timestamps any
-	Values any
+	Values     any
 }
 
 var MetricData_LabelOptionsFields = ubx.FieldMap{
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-	}
+	"Timezone": ubx.FieldSpec{WireName: "timezone"},
+}
 
 var MetricData_MetricDataQueries_MetricStat_Metric_DimensionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var MetricData_MetricDataQueries_MetricStat_MetricFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: MetricData_MetricDataQueries_MetricStat_Metric_DimensionsFields,
-		},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   MetricData_MetricDataQueries_MetricStat_Metric_DimensionsFields,
+	},
+	"MetricName": ubx.FieldSpec{WireName: "metric_name"},
+	"Namespace":  ubx.FieldSpec{WireName: "namespace"},
+}
 
 var MetricData_MetricDataQueries_MetricStatFields = ubx.FieldMap{
-		"Metric": ubx.FieldSpec{
-			WireName: "metric",
-			Kind: "object",
-			Fields: MetricData_MetricDataQueries_MetricStat_MetricFields,
-		},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"Stat": ubx.FieldSpec{WireName: "stat"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-	}
+	"Metric": ubx.FieldSpec{
+		WireName: "metric",
+		Kind:     "object",
+		Fields:   MetricData_MetricDataQueries_MetricStat_MetricFields,
+	},
+	"Period": ubx.FieldSpec{WireName: "period"},
+	"Stat":   ubx.FieldSpec{WireName: "stat"},
+	"Unit":   ubx.FieldSpec{WireName: "unit"},
+}
 
 var MetricData_MetricDataQueriesFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"MetricStat": ubx.FieldSpec{
-			WireName: "metric_stat",
-			Kind: "object",
-			Fields: MetricData_MetricDataQueries_MetricStatFields,
-		},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"ReturnData": ubx.FieldSpec{WireName: "return_data"},
-	}
+	"AccountId":  ubx.FieldSpec{WireName: "account_id"},
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Id":         ubx.FieldSpec{WireName: "id"},
+	"Label":      ubx.FieldSpec{WireName: "label"},
+	"MetricStat": ubx.FieldSpec{
+		WireName: "metric_stat",
+		Kind:     "object",
+		Fields:   MetricData_MetricDataQueries_MetricStatFields,
+	},
+	"Period":     ubx.FieldSpec{WireName: "period"},
+	"ReturnData": ubx.FieldSpec{WireName: "return_data"},
+}
 
 type MetricDataConfig struct {
 	EndTime any
 	// <p>This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone so that the labels that are associated with returned metrics display the correct time for your time zone. </p> <p>The <code>Timezone</code> value affects a label only if you have a time-based dynamic expression in the label. For more information about dynamic expressions in labels, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic Labels</a>.</p>
-	LabelOptions any
-	MaxDatapoints any
+	LabelOptions      any
+	MaxDatapoints     any
 	MetricDataQueries any
-	NextToken any
-	ScanBy any
-	StartTime any
+	NextToken         any
+	ScanBy            any
+	StartTime         any
 }
 
 type MetricDataAttrs struct {
 	EndTime any
 	// <p>This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone so that the labels that are associated with returned metrics display the correct time for your time zone. </p> <p>The <code>Timezone</code> value affects a label only if you have a time-based dynamic expression in the label. For more information about dynamic expressions in labels, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic Labels</a>.</p>
-	LabelOptions any
-	MaxDatapoints any
-	Messages any
+	LabelOptions      any
+	MaxDatapoints     any
+	Messages          any
 	MetricDataQueries any
 	MetricDataResults any
-	NextToken any
-	ScanBy any
-	StartTime any
+	NextToken         any
+	ScanBy            any
+	StartTime         any
 }
 
 var MetricData = ubx.DataSourceBinding{
@@ -123,17 +123,17 @@ var MetricData = ubx.DataSourceBinding{
 		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"LabelOptions": ubx.FieldSpec{
 			WireName: "label_options",
-			Kind: "object",
-			Fields: MetricData_LabelOptionsFields,
+			Kind:     "object",
+			Fields:   MetricData_LabelOptionsFields,
 		},
 		"MaxDatapoints": ubx.FieldSpec{WireName: "max_datapoints"},
 		"MetricDataQueries": ubx.FieldSpec{
 			WireName: "metric_data_queries",
-			Kind: "list",
-			Fields: MetricData_MetricDataQueriesFields,
+			Kind:     "list",
+			Fields:   MetricData_MetricDataQueriesFields,
 		},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ScanBy": ubx.FieldSpec{WireName: "scan_by"},
+		"ScanBy":    ubx.FieldSpec{WireName: "scan_by"},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
 	},
 }

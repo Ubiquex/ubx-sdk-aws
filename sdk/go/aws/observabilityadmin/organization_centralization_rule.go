@@ -18,7 +18,7 @@ type OrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguratio
 type OrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_LogsEncryptionConfiguration struct {
 	// Specifies the strategy to resolve encryption key conflicts when centralizing logs, determining whether the organization's central encryption configuration overrides member accounts' existing log encryption settings or preserves them. (AI-inferred)
 	EncryptionConflictResolutionStrategy any
-	EncryptionScope any
+	EncryptionScope                      any
 	// Defines the encryption strategy for logs delivered to the centralized destination, using 'SSE_S3' for AWS-managed encryption or 'SSE_KMS' for customer-managed KMS key encryption. (AI-inferred)
 	EncryptionStrategy any
 	// The ARN of the AWS KMS key used to encrypt logs delivered to the centralization rule's destination, enabling customer-managed key encryption for centralized log data. (AI-inferred)
@@ -52,8 +52,8 @@ type OrganizationCentralizationRule_Rule_Destination_DestinationMetricsConfigura
 
 type OrganizationCentralizationRule_Rule_Destination struct {
 	// The AWS account ID of the destination account that receives centralized observability data (logs, metrics, and traces) when the rule's destination type is set to 'ACCOUNT'. (AI-inferred)
-	Account any
-	DestinationLogsConfiguration any
+	Account                         any
+	DestinationLogsConfiguration    any
 	DestinationMetricsConfiguration any
 	// The AWS region of the destination where the organization's observability data is centralized by this rule. (AI-inferred)
 	Region any
@@ -73,8 +73,8 @@ type OrganizationCentralizationRule_Rule_Source_SourceMetricsConfiguration struc
 
 type OrganizationCentralizationRule_Rule_Source struct {
 	// Specifies the AWS regions (e.g., us-east-1) whose telemetry from the source accounts is included in the centralized observability rule, limiting the rule's scope to those regions. (AI-inferred)
-	Regions any
-	Scope any
+	Regions                 any
+	Scope                   any
 	SourceLogsConfiguration any
 	// Determines the metrics to centralize for the given source, enabling the administrator to specify whether to centralize all or a selected set of metrics as part of the observability centralization rule. (AI-inferred)
 	SourceMetricsConfiguration any
@@ -88,123 +88,123 @@ type OrganizationCentralizationRule_Rule struct {
 }
 
 type OrganizationCentralizationRule_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var OrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_BackupConfigurationFields = ubx.FieldMap{
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+	"Region":    ubx.FieldSpec{WireName: "region"},
+}
 
 var OrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_LogGroupNameConfigurationFields = ubx.FieldMap{
-		"LogGroupNamePattern": ubx.FieldSpec{WireName: "log_group_name_pattern"},
-	}
+	"LogGroupNamePattern": ubx.FieldSpec{WireName: "log_group_name_pattern"},
+}
 
 var OrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_LogsEncryptionConfigurationFields = ubx.FieldMap{
-		"EncryptionConflictResolutionStrategy": ubx.FieldSpec{WireName: "encryption_conflict_resolution_strategy"},
-		"EncryptionScope": ubx.FieldSpec{WireName: "encryption_scope"},
-		"EncryptionStrategy": ubx.FieldSpec{WireName: "encryption_strategy"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-	}
+	"EncryptionConflictResolutionStrategy": ubx.FieldSpec{WireName: "encryption_conflict_resolution_strategy"},
+	"EncryptionScope":                      ubx.FieldSpec{WireName: "encryption_scope"},
+	"EncryptionStrategy":                   ubx.FieldSpec{WireName: "encryption_strategy"},
+	"KmsKeyArn":                            ubx.FieldSpec{WireName: "kms_key_arn"},
+}
 
 var OrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_TagPropagationConfigurationFields = ubx.FieldMap{
-		"DestinationRoleArn": ubx.FieldSpec{WireName: "destination_role_arn"},
-		"TagConflictResolutionStrategy": ubx.FieldSpec{WireName: "tag_conflict_resolution_strategy"},
-	}
+	"DestinationRoleArn":            ubx.FieldSpec{WireName: "destination_role_arn"},
+	"TagConflictResolutionStrategy": ubx.FieldSpec{WireName: "tag_conflict_resolution_strategy"},
+}
 
 var OrganizationCentralizationRule_Rule_Destination_DestinationLogsConfigurationFields = ubx.FieldMap{
-		"BackupConfiguration": ubx.FieldSpec{
-			WireName: "backup_configuration",
-			Kind: "object",
-			Fields: OrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_BackupConfigurationFields,
-		},
-		"LogGroupNameConfiguration": ubx.FieldSpec{
-			WireName: "log_group_name_configuration",
-			Kind: "object",
-			Fields: OrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_LogGroupNameConfigurationFields,
-		},
-		"LogsEncryptionConfiguration": ubx.FieldSpec{
-			WireName: "logs_encryption_configuration",
-			Kind: "object",
-			Fields: OrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_LogsEncryptionConfigurationFields,
-		},
-		"TagPropagationConfiguration": ubx.FieldSpec{
-			WireName: "tag_propagation_configuration",
-			Kind: "object",
-			Fields: OrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_TagPropagationConfigurationFields,
-		},
-	}
+	"BackupConfiguration": ubx.FieldSpec{
+		WireName: "backup_configuration",
+		Kind:     "object",
+		Fields:   OrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_BackupConfigurationFields,
+	},
+	"LogGroupNameConfiguration": ubx.FieldSpec{
+		WireName: "log_group_name_configuration",
+		Kind:     "object",
+		Fields:   OrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_LogGroupNameConfigurationFields,
+	},
+	"LogsEncryptionConfiguration": ubx.FieldSpec{
+		WireName: "logs_encryption_configuration",
+		Kind:     "object",
+		Fields:   OrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_LogsEncryptionConfigurationFields,
+	},
+	"TagPropagationConfiguration": ubx.FieldSpec{
+		WireName: "tag_propagation_configuration",
+		Kind:     "object",
+		Fields:   OrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_TagPropagationConfigurationFields,
+	},
+}
 
 var OrganizationCentralizationRule_Rule_Destination_DestinationMetricsConfiguration_BackupConfigurationFields = ubx.FieldMap{
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"Region": ubx.FieldSpec{WireName: "region"},
+}
 
 var OrganizationCentralizationRule_Rule_Destination_DestinationMetricsConfigurationFields = ubx.FieldMap{
-		"BackupConfiguration": ubx.FieldSpec{
-			WireName: "backup_configuration",
-			Kind: "object",
-			Fields: OrganizationCentralizationRule_Rule_Destination_DestinationMetricsConfiguration_BackupConfigurationFields,
-		},
-	}
+	"BackupConfiguration": ubx.FieldSpec{
+		WireName: "backup_configuration",
+		Kind:     "object",
+		Fields:   OrganizationCentralizationRule_Rule_Destination_DestinationMetricsConfiguration_BackupConfigurationFields,
+	},
+}
 
 var OrganizationCentralizationRule_Rule_DestinationFields = ubx.FieldMap{
-		"Account": ubx.FieldSpec{WireName: "account"},
-		"DestinationLogsConfiguration": ubx.FieldSpec{
-			WireName: "destination_logs_configuration",
-			Kind: "object",
-			Fields: OrganizationCentralizationRule_Rule_Destination_DestinationLogsConfigurationFields,
-		},
-		"DestinationMetricsConfiguration": ubx.FieldSpec{
-			WireName: "destination_metrics_configuration",
-			Kind: "object",
-			Fields: OrganizationCentralizationRule_Rule_Destination_DestinationMetricsConfigurationFields,
-		},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"Account": ubx.FieldSpec{WireName: "account"},
+	"DestinationLogsConfiguration": ubx.FieldSpec{
+		WireName: "destination_logs_configuration",
+		Kind:     "object",
+		Fields:   OrganizationCentralizationRule_Rule_Destination_DestinationLogsConfigurationFields,
+	},
+	"DestinationMetricsConfiguration": ubx.FieldSpec{
+		WireName: "destination_metrics_configuration",
+		Kind:     "object",
+		Fields:   OrganizationCentralizationRule_Rule_Destination_DestinationMetricsConfigurationFields,
+	},
+	"Region": ubx.FieldSpec{WireName: "region"},
+}
 
 var OrganizationCentralizationRule_Rule_Source_SourceLogsConfigurationFields = ubx.FieldMap{
-		"DataSourceSelectionCriteria": ubx.FieldSpec{WireName: "data_source_selection_criteria"},
-		"EncryptedLogGroupStrategy": ubx.FieldSpec{WireName: "encrypted_log_group_strategy"},
-		"LogGroupSelectionCriteria": ubx.FieldSpec{WireName: "log_group_selection_criteria"},
-	}
+	"DataSourceSelectionCriteria": ubx.FieldSpec{WireName: "data_source_selection_criteria"},
+	"EncryptedLogGroupStrategy":   ubx.FieldSpec{WireName: "encrypted_log_group_strategy"},
+	"LogGroupSelectionCriteria":   ubx.FieldSpec{WireName: "log_group_selection_criteria"},
+}
 
 var OrganizationCentralizationRule_Rule_Source_SourceMetricsConfigurationFields = ubx.FieldMap{
-		"MetricsSelectionCriteria": ubx.FieldSpec{WireName: "metrics_selection_criteria"},
-	}
+	"MetricsSelectionCriteria": ubx.FieldSpec{WireName: "metrics_selection_criteria"},
+}
 
 var OrganizationCentralizationRule_Rule_SourceFields = ubx.FieldMap{
-		"Regions": ubx.FieldSpec{WireName: "regions"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"SourceLogsConfiguration": ubx.FieldSpec{
-			WireName: "source_logs_configuration",
-			Kind: "object",
-			Fields: OrganizationCentralizationRule_Rule_Source_SourceLogsConfigurationFields,
-		},
-		"SourceMetricsConfiguration": ubx.FieldSpec{
-			WireName: "source_metrics_configuration",
-			Kind: "object",
-			Fields: OrganizationCentralizationRule_Rule_Source_SourceMetricsConfigurationFields,
-		},
-	}
+	"Regions": ubx.FieldSpec{WireName: "regions"},
+	"Scope":   ubx.FieldSpec{WireName: "scope"},
+	"SourceLogsConfiguration": ubx.FieldSpec{
+		WireName: "source_logs_configuration",
+		Kind:     "object",
+		Fields:   OrganizationCentralizationRule_Rule_Source_SourceLogsConfigurationFields,
+	},
+	"SourceMetricsConfiguration": ubx.FieldSpec{
+		WireName: "source_metrics_configuration",
+		Kind:     "object",
+		Fields:   OrganizationCentralizationRule_Rule_Source_SourceMetricsConfigurationFields,
+	},
+}
 
 var OrganizationCentralizationRule_RuleFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: OrganizationCentralizationRule_Rule_DestinationFields,
-		},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: OrganizationCentralizationRule_Rule_SourceFields,
-		},
-	}
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   OrganizationCentralizationRule_Rule_DestinationFields,
+	},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   OrganizationCentralizationRule_Rule_SourceFields,
+	},
+}
 
 var OrganizationCentralizationRule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type OrganizationCentralizationRuleConfig struct {
 	// The rule configuration that defines how observability data is centralized across the organization, including the type of data to centralize and the target accounts or organizational units. (AI-inferred)
@@ -231,14 +231,14 @@ var OrganizationCentralizationRule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Rule": ubx.FieldSpec{
 			WireName: "rule",
-			Kind: "object",
-			Fields: OrganizationCentralizationRule_RuleFields,
+			Kind:     "object",
+			Fields:   OrganizationCentralizationRule_RuleFields,
 		},
 		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: OrganizationCentralizationRule_TagsFields,
+			Kind:     "list",
+			Fields:   OrganizationCentralizationRule_TagsFields,
 		},
 	},
 }

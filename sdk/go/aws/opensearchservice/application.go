@@ -27,20 +27,20 @@ type Application_IamIdentityCenterOptions struct {
 }
 
 var Application_AppConfigsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Application_DataSourcesFields = ubx.FieldMap{
-		"DataSourceArn": ubx.FieldSpec{WireName: "data_source_arn"},
-		"DataSourceDescription": ubx.FieldSpec{WireName: "data_source_description"},
-	}
+	"DataSourceArn":         ubx.FieldSpec{WireName: "data_source_arn"},
+	"DataSourceDescription": ubx.FieldSpec{WireName: "data_source_description"},
+}
 
 var Application_IamIdentityCenterOptionsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"IamIdentityCenterInstanceArn": ubx.FieldSpec{WireName: "iam_identity_center_instance_arn"},
-		"IamRoleForIdentityCenterApplicationArn": ubx.FieldSpec{WireName: "iam_role_for_identity_center_application_arn"},
-	}
+	"Enabled":                                ubx.FieldSpec{WireName: "enabled"},
+	"IamIdentityCenterInstanceArn":           ubx.FieldSpec{WireName: "iam_identity_center_instance_arn"},
+	"IamRoleForIdentityCenterApplicationArn": ubx.FieldSpec{WireName: "iam_role_for_identity_center_application_arn"},
+}
 
 type ApplicationConfig struct {
 	// List of application configurations.
@@ -85,26 +85,26 @@ var Application = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AppConfigs": ubx.FieldSpec{
 			WireName: "app_configs",
-			Kind: "list",
-			Fields: Application_AppConfigsFields,
+			Kind:     "list",
+			Fields:   Application_AppConfigsFields,
 		},
 		"DataSources": ubx.FieldSpec{
 			WireName: "data_sources",
-			Kind: "list",
-			Fields: Application_DataSourcesFields,
+			Kind:     "list",
+			Fields:   Application_DataSourcesFields,
 		},
 		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
 		"IamIdentityCenterOptions": ubx.FieldSpec{
 			WireName: "iam_identity_center_options",
-			Kind: "object",
-			Fields: Application_IamIdentityCenterOptionsFields,
+			Kind:     "object",
+			Fields:   Application_IamIdentityCenterOptionsFields,
 		},
 		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Application_AppConfigsFields,
+			Kind:     "list",
+			Fields:   Application_AppConfigsFields,
 		},
 	},
 }

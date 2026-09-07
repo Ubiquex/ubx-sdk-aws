@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityResolutionJob_AutoMerging_ConflictResolution struct {
 	ConflictResolvingModel any
-	SourceName any
+	SourceName             any
 }
 
 type IdentityResolutionJob_AutoMerging_Consolidation struct {
@@ -16,14 +16,14 @@ type IdentityResolutionJob_AutoMerging struct {
 	// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
 	ConflictResolution any
 	// <p>The matching criteria to be used during the auto-merging process. </p>
-	Consolidation any
-	Enabled any
+	Consolidation                       any
+	Enabled                             any
 	MinAllowedConfidenceScoreForMerging any
 }
 
 type IdentityResolutionJob_ExportingLocation_S3Exporting struct {
 	S3BucketName any
-	S3KeyName any
+	S3KeyName    any
 }
 
 type IdentityResolutionJob_ExportingLocation struct {
@@ -32,37 +32,37 @@ type IdentityResolutionJob_ExportingLocation struct {
 }
 
 type IdentityResolutionJob_JobStats struct {
-	NumberOfMatchesFound any
-	NumberOfMergesDone any
+	NumberOfMatchesFound     any
+	NumberOfMergesDone       any
 	NumberOfProfilesReviewed any
 }
 
 type IdentityResolutionJobConfig struct {
 	DomainName any
-	JobId any
+	JobId      any
 }
 
 type IdentityResolutionJobAttrs struct {
 	// <p>Configuration settings for how to perform the auto-merging of profiles.</p>
 	AutoMerging any
-	DomainName any
+	DomainName  any
 	// <p>The S3 location where Identity Resolution Jobs write result files.</p>
 	ExportingLocation any
-	JobEndTime any
+	JobEndTime        any
 	JobExpirationTime any
-	JobId any
-	JobStartTime any
+	JobId             any
+	JobStartTime      any
 	// <p>Statistics about the Identity Resolution Job.</p>
-	JobStats any
+	JobStats      any
 	LastUpdatedAt any
-	Message any
-	Status any
+	Message       any
+	Status        any
 }
 
 var IdentityResolutionJob = ubx.DataSourceBinding{
 	WireType: "aws_profile_identity_resolution_job",
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":      ubx.FieldSpec{WireName: "job_id"},
 	},
 }

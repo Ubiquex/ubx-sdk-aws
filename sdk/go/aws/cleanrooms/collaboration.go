@@ -56,81 +56,81 @@ type Collaboration_Members struct {
 }
 
 type Collaboration_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Collaboration_CreatorMlmemberAbilitiesFields = ubx.FieldMap{
-		"CustomMlmemberAbilities": ubx.FieldSpec{WireName: "custom_mlmember_abilities"},
-	}
+	"CustomMlmemberAbilities": ubx.FieldSpec{WireName: "custom_mlmember_abilities"},
+}
 
 var Collaboration_CreatorPaymentConfiguration_JobComputeFields = ubx.FieldMap{
-		"IsResponsible": ubx.FieldSpec{WireName: "is_responsible"},
-	}
+	"IsResponsible": ubx.FieldSpec{WireName: "is_responsible"},
+}
 
 var Collaboration_CreatorPaymentConfiguration_MachineLearningFields = ubx.FieldMap{
-		"ModelInference": ubx.FieldSpec{
-			WireName: "model_inference",
-			Kind: "object",
-			Fields: Collaboration_CreatorPaymentConfiguration_JobComputeFields,
-		},
-		"ModelTraining": ubx.FieldSpec{
-			WireName: "model_training",
-			Kind: "object",
-			Fields: Collaboration_CreatorPaymentConfiguration_JobComputeFields,
-		},
-		"SyntheticDataGeneration": ubx.FieldSpec{
-			WireName: "synthetic_data_generation",
-			Kind: "object",
-			Fields: Collaboration_CreatorPaymentConfiguration_JobComputeFields,
-		},
-	}
+	"ModelInference": ubx.FieldSpec{
+		WireName: "model_inference",
+		Kind:     "object",
+		Fields:   Collaboration_CreatorPaymentConfiguration_JobComputeFields,
+	},
+	"ModelTraining": ubx.FieldSpec{
+		WireName: "model_training",
+		Kind:     "object",
+		Fields:   Collaboration_CreatorPaymentConfiguration_JobComputeFields,
+	},
+	"SyntheticDataGeneration": ubx.FieldSpec{
+		WireName: "synthetic_data_generation",
+		Kind:     "object",
+		Fields:   Collaboration_CreatorPaymentConfiguration_JobComputeFields,
+	},
+}
 
 var Collaboration_CreatorPaymentConfigurationFields = ubx.FieldMap{
-		"JobCompute": ubx.FieldSpec{
-			WireName: "job_compute",
-			Kind: "object",
-			Fields: Collaboration_CreatorPaymentConfiguration_JobComputeFields,
-		},
-		"MachineLearning": ubx.FieldSpec{
-			WireName: "machine_learning",
-			Kind: "object",
-			Fields: Collaboration_CreatorPaymentConfiguration_MachineLearningFields,
-		},
-		"QueryCompute": ubx.FieldSpec{
-			WireName: "query_compute",
-			Kind: "object",
-			Fields: Collaboration_CreatorPaymentConfiguration_JobComputeFields,
-		},
-	}
+	"JobCompute": ubx.FieldSpec{
+		WireName: "job_compute",
+		Kind:     "object",
+		Fields:   Collaboration_CreatorPaymentConfiguration_JobComputeFields,
+	},
+	"MachineLearning": ubx.FieldSpec{
+		WireName: "machine_learning",
+		Kind:     "object",
+		Fields:   Collaboration_CreatorPaymentConfiguration_MachineLearningFields,
+	},
+	"QueryCompute": ubx.FieldSpec{
+		WireName: "query_compute",
+		Kind:     "object",
+		Fields:   Collaboration_CreatorPaymentConfiguration_JobComputeFields,
+	},
+}
 
 var Collaboration_DataEncryptionMetadataFields = ubx.FieldMap{
-		"AllowCleartext": ubx.FieldSpec{WireName: "allow_cleartext"},
-		"AllowDuplicates": ubx.FieldSpec{WireName: "allow_duplicates"},
-		"AllowJoinsOnColumnsWithDifferentNames": ubx.FieldSpec{WireName: "allow_joins_on_columns_with_different_names"},
-		"PreserveNulls": ubx.FieldSpec{WireName: "preserve_nulls"},
-	}
+	"AllowCleartext":                        ubx.FieldSpec{WireName: "allow_cleartext"},
+	"AllowDuplicates":                       ubx.FieldSpec{WireName: "allow_duplicates"},
+	"AllowJoinsOnColumnsWithDifferentNames": ubx.FieldSpec{WireName: "allow_joins_on_columns_with_different_names"},
+	"PreserveNulls":                         ubx.FieldSpec{WireName: "preserve_nulls"},
+}
 
 var Collaboration_MembersFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"MemberAbilities": ubx.FieldSpec{WireName: "member_abilities"},
-		"MlmemberAbilities": ubx.FieldSpec{
-			WireName: "mlmember_abilities",
-			Kind: "object",
-			Fields: Collaboration_CreatorMlmemberAbilitiesFields,
-		},
-		"PaymentConfiguration": ubx.FieldSpec{
-			WireName: "payment_configuration",
-			Kind: "object",
-			Fields: Collaboration_CreatorPaymentConfigurationFields,
-		},
-	}
+	"AccountId":       ubx.FieldSpec{WireName: "account_id"},
+	"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
+	"MemberAbilities": ubx.FieldSpec{WireName: "member_abilities"},
+	"MlmemberAbilities": ubx.FieldSpec{
+		WireName: "mlmember_abilities",
+		Kind:     "object",
+		Fields:   Collaboration_CreatorMlmemberAbilitiesFields,
+	},
+	"PaymentConfiguration": ubx.FieldSpec{
+		WireName: "payment_configuration",
+		Kind:     "object",
+		Fields:   Collaboration_CreatorPaymentConfigurationFields,
+	},
+}
 
 var Collaboration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CollaborationConfig struct {
 	// Limits the AWS Regions where members of the collaboration can write query results, restricting result outputs to the specified regions. (AI-inferred)
@@ -205,40 +205,40 @@ type CollaborationAttrs struct {
 var Collaboration = ubx.ResourceBinding{
 	WireType: "aws_clean_rooms_collaboration",
 	Fields: ubx.FieldMap{
-		"AllowedResultRegions": ubx.FieldSpec{WireName: "allowed_result_regions"},
-		"AnalyticsEngine": ubx.FieldSpec{WireName: "analytics_engine"},
+		"AllowedResultRegions":    ubx.FieldSpec{WireName: "allowed_result_regions"},
+		"AnalyticsEngine":         ubx.FieldSpec{WireName: "analytics_engine"},
 		"AutoApprovedChangeTypes": ubx.FieldSpec{WireName: "auto_approved_change_types"},
-		"CreatorDisplayName": ubx.FieldSpec{WireName: "creator_display_name"},
+		"CreatorDisplayName":      ubx.FieldSpec{WireName: "creator_display_name"},
 		"CreatorMlmemberAbilities": ubx.FieldSpec{
 			WireName: "creator_mlmember_abilities",
-			Kind: "object",
-			Fields: Collaboration_CreatorMlmemberAbilitiesFields,
+			Kind:     "object",
+			Fields:   Collaboration_CreatorMlmemberAbilitiesFields,
 		},
 		"CreatorMemberAbilities": ubx.FieldSpec{WireName: "creator_member_abilities"},
 		"CreatorPaymentConfiguration": ubx.FieldSpec{
 			WireName: "creator_payment_configuration",
-			Kind: "object",
-			Fields: Collaboration_CreatorPaymentConfigurationFields,
+			Kind:     "object",
+			Fields:   Collaboration_CreatorPaymentConfigurationFields,
 		},
 		"DataEncryptionMetadata": ubx.FieldSpec{
 			WireName: "data_encryption_metadata",
-			Kind: "object",
-			Fields: Collaboration_DataEncryptionMetadataFields,
+			Kind:     "object",
+			Fields:   Collaboration_DataEncryptionMetadataFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"IsMetricsEnabled": ubx.FieldSpec{WireName: "is_metrics_enabled"},
-		"JobLogStatus": ubx.FieldSpec{WireName: "job_log_status"},
+		"JobLogStatus":     ubx.FieldSpec{WireName: "job_log_status"},
 		"Members": ubx.FieldSpec{
 			WireName: "members",
-			Kind: "list",
-			Fields: Collaboration_MembersFields,
+			Kind:     "list",
+			Fields:   Collaboration_MembersFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"QueryLogStatus": ubx.FieldSpec{WireName: "query_log_status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Collaboration_TagsFields,
+			Kind:     "list",
+			Fields:   Collaboration_TagsFields,
 		},
 	},
 }

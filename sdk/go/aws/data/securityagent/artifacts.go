@@ -4,9 +4,9 @@ package securityagent
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Artifacts_ArtifactSummaries struct {
-	ArtifactId any
+	ArtifactId   any
 	ArtifactType any
-	FileName any
+	FileName     any
 }
 
 type ArtifactsConfig struct {
@@ -33,7 +33,7 @@ var Artifacts = ubx.DataSourceBinding{
 	WireType: "aws_securityagent_artifacts",
 	Fields: ubx.FieldMap{
 		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

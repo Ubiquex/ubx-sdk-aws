@@ -28,8 +28,8 @@ type DataLakeAssociationAttrs struct {
 var DataLakeAssociation = ubx.ResourceBinding{
 	WireType: "aws_connect_data_lake_association",
 	Fields: ubx.FieldMap{
-		"DataSetId": ubx.FieldSpec{WireName: "data_set_id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"DataSetId":       ubx.FieldSpec{WireName: "data_set_id"},
+		"InstanceId":      ubx.FieldSpec{WireName: "instance_id"},
 		"TargetAccountId": ubx.FieldSpec{WireName: "target_account_id"},
 	},
 }

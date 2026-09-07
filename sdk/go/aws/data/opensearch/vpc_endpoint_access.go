@@ -8,8 +8,8 @@ type VpcEndpointAccess_AuthorizedPrincipalList_ServiceOptions struct {
 }
 
 type VpcEndpointAccess_AuthorizedPrincipalList struct {
-	Principal any
-	PrincipalType any
+	Principal      any
+	PrincipalType  any
 	ServiceOptions any
 }
 
@@ -32,6 +32,6 @@ var VpcEndpointAccess = ubx.DataSourceBinding{
 	WireType: "aws_opensearch_vpc_endpoint_access",
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

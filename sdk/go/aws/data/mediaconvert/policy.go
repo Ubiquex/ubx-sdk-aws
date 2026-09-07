@@ -22,6 +22,5 @@ type PolicyAttrs struct {
 
 var Policy = ubx.DataSourceBinding{
 	WireType: "aws_mediaconvert_policy",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

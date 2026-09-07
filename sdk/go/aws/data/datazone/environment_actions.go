@@ -12,35 +12,35 @@ type EnvironmentActions_Items_Parameters struct {
 }
 
 type EnvironmentActions_Items struct {
-	Description any
-	DomainId any
+	Description   any
+	DomainId      any
 	EnvironmentId any
-	Id any
-	Name any
-	Parameters any
+	Id            any
+	Name          any
+	Parameters    any
 }
 
 type EnvironmentActionsConfig struct {
-	DomainIdentifier any
+	DomainIdentifier      any
 	EnvironmentIdentifier any
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 }
 
 type EnvironmentActionsAttrs struct {
-	DomainIdentifier any
+	DomainIdentifier      any
 	EnvironmentIdentifier any
-	Items any
-	MaxResults any
-	NextToken any
+	Items                 any
+	MaxResults            any
+	NextToken             any
 }
 
 var EnvironmentActions = ubx.DataSourceBinding{
 	WireType: "aws_datazone_environment_actions",
 	Fields: ubx.FieldMap{
-		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
+		"DomainIdentifier":      ubx.FieldSpec{WireName: "domain_identifier"},
 		"EnvironmentIdentifier": ubx.FieldSpec{WireName: "environment_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 	},
 }

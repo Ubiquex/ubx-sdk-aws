@@ -9,9 +9,9 @@ type PublisherConfig struct {
 
 type PublisherAttrs struct {
 	IdentityProvider any
-	PublisherId any
+	PublisherId      any
 	PublisherProfile any
-	PublisherStatus any
+	PublisherStatus  any
 }
 
 var Publisher = ubx.DataSourceBinding{

@@ -5,51 +5,51 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DevopsGuruResourceCollectionHealth_CloudFormation_Insight struct {
 	MeanTimeToRecoverInMilliseconds any
-	OpenProactiveInsights any
-	OpenReactiveInsights any
+	OpenProactiveInsights           any
+	OpenReactiveInsights            any
 }
 
 type DevopsGuruResourceCollectionHealth_CloudFormation struct {
 	AnalyzedResourceCount any
-	Insight any
-	StackName any
+	Insight               any
+	StackName             any
 }
 
 type DevopsGuruResourceCollectionHealth_Service_Insight struct {
 	OpenProactiveInsights any
-	OpenReactiveInsights any
+	OpenReactiveInsights  any
 }
 
 type DevopsGuruResourceCollectionHealth_Service struct {
 	AnalyzedResourceCount any
-	Insight any
-	ServiceName any
+	Insight               any
+	ServiceName           any
 }
 
 type DevopsGuruResourceCollectionHealth_Tags struct {
 	AnalyzedResourceCount any
-	AppBoundaryKey any
-	Insight any
-	TagValue any
+	AppBoundaryKey        any
+	Insight               any
+	TagValue              any
 }
 
 type DevopsGuruResourceCollectionHealthConfig struct {
-	NextToken any
+	NextToken              any
 	ResourceCollectionType any
 }
 
 type DevopsGuruResourceCollectionHealthAttrs struct {
-	CloudFormation any
-	NextToken any
+	CloudFormation         any
+	NextToken              any
 	ResourceCollectionType any
-	Service any
-	Tags any
+	Service                any
+	Tags                   any
 }
 
 var DevopsGuruResourceCollectionHealth = ubx.DataSourceBinding{
 	WireType: "aws_devops_guru_resource_collection_health",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
 		"ResourceCollectionType": ubx.FieldSpec{WireName: "resource_collection_type"},
 	},
 }

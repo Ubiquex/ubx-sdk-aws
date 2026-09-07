@@ -34,37 +34,37 @@ type ConfigurationPolicy_ConfigurationPolicy struct {
 }
 
 var ConfigurationPolicy_ConfigurationPolicy_SecurityHub_SecurityControlsConfiguration_SecurityControlCustomParametersFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"SecurityControlId": ubx.FieldSpec{WireName: "security_control_id"},
-	}
+	"Parameters":        ubx.FieldSpec{WireName: "parameters"},
+	"SecurityControlId": ubx.FieldSpec{WireName: "security_control_id"},
+}
 
 var ConfigurationPolicy_ConfigurationPolicy_SecurityHub_SecurityControlsConfigurationFields = ubx.FieldMap{
-		"DisabledSecurityControlIdentifiers": ubx.FieldSpec{WireName: "disabled_security_control_identifiers"},
-		"EnabledSecurityControlIdentifiers": ubx.FieldSpec{WireName: "enabled_security_control_identifiers"},
-		"SecurityControlCustomParameters": ubx.FieldSpec{
-			WireName: "security_control_custom_parameters",
-			Kind: "list",
-			Fields: ConfigurationPolicy_ConfigurationPolicy_SecurityHub_SecurityControlsConfiguration_SecurityControlCustomParametersFields,
-		},
-	}
+	"DisabledSecurityControlIdentifiers": ubx.FieldSpec{WireName: "disabled_security_control_identifiers"},
+	"EnabledSecurityControlIdentifiers":  ubx.FieldSpec{WireName: "enabled_security_control_identifiers"},
+	"SecurityControlCustomParameters": ubx.FieldSpec{
+		WireName: "security_control_custom_parameters",
+		Kind:     "list",
+		Fields:   ConfigurationPolicy_ConfigurationPolicy_SecurityHub_SecurityControlsConfiguration_SecurityControlCustomParametersFields,
+	},
+}
 
 var ConfigurationPolicy_ConfigurationPolicy_SecurityHubFields = ubx.FieldMap{
-		"EnabledStandardIdentifiers": ubx.FieldSpec{WireName: "enabled_standard_identifiers"},
-		"SecurityControlsConfiguration": ubx.FieldSpec{
-			WireName: "security_controls_configuration",
-			Kind: "object",
-			Fields: ConfigurationPolicy_ConfigurationPolicy_SecurityHub_SecurityControlsConfigurationFields,
-		},
-		"ServiceEnabled": ubx.FieldSpec{WireName: "service_enabled"},
-	}
+	"EnabledStandardIdentifiers": ubx.FieldSpec{WireName: "enabled_standard_identifiers"},
+	"SecurityControlsConfiguration": ubx.FieldSpec{
+		WireName: "security_controls_configuration",
+		Kind:     "object",
+		Fields:   ConfigurationPolicy_ConfigurationPolicy_SecurityHub_SecurityControlsConfigurationFields,
+	},
+	"ServiceEnabled": ubx.FieldSpec{WireName: "service_enabled"},
+}
 
 var ConfigurationPolicy_ConfigurationPolicyFields = ubx.FieldMap{
-		"SecurityHub": ubx.FieldSpec{
-			WireName: "security_hub",
-			Kind: "object",
-			Fields: ConfigurationPolicy_ConfigurationPolicy_SecurityHubFields,
-		},
-	}
+	"SecurityHub": ubx.FieldSpec{
+		WireName: "security_hub",
+		Kind:     "object",
+		Fields:   ConfigurationPolicy_ConfigurationPolicy_SecurityHubFields,
+	},
+}
 
 type ConfigurationPolicyConfig struct {
 	// An object that defines how Security Hub is configured.
@@ -103,11 +103,11 @@ var ConfigurationPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConfigurationPolicy": ubx.FieldSpec{
 			WireName: "configuration_policy",
-			Kind: "object",
-			Fields: ConfigurationPolicy_ConfigurationPolicyFields,
+			Kind:     "object",
+			Fields:   ConfigurationPolicy_ConfigurationPolicyFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 	},
 }

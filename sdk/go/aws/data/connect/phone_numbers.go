@@ -4,37 +4,37 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PhoneNumbers_PhoneNumberSummaryList struct {
-	Arn any
-	Id any
-	PhoneNumber any
+	Arn                    any
+	Id                     any
+	PhoneNumber            any
 	PhoneNumberCountryCode any
-	PhoneNumberType any
+	PhoneNumberType        any
 }
 
 type PhoneNumbersConfig struct {
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId              any
+	MaxResults              any
+	NextToken               any
 	PhoneNumberCountryCodes any
-	PhoneNumberTypes any
+	PhoneNumberTypes        any
 }
 
 type PhoneNumbersAttrs struct {
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId              any
+	MaxResults              any
+	NextToken               any
 	PhoneNumberCountryCodes any
-	PhoneNumberSummaryList any
-	PhoneNumberTypes any
+	PhoneNumberSummaryList  any
+	PhoneNumberTypes        any
 }
 
 var PhoneNumbers = ubx.DataSourceBinding{
 	WireType: "aws_connect_phone_numbers",
 	Fields: ubx.FieldMap{
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"InstanceId":              ubx.FieldSpec{WireName: "instance_id"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
 		"PhoneNumberCountryCodes": ubx.FieldSpec{WireName: "phone_number_country_codes"},
-		"PhoneNumberTypes": ubx.FieldSpec{WireName: "phone_number_types"},
+		"PhoneNumberTypes":        ubx.FieldSpec{WireName: "phone_number_types"},
 	},
 }

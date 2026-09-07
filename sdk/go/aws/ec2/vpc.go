@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Vpc_Tags struct {
 	// This field represents the key of a user-defined tag applied to the VPC, forming the key-value pair in the VPC's tag set. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -37,31 +37,31 @@ type Vpc_VpcEncryptionControl_ResourceExclusions struct {
 
 type Vpc_VpcEncryptionControl struct {
 	EgressOnlyInternetGatewayExclusion any
-	ElasticFileSystemExclusion any
-	InternetGatewayExclusion any
-	LambdaExclusion any
+	ElasticFileSystemExclusion         any
+	InternetGatewayExclusion           any
+	LambdaExclusion                    any
 	// The encryption mode for the VPC Encryption Control configuration.
-	Mode any
+	Mode                any
 	NatGatewayExclusion any
 	// Describes the exclusion configurations for various resource types in VPC Encryption Control. For more information, see [Enforce VPC encryption in transit](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html) in the *Amazon VPC User Guide*.
 	ResourceExclusions any
 	// The current state of the VPC Encryption Control configuration.
 	State any
 	// A message providing additional information about the encryption control state.
-	StateMessage any
+	StateMessage                   any
 	VirtualPrivateGatewayExclusion any
 	// The ID of the VPC Encryption Control configuration.
 	VpcEncryptionControlId any
 	// The ID of the VPC associated with the encryption control configuration.
-	VpcId any
+	VpcId               any
 	VpcLatticeExclusion any
 	VpcPeeringExclusion any
 }
 
 var Vpc_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VpcConfig struct {
 	// The IPv4 network range for the VPC, in CIDR notation. For example, ``10.0.0.0/16``. We modify the specified CIDR block to its canonical form; for example, if you specify ``100.68.0.18/18``, we modify it to ``100.68.0.0/18``. You must specify either``CidrBlock`` or ``Ipv4IpamPoolId``.
@@ -112,16 +112,16 @@ type VpcAttrs struct {
 var Vpc = ubx.ResourceBinding{
 	WireType: "aws_vpc",
 	Fields: ubx.FieldMap{
-		"CidrBlock": ubx.FieldSpec{WireName: "cidr_block"},
+		"CidrBlock":          ubx.FieldSpec{WireName: "cidr_block"},
 		"EnableDnsHostnames": ubx.FieldSpec{WireName: "enable_dns_hostnames"},
-		"EnableDnsSupport": ubx.FieldSpec{WireName: "enable_dns_support"},
-		"InstanceTenancy": ubx.FieldSpec{WireName: "instance_tenancy"},
-		"Ipv4IpamPoolId": ubx.FieldSpec{WireName: "ipv4_ipam_pool_id"},
-		"Ipv4NetmaskLength": ubx.FieldSpec{WireName: "ipv4_netmask_length"},
+		"EnableDnsSupport":   ubx.FieldSpec{WireName: "enable_dns_support"},
+		"InstanceTenancy":    ubx.FieldSpec{WireName: "instance_tenancy"},
+		"Ipv4IpamPoolId":     ubx.FieldSpec{WireName: "ipv4_ipam_pool_id"},
+		"Ipv4NetmaskLength":  ubx.FieldSpec{WireName: "ipv4_netmask_length"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Vpc_TagsFields,
+			Kind:     "list",
+			Fields:   Vpc_TagsFields,
 		},
 	},
 }

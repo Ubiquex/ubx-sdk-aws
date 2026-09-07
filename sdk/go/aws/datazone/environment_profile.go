@@ -11,9 +11,9 @@ type EnvironmentProfile_UserParameters struct {
 }
 
 var EnvironmentProfile_UserParametersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EnvironmentProfileConfig struct {
 	// The AWS account in which the Amazon DataZone environment is created.
@@ -70,17 +70,17 @@ type EnvironmentProfileAttrs struct {
 var EnvironmentProfile = ubx.ResourceBinding{
 	WireType: "aws_data_zone_environment_profile",
 	Fields: ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"AwsAccountRegion": ubx.FieldSpec{WireName: "aws_account_region"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
+		"AwsAccountId":                   ubx.FieldSpec{WireName: "aws_account_id"},
+		"AwsAccountRegion":               ubx.FieldSpec{WireName: "aws_account_region"},
+		"Description":                    ubx.FieldSpec{WireName: "description"},
+		"DomainIdentifier":               ubx.FieldSpec{WireName: "domain_identifier"},
 		"EnvironmentBlueprintIdentifier": ubx.FieldSpec{WireName: "environment_blueprint_identifier"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProjectIdentifier": ubx.FieldSpec{WireName: "project_identifier"},
+		"Name":                           ubx.FieldSpec{WireName: "name"},
+		"ProjectIdentifier":              ubx.FieldSpec{WireName: "project_identifier"},
 		"UserParameters": ubx.FieldSpec{
 			WireName: "user_parameters",
-			Kind: "list",
-			Fields: EnvironmentProfile_UserParametersFields,
+			Kind:     "list",
+			Fields:   EnvironmentProfile_UserParametersFields,
 		},
 	},
 }

@@ -18,6 +18,5 @@ type AccountConfigurationAttrs struct {
 
 var AccountConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_medialive_account_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

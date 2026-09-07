@@ -4,34 +4,34 @@ package transcribe
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MedicalVocabularies_Vocabularies struct {
-	LanguageCode any
+	LanguageCode     any
 	LastModifiedTime any
-	VocabularyName any
-	VocabularyState any
+	VocabularyName   any
+	VocabularyState  any
 }
 
 type MedicalVocabulariesConfig struct {
-	MaxResults any
+	MaxResults   any
 	NameContains any
-	NextToken any
-	StateEquals any
+	NextToken    any
+	StateEquals  any
 }
 
 type MedicalVocabulariesAttrs struct {
-	MaxResults any
+	MaxResults   any
 	NameContains any
-	NextToken any
-	StateEquals any
-	Status any
+	NextToken    any
+	StateEquals  any
+	Status       any
 	Vocabularies any
 }
 
 var MedicalVocabularies = ubx.DataSourceBinding{
 	WireType: "aws_transcribe_medical_vocabularies",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
 		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StateEquals": ubx.FieldSpec{WireName: "state_equals"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"StateEquals":  ubx.FieldSpec{WireName: "state_equals"},
 	},
 }

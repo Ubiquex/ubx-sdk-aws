@@ -9,7 +9,7 @@ type AccessKeyInfoConfig struct {
 
 type AccessKeyInfoAttrs struct {
 	AccessKeyId any
-	Account any
+	Account     any
 }
 
 var AccessKeyInfo = ubx.DataSourceBinding{

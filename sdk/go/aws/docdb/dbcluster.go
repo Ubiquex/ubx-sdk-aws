@@ -11,19 +11,19 @@ type Dbcluster_ServerlessV2ScalingConfiguration struct {
 }
 
 type Dbcluster_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Dbcluster_ServerlessV2ScalingConfigurationFields = ubx.FieldMap{
-		"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
-		"MinCapacity": ubx.FieldSpec{WireName: "min_capacity"},
-	}
+	"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
+	"MinCapacity": ubx.FieldSpec{WireName: "min_capacity"},
+}
 
 var Dbcluster_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DbclusterConfig struct {
 	// The list of Availability Zones where the cluster's instances are distributed, enabling multi-AZ deployment for high availability. (AI-inferred)
@@ -162,43 +162,43 @@ type DbclusterAttrs struct {
 var Dbcluster = ubx.ResourceBinding{
 	WireType: "aws_doc_db_dbcluster",
 	Fields: ubx.FieldMap{
-		"AvailabilityZones": ubx.FieldSpec{WireName: "availability_zones"},
-		"BackupRetentionPeriod": ubx.FieldSpec{WireName: "backup_retention_period"},
-		"CopyTagsToSnapshot": ubx.FieldSpec{WireName: "copy_tags_to_snapshot"},
-		"DbclusterIdentifier": ubx.FieldSpec{WireName: "dbcluster_identifier"},
+		"AvailabilityZones":           ubx.FieldSpec{WireName: "availability_zones"},
+		"BackupRetentionPeriod":       ubx.FieldSpec{WireName: "backup_retention_period"},
+		"CopyTagsToSnapshot":          ubx.FieldSpec{WireName: "copy_tags_to_snapshot"},
+		"DbclusterIdentifier":         ubx.FieldSpec{WireName: "dbcluster_identifier"},
 		"DbclusterParameterGroupName": ubx.FieldSpec{WireName: "dbcluster_parameter_group_name"},
-		"DbsubnetGroupName": ubx.FieldSpec{WireName: "dbsubnet_group_name"},
-		"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
+		"DbsubnetGroupName":           ubx.FieldSpec{WireName: "dbsubnet_group_name"},
+		"DeletionProtection":          ubx.FieldSpec{WireName: "deletion_protection"},
 		"EnableCloudwatchLogsExports": ubx.FieldSpec{WireName: "enable_cloudwatch_logs_exports"},
-		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
-		"GlobalClusterIdentifier": ubx.FieldSpec{WireName: "global_cluster_identifier"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"ManageMasterUserPassword": ubx.FieldSpec{WireName: "manage_master_user_password"},
-		"MasterUserPassword": ubx.FieldSpec{WireName: "master_user_password"},
-		"MasterUserSecretKmsKeyId": ubx.FieldSpec{WireName: "master_user_secret_kms_key_id"},
-		"MasterUsername": ubx.FieldSpec{WireName: "master_username"},
-		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"PreferredBackupWindow": ubx.FieldSpec{WireName: "preferred_backup_window"},
-		"PreferredMaintenanceWindow": ubx.FieldSpec{WireName: "preferred_maintenance_window"},
-		"RestoreToTime": ubx.FieldSpec{WireName: "restore_to_time"},
-		"RestoreType": ubx.FieldSpec{WireName: "restore_type"},
-		"RotateMasterUserPassword": ubx.FieldSpec{WireName: "rotate_master_user_password"},
+		"EngineVersion":               ubx.FieldSpec{WireName: "engine_version"},
+		"GlobalClusterIdentifier":     ubx.FieldSpec{WireName: "global_cluster_identifier"},
+		"KmsKeyId":                    ubx.FieldSpec{WireName: "kms_key_id"},
+		"ManageMasterUserPassword":    ubx.FieldSpec{WireName: "manage_master_user_password"},
+		"MasterUserPassword":          ubx.FieldSpec{WireName: "master_user_password"},
+		"MasterUserSecretKmsKeyId":    ubx.FieldSpec{WireName: "master_user_secret_kms_key_id"},
+		"MasterUsername":              ubx.FieldSpec{WireName: "master_username"},
+		"NetworkType":                 ubx.FieldSpec{WireName: "network_type"},
+		"Port":                        ubx.FieldSpec{WireName: "port"},
+		"PreferredBackupWindow":       ubx.FieldSpec{WireName: "preferred_backup_window"},
+		"PreferredMaintenanceWindow":  ubx.FieldSpec{WireName: "preferred_maintenance_window"},
+		"RestoreToTime":               ubx.FieldSpec{WireName: "restore_to_time"},
+		"RestoreType":                 ubx.FieldSpec{WireName: "restore_type"},
+		"RotateMasterUserPassword":    ubx.FieldSpec{WireName: "rotate_master_user_password"},
 		"ServerlessV2ScalingConfiguration": ubx.FieldSpec{
 			WireName: "serverless_v2_scaling_configuration",
-			Kind: "object",
-			Fields: Dbcluster_ServerlessV2ScalingConfigurationFields,
+			Kind:     "object",
+			Fields:   Dbcluster_ServerlessV2ScalingConfigurationFields,
 		},
-		"SnapshotIdentifier": ubx.FieldSpec{WireName: "snapshot_identifier"},
+		"SnapshotIdentifier":        ubx.FieldSpec{WireName: "snapshot_identifier"},
 		"SourceDbclusterIdentifier": ubx.FieldSpec{WireName: "source_dbcluster_identifier"},
-		"StorageEncrypted": ubx.FieldSpec{WireName: "storage_encrypted"},
-		"StorageType": ubx.FieldSpec{WireName: "storage_type"},
+		"StorageEncrypted":          ubx.FieldSpec{WireName: "storage_encrypted"},
+		"StorageType":               ubx.FieldSpec{WireName: "storage_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dbcluster_TagsFields,
+			Kind:     "list",
+			Fields:   Dbcluster_TagsFields,
 		},
 		"UseLatestRestorableTime": ubx.FieldSpec{WireName: "use_latest_restorable_time"},
-		"VpcSecurityGroupIds": ubx.FieldSpec{WireName: "vpc_security_group_ids"},
+		"VpcSecurityGroupIds":     ubx.FieldSpec{WireName: "vpc_security_group_ids"},
 	},
 }

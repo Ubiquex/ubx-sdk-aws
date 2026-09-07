@@ -4,55 +4,55 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Policies_Policies_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Policies_Policies struct {
-	Arn any
-	AttachmentCount any
-	CreateDate any
-	DefaultVersionId any
-	Description any
-	IsAttachable any
-	Path any
+	Arn                           any
+	AttachmentCount               any
+	CreateDate                    any
+	DefaultVersionId              any
+	Description                   any
+	IsAttachable                  any
+	Path                          any
 	PermissionsBoundaryUsageCount any
-	PolicyId any
-	PolicyName any
-	Tags any
-	UpdateDate any
+	PolicyId                      any
+	PolicyName                    any
+	Tags                          any
+	UpdateDate                    any
 }
 
 type PoliciesConfig struct {
-	Marker any
-	MaxItems any
+	Marker       any
+	MaxItems     any
 	OnlyAttached any
-	PathPrefix any
+	PathPrefix   any
 	// <p>The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
 	PolicyUsageFilter any
-	Scope any
+	Scope             any
 }
 
 type PoliciesAttrs struct {
-	IsTruncated any
-	Marker any
-	MaxItems any
+	IsTruncated  any
+	Marker       any
+	MaxItems     any
 	OnlyAttached any
-	PathPrefix any
-	Policies any
+	PathPrefix   any
+	Policies     any
 	// <p>The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
 	PolicyUsageFilter any
-	Scope any
+	Scope             any
 }
 
 var Policies = ubx.DataSourceBinding{
 	WireType: "aws_iam_policies",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"OnlyAttached": ubx.FieldSpec{WireName: "only_attached"},
-		"PathPrefix": ubx.FieldSpec{WireName: "path_prefix"},
+		"Marker":            ubx.FieldSpec{WireName: "marker"},
+		"MaxItems":          ubx.FieldSpec{WireName: "max_items"},
+		"OnlyAttached":      ubx.FieldSpec{WireName: "only_attached"},
+		"PathPrefix":        ubx.FieldSpec{WireName: "path_prefix"},
 		"PolicyUsageFilter": ubx.FieldSpec{WireName: "policy_usage_filter"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Scope":             ubx.FieldSpec{WireName: "scope"},
 	},
 }

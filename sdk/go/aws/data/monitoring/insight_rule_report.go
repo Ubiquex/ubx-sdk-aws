@@ -5,61 +5,61 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InsightRuleReport_Contributors_Datapoints struct {
 	ApproximateValue any
-	Timestamp any
+	Timestamp        any
 }
 
 type InsightRuleReport_Contributors struct {
 	ApproximateAggregateValue any
-	Datapoints any
-	Keys any
+	Datapoints                any
+	Keys                      any
 }
 
 type InsightRuleReport_MetricDatapoints struct {
-	Average any
+	Average             any
 	MaxContributorValue any
-	Maximum any
-	Minimum any
-	SampleCount any
-	Sum any
-	Timestamp any
-	UniqueContributors any
+	Maximum             any
+	Minimum             any
+	SampleCount         any
+	Sum                 any
+	Timestamp           any
+	UniqueContributors  any
 }
 
 type InsightRuleReportConfig struct {
-	EndTime any
+	EndTime             any
 	MaxContributorCount any
-	Metrics any
-	OrderBy any
-	Period any
-	RuleName any
-	StartTime any
+	Metrics             any
+	OrderBy             any
+	Period              any
+	RuleName            any
+	StartTime           any
 }
 
 type InsightRuleReportAttrs struct {
-	AggregateValue any
-	AggregationStatistic any
+	AggregateValue         any
+	AggregationStatistic   any
 	ApproximateUniqueCount any
-	Contributors any
-	EndTime any
-	KeyLabels any
-	MaxContributorCount any
-	MetricDatapoints any
-	Metrics any
-	OrderBy any
-	Period any
-	RuleName any
-	StartTime any
+	Contributors           any
+	EndTime                any
+	KeyLabels              any
+	MaxContributorCount    any
+	MetricDatapoints       any
+	Metrics                any
+	OrderBy                any
+	Period                 any
+	RuleName               any
+	StartTime              any
 }
 
 var InsightRuleReport = ubx.DataSourceBinding{
 	WireType: "aws_monitoring_insight_rule_report",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":             ubx.FieldSpec{WireName: "end_time"},
 		"MaxContributorCount": ubx.FieldSpec{WireName: "max_contributor_count"},
-		"Metrics": ubx.FieldSpec{WireName: "metrics"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"Metrics":             ubx.FieldSpec{WireName: "metrics"},
+		"OrderBy":             ubx.FieldSpec{WireName: "order_by"},
+		"Period":              ubx.FieldSpec{WireName: "period"},
+		"RuleName":            ubx.FieldSpec{WireName: "rule_name"},
+		"StartTime":           ubx.FieldSpec{WireName: "start_time"},
 	},
 }

@@ -4,13 +4,13 @@ package messaging_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MessagingChimeChannelMembershipPreferences_Member struct {
-	Arn any
+	Arn  any
 	Name any
 }
 
 type MessagingChimeChannelMembershipPreferences_Preferences_PushNotifications struct {
 	AllowNotifications any
-	FilterRule any
+	FilterRule         any
 }
 
 type MessagingChimeChannelMembershipPreferences_Preferences struct {
@@ -19,16 +19,16 @@ type MessagingChimeChannelMembershipPreferences_Preferences struct {
 }
 
 type MessagingChimeChannelMembershipPreferencesConfig struct {
-	ChannelArn any
+	ChannelArn  any
 	ChimeBearer any
-	MemberArn any
+	MemberArn   any
 }
 
 type MessagingChimeChannelMembershipPreferencesAttrs struct {
-	ChannelArn any
+	ChannelArn  any
 	ChimeBearer any
 	// <p>The details of a user or bot.</p>
-	Member any
+	Member    any
 	MemberArn any
 	// <p>The channel membership preferences for an <code>AppInstanceUser</code>.</p>
 	Preferences any
@@ -37,8 +37,8 @@ type MessagingChimeChannelMembershipPreferencesAttrs struct {
 var MessagingChimeChannelMembershipPreferences = ubx.DataSourceBinding{
 	WireType: "aws_messaging_chime_channel_membership_preferences",
 	Fields: ubx.FieldMap{
-		"ChannelArn": ubx.FieldSpec{WireName: "channel_arn"},
+		"ChannelArn":  ubx.FieldSpec{WireName: "channel_arn"},
 		"ChimeBearer": ubx.FieldSpec{WireName: "chime_bearer"},
-		"MemberArn": ubx.FieldSpec{WireName: "member_arn"},
+		"MemberArn":   ubx.FieldSpec{WireName: "member_arn"},
 	},
 }

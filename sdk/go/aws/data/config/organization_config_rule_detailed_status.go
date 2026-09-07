@@ -4,39 +4,39 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationConfigRuleDetailedStatus_Filters struct {
-	AccountId any
+	AccountId               any
 	MemberAccountRuleStatus any
 }
 
 type OrganizationConfigRuleDetailedStatus_OrganizationConfigRuleDetailedStatus struct {
-	AccountId any
-	ConfigRuleName any
-	ErrorCode any
-	ErrorMessage any
-	LastUpdateTime any
+	AccountId               any
+	ConfigRuleName          any
+	ErrorCode               any
+	ErrorMessage            any
+	LastUpdateTime          any
 	MemberAccountRuleStatus any
 }
 
 var OrganizationConfigRuleDetailedStatus_FiltersFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"MemberAccountRuleStatus": ubx.FieldSpec{WireName: "member_account_rule_status"},
-	}
+	"AccountId":               ubx.FieldSpec{WireName: "account_id"},
+	"MemberAccountRuleStatus": ubx.FieldSpec{WireName: "member_account_rule_status"},
+}
 
 type OrganizationConfigRuleDetailedStatusConfig struct {
 	// <p>Status filter object to filter results based on specific member account ID or status type for an organization Config rule. </p>
-	Filters any
-	Limit any
-	NextToken any
+	Filters                    any
+	Limit                      any
+	NextToken                  any
 	OrganizationConfigRuleName any
 }
 
 type OrganizationConfigRuleDetailedStatusAttrs struct {
 	// <p>Status filter object to filter results based on specific member account ID or status type for an organization Config rule. </p>
-	Filters any
-	Limit any
-	NextToken any
+	Filters                              any
+	Limit                                any
+	NextToken                            any
 	OrganizationConfigRuleDetailedStatus any
-	OrganizationConfigRuleName any
+	OrganizationConfigRuleName           any
 }
 
 var OrganizationConfigRuleDetailedStatus = ubx.DataSourceBinding{
@@ -44,11 +44,11 @@ var OrganizationConfigRuleDetailedStatus = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: OrganizationConfigRuleDetailedStatus_FiltersFields,
+			Kind:     "object",
+			Fields:   OrganizationConfigRuleDetailedStatus_FiltersFields,
 		},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":                      ubx.FieldSpec{WireName: "limit"},
+		"NextToken":                  ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationConfigRuleName": ubx.FieldSpec{WireName: "organization_config_rule_name"},
 	},
 }

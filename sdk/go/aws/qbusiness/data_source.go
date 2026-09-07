@@ -34,7 +34,7 @@ type DataSource_DocumentEnrichmentConfiguration_InlineConfigurations_Target stru
 
 type DataSource_DocumentEnrichmentConfiguration_InlineConfigurations struct {
 	// Defines the document attribute condition (key, operator, and value) that a document must meet for the associated enrichment action to be applied. (AI-inferred)
-	Condition any
+	Condition               any
 	DocumentContentOperator any
 	// Specifies the document attribute that the inline enrichment operation modifies, including the attribute name, the action (such as ADD, DELETE, or REPLACE), and the value to apply. (AI-inferred)
 	Target any
@@ -86,7 +86,7 @@ type DataSource_MediaExtractionConfiguration struct {
 
 type DataSource_Tags struct {
 	// The key of a key-value tag assigned to the AWS QBusiness data source, used for resource organization and metadata. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -98,114 +98,114 @@ type DataSource_VpcConfiguration struct {
 }
 
 var DataSource_DocumentEnrichmentConfiguration_InlineConfigurations_Condition_ValueFields = ubx.FieldMap{
-		"DateValue": ubx.FieldSpec{WireName: "date_value"},
-		"LongValue": ubx.FieldSpec{WireName: "long_value"},
-		"StringListValue": ubx.FieldSpec{WireName: "string_list_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"DateValue":       ubx.FieldSpec{WireName: "date_value"},
+	"LongValue":       ubx.FieldSpec{WireName: "long_value"},
+	"StringListValue": ubx.FieldSpec{WireName: "string_list_value"},
+	"StringValue":     ubx.FieldSpec{WireName: "string_value"},
+}
 
 var DataSource_DocumentEnrichmentConfiguration_InlineConfigurations_ConditionFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: DataSource_DocumentEnrichmentConfiguration_InlineConfigurations_Condition_ValueFields,
-		},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   DataSource_DocumentEnrichmentConfiguration_InlineConfigurations_Condition_ValueFields,
+	},
+}
 
 var DataSource_DocumentEnrichmentConfiguration_InlineConfigurations_TargetFields = ubx.FieldMap{
-		"AttributeValueOperator": ubx.FieldSpec{WireName: "attribute_value_operator"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: DataSource_DocumentEnrichmentConfiguration_InlineConfigurations_Condition_ValueFields,
-		},
-	}
+	"AttributeValueOperator": ubx.FieldSpec{WireName: "attribute_value_operator"},
+	"Key":                    ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   DataSource_DocumentEnrichmentConfiguration_InlineConfigurations_Condition_ValueFields,
+	},
+}
 
 var DataSource_DocumentEnrichmentConfiguration_InlineConfigurationsFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: DataSource_DocumentEnrichmentConfiguration_InlineConfigurations_ConditionFields,
-		},
-		"DocumentContentOperator": ubx.FieldSpec{WireName: "document_content_operator"},
-		"Target": ubx.FieldSpec{
-			WireName: "target",
-			Kind: "object",
-			Fields: DataSource_DocumentEnrichmentConfiguration_InlineConfigurations_TargetFields,
-		},
-	}
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   DataSource_DocumentEnrichmentConfiguration_InlineConfigurations_ConditionFields,
+	},
+	"DocumentContentOperator": ubx.FieldSpec{WireName: "document_content_operator"},
+	"Target": ubx.FieldSpec{
+		WireName: "target",
+		Kind:     "object",
+		Fields:   DataSource_DocumentEnrichmentConfiguration_InlineConfigurations_TargetFields,
+	},
+}
 
 var DataSource_DocumentEnrichmentConfiguration_PostExtractionHookConfigurationFields = ubx.FieldMap{
-		"InvocationCondition": ubx.FieldSpec{
-			WireName: "invocation_condition",
-			Kind: "object",
-			Fields: DataSource_DocumentEnrichmentConfiguration_InlineConfigurations_ConditionFields,
-		},
-		"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
-	}
+	"InvocationCondition": ubx.FieldSpec{
+		WireName: "invocation_condition",
+		Kind:     "object",
+		Fields:   DataSource_DocumentEnrichmentConfiguration_InlineConfigurations_ConditionFields,
+	},
+	"LambdaArn":    ubx.FieldSpec{WireName: "lambda_arn"},
+	"RoleArn":      ubx.FieldSpec{WireName: "role_arn"},
+	"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
+}
 
 var DataSource_DocumentEnrichmentConfigurationFields = ubx.FieldMap{
-		"InlineConfigurations": ubx.FieldSpec{
-			WireName: "inline_configurations",
-			Kind: "list",
-			Fields: DataSource_DocumentEnrichmentConfiguration_InlineConfigurationsFields,
-		},
-		"PostExtractionHookConfiguration": ubx.FieldSpec{
-			WireName: "post_extraction_hook_configuration",
-			Kind: "object",
-			Fields: DataSource_DocumentEnrichmentConfiguration_PostExtractionHookConfigurationFields,
-		},
-		"PreExtractionHookConfiguration": ubx.FieldSpec{
-			WireName: "pre_extraction_hook_configuration",
-			Kind: "object",
-			Fields: DataSource_DocumentEnrichmentConfiguration_PostExtractionHookConfigurationFields,
-		},
-	}
+	"InlineConfigurations": ubx.FieldSpec{
+		WireName: "inline_configurations",
+		Kind:     "list",
+		Fields:   DataSource_DocumentEnrichmentConfiguration_InlineConfigurationsFields,
+	},
+	"PostExtractionHookConfiguration": ubx.FieldSpec{
+		WireName: "post_extraction_hook_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DocumentEnrichmentConfiguration_PostExtractionHookConfigurationFields,
+	},
+	"PreExtractionHookConfiguration": ubx.FieldSpec{
+		WireName: "pre_extraction_hook_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DocumentEnrichmentConfiguration_PostExtractionHookConfigurationFields,
+	},
+}
 
 var DataSource_MediaExtractionConfiguration_AudioExtractionConfigurationFields = ubx.FieldMap{
-		"AudioExtractionStatus": ubx.FieldSpec{WireName: "audio_extraction_status"},
-	}
+	"AudioExtractionStatus": ubx.FieldSpec{WireName: "audio_extraction_status"},
+}
 
 var DataSource_MediaExtractionConfiguration_ImageExtractionConfigurationFields = ubx.FieldMap{
-		"ImageExtractionStatus": ubx.FieldSpec{WireName: "image_extraction_status"},
-	}
+	"ImageExtractionStatus": ubx.FieldSpec{WireName: "image_extraction_status"},
+}
 
 var DataSource_MediaExtractionConfiguration_VideoExtractionConfigurationFields = ubx.FieldMap{
-		"VideoExtractionStatus": ubx.FieldSpec{WireName: "video_extraction_status"},
-	}
+	"VideoExtractionStatus": ubx.FieldSpec{WireName: "video_extraction_status"},
+}
 
 var DataSource_MediaExtractionConfigurationFields = ubx.FieldMap{
-		"AudioExtractionConfiguration": ubx.FieldSpec{
-			WireName: "audio_extraction_configuration",
-			Kind: "object",
-			Fields: DataSource_MediaExtractionConfiguration_AudioExtractionConfigurationFields,
-		},
-		"ImageExtractionConfiguration": ubx.FieldSpec{
-			WireName: "image_extraction_configuration",
-			Kind: "object",
-			Fields: DataSource_MediaExtractionConfiguration_ImageExtractionConfigurationFields,
-		},
-		"VideoExtractionConfiguration": ubx.FieldSpec{
-			WireName: "video_extraction_configuration",
-			Kind: "object",
-			Fields: DataSource_MediaExtractionConfiguration_VideoExtractionConfigurationFields,
-		},
-	}
+	"AudioExtractionConfiguration": ubx.FieldSpec{
+		WireName: "audio_extraction_configuration",
+		Kind:     "object",
+		Fields:   DataSource_MediaExtractionConfiguration_AudioExtractionConfigurationFields,
+	},
+	"ImageExtractionConfiguration": ubx.FieldSpec{
+		WireName: "image_extraction_configuration",
+		Kind:     "object",
+		Fields:   DataSource_MediaExtractionConfiguration_ImageExtractionConfigurationFields,
+	},
+	"VideoExtractionConfiguration": ubx.FieldSpec{
+		WireName: "video_extraction_configuration",
+		Kind:     "object",
+		Fields:   DataSource_MediaExtractionConfiguration_VideoExtractionConfigurationFields,
+	},
+}
 
 var DataSource_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var DataSource_VpcConfigurationFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 type DataSourceConfig struct {
 	// The unique identifier of the Amazon Q Business application to which this data source belongs. (AI-inferred)
@@ -274,30 +274,30 @@ var DataSource = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
 		"Configuration": ubx.FieldSpec{WireName: "configuration"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
 		"DocumentEnrichmentConfiguration": ubx.FieldSpec{
 			WireName: "document_enrichment_configuration",
-			Kind: "object",
-			Fields: DataSource_DocumentEnrichmentConfigurationFields,
+			Kind:     "object",
+			Fields:   DataSource_DocumentEnrichmentConfigurationFields,
 		},
 		"IndexId": ubx.FieldSpec{WireName: "index_id"},
 		"MediaExtractionConfiguration": ubx.FieldSpec{
 			WireName: "media_extraction_configuration",
-			Kind: "object",
-			Fields: DataSource_MediaExtractionConfigurationFields,
+			Kind:     "object",
+			Fields:   DataSource_MediaExtractionConfigurationFields,
 		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":      ubx.FieldSpec{WireName: "role_arn"},
 		"SyncSchedule": ubx.FieldSpec{WireName: "sync_schedule"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataSource_TagsFields,
+			Kind:     "list",
+			Fields:   DataSource_TagsFields,
 		},
 		"VpcConfiguration": ubx.FieldSpec{
 			WireName: "vpc_configuration",
-			Kind: "object",
-			Fields: DataSource_VpcConfigurationFields,
+			Kind:     "object",
+			Fields:   DataSource_VpcConfigurationFields,
 		},
 	},
 }

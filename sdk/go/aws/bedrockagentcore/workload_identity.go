@@ -4,14 +4,14 @@ package bedrockagentcore
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkloadIdentity_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var WorkloadIdentity_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type WorkloadIdentityConfig struct {
 	// The list of allowed OAuth2 return URLs for resources associated with this workload identity.
@@ -41,11 +41,11 @@ var WorkloadIdentity = ubx.ResourceBinding{
 	WireType: "aws_bedrock_agent_core_workload_identity",
 	Fields: ubx.FieldMap{
 		"AllowedResourceOauth2ReturnUrls": ubx.FieldSpec{WireName: "allowed_resource_oauth2_return_urls"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                            ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: WorkloadIdentity_TagsFields,
+			Kind:     "list",
+			Fields:   WorkloadIdentity_TagsFields,
 		},
 	},
 }

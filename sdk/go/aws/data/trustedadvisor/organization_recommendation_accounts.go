@@ -4,37 +4,37 @@ package trustedadvisor
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationRecommendationAccounts_AccountRecommendationLifecycleSummaries struct {
-	AccountId any
-	AccountRecommendationArn any
-	LastUpdatedAt any
-	LifecycleStage any
-	UpdateReason any
-	UpdateReasonCode any
-	UpdatedOnBehalfOf any
+	AccountId                 any
+	AccountRecommendationArn  any
+	LastUpdatedAt             any
+	LifecycleStage            any
+	UpdateReason              any
+	UpdateReasonCode          any
+	UpdatedOnBehalfOf         any
 	UpdatedOnBehalfOfJobTitle any
 }
 
 type OrganizationRecommendationAccountsConfig struct {
-	AffectedAccountId any
-	MaxResults any
-	NextToken any
+	AffectedAccountId                    any
+	MaxResults                           any
+	NextToken                            any
 	OrganizationRecommendationIdentifier any
 }
 
 type OrganizationRecommendationAccountsAttrs struct {
 	AccountRecommendationLifecycleSummaries any
-	AffectedAccountId any
-	MaxResults any
-	NextToken any
-	OrganizationRecommendationIdentifier any
+	AffectedAccountId                       any
+	MaxResults                              any
+	NextToken                               any
+	OrganizationRecommendationIdentifier    any
 }
 
 var OrganizationRecommendationAccounts = ubx.DataSourceBinding{
 	WireType: "aws_trustedadvisor_organization_recommendation_accounts",
 	Fields: ubx.FieldMap{
-		"AffectedAccountId": ubx.FieldSpec{WireName: "affected_account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"AffectedAccountId":                    ubx.FieldSpec{WireName: "affected_account_id"},
+		"MaxResults":                           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                            ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationRecommendationIdentifier": ubx.FieldSpec{WireName: "organization_recommendation_identifier"},
 	},
 }

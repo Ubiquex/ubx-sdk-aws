@@ -4,14 +4,14 @@ package amplify
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Webhook_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Webhook_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type WebhookConfig struct {
 	// The unique ID for an Amplify app.
@@ -44,13 +44,13 @@ type WebhookAttrs struct {
 var Webhook = ubx.ResourceBinding{
 	WireType: "aws_amplify_webhook",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"BranchName": ubx.FieldSpec{WireName: "branch_name"},
+		"AppId":       ubx.FieldSpec{WireName: "app_id"},
+		"BranchName":  ubx.FieldSpec{WireName: "branch_name"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Webhook_TagsFields,
+			Kind:     "list",
+			Fields:   Webhook_TagsFields,
 		},
 	},
 }

@@ -51,40 +51,40 @@ type Site_RackPhysicalProperties struct {
 
 type Site_Tags struct {
 	// The tag key (for example, 'Environment') for a tag attached to this AWS Outposts site. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Site_OperatingAddressFields = ubx.FieldMap{
-		"AddressLine1": ubx.FieldSpec{WireName: "address_line1"},
-		"AddressLine2": ubx.FieldSpec{WireName: "address_line2"},
-		"AddressLine3": ubx.FieldSpec{WireName: "address_line3"},
-		"City": ubx.FieldSpec{WireName: "city"},
-		"ContactName": ubx.FieldSpec{WireName: "contact_name"},
-		"ContactPhoneNumber": ubx.FieldSpec{WireName: "contact_phone_number"},
-		"CountryCode": ubx.FieldSpec{WireName: "country_code"},
-		"DistrictOrCounty": ubx.FieldSpec{WireName: "district_or_county"},
-		"Municipality": ubx.FieldSpec{WireName: "municipality"},
-		"PostalCode": ubx.FieldSpec{WireName: "postal_code"},
-		"StateOrRegion": ubx.FieldSpec{WireName: "state_or_region"},
-	}
+	"AddressLine1":       ubx.FieldSpec{WireName: "address_line1"},
+	"AddressLine2":       ubx.FieldSpec{WireName: "address_line2"},
+	"AddressLine3":       ubx.FieldSpec{WireName: "address_line3"},
+	"City":               ubx.FieldSpec{WireName: "city"},
+	"ContactName":        ubx.FieldSpec{WireName: "contact_name"},
+	"ContactPhoneNumber": ubx.FieldSpec{WireName: "contact_phone_number"},
+	"CountryCode":        ubx.FieldSpec{WireName: "country_code"},
+	"DistrictOrCounty":   ubx.FieldSpec{WireName: "district_or_county"},
+	"Municipality":       ubx.FieldSpec{WireName: "municipality"},
+	"PostalCode":         ubx.FieldSpec{WireName: "postal_code"},
+	"StateOrRegion":      ubx.FieldSpec{WireName: "state_or_region"},
+}
 
 var Site_RackPhysicalPropertiesFields = ubx.FieldMap{
-		"FiberOpticCableType": ubx.FieldSpec{WireName: "fiber_optic_cable_type"},
-		"MaximumSupportedWeightLbs": ubx.FieldSpec{WireName: "maximum_supported_weight_lbs"},
-		"OpticalStandard": ubx.FieldSpec{WireName: "optical_standard"},
-		"PowerConnector": ubx.FieldSpec{WireName: "power_connector"},
-		"PowerDrawKva": ubx.FieldSpec{WireName: "power_draw_kva"},
-		"PowerFeedDrop": ubx.FieldSpec{WireName: "power_feed_drop"},
-		"PowerPhase": ubx.FieldSpec{WireName: "power_phase"},
-		"UplinkCount": ubx.FieldSpec{WireName: "uplink_count"},
-		"UplinkGbps": ubx.FieldSpec{WireName: "uplink_gbps"},
-	}
+	"FiberOpticCableType":       ubx.FieldSpec{WireName: "fiber_optic_cable_type"},
+	"MaximumSupportedWeightLbs": ubx.FieldSpec{WireName: "maximum_supported_weight_lbs"},
+	"OpticalStandard":           ubx.FieldSpec{WireName: "optical_standard"},
+	"PowerConnector":            ubx.FieldSpec{WireName: "power_connector"},
+	"PowerDrawKva":              ubx.FieldSpec{WireName: "power_draw_kva"},
+	"PowerFeedDrop":             ubx.FieldSpec{WireName: "power_feed_drop"},
+	"PowerPhase":                ubx.FieldSpec{WireName: "power_phase"},
+	"UplinkCount":               ubx.FieldSpec{WireName: "uplink_count"},
+	"UplinkGbps":                ubx.FieldSpec{WireName: "uplink_gbps"},
+}
 
 var Site_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SiteConfig struct {
 	// The description of the Outposts site, an optional string that provides additional context or identifying information about the site. (AI-inferred)
@@ -128,27 +128,27 @@ var Site = ubx.ResourceBinding{
 	WireType: "aws_outposts_site",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Notes": ubx.FieldSpec{WireName: "notes"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Notes":       ubx.FieldSpec{WireName: "notes"},
 		"OperatingAddress": ubx.FieldSpec{
 			WireName: "operating_address",
-			Kind: "object",
-			Fields: Site_OperatingAddressFields,
+			Kind:     "object",
+			Fields:   Site_OperatingAddressFields,
 		},
 		"RackPhysicalProperties": ubx.FieldSpec{
 			WireName: "rack_physical_properties",
-			Kind: "object",
-			Fields: Site_RackPhysicalPropertiesFields,
+			Kind:     "object",
+			Fields:   Site_RackPhysicalPropertiesFields,
 		},
 		"ShippingAddress": ubx.FieldSpec{
 			WireName: "shipping_address",
-			Kind: "object",
-			Fields: Site_OperatingAddressFields,
+			Kind:     "object",
+			Fields:   Site_OperatingAddressFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Site_TagsFields,
+			Kind:     "list",
+			Fields:   Site_TagsFields,
 		},
 	},
 }

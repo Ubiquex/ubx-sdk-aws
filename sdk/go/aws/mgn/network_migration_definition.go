@@ -8,18 +8,18 @@ type NetworkMigrationDefinition_SourceConfigurations_SourceS3Configuration struc
 	S3Bucket any
 	// Specifies the AWS account ID of the owner of the S3 bucket referenced in the source configuration, enabling MGN to access buckets across accounts for network migration data. (AI-inferred)
 	S3BucketOwner any
-	S3Key any
+	S3Key         any
 }
 
 type NetworkMigrationDefinition_SourceConfigurations struct {
 	// Specifies the environment of the source network (typically 'ON_PREMISES' or 'AWS') for each source configuration in the network migration definition. (AI-inferred)
-	SourceEnvironment any
+	SourceEnvironment     any
 	SourceS3Configuration any
 }
 
 type NetworkMigrationDefinition_Tags struct {
 	// The key portion of a tag attached to the network migration definition, used to label the resource for filtering, cost tracking, and operational management. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -42,36 +42,36 @@ type NetworkMigrationDefinition_TargetS3Configuration struct {
 }
 
 var NetworkMigrationDefinition_SourceConfigurations_SourceS3ConfigurationFields = ubx.FieldMap{
-		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
-		"S3BucketOwner": ubx.FieldSpec{WireName: "s3_bucket_owner"},
-		"S3Key": ubx.FieldSpec{WireName: "s3_key"},
-	}
+	"S3Bucket":      ubx.FieldSpec{WireName: "s3_bucket"},
+	"S3BucketOwner": ubx.FieldSpec{WireName: "s3_bucket_owner"},
+	"S3Key":         ubx.FieldSpec{WireName: "s3_key"},
+}
 
 var NetworkMigrationDefinition_SourceConfigurationsFields = ubx.FieldMap{
-		"SourceEnvironment": ubx.FieldSpec{WireName: "source_environment"},
-		"SourceS3Configuration": ubx.FieldSpec{
-			WireName: "source_s3_configuration",
-			Kind: "object",
-			Fields: NetworkMigrationDefinition_SourceConfigurations_SourceS3ConfigurationFields,
-		},
-	}
+	"SourceEnvironment": ubx.FieldSpec{WireName: "source_environment"},
+	"SourceS3Configuration": ubx.FieldSpec{
+		WireName: "source_s3_configuration",
+		Kind:     "object",
+		Fields:   NetworkMigrationDefinition_SourceConfigurations_SourceS3ConfigurationFields,
+	},
+}
 
 var NetworkMigrationDefinition_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var NetworkMigrationDefinition_TargetNetworkFields = ubx.FieldMap{
-		"InboundCidr": ubx.FieldSpec{WireName: "inbound_cidr"},
-		"InspectionCidr": ubx.FieldSpec{WireName: "inspection_cidr"},
-		"OutboundCidr": ubx.FieldSpec{WireName: "outbound_cidr"},
-		"Topology": ubx.FieldSpec{WireName: "topology"},
-	}
+	"InboundCidr":    ubx.FieldSpec{WireName: "inbound_cidr"},
+	"InspectionCidr": ubx.FieldSpec{WireName: "inspection_cidr"},
+	"OutboundCidr":   ubx.FieldSpec{WireName: "outbound_cidr"},
+	"Topology":       ubx.FieldSpec{WireName: "topology"},
+}
 
 var NetworkMigrationDefinition_TargetS3ConfigurationFields = ubx.FieldMap{
-		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
-		"S3BucketOwner": ubx.FieldSpec{WireName: "s3_bucket_owner"},
-	}
+	"S3Bucket":      ubx.FieldSpec{WireName: "s3_bucket"},
+	"S3BucketOwner": ubx.FieldSpec{WireName: "s3_bucket_owner"},
+}
 
 type NetworkMigrationDefinitionConfig struct {
 	// A description of the network migration definition.
@@ -123,28 +123,28 @@ var NetworkMigrationDefinition = ubx.ResourceBinding{
 	WireType: "aws_mgn_network_migration_definition",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ScopeTags": ubx.FieldSpec{WireName: "scope_tags"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"ScopeTags":   ubx.FieldSpec{WireName: "scope_tags"},
 		"SourceConfigurations": ubx.FieldSpec{
 			WireName: "source_configurations",
-			Kind: "list",
-			Fields: NetworkMigrationDefinition_SourceConfigurationsFields,
+			Kind:     "list",
+			Fields:   NetworkMigrationDefinition_SourceConfigurationsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: NetworkMigrationDefinition_TagsFields,
+			Kind:     "list",
+			Fields:   NetworkMigrationDefinition_TagsFields,
 		},
 		"TargetDeployment": ubx.FieldSpec{WireName: "target_deployment"},
 		"TargetNetwork": ubx.FieldSpec{
 			WireName: "target_network",
-			Kind: "object",
-			Fields: NetworkMigrationDefinition_TargetNetworkFields,
+			Kind:     "object",
+			Fields:   NetworkMigrationDefinition_TargetNetworkFields,
 		},
 		"TargetS3Configuration": ubx.FieldSpec{
 			WireName: "target_s3_configuration",
-			Kind: "object",
-			Fields: NetworkMigrationDefinition_TargetS3ConfigurationFields,
+			Kind:     "object",
+			Fields:   NetworkMigrationDefinition_TargetS3ConfigurationFields,
 		},
 	},
 }

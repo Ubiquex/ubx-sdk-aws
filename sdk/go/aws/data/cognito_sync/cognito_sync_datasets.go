@@ -4,37 +4,37 @@ package cognito_sync
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoSyncDatasets_Datasets struct {
-	CreationDate any
-	DataStorage any
-	DatasetName any
-	IdentityId any
-	LastModifiedBy any
+	CreationDate     any
+	DataStorage      any
+	DatasetName      any
+	IdentityId       any
+	LastModifiedBy   any
 	LastModifiedDate any
-	NumRecords any
+	NumRecords       any
 }
 
 type CognitoSyncDatasetsConfig struct {
-	IdentityId any
+	IdentityId     any
 	IdentityPoolId any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 type CognitoSyncDatasetsAttrs struct {
-	Count any
-	Datasets any
-	IdentityId any
+	Count          any
+	Datasets       any
+	IdentityId     any
 	IdentityPoolId any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 var CognitoSyncDatasets = ubx.DataSourceBinding{
 	WireType: "aws_cognito_sync_datasets",
 	Fields: ubx.FieldMap{
-		"IdentityId": ubx.FieldSpec{WireName: "identity_id"},
+		"IdentityId":     ubx.FieldSpec{WireName: "identity_id"},
 		"IdentityPoolId": ubx.FieldSpec{WireName: "identity_pool_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 	},
 }

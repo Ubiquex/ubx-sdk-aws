@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Contacts_Contacts_TopicDefaultPreferences struct {
 	SubscriptionStatus any
-	TopicName any
+	TopicName          any
 }
 
 type Contacts_Contacts struct {
-	EmailAddress any
-	LastUpdatedTimestamp any
+	EmailAddress            any
+	LastUpdatedTimestamp    any
 	TopicDefaultPreferences any
-	TopicPreferences any
-	UnsubscribeAll any
+	TopicPreferences        any
+	UnsubscribeAll          any
 }
 
 type Contacts_Filter_TopicFilter struct {
-	TopicName any
+	TopicName                         any
 	UseDefaultIfPreferenceUnavailable any
 }
 
@@ -28,34 +28,34 @@ type Contacts_Filter struct {
 }
 
 var Contacts_Filter_TopicFilterFields = ubx.FieldMap{
-		"TopicName": ubx.FieldSpec{WireName: "topic_name"},
-		"UseDefaultIfPreferenceUnavailable": ubx.FieldSpec{WireName: "use_default_if_preference_unavailable"},
-	}
+	"TopicName":                         ubx.FieldSpec{WireName: "topic_name"},
+	"UseDefaultIfPreferenceUnavailable": ubx.FieldSpec{WireName: "use_default_if_preference_unavailable"},
+}
 
 var Contacts_FilterFields = ubx.FieldMap{
-		"FilteredStatus": ubx.FieldSpec{WireName: "filtered_status"},
-		"TopicFilter": ubx.FieldSpec{
-			WireName: "topic_filter",
-			Kind: "object",
-			Fields: Contacts_Filter_TopicFilterFields,
-		},
-	}
+	"FilteredStatus": ubx.FieldSpec{WireName: "filtered_status"},
+	"TopicFilter": ubx.FieldSpec{
+		WireName: "topic_filter",
+		Kind:     "object",
+		Fields:   Contacts_Filter_TopicFilterFields,
+	},
+}
 
 type ContactsConfig struct {
 	ContactListName any
 	// <p>A filter that can be applied to a list of contacts.</p>
-	Filter any
+	Filter    any
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 type ContactsAttrs struct {
 	ContactListName any
-	Contacts any
+	Contacts        any
 	// <p>A filter that can be applied to a list of contacts.</p>
-	Filter any
+	Filter    any
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 var Contacts = ubx.DataSourceBinding{
@@ -64,10 +64,10 @@ var Contacts = ubx.DataSourceBinding{
 		"ContactListName": ubx.FieldSpec{WireName: "contact_list_name"},
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: Contacts_FilterFields,
+			Kind:     "object",
+			Fields:   Contacts_FilterFields,
 		},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 	},
 }

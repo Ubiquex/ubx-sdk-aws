@@ -8,7 +8,7 @@ type StackPolicyConfig struct {
 }
 
 type StackPolicyAttrs struct {
-	StackName any
+	StackName       any
 	StackPolicyBody any
 }
 

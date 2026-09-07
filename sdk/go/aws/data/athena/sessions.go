@@ -5,47 +5,47 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Sessions_Sessions_EngineVersion struct {
 	EffectiveEngineVersion any
-	SelectedEngineVersion any
+	SelectedEngineVersion  any
 }
 
 type Sessions_Sessions_Status struct {
-	EndDateTime any
-	IdleSinceDateTime any
+	EndDateTime          any
+	IdleSinceDateTime    any
 	LastModifiedDateTime any
-	StartDateTime any
-	State any
-	StateChangeReason any
+	StartDateTime        any
+	State                any
+	StateChangeReason    any
 }
 
 type Sessions_Sessions struct {
-	Description any
-	EngineVersion any
+	Description     any
+	EngineVersion   any
 	NotebookVersion any
-	SessionId any
-	Status any
+	SessionId       any
+	Status          any
 }
 
 type SessionsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	StateFilter any
-	WorkGroup any
+	WorkGroup   any
 }
 
 type SessionsAttrs struct {
-	MaxResults any
-	NextToken any
-	Sessions any
+	MaxResults  any
+	NextToken   any
+	Sessions    any
 	StateFilter any
-	WorkGroup any
+	WorkGroup   any
 }
 
 var Sessions = ubx.DataSourceBinding{
 	WireType: "aws_athena_sessions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"StateFilter": ubx.FieldSpec{WireName: "state_filter"},
-		"WorkGroup": ubx.FieldSpec{WireName: "work_group"},
+		"WorkGroup":   ubx.FieldSpec{WireName: "work_group"},
 	},
 }

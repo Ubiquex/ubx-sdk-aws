@@ -10,13 +10,13 @@ type SnapshotBlockConfig struct {
 }
 
 type SnapshotBlockAttrs struct {
-	BlockData any
-	BlockIndex any
-	BlockToken any
-	Checksum any
+	BlockData         any
+	BlockIndex        any
+	BlockToken        any
+	Checksum          any
 	ChecksumAlgorithm any
-	DataLength any
-	SnapshotId any
+	DataLength        any
+	SnapshotId        any
 }
 
 var SnapshotBlock = ubx.DataSourceBinding{

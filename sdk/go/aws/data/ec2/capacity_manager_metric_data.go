@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CapacityManagerMetricData_FilterBy_DimensionCondition struct {
 	Comparison any
-	Dimension any
-	Values any
+	Dimension  any
+	Values     any
 }
 
 type CapacityManagerMetricData_FilterBy struct {
@@ -14,97 +14,97 @@ type CapacityManagerMetricData_FilterBy struct {
 }
 
 type CapacityManagerMetricData_MetricDataResults_Dimension_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type CapacityManagerMetricData_MetricDataResults_Dimension struct {
-	AccountId any
-	AccountName any
-	AvailabilityZoneId any
-	InstanceFamily any
-	InstancePlatform any
-	InstanceType any
-	ReservationArn any
-	ReservationCreateTimestamp any
-	ReservationEndDateType any
-	ReservationEndTimestamp any
-	ReservationId any
+	AccountId                        any
+	AccountName                      any
+	AvailabilityZoneId               any
+	InstanceFamily                   any
+	InstancePlatform                 any
+	InstanceType                     any
+	ReservationArn                   any
+	ReservationCreateTimestamp       any
+	ReservationEndDateType           any
+	ReservationEndTimestamp          any
+	ReservationId                    any
 	ReservationInstanceMatchCriteria any
-	ReservationStartTimestamp any
-	ReservationState any
-	ReservationType any
-	ReservationUnusedFinancialOwner any
-	ResourceRegion any
-	Tags any
-	Tenancy any
+	ReservationStartTimestamp        any
+	ReservationState                 any
+	ReservationType                  any
+	ReservationUnusedFinancialOwner  any
+	ResourceRegion                   any
+	Tags                             any
+	Tenancy                          any
 }
 
 type CapacityManagerMetricData_MetricDataResults_MetricValues struct {
 	Metric any
-	Value any
+	Value  any
 }
 
 type CapacityManagerMetricData_MetricDataResults struct {
-	Dimension any
+	Dimension    any
 	MetricValues any
-	Timestamp any
+	Timestamp    any
 }
 
 var CapacityManagerMetricData_FilterBy_DimensionConditionFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Dimension": ubx.FieldSpec{WireName: "dimension"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Dimension":  ubx.FieldSpec{WireName: "dimension"},
+	"Values":     ubx.FieldSpec{WireName: "values"},
+}
 
 var CapacityManagerMetricData_FilterByFields = ubx.FieldMap{
-		"DimensionCondition": ubx.FieldSpec{
-			WireName: "dimension_condition",
-			Kind: "object",
-			Fields: CapacityManagerMetricData_FilterBy_DimensionConditionFields,
-		},
-	}
+	"DimensionCondition": ubx.FieldSpec{
+		WireName: "dimension_condition",
+		Kind:     "object",
+		Fields:   CapacityManagerMetricData_FilterBy_DimensionConditionFields,
+	},
+}
 
 type CapacityManagerMetricDataConfig struct {
-	DryRun any
-	EndTime any
-	FilterBy any
-	GroupBy any
-	MaxResults any
+	DryRun      any
+	EndTime     any
+	FilterBy    any
+	GroupBy     any
+	MaxResults  any
 	MetricNames any
-	NextToken any
-	Period any
-	StartTime any
+	NextToken   any
+	Period      any
+	StartTime   any
 }
 
 type CapacityManagerMetricDataAttrs struct {
-	DryRun any
-	EndTime any
-	FilterBy any
-	GroupBy any
-	MaxResults any
+	DryRun            any
+	EndTime           any
+	FilterBy          any
+	GroupBy           any
+	MaxResults        any
 	MetricDataResults any
-	MetricNames any
-	NextToken any
-	Period any
-	StartTime any
+	MetricNames       any
+	NextToken         any
+	Period            any
+	StartTime         any
 }
 
 var CapacityManagerMetricData = ubx.DataSourceBinding{
 	WireType: "aws_ec2_capacity_manager_metric_data",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":  ubx.FieldSpec{WireName: "dry_run"},
 		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"FilterBy": ubx.FieldSpec{
 			WireName: "filter_by",
-			Kind: "list",
-			Fields: CapacityManagerMetricData_FilterByFields,
+			Kind:     "list",
+			Fields:   CapacityManagerMetricData_FilterByFields,
 		},
-		"GroupBy": ubx.FieldSpec{WireName: "group_by"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"GroupBy":     ubx.FieldSpec{WireName: "group_by"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
 		"MetricNames": ubx.FieldSpec{WireName: "metric_names"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"Period":      ubx.FieldSpec{WireName: "period"},
+		"StartTime":   ubx.FieldSpec{WireName: "start_time"},
 	},
 }

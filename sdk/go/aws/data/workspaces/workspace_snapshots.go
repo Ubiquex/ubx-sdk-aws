@@ -14,7 +14,7 @@ type WorkspaceSnapshotsConfig struct {
 type WorkspaceSnapshotsAttrs struct {
 	RebuildSnapshots any
 	RestoreSnapshots any
-	WorkspaceId any
+	WorkspaceId      any
 }
 
 var WorkspaceSnapshots = ubx.DataSourceBinding{

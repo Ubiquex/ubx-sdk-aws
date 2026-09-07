@@ -11,9 +11,9 @@ type MicrosoftAd_VpcSettings struct {
 }
 
 var MicrosoftAd_VpcSettingsFields = ubx.FieldMap{
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-	}
+	"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+	"VpcId":     ubx.FieldSpec{WireName: "vpc_id"},
+}
 
 type MicrosoftAdConfig struct {
 	// If set to true, AWS Directory Service creates a public alias for the Microsoft AD directory (used in the directory's access URL), and when omitted the default is true. (AI-inferred)
@@ -59,15 +59,15 @@ var MicrosoftAd = ubx.ResourceBinding{
 	WireType: "aws_directory_service_microsoft_ad",
 	Fields: ubx.FieldMap{
 		"CreateAlias": ubx.FieldSpec{WireName: "create_alias"},
-		"Edition": ubx.FieldSpec{WireName: "edition"},
-		"EnableSso": ubx.FieldSpec{WireName: "enable_sso"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"ShortName": ubx.FieldSpec{WireName: "short_name"},
+		"Edition":     ubx.FieldSpec{WireName: "edition"},
+		"EnableSso":   ubx.FieldSpec{WireName: "enable_sso"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Password":    ubx.FieldSpec{WireName: "password"},
+		"ShortName":   ubx.FieldSpec{WireName: "short_name"},
 		"VpcSettings": ubx.FieldSpec{
 			WireName: "vpc_settings",
-			Kind: "object",
-			Fields: MicrosoftAd_VpcSettingsFields,
+			Kind:     "object",
+			Fields:   MicrosoftAd_VpcSettingsFields,
 		},
 	},
 }

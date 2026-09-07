@@ -15,17 +15,17 @@ type Configuration_RunConfigurations struct {
 }
 
 var Configuration_RunConfigurations_VpcConfigFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 var Configuration_RunConfigurationsFields = ubx.FieldMap{
-		"VpcConfig": ubx.FieldSpec{
-			WireName: "vpc_config",
-			Kind: "object",
-			Fields: Configuration_RunConfigurations_VpcConfigFields,
-		},
-	}
+	"VpcConfig": ubx.FieldSpec{
+		WireName: "vpc_config",
+		Kind:     "object",
+		Fields:   Configuration_RunConfigurations_VpcConfigFields,
+	},
+}
 
 type ConfigurationConfig struct {
 	// Optional description for the configuration.
@@ -61,11 +61,11 @@ var Configuration = ubx.ResourceBinding{
 	WireType: "aws_omics_configuration",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"RunConfigurations": ubx.FieldSpec{
 			WireName: "run_configurations",
-			Kind: "object",
-			Fields: Configuration_RunConfigurationsFields,
+			Kind:     "object",
+			Fields:   Configuration_RunConfigurationsFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

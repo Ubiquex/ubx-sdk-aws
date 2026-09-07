@@ -14,26 +14,26 @@ type AcmeEndpoint_CertificateAuthority struct {
 }
 
 type AcmeEndpoint_CertificateTags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var AcmeEndpoint_CertificateAuthority_PublicCertificateAuthorityFields = ubx.FieldMap{
-		"AllowedKeyAlgorithms": ubx.FieldSpec{WireName: "allowed_key_algorithms"},
-	}
+	"AllowedKeyAlgorithms": ubx.FieldSpec{WireName: "allowed_key_algorithms"},
+}
 
 var AcmeEndpoint_CertificateAuthorityFields = ubx.FieldMap{
-		"PublicCertificateAuthority": ubx.FieldSpec{
-			WireName: "public_certificate_authority",
-			Kind: "object",
-			Fields: AcmeEndpoint_CertificateAuthority_PublicCertificateAuthorityFields,
-		},
-	}
+	"PublicCertificateAuthority": ubx.FieldSpec{
+		WireName: "public_certificate_authority",
+		Kind:     "object",
+		Fields:   AcmeEndpoint_CertificateAuthority_PublicCertificateAuthorityFields,
+	},
+}
 
 var AcmeEndpoint_CertificateTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AcmeEndpointConfig struct {
 	// The authorization behavior for the ACME endpoint.
@@ -71,19 +71,19 @@ var AcmeEndpoint = ubx.ResourceBinding{
 		"AuthorizationBehavior": ubx.FieldSpec{WireName: "authorization_behavior"},
 		"CertificateAuthority": ubx.FieldSpec{
 			WireName: "certificate_authority",
-			Kind: "object",
-			Fields: AcmeEndpoint_CertificateAuthorityFields,
+			Kind:     "object",
+			Fields:   AcmeEndpoint_CertificateAuthorityFields,
 		},
 		"CertificateTags": ubx.FieldSpec{
 			WireName: "certificate_tags",
-			Kind: "list",
-			Fields: AcmeEndpoint_CertificateTagsFields,
+			Kind:     "list",
+			Fields:   AcmeEndpoint_CertificateTagsFields,
 		},
 		"Contact": ubx.FieldSpec{WireName: "contact"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AcmeEndpoint_CertificateTagsFields,
+			Kind:     "list",
+			Fields:   AcmeEndpoint_CertificateTagsFields,
 		},
 	},
 }

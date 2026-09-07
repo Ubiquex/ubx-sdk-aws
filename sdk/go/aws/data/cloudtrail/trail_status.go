@@ -8,24 +8,24 @@ type TrailStatusConfig struct {
 }
 
 type TrailStatusAttrs struct {
-	IsLogging any
-	LatestCloudWatchLogsDeliveryError any
-	LatestCloudWatchLogsDeliveryTime any
-	LatestDeliveryAttemptSucceeded any
-	LatestDeliveryAttemptTime any
-	LatestDeliveryError any
-	LatestDeliveryTime any
-	LatestDigestDeliveryError any
-	LatestDigestDeliveryTime any
+	IsLogging                          any
+	LatestCloudWatchLogsDeliveryError  any
+	LatestCloudWatchLogsDeliveryTime   any
+	LatestDeliveryAttemptSucceeded     any
+	LatestDeliveryAttemptTime          any
+	LatestDeliveryError                any
+	LatestDeliveryTime                 any
+	LatestDigestDeliveryError          any
+	LatestDigestDeliveryTime           any
 	LatestNotificationAttemptSucceeded any
-	LatestNotificationAttemptTime any
-	LatestNotificationError any
-	LatestNotificationTime any
-	Name any
-	StartLoggingTime any
-	StopLoggingTime any
-	TimeLoggingStarted any
-	TimeLoggingStopped any
+	LatestNotificationAttemptTime      any
+	LatestNotificationError            any
+	LatestNotificationTime             any
+	Name                               any
+	StartLoggingTime                   any
+	StopLoggingTime                    any
+	TimeLoggingStarted                 any
+	TimeLoggingStopped                 any
 }
 
 var TrailStatus = ubx.DataSourceBinding{

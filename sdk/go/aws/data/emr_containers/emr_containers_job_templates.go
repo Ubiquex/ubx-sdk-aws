@@ -9,11 +9,11 @@ type EmrContainersJobTemplates_Templates_JobTemplateData_ConfigurationOverrides_
 type EmrContainersJobTemplates_Templates_JobTemplateData_ConfigurationOverrides_ApplicationConfiguration struct {
 	Classification any
 	Configurations any
-	Properties any
+	Properties     any
 }
 
 type EmrContainersJobTemplates_Templates_JobTemplateData_ConfigurationOverrides_MonitoringConfiguration_CloudWatchMonitoringConfiguration struct {
-	LogGroupName any
+	LogGroupName        any
 	LogStreamNamePrefix any
 }
 
@@ -23,78 +23,78 @@ type EmrContainersJobTemplates_Templates_JobTemplateData_ConfigurationOverrides_
 
 type EmrContainersJobTemplates_Templates_JobTemplateData_ConfigurationOverrides_MonitoringConfiguration struct {
 	CloudWatchMonitoringConfiguration any
-	PersistentAppUi any
-	S3MonitoringConfiguration any
+	PersistentAppUi                   any
+	S3MonitoringConfiguration         any
 }
 
 type EmrContainersJobTemplates_Templates_JobTemplateData_ConfigurationOverrides struct {
 	ApplicationConfiguration any
-	MonitoringConfiguration any
+	MonitoringConfiguration  any
 }
 
 type EmrContainersJobTemplates_Templates_JobTemplateData_JobDriver_SparkSqlJobDriver struct {
-	EntryPoint any
+	EntryPoint         any
 	SparkSqlParameters any
 }
 
 type EmrContainersJobTemplates_Templates_JobTemplateData_JobDriver_SparkSubmitJobDriver struct {
-	EntryPoint any
-	EntryPointArguments any
+	EntryPoint            any
+	EntryPointArguments   any
 	SparkSubmitParameters any
 }
 
 type EmrContainersJobTemplates_Templates_JobTemplateData_JobDriver struct {
-	SparkSqlJobDriver any
+	SparkSqlJobDriver    any
 	SparkSubmitJobDriver any
 }
 
 type EmrContainersJobTemplates_Templates_JobTemplateData_ParameterConfiguration struct {
 	DefaultValue any
-	Type any
+	Type         any
 }
 
 type EmrContainersJobTemplates_Templates_JobTemplateData struct {
 	ConfigurationOverrides any
-	ExecutionRoleArn any
-	JobDriver any
-	JobTags any
+	ExecutionRoleArn       any
+	JobDriver              any
+	JobTags                any
 	ParameterConfiguration any
-	ReleaseLabel any
+	ReleaseLabel           any
 }
 
 type EmrContainersJobTemplates_Templates struct {
-	Arn any
-	CreatedAt any
-	CreatedBy any
+	Arn             any
+	CreatedAt       any
+	CreatedBy       any
 	DecryptionError any
-	Id any
+	Id              any
 	JobTemplateData any
-	KmsKeyArn any
-	Name any
-	Tags any
+	KmsKeyArn       any
+	Name            any
+	Tags            any
 }
 
 type EmrContainersJobTemplatesConfig struct {
-	CreatedAfter any
+	CreatedAfter  any
 	CreatedBefore any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type EmrContainersJobTemplatesAttrs struct {
-	CreatedAfter any
+	CreatedAfter  any
 	CreatedBefore any
-	MaxResults any
-	NextToken any
-	Templates any
+	MaxResults    any
+	NextToken     any
+	Templates     any
 }
 
 var EmrContainersJobTemplates = ubx.DataSourceBinding{
 	WireType: "aws_emr_containers_job_templates",
 	Fields: ubx.FieldMap{
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
+		"CreatedAfter":  ubx.FieldSpec{WireName: "created_after"},
 		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

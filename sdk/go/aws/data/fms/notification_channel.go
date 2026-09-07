@@ -13,6 +13,5 @@ type NotificationChannelAttrs struct {
 
 var NotificationChannel = ubx.DataSourceBinding{
 	WireType: "aws_fms_notification_channel",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

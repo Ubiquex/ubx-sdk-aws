@@ -42,12 +42,12 @@ type IntegrationResponseAttrs struct {
 var IntegrationResponse = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_v2_integration_response",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
-		"ContentHandlingStrategy": ubx.FieldSpec{WireName: "content_handling_strategy"},
-		"IntegrationId": ubx.FieldSpec{WireName: "integration_id"},
-		"IntegrationResponseKey": ubx.FieldSpec{WireName: "integration_response_key"},
-		"ResponseParameters": ubx.FieldSpec{WireName: "response_parameters"},
-		"ResponseTemplates": ubx.FieldSpec{WireName: "response_templates"},
+		"ApiId":                       ubx.FieldSpec{WireName: "api_id"},
+		"ContentHandlingStrategy":     ubx.FieldSpec{WireName: "content_handling_strategy"},
+		"IntegrationId":               ubx.FieldSpec{WireName: "integration_id"},
+		"IntegrationResponseKey":      ubx.FieldSpec{WireName: "integration_response_key"},
+		"ResponseParameters":          ubx.FieldSpec{WireName: "response_parameters"},
+		"ResponseTemplates":           ubx.FieldSpec{WireName: "response_templates"},
 		"TemplateSelectionExpression": ubx.FieldSpec{WireName: "template_selection_expression"},
 	},
 }

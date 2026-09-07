@@ -11,9 +11,9 @@ type Account_Tags struct {
 }
 
 var Account_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AccountConfig struct {
 	// The friendly name of the member account.
@@ -59,13 +59,13 @@ var Account = ubx.ResourceBinding{
 	WireType: "aws_organizations_account",
 	Fields: ubx.FieldMap{
 		"AccountName": ubx.FieldSpec{WireName: "account_name"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"ParentIds": ubx.FieldSpec{WireName: "parent_ids"},
-		"RoleName": ubx.FieldSpec{WireName: "role_name"},
+		"Email":       ubx.FieldSpec{WireName: "email"},
+		"ParentIds":   ubx.FieldSpec{WireName: "parent_ids"},
+		"RoleName":    ubx.FieldSpec{WireName: "role_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Account_TagsFields,
+			Kind:     "list",
+			Fields:   Account_TagsFields,
 		},
 	},
 }

@@ -4,28 +4,28 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TemplatePermissions_Permissions struct {
-	Actions any
+	Actions   any
 	Principal any
 }
 
 type TemplatePermissionsConfig struct {
 	AwsAccountId any
-	TemplateId any
+	TemplateId   any
 }
 
 type TemplatePermissionsAttrs struct {
 	AwsAccountId any
-	Permissions any
-	RequestId any
-	Status any
-	TemplateArn any
-	TemplateId any
+	Permissions  any
+	RequestId    any
+	Status       any
+	TemplateArn  any
+	TemplateId   any
 }
 
 var TemplatePermissions = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_template_permissions",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"TemplateId": ubx.FieldSpec{WireName: "template_id"},
+		"TemplateId":   ubx.FieldSpec{WireName: "template_id"},
 	},
 }

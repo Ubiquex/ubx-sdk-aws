@@ -4,77 +4,77 @@ package securityhub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectorsV2_Connectors_ProviderSummary_ProviderConfiguration_Azure_ScopeConfiguration struct {
-	ScopeType any
+	ScopeType   any
 	ScopeValues any
 }
 
 type ConnectorsV2_Connectors_ProviderSummary_ProviderConfiguration_Azure struct {
 	AwsconfigConnectorArn any
-	AzureRegions any
-	ScopeConfiguration any
+	AzureRegions          any
+	ScopeConfiguration    any
 }
 
 type ConnectorsV2_Connectors_ProviderSummary_ProviderConfiguration_JiraCloud struct {
 	AuthStatus any
-	AuthUrl any
-	CloudId any
-	Domain any
+	AuthUrl    any
+	CloudId    any
+	Domain     any
 	ProjectKey any
 }
 
 type ConnectorsV2_Connectors_ProviderSummary_ProviderConfiguration_ServiceNow struct {
-	AuthStatus any
+	AuthStatus   any
 	InstanceName any
-	SecretArn any
+	SecretArn    any
 }
 
 type ConnectorsV2_Connectors_ProviderSummary_ProviderConfiguration struct {
-	Azure any
-	JiraCloud any
+	Azure      any
+	JiraCloud  any
 	ServiceNow any
 }
 
 type ConnectorsV2_Connectors_ProviderSummary struct {
-	ConnectorStatus any
+	ConnectorStatus       any
 	ProviderConfiguration any
-	ProviderName any
+	ProviderName          any
 }
 
 type ConnectorsV2_Connectors struct {
-	ConnectorArn any
-	ConnectorId any
-	CreatedAt any
-	Description any
-	EnablementStatus any
+	ConnectorArn           any
+	ConnectorId            any
+	CreatedAt              any
+	Description            any
+	EnablementStatus       any
 	EnablementStatusReason any
-	Name any
-	ProviderSummary any
+	Name                   any
+	ProviderSummary        any
 }
 
 type ConnectorsV2Config struct {
-	ConnectorStatus any
+	ConnectorStatus  any
 	EnablementStatus any
-	MaxResults any
-	NextToken any
-	ProviderName any
+	MaxResults       any
+	NextToken        any
+	ProviderName     any
 }
 
 type ConnectorsV2Attrs struct {
-	ConnectorStatus any
-	Connectors any
+	ConnectorStatus  any
+	Connectors       any
 	EnablementStatus any
-	MaxResults any
-	NextToken any
-	ProviderName any
+	MaxResults       any
+	NextToken        any
+	ProviderName     any
 }
 
 var ConnectorsV2 = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_connectors_v2",
 	Fields: ubx.FieldMap{
-		"ConnectorStatus": ubx.FieldSpec{WireName: "connector_status"},
+		"ConnectorStatus":  ubx.FieldSpec{WireName: "connector_status"},
 		"EnablementStatus": ubx.FieldSpec{WireName: "enablement_status"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ProviderName": ubx.FieldSpec{WireName: "provider_name"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"ProviderName":     ubx.FieldSpec{WireName: "provider_name"},
 	},
 }

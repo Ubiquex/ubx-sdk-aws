@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContainerImages_ContainerImages struct {
 	CreatedAt any
-	Digest any
-	Image any
+	Digest    any
+	Image     any
 }
 
 type ContainerImagesConfig struct {
@@ -15,7 +15,7 @@ type ContainerImagesConfig struct {
 
 type ContainerImagesAttrs struct {
 	ContainerImages any
-	ServiceName any
+	ServiceName     any
 }
 
 var ContainerImages = ubx.DataSourceBinding{

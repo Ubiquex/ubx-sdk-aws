@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProcurementPortalPreference_Contacts struct {
 	Email any
-	Name any
+	Name  any
 }
 
 type ProcurementPortalPreference_EinvoiceDeliveryPreference_PurchaseOrderDataSources struct {
 	EinvoiceDeliveryDocumentType any
-	PurchaseOrderDataSourceType any
+	PurchaseOrderDataSourceType  any
 }
 
 type ProcurementPortalPreference_EinvoiceDeliveryPreference struct {
@@ -34,7 +34,7 @@ type ProcurementPortalPreference_Selector struct {
 }
 
 type ProcurementPortalPreference_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -54,45 +54,45 @@ type ProcurementPortalPreference_TestEnvPreference struct {
 }
 
 var ProcurementPortalPreference_ContactsFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Email": ubx.FieldSpec{WireName: "email"},
+	"Name":  ubx.FieldSpec{WireName: "name"},
+}
 
 var ProcurementPortalPreference_EinvoiceDeliveryPreference_PurchaseOrderDataSourcesFields = ubx.FieldMap{
-		"EinvoiceDeliveryDocumentType": ubx.FieldSpec{WireName: "einvoice_delivery_document_type"},
-		"PurchaseOrderDataSourceType": ubx.FieldSpec{WireName: "purchase_order_data_source_type"},
-	}
+	"EinvoiceDeliveryDocumentType": ubx.FieldSpec{WireName: "einvoice_delivery_document_type"},
+	"PurchaseOrderDataSourceType":  ubx.FieldSpec{WireName: "purchase_order_data_source_type"},
+}
 
 var ProcurementPortalPreference_EinvoiceDeliveryPreferenceFields = ubx.FieldMap{
-		"ConnectionTestingMethod": ubx.FieldSpec{WireName: "connection_testing_method"},
-		"EinvoiceDeliveryActivationDate": ubx.FieldSpec{WireName: "einvoice_delivery_activation_date"},
-		"EinvoiceDeliveryAttachmentTypes": ubx.FieldSpec{WireName: "einvoice_delivery_attachment_types"},
-		"EinvoiceDeliveryDocumentTypes": ubx.FieldSpec{WireName: "einvoice_delivery_document_types"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"PurchaseOrderDataSources": ubx.FieldSpec{
-			WireName: "purchase_order_data_sources",
-			Kind: "list",
-			Fields: ProcurementPortalPreference_EinvoiceDeliveryPreference_PurchaseOrderDataSourcesFields,
-		},
-	}
+	"ConnectionTestingMethod":         ubx.FieldSpec{WireName: "connection_testing_method"},
+	"EinvoiceDeliveryActivationDate":  ubx.FieldSpec{WireName: "einvoice_delivery_activation_date"},
+	"EinvoiceDeliveryAttachmentTypes": ubx.FieldSpec{WireName: "einvoice_delivery_attachment_types"},
+	"EinvoiceDeliveryDocumentTypes":   ubx.FieldSpec{WireName: "einvoice_delivery_document_types"},
+	"Protocol":                        ubx.FieldSpec{WireName: "protocol"},
+	"PurchaseOrderDataSources": ubx.FieldSpec{
+		WireName: "purchase_order_data_sources",
+		Kind:     "list",
+		Fields:   ProcurementPortalPreference_EinvoiceDeliveryPreference_PurchaseOrderDataSourcesFields,
+	},
+}
 
 var ProcurementPortalPreference_SelectorFields = ubx.FieldMap{
-		"InvoiceUnitArns": ubx.FieldSpec{WireName: "invoice_unit_arns"},
-	}
+	"InvoiceUnitArns": ubx.FieldSpec{WireName: "invoice_unit_arns"},
+}
 
 var ProcurementPortalPreference_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ProcurementPortalPreference_TestEnvPreferenceFields = ubx.FieldMap{
-		"BuyerDomain": ubx.FieldSpec{WireName: "buyer_domain"},
-		"BuyerIdentifier": ubx.FieldSpec{WireName: "buyer_identifier"},
-		"ProcurementPortalInstanceEndpoint": ubx.FieldSpec{WireName: "procurement_portal_instance_endpoint"},
-		"ProcurementPortalSharedSecret": ubx.FieldSpec{WireName: "procurement_portal_shared_secret"},
-		"SupplierDomain": ubx.FieldSpec{WireName: "supplier_domain"},
-		"SupplierIdentifier": ubx.FieldSpec{WireName: "supplier_identifier"},
-	}
+	"BuyerDomain":                       ubx.FieldSpec{WireName: "buyer_domain"},
+	"BuyerIdentifier":                   ubx.FieldSpec{WireName: "buyer_identifier"},
+	"ProcurementPortalInstanceEndpoint": ubx.FieldSpec{WireName: "procurement_portal_instance_endpoint"},
+	"ProcurementPortalSharedSecret":     ubx.FieldSpec{WireName: "procurement_portal_shared_secret"},
+	"SupplierDomain":                    ubx.FieldSpec{WireName: "supplier_domain"},
+	"SupplierIdentifier":                ubx.FieldSpec{WireName: "supplier_identifier"},
+}
 
 type ProcurementPortalPreferenceConfig struct {
 	// The domain identifier for the buyer in the procurement portal.
@@ -175,39 +175,39 @@ type ProcurementPortalPreferenceAttrs struct {
 var ProcurementPortalPreference = ubx.ResourceBinding{
 	WireType: "aws_invoicing_procurement_portal_preference",
 	Fields: ubx.FieldMap{
-		"BuyerDomain": ubx.FieldSpec{WireName: "buyer_domain"},
+		"BuyerDomain":     ubx.FieldSpec{WireName: "buyer_domain"},
 		"BuyerIdentifier": ubx.FieldSpec{WireName: "buyer_identifier"},
 		"Contacts": ubx.FieldSpec{
 			WireName: "contacts",
-			Kind: "list",
-			Fields: ProcurementPortalPreference_ContactsFields,
+			Kind:     "list",
+			Fields:   ProcurementPortalPreference_ContactsFields,
 		},
 		"EinvoiceDeliveryEnabled": ubx.FieldSpec{WireName: "einvoice_delivery_enabled"},
 		"EinvoiceDeliveryPreference": ubx.FieldSpec{
 			WireName: "einvoice_delivery_preference",
-			Kind: "object",
-			Fields: ProcurementPortalPreference_EinvoiceDeliveryPreferenceFields,
+			Kind:     "object",
+			Fields:   ProcurementPortalPreference_EinvoiceDeliveryPreferenceFields,
 		},
 		"ProcurementPortalInstanceEndpoint": ubx.FieldSpec{WireName: "procurement_portal_instance_endpoint"},
-		"ProcurementPortalName": ubx.FieldSpec{WireName: "procurement_portal_name"},
-		"ProcurementPortalSharedSecret": ubx.FieldSpec{WireName: "procurement_portal_shared_secret"},
-		"PurchaseOrderRetrievalEnabled": ubx.FieldSpec{WireName: "purchase_order_retrieval_enabled"},
+		"ProcurementPortalName":             ubx.FieldSpec{WireName: "procurement_portal_name"},
+		"ProcurementPortalSharedSecret":     ubx.FieldSpec{WireName: "procurement_portal_shared_secret"},
+		"PurchaseOrderRetrievalEnabled":     ubx.FieldSpec{WireName: "purchase_order_retrieval_enabled"},
 		"Selector": ubx.FieldSpec{
 			WireName: "selector",
-			Kind: "object",
-			Fields: ProcurementPortalPreference_SelectorFields,
+			Kind:     "object",
+			Fields:   ProcurementPortalPreference_SelectorFields,
 		},
-		"SupplierDomain": ubx.FieldSpec{WireName: "supplier_domain"},
+		"SupplierDomain":     ubx.FieldSpec{WireName: "supplier_domain"},
 		"SupplierIdentifier": ubx.FieldSpec{WireName: "supplier_identifier"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ProcurementPortalPreference_TagsFields,
+			Kind:     "list",
+			Fields:   ProcurementPortalPreference_TagsFields,
 		},
 		"TestEnvPreference": ubx.FieldSpec{
 			WireName: "test_env_preference",
-			Kind: "object",
-			Fields: ProcurementPortalPreference_TestEnvPreferenceFields,
+			Kind:     "object",
+			Fields:   ProcurementPortalPreference_TestEnvPreferenceFields,
 		},
 	},
 }

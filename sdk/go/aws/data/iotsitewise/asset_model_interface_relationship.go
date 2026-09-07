@@ -4,31 +4,31 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssetModelInterfaceRelationship_HierarchyMappings struct {
-	AssetModelHierarchyId any
+	AssetModelHierarchyId          any
 	InterfaceAssetModelHierarchyId any
 }
 
 type AssetModelInterfaceRelationship_PropertyMappings struct {
-	AssetModelPropertyId any
+	AssetModelPropertyId          any
 	InterfaceAssetModelPropertyId any
 }
 
 type AssetModelInterfaceRelationshipConfig struct {
-	AssetModelId any
+	AssetModelId          any
 	InterfaceAssetModelId any
 }
 
 type AssetModelInterfaceRelationshipAttrs struct {
-	AssetModelId any
-	HierarchyMappings any
+	AssetModelId          any
+	HierarchyMappings     any
 	InterfaceAssetModelId any
-	PropertyMappings any
+	PropertyMappings      any
 }
 
 var AssetModelInterfaceRelationship = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_asset_model_interface_relationship",
 	Fields: ubx.FieldMap{
-		"AssetModelId": ubx.FieldSpec{WireName: "asset_model_id"},
+		"AssetModelId":          ubx.FieldSpec{WireName: "asset_model_id"},
 		"InterfaceAssetModelId": ubx.FieldSpec{WireName: "interface_asset_model_id"},
 	},
 }

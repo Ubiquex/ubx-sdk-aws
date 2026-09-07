@@ -4,9 +4,9 @@ package resiliencehubv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResolvedTestRunTargetResources_ResolvedTargetResources struct {
-	ResourceType any
+	ResourceType      any
 	TargetInformation any
-	TargetName any
+	TargetName        any
 }
 
 type ResolvedTestRunTargetResourcesConfig struct {
@@ -24,7 +24,7 @@ type ResolvedTestRunTargetResourcesAttrs struct {
 	// <p>Pagination page size.</p>
 	MaxResults any
 	// <p>Pagination token.</p>
-	NextToken any
+	NextToken               any
 	ResolvedTargetResources any
 	// <p>ARN identifier.</p>
 	ServiceArn any
@@ -36,8 +36,8 @@ var ResolvedTestRunTargetResources = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehubv2_resolved_test_run_target_resources",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ServiceArn": ubx.FieldSpec{WireName: "service_arn"},
-		"TestRunId": ubx.FieldSpec{WireName: "test_run_id"},
+		"TestRunId":  ubx.FieldSpec{WireName: "test_run_id"},
 	},
 }

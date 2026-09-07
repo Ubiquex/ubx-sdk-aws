@@ -8,47 +8,47 @@ type ApiSagemakerModelPackageGroups_ModelPackageGroupSummaryList_ManagedConfigur
 }
 
 type ApiSagemakerModelPackageGroups_ModelPackageGroupSummaryList struct {
-	CreationTime any
-	ManagedConfiguration any
-	ModelPackageGroupArn any
+	CreationTime                 any
+	ManagedConfiguration         any
+	ModelPackageGroupArn         any
 	ModelPackageGroupDescription any
-	ModelPackageGroupName any
-	ModelPackageGroupStatus any
+	ModelPackageGroupName        any
+	ModelPackageGroupStatus      any
 }
 
 type ApiSagemakerModelPackageGroupsConfig struct {
-	CreationTimeAfter any
-	CreationTimeBefore any
+	CreationTimeAfter        any
+	CreationTimeBefore       any
 	CrossAccountFilterOption any
-	MaxResults any
-	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
+	MaxResults               any
+	NameContains             any
+	NextToken                any
+	SortBy                   any
+	SortOrder                any
 }
 
 type ApiSagemakerModelPackageGroupsAttrs struct {
-	CreationTimeAfter any
-	CreationTimeBefore any
-	CrossAccountFilterOption any
-	MaxResults any
+	CreationTimeAfter            any
+	CreationTimeBefore           any
+	CrossAccountFilterOption     any
+	MaxResults                   any
 	ModelPackageGroupSummaryList any
-	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
+	NameContains                 any
+	NextToken                    any
+	SortBy                       any
+	SortOrder                    any
 }
 
 var ApiSagemakerModelPackageGroups = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_model_package_groups",
 	Fields: ubx.FieldMap{
-		"CreationTimeAfter": ubx.FieldSpec{WireName: "creation_time_after"},
-		"CreationTimeBefore": ubx.FieldSpec{WireName: "creation_time_before"},
+		"CreationTimeAfter":        ubx.FieldSpec{WireName: "creation_time_after"},
+		"CreationTimeBefore":       ubx.FieldSpec{WireName: "creation_time_before"},
 		"CrossAccountFilterOption": ubx.FieldSpec{WireName: "cross_account_filter_option"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"MaxResults":               ubx.FieldSpec{WireName: "max_results"},
+		"NameContains":             ubx.FieldSpec{WireName: "name_contains"},
+		"NextToken":                ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":                   ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":                ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

@@ -4,31 +4,31 @@ package datazone
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TimeSeriesDataPoint_Form struct {
-	Content any
-	FormName any
-	Id any
-	Timestamp any
+	Content        any
+	FormName       any
+	Id             any
+	Timestamp      any
 	TypeIdentifier any
-	TypeRevision any
+	TypeRevision   any
 }
 
 type TimeSeriesDataPointConfig struct {
 	DomainIdentifier any
 	EntityIdentifier any
-	EntityType any
-	FormName any
-	Identifier any
+	EntityType       any
+	FormName         any
+	Identifier       any
 }
 
 type TimeSeriesDataPointAttrs struct {
-	DomainId any
+	DomainId         any
 	DomainIdentifier any
-	EntityId any
+	EntityId         any
 	EntityIdentifier any
-	EntityType any
+	EntityType       any
 	// <p>The time series data points form.</p>
-	Form any
-	FormName any
+	Form       any
+	FormName   any
 	Identifier any
 }
 
@@ -37,8 +37,8 @@ var TimeSeriesDataPoint = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
 		"EntityIdentifier": ubx.FieldSpec{WireName: "entity_identifier"},
-		"EntityType": ubx.FieldSpec{WireName: "entity_type"},
-		"FormName": ubx.FieldSpec{WireName: "form_name"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
+		"EntityType":       ubx.FieldSpec{WireName: "entity_type"},
+		"FormName":         ubx.FieldSpec{WireName: "form_name"},
+		"Identifier":       ubx.FieldSpec{WireName: "identifier"},
 	},
 }

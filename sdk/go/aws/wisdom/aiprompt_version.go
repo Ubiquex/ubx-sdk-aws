@@ -32,8 +32,8 @@ type AipromptVersionAttrs struct {
 var AipromptVersion = ubx.ResourceBinding{
 	WireType: "aws_wisdom_aiprompt_version",
 	Fields: ubx.FieldMap{
-		"AipromptId": ubx.FieldSpec{WireName: "aiprompt_id"},
-		"AssistantId": ubx.FieldSpec{WireName: "assistant_id"},
+		"AipromptId":          ubx.FieldSpec{WireName: "aiprompt_id"},
+		"AssistantId":         ubx.FieldSpec{WireName: "assistant_id"},
 		"ModifiedTimeSeconds": ubx.FieldSpec{WireName: "modified_time_seconds"},
 	},
 }

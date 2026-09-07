@@ -4,15 +4,15 @@ package medialive
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SignalMaps_SignalMaps struct {
-	Arn any
-	CreatedAt any
-	Description any
-	Id any
-	ModifiedAt any
+	Arn                     any
+	CreatedAt               any
+	Description             any
+	Id                      any
+	ModifiedAt              any
 	MonitorDeploymentStatus any
-	Name any
-	Status any
-	Tags any
+	Name                    any
+	Status                  any
+	Tags                    any
 }
 
 type SignalMapsConfig struct {
@@ -44,7 +44,7 @@ var SignalMaps = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"CloudWatchAlarmTemplateGroupIdentifier": ubx.FieldSpec{WireName: "cloud_watch_alarm_template_group_identifier"},
 		"EventBridgeRuleTemplateGroupIdentifier": ubx.FieldSpec{WireName: "event_bridge_rule_template_group_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                             ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                              ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -27,24 +27,24 @@ type MetricAttribution_MetricsOutputConfig struct {
 }
 
 var MetricAttribution_MetricsFields = ubx.FieldMap{
-		"EventType": ubx.FieldSpec{WireName: "event_type"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-	}
+	"EventType":  ubx.FieldSpec{WireName: "event_type"},
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"MetricName": ubx.FieldSpec{WireName: "metric_name"},
+}
 
 var MetricAttribution_MetricsOutputConfig_S3DataDestinationFields = ubx.FieldMap{
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+	"Path":      ubx.FieldSpec{WireName: "path"},
+}
 
 var MetricAttribution_MetricsOutputConfigFields = ubx.FieldMap{
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"S3DataDestination": ubx.FieldSpec{
-			WireName: "s3_data_destination",
-			Kind: "object",
-			Fields: MetricAttribution_MetricsOutputConfig_S3DataDestinationFields,
-		},
-	}
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+	"S3DataDestination": ubx.FieldSpec{
+		WireName: "s3_data_destination",
+		Kind:     "object",
+		Fields:   MetricAttribution_MetricsOutputConfig_S3DataDestinationFields,
+	},
+}
 
 type MetricAttributionConfig struct {
 	// The ARN of the destination dataset group.
@@ -78,13 +78,13 @@ var MetricAttribution = ubx.ResourceBinding{
 		"DatasetGroupArn": ubx.FieldSpec{WireName: "dataset_group_arn"},
 		"Metrics": ubx.FieldSpec{
 			WireName: "metrics",
-			Kind: "list",
-			Fields: MetricAttribution_MetricsFields,
+			Kind:     "list",
+			Fields:   MetricAttribution_MetricsFields,
 		},
 		"MetricsOutputConfig": ubx.FieldSpec{
 			WireName: "metrics_output_config",
-			Kind: "object",
-			Fields: MetricAttribution_MetricsOutputConfigFields,
+			Kind:     "object",
+			Fields:   MetricAttribution_MetricsOutputConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

@@ -25,19 +25,19 @@ type ConformancePack_TemplateSsmdocumentDetails struct {
 }
 
 var ConformancePack_ConformancePackInputParametersFields = ubx.FieldMap{
-		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
-		"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
-	}
+	"ParameterName":  ubx.FieldSpec{WireName: "parameter_name"},
+	"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
+}
 
 var ConformancePack_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ConformancePack_TemplateSsmdocumentDetailsFields = ubx.FieldMap{
-		"DocumentName": ubx.FieldSpec{WireName: "document_name"},
-		"DocumentVersion": ubx.FieldSpec{WireName: "document_version"},
-	}
+	"DocumentName":    ubx.FieldSpec{WireName: "document_name"},
+	"DocumentVersion": ubx.FieldSpec{WireName: "document_version"},
+}
 
 type ConformancePackConfig struct {
 	// A list of ConformancePackInputParameter objects.
@@ -84,23 +84,23 @@ var ConformancePack = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConformancePackInputParameters": ubx.FieldSpec{
 			WireName: "conformance_pack_input_parameters",
-			Kind: "list",
-			Fields: ConformancePack_ConformancePackInputParametersFields,
+			Kind:     "list",
+			Fields:   ConformancePack_ConformancePackInputParametersFields,
 		},
 		"ConformancePackName": ubx.FieldSpec{WireName: "conformance_pack_name"},
-		"DeliveryS3Bucket": ubx.FieldSpec{WireName: "delivery_s3_bucket"},
+		"DeliveryS3Bucket":    ubx.FieldSpec{WireName: "delivery_s3_bucket"},
 		"DeliveryS3KeyPrefix": ubx.FieldSpec{WireName: "delivery_s3_key_prefix"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ConformancePack_TagsFields,
+			Kind:     "list",
+			Fields:   ConformancePack_TagsFields,
 		},
-		"TemplateBody": ubx.FieldSpec{WireName: "template_body"},
+		"TemplateBody":  ubx.FieldSpec{WireName: "template_body"},
 		"TemplateS3Uri": ubx.FieldSpec{WireName: "template_s3_uri"},
 		"TemplateSsmdocumentDetails": ubx.FieldSpec{
 			WireName: "template_ssmdocument_details",
-			Kind: "object",
-			Fields: ConformancePack_TemplateSsmdocumentDetailsFields,
+			Kind:     "object",
+			Fields:   ConformancePack_TemplateSsmdocumentDetailsFields,
 		},
 	},
 }

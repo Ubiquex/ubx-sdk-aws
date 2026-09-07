@@ -5,21 +5,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UploadJobPathConfig struct {
 	DomainName any
-	JobId any
+	JobId      any
 }
 
 type UploadJobPathAttrs struct {
 	ClientToken any
-	DomainName any
-	JobId any
-	Url any
-	ValidUntil any
+	DomainName  any
+	JobId       any
+	Url         any
+	ValidUntil  any
 }
 
 var UploadJobPath = ubx.DataSourceBinding{
 	WireType: "aws_profile_upload_job_path",
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":      ubx.FieldSpec{WireName: "job_id"},
 	},
 }

@@ -4,35 +4,35 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CertificatesByCa_Certificates struct {
-	CertificateArn any
-	CertificateId any
+	CertificateArn  any
+	CertificateId   any
 	CertificateMode any
-	CreationDate any
-	Status any
+	CreationDate    any
+	Status          any
 }
 
 type CertificatesByCaConfig struct {
-	AscendingOrder any
+	AscendingOrder  any
 	CaCertificateId any
-	Marker any
-	PageSize any
+	Marker          any
+	PageSize        any
 }
 
 type CertificatesByCaAttrs struct {
-	AscendingOrder any
+	AscendingOrder  any
 	CaCertificateId any
-	Certificates any
-	Marker any
-	NextMarker any
-	PageSize any
+	Certificates    any
+	Marker          any
+	NextMarker      any
+	PageSize        any
 }
 
 var CertificatesByCa = ubx.DataSourceBinding{
 	WireType: "aws_iot_certificates_by_ca",
 	Fields: ubx.FieldMap{
-		"AscendingOrder": ubx.FieldSpec{WireName: "ascending_order"},
+		"AscendingOrder":  ubx.FieldSpec{WireName: "ascending_order"},
 		"CaCertificateId": ubx.FieldSpec{WireName: "ca_certificate_id"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"Marker":          ubx.FieldSpec{WireName: "marker"},
+		"PageSize":        ubx.FieldSpec{WireName: "page_size"},
 	},
 }

@@ -9,7 +9,7 @@ type ModelsV2LexTagsForResourceConfig struct {
 
 type ModelsV2LexTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var ModelsV2LexTagsForResource = ubx.DataSourceBinding{

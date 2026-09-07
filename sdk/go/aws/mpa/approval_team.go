@@ -13,34 +13,34 @@ type ApprovalTeam_ApprovalStrategy struct {
 }
 
 type ApprovalTeam_Approvers struct {
-	ApproverId any
-	PrimaryIdentityId any
+	ApproverId               any
+	PrimaryIdentityId        any
 	PrimaryIdentitySourceArn any
-	PrimaryIdentityStatus any
-	ResponseTime any
+	PrimaryIdentityStatus    any
+	ResponseTime             any
 }
 
 type ApprovalTeam_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var ApprovalTeam_ApprovalStrategy_MofNFields = ubx.FieldMap{
-		"MinApprovalsRequired": ubx.FieldSpec{WireName: "min_approvals_required"},
-	}
+	"MinApprovalsRequired": ubx.FieldSpec{WireName: "min_approvals_required"},
+}
 
 var ApprovalTeam_ApprovalStrategyFields = ubx.FieldMap{
-		"MofN": ubx.FieldSpec{
-			WireName: "mof_n",
-			Kind: "object",
-			Fields: ApprovalTeam_ApprovalStrategy_MofNFields,
-		},
-	}
+	"MofN": ubx.FieldSpec{
+		WireName: "mof_n",
+		Kind:     "object",
+		Fields:   ApprovalTeam_ApprovalStrategy_MofNFields,
+	},
+}
 
 var ApprovalTeam_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApprovalTeamConfig struct {
 	ApprovalStrategy any
@@ -91,16 +91,16 @@ var ApprovalTeam = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApprovalStrategy": ubx.FieldSpec{
 			WireName: "approval_strategy",
-			Kind: "object",
-			Fields: ApprovalTeam_ApprovalStrategyFields,
+			Kind:     "object",
+			Fields:   ApprovalTeam_ApprovalStrategyFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Policies": ubx.FieldSpec{WireName: "policies"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Policies":    ubx.FieldSpec{WireName: "policies"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ApprovalTeam_TagsFields,
+			Kind:     "list",
+			Fields:   ApprovalTeam_TagsFields,
 		},
 	},
 }

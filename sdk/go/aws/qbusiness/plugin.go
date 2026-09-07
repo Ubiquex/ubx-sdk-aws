@@ -60,59 +60,59 @@ type Plugin_Tags struct {
 }
 
 var Plugin_AuthConfiguration_BasicAuthConfigurationFields = ubx.FieldMap{
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+	"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var Plugin_AuthConfiguration_Oauth2ClientCredentialConfigurationFields = ubx.FieldMap{
-		"AuthorizationUrl": ubx.FieldSpec{WireName: "authorization_url"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-		"TokenUrl": ubx.FieldSpec{WireName: "token_url"},
-	}
+	"AuthorizationUrl": ubx.FieldSpec{WireName: "authorization_url"},
+	"RoleArn":          ubx.FieldSpec{WireName: "role_arn"},
+	"SecretArn":        ubx.FieldSpec{WireName: "secret_arn"},
+	"TokenUrl":         ubx.FieldSpec{WireName: "token_url"},
+}
 
 var Plugin_AuthConfigurationFields = ubx.FieldMap{
-		"BasicAuthConfiguration": ubx.FieldSpec{
-			WireName: "basic_auth_configuration",
-			Kind: "object",
-			Fields: Plugin_AuthConfiguration_BasicAuthConfigurationFields,
-		},
-		"NoAuthConfiguration": ubx.FieldSpec{WireName: "no_auth_configuration"},
-		"Oauth2ClientCredentialConfiguration": ubx.FieldSpec{
-			WireName: "oauth2_client_credential_configuration",
-			Kind: "object",
-			Fields: Plugin_AuthConfiguration_Oauth2ClientCredentialConfigurationFields,
-		},
-	}
+	"BasicAuthConfiguration": ubx.FieldSpec{
+		WireName: "basic_auth_configuration",
+		Kind:     "object",
+		Fields:   Plugin_AuthConfiguration_BasicAuthConfigurationFields,
+	},
+	"NoAuthConfiguration": ubx.FieldSpec{WireName: "no_auth_configuration"},
+	"Oauth2ClientCredentialConfiguration": ubx.FieldSpec{
+		WireName: "oauth2_client_credential_configuration",
+		Kind:     "object",
+		Fields:   Plugin_AuthConfiguration_Oauth2ClientCredentialConfigurationFields,
+	},
+}
 
 var Plugin_CustomPluginConfiguration_ApiSchema_S3Fields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Bucket": ubx.FieldSpec{WireName: "bucket"},
+	"Key":    ubx.FieldSpec{WireName: "key"},
+}
 
 var Plugin_CustomPluginConfiguration_ApiSchemaFields = ubx.FieldMap{
-		"Payload": ubx.FieldSpec{WireName: "payload"},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Plugin_CustomPluginConfiguration_ApiSchema_S3Fields,
-		},
-	}
+	"Payload": ubx.FieldSpec{WireName: "payload"},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Plugin_CustomPluginConfiguration_ApiSchema_S3Fields,
+	},
+}
 
 var Plugin_CustomPluginConfigurationFields = ubx.FieldMap{
-		"ApiSchema": ubx.FieldSpec{
-			WireName: "api_schema",
-			Kind: "object",
-			Fields: Plugin_CustomPluginConfiguration_ApiSchemaFields,
-		},
-		"ApiSchemaType": ubx.FieldSpec{WireName: "api_schema_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-	}
+	"ApiSchema": ubx.FieldSpec{
+		WireName: "api_schema",
+		Kind:     "object",
+		Fields:   Plugin_CustomPluginConfiguration_ApiSchemaFields,
+	},
+	"ApiSchemaType": ubx.FieldSpec{WireName: "api_schema_type"},
+	"Description":   ubx.FieldSpec{WireName: "description"},
+}
 
 var Plugin_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PluginConfig struct {
 	// The unique identifier of the Amazon Q Business application that this plugin is attached to. (AI-inferred)
@@ -168,21 +168,21 @@ var Plugin = ubx.ResourceBinding{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
 		"AuthConfiguration": ubx.FieldSpec{
 			WireName: "auth_configuration",
-			Kind: "object",
-			Fields: Plugin_AuthConfigurationFields,
+			Kind:     "object",
+			Fields:   Plugin_AuthConfigurationFields,
 		},
 		"CustomPluginConfiguration": ubx.FieldSpec{
 			WireName: "custom_plugin_configuration",
-			Kind: "object",
-			Fields: Plugin_CustomPluginConfigurationFields,
+			Kind:     "object",
+			Fields:   Plugin_CustomPluginConfigurationFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ServerUrl": ubx.FieldSpec{WireName: "server_url"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"ServerUrl":   ubx.FieldSpec{WireName: "server_url"},
+		"State":       ubx.FieldSpec{WireName: "state"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Plugin_TagsFields,
+			Kind:     "list",
+			Fields:   Plugin_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

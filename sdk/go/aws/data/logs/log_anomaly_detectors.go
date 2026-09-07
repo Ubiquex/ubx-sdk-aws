@@ -4,29 +4,29 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LogAnomalyDetectors_AnomalyDetectors struct {
-	AnomalyDetectorArn any
+	AnomalyDetectorArn    any
 	AnomalyDetectorStatus any
 	AnomalyVisibilityTime any
-	CreationTimeStamp any
-	DetectorName any
-	EvaluationFrequency any
-	FilterPattern any
-	KmsKeyId any
+	CreationTimeStamp     any
+	DetectorName          any
+	EvaluationFrequency   any
+	FilterPattern         any
+	KmsKeyId              any
 	LastModifiedTimeStamp any
-	LogGroupArnList any
+	LogGroupArnList       any
 }
 
 type LogAnomalyDetectorsConfig struct {
 	FilterLogGroupArn any
-	Limit any
+	Limit             any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
 }
 
 type LogAnomalyDetectorsAttrs struct {
-	AnomalyDetectors any
+	AnomalyDetectors  any
 	FilterLogGroupArn any
-	Limit any
+	Limit             any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
 }
@@ -35,7 +35,7 @@ var LogAnomalyDetectors = ubx.DataSourceBinding{
 	WireType: "aws_logs_log_anomaly_detectors",
 	Fields: ubx.FieldMap{
 		"FilterLogGroupArn": ubx.FieldSpec{WireName: "filter_log_group_arn"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":             ubx.FieldSpec{WireName: "limit"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 	},
 }

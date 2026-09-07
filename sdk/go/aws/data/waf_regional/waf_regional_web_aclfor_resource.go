@@ -4,7 +4,7 @@ package waf_regional
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WafRegionalWebAclforResource_WebAclsummary struct {
-	Name any
+	Name     any
 	WebAclid any
 }
 

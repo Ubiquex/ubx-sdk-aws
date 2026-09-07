@@ -4,24 +4,24 @@ package glacier
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Vaults_VaultList struct {
-	CreationDate any
+	CreationDate      any
 	LastInventoryDate any
-	NumberOfArchives any
-	SizeInBytes any
-	VaultArn any
-	VaultName any
+	NumberOfArchives  any
+	SizeInBytes       any
+	VaultArn          any
+	VaultName         any
 }
 
 type VaultsConfig struct {
 	AccountId any
-	Limit any
-	Marker any
+	Limit     any
+	Marker    any
 }
 
 type VaultsAttrs struct {
 	AccountId any
-	Limit any
-	Marker any
+	Limit     any
+	Marker    any
 	VaultList any
 }
 
@@ -29,7 +29,7 @@ var Vaults = ubx.DataSourceBinding{
 	WireType: "aws_glacier_vaults",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Marker":    ubx.FieldSpec{WireName: "marker"},
 	},
 }

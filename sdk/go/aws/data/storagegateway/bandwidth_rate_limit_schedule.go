@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BandwidthRateLimitSchedule_BandwidthRateLimitIntervals struct {
 	AverageDownloadRateLimitInBitsPerSec any
-	AverageUploadRateLimitInBitsPerSec any
-	DaysOfWeek any
-	EndHourOfDay any
-	EndMinuteOfHour any
-	StartHourOfDay any
-	StartMinuteOfHour any
+	AverageUploadRateLimitInBitsPerSec   any
+	DaysOfWeek                           any
+	EndHourOfDay                         any
+	EndMinuteOfHour                      any
+	StartHourOfDay                       any
+	StartMinuteOfHour                    any
 }
 
 type BandwidthRateLimitScheduleConfig struct {

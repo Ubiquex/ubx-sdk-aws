@@ -31,25 +31,25 @@ type ConfigurationSet_TrackingOptions struct {
 }
 
 var ConfigurationSet_DeliveryOptionsFields = ubx.FieldMap{
-		"SendingPoolName": ubx.FieldSpec{WireName: "sending_pool_name"},
-	}
+	"SendingPoolName": ubx.FieldSpec{WireName: "sending_pool_name"},
+}
 
 var ConfigurationSet_ReputationOptionsFields = ubx.FieldMap{
-		"ReputationMetricsEnabled": ubx.FieldSpec{WireName: "reputation_metrics_enabled"},
-	}
+	"ReputationMetricsEnabled": ubx.FieldSpec{WireName: "reputation_metrics_enabled"},
+}
 
 var ConfigurationSet_SendingOptionsFields = ubx.FieldMap{
-		"SendingEnabled": ubx.FieldSpec{WireName: "sending_enabled"},
-	}
+	"SendingEnabled": ubx.FieldSpec{WireName: "sending_enabled"},
+}
 
 var ConfigurationSet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ConfigurationSet_TrackingOptionsFields = ubx.FieldMap{
-		"CustomRedirectDomain": ubx.FieldSpec{WireName: "custom_redirect_domain"},
-	}
+	"CustomRedirectDomain": ubx.FieldSpec{WireName: "custom_redirect_domain"},
+}
 
 type ConfigurationSetConfig struct {
 	// Configures delivery options for emails sent from this configuration set, including the dedicated IP pool (SendingPoolName) and the TLS policy (TlsPolicy). (AI-inferred)
@@ -88,29 +88,29 @@ var ConfigurationSet = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DeliveryOptions": ubx.FieldSpec{
 			WireName: "delivery_options",
-			Kind: "object",
-			Fields: ConfigurationSet_DeliveryOptionsFields,
+			Kind:     "object",
+			Fields:   ConfigurationSet_DeliveryOptionsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ReputationOptions": ubx.FieldSpec{
 			WireName: "reputation_options",
-			Kind: "object",
-			Fields: ConfigurationSet_ReputationOptionsFields,
+			Kind:     "object",
+			Fields:   ConfigurationSet_ReputationOptionsFields,
 		},
 		"SendingOptions": ubx.FieldSpec{
 			WireName: "sending_options",
-			Kind: "object",
-			Fields: ConfigurationSet_SendingOptionsFields,
+			Kind:     "object",
+			Fields:   ConfigurationSet_SendingOptionsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ConfigurationSet_TagsFields,
+			Kind:     "list",
+			Fields:   ConfigurationSet_TagsFields,
 		},
 		"TrackingOptions": ubx.FieldSpec{
 			WireName: "tracking_options",
-			Kind: "object",
-			Fields: ConfigurationSet_TrackingOptionsFields,
+			Kind:     "object",
+			Fields:   ConfigurationSet_TrackingOptionsFields,
 		},
 	},
 }

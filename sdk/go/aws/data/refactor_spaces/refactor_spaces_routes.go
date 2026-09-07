@@ -4,48 +4,48 @@ package refactor_spaces
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RefactorSpacesRoutes_RouteSummaryList_Error struct {
-	AccountId any
-	AdditionalDetails any
-	Code any
-	Message any
+	AccountId          any
+	AdditionalDetails  any
+	Code               any
+	Message            any
 	ResourceIdentifier any
-	ResourceType any
+	ResourceType       any
 }
 
 type RefactorSpacesRoutes_RouteSummaryList struct {
-	AppendSourcePath any
-	ApplicationId any
-	Arn any
+	AppendSourcePath   any
+	ApplicationId      any
+	Arn                any
 	CreatedByAccountId any
-	CreatedTime any
-	EnvironmentId any
-	Error any
-	IncludeChildPaths any
-	LastUpdatedTime any
-	Methods any
-	OwnerAccountId any
-	PathResourceToId any
-	RouteId any
-	RouteType any
-	ServiceId any
-	SourcePath any
-	State any
-	Tags any
+	CreatedTime        any
+	EnvironmentId      any
+	Error              any
+	IncludeChildPaths  any
+	LastUpdatedTime    any
+	Methods            any
+	OwnerAccountId     any
+	PathResourceToId   any
+	RouteId            any
+	RouteType          any
+	ServiceId          any
+	SourcePath         any
+	State              any
+	Tags               any
 }
 
 type RefactorSpacesRoutesConfig struct {
 	ApplicationIdentifier any
 	EnvironmentIdentifier any
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 }
 
 type RefactorSpacesRoutesAttrs struct {
 	ApplicationIdentifier any
 	EnvironmentIdentifier any
-	MaxResults any
-	NextToken any
-	RouteSummaryList any
+	MaxResults            any
+	NextToken             any
+	RouteSummaryList      any
 }
 
 var RefactorSpacesRoutes = ubx.DataSourceBinding{
@@ -53,7 +53,7 @@ var RefactorSpacesRoutes = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ApplicationIdentifier": ubx.FieldSpec{WireName: "application_identifier"},
 		"EnvironmentIdentifier": ubx.FieldSpec{WireName: "environment_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 	},
 }

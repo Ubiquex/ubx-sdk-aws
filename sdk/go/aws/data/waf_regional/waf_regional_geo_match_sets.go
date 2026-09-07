@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WafRegionalGeoMatchSets_GeoMatchSets struct {
 	GeoMatchSetId any
-	Name any
+	Name          any
 }
 
 type WafRegionalGeoMatchSetsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type WafRegionalGeoMatchSetsAttrs struct {
 	GeoMatchSets any
-	Limit any
-	NextMarker any
+	Limit        any
+	NextMarker   any
 }
 
 var WafRegionalGeoMatchSets = ubx.DataSourceBinding{
 	WireType: "aws_waf_regional_geo_match_sets",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

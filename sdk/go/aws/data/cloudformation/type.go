@@ -5,65 +5,65 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Type_LoggingConfig struct {
 	LogGroupName any
-	LogRoleArn any
+	LogRoleArn   any
 }
 
 type Type_RequiredActivatedTypes struct {
-	OriginalTypeName any
-	PublisherId any
+	OriginalTypeName       any
+	PublisherId            any
 	SupportedMajorVersions any
-	TypeNameAlias any
+	TypeNameAlias          any
 }
 
 type TypeConfig struct {
-	Arn any
+	Arn                 any
 	PublicVersionNumber any
-	PublisherId any
-	Type any
-	TypeName any
-	VersionId any
+	PublisherId         any
+	Type                any
+	TypeName            any
+	VersionId           any
 }
 
 type TypeAttrs struct {
-	Arn any
-	AutoUpdate any
+	Arn                 any
+	AutoUpdate          any
 	ConfigurationSchema any
-	DefaultVersionId any
-	DeprecatedStatus any
-	Description any
-	DocumentationUrl any
-	ExecutionRoleArn any
-	IsActivated any
-	IsDefaultVersion any
-	LastUpdated any
+	DefaultVersionId    any
+	DeprecatedStatus    any
+	Description         any
+	DocumentationUrl    any
+	ExecutionRoleArn    any
+	IsActivated         any
+	IsDefaultVersion    any
+	LastUpdated         any
 	LatestPublicVersion any
 	// <p>Contains logging configuration information for an extension.</p>
-	LoggingConfig any
-	OriginalTypeArn any
-	OriginalTypeName any
-	ProvisioningType any
-	PublicVersionNumber any
-	PublisherId any
-	RequiredActivatedTypes any
-	Schema any
-	SourceUrl any
-	TimeCreated any
-	Type any
-	TypeName any
-	TypeTestsStatus any
+	LoggingConfig              any
+	OriginalTypeArn            any
+	OriginalTypeName           any
+	ProvisioningType           any
+	PublicVersionNumber        any
+	PublisherId                any
+	RequiredActivatedTypes     any
+	Schema                     any
+	SourceUrl                  any
+	TimeCreated                any
+	Type                       any
+	TypeName                   any
+	TypeTestsStatus            any
 	TypeTestsStatusDescription any
-	VersionId any
-	Visibility any
+	VersionId                  any
+	Visibility                 any
 }
 
 var Type = ubx.DataSourceBinding{
 	WireType: "aws_cloudformation_type",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":                 ubx.FieldSpec{WireName: "arn"},
 		"PublicVersionNumber": ubx.FieldSpec{WireName: "public_version_number"},
-		"PublisherId": ubx.FieldSpec{WireName: "publisher_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
+		"PublisherId":         ubx.FieldSpec{WireName: "publisher_id"},
+		"Type":                ubx.FieldSpec{WireName: "type"},
+		"TypeName":            ubx.FieldSpec{WireName: "type_name"},
+		"VersionId":           ubx.FieldSpec{WireName: "version_id"},
 	},
 }

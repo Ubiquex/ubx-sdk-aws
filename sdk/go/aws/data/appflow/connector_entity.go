@@ -4,17 +4,17 @@ package appflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectorEntity_ConnectorEntityFields_DestinationProperties struct {
-	IsCreatable any
-	IsDefaultedOnCreate any
-	IsNullable any
-	IsUpdatable any
-	IsUpsertable any
+	IsCreatable              any
+	IsDefaultedOnCreate      any
+	IsNullable               any
+	IsUpdatable              any
+	IsUpsertable             any
 	SupportedWriteOperations any
 }
 
 type ConnectorEntity_ConnectorEntityFields_SourceProperties struct {
-	IsQueryable any
-	IsRetrievable any
+	IsQueryable                           any
+	IsRetrievable                         any
 	IsTimestampFieldForIncrementalQueries any
 }
 
@@ -24,13 +24,13 @@ type ConnectorEntity_ConnectorEntityFields_SupportedFieldTypeDetails_V1_FieldLen
 }
 
 type ConnectorEntity_ConnectorEntityFields_SupportedFieldTypeDetails_V1 struct {
-	FieldLengthRange any
-	FieldType any
-	FieldValueRange any
-	FilterOperators any
+	FieldLengthRange    any
+	FieldType           any
+	FieldValueRange     any
+	FilterOperators     any
 	SupportedDateFormat any
-	SupportedValues any
-	ValueRegexPattern any
+	SupportedValues     any
+	ValueRegexPattern   any
 }
 
 type ConnectorEntity_ConnectorEntityFields_SupportedFieldTypeDetails struct {
@@ -38,40 +38,40 @@ type ConnectorEntity_ConnectorEntityFields_SupportedFieldTypeDetails struct {
 }
 
 type ConnectorEntity_ConnectorEntityFields struct {
-	CustomProperties any
-	DefaultValue any
-	Description any
-	DestinationProperties any
-	Identifier any
-	IsDeprecated any
-	IsPrimaryKey any
-	Label any
-	ParentIdentifier any
-	SourceProperties any
+	CustomProperties          any
+	DefaultValue              any
+	Description               any
+	DestinationProperties     any
+	Identifier                any
+	IsDeprecated              any
+	IsPrimaryKey              any
+	Label                     any
+	ParentIdentifier          any
+	SourceProperties          any
 	SupportedFieldTypeDetails any
 }
 
 type ConnectorEntityConfig struct {
-	ApiVersion any
-	ConnectorEntityName any
+	ApiVersion           any
+	ConnectorEntityName  any
 	ConnectorProfileName any
-	ConnectorType any
+	ConnectorType        any
 }
 
 type ConnectorEntityAttrs struct {
-	ApiVersion any
+	ApiVersion            any
 	ConnectorEntityFields any
-	ConnectorEntityName any
-	ConnectorProfileName any
-	ConnectorType any
+	ConnectorEntityName   any
+	ConnectorProfileName  any
+	ConnectorType         any
 }
 
 var ConnectorEntity = ubx.DataSourceBinding{
 	WireType: "aws_appflow_connector_entity",
 	Fields: ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"ConnectorEntityName": ubx.FieldSpec{WireName: "connector_entity_name"},
+		"ApiVersion":           ubx.FieldSpec{WireName: "api_version"},
+		"ConnectorEntityName":  ubx.FieldSpec{WireName: "connector_entity_name"},
 		"ConnectorProfileName": ubx.FieldSpec{WireName: "connector_profile_name"},
-		"ConnectorType": ubx.FieldSpec{WireName: "connector_type"},
+		"ConnectorType":        ubx.FieldSpec{WireName: "connector_type"},
 	},
 }

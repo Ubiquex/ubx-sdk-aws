@@ -4,34 +4,34 @@ package migrationhub_strategy
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MigrationhubStrategyServers_GroupIdFilter struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type MigrationhubStrategyServers_ServerInfos_AntipatternReportS3Object struct {
 	S3Bucket any
-	S3key any
+	S3key    any
 }
 
 type MigrationhubStrategyServers_ServerInfos_ApplicationComponentStrategySummary struct {
-	Count any
+	Count    any
 	Strategy any
 }
 
 type MigrationhubStrategyServers_ServerInfos_ListAntipatternSeveritySummary struct {
-	Count any
+	Count    any
 	Severity any
 }
 
 type MigrationhubStrategyServers_ServerInfos_RecommendationSet_TransformationTool struct {
-	Description any
-	Name any
+	Description                       any
+	Name                              any
 	TranformationToolInstallationLink any
 }
 
 type MigrationhubStrategyServers_ServerInfos_RecommendationSet struct {
-	Strategy any
-	TargetDestination any
+	Strategy           any
+	TargetDestination  any
 	TransformationTool any
 }
 
@@ -41,62 +41,62 @@ type MigrationhubStrategyServers_ServerInfos_ServerError struct {
 
 type MigrationhubStrategyServers_ServerInfos_SystemInfo_NetworkInfoList struct {
 	InterfaceName any
-	IpAddress any
-	MacAddress any
-	NetMask any
+	IpAddress     any
+	MacAddress    any
+	NetMask       any
 }
 
 type MigrationhubStrategyServers_ServerInfos_SystemInfo_OsInfo struct {
-	Type any
+	Type    any
 	Version any
 }
 
 type MigrationhubStrategyServers_ServerInfos_SystemInfo struct {
 	CpuArchitecture any
-	FileSystemType any
+	FileSystemType  any
 	NetworkInfoList any
-	OsInfo any
+	OsInfo          any
 }
 
 type MigrationhubStrategyServers_ServerInfos struct {
-	AntipatternReportS3Object any
-	AntipatternReportStatus any
-	AntipatternReportStatusMessage any
+	AntipatternReportS3Object           any
+	AntipatternReportStatus             any
+	AntipatternReportStatusMessage      any
 	ApplicationComponentStrategySummary any
-	DataCollectionStatus any
-	Id any
-	LastAnalyzedTimestamp any
-	ListAntipatternSeveritySummary any
-	Name any
-	RecommendationSet any
-	ServerError any
-	ServerType any
-	StatusMessage any
-	SystemInfo any
+	DataCollectionStatus                any
+	Id                                  any
+	LastAnalyzedTimestamp               any
+	ListAntipatternSeveritySummary      any
+	Name                                any
+	RecommendationSet                   any
+	ServerError                         any
+	ServerType                          any
+	StatusMessage                       any
+	SystemInfo                          any
 }
 
 var MigrationhubStrategyServers_GroupIdFilterFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MigrationhubStrategyServersConfig struct {
-	FilterValue any
-	GroupIdFilter any
-	MaxResults any
-	NextToken any
+	FilterValue    any
+	GroupIdFilter  any
+	MaxResults     any
+	NextToken      any
 	ServerCriteria any
-	Sort any
+	Sort           any
 }
 
 type MigrationhubStrategyServersAttrs struct {
-	FilterValue any
-	GroupIdFilter any
-	MaxResults any
-	NextToken any
+	FilterValue    any
+	GroupIdFilter  any
+	MaxResults     any
+	NextToken      any
 	ServerCriteria any
-	ServerInfos any
-	Sort any
+	ServerInfos    any
+	Sort           any
 }
 
 var MigrationhubStrategyServers = ubx.DataSourceBinding{
@@ -105,12 +105,12 @@ var MigrationhubStrategyServers = ubx.DataSourceBinding{
 		"FilterValue": ubx.FieldSpec{WireName: "filter_value"},
 		"GroupIdFilter": ubx.FieldSpec{
 			WireName: "group_id_filter",
-			Kind: "list",
-			Fields: MigrationhubStrategyServers_GroupIdFilterFields,
+			Kind:     "list",
+			Fields:   MigrationhubStrategyServers_GroupIdFilterFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"ServerCriteria": ubx.FieldSpec{WireName: "server_criteria"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":           ubx.FieldSpec{WireName: "sort"},
 	},
 }

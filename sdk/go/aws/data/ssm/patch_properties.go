@@ -4,29 +4,29 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PatchPropertiesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	OperatingSystem any
-	PatchSet any
-	Property any
+	PatchSet        any
+	Property        any
 }
 
 type PatchPropertiesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	OperatingSystem any
-	PatchSet any
-	Properties any
-	Property any
+	PatchSet        any
+	Properties      any
+	Property        any
 }
 
 var PatchProperties = ubx.DataSourceBinding{
 	WireType: "aws_ssm_patch_properties",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 		"OperatingSystem": ubx.FieldSpec{WireName: "operating_system"},
-		"PatchSet": ubx.FieldSpec{WireName: "patch_set"},
-		"Property": ubx.FieldSpec{WireName: "property"},
+		"PatchSet":        ubx.FieldSpec{WireName: "patch_set"},
+		"Property":        ubx.FieldSpec{WireName: "property"},
 	},
 }

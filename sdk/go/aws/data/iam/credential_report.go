@@ -7,13 +7,12 @@ type CredentialReportConfig struct {
 }
 
 type CredentialReportAttrs struct {
-	Content any
+	Content       any
 	GeneratedTime any
-	ReportFormat any
+	ReportFormat  any
 }
 
 var CredentialReport = ubx.DataSourceBinding{
 	WireType: "aws_iam_credential_report",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

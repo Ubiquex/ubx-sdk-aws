@@ -11,9 +11,9 @@ type Image_Tags struct {
 }
 
 var Image_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ImageConfig struct {
 	// A description of the image.
@@ -48,12 +48,12 @@ var Image = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ImageDescription": ubx.FieldSpec{WireName: "image_description"},
 		"ImageDisplayName": ubx.FieldSpec{WireName: "image_display_name"},
-		"ImageName": ubx.FieldSpec{WireName: "image_name"},
-		"ImageRoleArn": ubx.FieldSpec{WireName: "image_role_arn"},
+		"ImageName":        ubx.FieldSpec{WireName: "image_name"},
+		"ImageRoleArn":     ubx.FieldSpec{WireName: "image_role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Image_TagsFields,
+			Kind:     "list",
+			Fields:   Image_TagsFields,
 		},
 	},
 }

@@ -4,48 +4,48 @@ package clouddirectory
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TypedLinkFacetAttributes_Attributes_DefaultValue struct {
-	BinaryValue any
-	BooleanValue any
+	BinaryValue   any
+	BooleanValue  any
 	DatetimeValue any
-	NumberValue any
-	StringValue any
+	NumberValue   any
+	StringValue   any
 }
 
 type TypedLinkFacetAttributes_Attributes_Rules struct {
 	Parameters any
-	Type any
+	Type       any
 }
 
 type TypedLinkFacetAttributes_Attributes struct {
-	DefaultValue any
-	IsImmutable any
-	Name any
+	DefaultValue     any
+	IsImmutable      any
+	Name             any
 	RequiredBehavior any
-	Rules any
-	Type any
+	Rules            any
+	Type             any
 }
 
 type TypedLinkFacetAttributesConfig struct {
 	MaxResults any
-	Name any
-	NextToken any
-	SchemaArn any
+	Name       any
+	NextToken  any
+	SchemaArn  any
 }
 
 type TypedLinkFacetAttributesAttrs struct {
 	Attributes any
 	MaxResults any
-	Name any
-	NextToken any
-	SchemaArn any
+	Name       any
+	NextToken  any
+	SchemaArn  any
 }
 
 var TypedLinkFacetAttributes = ubx.DataSourceBinding{
 	WireType: "aws_clouddirectory_typed_link_facet_attributes",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SchemaArn": ubx.FieldSpec{WireName: "schema_arn"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"SchemaArn":  ubx.FieldSpec{WireName: "schema_arn"},
 	},
 }

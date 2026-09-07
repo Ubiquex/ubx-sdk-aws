@@ -5,48 +5,48 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Apis_Items_CorsConfiguration struct {
 	AllowCredentials any
-	AllowHeaders any
-	AllowMethods any
-	AllowOrigins any
-	ExposeHeaders any
-	MaxAge any
+	AllowHeaders     any
+	AllowMethods     any
+	AllowOrigins     any
+	ExposeHeaders    any
+	MaxAge           any
 }
 
 type Apis_Items struct {
-	ApiEndpoint any
-	ApiGatewayManaged any
-	ApiId any
+	ApiEndpoint               any
+	ApiGatewayManaged         any
+	ApiId                     any
 	ApiKeySelectionExpression any
-	CorsConfiguration any
-	CreatedDate any
-	Description any
+	CorsConfiguration         any
+	CreatedDate               any
+	Description               any
 	DisableExecuteApiEndpoint any
-	DisableSchemaValidation any
-	ImportInfo any
-	IpAddressType any
-	Name any
-	ProtocolType any
-	RouteSelectionExpression any
-	Tags any
-	Version any
-	Warnings any
+	DisableSchemaValidation   any
+	ImportInfo                any
+	IpAddressType             any
+	Name                      any
+	ProtocolType              any
+	RouteSelectionExpression  any
+	Tags                      any
+	Version                   any
+	Warnings                  any
 }
 
 type ApisConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApisAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Apis = ubx.DataSourceBinding{
 	WireType: "aws_apigatewayv2_apis",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

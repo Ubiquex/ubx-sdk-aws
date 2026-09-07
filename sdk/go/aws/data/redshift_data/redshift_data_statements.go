@@ -4,58 +4,58 @@ package redshift_data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RedshiftDataStatements_Statements_QueryParameters struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type RedshiftDataStatements_Statements struct {
-	CreatedAt any
-	Id any
+	CreatedAt        any
+	Id               any
 	IsBatchStatement any
-	QueryParameters any
-	QueryString any
-	QueryStrings any
-	ResultFormat any
-	SecretArn any
-	SessionId any
-	StatementName any
-	Status any
-	UpdatedAt any
+	QueryParameters  any
+	QueryString      any
+	QueryStrings     any
+	ResultFormat     any
+	SecretArn        any
+	SessionId        any
+	StatementName    any
+	Status           any
+	UpdatedAt        any
 }
 
 type RedshiftDataStatementsConfig struct {
 	ClusterIdentifier any
-	Database any
-	MaxResults any
-	NextToken any
-	RoleLevel any
-	StatementName any
-	Status any
-	WorkgroupName any
+	Database          any
+	MaxResults        any
+	NextToken         any
+	RoleLevel         any
+	StatementName     any
+	Status            any
+	WorkgroupName     any
 }
 
 type RedshiftDataStatementsAttrs struct {
 	ClusterIdentifier any
-	Database any
-	MaxResults any
-	NextToken any
-	RoleLevel any
-	StatementName any
-	Statements any
-	Status any
-	WorkgroupName any
+	Database          any
+	MaxResults        any
+	NextToken         any
+	RoleLevel         any
+	StatementName     any
+	Statements        any
+	Status            any
+	WorkgroupName     any
 }
 
 var RedshiftDataStatements = ubx.DataSourceBinding{
 	WireType: "aws_redshift_data_statements",
 	Fields: ubx.FieldMap{
 		"ClusterIdentifier": ubx.FieldSpec{WireName: "cluster_identifier"},
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RoleLevel": ubx.FieldSpec{WireName: "role_level"},
-		"StatementName": ubx.FieldSpec{WireName: "statement_name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"WorkgroupName": ubx.FieldSpec{WireName: "workgroup_name"},
+		"Database":          ubx.FieldSpec{WireName: "database"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
+		"RoleLevel":         ubx.FieldSpec{WireName: "role_level"},
+		"StatementName":     ubx.FieldSpec{WireName: "statement_name"},
+		"Status":            ubx.FieldSpec{WireName: "status"},
+		"WorkgroupName":     ubx.FieldSpec{WireName: "workgroup_name"},
 	},
 }

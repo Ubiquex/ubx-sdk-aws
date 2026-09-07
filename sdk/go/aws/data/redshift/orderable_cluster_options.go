@@ -8,29 +8,29 @@ type OrderableClusterOptions_OrderableClusterOptions_AvailabilityZones_Supported
 }
 
 type OrderableClusterOptions_OrderableClusterOptions_AvailabilityZones struct {
-	Name any
+	Name               any
 	SupportedPlatforms any
 }
 
 type OrderableClusterOptions_OrderableClusterOptions struct {
 	AvailabilityZones any
-	ClusterType any
-	ClusterVersion any
-	NodeType any
+	ClusterType       any
+	ClusterVersion    any
+	NodeType          any
 }
 
 type OrderableClusterOptionsConfig struct {
 	ClusterVersion any
-	Marker any
-	MaxRecords any
-	NodeType any
+	Marker         any
+	MaxRecords     any
+	NodeType       any
 }
 
 type OrderableClusterOptionsAttrs struct {
-	ClusterVersion any
-	Marker any
-	MaxRecords any
-	NodeType any
+	ClusterVersion          any
+	Marker                  any
+	MaxRecords              any
+	NodeType                any
 	OrderableClusterOptions any
 }
 
@@ -38,8 +38,8 @@ var OrderableClusterOptions = ubx.DataSourceBinding{
 	WireType: "aws_redshift_orderable_cluster_options",
 	Fields: ubx.FieldMap{
 		"ClusterVersion": ubx.FieldSpec{WireName: "cluster_version"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NodeType": ubx.FieldSpec{WireName: "node_type"},
+		"Marker":         ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":     ubx.FieldSpec{WireName: "max_records"},
+		"NodeType":       ubx.FieldSpec{WireName: "node_type"},
 	},
 }

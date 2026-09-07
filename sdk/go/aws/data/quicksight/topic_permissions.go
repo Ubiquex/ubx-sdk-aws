@@ -4,28 +4,28 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TopicPermissions_Permissions struct {
-	Actions any
+	Actions   any
 	Principal any
 }
 
 type TopicPermissionsConfig struct {
 	AwsAccountId any
-	TopicId any
+	TopicId      any
 }
 
 type TopicPermissionsAttrs struct {
 	AwsAccountId any
-	Permissions any
-	RequestId any
-	Status any
-	TopicArn any
-	TopicId any
+	Permissions  any
+	RequestId    any
+	Status       any
+	TopicArn     any
+	TopicId      any
 }
 
 var TopicPermissions = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_topic_permissions",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"TopicId": ubx.FieldSpec{WireName: "topic_id"},
+		"TopicId":      ubx.FieldSpec{WireName: "topic_id"},
 	},
 }

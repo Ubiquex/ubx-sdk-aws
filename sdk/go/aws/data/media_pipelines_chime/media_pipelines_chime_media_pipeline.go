@@ -13,9 +13,9 @@ type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaCapturePipeline_ChimeSd
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaCapturePipeline_ChimeSdkMeetingConfiguration_ArtifactsConfiguration_CompositedVideo_GridViewConfiguration_HorizontalLayoutConfiguration struct {
 	TileAspectRatio any
-	TileCount any
-	TileOrder any
-	TilePosition any
+	TileCount       any
+	TileOrder       any
+	TilePosition    any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaCapturePipeline_ChimeSdkMeetingConfiguration_ArtifactsConfiguration_CompositedVideo_GridViewConfiguration_PresenterOnlyConfiguration struct {
@@ -23,17 +23,17 @@ type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaCapturePipeline_ChimeSd
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaCapturePipeline_ChimeSdkMeetingConfiguration_ArtifactsConfiguration_CompositedVideo_GridViewConfiguration_VideoAttribute struct {
-	BorderColor any
+	BorderColor     any
 	BorderThickness any
-	CornerRadius any
-	HighlightColor any
+	CornerRadius    any
+	HighlightColor  any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaCapturePipeline_ChimeSdkMeetingConfiguration_ArtifactsConfiguration_CompositedVideo_GridViewConfiguration struct {
 	// <p>Defines the configuration for an <code>ActiveSpeakerOnly</code> video tile.</p>
 	ActiveSpeakerOnlyConfiguration any
-	CanvasOrientation any
-	ContentShareLayout any
+	CanvasOrientation              any
+	ContentShareLayout             any
 	// <p>Defines the configuration settings for the horizontal layout.</p>
 	HorizontalLayoutConfiguration any
 	// <p>Defines the configuration for a presenter-only video tile.</p>
@@ -47,13 +47,13 @@ type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaCapturePipeline_ChimeSd
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaCapturePipeline_ChimeSdkMeetingConfiguration_ArtifactsConfiguration_CompositedVideo struct {
 	// <p>Specifies the type of grid layout.</p>
 	GridViewConfiguration any
-	Layout any
-	Resolution any
+	Layout                any
+	Resolution            any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaCapturePipeline_ChimeSdkMeetingConfiguration_ArtifactsConfiguration_Content struct {
 	MuxType any
-	State any
+	State   any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaCapturePipeline_ChimeSdkMeetingConfiguration_ArtifactsConfiguration struct {
@@ -68,7 +68,7 @@ type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaCapturePipeline_ChimeSd
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaCapturePipeline_ChimeSdkMeetingConfiguration_SourceConfiguration_SelectedVideoStreams struct {
-	AttendeeIds any
+	AttendeeIds     any
 	ExternalUserIds any
 }
 
@@ -86,24 +86,24 @@ type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaCapturePipeline_ChimeSd
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaCapturePipeline_SseAwsKeyManagementParams struct {
 	AwsKmsEncryptionContext any
-	AwsKmsKeyId any
+	AwsKmsKeyId             any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaCapturePipeline struct {
 	// <p>The configuration object of the Amazon Chime SDK meeting for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
 	ChimeSdkMeetingConfiguration any
-	CreatedTimestamp any
-	MediaPipelineArn any
-	MediaPipelineId any
-	SinkArn any
-	SinkIamRoleArn any
-	SinkType any
-	SourceArn any
-	SourceType any
+	CreatedTimestamp             any
+	MediaPipelineArn             any
+	MediaPipelineId              any
+	SinkArn                      any
+	SinkIamRoleArn               any
+	SinkType                     any
+	SourceArn                    any
+	SourceType                   any
 	// <p>Contains server side encryption parameters to be used by media capture pipeline. The parameters can also be used by media concatenation pipeline taking media capture pipeline as a media source.</p>
 	SseAwsKeyManagementParams any
-	Status any
-	UpdatedTimestamp any
+	Status                    any
+	UpdatedTimestamp          any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaConcatenationPipeline_Sinks_S3BucketSinkConfiguration struct {
@@ -112,7 +112,7 @@ type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaConcatenationPipeline_S
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaConcatenationPipeline_Sinks struct {
 	S3BucketSinkConfiguration any
-	Type any
+	Type                      any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaConcatenationPipeline_Sources_MediaCapturePipelineSourceConfiguration_ChimeSdkMeetingConfiguration_ArtifactsConfiguration_Audio struct {
@@ -120,13 +120,13 @@ type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaConcatenationPipeline_S
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaConcatenationPipeline_Sources_MediaCapturePipelineSourceConfiguration_ChimeSdkMeetingConfiguration_ArtifactsConfiguration struct {
-	Audio any
-	CompositedVideo any
-	Content any
-	DataChannel any
-	MeetingEvents any
+	Audio                 any
+	CompositedVideo       any
+	Content               any
+	DataChannel           any
+	MeetingEvents         any
 	TranscriptionMessages any
-	Video any
+	Video                 any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaConcatenationPipeline_Sources_MediaCapturePipelineSourceConfiguration_ChimeSdkMeetingConfiguration struct {
@@ -135,31 +135,31 @@ type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaConcatenationPipeline_S
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaConcatenationPipeline_Sources_MediaCapturePipelineSourceConfiguration struct {
 	ChimeSdkMeetingConfiguration any
-	MediaPipelineArn any
+	MediaPipelineArn             any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaConcatenationPipeline_Sources struct {
 	MediaCapturePipelineSourceConfiguration any
-	Type any
+	Type                                    any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaConcatenationPipeline struct {
 	CreatedTimestamp any
 	MediaPipelineArn any
-	MediaPipelineId any
-	Sinks any
-	Sources any
-	Status any
+	MediaPipelineId  any
+	Sinks            any
+	Sources          any
+	Status           any
 	UpdatedTimestamp any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaInsightsPipeline_ElementStatuses struct {
 	Status any
-	Type any
+	Type   any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaInsightsPipeline_KinesisVideoStreamRecordingSourceRuntimeConfiguration_FragmentSelector_TimestampRange struct {
-	EndTimestamp any
+	EndTimestamp   any
 	StartTimestamp any
 }
 
@@ -176,104 +176,104 @@ type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaInsightsPipeline_Kinesi
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaInsightsPipeline_KinesisVideoStreamRecordingSourceRuntimeConfiguration struct {
 	// <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Only fragments with a start timestamp greater than or equal to the given start time and less than or equal to the end time are returned. For example, say a stream contains fragments with the following start timestamps:</p> <ul> <li> <p>00:00:00</p> </li> <li> <p>00:00:02</p> </li> <li> <p>00:00:04</p> </li> <li> <p>00:00:06</p> </li> </ul> <p>A fragment selector range with a start time of 00:00:01 and end time of 00:00:04 would return the fragments with start times of 00:00:02 and 00:00:04.</p>
 	FragmentSelector any
-	Streams any
+	Streams          any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaInsightsPipeline_KinesisVideoStreamSourceRuntimeConfiguration_Streams_StreamChannelDefinition_ChannelDefinitions struct {
-	ChannelId any
+	ChannelId       any
 	ParticipantRole any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaInsightsPipeline_KinesisVideoStreamSourceRuntimeConfiguration_Streams_StreamChannelDefinition struct {
 	ChannelDefinitions any
-	NumberOfChannels any
+	NumberOfChannels   any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaInsightsPipeline_KinesisVideoStreamSourceRuntimeConfiguration_Streams struct {
-	FragmentNumber any
-	StreamArn any
+	FragmentNumber          any
+	StreamArn               any
 	StreamChannelDefinition any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaInsightsPipeline_KinesisVideoStreamSourceRuntimeConfiguration struct {
-	MediaEncoding any
+	MediaEncoding   any
 	MediaSampleRate any
-	Streams any
+	Streams         any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaInsightsPipeline_S3RecordingSinkRuntimeConfiguration struct {
-	Destination any
+	Destination         any
 	RecordingFileFormat any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaInsightsPipeline struct {
 	CreatedTimestamp any
-	ElementStatuses any
+	ElementStatuses  any
 	// <p>A structure that contains the runtime settings for recording a Kinesis video stream.</p>
 	KinesisVideoStreamRecordingSourceRuntimeConfiguration any
 	// <p>The runtime configuration settings for the Kinesis video stream source.</p>
 	KinesisVideoStreamSourceRuntimeConfiguration any
-	MediaInsightsPipelineConfigurationArn any
-	MediaInsightsRuntimeMetadata any
-	MediaPipelineArn any
-	MediaPipelineId any
+	MediaInsightsPipelineConfigurationArn        any
+	MediaInsightsRuntimeMetadata                 any
+	MediaPipelineArn                             any
+	MediaPipelineId                              any
 	// <p>A structure that holds the settings for transmitting media files to the Amazon S3 bucket. If specified, the settings in this structure override any settings in <code>S3RecordingSinkConfiguration</code>.</p>
 	S3RecordingSinkRuntimeConfiguration any
-	Status any
+	Status                              any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaLiveConnectorPipeline_Sinks_Rtmpconfiguration struct {
-	AudioChannels any
+	AudioChannels   any
 	AudioSampleRate any
-	Url any
+	Url             any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaLiveConnectorPipeline_Sinks struct {
 	Rtmpconfiguration any
-	SinkType any
+	SinkType          any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaLiveConnectorPipeline_Sources_ChimeSdkMeetingLiveConnectorConfiguration struct {
-	Arn any
-	CompositedVideo any
-	MuxType any
+	Arn                 any
+	CompositedVideo     any
+	MuxType             any
 	SourceConfiguration any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaLiveConnectorPipeline_Sources struct {
 	ChimeSdkMeetingLiveConnectorConfiguration any
-	SourceType any
+	SourceType                                any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaLiveConnectorPipeline struct {
 	CreatedTimestamp any
 	MediaPipelineArn any
-	MediaPipelineId any
-	Sinks any
-	Sources any
-	Status any
+	MediaPipelineId  any
+	Sinks            any
+	Sources          any
+	Status           any
 	UpdatedTimestamp any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaStreamPipeline_Sinks struct {
-	MediaStreamType any
+	MediaStreamType        any
 	ReservedStreamCapacity any
-	SinkArn any
-	SinkType any
+	SinkArn                any
+	SinkType               any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaStreamPipeline_Sources struct {
-	SourceArn any
+	SourceArn  any
 	SourceType any
 }
 
 type MediaPipelinesChimeMediaPipeline_MediaPipeline_MediaStreamPipeline struct {
 	CreatedTimestamp any
 	MediaPipelineArn any
-	MediaPipelineId any
-	Sinks any
-	Sources any
-	Status any
+	MediaPipelineId  any
+	Sinks            any
+	Sources          any
+	Status           any
 	UpdatedTimestamp any
 }
 
@@ -296,7 +296,7 @@ type MediaPipelinesChimeMediaPipelineConfig struct {
 
 type MediaPipelinesChimeMediaPipelineAttrs struct {
 	// <p>A pipeline consisting of a media capture, media concatenation, or live-streaming pipeline.</p>
-	MediaPipeline any
+	MediaPipeline   any
 	MediaPipelineId any
 }
 

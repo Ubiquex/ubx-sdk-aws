@@ -9,7 +9,7 @@ type LunaClientsConfig struct {
 
 type LunaClientsAttrs struct {
 	ClientList any
-	NextToken any
+	NextToken  any
 }
 
 var LunaClients = ubx.DataSourceBinding{

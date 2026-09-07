@@ -8,7 +8,7 @@ type DashboardConfig struct {
 }
 
 type DashboardAttrs struct {
-	DashboardArn any
+	DashboardArn  any
 	DashboardBody any
 	DashboardName any
 }

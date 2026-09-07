@@ -13,6 +13,5 @@ type OrganizationAdminAccountAttrs struct {
 
 var OrganizationAdminAccount = ubx.DataSourceBinding{
 	WireType: "aws_auditmanager_organization_admin_account",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

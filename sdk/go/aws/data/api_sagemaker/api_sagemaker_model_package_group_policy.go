@@ -9,7 +9,7 @@ type ApiSagemakerModelPackageGroupPolicyConfig struct {
 
 type ApiSagemakerModelPackageGroupPolicyAttrs struct {
 	ModelPackageGroupName any
-	ResourcePolicy any
+	ResourcePolicy        any
 }
 
 var ApiSagemakerModelPackageGroupPolicy = ubx.DataSourceBinding{

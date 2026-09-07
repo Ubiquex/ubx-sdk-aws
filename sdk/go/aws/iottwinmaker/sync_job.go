@@ -36,9 +36,9 @@ type SyncJobAttrs struct {
 var SyncJob = ubx.ResourceBinding{
 	WireType: "aws_io_ttwin_maker_sync_job",
 	Fields: ubx.FieldMap{
-		"SyncRole": ubx.FieldSpec{WireName: "sync_role"},
-		"SyncSource": ubx.FieldSpec{WireName: "sync_source"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"SyncRole":    ubx.FieldSpec{WireName: "sync_role"},
+		"SyncSource":  ubx.FieldSpec{WireName: "sync_source"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 		"WorkspaceId": ubx.FieldSpec{WireName: "workspace_id"},
 	},
 }

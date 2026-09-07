@@ -12,39 +12,39 @@ type EnvironmentBlueprints_Items_ProvisioningProperties struct {
 }
 
 type EnvironmentBlueprints_Items struct {
-	CreatedAt any
-	Description any
-	Id any
-	Name any
-	Provider any
+	CreatedAt              any
+	Description            any
+	Id                     any
+	Name                   any
+	Provider               any
 	ProvisioningProperties any
-	UpdatedAt any
+	UpdatedAt              any
 }
 
 type EnvironmentBlueprintsConfig struct {
 	DomainIdentifier any
-	Managed any
-	MaxResults any
-	Name any
-	NextToken any
+	Managed          any
+	MaxResults       any
+	Name             any
+	NextToken        any
 }
 
 type EnvironmentBlueprintsAttrs struct {
 	DomainIdentifier any
-	Items any
-	Managed any
-	MaxResults any
-	Name any
-	NextToken any
+	Items            any
+	Managed          any
+	MaxResults       any
+	Name             any
+	NextToken        any
 }
 
 var EnvironmentBlueprints = ubx.DataSourceBinding{
 	WireType: "aws_datazone_environment_blueprints",
 	Fields: ubx.FieldMap{
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
-		"Managed": ubx.FieldSpec{WireName: "managed"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Managed":          ubx.FieldSpec{WireName: "managed"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

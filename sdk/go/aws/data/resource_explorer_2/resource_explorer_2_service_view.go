@@ -14,19 +14,19 @@ type ResourceExplorer2ServiceView_View_IncludedProperties struct {
 type ResourceExplorer2ServiceView_View_ServiceLinkedRecorder struct {
 	RecorderName any
 	// <p>The type of a service-linked recorder.</p> <ul> <li> <p> <code>AWS</code> – Managed by an Amazon Web Services service.</p> </li> <li> <p> <code>THIRD_PARTY</code> – Managed by a third-party service.</p> </li> </ul>
-	RecorderType any
+	RecorderType     any
 	ServicePrincipal any
 }
 
 type ResourceExplorer2ServiceView_View struct {
 	// <p>A search filter defines which resources can be part of a search query result set.</p>
-	Filters any
+	Filters            any
 	IncludedProperties any
-	ScopeType any
+	ScopeType          any
 	// <p>Contains information about the service-linked recorder paired with a service view.</p>
-	ServiceLinkedRecorder any
-	ServiceViewArn any
-	ServiceViewName any
+	ServiceLinkedRecorder     any
+	ServiceViewArn            any
+	ServiceViewName           any
 	StreamingAccessForService any
 }
 

@@ -22,7 +22,7 @@ type AuthPolicyAttrs struct {
 var AuthPolicy = ubx.ResourceBinding{
 	WireType: "aws_vpc_lattice_auth_policy",
 	Fields: ubx.FieldMap{
-		"Policy": ubx.FieldSpec{WireName: "policy"},
+		"Policy":             ubx.FieldSpec{WireName: "policy"},
 		"ResourceIdentifier": ubx.FieldSpec{WireName: "resource_identifier"},
 	},
 }

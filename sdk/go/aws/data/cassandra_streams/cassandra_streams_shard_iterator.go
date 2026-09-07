@@ -4,26 +4,26 @@ package cassandra_streams
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CassandraStreamsShardIteratorConfig struct {
-	SequenceNumber any
-	ShardId any
+	SequenceNumber    any
+	ShardId           any
 	ShardIteratorType any
-	StreamArn any
+	StreamArn         any
 }
 
 type CassandraStreamsShardIteratorAttrs struct {
-	SequenceNumber any
-	ShardId any
-	ShardIterator any
+	SequenceNumber    any
+	ShardId           any
+	ShardIterator     any
 	ShardIteratorType any
-	StreamArn any
+	StreamArn         any
 }
 
 var CassandraStreamsShardIterator = ubx.DataSourceBinding{
 	WireType: "aws_cassandra_streams_shard_iterator",
 	Fields: ubx.FieldMap{
-		"SequenceNumber": ubx.FieldSpec{WireName: "sequence_number"},
-		"ShardId": ubx.FieldSpec{WireName: "shard_id"},
+		"SequenceNumber":    ubx.FieldSpec{WireName: "sequence_number"},
+		"ShardId":           ubx.FieldSpec{WireName: "shard_id"},
 		"ShardIteratorType": ubx.FieldSpec{WireName: "shard_iterator_type"},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
+		"StreamArn":         ubx.FieldSpec{WireName: "stream_arn"},
 	},
 }

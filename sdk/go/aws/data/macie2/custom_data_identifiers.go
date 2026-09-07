@@ -4,28 +4,28 @@ package macie2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomDataIdentifiers_Items struct {
-	Arn any
-	CreatedAt any
+	Arn         any
+	CreatedAt   any
 	Description any
-	Id any
-	Name any
+	Id          any
+	Name        any
 }
 
 type CustomDataIdentifiersConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CustomDataIdentifiersAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var CustomDataIdentifiers = ubx.DataSourceBinding{
 	WireType: "aws_macie2_custom_data_identifiers",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

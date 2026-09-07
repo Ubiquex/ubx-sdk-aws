@@ -8,9 +8,9 @@ type IamPortalLoginUrlConfig struct {
 }
 
 type IamPortalLoginUrlAttrs struct {
-	AuthCodeUrl any
+	AuthCodeUrl      any
 	DomainIdentifier any
-	UserProfileId any
+	UserProfileId    any
 }
 
 var IamPortalLoginUrl = ubx.DataSourceBinding{

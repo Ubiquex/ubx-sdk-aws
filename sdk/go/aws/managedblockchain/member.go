@@ -64,70 +64,70 @@ type Member_NetworkConfiguration struct {
 }
 
 var Member_MemberConfiguration_MemberFrameworkConfiguration_MemberFabricConfigurationFields = ubx.FieldMap{
-		"AdminPassword": ubx.FieldSpec{WireName: "admin_password"},
-		"AdminUsername": ubx.FieldSpec{WireName: "admin_username"},
-	}
+	"AdminPassword": ubx.FieldSpec{WireName: "admin_password"},
+	"AdminUsername": ubx.FieldSpec{WireName: "admin_username"},
+}
 
 var Member_MemberConfiguration_MemberFrameworkConfigurationFields = ubx.FieldMap{
-		"MemberFabricConfiguration": ubx.FieldSpec{
-			WireName: "member_fabric_configuration",
-			Kind: "object",
-			Fields: Member_MemberConfiguration_MemberFrameworkConfiguration_MemberFabricConfigurationFields,
-		},
-	}
+	"MemberFabricConfiguration": ubx.FieldSpec{
+		WireName: "member_fabric_configuration",
+		Kind:     "object",
+		Fields:   Member_MemberConfiguration_MemberFrameworkConfiguration_MemberFabricConfigurationFields,
+	},
+}
 
 var Member_MemberConfigurationFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"MemberFrameworkConfiguration": ubx.FieldSpec{
-			WireName: "member_framework_configuration",
-			Kind: "object",
-			Fields: Member_MemberConfiguration_MemberFrameworkConfigurationFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"MemberFrameworkConfiguration": ubx.FieldSpec{
+		WireName: "member_framework_configuration",
+		Kind:     "object",
+		Fields:   Member_MemberConfiguration_MemberFrameworkConfigurationFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Member_NetworkConfiguration_NetworkFrameworkConfiguration_NetworkFabricConfigurationFields = ubx.FieldMap{
-		"Edition": ubx.FieldSpec{WireName: "edition"},
-	}
+	"Edition": ubx.FieldSpec{WireName: "edition"},
+}
 
 var Member_NetworkConfiguration_NetworkFrameworkConfigurationFields = ubx.FieldMap{
-		"NetworkFabricConfiguration": ubx.FieldSpec{
-			WireName: "network_fabric_configuration",
-			Kind: "object",
-			Fields: Member_NetworkConfiguration_NetworkFrameworkConfiguration_NetworkFabricConfigurationFields,
-		},
-	}
+	"NetworkFabricConfiguration": ubx.FieldSpec{
+		WireName: "network_fabric_configuration",
+		Kind:     "object",
+		Fields:   Member_NetworkConfiguration_NetworkFrameworkConfiguration_NetworkFabricConfigurationFields,
+	},
+}
 
 var Member_NetworkConfiguration_VotingPolicy_ApprovalThresholdPolicyFields = ubx.FieldMap{
-		"ProposalDurationInHours": ubx.FieldSpec{WireName: "proposal_duration_in_hours"},
-		"ThresholdComparator": ubx.FieldSpec{WireName: "threshold_comparator"},
-		"ThresholdPercentage": ubx.FieldSpec{WireName: "threshold_percentage"},
-	}
+	"ProposalDurationInHours": ubx.FieldSpec{WireName: "proposal_duration_in_hours"},
+	"ThresholdComparator":     ubx.FieldSpec{WireName: "threshold_comparator"},
+	"ThresholdPercentage":     ubx.FieldSpec{WireName: "threshold_percentage"},
+}
 
 var Member_NetworkConfiguration_VotingPolicyFields = ubx.FieldMap{
-		"ApprovalThresholdPolicy": ubx.FieldSpec{
-			WireName: "approval_threshold_policy",
-			Kind: "object",
-			Fields: Member_NetworkConfiguration_VotingPolicy_ApprovalThresholdPolicyFields,
-		},
-	}
+	"ApprovalThresholdPolicy": ubx.FieldSpec{
+		WireName: "approval_threshold_policy",
+		Kind:     "object",
+		Fields:   Member_NetworkConfiguration_VotingPolicy_ApprovalThresholdPolicyFields,
+	},
+}
 
 var Member_NetworkConfigurationFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Framework": ubx.FieldSpec{WireName: "framework"},
-		"FrameworkVersion": ubx.FieldSpec{WireName: "framework_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NetworkFrameworkConfiguration": ubx.FieldSpec{
-			WireName: "network_framework_configuration",
-			Kind: "object",
-			Fields: Member_NetworkConfiguration_NetworkFrameworkConfigurationFields,
-		},
-		"VotingPolicy": ubx.FieldSpec{
-			WireName: "voting_policy",
-			Kind: "object",
-			Fields: Member_NetworkConfiguration_VotingPolicyFields,
-		},
-	}
+	"Description":      ubx.FieldSpec{WireName: "description"},
+	"Framework":        ubx.FieldSpec{WireName: "framework"},
+	"FrameworkVersion": ubx.FieldSpec{WireName: "framework_version"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"NetworkFrameworkConfiguration": ubx.FieldSpec{
+		WireName: "network_framework_configuration",
+		Kind:     "object",
+		Fields:   Member_NetworkConfiguration_NetworkFrameworkConfigurationFields,
+	},
+	"VotingPolicy": ubx.FieldSpec{
+		WireName: "voting_policy",
+		Kind:     "object",
+		Fields:   Member_NetworkConfiguration_VotingPolicyFields,
+	},
+}
 
 type MemberConfig struct {
 	// The unique identifier of the invitation that was sent to this AWS account to join the Managed Blockchain network, required when adding a member to an existing network via an invitation. (AI-inferred)
@@ -159,13 +159,13 @@ var Member = ubx.ResourceBinding{
 		"InvitationId": ubx.FieldSpec{WireName: "invitation_id"},
 		"MemberConfiguration": ubx.FieldSpec{
 			WireName: "member_configuration",
-			Kind: "object",
-			Fields: Member_MemberConfigurationFields,
+			Kind:     "object",
+			Fields:   Member_MemberConfigurationFields,
 		},
 		"NetworkConfiguration": ubx.FieldSpec{
 			WireName: "network_configuration",
-			Kind: "object",
-			Fields: Member_NetworkConfigurationFields,
+			Kind:     "object",
+			Fields:   Member_NetworkConfigurationFields,
 		},
 		"NetworkId": ubx.FieldSpec{WireName: "network_id"},
 	},

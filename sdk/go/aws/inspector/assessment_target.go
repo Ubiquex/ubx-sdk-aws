@@ -23,6 +23,6 @@ var AssessmentTarget = ubx.ResourceBinding{
 	WireType: "aws_inspector_assessment_target",
 	Fields: ubx.FieldMap{
 		"AssessmentTargetName": ubx.FieldSpec{WireName: "assessment_target_name"},
-		"ResourceGroupArn": ubx.FieldSpec{WireName: "resource_group_arn"},
+		"ResourceGroupArn":     ubx.FieldSpec{WireName: "resource_group_arn"},
 	},
 }

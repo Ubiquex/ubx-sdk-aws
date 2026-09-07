@@ -30,9 +30,9 @@ type VpcendpointConnectionNotificationAttrs struct {
 var VpcendpointConnectionNotification = ubx.ResourceBinding{
 	WireType: "aws_ec2_vpcendpoint_connection_notification",
 	Fields: ubx.FieldMap{
-		"ConnectionEvents": ubx.FieldSpec{WireName: "connection_events"},
+		"ConnectionEvents":          ubx.FieldSpec{WireName: "connection_events"},
 		"ConnectionNotificationArn": ubx.FieldSpec{WireName: "connection_notification_arn"},
-		"ServiceId": ubx.FieldSpec{WireName: "service_id"},
-		"VpcendpointId": ubx.FieldSpec{WireName: "vpcendpoint_id"},
+		"ServiceId":                 ubx.FieldSpec{WireName: "service_id"},
+		"VpcendpointId":             ubx.FieldSpec{WireName: "vpcendpoint_id"},
 	},
 }

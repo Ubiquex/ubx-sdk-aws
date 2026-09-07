@@ -4,7 +4,7 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StorageConfiguration_ConfigurationStatus_Error struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -15,7 +15,7 @@ type StorageConfiguration_ConfigurationStatus struct {
 }
 
 type StorageConfiguration_MultiLayerStorage_CustomerManagedS3Storage struct {
-	RoleArn any
+	RoleArn       any
 	S3ResourceArn any
 }
 
@@ -26,7 +26,7 @@ type StorageConfiguration_MultiLayerStorage struct {
 
 type StorageConfiguration_RetentionPeriod struct {
 	NumberOfDays any
-	Unlimited any
+	Unlimited    any
 }
 
 type StorageConfigurationConfig struct {
@@ -34,22 +34,21 @@ type StorageConfigurationConfig struct {
 
 type StorageConfigurationAttrs struct {
 	// <p>Contains current status information for the configuration.</p>
-	ConfigurationStatus any
-	DisallowIngestNullNaN any
+	ConfigurationStatus      any
+	DisallowIngestNullNaN    any
 	DisassociatedDataStorage any
-	LastUpdateDate any
+	LastUpdateDate           any
 	// <p>Contains information about the storage destination.</p>
 	MultiLayerStorage any
 	// <p>The number of days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
 	RetentionPeriod any
-	StorageType any
-	WarmTier any
+	StorageType     any
+	WarmTier        any
 	// <p>Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set this only if cold tier is enabled.</p>
 	WarmTierRetentionPeriod any
 }
 
 var StorageConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_storage_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,19 +4,19 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecondaryInterfaces_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type SecondaryInterfaces_SecondaryInterfaces_Attachment struct {
-	AttachTime any
-	AttachmentId any
+	AttachTime          any
+	AttachmentId        any
 	DeleteOnTermination any
-	DeviceIndex any
-	InstanceId any
-	InstanceOwnerId any
-	NetworkCardIndex any
-	Status any
+	DeviceIndex         any
+	InstanceId          any
+	InstanceOwnerId     any
+	NetworkCardIndex    any
+	Status              any
 }
 
 type SecondaryInterfaces_SecondaryInterfaces_PrivateIpv4Addresses struct {
@@ -24,48 +24,48 @@ type SecondaryInterfaces_SecondaryInterfaces_PrivateIpv4Addresses struct {
 }
 
 type SecondaryInterfaces_SecondaryInterfaces_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type SecondaryInterfaces_SecondaryInterfaces struct {
-	Attachment any
-	AvailabilityZone any
-	AvailabilityZoneId any
-	MacAddress any
-	OwnerId any
-	PrivateIpv4Addresses any
-	SecondaryInterfaceArn any
-	SecondaryInterfaceId any
+	Attachment             any
+	AvailabilityZone       any
+	AvailabilityZoneId     any
+	MacAddress             any
+	OwnerId                any
+	PrivateIpv4Addresses   any
+	SecondaryInterfaceArn  any
+	SecondaryInterfaceId   any
 	SecondaryInterfaceType any
-	SecondaryNetworkId any
-	SecondaryNetworkType any
-	SecondarySubnetId any
-	SourceDestCheck any
-	Status any
-	Tags any
+	SecondaryNetworkId     any
+	SecondaryNetworkType   any
+	SecondarySubnetId      any
+	SourceDestCheck        any
+	Status                 any
+	Tags                   any
 }
 
 var SecondaryInterfaces_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type SecondaryInterfacesConfig struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                any
+	Filters               any
+	MaxResults            any
+	NextToken             any
 	SecondaryInterfaceIds any
 }
 
 type SecondaryInterfacesAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                any
+	Filters               any
+	MaxResults            any
+	NextToken             any
 	SecondaryInterfaceIds any
-	SecondaryInterfaces any
+	SecondaryInterfaces   any
 }
 
 var SecondaryInterfaces = ubx.DataSourceBinding{
@@ -74,11 +74,11 @@ var SecondaryInterfaces = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SecondaryInterfaces_FiltersFields,
+			Kind:     "list",
+			Fields:   SecondaryInterfaces_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 		"SecondaryInterfaceIds": ubx.FieldSpec{WireName: "secondary_interface_ids"},
 	},
 }

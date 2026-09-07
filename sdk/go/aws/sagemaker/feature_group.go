@@ -62,7 +62,7 @@ type FeatureGroup_OnlineStoreConfig struct {
 
 type FeatureGroup_Tags struct {
 	// The key portion of a tag attached to the SageMaker Feature Group, used for organizing, cost tracking, and access management of the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -76,70 +76,70 @@ type FeatureGroup_ThroughputConfig struct {
 }
 
 var FeatureGroup_FeatureDefinitionsFields = ubx.FieldMap{
-		"FeatureName": ubx.FieldSpec{WireName: "feature_name"},
-		"FeatureType": ubx.FieldSpec{WireName: "feature_type"},
-	}
+	"FeatureName": ubx.FieldSpec{WireName: "feature_name"},
+	"FeatureType": ubx.FieldSpec{WireName: "feature_type"},
+}
 
 var FeatureGroup_OfflineStoreConfig_DataCatalogConfigFields = ubx.FieldMap{
-		"Catalog": ubx.FieldSpec{WireName: "catalog"},
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"Catalog":   ubx.FieldSpec{WireName: "catalog"},
+	"Database":  ubx.FieldSpec{WireName: "database"},
+	"TableName": ubx.FieldSpec{WireName: "table_name"},
+}
 
 var FeatureGroup_OfflineStoreConfig_S3StorageConfigFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+	"S3Uri":    ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var FeatureGroup_OfflineStoreConfigFields = ubx.FieldMap{
-		"DataCatalogConfig": ubx.FieldSpec{
-			WireName: "data_catalog_config",
-			Kind: "object",
-			Fields: FeatureGroup_OfflineStoreConfig_DataCatalogConfigFields,
-		},
-		"DisableGlueTableCreation": ubx.FieldSpec{WireName: "disable_glue_table_creation"},
-		"S3StorageConfig": ubx.FieldSpec{
-			WireName: "s3_storage_config",
-			Kind: "object",
-			Fields: FeatureGroup_OfflineStoreConfig_S3StorageConfigFields,
-		},
-		"TableFormat": ubx.FieldSpec{WireName: "table_format"},
-	}
+	"DataCatalogConfig": ubx.FieldSpec{
+		WireName: "data_catalog_config",
+		Kind:     "object",
+		Fields:   FeatureGroup_OfflineStoreConfig_DataCatalogConfigFields,
+	},
+	"DisableGlueTableCreation": ubx.FieldSpec{WireName: "disable_glue_table_creation"},
+	"S3StorageConfig": ubx.FieldSpec{
+		WireName: "s3_storage_config",
+		Kind:     "object",
+		Fields:   FeatureGroup_OfflineStoreConfig_S3StorageConfigFields,
+	},
+	"TableFormat": ubx.FieldSpec{WireName: "table_format"},
+}
 
 var FeatureGroup_OnlineStoreConfig_SecurityConfigFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+}
 
 var FeatureGroup_OnlineStoreConfig_TtlDurationFields = ubx.FieldMap{
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Unit":  ubx.FieldSpec{WireName: "unit"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var FeatureGroup_OnlineStoreConfigFields = ubx.FieldMap{
-		"EnableOnlineStore": ubx.FieldSpec{WireName: "enable_online_store"},
-		"SecurityConfig": ubx.FieldSpec{
-			WireName: "security_config",
-			Kind: "object",
-			Fields: FeatureGroup_OnlineStoreConfig_SecurityConfigFields,
-		},
-		"StorageType": ubx.FieldSpec{WireName: "storage_type"},
-		"TtlDuration": ubx.FieldSpec{
-			WireName: "ttl_duration",
-			Kind: "object",
-			Fields: FeatureGroup_OnlineStoreConfig_TtlDurationFields,
-		},
-	}
+	"EnableOnlineStore": ubx.FieldSpec{WireName: "enable_online_store"},
+	"SecurityConfig": ubx.FieldSpec{
+		WireName: "security_config",
+		Kind:     "object",
+		Fields:   FeatureGroup_OnlineStoreConfig_SecurityConfigFields,
+	},
+	"StorageType": ubx.FieldSpec{WireName: "storage_type"},
+	"TtlDuration": ubx.FieldSpec{
+		WireName: "ttl_duration",
+		Kind:     "object",
+		Fields:   FeatureGroup_OnlineStoreConfig_TtlDurationFields,
+	},
+}
 
 var FeatureGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var FeatureGroup_ThroughputConfigFields = ubx.FieldMap{
-		"ProvisionedReadCapacityUnits": ubx.FieldSpec{WireName: "provisioned_read_capacity_units"},
-		"ProvisionedWriteCapacityUnits": ubx.FieldSpec{WireName: "provisioned_write_capacity_units"},
-		"ThroughputMode": ubx.FieldSpec{WireName: "throughput_mode"},
-	}
+	"ProvisionedReadCapacityUnits":  ubx.FieldSpec{WireName: "provisioned_read_capacity_units"},
+	"ProvisionedWriteCapacityUnits": ubx.FieldSpec{WireName: "provisioned_write_capacity_units"},
+	"ThroughputMode":                ubx.FieldSpec{WireName: "throughput_mode"},
+}
 
 type FeatureGroupConfig struct {
 	// Description about the FeatureGroup.
@@ -194,35 +194,35 @@ type FeatureGroupAttrs struct {
 var FeatureGroup = ubx.ResourceBinding{
 	WireType: "aws_sage_maker_feature_group",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
 		"EventTimeFeatureName": ubx.FieldSpec{WireName: "event_time_feature_name"},
 		"FeatureDefinitions": ubx.FieldSpec{
 			WireName: "feature_definitions",
-			Kind: "list",
-			Fields: FeatureGroup_FeatureDefinitionsFields,
+			Kind:     "list",
+			Fields:   FeatureGroup_FeatureDefinitionsFields,
 		},
 		"FeatureGroupName": ubx.FieldSpec{WireName: "feature_group_name"},
 		"OfflineStoreConfig": ubx.FieldSpec{
 			WireName: "offline_store_config",
-			Kind: "object",
-			Fields: FeatureGroup_OfflineStoreConfigFields,
+			Kind:     "object",
+			Fields:   FeatureGroup_OfflineStoreConfigFields,
 		},
 		"OnlineStoreConfig": ubx.FieldSpec{
 			WireName: "online_store_config",
-			Kind: "object",
-			Fields: FeatureGroup_OnlineStoreConfigFields,
+			Kind:     "object",
+			Fields:   FeatureGroup_OnlineStoreConfigFields,
 		},
 		"RecordIdentifierFeatureName": ubx.FieldSpec{WireName: "record_identifier_feature_name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":                     ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FeatureGroup_TagsFields,
+			Kind:     "list",
+			Fields:   FeatureGroup_TagsFields,
 		},
 		"ThroughputConfig": ubx.FieldSpec{
 			WireName: "throughput_config",
-			Kind: "object",
-			Fields: FeatureGroup_ThroughputConfigFields,
+			Kind:     "object",
+			Fields:   FeatureGroup_ThroughputConfigFields,
 		},
 	},
 }

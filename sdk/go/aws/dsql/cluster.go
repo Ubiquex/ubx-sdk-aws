@@ -27,14 +27,14 @@ type Cluster_Tags struct {
 }
 
 var Cluster_MultiRegionPropertiesFields = ubx.FieldMap{
-		"Clusters": ubx.FieldSpec{WireName: "clusters"},
-		"WitnessRegion": ubx.FieldSpec{WireName: "witness_region"},
-	}
+	"Clusters":      ubx.FieldSpec{WireName: "clusters"},
+	"WitnessRegion": ubx.FieldSpec{WireName: "witness_region"},
+}
 
 var Cluster_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ClusterConfig struct {
 	// Whether deletion protection is enabled in this cluster.
@@ -45,7 +45,7 @@ type ClusterConfig struct {
 	MultiRegionProperties any
 	// The IAM policy applied to the cluster resource.
 	PolicyDocument any
-	Tags any
+	Tags           any
 }
 
 type ClusterAttrs struct {
@@ -71,7 +71,7 @@ type ClusterAttrs struct {
 	ResourceArn any
 	// The status of the cluster.
 	Status any
-	Tags any
+	Tags   any
 	// The DSQL cluster VPC endpoint.
 	VpcEndpoint any
 	// The VPC endpoint service name.
@@ -82,17 +82,17 @@ var Cluster = ubx.ResourceBinding{
 	WireType: "aws_dsql_cluster",
 	Fields: ubx.FieldMap{
 		"DeletionProtectionEnabled": ubx.FieldSpec{WireName: "deletion_protection_enabled"},
-		"KmsEncryptionKey": ubx.FieldSpec{WireName: "kms_encryption_key"},
+		"KmsEncryptionKey":          ubx.FieldSpec{WireName: "kms_encryption_key"},
 		"MultiRegionProperties": ubx.FieldSpec{
 			WireName: "multi_region_properties",
-			Kind: "object",
-			Fields: Cluster_MultiRegionPropertiesFields,
+			Kind:     "object",
+			Fields:   Cluster_MultiRegionPropertiesFields,
 		},
 		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Cluster_TagsFields,
+			Kind:     "list",
+			Fields:   Cluster_TagsFields,
 		},
 	},
 }

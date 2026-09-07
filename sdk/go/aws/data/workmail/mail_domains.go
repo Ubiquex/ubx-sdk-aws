@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MailDomains_MailDomains struct {
 	DefaultDomain any
-	DomainName any
+	DomainName    any
 }
 
 type MailDomainsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
 }
 
 type MailDomainsAttrs struct {
-	MailDomains any
-	MaxResults any
-	NextToken any
+	MailDomains    any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
 }
 
 var MailDomains = ubx.DataSourceBinding{
 	WireType: "aws_workmail_mail_domains",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
 	},
 }

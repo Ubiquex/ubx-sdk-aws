@@ -31,7 +31,7 @@ type Prompt_Variants_InferenceConfiguration struct {
 
 type Prompt_Variants_Metadata struct {
 	// In the metadata map of a Bedrock prompt variant, this key defines the name of a user-specified attribute whose value is a string, enabling you to attach custom labels or annotations to the variant. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -137,10 +137,10 @@ type Prompt_Variants_TemplateConfiguration struct {
 type Prompt_Variants struct {
 	// Defines additional model request fields as key-value pairs that are passed through to the underlying foundation model for this prompt variant, augmenting or overriding standard inference parameters. (AI-inferred)
 	AdditionalModelRequestFields any
-	GenAiResource any
+	GenAiResource                any
 	// Configures the inference settings for the prompt variant, controlling response generation parameters such as temperature, topP, and maximum token count. (AI-inferred)
 	InferenceConfiguration any
-	Metadata any
+	Metadata               any
 	// The Amazon Bedrock foundation model ID (e.g., anthropic.claude-v2) that this prompt variant uses for generating responses. (AI-inferred)
 	ModelId any
 	// The name of the prompt variant, used to uniquely identify and reference this specific variant within the AWS Bedrock prompt. (AI-inferred)
@@ -152,200 +152,200 @@ type Prompt_Variants struct {
 }
 
 var Prompt_Variants_GenAiResource_AgentFields = ubx.FieldMap{
-		"AgentIdentifier": ubx.FieldSpec{WireName: "agent_identifier"},
-	}
+	"AgentIdentifier": ubx.FieldSpec{WireName: "agent_identifier"},
+}
 
 var Prompt_Variants_GenAiResourceFields = ubx.FieldMap{
-		"Agent": ubx.FieldSpec{
-			WireName: "agent",
-			Kind: "object",
-			Fields: Prompt_Variants_GenAiResource_AgentFields,
-		},
-	}
+	"Agent": ubx.FieldSpec{
+		WireName: "agent",
+		Kind:     "object",
+		Fields:   Prompt_Variants_GenAiResource_AgentFields,
+	},
+}
 
 var Prompt_Variants_InferenceConfiguration_TextFields = ubx.FieldMap{
-		"MaxTokens": ubx.FieldSpec{WireName: "max_tokens"},
-		"StopSequences": ubx.FieldSpec{WireName: "stop_sequences"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-		"TopP": ubx.FieldSpec{WireName: "top_p"},
-	}
+	"MaxTokens":     ubx.FieldSpec{WireName: "max_tokens"},
+	"StopSequences": ubx.FieldSpec{WireName: "stop_sequences"},
+	"Temperature":   ubx.FieldSpec{WireName: "temperature"},
+	"TopP":          ubx.FieldSpec{WireName: "top_p"},
+}
 
 var Prompt_Variants_InferenceConfigurationFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{
-			WireName: "text",
-			Kind: "object",
-			Fields: Prompt_Variants_InferenceConfiguration_TextFields,
-		},
-	}
+	"Text": ubx.FieldSpec{
+		WireName: "text",
+		Kind:     "object",
+		Fields:   Prompt_Variants_InferenceConfiguration_TextFields,
+	},
+}
 
 var Prompt_Variants_MetadataFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Prompt_Variants_TemplateConfiguration_Chat_InputVariablesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Prompt_Variants_TemplateConfiguration_Chat_Messages_Content_CachePointFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Prompt_Variants_TemplateConfiguration_Chat_Messages_ContentFields = ubx.FieldMap{
-		"CachePoint": ubx.FieldSpec{
-			WireName: "cache_point",
-			Kind: "object",
-			Fields: Prompt_Variants_TemplateConfiguration_Chat_Messages_Content_CachePointFields,
-		},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"CachePoint": ubx.FieldSpec{
+		WireName: "cache_point",
+		Kind:     "object",
+		Fields:   Prompt_Variants_TemplateConfiguration_Chat_Messages_Content_CachePointFields,
+	},
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 var Prompt_Variants_TemplateConfiguration_Chat_MessagesFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{
-			WireName: "content",
-			Kind: "list",
-			Fields: Prompt_Variants_TemplateConfiguration_Chat_Messages_ContentFields,
-		},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"Content": ubx.FieldSpec{
+		WireName: "content",
+		Kind:     "list",
+		Fields:   Prompt_Variants_TemplateConfiguration_Chat_Messages_ContentFields,
+	},
+	"Role": ubx.FieldSpec{WireName: "role"},
+}
 
 var Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_ToolChoiceFields = ubx.FieldMap{
-		"Any": ubx.FieldSpec{WireName: "any"},
-		"Auto": ubx.FieldSpec{WireName: "auto"},
-		"Tool": ubx.FieldSpec{
-			WireName: "tool",
-			Kind: "object",
-			Fields: Prompt_Variants_TemplateConfiguration_Chat_InputVariablesFields,
-		},
-	}
+	"Any":  ubx.FieldSpec{WireName: "any"},
+	"Auto": ubx.FieldSpec{WireName: "auto"},
+	"Tool": ubx.FieldSpec{
+		WireName: "tool",
+		Kind:     "object",
+		Fields:   Prompt_Variants_TemplateConfiguration_Chat_InputVariablesFields,
+	},
+}
 
 var Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools_ToolSpec_InputSchemaFields = ubx.FieldMap{
-		"Json": ubx.FieldSpec{WireName: "json"},
-	}
+	"Json": ubx.FieldSpec{WireName: "json"},
+}
 
 var Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools_ToolSpecFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InputSchema": ubx.FieldSpec{
-			WireName: "input_schema",
-			Kind: "object",
-			Fields: Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools_ToolSpec_InputSchemaFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"InputSchema": ubx.FieldSpec{
+		WireName: "input_schema",
+		Kind:     "object",
+		Fields:   Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools_ToolSpec_InputSchemaFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_ToolsFields = ubx.FieldMap{
-		"CachePoint": ubx.FieldSpec{
-			WireName: "cache_point",
-			Kind: "object",
-			Fields: Prompt_Variants_TemplateConfiguration_Chat_Messages_Content_CachePointFields,
-		},
-		"ToolSpec": ubx.FieldSpec{
-			WireName: "tool_spec",
-			Kind: "object",
-			Fields: Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools_ToolSpecFields,
-		},
-	}
+	"CachePoint": ubx.FieldSpec{
+		WireName: "cache_point",
+		Kind:     "object",
+		Fields:   Prompt_Variants_TemplateConfiguration_Chat_Messages_Content_CachePointFields,
+	},
+	"ToolSpec": ubx.FieldSpec{
+		WireName: "tool_spec",
+		Kind:     "object",
+		Fields:   Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools_ToolSpecFields,
+	},
+}
 
 var Prompt_Variants_TemplateConfiguration_Chat_ToolConfigurationFields = ubx.FieldMap{
-		"ToolChoice": ubx.FieldSpec{
-			WireName: "tool_choice",
-			Kind: "object",
-			Fields: Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_ToolChoiceFields,
-		},
-		"Tools": ubx.FieldSpec{
-			WireName: "tools",
-			Kind: "list",
-			Fields: Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_ToolsFields,
-		},
-	}
+	"ToolChoice": ubx.FieldSpec{
+		WireName: "tool_choice",
+		Kind:     "object",
+		Fields:   Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_ToolChoiceFields,
+	},
+	"Tools": ubx.FieldSpec{
+		WireName: "tools",
+		Kind:     "list",
+		Fields:   Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_ToolsFields,
+	},
+}
 
 var Prompt_Variants_TemplateConfiguration_ChatFields = ubx.FieldMap{
-		"InputVariables": ubx.FieldSpec{
-			WireName: "input_variables",
-			Kind: "list",
-			Fields: Prompt_Variants_TemplateConfiguration_Chat_InputVariablesFields,
-		},
-		"Messages": ubx.FieldSpec{
-			WireName: "messages",
-			Kind: "list",
-			Fields: Prompt_Variants_TemplateConfiguration_Chat_MessagesFields,
-		},
-		"System": ubx.FieldSpec{
-			WireName: "system",
-			Kind: "list",
-			Fields: Prompt_Variants_TemplateConfiguration_Chat_Messages_ContentFields,
-		},
-		"ToolConfiguration": ubx.FieldSpec{
-			WireName: "tool_configuration",
-			Kind: "object",
-			Fields: Prompt_Variants_TemplateConfiguration_Chat_ToolConfigurationFields,
-		},
-	}
+	"InputVariables": ubx.FieldSpec{
+		WireName: "input_variables",
+		Kind:     "list",
+		Fields:   Prompt_Variants_TemplateConfiguration_Chat_InputVariablesFields,
+	},
+	"Messages": ubx.FieldSpec{
+		WireName: "messages",
+		Kind:     "list",
+		Fields:   Prompt_Variants_TemplateConfiguration_Chat_MessagesFields,
+	},
+	"System": ubx.FieldSpec{
+		WireName: "system",
+		Kind:     "list",
+		Fields:   Prompt_Variants_TemplateConfiguration_Chat_Messages_ContentFields,
+	},
+	"ToolConfiguration": ubx.FieldSpec{
+		WireName: "tool_configuration",
+		Kind:     "object",
+		Fields:   Prompt_Variants_TemplateConfiguration_Chat_ToolConfigurationFields,
+	},
+}
 
 var Prompt_Variants_TemplateConfiguration_Text_TextS3LocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Bucket":  ubx.FieldSpec{WireName: "bucket"},
+	"Key":     ubx.FieldSpec{WireName: "key"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Prompt_Variants_TemplateConfiguration_TextFields = ubx.FieldMap{
-		"CachePoint": ubx.FieldSpec{
-			WireName: "cache_point",
-			Kind: "object",
-			Fields: Prompt_Variants_TemplateConfiguration_Chat_Messages_Content_CachePointFields,
-		},
-		"InputVariables": ubx.FieldSpec{
-			WireName: "input_variables",
-			Kind: "list",
-			Fields: Prompt_Variants_TemplateConfiguration_Chat_InputVariablesFields,
-		},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"TextS3Location": ubx.FieldSpec{
-			WireName: "text_s3_location",
-			Kind: "object",
-			Fields: Prompt_Variants_TemplateConfiguration_Text_TextS3LocationFields,
-		},
-	}
+	"CachePoint": ubx.FieldSpec{
+		WireName: "cache_point",
+		Kind:     "object",
+		Fields:   Prompt_Variants_TemplateConfiguration_Chat_Messages_Content_CachePointFields,
+	},
+	"InputVariables": ubx.FieldSpec{
+		WireName: "input_variables",
+		Kind:     "list",
+		Fields:   Prompt_Variants_TemplateConfiguration_Chat_InputVariablesFields,
+	},
+	"Text": ubx.FieldSpec{WireName: "text"},
+	"TextS3Location": ubx.FieldSpec{
+		WireName: "text_s3_location",
+		Kind:     "object",
+		Fields:   Prompt_Variants_TemplateConfiguration_Text_TextS3LocationFields,
+	},
+}
 
 var Prompt_Variants_TemplateConfigurationFields = ubx.FieldMap{
-		"Chat": ubx.FieldSpec{
-			WireName: "chat",
-			Kind: "object",
-			Fields: Prompt_Variants_TemplateConfiguration_ChatFields,
-		},
-		"Text": ubx.FieldSpec{
-			WireName: "text",
-			Kind: "object",
-			Fields: Prompt_Variants_TemplateConfiguration_TextFields,
-		},
-	}
+	"Chat": ubx.FieldSpec{
+		WireName: "chat",
+		Kind:     "object",
+		Fields:   Prompt_Variants_TemplateConfiguration_ChatFields,
+	},
+	"Text": ubx.FieldSpec{
+		WireName: "text",
+		Kind:     "object",
+		Fields:   Prompt_Variants_TemplateConfiguration_TextFields,
+	},
+}
 
 var Prompt_VariantsFields = ubx.FieldMap{
-		"AdditionalModelRequestFields": ubx.FieldSpec{WireName: "additional_model_request_fields"},
-		"GenAiResource": ubx.FieldSpec{
-			WireName: "gen_ai_resource",
-			Kind: "object",
-			Fields: Prompt_Variants_GenAiResourceFields,
-		},
-		"InferenceConfiguration": ubx.FieldSpec{
-			WireName: "inference_configuration",
-			Kind: "object",
-			Fields: Prompt_Variants_InferenceConfigurationFields,
-		},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "list",
-			Fields: Prompt_Variants_MetadataFields,
-		},
-		"ModelId": ubx.FieldSpec{WireName: "model_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TemplateConfiguration": ubx.FieldSpec{
-			WireName: "template_configuration",
-			Kind: "object",
-			Fields: Prompt_Variants_TemplateConfigurationFields,
-		},
-		"TemplateType": ubx.FieldSpec{WireName: "template_type"},
-	}
+	"AdditionalModelRequestFields": ubx.FieldSpec{WireName: "additional_model_request_fields"},
+	"GenAiResource": ubx.FieldSpec{
+		WireName: "gen_ai_resource",
+		Kind:     "object",
+		Fields:   Prompt_Variants_GenAiResourceFields,
+	},
+	"InferenceConfiguration": ubx.FieldSpec{
+		WireName: "inference_configuration",
+		Kind:     "object",
+		Fields:   Prompt_Variants_InferenceConfigurationFields,
+	},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "list",
+		Fields:   Prompt_Variants_MetadataFields,
+	},
+	"ModelId": ubx.FieldSpec{WireName: "model_id"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"TemplateConfiguration": ubx.FieldSpec{
+		WireName: "template_configuration",
+		Kind:     "object",
+		Fields:   Prompt_Variants_TemplateConfigurationFields,
+	},
+	"TemplateType": ubx.FieldSpec{WireName: "template_type"},
+}
 
 type PromptConfig struct {
 	// A KMS key ARN
@@ -391,14 +391,14 @@ var Prompt = ubx.ResourceBinding{
 	WireType: "aws_bedrock_prompt",
 	Fields: ubx.FieldMap{
 		"CustomerEncryptionKeyArn": ubx.FieldSpec{WireName: "customer_encryption_key_arn"},
-		"DefaultVariant": ubx.FieldSpec{WireName: "default_variant"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"DefaultVariant":           ubx.FieldSpec{WireName: "default_variant"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
+		"Tags":                     ubx.FieldSpec{WireName: "tags"},
 		"Variants": ubx.FieldSpec{
 			WireName: "variants",
-			Kind: "list",
-			Fields: Prompt_VariantsFields,
+			Kind:     "list",
+			Fields:   Prompt_VariantsFields,
 		},
 	},
 }

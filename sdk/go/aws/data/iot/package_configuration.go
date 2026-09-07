@@ -18,6 +18,5 @@ type PackageConfigurationAttrs struct {
 
 var PackageConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_iot_package_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

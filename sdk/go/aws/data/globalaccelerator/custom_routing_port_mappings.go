@@ -5,39 +5,39 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomRoutingPortMappings_PortMappings_DestinationSocketAddress struct {
 	IpAddress any
-	Port any
+	Port      any
 }
 
 type CustomRoutingPortMappings_PortMappings struct {
-	AcceleratorPort any
+	AcceleratorPort          any
 	DestinationSocketAddress any
-	DestinationTrafficState any
-	EndpointGroupArn any
-	EndpointId any
-	Protocols any
+	DestinationTrafficState  any
+	EndpointGroupArn         any
+	EndpointId               any
+	Protocols                any
 }
 
 type CustomRoutingPortMappingsConfig struct {
-	AcceleratorArn any
+	AcceleratorArn   any
 	EndpointGroupArn any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 type CustomRoutingPortMappingsAttrs struct {
-	AcceleratorArn any
+	AcceleratorArn   any
 	EndpointGroupArn any
-	MaxResults any
-	NextToken any
-	PortMappings any
+	MaxResults       any
+	NextToken        any
+	PortMappings     any
 }
 
 var CustomRoutingPortMappings = ubx.DataSourceBinding{
 	WireType: "aws_globalaccelerator_custom_routing_port_mappings",
 	Fields: ubx.FieldMap{
-		"AcceleratorArn": ubx.FieldSpec{WireName: "accelerator_arn"},
+		"AcceleratorArn":   ubx.FieldSpec{WireName: "accelerator_arn"},
 		"EndpointGroupArn": ubx.FieldSpec{WireName: "endpoint_group_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

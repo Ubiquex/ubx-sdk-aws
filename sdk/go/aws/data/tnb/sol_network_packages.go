@@ -4,40 +4,40 @@ package tnb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SolNetworkPackages_NetworkPackages_Metadata struct {
-	CreatedAt any
+	CreatedAt    any
 	LastModified any
 }
 
 type SolNetworkPackages_NetworkPackages struct {
-	Arn any
-	Id any
-	Metadata any
-	NsdDesigner any
-	NsdId any
-	NsdInvariantId any
-	NsdName any
-	NsdOnboardingState any
+	Arn                 any
+	Id                  any
+	Metadata            any
+	NsdDesigner         any
+	NsdId               any
+	NsdInvariantId      any
+	NsdName             any
+	NsdOnboardingState  any
 	NsdOperationalState any
-	NsdUsageState any
-	NsdVersion any
-	VnfPkgIds any
+	NsdUsageState       any
+	NsdVersion          any
+	VnfPkgIds           any
 }
 
 type SolNetworkPackagesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SolNetworkPackagesAttrs struct {
-	MaxResults any
+	MaxResults      any
 	NetworkPackages any
-	NextToken any
+	NextToken       any
 }
 
 var SolNetworkPackages = ubx.DataSourceBinding{
 	WireType: "aws_tnb_sol_network_packages",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

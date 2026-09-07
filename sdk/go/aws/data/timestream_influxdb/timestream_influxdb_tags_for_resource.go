@@ -9,7 +9,7 @@ type TimestreamInfluxdbTagsForResourceConfig struct {
 
 type TimestreamInfluxdbTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var TimestreamInfluxdbTagsForResource = ubx.DataSourceBinding{

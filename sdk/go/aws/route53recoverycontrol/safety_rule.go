@@ -36,26 +36,26 @@ type SafetyRule_Tags struct {
 }
 
 var SafetyRule_AssertionRuleFields = ubx.FieldMap{
-		"AssertedControls": ubx.FieldSpec{WireName: "asserted_controls"},
-		"WaitPeriodMs": ubx.FieldSpec{WireName: "wait_period_ms"},
-	}
+	"AssertedControls": ubx.FieldSpec{WireName: "asserted_controls"},
+	"WaitPeriodMs":     ubx.FieldSpec{WireName: "wait_period_ms"},
+}
 
 var SafetyRule_GatingRuleFields = ubx.FieldMap{
-		"GatingControls": ubx.FieldSpec{WireName: "gating_controls"},
-		"TargetControls": ubx.FieldSpec{WireName: "target_controls"},
-		"WaitPeriodMs": ubx.FieldSpec{WireName: "wait_period_ms"},
-	}
+	"GatingControls": ubx.FieldSpec{WireName: "gating_controls"},
+	"TargetControls": ubx.FieldSpec{WireName: "target_controls"},
+	"WaitPeriodMs":   ubx.FieldSpec{WireName: "wait_period_ms"},
+}
 
 var SafetyRule_RuleConfigFields = ubx.FieldMap{
-		"Inverted": ubx.FieldSpec{WireName: "inverted"},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Inverted":  ubx.FieldSpec{WireName: "inverted"},
+	"Threshold": ubx.FieldSpec{WireName: "threshold"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 var SafetyRule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SafetyRuleConfig struct {
 	// An assertion rule enforces that, when a routing control state is changed, that the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.
@@ -96,25 +96,25 @@ var SafetyRule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AssertionRule": ubx.FieldSpec{
 			WireName: "assertion_rule",
-			Kind: "object",
-			Fields: SafetyRule_AssertionRuleFields,
+			Kind:     "object",
+			Fields:   SafetyRule_AssertionRuleFields,
 		},
 		"ControlPanelArn": ubx.FieldSpec{WireName: "control_panel_arn"},
 		"GatingRule": ubx.FieldSpec{
 			WireName: "gating_rule",
-			Kind: "object",
-			Fields: SafetyRule_GatingRuleFields,
+			Kind:     "object",
+			Fields:   SafetyRule_GatingRuleFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"RuleConfig": ubx.FieldSpec{
 			WireName: "rule_config",
-			Kind: "object",
-			Fields: SafetyRule_RuleConfigFields,
+			Kind:     "object",
+			Fields:   SafetyRule_RuleConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SafetyRule_TagsFields,
+			Kind:     "list",
+			Fields:   SafetyRule_TagsFields,
 		},
 	},
 }

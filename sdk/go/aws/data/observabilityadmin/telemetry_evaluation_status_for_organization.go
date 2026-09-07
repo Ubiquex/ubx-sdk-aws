@@ -5,23 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TelemetryEvaluationStatusForOrganization_RegionStatuses struct {
 	FailureReason any
-	Region any
-	RuleArn any
-	Status any
+	Region        any
+	RuleArn       any
+	Status        any
 }
 
 type TelemetryEvaluationStatusForOrganizationConfig struct {
 }
 
 type TelemetryEvaluationStatusForOrganizationAttrs struct {
-	FailureReason any
-	HomeRegion any
+	FailureReason  any
+	HomeRegion     any
 	RegionStatuses any
-	Status any
+	Status         any
 }
 
 var TelemetryEvaluationStatusForOrganization = ubx.DataSourceBinding{
 	WireType: "aws_observabilityadmin_telemetry_evaluation_status_for_organization",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

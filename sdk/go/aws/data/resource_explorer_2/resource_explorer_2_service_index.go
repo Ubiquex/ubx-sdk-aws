@@ -7,12 +7,11 @@ type ResourceExplorer2ServiceIndexConfig struct {
 }
 
 type ResourceExplorer2ServiceIndexAttrs struct {
-	Arn any
+	Arn  any
 	Type any
 }
 
 var ResourceExplorer2ServiceIndex = ubx.DataSourceBinding{
 	WireType: "aws_resource_explorer_2_service_index",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

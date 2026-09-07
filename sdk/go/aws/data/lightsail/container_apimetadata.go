@@ -12,6 +12,5 @@ type ContainerApimetadataAttrs struct {
 
 var ContainerApimetadata = ubx.DataSourceBinding{
 	WireType: "aws_lightsail_container_apimetadata",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

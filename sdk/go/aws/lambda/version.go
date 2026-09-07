@@ -23,18 +23,18 @@ type Version_RuntimePolicy struct {
 }
 
 var Version_FunctionScalingConfigFields = ubx.FieldMap{
-		"MaxExecutionEnvironments": ubx.FieldSpec{WireName: "max_execution_environments"},
-		"MinExecutionEnvironments": ubx.FieldSpec{WireName: "min_execution_environments"},
-	}
+	"MaxExecutionEnvironments": ubx.FieldSpec{WireName: "max_execution_environments"},
+	"MinExecutionEnvironments": ubx.FieldSpec{WireName: "min_execution_environments"},
+}
 
 var Version_ProvisionedConcurrencyConfigFields = ubx.FieldMap{
-		"ProvisionedConcurrentExecutions": ubx.FieldSpec{WireName: "provisioned_concurrent_executions"},
-	}
+	"ProvisionedConcurrentExecutions": ubx.FieldSpec{WireName: "provisioned_concurrent_executions"},
+}
 
 var Version_RuntimePolicyFields = ubx.FieldMap{
-		"RuntimeVersionArn": ubx.FieldSpec{WireName: "runtime_version_arn"},
-		"UpdateRuntimeOn": ubx.FieldSpec{WireName: "update_runtime_on"},
-	}
+	"RuntimeVersionArn": ubx.FieldSpec{WireName: "runtime_version_arn"},
+	"UpdateRuntimeOn":   ubx.FieldSpec{WireName: "update_runtime_on"},
+}
 
 type VersionConfig struct {
 	// Only publish a version if the hash value matches the value that's specified. Use this option to avoid publishing a version if the function code has changed since you last updated it. Updates are not supported for this property.
@@ -73,23 +73,23 @@ type VersionAttrs struct {
 var Version = ubx.ResourceBinding{
 	WireType: "aws_lambda_version",
 	Fields: ubx.FieldMap{
-		"CodeSha256": ubx.FieldSpec{WireName: "code_sha256"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"CodeSha256":   ubx.FieldSpec{WireName: "code_sha256"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
 		"FunctionName": ubx.FieldSpec{WireName: "function_name"},
 		"FunctionScalingConfig": ubx.FieldSpec{
 			WireName: "function_scaling_config",
-			Kind: "object",
-			Fields: Version_FunctionScalingConfigFields,
+			Kind:     "object",
+			Fields:   Version_FunctionScalingConfigFields,
 		},
 		"ProvisionedConcurrencyConfig": ubx.FieldSpec{
 			WireName: "provisioned_concurrency_config",
-			Kind: "object",
-			Fields: Version_ProvisionedConcurrencyConfigFields,
+			Kind:     "object",
+			Fields:   Version_ProvisionedConcurrencyConfigFields,
 		},
 		"RuntimePolicy": ubx.FieldSpec{
 			WireName: "runtime_policy",
-			Kind: "object",
-			Fields: Version_RuntimePolicyFields,
+			Kind:     "object",
+			Fields:   Version_RuntimePolicyFields,
 		},
 	},
 }

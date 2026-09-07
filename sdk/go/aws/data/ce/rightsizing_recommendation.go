@@ -4,7 +4,7 @@ package ce
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RightsizingRecommendation_Configuration struct {
-	BenefitsConsidered any
+	BenefitsConsidered   any
 	RecommendationTarget any
 }
 
@@ -13,9 +13,9 @@ type RightsizingRecommendation_Filter_And struct {
 
 type RightsizingRecommendation_Filter_CostCategories struct {
 	// <p>The unique name of the cost category.</p>
-	Key any
+	Key          any
 	MatchOptions any
-	Values any
+	Values       any
 }
 
 type RightsizingRecommendation_Filter struct {
@@ -26,28 +26,28 @@ type RightsizingRecommendation_Filter struct {
 	Dimensions any
 	// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p> <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> <p>There are two patterns:</p> <ul> <li> <p>Simple dimension values.</p> <ul> <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p> <ul> <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li> <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li> <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li> </ul> </li> <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p> <ul> <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li> <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li> </ul> </li> <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p> <ul> <li> <p>For example, you can filter for linked account names that start with "a".</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li> </ul> </li> </ul> </li> <li> <p>Compound <code>Expression</code> types with logical operations.</p> <ul> <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li> <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li> </ul> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p> </note> </li> </ul> <note> <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p> </note>
 	Not any
-	Or any
+	Or  any
 	// <p>The values that are available for a tag.</p> <p>If <code>Values</code> and <code>Key</code> aren't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to all tags. That is, it's filtered on resources with no tags.</p> <p>If <code>Key</code> is provided and <code>Values</code> isn't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is, it's filtered on resources without the given tag key.</p>
 	Tags any
 }
 
 type RightsizingRecommendation_Metadata struct {
-	AdditionalMetadata any
-	GenerationTimestamp any
+	AdditionalMetadata   any
+	GenerationTimestamp  any
 	LookbackPeriodInDays any
-	RecommendationId any
+	RecommendationId     any
 }
 
 type RightsizingRecommendation_RightsizingRecommendations_CurrentInstance_ResourceDetails_Ec2ResourceDetails struct {
 	HourlyOnDemandRate any
-	InstanceType any
-	Memory any
+	InstanceType       any
+	Memory             any
 	NetworkPerformance any
-	Platform any
-	Region any
-	Sku any
-	Storage any
-	Vcpu any
+	Platform           any
+	Region             any
+	Sku                any
+	Storage            any
+	Vcpu               any
 }
 
 type RightsizingRecommendation_RightsizingRecommendations_CurrentInstance_ResourceDetails struct {
@@ -55,33 +55,33 @@ type RightsizingRecommendation_RightsizingRecommendations_CurrentInstance_Resour
 }
 
 type RightsizingRecommendation_RightsizingRecommendations_CurrentInstance_ResourceUtilization_Ec2ResourceUtilization_DiskResourceUtilization struct {
-	DiskReadBytesPerSecond any
-	DiskReadOpsPerSecond any
+	DiskReadBytesPerSecond  any
+	DiskReadOpsPerSecond    any
 	DiskWriteBytesPerSecond any
-	DiskWriteOpsPerSecond any
+	DiskWriteOpsPerSecond   any
 }
 
 type RightsizingRecommendation_RightsizingRecommendations_CurrentInstance_ResourceUtilization_Ec2ResourceUtilization_EbsresourceUtilization struct {
-	EbsReadBytesPerSecond any
-	EbsReadOpsPerSecond any
+	EbsReadBytesPerSecond  any
+	EbsReadOpsPerSecond    any
 	EbsWriteBytesPerSecond any
-	EbsWriteOpsPerSecond any
+	EbsWriteOpsPerSecond   any
 }
 
 type RightsizingRecommendation_RightsizingRecommendations_CurrentInstance_ResourceUtilization_Ec2ResourceUtilization_NetworkResourceUtilization struct {
-	NetworkInBytesPerSecond any
-	NetworkOutBytesPerSecond any
-	NetworkPacketsInPerSecond any
+	NetworkInBytesPerSecond    any
+	NetworkOutBytesPerSecond   any
+	NetworkPacketsInPerSecond  any
 	NetworkPacketsOutPerSecond any
 }
 
 type RightsizingRecommendation_RightsizingRecommendations_CurrentInstance_ResourceUtilization_Ec2ResourceUtilization struct {
-	DiskResourceUtilization any
-	EbsresourceUtilization any
-	MaxCpuUtilizationPercentage any
-	MaxMemoryUtilizationPercentage any
+	DiskResourceUtilization         any
+	EbsresourceUtilization          any
+	MaxCpuUtilizationPercentage     any
+	MaxMemoryUtilizationPercentage  any
 	MaxStorageUtilizationPercentage any
-	NetworkResourceUtilization any
+	NetworkResourceUtilization      any
 }
 
 type RightsizingRecommendation_RightsizingRecommendations_CurrentInstance_ResourceUtilization struct {
@@ -89,27 +89,27 @@ type RightsizingRecommendation_RightsizingRecommendations_CurrentInstance_Resour
 }
 
 type RightsizingRecommendation_RightsizingRecommendations_CurrentInstance struct {
-	CurrencyCode any
-	InstanceName any
-	MonthlyCost any
-	OnDemandHoursInLookbackPeriod any
-	ReservationCoveredHoursInLookbackPeriod any
-	ResourceDetails any
-	ResourceId any
-	ResourceUtilization any
+	CurrencyCode                             any
+	InstanceName                             any
+	MonthlyCost                              any
+	OnDemandHoursInLookbackPeriod            any
+	ReservationCoveredHoursInLookbackPeriod  any
+	ResourceDetails                          any
+	ResourceId                               any
+	ResourceUtilization                      any
 	SavingsPlansCoveredHoursInLookbackPeriod any
-	Tags any
-	TotalRunningHoursInLookbackPeriod any
+	Tags                                     any
+	TotalRunningHoursInLookbackPeriod        any
 }
 
 type RightsizingRecommendation_RightsizingRecommendations_ModifyRecommendationDetail_TargetInstances struct {
-	CurrencyCode any
-	DefaultTargetInstance any
-	EstimatedMonthlyCost any
-	EstimatedMonthlySavings any
+	CurrencyCode                any
+	DefaultTargetInstance       any
+	EstimatedMonthlyCost        any
+	EstimatedMonthlySavings     any
 	ExpectedResourceUtilization any
-	PlatformDifferences any
-	ResourceDetails any
+	PlatformDifferences         any
+	ResourceDetails             any
 }
 
 type RightsizingRecommendation_RightsizingRecommendations_ModifyRecommendationDetail struct {
@@ -117,77 +117,76 @@ type RightsizingRecommendation_RightsizingRecommendations_ModifyRecommendationDe
 }
 
 type RightsizingRecommendation_RightsizingRecommendations_TerminateRecommendationDetail struct {
-	CurrencyCode any
+	CurrencyCode            any
 	EstimatedMonthlySavings any
 }
 
 type RightsizingRecommendation_RightsizingRecommendations struct {
-	AccountId any
-	CurrentInstance any
-	FindingReasonCodes any
-	ModifyRecommendationDetail any
-	RightsizingType any
+	AccountId                     any
+	CurrentInstance               any
+	FindingReasonCodes            any
+	ModifyRecommendationDetail    any
+	RightsizingType               any
 	TerminateRecommendationDetail any
 }
 
 type RightsizingRecommendation_Summary struct {
 	EstimatedTotalMonthlySavingsAmount any
-	SavingsCurrencyCode any
-	SavingsPercentage any
-	TotalRecommendationCount any
+	SavingsCurrencyCode                any
+	SavingsPercentage                  any
+	TotalRecommendationCount           any
 }
 
 var RightsizingRecommendation_ConfigurationFields = ubx.FieldMap{
-		"BenefitsConsidered": ubx.FieldSpec{WireName: "benefits_considered"},
-		"RecommendationTarget": ubx.FieldSpec{WireName: "recommendation_target"},
-	}
+	"BenefitsConsidered":   ubx.FieldSpec{WireName: "benefits_considered"},
+	"RecommendationTarget": ubx.FieldSpec{WireName: "recommendation_target"},
+}
 
-var RightsizingRecommendation_Filter_AndFields = ubx.FieldMap{
-	}
+var RightsizingRecommendation_Filter_AndFields = ubx.FieldMap{}
 
 var RightsizingRecommendation_Filter_CostCategoriesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"MatchOptions": ubx.FieldSpec{WireName: "match_options"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":          ubx.FieldSpec{WireName: "key"},
+	"MatchOptions": ubx.FieldSpec{WireName: "match_options"},
+	"Values":       ubx.FieldSpec{WireName: "values"},
+}
 
 var RightsizingRecommendation_FilterFields = ubx.FieldMap{
-		"And": ubx.FieldSpec{
-			WireName: "and",
-			Kind: "list",
-			Fields: RightsizingRecommendation_Filter_AndFields,
-		},
-		"CostCategories": ubx.FieldSpec{
-			WireName: "cost_categories",
-			Kind: "object",
-			Fields: RightsizingRecommendation_Filter_CostCategoriesFields,
-		},
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "object",
-			Fields: RightsizingRecommendation_Filter_CostCategoriesFields,
-		},
-		"Not": ubx.FieldSpec{WireName: "not"},
-		"Or": ubx.FieldSpec{
-			WireName: "or",
-			Kind: "list",
-			Fields: RightsizingRecommendation_Filter_AndFields,
-		},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "object",
-			Fields: RightsizingRecommendation_Filter_CostCategoriesFields,
-		},
-	}
+	"And": ubx.FieldSpec{
+		WireName: "and",
+		Kind:     "list",
+		Fields:   RightsizingRecommendation_Filter_AndFields,
+	},
+	"CostCategories": ubx.FieldSpec{
+		WireName: "cost_categories",
+		Kind:     "object",
+		Fields:   RightsizingRecommendation_Filter_CostCategoriesFields,
+	},
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "object",
+		Fields:   RightsizingRecommendation_Filter_CostCategoriesFields,
+	},
+	"Not": ubx.FieldSpec{WireName: "not"},
+	"Or": ubx.FieldSpec{
+		WireName: "or",
+		Kind:     "list",
+		Fields:   RightsizingRecommendation_Filter_AndFields,
+	},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "object",
+		Fields:   RightsizingRecommendation_Filter_CostCategoriesFields,
+	},
+}
 
 type RightsizingRecommendationConfig struct {
 	// <p>You can use <code>RightsizingRecommendationConfiguration</code> to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or Reserved Instance (RI) benefits, or neither. </p>
 	Configuration any
 	// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p> <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> <p>There are two patterns:</p> <ul> <li> <p>Simple dimension values.</p> <ul> <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p> <ul> <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li> <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li> <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li> </ul> </li> <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p> <ul> <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li> <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li> </ul> </li> <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p> <ul> <li> <p>For example, you can filter for linked account names that start with "a".</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li> </ul> </li> </ul> </li> <li> <p>Compound <code>Expression</code> types with logical operations.</p> <ul> <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li> <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li> </ul> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p> </note> </li> </ul> <note> <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p> </note>
-	Filter any
+	Filter        any
 	NextPageToken any
-	PageSize any
-	Service any
+	PageSize      any
+	Service       any
 }
 
 type RightsizingRecommendationAttrs struct {
@@ -196,11 +195,11 @@ type RightsizingRecommendationAttrs struct {
 	// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p> <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> <p>There are two patterns:</p> <ul> <li> <p>Simple dimension values.</p> <ul> <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p> <ul> <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li> <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li> <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li> </ul> </li> <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p> <ul> <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li> <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li> </ul> </li> <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p> <ul> <li> <p>For example, you can filter for linked account names that start with "a".</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li> </ul> </li> </ul> </li> <li> <p>Compound <code>Expression</code> types with logical operations.</p> <ul> <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li> <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li> </ul> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p> </note> </li> </ul> <note> <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p> </note>
 	Filter any
 	// <p>Metadata for a recommendation set.</p>
-	Metadata any
-	NextPageToken any
-	PageSize any
+	Metadata                   any
+	NextPageToken              any
+	PageSize                   any
 	RightsizingRecommendations any
-	Service any
+	Service                    any
 	// <p>The summary of rightsizing recommendations </p>
 	Summary any
 }
@@ -210,16 +209,16 @@ var RightsizingRecommendation = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: RightsizingRecommendation_ConfigurationFields,
+			Kind:     "object",
+			Fields:   RightsizingRecommendation_ConfigurationFields,
 		},
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: RightsizingRecommendation_FilterFields,
+			Kind:     "object",
+			Fields:   RightsizingRecommendation_FilterFields,
 		},
 		"NextPageToken": ubx.FieldSpec{WireName: "next_page_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"Service": ubx.FieldSpec{WireName: "service"},
+		"PageSize":      ubx.FieldSpec{WireName: "page_size"},
+		"Service":       ubx.FieldSpec{WireName: "service"},
 	},
 }

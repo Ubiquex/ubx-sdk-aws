@@ -9,83 +9,83 @@ type Sessions_Sessions_EngineConfigurations_Configurations struct {
 type Sessions_Sessions_EngineConfigurations struct {
 	Classification any
 	Configurations any
-	Properties any
+	Properties     any
 }
 
 type Sessions_Sessions_MonitoringConfiguration_CloudWatchLoggingConfiguration struct {
-	Enabled any
-	EncryptionKeyArn any
-	LogGroup any
+	Enabled             any
+	EncryptionKeyArn    any
+	LogGroup            any
 	LogStreamNamePrefix any
-	LogTypes any
+	LogTypes            any
 }
 
 type Sessions_Sessions_MonitoringConfiguration_ManagedLoggingConfiguration struct {
-	Enabled any
+	Enabled          any
 	EncryptionKeyArn any
 }
 
 type Sessions_Sessions_MonitoringConfiguration_S3LoggingConfiguration struct {
-	Enabled any
+	Enabled          any
 	EncryptionKeyArn any
-	LogTypes any
-	LogUri any
+	LogTypes         any
+	LogUri           any
 }
 
 type Sessions_Sessions_MonitoringConfiguration struct {
 	CloudWatchLoggingConfiguration any
-	ManagedLoggingConfiguration any
-	S3LoggingConfiguration any
+	ManagedLoggingConfiguration    any
+	S3LoggingConfiguration         any
 }
 
 type Sessions_Sessions_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Sessions_Sessions struct {
-	AccountId any
-	Arn any
-	ClusterId any
-	CreatedAt any
-	EndedAt any
-	EngineConfigurations any
-	ExecutionRoleArn any
-	Id any
-	IdleSince any
-	MonitoringConfiguration any
-	Name any
-	ReleaseLabel any
-	ServerUrl any
+	AccountId                   any
+	Arn                         any
+	ClusterId                   any
+	CreatedAt                   any
+	EndedAt                     any
+	EngineConfigurations        any
+	ExecutionRoleArn            any
+	Id                          any
+	IdleSince                   any
+	MonitoringConfiguration     any
+	Name                        any
+	ReleaseLabel                any
+	ServerUrl                   any
 	SessionIdleTimeoutInMinutes any
-	StartedAt any
-	State any
-	StateChangeReason any
-	Tags any
-	UpdatedAt any
+	StartedAt                   any
+	State                       any
+	StateChangeReason           any
+	Tags                        any
+	UpdatedAt                   any
 }
 
 type SessionsConfig struct {
-	ClusterId any
-	MaxResults any
-	NextToken any
+	ClusterId     any
+	MaxResults    any
+	NextToken     any
 	SessionStates any
 }
 
 type SessionsAttrs struct {
-	ClusterId any
-	MaxResults any
-	NextToken any
+	ClusterId     any
+	MaxResults    any
+	NextToken     any
 	SessionStates any
-	Sessions any
+	Sessions      any
 }
 
 var Sessions = ubx.DataSourceBinding{
 	WireType: "aws_elasticmapreduce_sessions",
 	Fields: ubx.FieldMap{
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ClusterId":     ubx.FieldSpec{WireName: "cluster_id"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"SessionStates": ubx.FieldSpec{WireName: "session_states"},
 	},
 }

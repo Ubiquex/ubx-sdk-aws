@@ -12,6 +12,5 @@ type AutoScalingNotificationTypesAttrs struct {
 
 var AutoScalingNotificationTypes = ubx.DataSourceBinding{
 	WireType: "aws_autoscaling_auto_scaling_notification_types",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

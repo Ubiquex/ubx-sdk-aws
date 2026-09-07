@@ -4,34 +4,34 @@ package ssm_contacts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmContactsPagesByContact_Pages struct {
-	ContactArn any
-	DeliveryTime any
+	ContactArn    any
+	DeliveryTime  any
 	EngagementArn any
-	IncidentId any
-	PageArn any
-	ReadTime any
-	Sender any
-	SentTime any
+	IncidentId    any
+	PageArn       any
+	ReadTime      any
+	Sender        any
+	SentTime      any
 }
 
 type SsmContactsPagesByContactConfig struct {
-	ContactId any
+	ContactId  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SsmContactsPagesByContactAttrs struct {
-	ContactId any
+	ContactId  any
 	MaxResults any
-	NextToken any
-	Pages any
+	NextToken  any
+	Pages      any
 }
 
 var SsmContactsPagesByContact = ubx.DataSourceBinding{
 	WireType: "aws_ssm_contacts_pages_by_contact",
 	Fields: ubx.FieldMap{
-		"ContactId": ubx.FieldSpec{WireName: "contact_id"},
+		"ContactId":  ubx.FieldSpec{WireName: "contact_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

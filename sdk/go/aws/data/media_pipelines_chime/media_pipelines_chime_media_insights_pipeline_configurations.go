@@ -4,26 +4,26 @@ package media_pipelines_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MediaPipelinesChimeMediaInsightsPipelineConfigurations_MediaInsightsPipelineConfigurations struct {
-	MediaInsightsPipelineConfigurationArn any
-	MediaInsightsPipelineConfigurationId any
+	MediaInsightsPipelineConfigurationArn  any
+	MediaInsightsPipelineConfigurationId   any
 	MediaInsightsPipelineConfigurationName any
 }
 
 type MediaPipelinesChimeMediaInsightsPipelineConfigurationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type MediaPipelinesChimeMediaInsightsPipelineConfigurationsAttrs struct {
-	MaxResults any
+	MaxResults                          any
 	MediaInsightsPipelineConfigurations any
-	NextToken any
+	NextToken                           any
 }
 
 var MediaPipelinesChimeMediaInsightsPipelineConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_media_pipelines_chime_media_insights_pipeline_configurations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

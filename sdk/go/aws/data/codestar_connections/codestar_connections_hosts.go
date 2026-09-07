@@ -5,36 +5,36 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodestarConnectionsHosts_Hosts_VpcConfiguration struct {
 	SecurityGroupIds any
-	SubnetIds any
-	TlsCertificate any
-	VpcId any
+	SubnetIds        any
+	TlsCertificate   any
+	VpcId            any
 }
 
 type CodestarConnectionsHosts_Hosts struct {
-	HostArn any
-	Name any
+	HostArn          any
+	Name             any
 	ProviderEndpoint any
-	ProviderType any
-	Status any
-	StatusMessage any
+	ProviderType     any
+	Status           any
+	StatusMessage    any
 	VpcConfiguration any
 }
 
 type CodestarConnectionsHostsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CodestarConnectionsHostsAttrs struct {
-	Hosts any
+	Hosts      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var CodestarConnectionsHosts = ubx.DataSourceBinding{
 	WireType: "aws_codestar_connections_hosts",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

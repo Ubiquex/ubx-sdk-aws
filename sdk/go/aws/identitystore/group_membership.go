@@ -9,8 +9,8 @@ type GroupMembership_MemberId struct {
 }
 
 var GroupMembership_MemberIdFields = ubx.FieldMap{
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
-	}
+	"UserId": ubx.FieldSpec{WireName: "user_id"},
+}
 
 type GroupMembershipConfig struct {
 	// The unique identifier for a group in the identity store.
@@ -35,12 +35,12 @@ type GroupMembershipAttrs struct {
 var GroupMembership = ubx.ResourceBinding{
 	WireType: "aws_identity_store_group_membership",
 	Fields: ubx.FieldMap{
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
+		"GroupId":         ubx.FieldSpec{WireName: "group_id"},
 		"IdentityStoreId": ubx.FieldSpec{WireName: "identity_store_id"},
 		"MemberId": ubx.FieldSpec{
 			WireName: "member_id",
-			Kind: "object",
-			Fields: GroupMembership_MemberIdFields,
+			Kind:     "object",
+			Fields:   GroupMembership_MemberIdFields,
 		},
 	},
 }

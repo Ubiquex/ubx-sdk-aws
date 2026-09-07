@@ -8,11 +8,10 @@ type ServiceRoleForAccountConfig struct {
 
 type ServiceRoleForAccountAttrs struct {
 	AssociatedAt any
-	RoleArn any
+	RoleArn      any
 }
 
 var ServiceRoleForAccount = ubx.DataSourceBinding{
 	WireType: "aws_greengrassv2_service_role_for_account",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

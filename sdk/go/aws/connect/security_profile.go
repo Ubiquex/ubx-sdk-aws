@@ -13,7 +13,7 @@ type SecurityProfile_AllowedAccessControlTags struct {
 type SecurityProfile_AllowedFlowModules struct {
 	// The identifier of an Amazon Connect flow module that this security profile is permitted to use. (AI-inferred)
 	FlowModuleId any
-	Type any
+	Type         any
 }
 
 type SecurityProfile_Applications struct {
@@ -50,50 +50,50 @@ type SecurityProfile_GranularAccessControlConfiguration struct {
 }
 
 var SecurityProfile_AllowedAccessControlTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var SecurityProfile_AllowedFlowModulesFields = ubx.FieldMap{
-		"FlowModuleId": ubx.FieldSpec{WireName: "flow_module_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"FlowModuleId": ubx.FieldSpec{WireName: "flow_module_id"},
+	"Type":         ubx.FieldSpec{WireName: "type"},
+}
 
 var SecurityProfile_ApplicationsFields = ubx.FieldMap{
-		"ApplicationPermissions": ubx.FieldSpec{WireName: "application_permissions"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ApplicationPermissions": ubx.FieldSpec{WireName: "application_permissions"},
+	"Namespace":              ubx.FieldSpec{WireName: "namespace"},
+	"Type":                   ubx.FieldSpec{WireName: "type"},
+}
 
 var SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfiguration_PrimaryAttributeAccessControlConfiguration_PrimaryAttributeValuesFields = ubx.FieldMap{
-		"AccessType": ubx.FieldSpec{WireName: "access_type"},
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"AccessType":    ubx.FieldSpec{WireName: "access_type"},
+	"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
+	"Values":        ubx.FieldSpec{WireName: "values"},
+}
 
 var SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfiguration_PrimaryAttributeAccessControlConfigurationFields = ubx.FieldMap{
-		"PrimaryAttributeValues": ubx.FieldSpec{
-			WireName: "primary_attribute_values",
-			Kind: "list",
-			Fields: SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfiguration_PrimaryAttributeAccessControlConfiguration_PrimaryAttributeValuesFields,
-		},
-	}
+	"PrimaryAttributeValues": ubx.FieldSpec{
+		WireName: "primary_attribute_values",
+		Kind:     "list",
+		Fields:   SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfiguration_PrimaryAttributeAccessControlConfiguration_PrimaryAttributeValuesFields,
+	},
+}
 
 var SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfigurationFields = ubx.FieldMap{
-		"PrimaryAttributeAccessControlConfiguration": ubx.FieldSpec{
-			WireName: "primary_attribute_access_control_configuration",
-			Kind: "object",
-			Fields: SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfiguration_PrimaryAttributeAccessControlConfigurationFields,
-		},
-	}
+	"PrimaryAttributeAccessControlConfiguration": ubx.FieldSpec{
+		WireName: "primary_attribute_access_control_configuration",
+		Kind:     "object",
+		Fields:   SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfiguration_PrimaryAttributeAccessControlConfigurationFields,
+	},
+}
 
 var SecurityProfile_GranularAccessControlConfigurationFields = ubx.FieldMap{
-		"DataTableAccessControlConfiguration": ubx.FieldSpec{
-			WireName: "data_table_access_control_configuration",
-			Kind: "object",
-			Fields: SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfigurationFields,
-		},
-	}
+	"DataTableAccessControlConfiguration": ubx.FieldSpec{
+		WireName: "data_table_access_control_configuration",
+		Kind:     "object",
+		Fields:   SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfigurationFields,
+	},
+}
 
 type SecurityProfileConfig struct {
 	// The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.
@@ -161,34 +161,34 @@ var SecurityProfile = ubx.ResourceBinding{
 		"AllowedAccessControlHierarchyGroupId": ubx.FieldSpec{WireName: "allowed_access_control_hierarchy_group_id"},
 		"AllowedAccessControlTags": ubx.FieldSpec{
 			WireName: "allowed_access_control_tags",
-			Kind: "list",
-			Fields: SecurityProfile_AllowedAccessControlTagsFields,
+			Kind:     "list",
+			Fields:   SecurityProfile_AllowedAccessControlTagsFields,
 		},
 		"AllowedFlowModules": ubx.FieldSpec{
 			WireName: "allowed_flow_modules",
-			Kind: "list",
-			Fields: SecurityProfile_AllowedFlowModulesFields,
+			Kind:     "list",
+			Fields:   SecurityProfile_AllowedFlowModulesFields,
 		},
 		"Applications": ubx.FieldSpec{
 			WireName: "applications",
-			Kind: "list",
-			Fields: SecurityProfile_ApplicationsFields,
+			Kind:     "list",
+			Fields:   SecurityProfile_ApplicationsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"GranularAccessControlConfiguration": ubx.FieldSpec{
 			WireName: "granular_access_control_configuration",
-			Kind: "object",
-			Fields: SecurityProfile_GranularAccessControlConfigurationFields,
+			Kind:     "object",
+			Fields:   SecurityProfile_GranularAccessControlConfigurationFields,
 		},
 		"HierarchyRestrictedResources": ubx.FieldSpec{WireName: "hierarchy_restricted_resources"},
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Permissions": ubx.FieldSpec{WireName: "permissions"},
-		"SecurityProfileName": ubx.FieldSpec{WireName: "security_profile_name"},
-		"TagRestrictedResources": ubx.FieldSpec{WireName: "tag_restricted_resources"},
+		"InstanceArn":                  ubx.FieldSpec{WireName: "instance_arn"},
+		"Permissions":                  ubx.FieldSpec{WireName: "permissions"},
+		"SecurityProfileName":          ubx.FieldSpec{WireName: "security_profile_name"},
+		"TagRestrictedResources":       ubx.FieldSpec{WireName: "tag_restricted_resources"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SecurityProfile_AllowedAccessControlTagsFields,
+			Kind:     "list",
+			Fields:   SecurityProfile_AllowedAccessControlTagsFields,
 		},
 	},
 }

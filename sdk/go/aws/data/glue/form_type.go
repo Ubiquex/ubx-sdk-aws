@@ -8,10 +8,10 @@ type FormTypeConfig struct {
 }
 
 type FormTypeAttrs struct {
-	Id any
+	Id         any
 	Identifier any
-	Name any
-	Schema any
+	Name       any
+	Schema     any
 }
 
 var FormType = ubx.DataSourceBinding{

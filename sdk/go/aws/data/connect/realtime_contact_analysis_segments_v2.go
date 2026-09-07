@@ -4,10 +4,10 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RealtimeContactAnalysisSegmentsV2_Segments_Attachments_Attachments struct {
-	AttachmentId any
+	AttachmentId   any
 	AttachmentName any
-	ContentType any
-	Status any
+	ContentType    any
+	Status         any
 }
 
 type RealtimeContactAnalysisSegmentsV2_Segments_Attachments_Time struct {
@@ -15,22 +15,22 @@ type RealtimeContactAnalysisSegmentsV2_Segments_Attachments_Time struct {
 }
 
 type RealtimeContactAnalysisSegmentsV2_Segments_Attachments struct {
-	Attachments any
-	DisplayName any
-	Id any
-	ParticipantId any
+	Attachments     any
+	DisplayName     any
+	Id              any
+	ParticipantId   any
 	ParticipantRole any
-	Time any
+	Time            any
 }
 
 type RealtimeContactAnalysisSegmentsV2_Segments_Categories_MatchedDetails_PointsOfInterest_TranscriptItems_CharacterOffsets struct {
 	BeginOffsetChar any
-	EndOffsetChar any
+	EndOffsetChar   any
 }
 
 type RealtimeContactAnalysisSegmentsV2_Segments_Categories_MatchedDetails_PointsOfInterest_TranscriptItems struct {
 	CharacterOffsets any
-	Id any
+	Id               any
 }
 
 type RealtimeContactAnalysisSegmentsV2_Segments_Categories_MatchedDetails_PointsOfInterest struct {
@@ -46,31 +46,31 @@ type RealtimeContactAnalysisSegmentsV2_Segments_Categories struct {
 }
 
 type RealtimeContactAnalysisSegmentsV2_Segments_Event struct {
-	DisplayName any
-	EventType any
-	Id any
-	ParticipantId any
+	DisplayName     any
+	EventType       any
+	Id              any
+	ParticipantId   any
 	ParticipantRole any
-	Time any
+	Time            any
 }
 
 type RealtimeContactAnalysisSegmentsV2_Segments_ExtractedInformation_ExtractedValues struct {
-	Content any
+	Content          any
 	PointsOfInterest any
 }
 
 type RealtimeContactAnalysisSegmentsV2_Segments_ExtractedInformation struct {
-	ExtractedValues any
+	ExtractedValues                  any
 	ExtractionDefinitionDisplayLabel any
-	ExtractionDefinitionId any
-	ExtractionDefinitionName any
-	FailureCode any
+	ExtractionDefinitionId           any
+	ExtractionDefinitionName         any
+	FailureCode                      any
 }
 
 type RealtimeContactAnalysisSegmentsV2_Segments_Issues_IssuesDetected_TranscriptItems struct {
 	CharacterOffsets any
-	Content any
-	Id any
+	Content          any
+	Id               any
 }
 
 type RealtimeContactAnalysisSegmentsV2_Segments_Issues_IssuesDetected struct {
@@ -82,9 +82,9 @@ type RealtimeContactAnalysisSegmentsV2_Segments_Issues struct {
 }
 
 type RealtimeContactAnalysisSegmentsV2_Segments_PostContactSummary struct {
-	Content any
+	Content     any
 	FailureCode any
-	Status any
+	Status      any
 }
 
 type RealtimeContactAnalysisSegmentsV2_Segments_Transcript_Redaction struct {
@@ -92,56 +92,56 @@ type RealtimeContactAnalysisSegmentsV2_Segments_Transcript_Redaction struct {
 }
 
 type RealtimeContactAnalysisSegmentsV2_Segments_Transcript struct {
-	Content any
-	ContentType any
-	DisplayName any
-	Id any
-	ParticipantId any
+	Content         any
+	ContentType     any
+	DisplayName     any
+	Id              any
+	ParticipantId   any
 	ParticipantRole any
-	Redaction any
-	Sentiment any
-	Time any
+	Redaction       any
+	Sentiment       any
+	Time            any
 }
 
 type RealtimeContactAnalysisSegmentsV2_Segments struct {
-	Attachments any
-	Categories any
-	Event any
+	Attachments          any
+	Categories           any
+	Event                any
 	ExtractedInformation any
-	Issues any
-	PostContactSummary any
-	Transcript any
+	Issues               any
+	PostContactSummary   any
+	Transcript           any
 }
 
 type RealtimeContactAnalysisSegmentsV2Config struct {
-	ContactId any
-	InstanceId any
-	MaxResults any
-	NextToken any
-	OutputType any
+	ContactId    any
+	InstanceId   any
+	MaxResults   any
+	NextToken    any
+	OutputType   any
 	SegmentTypes any
 }
 
 type RealtimeContactAnalysisSegmentsV2Attrs struct {
-	Channel any
-	ContactId any
-	InstanceId any
-	MaxResults any
-	NextToken any
-	OutputType any
+	Channel      any
+	ContactId    any
+	InstanceId   any
+	MaxResults   any
+	NextToken    any
+	OutputType   any
 	SegmentTypes any
-	Segments any
-	Status any
+	Segments     any
+	Status       any
 }
 
 var RealtimeContactAnalysisSegmentsV2 = ubx.DataSourceBinding{
 	WireType: "aws_connect_realtime_contact_analysis_segments_v2",
 	Fields: ubx.FieldMap{
-		"ContactId": ubx.FieldSpec{WireName: "contact_id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OutputType": ubx.FieldSpec{WireName: "output_type"},
+		"ContactId":    ubx.FieldSpec{WireName: "contact_id"},
+		"InstanceId":   ubx.FieldSpec{WireName: "instance_id"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"OutputType":   ubx.FieldSpec{WireName: "output_type"},
 		"SegmentTypes": ubx.FieldSpec{WireName: "segment_types"},
 	},
 }

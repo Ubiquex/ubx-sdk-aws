@@ -4,7 +4,7 @@ package iottwinmaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Entities_EntitySummaries_Status_Error struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -14,42 +14,42 @@ type Entities_EntitySummaries_Status struct {
 }
 
 type Entities_EntitySummaries struct {
-	Arn any
+	Arn              any
 	CreationDateTime any
-	Description any
-	EntityId any
-	EntityName any
+	Description      any
+	EntityId         any
+	EntityName       any
 	HasChildEntities any
-	ParentEntityId any
-	Status any
-	UpdateDateTime any
+	ParentEntityId   any
+	Status           any
+	UpdateDateTime   any
 }
 
 type Entities_Filters struct {
 	ComponentTypeId any
-	ExternalId any
-	ParentEntityId any
+	ExternalId      any
+	ParentEntityId  any
 }
 
 var Entities_FiltersFields = ubx.FieldMap{
-		"ComponentTypeId": ubx.FieldSpec{WireName: "component_type_id"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"ParentEntityId": ubx.FieldSpec{WireName: "parent_entity_id"},
-	}
+	"ComponentTypeId": ubx.FieldSpec{WireName: "component_type_id"},
+	"ExternalId":      ubx.FieldSpec{WireName: "external_id"},
+	"ParentEntityId":  ubx.FieldSpec{WireName: "parent_entity_id"},
+}
 
 type EntitiesConfig struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters     any
+	MaxResults  any
+	NextToken   any
 	WorkspaceId any
 }
 
 type EntitiesAttrs struct {
 	EntitySummaries any
-	Filters any
-	MaxResults any
-	NextToken any
-	WorkspaceId any
+	Filters         any
+	MaxResults      any
+	NextToken       any
+	WorkspaceId     any
 }
 
 var Entities = ubx.DataSourceBinding{
@@ -57,11 +57,11 @@ var Entities = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Entities_FiltersFields,
+			Kind:     "list",
+			Fields:   Entities_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"WorkspaceId": ubx.FieldSpec{WireName: "workspace_id"},
 	},
 }

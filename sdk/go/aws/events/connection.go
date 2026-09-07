@@ -114,8 +114,8 @@ var Connection = ubx.ResourceBinding{
 	WireType: "aws_events_connection",
 	Fields: ubx.FieldMap{
 		"AuthorizationType": ubx.FieldSpec{WireName: "authorization_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"KmsKeyIdentifier": ubx.FieldSpec{WireName: "kms_key_identifier"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
+		"KmsKeyIdentifier":  ubx.FieldSpec{WireName: "kms_key_identifier"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 	},
 }

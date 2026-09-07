@@ -4,27 +4,27 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Queues_QueueSummaryList struct {
-	Arn any
-	Id any
+	Arn                any
+	Id                 any
 	LastModifiedRegion any
-	LastModifiedTime any
-	Name any
-	QueueType any
+	LastModifiedTime   any
+	Name               any
+	QueueType          any
 }
 
 type QueuesConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	QueueTypes any
 }
 
 type QueuesAttrs struct {
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId       any
+	MaxResults       any
+	NextToken        any
 	QueueSummaryList any
-	QueueTypes any
+	QueueTypes       any
 }
 
 var Queues = ubx.DataSourceBinding{
@@ -32,7 +32,7 @@ var Queues = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"QueueTypes": ubx.FieldSpec{WireName: "queue_types"},
 	},
 }

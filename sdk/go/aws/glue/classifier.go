@@ -52,34 +52,34 @@ type Classifier_Xmlclassifier struct {
 }
 
 var Classifier_CsvClassifierFields = ubx.FieldMap{
-		"AllowSingleColumn": ubx.FieldSpec{WireName: "allow_single_column"},
-		"ContainsCustomDatatype": ubx.FieldSpec{WireName: "contains_custom_datatype"},
-		"ContainsHeader": ubx.FieldSpec{WireName: "contains_header"},
-		"CustomDatatypeConfigured": ubx.FieldSpec{WireName: "custom_datatype_configured"},
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-		"DisableValueTrimming": ubx.FieldSpec{WireName: "disable_value_trimming"},
-		"Header": ubx.FieldSpec{WireName: "header"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"QuoteSymbol": ubx.FieldSpec{WireName: "quote_symbol"},
-	}
+	"AllowSingleColumn":        ubx.FieldSpec{WireName: "allow_single_column"},
+	"ContainsCustomDatatype":   ubx.FieldSpec{WireName: "contains_custom_datatype"},
+	"ContainsHeader":           ubx.FieldSpec{WireName: "contains_header"},
+	"CustomDatatypeConfigured": ubx.FieldSpec{WireName: "custom_datatype_configured"},
+	"Delimiter":                ubx.FieldSpec{WireName: "delimiter"},
+	"DisableValueTrimming":     ubx.FieldSpec{WireName: "disable_value_trimming"},
+	"Header":                   ubx.FieldSpec{WireName: "header"},
+	"Name":                     ubx.FieldSpec{WireName: "name"},
+	"QuoteSymbol":              ubx.FieldSpec{WireName: "quote_symbol"},
+}
 
 var Classifier_GrokClassifierFields = ubx.FieldMap{
-		"Classification": ubx.FieldSpec{WireName: "classification"},
-		"CustomPatterns": ubx.FieldSpec{WireName: "custom_patterns"},
-		"GrokPattern": ubx.FieldSpec{WireName: "grok_pattern"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Classification": ubx.FieldSpec{WireName: "classification"},
+	"CustomPatterns": ubx.FieldSpec{WireName: "custom_patterns"},
+	"GrokPattern":    ubx.FieldSpec{WireName: "grok_pattern"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+}
 
 var Classifier_JsonClassifierFields = ubx.FieldMap{
-		"JsonPath": ubx.FieldSpec{WireName: "json_path"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"JsonPath": ubx.FieldSpec{WireName: "json_path"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+}
 
 var Classifier_XmlclassifierFields = ubx.FieldMap{
-		"Classification": ubx.FieldSpec{WireName: "classification"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RowTag": ubx.FieldSpec{WireName: "row_tag"},
-	}
+	"Classification": ubx.FieldSpec{WireName: "classification"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"RowTag":         ubx.FieldSpec{WireName: "row_tag"},
+}
 
 type ClassifierConfig struct {
 	// Defines the configuration for an AWS Glue classifier that parses CSV files, including the delimiter, quote symbol, header detection, and whether to treat a single column as a valid CSV format. (AI-inferred)
@@ -110,23 +110,23 @@ var Classifier = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CsvClassifier": ubx.FieldSpec{
 			WireName: "csv_classifier",
-			Kind: "object",
-			Fields: Classifier_CsvClassifierFields,
+			Kind:     "object",
+			Fields:   Classifier_CsvClassifierFields,
 		},
 		"GrokClassifier": ubx.FieldSpec{
 			WireName: "grok_classifier",
-			Kind: "object",
-			Fields: Classifier_GrokClassifierFields,
+			Kind:     "object",
+			Fields:   Classifier_GrokClassifierFields,
 		},
 		"JsonClassifier": ubx.FieldSpec{
 			WireName: "json_classifier",
-			Kind: "object",
-			Fields: Classifier_JsonClassifierFields,
+			Kind:     "object",
+			Fields:   Classifier_JsonClassifierFields,
 		},
 		"Xmlclassifier": ubx.FieldSpec{
 			WireName: "xmlclassifier",
-			Kind: "object",
-			Fields: Classifier_XmlclassifierFields,
+			Kind:     "object",
+			Fields:   Classifier_XmlclassifierFields,
 		},
 	},
 }

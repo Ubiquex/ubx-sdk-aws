@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceAttribute_Attribute struct {
 	AttributeType any
-	Value any
+	Value         any
 }
 
 type InstanceAttributeConfig struct {
 	AttributeType any
-	InstanceId any
+	InstanceId    any
 }
 
 type InstanceAttributeAttrs struct {
 	// <p>A toggle for an individual feature at the instance level.</p>
-	Attribute any
+	Attribute     any
 	AttributeType any
-	InstanceId any
+	InstanceId    any
 }
 
 var InstanceAttribute = ubx.DataSourceBinding{
 	WireType: "aws_connect_instance_attribute",
 	Fields: ubx.FieldMap{
 		"AttributeType": ubx.FieldSpec{WireName: "attribute_type"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"InstanceId":    ubx.FieldSpec{WireName: "instance_id"},
 	},
 }

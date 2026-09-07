@@ -4,7 +4,7 @@ package eventbridge
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Replay_Destination struct {
-	Arn any
+	Arn        any
 	FilterArns any
 }
 
@@ -15,17 +15,17 @@ type ReplayConfig struct {
 type ReplayAttrs struct {
 	Description any
 	// <p>A <code>ReplayDestination</code> object that contains details about a replay.</p>
-	Destination any
-	EventEndTime any
+	Destination           any
+	EventEndTime          any
 	EventLastReplayedTime any
-	EventSourceArn any
-	EventStartTime any
-	ReplayArn any
-	ReplayEndTime any
-	ReplayName any
-	ReplayStartTime any
-	State any
-	StateReason any
+	EventSourceArn        any
+	EventStartTime        any
+	ReplayArn             any
+	ReplayEndTime         any
+	ReplayName            any
+	ReplayStartTime       any
+	State                 any
+	StateReason           any
 }
 
 var Replay = ubx.DataSourceBinding{

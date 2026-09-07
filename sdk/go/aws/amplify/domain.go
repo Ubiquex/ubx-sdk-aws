@@ -27,14 +27,14 @@ type Domain_SubDomainSettings struct {
 }
 
 var Domain_CertificateSettingsFields = ubx.FieldMap{
-		"CertificateType": ubx.FieldSpec{WireName: "certificate_type"},
-		"CustomCertificateArn": ubx.FieldSpec{WireName: "custom_certificate_arn"},
-	}
+	"CertificateType":      ubx.FieldSpec{WireName: "certificate_type"},
+	"CustomCertificateArn": ubx.FieldSpec{WireName: "custom_certificate_arn"},
+}
 
 var Domain_SubDomainSettingsFields = ubx.FieldMap{
-		"BranchName": ubx.FieldSpec{WireName: "branch_name"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"BranchName": ubx.FieldSpec{WireName: "branch_name"},
+	"Prefix":     ubx.FieldSpec{WireName: "prefix"},
+}
 
 type DomainConfig struct {
 	// The unique ID of the Amplify app to which this domain association belongs. (AI-inferred)
@@ -85,20 +85,20 @@ type DomainAttrs struct {
 var Domain = ubx.ResourceBinding{
 	WireType: "aws_amplify_domain",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":                         ubx.FieldSpec{WireName: "app_id"},
 		"AutoSubDomainCreationPatterns": ubx.FieldSpec{WireName: "auto_sub_domain_creation_patterns"},
-		"AutoSubDomainIamrole": ubx.FieldSpec{WireName: "auto_sub_domain_iamrole"},
+		"AutoSubDomainIamrole":          ubx.FieldSpec{WireName: "auto_sub_domain_iamrole"},
 		"CertificateSettings": ubx.FieldSpec{
 			WireName: "certificate_settings",
-			Kind: "object",
-			Fields: Domain_CertificateSettingsFields,
+			Kind:     "object",
+			Fields:   Domain_CertificateSettingsFields,
 		},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":          ubx.FieldSpec{WireName: "domain_name"},
 		"EnableAutoSubDomain": ubx.FieldSpec{WireName: "enable_auto_sub_domain"},
 		"SubDomainSettings": ubx.FieldSpec{
 			WireName: "sub_domain_settings",
-			Kind: "list",
-			Fields: Domain_SubDomainSettingsFields,
+			Kind:     "list",
+			Fields:   Domain_SubDomainSettingsFields,
 		},
 	},
 }

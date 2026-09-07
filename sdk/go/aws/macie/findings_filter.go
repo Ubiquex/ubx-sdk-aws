@@ -10,18 +10,18 @@ type FindingsFilter_FindingCriteria struct {
 
 type FindingsFilter_Tags struct {
 	// Specifies the key of a tag that you can attach to the findings filter to help identify and organize it in AWS Macie. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var FindingsFilter_FindingCriteriaFields = ubx.FieldMap{
-		"Criterion": ubx.FieldSpec{WireName: "criterion"},
-	}
+	"Criterion": ubx.FieldSpec{WireName: "criterion"},
+}
 
 var FindingsFilter_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FindingsFilterConfig struct {
 	// Specifies the action to take on findings that match the filter's criteria, with allowed values ARCHIVE to archive (suppress) the findings or NOOP to not change them, in AWS Macie. (AI-inferred)
@@ -60,19 +60,19 @@ type FindingsFilterAttrs struct {
 var FindingsFilter = ubx.ResourceBinding{
 	WireType: "aws_macie_findings_filter",
 	Fields: ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
+		"Action":      ubx.FieldSpec{WireName: "action"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"FindingCriteria": ubx.FieldSpec{
 			WireName: "finding_criteria",
-			Kind: "object",
-			Fields: FindingsFilter_FindingCriteriaFields,
+			Kind:     "object",
+			Fields:   FindingsFilter_FindingCriteriaFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"Position": ubx.FieldSpec{WireName: "position"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FindingsFilter_TagsFields,
+			Kind:     "list",
+			Fields:   FindingsFilter_TagsFields,
 		},
 	},
 }

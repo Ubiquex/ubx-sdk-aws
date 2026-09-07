@@ -22,7 +22,7 @@ type TransitGatewayPolicyTableAssociationAttrs struct {
 var TransitGatewayPolicyTableAssociation = ubx.ResourceBinding{
 	WireType: "aws_ec2_transit_gateway_policy_table_association",
 	Fields: ubx.FieldMap{
-		"TransitGatewayAttachmentId": ubx.FieldSpec{WireName: "transit_gateway_attachment_id"},
+		"TransitGatewayAttachmentId":  ubx.FieldSpec{WireName: "transit_gateway_attachment_id"},
 		"TransitGatewayPolicyTableId": ubx.FieldSpec{WireName: "transit_gateway_policy_table_id"},
 	},
 }

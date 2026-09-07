@@ -4,63 +4,63 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceComplianceSummaries_Filters struct {
-	Key any
-	Type any
+	Key    any
+	Type   any
 	Values any
 }
 
 type ResourceComplianceSummaries_ResourceComplianceSummaryItems_CompliantSummary_SeveritySummary struct {
-	CriticalCount any
-	HighCount any
+	CriticalCount      any
+	HighCount          any
 	InformationalCount any
-	LowCount any
-	MediumCount any
-	UnspecifiedCount any
+	LowCount           any
+	MediumCount        any
+	UnspecifiedCount   any
 }
 
 type ResourceComplianceSummaries_ResourceComplianceSummaryItems_CompliantSummary struct {
-	CompliantCount any
+	CompliantCount  any
 	SeveritySummary any
 }
 
 type ResourceComplianceSummaries_ResourceComplianceSummaryItems_ExecutionSummary struct {
-	ExecutionId any
+	ExecutionId   any
 	ExecutionTime any
 	ExecutionType any
 }
 
 type ResourceComplianceSummaries_ResourceComplianceSummaryItems_NonCompliantSummary struct {
 	NonCompliantCount any
-	SeveritySummary any
+	SeveritySummary   any
 }
 
 type ResourceComplianceSummaries_ResourceComplianceSummaryItems struct {
-	ComplianceType any
-	CompliantSummary any
-	ExecutionSummary any
+	ComplianceType      any
+	CompliantSummary    any
+	ExecutionSummary    any
 	NonCompliantSummary any
-	OverallSeverity any
-	ResourceId any
-	ResourceType any
-	Status any
+	OverallSeverity     any
+	ResourceId          any
+	ResourceType        any
+	Status              any
 }
 
 var ResourceComplianceSummaries_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ResourceComplianceSummariesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ResourceComplianceSummariesAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters                        any
+	MaxResults                     any
+	NextToken                      any
 	ResourceComplianceSummaryItems any
 }
 
@@ -69,10 +69,10 @@ var ResourceComplianceSummaries = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ResourceComplianceSummaries_FiltersFields,
+			Kind:     "list",
+			Fields:   ResourceComplianceSummaries_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

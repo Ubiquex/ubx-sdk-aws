@@ -4,47 +4,47 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Integration_IntegrationDetails_OpenSearchIntegrationDetails_AccessPolicy_Status struct {
-	Status any
+	Status        any
 	StatusMessage any
 }
 
 type Integration_IntegrationDetails_OpenSearchIntegrationDetails_AccessPolicy struct {
 	PolicyName any
-	Status any
+	Status     any
 }
 
 type Integration_IntegrationDetails_OpenSearchIntegrationDetails_Application struct {
-	ApplicationArn any
+	ApplicationArn      any
 	ApplicationEndpoint any
-	ApplicationId any
-	Status any
+	ApplicationId       any
+	Status              any
 }
 
 type Integration_IntegrationDetails_OpenSearchIntegrationDetails_Collection struct {
-	CollectionArn any
+	CollectionArn      any
 	CollectionEndpoint any
-	Status any
+	Status             any
 }
 
 type Integration_IntegrationDetails_OpenSearchIntegrationDetails_DataSource struct {
 	DataSourceName any
-	Status any
+	Status         any
 }
 
 type Integration_IntegrationDetails_OpenSearchIntegrationDetails_Workspace struct {
-	Status any
+	Status      any
 	WorkspaceId any
 }
 
 type Integration_IntegrationDetails_OpenSearchIntegrationDetails struct {
-	AccessPolicy any
-	Application any
-	Collection any
-	DataSource any
+	AccessPolicy     any
+	Application      any
+	Collection       any
+	DataSource       any
 	EncryptionPolicy any
-	LifecyclePolicy any
-	NetworkPolicy any
-	Workspace any
+	LifecyclePolicy  any
+	NetworkPolicy    any
+	Workspace        any
 }
 
 type Integration_IntegrationDetails struct {
@@ -58,9 +58,9 @@ type IntegrationConfig struct {
 type IntegrationAttrs struct {
 	// <p>This structure contains information about the integration configuration. For an integration with OpenSearch Service, this includes information about OpenSearch Service resources such as the collection, the workspace, and policies.</p> <p>This structure is returned by a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetIntegration.html">GetIntegration</a> operation.</p>
 	IntegrationDetails any
-	IntegrationName any
-	IntegrationStatus any
-	IntegrationType any
+	IntegrationName    any
+	IntegrationStatus  any
+	IntegrationType    any
 }
 
 var Integration = ubx.DataSourceBinding{

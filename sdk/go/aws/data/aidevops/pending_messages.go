@@ -4,22 +4,22 @@ package aidevops
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PendingMessages_Messages_Message_AssistantMessage struct {
-	Text any
+	Text    any
 	ToolUse any
 }
 
 type PendingMessages_Messages_Message_UserMessage struct {
-	Text any
+	Text       any
 	ToolResult any
 }
 
 type PendingMessages_Messages_Message struct {
 	AssistantMessage any
-	UserMessage any
+	UserMessage      any
 }
 
 type PendingMessages_Messages struct {
-	Message any
+	Message   any
 	MessageId any
 }
 
@@ -33,16 +33,16 @@ type PendingMessagesConfig struct {
 type PendingMessagesAttrs struct {
 	// <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
 	AgentSpaceId any
-	CreatedAt any
+	CreatedAt    any
 	// <p>Generic resource identifier (allows alphanumeric characters, hyphens, and underscores; 1-128 characters)</p>
 	ExecutionId any
-	Messages any
+	Messages    any
 }
 
 var PendingMessages = ubx.DataSourceBinding{
 	WireType: "aws_aidevops_pending_messages",
 	Fields: ubx.FieldMap{
 		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
-		"ExecutionId": ubx.FieldSpec{WireName: "execution_id"},
+		"ExecutionId":  ubx.FieldSpec{WireName: "execution_id"},
 	},
 }

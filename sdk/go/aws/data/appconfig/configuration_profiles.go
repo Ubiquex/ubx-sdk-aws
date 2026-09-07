@@ -4,35 +4,35 @@ package appconfig
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigurationProfiles_Items struct {
-	ApplicationId any
-	Id any
-	LocationUri any
-	Name any
-	Type any
+	ApplicationId  any
+	Id             any
+	LocationUri    any
+	Name           any
+	Type           any
 	ValidatorTypes any
 }
 
 type ConfigurationProfilesConfig struct {
 	ApplicationId any
-	MaxResults any
-	NextToken any
-	Type any
+	MaxResults    any
+	NextToken     any
+	Type          any
 }
 
 type ConfigurationProfilesAttrs struct {
 	ApplicationId any
-	Items any
-	MaxResults any
-	NextToken any
-	Type any
+	Items         any
+	MaxResults    any
+	NextToken     any
+	Type          any
 }
 
 var ConfigurationProfiles = ubx.DataSourceBinding{
 	WireType: "aws_appconfig_configuration_profiles",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"Type":          ubx.FieldSpec{WireName: "type"},
 	},
 }

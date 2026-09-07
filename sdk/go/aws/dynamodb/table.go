@@ -139,7 +139,7 @@ type Table_Ssespecification struct {
 }
 
 type Table_StreamSpecification_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -148,7 +148,7 @@ type Table_StreamSpecification struct {
 	ResourcePolicy any
 	// When an item in the table is modified, ``StreamViewType`` determines what information is written to the stream for this table. Valid values for ``StreamViewType`` are: + ``KEYS_ONLY`` - Only the key attributes of the modified item are written to the stream. + ``NEW_IMAGE`` - The entire item, as it appears after it was modified, is written to the stream. + ``OLD_IMAGE`` - The entire item, as it appeared before it was modified, is written to the stream. + ``NEW_AND_OLD_IMAGES`` - Both the new and the old item images of the item are written to the stream.
 	StreamViewType any
-	Tags any
+	Tags           any
 }
 
 type Table_TimeToLiveSpecification struct {
@@ -159,165 +159,165 @@ type Table_TimeToLiveSpecification struct {
 }
 
 var Table_AttributeDefinitionsFields = ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"AttributeType": ubx.FieldSpec{WireName: "attribute_type"},
-	}
+	"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
+	"AttributeType": ubx.FieldSpec{WireName: "attribute_type"},
+}
 
 var Table_ContributorInsightsSpecificationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Mode":    ubx.FieldSpec{WireName: "mode"},
+}
 
 var Table_GlobalSecondaryIndexes_KeySchemaFields = ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"KeyType": ubx.FieldSpec{WireName: "key_type"},
-	}
+	"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
+	"KeyType":       ubx.FieldSpec{WireName: "key_type"},
+}
 
 var Table_GlobalSecondaryIndexes_OnDemandThroughputFields = ubx.FieldMap{
-		"MaxReadRequestUnits": ubx.FieldSpec{WireName: "max_read_request_units"},
-		"MaxWriteRequestUnits": ubx.FieldSpec{WireName: "max_write_request_units"},
-	}
+	"MaxReadRequestUnits":  ubx.FieldSpec{WireName: "max_read_request_units"},
+	"MaxWriteRequestUnits": ubx.FieldSpec{WireName: "max_write_request_units"},
+}
 
 var Table_GlobalSecondaryIndexes_ProjectionFields = ubx.FieldMap{
-		"NonKeyAttributes": ubx.FieldSpec{WireName: "non_key_attributes"},
-		"ProjectionType": ubx.FieldSpec{WireName: "projection_type"},
-	}
+	"NonKeyAttributes": ubx.FieldSpec{WireName: "non_key_attributes"},
+	"ProjectionType":   ubx.FieldSpec{WireName: "projection_type"},
+}
 
 var Table_GlobalSecondaryIndexes_ProvisionedThroughputFields = ubx.FieldMap{
-		"ReadCapacityUnits": ubx.FieldSpec{WireName: "read_capacity_units"},
-		"WriteCapacityUnits": ubx.FieldSpec{WireName: "write_capacity_units"},
-	}
+	"ReadCapacityUnits":  ubx.FieldSpec{WireName: "read_capacity_units"},
+	"WriteCapacityUnits": ubx.FieldSpec{WireName: "write_capacity_units"},
+}
 
 var Table_GlobalSecondaryIndexes_WarmThroughputFields = ubx.FieldMap{
-		"ReadUnitsPerSecond": ubx.FieldSpec{WireName: "read_units_per_second"},
-		"WriteUnitsPerSecond": ubx.FieldSpec{WireName: "write_units_per_second"},
-	}
+	"ReadUnitsPerSecond":  ubx.FieldSpec{WireName: "read_units_per_second"},
+	"WriteUnitsPerSecond": ubx.FieldSpec{WireName: "write_units_per_second"},
+}
 
 var Table_GlobalSecondaryIndexesFields = ubx.FieldMap{
-		"ContributorInsightsSpecification": ubx.FieldSpec{
-			WireName: "contributor_insights_specification",
-			Kind: "object",
-			Fields: Table_ContributorInsightsSpecificationFields,
-		},
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
-		"KeySchema": ubx.FieldSpec{
-			WireName: "key_schema",
-			Kind: "list",
-			Fields: Table_GlobalSecondaryIndexes_KeySchemaFields,
-		},
-		"OnDemandThroughput": ubx.FieldSpec{
-			WireName: "on_demand_throughput",
-			Kind: "object",
-			Fields: Table_GlobalSecondaryIndexes_OnDemandThroughputFields,
-		},
-		"Projection": ubx.FieldSpec{
-			WireName: "projection",
-			Kind: "object",
-			Fields: Table_GlobalSecondaryIndexes_ProjectionFields,
-		},
-		"ProvisionedThroughput": ubx.FieldSpec{
-			WireName: "provisioned_throughput",
-			Kind: "object",
-			Fields: Table_GlobalSecondaryIndexes_ProvisionedThroughputFields,
-		},
-		"WarmThroughput": ubx.FieldSpec{
-			WireName: "warm_throughput",
-			Kind: "object",
-			Fields: Table_GlobalSecondaryIndexes_WarmThroughputFields,
-		},
-	}
+	"ContributorInsightsSpecification": ubx.FieldSpec{
+		WireName: "contributor_insights_specification",
+		Kind:     "object",
+		Fields:   Table_ContributorInsightsSpecificationFields,
+	},
+	"IndexName": ubx.FieldSpec{WireName: "index_name"},
+	"KeySchema": ubx.FieldSpec{
+		WireName: "key_schema",
+		Kind:     "list",
+		Fields:   Table_GlobalSecondaryIndexes_KeySchemaFields,
+	},
+	"OnDemandThroughput": ubx.FieldSpec{
+		WireName: "on_demand_throughput",
+		Kind:     "object",
+		Fields:   Table_GlobalSecondaryIndexes_OnDemandThroughputFields,
+	},
+	"Projection": ubx.FieldSpec{
+		WireName: "projection",
+		Kind:     "object",
+		Fields:   Table_GlobalSecondaryIndexes_ProjectionFields,
+	},
+	"ProvisionedThroughput": ubx.FieldSpec{
+		WireName: "provisioned_throughput",
+		Kind:     "object",
+		Fields:   Table_GlobalSecondaryIndexes_ProvisionedThroughputFields,
+	},
+	"WarmThroughput": ubx.FieldSpec{
+		WireName: "warm_throughput",
+		Kind:     "object",
+		Fields:   Table_GlobalSecondaryIndexes_WarmThroughputFields,
+	},
+}
 
 var Table_ImportSourceSpecification_InputFormatOptions_CsvFields = ubx.FieldMap{
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-		"HeaderList": ubx.FieldSpec{WireName: "header_list"},
-	}
+	"Delimiter":  ubx.FieldSpec{WireName: "delimiter"},
+	"HeaderList": ubx.FieldSpec{WireName: "header_list"},
+}
 
 var Table_ImportSourceSpecification_InputFormatOptionsFields = ubx.FieldMap{
-		"Csv": ubx.FieldSpec{
-			WireName: "csv",
-			Kind: "object",
-			Fields: Table_ImportSourceSpecification_InputFormatOptions_CsvFields,
-		},
-	}
+	"Csv": ubx.FieldSpec{
+		WireName: "csv",
+		Kind:     "object",
+		Fields:   Table_ImportSourceSpecification_InputFormatOptions_CsvFields,
+	},
+}
 
 var Table_ImportSourceSpecification_S3BucketSourceFields = ubx.FieldMap{
-		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
-		"S3BucketOwner": ubx.FieldSpec{WireName: "s3_bucket_owner"},
-		"S3KeyPrefix": ubx.FieldSpec{WireName: "s3_key_prefix"},
-	}
+	"S3Bucket":      ubx.FieldSpec{WireName: "s3_bucket"},
+	"S3BucketOwner": ubx.FieldSpec{WireName: "s3_bucket_owner"},
+	"S3KeyPrefix":   ubx.FieldSpec{WireName: "s3_key_prefix"},
+}
 
 var Table_ImportSourceSpecificationFields = ubx.FieldMap{
-		"InputCompressionType": ubx.FieldSpec{WireName: "input_compression_type"},
-		"InputFormat": ubx.FieldSpec{WireName: "input_format"},
-		"InputFormatOptions": ubx.FieldSpec{
-			WireName: "input_format_options",
-			Kind: "object",
-			Fields: Table_ImportSourceSpecification_InputFormatOptionsFields,
-		},
-		"S3BucketSource": ubx.FieldSpec{
-			WireName: "s3_bucket_source",
-			Kind: "object",
-			Fields: Table_ImportSourceSpecification_S3BucketSourceFields,
-		},
-	}
+	"InputCompressionType": ubx.FieldSpec{WireName: "input_compression_type"},
+	"InputFormat":          ubx.FieldSpec{WireName: "input_format"},
+	"InputFormatOptions": ubx.FieldSpec{
+		WireName: "input_format_options",
+		Kind:     "object",
+		Fields:   Table_ImportSourceSpecification_InputFormatOptionsFields,
+	},
+	"S3BucketSource": ubx.FieldSpec{
+		WireName: "s3_bucket_source",
+		Kind:     "object",
+		Fields:   Table_ImportSourceSpecification_S3BucketSourceFields,
+	},
+}
 
 var Table_KinesisStreamSpecificationFields = ubx.FieldMap{
-		"ApproximateCreationDateTimePrecision": ubx.FieldSpec{WireName: "approximate_creation_date_time_precision"},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
-	}
+	"ApproximateCreationDateTimePrecision": ubx.FieldSpec{WireName: "approximate_creation_date_time_precision"},
+	"StreamArn":                            ubx.FieldSpec{WireName: "stream_arn"},
+}
 
 var Table_LocalSecondaryIndexesFields = ubx.FieldMap{
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
-		"KeySchema": ubx.FieldSpec{
-			WireName: "key_schema",
-			Kind: "list",
-			Fields: Table_GlobalSecondaryIndexes_KeySchemaFields,
-		},
-		"Projection": ubx.FieldSpec{
-			WireName: "projection",
-			Kind: "object",
-			Fields: Table_GlobalSecondaryIndexes_ProjectionFields,
-		},
-	}
+	"IndexName": ubx.FieldSpec{WireName: "index_name"},
+	"KeySchema": ubx.FieldSpec{
+		WireName: "key_schema",
+		Kind:     "list",
+		Fields:   Table_GlobalSecondaryIndexes_KeySchemaFields,
+	},
+	"Projection": ubx.FieldSpec{
+		WireName: "projection",
+		Kind:     "object",
+		Fields:   Table_GlobalSecondaryIndexes_ProjectionFields,
+	},
+}
 
 var Table_PointInTimeRecoverySpecificationFields = ubx.FieldMap{
-		"PointInTimeRecoveryEnabled": ubx.FieldSpec{WireName: "point_in_time_recovery_enabled"},
-		"RecoveryPeriodInDays": ubx.FieldSpec{WireName: "recovery_period_in_days"},
-	}
+	"PointInTimeRecoveryEnabled": ubx.FieldSpec{WireName: "point_in_time_recovery_enabled"},
+	"RecoveryPeriodInDays":       ubx.FieldSpec{WireName: "recovery_period_in_days"},
+}
 
 var Table_ResourcePolicyFields = ubx.FieldMap{
-		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-	}
+	"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
+}
 
 var Table_SsespecificationFields = ubx.FieldMap{
-		"KmsmasterKeyId": ubx.FieldSpec{WireName: "kmsmaster_key_id"},
-		"Sseenabled": ubx.FieldSpec{WireName: "sseenabled"},
-		"Ssetype": ubx.FieldSpec{WireName: "ssetype"},
-	}
+	"KmsmasterKeyId": ubx.FieldSpec{WireName: "kmsmaster_key_id"},
+	"Sseenabled":     ubx.FieldSpec{WireName: "sseenabled"},
+	"Ssetype":        ubx.FieldSpec{WireName: "ssetype"},
+}
 
 var Table_StreamSpecification_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Table_StreamSpecificationFields = ubx.FieldMap{
-		"ResourcePolicy": ubx.FieldSpec{
-			WireName: "resource_policy",
-			Kind: "object",
-			Fields: Table_ResourcePolicyFields,
-		},
-		"StreamViewType": ubx.FieldSpec{WireName: "stream_view_type"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: Table_StreamSpecification_TagsFields,
-		},
-	}
+	"ResourcePolicy": ubx.FieldSpec{
+		WireName: "resource_policy",
+		Kind:     "object",
+		Fields:   Table_ResourcePolicyFields,
+	},
+	"StreamViewType": ubx.FieldSpec{WireName: "stream_view_type"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   Table_StreamSpecification_TagsFields,
+	},
+}
 
 var Table_TimeToLiveSpecificationFields = ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
+	"Enabled":       ubx.FieldSpec{WireName: "enabled"},
+}
 
 type TableConfig struct {
 	// A list of attributes that describe the key schema for the table and indexes. This property is required to create a DDB table. Update requires: [Some interruptions](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-some-interrupt). Replacement if you edit an existing AttributeDefinition.
@@ -414,83 +414,83 @@ var Table = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AttributeDefinitions": ubx.FieldSpec{
 			WireName: "attribute_definitions",
-			Kind: "list",
-			Fields: Table_AttributeDefinitionsFields,
+			Kind:     "list",
+			Fields:   Table_AttributeDefinitionsFields,
 		},
 		"BillingMode": ubx.FieldSpec{WireName: "billing_mode"},
 		"ContributorInsightsSpecification": ubx.FieldSpec{
 			WireName: "contributor_insights_specification",
-			Kind: "object",
-			Fields: Table_ContributorInsightsSpecificationFields,
+			Kind:     "object",
+			Fields:   Table_ContributorInsightsSpecificationFields,
 		},
 		"DeletionProtectionEnabled": ubx.FieldSpec{WireName: "deletion_protection_enabled"},
 		"GlobalSecondaryIndexes": ubx.FieldSpec{
 			WireName: "global_secondary_indexes",
-			Kind: "list",
-			Fields: Table_GlobalSecondaryIndexesFields,
+			Kind:     "list",
+			Fields:   Table_GlobalSecondaryIndexesFields,
 		},
 		"ImportSourceSpecification": ubx.FieldSpec{
 			WireName: "import_source_specification",
-			Kind: "object",
-			Fields: Table_ImportSourceSpecificationFields,
+			Kind:     "object",
+			Fields:   Table_ImportSourceSpecificationFields,
 		},
 		"KeySchema": ubx.FieldSpec{WireName: "key_schema"},
 		"KinesisStreamSpecification": ubx.FieldSpec{
 			WireName: "kinesis_stream_specification",
-			Kind: "object",
-			Fields: Table_KinesisStreamSpecificationFields,
+			Kind:     "object",
+			Fields:   Table_KinesisStreamSpecificationFields,
 		},
 		"LocalSecondaryIndexes": ubx.FieldSpec{
 			WireName: "local_secondary_indexes",
-			Kind: "list",
-			Fields: Table_LocalSecondaryIndexesFields,
+			Kind:     "list",
+			Fields:   Table_LocalSecondaryIndexesFields,
 		},
 		"OnDemandThroughput": ubx.FieldSpec{
 			WireName: "on_demand_throughput",
-			Kind: "object",
-			Fields: Table_GlobalSecondaryIndexes_OnDemandThroughputFields,
+			Kind:     "object",
+			Fields:   Table_GlobalSecondaryIndexes_OnDemandThroughputFields,
 		},
 		"PointInTimeRecoverySpecification": ubx.FieldSpec{
 			WireName: "point_in_time_recovery_specification",
-			Kind: "object",
-			Fields: Table_PointInTimeRecoverySpecificationFields,
+			Kind:     "object",
+			Fields:   Table_PointInTimeRecoverySpecificationFields,
 		},
 		"ProvisionedThroughput": ubx.FieldSpec{
 			WireName: "provisioned_throughput",
-			Kind: "object",
-			Fields: Table_GlobalSecondaryIndexes_ProvisionedThroughputFields,
+			Kind:     "object",
+			Fields:   Table_GlobalSecondaryIndexes_ProvisionedThroughputFields,
 		},
 		"ResourcePolicy": ubx.FieldSpec{
 			WireName: "resource_policy",
-			Kind: "object",
-			Fields: Table_ResourcePolicyFields,
+			Kind:     "object",
+			Fields:   Table_ResourcePolicyFields,
 		},
 		"Ssespecification": ubx.FieldSpec{
 			WireName: "ssespecification",
-			Kind: "object",
-			Fields: Table_SsespecificationFields,
+			Kind:     "object",
+			Fields:   Table_SsespecificationFields,
 		},
 		"StreamSpecification": ubx.FieldSpec{
 			WireName: "stream_specification",
-			Kind: "object",
-			Fields: Table_StreamSpecificationFields,
+			Kind:     "object",
+			Fields:   Table_StreamSpecificationFields,
 		},
 		"TableClass": ubx.FieldSpec{WireName: "table_class"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
+		"TableName":  ubx.FieldSpec{WireName: "table_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Table_StreamSpecification_TagsFields,
+			Kind:     "list",
+			Fields:   Table_StreamSpecification_TagsFields,
 		},
 		"TimeToLiveSpecification": ubx.FieldSpec{
 			WireName: "time_to_live_specification",
-			Kind: "object",
-			Fields: Table_TimeToLiveSpecificationFields,
+			Kind:     "object",
+			Fields:   Table_TimeToLiveSpecificationFields,
 		},
 		"WarmThroughput": ubx.FieldSpec{
 			WireName: "warm_throughput",
-			Kind: "object",
-			Fields: Table_GlobalSecondaryIndexes_WarmThroughputFields,
+			Kind:     "object",
+			Fields:   Table_GlobalSecondaryIndexes_WarmThroughputFields,
 		},
 	},
 }

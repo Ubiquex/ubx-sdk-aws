@@ -45,20 +45,20 @@ type AccessPoint_PublicAccessBlockConfiguration struct {
 }
 
 var AccessPoint_ObjectLambdaConfiguration_TransformationConfigurationsFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"ContentTransformation": ubx.FieldSpec{WireName: "content_transformation"},
-	}
+	"Actions":               ubx.FieldSpec{WireName: "actions"},
+	"ContentTransformation": ubx.FieldSpec{WireName: "content_transformation"},
+}
 
 var AccessPoint_ObjectLambdaConfigurationFields = ubx.FieldMap{
-		"AllowedFeatures": ubx.FieldSpec{WireName: "allowed_features"},
-		"CloudWatchMetricsEnabled": ubx.FieldSpec{WireName: "cloud_watch_metrics_enabled"},
-		"SupportingAccessPoint": ubx.FieldSpec{WireName: "supporting_access_point"},
-		"TransformationConfigurations": ubx.FieldSpec{
-			WireName: "transformation_configurations",
-			Kind: "list",
-			Fields: AccessPoint_ObjectLambdaConfiguration_TransformationConfigurationsFields,
-		},
-	}
+	"AllowedFeatures":          ubx.FieldSpec{WireName: "allowed_features"},
+	"CloudWatchMetricsEnabled": ubx.FieldSpec{WireName: "cloud_watch_metrics_enabled"},
+	"SupportingAccessPoint":    ubx.FieldSpec{WireName: "supporting_access_point"},
+	"TransformationConfigurations": ubx.FieldSpec{
+		WireName: "transformation_configurations",
+		Kind:     "list",
+		Fields:   AccessPoint_ObjectLambdaConfiguration_TransformationConfigurationsFields,
+	},
+}
 
 type AccessPointConfig struct {
 	// The name you want to assign to this Object lambda Access Point.
@@ -90,8 +90,8 @@ var AccessPoint = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ObjectLambdaConfiguration": ubx.FieldSpec{
 			WireName: "object_lambda_configuration",
-			Kind: "object",
-			Fields: AccessPoint_ObjectLambdaConfigurationFields,
+			Kind:     "object",
+			Fields:   AccessPoint_ObjectLambdaConfigurationFields,
 		},
 	},
 }

@@ -4,27 +4,27 @@ package mpa
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PolicyVersions_PolicyVersions struct {
-	Arn any
-	CreationTime any
-	IsDefault any
+	Arn             any
+	CreationTime    any
+	IsDefault       any
 	LastUpdatedTime any
-	Name any
-	PolicyArn any
-	PolicyType any
-	Status any
-	VersionId any
+	Name            any
+	PolicyArn       any
+	PolicyType      any
+	Status          any
+	VersionId       any
 }
 
 type PolicyVersionsConfig struct {
 	MaxResults any
-	NextToken any
-	PolicyArn any
+	NextToken  any
+	PolicyArn  any
 }
 
 type PolicyVersionsAttrs struct {
-	MaxResults any
-	NextToken any
-	PolicyArn any
+	MaxResults     any
+	NextToken      any
+	PolicyArn      any
 	PolicyVersions any
 }
 
@@ -32,7 +32,7 @@ var PolicyVersions = ubx.DataSourceBinding{
 	WireType: "aws_mpa_policy_versions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PolicyArn": ubx.FieldSpec{WireName: "policy_arn"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"PolicyArn":  ubx.FieldSpec{WireName: "policy_arn"},
 	},
 }

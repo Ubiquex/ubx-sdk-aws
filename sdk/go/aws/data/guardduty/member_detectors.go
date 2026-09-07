@@ -22,40 +22,40 @@ type MemberDetectors_MemberDataSourceConfigurations_DataSources_MalwareProtectio
 
 type MemberDetectors_MemberDataSourceConfigurations_DataSources_MalwareProtection struct {
 	ScanEc2InstanceWithFindings any
-	ServiceRole any
+	ServiceRole                 any
 }
 
 type MemberDetectors_MemberDataSourceConfigurations_DataSources struct {
-	CloudTrail any
-	Dnslogs any
-	FlowLogs any
-	Kubernetes any
+	CloudTrail        any
+	Dnslogs           any
+	FlowLogs          any
+	Kubernetes        any
 	MalwareProtection any
-	S3Logs any
+	S3Logs            any
 }
 
 type MemberDetectors_MemberDataSourceConfigurations_Features_AdditionalConfiguration struct {
-	Name any
-	Status any
+	Name      any
+	Status    any
 	UpdatedAt any
 }
 
 type MemberDetectors_MemberDataSourceConfigurations_Features struct {
 	AdditionalConfiguration any
-	Name any
-	Status any
-	UpdatedAt any
+	Name                    any
+	Status                  any
+	UpdatedAt               any
 }
 
 type MemberDetectors_MemberDataSourceConfigurations struct {
-	AccountId any
+	AccountId   any
 	DataSources any
-	Features any
+	Features    any
 }
 
 type MemberDetectors_UnprocessedAccounts struct {
 	AccountId any
-	Result any
+	Result    any
 }
 
 type MemberDetectorsConfig struct {
@@ -64,10 +64,10 @@ type MemberDetectorsConfig struct {
 }
 
 type MemberDetectorsAttrs struct {
-	AccountIds any
-	DetectorId any
+	AccountIds                     any
+	DetectorId                     any
 	MemberDataSourceConfigurations any
-	UnprocessedAccounts any
+	UnprocessedAccounts            any
 }
 
 var MemberDetectors = ubx.DataSourceBinding{

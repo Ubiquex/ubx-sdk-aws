@@ -29,21 +29,21 @@ type Topic_Tags struct {
 }
 
 var Topic_DeliveryStatusLoggingFields = ubx.FieldMap{
-		"FailureFeedbackRoleArn": ubx.FieldSpec{WireName: "failure_feedback_role_arn"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"SuccessFeedbackRoleArn": ubx.FieldSpec{WireName: "success_feedback_role_arn"},
-		"SuccessFeedbackSampleRate": ubx.FieldSpec{WireName: "success_feedback_sample_rate"},
-	}
+	"FailureFeedbackRoleArn":    ubx.FieldSpec{WireName: "failure_feedback_role_arn"},
+	"Protocol":                  ubx.FieldSpec{WireName: "protocol"},
+	"SuccessFeedbackRoleArn":    ubx.FieldSpec{WireName: "success_feedback_role_arn"},
+	"SuccessFeedbackSampleRate": ubx.FieldSpec{WireName: "success_feedback_sample_rate"},
+}
 
 var Topic_SubscriptionFields = ubx.FieldMap{
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-	}
+	"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
+	"Protocol": ubx.FieldSpec{WireName: "protocol"},
+}
 
 var Topic_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TopicConfig struct {
 	// The ``ArchivePolicy`` determines the number of days SNS retains messages in FIFO topics. You can set a retention period ranging from 1 to 365 days. This property is only applicable to FIFO topics; attempting to use it with standard topics will result in a creation failure.
@@ -108,30 +108,30 @@ type TopicAttrs struct {
 var Topic = ubx.ResourceBinding{
 	WireType: "aws_sns_topic",
 	Fields: ubx.FieldMap{
-		"ArchivePolicy": ubx.FieldSpec{WireName: "archive_policy"},
+		"ArchivePolicy":             ubx.FieldSpec{WireName: "archive_policy"},
 		"ContentBasedDeduplication": ubx.FieldSpec{WireName: "content_based_deduplication"},
-		"DataProtectionPolicy": ubx.FieldSpec{WireName: "data_protection_policy"},
+		"DataProtectionPolicy":      ubx.FieldSpec{WireName: "data_protection_policy"},
 		"DeliveryStatusLogging": ubx.FieldSpec{
 			WireName: "delivery_status_logging",
-			Kind: "list",
-			Fields: Topic_DeliveryStatusLoggingFields,
+			Kind:     "list",
+			Fields:   Topic_DeliveryStatusLoggingFields,
 		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DisplayName":         ubx.FieldSpec{WireName: "display_name"},
 		"FifoThroughputScope": ubx.FieldSpec{WireName: "fifo_throughput_scope"},
-		"FifoTopic": ubx.FieldSpec{WireName: "fifo_topic"},
-		"KmsMasterKeyId": ubx.FieldSpec{WireName: "kms_master_key_id"},
-		"SignatureVersion": ubx.FieldSpec{WireName: "signature_version"},
+		"FifoTopic":           ubx.FieldSpec{WireName: "fifo_topic"},
+		"KmsMasterKeyId":      ubx.FieldSpec{WireName: "kms_master_key_id"},
+		"SignatureVersion":    ubx.FieldSpec{WireName: "signature_version"},
 		"Subscription": ubx.FieldSpec{
 			WireName: "subscription",
-			Kind: "list",
-			Fields: Topic_SubscriptionFields,
+			Kind:     "list",
+			Fields:   Topic_SubscriptionFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Topic_TagsFields,
+			Kind:     "list",
+			Fields:   Topic_TagsFields,
 		},
-		"TopicName": ubx.FieldSpec{WireName: "topic_name"},
+		"TopicName":     ubx.FieldSpec{WireName: "topic_name"},
 		"TracingConfig": ubx.FieldSpec{WireName: "tracing_config"},
 	},
 }

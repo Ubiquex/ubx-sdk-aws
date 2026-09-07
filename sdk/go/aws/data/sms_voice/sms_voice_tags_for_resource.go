@@ -4,7 +4,7 @@ package sms_voice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SmsVoiceTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type SmsVoiceTagsForResourceConfig struct {
 
 type SmsVoiceTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var SmsVoiceTagsForResource = ubx.DataSourceBinding{

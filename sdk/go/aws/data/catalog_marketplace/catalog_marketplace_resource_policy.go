@@ -8,7 +8,7 @@ type CatalogMarketplaceResourcePolicyConfig struct {
 }
 
 type CatalogMarketplaceResourcePolicyAttrs struct {
-	Policy any
+	Policy      any
 	ResourceArn any
 }
 

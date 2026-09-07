@@ -74,83 +74,83 @@ type FunctionDefinition_InitialVersion struct {
 }
 
 var FunctionDefinition_InitialVersion_DefaultConfig_Execution_RunAsFields = ubx.FieldMap{
-		"Gid": ubx.FieldSpec{WireName: "gid"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Gid": ubx.FieldSpec{WireName: "gid"},
+	"Uid": ubx.FieldSpec{WireName: "uid"},
+}
 
 var FunctionDefinition_InitialVersion_DefaultConfig_ExecutionFields = ubx.FieldMap{
-		"IsolationMode": ubx.FieldSpec{WireName: "isolation_mode"},
-		"RunAs": ubx.FieldSpec{
-			WireName: "run_as",
-			Kind: "object",
-			Fields: FunctionDefinition_InitialVersion_DefaultConfig_Execution_RunAsFields,
-		},
-	}
+	"IsolationMode": ubx.FieldSpec{WireName: "isolation_mode"},
+	"RunAs": ubx.FieldSpec{
+		WireName: "run_as",
+		Kind:     "object",
+		Fields:   FunctionDefinition_InitialVersion_DefaultConfig_Execution_RunAsFields,
+	},
+}
 
 var FunctionDefinition_InitialVersion_DefaultConfigFields = ubx.FieldMap{
-		"Execution": ubx.FieldSpec{
-			WireName: "execution",
-			Kind: "object",
-			Fields: FunctionDefinition_InitialVersion_DefaultConfig_ExecutionFields,
-		},
-	}
+	"Execution": ubx.FieldSpec{
+		WireName: "execution",
+		Kind:     "object",
+		Fields:   FunctionDefinition_InitialVersion_DefaultConfig_ExecutionFields,
+	},
+}
 
 var FunctionDefinition_InitialVersion_Functions_FunctionConfiguration_Environment_ResourceAccessPoliciesFields = ubx.FieldMap{
-		"Permission": ubx.FieldSpec{WireName: "permission"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-	}
+	"Permission": ubx.FieldSpec{WireName: "permission"},
+	"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+}
 
 var FunctionDefinition_InitialVersion_Functions_FunctionConfiguration_EnvironmentFields = ubx.FieldMap{
-		"AccessSysfs": ubx.FieldSpec{WireName: "access_sysfs"},
-		"Execution": ubx.FieldSpec{
-			WireName: "execution",
-			Kind: "object",
-			Fields: FunctionDefinition_InitialVersion_DefaultConfig_ExecutionFields,
-		},
-		"ResourceAccessPolicies": ubx.FieldSpec{
-			WireName: "resource_access_policies",
-			Kind: "list",
-			Fields: FunctionDefinition_InitialVersion_Functions_FunctionConfiguration_Environment_ResourceAccessPoliciesFields,
-		},
-		"Variables": ubx.FieldSpec{WireName: "variables"},
-	}
+	"AccessSysfs": ubx.FieldSpec{WireName: "access_sysfs"},
+	"Execution": ubx.FieldSpec{
+		WireName: "execution",
+		Kind:     "object",
+		Fields:   FunctionDefinition_InitialVersion_DefaultConfig_ExecutionFields,
+	},
+	"ResourceAccessPolicies": ubx.FieldSpec{
+		WireName: "resource_access_policies",
+		Kind:     "list",
+		Fields:   FunctionDefinition_InitialVersion_Functions_FunctionConfiguration_Environment_ResourceAccessPoliciesFields,
+	},
+	"Variables": ubx.FieldSpec{WireName: "variables"},
+}
 
 var FunctionDefinition_InitialVersion_Functions_FunctionConfigurationFields = ubx.FieldMap{
-		"EncodingType": ubx.FieldSpec{WireName: "encoding_type"},
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "object",
-			Fields: FunctionDefinition_InitialVersion_Functions_FunctionConfiguration_EnvironmentFields,
-		},
-		"ExecArgs": ubx.FieldSpec{WireName: "exec_args"},
-		"Executable": ubx.FieldSpec{WireName: "executable"},
-		"MemorySize": ubx.FieldSpec{WireName: "memory_size"},
-		"Pinned": ubx.FieldSpec{WireName: "pinned"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"EncodingType": ubx.FieldSpec{WireName: "encoding_type"},
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "object",
+		Fields:   FunctionDefinition_InitialVersion_Functions_FunctionConfiguration_EnvironmentFields,
+	},
+	"ExecArgs":   ubx.FieldSpec{WireName: "exec_args"},
+	"Executable": ubx.FieldSpec{WireName: "executable"},
+	"MemorySize": ubx.FieldSpec{WireName: "memory_size"},
+	"Pinned":     ubx.FieldSpec{WireName: "pinned"},
+	"Timeout":    ubx.FieldSpec{WireName: "timeout"},
+}
 
 var FunctionDefinition_InitialVersion_FunctionsFields = ubx.FieldMap{
-		"FunctionArn": ubx.FieldSpec{WireName: "function_arn"},
-		"FunctionConfiguration": ubx.FieldSpec{
-			WireName: "function_configuration",
-			Kind: "object",
-			Fields: FunctionDefinition_InitialVersion_Functions_FunctionConfigurationFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"FunctionArn": ubx.FieldSpec{WireName: "function_arn"},
+	"FunctionConfiguration": ubx.FieldSpec{
+		WireName: "function_configuration",
+		Kind:     "object",
+		Fields:   FunctionDefinition_InitialVersion_Functions_FunctionConfigurationFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+}
 
 var FunctionDefinition_InitialVersionFields = ubx.FieldMap{
-		"DefaultConfig": ubx.FieldSpec{
-			WireName: "default_config",
-			Kind: "object",
-			Fields: FunctionDefinition_InitialVersion_DefaultConfigFields,
-		},
-		"Functions": ubx.FieldSpec{
-			WireName: "functions",
-			Kind: "list",
-			Fields: FunctionDefinition_InitialVersion_FunctionsFields,
-		},
-	}
+	"DefaultConfig": ubx.FieldSpec{
+		WireName: "default_config",
+		Kind:     "object",
+		Fields:   FunctionDefinition_InitialVersion_DefaultConfigFields,
+	},
+	"Functions": ubx.FieldSpec{
+		WireName: "functions",
+		Kind:     "list",
+		Fields:   FunctionDefinition_InitialVersion_FunctionsFields,
+	},
+}
 
 type FunctionDefinitionConfig struct {
 	// Provides the initial version of the function definition, specifying the default configuration and the Lambda functions to be deployed. (AI-inferred)
@@ -181,8 +181,8 @@ var FunctionDefinition = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"InitialVersion": ubx.FieldSpec{
 			WireName: "initial_version",
-			Kind: "object",
-			Fields: FunctionDefinition_InitialVersionFields,
+			Kind:     "object",
+			Fields:   FunctionDefinition_InitialVersionFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},

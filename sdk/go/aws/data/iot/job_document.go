@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type JobDocumentConfig struct {
 	BeforeSubstitution any
-	JobId any
+	JobId              any
 }
 
 type JobDocumentAttrs struct {
 	BeforeSubstitution any
-	Document any
-	JobId any
+	Document           any
+	JobId              any
 }
 
 var JobDocument = ubx.DataSourceBinding{
 	WireType: "aws_iot_job_document",
 	Fields: ubx.FieldMap{
 		"BeforeSubstitution": ubx.FieldSpec{WireName: "before_substitution"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":              ubx.FieldSpec{WireName: "job_id"},
 	},
 }

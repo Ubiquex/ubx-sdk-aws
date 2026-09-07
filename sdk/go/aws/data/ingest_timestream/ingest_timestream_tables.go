@@ -4,10 +4,10 @@ package ingest_timestream
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IngestTimestreamTables_Tables_MagneticStoreWriteProperties_MagneticStoreRejectedDataLocation_S3Configuration struct {
-	BucketName any
+	BucketName       any
 	EncryptionOption any
-	KmsKeyId any
-	ObjectKeyPrefix any
+	KmsKeyId         any
+	ObjectKeyPrefix  any
 }
 
 type IngestTimestreamTables_Tables_MagneticStoreWriteProperties_MagneticStoreRejectedDataLocation struct {
@@ -15,19 +15,19 @@ type IngestTimestreamTables_Tables_MagneticStoreWriteProperties_MagneticStoreRej
 }
 
 type IngestTimestreamTables_Tables_MagneticStoreWriteProperties struct {
-	EnableMagneticStoreWrites any
+	EnableMagneticStoreWrites         any
 	MagneticStoreRejectedDataLocation any
 }
 
 type IngestTimestreamTables_Tables_RetentionProperties struct {
 	MagneticStoreRetentionPeriodInDays any
-	MemoryStoreRetentionPeriodInHours any
+	MemoryStoreRetentionPeriodInHours  any
 }
 
 type IngestTimestreamTables_Tables_Schema_CompositePartitionKey struct {
 	EnforcementInRecord any
-	Name any
-	Type any
+	Name                any
+	Type                any
 }
 
 type IngestTimestreamTables_Tables_Schema struct {
@@ -35,35 +35,35 @@ type IngestTimestreamTables_Tables_Schema struct {
 }
 
 type IngestTimestreamTables_Tables struct {
-	Arn any
-	CreationTime any
-	DatabaseName any
-	LastUpdatedTime any
+	Arn                          any
+	CreationTime                 any
+	DatabaseName                 any
+	LastUpdatedTime              any
 	MagneticStoreWriteProperties any
-	RetentionProperties any
-	Schema any
-	TableName any
-	TableStatus any
+	RetentionProperties          any
+	Schema                       any
+	TableName                    any
+	TableStatus                  any
 }
 
 type IngestTimestreamTablesConfig struct {
 	DatabaseName any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type IngestTimestreamTablesAttrs struct {
 	DatabaseName any
-	MaxResults any
-	NextToken any
-	Tables any
+	MaxResults   any
+	NextToken    any
+	Tables       any
 }
 
 var IngestTimestreamTables = ubx.DataSourceBinding{
 	WireType: "aws_ingest_timestream_tables",
 	Fields: ubx.FieldMap{
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

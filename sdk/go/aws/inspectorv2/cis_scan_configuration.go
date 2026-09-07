@@ -34,10 +34,10 @@ type CisScanConfigurationAttrs struct {
 var CisScanConfiguration = ubx.ResourceBinding{
 	WireType: "aws_inspector_v2_cis_scan_configuration",
 	Fields: ubx.FieldMap{
-		"ScanName": ubx.FieldSpec{WireName: "scan_name"},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
+		"ScanName":      ubx.FieldSpec{WireName: "scan_name"},
+		"Schedule":      ubx.FieldSpec{WireName: "schedule"},
 		"SecurityLevel": ubx.FieldSpec{WireName: "security_level"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Targets": ubx.FieldSpec{WireName: "targets"},
+		"Tags":          ubx.FieldSpec{WireName: "tags"},
+		"Targets":       ubx.FieldSpec{WireName: "targets"},
 	},
 }

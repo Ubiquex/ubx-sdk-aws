@@ -4,73 +4,73 @@ package docdb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbclusterSnapshots_DbclusterSnapshots struct {
-	AvailabilityZones any
-	ClusterCreateTime any
-	DbclusterIdentifier any
-	DbclusterSnapshotArn any
+	AvailabilityZones           any
+	ClusterCreateTime           any
+	DbclusterIdentifier         any
+	DbclusterSnapshotArn        any
 	DbclusterSnapshotIdentifier any
-	Engine any
-	EngineVersion any
-	KmsKeyId any
-	MasterUsername any
-	PercentProgress any
-	Port any
-	SnapshotCreateTime any
-	SnapshotType any
-	SourceDbclusterSnapshotArn any
-	Status any
-	StorageEncrypted any
-	StorageType any
-	VpcId any
+	Engine                      any
+	EngineVersion               any
+	KmsKeyId                    any
+	MasterUsername              any
+	PercentProgress             any
+	Port                        any
+	SnapshotCreateTime          any
+	SnapshotType                any
+	SourceDbclusterSnapshotArn  any
+	Status                      any
+	StorageEncrypted            any
+	StorageType                 any
+	VpcId                       any
 }
 
 type DbclusterSnapshots_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var DbclusterSnapshots_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type DbclusterSnapshotsConfig struct {
-	DbclusterIdentifier any
+	DbclusterIdentifier         any
 	DbclusterSnapshotIdentifier any
-	Filters any
-	IncludePublic any
-	IncludeShared any
-	Marker any
-	MaxRecords any
-	SnapshotType any
+	Filters                     any
+	IncludePublic               any
+	IncludeShared               any
+	Marker                      any
+	MaxRecords                  any
+	SnapshotType                any
 }
 
 type DbclusterSnapshotsAttrs struct {
-	DbclusterIdentifier any
+	DbclusterIdentifier         any
 	DbclusterSnapshotIdentifier any
-	DbclusterSnapshots any
-	Filters any
-	IncludePublic any
-	IncludeShared any
-	Marker any
-	MaxRecords any
-	SnapshotType any
+	DbclusterSnapshots          any
+	Filters                     any
+	IncludePublic               any
+	IncludeShared               any
+	Marker                      any
+	MaxRecords                  any
+	SnapshotType                any
 }
 
 var DbclusterSnapshots = ubx.DataSourceBinding{
 	WireType: "aws_docdb_dbcluster_snapshots",
 	Fields: ubx.FieldMap{
-		"DbclusterIdentifier": ubx.FieldSpec{WireName: "dbcluster_identifier"},
+		"DbclusterIdentifier":         ubx.FieldSpec{WireName: "dbcluster_identifier"},
 		"DbclusterSnapshotIdentifier": ubx.FieldSpec{WireName: "dbcluster_snapshot_identifier"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: DbclusterSnapshots_FiltersFields,
+			Kind:     "list",
+			Fields:   DbclusterSnapshots_FiltersFields,
 		},
 		"IncludePublic": ubx.FieldSpec{WireName: "include_public"},
 		"IncludeShared": ubx.FieldSpec{WireName: "include_shared"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"SnapshotType": ubx.FieldSpec{WireName: "snapshot_type"},
+		"Marker":        ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":    ubx.FieldSpec{WireName: "max_records"},
+		"SnapshotType":  ubx.FieldSpec{WireName: "snapshot_type"},
 	},
 }

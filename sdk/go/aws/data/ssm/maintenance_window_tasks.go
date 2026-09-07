@@ -4,7 +4,7 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MaintenanceWindowTasks_Filters struct {
-	Key any
+	Key    any
 	Values any
 }
 
@@ -13,14 +13,14 @@ type MaintenanceWindowTasks_Tasks_AlarmConfiguration_Alarms struct {
 }
 
 type MaintenanceWindowTasks_Tasks_AlarmConfiguration struct {
-	Alarms any
+	Alarms                 any
 	IgnorePollAlarmFailure any
 }
 
 type MaintenanceWindowTasks_Tasks_LoggingInfo struct {
 	S3BucketName any
-	S3KeyPrefix any
-	S3Region any
+	S3KeyPrefix  any
+	S3Region     any
 }
 
 type MaintenanceWindowTasks_Tasks_TaskParameters struct {
@@ -29,40 +29,40 @@ type MaintenanceWindowTasks_Tasks_TaskParameters struct {
 
 type MaintenanceWindowTasks_Tasks struct {
 	AlarmConfiguration any
-	CutoffBehavior any
-	Description any
-	LoggingInfo any
-	MaxConcurrency any
-	MaxErrors any
-	Name any
-	Priority any
-	ServiceRoleArn any
-	Targets any
-	TaskArn any
-	TaskParameters any
-	Type any
-	WindowId any
-	WindowTaskId any
+	CutoffBehavior     any
+	Description        any
+	LoggingInfo        any
+	MaxConcurrency     any
+	MaxErrors          any
+	Name               any
+	Priority           any
+	ServiceRoleArn     any
+	Targets            any
+	TaskArn            any
+	TaskParameters     any
+	Type               any
+	WindowId           any
+	WindowTaskId       any
 }
 
 var MaintenanceWindowTasks_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type MaintenanceWindowTasksConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	WindowId any
+	NextToken  any
+	WindowId   any
 }
 
 type MaintenanceWindowTasksAttrs struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	Tasks any
-	WindowId any
+	NextToken  any
+	Tasks      any
+	WindowId   any
 }
 
 var MaintenanceWindowTasks = ubx.DataSourceBinding{
@@ -70,11 +70,11 @@ var MaintenanceWindowTasks = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: MaintenanceWindowTasks_FiltersFields,
+			Kind:     "list",
+			Fields:   MaintenanceWindowTasks_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"WindowId": ubx.FieldSpec{WireName: "window_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"WindowId":   ubx.FieldSpec{WireName: "window_id"},
 	},
 }

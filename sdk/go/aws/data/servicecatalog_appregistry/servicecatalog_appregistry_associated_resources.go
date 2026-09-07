@@ -8,31 +8,31 @@ type ServicecatalogAppregistryAssociatedResources_Resources_ResourceDetails stru
 }
 
 type ServicecatalogAppregistryAssociatedResources_Resources struct {
-	Arn any
-	Name any
-	Options any
+	Arn             any
+	Name            any
+	Options         any
 	ResourceDetails any
-	ResourceType any
+	ResourceType    any
 }
 
 type ServicecatalogAppregistryAssociatedResourcesConfig struct {
 	Application any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type ServicecatalogAppregistryAssociatedResourcesAttrs struct {
 	Application any
-	MaxResults any
-	NextToken any
-	Resources any
+	MaxResults  any
+	NextToken   any
+	Resources   any
 }
 
 var ServicecatalogAppregistryAssociatedResources = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_appregistry_associated_resources",
 	Fields: ubx.FieldMap{
 		"Application": ubx.FieldSpec{WireName: "application"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

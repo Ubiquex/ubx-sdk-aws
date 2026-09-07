@@ -4,60 +4,60 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamDiscoveredAccounts_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type IpamDiscoveredAccounts_IpamDiscoveredAccounts_FailureReason struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type IpamDiscoveredAccounts_IpamDiscoveredAccounts struct {
-	AccountId any
-	DiscoveryRegion any
-	FailureReason any
-	LastAttemptedDiscoveryTime any
+	AccountId                   any
+	DiscoveryRegion             any
+	FailureReason               any
+	LastAttemptedDiscoveryTime  any
 	LastSuccessfulDiscoveryTime any
-	OrganizationalUnitId any
+	OrganizationalUnitId        any
 }
 
 var IpamDiscoveredAccounts_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type IpamDiscoveredAccountsConfig struct {
-	DiscoveryRegion any
-	DryRun any
-	Filters any
+	DiscoveryRegion         any
+	DryRun                  any
+	Filters                 any
 	IpamResourceDiscoveryId any
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 }
 
 type IpamDiscoveredAccountsAttrs struct {
-	DiscoveryRegion any
-	DryRun any
-	Filters any
-	IpamDiscoveredAccounts any
+	DiscoveryRegion         any
+	DryRun                  any
+	Filters                 any
+	IpamDiscoveredAccounts  any
 	IpamResourceDiscoveryId any
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 }
 
 var IpamDiscoveredAccounts = ubx.DataSourceBinding{
 	WireType: "aws_ec2_ipam_discovered_accounts",
 	Fields: ubx.FieldMap{
 		"DiscoveryRegion": ubx.FieldSpec{WireName: "discovery_region"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":          ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: IpamDiscoveredAccounts_FiltersFields,
+			Kind:     "list",
+			Fields:   IpamDiscoveredAccounts_FiltersFields,
 		},
 		"IpamResourceDiscoveryId": ubx.FieldSpec{WireName: "ipam_resource_discovery_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
 	},
 }

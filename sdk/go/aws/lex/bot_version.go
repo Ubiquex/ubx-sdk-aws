@@ -16,17 +16,17 @@ type BotVersion_BotVersionLocaleSpecification struct {
 }
 
 var BotVersion_BotVersionLocaleSpecification_BotVersionLocaleDetailsFields = ubx.FieldMap{
-		"SourceBotVersion": ubx.FieldSpec{WireName: "source_bot_version"},
-	}
+	"SourceBotVersion": ubx.FieldSpec{WireName: "source_bot_version"},
+}
 
 var BotVersion_BotVersionLocaleSpecificationFields = ubx.FieldMap{
-		"BotVersionLocaleDetails": ubx.FieldSpec{
-			WireName: "bot_version_locale_details",
-			Kind: "object",
-			Fields: BotVersion_BotVersionLocaleSpecification_BotVersionLocaleDetailsFields,
-		},
-		"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
-	}
+	"BotVersionLocaleDetails": ubx.FieldSpec{
+		WireName: "bot_version_locale_details",
+		Kind:     "object",
+		Fields:   BotVersion_BotVersionLocaleSpecification_BotVersionLocaleDetailsFields,
+	},
+	"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
+}
 
 type BotVersionConfig struct {
 	// Unique ID of resource
@@ -54,8 +54,8 @@ var BotVersion = ubx.ResourceBinding{
 		"BotId": ubx.FieldSpec{WireName: "bot_id"},
 		"BotVersionLocaleSpecification": ubx.FieldSpec{
 			WireName: "bot_version_locale_specification",
-			Kind: "list",
-			Fields: BotVersion_BotVersionLocaleSpecificationFields,
+			Kind:     "list",
+			Fields:   BotVersion_BotVersionLocaleSpecificationFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 	},

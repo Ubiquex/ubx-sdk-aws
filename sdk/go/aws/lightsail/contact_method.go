@@ -33,6 +33,6 @@ var ContactMethod = ubx.ResourceBinding{
 	WireType: "aws_lightsail_contact_method",
 	Fields: ubx.FieldMap{
 		"ContactEndpoint": ubx.FieldSpec{WireName: "contact_endpoint"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
+		"Protocol":        ubx.FieldSpec{WireName: "protocol"},
 	},
 }

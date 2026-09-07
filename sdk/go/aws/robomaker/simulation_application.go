@@ -20,15 +20,15 @@ type SimulationApplication_Sources struct {
 }
 
 var SimulationApplication_RenderingEngineFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var SimulationApplication_SourcesFields = ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
-		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
-		"S3Key": ubx.FieldSpec{WireName: "s3_key"},
-	}
+	"Architecture": ubx.FieldSpec{WireName: "architecture"},
+	"S3Bucket":     ubx.FieldSpec{WireName: "s3_bucket"},
+	"S3Key":        ubx.FieldSpec{WireName: "s3_key"},
+}
 
 type SimulationApplicationConfig struct {
 	// The current revision id.
@@ -74,27 +74,27 @@ var SimulationApplication = ubx.ResourceBinding{
 	WireType: "aws_robo_maker_simulation_application",
 	Fields: ubx.FieldMap{
 		"CurrentRevisionId": ubx.FieldSpec{WireName: "current_revision_id"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Environment":       ubx.FieldSpec{WireName: "environment"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"RenderingEngine": ubx.FieldSpec{
 			WireName: "rendering_engine",
-			Kind: "object",
-			Fields: SimulationApplication_RenderingEngineFields,
+			Kind:     "object",
+			Fields:   SimulationApplication_RenderingEngineFields,
 		},
 		"RobotSoftwareSuite": ubx.FieldSpec{
 			WireName: "robot_software_suite",
-			Kind: "object",
-			Fields: SimulationApplication_RenderingEngineFields,
+			Kind:     "object",
+			Fields:   SimulationApplication_RenderingEngineFields,
 		},
 		"SimulationSoftwareSuite": ubx.FieldSpec{
 			WireName: "simulation_software_suite",
-			Kind: "object",
-			Fields: SimulationApplication_RenderingEngineFields,
+			Kind:     "object",
+			Fields:   SimulationApplication_RenderingEngineFields,
 		},
 		"Sources": ubx.FieldSpec{
 			WireName: "sources",
-			Kind: "list",
-			Fields: SimulationApplication_SourcesFields,
+			Kind:     "list",
+			Fields:   SimulationApplication_SourcesFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

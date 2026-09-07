@@ -4,37 +4,37 @@ package resource_groups
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceGroupsGroupingStatuses_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ResourceGroupsGroupingStatuses_GroupingStatuses struct {
-	Action any
-	ErrorCode any
+	Action       any
+	ErrorCode    any
 	ErrorMessage any
-	ResourceArn any
-	Status any
-	UpdatedAt any
+	ResourceArn  any
+	Status       any
+	UpdatedAt    any
 }
 
 var ResourceGroupsGroupingStatuses_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ResourceGroupsGroupingStatusesConfig struct {
-	Filters any
-	Group any
+	Filters    any
+	Group      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ResourceGroupsGroupingStatusesAttrs struct {
-	Filters any
-	Group any
+	Filters          any
+	Group            any
 	GroupingStatuses any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 var ResourceGroupsGroupingStatuses = ubx.DataSourceBinding{
@@ -42,11 +42,11 @@ var ResourceGroupsGroupingStatuses = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ResourceGroupsGroupingStatuses_FiltersFields,
+			Kind:     "list",
+			Fields:   ResourceGroupsGroupingStatuses_FiltersFields,
 		},
-		"Group": ubx.FieldSpec{WireName: "group"},
+		"Group":      ubx.FieldSpec{WireName: "group"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -8,11 +8,11 @@ type TypeRegistrationConfig struct {
 }
 
 type TypeRegistrationAttrs struct {
-	Description any
-	ProgressStatus any
+	Description       any
+	ProgressStatus    any
 	RegistrationToken any
-	TypeArn any
-	TypeVersionArn any
+	TypeArn           any
+	TypeVersionArn    any
 }
 
 var TypeRegistration = ubx.DataSourceBinding{

@@ -4,13 +4,13 @@ package compute_optimizer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComputeOptimizerRecommendationExportJobs_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ComputeOptimizerRecommendationExportJobs_RecommendationExportJobs_Destination_S3 struct {
-	Bucket any
-	Key any
+	Bucket      any
+	Key         any
 	MetadataKey any
 }
 
@@ -19,32 +19,32 @@ type ComputeOptimizerRecommendationExportJobs_RecommendationExportJobs_Destinati
 }
 
 type ComputeOptimizerRecommendationExportJobs_RecommendationExportJobs struct {
-	CreationTimestamp any
-	Destination any
-	FailureReason any
-	JobId any
+	CreationTimestamp    any
+	Destination          any
+	FailureReason        any
+	JobId                any
 	LastUpdatedTimestamp any
-	ResourceType any
-	Status any
+	ResourceType         any
+	Status               any
 }
 
 var ComputeOptimizerRecommendationExportJobs_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ComputeOptimizerRecommendationExportJobsConfig struct {
-	Filters any
-	JobIds any
+	Filters    any
+	JobIds     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ComputeOptimizerRecommendationExportJobsAttrs struct {
-	Filters any
-	JobIds any
-	MaxResults any
-	NextToken any
+	Filters                  any
+	JobIds                   any
+	MaxResults               any
+	NextToken                any
 	RecommendationExportJobs any
 }
 
@@ -53,11 +53,11 @@ var ComputeOptimizerRecommendationExportJobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ComputeOptimizerRecommendationExportJobs_FiltersFields,
+			Kind:     "list",
+			Fields:   ComputeOptimizerRecommendationExportJobs_FiltersFields,
 		},
-		"JobIds": ubx.FieldSpec{WireName: "job_ids"},
+		"JobIds":     ubx.FieldSpec{WireName: "job_ids"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

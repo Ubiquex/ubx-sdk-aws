@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Users_Users struct {
 	PendingChange any
-	Username any
+	Username      any
 }
 
 type UsersConfig struct {
-	BrokerId any
+	BrokerId   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type UsersAttrs struct {
-	BrokerId any
+	BrokerId   any
 	MaxResults any
-	NextToken any
-	Users any
+	NextToken  any
+	Users      any
 }
 
 var Users = ubx.DataSourceBinding{
 	WireType: "aws_mq_users",
 	Fields: ubx.FieldMap{
-		"BrokerId": ubx.FieldSpec{WireName: "broker_id"},
+		"BrokerId":   ubx.FieldSpec{WireName: "broker_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

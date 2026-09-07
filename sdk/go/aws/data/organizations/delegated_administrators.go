@@ -4,35 +4,35 @@ package organizations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DelegatedAdministrators_DelegatedAdministrators struct {
-	Arn any
+	Arn                   any
 	DelegationEnabledDate any
-	Email any
-	Id any
-	JoinedMethod any
-	JoinedTimestamp any
-	Name any
-	State any
-	Status any
+	Email                 any
+	Id                    any
+	JoinedMethod          any
+	JoinedTimestamp       any
+	Name                  any
+	State                 any
+	Status                any
 }
 
 type DelegatedAdministratorsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	ServicePrincipal any
 }
 
 type DelegatedAdministratorsAttrs struct {
 	DelegatedAdministrators any
-	MaxResults any
-	NextToken any
-	ServicePrincipal any
+	MaxResults              any
+	NextToken               any
+	ServicePrincipal        any
 }
 
 var DelegatedAdministrators = ubx.DataSourceBinding{
 	WireType: "aws_organizations_delegated_administrators",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"ServicePrincipal": ubx.FieldSpec{WireName: "service_principal"},
 	},
 }

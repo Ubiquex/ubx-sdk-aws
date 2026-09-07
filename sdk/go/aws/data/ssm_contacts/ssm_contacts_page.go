@@ -8,19 +8,19 @@ type SsmContactsPageConfig struct {
 }
 
 type SsmContactsPageAttrs struct {
-	ContactArn any
-	Content any
-	DeliveryTime any
+	ContactArn    any
+	Content       any
+	DeliveryTime  any
 	EngagementArn any
-	IncidentId any
-	PageArn any
-	PageId any
+	IncidentId    any
+	PageArn       any
+	PageId        any
 	PublicContent any
 	PublicSubject any
-	ReadTime any
-	Sender any
-	SentTime any
-	Subject any
+	ReadTime      any
+	Sender        any
+	SentTime      any
+	Subject       any
 }
 
 var SsmContactsPage = ubx.DataSourceBinding{

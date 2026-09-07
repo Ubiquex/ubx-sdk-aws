@@ -4,7 +4,7 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServerlessV2PlatformVersions_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -14,37 +14,37 @@ type ServerlessV2PlatformVersions_ServerlessV2PlatformVersions_ServerlessV2Featu
 }
 
 type ServerlessV2PlatformVersions_ServerlessV2PlatformVersions struct {
-	Engine any
-	IsDefault any
-	ServerlessV2FeaturesSupport any
-	ServerlessV2PlatformVersion any
+	Engine                                 any
+	IsDefault                              any
+	ServerlessV2FeaturesSupport            any
+	ServerlessV2PlatformVersion            any
 	ServerlessV2PlatformVersionDescription any
-	Status any
+	Status                                 any
 }
 
 var ServerlessV2PlatformVersions_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ServerlessV2PlatformVersionsConfig struct {
-	DefaultOnly any
-	Engine any
-	Filters any
-	IncludeAll any
-	Marker any
-	MaxRecords any
+	DefaultOnly                 any
+	Engine                      any
+	Filters                     any
+	IncludeAll                  any
+	Marker                      any
+	MaxRecords                  any
 	ServerlessV2PlatformVersion any
 }
 
 type ServerlessV2PlatformVersionsAttrs struct {
-	DefaultOnly any
-	Engine any
-	Filters any
-	IncludeAll any
-	Marker any
-	MaxRecords any
-	ServerlessV2PlatformVersion any
+	DefaultOnly                  any
+	Engine                       any
+	Filters                      any
+	IncludeAll                   any
+	Marker                       any
+	MaxRecords                   any
+	ServerlessV2PlatformVersion  any
 	ServerlessV2PlatformVersions any
 }
 
@@ -52,15 +52,15 @@ var ServerlessV2PlatformVersions = ubx.DataSourceBinding{
 	WireType: "aws_rds_serverless_v2_platform_versions",
 	Fields: ubx.FieldMap{
 		"DefaultOnly": ubx.FieldSpec{WireName: "default_only"},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
+		"Engine":      ubx.FieldSpec{WireName: "engine"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ServerlessV2PlatformVersions_FiltersFields,
+			Kind:     "list",
+			Fields:   ServerlessV2PlatformVersions_FiltersFields,
 		},
-		"IncludeAll": ubx.FieldSpec{WireName: "include_all"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
+		"IncludeAll":                  ubx.FieldSpec{WireName: "include_all"},
+		"Marker":                      ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":                  ubx.FieldSpec{WireName: "max_records"},
 		"ServerlessV2PlatformVersion": ubx.FieldSpec{WireName: "serverless_v2_platform_version"},
 	},
 }

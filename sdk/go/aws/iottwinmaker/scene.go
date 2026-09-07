@@ -48,12 +48,12 @@ type SceneAttrs struct {
 var Scene = ubx.ResourceBinding{
 	WireType: "aws_io_ttwin_maker_scene",
 	Fields: ubx.FieldMap{
-		"Capabilities": ubx.FieldSpec{WireName: "capabilities"},
+		"Capabilities":    ubx.FieldSpec{WireName: "capabilities"},
 		"ContentLocation": ubx.FieldSpec{WireName: "content_location"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"SceneId": ubx.FieldSpec{WireName: "scene_id"},
-		"SceneMetadata": ubx.FieldSpec{WireName: "scene_metadata"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"WorkspaceId": ubx.FieldSpec{WireName: "workspace_id"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"SceneId":         ubx.FieldSpec{WireName: "scene_id"},
+		"SceneMetadata":   ubx.FieldSpec{WireName: "scene_metadata"},
+		"Tags":            ubx.FieldSpec{WireName: "tags"},
+		"WorkspaceId":     ubx.FieldSpec{WireName: "workspace_id"},
 	},
 }

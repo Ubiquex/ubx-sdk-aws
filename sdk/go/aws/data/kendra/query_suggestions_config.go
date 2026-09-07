@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QuerySuggestionsConfig_AttributeSuggestionsConfig_SuggestableConfigList struct {
 	AttributeName any
-	Suggestable any
+	Suggestable   any
 }
 
 type QuerySuggestionsConfig_AttributeSuggestionsConfig struct {
 	AttributeSuggestionsMode any
-	SuggestableConfigList any
+	SuggestableConfigList    any
 }
 
 type QuerySuggestionsConfigConfig struct {
@@ -19,17 +19,17 @@ type QuerySuggestionsConfigConfig struct {
 
 type QuerySuggestionsConfigAttrs struct {
 	// <p>Gets information on the configuration of document fields/attributes that you want to base query suggestions on. To change your configuration, use <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_AttributeSuggestionsUpdateConfig.html">AttributeSuggestionsUpdateConfig</a> and then call <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a>.</p>
-	AttributeSuggestionsConfig any
+	AttributeSuggestionsConfig           any
 	IncludeQueriesWithoutUserInformation any
-	IndexId any
-	LastClearTime any
-	LastSuggestionsBuildTime any
-	MinimumNumberOfQueryingUsers any
-	MinimumQueryCount any
-	Mode any
-	QueryLogLookBackWindowInDays any
-	Status any
-	TotalSuggestionsCount any
+	IndexId                              any
+	LastClearTime                        any
+	LastSuggestionsBuildTime             any
+	MinimumNumberOfQueryingUsers         any
+	MinimumQueryCount                    any
+	Mode                                 any
+	QueryLogLookBackWindowInDays         any
+	Status                               any
+	TotalSuggestionsCount                any
 }
 
 var QuerySuggestionsConfig = ubx.DataSourceBinding{

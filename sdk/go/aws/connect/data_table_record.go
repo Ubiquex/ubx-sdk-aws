@@ -18,22 +18,22 @@ type DataTableRecord_DataTableRecord struct {
 }
 
 var DataTableRecord_DataTableRecord_PrimaryValuesFields = ubx.FieldMap{
-		"AttributeId": ubx.FieldSpec{WireName: "attribute_id"},
-		"AttributeValue": ubx.FieldSpec{WireName: "attribute_value"},
-	}
+	"AttributeId":    ubx.FieldSpec{WireName: "attribute_id"},
+	"AttributeValue": ubx.FieldSpec{WireName: "attribute_value"},
+}
 
 var DataTableRecord_DataTableRecordFields = ubx.FieldMap{
-		"PrimaryValues": ubx.FieldSpec{
-			WireName: "primary_values",
-			Kind: "list",
-			Fields: DataTableRecord_DataTableRecord_PrimaryValuesFields,
-		},
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: DataTableRecord_DataTableRecord_PrimaryValuesFields,
-		},
-	}
+	"PrimaryValues": ubx.FieldSpec{
+		WireName: "primary_values",
+		Kind:     "list",
+		Fields:   DataTableRecord_DataTableRecord_PrimaryValuesFields,
+	},
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   DataTableRecord_DataTableRecord_PrimaryValuesFields,
+	},
+}
 
 type DataTableRecordConfig struct {
 	// The Amazon Resource Name (ARN) of the data table this record belongs to. (AI-inferred)
@@ -61,8 +61,8 @@ var DataTableRecord = ubx.ResourceBinding{
 		"DataTableArn": ubx.FieldSpec{WireName: "data_table_arn"},
 		"DataTableRecord": ubx.FieldSpec{
 			WireName: "data_table_record",
-			Kind: "object",
-			Fields: DataTableRecord_DataTableRecordFields,
+			Kind:     "object",
+			Fields:   DataTableRecord_DataTableRecordFields,
 		},
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
 	},

@@ -52,7 +52,7 @@ type Table_BillingMode struct {
 }
 
 type Table_CdcSpecification_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -103,106 +103,106 @@ type Table_WarmThroughput struct {
 }
 
 var Table_AutoScalingSpecifications_ReadCapacityAutoScaling_ScalingPolicy_TargetTrackingScalingPolicyConfigurationFields = ubx.FieldMap{
-		"DisableScaleIn": ubx.FieldSpec{WireName: "disable_scale_in"},
-		"ScaleInCooldown": ubx.FieldSpec{WireName: "scale_in_cooldown"},
-		"ScaleOutCooldown": ubx.FieldSpec{WireName: "scale_out_cooldown"},
-		"TargetValue": ubx.FieldSpec{WireName: "target_value"},
-	}
+	"DisableScaleIn":   ubx.FieldSpec{WireName: "disable_scale_in"},
+	"ScaleInCooldown":  ubx.FieldSpec{WireName: "scale_in_cooldown"},
+	"ScaleOutCooldown": ubx.FieldSpec{WireName: "scale_out_cooldown"},
+	"TargetValue":      ubx.FieldSpec{WireName: "target_value"},
+}
 
 var Table_AutoScalingSpecifications_ReadCapacityAutoScaling_ScalingPolicyFields = ubx.FieldMap{
-		"TargetTrackingScalingPolicyConfiguration": ubx.FieldSpec{
-			WireName: "target_tracking_scaling_policy_configuration",
-			Kind: "object",
-			Fields: Table_AutoScalingSpecifications_ReadCapacityAutoScaling_ScalingPolicy_TargetTrackingScalingPolicyConfigurationFields,
-		},
-	}
+	"TargetTrackingScalingPolicyConfiguration": ubx.FieldSpec{
+		WireName: "target_tracking_scaling_policy_configuration",
+		Kind:     "object",
+		Fields:   Table_AutoScalingSpecifications_ReadCapacityAutoScaling_ScalingPolicy_TargetTrackingScalingPolicyConfigurationFields,
+	},
+}
 
 var Table_AutoScalingSpecifications_ReadCapacityAutoScalingFields = ubx.FieldMap{
-		"AutoScalingDisabled": ubx.FieldSpec{WireName: "auto_scaling_disabled"},
-		"MaximumUnits": ubx.FieldSpec{WireName: "maximum_units"},
-		"MinimumUnits": ubx.FieldSpec{WireName: "minimum_units"},
-		"ScalingPolicy": ubx.FieldSpec{
-			WireName: "scaling_policy",
-			Kind: "object",
-			Fields: Table_AutoScalingSpecifications_ReadCapacityAutoScaling_ScalingPolicyFields,
-		},
-	}
+	"AutoScalingDisabled": ubx.FieldSpec{WireName: "auto_scaling_disabled"},
+	"MaximumUnits":        ubx.FieldSpec{WireName: "maximum_units"},
+	"MinimumUnits":        ubx.FieldSpec{WireName: "minimum_units"},
+	"ScalingPolicy": ubx.FieldSpec{
+		WireName: "scaling_policy",
+		Kind:     "object",
+		Fields:   Table_AutoScalingSpecifications_ReadCapacityAutoScaling_ScalingPolicyFields,
+	},
+}
 
 var Table_AutoScalingSpecificationsFields = ubx.FieldMap{
-		"ReadCapacityAutoScaling": ubx.FieldSpec{
-			WireName: "read_capacity_auto_scaling",
-			Kind: "object",
-			Fields: Table_AutoScalingSpecifications_ReadCapacityAutoScalingFields,
-		},
-		"WriteCapacityAutoScaling": ubx.FieldSpec{
-			WireName: "write_capacity_auto_scaling",
-			Kind: "object",
-			Fields: Table_AutoScalingSpecifications_ReadCapacityAutoScalingFields,
-		},
-	}
+	"ReadCapacityAutoScaling": ubx.FieldSpec{
+		WireName: "read_capacity_auto_scaling",
+		Kind:     "object",
+		Fields:   Table_AutoScalingSpecifications_ReadCapacityAutoScalingFields,
+	},
+	"WriteCapacityAutoScaling": ubx.FieldSpec{
+		WireName: "write_capacity_auto_scaling",
+		Kind:     "object",
+		Fields:   Table_AutoScalingSpecifications_ReadCapacityAutoScalingFields,
+	},
+}
 
 var Table_BillingMode_ProvisionedThroughputFields = ubx.FieldMap{
-		"ReadCapacityUnits": ubx.FieldSpec{WireName: "read_capacity_units"},
-		"WriteCapacityUnits": ubx.FieldSpec{WireName: "write_capacity_units"},
-	}
+	"ReadCapacityUnits":  ubx.FieldSpec{WireName: "read_capacity_units"},
+	"WriteCapacityUnits": ubx.FieldSpec{WireName: "write_capacity_units"},
+}
 
 var Table_BillingModeFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"ProvisionedThroughput": ubx.FieldSpec{
-			WireName: "provisioned_throughput",
-			Kind: "object",
-			Fields: Table_BillingMode_ProvisionedThroughputFields,
-		},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+	"ProvisionedThroughput": ubx.FieldSpec{
+		WireName: "provisioned_throughput",
+		Kind:     "object",
+		Fields:   Table_BillingMode_ProvisionedThroughputFields,
+	},
+}
 
 var Table_CdcSpecification_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Table_CdcSpecificationFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: Table_CdcSpecification_TagsFields,
-		},
-		"ViewType": ubx.FieldSpec{WireName: "view_type"},
-	}
+	"Status": ubx.FieldSpec{WireName: "status"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   Table_CdcSpecification_TagsFields,
+	},
+	"ViewType": ubx.FieldSpec{WireName: "view_type"},
+}
 
 var Table_ClusteringKeyColumns_ColumnFields = ubx.FieldMap{
-		"ColumnName": ubx.FieldSpec{WireName: "column_name"},
-		"ColumnType": ubx.FieldSpec{WireName: "column_type"},
-	}
+	"ColumnName": ubx.FieldSpec{WireName: "column_name"},
+	"ColumnType": ubx.FieldSpec{WireName: "column_type"},
+}
 
 var Table_ClusteringKeyColumnsFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Table_ClusteringKeyColumns_ColumnFields,
-		},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-	}
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Table_ClusteringKeyColumns_ColumnFields,
+	},
+	"OrderBy": ubx.FieldSpec{WireName: "order_by"},
+}
 
 var Table_EncryptionSpecificationFields = ubx.FieldMap{
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"KmsKeyIdentifier": ubx.FieldSpec{WireName: "kms_key_identifier"},
-	}
+	"EncryptionType":   ubx.FieldSpec{WireName: "encryption_type"},
+	"KmsKeyIdentifier": ubx.FieldSpec{WireName: "kms_key_identifier"},
+}
 
 var Table_ReplicaSpecificationsFields = ubx.FieldMap{
-		"ReadCapacityAutoScaling": ubx.FieldSpec{
-			WireName: "read_capacity_auto_scaling",
-			Kind: "object",
-			Fields: Table_AutoScalingSpecifications_ReadCapacityAutoScalingFields,
-		},
-		"ReadCapacityUnits": ubx.FieldSpec{WireName: "read_capacity_units"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"ReadCapacityAutoScaling": ubx.FieldSpec{
+		WireName: "read_capacity_auto_scaling",
+		Kind:     "object",
+		Fields:   Table_AutoScalingSpecifications_ReadCapacityAutoScalingFields,
+	},
+	"ReadCapacityUnits": ubx.FieldSpec{WireName: "read_capacity_units"},
+	"Region":            ubx.FieldSpec{WireName: "region"},
+}
 
 var Table_WarmThroughputFields = ubx.FieldMap{
-		"ReadUnitsPerSecond": ubx.FieldSpec{WireName: "read_units_per_second"},
-		"WriteUnitsPerSecond": ubx.FieldSpec{WireName: "write_units_per_second"},
-	}
+	"ReadUnitsPerSecond":  ubx.FieldSpec{WireName: "read_units_per_second"},
+	"WriteUnitsPerSecond": ubx.FieldSpec{WireName: "write_units_per_second"},
+}
 
 type TableConfig struct {
 	// Represents the read and write settings used for AutoScaling.
@@ -275,58 +275,58 @@ var Table = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoScalingSpecifications": ubx.FieldSpec{
 			WireName: "auto_scaling_specifications",
-			Kind: "object",
-			Fields: Table_AutoScalingSpecificationsFields,
+			Kind:     "object",
+			Fields:   Table_AutoScalingSpecificationsFields,
 		},
 		"BillingMode": ubx.FieldSpec{
 			WireName: "billing_mode",
-			Kind: "object",
-			Fields: Table_BillingModeFields,
+			Kind:     "object",
+			Fields:   Table_BillingModeFields,
 		},
 		"CdcSpecification": ubx.FieldSpec{
 			WireName: "cdc_specification",
-			Kind: "object",
-			Fields: Table_CdcSpecificationFields,
+			Kind:     "object",
+			Fields:   Table_CdcSpecificationFields,
 		},
 		"ClientSideTimestampsEnabled": ubx.FieldSpec{WireName: "client_side_timestamps_enabled"},
 		"ClusteringKeyColumns": ubx.FieldSpec{
 			WireName: "clustering_key_columns",
-			Kind: "list",
-			Fields: Table_ClusteringKeyColumnsFields,
+			Kind:     "list",
+			Fields:   Table_ClusteringKeyColumnsFields,
 		},
 		"DefaultTimeToLive": ubx.FieldSpec{WireName: "default_time_to_live"},
 		"EncryptionSpecification": ubx.FieldSpec{
 			WireName: "encryption_specification",
-			Kind: "object",
-			Fields: Table_EncryptionSpecificationFields,
+			Kind:     "object",
+			Fields:   Table_EncryptionSpecificationFields,
 		},
 		"KeyspaceName": ubx.FieldSpec{WireName: "keyspace_name"},
 		"PartitionKeyColumns": ubx.FieldSpec{
 			WireName: "partition_key_columns",
-			Kind: "list",
-			Fields: Table_ClusteringKeyColumns_ColumnFields,
+			Kind:     "list",
+			Fields:   Table_ClusteringKeyColumns_ColumnFields,
 		},
 		"PointInTimeRecoveryEnabled": ubx.FieldSpec{WireName: "point_in_time_recovery_enabled"},
 		"RegularColumns": ubx.FieldSpec{
 			WireName: "regular_columns",
-			Kind: "list",
-			Fields: Table_ClusteringKeyColumns_ColumnFields,
+			Kind:     "list",
+			Fields:   Table_ClusteringKeyColumns_ColumnFields,
 		},
 		"ReplicaSpecifications": ubx.FieldSpec{
 			WireName: "replica_specifications",
-			Kind: "list",
-			Fields: Table_ReplicaSpecificationsFields,
+			Kind:     "list",
+			Fields:   Table_ReplicaSpecificationsFields,
 		},
 		"TableName": ubx.FieldSpec{WireName: "table_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Table_CdcSpecification_TagsFields,
+			Kind:     "list",
+			Fields:   Table_CdcSpecification_TagsFields,
 		},
 		"WarmThroughput": ubx.FieldSpec{
 			WireName: "warm_throughput",
-			Kind: "object",
-			Fields: Table_WarmThroughputFields,
+			Kind:     "object",
+			Fields:   Table_WarmThroughputFields,
 		},
 	},
 }

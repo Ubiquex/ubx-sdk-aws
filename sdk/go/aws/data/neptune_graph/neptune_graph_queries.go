@@ -4,31 +4,31 @@ package neptune_graph
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NeptuneGraphQueries_Queries struct {
-	Elapsed any
-	Id any
+	Elapsed     any
+	Id          any
 	QueryString any
-	State any
-	Waited any
+	State       any
+	Waited      any
 }
 
 type NeptuneGraphQueriesConfig struct {
 	GraphIdentifier any
-	MaxResults any
-	State any
+	MaxResults      any
+	State           any
 }
 
 type NeptuneGraphQueriesAttrs struct {
 	GraphIdentifier any
-	MaxResults any
-	Queries any
-	State any
+	MaxResults      any
+	Queries         any
+	State           any
 }
 
 var NeptuneGraphQueries = ubx.DataSourceBinding{
 	WireType: "aws_neptune_graph_queries",
 	Fields: ubx.FieldMap{
 		"GraphIdentifier": ubx.FieldSpec{WireName: "graph_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"State":           ubx.FieldSpec{WireName: "state"},
 	},
 }

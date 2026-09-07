@@ -4,9 +4,9 @@ package xray
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourcePolicies_ResourcePolicies struct {
-	LastUpdatedTime any
-	PolicyDocument any
-	PolicyName any
+	LastUpdatedTime  any
+	PolicyDocument   any
+	PolicyName       any
 	PolicyRevisionId any
 }
 
@@ -15,7 +15,7 @@ type ResourcePoliciesConfig struct {
 }
 
 type ResourcePoliciesAttrs struct {
-	NextToken any
+	NextToken        any
 	ResourcePolicies any
 }
 

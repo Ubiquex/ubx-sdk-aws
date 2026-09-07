@@ -4,10 +4,10 @@ package medialive
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InputDeviceTransfers_InputDeviceTransfers struct {
-	Id any
-	Message any
+	Id               any
+	Message          any
 	TargetCustomerId any
-	TransferType any
+	TransferType     any
 }
 
 type InputDeviceTransfersConfig struct {
@@ -33,8 +33,8 @@ type InputDeviceTransfersAttrs struct {
 var InputDeviceTransfers = ubx.DataSourceBinding{
 	WireType: "aws_medialive_input_device_transfers",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"TransferType": ubx.FieldSpec{WireName: "transfer_type"},
 	},
 }

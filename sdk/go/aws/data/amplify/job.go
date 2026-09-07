@@ -4,31 +4,31 @@ package amplify
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Job_Job_Steps struct {
-	ArtifactsUrl any
-	Context any
-	EndTime any
-	LogUrl any
-	Screenshots any
-	StartTime any
-	Status any
-	StatusReason any
-	StepName any
+	ArtifactsUrl     any
+	Context          any
+	EndTime          any
+	LogUrl           any
+	Screenshots      any
+	StartTime        any
+	Status           any
+	StatusReason     any
+	StepName         any
 	TestArtifactsUrl any
-	TestConfigUrl any
+	TestConfigUrl    any
 }
 
 type Job_Job_Summary struct {
-	CommitId any
+	CommitId      any
 	CommitMessage any
-	CommitTime any
-	EndTime any
-	JobArn any
-	JobId any
-	JobType any
-	SourceUrl any
+	CommitTime    any
+	EndTime       any
+	JobArn        any
+	JobId         any
+	JobType       any
+	SourceUrl     any
 	SourceUrlType any
-	StartTime any
-	Status any
+	StartTime     any
+	Status        any
 }
 
 type Job_Job struct {
@@ -38,24 +38,24 @@ type Job_Job struct {
 }
 
 type JobConfig struct {
-	AppId any
+	AppId      any
 	BranchName any
-	JobId any
+	JobId      any
 }
 
 type JobAttrs struct {
-	AppId any
+	AppId      any
 	BranchName any
 	// <p> Describes an execution job for an Amplify app. </p>
-	Job any
+	Job   any
 	JobId any
 }
 
 var Job = ubx.DataSourceBinding{
 	WireType: "aws_amplify_job",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":      ubx.FieldSpec{WireName: "app_id"},
 		"BranchName": ubx.FieldSpec{WireName: "branch_name"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":      ubx.FieldSpec{WireName: "job_id"},
 	},
 }

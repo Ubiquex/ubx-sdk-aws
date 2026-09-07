@@ -9,7 +9,7 @@ type AirflowServerlessTagsForResourceConfig struct {
 
 type AirflowServerlessTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var AirflowServerlessTagsForResource = ubx.DataSourceBinding{

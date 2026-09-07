@@ -4,7 +4,7 @@ package dynamodb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Import_ImportTableDescription_InputFormatOptions_Csv struct {
-	Delimiter any
+	Delimiter  any
 	HeaderList any
 }
 
@@ -14,9 +14,9 @@ type Import_ImportTableDescription_InputFormatOptions struct {
 }
 
 type Import_ImportTableDescription_S3BucketSource struct {
-	S3Bucket any
+	S3Bucket      any
 	S3BucketOwner any
-	S3KeyPrefix any
+	S3KeyPrefix   any
 }
 
 type Import_ImportTableDescription_TableCreationParameters_AttributeDefinitions struct {
@@ -26,46 +26,46 @@ type Import_ImportTableDescription_TableCreationParameters_AttributeDefinitions 
 
 type Import_ImportTableDescription_TableCreationParameters_GlobalSecondaryIndexes_KeySchema struct {
 	AttributeName any
-	KeyType any
+	KeyType       any
 }
 
 type Import_ImportTableDescription_TableCreationParameters_GlobalSecondaryIndexes_OnDemandThroughput struct {
-	MaxReadRequestUnits any
+	MaxReadRequestUnits  any
 	MaxWriteRequestUnits any
 }
 
 type Import_ImportTableDescription_TableCreationParameters_GlobalSecondaryIndexes_Projection struct {
 	NonKeyAttributes any
-	ProjectionType any
+	ProjectionType   any
 }
 
 type Import_ImportTableDescription_TableCreationParameters_GlobalSecondaryIndexes_ProvisionedThroughput struct {
-	ReadCapacityUnits any
+	ReadCapacityUnits  any
 	WriteCapacityUnits any
 }
 
 type Import_ImportTableDescription_TableCreationParameters_GlobalSecondaryIndexes_WarmThroughput struct {
-	ReadUnitsPerSecond any
+	ReadUnitsPerSecond  any
 	WriteUnitsPerSecond any
 }
 
 type Import_ImportTableDescription_TableCreationParameters_GlobalSecondaryIndexes struct {
-	IndexName any
-	KeySchema any
-	OnDemandThroughput any
-	Projection any
+	IndexName             any
+	KeySchema             any
+	OnDemandThroughput    any
+	Projection            any
 	ProvisionedThroughput any
-	WarmThroughput any
+	WarmThroughput        any
 }
 
 type Import_ImportTableDescription_TableCreationParameters_Ssespecification struct {
-	Enabled any
+	Enabled        any
 	KmsmasterKeyId any
-	Ssetype any
+	Ssetype        any
 }
 
 type Import_ImportTableDescription_TableCreationParameters_VectorIndexes_SearchSchema struct {
-	AttributeName any
+	AttributeName           any
 	SearchSchemaElementType any
 }
 
@@ -74,52 +74,52 @@ type Import_ImportTableDescription_TableCreationParameters_VectorIndexes_VectorA
 }
 
 type Import_ImportTableDescription_TableCreationParameters_VectorIndexes struct {
-	Dimensions any
+	Dimensions       any
 	DistanceFunction any
-	IndexName any
-	Projection any
-	SearchSchema any
-	VectorAttribute any
+	IndexName        any
+	Projection       any
+	SearchSchema     any
+	VectorAttribute  any
 }
 
 type Import_ImportTableDescription_TableCreationParameters struct {
-	AttributeDefinitions any
-	BillingMode any
+	AttributeDefinitions   any
+	BillingMode            any
 	GlobalSecondaryIndexes any
-	KeySchema any
+	KeySchema              any
 	// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
 	OnDemandThroughput any
 	// <p>Represents the provisioned throughput settings for the specified global secondary index. You must use <code>ProvisionedThroughput</code> or <code>OnDemandThroughput</code> based on your table’s capacity mode.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
 	ProvisionedThroughput any
 	// <p>Represents the settings used to enable server-side encryption.</p>
 	Ssespecification any
-	TableName any
-	VectorIndexes any
+	TableName        any
+	VectorIndexes    any
 }
 
 type Import_ImportTableDescription struct {
-	ClientToken any
+	ClientToken           any
 	CloudWatchLogGroupArn any
-	EndTime any
-	ErrorCount any
-	FailureCode any
-	FailureMessage any
-	ImportArn any
-	ImportStatus any
-	ImportedItemCount any
-	InputCompressionType any
-	InputFormat any
+	EndTime               any
+	ErrorCount            any
+	FailureCode           any
+	FailureMessage        any
+	ImportArn             any
+	ImportStatus          any
+	ImportedItemCount     any
+	InputCompressionType  any
+	InputFormat           any
 	// <p> The format options for the data that was imported into the target table. There is one value, CsvOption.</p>
 	InputFormatOptions any
 	ProcessedItemCount any
 	ProcessedSizeBytes any
 	// <p> The S3 bucket that is being imported from. </p>
 	S3BucketSource any
-	StartTime any
-	TableArn any
+	StartTime      any
+	TableArn       any
 	// <p> The parameters for the table created as part of the import operation. </p>
 	TableCreationParameters any
-	TableId any
+	TableId                 any
 }
 
 type ImportConfig struct {

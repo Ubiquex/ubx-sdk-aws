@@ -4,32 +4,32 @@ package codeartifact
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AllowedRepositoriesForGroupConfig struct {
-	Domain any
-	DomainOwner any
-	MaxResults any
-	NextToken any
+	Domain                any
+	DomainOwner           any
+	MaxResults            any
+	NextToken             any
 	OriginRestrictionType any
-	PackageGroup any
+	PackageGroup          any
 }
 
 type AllowedRepositoriesForGroupAttrs struct {
-	AllowedRepositories any
-	Domain any
-	DomainOwner any
-	MaxResults any
-	NextToken any
+	AllowedRepositories   any
+	Domain                any
+	DomainOwner           any
+	MaxResults            any
+	NextToken             any
 	OriginRestrictionType any
-	PackageGroup any
+	PackageGroup          any
 }
 
 var AllowedRepositoriesForGroup = ubx.DataSourceBinding{
 	WireType: "aws_codeartifact_allowed_repositories_for_group",
 	Fields: ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"DomainOwner": ubx.FieldSpec{WireName: "domain_owner"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Domain":                ubx.FieldSpec{WireName: "domain"},
+		"DomainOwner":           ubx.FieldSpec{WireName: "domain_owner"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 		"OriginRestrictionType": ubx.FieldSpec{WireName: "origin_restriction_type"},
-		"PackageGroup": ubx.FieldSpec{WireName: "package_group"},
+		"PackageGroup":          ubx.FieldSpec{WireName: "package_group"},
 	},
 }

@@ -4,10 +4,10 @@ package cognito_identity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdentityIdentityPoolRoles_RoleMappings_RulesConfiguration_Rules struct {
-	Claim any
+	Claim     any
 	MatchType any
-	RoleArn any
-	Value any
+	RoleArn   any
+	Value     any
 }
 
 type CognitoIdentityIdentityPoolRoles_RoleMappings_RulesConfiguration struct {
@@ -16,8 +16,8 @@ type CognitoIdentityIdentityPoolRoles_RoleMappings_RulesConfiguration struct {
 
 type CognitoIdentityIdentityPoolRoles_RoleMappings struct {
 	AmbiguousRoleResolution any
-	RulesConfiguration any
-	Type any
+	RulesConfiguration      any
+	Type                    any
 }
 
 type CognitoIdentityIdentityPoolRolesConfig struct {
@@ -26,8 +26,8 @@ type CognitoIdentityIdentityPoolRolesConfig struct {
 
 type CognitoIdentityIdentityPoolRolesAttrs struct {
 	IdentityPoolId any
-	RoleMappings any
-	Roles any
+	RoleMappings   any
+	Roles          any
 }
 
 var CognitoIdentityIdentityPoolRoles = ubx.DataSourceBinding{

@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RolePolicyConfig struct {
 	PolicyName any
-	RoleName any
+	RoleName   any
 }
 
 type RolePolicyAttrs struct {
 	PolicyDocument any
-	PolicyName any
-	RoleName any
+	PolicyName     any
+	RoleName       any
 }
 
 var RolePolicy = ubx.DataSourceBinding{
 	WireType: "aws_iam_role_policy",
 	Fields: ubx.FieldMap{
 		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-		"RoleName": ubx.FieldSpec{WireName: "role_name"},
+		"RoleName":   ubx.FieldSpec{WireName: "role_name"},
 	},
 }

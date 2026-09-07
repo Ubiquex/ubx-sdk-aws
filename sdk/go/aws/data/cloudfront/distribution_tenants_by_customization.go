@@ -8,19 +8,19 @@ type DistributionTenantsByCustomization_DistributionTenantList_Customizations_Ce
 }
 
 type DistributionTenantsByCustomization_DistributionTenantList_Customizations_GeoRestrictions struct {
-	Locations any
+	Locations       any
 	RestrictionType any
 }
 
 type DistributionTenantsByCustomization_DistributionTenantList_Customizations_WebAcl struct {
 	Action any
-	Arn any
+	Arn    any
 }
 
 type DistributionTenantsByCustomization_DistributionTenantList_Customizations struct {
-	Certificate any
+	Certificate     any
 	GeoRestrictions any
-	WebAcl any
+	WebAcl          any
 }
 
 type DistributionTenantsByCustomization_DistributionTenantList_Domains struct {
@@ -29,42 +29,42 @@ type DistributionTenantsByCustomization_DistributionTenantList_Domains struct {
 }
 
 type DistributionTenantsByCustomization_DistributionTenantList struct {
-	Arn any
+	Arn               any
 	ConnectionGroupId any
-	CreatedTime any
-	Customizations any
-	DistributionId any
-	Domains any
-	Enabled any
-	Etag any
-	Id any
-	LastModifiedTime any
-	Name any
-	Status any
+	CreatedTime       any
+	Customizations    any
+	DistributionId    any
+	Domains           any
+	Enabled           any
+	Etag              any
+	Id                any
+	LastModifiedTime  any
+	Name              any
+	Status            any
 }
 
 type DistributionTenantsByCustomizationConfig struct {
 	CertificateArn any
-	Marker any
-	MaxItems any
-	WebAclarn any
+	Marker         any
+	MaxItems       any
+	WebAclarn      any
 }
 
 type DistributionTenantsByCustomizationAttrs struct {
-	CertificateArn any
+	CertificateArn         any
 	DistributionTenantList any
-	Marker any
-	MaxItems any
-	NextMarker any
-	WebAclarn any
+	Marker                 any
+	MaxItems               any
+	NextMarker             any
+	WebAclarn              any
 }
 
 var DistributionTenantsByCustomization = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_distribution_tenants_by_customization",
 	Fields: ubx.FieldMap{
 		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"WebAclarn": ubx.FieldSpec{WireName: "web_aclarn"},
+		"Marker":         ubx.FieldSpec{WireName: "marker"},
+		"MaxItems":       ubx.FieldSpec{WireName: "max_items"},
+		"WebAclarn":      ubx.FieldSpec{WireName: "web_aclarn"},
 	},
 }

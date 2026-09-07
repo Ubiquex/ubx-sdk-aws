@@ -12,38 +12,38 @@ type AcmeEndpoints_AcmeEndpoints_CertificateAuthority struct {
 }
 
 type AcmeEndpoints_AcmeEndpoints_CertificateTags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type AcmeEndpoints_AcmeEndpoints struct {
-	AcmeEndpointArn any
+	AcmeEndpointArn       any
 	AuthorizationBehavior any
-	CertificateAuthority any
-	CertificateTags any
-	Contact any
-	CreatedAt any
-	EndpointUrl any
-	FailureReason any
-	Status any
-	UpdatedAt any
+	CertificateAuthority  any
+	CertificateTags       any
+	Contact               any
+	CreatedAt             any
+	EndpointUrl           any
+	FailureReason         any
+	Status                any
+	UpdatedAt             any
 }
 
 type AcmeEndpointsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AcmeEndpointsAttrs struct {
 	AcmeEndpoints any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 var AcmeEndpoints = ubx.DataSourceBinding{
 	WireType: "aws_acm_acme_endpoints",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PatchBaselines_BaselineIdentities struct {
 	BaselineDescription any
-	BaselineId any
-	BaselineName any
-	DefaultBaseline any
-	OperatingSystem any
+	BaselineId          any
+	BaselineName        any
+	DefaultBaseline     any
+	OperatingSystem     any
 }
 
 type PatchBaselines_Filters struct {
-	Key any
+	Key    any
 	Values any
 }
 
 var PatchBaselines_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type PatchBaselinesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type PatchBaselinesAttrs struct {
 	BaselineIdentities any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters            any
+	MaxResults         any
+	NextToken          any
 }
 
 var PatchBaselines = ubx.DataSourceBinding{
@@ -39,10 +39,10 @@ var PatchBaselines = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: PatchBaselines_FiltersFields,
+			Kind:     "list",
+			Fields:   PatchBaselines_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

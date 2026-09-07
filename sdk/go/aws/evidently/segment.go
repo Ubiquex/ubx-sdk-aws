@@ -10,9 +10,9 @@ type Segment_Tags struct {
 }
 
 var Segment_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SegmentConfig struct {
 	// A user-supplied text description of the segment, used to clarify its purpose or contents. (AI-inferred)
@@ -42,12 +42,12 @@ var Segment = ubx.ResourceBinding{
 	WireType: "aws_evidently_segment",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Pattern":     ubx.FieldSpec{WireName: "pattern"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Segment_TagsFields,
+			Kind:     "list",
+			Fields:   Segment_TagsFields,
 		},
 	},
 }

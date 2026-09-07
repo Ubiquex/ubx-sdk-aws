@@ -4,40 +4,40 @@ package api_ecr_public
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiEcrPublicImages_ImageDetails struct {
-	ArtifactMediaType any
-	ImageDigest any
+	ArtifactMediaType      any
+	ImageDigest            any
 	ImageManifestMediaType any
-	ImagePushedAt any
-	ImageSizeInBytes any
-	ImageTags any
-	RegistryId any
-	RepositoryName any
+	ImagePushedAt          any
+	ImageSizeInBytes       any
+	ImageTags              any
+	RegistryId             any
+	RepositoryName         any
 }
 
 type ApiEcrPublicImages_ImageIds struct {
 	ImageDigest any
-	ImageTag any
+	ImageTag    any
 }
 
 var ApiEcrPublicImages_ImageIdsFields = ubx.FieldMap{
-		"ImageDigest": ubx.FieldSpec{WireName: "image_digest"},
-		"ImageTag": ubx.FieldSpec{WireName: "image_tag"},
-	}
+	"ImageDigest": ubx.FieldSpec{WireName: "image_digest"},
+	"ImageTag":    ubx.FieldSpec{WireName: "image_tag"},
+}
 
 type ApiEcrPublicImagesConfig struct {
-	ImageIds any
-	MaxResults any
-	NextToken any
-	RegistryId any
+	ImageIds       any
+	MaxResults     any
+	NextToken      any
+	RegistryId     any
 	RepositoryName any
 }
 
 type ApiEcrPublicImagesAttrs struct {
-	ImageDetails any
-	ImageIds any
-	MaxResults any
-	NextToken any
-	RegistryId any
+	ImageDetails   any
+	ImageIds       any
+	MaxResults     any
+	NextToken      any
+	RegistryId     any
 	RepositoryName any
 }
 
@@ -46,12 +46,12 @@ var ApiEcrPublicImages = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ImageIds": ubx.FieldSpec{
 			WireName: "image_ids",
-			Kind: "list",
-			Fields: ApiEcrPublicImages_ImageIdsFields,
+			Kind:     "list",
+			Fields:   ApiEcrPublicImages_ImageIdsFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RegistryId": ubx.FieldSpec{WireName: "registry_id"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"RegistryId":     ubx.FieldSpec{WireName: "registry_id"},
 		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
 	},
 }

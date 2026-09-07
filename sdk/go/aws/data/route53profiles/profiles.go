@@ -4,20 +4,20 @@ package route53profiles
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Profiles_ProfileSummaries struct {
-	Arn any
-	Id any
-	Name any
+	Arn         any
+	Id          any
+	Name        any
 	ShareStatus any
 }
 
 type ProfilesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ProfilesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	ProfileSummaries any
 }
 
@@ -25,6 +25,6 @@ var Profiles = ubx.DataSourceBinding{
 	WireType: "aws_route53profiles_profiles",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

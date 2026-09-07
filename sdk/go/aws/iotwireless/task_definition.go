@@ -21,7 +21,7 @@ type TaskDefinition_LoRaWanupdateGatewayTaskEntry struct {
 
 type TaskDefinition_Tags struct {
 	// The key of a tag assigned to the IoT Wireless task definition, used to label and categorize the resource for management and identification. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -46,53 +46,53 @@ type TaskDefinition_Update struct {
 }
 
 var TaskDefinition_LoRaWanupdateGatewayTaskEntry_CurrentVersionFields = ubx.FieldMap{
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"PackageVersion": ubx.FieldSpec{WireName: "package_version"},
-		"Station": ubx.FieldSpec{WireName: "station"},
-	}
+	"Model":          ubx.FieldSpec{WireName: "model"},
+	"PackageVersion": ubx.FieldSpec{WireName: "package_version"},
+	"Station":        ubx.FieldSpec{WireName: "station"},
+}
 
 var TaskDefinition_LoRaWanupdateGatewayTaskEntryFields = ubx.FieldMap{
-		"CurrentVersion": ubx.FieldSpec{
-			WireName: "current_version",
-			Kind: "object",
-			Fields: TaskDefinition_LoRaWanupdateGatewayTaskEntry_CurrentVersionFields,
-		},
-		"UpdateVersion": ubx.FieldSpec{
-			WireName: "update_version",
-			Kind: "object",
-			Fields: TaskDefinition_LoRaWanupdateGatewayTaskEntry_CurrentVersionFields,
-		},
-	}
+	"CurrentVersion": ubx.FieldSpec{
+		WireName: "current_version",
+		Kind:     "object",
+		Fields:   TaskDefinition_LoRaWanupdateGatewayTaskEntry_CurrentVersionFields,
+	},
+	"UpdateVersion": ubx.FieldSpec{
+		WireName: "update_version",
+		Kind:     "object",
+		Fields:   TaskDefinition_LoRaWanupdateGatewayTaskEntry_CurrentVersionFields,
+	},
+}
 
 var TaskDefinition_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var TaskDefinition_Update_LoRaWanFields = ubx.FieldMap{
-		"CurrentVersion": ubx.FieldSpec{
-			WireName: "current_version",
-			Kind: "object",
-			Fields: TaskDefinition_LoRaWanupdateGatewayTaskEntry_CurrentVersionFields,
-		},
-		"SigKeyCrc": ubx.FieldSpec{WireName: "sig_key_crc"},
-		"UpdateSignature": ubx.FieldSpec{WireName: "update_signature"},
-		"UpdateVersion": ubx.FieldSpec{
-			WireName: "update_version",
-			Kind: "object",
-			Fields: TaskDefinition_LoRaWanupdateGatewayTaskEntry_CurrentVersionFields,
-		},
-	}
+	"CurrentVersion": ubx.FieldSpec{
+		WireName: "current_version",
+		Kind:     "object",
+		Fields:   TaskDefinition_LoRaWanupdateGatewayTaskEntry_CurrentVersionFields,
+	},
+	"SigKeyCrc":       ubx.FieldSpec{WireName: "sig_key_crc"},
+	"UpdateSignature": ubx.FieldSpec{WireName: "update_signature"},
+	"UpdateVersion": ubx.FieldSpec{
+		WireName: "update_version",
+		Kind:     "object",
+		Fields:   TaskDefinition_LoRaWanupdateGatewayTaskEntry_CurrentVersionFields,
+	},
+}
 
 var TaskDefinition_UpdateFields = ubx.FieldMap{
-		"LoRaWan": ubx.FieldSpec{
-			WireName: "lo_ra_wan",
-			Kind: "object",
-			Fields: TaskDefinition_Update_LoRaWanFields,
-		},
-		"UpdateDataRole": ubx.FieldSpec{WireName: "update_data_role"},
-		"UpdateDataSource": ubx.FieldSpec{WireName: "update_data_source"},
-	}
+	"LoRaWan": ubx.FieldSpec{
+		WireName: "lo_ra_wan",
+		Kind:     "object",
+		Fields:   TaskDefinition_Update_LoRaWanFields,
+	},
+	"UpdateDataRole":   ubx.FieldSpec{WireName: "update_data_role"},
+	"UpdateDataSource": ubx.FieldSpec{WireName: "update_data_source"},
+}
 
 type TaskDefinitionConfig struct {
 	// Whether to automatically create tasks using this task definition for all gateways with the specified current version. If false, the task must me created by calling CreateWirelessGatewayTask.
@@ -134,20 +134,20 @@ var TaskDefinition = ubx.ResourceBinding{
 		"AutoCreateTasks": ubx.FieldSpec{WireName: "auto_create_tasks"},
 		"LoRaWanupdateGatewayTaskEntry": ubx.FieldSpec{
 			WireName: "lo_ra_wanupdate_gateway_task_entry",
-			Kind: "object",
-			Fields: TaskDefinition_LoRaWanupdateGatewayTaskEntryFields,
+			Kind:     "object",
+			Fields:   TaskDefinition_LoRaWanupdateGatewayTaskEntryFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TaskDefinition_TagsFields,
+			Kind:     "list",
+			Fields:   TaskDefinition_TagsFields,
 		},
 		"TaskDefinitionType": ubx.FieldSpec{WireName: "task_definition_type"},
 		"Update": ubx.FieldSpec{
 			WireName: "update",
-			Kind: "object",
-			Fields: TaskDefinition_UpdateFields,
+			Kind:     "object",
+			Fields:   TaskDefinition_UpdateFields,
 		},
 	},
 }

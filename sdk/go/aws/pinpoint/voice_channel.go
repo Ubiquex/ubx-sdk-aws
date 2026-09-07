@@ -23,6 +23,6 @@ var VoiceChannel = ubx.ResourceBinding{
 	WireType: "aws_pinpoint_voice_channel",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Enabled":       ubx.FieldSpec{WireName: "enabled"},
 	},
 }

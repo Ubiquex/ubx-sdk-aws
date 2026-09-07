@@ -10,9 +10,9 @@ type ReadinessCheck_Tags struct {
 }
 
 var ReadinessCheck_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ReadinessCheckConfig struct {
 	// Name of the ReadinessCheck to create.
@@ -38,11 +38,11 @@ var ReadinessCheck = ubx.ResourceBinding{
 	WireType: "aws_route53_recovery_readiness_readiness_check",
 	Fields: ubx.FieldMap{
 		"ReadinessCheckName": ubx.FieldSpec{WireName: "readiness_check_name"},
-		"ResourceSetName": ubx.FieldSpec{WireName: "resource_set_name"},
+		"ResourceSetName":    ubx.FieldSpec{WireName: "resource_set_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ReadinessCheck_TagsFields,
+			Kind:     "list",
+			Fields:   ReadinessCheck_TagsFields,
 		},
 	},
 }

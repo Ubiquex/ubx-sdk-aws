@@ -26,8 +26,8 @@ type AccountCustomizationAttrs struct {
 var AccountCustomization = ubx.ResourceBinding{
 	WireType: "aws_uxc_account_customization",
 	Fields: ubx.FieldMap{
-		"AccountColor": ubx.FieldSpec{WireName: "account_color"},
-		"VisibleRegions": ubx.FieldSpec{WireName: "visible_regions"},
+		"AccountColor":    ubx.FieldSpec{WireName: "account_color"},
+		"VisibleRegions":  ubx.FieldSpec{WireName: "visible_regions"},
 		"VisibleServices": ubx.FieldSpec{WireName: "visible_services"},
 	},
 }

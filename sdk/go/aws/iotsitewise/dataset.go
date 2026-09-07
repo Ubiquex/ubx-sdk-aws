@@ -31,32 +31,32 @@ type Dataset_Tags struct {
 }
 
 var Dataset_DatasetSource_SourceDetail_KendraFields = ubx.FieldMap{
-		"KnowledgeBaseArn": ubx.FieldSpec{WireName: "knowledge_base_arn"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"KnowledgeBaseArn": ubx.FieldSpec{WireName: "knowledge_base_arn"},
+	"RoleArn":          ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var Dataset_DatasetSource_SourceDetailFields = ubx.FieldMap{
-		"Kendra": ubx.FieldSpec{
-			WireName: "kendra",
-			Kind: "object",
-			Fields: Dataset_DatasetSource_SourceDetail_KendraFields,
-		},
-	}
+	"Kendra": ubx.FieldSpec{
+		WireName: "kendra",
+		Kind:     "object",
+		Fields:   Dataset_DatasetSource_SourceDetail_KendraFields,
+	},
+}
 
 var Dataset_DatasetSourceFields = ubx.FieldMap{
-		"SourceDetail": ubx.FieldSpec{
-			WireName: "source_detail",
-			Kind: "object",
-			Fields: Dataset_DatasetSource_SourceDetailFields,
-		},
-		"SourceFormat": ubx.FieldSpec{WireName: "source_format"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-	}
+	"SourceDetail": ubx.FieldSpec{
+		WireName: "source_detail",
+		Kind:     "object",
+		Fields:   Dataset_DatasetSource_SourceDetailFields,
+	},
+	"SourceFormat": ubx.FieldSpec{WireName: "source_format"},
+	"SourceType":   ubx.FieldSpec{WireName: "source_type"},
+}
 
 var Dataset_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DatasetConfig struct {
 	// A description about the dataset, and its functionality.
@@ -88,16 +88,16 @@ var Dataset = ubx.ResourceBinding{
 	WireType: "aws_io_tsite_wise_dataset",
 	Fields: ubx.FieldMap{
 		"DatasetDescription": ubx.FieldSpec{WireName: "dataset_description"},
-		"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
+		"DatasetName":        ubx.FieldSpec{WireName: "dataset_name"},
 		"DatasetSource": ubx.FieldSpec{
 			WireName: "dataset_source",
-			Kind: "object",
-			Fields: Dataset_DatasetSourceFields,
+			Kind:     "object",
+			Fields:   Dataset_DatasetSourceFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dataset_TagsFields,
+			Kind:     "list",
+			Fields:   Dataset_TagsFields,
 		},
 	},
 }

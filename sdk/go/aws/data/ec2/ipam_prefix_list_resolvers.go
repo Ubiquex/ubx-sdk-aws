@@ -4,49 +4,49 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamPrefixListResolvers_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type IpamPrefixListResolvers_IpamPrefixListResolvers_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type IpamPrefixListResolvers_IpamPrefixListResolvers struct {
-	AddressFamily any
-	Description any
-	IpamArn any
-	IpamPrefixListResolverArn any
-	IpamPrefixListResolverId any
-	IpamRegion any
-	LastVersionCreationStatus any
+	AddressFamily                    any
+	Description                      any
+	IpamArn                          any
+	IpamPrefixListResolverArn        any
+	IpamPrefixListResolverId         any
+	IpamRegion                       any
+	LastVersionCreationStatus        any
 	LastVersionCreationStatusMessage any
-	OwnerId any
-	State any
-	Tags any
+	OwnerId                          any
+	State                            any
+	Tags                             any
 }
 
 var IpamPrefixListResolvers_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type IpamPrefixListResolversConfig struct {
-	DryRun any
-	Filters any
+	DryRun                    any
+	Filters                   any
 	IpamPrefixListResolverIds any
-	MaxResults any
-	NextToken any
+	MaxResults                any
+	NextToken                 any
 }
 
 type IpamPrefixListResolversAttrs struct {
-	DryRun any
-	Filters any
+	DryRun                    any
+	Filters                   any
 	IpamPrefixListResolverIds any
-	IpamPrefixListResolvers any
-	MaxResults any
-	NextToken any
+	IpamPrefixListResolvers   any
+	MaxResults                any
+	NextToken                 any
 }
 
 var IpamPrefixListResolvers = ubx.DataSourceBinding{
@@ -55,11 +55,11 @@ var IpamPrefixListResolvers = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: IpamPrefixListResolvers_FiltersFields,
+			Kind:     "list",
+			Fields:   IpamPrefixListResolvers_FiltersFields,
 		},
 		"IpamPrefixListResolverIds": ubx.FieldSpec{WireName: "ipam_prefix_list_resolver_ids"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                 ubx.FieldSpec{WireName: "next_token"},
 	},
 }

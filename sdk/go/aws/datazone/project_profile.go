@@ -33,10 +33,10 @@ type ProjectProfile_EnvironmentConfigurations_ConfigurationParameters struct {
 
 type ProjectProfile_EnvironmentConfigurations struct {
 	// Specifies the AWS account for a per-account environment configuration, controlling which AWS account is used when creating environments for a project in DataZone. (AI-inferred)
-	AwsAccount any
-	AwsRegion any
+	AwsAccount              any
+	AwsRegion               any
 	ConfigurationParameters any
-	DeploymentMode any
+	DeploymentMode          any
 	// The deployment_order specifies the sequential priority of this environment configuration within the project profile, so environments with lower numbers are deployed first when the profile's environment configurations are applied. (AI-inferred)
 	DeploymentOrder any
 	// Provides a user-defined description for an environment configuration, clarifying the purpose or role of a specific AWS environment (such as its account and region) associated with the DataZone project profile. (AI-inferred)
@@ -59,10 +59,10 @@ type ProjectProfile_ProjectResourceTags struct {
 }
 
 var ProjectProfile_ProjectResourceTagsFields = ubx.FieldMap{
-		"IsValueEditable": ubx.FieldSpec{WireName: "is_value_editable"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"IsValueEditable": ubx.FieldSpec{WireName: "is_value_editable"},
+	"Key":             ubx.FieldSpec{WireName: "key"},
+	"Value":           ubx.FieldSpec{WireName: "value"},
+}
 
 type ProjectProfileConfig struct {
 	// Indicates whether users are allowed to add custom tags to project resources (such as data assets or environments) when using this project profile. (AI-inferred)
@@ -74,7 +74,7 @@ type ProjectProfileConfig struct {
 	// The unique identifier of the Amazon DataZone domain unit that this project profile is associated with, used to scope the profile to a specific domain unit. (AI-inferred)
 	DomainUnitIdentifier any
 	// The name of this project profile. (AI-inferred)
-	Name any
+	Name                any
 	ProjectResourceTags any
 	// The description shown to project users describing the allowed resource tag specifications for this project profile. (AI-inferred)
 	ProjectResourceTagsDescription any
@@ -110,7 +110,7 @@ type ProjectProfileAttrs struct {
 	// The timestamp indicating when the project profile was last updated, set automatically by AWS DataZone. (AI-inferred)
 	LastUpdatedAt any
 	// The name of this project profile. (AI-inferred)
-	Name any
+	Name                any
 	ProjectResourceTags any
 	// The description shown to project users describing the allowed resource tag specifications for this project profile. (AI-inferred)
 	ProjectResourceTagsDescription any
@@ -124,17 +124,17 @@ var ProjectProfile = ubx.ResourceBinding{
 	WireType: "aws_data_zone_project_profile",
 	Fields: ubx.FieldMap{
 		"AllowCustomProjectResourceTags": ubx.FieldSpec{WireName: "allow_custom_project_resource_tags"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
-		"DomainUnitIdentifier": ubx.FieldSpec{WireName: "domain_unit_identifier"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":                    ubx.FieldSpec{WireName: "description"},
+		"DomainIdentifier":               ubx.FieldSpec{WireName: "domain_identifier"},
+		"DomainUnitIdentifier":           ubx.FieldSpec{WireName: "domain_unit_identifier"},
+		"Name":                           ubx.FieldSpec{WireName: "name"},
 		"ProjectResourceTags": ubx.FieldSpec{
 			WireName: "project_resource_tags",
-			Kind: "list",
-			Fields: ProjectProfile_ProjectResourceTagsFields,
+			Kind:     "list",
+			Fields:   ProjectProfile_ProjectResourceTagsFields,
 		},
 		"ProjectResourceTagsDescription": ubx.FieldSpec{WireName: "project_resource_tags_description"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"UseDefaultConfigurations": ubx.FieldSpec{WireName: "use_default_configurations"},
+		"Status":                         ubx.FieldSpec{WireName: "status"},
+		"UseDefaultConfigurations":       ubx.FieldSpec{WireName: "use_default_configurations"},
 	},
 }

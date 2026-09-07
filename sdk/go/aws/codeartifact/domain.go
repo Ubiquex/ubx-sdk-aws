@@ -11,9 +11,9 @@ type Domain_Tags struct {
 }
 
 var Domain_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DomainConfig struct {
 	// The name of the domain.
@@ -44,12 +44,12 @@ type DomainAttrs struct {
 var Domain = ubx.ResourceBinding{
 	WireType: "aws_code_artifact_domain",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":                ubx.FieldSpec{WireName: "domain_name"},
 		"PermissionsPolicyDocument": ubx.FieldSpec{WireName: "permissions_policy_document"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Domain_TagsFields,
+			Kind:     "list",
+			Fields:   Domain_TagsFields,
 		},
 	},
 }

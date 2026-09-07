@@ -94,89 +94,89 @@ type Partition_PartitionInput struct {
 }
 
 var Partition_PartitionInput_StorageDescriptor_ColumnsFields = ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Comment": ubx.FieldSpec{WireName: "comment"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 var Partition_PartitionInput_StorageDescriptor_SchemaReference_SchemaIdFields = ubx.FieldMap{
-		"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
-		"SchemaArn": ubx.FieldSpec{WireName: "schema_arn"},
-		"SchemaName": ubx.FieldSpec{WireName: "schema_name"},
-	}
+	"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
+	"SchemaArn":    ubx.FieldSpec{WireName: "schema_arn"},
+	"SchemaName":   ubx.FieldSpec{WireName: "schema_name"},
+}
 
 var Partition_PartitionInput_StorageDescriptor_SchemaReferenceFields = ubx.FieldMap{
-		"SchemaId": ubx.FieldSpec{
-			WireName: "schema_id",
-			Kind: "object",
-			Fields: Partition_PartitionInput_StorageDescriptor_SchemaReference_SchemaIdFields,
-		},
-		"SchemaVersionId": ubx.FieldSpec{WireName: "schema_version_id"},
-		"SchemaVersionNumber": ubx.FieldSpec{WireName: "schema_version_number"},
-	}
+	"SchemaId": ubx.FieldSpec{
+		WireName: "schema_id",
+		Kind:     "object",
+		Fields:   Partition_PartitionInput_StorageDescriptor_SchemaReference_SchemaIdFields,
+	},
+	"SchemaVersionId":     ubx.FieldSpec{WireName: "schema_version_id"},
+	"SchemaVersionNumber": ubx.FieldSpec{WireName: "schema_version_number"},
+}
 
 var Partition_PartitionInput_StorageDescriptor_SerdeInfoFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"SerializationLibrary": ubx.FieldSpec{WireName: "serialization_library"},
-	}
+	"Name":                 ubx.FieldSpec{WireName: "name"},
+	"Parameters":           ubx.FieldSpec{WireName: "parameters"},
+	"SerializationLibrary": ubx.FieldSpec{WireName: "serialization_library"},
+}
 
 var Partition_PartitionInput_StorageDescriptor_SkewedInfoFields = ubx.FieldMap{
-		"SkewedColumnNames": ubx.FieldSpec{WireName: "skewed_column_names"},
-		"SkewedColumnValueLocationMaps": ubx.FieldSpec{WireName: "skewed_column_value_location_maps"},
-		"SkewedColumnValues": ubx.FieldSpec{WireName: "skewed_column_values"},
-	}
+	"SkewedColumnNames":             ubx.FieldSpec{WireName: "skewed_column_names"},
+	"SkewedColumnValueLocationMaps": ubx.FieldSpec{WireName: "skewed_column_value_location_maps"},
+	"SkewedColumnValues":            ubx.FieldSpec{WireName: "skewed_column_values"},
+}
 
 var Partition_PartitionInput_StorageDescriptor_SortColumnsFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"Column":    ubx.FieldSpec{WireName: "column"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 var Partition_PartitionInput_StorageDescriptorFields = ubx.FieldMap{
-		"BucketColumns": ubx.FieldSpec{WireName: "bucket_columns"},
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: Partition_PartitionInput_StorageDescriptor_ColumnsFields,
-		},
-		"Compressed": ubx.FieldSpec{WireName: "compressed"},
-		"InputFormat": ubx.FieldSpec{WireName: "input_format"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"NumberOfBuckets": ubx.FieldSpec{WireName: "number_of_buckets"},
-		"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"SchemaReference": ubx.FieldSpec{
-			WireName: "schema_reference",
-			Kind: "object",
-			Fields: Partition_PartitionInput_StorageDescriptor_SchemaReferenceFields,
-		},
-		"SerdeInfo": ubx.FieldSpec{
-			WireName: "serde_info",
-			Kind: "object",
-			Fields: Partition_PartitionInput_StorageDescriptor_SerdeInfoFields,
-		},
-		"SkewedInfo": ubx.FieldSpec{
-			WireName: "skewed_info",
-			Kind: "object",
-			Fields: Partition_PartitionInput_StorageDescriptor_SkewedInfoFields,
-		},
-		"SortColumns": ubx.FieldSpec{
-			WireName: "sort_columns",
-			Kind: "list",
-			Fields: Partition_PartitionInput_StorageDescriptor_SortColumnsFields,
-		},
-		"StoredAsSubDirectories": ubx.FieldSpec{WireName: "stored_as_sub_directories"},
-	}
+	"BucketColumns": ubx.FieldSpec{WireName: "bucket_columns"},
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   Partition_PartitionInput_StorageDescriptor_ColumnsFields,
+	},
+	"Compressed":      ubx.FieldSpec{WireName: "compressed"},
+	"InputFormat":     ubx.FieldSpec{WireName: "input_format"},
+	"Location":        ubx.FieldSpec{WireName: "location"},
+	"NumberOfBuckets": ubx.FieldSpec{WireName: "number_of_buckets"},
+	"OutputFormat":    ubx.FieldSpec{WireName: "output_format"},
+	"Parameters":      ubx.FieldSpec{WireName: "parameters"},
+	"SchemaReference": ubx.FieldSpec{
+		WireName: "schema_reference",
+		Kind:     "object",
+		Fields:   Partition_PartitionInput_StorageDescriptor_SchemaReferenceFields,
+	},
+	"SerdeInfo": ubx.FieldSpec{
+		WireName: "serde_info",
+		Kind:     "object",
+		Fields:   Partition_PartitionInput_StorageDescriptor_SerdeInfoFields,
+	},
+	"SkewedInfo": ubx.FieldSpec{
+		WireName: "skewed_info",
+		Kind:     "object",
+		Fields:   Partition_PartitionInput_StorageDescriptor_SkewedInfoFields,
+	},
+	"SortColumns": ubx.FieldSpec{
+		WireName: "sort_columns",
+		Kind:     "list",
+		Fields:   Partition_PartitionInput_StorageDescriptor_SortColumnsFields,
+	},
+	"StoredAsSubDirectories": ubx.FieldSpec{WireName: "stored_as_sub_directories"},
+}
 
 var Partition_PartitionInputFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"StorageDescriptor": ubx.FieldSpec{
-			WireName: "storage_descriptor",
-			Kind: "object",
-			Fields: Partition_PartitionInput_StorageDescriptorFields,
-		},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Parameters": ubx.FieldSpec{WireName: "parameters"},
+	"StorageDescriptor": ubx.FieldSpec{
+		WireName: "storage_descriptor",
+		Kind:     "object",
+		Fields:   Partition_PartitionInput_StorageDescriptorFields,
+	},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type PartitionConfig struct {
 	// The identifier of the AWS Glue Data Catalog (typically the AWS account ID) that contains the database and table where this partition is created. (AI-inferred)
@@ -205,12 +205,12 @@ type PartitionAttrs struct {
 var Partition = ubx.ResourceBinding{
 	WireType: "aws_glue_partition",
 	Fields: ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
+		"CatalogId":    ubx.FieldSpec{WireName: "catalog_id"},
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
 		"PartitionInput": ubx.FieldSpec{
 			WireName: "partition_input",
-			Kind: "object",
-			Fields: Partition_PartitionInputFields,
+			Kind:     "object",
+			Fields:   Partition_PartitionInputFields,
 		},
 		"TableName": ubx.FieldSpec{WireName: "table_name"},
 	},

@@ -11,9 +11,9 @@ type Cell_Tags struct {
 }
 
 var Cell_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CellConfig struct {
 	// The name of the cell to create.
@@ -41,11 +41,11 @@ var Cell = ubx.ResourceBinding{
 	WireType: "aws_route53_recovery_readiness_cell",
 	Fields: ubx.FieldMap{
 		"CellName": ubx.FieldSpec{WireName: "cell_name"},
-		"Cells": ubx.FieldSpec{WireName: "cells"},
+		"Cells":    ubx.FieldSpec{WireName: "cells"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Cell_TagsFields,
+			Kind:     "list",
+			Fields:   Cell_TagsFields,
 		},
 	},
 }

@@ -6,18 +6,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Application_IdCconfiguration struct {
 	// The ARN of the AWS IAM Identity Center (IdC) application that is used as part of the IdC configuration for this security agent application resource. (AI-inferred)
 	IdCapplicationArn any
-	IdCinstanceArn any
+	IdCinstanceArn    any
 }
 
 type Application_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Application_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApplicationConfig struct {
 	// Identifier of a KMS key. Can be a key ID, key ARN, alias name, or alias ARN.
@@ -49,11 +49,11 @@ var Application = ubx.ResourceBinding{
 	WireType: "aws_security_agent_application",
 	Fields: ubx.FieldMap{
 		"DefaultKmsKeyId": ubx.FieldSpec{WireName: "default_kms_key_id"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":         ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Application_TagsFields,
+			Kind:     "list",
+			Fields:   Application_TagsFields,
 		},
 	},
 }

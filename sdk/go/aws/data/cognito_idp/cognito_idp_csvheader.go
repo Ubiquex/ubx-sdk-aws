@@ -8,7 +8,7 @@ type CognitoIdpCsvheaderConfig struct {
 }
 
 type CognitoIdpCsvheaderAttrs struct {
-	Csvheader any
+	Csvheader  any
 	UserPoolId any
 }
 

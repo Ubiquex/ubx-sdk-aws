@@ -4,20 +4,20 @@ package sso
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InlinePolicyForPermissionSetConfig struct {
-	InstanceArn any
+	InstanceArn      any
 	PermissionSetArn any
 }
 
 type InlinePolicyForPermissionSetAttrs struct {
-	InlinePolicy any
-	InstanceArn any
+	InlinePolicy     any
+	InstanceArn      any
 	PermissionSetArn any
 }
 
 var InlinePolicyForPermissionSet = ubx.DataSourceBinding{
 	WireType: "aws_sso_inline_policy_for_permission_set",
 	Fields: ubx.FieldMap{
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
+		"InstanceArn":      ubx.FieldSpec{WireName: "instance_arn"},
 		"PermissionSetArn": ubx.FieldSpec{WireName: "permission_set_arn"},
 	},
 }

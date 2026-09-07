@@ -4,9 +4,9 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Change_ChangeInfo struct {
-	Comment any
-	Id any
-	Status any
+	Comment     any
+	Id          any
+	Status      any
 	SubmittedAt any
 }
 
@@ -17,7 +17,7 @@ type ChangeConfig struct {
 type ChangeAttrs struct {
 	// <p>A complex type that describes change information about changes made to your hosted zone.</p>
 	ChangeInfo any
-	Id any
+	Id         any
 }
 
 var Change = ubx.DataSourceBinding{

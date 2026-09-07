@@ -11,9 +11,9 @@ type VirtualMfadevice_Tags struct {
 }
 
 var VirtualMfadevice_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VirtualMfadeviceConfig struct {
 	// The IAM path under which the virtual MFA device is stored, which controls the device's location in the IAM hierarchy and must follow IAM path syntax (e.g., '/division/') to organize and identify the device. (AI-inferred)
@@ -45,10 +45,10 @@ var VirtualMfadevice = ubx.ResourceBinding{
 		"Path": ubx.FieldSpec{WireName: "path"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VirtualMfadevice_TagsFields,
+			Kind:     "list",
+			Fields:   VirtualMfadevice_TagsFields,
 		},
-		"Users": ubx.FieldSpec{WireName: "users"},
+		"Users":                ubx.FieldSpec{WireName: "users"},
 		"VirtualMfaDeviceName": ubx.FieldSpec{WireName: "virtual_mfa_device_name"},
 	},
 }

@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceAttribute_BlockDeviceMappings_Ebs_Operator struct {
 	HiddenByDefault any
-	Managed any
-	Principal any
+	Managed         any
+	Principal       any
 }
 
 type InstanceAttribute_BlockDeviceMappings_Ebs struct {
-	AssociatedResource any
-	AttachTime any
+	AssociatedResource  any
+	AttachTime          any
 	DeleteOnTermination any
-	EbsCardIndex any
-	Operator any
-	Status any
-	VolumeId any
-	VolumeOwnerId any
+	EbsCardIndex        any
+	Operator            any
+	Status              any
+	VolumeId            any
+	VolumeOwnerId       any
 }
 
 type InstanceAttribute_BlockDeviceMappings struct {
 	DeviceName any
-	Ebs any
+	Ebs        any
 }
 
 type InstanceAttribute_DisableApiStop struct {
@@ -34,7 +34,7 @@ type InstanceAttribute_EnclaveOptions struct {
 }
 
 type InstanceAttribute_Groups struct {
-	GroupId any
+	GroupId   any
 	GroupName any
 }
 
@@ -43,38 +43,38 @@ type InstanceAttribute_InstanceInitiatedShutdownBehavior struct {
 }
 
 type InstanceAttribute_ProductCodes struct {
-	ProductCodeId any
+	ProductCodeId   any
 	ProductCodeType any
 }
 
 type InstanceAttributeConfig struct {
-	Attribute any
-	DryRun any
+	Attribute  any
+	DryRun     any
 	InstanceId any
 }
 
 type InstanceAttributeAttrs struct {
-	Attribute any
+	Attribute           any
 	BlockDeviceMappings any
 	// <p>Describes a value for a resource attribute that is a Boolean value.</p>
 	DisableApiStop any
 	// <p>Describes a value for a resource attribute that is a Boolean value.</p>
 	DisableApiTermination any
-	DryRun any
+	DryRun                any
 	// <p>Describes a value for a resource attribute that is a Boolean value.</p>
 	EbsOptimized any
 	// <p>Describes a value for a resource attribute that is a Boolean value.</p>
 	EnaSupport any
 	// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
 	EnclaveOptions any
-	Groups any
-	InstanceId any
+	Groups         any
+	InstanceId     any
 	// <p>Describes a value for a resource attribute that is a String.</p>
 	InstanceInitiatedShutdownBehavior any
 	// <p>Describes a value for a resource attribute that is a String.</p>
 	InstanceType any
 	// <p>Describes a value for a resource attribute that is a String.</p>
-	KernelId any
+	KernelId     any
 	ProductCodes any
 	// <p>Describes a value for a resource attribute that is a String.</p>
 	RamdiskId any
@@ -91,8 +91,8 @@ type InstanceAttributeAttrs struct {
 var InstanceAttribute = ubx.DataSourceBinding{
 	WireType: "aws_ec2_instance_attribute",
 	Fields: ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"Attribute":  ubx.FieldSpec{WireName: "attribute"},
+		"DryRun":     ubx.FieldSpec{WireName: "dry_run"},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 	},
 }

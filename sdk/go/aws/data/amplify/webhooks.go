@@ -4,34 +4,34 @@ package amplify
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Webhooks_Webhooks struct {
-	AppId any
-	BranchName any
-	CreateTime any
+	AppId       any
+	BranchName  any
+	CreateTime  any
 	Description any
-	UpdateTime any
-	WebhookArn any
-	WebhookId any
-	WebhookUrl any
+	UpdateTime  any
+	WebhookArn  any
+	WebhookId   any
+	WebhookUrl  any
 }
 
 type WebhooksConfig struct {
-	AppId any
+	AppId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type WebhooksAttrs struct {
-	AppId any
+	AppId      any
 	MaxResults any
-	NextToken any
-	Webhooks any
+	NextToken  any
+	Webhooks   any
 }
 
 var Webhooks = ubx.DataSourceBinding{
 	WireType: "aws_amplify_webhooks",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":      ubx.FieldSpec{WireName: "app_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

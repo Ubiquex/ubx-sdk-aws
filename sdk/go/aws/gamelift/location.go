@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Location_Tags struct {
 	// The key of a tag assigned to the GameLift location, used to organize and identify the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Location_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LocationConfig struct {
 	// Specifies the name of the GameLift location, which is typically an AWS Region code (e.g., 'us-east-1') or a custom location name used to identify the location for game hosting. (AI-inferred)
@@ -36,8 +36,8 @@ var Location = ubx.ResourceBinding{
 		"LocationName": ubx.FieldSpec{WireName: "location_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Location_TagsFields,
+			Kind:     "list",
+			Fields:   Location_TagsFields,
 		},
 	},
 }

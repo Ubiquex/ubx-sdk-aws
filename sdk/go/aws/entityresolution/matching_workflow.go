@@ -101,7 +101,7 @@ type MatchingWorkflow_ResolutionTechniques struct {
 	// Specifies the matching technique to use in the workflow, either rule-based matching (`RULE_MATCHING`) or machine learning-based matching (`ML_MATCHING`). (AI-inferred)
 	ResolutionType any
 	// Defines the rule-based resolution settings for the workflow, including the list of matching rules and the attribute matching model (ONE_TO_ONE or MANY_TO_MANY) that controls how input records are compared. (AI-inferred)
-	RuleBasedProperties any
+	RuleBasedProperties     any
 	RuleConditionProperties any
 }
 
@@ -113,116 +113,116 @@ type MatchingWorkflow_Tags struct {
 }
 
 var MatchingWorkflow_IncrementalRunConfigFields = ubx.FieldMap{
-		"IncrementalRunType": ubx.FieldSpec{WireName: "incremental_run_type"},
-	}
+	"IncrementalRunType": ubx.FieldSpec{WireName: "incremental_run_type"},
+}
 
 var MatchingWorkflow_InputSourceConfigFields = ubx.FieldMap{
-		"ApplyNormalization": ubx.FieldSpec{WireName: "apply_normalization"},
-		"InputSourceArn": ubx.FieldSpec{WireName: "input_source_arn"},
-		"SchemaArn": ubx.FieldSpec{WireName: "schema_arn"},
-	}
+	"ApplyNormalization": ubx.FieldSpec{WireName: "apply_normalization"},
+	"InputSourceArn":     ubx.FieldSpec{WireName: "input_source_arn"},
+	"SchemaArn":          ubx.FieldSpec{WireName: "schema_arn"},
+}
 
 var MatchingWorkflow_OutputSourceConfig_CustomerProfilesIntegrationConfigFields = ubx.FieldMap{
-		"DomainArn": ubx.FieldSpec{WireName: "domain_arn"},
-		"ObjectTypeArn": ubx.FieldSpec{WireName: "object_type_arn"},
-	}
+	"DomainArn":     ubx.FieldSpec{WireName: "domain_arn"},
+	"ObjectTypeArn": ubx.FieldSpec{WireName: "object_type_arn"},
+}
 
 var MatchingWorkflow_OutputSourceConfig_OutputFields = ubx.FieldMap{
-		"Hashed": ubx.FieldSpec{WireName: "hashed"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Hashed": ubx.FieldSpec{WireName: "hashed"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+}
 
 var MatchingWorkflow_OutputSourceConfigFields = ubx.FieldMap{
-		"ApplyNormalization": ubx.FieldSpec{WireName: "apply_normalization"},
-		"CustomerProfilesIntegrationConfig": ubx.FieldSpec{
-			WireName: "customer_profiles_integration_config",
-			Kind: "object",
-			Fields: MatchingWorkflow_OutputSourceConfig_CustomerProfilesIntegrationConfigFields,
-		},
-		"Kmsarn": ubx.FieldSpec{WireName: "kmsarn"},
-		"Output": ubx.FieldSpec{
-			WireName: "output",
-			Kind: "list",
-			Fields: MatchingWorkflow_OutputSourceConfig_OutputFields,
-		},
-		"OutputS3Path": ubx.FieldSpec{WireName: "output_s3_path"},
-	}
+	"ApplyNormalization": ubx.FieldSpec{WireName: "apply_normalization"},
+	"CustomerProfilesIntegrationConfig": ubx.FieldSpec{
+		WireName: "customer_profiles_integration_config",
+		Kind:     "object",
+		Fields:   MatchingWorkflow_OutputSourceConfig_CustomerProfilesIntegrationConfigFields,
+	},
+	"Kmsarn": ubx.FieldSpec{WireName: "kmsarn"},
+	"Output": ubx.FieldSpec{
+		WireName: "output",
+		Kind:     "list",
+		Fields:   MatchingWorkflow_OutputSourceConfig_OutputFields,
+	},
+	"OutputS3Path": ubx.FieldSpec{WireName: "output_s3_path"},
+}
 
 var MatchingWorkflow_ResolutionTechniques_ProviderProperties_IntermediateSourceConfigurationFields = ubx.FieldMap{
-		"IntermediateS3Path": ubx.FieldSpec{WireName: "intermediate_s3_path"},
-	}
+	"IntermediateS3Path": ubx.FieldSpec{WireName: "intermediate_s3_path"},
+}
 
 var MatchingWorkflow_ResolutionTechniques_ProviderPropertiesFields = ubx.FieldMap{
-		"IntermediateSourceConfiguration": ubx.FieldSpec{
-			WireName: "intermediate_source_configuration",
-			Kind: "object",
-			Fields: MatchingWorkflow_ResolutionTechniques_ProviderProperties_IntermediateSourceConfigurationFields,
-		},
-		"ProviderConfiguration": ubx.FieldSpec{WireName: "provider_configuration"},
-		"ProviderServiceArn": ubx.FieldSpec{WireName: "provider_service_arn"},
-	}
+	"IntermediateSourceConfiguration": ubx.FieldSpec{
+		WireName: "intermediate_source_configuration",
+		Kind:     "object",
+		Fields:   MatchingWorkflow_ResolutionTechniques_ProviderProperties_IntermediateSourceConfigurationFields,
+	},
+	"ProviderConfiguration": ubx.FieldSpec{WireName: "provider_configuration"},
+	"ProviderServiceArn":    ubx.FieldSpec{WireName: "provider_service_arn"},
+}
 
 var MatchingWorkflow_ResolutionTechniques_RuleBasedProperties_RulesFields = ubx.FieldMap{
-		"MatchingKeys": ubx.FieldSpec{WireName: "matching_keys"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-	}
+	"MatchingKeys": ubx.FieldSpec{WireName: "matching_keys"},
+	"RuleName":     ubx.FieldSpec{WireName: "rule_name"},
+}
 
 var MatchingWorkflow_ResolutionTechniques_RuleBasedPropertiesFields = ubx.FieldMap{
-		"AttributeMatchingModel": ubx.FieldSpec{WireName: "attribute_matching_model"},
-		"MatchPurpose": ubx.FieldSpec{WireName: "match_purpose"},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: MatchingWorkflow_ResolutionTechniques_RuleBasedProperties_RulesFields,
-		},
-	}
+	"AttributeMatchingModel": ubx.FieldSpec{WireName: "attribute_matching_model"},
+	"MatchPurpose":           ubx.FieldSpec{WireName: "match_purpose"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   MatchingWorkflow_ResolutionTechniques_RuleBasedProperties_RulesFields,
+	},
+}
 
 var MatchingWorkflow_ResolutionTechniques_RuleConditionProperties_MatchingConfigFields = ubx.FieldMap{
-		"EnableTransitiveMatching": ubx.FieldSpec{WireName: "enable_transitive_matching"},
-	}
+	"EnableTransitiveMatching": ubx.FieldSpec{WireName: "enable_transitive_matching"},
+}
 
 var MatchingWorkflow_ResolutionTechniques_RuleConditionProperties_RulesFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"RuleName":  ubx.FieldSpec{WireName: "rule_name"},
+}
 
 var MatchingWorkflow_ResolutionTechniques_RuleConditionPropertiesFields = ubx.FieldMap{
-		"MatchingConfig": ubx.FieldSpec{
-			WireName: "matching_config",
-			Kind: "object",
-			Fields: MatchingWorkflow_ResolutionTechniques_RuleConditionProperties_MatchingConfigFields,
-		},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: MatchingWorkflow_ResolutionTechniques_RuleConditionProperties_RulesFields,
-		},
-	}
+	"MatchingConfig": ubx.FieldSpec{
+		WireName: "matching_config",
+		Kind:     "object",
+		Fields:   MatchingWorkflow_ResolutionTechniques_RuleConditionProperties_MatchingConfigFields,
+	},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   MatchingWorkflow_ResolutionTechniques_RuleConditionProperties_RulesFields,
+	},
+}
 
 var MatchingWorkflow_ResolutionTechniquesFields = ubx.FieldMap{
-		"EnableRealTimeMatching": ubx.FieldSpec{WireName: "enable_real_time_matching"},
-		"ProviderProperties": ubx.FieldSpec{
-			WireName: "provider_properties",
-			Kind: "object",
-			Fields: MatchingWorkflow_ResolutionTechniques_ProviderPropertiesFields,
-		},
-		"ResolutionType": ubx.FieldSpec{WireName: "resolution_type"},
-		"RuleBasedProperties": ubx.FieldSpec{
-			WireName: "rule_based_properties",
-			Kind: "object",
-			Fields: MatchingWorkflow_ResolutionTechniques_RuleBasedPropertiesFields,
-		},
-		"RuleConditionProperties": ubx.FieldSpec{
-			WireName: "rule_condition_properties",
-			Kind: "object",
-			Fields: MatchingWorkflow_ResolutionTechniques_RuleConditionPropertiesFields,
-		},
-	}
+	"EnableRealTimeMatching": ubx.FieldSpec{WireName: "enable_real_time_matching"},
+	"ProviderProperties": ubx.FieldSpec{
+		WireName: "provider_properties",
+		Kind:     "object",
+		Fields:   MatchingWorkflow_ResolutionTechniques_ProviderPropertiesFields,
+	},
+	"ResolutionType": ubx.FieldSpec{WireName: "resolution_type"},
+	"RuleBasedProperties": ubx.FieldSpec{
+		WireName: "rule_based_properties",
+		Kind:     "object",
+		Fields:   MatchingWorkflow_ResolutionTechniques_RuleBasedPropertiesFields,
+	},
+	"RuleConditionProperties": ubx.FieldSpec{
+		WireName: "rule_condition_properties",
+		Kind:     "object",
+		Fields:   MatchingWorkflow_ResolutionTechniques_RuleConditionPropertiesFields,
+	},
+}
 
 var MatchingWorkflow_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MatchingWorkflowConfig struct {
 	// An optional human-readable description of the Entity Resolution matching workflow, used to provide additional context about the workflow's purpose or configuration. (AI-inferred)
@@ -237,7 +237,7 @@ type MatchingWorkflowConfig struct {
 	ResolutionTechniques any
 	// The Amazon Resource Name (ARN) of the IAM role that the matching workflow assumes to access source data and output locations. (AI-inferred)
 	RoleArn any
-	Tags any
+	Tags    any
 	// The name of the matching workflow, which is a unique, human-readable identifier for the workflow within your AWS account and is used in the CreateMatchingWorkflow API request. (AI-inferred)
 	WorkflowName any
 }
@@ -257,7 +257,7 @@ type MatchingWorkflowAttrs struct {
 	ResolutionTechniques any
 	// The Amazon Resource Name (ARN) of the IAM role that the matching workflow assumes to access source data and output locations. (AI-inferred)
 	RoleArn any
-	Tags any
+	Tags    any
 	// The time of this MatchingWorkflow got last updated at
 	UpdatedAt any
 	// The default MatchingWorkflow arn
@@ -272,29 +272,29 @@ var MatchingWorkflow = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"IncrementalRunConfig": ubx.FieldSpec{
 			WireName: "incremental_run_config",
-			Kind: "object",
-			Fields: MatchingWorkflow_IncrementalRunConfigFields,
+			Kind:     "object",
+			Fields:   MatchingWorkflow_IncrementalRunConfigFields,
 		},
 		"InputSourceConfig": ubx.FieldSpec{
 			WireName: "input_source_config",
-			Kind: "list",
-			Fields: MatchingWorkflow_InputSourceConfigFields,
+			Kind:     "list",
+			Fields:   MatchingWorkflow_InputSourceConfigFields,
 		},
 		"OutputSourceConfig": ubx.FieldSpec{
 			WireName: "output_source_config",
-			Kind: "list",
-			Fields: MatchingWorkflow_OutputSourceConfigFields,
+			Kind:     "list",
+			Fields:   MatchingWorkflow_OutputSourceConfigFields,
 		},
 		"ResolutionTechniques": ubx.FieldSpec{
 			WireName: "resolution_techniques",
-			Kind: "object",
-			Fields: MatchingWorkflow_ResolutionTechniquesFields,
+			Kind:     "object",
+			Fields:   MatchingWorkflow_ResolutionTechniquesFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MatchingWorkflow_TagsFields,
+			Kind:     "list",
+			Fields:   MatchingWorkflow_TagsFields,
 		},
 		"WorkflowName": ubx.FieldSpec{WireName: "workflow_name"},
 	},

@@ -4,7 +4,7 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Pipelines_PipelineSummaries_Status_Error struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -14,19 +14,19 @@ type Pipelines_PipelineSummaries_Status struct {
 }
 
 type Pipelines_PipelineSummaries struct {
-	CreatedAt any
-	Description any
-	PipelineArn any
+	CreatedAt    any
+	Description  any
+	PipelineArn  any
 	PipelineName any
-	Status any
-	UpdatedAt any
-	Version any
+	Status       any
+	UpdatedAt    any
+	Version      any
 }
 
 type PipelinesConfig struct {
 	MaxResults any
 	// <p>An opaque pagination token. Pass the value returned by a previous request to retrieve the next page of results.</p>
-	NextToken any
+	NextToken     any
 	WorkspaceName any
 }
 
@@ -36,14 +36,14 @@ type PipelinesAttrs struct {
 	NextToken any
 	// <p>A list of pipeline summaries.</p>
 	PipelineSummaries any
-	WorkspaceName any
+	WorkspaceName     any
 }
 
 var Pipelines = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_pipelines",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"WorkspaceName": ubx.FieldSpec{WireName: "workspace_name"},
 	},
 }

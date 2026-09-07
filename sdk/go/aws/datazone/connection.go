@@ -16,7 +16,7 @@ type Connection_AwsLocation struct {
 
 type Connection_Configurations struct {
 	Classification any
-	Properties any
+	Properties     any
 }
 
 type Connection_Props_AmazonQproperties struct {
@@ -122,7 +122,7 @@ type Connection_Props_GlueProperties_GlueConnectionInput struct {
 	Name any
 	// Specifies the physical connectivity requirements for the underlying AWS Glue connection, including the subnet ID, security group IDs, and availability zone where the connection's resources reside. (AI-inferred)
 	PhysicalConnectionRequirements any
-	PythonProperties any
+	PythonProperties               any
 	// A dynamic map of Apache Spark configuration properties (key-value pairs) for the AWS Glue connection input, used by AWS DataZone to customize Spark behavior when interacting with the connected data source. (AI-inferred)
 	SparkProperties any
 	// When enabled, AWS DataZone validates the AWS Glue connection's credentials during connection creation or update, ensuring the credentials are functional before the connection is provisioned. (AI-inferred)
@@ -213,7 +213,7 @@ type Connection_Props_SparkEmrProperties struct {
 	ComputeArn any
 	// The ARN of the IAM instance profile that the Amazon EMR cluster assumes to access AWS resources when running Spark workloads through this DataZone connection. (AI-inferred)
 	InstanceProfileArn any
-	JavaVirtualEnv any
+	JavaVirtualEnv     any
 	// The S3 URI (e.g., s3://bucket/logs/) used as the log destination for Amazon EMR Spark jobs configured in the DataZone connection's Spark EMR properties. (AI-inferred)
 	LogUri any
 	// The Amazon Resource Name (ARN) of the managed endpoint on the Amazon EMR cluster that AWS DataZone connects to for Spark workloads. (AI-inferred)
@@ -236,8 +236,8 @@ type Connection_Props_SparkGlueProperties struct {
 	// The name of the AWS Glue connection to be used by Spark jobs in this DataZone connection. (AI-inferred)
 	GlueConnectionName any
 	// Specifies the version of AWS Glue to use for the Spark Glue connection in the DataZone connection. (AI-inferred)
-	GlueVersion any
-	IdleTimeout any
+	GlueVersion    any
+	IdleTimeout    any
 	JavaVirtualEnv any
 	// Specifies the number of worker nodes to allocate for the AWS Glue Spark job associated with this Data Zone connection. (AI-inferred)
 	NumberOfWorkers any
@@ -258,10 +258,10 @@ type Connection_Props struct {
 	// Provides the Athena-specific properties for the connection, such as the Athena workgroup that defines the SQL query execution context. (AI-inferred)
 	AthenaProperties any
 	// The glue_properties object holds the configuration for an AWS Glue connection, specifically the name of the Glue connection that this DataZone connection will use. (AI-inferred)
-	GlueProperties any
+	GlueProperties     any
 	HyperPodProperties any
 	// This object specifies the IAM role that AWS DataZone assumes when connecting to the external data source, enabling secure access for the connection. (AI-inferred)
-	IamProperties any
+	IamProperties       any
 	LakehouseProperties any
 	// Specifies the MLflow-specific configuration for an AWS Data Zone connection, including the MLflow tracking server endpoint and any associated authentication settings. (AI-inferred)
 	MlflowProperties any
@@ -274,298 +274,298 @@ type Connection_Props struct {
 	// Specifies the configuration for connecting Amazon Data Zone to AWS Glue for Spark workloads, including the execution role and Glue connection details that enable data access and processing. (AI-inferred)
 	SparkGlueProperties any
 	// Specifies the Amazon MWAA environment ARN and IAM execution role ARN that AWS DataZone uses to orchestrate workflows for this connection. (AI-inferred)
-	WorkflowsMwaaProperties any
+	WorkflowsMwaaProperties       any
 	WorkflowsServerlessProperties any
 }
 
 var Connection_AwsLocationFields = ubx.FieldMap{
-		"AccessRole": ubx.FieldSpec{WireName: "access_role"},
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
-		"IamConnectionId": ubx.FieldSpec{WireName: "iam_connection_id"},
-	}
+	"AccessRole":      ubx.FieldSpec{WireName: "access_role"},
+	"AwsAccountId":    ubx.FieldSpec{WireName: "aws_account_id"},
+	"AwsRegion":       ubx.FieldSpec{WireName: "aws_region"},
+	"IamConnectionId": ubx.FieldSpec{WireName: "iam_connection_id"},
+}
 
 var Connection_ConfigurationsFields = ubx.FieldMap{
-		"Classification": ubx.FieldSpec{WireName: "classification"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-	}
+	"Classification": ubx.FieldSpec{WireName: "classification"},
+	"Properties":     ubx.FieldSpec{WireName: "properties"},
+}
 
 var Connection_Props_AmazonQpropertiesFields = ubx.FieldMap{
-		"AuthMode": ubx.FieldSpec{WireName: "auth_mode"},
-		"IsEnabled": ubx.FieldSpec{WireName: "is_enabled"},
-		"ProfileArn": ubx.FieldSpec{WireName: "profile_arn"},
-	}
+	"AuthMode":   ubx.FieldSpec{WireName: "auth_mode"},
+	"IsEnabled":  ubx.FieldSpec{WireName: "is_enabled"},
+	"ProfileArn": ubx.FieldSpec{WireName: "profile_arn"},
+}
 
 var Connection_Props_AthenaPropertiesFields = ubx.FieldMap{
-		"WorkgroupName": ubx.FieldSpec{WireName: "workgroup_name"},
-	}
+	"WorkgroupName": ubx.FieldSpec{WireName: "workgroup_name"},
+}
 
 var Connection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_BasicAuthenticationCredentialsFields = ubx.FieldMap{
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
-	}
+	"Password": ubx.FieldSpec{WireName: "password"},
+	"UserName": ubx.FieldSpec{WireName: "user_name"},
+}
 
 var Connection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodePropertiesFields = ubx.FieldMap{
-		"AuthorizationCode": ubx.FieldSpec{WireName: "authorization_code"},
-		"RedirectUri": ubx.FieldSpec{WireName: "redirect_uri"},
-	}
+	"AuthorizationCode": ubx.FieldSpec{WireName: "authorization_code"},
+	"RedirectUri":       ubx.FieldSpec{WireName: "redirect_uri"},
+}
 
 var Connection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplicationFields = ubx.FieldMap{
-		"AwsmanagedClientApplicationReference": ubx.FieldSpec{WireName: "awsmanaged_client_application_reference"},
-		"UserManagedClientApplicationClientId": ubx.FieldSpec{WireName: "user_managed_client_application_client_id"},
-	}
+	"AwsmanagedClientApplicationReference": ubx.FieldSpec{WireName: "awsmanaged_client_application_reference"},
+	"UserManagedClientApplicationClientId": ubx.FieldSpec{WireName: "user_managed_client_application_client_id"},
+}
 
 var Connection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2CredentialsFields = ubx.FieldMap{
-		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"JwtToken": ubx.FieldSpec{WireName: "jwt_token"},
-		"RefreshToken": ubx.FieldSpec{WireName: "refresh_token"},
-		"UserManagedClientApplicationClientSecret": ubx.FieldSpec{WireName: "user_managed_client_application_client_secret"},
-	}
+	"AccessToken":  ubx.FieldSpec{WireName: "access_token"},
+	"JwtToken":     ubx.FieldSpec{WireName: "jwt_token"},
+	"RefreshToken": ubx.FieldSpec{WireName: "refresh_token"},
+	"UserManagedClientApplicationClientSecret": ubx.FieldSpec{WireName: "user_managed_client_application_client_secret"},
+}
 
 var Connection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2PropertiesFields = ubx.FieldMap{
-		"AuthorizationCodeProperties": ubx.FieldSpec{
-			WireName: "authorization_code_properties",
-			Kind: "object",
-			Fields: Connection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodePropertiesFields,
-		},
-		"Oauth2ClientApplication": ubx.FieldSpec{
-			WireName: "oauth2_client_application",
-			Kind: "object",
-			Fields: Connection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplicationFields,
-		},
-		"Oauth2Credentials": ubx.FieldSpec{
-			WireName: "oauth2_credentials",
-			Kind: "object",
-			Fields: Connection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2CredentialsFields,
-		},
-		"Oauth2GrantType": ubx.FieldSpec{WireName: "oauth2_grant_type"},
-		"TokenUrl": ubx.FieldSpec{WireName: "token_url"},
-		"TokenUrlParametersMap": ubx.FieldSpec{WireName: "token_url_parameters_map"},
-	}
+	"AuthorizationCodeProperties": ubx.FieldSpec{
+		WireName: "authorization_code_properties",
+		Kind:     "object",
+		Fields:   Connection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodePropertiesFields,
+	},
+	"Oauth2ClientApplication": ubx.FieldSpec{
+		WireName: "oauth2_client_application",
+		Kind:     "object",
+		Fields:   Connection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplicationFields,
+	},
+	"Oauth2Credentials": ubx.FieldSpec{
+		WireName: "oauth2_credentials",
+		Kind:     "object",
+		Fields:   Connection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2CredentialsFields,
+	},
+	"Oauth2GrantType":       ubx.FieldSpec{WireName: "oauth2_grant_type"},
+	"TokenUrl":              ubx.FieldSpec{WireName: "token_url"},
+	"TokenUrlParametersMap": ubx.FieldSpec{WireName: "token_url_parameters_map"},
+}
 
 var Connection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfigurationFields = ubx.FieldMap{
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"BasicAuthenticationCredentials": ubx.FieldSpec{
-			WireName: "basic_authentication_credentials",
-			Kind: "object",
-			Fields: Connection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_BasicAuthenticationCredentialsFields,
-		},
-		"CustomAuthenticationCredentials": ubx.FieldSpec{WireName: "custom_authentication_credentials"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"Oauth2Properties": ubx.FieldSpec{
-			WireName: "oauth2_properties",
-			Kind: "object",
-			Fields: Connection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2PropertiesFields,
-		},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
+	"BasicAuthenticationCredentials": ubx.FieldSpec{
+		WireName: "basic_authentication_credentials",
+		Kind:     "object",
+		Fields:   Connection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_BasicAuthenticationCredentialsFields,
+	},
+	"CustomAuthenticationCredentials": ubx.FieldSpec{WireName: "custom_authentication_credentials"},
+	"KmsKeyArn":                       ubx.FieldSpec{WireName: "kms_key_arn"},
+	"Oauth2Properties": ubx.FieldSpec{
+		WireName: "oauth2_properties",
+		Kind:     "object",
+		Fields:   Connection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2PropertiesFields,
+	},
+	"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var Connection_Props_GlueProperties_GlueConnectionInput_PhysicalConnectionRequirementsFields = ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"SecurityGroupIdList": ubx.FieldSpec{WireName: "security_group_id_list"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-		"SubnetIdList": ubx.FieldSpec{WireName: "subnet_id_list"},
-	}
+	"AvailabilityZone":    ubx.FieldSpec{WireName: "availability_zone"},
+	"SecurityGroupIdList": ubx.FieldSpec{WireName: "security_group_id_list"},
+	"SubnetId":            ubx.FieldSpec{WireName: "subnet_id"},
+	"SubnetIdList":        ubx.FieldSpec{WireName: "subnet_id_list"},
+}
 
 var Connection_Props_GlueProperties_GlueConnectionInputFields = ubx.FieldMap{
-		"AthenaProperties": ubx.FieldSpec{WireName: "athena_properties"},
-		"AuthenticationConfiguration": ubx.FieldSpec{
-			WireName: "authentication_configuration",
-			Kind: "object",
-			Fields: Connection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfigurationFields,
-		},
-		"ConnectionProperties": ubx.FieldSpec{WireName: "connection_properties"},
-		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"MatchCriteria": ubx.FieldSpec{WireName: "match_criteria"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PhysicalConnectionRequirements": ubx.FieldSpec{
-			WireName: "physical_connection_requirements",
-			Kind: "object",
-			Fields: Connection_Props_GlueProperties_GlueConnectionInput_PhysicalConnectionRequirementsFields,
-		},
-		"PythonProperties": ubx.FieldSpec{WireName: "python_properties"},
-		"SparkProperties": ubx.FieldSpec{WireName: "spark_properties"},
-		"ValidateCredentials": ubx.FieldSpec{WireName: "validate_credentials"},
-		"ValidateForComputeEnvironments": ubx.FieldSpec{WireName: "validate_for_compute_environments"},
-	}
+	"AthenaProperties": ubx.FieldSpec{WireName: "athena_properties"},
+	"AuthenticationConfiguration": ubx.FieldSpec{
+		WireName: "authentication_configuration",
+		Kind:     "object",
+		Fields:   Connection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfigurationFields,
+	},
+	"ConnectionProperties": ubx.FieldSpec{WireName: "connection_properties"},
+	"ConnectionType":       ubx.FieldSpec{WireName: "connection_type"},
+	"Description":          ubx.FieldSpec{WireName: "description"},
+	"MatchCriteria":        ubx.FieldSpec{WireName: "match_criteria"},
+	"Name":                 ubx.FieldSpec{WireName: "name"},
+	"PhysicalConnectionRequirements": ubx.FieldSpec{
+		WireName: "physical_connection_requirements",
+		Kind:     "object",
+		Fields:   Connection_Props_GlueProperties_GlueConnectionInput_PhysicalConnectionRequirementsFields,
+	},
+	"PythonProperties":               ubx.FieldSpec{WireName: "python_properties"},
+	"SparkProperties":                ubx.FieldSpec{WireName: "spark_properties"},
+	"ValidateCredentials":            ubx.FieldSpec{WireName: "validate_credentials"},
+	"ValidateForComputeEnvironments": ubx.FieldSpec{WireName: "validate_for_compute_environments"},
+}
 
 var Connection_Props_GluePropertiesFields = ubx.FieldMap{
-		"GlueConnectionInput": ubx.FieldSpec{
-			WireName: "glue_connection_input",
-			Kind: "object",
-			Fields: Connection_Props_GlueProperties_GlueConnectionInputFields,
-		},
-	}
+	"GlueConnectionInput": ubx.FieldSpec{
+		WireName: "glue_connection_input",
+		Kind:     "object",
+		Fields:   Connection_Props_GlueProperties_GlueConnectionInputFields,
+	},
+}
 
 var Connection_Props_HyperPodPropertiesFields = ubx.FieldMap{
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-	}
+	"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
+}
 
 var Connection_Props_IamPropertiesFields = ubx.FieldMap{
-		"GlueLineageSyncEnabled": ubx.FieldSpec{WireName: "glue_lineage_sync_enabled"},
-	}
+	"GlueLineageSyncEnabled": ubx.FieldSpec{WireName: "glue_lineage_sync_enabled"},
+}
 
 var Connection_Props_MlflowPropertiesFields = ubx.FieldMap{
-		"TrackingServerArn": ubx.FieldSpec{WireName: "tracking_server_arn"},
-	}
+	"TrackingServerArn": ubx.FieldSpec{WireName: "tracking_server_arn"},
+}
 
 var Connection_Props_RedshiftProperties_Credentials_UsernamePasswordFields = ubx.FieldMap{
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Password": ubx.FieldSpec{WireName: "password"},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var Connection_Props_RedshiftProperties_CredentialsFields = ubx.FieldMap{
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-		"UsernamePassword": ubx.FieldSpec{
-			WireName: "username_password",
-			Kind: "object",
-			Fields: Connection_Props_RedshiftProperties_Credentials_UsernamePasswordFields,
-		},
-	}
+	"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+	"UsernamePassword": ubx.FieldSpec{
+		WireName: "username_password",
+		Kind:     "object",
+		Fields:   Connection_Props_RedshiftProperties_Credentials_UsernamePasswordFields,
+	},
+}
 
 var Connection_Props_RedshiftProperties_LineageSync_ScheduleFields = ubx.FieldMap{
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-	}
+	"Schedule": ubx.FieldSpec{WireName: "schedule"},
+}
 
 var Connection_Props_RedshiftProperties_LineageSyncFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Schedule": ubx.FieldSpec{
-			WireName: "schedule",
-			Kind: "object",
-			Fields: Connection_Props_RedshiftProperties_LineageSync_ScheduleFields,
-		},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Schedule": ubx.FieldSpec{
+		WireName: "schedule",
+		Kind:     "object",
+		Fields:   Connection_Props_RedshiftProperties_LineageSync_ScheduleFields,
+	},
+}
 
 var Connection_Props_RedshiftProperties_StorageFields = ubx.FieldMap{
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"WorkgroupName": ubx.FieldSpec{WireName: "workgroup_name"},
-	}
+	"ClusterName":   ubx.FieldSpec{WireName: "cluster_name"},
+	"WorkgroupName": ubx.FieldSpec{WireName: "workgroup_name"},
+}
 
 var Connection_Props_RedshiftPropertiesFields = ubx.FieldMap{
-		"Credentials": ubx.FieldSpec{
-			WireName: "credentials",
-			Kind: "object",
-			Fields: Connection_Props_RedshiftProperties_CredentialsFields,
-		},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"LineageSync": ubx.FieldSpec{
-			WireName: "lineage_sync",
-			Kind: "object",
-			Fields: Connection_Props_RedshiftProperties_LineageSyncFields,
-		},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Storage": ubx.FieldSpec{
-			WireName: "storage",
-			Kind: "object",
-			Fields: Connection_Props_RedshiftProperties_StorageFields,
-		},
-	}
+	"Credentials": ubx.FieldSpec{
+		WireName: "credentials",
+		Kind:     "object",
+		Fields:   Connection_Props_RedshiftProperties_CredentialsFields,
+	},
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"Host":         ubx.FieldSpec{WireName: "host"},
+	"LineageSync": ubx.FieldSpec{
+		WireName: "lineage_sync",
+		Kind:     "object",
+		Fields:   Connection_Props_RedshiftProperties_LineageSyncFields,
+	},
+	"Port": ubx.FieldSpec{WireName: "port"},
+	"Storage": ubx.FieldSpec{
+		WireName: "storage",
+		Kind:     "object",
+		Fields:   Connection_Props_RedshiftProperties_StorageFields,
+	},
+}
 
 var Connection_Props_S3PropertiesFields = ubx.FieldMap{
-		"RegisterS3AccessGrantLocation": ubx.FieldSpec{WireName: "register_s3_access_grant_location"},
-		"S3AccessGrantLocationId": ubx.FieldSpec{WireName: "s3_access_grant_location_id"},
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"RegisterS3AccessGrantLocation": ubx.FieldSpec{WireName: "register_s3_access_grant_location"},
+	"S3AccessGrantLocationId":       ubx.FieldSpec{WireName: "s3_access_grant_location_id"},
+	"S3Uri":                         ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var Connection_Props_SparkEmrPropertiesFields = ubx.FieldMap{
-		"ComputeArn": ubx.FieldSpec{WireName: "compute_arn"},
-		"InstanceProfileArn": ubx.FieldSpec{WireName: "instance_profile_arn"},
-		"JavaVirtualEnv": ubx.FieldSpec{WireName: "java_virtual_env"},
-		"LogUri": ubx.FieldSpec{WireName: "log_uri"},
-		"ManagedEndpointArn": ubx.FieldSpec{WireName: "managed_endpoint_arn"},
-		"PythonVirtualEnv": ubx.FieldSpec{WireName: "python_virtual_env"},
-		"RuntimeRole": ubx.FieldSpec{WireName: "runtime_role"},
-		"TrustedCertificatesS3Uri": ubx.FieldSpec{WireName: "trusted_certificates_s3_uri"},
-	}
+	"ComputeArn":               ubx.FieldSpec{WireName: "compute_arn"},
+	"InstanceProfileArn":       ubx.FieldSpec{WireName: "instance_profile_arn"},
+	"JavaVirtualEnv":           ubx.FieldSpec{WireName: "java_virtual_env"},
+	"LogUri":                   ubx.FieldSpec{WireName: "log_uri"},
+	"ManagedEndpointArn":       ubx.FieldSpec{WireName: "managed_endpoint_arn"},
+	"PythonVirtualEnv":         ubx.FieldSpec{WireName: "python_virtual_env"},
+	"RuntimeRole":              ubx.FieldSpec{WireName: "runtime_role"},
+	"TrustedCertificatesS3Uri": ubx.FieldSpec{WireName: "trusted_certificates_s3_uri"},
+}
 
 var Connection_Props_SparkGlueProperties_AdditionalArgsFields = ubx.FieldMap{
-		"Connection": ubx.FieldSpec{WireName: "connection"},
-	}
+	"Connection": ubx.FieldSpec{WireName: "connection"},
+}
 
 var Connection_Props_SparkGluePropertiesFields = ubx.FieldMap{
-		"AdditionalArgs": ubx.FieldSpec{
-			WireName: "additional_args",
-			Kind: "object",
-			Fields: Connection_Props_SparkGlueProperties_AdditionalArgsFields,
-		},
-		"GlueConnectionName": ubx.FieldSpec{WireName: "glue_connection_name"},
-		"GlueVersion": ubx.FieldSpec{WireName: "glue_version"},
-		"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
-		"JavaVirtualEnv": ubx.FieldSpec{WireName: "java_virtual_env"},
-		"NumberOfWorkers": ubx.FieldSpec{WireName: "number_of_workers"},
-		"PythonVirtualEnv": ubx.FieldSpec{WireName: "python_virtual_env"},
-		"WorkerType": ubx.FieldSpec{WireName: "worker_type"},
-	}
+	"AdditionalArgs": ubx.FieldSpec{
+		WireName: "additional_args",
+		Kind:     "object",
+		Fields:   Connection_Props_SparkGlueProperties_AdditionalArgsFields,
+	},
+	"GlueConnectionName": ubx.FieldSpec{WireName: "glue_connection_name"},
+	"GlueVersion":        ubx.FieldSpec{WireName: "glue_version"},
+	"IdleTimeout":        ubx.FieldSpec{WireName: "idle_timeout"},
+	"JavaVirtualEnv":     ubx.FieldSpec{WireName: "java_virtual_env"},
+	"NumberOfWorkers":    ubx.FieldSpec{WireName: "number_of_workers"},
+	"PythonVirtualEnv":   ubx.FieldSpec{WireName: "python_virtual_env"},
+	"WorkerType":         ubx.FieldSpec{WireName: "worker_type"},
+}
 
 var Connection_Props_WorkflowsMwaaPropertiesFields = ubx.FieldMap{
-		"MwaaEnvironmentName": ubx.FieldSpec{WireName: "mwaa_environment_name"},
-	}
+	"MwaaEnvironmentName": ubx.FieldSpec{WireName: "mwaa_environment_name"},
+}
 
 var Connection_PropsFields = ubx.FieldMap{
-		"AmazonQproperties": ubx.FieldSpec{
-			WireName: "amazon_qproperties",
-			Kind: "object",
-			Fields: Connection_Props_AmazonQpropertiesFields,
-		},
-		"AthenaProperties": ubx.FieldSpec{
-			WireName: "athena_properties",
-			Kind: "object",
-			Fields: Connection_Props_AthenaPropertiesFields,
-		},
-		"GlueProperties": ubx.FieldSpec{
-			WireName: "glue_properties",
-			Kind: "object",
-			Fields: Connection_Props_GluePropertiesFields,
-		},
-		"HyperPodProperties": ubx.FieldSpec{
-			WireName: "hyper_pod_properties",
-			Kind: "object",
-			Fields: Connection_Props_HyperPodPropertiesFields,
-		},
-		"IamProperties": ubx.FieldSpec{
-			WireName: "iam_properties",
-			Kind: "object",
-			Fields: Connection_Props_IamPropertiesFields,
-		},
-		"LakehouseProperties": ubx.FieldSpec{
-			WireName: "lakehouse_properties",
-			Kind: "object",
-			Fields: Connection_Props_IamPropertiesFields,
-		},
-		"MlflowProperties": ubx.FieldSpec{
-			WireName: "mlflow_properties",
-			Kind: "object",
-			Fields: Connection_Props_MlflowPropertiesFields,
-		},
-		"RedshiftProperties": ubx.FieldSpec{
-			WireName: "redshift_properties",
-			Kind: "object",
-			Fields: Connection_Props_RedshiftPropertiesFields,
-		},
-		"S3Properties": ubx.FieldSpec{
-			WireName: "s3_properties",
-			Kind: "object",
-			Fields: Connection_Props_S3PropertiesFields,
-		},
-		"SparkEmrProperties": ubx.FieldSpec{
-			WireName: "spark_emr_properties",
-			Kind: "object",
-			Fields: Connection_Props_SparkEmrPropertiesFields,
-		},
-		"SparkGlueProperties": ubx.FieldSpec{
-			WireName: "spark_glue_properties",
-			Kind: "object",
-			Fields: Connection_Props_SparkGluePropertiesFields,
-		},
-		"WorkflowsMwaaProperties": ubx.FieldSpec{
-			WireName: "workflows_mwaa_properties",
-			Kind: "object",
-			Fields: Connection_Props_WorkflowsMwaaPropertiesFields,
-		},
-		"WorkflowsServerlessProperties": ubx.FieldSpec{WireName: "workflows_serverless_properties"},
-	}
+	"AmazonQproperties": ubx.FieldSpec{
+		WireName: "amazon_qproperties",
+		Kind:     "object",
+		Fields:   Connection_Props_AmazonQpropertiesFields,
+	},
+	"AthenaProperties": ubx.FieldSpec{
+		WireName: "athena_properties",
+		Kind:     "object",
+		Fields:   Connection_Props_AthenaPropertiesFields,
+	},
+	"GlueProperties": ubx.FieldSpec{
+		WireName: "glue_properties",
+		Kind:     "object",
+		Fields:   Connection_Props_GluePropertiesFields,
+	},
+	"HyperPodProperties": ubx.FieldSpec{
+		WireName: "hyper_pod_properties",
+		Kind:     "object",
+		Fields:   Connection_Props_HyperPodPropertiesFields,
+	},
+	"IamProperties": ubx.FieldSpec{
+		WireName: "iam_properties",
+		Kind:     "object",
+		Fields:   Connection_Props_IamPropertiesFields,
+	},
+	"LakehouseProperties": ubx.FieldSpec{
+		WireName: "lakehouse_properties",
+		Kind:     "object",
+		Fields:   Connection_Props_IamPropertiesFields,
+	},
+	"MlflowProperties": ubx.FieldSpec{
+		WireName: "mlflow_properties",
+		Kind:     "object",
+		Fields:   Connection_Props_MlflowPropertiesFields,
+	},
+	"RedshiftProperties": ubx.FieldSpec{
+		WireName: "redshift_properties",
+		Kind:     "object",
+		Fields:   Connection_Props_RedshiftPropertiesFields,
+	},
+	"S3Properties": ubx.FieldSpec{
+		WireName: "s3_properties",
+		Kind:     "object",
+		Fields:   Connection_Props_S3PropertiesFields,
+	},
+	"SparkEmrProperties": ubx.FieldSpec{
+		WireName: "spark_emr_properties",
+		Kind:     "object",
+		Fields:   Connection_Props_SparkEmrPropertiesFields,
+	},
+	"SparkGlueProperties": ubx.FieldSpec{
+		WireName: "spark_glue_properties",
+		Kind:     "object",
+		Fields:   Connection_Props_SparkGluePropertiesFields,
+	},
+	"WorkflowsMwaaProperties": ubx.FieldSpec{
+		WireName: "workflows_mwaa_properties",
+		Kind:     "object",
+		Fields:   Connection_Props_WorkflowsMwaaPropertiesFields,
+	},
+	"WorkflowsServerlessProperties": ubx.FieldSpec{WireName: "workflows_serverless_properties"},
+}
 
 type ConnectionConfig struct {
 	// AWS Location of project
@@ -632,24 +632,24 @@ var Connection = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AwsLocation": ubx.FieldSpec{
 			WireName: "aws_location",
-			Kind: "object",
-			Fields: Connection_AwsLocationFields,
+			Kind:     "object",
+			Fields:   Connection_AwsLocationFields,
 		},
 		"Configurations": ubx.FieldSpec{
 			WireName: "configurations",
-			Kind: "list",
-			Fields: Connection_ConfigurationsFields,
+			Kind:     "list",
+			Fields:   Connection_ConfigurationsFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
+		"Description":                      ubx.FieldSpec{WireName: "description"},
+		"DomainIdentifier":                 ubx.FieldSpec{WireName: "domain_identifier"},
 		"EnableTrustedIdentityPropagation": ubx.FieldSpec{WireName: "enable_trusted_identity_propagation"},
-		"EnvironmentIdentifier": ubx.FieldSpec{WireName: "environment_identifier"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProjectIdentifier": ubx.FieldSpec{WireName: "project_identifier"},
+		"EnvironmentIdentifier":            ubx.FieldSpec{WireName: "environment_identifier"},
+		"Name":                             ubx.FieldSpec{WireName: "name"},
+		"ProjectIdentifier":                ubx.FieldSpec{WireName: "project_identifier"},
 		"Props": ubx.FieldSpec{
 			WireName: "props",
-			Kind: "object",
-			Fields: Connection_PropsFields,
+			Kind:     "object",
+			Fields:   Connection_PropsFields,
 		},
 		"Scope": ubx.FieldSpec{WireName: "scope"},
 	},

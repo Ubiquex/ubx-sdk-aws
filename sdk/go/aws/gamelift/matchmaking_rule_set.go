@@ -11,9 +11,9 @@ type MatchmakingRuleSet_Tags struct {
 }
 
 var MatchmakingRuleSet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MatchmakingRuleSetConfig struct {
 	// A unique identifier for the matchmaking rule set.
@@ -40,12 +40,12 @@ type MatchmakingRuleSetAttrs struct {
 var MatchmakingRuleSet = ubx.ResourceBinding{
 	WireType: "aws_game_lift_matchmaking_rule_set",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"RuleSetBody": ubx.FieldSpec{WireName: "rule_set_body"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MatchmakingRuleSet_TagsFields,
+			Kind:     "list",
+			Fields:   MatchmakingRuleSet_TagsFields,
 		},
 	},
 }

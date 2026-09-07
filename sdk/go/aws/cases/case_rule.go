@@ -24,7 +24,7 @@ type CaseRule_Rule_Hidden_Conditions_EqualTo struct {
 	OperandOne any
 	// Defines the second operand (typically a literal value or field reference) in an equality condition of an AWS Cases case rule, specifying what the first operand must match for the condition to be true. (AI-inferred)
 	OperandTwo any
-	Result any
+	Result     any
 }
 
 type CaseRule_Rule_Hidden_Conditions struct {
@@ -54,69 +54,69 @@ type CaseRule_Tags struct {
 }
 
 var CaseRule_Rule_Hidden_Conditions_EqualTo_OperandOneFields = ubx.FieldMap{
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-	}
+	"FieldId": ubx.FieldSpec{WireName: "field_id"},
+}
 
 var CaseRule_Rule_Hidden_Conditions_EqualTo_OperandTwoFields = ubx.FieldMap{
-		"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
-		"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
-		"EmptyValue": ubx.FieldSpec{WireName: "empty_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
+	"DoubleValue":  ubx.FieldSpec{WireName: "double_value"},
+	"EmptyValue":   ubx.FieldSpec{WireName: "empty_value"},
+	"StringValue":  ubx.FieldSpec{WireName: "string_value"},
+}
 
 var CaseRule_Rule_Hidden_Conditions_EqualToFields = ubx.FieldMap{
-		"OperandOne": ubx.FieldSpec{
-			WireName: "operand_one",
-			Kind: "object",
-			Fields: CaseRule_Rule_Hidden_Conditions_EqualTo_OperandOneFields,
-		},
-		"OperandTwo": ubx.FieldSpec{
-			WireName: "operand_two",
-			Kind: "object",
-			Fields: CaseRule_Rule_Hidden_Conditions_EqualTo_OperandTwoFields,
-		},
-		"Result": ubx.FieldSpec{WireName: "result"},
-	}
+	"OperandOne": ubx.FieldSpec{
+		WireName: "operand_one",
+		Kind:     "object",
+		Fields:   CaseRule_Rule_Hidden_Conditions_EqualTo_OperandOneFields,
+	},
+	"OperandTwo": ubx.FieldSpec{
+		WireName: "operand_two",
+		Kind:     "object",
+		Fields:   CaseRule_Rule_Hidden_Conditions_EqualTo_OperandTwoFields,
+	},
+	"Result": ubx.FieldSpec{WireName: "result"},
+}
 
 var CaseRule_Rule_Hidden_ConditionsFields = ubx.FieldMap{
-		"EqualTo": ubx.FieldSpec{
-			WireName: "equal_to",
-			Kind: "object",
-			Fields: CaseRule_Rule_Hidden_Conditions_EqualToFields,
-		},
-		"NotEqualTo": ubx.FieldSpec{
-			WireName: "not_equal_to",
-			Kind: "object",
-			Fields: CaseRule_Rule_Hidden_Conditions_EqualToFields,
-		},
-	}
+	"EqualTo": ubx.FieldSpec{
+		WireName: "equal_to",
+		Kind:     "object",
+		Fields:   CaseRule_Rule_Hidden_Conditions_EqualToFields,
+	},
+	"NotEqualTo": ubx.FieldSpec{
+		WireName: "not_equal_to",
+		Kind:     "object",
+		Fields:   CaseRule_Rule_Hidden_Conditions_EqualToFields,
+	},
+}
 
 var CaseRule_Rule_HiddenFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: CaseRule_Rule_Hidden_ConditionsFields,
-		},
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   CaseRule_Rule_Hidden_ConditionsFields,
+	},
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+}
 
 var CaseRule_RuleFields = ubx.FieldMap{
-		"Hidden": ubx.FieldSpec{
-			WireName: "hidden",
-			Kind: "object",
-			Fields: CaseRule_Rule_HiddenFields,
-		},
-		"Required": ubx.FieldSpec{
-			WireName: "required",
-			Kind: "object",
-			Fields: CaseRule_Rule_HiddenFields,
-		},
-	}
+	"Hidden": ubx.FieldSpec{
+		WireName: "hidden",
+		Kind:     "object",
+		Fields:   CaseRule_Rule_HiddenFields,
+	},
+	"Required": ubx.FieldSpec{
+		WireName: "required",
+		Kind:     "object",
+		Fields:   CaseRule_Rule_HiddenFields,
+	},
+}
 
 var CaseRule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CaseRuleConfig struct {
 	// A description explaining the purpose and behavior of this case rule. Helps administrators understand when and why this rule applies to case fields.
@@ -156,17 +156,17 @@ var CaseRule = ubx.ResourceBinding{
 	WireType: "aws_cases_case_rule",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainId": ubx.FieldSpec{WireName: "domain_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DomainId":    ubx.FieldSpec{WireName: "domain_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Rule": ubx.FieldSpec{
 			WireName: "rule",
-			Kind: "object",
-			Fields: CaseRule_RuleFields,
+			Kind:     "object",
+			Fields:   CaseRule_RuleFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CaseRule_TagsFields,
+			Kind:     "list",
+			Fields:   CaseRule_TagsFields,
 		},
 	},
 }

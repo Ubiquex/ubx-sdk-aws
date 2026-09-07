@@ -4,19 +4,19 @@ package dataexchange
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RevisionAssets_Assets_AssetDetails_ApiGatewayApiAsset struct {
-	ApiDescription any
-	ApiEndpoint any
-	ApiId any
-	ApiKey any
-	ApiName any
-	ApiSpecificationDownloadUrl any
+	ApiDescription                       any
+	ApiEndpoint                          any
+	ApiId                                any
+	ApiKey                               any
+	ApiName                              any
+	ApiSpecificationDownloadUrl          any
 	ApiSpecificationDownloadUrlExpiresAt any
-	ProtocolType any
-	Stage any
+	ProtocolType                         any
+	Stage                                any
 }
 
 type RevisionAssets_Assets_AssetDetails_LakeFormationDataPermissionAsset_LakeFormationDataPermissionDetails_LftagPolicy_ResourceDetails_Database_Expression struct {
-	TagKey any
+	TagKey    any
 	TagValues any
 }
 
@@ -26,13 +26,13 @@ type RevisionAssets_Assets_AssetDetails_LakeFormationDataPermissionAsset_LakeFor
 
 type RevisionAssets_Assets_AssetDetails_LakeFormationDataPermissionAsset_LakeFormationDataPermissionDetails_LftagPolicy_ResourceDetails struct {
 	Database any
-	Table any
+	Table    any
 }
 
 type RevisionAssets_Assets_AssetDetails_LakeFormationDataPermissionAsset_LakeFormationDataPermissionDetails_LftagPolicy struct {
-	CatalogId any
+	CatalogId       any
 	ResourceDetails any
-	ResourceType any
+	ResourceType    any
 }
 
 type RevisionAssets_Assets_AssetDetails_LakeFormationDataPermissionAsset_LakeFormationDataPermissionDetails struct {
@@ -41,9 +41,9 @@ type RevisionAssets_Assets_AssetDetails_LakeFormationDataPermissionAsset_LakeFor
 
 type RevisionAssets_Assets_AssetDetails_LakeFormationDataPermissionAsset struct {
 	LakeFormationDataPermissionDetails any
-	LakeFormationDataPermissionType any
-	Permissions any
-	RoleArn any
+	LakeFormationDataPermissionType    any
+	Permissions                        any
+	RoleArn                            any
 }
 
 type RevisionAssets_Assets_AssetDetails_RedshiftDataShareAsset struct {
@@ -55,12 +55,12 @@ type RevisionAssets_Assets_AssetDetails_S3DataAccessAsset_KmsKeysToGrant struct 
 }
 
 type RevisionAssets_Assets_AssetDetails_S3DataAccessAsset struct {
-	Bucket any
-	KeyPrefixes any
-	Keys any
-	KmsKeysToGrant any
+	Bucket             any
+	KeyPrefixes        any
+	Keys               any
+	KmsKeysToGrant     any
 	S3AccessPointAlias any
-	S3AccessPointArn any
+	S3AccessPointArn   any
 }
 
 type RevisionAssets_Assets_AssetDetails_S3SnapshotAsset struct {
@@ -68,47 +68,47 @@ type RevisionAssets_Assets_AssetDetails_S3SnapshotAsset struct {
 }
 
 type RevisionAssets_Assets_AssetDetails struct {
-	ApiGatewayApiAsset any
+	ApiGatewayApiAsset               any
 	LakeFormationDataPermissionAsset any
-	RedshiftDataShareAsset any
-	S3DataAccessAsset any
-	S3SnapshotAsset any
+	RedshiftDataShareAsset           any
+	S3DataAccessAsset                any
+	S3SnapshotAsset                  any
 }
 
 type RevisionAssets_Assets struct {
-	Arn any
+	Arn          any
 	AssetDetails any
-	AssetType any
-	CreatedAt any
-	DataSetId any
-	Id any
-	Name any
-	RevisionId any
-	SourceId any
-	UpdatedAt any
+	AssetType    any
+	CreatedAt    any
+	DataSetId    any
+	Id           any
+	Name         any
+	RevisionId   any
+	SourceId     any
+	UpdatedAt    any
 }
 
 type RevisionAssetsConfig struct {
-	DataSetId any
+	DataSetId  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	RevisionId any
 }
 
 type RevisionAssetsAttrs struct {
-	Assets any
-	DataSetId any
+	Assets     any
+	DataSetId  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	RevisionId any
 }
 
 var RevisionAssets = ubx.DataSourceBinding{
 	WireType: "aws_dataexchange_revision_assets",
 	Fields: ubx.FieldMap{
-		"DataSetId": ubx.FieldSpec{WireName: "data_set_id"},
+		"DataSetId":  ubx.FieldSpec{WireName: "data_set_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
 	},
 }

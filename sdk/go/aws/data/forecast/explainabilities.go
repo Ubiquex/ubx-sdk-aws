@@ -4,44 +4,44 @@ package forecast
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Explainabilities_Explainabilities_ExplainabilityConfig struct {
-	TimePointGranularity any
+	TimePointGranularity  any
 	TimeSeriesGranularity any
 }
 
 type Explainabilities_Explainabilities struct {
-	CreationTime any
-	ExplainabilityArn any
+	CreationTime         any
+	ExplainabilityArn    any
 	ExplainabilityConfig any
-	ExplainabilityName any
+	ExplainabilityName   any
 	LastModificationTime any
-	Message any
-	ResourceArn any
-	Status any
+	Message              any
+	ResourceArn          any
+	Status               any
 }
 
 type Explainabilities_Filters struct {
 	Condition any
-	Key any
-	Value any
+	Key       any
+	Value     any
 }
 
 var Explainabilities_FiltersFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Key":       ubx.FieldSpec{WireName: "key"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 type ExplainabilitiesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ExplainabilitiesAttrs struct {
 	Explainabilities any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters          any
+	MaxResults       any
+	NextToken        any
 }
 
 var Explainabilities = ubx.DataSourceBinding{
@@ -49,10 +49,10 @@ var Explainabilities = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Explainabilities_FiltersFields,
+			Kind:     "list",
+			Fields:   Explainabilities_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

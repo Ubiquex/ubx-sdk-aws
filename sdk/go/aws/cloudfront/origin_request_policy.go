@@ -38,39 +38,39 @@ type OriginRequestPolicy_OriginRequestPolicyConfig struct {
 }
 
 var OriginRequestPolicy_OriginRequestPolicyConfig_CookiesConfigFields = ubx.FieldMap{
-		"CookieBehavior": ubx.FieldSpec{WireName: "cookie_behavior"},
-		"Cookies": ubx.FieldSpec{WireName: "cookies"},
-	}
+	"CookieBehavior": ubx.FieldSpec{WireName: "cookie_behavior"},
+	"Cookies":        ubx.FieldSpec{WireName: "cookies"},
+}
 
 var OriginRequestPolicy_OriginRequestPolicyConfig_HeadersConfigFields = ubx.FieldMap{
-		"HeaderBehavior": ubx.FieldSpec{WireName: "header_behavior"},
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-	}
+	"HeaderBehavior": ubx.FieldSpec{WireName: "header_behavior"},
+	"Headers":        ubx.FieldSpec{WireName: "headers"},
+}
 
 var OriginRequestPolicy_OriginRequestPolicyConfig_QueryStringsConfigFields = ubx.FieldMap{
-		"QueryStringBehavior": ubx.FieldSpec{WireName: "query_string_behavior"},
-		"QueryStrings": ubx.FieldSpec{WireName: "query_strings"},
-	}
+	"QueryStringBehavior": ubx.FieldSpec{WireName: "query_string_behavior"},
+	"QueryStrings":        ubx.FieldSpec{WireName: "query_strings"},
+}
 
 var OriginRequestPolicy_OriginRequestPolicyConfigFields = ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"CookiesConfig": ubx.FieldSpec{
-			WireName: "cookies_config",
-			Kind: "object",
-			Fields: OriginRequestPolicy_OriginRequestPolicyConfig_CookiesConfigFields,
-		},
-		"HeadersConfig": ubx.FieldSpec{
-			WireName: "headers_config",
-			Kind: "object",
-			Fields: OriginRequestPolicy_OriginRequestPolicyConfig_HeadersConfigFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"QueryStringsConfig": ubx.FieldSpec{
-			WireName: "query_strings_config",
-			Kind: "object",
-			Fields: OriginRequestPolicy_OriginRequestPolicyConfig_QueryStringsConfigFields,
-		},
-	}
+	"Comment": ubx.FieldSpec{WireName: "comment"},
+	"CookiesConfig": ubx.FieldSpec{
+		WireName: "cookies_config",
+		Kind:     "object",
+		Fields:   OriginRequestPolicy_OriginRequestPolicyConfig_CookiesConfigFields,
+	},
+	"HeadersConfig": ubx.FieldSpec{
+		WireName: "headers_config",
+		Kind:     "object",
+		Fields:   OriginRequestPolicy_OriginRequestPolicyConfig_HeadersConfigFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"QueryStringsConfig": ubx.FieldSpec{
+		WireName: "query_strings_config",
+		Kind:     "object",
+		Fields:   OriginRequestPolicy_OriginRequestPolicyConfig_QueryStringsConfigFields,
+	},
+}
 
 type OriginRequestPolicyConfig struct {
 	// An origin request policy configuration. This configuration determines the values that CloudFront includes in requests that it sends to the origin. Each request that CloudFront sends to the origin includes the following: + The request body and the URL path (without the domain name) from the viewer request. + The headers that CloudFront automatically includes in every origin request, including ``Host``, ``User-Agent``, and ``X-Amz-Cf-Id``. + All HTTP headers, cookies, and URL query strings that are specified in the cache policy or the origin request policy. These can include items from the viewer request and, in the case of headers, additional ones that are added by CloudFront. CloudFront sends a request when it can't find an object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use ``CachePolicy``.
@@ -91,8 +91,8 @@ var OriginRequestPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"OriginRequestPolicyConfig": ubx.FieldSpec{
 			WireName: "origin_request_policy_config",
-			Kind: "object",
-			Fields: OriginRequestPolicy_OriginRequestPolicyConfigFields,
+			Kind:     "object",
+			Fields:   OriginRequestPolicy_OriginRequestPolicyConfigFields,
 		},
 	},
 }

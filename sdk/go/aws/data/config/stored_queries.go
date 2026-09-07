@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StoredQueries_StoredQueryMetadata struct {
 	Description any
-	QueryArn any
-	QueryId any
-	QueryName any
+	QueryArn    any
+	QueryId     any
+	QueryName   any
 }
 
 type StoredQueriesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type StoredQueriesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 	StoredQueryMetadata any
 }
 
@@ -25,6 +25,6 @@ var StoredQueries = ubx.DataSourceBinding{
 	WireType: "aws_config_stored_queries",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,29 +4,29 @@ package dynamodb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Exports_ExportSummaries struct {
-	ExportArn any
+	ExportArn    any
 	ExportStatus any
-	ExportType any
+	ExportType   any
 }
 
 type ExportsConfig struct {
 	MaxResults any
-	NextToken any
-	TableArn any
+	NextToken  any
+	TableArn   any
 }
 
 type ExportsAttrs struct {
 	ExportSummaries any
-	MaxResults any
-	NextToken any
-	TableArn any
+	MaxResults      any
+	NextToken       any
+	TableArn        any
 }
 
 var Exports = ubx.DataSourceBinding{
 	WireType: "aws_dynamodb_exports",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"TableArn": ubx.FieldSpec{WireName: "table_arn"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"TableArn":   ubx.FieldSpec{WireName: "table_arn"},
 	},
 }

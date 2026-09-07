@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VehicleStatus_Campaigns struct {
 	CampaignName any
-	Status any
-	VehicleName any
+	Status       any
+	VehicleName  any
 }
 
 type VehicleStatusConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	VehicleName any
 }
 
 type VehicleStatusAttrs struct {
-	Campaigns any
-	MaxResults any
-	NextToken any
+	Campaigns   any
+	MaxResults  any
+	NextToken   any
 	VehicleName any
 }
 
 var VehicleStatus = ubx.DataSourceBinding{
 	WireType: "aws_iotfleetwise_vehicle_status",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"VehicleName": ubx.FieldSpec{WireName: "vehicle_name"},
 	},
 }

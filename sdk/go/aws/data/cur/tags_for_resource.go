@@ -4,7 +4,7 @@ package cur
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -16,7 +16,7 @@ type TagsForResourceConfig struct {
 type TagsForResourceAttrs struct {
 	// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
 	ReportName any
-	Tags any
+	Tags       any
 }
 
 var TagsForResource = ubx.DataSourceBinding{

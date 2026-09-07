@@ -4,26 +4,26 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityIdFormat_Statuses struct {
-	Deadline any
-	Resource any
+	Deadline   any
+	Resource   any
 	UseLongIds any
 }
 
 type IdentityIdFormatConfig struct {
 	PrincipalArn any
-	Resource any
+	Resource     any
 }
 
 type IdentityIdFormatAttrs struct {
 	PrincipalArn any
-	Resource any
-	Statuses any
+	Resource     any
+	Statuses     any
 }
 
 var IdentityIdFormat = ubx.DataSourceBinding{
 	WireType: "aws_ec2_identity_id_format",
 	Fields: ubx.FieldMap{
 		"PrincipalArn": ubx.FieldSpec{WireName: "principal_arn"},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
+		"Resource":     ubx.FieldSpec{WireName: "resource"},
 	},
 }

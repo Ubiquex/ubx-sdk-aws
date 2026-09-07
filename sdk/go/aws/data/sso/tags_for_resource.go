@@ -4,28 +4,28 @@ package sso
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TagsForResourceConfig struct {
 	InstanceArn any
-	NextToken any
+	NextToken   any
 	ResourceArn any
 }
 
 type TagsForResourceAttrs struct {
 	InstanceArn any
-	NextToken any
+	NextToken   any
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var TagsForResource = ubx.DataSourceBinding{
 	WireType: "aws_sso_tags_for_resource",
 	Fields: ubx.FieldMap{
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

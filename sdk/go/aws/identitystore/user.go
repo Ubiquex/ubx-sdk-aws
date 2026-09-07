@@ -4,20 +4,20 @@ package identitystore
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type User_Addresses struct {
-	Country any
-	Formatted any
-	Locality any
-	PostalCode any
-	Primary any
-	Region any
+	Country       any
+	Formatted     any
+	Locality      any
+	PostalCode    any
+	Primary       any
+	Region        any
 	StreetAddress any
-	Type any
+	Type          any
 }
 
 type User_Emails struct {
 	Primary any
-	Type any
-	Value any
+	Type    any
+	Value   any
 }
 
 type User_Name struct {
@@ -38,42 +38,42 @@ type User_Name struct {
 type User_Photos struct {
 	Display any
 	Primary any
-	Type any
-	Value any
+	Type    any
+	Value   any
 }
 
 var User_AddressesFields = ubx.FieldMap{
-		"Country": ubx.FieldSpec{WireName: "country"},
-		"Formatted": ubx.FieldSpec{WireName: "formatted"},
-		"Locality": ubx.FieldSpec{WireName: "locality"},
-		"PostalCode": ubx.FieldSpec{WireName: "postal_code"},
-		"Primary": ubx.FieldSpec{WireName: "primary"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"StreetAddress": ubx.FieldSpec{WireName: "street_address"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Country":       ubx.FieldSpec{WireName: "country"},
+	"Formatted":     ubx.FieldSpec{WireName: "formatted"},
+	"Locality":      ubx.FieldSpec{WireName: "locality"},
+	"PostalCode":    ubx.FieldSpec{WireName: "postal_code"},
+	"Primary":       ubx.FieldSpec{WireName: "primary"},
+	"Region":        ubx.FieldSpec{WireName: "region"},
+	"StreetAddress": ubx.FieldSpec{WireName: "street_address"},
+	"Type":          ubx.FieldSpec{WireName: "type"},
+}
 
 var User_EmailsFields = ubx.FieldMap{
-		"Primary": ubx.FieldSpec{WireName: "primary"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Primary": ubx.FieldSpec{WireName: "primary"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+	"Value":   ubx.FieldSpec{WireName: "value"},
+}
 
 var User_NameFields = ubx.FieldMap{
-		"FamilyName": ubx.FieldSpec{WireName: "family_name"},
-		"Formatted": ubx.FieldSpec{WireName: "formatted"},
-		"GivenName": ubx.FieldSpec{WireName: "given_name"},
-		"HonorificPrefix": ubx.FieldSpec{WireName: "honorific_prefix"},
-		"HonorificSuffix": ubx.FieldSpec{WireName: "honorific_suffix"},
-		"MiddleName": ubx.FieldSpec{WireName: "middle_name"},
-	}
+	"FamilyName":      ubx.FieldSpec{WireName: "family_name"},
+	"Formatted":       ubx.FieldSpec{WireName: "formatted"},
+	"GivenName":       ubx.FieldSpec{WireName: "given_name"},
+	"HonorificPrefix": ubx.FieldSpec{WireName: "honorific_prefix"},
+	"HonorificSuffix": ubx.FieldSpec{WireName: "honorific_suffix"},
+	"MiddleName":      ubx.FieldSpec{WireName: "middle_name"},
+}
 
 var User_PhotosFields = ubx.FieldMap{
-		"Display": ubx.FieldSpec{WireName: "display"},
-		"Primary": ubx.FieldSpec{WireName: "primary"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Display": ubx.FieldSpec{WireName: "display"},
+	"Primary": ubx.FieldSpec{WireName: "primary"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+	"Value":   ubx.FieldSpec{WireName: "value"},
+}
 
 type UserConfig struct {
 	// A list of addresses associated with the user.
@@ -172,45 +172,45 @@ var User = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Addresses": ubx.FieldSpec{
 			WireName: "addresses",
-			Kind: "list",
-			Fields: User_AddressesFields,
+			Kind:     "list",
+			Fields:   User_AddressesFields,
 		},
-		"Birthdate": ubx.FieldSpec{WireName: "birthdate"},
+		"Birthdate":   ubx.FieldSpec{WireName: "birthdate"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Emails": ubx.FieldSpec{
 			WireName: "emails",
-			Kind: "list",
-			Fields: User_EmailsFields,
+			Kind:     "list",
+			Fields:   User_EmailsFields,
 		},
 		"IdentityStoreId": ubx.FieldSpec{WireName: "identity_store_id"},
-		"Locale": ubx.FieldSpec{WireName: "locale"},
+		"Locale":          ubx.FieldSpec{WireName: "locale"},
 		"Name": ubx.FieldSpec{
 			WireName: "name",
-			Kind: "object",
-			Fields: User_NameFields,
+			Kind:     "object",
+			Fields:   User_NameFields,
 		},
 		"NickName": ubx.FieldSpec{WireName: "nick_name"},
 		"PhoneNumbers": ubx.FieldSpec{
 			WireName: "phone_numbers",
-			Kind: "list",
-			Fields: User_EmailsFields,
+			Kind:     "list",
+			Fields:   User_EmailsFields,
 		},
 		"Photos": ubx.FieldSpec{
 			WireName: "photos",
-			Kind: "list",
-			Fields: User_PhotosFields,
+			Kind:     "list",
+			Fields:   User_PhotosFields,
 		},
 		"PreferredLanguage": ubx.FieldSpec{WireName: "preferred_language"},
-		"ProfileUrl": ubx.FieldSpec{WireName: "profile_url"},
+		"ProfileUrl":        ubx.FieldSpec{WireName: "profile_url"},
 		"Roles": ubx.FieldSpec{
 			WireName: "roles",
-			Kind: "list",
-			Fields: User_EmailsFields,
+			Kind:     "list",
+			Fields:   User_EmailsFields,
 		},
 		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-		"Title": ubx.FieldSpec{WireName: "title"},
+		"Title":    ubx.FieldSpec{WireName: "title"},
 		"UserName": ubx.FieldSpec{WireName: "user_name"},
 		"UserType": ubx.FieldSpec{WireName: "user_type"},
-		"Website": ubx.FieldSpec{WireName: "website"},
+		"Website":  ubx.FieldSpec{WireName: "website"},
 	},
 }

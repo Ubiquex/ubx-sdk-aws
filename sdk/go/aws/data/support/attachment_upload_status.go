@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AttachmentUploadStatus_UploadProgress struct {
 	CompletedPartsCount any
-	TotalParts any
+	TotalParts          any
 }
 
 type AttachmentUploadStatusConfig struct {
-	DryRun any
+	DryRun   any
 	UploadId any
 }
 
 type AttachmentUploadStatusAttrs struct {
-	DryRun any
+	DryRun   any
 	FileName any
 	UploadId any
 	// <p>The progress of a multipart attachment upload, returned by <a>DescribeAttachmentUploadStatus</a>.</p>
 	UploadProgress any
-	UploadStatus any
+	UploadStatus   any
 }
 
 var AttachmentUploadStatus = ubx.DataSourceBinding{
 	WireType: "aws_support_attachment_upload_status",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":   ubx.FieldSpec{WireName: "dry_run"},
 		"UploadId": ubx.FieldSpec{WireName: "upload_id"},
 	},
 }

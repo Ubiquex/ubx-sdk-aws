@@ -4,28 +4,28 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FlowPermissions_Permissions struct {
-	Actions any
+	Actions   any
 	Principal any
 }
 
 type FlowPermissionsConfig struct {
 	AwsAccountId any
-	FlowId any
+	FlowId       any
 }
 
 type FlowPermissionsAttrs struct {
-	Arn any
+	Arn          any
 	AwsAccountId any
-	FlowId any
-	Permissions any
-	RequestId any
-	Status any
+	FlowId       any
+	Permissions  any
+	RequestId    any
+	Status       any
 }
 
 var FlowPermissions = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_flow_permissions",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"FlowId": ubx.FieldSpec{WireName: "flow_id"},
+		"FlowId":       ubx.FieldSpec{WireName: "flow_id"},
 	},
 }

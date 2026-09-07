@@ -4,7 +4,7 @@ package appsync
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Functions_Functions_Runtime struct {
-	Name any
+	Name           any
 	RuntimeVersion any
 }
 
@@ -13,44 +13,44 @@ type Functions_Functions_SyncConfig_LambdaConflictHandlerConfig struct {
 }
 
 type Functions_Functions_SyncConfig struct {
-	ConflictDetection any
-	ConflictHandler any
+	ConflictDetection           any
+	ConflictHandler             any
 	LambdaConflictHandlerConfig any
 }
 
 type Functions_Functions struct {
-	Code any
-	DataSourceName any
-	Description any
-	FunctionArn any
-	FunctionId any
-	FunctionVersion any
-	MaxBatchSize any
-	Name any
-	RequestMappingTemplate any
+	Code                    any
+	DataSourceName          any
+	Description             any
+	FunctionArn             any
+	FunctionId              any
+	FunctionVersion         any
+	MaxBatchSize            any
+	Name                    any
+	RequestMappingTemplate  any
 	ResponseMappingTemplate any
-	Runtime any
-	SyncConfig any
+	Runtime                 any
+	SyncConfig              any
 }
 
 type FunctionsConfig struct {
-	ApiId any
+	ApiId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FunctionsAttrs struct {
-	ApiId any
-	Functions any
+	ApiId      any
+	Functions  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Functions = ubx.DataSourceBinding{
 	WireType: "aws_appsync_functions",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":      ubx.FieldSpec{WireName: "api_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

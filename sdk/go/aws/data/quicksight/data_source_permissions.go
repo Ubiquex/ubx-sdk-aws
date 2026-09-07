@@ -4,7 +4,7 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataSourcePermissions_Permissions struct {
-	Actions any
+	Actions   any
 	Principal any
 }
 
@@ -14,12 +14,12 @@ type DataSourcePermissionsConfig struct {
 }
 
 type DataSourcePermissionsAttrs struct {
-	AwsAccountId any
+	AwsAccountId  any
 	DataSourceArn any
-	DataSourceId any
-	Permissions any
-	RequestId any
-	Status any
+	DataSourceId  any
+	Permissions   any
+	RequestId     any
+	Status        any
 }
 
 var DataSourcePermissions = ubx.DataSourceBinding{

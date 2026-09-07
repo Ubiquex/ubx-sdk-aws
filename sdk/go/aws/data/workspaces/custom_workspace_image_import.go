@@ -4,13 +4,13 @@ package workspaces
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomWorkspaceImageImport_ErrorDetails struct {
-	ErrorCode any
+	ErrorCode    any
 	ErrorMessage any
 }
 
 type CustomWorkspaceImageImport_ImageSource struct {
-	Ec2ImageId any
-	Ec2ImportTaskId any
+	Ec2ImageId           any
+	Ec2ImportTaskId      any
 	ImageBuildVersionArn any
 }
 
@@ -19,17 +19,17 @@ type CustomWorkspaceImageImportConfig struct {
 }
 
 type CustomWorkspaceImageImportAttrs struct {
-	Created any
-	ErrorDetails any
+	Created                any
+	ErrorDetails           any
 	ImageBuilderInstanceId any
-	ImageId any
+	ImageId                any
 	// <p>Describes the image import source.</p>
-	ImageSource any
+	ImageSource                    any
 	InfrastructureConfigurationArn any
-	LastUpdatedTime any
-	ProgressPercentage any
-	State any
-	StateMessage any
+	LastUpdatedTime                any
+	ProgressPercentage             any
+	State                          any
+	StateMessage                   any
 }
 
 var CustomWorkspaceImageImport = ubx.DataSourceBinding{

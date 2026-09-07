@@ -4,29 +4,29 @@ package sms_voice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SmsVoiceKeywords_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var SmsVoiceKeywords_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type SmsVoiceKeywordsConfig struct {
-	Filters any
-	Keywords any
-	MaxResults any
-	NextToken any
+	Filters             any
+	Keywords            any
+	MaxResults          any
+	NextToken           any
 	OriginationIdentity any
 }
 
 type SmsVoiceKeywordsAttrs struct {
-	Filters any
-	Keywords any
-	MaxResults any
-	NextToken any
-	OriginationIdentity any
+	Filters                any
+	Keywords               any
+	MaxResults             any
+	NextToken              any
+	OriginationIdentity    any
 	OriginationIdentityArn any
 }
 
@@ -35,12 +35,12 @@ var SmsVoiceKeywords = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SmsVoiceKeywords_FiltersFields,
+			Kind:     "list",
+			Fields:   SmsVoiceKeywords_FiltersFields,
 		},
-		"Keywords": ubx.FieldSpec{WireName: "keywords"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Keywords":            ubx.FieldSpec{WireName: "keywords"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 		"OriginationIdentity": ubx.FieldSpec{WireName: "origination_identity"},
 	},
 }

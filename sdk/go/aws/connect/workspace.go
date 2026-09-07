@@ -10,15 +10,15 @@ type Workspace_Media struct {
 }
 
 type Workspace_Pages struct {
-	InputData any
-	Page any
+	InputData   any
+	Page        any
 	ResourceArn any
-	Slug any
+	Slug        any
 }
 
 type Workspace_Tags struct {
 	// Specifies the tag key used to label the Amazon Connect workspace resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -103,111 +103,111 @@ type Workspace_Theme struct {
 }
 
 var Workspace_MediaFields = ubx.FieldMap{
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Source": ubx.FieldSpec{WireName: "source"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+}
 
 var Workspace_PagesFields = ubx.FieldMap{
-		"InputData": ubx.FieldSpec{WireName: "input_data"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"Slug": ubx.FieldSpec{WireName: "slug"},
-	}
+	"InputData":   ubx.FieldSpec{WireName: "input_data"},
+	"Page":        ubx.FieldSpec{WireName: "page"},
+	"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+	"Slug":        ubx.FieldSpec{WireName: "slug"},
+}
 
 var Workspace_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Workspace_Theme_Dark_Palette_CanvasFields = ubx.FieldMap{
-		"ActiveBackground": ubx.FieldSpec{WireName: "active_background"},
-		"ContainerBackground": ubx.FieldSpec{WireName: "container_background"},
-		"PageBackground": ubx.FieldSpec{WireName: "page_background"},
-	}
+	"ActiveBackground":    ubx.FieldSpec{WireName: "active_background"},
+	"ContainerBackground": ubx.FieldSpec{WireName: "container_background"},
+	"PageBackground":      ubx.FieldSpec{WireName: "page_background"},
+}
 
 var Workspace_Theme_Dark_Palette_HeaderFields = ubx.FieldMap{
-		"Background": ubx.FieldSpec{WireName: "background"},
-		"InvertActionsColors": ubx.FieldSpec{WireName: "invert_actions_colors"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"TextHover": ubx.FieldSpec{WireName: "text_hover"},
-	}
+	"Background":          ubx.FieldSpec{WireName: "background"},
+	"InvertActionsColors": ubx.FieldSpec{WireName: "invert_actions_colors"},
+	"Text":                ubx.FieldSpec{WireName: "text"},
+	"TextHover":           ubx.FieldSpec{WireName: "text_hover"},
+}
 
 var Workspace_Theme_Dark_Palette_NavigationFields = ubx.FieldMap{
-		"Background": ubx.FieldSpec{WireName: "background"},
-		"InvertActionsColors": ubx.FieldSpec{WireName: "invert_actions_colors"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"TextActive": ubx.FieldSpec{WireName: "text_active"},
-		"TextBackgroundActive": ubx.FieldSpec{WireName: "text_background_active"},
-		"TextBackgroundHover": ubx.FieldSpec{WireName: "text_background_hover"},
-		"TextHover": ubx.FieldSpec{WireName: "text_hover"},
-	}
+	"Background":           ubx.FieldSpec{WireName: "background"},
+	"InvertActionsColors":  ubx.FieldSpec{WireName: "invert_actions_colors"},
+	"Text":                 ubx.FieldSpec{WireName: "text"},
+	"TextActive":           ubx.FieldSpec{WireName: "text_active"},
+	"TextBackgroundActive": ubx.FieldSpec{WireName: "text_background_active"},
+	"TextBackgroundHover":  ubx.FieldSpec{WireName: "text_background_hover"},
+	"TextHover":            ubx.FieldSpec{WireName: "text_hover"},
+}
 
 var Workspace_Theme_Dark_Palette_PrimaryFields = ubx.FieldMap{
-		"Active": ubx.FieldSpec{WireName: "active"},
-		"ContrastText": ubx.FieldSpec{WireName: "contrast_text"},
-		"Default": ubx.FieldSpec{WireName: "default"},
-	}
+	"Active":       ubx.FieldSpec{WireName: "active"},
+	"ContrastText": ubx.FieldSpec{WireName: "contrast_text"},
+	"Default":      ubx.FieldSpec{WireName: "default"},
+}
 
 var Workspace_Theme_Dark_PaletteFields = ubx.FieldMap{
-		"Canvas": ubx.FieldSpec{
-			WireName: "canvas",
-			Kind: "object",
-			Fields: Workspace_Theme_Dark_Palette_CanvasFields,
-		},
-		"Header": ubx.FieldSpec{
-			WireName: "header",
-			Kind: "object",
-			Fields: Workspace_Theme_Dark_Palette_HeaderFields,
-		},
-		"Navigation": ubx.FieldSpec{
-			WireName: "navigation",
-			Kind: "object",
-			Fields: Workspace_Theme_Dark_Palette_NavigationFields,
-		},
-		"Primary": ubx.FieldSpec{
-			WireName: "primary",
-			Kind: "object",
-			Fields: Workspace_Theme_Dark_Palette_PrimaryFields,
-		},
-	}
+	"Canvas": ubx.FieldSpec{
+		WireName: "canvas",
+		Kind:     "object",
+		Fields:   Workspace_Theme_Dark_Palette_CanvasFields,
+	},
+	"Header": ubx.FieldSpec{
+		WireName: "header",
+		Kind:     "object",
+		Fields:   Workspace_Theme_Dark_Palette_HeaderFields,
+	},
+	"Navigation": ubx.FieldSpec{
+		WireName: "navigation",
+		Kind:     "object",
+		Fields:   Workspace_Theme_Dark_Palette_NavigationFields,
+	},
+	"Primary": ubx.FieldSpec{
+		WireName: "primary",
+		Kind:     "object",
+		Fields:   Workspace_Theme_Dark_Palette_PrimaryFields,
+	},
+}
 
 var Workspace_Theme_Dark_Typography_FontFamilyFields = ubx.FieldMap{
-		"Default": ubx.FieldSpec{WireName: "default"},
-	}
+	"Default": ubx.FieldSpec{WireName: "default"},
+}
 
 var Workspace_Theme_Dark_TypographyFields = ubx.FieldMap{
-		"FontFamily": ubx.FieldSpec{
-			WireName: "font_family",
-			Kind: "object",
-			Fields: Workspace_Theme_Dark_Typography_FontFamilyFields,
-		},
-	}
+	"FontFamily": ubx.FieldSpec{
+		WireName: "font_family",
+		Kind:     "object",
+		Fields:   Workspace_Theme_Dark_Typography_FontFamilyFields,
+	},
+}
 
 var Workspace_Theme_DarkFields = ubx.FieldMap{
-		"Palette": ubx.FieldSpec{
-			WireName: "palette",
-			Kind: "object",
-			Fields: Workspace_Theme_Dark_PaletteFields,
-		},
-		"Typography": ubx.FieldSpec{
-			WireName: "typography",
-			Kind: "object",
-			Fields: Workspace_Theme_Dark_TypographyFields,
-		},
-	}
+	"Palette": ubx.FieldSpec{
+		WireName: "palette",
+		Kind:     "object",
+		Fields:   Workspace_Theme_Dark_PaletteFields,
+	},
+	"Typography": ubx.FieldSpec{
+		WireName: "typography",
+		Kind:     "object",
+		Fields:   Workspace_Theme_Dark_TypographyFields,
+	},
+}
 
 var Workspace_ThemeFields = ubx.FieldMap{
-		"Dark": ubx.FieldSpec{
-			WireName: "dark",
-			Kind: "object",
-			Fields: Workspace_Theme_DarkFields,
-		},
-		"Light": ubx.FieldSpec{
-			WireName: "light",
-			Kind: "object",
-			Fields: Workspace_Theme_DarkFields,
-		},
-	}
+	"Dark": ubx.FieldSpec{
+		WireName: "dark",
+		Kind:     "object",
+		Fields:   Workspace_Theme_DarkFields,
+	},
+	"Light": ubx.FieldSpec{
+		WireName: "light",
+		Kind:     "object",
+		Fields:   Workspace_Theme_DarkFields,
+	},
+}
 
 type WorkspaceConfig struct {
 	// The resource ARNs associated with the workspace
@@ -263,30 +263,30 @@ var Workspace = ubx.ResourceBinding{
 	WireType: "aws_connect_workspace",
 	Fields: ubx.FieldMap{
 		"Associations": ubx.FieldSpec{WireName: "associations"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"InstanceArn":  ubx.FieldSpec{WireName: "instance_arn"},
 		"Media": ubx.FieldSpec{
 			WireName: "media",
-			Kind: "list",
-			Fields: Workspace_MediaFields,
+			Kind:     "list",
+			Fields:   Workspace_MediaFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Pages": ubx.FieldSpec{
 			WireName: "pages",
-			Kind: "list",
-			Fields: Workspace_PagesFields,
+			Kind:     "list",
+			Fields:   Workspace_PagesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Workspace_TagsFields,
+			Kind:     "list",
+			Fields:   Workspace_TagsFields,
 		},
 		"Theme": ubx.FieldSpec{
 			WireName: "theme",
-			Kind: "object",
-			Fields: Workspace_ThemeFields,
+			Kind:     "object",
+			Fields:   Workspace_ThemeFields,
 		},
-		"Title": ubx.FieldSpec{WireName: "title"},
+		"Title":      ubx.FieldSpec{WireName: "title"},
 		"Visibility": ubx.FieldSpec{WireName: "visibility"},
 	},
 }

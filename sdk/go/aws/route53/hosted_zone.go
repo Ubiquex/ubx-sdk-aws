@@ -33,26 +33,26 @@ type HostedZone_Vpcs struct {
 }
 
 var HostedZone_HostedZoneConfigFields = ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-	}
+	"Comment": ubx.FieldSpec{WireName: "comment"},
+}
 
 var HostedZone_HostedZoneFeaturesFields = ubx.FieldMap{
-		"EnableAcceleratedRecovery": ubx.FieldSpec{WireName: "enable_accelerated_recovery"},
-	}
+	"EnableAcceleratedRecovery": ubx.FieldSpec{WireName: "enable_accelerated_recovery"},
+}
 
 var HostedZone_HostedZoneTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var HostedZone_QueryLoggingConfigFields = ubx.FieldMap{
-		"CloudWatchLogsLogGroupArn": ubx.FieldSpec{WireName: "cloud_watch_logs_log_group_arn"},
-	}
+	"CloudWatchLogsLogGroupArn": ubx.FieldSpec{WireName: "cloud_watch_logs_log_group_arn"},
+}
 
 var HostedZone_VpcsFields = ubx.FieldMap{
-		"Vpcid": ubx.FieldSpec{WireName: "vpcid"},
-		"Vpcregion": ubx.FieldSpec{WireName: "vpcregion"},
-	}
+	"Vpcid":     ubx.FieldSpec{WireName: "vpcid"},
+	"Vpcregion": ubx.FieldSpec{WireName: "vpcregion"},
+}
 
 type HostedZoneConfig struct {
 	// A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the ``HostedZoneConfig`` and ``Comment`` elements.
@@ -93,29 +93,29 @@ var HostedZone = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"HostedZoneConfig": ubx.FieldSpec{
 			WireName: "hosted_zone_config",
-			Kind: "object",
-			Fields: HostedZone_HostedZoneConfigFields,
+			Kind:     "object",
+			Fields:   HostedZone_HostedZoneConfigFields,
 		},
 		"HostedZoneFeatures": ubx.FieldSpec{
 			WireName: "hosted_zone_features",
-			Kind: "object",
-			Fields: HostedZone_HostedZoneFeaturesFields,
+			Kind:     "object",
+			Fields:   HostedZone_HostedZoneFeaturesFields,
 		},
 		"HostedZoneTags": ubx.FieldSpec{
 			WireName: "hosted_zone_tags",
-			Kind: "list",
-			Fields: HostedZone_HostedZoneTagsFields,
+			Kind:     "list",
+			Fields:   HostedZone_HostedZoneTagsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"QueryLoggingConfig": ubx.FieldSpec{
 			WireName: "query_logging_config",
-			Kind: "object",
-			Fields: HostedZone_QueryLoggingConfigFields,
+			Kind:     "object",
+			Fields:   HostedZone_QueryLoggingConfigFields,
 		},
 		"Vpcs": ubx.FieldSpec{
 			WireName: "vpcs",
-			Kind: "list",
-			Fields: HostedZone_VpcsFields,
+			Kind:     "list",
+			Fields:   HostedZone_VpcsFields,
 		},
 	},
 }

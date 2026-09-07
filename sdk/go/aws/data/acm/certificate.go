@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Certificate_Certificate_DomainValidationOptions_HttpRedirect struct {
 	RedirectFrom any
-	RedirectTo any
+	RedirectTo   any
 }
 
 type Certificate_Certificate_DomainValidationOptions_ResourceRecord struct {
-	Name any
-	Type any
+	Name  any
+	Type  any
 	Value any
 }
 
 type Certificate_Certificate_DomainValidationOptions struct {
-	DomainName any
-	HttpRedirect any
-	ResourceRecord any
+	DomainName       any
+	HttpRedirect     any
+	ResourceRecord   any
 	ValidationDomain any
 	ValidationEmails any
 	ValidationMethod any
@@ -26,7 +26,7 @@ type Certificate_Certificate_DomainValidationOptions struct {
 
 type Certificate_Certificate_ExtendedKeyUsages struct {
 	Name any
-	Oid any
+	Oid  any
 }
 
 type Certificate_Certificate_KeyUsages struct {
@@ -35,67 +35,67 @@ type Certificate_Certificate_KeyUsages struct {
 
 type Certificate_Certificate_Options struct {
 	CertificateTransparencyLoggingPreference any
-	Export any
-	ValidationMethod any
+	Export                                   any
+	ValidationMethod                         any
 }
 
 type Certificate_Certificate_RenewalSummary struct {
 	DomainValidationOptions any
-	RenewalStatus any
-	RenewalStatusReason any
-	UpdatedAt any
+	RenewalStatus           any
+	RenewalStatusReason     any
+	UpdatedAt               any
 }
 
 type Certificate_Certificate_UpdateSummary_DomainValidationMethodUpdateSummary struct {
 	From any
-	To any
+	To   any
 }
 
 type Certificate_Certificate_UpdateSummary struct {
 	// <p>Contains information about a domain validation method migration, including the previous validation method and the target validation method.</p>
 	DomainValidationMethodUpdateSummary any
-	RequestedAt any
+	RequestedAt                         any
 	// <p>The status of a certificate update. Possible values:</p> <ul> <li> <p> <code>PENDING_DOMAIN_VALIDATION</code> – The update is waiting for domain validation to complete.</p> </li> <li> <p> <code>SUCCESS</code> – The update completed successfully.</p> </li> <li> <p> <code>FAILED</code> – The update failed.</p> </li> </ul>
 	Status any
 	// <p>The type of certificate update. Valid values:</p> <ul> <li> <p> <code>DOMAIN_VALIDATION_METHOD</code> – A change to the domain validation method for the certificate.</p> </li> </ul>
-	Type any
+	Type      any
 	UpdatedAt any
 }
 
 type Certificate_Certificate struct {
-	AcmeAccountId any
-	AcmeEndpointArn any
-	CertificateArn any
+	AcmeAccountId           any
+	AcmeEndpointArn         any
+	CertificateArn          any
 	CertificateAuthorityArn any
 	// <p>The origin of the certificate's key pair.</p>
 	CertificateKeyPairOrigin any
-	CreatedAt any
-	DomainName any
-	DomainValidationOptions any
-	ExtendedKeyUsages any
-	FailureReason any
-	ImportedAt any
-	InUseBy any
-	IssuedAt any
-	Issuer any
-	KeyAlgorithm any
-	KeyUsages any
-	ManagedBy any
-	NotAfter any
-	NotBefore any
+	CreatedAt                any
+	DomainName               any
+	DomainValidationOptions  any
+	ExtendedKeyUsages        any
+	FailureReason            any
+	ImportedAt               any
+	InUseBy                  any
+	IssuedAt                 any
+	Issuer                   any
+	KeyAlgorithm             any
+	KeyUsages                any
+	ManagedBy                any
+	NotAfter                 any
+	NotBefore                any
 	// <p>Structure that contains options for your certificate. You can use this structure to change the domain validation method or specify whether to export your certificate.</p> <p>All public certificates are recorded in a certificate transparency log. For general information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.</p> <p>You can export public ACM certificates to use with Amazon Web Services services as well as outside Amazon Web Services Cloud. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate Manager exportable public certificate</a>.</p>
-	Options any
+	Options            any
 	RenewalEligibility any
 	// <p>Contains information about the status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate. This structure exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
-	RenewalSummary any
-	RevocationReason any
-	RevokedAt any
-	Serial any
-	SignatureAlgorithm any
-	Status any
-	Subject any
+	RenewalSummary          any
+	RevocationReason        any
+	RevokedAt               any
+	Serial                  any
+	SignatureAlgorithm      any
+	Status                  any
+	Subject                 any
 	SubjectAlternativeNames any
-	Type any
+	Type                    any
 	// <p>Contains information about the most recent certificate update, such as a domain validation method migration. This structure is returned as part of the <a>CertificateDetail</a> response from <a>DescribeCertificate</a>.</p>
 	UpdateSummary any
 }
@@ -106,7 +106,7 @@ type CertificateConfig struct {
 
 type CertificateAttrs struct {
 	// <p>Contains metadata about an ACM certificate. This structure is returned in the response to a <a>DescribeCertificate</a> request. </p>
-	Certificate any
+	Certificate    any
 	CertificateArn any
 }
 

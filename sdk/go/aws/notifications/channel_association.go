@@ -20,7 +20,7 @@ type ChannelAssociationAttrs struct {
 var ChannelAssociation = ubx.ResourceBinding{
 	WireType: "aws_notifications_channel_association",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":                          ubx.FieldSpec{WireName: "arn"},
 		"NotificationConfigurationArn": ubx.FieldSpec{WireName: "notification_configuration_arn"},
 	},
 }

@@ -4,32 +4,32 @@ package personalize
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Datasets_Datasets struct {
-	CreationDateTime any
-	DatasetArn any
-	DatasetType any
+	CreationDateTime    any
+	DatasetArn          any
+	DatasetType         any
 	LastUpdatedDateTime any
-	Name any
-	Status any
+	Name                any
+	Status              any
 }
 
 type DatasetsConfig struct {
 	DatasetGroupArn any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 type DatasetsAttrs struct {
 	DatasetGroupArn any
-	Datasets any
-	MaxResults any
-	NextToken any
+	Datasets        any
+	MaxResults      any
+	NextToken       any
 }
 
 var Datasets = ubx.DataSourceBinding{
 	WireType: "aws_personalize_datasets",
 	Fields: ubx.FieldMap{
 		"DatasetGroupArn": ubx.FieldSpec{WireName: "dataset_group_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -12,32 +12,32 @@ type ActivatedRulesInRuleGroup_ActivatedRules_ExcludedRules struct {
 }
 
 type ActivatedRulesInRuleGroup_ActivatedRules struct {
-	Action any
-	ExcludedRules any
+	Action         any
+	ExcludedRules  any
 	OverrideAction any
-	Priority any
-	RuleId any
-	Type any
+	Priority       any
+	RuleId         any
+	Type           any
 }
 
 type ActivatedRulesInRuleGroupConfig struct {
-	Limit any
-	NextMarker any
+	Limit       any
+	NextMarker  any
 	RuleGroupId any
 }
 
 type ActivatedRulesInRuleGroupAttrs struct {
 	ActivatedRules any
-	Limit any
-	NextMarker any
-	RuleGroupId any
+	Limit          any
+	NextMarker     any
+	RuleGroupId    any
 }
 
 var ActivatedRulesInRuleGroup = ubx.DataSourceBinding{
 	WireType: "aws_waf_activated_rules_in_rule_group",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
+		"Limit":       ubx.FieldSpec{WireName: "limit"},
+		"NextMarker":  ubx.FieldSpec{WireName: "next_marker"},
 		"RuleGroupId": ubx.FieldSpec{WireName: "rule_group_id"},
 	},
 }

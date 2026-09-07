@@ -8,12 +8,12 @@ type DeliveryDestinations_DeliveryDestinations_DeliveryDestinationConfiguration 
 }
 
 type DeliveryDestinations_DeliveryDestinations struct {
-	Arn any
+	Arn                              any
 	DeliveryDestinationConfiguration any
-	DeliveryDestinationType any
-	Name any
-	OutputFormat any
-	Tags any
+	DeliveryDestinationType          any
+	Name                             any
+	OutputFormat                     any
+	Tags                             any
 }
 
 type DeliveryDestinationsConfig struct {
@@ -24,7 +24,7 @@ type DeliveryDestinationsConfig struct {
 
 type DeliveryDestinationsAttrs struct {
 	DeliveryDestinations any
-	Limit any
+	Limit                any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
 }
@@ -32,7 +32,7 @@ type DeliveryDestinationsAttrs struct {
 var DeliveryDestinations = ubx.DataSourceBinding{
 	WireType: "aws_logs_delivery_destinations",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

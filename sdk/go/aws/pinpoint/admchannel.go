@@ -31,8 +31,8 @@ var Admchannel = ubx.ResourceBinding{
 	WireType: "aws_pinpoint_admchannel",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"ClientId":      ubx.FieldSpec{WireName: "client_id"},
+		"ClientSecret":  ubx.FieldSpec{WireName: "client_secret"},
+		"Enabled":       ubx.FieldSpec{WireName: "enabled"},
 	},
 }

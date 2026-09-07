@@ -4,10 +4,10 @@ package cassandra
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TableAutoScalingSettings_AutoScalingSpecification_ReadCapacityAutoScaling_ScalingPolicy_TargetTrackingScalingPolicyConfiguration struct {
-	DisableScaleIn any
-	ScaleInCooldown any
+	DisableScaleIn   any
+	ScaleInCooldown  any
 	ScaleOutCooldown any
-	TargetValue any
+	TargetValue      any
 }
 
 type TableAutoScalingSettings_AutoScalingSpecification_ReadCapacityAutoScaling_ScalingPolicy struct {
@@ -17,8 +17,8 @@ type TableAutoScalingSettings_AutoScalingSpecification_ReadCapacityAutoScaling_S
 
 type TableAutoScalingSettings_AutoScalingSpecification_ReadCapacityAutoScaling struct {
 	AutoScalingDisabled any
-	MaximumUnits any
-	MinimumUnits any
+	MaximumUnits        any
+	MinimumUnits        any
 	// <p>Amazon Keyspaces supports the <code>target tracking</code> auto scaling policy. With this policy, Amazon Keyspaces auto scaling ensures that the table's ratio of consumed to provisioned capacity stays at or near the target value that you specify. You define the target value as a percentage between 20 and 90.</p>
 	ScalingPolicy any
 }
@@ -32,27 +32,27 @@ type TableAutoScalingSettings_AutoScalingSpecification struct {
 
 type TableAutoScalingSettings_ReplicaSpecifications struct {
 	AutoScalingSpecification any
-	Region any
+	Region                   any
 }
 
 type TableAutoScalingSettingsConfig struct {
 	KeyspaceName any
-	TableName any
+	TableName    any
 }
 
 type TableAutoScalingSettingsAttrs struct {
 	// <p>The optional auto scaling capacity settings for a table in provisioned capacity mode.</p>
 	AutoScalingSpecification any
-	KeyspaceName any
-	ReplicaSpecifications any
-	ResourceArn any
-	TableName any
+	KeyspaceName             any
+	ReplicaSpecifications    any
+	ResourceArn              any
+	TableName                any
 }
 
 var TableAutoScalingSettings = ubx.DataSourceBinding{
 	WireType: "aws_cassandra_table_auto_scaling_settings",
 	Fields: ubx.FieldMap{
 		"KeyspaceName": ubx.FieldSpec{WireName: "keyspace_name"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
+		"TableName":    ubx.FieldSpec{WireName: "table_name"},
 	},
 }

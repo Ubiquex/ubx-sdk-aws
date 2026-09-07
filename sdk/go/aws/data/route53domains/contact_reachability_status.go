@@ -9,7 +9,7 @@ type ContactReachabilityStatusConfig struct {
 
 type ContactReachabilityStatusAttrs struct {
 	DomainName any
-	Status any
+	Status     any
 }
 
 var ContactReachabilityStatus = ubx.DataSourceBinding{

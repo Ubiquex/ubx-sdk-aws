@@ -9,7 +9,7 @@ type TagKeysConfig struct {
 
 type TagKeysAttrs struct {
 	PaginationToken any
-	TagKeys any
+	TagKeys         any
 }
 
 var TagKeys = ubx.DataSourceBinding{

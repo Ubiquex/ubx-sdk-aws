@@ -4,35 +4,35 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamInternetRegistryAssociationCidrs_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type IpamInternetRegistryAssociationCidrs_IpamInternetRegistryAssociationCidrs struct {
-	Cidr any
+	Cidr           any
 	LastObservedAt any
 }
 
 var IpamInternetRegistryAssociationCidrs_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type IpamInternetRegistryAssociationCidrsConfig struct {
-	DryRun any
-	Filters any
+	DryRun                            any
+	Filters                           any
 	IpamInternetRegistryAssociationId any
-	MaxResults any
-	NextToken any
+	MaxResults                        any
+	NextToken                         any
 }
 
 type IpamInternetRegistryAssociationCidrsAttrs struct {
-	DryRun any
-	Filters any
+	DryRun                               any
+	Filters                              any
 	IpamInternetRegistryAssociationCidrs any
-	IpamInternetRegistryAssociationId any
-	MaxResults any
-	NextToken any
+	IpamInternetRegistryAssociationId    any
+	MaxResults                           any
+	NextToken                            any
 }
 
 var IpamInternetRegistryAssociationCidrs = ubx.DataSourceBinding{
@@ -41,11 +41,11 @@ var IpamInternetRegistryAssociationCidrs = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: IpamInternetRegistryAssociationCidrs_FiltersFields,
+			Kind:     "list",
+			Fields:   IpamInternetRegistryAssociationCidrs_FiltersFields,
 		},
 		"IpamInternetRegistryAssociationId": ubx.FieldSpec{WireName: "ipam_internet_registry_association_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                         ubx.FieldSpec{WireName: "next_token"},
 	},
 }

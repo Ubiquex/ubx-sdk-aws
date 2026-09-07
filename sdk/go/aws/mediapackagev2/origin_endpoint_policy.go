@@ -11,9 +11,9 @@ type OriginEndpointPolicy_CdnAuthConfiguration struct {
 }
 
 var OriginEndpointPolicy_CdnAuthConfigurationFields = ubx.FieldMap{
-		"CdnIdentifierSecretArns": ubx.FieldSpec{WireName: "cdn_identifier_secret_arns"},
-		"SecretsRoleArn": ubx.FieldSpec{WireName: "secrets_role_arn"},
-	}
+	"CdnIdentifierSecretArns": ubx.FieldSpec{WireName: "cdn_identifier_secret_arns"},
+	"SecretsRoleArn":          ubx.FieldSpec{WireName: "secrets_role_arn"},
+}
 
 type OriginEndpointPolicyConfig struct {
 	// <p>The settings to enable CDN authorization headers in MediaPackage.</p>
@@ -46,12 +46,12 @@ var OriginEndpointPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CdnAuthConfiguration": ubx.FieldSpec{
 			WireName: "cdn_auth_configuration",
-			Kind: "object",
-			Fields: OriginEndpointPolicy_CdnAuthConfigurationFields,
+			Kind:     "object",
+			Fields:   OriginEndpointPolicy_CdnAuthConfigurationFields,
 		},
-		"ChannelGroupName": ubx.FieldSpec{WireName: "channel_group_name"},
-		"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
+		"ChannelGroupName":   ubx.FieldSpec{WireName: "channel_group_name"},
+		"ChannelName":        ubx.FieldSpec{WireName: "channel_name"},
 		"OriginEndpointName": ubx.FieldSpec{WireName: "origin_endpoint_name"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
+		"Policy":             ubx.FieldSpec{WireName: "policy"},
 	},
 }

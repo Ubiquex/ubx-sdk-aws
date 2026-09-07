@@ -13,23 +13,23 @@ type ManagedblockchainQueryTokenBalance_OwnerIdentifier struct {
 
 type ManagedblockchainQueryTokenBalance_TokenIdentifier struct {
 	ContractAddress any
-	Network any
-	TokenId any
+	Network         any
+	TokenId         any
 }
 
 var ManagedblockchainQueryTokenBalance_AtBlockchainInstantFields = ubx.FieldMap{
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"Time": ubx.FieldSpec{WireName: "time"},
+}
 
 var ManagedblockchainQueryTokenBalance_OwnerIdentifierFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-	}
+	"Address": ubx.FieldSpec{WireName: "address"},
+}
 
 var ManagedblockchainQueryTokenBalance_TokenIdentifierFields = ubx.FieldMap{
-		"ContractAddress": ubx.FieldSpec{WireName: "contract_address"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"TokenId": ubx.FieldSpec{WireName: "token_id"},
-	}
+	"ContractAddress": ubx.FieldSpec{WireName: "contract_address"},
+	"Network":         ubx.FieldSpec{WireName: "network"},
+	"TokenId":         ubx.FieldSpec{WireName: "token_id"},
+}
 
 type ManagedblockchainQueryTokenBalanceConfig struct {
 	// <p>The container for time.</p>
@@ -43,7 +43,7 @@ type ManagedblockchainQueryTokenBalanceConfig struct {
 type ManagedblockchainQueryTokenBalanceAttrs struct {
 	// <p>The container for time.</p>
 	AtBlockchainInstant any
-	Balance any
+	Balance             any
 	// <p>The container for time.</p>
 	LastUpdatedTime any
 	// <p>The container for the owner identifier.</p>
@@ -57,18 +57,18 @@ var ManagedblockchainQueryTokenBalance = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AtBlockchainInstant": ubx.FieldSpec{
 			WireName: "at_blockchain_instant",
-			Kind: "object",
-			Fields: ManagedblockchainQueryTokenBalance_AtBlockchainInstantFields,
+			Kind:     "object",
+			Fields:   ManagedblockchainQueryTokenBalance_AtBlockchainInstantFields,
 		},
 		"OwnerIdentifier": ubx.FieldSpec{
 			WireName: "owner_identifier",
-			Kind: "object",
-			Fields: ManagedblockchainQueryTokenBalance_OwnerIdentifierFields,
+			Kind:     "object",
+			Fields:   ManagedblockchainQueryTokenBalance_OwnerIdentifierFields,
 		},
 		"TokenIdentifier": ubx.FieldSpec{
 			WireName: "token_identifier",
-			Kind: "object",
-			Fields: ManagedblockchainQueryTokenBalance_TokenIdentifierFields,
+			Kind:     "object",
+			Fields:   ManagedblockchainQueryTokenBalance_TokenIdentifierFields,
 		},
 	},
 }

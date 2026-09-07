@@ -28,19 +28,19 @@ type CloudFormationProvisionedProduct_ProvisioningPreferences struct {
 }
 
 var CloudFormationProvisionedProduct_ProvisioningParametersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var CloudFormationProvisionedProduct_ProvisioningPreferencesFields = ubx.FieldMap{
-		"StackSetAccounts": ubx.FieldSpec{WireName: "stack_set_accounts"},
-		"StackSetFailureToleranceCount": ubx.FieldSpec{WireName: "stack_set_failure_tolerance_count"},
-		"StackSetFailureTolerancePercentage": ubx.FieldSpec{WireName: "stack_set_failure_tolerance_percentage"},
-		"StackSetMaxConcurrencyCount": ubx.FieldSpec{WireName: "stack_set_max_concurrency_count"},
-		"StackSetMaxConcurrencyPercentage": ubx.FieldSpec{WireName: "stack_set_max_concurrency_percentage"},
-		"StackSetOperationType": ubx.FieldSpec{WireName: "stack_set_operation_type"},
-		"StackSetRegions": ubx.FieldSpec{WireName: "stack_set_regions"},
-	}
+	"StackSetAccounts":                   ubx.FieldSpec{WireName: "stack_set_accounts"},
+	"StackSetFailureToleranceCount":      ubx.FieldSpec{WireName: "stack_set_failure_tolerance_count"},
+	"StackSetFailureTolerancePercentage": ubx.FieldSpec{WireName: "stack_set_failure_tolerance_percentage"},
+	"StackSetMaxConcurrencyCount":        ubx.FieldSpec{WireName: "stack_set_max_concurrency_count"},
+	"StackSetMaxConcurrencyPercentage":   ubx.FieldSpec{WireName: "stack_set_max_concurrency_percentage"},
+	"StackSetOperationType":              ubx.FieldSpec{WireName: "stack_set_operation_type"},
+	"StackSetRegions":                    ubx.FieldSpec{WireName: "stack_set_regions"},
+}
 
 type CloudFormationProvisionedProductConfig struct {
 	// Specifies the language code (such as en or jp) used by AWS Service Catalog for localized responses, error messages, and documentation when managing the provisioned product. (AI-inferred)
@@ -107,29 +107,29 @@ type CloudFormationProvisionedProductAttrs struct {
 var CloudFormationProvisionedProduct = ubx.ResourceBinding{
 	WireType: "aws_service_catalog_cloud_formation_provisioned_product",
 	Fields: ubx.FieldMap{
-		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"NotificationArns": ubx.FieldSpec{WireName: "notification_arns"},
-		"PathId": ubx.FieldSpec{WireName: "path_id"},
-		"PathName": ubx.FieldSpec{WireName: "path_name"},
-		"ProductId": ubx.FieldSpec{WireName: "product_id"},
-		"ProductName": ubx.FieldSpec{WireName: "product_name"},
-		"ProvisionedProductName": ubx.FieldSpec{WireName: "provisioned_product_name"},
-		"ProvisioningArtifactId": ubx.FieldSpec{WireName: "provisioning_artifact_id"},
+		"AcceptLanguage":           ubx.FieldSpec{WireName: "accept_language"},
+		"NotificationArns":         ubx.FieldSpec{WireName: "notification_arns"},
+		"PathId":                   ubx.FieldSpec{WireName: "path_id"},
+		"PathName":                 ubx.FieldSpec{WireName: "path_name"},
+		"ProductId":                ubx.FieldSpec{WireName: "product_id"},
+		"ProductName":              ubx.FieldSpec{WireName: "product_name"},
+		"ProvisionedProductName":   ubx.FieldSpec{WireName: "provisioned_product_name"},
+		"ProvisioningArtifactId":   ubx.FieldSpec{WireName: "provisioning_artifact_id"},
 		"ProvisioningArtifactName": ubx.FieldSpec{WireName: "provisioning_artifact_name"},
 		"ProvisioningParameters": ubx.FieldSpec{
 			WireName: "provisioning_parameters",
-			Kind: "list",
-			Fields: CloudFormationProvisionedProduct_ProvisioningParametersFields,
+			Kind:     "list",
+			Fields:   CloudFormationProvisionedProduct_ProvisioningParametersFields,
 		},
 		"ProvisioningPreferences": ubx.FieldSpec{
 			WireName: "provisioning_preferences",
-			Kind: "object",
-			Fields: CloudFormationProvisionedProduct_ProvisioningPreferencesFields,
+			Kind:     "object",
+			Fields:   CloudFormationProvisionedProduct_ProvisioningPreferencesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CloudFormationProvisionedProduct_ProvisioningParametersFields,
+			Kind:     "list",
+			Fields:   CloudFormationProvisionedProduct_ProvisioningParametersFields,
 		},
 	},
 }

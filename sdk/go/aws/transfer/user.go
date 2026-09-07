@@ -29,21 +29,21 @@ type User_Tags struct {
 }
 
 var User_HomeDirectoryMappingsFields = ubx.FieldMap{
-		"Entry": ubx.FieldSpec{WireName: "entry"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Entry":  ubx.FieldSpec{WireName: "entry"},
+	"Target": ubx.FieldSpec{WireName: "target"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+}
 
 var User_PosixProfileFields = ubx.FieldMap{
-		"Gid": ubx.FieldSpec{WireName: "gid"},
-		"SecondaryGids": ubx.FieldSpec{WireName: "secondary_gids"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Gid":           ubx.FieldSpec{WireName: "gid"},
+	"SecondaryGids": ubx.FieldSpec{WireName: "secondary_gids"},
+	"Uid":           ubx.FieldSpec{WireName: "uid"},
+}
 
 var User_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type UserConfig struct {
 	// The landing directory (folder) for the user when they log in to the Transfer Family server, specified as an absolute path or a virtual path that can include the {Transfer:UserName} variable. (AI-inferred)
@@ -99,23 +99,23 @@ var User = ubx.ResourceBinding{
 		"HomeDirectory": ubx.FieldSpec{WireName: "home_directory"},
 		"HomeDirectoryMappings": ubx.FieldSpec{
 			WireName: "home_directory_mappings",
-			Kind: "list",
-			Fields: User_HomeDirectoryMappingsFields,
+			Kind:     "list",
+			Fields:   User_HomeDirectoryMappingsFields,
 		},
 		"HomeDirectoryType": ubx.FieldSpec{WireName: "home_directory_type"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
+		"Policy":            ubx.FieldSpec{WireName: "policy"},
 		"PosixProfile": ubx.FieldSpec{
 			WireName: "posix_profile",
-			Kind: "object",
-			Fields: User_PosixProfileFields,
+			Kind:     "object",
+			Fields:   User_PosixProfileFields,
 		},
-		"Role": ubx.FieldSpec{WireName: "role"},
-		"ServerId": ubx.FieldSpec{WireName: "server_id"},
+		"Role":          ubx.FieldSpec{WireName: "role"},
+		"ServerId":      ubx.FieldSpec{WireName: "server_id"},
 		"SshPublicKeys": ubx.FieldSpec{WireName: "ssh_public_keys"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: User_TagsFields,
+			Kind:     "list",
+			Fields:   User_TagsFields,
 		},
 		"UserName": ubx.FieldSpec{WireName: "user_name"},
 	},

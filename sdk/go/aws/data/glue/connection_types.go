@@ -6,42 +6,42 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ConnectionTypes_ConnectionTypes_Capabilities struct {
 	SupportedAuthenticationTypes any
 	SupportedComputeEnvironments any
-	SupportedDataOperations any
+	SupportedDataOperations      any
 }
 
 type ConnectionTypes_ConnectionTypes_ConnectionTypeVariants struct {
 	ConnectionTypeVariantName any
-	Description any
-	DisplayName any
-	LogoUrl any
+	Description               any
+	DisplayName               any
+	LogoUrl                   any
 }
 
 type ConnectionTypes_ConnectionTypes struct {
-	Capabilities any
-	Categories any
-	ConnectionType any
+	Capabilities           any
+	Categories             any
+	ConnectionType         any
 	ConnectionTypeVariants any
-	Description any
-	DisplayName any
-	LogoUrl any
-	Vendor any
+	Description            any
+	DisplayName            any
+	LogoUrl                any
+	Vendor                 any
 }
 
 type ConnectionTypesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ConnectionTypesAttrs struct {
 	ConnectionTypes any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 var ConnectionTypes = ubx.DataSourceBinding{
 	WireType: "aws_glue_connection_types",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

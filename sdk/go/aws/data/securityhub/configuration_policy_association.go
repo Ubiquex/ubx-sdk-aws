@@ -4,16 +4,16 @@ package securityhub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigurationPolicyAssociation_Target struct {
-	AccountId any
+	AccountId            any
 	OrganizationalUnitId any
-	RootId any
+	RootId               any
 }
 
 var ConfigurationPolicyAssociation_TargetFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"OrganizationalUnitId": ubx.FieldSpec{WireName: "organizational_unit_id"},
-		"RootId": ubx.FieldSpec{WireName: "root_id"},
-	}
+	"AccountId":            ubx.FieldSpec{WireName: "account_id"},
+	"OrganizationalUnitId": ubx.FieldSpec{WireName: "organizational_unit_id"},
+	"RootId":               ubx.FieldSpec{WireName: "root_id"},
+}
 
 type ConfigurationPolicyAssociationConfig struct {
 	// <p> The target account, organizational unit, or the root that is associated with an Security Hub CSPM configuration. The configuration can be a configuration policy or self-managed behavior. </p>
@@ -21,15 +21,15 @@ type ConfigurationPolicyAssociationConfig struct {
 }
 
 type ConfigurationPolicyAssociationAttrs struct {
-	AssociationStatus any
+	AssociationStatus        any
 	AssociationStatusMessage any
-	AssociationType any
-	ConfigurationPolicyId any
+	AssociationType          any
+	ConfigurationPolicyId    any
 	// <p> The target account, organizational unit, or the root that is associated with an Security Hub CSPM configuration. The configuration can be a configuration policy or self-managed behavior. </p>
-	Target any
-	TargetId any
+	Target     any
+	TargetId   any
 	TargetType any
-	UpdatedAt any
+	UpdatedAt  any
 }
 
 var ConfigurationPolicyAssociation = ubx.DataSourceBinding{
@@ -37,8 +37,8 @@ var ConfigurationPolicyAssociation = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Target": ubx.FieldSpec{
 			WireName: "target",
-			Kind: "object",
-			Fields: ConfigurationPolicyAssociation_TargetFields,
+			Kind:     "object",
+			Fields:   ConfigurationPolicyAssociation_TargetFields,
 		},
 	},
 }

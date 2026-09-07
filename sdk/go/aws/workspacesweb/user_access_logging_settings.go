@@ -4,14 +4,14 @@ package workspacesweb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserAccessLoggingSettings_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var UserAccessLoggingSettings_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type UserAccessLoggingSettingsConfig struct {
 	// Kinesis stream ARN to which log events are published.
@@ -37,8 +37,8 @@ var UserAccessLoggingSettings = ubx.ResourceBinding{
 		"KinesisStreamArn": ubx.FieldSpec{WireName: "kinesis_stream_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: UserAccessLoggingSettings_TagsFields,
+			Kind:     "list",
+			Fields:   UserAccessLoggingSettings_TagsFields,
 		},
 	},
 }

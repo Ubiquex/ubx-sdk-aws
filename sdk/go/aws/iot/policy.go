@@ -11,9 +11,9 @@ type Policy_Tags struct {
 }
 
 var Policy_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PolicyConfig struct {
 	// A JSON-formatted policy document that defines the permissions for the AWS IoT policy, specifying allowed or denied actions and resources for IoT principals. (AI-inferred)
@@ -41,11 +41,11 @@ var Policy = ubx.ResourceBinding{
 	WireType: "aws_io_t_policy",
 	Fields: ubx.FieldMap{
 		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
+		"PolicyName":     ubx.FieldSpec{WireName: "policy_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Policy_TagsFields,
+			Kind:     "list",
+			Fields:   Policy_TagsFields,
 		},
 	},
 }

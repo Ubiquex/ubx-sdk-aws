@@ -4,9 +4,9 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerWorkteams_Workteams_MemberDefinitions_CognitoMemberDefinition struct {
-	ClientId any
+	ClientId  any
 	UserGroup any
-	UserPool any
+	UserPool  any
 }
 
 type ApiSagemakerWorkteams_Workteams_MemberDefinitions_OidcMemberDefinition struct {
@@ -15,7 +15,7 @@ type ApiSagemakerWorkteams_Workteams_MemberDefinitions_OidcMemberDefinition stru
 
 type ApiSagemakerWorkteams_Workteams_MemberDefinitions struct {
 	CognitoMemberDefinition any
-	OidcMemberDefinition any
+	OidcMemberDefinition    any
 }
 
 type ApiSagemakerWorkteams_Workteams_NotificationConfiguration struct {
@@ -23,7 +23,7 @@ type ApiSagemakerWorkteams_Workteams_NotificationConfiguration struct {
 }
 
 type ApiSagemakerWorkteams_Workteams_WorkerAccessConfiguration_S3Presign_IamPolicyConstraints struct {
-	SourceIp any
+	SourceIp    any
 	VpcSourceIp any
 }
 
@@ -36,43 +36,43 @@ type ApiSagemakerWorkteams_Workteams_WorkerAccessConfiguration struct {
 }
 
 type ApiSagemakerWorkteams_Workteams struct {
-	CreateDate any
-	Description any
-	LastUpdatedDate any
-	MemberDefinitions any
+	CreateDate                any
+	Description               any
+	LastUpdatedDate           any
+	MemberDefinitions         any
 	NotificationConfiguration any
-	ProductListingIds any
-	SubDomain any
+	ProductListingIds         any
+	SubDomain                 any
 	WorkerAccessConfiguration any
-	WorkforceArn any
-	WorkteamArn any
-	WorkteamName any
+	WorkforceArn              any
+	WorkteamArn               any
+	WorkteamName              any
 }
 
 type ApiSagemakerWorkteamsConfig struct {
-	MaxResults any
+	MaxResults   any
 	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
+	NextToken    any
+	SortBy       any
+	SortOrder    any
 }
 
 type ApiSagemakerWorkteamsAttrs struct {
-	MaxResults any
+	MaxResults   any
 	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
-	Workteams any
+	NextToken    any
+	SortBy       any
+	SortOrder    any
+	Workteams    any
 }
 
 var ApiSagemakerWorkteams = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_workteams",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
 		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":       ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":    ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

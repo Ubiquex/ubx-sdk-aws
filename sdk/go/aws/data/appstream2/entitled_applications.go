@@ -9,25 +9,25 @@ type EntitledApplications_EntitledApplications struct {
 
 type EntitledApplicationsConfig struct {
 	EntitlementName any
-	MaxResults any
-	NextToken any
-	StackName any
+	MaxResults      any
+	NextToken       any
+	StackName       any
 }
 
 type EntitledApplicationsAttrs struct {
 	EntitledApplications any
-	EntitlementName any
-	MaxResults any
-	NextToken any
-	StackName any
+	EntitlementName      any
+	MaxResults           any
+	NextToken            any
+	StackName            any
 }
 
 var EntitledApplications = ubx.DataSourceBinding{
 	WireType: "aws_appstream2_entitled_applications",
 	Fields: ubx.FieldMap{
 		"EntitlementName": ubx.FieldSpec{WireName: "entitlement_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StackName": ubx.FieldSpec{WireName: "stack_name"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"StackName":       ubx.FieldSpec{WireName: "stack_name"},
 	},
 }

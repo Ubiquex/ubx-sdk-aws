@@ -9,8 +9,8 @@ type IndexingConfiguration_ThingGroupIndexingConfiguration_CustomFields struct {
 }
 
 type IndexingConfiguration_ThingGroupIndexingConfiguration struct {
-	CustomFields any
-	ManagedFields any
+	CustomFields           any
+	ManagedFields          any
 	ThingGroupIndexingMode any
 }
 
@@ -19,26 +19,26 @@ type IndexingConfiguration_ThingIndexingConfiguration_Filter_Connectivity struct
 }
 
 type IndexingConfiguration_ThingIndexingConfiguration_Filter_GeoLocations struct {
-	Name any
+	Name  any
 	Order any
 }
 
 type IndexingConfiguration_ThingIndexingConfiguration_Filter struct {
 	// <p>Provides connectivity filter selections for the fleet indexing configuration.</p>
-	Connectivity any
-	GeoLocations any
+	Connectivity     any
+	GeoLocations     any
 	NamedShadowNames any
 }
 
 type IndexingConfiguration_ThingIndexingConfiguration struct {
-	CustomFields any
+	CustomFields               any
 	DeviceDefenderIndexingMode any
 	// <p>Provides additional selections for named shadows and geolocation data. </p> <p>To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be ON and specify your shadow names in <code>namedShadowNames</code> filter.</p> <p>To add geolocation data to your fleet indexing configuration: </p> <ul> <li> <p>If you store geolocation data in a class/unnamed shadow, set <code>thingIndexingMode</code> to be <code>REGISTRY_AND_SHADOW</code> and specify your geolocation data in <code>geoLocations</code> filter. </p> </li> <li> <p>If you store geolocation data in a named shadow, set <code>namedShadowIndexingMode</code> to be <code>ON</code>, add the shadow name in <code>namedShadowNames</code> filter, and specify your geolocation data in <code>geoLocations</code> filter. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html">Managing fleet indexing</a>.</p> </li> </ul>
-	Filter any
-	ManagedFields any
-	NamedShadowIndexingMode any
+	Filter                        any
+	ManagedFields                 any
+	NamedShadowIndexingMode       any
 	ThingConnectivityIndexingMode any
-	ThingIndexingMode any
+	ThingIndexingMode             any
 }
 
 type IndexingConfigurationConfig struct {
@@ -53,6 +53,5 @@ type IndexingConfigurationAttrs struct {
 
 var IndexingConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_iot_indexing_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

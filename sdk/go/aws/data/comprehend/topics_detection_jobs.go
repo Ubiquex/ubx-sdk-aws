@@ -4,69 +4,69 @@ package comprehend
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TopicsDetectionJobs_Filter struct {
-	JobName any
-	JobStatus any
-	SubmitTimeAfter any
+	JobName          any
+	JobStatus        any
+	SubmitTimeAfter  any
 	SubmitTimeBefore any
 }
 
 type TopicsDetectionJobs_TopicsDetectionJobPropertiesList_InputDataConfig_DocumentReaderConfig struct {
 	DocumentReadAction any
-	DocumentReadMode any
-	FeatureTypes any
+	DocumentReadMode   any
+	FeatureTypes       any
 }
 
 type TopicsDetectionJobs_TopicsDetectionJobPropertiesList_InputDataConfig struct {
 	DocumentReaderConfig any
-	InputFormat any
-	S3Uri any
+	InputFormat          any
+	S3Uri                any
 }
 
 type TopicsDetectionJobs_TopicsDetectionJobPropertiesList_OutputDataConfig struct {
 	KmsKeyId any
-	S3Uri any
+	S3Uri    any
 }
 
 type TopicsDetectionJobs_TopicsDetectionJobPropertiesList_VpcConfig struct {
 	SecurityGroupIds any
-	Subnets any
+	Subnets          any
 }
 
 type TopicsDetectionJobs_TopicsDetectionJobPropertiesList struct {
 	DataAccessRoleArn any
-	EndTime any
-	InputDataConfig any
-	JobArn any
-	JobId any
-	JobName any
-	JobStatus any
-	Message any
-	NumberOfTopics any
-	OutputDataConfig any
-	SubmitTime any
-	VolumeKmsKeyId any
-	VpcConfig any
+	EndTime           any
+	InputDataConfig   any
+	JobArn            any
+	JobId             any
+	JobName           any
+	JobStatus         any
+	Message           any
+	NumberOfTopics    any
+	OutputDataConfig  any
+	SubmitTime        any
+	VolumeKmsKeyId    any
+	VpcConfig         any
 }
 
 var TopicsDetectionJobs_FilterFields = ubx.FieldMap{
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"JobStatus": ubx.FieldSpec{WireName: "job_status"},
-		"SubmitTimeAfter": ubx.FieldSpec{WireName: "submit_time_after"},
-		"SubmitTimeBefore": ubx.FieldSpec{WireName: "submit_time_before"},
-	}
+	"JobName":          ubx.FieldSpec{WireName: "job_name"},
+	"JobStatus":        ubx.FieldSpec{WireName: "job_status"},
+	"SubmitTimeAfter":  ubx.FieldSpec{WireName: "submit_time_after"},
+	"SubmitTimeBefore": ubx.FieldSpec{WireName: "submit_time_before"},
+}
 
 type TopicsDetectionJobsConfig struct {
 	// <p>Provides information for filtering topic detection jobs. For more information, see .</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type TopicsDetectionJobsAttrs struct {
 	// <p>Provides information for filtering topic detection jobs. For more information, see .</p>
-	Filter any
-	MaxResults any
-	NextToken any
+	Filter                           any
+	MaxResults                       any
+	NextToken                        any
 	TopicsDetectionJobPropertiesList any
 }
 
@@ -75,10 +75,10 @@ var TopicsDetectionJobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: TopicsDetectionJobs_FilterFields,
+			Kind:     "object",
+			Fields:   TopicsDetectionJobs_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

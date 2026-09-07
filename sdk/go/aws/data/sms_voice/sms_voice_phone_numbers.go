@@ -4,52 +4,52 @@ package sms_voice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SmsVoicePhoneNumbers_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type SmsVoicePhoneNumbers_PhoneNumbers struct {
-	CreatedTimestamp any
-	DeletionProtectionEnabled any
+	CreatedTimestamp            any
+	DeletionProtectionEnabled   any
 	InternationalSendingEnabled any
-	IsoCountryCode any
-	MessageType any
-	MonthlyLeasingPrice any
-	NumberCapabilities any
-	NumberType any
-	OptOutListName any
-	PhoneNumber any
-	PhoneNumberArn any
-	PhoneNumberId any
-	PoolId any
-	RegistrationId any
-	SelfManagedOptOutsEnabled any
-	Status any
-	TwoWayChannelArn any
-	TwoWayChannelRole any
-	TwoWayEnabled any
+	IsoCountryCode              any
+	MessageType                 any
+	MonthlyLeasingPrice         any
+	NumberCapabilities          any
+	NumberType                  any
+	OptOutListName              any
+	PhoneNumber                 any
+	PhoneNumberArn              any
+	PhoneNumberId               any
+	PoolId                      any
+	RegistrationId              any
+	SelfManagedOptOutsEnabled   any
+	Status                      any
+	TwoWayChannelArn            any
+	TwoWayChannelRole           any
+	TwoWayEnabled               any
 }
 
 var SmsVoicePhoneNumbers_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type SmsVoicePhoneNumbersConfig struct {
-	Filters any
-	MaxResults any
-	NextToken any
-	Owner any
+	Filters        any
+	MaxResults     any
+	NextToken      any
+	Owner          any
 	PhoneNumberIds any
 }
 
 type SmsVoicePhoneNumbersAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
-	Owner any
+	Filters        any
+	MaxResults     any
+	NextToken      any
+	Owner          any
 	PhoneNumberIds any
-	PhoneNumbers any
+	PhoneNumbers   any
 }
 
 var SmsVoicePhoneNumbers = ubx.DataSourceBinding{
@@ -57,12 +57,12 @@ var SmsVoicePhoneNumbers = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SmsVoicePhoneNumbers_FiltersFields,
+			Kind:     "list",
+			Fields:   SmsVoicePhoneNumbers_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Owner": ubx.FieldSpec{WireName: "owner"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"Owner":          ubx.FieldSpec{WireName: "owner"},
 		"PhoneNumberIds": ubx.FieldSpec{WireName: "phone_number_ids"},
 	},
 }

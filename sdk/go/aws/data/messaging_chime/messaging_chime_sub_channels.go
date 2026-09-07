@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MessagingChimeSubChannels_SubChannels struct {
 	MembershipCount any
-	SubChannelId any
+	SubChannelId    any
 }
 
 type MessagingChimeSubChannelsConfig struct {
-	ChannelArn any
+	ChannelArn  any
 	ChimeBearer any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type MessagingChimeSubChannelsAttrs struct {
-	ChannelArn any
+	ChannelArn  any
 	ChimeBearer any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	SubChannels any
 }
 
 var MessagingChimeSubChannels = ubx.DataSourceBinding{
 	WireType: "aws_messaging_chime_sub_channels",
 	Fields: ubx.FieldMap{
-		"ChannelArn": ubx.FieldSpec{WireName: "channel_arn"},
+		"ChannelArn":  ubx.FieldSpec{WireName: "channel_arn"},
 		"ChimeBearer": ubx.FieldSpec{WireName: "chime_bearer"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

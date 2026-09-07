@@ -8,11 +8,10 @@ type TraceSegmentDestinationConfig struct {
 
 type TraceSegmentDestinationAttrs struct {
 	Destination any
-	Status any
+	Status      any
 }
 
 var TraceSegmentDestination = ubx.DataSourceBinding{
 	WireType: "aws_xray_trace_segment_destination",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

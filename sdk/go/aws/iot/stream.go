@@ -20,29 +20,29 @@ type Stream_Files struct {
 }
 
 type Stream_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Stream_Files_S3LocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Bucket":  ubx.FieldSpec{WireName: "bucket"},
+	"Key":     ubx.FieldSpec{WireName: "key"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Stream_FilesFields = ubx.FieldMap{
-		"FileId": ubx.FieldSpec{WireName: "file_id"},
-		"S3Location": ubx.FieldSpec{
-			WireName: "s3_location",
-			Kind: "object",
-			Fields: Stream_Files_S3LocationFields,
-		},
-	}
+	"FileId": ubx.FieldSpec{WireName: "file_id"},
+	"S3Location": ubx.FieldSpec{
+		WireName: "s3_location",
+		Kind:     "object",
+		Fields:   Stream_Files_S3LocationFields,
+	},
+}
 
 var Stream_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StreamConfig struct {
 	// The description of the stream.
@@ -84,15 +84,15 @@ var Stream = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Files": ubx.FieldSpec{
 			WireName: "files",
-			Kind: "list",
-			Fields: Stream_FilesFields,
+			Kind:     "list",
+			Fields:   Stream_FilesFields,
 		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":  ubx.FieldSpec{WireName: "role_arn"},
 		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Stream_TagsFields,
+			Kind:     "list",
+			Fields:   Stream_TagsFields,
 		},
 	},
 }

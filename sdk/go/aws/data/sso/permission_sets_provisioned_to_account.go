@@ -4,29 +4,29 @@ package sso
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PermissionSetsProvisionedToAccountConfig struct {
-	AccountId any
-	InstanceArn any
-	MaxResults any
-	NextToken any
+	AccountId          any
+	InstanceArn        any
+	MaxResults         any
+	NextToken          any
 	ProvisioningStatus any
 }
 
 type PermissionSetsProvisionedToAccountAttrs struct {
-	AccountId any
-	InstanceArn any
-	MaxResults any
-	NextToken any
-	PermissionSets any
+	AccountId          any
+	InstanceArn        any
+	MaxResults         any
+	NextToken          any
+	PermissionSets     any
 	ProvisioningStatus any
 }
 
 var PermissionSetsProvisionedToAccount = ubx.DataSourceBinding{
 	WireType: "aws_sso_permission_sets_provisioned_to_account",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"AccountId":          ubx.FieldSpec{WireName: "account_id"},
+		"InstanceArn":        ubx.FieldSpec{WireName: "instance_arn"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 		"ProvisioningStatus": ubx.FieldSpec{WireName: "provisioning_status"},
 	},
 }

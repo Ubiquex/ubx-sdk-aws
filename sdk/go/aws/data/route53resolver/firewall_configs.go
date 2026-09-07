@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallConfigs_FirewallConfigs struct {
 	FirewallFailOpen any
-	Id any
-	OwnerId any
-	ResourceId any
+	Id               any
+	OwnerId          any
+	ResourceId       any
 }
 
 type FirewallConfigsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FirewallConfigsAttrs struct {
 	FirewallConfigs any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 var FirewallConfigs = ubx.DataSourceBinding{
 	WireType: "aws_route53resolver_firewall_configs",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

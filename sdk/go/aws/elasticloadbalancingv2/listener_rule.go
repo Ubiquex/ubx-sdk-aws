@@ -208,222 +208,222 @@ type ListenerRule_Transforms_HostHeaderRewriteConfig struct {
 type ListenerRule_Transforms struct {
 	// This object specifies the configuration for rewriting the Host header of requests that match the listener rule, used within the rule's transforms block. (AI-inferred)
 	HostHeaderRewriteConfig any
-	Type any
+	Type                    any
 	// Specifies the URL rewrite configuration that transforms the request path (and optionally query string) for requests matching the listener rule, allowing the ALB to modify the incoming URI before routing to the target group. (AI-inferred)
 	UrlRewriteConfig any
 }
 
 var ListenerRule_Actions_AuthenticateCognitoConfigFields = ubx.FieldMap{
-		"AuthenticationRequestExtraParams": ubx.FieldSpec{WireName: "authentication_request_extra_params"},
-		"OnUnauthenticatedRequest": ubx.FieldSpec{WireName: "on_unauthenticated_request"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"SessionCookieName": ubx.FieldSpec{WireName: "session_cookie_name"},
-		"SessionTimeout": ubx.FieldSpec{WireName: "session_timeout"},
-		"UserPoolArn": ubx.FieldSpec{WireName: "user_pool_arn"},
-		"UserPoolClientId": ubx.FieldSpec{WireName: "user_pool_client_id"},
-		"UserPoolDomain": ubx.FieldSpec{WireName: "user_pool_domain"},
-	}
+	"AuthenticationRequestExtraParams": ubx.FieldSpec{WireName: "authentication_request_extra_params"},
+	"OnUnauthenticatedRequest":         ubx.FieldSpec{WireName: "on_unauthenticated_request"},
+	"Scope":                            ubx.FieldSpec{WireName: "scope"},
+	"SessionCookieName":                ubx.FieldSpec{WireName: "session_cookie_name"},
+	"SessionTimeout":                   ubx.FieldSpec{WireName: "session_timeout"},
+	"UserPoolArn":                      ubx.FieldSpec{WireName: "user_pool_arn"},
+	"UserPoolClientId":                 ubx.FieldSpec{WireName: "user_pool_client_id"},
+	"UserPoolDomain":                   ubx.FieldSpec{WireName: "user_pool_domain"},
+}
 
 var ListenerRule_Actions_AuthenticateOidcConfigFields = ubx.FieldMap{
-		"AuthenticationRequestExtraParams": ubx.FieldSpec{WireName: "authentication_request_extra_params"},
-		"AuthorizationEndpoint": ubx.FieldSpec{WireName: "authorization_endpoint"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"OnUnauthenticatedRequest": ubx.FieldSpec{WireName: "on_unauthenticated_request"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"SessionCookieName": ubx.FieldSpec{WireName: "session_cookie_name"},
-		"SessionTimeout": ubx.FieldSpec{WireName: "session_timeout"},
-		"TokenEndpoint": ubx.FieldSpec{WireName: "token_endpoint"},
-		"UseExistingClientSecret": ubx.FieldSpec{WireName: "use_existing_client_secret"},
-		"UserInfoEndpoint": ubx.FieldSpec{WireName: "user_info_endpoint"},
-	}
+	"AuthenticationRequestExtraParams": ubx.FieldSpec{WireName: "authentication_request_extra_params"},
+	"AuthorizationEndpoint":            ubx.FieldSpec{WireName: "authorization_endpoint"},
+	"ClientId":                         ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":                     ubx.FieldSpec{WireName: "client_secret"},
+	"Issuer":                           ubx.FieldSpec{WireName: "issuer"},
+	"OnUnauthenticatedRequest":         ubx.FieldSpec{WireName: "on_unauthenticated_request"},
+	"Scope":                            ubx.FieldSpec{WireName: "scope"},
+	"SessionCookieName":                ubx.FieldSpec{WireName: "session_cookie_name"},
+	"SessionTimeout":                   ubx.FieldSpec{WireName: "session_timeout"},
+	"TokenEndpoint":                    ubx.FieldSpec{WireName: "token_endpoint"},
+	"UseExistingClientSecret":          ubx.FieldSpec{WireName: "use_existing_client_secret"},
+	"UserInfoEndpoint":                 ubx.FieldSpec{WireName: "user_info_endpoint"},
+}
 
 var ListenerRule_Actions_FixedResponseConfigFields = ubx.FieldMap{
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"MessageBody": ubx.FieldSpec{WireName: "message_body"},
-		"StatusCode": ubx.FieldSpec{WireName: "status_code"},
-	}
+	"ContentType": ubx.FieldSpec{WireName: "content_type"},
+	"MessageBody": ubx.FieldSpec{WireName: "message_body"},
+	"StatusCode":  ubx.FieldSpec{WireName: "status_code"},
+}
 
 var ListenerRule_Actions_ForwardConfig_TargetGroupStickinessConfigFields = ubx.FieldMap{
-		"DurationSeconds": ubx.FieldSpec{WireName: "duration_seconds"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"DurationSeconds": ubx.FieldSpec{WireName: "duration_seconds"},
+	"Enabled":         ubx.FieldSpec{WireName: "enabled"},
+}
 
 var ListenerRule_Actions_ForwardConfig_TargetGroupsFields = ubx.FieldMap{
-		"TargetGroupArn": ubx.FieldSpec{WireName: "target_group_arn"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"TargetGroupArn": ubx.FieldSpec{WireName: "target_group_arn"},
+	"Weight":         ubx.FieldSpec{WireName: "weight"},
+}
 
 var ListenerRule_Actions_ForwardConfigFields = ubx.FieldMap{
-		"TargetGroupStickinessConfig": ubx.FieldSpec{
-			WireName: "target_group_stickiness_config",
-			Kind: "object",
-			Fields: ListenerRule_Actions_ForwardConfig_TargetGroupStickinessConfigFields,
-		},
-		"TargetGroups": ubx.FieldSpec{
-			WireName: "target_groups",
-			Kind: "list",
-			Fields: ListenerRule_Actions_ForwardConfig_TargetGroupsFields,
-		},
-	}
+	"TargetGroupStickinessConfig": ubx.FieldSpec{
+		WireName: "target_group_stickiness_config",
+		Kind:     "object",
+		Fields:   ListenerRule_Actions_ForwardConfig_TargetGroupStickinessConfigFields,
+	},
+	"TargetGroups": ubx.FieldSpec{
+		WireName: "target_groups",
+		Kind:     "list",
+		Fields:   ListenerRule_Actions_ForwardConfig_TargetGroupsFields,
+	},
+}
 
 var ListenerRule_Actions_JwtValidationConfig_AdditionalClaimsFields = ubx.FieldMap{
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Format": ubx.FieldSpec{WireName: "format"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var ListenerRule_Actions_JwtValidationConfigFields = ubx.FieldMap{
-		"AdditionalClaims": ubx.FieldSpec{
-			WireName: "additional_claims",
-			Kind: "list",
-			Fields: ListenerRule_Actions_JwtValidationConfig_AdditionalClaimsFields,
-		},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"JwksEndpoint": ubx.FieldSpec{WireName: "jwks_endpoint"},
-	}
+	"AdditionalClaims": ubx.FieldSpec{
+		WireName: "additional_claims",
+		Kind:     "list",
+		Fields:   ListenerRule_Actions_JwtValidationConfig_AdditionalClaimsFields,
+	},
+	"Issuer":       ubx.FieldSpec{WireName: "issuer"},
+	"JwksEndpoint": ubx.FieldSpec{WireName: "jwks_endpoint"},
+}
 
 var ListenerRule_Actions_RedirectConfigFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"StatusCode": ubx.FieldSpec{WireName: "status_code"},
-	}
+	"Host":       ubx.FieldSpec{WireName: "host"},
+	"Path":       ubx.FieldSpec{WireName: "path"},
+	"Port":       ubx.FieldSpec{WireName: "port"},
+	"Protocol":   ubx.FieldSpec{WireName: "protocol"},
+	"Query":      ubx.FieldSpec{WireName: "query"},
+	"StatusCode": ubx.FieldSpec{WireName: "status_code"},
+}
 
 var ListenerRule_ActionsFields = ubx.FieldMap{
-		"AuthenticateCognitoConfig": ubx.FieldSpec{
-			WireName: "authenticate_cognito_config",
-			Kind: "object",
-			Fields: ListenerRule_Actions_AuthenticateCognitoConfigFields,
-		},
-		"AuthenticateOidcConfig": ubx.FieldSpec{
-			WireName: "authenticate_oidc_config",
-			Kind: "object",
-			Fields: ListenerRule_Actions_AuthenticateOidcConfigFields,
-		},
-		"FixedResponseConfig": ubx.FieldSpec{
-			WireName: "fixed_response_config",
-			Kind: "object",
-			Fields: ListenerRule_Actions_FixedResponseConfigFields,
-		},
-		"ForwardConfig": ubx.FieldSpec{
-			WireName: "forward_config",
-			Kind: "object",
-			Fields: ListenerRule_Actions_ForwardConfigFields,
-		},
-		"JwtValidationConfig": ubx.FieldSpec{
-			WireName: "jwt_validation_config",
-			Kind: "object",
-			Fields: ListenerRule_Actions_JwtValidationConfigFields,
-		},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"RedirectConfig": ubx.FieldSpec{
-			WireName: "redirect_config",
-			Kind: "object",
-			Fields: ListenerRule_Actions_RedirectConfigFields,
-		},
-		"TargetGroupArn": ubx.FieldSpec{WireName: "target_group_arn"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AuthenticateCognitoConfig": ubx.FieldSpec{
+		WireName: "authenticate_cognito_config",
+		Kind:     "object",
+		Fields:   ListenerRule_Actions_AuthenticateCognitoConfigFields,
+	},
+	"AuthenticateOidcConfig": ubx.FieldSpec{
+		WireName: "authenticate_oidc_config",
+		Kind:     "object",
+		Fields:   ListenerRule_Actions_AuthenticateOidcConfigFields,
+	},
+	"FixedResponseConfig": ubx.FieldSpec{
+		WireName: "fixed_response_config",
+		Kind:     "object",
+		Fields:   ListenerRule_Actions_FixedResponseConfigFields,
+	},
+	"ForwardConfig": ubx.FieldSpec{
+		WireName: "forward_config",
+		Kind:     "object",
+		Fields:   ListenerRule_Actions_ForwardConfigFields,
+	},
+	"JwtValidationConfig": ubx.FieldSpec{
+		WireName: "jwt_validation_config",
+		Kind:     "object",
+		Fields:   ListenerRule_Actions_JwtValidationConfigFields,
+	},
+	"Order": ubx.FieldSpec{WireName: "order"},
+	"RedirectConfig": ubx.FieldSpec{
+		WireName: "redirect_config",
+		Kind:     "object",
+		Fields:   ListenerRule_Actions_RedirectConfigFields,
+	},
+	"TargetGroupArn": ubx.FieldSpec{WireName: "target_group_arn"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+}
 
 var ListenerRule_Conditions_HostHeaderConfigFields = ubx.FieldMap{
-		"RegexValues": ubx.FieldSpec{WireName: "regex_values"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"RegexValues": ubx.FieldSpec{WireName: "regex_values"},
+	"Values":      ubx.FieldSpec{WireName: "values"},
+}
 
 var ListenerRule_Conditions_HttpHeaderConfigFields = ubx.FieldMap{
-		"HttpHeaderName": ubx.FieldSpec{WireName: "http_header_name"},
-		"RegexValues": ubx.FieldSpec{WireName: "regex_values"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"HttpHeaderName": ubx.FieldSpec{WireName: "http_header_name"},
+	"RegexValues":    ubx.FieldSpec{WireName: "regex_values"},
+	"Values":         ubx.FieldSpec{WireName: "values"},
+}
 
 var ListenerRule_Conditions_HttpRequestMethodConfigFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var ListenerRule_Conditions_QueryStringConfig_ValuesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ListenerRule_Conditions_QueryStringConfigFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: ListenerRule_Conditions_QueryStringConfig_ValuesFields,
-		},
-	}
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   ListenerRule_Conditions_QueryStringConfig_ValuesFields,
+	},
+}
 
 var ListenerRule_Conditions_SourceIpConfigFields = ubx.FieldMap{
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
+	"Values":        ubx.FieldSpec{WireName: "values"},
+}
 
 var ListenerRule_ConditionsFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"HostHeaderConfig": ubx.FieldSpec{
-			WireName: "host_header_config",
-			Kind: "object",
-			Fields: ListenerRule_Conditions_HostHeaderConfigFields,
-		},
-		"HttpHeaderConfig": ubx.FieldSpec{
-			WireName: "http_header_config",
-			Kind: "object",
-			Fields: ListenerRule_Conditions_HttpHeaderConfigFields,
-		},
-		"HttpRequestMethodConfig": ubx.FieldSpec{
-			WireName: "http_request_method_config",
-			Kind: "object",
-			Fields: ListenerRule_Conditions_HttpRequestMethodConfigFields,
-		},
-		"PathPatternConfig": ubx.FieldSpec{
-			WireName: "path_pattern_config",
-			Kind: "object",
-			Fields: ListenerRule_Conditions_HostHeaderConfigFields,
-		},
-		"QueryStringConfig": ubx.FieldSpec{
-			WireName: "query_string_config",
-			Kind: "object",
-			Fields: ListenerRule_Conditions_QueryStringConfigFields,
-		},
-		"RegexValues": ubx.FieldSpec{WireName: "regex_values"},
-		"SourceIpConfig": ubx.FieldSpec{
-			WireName: "source_ip_config",
-			Kind: "object",
-			Fields: ListenerRule_Conditions_SourceIpConfigFields,
-		},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Field": ubx.FieldSpec{WireName: "field"},
+	"HostHeaderConfig": ubx.FieldSpec{
+		WireName: "host_header_config",
+		Kind:     "object",
+		Fields:   ListenerRule_Conditions_HostHeaderConfigFields,
+	},
+	"HttpHeaderConfig": ubx.FieldSpec{
+		WireName: "http_header_config",
+		Kind:     "object",
+		Fields:   ListenerRule_Conditions_HttpHeaderConfigFields,
+	},
+	"HttpRequestMethodConfig": ubx.FieldSpec{
+		WireName: "http_request_method_config",
+		Kind:     "object",
+		Fields:   ListenerRule_Conditions_HttpRequestMethodConfigFields,
+	},
+	"PathPatternConfig": ubx.FieldSpec{
+		WireName: "path_pattern_config",
+		Kind:     "object",
+		Fields:   ListenerRule_Conditions_HostHeaderConfigFields,
+	},
+	"QueryStringConfig": ubx.FieldSpec{
+		WireName: "query_string_config",
+		Kind:     "object",
+		Fields:   ListenerRule_Conditions_QueryStringConfigFields,
+	},
+	"RegexValues": ubx.FieldSpec{WireName: "regex_values"},
+	"SourceIpConfig": ubx.FieldSpec{
+		WireName: "source_ip_config",
+		Kind:     "object",
+		Fields:   ListenerRule_Conditions_SourceIpConfigFields,
+	},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var ListenerRule_Transforms_HostHeaderRewriteConfig_RewritesFields = ubx.FieldMap{
-		"Regex": ubx.FieldSpec{WireName: "regex"},
-		"Replace": ubx.FieldSpec{WireName: "replace"},
-	}
+	"Regex":   ubx.FieldSpec{WireName: "regex"},
+	"Replace": ubx.FieldSpec{WireName: "replace"},
+}
 
 var ListenerRule_Transforms_HostHeaderRewriteConfigFields = ubx.FieldMap{
-		"Rewrites": ubx.FieldSpec{
-			WireName: "rewrites",
-			Kind: "list",
-			Fields: ListenerRule_Transforms_HostHeaderRewriteConfig_RewritesFields,
-		},
-	}
+	"Rewrites": ubx.FieldSpec{
+		WireName: "rewrites",
+		Kind:     "list",
+		Fields:   ListenerRule_Transforms_HostHeaderRewriteConfig_RewritesFields,
+	},
+}
 
 var ListenerRule_TransformsFields = ubx.FieldMap{
-		"HostHeaderRewriteConfig": ubx.FieldSpec{
-			WireName: "host_header_rewrite_config",
-			Kind: "object",
-			Fields: ListenerRule_Transforms_HostHeaderRewriteConfigFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UrlRewriteConfig": ubx.FieldSpec{
-			WireName: "url_rewrite_config",
-			Kind: "object",
-			Fields: ListenerRule_Transforms_HostHeaderRewriteConfigFields,
-		},
-	}
+	"HostHeaderRewriteConfig": ubx.FieldSpec{
+		WireName: "host_header_rewrite_config",
+		Kind:     "object",
+		Fields:   ListenerRule_Transforms_HostHeaderRewriteConfigFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+	"UrlRewriteConfig": ubx.FieldSpec{
+		WireName: "url_rewrite_config",
+		Kind:     "object",
+		Fields:   ListenerRule_Transforms_HostHeaderRewriteConfigFields,
+	},
+}
 
 type ListenerRuleConfig struct {
 	// The actions. The rule must include exactly one of the following types of actions: ``forward``, ``fixed-response``, or ``redirect``, and it must be the last action to be performed. If the rule is for an HTTPS listener, it can also optionally include an authentication action.
@@ -464,25 +464,25 @@ var ListenerRule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Actions": ubx.FieldSpec{
 			WireName: "actions",
-			Kind: "list",
-			Fields: ListenerRule_ActionsFields,
+			Kind:     "list",
+			Fields:   ListenerRule_ActionsFields,
 		},
 		"Conditions": ubx.FieldSpec{
 			WireName: "conditions",
-			Kind: "list",
-			Fields: ListenerRule_ConditionsFields,
+			Kind:     "list",
+			Fields:   ListenerRule_ConditionsFields,
 		},
 		"ListenerArn": ubx.FieldSpec{WireName: "listener_arn"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"Priority":    ubx.FieldSpec{WireName: "priority"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ListenerRule_Conditions_QueryStringConfig_ValuesFields,
+			Kind:     "list",
+			Fields:   ListenerRule_Conditions_QueryStringConfig_ValuesFields,
 		},
 		"Transforms": ubx.FieldSpec{
 			WireName: "transforms",
-			Kind: "list",
-			Fields: ListenerRule_TransformsFields,
+			Kind:     "list",
+			Fields:   ListenerRule_TransformsFields,
 		},
 	},
 }

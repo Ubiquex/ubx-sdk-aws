@@ -9,7 +9,7 @@ type ApiDetectiveOrganizationConfigurationConfig struct {
 
 type ApiDetectiveOrganizationConfigurationAttrs struct {
 	AutoEnable any
-	GraphArn any
+	GraphArn   any
 }
 
 var ApiDetectiveOrganizationConfiguration = ubx.DataSourceBinding{

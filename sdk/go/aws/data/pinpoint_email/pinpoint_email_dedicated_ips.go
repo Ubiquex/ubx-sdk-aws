@@ -4,15 +4,15 @@ package pinpoint_email
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PinpointEmailDedicatedIps_DedicatedIps struct {
-	Ip any
-	PoolName any
+	Ip               any
+	PoolName         any
 	WarmupPercentage any
-	WarmupStatus any
+	WarmupStatus     any
 }
 
 type PinpointEmailDedicatedIpsConfig struct {
 	NextToken any
-	PageSize any
+	PageSize  any
 	// <p>The name of a dedicated IP pool.</p>
 	PoolName any
 }
@@ -20,8 +20,8 @@ type PinpointEmailDedicatedIpsConfig struct {
 type PinpointEmailDedicatedIpsAttrs struct {
 	// <p>A list of dedicated IP addresses that are associated with your Amazon Pinpoint account.</p>
 	DedicatedIps any
-	NextToken any
-	PageSize any
+	NextToken    any
+	PageSize     any
 	// <p>The name of a dedicated IP pool.</p>
 	PoolName any
 }
@@ -30,7 +30,7 @@ var PinpointEmailDedicatedIps = ubx.DataSourceBinding{
 	WireType: "aws_pinpoint_email_dedicated_ips",
 	Fields: ubx.FieldMap{
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"PoolName": ubx.FieldSpec{WireName: "pool_name"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
+		"PoolName":  ubx.FieldSpec{WireName: "pool_name"},
 	},
 }

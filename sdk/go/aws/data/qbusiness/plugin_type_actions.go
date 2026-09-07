@@ -4,22 +4,22 @@ package qbusiness
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PluginTypeActions_Items struct {
-	ActionIdentifier any
-	Description any
-	DisplayName any
+	ActionIdentifier   any
+	Description        any
+	DisplayName        any
 	InstructionExample any
 }
 
 type PluginTypeActionsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	PluginType any
 }
 
 type PluginTypeActionsAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	PluginType any
 }
 
@@ -27,7 +27,7 @@ var PluginTypeActions = ubx.DataSourceBinding{
 	WireType: "aws_qbusiness_plugin_type_actions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"PluginType": ubx.FieldSpec{WireName: "plugin_type"},
 	},
 }

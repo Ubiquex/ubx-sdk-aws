@@ -8,40 +8,40 @@ type EmrContainersManagedEndpointSessionCredentials_Credentials struct {
 }
 
 type EmrContainersManagedEndpointSessionCredentialsConfig struct {
-	ClientToken any
-	CredentialType any
-	DurationInSeconds any
-	EndpointIdentifier any
-	ExecutionRoleArn any
-	LogContext any
+	ClientToken              any
+	CredentialType           any
+	DurationInSeconds        any
+	EndpointIdentifier       any
+	ExecutionRoleArn         any
+	LogContext               any
 	VirtualClusterIdentifier any
 }
 
 type EmrContainersManagedEndpointSessionCredentialsAttrs struct {
-	ClientToken any
+	ClientToken    any
 	CredentialType any
 	// <p>The structure containing the session token being returned.</p>
-	Credentials any
+	Credentials       any
 	DurationInSeconds any
 	// <p>The structure containing the session token being returned.</p>
-	EndpointCredentials any
-	EndpointIdentifier any
-	ExecutionRoleArn any
-	ExpiresAt any
-	Id any
-	LogContext any
+	EndpointCredentials      any
+	EndpointIdentifier       any
+	ExecutionRoleArn         any
+	ExpiresAt                any
+	Id                       any
+	LogContext               any
 	VirtualClusterIdentifier any
 }
 
 var EmrContainersManagedEndpointSessionCredentials = ubx.DataSourceBinding{
 	WireType: "aws_emr_containers_managed_endpoint_session_credentials",
 	Fields: ubx.FieldMap{
-		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
-		"CredentialType": ubx.FieldSpec{WireName: "credential_type"},
-		"DurationInSeconds": ubx.FieldSpec{WireName: "duration_in_seconds"},
-		"EndpointIdentifier": ubx.FieldSpec{WireName: "endpoint_identifier"},
-		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"LogContext": ubx.FieldSpec{WireName: "log_context"},
+		"ClientToken":              ubx.FieldSpec{WireName: "client_token"},
+		"CredentialType":           ubx.FieldSpec{WireName: "credential_type"},
+		"DurationInSeconds":        ubx.FieldSpec{WireName: "duration_in_seconds"},
+		"EndpointIdentifier":       ubx.FieldSpec{WireName: "endpoint_identifier"},
+		"ExecutionRoleArn":         ubx.FieldSpec{WireName: "execution_role_arn"},
+		"LogContext":               ubx.FieldSpec{WireName: "log_context"},
 		"VirtualClusterIdentifier": ubx.FieldSpec{WireName: "virtual_cluster_identifier"},
 	},
 }

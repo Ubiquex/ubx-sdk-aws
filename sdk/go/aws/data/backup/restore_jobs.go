@@ -8,73 +8,73 @@ type RestoreJobs_RestoreJobs_CreatedBy struct {
 }
 
 type RestoreJobs_RestoreJobs struct {
-	AccountId any
-	BackupSizeInBytes any
-	BackupVaultArn any
-	CompletionDate any
-	CreatedBy any
-	CreatedResourceArn any
-	CreationDate any
-	DeletionStatus any
-	DeletionStatusMessage any
+	AccountId                     any
+	BackupSizeInBytes             any
+	BackupVaultArn                any
+	CompletionDate                any
+	CreatedBy                     any
+	CreatedResourceArn            any
+	CreationDate                  any
+	DeletionStatus                any
+	DeletionStatusMessage         any
 	ExpectedCompletionTimeMinutes any
-	IamRoleArn any
-	IsParent any
-	ParentJobId any
-	PercentDone any
-	RecoveryPointArn any
-	RecoveryPointCreationDate any
-	ResourceType any
-	RestoreJobId any
-	SourceResourceArn any
-	Status any
-	StatusMessage any
-	ValidationStatus any
-	ValidationStatusMessage any
+	IamRoleArn                    any
+	IsParent                      any
+	ParentJobId                   any
+	PercentDone                   any
+	RecoveryPointArn              any
+	RecoveryPointCreationDate     any
+	ResourceType                  any
+	RestoreJobId                  any
+	SourceResourceArn             any
+	Status                        any
+	StatusMessage                 any
+	ValidationStatus              any
+	ValidationStatusMessage       any
 }
 
 type RestoreJobsConfig struct {
-	ByAccountId any
-	ByCompleteAfter any
-	ByCompleteBefore any
-	ByCreatedAfter any
-	ByCreatedBefore any
-	ByParentJobId any
-	ByResourceType any
+	ByAccountId             any
+	ByCompleteAfter         any
+	ByCompleteBefore        any
+	ByCreatedAfter          any
+	ByCreatedBefore         any
+	ByParentJobId           any
+	ByResourceType          any
 	ByRestoreTestingPlanArn any
-	ByStatus any
-	MaxResults any
-	NextToken any
+	ByStatus                any
+	MaxResults              any
+	NextToken               any
 }
 
 type RestoreJobsAttrs struct {
-	ByAccountId any
-	ByCompleteAfter any
-	ByCompleteBefore any
-	ByCreatedAfter any
-	ByCreatedBefore any
-	ByParentJobId any
-	ByResourceType any
+	ByAccountId             any
+	ByCompleteAfter         any
+	ByCompleteBefore        any
+	ByCreatedAfter          any
+	ByCreatedBefore         any
+	ByParentJobId           any
+	ByResourceType          any
 	ByRestoreTestingPlanArn any
-	ByStatus any
-	MaxResults any
-	NextToken any
-	RestoreJobs any
+	ByStatus                any
+	MaxResults              any
+	NextToken               any
+	RestoreJobs             any
 }
 
 var RestoreJobs = ubx.DataSourceBinding{
 	WireType: "aws_backup_restore_jobs",
 	Fields: ubx.FieldMap{
-		"ByAccountId": ubx.FieldSpec{WireName: "by_account_id"},
-		"ByCompleteAfter": ubx.FieldSpec{WireName: "by_complete_after"},
-		"ByCompleteBefore": ubx.FieldSpec{WireName: "by_complete_before"},
-		"ByCreatedAfter": ubx.FieldSpec{WireName: "by_created_after"},
-		"ByCreatedBefore": ubx.FieldSpec{WireName: "by_created_before"},
-		"ByParentJobId": ubx.FieldSpec{WireName: "by_parent_job_id"},
-		"ByResourceType": ubx.FieldSpec{WireName: "by_resource_type"},
+		"ByAccountId":             ubx.FieldSpec{WireName: "by_account_id"},
+		"ByCompleteAfter":         ubx.FieldSpec{WireName: "by_complete_after"},
+		"ByCompleteBefore":        ubx.FieldSpec{WireName: "by_complete_before"},
+		"ByCreatedAfter":          ubx.FieldSpec{WireName: "by_created_after"},
+		"ByCreatedBefore":         ubx.FieldSpec{WireName: "by_created_before"},
+		"ByParentJobId":           ubx.FieldSpec{WireName: "by_parent_job_id"},
+		"ByResourceType":          ubx.FieldSpec{WireName: "by_resource_type"},
 		"ByRestoreTestingPlanArn": ubx.FieldSpec{WireName: "by_restore_testing_plan_arn"},
-		"ByStatus": ubx.FieldSpec{WireName: "by_status"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ByStatus":                ubx.FieldSpec{WireName: "by_status"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
 	},
 }

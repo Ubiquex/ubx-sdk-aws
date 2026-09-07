@@ -8,17 +8,17 @@ type SsmContactsEngagementConfig struct {
 }
 
 type SsmContactsEngagementAttrs struct {
-	ContactArn any
-	Content any
+	ContactArn    any
+	Content       any
 	EngagementArn any
-	EngagementId any
-	IncidentId any
+	EngagementId  any
+	IncidentId    any
 	PublicContent any
 	PublicSubject any
-	Sender any
-	StartTime any
-	StopTime any
-	Subject any
+	Sender        any
+	StartTime     any
+	StopTime      any
+	Subject       any
 }
 
 var SsmContactsEngagement = ubx.DataSourceBinding{

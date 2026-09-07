@@ -4,37 +4,37 @@ package dataexchange
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReceivedDataGrants_DataGrantSummaries struct {
-	AcceptanceState any
-	AcceptedAt any
-	Arn any
-	CreatedAt any
-	DataSetId any
-	EndsAt any
-	Id any
-	Name any
+	AcceptanceState   any
+	AcceptedAt        any
+	Arn               any
+	CreatedAt         any
+	DataSetId         any
+	EndsAt            any
+	Id                any
+	Name              any
 	ReceiverPrincipal any
-	SenderPrincipal any
-	UpdatedAt any
+	SenderPrincipal   any
+	UpdatedAt         any
 }
 
 type ReceivedDataGrantsConfig struct {
 	AcceptanceState any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 type ReceivedDataGrantsAttrs struct {
-	AcceptanceState any
+	AcceptanceState    any
 	DataGrantSummaries any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 var ReceivedDataGrants = ubx.DataSourceBinding{
 	WireType: "aws_dataexchange_received_data_grants",
 	Fields: ubx.FieldMap{
 		"AcceptanceState": ubx.FieldSpec{WireName: "acceptance_state"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dashboards_Dashboards struct {
 	DashboardArn any
-	Type any
+	Type         any
 }
 
 type DashboardsConfig struct {
 	MaxResults any
 	NamePrefix any
-	NextToken any
-	Type any
+	NextToken  any
+	Type       any
 }
 
 type DashboardsAttrs struct {
 	Dashboards any
 	MaxResults any
 	NamePrefix any
-	NextToken any
-	Type any
+	NextToken  any
+	Type       any
 }
 
 var Dashboards = ubx.DataSourceBinding{
@@ -28,7 +28,7 @@ var Dashboards = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
 		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Type":       ubx.FieldSpec{WireName: "type"},
 	},
 }

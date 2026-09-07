@@ -9,34 +9,34 @@ type DatasetDataSegmentRelationships_DataSegmentRelationshipSummaries_EndTimesta
 }
 
 type DatasetDataSegmentRelationships_DataSegmentRelationshipSummaries struct {
-	EndTimestamp any
+	EndTimestamp    any
 	SourceDatasetId any
-	StartTimestamp any
+	StartTimestamp  any
 	TargetDatasetId any
-	TimeSeriesId any
+	TimeSeriesId    any
 }
 
 type DatasetDataSegmentRelationshipsConfig struct {
-	DatasetId any
-	MaxResults any
-	NextToken any
+	DatasetId     any
+	MaxResults    any
+	NextToken     any
 	WorkspaceName any
 }
 
 type DatasetDataSegmentRelationshipsAttrs struct {
 	DataSegmentRelationshipSummaries any
-	DatasetId any
-	MaxResults any
-	NextToken any
-	WorkspaceName any
+	DatasetId                        any
+	MaxResults                       any
+	NextToken                        any
+	WorkspaceName                    any
 }
 
 var DatasetDataSegmentRelationships = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_dataset_data_segment_relationships",
 	Fields: ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"DatasetId":     ubx.FieldSpec{WireName: "dataset_id"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"WorkspaceName": ubx.FieldSpec{WireName: "workspace_name"},
 	},
 }

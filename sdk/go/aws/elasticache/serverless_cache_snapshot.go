@@ -14,14 +14,14 @@ type ServerlessCacheSnapshot_ServerlessCacheConfiguration struct {
 
 type ServerlessCacheSnapshot_Tags struct {
 	// A user-defined key for a tag attached to this ElastiCache serverless cache snapshot, used for organizing and identifying the resource (e.g., by environment or project). (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var ServerlessCacheSnapshot_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ServerlessCacheSnapshotConfig struct {
 	// The Amazon Resource Name (ARN) of the AWS KMS key used to encrypt the snapshot. Provide the key ARN: the resource returns the key ARN on read, so supplying a bare key ID or alias for this createOnly property may be reported as drift by CloudFormation.
@@ -60,13 +60,13 @@ type ServerlessCacheSnapshotAttrs struct {
 var ServerlessCacheSnapshot = ubx.ResourceBinding{
 	WireType: "aws_elasti_cache_serverless_cache_snapshot",
 	Fields: ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"ServerlessCacheName": ubx.FieldSpec{WireName: "serverless_cache_name"},
+		"KmsKeyId":                    ubx.FieldSpec{WireName: "kms_key_id"},
+		"ServerlessCacheName":         ubx.FieldSpec{WireName: "serverless_cache_name"},
 		"ServerlessCacheSnapshotName": ubx.FieldSpec{WireName: "serverless_cache_snapshot_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ServerlessCacheSnapshot_TagsFields,
+			Kind:     "list",
+			Fields:   ServerlessCacheSnapshot_TagsFields,
 		},
 	},
 }

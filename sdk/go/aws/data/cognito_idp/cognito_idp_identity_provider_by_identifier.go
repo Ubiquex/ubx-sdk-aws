@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdpIdentityProviderByIdentifier_IdentityProvider struct {
 	AttributeMapping any
-	CreationDate any
-	IdpIdentifiers any
+	CreationDate     any
+	IdpIdentifiers   any
 	LastModifiedDate any
-	ProviderDetails any
-	ProviderName any
-	ProviderType any
-	UserPoolId any
+	ProviderDetails  any
+	ProviderName     any
+	ProviderType     any
+	UserPoolId       any
 }
 
 type CognitoIdpIdentityProviderByIdentifierConfig struct {
 	IdpIdentifier any
-	UserPoolId any
+	UserPoolId    any
 }
 
 type CognitoIdpIdentityProviderByIdentifierAttrs struct {
 	// <p>A user pool identity provider (IdP). Contains information about a third-party IdP to a user pool, the attributes that it populates to user profiles, and the trust relationship between the IdP and your user pool.</p>
 	IdentityProvider any
-	IdpIdentifier any
-	UserPoolId any
+	IdpIdentifier    any
+	UserPoolId       any
 }
 
 var CognitoIdpIdentityProviderByIdentifier = ubx.DataSourceBinding{
 	WireType: "aws_cognito_idp_identity_provider_by_identifier",
 	Fields: ubx.FieldMap{
 		"IdpIdentifier": ubx.FieldSpec{WireName: "idp_identifier"},
-		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
+		"UserPoolId":    ubx.FieldSpec{WireName: "user_pool_id"},
 	},
 }

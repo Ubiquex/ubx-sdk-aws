@@ -11,9 +11,9 @@ type NetworkInsightsAccessScopeAnalysis_Tags struct {
 }
 
 var NetworkInsightsAccessScopeAnalysis_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type NetworkInsightsAccessScopeAnalysisConfig struct {
 	// The ID of the Network Access Scope that this analysis will use to identify and analyze network paths. (AI-inferred)
@@ -51,8 +51,8 @@ var NetworkInsightsAccessScopeAnalysis = ubx.ResourceBinding{
 		"NetworkInsightsAccessScopeId": ubx.FieldSpec{WireName: "network_insights_access_scope_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: NetworkInsightsAccessScopeAnalysis_TagsFields,
+			Kind:     "list",
+			Fields:   NetworkInsightsAccessScopeAnalysis_TagsFields,
 		},
 	},
 }

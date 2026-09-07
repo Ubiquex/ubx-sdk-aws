@@ -13,7 +13,7 @@ type RevealConfiguration_RetrievalConfiguration struct {
 	ExternalId any
 	// <p>The access method to use when retrieving occurrences of sensitive data reported by findings. Valid values are:</p>
 	RetrievalMode any
-	RoleName any
+	RoleName      any
 }
 
 type RevealConfigurationConfig struct {
@@ -28,6 +28,5 @@ type RevealConfigurationAttrs struct {
 
 var RevealConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_macie2_reveal_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

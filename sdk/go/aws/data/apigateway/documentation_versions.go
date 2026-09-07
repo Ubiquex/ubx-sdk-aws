@@ -6,27 +6,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type DocumentationVersions_Items struct {
 	CreatedDate any
 	Description any
-	Version any
+	Version     any
 }
 
 type DocumentationVersionsConfig struct {
-	Limit any
-	Position any
+	Limit     any
+	Position  any
 	RestApiId any
 }
 
 type DocumentationVersionsAttrs struct {
-	Items any
-	Limit any
-	Position any
+	Items     any
+	Limit     any
+	Position  any
 	RestApiId any
 }
 
 var DocumentationVersions = ubx.DataSourceBinding{
 	WireType: "aws_apigateway_documentation_versions",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Position": ubx.FieldSpec{WireName: "position"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Position":  ubx.FieldSpec{WireName: "position"},
 		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
 	},
 }

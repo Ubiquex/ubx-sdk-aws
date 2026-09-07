@@ -86,12 +86,12 @@ type Project_Environment struct {
 	// The ARN of an AWS Certificate Manager certificate that AWS CodeBuild associates with the project's build environment to support cryptographic operations such as signing build artifacts. (AI-inferred)
 	Certificate any
 	// Specifies the compute resources for the build environment (for example, BUILD_GENERAL1_SMALL or BUILD_GENERAL1_LARGE), determining the CPU and memory allocated to the build job. (AI-inferred)
-	ComputeType any
+	ComputeType  any
 	DockerServer any
 	// Defines custom environment variables passed to the build container, each specifying a name, value, and optional type such as PLAINTEXT, PARAMETER_STORE, or SECRETS_MANAGER. (AI-inferred)
 	EnvironmentVariables any
 	// Specifies the compute fleet (via its ARN) that provides the compute resources for this CodeBuild project environment. (AI-inferred)
-	Fleet any
+	Fleet      any
 	HostKernel any
 	// The Docker image identifier (such as aws/codebuild/standard:5.0) that specifies the build environment for the CodeBuild project. (AI-inferred)
 	Image any
@@ -222,7 +222,7 @@ type Project_Triggers struct {
 	FilterGroups any
 	// Determines which pull requests trigger a build for the CodeBuild project's webhook: ALL builds every pull request, BRANCH builds only those targeting branches that match the filter pattern, and NON_BRANCH builds only those targeting branches that do not match the pattern. (AI-inferred)
 	PullRequestBuildPolicy any
-	ScopeConfiguration any
+	ScopeConfiguration     any
 	// Determines whether the CodeBuild project's webhook is enabled, allowing builds to be automatically triggered by code changes pushed to the linked source repository (such as GitHub or Bitbucket). (AI-inferred)
 	Webhook any
 }
@@ -237,205 +237,205 @@ type Project_VpcConfig struct {
 }
 
 var Project_ArtifactsFields = ubx.FieldMap{
-		"ArtifactIdentifier": ubx.FieldSpec{WireName: "artifact_identifier"},
-		"EncryptionDisabled": ubx.FieldSpec{WireName: "encryption_disabled"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NamespaceType": ubx.FieldSpec{WireName: "namespace_type"},
-		"OverrideArtifactName": ubx.FieldSpec{WireName: "override_artifact_name"},
-		"Packaging": ubx.FieldSpec{WireName: "packaging"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ArtifactIdentifier":   ubx.FieldSpec{WireName: "artifact_identifier"},
+	"EncryptionDisabled":   ubx.FieldSpec{WireName: "encryption_disabled"},
+	"Location":             ubx.FieldSpec{WireName: "location"},
+	"Name":                 ubx.FieldSpec{WireName: "name"},
+	"NamespaceType":        ubx.FieldSpec{WireName: "namespace_type"},
+	"OverrideArtifactName": ubx.FieldSpec{WireName: "override_artifact_name"},
+	"Packaging":            ubx.FieldSpec{WireName: "packaging"},
+	"Path":                 ubx.FieldSpec{WireName: "path"},
+	"Type":                 ubx.FieldSpec{WireName: "type"},
+}
 
 var Project_BuildBatchConfig_RestrictionsFields = ubx.FieldMap{
-		"ComputeTypesAllowed": ubx.FieldSpec{WireName: "compute_types_allowed"},
-		"MaximumBuildsAllowed": ubx.FieldSpec{WireName: "maximum_builds_allowed"},
-	}
+	"ComputeTypesAllowed":  ubx.FieldSpec{WireName: "compute_types_allowed"},
+	"MaximumBuildsAllowed": ubx.FieldSpec{WireName: "maximum_builds_allowed"},
+}
 
 var Project_BuildBatchConfigFields = ubx.FieldMap{
-		"BatchReportMode": ubx.FieldSpec{WireName: "batch_report_mode"},
-		"CombineArtifacts": ubx.FieldSpec{WireName: "combine_artifacts"},
-		"Restrictions": ubx.FieldSpec{
-			WireName: "restrictions",
-			Kind: "object",
-			Fields: Project_BuildBatchConfig_RestrictionsFields,
-		},
-		"ServiceRole": ubx.FieldSpec{WireName: "service_role"},
-		"TimeoutInMins": ubx.FieldSpec{WireName: "timeout_in_mins"},
-	}
+	"BatchReportMode":  ubx.FieldSpec{WireName: "batch_report_mode"},
+	"CombineArtifacts": ubx.FieldSpec{WireName: "combine_artifacts"},
+	"Restrictions": ubx.FieldSpec{
+		WireName: "restrictions",
+		Kind:     "object",
+		Fields:   Project_BuildBatchConfig_RestrictionsFields,
+	},
+	"ServiceRole":   ubx.FieldSpec{WireName: "service_role"},
+	"TimeoutInMins": ubx.FieldSpec{WireName: "timeout_in_mins"},
+}
 
 var Project_CacheFields = ubx.FieldMap{
-		"CacheNamespace": ubx.FieldSpec{WireName: "cache_namespace"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Modes": ubx.FieldSpec{WireName: "modes"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CacheNamespace": ubx.FieldSpec{WireName: "cache_namespace"},
+	"Location":       ubx.FieldSpec{WireName: "location"},
+	"Modes":          ubx.FieldSpec{WireName: "modes"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+}
 
 var Project_Environment_DockerServerFields = ubx.FieldMap{
-		"ComputeType": ubx.FieldSpec{WireName: "compute_type"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-	}
+	"ComputeType":      ubx.FieldSpec{WireName: "compute_type"},
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+}
 
 var Project_Environment_EnvironmentVariablesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Project_Environment_FleetFields = ubx.FieldMap{
-		"FleetArn": ubx.FieldSpec{WireName: "fleet_arn"},
-	}
+	"FleetArn": ubx.FieldSpec{WireName: "fleet_arn"},
+}
 
 var Project_Environment_RegistryCredentialFields = ubx.FieldMap{
-		"Credential": ubx.FieldSpec{WireName: "credential"},
-		"CredentialProvider": ubx.FieldSpec{WireName: "credential_provider"},
-	}
+	"Credential":         ubx.FieldSpec{WireName: "credential"},
+	"CredentialProvider": ubx.FieldSpec{WireName: "credential_provider"},
+}
 
 var Project_EnvironmentFields = ubx.FieldMap{
-		"Certificate": ubx.FieldSpec{WireName: "certificate"},
-		"ComputeType": ubx.FieldSpec{WireName: "compute_type"},
-		"DockerServer": ubx.FieldSpec{
-			WireName: "docker_server",
-			Kind: "object",
-			Fields: Project_Environment_DockerServerFields,
-		},
-		"EnvironmentVariables": ubx.FieldSpec{
-			WireName: "environment_variables",
-			Kind: "list",
-			Fields: Project_Environment_EnvironmentVariablesFields,
-		},
-		"Fleet": ubx.FieldSpec{
-			WireName: "fleet",
-			Kind: "object",
-			Fields: Project_Environment_FleetFields,
-		},
-		"HostKernel": ubx.FieldSpec{WireName: "host_kernel"},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"ImagePullCredentialsType": ubx.FieldSpec{WireName: "image_pull_credentials_type"},
-		"PrivilegedMode": ubx.FieldSpec{WireName: "privileged_mode"},
-		"RegistryCredential": ubx.FieldSpec{
-			WireName: "registry_credential",
-			Kind: "object",
-			Fields: Project_Environment_RegistryCredentialFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Certificate": ubx.FieldSpec{WireName: "certificate"},
+	"ComputeType": ubx.FieldSpec{WireName: "compute_type"},
+	"DockerServer": ubx.FieldSpec{
+		WireName: "docker_server",
+		Kind:     "object",
+		Fields:   Project_Environment_DockerServerFields,
+	},
+	"EnvironmentVariables": ubx.FieldSpec{
+		WireName: "environment_variables",
+		Kind:     "list",
+		Fields:   Project_Environment_EnvironmentVariablesFields,
+	},
+	"Fleet": ubx.FieldSpec{
+		WireName: "fleet",
+		Kind:     "object",
+		Fields:   Project_Environment_FleetFields,
+	},
+	"HostKernel":               ubx.FieldSpec{WireName: "host_kernel"},
+	"Image":                    ubx.FieldSpec{WireName: "image"},
+	"ImagePullCredentialsType": ubx.FieldSpec{WireName: "image_pull_credentials_type"},
+	"PrivilegedMode":           ubx.FieldSpec{WireName: "privileged_mode"},
+	"RegistryCredential": ubx.FieldSpec{
+		WireName: "registry_credential",
+		Kind:     "object",
+		Fields:   Project_Environment_RegistryCredentialFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Project_FileSystemLocationsFields = ubx.FieldMap{
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"MountOptions": ubx.FieldSpec{WireName: "mount_options"},
-		"MountPoint": ubx.FieldSpec{WireName: "mount_point"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Identifier":   ubx.FieldSpec{WireName: "identifier"},
+	"Location":     ubx.FieldSpec{WireName: "location"},
+	"MountOptions": ubx.FieldSpec{WireName: "mount_options"},
+	"MountPoint":   ubx.FieldSpec{WireName: "mount_point"},
+	"Type":         ubx.FieldSpec{WireName: "type"},
+}
 
 var Project_LogsConfig_CloudWatchLogsFields = ubx.FieldMap{
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
-	}
+	"GroupName":  ubx.FieldSpec{WireName: "group_name"},
+	"Status":     ubx.FieldSpec{WireName: "status"},
+	"StreamName": ubx.FieldSpec{WireName: "stream_name"},
+}
 
 var Project_LogsConfig_S3LogsFields = ubx.FieldMap{
-		"EncryptionDisabled": ubx.FieldSpec{WireName: "encryption_disabled"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"EncryptionDisabled": ubx.FieldSpec{WireName: "encryption_disabled"},
+	"Location":           ubx.FieldSpec{WireName: "location"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+}
 
 var Project_LogsConfigFields = ubx.FieldMap{
-		"CloudWatchLogs": ubx.FieldSpec{
-			WireName: "cloud_watch_logs",
-			Kind: "object",
-			Fields: Project_LogsConfig_CloudWatchLogsFields,
-		},
-		"S3Logs": ubx.FieldSpec{
-			WireName: "s3_logs",
-			Kind: "object",
-			Fields: Project_LogsConfig_S3LogsFields,
-		},
-	}
+	"CloudWatchLogs": ubx.FieldSpec{
+		WireName: "cloud_watch_logs",
+		Kind:     "object",
+		Fields:   Project_LogsConfig_CloudWatchLogsFields,
+	},
+	"S3Logs": ubx.FieldSpec{
+		WireName: "s3_logs",
+		Kind:     "object",
+		Fields:   Project_LogsConfig_S3LogsFields,
+	},
+}
 
 var Project_SecondarySourceVersionsFields = ubx.FieldMap{
-		"SourceIdentifier": ubx.FieldSpec{WireName: "source_identifier"},
-		"SourceVersion": ubx.FieldSpec{WireName: "source_version"},
-	}
+	"SourceIdentifier": ubx.FieldSpec{WireName: "source_identifier"},
+	"SourceVersion":    ubx.FieldSpec{WireName: "source_version"},
+}
 
 var Project_SecondarySources_AuthFields = ubx.FieldMap{
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Resource": ubx.FieldSpec{WireName: "resource"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var Project_SecondarySources_BuildStatusConfigFields = ubx.FieldMap{
-		"Context": ubx.FieldSpec{WireName: "context"},
-		"TargetUrl": ubx.FieldSpec{WireName: "target_url"},
-	}
+	"Context":   ubx.FieldSpec{WireName: "context"},
+	"TargetUrl": ubx.FieldSpec{WireName: "target_url"},
+}
 
 var Project_SecondarySources_GitSubmodulesConfigFields = ubx.FieldMap{
-		"FetchSubmodules": ubx.FieldSpec{WireName: "fetch_submodules"},
-	}
+	"FetchSubmodules": ubx.FieldSpec{WireName: "fetch_submodules"},
+}
 
 var Project_SecondarySourcesFields = ubx.FieldMap{
-		"Auth": ubx.FieldSpec{
-			WireName: "auth",
-			Kind: "object",
-			Fields: Project_SecondarySources_AuthFields,
-		},
-		"BuildSpec": ubx.FieldSpec{WireName: "build_spec"},
-		"BuildStatusConfig": ubx.FieldSpec{
-			WireName: "build_status_config",
-			Kind: "object",
-			Fields: Project_SecondarySources_BuildStatusConfigFields,
-		},
-		"GitCloneDepth": ubx.FieldSpec{WireName: "git_clone_depth"},
-		"GitSubmodulesConfig": ubx.FieldSpec{
-			WireName: "git_submodules_config",
-			Kind: "object",
-			Fields: Project_SecondarySources_GitSubmodulesConfigFields,
-		},
-		"InsecureSsl": ubx.FieldSpec{WireName: "insecure_ssl"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"ReportBuildStatus": ubx.FieldSpec{WireName: "report_build_status"},
-		"SourceIdentifier": ubx.FieldSpec{WireName: "source_identifier"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Auth": ubx.FieldSpec{
+		WireName: "auth",
+		Kind:     "object",
+		Fields:   Project_SecondarySources_AuthFields,
+	},
+	"BuildSpec": ubx.FieldSpec{WireName: "build_spec"},
+	"BuildStatusConfig": ubx.FieldSpec{
+		WireName: "build_status_config",
+		Kind:     "object",
+		Fields:   Project_SecondarySources_BuildStatusConfigFields,
+	},
+	"GitCloneDepth": ubx.FieldSpec{WireName: "git_clone_depth"},
+	"GitSubmodulesConfig": ubx.FieldSpec{
+		WireName: "git_submodules_config",
+		Kind:     "object",
+		Fields:   Project_SecondarySources_GitSubmodulesConfigFields,
+	},
+	"InsecureSsl":       ubx.FieldSpec{WireName: "insecure_ssl"},
+	"Location":          ubx.FieldSpec{WireName: "location"},
+	"ReportBuildStatus": ubx.FieldSpec{WireName: "report_build_status"},
+	"SourceIdentifier":  ubx.FieldSpec{WireName: "source_identifier"},
+	"Type":              ubx.FieldSpec{WireName: "type"},
+}
 
 var Project_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Project_Triggers_PullRequestBuildPolicyFields = ubx.FieldMap{
-		"ApproverRoles": ubx.FieldSpec{WireName: "approver_roles"},
-		"RequiresCommentApproval": ubx.FieldSpec{WireName: "requires_comment_approval"},
-	}
+	"ApproverRoles":           ubx.FieldSpec{WireName: "approver_roles"},
+	"RequiresCommentApproval": ubx.FieldSpec{WireName: "requires_comment_approval"},
+}
 
 var Project_Triggers_ScopeConfigurationFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-	}
+	"Domain": ubx.FieldSpec{WireName: "domain"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Scope":  ubx.FieldSpec{WireName: "scope"},
+}
 
 var Project_TriggersFields = ubx.FieldMap{
-		"BuildType": ubx.FieldSpec{WireName: "build_type"},
-		"FilterGroups": ubx.FieldSpec{WireName: "filter_groups"},
-		"PullRequestBuildPolicy": ubx.FieldSpec{
-			WireName: "pull_request_build_policy",
-			Kind: "object",
-			Fields: Project_Triggers_PullRequestBuildPolicyFields,
-		},
-		"ScopeConfiguration": ubx.FieldSpec{
-			WireName: "scope_configuration",
-			Kind: "object",
-			Fields: Project_Triggers_ScopeConfigurationFields,
-		},
-		"Webhook": ubx.FieldSpec{WireName: "webhook"},
-	}
+	"BuildType":    ubx.FieldSpec{WireName: "build_type"},
+	"FilterGroups": ubx.FieldSpec{WireName: "filter_groups"},
+	"PullRequestBuildPolicy": ubx.FieldSpec{
+		WireName: "pull_request_build_policy",
+		Kind:     "object",
+		Fields:   Project_Triggers_PullRequestBuildPolicyFields,
+	},
+	"ScopeConfiguration": ubx.FieldSpec{
+		WireName: "scope_configuration",
+		Kind:     "object",
+		Fields:   Project_Triggers_ScopeConfigurationFields,
+	},
+	"Webhook": ubx.FieldSpec{WireName: "webhook"},
+}
 
 var Project_VpcConfigFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"Subnets":          ubx.FieldSpec{WireName: "subnets"},
+	"VpcId":            ubx.FieldSpec{WireName: "vpc_id"},
+}
 
 type ProjectConfig struct {
 	// Defines where CodeBuild stores the build output, including artifact type (e.g., S3), location, path, packaging, and optional encryption settings. (AI-inferred)
@@ -552,80 +552,80 @@ var Project = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Artifacts": ubx.FieldSpec{
 			WireName: "artifacts",
-			Kind: "object",
-			Fields: Project_ArtifactsFields,
+			Kind:     "object",
+			Fields:   Project_ArtifactsFields,
 		},
 		"AutoRetryLimit": ubx.FieldSpec{WireName: "auto_retry_limit"},
-		"BadgeEnabled": ubx.FieldSpec{WireName: "badge_enabled"},
+		"BadgeEnabled":   ubx.FieldSpec{WireName: "badge_enabled"},
 		"BuildBatchConfig": ubx.FieldSpec{
 			WireName: "build_batch_config",
-			Kind: "object",
-			Fields: Project_BuildBatchConfigFields,
+			Kind:     "object",
+			Fields:   Project_BuildBatchConfigFields,
 		},
 		"Cache": ubx.FieldSpec{
 			WireName: "cache",
-			Kind: "object",
-			Fields: Project_CacheFields,
+			Kind:     "object",
+			Fields:   Project_CacheFields,
 		},
 		"ConcurrentBuildLimit": ubx.FieldSpec{WireName: "concurrent_build_limit"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EncryptionKey": ubx.FieldSpec{WireName: "encryption_key"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"EncryptionKey":        ubx.FieldSpec{WireName: "encryption_key"},
 		"Environment": ubx.FieldSpec{
 			WireName: "environment",
-			Kind: "object",
-			Fields: Project_EnvironmentFields,
+			Kind:     "object",
+			Fields:   Project_EnvironmentFields,
 		},
 		"FileSystemLocations": ubx.FieldSpec{
 			WireName: "file_system_locations",
-			Kind: "list",
-			Fields: Project_FileSystemLocationsFields,
+			Kind:     "list",
+			Fields:   Project_FileSystemLocationsFields,
 		},
 		"LogsConfig": ubx.FieldSpec{
 			WireName: "logs_config",
-			Kind: "object",
-			Fields: Project_LogsConfigFields,
+			Kind:     "object",
+			Fields:   Project_LogsConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
 		"QueuedTimeoutInMinutes": ubx.FieldSpec{WireName: "queued_timeout_in_minutes"},
-		"ResourceAccessRole": ubx.FieldSpec{WireName: "resource_access_role"},
+		"ResourceAccessRole":     ubx.FieldSpec{WireName: "resource_access_role"},
 		"SecondaryArtifacts": ubx.FieldSpec{
 			WireName: "secondary_artifacts",
-			Kind: "list",
-			Fields: Project_ArtifactsFields,
+			Kind:     "list",
+			Fields:   Project_ArtifactsFields,
 		},
 		"SecondarySourceVersions": ubx.FieldSpec{
 			WireName: "secondary_source_versions",
-			Kind: "list",
-			Fields: Project_SecondarySourceVersionsFields,
+			Kind:     "list",
+			Fields:   Project_SecondarySourceVersionsFields,
 		},
 		"SecondarySources": ubx.FieldSpec{
 			WireName: "secondary_sources",
-			Kind: "list",
-			Fields: Project_SecondarySourcesFields,
+			Kind:     "list",
+			Fields:   Project_SecondarySourcesFields,
 		},
 		"ServiceRole": ubx.FieldSpec{WireName: "service_role"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: Project_SecondarySourcesFields,
+			Kind:     "object",
+			Fields:   Project_SecondarySourcesFields,
 		},
 		"SourceVersion": ubx.FieldSpec{WireName: "source_version"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Project_TagsFields,
+			Kind:     "list",
+			Fields:   Project_TagsFields,
 		},
 		"TimeoutInMinutes": ubx.FieldSpec{WireName: "timeout_in_minutes"},
 		"Triggers": ubx.FieldSpec{
 			WireName: "triggers",
-			Kind: "object",
-			Fields: Project_TriggersFields,
+			Kind:     "object",
+			Fields:   Project_TriggersFields,
 		},
 		"Visibility": ubx.FieldSpec{WireName: "visibility"},
 		"VpcConfig": ubx.FieldSpec{
 			WireName: "vpc_config",
-			Kind: "object",
-			Fields: Project_VpcConfigFields,
+			Kind:     "object",
+			Fields:   Project_VpcConfigFields,
 		},
 	},
 }

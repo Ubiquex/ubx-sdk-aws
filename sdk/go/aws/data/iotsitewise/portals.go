@@ -4,7 +4,7 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Portals_PortalSummaries_Status_Error struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -14,25 +14,25 @@ type Portals_PortalSummaries_Status struct {
 }
 
 type Portals_PortalSummaries struct {
-	CreationDate any
-	Description any
-	Id any
+	CreationDate   any
+	Description    any
+	Id             any
 	LastUpdateDate any
-	Name any
-	PortalType any
-	RoleArn any
-	StartUrl any
-	Status any
+	Name           any
+	PortalType     any
+	RoleArn        any
+	StartUrl       any
+	Status         any
 }
 
 type PortalsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type PortalsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	PortalSummaries any
 }
 
@@ -40,6 +40,6 @@ var Portals = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_portals",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

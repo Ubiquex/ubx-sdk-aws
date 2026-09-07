@@ -4,14 +4,14 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DocumentPermission_AccountSharingInfoList struct {
-	AccountId any
+	AccountId             any
 	SharedDocumentVersion any
 }
 
 type DocumentPermissionConfig struct {
-	MaxResults any
-	Name any
-	NextToken any
+	MaxResults     any
+	Name           any
+	NextToken      any
 	PermissionType any
 }
 
@@ -19,18 +19,18 @@ type DocumentPermissionAttrs struct {
 	AccountIds any
 	// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
 	AccountSharingInfoList any
-	MaxResults any
-	Name any
-	NextToken any
-	PermissionType any
+	MaxResults             any
+	Name                   any
+	NextToken              any
+	PermissionType         any
 }
 
 var DocumentPermission = ubx.DataSourceBinding{
 	WireType: "aws_ssm_document_permission",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"PermissionType": ubx.FieldSpec{WireName: "permission_type"},
 	},
 }

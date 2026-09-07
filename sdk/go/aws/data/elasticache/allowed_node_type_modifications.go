@@ -4,21 +4,21 @@ package elasticache
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AllowedNodeTypeModificationsConfig struct {
-	CacheClusterId any
+	CacheClusterId     any
 	ReplicationGroupId any
 }
 
 type AllowedNodeTypeModificationsAttrs struct {
-	CacheClusterId any
-	ReplicationGroupId any
+	CacheClusterId         any
+	ReplicationGroupId     any
 	ScaleDownModifications any
-	ScaleUpModifications any
+	ScaleUpModifications   any
 }
 
 var AllowedNodeTypeModifications = ubx.DataSourceBinding{
 	WireType: "aws_elasticache_allowed_node_type_modifications",
 	Fields: ubx.FieldMap{
-		"CacheClusterId": ubx.FieldSpec{WireName: "cache_cluster_id"},
+		"CacheClusterId":     ubx.FieldSpec{WireName: "cache_cluster_id"},
 		"ReplicationGroupId": ubx.FieldSpec{WireName: "replication_group_id"},
 	},
 }

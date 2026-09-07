@@ -9,10 +9,10 @@ type DataAtsIotRetainedMessageConfig struct {
 
 type DataAtsIotRetainedMessageAttrs struct {
 	LastModifiedTime any
-	Payload any
-	Qos any
-	Topic any
-	UserProperties any
+	Payload          any
+	Qos              any
+	Topic            any
+	UserProperties   any
 }
 
 var DataAtsIotRetainedMessage = ubx.DataSourceBinding{

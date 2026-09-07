@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IngestConfiguration_Tags struct {
 	// The key of a user-defined tag applied to the IVS ingest configuration, enabling you to categorize and filter the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var IngestConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IngestConfigurationConfig struct {
 	// Ingest Protocol.
@@ -57,12 +57,12 @@ var IngestConfiguration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"IngestProtocol": ubx.FieldSpec{WireName: "ingest_protocol"},
 		"InsecureIngest": ubx.FieldSpec{WireName: "insecure_ingest"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"StageArn": ubx.FieldSpec{WireName: "stage_arn"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"StageArn":       ubx.FieldSpec{WireName: "stage_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: IngestConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   IngestConfiguration_TagsFields,
 		},
 		"UserId": ubx.FieldSpec{WireName: "user_id"},
 	},

@@ -5,11 +5,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DetectMitigationActionsTask_TaskSummary_ActionsDefinition_ActionParams_AddThingsToThingGroupParams struct {
 	OverrideDynamicGroups any
-	ThingGroupNames any
+	ThingGroupNames       any
 }
 
 type DetectMitigationActionsTask_TaskSummary_ActionsDefinition_ActionParams_EnableIoTloggingParams struct {
-	LogLevel any
+	LogLevel          any
 	RoleArnForLogging any
 }
 
@@ -26,50 +26,50 @@ type DetectMitigationActionsTask_TaskSummary_ActionsDefinition_ActionParams_Upda
 }
 
 type DetectMitigationActionsTask_TaskSummary_ActionsDefinition_ActionParams struct {
-	AddThingsToThingGroupParams any
-	EnableIoTloggingParams any
-	PublishFindingToSnsParams any
+	AddThingsToThingGroupParams       any
+	EnableIoTloggingParams            any
+	PublishFindingToSnsParams         any
 	ReplaceDefaultPolicyVersionParams any
-	UpdateCacertificateParams any
-	UpdateDeviceCertificateParams any
+	UpdateCacertificateParams         any
+	UpdateDeviceCertificateParams     any
 }
 
 type DetectMitigationActionsTask_TaskSummary_ActionsDefinition struct {
 	ActionParams any
-	Id any
-	Name any
-	RoleArn any
+	Id           any
+	Name         any
+	RoleArn      any
 }
 
 type DetectMitigationActionsTask_TaskSummary_Target struct {
-	BehaviorName any
+	BehaviorName        any
 	SecurityProfileName any
-	ViolationIds any
+	ViolationIds        any
 }
 
 type DetectMitigationActionsTask_TaskSummary_TaskStatistics struct {
 	ActionsExecuted any
-	ActionsFailed any
-	ActionsSkipped any
+	ActionsFailed   any
+	ActionsSkipped  any
 }
 
 type DetectMitigationActionsTask_TaskSummary_ViolationEventOccurrenceRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type DetectMitigationActionsTask_TaskSummary struct {
-	ActionsDefinition any
+	ActionsDefinition            any
 	OnlyActiveViolationsIncluded any
-	SuppressedAlertsIncluded any
+	SuppressedAlertsIncluded     any
 	// <p> The target of a mitigation action task. </p>
-	Target any
-	TaskEndTime any
-	TaskId any
+	Target        any
+	TaskEndTime   any
+	TaskId        any
 	TaskStartTime any
 	// <p> The statistics of a mitigation action task. </p>
 	TaskStatistics any
-	TaskStatus any
+	TaskStatus     any
 	// <p> Specifies the time period of which violation events occurred between. </p>
 	ViolationEventOccurrenceRange any
 }

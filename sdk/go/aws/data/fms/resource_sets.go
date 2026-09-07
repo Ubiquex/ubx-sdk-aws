@@ -4,21 +4,21 @@ package fms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceSets_ResourceSets struct {
-	Description any
-	Id any
-	LastUpdateTime any
-	Name any
+	Description       any
+	Id                any
+	LastUpdateTime    any
+	Name              any
 	ResourceSetStatus any
 }
 
 type ResourceSetsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ResourceSetsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	ResourceSets any
 }
 
@@ -26,6 +26,6 @@ var ResourceSets = ubx.DataSourceBinding{
 	WireType: "aws_fms_resource_sets",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

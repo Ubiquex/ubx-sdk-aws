@@ -9,19 +9,19 @@ type ManagedAccounts_Items struct {
 
 type ManagedAccountsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ManagedAccountsAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ManagedAccounts = ubx.DataSourceBinding{
 	WireType: "aws_mgn_managed_accounts",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

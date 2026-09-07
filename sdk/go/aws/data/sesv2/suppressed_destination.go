@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SuppressedDestination_SuppressedDestination_Attributes struct {
 	FeedbackId any
-	MessageId any
+	MessageId  any
 }
 
 type SuppressedDestination_SuppressedDestination struct {
 	// <p>An object that contains additional attributes that are related an email address that is on the suppression list for your account or for a specific tenant.</p>
-	Attributes any
-	EmailAddress any
+	Attributes     any
+	EmailAddress   any
 	LastUpdateTime any
 	// <p>The reason that the address was added to the suppression list for your account or for a specific tenant. The value can be one of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES added an email address to the suppression list for your account or for a specific tenant because a message sent to that address results in a complaint.</p> </li> <li> <p> <code>BOUNCE</code> – Amazon SES added an email address to the suppression list for your account or for a specific tenant because a message sent to that address results in a hard bounce.</p> </li> </ul>
 	Reason any
@@ -37,6 +37,6 @@ var SuppressedDestination = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_suppressed_destination",
 	Fields: ubx.FieldMap{
 		"EmailAddress": ubx.FieldSpec{WireName: "email_address"},
-		"TenantName": ubx.FieldSpec{WireName: "tenant_name"},
+		"TenantName":   ubx.FieldSpec{WireName: "tenant_name"},
 	},
 }

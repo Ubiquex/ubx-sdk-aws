@@ -18,14 +18,14 @@ type Faq_Tags struct {
 }
 
 var Faq_S3PathFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Bucket": ubx.FieldSpec{WireName: "bucket"},
+	"Key":    ubx.FieldSpec{WireName: "key"},
+}
 
 var Faq_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FaqConfig struct {
 	// Description of the FAQ
@@ -72,21 +72,21 @@ type FaqAttrs struct {
 var Faq = ubx.ResourceBinding{
 	WireType: "aws_kendra_faq",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FileFormat": ubx.FieldSpec{WireName: "file_format"},
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"FileFormat":   ubx.FieldSpec{WireName: "file_format"},
+		"IndexId":      ubx.FieldSpec{WireName: "index_id"},
 		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
+		"RoleArn":      ubx.FieldSpec{WireName: "role_arn"},
 		"S3Path": ubx.FieldSpec{
 			WireName: "s3_path",
-			Kind: "object",
-			Fields: Faq_S3PathFields,
+			Kind:     "object",
+			Fields:   Faq_S3PathFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Faq_TagsFields,
+			Kind:     "list",
+			Fields:   Faq_TagsFields,
 		},
 	},
 }

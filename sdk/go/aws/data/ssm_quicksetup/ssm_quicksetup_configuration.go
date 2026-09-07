@@ -5,10 +5,10 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmQuicksetupConfiguration_StatusSummaries struct {
 	LastUpdatedAt any
-	Status any
+	Status        any
 	StatusDetails any
 	StatusMessage any
-	StatusType any
+	StatusType    any
 }
 
 type SsmQuicksetupConfigurationConfig struct {
@@ -16,18 +16,18 @@ type SsmQuicksetupConfigurationConfig struct {
 }
 
 type SsmQuicksetupConfigurationAttrs struct {
-	Account any
+	Account                   any
 	ConfigurationDefinitionId any
-	ConfigurationId any
-	CreatedAt any
-	Id any
-	LastModifiedAt any
-	ManagerArn any
-	Parameters any
-	Region any
-	StatusSummaries any
-	Type any
-	TypeVersion any
+	ConfigurationId           any
+	CreatedAt                 any
+	Id                        any
+	LastModifiedAt            any
+	ManagerArn                any
+	Parameters                any
+	Region                    any
+	StatusSummaries           any
+	Type                      any
+	TypeVersion               any
 }
 
 var SsmQuicksetupConfiguration = ubx.DataSourceBinding{

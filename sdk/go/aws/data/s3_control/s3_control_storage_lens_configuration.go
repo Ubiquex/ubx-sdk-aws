@@ -8,8 +8,8 @@ type S3ControlStorageLensConfiguration_StorageLensConfiguration_AccountLevel_Act
 }
 
 type S3ControlStorageLensConfiguration_StorageLensConfiguration_AccountLevel_BucketLevel_PrefixLevel_StorageMetrics_SelectionCriteria struct {
-	Delimiter any
-	MaxDepth any
+	Delimiter                 any
+	MaxDepth                  any
 	MinStorageBytesPercentage any
 }
 
@@ -83,18 +83,18 @@ type S3ControlStorageLensConfiguration_StorageLensConfiguration_DataExport_S3Buc
 
 type S3ControlStorageLensConfiguration_StorageLensConfiguration_DataExport_S3BucketDestination struct {
 	AccountId any
-	Arn any
+	Arn       any
 	// <p>A container for the encryption of the S3 Storage Lens metrics exports.</p>
-	Encryption any
-	Format any
+	Encryption          any
+	Format              any
 	OutputSchemaVersion any
-	Prefix any
+	Prefix              any
 }
 
 type S3ControlStorageLensConfiguration_StorageLensConfiguration_DataExport_StorageLensTableDestination struct {
 	// <p>A container for the encryption of the S3 Storage Lens metrics exports.</p>
 	Encryption any
-	IsEnabled any
+	IsEnabled  any
 }
 
 type S3ControlStorageLensConfiguration_StorageLensConfiguration_DataExport struct {
@@ -129,22 +129,22 @@ type S3ControlStorageLensConfiguration_StorageLensConfiguration struct {
 	Exclude any
 	// <p>A container for your S3 Storage Lens expanded prefix metrics report configuration. Unlike the default Storage Lens metrics report, the enhanced prefix metrics report includes all S3 Storage Lens storage and activity data related to the full list of prefixes in your Storage Lens configuration.</p>
 	ExpandedPrefixesDataExport any
-	Id any
+	Id                         any
 	// <p>A container for what Amazon S3 Storage Lens configuration includes.</p>
-	Include any
-	IsEnabled any
+	Include         any
+	IsEnabled       any
 	PrefixDelimiter any
-	StorageLensArn any
+	StorageLensArn  any
 }
 
 type S3ControlStorageLensConfigurationConfig struct {
 	AccountId any
-	ConfigId any
+	ConfigId  any
 }
 
 type S3ControlStorageLensConfigurationAttrs struct {
 	AccountId any
-	ConfigId any
+	ConfigId  any
 	// <p>A container for the Amazon S3 Storage Lens configuration.</p>
 	StorageLensConfiguration any
 }
@@ -153,6 +153,6 @@ var S3ControlStorageLensConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_s3_control_storage_lens_configuration",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ConfigId": ubx.FieldSpec{WireName: "config_id"},
+		"ConfigId":  ubx.FieldSpec{WireName: "config_id"},
 	},
 }

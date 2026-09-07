@@ -148,7 +148,7 @@ type EndpointConfig_ProductionVariants_CapacityReservationConfig struct {
 
 type EndpointConfig_ProductionVariants_CoreDumpConfig struct {
 	DestinationS3Uri any
-	KmsKeyId any
+	KmsKeyId         any
 }
 
 type EndpointConfig_ProductionVariants_InstancePools struct {
@@ -162,8 +162,8 @@ type EndpointConfig_ProductionVariants_InstancePools struct {
 
 type EndpointConfig_ProductionVariants_ManagedInstanceScaling_ScaleInPolicy struct {
 	CooldownInMinutes any
-	MaximumStepSize any
-	Strategy any
+	MaximumStepSize   any
+	Strategy          any
 }
 
 type EndpointConfig_ProductionVariants_ManagedInstanceScaling struct {
@@ -171,14 +171,14 @@ type EndpointConfig_ProductionVariants_ManagedInstanceScaling struct {
 	MaxInstanceCount any
 	// The minimum number of instances that the SageMaker endpoint production variant can scale down to when managed instance scaling is enabled. (AI-inferred)
 	MinInstanceCount any
-	ScaleInPolicy any
+	ScaleInPolicy    any
 	// Indicates whether managed instance scaling is enabled or disabled for this production variant, with valid values 'ENABLED' or 'DISABLED'. (AI-inferred)
 	Status any
 }
 
 type EndpointConfig_ProductionVariants_RoutingConfig_PrefixAwareRoutingConfig struct {
 	ConcurrencyThreshold any
-	PrefixLength any
+	PrefixLength         any
 }
 
 type EndpointConfig_ProductionVariants_RoutingConfig struct {
@@ -201,9 +201,9 @@ type EndpointConfig_ProductionVariants struct {
 	CapacityReservationConfig any
 	// The timeout in seconds for the container startup health check, after which SageMaker considers the model in this production variant unhealthy if the container has not reported a healthy status. (AI-inferred)
 	ContainerStartupHealthCheckTimeoutInSeconds any
-	CoreDumpConfig any
+	CoreDumpConfig                              any
 	// Indicates whether to enable AWS Systems Manager (SSM) access to the container running the model for this production variant, allowing remote debugging and management. (AI-inferred)
-	EnableSsmaccess any
+	EnableSsmaccess     any
 	InferenceAmiVersion any
 	// The initial number of ML compute instances to launch for this production variant. (AI-inferred)
 	InitialInstanceCount any
@@ -246,240 +246,240 @@ type EndpointConfig_VpcConfig struct {
 }
 
 var EndpointConfig_AsyncInferenceConfig_ClientConfigFields = ubx.FieldMap{
-		"MaxConcurrentInvocationsPerInstance": ubx.FieldSpec{WireName: "max_concurrent_invocations_per_instance"},
-	}
+	"MaxConcurrentInvocationsPerInstance": ubx.FieldSpec{WireName: "max_concurrent_invocations_per_instance"},
+}
 
 var EndpointConfig_AsyncInferenceConfig_OutputConfig_NotificationConfigFields = ubx.FieldMap{
-		"ErrorTopic": ubx.FieldSpec{WireName: "error_topic"},
-		"IncludeInferenceResponseIn": ubx.FieldSpec{WireName: "include_inference_response_in"},
-		"SuccessTopic": ubx.FieldSpec{WireName: "success_topic"},
-	}
+	"ErrorTopic":                 ubx.FieldSpec{WireName: "error_topic"},
+	"IncludeInferenceResponseIn": ubx.FieldSpec{WireName: "include_inference_response_in"},
+	"SuccessTopic":               ubx.FieldSpec{WireName: "success_topic"},
+}
 
 var EndpointConfig_AsyncInferenceConfig_OutputConfigFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"NotificationConfig": ubx.FieldSpec{
-			WireName: "notification_config",
-			Kind: "object",
-			Fields: EndpointConfig_AsyncInferenceConfig_OutputConfig_NotificationConfigFields,
-		},
-		"S3FailurePath": ubx.FieldSpec{WireName: "s3_failure_path"},
-		"S3OutputPath": ubx.FieldSpec{WireName: "s3_output_path"},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+	"NotificationConfig": ubx.FieldSpec{
+		WireName: "notification_config",
+		Kind:     "object",
+		Fields:   EndpointConfig_AsyncInferenceConfig_OutputConfig_NotificationConfigFields,
+	},
+	"S3FailurePath": ubx.FieldSpec{WireName: "s3_failure_path"},
+	"S3OutputPath":  ubx.FieldSpec{WireName: "s3_output_path"},
+}
 
 var EndpointConfig_AsyncInferenceConfigFields = ubx.FieldMap{
-		"ClientConfig": ubx.FieldSpec{
-			WireName: "client_config",
-			Kind: "object",
-			Fields: EndpointConfig_AsyncInferenceConfig_ClientConfigFields,
-		},
-		"OutputConfig": ubx.FieldSpec{
-			WireName: "output_config",
-			Kind: "object",
-			Fields: EndpointConfig_AsyncInferenceConfig_OutputConfigFields,
-		},
-	}
+	"ClientConfig": ubx.FieldSpec{
+		WireName: "client_config",
+		Kind:     "object",
+		Fields:   EndpointConfig_AsyncInferenceConfig_ClientConfigFields,
+	},
+	"OutputConfig": ubx.FieldSpec{
+		WireName: "output_config",
+		Kind:     "object",
+		Fields:   EndpointConfig_AsyncInferenceConfig_OutputConfigFields,
+	},
+}
 
 var EndpointConfig_DataCaptureConfig_CaptureContentTypeHeaderFields = ubx.FieldMap{
-		"CsvContentTypes": ubx.FieldSpec{WireName: "csv_content_types"},
-		"JsonContentTypes": ubx.FieldSpec{WireName: "json_content_types"},
-	}
+	"CsvContentTypes":  ubx.FieldSpec{WireName: "csv_content_types"},
+	"JsonContentTypes": ubx.FieldSpec{WireName: "json_content_types"},
+}
 
 var EndpointConfig_DataCaptureConfig_CaptureOptionsFields = ubx.FieldMap{
-		"CaptureMode": ubx.FieldSpec{WireName: "capture_mode"},
-	}
+	"CaptureMode": ubx.FieldSpec{WireName: "capture_mode"},
+}
 
 var EndpointConfig_DataCaptureConfigFields = ubx.FieldMap{
-		"CaptureContentTypeHeader": ubx.FieldSpec{
-			WireName: "capture_content_type_header",
-			Kind: "object",
-			Fields: EndpointConfig_DataCaptureConfig_CaptureContentTypeHeaderFields,
-		},
-		"CaptureOptions": ubx.FieldSpec{
-			WireName: "capture_options",
-			Kind: "list",
-			Fields: EndpointConfig_DataCaptureConfig_CaptureOptionsFields,
-		},
-		"DestinationS3Uri": ubx.FieldSpec{WireName: "destination_s3_uri"},
-		"EnableCapture": ubx.FieldSpec{WireName: "enable_capture"},
-		"InitialSamplingPercentage": ubx.FieldSpec{WireName: "initial_sampling_percentage"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-	}
+	"CaptureContentTypeHeader": ubx.FieldSpec{
+		WireName: "capture_content_type_header",
+		Kind:     "object",
+		Fields:   EndpointConfig_DataCaptureConfig_CaptureContentTypeHeaderFields,
+	},
+	"CaptureOptions": ubx.FieldSpec{
+		WireName: "capture_options",
+		Kind:     "list",
+		Fields:   EndpointConfig_DataCaptureConfig_CaptureOptionsFields,
+	},
+	"DestinationS3Uri":          ubx.FieldSpec{WireName: "destination_s3_uri"},
+	"EnableCapture":             ubx.FieldSpec{WireName: "enable_capture"},
+	"InitialSamplingPercentage": ubx.FieldSpec{WireName: "initial_sampling_percentage"},
+	"KmsKeyId":                  ubx.FieldSpec{WireName: "kms_key_id"},
+}
 
 var EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_InferenceConfigFields = ubx.FieldMap{
-		"ContentTemplate": ubx.FieldSpec{WireName: "content_template"},
-		"FeatureHeaders": ubx.FieldSpec{WireName: "feature_headers"},
-		"FeatureTypes": ubx.FieldSpec{WireName: "feature_types"},
-		"FeaturesAttribute": ubx.FieldSpec{WireName: "features_attribute"},
-		"LabelAttribute": ubx.FieldSpec{WireName: "label_attribute"},
-		"LabelHeaders": ubx.FieldSpec{WireName: "label_headers"},
-		"LabelIndex": ubx.FieldSpec{WireName: "label_index"},
-		"MaxPayloadInMb": ubx.FieldSpec{WireName: "max_payload_in_mb"},
-		"MaxRecordCount": ubx.FieldSpec{WireName: "max_record_count"},
-		"ProbabilityAttribute": ubx.FieldSpec{WireName: "probability_attribute"},
-		"ProbabilityIndex": ubx.FieldSpec{WireName: "probability_index"},
-	}
+	"ContentTemplate":      ubx.FieldSpec{WireName: "content_template"},
+	"FeatureHeaders":       ubx.FieldSpec{WireName: "feature_headers"},
+	"FeatureTypes":         ubx.FieldSpec{WireName: "feature_types"},
+	"FeaturesAttribute":    ubx.FieldSpec{WireName: "features_attribute"},
+	"LabelAttribute":       ubx.FieldSpec{WireName: "label_attribute"},
+	"LabelHeaders":         ubx.FieldSpec{WireName: "label_headers"},
+	"LabelIndex":           ubx.FieldSpec{WireName: "label_index"},
+	"MaxPayloadInMb":       ubx.FieldSpec{WireName: "max_payload_in_mb"},
+	"MaxRecordCount":       ubx.FieldSpec{WireName: "max_record_count"},
+	"ProbabilityAttribute": ubx.FieldSpec{WireName: "probability_attribute"},
+	"ProbabilityIndex":     ubx.FieldSpec{WireName: "probability_index"},
+}
 
 var EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_ShapConfig_ShapBaselineConfigFields = ubx.FieldMap{
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-		"ShapBaseline": ubx.FieldSpec{WireName: "shap_baseline"},
-		"ShapBaselineUri": ubx.FieldSpec{WireName: "shap_baseline_uri"},
-	}
+	"MimeType":        ubx.FieldSpec{WireName: "mime_type"},
+	"ShapBaseline":    ubx.FieldSpec{WireName: "shap_baseline"},
+	"ShapBaselineUri": ubx.FieldSpec{WireName: "shap_baseline_uri"},
+}
 
 var EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_ShapConfig_TextConfigFields = ubx.FieldMap{
-		"Granularity": ubx.FieldSpec{WireName: "granularity"},
-		"Language": ubx.FieldSpec{WireName: "language"},
-	}
+	"Granularity": ubx.FieldSpec{WireName: "granularity"},
+	"Language":    ubx.FieldSpec{WireName: "language"},
+}
 
 var EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_ShapConfigFields = ubx.FieldMap{
-		"NumberOfSamples": ubx.FieldSpec{WireName: "number_of_samples"},
-		"Seed": ubx.FieldSpec{WireName: "seed"},
-		"ShapBaselineConfig": ubx.FieldSpec{
-			WireName: "shap_baseline_config",
-			Kind: "object",
-			Fields: EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_ShapConfig_ShapBaselineConfigFields,
-		},
-		"TextConfig": ubx.FieldSpec{
-			WireName: "text_config",
-			Kind: "object",
-			Fields: EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_ShapConfig_TextConfigFields,
-		},
-		"UseLogit": ubx.FieldSpec{WireName: "use_logit"},
-	}
+	"NumberOfSamples": ubx.FieldSpec{WireName: "number_of_samples"},
+	"Seed":            ubx.FieldSpec{WireName: "seed"},
+	"ShapBaselineConfig": ubx.FieldSpec{
+		WireName: "shap_baseline_config",
+		Kind:     "object",
+		Fields:   EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_ShapConfig_ShapBaselineConfigFields,
+	},
+	"TextConfig": ubx.FieldSpec{
+		WireName: "text_config",
+		Kind:     "object",
+		Fields:   EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_ShapConfig_TextConfigFields,
+	},
+	"UseLogit": ubx.FieldSpec{WireName: "use_logit"},
+}
 
 var EndpointConfig_ExplainerConfig_ClarifyExplainerConfigFields = ubx.FieldMap{
-		"EnableExplanations": ubx.FieldSpec{WireName: "enable_explanations"},
-		"InferenceConfig": ubx.FieldSpec{
-			WireName: "inference_config",
-			Kind: "object",
-			Fields: EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_InferenceConfigFields,
-		},
-		"ShapConfig": ubx.FieldSpec{
-			WireName: "shap_config",
-			Kind: "object",
-			Fields: EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_ShapConfigFields,
-		},
-	}
+	"EnableExplanations": ubx.FieldSpec{WireName: "enable_explanations"},
+	"InferenceConfig": ubx.FieldSpec{
+		WireName: "inference_config",
+		Kind:     "object",
+		Fields:   EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_InferenceConfigFields,
+	},
+	"ShapConfig": ubx.FieldSpec{
+		WireName: "shap_config",
+		Kind:     "object",
+		Fields:   EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_ShapConfigFields,
+	},
+}
 
 var EndpointConfig_ExplainerConfigFields = ubx.FieldMap{
-		"ClarifyExplainerConfig": ubx.FieldSpec{
-			WireName: "clarify_explainer_config",
-			Kind: "object",
-			Fields: EndpointConfig_ExplainerConfig_ClarifyExplainerConfigFields,
-		},
-	}
+	"ClarifyExplainerConfig": ubx.FieldSpec{
+		WireName: "clarify_explainer_config",
+		Kind:     "object",
+		Fields:   EndpointConfig_ExplainerConfig_ClarifyExplainerConfigFields,
+	},
+}
 
 var EndpointConfig_MetricsConfigFields = ubx.FieldMap{
-		"EnableDetailedObservability": ubx.FieldSpec{WireName: "enable_detailed_observability"},
-		"EnableEnhancedMetrics": ubx.FieldSpec{WireName: "enable_enhanced_metrics"},
-		"MetricPublishFrequencyInSeconds": ubx.FieldSpec{WireName: "metric_publish_frequency_in_seconds"},
-	}
+	"EnableDetailedObservability":     ubx.FieldSpec{WireName: "enable_detailed_observability"},
+	"EnableEnhancedMetrics":           ubx.FieldSpec{WireName: "enable_enhanced_metrics"},
+	"MetricPublishFrequencyInSeconds": ubx.FieldSpec{WireName: "metric_publish_frequency_in_seconds"},
+}
 
 var EndpointConfig_ProductionVariants_CapacityReservationConfigFields = ubx.FieldMap{
-		"CapacityReservationPreference": ubx.FieldSpec{WireName: "capacity_reservation_preference"},
-		"MlReservationArn": ubx.FieldSpec{WireName: "ml_reservation_arn"},
-	}
+	"CapacityReservationPreference": ubx.FieldSpec{WireName: "capacity_reservation_preference"},
+	"MlReservationArn":              ubx.FieldSpec{WireName: "ml_reservation_arn"},
+}
 
 var EndpointConfig_ProductionVariants_CoreDumpConfigFields = ubx.FieldMap{
-		"DestinationS3Uri": ubx.FieldSpec{WireName: "destination_s3_uri"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-	}
+	"DestinationS3Uri": ubx.FieldSpec{WireName: "destination_s3_uri"},
+	"KmsKeyId":         ubx.FieldSpec{WireName: "kms_key_id"},
+}
 
 var EndpointConfig_ProductionVariants_InstancePoolsFields = ubx.FieldMap{
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"ModelNameOverride": ubx.FieldSpec{WireName: "model_name_override"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-	}
+	"InstanceType":      ubx.FieldSpec{WireName: "instance_type"},
+	"ModelNameOverride": ubx.FieldSpec{WireName: "model_name_override"},
+	"Priority":          ubx.FieldSpec{WireName: "priority"},
+}
 
 var EndpointConfig_ProductionVariants_ManagedInstanceScaling_ScaleInPolicyFields = ubx.FieldMap{
-		"CooldownInMinutes": ubx.FieldSpec{WireName: "cooldown_in_minutes"},
-		"MaximumStepSize": ubx.FieldSpec{WireName: "maximum_step_size"},
-		"Strategy": ubx.FieldSpec{WireName: "strategy"},
-	}
+	"CooldownInMinutes": ubx.FieldSpec{WireName: "cooldown_in_minutes"},
+	"MaximumStepSize":   ubx.FieldSpec{WireName: "maximum_step_size"},
+	"Strategy":          ubx.FieldSpec{WireName: "strategy"},
+}
 
 var EndpointConfig_ProductionVariants_ManagedInstanceScalingFields = ubx.FieldMap{
-		"MaxInstanceCount": ubx.FieldSpec{WireName: "max_instance_count"},
-		"MinInstanceCount": ubx.FieldSpec{WireName: "min_instance_count"},
-		"ScaleInPolicy": ubx.FieldSpec{
-			WireName: "scale_in_policy",
-			Kind: "object",
-			Fields: EndpointConfig_ProductionVariants_ManagedInstanceScaling_ScaleInPolicyFields,
-		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"MaxInstanceCount": ubx.FieldSpec{WireName: "max_instance_count"},
+	"MinInstanceCount": ubx.FieldSpec{WireName: "min_instance_count"},
+	"ScaleInPolicy": ubx.FieldSpec{
+		WireName: "scale_in_policy",
+		Kind:     "object",
+		Fields:   EndpointConfig_ProductionVariants_ManagedInstanceScaling_ScaleInPolicyFields,
+	},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var EndpointConfig_ProductionVariants_RoutingConfig_PrefixAwareRoutingConfigFields = ubx.FieldMap{
-		"ConcurrencyThreshold": ubx.FieldSpec{WireName: "concurrency_threshold"},
-		"PrefixLength": ubx.FieldSpec{WireName: "prefix_length"},
-	}
+	"ConcurrencyThreshold": ubx.FieldSpec{WireName: "concurrency_threshold"},
+	"PrefixLength":         ubx.FieldSpec{WireName: "prefix_length"},
+}
 
 var EndpointConfig_ProductionVariants_RoutingConfigFields = ubx.FieldMap{
-		"PrefixAwareRoutingConfig": ubx.FieldSpec{
-			WireName: "prefix_aware_routing_config",
-			Kind: "object",
-			Fields: EndpointConfig_ProductionVariants_RoutingConfig_PrefixAwareRoutingConfigFields,
-		},
-		"RoutingStrategy": ubx.FieldSpec{WireName: "routing_strategy"},
-	}
+	"PrefixAwareRoutingConfig": ubx.FieldSpec{
+		WireName: "prefix_aware_routing_config",
+		Kind:     "object",
+		Fields:   EndpointConfig_ProductionVariants_RoutingConfig_PrefixAwareRoutingConfigFields,
+	},
+	"RoutingStrategy": ubx.FieldSpec{WireName: "routing_strategy"},
+}
 
 var EndpointConfig_ProductionVariants_ServerlessConfigFields = ubx.FieldMap{
-		"MaxConcurrency": ubx.FieldSpec{WireName: "max_concurrency"},
-		"MemorySizeInMb": ubx.FieldSpec{WireName: "memory_size_in_mb"},
-		"ProvisionedConcurrency": ubx.FieldSpec{WireName: "provisioned_concurrency"},
-	}
+	"MaxConcurrency":         ubx.FieldSpec{WireName: "max_concurrency"},
+	"MemorySizeInMb":         ubx.FieldSpec{WireName: "memory_size_in_mb"},
+	"ProvisionedConcurrency": ubx.FieldSpec{WireName: "provisioned_concurrency"},
+}
 
 var EndpointConfig_ProductionVariantsFields = ubx.FieldMap{
-		"CapacityReservationConfig": ubx.FieldSpec{
-			WireName: "capacity_reservation_config",
-			Kind: "object",
-			Fields: EndpointConfig_ProductionVariants_CapacityReservationConfigFields,
-		},
-		"ContainerStartupHealthCheckTimeoutInSeconds": ubx.FieldSpec{WireName: "container_startup_health_check_timeout_in_seconds"},
-		"CoreDumpConfig": ubx.FieldSpec{
-			WireName: "core_dump_config",
-			Kind: "object",
-			Fields: EndpointConfig_ProductionVariants_CoreDumpConfigFields,
-		},
-		"EnableSsmaccess": ubx.FieldSpec{WireName: "enable_ssmaccess"},
-		"InferenceAmiVersion": ubx.FieldSpec{WireName: "inference_ami_version"},
-		"InitialInstanceCount": ubx.FieldSpec{WireName: "initial_instance_count"},
-		"InitialVariantWeight": ubx.FieldSpec{WireName: "initial_variant_weight"},
-		"InstancePools": ubx.FieldSpec{
-			WireName: "instance_pools",
-			Kind: "list",
-			Fields: EndpointConfig_ProductionVariants_InstancePoolsFields,
-		},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"ManagedInstanceScaling": ubx.FieldSpec{
-			WireName: "managed_instance_scaling",
-			Kind: "object",
-			Fields: EndpointConfig_ProductionVariants_ManagedInstanceScalingFields,
-		},
-		"ModelDataDownloadTimeoutInSeconds": ubx.FieldSpec{WireName: "model_data_download_timeout_in_seconds"},
-		"ModelName": ubx.FieldSpec{WireName: "model_name"},
-		"RoutingConfig": ubx.FieldSpec{
-			WireName: "routing_config",
-			Kind: "object",
-			Fields: EndpointConfig_ProductionVariants_RoutingConfigFields,
-		},
-		"ServerlessConfig": ubx.FieldSpec{
-			WireName: "serverless_config",
-			Kind: "object",
-			Fields: EndpointConfig_ProductionVariants_ServerlessConfigFields,
-		},
-		"VariantInstanceProvisionTimeoutInSeconds": ubx.FieldSpec{WireName: "variant_instance_provision_timeout_in_seconds"},
-		"VariantName": ubx.FieldSpec{WireName: "variant_name"},
-		"VolumeSizeInGb": ubx.FieldSpec{WireName: "volume_size_in_gb"},
-	}
+	"CapacityReservationConfig": ubx.FieldSpec{
+		WireName: "capacity_reservation_config",
+		Kind:     "object",
+		Fields:   EndpointConfig_ProductionVariants_CapacityReservationConfigFields,
+	},
+	"ContainerStartupHealthCheckTimeoutInSeconds": ubx.FieldSpec{WireName: "container_startup_health_check_timeout_in_seconds"},
+	"CoreDumpConfig": ubx.FieldSpec{
+		WireName: "core_dump_config",
+		Kind:     "object",
+		Fields:   EndpointConfig_ProductionVariants_CoreDumpConfigFields,
+	},
+	"EnableSsmaccess":      ubx.FieldSpec{WireName: "enable_ssmaccess"},
+	"InferenceAmiVersion":  ubx.FieldSpec{WireName: "inference_ami_version"},
+	"InitialInstanceCount": ubx.FieldSpec{WireName: "initial_instance_count"},
+	"InitialVariantWeight": ubx.FieldSpec{WireName: "initial_variant_weight"},
+	"InstancePools": ubx.FieldSpec{
+		WireName: "instance_pools",
+		Kind:     "list",
+		Fields:   EndpointConfig_ProductionVariants_InstancePoolsFields,
+	},
+	"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
+	"ManagedInstanceScaling": ubx.FieldSpec{
+		WireName: "managed_instance_scaling",
+		Kind:     "object",
+		Fields:   EndpointConfig_ProductionVariants_ManagedInstanceScalingFields,
+	},
+	"ModelDataDownloadTimeoutInSeconds": ubx.FieldSpec{WireName: "model_data_download_timeout_in_seconds"},
+	"ModelName":                         ubx.FieldSpec{WireName: "model_name"},
+	"RoutingConfig": ubx.FieldSpec{
+		WireName: "routing_config",
+		Kind:     "object",
+		Fields:   EndpointConfig_ProductionVariants_RoutingConfigFields,
+	},
+	"ServerlessConfig": ubx.FieldSpec{
+		WireName: "serverless_config",
+		Kind:     "object",
+		Fields:   EndpointConfig_ProductionVariants_ServerlessConfigFields,
+	},
+	"VariantInstanceProvisionTimeoutInSeconds": ubx.FieldSpec{WireName: "variant_instance_provision_timeout_in_seconds"},
+	"VariantName":    ubx.FieldSpec{WireName: "variant_name"},
+	"VolumeSizeInGb": ubx.FieldSpec{WireName: "volume_size_in_gb"},
+}
 
 var EndpointConfig_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var EndpointConfig_VpcConfigFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"Subnets":          ubx.FieldSpec{WireName: "subnets"},
+}
 
 type EndpointConfigConfig struct {
 	// Specifies configuration for how an endpoint performs asynchronous inference.
@@ -542,47 +542,47 @@ var EndpointConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AsyncInferenceConfig": ubx.FieldSpec{
 			WireName: "async_inference_config",
-			Kind: "object",
-			Fields: EndpointConfig_AsyncInferenceConfigFields,
+			Kind:     "object",
+			Fields:   EndpointConfig_AsyncInferenceConfigFields,
 		},
 		"DataCaptureConfig": ubx.FieldSpec{
 			WireName: "data_capture_config",
-			Kind: "object",
-			Fields: EndpointConfig_DataCaptureConfigFields,
+			Kind:     "object",
+			Fields:   EndpointConfig_DataCaptureConfigFields,
 		},
 		"EnableNetworkIsolation": ubx.FieldSpec{WireName: "enable_network_isolation"},
-		"EndpointConfigName": ubx.FieldSpec{WireName: "endpoint_config_name"},
-		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
+		"EndpointConfigName":     ubx.FieldSpec{WireName: "endpoint_config_name"},
+		"ExecutionRoleArn":       ubx.FieldSpec{WireName: "execution_role_arn"},
 		"ExplainerConfig": ubx.FieldSpec{
 			WireName: "explainer_config",
-			Kind: "object",
-			Fields: EndpointConfig_ExplainerConfigFields,
+			Kind:     "object",
+			Fields:   EndpointConfig_ExplainerConfigFields,
 		},
 		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
 		"MetricsConfig": ubx.FieldSpec{
 			WireName: "metrics_config",
-			Kind: "object",
-			Fields: EndpointConfig_MetricsConfigFields,
+			Kind:     "object",
+			Fields:   EndpointConfig_MetricsConfigFields,
 		},
 		"ProductionVariants": ubx.FieldSpec{
 			WireName: "production_variants",
-			Kind: "list",
-			Fields: EndpointConfig_ProductionVariantsFields,
+			Kind:     "list",
+			Fields:   EndpointConfig_ProductionVariantsFields,
 		},
 		"ShadowProductionVariants": ubx.FieldSpec{
 			WireName: "shadow_production_variants",
-			Kind: "list",
-			Fields: EndpointConfig_ProductionVariantsFields,
+			Kind:     "list",
+			Fields:   EndpointConfig_ProductionVariantsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EndpointConfig_TagsFields,
+			Kind:     "list",
+			Fields:   EndpointConfig_TagsFields,
 		},
 		"VpcConfig": ubx.FieldSpec{
 			WireName: "vpc_config",
-			Kind: "object",
-			Fields: EndpointConfig_VpcConfigFields,
+			Kind:     "object",
+			Fields:   EndpointConfig_VpcConfigFields,
 		},
 	},
 }

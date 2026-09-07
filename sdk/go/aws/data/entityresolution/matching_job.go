@@ -9,20 +9,20 @@ type MatchingJob_ErrorDetails struct {
 
 type MatchingJob_Metrics struct {
 	DeleteRecordsProcessed any
-	InputRecords any
-	MatchIds any
-	RecordsNotProcessed any
-	TotalRecordsProcessed any
+	InputRecords           any
+	MatchIds               any
+	RecordsNotProcessed    any
+	TotalRecordsProcessed  any
 }
 
 type MatchingJob_OutputSourceConfig struct {
-	Kmsarn any
+	Kmsarn       any
 	OutputS3Path any
-	RoleArn any
+	RoleArn      any
 }
 
 type MatchingJobConfig struct {
-	JobId any
+	JobId        any
 	WorkflowName any
 }
 
@@ -30,19 +30,19 @@ type MatchingJobAttrs struct {
 	EndTime any
 	// <p>An object containing an error message, if there was an error.</p>
 	ErrorDetails any
-	JobId any
+	JobId        any
 	// <p>An object containing <code>inputRecords</code>, <code>totalRecordsProcessed</code>, <code>matchIDs</code>, and <code>recordsNotProcessed</code>.</p>
-	Metrics any
+	Metrics            any
 	OutputSourceConfig any
-	StartTime any
-	Status any
-	WorkflowName any
+	StartTime          any
+	Status             any
+	WorkflowName       any
 }
 
 var MatchingJob = ubx.DataSourceBinding{
 	WireType: "aws_entityresolution_matching_job",
 	Fields: ubx.FieldMap{
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":        ubx.FieldSpec{WireName: "job_id"},
 		"WorkflowName": ubx.FieldSpec{WireName: "workflow_name"},
 	},
 }

@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Protections_InclusionFilters struct {
 	ProtectionNames any
-	ResourceArns any
-	ResourceTypes any
+	ResourceArns    any
+	ResourceTypes   any
 }
 
 type Protections_Protections_ApplicationLayerAutomaticResponseConfiguration_Action struct {
@@ -21,32 +21,32 @@ type Protections_Protections_ApplicationLayerAutomaticResponseConfiguration stru
 
 type Protections_Protections struct {
 	ApplicationLayerAutomaticResponseConfiguration any
-	HealthCheckIds any
-	Id any
-	Name any
-	ProtectionArn any
-	ResourceArn any
+	HealthCheckIds                                 any
+	Id                                             any
+	Name                                           any
+	ProtectionArn                                  any
+	ResourceArn                                    any
 }
 
 var Protections_InclusionFiltersFields = ubx.FieldMap{
-		"ProtectionNames": ubx.FieldSpec{WireName: "protection_names"},
-		"ResourceArns": ubx.FieldSpec{WireName: "resource_arns"},
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-	}
+	"ProtectionNames": ubx.FieldSpec{WireName: "protection_names"},
+	"ResourceArns":    ubx.FieldSpec{WireName: "resource_arns"},
+	"ResourceTypes":   ubx.FieldSpec{WireName: "resource_types"},
+}
 
 type ProtectionsConfig struct {
 	// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
 	InclusionFilters any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 type ProtectionsAttrs struct {
 	// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
 	InclusionFilters any
-	MaxResults any
-	NextToken any
-	Protections any
+	MaxResults       any
+	NextToken        any
+	Protections      any
 }
 
 var Protections = ubx.DataSourceBinding{
@@ -54,10 +54,10 @@ var Protections = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InclusionFilters": ubx.FieldSpec{
 			WireName: "inclusion_filters",
-			Kind: "object",
-			Fields: Protections_InclusionFiltersFields,
+			Kind:     "object",
+			Fields:   Protections_InclusionFiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

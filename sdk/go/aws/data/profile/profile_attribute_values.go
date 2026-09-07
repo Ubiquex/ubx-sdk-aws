@@ -9,20 +9,20 @@ type ProfileAttributeValues_Items struct {
 
 type ProfileAttributeValuesConfig struct {
 	AttributeName any
-	DomainName any
+	DomainName    any
 }
 
 type ProfileAttributeValuesAttrs struct {
 	AttributeName any
-	DomainName any
-	Items any
-	StatusCode any
+	DomainName    any
+	Items         any
+	StatusCode    any
 }
 
 var ProfileAttributeValues = ubx.DataSourceBinding{
 	WireType: "aws_profile_profile_attribute_values",
 	Fields: ubx.FieldMap{
 		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":    ubx.FieldSpec{WireName: "domain_name"},
 	},
 }

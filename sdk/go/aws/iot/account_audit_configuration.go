@@ -84,136 +84,136 @@ type AccountAuditConfiguration_AuditNotificationTargetConfigurations struct {
 }
 
 var AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var AccountAuditConfiguration_AuditCheckConfigurations_DeviceCertificateAgeCheck_ConfigurationFields = ubx.FieldMap{
-		"CertAgeThresholdInDays": ubx.FieldSpec{WireName: "cert_age_threshold_in_days"},
-	}
+	"CertAgeThresholdInDays": ubx.FieldSpec{WireName: "cert_age_threshold_in_days"},
+}
 
 var AccountAuditConfiguration_AuditCheckConfigurations_DeviceCertificateAgeCheckFields = ubx.FieldMap{
-		"Configuration": ubx.FieldSpec{
-			WireName: "configuration",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_DeviceCertificateAgeCheck_ConfigurationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Configuration": ubx.FieldSpec{
+		WireName: "configuration",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_DeviceCertificateAgeCheck_ConfigurationFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var AccountAuditConfiguration_AuditCheckConfigurations_DeviceCertificateExpiringCheck_ConfigurationFields = ubx.FieldMap{
-		"CertExpirationThresholdInDays": ubx.FieldSpec{WireName: "cert_expiration_threshold_in_days"},
-	}
+	"CertExpirationThresholdInDays": ubx.FieldSpec{WireName: "cert_expiration_threshold_in_days"},
+}
 
 var AccountAuditConfiguration_AuditCheckConfigurations_DeviceCertificateExpiringCheckFields = ubx.FieldMap{
-		"Configuration": ubx.FieldSpec{
-			WireName: "configuration",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_DeviceCertificateExpiringCheck_ConfigurationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Configuration": ubx.FieldSpec{
+		WireName: "configuration",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_DeviceCertificateExpiringCheck_ConfigurationFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var AccountAuditConfiguration_AuditCheckConfigurationsFields = ubx.FieldMap{
-		"AuthenticatedCognitoRoleOverlyPermissiveCheck": ubx.FieldSpec{
-			WireName: "authenticated_cognito_role_overly_permissive_check",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
-		},
-		"CaCertificateExpiringCheck": ubx.FieldSpec{
-			WireName: "ca_certificate_expiring_check",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
-		},
-		"CaCertificateKeyQualityCheck": ubx.FieldSpec{
-			WireName: "ca_certificate_key_quality_check",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
-		},
-		"ConflictingClientIdsCheck": ubx.FieldSpec{
-			WireName: "conflicting_client_ids_check",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
-		},
-		"DeviceCertificateAgeCheck": ubx.FieldSpec{
-			WireName: "device_certificate_age_check",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_DeviceCertificateAgeCheckFields,
-		},
-		"DeviceCertificateExpiringCheck": ubx.FieldSpec{
-			WireName: "device_certificate_expiring_check",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_DeviceCertificateExpiringCheckFields,
-		},
-		"DeviceCertificateKeyQualityCheck": ubx.FieldSpec{
-			WireName: "device_certificate_key_quality_check",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
-		},
-		"DeviceCertificateSharedCheck": ubx.FieldSpec{
-			WireName: "device_certificate_shared_check",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
-		},
-		"IntermediateCaRevokedForActiveDeviceCertificatesCheck": ubx.FieldSpec{
-			WireName: "intermediate_ca_revoked_for_active_device_certificates_check",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
-		},
-		"IoTpolicyPotentialMisConfigurationCheck": ubx.FieldSpec{
-			WireName: "io_tpolicy_potential_mis_configuration_check",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
-		},
-		"IotPolicyOverlyPermissiveCheck": ubx.FieldSpec{
-			WireName: "iot_policy_overly_permissive_check",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
-		},
-		"IotRoleAliasAllowsAccessToUnusedServicesCheck": ubx.FieldSpec{
-			WireName: "iot_role_alias_allows_access_to_unused_services_check",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
-		},
-		"IotRoleAliasOverlyPermissiveCheck": ubx.FieldSpec{
-			WireName: "iot_role_alias_overly_permissive_check",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
-		},
-		"LoggingDisabledCheck": ubx.FieldSpec{
-			WireName: "logging_disabled_check",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
-		},
-		"RevokedCaCertificateStillActiveCheck": ubx.FieldSpec{
-			WireName: "revoked_ca_certificate_still_active_check",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
-		},
-		"RevokedDeviceCertificateStillActiveCheck": ubx.FieldSpec{
-			WireName: "revoked_device_certificate_still_active_check",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
-		},
-		"UnauthenticatedCognitoRoleOverlyPermissiveCheck": ubx.FieldSpec{
-			WireName: "unauthenticated_cognito_role_overly_permissive_check",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
-		},
-	}
+	"AuthenticatedCognitoRoleOverlyPermissiveCheck": ubx.FieldSpec{
+		WireName: "authenticated_cognito_role_overly_permissive_check",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
+	},
+	"CaCertificateExpiringCheck": ubx.FieldSpec{
+		WireName: "ca_certificate_expiring_check",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
+	},
+	"CaCertificateKeyQualityCheck": ubx.FieldSpec{
+		WireName: "ca_certificate_key_quality_check",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
+	},
+	"ConflictingClientIdsCheck": ubx.FieldSpec{
+		WireName: "conflicting_client_ids_check",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
+	},
+	"DeviceCertificateAgeCheck": ubx.FieldSpec{
+		WireName: "device_certificate_age_check",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_DeviceCertificateAgeCheckFields,
+	},
+	"DeviceCertificateExpiringCheck": ubx.FieldSpec{
+		WireName: "device_certificate_expiring_check",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_DeviceCertificateExpiringCheckFields,
+	},
+	"DeviceCertificateKeyQualityCheck": ubx.FieldSpec{
+		WireName: "device_certificate_key_quality_check",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
+	},
+	"DeviceCertificateSharedCheck": ubx.FieldSpec{
+		WireName: "device_certificate_shared_check",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
+	},
+	"IntermediateCaRevokedForActiveDeviceCertificatesCheck": ubx.FieldSpec{
+		WireName: "intermediate_ca_revoked_for_active_device_certificates_check",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
+	},
+	"IoTpolicyPotentialMisConfigurationCheck": ubx.FieldSpec{
+		WireName: "io_tpolicy_potential_mis_configuration_check",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
+	},
+	"IotPolicyOverlyPermissiveCheck": ubx.FieldSpec{
+		WireName: "iot_policy_overly_permissive_check",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
+	},
+	"IotRoleAliasAllowsAccessToUnusedServicesCheck": ubx.FieldSpec{
+		WireName: "iot_role_alias_allows_access_to_unused_services_check",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
+	},
+	"IotRoleAliasOverlyPermissiveCheck": ubx.FieldSpec{
+		WireName: "iot_role_alias_overly_permissive_check",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
+	},
+	"LoggingDisabledCheck": ubx.FieldSpec{
+		WireName: "logging_disabled_check",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
+	},
+	"RevokedCaCertificateStillActiveCheck": ubx.FieldSpec{
+		WireName: "revoked_ca_certificate_still_active_check",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
+	},
+	"RevokedDeviceCertificateStillActiveCheck": ubx.FieldSpec{
+		WireName: "revoked_device_certificate_still_active_check",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
+	},
+	"UnauthenticatedCognitoRoleOverlyPermissiveCheck": ubx.FieldSpec{
+		WireName: "unauthenticated_cognito_role_overly_permissive_check",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields,
+	},
+}
 
 var AccountAuditConfiguration_AuditNotificationTargetConfigurations_SnsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
-	}
+	"Enabled":   ubx.FieldSpec{WireName: "enabled"},
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+	"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
+}
 
 var AccountAuditConfiguration_AuditNotificationTargetConfigurationsFields = ubx.FieldMap{
-		"Sns": ubx.FieldSpec{
-			WireName: "sns",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditNotificationTargetConfigurations_SnsFields,
-		},
-	}
+	"Sns": ubx.FieldSpec{
+		WireName: "sns",
+		Kind:     "object",
+		Fields:   AccountAuditConfiguration_AuditNotificationTargetConfigurations_SnsFields,
+	},
+}
 
 type AccountAuditConfigurationConfig struct {
 	// Your 12-digit account ID (used as the primary identifier for the CloudFormation resource).
@@ -243,13 +243,13 @@ var AccountAuditConfiguration = ubx.ResourceBinding{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"AuditCheckConfigurations": ubx.FieldSpec{
 			WireName: "audit_check_configurations",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditCheckConfigurationsFields,
+			Kind:     "object",
+			Fields:   AccountAuditConfiguration_AuditCheckConfigurationsFields,
 		},
 		"AuditNotificationTargetConfigurations": ubx.FieldSpec{
 			WireName: "audit_notification_target_configurations",
-			Kind: "object",
-			Fields: AccountAuditConfiguration_AuditNotificationTargetConfigurationsFields,
+			Kind:     "object",
+			Fields:   AccountAuditConfiguration_AuditNotificationTargetConfigurationsFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 	},

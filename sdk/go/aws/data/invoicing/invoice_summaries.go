@@ -5,133 +5,133 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InvoiceSummaries_Filter_BillingPeriod struct {
 	Month any
-	Year any
+	Year  any
 }
 
 type InvoiceSummaries_Filter_TimeInterval struct {
-	EndDate any
+	EndDate   any
 	StartDate any
 }
 
 type InvoiceSummaries_Filter struct {
 	// <p> The billing period for which you want to retrieve invoice-related documents. </p>
-	BillingPeriod any
+	BillingPeriod   any
 	InvoicingEntity any
-	ReceiverRole any
+	ReceiverRole    any
 	// <p> The time period that you want invoice-related documents for. </p>
 	TimeInterval any
 }
 
 type InvoiceSummaries_InvoiceSummaries_BaseCurrencyAmount_AmountBreakdown_Discounts_Breakdown struct {
-	Amount any
+	Amount      any
 	Description any
-	Rate any
+	Rate        any
 }
 
 type InvoiceSummaries_InvoiceSummaries_BaseCurrencyAmount_AmountBreakdown_Discounts struct {
-	Breakdown any
+	Breakdown   any
 	TotalAmount any
 }
 
 type InvoiceSummaries_InvoiceSummaries_BaseCurrencyAmount_AmountBreakdown struct {
-	Discounts any
-	Fees any
+	Discounts      any
+	Fees           any
 	SubTotalAmount any
-	Taxes any
+	Taxes          any
 }
 
 type InvoiceSummaries_InvoiceSummaries_BaseCurrencyAmount_CurrencyExchangeDetails struct {
-	Rate any
+	Rate               any
 	SourceCurrencyCode any
 	TargetCurrencyCode any
 }
 
 type InvoiceSummaries_InvoiceSummaries_BaseCurrencyAmount struct {
-	AmountBreakdown any
-	CurrencyCode any
+	AmountBreakdown         any
+	CurrencyCode            any
 	CurrencyExchangeDetails any
-	TotalAmount any
-	TotalAmountBeforeTax any
+	TotalAmount             any
+	TotalAmountBeforeTax    any
 }
 
 type InvoiceSummaries_InvoiceSummaries_Entity struct {
-	BillingEntity any
+	BillingEntity   any
 	InvoicingEntity any
 }
 
 type InvoiceSummaries_InvoiceSummaries struct {
-	AccountId any
-	BaseCurrencyAmount any
-	BillSourceAccounts any
+	AccountId                    any
+	BaseCurrencyAmount           any
+	BillSourceAccounts           any
 	BillSourceAccountsTotalCount any
-	BillType any
-	BillingPeriod any
-	CommercialInvoiceId any
-	DueDate any
-	EinvoiceDeliveryStatus any
-	Entity any
-	InvoiceFrequency any
-	InvoiceId any
-	InvoiceType any
-	IssuedDate any
-	OriginalInvoiceId any
-	PaymentCurrencyAmount any
-	PurchaseOrderNumber any
-	ReceiverRole any
-	TaxAuthorityStatus any
-	TaxCurrencyAmount any
+	BillType                     any
+	BillingPeriod                any
+	CommercialInvoiceId          any
+	DueDate                      any
+	EinvoiceDeliveryStatus       any
+	Entity                       any
+	InvoiceFrequency             any
+	InvoiceId                    any
+	InvoiceType                  any
+	IssuedDate                   any
+	OriginalInvoiceId            any
+	PaymentCurrencyAmount        any
+	PurchaseOrderNumber          any
+	ReceiverRole                 any
+	TaxAuthorityStatus           any
+	TaxCurrencyAmount            any
 }
 
 type InvoiceSummaries_Selector struct {
 	ResourceType any
-	Value any
+	Value        any
 }
 
 var InvoiceSummaries_Filter_BillingPeriodFields = ubx.FieldMap{
-		"Month": ubx.FieldSpec{WireName: "month"},
-		"Year": ubx.FieldSpec{WireName: "year"},
-	}
+	"Month": ubx.FieldSpec{WireName: "month"},
+	"Year":  ubx.FieldSpec{WireName: "year"},
+}
 
 var InvoiceSummaries_Filter_TimeIntervalFields = ubx.FieldMap{
-		"EndDate": ubx.FieldSpec{WireName: "end_date"},
-		"StartDate": ubx.FieldSpec{WireName: "start_date"},
-	}
+	"EndDate":   ubx.FieldSpec{WireName: "end_date"},
+	"StartDate": ubx.FieldSpec{WireName: "start_date"},
+}
 
 var InvoiceSummaries_FilterFields = ubx.FieldMap{
-		"BillingPeriod": ubx.FieldSpec{
-			WireName: "billing_period",
-			Kind: "object",
-			Fields: InvoiceSummaries_Filter_BillingPeriodFields,
-		},
-		"InvoicingEntity": ubx.FieldSpec{WireName: "invoicing_entity"},
-		"ReceiverRole": ubx.FieldSpec{WireName: "receiver_role"},
-		"TimeInterval": ubx.FieldSpec{
-			WireName: "time_interval",
-			Kind: "object",
-			Fields: InvoiceSummaries_Filter_TimeIntervalFields,
-		},
-	}
+	"BillingPeriod": ubx.FieldSpec{
+		WireName: "billing_period",
+		Kind:     "object",
+		Fields:   InvoiceSummaries_Filter_BillingPeriodFields,
+	},
+	"InvoicingEntity": ubx.FieldSpec{WireName: "invoicing_entity"},
+	"ReceiverRole":    ubx.FieldSpec{WireName: "receiver_role"},
+	"TimeInterval": ubx.FieldSpec{
+		WireName: "time_interval",
+		Kind:     "object",
+		Fields:   InvoiceSummaries_Filter_TimeIntervalFields,
+	},
+}
 
 var InvoiceSummaries_SelectorFields = ubx.FieldMap{
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	"Value":        ubx.FieldSpec{WireName: "value"},
+}
 
 type InvoiceSummariesConfig struct {
 	// <p> Filters for your invoice summaries. </p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Specifies the invoice summary.</p>
 	Selector any
 }
 
 type InvoiceSummariesAttrs struct {
 	// <p> Filters for your invoice summaries. </p>
-	Filter any
+	Filter           any
 	InvoiceSummaries any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	// <p>Specifies the invoice summary.</p>
 	Selector any
 }
@@ -141,15 +141,15 @@ var InvoiceSummaries = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: InvoiceSummaries_FilterFields,
+			Kind:     "object",
+			Fields:   InvoiceSummaries_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"Selector": ubx.FieldSpec{
 			WireName: "selector",
-			Kind: "object",
-			Fields: InvoiceSummaries_SelectorFields,
+			Kind:     "object",
+			Fields:   InvoiceSummaries_SelectorFields,
 		},
 	},
 }

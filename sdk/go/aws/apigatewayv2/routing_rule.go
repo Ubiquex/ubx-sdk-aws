@@ -4,8 +4,8 @@ package apigatewayv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RoutingRule_Actions_InvokeApi struct {
-	ApiId any
-	Stage any
+	ApiId         any
+	Stage         any
 	StripBasePath any
 }
 
@@ -19,7 +19,7 @@ type RoutingRule_Conditions_MatchBasePaths struct {
 
 type RoutingRule_Conditions_MatchHeaders_AnyOf struct {
 	// The name of the HTTP request header that is evaluated by the 'any_of' header-matching condition to determine if the routing rule applies. (AI-inferred)
-	Header any
+	Header    any
 	ValueGlob any
 }
 
@@ -29,52 +29,52 @@ type RoutingRule_Conditions_MatchHeaders struct {
 
 type RoutingRule_Conditions struct {
 	MatchBasePaths any
-	MatchHeaders any
+	MatchHeaders   any
 }
 
 var RoutingRule_Actions_InvokeApiFields = ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
-		"Stage": ubx.FieldSpec{WireName: "stage"},
-		"StripBasePath": ubx.FieldSpec{WireName: "strip_base_path"},
-	}
+	"ApiId":         ubx.FieldSpec{WireName: "api_id"},
+	"Stage":         ubx.FieldSpec{WireName: "stage"},
+	"StripBasePath": ubx.FieldSpec{WireName: "strip_base_path"},
+}
 
 var RoutingRule_ActionsFields = ubx.FieldMap{
-		"InvokeApi": ubx.FieldSpec{
-			WireName: "invoke_api",
-			Kind: "object",
-			Fields: RoutingRule_Actions_InvokeApiFields,
-		},
-	}
+	"InvokeApi": ubx.FieldSpec{
+		WireName: "invoke_api",
+		Kind:     "object",
+		Fields:   RoutingRule_Actions_InvokeApiFields,
+	},
+}
 
 var RoutingRule_Conditions_MatchBasePathsFields = ubx.FieldMap{
-		"AnyOf": ubx.FieldSpec{WireName: "any_of"},
-	}
+	"AnyOf": ubx.FieldSpec{WireName: "any_of"},
+}
 
 var RoutingRule_Conditions_MatchHeaders_AnyOfFields = ubx.FieldMap{
-		"Header": ubx.FieldSpec{WireName: "header"},
-		"ValueGlob": ubx.FieldSpec{WireName: "value_glob"},
-	}
+	"Header":    ubx.FieldSpec{WireName: "header"},
+	"ValueGlob": ubx.FieldSpec{WireName: "value_glob"},
+}
 
 var RoutingRule_Conditions_MatchHeadersFields = ubx.FieldMap{
-		"AnyOf": ubx.FieldSpec{
-			WireName: "any_of",
-			Kind: "list",
-			Fields: RoutingRule_Conditions_MatchHeaders_AnyOfFields,
-		},
-	}
+	"AnyOf": ubx.FieldSpec{
+		WireName: "any_of",
+		Kind:     "list",
+		Fields:   RoutingRule_Conditions_MatchHeaders_AnyOfFields,
+	},
+}
 
 var RoutingRule_ConditionsFields = ubx.FieldMap{
-		"MatchBasePaths": ubx.FieldSpec{
-			WireName: "match_base_paths",
-			Kind: "object",
-			Fields: RoutingRule_Conditions_MatchBasePathsFields,
-		},
-		"MatchHeaders": ubx.FieldSpec{
-			WireName: "match_headers",
-			Kind: "object",
-			Fields: RoutingRule_Conditions_MatchHeadersFields,
-		},
-	}
+	"MatchBasePaths": ubx.FieldSpec{
+		WireName: "match_base_paths",
+		Kind:     "object",
+		Fields:   RoutingRule_Conditions_MatchBasePathsFields,
+	},
+	"MatchHeaders": ubx.FieldSpec{
+		WireName: "match_headers",
+		Kind:     "object",
+		Fields:   RoutingRule_Conditions_MatchHeadersFields,
+	},
+}
 
 type RoutingRuleConfig struct {
 	// The resulting action based on matching a routing rules condition. Only InvokeApi is supported.
@@ -107,15 +107,15 @@ var RoutingRule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Actions": ubx.FieldSpec{
 			WireName: "actions",
-			Kind: "list",
-			Fields: RoutingRule_ActionsFields,
+			Kind:     "list",
+			Fields:   RoutingRule_ActionsFields,
 		},
 		"Conditions": ubx.FieldSpec{
 			WireName: "conditions",
-			Kind: "list",
-			Fields: RoutingRule_ConditionsFields,
+			Kind:     "list",
+			Fields:   RoutingRule_ConditionsFields,
 		},
 		"DomainNameArn": ubx.FieldSpec{WireName: "domain_name_arn"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"Priority":      ubx.FieldSpec{WireName: "priority"},
 	},
 }

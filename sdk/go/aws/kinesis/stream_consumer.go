@@ -11,9 +11,9 @@ type StreamConsumer_Tags struct {
 }
 
 var StreamConsumer_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StreamConsumerConfig struct {
 	// The name of the Kinesis Stream Consumer. For a given Kinesis data stream, each consumer must have a unique name. However, consumer names don't have to be unique across data streams.
@@ -43,11 +43,11 @@ var StreamConsumer = ubx.ResourceBinding{
 	WireType: "aws_kinesis_stream_consumer",
 	Fields: ubx.FieldMap{
 		"ConsumerName": ubx.FieldSpec{WireName: "consumer_name"},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
+		"StreamArn":    ubx.FieldSpec{WireName: "stream_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: StreamConsumer_TagsFields,
+			Kind:     "list",
+			Fields:   StreamConsumer_TagsFields,
 		},
 	},
 }

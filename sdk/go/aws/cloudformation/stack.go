@@ -22,9 +22,9 @@ type Stack_Tags struct {
 }
 
 var Stack_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StackConfig struct {
 	// A list of capability values (e.g., CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND) that the stack operation requires to acknowledge creation or modification of IAM resources or to expand macros. (AI-inferred)
@@ -111,24 +111,24 @@ type StackAttrs struct {
 var Stack = ubx.ResourceBinding{
 	WireType: "aws_cloud_formation_stack",
 	Fields: ubx.FieldMap{
-		"Capabilities": ubx.FieldSpec{WireName: "capabilities"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisableRollback": ubx.FieldSpec{WireName: "disable_rollback"},
+		"Capabilities":                ubx.FieldSpec{WireName: "capabilities"},
+		"Description":                 ubx.FieldSpec{WireName: "description"},
+		"DisableRollback":             ubx.FieldSpec{WireName: "disable_rollback"},
 		"EnableTerminationProtection": ubx.FieldSpec{WireName: "enable_termination_protection"},
-		"NotificationArns": ubx.FieldSpec{WireName: "notification_arns"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"StackName": ubx.FieldSpec{WireName: "stack_name"},
-		"StackPolicyBody": ubx.FieldSpec{WireName: "stack_policy_body"},
-		"StackPolicyUrl": ubx.FieldSpec{WireName: "stack_policy_url"},
-		"StackStatusReason": ubx.FieldSpec{WireName: "stack_status_reason"},
+		"NotificationArns":            ubx.FieldSpec{WireName: "notification_arns"},
+		"Parameters":                  ubx.FieldSpec{WireName: "parameters"},
+		"RoleArn":                     ubx.FieldSpec{WireName: "role_arn"},
+		"StackName":                   ubx.FieldSpec{WireName: "stack_name"},
+		"StackPolicyBody":             ubx.FieldSpec{WireName: "stack_policy_body"},
+		"StackPolicyUrl":              ubx.FieldSpec{WireName: "stack_policy_url"},
+		"StackStatusReason":           ubx.FieldSpec{WireName: "stack_status_reason"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Stack_TagsFields,
+			Kind:     "list",
+			Fields:   Stack_TagsFields,
 		},
-		"TemplateBody": ubx.FieldSpec{WireName: "template_body"},
-		"TemplateUrl": ubx.FieldSpec{WireName: "template_url"},
+		"TemplateBody":     ubx.FieldSpec{WireName: "template_body"},
+		"TemplateUrl":      ubx.FieldSpec{WireName: "template_url"},
 		"TimeoutInMinutes": ubx.FieldSpec{WireName: "timeout_in_minutes"},
 	},
 }

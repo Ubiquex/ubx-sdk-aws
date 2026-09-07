@@ -17,14 +17,14 @@ type SpendingLimit_TimePeriod struct {
 }
 
 var SpendingLimit_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var SpendingLimit_TimePeriodFields = ubx.FieldMap{
-		"EndAt": ubx.FieldSpec{WireName: "end_at"},
-		"StartAt": ubx.FieldSpec{WireName: "start_at"},
-	}
+	"EndAt":   ubx.FieldSpec{WireName: "end_at"},
+	"StartAt": ubx.FieldSpec{WireName: "start_at"},
+}
 
 type SpendingLimitConfig struct {
 	// The Amazon Resource Name (ARN) of the quantum device to apply the spending limit to.
@@ -61,17 +61,17 @@ type SpendingLimitAttrs struct {
 var SpendingLimit = ubx.ResourceBinding{
 	WireType: "aws_braket_spending_limit",
 	Fields: ubx.FieldMap{
-		"DeviceArn": ubx.FieldSpec{WireName: "device_arn"},
+		"DeviceArn":     ubx.FieldSpec{WireName: "device_arn"},
 		"SpendingLimit": ubx.FieldSpec{WireName: "spending_limit"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SpendingLimit_TagsFields,
+			Kind:     "list",
+			Fields:   SpendingLimit_TagsFields,
 		},
 		"TimePeriod": ubx.FieldSpec{
 			WireName: "time_period",
-			Kind: "object",
-			Fields: SpendingLimit_TimePeriodFields,
+			Kind:     "object",
+			Fields:   SpendingLimit_TimePeriodFields,
 		},
 	},
 }

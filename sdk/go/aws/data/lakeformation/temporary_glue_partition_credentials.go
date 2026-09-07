@@ -12,37 +12,37 @@ type TemporaryGluePartitionCredentials_Partition struct {
 }
 
 var TemporaryGluePartitionCredentials_AuditContextFields = ubx.FieldMap{
-		"AdditionalAuditContext": ubx.FieldSpec{WireName: "additional_audit_context"},
-	}
+	"AdditionalAuditContext": ubx.FieldSpec{WireName: "additional_audit_context"},
+}
 
 var TemporaryGluePartitionCredentials_PartitionFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type TemporaryGluePartitionCredentialsConfig struct {
 	// <p>A structure used to include auditing information on the privileged API. </p>
-	AuditContext any
+	AuditContext    any
 	DurationSeconds any
 	// <p>Contains a list of values defining partitions.</p>
-	Partition any
-	Permissions any
+	Partition                any
+	Permissions              any
 	SupportedPermissionTypes any
-	TableArn any
+	TableArn                 any
 }
 
 type TemporaryGluePartitionCredentialsAttrs struct {
 	AccessKeyId any
 	// <p>A structure used to include auditing information on the privileged API. </p>
-	AuditContext any
+	AuditContext    any
 	DurationSeconds any
-	Expiration any
+	Expiration      any
 	// <p>Contains a list of values defining partitions.</p>
-	Partition any
-	Permissions any
-	SecretAccessKey any
-	SessionToken any
+	Partition                any
+	Permissions              any
+	SecretAccessKey          any
+	SessionToken             any
 	SupportedPermissionTypes any
-	TableArn any
+	TableArn                 any
 }
 
 var TemporaryGluePartitionCredentials = ubx.DataSourceBinding{
@@ -50,17 +50,17 @@ var TemporaryGluePartitionCredentials = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AuditContext": ubx.FieldSpec{
 			WireName: "audit_context",
-			Kind: "object",
-			Fields: TemporaryGluePartitionCredentials_AuditContextFields,
+			Kind:     "object",
+			Fields:   TemporaryGluePartitionCredentials_AuditContextFields,
 		},
 		"DurationSeconds": ubx.FieldSpec{WireName: "duration_seconds"},
 		"Partition": ubx.FieldSpec{
 			WireName: "partition",
-			Kind: "object",
-			Fields: TemporaryGluePartitionCredentials_PartitionFields,
+			Kind:     "object",
+			Fields:   TemporaryGluePartitionCredentials_PartitionFields,
 		},
-		"Permissions": ubx.FieldSpec{WireName: "permissions"},
+		"Permissions":              ubx.FieldSpec{WireName: "permissions"},
 		"SupportedPermissionTypes": ubx.FieldSpec{WireName: "supported_permission_types"},
-		"TableArn": ubx.FieldSpec{WireName: "table_arn"},
+		"TableArn":                 ubx.FieldSpec{WireName: "table_arn"},
 	},
 }

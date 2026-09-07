@@ -4,35 +4,35 @@ package appconfig
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Deployments_Items struct {
-	CompletedAt any
-	ConfigurationName any
-	ConfigurationProfileId any
-	ConfigurationVersion any
+	CompletedAt                 any
+	ConfigurationName           any
+	ConfigurationProfileId      any
+	ConfigurationVersion        any
 	DeploymentDurationInMinutes any
-	DeploymentNumber any
-	FinalBakeTimeInMinutes any
-	GrowthFactor any
-	GrowthType any
-	PercentageComplete any
-	StartedAt any
-	State any
-	Type any
-	VersionLabel any
+	DeploymentNumber            any
+	FinalBakeTimeInMinutes      any
+	GrowthFactor                any
+	GrowthType                  any
+	PercentageComplete          any
+	StartedAt                   any
+	State                       any
+	Type                        any
+	VersionLabel                any
 }
 
 type DeploymentsConfig struct {
 	ApplicationId any
 	EnvironmentId any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type DeploymentsAttrs struct {
 	ApplicationId any
 	EnvironmentId any
-	Items any
-	MaxResults any
-	NextToken any
+	Items         any
+	MaxResults    any
+	NextToken     any
 }
 
 var Deployments = ubx.DataSourceBinding{
@@ -40,7 +40,7 @@ var Deployments = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
 		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

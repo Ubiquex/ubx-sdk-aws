@@ -4,39 +4,39 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AutomationJobConfig struct {
-	AutomationGroupId any
-	AutomationId any
-	AwsAccountId any
-	IncludeInputPayload any
+	AutomationGroupId    any
+	AutomationId         any
+	AwsAccountId         any
+	IncludeInputPayload  any
 	IncludeOutputPayload any
-	JobId any
+	JobId                any
 }
 
 type AutomationJobAttrs struct {
-	Arn any
-	AutomationGroupId any
-	AutomationId any
-	AwsAccountId any
-	CreatedAt any
-	EndedAt any
-	IncludeInputPayload any
+	Arn                  any
+	AutomationGroupId    any
+	AutomationId         any
+	AwsAccountId         any
+	CreatedAt            any
+	EndedAt              any
+	IncludeInputPayload  any
 	IncludeOutputPayload any
-	InputPayload any
-	JobId any
-	JobStatus any
-	OutputPayload any
-	RequestId any
-	StartedAt any
+	InputPayload         any
+	JobId                any
+	JobStatus            any
+	OutputPayload        any
+	RequestId            any
+	StartedAt            any
 }
 
 var AutomationJob = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_automation_job",
 	Fields: ubx.FieldMap{
-		"AutomationGroupId": ubx.FieldSpec{WireName: "automation_group_id"},
-		"AutomationId": ubx.FieldSpec{WireName: "automation_id"},
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"IncludeInputPayload": ubx.FieldSpec{WireName: "include_input_payload"},
+		"AutomationGroupId":    ubx.FieldSpec{WireName: "automation_group_id"},
+		"AutomationId":         ubx.FieldSpec{WireName: "automation_id"},
+		"AwsAccountId":         ubx.FieldSpec{WireName: "aws_account_id"},
+		"IncludeInputPayload":  ubx.FieldSpec{WireName: "include_input_payload"},
 		"IncludeOutputPayload": ubx.FieldSpec{WireName: "include_output_payload"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":                ubx.FieldSpec{WireName: "job_id"},
 	},
 }

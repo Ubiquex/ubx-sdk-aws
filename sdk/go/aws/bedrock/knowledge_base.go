@@ -332,389 +332,389 @@ type KnowledgeBase_StorageConfiguration struct {
 }
 
 var KnowledgeBase_KnowledgeBaseConfiguration_KendraKnowledgeBaseConfigurationFields = ubx.FieldMap{
-		"KendraIndexArn": ubx.FieldSpec{WireName: "kendra_index_arn"},
-	}
+	"KendraIndexArn": ubx.FieldSpec{WireName: "kendra_index_arn"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_EmbeddingModelConfiguration_BedrockEmbeddingModelConfiguration_Audio_SegmentationConfigurationFields = ubx.FieldMap{
-		"FixedLengthDuration": ubx.FieldSpec{WireName: "fixed_length_duration"},
-	}
+	"FixedLengthDuration": ubx.FieldSpec{WireName: "fixed_length_duration"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_EmbeddingModelConfiguration_BedrockEmbeddingModelConfiguration_AudioFields = ubx.FieldMap{
-		"SegmentationConfiguration": ubx.FieldSpec{
-			WireName: "segmentation_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_EmbeddingModelConfiguration_BedrockEmbeddingModelConfiguration_Audio_SegmentationConfigurationFields,
-		},
-	}
+	"SegmentationConfiguration": ubx.FieldSpec{
+		WireName: "segmentation_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_EmbeddingModelConfiguration_BedrockEmbeddingModelConfiguration_Audio_SegmentationConfigurationFields,
+	},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_EmbeddingModelConfiguration_BedrockEmbeddingModelConfigurationFields = ubx.FieldMap{
-		"Audio": ubx.FieldSpec{
-			WireName: "audio",
-			Kind: "list",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_EmbeddingModelConfiguration_BedrockEmbeddingModelConfiguration_AudioFields,
-		},
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
-		"EmbeddingDataType": ubx.FieldSpec{WireName: "embedding_data_type"},
-		"Video": ubx.FieldSpec{
-			WireName: "video",
-			Kind: "list",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_EmbeddingModelConfiguration_BedrockEmbeddingModelConfiguration_AudioFields,
-		},
-	}
+	"Audio": ubx.FieldSpec{
+		WireName: "audio",
+		Kind:     "list",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_EmbeddingModelConfiguration_BedrockEmbeddingModelConfiguration_AudioFields,
+	},
+	"Dimensions":        ubx.FieldSpec{WireName: "dimensions"},
+	"EmbeddingDataType": ubx.FieldSpec{WireName: "embedding_data_type"},
+	"Video": ubx.FieldSpec{
+		WireName: "video",
+		Kind:     "list",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_EmbeddingModelConfiguration_BedrockEmbeddingModelConfiguration_AudioFields,
+	},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_EmbeddingModelConfigurationFields = ubx.FieldMap{
-		"BedrockEmbeddingModelConfiguration": ubx.FieldSpec{
-			WireName: "bedrock_embedding_model_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_EmbeddingModelConfiguration_BedrockEmbeddingModelConfigurationFields,
-		},
-	}
+	"BedrockEmbeddingModelConfiguration": ubx.FieldSpec{
+		WireName: "bedrock_embedding_model_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_EmbeddingModelConfiguration_BedrockEmbeddingModelConfigurationFields,
+	},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_ServerSideEncryptionConfigurationFields = ubx.FieldMap{
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-	}
+	"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfigurationFields = ubx.FieldMap{
-		"EmbeddingModelArn": ubx.FieldSpec{WireName: "embedding_model_arn"},
-		"EmbeddingModelConfiguration": ubx.FieldSpec{
-			WireName: "embedding_model_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_EmbeddingModelConfigurationFields,
-		},
-		"EmbeddingModelType": ubx.FieldSpec{WireName: "embedding_model_type"},
-		"ServerSideEncryptionConfiguration": ubx.FieldSpec{
-			WireName: "server_side_encryption_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_ServerSideEncryptionConfigurationFields,
-		},
-	}
+	"EmbeddingModelArn": ubx.FieldSpec{WireName: "embedding_model_arn"},
+	"EmbeddingModelConfiguration": ubx.FieldSpec{
+		WireName: "embedding_model_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_EmbeddingModelConfigurationFields,
+	},
+	"EmbeddingModelType": ubx.FieldSpec{WireName: "embedding_model_type"},
+	"ServerSideEncryptionConfiguration": ubx.FieldSpec{
+		WireName: "server_side_encryption_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_ServerSideEncryptionConfigurationFields,
+	},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryEngineConfiguration_ProvisionedConfiguration_AuthConfigurationFields = ubx.FieldMap{
-		"DatabaseUser": ubx.FieldSpec{WireName: "database_user"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UsernamePasswordSecretArn": ubx.FieldSpec{WireName: "username_password_secret_arn"},
-	}
+	"DatabaseUser":              ubx.FieldSpec{WireName: "database_user"},
+	"Type":                      ubx.FieldSpec{WireName: "type"},
+	"UsernamePasswordSecretArn": ubx.FieldSpec{WireName: "username_password_secret_arn"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryEngineConfiguration_ProvisionedConfigurationFields = ubx.FieldMap{
-		"AuthConfiguration": ubx.FieldSpec{
-			WireName: "auth_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryEngineConfiguration_ProvisionedConfiguration_AuthConfigurationFields,
-		},
-		"ClusterIdentifier": ubx.FieldSpec{WireName: "cluster_identifier"},
-	}
+	"AuthConfiguration": ubx.FieldSpec{
+		WireName: "auth_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryEngineConfiguration_ProvisionedConfiguration_AuthConfigurationFields,
+	},
+	"ClusterIdentifier": ubx.FieldSpec{WireName: "cluster_identifier"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryEngineConfiguration_ServerlessConfiguration_AuthConfigurationFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UsernamePasswordSecretArn": ubx.FieldSpec{WireName: "username_password_secret_arn"},
-	}
+	"Type":                      ubx.FieldSpec{WireName: "type"},
+	"UsernamePasswordSecretArn": ubx.FieldSpec{WireName: "username_password_secret_arn"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryEngineConfiguration_ServerlessConfigurationFields = ubx.FieldMap{
-		"AuthConfiguration": ubx.FieldSpec{
-			WireName: "auth_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryEngineConfiguration_ServerlessConfiguration_AuthConfigurationFields,
-		},
-		"WorkgroupArn": ubx.FieldSpec{WireName: "workgroup_arn"},
-	}
+	"AuthConfiguration": ubx.FieldSpec{
+		WireName: "auth_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryEngineConfiguration_ServerlessConfiguration_AuthConfigurationFields,
+	},
+	"WorkgroupArn": ubx.FieldSpec{WireName: "workgroup_arn"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryEngineConfigurationFields = ubx.FieldMap{
-		"ProvisionedConfiguration": ubx.FieldSpec{
-			WireName: "provisioned_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryEngineConfiguration_ProvisionedConfigurationFields,
-		},
-		"ServerlessConfiguration": ubx.FieldSpec{
-			WireName: "serverless_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryEngineConfiguration_ServerlessConfigurationFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ProvisionedConfiguration": ubx.FieldSpec{
+		WireName: "provisioned_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryEngineConfiguration_ProvisionedConfigurationFields,
+	},
+	"ServerlessConfiguration": ubx.FieldSpec{
+		WireName: "serverless_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryEngineConfiguration_ServerlessConfigurationFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryGenerationConfiguration_GenerationContext_CuratedQueriesFields = ubx.FieldMap{
-		"NaturalLanguage": ubx.FieldSpec{WireName: "natural_language"},
-		"Sql": ubx.FieldSpec{WireName: "sql"},
-	}
+	"NaturalLanguage": ubx.FieldSpec{WireName: "natural_language"},
+	"Sql":             ubx.FieldSpec{WireName: "sql"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryGenerationConfiguration_GenerationContext_Tables_ColumnsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Inclusion": ubx.FieldSpec{WireName: "inclusion"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Inclusion":   ubx.FieldSpec{WireName: "inclusion"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryGenerationConfiguration_GenerationContext_TablesFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryGenerationConfiguration_GenerationContext_Tables_ColumnsFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Inclusion": ubx.FieldSpec{WireName: "inclusion"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryGenerationConfiguration_GenerationContext_Tables_ColumnsFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Inclusion":   ubx.FieldSpec{WireName: "inclusion"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryGenerationConfiguration_GenerationContextFields = ubx.FieldMap{
-		"CuratedQueries": ubx.FieldSpec{
-			WireName: "curated_queries",
-			Kind: "list",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryGenerationConfiguration_GenerationContext_CuratedQueriesFields,
-		},
-		"Tables": ubx.FieldSpec{
-			WireName: "tables",
-			Kind: "list",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryGenerationConfiguration_GenerationContext_TablesFields,
-		},
-	}
+	"CuratedQueries": ubx.FieldSpec{
+		WireName: "curated_queries",
+		Kind:     "list",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryGenerationConfiguration_GenerationContext_CuratedQueriesFields,
+	},
+	"Tables": ubx.FieldSpec{
+		WireName: "tables",
+		Kind:     "list",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryGenerationConfiguration_GenerationContext_TablesFields,
+	},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryGenerationConfigurationFields = ubx.FieldMap{
-		"ExecutionTimeoutSeconds": ubx.FieldSpec{WireName: "execution_timeout_seconds"},
-		"GenerationContext": ubx.FieldSpec{
-			WireName: "generation_context",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryGenerationConfiguration_GenerationContextFields,
-		},
-	}
+	"ExecutionTimeoutSeconds": ubx.FieldSpec{WireName: "execution_timeout_seconds"},
+	"GenerationContext": ubx.FieldSpec{
+		WireName: "generation_context",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryGenerationConfiguration_GenerationContextFields,
+	},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_StorageConfigurations_AwsDataCatalogConfigurationFields = ubx.FieldMap{
-		"TableNames": ubx.FieldSpec{WireName: "table_names"},
-	}
+	"TableNames": ubx.FieldSpec{WireName: "table_names"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_StorageConfigurations_RedshiftConfigurationFields = ubx.FieldMap{
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-	}
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_StorageConfigurationsFields = ubx.FieldMap{
-		"AwsDataCatalogConfiguration": ubx.FieldSpec{
-			WireName: "aws_data_catalog_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_StorageConfigurations_AwsDataCatalogConfigurationFields,
-		},
-		"RedshiftConfiguration": ubx.FieldSpec{
-			WireName: "redshift_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_StorageConfigurations_RedshiftConfigurationFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AwsDataCatalogConfiguration": ubx.FieldSpec{
+		WireName: "aws_data_catalog_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_StorageConfigurations_AwsDataCatalogConfigurationFields,
+	},
+	"RedshiftConfiguration": ubx.FieldSpec{
+		WireName: "redshift_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_StorageConfigurations_RedshiftConfigurationFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfigurationFields = ubx.FieldMap{
-		"QueryEngineConfiguration": ubx.FieldSpec{
-			WireName: "query_engine_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryEngineConfigurationFields,
-		},
-		"QueryGenerationConfiguration": ubx.FieldSpec{
-			WireName: "query_generation_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryGenerationConfigurationFields,
-		},
-		"StorageConfigurations": ubx.FieldSpec{
-			WireName: "storage_configurations",
-			Kind: "list",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_StorageConfigurationsFields,
-		},
-	}
+	"QueryEngineConfiguration": ubx.FieldSpec{
+		WireName: "query_engine_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryEngineConfigurationFields,
+	},
+	"QueryGenerationConfiguration": ubx.FieldSpec{
+		WireName: "query_generation_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryGenerationConfigurationFields,
+	},
+	"StorageConfigurations": ubx.FieldSpec{
+		WireName: "storage_configurations",
+		Kind:     "list",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_StorageConfigurationsFields,
+	},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfigurationFields = ubx.FieldMap{
-		"RedshiftConfiguration": ubx.FieldSpec{
-			WireName: "redshift_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfigurationFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"RedshiftConfiguration": ubx.FieldSpec{
+		WireName: "redshift_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfigurationFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_VectorKnowledgeBaseConfiguration_SupplementalDataStorageConfiguration_SupplementalDataStorageLocations_S3LocationFields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_VectorKnowledgeBaseConfiguration_SupplementalDataStorageConfiguration_SupplementalDataStorageLocationsFields = ubx.FieldMap{
-		"S3Location": ubx.FieldSpec{
-			WireName: "s3_location",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_VectorKnowledgeBaseConfiguration_SupplementalDataStorageConfiguration_SupplementalDataStorageLocations_S3LocationFields,
-		},
-		"SupplementalDataStorageLocationType": ubx.FieldSpec{WireName: "supplemental_data_storage_location_type"},
-	}
+	"S3Location": ubx.FieldSpec{
+		WireName: "s3_location",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_VectorKnowledgeBaseConfiguration_SupplementalDataStorageConfiguration_SupplementalDataStorageLocations_S3LocationFields,
+	},
+	"SupplementalDataStorageLocationType": ubx.FieldSpec{WireName: "supplemental_data_storage_location_type"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_VectorKnowledgeBaseConfiguration_SupplementalDataStorageConfigurationFields = ubx.FieldMap{
-		"SupplementalDataStorageLocations": ubx.FieldSpec{
-			WireName: "supplemental_data_storage_locations",
-			Kind: "list",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_VectorKnowledgeBaseConfiguration_SupplementalDataStorageConfiguration_SupplementalDataStorageLocationsFields,
-		},
-	}
+	"SupplementalDataStorageLocations": ubx.FieldSpec{
+		WireName: "supplemental_data_storage_locations",
+		Kind:     "list",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_VectorKnowledgeBaseConfiguration_SupplementalDataStorageConfiguration_SupplementalDataStorageLocationsFields,
+	},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_VectorKnowledgeBaseConfigurationFields = ubx.FieldMap{
-		"EmbeddingModelArn": ubx.FieldSpec{WireName: "embedding_model_arn"},
-		"EmbeddingModelConfiguration": ubx.FieldSpec{
-			WireName: "embedding_model_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_EmbeddingModelConfigurationFields,
-		},
-		"SupplementalDataStorageConfiguration": ubx.FieldSpec{
-			WireName: "supplemental_data_storage_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_VectorKnowledgeBaseConfiguration_SupplementalDataStorageConfigurationFields,
-		},
-	}
+	"EmbeddingModelArn": ubx.FieldSpec{WireName: "embedding_model_arn"},
+	"EmbeddingModelConfiguration": ubx.FieldSpec{
+		WireName: "embedding_model_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_EmbeddingModelConfigurationFields,
+	},
+	"SupplementalDataStorageConfiguration": ubx.FieldSpec{
+		WireName: "supplemental_data_storage_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_VectorKnowledgeBaseConfiguration_SupplementalDataStorageConfigurationFields,
+	},
+}
 
 var KnowledgeBase_KnowledgeBaseConfigurationFields = ubx.FieldMap{
-		"KendraKnowledgeBaseConfiguration": ubx.FieldSpec{
-			WireName: "kendra_knowledge_base_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_KendraKnowledgeBaseConfigurationFields,
-		},
-		"ManagedKnowledgeBaseConfiguration": ubx.FieldSpec{
-			WireName: "managed_knowledge_base_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfigurationFields,
-		},
-		"SqlKnowledgeBaseConfiguration": ubx.FieldSpec{
-			WireName: "sql_knowledge_base_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfigurationFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"VectorKnowledgeBaseConfiguration": ubx.FieldSpec{
-			WireName: "vector_knowledge_base_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_VectorKnowledgeBaseConfigurationFields,
-		},
-	}
+	"KendraKnowledgeBaseConfiguration": ubx.FieldSpec{
+		WireName: "kendra_knowledge_base_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_KendraKnowledgeBaseConfigurationFields,
+	},
+	"ManagedKnowledgeBaseConfiguration": ubx.FieldSpec{
+		WireName: "managed_knowledge_base_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfigurationFields,
+	},
+	"SqlKnowledgeBaseConfiguration": ubx.FieldSpec{
+		WireName: "sql_knowledge_base_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfigurationFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+	"VectorKnowledgeBaseConfiguration": ubx.FieldSpec{
+		WireName: "vector_knowledge_base_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_VectorKnowledgeBaseConfigurationFields,
+	},
+}
 
 var KnowledgeBase_StorageConfiguration_MongoDbAtlasConfiguration_FieldMappingFields = ubx.FieldMap{
-		"MetadataField": ubx.FieldSpec{WireName: "metadata_field"},
-		"TextField": ubx.FieldSpec{WireName: "text_field"},
-		"VectorField": ubx.FieldSpec{WireName: "vector_field"},
-	}
+	"MetadataField": ubx.FieldSpec{WireName: "metadata_field"},
+	"TextField":     ubx.FieldSpec{WireName: "text_field"},
+	"VectorField":   ubx.FieldSpec{WireName: "vector_field"},
+}
 
 var KnowledgeBase_StorageConfiguration_MongoDbAtlasConfigurationFields = ubx.FieldMap{
-		"CollectionName": ubx.FieldSpec{WireName: "collection_name"},
-		"CredentialsSecretArn": ubx.FieldSpec{WireName: "credentials_secret_arn"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"EndpointServiceName": ubx.FieldSpec{WireName: "endpoint_service_name"},
-		"FieldMapping": ubx.FieldSpec{
-			WireName: "field_mapping",
-			Kind: "object",
-			Fields: KnowledgeBase_StorageConfiguration_MongoDbAtlasConfiguration_FieldMappingFields,
-		},
-		"TextIndexName": ubx.FieldSpec{WireName: "text_index_name"},
-		"VectorIndexName": ubx.FieldSpec{WireName: "vector_index_name"},
-	}
+	"CollectionName":       ubx.FieldSpec{WireName: "collection_name"},
+	"CredentialsSecretArn": ubx.FieldSpec{WireName: "credentials_secret_arn"},
+	"DatabaseName":         ubx.FieldSpec{WireName: "database_name"},
+	"Endpoint":             ubx.FieldSpec{WireName: "endpoint"},
+	"EndpointServiceName":  ubx.FieldSpec{WireName: "endpoint_service_name"},
+	"FieldMapping": ubx.FieldSpec{
+		WireName: "field_mapping",
+		Kind:     "object",
+		Fields:   KnowledgeBase_StorageConfiguration_MongoDbAtlasConfiguration_FieldMappingFields,
+	},
+	"TextIndexName":   ubx.FieldSpec{WireName: "text_index_name"},
+	"VectorIndexName": ubx.FieldSpec{WireName: "vector_index_name"},
+}
 
 var KnowledgeBase_StorageConfiguration_NeptuneAnalyticsConfiguration_FieldMappingFields = ubx.FieldMap{
-		"MetadataField": ubx.FieldSpec{WireName: "metadata_field"},
-		"TextField": ubx.FieldSpec{WireName: "text_field"},
-	}
+	"MetadataField": ubx.FieldSpec{WireName: "metadata_field"},
+	"TextField":     ubx.FieldSpec{WireName: "text_field"},
+}
 
 var KnowledgeBase_StorageConfiguration_NeptuneAnalyticsConfigurationFields = ubx.FieldMap{
-		"FieldMapping": ubx.FieldSpec{
-			WireName: "field_mapping",
-			Kind: "object",
-			Fields: KnowledgeBase_StorageConfiguration_NeptuneAnalyticsConfiguration_FieldMappingFields,
-		},
-		"GraphArn": ubx.FieldSpec{WireName: "graph_arn"},
-	}
+	"FieldMapping": ubx.FieldSpec{
+		WireName: "field_mapping",
+		Kind:     "object",
+		Fields:   KnowledgeBase_StorageConfiguration_NeptuneAnalyticsConfiguration_FieldMappingFields,
+	},
+	"GraphArn": ubx.FieldSpec{WireName: "graph_arn"},
+}
 
 var KnowledgeBase_StorageConfiguration_OpensearchManagedClusterConfigurationFields = ubx.FieldMap{
-		"DomainArn": ubx.FieldSpec{WireName: "domain_arn"},
-		"DomainEndpoint": ubx.FieldSpec{WireName: "domain_endpoint"},
-		"FieldMapping": ubx.FieldSpec{
-			WireName: "field_mapping",
-			Kind: "object",
-			Fields: KnowledgeBase_StorageConfiguration_MongoDbAtlasConfiguration_FieldMappingFields,
-		},
-		"VectorIndexName": ubx.FieldSpec{WireName: "vector_index_name"},
-	}
+	"DomainArn":      ubx.FieldSpec{WireName: "domain_arn"},
+	"DomainEndpoint": ubx.FieldSpec{WireName: "domain_endpoint"},
+	"FieldMapping": ubx.FieldSpec{
+		WireName: "field_mapping",
+		Kind:     "object",
+		Fields:   KnowledgeBase_StorageConfiguration_MongoDbAtlasConfiguration_FieldMappingFields,
+	},
+	"VectorIndexName": ubx.FieldSpec{WireName: "vector_index_name"},
+}
 
 var KnowledgeBase_StorageConfiguration_OpensearchServerlessConfigurationFields = ubx.FieldMap{
-		"CollectionArn": ubx.FieldSpec{WireName: "collection_arn"},
-		"FieldMapping": ubx.FieldSpec{
-			WireName: "field_mapping",
-			Kind: "object",
-			Fields: KnowledgeBase_StorageConfiguration_MongoDbAtlasConfiguration_FieldMappingFields,
-		},
-		"VectorIndexName": ubx.FieldSpec{WireName: "vector_index_name"},
-	}
+	"CollectionArn": ubx.FieldSpec{WireName: "collection_arn"},
+	"FieldMapping": ubx.FieldSpec{
+		WireName: "field_mapping",
+		Kind:     "object",
+		Fields:   KnowledgeBase_StorageConfiguration_MongoDbAtlasConfiguration_FieldMappingFields,
+	},
+	"VectorIndexName": ubx.FieldSpec{WireName: "vector_index_name"},
+}
 
 var KnowledgeBase_StorageConfiguration_PineconeConfigurationFields = ubx.FieldMap{
-		"ConnectionString": ubx.FieldSpec{WireName: "connection_string"},
-		"CredentialsSecretArn": ubx.FieldSpec{WireName: "credentials_secret_arn"},
-		"FieldMapping": ubx.FieldSpec{
-			WireName: "field_mapping",
-			Kind: "object",
-			Fields: KnowledgeBase_StorageConfiguration_NeptuneAnalyticsConfiguration_FieldMappingFields,
-		},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"ConnectionString":     ubx.FieldSpec{WireName: "connection_string"},
+	"CredentialsSecretArn": ubx.FieldSpec{WireName: "credentials_secret_arn"},
+	"FieldMapping": ubx.FieldSpec{
+		WireName: "field_mapping",
+		Kind:     "object",
+		Fields:   KnowledgeBase_StorageConfiguration_NeptuneAnalyticsConfiguration_FieldMappingFields,
+	},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+}
 
 var KnowledgeBase_StorageConfiguration_RdsConfiguration_FieldMappingFields = ubx.FieldMap{
-		"CustomMetadataField": ubx.FieldSpec{WireName: "custom_metadata_field"},
-		"MetadataField": ubx.FieldSpec{WireName: "metadata_field"},
-		"PrimaryKeyField": ubx.FieldSpec{WireName: "primary_key_field"},
-		"TextField": ubx.FieldSpec{WireName: "text_field"},
-		"VectorField": ubx.FieldSpec{WireName: "vector_field"},
-	}
+	"CustomMetadataField": ubx.FieldSpec{WireName: "custom_metadata_field"},
+	"MetadataField":       ubx.FieldSpec{WireName: "metadata_field"},
+	"PrimaryKeyField":     ubx.FieldSpec{WireName: "primary_key_field"},
+	"TextField":           ubx.FieldSpec{WireName: "text_field"},
+	"VectorField":         ubx.FieldSpec{WireName: "vector_field"},
+}
 
 var KnowledgeBase_StorageConfiguration_RdsConfigurationFields = ubx.FieldMap{
-		"CredentialsSecretArn": ubx.FieldSpec{WireName: "credentials_secret_arn"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"FieldMapping": ubx.FieldSpec{
-			WireName: "field_mapping",
-			Kind: "object",
-			Fields: KnowledgeBase_StorageConfiguration_RdsConfiguration_FieldMappingFields,
-		},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"CredentialsSecretArn": ubx.FieldSpec{WireName: "credentials_secret_arn"},
+	"DatabaseName":         ubx.FieldSpec{WireName: "database_name"},
+	"FieldMapping": ubx.FieldSpec{
+		WireName: "field_mapping",
+		Kind:     "object",
+		Fields:   KnowledgeBase_StorageConfiguration_RdsConfiguration_FieldMappingFields,
+	},
+	"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+	"TableName":   ubx.FieldSpec{WireName: "table_name"},
+}
 
 var KnowledgeBase_StorageConfiguration_S3VectorsConfigurationFields = ubx.FieldMap{
-		"IndexArn": ubx.FieldSpec{WireName: "index_arn"},
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
-		"VectorBucketArn": ubx.FieldSpec{WireName: "vector_bucket_arn"},
-	}
+	"IndexArn":        ubx.FieldSpec{WireName: "index_arn"},
+	"IndexName":       ubx.FieldSpec{WireName: "index_name"},
+	"VectorBucketArn": ubx.FieldSpec{WireName: "vector_bucket_arn"},
+}
 
 var KnowledgeBase_StorageConfigurationFields = ubx.FieldMap{
-		"MongoDbAtlasConfiguration": ubx.FieldSpec{
-			WireName: "mongo_db_atlas_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_StorageConfiguration_MongoDbAtlasConfigurationFields,
-		},
-		"NeptuneAnalyticsConfiguration": ubx.FieldSpec{
-			WireName: "neptune_analytics_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_StorageConfiguration_NeptuneAnalyticsConfigurationFields,
-		},
-		"OpensearchManagedClusterConfiguration": ubx.FieldSpec{
-			WireName: "opensearch_managed_cluster_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_StorageConfiguration_OpensearchManagedClusterConfigurationFields,
-		},
-		"OpensearchServerlessConfiguration": ubx.FieldSpec{
-			WireName: "opensearch_serverless_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_StorageConfiguration_OpensearchServerlessConfigurationFields,
-		},
-		"PineconeConfiguration": ubx.FieldSpec{
-			WireName: "pinecone_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_StorageConfiguration_PineconeConfigurationFields,
-		},
-		"RdsConfiguration": ubx.FieldSpec{
-			WireName: "rds_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_StorageConfiguration_RdsConfigurationFields,
-		},
-		"S3VectorsConfiguration": ubx.FieldSpec{
-			WireName: "s3_vectors_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_StorageConfiguration_S3VectorsConfigurationFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"MongoDbAtlasConfiguration": ubx.FieldSpec{
+		WireName: "mongo_db_atlas_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_StorageConfiguration_MongoDbAtlasConfigurationFields,
+	},
+	"NeptuneAnalyticsConfiguration": ubx.FieldSpec{
+		WireName: "neptune_analytics_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_StorageConfiguration_NeptuneAnalyticsConfigurationFields,
+	},
+	"OpensearchManagedClusterConfiguration": ubx.FieldSpec{
+		WireName: "opensearch_managed_cluster_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_StorageConfiguration_OpensearchManagedClusterConfigurationFields,
+	},
+	"OpensearchServerlessConfiguration": ubx.FieldSpec{
+		WireName: "opensearch_serverless_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_StorageConfiguration_OpensearchServerlessConfigurationFields,
+	},
+	"PineconeConfiguration": ubx.FieldSpec{
+		WireName: "pinecone_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_StorageConfiguration_PineconeConfigurationFields,
+	},
+	"RdsConfiguration": ubx.FieldSpec{
+		WireName: "rds_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_StorageConfiguration_RdsConfigurationFields,
+	},
+	"S3VectorsConfiguration": ubx.FieldSpec{
+		WireName: "s3_vectors_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_StorageConfiguration_S3VectorsConfigurationFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type KnowledgeBaseConfig struct {
 	// Description of the Resource.
@@ -764,15 +764,15 @@ var KnowledgeBase = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"KnowledgeBaseConfiguration": ubx.FieldSpec{
 			WireName: "knowledge_base_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfigurationFields,
+			Kind:     "object",
+			Fields:   KnowledgeBase_KnowledgeBaseConfigurationFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"StorageConfiguration": ubx.FieldSpec{
 			WireName: "storage_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_StorageConfigurationFields,
+			Kind:     "object",
+			Fields:   KnowledgeBase_StorageConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

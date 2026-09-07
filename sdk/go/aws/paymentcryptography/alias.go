@@ -21,6 +21,6 @@ var Alias = ubx.ResourceBinding{
 	WireType: "aws_payment_cryptography_alias",
 	Fields: ubx.FieldMap{
 		"AliasName": ubx.FieldSpec{WireName: "alias_name"},
-		"KeyArn": ubx.FieldSpec{WireName: "key_arn"},
+		"KeyArn":    ubx.FieldSpec{WireName: "key_arn"},
 	},
 }

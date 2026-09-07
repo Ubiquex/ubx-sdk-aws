@@ -4,30 +4,30 @@ package cloudtrail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Tags_ResourceTagList_TagsList struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Tags_ResourceTagList struct {
 	ResourceId any
-	TagsList any
+	TagsList   any
 }
 
 type TagsConfig struct {
-	NextToken any
+	NextToken      any
 	ResourceIdList any
 }
 
 type TagsAttrs struct {
-	NextToken any
-	ResourceIdList any
+	NextToken       any
+	ResourceIdList  any
 	ResourceTagList any
 }
 
 var Tags = ubx.DataSourceBinding{
 	WireType: "aws_cloudtrail_tags",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"ResourceIdList": ubx.FieldSpec{WireName: "resource_id_list"},
 	},
 }

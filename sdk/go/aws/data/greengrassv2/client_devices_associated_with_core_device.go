@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClientDevicesAssociatedWithCoreDevice_AssociatedClientDevices struct {
 	AssociationTimestamp any
-	ThingName any
+	ThingName            any
 }
 
 type ClientDevicesAssociatedWithCoreDeviceConfig struct {
 	CoreDeviceThingName any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 }
 
 type ClientDevicesAssociatedWithCoreDeviceAttrs struct {
 	AssociatedClientDevices any
-	CoreDeviceThingName any
-	MaxResults any
-	NextToken any
+	CoreDeviceThingName     any
+	MaxResults              any
+	NextToken               any
 }
 
 var ClientDevicesAssociatedWithCoreDevice = ubx.DataSourceBinding{
 	WireType: "aws_greengrassv2_client_devices_associated_with_core_device",
 	Fields: ubx.FieldMap{
 		"CoreDeviceThingName": ubx.FieldSpec{WireName: "core_device_thing_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 	},
 }

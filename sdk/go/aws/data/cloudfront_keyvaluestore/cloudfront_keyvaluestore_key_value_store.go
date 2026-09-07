@@ -8,13 +8,13 @@ type CloudfrontKeyvaluestoreKeyValueStoreConfig struct {
 }
 
 type CloudfrontKeyvaluestoreKeyValueStoreAttrs struct {
-	Created any
-	Etag any
-	FailureReason any
-	ItemCount any
-	KvsArn any
-	LastModified any
-	Status any
+	Created          any
+	Etag             any
+	FailureReason    any
+	ItemCount        any
+	KvsArn           any
+	LastModified     any
+	Status           any
 	TotalSizeInBytes any
 }
 

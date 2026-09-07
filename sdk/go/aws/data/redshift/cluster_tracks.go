@@ -8,35 +8,35 @@ type ClusterTracks_MaintenanceTracks_UpdateTargets_SupportedOperations struct {
 }
 
 type ClusterTracks_MaintenanceTracks_UpdateTargets struct {
-	DatabaseVersion any
+	DatabaseVersion      any
 	MaintenanceTrackName any
-	SupportedOperations any
+	SupportedOperations  any
 }
 
 type ClusterTracks_MaintenanceTracks struct {
-	DatabaseVersion any
+	DatabaseVersion      any
 	MaintenanceTrackName any
-	UpdateTargets any
+	UpdateTargets        any
 }
 
 type ClusterTracksConfig struct {
 	MaintenanceTrackName any
-	Marker any
-	MaxRecords any
+	Marker               any
+	MaxRecords           any
 }
 
 type ClusterTracksAttrs struct {
 	MaintenanceTrackName any
-	MaintenanceTracks any
-	Marker any
-	MaxRecords any
+	MaintenanceTracks    any
+	Marker               any
+	MaxRecords           any
 }
 
 var ClusterTracks = ubx.DataSourceBinding{
 	WireType: "aws_redshift_cluster_tracks",
 	Fields: ubx.FieldMap{
 		"MaintenanceTrackName": ubx.FieldSpec{WireName: "maintenance_track_name"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
+		"Marker":               ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":           ubx.FieldSpec{WireName: "max_records"},
 	},
 }

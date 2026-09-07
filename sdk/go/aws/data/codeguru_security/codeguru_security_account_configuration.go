@@ -17,6 +17,5 @@ type CodeguruSecurityAccountConfigurationAttrs struct {
 
 var CodeguruSecurityAccountConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_codeguru_security_account_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,7 +4,7 @@ package license_manager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseManagerLicenseConfigurationsForOrganization_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -14,63 +14,63 @@ type LicenseManagerLicenseConfigurationsForOrganization_LicenseConfigurations_Au
 
 type LicenseManagerLicenseConfigurationsForOrganization_LicenseConfigurations_ConsumedLicenseSummaryList struct {
 	ConsumedLicenses any
-	ResourceType any
+	ResourceType     any
 }
 
 type LicenseManagerLicenseConfigurationsForOrganization_LicenseConfigurations_ManagedResourceSummaryList struct {
 	AssociationCount any
-	ResourceType any
+	ResourceType     any
 }
 
 type LicenseManagerLicenseConfigurationsForOrganization_LicenseConfigurations_ProductInformationList_ProductInformationFilterList struct {
 	ProductInformationFilterComparator any
-	ProductInformationFilterName any
-	ProductInformationFilterValue any
+	ProductInformationFilterName       any
+	ProductInformationFilterValue      any
 }
 
 type LicenseManagerLicenseConfigurationsForOrganization_LicenseConfigurations_ProductInformationList struct {
 	ProductInformationFilterList any
-	ResourceType any
+	ResourceType                 any
 }
 
 type LicenseManagerLicenseConfigurationsForOrganization_LicenseConfigurations struct {
 	AutomatedDiscoveryInformation any
-	ConsumedLicenseSummaryList any
-	ConsumedLicenses any
-	Description any
-	DisassociateWhenNotFound any
-	LicenseConfigurationArn any
-	LicenseConfigurationId any
-	LicenseCount any
-	LicenseCountHardLimit any
-	LicenseCountingType any
-	LicenseExpiry any
-	LicenseRules any
-	ManagedResourceSummaryList any
-	Name any
-	OwnerAccountId any
-	ProductInformationList any
-	Status any
+	ConsumedLicenseSummaryList    any
+	ConsumedLicenses              any
+	Description                   any
+	DisassociateWhenNotFound      any
+	LicenseConfigurationArn       any
+	LicenseConfigurationId        any
+	LicenseCount                  any
+	LicenseCountHardLimit         any
+	LicenseCountingType           any
+	LicenseExpiry                 any
+	LicenseRules                  any
+	ManagedResourceSummaryList    any
+	Name                          any
+	OwnerAccountId                any
+	ProductInformationList        any
+	Status                        any
 }
 
 var LicenseManagerLicenseConfigurationsForOrganization_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type LicenseManagerLicenseConfigurationsForOrganizationConfig struct {
-	Filters any
+	Filters                  any
 	LicenseConfigurationArns any
-	MaxResults any
-	NextToken any
+	MaxResults               any
+	NextToken                any
 }
 
 type LicenseManagerLicenseConfigurationsForOrganizationAttrs struct {
-	Filters any
+	Filters                  any
 	LicenseConfigurationArns any
-	LicenseConfigurations any
-	MaxResults any
-	NextToken any
+	LicenseConfigurations    any
+	MaxResults               any
+	NextToken                any
 }
 
 var LicenseManagerLicenseConfigurationsForOrganization = ubx.DataSourceBinding{
@@ -78,11 +78,11 @@ var LicenseManagerLicenseConfigurationsForOrganization = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: LicenseManagerLicenseConfigurationsForOrganization_FiltersFields,
+			Kind:     "list",
+			Fields:   LicenseManagerLicenseConfigurationsForOrganization_FiltersFields,
 		},
 		"LicenseConfigurationArns": ubx.FieldSpec{WireName: "license_configuration_arns"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":               ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                ubx.FieldSpec{WireName: "next_token"},
 	},
 }

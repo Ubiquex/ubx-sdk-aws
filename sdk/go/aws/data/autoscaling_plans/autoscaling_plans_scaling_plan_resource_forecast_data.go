@@ -5,42 +5,42 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AutoscalingPlansScalingPlanResourceForecastData_Datapoints struct {
 	Timestamp any
-	Value any
+	Value     any
 }
 
 type AutoscalingPlansScalingPlanResourceForecastDataConfig struct {
-	EndTime any
-	ForecastDataType any
-	ResourceId any
-	ScalableDimension any
-	ScalingPlanName any
+	EndTime            any
+	ForecastDataType   any
+	ResourceId         any
+	ScalableDimension  any
+	ScalingPlanName    any
 	ScalingPlanVersion any
-	ServiceNamespace any
-	StartTime any
+	ServiceNamespace   any
+	StartTime          any
 }
 
 type AutoscalingPlansScalingPlanResourceForecastDataAttrs struct {
-	Datapoints any
-	EndTime any
-	ForecastDataType any
-	ResourceId any
-	ScalableDimension any
-	ScalingPlanName any
+	Datapoints         any
+	EndTime            any
+	ForecastDataType   any
+	ResourceId         any
+	ScalableDimension  any
+	ScalingPlanName    any
 	ScalingPlanVersion any
-	ServiceNamespace any
-	StartTime any
+	ServiceNamespace   any
+	StartTime          any
 }
 
 var AutoscalingPlansScalingPlanResourceForecastData = ubx.DataSourceBinding{
 	WireType: "aws_autoscaling_plans_scaling_plan_resource_forecast_data",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"ForecastDataType": ubx.FieldSpec{WireName: "forecast_data_type"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ScalableDimension": ubx.FieldSpec{WireName: "scalable_dimension"},
-		"ScalingPlanName": ubx.FieldSpec{WireName: "scaling_plan_name"},
+		"EndTime":            ubx.FieldSpec{WireName: "end_time"},
+		"ForecastDataType":   ubx.FieldSpec{WireName: "forecast_data_type"},
+		"ResourceId":         ubx.FieldSpec{WireName: "resource_id"},
+		"ScalableDimension":  ubx.FieldSpec{WireName: "scalable_dimension"},
+		"ScalingPlanName":    ubx.FieldSpec{WireName: "scaling_plan_name"},
 		"ScalingPlanVersion": ubx.FieldSpec{WireName: "scaling_plan_version"},
-		"ServiceNamespace": ubx.FieldSpec{WireName: "service_namespace"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"ServiceNamespace":   ubx.FieldSpec{WireName: "service_namespace"},
+		"StartTime":          ubx.FieldSpec{WireName: "start_time"},
 	},
 }

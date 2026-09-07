@@ -30,9 +30,9 @@ type ClusterSecurityGroupIngressAttrs struct {
 var ClusterSecurityGroupIngress = ubx.ResourceBinding{
 	WireType: "aws_redshift_cluster_security_group_ingress",
 	Fields: ubx.FieldMap{
-		"Cidrip": ubx.FieldSpec{WireName: "cidrip"},
+		"Cidrip":                   ubx.FieldSpec{WireName: "cidrip"},
 		"ClusterSecurityGroupName": ubx.FieldSpec{WireName: "cluster_security_group_name"},
-		"Ec2SecurityGroupName": ubx.FieldSpec{WireName: "ec2_security_group_name"},
-		"Ec2SecurityGroupOwnerId": ubx.FieldSpec{WireName: "ec2_security_group_owner_id"},
+		"Ec2SecurityGroupName":     ubx.FieldSpec{WireName: "ec2_security_group_name"},
+		"Ec2SecurityGroupOwnerId":  ubx.FieldSpec{WireName: "ec2_security_group_owner_id"},
 	},
 }

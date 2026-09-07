@@ -4,36 +4,36 @@ package kendra
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Experiences_SummaryItems_Endpoints struct {
-	Endpoint any
+	Endpoint     any
 	EndpointType any
 }
 
 type Experiences_SummaryItems struct {
 	CreatedAt any
 	Endpoints any
-	Id any
-	Name any
-	Status any
+	Id        any
+	Name      any
+	Status    any
 }
 
 type ExperiencesConfig struct {
-	IndexId any
+	IndexId    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ExperiencesAttrs struct {
-	IndexId any
-	MaxResults any
-	NextToken any
+	IndexId      any
+	MaxResults   any
+	NextToken    any
 	SummaryItems any
 }
 
 var Experiences = ubx.DataSourceBinding{
 	WireType: "aws_kendra_experiences",
 	Fields: ubx.FieldMap{
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
+		"IndexId":    ubx.FieldSpec{WireName: "index_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

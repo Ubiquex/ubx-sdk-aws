@@ -34,33 +34,33 @@ type BridgeSource_NetworkSource struct {
 }
 
 var BridgeSource_FlowSource_FlowVpcInterfaceAttachmentFields = ubx.FieldMap{
-		"VpcInterfaceName": ubx.FieldSpec{WireName: "vpc_interface_name"},
-	}
+	"VpcInterfaceName": ubx.FieldSpec{WireName: "vpc_interface_name"},
+}
 
 var BridgeSource_FlowSourceFields = ubx.FieldMap{
-		"FlowArn": ubx.FieldSpec{WireName: "flow_arn"},
-		"FlowVpcInterfaceAttachment": ubx.FieldSpec{
-			WireName: "flow_vpc_interface_attachment",
-			Kind: "object",
-			Fields: BridgeSource_FlowSource_FlowVpcInterfaceAttachmentFields,
-		},
-	}
+	"FlowArn": ubx.FieldSpec{WireName: "flow_arn"},
+	"FlowVpcInterfaceAttachment": ubx.FieldSpec{
+		WireName: "flow_vpc_interface_attachment",
+		Kind:     "object",
+		Fields:   BridgeSource_FlowSource_FlowVpcInterfaceAttachmentFields,
+	},
+}
 
 var BridgeSource_NetworkSource_MulticastSourceSettingsFields = ubx.FieldMap{
-		"MulticastSourceIp": ubx.FieldSpec{WireName: "multicast_source_ip"},
-	}
+	"MulticastSourceIp": ubx.FieldSpec{WireName: "multicast_source_ip"},
+}
 
 var BridgeSource_NetworkSourceFields = ubx.FieldMap{
-		"MulticastIp": ubx.FieldSpec{WireName: "multicast_ip"},
-		"MulticastSourceSettings": ubx.FieldSpec{
-			WireName: "multicast_source_settings",
-			Kind: "object",
-			Fields: BridgeSource_NetworkSource_MulticastSourceSettingsFields,
-		},
-		"NetworkName": ubx.FieldSpec{WireName: "network_name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-	}
+	"MulticastIp": ubx.FieldSpec{WireName: "multicast_ip"},
+	"MulticastSourceSettings": ubx.FieldSpec{
+		WireName: "multicast_source_settings",
+		Kind:     "object",
+		Fields:   BridgeSource_NetworkSource_MulticastSourceSettingsFields,
+	},
+	"NetworkName": ubx.FieldSpec{WireName: "network_name"},
+	"Port":        ubx.FieldSpec{WireName: "port"},
+	"Protocol":    ubx.FieldSpec{WireName: "protocol"},
+}
 
 type BridgeSourceConfig struct {
 	// The Amazon Resource Number (ARN) of the bridge.
@@ -90,14 +90,14 @@ var BridgeSource = ubx.ResourceBinding{
 		"BridgeArn": ubx.FieldSpec{WireName: "bridge_arn"},
 		"FlowSource": ubx.FieldSpec{
 			WireName: "flow_source",
-			Kind: "object",
-			Fields: BridgeSource_FlowSourceFields,
+			Kind:     "object",
+			Fields:   BridgeSource_FlowSourceFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"NetworkSource": ubx.FieldSpec{
 			WireName: "network_source",
-			Kind: "object",
-			Fields: BridgeSource_NetworkSourceFields,
+			Kind:     "object",
+			Fields:   BridgeSource_NetworkSourceFields,
 		},
 	},
 }

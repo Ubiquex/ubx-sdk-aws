@@ -8,38 +8,38 @@ type Accounts_Accounts_SigninDelegateGroups struct {
 }
 
 type Accounts_Accounts struct {
-	AccountId any
-	AccountStatus any
-	AccountType any
-	AwsAccountId any
-	CreatedTimestamp any
-	DefaultLicense any
-	Name any
+	AccountId            any
+	AccountStatus        any
+	AccountType          any
+	AwsAccountId         any
+	CreatedTimestamp     any
+	DefaultLicense       any
+	Name                 any
 	SigninDelegateGroups any
-	SupportedLicenses any
+	SupportedLicenses    any
 }
 
 type AccountsConfig struct {
 	MaxResults any
-	Name any
-	NextToken any
-	UserEmail any
+	Name       any
+	NextToken  any
+	UserEmail  any
 }
 
 type AccountsAttrs struct {
-	Accounts any
+	Accounts   any
 	MaxResults any
-	Name any
-	NextToken any
-	UserEmail any
+	Name       any
+	NextToken  any
+	UserEmail  any
 }
 
 var Accounts = ubx.DataSourceBinding{
 	WireType: "aws_chime_accounts",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"UserEmail": ubx.FieldSpec{WireName: "user_email"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"UserEmail":  ubx.FieldSpec{WireName: "user_email"},
 	},
 }

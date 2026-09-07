@@ -4,31 +4,31 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TimeSeriesConfig struct {
-	Alias any
-	AssetId any
-	PropertyId any
+	Alias         any
+	AssetId       any
+	PropertyId    any
 	WorkspaceName any
 }
 
 type TimeSeriesAttrs struct {
-	Alias any
-	AssetId any
-	DataType any
-	DataTypeSpec any
-	PropertyId any
-	TimeSeriesArn any
-	TimeSeriesCreationDate any
-	TimeSeriesId any
+	Alias                    any
+	AssetId                  any
+	DataType                 any
+	DataTypeSpec             any
+	PropertyId               any
+	TimeSeriesArn            any
+	TimeSeriesCreationDate   any
+	TimeSeriesId             any
 	TimeSeriesLastUpdateDate any
-	WorkspaceName any
+	WorkspaceName            any
 }
 
 var TimeSeries = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_time_series",
 	Fields: ubx.FieldMap{
-		"Alias": ubx.FieldSpec{WireName: "alias"},
-		"AssetId": ubx.FieldSpec{WireName: "asset_id"},
-		"PropertyId": ubx.FieldSpec{WireName: "property_id"},
+		"Alias":         ubx.FieldSpec{WireName: "alias"},
+		"AssetId":       ubx.FieldSpec{WireName: "asset_id"},
+		"PropertyId":    ubx.FieldSpec{WireName: "property_id"},
 		"WorkspaceName": ubx.FieldSpec{WireName: "workspace_name"},
 	},
 }

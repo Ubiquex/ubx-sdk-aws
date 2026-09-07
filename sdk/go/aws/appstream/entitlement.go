@@ -11,9 +11,9 @@ type Entitlement_Attributes struct {
 }
 
 var Entitlement_AttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EntitlementConfig struct {
 	// Specifies whether the entitlement grants access to all applications in the stack ('ALL') or only to applications explicitly associated with the entitlement ('ASSOCIATED'). (AI-inferred)
@@ -51,11 +51,11 @@ var Entitlement = ubx.ResourceBinding{
 		"AppVisibility": ubx.FieldSpec{WireName: "app_visibility"},
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "list",
-			Fields: Entitlement_AttributesFields,
+			Kind:     "list",
+			Fields:   Entitlement_AttributesFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"StackName": ubx.FieldSpec{WireName: "stack_name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"StackName":   ubx.FieldSpec{WireName: "stack_name"},
 	},
 }

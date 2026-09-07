@@ -11,9 +11,9 @@ type ServerCertificate_Tags struct {
 }
 
 var ServerCertificate_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ServerCertificateConfig struct {
 	// The PEM-encoded certificate body (the public key certificate) for the IAM server certificate, used to enable TLS/SSL connections for AWS services. (AI-inferred)
@@ -50,15 +50,15 @@ type ServerCertificateAttrs struct {
 var ServerCertificate = ubx.ResourceBinding{
 	WireType: "aws_iam_server_certificate",
 	Fields: ubx.FieldMap{
-		"CertificateBody": ubx.FieldSpec{WireName: "certificate_body"},
-		"CertificateChain": ubx.FieldSpec{WireName: "certificate_chain"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
+		"CertificateBody":       ubx.FieldSpec{WireName: "certificate_body"},
+		"CertificateChain":      ubx.FieldSpec{WireName: "certificate_chain"},
+		"Path":                  ubx.FieldSpec{WireName: "path"},
+		"PrivateKey":            ubx.FieldSpec{WireName: "private_key"},
 		"ServerCertificateName": ubx.FieldSpec{WireName: "server_certificate_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ServerCertificate_TagsFields,
+			Kind:     "list",
+			Fields:   ServerCertificate_TagsFields,
 		},
 	},
 }

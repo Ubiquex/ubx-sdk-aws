@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ThingsInBillingGroupConfig struct {
 	BillingGroupName any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 type ThingsInBillingGroupAttrs struct {
 	BillingGroupName any
-	MaxResults any
-	NextToken any
-	Things any
+	MaxResults       any
+	NextToken        any
+	Things           any
 }
 
 var ThingsInBillingGroup = ubx.DataSourceBinding{
 	WireType: "aws_iot_things_in_billing_group",
 	Fields: ubx.FieldMap{
 		"BillingGroupName": ubx.FieldSpec{WireName: "billing_group_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

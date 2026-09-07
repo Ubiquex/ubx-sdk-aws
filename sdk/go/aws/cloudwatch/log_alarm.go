@@ -13,7 +13,7 @@ type LogAlarm_ScheduledQueryConfiguration_ScheduleConfiguration struct {
 }
 
 type LogAlarm_ScheduledQueryConfiguration_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -40,37 +40,37 @@ type LogAlarm_WarmUpConfiguration struct {
 }
 
 var LogAlarm_ScheduledQueryConfiguration_ScheduleConfigurationFields = ubx.FieldMap{
-		"EndTimeOffset": ubx.FieldSpec{WireName: "end_time_offset"},
-		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
-		"StartTimeOffset": ubx.FieldSpec{WireName: "start_time_offset"},
-	}
+	"EndTimeOffset":      ubx.FieldSpec{WireName: "end_time_offset"},
+	"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
+	"StartTimeOffset":    ubx.FieldSpec{WireName: "start_time_offset"},
+}
 
 var LogAlarm_ScheduledQueryConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var LogAlarm_ScheduledQueryConfigurationFields = ubx.FieldMap{
-		"AggregationExpression": ubx.FieldSpec{WireName: "aggregation_expression"},
-		"LogGroupIdentifiers": ubx.FieldSpec{WireName: "log_group_identifiers"},
-		"QueryString": ubx.FieldSpec{WireName: "query_string"},
-		"ScheduleConfiguration": ubx.FieldSpec{
-			WireName: "schedule_configuration",
-			Kind: "object",
-			Fields: LogAlarm_ScheduledQueryConfiguration_ScheduleConfigurationFields,
-		},
-		"ScheduledQueryRoleArn": ubx.FieldSpec{WireName: "scheduled_query_role_arn"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: LogAlarm_ScheduledQueryConfiguration_TagsFields,
-		},
-	}
+	"AggregationExpression": ubx.FieldSpec{WireName: "aggregation_expression"},
+	"LogGroupIdentifiers":   ubx.FieldSpec{WireName: "log_group_identifiers"},
+	"QueryString":           ubx.FieldSpec{WireName: "query_string"},
+	"ScheduleConfiguration": ubx.FieldSpec{
+		WireName: "schedule_configuration",
+		Kind:     "object",
+		Fields:   LogAlarm_ScheduledQueryConfiguration_ScheduleConfigurationFields,
+	},
+	"ScheduledQueryRoleArn": ubx.FieldSpec{WireName: "scheduled_query_role_arn"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   LogAlarm_ScheduledQueryConfiguration_TagsFields,
+	},
+}
 
 var LogAlarm_WarmUpConfigurationFields = ubx.FieldMap{
-		"OnlyStartEvaluatingAfterWarmUpPeriodEnds": ubx.FieldSpec{WireName: "only_start_evaluating_after_warm_up_period_ends"},
-		"WarmUpPeriodDurationInMinutes": ubx.FieldSpec{WireName: "warm_up_period_duration_in_minutes"},
-	}
+	"OnlyStartEvaluatingAfterWarmUpPeriodEnds": ubx.FieldSpec{WireName: "only_start_evaluating_after_warm_up_period_ends"},
+	"WarmUpPeriodDurationInMinutes":            ubx.FieldSpec{WireName: "warm_up_period_duration_in_minutes"},
+}
 
 type LogAlarmConfig struct {
 	// The number of log lines to include in alarm notifications. Valid values are 0 to 50.
@@ -147,33 +147,33 @@ type LogAlarmAttrs struct {
 var LogAlarm = ubx.ResourceBinding{
 	WireType: "aws_cloud_watch_log_alarm",
 	Fields: ubx.FieldMap{
-		"ActionLogLineCount": ubx.FieldSpec{WireName: "action_log_line_count"},
-		"ActionLogLineRoleArn": ubx.FieldSpec{WireName: "action_log_line_role_arn"},
-		"ActionsEnabled": ubx.FieldSpec{WireName: "actions_enabled"},
-		"AlarmActions": ubx.FieldSpec{WireName: "alarm_actions"},
-		"AlarmDescription": ubx.FieldSpec{WireName: "alarm_description"},
-		"AlarmName": ubx.FieldSpec{WireName: "alarm_name"},
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
+		"ActionLogLineCount":      ubx.FieldSpec{WireName: "action_log_line_count"},
+		"ActionLogLineRoleArn":    ubx.FieldSpec{WireName: "action_log_line_role_arn"},
+		"ActionsEnabled":          ubx.FieldSpec{WireName: "actions_enabled"},
+		"AlarmActions":            ubx.FieldSpec{WireName: "alarm_actions"},
+		"AlarmDescription":        ubx.FieldSpec{WireName: "alarm_description"},
+		"AlarmName":               ubx.FieldSpec{WireName: "alarm_name"},
+		"ComparisonOperator":      ubx.FieldSpec{WireName: "comparison_operator"},
 		"InsufficientDataActions": ubx.FieldSpec{WireName: "insufficient_data_actions"},
-		"Okactions": ubx.FieldSpec{WireName: "okactions"},
-		"QueryResultsToAlarm": ubx.FieldSpec{WireName: "query_results_to_alarm"},
-		"QueryResultsToEvaluate": ubx.FieldSpec{WireName: "query_results_to_evaluate"},
+		"Okactions":               ubx.FieldSpec{WireName: "okactions"},
+		"QueryResultsToAlarm":     ubx.FieldSpec{WireName: "query_results_to_alarm"},
+		"QueryResultsToEvaluate":  ubx.FieldSpec{WireName: "query_results_to_evaluate"},
 		"ScheduledQueryConfiguration": ubx.FieldSpec{
 			WireName: "scheduled_query_configuration",
-			Kind: "object",
-			Fields: LogAlarm_ScheduledQueryConfigurationFields,
+			Kind:     "object",
+			Fields:   LogAlarm_ScheduledQueryConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LogAlarm_ScheduledQueryConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   LogAlarm_ScheduledQueryConfiguration_TagsFields,
 		},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
+		"Threshold":        ubx.FieldSpec{WireName: "threshold"},
 		"TreatMissingData": ubx.FieldSpec{WireName: "treat_missing_data"},
 		"WarmUpConfiguration": ubx.FieldSpec{
 			WireName: "warm_up_configuration",
-			Kind: "object",
-			Fields: LogAlarm_WarmUpConfigurationFields,
+			Kind:     "object",
+			Fields:   LogAlarm_WarmUpConfigurationFields,
 		},
 	},
 }

@@ -4,17 +4,17 @@ package aidevops
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type JournalRecords_Records_UserReference struct {
-	UserId any
+	UserId   any
 	UserType any
 }
 
 type JournalRecords_Records struct {
-	AgentSpaceId any
-	Content any
-	CreatedAt any
-	ExecutionId any
-	RecordId any
-	RecordType any
+	AgentSpaceId  any
+	Content       any
+	CreatedAt     any
+	ExecutionId   any
+	RecordId      any
+	RecordType    any
 	UserReference any
 }
 
@@ -22,11 +22,11 @@ type JournalRecordsConfig struct {
 	AgentSpaceId any
 	// <p>Generic resource identifier (allows alphanumeric characters, hyphens, and underscores; 1-128 characters)</p>
 	ExecutionId any
-	Limit any
+	Limit       any
 	// <p>Pagination token for list operations (1-2048 characters)</p>
 	NextToken any
 	// <p>Sort order options for journal operations</p>
-	Order any
+	Order      any
 	RecordType any
 }
 
@@ -34,11 +34,11 @@ type JournalRecordsAttrs struct {
 	AgentSpaceId any
 	// <p>Generic resource identifier (allows alphanumeric characters, hyphens, and underscores; 1-128 characters)</p>
 	ExecutionId any
-	Limit any
+	Limit       any
 	// <p>Pagination token for list operations (1-2048 characters)</p>
 	NextToken any
 	// <p>Sort order options for journal operations</p>
-	Order any
+	Order      any
 	RecordType any
 	// <p>List of journal records</p>
 	Records any
@@ -48,10 +48,10 @@ var JournalRecords = ubx.DataSourceBinding{
 	WireType: "aws_aidevops_journal_records",
 	Fields: ubx.FieldMap{
 		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
-		"ExecutionId": ubx.FieldSpec{WireName: "execution_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"RecordType": ubx.FieldSpec{WireName: "record_type"},
+		"ExecutionId":  ubx.FieldSpec{WireName: "execution_id"},
+		"Limit":        ubx.FieldSpec{WireName: "limit"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"Order":        ubx.FieldSpec{WireName: "order"},
+		"RecordType":   ubx.FieldSpec{WireName: "record_type"},
 	},
 }

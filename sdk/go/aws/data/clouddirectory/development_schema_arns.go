@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DevelopmentSchemaArnsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DevelopmentSchemaArnsAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	SchemaArns any
 }
 
@@ -18,6 +18,6 @@ var DevelopmentSchemaArns = ubx.DataSourceBinding{
 	WireType: "aws_clouddirectory_development_schema_arns",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

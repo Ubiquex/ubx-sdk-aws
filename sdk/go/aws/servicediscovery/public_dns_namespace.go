@@ -20,34 +20,34 @@ type PublicDnsNamespace_Properties struct {
 
 type PublicDnsNamespace_Tags struct {
 	// The key of a tag assigned to the public DNS namespace, used to organize and identify the resource for cost allocation and management. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var PublicDnsNamespace_Properties_DnsProperties_SoaFields = ubx.FieldMap{
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-	}
+	"Ttl": ubx.FieldSpec{WireName: "ttl"},
+}
 
 var PublicDnsNamespace_Properties_DnsPropertiesFields = ubx.FieldMap{
-		"Soa": ubx.FieldSpec{
-			WireName: "soa",
-			Kind: "object",
-			Fields: PublicDnsNamespace_Properties_DnsProperties_SoaFields,
-		},
-	}
+	"Soa": ubx.FieldSpec{
+		WireName: "soa",
+		Kind:     "object",
+		Fields:   PublicDnsNamespace_Properties_DnsProperties_SoaFields,
+	},
+}
 
 var PublicDnsNamespace_PropertiesFields = ubx.FieldMap{
-		"DnsProperties": ubx.FieldSpec{
-			WireName: "dns_properties",
-			Kind: "object",
-			Fields: PublicDnsNamespace_Properties_DnsPropertiesFields,
-		},
-	}
+	"DnsProperties": ubx.FieldSpec{
+		WireName: "dns_properties",
+		Kind:     "object",
+		Fields:   PublicDnsNamespace_Properties_DnsPropertiesFields,
+	},
+}
 
 var PublicDnsNamespace_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PublicDnsNamespaceConfig struct {
 	// A description for the namespace.
@@ -81,16 +81,16 @@ var PublicDnsNamespace = ubx.ResourceBinding{
 	WireType: "aws_service_discovery_public_dns_namespace",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Properties": ubx.FieldSpec{
 			WireName: "properties",
-			Kind: "object",
-			Fields: PublicDnsNamespace_PropertiesFields,
+			Kind:     "object",
+			Fields:   PublicDnsNamespace_PropertiesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PublicDnsNamespace_TagsFields,
+			Kind:     "list",
+			Fields:   PublicDnsNamespace_TagsFields,
 		},
 	},
 }

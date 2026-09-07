@@ -4,55 +4,55 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcEndpointAssociations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type VpcEndpointAssociations_VpcEndpointAssociations_DnsEntry struct {
-	DnsName any
+	DnsName      any
 	HostedZoneId any
 }
 
 type VpcEndpointAssociations_VpcEndpointAssociations_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type VpcEndpointAssociations_VpcEndpointAssociations struct {
 	AssociatedResourceAccessibility any
-	AssociatedResourceArn any
-	DnsEntry any
-	FailureCode any
-	FailureReason any
-	Id any
-	PrivateDnsEntry any
-	ResourceConfigurationGroupArn any
-	ServiceNetworkArn any
-	ServiceNetworkName any
-	Tags any
-	VpcEndpointId any
+	AssociatedResourceArn           any
+	DnsEntry                        any
+	FailureCode                     any
+	FailureReason                   any
+	Id                              any
+	PrivateDnsEntry                 any
+	ResourceConfigurationGroupArn   any
+	ServiceNetworkArn               any
+	ServiceNetworkName              any
+	Tags                            any
+	VpcEndpointId                   any
 }
 
 var VpcEndpointAssociations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type VpcEndpointAssociationsConfig struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun         any
+	Filters        any
+	MaxResults     any
+	NextToken      any
 	VpcEndpointIds any
 }
 
 type VpcEndpointAssociationsAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                  any
+	Filters                 any
+	MaxResults              any
+	NextToken               any
 	VpcEndpointAssociations any
-	VpcEndpointIds any
+	VpcEndpointIds          any
 }
 
 var VpcEndpointAssociations = ubx.DataSourceBinding{
@@ -61,11 +61,11 @@ var VpcEndpointAssociations = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: VpcEndpointAssociations_FiltersFields,
+			Kind:     "list",
+			Fields:   VpcEndpointAssociations_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"VpcEndpointIds": ubx.FieldSpec{WireName: "vpc_endpoint_ids"},
 	},
 }

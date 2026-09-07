@@ -8,12 +8,12 @@ type ClientCertificateConfig struct {
 }
 
 type ClientCertificateAttrs struct {
-	ClientCertificateId any
-	CreatedDate any
-	Description any
-	ExpirationDate any
+	ClientCertificateId   any
+	CreatedDate           any
+	Description           any
+	ExpirationDate        any
 	PemEncodedCertificate any
-	Tags any
+	Tags                  any
 }
 
 var ClientCertificate = ubx.DataSourceBinding{

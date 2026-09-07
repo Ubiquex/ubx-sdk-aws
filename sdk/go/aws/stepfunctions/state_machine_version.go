@@ -26,8 +26,8 @@ type StateMachineVersionAttrs struct {
 var StateMachineVersion = ubx.ResourceBinding{
 	WireType: "aws_step_functions_state_machine_version",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"StateMachineArn": ubx.FieldSpec{WireName: "state_machine_arn"},
+		"Description":            ubx.FieldSpec{WireName: "description"},
+		"StateMachineArn":        ubx.FieldSpec{WireName: "state_machine_arn"},
 		"StateMachineRevisionId": ubx.FieldSpec{WireName: "state_machine_revision_id"},
 	},
 }

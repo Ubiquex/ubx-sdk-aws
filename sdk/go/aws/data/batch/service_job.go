@@ -4,20 +4,20 @@ package batch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceJob_Attempts_ServiceResourceId struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type ServiceJob_Attempts struct {
 	ServiceResourceId any
-	StartedAt any
-	StatusReason any
-	StoppedAt any
+	StartedAt         any
+	StatusReason      any
+	StoppedAt         any
 }
 
 type ServiceJob_CapacityUsage struct {
 	CapacityUnit any
-	Quantity any
+	Quantity     any
 }
 
 type ServiceJob_LatestAttempt struct {
@@ -30,17 +30,17 @@ type ServiceJob_PreemptionConfiguration struct {
 }
 
 type ServiceJob_PreemptionSummary struct {
-	PreemptedAttemptCount any
+	PreemptedAttemptCount   any
 	RecentPreemptedAttempts any
 }
 
 type ServiceJob_RetryStrategy_EvaluateOnExit struct {
-	Action any
+	Action         any
 	OnStatusReason any
 }
 
 type ServiceJob_RetryStrategy struct {
-	Attempts any
+	Attempts       any
 	EvaluateOnExit any
 }
 
@@ -53,33 +53,33 @@ type ServiceJobConfig struct {
 }
 
 type ServiceJobAttrs struct {
-	Attempts any
+	Attempts      any
 	CapacityUsage any
-	CreatedAt any
-	IsTerminated any
-	JobArn any
-	JobId any
-	JobName any
-	JobQueue any
+	CreatedAt     any
+	IsTerminated  any
+	JobArn        any
+	JobId         any
+	JobName       any
+	JobQueue      any
 	// <p>Information about the latest attempt of a service job. A Service job can transition from <code>SCHEDULED</code> back to <code>RUNNABLE</code> state when they encounter capacity constraints.</p>
 	LatestAttempt any
 	// <p>Specifies the service job behavior when preempted.</p>
 	PreemptionConfiguration any
 	// <p>Summarizes the preemptions of the service job. This field appears on a service job when it has been preempted.</p>
 	PreemptionSummary any
-	QuotaShareName any
+	QuotaShareName    any
 	// <p>The retry strategy for service jobs. This defines how many times to retry a failed service job and under what conditions. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service-job-retries.html">Service job retry strategies</a> in the <i>Batch User Guide</i>.</p>
-	RetryStrategy any
-	ScheduledAt any
-	SchedulingPriority any
-	ServiceJobType any
+	RetryStrategy         any
+	ScheduledAt           any
+	SchedulingPriority    any
+	ServiceJobType        any
 	ServiceRequestPayload any
-	ShareIdentifier any
-	StartedAt any
-	Status any
-	StatusReason any
-	StoppedAt any
-	Tags any
+	ShareIdentifier       any
+	StartedAt             any
+	Status                any
+	StatusReason          any
+	StoppedAt             any
+	Tags                  any
 	// <p>The timeout configuration for service jobs. </p>
 	TimeoutConfig any
 }

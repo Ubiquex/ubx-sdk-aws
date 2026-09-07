@@ -4,48 +4,48 @@ package workdocs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DocumentVersions_DocumentVersions struct {
-	ContentCreatedTimestamp any
+	ContentCreatedTimestamp  any
 	ContentModifiedTimestamp any
-	ContentType any
-	CreatedTimestamp any
-	CreatorId any
-	Id any
-	ModifiedTimestamp any
-	Name any
-	Signature any
-	Size any
-	Source any
-	Status any
-	Thumbnail any
+	ContentType              any
+	CreatedTimestamp         any
+	CreatorId                any
+	Id                       any
+	ModifiedTimestamp        any
+	Name                     any
+	Signature                any
+	Size                     any
+	Source                   any
+	Status                   any
+	Thumbnail                any
 }
 
 type DocumentVersionsConfig struct {
 	AuthenticationToken any
-	DocumentId any
-	Fields any
-	Include any
-	Limit any
-	Marker any
+	DocumentId          any
+	Fields              any
+	Include             any
+	Limit               any
+	Marker              any
 }
 
 type DocumentVersionsAttrs struct {
 	AuthenticationToken any
-	DocumentId any
-	DocumentVersions any
-	Fields any
-	Include any
-	Limit any
-	Marker any
+	DocumentId          any
+	DocumentVersions    any
+	Fields              any
+	Include             any
+	Limit               any
+	Marker              any
 }
 
 var DocumentVersions = ubx.DataSourceBinding{
 	WireType: "aws_workdocs_document_versions",
 	Fields: ubx.FieldMap{
 		"AuthenticationToken": ubx.FieldSpec{WireName: "authentication_token"},
-		"DocumentId": ubx.FieldSpec{WireName: "document_id"},
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"Include": ubx.FieldSpec{WireName: "include"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"DocumentId":          ubx.FieldSpec{WireName: "document_id"},
+		"Fields":              ubx.FieldSpec{WireName: "fields"},
+		"Include":             ubx.FieldSpec{WireName: "include"},
+		"Limit":               ubx.FieldSpec{WireName: "limit"},
+		"Marker":              ubx.FieldSpec{WireName: "marker"},
 	},
 }

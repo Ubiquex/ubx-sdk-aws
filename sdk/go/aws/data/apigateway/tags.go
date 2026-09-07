@@ -4,23 +4,23 @@ package apigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsConfig struct {
-	Limit any
-	Position any
+	Limit       any
+	Position    any
 	ResourceArn any
 }
 
 type TagsAttrs struct {
-	Limit any
-	Position any
+	Limit       any
+	Position    any
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var Tags = ubx.DataSourceBinding{
 	WireType: "aws_apigateway_tags",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Position": ubx.FieldSpec{WireName: "position"},
+		"Limit":       ubx.FieldSpec{WireName: "limit"},
+		"Position":    ubx.FieldSpec{WireName: "position"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

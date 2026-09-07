@@ -155,145 +155,145 @@ type Agent_PromptOverrideConfiguration struct {
 }
 
 var Agent_ActionGroups_ActionGroupExecutorFields = ubx.FieldMap{
-		"CustomControl": ubx.FieldSpec{WireName: "custom_control"},
-		"Lambda": ubx.FieldSpec{WireName: "lambda"},
-	}
+	"CustomControl": ubx.FieldSpec{WireName: "custom_control"},
+	"Lambda":        ubx.FieldSpec{WireName: "lambda"},
+}
 
 var Agent_ActionGroups_ApiSchema_S3Fields = ubx.FieldMap{
-		"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
-		"S3ObjectKey": ubx.FieldSpec{WireName: "s3_object_key"},
-	}
+	"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
+	"S3ObjectKey":  ubx.FieldSpec{WireName: "s3_object_key"},
+}
 
 var Agent_ActionGroups_ApiSchemaFields = ubx.FieldMap{
-		"Payload": ubx.FieldSpec{WireName: "payload"},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Agent_ActionGroups_ApiSchema_S3Fields,
-		},
-	}
+	"Payload": ubx.FieldSpec{WireName: "payload"},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Agent_ActionGroups_ApiSchema_S3Fields,
+	},
+}
 
 var Agent_ActionGroups_FunctionSchema_FunctionsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"RequireConfirmation": ubx.FieldSpec{WireName: "require_confirmation"},
-	}
+	"Description":         ubx.FieldSpec{WireName: "description"},
+	"Name":                ubx.FieldSpec{WireName: "name"},
+	"Parameters":          ubx.FieldSpec{WireName: "parameters"},
+	"RequireConfirmation": ubx.FieldSpec{WireName: "require_confirmation"},
+}
 
 var Agent_ActionGroups_FunctionSchemaFields = ubx.FieldMap{
-		"Functions": ubx.FieldSpec{
-			WireName: "functions",
-			Kind: "list",
-			Fields: Agent_ActionGroups_FunctionSchema_FunctionsFields,
-		},
-	}
+	"Functions": ubx.FieldSpec{
+		WireName: "functions",
+		Kind:     "list",
+		Fields:   Agent_ActionGroups_FunctionSchema_FunctionsFields,
+	},
+}
 
 var Agent_ActionGroupsFields = ubx.FieldMap{
-		"ActionGroupExecutor": ubx.FieldSpec{
-			WireName: "action_group_executor",
-			Kind: "object",
-			Fields: Agent_ActionGroups_ActionGroupExecutorFields,
-		},
-		"ActionGroupName": ubx.FieldSpec{WireName: "action_group_name"},
-		"ActionGroupState": ubx.FieldSpec{WireName: "action_group_state"},
-		"ApiSchema": ubx.FieldSpec{
-			WireName: "api_schema",
-			Kind: "object",
-			Fields: Agent_ActionGroups_ApiSchemaFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FunctionSchema": ubx.FieldSpec{
-			WireName: "function_schema",
-			Kind: "object",
-			Fields: Agent_ActionGroups_FunctionSchemaFields,
-		},
-		"ParentActionGroupSignature": ubx.FieldSpec{WireName: "parent_action_group_signature"},
-		"SkipResourceInUseCheckOnDelete": ubx.FieldSpec{WireName: "skip_resource_in_use_check_on_delete"},
-	}
+	"ActionGroupExecutor": ubx.FieldSpec{
+		WireName: "action_group_executor",
+		Kind:     "object",
+		Fields:   Agent_ActionGroups_ActionGroupExecutorFields,
+	},
+	"ActionGroupName":  ubx.FieldSpec{WireName: "action_group_name"},
+	"ActionGroupState": ubx.FieldSpec{WireName: "action_group_state"},
+	"ApiSchema": ubx.FieldSpec{
+		WireName: "api_schema",
+		Kind:     "object",
+		Fields:   Agent_ActionGroups_ApiSchemaFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"FunctionSchema": ubx.FieldSpec{
+		WireName: "function_schema",
+		Kind:     "object",
+		Fields:   Agent_ActionGroups_FunctionSchemaFields,
+	},
+	"ParentActionGroupSignature":     ubx.FieldSpec{WireName: "parent_action_group_signature"},
+	"SkipResourceInUseCheckOnDelete": ubx.FieldSpec{WireName: "skip_resource_in_use_check_on_delete"},
+}
 
 var Agent_AgentCollaborators_AgentDescriptorFields = ubx.FieldMap{
-		"AliasArn": ubx.FieldSpec{WireName: "alias_arn"},
-	}
+	"AliasArn": ubx.FieldSpec{WireName: "alias_arn"},
+}
 
 var Agent_AgentCollaboratorsFields = ubx.FieldMap{
-		"AgentDescriptor": ubx.FieldSpec{
-			WireName: "agent_descriptor",
-			Kind: "object",
-			Fields: Agent_AgentCollaborators_AgentDescriptorFields,
-		},
-		"CollaborationInstruction": ubx.FieldSpec{WireName: "collaboration_instruction"},
-		"CollaboratorName": ubx.FieldSpec{WireName: "collaborator_name"},
-		"RelayConversationHistory": ubx.FieldSpec{WireName: "relay_conversation_history"},
-	}
+	"AgentDescriptor": ubx.FieldSpec{
+		WireName: "agent_descriptor",
+		Kind:     "object",
+		Fields:   Agent_AgentCollaborators_AgentDescriptorFields,
+	},
+	"CollaborationInstruction": ubx.FieldSpec{WireName: "collaboration_instruction"},
+	"CollaboratorName":         ubx.FieldSpec{WireName: "collaborator_name"},
+	"RelayConversationHistory": ubx.FieldSpec{WireName: "relay_conversation_history"},
+}
 
 var Agent_CustomOrchestration_ExecutorFields = ubx.FieldMap{
-		"Lambda": ubx.FieldSpec{WireName: "lambda"},
-	}
+	"Lambda": ubx.FieldSpec{WireName: "lambda"},
+}
 
 var Agent_CustomOrchestrationFields = ubx.FieldMap{
-		"Executor": ubx.FieldSpec{
-			WireName: "executor",
-			Kind: "object",
-			Fields: Agent_CustomOrchestration_ExecutorFields,
-		},
-	}
+	"Executor": ubx.FieldSpec{
+		WireName: "executor",
+		Kind:     "object",
+		Fields:   Agent_CustomOrchestration_ExecutorFields,
+	},
+}
 
 var Agent_GuardrailConfigurationFields = ubx.FieldMap{
-		"GuardrailIdentifier": ubx.FieldSpec{WireName: "guardrail_identifier"},
-		"GuardrailVersion": ubx.FieldSpec{WireName: "guardrail_version"},
-	}
+	"GuardrailIdentifier": ubx.FieldSpec{WireName: "guardrail_identifier"},
+	"GuardrailVersion":    ubx.FieldSpec{WireName: "guardrail_version"},
+}
 
 var Agent_KnowledgeBasesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"KnowledgeBaseId": ubx.FieldSpec{WireName: "knowledge_base_id"},
-		"KnowledgeBaseState": ubx.FieldSpec{WireName: "knowledge_base_state"},
-	}
+	"Description":        ubx.FieldSpec{WireName: "description"},
+	"KnowledgeBaseId":    ubx.FieldSpec{WireName: "knowledge_base_id"},
+	"KnowledgeBaseState": ubx.FieldSpec{WireName: "knowledge_base_state"},
+}
 
 var Agent_MemoryConfiguration_SessionSummaryConfigurationFields = ubx.FieldMap{
-		"MaxRecentSessions": ubx.FieldSpec{WireName: "max_recent_sessions"},
-	}
+	"MaxRecentSessions": ubx.FieldSpec{WireName: "max_recent_sessions"},
+}
 
 var Agent_MemoryConfigurationFields = ubx.FieldMap{
-		"EnabledMemoryTypes": ubx.FieldSpec{WireName: "enabled_memory_types"},
-		"SessionSummaryConfiguration": ubx.FieldSpec{
-			WireName: "session_summary_configuration",
-			Kind: "object",
-			Fields: Agent_MemoryConfiguration_SessionSummaryConfigurationFields,
-		},
-		"StorageDays": ubx.FieldSpec{WireName: "storage_days"},
-	}
+	"EnabledMemoryTypes": ubx.FieldSpec{WireName: "enabled_memory_types"},
+	"SessionSummaryConfiguration": ubx.FieldSpec{
+		WireName: "session_summary_configuration",
+		Kind:     "object",
+		Fields:   Agent_MemoryConfiguration_SessionSummaryConfigurationFields,
+	},
+	"StorageDays": ubx.FieldSpec{WireName: "storage_days"},
+}
 
 var Agent_PromptOverrideConfiguration_PromptConfigurations_InferenceConfigurationFields = ubx.FieldMap{
-		"MaximumLength": ubx.FieldSpec{WireName: "maximum_length"},
-		"StopSequences": ubx.FieldSpec{WireName: "stop_sequences"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-		"TopK": ubx.FieldSpec{WireName: "top_k"},
-		"TopP": ubx.FieldSpec{WireName: "top_p"},
-	}
+	"MaximumLength": ubx.FieldSpec{WireName: "maximum_length"},
+	"StopSequences": ubx.FieldSpec{WireName: "stop_sequences"},
+	"Temperature":   ubx.FieldSpec{WireName: "temperature"},
+	"TopK":          ubx.FieldSpec{WireName: "top_k"},
+	"TopP":          ubx.FieldSpec{WireName: "top_p"},
+}
 
 var Agent_PromptOverrideConfiguration_PromptConfigurationsFields = ubx.FieldMap{
-		"AdditionalModelRequestFields": ubx.FieldSpec{WireName: "additional_model_request_fields"},
-		"BasePromptTemplate": ubx.FieldSpec{WireName: "base_prompt_template"},
-		"FoundationModel": ubx.FieldSpec{WireName: "foundation_model"},
-		"InferenceConfiguration": ubx.FieldSpec{
-			WireName: "inference_configuration",
-			Kind: "object",
-			Fields: Agent_PromptOverrideConfiguration_PromptConfigurations_InferenceConfigurationFields,
-		},
-		"ParserMode": ubx.FieldSpec{WireName: "parser_mode"},
-		"PromptCreationMode": ubx.FieldSpec{WireName: "prompt_creation_mode"},
-		"PromptState": ubx.FieldSpec{WireName: "prompt_state"},
-		"PromptType": ubx.FieldSpec{WireName: "prompt_type"},
-	}
+	"AdditionalModelRequestFields": ubx.FieldSpec{WireName: "additional_model_request_fields"},
+	"BasePromptTemplate":           ubx.FieldSpec{WireName: "base_prompt_template"},
+	"FoundationModel":              ubx.FieldSpec{WireName: "foundation_model"},
+	"InferenceConfiguration": ubx.FieldSpec{
+		WireName: "inference_configuration",
+		Kind:     "object",
+		Fields:   Agent_PromptOverrideConfiguration_PromptConfigurations_InferenceConfigurationFields,
+	},
+	"ParserMode":         ubx.FieldSpec{WireName: "parser_mode"},
+	"PromptCreationMode": ubx.FieldSpec{WireName: "prompt_creation_mode"},
+	"PromptState":        ubx.FieldSpec{WireName: "prompt_state"},
+	"PromptType":         ubx.FieldSpec{WireName: "prompt_type"},
+}
 
 var Agent_PromptOverrideConfigurationFields = ubx.FieldMap{
-		"OverrideLambda": ubx.FieldSpec{WireName: "override_lambda"},
-		"PromptConfigurations": ubx.FieldSpec{
-			WireName: "prompt_configurations",
-			Kind: "list",
-			Fields: Agent_PromptOverrideConfiguration_PromptConfigurationsFields,
-		},
-	}
+	"OverrideLambda": ubx.FieldSpec{WireName: "override_lambda"},
+	"PromptConfigurations": ubx.FieldSpec{
+		WireName: "prompt_configurations",
+		Kind:     "list",
+		Fields:   Agent_PromptOverrideConfiguration_PromptConfigurationsFields,
+	},
+}
 
 type AgentConfig struct {
 	// List of ActionGroups
@@ -404,51 +404,51 @@ var Agent = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ActionGroups": ubx.FieldSpec{
 			WireName: "action_groups",
-			Kind: "list",
-			Fields: Agent_ActionGroupsFields,
+			Kind:     "list",
+			Fields:   Agent_ActionGroupsFields,
 		},
 		"AgentCollaboration": ubx.FieldSpec{WireName: "agent_collaboration"},
 		"AgentCollaborators": ubx.FieldSpec{
 			WireName: "agent_collaborators",
-			Kind: "list",
-			Fields: Agent_AgentCollaboratorsFields,
+			Kind:     "list",
+			Fields:   Agent_AgentCollaboratorsFields,
 		},
-		"AgentName": ubx.FieldSpec{WireName: "agent_name"},
+		"AgentName":            ubx.FieldSpec{WireName: "agent_name"},
 		"AgentResourceRoleArn": ubx.FieldSpec{WireName: "agent_resource_role_arn"},
-		"AutoPrepare": ubx.FieldSpec{WireName: "auto_prepare"},
+		"AutoPrepare":          ubx.FieldSpec{WireName: "auto_prepare"},
 		"CustomOrchestration": ubx.FieldSpec{
 			WireName: "custom_orchestration",
-			Kind: "object",
-			Fields: Agent_CustomOrchestrationFields,
+			Kind:     "object",
+			Fields:   Agent_CustomOrchestrationFields,
 		},
 		"CustomerEncryptionKeyArn": ubx.FieldSpec{WireName: "customer_encryption_key_arn"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FoundationModel": ubx.FieldSpec{WireName: "foundation_model"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
+		"FoundationModel":          ubx.FieldSpec{WireName: "foundation_model"},
 		"GuardrailConfiguration": ubx.FieldSpec{
 			WireName: "guardrail_configuration",
-			Kind: "object",
-			Fields: Agent_GuardrailConfigurationFields,
+			Kind:     "object",
+			Fields:   Agent_GuardrailConfigurationFields,
 		},
 		"IdleSessionTtlinSeconds": ubx.FieldSpec{WireName: "idle_session_ttlin_seconds"},
-		"Instruction": ubx.FieldSpec{WireName: "instruction"},
+		"Instruction":             ubx.FieldSpec{WireName: "instruction"},
 		"KnowledgeBases": ubx.FieldSpec{
 			WireName: "knowledge_bases",
-			Kind: "list",
-			Fields: Agent_KnowledgeBasesFields,
+			Kind:     "list",
+			Fields:   Agent_KnowledgeBasesFields,
 		},
 		"MemoryConfiguration": ubx.FieldSpec{
 			WireName: "memory_configuration",
-			Kind: "object",
-			Fields: Agent_MemoryConfigurationFields,
+			Kind:     "object",
+			Fields:   Agent_MemoryConfigurationFields,
 		},
 		"OrchestrationType": ubx.FieldSpec{WireName: "orchestration_type"},
 		"PromptOverrideConfiguration": ubx.FieldSpec{
 			WireName: "prompt_override_configuration",
-			Kind: "object",
-			Fields: Agent_PromptOverrideConfigurationFields,
+			Kind:     "object",
+			Fields:   Agent_PromptOverrideConfigurationFields,
 		},
 		"SkipResourceInUseCheckOnDelete": ubx.FieldSpec{WireName: "skip_resource_in_use_check_on_delete"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TestAliasTags": ubx.FieldSpec{WireName: "test_alias_tags"},
+		"Tags":                           ubx.FieldSpec{WireName: "tags"},
+		"TestAliasTags":                  ubx.FieldSpec{WireName: "test_alias_tags"},
 	},
 }

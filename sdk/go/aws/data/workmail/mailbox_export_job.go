@@ -4,31 +4,31 @@ package workmail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MailboxExportJobConfig struct {
-	JobId any
+	JobId          any
 	OrganizationId any
 }
 
 type MailboxExportJobAttrs struct {
-	Description any
-	EndTime any
-	EntityId any
-	ErrorInfo any
+	Description       any
+	EndTime           any
+	EntityId          any
+	ErrorInfo         any
 	EstimatedProgress any
-	JobId any
-	KmsKeyArn any
-	OrganizationId any
-	RoleArn any
-	S3BucketName any
-	S3Path any
-	S3Prefix any
-	StartTime any
-	State any
+	JobId             any
+	KmsKeyArn         any
+	OrganizationId    any
+	RoleArn           any
+	S3BucketName      any
+	S3Path            any
+	S3Prefix          any
+	StartTime         any
+	State             any
 }
 
 var MailboxExportJob = ubx.DataSourceBinding{
 	WireType: "aws_workmail_mailbox_export_job",
 	Fields: ubx.FieldMap{
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":          ubx.FieldSpec{WireName: "job_id"},
 		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
 	},
 }

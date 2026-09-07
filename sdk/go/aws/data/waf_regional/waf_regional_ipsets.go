@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WafRegionalIpsets_Ipsets struct {
 	IpsetId any
-	Name any
+	Name    any
 }
 
 type WafRegionalIpsetsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type WafRegionalIpsetsAttrs struct {
-	Ipsets any
-	Limit any
+	Ipsets     any
+	Limit      any
 	NextMarker any
 }
 
 var WafRegionalIpsets = ubx.DataSourceBinding{
 	WireType: "aws_waf_regional_ipsets",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

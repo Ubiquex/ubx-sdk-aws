@@ -34,10 +34,10 @@ type DbsecurityGroupIngressAttrs struct {
 var DbsecurityGroupIngress = ubx.ResourceBinding{
 	WireType: "aws_rds_dbsecurity_group_ingress",
 	Fields: ubx.FieldMap{
-		"Cidrip": ubx.FieldSpec{WireName: "cidrip"},
-		"DbsecurityGroupName": ubx.FieldSpec{WireName: "dbsecurity_group_name"},
-		"Ec2SecurityGroupId": ubx.FieldSpec{WireName: "ec2_security_group_id"},
-		"Ec2SecurityGroupName": ubx.FieldSpec{WireName: "ec2_security_group_name"},
+		"Cidrip":                  ubx.FieldSpec{WireName: "cidrip"},
+		"DbsecurityGroupName":     ubx.FieldSpec{WireName: "dbsecurity_group_name"},
+		"Ec2SecurityGroupId":      ubx.FieldSpec{WireName: "ec2_security_group_id"},
+		"Ec2SecurityGroupName":    ubx.FieldSpec{WireName: "ec2_security_group_name"},
 		"Ec2SecurityGroupOwnerId": ubx.FieldSpec{WireName: "ec2_security_group_owner_id"},
 	},
 }

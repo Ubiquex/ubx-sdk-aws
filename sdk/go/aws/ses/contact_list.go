@@ -22,16 +22,16 @@ type ContactList_Topics struct {
 }
 
 var ContactList_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ContactList_TopicsFields = ubx.FieldMap{
-		"DefaultSubscriptionStatus": ubx.FieldSpec{WireName: "default_subscription_status"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"TopicName": ubx.FieldSpec{WireName: "topic_name"},
-	}
+	"DefaultSubscriptionStatus": ubx.FieldSpec{WireName: "default_subscription_status"},
+	"Description":               ubx.FieldSpec{WireName: "description"},
+	"DisplayName":               ubx.FieldSpec{WireName: "display_name"},
+	"TopicName":                 ubx.FieldSpec{WireName: "topic_name"},
+}
 
 type ContactListConfig struct {
 	// The name of the contact list.
@@ -59,16 +59,16 @@ var ContactList = ubx.ResourceBinding{
 	WireType: "aws_ses_contact_list",
 	Fields: ubx.FieldMap{
 		"ContactListName": ubx.FieldSpec{WireName: "contact_list_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ContactList_TagsFields,
+			Kind:     "list",
+			Fields:   ContactList_TagsFields,
 		},
 		"Topics": ubx.FieldSpec{
 			WireName: "topics",
-			Kind: "list",
-			Fields: ContactList_TopicsFields,
+			Kind:     "list",
+			Fields:   ContactList_TopicsFields,
 		},
 	},
 }

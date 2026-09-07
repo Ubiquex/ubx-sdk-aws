@@ -30,6 +30,5 @@ type AccountAttributesAttrs struct {
 
 var AccountAttributes = ubx.DataSourceBinding{
 	WireType: "aws_elasticbeanstalk_account_attributes",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

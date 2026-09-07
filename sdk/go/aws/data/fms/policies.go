@@ -5,23 +5,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Policies_PolicyList struct {
 	DeleteUnusedFmmanagedResources any
-	PolicyArn any
-	PolicyId any
-	PolicyName any
-	PolicyStatus any
-	RemediationEnabled any
-	ResourceType any
-	SecurityServiceType any
+	PolicyArn                      any
+	PolicyId                       any
+	PolicyName                     any
+	PolicyStatus                   any
+	RemediationEnabled             any
+	ResourceType                   any
+	SecurityServiceType            any
 }
 
 type PoliciesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type PoliciesAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	PolicyList any
 }
 
@@ -29,6 +29,6 @@ var Policies = ubx.DataSourceBinding{
 	WireType: "aws_fms_policies",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

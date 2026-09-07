@@ -4,7 +4,7 @@ package execute_api
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExecuteApiConnection_Identity struct {
-	SourceIp any
+	SourceIp  any
 	UserAgent any
 }
 
@@ -13,9 +13,9 @@ type ExecuteApiConnectionConfig struct {
 }
 
 type ExecuteApiConnectionAttrs struct {
-	ConnectedAt any
+	ConnectedAt  any
 	ConnectionId any
-	Identity any
+	Identity     any
 	LastActiveAt any
 }
 

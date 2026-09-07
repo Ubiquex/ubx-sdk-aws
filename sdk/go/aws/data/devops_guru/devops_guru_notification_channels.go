@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DevopsGuruNotificationChannels_Channels_Config_Filters struct {
 	MessageTypes any
-	Severities any
+	Severities   any
 }
 
 type DevopsGuruNotificationChannels_Channels_Config_Sns struct {
@@ -14,12 +14,12 @@ type DevopsGuruNotificationChannels_Channels_Config_Sns struct {
 
 type DevopsGuruNotificationChannels_Channels_Config struct {
 	Filters any
-	Sns any
+	Sns     any
 }
 
 type DevopsGuruNotificationChannels_Channels struct {
 	Config any
-	Id any
+	Id     any
 }
 
 type DevopsGuruNotificationChannelsConfig struct {
@@ -27,7 +27,7 @@ type DevopsGuruNotificationChannelsConfig struct {
 }
 
 type DevopsGuruNotificationChannelsAttrs struct {
-	Channels any
+	Channels  any
 	NextToken any
 }
 

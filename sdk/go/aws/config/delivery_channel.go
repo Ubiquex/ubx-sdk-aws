@@ -9,8 +9,8 @@ type DeliveryChannel_ConfigSnapshotDeliveryProperties struct {
 }
 
 var DeliveryChannel_ConfigSnapshotDeliveryPropertiesFields = ubx.FieldMap{
-		"DeliveryFrequency": ubx.FieldSpec{WireName: "delivery_frequency"},
-	}
+	"DeliveryFrequency": ubx.FieldSpec{WireName: "delivery_frequency"},
+}
 
 type DeliveryChannelConfig struct {
 	// Specifies how often AWS Config delivers configuration snapshot updates (e.g., every hour, six hours, or twenty-four hours) to the delivery channel's destination. (AI-inferred)
@@ -49,13 +49,13 @@ var DeliveryChannel = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConfigSnapshotDeliveryProperties": ubx.FieldSpec{
 			WireName: "config_snapshot_delivery_properties",
-			Kind: "object",
-			Fields: DeliveryChannel_ConfigSnapshotDeliveryPropertiesFields,
+			Kind:     "object",
+			Fields:   DeliveryChannel_ConfigSnapshotDeliveryPropertiesFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
-		"S3KeyPrefix": ubx.FieldSpec{WireName: "s3_key_prefix"},
-		"S3KmsKeyArn": ubx.FieldSpec{WireName: "s3_kms_key_arn"},
-		"SnsTopicArn": ubx.FieldSpec{WireName: "sns_topic_arn"},
+		"S3KeyPrefix":  ubx.FieldSpec{WireName: "s3_key_prefix"},
+		"S3KmsKeyArn":  ubx.FieldSpec{WireName: "s3_kms_key_arn"},
+		"SnsTopicArn":  ubx.FieldSpec{WireName: "sns_topic_arn"},
 	},
 }

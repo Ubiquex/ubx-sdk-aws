@@ -4,40 +4,40 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReportPlans_ReportPlans_ReportDeliveryChannel struct {
-	Formats any
+	Formats      any
 	S3BucketName any
-	S3KeyPrefix any
+	S3KeyPrefix  any
 }
 
 type ReportPlans_ReportPlans_ReportSetting struct {
-	Accounts any
-	FrameworkArns any
+	Accounts           any
+	FrameworkArns      any
 	NumberOfFrameworks any
-	OrganizationUnits any
-	Regions any
-	ReportTemplate any
+	OrganizationUnits  any
+	Regions            any
+	ReportTemplate     any
 }
 
 type ReportPlans_ReportPlans struct {
-	CreationTime any
-	DeploymentStatus any
-	LastAttemptedExecutionTime any
+	CreationTime                any
+	DeploymentStatus            any
+	LastAttemptedExecutionTime  any
 	LastSuccessfulExecutionTime any
-	ReportDeliveryChannel any
-	ReportPlanArn any
-	ReportPlanDescription any
-	ReportPlanName any
-	ReportSetting any
+	ReportDeliveryChannel       any
+	ReportPlanArn               any
+	ReportPlanDescription       any
+	ReportPlanName              any
+	ReportSetting               any
 }
 
 type ReportPlansConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ReportPlansAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	ReportPlans any
 }
 
@@ -45,6 +45,6 @@ var ReportPlans = ubx.DataSourceBinding{
 	WireType: "aws_backup_report_plans",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -11,9 +11,9 @@ type UserGroup_Tags struct {
 }
 
 var UserGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type UserGroupConfig struct {
 	// The target cache engine for the user group.
@@ -47,10 +47,10 @@ var UserGroup = ubx.ResourceBinding{
 		"Engine": ubx.FieldSpec{WireName: "engine"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: UserGroup_TagsFields,
+			Kind:     "list",
+			Fields:   UserGroup_TagsFields,
 		},
 		"UserGroupId": ubx.FieldSpec{WireName: "user_group_id"},
-		"UserIds": ubx.FieldSpec{WireName: "user_ids"},
+		"UserIds":     ubx.FieldSpec{WireName: "user_ids"},
 	},
 }

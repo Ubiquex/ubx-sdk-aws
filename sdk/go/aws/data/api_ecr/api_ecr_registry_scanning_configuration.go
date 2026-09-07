@@ -4,17 +4,17 @@ package api_ecr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiEcrRegistryScanningConfiguration_ScanningConfiguration_Rules_RepositoryFilters struct {
-	Filter any
+	Filter     any
 	FilterType any
 }
 
 type ApiEcrRegistryScanningConfiguration_ScanningConfiguration_Rules struct {
 	RepositoryFilters any
-	ScanFrequency any
+	ScanFrequency     any
 }
 
 type ApiEcrRegistryScanningConfiguration_ScanningConfiguration struct {
-	Rules any
+	Rules    any
 	ScanType any
 }
 
@@ -29,6 +29,5 @@ type ApiEcrRegistryScanningConfigurationAttrs struct {
 
 var ApiEcrRegistryScanningConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_api_ecr_registry_scanning_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

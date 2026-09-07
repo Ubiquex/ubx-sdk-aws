@@ -14,20 +14,20 @@ type WorkflowVersion_ContainerRegistryMap_RegistryMappings struct {
 	// The AWS account ID associated with the Amazon ECR container registry entry in the container registry map of the workflow version. (AI-inferred)
 	EcrAccountId any
 	// Specifies the ECR repository prefix (including AWS account ID and region) that maps to a container registry name, allowing the workflow version to resolve and pull container images from Amazon ECR. (AI-inferred)
-	EcrRepositoryPrefix any
-	UpstreamRegistryUrl any
+	EcrRepositoryPrefix      any
+	UpstreamRegistryUrl      any
 	UpstreamRepositoryPrefix any
 }
 
 type WorkflowVersion_ContainerRegistryMap struct {
 	// The image_mappings field defines a list of container image mappings that link container names used in the workflow definition to their corresponding image URIs in the container registry map of the AWS Omics workflow version. (AI-inferred)
-	ImageMappings any
+	ImageMappings    any
 	RegistryMappings any
 }
 
 type WorkflowVersion_DefinitionRepository_SourceReference struct {
 	// The type of source repository (either 'GIT' or 'S3') that contains the workflow definition, used with the source reference to specify which version of the definition to use. (AI-inferred)
-	Type any
+	Type  any
 	Value any
 }
 
@@ -43,45 +43,45 @@ type WorkflowVersion_DefinitionRepository struct {
 }
 
 var WorkflowVersion_ContainerRegistryMap_ImageMappingsFields = ubx.FieldMap{
-		"DestinationImage": ubx.FieldSpec{WireName: "destination_image"},
-		"SourceImage": ubx.FieldSpec{WireName: "source_image"},
-	}
+	"DestinationImage": ubx.FieldSpec{WireName: "destination_image"},
+	"SourceImage":      ubx.FieldSpec{WireName: "source_image"},
+}
 
 var WorkflowVersion_ContainerRegistryMap_RegistryMappingsFields = ubx.FieldMap{
-		"EcrAccountId": ubx.FieldSpec{WireName: "ecr_account_id"},
-		"EcrRepositoryPrefix": ubx.FieldSpec{WireName: "ecr_repository_prefix"},
-		"UpstreamRegistryUrl": ubx.FieldSpec{WireName: "upstream_registry_url"},
-		"UpstreamRepositoryPrefix": ubx.FieldSpec{WireName: "upstream_repository_prefix"},
-	}
+	"EcrAccountId":             ubx.FieldSpec{WireName: "ecr_account_id"},
+	"EcrRepositoryPrefix":      ubx.FieldSpec{WireName: "ecr_repository_prefix"},
+	"UpstreamRegistryUrl":      ubx.FieldSpec{WireName: "upstream_registry_url"},
+	"UpstreamRepositoryPrefix": ubx.FieldSpec{WireName: "upstream_repository_prefix"},
+}
 
 var WorkflowVersion_ContainerRegistryMapFields = ubx.FieldMap{
-		"ImageMappings": ubx.FieldSpec{
-			WireName: "image_mappings",
-			Kind: "list",
-			Fields: WorkflowVersion_ContainerRegistryMap_ImageMappingsFields,
-		},
-		"RegistryMappings": ubx.FieldSpec{
-			WireName: "registry_mappings",
-			Kind: "list",
-			Fields: WorkflowVersion_ContainerRegistryMap_RegistryMappingsFields,
-		},
-	}
+	"ImageMappings": ubx.FieldSpec{
+		WireName: "image_mappings",
+		Kind:     "list",
+		Fields:   WorkflowVersion_ContainerRegistryMap_ImageMappingsFields,
+	},
+	"RegistryMappings": ubx.FieldSpec{
+		WireName: "registry_mappings",
+		Kind:     "list",
+		Fields:   WorkflowVersion_ContainerRegistryMap_RegistryMappingsFields,
+	},
+}
 
 var WorkflowVersion_DefinitionRepository_SourceReferenceFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var WorkflowVersion_DefinitionRepositoryFields = ubx.FieldMap{
-		"ConnectionArn": ubx.FieldSpec{WireName: "connection_arn"},
-		"ExcludeFilePatterns": ubx.FieldSpec{WireName: "exclude_file_patterns"},
-		"FullRepositoryId": ubx.FieldSpec{WireName: "full_repository_id"},
-		"SourceReference": ubx.FieldSpec{
-			WireName: "source_reference",
-			Kind: "object",
-			Fields: WorkflowVersion_DefinitionRepository_SourceReferenceFields,
-		},
-	}
+	"ConnectionArn":       ubx.FieldSpec{WireName: "connection_arn"},
+	"ExcludeFilePatterns": ubx.FieldSpec{WireName: "exclude_file_patterns"},
+	"FullRepositoryId":    ubx.FieldSpec{WireName: "full_repository_id"},
+	"SourceReference": ubx.FieldSpec{
+		WireName: "source_reference",
+		Kind:     "object",
+		Fields:   WorkflowVersion_DefinitionRepository_SourceReferenceFields,
+	},
+}
 
 type WorkflowVersionConfig struct {
 	// Specifies a comma-separated list of accelerator types (such as GPU) that are available to tasks in this workflow version, controlling whether GPU-accelerated compute resources can be used. (AI-inferred)
@@ -181,29 +181,29 @@ var WorkflowVersion = ubx.ResourceBinding{
 		"Accelerators": ubx.FieldSpec{WireName: "accelerators"},
 		"ContainerRegistryMap": ubx.FieldSpec{
 			WireName: "container_registry_map",
-			Kind: "object",
-			Fields: WorkflowVersion_ContainerRegistryMapFields,
+			Kind:     "object",
+			Fields:   WorkflowVersion_ContainerRegistryMapFields,
 		},
 		"ContainerRegistryMapUri": ubx.FieldSpec{WireName: "container_registry_map_uri"},
 		"DefinitionRepository": ubx.FieldSpec{
 			WireName: "definition_repository",
-			Kind: "object",
-			Fields: WorkflowVersion_DefinitionRepositoryFields,
+			Kind:     "object",
+			Fields:   WorkflowVersion_DefinitionRepositoryFields,
 		},
-		"DefinitionUri": ubx.FieldSpec{WireName: "definition_uri"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"Main": ubx.FieldSpec{WireName: "main"},
-		"ParameterTemplate": ubx.FieldSpec{WireName: "parameter_template"},
+		"DefinitionUri":         ubx.FieldSpec{WireName: "definition_uri"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"Engine":                ubx.FieldSpec{WireName: "engine"},
+		"Main":                  ubx.FieldSpec{WireName: "main"},
+		"ParameterTemplate":     ubx.FieldSpec{WireName: "parameter_template"},
 		"ParameterTemplatePath": ubx.FieldSpec{WireName: "parameter_template_path"},
-		"StorageCapacity": ubx.FieldSpec{WireName: "storage_capacity"},
-		"StorageType": ubx.FieldSpec{WireName: "storage_type"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"VersionName": ubx.FieldSpec{WireName: "version_name"},
+		"StorageCapacity":       ubx.FieldSpec{WireName: "storage_capacity"},
+		"StorageType":           ubx.FieldSpec{WireName: "storage_type"},
+		"Tags":                  ubx.FieldSpec{WireName: "tags"},
+		"VersionName":           ubx.FieldSpec{WireName: "version_name"},
 		"WorkflowBucketOwnerId": ubx.FieldSpec{WireName: "workflow_bucket_owner_id"},
-		"WorkflowId": ubx.FieldSpec{WireName: "workflow_id"},
-		"ReadmeMarkdown": ubx.FieldSpec{WireName: "readme_markdown"},
-		"ReadmePath": ubx.FieldSpec{WireName: "readme_path"},
-		"ReadmeUri": ubx.FieldSpec{WireName: "readme_uri"},
+		"WorkflowId":            ubx.FieldSpec{WireName: "workflow_id"},
+		"ReadmeMarkdown":        ubx.FieldSpec{WireName: "readme_markdown"},
+		"ReadmePath":            ubx.FieldSpec{WireName: "readme_path"},
+		"ReadmeUri":             ubx.FieldSpec{WireName: "readme_uri"},
 	},
 }

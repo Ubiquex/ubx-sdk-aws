@@ -16,27 +16,27 @@ type Connector_ConnectorConfiguration struct {
 }
 
 type Connector_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Connector_ConnectorConfiguration_AzureFields = ubx.FieldMap{
-		"ClientIdentifier": ubx.FieldSpec{WireName: "client_identifier"},
-		"TenantIdentifier": ubx.FieldSpec{WireName: "tenant_identifier"},
-	}
+	"ClientIdentifier": ubx.FieldSpec{WireName: "client_identifier"},
+	"TenantIdentifier": ubx.FieldSpec{WireName: "tenant_identifier"},
+}
 
 var Connector_ConnectorConfigurationFields = ubx.FieldMap{
-		"Azure": ubx.FieldSpec{
-			WireName: "azure",
-			Kind: "object",
-			Fields: Connector_ConnectorConfiguration_AzureFields,
-		},
-	}
+	"Azure": ubx.FieldSpec{
+		WireName: "azure",
+		Kind:     "object",
+		Fields:   Connector_ConnectorConfiguration_AzureFields,
+	},
+}
 
 var Connector_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ConnectorConfig struct {
 	// The configuration for the connector. Specify the third-party cloud provider configuration.
@@ -63,13 +63,13 @@ var Connector = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConnectorConfiguration": ubx.FieldSpec{
 			WireName: "connector_configuration",
-			Kind: "object",
-			Fields: Connector_ConnectorConfigurationFields,
+			Kind:     "object",
+			Fields:   Connector_ConnectorConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Connector_TagsFields,
+			Kind:     "list",
+			Fields:   Connector_TagsFields,
 		},
 	},
 }

@@ -4,41 +4,41 @@ package eks
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EksAnywhereSubscriptions_Subscriptions_Licenses struct {
-	Id any
+	Id    any
 	Token any
 }
 
 type EksAnywhereSubscriptions_Subscriptions_Term struct {
 	Duration any
-	Unit any
+	Unit     any
 }
 
 type EksAnywhereSubscriptions_Subscriptions struct {
-	Arn any
-	AutoRenew any
-	CreatedAt any
-	EffectiveDate any
-	ExpirationDate any
-	Id any
-	LicenseArns any
+	Arn             any
+	AutoRenew       any
+	CreatedAt       any
+	EffectiveDate   any
+	ExpirationDate  any
+	Id              any
+	LicenseArns     any
 	LicenseQuantity any
-	LicenseType any
-	Licenses any
-	Status any
-	Tags any
-	Term any
+	LicenseType     any
+	Licenses        any
+	Status          any
+	Tags            any
+	Term            any
 }
 
 type EksAnywhereSubscriptionsConfig struct {
 	IncludeStatus any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type EksAnywhereSubscriptionsAttrs struct {
 	IncludeStatus any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 	Subscriptions any
 }
 
@@ -46,7 +46,7 @@ var EksAnywhereSubscriptions = ubx.DataSourceBinding{
 	WireType: "aws_eks_eks_anywhere_subscriptions",
 	Fields: ubx.FieldMap{
 		"IncludeStatus": ubx.FieldSpec{WireName: "include_status"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,9 +4,9 @@ package monitoring
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlarmContributors_AlarmContributors struct {
-	ContributorAttributes any
-	ContributorId any
-	StateReason any
+	ContributorAttributes      any
+	ContributorId              any
+	StateReason                any
 	StateTransitionedTimestamp any
 }
 
@@ -17,8 +17,8 @@ type AlarmContributorsConfig struct {
 
 type AlarmContributorsAttrs struct {
 	AlarmContributors any
-	AlarmName any
-	NextToken any
+	AlarmName         any
+	NextToken         any
 }
 
 var AlarmContributors = ubx.DataSourceBinding{

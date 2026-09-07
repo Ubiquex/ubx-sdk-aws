@@ -4,7 +4,7 @@ package devops_guru
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DevopsGuruMonitoredResources_Filters struct {
-	ResourcePermission any
+	ResourcePermission  any
 	ResourceTypeFilters any
 }
 
@@ -14,40 +14,40 @@ type DevopsGuruMonitoredResources_MonitoredResourceIdentifiers_ResourceCollectio
 
 type DevopsGuruMonitoredResources_MonitoredResourceIdentifiers_ResourceCollection_Tags struct {
 	AppBoundaryKey any
-	TagValues any
+	TagValues      any
 }
 
 type DevopsGuruMonitoredResources_MonitoredResourceIdentifiers_ResourceCollection struct {
 	CloudFormation any
-	Tags any
+	Tags           any
 }
 
 type DevopsGuruMonitoredResources_MonitoredResourceIdentifiers struct {
-	LastUpdated any
+	LastUpdated           any
 	MonitoredResourceName any
-	ResourceCollection any
-	ResourcePermission any
-	Type any
+	ResourceCollection    any
+	ResourcePermission    any
+	Type                  any
 }
 
 var DevopsGuruMonitoredResources_FiltersFields = ubx.FieldMap{
-		"ResourcePermission": ubx.FieldSpec{WireName: "resource_permission"},
-		"ResourceTypeFilters": ubx.FieldSpec{WireName: "resource_type_filters"},
-	}
+	"ResourcePermission":  ubx.FieldSpec{WireName: "resource_permission"},
+	"ResourceTypeFilters": ubx.FieldSpec{WireName: "resource_type_filters"},
+}
 
 type DevopsGuruMonitoredResourcesConfig struct {
 	// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DevopsGuruMonitoredResourcesAttrs struct {
 	// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
-	Filters any
-	MaxResults any
+	Filters                      any
+	MaxResults                   any
 	MonitoredResourceIdentifiers any
-	NextToken any
+	NextToken                    any
 }
 
 var DevopsGuruMonitoredResources = ubx.DataSourceBinding{
@@ -55,10 +55,10 @@ var DevopsGuruMonitoredResources = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: DevopsGuruMonitoredResources_FiltersFields,
+			Kind:     "object",
+			Fields:   DevopsGuruMonitoredResources_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

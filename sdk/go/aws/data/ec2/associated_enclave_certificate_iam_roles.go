@@ -4,27 +4,27 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssociatedEnclaveCertificateIamRoles_AssociatedRoles struct {
-	AssociatedRoleArn any
+	AssociatedRoleArn       any
 	CertificateS3BucketName any
-	CertificateS3ObjectKey any
-	EncryptionKmsKeyId any
+	CertificateS3ObjectKey  any
+	EncryptionKmsKeyId      any
 }
 
 type AssociatedEnclaveCertificateIamRolesConfig struct {
 	CertificateArn any
-	DryRun any
+	DryRun         any
 }
 
 type AssociatedEnclaveCertificateIamRolesAttrs struct {
 	AssociatedRoles any
-	CertificateArn any
-	DryRun any
+	CertificateArn  any
+	DryRun          any
 }
 
 var AssociatedEnclaveCertificateIamRoles = ubx.DataSourceBinding{
 	WireType: "aws_ec2_associated_enclave_certificate_iam_roles",
 	Fields: ubx.FieldMap{
 		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":         ubx.FieldSpec{WireName: "dry_run"},
 	},
 }

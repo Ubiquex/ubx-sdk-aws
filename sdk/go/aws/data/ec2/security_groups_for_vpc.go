@@ -4,44 +4,44 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityGroupsForVpc_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type SecurityGroupsForVpc_SecurityGroupForVpcs_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type SecurityGroupsForVpc_SecurityGroupForVpcs struct {
-	Description any
-	GroupId any
-	GroupName any
-	OwnerId any
+	Description  any
+	GroupId      any
+	GroupName    any
+	OwnerId      any
 	PrimaryVpcId any
-	Tags any
+	Tags         any
 }
 
 var SecurityGroupsForVpc_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type SecurityGroupsForVpcConfig struct {
-	DryRun any
-	Filters any
+	DryRun     any
+	Filters    any
 	MaxResults any
-	NextToken any
-	VpcId any
+	NextToken  any
+	VpcId      any
 }
 
 type SecurityGroupsForVpcAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun               any
+	Filters              any
+	MaxResults           any
+	NextToken            any
 	SecurityGroupForVpcs any
-	VpcId any
+	VpcId                any
 }
 
 var SecurityGroupsForVpc = ubx.DataSourceBinding{
@@ -50,11 +50,11 @@ var SecurityGroupsForVpc = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SecurityGroupsForVpc_FiltersFields,
+			Kind:     "list",
+			Fields:   SecurityGroupsForVpc_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"VpcId":      ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

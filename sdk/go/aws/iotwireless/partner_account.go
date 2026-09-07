@@ -25,19 +25,19 @@ type PartnerAccount_Tags struct {
 }
 
 var PartnerAccount_SidewalkFields = ubx.FieldMap{
-		"AppServerPrivateKey": ubx.FieldSpec{WireName: "app_server_private_key"},
-	}
+	"AppServerPrivateKey": ubx.FieldSpec{WireName: "app_server_private_key"},
+}
 
 var PartnerAccount_SidewalkResponseFields = ubx.FieldMap{
-		"AmazonId": ubx.FieldSpec{WireName: "amazon_id"},
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-	}
+	"AmazonId":    ubx.FieldSpec{WireName: "amazon_id"},
+	"Arn":         ubx.FieldSpec{WireName: "arn"},
+	"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+}
 
 var PartnerAccount_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PartnerAccountConfig struct {
 	// Whether the partner account is linked to the AWS account.
@@ -80,28 +80,28 @@ type PartnerAccountAttrs struct {
 var PartnerAccount = ubx.ResourceBinding{
 	WireType: "aws_io_twireless_partner_account",
 	Fields: ubx.FieldMap{
-		"AccountLinked": ubx.FieldSpec{WireName: "account_linked"},
+		"AccountLinked":    ubx.FieldSpec{WireName: "account_linked"},
 		"PartnerAccountId": ubx.FieldSpec{WireName: "partner_account_id"},
-		"PartnerType": ubx.FieldSpec{WireName: "partner_type"},
+		"PartnerType":      ubx.FieldSpec{WireName: "partner_type"},
 		"Sidewalk": ubx.FieldSpec{
 			WireName: "sidewalk",
-			Kind: "object",
-			Fields: PartnerAccount_SidewalkFields,
+			Kind:     "object",
+			Fields:   PartnerAccount_SidewalkFields,
 		},
 		"SidewalkResponse": ubx.FieldSpec{
 			WireName: "sidewalk_response",
-			Kind: "object",
-			Fields: PartnerAccount_SidewalkResponseFields,
+			Kind:     "object",
+			Fields:   PartnerAccount_SidewalkResponseFields,
 		},
 		"SidewalkUpdate": ubx.FieldSpec{
 			WireName: "sidewalk_update",
-			Kind: "object",
-			Fields: PartnerAccount_SidewalkFields,
+			Kind:     "object",
+			Fields:   PartnerAccount_SidewalkFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PartnerAccount_TagsFields,
+			Kind:     "list",
+			Fields:   PartnerAccount_TagsFields,
 		},
 	},
 }

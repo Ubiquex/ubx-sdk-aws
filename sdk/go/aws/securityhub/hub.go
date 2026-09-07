@@ -32,9 +32,9 @@ type HubAttrs struct {
 var Hub = ubx.ResourceBinding{
 	WireType: "aws_security_hub_hub",
 	Fields: ubx.FieldMap{
-		"AutoEnableControls": ubx.FieldSpec{WireName: "auto_enable_controls"},
+		"AutoEnableControls":      ubx.FieldSpec{WireName: "auto_enable_controls"},
 		"ControlFindingGenerator": ubx.FieldSpec{WireName: "control_finding_generator"},
-		"EnableDefaultStandards": ubx.FieldSpec{WireName: "enable_default_standards"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"EnableDefaultStandards":  ubx.FieldSpec{WireName: "enable_default_standards"},
+		"Tags":                    ubx.FieldSpec{WireName: "tags"},
 	},
 }

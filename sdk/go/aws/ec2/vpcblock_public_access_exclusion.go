@@ -11,9 +11,9 @@ type VpcblockPublicAccessExclusion_Tags struct {
 }
 
 var VpcblockPublicAccessExclusion_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VpcblockPublicAccessExclusionConfig struct {
 	// The desired Block Public Access Exclusion Mode for a specific VPC/Subnet.
@@ -43,11 +43,11 @@ var VpcblockPublicAccessExclusion = ubx.ResourceBinding{
 	WireType: "aws_ec2_vpcblock_public_access_exclusion",
 	Fields: ubx.FieldMap{
 		"InternetGatewayExclusionMode": ubx.FieldSpec{WireName: "internet_gateway_exclusion_mode"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
+		"SubnetId":                     ubx.FieldSpec{WireName: "subnet_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VpcblockPublicAccessExclusion_TagsFields,
+			Kind:     "list",
+			Fields:   VpcblockPublicAccessExclusion_TagsFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

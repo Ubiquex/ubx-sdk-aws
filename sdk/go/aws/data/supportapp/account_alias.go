@@ -12,6 +12,5 @@ type AccountAliasAttrs struct {
 
 var AccountAlias = ubx.DataSourceBinding{
 	WireType: "aws_supportapp_account_alias",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

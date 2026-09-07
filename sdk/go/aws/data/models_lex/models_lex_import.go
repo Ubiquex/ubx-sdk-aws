@@ -8,13 +8,13 @@ type ModelsLexImportConfig struct {
 }
 
 type ModelsLexImportAttrs struct {
-	CreatedDate any
+	CreatedDate   any
 	FailureReason any
-	ImportId any
-	ImportStatus any
+	ImportId      any
+	ImportStatus  any
 	MergeStrategy any
-	Name any
-	ResourceType any
+	Name          any
+	ResourceType  any
 }
 
 var ModelsLexImport = ubx.DataSourceBinding{

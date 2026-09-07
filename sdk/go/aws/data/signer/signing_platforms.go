@@ -5,55 +5,55 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SigningPlatforms_Platforms_SigningConfiguration_EncryptionAlgorithmOptions struct {
 	AllowedValues any
-	DefaultValue any
+	DefaultValue  any
 }
 
 type SigningPlatforms_Platforms_SigningConfiguration struct {
 	EncryptionAlgorithmOptions any
-	HashAlgorithmOptions any
+	HashAlgorithmOptions       any
 }
 
 type SigningPlatforms_Platforms_SigningImageFormat struct {
-	DefaultFormat any
+	DefaultFormat    any
 	SupportedFormats any
 }
 
 type SigningPlatforms_Platforms struct {
-	Category any
-	DisplayName any
-	MaxSizeInMb any
-	Partner any
-	PlatformId any
-	RevocationSupported any
+	Category             any
+	DisplayName          any
+	MaxSizeInMb          any
+	Partner              any
+	PlatformId           any
+	RevocationSupported  any
 	SigningConfiguration any
-	SigningImageFormat any
-	Target any
+	SigningImageFormat   any
+	Target               any
 }
 
 type SigningPlatformsConfig struct {
-	Category any
+	Category   any
 	MaxResults any
-	NextToken any
-	Partner any
-	Target any
+	NextToken  any
+	Partner    any
+	Target     any
 }
 
 type SigningPlatformsAttrs struct {
-	Category any
+	Category   any
 	MaxResults any
-	NextToken any
-	Partner any
-	Platforms any
-	Target any
+	NextToken  any
+	Partner    any
+	Platforms  any
+	Target     any
 }
 
 var SigningPlatforms = ubx.DataSourceBinding{
 	WireType: "aws_signer_signing_platforms",
 	Fields: ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
+		"Category":   ubx.FieldSpec{WireName: "category"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Partner": ubx.FieldSpec{WireName: "partner"},
-		"Target": ubx.FieldSpec{WireName: "target"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Partner":    ubx.FieldSpec{WireName: "partner"},
+		"Target":     ubx.FieldSpec{WireName: "target"},
 	},
 }

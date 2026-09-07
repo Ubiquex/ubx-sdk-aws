@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceTenants_ResourceTenants struct {
 	AssociatedTimestamp any
-	ResourceArn any
-	TenantId any
-	TenantName any
+	ResourceArn         any
+	TenantId            any
+	TenantName          any
 }
 
 type ResourceTenantsConfig struct {
-	NextToken any
-	PageSize any
+	NextToken   any
+	PageSize    any
 	ResourceArn any
 }
 
 type ResourceTenantsAttrs struct {
-	NextToken any
-	PageSize any
+	NextToken   any
+	PageSize    any
 	ResourceArn any
 	// <p>A list of tenant metadata objects associated with a resource.</p>
 	ResourceTenants any
@@ -27,8 +27,8 @@ type ResourceTenantsAttrs struct {
 var ResourceTenants = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_resource_tenants",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"PageSize":    ubx.FieldSpec{WireName: "page_size"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

@@ -4,35 +4,35 @@ package s3files
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FileSystems_FileSystems struct {
-	Bucket any
-	CreationTime any
+	Bucket        any
+	CreationTime  any
 	FileSystemArn any
-	FileSystemId any
-	Name any
-	OwnerId any
-	RoleArn any
-	Status any
+	FileSystemId  any
+	Name          any
+	OwnerId       any
+	RoleArn       any
+	Status        any
 	StatusMessage any
 }
 
 type FileSystemsConfig struct {
-	Bucket any
+	Bucket     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FileSystemsAttrs struct {
-	Bucket any
+	Bucket      any
 	FileSystems any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 var FileSystems = ubx.DataSourceBinding{
 	WireType: "aws_s3files_file_systems",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":     ubx.FieldSpec{WireName: "bucket"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

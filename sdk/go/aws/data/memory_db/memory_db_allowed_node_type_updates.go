@@ -8,9 +8,9 @@ type MemoryDbAllowedNodeTypeUpdatesConfig struct {
 }
 
 type MemoryDbAllowedNodeTypeUpdatesAttrs struct {
-	ClusterName any
+	ClusterName        any
 	ScaleDownNodeTypes any
-	ScaleUpNodeTypes any
+	ScaleUpNodeTypes   any
 }
 
 var MemoryDbAllowedNodeTypeUpdates = ubx.DataSourceBinding{

@@ -4,41 +4,41 @@ package glacier
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Jobs_JobList_InventoryRetrievalParameters struct {
-	EndDate any
-	Format any
-	Limit any
-	Marker any
+	EndDate   any
+	Format    any
+	Limit     any
+	Marker    any
 	StartDate any
 }
 
 type Jobs_JobList_OutputLocation_S3_AccessControlList_Grantee struct {
-	DisplayName any
+	DisplayName  any
 	EmailAddress any
-	Id any
-	Type any
-	Uri any
+	Id           any
+	Type         any
+	Uri          any
 }
 
 type Jobs_JobList_OutputLocation_S3_AccessControlList struct {
-	Grantee any
+	Grantee    any
 	Permission any
 }
 
 type Jobs_JobList_OutputLocation_S3_Encryption struct {
 	EncryptionType any
-	Kmscontext any
-	KmskeyId any
+	Kmscontext     any
+	KmskeyId       any
 }
 
 type Jobs_JobList_OutputLocation_S3 struct {
 	AccessControlList any
-	BucketName any
-	CannedAcl any
-	Encryption any
-	Prefix any
-	StorageClass any
-	Tagging any
-	UserMetadata any
+	BucketName        any
+	CannedAcl         any
+	Encryption        any
+	Prefix            any
+	StorageClass      any
+	Tagging           any
+	UserMetadata      any
 }
 
 type Jobs_JobList_OutputLocation struct {
@@ -46,12 +46,12 @@ type Jobs_JobList_OutputLocation struct {
 }
 
 type Jobs_JobList_SelectParameters_InputSerialization_Csv struct {
-	Comments any
-	FieldDelimiter any
-	FileHeaderInfo any
-	QuoteCharacter any
+	Comments             any
+	FieldDelimiter       any
+	FileHeaderInfo       any
+	QuoteCharacter       any
 	QuoteEscapeCharacter any
-	RecordDelimiter any
+	RecordDelimiter      any
 }
 
 type Jobs_JobList_SelectParameters_InputSerialization struct {
@@ -59,11 +59,11 @@ type Jobs_JobList_SelectParameters_InputSerialization struct {
 }
 
 type Jobs_JobList_SelectParameters_OutputSerialization_Csv struct {
-	FieldDelimiter any
-	QuoteCharacter any
+	FieldDelimiter       any
+	QuoteCharacter       any
 	QuoteEscapeCharacter any
-	QuoteFields any
-	RecordDelimiter any
+	QuoteFields          any
+	RecordDelimiter      any
 }
 
 type Jobs_JobList_SelectParameters_OutputSerialization struct {
@@ -71,63 +71,63 @@ type Jobs_JobList_SelectParameters_OutputSerialization struct {
 }
 
 type Jobs_JobList_SelectParameters struct {
-	Expression any
-	ExpressionType any
-	InputSerialization any
+	Expression          any
+	ExpressionType      any
+	InputSerialization  any
 	OutputSerialization any
 }
 
 type Jobs_JobList struct {
-	Action any
-	ArchiveId any
-	ArchiveSha256TreeHash any
-	ArchiveSizeInBytes any
-	Completed any
-	CompletionDate any
-	CreationDate any
+	Action                       any
+	ArchiveId                    any
+	ArchiveSha256TreeHash        any
+	ArchiveSizeInBytes           any
+	Completed                    any
+	CompletionDate               any
+	CreationDate                 any
 	InventoryRetrievalParameters any
-	InventorySizeInBytes any
-	JobDescription any
-	JobId any
-	JobOutputPath any
-	OutputLocation any
-	RetrievalByteRange any
-	SelectParameters any
-	Sha256TreeHash any
-	Snstopic any
-	StatusCode any
-	StatusMessage any
-	Tier any
-	VaultArn any
+	InventorySizeInBytes         any
+	JobDescription               any
+	JobId                        any
+	JobOutputPath                any
+	OutputLocation               any
+	RetrievalByteRange           any
+	SelectParameters             any
+	Sha256TreeHash               any
+	Snstopic                     any
+	StatusCode                   any
+	StatusMessage                any
+	Tier                         any
+	VaultArn                     any
 }
 
 type JobsConfig struct {
-	AccountId any
-	Completed any
-	Limit any
-	Marker any
+	AccountId  any
+	Completed  any
+	Limit      any
+	Marker     any
 	Statuscode any
-	VaultName any
+	VaultName  any
 }
 
 type JobsAttrs struct {
-	AccountId any
-	Completed any
-	JobList any
-	Limit any
-	Marker any
+	AccountId  any
+	Completed  any
+	JobList    any
+	Limit      any
+	Marker     any
 	Statuscode any
-	VaultName any
+	VaultName  any
 }
 
 var Jobs = ubx.DataSourceBinding{
 	WireType: "aws_glacier_jobs",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Completed": ubx.FieldSpec{WireName: "completed"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
+		"Completed":  ubx.FieldSpec{WireName: "completed"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 		"Statuscode": ubx.FieldSpec{WireName: "statuscode"},
-		"VaultName": ubx.FieldSpec{WireName: "vault_name"},
+		"VaultName":  ubx.FieldSpec{WireName: "vault_name"},
 	},
 }

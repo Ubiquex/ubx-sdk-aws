@@ -4,23 +4,23 @@ package appsync
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IntrospectionSchemaConfig struct {
-	ApiId any
-	Format any
+	ApiId             any
+	Format            any
 	IncludeDirectives any
 }
 
 type IntrospectionSchemaAttrs struct {
-	ApiId any
-	Format any
+	ApiId             any
+	Format            any
 	IncludeDirectives any
-	Schema any
+	Schema            any
 }
 
 var IntrospectionSchema = ubx.DataSourceBinding{
 	WireType: "aws_appsync_introspection_schema",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
-		"Format": ubx.FieldSpec{WireName: "format"},
+		"ApiId":             ubx.FieldSpec{WireName: "api_id"},
+		"Format":            ubx.FieldSpec{WireName: "format"},
 		"IncludeDirectives": ubx.FieldSpec{WireName: "include_directives"},
 	},
 }

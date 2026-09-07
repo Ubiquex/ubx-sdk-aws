@@ -11,9 +11,9 @@ type HookVersion_LoggingConfig struct {
 }
 
 var HookVersion_LoggingConfigFields = ubx.FieldMap{
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-		"LogRoleArn": ubx.FieldSpec{WireName: "log_role_arn"},
-	}
+	"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
+	"LogRoleArn":   ubx.FieldSpec{WireName: "log_role_arn"},
+}
 
 type HookVersionConfig struct {
 	// The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource type calls AWS APIs in any of its handlers, you must create an IAM execution role that includes the necessary permissions to call those AWS APIs, and provision that execution role in your account. CloudFormation then assumes that execution role to provide your resource type with the appropriate credentials.
@@ -53,10 +53,10 @@ var HookVersion = ubx.ResourceBinding{
 		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
 		"LoggingConfig": ubx.FieldSpec{
 			WireName: "logging_config",
-			Kind: "object",
-			Fields: HookVersion_LoggingConfigFields,
+			Kind:     "object",
+			Fields:   HookVersion_LoggingConfigFields,
 		},
 		"SchemaHandlerPackage": ubx.FieldSpec{WireName: "schema_handler_package"},
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
+		"TypeName":             ubx.FieldSpec{WireName: "type_name"},
 	},
 }

@@ -9,19 +9,19 @@ type StagingAccounts_Accounts struct {
 
 type StagingAccountsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type StagingAccountsAttrs struct {
-	Accounts any
+	Accounts   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var StagingAccounts = ubx.DataSourceBinding{
 	WireType: "aws_drs_staging_accounts",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

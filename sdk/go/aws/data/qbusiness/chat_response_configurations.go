@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ChatResponseConfigurations_ChatResponseConfigurations struct {
 	ChatResponseConfigurationArn any
-	ChatResponseConfigurationId any
-	CreatedAt any
-	DisplayName any
+	ChatResponseConfigurationId  any
+	CreatedAt                    any
+	DisplayName                  any
 	ResponseConfigurationSummary any
-	Status any
-	UpdatedAt any
+	Status                       any
+	UpdatedAt                    any
 }
 
 type ChatResponseConfigurationsConfig struct {
 	ApplicationId any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type ChatResponseConfigurationsAttrs struct {
-	ApplicationId any
+	ApplicationId              any
 	ChatResponseConfigurations any
-	MaxResults any
-	NextToken any
+	MaxResults                 any
+	NextToken                  any
 }
 
 var ChatResponseConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_qbusiness_chat_response_configurations",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

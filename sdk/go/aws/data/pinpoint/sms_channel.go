@@ -4,20 +4,20 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SmsChannel_SmschannelResponse struct {
-	ApplicationId any
-	CreationDate any
-	Enabled any
-	HasCredential any
-	Id any
-	IsArchived any
-	LastModifiedBy any
-	LastModifiedDate any
-	Platform any
-	PromotionalMessagesPerSecond any
-	SenderId any
-	ShortCode any
+	ApplicationId                  any
+	CreationDate                   any
+	Enabled                        any
+	HasCredential                  any
+	Id                             any
+	IsArchived                     any
+	LastModifiedBy                 any
+	LastModifiedDate               any
+	Platform                       any
+	PromotionalMessagesPerSecond   any
+	SenderId                       any
+	ShortCode                      any
 	TransactionalMessagesPerSecond any
-	Version any
+	Version                        any
 }
 
 type SmsChannelConfig struct {

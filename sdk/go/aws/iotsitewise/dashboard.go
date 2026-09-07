@@ -11,9 +11,9 @@ type Dashboard_Tags struct {
 }
 
 var Dashboard_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DashboardConfig struct {
 	// The dashboard definition specified in a JSON literal.
@@ -48,14 +48,14 @@ type DashboardAttrs struct {
 var Dashboard = ubx.ResourceBinding{
 	WireType: "aws_io_tsite_wise_dashboard",
 	Fields: ubx.FieldMap{
-		"DashboardDefinition": ubx.FieldSpec{WireName: "dashboard_definition"},
+		"DashboardDefinition":  ubx.FieldSpec{WireName: "dashboard_definition"},
 		"DashboardDescription": ubx.FieldSpec{WireName: "dashboard_description"},
-		"DashboardName": ubx.FieldSpec{WireName: "dashboard_name"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"DashboardName":        ubx.FieldSpec{WireName: "dashboard_name"},
+		"ProjectId":            ubx.FieldSpec{WireName: "project_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dashboard_TagsFields,
+			Kind:     "list",
+			Fields:   Dashboard_TagsFields,
 		},
 	},
 }

@@ -4,34 +4,34 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FleetAdvisorSchemaObjectSummary_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type FleetAdvisorSchemaObjectSummary_FleetAdvisorSchemaObjects struct {
-	CodeLineCount any
-	CodeSize any
+	CodeLineCount   any
+	CodeSize        any
 	NumberOfObjects any
-	ObjectType any
-	SchemaId any
+	ObjectType      any
+	SchemaId        any
 }
 
 var FleetAdvisorSchemaObjectSummary_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type FleetAdvisorSchemaObjectSummaryConfig struct {
-	Filters any
+	Filters    any
 	MaxRecords any
-	NextToken any
+	NextToken  any
 }
 
 type FleetAdvisorSchemaObjectSummaryAttrs struct {
-	Filters any
+	Filters                   any
 	FleetAdvisorSchemaObjects any
-	MaxRecords any
-	NextToken any
+	MaxRecords                any
+	NextToken                 any
 }
 
 var FleetAdvisorSchemaObjectSummary = ubx.DataSourceBinding{
@@ -39,10 +39,10 @@ var FleetAdvisorSchemaObjectSummary = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: FleetAdvisorSchemaObjectSummary_FiltersFields,
+			Kind:     "list",
+			Fields:   FleetAdvisorSchemaObjectSummary_FiltersFields,
 		},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

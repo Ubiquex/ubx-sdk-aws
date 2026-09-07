@@ -12,6 +12,5 @@ type RegistrationCodeAttrs struct {
 
 var RegistrationCode = ubx.DataSourceBinding{
 	WireType: "aws_iot_registration_code",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

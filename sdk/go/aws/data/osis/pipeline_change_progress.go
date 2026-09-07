@@ -4,17 +4,17 @@ package osis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PipelineChangeProgress_ChangeProgressStatuses_ChangeProgressStages struct {
-	Description any
+	Description   any
 	LastUpdatedAt any
-	Name any
-	Status any
+	Name          any
+	Status        any
 }
 
 type PipelineChangeProgress_ChangeProgressStatuses struct {
 	ChangeProgressStages any
-	StartTime any
-	Status any
-	TotalNumberOfStages any
+	StartTime            any
+	Status               any
+	TotalNumberOfStages  any
 }
 
 type PipelineChangeProgressConfig struct {
@@ -23,7 +23,7 @@ type PipelineChangeProgressConfig struct {
 
 type PipelineChangeProgressAttrs struct {
 	ChangeProgressStatuses any
-	PipelineName any
+	PipelineName           any
 }
 
 var PipelineChangeProgress = ubx.DataSourceBinding{

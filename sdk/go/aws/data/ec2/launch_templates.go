@@ -4,56 +4,56 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LaunchTemplates_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type LaunchTemplates_LaunchTemplates_Operator struct {
 	HiddenByDefault any
-	Managed any
-	Principal any
+	Managed         any
+	Principal       any
 }
 
 type LaunchTemplates_LaunchTemplates_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type LaunchTemplates_LaunchTemplates struct {
-	CreateTime any
-	CreatedBy any
+	CreateTime           any
+	CreatedBy            any
 	DefaultVersionNumber any
-	LatestVersionNumber any
-	LaunchTemplateId any
-	LaunchTemplateName any
-	Operator any
-	Tags any
+	LatestVersionNumber  any
+	LaunchTemplateId     any
+	LaunchTemplateName   any
+	Operator             any
+	Tags                 any
 }
 
 var LaunchTemplates_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type LaunchTemplatesConfig struct {
-	DryRun any
-	Filters any
+	DryRun                  any
+	Filters                 any
 	IncludeManagedResources any
-	LaunchTemplateIds any
-	LaunchTemplateNames any
-	MaxResults any
-	NextToken any
+	LaunchTemplateIds       any
+	LaunchTemplateNames     any
+	MaxResults              any
+	NextToken               any
 }
 
 type LaunchTemplatesAttrs struct {
-	DryRun any
-	Filters any
+	DryRun                  any
+	Filters                 any
 	IncludeManagedResources any
-	LaunchTemplateIds any
-	LaunchTemplateNames any
-	LaunchTemplates any
-	MaxResults any
-	NextToken any
+	LaunchTemplateIds       any
+	LaunchTemplateNames     any
+	LaunchTemplates         any
+	MaxResults              any
+	NextToken               any
 }
 
 var LaunchTemplates = ubx.DataSourceBinding{
@@ -62,13 +62,13 @@ var LaunchTemplates = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: LaunchTemplates_FiltersFields,
+			Kind:     "list",
+			Fields:   LaunchTemplates_FiltersFields,
 		},
 		"IncludeManagedResources": ubx.FieldSpec{WireName: "include_managed_resources"},
-		"LaunchTemplateIds": ubx.FieldSpec{WireName: "launch_template_ids"},
-		"LaunchTemplateNames": ubx.FieldSpec{WireName: "launch_template_names"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"LaunchTemplateIds":       ubx.FieldSpec{WireName: "launch_template_ids"},
+		"LaunchTemplateNames":     ubx.FieldSpec{WireName: "launch_template_names"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
 	},
 }

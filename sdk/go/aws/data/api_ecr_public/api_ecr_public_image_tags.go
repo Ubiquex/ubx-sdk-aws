@@ -4,40 +4,40 @@ package api_ecr_public
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiEcrPublicImageTags_ImageTagDetails_ImageDetail struct {
-	ArtifactMediaType any
-	ImageDigest any
+	ArtifactMediaType      any
+	ImageDigest            any
 	ImageManifestMediaType any
-	ImagePushedAt any
-	ImageSizeInBytes any
+	ImagePushedAt          any
+	ImageSizeInBytes       any
 }
 
 type ApiEcrPublicImageTags_ImageTagDetails struct {
-	CreatedAt any
+	CreatedAt   any
 	ImageDetail any
-	ImageTag any
+	ImageTag    any
 }
 
 type ApiEcrPublicImageTagsConfig struct {
-	MaxResults any
-	NextToken any
-	RegistryId any
+	MaxResults     any
+	NextToken      any
+	RegistryId     any
 	RepositoryName any
 }
 
 type ApiEcrPublicImageTagsAttrs struct {
 	ImageTagDetails any
-	MaxResults any
-	NextToken any
-	RegistryId any
-	RepositoryName any
+	MaxResults      any
+	NextToken       any
+	RegistryId      any
+	RepositoryName  any
 }
 
 var ApiEcrPublicImageTags = ubx.DataSourceBinding{
 	WireType: "aws_api_ecr_public_image_tags",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RegistryId": ubx.FieldSpec{WireName: "registry_id"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"RegistryId":     ubx.FieldSpec{WireName: "registry_id"},
 		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
 	},
 }

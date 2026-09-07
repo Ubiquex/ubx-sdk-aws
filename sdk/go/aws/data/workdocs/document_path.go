@@ -4,7 +4,7 @@ package workdocs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DocumentPath_Path_Components struct {
-	Id any
+	Id   any
 	Name any
 }
 
@@ -14,18 +14,18 @@ type DocumentPath_Path struct {
 
 type DocumentPathConfig struct {
 	AuthenticationToken any
-	DocumentId any
-	Fields any
-	Limit any
-	Marker any
+	DocumentId          any
+	Fields              any
+	Limit               any
+	Marker              any
 }
 
 type DocumentPathAttrs struct {
 	AuthenticationToken any
-	DocumentId any
-	Fields any
-	Limit any
-	Marker any
+	DocumentId          any
+	Fields              any
+	Limit               any
+	Marker              any
 	// <p>Describes the path information of a resource.</p>
 	Path any
 }
@@ -34,9 +34,9 @@ var DocumentPath = ubx.DataSourceBinding{
 	WireType: "aws_workdocs_document_path",
 	Fields: ubx.FieldMap{
 		"AuthenticationToken": ubx.FieldSpec{WireName: "authentication_token"},
-		"DocumentId": ubx.FieldSpec{WireName: "document_id"},
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"DocumentId":          ubx.FieldSpec{WireName: "document_id"},
+		"Fields":              ubx.FieldSpec{WireName: "fields"},
+		"Limit":               ubx.FieldSpec{WireName: "limit"},
+		"Marker":              ubx.FieldSpec{WireName: "marker"},
 	},
 }

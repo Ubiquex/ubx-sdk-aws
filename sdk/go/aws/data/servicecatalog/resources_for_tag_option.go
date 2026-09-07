@@ -4,34 +4,34 @@ package servicecatalog
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourcesForTagOption_ResourceDetails struct {
-	Arn any
+	Arn         any
 	CreatedTime any
 	Description any
-	Id any
-	Name any
+	Id          any
+	Name        any
 }
 
 type ResourcesForTagOptionConfig struct {
-	PageSize any
-	PageToken any
+	PageSize     any
+	PageToken    any
 	ResourceType any
-	TagOptionId any
+	TagOptionId  any
 }
 
 type ResourcesForTagOptionAttrs struct {
-	PageSize any
-	PageToken any
+	PageSize        any
+	PageToken       any
 	ResourceDetails any
-	ResourceType any
-	TagOptionId any
+	ResourceType    any
+	TagOptionId     any
 }
 
 var ResourcesForTagOption = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_resources_for_tag_option",
 	Fields: ubx.FieldMap{
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
+		"PageSize":     ubx.FieldSpec{WireName: "page_size"},
+		"PageToken":    ubx.FieldSpec{WireName: "page_token"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"TagOptionId": ubx.FieldSpec{WireName: "tag_option_id"},
+		"TagOptionId":  ubx.FieldSpec{WireName: "tag_option_id"},
 	},
 }

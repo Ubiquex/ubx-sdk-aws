@@ -11,9 +11,9 @@ type LoadBalancer_Tags struct {
 }
 
 var LoadBalancer_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LoadBalancerConfig struct {
 	// The names of the instances attached to the load balancer.
@@ -62,17 +62,17 @@ type LoadBalancerAttrs struct {
 var LoadBalancer = ubx.ResourceBinding{
 	WireType: "aws_lightsail_load_balancer",
 	Fields: ubx.FieldMap{
-		"AttachedInstances": ubx.FieldSpec{WireName: "attached_instances"},
-		"HealthCheckPath": ubx.FieldSpec{WireName: "health_check_path"},
-		"InstancePort": ubx.FieldSpec{WireName: "instance_port"},
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"LoadBalancerName": ubx.FieldSpec{WireName: "load_balancer_name"},
-		"SessionStickinessEnabled": ubx.FieldSpec{WireName: "session_stickiness_enabled"},
+		"AttachedInstances":                        ubx.FieldSpec{WireName: "attached_instances"},
+		"HealthCheckPath":                          ubx.FieldSpec{WireName: "health_check_path"},
+		"InstancePort":                             ubx.FieldSpec{WireName: "instance_port"},
+		"IpAddressType":                            ubx.FieldSpec{WireName: "ip_address_type"},
+		"LoadBalancerName":                         ubx.FieldSpec{WireName: "load_balancer_name"},
+		"SessionStickinessEnabled":                 ubx.FieldSpec{WireName: "session_stickiness_enabled"},
 		"SessionStickinessLbcookieDurationSeconds": ubx.FieldSpec{WireName: "session_stickiness_lbcookie_duration_seconds"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LoadBalancer_TagsFields,
+			Kind:     "list",
+			Fields:   LoadBalancer_TagsFields,
 		},
 		"TlsPolicyName": ubx.FieldSpec{WireName: "tls_policy_name"},
 	},

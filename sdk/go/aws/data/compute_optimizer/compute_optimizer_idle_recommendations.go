@@ -4,93 +4,93 @@ package compute_optimizer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComputeOptimizerIdleRecommendations_Errors struct {
-	Code any
-	Identifier any
-	Message any
+	Code         any
+	Identifier   any
+	Message      any
 	ResourceType any
 }
 
 type ComputeOptimizerIdleRecommendations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ComputeOptimizerIdleRecommendations_IdleRecommendations_SavingsOpportunity_EstimatedMonthlySavings struct {
 	Currency any
-	Value any
+	Value    any
 }
 
 type ComputeOptimizerIdleRecommendations_IdleRecommendations_SavingsOpportunity struct {
-	EstimatedMonthlySavings any
+	EstimatedMonthlySavings      any
 	SavingsOpportunityPercentage any
 }
 
 type ComputeOptimizerIdleRecommendations_IdleRecommendations_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ComputeOptimizerIdleRecommendations_IdleRecommendations_UtilizationMetrics_Dimensions struct {
-	Key any
+	Key    any
 	Values any
 }
 
 type ComputeOptimizerIdleRecommendations_IdleRecommendations_UtilizationMetrics struct {
 	Dimensions any
-	Name any
-	Statistic any
-	Value any
+	Name       any
+	Statistic  any
+	Value      any
 }
 
 type ComputeOptimizerIdleRecommendations_IdleRecommendations struct {
-	AccountId any
-	Finding any
-	FindingDescription any
-	LastRefreshTimestamp any
-	LookBackPeriodInDays any
-	ResourceArn any
-	ResourceId any
-	ResourceType any
-	SavingsOpportunity any
+	AccountId                        any
+	Finding                          any
+	FindingDescription               any
+	LastRefreshTimestamp             any
+	LookBackPeriodInDays             any
+	ResourceArn                      any
+	ResourceId                       any
+	ResourceType                     any
+	SavingsOpportunity               any
 	SavingsOpportunityAfterDiscounts any
-	Tags any
-	UtilizationMetrics any
+	Tags                             any
+	UtilizationMetrics               any
 }
 
 type ComputeOptimizerIdleRecommendations_OrderBy struct {
 	Dimension any
-	Order any
+	Order     any
 }
 
 var ComputeOptimizerIdleRecommendations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var ComputeOptimizerIdleRecommendations_OrderByFields = ubx.FieldMap{
-		"Dimension": ubx.FieldSpec{WireName: "dimension"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-	}
+	"Dimension": ubx.FieldSpec{WireName: "dimension"},
+	"Order":     ubx.FieldSpec{WireName: "order"},
+}
 
 type ComputeOptimizerIdleRecommendationsConfig struct {
 	AccountIds any
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Describes how the recommendations are ordered.</p>
-	OrderBy any
+	OrderBy      any
 	ResourceArns any
 }
 
 type ComputeOptimizerIdleRecommendationsAttrs struct {
-	AccountIds any
-	Errors any
-	Filters any
+	AccountIds          any
+	Errors              any
+	Filters             any
 	IdleRecommendations any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 	// <p>Describes how the recommendations are ordered.</p>
-	OrderBy any
+	OrderBy      any
 	ResourceArns any
 }
 
@@ -100,15 +100,15 @@ var ComputeOptimizerIdleRecommendations = ubx.DataSourceBinding{
 		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ComputeOptimizerIdleRecommendations_FiltersFields,
+			Kind:     "list",
+			Fields:   ComputeOptimizerIdleRecommendations_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"OrderBy": ubx.FieldSpec{
 			WireName: "order_by",
-			Kind: "object",
-			Fields: ComputeOptimizerIdleRecommendations_OrderByFields,
+			Kind:     "object",
+			Fields:   ComputeOptimizerIdleRecommendations_OrderByFields,
 		},
 		"ResourceArns": ubx.FieldSpec{WireName: "resource_arns"},
 	},

@@ -130,138 +130,138 @@ type Connector_WorkerConfiguration struct {
 }
 
 var Connector_Capacity_AutoScaling_ScaleInPolicyFields = ubx.FieldMap{
-		"CpuUtilizationPercentage": ubx.FieldSpec{WireName: "cpu_utilization_percentage"},
-	}
+	"CpuUtilizationPercentage": ubx.FieldSpec{WireName: "cpu_utilization_percentage"},
+}
 
 var Connector_Capacity_AutoScalingFields = ubx.FieldMap{
-		"MaxAutoscalingTaskCount": ubx.FieldSpec{WireName: "max_autoscaling_task_count"},
-		"MaxWorkerCount": ubx.FieldSpec{WireName: "max_worker_count"},
-		"McuCount": ubx.FieldSpec{WireName: "mcu_count"},
-		"MinWorkerCount": ubx.FieldSpec{WireName: "min_worker_count"},
-		"ScaleInPolicy": ubx.FieldSpec{
-			WireName: "scale_in_policy",
-			Kind: "object",
-			Fields: Connector_Capacity_AutoScaling_ScaleInPolicyFields,
-		},
-		"ScaleOutPolicy": ubx.FieldSpec{
-			WireName: "scale_out_policy",
-			Kind: "object",
-			Fields: Connector_Capacity_AutoScaling_ScaleInPolicyFields,
-		},
-	}
+	"MaxAutoscalingTaskCount": ubx.FieldSpec{WireName: "max_autoscaling_task_count"},
+	"MaxWorkerCount":          ubx.FieldSpec{WireName: "max_worker_count"},
+	"McuCount":                ubx.FieldSpec{WireName: "mcu_count"},
+	"MinWorkerCount":          ubx.FieldSpec{WireName: "min_worker_count"},
+	"ScaleInPolicy": ubx.FieldSpec{
+		WireName: "scale_in_policy",
+		Kind:     "object",
+		Fields:   Connector_Capacity_AutoScaling_ScaleInPolicyFields,
+	},
+	"ScaleOutPolicy": ubx.FieldSpec{
+		WireName: "scale_out_policy",
+		Kind:     "object",
+		Fields:   Connector_Capacity_AutoScaling_ScaleInPolicyFields,
+	},
+}
 
 var Connector_Capacity_ProvisionedCapacityFields = ubx.FieldMap{
-		"McuCount": ubx.FieldSpec{WireName: "mcu_count"},
-		"WorkerCount": ubx.FieldSpec{WireName: "worker_count"},
-	}
+	"McuCount":    ubx.FieldSpec{WireName: "mcu_count"},
+	"WorkerCount": ubx.FieldSpec{WireName: "worker_count"},
+}
 
 var Connector_CapacityFields = ubx.FieldMap{
-		"AutoScaling": ubx.FieldSpec{
-			WireName: "auto_scaling",
-			Kind: "object",
-			Fields: Connector_Capacity_AutoScalingFields,
-		},
-		"ProvisionedCapacity": ubx.FieldSpec{
-			WireName: "provisioned_capacity",
-			Kind: "object",
-			Fields: Connector_Capacity_ProvisionedCapacityFields,
-		},
-	}
+	"AutoScaling": ubx.FieldSpec{
+		WireName: "auto_scaling",
+		Kind:     "object",
+		Fields:   Connector_Capacity_AutoScalingFields,
+	},
+	"ProvisionedCapacity": ubx.FieldSpec{
+		WireName: "provisioned_capacity",
+		Kind:     "object",
+		Fields:   Connector_Capacity_ProvisionedCapacityFields,
+	},
+}
 
 var Connector_KafkaCluster_ApacheKafkaCluster_VpcFields = ubx.FieldMap{
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
+	"Subnets":        ubx.FieldSpec{WireName: "subnets"},
+}
 
 var Connector_KafkaCluster_ApacheKafkaClusterFields = ubx.FieldMap{
-		"BootstrapServers": ubx.FieldSpec{WireName: "bootstrap_servers"},
-		"Vpc": ubx.FieldSpec{
-			WireName: "vpc",
-			Kind: "object",
-			Fields: Connector_KafkaCluster_ApacheKafkaCluster_VpcFields,
-		},
-	}
+	"BootstrapServers": ubx.FieldSpec{WireName: "bootstrap_servers"},
+	"Vpc": ubx.FieldSpec{
+		WireName: "vpc",
+		Kind:     "object",
+		Fields:   Connector_KafkaCluster_ApacheKafkaCluster_VpcFields,
+	},
+}
 
 var Connector_KafkaClusterFields = ubx.FieldMap{
-		"ApacheKafkaCluster": ubx.FieldSpec{
-			WireName: "apache_kafka_cluster",
-			Kind: "object",
-			Fields: Connector_KafkaCluster_ApacheKafkaClusterFields,
-		},
-	}
+	"ApacheKafkaCluster": ubx.FieldSpec{
+		WireName: "apache_kafka_cluster",
+		Kind:     "object",
+		Fields:   Connector_KafkaCluster_ApacheKafkaClusterFields,
+	},
+}
 
 var Connector_KafkaClusterClientAuthenticationFields = ubx.FieldMap{
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-	}
+	"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
+}
 
 var Connector_KafkaClusterEncryptionInTransitFields = ubx.FieldMap{
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-	}
+	"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+}
 
 var Connector_LogDelivery_WorkerLogDelivery_CloudWatchLogsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
-	}
+	"Enabled":  ubx.FieldSpec{WireName: "enabled"},
+	"LogGroup": ubx.FieldSpec{WireName: "log_group"},
+}
 
 var Connector_LogDelivery_WorkerLogDelivery_FirehoseFields = ubx.FieldMap{
-		"DeliveryStream": ubx.FieldSpec{WireName: "delivery_stream"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"DeliveryStream": ubx.FieldSpec{WireName: "delivery_stream"},
+	"Enabled":        ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Connector_LogDelivery_WorkerLogDelivery_S3Fields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"Bucket":  ubx.FieldSpec{WireName: "bucket"},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Prefix":  ubx.FieldSpec{WireName: "prefix"},
+}
 
 var Connector_LogDelivery_WorkerLogDeliveryFields = ubx.FieldMap{
-		"CloudWatchLogs": ubx.FieldSpec{
-			WireName: "cloud_watch_logs",
-			Kind: "object",
-			Fields: Connector_LogDelivery_WorkerLogDelivery_CloudWatchLogsFields,
-		},
-		"Firehose": ubx.FieldSpec{
-			WireName: "firehose",
-			Kind: "object",
-			Fields: Connector_LogDelivery_WorkerLogDelivery_FirehoseFields,
-		},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Connector_LogDelivery_WorkerLogDelivery_S3Fields,
-		},
-	}
+	"CloudWatchLogs": ubx.FieldSpec{
+		WireName: "cloud_watch_logs",
+		Kind:     "object",
+		Fields:   Connector_LogDelivery_WorkerLogDelivery_CloudWatchLogsFields,
+	},
+	"Firehose": ubx.FieldSpec{
+		WireName: "firehose",
+		Kind:     "object",
+		Fields:   Connector_LogDelivery_WorkerLogDelivery_FirehoseFields,
+	},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Connector_LogDelivery_WorkerLogDelivery_S3Fields,
+	},
+}
 
 var Connector_LogDeliveryFields = ubx.FieldMap{
-		"WorkerLogDelivery": ubx.FieldSpec{
-			WireName: "worker_log_delivery",
-			Kind: "object",
-			Fields: Connector_LogDelivery_WorkerLogDeliveryFields,
-		},
-	}
+	"WorkerLogDelivery": ubx.FieldSpec{
+		WireName: "worker_log_delivery",
+		Kind:     "object",
+		Fields:   Connector_LogDelivery_WorkerLogDeliveryFields,
+	},
+}
 
 var Connector_Plugins_CustomPluginFields = ubx.FieldMap{
-		"CustomPluginArn": ubx.FieldSpec{WireName: "custom_plugin_arn"},
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-	}
+	"CustomPluginArn": ubx.FieldSpec{WireName: "custom_plugin_arn"},
+	"Revision":        ubx.FieldSpec{WireName: "revision"},
+}
 
 var Connector_PluginsFields = ubx.FieldMap{
-		"CustomPlugin": ubx.FieldSpec{
-			WireName: "custom_plugin",
-			Kind: "object",
-			Fields: Connector_Plugins_CustomPluginFields,
-		},
-	}
+	"CustomPlugin": ubx.FieldSpec{
+		WireName: "custom_plugin",
+		Kind:     "object",
+		Fields:   Connector_Plugins_CustomPluginFields,
+	},
+}
 
 var Connector_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Connector_WorkerConfigurationFields = ubx.FieldMap{
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-		"WorkerConfigurationArn": ubx.FieldSpec{WireName: "worker_configuration_arn"},
-	}
+	"Revision":               ubx.FieldSpec{WireName: "revision"},
+	"WorkerConfigurationArn": ubx.FieldSpec{WireName: "worker_configuration_arn"},
+}
 
 type ConnectorConfig struct {
 	// Information about the capacity allocated to the connector.
@@ -332,49 +332,49 @@ var Connector = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Capacity": ubx.FieldSpec{
 			WireName: "capacity",
-			Kind: "object",
-			Fields: Connector_CapacityFields,
+			Kind:     "object",
+			Fields:   Connector_CapacityFields,
 		},
 		"ConnectorConfiguration": ubx.FieldSpec{WireName: "connector_configuration"},
-		"ConnectorDescription": ubx.FieldSpec{WireName: "connector_description"},
-		"ConnectorName": ubx.FieldSpec{WireName: "connector_name"},
+		"ConnectorDescription":   ubx.FieldSpec{WireName: "connector_description"},
+		"ConnectorName":          ubx.FieldSpec{WireName: "connector_name"},
 		"KafkaCluster": ubx.FieldSpec{
 			WireName: "kafka_cluster",
-			Kind: "object",
-			Fields: Connector_KafkaClusterFields,
+			Kind:     "object",
+			Fields:   Connector_KafkaClusterFields,
 		},
 		"KafkaClusterClientAuthentication": ubx.FieldSpec{
 			WireName: "kafka_cluster_client_authentication",
-			Kind: "object",
-			Fields: Connector_KafkaClusterClientAuthenticationFields,
+			Kind:     "object",
+			Fields:   Connector_KafkaClusterClientAuthenticationFields,
 		},
 		"KafkaClusterEncryptionInTransit": ubx.FieldSpec{
 			WireName: "kafka_cluster_encryption_in_transit",
-			Kind: "object",
-			Fields: Connector_KafkaClusterEncryptionInTransitFields,
+			Kind:     "object",
+			Fields:   Connector_KafkaClusterEncryptionInTransitFields,
 		},
 		"KafkaConnectVersion": ubx.FieldSpec{WireName: "kafka_connect_version"},
 		"LogDelivery": ubx.FieldSpec{
 			WireName: "log_delivery",
-			Kind: "object",
-			Fields: Connector_LogDeliveryFields,
+			Kind:     "object",
+			Fields:   Connector_LogDeliveryFields,
 		},
 		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
 		"Plugins": ubx.FieldSpec{
 			WireName: "plugins",
-			Kind: "list",
-			Fields: Connector_PluginsFields,
+			Kind:     "list",
+			Fields:   Connector_PluginsFields,
 		},
 		"ServiceExecutionRoleArn": ubx.FieldSpec{WireName: "service_execution_role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Connector_TagsFields,
+			Kind:     "list",
+			Fields:   Connector_TagsFields,
 		},
 		"WorkerConfiguration": ubx.FieldSpec{
 			WireName: "worker_configuration",
-			Kind: "object",
-			Fields: Connector_WorkerConfigurationFields,
+			Kind:     "object",
+			Fields:   Connector_WorkerConfigurationFields,
 		},
 	},
 }

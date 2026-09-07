@@ -269,294 +269,294 @@ type MailManagerRuleSet_Tags struct {
 }
 
 var MailManagerRuleSet_Rules_Actions_AddHeaderFields = ubx.FieldMap{
-		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
-		"HeaderValue": ubx.FieldSpec{WireName: "header_value"},
-	}
+	"HeaderName":  ubx.FieldSpec{WireName: "header_name"},
+	"HeaderValue": ubx.FieldSpec{WireName: "header_value"},
+}
 
 var MailManagerRuleSet_Rules_Actions_ArchiveFields = ubx.FieldMap{
-		"ActionFailurePolicy": ubx.FieldSpec{WireName: "action_failure_policy"},
-		"TargetArchive": ubx.FieldSpec{WireName: "target_archive"},
-	}
+	"ActionFailurePolicy": ubx.FieldSpec{WireName: "action_failure_policy"},
+	"TargetArchive":       ubx.FieldSpec{WireName: "target_archive"},
+}
 
 var MailManagerRuleSet_Rules_Actions_BounceFields = ubx.FieldMap{
-		"ActionFailurePolicy": ubx.FieldSpec{WireName: "action_failure_policy"},
-		"DiagnosticMessage": ubx.FieldSpec{WireName: "diagnostic_message"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"Sender": ubx.FieldSpec{WireName: "sender"},
-		"SmtpReplyCode": ubx.FieldSpec{WireName: "smtp_reply_code"},
-		"StatusCode": ubx.FieldSpec{WireName: "status_code"},
-	}
+	"ActionFailurePolicy": ubx.FieldSpec{WireName: "action_failure_policy"},
+	"DiagnosticMessage":   ubx.FieldSpec{WireName: "diagnostic_message"},
+	"Message":             ubx.FieldSpec{WireName: "message"},
+	"RoleArn":             ubx.FieldSpec{WireName: "role_arn"},
+	"Sender":              ubx.FieldSpec{WireName: "sender"},
+	"SmtpReplyCode":       ubx.FieldSpec{WireName: "smtp_reply_code"},
+	"StatusCode":          ubx.FieldSpec{WireName: "status_code"},
+}
 
 var MailManagerRuleSet_Rules_Actions_DeliverToMailboxFields = ubx.FieldMap{
-		"ActionFailurePolicy": ubx.FieldSpec{WireName: "action_failure_policy"},
-		"MailboxArn": ubx.FieldSpec{WireName: "mailbox_arn"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"ActionFailurePolicy": ubx.FieldSpec{WireName: "action_failure_policy"},
+	"MailboxArn":          ubx.FieldSpec{WireName: "mailbox_arn"},
+	"RoleArn":             ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var MailManagerRuleSet_Rules_Actions_DeliverToQbusinessFields = ubx.FieldMap{
-		"ActionFailurePolicy": ubx.FieldSpec{WireName: "action_failure_policy"},
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"ActionFailurePolicy": ubx.FieldSpec{WireName: "action_failure_policy"},
+	"ApplicationId":       ubx.FieldSpec{WireName: "application_id"},
+	"IndexId":             ubx.FieldSpec{WireName: "index_id"},
+	"RoleArn":             ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var MailManagerRuleSet_Rules_Actions_InvokeLambdaFields = ubx.FieldMap{
-		"ActionFailurePolicy": ubx.FieldSpec{WireName: "action_failure_policy"},
-		"FunctionArn": ubx.FieldSpec{WireName: "function_arn"},
-		"InvocationType": ubx.FieldSpec{WireName: "invocation_type"},
-		"RetryTimeMinutes": ubx.FieldSpec{WireName: "retry_time_minutes"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"ActionFailurePolicy": ubx.FieldSpec{WireName: "action_failure_policy"},
+	"FunctionArn":         ubx.FieldSpec{WireName: "function_arn"},
+	"InvocationType":      ubx.FieldSpec{WireName: "invocation_type"},
+	"RetryTimeMinutes":    ubx.FieldSpec{WireName: "retry_time_minutes"},
+	"RoleArn":             ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var MailManagerRuleSet_Rules_Actions_PublishToSnsFields = ubx.FieldMap{
-		"ActionFailurePolicy": ubx.FieldSpec{WireName: "action_failure_policy"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"PayloadType": ubx.FieldSpec{WireName: "payload_type"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
-	}
+	"ActionFailurePolicy": ubx.FieldSpec{WireName: "action_failure_policy"},
+	"Encoding":            ubx.FieldSpec{WireName: "encoding"},
+	"PayloadType":         ubx.FieldSpec{WireName: "payload_type"},
+	"RoleArn":             ubx.FieldSpec{WireName: "role_arn"},
+	"TopicArn":            ubx.FieldSpec{WireName: "topic_arn"},
+}
 
 var MailManagerRuleSet_Rules_Actions_RelayFields = ubx.FieldMap{
-		"ActionFailurePolicy": ubx.FieldSpec{WireName: "action_failure_policy"},
-		"MailFrom": ubx.FieldSpec{WireName: "mail_from"},
-		"Relay": ubx.FieldSpec{WireName: "relay"},
-	}
+	"ActionFailurePolicy": ubx.FieldSpec{WireName: "action_failure_policy"},
+	"MailFrom":            ubx.FieldSpec{WireName: "mail_from"},
+	"Relay":               ubx.FieldSpec{WireName: "relay"},
+}
 
 var MailManagerRuleSet_Rules_Actions_ReplaceRecipientFields = ubx.FieldMap{
-		"ReplaceWith": ubx.FieldSpec{WireName: "replace_with"},
-	}
+	"ReplaceWith": ubx.FieldSpec{WireName: "replace_with"},
+}
 
 var MailManagerRuleSet_Rules_Actions_SendFields = ubx.FieldMap{
-		"ActionFailurePolicy": ubx.FieldSpec{WireName: "action_failure_policy"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"ActionFailurePolicy": ubx.FieldSpec{WireName: "action_failure_policy"},
+	"RoleArn":             ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var MailManagerRuleSet_Rules_Actions_WriteToS3Fields = ubx.FieldMap{
-		"ActionFailurePolicy": ubx.FieldSpec{WireName: "action_failure_policy"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
-		"S3Prefix": ubx.FieldSpec{WireName: "s3_prefix"},
-		"S3SseKmsKeyId": ubx.FieldSpec{WireName: "s3_sse_kms_key_id"},
-	}
+	"ActionFailurePolicy": ubx.FieldSpec{WireName: "action_failure_policy"},
+	"RoleArn":             ubx.FieldSpec{WireName: "role_arn"},
+	"S3Bucket":            ubx.FieldSpec{WireName: "s3_bucket"},
+	"S3Prefix":            ubx.FieldSpec{WireName: "s3_prefix"},
+	"S3SseKmsKeyId":       ubx.FieldSpec{WireName: "s3_sse_kms_key_id"},
+}
 
 var MailManagerRuleSet_Rules_ActionsFields = ubx.FieldMap{
-		"AddHeader": ubx.FieldSpec{
-			WireName: "add_header",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Actions_AddHeaderFields,
-		},
-		"Archive": ubx.FieldSpec{
-			WireName: "archive",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Actions_ArchiveFields,
-		},
-		"Bounce": ubx.FieldSpec{
-			WireName: "bounce",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Actions_BounceFields,
-		},
-		"DeliverToMailbox": ubx.FieldSpec{
-			WireName: "deliver_to_mailbox",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Actions_DeliverToMailboxFields,
-		},
-		"DeliverToQbusiness": ubx.FieldSpec{
-			WireName: "deliver_to_qbusiness",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Actions_DeliverToQbusinessFields,
-		},
-		"Drop": ubx.FieldSpec{WireName: "drop"},
-		"InvokeLambda": ubx.FieldSpec{
-			WireName: "invoke_lambda",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Actions_InvokeLambdaFields,
-		},
-		"PublishToSns": ubx.FieldSpec{
-			WireName: "publish_to_sns",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Actions_PublishToSnsFields,
-		},
-		"Relay": ubx.FieldSpec{
-			WireName: "relay",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Actions_RelayFields,
-		},
-		"ReplaceRecipient": ubx.FieldSpec{
-			WireName: "replace_recipient",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Actions_ReplaceRecipientFields,
-		},
-		"Send": ubx.FieldSpec{
-			WireName: "send",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Actions_SendFields,
-		},
-		"WriteToS3": ubx.FieldSpec{
-			WireName: "write_to_s3",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Actions_WriteToS3Fields,
-		},
-	}
+	"AddHeader": ubx.FieldSpec{
+		WireName: "add_header",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Actions_AddHeaderFields,
+	},
+	"Archive": ubx.FieldSpec{
+		WireName: "archive",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Actions_ArchiveFields,
+	},
+	"Bounce": ubx.FieldSpec{
+		WireName: "bounce",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Actions_BounceFields,
+	},
+	"DeliverToMailbox": ubx.FieldSpec{
+		WireName: "deliver_to_mailbox",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Actions_DeliverToMailboxFields,
+	},
+	"DeliverToQbusiness": ubx.FieldSpec{
+		WireName: "deliver_to_qbusiness",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Actions_DeliverToQbusinessFields,
+	},
+	"Drop": ubx.FieldSpec{WireName: "drop"},
+	"InvokeLambda": ubx.FieldSpec{
+		WireName: "invoke_lambda",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Actions_InvokeLambdaFields,
+	},
+	"PublishToSns": ubx.FieldSpec{
+		WireName: "publish_to_sns",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Actions_PublishToSnsFields,
+	},
+	"Relay": ubx.FieldSpec{
+		WireName: "relay",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Actions_RelayFields,
+	},
+	"ReplaceRecipient": ubx.FieldSpec{
+		WireName: "replace_recipient",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Actions_ReplaceRecipientFields,
+	},
+	"Send": ubx.FieldSpec{
+		WireName: "send",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Actions_SendFields,
+	},
+	"WriteToS3": ubx.FieldSpec{
+		WireName: "write_to_s3",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Actions_WriteToS3Fields,
+	},
+}
 
 var MailManagerRuleSet_Rules_Conditions_BooleanExpression_Evaluate_AnalysisFields = ubx.FieldMap{
-		"Analyzer": ubx.FieldSpec{WireName: "analyzer"},
-		"ResultField": ubx.FieldSpec{WireName: "result_field"},
-	}
+	"Analyzer":    ubx.FieldSpec{WireName: "analyzer"},
+	"ResultField": ubx.FieldSpec{WireName: "result_field"},
+}
 
 var MailManagerRuleSet_Rules_Conditions_BooleanExpression_Evaluate_IsInAddressListFields = ubx.FieldMap{
-		"AddressLists": ubx.FieldSpec{WireName: "address_lists"},
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-	}
+	"AddressLists": ubx.FieldSpec{WireName: "address_lists"},
+	"Attribute":    ubx.FieldSpec{WireName: "attribute"},
+}
 
 var MailManagerRuleSet_Rules_Conditions_BooleanExpression_EvaluateFields = ubx.FieldMap{
-		"Analysis": ubx.FieldSpec{
-			WireName: "analysis",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Conditions_BooleanExpression_Evaluate_AnalysisFields,
-		},
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"IsInAddressList": ubx.FieldSpec{
-			WireName: "is_in_address_list",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Conditions_BooleanExpression_Evaluate_IsInAddressListFields,
-		},
-	}
+	"Analysis": ubx.FieldSpec{
+		WireName: "analysis",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Conditions_BooleanExpression_Evaluate_AnalysisFields,
+	},
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"IsInAddressList": ubx.FieldSpec{
+		WireName: "is_in_address_list",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Conditions_BooleanExpression_Evaluate_IsInAddressListFields,
+	},
+}
 
 var MailManagerRuleSet_Rules_Conditions_BooleanExpressionFields = ubx.FieldMap{
-		"Evaluate": ubx.FieldSpec{
-			WireName: "evaluate",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Conditions_BooleanExpression_EvaluateFields,
-		},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-	}
+	"Evaluate": ubx.FieldSpec{
+		WireName: "evaluate",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Conditions_BooleanExpression_EvaluateFields,
+	},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+}
 
 var MailManagerRuleSet_Rules_Conditions_DmarcExpressionFields = ubx.FieldMap{
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var MailManagerRuleSet_Rules_Conditions_IpExpression_EvaluateFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+}
 
 var MailManagerRuleSet_Rules_Conditions_IpExpressionFields = ubx.FieldMap{
-		"Evaluate": ubx.FieldSpec{
-			WireName: "evaluate",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Conditions_IpExpression_EvaluateFields,
-		},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Evaluate": ubx.FieldSpec{
+		WireName: "evaluate",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Conditions_IpExpression_EvaluateFields,
+	},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var MailManagerRuleSet_Rules_Conditions_NumberExpressionFields = ubx.FieldMap{
-		"Evaluate": ubx.FieldSpec{
-			WireName: "evaluate",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Conditions_IpExpression_EvaluateFields,
-		},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Evaluate": ubx.FieldSpec{
+		WireName: "evaluate",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Conditions_IpExpression_EvaluateFields,
+	},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var MailManagerRuleSet_Rules_Conditions_StringExpression_EvaluateFields = ubx.FieldMap{
-		"Analysis": ubx.FieldSpec{
-			WireName: "analysis",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Conditions_BooleanExpression_Evaluate_AnalysisFields,
-		},
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"ClientCertificateAttribute": ubx.FieldSpec{WireName: "client_certificate_attribute"},
-		"MimeHeaderAttribute": ubx.FieldSpec{WireName: "mime_header_attribute"},
-	}
+	"Analysis": ubx.FieldSpec{
+		WireName: "analysis",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Conditions_BooleanExpression_Evaluate_AnalysisFields,
+	},
+	"Attribute":                  ubx.FieldSpec{WireName: "attribute"},
+	"ClientCertificateAttribute": ubx.FieldSpec{WireName: "client_certificate_attribute"},
+	"MimeHeaderAttribute":        ubx.FieldSpec{WireName: "mime_header_attribute"},
+}
 
 var MailManagerRuleSet_Rules_Conditions_StringExpressionFields = ubx.FieldMap{
-		"Evaluate": ubx.FieldSpec{
-			WireName: "evaluate",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Conditions_StringExpression_EvaluateFields,
-		},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Evaluate": ubx.FieldSpec{
+		WireName: "evaluate",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Conditions_StringExpression_EvaluateFields,
+	},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var MailManagerRuleSet_Rules_Conditions_VerdictExpression_EvaluateFields = ubx.FieldMap{
-		"Analysis": ubx.FieldSpec{
-			WireName: "analysis",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Conditions_BooleanExpression_Evaluate_AnalysisFields,
-		},
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-	}
+	"Analysis": ubx.FieldSpec{
+		WireName: "analysis",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Conditions_BooleanExpression_Evaluate_AnalysisFields,
+	},
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+}
 
 var MailManagerRuleSet_Rules_Conditions_VerdictExpressionFields = ubx.FieldMap{
-		"Evaluate": ubx.FieldSpec{
-			WireName: "evaluate",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Conditions_VerdictExpression_EvaluateFields,
-		},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Evaluate": ubx.FieldSpec{
+		WireName: "evaluate",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Conditions_VerdictExpression_EvaluateFields,
+	},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var MailManagerRuleSet_Rules_ConditionsFields = ubx.FieldMap{
-		"BooleanExpression": ubx.FieldSpec{
-			WireName: "boolean_expression",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Conditions_BooleanExpressionFields,
-		},
-		"DmarcExpression": ubx.FieldSpec{
-			WireName: "dmarc_expression",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Conditions_DmarcExpressionFields,
-		},
-		"IpExpression": ubx.FieldSpec{
-			WireName: "ip_expression",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Conditions_IpExpressionFields,
-		},
-		"NumberExpression": ubx.FieldSpec{
-			WireName: "number_expression",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Conditions_NumberExpressionFields,
-		},
-		"StringExpression": ubx.FieldSpec{
-			WireName: "string_expression",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Conditions_StringExpressionFields,
-		},
-		"VerdictExpression": ubx.FieldSpec{
-			WireName: "verdict_expression",
-			Kind: "object",
-			Fields: MailManagerRuleSet_Rules_Conditions_VerdictExpressionFields,
-		},
-	}
+	"BooleanExpression": ubx.FieldSpec{
+		WireName: "boolean_expression",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Conditions_BooleanExpressionFields,
+	},
+	"DmarcExpression": ubx.FieldSpec{
+		WireName: "dmarc_expression",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Conditions_DmarcExpressionFields,
+	},
+	"IpExpression": ubx.FieldSpec{
+		WireName: "ip_expression",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Conditions_IpExpressionFields,
+	},
+	"NumberExpression": ubx.FieldSpec{
+		WireName: "number_expression",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Conditions_NumberExpressionFields,
+	},
+	"StringExpression": ubx.FieldSpec{
+		WireName: "string_expression",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Conditions_StringExpressionFields,
+	},
+	"VerdictExpression": ubx.FieldSpec{
+		WireName: "verdict_expression",
+		Kind:     "object",
+		Fields:   MailManagerRuleSet_Rules_Conditions_VerdictExpressionFields,
+	},
+}
 
 var MailManagerRuleSet_RulesFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: MailManagerRuleSet_Rules_ActionsFields,
-		},
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: MailManagerRuleSet_Rules_ConditionsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Unless": ubx.FieldSpec{
-			WireName: "unless",
-			Kind: "list",
-			Fields: MailManagerRuleSet_Rules_ConditionsFields,
-		},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   MailManagerRuleSet_Rules_ActionsFields,
+	},
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   MailManagerRuleSet_Rules_ConditionsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Unless": ubx.FieldSpec{
+		WireName: "unless",
+		Kind:     "list",
+		Fields:   MailManagerRuleSet_Rules_ConditionsFields,
+	},
+}
 
 var MailManagerRuleSet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MailManagerRuleSetConfig struct {
 	// A unique, user-defined name that identifies the Mail Manager rule set within your AWS account. (AI-inferred)
@@ -586,13 +586,13 @@ var MailManagerRuleSet = ubx.ResourceBinding{
 		"RuleSetName": ubx.FieldSpec{WireName: "rule_set_name"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: MailManagerRuleSet_RulesFields,
+			Kind:     "list",
+			Fields:   MailManagerRuleSet_RulesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MailManagerRuleSet_TagsFields,
+			Kind:     "list",
+			Fields:   MailManagerRuleSet_TagsFields,
 		},
 	},
 }

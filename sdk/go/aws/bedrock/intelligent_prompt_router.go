@@ -14,22 +14,22 @@ type IntelligentPromptRouter_RoutingCriteria struct {
 }
 
 type IntelligentPromptRouter_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var IntelligentPromptRouter_FallbackModelFields = ubx.FieldMap{
-		"ModelArn": ubx.FieldSpec{WireName: "model_arn"},
-	}
+	"ModelArn": ubx.FieldSpec{WireName: "model_arn"},
+}
 
 var IntelligentPromptRouter_RoutingCriteriaFields = ubx.FieldMap{
-		"ResponseQualityDifference": ubx.FieldSpec{WireName: "response_quality_difference"},
-	}
+	"ResponseQualityDifference": ubx.FieldSpec{WireName: "response_quality_difference"},
+}
 
 var IntelligentPromptRouter_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IntelligentPromptRouterConfig struct {
 	// Description of the Prompt Router.
@@ -77,24 +77,24 @@ var IntelligentPromptRouter = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"FallbackModel": ubx.FieldSpec{
 			WireName: "fallback_model",
-			Kind: "object",
-			Fields: IntelligentPromptRouter_FallbackModelFields,
+			Kind:     "object",
+			Fields:   IntelligentPromptRouter_FallbackModelFields,
 		},
 		"Models": ubx.FieldSpec{
 			WireName: "models",
-			Kind: "list",
-			Fields: IntelligentPromptRouter_FallbackModelFields,
+			Kind:     "list",
+			Fields:   IntelligentPromptRouter_FallbackModelFields,
 		},
 		"PromptRouterName": ubx.FieldSpec{WireName: "prompt_router_name"},
 		"RoutingCriteria": ubx.FieldSpec{
 			WireName: "routing_criteria",
-			Kind: "object",
-			Fields: IntelligentPromptRouter_RoutingCriteriaFields,
+			Kind:     "object",
+			Fields:   IntelligentPromptRouter_RoutingCriteriaFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: IntelligentPromptRouter_TagsFields,
+			Kind:     "list",
+			Fields:   IntelligentPromptRouter_TagsFields,
 		},
 	},
 }

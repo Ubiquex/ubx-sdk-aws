@@ -4,38 +4,38 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationConformancePacks_OrganizationConformancePacks_ConformancePackInputParameters struct {
-	ParameterName any
+	ParameterName  any
 	ParameterValue any
 }
 
 type OrganizationConformancePacks_OrganizationConformancePacks struct {
-	ConformancePackInputParameters any
-	DeliveryS3Bucket any
-	DeliveryS3KeyPrefix any
-	ExcludedAccounts any
-	LastUpdateTime any
-	OrganizationConformancePackArn any
+	ConformancePackInputParameters  any
+	DeliveryS3Bucket                any
+	DeliveryS3KeyPrefix             any
+	ExcludedAccounts                any
+	LastUpdateTime                  any
+	OrganizationConformancePackArn  any
 	OrganizationConformancePackName any
 }
 
 type OrganizationConformancePacksConfig struct {
-	Limit any
-	NextToken any
+	Limit                            any
+	NextToken                        any
 	OrganizationConformancePackNames any
 }
 
 type OrganizationConformancePacksAttrs struct {
-	Limit any
-	NextToken any
+	Limit                            any
+	NextToken                        any
 	OrganizationConformancePackNames any
-	OrganizationConformancePacks any
+	OrganizationConformancePacks     any
 }
 
 var OrganizationConformancePacks = ubx.DataSourceBinding{
 	WireType: "aws_config_organization_conformance_packs",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":                            ubx.FieldSpec{WireName: "limit"},
+		"NextToken":                        ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationConformancePackNames": ubx.FieldSpec{WireName: "organization_conformance_pack_names"},
 	},
 }

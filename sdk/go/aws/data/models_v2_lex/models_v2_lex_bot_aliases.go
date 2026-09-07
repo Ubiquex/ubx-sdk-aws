@@ -4,33 +4,33 @@ package models_v2_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsV2LexBotAliases_BotAliasSummaries struct {
-	BotAliasId any
-	BotAliasName any
-	BotAliasStatus any
-	BotVersion any
-	CreationDateTime any
-	Description any
+	BotAliasId          any
+	BotAliasName        any
+	BotAliasStatus      any
+	BotVersion          any
+	CreationDateTime    any
+	Description         any
 	LastUpdatedDateTime any
 }
 
 type ModelsV2LexBotAliasesConfig struct {
-	BotId any
+	BotId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ModelsV2LexBotAliasesAttrs struct {
 	BotAliasSummaries any
-	BotId any
-	MaxResults any
-	NextToken any
+	BotId             any
+	MaxResults        any
+	NextToken         any
 }
 
 var ModelsV2LexBotAliases = ubx.DataSourceBinding{
 	WireType: "aws_models_v2_lex_bot_aliases",
 	Fields: ubx.FieldMap{
-		"BotId": ubx.FieldSpec{WireName: "bot_id"},
+		"BotId":      ubx.FieldSpec{WireName: "bot_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

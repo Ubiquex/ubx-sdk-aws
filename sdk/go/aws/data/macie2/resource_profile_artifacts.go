@@ -4,26 +4,26 @@ package macie2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceProfileArtifacts_Artifacts struct {
-	Arn any
+	Arn                        any
 	ClassificationResultStatus any
-	Sensitive any
+	Sensitive                  any
 }
 
 type ResourceProfileArtifactsConfig struct {
-	NextToken any
+	NextToken   any
 	ResourceArn any
 }
 
 type ResourceProfileArtifactsAttrs struct {
-	Artifacts any
-	NextToken any
+	Artifacts   any
+	NextToken   any
 	ResourceArn any
 }
 
 var ResourceProfileArtifacts = ubx.DataSourceBinding{
 	WireType: "aws_macie2_resource_profile_artifacts",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

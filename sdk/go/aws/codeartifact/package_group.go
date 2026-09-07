@@ -25,45 +25,45 @@ type PackageGroup_OriginConfiguration struct {
 }
 
 type PackageGroup_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var PackageGroup_OriginConfiguration_Restrictions_ExternalUpstreamFields = ubx.FieldMap{
-		"Repositories": ubx.FieldSpec{WireName: "repositories"},
-		"RestrictionMode": ubx.FieldSpec{WireName: "restriction_mode"},
-	}
+	"Repositories":    ubx.FieldSpec{WireName: "repositories"},
+	"RestrictionMode": ubx.FieldSpec{WireName: "restriction_mode"},
+}
 
 var PackageGroup_OriginConfiguration_RestrictionsFields = ubx.FieldMap{
-		"ExternalUpstream": ubx.FieldSpec{
-			WireName: "external_upstream",
-			Kind: "object",
-			Fields: PackageGroup_OriginConfiguration_Restrictions_ExternalUpstreamFields,
-		},
-		"InternalUpstream": ubx.FieldSpec{
-			WireName: "internal_upstream",
-			Kind: "object",
-			Fields: PackageGroup_OriginConfiguration_Restrictions_ExternalUpstreamFields,
-		},
-		"Publish": ubx.FieldSpec{
-			WireName: "publish",
-			Kind: "object",
-			Fields: PackageGroup_OriginConfiguration_Restrictions_ExternalUpstreamFields,
-		},
-	}
+	"ExternalUpstream": ubx.FieldSpec{
+		WireName: "external_upstream",
+		Kind:     "object",
+		Fields:   PackageGroup_OriginConfiguration_Restrictions_ExternalUpstreamFields,
+	},
+	"InternalUpstream": ubx.FieldSpec{
+		WireName: "internal_upstream",
+		Kind:     "object",
+		Fields:   PackageGroup_OriginConfiguration_Restrictions_ExternalUpstreamFields,
+	},
+	"Publish": ubx.FieldSpec{
+		WireName: "publish",
+		Kind:     "object",
+		Fields:   PackageGroup_OriginConfiguration_Restrictions_ExternalUpstreamFields,
+	},
+}
 
 var PackageGroup_OriginConfigurationFields = ubx.FieldMap{
-		"Restrictions": ubx.FieldSpec{
-			WireName: "restrictions",
-			Kind: "object",
-			Fields: PackageGroup_OriginConfiguration_RestrictionsFields,
-		},
-	}
+	"Restrictions": ubx.FieldSpec{
+		WireName: "restrictions",
+		Kind:     "object",
+		Fields:   PackageGroup_OriginConfiguration_RestrictionsFields,
+	},
+}
 
 var PackageGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PackageGroupConfig struct {
 	// The contact info of the package group.
@@ -106,18 +106,18 @@ var PackageGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ContactInfo": ubx.FieldSpec{WireName: "contact_info"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":  ubx.FieldSpec{WireName: "domain_name"},
 		"DomainOwner": ubx.FieldSpec{WireName: "domain_owner"},
 		"OriginConfiguration": ubx.FieldSpec{
 			WireName: "origin_configuration",
-			Kind: "object",
-			Fields: PackageGroup_OriginConfigurationFields,
+			Kind:     "object",
+			Fields:   PackageGroup_OriginConfigurationFields,
 		},
 		"Pattern": ubx.FieldSpec{WireName: "pattern"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PackageGroup_TagsFields,
+			Kind:     "list",
+			Fields:   PackageGroup_TagsFields,
 		},
 	},
 }

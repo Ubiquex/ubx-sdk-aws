@@ -4,41 +4,41 @@ package admin_wickr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AdminWickrDevicesForUser_Devices struct {
-	AppId any
-	Created any
-	LastLogin any
+	AppId      any
+	Created    any
+	LastLogin  any
 	StatusText any
-	Suspend any
-	Type any
+	Suspend    any
+	Type       any
 }
 
 type AdminWickrDevicesForUserConfig struct {
-	MaxResults any
-	NetworkId any
-	NextToken any
+	MaxResults    any
+	NetworkId     any
+	NextToken     any
 	SortDirection any
-	SortFields any
-	UserId any
+	SortFields    any
+	UserId        any
 }
 
 type AdminWickrDevicesForUserAttrs struct {
-	Devices any
-	MaxResults any
-	NetworkId any
-	NextToken any
+	Devices       any
+	MaxResults    any
+	NetworkId     any
+	NextToken     any
 	SortDirection any
-	SortFields any
-	UserId any
+	SortFields    any
+	UserId        any
 }
 
 var AdminWickrDevicesForUser = ubx.DataSourceBinding{
 	WireType: "aws_admin_wickr_devices_for_user",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NetworkId": ubx.FieldSpec{WireName: "network_id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NetworkId":     ubx.FieldSpec{WireName: "network_id"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"SortDirection": ubx.FieldSpec{WireName: "sort_direction"},
-		"SortFields": ubx.FieldSpec{WireName: "sort_fields"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"SortFields":    ubx.FieldSpec{WireName: "sort_fields"},
+		"UserId":        ubx.FieldSpec{WireName: "user_id"},
 	},
 }

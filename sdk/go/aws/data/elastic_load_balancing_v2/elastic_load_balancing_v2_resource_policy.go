@@ -8,7 +8,7 @@ type ElasticLoadBalancingV2ResourcePolicyConfig struct {
 }
 
 type ElasticLoadBalancingV2ResourcePolicyAttrs struct {
-	Policy any
+	Policy      any
 	ResourceArn any
 }
 

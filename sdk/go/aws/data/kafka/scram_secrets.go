@@ -6,13 +6,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ScramSecretsConfig struct {
 	ClusterArn any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ScramSecretsAttrs struct {
-	ClusterArn any
-	MaxResults any
-	NextToken any
+	ClusterArn    any
+	MaxResults    any
+	NextToken     any
 	SecretArnList any
 }
 
@@ -21,6 +21,6 @@ var ScramSecrets = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

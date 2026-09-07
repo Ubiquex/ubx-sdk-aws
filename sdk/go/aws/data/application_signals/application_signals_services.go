@@ -4,59 +4,59 @@ package application_signals
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationSignalsServices_ServiceSummaries_MetricReferences_Dimensions struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type ApplicationSignalsServices_ServiceSummaries_MetricReferences struct {
-	AccountId any
+	AccountId  any
 	Dimensions any
 	MetricName any
 	MetricType any
-	Namespace any
+	Namespace  any
 }
 
 type ApplicationSignalsServices_ServiceSummaries_ServiceGroups struct {
 	GroupIdentifier any
-	GroupName any
-	GroupSource any
-	GroupValue any
+	GroupName       any
+	GroupSource     any
+	GroupValue      any
 }
 
 type ApplicationSignalsServices_ServiceSummaries struct {
-	AttributeMaps any
-	KeyAttributes any
+	AttributeMaps    any
+	KeyAttributes    any
 	MetricReferences any
-	ServiceGroups any
+	ServiceGroups    any
 }
 
 type ApplicationSignalsServicesConfig struct {
-	AwsAccountId any
-	EndTime any
+	AwsAccountId          any
+	EndTime               any
 	IncludeLinkedAccounts any
-	MaxResults any
-	NextToken any
-	StartTime any
+	MaxResults            any
+	NextToken             any
+	StartTime             any
 }
 
 type ApplicationSignalsServicesAttrs struct {
-	AwsAccountId any
-	EndTime any
+	AwsAccountId          any
+	EndTime               any
 	IncludeLinkedAccounts any
-	MaxResults any
-	NextToken any
-	ServiceSummaries any
-	StartTime any
+	MaxResults            any
+	NextToken             any
+	ServiceSummaries      any
+	StartTime             any
 }
 
 var ApplicationSignalsServices = ubx.DataSourceBinding{
 	WireType: "aws_application_signals_services",
 	Fields: ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"AwsAccountId":          ubx.FieldSpec{WireName: "aws_account_id"},
+		"EndTime":               ubx.FieldSpec{WireName: "end_time"},
 		"IncludeLinkedAccounts": ubx.FieldSpec{WireName: "include_linked_accounts"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
+		"StartTime":             ubx.FieldSpec{WireName: "start_time"},
 	},
 }

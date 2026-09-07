@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagedJobTemplate_DocumentParameters struct {
 	Description any
-	Example any
-	Key any
-	Optional any
-	Regex any
+	Example     any
+	Key         any
+	Optional    any
+	Regex       any
 }
 
 type ManagedJobTemplateConfig struct {
-	TemplateName any
+	TemplateName    any
 	TemplateVersion any
 }
 
 type ManagedJobTemplateAttrs struct {
-	Description any
-	Document any
+	Description        any
+	Document           any
 	DocumentParameters any
-	Environments any
-	TemplateArn any
-	TemplateName any
-	TemplateVersion any
+	Environments       any
+	TemplateArn        any
+	TemplateName       any
+	TemplateVersion    any
 }
 
 var ManagedJobTemplate = ubx.DataSourceBinding{
 	WireType: "aws_iot_managed_job_template",
 	Fields: ubx.FieldMap{
-		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
+		"TemplateName":    ubx.FieldSpec{WireName: "template_name"},
 		"TemplateVersion": ubx.FieldSpec{WireName: "template_version"},
 	},
 }

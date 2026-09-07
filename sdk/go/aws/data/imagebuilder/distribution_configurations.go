@@ -4,37 +4,37 @@ package imagebuilder
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DistributionConfigurations_DistributionConfigurationSummaryList struct {
-	Arn any
+	Arn         any
 	DateCreated any
 	DateUpdated any
 	Description any
-	Name any
-	Regions any
-	Tags any
+	Name        any
+	Regions     any
+	Tags        any
 }
 
 type DistributionConfigurations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var DistributionConfigurations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type DistributionConfigurationsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DistributionConfigurationsAttrs struct {
 	DistributionConfigurationSummaryList any
-	Filters any
-	MaxResults any
-	NextToken any
-	RequestId any
+	Filters                              any
+	MaxResults                           any
+	NextToken                            any
+	RequestId                            any
 }
 
 var DistributionConfigurations = ubx.DataSourceBinding{
@@ -42,10 +42,10 @@ var DistributionConfigurations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: DistributionConfigurations_FiltersFields,
+			Kind:     "list",
+			Fields:   DistributionConfigurations_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

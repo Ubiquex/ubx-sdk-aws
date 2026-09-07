@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CloudFrontOriginAccessIdentityConfig_CloudFrontOriginAccessIdentityConfig struct {
 	CallerReference any
-	Comment any
+	Comment         any
 }
 
 type CloudFrontOriginAccessIdentityConfigConfig struct {
@@ -15,8 +15,8 @@ type CloudFrontOriginAccessIdentityConfigConfig struct {
 type CloudFrontOriginAccessIdentityConfigAttrs struct {
 	// <p>Origin access identity configuration. Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource.</p>
 	CloudFrontOriginAccessIdentityConfig any
-	Etag any
-	Id any
+	Etag                                 any
+	Id                                   any
 }
 
 var CloudFrontOriginAccessIdentityConfig = ubx.DataSourceBinding{

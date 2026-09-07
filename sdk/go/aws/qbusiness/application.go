@@ -36,39 +36,39 @@ type Application_QuickSightConfiguration struct {
 }
 
 type Application_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Application_AttachmentsConfigurationFields = ubx.FieldMap{
-		"AttachmentsControlMode": ubx.FieldSpec{WireName: "attachments_control_mode"},
-	}
+	"AttachmentsControlMode": ubx.FieldSpec{WireName: "attachments_control_mode"},
+}
 
 var Application_AutoSubscriptionConfigurationFields = ubx.FieldMap{
-		"AutoSubscribe": ubx.FieldSpec{WireName: "auto_subscribe"},
-		"DefaultSubscriptionType": ubx.FieldSpec{WireName: "default_subscription_type"},
-	}
+	"AutoSubscribe":           ubx.FieldSpec{WireName: "auto_subscribe"},
+	"DefaultSubscriptionType": ubx.FieldSpec{WireName: "default_subscription_type"},
+}
 
 var Application_EncryptionConfigurationFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+}
 
 var Application_PersonalizationConfigurationFields = ubx.FieldMap{
-		"PersonalizationControlMode": ubx.FieldSpec{WireName: "personalization_control_mode"},
-	}
+	"PersonalizationControlMode": ubx.FieldSpec{WireName: "personalization_control_mode"},
+}
 
 var Application_QappsConfigurationFields = ubx.FieldMap{
-		"QappsControlMode": ubx.FieldSpec{WireName: "qapps_control_mode"},
-	}
+	"QappsControlMode": ubx.FieldSpec{WireName: "qapps_control_mode"},
+}
 
 var Application_QuickSightConfigurationFields = ubx.FieldMap{
-		"ClientNamespace": ubx.FieldSpec{WireName: "client_namespace"},
-	}
+	"ClientNamespace": ubx.FieldSpec{WireName: "client_namespace"},
+}
 
 var Application_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApplicationConfig struct {
 	// Configures whether users can attach files to conversations in the Q Business application, controlled by the AttachmentsControlMode setting (either ENABLED or DISABLED). (AI-inferred)
@@ -149,45 +149,45 @@ var Application = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AttachmentsConfiguration": ubx.FieldSpec{
 			WireName: "attachments_configuration",
-			Kind: "object",
-			Fields: Application_AttachmentsConfigurationFields,
+			Kind:     "object",
+			Fields:   Application_AttachmentsConfigurationFields,
 		},
 		"AutoSubscriptionConfiguration": ubx.FieldSpec{
 			WireName: "auto_subscription_configuration",
-			Kind: "object",
-			Fields: Application_AutoSubscriptionConfigurationFields,
+			Kind:     "object",
+			Fields:   Application_AutoSubscriptionConfigurationFields,
 		},
 		"ClientIdsForOidc": ubx.FieldSpec{WireName: "client_ids_for_oidc"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionConfiguration": ubx.FieldSpec{
 			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: Application_EncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   Application_EncryptionConfigurationFields,
 		},
-		"IamIdentityProviderArn": ubx.FieldSpec{WireName: "iam_identity_provider_arn"},
+		"IamIdentityProviderArn":    ubx.FieldSpec{WireName: "iam_identity_provider_arn"},
 		"IdentityCenterInstanceArn": ubx.FieldSpec{WireName: "identity_center_instance_arn"},
-		"IdentityType": ubx.FieldSpec{WireName: "identity_type"},
+		"IdentityType":              ubx.FieldSpec{WireName: "identity_type"},
 		"PersonalizationConfiguration": ubx.FieldSpec{
 			WireName: "personalization_configuration",
-			Kind: "object",
-			Fields: Application_PersonalizationConfigurationFields,
+			Kind:     "object",
+			Fields:   Application_PersonalizationConfigurationFields,
 		},
 		"QappsConfiguration": ubx.FieldSpec{
 			WireName: "qapps_configuration",
-			Kind: "object",
-			Fields: Application_QappsConfigurationFields,
+			Kind:     "object",
+			Fields:   Application_QappsConfigurationFields,
 		},
 		"QuickSightConfiguration": ubx.FieldSpec{
 			WireName: "quick_sight_configuration",
-			Kind: "object",
-			Fields: Application_QuickSightConfigurationFields,
+			Kind:     "object",
+			Fields:   Application_QuickSightConfigurationFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Application_TagsFields,
+			Kind:     "list",
+			Fields:   Application_TagsFields,
 		},
 	},
 }

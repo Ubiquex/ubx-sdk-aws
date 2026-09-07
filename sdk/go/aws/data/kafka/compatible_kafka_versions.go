@@ -4,7 +4,7 @@ package kafka
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CompatibleKafkaVersions_CompatibleKafkaVersions struct {
-	SourceVersion any
+	SourceVersion  any
 	TargetVersions any
 }
 
@@ -13,7 +13,7 @@ type CompatibleKafkaVersionsConfig struct {
 }
 
 type CompatibleKafkaVersionsAttrs struct {
-	ClusterArn any
+	ClusterArn              any
 	CompatibleKafkaVersions any
 }
 

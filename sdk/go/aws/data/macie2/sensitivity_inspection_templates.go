@@ -4,18 +4,18 @@ package macie2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SensitivityInspectionTemplates_SensitivityInspectionTemplates struct {
-	Id any
+	Id   any
 	Name any
 }
 
 type SensitivityInspectionTemplatesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SensitivityInspectionTemplatesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults                     any
+	NextToken                      any
 	SensitivityInspectionTemplates any
 }
 
@@ -23,6 +23,6 @@ var SensitivityInspectionTemplates = ubx.DataSourceBinding{
 	WireType: "aws_macie2_sensitivity_inspection_templates",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

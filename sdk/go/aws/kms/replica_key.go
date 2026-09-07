@@ -11,9 +11,9 @@ type ReplicaKey_Tags struct {
 }
 
 var ReplicaKey_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ReplicaKeyConfig struct {
 	// A description of the AWS KMS key. Use a description that helps you to distinguish this AWS KMS key from others in the account, such as its intended use.
@@ -52,15 +52,15 @@ type ReplicaKeyAttrs struct {
 var ReplicaKey = ubx.ResourceBinding{
 	WireType: "aws_kms_replica_key",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"KeyPolicy": ubx.FieldSpec{WireName: "key_policy"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"Enabled":             ubx.FieldSpec{WireName: "enabled"},
+		"KeyPolicy":           ubx.FieldSpec{WireName: "key_policy"},
 		"PendingWindowInDays": ubx.FieldSpec{WireName: "pending_window_in_days"},
-		"PrimaryKeyArn": ubx.FieldSpec{WireName: "primary_key_arn"},
+		"PrimaryKeyArn":       ubx.FieldSpec{WireName: "primary_key_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ReplicaKey_TagsFields,
+			Kind:     "list",
+			Fields:   ReplicaKey_TagsFields,
 		},
 	},
 }

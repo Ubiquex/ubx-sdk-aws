@@ -40,19 +40,19 @@ type ConfiguredTable_AnalysisRules_Policy_V1_Aggregation struct {
 
 type ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholds struct {
 	MinimumIdentityCount any
-	OutputColumnName any
+	OutputColumnName     any
 }
 
 type ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds struct {
 	AllowedAggregateExpressionType any
-	IdentityColumns any
-	MinimumIdentityCount any
-	OutputColumnThresholds any
-	Type any
+	IdentityColumns                any
+	MinimumIdentityCount           any
+	OutputColumnThresholds         any
+	Type                           any
 }
 
 type ConfiguredTable_AnalysisRules_Policy_V1_Custom_ComparisonControls struct {
-	AllowedColumnComparisonColumns any
+	AllowedColumnComparisonColumns  any
 	AllowedLiteralComparisonColumns any
 }
 
@@ -68,13 +68,13 @@ type ConfiguredTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy struct {
 
 type ConfiguredTable_AnalysisRules_Policy_V1_Custom struct {
 	// Specifies whether the results of a query executed on this configured table can be used in subsequent additional analyses, with allowed values ALLOWED, REQUIRED, or NOT_ALLOWED. (AI-inferred)
-	AdditionalAnalyses any
+	AdditionalAnalyses    any
 	AggregationThresholds any
 	// A list of allowed analysis template identifiers (such as ARNs) that are permitted to run against the configured table under this custom analysis rule. (AI-inferred)
 	AllowedAnalyses any
 	// Specifies the Amazon Resource Names (ARNs) of the analysis providers that are permitted to run analyses on the configured table under this custom analysis rule. (AI-inferred)
 	AllowedAnalysisProviders any
-	ComparisonControls any
+	ComparisonControls       any
 	// Specifies the differential privacy configuration for the custom analysis rule, including the list of protected columns and the epsilon value that controls the privacy-accuracy trade-off for query results. (AI-inferred)
 	DifferentialPrivacy any
 	// Specifies the list of column names that must be excluded from the output of queries run under this custom analysis rule policy, preventing collaborators from viewing those columns. (AI-inferred)
@@ -117,9 +117,9 @@ type ConfiguredTable_TableReference_Athena struct {
 	// The name of the Athena data catalog that contains the table referenced by this configured table. (AI-inferred)
 	CatalogName any
 	// The name of the Athena database that contains the table referenced by this configured table for querying in AWS Clean Rooms. (AI-inferred)
-	DatabaseName any
+	DatabaseName   any
 	OutputLocation any
-	Region any
+	Region         any
 	// The name of the Athena table that this configured table references for analysis in AWS Clean Rooms. (AI-inferred)
 	TableName any
 	// The name of the Athena workgroup in which the referenced table resides for this AWS Clean Rooms configured table. (AI-inferred)
@@ -157,7 +157,7 @@ type ConfiguredTable_TableReference_Snowflake struct {
 	// The ARN of the AWS Secrets Manager secret that stores the Snowflake credentials used to connect to the Snowflake data source for this configured table reference. (AI-inferred)
 	SecretArn any
 	// The name of the Snowflake table that this configured table references. (AI-inferred)
-	TableName any
+	TableName   any
 	TableSchema any
 }
 
@@ -171,201 +171,201 @@ type ConfiguredTable_TableReference struct {
 }
 
 type ConfiguredTable_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var ConfiguredTable_AnalysisRules_Policy_V1_Aggregation_AggregateColumnsFields = ubx.FieldMap{
-		"ColumnNames": ubx.FieldSpec{WireName: "column_names"},
-		"Function": ubx.FieldSpec{WireName: "function"},
-	}
+	"ColumnNames": ubx.FieldSpec{WireName: "column_names"},
+	"Function":    ubx.FieldSpec{WireName: "function"},
+}
 
 var ConfiguredTable_AnalysisRules_Policy_V1_Aggregation_OutputConstraintsFields = ubx.FieldMap{
-		"ColumnName": ubx.FieldSpec{WireName: "column_name"},
-		"Minimum": ubx.FieldSpec{WireName: "minimum"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ColumnName": ubx.FieldSpec{WireName: "column_name"},
+	"Minimum":    ubx.FieldSpec{WireName: "minimum"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var ConfiguredTable_AnalysisRules_Policy_V1_AggregationFields = ubx.FieldMap{
-		"AdditionalAnalyses": ubx.FieldSpec{WireName: "additional_analyses"},
-		"AggregateColumns": ubx.FieldSpec{
-			WireName: "aggregate_columns",
-			Kind: "list",
-			Fields: ConfiguredTable_AnalysisRules_Policy_V1_Aggregation_AggregateColumnsFields,
-		},
-		"AllowedJoinOperators": ubx.FieldSpec{WireName: "allowed_join_operators"},
-		"DimensionColumns": ubx.FieldSpec{WireName: "dimension_columns"},
-		"JoinColumns": ubx.FieldSpec{WireName: "join_columns"},
-		"JoinRequired": ubx.FieldSpec{WireName: "join_required"},
-		"OutputConstraints": ubx.FieldSpec{
-			WireName: "output_constraints",
-			Kind: "list",
-			Fields: ConfiguredTable_AnalysisRules_Policy_V1_Aggregation_OutputConstraintsFields,
-		},
-		"ScalarFunctions": ubx.FieldSpec{WireName: "scalar_functions"},
-	}
+	"AdditionalAnalyses": ubx.FieldSpec{WireName: "additional_analyses"},
+	"AggregateColumns": ubx.FieldSpec{
+		WireName: "aggregate_columns",
+		Kind:     "list",
+		Fields:   ConfiguredTable_AnalysisRules_Policy_V1_Aggregation_AggregateColumnsFields,
+	},
+	"AllowedJoinOperators": ubx.FieldSpec{WireName: "allowed_join_operators"},
+	"DimensionColumns":     ubx.FieldSpec{WireName: "dimension_columns"},
+	"JoinColumns":          ubx.FieldSpec{WireName: "join_columns"},
+	"JoinRequired":         ubx.FieldSpec{WireName: "join_required"},
+	"OutputConstraints": ubx.FieldSpec{
+		WireName: "output_constraints",
+		Kind:     "list",
+		Fields:   ConfiguredTable_AnalysisRules_Policy_V1_Aggregation_OutputConstraintsFields,
+	},
+	"ScalarFunctions": ubx.FieldSpec{WireName: "scalar_functions"},
+}
 
 var ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholdsFields = ubx.FieldMap{
-		"MinimumIdentityCount": ubx.FieldSpec{WireName: "minimum_identity_count"},
-		"OutputColumnName": ubx.FieldSpec{WireName: "output_column_name"},
-	}
+	"MinimumIdentityCount": ubx.FieldSpec{WireName: "minimum_identity_count"},
+	"OutputColumnName":     ubx.FieldSpec{WireName: "output_column_name"},
+}
 
 var ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholdsFields = ubx.FieldMap{
-		"AllowedAggregateExpressionType": ubx.FieldSpec{WireName: "allowed_aggregate_expression_type"},
-		"IdentityColumns": ubx.FieldSpec{WireName: "identity_columns"},
-		"MinimumIdentityCount": ubx.FieldSpec{WireName: "minimum_identity_count"},
-		"OutputColumnThresholds": ubx.FieldSpec{
-			WireName: "output_column_thresholds",
-			Kind: "list",
-			Fields: ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholdsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AllowedAggregateExpressionType": ubx.FieldSpec{WireName: "allowed_aggregate_expression_type"},
+	"IdentityColumns":                ubx.FieldSpec{WireName: "identity_columns"},
+	"MinimumIdentityCount":           ubx.FieldSpec{WireName: "minimum_identity_count"},
+	"OutputColumnThresholds": ubx.FieldSpec{
+		WireName: "output_column_thresholds",
+		Kind:     "list",
+		Fields:   ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholdsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var ConfiguredTable_AnalysisRules_Policy_V1_Custom_ComparisonControlsFields = ubx.FieldMap{
-		"AllowedColumnComparisonColumns": ubx.FieldSpec{WireName: "allowed_column_comparison_columns"},
-		"AllowedLiteralComparisonColumns": ubx.FieldSpec{WireName: "allowed_literal_comparison_columns"},
-	}
+	"AllowedColumnComparisonColumns":  ubx.FieldSpec{WireName: "allowed_column_comparison_columns"},
+	"AllowedLiteralComparisonColumns": ubx.FieldSpec{WireName: "allowed_literal_comparison_columns"},
+}
 
 var ConfiguredTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy_ColumnsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var ConfiguredTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacyFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: ConfiguredTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy_ColumnsFields,
-		},
-	}
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   ConfiguredTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy_ColumnsFields,
+	},
+}
 
 var ConfiguredTable_AnalysisRules_Policy_V1_CustomFields = ubx.FieldMap{
-		"AdditionalAnalyses": ubx.FieldSpec{WireName: "additional_analyses"},
-		"AggregationThresholds": ubx.FieldSpec{
-			WireName: "aggregation_thresholds",
-			Kind: "list",
-			Fields: ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholdsFields,
-		},
-		"AllowedAnalyses": ubx.FieldSpec{WireName: "allowed_analyses"},
-		"AllowedAnalysisProviders": ubx.FieldSpec{WireName: "allowed_analysis_providers"},
-		"ComparisonControls": ubx.FieldSpec{
-			WireName: "comparison_controls",
-			Kind: "object",
-			Fields: ConfiguredTable_AnalysisRules_Policy_V1_Custom_ComparisonControlsFields,
-		},
-		"DifferentialPrivacy": ubx.FieldSpec{
-			WireName: "differential_privacy",
-			Kind: "object",
-			Fields: ConfiguredTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacyFields,
-		},
-		"DisallowedOutputColumns": ubx.FieldSpec{WireName: "disallowed_output_columns"},
-	}
+	"AdditionalAnalyses": ubx.FieldSpec{WireName: "additional_analyses"},
+	"AggregationThresholds": ubx.FieldSpec{
+		WireName: "aggregation_thresholds",
+		Kind:     "list",
+		Fields:   ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholdsFields,
+	},
+	"AllowedAnalyses":          ubx.FieldSpec{WireName: "allowed_analyses"},
+	"AllowedAnalysisProviders": ubx.FieldSpec{WireName: "allowed_analysis_providers"},
+	"ComparisonControls": ubx.FieldSpec{
+		WireName: "comparison_controls",
+		Kind:     "object",
+		Fields:   ConfiguredTable_AnalysisRules_Policy_V1_Custom_ComparisonControlsFields,
+	},
+	"DifferentialPrivacy": ubx.FieldSpec{
+		WireName: "differential_privacy",
+		Kind:     "object",
+		Fields:   ConfiguredTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacyFields,
+	},
+	"DisallowedOutputColumns": ubx.FieldSpec{WireName: "disallowed_output_columns"},
+}
 
 var ConfiguredTable_AnalysisRules_Policy_V1_ListFields = ubx.FieldMap{
-		"AdditionalAnalyses": ubx.FieldSpec{WireName: "additional_analyses"},
-		"AllowedJoinOperators": ubx.FieldSpec{WireName: "allowed_join_operators"},
-		"JoinColumns": ubx.FieldSpec{WireName: "join_columns"},
-		"ListColumns": ubx.FieldSpec{WireName: "list_columns"},
-	}
+	"AdditionalAnalyses":   ubx.FieldSpec{WireName: "additional_analyses"},
+	"AllowedJoinOperators": ubx.FieldSpec{WireName: "allowed_join_operators"},
+	"JoinColumns":          ubx.FieldSpec{WireName: "join_columns"},
+	"ListColumns":          ubx.FieldSpec{WireName: "list_columns"},
+}
 
 var ConfiguredTable_AnalysisRules_Policy_V1Fields = ubx.FieldMap{
-		"Aggregation": ubx.FieldSpec{
-			WireName: "aggregation",
-			Kind: "object",
-			Fields: ConfiguredTable_AnalysisRules_Policy_V1_AggregationFields,
-		},
-		"Custom": ubx.FieldSpec{
-			WireName: "custom",
-			Kind: "object",
-			Fields: ConfiguredTable_AnalysisRules_Policy_V1_CustomFields,
-		},
-		"List": ubx.FieldSpec{
-			WireName: "list",
-			Kind: "object",
-			Fields: ConfiguredTable_AnalysisRules_Policy_V1_ListFields,
-		},
-	}
+	"Aggregation": ubx.FieldSpec{
+		WireName: "aggregation",
+		Kind:     "object",
+		Fields:   ConfiguredTable_AnalysisRules_Policy_V1_AggregationFields,
+	},
+	"Custom": ubx.FieldSpec{
+		WireName: "custom",
+		Kind:     "object",
+		Fields:   ConfiguredTable_AnalysisRules_Policy_V1_CustomFields,
+	},
+	"List": ubx.FieldSpec{
+		WireName: "list",
+		Kind:     "object",
+		Fields:   ConfiguredTable_AnalysisRules_Policy_V1_ListFields,
+	},
+}
 
 var ConfiguredTable_AnalysisRules_PolicyFields = ubx.FieldMap{
-		"V1": ubx.FieldSpec{
-			WireName: "v1",
-			Kind: "object",
-			Fields: ConfiguredTable_AnalysisRules_Policy_V1Fields,
-		},
-	}
+	"V1": ubx.FieldSpec{
+		WireName: "v1",
+		Kind:     "object",
+		Fields:   ConfiguredTable_AnalysisRules_Policy_V1Fields,
+	},
+}
 
 var ConfiguredTable_AnalysisRulesFields = ubx.FieldMap{
-		"Policy": ubx.FieldSpec{
-			WireName: "policy",
-			Kind: "object",
-			Fields: ConfiguredTable_AnalysisRules_PolicyFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Policy": ubx.FieldSpec{
+		WireName: "policy",
+		Kind:     "object",
+		Fields:   ConfiguredTable_AnalysisRules_PolicyFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var ConfiguredTable_TableReference_AthenaFields = ubx.FieldMap{
-		"CatalogName": ubx.FieldSpec{WireName: "catalog_name"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"OutputLocation": ubx.FieldSpec{WireName: "output_location"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-		"WorkGroup": ubx.FieldSpec{WireName: "work_group"},
-	}
+	"CatalogName":    ubx.FieldSpec{WireName: "catalog_name"},
+	"DatabaseName":   ubx.FieldSpec{WireName: "database_name"},
+	"OutputLocation": ubx.FieldSpec{WireName: "output_location"},
+	"Region":         ubx.FieldSpec{WireName: "region"},
+	"TableName":      ubx.FieldSpec{WireName: "table_name"},
+	"WorkGroup":      ubx.FieldSpec{WireName: "work_group"},
+}
 
 var ConfiguredTable_TableReference_GlueFields = ubx.FieldMap{
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"Region":       ubx.FieldSpec{WireName: "region"},
+	"TableName":    ubx.FieldSpec{WireName: "table_name"},
+}
 
 var ConfiguredTable_TableReference_Snowflake_TableSchema_V1Fields = ubx.FieldMap{
-		"ColumnName": ubx.FieldSpec{WireName: "column_name"},
-		"ColumnType": ubx.FieldSpec{WireName: "column_type"},
-	}
+	"ColumnName": ubx.FieldSpec{WireName: "column_name"},
+	"ColumnType": ubx.FieldSpec{WireName: "column_type"},
+}
 
 var ConfiguredTable_TableReference_Snowflake_TableSchemaFields = ubx.FieldMap{
-		"V1": ubx.FieldSpec{
-			WireName: "v1",
-			Kind: "list",
-			Fields: ConfiguredTable_TableReference_Snowflake_TableSchema_V1Fields,
-		},
-	}
+	"V1": ubx.FieldSpec{
+		WireName: "v1",
+		Kind:     "list",
+		Fields:   ConfiguredTable_TableReference_Snowflake_TableSchema_V1Fields,
+	},
+}
 
 var ConfiguredTable_TableReference_SnowflakeFields = ubx.FieldMap{
-		"AccountIdentifier": ubx.FieldSpec{WireName: "account_identifier"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"SchemaName": ubx.FieldSpec{WireName: "schema_name"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-		"TableSchema": ubx.FieldSpec{
-			WireName: "table_schema",
-			Kind: "object",
-			Fields: ConfiguredTable_TableReference_Snowflake_TableSchemaFields,
-		},
-	}
+	"AccountIdentifier": ubx.FieldSpec{WireName: "account_identifier"},
+	"DatabaseName":      ubx.FieldSpec{WireName: "database_name"},
+	"SchemaName":        ubx.FieldSpec{WireName: "schema_name"},
+	"SecretArn":         ubx.FieldSpec{WireName: "secret_arn"},
+	"TableName":         ubx.FieldSpec{WireName: "table_name"},
+	"TableSchema": ubx.FieldSpec{
+		WireName: "table_schema",
+		Kind:     "object",
+		Fields:   ConfiguredTable_TableReference_Snowflake_TableSchemaFields,
+	},
+}
 
 var ConfiguredTable_TableReferenceFields = ubx.FieldMap{
-		"Athena": ubx.FieldSpec{
-			WireName: "athena",
-			Kind: "object",
-			Fields: ConfiguredTable_TableReference_AthenaFields,
-		},
-		"Glue": ubx.FieldSpec{
-			WireName: "glue",
-			Kind: "object",
-			Fields: ConfiguredTable_TableReference_GlueFields,
-		},
-		"Snowflake": ubx.FieldSpec{
-			WireName: "snowflake",
-			Kind: "object",
-			Fields: ConfiguredTable_TableReference_SnowflakeFields,
-		},
-	}
+	"Athena": ubx.FieldSpec{
+		WireName: "athena",
+		Kind:     "object",
+		Fields:   ConfiguredTable_TableReference_AthenaFields,
+	},
+	"Glue": ubx.FieldSpec{
+		WireName: "glue",
+		Kind:     "object",
+		Fields:   ConfiguredTable_TableReference_GlueFields,
+	},
+	"Snowflake": ubx.FieldSpec{
+		WireName: "snowflake",
+		Kind:     "object",
+		Fields:   ConfiguredTable_TableReference_SnowflakeFields,
+	},
+}
 
 var ConfiguredTable_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ConfiguredTableConfig struct {
 	// Specifies the list of column names from the underlying AWS Glue table that are allowed to be used in analyses using this configured table, restricting which columns are accessible to collaborators. (AI-inferred)
@@ -416,21 +416,21 @@ var ConfiguredTable = ubx.ResourceBinding{
 		"AnalysisMethod": ubx.FieldSpec{WireName: "analysis_method"},
 		"AnalysisRules": ubx.FieldSpec{
 			WireName: "analysis_rules",
-			Kind: "list",
-			Fields: ConfiguredTable_AnalysisRulesFields,
+			Kind:     "list",
+			Fields:   ConfiguredTable_AnalysisRulesFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
 		"SelectedAnalysisMethods": ubx.FieldSpec{WireName: "selected_analysis_methods"},
 		"TableReference": ubx.FieldSpec{
 			WireName: "table_reference",
-			Kind: "object",
-			Fields: ConfiguredTable_TableReferenceFields,
+			Kind:     "object",
+			Fields:   ConfiguredTable_TableReferenceFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ConfiguredTable_TagsFields,
+			Kind:     "list",
+			Fields:   ConfiguredTable_TagsFields,
 		},
 	},
 }

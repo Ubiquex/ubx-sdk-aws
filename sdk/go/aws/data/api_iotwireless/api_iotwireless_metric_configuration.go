@@ -17,6 +17,5 @@ type ApiIotwirelessMetricConfigurationAttrs struct {
 
 var ApiIotwirelessMetricConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_metric_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

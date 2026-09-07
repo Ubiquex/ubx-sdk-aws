@@ -64,74 +64,74 @@ type TableOptimizer_TableOptimizerConfiguration struct {
 }
 
 var TableOptimizer_TableOptimizerConfiguration_CompactionConfiguration_IcebergConfigurationFields = ubx.FieldMap{
-		"DeleteFileThreshold": ubx.FieldSpec{WireName: "delete_file_threshold"},
-		"MinInputFiles": ubx.FieldSpec{WireName: "min_input_files"},
-		"Strategy": ubx.FieldSpec{WireName: "strategy"},
-	}
+	"DeleteFileThreshold": ubx.FieldSpec{WireName: "delete_file_threshold"},
+	"MinInputFiles":       ubx.FieldSpec{WireName: "min_input_files"},
+	"Strategy":            ubx.FieldSpec{WireName: "strategy"},
+}
 
 var TableOptimizer_TableOptimizerConfiguration_CompactionConfigurationFields = ubx.FieldMap{
-		"IcebergConfiguration": ubx.FieldSpec{
-			WireName: "iceberg_configuration",
-			Kind: "object",
-			Fields: TableOptimizer_TableOptimizerConfiguration_CompactionConfiguration_IcebergConfigurationFields,
-		},
-	}
+	"IcebergConfiguration": ubx.FieldSpec{
+		WireName: "iceberg_configuration",
+		Kind:     "object",
+		Fields:   TableOptimizer_TableOptimizerConfiguration_CompactionConfiguration_IcebergConfigurationFields,
+	},
+}
 
 var TableOptimizer_TableOptimizerConfiguration_OrphanFileDeletionConfiguration_IcebergConfigurationFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"OrphanFileRetentionPeriodInDays": ubx.FieldSpec{WireName: "orphan_file_retention_period_in_days"},
-	}
+	"Location":                        ubx.FieldSpec{WireName: "location"},
+	"OrphanFileRetentionPeriodInDays": ubx.FieldSpec{WireName: "orphan_file_retention_period_in_days"},
+}
 
 var TableOptimizer_TableOptimizerConfiguration_OrphanFileDeletionConfigurationFields = ubx.FieldMap{
-		"IcebergConfiguration": ubx.FieldSpec{
-			WireName: "iceberg_configuration",
-			Kind: "object",
-			Fields: TableOptimizer_TableOptimizerConfiguration_OrphanFileDeletionConfiguration_IcebergConfigurationFields,
-		},
-	}
+	"IcebergConfiguration": ubx.FieldSpec{
+		WireName: "iceberg_configuration",
+		Kind:     "object",
+		Fields:   TableOptimizer_TableOptimizerConfiguration_OrphanFileDeletionConfiguration_IcebergConfigurationFields,
+	},
+}
 
 var TableOptimizer_TableOptimizerConfiguration_RetentionConfiguration_IcebergConfigurationFields = ubx.FieldMap{
-		"CleanExpiredFiles": ubx.FieldSpec{WireName: "clean_expired_files"},
-		"NumberOfSnapshotsToRetain": ubx.FieldSpec{WireName: "number_of_snapshots_to_retain"},
-		"SnapshotRetentionPeriodInDays": ubx.FieldSpec{WireName: "snapshot_retention_period_in_days"},
-	}
+	"CleanExpiredFiles":             ubx.FieldSpec{WireName: "clean_expired_files"},
+	"NumberOfSnapshotsToRetain":     ubx.FieldSpec{WireName: "number_of_snapshots_to_retain"},
+	"SnapshotRetentionPeriodInDays": ubx.FieldSpec{WireName: "snapshot_retention_period_in_days"},
+}
 
 var TableOptimizer_TableOptimizerConfiguration_RetentionConfigurationFields = ubx.FieldMap{
-		"IcebergConfiguration": ubx.FieldSpec{
-			WireName: "iceberg_configuration",
-			Kind: "object",
-			Fields: TableOptimizer_TableOptimizerConfiguration_RetentionConfiguration_IcebergConfigurationFields,
-		},
-	}
+	"IcebergConfiguration": ubx.FieldSpec{
+		WireName: "iceberg_configuration",
+		Kind:     "object",
+		Fields:   TableOptimizer_TableOptimizerConfiguration_RetentionConfiguration_IcebergConfigurationFields,
+	},
+}
 
 var TableOptimizer_TableOptimizerConfiguration_VpcConfigurationFields = ubx.FieldMap{
-		"GlueConnectionName": ubx.FieldSpec{WireName: "glue_connection_name"},
-	}
+	"GlueConnectionName": ubx.FieldSpec{WireName: "glue_connection_name"},
+}
 
 var TableOptimizer_TableOptimizerConfigurationFields = ubx.FieldMap{
-		"CompactionConfiguration": ubx.FieldSpec{
-			WireName: "compaction_configuration",
-			Kind: "object",
-			Fields: TableOptimizer_TableOptimizerConfiguration_CompactionConfigurationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"OrphanFileDeletionConfiguration": ubx.FieldSpec{
-			WireName: "orphan_file_deletion_configuration",
-			Kind: "object",
-			Fields: TableOptimizer_TableOptimizerConfiguration_OrphanFileDeletionConfigurationFields,
-		},
-		"RetentionConfiguration": ubx.FieldSpec{
-			WireName: "retention_configuration",
-			Kind: "object",
-			Fields: TableOptimizer_TableOptimizerConfiguration_RetentionConfigurationFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"VpcConfiguration": ubx.FieldSpec{
-			WireName: "vpc_configuration",
-			Kind: "object",
-			Fields: TableOptimizer_TableOptimizerConfiguration_VpcConfigurationFields,
-		},
-	}
+	"CompactionConfiguration": ubx.FieldSpec{
+		WireName: "compaction_configuration",
+		Kind:     "object",
+		Fields:   TableOptimizer_TableOptimizerConfiguration_CompactionConfigurationFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"OrphanFileDeletionConfiguration": ubx.FieldSpec{
+		WireName: "orphan_file_deletion_configuration",
+		Kind:     "object",
+		Fields:   TableOptimizer_TableOptimizerConfiguration_OrphanFileDeletionConfigurationFields,
+	},
+	"RetentionConfiguration": ubx.FieldSpec{
+		WireName: "retention_configuration",
+		Kind:     "object",
+		Fields:   TableOptimizer_TableOptimizerConfiguration_RetentionConfigurationFields,
+	},
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+	"VpcConfiguration": ubx.FieldSpec{
+		WireName: "vpc_configuration",
+		Kind:     "object",
+		Fields:   TableOptimizer_TableOptimizerConfiguration_VpcConfigurationFields,
+	},
+}
 
 type TableOptimizerConfig struct {
 	// The catalog ID of the table
@@ -162,13 +162,13 @@ type TableOptimizerAttrs struct {
 var TableOptimizer = ubx.ResourceBinding{
 	WireType: "aws_glue_table_optimizer",
 	Fields: ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
+		"CatalogId":    ubx.FieldSpec{WireName: "catalog_id"},
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
+		"TableName":    ubx.FieldSpec{WireName: "table_name"},
 		"TableOptimizerConfiguration": ubx.FieldSpec{
 			WireName: "table_optimizer_configuration",
-			Kind: "object",
-			Fields: TableOptimizer_TableOptimizerConfigurationFields,
+			Kind:     "object",
+			Fields:   TableOptimizer_TableOptimizerConfigurationFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

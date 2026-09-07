@@ -9,7 +9,7 @@ type PcaConnectorScepTagsForResourceConfig struct {
 
 type PcaConnectorScepTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var PcaConnectorScepTagsForResource = ubx.DataSourceBinding{

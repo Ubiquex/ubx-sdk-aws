@@ -8,7 +8,7 @@ type CodestarNotificationsTagsForResourceConfig struct {
 }
 
 type CodestarNotificationsTagsForResourceAttrs struct {
-	Arn any
+	Arn  any
 	Tags any
 }
 

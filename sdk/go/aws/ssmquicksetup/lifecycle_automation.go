@@ -30,9 +30,9 @@ type LifecycleAutomationAttrs struct {
 var LifecycleAutomation = ubx.ResourceBinding{
 	WireType: "aws_ssmquick_setup_lifecycle_automation",
 	Fields: ubx.FieldMap{
-		"AutomationDocument": ubx.FieldSpec{WireName: "automation_document"},
+		"AutomationDocument":   ubx.FieldSpec{WireName: "automation_document"},
 		"AutomationParameters": ubx.FieldSpec{WireName: "automation_parameters"},
-		"ResourceKey": ubx.FieldSpec{WireName: "resource_key"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"ResourceKey":          ubx.FieldSpec{WireName: "resource_key"},
+		"Tags":                 ubx.FieldSpec{WireName: "tags"},
 	},
 }

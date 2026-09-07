@@ -4,11 +4,11 @@ package securityagent
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityRequirements_SecurityRequirementSummaries struct {
-	CreatedAt any
+	CreatedAt   any
 	Description any
-	Name any
-	PackId any
-	UpdatedAt any
+	Name        any
+	PackId      any
+	UpdatedAt   any
 }
 
 type SecurityRequirementsConfig struct {
@@ -16,7 +16,7 @@ type SecurityRequirementsConfig struct {
 	MaxResults any
 	// <p>Pagination token.</p>
 	NextToken any
-	PackId any
+	PackId    any
 }
 
 type SecurityRequirementsAttrs struct {
@@ -24,7 +24,7 @@ type SecurityRequirementsAttrs struct {
 	MaxResults any
 	// <p>Pagination token.</p>
 	NextToken any
-	PackId any
+	PackId    any
 	// <p>List of security requirement summaries.</p>
 	SecurityRequirementSummaries any
 }
@@ -33,7 +33,7 @@ var SecurityRequirements = ubx.DataSourceBinding{
 	WireType: "aws_securityagent_security_requirements",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PackId": ubx.FieldSpec{WireName: "pack_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"PackId":     ubx.FieldSpec{WireName: "pack_id"},
 	},
 }

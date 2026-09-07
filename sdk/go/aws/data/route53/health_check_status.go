@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HealthCheckStatus_HealthCheckObservations_StatusReport struct {
 	CheckedTime any
-	Status any
+	Status      any
 }
 
 type HealthCheckStatus_HealthCheckObservations struct {
-	Ipaddress any
-	Region any
+	Ipaddress    any
+	Region       any
 	StatusReport any
 }
 
@@ -19,7 +19,7 @@ type HealthCheckStatusConfig struct {
 }
 
 type HealthCheckStatusAttrs struct {
-	HealthCheckId any
+	HealthCheckId           any
 	HealthCheckObservations any
 }
 

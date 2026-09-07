@@ -4,44 +4,44 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataQualityResult_AggregatedMetrics struct {
-	TotalRowsFailed any
-	TotalRowsPassed any
-	TotalRowsProcessed any
-	TotalRulesFailed any
-	TotalRulesPassed any
+	TotalRowsFailed     any
+	TotalRowsPassed     any
+	TotalRowsProcessed  any
+	TotalRulesFailed    any
+	TotalRulesPassed    any
 	TotalRulesProcessed any
 }
 
 type DataQualityResult_AnalyzerResults_EvaluatedDistributions struct {
 	BinEdges any
-	Count any
+	Count    any
 	DataType any
 }
 
 type DataQualityResult_AnalyzerResults struct {
-	Description any
+	Description            any
 	EvaluatedDistributions any
-	EvaluatedMetrics any
-	EvaluationMessage any
-	Name any
+	EvaluatedMetrics       any
+	EvaluationMessage      any
+	Name                   any
 }
 
 type DataQualityResult_DataSource_DataQualityGlueTable struct {
 	AdditionalOptions any
-	CatalogId any
-	ConnectionName any
-	DatabaseName any
+	CatalogId         any
+	ConnectionName    any
+	DatabaseName      any
 	// <p>SQL Query of SparkSQL format that can be used to pre-process data before running Data Quality Operations.</p>
 	PreProcessingQuery any
-	TableName any
+	TableName          any
 }
 
 type DataQualityResult_DataSource_GlueTable struct {
 	AdditionalOptions any
-	CatalogId any
-	ConnectionName any
-	DatabaseName any
-	TableName any
+	CatalogId         any
+	ConnectionName    any
+	DatabaseName      any
+	TableName         any
 }
 
 type DataQualityResult_DataSource struct {
@@ -52,33 +52,33 @@ type DataQualityResult_DataSource struct {
 }
 
 type DataQualityResult_Observations_MetricBasedObservation_MetricValues struct {
-	ActualValue any
+	ActualValue   any
 	ExpectedValue any
-	LowerLimit any
-	UpperLimit any
+	LowerLimit    any
+	UpperLimit    any
 }
 
 type DataQualityResult_Observations_MetricBasedObservation struct {
-	MetricName any
+	MetricName   any
 	MetricValues any
-	NewRules any
-	StatisticId any
+	NewRules     any
+	StatisticId  any
 }
 
 type DataQualityResult_Observations struct {
-	Description any
+	Description            any
 	MetricBasedObservation any
 }
 
 type DataQualityResult_RuleResults struct {
-	Description any
-	EvaluatedMetrics any
-	EvaluatedRule any
+	Description       any
+	EvaluatedMetrics  any
+	EvaluatedRule     any
 	EvaluationMessage any
-	Labels any
-	Name any
-	Result any
-	RuleMetrics any
+	Labels            any
+	Name              any
+	Result            any
+	RuleMetrics       any
 }
 
 type DataQualityResultConfig struct {
@@ -88,21 +88,21 @@ type DataQualityResultConfig struct {
 type DataQualityResultAttrs struct {
 	// <p>A summary of metrics showing the total counts of processed rows and rules, including their pass/fail statistics based on row-level results.</p>
 	AggregatedMetrics any
-	AnalyzerResults any
-	CompletedOn any
+	AnalyzerResults   any
+	CompletedOn       any
 	// <p>A data source (an Glue table) for which you want data quality results.</p>
-	DataSource any
-	EvaluationContext any
-	JobName any
-	JobRunId any
-	Observations any
-	ProfileId any
-	ResultId any
-	RuleResults any
+	DataSource             any
+	EvaluationContext      any
+	JobName                any
+	JobRunId               any
+	Observations           any
+	ProfileId              any
+	ResultId               any
+	RuleResults            any
 	RulesetEvaluationRunId any
-	RulesetName any
-	Score any
-	StartedOn any
+	RulesetName            any
+	Score                  any
+	StartedOn              any
 }
 
 var DataQualityResult = ubx.DataSourceBinding{

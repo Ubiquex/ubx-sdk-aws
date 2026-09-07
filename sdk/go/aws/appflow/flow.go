@@ -407,468 +407,468 @@ type Flow_TriggerConfig struct {
 }
 
 var Flow_DestinationFlowConfigList_DestinationConnectorProperties_CustomConnector_ErrorHandlingConfigFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
-		"FailOnFirstError": ubx.FieldSpec{WireName: "fail_on_first_error"},
-	}
+	"BucketName":       ubx.FieldSpec{WireName: "bucket_name"},
+	"BucketPrefix":     ubx.FieldSpec{WireName: "bucket_prefix"},
+	"FailOnFirstError": ubx.FieldSpec{WireName: "fail_on_first_error"},
+}
 
 var Flow_DestinationFlowConfigList_DestinationConnectorProperties_CustomConnectorFields = ubx.FieldMap{
-		"CustomProperties": ubx.FieldSpec{WireName: "custom_properties"},
-		"EntityName": ubx.FieldSpec{WireName: "entity_name"},
-		"ErrorHandlingConfig": ubx.FieldSpec{
-			WireName: "error_handling_config",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_CustomConnector_ErrorHandlingConfigFields,
-		},
-		"IdFieldNames": ubx.FieldSpec{WireName: "id_field_names"},
-		"WriteOperationType": ubx.FieldSpec{WireName: "write_operation_type"},
-	}
+	"CustomProperties": ubx.FieldSpec{WireName: "custom_properties"},
+	"EntityName":       ubx.FieldSpec{WireName: "entity_name"},
+	"ErrorHandlingConfig": ubx.FieldSpec{
+		WireName: "error_handling_config",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_CustomConnector_ErrorHandlingConfigFields,
+	},
+	"IdFieldNames":       ubx.FieldSpec{WireName: "id_field_names"},
+	"WriteOperationType": ubx.FieldSpec{WireName: "write_operation_type"},
+}
 
 var Flow_DestinationFlowConfigList_DestinationConnectorProperties_EventBridgeFields = ubx.FieldMap{
-		"ErrorHandlingConfig": ubx.FieldSpec{
-			WireName: "error_handling_config",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_CustomConnector_ErrorHandlingConfigFields,
-		},
-		"Object": ubx.FieldSpec{WireName: "object"},
-	}
+	"ErrorHandlingConfig": ubx.FieldSpec{
+		WireName: "error_handling_config",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_CustomConnector_ErrorHandlingConfigFields,
+	},
+	"Object": ubx.FieldSpec{WireName: "object"},
+}
 
 var Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields = ubx.FieldMap{
-		"Object": ubx.FieldSpec{WireName: "object"},
-	}
+	"Object": ubx.FieldSpec{WireName: "object"},
+}
 
 var Flow_DestinationFlowConfigList_DestinationConnectorProperties_RedshiftFields = ubx.FieldMap{
-		"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
-		"ErrorHandlingConfig": ubx.FieldSpec{
-			WireName: "error_handling_config",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_CustomConnector_ErrorHandlingConfigFields,
-		},
-		"IntermediateBucketName": ubx.FieldSpec{WireName: "intermediate_bucket_name"},
-		"Object": ubx.FieldSpec{WireName: "object"},
-	}
+	"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
+	"ErrorHandlingConfig": ubx.FieldSpec{
+		WireName: "error_handling_config",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_CustomConnector_ErrorHandlingConfigFields,
+	},
+	"IntermediateBucketName": ubx.FieldSpec{WireName: "intermediate_bucket_name"},
+	"Object":                 ubx.FieldSpec{WireName: "object"},
+}
 
 var Flow_DestinationFlowConfigList_DestinationConnectorProperties_S3_S3OutputFormatConfig_AggregationConfigFields = ubx.FieldMap{
-		"AggregationType": ubx.FieldSpec{WireName: "aggregation_type"},
-		"TargetFileSize": ubx.FieldSpec{WireName: "target_file_size"},
-	}
+	"AggregationType": ubx.FieldSpec{WireName: "aggregation_type"},
+	"TargetFileSize":  ubx.FieldSpec{WireName: "target_file_size"},
+}
 
 var Flow_DestinationFlowConfigList_DestinationConnectorProperties_S3_S3OutputFormatConfig_PrefixConfigFields = ubx.FieldMap{
-		"PathPrefixHierarchy": ubx.FieldSpec{WireName: "path_prefix_hierarchy"},
-		"PrefixFormat": ubx.FieldSpec{WireName: "prefix_format"},
-		"PrefixType": ubx.FieldSpec{WireName: "prefix_type"},
-	}
+	"PathPrefixHierarchy": ubx.FieldSpec{WireName: "path_prefix_hierarchy"},
+	"PrefixFormat":        ubx.FieldSpec{WireName: "prefix_format"},
+	"PrefixType":          ubx.FieldSpec{WireName: "prefix_type"},
+}
 
 var Flow_DestinationFlowConfigList_DestinationConnectorProperties_S3_S3OutputFormatConfigFields = ubx.FieldMap{
-		"AggregationConfig": ubx.FieldSpec{
-			WireName: "aggregation_config",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_S3_S3OutputFormatConfig_AggregationConfigFields,
-		},
-		"FileType": ubx.FieldSpec{WireName: "file_type"},
-		"PrefixConfig": ubx.FieldSpec{
-			WireName: "prefix_config",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_S3_S3OutputFormatConfig_PrefixConfigFields,
-		},
-		"PreserveSourceDataTyping": ubx.FieldSpec{WireName: "preserve_source_data_typing"},
-	}
+	"AggregationConfig": ubx.FieldSpec{
+		WireName: "aggregation_config",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_S3_S3OutputFormatConfig_AggregationConfigFields,
+	},
+	"FileType": ubx.FieldSpec{WireName: "file_type"},
+	"PrefixConfig": ubx.FieldSpec{
+		WireName: "prefix_config",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_S3_S3OutputFormatConfig_PrefixConfigFields,
+	},
+	"PreserveSourceDataTyping": ubx.FieldSpec{WireName: "preserve_source_data_typing"},
+}
 
 var Flow_DestinationFlowConfigList_DestinationConnectorProperties_S3Fields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
-		"S3OutputFormatConfig": ubx.FieldSpec{
-			WireName: "s3_output_format_config",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_S3_S3OutputFormatConfigFields,
-		},
-	}
+	"BucketName":   ubx.FieldSpec{WireName: "bucket_name"},
+	"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
+	"S3OutputFormatConfig": ubx.FieldSpec{
+		WireName: "s3_output_format_config",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_S3_S3OutputFormatConfigFields,
+	},
+}
 
 var Flow_DestinationFlowConfigList_DestinationConnectorProperties_SalesforceFields = ubx.FieldMap{
-		"DataTransferApi": ubx.FieldSpec{WireName: "data_transfer_api"},
-		"ErrorHandlingConfig": ubx.FieldSpec{
-			WireName: "error_handling_config",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_CustomConnector_ErrorHandlingConfigFields,
-		},
-		"IdFieldNames": ubx.FieldSpec{WireName: "id_field_names"},
-		"Object": ubx.FieldSpec{WireName: "object"},
-		"WriteOperationType": ubx.FieldSpec{WireName: "write_operation_type"},
-	}
+	"DataTransferApi": ubx.FieldSpec{WireName: "data_transfer_api"},
+	"ErrorHandlingConfig": ubx.FieldSpec{
+		WireName: "error_handling_config",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_CustomConnector_ErrorHandlingConfigFields,
+	},
+	"IdFieldNames":       ubx.FieldSpec{WireName: "id_field_names"},
+	"Object":             ubx.FieldSpec{WireName: "object"},
+	"WriteOperationType": ubx.FieldSpec{WireName: "write_operation_type"},
+}
 
 var Flow_DestinationFlowConfigList_DestinationConnectorProperties_Sapodata_SuccessResponseHandlingConfigFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
-	}
+	"BucketName":   ubx.FieldSpec{WireName: "bucket_name"},
+	"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
+}
 
 var Flow_DestinationFlowConfigList_DestinationConnectorProperties_SapodataFields = ubx.FieldMap{
-		"ErrorHandlingConfig": ubx.FieldSpec{
-			WireName: "error_handling_config",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_CustomConnector_ErrorHandlingConfigFields,
-		},
-		"IdFieldNames": ubx.FieldSpec{WireName: "id_field_names"},
-		"ObjectPath": ubx.FieldSpec{WireName: "object_path"},
-		"SuccessResponseHandlingConfig": ubx.FieldSpec{
-			WireName: "success_response_handling_config",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_Sapodata_SuccessResponseHandlingConfigFields,
-		},
-		"WriteOperationType": ubx.FieldSpec{WireName: "write_operation_type"},
-	}
+	"ErrorHandlingConfig": ubx.FieldSpec{
+		WireName: "error_handling_config",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_CustomConnector_ErrorHandlingConfigFields,
+	},
+	"IdFieldNames": ubx.FieldSpec{WireName: "id_field_names"},
+	"ObjectPath":   ubx.FieldSpec{WireName: "object_path"},
+	"SuccessResponseHandlingConfig": ubx.FieldSpec{
+		WireName: "success_response_handling_config",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_Sapodata_SuccessResponseHandlingConfigFields,
+	},
+	"WriteOperationType": ubx.FieldSpec{WireName: "write_operation_type"},
+}
 
 var Flow_DestinationFlowConfigList_DestinationConnectorProperties_Upsolver_S3OutputFormatConfigFields = ubx.FieldMap{
-		"AggregationConfig": ubx.FieldSpec{
-			WireName: "aggregation_config",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_S3_S3OutputFormatConfig_AggregationConfigFields,
-		},
-		"FileType": ubx.FieldSpec{WireName: "file_type"},
-		"PrefixConfig": ubx.FieldSpec{
-			WireName: "prefix_config",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_S3_S3OutputFormatConfig_PrefixConfigFields,
-		},
-	}
+	"AggregationConfig": ubx.FieldSpec{
+		WireName: "aggregation_config",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_S3_S3OutputFormatConfig_AggregationConfigFields,
+	},
+	"FileType": ubx.FieldSpec{WireName: "file_type"},
+	"PrefixConfig": ubx.FieldSpec{
+		WireName: "prefix_config",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_S3_S3OutputFormatConfig_PrefixConfigFields,
+	},
+}
 
 var Flow_DestinationFlowConfigList_DestinationConnectorProperties_UpsolverFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
-		"S3OutputFormatConfig": ubx.FieldSpec{
-			WireName: "s3_output_format_config",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_Upsolver_S3OutputFormatConfigFields,
-		},
-	}
+	"BucketName":   ubx.FieldSpec{WireName: "bucket_name"},
+	"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
+	"S3OutputFormatConfig": ubx.FieldSpec{
+		WireName: "s3_output_format_config",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_Upsolver_S3OutputFormatConfigFields,
+	},
+}
 
 var Flow_DestinationFlowConfigList_DestinationConnectorProperties_ZendeskFields = ubx.FieldMap{
-		"ErrorHandlingConfig": ubx.FieldSpec{
-			WireName: "error_handling_config",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_CustomConnector_ErrorHandlingConfigFields,
-		},
-		"IdFieldNames": ubx.FieldSpec{WireName: "id_field_names"},
-		"Object": ubx.FieldSpec{WireName: "object"},
-		"WriteOperationType": ubx.FieldSpec{WireName: "write_operation_type"},
-	}
+	"ErrorHandlingConfig": ubx.FieldSpec{
+		WireName: "error_handling_config",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_CustomConnector_ErrorHandlingConfigFields,
+	},
+	"IdFieldNames":       ubx.FieldSpec{WireName: "id_field_names"},
+	"Object":             ubx.FieldSpec{WireName: "object"},
+	"WriteOperationType": ubx.FieldSpec{WireName: "write_operation_type"},
+}
 
 var Flow_DestinationFlowConfigList_DestinationConnectorPropertiesFields = ubx.FieldMap{
-		"CustomConnector": ubx.FieldSpec{
-			WireName: "custom_connector",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_CustomConnectorFields,
-		},
-		"EventBridge": ubx.FieldSpec{
-			WireName: "event_bridge",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_EventBridgeFields,
-		},
-		"LookoutMetrics": ubx.FieldSpec{
-			WireName: "lookout_metrics",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
-		},
-		"Marketo": ubx.FieldSpec{
-			WireName: "marketo",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_EventBridgeFields,
-		},
-		"Redshift": ubx.FieldSpec{
-			WireName: "redshift",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_RedshiftFields,
-		},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_S3Fields,
-		},
-		"Salesforce": ubx.FieldSpec{
-			WireName: "salesforce",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_SalesforceFields,
-		},
-		"Sapodata": ubx.FieldSpec{
-			WireName: "sapodata",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_SapodataFields,
-		},
-		"Snowflake": ubx.FieldSpec{
-			WireName: "snowflake",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_RedshiftFields,
-		},
-		"Upsolver": ubx.FieldSpec{
-			WireName: "upsolver",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_UpsolverFields,
-		},
-		"Zendesk": ubx.FieldSpec{
-			WireName: "zendesk",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_ZendeskFields,
-		},
-	}
+	"CustomConnector": ubx.FieldSpec{
+		WireName: "custom_connector",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_CustomConnectorFields,
+	},
+	"EventBridge": ubx.FieldSpec{
+		WireName: "event_bridge",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_EventBridgeFields,
+	},
+	"LookoutMetrics": ubx.FieldSpec{
+		WireName: "lookout_metrics",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
+	},
+	"Marketo": ubx.FieldSpec{
+		WireName: "marketo",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_EventBridgeFields,
+	},
+	"Redshift": ubx.FieldSpec{
+		WireName: "redshift",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_RedshiftFields,
+	},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_S3Fields,
+	},
+	"Salesforce": ubx.FieldSpec{
+		WireName: "salesforce",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_SalesforceFields,
+	},
+	"Sapodata": ubx.FieldSpec{
+		WireName: "sapodata",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_SapodataFields,
+	},
+	"Snowflake": ubx.FieldSpec{
+		WireName: "snowflake",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_RedshiftFields,
+	},
+	"Upsolver": ubx.FieldSpec{
+		WireName: "upsolver",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_UpsolverFields,
+	},
+	"Zendesk": ubx.FieldSpec{
+		WireName: "zendesk",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_ZendeskFields,
+	},
+}
 
 var Flow_DestinationFlowConfigListFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"ConnectorProfileName": ubx.FieldSpec{WireName: "connector_profile_name"},
-		"ConnectorType": ubx.FieldSpec{WireName: "connector_type"},
-		"DestinationConnectorProperties": ubx.FieldSpec{
-			WireName: "destination_connector_properties",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorPropertiesFields,
-		},
-	}
+	"ApiVersion":           ubx.FieldSpec{WireName: "api_version"},
+	"ConnectorProfileName": ubx.FieldSpec{WireName: "connector_profile_name"},
+	"ConnectorType":        ubx.FieldSpec{WireName: "connector_type"},
+	"DestinationConnectorProperties": ubx.FieldSpec{
+		WireName: "destination_connector_properties",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorPropertiesFields,
+	},
+}
 
 var Flow_MetadataCatalogConfig_GlueDataCatalogFields = ubx.FieldMap{
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"TablePrefix": ubx.FieldSpec{WireName: "table_prefix"},
-	}
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"RoleArn":      ubx.FieldSpec{WireName: "role_arn"},
+	"TablePrefix":  ubx.FieldSpec{WireName: "table_prefix"},
+}
 
 var Flow_MetadataCatalogConfigFields = ubx.FieldMap{
-		"GlueDataCatalog": ubx.FieldSpec{
-			WireName: "glue_data_catalog",
-			Kind: "object",
-			Fields: Flow_MetadataCatalogConfig_GlueDataCatalogFields,
-		},
-	}
+	"GlueDataCatalog": ubx.FieldSpec{
+		WireName: "glue_data_catalog",
+		Kind:     "object",
+		Fields:   Flow_MetadataCatalogConfig_GlueDataCatalogFields,
+	},
+}
 
 var Flow_SourceFlowConfig_IncrementalPullConfigFields = ubx.FieldMap{
-		"DatetimeTypeFieldName": ubx.FieldSpec{WireName: "datetime_type_field_name"},
-	}
+	"DatetimeTypeFieldName": ubx.FieldSpec{WireName: "datetime_type_field_name"},
+}
 
 var Flow_SourceFlowConfig_SourceConnectorProperties_CustomConnector_DataTransferApiFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Flow_SourceFlowConfig_SourceConnectorProperties_CustomConnectorFields = ubx.FieldMap{
-		"CustomProperties": ubx.FieldSpec{WireName: "custom_properties"},
-		"DataTransferApi": ubx.FieldSpec{
-			WireName: "data_transfer_api",
-			Kind: "object",
-			Fields: Flow_SourceFlowConfig_SourceConnectorProperties_CustomConnector_DataTransferApiFields,
-		},
-		"EntityName": ubx.FieldSpec{WireName: "entity_name"},
-	}
+	"CustomProperties": ubx.FieldSpec{WireName: "custom_properties"},
+	"DataTransferApi": ubx.FieldSpec{
+		WireName: "data_transfer_api",
+		Kind:     "object",
+		Fields:   Flow_SourceFlowConfig_SourceConnectorProperties_CustomConnector_DataTransferApiFields,
+	},
+	"EntityName": ubx.FieldSpec{WireName: "entity_name"},
+}
 
 var Flow_SourceFlowConfig_SourceConnectorProperties_S3_S3InputFormatConfigFields = ubx.FieldMap{
-		"S3InputFileType": ubx.FieldSpec{WireName: "s3_input_file_type"},
-	}
+	"S3InputFileType": ubx.FieldSpec{WireName: "s3_input_file_type"},
+}
 
 var Flow_SourceFlowConfig_SourceConnectorProperties_S3Fields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
-		"S3InputFormatConfig": ubx.FieldSpec{
-			WireName: "s3_input_format_config",
-			Kind: "object",
-			Fields: Flow_SourceFlowConfig_SourceConnectorProperties_S3_S3InputFormatConfigFields,
-		},
-	}
+	"BucketName":   ubx.FieldSpec{WireName: "bucket_name"},
+	"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
+	"S3InputFormatConfig": ubx.FieldSpec{
+		WireName: "s3_input_format_config",
+		Kind:     "object",
+		Fields:   Flow_SourceFlowConfig_SourceConnectorProperties_S3_S3InputFormatConfigFields,
+	},
+}
 
 var Flow_SourceFlowConfig_SourceConnectorProperties_SalesforceFields = ubx.FieldMap{
-		"DataTransferApi": ubx.FieldSpec{WireName: "data_transfer_api"},
-		"EnableDynamicFieldUpdate": ubx.FieldSpec{WireName: "enable_dynamic_field_update"},
-		"IncludeDeletedRecords": ubx.FieldSpec{WireName: "include_deleted_records"},
-		"Object": ubx.FieldSpec{WireName: "object"},
-	}
+	"DataTransferApi":          ubx.FieldSpec{WireName: "data_transfer_api"},
+	"EnableDynamicFieldUpdate": ubx.FieldSpec{WireName: "enable_dynamic_field_update"},
+	"IncludeDeletedRecords":    ubx.FieldSpec{WireName: "include_deleted_records"},
+	"Object":                   ubx.FieldSpec{WireName: "object"},
+}
 
 var Flow_SourceFlowConfig_SourceConnectorProperties_Sapodata_PaginationConfigFields = ubx.FieldMap{
-		"MaxPageSize": ubx.FieldSpec{WireName: "max_page_size"},
-	}
+	"MaxPageSize": ubx.FieldSpec{WireName: "max_page_size"},
+}
 
 var Flow_SourceFlowConfig_SourceConnectorProperties_Sapodata_ParallelismConfigFields = ubx.FieldMap{
-		"MaxParallelism": ubx.FieldSpec{WireName: "max_parallelism"},
-	}
+	"MaxParallelism": ubx.FieldSpec{WireName: "max_parallelism"},
+}
 
 var Flow_SourceFlowConfig_SourceConnectorProperties_SapodataFields = ubx.FieldMap{
-		"ObjectPath": ubx.FieldSpec{WireName: "object_path"},
-		"PaginationConfig": ubx.FieldSpec{
-			WireName: "pagination_config",
-			Kind: "object",
-			Fields: Flow_SourceFlowConfig_SourceConnectorProperties_Sapodata_PaginationConfigFields,
-		},
-		"ParallelismConfig": ubx.FieldSpec{
-			WireName: "parallelism_config",
-			Kind: "object",
-			Fields: Flow_SourceFlowConfig_SourceConnectorProperties_Sapodata_ParallelismConfigFields,
-		},
-	}
+	"ObjectPath": ubx.FieldSpec{WireName: "object_path"},
+	"PaginationConfig": ubx.FieldSpec{
+		WireName: "pagination_config",
+		Kind:     "object",
+		Fields:   Flow_SourceFlowConfig_SourceConnectorProperties_Sapodata_PaginationConfigFields,
+	},
+	"ParallelismConfig": ubx.FieldSpec{
+		WireName: "parallelism_config",
+		Kind:     "object",
+		Fields:   Flow_SourceFlowConfig_SourceConnectorProperties_Sapodata_ParallelismConfigFields,
+	},
+}
 
 var Flow_SourceFlowConfig_SourceConnectorProperties_VeevaFields = ubx.FieldMap{
-		"DocumentType": ubx.FieldSpec{WireName: "document_type"},
-		"IncludeAllVersions": ubx.FieldSpec{WireName: "include_all_versions"},
-		"IncludeRenditions": ubx.FieldSpec{WireName: "include_renditions"},
-		"IncludeSourceFiles": ubx.FieldSpec{WireName: "include_source_files"},
-		"Object": ubx.FieldSpec{WireName: "object"},
-	}
+	"DocumentType":       ubx.FieldSpec{WireName: "document_type"},
+	"IncludeAllVersions": ubx.FieldSpec{WireName: "include_all_versions"},
+	"IncludeRenditions":  ubx.FieldSpec{WireName: "include_renditions"},
+	"IncludeSourceFiles": ubx.FieldSpec{WireName: "include_source_files"},
+	"Object":             ubx.FieldSpec{WireName: "object"},
+}
 
 var Flow_SourceFlowConfig_SourceConnectorPropertiesFields = ubx.FieldMap{
-		"Amplitude": ubx.FieldSpec{
-			WireName: "amplitude",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
-		},
-		"CustomConnector": ubx.FieldSpec{
-			WireName: "custom_connector",
-			Kind: "object",
-			Fields: Flow_SourceFlowConfig_SourceConnectorProperties_CustomConnectorFields,
-		},
-		"Datadog": ubx.FieldSpec{
-			WireName: "datadog",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
-		},
-		"Dynatrace": ubx.FieldSpec{
-			WireName: "dynatrace",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
-		},
-		"GoogleAnalytics": ubx.FieldSpec{
-			WireName: "google_analytics",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
-		},
-		"InforNexus": ubx.FieldSpec{
-			WireName: "infor_nexus",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
-		},
-		"Marketo": ubx.FieldSpec{
-			WireName: "marketo",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
-		},
-		"Pardot": ubx.FieldSpec{
-			WireName: "pardot",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
-		},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Flow_SourceFlowConfig_SourceConnectorProperties_S3Fields,
-		},
-		"Salesforce": ubx.FieldSpec{
-			WireName: "salesforce",
-			Kind: "object",
-			Fields: Flow_SourceFlowConfig_SourceConnectorProperties_SalesforceFields,
-		},
-		"Sapodata": ubx.FieldSpec{
-			WireName: "sapodata",
-			Kind: "object",
-			Fields: Flow_SourceFlowConfig_SourceConnectorProperties_SapodataFields,
-		},
-		"ServiceNow": ubx.FieldSpec{
-			WireName: "service_now",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
-		},
-		"Singular": ubx.FieldSpec{
-			WireName: "singular",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
-		},
-		"Slack": ubx.FieldSpec{
-			WireName: "slack",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
-		},
-		"Trendmicro": ubx.FieldSpec{
-			WireName: "trendmicro",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
-		},
-		"Veeva": ubx.FieldSpec{
-			WireName: "veeva",
-			Kind: "object",
-			Fields: Flow_SourceFlowConfig_SourceConnectorProperties_VeevaFields,
-		},
-		"Zendesk": ubx.FieldSpec{
-			WireName: "zendesk",
-			Kind: "object",
-			Fields: Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
-		},
-	}
+	"Amplitude": ubx.FieldSpec{
+		WireName: "amplitude",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
+	},
+	"CustomConnector": ubx.FieldSpec{
+		WireName: "custom_connector",
+		Kind:     "object",
+		Fields:   Flow_SourceFlowConfig_SourceConnectorProperties_CustomConnectorFields,
+	},
+	"Datadog": ubx.FieldSpec{
+		WireName: "datadog",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
+	},
+	"Dynatrace": ubx.FieldSpec{
+		WireName: "dynatrace",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
+	},
+	"GoogleAnalytics": ubx.FieldSpec{
+		WireName: "google_analytics",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
+	},
+	"InforNexus": ubx.FieldSpec{
+		WireName: "infor_nexus",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
+	},
+	"Marketo": ubx.FieldSpec{
+		WireName: "marketo",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
+	},
+	"Pardot": ubx.FieldSpec{
+		WireName: "pardot",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
+	},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Flow_SourceFlowConfig_SourceConnectorProperties_S3Fields,
+	},
+	"Salesforce": ubx.FieldSpec{
+		WireName: "salesforce",
+		Kind:     "object",
+		Fields:   Flow_SourceFlowConfig_SourceConnectorProperties_SalesforceFields,
+	},
+	"Sapodata": ubx.FieldSpec{
+		WireName: "sapodata",
+		Kind:     "object",
+		Fields:   Flow_SourceFlowConfig_SourceConnectorProperties_SapodataFields,
+	},
+	"ServiceNow": ubx.FieldSpec{
+		WireName: "service_now",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
+	},
+	"Singular": ubx.FieldSpec{
+		WireName: "singular",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
+	},
+	"Slack": ubx.FieldSpec{
+		WireName: "slack",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
+	},
+	"Trendmicro": ubx.FieldSpec{
+		WireName: "trendmicro",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
+	},
+	"Veeva": ubx.FieldSpec{
+		WireName: "veeva",
+		Kind:     "object",
+		Fields:   Flow_SourceFlowConfig_SourceConnectorProperties_VeevaFields,
+	},
+	"Zendesk": ubx.FieldSpec{
+		WireName: "zendesk",
+		Kind:     "object",
+		Fields:   Flow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetricsFields,
+	},
+}
 
 var Flow_SourceFlowConfigFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"ConnectorProfileName": ubx.FieldSpec{WireName: "connector_profile_name"},
-		"ConnectorType": ubx.FieldSpec{WireName: "connector_type"},
-		"IncrementalPullConfig": ubx.FieldSpec{
-			WireName: "incremental_pull_config",
-			Kind: "object",
-			Fields: Flow_SourceFlowConfig_IncrementalPullConfigFields,
-		},
-		"SourceConnectorProperties": ubx.FieldSpec{
-			WireName: "source_connector_properties",
-			Kind: "object",
-			Fields: Flow_SourceFlowConfig_SourceConnectorPropertiesFields,
-		},
-	}
+	"ApiVersion":           ubx.FieldSpec{WireName: "api_version"},
+	"ConnectorProfileName": ubx.FieldSpec{WireName: "connector_profile_name"},
+	"ConnectorType":        ubx.FieldSpec{WireName: "connector_type"},
+	"IncrementalPullConfig": ubx.FieldSpec{
+		WireName: "incremental_pull_config",
+		Kind:     "object",
+		Fields:   Flow_SourceFlowConfig_IncrementalPullConfigFields,
+	},
+	"SourceConnectorProperties": ubx.FieldSpec{
+		WireName: "source_connector_properties",
+		Kind:     "object",
+		Fields:   Flow_SourceFlowConfig_SourceConnectorPropertiesFields,
+	},
+}
 
 var Flow_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Flow_Tasks_ConnectorOperatorFields = ubx.FieldMap{
-		"Amplitude": ubx.FieldSpec{WireName: "amplitude"},
-		"CustomConnector": ubx.FieldSpec{WireName: "custom_connector"},
-		"Datadog": ubx.FieldSpec{WireName: "datadog"},
-		"Dynatrace": ubx.FieldSpec{WireName: "dynatrace"},
-		"GoogleAnalytics": ubx.FieldSpec{WireName: "google_analytics"},
-		"InforNexus": ubx.FieldSpec{WireName: "infor_nexus"},
-		"Marketo": ubx.FieldSpec{WireName: "marketo"},
-		"Pardot": ubx.FieldSpec{WireName: "pardot"},
-		"S3": ubx.FieldSpec{WireName: "s3"},
-		"Salesforce": ubx.FieldSpec{WireName: "salesforce"},
-		"Sapodata": ubx.FieldSpec{WireName: "sapodata"},
-		"ServiceNow": ubx.FieldSpec{WireName: "service_now"},
-		"Singular": ubx.FieldSpec{WireName: "singular"},
-		"Slack": ubx.FieldSpec{WireName: "slack"},
-		"Trendmicro": ubx.FieldSpec{WireName: "trendmicro"},
-		"Veeva": ubx.FieldSpec{WireName: "veeva"},
-		"Zendesk": ubx.FieldSpec{WireName: "zendesk"},
-	}
+	"Amplitude":       ubx.FieldSpec{WireName: "amplitude"},
+	"CustomConnector": ubx.FieldSpec{WireName: "custom_connector"},
+	"Datadog":         ubx.FieldSpec{WireName: "datadog"},
+	"Dynatrace":       ubx.FieldSpec{WireName: "dynatrace"},
+	"GoogleAnalytics": ubx.FieldSpec{WireName: "google_analytics"},
+	"InforNexus":      ubx.FieldSpec{WireName: "infor_nexus"},
+	"Marketo":         ubx.FieldSpec{WireName: "marketo"},
+	"Pardot":          ubx.FieldSpec{WireName: "pardot"},
+	"S3":              ubx.FieldSpec{WireName: "s3"},
+	"Salesforce":      ubx.FieldSpec{WireName: "salesforce"},
+	"Sapodata":        ubx.FieldSpec{WireName: "sapodata"},
+	"ServiceNow":      ubx.FieldSpec{WireName: "service_now"},
+	"Singular":        ubx.FieldSpec{WireName: "singular"},
+	"Slack":           ubx.FieldSpec{WireName: "slack"},
+	"Trendmicro":      ubx.FieldSpec{WireName: "trendmicro"},
+	"Veeva":           ubx.FieldSpec{WireName: "veeva"},
+	"Zendesk":         ubx.FieldSpec{WireName: "zendesk"},
+}
 
 var Flow_TasksFields = ubx.FieldMap{
-		"ConnectorOperator": ubx.FieldSpec{
-			WireName: "connector_operator",
-			Kind: "object",
-			Fields: Flow_Tasks_ConnectorOperatorFields,
-		},
-		"DestinationField": ubx.FieldSpec{WireName: "destination_field"},
-		"SourceFields": ubx.FieldSpec{WireName: "source_fields"},
-		"TaskProperties": ubx.FieldSpec{
-			WireName: "task_properties",
-			Kind: "list",
-			Fields: Flow_TagsFields,
-		},
-		"TaskType": ubx.FieldSpec{WireName: "task_type"},
-	}
+	"ConnectorOperator": ubx.FieldSpec{
+		WireName: "connector_operator",
+		Kind:     "object",
+		Fields:   Flow_Tasks_ConnectorOperatorFields,
+	},
+	"DestinationField": ubx.FieldSpec{WireName: "destination_field"},
+	"SourceFields":     ubx.FieldSpec{WireName: "source_fields"},
+	"TaskProperties": ubx.FieldSpec{
+		WireName: "task_properties",
+		Kind:     "list",
+		Fields:   Flow_TagsFields,
+	},
+	"TaskType": ubx.FieldSpec{WireName: "task_type"},
+}
 
 var Flow_TriggerConfig_TriggerPropertiesFields = ubx.FieldMap{
-		"DataPullMode": ubx.FieldSpec{WireName: "data_pull_mode"},
-		"FirstExecutionFrom": ubx.FieldSpec{WireName: "first_execution_from"},
-		"FlowErrorDeactivationThreshold": ubx.FieldSpec{WireName: "flow_error_deactivation_threshold"},
-		"ScheduleEndTime": ubx.FieldSpec{WireName: "schedule_end_time"},
-		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
-		"ScheduleOffset": ubx.FieldSpec{WireName: "schedule_offset"},
-		"ScheduleStartTime": ubx.FieldSpec{WireName: "schedule_start_time"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"DataPullMode":                   ubx.FieldSpec{WireName: "data_pull_mode"},
+	"FirstExecutionFrom":             ubx.FieldSpec{WireName: "first_execution_from"},
+	"FlowErrorDeactivationThreshold": ubx.FieldSpec{WireName: "flow_error_deactivation_threshold"},
+	"ScheduleEndTime":                ubx.FieldSpec{WireName: "schedule_end_time"},
+	"ScheduleExpression":             ubx.FieldSpec{WireName: "schedule_expression"},
+	"ScheduleOffset":                 ubx.FieldSpec{WireName: "schedule_offset"},
+	"ScheduleStartTime":              ubx.FieldSpec{WireName: "schedule_start_time"},
+	"TimeZone":                       ubx.FieldSpec{WireName: "time_zone"},
+}
 
 var Flow_TriggerConfigFields = ubx.FieldMap{
-		"TriggerProperties": ubx.FieldSpec{
-			WireName: "trigger_properties",
-			Kind: "object",
-			Fields: Flow_TriggerConfig_TriggerPropertiesFields,
-		},
-		"TriggerType": ubx.FieldSpec{WireName: "trigger_type"},
-	}
+	"TriggerProperties": ubx.FieldSpec{
+		WireName: "trigger_properties",
+		Kind:     "object",
+		Fields:   Flow_TriggerConfig_TriggerPropertiesFields,
+	},
+	"TriggerType": ubx.FieldSpec{WireName: "trigger_type"},
+}
 
 type FlowConfig struct {
 	// Description of the flow.
@@ -924,36 +924,36 @@ var Flow = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DestinationFlowConfigList": ubx.FieldSpec{
 			WireName: "destination_flow_config_list",
-			Kind: "list",
-			Fields: Flow_DestinationFlowConfigListFields,
+			Kind:     "list",
+			Fields:   Flow_DestinationFlowConfigListFields,
 		},
-		"FlowName": ubx.FieldSpec{WireName: "flow_name"},
+		"FlowName":   ubx.FieldSpec{WireName: "flow_name"},
 		"FlowStatus": ubx.FieldSpec{WireName: "flow_status"},
-		"Kmsarn": ubx.FieldSpec{WireName: "kmsarn"},
+		"Kmsarn":     ubx.FieldSpec{WireName: "kmsarn"},
 		"MetadataCatalogConfig": ubx.FieldSpec{
 			WireName: "metadata_catalog_config",
-			Kind: "object",
-			Fields: Flow_MetadataCatalogConfigFields,
+			Kind:     "object",
+			Fields:   Flow_MetadataCatalogConfigFields,
 		},
 		"SourceFlowConfig": ubx.FieldSpec{
 			WireName: "source_flow_config",
-			Kind: "object",
-			Fields: Flow_SourceFlowConfigFields,
+			Kind:     "object",
+			Fields:   Flow_SourceFlowConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Flow_TagsFields,
+			Kind:     "list",
+			Fields:   Flow_TagsFields,
 		},
 		"Tasks": ubx.FieldSpec{
 			WireName: "tasks",
-			Kind: "list",
-			Fields: Flow_TasksFields,
+			Kind:     "list",
+			Fields:   Flow_TasksFields,
 		},
 		"TriggerConfig": ubx.FieldSpec{
 			WireName: "trigger_config",
-			Kind: "object",
-			Fields: Flow_TriggerConfigFields,
+			Kind:     "object",
+			Fields:   Flow_TriggerConfigFields,
 		},
 	},
 }

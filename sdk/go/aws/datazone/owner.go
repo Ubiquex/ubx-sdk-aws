@@ -34,7 +34,7 @@ var Owner = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
 		"EntityIdentifier": ubx.FieldSpec{WireName: "entity_identifier"},
-		"EntityType": ubx.FieldSpec{WireName: "entity_type"},
-		"Owner": ubx.FieldSpec{WireName: "owner"},
+		"EntityType":       ubx.FieldSpec{WireName: "entity_type"},
+		"Owner":            ubx.FieldSpec{WireName: "owner"},
 	},
 }

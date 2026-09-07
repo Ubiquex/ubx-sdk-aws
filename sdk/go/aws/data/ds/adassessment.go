@@ -4,36 +4,36 @@ package ds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Adassessment_Assessment struct {
-	AssessmentId any
-	CustomerDnsIps any
-	DirectoryId any
-	DnsName any
-	LastUpdateDateTime any
-	ReportType any
-	SecurityGroupIds any
+	AssessmentId           any
+	CustomerDnsIps         any
+	DirectoryId            any
+	DnsName                any
+	LastUpdateDateTime     any
+	ReportType             any
+	SecurityGroupIds       any
 	SelfManagedInstanceIds any
-	StartTime any
-	Status any
-	StatusCode any
-	StatusReason any
-	SubnetIds any
-	Version any
-	VpcId any
+	StartTime              any
+	Status                 any
+	StatusCode             any
+	StatusReason           any
+	SubnetIds              any
+	Version                any
+	VpcId                  any
 }
 
 type Adassessment_AssessmentReports_Validations struct {
-	Category any
+	Category           any
 	LastUpdateDateTime any
-	Name any
-	StartTime any
-	Status any
-	StatusCode any
-	StatusReason any
+	Name               any
+	StartTime          any
+	Status             any
+	StatusCode         any
+	StatusReason       any
 }
 
 type Adassessment_AssessmentReports struct {
 	DomainControllerIp any
-	Validations any
+	Validations        any
 }
 
 type AdassessmentConfig struct {
@@ -42,8 +42,8 @@ type AdassessmentConfig struct {
 
 type AdassessmentAttrs struct {
 	// <p>Contains detailed information about a directory assessment, including configuration parameters, status, and validation results.</p>
-	Assessment any
-	AssessmentId any
+	Assessment        any
+	AssessmentId      any
 	AssessmentReports any
 }
 

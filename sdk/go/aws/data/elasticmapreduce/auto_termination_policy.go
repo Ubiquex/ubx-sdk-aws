@@ -14,7 +14,7 @@ type AutoTerminationPolicyConfig struct {
 type AutoTerminationPolicyAttrs struct {
 	// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
 	AutoTerminationPolicy any
-	ClusterId any
+	ClusterId             any
 }
 
 var AutoTerminationPolicy = ubx.DataSourceBinding{

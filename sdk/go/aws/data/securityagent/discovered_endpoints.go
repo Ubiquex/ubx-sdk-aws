@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveredEndpoints_DiscoveredEndpoints struct {
 	AgentSpaceId any
-	Description any
-	Evidence any
-	Operation any
+	Description  any
+	Evidence     any
+	Operation    any
 	PentestJobId any
-	TaskId any
-	Uri any
+	TaskId       any
+	Uri          any
 }
 
 type DiscoveredEndpointsConfig struct {
@@ -18,29 +18,29 @@ type DiscoveredEndpointsConfig struct {
 	// <p>Maximum results for pagination.</p>
 	MaxResults any
 	// <p>Pagination token.</p>
-	NextToken any
+	NextToken    any
 	PentestJobId any
-	Prefix any
+	Prefix       any
 }
 
 type DiscoveredEndpointsAttrs struct {
-	AgentSpaceId any
+	AgentSpaceId        any
 	DiscoveredEndpoints any
 	// <p>Maximum results for pagination.</p>
 	MaxResults any
 	// <p>Pagination token.</p>
-	NextToken any
+	NextToken    any
 	PentestJobId any
-	Prefix any
+	Prefix       any
 }
 
 var DiscoveredEndpoints = ubx.DataSourceBinding{
 	WireType: "aws_securityagent_discovered_endpoints",
 	Fields: ubx.FieldMap{
 		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"PentestJobId": ubx.FieldSpec{WireName: "pentest_job_id"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
+		"Prefix":       ubx.FieldSpec{WireName: "prefix"},
 	},
 }

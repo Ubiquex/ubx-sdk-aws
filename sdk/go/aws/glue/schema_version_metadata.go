@@ -24,8 +24,8 @@ type SchemaVersionMetadataAttrs struct {
 var SchemaVersionMetadata = ubx.ResourceBinding{
 	WireType: "aws_glue_schema_version_metadata",
 	Fields: ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
+		"Key":             ubx.FieldSpec{WireName: "key"},
 		"SchemaVersionId": ubx.FieldSpec{WireName: "schema_version_id"},
-		"Value": ubx.FieldSpec{WireName: "value"},
+		"Value":           ubx.FieldSpec{WireName: "value"},
 	},
 }

@@ -27,20 +27,20 @@ type MissionProfile_Tags struct {
 }
 
 var MissionProfile_DataflowEdgesFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"Destination": ubx.FieldSpec{WireName: "destination"},
+	"Source":      ubx.FieldSpec{WireName: "source"},
+}
 
 var MissionProfile_StreamsKmsKeyFields = ubx.FieldMap{
-		"KmsAliasArn": ubx.FieldSpec{WireName: "kms_alias_arn"},
-		"KmsAliasName": ubx.FieldSpec{WireName: "kms_alias_name"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-	}
+	"KmsAliasArn":  ubx.FieldSpec{WireName: "kms_alias_arn"},
+	"KmsAliasName": ubx.FieldSpec{WireName: "kms_alias_name"},
+	"KmsKeyArn":    ubx.FieldSpec{WireName: "kms_key_arn"},
+}
 
 var MissionProfile_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MissionProfileConfig struct {
 	// Post-pass time needed after the contact.
@@ -98,26 +98,26 @@ var MissionProfile = ubx.ResourceBinding{
 	WireType: "aws_ground_station_mission_profile",
 	Fields: ubx.FieldMap{
 		"ContactPostPassDurationSeconds": ubx.FieldSpec{WireName: "contact_post_pass_duration_seconds"},
-		"ContactPrePassDurationSeconds": ubx.FieldSpec{WireName: "contact_pre_pass_duration_seconds"},
+		"ContactPrePassDurationSeconds":  ubx.FieldSpec{WireName: "contact_pre_pass_duration_seconds"},
 		"DataflowEdges": ubx.FieldSpec{
 			WireName: "dataflow_edges",
-			Kind: "list",
-			Fields: MissionProfile_DataflowEdgesFields,
+			Kind:     "list",
+			Fields:   MissionProfile_DataflowEdgesFields,
 		},
 		"MinimumViableContactDurationSeconds": ubx.FieldSpec{WireName: "minimum_viable_contact_duration_seconds"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                                ubx.FieldSpec{WireName: "name"},
 		"StreamsKmsKey": ubx.FieldSpec{
 			WireName: "streams_kms_key",
-			Kind: "object",
-			Fields: MissionProfile_StreamsKmsKeyFields,
+			Kind:     "object",
+			Fields:   MissionProfile_StreamsKmsKeyFields,
 		},
 		"StreamsKmsRole": ubx.FieldSpec{WireName: "streams_kms_role"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MissionProfile_TagsFields,
+			Kind:     "list",
+			Fields:   MissionProfile_TagsFields,
 		},
 		"TelemetrySinkConfigArn": ubx.FieldSpec{WireName: "telemetry_sink_config_arn"},
-		"TrackingConfigArn": ubx.FieldSpec{WireName: "tracking_config_arn"},
+		"TrackingConfigArn":      ubx.FieldSpec{WireName: "tracking_config_arn"},
 	},
 }

@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssetCompositeModel_ActionDefinitions struct {
 	ActionDefinitionId any
-	ActionName any
-	ActionType any
+	ActionName         any
+	ActionType         any
 }
 
 type AssetCompositeModel_AssetCompositeModelPath struct {
-	Id any
+	Id   any
 	Name any
 }
 
@@ -20,48 +20,48 @@ type AssetCompositeModel_AssetCompositeModelProperties_Notification struct {
 }
 
 type AssetCompositeModel_AssetCompositeModelProperties struct {
-	Alias any
-	DataType any
+	Alias        any
+	DataType     any
 	DataTypeSpec any
-	ExternalId any
-	Id any
-	Name any
+	ExternalId   any
+	Id           any
+	Name         any
 	Notification any
-	Path any
-	Unit any
+	Path         any
+	Unit         any
 }
 
 type AssetCompositeModel_AssetCompositeModelSummaries struct {
 	Description any
-	ExternalId any
-	Id any
-	Name any
-	Path any
-	Type any
+	ExternalId  any
+	Id          any
+	Name        any
+	Path        any
+	Type        any
 }
 
 type AssetCompositeModelConfig struct {
 	AssetCompositeModelId any
-	AssetId any
+	AssetId               any
 }
 
 type AssetCompositeModelAttrs struct {
-	ActionDefinitions any
+	ActionDefinitions              any
 	AssetCompositeModelDescription any
-	AssetCompositeModelExternalId any
-	AssetCompositeModelId any
-	AssetCompositeModelName any
-	AssetCompositeModelPath any
-	AssetCompositeModelProperties any
-	AssetCompositeModelSummaries any
-	AssetCompositeModelType any
-	AssetId any
+	AssetCompositeModelExternalId  any
+	AssetCompositeModelId          any
+	AssetCompositeModelName        any
+	AssetCompositeModelPath        any
+	AssetCompositeModelProperties  any
+	AssetCompositeModelSummaries   any
+	AssetCompositeModelType        any
+	AssetId                        any
 }
 
 var AssetCompositeModel = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_asset_composite_model",
 	Fields: ubx.FieldMap{
 		"AssetCompositeModelId": ubx.FieldSpec{WireName: "asset_composite_model_id"},
-		"AssetId": ubx.FieldSpec{WireName: "asset_id"},
+		"AssetId":               ubx.FieldSpec{WireName: "asset_id"},
 	},
 }

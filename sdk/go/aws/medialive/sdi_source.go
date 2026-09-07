@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SdiSource_Tags struct {
 	// The key of a user-defined tag applied to the SDI source. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var SdiSource_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SdiSourceConfig struct {
 	// The current state of the SdiSource.
@@ -51,8 +51,8 @@ var SdiSource = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SdiSource_TagsFields,
+			Kind:     "list",
+			Fields:   SdiSource_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

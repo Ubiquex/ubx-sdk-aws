@@ -9,7 +9,7 @@ type ResourcePolicyConfig struct {
 
 type ResourcePolicyAttrs struct {
 	PolicyDocument any
-	ResourceArn any
+	ResourceArn    any
 }
 
 var ResourcePolicy = ubx.DataSourceBinding{

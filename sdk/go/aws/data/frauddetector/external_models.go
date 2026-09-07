@@ -4,49 +4,49 @@ package frauddetector
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExternalModels_ExternalModels_InputConfiguration struct {
-	CsvInputTemplate any
-	EventTypeName any
-	Format any
+	CsvInputTemplate  any
+	EventTypeName     any
+	Format            any
 	JsonInputTemplate any
 	UseEventVariables any
 }
 
 type ExternalModels_ExternalModels_OutputConfiguration struct {
 	CsvIndexToVariableMap any
-	Format any
-	JsonKeyToVariableMap any
+	Format                any
+	JsonKeyToVariableMap  any
 }
 
 type ExternalModels_ExternalModels struct {
-	Arn any
-	CreatedTime any
-	InputConfiguration any
+	Arn                        any
+	CreatedTime                any
+	InputConfiguration         any
 	InvokeModelEndpointRoleArn any
-	LastUpdatedTime any
-	ModelEndpoint any
-	ModelEndpointStatus any
-	ModelSource any
-	OutputConfiguration any
+	LastUpdatedTime            any
+	ModelEndpoint              any
+	ModelEndpointStatus        any
+	ModelSource                any
+	OutputConfiguration        any
 }
 
 type ExternalModelsConfig struct {
-	MaxResults any
+	MaxResults    any
 	ModelEndpoint any
-	NextToken any
+	NextToken     any
 }
 
 type ExternalModelsAttrs struct {
 	ExternalModels any
-	MaxResults any
-	ModelEndpoint any
-	NextToken any
+	MaxResults     any
+	ModelEndpoint  any
+	NextToken      any
 }
 
 var ExternalModels = ubx.DataSourceBinding{
 	WireType: "aws_frauddetector_external_models",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
 		"ModelEndpoint": ubx.FieldSpec{WireName: "model_endpoint"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,29 +4,29 @@ package servicecatalog_appregistry
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServicecatalogAppregistryApplications_Applications struct {
-	Arn any
-	CreationTime any
-	Description any
-	Id any
+	Arn            any
+	CreationTime   any
+	Description    any
+	Id             any
 	LastUpdateTime any
-	Name any
+	Name           any
 }
 
 type ServicecatalogAppregistryApplicationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ServicecatalogAppregistryApplicationsAttrs struct {
 	Applications any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var ServicecatalogAppregistryApplications = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_appregistry_applications",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

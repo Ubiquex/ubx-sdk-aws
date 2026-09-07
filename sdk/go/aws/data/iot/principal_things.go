@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PrincipalThingsConfig struct {
 	MaxResults any
-	NextToken any
-	Principal any
+	NextToken  any
+	Principal  any
 }
 
 type PrincipalThingsAttrs struct {
 	MaxResults any
-	NextToken any
-	Principal any
-	Things any
+	NextToken  any
+	Principal  any
+	Things     any
 }
 
 var PrincipalThings = ubx.DataSourceBinding{
 	WireType: "aws_iot_principal_things",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Principal":  ubx.FieldSpec{WireName: "principal"},
 	},
 }

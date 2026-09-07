@@ -4,58 +4,58 @@ package codecommit
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CommentsForComparedCommit_CommentsForComparedCommitData_Comments struct {
-	AuthorArn any
-	CallerReactions any
+	AuthorArn          any
+	CallerReactions    any
 	ClientRequestToken any
-	CommentId any
-	Content any
-	CreationDate any
-	Deleted any
-	InReplyTo any
-	LastModifiedDate any
-	ReactionCounts any
+	CommentId          any
+	Content            any
+	CreationDate       any
+	Deleted            any
+	InReplyTo          any
+	LastModifiedDate   any
+	ReactionCounts     any
 }
 
 type CommentsForComparedCommit_CommentsForComparedCommitData_Location struct {
-	FilePath any
-	FilePosition any
+	FilePath            any
+	FilePosition        any
 	RelativeFileVersion any
 }
 
 type CommentsForComparedCommit_CommentsForComparedCommitData struct {
-	AfterBlobId any
-	AfterCommitId any
-	BeforeBlobId any
+	AfterBlobId    any
+	AfterCommitId  any
+	BeforeBlobId   any
 	BeforeCommitId any
-	Comments any
-	Location any
+	Comments       any
+	Location       any
 	RepositoryName any
 }
 
 type CommentsForComparedCommitConfig struct {
-	AfterCommitId any
+	AfterCommitId  any
 	BeforeCommitId any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	RepositoryName any
 }
 
 type CommentsForComparedCommitAttrs struct {
-	AfterCommitId any
-	BeforeCommitId any
+	AfterCommitId                 any
+	BeforeCommitId                any
 	CommentsForComparedCommitData any
-	MaxResults any
-	NextToken any
-	RepositoryName any
+	MaxResults                    any
+	NextToken                     any
+	RepositoryName                any
 }
 
 var CommentsForComparedCommit = ubx.DataSourceBinding{
 	WireType: "aws_codecommit_comments_for_compared_commit",
 	Fields: ubx.FieldMap{
-		"AfterCommitId": ubx.FieldSpec{WireName: "after_commit_id"},
+		"AfterCommitId":  ubx.FieldSpec{WireName: "after_commit_id"},
 		"BeforeCommitId": ubx.FieldSpec{WireName: "before_commit_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
 	},
 }

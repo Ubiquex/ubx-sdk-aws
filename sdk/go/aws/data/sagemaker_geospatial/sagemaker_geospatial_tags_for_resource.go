@@ -9,7 +9,7 @@ type SagemakerGeospatialTagsForResourceConfig struct {
 
 type SagemakerGeospatialTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var SagemakerGeospatialTagsForResource = ubx.DataSourceBinding{

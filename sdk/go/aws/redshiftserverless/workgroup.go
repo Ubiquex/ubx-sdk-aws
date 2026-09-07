@@ -88,19 +88,19 @@ type Workgroup_Workgroup struct {
 }
 
 var Workgroup_ConfigParametersFields = ubx.FieldMap{
-		"ParameterKey": ubx.FieldSpec{WireName: "parameter_key"},
-		"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
-	}
+	"ParameterKey":   ubx.FieldSpec{WireName: "parameter_key"},
+	"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
+}
 
 var Workgroup_PricePerformanceTargetFields = ubx.FieldMap{
-		"Level": ubx.FieldSpec{WireName: "level"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Level":  ubx.FieldSpec{WireName: "level"},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var Workgroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type WorkgroupConfig struct {
 	// The base compute capacity of the workgroup in Redshift Processing Units (RPUs).
@@ -184,31 +184,31 @@ var Workgroup = ubx.ResourceBinding{
 		"BaseCapacity": ubx.FieldSpec{WireName: "base_capacity"},
 		"ConfigParameters": ubx.FieldSpec{
 			WireName: "config_parameters",
-			Kind: "list",
-			Fields: Workgroup_ConfigParametersFields,
+			Kind:     "list",
+			Fields:   Workgroup_ConfigParametersFields,
 		},
 		"EnhancedVpcRouting": ubx.FieldSpec{WireName: "enhanced_vpc_routing"},
-		"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
-		"NamespaceName": ubx.FieldSpec{WireName: "namespace_name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
+		"MaxCapacity":        ubx.FieldSpec{WireName: "max_capacity"},
+		"NamespaceName":      ubx.FieldSpec{WireName: "namespace_name"},
+		"Port":               ubx.FieldSpec{WireName: "port"},
 		"PricePerformanceTarget": ubx.FieldSpec{
 			WireName: "price_performance_target",
-			Kind: "object",
-			Fields: Workgroup_PricePerformanceTargetFields,
+			Kind:     "object",
+			Fields:   Workgroup_PricePerformanceTargetFields,
 		},
-		"PubliclyAccessible": ubx.FieldSpec{WireName: "publicly_accessible"},
-		"RecoveryPointId": ubx.FieldSpec{WireName: "recovery_point_id"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SnapshotArn": ubx.FieldSpec{WireName: "snapshot_arn"},
-		"SnapshotName": ubx.FieldSpec{WireName: "snapshot_name"},
+		"PubliclyAccessible":   ubx.FieldSpec{WireName: "publicly_accessible"},
+		"RecoveryPointId":      ubx.FieldSpec{WireName: "recovery_point_id"},
+		"SecurityGroupIds":     ubx.FieldSpec{WireName: "security_group_ids"},
+		"SnapshotArn":          ubx.FieldSpec{WireName: "snapshot_arn"},
+		"SnapshotName":         ubx.FieldSpec{WireName: "snapshot_name"},
 		"SnapshotOwnerAccount": ubx.FieldSpec{WireName: "snapshot_owner_account"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"SubnetIds":            ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Workgroup_TagsFields,
+			Kind:     "list",
+			Fields:   Workgroup_TagsFields,
 		},
-		"TrackName": ubx.FieldSpec{WireName: "track_name"},
+		"TrackName":     ubx.FieldSpec{WireName: "track_name"},
 		"WorkgroupName": ubx.FieldSpec{WireName: "workgroup_name"},
 	},
 }

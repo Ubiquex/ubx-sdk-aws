@@ -4,54 +4,54 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TransitGatewayAttachments_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type TransitGatewayAttachments_TransitGatewayAttachments_Association struct {
-	State any
+	State                       any
 	TransitGatewayPolicyTableId any
-	TransitGatewayRouteTableId any
+	TransitGatewayRouteTableId  any
 }
 
 type TransitGatewayAttachments_TransitGatewayAttachments_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TransitGatewayAttachments_TransitGatewayAttachments struct {
-	Association any
-	CreationTime any
-	ResourceId any
-	ResourceOwnerId any
-	ResourceType any
-	State any
-	Tags any
+	Association                any
+	CreationTime               any
+	ResourceId                 any
+	ResourceOwnerId            any
+	ResourceType               any
+	State                      any
+	Tags                       any
 	TransitGatewayAttachmentId any
-	TransitGatewayId any
-	TransitGatewayOwnerId any
+	TransitGatewayId           any
+	TransitGatewayOwnerId      any
 }
 
 var TransitGatewayAttachments_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type TransitGatewayAttachmentsConfig struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                      any
+	Filters                     any
+	MaxResults                  any
+	NextToken                   any
 	TransitGatewayAttachmentIds any
 }
 
 type TransitGatewayAttachmentsAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                      any
+	Filters                     any
+	MaxResults                  any
+	NextToken                   any
 	TransitGatewayAttachmentIds any
-	TransitGatewayAttachments any
+	TransitGatewayAttachments   any
 }
 
 var TransitGatewayAttachments = ubx.DataSourceBinding{
@@ -60,11 +60,11 @@ var TransitGatewayAttachments = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: TransitGatewayAttachments_FiltersFields,
+			Kind:     "list",
+			Fields:   TransitGatewayAttachments_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                   ubx.FieldSpec{WireName: "next_token"},
 		"TransitGatewayAttachmentIds": ubx.FieldSpec{WireName: "transit_gateway_attachment_ids"},
 	},
 }

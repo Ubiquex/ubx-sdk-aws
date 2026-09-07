@@ -11,19 +11,19 @@ type Folder_Permissions struct {
 }
 
 type Folder_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Folder_PermissionsFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-	}
+	"Actions":   ubx.FieldSpec{WireName: "actions"},
+	"Principal": ubx.FieldSpec{WireName: "principal"},
+}
 
 var Folder_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FolderConfig struct {
 	// The AWS account ID that owns the QuickSight folder; if omitted, the account ID from the AWS credentials is used. (AI-inferred)
@@ -72,21 +72,21 @@ type FolderAttrs struct {
 var Folder = ubx.ResourceBinding{
 	WireType: "aws_quick_sight_folder",
 	Fields: ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"FolderId": ubx.FieldSpec{WireName: "folder_id"},
-		"FolderType": ubx.FieldSpec{WireName: "folder_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"AwsAccountId":    ubx.FieldSpec{WireName: "aws_account_id"},
+		"FolderId":        ubx.FieldSpec{WireName: "folder_id"},
+		"FolderType":      ubx.FieldSpec{WireName: "folder_type"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"ParentFolderArn": ubx.FieldSpec{WireName: "parent_folder_arn"},
 		"Permissions": ubx.FieldSpec{
 			WireName: "permissions",
-			Kind: "list",
-			Fields: Folder_PermissionsFields,
+			Kind:     "list",
+			Fields:   Folder_PermissionsFields,
 		},
 		"SharingModel": ubx.FieldSpec{WireName: "sharing_model"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Folder_TagsFields,
+			Kind:     "list",
+			Fields:   Folder_TagsFields,
 		},
 	},
 }

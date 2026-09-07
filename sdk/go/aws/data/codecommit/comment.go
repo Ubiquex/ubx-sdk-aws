@@ -4,16 +4,16 @@ package codecommit
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Comment_Comment struct {
-	AuthorArn any
-	CallerReactions any
+	AuthorArn          any
+	CallerReactions    any
 	ClientRequestToken any
-	CommentId any
-	Content any
-	CreationDate any
-	Deleted any
-	InReplyTo any
-	LastModifiedDate any
-	ReactionCounts any
+	CommentId          any
+	Content            any
+	CreationDate       any
+	Deleted            any
+	InReplyTo          any
+	LastModifiedDate   any
+	ReactionCounts     any
 }
 
 type CommentConfig struct {
@@ -22,7 +22,7 @@ type CommentConfig struct {
 
 type CommentAttrs struct {
 	// <p>Returns information about a specific comment.</p>
-	Comment any
+	Comment   any
 	CommentId any
 }
 

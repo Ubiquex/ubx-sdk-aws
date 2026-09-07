@@ -4,15 +4,15 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeliverySources_DeliverySources struct {
-	Arn any
+	Arn                         any
 	DeliverySourceConfiguration any
-	LogType any
-	Name any
-	ResourceArns any
-	Service any
-	Status any
-	StatusReason any
-	Tags any
+	LogType                     any
+	Name                        any
+	ResourceArns                any
+	Service                     any
+	Status                      any
+	StatusReason                any
+	Tags                        any
 }
 
 type DeliverySourcesConfig struct {
@@ -23,7 +23,7 @@ type DeliverySourcesConfig struct {
 
 type DeliverySourcesAttrs struct {
 	DeliverySources any
-	Limit any
+	Limit           any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
 }
@@ -31,7 +31,7 @@ type DeliverySourcesAttrs struct {
 var DeliverySources = ubx.DataSourceBinding{
 	WireType: "aws_logs_delivery_sources",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

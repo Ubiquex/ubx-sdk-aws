@@ -98,121 +98,121 @@ type MailManagerTrafficPolicy_Tags struct {
 }
 
 var MailManagerTrafficPolicy_PolicyStatements_Conditions_BooleanExpression_Evaluate_AnalysisFields = ubx.FieldMap{
-		"Analyzer": ubx.FieldSpec{WireName: "analyzer"},
-		"ResultField": ubx.FieldSpec{WireName: "result_field"},
-	}
+	"Analyzer":    ubx.FieldSpec{WireName: "analyzer"},
+	"ResultField": ubx.FieldSpec{WireName: "result_field"},
+}
 
 var MailManagerTrafficPolicy_PolicyStatements_Conditions_BooleanExpression_Evaluate_IsInAddressListFields = ubx.FieldMap{
-		"AddressLists": ubx.FieldSpec{WireName: "address_lists"},
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-	}
+	"AddressLists": ubx.FieldSpec{WireName: "address_lists"},
+	"Attribute":    ubx.FieldSpec{WireName: "attribute"},
+}
 
 var MailManagerTrafficPolicy_PolicyStatements_Conditions_BooleanExpression_EvaluateFields = ubx.FieldMap{
-		"Analysis": ubx.FieldSpec{
-			WireName: "analysis",
-			Kind: "object",
-			Fields: MailManagerTrafficPolicy_PolicyStatements_Conditions_BooleanExpression_Evaluate_AnalysisFields,
-		},
-		"IsInAddressList": ubx.FieldSpec{
-			WireName: "is_in_address_list",
-			Kind: "object",
-			Fields: MailManagerTrafficPolicy_PolicyStatements_Conditions_BooleanExpression_Evaluate_IsInAddressListFields,
-		},
-	}
+	"Analysis": ubx.FieldSpec{
+		WireName: "analysis",
+		Kind:     "object",
+		Fields:   MailManagerTrafficPolicy_PolicyStatements_Conditions_BooleanExpression_Evaluate_AnalysisFields,
+	},
+	"IsInAddressList": ubx.FieldSpec{
+		WireName: "is_in_address_list",
+		Kind:     "object",
+		Fields:   MailManagerTrafficPolicy_PolicyStatements_Conditions_BooleanExpression_Evaluate_IsInAddressListFields,
+	},
+}
 
 var MailManagerTrafficPolicy_PolicyStatements_Conditions_BooleanExpressionFields = ubx.FieldMap{
-		"Evaluate": ubx.FieldSpec{
-			WireName: "evaluate",
-			Kind: "object",
-			Fields: MailManagerTrafficPolicy_PolicyStatements_Conditions_BooleanExpression_EvaluateFields,
-		},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-	}
+	"Evaluate": ubx.FieldSpec{
+		WireName: "evaluate",
+		Kind:     "object",
+		Fields:   MailManagerTrafficPolicy_PolicyStatements_Conditions_BooleanExpression_EvaluateFields,
+	},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+}
 
 var MailManagerTrafficPolicy_PolicyStatements_Conditions_IpExpression_EvaluateFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+}
 
 var MailManagerTrafficPolicy_PolicyStatements_Conditions_IpExpressionFields = ubx.FieldMap{
-		"Evaluate": ubx.FieldSpec{
-			WireName: "evaluate",
-			Kind: "object",
-			Fields: MailManagerTrafficPolicy_PolicyStatements_Conditions_IpExpression_EvaluateFields,
-		},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Evaluate": ubx.FieldSpec{
+		WireName: "evaluate",
+		Kind:     "object",
+		Fields:   MailManagerTrafficPolicy_PolicyStatements_Conditions_IpExpression_EvaluateFields,
+	},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var MailManagerTrafficPolicy_PolicyStatements_Conditions_StringExpression_EvaluateFields = ubx.FieldMap{
-		"Analysis": ubx.FieldSpec{
-			WireName: "analysis",
-			Kind: "object",
-			Fields: MailManagerTrafficPolicy_PolicyStatements_Conditions_BooleanExpression_Evaluate_AnalysisFields,
-		},
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-	}
+	"Analysis": ubx.FieldSpec{
+		WireName: "analysis",
+		Kind:     "object",
+		Fields:   MailManagerTrafficPolicy_PolicyStatements_Conditions_BooleanExpression_Evaluate_AnalysisFields,
+	},
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+}
 
 var MailManagerTrafficPolicy_PolicyStatements_Conditions_StringExpressionFields = ubx.FieldMap{
-		"Evaluate": ubx.FieldSpec{
-			WireName: "evaluate",
-			Kind: "object",
-			Fields: MailManagerTrafficPolicy_PolicyStatements_Conditions_StringExpression_EvaluateFields,
-		},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Evaluate": ubx.FieldSpec{
+		WireName: "evaluate",
+		Kind:     "object",
+		Fields:   MailManagerTrafficPolicy_PolicyStatements_Conditions_StringExpression_EvaluateFields,
+	},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var MailManagerTrafficPolicy_PolicyStatements_Conditions_TlsExpressionFields = ubx.FieldMap{
-		"Evaluate": ubx.FieldSpec{
-			WireName: "evaluate",
-			Kind: "object",
-			Fields: MailManagerTrafficPolicy_PolicyStatements_Conditions_IpExpression_EvaluateFields,
-		},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Evaluate": ubx.FieldSpec{
+		WireName: "evaluate",
+		Kind:     "object",
+		Fields:   MailManagerTrafficPolicy_PolicyStatements_Conditions_IpExpression_EvaluateFields,
+	},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var MailManagerTrafficPolicy_PolicyStatements_ConditionsFields = ubx.FieldMap{
-		"BooleanExpression": ubx.FieldSpec{
-			WireName: "boolean_expression",
-			Kind: "object",
-			Fields: MailManagerTrafficPolicy_PolicyStatements_Conditions_BooleanExpressionFields,
-		},
-		"IpExpression": ubx.FieldSpec{
-			WireName: "ip_expression",
-			Kind: "object",
-			Fields: MailManagerTrafficPolicy_PolicyStatements_Conditions_IpExpressionFields,
-		},
-		"Ipv6Expression": ubx.FieldSpec{
-			WireName: "ipv6_expression",
-			Kind: "object",
-			Fields: MailManagerTrafficPolicy_PolicyStatements_Conditions_IpExpressionFields,
-		},
-		"StringExpression": ubx.FieldSpec{
-			WireName: "string_expression",
-			Kind: "object",
-			Fields: MailManagerTrafficPolicy_PolicyStatements_Conditions_StringExpressionFields,
-		},
-		"TlsExpression": ubx.FieldSpec{
-			WireName: "tls_expression",
-			Kind: "object",
-			Fields: MailManagerTrafficPolicy_PolicyStatements_Conditions_TlsExpressionFields,
-		},
-	}
+	"BooleanExpression": ubx.FieldSpec{
+		WireName: "boolean_expression",
+		Kind:     "object",
+		Fields:   MailManagerTrafficPolicy_PolicyStatements_Conditions_BooleanExpressionFields,
+	},
+	"IpExpression": ubx.FieldSpec{
+		WireName: "ip_expression",
+		Kind:     "object",
+		Fields:   MailManagerTrafficPolicy_PolicyStatements_Conditions_IpExpressionFields,
+	},
+	"Ipv6Expression": ubx.FieldSpec{
+		WireName: "ipv6_expression",
+		Kind:     "object",
+		Fields:   MailManagerTrafficPolicy_PolicyStatements_Conditions_IpExpressionFields,
+	},
+	"StringExpression": ubx.FieldSpec{
+		WireName: "string_expression",
+		Kind:     "object",
+		Fields:   MailManagerTrafficPolicy_PolicyStatements_Conditions_StringExpressionFields,
+	},
+	"TlsExpression": ubx.FieldSpec{
+		WireName: "tls_expression",
+		Kind:     "object",
+		Fields:   MailManagerTrafficPolicy_PolicyStatements_Conditions_TlsExpressionFields,
+	},
+}
 
 var MailManagerTrafficPolicy_PolicyStatementsFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: MailManagerTrafficPolicy_PolicyStatements_ConditionsFields,
-		},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   MailManagerTrafficPolicy_PolicyStatements_ConditionsFields,
+	},
+}
 
 var MailManagerTrafficPolicy_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MailManagerTrafficPolicyConfig struct {
 	// The default action (ALLOW or DENY) that the traffic policy applies to incoming messages that do not match any of the policy's statements. (AI-inferred)
@@ -221,7 +221,7 @@ type MailManagerTrafficPolicyConfig struct {
 	MaxMessageSizeBytes any
 	// The list of statements in this traffic policy, where each statement defines a set of conditions and an action (such as allow or deny) for email matching those conditions. (AI-inferred)
 	PolicyStatements any
-	Tags any
+	Tags             any
 	// A friendly, human-readable name assigned to this traffic policy to identify it within SES Mail Manager. (AI-inferred)
 	TrafficPolicyName any
 }
@@ -233,7 +233,7 @@ type MailManagerTrafficPolicyAttrs struct {
 	MaxMessageSizeBytes any
 	// The list of statements in this traffic policy, where each statement defines a set of conditions and an action (such as allow or deny) for email matching those conditions. (AI-inferred)
 	PolicyStatements any
-	Tags any
+	Tags             any
 	// The Amazon Resource Name (ARN) that uniquely identifies this SES Mail Manager traffic policy, used to reference the policy in IAM policies and other AWS services. (AI-inferred)
 	TrafficPolicyArn any
 	// The unique identifier assigned to the SES Mail Manager traffic policy by AWS. (AI-inferred)
@@ -245,17 +245,17 @@ type MailManagerTrafficPolicyAttrs struct {
 var MailManagerTrafficPolicy = ubx.ResourceBinding{
 	WireType: "aws_ses_mail_manager_traffic_policy",
 	Fields: ubx.FieldMap{
-		"DefaultAction": ubx.FieldSpec{WireName: "default_action"},
+		"DefaultAction":       ubx.FieldSpec{WireName: "default_action"},
 		"MaxMessageSizeBytes": ubx.FieldSpec{WireName: "max_message_size_bytes"},
 		"PolicyStatements": ubx.FieldSpec{
 			WireName: "policy_statements",
-			Kind: "list",
-			Fields: MailManagerTrafficPolicy_PolicyStatementsFields,
+			Kind:     "list",
+			Fields:   MailManagerTrafficPolicy_PolicyStatementsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MailManagerTrafficPolicy_TagsFields,
+			Kind:     "list",
+			Fields:   MailManagerTrafficPolicy_TagsFields,
 		},
 		"TrafficPolicyName": ubx.FieldSpec{WireName: "traffic_policy_name"},
 	},

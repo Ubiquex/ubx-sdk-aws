@@ -4,29 +4,29 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataSourceAttachments_Attachments struct {
-	AttachmentId any
+	AttachmentId  any
 	DataSourceArn any
-	Status any
+	Status        any
 }
 
 type DataSourceAttachmentsConfig struct {
-	Id any
+	Id         any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DataSourceAttachmentsAttrs struct {
 	Attachments any
-	Id any
-	MaxResults any
-	NextToken any
+	Id          any
+	MaxResults  any
+	NextToken   any
 }
 
 var DataSourceAttachments = ubx.DataSourceBinding{
 	WireType: "aws_opensearch_data_source_attachments",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":         ubx.FieldSpec{WireName: "id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

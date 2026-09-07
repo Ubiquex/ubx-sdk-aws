@@ -4,7 +4,7 @@ package chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SupportedPhoneNumberCountries_PhoneNumberCountries struct {
-	CountryCode any
+	CountryCode               any
 	SupportedPhoneNumberTypes any
 }
 
@@ -14,7 +14,7 @@ type SupportedPhoneNumberCountriesConfig struct {
 
 type SupportedPhoneNumberCountriesAttrs struct {
 	PhoneNumberCountries any
-	ProductType any
+	ProductType          any
 }
 
 var SupportedPhoneNumberCountries = ubx.DataSourceBinding{

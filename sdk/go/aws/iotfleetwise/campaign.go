@@ -122,7 +122,7 @@ type Campaign_SignalsToFetch_SignalFetchConfig struct {
 }
 
 type Campaign_SignalsToFetch struct {
-	Actions any
+	Actions                  any
 	ConditionLanguageVersion any
 	// Specifies the fully qualified name of a vehicle signal (e.g., Vehicle.Transmission.Gear) that the campaign will collect and report from the vehicles. (AI-inferred)
 	FullyQualifiedName any
@@ -138,146 +138,146 @@ type Campaign_Tags struct {
 }
 
 var Campaign_CollectionScheme_ConditionBasedCollectionSchemeFields = ubx.FieldMap{
-		"ConditionLanguageVersion": ubx.FieldSpec{WireName: "condition_language_version"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"MinimumTriggerIntervalMs": ubx.FieldSpec{WireName: "minimum_trigger_interval_ms"},
-		"TriggerMode": ubx.FieldSpec{WireName: "trigger_mode"},
-	}
+	"ConditionLanguageVersion": ubx.FieldSpec{WireName: "condition_language_version"},
+	"Expression":               ubx.FieldSpec{WireName: "expression"},
+	"MinimumTriggerIntervalMs": ubx.FieldSpec{WireName: "minimum_trigger_interval_ms"},
+	"TriggerMode":              ubx.FieldSpec{WireName: "trigger_mode"},
+}
 
 var Campaign_CollectionScheme_TimeBasedCollectionSchemeFields = ubx.FieldMap{
-		"PeriodMs": ubx.FieldSpec{WireName: "period_ms"},
-	}
+	"PeriodMs": ubx.FieldSpec{WireName: "period_ms"},
+}
 
 var Campaign_CollectionSchemeFields = ubx.FieldMap{
-		"ConditionBasedCollectionScheme": ubx.FieldSpec{
-			WireName: "condition_based_collection_scheme",
-			Kind: "object",
-			Fields: Campaign_CollectionScheme_ConditionBasedCollectionSchemeFields,
-		},
-		"TimeBasedCollectionScheme": ubx.FieldSpec{
-			WireName: "time_based_collection_scheme",
-			Kind: "object",
-			Fields: Campaign_CollectionScheme_TimeBasedCollectionSchemeFields,
-		},
-	}
+	"ConditionBasedCollectionScheme": ubx.FieldSpec{
+		WireName: "condition_based_collection_scheme",
+		Kind:     "object",
+		Fields:   Campaign_CollectionScheme_ConditionBasedCollectionSchemeFields,
+	},
+	"TimeBasedCollectionScheme": ubx.FieldSpec{
+		WireName: "time_based_collection_scheme",
+		Kind:     "object",
+		Fields:   Campaign_CollectionScheme_TimeBasedCollectionSchemeFields,
+	},
+}
 
 var Campaign_DataDestinationConfigs_MqttTopicConfigFields = ubx.FieldMap{
-		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"MqttTopicArn": ubx.FieldSpec{WireName: "mqtt_topic_arn"},
-	}
+	"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
+	"MqttTopicArn":     ubx.FieldSpec{WireName: "mqtt_topic_arn"},
+}
 
 var Campaign_DataDestinationConfigs_S3ConfigFields = ubx.FieldMap{
-		"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
-		"DataFormat": ubx.FieldSpec{WireName: "data_format"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"StorageCompressionFormat": ubx.FieldSpec{WireName: "storage_compression_format"},
-	}
+	"BucketArn":                ubx.FieldSpec{WireName: "bucket_arn"},
+	"DataFormat":               ubx.FieldSpec{WireName: "data_format"},
+	"Prefix":                   ubx.FieldSpec{WireName: "prefix"},
+	"StorageCompressionFormat": ubx.FieldSpec{WireName: "storage_compression_format"},
+}
 
 var Campaign_DataDestinationConfigs_TimestreamConfigFields = ubx.FieldMap{
-		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"TimestreamTableArn": ubx.FieldSpec{WireName: "timestream_table_arn"},
-	}
+	"ExecutionRoleArn":   ubx.FieldSpec{WireName: "execution_role_arn"},
+	"TimestreamTableArn": ubx.FieldSpec{WireName: "timestream_table_arn"},
+}
 
 var Campaign_DataDestinationConfigsFields = ubx.FieldMap{
-		"MqttTopicConfig": ubx.FieldSpec{
-			WireName: "mqtt_topic_config",
-			Kind: "object",
-			Fields: Campaign_DataDestinationConfigs_MqttTopicConfigFields,
-		},
-		"S3Config": ubx.FieldSpec{
-			WireName: "s3_config",
-			Kind: "object",
-			Fields: Campaign_DataDestinationConfigs_S3ConfigFields,
-		},
-		"TimestreamConfig": ubx.FieldSpec{
-			WireName: "timestream_config",
-			Kind: "object",
-			Fields: Campaign_DataDestinationConfigs_TimestreamConfigFields,
-		},
-	}
+	"MqttTopicConfig": ubx.FieldSpec{
+		WireName: "mqtt_topic_config",
+		Kind:     "object",
+		Fields:   Campaign_DataDestinationConfigs_MqttTopicConfigFields,
+	},
+	"S3Config": ubx.FieldSpec{
+		WireName: "s3_config",
+		Kind:     "object",
+		Fields:   Campaign_DataDestinationConfigs_S3ConfigFields,
+	},
+	"TimestreamConfig": ubx.FieldSpec{
+		WireName: "timestream_config",
+		Kind:     "object",
+		Fields:   Campaign_DataDestinationConfigs_TimestreamConfigFields,
+	},
+}
 
 var Campaign_DataPartitions_StorageOptions_MaximumSizeFields = ubx.FieldMap{
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Unit":  ubx.FieldSpec{WireName: "unit"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Campaign_DataPartitions_StorageOptionsFields = ubx.FieldMap{
-		"MaximumSize": ubx.FieldSpec{
-			WireName: "maximum_size",
-			Kind: "object",
-			Fields: Campaign_DataPartitions_StorageOptions_MaximumSizeFields,
-		},
-		"MinimumTimeToLive": ubx.FieldSpec{
-			WireName: "minimum_time_to_live",
-			Kind: "object",
-			Fields: Campaign_DataPartitions_StorageOptions_MaximumSizeFields,
-		},
-		"StorageLocation": ubx.FieldSpec{WireName: "storage_location"},
-	}
+	"MaximumSize": ubx.FieldSpec{
+		WireName: "maximum_size",
+		Kind:     "object",
+		Fields:   Campaign_DataPartitions_StorageOptions_MaximumSizeFields,
+	},
+	"MinimumTimeToLive": ubx.FieldSpec{
+		WireName: "minimum_time_to_live",
+		Kind:     "object",
+		Fields:   Campaign_DataPartitions_StorageOptions_MaximumSizeFields,
+	},
+	"StorageLocation": ubx.FieldSpec{WireName: "storage_location"},
+}
 
 var Campaign_DataPartitions_UploadOptionsFields = ubx.FieldMap{
-		"ConditionLanguageVersion": ubx.FieldSpec{WireName: "condition_language_version"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-	}
+	"ConditionLanguageVersion": ubx.FieldSpec{WireName: "condition_language_version"},
+	"Expression":               ubx.FieldSpec{WireName: "expression"},
+}
 
 var Campaign_DataPartitionsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"StorageOptions": ubx.FieldSpec{
-			WireName: "storage_options",
-			Kind: "object",
-			Fields: Campaign_DataPartitions_StorageOptionsFields,
-		},
-		"UploadOptions": ubx.FieldSpec{
-			WireName: "upload_options",
-			Kind: "object",
-			Fields: Campaign_DataPartitions_UploadOptionsFields,
-		},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"StorageOptions": ubx.FieldSpec{
+		WireName: "storage_options",
+		Kind:     "object",
+		Fields:   Campaign_DataPartitions_StorageOptionsFields,
+	},
+	"UploadOptions": ubx.FieldSpec{
+		WireName: "upload_options",
+		Kind:     "object",
+		Fields:   Campaign_DataPartitions_UploadOptionsFields,
+	},
+}
 
 var Campaign_SignalsToCollectFields = ubx.FieldMap{
-		"DataPartitionId": ubx.FieldSpec{WireName: "data_partition_id"},
-		"MaxSampleCount": ubx.FieldSpec{WireName: "max_sample_count"},
-		"MinimumSamplingIntervalMs": ubx.FieldSpec{WireName: "minimum_sampling_interval_ms"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"DataPartitionId":           ubx.FieldSpec{WireName: "data_partition_id"},
+	"MaxSampleCount":            ubx.FieldSpec{WireName: "max_sample_count"},
+	"MinimumSamplingIntervalMs": ubx.FieldSpec{WireName: "minimum_sampling_interval_ms"},
+	"Name":                      ubx.FieldSpec{WireName: "name"},
+}
 
 var Campaign_SignalsToFetch_SignalFetchConfig_ConditionBasedFields = ubx.FieldMap{
-		"ConditionExpression": ubx.FieldSpec{WireName: "condition_expression"},
-		"TriggerMode": ubx.FieldSpec{WireName: "trigger_mode"},
-	}
+	"ConditionExpression": ubx.FieldSpec{WireName: "condition_expression"},
+	"TriggerMode":         ubx.FieldSpec{WireName: "trigger_mode"},
+}
 
 var Campaign_SignalsToFetch_SignalFetchConfig_TimeBasedFields = ubx.FieldMap{
-		"ExecutionFrequencyMs": ubx.FieldSpec{WireName: "execution_frequency_ms"},
-	}
+	"ExecutionFrequencyMs": ubx.FieldSpec{WireName: "execution_frequency_ms"},
+}
 
 var Campaign_SignalsToFetch_SignalFetchConfigFields = ubx.FieldMap{
-		"ConditionBased": ubx.FieldSpec{
-			WireName: "condition_based",
-			Kind: "object",
-			Fields: Campaign_SignalsToFetch_SignalFetchConfig_ConditionBasedFields,
-		},
-		"TimeBased": ubx.FieldSpec{
-			WireName: "time_based",
-			Kind: "object",
-			Fields: Campaign_SignalsToFetch_SignalFetchConfig_TimeBasedFields,
-		},
-	}
+	"ConditionBased": ubx.FieldSpec{
+		WireName: "condition_based",
+		Kind:     "object",
+		Fields:   Campaign_SignalsToFetch_SignalFetchConfig_ConditionBasedFields,
+	},
+	"TimeBased": ubx.FieldSpec{
+		WireName: "time_based",
+		Kind:     "object",
+		Fields:   Campaign_SignalsToFetch_SignalFetchConfig_TimeBasedFields,
+	},
+}
 
 var Campaign_SignalsToFetchFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"ConditionLanguageVersion": ubx.FieldSpec{WireName: "condition_language_version"},
-		"FullyQualifiedName": ubx.FieldSpec{WireName: "fully_qualified_name"},
-		"SignalFetchConfig": ubx.FieldSpec{
-			WireName: "signal_fetch_config",
-			Kind: "object",
-			Fields: Campaign_SignalsToFetch_SignalFetchConfigFields,
-		},
-	}
+	"Actions":                  ubx.FieldSpec{WireName: "actions"},
+	"ConditionLanguageVersion": ubx.FieldSpec{WireName: "condition_language_version"},
+	"FullyQualifiedName":       ubx.FieldSpec{WireName: "fully_qualified_name"},
+	"SignalFetchConfig": ubx.FieldSpec{
+		WireName: "signal_fetch_config",
+		Kind:     "object",
+		Fields:   Campaign_SignalsToFetch_SignalFetchConfigFields,
+	},
+}
 
 var Campaign_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CampaignConfig struct {
 	// How to update this campaign: APPROVE to deliver its data collection scheme to vehicles, SUSPEND to stop collecting and remove it from vehicles, RESUME to redeploy a suspended campaign, or UPDATE to modify it. (AI-inferred)
@@ -375,44 +375,44 @@ var Campaign = ubx.ResourceBinding{
 		"Action": ubx.FieldSpec{WireName: "action"},
 		"CollectionScheme": ubx.FieldSpec{
 			WireName: "collection_scheme",
-			Kind: "object",
-			Fields: Campaign_CollectionSchemeFields,
+			Kind:     "object",
+			Fields:   Campaign_CollectionSchemeFields,
 		},
 		"Compression": ubx.FieldSpec{WireName: "compression"},
 		"DataDestinationConfigs": ubx.FieldSpec{
 			WireName: "data_destination_configs",
-			Kind: "list",
-			Fields: Campaign_DataDestinationConfigsFields,
+			Kind:     "list",
+			Fields:   Campaign_DataDestinationConfigsFields,
 		},
 		"DataExtraDimensions": ubx.FieldSpec{WireName: "data_extra_dimensions"},
 		"DataPartitions": ubx.FieldSpec{
 			WireName: "data_partitions",
-			Kind: "list",
-			Fields: Campaign_DataPartitionsFields,
+			Kind:     "list",
+			Fields:   Campaign_DataPartitionsFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DiagnosticsMode": ubx.FieldSpec{WireName: "diagnostics_mode"},
-		"ExpiryTime": ubx.FieldSpec{WireName: "expiry_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":                   ubx.FieldSpec{WireName: "description"},
+		"DiagnosticsMode":               ubx.FieldSpec{WireName: "diagnostics_mode"},
+		"ExpiryTime":                    ubx.FieldSpec{WireName: "expiry_time"},
+		"Name":                          ubx.FieldSpec{WireName: "name"},
 		"PostTriggerCollectionDuration": ubx.FieldSpec{WireName: "post_trigger_collection_duration"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"SignalCatalogArn": ubx.FieldSpec{WireName: "signal_catalog_arn"},
+		"Priority":                      ubx.FieldSpec{WireName: "priority"},
+		"SignalCatalogArn":              ubx.FieldSpec{WireName: "signal_catalog_arn"},
 		"SignalsToCollect": ubx.FieldSpec{
 			WireName: "signals_to_collect",
-			Kind: "list",
-			Fields: Campaign_SignalsToCollectFields,
+			Kind:     "list",
+			Fields:   Campaign_SignalsToCollectFields,
 		},
 		"SignalsToFetch": ubx.FieldSpec{
 			WireName: "signals_to_fetch",
-			Kind: "list",
-			Fields: Campaign_SignalsToFetchFields,
+			Kind:     "list",
+			Fields:   Campaign_SignalsToFetchFields,
 		},
 		"SpoolingMode": ubx.FieldSpec{WireName: "spooling_mode"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"StartTime":    ubx.FieldSpec{WireName: "start_time"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Campaign_TagsFields,
+			Kind:     "list",
+			Fields:   Campaign_TagsFields,
 		},
 		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
 	},

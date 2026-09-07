@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectionType_AthenaConnectionProperties_AllowedValues struct {
 	Description any
-	Value any
+	Value       any
 }
 
 type ConnectionType_AthenaConnectionProperties struct {
-	AllowedValues any
+	AllowedValues       any
 	DataOperationScopes any
-	DefaultValue any
-	Description any
-	KeyOverride any
-	Name any
-	PropertyLocation any
-	PropertyTypes any
-	Required any
+	DefaultValue        any
+	Description         any
+	KeyOverride         any
+	Name                any
+	PropertyLocation    any
+	PropertyTypes       any
+	Required            any
 }
 
 type ConnectionType_AuthenticationConfiguration struct {
 	// <p>An object that defines a connection type for a compute environment.</p>
-	AuthenticationType any
-	BasicAuthenticationProperties any
+	AuthenticationType             any
+	BasicAuthenticationProperties  any
 	CustomAuthenticationProperties any
-	Oauth2Properties any
+	Oauth2Properties               any
 	// <p>An object that defines a connection type for a compute environment.</p>
 	SecretArn any
 }
@@ -33,79 +33,79 @@ type ConnectionType_AuthenticationConfiguration struct {
 type ConnectionType_Capabilities struct {
 	SupportedAuthenticationTypes any
 	SupportedComputeEnvironments any
-	SupportedDataOperations any
+	SupportedDataOperations      any
 }
 
 type ConnectionType_ComputeEnvironmentConfigurations struct {
-	ComputeEnvironment any
-	ConnectionOptionNameOverrides any
-	ConnectionOptions any
+	ComputeEnvironment                    any
+	ConnectionOptionNameOverrides         any
+	ConnectionOptions                     any
 	ConnectionPropertiesRequiredOverrides any
-	ConnectionPropertyNameOverrides any
-	Description any
-	Name any
-	PhysicalConnectionPropertiesRequired any
-	SupportedAuthenticationTypes any
+	ConnectionPropertyNameOverrides       any
+	Description                           any
+	Name                                  any
+	PhysicalConnectionPropertiesRequired  any
+	SupportedAuthenticationTypes          any
 }
 
 type ConnectionType_RestConfiguration_EntityConfigurations_Schema_FilterOverrides_BetweenConfiguration struct {
 	HighBoundKey any
-	LowBoundKey any
-	Template any
+	LowBoundKey  any
+	Template     any
 }
 
 type ConnectionType_RestConfiguration_EntityConfigurations_Schema_FilterOverrides struct {
 	BetweenConfiguration any
-	DateTimeFormat any
-	FieldName any
-	OperatorMappings any
+	DateTimeFormat       any
+	FieldName            any
+	OperatorMappings     any
 }
 
 type ConnectionType_RestConfiguration_EntityConfigurations_Schema struct {
-	FieldDataType any
-	FilterOverrides any
-	IsNullable any
-	IsOrderable any
-	IsPartitionable any
-	IsQueryable any
-	Name any
+	FieldDataType      any
+	FilterOverrides    any
+	IsNullable         any
+	IsOrderable        any
+	IsPartitionable    any
+	IsQueryable        any
+	Name               any
 	ResponseDateFormat any
 }
 
 type ConnectionType_RestConfiguration_EntityConfigurations_SourceConfiguration_FilterConfiguration_FilterStringConfiguration struct {
 	QueryParameterName any
-	QuoteCharacter any
-	QuoteStringValues any
+	QuoteCharacter     any
+	QuoteStringValues  any
 }
 
 type ConnectionType_RestConfiguration_EntityConfigurations_SourceConfiguration_FilterConfiguration struct {
-	BetweenConfiguration any
-	DateTimeFormat any
-	FilterMode any
+	BetweenConfiguration      any
+	DateTimeFormat            any
+	FilterMode                any
 	FilterStringConfiguration any
-	OperatorMappings any
-	StripQuotes any
+	OperatorMappings          any
+	StripQuotes               any
 }
 
 type ConnectionType_RestConfiguration_EntityConfigurations_SourceConfiguration_PaginationConfiguration_CursorConfiguration_LimitParameter_Value struct {
 	ContentPath any
-	HeaderKey any
+	HeaderKey   any
 }
 
 type ConnectionType_RestConfiguration_EntityConfigurations_SourceConfiguration_PaginationConfiguration_CursorConfiguration_LimitParameter struct {
-	DefaultValue any
-	Key any
+	DefaultValue     any
+	Key              any
 	PropertyLocation any
-	Value any
+	Value            any
 }
 
 type ConnectionType_RestConfiguration_EntityConfigurations_SourceConfiguration_PaginationConfiguration_CursorConfiguration struct {
 	LimitParameter any
-	NextPage any
+	NextPage       any
 }
 
 type ConnectionType_RestConfiguration_EntityConfigurations_SourceConfiguration_PaginationConfiguration_OffsetConfiguration struct {
-	LimitParameter any
+	LimitParameter  any
 	OffsetParameter any
 }
 
@@ -115,32 +115,32 @@ type ConnectionType_RestConfiguration_EntityConfigurations_SourceConfiguration_P
 }
 
 type ConnectionType_RestConfiguration_EntityConfigurations_SourceConfiguration_RequestParameters struct {
-	AllowedValues any
-	DefaultValue any
-	Format any
-	KeyOverride any
-	Name any
+	AllowedValues    any
+	DefaultValue     any
+	Format           any
+	KeyOverride      any
+	Name             any
 	PropertyLocation any
-	PropertyType any
-	Required any
+	PropertyType     any
+	Required         any
 }
 
 type ConnectionType_RestConfiguration_EntityConfigurations_SourceConfiguration_ResponseConfiguration struct {
-	ErrorPath any
+	ErrorPath  any
 	ResultPath any
 }
 
 type ConnectionType_RestConfiguration_EntityConfigurations_SourceConfiguration struct {
-	FilterConfiguration any
+	FilterConfiguration     any
 	PaginationConfiguration any
-	RequestMethod any
-	RequestParameters any
-	RequestPath any
-	ResponseConfiguration any
+	RequestMethod           any
+	RequestParameters       any
+	RequestPath             any
+	ResponseConfiguration   any
 }
 
 type ConnectionType_RestConfiguration_EntityConfigurations struct {
-	Schema any
+	Schema              any
 	SourceConfiguration any
 }
 
@@ -162,16 +162,16 @@ type ConnectionTypeAttrs struct {
 	// <p>The authentication configuration for a connection returned by the <code>DescribeConnectionType</code> API.</p>
 	AuthenticationConfiguration any
 	// <p>Specifies the supported authentication types returned by the <code>DescribeConnectionType</code> API.</p>
-	Capabilities any
+	Capabilities                     any
 	ComputeEnvironmentConfigurations any
-	ConnectionOptions any
-	ConnectionProperties any
-	ConnectionType any
-	Description any
-	PhysicalConnectionRequirements any
-	PythonConnectionProperties any
+	ConnectionOptions                any
+	ConnectionProperties             any
+	ConnectionType                   any
+	Description                      any
+	PhysicalConnectionRequirements   any
+	PythonConnectionProperties       any
 	// <p>Configuration that defines HTTP request and response handling, validation endpoints, and entity configurations for REST API interactions.</p>
-	RestConfiguration any
+	RestConfiguration         any
 	SparkConnectionProperties any
 }
 

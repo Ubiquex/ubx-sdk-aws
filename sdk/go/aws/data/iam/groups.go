@@ -4,33 +4,33 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Groups_Groups struct {
-	Arn any
+	Arn        any
 	CreateDate any
-	GroupId any
-	GroupName any
-	Path any
+	GroupId    any
+	GroupName  any
+	Path       any
 }
 
 type GroupsConfig struct {
-	Marker any
-	MaxItems any
+	Marker     any
+	MaxItems   any
 	PathPrefix any
 }
 
 type GroupsAttrs struct {
 	// <p>Contains a list of IAM groups.</p> <p>This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroups.html">ListGroups</a> operation.</p>
-	Groups any
+	Groups      any
 	IsTruncated any
-	Marker any
-	MaxItems any
-	PathPrefix any
+	Marker      any
+	MaxItems    any
+	PathPrefix  any
 }
 
 var Groups = ubx.DataSourceBinding{
 	WireType: "aws_iam_groups",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
+		"MaxItems":   ubx.FieldSpec{WireName: "max_items"},
 		"PathPrefix": ubx.FieldSpec{WireName: "path_prefix"},
 	},
 }

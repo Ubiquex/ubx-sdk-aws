@@ -4,25 +4,25 @@ package neptune_db
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NeptuneDbRdfgraphSummary_Payload_GraphSummary_SubjectStructures struct {
-	Count any
+	Count      any
 	Predicates any
 }
 
 type NeptuneDbRdfgraphSummary_Payload_GraphSummary struct {
-	Classes any
-	NumClasses any
+	Classes               any
+	NumClasses            any
 	NumDistinctPredicates any
-	NumDistinctSubjects any
-	NumQuads any
-	Predicates any
-	SubjectStructures any
+	NumDistinctSubjects   any
+	NumQuads              any
+	Predicates            any
+	SubjectStructures     any
 }
 
 type NeptuneDbRdfgraphSummary_Payload struct {
 	// <p>The RDF graph summary API returns a read-only list of classes and predicate keys, along with counts of quads, subjects, and predicates.</p>
-	GraphSummary any
+	GraphSummary                  any
 	LastStatisticsComputationTime any
-	Version any
+	Version                       any
 }
 
 type NeptuneDbRdfgraphSummaryConfig struct {
@@ -32,7 +32,7 @@ type NeptuneDbRdfgraphSummaryConfig struct {
 type NeptuneDbRdfgraphSummaryAttrs struct {
 	Mode any
 	// <p>Payload for an RDF graph summary response.</p>
-	Payload any
+	Payload    any
 	StatusCode any
 }
 

@@ -4,49 +4,49 @@ package datapipeline
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PipelineDefinition_ParameterObjects_Attributes struct {
-	Key any
+	Key         any
 	StringValue any
 }
 
 type PipelineDefinition_ParameterObjects struct {
 	Attributes any
-	Id any
+	Id         any
 }
 
 type PipelineDefinition_ParameterValues struct {
-	Id any
+	Id          any
 	StringValue any
 }
 
 type PipelineDefinition_PipelineObjects_Fields struct {
-	Key any
-	RefValue any
+	Key         any
+	RefValue    any
 	StringValue any
 }
 
 type PipelineDefinition_PipelineObjects struct {
 	Fields any
-	Id any
-	Name any
+	Id     any
+	Name   any
 }
 
 type PipelineDefinitionConfig struct {
 	PipelineId any
-	Version any
+	Version    any
 }
 
 type PipelineDefinitionAttrs struct {
 	ParameterObjects any
-	ParameterValues any
-	PipelineId any
-	PipelineObjects any
-	Version any
+	ParameterValues  any
+	PipelineId       any
+	PipelineObjects  any
+	Version          any
 }
 
 var PipelineDefinition = ubx.DataSourceBinding{
 	WireType: "aws_datapipeline_pipeline_definition",
 	Fields: ubx.FieldMap{
 		"PipelineId": ubx.FieldSpec{WireName: "pipeline_id"},
-		"Version": ubx.FieldSpec{WireName: "version"},
+		"Version":    ubx.FieldSpec{WireName: "version"},
 	},
 }

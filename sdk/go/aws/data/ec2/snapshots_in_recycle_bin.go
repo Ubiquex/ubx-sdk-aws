@@ -4,34 +4,34 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SnapshotsInRecycleBin_Snapshots struct {
-	Description any
+	Description         any
 	RecycleBinEnterTime any
-	RecycleBinExitTime any
-	SnapshotId any
-	VolumeId any
+	RecycleBinExitTime  any
+	SnapshotId          any
+	VolumeId            any
 }
 
 type SnapshotsInRecycleBinConfig struct {
-	DryRun any
-	MaxResults any
-	NextToken any
+	DryRun      any
+	MaxResults  any
+	NextToken   any
 	SnapshotIds any
 }
 
 type SnapshotsInRecycleBinAttrs struct {
-	DryRun any
-	MaxResults any
-	NextToken any
+	DryRun      any
+	MaxResults  any
+	NextToken   any
 	SnapshotIds any
-	Snapshots any
+	Snapshots   any
 }
 
 var SnapshotsInRecycleBin = ubx.DataSourceBinding{
 	WireType: "aws_ec2_snapshots_in_recycle_bin",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"DryRun":      ubx.FieldSpec{WireName: "dry_run"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"SnapshotIds": ubx.FieldSpec{WireName: "snapshot_ids"},
 	},
 }

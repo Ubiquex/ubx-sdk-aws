@@ -8,38 +8,38 @@ type SignalingChannels_ChannelInfoList_SingleMasterConfiguration struct {
 }
 
 type SignalingChannels_ChannelInfoList struct {
-	ChannelArn any
-	ChannelName any
-	ChannelStatus any
-	ChannelType any
-	CreationTime any
+	ChannelArn                any
+	ChannelName               any
+	ChannelStatus             any
+	ChannelType               any
+	CreationTime              any
 	SingleMasterConfiguration any
-	Version any
+	Version                   any
 }
 
 type SignalingChannels_ChannelNameCondition struct {
 	ComparisonOperator any
-	ComparisonValue any
+	ComparisonValue    any
 }
 
 var SignalingChannels_ChannelNameConditionFields = ubx.FieldMap{
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"ComparisonValue": ubx.FieldSpec{WireName: "comparison_value"},
-	}
+	"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
+	"ComparisonValue":    ubx.FieldSpec{WireName: "comparison_value"},
+}
 
 type SignalingChannelsConfig struct {
 	// <p>An optional input parameter for the <code>ListSignalingChannels</code> API. When this parameter is specified while invoking <code>ListSignalingChannels</code>, the API returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>.</p>
 	ChannelNameCondition any
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 }
 
 type SignalingChannelsAttrs struct {
 	ChannelInfoList any
 	// <p>An optional input parameter for the <code>ListSignalingChannels</code> API. When this parameter is specified while invoking <code>ListSignalingChannels</code>, the API returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>.</p>
 	ChannelNameCondition any
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 }
 
 var SignalingChannels = ubx.DataSourceBinding{
@@ -47,10 +47,10 @@ var SignalingChannels = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ChannelNameCondition": ubx.FieldSpec{
 			WireName: "channel_name_condition",
-			Kind: "object",
-			Fields: SignalingChannels_ChannelNameConditionFields,
+			Kind:     "object",
+			Fields:   SignalingChannels_ChannelNameConditionFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -10,7 +10,7 @@ type ConfiguredModelAlgorithm_InferenceContainerConfig struct {
 
 type ConfiguredModelAlgorithm_Tags struct {
 	// The key of a tag assigned to this AWS Clean Rooms ML configured model algorithm, used to organize, identify, and manage the resource through metadata. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -33,29 +33,29 @@ type ConfiguredModelAlgorithm_TrainingContainerConfig struct {
 }
 
 var ConfiguredModelAlgorithm_InferenceContainerConfigFields = ubx.FieldMap{
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-	}
+	"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
+}
 
 var ConfiguredModelAlgorithm_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ConfiguredModelAlgorithm_TrainingContainerConfig_MetricDefinitionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Regex": ubx.FieldSpec{WireName: "regex"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Regex": ubx.FieldSpec{WireName: "regex"},
+}
 
 var ConfiguredModelAlgorithm_TrainingContainerConfigFields = ubx.FieldMap{
-		"Arguments": ubx.FieldSpec{WireName: "arguments"},
-		"Entrypoint": ubx.FieldSpec{WireName: "entrypoint"},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"MetricDefinitions": ubx.FieldSpec{
-			WireName: "metric_definitions",
-			Kind: "list",
-			Fields: ConfiguredModelAlgorithm_TrainingContainerConfig_MetricDefinitionsFields,
-		},
-	}
+	"Arguments":  ubx.FieldSpec{WireName: "arguments"},
+	"Entrypoint": ubx.FieldSpec{WireName: "entrypoint"},
+	"ImageUri":   ubx.FieldSpec{WireName: "image_uri"},
+	"MetricDefinitions": ubx.FieldSpec{
+		WireName: "metric_definitions",
+		Kind:     "list",
+		Fields:   ConfiguredModelAlgorithm_TrainingContainerConfig_MetricDefinitionsFields,
+	},
+}
 
 type ConfiguredModelAlgorithmConfig struct {
 	// An optional, human-readable description that identifies the configured model algorithm and explains its purpose within the AWS Clean Rooms ML resource. (AI-inferred)
@@ -99,21 +99,21 @@ var ConfiguredModelAlgorithm = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"InferenceContainerConfig": ubx.FieldSpec{
 			WireName: "inference_container_config",
-			Kind: "object",
-			Fields: ConfiguredModelAlgorithm_InferenceContainerConfigFields,
+			Kind:     "object",
+			Fields:   ConfiguredModelAlgorithm_InferenceContainerConfigFields,
 		},
 		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ConfiguredModelAlgorithm_TagsFields,
+			Kind:     "list",
+			Fields:   ConfiguredModelAlgorithm_TagsFields,
 		},
 		"TrainingContainerConfig": ubx.FieldSpec{
 			WireName: "training_container_config",
-			Kind: "object",
-			Fields: ConfiguredModelAlgorithm_TrainingContainerConfigFields,
+			Kind:     "object",
+			Fields:   ConfiguredModelAlgorithm_TrainingContainerConfigFields,
 		},
 	},
 }

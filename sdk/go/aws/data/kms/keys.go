@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Keys_Keys struct {
 	KeyArn any
-	KeyId any
+	KeyId  any
 }
 
 type KeysConfig struct {
-	Limit any
+	Limit  any
 	Marker any
 }
 
 type KeysAttrs struct {
-	Keys any
-	Limit any
-	Marker any
+	Keys       any
+	Limit      any
+	Marker     any
 	NextMarker any
-	Truncated any
+	Truncated  any
 }
 
 var Keys = ubx.DataSourceBinding{
 	WireType: "aws_kms_keys",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":  ubx.FieldSpec{WireName: "limit"},
 		"Marker": ubx.FieldSpec{WireName: "marker"},
 	},
 }

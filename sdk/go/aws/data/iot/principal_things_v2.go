@@ -4,31 +4,31 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PrincipalThingsV2_PrincipalThingObjects struct {
-	ThingName any
+	ThingName          any
 	ThingPrincipalType any
 }
 
 type PrincipalThingsV2Config struct {
-	MaxResults any
-	NextToken any
-	Principal any
+	MaxResults         any
+	NextToken          any
+	Principal          any
 	ThingPrincipalType any
 }
 
 type PrincipalThingsV2Attrs struct {
-	MaxResults any
-	NextToken any
-	Principal any
+	MaxResults            any
+	NextToken             any
+	Principal             any
 	PrincipalThingObjects any
-	ThingPrincipalType any
+	ThingPrincipalType    any
 }
 
 var PrincipalThingsV2 = ubx.DataSourceBinding{
 	WireType: "aws_iot_principal_things_v2",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"Principal":          ubx.FieldSpec{WireName: "principal"},
 		"ThingPrincipalType": ubx.FieldSpec{WireName: "thing_principal_type"},
 	},
 }

@@ -7,7 +7,7 @@ type ApiIotwirelessMulticastGroupSession_LoRaWan struct {
 	// <p>Downlink data rate.</p>
 	DlDr any
 	// <p>Downlink frequency.</p>
-	DlFreq any
+	DlFreq         any
 	PingSlotPeriod any
 	// <p>Timestamp of when the multicast group session is to start.</p>
 	SessionStartTime any

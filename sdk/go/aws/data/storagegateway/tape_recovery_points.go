@@ -4,24 +4,24 @@ package storagegateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TapeRecoveryPoints_TapeRecoveryPointInfos struct {
-	TapeArn any
+	TapeArn               any
 	TapeRecoveryPointTime any
-	TapeSizeInBytes any
-	TapeStatus any
+	TapeSizeInBytes       any
+	TapeStatus            any
 }
 
 type TapeRecoveryPointsConfig struct {
 	// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
 	GatewayArn any
-	Limit any
-	Marker any
+	Limit      any
+	Marker     any
 }
 
 type TapeRecoveryPointsAttrs struct {
 	// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-	GatewayArn any
-	Limit any
-	Marker any
+	GatewayArn             any
+	Limit                  any
+	Marker                 any
 	TapeRecoveryPointInfos any
 }
 
@@ -29,7 +29,7 @@ var TapeRecoveryPoints = ubx.DataSourceBinding{
 	WireType: "aws_storagegateway_tape_recovery_points",
 	Fields: ubx.FieldMap{
 		"GatewayArn": ubx.FieldSpec{WireName: "gateway_arn"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 	},
 }

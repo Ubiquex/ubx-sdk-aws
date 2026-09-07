@@ -4,27 +4,27 @@ package storagegateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Volumes_VolumeInfos struct {
-	GatewayArn any
-	GatewayId any
-	VolumeArn any
+	GatewayArn             any
+	GatewayId              any
+	VolumeArn              any
 	VolumeAttachmentStatus any
-	VolumeId any
-	VolumeSizeInBytes any
-	VolumeType any
+	VolumeId               any
+	VolumeSizeInBytes      any
+	VolumeType             any
 }
 
 type VolumesConfig struct {
 	// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
 	GatewayArn any
-	Limit any
-	Marker any
+	Limit      any
+	Marker     any
 }
 
 type VolumesAttrs struct {
 	// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-	GatewayArn any
-	Limit any
-	Marker any
+	GatewayArn  any
+	Limit       any
+	Marker      any
 	VolumeInfos any
 }
 
@@ -32,7 +32,7 @@ var Volumes = ubx.DataSourceBinding{
 	WireType: "aws_storagegateway_volumes",
 	Fields: ubx.FieldMap{
 		"GatewayArn": ubx.FieldSpec{WireName: "gateway_arn"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 	},
 }

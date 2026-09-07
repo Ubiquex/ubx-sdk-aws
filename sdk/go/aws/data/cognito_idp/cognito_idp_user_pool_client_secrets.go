@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdpUserPoolClientSecrets_ClientSecrets struct {
 	ClientSecretCreateDate any
-	ClientSecretId any
-	ClientSecretValue any
+	ClientSecretId         any
+	ClientSecretValue      any
 }
 
 type CognitoIdpUserPoolClientSecretsConfig struct {
-	ClientId any
-	NextToken any
+	ClientId   any
+	NextToken  any
 	UserPoolId any
 }
 
@@ -19,15 +19,15 @@ type CognitoIdpUserPoolClientSecretsAttrs struct {
 	ClientId any
 	// <p>Contains metadata about a client secret for list operations. This type excludes the actual secret value for security reasons.</p>
 	ClientSecrets any
-	NextToken any
-	UserPoolId any
+	NextToken     any
+	UserPoolId    any
 }
 
 var CognitoIdpUserPoolClientSecrets = ubx.DataSourceBinding{
 	WireType: "aws_cognito_idp_user_pool_client_secrets",
 	Fields: ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ClientId":   ubx.FieldSpec{WireName: "client_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
 	},
 }

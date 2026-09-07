@@ -38,33 +38,33 @@ type RecordingConfiguration_ThumbnailConfiguration struct {
 }
 
 var RecordingConfiguration_DestinationConfiguration_S3Fields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-	}
+	"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+}
 
 var RecordingConfiguration_DestinationConfigurationFields = ubx.FieldMap{
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: RecordingConfiguration_DestinationConfiguration_S3Fields,
-		},
-	}
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   RecordingConfiguration_DestinationConfiguration_S3Fields,
+	},
+}
 
 var RecordingConfiguration_RenditionConfigurationFields = ubx.FieldMap{
-		"RenditionSelection": ubx.FieldSpec{WireName: "rendition_selection"},
-		"Renditions": ubx.FieldSpec{WireName: "renditions"},
-	}
+	"RenditionSelection": ubx.FieldSpec{WireName: "rendition_selection"},
+	"Renditions":         ubx.FieldSpec{WireName: "renditions"},
+}
 
 var RecordingConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var RecordingConfiguration_ThumbnailConfigurationFields = ubx.FieldMap{
-		"RecordingMode": ubx.FieldSpec{WireName: "recording_mode"},
-		"Resolution": ubx.FieldSpec{WireName: "resolution"},
-		"Storage": ubx.FieldSpec{WireName: "storage"},
-		"TargetIntervalSeconds": ubx.FieldSpec{WireName: "target_interval_seconds"},
-	}
+	"RecordingMode":         ubx.FieldSpec{WireName: "recording_mode"},
+	"Resolution":            ubx.FieldSpec{WireName: "resolution"},
+	"Storage":               ubx.FieldSpec{WireName: "storage"},
+	"TargetIntervalSeconds": ubx.FieldSpec{WireName: "target_interval_seconds"},
+}
 
 type RecordingConfigurationConfig struct {
 	// Recording Destination Configuration.
@@ -105,25 +105,25 @@ var RecordingConfiguration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DestinationConfiguration": ubx.FieldSpec{
 			WireName: "destination_configuration",
-			Kind: "object",
-			Fields: RecordingConfiguration_DestinationConfigurationFields,
+			Kind:     "object",
+			Fields:   RecordingConfiguration_DestinationConfigurationFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                            ubx.FieldSpec{WireName: "name"},
 		"RecordingReconnectWindowSeconds": ubx.FieldSpec{WireName: "recording_reconnect_window_seconds"},
 		"RenditionConfiguration": ubx.FieldSpec{
 			WireName: "rendition_configuration",
-			Kind: "object",
-			Fields: RecordingConfiguration_RenditionConfigurationFields,
+			Kind:     "object",
+			Fields:   RecordingConfiguration_RenditionConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RecordingConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   RecordingConfiguration_TagsFields,
 		},
 		"ThumbnailConfiguration": ubx.FieldSpec{
 			WireName: "thumbnail_configuration",
-			Kind: "object",
-			Fields: RecordingConfiguration_ThumbnailConfigurationFields,
+			Kind:     "object",
+			Fields:   RecordingConfiguration_ThumbnailConfigurationFields,
 		},
 	},
 }

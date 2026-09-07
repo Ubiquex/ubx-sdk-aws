@@ -8,9 +8,9 @@ type PolicyConfig struct {
 }
 
 type PolicyAttrs struct {
-	Arn any
+	Arn    any
 	Policy any
-	Token any
+	Token  any
 }
 
 var Policy = ubx.DataSourceBinding{

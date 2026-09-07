@@ -32,7 +32,7 @@ type Cluster_InstanceGroups_AutoPatchConfig_DeploymentConfig_RollingUpdatePolicy
 type Cluster_InstanceGroups_AutoPatchConfig_DeploymentConfig struct {
 	// Specifies the list of CloudWatch alarms that, if triggered during an automatic patch deployment on a SageMaker HyperPod cluster instance group, cause the deployment to automatically roll back. (AI-inferred)
 	AutoRollbackConfiguration any
-	RollingUpdatePolicy any
+	RollingUpdatePolicy       any
 	// Specifies the wait interval, in seconds, between each batch of instances when SageMaker automatically deploys patches to a HyperPod cluster instance group. (AI-inferred)
 	WaitIntervalInSeconds any
 }
@@ -197,9 +197,9 @@ type Cluster_Orchestrator_Eks struct {
 }
 
 type Cluster_Orchestrator_Slurm_AccountingDatabase struct {
-	Endpoint any
-	Name any
-	Port any
+	Endpoint  any
+	Name      any
+	Port      any
 	SecretArn any
 }
 
@@ -229,7 +229,7 @@ type Cluster_RestrictedInstanceGroups_EnvironmentConfig struct {
 
 type Cluster_RestrictedInstanceGroups struct {
 	// The current number of running instances in the SageMaker HyperPod restricted instance group, which is reserved for internal cluster operations rather than user workloads. (AI-inferred)
-	CurrentCount any
+	CurrentCount      any
 	EnvironmentConfig any
 	// The Amazon Resource Name (ARN) of the IAM role that SageMaker assumes to provide permissions for instances in this restricted instance group to access AWS services and resources. (AI-inferred)
 	ExecutionRole any
@@ -243,7 +243,7 @@ type Cluster_RestrictedInstanceGroups struct {
 	InstanceType any
 	// Specifies the list of deep health check types (such as InstanceStress, InstanceConnectivity, and InstanceStorage) that SageMaker runs on nodes in this restricted instance group when they start, to detect hardware issues before workload deployment. (AI-inferred)
 	OnStartDeepHealthChecks any
-	OverrideVpcConfig any
+	OverrideVpcConfig       any
 	// Specifies the number of threads per CPU core for the instances in this SageMaker HyperPod cluster instance group, allowing control of CPU hyper-threading (e.g., 1 to disable or 2 to enable). (AI-inferred)
 	ThreadsPerCore any
 	// Specifies the Amazon Resource Name (ARN) of the SageMaker training plan that provides reserved capacity for this restricted instance group in the SageMaker HyperPod cluster. (AI-inferred)
@@ -277,79 +277,79 @@ type Cluster_TieredStorageConfig struct {
 }
 
 var Cluster_AutoScalingFields = ubx.FieldMap{
-		"AutoScalerType": ubx.FieldSpec{WireName: "auto_scaler_type"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"AutoScalerType": ubx.FieldSpec{WireName: "auto_scaler_type"},
+	"Mode":           ubx.FieldSpec{WireName: "mode"},
+}
 
 var Cluster_Orchestrator_EksFields = ubx.FieldMap{
-		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
-	}
+	"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
+}
 
 var Cluster_Orchestrator_Slurm_AccountingDatabaseFields = ubx.FieldMap{
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"Endpoint":  ubx.FieldSpec{WireName: "endpoint"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Port":      ubx.FieldSpec{WireName: "port"},
+	"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var Cluster_Orchestrator_SlurmFields = ubx.FieldMap{
-		"AccountingDatabase": ubx.FieldSpec{
-			WireName: "accounting_database",
-			Kind: "object",
-			Fields: Cluster_Orchestrator_Slurm_AccountingDatabaseFields,
-		},
-		"SlurmConfigStrategy": ubx.FieldSpec{WireName: "slurm_config_strategy"},
-	}
+	"AccountingDatabase": ubx.FieldSpec{
+		WireName: "accounting_database",
+		Kind:     "object",
+		Fields:   Cluster_Orchestrator_Slurm_AccountingDatabaseFields,
+	},
+	"SlurmConfigStrategy": ubx.FieldSpec{WireName: "slurm_config_strategy"},
+}
 
 var Cluster_OrchestratorFields = ubx.FieldMap{
-		"Eks": ubx.FieldSpec{
-			WireName: "eks",
-			Kind: "object",
-			Fields: Cluster_Orchestrator_EksFields,
-		},
-		"Slurm": ubx.FieldSpec{
-			WireName: "slurm",
-			Kind: "object",
-			Fields: Cluster_Orchestrator_SlurmFields,
-		},
-	}
+	"Eks": ubx.FieldSpec{
+		WireName: "eks",
+		Kind:     "object",
+		Fields:   Cluster_Orchestrator_EksFields,
+	},
+	"Slurm": ubx.FieldSpec{
+		WireName: "slurm",
+		Kind:     "object",
+		Fields:   Cluster_Orchestrator_SlurmFields,
+	},
+}
 
 var Cluster_RestrictedInstanceGroups_EnvironmentConfig_FsxLustreConfigFields = ubx.FieldMap{
-		"PerUnitStorageThroughput": ubx.FieldSpec{WireName: "per_unit_storage_throughput"},
-		"SizeInGiB": ubx.FieldSpec{WireName: "size_in_gi_b"},
-	}
+	"PerUnitStorageThroughput": ubx.FieldSpec{WireName: "per_unit_storage_throughput"},
+	"SizeInGiB":                ubx.FieldSpec{WireName: "size_in_gi_b"},
+}
 
 var Cluster_RestrictedInstanceGroupsConfig_SharedEnvironmentConfigFields = ubx.FieldMap{
-		"FsxLustreConfig": ubx.FieldSpec{
-			WireName: "fsx_lustre_config",
-			Kind: "object",
-			Fields: Cluster_RestrictedInstanceGroups_EnvironmentConfig_FsxLustreConfigFields,
-		},
-		"FsxLustreDeletionPolicy": ubx.FieldSpec{WireName: "fsx_lustre_deletion_policy"},
-	}
+	"FsxLustreConfig": ubx.FieldSpec{
+		WireName: "fsx_lustre_config",
+		Kind:     "object",
+		Fields:   Cluster_RestrictedInstanceGroups_EnvironmentConfig_FsxLustreConfigFields,
+	},
+	"FsxLustreDeletionPolicy": ubx.FieldSpec{WireName: "fsx_lustre_deletion_policy"},
+}
 
 var Cluster_RestrictedInstanceGroupsConfigFields = ubx.FieldMap{
-		"SharedEnvironmentConfig": ubx.FieldSpec{
-			WireName: "shared_environment_config",
-			Kind: "object",
-			Fields: Cluster_RestrictedInstanceGroupsConfig_SharedEnvironmentConfigFields,
-		},
-	}
+	"SharedEnvironmentConfig": ubx.FieldSpec{
+		WireName: "shared_environment_config",
+		Kind:     "object",
+		Fields:   Cluster_RestrictedInstanceGroupsConfig_SharedEnvironmentConfigFields,
+	},
+}
 
 var Cluster_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Cluster_TieredStorageConfigFields = ubx.FieldMap{
-		"InstanceMemoryAllocationPercentage": ubx.FieldSpec{WireName: "instance_memory_allocation_percentage"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"InstanceMemoryAllocationPercentage": ubx.FieldSpec{WireName: "instance_memory_allocation_percentage"},
+	"Mode":                               ubx.FieldSpec{WireName: "mode"},
+}
 
 var Cluster_InstanceGroups_OverrideVpcConfigFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"Subnets":          ubx.FieldSpec{WireName: "subnets"},
+}
 
 type ClusterConfig struct {
 	// Configuration for cluster auto-scaling
@@ -414,37 +414,37 @@ var Cluster = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoScaling": ubx.FieldSpec{
 			WireName: "auto_scaling",
-			Kind: "object",
-			Fields: Cluster_AutoScalingFields,
+			Kind:     "object",
+			Fields:   Cluster_AutoScalingFields,
 		},
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"ClusterRole": ubx.FieldSpec{WireName: "cluster_role"},
+		"ClusterName":          ubx.FieldSpec{WireName: "cluster_name"},
+		"ClusterRole":          ubx.FieldSpec{WireName: "cluster_role"},
 		"NodeProvisioningMode": ubx.FieldSpec{WireName: "node_provisioning_mode"},
-		"NodeRecovery": ubx.FieldSpec{WireName: "node_recovery"},
+		"NodeRecovery":         ubx.FieldSpec{WireName: "node_recovery"},
 		"Orchestrator": ubx.FieldSpec{
 			WireName: "orchestrator",
-			Kind: "object",
-			Fields: Cluster_OrchestratorFields,
+			Kind:     "object",
+			Fields:   Cluster_OrchestratorFields,
 		},
 		"RestrictedInstanceGroupsConfig": ubx.FieldSpec{
 			WireName: "restricted_instance_groups_config",
-			Kind: "object",
-			Fields: Cluster_RestrictedInstanceGroupsConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_RestrictedInstanceGroupsConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Cluster_TagsFields,
+			Kind:     "list",
+			Fields:   Cluster_TagsFields,
 		},
 		"TieredStorageConfig": ubx.FieldSpec{
 			WireName: "tiered_storage_config",
-			Kind: "object",
-			Fields: Cluster_TieredStorageConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_TieredStorageConfigFields,
 		},
 		"VpcConfig": ubx.FieldSpec{
 			WireName: "vpc_config",
-			Kind: "object",
-			Fields: Cluster_InstanceGroups_OverrideVpcConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_InstanceGroups_OverrideVpcConfigFields,
 		},
 	},
 }

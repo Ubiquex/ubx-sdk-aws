@@ -15,14 +15,14 @@ type VpcendpointService_PrivateDnsNameConfiguration struct {
 }
 
 type VpcendpointService_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var VpcendpointService_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VpcendpointServiceConfig struct {
 	// Indicates whether acceptance of connection requests to the VPC endpoint service is required from the service consumer. (AI-inferred)
@@ -73,18 +73,18 @@ type VpcendpointServiceAttrs struct {
 var VpcendpointService = ubx.ResourceBinding{
 	WireType: "aws_ec2_vpcendpoint_service",
 	Fields: ubx.FieldMap{
-		"AcceptanceRequired": ubx.FieldSpec{WireName: "acceptance_required"},
+		"AcceptanceRequired":         ubx.FieldSpec{WireName: "acceptance_required"},
 		"ContributorInsightsEnabled": ubx.FieldSpec{WireName: "contributor_insights_enabled"},
-		"GatewayLoadBalancerArns": ubx.FieldSpec{WireName: "gateway_load_balancer_arns"},
-		"NetworkLoadBalancerArns": ubx.FieldSpec{WireName: "network_load_balancer_arns"},
-		"PayerResponsibility": ubx.FieldSpec{WireName: "payer_responsibility"},
-		"PrivateDnsName": ubx.FieldSpec{WireName: "private_dns_name"},
-		"SupportedIpAddressTypes": ubx.FieldSpec{WireName: "supported_ip_address_types"},
-		"SupportedRegions": ubx.FieldSpec{WireName: "supported_regions"},
+		"GatewayLoadBalancerArns":    ubx.FieldSpec{WireName: "gateway_load_balancer_arns"},
+		"NetworkLoadBalancerArns":    ubx.FieldSpec{WireName: "network_load_balancer_arns"},
+		"PayerResponsibility":        ubx.FieldSpec{WireName: "payer_responsibility"},
+		"PrivateDnsName":             ubx.FieldSpec{WireName: "private_dns_name"},
+		"SupportedIpAddressTypes":    ubx.FieldSpec{WireName: "supported_ip_address_types"},
+		"SupportedRegions":           ubx.FieldSpec{WireName: "supported_regions"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VpcendpointService_TagsFields,
+			Kind:     "list",
+			Fields:   VpcendpointService_TagsFields,
 		},
 	},
 }

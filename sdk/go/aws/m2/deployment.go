@@ -28,8 +28,8 @@ type DeploymentAttrs struct {
 var Deployment = ubx.ResourceBinding{
 	WireType: "aws_m2_deployment",
 	Fields: ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"ApplicationId":      ubx.FieldSpec{WireName: "application_id"},
 		"ApplicationVersion": ubx.FieldSpec{WireName: "application_version"},
-		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
+		"EnvironmentId":      ubx.FieldSpec{WireName: "environment_id"},
 	},
 }

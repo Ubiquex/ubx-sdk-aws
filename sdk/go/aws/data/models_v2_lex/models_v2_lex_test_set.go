@@ -4,9 +4,9 @@ package models_v2_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsV2LexTestSet_StorageLocation struct {
-	KmsKeyArn any
+	KmsKeyArn    any
 	S3BucketName any
-	S3Path any
+	S3Path       any
 }
 
 type ModelsV2LexTestSetConfig struct {
@@ -14,17 +14,17 @@ type ModelsV2LexTestSetConfig struct {
 }
 
 type ModelsV2LexTestSetAttrs struct {
-	CreationDateTime any
-	Description any
+	CreationDateTime    any
+	Description         any
 	LastUpdatedDateTime any
-	Modality any
-	NumTurns any
-	RoleArn any
-	Status any
+	Modality            any
+	NumTurns            any
+	RoleArn             any
+	Status              any
 	// <p>Contains information about the location in which the test set is stored.</p>
 	StorageLocation any
-	TestSetId any
-	TestSetName any
+	TestSetId       any
+	TestSetName     any
 }
 
 var ModelsV2LexTestSet = ubx.DataSourceBinding{

@@ -14,23 +14,23 @@ type DataSource_DataSourceType struct {
 type DataSourceConfig struct {
 	// <p>The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
 	DomainName any
-	Name any
+	Name       any
 }
 
 type DataSourceAttrs struct {
 	// <p>The type of data source.</p>
 	DataSourceType any
-	Description any
+	Description    any
 	// <p>The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
 	DomainName any
-	Name any
-	Status any
+	Name       any
+	Status     any
 }
 
 var DataSource = ubx.DataSourceBinding{
 	WireType: "aws_opensearch_data_source",
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 	},
 }

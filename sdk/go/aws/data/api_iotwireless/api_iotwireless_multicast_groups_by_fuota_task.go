@@ -12,7 +12,7 @@ type ApiIotwirelessMulticastGroupsByFuotaTaskConfig struct {
 	Id any
 	// <p>The maximum number of results to return in this operation.</p>
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApiIotwirelessMulticastGroupsByFuotaTaskAttrs struct {
@@ -22,14 +22,14 @@ type ApiIotwirelessMulticastGroupsByFuotaTaskAttrs struct {
 	MaxResults any
 	// <p>List of multicast groups associated with a FUOTA task.</p>
 	MulticastGroupList any
-	NextToken any
+	NextToken          any
 }
 
 var ApiIotwirelessMulticastGroupsByFuotaTask = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_multicast_groups_by_fuota_task",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":         ubx.FieldSpec{WireName: "id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

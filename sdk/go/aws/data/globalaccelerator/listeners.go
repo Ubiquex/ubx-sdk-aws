@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Listeners_Listeners_PortRanges struct {
 	FromPort any
-	ToPort any
+	ToPort   any
 }
 
 type Listeners_Listeners struct {
 	ClientAffinity any
-	ListenerArn any
-	PortRanges any
-	Protocol any
+	ListenerArn    any
+	PortRanges     any
+	Protocol       any
 }
 
 type ListenersConfig struct {
 	AcceleratorArn any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 type ListenersAttrs struct {
 	AcceleratorArn any
-	Listeners any
-	MaxResults any
-	NextToken any
+	Listeners      any
+	MaxResults     any
+	NextToken      any
 }
 
 var Listeners = ubx.DataSourceBinding{
 	WireType: "aws_globalaccelerator_listeners",
 	Fields: ubx.FieldMap{
 		"AcceleratorArn": ubx.FieldSpec{WireName: "accelerator_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 	},
 }

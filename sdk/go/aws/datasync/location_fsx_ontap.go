@@ -58,14 +58,14 @@ type LocationFsxOntap_Protocol struct {
 
 type LocationFsxOntap_Tags struct {
 	// The key of a key-value tag applied to the FSx for ONTAP DataSync location, used to organize and identify the location for management and cost allocation. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var LocationFsxOntap_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LocationFsxOntapConfig struct {
 	// The ARNs of the security groups that are to use to configure the FSx ONTAP file system.
@@ -100,13 +100,13 @@ type LocationFsxOntapAttrs struct {
 var LocationFsxOntap = ubx.ResourceBinding{
 	WireType: "aws_data_sync_location_fsx_ontap",
 	Fields: ubx.FieldMap{
-		"SecurityGroupArns": ubx.FieldSpec{WireName: "security_group_arns"},
+		"SecurityGroupArns":        ubx.FieldSpec{WireName: "security_group_arns"},
 		"StorageVirtualMachineArn": ubx.FieldSpec{WireName: "storage_virtual_machine_arn"},
-		"Subdirectory": ubx.FieldSpec{WireName: "subdirectory"},
+		"Subdirectory":             ubx.FieldSpec{WireName: "subdirectory"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LocationFsxOntap_TagsFields,
+			Kind:     "list",
+			Fields:   LocationFsxOntap_TagsFields,
 		},
 	},
 }

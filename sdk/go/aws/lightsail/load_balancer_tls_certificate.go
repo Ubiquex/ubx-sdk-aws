@@ -41,10 +41,10 @@ var LoadBalancerTlsCertificate = ubx.ResourceBinding{
 	WireType: "aws_lightsail_load_balancer_tls_certificate",
 	Fields: ubx.FieldMap{
 		"CertificateAlternativeNames": ubx.FieldSpec{WireName: "certificate_alternative_names"},
-		"CertificateDomainName": ubx.FieldSpec{WireName: "certificate_domain_name"},
-		"CertificateName": ubx.FieldSpec{WireName: "certificate_name"},
-		"HttpsRedirectionEnabled": ubx.FieldSpec{WireName: "https_redirection_enabled"},
-		"IsAttached": ubx.FieldSpec{WireName: "is_attached"},
-		"LoadBalancerName": ubx.FieldSpec{WireName: "load_balancer_name"},
+		"CertificateDomainName":       ubx.FieldSpec{WireName: "certificate_domain_name"},
+		"CertificateName":             ubx.FieldSpec{WireName: "certificate_name"},
+		"HttpsRedirectionEnabled":     ubx.FieldSpec{WireName: "https_redirection_enabled"},
+		"IsAttached":                  ubx.FieldSpec{WireName: "is_attached"},
+		"LoadBalancerName":            ubx.FieldSpec{WireName: "load_balancer_name"},
 	},
 }

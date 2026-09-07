@@ -16,13 +16,13 @@ type HumanTaskUi_UiTemplate struct {
 }
 
 var HumanTaskUi_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var HumanTaskUi_UiTemplateFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+}
 
 type HumanTaskUiConfig struct {
 	// The name of the human task user interface.
@@ -52,13 +52,13 @@ var HumanTaskUi = ubx.ResourceBinding{
 		"HumanTaskUiName": ubx.FieldSpec{WireName: "human_task_ui_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: HumanTaskUi_TagsFields,
+			Kind:     "list",
+			Fields:   HumanTaskUi_TagsFields,
 		},
 		"UiTemplate": ubx.FieldSpec{
 			WireName: "ui_template",
-			Kind: "object",
-			Fields: HumanTaskUi_UiTemplateFields,
+			Kind:     "object",
+			Fields:   HumanTaskUi_UiTemplateFields,
 		},
 	},
 }

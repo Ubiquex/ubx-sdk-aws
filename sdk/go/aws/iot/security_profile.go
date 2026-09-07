@@ -34,7 +34,7 @@ type SecurityProfile_Behaviors_Criteria_Value struct {
 	// The numeric threshold (specified as a string) for the number of times the metric can occur within the evaluation window before the security profile behavior triggers an alert. (AI-inferred)
 	Count any
 	// Specifies the numeric threshold value that the AWS IoT behavior's criteria uses to evaluate the selected metric and trigger an alert if the metric crosses it according to the comparison operator. (AI-inferred)
-	Number any
+	Number  any
 	Numbers any
 	// The list of allowed destination port numbers for the behavior's criteria, used when the metric is `aws:message-by-ports`. (AI-inferred)
 	Ports any
@@ -83,90 +83,90 @@ type SecurityProfile_MetricsExportConfig struct {
 
 type SecurityProfile_Tags struct {
 	// The key (name) of a tag attached to the AWS IoT Security Profile, used to identify and categorize the profile. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var SecurityProfile_AdditionalMetricsToRetainV2_MetricDimensionFields = ubx.FieldMap{
-		"DimensionName": ubx.FieldSpec{WireName: "dimension_name"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-	}
+	"DimensionName": ubx.FieldSpec{WireName: "dimension_name"},
+	"Operator":      ubx.FieldSpec{WireName: "operator"},
+}
 
 var SecurityProfile_AdditionalMetricsToRetainV2Fields = ubx.FieldMap{
-		"ExportMetric": ubx.FieldSpec{WireName: "export_metric"},
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-		"MetricDimension": ubx.FieldSpec{
-			WireName: "metric_dimension",
-			Kind: "object",
-			Fields: SecurityProfile_AdditionalMetricsToRetainV2_MetricDimensionFields,
-		},
-	}
+	"ExportMetric": ubx.FieldSpec{WireName: "export_metric"},
+	"Metric":       ubx.FieldSpec{WireName: "metric"},
+	"MetricDimension": ubx.FieldSpec{
+		WireName: "metric_dimension",
+		Kind:     "object",
+		Fields:   SecurityProfile_AdditionalMetricsToRetainV2_MetricDimensionFields,
+	},
+}
 
 var SecurityProfile_Behaviors_Criteria_MlDetectionConfigFields = ubx.FieldMap{
-		"ConfidenceLevel": ubx.FieldSpec{WireName: "confidence_level"},
-	}
+	"ConfidenceLevel": ubx.FieldSpec{WireName: "confidence_level"},
+}
 
 var SecurityProfile_Behaviors_Criteria_StatisticalThresholdFields = ubx.FieldMap{
-		"Statistic": ubx.FieldSpec{WireName: "statistic"},
-	}
+	"Statistic": ubx.FieldSpec{WireName: "statistic"},
+}
 
 var SecurityProfile_Behaviors_Criteria_ValueFields = ubx.FieldMap{
-		"Cidrs": ubx.FieldSpec{WireName: "cidrs"},
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Number": ubx.FieldSpec{WireName: "number"},
-		"Numbers": ubx.FieldSpec{WireName: "numbers"},
-		"Ports": ubx.FieldSpec{WireName: "ports"},
-		"Strings": ubx.FieldSpec{WireName: "strings"},
-	}
+	"Cidrs":   ubx.FieldSpec{WireName: "cidrs"},
+	"Count":   ubx.FieldSpec{WireName: "count"},
+	"Number":  ubx.FieldSpec{WireName: "number"},
+	"Numbers": ubx.FieldSpec{WireName: "numbers"},
+	"Ports":   ubx.FieldSpec{WireName: "ports"},
+	"Strings": ubx.FieldSpec{WireName: "strings"},
+}
 
 var SecurityProfile_Behaviors_CriteriaFields = ubx.FieldMap{
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"ConsecutiveDatapointsToAlarm": ubx.FieldSpec{WireName: "consecutive_datapoints_to_alarm"},
-		"ConsecutiveDatapointsToClear": ubx.FieldSpec{WireName: "consecutive_datapoints_to_clear"},
-		"DurationSeconds": ubx.FieldSpec{WireName: "duration_seconds"},
-		"MlDetectionConfig": ubx.FieldSpec{
-			WireName: "ml_detection_config",
-			Kind: "object",
-			Fields: SecurityProfile_Behaviors_Criteria_MlDetectionConfigFields,
-		},
-		"StatisticalThreshold": ubx.FieldSpec{
-			WireName: "statistical_threshold",
-			Kind: "object",
-			Fields: SecurityProfile_Behaviors_Criteria_StatisticalThresholdFields,
-		},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: SecurityProfile_Behaviors_Criteria_ValueFields,
-		},
-	}
+	"ComparisonOperator":           ubx.FieldSpec{WireName: "comparison_operator"},
+	"ConsecutiveDatapointsToAlarm": ubx.FieldSpec{WireName: "consecutive_datapoints_to_alarm"},
+	"ConsecutiveDatapointsToClear": ubx.FieldSpec{WireName: "consecutive_datapoints_to_clear"},
+	"DurationSeconds":              ubx.FieldSpec{WireName: "duration_seconds"},
+	"MlDetectionConfig": ubx.FieldSpec{
+		WireName: "ml_detection_config",
+		Kind:     "object",
+		Fields:   SecurityProfile_Behaviors_Criteria_MlDetectionConfigFields,
+	},
+	"StatisticalThreshold": ubx.FieldSpec{
+		WireName: "statistical_threshold",
+		Kind:     "object",
+		Fields:   SecurityProfile_Behaviors_Criteria_StatisticalThresholdFields,
+	},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   SecurityProfile_Behaviors_Criteria_ValueFields,
+	},
+}
 
 var SecurityProfile_BehaviorsFields = ubx.FieldMap{
-		"Criteria": ubx.FieldSpec{
-			WireName: "criteria",
-			Kind: "object",
-			Fields: SecurityProfile_Behaviors_CriteriaFields,
-		},
-		"ExportMetric": ubx.FieldSpec{WireName: "export_metric"},
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-		"MetricDimension": ubx.FieldSpec{
-			WireName: "metric_dimension",
-			Kind: "object",
-			Fields: SecurityProfile_AdditionalMetricsToRetainV2_MetricDimensionFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SuppressAlerts": ubx.FieldSpec{WireName: "suppress_alerts"},
-	}
+	"Criteria": ubx.FieldSpec{
+		WireName: "criteria",
+		Kind:     "object",
+		Fields:   SecurityProfile_Behaviors_CriteriaFields,
+	},
+	"ExportMetric": ubx.FieldSpec{WireName: "export_metric"},
+	"Metric":       ubx.FieldSpec{WireName: "metric"},
+	"MetricDimension": ubx.FieldSpec{
+		WireName: "metric_dimension",
+		Kind:     "object",
+		Fields:   SecurityProfile_AdditionalMetricsToRetainV2_MetricDimensionFields,
+	},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"SuppressAlerts": ubx.FieldSpec{WireName: "suppress_alerts"},
+}
 
 var SecurityProfile_MetricsExportConfigFields = ubx.FieldMap{
-		"MqttTopic": ubx.FieldSpec{WireName: "mqtt_topic"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"MqttTopic": ubx.FieldSpec{WireName: "mqtt_topic"},
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var SecurityProfile_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SecurityProfileConfig struct {
 	// A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here.
@@ -213,26 +213,26 @@ var SecurityProfile = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdditionalMetricsToRetainV2": ubx.FieldSpec{
 			WireName: "additional_metrics_to_retain_v2",
-			Kind: "list",
-			Fields: SecurityProfile_AdditionalMetricsToRetainV2Fields,
+			Kind:     "list",
+			Fields:   SecurityProfile_AdditionalMetricsToRetainV2Fields,
 		},
 		"AlertTargets": ubx.FieldSpec{WireName: "alert_targets"},
 		"Behaviors": ubx.FieldSpec{
 			WireName: "behaviors",
-			Kind: "list",
-			Fields: SecurityProfile_BehaviorsFields,
+			Kind:     "list",
+			Fields:   SecurityProfile_BehaviorsFields,
 		},
 		"MetricsExportConfig": ubx.FieldSpec{
 			WireName: "metrics_export_config",
-			Kind: "object",
-			Fields: SecurityProfile_MetricsExportConfigFields,
+			Kind:     "object",
+			Fields:   SecurityProfile_MetricsExportConfigFields,
 		},
 		"SecurityProfileDescription": ubx.FieldSpec{WireName: "security_profile_description"},
-		"SecurityProfileName": ubx.FieldSpec{WireName: "security_profile_name"},
+		"SecurityProfileName":        ubx.FieldSpec{WireName: "security_profile_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SecurityProfile_TagsFields,
+			Kind:     "list",
+			Fields:   SecurityProfile_TagsFields,
 		},
 		"TargetArns": ubx.FieldSpec{WireName: "target_arns"},
 	},

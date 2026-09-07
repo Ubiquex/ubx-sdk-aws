@@ -4,14 +4,14 @@ package cognito_sync
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoSyncIdentityPoolConfiguration_CognitoStreams struct {
-	RoleArn any
-	StreamName any
+	RoleArn         any
+	StreamName      any
 	StreamingStatus any
 }
 
 type CognitoSyncIdentityPoolConfiguration_PushSync struct {
 	ApplicationArns any
-	RoleArn any
+	RoleArn         any
 }
 
 type CognitoSyncIdentityPoolConfigurationConfig struct {

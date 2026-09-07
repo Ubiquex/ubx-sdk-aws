@@ -25,7 +25,7 @@ var Tag = ubx.ResourceBinding{
 	WireType: "aws_lake_formation_tag",
 	Fields: ubx.FieldMap{
 		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"TagKey": ubx.FieldSpec{WireName: "tag_key"},
+		"TagKey":    ubx.FieldSpec{WireName: "tag_key"},
 		"TagValues": ubx.FieldSpec{WireName: "tag_values"},
 	},
 }

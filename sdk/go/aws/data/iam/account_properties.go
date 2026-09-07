@@ -12,6 +12,5 @@ type AccountPropertiesAttrs struct {
 
 var AccountProperties = ubx.DataSourceBinding{
 	WireType: "aws_iam_account_properties",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

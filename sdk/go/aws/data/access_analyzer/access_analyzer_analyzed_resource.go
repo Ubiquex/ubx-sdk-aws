@@ -4,17 +4,17 @@ package access_analyzer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessAnalyzerAnalyzedResource_Resource struct {
-	Actions any
-	AnalyzedAt any
-	CreatedAt any
-	Error any
-	IsPublic any
-	ResourceArn any
+	Actions              any
+	AnalyzedAt           any
+	CreatedAt            any
+	Error                any
+	IsPublic             any
+	ResourceArn          any
 	ResourceOwnerAccount any
-	ResourceType any
-	SharedVia any
-	Status any
-	UpdatedAt any
+	ResourceType         any
+	SharedVia            any
+	Status               any
+	UpdatedAt            any
 }
 
 type AccessAnalyzerAnalyzedResourceConfig struct {
@@ -25,7 +25,7 @@ type AccessAnalyzerAnalyzedResourceConfig struct {
 type AccessAnalyzerAnalyzedResourceAttrs struct {
 	AnalyzerArn any
 	// <p>Contains details about the analyzed resource.</p>
-	Resource any
+	Resource    any
 	ResourceArn any
 }
 

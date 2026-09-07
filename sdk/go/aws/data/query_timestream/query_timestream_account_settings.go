@@ -4,8 +4,8 @@ package query_timestream
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QueryTimestreamAccountSettings_QueryCompute_ProvisionedCapacity_LastUpdate struct {
-	Status any
-	StatusMessage any
+	Status         any
+	StatusMessage  any
 	TargetQueryTcu any
 }
 
@@ -39,12 +39,11 @@ type QueryTimestreamAccountSettingsConfig struct {
 type QueryTimestreamAccountSettingsAttrs struct {
 	MaxQueryTcu any
 	// <p>The response to a request to retrieve or update the compute capacity settings for querying data.</p>
-	QueryCompute any
+	QueryCompute      any
 	QueryPricingModel any
 }
 
 var QueryTimestreamAccountSettings = ubx.DataSourceBinding{
 	WireType: "aws_query_timestream_account_settings",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

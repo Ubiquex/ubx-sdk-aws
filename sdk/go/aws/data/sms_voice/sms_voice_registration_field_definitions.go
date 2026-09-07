@@ -5,92 +5,92 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_ConditionalBehavior_Rules_ConditionalValidation struct {
 	AllowedValues any
-	MaxLength any
-	MinLength any
-	Pattern any
+	MaxLength     any
+	MinLength     any
+	Pattern       any
 }
 
 type SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_ConditionalBehavior_Rules_Conditions struct {
 	DependsOnFieldPath any
-	Operator any
-	Values any
+	Operator           any
+	Values             any
 }
 
 type SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_ConditionalBehavior_Rules struct {
 	ConditionalValidation any
-	Conditions any
-	RuleBehavior any
+	Conditions            any
+	RuleBehavior          any
 }
 
 type SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_ConditionalBehavior struct {
 	DefaultBehavior any
-	Rules any
+	Rules           any
 }
 
 type SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_DisplayHints_SelectOptionDescriptions struct {
 	Description any
-	Option any
-	Title any
+	Option      any
+	Title       any
 }
 
 type SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_DisplayHints struct {
-	DocumentationLink any
-	DocumentationTitle any
-	ExampleTextValue any
-	LongDescription any
-	SelectOptionDescriptions any
-	ShortDescription any
+	DocumentationLink         any
+	DocumentationTitle        any
+	ExampleTextValue          any
+	LongDescription           any
+	SelectOptionDescriptions  any
+	ShortDescription          any
 	TextValidationDescription any
-	Title any
+	Title                     any
 }
 
 type SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_SelectValidation struct {
 	MaxChoices any
 	MinChoices any
-	Options any
+	Options    any
 }
 
 type SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_TextValidation struct {
 	MaxLength any
 	MinLength any
-	Pattern any
+	Pattern   any
 }
 
 type SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions struct {
 	ConditionalBehavior any
-	DisplayHints any
-	FieldPath any
-	FieldRequirement any
-	FieldType any
-	SectionPath any
-	SelectValidation any
-	TextValidation any
+	DisplayHints        any
+	FieldPath           any
+	FieldRequirement    any
+	FieldType           any
+	SectionPath         any
+	SelectValidation    any
+	TextValidation      any
 }
 
 type SmsVoiceRegistrationFieldDefinitionsConfig struct {
-	FieldPaths any
-	MaxResults any
-	NextToken any
+	FieldPaths       any
+	MaxResults       any
+	NextToken        any
 	RegistrationType any
-	SectionPath any
+	SectionPath      any
 }
 
 type SmsVoiceRegistrationFieldDefinitionsAttrs struct {
-	FieldPaths any
-	MaxResults any
-	NextToken any
+	FieldPaths                   any
+	MaxResults                   any
+	NextToken                    any
 	RegistrationFieldDefinitions any
-	RegistrationType any
-	SectionPath any
+	RegistrationType             any
+	SectionPath                  any
 }
 
 var SmsVoiceRegistrationFieldDefinitions = ubx.DataSourceBinding{
 	WireType: "aws_sms_voice_registration_field_definitions",
 	Fields: ubx.FieldMap{
-		"FieldPaths": ubx.FieldSpec{WireName: "field_paths"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"FieldPaths":       ubx.FieldSpec{WireName: "field_paths"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"RegistrationType": ubx.FieldSpec{WireName: "registration_type"},
-		"SectionPath": ubx.FieldSpec{WireName: "section_path"},
+		"SectionPath":      ubx.FieldSpec{WireName: "section_path"},
 	},
 }

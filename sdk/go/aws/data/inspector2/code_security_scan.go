@@ -8,25 +8,25 @@ type CodeSecurityScan_Resource struct {
 }
 
 var CodeSecurityScan_ResourceFields = ubx.FieldMap{
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
 
 type CodeSecurityScanConfig struct {
 	// <p>Identifies a specific resource in a code repository that will be scanned.</p>
 	Resource any
-	ScanId any
+	ScanId   any
 }
 
 type CodeSecurityScanAttrs struct {
-	AccountId any
-	CreatedAt any
+	AccountId    any
+	CreatedAt    any
 	LastCommitId any
 	// <p>Identifies a specific resource in a code repository that will be scanned.</p>
-	Resource any
-	ScanId any
-	Status any
+	Resource     any
+	ScanId       any
+	Status       any
 	StatusReason any
-	UpdatedAt any
+	UpdatedAt    any
 }
 
 var CodeSecurityScan = ubx.DataSourceBinding{
@@ -34,8 +34,8 @@ var CodeSecurityScan = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Resource": ubx.FieldSpec{
 			WireName: "resource",
-			Kind: "object",
-			Fields: CodeSecurityScan_ResourceFields,
+			Kind:     "object",
+			Fields:   CodeSecurityScan_ResourceFields,
 		},
 		"ScanId": ubx.FieldSpec{WireName: "scan_id"},
 	},

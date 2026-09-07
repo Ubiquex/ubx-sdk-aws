@@ -28,9 +28,9 @@ type KeySigningKeyAttrs struct {
 var KeySigningKey = ubx.ResourceBinding{
 	WireType: "aws_route53_key_signing_key",
 	Fields: ubx.FieldMap{
-		"HostedZoneId": ubx.FieldSpec{WireName: "hosted_zone_id"},
+		"HostedZoneId":            ubx.FieldSpec{WireName: "hosted_zone_id"},
 		"KeyManagementServiceArn": ubx.FieldSpec{WireName: "key_management_service_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
+		"Status":                  ubx.FieldSpec{WireName: "status"},
 	},
 }

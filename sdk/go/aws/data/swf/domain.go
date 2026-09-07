@@ -8,10 +8,10 @@ type Domain_Configuration struct {
 }
 
 type Domain_DomainInfo struct {
-	Arn any
+	Arn         any
 	Description any
-	Name any
-	Status any
+	Name        any
+	Status      any
 }
 
 type DomainConfig struct {
@@ -23,7 +23,7 @@ type DomainAttrs struct {
 	Configuration any
 	// <p>Contains general information about a domain.</p>
 	DomainInfo any
-	Name any
+	Name       any
 }
 
 var Domain = ubx.DataSourceBinding{

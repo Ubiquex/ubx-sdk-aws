@@ -4,29 +4,29 @@ package devicefarm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceProfiles_InstanceProfiles struct {
-	Arn any
-	Description any
+	Arn                           any
+	Description                   any
 	ExcludeAppPackagesFromCleanup any
-	Name any
-	PackageCleanup any
-	RebootAfterUse any
+	Name                          any
+	PackageCleanup                any
+	RebootAfterUse                any
 }
 
 type InstanceProfilesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type InstanceProfilesAttrs struct {
 	InstanceProfiles any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 var InstanceProfiles = ubx.DataSourceBinding{
 	WireType: "aws_devicefarm_instance_profiles",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

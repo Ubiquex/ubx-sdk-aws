@@ -7,7 +7,7 @@ type Fleet_LaunchTemplateConfigs_LaunchTemplateSpecification struct {
 	// Specifies the ID of the EC2 launch template that defines the instance configuration (such as AMI, instance type, and network settings) for the instances launched by the EC2 Fleet from this launch template config. (AI-inferred)
 	LaunchTemplateId any
 	// The name of the EC2 launch template to use for instances launched in this fleet's launch template configuration. (AI-inferred)
-	LaunchTemplateName any
+	LaunchTemplateName                  any
 	LaunchTemplateSpecificationUserData any
 	// The version of the launch template (e.g., a specific version number, $Latest, or $Default) that the EC2 Fleet uses when launching instances for this launch template configuration. (AI-inferred)
 	Version any
@@ -127,7 +127,7 @@ type Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements struct {
 
 type Fleet_LaunchTemplateConfigs_Overrides_MetadataOptions struct {
 	// Indicates whether the IPv4 instance metadata endpoint (enabled or disabled) is enabled for instances launched from this launch template override in the EC2 Fleet. (AI-inferred)
-	HttpEndpoint any
+	HttpEndpoint            any
 	HttpPutResponseHopLimit any
 	// Determines whether HTTP tokens are required for accessing the instance metadata service for instances launched with this override, enforcing the use of IMDSv2 when set to 'required'. (AI-inferred)
 	HttpTokens any
@@ -213,7 +213,7 @@ type Fleet_LaunchTemplateConfigs_Overrides struct {
 	// The maximum price per unit hour that you are willing to pay for a Spot Instance in this EC2 Fleet, which overrides the max price set in the associated launch template. (AI-inferred)
 	MaxPrice any
 	// Sets the instance metadata service (IMDS) options—such as requiring token usage with HttpTokens and controlling the HTTP endpoint with HttpEndpoint—for EC2 instances launched by this specific fleet override. (AI-inferred)
-	MetadataOptions any
+	MetadataOptions   any
 	NetworkInterfaces any
 	// Overrides the EC2 placement settings (e.g., Availability Zone, Affinity, Tenancy) for instances launched with this launch template override in the EC2 Fleet. (AI-inferred)
 	Placement any
@@ -253,7 +253,7 @@ type Fleet_OnDemandOptions struct {
 }
 
 type Fleet_ReservedCapacityOptions_CapacityReservationTarget struct {
-	CapacityReservationIds any
+	CapacityReservationIds               any
 	CapacityReservationResourceGroupArns any
 }
 
@@ -262,10 +262,10 @@ type Fleet_ReservedCapacityOptions_ReservedCapacityFallbackOptions struct {
 }
 
 type Fleet_ReservedCapacityOptions struct {
-	AllocationStrategy any
+	AllocationStrategy        any
 	CapacityReservationTarget any
 	// Specifies the types of reserved capacity (e.g., capacity-reservation or capacity-block) that the EC2 Fleet can use to fulfill On-Demand capacity. (AI-inferred)
-	ReservationTypes any
+	ReservationTypes                any
 	ReservedCapacityFallbackOptions any
 }
 
@@ -328,327 +328,327 @@ type Fleet_TargetCapacitySpecification struct {
 }
 
 var Fleet_LaunchTemplateConfigs_LaunchTemplateSpecificationFields = ubx.FieldMap{
-		"LaunchTemplateId": ubx.FieldSpec{WireName: "launch_template_id"},
-		"LaunchTemplateName": ubx.FieldSpec{WireName: "launch_template_name"},
-		"LaunchTemplateSpecificationUserData": ubx.FieldSpec{WireName: "launch_template_specification_user_data"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"LaunchTemplateId":                    ubx.FieldSpec{WireName: "launch_template_id"},
+	"LaunchTemplateName":                  ubx.FieldSpec{WireName: "launch_template_name"},
+	"LaunchTemplateSpecificationUserData": ubx.FieldSpec{WireName: "launch_template_specification_user_data"},
+	"Version":                             ubx.FieldSpec{WireName: "version"},
+}
 
 var Fleet_LaunchTemplateConfigs_Overrides_BlockDeviceMappings_EbsFields = ubx.FieldMap{
-		"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
-		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"SnapshotId": ubx.FieldSpec{WireName: "snapshot_id"},
-		"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
-	}
+	"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
+	"Encrypted":           ubx.FieldSpec{WireName: "encrypted"},
+	"Iops":                ubx.FieldSpec{WireName: "iops"},
+	"KmsKeyId":            ubx.FieldSpec{WireName: "kms_key_id"},
+	"SnapshotId":          ubx.FieldSpec{WireName: "snapshot_id"},
+	"VolumeSize":          ubx.FieldSpec{WireName: "volume_size"},
+	"VolumeType":          ubx.FieldSpec{WireName: "volume_type"},
+}
 
 var Fleet_LaunchTemplateConfigs_Overrides_BlockDeviceMappingsFields = ubx.FieldMap{
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"Ebs": ubx.FieldSpec{
-			WireName: "ebs",
-			Kind: "object",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_BlockDeviceMappings_EbsFields,
-		},
-		"NoDevice": ubx.FieldSpec{WireName: "no_device"},
-		"VirtualName": ubx.FieldSpec{WireName: "virtual_name"},
-	}
+	"DeviceName": ubx.FieldSpec{WireName: "device_name"},
+	"Ebs": ubx.FieldSpec{
+		WireName: "ebs",
+		Kind:     "object",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_BlockDeviceMappings_EbsFields,
+	},
+	"NoDevice":    ubx.FieldSpec{WireName: "no_device"},
+	"VirtualName": ubx.FieldSpec{WireName: "virtual_name"},
+}
 
 var Fleet_LaunchTemplateConfigs_Overrides_IamInstanceProfileFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Arn":  ubx.FieldSpec{WireName: "arn"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields = ubx.FieldMap{
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-	}
+	"Max": ubx.FieldSpec{WireName: "max"},
+	"Min": ubx.FieldSpec{WireName: "min"},
+}
 
 var Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_BaselinePerformanceFactors_Cpu_ReferencesFields = ubx.FieldMap{
-		"InstanceFamily": ubx.FieldSpec{WireName: "instance_family"},
-	}
+	"InstanceFamily": ubx.FieldSpec{WireName: "instance_family"},
+}
 
 var Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_BaselinePerformanceFactors_CpuFields = ubx.FieldMap{
-		"References": ubx.FieldSpec{
-			WireName: "references",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_BaselinePerformanceFactors_Cpu_ReferencesFields,
-		},
-	}
+	"References": ubx.FieldSpec{
+		WireName: "references",
+		Kind:     "list",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_BaselinePerformanceFactors_Cpu_ReferencesFields,
+	},
+}
 
 var Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_BaselinePerformanceFactorsFields = ubx.FieldMap{
-		"Cpu": ubx.FieldSpec{
-			WireName: "cpu",
-			Kind: "object",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_BaselinePerformanceFactors_CpuFields,
-		},
-	}
+	"Cpu": ubx.FieldSpec{
+		WireName: "cpu",
+		Kind:     "object",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_BaselinePerformanceFactors_CpuFields,
+	},
+}
 
 var Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirementsFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{
-			WireName: "accelerator_count",
-			Kind: "object",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
-		},
-		"AcceleratorManufacturers": ubx.FieldSpec{WireName: "accelerator_manufacturers"},
-		"AcceleratorNames": ubx.FieldSpec{WireName: "accelerator_names"},
-		"AcceleratorTotalMemoryMiB": ubx.FieldSpec{
-			WireName: "accelerator_total_memory_mi_b",
-			Kind: "object",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
-		},
-		"AcceleratorTypes": ubx.FieldSpec{WireName: "accelerator_types"},
-		"AllowedInstanceTypes": ubx.FieldSpec{WireName: "allowed_instance_types"},
-		"BareMetal": ubx.FieldSpec{WireName: "bare_metal"},
-		"BaselineEbsBandwidthMbps": ubx.FieldSpec{
-			WireName: "baseline_ebs_bandwidth_mbps",
-			Kind: "object",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
-		},
-		"BaselinePerformanceFactors": ubx.FieldSpec{
-			WireName: "baseline_performance_factors",
-			Kind: "object",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_BaselinePerformanceFactorsFields,
-		},
-		"BurstablePerformance": ubx.FieldSpec{WireName: "burstable_performance"},
-		"CpuManufacturers": ubx.FieldSpec{WireName: "cpu_manufacturers"},
-		"ExcludedInstanceTypes": ubx.FieldSpec{WireName: "excluded_instance_types"},
-		"InstanceGenerations": ubx.FieldSpec{WireName: "instance_generations"},
-		"LocalStorage": ubx.FieldSpec{WireName: "local_storage"},
-		"LocalStorageTypes": ubx.FieldSpec{WireName: "local_storage_types"},
-		"MaxSpotPriceAsPercentageOfOptimalOnDemandPrice": ubx.FieldSpec{WireName: "max_spot_price_as_percentage_of_optimal_on_demand_price"},
-		"MemoryGiBperVcpu": ubx.FieldSpec{
-			WireName: "memory_gi_bper_vcpu",
-			Kind: "object",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
-		},
-		"MemoryMiB": ubx.FieldSpec{
-			WireName: "memory_mi_b",
-			Kind: "object",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
-		},
-		"NetworkBandwidthGbps": ubx.FieldSpec{
-			WireName: "network_bandwidth_gbps",
-			Kind: "object",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
-		},
-		"NetworkInterfaceCount": ubx.FieldSpec{
-			WireName: "network_interface_count",
-			Kind: "object",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
-		},
-		"OnDemandMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "on_demand_max_price_percentage_over_lowest_price"},
-		"RequireEncryptionInTransit": ubx.FieldSpec{WireName: "require_encryption_in_transit"},
-		"RequireHibernateSupport": ubx.FieldSpec{WireName: "require_hibernate_support"},
-		"SpotMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "spot_max_price_percentage_over_lowest_price"},
-		"TotalLocalStorageGb": ubx.FieldSpec{
-			WireName: "total_local_storage_gb",
-			Kind: "object",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
-		},
-		"VcpuCount": ubx.FieldSpec{
-			WireName: "vcpu_count",
-			Kind: "object",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
-		},
-	}
+	"AcceleratorCount": ubx.FieldSpec{
+		WireName: "accelerator_count",
+		Kind:     "object",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
+	},
+	"AcceleratorManufacturers": ubx.FieldSpec{WireName: "accelerator_manufacturers"},
+	"AcceleratorNames":         ubx.FieldSpec{WireName: "accelerator_names"},
+	"AcceleratorTotalMemoryMiB": ubx.FieldSpec{
+		WireName: "accelerator_total_memory_mi_b",
+		Kind:     "object",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
+	},
+	"AcceleratorTypes":     ubx.FieldSpec{WireName: "accelerator_types"},
+	"AllowedInstanceTypes": ubx.FieldSpec{WireName: "allowed_instance_types"},
+	"BareMetal":            ubx.FieldSpec{WireName: "bare_metal"},
+	"BaselineEbsBandwidthMbps": ubx.FieldSpec{
+		WireName: "baseline_ebs_bandwidth_mbps",
+		Kind:     "object",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
+	},
+	"BaselinePerformanceFactors": ubx.FieldSpec{
+		WireName: "baseline_performance_factors",
+		Kind:     "object",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_BaselinePerformanceFactorsFields,
+	},
+	"BurstablePerformance":                           ubx.FieldSpec{WireName: "burstable_performance"},
+	"CpuManufacturers":                               ubx.FieldSpec{WireName: "cpu_manufacturers"},
+	"ExcludedInstanceTypes":                          ubx.FieldSpec{WireName: "excluded_instance_types"},
+	"InstanceGenerations":                            ubx.FieldSpec{WireName: "instance_generations"},
+	"LocalStorage":                                   ubx.FieldSpec{WireName: "local_storage"},
+	"LocalStorageTypes":                              ubx.FieldSpec{WireName: "local_storage_types"},
+	"MaxSpotPriceAsPercentageOfOptimalOnDemandPrice": ubx.FieldSpec{WireName: "max_spot_price_as_percentage_of_optimal_on_demand_price"},
+	"MemoryGiBperVcpu": ubx.FieldSpec{
+		WireName: "memory_gi_bper_vcpu",
+		Kind:     "object",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
+	},
+	"MemoryMiB": ubx.FieldSpec{
+		WireName: "memory_mi_b",
+		Kind:     "object",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
+	},
+	"NetworkBandwidthGbps": ubx.FieldSpec{
+		WireName: "network_bandwidth_gbps",
+		Kind:     "object",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
+	},
+	"NetworkInterfaceCount": ubx.FieldSpec{
+		WireName: "network_interface_count",
+		Kind:     "object",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
+	},
+	"OnDemandMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "on_demand_max_price_percentage_over_lowest_price"},
+	"RequireEncryptionInTransit":                ubx.FieldSpec{WireName: "require_encryption_in_transit"},
+	"RequireHibernateSupport":                   ubx.FieldSpec{WireName: "require_hibernate_support"},
+	"SpotMaxPricePercentageOverLowestPrice":     ubx.FieldSpec{WireName: "spot_max_price_percentage_over_lowest_price"},
+	"TotalLocalStorageGb": ubx.FieldSpec{
+		WireName: "total_local_storage_gb",
+		Kind:     "object",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
+	},
+	"VcpuCount": ubx.FieldSpec{
+		WireName: "vcpu_count",
+		Kind:     "object",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirements_AcceleratorCountFields,
+	},
+}
 
 var Fleet_LaunchTemplateConfigs_Overrides_MetadataOptionsFields = ubx.FieldMap{
-		"HttpEndpoint": ubx.FieldSpec{WireName: "http_endpoint"},
-		"HttpPutResponseHopLimit": ubx.FieldSpec{WireName: "http_put_response_hop_limit"},
-		"HttpTokens": ubx.FieldSpec{WireName: "http_tokens"},
-	}
+	"HttpEndpoint":            ubx.FieldSpec{WireName: "http_endpoint"},
+	"HttpPutResponseHopLimit": ubx.FieldSpec{WireName: "http_put_response_hop_limit"},
+	"HttpTokens":              ubx.FieldSpec{WireName: "http_tokens"},
+}
 
 var Fleet_LaunchTemplateConfigs_Overrides_NetworkInterfaces_Ipv6AddressesFields = ubx.FieldMap{
-		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
-	}
+	"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
+}
 
 var Fleet_LaunchTemplateConfigs_Overrides_NetworkInterfaces_PrivateIpAddressesFields = ubx.FieldMap{
-		"Primary": ubx.FieldSpec{WireName: "primary"},
-		"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
-	}
+	"Primary":          ubx.FieldSpec{WireName: "primary"},
+	"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
+}
 
 var Fleet_LaunchTemplateConfigs_Overrides_NetworkInterfacesFields = ubx.FieldMap{
-		"AssociatePublicIpAddress": ubx.FieldSpec{WireName: "associate_public_ip_address"},
-		"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DeviceIndex": ubx.FieldSpec{WireName: "device_index"},
-		"Groups": ubx.FieldSpec{WireName: "groups"},
-		"InterfaceType": ubx.FieldSpec{WireName: "interface_type"},
-		"Ipv6AddressCount": ubx.FieldSpec{WireName: "ipv6_address_count"},
-		"Ipv6Addresses": ubx.FieldSpec{
-			WireName: "ipv6_addresses",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_NetworkInterfaces_Ipv6AddressesFields,
-		},
-		"NetworkCardIndex": ubx.FieldSpec{WireName: "network_card_index"},
-		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
-		"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
-		"PrivateIpAddresses": ubx.FieldSpec{
-			WireName: "private_ip_addresses",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_NetworkInterfaces_PrivateIpAddressesFields,
-		},
-		"SecondaryPrivateIpAddressCount": ubx.FieldSpec{WireName: "secondary_private_ip_address_count"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-	}
+	"AssociatePublicIpAddress": ubx.FieldSpec{WireName: "associate_public_ip_address"},
+	"DeleteOnTermination":      ubx.FieldSpec{WireName: "delete_on_termination"},
+	"Description":              ubx.FieldSpec{WireName: "description"},
+	"DeviceIndex":              ubx.FieldSpec{WireName: "device_index"},
+	"Groups":                   ubx.FieldSpec{WireName: "groups"},
+	"InterfaceType":            ubx.FieldSpec{WireName: "interface_type"},
+	"Ipv6AddressCount":         ubx.FieldSpec{WireName: "ipv6_address_count"},
+	"Ipv6Addresses": ubx.FieldSpec{
+		WireName: "ipv6_addresses",
+		Kind:     "list",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_NetworkInterfaces_Ipv6AddressesFields,
+	},
+	"NetworkCardIndex":   ubx.FieldSpec{WireName: "network_card_index"},
+	"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
+	"PrivateIpAddress":   ubx.FieldSpec{WireName: "private_ip_address"},
+	"PrivateIpAddresses": ubx.FieldSpec{
+		WireName: "private_ip_addresses",
+		Kind:     "list",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_NetworkInterfaces_PrivateIpAddressesFields,
+	},
+	"SecondaryPrivateIpAddressCount": ubx.FieldSpec{WireName: "secondary_private_ip_address_count"},
+	"SubnetId":                       ubx.FieldSpec{WireName: "subnet_id"},
+}
 
 var Fleet_LaunchTemplateConfigs_Overrides_PlacementFields = ubx.FieldMap{
-		"Affinity": ubx.FieldSpec{WireName: "affinity"},
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"HostId": ubx.FieldSpec{WireName: "host_id"},
-		"HostResourceGroupArn": ubx.FieldSpec{WireName: "host_resource_group_arn"},
-		"PartitionNumber": ubx.FieldSpec{WireName: "partition_number"},
-		"SpreadDomain": ubx.FieldSpec{WireName: "spread_domain"},
-		"Tenancy": ubx.FieldSpec{WireName: "tenancy"},
-	}
+	"Affinity":             ubx.FieldSpec{WireName: "affinity"},
+	"AvailabilityZone":     ubx.FieldSpec{WireName: "availability_zone"},
+	"GroupName":            ubx.FieldSpec{WireName: "group_name"},
+	"HostId":               ubx.FieldSpec{WireName: "host_id"},
+	"HostResourceGroupArn": ubx.FieldSpec{WireName: "host_resource_group_arn"},
+	"PartitionNumber":      ubx.FieldSpec{WireName: "partition_number"},
+	"SpreadDomain":         ubx.FieldSpec{WireName: "spread_domain"},
+	"Tenancy":              ubx.FieldSpec{WireName: "tenancy"},
+}
 
 var Fleet_LaunchTemplateConfigs_OverridesFields = ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"AvailabilityZoneId": ubx.FieldSpec{WireName: "availability_zone_id"},
-		"BlockDeviceMappings": ubx.FieldSpec{
-			WireName: "block_device_mappings",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_BlockDeviceMappingsFields,
-		},
-		"IamInstanceProfile": ubx.FieldSpec{
-			WireName: "iam_instance_profile",
-			Kind: "object",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_IamInstanceProfileFields,
-		},
-		"InstanceRequirements": ubx.FieldSpec{
-			WireName: "instance_requirements",
-			Kind: "object",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirementsFields,
-		},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"KeyName": ubx.FieldSpec{WireName: "key_name"},
-		"MaxPrice": ubx.FieldSpec{WireName: "max_price"},
-		"MetadataOptions": ubx.FieldSpec{
-			WireName: "metadata_options",
-			Kind: "object",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_MetadataOptionsFields,
-		},
-		"NetworkInterfaces": ubx.FieldSpec{
-			WireName: "network_interfaces",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_NetworkInterfacesFields,
-		},
-		"Placement": ubx.FieldSpec{
-			WireName: "placement",
-			Kind: "object",
-			Fields: Fleet_LaunchTemplateConfigs_Overrides_PlacementFields,
-		},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-		"WeightedCapacity": ubx.FieldSpec{WireName: "weighted_capacity"},
-	}
+	"AvailabilityZone":   ubx.FieldSpec{WireName: "availability_zone"},
+	"AvailabilityZoneId": ubx.FieldSpec{WireName: "availability_zone_id"},
+	"BlockDeviceMappings": ubx.FieldSpec{
+		WireName: "block_device_mappings",
+		Kind:     "list",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_BlockDeviceMappingsFields,
+	},
+	"IamInstanceProfile": ubx.FieldSpec{
+		WireName: "iam_instance_profile",
+		Kind:     "object",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_IamInstanceProfileFields,
+	},
+	"InstanceRequirements": ubx.FieldSpec{
+		WireName: "instance_requirements",
+		Kind:     "object",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_InstanceRequirementsFields,
+	},
+	"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
+	"KeyName":      ubx.FieldSpec{WireName: "key_name"},
+	"MaxPrice":     ubx.FieldSpec{WireName: "max_price"},
+	"MetadataOptions": ubx.FieldSpec{
+		WireName: "metadata_options",
+		Kind:     "object",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_MetadataOptionsFields,
+	},
+	"NetworkInterfaces": ubx.FieldSpec{
+		WireName: "network_interfaces",
+		Kind:     "list",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_NetworkInterfacesFields,
+	},
+	"Placement": ubx.FieldSpec{
+		WireName: "placement",
+		Kind:     "object",
+		Fields:   Fleet_LaunchTemplateConfigs_Overrides_PlacementFields,
+	},
+	"Priority":         ubx.FieldSpec{WireName: "priority"},
+	"SubnetId":         ubx.FieldSpec{WireName: "subnet_id"},
+	"WeightedCapacity": ubx.FieldSpec{WireName: "weighted_capacity"},
+}
 
 var Fleet_LaunchTemplateConfigsFields = ubx.FieldMap{
-		"LaunchTemplateSpecification": ubx.FieldSpec{
-			WireName: "launch_template_specification",
-			Kind: "object",
-			Fields: Fleet_LaunchTemplateConfigs_LaunchTemplateSpecificationFields,
-		},
-		"Overrides": ubx.FieldSpec{
-			WireName: "overrides",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfigs_OverridesFields,
-		},
-	}
+	"LaunchTemplateSpecification": ubx.FieldSpec{
+		WireName: "launch_template_specification",
+		Kind:     "object",
+		Fields:   Fleet_LaunchTemplateConfigs_LaunchTemplateSpecificationFields,
+	},
+	"Overrides": ubx.FieldSpec{
+		WireName: "overrides",
+		Kind:     "list",
+		Fields:   Fleet_LaunchTemplateConfigs_OverridesFields,
+	},
+}
 
 var Fleet_OnDemandOptions_CapacityReservationOptionsFields = ubx.FieldMap{
-		"UsageStrategy": ubx.FieldSpec{WireName: "usage_strategy"},
-	}
+	"UsageStrategy": ubx.FieldSpec{WireName: "usage_strategy"},
+}
 
 var Fleet_OnDemandOptionsFields = ubx.FieldMap{
-		"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
-		"CapacityReservationOptions": ubx.FieldSpec{
-			WireName: "capacity_reservation_options",
-			Kind: "object",
-			Fields: Fleet_OnDemandOptions_CapacityReservationOptionsFields,
-		},
-		"MaxTotalPrice": ubx.FieldSpec{WireName: "max_total_price"},
-		"MinTargetCapacity": ubx.FieldSpec{WireName: "min_target_capacity"},
-		"SingleAvailabilityZone": ubx.FieldSpec{WireName: "single_availability_zone"},
-		"SingleInstanceType": ubx.FieldSpec{WireName: "single_instance_type"},
-	}
+	"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
+	"CapacityReservationOptions": ubx.FieldSpec{
+		WireName: "capacity_reservation_options",
+		Kind:     "object",
+		Fields:   Fleet_OnDemandOptions_CapacityReservationOptionsFields,
+	},
+	"MaxTotalPrice":          ubx.FieldSpec{WireName: "max_total_price"},
+	"MinTargetCapacity":      ubx.FieldSpec{WireName: "min_target_capacity"},
+	"SingleAvailabilityZone": ubx.FieldSpec{WireName: "single_availability_zone"},
+	"SingleInstanceType":     ubx.FieldSpec{WireName: "single_instance_type"},
+}
 
 var Fleet_ReservedCapacityOptions_CapacityReservationTargetFields = ubx.FieldMap{
-		"CapacityReservationIds": ubx.FieldSpec{WireName: "capacity_reservation_ids"},
-		"CapacityReservationResourceGroupArns": ubx.FieldSpec{WireName: "capacity_reservation_resource_group_arns"},
-	}
+	"CapacityReservationIds":               ubx.FieldSpec{WireName: "capacity_reservation_ids"},
+	"CapacityReservationResourceGroupArns": ubx.FieldSpec{WireName: "capacity_reservation_resource_group_arns"},
+}
 
 var Fleet_ReservedCapacityOptions_ReservedCapacityFallbackOptionsFields = ubx.FieldMap{
-		"MarketTypes": ubx.FieldSpec{WireName: "market_types"},
-	}
+	"MarketTypes": ubx.FieldSpec{WireName: "market_types"},
+}
 
 var Fleet_ReservedCapacityOptionsFields = ubx.FieldMap{
-		"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
-		"CapacityReservationTarget": ubx.FieldSpec{
-			WireName: "capacity_reservation_target",
-			Kind: "object",
-			Fields: Fleet_ReservedCapacityOptions_CapacityReservationTargetFields,
-		},
-		"ReservationTypes": ubx.FieldSpec{WireName: "reservation_types"},
-		"ReservedCapacityFallbackOptions": ubx.FieldSpec{
-			WireName: "reserved_capacity_fallback_options",
-			Kind: "object",
-			Fields: Fleet_ReservedCapacityOptions_ReservedCapacityFallbackOptionsFields,
-		},
-	}
+	"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
+	"CapacityReservationTarget": ubx.FieldSpec{
+		WireName: "capacity_reservation_target",
+		Kind:     "object",
+		Fields:   Fleet_ReservedCapacityOptions_CapacityReservationTargetFields,
+	},
+	"ReservationTypes": ubx.FieldSpec{WireName: "reservation_types"},
+	"ReservedCapacityFallbackOptions": ubx.FieldSpec{
+		WireName: "reserved_capacity_fallback_options",
+		Kind:     "object",
+		Fields:   Fleet_ReservedCapacityOptions_ReservedCapacityFallbackOptionsFields,
+	},
+}
 
 var Fleet_SpotOptions_MaintenanceStrategies_CapacityRebalanceFields = ubx.FieldMap{
-		"ReplacementStrategy": ubx.FieldSpec{WireName: "replacement_strategy"},
-		"TerminationDelay": ubx.FieldSpec{WireName: "termination_delay"},
-	}
+	"ReplacementStrategy": ubx.FieldSpec{WireName: "replacement_strategy"},
+	"TerminationDelay":    ubx.FieldSpec{WireName: "termination_delay"},
+}
 
 var Fleet_SpotOptions_MaintenanceStrategiesFields = ubx.FieldMap{
-		"CapacityRebalance": ubx.FieldSpec{
-			WireName: "capacity_rebalance",
-			Kind: "object",
-			Fields: Fleet_SpotOptions_MaintenanceStrategies_CapacityRebalanceFields,
-		},
-	}
+	"CapacityRebalance": ubx.FieldSpec{
+		WireName: "capacity_rebalance",
+		Kind:     "object",
+		Fields:   Fleet_SpotOptions_MaintenanceStrategies_CapacityRebalanceFields,
+	},
+}
 
 var Fleet_SpotOptionsFields = ubx.FieldMap{
-		"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
-		"InstanceInterruptionBehavior": ubx.FieldSpec{WireName: "instance_interruption_behavior"},
-		"InstancePoolsToUseCount": ubx.FieldSpec{WireName: "instance_pools_to_use_count"},
-		"MaintenanceStrategies": ubx.FieldSpec{
-			WireName: "maintenance_strategies",
-			Kind: "object",
-			Fields: Fleet_SpotOptions_MaintenanceStrategiesFields,
-		},
-		"MaxTotalPrice": ubx.FieldSpec{WireName: "max_total_price"},
-		"MinTargetCapacity": ubx.FieldSpec{WireName: "min_target_capacity"},
-		"SingleAvailabilityZone": ubx.FieldSpec{WireName: "single_availability_zone"},
-		"SingleInstanceType": ubx.FieldSpec{WireName: "single_instance_type"},
-	}
+	"AllocationStrategy":           ubx.FieldSpec{WireName: "allocation_strategy"},
+	"InstanceInterruptionBehavior": ubx.FieldSpec{WireName: "instance_interruption_behavior"},
+	"InstancePoolsToUseCount":      ubx.FieldSpec{WireName: "instance_pools_to_use_count"},
+	"MaintenanceStrategies": ubx.FieldSpec{
+		WireName: "maintenance_strategies",
+		Kind:     "object",
+		Fields:   Fleet_SpotOptions_MaintenanceStrategiesFields,
+	},
+	"MaxTotalPrice":          ubx.FieldSpec{WireName: "max_total_price"},
+	"MinTargetCapacity":      ubx.FieldSpec{WireName: "min_target_capacity"},
+	"SingleAvailabilityZone": ubx.FieldSpec{WireName: "single_availability_zone"},
+	"SingleInstanceType":     ubx.FieldSpec{WireName: "single_instance_type"},
+}
 
 var Fleet_TagSpecifications_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Fleet_TagSpecificationsFields = ubx.FieldMap{
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: Fleet_TagSpecifications_TagsFields,
-		},
-	}
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   Fleet_TagSpecifications_TagsFields,
+	},
+}
 
 var Fleet_TargetCapacitySpecificationFields = ubx.FieldMap{
-		"DefaultTargetCapacityType": ubx.FieldSpec{WireName: "default_target_capacity_type"},
-		"OnDemandTargetCapacity": ubx.FieldSpec{WireName: "on_demand_target_capacity"},
-		"SpotTargetCapacity": ubx.FieldSpec{WireName: "spot_target_capacity"},
-		"TargetCapacityUnitType": ubx.FieldSpec{WireName: "target_capacity_unit_type"},
-		"TotalTargetCapacity": ubx.FieldSpec{WireName: "total_target_capacity"},
-	}
+	"DefaultTargetCapacityType": ubx.FieldSpec{WireName: "default_target_capacity_type"},
+	"OnDemandTargetCapacity":    ubx.FieldSpec{WireName: "on_demand_target_capacity"},
+	"SpotTargetCapacity":        ubx.FieldSpec{WireName: "spot_target_capacity"},
+	"TargetCapacityUnitType":    ubx.FieldSpec{WireName: "target_capacity_unit_type"},
+	"TotalTargetCapacity":       ubx.FieldSpec{WireName: "total_target_capacity"},
+}
 
 type FleetConfig struct {
 	// The `context` field specifies a string that AWS reserves for future use in the EC2 Fleet, and it does not currently alter fleet behavior. (AI-inferred)
@@ -661,7 +661,7 @@ type FleetConfig struct {
 	OnDemandOptions any
 	// Indicates whether EC2 Fleet automatically replaces instances that become unhealthy, launching new instances to maintain the fleet's target capacity. (AI-inferred)
 	ReplaceUnhealthyInstances any
-	ReservedCapacityOptions any
+	ReservedCapacityOptions   any
 	// Configures the Spot Instance purchasing behavior for the fleet, including allocation strategy, instance interruption behavior, and maximum price per hour. (AI-inferred)
 	SpotOptions any
 	// The list of tag specifications that define the tags to apply to the EC2 Fleet resource itself, typically using the resource type 'fleet'. (AI-inferred)
@@ -691,7 +691,7 @@ type FleetAttrs struct {
 	OnDemandOptions any
 	// Indicates whether EC2 Fleet automatically replaces instances that become unhealthy, launching new instances to maintain the fleet's target capacity. (AI-inferred)
 	ReplaceUnhealthyInstances any
-	ReservedCapacityOptions any
+	ReservedCapacityOptions   any
 	// Configures the Spot Instance purchasing behavior for the fleet, including allocation strategy, instance interruption behavior, and maximum price per hour. (AI-inferred)
 	SpotOptions any
 	// The list of tag specifications that define the tags to apply to the EC2 Fleet resource itself, typically using the resource type 'fleet'. (AI-inferred)
@@ -711,42 +711,42 @@ type FleetAttrs struct {
 var Fleet = ubx.ResourceBinding{
 	WireType: "aws_ec2_fleet",
 	Fields: ubx.FieldMap{
-		"Context": ubx.FieldSpec{WireName: "context"},
+		"Context":                         ubx.FieldSpec{WireName: "context"},
 		"ExcessCapacityTerminationPolicy": ubx.FieldSpec{WireName: "excess_capacity_termination_policy"},
 		"LaunchTemplateConfigs": ubx.FieldSpec{
 			WireName: "launch_template_configs",
-			Kind: "list",
-			Fields: Fleet_LaunchTemplateConfigsFields,
+			Kind:     "list",
+			Fields:   Fleet_LaunchTemplateConfigsFields,
 		},
 		"OnDemandOptions": ubx.FieldSpec{
 			WireName: "on_demand_options",
-			Kind: "object",
-			Fields: Fleet_OnDemandOptionsFields,
+			Kind:     "object",
+			Fields:   Fleet_OnDemandOptionsFields,
 		},
 		"ReplaceUnhealthyInstances": ubx.FieldSpec{WireName: "replace_unhealthy_instances"},
 		"ReservedCapacityOptions": ubx.FieldSpec{
 			WireName: "reserved_capacity_options",
-			Kind: "object",
-			Fields: Fleet_ReservedCapacityOptionsFields,
+			Kind:     "object",
+			Fields:   Fleet_ReservedCapacityOptionsFields,
 		},
 		"SpotOptions": ubx.FieldSpec{
 			WireName: "spot_options",
-			Kind: "object",
-			Fields: Fleet_SpotOptionsFields,
+			Kind:     "object",
+			Fields:   Fleet_SpotOptionsFields,
 		},
 		"TagSpecifications": ubx.FieldSpec{
 			WireName: "tag_specifications",
-			Kind: "list",
-			Fields: Fleet_TagSpecificationsFields,
+			Kind:     "list",
+			Fields:   Fleet_TagSpecificationsFields,
 		},
 		"TargetCapacitySpecification": ubx.FieldSpec{
 			WireName: "target_capacity_specification",
-			Kind: "object",
-			Fields: Fleet_TargetCapacitySpecificationFields,
+			Kind:     "object",
+			Fields:   Fleet_TargetCapacitySpecificationFields,
 		},
 		"TerminateInstancesWithExpiration": ubx.FieldSpec{WireName: "terminate_instances_with_expiration"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"ValidFrom": ubx.FieldSpec{WireName: "valid_from"},
-		"ValidUntil": ubx.FieldSpec{WireName: "valid_until"},
+		"Type":                             ubx.FieldSpec{WireName: "type"},
+		"ValidFrom":                        ubx.FieldSpec{WireName: "valid_from"},
+		"ValidUntil":                       ubx.FieldSpec{WireName: "valid_until"},
 	},
 }

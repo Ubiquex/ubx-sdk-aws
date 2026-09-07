@@ -9,7 +9,7 @@ type ApplicationsConfig struct {
 
 type ApplicationsAttrs struct {
 	Applications any
-	NextToken any
+	NextToken    any
 }
 
 var Applications = ubx.DataSourceBinding{

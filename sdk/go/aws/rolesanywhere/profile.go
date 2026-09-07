@@ -17,27 +17,27 @@ type Profile_AttributeMappings struct {
 
 type Profile_Tags struct {
 	// The key of a tag (metadata) assigned to the AWS Roles Anywhere profile, used to organize and identify the profile. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Profile_AttributeMappings_MappingRulesFields = ubx.FieldMap{
-		"Specifier": ubx.FieldSpec{WireName: "specifier"},
-	}
+	"Specifier": ubx.FieldSpec{WireName: "specifier"},
+}
 
 var Profile_AttributeMappingsFields = ubx.FieldMap{
-		"CertificateField": ubx.FieldSpec{WireName: "certificate_field"},
-		"MappingRules": ubx.FieldSpec{
-			WireName: "mapping_rules",
-			Kind: "list",
-			Fields: Profile_AttributeMappings_MappingRulesFields,
-		},
-	}
+	"CertificateField": ubx.FieldSpec{WireName: "certificate_field"},
+	"MappingRules": ubx.FieldSpec{
+		WireName: "mapping_rules",
+		Kind:     "list",
+		Fields:   Profile_AttributeMappings_MappingRulesFields,
+	},
+}
 
 var Profile_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ProfileConfig struct {
 	// Specifies whether the profile allows the caller to pass a session name in the AssumeRole request's role session name field. (AI-inferred)
@@ -95,20 +95,20 @@ var Profile = ubx.ResourceBinding{
 		"AcceptRoleSessionName": ubx.FieldSpec{WireName: "accept_role_session_name"},
 		"AttributeMappings": ubx.FieldSpec{
 			WireName: "attribute_mappings",
-			Kind: "list",
-			Fields: Profile_AttributeMappingsFields,
+			Kind:     "list",
+			Fields:   Profile_AttributeMappingsFields,
 		},
-		"DurationSeconds": ubx.FieldSpec{WireName: "duration_seconds"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"ManagedPolicyArns": ubx.FieldSpec{WireName: "managed_policy_arns"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DurationSeconds":           ubx.FieldSpec{WireName: "duration_seconds"},
+		"Enabled":                   ubx.FieldSpec{WireName: "enabled"},
+		"ManagedPolicyArns":         ubx.FieldSpec{WireName: "managed_policy_arns"},
+		"Name":                      ubx.FieldSpec{WireName: "name"},
 		"RequireInstanceProperties": ubx.FieldSpec{WireName: "require_instance_properties"},
-		"RoleArns": ubx.FieldSpec{WireName: "role_arns"},
-		"SessionPolicy": ubx.FieldSpec{WireName: "session_policy"},
+		"RoleArns":                  ubx.FieldSpec{WireName: "role_arns"},
+		"SessionPolicy":             ubx.FieldSpec{WireName: "session_policy"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Profile_TagsFields,
+			Kind:     "list",
+			Fields:   Profile_TagsFields,
 		},
 	},
 }

@@ -4,37 +4,37 @@ package databrew
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Rulesets_Rulesets struct {
-	AccountId any
-	CreateDate any
-	CreatedBy any
-	Description any
-	LastModifiedBy any
+	AccountId        any
+	CreateDate       any
+	CreatedBy        any
+	Description      any
+	LastModifiedBy   any
 	LastModifiedDate any
-	Name any
-	ResourceArn any
-	RuleCount any
-	Tags any
-	TargetArn any
+	Name             any
+	ResourceArn      any
+	RuleCount        any
+	Tags             any
+	TargetArn        any
 }
 
 type RulesetsConfig struct {
 	MaxResults any
-	NextToken any
-	TargetArn any
+	NextToken  any
+	TargetArn  any
 }
 
 type RulesetsAttrs struct {
 	MaxResults any
-	NextToken any
-	Rulesets any
-	TargetArn any
+	NextToken  any
+	Rulesets   any
+	TargetArn  any
 }
 
 var Rulesets = ubx.DataSourceBinding{
 	WireType: "aws_databrew_rulesets",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"TargetArn":  ubx.FieldSpec{WireName: "target_arn"},
 	},
 }

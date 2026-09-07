@@ -4,51 +4,51 @@ package application_signals
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationSignalsServiceStates_AttributeFilters struct {
-	AttributeFilterName any
+	AttributeFilterName   any
 	AttributeFilterValues any
 }
 
 type ApplicationSignalsServiceStates_ServiceStates_LatestChangeEvents struct {
-	AccountId any
+	AccountId       any
 	ChangeEventType any
-	Entity any
-	EventId any
-	EventName any
-	Region any
-	Timestamp any
-	UserName any
+	Entity          any
+	EventId         any
+	EventName       any
+	Region          any
+	Timestamp       any
+	UserName        any
 }
 
 type ApplicationSignalsServiceStates_ServiceStates struct {
-	AttributeFilters any
+	AttributeFilters   any
 	LatestChangeEvents any
-	Service any
+	Service            any
 }
 
 var ApplicationSignalsServiceStates_AttributeFiltersFields = ubx.FieldMap{
-		"AttributeFilterName": ubx.FieldSpec{WireName: "attribute_filter_name"},
-		"AttributeFilterValues": ubx.FieldSpec{WireName: "attribute_filter_values"},
-	}
+	"AttributeFilterName":   ubx.FieldSpec{WireName: "attribute_filter_name"},
+	"AttributeFilterValues": ubx.FieldSpec{WireName: "attribute_filter_values"},
+}
 
 type ApplicationSignalsServiceStatesConfig struct {
-	AttributeFilters any
-	AwsAccountId any
-	EndTime any
+	AttributeFilters      any
+	AwsAccountId          any
+	EndTime               any
 	IncludeLinkedAccounts any
-	MaxResults any
-	NextToken any
-	StartTime any
+	MaxResults            any
+	NextToken             any
+	StartTime             any
 }
 
 type ApplicationSignalsServiceStatesAttrs struct {
-	AttributeFilters any
-	AwsAccountId any
-	EndTime any
+	AttributeFilters      any
+	AwsAccountId          any
+	EndTime               any
 	IncludeLinkedAccounts any
-	MaxResults any
-	NextToken any
-	ServiceStates any
-	StartTime any
+	MaxResults            any
+	NextToken             any
+	ServiceStates         any
+	StartTime             any
 }
 
 var ApplicationSignalsServiceStates = ubx.DataSourceBinding{
@@ -56,14 +56,14 @@ var ApplicationSignalsServiceStates = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AttributeFilters": ubx.FieldSpec{
 			WireName: "attribute_filters",
-			Kind: "list",
-			Fields: ApplicationSignalsServiceStates_AttributeFiltersFields,
+			Kind:     "list",
+			Fields:   ApplicationSignalsServiceStates_AttributeFiltersFields,
 		},
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"AwsAccountId":          ubx.FieldSpec{WireName: "aws_account_id"},
+		"EndTime":               ubx.FieldSpec{WireName: "end_time"},
 		"IncludeLinkedAccounts": ubx.FieldSpec{WireName: "include_linked_accounts"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
+		"StartTime":             ubx.FieldSpec{WireName: "start_time"},
 	},
 }

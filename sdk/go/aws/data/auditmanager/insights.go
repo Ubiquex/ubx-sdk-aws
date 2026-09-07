@@ -4,13 +4,13 @@ package auditmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Insights_Insights struct {
-	ActiveAssessmentsCount any
+	ActiveAssessmentsCount                        any
 	AssessmentControlsCountByNoncompliantEvidence any
-	CompliantEvidenceCount any
-	InconclusiveEvidenceCount any
-	LastUpdated any
-	NoncompliantEvidenceCount any
-	TotalAssessmentControlsCount any
+	CompliantEvidenceCount                        any
+	InconclusiveEvidenceCount                     any
+	LastUpdated                                   any
+	NoncompliantEvidenceCount                     any
+	TotalAssessmentControlsCount                  any
 }
 
 type InsightsConfig struct {
@@ -23,6 +23,5 @@ type InsightsAttrs struct {
 
 var Insights = ubx.DataSourceBinding{
 	WireType: "aws_auditmanager_insights",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

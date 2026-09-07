@@ -12,7 +12,7 @@ type Action_ResolveTo struct {
 }
 
 type Action_TargetResource struct {
-	AssetId any
+	AssetId            any
 	ComputationModelId any
 }
 
@@ -22,7 +22,7 @@ type ActionConfig struct {
 
 type ActionAttrs struct {
 	ActionDefinitionId any
-	ActionId any
+	ActionId           any
 	// <p>The JSON payload of the action.</p>
 	ActionPayload any
 	ExecutionTime any

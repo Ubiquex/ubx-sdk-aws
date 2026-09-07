@@ -9,7 +9,7 @@ type BlockPublicAccessConfiguration_BlockPublicAccessConfiguration_Configuration
 type BlockPublicAccessConfiguration_BlockPublicAccessConfiguration_Configurations struct {
 	Classification any
 	Configurations any
-	Properties any
+	Properties     any
 }
 
 type BlockPublicAccessConfiguration_BlockPublicAccessConfiguration_PermittedPublicSecurityGroupRuleRanges struct {
@@ -18,15 +18,15 @@ type BlockPublicAccessConfiguration_BlockPublicAccessConfiguration_PermittedPubl
 }
 
 type BlockPublicAccessConfiguration_BlockPublicAccessConfiguration struct {
-	BlockPublicSecurityGroupRules any
-	Classification any
-	Configurations any
+	BlockPublicSecurityGroupRules          any
+	Classification                         any
+	Configurations                         any
 	PermittedPublicSecurityGroupRuleRanges any
-	Properties any
+	Properties                             any
 }
 
 type BlockPublicAccessConfiguration_BlockPublicAccessConfigurationMetadata struct {
-	CreatedByArn any
+	CreatedByArn     any
 	CreationDateTime any
 }
 
@@ -42,6 +42,5 @@ type BlockPublicAccessConfigurationAttrs struct {
 
 var BlockPublicAccessConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_elasticmapreduce_block_public_access_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

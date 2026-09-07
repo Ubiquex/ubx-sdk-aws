@@ -4,47 +4,47 @@ package api_detective
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiDetectiveMembers_MemberDetails_VolumeUsageByDatasourcePackage struct {
-	VolumeUsageInBytes any
+	VolumeUsageInBytes    any
 	VolumeUsageUpdateTime any
 }
 
 type ApiDetectiveMembers_MemberDetails struct {
-	AccountId any
-	AdministratorId any
-	DatasourcePackageIngestStates any
-	DisabledReason any
-	EmailAddress any
-	GraphArn any
-	InvitationType any
-	InvitedTime any
-	MasterId any
-	PercentOfGraphUtilization any
+	AccountId                            any
+	AdministratorId                      any
+	DatasourcePackageIngestStates        any
+	DisabledReason                       any
+	EmailAddress                         any
+	GraphArn                             any
+	InvitationType                       any
+	InvitedTime                          any
+	MasterId                             any
+	PercentOfGraphUtilization            any
 	PercentOfGraphUtilizationUpdatedTime any
-	Status any
-	UpdatedTime any
-	VolumeUsageByDatasourcePackage any
-	VolumeUsageInBytes any
-	VolumeUsageUpdatedTime any
+	Status                               any
+	UpdatedTime                          any
+	VolumeUsageByDatasourcePackage       any
+	VolumeUsageInBytes                   any
+	VolumeUsageUpdatedTime               any
 }
 
 type ApiDetectiveMembersConfig struct {
-	GraphArn any
+	GraphArn   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApiDetectiveMembersAttrs struct {
-	GraphArn any
-	MaxResults any
+	GraphArn      any
+	MaxResults    any
 	MemberDetails any
-	NextToken any
+	NextToken     any
 }
 
 var ApiDetectiveMembers = ubx.DataSourceBinding{
 	WireType: "aws_api_detective_members",
 	Fields: ubx.FieldMap{
-		"GraphArn": ubx.FieldSpec{WireName: "graph_arn"},
+		"GraphArn":   ubx.FieldSpec{WireName: "graph_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

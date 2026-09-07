@@ -4,33 +4,33 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MacHosts_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type MacHosts_MacHosts struct {
-	HostId any
+	HostId                       any
 	MacOslatestSupportedVersions any
 }
 
 var MacHosts_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type MacHostsConfig struct {
-	Filters any
-	HostIds any
+	Filters    any
+	HostIds    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type MacHostsAttrs struct {
-	Filters any
-	HostIds any
-	MacHosts any
+	Filters    any
+	HostIds    any
+	MacHosts   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var MacHosts = ubx.DataSourceBinding{
@@ -38,11 +38,11 @@ var MacHosts = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: MacHosts_FiltersFields,
+			Kind:     "list",
+			Fields:   MacHosts_FiltersFields,
 		},
-		"HostIds": ubx.FieldSpec{WireName: "host_ids"},
+		"HostIds":    ubx.FieldSpec{WireName: "host_ids"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

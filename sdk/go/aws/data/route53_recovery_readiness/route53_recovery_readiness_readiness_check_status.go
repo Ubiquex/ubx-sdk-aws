@@ -8,33 +8,33 @@ type Route53RecoveryReadinessReadinessCheckStatus_Messages struct {
 }
 
 type Route53RecoveryReadinessReadinessCheckStatus_Resources struct {
-	ComponentId any
+	ComponentId          any
 	LastCheckedTimestamp any
-	Readiness any
-	ResourceArn any
+	Readiness            any
+	ResourceArn          any
 }
 
 type Route53RecoveryReadinessReadinessCheckStatusConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	ReadinessCheckName any
 }
 
 type Route53RecoveryReadinessReadinessCheckStatusAttrs struct {
 	MaxResults any
-	Messages any
-	NextToken any
+	Messages   any
+	NextToken  any
 	// <p>The readiness status.</p>
-	Readiness any
+	Readiness          any
 	ReadinessCheckName any
-	Resources any
+	Resources          any
 }
 
 var Route53RecoveryReadinessReadinessCheckStatus = ubx.DataSourceBinding{
 	WireType: "aws_route53_recovery_readiness_readiness_check_status",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 		"ReadinessCheckName": ubx.FieldSpec{WireName: "readiness_check_name"},
 	},
 }

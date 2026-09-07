@@ -9,19 +9,19 @@ type AggregatorsV2_AggregatorsV2 struct {
 
 type AggregatorsV2Config struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AggregatorsV2Attrs struct {
 	AggregatorsV2 any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 var AggregatorsV2 = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_aggregators_v2",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

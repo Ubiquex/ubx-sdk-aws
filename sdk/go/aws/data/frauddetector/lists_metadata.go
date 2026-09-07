@@ -4,32 +4,32 @@ package frauddetector
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ListsMetadata_Lists struct {
-	Arn any
-	CreatedTime any
-	Description any
-	Name any
-	UpdatedTime any
+	Arn          any
+	CreatedTime  any
+	Description  any
+	Name         any
+	UpdatedTime  any
 	VariableType any
 }
 
 type ListsMetadataConfig struct {
 	MaxResults any
-	Name any
-	NextToken any
+	Name       any
+	NextToken  any
 }
 
 type ListsMetadataAttrs struct {
-	Lists any
+	Lists      any
 	MaxResults any
-	Name any
-	NextToken any
+	Name       any
+	NextToken  any
 }
 
 var ListsMetadata = ubx.DataSourceBinding{
 	WireType: "aws_frauddetector_lists_metadata",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

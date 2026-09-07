@@ -4,25 +4,25 @@ package s3_control
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type S3ControlTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type S3ControlTagsForResourceConfig struct {
-	AccountId any
+	AccountId   any
 	ResourceArn any
 }
 
 type S3ControlTagsForResourceAttrs struct {
-	AccountId any
+	AccountId   any
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var S3ControlTagsForResource = ubx.DataSourceBinding{
 	WireType: "aws_s3_control_tags_for_resource",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

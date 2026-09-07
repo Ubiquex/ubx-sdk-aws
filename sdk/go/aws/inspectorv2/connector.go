@@ -55,9 +55,9 @@ type Connector_Tags struct {
 }
 
 var Connector_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ConnectorConfig struct {
 	// Optional description of the connector.
@@ -88,7 +88,7 @@ type ConnectorAttrs struct {
 	// Display name for the connector.
 	Name any
 	// The external code repository provider (e.g. GitHub, GitLab) this Inspector connector connects to. (AI-inferred)
-	Provider any
+	Provider              any
 	ProviderConfiguration any
 	// Tags to apply to the connector.
 	Tags any
@@ -98,12 +98,12 @@ var Connector = ubx.ResourceBinding{
 	WireType: "aws_inspector_v2_connector",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Provider": ubx.FieldSpec{WireName: "provider"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Provider":    ubx.FieldSpec{WireName: "provider"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Connector_TagsFields,
+			Kind:     "list",
+			Fields:   Connector_TagsFields,
 		},
 	},
 }

@@ -4,38 +4,38 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RealtimeLogConfigs_RealtimeLogConfigs_Items_EndPoints_KinesisStreamConfig struct {
-	RoleArn any
+	RoleArn   any
 	StreamArn any
 }
 
 type RealtimeLogConfigs_RealtimeLogConfigs_Items_EndPoints struct {
 	KinesisStreamConfig any
-	StreamType any
+	StreamType          any
 }
 
 type RealtimeLogConfigs_RealtimeLogConfigs_Items struct {
-	Arn any
-	EndPoints any
-	Fields any
-	Name any
+	Arn          any
+	EndPoints    any
+	Fields       any
+	Name         any
 	SamplingRate any
 }
 
 type RealtimeLogConfigs_RealtimeLogConfigs struct {
 	IsTruncated any
-	Items any
-	Marker any
-	MaxItems any
-	NextMarker any
+	Items       any
+	Marker      any
+	MaxItems    any
+	NextMarker  any
 }
 
 type RealtimeLogConfigsConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 }
 
 type RealtimeLogConfigsAttrs struct {
-	Marker any
+	Marker   any
 	MaxItems any
 	// <p>A list of real-time log configurations.</p>
 	RealtimeLogConfigs any
@@ -44,7 +44,7 @@ type RealtimeLogConfigsAttrs struct {
 var RealtimeLogConfigs = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_realtime_log_configs",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 	},
 }

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdpRiskConfiguration_RiskConfiguration_AccountTakeoverRiskConfiguration_Actions_HighAction struct {
 	EventAction any
-	Notify any
+	Notify      any
 }
 
 type CognitoIdpRiskConfiguration_RiskConfiguration_AccountTakeoverRiskConfiguration_Actions struct {
@@ -19,20 +19,20 @@ type CognitoIdpRiskConfiguration_RiskConfiguration_AccountTakeoverRiskConfigurat
 
 type CognitoIdpRiskConfiguration_RiskConfiguration_AccountTakeoverRiskConfiguration_NotifyConfiguration_BlockEmail struct {
 	HtmlBody any
-	Subject any
+	Subject  any
 	TextBody any
 }
 
 type CognitoIdpRiskConfiguration_RiskConfiguration_AccountTakeoverRiskConfiguration_NotifyConfiguration struct {
 	// <p>The template for email messages that threat protection sends to a user when your threat protection automated response has a <i>Notify</i> action.</p>
 	BlockEmail any
-	From any
+	From       any
 	// <p>The template for email messages that threat protection sends to a user when your threat protection automated response has a <i>Notify</i> action.</p>
 	MfaEmail any
 	// <p>The template for email messages that threat protection sends to a user when your threat protection automated response has a <i>Notify</i> action.</p>
 	NoActionEmail any
-	ReplyTo any
-	SourceArn any
+	ReplyTo       any
+	SourceArn     any
 }
 
 type CognitoIdpRiskConfiguration_RiskConfiguration_AccountTakeoverRiskConfiguration struct {
@@ -48,7 +48,7 @@ type CognitoIdpRiskConfiguration_RiskConfiguration_CompromisedCredentialsRiskCon
 
 type CognitoIdpRiskConfiguration_RiskConfiguration_CompromisedCredentialsRiskConfiguration struct {
 	// <p>Settings for user pool actions when Amazon Cognito detects compromised credentials with threat protection in full-function <code>ENFORCED</code> mode.</p>
-	Actions any
+	Actions     any
 	EventFilter any
 }
 
@@ -60,17 +60,17 @@ type CognitoIdpRiskConfiguration_RiskConfiguration_RiskExceptionConfiguration st
 type CognitoIdpRiskConfiguration_RiskConfiguration struct {
 	// <p>The settings for automated responses and notification templates for adaptive authentication with threat protection features.</p>
 	AccountTakeoverRiskConfiguration any
-	ClientId any
+	ClientId                         any
 	// <p>Settings for compromised-credentials actions and authentication-event sources with threat protection in full-function <code>ENFORCED</code> mode.</p>
 	CompromisedCredentialsRiskConfiguration any
-	LastModifiedDate any
+	LastModifiedDate                        any
 	// <p>Exceptions to the risk evaluation configuration, including always-allow and always-block IP address ranges. </p>
 	RiskExceptionConfiguration any
-	UserPoolId any
+	UserPoolId                 any
 }
 
 type CognitoIdpRiskConfigurationConfig struct {
-	ClientId any
+	ClientId   any
 	UserPoolId any
 }
 
@@ -78,13 +78,13 @@ type CognitoIdpRiskConfigurationAttrs struct {
 	ClientId any
 	// <p>The settings of risk configuration for threat protection with threat protection in a user pool.</p>
 	RiskConfiguration any
-	UserPoolId any
+	UserPoolId        any
 }
 
 var CognitoIdpRiskConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_cognito_idp_risk_configuration",
 	Fields: ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"ClientId":   ubx.FieldSpec{WireName: "client_id"},
 		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
 	},
 }

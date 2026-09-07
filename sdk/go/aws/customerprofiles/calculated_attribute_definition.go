@@ -60,63 +60,63 @@ type CalculatedAttributeDefinition_Readiness struct {
 
 type CalculatedAttributeDefinition_Tags struct {
 	// The key of a user-defined tag assigned to the calculated attribute definition, enabling categorization and access control for the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var CalculatedAttributeDefinition_AttributeDetails_AttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var CalculatedAttributeDefinition_AttributeDetailsFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "list",
-			Fields: CalculatedAttributeDefinition_AttributeDetails_AttributesFields,
-		},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "list",
+		Fields:   CalculatedAttributeDefinition_AttributeDetails_AttributesFields,
+	},
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+}
 
 var CalculatedAttributeDefinition_Conditions_Range_ValueRangeFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 var CalculatedAttributeDefinition_Conditions_RangeFields = ubx.FieldMap{
-		"TimestampFormat": ubx.FieldSpec{WireName: "timestamp_format"},
-		"TimestampSource": ubx.FieldSpec{WireName: "timestamp_source"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"ValueRange": ubx.FieldSpec{
-			WireName: "value_range",
-			Kind: "object",
-			Fields: CalculatedAttributeDefinition_Conditions_Range_ValueRangeFields,
-		},
-	}
+	"TimestampFormat": ubx.FieldSpec{WireName: "timestamp_format"},
+	"TimestampSource": ubx.FieldSpec{WireName: "timestamp_source"},
+	"Unit":            ubx.FieldSpec{WireName: "unit"},
+	"Value":           ubx.FieldSpec{WireName: "value"},
+	"ValueRange": ubx.FieldSpec{
+		WireName: "value_range",
+		Kind:     "object",
+		Fields:   CalculatedAttributeDefinition_Conditions_Range_ValueRangeFields,
+	},
+}
 
 var CalculatedAttributeDefinition_Conditions_ThresholdFields = ubx.FieldMap{
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var CalculatedAttributeDefinition_ConditionsFields = ubx.FieldMap{
-		"ObjectCount": ubx.FieldSpec{WireName: "object_count"},
-		"Range": ubx.FieldSpec{
-			WireName: "range",
-			Kind: "object",
-			Fields: CalculatedAttributeDefinition_Conditions_RangeFields,
-		},
-		"Threshold": ubx.FieldSpec{
-			WireName: "threshold",
-			Kind: "object",
-			Fields: CalculatedAttributeDefinition_Conditions_ThresholdFields,
-		},
-	}
+	"ObjectCount": ubx.FieldSpec{WireName: "object_count"},
+	"Range": ubx.FieldSpec{
+		WireName: "range",
+		Kind:     "object",
+		Fields:   CalculatedAttributeDefinition_Conditions_RangeFields,
+	},
+	"Threshold": ubx.FieldSpec{
+		WireName: "threshold",
+		Kind:     "object",
+		Fields:   CalculatedAttributeDefinition_Conditions_ThresholdFields,
+	},
+}
 
 var CalculatedAttributeDefinition_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CalculatedAttributeDefinitionConfig struct {
 	// Mathematical expression and a list of attribute items specified in that expression.
@@ -173,23 +173,23 @@ var CalculatedAttributeDefinition = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AttributeDetails": ubx.FieldSpec{
 			WireName: "attribute_details",
-			Kind: "object",
-			Fields: CalculatedAttributeDefinition_AttributeDetailsFields,
+			Kind:     "object",
+			Fields:   CalculatedAttributeDefinition_AttributeDetailsFields,
 		},
 		"CalculatedAttributeName": ubx.FieldSpec{WireName: "calculated_attribute_name"},
 		"Conditions": ubx.FieldSpec{
 			WireName: "conditions",
-			Kind: "object",
-			Fields: CalculatedAttributeDefinition_ConditionsFields,
+			Kind:     "object",
+			Fields:   CalculatedAttributeDefinition_ConditionsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"Statistic": ubx.FieldSpec{WireName: "statistic"},
+		"DomainName":  ubx.FieldSpec{WireName: "domain_name"},
+		"Statistic":   ubx.FieldSpec{WireName: "statistic"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CalculatedAttributeDefinition_TagsFields,
+			Kind:     "list",
+			Fields:   CalculatedAttributeDefinition_TagsFields,
 		},
 		"UseHistoricalData": ubx.FieldSpec{WireName: "use_historical_data"},
 	},

@@ -4,23 +4,23 @@ package lakeformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Transactions_Transactions struct {
-	TransactionEndTime any
-	TransactionId any
+	TransactionEndTime   any
+	TransactionId        any
 	TransactionStartTime any
-	TransactionStatus any
+	TransactionStatus    any
 }
 
 type TransactionsConfig struct {
-	CatalogId any
-	MaxResults any
-	NextToken any
+	CatalogId    any
+	MaxResults   any
+	NextToken    any
 	StatusFilter any
 }
 
 type TransactionsAttrs struct {
-	CatalogId any
-	MaxResults any
-	NextToken any
+	CatalogId    any
+	MaxResults   any
+	NextToken    any
 	StatusFilter any
 	Transactions any
 }
@@ -28,9 +28,9 @@ type TransactionsAttrs struct {
 var Transactions = ubx.DataSourceBinding{
 	WireType: "aws_lakeformation_transactions",
 	Fields: ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"CatalogId":    ubx.FieldSpec{WireName: "catalog_id"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"StatusFilter": ubx.FieldSpec{WireName: "status_filter"},
 	},
 }

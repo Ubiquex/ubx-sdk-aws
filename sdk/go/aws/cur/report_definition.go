@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReportDefinition_Tags struct {
 	// The key of a user-defined tag applied to the AWS Cost and Usage Report definition, used for resource categorization and cost allocation tracking. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var ReportDefinition_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ReportDefinitionConfig struct {
 	// A list of manifests that you want Amazon Web Services to create for this report.
@@ -75,21 +75,21 @@ type ReportDefinitionAttrs struct {
 var ReportDefinition = ubx.ResourceBinding{
 	WireType: "aws_cur_report_definition",
 	Fields: ubx.FieldMap{
-		"AdditionalArtifacts": ubx.FieldSpec{WireName: "additional_artifacts"},
+		"AdditionalArtifacts":      ubx.FieldSpec{WireName: "additional_artifacts"},
 		"AdditionalSchemaElements": ubx.FieldSpec{WireName: "additional_schema_elements"},
-		"BillingViewArn": ubx.FieldSpec{WireName: "billing_view_arn"},
-		"Compression": ubx.FieldSpec{WireName: "compression"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"RefreshClosedReports": ubx.FieldSpec{WireName: "refresh_closed_reports"},
-		"ReportName": ubx.FieldSpec{WireName: "report_name"},
-		"ReportVersioning": ubx.FieldSpec{WireName: "report_versioning"},
-		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
-		"S3Prefix": ubx.FieldSpec{WireName: "s3_prefix"},
-		"S3Region": ubx.FieldSpec{WireName: "s3_region"},
+		"BillingViewArn":           ubx.FieldSpec{WireName: "billing_view_arn"},
+		"Compression":              ubx.FieldSpec{WireName: "compression"},
+		"Format":                   ubx.FieldSpec{WireName: "format"},
+		"RefreshClosedReports":     ubx.FieldSpec{WireName: "refresh_closed_reports"},
+		"ReportName":               ubx.FieldSpec{WireName: "report_name"},
+		"ReportVersioning":         ubx.FieldSpec{WireName: "report_versioning"},
+		"S3Bucket":                 ubx.FieldSpec{WireName: "s3_bucket"},
+		"S3Prefix":                 ubx.FieldSpec{WireName: "s3_prefix"},
+		"S3Region":                 ubx.FieldSpec{WireName: "s3_region"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ReportDefinition_TagsFields,
+			Kind:     "list",
+			Fields:   ReportDefinition_TagsFields,
 		},
 		"TimeUnit": ubx.FieldSpec{WireName: "time_unit"},
 	},

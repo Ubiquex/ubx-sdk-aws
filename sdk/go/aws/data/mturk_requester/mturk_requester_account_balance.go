@@ -15,6 +15,5 @@ type MturkRequesterAccountBalanceAttrs struct {
 
 var MturkRequesterAccountBalance = ubx.DataSourceBinding{
 	WireType: "aws_mturk_requester_account_balance",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

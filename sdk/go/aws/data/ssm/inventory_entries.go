@@ -4,34 +4,34 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InventoryEntries_Filters struct {
-	Key any
-	Type any
+	Key    any
+	Type   any
 	Values any
 }
 
 var InventoryEntries_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type InventoryEntriesConfig struct {
-	Filters any
+	Filters    any
 	InstanceId any
 	MaxResults any
-	NextToken any
-	TypeName any
+	NextToken  any
+	TypeName   any
 }
 
 type InventoryEntriesAttrs struct {
-	CaptureTime any
-	Entries any
-	Filters any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	CaptureTime   any
+	Entries       any
+	Filters       any
+	InstanceId    any
+	MaxResults    any
+	NextToken     any
 	SchemaVersion any
-	TypeName any
+	TypeName      any
 }
 
 var InventoryEntries = ubx.DataSourceBinding{
@@ -39,12 +39,12 @@ var InventoryEntries = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: InventoryEntries_FiltersFields,
+			Kind:     "list",
+			Fields:   InventoryEntries_FiltersFields,
 		},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"TypeName":   ubx.FieldSpec{WireName: "type_name"},
 	},
 }

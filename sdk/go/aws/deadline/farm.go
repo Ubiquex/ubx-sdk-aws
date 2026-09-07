@@ -11,9 +11,9 @@ type Farm_Tags struct {
 }
 
 var Farm_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FarmConfig struct {
 	// A multiplier applied to this farm's own reported usage costs, used to adjust cost tracking without changing actual resource consumption. (AI-inferred)
@@ -49,13 +49,13 @@ var Farm = ubx.ResourceBinding{
 	WireType: "aws_deadline_farm",
 	Fields: ubx.FieldMap{
 		"CostScaleFactor": ubx.FieldSpec{WireName: "cost_scale_factor"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
+		"KmsKeyArn":       ubx.FieldSpec{WireName: "kms_key_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Farm_TagsFields,
+			Kind:     "list",
+			Fields:   Farm_TagsFields,
 		},
 	},
 }

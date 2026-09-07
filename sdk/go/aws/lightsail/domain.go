@@ -24,14 +24,14 @@ type Domain_Location struct {
 
 type Domain_Tags struct {
 	// The key of a tag that can be assigned to a Lightsail domain, enabling you to categorize, manage, and control access to the domain. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Domain_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DomainConfig struct {
 	// The name of the domain to manage in Lightsail.
@@ -65,8 +65,8 @@ var Domain = ubx.ResourceBinding{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Domain_TagsFields,
+			Kind:     "list",
+			Fields:   Domain_TagsFields,
 		},
 	},
 }

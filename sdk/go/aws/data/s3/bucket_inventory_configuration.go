@@ -16,11 +16,11 @@ type BucketInventoryConfiguration_InventoryConfiguration_Destination_S3BucketDes
 
 type BucketInventoryConfiguration_InventoryConfiguration_Destination_S3BucketDestination struct {
 	AccountId any
-	Bucket any
+	Bucket    any
 	// <p>Contains the type of server-side encryption used to encrypt the S3 Inventory results.</p>
 	Encryption any
-	Format any
-	Prefix any
+	Format     any
+	Prefix     any
 }
 
 type BucketInventoryConfiguration_InventoryConfiguration_Destination struct {
@@ -40,25 +40,25 @@ type BucketInventoryConfiguration_InventoryConfiguration struct {
 	// <p>Specifies the S3 Inventory configuration for an Amazon S3 bucket.</p>
 	Destination any
 	// <p>Specifies an S3 Inventory filter. The inventory only includes objects that meet the filter's criteria.</p>
-	Filter any
-	Id any
+	Filter                 any
+	Id                     any
 	IncludedObjectVersions any
-	IsEnabled any
-	OptionalFields any
+	IsEnabled              any
+	OptionalFields         any
 	// <p>Specifies the schedule for generating S3 Inventory results.</p>
 	Schedule any
 }
 
 type BucketInventoryConfigurationConfig struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
-	Id any
+	Id                  any
 }
 
 type BucketInventoryConfigurationAttrs struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
-	Id any
+	Id                  any
 	// <p>Specifies the S3 Inventory configuration for an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html">GET Bucket inventory</a> in the <i>Amazon S3 API Reference</i>. </p>
 	InventoryConfiguration any
 }
@@ -66,8 +66,8 @@ type BucketInventoryConfigurationAttrs struct {
 var BucketInventoryConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_inventory_configuration",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":                  ubx.FieldSpec{WireName: "id"},
 	},
 }

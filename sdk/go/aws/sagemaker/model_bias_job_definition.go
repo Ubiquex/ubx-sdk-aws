@@ -166,156 +166,156 @@ type ModelBiasJobDefinition_Tags struct {
 }
 
 var ModelBiasJobDefinition_JobResources_ClusterConfigFields = ubx.FieldMap{
-		"InstanceCount": ubx.FieldSpec{WireName: "instance_count"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"VolumeKmsKeyId": ubx.FieldSpec{WireName: "volume_kms_key_id"},
-		"VolumeSizeInGb": ubx.FieldSpec{WireName: "volume_size_in_gb"},
-	}
+	"InstanceCount":  ubx.FieldSpec{WireName: "instance_count"},
+	"InstanceType":   ubx.FieldSpec{WireName: "instance_type"},
+	"VolumeKmsKeyId": ubx.FieldSpec{WireName: "volume_kms_key_id"},
+	"VolumeSizeInGb": ubx.FieldSpec{WireName: "volume_size_in_gb"},
+}
 
 var ModelBiasJobDefinition_JobResourcesFields = ubx.FieldMap{
-		"ClusterConfig": ubx.FieldSpec{
-			WireName: "cluster_config",
-			Kind: "object",
-			Fields: ModelBiasJobDefinition_JobResources_ClusterConfigFields,
-		},
-	}
+	"ClusterConfig": ubx.FieldSpec{
+		WireName: "cluster_config",
+		Kind:     "object",
+		Fields:   ModelBiasJobDefinition_JobResources_ClusterConfigFields,
+	},
+}
 
 var ModelBiasJobDefinition_ModelBiasAppSpecificationFields = ubx.FieldMap{
-		"ConfigUri": ubx.FieldSpec{WireName: "config_uri"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-	}
+	"ConfigUri":   ubx.FieldSpec{WireName: "config_uri"},
+	"Environment": ubx.FieldSpec{WireName: "environment"},
+	"ImageUri":    ubx.FieldSpec{WireName: "image_uri"},
+}
 
 var ModelBiasJobDefinition_ModelBiasBaselineConfig_ConstraintsResourceFields = ubx.FieldMap{
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var ModelBiasJobDefinition_ModelBiasBaselineConfigFields = ubx.FieldMap{
-		"BaseliningJobName": ubx.FieldSpec{WireName: "baselining_job_name"},
-		"ConstraintsResource": ubx.FieldSpec{
-			WireName: "constraints_resource",
-			Kind: "object",
-			Fields: ModelBiasJobDefinition_ModelBiasBaselineConfig_ConstraintsResourceFields,
-		},
-	}
+	"BaseliningJobName": ubx.FieldSpec{WireName: "baselining_job_name"},
+	"ConstraintsResource": ubx.FieldSpec{
+		WireName: "constraints_resource",
+		Kind:     "object",
+		Fields:   ModelBiasJobDefinition_ModelBiasBaselineConfig_ConstraintsResourceFields,
+	},
+}
 
 var ModelBiasJobDefinition_ModelBiasJobInput_BatchTransformInput_DatasetFormat_CsvFields = ubx.FieldMap{
-		"Header": ubx.FieldSpec{WireName: "header"},
-	}
+	"Header": ubx.FieldSpec{WireName: "header"},
+}
 
 var ModelBiasJobDefinition_ModelBiasJobInput_BatchTransformInput_DatasetFormat_JsonFields = ubx.FieldMap{
-		"Line": ubx.FieldSpec{WireName: "line"},
-	}
+	"Line": ubx.FieldSpec{WireName: "line"},
+}
 
 var ModelBiasJobDefinition_ModelBiasJobInput_BatchTransformInput_DatasetFormatFields = ubx.FieldMap{
-		"Csv": ubx.FieldSpec{
-			WireName: "csv",
-			Kind: "object",
-			Fields: ModelBiasJobDefinition_ModelBiasJobInput_BatchTransformInput_DatasetFormat_CsvFields,
-		},
-		"Json": ubx.FieldSpec{
-			WireName: "json",
-			Kind: "object",
-			Fields: ModelBiasJobDefinition_ModelBiasJobInput_BatchTransformInput_DatasetFormat_JsonFields,
-		},
-		"Parquet": ubx.FieldSpec{WireName: "parquet"},
-	}
+	"Csv": ubx.FieldSpec{
+		WireName: "csv",
+		Kind:     "object",
+		Fields:   ModelBiasJobDefinition_ModelBiasJobInput_BatchTransformInput_DatasetFormat_CsvFields,
+	},
+	"Json": ubx.FieldSpec{
+		WireName: "json",
+		Kind:     "object",
+		Fields:   ModelBiasJobDefinition_ModelBiasJobInput_BatchTransformInput_DatasetFormat_JsonFields,
+	},
+	"Parquet": ubx.FieldSpec{WireName: "parquet"},
+}
 
 var ModelBiasJobDefinition_ModelBiasJobInput_BatchTransformInputFields = ubx.FieldMap{
-		"DataCapturedDestinationS3Uri": ubx.FieldSpec{WireName: "data_captured_destination_s3_uri"},
-		"DatasetFormat": ubx.FieldSpec{
-			WireName: "dataset_format",
-			Kind: "object",
-			Fields: ModelBiasJobDefinition_ModelBiasJobInput_BatchTransformInput_DatasetFormatFields,
-		},
-		"EndTimeOffset": ubx.FieldSpec{WireName: "end_time_offset"},
-		"FeaturesAttribute": ubx.FieldSpec{WireName: "features_attribute"},
-		"InferenceAttribute": ubx.FieldSpec{WireName: "inference_attribute"},
-		"LocalPath": ubx.FieldSpec{WireName: "local_path"},
-		"ProbabilityAttribute": ubx.FieldSpec{WireName: "probability_attribute"},
-		"ProbabilityThresholdAttribute": ubx.FieldSpec{WireName: "probability_threshold_attribute"},
-		"S3DataDistributionType": ubx.FieldSpec{WireName: "s3_data_distribution_type"},
-		"S3InputMode": ubx.FieldSpec{WireName: "s3_input_mode"},
-		"StartTimeOffset": ubx.FieldSpec{WireName: "start_time_offset"},
-	}
+	"DataCapturedDestinationS3Uri": ubx.FieldSpec{WireName: "data_captured_destination_s3_uri"},
+	"DatasetFormat": ubx.FieldSpec{
+		WireName: "dataset_format",
+		Kind:     "object",
+		Fields:   ModelBiasJobDefinition_ModelBiasJobInput_BatchTransformInput_DatasetFormatFields,
+	},
+	"EndTimeOffset":                 ubx.FieldSpec{WireName: "end_time_offset"},
+	"FeaturesAttribute":             ubx.FieldSpec{WireName: "features_attribute"},
+	"InferenceAttribute":            ubx.FieldSpec{WireName: "inference_attribute"},
+	"LocalPath":                     ubx.FieldSpec{WireName: "local_path"},
+	"ProbabilityAttribute":          ubx.FieldSpec{WireName: "probability_attribute"},
+	"ProbabilityThresholdAttribute": ubx.FieldSpec{WireName: "probability_threshold_attribute"},
+	"S3DataDistributionType":        ubx.FieldSpec{WireName: "s3_data_distribution_type"},
+	"S3InputMode":                   ubx.FieldSpec{WireName: "s3_input_mode"},
+	"StartTimeOffset":               ubx.FieldSpec{WireName: "start_time_offset"},
+}
 
 var ModelBiasJobDefinition_ModelBiasJobInput_EndpointInputFields = ubx.FieldMap{
-		"EndTimeOffset": ubx.FieldSpec{WireName: "end_time_offset"},
-		"EndpointName": ubx.FieldSpec{WireName: "endpoint_name"},
-		"FeaturesAttribute": ubx.FieldSpec{WireName: "features_attribute"},
-		"InferenceAttribute": ubx.FieldSpec{WireName: "inference_attribute"},
-		"LocalPath": ubx.FieldSpec{WireName: "local_path"},
-		"ProbabilityAttribute": ubx.FieldSpec{WireName: "probability_attribute"},
-		"ProbabilityThresholdAttribute": ubx.FieldSpec{WireName: "probability_threshold_attribute"},
-		"S3DataDistributionType": ubx.FieldSpec{WireName: "s3_data_distribution_type"},
-		"S3InputMode": ubx.FieldSpec{WireName: "s3_input_mode"},
-		"StartTimeOffset": ubx.FieldSpec{WireName: "start_time_offset"},
-	}
+	"EndTimeOffset":                 ubx.FieldSpec{WireName: "end_time_offset"},
+	"EndpointName":                  ubx.FieldSpec{WireName: "endpoint_name"},
+	"FeaturesAttribute":             ubx.FieldSpec{WireName: "features_attribute"},
+	"InferenceAttribute":            ubx.FieldSpec{WireName: "inference_attribute"},
+	"LocalPath":                     ubx.FieldSpec{WireName: "local_path"},
+	"ProbabilityAttribute":          ubx.FieldSpec{WireName: "probability_attribute"},
+	"ProbabilityThresholdAttribute": ubx.FieldSpec{WireName: "probability_threshold_attribute"},
+	"S3DataDistributionType":        ubx.FieldSpec{WireName: "s3_data_distribution_type"},
+	"S3InputMode":                   ubx.FieldSpec{WireName: "s3_input_mode"},
+	"StartTimeOffset":               ubx.FieldSpec{WireName: "start_time_offset"},
+}
 
 var ModelBiasJobDefinition_ModelBiasJobInputFields = ubx.FieldMap{
-		"BatchTransformInput": ubx.FieldSpec{
-			WireName: "batch_transform_input",
-			Kind: "object",
-			Fields: ModelBiasJobDefinition_ModelBiasJobInput_BatchTransformInputFields,
-		},
-		"EndpointInput": ubx.FieldSpec{
-			WireName: "endpoint_input",
-			Kind: "object",
-			Fields: ModelBiasJobDefinition_ModelBiasJobInput_EndpointInputFields,
-		},
-		"GroundTruthS3Input": ubx.FieldSpec{
-			WireName: "ground_truth_s3_input",
-			Kind: "object",
-			Fields: ModelBiasJobDefinition_ModelBiasBaselineConfig_ConstraintsResourceFields,
-		},
-	}
+	"BatchTransformInput": ubx.FieldSpec{
+		WireName: "batch_transform_input",
+		Kind:     "object",
+		Fields:   ModelBiasJobDefinition_ModelBiasJobInput_BatchTransformInputFields,
+	},
+	"EndpointInput": ubx.FieldSpec{
+		WireName: "endpoint_input",
+		Kind:     "object",
+		Fields:   ModelBiasJobDefinition_ModelBiasJobInput_EndpointInputFields,
+	},
+	"GroundTruthS3Input": ubx.FieldSpec{
+		WireName: "ground_truth_s3_input",
+		Kind:     "object",
+		Fields:   ModelBiasJobDefinition_ModelBiasBaselineConfig_ConstraintsResourceFields,
+	},
+}
 
 var ModelBiasJobDefinition_ModelBiasJobOutputConfig_MonitoringOutputs_S3OutputFields = ubx.FieldMap{
-		"LocalPath": ubx.FieldSpec{WireName: "local_path"},
-		"S3UploadMode": ubx.FieldSpec{WireName: "s3_upload_mode"},
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"LocalPath":    ubx.FieldSpec{WireName: "local_path"},
+	"S3UploadMode": ubx.FieldSpec{WireName: "s3_upload_mode"},
+	"S3Uri":        ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var ModelBiasJobDefinition_ModelBiasJobOutputConfig_MonitoringOutputsFields = ubx.FieldMap{
-		"S3Output": ubx.FieldSpec{
-			WireName: "s3_output",
-			Kind: "object",
-			Fields: ModelBiasJobDefinition_ModelBiasJobOutputConfig_MonitoringOutputs_S3OutputFields,
-		},
-	}
+	"S3Output": ubx.FieldSpec{
+		WireName: "s3_output",
+		Kind:     "object",
+		Fields:   ModelBiasJobDefinition_ModelBiasJobOutputConfig_MonitoringOutputs_S3OutputFields,
+	},
+}
 
 var ModelBiasJobDefinition_ModelBiasJobOutputConfigFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"MonitoringOutputs": ubx.FieldSpec{
-			WireName: "monitoring_outputs",
-			Kind: "list",
-			Fields: ModelBiasJobDefinition_ModelBiasJobOutputConfig_MonitoringOutputsFields,
-		},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+	"MonitoringOutputs": ubx.FieldSpec{
+		WireName: "monitoring_outputs",
+		Kind:     "list",
+		Fields:   ModelBiasJobDefinition_ModelBiasJobOutputConfig_MonitoringOutputsFields,
+	},
+}
 
 var ModelBiasJobDefinition_NetworkConfig_VpcConfigFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"Subnets":          ubx.FieldSpec{WireName: "subnets"},
+}
 
 var ModelBiasJobDefinition_NetworkConfigFields = ubx.FieldMap{
-		"EnableInterContainerTrafficEncryption": ubx.FieldSpec{WireName: "enable_inter_container_traffic_encryption"},
-		"EnableNetworkIsolation": ubx.FieldSpec{WireName: "enable_network_isolation"},
-		"VpcConfig": ubx.FieldSpec{
-			WireName: "vpc_config",
-			Kind: "object",
-			Fields: ModelBiasJobDefinition_NetworkConfig_VpcConfigFields,
-		},
-	}
+	"EnableInterContainerTrafficEncryption": ubx.FieldSpec{WireName: "enable_inter_container_traffic_encryption"},
+	"EnableNetworkIsolation":                ubx.FieldSpec{WireName: "enable_network_isolation"},
+	"VpcConfig": ubx.FieldSpec{
+		WireName: "vpc_config",
+		Kind:     "object",
+		Fields:   ModelBiasJobDefinition_NetworkConfig_VpcConfigFields,
+	},
+}
 
 var ModelBiasJobDefinition_StoppingConditionFields = ubx.FieldMap{
-		"MaxRuntimeInSeconds": ubx.FieldSpec{WireName: "max_runtime_in_seconds"},
-	}
+	"MaxRuntimeInSeconds": ubx.FieldSpec{WireName: "max_runtime_in_seconds"},
+}
 
 var ModelBiasJobDefinition_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ModelBiasJobDefinitionConfig struct {
 	// The name of the endpoint used to run the monitoring job.
@@ -374,48 +374,48 @@ type ModelBiasJobDefinitionAttrs struct {
 var ModelBiasJobDefinition = ubx.ResourceBinding{
 	WireType: "aws_sage_maker_model_bias_job_definition",
 	Fields: ubx.FieldMap{
-		"EndpointName": ubx.FieldSpec{WireName: "endpoint_name"},
+		"EndpointName":      ubx.FieldSpec{WireName: "endpoint_name"},
 		"JobDefinitionName": ubx.FieldSpec{WireName: "job_definition_name"},
 		"JobResources": ubx.FieldSpec{
 			WireName: "job_resources",
-			Kind: "object",
-			Fields: ModelBiasJobDefinition_JobResourcesFields,
+			Kind:     "object",
+			Fields:   ModelBiasJobDefinition_JobResourcesFields,
 		},
 		"ModelBiasAppSpecification": ubx.FieldSpec{
 			WireName: "model_bias_app_specification",
-			Kind: "object",
-			Fields: ModelBiasJobDefinition_ModelBiasAppSpecificationFields,
+			Kind:     "object",
+			Fields:   ModelBiasJobDefinition_ModelBiasAppSpecificationFields,
 		},
 		"ModelBiasBaselineConfig": ubx.FieldSpec{
 			WireName: "model_bias_baseline_config",
-			Kind: "object",
-			Fields: ModelBiasJobDefinition_ModelBiasBaselineConfigFields,
+			Kind:     "object",
+			Fields:   ModelBiasJobDefinition_ModelBiasBaselineConfigFields,
 		},
 		"ModelBiasJobInput": ubx.FieldSpec{
 			WireName: "model_bias_job_input",
-			Kind: "object",
-			Fields: ModelBiasJobDefinition_ModelBiasJobInputFields,
+			Kind:     "object",
+			Fields:   ModelBiasJobDefinition_ModelBiasJobInputFields,
 		},
 		"ModelBiasJobOutputConfig": ubx.FieldSpec{
 			WireName: "model_bias_job_output_config",
-			Kind: "object",
-			Fields: ModelBiasJobDefinition_ModelBiasJobOutputConfigFields,
+			Kind:     "object",
+			Fields:   ModelBiasJobDefinition_ModelBiasJobOutputConfigFields,
 		},
 		"NetworkConfig": ubx.FieldSpec{
 			WireName: "network_config",
-			Kind: "object",
-			Fields: ModelBiasJobDefinition_NetworkConfigFields,
+			Kind:     "object",
+			Fields:   ModelBiasJobDefinition_NetworkConfigFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"StoppingCondition": ubx.FieldSpec{
 			WireName: "stopping_condition",
-			Kind: "object",
-			Fields: ModelBiasJobDefinition_StoppingConditionFields,
+			Kind:     "object",
+			Fields:   ModelBiasJobDefinition_StoppingConditionFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ModelBiasJobDefinition_TagsFields,
+			Kind:     "list",
+			Fields:   ModelBiasJobDefinition_TagsFields,
 		},
 	},
 }

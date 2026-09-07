@@ -4,27 +4,27 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PublicKeys_PublicKeyList_Items struct {
-	Comment any
+	Comment     any
 	CreatedTime any
-	EncodedKey any
-	Id any
-	Name any
+	EncodedKey  any
+	Id          any
+	Name        any
 }
 
 type PublicKeys_PublicKeyList struct {
-	Items any
-	MaxItems any
+	Items      any
+	MaxItems   any
 	NextMarker any
-	Quantity any
+	Quantity   any
 }
 
 type PublicKeysConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 }
 
 type PublicKeysAttrs struct {
-	Marker any
+	Marker   any
 	MaxItems any
 	// <p>A list of public keys that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
 	PublicKeyList any
@@ -33,7 +33,7 @@ type PublicKeysAttrs struct {
 var PublicKeys = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_public_keys",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 	},
 }

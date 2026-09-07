@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RotationSchedule_ExternalSecretRotationMetadata struct {
 	// The key of a key-value pair in the external_secret_rotation_metadata map, which is passed as metadata to an external rotation Lambda function to customize the rotation process. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -44,29 +44,29 @@ type RotationSchedule_RotationRules struct {
 }
 
 var RotationSchedule_ExternalSecretRotationMetadataFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var RotationSchedule_HostedRotationLambdaFields = ubx.FieldMap{
-		"ExcludeCharacters": ubx.FieldSpec{WireName: "exclude_characters"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"MasterSecretArn": ubx.FieldSpec{WireName: "master_secret_arn"},
-		"MasterSecretKmsKeyArn": ubx.FieldSpec{WireName: "master_secret_kms_key_arn"},
-		"RotationLambdaName": ubx.FieldSpec{WireName: "rotation_lambda_name"},
-		"RotationType": ubx.FieldSpec{WireName: "rotation_type"},
-		"Runtime": ubx.FieldSpec{WireName: "runtime"},
-		"SuperuserSecretArn": ubx.FieldSpec{WireName: "superuser_secret_arn"},
-		"SuperuserSecretKmsKeyArn": ubx.FieldSpec{WireName: "superuser_secret_kms_key_arn"},
-		"VpcSecurityGroupIds": ubx.FieldSpec{WireName: "vpc_security_group_ids"},
-		"VpcSubnetIds": ubx.FieldSpec{WireName: "vpc_subnet_ids"},
-	}
+	"ExcludeCharacters":        ubx.FieldSpec{WireName: "exclude_characters"},
+	"KmsKeyArn":                ubx.FieldSpec{WireName: "kms_key_arn"},
+	"MasterSecretArn":          ubx.FieldSpec{WireName: "master_secret_arn"},
+	"MasterSecretKmsKeyArn":    ubx.FieldSpec{WireName: "master_secret_kms_key_arn"},
+	"RotationLambdaName":       ubx.FieldSpec{WireName: "rotation_lambda_name"},
+	"RotationType":             ubx.FieldSpec{WireName: "rotation_type"},
+	"Runtime":                  ubx.FieldSpec{WireName: "runtime"},
+	"SuperuserSecretArn":       ubx.FieldSpec{WireName: "superuser_secret_arn"},
+	"SuperuserSecretKmsKeyArn": ubx.FieldSpec{WireName: "superuser_secret_kms_key_arn"},
+	"VpcSecurityGroupIds":      ubx.FieldSpec{WireName: "vpc_security_group_ids"},
+	"VpcSubnetIds":             ubx.FieldSpec{WireName: "vpc_subnet_ids"},
+}
 
 var RotationSchedule_RotationRulesFields = ubx.FieldMap{
-		"AutomaticallyAfterDays": ubx.FieldSpec{WireName: "automatically_after_days"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
-	}
+	"AutomaticallyAfterDays": ubx.FieldSpec{WireName: "automatically_after_days"},
+	"Duration":               ubx.FieldSpec{WireName: "duration"},
+	"ScheduleExpression":     ubx.FieldSpec{WireName: "schedule_expression"},
+}
 
 type RotationScheduleConfig struct {
 	// The list of metadata needed to successfully rotate a managed external secret.
@@ -109,21 +109,21 @@ var RotationSchedule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ExternalSecretRotationMetadata": ubx.FieldSpec{
 			WireName: "external_secret_rotation_metadata",
-			Kind: "list",
-			Fields: RotationSchedule_ExternalSecretRotationMetadataFields,
+			Kind:     "list",
+			Fields:   RotationSchedule_ExternalSecretRotationMetadataFields,
 		},
 		"ExternalSecretRotationRoleArn": ubx.FieldSpec{WireName: "external_secret_rotation_role_arn"},
 		"HostedRotationLambda": ubx.FieldSpec{
 			WireName: "hosted_rotation_lambda",
-			Kind: "object",
-			Fields: RotationSchedule_HostedRotationLambdaFields,
+			Kind:     "object",
+			Fields:   RotationSchedule_HostedRotationLambdaFields,
 		},
 		"RotateImmediatelyOnUpdate": ubx.FieldSpec{WireName: "rotate_immediately_on_update"},
-		"RotationLambdaArn": ubx.FieldSpec{WireName: "rotation_lambda_arn"},
+		"RotationLambdaArn":         ubx.FieldSpec{WireName: "rotation_lambda_arn"},
 		"RotationRules": ubx.FieldSpec{
 			WireName: "rotation_rules",
-			Kind: "object",
-			Fields: RotationSchedule_RotationRulesFields,
+			Kind:     "object",
+			Fields:   RotationSchedule_RotationRulesFields,
 		},
 		"SecretId": ubx.FieldSpec{WireName: "secret_id"},
 	},

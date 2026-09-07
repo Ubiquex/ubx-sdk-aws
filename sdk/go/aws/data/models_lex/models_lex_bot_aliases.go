@@ -4,50 +4,50 @@ package models_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsLexBotAliases_BotAliases_ConversationLogs_LogSettings struct {
-	Destination any
-	KmsKeyArn any
-	LogType any
-	ResourceArn any
+	Destination    any
+	KmsKeyArn      any
+	LogType        any
+	ResourceArn    any
 	ResourcePrefix any
 }
 
 type ModelsLexBotAliases_BotAliases_ConversationLogs struct {
-	IamRoleArn any
+	IamRoleArn  any
 	LogSettings any
 }
 
 type ModelsLexBotAliases_BotAliases struct {
-	BotName any
-	BotVersion any
-	Checksum any
+	BotName          any
+	BotVersion       any
+	Checksum         any
 	ConversationLogs any
-	CreatedDate any
-	Description any
-	LastUpdatedDate any
-	Name any
+	CreatedDate      any
+	Description      any
+	LastUpdatedDate  any
+	Name             any
 }
 
 type ModelsLexBotAliasesConfig struct {
-	BotName any
-	MaxResults any
+	BotName      any
+	MaxResults   any
 	NameContains any
-	NextToken any
+	NextToken    any
 }
 
 type ModelsLexBotAliasesAttrs struct {
-	BotAliases any
-	BotName any
-	MaxResults any
+	BotAliases   any
+	BotName      any
+	MaxResults   any
 	NameContains any
-	NextToken any
+	NextToken    any
 }
 
 var ModelsLexBotAliases = ubx.DataSourceBinding{
 	WireType: "aws_models_lex_bot_aliases",
 	Fields: ubx.FieldMap{
-		"BotName": ubx.FieldSpec{WireName: "bot_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"BotName":      ubx.FieldSpec{WireName: "bot_name"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
 		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

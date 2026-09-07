@@ -35,7 +35,7 @@ var Datastore = ubx.ResourceBinding{
 	WireType: "aws_health_imaging_datastore",
 	Fields: ubx.FieldMap{
 		"DatastoreName": ubx.FieldSpec{WireName: "datastore_name"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"KmsKeyArn":     ubx.FieldSpec{WireName: "kms_key_arn"},
+		"Tags":          ubx.FieldSpec{WireName: "tags"},
 	},
 }

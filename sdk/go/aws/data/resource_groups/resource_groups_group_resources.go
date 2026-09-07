@@ -4,17 +4,17 @@ package resource_groups
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceGroupsGroupResources_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ResourceGroupsGroupResources_QueryErrors struct {
 	ErrorCode any
-	Message any
+	Message   any
 }
 
 type ResourceGroupsGroupResources_ResourceIdentifiers struct {
-	ResourceArn any
+	ResourceArn  any
 	ResourceType any
 }
 
@@ -24,31 +24,31 @@ type ResourceGroupsGroupResources_Resources_Status struct {
 
 type ResourceGroupsGroupResources_Resources struct {
 	Identifier any
-	Status any
+	Status     any
 }
 
 var ResourceGroupsGroupResources_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ResourceGroupsGroupResourcesConfig struct {
-	Filters any
-	Group any
-	GroupName any
+	Filters    any
+	Group      any
+	GroupName  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ResourceGroupsGroupResourcesAttrs struct {
-	Filters any
-	Group any
-	GroupName any
-	MaxResults any
-	NextToken any
-	QueryErrors any
+	Filters             any
+	Group               any
+	GroupName           any
+	MaxResults          any
+	NextToken           any
+	QueryErrors         any
 	ResourceIdentifiers any
-	Resources any
+	Resources           any
 }
 
 var ResourceGroupsGroupResources = ubx.DataSourceBinding{
@@ -56,12 +56,12 @@ var ResourceGroupsGroupResources = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ResourceGroupsGroupResources_FiltersFields,
+			Kind:     "list",
+			Fields:   ResourceGroupsGroupResources_FiltersFields,
 		},
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
+		"Group":      ubx.FieldSpec{WireName: "group"},
+		"GroupName":  ubx.FieldSpec{WireName: "group_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

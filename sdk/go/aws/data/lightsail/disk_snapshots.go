@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiskSnapshots_DiskSnapshots_Location struct {
 	AvailabilityZone any
-	RegionName any
+	RegionName       any
 }
 
 type DiskSnapshots_DiskSnapshots_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type DiskSnapshots_DiskSnapshots struct {
-	Arn any
-	CreatedAt any
-	FromDiskArn any
-	FromDiskName any
-	FromInstanceArn any
-	FromInstanceName any
+	Arn                any
+	CreatedAt          any
+	FromDiskArn        any
+	FromDiskName       any
+	FromInstanceArn    any
+	FromInstanceName   any
 	IsFromAutoSnapshot any
-	Location any
-	Name any
-	Progress any
-	ResourceType any
-	SizeInGb any
-	State any
-	SupportCode any
-	Tags any
+	Location           any
+	Name               any
+	Progress           any
+	ResourceType       any
+	SizeInGb           any
+	State              any
+	SupportCode        any
+	Tags               any
 }
 
 type DiskSnapshotsConfig struct {
@@ -38,7 +38,7 @@ type DiskSnapshotsConfig struct {
 type DiskSnapshotsAttrs struct {
 	DiskSnapshots any
 	NextPageToken any
-	PageToken any
+	PageToken     any
 }
 
 var DiskSnapshots = ubx.DataSourceBinding{

@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackupSearchSearchJobBackups_Results struct {
 	BackupCreationTime any
-	BackupResourceArn any
-	IndexCreationTime any
-	ResourceType any
-	SourceResourceArn any
-	Status any
-	StatusMessage any
+	BackupResourceArn  any
+	IndexCreationTime  any
+	ResourceType       any
+	SourceResourceArn  any
+	Status             any
+	StatusMessage      any
 }
 
 type BackupSearchSearchJobBackupsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 	SearchJobIdentifier any
 }
 
 type BackupSearchSearchJobBackupsAttrs struct {
-	MaxResults any
-	NextToken any
-	Results any
+	MaxResults          any
+	NextToken           any
+	Results             any
 	SearchJobIdentifier any
 }
 
 var BackupSearchSearchJobBackups = ubx.DataSourceBinding{
 	WireType: "aws_backup_search_search_job_backups",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 		"SearchJobIdentifier": ubx.FieldSpec{WireName: "search_job_identifier"},
 	},
 }

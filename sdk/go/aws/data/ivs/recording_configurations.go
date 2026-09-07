@@ -12,21 +12,21 @@ type RecordingConfigurations_RecordingConfigurations_DestinationConfiguration st
 }
 
 type RecordingConfigurations_RecordingConfigurations struct {
-	Arn any
+	Arn                      any
 	DestinationConfiguration any
-	Name any
-	State any
-	Tags any
+	Name                     any
+	State                    any
+	Tags                     any
 }
 
 type RecordingConfigurationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type RecordingConfigurationsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 	RecordingConfigurations any
 }
 
@@ -34,6 +34,6 @@ var RecordingConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_ivs_recording_configurations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

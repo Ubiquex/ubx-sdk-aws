@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MobileSdkReleases_ReleaseSummaries struct {
 	ReleaseVersion any
-	Timestamp any
+	Timestamp      any
 }
 
 type MobileSdkReleasesConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
-	Platform any
+	Platform   any
 }
 
 type MobileSdkReleasesAttrs struct {
-	Limit any
-	NextMarker any
-	Platform any
+	Limit            any
+	NextMarker       any
+	Platform         any
 	ReleaseSummaries any
 }
 
 var MobileSdkReleases = ubx.DataSourceBinding{
 	WireType: "aws_wafv2_mobile_sdk_releases",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
-		"Platform": ubx.FieldSpec{WireName: "platform"},
+		"Platform":   ubx.FieldSpec{WireName: "platform"},
 	},
 }

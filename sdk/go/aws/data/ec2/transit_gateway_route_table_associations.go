@@ -4,36 +4,36 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TransitGatewayRouteTableAssociations_Associations struct {
-	ResourceId any
-	ResourceType any
-	State any
+	ResourceId                 any
+	ResourceType               any
+	State                      any
 	TransitGatewayAttachmentId any
 }
 
 type TransitGatewayRouteTableAssociations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var TransitGatewayRouteTableAssociations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type TransitGatewayRouteTableAssociationsConfig struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                     any
+	Filters                    any
+	MaxResults                 any
+	NextToken                  any
 	TransitGatewayRouteTableId any
 }
 
 type TransitGatewayRouteTableAssociationsAttrs struct {
-	Associations any
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	Associations               any
+	DryRun                     any
+	Filters                    any
+	MaxResults                 any
+	NextToken                  any
 	TransitGatewayRouteTableId any
 }
 
@@ -43,11 +43,11 @@ var TransitGatewayRouteTableAssociations = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: TransitGatewayRouteTableAssociations_FiltersFields,
+			Kind:     "list",
+			Fields:   TransitGatewayRouteTableAssociations_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                 ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                  ubx.FieldSpec{WireName: "next_token"},
 		"TransitGatewayRouteTableId": ubx.FieldSpec{WireName: "transit_gateway_route_table_id"},
 	},
 }

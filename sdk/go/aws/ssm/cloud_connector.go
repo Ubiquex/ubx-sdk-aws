@@ -34,47 +34,47 @@ type CloudConnector_Configuration struct {
 }
 
 type CloudConnector_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var CloudConnector_Configuration_AzureConfiguration_Targets_SubscriptionsFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+}
 
 var CloudConnector_Configuration_AzureConfiguration_TargetsFields = ubx.FieldMap{
-		"Subscriptions": ubx.FieldSpec{
-			WireName: "subscriptions",
-			Kind: "list",
-			Fields: CloudConnector_Configuration_AzureConfiguration_Targets_SubscriptionsFields,
-		},
-	}
+	"Subscriptions": ubx.FieldSpec{
+		WireName: "subscriptions",
+		Kind:     "list",
+		Fields:   CloudConnector_Configuration_AzureConfiguration_Targets_SubscriptionsFields,
+	},
+}
 
 var CloudConnector_Configuration_AzureConfigurationFields = ubx.FieldMap{
-		"ApplicationDisplayName": ubx.FieldSpec{WireName: "application_display_name"},
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"Targets": ubx.FieldSpec{
-			WireName: "targets",
-			Kind: "object",
-			Fields: CloudConnector_Configuration_AzureConfiguration_TargetsFields,
-		},
-		"TenantDisplayName": ubx.FieldSpec{WireName: "tenant_display_name"},
-		"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
-	}
+	"ApplicationDisplayName": ubx.FieldSpec{WireName: "application_display_name"},
+	"ApplicationId":          ubx.FieldSpec{WireName: "application_id"},
+	"Targets": ubx.FieldSpec{
+		WireName: "targets",
+		Kind:     "object",
+		Fields:   CloudConnector_Configuration_AzureConfiguration_TargetsFields,
+	},
+	"TenantDisplayName": ubx.FieldSpec{WireName: "tenant_display_name"},
+	"TenantId":          ubx.FieldSpec{WireName: "tenant_id"},
+}
 
 var CloudConnector_ConfigurationFields = ubx.FieldMap{
-		"AzureConfiguration": ubx.FieldSpec{
-			WireName: "azure_configuration",
-			Kind: "object",
-			Fields: CloudConnector_Configuration_AzureConfigurationFields,
-		},
-	}
+	"AzureConfiguration": ubx.FieldSpec{
+		WireName: "azure_configuration",
+		Kind:     "object",
+		Fields:   CloudConnector_Configuration_AzureConfigurationFields,
+	},
+}
 
 var CloudConnector_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CloudConnectorConfig struct {
 	// The ARN of the AWS Config connector.
@@ -120,16 +120,16 @@ var CloudConnector = ubx.ResourceBinding{
 		"ConfigConnectorArn": ubx.FieldSpec{WireName: "config_connector_arn"},
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: CloudConnector_ConfigurationFields,
+			Kind:     "object",
+			Fields:   CloudConnector_ConfigurationFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":     ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CloudConnector_TagsFields,
+			Kind:     "list",
+			Fields:   CloudConnector_TagsFields,
 		},
 	},
 }

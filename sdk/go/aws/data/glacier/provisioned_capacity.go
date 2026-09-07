@@ -4,9 +4,9 @@ package glacier
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProvisionedCapacity_ProvisionedCapacityList struct {
-	CapacityId any
+	CapacityId     any
 	ExpirationDate any
-	StartDate any
+	StartDate      any
 }
 
 type ProvisionedCapacityConfig struct {
@@ -14,7 +14,7 @@ type ProvisionedCapacityConfig struct {
 }
 
 type ProvisionedCapacityAttrs struct {
-	AccountId any
+	AccountId               any
 	ProvisionedCapacityList any
 }
 

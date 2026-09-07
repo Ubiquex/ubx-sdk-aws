@@ -4,33 +4,33 @@ package gamelift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GameServerInstances_GameServerInstances struct {
-	GameServerGroupArn any
+	GameServerGroupArn  any
 	GameServerGroupName any
-	InstanceId any
-	InstanceStatus any
+	InstanceId          any
+	InstanceStatus      any
 }
 
 type GameServerInstancesConfig struct {
 	GameServerGroupName any
-	InstanceIds any
-	Limit any
-	NextToken any
+	InstanceIds         any
+	Limit               any
+	NextToken           any
 }
 
 type GameServerInstancesAttrs struct {
 	GameServerGroupName any
 	GameServerInstances any
-	InstanceIds any
-	Limit any
-	NextToken any
+	InstanceIds         any
+	Limit               any
+	NextToken           any
 }
 
 var GameServerInstances = ubx.DataSourceBinding{
 	WireType: "aws_gamelift_game_server_instances",
 	Fields: ubx.FieldMap{
 		"GameServerGroupName": ubx.FieldSpec{WireName: "game_server_group_name"},
-		"InstanceIds": ubx.FieldSpec{WireName: "instance_ids"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"InstanceIds":         ubx.FieldSpec{WireName: "instance_ids"},
+		"Limit":               ubx.FieldSpec{WireName: "limit"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 	},
 }

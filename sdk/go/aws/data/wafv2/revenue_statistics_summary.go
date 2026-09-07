@@ -4,48 +4,48 @@ package wafv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RevenueStatisticsSummary_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type RevenueStatisticsSummary_RevenueBreakdown struct {
-	Currency any
-	TotalAmount any
+	Currency            any
+	TotalAmount         any
 	TotalMonetizeServed any
-	TotalSettled any
-	UnverifiedAmount any
-	VerifiedAmount any
+	TotalSettled        any
+	UnverifiedAmount    any
+	VerifiedAmount      any
 }
 
 type RevenueStatisticsSummary_TimeWindow struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 var RevenueStatisticsSummary_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var RevenueStatisticsSummary_TimeWindowFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 type RevenueStatisticsSummaryConfig struct {
 	Currency any
-	Filters any
-	Scope any
+	Filters  any
+	Scope    any
 	// <p>In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want WAF to return a sample of web requests.</p> <p>You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p> <p>In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which WAF actually returned a sample of web requests. WAF gets the specified number of requests from among the first 5,000 requests that your Amazon Web Services resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that WAF received the 5,000th request.</p>
 	TimeWindow any
 }
 
 type RevenueStatisticsSummaryAttrs struct {
 	Currency any
-	Filters any
+	Filters  any
 	// <p>A summary of AI bot monetization revenue, including total revenue, revenue by verification tier, and request counts.</p>
 	RevenueBreakdown any
-	Scope any
+	Scope            any
 	// <p>In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want WAF to return a sample of web requests.</p> <p>You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p> <p>In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which WAF actually returned a sample of web requests. WAF gets the specified number of requests from among the first 5,000 requests that your Amazon Web Services resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that WAF received the 5,000th request.</p>
 	TimeWindow any
 }
@@ -56,14 +56,14 @@ var RevenueStatisticsSummary = ubx.DataSourceBinding{
 		"Currency": ubx.FieldSpec{WireName: "currency"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: RevenueStatisticsSummary_FiltersFields,
+			Kind:     "list",
+			Fields:   RevenueStatisticsSummary_FiltersFields,
 		},
 		"Scope": ubx.FieldSpec{WireName: "scope"},
 		"TimeWindow": ubx.FieldSpec{
 			WireName: "time_window",
-			Kind: "object",
-			Fields: RevenueStatisticsSummary_TimeWindowFields,
+			Kind:     "object",
+			Fields:   RevenueStatisticsSummary_TimeWindowFields,
 		},
 	},
 }

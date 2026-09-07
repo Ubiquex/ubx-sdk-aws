@@ -5,35 +5,35 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsV2LexCustomVocabularyItems_CustomVocabularyItems struct {
 	DisplayAs any
-	ItemId any
-	Phrase any
-	Weight any
+	ItemId    any
+	Phrase    any
+	Weight    any
 }
 
 type ModelsV2LexCustomVocabularyItemsConfig struct {
-	BotId any
+	BotId      any
 	BotVersion any
-	LocaleId any
+	LocaleId   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ModelsV2LexCustomVocabularyItemsAttrs struct {
-	BotId any
-	BotVersion any
+	BotId                 any
+	BotVersion            any
 	CustomVocabularyItems any
-	LocaleId any
-	MaxResults any
-	NextToken any
+	LocaleId              any
+	MaxResults            any
+	NextToken             any
 }
 
 var ModelsV2LexCustomVocabularyItems = ubx.DataSourceBinding{
 	WireType: "aws_models_v2_lex_custom_vocabulary_items",
 	Fields: ubx.FieldMap{
-		"BotId": ubx.FieldSpec{WireName: "bot_id"},
+		"BotId":      ubx.FieldSpec{WireName: "bot_id"},
 		"BotVersion": ubx.FieldSpec{WireName: "bot_version"},
-		"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
+		"LocaleId":   ubx.FieldSpec{WireName: "locale_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

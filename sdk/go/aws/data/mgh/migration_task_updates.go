@@ -5,37 +5,37 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MigrationTaskUpdates_MigrationTaskUpdateList_MigrationTaskState struct {
 	ProgressPercent any
-	Status any
-	StatusDetail any
+	Status          any
+	StatusDetail    any
 }
 
 type MigrationTaskUpdates_MigrationTaskUpdateList struct {
 	MigrationTaskState any
-	UpdateDateTime any
-	UpdateType any
+	UpdateDateTime     any
+	UpdateType         any
 }
 
 type MigrationTaskUpdatesConfig struct {
-	MaxResults any
-	MigrationTaskName any
-	NextToken any
+	MaxResults           any
+	MigrationTaskName    any
+	NextToken            any
 	ProgressUpdateStream any
 }
 
 type MigrationTaskUpdatesAttrs struct {
-	MaxResults any
-	MigrationTaskName any
+	MaxResults              any
+	MigrationTaskName       any
 	MigrationTaskUpdateList any
-	NextToken any
-	ProgressUpdateStream any
+	NextToken               any
+	ProgressUpdateStream    any
 }
 
 var MigrationTaskUpdates = ubx.DataSourceBinding{
 	WireType: "aws_mgh_migration_task_updates",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MigrationTaskName": ubx.FieldSpec{WireName: "migration_task_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"MigrationTaskName":    ubx.FieldSpec{WireName: "migration_task_name"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 		"ProgressUpdateStream": ubx.FieldSpec{WireName: "progress_update_stream"},
 	},
 }

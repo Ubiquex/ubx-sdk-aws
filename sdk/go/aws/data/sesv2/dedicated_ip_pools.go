@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DedicatedIpPoolsConfig struct {
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 type DedicatedIpPoolsAttrs struct {
 	// <p>A list of dedicated IP pools that are associated with your Amazon Web Services account.</p>
 	DedicatedIpPools any
-	NextToken any
-	PageSize any
+	NextToken        any
+	PageSize         any
 }
 
 var DedicatedIpPools = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_dedicated_ip_pools",
 	Fields: ubx.FieldMap{
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 	},
 }

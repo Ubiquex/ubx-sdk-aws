@@ -4,44 +4,44 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AggregateDiscoveredResources_Filters struct {
-	AccountId any
-	Region any
-	ResourceId any
+	AccountId    any
+	Region       any
+	ResourceId   any
 	ResourceName any
 }
 
 type AggregateDiscoveredResources_ResourceIdentifiers struct {
-	ResourceId any
-	ResourceName any
-	ResourceType any
+	ResourceId      any
+	ResourceName    any
+	ResourceType    any
 	SourceAccountId any
-	SourceRegion any
+	SourceRegion    any
 }
 
 var AggregateDiscoveredResources_FiltersFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
-	}
+	"AccountId":    ubx.FieldSpec{WireName: "account_id"},
+	"Region":       ubx.FieldSpec{WireName: "region"},
+	"ResourceId":   ubx.FieldSpec{WireName: "resource_id"},
+	"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
+}
 
 type AggregateDiscoveredResourcesConfig struct {
 	ConfigurationAggregatorName any
 	// <p>Filters the results by resource account ID, region, resource ID, and resource name.</p>
-	Filters any
-	Limit any
-	NextToken any
+	Filters      any
+	Limit        any
+	NextToken    any
 	ResourceType any
 }
 
 type AggregateDiscoveredResourcesAttrs struct {
 	ConfigurationAggregatorName any
 	// <p>Filters the results by resource account ID, region, resource ID, and resource name.</p>
-	Filters any
-	Limit any
-	NextToken any
+	Filters             any
+	Limit               any
+	NextToken           any
 	ResourceIdentifiers any
-	ResourceType any
+	ResourceType        any
 }
 
 var AggregateDiscoveredResources = ubx.DataSourceBinding{
@@ -50,11 +50,11 @@ var AggregateDiscoveredResources = ubx.DataSourceBinding{
 		"ConfigurationAggregatorName": ubx.FieldSpec{WireName: "configuration_aggregator_name"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: AggregateDiscoveredResources_FiltersFields,
+			Kind:     "object",
+			Fields:   AggregateDiscoveredResources_FiltersFields,
 		},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":        ubx.FieldSpec{WireName: "limit"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

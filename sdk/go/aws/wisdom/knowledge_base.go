@@ -62,7 +62,7 @@ type KnowledgeBase_SourceConfiguration struct {
 
 type KnowledgeBase_Tags struct {
 	// The key component of a tag applied to the Amazon Wisdom knowledge base, used to label the resource for management and cost allocation. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -132,153 +132,153 @@ type KnowledgeBase_VectorIngestionConfiguration struct {
 }
 
 var KnowledgeBase_RenderingConfigurationFields = ubx.FieldMap{
-		"TemplateUri": ubx.FieldSpec{WireName: "template_uri"},
-	}
+	"TemplateUri": ubx.FieldSpec{WireName: "template_uri"},
+}
 
 var KnowledgeBase_ServerSideEncryptionConfigurationFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+}
 
 var KnowledgeBase_SourceConfiguration_AppIntegrationsFields = ubx.FieldMap{
-		"AppIntegrationArn": ubx.FieldSpec{WireName: "app_integration_arn"},
-		"ObjectFields": ubx.FieldSpec{WireName: "object_fields"},
-	}
+	"AppIntegrationArn": ubx.FieldSpec{WireName: "app_integration_arn"},
+	"ObjectFields":      ubx.FieldSpec{WireName: "object_fields"},
+}
 
 var KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_CrawlerLimitsFields = ubx.FieldMap{
-		"RateLimit": ubx.FieldSpec{WireName: "rate_limit"},
-	}
+	"RateLimit": ubx.FieldSpec{WireName: "rate_limit"},
+}
 
 var KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_UrlConfiguration_SeedUrlsFields = ubx.FieldMap{
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Url": ubx.FieldSpec{WireName: "url"},
+}
 
 var KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_UrlConfigurationFields = ubx.FieldMap{
-		"SeedUrls": ubx.FieldSpec{
-			WireName: "seed_urls",
-			Kind: "list",
-			Fields: KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_UrlConfiguration_SeedUrlsFields,
-		},
-	}
+	"SeedUrls": ubx.FieldSpec{
+		WireName: "seed_urls",
+		Kind:     "list",
+		Fields:   KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_UrlConfiguration_SeedUrlsFields,
+	},
+}
 
 var KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfigurationFields = ubx.FieldMap{
-		"CrawlerLimits": ubx.FieldSpec{
-			WireName: "crawler_limits",
-			Kind: "object",
-			Fields: KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_CrawlerLimitsFields,
-		},
-		"ExclusionFilters": ubx.FieldSpec{WireName: "exclusion_filters"},
-		"InclusionFilters": ubx.FieldSpec{WireName: "inclusion_filters"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"UrlConfiguration": ubx.FieldSpec{
-			WireName: "url_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_UrlConfigurationFields,
-		},
-	}
+	"CrawlerLimits": ubx.FieldSpec{
+		WireName: "crawler_limits",
+		Kind:     "object",
+		Fields:   KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_CrawlerLimitsFields,
+	},
+	"ExclusionFilters": ubx.FieldSpec{WireName: "exclusion_filters"},
+	"InclusionFilters": ubx.FieldSpec{WireName: "inclusion_filters"},
+	"Scope":            ubx.FieldSpec{WireName: "scope"},
+	"UrlConfiguration": ubx.FieldSpec{
+		WireName: "url_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_UrlConfigurationFields,
+	},
+}
 
 var KnowledgeBase_SourceConfiguration_ManagedSourceConfigurationFields = ubx.FieldMap{
-		"WebCrawlerConfiguration": ubx.FieldSpec{
-			WireName: "web_crawler_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfigurationFields,
-		},
-	}
+	"WebCrawlerConfiguration": ubx.FieldSpec{
+		WireName: "web_crawler_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfigurationFields,
+	},
+}
 
 var KnowledgeBase_SourceConfigurationFields = ubx.FieldMap{
-		"AppIntegrations": ubx.FieldSpec{
-			WireName: "app_integrations",
-			Kind: "object",
-			Fields: KnowledgeBase_SourceConfiguration_AppIntegrationsFields,
-		},
-		"ManagedSourceConfiguration": ubx.FieldSpec{
-			WireName: "managed_source_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_SourceConfiguration_ManagedSourceConfigurationFields,
-		},
-	}
+	"AppIntegrations": ubx.FieldSpec{
+		WireName: "app_integrations",
+		Kind:     "object",
+		Fields:   KnowledgeBase_SourceConfiguration_AppIntegrationsFields,
+	},
+	"ManagedSourceConfiguration": ubx.FieldSpec{
+		WireName: "managed_source_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_SourceConfiguration_ManagedSourceConfigurationFields,
+	},
+}
 
 var KnowledgeBase_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_FixedSizeChunkingConfigurationFields = ubx.FieldMap{
-		"MaxTokens": ubx.FieldSpec{WireName: "max_tokens"},
-		"OverlapPercentage": ubx.FieldSpec{WireName: "overlap_percentage"},
-	}
+	"MaxTokens":         ubx.FieldSpec{WireName: "max_tokens"},
+	"OverlapPercentage": ubx.FieldSpec{WireName: "overlap_percentage"},
+}
 
 var KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfiguration_LevelConfigurationsFields = ubx.FieldMap{
-		"MaxTokens": ubx.FieldSpec{WireName: "max_tokens"},
-	}
+	"MaxTokens": ubx.FieldSpec{WireName: "max_tokens"},
+}
 
 var KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfigurationFields = ubx.FieldMap{
-		"LevelConfigurations": ubx.FieldSpec{
-			WireName: "level_configurations",
-			Kind: "list",
-			Fields: KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfiguration_LevelConfigurationsFields,
-		},
-		"OverlapTokens": ubx.FieldSpec{WireName: "overlap_tokens"},
-	}
+	"LevelConfigurations": ubx.FieldSpec{
+		WireName: "level_configurations",
+		Kind:     "list",
+		Fields:   KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfiguration_LevelConfigurationsFields,
+	},
+	"OverlapTokens": ubx.FieldSpec{WireName: "overlap_tokens"},
+}
 
 var KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_SemanticChunkingConfigurationFields = ubx.FieldMap{
-		"BreakpointPercentileThreshold": ubx.FieldSpec{WireName: "breakpoint_percentile_threshold"},
-		"BufferSize": ubx.FieldSpec{WireName: "buffer_size"},
-		"MaxTokens": ubx.FieldSpec{WireName: "max_tokens"},
-	}
+	"BreakpointPercentileThreshold": ubx.FieldSpec{WireName: "breakpoint_percentile_threshold"},
+	"BufferSize":                    ubx.FieldSpec{WireName: "buffer_size"},
+	"MaxTokens":                     ubx.FieldSpec{WireName: "max_tokens"},
+}
 
 var KnowledgeBase_VectorIngestionConfiguration_ChunkingConfigurationFields = ubx.FieldMap{
-		"ChunkingStrategy": ubx.FieldSpec{WireName: "chunking_strategy"},
-		"FixedSizeChunkingConfiguration": ubx.FieldSpec{
-			WireName: "fixed_size_chunking_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_FixedSizeChunkingConfigurationFields,
-		},
-		"HierarchicalChunkingConfiguration": ubx.FieldSpec{
-			WireName: "hierarchical_chunking_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfigurationFields,
-		},
-		"SemanticChunkingConfiguration": ubx.FieldSpec{
-			WireName: "semantic_chunking_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_SemanticChunkingConfigurationFields,
-		},
-	}
+	"ChunkingStrategy": ubx.FieldSpec{WireName: "chunking_strategy"},
+	"FixedSizeChunkingConfiguration": ubx.FieldSpec{
+		WireName: "fixed_size_chunking_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_FixedSizeChunkingConfigurationFields,
+	},
+	"HierarchicalChunkingConfiguration": ubx.FieldSpec{
+		WireName: "hierarchical_chunking_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfigurationFields,
+	},
+	"SemanticChunkingConfiguration": ubx.FieldSpec{
+		WireName: "semantic_chunking_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_SemanticChunkingConfigurationFields,
+	},
+}
 
 var KnowledgeBase_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfiguration_ParsingPromptFields = ubx.FieldMap{
-		"ParsingPromptText": ubx.FieldSpec{WireName: "parsing_prompt_text"},
-	}
+	"ParsingPromptText": ubx.FieldSpec{WireName: "parsing_prompt_text"},
+}
 
 var KnowledgeBase_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfigurationFields = ubx.FieldMap{
-		"ModelArn": ubx.FieldSpec{WireName: "model_arn"},
-		"ParsingPrompt": ubx.FieldSpec{
-			WireName: "parsing_prompt",
-			Kind: "object",
-			Fields: KnowledgeBase_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfiguration_ParsingPromptFields,
-		},
-	}
+	"ModelArn": ubx.FieldSpec{WireName: "model_arn"},
+	"ParsingPrompt": ubx.FieldSpec{
+		WireName: "parsing_prompt",
+		Kind:     "object",
+		Fields:   KnowledgeBase_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfiguration_ParsingPromptFields,
+	},
+}
 
 var KnowledgeBase_VectorIngestionConfiguration_ParsingConfigurationFields = ubx.FieldMap{
-		"BedrockFoundationModelConfiguration": ubx.FieldSpec{
-			WireName: "bedrock_foundation_model_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfigurationFields,
-		},
-		"ParsingStrategy": ubx.FieldSpec{WireName: "parsing_strategy"},
-	}
+	"BedrockFoundationModelConfiguration": ubx.FieldSpec{
+		WireName: "bedrock_foundation_model_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfigurationFields,
+	},
+	"ParsingStrategy": ubx.FieldSpec{WireName: "parsing_strategy"},
+}
 
 var KnowledgeBase_VectorIngestionConfigurationFields = ubx.FieldMap{
-		"ChunkingConfiguration": ubx.FieldSpec{
-			WireName: "chunking_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_VectorIngestionConfiguration_ChunkingConfigurationFields,
-		},
-		"ParsingConfiguration": ubx.FieldSpec{
-			WireName: "parsing_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_VectorIngestionConfiguration_ParsingConfigurationFields,
-		},
-	}
+	"ChunkingConfiguration": ubx.FieldSpec{
+		WireName: "chunking_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_VectorIngestionConfiguration_ChunkingConfigurationFields,
+	},
+	"ParsingConfiguration": ubx.FieldSpec{
+		WireName: "parsing_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_VectorIngestionConfiguration_ParsingConfigurationFields,
+	},
+}
 
 type KnowledgeBaseConfig struct {
 	// An optional description of the knowledge base, providing a human-readable summary of its contents or purpose in Amazon Connect Wisdom. (AI-inferred)
@@ -325,33 +325,33 @@ type KnowledgeBaseAttrs struct {
 var KnowledgeBase = ubx.ResourceBinding{
 	WireType: "aws_wisdom_knowledge_base",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
 		"KnowledgeBaseType": ubx.FieldSpec{WireName: "knowledge_base_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"RenderingConfiguration": ubx.FieldSpec{
 			WireName: "rendering_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_RenderingConfigurationFields,
+			Kind:     "object",
+			Fields:   KnowledgeBase_RenderingConfigurationFields,
 		},
 		"ServerSideEncryptionConfiguration": ubx.FieldSpec{
 			WireName: "server_side_encryption_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_ServerSideEncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   KnowledgeBase_ServerSideEncryptionConfigurationFields,
 		},
 		"SourceConfiguration": ubx.FieldSpec{
 			WireName: "source_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_SourceConfigurationFields,
+			Kind:     "object",
+			Fields:   KnowledgeBase_SourceConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: KnowledgeBase_TagsFields,
+			Kind:     "list",
+			Fields:   KnowledgeBase_TagsFields,
 		},
 		"VectorIngestionConfiguration": ubx.FieldSpec{
 			WireName: "vector_ingestion_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_VectorIngestionConfigurationFields,
+			Kind:     "object",
+			Fields:   KnowledgeBase_VectorIngestionConfigurationFields,
 		},
 	},
 }

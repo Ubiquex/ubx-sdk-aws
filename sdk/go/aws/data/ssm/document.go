@@ -9,82 +9,82 @@ type Document_Document_AttachmentsInformation struct {
 
 type Document_Document_Parameters struct {
 	DefaultValue any
-	Description any
-	Name any
-	Type any
+	Description  any
+	Name         any
+	Type         any
 }
 
 type Document_Document_Requires struct {
-	Name any
+	Name        any
 	RequireType any
-	Version any
+	Version     any
 	VersionName any
 }
 
 type Document_Document_ReviewInformation struct {
 	ReviewedTime any
-	Reviewer any
-	Status any
+	Reviewer     any
+	Status       any
 }
 
 type Document_Document_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Document_Document struct {
-	ApprovedVersion any
+	ApprovedVersion        any
 	AttachmentsInformation any
-	Author any
-	Category any
-	CategoryEnum any
-	CreatedDate any
-	DefaultVersion any
-	Description any
-	DisplayName any
-	DocumentFormat any
-	DocumentType any
-	DocumentVersion any
-	Hash any
-	HashType any
-	LatestVersion any
-	Name any
-	Owner any
-	Parameters any
-	PendingReviewVersion any
-	PlatformTypes any
-	Requires any
-	ReviewInformation any
-	ReviewStatus any
-	SchemaVersion any
-	Sha1 any
+	Author                 any
+	Category               any
+	CategoryEnum           any
+	CreatedDate            any
+	DefaultVersion         any
+	Description            any
+	DisplayName            any
+	DocumentFormat         any
+	DocumentType           any
+	DocumentVersion        any
+	Hash                   any
+	HashType               any
+	LatestVersion          any
+	Name                   any
+	Owner                  any
+	Parameters             any
+	PendingReviewVersion   any
+	PlatformTypes          any
+	Requires               any
+	ReviewInformation      any
+	ReviewStatus           any
+	SchemaVersion          any
+	Sha1                   any
 	// <p>The status of a document.</p>
-	Status any
+	Status            any
 	StatusInformation any
-	Tags any
-	TargetType any
-	VersionName any
+	Tags              any
+	TargetType        any
+	VersionName       any
 }
 
 type DocumentConfig struct {
 	DocumentVersion any
-	Name any
-	VersionName any
+	Name            any
+	VersionName     any
 }
 
 type DocumentAttrs struct {
 	// <p>Describes an Amazon Web Services Systems Manager document (SSM document). </p>
-	Document any
+	Document        any
 	DocumentVersion any
-	Name any
-	VersionName any
+	Name            any
+	VersionName     any
 }
 
 var Document = ubx.DataSourceBinding{
 	WireType: "aws_ssm_document",
 	Fields: ubx.FieldMap{
 		"DocumentVersion": ubx.FieldSpec{WireName: "document_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"VersionName": ubx.FieldSpec{WireName: "version_name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"VersionName":     ubx.FieldSpec{WireName: "version_name"},
 	},
 }

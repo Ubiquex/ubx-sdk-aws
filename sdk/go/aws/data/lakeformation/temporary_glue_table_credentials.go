@@ -8,52 +8,52 @@ type TemporaryGlueTableCredentials_AuditContext struct {
 }
 
 type TemporaryGlueTableCredentials_QuerySessionContext struct {
-	AdditionalContext any
-	ClusterId any
+	AdditionalContext    any
+	ClusterId            any
 	QueryAuthorizationId any
-	QueryId any
-	QueryStartTime any
+	QueryId              any
+	QueryStartTime       any
 }
 
 var TemporaryGlueTableCredentials_AuditContextFields = ubx.FieldMap{
-		"AdditionalAuditContext": ubx.FieldSpec{WireName: "additional_audit_context"},
-	}
+	"AdditionalAuditContext": ubx.FieldSpec{WireName: "additional_audit_context"},
+}
 
 var TemporaryGlueTableCredentials_QuerySessionContextFields = ubx.FieldMap{
-		"AdditionalContext": ubx.FieldSpec{WireName: "additional_context"},
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
-		"QueryAuthorizationId": ubx.FieldSpec{WireName: "query_authorization_id"},
-		"QueryId": ubx.FieldSpec{WireName: "query_id"},
-		"QueryStartTime": ubx.FieldSpec{WireName: "query_start_time"},
-	}
+	"AdditionalContext":    ubx.FieldSpec{WireName: "additional_context"},
+	"ClusterId":            ubx.FieldSpec{WireName: "cluster_id"},
+	"QueryAuthorizationId": ubx.FieldSpec{WireName: "query_authorization_id"},
+	"QueryId":              ubx.FieldSpec{WireName: "query_id"},
+	"QueryStartTime":       ubx.FieldSpec{WireName: "query_start_time"},
+}
 
 type TemporaryGlueTableCredentialsConfig struct {
 	// <p>A structure used to include auditing information on the privileged API. </p>
-	AuditContext any
+	AuditContext    any
 	DurationSeconds any
-	Permissions any
+	Permissions     any
 	// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p> <p>For more information about how to utilize QuerySessionContext, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/api-overview.html">Lake Formation workflow for application integration API operations</a> in the developer guide.</p>
-	QuerySessionContext any
-	S3Path any
+	QuerySessionContext      any
+	S3Path                   any
 	SupportedPermissionTypes any
-	TableArn any
+	TableArn                 any
 }
 
 type TemporaryGlueTableCredentialsAttrs struct {
 	AccessKeyId any
 	// <p>A structure used to include auditing information on the privileged API. </p>
-	AuditContext any
+	AuditContext    any
 	DurationSeconds any
-	Expiration any
-	Permissions any
+	Expiration      any
+	Permissions     any
 	// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p> <p>For more information about how to utilize QuerySessionContext, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/api-overview.html">Lake Formation workflow for application integration API operations</a> in the developer guide.</p>
-	QuerySessionContext any
-	S3Path any
-	SecretAccessKey any
-	SessionToken any
+	QuerySessionContext      any
+	S3Path                   any
+	SecretAccessKey          any
+	SessionToken             any
 	SupportedPermissionTypes any
-	TableArn any
-	VendedS3Path any
+	TableArn                 any
+	VendedS3Path             any
 }
 
 var TemporaryGlueTableCredentials = ubx.DataSourceBinding{
@@ -61,18 +61,18 @@ var TemporaryGlueTableCredentials = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AuditContext": ubx.FieldSpec{
 			WireName: "audit_context",
-			Kind: "object",
-			Fields: TemporaryGlueTableCredentials_AuditContextFields,
+			Kind:     "object",
+			Fields:   TemporaryGlueTableCredentials_AuditContextFields,
 		},
 		"DurationSeconds": ubx.FieldSpec{WireName: "duration_seconds"},
-		"Permissions": ubx.FieldSpec{WireName: "permissions"},
+		"Permissions":     ubx.FieldSpec{WireName: "permissions"},
 		"QuerySessionContext": ubx.FieldSpec{
 			WireName: "query_session_context",
-			Kind: "object",
-			Fields: TemporaryGlueTableCredentials_QuerySessionContextFields,
+			Kind:     "object",
+			Fields:   TemporaryGlueTableCredentials_QuerySessionContextFields,
 		},
-		"S3Path": ubx.FieldSpec{WireName: "s3_path"},
+		"S3Path":                   ubx.FieldSpec{WireName: "s3_path"},
 		"SupportedPermissionTypes": ubx.FieldSpec{WireName: "supported_permission_types"},
-		"TableArn": ubx.FieldSpec{WireName: "table_arn"},
+		"TableArn":                 ubx.FieldSpec{WireName: "table_arn"},
 	},
 }

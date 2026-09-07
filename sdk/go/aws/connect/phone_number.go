@@ -4,14 +4,14 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PhoneNumber_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var PhoneNumber_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PhoneNumberConfig struct {
 	// The phone number country code.
@@ -54,16 +54,16 @@ type PhoneNumberAttrs struct {
 var PhoneNumber = ubx.ResourceBinding{
 	WireType: "aws_connect_phone_number",
 	Fields: ubx.FieldMap{
-		"CountryCode": ubx.FieldSpec{WireName: "country_code"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
+		"CountryCode":          ubx.FieldSpec{WireName: "country_code"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"Prefix":               ubx.FieldSpec{WireName: "prefix"},
 		"SourcePhoneNumberArn": ubx.FieldSpec{WireName: "source_phone_number_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PhoneNumber_TagsFields,
+			Kind:     "list",
+			Fields:   PhoneNumber_TagsFields,
 		},
 		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":      ubx.FieldSpec{WireName: "type"},
 	},
 }

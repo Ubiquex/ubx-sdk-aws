@@ -12,7 +12,7 @@ type FileSystem_LustreConfiguration_DataReadCacheConfiguration struct {
 
 type FileSystem_LustreConfiguration_LogConfiguration struct {
 	Destination any
-	Level any
+	Level       any
 }
 
 type FileSystem_LustreConfiguration_MetadataConfiguration struct {
@@ -47,7 +47,7 @@ type FileSystem_LustreConfiguration struct {
 	ImportPath any
 	// Specifies the size in bytes of the chunks that the FSx for Lustre file system uses when importing files from its linked S3 data repository. (AI-inferred)
 	ImportedFileChunkSize any
-	LogConfiguration any
+	LogConfiguration      any
 	// Configures the metadata storage for the FSx for Lustre file system, allowing either automatic (AWS-managed) metadata capacity or user-provisioned metadata storage with a specified capacity. (AI-inferred)
 	MetadataConfiguration any
 	// Specifies the per-unit storage throughput (in MB/s per TiB) for the Lustre file system, which is required for persistent deployment types (PERSISTENT_1 or PERSISTENT_2) and must be one of the supported values (e.g., 50, 100, 200). (AI-inferred)
@@ -158,7 +158,7 @@ type FileSystem_OpenZfsconfiguration struct {
 
 type FileSystem_Tags struct {
 	// The key of a tag attached to the FSx file system, used to identify the tag for resource management and cost allocation. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -224,195 +224,195 @@ type FileSystem_WindowsConfiguration struct {
 }
 
 var FileSystem_LustreConfiguration_DataReadCacheConfigurationFields = ubx.FieldMap{
-		"SizeGiB": ubx.FieldSpec{WireName: "size_gi_b"},
-		"SizingMode": ubx.FieldSpec{WireName: "sizing_mode"},
-	}
+	"SizeGiB":    ubx.FieldSpec{WireName: "size_gi_b"},
+	"SizingMode": ubx.FieldSpec{WireName: "sizing_mode"},
+}
 
 var FileSystem_LustreConfiguration_LogConfigurationFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"Level": ubx.FieldSpec{WireName: "level"},
-	}
+	"Destination": ubx.FieldSpec{WireName: "destination"},
+	"Level":       ubx.FieldSpec{WireName: "level"},
+}
 
 var FileSystem_LustreConfiguration_MetadataConfigurationFields = ubx.FieldMap{
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Iops": ubx.FieldSpec{WireName: "iops"},
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var FileSystem_LustreConfigurationFields = ubx.FieldMap{
-		"AutoImportPolicy": ubx.FieldSpec{WireName: "auto_import_policy"},
-		"AutomaticBackupRetentionDays": ubx.FieldSpec{WireName: "automatic_backup_retention_days"},
-		"CopyTagsToBackups": ubx.FieldSpec{WireName: "copy_tags_to_backups"},
-		"DailyAutomaticBackupStartTime": ubx.FieldSpec{WireName: "daily_automatic_backup_start_time"},
-		"DataCompressionType": ubx.FieldSpec{WireName: "data_compression_type"},
-		"DataReadCacheConfiguration": ubx.FieldSpec{
-			WireName: "data_read_cache_configuration",
-			Kind: "object",
-			Fields: FileSystem_LustreConfiguration_DataReadCacheConfigurationFields,
-		},
-		"DeploymentType": ubx.FieldSpec{WireName: "deployment_type"},
-		"DriveCacheType": ubx.FieldSpec{WireName: "drive_cache_type"},
-		"EfaEnabled": ubx.FieldSpec{WireName: "efa_enabled"},
-		"ExportPath": ubx.FieldSpec{WireName: "export_path"},
-		"ImportPath": ubx.FieldSpec{WireName: "import_path"},
-		"ImportedFileChunkSize": ubx.FieldSpec{WireName: "imported_file_chunk_size"},
-		"LogConfiguration": ubx.FieldSpec{
-			WireName: "log_configuration",
-			Kind: "object",
-			Fields: FileSystem_LustreConfiguration_LogConfigurationFields,
-		},
-		"MetadataConfiguration": ubx.FieldSpec{
-			WireName: "metadata_configuration",
-			Kind: "object",
-			Fields: FileSystem_LustreConfiguration_MetadataConfigurationFields,
-		},
-		"PerUnitStorageThroughput": ubx.FieldSpec{WireName: "per_unit_storage_throughput"},
-		"ThroughputCapacity": ubx.FieldSpec{WireName: "throughput_capacity"},
-		"WeeklyMaintenanceStartTime": ubx.FieldSpec{WireName: "weekly_maintenance_start_time"},
-	}
+	"AutoImportPolicy":              ubx.FieldSpec{WireName: "auto_import_policy"},
+	"AutomaticBackupRetentionDays":  ubx.FieldSpec{WireName: "automatic_backup_retention_days"},
+	"CopyTagsToBackups":             ubx.FieldSpec{WireName: "copy_tags_to_backups"},
+	"DailyAutomaticBackupStartTime": ubx.FieldSpec{WireName: "daily_automatic_backup_start_time"},
+	"DataCompressionType":           ubx.FieldSpec{WireName: "data_compression_type"},
+	"DataReadCacheConfiguration": ubx.FieldSpec{
+		WireName: "data_read_cache_configuration",
+		Kind:     "object",
+		Fields:   FileSystem_LustreConfiguration_DataReadCacheConfigurationFields,
+	},
+	"DeploymentType":        ubx.FieldSpec{WireName: "deployment_type"},
+	"DriveCacheType":        ubx.FieldSpec{WireName: "drive_cache_type"},
+	"EfaEnabled":            ubx.FieldSpec{WireName: "efa_enabled"},
+	"ExportPath":            ubx.FieldSpec{WireName: "export_path"},
+	"ImportPath":            ubx.FieldSpec{WireName: "import_path"},
+	"ImportedFileChunkSize": ubx.FieldSpec{WireName: "imported_file_chunk_size"},
+	"LogConfiguration": ubx.FieldSpec{
+		WireName: "log_configuration",
+		Kind:     "object",
+		Fields:   FileSystem_LustreConfiguration_LogConfigurationFields,
+	},
+	"MetadataConfiguration": ubx.FieldSpec{
+		WireName: "metadata_configuration",
+		Kind:     "object",
+		Fields:   FileSystem_LustreConfiguration_MetadataConfigurationFields,
+	},
+	"PerUnitStorageThroughput":   ubx.FieldSpec{WireName: "per_unit_storage_throughput"},
+	"ThroughputCapacity":         ubx.FieldSpec{WireName: "throughput_capacity"},
+	"WeeklyMaintenanceStartTime": ubx.FieldSpec{WireName: "weekly_maintenance_start_time"},
+}
 
 var FileSystem_OntapConfigurationFields = ubx.FieldMap{
-		"AutomaticBackupRetentionDays": ubx.FieldSpec{WireName: "automatic_backup_retention_days"},
-		"DailyAutomaticBackupStartTime": ubx.FieldSpec{WireName: "daily_automatic_backup_start_time"},
-		"DeploymentType": ubx.FieldSpec{WireName: "deployment_type"},
-		"DiskIopsConfiguration": ubx.FieldSpec{
-			WireName: "disk_iops_configuration",
-			Kind: "object",
-			Fields: FileSystem_LustreConfiguration_MetadataConfigurationFields,
-		},
-		"EndpointIpAddressRange": ubx.FieldSpec{WireName: "endpoint_ip_address_range"},
-		"EndpointIpv6AddressRange": ubx.FieldSpec{WireName: "endpoint_ipv6_address_range"},
-		"FsxAdminPassword": ubx.FieldSpec{WireName: "fsx_admin_password"},
-		"Hapairs": ubx.FieldSpec{WireName: "hapairs"},
-		"PreferredSubnetId": ubx.FieldSpec{WireName: "preferred_subnet_id"},
-		"RouteTableIds": ubx.FieldSpec{WireName: "route_table_ids"},
-		"ThroughputCapacity": ubx.FieldSpec{WireName: "throughput_capacity"},
-		"ThroughputCapacityPerHapair": ubx.FieldSpec{WireName: "throughput_capacity_per_hapair"},
-		"WeeklyMaintenanceStartTime": ubx.FieldSpec{WireName: "weekly_maintenance_start_time"},
-	}
+	"AutomaticBackupRetentionDays":  ubx.FieldSpec{WireName: "automatic_backup_retention_days"},
+	"DailyAutomaticBackupStartTime": ubx.FieldSpec{WireName: "daily_automatic_backup_start_time"},
+	"DeploymentType":                ubx.FieldSpec{WireName: "deployment_type"},
+	"DiskIopsConfiguration": ubx.FieldSpec{
+		WireName: "disk_iops_configuration",
+		Kind:     "object",
+		Fields:   FileSystem_LustreConfiguration_MetadataConfigurationFields,
+	},
+	"EndpointIpAddressRange":      ubx.FieldSpec{WireName: "endpoint_ip_address_range"},
+	"EndpointIpv6AddressRange":    ubx.FieldSpec{WireName: "endpoint_ipv6_address_range"},
+	"FsxAdminPassword":            ubx.FieldSpec{WireName: "fsx_admin_password"},
+	"Hapairs":                     ubx.FieldSpec{WireName: "hapairs"},
+	"PreferredSubnetId":           ubx.FieldSpec{WireName: "preferred_subnet_id"},
+	"RouteTableIds":               ubx.FieldSpec{WireName: "route_table_ids"},
+	"ThroughputCapacity":          ubx.FieldSpec{WireName: "throughput_capacity"},
+	"ThroughputCapacityPerHapair": ubx.FieldSpec{WireName: "throughput_capacity_per_hapair"},
+	"WeeklyMaintenanceStartTime":  ubx.FieldSpec{WireName: "weekly_maintenance_start_time"},
+}
 
 var FileSystem_OpenZfsconfiguration_RootVolumeConfiguration_NfsExports_ClientConfigurationsFields = ubx.FieldMap{
-		"Clients": ubx.FieldSpec{WireName: "clients"},
-		"Options": ubx.FieldSpec{WireName: "options"},
-	}
+	"Clients": ubx.FieldSpec{WireName: "clients"},
+	"Options": ubx.FieldSpec{WireName: "options"},
+}
 
 var FileSystem_OpenZfsconfiguration_RootVolumeConfiguration_NfsExportsFields = ubx.FieldMap{
-		"ClientConfigurations": ubx.FieldSpec{
-			WireName: "client_configurations",
-			Kind: "list",
-			Fields: FileSystem_OpenZfsconfiguration_RootVolumeConfiguration_NfsExports_ClientConfigurationsFields,
-		},
-	}
+	"ClientConfigurations": ubx.FieldSpec{
+		WireName: "client_configurations",
+		Kind:     "list",
+		Fields:   FileSystem_OpenZfsconfiguration_RootVolumeConfiguration_NfsExports_ClientConfigurationsFields,
+	},
+}
 
 var FileSystem_OpenZfsconfiguration_RootVolumeConfiguration_UserAndGroupQuotasFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"StorageCapacityQuotaGiB": ubx.FieldSpec{WireName: "storage_capacity_quota_gi_b"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":                      ubx.FieldSpec{WireName: "id"},
+	"StorageCapacityQuotaGiB": ubx.FieldSpec{WireName: "storage_capacity_quota_gi_b"},
+	"Type":                    ubx.FieldSpec{WireName: "type"},
+}
 
 var FileSystem_OpenZfsconfiguration_RootVolumeConfigurationFields = ubx.FieldMap{
-		"CopyTagsToSnapshots": ubx.FieldSpec{WireName: "copy_tags_to_snapshots"},
-		"DataCompressionType": ubx.FieldSpec{WireName: "data_compression_type"},
-		"NfsExports": ubx.FieldSpec{
-			WireName: "nfs_exports",
-			Kind: "list",
-			Fields: FileSystem_OpenZfsconfiguration_RootVolumeConfiguration_NfsExportsFields,
-		},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"RecordSizeKiB": ubx.FieldSpec{WireName: "record_size_ki_b"},
-		"UserAndGroupQuotas": ubx.FieldSpec{
-			WireName: "user_and_group_quotas",
-			Kind: "list",
-			Fields: FileSystem_OpenZfsconfiguration_RootVolumeConfiguration_UserAndGroupQuotasFields,
-		},
-	}
+	"CopyTagsToSnapshots": ubx.FieldSpec{WireName: "copy_tags_to_snapshots"},
+	"DataCompressionType": ubx.FieldSpec{WireName: "data_compression_type"},
+	"NfsExports": ubx.FieldSpec{
+		WireName: "nfs_exports",
+		Kind:     "list",
+		Fields:   FileSystem_OpenZfsconfiguration_RootVolumeConfiguration_NfsExportsFields,
+	},
+	"ReadOnly":      ubx.FieldSpec{WireName: "read_only"},
+	"RecordSizeKiB": ubx.FieldSpec{WireName: "record_size_ki_b"},
+	"UserAndGroupQuotas": ubx.FieldSpec{
+		WireName: "user_and_group_quotas",
+		Kind:     "list",
+		Fields:   FileSystem_OpenZfsconfiguration_RootVolumeConfiguration_UserAndGroupQuotasFields,
+	},
+}
 
 var FileSystem_OpenZfsconfigurationFields = ubx.FieldMap{
-		"AutomaticBackupRetentionDays": ubx.FieldSpec{WireName: "automatic_backup_retention_days"},
-		"CopyTagsToBackups": ubx.FieldSpec{WireName: "copy_tags_to_backups"},
-		"CopyTagsToVolumes": ubx.FieldSpec{WireName: "copy_tags_to_volumes"},
-		"DailyAutomaticBackupStartTime": ubx.FieldSpec{WireName: "daily_automatic_backup_start_time"},
-		"DeploymentType": ubx.FieldSpec{WireName: "deployment_type"},
-		"DiskIopsConfiguration": ubx.FieldSpec{
-			WireName: "disk_iops_configuration",
-			Kind: "object",
-			Fields: FileSystem_LustreConfiguration_MetadataConfigurationFields,
-		},
-		"EndpointIpAddressRange": ubx.FieldSpec{WireName: "endpoint_ip_address_range"},
-		"EndpointIpv6AddressRange": ubx.FieldSpec{WireName: "endpoint_ipv6_address_range"},
-		"Options": ubx.FieldSpec{WireName: "options"},
-		"PreferredSubnetId": ubx.FieldSpec{WireName: "preferred_subnet_id"},
-		"ReadCacheConfiguration": ubx.FieldSpec{
-			WireName: "read_cache_configuration",
-			Kind: "object",
-			Fields: FileSystem_LustreConfiguration_DataReadCacheConfigurationFields,
-		},
-		"RootVolumeConfiguration": ubx.FieldSpec{
-			WireName: "root_volume_configuration",
-			Kind: "object",
-			Fields: FileSystem_OpenZfsconfiguration_RootVolumeConfigurationFields,
-		},
-		"RouteTableIds": ubx.FieldSpec{WireName: "route_table_ids"},
-		"ThroughputCapacity": ubx.FieldSpec{WireName: "throughput_capacity"},
-		"WeeklyMaintenanceStartTime": ubx.FieldSpec{WireName: "weekly_maintenance_start_time"},
-	}
+	"AutomaticBackupRetentionDays":  ubx.FieldSpec{WireName: "automatic_backup_retention_days"},
+	"CopyTagsToBackups":             ubx.FieldSpec{WireName: "copy_tags_to_backups"},
+	"CopyTagsToVolumes":             ubx.FieldSpec{WireName: "copy_tags_to_volumes"},
+	"DailyAutomaticBackupStartTime": ubx.FieldSpec{WireName: "daily_automatic_backup_start_time"},
+	"DeploymentType":                ubx.FieldSpec{WireName: "deployment_type"},
+	"DiskIopsConfiguration": ubx.FieldSpec{
+		WireName: "disk_iops_configuration",
+		Kind:     "object",
+		Fields:   FileSystem_LustreConfiguration_MetadataConfigurationFields,
+	},
+	"EndpointIpAddressRange":   ubx.FieldSpec{WireName: "endpoint_ip_address_range"},
+	"EndpointIpv6AddressRange": ubx.FieldSpec{WireName: "endpoint_ipv6_address_range"},
+	"Options":                  ubx.FieldSpec{WireName: "options"},
+	"PreferredSubnetId":        ubx.FieldSpec{WireName: "preferred_subnet_id"},
+	"ReadCacheConfiguration": ubx.FieldSpec{
+		WireName: "read_cache_configuration",
+		Kind:     "object",
+		Fields:   FileSystem_LustreConfiguration_DataReadCacheConfigurationFields,
+	},
+	"RootVolumeConfiguration": ubx.FieldSpec{
+		WireName: "root_volume_configuration",
+		Kind:     "object",
+		Fields:   FileSystem_OpenZfsconfiguration_RootVolumeConfigurationFields,
+	},
+	"RouteTableIds":              ubx.FieldSpec{WireName: "route_table_ids"},
+	"ThroughputCapacity":         ubx.FieldSpec{WireName: "throughput_capacity"},
+	"WeeklyMaintenanceStartTime": ubx.FieldSpec{WireName: "weekly_maintenance_start_time"},
+}
 
 var FileSystem_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var FileSystem_WindowsConfiguration_AuditLogConfigurationFields = ubx.FieldMap{
-		"AuditLogDestination": ubx.FieldSpec{WireName: "audit_log_destination"},
-		"FileAccessAuditLogLevel": ubx.FieldSpec{WireName: "file_access_audit_log_level"},
-		"FileShareAccessAuditLogLevel": ubx.FieldSpec{WireName: "file_share_access_audit_log_level"},
-	}
+	"AuditLogDestination":          ubx.FieldSpec{WireName: "audit_log_destination"},
+	"FileAccessAuditLogLevel":      ubx.FieldSpec{WireName: "file_access_audit_log_level"},
+	"FileShareAccessAuditLogLevel": ubx.FieldSpec{WireName: "file_share_access_audit_log_level"},
+}
 
 var FileSystem_WindowsConfiguration_FsrmConfigurationFields = ubx.FieldMap{
-		"EventLogDestination": ubx.FieldSpec{WireName: "event_log_destination"},
-		"FsrmServiceEnabled": ubx.FieldSpec{WireName: "fsrm_service_enabled"},
-	}
+	"EventLogDestination": ubx.FieldSpec{WireName: "event_log_destination"},
+	"FsrmServiceEnabled":  ubx.FieldSpec{WireName: "fsrm_service_enabled"},
+}
 
 var FileSystem_WindowsConfiguration_SelfManagedActiveDirectoryConfigurationFields = ubx.FieldMap{
-		"DnsIps": ubx.FieldSpec{WireName: "dns_ips"},
-		"DomainJoinServiceAccountSecret": ubx.FieldSpec{WireName: "domain_join_service_account_secret"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"FileSystemAdministratorsGroup": ubx.FieldSpec{WireName: "file_system_administrators_group"},
-		"OrganizationalUnitDistinguishedName": ubx.FieldSpec{WireName: "organizational_unit_distinguished_name"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
-	}
+	"DnsIps":                              ubx.FieldSpec{WireName: "dns_ips"},
+	"DomainJoinServiceAccountSecret":      ubx.FieldSpec{WireName: "domain_join_service_account_secret"},
+	"DomainName":                          ubx.FieldSpec{WireName: "domain_name"},
+	"FileSystemAdministratorsGroup":       ubx.FieldSpec{WireName: "file_system_administrators_group"},
+	"OrganizationalUnitDistinguishedName": ubx.FieldSpec{WireName: "organizational_unit_distinguished_name"},
+	"Password":                            ubx.FieldSpec{WireName: "password"},
+	"UserName":                            ubx.FieldSpec{WireName: "user_name"},
+}
 
 var FileSystem_WindowsConfigurationFields = ubx.FieldMap{
-		"ActiveDirectoryId": ubx.FieldSpec{WireName: "active_directory_id"},
-		"Aliases": ubx.FieldSpec{WireName: "aliases"},
-		"AuditLogConfiguration": ubx.FieldSpec{
-			WireName: "audit_log_configuration",
-			Kind: "object",
-			Fields: FileSystem_WindowsConfiguration_AuditLogConfigurationFields,
-		},
-		"AutomaticBackupRetentionDays": ubx.FieldSpec{WireName: "automatic_backup_retention_days"},
-		"CopyTagsToBackups": ubx.FieldSpec{WireName: "copy_tags_to_backups"},
-		"DailyAutomaticBackupStartTime": ubx.FieldSpec{WireName: "daily_automatic_backup_start_time"},
-		"DeploymentType": ubx.FieldSpec{WireName: "deployment_type"},
-		"DiskIopsConfiguration": ubx.FieldSpec{
-			WireName: "disk_iops_configuration",
-			Kind: "object",
-			Fields: FileSystem_LustreConfiguration_MetadataConfigurationFields,
-		},
-		"FsrmConfiguration": ubx.FieldSpec{
-			WireName: "fsrm_configuration",
-			Kind: "object",
-			Fields: FileSystem_WindowsConfiguration_FsrmConfigurationFields,
-		},
-		"PreferredSubnetId": ubx.FieldSpec{WireName: "preferred_subnet_id"},
-		"SelfManagedActiveDirectoryConfiguration": ubx.FieldSpec{
-			WireName: "self_managed_active_directory_configuration",
-			Kind: "object",
-			Fields: FileSystem_WindowsConfiguration_SelfManagedActiveDirectoryConfigurationFields,
-		},
-		"ThroughputCapacity": ubx.FieldSpec{WireName: "throughput_capacity"},
-		"WeeklyMaintenanceStartTime": ubx.FieldSpec{WireName: "weekly_maintenance_start_time"},
-	}
+	"ActiveDirectoryId": ubx.FieldSpec{WireName: "active_directory_id"},
+	"Aliases":           ubx.FieldSpec{WireName: "aliases"},
+	"AuditLogConfiguration": ubx.FieldSpec{
+		WireName: "audit_log_configuration",
+		Kind:     "object",
+		Fields:   FileSystem_WindowsConfiguration_AuditLogConfigurationFields,
+	},
+	"AutomaticBackupRetentionDays":  ubx.FieldSpec{WireName: "automatic_backup_retention_days"},
+	"CopyTagsToBackups":             ubx.FieldSpec{WireName: "copy_tags_to_backups"},
+	"DailyAutomaticBackupStartTime": ubx.FieldSpec{WireName: "daily_automatic_backup_start_time"},
+	"DeploymentType":                ubx.FieldSpec{WireName: "deployment_type"},
+	"DiskIopsConfiguration": ubx.FieldSpec{
+		WireName: "disk_iops_configuration",
+		Kind:     "object",
+		Fields:   FileSystem_LustreConfiguration_MetadataConfigurationFields,
+	},
+	"FsrmConfiguration": ubx.FieldSpec{
+		WireName: "fsrm_configuration",
+		Kind:     "object",
+		Fields:   FileSystem_WindowsConfiguration_FsrmConfigurationFields,
+	},
+	"PreferredSubnetId": ubx.FieldSpec{WireName: "preferred_subnet_id"},
+	"SelfManagedActiveDirectoryConfiguration": ubx.FieldSpec{
+		WireName: "self_managed_active_directory_configuration",
+		Kind:     "object",
+		Fields:   FileSystem_WindowsConfiguration_SelfManagedActiveDirectoryConfigurationFields,
+	},
+	"ThroughputCapacity":         ubx.FieldSpec{WireName: "throughput_capacity"},
+	"WeeklyMaintenanceStartTime": ubx.FieldSpec{WireName: "weekly_maintenance_start_time"},
+}
 
 type FileSystemConfig struct {
 	// The ID of an existing FSx backup to use when creating this file system, which restores the file system from that backup instead of creating a new empty one. (AI-inferred)
@@ -489,39 +489,39 @@ type FileSystemAttrs struct {
 var FileSystem = ubx.ResourceBinding{
 	WireType: "aws_fsx_file_system",
 	Fields: ubx.FieldMap{
-		"BackupId": ubx.FieldSpec{WireName: "backup_id"},
-		"FileSystemType": ubx.FieldSpec{WireName: "file_system_type"},
+		"BackupId":              ubx.FieldSpec{WireName: "backup_id"},
+		"FileSystemType":        ubx.FieldSpec{WireName: "file_system_type"},
 		"FileSystemTypeVersion": ubx.FieldSpec{WireName: "file_system_type_version"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+		"KmsKeyId":              ubx.FieldSpec{WireName: "kms_key_id"},
 		"LustreConfiguration": ubx.FieldSpec{
 			WireName: "lustre_configuration",
-			Kind: "object",
-			Fields: FileSystem_LustreConfigurationFields,
+			Kind:     "object",
+			Fields:   FileSystem_LustreConfigurationFields,
 		},
 		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
 		"OntapConfiguration": ubx.FieldSpec{
 			WireName: "ontap_configuration",
-			Kind: "object",
-			Fields: FileSystem_OntapConfigurationFields,
+			Kind:     "object",
+			Fields:   FileSystem_OntapConfigurationFields,
 		},
 		"OpenZfsconfiguration": ubx.FieldSpec{
 			WireName: "open_zfsconfiguration",
-			Kind: "object",
-			Fields: FileSystem_OpenZfsconfigurationFields,
+			Kind:     "object",
+			Fields:   FileSystem_OpenZfsconfigurationFields,
 		},
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"StorageCapacity": ubx.FieldSpec{WireName: "storage_capacity"},
-		"StorageType": ubx.FieldSpec{WireName: "storage_type"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"StorageCapacity":  ubx.FieldSpec{WireName: "storage_capacity"},
+		"StorageType":      ubx.FieldSpec{WireName: "storage_type"},
+		"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FileSystem_TagsFields,
+			Kind:     "list",
+			Fields:   FileSystem_TagsFields,
 		},
 		"WindowsConfiguration": ubx.FieldSpec{
 			WireName: "windows_configuration",
-			Kind: "object",
-			Fields: FileSystem_WindowsConfigurationFields,
+			Kind:     "object",
+			Fields:   FileSystem_WindowsConfigurationFields,
 		},
 	},
 }

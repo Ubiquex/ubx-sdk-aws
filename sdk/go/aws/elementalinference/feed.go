@@ -8,12 +8,12 @@ type Feed_Outputs_OutputConfig_Clipping_DataSourceConfiguration struct {
 }
 
 type Feed_Outputs_OutputConfig_Clipping struct {
-	CallbackMetadata any
+	CallbackMetadata        any
 	DataSourceConfiguration any
 }
 
 type Feed_Outputs_OutputConfig_Cropping_TemplateGroups struct {
-	Name any
+	Name         any
 	TemplateUris any
 }
 
@@ -28,95 +28,95 @@ type Feed_Outputs_OutputConfig_Subtitling_AspectRatio struct {
 }
 
 type Feed_Outputs_OutputConfig_Subtitling struct {
-	AspectRatio any
-	Dictionary any
-	Language any
+	AspectRatio     any
+	Dictionary      any
+	Language        any
 	ProfanityFilter any
 }
 
 type Feed_Outputs_OutputConfig struct {
-	Clipping any
-	Cropping any
+	Clipping   any
+	Cropping   any
 	Subtitling any
 }
 
 type Feed_Outputs struct {
-	Description any
-	Name any
+	Description  any
+	Name         any
 	OutputConfig any
-	Status any
+	Status       any
 }
 
 var Feed_Outputs_OutputConfig_Clipping_DataSourceConfigurationFields = ubx.FieldMap{
-		"FixtureId": ubx.FieldSpec{WireName: "fixture_id"},
-	}
+	"FixtureId": ubx.FieldSpec{WireName: "fixture_id"},
+}
 
 var Feed_Outputs_OutputConfig_ClippingFields = ubx.FieldMap{
-		"CallbackMetadata": ubx.FieldSpec{WireName: "callback_metadata"},
-		"DataSourceConfiguration": ubx.FieldSpec{
-			WireName: "data_source_configuration",
-			Kind: "object",
-			Fields: Feed_Outputs_OutputConfig_Clipping_DataSourceConfigurationFields,
-		},
-	}
+	"CallbackMetadata": ubx.FieldSpec{WireName: "callback_metadata"},
+	"DataSourceConfiguration": ubx.FieldSpec{
+		WireName: "data_source_configuration",
+		Kind:     "object",
+		Fields:   Feed_Outputs_OutputConfig_Clipping_DataSourceConfigurationFields,
+	},
+}
 
 var Feed_Outputs_OutputConfig_Cropping_TemplateGroupsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TemplateUris": ubx.FieldSpec{WireName: "template_uris"},
-	}
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"TemplateUris": ubx.FieldSpec{WireName: "template_uris"},
+}
 
 var Feed_Outputs_OutputConfig_CroppingFields = ubx.FieldMap{
-		"TemplateGroups": ubx.FieldSpec{
-			WireName: "template_groups",
-			Kind: "list",
-			Fields: Feed_Outputs_OutputConfig_Cropping_TemplateGroupsFields,
-		},
-	}
+	"TemplateGroups": ubx.FieldSpec{
+		WireName: "template_groups",
+		Kind:     "list",
+		Fields:   Feed_Outputs_OutputConfig_Cropping_TemplateGroupsFields,
+	},
+}
 
 var Feed_Outputs_OutputConfig_Subtitling_AspectRatioFields = ubx.FieldMap{
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"Width": ubx.FieldSpec{WireName: "width"},
-	}
+	"Height": ubx.FieldSpec{WireName: "height"},
+	"Width":  ubx.FieldSpec{WireName: "width"},
+}
 
 var Feed_Outputs_OutputConfig_SubtitlingFields = ubx.FieldMap{
-		"AspectRatio": ubx.FieldSpec{
-			WireName: "aspect_ratio",
-			Kind: "object",
-			Fields: Feed_Outputs_OutputConfig_Subtitling_AspectRatioFields,
-		},
-		"Dictionary": ubx.FieldSpec{WireName: "dictionary"},
-		"Language": ubx.FieldSpec{WireName: "language"},
-		"ProfanityFilter": ubx.FieldSpec{WireName: "profanity_filter"},
-	}
+	"AspectRatio": ubx.FieldSpec{
+		WireName: "aspect_ratio",
+		Kind:     "object",
+		Fields:   Feed_Outputs_OutputConfig_Subtitling_AspectRatioFields,
+	},
+	"Dictionary":      ubx.FieldSpec{WireName: "dictionary"},
+	"Language":        ubx.FieldSpec{WireName: "language"},
+	"ProfanityFilter": ubx.FieldSpec{WireName: "profanity_filter"},
+}
 
 var Feed_Outputs_OutputConfigFields = ubx.FieldMap{
-		"Clipping": ubx.FieldSpec{
-			WireName: "clipping",
-			Kind: "object",
-			Fields: Feed_Outputs_OutputConfig_ClippingFields,
-		},
-		"Cropping": ubx.FieldSpec{
-			WireName: "cropping",
-			Kind: "object",
-			Fields: Feed_Outputs_OutputConfig_CroppingFields,
-		},
-		"Subtitling": ubx.FieldSpec{
-			WireName: "subtitling",
-			Kind: "object",
-			Fields: Feed_Outputs_OutputConfig_SubtitlingFields,
-		},
-	}
+	"Clipping": ubx.FieldSpec{
+		WireName: "clipping",
+		Kind:     "object",
+		Fields:   Feed_Outputs_OutputConfig_ClippingFields,
+	},
+	"Cropping": ubx.FieldSpec{
+		WireName: "cropping",
+		Kind:     "object",
+		Fields:   Feed_Outputs_OutputConfig_CroppingFields,
+	},
+	"Subtitling": ubx.FieldSpec{
+		WireName: "subtitling",
+		Kind:     "object",
+		Fields:   Feed_Outputs_OutputConfig_SubtitlingFields,
+	},
+}
 
 var Feed_OutputsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutputConfig": ubx.FieldSpec{
-			WireName: "output_config",
-			Kind: "object",
-			Fields: Feed_Outputs_OutputConfigFields,
-		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"OutputConfig": ubx.FieldSpec{
+		WireName: "output_config",
+		Kind:     "object",
+		Fields:   Feed_Outputs_OutputConfigFields,
+	},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 type FeedConfig struct {
 	// The Amazon Resource Name (ARN) of the IAM role this feed assumes to access the media source it processes for inference. (AI-inferred)
@@ -150,11 +150,11 @@ var Feed = ubx.ResourceBinding{
 	WireType: "aws_elemental_inference_feed",
 	Fields: ubx.FieldMap{
 		"AccessRoleArn": ubx.FieldSpec{WireName: "access_role_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"Outputs": ubx.FieldSpec{
 			WireName: "outputs",
-			Kind: "list",
-			Fields: Feed_OutputsFields,
+			Kind:     "list",
+			Fields:   Feed_OutputsFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

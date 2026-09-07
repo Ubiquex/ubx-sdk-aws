@@ -4,11 +4,11 @@ package codecommit
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RepositoryTriggers_Triggers struct {
-	Branches any
-	CustomData any
+	Branches       any
+	CustomData     any
 	DestinationArn any
-	Events any
-	Name any
+	Events         any
+	Name           any
 }
 
 type RepositoryTriggersConfig struct {
@@ -17,8 +17,8 @@ type RepositoryTriggersConfig struct {
 
 type RepositoryTriggersAttrs struct {
 	ConfigurationId any
-	RepositoryName any
-	Triggers any
+	RepositoryName  any
+	Triggers        any
 }
 
 var RepositoryTriggers = ubx.DataSourceBinding{

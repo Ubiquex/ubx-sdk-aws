@@ -16,13 +16,13 @@ type MailManagerArchive_Tags struct {
 }
 
 var MailManagerArchive_RetentionFields = ubx.FieldMap{
-		"RetentionPeriod": ubx.FieldSpec{WireName: "retention_period"},
-	}
+	"RetentionPeriod": ubx.FieldSpec{WireName: "retention_period"},
+}
 
 var MailManagerArchive_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MailManagerArchiveConfig struct {
 	// The friendly name assigned to this SES Mail Manager archive, used to identify and distinguish it within the account. (AI-inferred)
@@ -56,16 +56,16 @@ var MailManagerArchive = ubx.ResourceBinding{
 	WireType: "aws_ses_mail_manager_archive",
 	Fields: ubx.FieldMap{
 		"ArchiveName": ubx.FieldSpec{WireName: "archive_name"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+		"KmsKeyArn":   ubx.FieldSpec{WireName: "kms_key_arn"},
 		"Retention": ubx.FieldSpec{
 			WireName: "retention",
-			Kind: "object",
-			Fields: MailManagerArchive_RetentionFields,
+			Kind:     "object",
+			Fields:   MailManagerArchive_RetentionFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MailManagerArchive_TagsFields,
+			Kind:     "list",
+			Fields:   MailManagerArchive_TagsFields,
 		},
 	},
 }

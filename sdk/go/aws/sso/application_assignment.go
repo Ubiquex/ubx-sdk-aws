@@ -25,7 +25,7 @@ var ApplicationAssignment = ubx.ResourceBinding{
 	WireType: "aws_sso_application_assignment",
 	Fields: ubx.FieldMap{
 		"ApplicationArn": ubx.FieldSpec{WireName: "application_arn"},
-		"PrincipalId": ubx.FieldSpec{WireName: "principal_id"},
-		"PrincipalType": ubx.FieldSpec{WireName: "principal_type"},
+		"PrincipalId":    ubx.FieldSpec{WireName: "principal_id"},
+		"PrincipalType":  ubx.FieldSpec{WireName: "principal_type"},
 	},
 }

@@ -13,10 +13,10 @@ type Rule_Predicates struct {
 }
 
 var Rule_PredicatesFields = ubx.FieldMap{
-		"DataId": ubx.FieldSpec{WireName: "data_id"},
-		"Negated": ubx.FieldSpec{WireName: "negated"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DataId":  ubx.FieldSpec{WireName: "data_id"},
+	"Negated": ubx.FieldSpec{WireName: "negated"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 type RuleConfig struct {
 	// The CloudWatch metric name associated with the rule, which is required and must be unique within the region for monitoring rule-level metrics. (AI-inferred)
@@ -42,11 +42,11 @@ var Rule = ubx.ResourceBinding{
 	WireType: "aws_wafregional_rule",
 	Fields: ubx.FieldMap{
 		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"Predicates": ubx.FieldSpec{
 			WireName: "predicates",
-			Kind: "list",
-			Fields: Rule_PredicatesFields,
+			Kind:     "list",
+			Fields:   Rule_PredicatesFields,
 		},
 	},
 }

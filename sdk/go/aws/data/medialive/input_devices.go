@@ -4,70 +4,70 @@ package medialive
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InputDevices_InputDevices_HdDeviceSettings struct {
-	ActiveInput any
+	ActiveInput     any
 	ConfiguredInput any
-	DeviceState any
-	Framerate any
-	Height any
-	LatencyMs any
-	MaxBitrate any
-	ScanType any
-	Width any
+	DeviceState     any
+	Framerate       any
+	Height          any
+	LatencyMs       any
+	MaxBitrate      any
+	ScanType        any
+	Width           any
 }
 
 type InputDevices_InputDevices_NetworkSettings struct {
 	DnsAddresses any
-	Gateway any
-	IpAddress any
-	IpScheme any
-	SubnetMask any
+	Gateway      any
+	IpAddress    any
+	IpScheme     any
+	SubnetMask   any
 }
 
 type InputDevices_InputDevices_UhdDeviceSettings_AudioChannelPairs struct {
-	Id any
+	Id      any
 	Profile any
 }
 
 type InputDevices_InputDevices_UhdDeviceSettings_MediaconnectSettings struct {
-	FlowArn any
-	RoleArn any
-	SecretArn any
+	FlowArn    any
+	RoleArn    any
+	SecretArn  any
 	SourceName any
 }
 
 type InputDevices_InputDevices_UhdDeviceSettings struct {
-	ActiveInput any
-	AudioChannelPairs any
-	Codec any
-	ConfiguredInput any
-	DeviceState any
-	Framerate any
-	Height any
-	InputResolution any
-	LatencyMs any
-	MaxBitrate any
+	ActiveInput          any
+	AudioChannelPairs    any
+	Codec                any
+	ConfiguredInput      any
+	DeviceState          any
+	Framerate            any
+	Height               any
+	InputResolution      any
+	LatencyMs            any
+	MaxBitrate           any
 	MediaconnectSettings any
-	ScanType any
-	Width any
+	ScanType             any
+	Width                any
 }
 
 type InputDevices_InputDevices struct {
-	Arn any
-	AvailabilityZone any
-	ConnectionState any
+	Arn                     any
+	AvailabilityZone        any
+	ConnectionState         any
 	DeviceSettingsSyncState any
-	DeviceUpdateStatus any
-	HdDeviceSettings any
-	Id any
-	MacAddress any
-	MedialiveInputArns any
-	Name any
-	NetworkSettings any
-	OutputType any
-	SerialNumber any
-	Tags any
-	Type any
-	UhdDeviceSettings any
+	DeviceUpdateStatus      any
+	HdDeviceSettings        any
+	Id                      any
+	MacAddress              any
+	MedialiveInputArns      any
+	Name                    any
+	NetworkSettings         any
+	OutputType              any
+	SerialNumber            any
+	Tags                    any
+	Type                    any
+	UhdDeviceSettings       any
 }
 
 type InputDevicesConfig struct {
@@ -90,6 +90,6 @@ var InputDevices = ubx.DataSourceBinding{
 	WireType: "aws_medialive_input_devices",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

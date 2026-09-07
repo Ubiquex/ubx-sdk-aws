@@ -18,14 +18,14 @@ type Profile_Tags struct {
 }
 
 var Profile_ProfileQuestionsFields = ubx.FieldMap{
-		"QuestionId": ubx.FieldSpec{WireName: "question_id"},
-		"SelectedChoiceIds": ubx.FieldSpec{WireName: "selected_choice_ids"},
-	}
+	"QuestionId":        ubx.FieldSpec{WireName: "question_id"},
+	"SelectedChoiceIds": ubx.FieldSpec{WireName: "selected_choice_ids"},
+}
 
 var Profile_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ProfileConfig struct {
 	// The profile description.
@@ -63,16 +63,16 @@ var Profile = ubx.ResourceBinding{
 	WireType: "aws_well_architected_profile",
 	Fields: ubx.FieldMap{
 		"ProfileDescription": ubx.FieldSpec{WireName: "profile_description"},
-		"ProfileName": ubx.FieldSpec{WireName: "profile_name"},
+		"ProfileName":        ubx.FieldSpec{WireName: "profile_name"},
 		"ProfileQuestions": ubx.FieldSpec{
 			WireName: "profile_questions",
-			Kind: "list",
-			Fields: Profile_ProfileQuestionsFields,
+			Kind:     "list",
+			Fields:   Profile_ProfileQuestionsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Profile_TagsFields,
+			Kind:     "list",
+			Fields:   Profile_TagsFields,
 		},
 	},
 }

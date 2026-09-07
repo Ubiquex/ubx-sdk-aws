@@ -4,9 +4,9 @@ package models_v2_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsV2LexSessionAnalyticsData_Filters struct {
-	Name any
+	Name     any
 	Operator any
-	Values any
+	Values   any
 }
 
 type ModelsV2LexSessionAnalyticsData_Sessions_InvokedIntentSamples struct {
@@ -14,76 +14,76 @@ type ModelsV2LexSessionAnalyticsData_Sessions_InvokedIntentSamples struct {
 }
 
 type ModelsV2LexSessionAnalyticsData_Sessions struct {
-	BotAliasId any
-	BotVersion any
-	Channel any
+	BotAliasId                  any
+	BotVersion                  any
+	Channel                     any
 	ConversationDurationSeconds any
-	ConversationEndState any
-	ConversationEndTime any
-	ConversationStartTime any
-	InvokedIntentSamples any
-	LocaleId any
-	Mode any
-	NumberOfTurns any
-	OriginatingRequestId any
-	SessionId any
+	ConversationEndState        any
+	ConversationEndTime         any
+	ConversationStartTime       any
+	InvokedIntentSamples        any
+	LocaleId                    any
+	Mode                        any
+	NumberOfTurns               any
+	OriginatingRequestId        any
+	SessionId                   any
 }
 
 type ModelsV2LexSessionAnalyticsData_SortBy struct {
-	Name any
+	Name  any
 	Order any
 }
 
 var ModelsV2LexSessionAnalyticsData_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var ModelsV2LexSessionAnalyticsData_SortByFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Order": ubx.FieldSpec{WireName: "order"},
+}
 
 type ModelsV2LexSessionAnalyticsDataConfig struct {
-	BotId any
+	BotId       any
 	EndDateTime any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters     any
+	MaxResults  any
+	NextToken   any
 	// <p>An object specifying the measure and method by which to sort the session analytics data.</p>
-	SortBy any
+	SortBy        any
 	StartDateTime any
 }
 
 type ModelsV2LexSessionAnalyticsDataAttrs struct {
-	BotId any
+	BotId       any
 	EndDateTime any
-	Filters any
-	MaxResults any
-	NextToken any
-	Sessions any
+	Filters     any
+	MaxResults  any
+	NextToken   any
+	Sessions    any
 	// <p>An object specifying the measure and method by which to sort the session analytics data.</p>
-	SortBy any
+	SortBy        any
 	StartDateTime any
 }
 
 var ModelsV2LexSessionAnalyticsData = ubx.DataSourceBinding{
 	WireType: "aws_models_v2_lex_session_analytics_data",
 	Fields: ubx.FieldMap{
-		"BotId": ubx.FieldSpec{WireName: "bot_id"},
+		"BotId":       ubx.FieldSpec{WireName: "bot_id"},
 		"EndDateTime": ubx.FieldSpec{WireName: "end_date_time"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ModelsV2LexSessionAnalyticsData_FiltersFields,
+			Kind:     "list",
+			Fields:   ModelsV2LexSessionAnalyticsData_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SortBy": ubx.FieldSpec{
 			WireName: "sort_by",
-			Kind: "object",
-			Fields: ModelsV2LexSessionAnalyticsData_SortByFields,
+			Kind:     "object",
+			Fields:   ModelsV2LexSessionAnalyticsData_SortByFields,
 		},
 		"StartDateTime": ubx.FieldSpec{WireName: "start_date_time"},
 	},

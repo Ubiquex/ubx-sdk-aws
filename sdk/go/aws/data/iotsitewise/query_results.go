@@ -14,7 +14,7 @@ type QueryResultsConfig struct {
 	// <p>Pagination token for query results.</p>
 	NextToken any
 	// <p>The unique identifier for a query execution.</p>
-	QueryId any
+	QueryId       any
 	WorkspaceName any
 }
 
@@ -28,16 +28,16 @@ type QueryResultsAttrs struct {
 	// <p>The unique identifier for a query execution.</p>
 	QueryId any
 	// <p>A list of result rows returned by the query. Each element is a row containing column values.</p>
-	Rows any
+	Rows          any
 	WorkspaceName any
 }
 
 var QueryResults = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_query_results",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"QueryId": ubx.FieldSpec{WireName: "query_id"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"QueryId":       ubx.FieldSpec{WireName: "query_id"},
 		"WorkspaceName": ubx.FieldSpec{WireName: "workspace_name"},
 	},
 }

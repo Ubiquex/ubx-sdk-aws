@@ -5,29 +5,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MailDomain_Records struct {
 	Hostname any
-	Type any
-	Value any
+	Type     any
+	Value    any
 }
 
 type MailDomainConfig struct {
-	DomainName any
+	DomainName     any
 	OrganizationId any
 }
 
 type MailDomainAttrs struct {
-	DkimVerificationStatus any
-	DomainName any
-	IsDefault any
-	IsTestDomain any
-	OrganizationId any
+	DkimVerificationStatus      any
+	DomainName                  any
+	IsDefault                   any
+	IsTestDomain                any
+	OrganizationId              any
 	OwnershipVerificationStatus any
-	Records any
+	Records                     any
 }
 
 var MailDomain = ubx.DataSourceBinding{
 	WireType: "aws_workmail_mail_domain",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":     ubx.FieldSpec{WireName: "domain_name"},
 		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
 	},
 }

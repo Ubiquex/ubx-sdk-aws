@@ -4,36 +4,36 @@ package servicecatalog
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PortfoliosForProduct_PortfolioDetails struct {
-	Arn any
-	CreatedTime any
-	Description any
-	DisplayName any
-	Id any
+	Arn          any
+	CreatedTime  any
+	Description  any
+	DisplayName  any
+	Id           any
 	ProviderName any
 }
 
 type PortfoliosForProductConfig struct {
 	AcceptLanguage any
-	PageSize any
-	PageToken any
-	ProductId any
+	PageSize       any
+	PageToken      any
+	ProductId      any
 }
 
 type PortfoliosForProductAttrs struct {
-	AcceptLanguage any
-	NextPageToken any
-	PageSize any
-	PageToken any
+	AcceptLanguage   any
+	NextPageToken    any
+	PageSize         any
+	PageToken        any
 	PortfolioDetails any
-	ProductId any
+	ProductId        any
 }
 
 var PortfoliosForProduct = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_portfolios_for_product",
 	Fields: ubx.FieldMap{
 		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
-		"ProductId": ubx.FieldSpec{WireName: "product_id"},
+		"PageSize":       ubx.FieldSpec{WireName: "page_size"},
+		"PageToken":      ubx.FieldSpec{WireName: "page_token"},
+		"ProductId":      ubx.FieldSpec{WireName: "product_id"},
 	},
 }

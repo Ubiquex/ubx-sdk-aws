@@ -4,40 +4,40 @@ package guardduty
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Investigations_Investigations struct {
-	AccountId any
-	Confidence any
-	EndTime any
+	AccountId       any
+	Confidence      any
+	EndTime         any
 	InvestigationId any
-	RiskLevel any
-	StartTime any
-	Status any
-	Title any
-	TriggerPrompt any
+	RiskLevel       any
+	StartTime       any
+	Status          any
+	Title           any
+	TriggerPrompt   any
 }
 
 type Investigations_SortCriteria struct {
 	AttributeName any
-	OrderBy any
+	OrderBy       any
 }
 
 var Investigations_SortCriteriaFields = ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-	}
+	"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
+	"OrderBy":       ubx.FieldSpec{WireName: "order_by"},
+}
 
 type InvestigationsConfig struct {
 	DetectorId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Contains information about the criteria used for sorting investigations.</p>
 	SortCriteria any
 }
 
 type InvestigationsAttrs struct {
-	DetectorId any
+	DetectorId     any
 	Investigations any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	// <p>Contains information about the criteria used for sorting investigations.</p>
 	SortCriteria any
 }
@@ -47,11 +47,11 @@ var Investigations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DetectorId": ubx.FieldSpec{WireName: "detector_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SortCriteria": ubx.FieldSpec{
 			WireName: "sort_criteria",
-			Kind: "object",
-			Fields: Investigations_SortCriteriaFields,
+			Kind:     "object",
+			Fields:   Investigations_SortCriteriaFields,
 		},
 	},
 }

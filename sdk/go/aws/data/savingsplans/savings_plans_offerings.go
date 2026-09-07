@@ -4,86 +4,86 @@ package savingsplans
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SavingsPlansOfferings_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type SavingsPlansOfferings_SearchResults_Properties struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type SavingsPlansOfferings_SearchResults struct {
-	Currency any
-	Description any
+	Currency        any
+	Description     any
 	DurationSeconds any
-	OfferingId any
-	Operation any
-	PaymentOption any
-	PlanType any
-	ProductTypes any
-	Properties any
-	ServiceCode any
-	UsageType any
+	OfferingId      any
+	Operation       any
+	PaymentOption   any
+	PlanType        any
+	ProductTypes    any
+	Properties      any
+	ServiceCode     any
+	UsageType       any
 }
 
 var SavingsPlansOfferings_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type SavingsPlansOfferingsConfig struct {
-	Currencies any
-	Descriptions any
-	Durations any
-	Filters any
-	MaxResults any
-	NextToken any
-	OfferingIds any
-	Operations any
+	Currencies     any
+	Descriptions   any
+	Durations      any
+	Filters        any
+	MaxResults     any
+	NextToken      any
+	OfferingIds    any
+	Operations     any
 	PaymentOptions any
-	PlanTypes any
-	ProductType any
-	ServiceCodes any
-	UsageTypes any
+	PlanTypes      any
+	ProductType    any
+	ServiceCodes   any
+	UsageTypes     any
 }
 
 type SavingsPlansOfferingsAttrs struct {
-	Currencies any
-	Descriptions any
-	Durations any
-	Filters any
-	MaxResults any
-	NextToken any
-	OfferingIds any
-	Operations any
+	Currencies     any
+	Descriptions   any
+	Durations      any
+	Filters        any
+	MaxResults     any
+	NextToken      any
+	OfferingIds    any
+	Operations     any
 	PaymentOptions any
-	PlanTypes any
-	ProductType any
-	SearchResults any
-	ServiceCodes any
-	UsageTypes any
+	PlanTypes      any
+	ProductType    any
+	SearchResults  any
+	ServiceCodes   any
+	UsageTypes     any
 }
 
 var SavingsPlansOfferings = ubx.DataSourceBinding{
 	WireType: "aws_savingsplans_savings_plans_offerings",
 	Fields: ubx.FieldMap{
-		"Currencies": ubx.FieldSpec{WireName: "currencies"},
+		"Currencies":   ubx.FieldSpec{WireName: "currencies"},
 		"Descriptions": ubx.FieldSpec{WireName: "descriptions"},
-		"Durations": ubx.FieldSpec{WireName: "durations"},
+		"Durations":    ubx.FieldSpec{WireName: "durations"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SavingsPlansOfferings_FiltersFields,
+			Kind:     "list",
+			Fields:   SavingsPlansOfferings_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OfferingIds": ubx.FieldSpec{WireName: "offering_ids"},
-		"Operations": ubx.FieldSpec{WireName: "operations"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"OfferingIds":    ubx.FieldSpec{WireName: "offering_ids"},
+		"Operations":     ubx.FieldSpec{WireName: "operations"},
 		"PaymentOptions": ubx.FieldSpec{WireName: "payment_options"},
-		"PlanTypes": ubx.FieldSpec{WireName: "plan_types"},
-		"ProductType": ubx.FieldSpec{WireName: "product_type"},
-		"ServiceCodes": ubx.FieldSpec{WireName: "service_codes"},
-		"UsageTypes": ubx.FieldSpec{WireName: "usage_types"},
+		"PlanTypes":      ubx.FieldSpec{WireName: "plan_types"},
+		"ProductType":    ubx.FieldSpec{WireName: "product_type"},
+		"ServiceCodes":   ubx.FieldSpec{WireName: "service_codes"},
+		"UsageTypes":     ubx.FieldSpec{WireName: "usage_types"},
 	},
 }

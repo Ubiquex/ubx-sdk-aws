@@ -5,17 +5,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Assets_AssetSummaries_Hierarchies struct {
 	ExternalId any
-	Id any
-	Name any
+	Id         any
+	Name       any
 }
 
 type Assets_AssetSummaries_Status_Error_Details struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type Assets_AssetSummaries_Status_Error struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
@@ -26,39 +26,39 @@ type Assets_AssetSummaries_Status struct {
 }
 
 type Assets_AssetSummaries struct {
-	Arn any
-	AssetModelId any
-	CreationDate any
-	Description any
-	ExternalId any
-	Hierarchies any
-	Id any
+	Arn            any
+	AssetModelId   any
+	CreationDate   any
+	Description    any
+	ExternalId     any
+	Hierarchies    any
+	Id             any
 	LastUpdateDate any
-	Name any
-	Status any
+	Name           any
+	Status         any
 }
 
 type AssetsConfig struct {
 	AssetModelId any
-	Filter any
-	MaxResults any
-	NextToken any
+	Filter       any
+	MaxResults   any
+	NextToken    any
 }
 
 type AssetsAttrs struct {
-	AssetModelId any
+	AssetModelId   any
 	AssetSummaries any
-	Filter any
-	MaxResults any
-	NextToken any
+	Filter         any
+	MaxResults     any
+	NextToken      any
 }
 
 var Assets = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_assets",
 	Fields: ubx.FieldMap{
 		"AssetModelId": ubx.FieldSpec{WireName: "asset_model_id"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Filter":       ubx.FieldSpec{WireName: "filter"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

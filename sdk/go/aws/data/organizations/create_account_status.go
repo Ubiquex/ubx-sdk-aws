@@ -4,14 +4,14 @@ package organizations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CreateAccountStatus_CreateAccountStatus struct {
-	AccountId any
-	AccountName any
+	AccountId          any
+	AccountName        any
 	CompletedTimestamp any
-	FailureReason any
-	GovCloudAccountId any
-	Id any
+	FailureReason      any
+	GovCloudAccountId  any
+	Id                 any
 	RequestedTimestamp any
-	State any
+	State              any
 }
 
 type CreateAccountStatusConfig struct {

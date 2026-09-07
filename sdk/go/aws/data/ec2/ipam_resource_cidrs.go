@@ -4,70 +4,70 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamResourceCidrs_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type IpamResourceCidrs_IpamResourceCidrs_ResourceTags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type IpamResourceCidrs_IpamResourceCidrs struct {
 	AvailabilityZoneId any
-	ComplianceStatus any
-	IpUsage any
-	IpamId any
-	IpamPoolId any
-	IpamScopeId any
-	ManagementState any
-	OverlapStatus any
-	ResourceCidr any
-	ResourceId any
-	ResourceName any
-	ResourceOwnerId any
-	ResourceRegion any
-	ResourceTags any
-	ResourceType any
-	VpcId any
+	ComplianceStatus   any
+	IpUsage            any
+	IpamId             any
+	IpamPoolId         any
+	IpamScopeId        any
+	ManagementState    any
+	OverlapStatus      any
+	ResourceCidr       any
+	ResourceId         any
+	ResourceName       any
+	ResourceOwnerId    any
+	ResourceRegion     any
+	ResourceTags       any
+	ResourceType       any
+	VpcId              any
 }
 
 var IpamResourceCidrs_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var IpamResourceCidrs_IpamResourceCidrs_ResourceTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IpamResourceCidrsConfig struct {
-	DryRun any
-	Filters any
-	IpamPoolId any
-	IpamScopeId any
-	MaxResults any
-	NextToken any
-	ResourceId any
+	DryRun        any
+	Filters       any
+	IpamPoolId    any
+	IpamScopeId   any
+	MaxResults    any
+	NextToken     any
+	ResourceId    any
 	ResourceOwner any
 	// <p>A tag on an IPAM resource.</p>
-	ResourceTag any
+	ResourceTag  any
 	ResourceType any
 }
 
 type IpamResourceCidrsAttrs struct {
-	DryRun any
-	Filters any
-	IpamPoolId any
+	DryRun            any
+	Filters           any
+	IpamPoolId        any
 	IpamResourceCidrs any
-	IpamScopeId any
-	MaxResults any
-	NextToken any
-	ResourceId any
-	ResourceOwner any
+	IpamScopeId       any
+	MaxResults        any
+	NextToken         any
+	ResourceId        any
+	ResourceOwner     any
 	// <p>A tag on an IPAM resource.</p>
-	ResourceTag any
+	ResourceTag  any
 	ResourceType any
 }
 
@@ -77,19 +77,19 @@ var IpamResourceCidrs = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: IpamResourceCidrs_FiltersFields,
+			Kind:     "list",
+			Fields:   IpamResourceCidrs_FiltersFields,
 		},
-		"IpamPoolId": ubx.FieldSpec{WireName: "ipam_pool_id"},
-		"IpamScopeId": ubx.FieldSpec{WireName: "ipam_scope_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+		"IpamPoolId":    ubx.FieldSpec{WireName: "ipam_pool_id"},
+		"IpamScopeId":   ubx.FieldSpec{WireName: "ipam_scope_id"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"ResourceId":    ubx.FieldSpec{WireName: "resource_id"},
 		"ResourceOwner": ubx.FieldSpec{WireName: "resource_owner"},
 		"ResourceTag": ubx.FieldSpec{
 			WireName: "resource_tag",
-			Kind: "object",
-			Fields: IpamResourceCidrs_IpamResourceCidrs_ResourceTagsFields,
+			Kind:     "object",
+			Fields:   IpamResourceCidrs_IpamResourceCidrs_ResourceTagsFields,
 		},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 	},

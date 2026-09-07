@@ -8,59 +8,59 @@ type Peerings_Peerings_LastModificationErrors_MissingPermissionsContext struct {
 }
 
 type Peerings_Peerings_LastModificationErrors struct {
-	Code any
-	Message any
+	Code                      any
+	Message                   any
 	MissingPermissionsContext any
-	RequestId any
-	ResourceArn any
+	RequestId                 any
+	ResourceArn               any
 }
 
 type Peerings_Peerings_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Peerings_Peerings struct {
-	CoreNetworkArn any
-	CoreNetworkId any
-	CreatedAt any
-	EdgeLocation any
+	CoreNetworkArn         any
+	CoreNetworkId          any
+	CreatedAt              any
+	EdgeLocation           any
 	LastModificationErrors any
-	OwnerAccountId any
-	PeeringId any
-	PeeringType any
-	ResourceArn any
-	State any
-	Tags any
+	OwnerAccountId         any
+	PeeringId              any
+	PeeringType            any
+	ResourceArn            any
+	State                  any
+	Tags                   any
 }
 
 type PeeringsConfig struct {
 	CoreNetworkId any
-	EdgeLocation any
-	MaxResults any
-	NextToken any
-	PeeringType any
-	State any
+	EdgeLocation  any
+	MaxResults    any
+	NextToken     any
+	PeeringType   any
+	State         any
 }
 
 type PeeringsAttrs struct {
 	CoreNetworkId any
-	EdgeLocation any
-	MaxResults any
-	NextToken any
-	PeeringType any
-	Peerings any
-	State any
+	EdgeLocation  any
+	MaxResults    any
+	NextToken     any
+	PeeringType   any
+	Peerings      any
+	State         any
 }
 
 var Peerings = ubx.DataSourceBinding{
 	WireType: "aws_networkmanager_peerings",
 	Fields: ubx.FieldMap{
 		"CoreNetworkId": ubx.FieldSpec{WireName: "core_network_id"},
-		"EdgeLocation": ubx.FieldSpec{WireName: "edge_location"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PeeringType": ubx.FieldSpec{WireName: "peering_type"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"EdgeLocation":  ubx.FieldSpec{WireName: "edge_location"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"PeeringType":   ubx.FieldSpec{WireName: "peering_type"},
+		"State":         ubx.FieldSpec{WireName: "state"},
 	},
 }

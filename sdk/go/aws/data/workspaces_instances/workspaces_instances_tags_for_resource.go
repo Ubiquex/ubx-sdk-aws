@@ -4,7 +4,7 @@ package workspaces_instances
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkspacesInstancesTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -13,7 +13,7 @@ type WorkspacesInstancesTagsForResourceConfig struct {
 }
 
 type WorkspacesInstancesTagsForResourceAttrs struct {
-	Tags any
+	Tags                any
 	WorkspaceInstanceId any
 }
 

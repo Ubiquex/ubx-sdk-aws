@@ -4,14 +4,14 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CapacityManagerDataExport_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var CapacityManagerDataExport_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CapacityManagerDataExportConfig struct {
 	// The format of the exported capacity manager data. Choose 'csv' for comma-separated values or 'parquet' for optimized columnar storage format.
@@ -44,14 +44,14 @@ type CapacityManagerDataExportAttrs struct {
 var CapacityManagerDataExport = ubx.ResourceBinding{
 	WireType: "aws_ec2_capacity_manager_data_export",
 	Fields: ubx.FieldMap{
-		"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
-		"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
+		"OutputFormat":   ubx.FieldSpec{WireName: "output_format"},
+		"S3BucketName":   ubx.FieldSpec{WireName: "s3_bucket_name"},
 		"S3BucketPrefix": ubx.FieldSpec{WireName: "s3_bucket_prefix"},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
+		"Schedule":       ubx.FieldSpec{WireName: "schedule"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CapacityManagerDataExport_TagsFields,
+			Kind:     "list",
+			Fields:   CapacityManagerDataExport_TagsFields,
 		},
 	},
 }

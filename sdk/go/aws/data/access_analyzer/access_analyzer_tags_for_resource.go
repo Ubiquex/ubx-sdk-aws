@@ -9,7 +9,7 @@ type AccessAnalyzerTagsForResourceConfig struct {
 
 type AccessAnalyzerTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var AccessAnalyzerTagsForResource = ubx.DataSourceBinding{

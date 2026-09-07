@@ -42,12 +42,12 @@ type ApiCacheAttrs struct {
 var ApiCache = ubx.ResourceBinding{
 	WireType: "aws_app_sync_api_cache",
 	Fields: ubx.FieldMap{
-		"ApiCachingBehavior": ubx.FieldSpec{WireName: "api_caching_behavior"},
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
-		"AtRestEncryptionEnabled": ubx.FieldSpec{WireName: "at_rest_encryption_enabled"},
-		"HealthMetricsConfig": ubx.FieldSpec{WireName: "health_metrics_config"},
+		"ApiCachingBehavior":       ubx.FieldSpec{WireName: "api_caching_behavior"},
+		"ApiId":                    ubx.FieldSpec{WireName: "api_id"},
+		"AtRestEncryptionEnabled":  ubx.FieldSpec{WireName: "at_rest_encryption_enabled"},
+		"HealthMetricsConfig":      ubx.FieldSpec{WireName: "health_metrics_config"},
 		"TransitEncryptionEnabled": ubx.FieldSpec{WireName: "transit_encryption_enabled"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Ttl":                      ubx.FieldSpec{WireName: "ttl"},
+		"Type":                     ubx.FieldSpec{WireName: "type"},
 	},
 }

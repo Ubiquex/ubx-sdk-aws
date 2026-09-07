@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotwirelessResourcePositionConfig struct {
 	ResourceIdentifier any
-	ResourceType any
+	ResourceType       any
 }
 
 type ApiIotwirelessResourcePositionAttrs struct {
-	GeoJsonPayload any
+	GeoJsonPayload     any
 	ResourceIdentifier any
-	ResourceType any
+	ResourceType       any
 }
 
 var ApiIotwirelessResourcePosition = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_resource_position",
 	Fields: ubx.FieldMap{
 		"ResourceIdentifier": ubx.FieldSpec{WireName: "resource_identifier"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"ResourceType":       ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

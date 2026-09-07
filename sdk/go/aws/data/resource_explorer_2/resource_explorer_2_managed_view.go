@@ -13,16 +13,16 @@ type ResourceExplorer2ManagedView_ManagedView_IncludedProperties struct {
 
 type ResourceExplorer2ManagedView_ManagedView struct {
 	// <p>A search filter defines which resources can be part of a search query result set.</p>
-	Filters any
+	Filters            any
 	IncludedProperties any
-	LastUpdatedAt any
-	ManagedViewArn any
-	ManagedViewName any
-	Owner any
-	ResourcePolicy any
-	Scope any
-	TrustedService any
-	Version any
+	LastUpdatedAt      any
+	ManagedViewArn     any
+	ManagedViewName    any
+	Owner              any
+	ResourcePolicy     any
+	Scope              any
+	TrustedService     any
+	Version            any
 }
 
 type ResourceExplorer2ManagedViewConfig struct {
@@ -31,7 +31,7 @@ type ResourceExplorer2ManagedViewConfig struct {
 
 type ResourceExplorer2ManagedViewAttrs struct {
 	// <p>An Amazon Web Services-managed view is how other Amazon Web Services services can access resource information indexed by Resource Explorer for your Amazon Web Services account or organization with your consent. For more information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/aws-managed-views.html">Managed views</a>. </p>
-	ManagedView any
+	ManagedView    any
 	ManagedViewArn any
 }
 

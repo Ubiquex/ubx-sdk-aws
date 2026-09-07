@@ -4,45 +4,45 @@ package appconfig
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExperimentDefinitions_Items struct {
-	ApplicationId any
+	ApplicationId          any
 	ConfigurationProfileId any
-	CreatedAt any
-	EnvironmentId any
-	FlagKey any
-	Hypothesis any
-	Id any
-	Name any
-	Status any
-	UpdatedAt any
+	CreatedAt              any
+	EnvironmentId          any
+	FlagKey                any
+	Hypothesis             any
+	Id                     any
+	Name                   any
+	Status                 any
+	UpdatedAt              any
 }
 
 type ExperimentDefinitionsConfig struct {
-	ApplicationIdentifier any
+	ApplicationIdentifier          any
 	ConfigurationProfileIdentifier any
-	EnvironmentIdentifier any
-	MaxResults any
-	NextToken any
-	Status any
+	EnvironmentIdentifier          any
+	MaxResults                     any
+	NextToken                      any
+	Status                         any
 }
 
 type ExperimentDefinitionsAttrs struct {
-	ApplicationIdentifier any
+	ApplicationIdentifier          any
 	ConfigurationProfileIdentifier any
-	EnvironmentIdentifier any
-	Items any
-	MaxResults any
-	NextToken any
-	Status any
+	EnvironmentIdentifier          any
+	Items                          any
+	MaxResults                     any
+	NextToken                      any
+	Status                         any
 }
 
 var ExperimentDefinitions = ubx.DataSourceBinding{
 	WireType: "aws_appconfig_experiment_definitions",
 	Fields: ubx.FieldMap{
-		"ApplicationIdentifier": ubx.FieldSpec{WireName: "application_identifier"},
+		"ApplicationIdentifier":          ubx.FieldSpec{WireName: "application_identifier"},
 		"ConfigurationProfileIdentifier": ubx.FieldSpec{WireName: "configuration_profile_identifier"},
-		"EnvironmentIdentifier": ubx.FieldSpec{WireName: "environment_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"EnvironmentIdentifier":          ubx.FieldSpec{WireName: "environment_identifier"},
+		"MaxResults":                     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                      ubx.FieldSpec{WireName: "next_token"},
+		"Status":                         ubx.FieldSpec{WireName: "status"},
 	},
 }

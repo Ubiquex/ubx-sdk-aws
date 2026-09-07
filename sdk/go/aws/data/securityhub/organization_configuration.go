@@ -5,16 +5,16 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationConfiguration_OrganizationConfiguration struct {
 	ConfigurationType any
-	Status any
-	StatusMessage any
+	Status            any
+	StatusMessage     any
 }
 
 type OrganizationConfigurationConfig struct {
 }
 
 type OrganizationConfigurationAttrs struct {
-	AutoEnable any
-	AutoEnableStandards any
+	AutoEnable                any
+	AutoEnableStandards       any
 	MemberAccountLimitReached any
 	// <p> Provides information about the way an organization is configured in Security Hub CSPM. </p>
 	OrganizationConfiguration any
@@ -22,6 +22,5 @@ type OrganizationConfigurationAttrs struct {
 
 var OrganizationConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_organization_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -11,35 +11,35 @@ type SessionsStatisticsAggregation_Statistics_CostInUsd struct {
 }
 
 type SessionsStatisticsAggregation_Statistics struct {
-	AggregationEndTime any
+	AggregationEndTime   any
 	AggregationStartTime any
-	CostInUsd any
-	Count any
-	FleetId any
-	InstanceType any
-	JobId any
-	JobName any
-	LicenseProduct any
-	QueueId any
-	RuntimeInSeconds any
-	UsageType any
-	UserId any
+	CostInUsd            any
+	Count                any
+	FleetId              any
+	InstanceType         any
+	JobId                any
+	JobName              any
+	LicenseProduct       any
+	QueueId              any
+	RuntimeInSeconds     any
+	UsageType            any
+	UserId               any
 }
 
 type SessionsStatisticsAggregationConfig struct {
 	AggregationId any
-	FarmId any
-	MaxResults any
-	NextToken any
+	FarmId        any
+	MaxResults    any
+	NextToken     any
 }
 
 type SessionsStatisticsAggregationAttrs struct {
 	AggregationId any
-	FarmId any
-	MaxResults any
-	NextToken any
-	Statistics any
-	Status any
+	FarmId        any
+	MaxResults    any
+	NextToken     any
+	Statistics    any
+	Status        any
 	StatusMessage any
 }
 
@@ -47,8 +47,8 @@ var SessionsStatisticsAggregation = ubx.DataSourceBinding{
 	WireType: "aws_deadline_sessions_statistics_aggregation",
 	Fields: ubx.FieldMap{
 		"AggregationId": ubx.FieldSpec{WireName: "aggregation_id"},
-		"FarmId": ubx.FieldSpec{WireName: "farm_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"FarmId":        ubx.FieldSpec{WireName: "farm_id"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

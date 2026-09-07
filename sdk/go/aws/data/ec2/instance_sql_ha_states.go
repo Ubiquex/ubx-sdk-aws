@@ -4,45 +4,45 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceSqlHaStates_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type InstanceSqlHaStates_Instances_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type InstanceSqlHaStates_Instances struct {
-	HaStatus any
-	InstanceId any
-	LastUpdatedTime any
-	ProcessingStatus any
-	SqlServerCredentials any
+	HaStatus              any
+	InstanceId            any
+	LastUpdatedTime       any
+	ProcessingStatus      any
+	SqlServerCredentials  any
 	SqlServerLicenseUsage any
-	Tags any
+	Tags                  any
 }
 
 var InstanceSqlHaStates_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type InstanceSqlHaStatesConfig struct {
-	DryRun any
-	Filters any
+	DryRun      any
+	Filters     any
 	InstanceIds any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type InstanceSqlHaStatesAttrs struct {
-	DryRun any
-	Filters any
+	DryRun      any
+	Filters     any
 	InstanceIds any
-	Instances any
-	MaxResults any
-	NextToken any
+	Instances   any
+	MaxResults  any
+	NextToken   any
 }
 
 var InstanceSqlHaStates = ubx.DataSourceBinding{
@@ -51,11 +51,11 @@ var InstanceSqlHaStates = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: InstanceSqlHaStates_FiltersFields,
+			Kind:     "list",
+			Fields:   InstanceSqlHaStates_FiltersFields,
 		},
 		"InstanceIds": ubx.FieldSpec{WireName: "instance_ids"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

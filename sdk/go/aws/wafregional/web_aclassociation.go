@@ -23,6 +23,6 @@ var WebAclassociation = ubx.ResourceBinding{
 	WireType: "aws_wafregional_web_aclassociation",
 	Fields: ubx.FieldMap{
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"WebAclid": ubx.FieldSpec{WireName: "web_aclid"},
+		"WebAclid":    ubx.FieldSpec{WireName: "web_aclid"},
 	},
 }

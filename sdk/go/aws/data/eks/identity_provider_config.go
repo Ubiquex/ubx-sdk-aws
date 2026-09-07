@@ -4,18 +4,18 @@ package eks
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityProviderConfig_IdentityProviderConfig_Oidc struct {
-	ClientId any
-	ClusterName any
-	GroupsClaim any
-	GroupsPrefix any
-	IdentityProviderConfigArn any
+	ClientId                   any
+	ClusterName                any
+	GroupsClaim                any
+	GroupsPrefix               any
+	IdentityProviderConfigArn  any
 	IdentityProviderConfigName any
-	IssuerUrl any
-	RequiredClaims any
-	Status any
+	IssuerUrl                  any
+	RequiredClaims             any
+	Status                     any
 	// <p>The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value. You define them.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per resource – 50</p> </li> <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key length – 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length – 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> </ul>
-	Tags any
-	UsernameClaim any
+	Tags           any
+	UsernameClaim  any
 	UsernamePrefix any
 }
 
@@ -27,29 +27,29 @@ type IdentityProviderConfig_IdentityProviderConfig struct {
 }
 
 var IdentityProviderConfig_IdentityProviderConfig_OidcFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"GroupsClaim": ubx.FieldSpec{WireName: "groups_claim"},
-		"GroupsPrefix": ubx.FieldSpec{WireName: "groups_prefix"},
-		"IdentityProviderConfigArn": ubx.FieldSpec{WireName: "identity_provider_config_arn"},
-		"IdentityProviderConfigName": ubx.FieldSpec{WireName: "identity_provider_config_name"},
-		"IssuerUrl": ubx.FieldSpec{WireName: "issuer_url"},
-		"RequiredClaims": ubx.FieldSpec{WireName: "required_claims"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"UsernameClaim": ubx.FieldSpec{WireName: "username_claim"},
-		"UsernamePrefix": ubx.FieldSpec{WireName: "username_prefix"},
-	}
+	"ClientId":                   ubx.FieldSpec{WireName: "client_id"},
+	"ClusterName":                ubx.FieldSpec{WireName: "cluster_name"},
+	"GroupsClaim":                ubx.FieldSpec{WireName: "groups_claim"},
+	"GroupsPrefix":               ubx.FieldSpec{WireName: "groups_prefix"},
+	"IdentityProviderConfigArn":  ubx.FieldSpec{WireName: "identity_provider_config_arn"},
+	"IdentityProviderConfigName": ubx.FieldSpec{WireName: "identity_provider_config_name"},
+	"IssuerUrl":                  ubx.FieldSpec{WireName: "issuer_url"},
+	"RequiredClaims":             ubx.FieldSpec{WireName: "required_claims"},
+	"Status":                     ubx.FieldSpec{WireName: "status"},
+	"Tags":                       ubx.FieldSpec{WireName: "tags"},
+	"UsernameClaim":              ubx.FieldSpec{WireName: "username_claim"},
+	"UsernamePrefix":             ubx.FieldSpec{WireName: "username_prefix"},
+}
 
 var IdentityProviderConfig_IdentityProviderConfigFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Oidc": ubx.FieldSpec{
-			WireName: "oidc",
-			Kind: "object",
-			Fields: IdentityProviderConfig_IdentityProviderConfig_OidcFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Oidc": ubx.FieldSpec{
+		WireName: "oidc",
+		Kind:     "object",
+		Fields:   IdentityProviderConfig_IdentityProviderConfig_OidcFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type IdentityProviderConfigConfig struct {
 	ClusterName any
@@ -69,8 +69,8 @@ var IdentityProviderConfig = ubx.DataSourceBinding{
 		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
 		"IdentityProviderConfig": ubx.FieldSpec{
 			WireName: "identity_provider_config",
-			Kind: "object",
-			Fields: IdentityProviderConfig_IdentityProviderConfigFields,
+			Kind:     "object",
+			Fields:   IdentityProviderConfig_IdentityProviderConfigFields,
 		},
 	},
 }

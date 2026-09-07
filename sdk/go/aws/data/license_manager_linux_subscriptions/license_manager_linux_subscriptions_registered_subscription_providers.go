@@ -4,32 +4,32 @@ package license_manager_linux_subscriptions
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseManagerLinuxSubscriptionsRegisteredSubscriptionProviders_RegisteredSubscriptionProviders struct {
-	LastSuccessfulDataRetrievalTime any
-	SecretArn any
-	SubscriptionProviderArn any
-	SubscriptionProviderSource any
-	SubscriptionProviderStatus any
+	LastSuccessfulDataRetrievalTime   any
+	SecretArn                         any
+	SubscriptionProviderArn           any
+	SubscriptionProviderSource        any
+	SubscriptionProviderStatus        any
 	SubscriptionProviderStatusMessage any
 }
 
 type LicenseManagerLinuxSubscriptionsRegisteredSubscriptionProvidersConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults                  any
+	NextToken                   any
 	SubscriptionProviderSources any
 }
 
 type LicenseManagerLinuxSubscriptionsRegisteredSubscriptionProvidersAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults                      any
+	NextToken                       any
 	RegisteredSubscriptionProviders any
-	SubscriptionProviderSources any
+	SubscriptionProviderSources     any
 }
 
 var LicenseManagerLinuxSubscriptionsRegisteredSubscriptionProviders = ubx.DataSourceBinding{
 	WireType: "aws_license_manager_linux_subscriptions_registered_subscription_providers",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                   ubx.FieldSpec{WireName: "next_token"},
 		"SubscriptionProviderSources": ubx.FieldSpec{WireName: "subscription_provider_sources"},
 	},
 }

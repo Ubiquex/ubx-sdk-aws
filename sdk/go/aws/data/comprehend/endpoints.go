@@ -4,47 +4,47 @@ package comprehend
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Endpoints_EndpointPropertiesList struct {
-	CreationTime any
-	CurrentInferenceUnits any
-	DataAccessRoleArn any
+	CreationTime             any
+	CurrentInferenceUnits    any
+	DataAccessRoleArn        any
 	DesiredDataAccessRoleArn any
-	DesiredInferenceUnits any
-	DesiredModelArn any
-	EndpointArn any
-	FlywheelArn any
-	LastModifiedTime any
-	Message any
-	ModelArn any
-	Status any
+	DesiredInferenceUnits    any
+	DesiredModelArn          any
+	EndpointArn              any
+	FlywheelArn              any
+	LastModifiedTime         any
+	Message                  any
+	ModelArn                 any
+	Status                   any
 }
 
 type Endpoints_Filter struct {
-	CreationTimeAfter any
+	CreationTimeAfter  any
 	CreationTimeBefore any
-	ModelArn any
-	Status any
+	ModelArn           any
+	Status             any
 }
 
 var Endpoints_FilterFields = ubx.FieldMap{
-		"CreationTimeAfter": ubx.FieldSpec{WireName: "creation_time_after"},
-		"CreationTimeBefore": ubx.FieldSpec{WireName: "creation_time_before"},
-		"ModelArn": ubx.FieldSpec{WireName: "model_arn"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"CreationTimeAfter":  ubx.FieldSpec{WireName: "creation_time_after"},
+	"CreationTimeBefore": ubx.FieldSpec{WireName: "creation_time_before"},
+	"ModelArn":           ubx.FieldSpec{WireName: "model_arn"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+}
 
 type EndpointsConfig struct {
 	// <p>The filter used to determine which endpoints are returned. You can filter jobs on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EndpointsAttrs struct {
 	EndpointPropertiesList any
 	// <p>The filter used to determine which endpoints are returned. You can filter jobs on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Endpoints = ubx.DataSourceBinding{
@@ -52,10 +52,10 @@ var Endpoints = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: Endpoints_FilterFields,
+			Kind:     "object",
+			Fields:   Endpoints_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

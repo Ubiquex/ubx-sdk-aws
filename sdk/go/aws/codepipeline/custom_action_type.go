@@ -40,36 +40,36 @@ type CustomActionType_Settings struct {
 
 type CustomActionType_Tags struct {
 	// The tag key (such as 'Environment') used to label and categorize this AWS CodePipeline custom action type for management and identification purposes. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var CustomActionType_ConfigurationPropertiesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Queryable": ubx.FieldSpec{WireName: "queryable"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"Secret": ubx.FieldSpec{WireName: "secret"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Key":         ubx.FieldSpec{WireName: "key"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Queryable":   ubx.FieldSpec{WireName: "queryable"},
+	"Required":    ubx.FieldSpec{WireName: "required"},
+	"Secret":      ubx.FieldSpec{WireName: "secret"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var CustomActionType_InputArtifactDetailsFields = ubx.FieldMap{
-		"MaximumCount": ubx.FieldSpec{WireName: "maximum_count"},
-		"MinimumCount": ubx.FieldSpec{WireName: "minimum_count"},
-	}
+	"MaximumCount": ubx.FieldSpec{WireName: "maximum_count"},
+	"MinimumCount": ubx.FieldSpec{WireName: "minimum_count"},
+}
 
 var CustomActionType_SettingsFields = ubx.FieldMap{
-		"EntityUrlTemplate": ubx.FieldSpec{WireName: "entity_url_template"},
-		"ExecutionUrlTemplate": ubx.FieldSpec{WireName: "execution_url_template"},
-		"RevisionUrlTemplate": ubx.FieldSpec{WireName: "revision_url_template"},
-		"ThirdPartyConfigurationUrl": ubx.FieldSpec{WireName: "third_party_configuration_url"},
-	}
+	"EntityUrlTemplate":          ubx.FieldSpec{WireName: "entity_url_template"},
+	"ExecutionUrlTemplate":       ubx.FieldSpec{WireName: "execution_url_template"},
+	"RevisionUrlTemplate":        ubx.FieldSpec{WireName: "revision_url_template"},
+	"ThirdPartyConfigurationUrl": ubx.FieldSpec{WireName: "third_party_configuration_url"},
+}
 
 var CustomActionType_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CustomActionTypeConfig struct {
 	// The category of the custom action, such as a build action or a test action.
@@ -117,29 +117,29 @@ var CustomActionType = ubx.ResourceBinding{
 		"Category": ubx.FieldSpec{WireName: "category"},
 		"ConfigurationProperties": ubx.FieldSpec{
 			WireName: "configuration_properties",
-			Kind: "list",
-			Fields: CustomActionType_ConfigurationPropertiesFields,
+			Kind:     "list",
+			Fields:   CustomActionType_ConfigurationPropertiesFields,
 		},
 		"InputArtifactDetails": ubx.FieldSpec{
 			WireName: "input_artifact_details",
-			Kind: "object",
-			Fields: CustomActionType_InputArtifactDetailsFields,
+			Kind:     "object",
+			Fields:   CustomActionType_InputArtifactDetailsFields,
 		},
 		"OutputArtifactDetails": ubx.FieldSpec{
 			WireName: "output_artifact_details",
-			Kind: "object",
-			Fields: CustomActionType_InputArtifactDetailsFields,
+			Kind:     "object",
+			Fields:   CustomActionType_InputArtifactDetailsFields,
 		},
 		"Provider": ubx.FieldSpec{WireName: "provider"},
 		"Settings": ubx.FieldSpec{
 			WireName: "settings",
-			Kind: "object",
-			Fields: CustomActionType_SettingsFields,
+			Kind:     "object",
+			Fields:   CustomActionType_SettingsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CustomActionType_TagsFields,
+			Kind:     "list",
+			Fields:   CustomActionType_TagsFields,
 		},
 		"Version": ubx.FieldSpec{WireName: "version"},
 	},

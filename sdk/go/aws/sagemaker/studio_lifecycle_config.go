@@ -11,9 +11,9 @@ type StudioLifecycleConfig_Tags struct {
 }
 
 var StudioLifecycleConfig_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StudioLifecycleConfigConfig struct {
 	// The App type that the Lifecycle Configuration is attached to.
@@ -44,11 +44,11 @@ var StudioLifecycleConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"StudioLifecycleConfigAppType": ubx.FieldSpec{WireName: "studio_lifecycle_config_app_type"},
 		"StudioLifecycleConfigContent": ubx.FieldSpec{WireName: "studio_lifecycle_config_content"},
-		"StudioLifecycleConfigName": ubx.FieldSpec{WireName: "studio_lifecycle_config_name"},
+		"StudioLifecycleConfigName":    ubx.FieldSpec{WireName: "studio_lifecycle_config_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: StudioLifecycleConfig_TagsFields,
+			Kind:     "list",
+			Fields:   StudioLifecycleConfig_TagsFields,
 		},
 	},
 }

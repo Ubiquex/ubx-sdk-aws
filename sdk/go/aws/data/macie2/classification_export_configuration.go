@@ -4,10 +4,10 @@ package macie2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClassificationExportConfiguration_Configuration_S3Destination struct {
-	BucketName any
+	BucketName          any
 	ExpectedBucketOwner any
-	KeyPrefix any
-	KmsKeyArn any
+	KeyPrefix           any
+	KmsKeyArn           any
 }
 
 type ClassificationExportConfiguration_Configuration struct {
@@ -25,6 +25,5 @@ type ClassificationExportConfigurationAttrs struct {
 
 var ClassificationExportConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_macie2_classification_export_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

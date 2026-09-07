@@ -6,14 +6,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type RuleBasedMatchesConfig struct {
 	DomainName any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type RuleBasedMatchesAttrs struct {
 	DomainName any
-	MatchIds any
+	MatchIds   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var RuleBasedMatches = ubx.DataSourceBinding{
@@ -21,6 +21,6 @@ var RuleBasedMatches = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

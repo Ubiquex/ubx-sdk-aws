@@ -26,8 +26,8 @@ type SinkAttrs struct {
 var Sink = ubx.ResourceBinding{
 	WireType: "aws_oam_sink",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":   ubx.FieldSpec{WireName: "tags"},
 	},
 }

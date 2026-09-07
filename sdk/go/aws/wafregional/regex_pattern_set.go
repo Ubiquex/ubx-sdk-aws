@@ -22,7 +22,7 @@ type RegexPatternSetAttrs struct {
 var RegexPatternSet = ubx.ResourceBinding{
 	WireType: "aws_wafregional_regex_pattern_set",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 		"RegexPatternStrings": ubx.FieldSpec{WireName: "regex_pattern_strings"},
 	},
 }

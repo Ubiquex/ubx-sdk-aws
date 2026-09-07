@@ -4,26 +4,26 @@ package profile
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UploadJobs_Items struct {
-	CompletedAt any
-	CreatedAt any
-	DataExpiry any
-	DisplayName any
-	JobId any
-	Status any
+	CompletedAt  any
+	CreatedAt    any
+	DataExpiry   any
+	DisplayName  any
+	JobId        any
+	Status       any
 	StatusReason any
 }
 
 type UploadJobsConfig struct {
 	DomainName any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type UploadJobsAttrs struct {
 	DomainName any
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var UploadJobs = ubx.DataSourceBinding{
@@ -31,6 +31,6 @@ var UploadJobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

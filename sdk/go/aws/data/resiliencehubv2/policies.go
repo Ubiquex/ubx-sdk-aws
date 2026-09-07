@@ -13,20 +13,20 @@ type Policies_PolicySummaries_DataRecovery struct {
 
 type Policies_PolicySummaries_MultiAz struct {
 	DisasterRecoveryApproach any
-	RpoInMinutes any
-	RtoInMinutes any
+	RpoInMinutes             any
+	RtoInMinutes             any
 }
 
 type Policies_PolicySummaries struct {
 	AssociatedServiceCount any
-	AvailabilitySlo any
-	CreatedAt any
-	DataRecovery any
-	MultiAz any
-	MultiRegion any
-	Name any
-	PolicyArn any
-	UpdatedAt any
+	AvailabilitySlo        any
+	CreatedAt              any
+	DataRecovery           any
+	MultiAz                any
+	MultiRegion            any
+	Name                   any
+	PolicyArn              any
+	UpdatedAt              any
 }
 
 type PoliciesConfig struct {
@@ -40,7 +40,7 @@ type PoliciesAttrs struct {
 	// <p>Pagination page size.</p>
 	MaxResults any
 	// <p>Pagination token.</p>
-	NextToken any
+	NextToken       any
 	PolicySummaries any
 }
 
@@ -48,6 +48,6 @@ var Policies = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehubv2_policies",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

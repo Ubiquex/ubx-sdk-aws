@@ -4,50 +4,50 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecoveryPointsByResource_RecoveryPoints_AggregatedScanResult struct {
-	FailedScan any
-	Findings any
+	FailedScan   any
+	Findings     any
 	LastComputed any
 }
 
 type RecoveryPointsByResource_RecoveryPoints struct {
-	AggregatedScanResult any
-	BackupSizeBytes any
-	BackupVaultName any
-	CreationDate any
-	EncryptionKeyArn any
-	EncryptionKeyType any
-	IndexStatus any
-	IndexStatusMessage any
-	IsParent any
+	AggregatedScanResult   any
+	BackupSizeBytes        any
+	BackupVaultName        any
+	CreationDate           any
+	EncryptionKeyArn       any
+	EncryptionKeyType      any
+	IndexStatus            any
+	IndexStatusMessage     any
+	IsParent               any
 	ParentRecoveryPointArn any
-	RecoveryPointArn any
-	ResourceName any
-	Status any
-	StatusMessage any
-	VaultType any
+	RecoveryPointArn       any
+	ResourceName           any
+	Status                 any
+	StatusMessage          any
+	VaultType              any
 }
 
 type RecoveryPointsByResourceConfig struct {
 	ManagedByAwsbackupOnly any
-	MaxResults any
-	NextToken any
-	ResourceArn any
+	MaxResults             any
+	NextToken              any
+	ResourceArn            any
 }
 
 type RecoveryPointsByResourceAttrs struct {
 	ManagedByAwsbackupOnly any
-	MaxResults any
-	NextToken any
-	RecoveryPoints any
-	ResourceArn any
+	MaxResults             any
+	NextToken              any
+	RecoveryPoints         any
+	ResourceArn            any
 }
 
 var RecoveryPointsByResource = ubx.DataSourceBinding{
 	WireType: "aws_backup_recovery_points_by_resource",
 	Fields: ubx.FieldMap{
 		"ManagedByAwsbackupOnly": ubx.FieldSpec{WireName: "managed_by_awsbackup_only"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
+		"ResourceArn":            ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

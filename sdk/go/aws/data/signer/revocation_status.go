@@ -4,29 +4,29 @@ package signer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RevocationStatusConfig struct {
-	CertificateHashes any
-	JobArn any
-	PlatformId any
-	ProfileVersionArn any
+	CertificateHashes  any
+	JobArn             any
+	PlatformId         any
+	ProfileVersionArn  any
 	SignatureTimestamp any
 }
 
 type RevocationStatusAttrs struct {
-	CertificateHashes any
-	JobArn any
-	PlatformId any
-	ProfileVersionArn any
-	RevokedEntities any
+	CertificateHashes  any
+	JobArn             any
+	PlatformId         any
+	ProfileVersionArn  any
+	RevokedEntities    any
 	SignatureTimestamp any
 }
 
 var RevocationStatus = ubx.DataSourceBinding{
 	WireType: "aws_signer_revocation_status",
 	Fields: ubx.FieldMap{
-		"CertificateHashes": ubx.FieldSpec{WireName: "certificate_hashes"},
-		"JobArn": ubx.FieldSpec{WireName: "job_arn"},
-		"PlatformId": ubx.FieldSpec{WireName: "platform_id"},
-		"ProfileVersionArn": ubx.FieldSpec{WireName: "profile_version_arn"},
+		"CertificateHashes":  ubx.FieldSpec{WireName: "certificate_hashes"},
+		"JobArn":             ubx.FieldSpec{WireName: "job_arn"},
+		"PlatformId":         ubx.FieldSpec{WireName: "platform_id"},
+		"ProfileVersionArn":  ubx.FieldSpec{WireName: "profile_version_arn"},
 		"SignatureTimestamp": ubx.FieldSpec{WireName: "signature_timestamp"},
 	},
 }

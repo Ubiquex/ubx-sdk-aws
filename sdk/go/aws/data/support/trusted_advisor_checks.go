@@ -4,11 +4,11 @@ package support
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrustedAdvisorChecks_Checks struct {
-	Category any
+	Category    any
 	Description any
-	Id any
-	Metadata any
-	Name any
+	Id          any
+	Metadata    any
+	Name        any
 }
 
 type TrustedAdvisorChecksConfig struct {
@@ -16,7 +16,7 @@ type TrustedAdvisorChecksConfig struct {
 }
 
 type TrustedAdvisorChecksAttrs struct {
-	Checks any
+	Checks   any
 	Language any
 }
 

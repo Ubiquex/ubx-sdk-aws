@@ -38,10 +38,10 @@ type PublicTypeVersionAttrs struct {
 var PublicTypeVersion = ubx.ResourceBinding{
 	WireType: "aws_cloud_formation_public_type_version",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"LogDeliveryBucket": ubx.FieldSpec{WireName: "log_delivery_bucket"},
+		"Arn":                 ubx.FieldSpec{WireName: "arn"},
+		"LogDeliveryBucket":   ubx.FieldSpec{WireName: "log_delivery_bucket"},
 		"PublicVersionNumber": ubx.FieldSpec{WireName: "public_version_number"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
+		"Type":                ubx.FieldSpec{WireName: "type"},
+		"TypeName":            ubx.FieldSpec{WireName: "type_name"},
 	},
 }

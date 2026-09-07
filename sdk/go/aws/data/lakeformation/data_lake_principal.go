@@ -12,6 +12,5 @@ type DataLakePrincipalAttrs struct {
 
 var DataLakePrincipal = ubx.DataSourceBinding{
 	WireType: "aws_lakeformation_data_lake_principal",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

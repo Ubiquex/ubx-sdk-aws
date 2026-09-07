@@ -24,7 +24,7 @@ type QueueFleetAssociationAttrs struct {
 var QueueFleetAssociation = ubx.ResourceBinding{
 	WireType: "aws_deadline_queue_fleet_association",
 	Fields: ubx.FieldMap{
-		"FarmId": ubx.FieldSpec{WireName: "farm_id"},
+		"FarmId":  ubx.FieldSpec{WireName: "farm_id"},
 		"FleetId": ubx.FieldSpec{WireName: "fleet_id"},
 		"QueueId": ubx.FieldSpec{WireName: "queue_id"},
 	},

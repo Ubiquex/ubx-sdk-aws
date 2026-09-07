@@ -4,9 +4,9 @@ package es
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcEndpoints_VpcEndpointSummaryList struct {
-	DomainArn any
-	Status any
-	VpcEndpointId any
+	DomainArn        any
+	Status           any
+	VpcEndpointId    any
 	VpcEndpointOwner any
 }
 
@@ -17,7 +17,7 @@ type VpcEndpointsConfig struct {
 
 type VpcEndpointsAttrs struct {
 	// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
-	NextToken any
+	NextToken              any
 	VpcEndpointSummaryList any
 }
 

@@ -14,21 +14,21 @@ type PaymentConnector_CredentialProviderConfigurations struct {
 }
 
 var PaymentConnector_CredentialProviderConfigurations_CoinbaseCdpFields = ubx.FieldMap{
-		"CredentialProviderArn": ubx.FieldSpec{WireName: "credential_provider_arn"},
-	}
+	"CredentialProviderArn": ubx.FieldSpec{WireName: "credential_provider_arn"},
+}
 
 var PaymentConnector_CredentialProviderConfigurationsFields = ubx.FieldMap{
-		"CoinbaseCdp": ubx.FieldSpec{
-			WireName: "coinbase_cdp",
-			Kind: "object",
-			Fields: PaymentConnector_CredentialProviderConfigurations_CoinbaseCdpFields,
-		},
-		"StripePrivy": ubx.FieldSpec{
-			WireName: "stripe_privy",
-			Kind: "object",
-			Fields: PaymentConnector_CredentialProviderConfigurations_CoinbaseCdpFields,
-		},
-	}
+	"CoinbaseCdp": ubx.FieldSpec{
+		WireName: "coinbase_cdp",
+		Kind:     "object",
+		Fields:   PaymentConnector_CredentialProviderConfigurations_CoinbaseCdpFields,
+	},
+	"StripePrivy": ubx.FieldSpec{
+		WireName: "stripe_privy",
+		Kind:     "object",
+		Fields:   PaymentConnector_CredentialProviderConfigurations_CoinbaseCdpFields,
+	},
+}
 
 type PaymentConnectorConfig struct {
 	// The name of the payment connector
@@ -79,11 +79,11 @@ var PaymentConnector = ubx.ResourceBinding{
 		"ConnectorType": ubx.FieldSpec{WireName: "connector_type"},
 		"CredentialProviderConfigurations": ubx.FieldSpec{
 			WireName: "credential_provider_configurations",
-			Kind: "list",
-			Fields: PaymentConnector_CredentialProviderConfigurationsFields,
+			Kind:     "list",
+			Fields:   PaymentConnector_CredentialProviderConfigurationsFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"PaymentManagerId": ubx.FieldSpec{WireName: "payment_manager_id"},
-		"ProvisionMode": ubx.FieldSpec{WireName: "provision_mode"},
+		"ProvisionMode":    ubx.FieldSpec{WireName: "provision_mode"},
 	},
 }

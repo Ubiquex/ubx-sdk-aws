@@ -4,31 +4,31 @@ package globalaccelerator
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ByoipCidrs_ByoipCidrs_Events struct {
-	Message any
+	Message   any
 	Timestamp any
 }
 
 type ByoipCidrs_ByoipCidrs struct {
-	Cidr any
+	Cidr   any
 	Events any
-	State any
+	State  any
 }
 
 type ByoipCidrsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ByoipCidrsAttrs struct {
 	ByoipCidrs any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ByoipCidrs = ubx.DataSourceBinding{
 	WireType: "aws_globalaccelerator_byoip_cidrs",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

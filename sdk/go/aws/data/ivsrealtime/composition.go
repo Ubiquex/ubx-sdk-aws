@@ -4,7 +4,7 @@ package ivsrealtime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Composition_Composition_Destinations_Configuration_Channel struct {
-	ChannelArn any
+	ChannelArn              any
 	EncoderConfigurationArn any
 }
 
@@ -13,26 +13,26 @@ type Composition_Composition_Destinations_Configuration_S3_RecordingConfiguratio
 }
 
 type Composition_Composition_Destinations_Configuration_S3_RecordingConfiguration struct {
-	Format any
+	Format           any
 	HlsConfiguration any
 }
 
 type Composition_Composition_Destinations_Configuration_S3_ThumbnailConfigurations struct {
-	Storage any
+	Storage               any
 	TargetIntervalSeconds any
 }
 
 type Composition_Composition_Destinations_Configuration_S3 struct {
 	EncoderConfigurationArns any
-	RecordingConfiguration any
-	StorageConfigurationArn any
-	ThumbnailConfigurations any
+	RecordingConfiguration   any
+	StorageConfigurationArn  any
+	ThumbnailConfigurations  any
 }
 
 type Composition_Composition_Destinations_Configuration struct {
 	Channel any
-	Name any
-	S3 any
+	Name    any
+	S3      any
 }
 
 type Composition_Composition_Destinations_Detail_S3 struct {
@@ -45,34 +45,34 @@ type Composition_Composition_Destinations_Detail struct {
 
 type Composition_Composition_Destinations struct {
 	Configuration any
-	Detail any
-	EndTime any
-	Id any
-	StartTime any
-	State any
+	Detail        any
+	EndTime       any
+	Id            any
+	StartTime     any
+	State         any
 }
 
 type Composition_Composition_Layout_Grid struct {
 	FeaturedParticipantAttribute any
-	GridGap any
-	OmitStoppedVideo any
-	ParticipantOrderAttribute any
-	VideoAspectRatio any
-	VideoFillMode any
+	GridGap                      any
+	OmitStoppedVideo             any
+	ParticipantOrderAttribute    any
+	VideoAspectRatio             any
+	VideoFillMode                any
 }
 
 type Composition_Composition_Layout_Pip struct {
 	FeaturedParticipantAttribute any
-	GridGap any
-	OmitStoppedVideo any
-	ParticipantOrderAttribute any
-	PipBehavior any
-	PipHeight any
-	PipOffset any
-	PipParticipantAttribute any
-	PipPosition any
-	PipWidth any
-	VideoFillMode any
+	GridGap                      any
+	OmitStoppedVideo             any
+	ParticipantOrderAttribute    any
+	PipBehavior                  any
+	PipHeight                    any
+	PipOffset                    any
+	PipParticipantAttribute      any
+	PipPosition                  any
+	PipWidth                     any
+	VideoFillMode                any
 }
 
 type Composition_Composition_Layout struct {
@@ -83,15 +83,15 @@ type Composition_Composition_Layout struct {
 }
 
 type Composition_Composition struct {
-	Arn any
+	Arn          any
 	Destinations any
-	EndTime any
+	EndTime      any
 	// <p>Configuration information of supported layouts for server-side composition.</p>
-	Layout any
-	StageArn any
+	Layout    any
+	StageArn  any
 	StartTime any
-	State any
-	Tags any
+	State     any
+	Tags      any
 }
 
 type CompositionConfig struct {

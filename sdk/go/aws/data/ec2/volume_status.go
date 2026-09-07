@@ -4,88 +4,88 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VolumeStatus_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type VolumeStatus_VolumeStatuses_Actions struct {
-	Code any
+	Code        any
 	Description any
-	EventId any
-	EventType any
+	EventId     any
+	EventType   any
 }
 
 type VolumeStatus_VolumeStatuses_AttachmentStatuses struct {
-	InstanceId any
+	InstanceId    any
 	IoPerformance any
 }
 
 type VolumeStatus_VolumeStatuses_Events struct {
 	Description any
-	EventId any
-	EventType any
-	InstanceId any
-	NotAfter any
-	NotBefore any
+	EventId     any
+	EventType   any
+	InstanceId  any
+	NotAfter    any
+	NotBefore   any
 }
 
 type VolumeStatus_VolumeStatuses_InitializationStatusDetails struct {
 	EstimatedTimeToCompleteInSeconds any
-	InitializationType any
-	Progress any
+	InitializationType               any
+	Progress                         any
 }
 
 type VolumeStatus_VolumeStatuses_Operator struct {
 	HiddenByDefault any
-	Managed any
-	Principal any
+	Managed         any
+	Principal       any
 }
 
 type VolumeStatus_VolumeStatuses_VolumeStatus_Details struct {
-	Name any
+	Name   any
 	Status any
 }
 
 type VolumeStatus_VolumeStatuses_VolumeStatus struct {
 	Details any
-	Status any
+	Status  any
 }
 
 type VolumeStatus_VolumeStatuses struct {
-	Actions any
-	AttachmentStatuses any
-	AvailabilityZone any
-	AvailabilityZoneId any
-	Events any
+	Actions                     any
+	AttachmentStatuses          any
+	AvailabilityZone            any
+	AvailabilityZoneId          any
+	Events                      any
 	InitializationStatusDetails any
-	Operator any
-	OutpostArn any
-	VolumeId any
-	VolumeStatus any
+	Operator                    any
+	OutpostArn                  any
+	VolumeId                    any
+	VolumeStatus                any
 }
 
 var VolumeStatus_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type VolumeStatusConfig struct {
-	DryRun any
-	Filters any
+	DryRun                  any
+	Filters                 any
 	IncludeManagedResources any
-	MaxResults any
-	NextToken any
-	VolumeIds any
+	MaxResults              any
+	NextToken               any
+	VolumeIds               any
 }
 
 type VolumeStatusAttrs struct {
-	DryRun any
-	Filters any
+	DryRun                  any
+	Filters                 any
 	IncludeManagedResources any
-	MaxResults any
-	NextToken any
-	VolumeIds any
-	VolumeStatuses any
+	MaxResults              any
+	NextToken               any
+	VolumeIds               any
+	VolumeStatuses          any
 }
 
 var VolumeStatus = ubx.DataSourceBinding{
@@ -94,12 +94,12 @@ var VolumeStatus = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: VolumeStatus_FiltersFields,
+			Kind:     "list",
+			Fields:   VolumeStatus_FiltersFields,
 		},
 		"IncludeManagedResources": ubx.FieldSpec{WireName: "include_managed_resources"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"VolumeIds": ubx.FieldSpec{WireName: "volume_ids"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
+		"VolumeIds":               ubx.FieldSpec{WireName: "volume_ids"},
 	},
 }

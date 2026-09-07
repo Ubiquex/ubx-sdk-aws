@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RepositoriesForApprovalRuleTemplateConfig struct {
 	ApprovalRuleTemplateName any
-	MaxResults any
-	NextToken any
+	MaxResults               any
+	NextToken                any
 }
 
 type RepositoriesForApprovalRuleTemplateAttrs struct {
 	ApprovalRuleTemplateName any
-	MaxResults any
-	NextToken any
-	RepositoryNames any
+	MaxResults               any
+	NextToken                any
+	RepositoryNames          any
 }
 
 var RepositoriesForApprovalRuleTemplate = ubx.DataSourceBinding{
 	WireType: "aws_codecommit_repositories_for_approval_rule_template",
 	Fields: ubx.FieldMap{
 		"ApprovalRuleTemplateName": ubx.FieldSpec{WireName: "approval_rule_template_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":               ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -5,40 +5,40 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagedblockchainQueryAssetContracts_ContractFilter struct {
 	DeployerAddress any
-	Network any
-	TokenStandard any
+	Network         any
+	TokenStandard   any
 }
 
 type ManagedblockchainQueryAssetContracts_Contracts_ContractIdentifier struct {
 	ContractAddress any
-	Network any
+	Network         any
 }
 
 type ManagedblockchainQueryAssetContracts_Contracts struct {
 	ContractIdentifier any
-	DeployerAddress any
-	TokenStandard any
+	DeployerAddress    any
+	TokenStandard      any
 }
 
 var ManagedblockchainQueryAssetContracts_ContractFilterFields = ubx.FieldMap{
-		"DeployerAddress": ubx.FieldSpec{WireName: "deployer_address"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"TokenStandard": ubx.FieldSpec{WireName: "token_standard"},
-	}
+	"DeployerAddress": ubx.FieldSpec{WireName: "deployer_address"},
+	"Network":         ubx.FieldSpec{WireName: "network"},
+	"TokenStandard":   ubx.FieldSpec{WireName: "token_standard"},
+}
 
 type ManagedblockchainQueryAssetContractsConfig struct {
 	// <p>The contract or wallet address by which to filter the request.</p>
 	ContractFilter any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 type ManagedblockchainQueryAssetContractsAttrs struct {
 	// <p>The contract or wallet address by which to filter the request.</p>
 	ContractFilter any
-	Contracts any
-	MaxResults any
-	NextToken any
+	Contracts      any
+	MaxResults     any
+	NextToken      any
 }
 
 var ManagedblockchainQueryAssetContracts = ubx.DataSourceBinding{
@@ -46,10 +46,10 @@ var ManagedblockchainQueryAssetContracts = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ContractFilter": ubx.FieldSpec{
 			WireName: "contract_filter",
-			Kind: "object",
-			Fields: ManagedblockchainQueryAssetContracts_ContractFilterFields,
+			Kind:     "object",
+			Fields:   ManagedblockchainQueryAssetContracts_ContractFilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

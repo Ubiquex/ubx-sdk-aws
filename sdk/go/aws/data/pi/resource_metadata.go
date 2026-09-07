@@ -8,20 +8,20 @@ type ResourceMetadata_Features struct {
 }
 
 type ResourceMetadataConfig struct {
-	Identifier any
+	Identifier  any
 	ServiceType any
 }
 
 type ResourceMetadataAttrs struct {
-	Features any
-	Identifier any
+	Features    any
+	Identifier  any
 	ServiceType any
 }
 
 var ResourceMetadata = ubx.DataSourceBinding{
 	WireType: "aws_pi_resource_metadata",
 	Fields: ubx.FieldMap{
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
+		"Identifier":  ubx.FieldSpec{WireName: "identifier"},
 		"ServiceType": ubx.FieldSpec{WireName: "service_type"},
 	},
 }

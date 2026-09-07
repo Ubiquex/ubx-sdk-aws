@@ -30,23 +30,23 @@ type Queue_Tags struct {
 }
 
 var Queue_AdditionalEmailAddressesFields = ubx.FieldMap{
-		"EmailAddressArn": ubx.FieldSpec{WireName: "email_address_arn"},
-	}
+	"EmailAddressArn": ubx.FieldSpec{WireName: "email_address_arn"},
+}
 
 var Queue_OutboundCallerConfigFields = ubx.FieldMap{
-		"OutboundCallerIdName": ubx.FieldSpec{WireName: "outbound_caller_id_name"},
-		"OutboundCallerIdNumberArn": ubx.FieldSpec{WireName: "outbound_caller_id_number_arn"},
-		"OutboundFlowArn": ubx.FieldSpec{WireName: "outbound_flow_arn"},
-	}
+	"OutboundCallerIdName":      ubx.FieldSpec{WireName: "outbound_caller_id_name"},
+	"OutboundCallerIdNumberArn": ubx.FieldSpec{WireName: "outbound_caller_id_number_arn"},
+	"OutboundFlowArn":           ubx.FieldSpec{WireName: "outbound_flow_arn"},
+}
 
 var Queue_OutboundEmailConfigFields = ubx.FieldMap{
-		"OutboundEmailAddressId": ubx.FieldSpec{WireName: "outbound_email_address_id"},
-	}
+	"OutboundEmailAddressId": ubx.FieldSpec{WireName: "outbound_email_address_id"},
+}
 
 var Queue_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type QueueConfig struct {
 	// The email addresses that agents can use when replying to or initiating email contacts
@@ -111,30 +111,30 @@ var Queue = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdditionalEmailAddresses": ubx.FieldSpec{
 			WireName: "additional_email_addresses",
-			Kind: "list",
-			Fields: Queue_AdditionalEmailAddressesFields,
+			Kind:     "list",
+			Fields:   Queue_AdditionalEmailAddressesFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
 		"HoursOfOperationArn": ubx.FieldSpec{WireName: "hours_of_operation_arn"},
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"MaxContacts": ubx.FieldSpec{WireName: "max_contacts"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"InstanceArn":         ubx.FieldSpec{WireName: "instance_arn"},
+		"MaxContacts":         ubx.FieldSpec{WireName: "max_contacts"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 		"OutboundCallerConfig": ubx.FieldSpec{
 			WireName: "outbound_caller_config",
-			Kind: "object",
-			Fields: Queue_OutboundCallerConfigFields,
+			Kind:     "object",
+			Fields:   Queue_OutboundCallerConfigFields,
 		},
 		"OutboundEmailConfig": ubx.FieldSpec{
 			WireName: "outbound_email_config",
-			Kind: "object",
-			Fields: Queue_OutboundEmailConfigFields,
+			Kind:     "object",
+			Fields:   Queue_OutboundEmailConfigFields,
 		},
 		"QuickConnectArns": ubx.FieldSpec{WireName: "quick_connect_arns"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":           ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Queue_TagsFields,
+			Kind:     "list",
+			Fields:   Queue_TagsFields,
 		},
 	},
 }

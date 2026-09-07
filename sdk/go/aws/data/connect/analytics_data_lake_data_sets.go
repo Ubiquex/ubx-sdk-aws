@@ -4,21 +4,21 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnalyticsDataLakeDataSets_Results struct {
-	DataSetId any
+	DataSetId   any
 	DataSetName any
 }
 
 type AnalyticsDataLakeDataSetsConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AnalyticsDataLakeDataSetsAttrs struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
-	Results any
+	NextToken  any
+	Results    any
 }
 
 var AnalyticsDataLakeDataSets = ubx.DataSourceBinding{
@@ -26,6 +26,6 @@ var AnalyticsDataLakeDataSets = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

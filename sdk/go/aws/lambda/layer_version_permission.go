@@ -30,9 +30,9 @@ type LayerVersionPermissionAttrs struct {
 var LayerVersionPermission = ubx.ResourceBinding{
 	WireType: "aws_lambda_layer_version_permission",
 	Fields: ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
+		"Action":          ubx.FieldSpec{WireName: "action"},
 		"LayerVersionArn": ubx.FieldSpec{WireName: "layer_version_arn"},
-		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
+		"OrganizationId":  ubx.FieldSpec{WireName: "organization_id"},
+		"Principal":       ubx.FieldSpec{WireName: "principal"},
 	},
 }

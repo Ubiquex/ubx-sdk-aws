@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbproxyEndpoint_Tags struct {
 	// The key of a user-defined tag assigned to the RDS DB Proxy endpoint for identification and resource management. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var DbproxyEndpoint_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DbproxyEndpointConfig struct {
 	// The identifier for the DB proxy endpoint. This name must be unique for all DB proxy endpoints owned by your AWS account in the specified AWS Region.
@@ -60,15 +60,15 @@ var DbproxyEndpoint = ubx.ResourceBinding{
 	WireType: "aws_rds_dbproxy_endpoint",
 	Fields: ubx.FieldMap{
 		"DbproxyEndpointName": ubx.FieldSpec{WireName: "dbproxy_endpoint_name"},
-		"DbproxyName": ubx.FieldSpec{WireName: "dbproxy_name"},
+		"DbproxyName":         ubx.FieldSpec{WireName: "dbproxy_name"},
 		"EndpointNetworkType": ubx.FieldSpec{WireName: "endpoint_network_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DbproxyEndpoint_TagsFields,
+			Kind:     "list",
+			Fields:   DbproxyEndpoint_TagsFields,
 		},
-		"TargetRole": ubx.FieldSpec{WireName: "target_role"},
+		"TargetRole":          ubx.FieldSpec{WireName: "target_role"},
 		"VpcSecurityGroupIds": ubx.FieldSpec{WireName: "vpc_security_group_ids"},
-		"VpcSubnetIds": ubx.FieldSpec{WireName: "vpc_subnet_ids"},
+		"VpcSubnetIds":        ubx.FieldSpec{WireName: "vpc_subnet_ids"},
 	},
 }

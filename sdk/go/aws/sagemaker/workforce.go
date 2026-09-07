@@ -55,37 +55,37 @@ type Workforce_WorkforceVpcConfig struct {
 }
 
 var Workforce_CognitoConfigFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"UserPool": ubx.FieldSpec{WireName: "user_pool"},
-	}
+	"ClientId": ubx.FieldSpec{WireName: "client_id"},
+	"UserPool": ubx.FieldSpec{WireName: "user_pool"},
+}
 
 var Workforce_OidcConfigFields = ubx.FieldMap{
-		"AuthenticationRequestExtraParams": ubx.FieldSpec{WireName: "authentication_request_extra_params"},
-		"AuthorizationEndpoint": ubx.FieldSpec{WireName: "authorization_endpoint"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"JwksUri": ubx.FieldSpec{WireName: "jwks_uri"},
-		"LogoutEndpoint": ubx.FieldSpec{WireName: "logout_endpoint"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"TokenEndpoint": ubx.FieldSpec{WireName: "token_endpoint"},
-		"UserInfoEndpoint": ubx.FieldSpec{WireName: "user_info_endpoint"},
-	}
+	"AuthenticationRequestExtraParams": ubx.FieldSpec{WireName: "authentication_request_extra_params"},
+	"AuthorizationEndpoint":            ubx.FieldSpec{WireName: "authorization_endpoint"},
+	"ClientId":                         ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":                     ubx.FieldSpec{WireName: "client_secret"},
+	"Issuer":                           ubx.FieldSpec{WireName: "issuer"},
+	"JwksUri":                          ubx.FieldSpec{WireName: "jwks_uri"},
+	"LogoutEndpoint":                   ubx.FieldSpec{WireName: "logout_endpoint"},
+	"Scope":                            ubx.FieldSpec{WireName: "scope"},
+	"TokenEndpoint":                    ubx.FieldSpec{WireName: "token_endpoint"},
+	"UserInfoEndpoint":                 ubx.FieldSpec{WireName: "user_info_endpoint"},
+}
 
 var Workforce_SourceIpConfigFields = ubx.FieldMap{
-		"Cidrs": ubx.FieldSpec{WireName: "cidrs"},
-	}
+	"Cidrs": ubx.FieldSpec{WireName: "cidrs"},
+}
 
 var Workforce_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Workforce_WorkforceVpcConfigFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"Subnets":          ubx.FieldSpec{WireName: "subnets"},
+	"VpcId":            ubx.FieldSpec{WireName: "vpc_id"},
+}
 
 type WorkforceConfig struct {
 	// The configuration of an Amazon Cognito workforce. A single Cognito workforce is created using and corresponds to a single Amazon Cognito user pool.
@@ -130,30 +130,30 @@ var Workforce = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CognitoConfig": ubx.FieldSpec{
 			WireName: "cognito_config",
-			Kind: "object",
-			Fields: Workforce_CognitoConfigFields,
+			Kind:     "object",
+			Fields:   Workforce_CognitoConfigFields,
 		},
 		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
 		"OidcConfig": ubx.FieldSpec{
 			WireName: "oidc_config",
-			Kind: "object",
-			Fields: Workforce_OidcConfigFields,
+			Kind:     "object",
+			Fields:   Workforce_OidcConfigFields,
 		},
 		"SourceIpConfig": ubx.FieldSpec{
 			WireName: "source_ip_config",
-			Kind: "object",
-			Fields: Workforce_SourceIpConfigFields,
+			Kind:     "object",
+			Fields:   Workforce_SourceIpConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Workforce_TagsFields,
+			Kind:     "list",
+			Fields:   Workforce_TagsFields,
 		},
 		"WorkforceName": ubx.FieldSpec{WireName: "workforce_name"},
 		"WorkforceVpcConfig": ubx.FieldSpec{
 			WireName: "workforce_vpc_config",
-			Kind: "object",
-			Fields: Workforce_WorkforceVpcConfigFields,
+			Kind:     "object",
+			Fields:   Workforce_WorkforceVpcConfigFields,
 		},
 	},
 }

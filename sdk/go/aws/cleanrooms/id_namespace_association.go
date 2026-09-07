@@ -30,18 +30,18 @@ type IdNamespaceAssociation_Tags struct {
 }
 
 var IdNamespaceAssociation_IdMappingConfigFields = ubx.FieldMap{
-		"AllowUseAsDimensionColumn": ubx.FieldSpec{WireName: "allow_use_as_dimension_column"},
-	}
+	"AllowUseAsDimensionColumn": ubx.FieldSpec{WireName: "allow_use_as_dimension_column"},
+}
 
 var IdNamespaceAssociation_InputReferenceConfigFields = ubx.FieldMap{
-		"InputReferenceArn": ubx.FieldSpec{WireName: "input_reference_arn"},
-		"ManageResourcePolicies": ubx.FieldSpec{WireName: "manage_resource_policies"},
-	}
+	"InputReferenceArn":      ubx.FieldSpec{WireName: "input_reference_arn"},
+	"ManageResourcePolicies": ubx.FieldSpec{WireName: "manage_resource_policies"},
+}
 
 var IdNamespaceAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IdNamespaceAssociationConfig struct {
 	// An optional free-text field for storing a human-readable note about the AWS Clean Rooms ID namespace association, helping to indicate its business purpose or configuration context. (AI-inferred)
@@ -91,20 +91,20 @@ var IdNamespaceAssociation = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"IdMappingConfig": ubx.FieldSpec{
 			WireName: "id_mapping_config",
-			Kind: "object",
-			Fields: IdNamespaceAssociation_IdMappingConfigFields,
+			Kind:     "object",
+			Fields:   IdNamespaceAssociation_IdMappingConfigFields,
 		},
 		"InputReferenceConfig": ubx.FieldSpec{
 			WireName: "input_reference_config",
-			Kind: "object",
-			Fields: IdNamespaceAssociation_InputReferenceConfigFields,
+			Kind:     "object",
+			Fields:   IdNamespaceAssociation_InputReferenceConfigFields,
 		},
 		"MembershipIdentifier": ubx.FieldSpec{WireName: "membership_identifier"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: IdNamespaceAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   IdNamespaceAssociation_TagsFields,
 		},
 	},
 }

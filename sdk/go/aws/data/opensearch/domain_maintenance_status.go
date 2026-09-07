@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainMaintenanceStatusConfig struct {
 	// <p>The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
-	DomainName any
+	DomainName    any
 	MaintenanceId any
 }
 
 type DomainMaintenanceStatusAttrs struct {
-	Action any
+	Action    any
 	CreatedAt any
 	// <p>The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
-	DomainName any
+	DomainName    any
 	MaintenanceId any
-	NodeId any
-	Status any
+	NodeId        any
+	Status        any
 	StatusMessage any
-	UpdatedAt any
+	UpdatedAt     any
 }
 
 var DomainMaintenanceStatus = ubx.DataSourceBinding{
 	WireType: "aws_opensearch_domain_maintenance_status",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":    ubx.FieldSpec{WireName: "domain_name"},
 		"MaintenanceId": ubx.FieldSpec{WireName: "maintenance_id"},
 	},
 }

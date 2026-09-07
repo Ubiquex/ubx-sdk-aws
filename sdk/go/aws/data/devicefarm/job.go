@@ -5,91 +5,91 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Job_Job_Counters struct {
 	Errored any
-	Failed any
-	Passed any
+	Failed  any
+	Passed  any
 	Skipped any
 	Stopped any
-	Total any
-	Warned any
+	Total   any
+	Warned  any
 }
 
 type Job_Job_Device_Cpu struct {
 	Architecture any
-	Clock any
-	Frequency any
+	Clock        any
+	Frequency    any
 }
 
 type Job_Job_Device_Instances_InstanceProfile struct {
-	Arn any
-	Description any
+	Arn                           any
+	Description                   any
 	ExcludeAppPackagesFromCleanup any
-	Name any
-	PackageCleanup any
-	RebootAfterUse any
+	Name                          any
+	PackageCleanup                any
+	RebootAfterUse                any
 }
 
 type Job_Job_Device_Instances struct {
-	Arn any
-	DeviceArn any
+	Arn             any
+	DeviceArn       any
 	InstanceProfile any
-	Labels any
-	Status any
-	Udid any
+	Labels          any
+	Status          any
+	Udid            any
 }
 
 type Job_Job_Device_Resolution struct {
 	Height any
-	Width any
+	Width  any
 }
 
 type Job_Job_Device struct {
-	Arn any
+	Arn          any
 	Availability any
-	Carrier any
+	Carrier      any
 	// <p>Represents the amount of CPU that an app is using on a physical device. Does not represent system-wide CPU usage.</p>
-	Cpu any
-	FleetName any
-	FleetType any
-	FormFactor any
-	HeapSize any
-	Image any
-	Instances any
-	Manufacturer any
-	Memory any
-	Model any
-	ModelId any
-	Name any
-	Os any
-	Platform any
-	Radio any
+	Cpu                 any
+	FleetName           any
+	FleetType           any
+	FormFactor          any
+	HeapSize            any
+	Image               any
+	Instances           any
+	Manufacturer        any
+	Memory              any
+	Model               any
+	ModelId             any
+	Name                any
+	Os                  any
+	Platform            any
+	Radio               any
 	RemoteAccessEnabled any
-	RemoteDebugEnabled any
+	RemoteDebugEnabled  any
 	// <p>Represents the screen resolution of a device in height and width, expressed in pixels.</p>
 	Resolution any
 }
 
 type Job_Job_DeviceMinutes struct {
-	Metered any
-	Total any
+	Metered   any
+	Total     any
 	Unmetered any
 }
 
 type Job_Job_Insights_TestReport_Metrics struct {
 	MedianTestExecutionDurationSeconds any
-	TestsErrored any
-	TestsFailed any
-	TestsOther any
-	TestsPassed any
-	TestsPassedPercentage any
-	TestsSkipped any
-	TestsTotal any
-	TotalTestExecutionDurationSeconds any
+	TestsErrored                       any
+	TestsFailed                        any
+	TestsOther                         any
+	TestsPassed                        any
+	TestsPassedPercentage              any
+	TestsSkipped                       any
+	TestsTotal                         any
+	TotalTestExecutionDurationSeconds  any
 }
 
 type Job_Job_Insights_TestReport struct {
 	Message any
 	// <p>Contains aggregated metrics across all tests in a job.</p>
-	Metrics any
+	Metrics        any
 	TestDetailsUrl any
 }
 
@@ -104,22 +104,22 @@ type Job_Job struct {
 	Arn any
 	// <p>Represents entity counters.</p>
 	Counters any
-	Created any
+	Created  any
 	// <p>Represents a device type that an app is tested against.</p>
 	Device any
 	// <p>Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children.</p>
 	DeviceMinutes any
 	// <p>Contains insights for a job, including report status, and test-level aggregated metrics such as per test execution time and median test execution time.</p>
-	Insights any
-	InstanceArn any
-	Message any
-	Name any
-	Result any
-	Started any
-	Status any
-	Stopped any
-	Type any
-	VideoCapture any
+	Insights      any
+	InstanceArn   any
+	Message       any
+	Name          any
+	Result        any
+	Started       any
+	Status        any
+	Stopped       any
+	Type          any
+	VideoCapture  any
 	VideoEndpoint any
 }
 

@@ -9,7 +9,7 @@ type MigrationhubOrchestratorTagsForResourceConfig struct {
 
 type MigrationhubOrchestratorTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var MigrationhubOrchestratorTagsForResource = ubx.DataSourceBinding{

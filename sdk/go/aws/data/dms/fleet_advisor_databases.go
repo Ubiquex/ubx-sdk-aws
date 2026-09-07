@@ -4,57 +4,57 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FleetAdvisorDatabases_Databases_Collectors struct {
-	CollectorName any
+	CollectorName         any
 	CollectorReferencedId any
 }
 
 type FleetAdvisorDatabases_Databases_Server struct {
-	IpAddress any
-	ServerId any
+	IpAddress  any
+	ServerId   any
 	ServerName any
 }
 
 type FleetAdvisorDatabases_Databases_SoftwareDetails struct {
-	Engine any
-	EngineEdition any
-	EngineVersion any
+	Engine         any
+	EngineEdition  any
+	EngineVersion  any
 	OsArchitecture any
-	ServicePack any
-	SupportLevel any
-	Tooltip any
+	ServicePack    any
+	SupportLevel   any
+	Tooltip        any
 }
 
 type FleetAdvisorDatabases_Databases struct {
-	Collectors any
-	DatabaseId any
-	DatabaseName any
-	IpAddress any
+	Collectors      any
+	DatabaseId      any
+	DatabaseName    any
+	IpAddress       any
 	NumberOfSchemas any
-	Server any
+	Server          any
 	SoftwareDetails any
 }
 
 type FleetAdvisorDatabases_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var FleetAdvisorDatabases_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type FleetAdvisorDatabasesConfig struct {
-	Filters any
+	Filters    any
 	MaxRecords any
-	NextToken any
+	NextToken  any
 }
 
 type FleetAdvisorDatabasesAttrs struct {
-	Databases any
-	Filters any
+	Databases  any
+	Filters    any
 	MaxRecords any
-	NextToken any
+	NextToken  any
 }
 
 var FleetAdvisorDatabases = ubx.DataSourceBinding{
@@ -62,10 +62,10 @@ var FleetAdvisorDatabases = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: FleetAdvisorDatabases_FiltersFields,
+			Kind:     "list",
+			Fields:   FleetAdvisorDatabases_FiltersFields,
 		},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -44,9 +44,9 @@ type EndpointAuthorizationAttrs struct {
 var EndpointAuthorization = ubx.ResourceBinding{
 	WireType: "aws_redshift_endpoint_authorization",
 	Fields: ubx.FieldMap{
-		"Account": ubx.FieldSpec{WireName: "account"},
+		"Account":           ubx.FieldSpec{WireName: "account"},
 		"ClusterIdentifier": ubx.FieldSpec{WireName: "cluster_identifier"},
-		"Force": ubx.FieldSpec{WireName: "force"},
-		"VpcIds": ubx.FieldSpec{WireName: "vpc_ids"},
+		"Force":             ubx.FieldSpec{WireName: "force"},
+		"VpcIds":            ubx.FieldSpec{WireName: "vpc_ids"},
 	},
 }

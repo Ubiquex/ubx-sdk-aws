@@ -4,66 +4,66 @@ package secretsmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Secrets_Filters struct {
-	Key any
+	Key    any
 	Values any
 }
 
 type Secrets_SecretList_ExternalSecretRotationMetadata struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Secrets_SecretList_RotationRules struct {
 	AutomaticallyAfterDays any
-	Duration any
-	ScheduleExpression any
+	Duration               any
+	ScheduleExpression     any
 }
 
 type Secrets_SecretList struct {
-	Arn any
-	CreatedDate any
-	DeletedDate any
-	Description any
+	Arn                            any
+	CreatedDate                    any
+	DeletedDate                    any
+	Description                    any
 	ExternalSecretRotationMetadata any
-	ExternalSecretRotationRoleArn any
-	KmsKeyId any
-	LastAccessedDate any
-	LastChangedDate any
-	LastRotatedDate any
-	Name any
-	NextRotationDate any
-	OwningService any
-	PrimaryRegion any
-	RotationEnabled any
-	RotationLambdaArn any
-	RotationRules any
-	SecretVersionsToStages any
-	Tags any
-	Type any
+	ExternalSecretRotationRoleArn  any
+	KmsKeyId                       any
+	LastAccessedDate               any
+	LastChangedDate                any
+	LastRotatedDate                any
+	Name                           any
+	NextRotationDate               any
+	OwningService                  any
+	PrimaryRegion                  any
+	RotationEnabled                any
+	RotationLambdaArn              any
+	RotationRules                  any
+	SecretVersionsToStages         any
+	Tags                           any
+	Type                           any
 }
 
 var Secrets_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type SecretsConfig struct {
-	Filters any
+	Filters                any
 	IncludePlannedDeletion any
-	MaxResults any
-	NextToken any
-	SortBy any
-	SortOrder any
+	MaxResults             any
+	NextToken              any
+	SortBy                 any
+	SortOrder              any
 }
 
 type SecretsAttrs struct {
-	Filters any
+	Filters                any
 	IncludePlannedDeletion any
-	MaxResults any
-	NextToken any
-	SecretList any
-	SortBy any
-	SortOrder any
+	MaxResults             any
+	NextToken              any
+	SecretList             any
+	SortBy                 any
+	SortOrder              any
 }
 
 var Secrets = ubx.DataSourceBinding{
@@ -71,13 +71,13 @@ var Secrets = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Secrets_FiltersFields,
+			Kind:     "list",
+			Fields:   Secrets_FiltersFields,
 		},
 		"IncludePlannedDeletion": ubx.FieldSpec{WireName: "include_planned_deletion"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":                 ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":              ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

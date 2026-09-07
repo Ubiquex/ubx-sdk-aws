@@ -8,18 +8,18 @@ type Networks_Networks_IpPools struct {
 }
 
 type Networks_Networks_Routes struct {
-	Cidr any
+	Cidr    any
 	Gateway any
 }
 
 type Networks_Networks struct {
-	Arn any
+	Arn                  any
 	AssociatedClusterIds any
-	Id any
-	IpPools any
-	Name any
-	Routes any
-	State any
+	Id                   any
+	IpPools              any
+	Name                 any
+	Routes               any
+	State                any
 }
 
 type NetworksConfig struct {
@@ -42,6 +42,6 @@ var Networks = ubx.DataSourceBinding{
 	WireType: "aws_medialive_networks",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

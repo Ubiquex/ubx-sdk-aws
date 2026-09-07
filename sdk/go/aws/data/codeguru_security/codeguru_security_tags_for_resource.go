@@ -9,7 +9,7 @@ type CodeguruSecurityTagsForResourceConfig struct {
 
 type CodeguruSecurityTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var CodeguruSecurityTagsForResource = ubx.DataSourceBinding{

@@ -11,14 +11,14 @@ type Asset_EgressEndpoints struct {
 }
 
 type Asset_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Asset_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AssetConfig struct {
 	// The unique identifier for the Asset.
@@ -59,15 +59,15 @@ type AssetAttrs struct {
 var Asset = ubx.ResourceBinding{
 	WireType: "aws_media_package_asset",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":               ubx.FieldSpec{WireName: "id"},
 		"PackagingGroupId": ubx.FieldSpec{WireName: "packaging_group_id"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
-		"SourceRoleArn": ubx.FieldSpec{WireName: "source_role_arn"},
+		"ResourceId":       ubx.FieldSpec{WireName: "resource_id"},
+		"SourceArn":        ubx.FieldSpec{WireName: "source_arn"},
+		"SourceRoleArn":    ubx.FieldSpec{WireName: "source_role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Asset_TagsFields,
+			Kind:     "list",
+			Fields:   Asset_TagsFields,
 		},
 	},
 }

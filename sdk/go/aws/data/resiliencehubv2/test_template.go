@@ -4,25 +4,25 @@ package resiliencehubv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestTemplate_TestTemplate_Actions struct {
-	ActionId any
-	Description any
+	ActionId     any
+	Description  any
 	ResourceType any
 }
 
 type TestTemplate_TestTemplate_Parameters struct {
 	DefaultValue any
-	Description any
-	MaxValues any
-	Name any
-	Required any
-	Type any
+	Description  any
+	MaxValues    any
+	Name         any
+	Required     any
+	Type         any
 }
 
 type TestTemplate_TestTemplate struct {
-	Actions any
+	Actions     any
 	Description any
-	Name any
-	Parameters any
+	Name        any
+	Parameters  any
 	// <p>An ARN owned by the service. Accepts either a standard 12-digit account ID or the literal "aws" for AWS-managed resources, such as AWS-managed test templates.</p>
 	TestTemplateArn any
 }

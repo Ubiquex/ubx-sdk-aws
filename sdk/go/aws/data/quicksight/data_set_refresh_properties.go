@@ -14,8 +14,8 @@ type DataSetRefreshProperties_DataSetRefreshProperties_FailureConfiguration stru
 
 type DataSetRefreshProperties_DataSetRefreshProperties_RefreshConfiguration_IncrementalRefresh_LookbackWindow struct {
 	ColumnName any
-	Size any
-	SizeUnit any
+	Size       any
+	SizeUnit   any
 }
 
 type DataSetRefreshProperties_DataSetRefreshProperties_RefreshConfiguration_IncrementalRefresh struct {
@@ -37,22 +37,22 @@ type DataSetRefreshProperties_DataSetRefreshProperties struct {
 
 type DataSetRefreshPropertiesConfig struct {
 	AwsAccountId any
-	DataSetId any
+	DataSetId    any
 }
 
 type DataSetRefreshPropertiesAttrs struct {
 	AwsAccountId any
-	DataSetId any
+	DataSetId    any
 	// <p>The refresh properties of a dataset.</p>
 	DataSetRefreshProperties any
-	RequestId any
-	Status any
+	RequestId                any
+	Status                   any
 }
 
 var DataSetRefreshProperties = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_data_set_refresh_properties",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"DataSetId": ubx.FieldSpec{WireName: "data_set_id"},
+		"DataSetId":    ubx.FieldSpec{WireName: "data_set_id"},
 	},
 }

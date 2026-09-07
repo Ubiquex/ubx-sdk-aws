@@ -5,40 +5,40 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExportTasks_ExportsInfo struct {
 	ConfigurationsDownloadUrl any
-	ExportId any
-	ExportRequestTime any
-	ExportStatus any
-	IsTruncated any
-	RequestedEndTime any
-	RequestedStartTime any
-	StatusMessage any
+	ExportId                  any
+	ExportRequestTime         any
+	ExportStatus              any
+	IsTruncated               any
+	RequestedEndTime          any
+	RequestedStartTime        any
+	StatusMessage             any
 }
 
 type ExportTasks_Filters struct {
 	Condition any
-	Name any
-	Values any
+	Name      any
+	Values    any
 }
 
 var ExportTasks_FiltersFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Values":    ubx.FieldSpec{WireName: "values"},
+}
 
 type ExportTasksConfig struct {
-	ExportIds any
-	Filters any
+	ExportIds  any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ExportTasksAttrs struct {
-	ExportIds any
+	ExportIds   any
 	ExportsInfo any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters     any
+	MaxResults  any
+	NextToken   any
 }
 
 var ExportTasks = ubx.DataSourceBinding{
@@ -47,10 +47,10 @@ var ExportTasks = ubx.DataSourceBinding{
 		"ExportIds": ubx.FieldSpec{WireName: "export_ids"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ExportTasks_FiltersFields,
+			Kind:     "list",
+			Fields:   ExportTasks_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -27,6 +27,6 @@ var TablePolicy = ubx.ResourceBinding{
 	WireType: "aws_s3_tables_table_policy",
 	Fields: ubx.FieldMap{
 		"ResourcePolicy": ubx.FieldSpec{WireName: "resource_policy"},
-		"TableArn": ubx.FieldSpec{WireName: "table_arn"},
+		"TableArn":       ubx.FieldSpec{WireName: "table_arn"},
 	},
 }

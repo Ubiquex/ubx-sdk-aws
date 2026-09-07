@@ -4,50 +4,50 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceEvaluations_Filters_TimeWindow struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type ResourceEvaluations_Filters struct {
 	EvaluationContextIdentifier any
-	EvaluationMode any
+	EvaluationMode              any
 	// <p>Filters evaluation results based on start and end times.</p>
 	TimeWindow any
 }
 
 type ResourceEvaluations_ResourceEvaluations struct {
-	EvaluationMode any
+	EvaluationMode           any
 	EvaluationStartTimestamp any
-	ResourceEvaluationId any
+	ResourceEvaluationId     any
 }
 
 var ResourceEvaluations_Filters_TimeWindowFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var ResourceEvaluations_FiltersFields = ubx.FieldMap{
-		"EvaluationContextIdentifier": ubx.FieldSpec{WireName: "evaluation_context_identifier"},
-		"EvaluationMode": ubx.FieldSpec{WireName: "evaluation_mode"},
-		"TimeWindow": ubx.FieldSpec{
-			WireName: "time_window",
-			Kind: "object",
-			Fields: ResourceEvaluations_Filters_TimeWindowFields,
-		},
-	}
+	"EvaluationContextIdentifier": ubx.FieldSpec{WireName: "evaluation_context_identifier"},
+	"EvaluationMode":              ubx.FieldSpec{WireName: "evaluation_mode"},
+	"TimeWindow": ubx.FieldSpec{
+		WireName: "time_window",
+		Kind:     "object",
+		Fields:   ResourceEvaluations_Filters_TimeWindowFields,
+	},
+}
 
 type ResourceEvaluationsConfig struct {
 	// <p>Returns details of a resource evaluation based on the selected filter.</p>
-	Filters any
-	Limit any
+	Filters   any
+	Limit     any
 	NextToken any
 }
 
 type ResourceEvaluationsAttrs struct {
 	// <p>Returns details of a resource evaluation based on the selected filter.</p>
-	Filters any
-	Limit any
-	NextToken any
+	Filters             any
+	Limit               any
+	NextToken           any
 	ResourceEvaluations any
 }
 
@@ -56,10 +56,10 @@ var ResourceEvaluations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: ResourceEvaluations_FiltersFields,
+			Kind:     "object",
+			Fields:   ResourceEvaluations_FiltersFields,
 		},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

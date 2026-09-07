@@ -18,9 +18,9 @@ type DiskSnapshot_Tags struct {
 }
 
 var DiskSnapshot_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DiskSnapshotConfig struct {
 	// The name of the source disk from which the snapshot was created.
@@ -63,12 +63,12 @@ type DiskSnapshotAttrs struct {
 var DiskSnapshot = ubx.ResourceBinding{
 	WireType: "aws_lightsail_disk_snapshot",
 	Fields: ubx.FieldMap{
-		"DiskName": ubx.FieldSpec{WireName: "disk_name"},
+		"DiskName":         ubx.FieldSpec{WireName: "disk_name"},
 		"DiskSnapshotName": ubx.FieldSpec{WireName: "disk_snapshot_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DiskSnapshot_TagsFields,
+			Kind:     "list",
+			Fields:   DiskSnapshot_TagsFields,
 		},
 	},
 }

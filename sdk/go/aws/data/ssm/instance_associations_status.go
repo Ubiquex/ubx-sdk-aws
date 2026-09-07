@@ -12,31 +12,31 @@ type InstanceAssociationsStatus_InstanceAssociationStatusInfos_OutputUrl struct 
 }
 
 type InstanceAssociationsStatus_InstanceAssociationStatusInfos struct {
-	AssociationId any
-	AssociationName any
+	AssociationId      any
+	AssociationName    any
 	AssociationVersion any
-	DetailedStatus any
-	DocumentVersion any
-	ErrorCode any
-	ExecutionDate any
-	ExecutionSummary any
-	InstanceId any
-	Name any
-	OutputUrl any
-	Status any
+	DetailedStatus     any
+	DocumentVersion    any
+	ErrorCode          any
+	ExecutionDate      any
+	ExecutionSummary   any
+	InstanceId         any
+	Name               any
+	OutputUrl          any
+	Status             any
 }
 
 type InstanceAssociationsStatusConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type InstanceAssociationsStatusAttrs struct {
 	InstanceAssociationStatusInfos any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId                     any
+	MaxResults                     any
+	NextToken                      any
 }
 
 var InstanceAssociationsStatus = ubx.DataSourceBinding{
@@ -44,6 +44,6 @@ var InstanceAssociationsStatus = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

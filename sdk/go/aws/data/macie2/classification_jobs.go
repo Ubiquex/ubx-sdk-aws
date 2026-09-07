@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClassificationJobs_FilterCriteria_Excludes struct {
 	Comparator any
-	Key any
-	Values any
+	Key        any
+	Values     any
 }
 
 type ClassificationJobs_FilterCriteria struct {
@@ -15,18 +15,18 @@ type ClassificationJobs_FilterCriteria struct {
 }
 
 type ClassificationJobs_Items_BucketCriteria_Excludes_And_TagCriterion_TagValues struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ClassificationJobs_Items_BucketCriteria_Excludes_And_TagCriterion struct {
 	Comparator any
-	TagValues any
+	TagValues  any
 }
 
 type ClassificationJobs_Items_BucketCriteria_Excludes_And struct {
 	SimpleCriterion any
-	TagCriterion any
+	TagCriterion    any
 }
 
 type ClassificationJobs_Items_BucketCriteria_Excludes struct {
@@ -40,7 +40,7 @@ type ClassificationJobs_Items_BucketCriteria struct {
 
 type ClassificationJobs_Items_BucketDefinitions struct {
 	AccountId any
-	Buckets any
+	Buckets   any
 }
 
 type ClassificationJobs_Items_LastRunErrorStatus struct {
@@ -48,58 +48,58 @@ type ClassificationJobs_Items_LastRunErrorStatus struct {
 }
 
 type ClassificationJobs_Items_UserPausedDetails struct {
-	JobExpiresAt any
+	JobExpiresAt                        any
 	JobImminentExpirationHealthEventArn any
-	JobPausedAt any
+	JobPausedAt                         any
 }
 
 type ClassificationJobs_Items struct {
-	BucketCriteria any
-	BucketDefinitions any
-	CreatedAt any
-	JobId any
-	JobStatus any
-	JobType any
+	BucketCriteria     any
+	BucketDefinitions  any
+	CreatedAt          any
+	JobId              any
+	JobStatus          any
+	JobType            any
 	LastRunErrorStatus any
-	Name any
-	UserPausedDetails any
+	Name               any
+	UserPausedDetails  any
 }
 
 type ClassificationJobs_SortCriteria struct {
 	// <p>The property to sort the results by. Valid values are:</p>
 	AttributeName any
-	OrderBy any
+	OrderBy       any
 }
 
 var ClassificationJobs_FilterCriteria_ExcludesFields = ubx.FieldMap{
-		"Comparator": ubx.FieldSpec{WireName: "comparator"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Comparator": ubx.FieldSpec{WireName: "comparator"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"Values":     ubx.FieldSpec{WireName: "values"},
+}
 
 var ClassificationJobs_FilterCriteriaFields = ubx.FieldMap{
-		"Excludes": ubx.FieldSpec{
-			WireName: "excludes",
-			Kind: "list",
-			Fields: ClassificationJobs_FilterCriteria_ExcludesFields,
-		},
-		"Includes": ubx.FieldSpec{
-			WireName: "includes",
-			Kind: "list",
-			Fields: ClassificationJobs_FilterCriteria_ExcludesFields,
-		},
-	}
+	"Excludes": ubx.FieldSpec{
+		WireName: "excludes",
+		Kind:     "list",
+		Fields:   ClassificationJobs_FilterCriteria_ExcludesFields,
+	},
+	"Includes": ubx.FieldSpec{
+		WireName: "includes",
+		Kind:     "list",
+		Fields:   ClassificationJobs_FilterCriteria_ExcludesFields,
+	},
+}
 
 var ClassificationJobs_SortCriteriaFields = ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-	}
+	"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
+	"OrderBy":       ubx.FieldSpec{WireName: "order_by"},
+}
 
 type ClassificationJobsConfig struct {
 	// <p>Specifies criteria for filtering the results of a request for information about classification jobs.</p>
 	FilterCriteria any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	// <p>Specifies criteria for sorting the results of a request for information about classification jobs.</p>
 	SortCriteria any
 }
@@ -107,9 +107,9 @@ type ClassificationJobsConfig struct {
 type ClassificationJobsAttrs struct {
 	// <p>Specifies criteria for filtering the results of a request for information about classification jobs.</p>
 	FilterCriteria any
-	Items any
-	MaxResults any
-	NextToken any
+	Items          any
+	MaxResults     any
+	NextToken      any
 	// <p>Specifies criteria for sorting the results of a request for information about classification jobs.</p>
 	SortCriteria any
 }
@@ -119,15 +119,15 @@ var ClassificationJobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"FilterCriteria": ubx.FieldSpec{
 			WireName: "filter_criteria",
-			Kind: "object",
-			Fields: ClassificationJobs_FilterCriteriaFields,
+			Kind:     "object",
+			Fields:   ClassificationJobs_FilterCriteriaFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SortCriteria": ubx.FieldSpec{
 			WireName: "sort_criteria",
-			Kind: "object",
-			Fields: ClassificationJobs_SortCriteriaFields,
+			Kind:     "object",
+			Fields:   ClassificationJobs_SortCriteriaFields,
 		},
 	},
 }

@@ -22,7 +22,7 @@ type DomainNameApiAssociationAttrs struct {
 var DomainNameApiAssociation = ubx.ResourceBinding{
 	WireType: "aws_app_sync_domain_name_api_association",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":      ubx.FieldSpec{WireName: "api_id"},
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 	},
 }

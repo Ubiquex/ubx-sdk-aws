@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceTemplate_Tags struct {
 	// The key of a tag attached to the AWS Proton service template, used to identify and categorize the template for operational and cost management purposes. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var ServiceTemplate_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ServiceTemplateConfig struct {
 	// <p>A description of the service template.</p>
@@ -49,15 +49,15 @@ type ServiceTemplateAttrs struct {
 var ServiceTemplate = ubx.ResourceBinding{
 	WireType: "aws_proton_service_template",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EncryptionKey": ubx.FieldSpec{WireName: "encryption_key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"DisplayName":          ubx.FieldSpec{WireName: "display_name"},
+		"EncryptionKey":        ubx.FieldSpec{WireName: "encryption_key"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
 		"PipelineProvisioning": ubx.FieldSpec{WireName: "pipeline_provisioning"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ServiceTemplate_TagsFields,
+			Kind:     "list",
+			Fields:   ServiceTemplate_TagsFields,
 		},
 	},
 }

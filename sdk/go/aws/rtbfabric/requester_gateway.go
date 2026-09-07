@@ -4,14 +4,14 @@ package rtbfabric
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RequesterGateway_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var RequesterGateway_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RequesterGatewayConfig struct {
 	// The description of this requester gateway. (AI-inferred)
@@ -58,13 +58,13 @@ type RequesterGatewayAttrs struct {
 var RequesterGateway = ubx.ResourceBinding{
 	WireType: "aws_rtbfabric_requester_gateway",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RequesterGateway_TagsFields,
+			Kind:     "list",
+			Fields:   RequesterGateway_TagsFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

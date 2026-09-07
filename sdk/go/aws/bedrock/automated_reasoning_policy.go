@@ -5,91 +5,91 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AutomatedReasoningPolicy_PolicyDefinition_Rules struct {
 	AlternateExpression any
-	Expression any
-	Id any
+	Expression          any
+	Id                  any
 }
 
 type AutomatedReasoningPolicy_PolicyDefinition_Types_Values struct {
 	// Provides a human-readable explanation of a specific value defined within a type in the automated reasoning policy, giving the model additional context for interpreting that value. (AI-inferred)
 	Description any
-	Value any
+	Value       any
 }
 
 type AutomatedReasoningPolicy_PolicyDefinition_Types struct {
 	Description any
-	Name any
-	Values any
+	Name        any
+	Values      any
 }
 
 type AutomatedReasoningPolicy_PolicyDefinition_Variables struct {
 	Description any
-	Name any
-	Type any
+	Name        any
+	Type        any
 }
 
 type AutomatedReasoningPolicy_PolicyDefinition struct {
-	Rules any
-	Types any
+	Rules     any
+	Types     any
 	Variables any
 	// The policy format version.
 	Version any
 }
 
 type AutomatedReasoningPolicy_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var AutomatedReasoningPolicy_PolicyDefinition_RulesFields = ubx.FieldMap{
-		"AlternateExpression": ubx.FieldSpec{WireName: "alternate_expression"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"AlternateExpression": ubx.FieldSpec{WireName: "alternate_expression"},
+	"Expression":          ubx.FieldSpec{WireName: "expression"},
+	"Id":                  ubx.FieldSpec{WireName: "id"},
+}
 
 var AutomatedReasoningPolicy_PolicyDefinition_Types_ValuesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Value":       ubx.FieldSpec{WireName: "value"},
+}
 
 var AutomatedReasoningPolicy_PolicyDefinition_TypesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: AutomatedReasoningPolicy_PolicyDefinition_Types_ValuesFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   AutomatedReasoningPolicy_PolicyDefinition_Types_ValuesFields,
+	},
+}
 
 var AutomatedReasoningPolicy_PolicyDefinition_VariablesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var AutomatedReasoningPolicy_PolicyDefinitionFields = ubx.FieldMap{
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: AutomatedReasoningPolicy_PolicyDefinition_RulesFields,
-		},
-		"Types": ubx.FieldSpec{
-			WireName: "types",
-			Kind: "list",
-			Fields: AutomatedReasoningPolicy_PolicyDefinition_TypesFields,
-		},
-		"Variables": ubx.FieldSpec{
-			WireName: "variables",
-			Kind: "list",
-			Fields: AutomatedReasoningPolicy_PolicyDefinition_VariablesFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   AutomatedReasoningPolicy_PolicyDefinition_RulesFields,
+	},
+	"Types": ubx.FieldSpec{
+		WireName: "types",
+		Kind:     "list",
+		Fields:   AutomatedReasoningPolicy_PolicyDefinition_TypesFields,
+	},
+	"Variables": ubx.FieldSpec{
+		WireName: "variables",
+		Kind:     "list",
+		Fields:   AutomatedReasoningPolicy_PolicyDefinition_VariablesFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var AutomatedReasoningPolicy_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AutomatedReasoningPolicyConfig struct {
 	// An optional, human-readable explanation of the purpose or contents of the automated reasoning policy. (AI-inferred)
@@ -140,17 +140,17 @@ var AutomatedReasoningPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ForceDelete": ubx.FieldSpec{WireName: "force_delete"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"KmsKeyId":    ubx.FieldSpec{WireName: "kms_key_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"PolicyDefinition": ubx.FieldSpec{
 			WireName: "policy_definition",
-			Kind: "object",
-			Fields: AutomatedReasoningPolicy_PolicyDefinitionFields,
+			Kind:     "object",
+			Fields:   AutomatedReasoningPolicy_PolicyDefinitionFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AutomatedReasoningPolicy_TagsFields,
+			Kind:     "list",
+			Fields:   AutomatedReasoningPolicy_TagsFields,
 		},
 	},
 }

@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FacetNamesConfig struct {
 	MaxResults any
-	NextToken any
-	SchemaArn any
+	NextToken  any
+	SchemaArn  any
 }
 
 type FacetNamesAttrs struct {
 	FacetNames any
 	MaxResults any
-	NextToken any
-	SchemaArn any
+	NextToken  any
+	SchemaArn  any
 }
 
 var FacetNames = ubx.DataSourceBinding{
 	WireType: "aws_clouddirectory_facet_names",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SchemaArn": ubx.FieldSpec{WireName: "schema_arn"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"SchemaArn":  ubx.FieldSpec{WireName: "schema_arn"},
 	},
 }

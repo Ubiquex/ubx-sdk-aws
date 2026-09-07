@@ -6,22 +6,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type DomainChangeProgress_ChangeProgressStatus_ChangeProgressStages struct {
 	Description any
 	LastUpdated any
-	Name any
-	Status any
+	Name        any
+	Status      any
 }
 
 type DomainChangeProgress_ChangeProgressStatus struct {
 	ChangeId any
 	// <p>The list of progress stages of a specific domain configuration change.</p>
 	ChangeProgressStages any
-	CompletedProperties any
-	ConfigChangeStatus any
-	InitiatedBy any
-	LastUpdatedTime any
-	PendingProperties any
-	StartTime any
+	CompletedProperties  any
+	ConfigChangeStatus   any
+	InitiatedBy          any
+	LastUpdatedTime      any
+	PendingProperties    any
+	StartTime            any
 	// <p>The overall status value of the domain configuration change.</p>
-	Status any
+	Status              any
 	TotalNumberOfStages any
 }
 
@@ -42,7 +42,7 @@ type DomainChangeProgressAttrs struct {
 var DomainChangeProgress = ubx.DataSourceBinding{
 	WireType: "aws_opensearch_domain_change_progress",
 	Fields: ubx.FieldMap{
-		"ChangeId": ubx.FieldSpec{WireName: "change_id"},
+		"ChangeId":   ubx.FieldSpec{WireName: "change_id"},
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 	},
 }

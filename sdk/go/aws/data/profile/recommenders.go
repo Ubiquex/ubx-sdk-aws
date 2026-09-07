@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Recommenders_Recommenders_LatestRecommenderUpdate_RecommenderConfig_DiversityConfig_DiversityColumns struct {
 	CapType any
-	Name any
-	Target any
+	Name    any
+	Target  any
 }
 
 type Recommenders_Recommenders_LatestRecommenderUpdate_RecommenderConfig_DiversityConfig struct {
@@ -14,9 +14,9 @@ type Recommenders_Recommenders_LatestRecommenderUpdate_RecommenderConfig_Diversi
 }
 
 type Recommenders_Recommenders_LatestRecommenderUpdate_RecommenderConfig_EventsConfig_EventParametersList struct {
-	EventType any
+	EventType           any
 	EventValueThreshold any
-	EventWeight any
+	EventWeight         any
 }
 
 type Recommenders_Recommenders_LatestRecommenderUpdate_RecommenderConfig_EventsConfig struct {
@@ -28,47 +28,47 @@ type Recommenders_Recommenders_LatestRecommenderUpdate_RecommenderConfig_Inferen
 }
 
 type Recommenders_Recommenders_LatestRecommenderUpdate_RecommenderConfig struct {
-	DiversityConfig any
-	EventsConfig any
-	ExcludedColumns any
-	IncludedColumns any
-	InferenceConfig any
+	DiversityConfig   any
+	EventsConfig      any
+	ExcludedColumns   any
+	IncludedColumns   any
+	InferenceConfig   any
 	TrainingFrequency any
 }
 
 type Recommenders_Recommenders_LatestRecommenderUpdate struct {
-	CreatedAt any
-	FailureReason any
-	LastUpdatedAt any
-	RecommenderConfig any
+	CreatedAt              any
+	FailureReason          any
+	LastUpdatedAt          any
+	RecommenderConfig      any
 	RecommenderVersionName any
-	Status any
+	Status                 any
 }
 
 type Recommenders_Recommenders struct {
-	CreatedAt any
-	Description any
-	FailureReason any
-	LastUpdatedAt any
+	CreatedAt               any
+	Description             any
+	FailureReason           any
+	LastUpdatedAt           any
 	LatestRecommenderUpdate any
-	RecipeName any
-	RecommenderConfig any
-	RecommenderName any
-	RecommenderSchemaName any
-	Status any
-	Tags any
+	RecipeName              any
+	RecommenderConfig       any
+	RecommenderName         any
+	RecommenderSchemaName   any
+	Status                  any
+	Tags                    any
 }
 
 type RecommendersConfig struct {
 	DomainName any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type RecommendersAttrs struct {
-	DomainName any
-	MaxResults any
-	NextToken any
+	DomainName   any
+	MaxResults   any
+	NextToken    any
 	Recommenders any
 }
 
@@ -77,6 +77,6 @@ var Recommenders = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

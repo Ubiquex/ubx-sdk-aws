@@ -4,31 +4,31 @@ package cognito_identity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdentityCredentialsForIdentity_Credentials struct {
-	AccessKeyId any
-	Expiration any
-	SecretKey any
+	AccessKeyId  any
+	Expiration   any
+	SecretKey    any
 	SessionToken any
 }
 
 type CognitoIdentityCredentialsForIdentityConfig struct {
 	CustomRoleArn any
-	IdentityId any
-	Logins any
+	IdentityId    any
+	Logins        any
 }
 
 type CognitoIdentityCredentialsForIdentityAttrs struct {
 	// <p>Credentials for the provided identity ID.</p>
-	Credentials any
+	Credentials   any
 	CustomRoleArn any
-	IdentityId any
-	Logins any
+	IdentityId    any
+	Logins        any
 }
 
 var CognitoIdentityCredentialsForIdentity = ubx.DataSourceBinding{
 	WireType: "aws_cognito_identity_credentials_for_identity",
 	Fields: ubx.FieldMap{
 		"CustomRoleArn": ubx.FieldSpec{WireName: "custom_role_arn"},
-		"IdentityId": ubx.FieldSpec{WireName: "identity_id"},
-		"Logins": ubx.FieldSpec{WireName: "logins"},
+		"IdentityId":    ubx.FieldSpec{WireName: "identity_id"},
+		"Logins":        ubx.FieldSpec{WireName: "logins"},
 	},
 }

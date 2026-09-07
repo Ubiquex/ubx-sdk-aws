@@ -4,62 +4,62 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClientVpnTargetNetworks_ClientVpnTargetNetworks_Status struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type ClientVpnTargetNetworks_ClientVpnTargetNetworks struct {
-	AssociationId any
+	AssociationId       any
 	AvailabilityZoneIds any
-	AvailabilityZones any
+	AvailabilityZones   any
 	ClientVpnEndpointId any
-	SecurityGroups any
-	Status any
-	TargetNetworkId any
-	VpcId any
+	SecurityGroups      any
+	Status              any
+	TargetNetworkId     any
+	VpcId               any
 }
 
 type ClientVpnTargetNetworks_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var ClientVpnTargetNetworks_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ClientVpnTargetNetworksConfig struct {
-	AssociationIds any
+	AssociationIds      any
 	ClientVpnEndpointId any
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun              any
+	Filters             any
+	MaxResults          any
+	NextToken           any
 }
 
 type ClientVpnTargetNetworksAttrs struct {
-	AssociationIds any
-	ClientVpnEndpointId any
+	AssociationIds          any
+	ClientVpnEndpointId     any
 	ClientVpnTargetNetworks any
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                  any
+	Filters                 any
+	MaxResults              any
+	NextToken               any
 }
 
 var ClientVpnTargetNetworks = ubx.DataSourceBinding{
 	WireType: "aws_ec2_client_vpn_target_networks",
 	Fields: ubx.FieldMap{
-		"AssociationIds": ubx.FieldSpec{WireName: "association_ids"},
+		"AssociationIds":      ubx.FieldSpec{WireName: "association_ids"},
 		"ClientVpnEndpointId": ubx.FieldSpec{WireName: "client_vpn_endpoint_id"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":              ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ClientVpnTargetNetworks_FiltersFields,
+			Kind:     "list",
+			Fields:   ClientVpnTargetNetworks_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

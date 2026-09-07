@@ -13,6 +13,5 @@ type DiscoveryAttrs struct {
 
 var Discovery = ubx.ResourceBinding{
 	WireType: "aws_application_signals_discovery",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

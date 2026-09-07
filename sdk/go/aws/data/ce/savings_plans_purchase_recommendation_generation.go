@@ -4,34 +4,34 @@ package ce
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SavingsPlansPurchaseRecommendationGeneration_GenerationSummaryList struct {
-	EstimatedCompletionTime any
+	EstimatedCompletionTime  any
 	GenerationCompletionTime any
-	GenerationStartedTime any
-	GenerationStatus any
-	RecommendationId any
+	GenerationStartedTime    any
+	GenerationStatus         any
+	RecommendationId         any
 }
 
 type SavingsPlansPurchaseRecommendationGenerationConfig struct {
-	GenerationStatus any
-	NextPageToken any
-	PageSize any
+	GenerationStatus  any
+	NextPageToken     any
+	PageSize          any
 	RecommendationIds any
 }
 
 type SavingsPlansPurchaseRecommendationGenerationAttrs struct {
-	GenerationStatus any
+	GenerationStatus      any
 	GenerationSummaryList any
-	NextPageToken any
-	PageSize any
-	RecommendationIds any
+	NextPageToken         any
+	PageSize              any
+	RecommendationIds     any
 }
 
 var SavingsPlansPurchaseRecommendationGeneration = ubx.DataSourceBinding{
 	WireType: "aws_ce_savings_plans_purchase_recommendation_generation",
 	Fields: ubx.FieldMap{
-		"GenerationStatus": ubx.FieldSpec{WireName: "generation_status"},
-		"NextPageToken": ubx.FieldSpec{WireName: "next_page_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"GenerationStatus":  ubx.FieldSpec{WireName: "generation_status"},
+		"NextPageToken":     ubx.FieldSpec{WireName: "next_page_token"},
+		"PageSize":          ubx.FieldSpec{WireName: "page_size"},
 		"RecommendationIds": ubx.FieldSpec{WireName: "recommendation_ids"},
 	},
 }

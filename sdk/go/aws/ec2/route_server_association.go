@@ -21,6 +21,6 @@ var RouteServerAssociation = ubx.ResourceBinding{
 	WireType: "aws_ec2_route_server_association",
 	Fields: ubx.FieldMap{
 		"RouteServerId": ubx.FieldSpec{WireName: "route_server_id"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
+		"VpcId":         ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

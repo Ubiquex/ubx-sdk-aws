@@ -4,20 +4,20 @@ package entityresolution
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdMappingWorkflows_WorkflowSummaries struct {
-	CreatedAt any
-	UpdatedAt any
-	WorkflowArn any
+	CreatedAt    any
+	UpdatedAt    any
+	WorkflowArn  any
 	WorkflowName any
 }
 
 type IdMappingWorkflowsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type IdMappingWorkflowsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 	WorkflowSummaries any
 }
 
@@ -25,6 +25,6 @@ var IdMappingWorkflows = ubx.DataSourceBinding{
 	WireType: "aws_entityresolution_id_mapping_workflows",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

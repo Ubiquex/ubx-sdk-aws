@@ -10,7 +10,7 @@ type DevopsGuruRecommendations_Recommendations_RelatedAnomalies_Resources struct
 
 type DevopsGuruRecommendations_Recommendations_RelatedAnomalies_SourceDetails_CloudWatchMetrics struct {
 	MetricName any
-	Namespace any
+	Namespace  any
 }
 
 type DevopsGuruRecommendations_Recommendations_RelatedAnomalies_SourceDetails struct {
@@ -18,38 +18,38 @@ type DevopsGuruRecommendations_Recommendations_RelatedAnomalies_SourceDetails st
 }
 
 type DevopsGuruRecommendations_Recommendations_RelatedAnomalies struct {
-	AnomalyId any
-	Resources any
+	AnomalyId     any
+	Resources     any
 	SourceDetails any
 }
 
 type DevopsGuruRecommendations_Recommendations_RelatedEvents struct {
-	Name any
+	Name      any
 	Resources any
 }
 
 type DevopsGuruRecommendations_Recommendations struct {
-	Category any
-	Description any
-	Link any
-	Name any
-	Reason any
+	Category         any
+	Description      any
+	Link             any
+	Name             any
+	Reason           any
 	RelatedAnomalies any
-	RelatedEvents any
+	RelatedEvents    any
 }
 
 type DevopsGuruRecommendationsConfig struct {
 	AccountId any
 	InsightId any
-	Locale any
+	Locale    any
 	NextToken any
 }
 
 type DevopsGuruRecommendationsAttrs struct {
-	AccountId any
-	InsightId any
-	Locale any
-	NextToken any
+	AccountId       any
+	InsightId       any
+	Locale          any
+	NextToken       any
 	Recommendations any
 }
 
@@ -58,7 +58,7 @@ var DevopsGuruRecommendations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"InsightId": ubx.FieldSpec{WireName: "insight_id"},
-		"Locale": ubx.FieldSpec{WireName: "locale"},
+		"Locale":    ubx.FieldSpec{WireName: "locale"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

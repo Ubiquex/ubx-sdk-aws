@@ -25,23 +25,23 @@ type AccessEntry_Tags struct {
 }
 
 var AccessEntry_AccessPolicies_AccessScopeFields = ubx.FieldMap{
-		"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var AccessEntry_AccessPoliciesFields = ubx.FieldMap{
-		"AccessScope": ubx.FieldSpec{
-			WireName: "access_scope",
-			Kind: "object",
-			Fields: AccessEntry_AccessPolicies_AccessScopeFields,
-		},
-		"PolicyArn": ubx.FieldSpec{WireName: "policy_arn"},
-	}
+	"AccessScope": ubx.FieldSpec{
+		WireName: "access_scope",
+		Kind:     "object",
+		Fields:   AccessEntry_AccessPolicies_AccessScopeFields,
+	},
+	"PolicyArn": ubx.FieldSpec{WireName: "policy_arn"},
+}
 
 var AccessEntry_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AccessEntryConfig struct {
 	// An array of access policies that are associated with the access entry.
@@ -84,18 +84,18 @@ var AccessEntry = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessPolicies": ubx.FieldSpec{
 			WireName: "access_policies",
-			Kind: "list",
-			Fields: AccessEntry_AccessPoliciesFields,
+			Kind:     "list",
+			Fields:   AccessEntry_AccessPoliciesFields,
 		},
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
+		"ClusterName":      ubx.FieldSpec{WireName: "cluster_name"},
 		"KubernetesGroups": ubx.FieldSpec{WireName: "kubernetes_groups"},
-		"PrincipalArn": ubx.FieldSpec{WireName: "principal_arn"},
+		"PrincipalArn":     ubx.FieldSpec{WireName: "principal_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AccessEntry_TagsFields,
+			Kind:     "list",
+			Fields:   AccessEntry_TagsFields,
 		},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":     ubx.FieldSpec{WireName: "type"},
 		"Username": ubx.FieldSpec{WireName: "username"},
 	},
 }

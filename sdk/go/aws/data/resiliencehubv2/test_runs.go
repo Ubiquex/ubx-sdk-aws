@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestRuns_TestRuns struct {
 	AccountTargeting any
-	EndedAt any
-	ErrorMessage any
-	ServiceArn any
-	StartedAt any
-	Status any
-	TestRunId any
-	TestTemplateArn any
+	EndedAt          any
+	ErrorMessage     any
+	ServiceArn       any
+	StartedAt        any
+	Status           any
+	TestRunId        any
+	TestTemplateArn  any
 }
 
 type TestRunsConfig struct {
@@ -33,7 +33,7 @@ type TestRunsAttrs struct {
 	// <p>ARN identifier.</p>
 	ServiceArn any
 	// <p>The unique identifier of a test.</p>
-	TestId any
+	TestId   any
 	TestRuns any
 }
 
@@ -41,8 +41,8 @@ var TestRuns = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehubv2_test_runs",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ServiceArn": ubx.FieldSpec{WireName: "service_arn"},
-		"TestId": ubx.FieldSpec{WireName: "test_id"},
+		"TestId":     ubx.FieldSpec{WireName: "test_id"},
 	},
 }

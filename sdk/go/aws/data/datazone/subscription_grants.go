@@ -4,11 +4,11 @@ package datazone
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SubscriptionGrants_Items_Assets_AssetScope struct {
-	AssetId any
+	AssetId      any
 	ErrorMessage any
-	FilterIds any
-	ScopeName any
-	Status any
+	FilterIds    any
+	ScopeName    any
+	Status       any
 }
 
 type SubscriptionGrants_Items_Assets_FailureCause struct {
@@ -20,19 +20,19 @@ type SubscriptionGrants_Items_Assets_Permissions struct {
 }
 
 type SubscriptionGrants_Items_Assets struct {
-	AssetId any
-	AssetRevision any
-	AssetScope any
-	FailureCause any
+	AssetId          any
+	AssetRevision    any
+	AssetScope       any
+	FailureCause     any
 	FailureTimestamp any
 	GrantedTimestamp any
-	Permissions any
-	Status any
-	TargetName any
+	Permissions      any
+	Status           any
+	TargetName       any
 }
 
 type SubscriptionGrants_Items_GrantedEntity_Listing struct {
-	Id any
+	Id       any
 	Revision any
 }
 
@@ -41,68 +41,68 @@ type SubscriptionGrants_Items_GrantedEntity struct {
 }
 
 type SubscriptionGrants_Items struct {
-	Assets any
-	CreatedAt any
-	CreatedBy any
-	DomainId any
-	EnvironmentId any
-	GrantedEntity any
-	Id any
-	Status any
-	SubscriptionId any
+	Assets               any
+	CreatedAt            any
+	CreatedBy            any
+	DomainId             any
+	EnvironmentId        any
+	GrantedEntity        any
+	Id                   any
+	Status               any
+	SubscriptionId       any
 	SubscriptionTargetId any
-	UpdatedAt any
-	UpdatedBy any
+	UpdatedAt            any
+	UpdatedBy            any
 }
 
 type SubscriptionGrantsConfig struct {
-	DomainIdentifier any
-	EnvironmentId any
-	MaxResults any
-	NextToken any
-	OwningGroupId any
+	DomainIdentifier      any
+	EnvironmentId         any
+	MaxResults            any
+	NextToken             any
+	OwningGroupId         any
 	OwningIamPrincipalArn any
-	OwningProjectId any
-	OwningUserId any
-	SortBy any
-	SortOrder any
-	SubscribedListingId any
-	SubscriptionId any
-	SubscriptionTargetId any
+	OwningProjectId       any
+	OwningUserId          any
+	SortBy                any
+	SortOrder             any
+	SubscribedListingId   any
+	SubscriptionId        any
+	SubscriptionTargetId  any
 }
 
 type SubscriptionGrantsAttrs struct {
-	DomainIdentifier any
-	EnvironmentId any
-	Items any
-	MaxResults any
-	NextToken any
-	OwningGroupId any
+	DomainIdentifier      any
+	EnvironmentId         any
+	Items                 any
+	MaxResults            any
+	NextToken             any
+	OwningGroupId         any
 	OwningIamPrincipalArn any
-	OwningProjectId any
-	OwningUserId any
-	SortBy any
-	SortOrder any
-	SubscribedListingId any
-	SubscriptionId any
-	SubscriptionTargetId any
+	OwningProjectId       any
+	OwningUserId          any
+	SortBy                any
+	SortOrder             any
+	SubscribedListingId   any
+	SubscriptionId        any
+	SubscriptionTargetId  any
 }
 
 var SubscriptionGrants = ubx.DataSourceBinding{
 	WireType: "aws_datazone_subscription_grants",
 	Fields: ubx.FieldMap{
-		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
-		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OwningGroupId": ubx.FieldSpec{WireName: "owning_group_id"},
+		"DomainIdentifier":      ubx.FieldSpec{WireName: "domain_identifier"},
+		"EnvironmentId":         ubx.FieldSpec{WireName: "environment_id"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
+		"OwningGroupId":         ubx.FieldSpec{WireName: "owning_group_id"},
 		"OwningIamPrincipalArn": ubx.FieldSpec{WireName: "owning_iam_principal_arn"},
-		"OwningProjectId": ubx.FieldSpec{WireName: "owning_project_id"},
-		"OwningUserId": ubx.FieldSpec{WireName: "owning_user_id"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"SubscribedListingId": ubx.FieldSpec{WireName: "subscribed_listing_id"},
-		"SubscriptionId": ubx.FieldSpec{WireName: "subscription_id"},
-		"SubscriptionTargetId": ubx.FieldSpec{WireName: "subscription_target_id"},
+		"OwningProjectId":       ubx.FieldSpec{WireName: "owning_project_id"},
+		"OwningUserId":          ubx.FieldSpec{WireName: "owning_user_id"},
+		"SortBy":                ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":             ubx.FieldSpec{WireName: "sort_order"},
+		"SubscribedListingId":   ubx.FieldSpec{WireName: "subscribed_listing_id"},
+		"SubscriptionId":        ubx.FieldSpec{WireName: "subscription_id"},
+		"SubscriptionTargetId":  ubx.FieldSpec{WireName: "subscription_target_id"},
 	},
 }

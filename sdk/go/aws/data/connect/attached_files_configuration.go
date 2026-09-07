@@ -17,8 +17,8 @@ type AttachedFilesConfiguration_AttachedFilesConfiguration struct {
 	AttachmentScope any
 	// <p>The configuration for allowed file extensions.</p>
 	ExtensionConfiguration any
-	InstanceId any
-	LastModifiedTime any
+	InstanceId             any
+	LastModifiedTime       any
 	// <p>The maximum size limit for attached files in bytes. The minimum value is 1 and the maximum value is 104857600 (100 MB).</p>
 	MaximumSizeLimitInBytes any
 }
@@ -26,7 +26,7 @@ type AttachedFilesConfiguration_AttachedFilesConfiguration struct {
 type AttachedFilesConfigurationConfig struct {
 	// <p>The scope of the attachment. Valid values are:</p> <ul> <li> <p> <code>EMAIL</code> - Attachments for email messages.</p> </li> <li> <p> <code>CHAT</code> - Attachments for chat conversations.</p> </li> <li> <p> <code>CASE</code> - Attachments for cases.</p> </li> <li> <p> <code>TASK</code> - Attachments for tasks.</p> </li> </ul>
 	AttachmentScope any
-	InstanceId any
+	InstanceId      any
 }
 
 type AttachedFilesConfigurationAttrs struct {
@@ -34,13 +34,13 @@ type AttachedFilesConfigurationAttrs struct {
 	AttachedFilesConfiguration any
 	// <p>The scope of the attachment. Valid values are:</p> <ul> <li> <p> <code>EMAIL</code> - Attachments for email messages.</p> </li> <li> <p> <code>CHAT</code> - Attachments for chat conversations.</p> </li> <li> <p> <code>CASE</code> - Attachments for cases.</p> </li> <li> <p> <code>TASK</code> - Attachments for tasks.</p> </li> </ul>
 	AttachmentScope any
-	InstanceId any
+	InstanceId      any
 }
 
 var AttachedFilesConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_connect_attached_files_configuration",
 	Fields: ubx.FieldMap{
 		"AttachmentScope": ubx.FieldSpec{WireName: "attachment_scope"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"InstanceId":      ubx.FieldSpec{WireName: "instance_id"},
 	},
 }

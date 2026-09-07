@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Monitor_Tags struct {
 	// A key for a tag assigned to the AWS Deadline Cloud monitor, used to categorize and identify the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Monitor_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MonitorConfig struct {
 	// A human-readable name for the Deadline Cloud monitor, used to identify it in the AWS console and APIs. (AI-inferred)
@@ -55,15 +55,15 @@ type MonitorAttrs struct {
 var Monitor = ubx.ResourceBinding{
 	WireType: "aws_deadline_monitor",
 	Fields: ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DisplayName":               ubx.FieldSpec{WireName: "display_name"},
 		"IdentityCenterInstanceArn": ubx.FieldSpec{WireName: "identity_center_instance_arn"},
-		"IdentityCenterRegion": ubx.FieldSpec{WireName: "identity_center_region"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"Subdomain": ubx.FieldSpec{WireName: "subdomain"},
+		"IdentityCenterRegion":      ubx.FieldSpec{WireName: "identity_center_region"},
+		"RoleArn":                   ubx.FieldSpec{WireName: "role_arn"},
+		"Subdomain":                 ubx.FieldSpec{WireName: "subdomain"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Monitor_TagsFields,
+			Kind:     "list",
+			Fields:   Monitor_TagsFields,
 		},
 	},
 }

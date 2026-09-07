@@ -41,42 +41,42 @@ type InferenceScheduler_Tags struct {
 }
 
 var InferenceScheduler_DataInputConfiguration_InferenceInputNameConfigurationFields = ubx.FieldMap{
-		"ComponentTimestampDelimiter": ubx.FieldSpec{WireName: "component_timestamp_delimiter"},
-		"TimestampFormat": ubx.FieldSpec{WireName: "timestamp_format"},
-	}
+	"ComponentTimestampDelimiter": ubx.FieldSpec{WireName: "component_timestamp_delimiter"},
+	"TimestampFormat":             ubx.FieldSpec{WireName: "timestamp_format"},
+}
 
 var InferenceScheduler_DataInputConfiguration_S3InputConfigurationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"Bucket": ubx.FieldSpec{WireName: "bucket"},
+	"Prefix": ubx.FieldSpec{WireName: "prefix"},
+}
 
 var InferenceScheduler_DataInputConfigurationFields = ubx.FieldMap{
-		"InferenceInputNameConfiguration": ubx.FieldSpec{
-			WireName: "inference_input_name_configuration",
-			Kind: "object",
-			Fields: InferenceScheduler_DataInputConfiguration_InferenceInputNameConfigurationFields,
-		},
-		"InputTimeZoneOffset": ubx.FieldSpec{WireName: "input_time_zone_offset"},
-		"S3InputConfiguration": ubx.FieldSpec{
-			WireName: "s3_input_configuration",
-			Kind: "object",
-			Fields: InferenceScheduler_DataInputConfiguration_S3InputConfigurationFields,
-		},
-	}
+	"InferenceInputNameConfiguration": ubx.FieldSpec{
+		WireName: "inference_input_name_configuration",
+		Kind:     "object",
+		Fields:   InferenceScheduler_DataInputConfiguration_InferenceInputNameConfigurationFields,
+	},
+	"InputTimeZoneOffset": ubx.FieldSpec{WireName: "input_time_zone_offset"},
+	"S3InputConfiguration": ubx.FieldSpec{
+		WireName: "s3_input_configuration",
+		Kind:     "object",
+		Fields:   InferenceScheduler_DataInputConfiguration_S3InputConfigurationFields,
+	},
+}
 
 var InferenceScheduler_DataOutputConfigurationFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"S3OutputConfiguration": ubx.FieldSpec{
-			WireName: "s3_output_configuration",
-			Kind: "object",
-			Fields: InferenceScheduler_DataInputConfiguration_S3InputConfigurationFields,
-		},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+	"S3OutputConfiguration": ubx.FieldSpec{
+		WireName: "s3_output_configuration",
+		Kind:     "object",
+		Fields:   InferenceScheduler_DataInputConfiguration_S3InputConfigurationFields,
+	},
+}
 
 var InferenceScheduler_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type InferenceSchedulerConfig struct {
 	// A period of time (in minutes) by which inference on the data is delayed after the data starts.
@@ -128,23 +128,23 @@ var InferenceScheduler = ubx.ResourceBinding{
 		"DataDelayOffsetInMinutes": ubx.FieldSpec{WireName: "data_delay_offset_in_minutes"},
 		"DataInputConfiguration": ubx.FieldSpec{
 			WireName: "data_input_configuration",
-			Kind: "object",
-			Fields: InferenceScheduler_DataInputConfigurationFields,
+			Kind:     "object",
+			Fields:   InferenceScheduler_DataInputConfigurationFields,
 		},
 		"DataOutputConfiguration": ubx.FieldSpec{
 			WireName: "data_output_configuration",
-			Kind: "object",
-			Fields: InferenceScheduler_DataOutputConfigurationFields,
+			Kind:     "object",
+			Fields:   InferenceScheduler_DataOutputConfigurationFields,
 		},
-		"DataUploadFrequency": ubx.FieldSpec{WireName: "data_upload_frequency"},
+		"DataUploadFrequency":    ubx.FieldSpec{WireName: "data_upload_frequency"},
 		"InferenceSchedulerName": ubx.FieldSpec{WireName: "inference_scheduler_name"},
-		"ModelName": ubx.FieldSpec{WireName: "model_name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"ServerSideKmsKeyId": ubx.FieldSpec{WireName: "server_side_kms_key_id"},
+		"ModelName":              ubx.FieldSpec{WireName: "model_name"},
+		"RoleArn":                ubx.FieldSpec{WireName: "role_arn"},
+		"ServerSideKmsKeyId":     ubx.FieldSpec{WireName: "server_side_kms_key_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: InferenceScheduler_TagsFields,
+			Kind:     "list",
+			Fields:   InferenceScheduler_TagsFields,
 		},
 	},
 }

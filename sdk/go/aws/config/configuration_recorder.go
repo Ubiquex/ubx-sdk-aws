@@ -43,43 +43,43 @@ type ConfigurationRecorder_RecordingMode struct {
 }
 
 var ConfigurationRecorder_RecordingGroup_ExclusionByResourceTypesFields = ubx.FieldMap{
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-	}
+	"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
+}
 
 var ConfigurationRecorder_RecordingGroup_RecordingStrategyFields = ubx.FieldMap{
-		"UseOnly": ubx.FieldSpec{WireName: "use_only"},
-	}
+	"UseOnly": ubx.FieldSpec{WireName: "use_only"},
+}
 
 var ConfigurationRecorder_RecordingGroupFields = ubx.FieldMap{
-		"AllSupported": ubx.FieldSpec{WireName: "all_supported"},
-		"ExclusionByResourceTypes": ubx.FieldSpec{
-			WireName: "exclusion_by_resource_types",
-			Kind: "object",
-			Fields: ConfigurationRecorder_RecordingGroup_ExclusionByResourceTypesFields,
-		},
-		"IncludeGlobalResourceTypes": ubx.FieldSpec{WireName: "include_global_resource_types"},
-		"RecordingStrategy": ubx.FieldSpec{
-			WireName: "recording_strategy",
-			Kind: "object",
-			Fields: ConfigurationRecorder_RecordingGroup_RecordingStrategyFields,
-		},
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-	}
+	"AllSupported": ubx.FieldSpec{WireName: "all_supported"},
+	"ExclusionByResourceTypes": ubx.FieldSpec{
+		WireName: "exclusion_by_resource_types",
+		Kind:     "object",
+		Fields:   ConfigurationRecorder_RecordingGroup_ExclusionByResourceTypesFields,
+	},
+	"IncludeGlobalResourceTypes": ubx.FieldSpec{WireName: "include_global_resource_types"},
+	"RecordingStrategy": ubx.FieldSpec{
+		WireName: "recording_strategy",
+		Kind:     "object",
+		Fields:   ConfigurationRecorder_RecordingGroup_RecordingStrategyFields,
+	},
+	"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
+}
 
 var ConfigurationRecorder_RecordingMode_RecordingModeOverridesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"RecordingFrequency": ubx.FieldSpec{WireName: "recording_frequency"},
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-	}
+	"Description":        ubx.FieldSpec{WireName: "description"},
+	"RecordingFrequency": ubx.FieldSpec{WireName: "recording_frequency"},
+	"ResourceTypes":      ubx.FieldSpec{WireName: "resource_types"},
+}
 
 var ConfigurationRecorder_RecordingModeFields = ubx.FieldMap{
-		"RecordingFrequency": ubx.FieldSpec{WireName: "recording_frequency"},
-		"RecordingModeOverrides": ubx.FieldSpec{
-			WireName: "recording_mode_overrides",
-			Kind: "list",
-			Fields: ConfigurationRecorder_RecordingMode_RecordingModeOverridesFields,
-		},
-	}
+	"RecordingFrequency": ubx.FieldSpec{WireName: "recording_frequency"},
+	"RecordingModeOverrides": ubx.FieldSpec{
+		WireName: "recording_mode_overrides",
+		Kind:     "list",
+		Fields:   ConfigurationRecorder_RecordingMode_RecordingModeOverridesFields,
+	},
+}
 
 type ConfigurationRecorderConfig struct {
 	// The name of the configuration recorder, which must be unique within the region and defaults to 'default' if not specified. (AI-inferred)
@@ -111,13 +111,13 @@ var ConfigurationRecorder = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"RecordingGroup": ubx.FieldSpec{
 			WireName: "recording_group",
-			Kind: "object",
-			Fields: ConfigurationRecorder_RecordingGroupFields,
+			Kind:     "object",
+			Fields:   ConfigurationRecorder_RecordingGroupFields,
 		},
 		"RecordingMode": ubx.FieldSpec{
 			WireName: "recording_mode",
-			Kind: "object",
-			Fields: ConfigurationRecorder_RecordingModeFields,
+			Kind:     "object",
+			Fields:   ConfigurationRecorder_RecordingModeFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 	},

@@ -30,8 +30,8 @@ type TransitGatewayMulticastDomainAssociationAttrs struct {
 var TransitGatewayMulticastDomainAssociation = ubx.ResourceBinding{
 	WireType: "aws_ec2_transit_gateway_multicast_domain_association",
 	Fields: ubx.FieldMap{
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-		"TransitGatewayAttachmentId": ubx.FieldSpec{WireName: "transit_gateway_attachment_id"},
+		"SubnetId":                        ubx.FieldSpec{WireName: "subnet_id"},
+		"TransitGatewayAttachmentId":      ubx.FieldSpec{WireName: "transit_gateway_attachment_id"},
 		"TransitGatewayMulticastDomainId": ubx.FieldSpec{WireName: "transit_gateway_multicast_domain_id"},
 	},
 }

@@ -4,24 +4,24 @@ package devicefarm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestGridSession_TestGridSession struct {
-	Arn any
-	BillingMinutes any
-	Created any
-	Ended any
+	Arn                any
+	BillingMinutes     any
+	Created            any
+	Ended              any
 	SeleniumProperties any
-	Status any
+	Status             any
 }
 
 type TestGridSessionConfig struct {
 	ProjectArn any
 	SessionArn any
-	SessionId any
+	SessionId  any
 }
 
 type TestGridSessionAttrs struct {
 	ProjectArn any
 	SessionArn any
-	SessionId any
+	SessionId  any
 	// <p>A <a>TestGridSession</a> is a single instance of a browser launched from the URL provided by a call to <a>CreateTestGridUrl</a>.</p>
 	TestGridSession any
 }
@@ -31,6 +31,6 @@ var TestGridSession = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ProjectArn": ubx.FieldSpec{WireName: "project_arn"},
 		"SessionArn": ubx.FieldSpec{WireName: "session_arn"},
-		"SessionId": ubx.FieldSpec{WireName: "session_id"},
+		"SessionId":  ubx.FieldSpec{WireName: "session_id"},
 	},
 }

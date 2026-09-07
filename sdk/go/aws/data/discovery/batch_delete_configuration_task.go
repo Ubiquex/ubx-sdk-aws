@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BatchDeleteConfigurationTask_Task_DeletionWarnings struct {
 	ConfigurationId any
-	WarningCode any
-	WarningText any
+	WarningCode     any
+	WarningText     any
 }
 
 type BatchDeleteConfigurationTask_Task_FailedConfigurations struct {
 	ConfigurationId any
-	ErrorMessage any
+	ErrorMessage    any
 	ErrorStatusCode any
 }
 
 type BatchDeleteConfigurationTask_Task struct {
-	ConfigurationType any
-	DeletedConfigurations any
-	DeletionWarnings any
-	EndTime any
-	FailedConfigurations any
+	ConfigurationType       any
+	DeletedConfigurations   any
+	DeletionWarnings        any
+	EndTime                 any
+	FailedConfigurations    any
 	RequestedConfigurations any
-	StartTime any
-	Status any
-	TaskId any
+	StartTime               any
+	Status                  any
+	TaskId                  any
 }
 
 type BatchDeleteConfigurationTaskConfig struct {
@@ -33,7 +33,7 @@ type BatchDeleteConfigurationTaskConfig struct {
 
 type BatchDeleteConfigurationTaskAttrs struct {
 	// <p> A metadata object that represents the deletion task being executed. </p>
-	Task any
+	Task   any
 	TaskId any
 }
 

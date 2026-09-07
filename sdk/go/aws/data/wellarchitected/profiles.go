@@ -4,40 +4,40 @@ package wellarchitected
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Profiles_ProfileSummaries struct {
-	CreatedAt any
-	Owner any
-	ProfileArn any
+	CreatedAt          any
+	Owner              any
+	ProfileArn         any
 	ProfileDescription any
-	ProfileName any
-	ProfileVersion any
-	UpdatedAt any
+	ProfileName        any
+	ProfileVersion     any
+	UpdatedAt          any
 }
 
 type ProfilesConfig struct {
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
-	NextToken any
+	NextToken         any
 	ProfileNamePrefix any
-	ProfileOwnerType any
+	ProfileOwnerType  any
 }
 
 type ProfilesAttrs struct {
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
-	NextToken any
+	NextToken         any
 	ProfileNamePrefix any
-	ProfileOwnerType any
-	ProfileSummaries any
+	ProfileOwnerType  any
+	ProfileSummaries  any
 }
 
 var Profiles = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_profiles",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"ProfileNamePrefix": ubx.FieldSpec{WireName: "profile_name_prefix"},
-		"ProfileOwnerType": ubx.FieldSpec{WireName: "profile_owner_type"},
+		"ProfileOwnerType":  ubx.FieldSpec{WireName: "profile_owner_type"},
 	},
 }

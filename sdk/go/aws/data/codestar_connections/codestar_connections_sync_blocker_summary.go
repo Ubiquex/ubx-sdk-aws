@@ -4,43 +4,43 @@ package codestar_connections
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodestarConnectionsSyncBlockerSummary_SyncBlockerSummary_LatestBlockers_Contexts struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type CodestarConnectionsSyncBlockerSummary_SyncBlockerSummary_LatestBlockers struct {
-	Contexts any
-	CreatedAt any
-	CreatedReason any
-	Id any
-	ResolvedAt any
+	Contexts       any
+	CreatedAt      any
+	CreatedReason  any
+	Id             any
+	ResolvedAt     any
 	ResolvedReason any
-	Status any
-	Type any
+	Status         any
+	Type           any
 }
 
 type CodestarConnectionsSyncBlockerSummary_SyncBlockerSummary struct {
-	LatestBlockers any
+	LatestBlockers     any
 	ParentResourceName any
-	ResourceName any
+	ResourceName       any
 }
 
 type CodestarConnectionsSyncBlockerSummaryConfig struct {
 	ResourceName any
-	SyncType any
+	SyncType     any
 }
 
 type CodestarConnectionsSyncBlockerSummaryAttrs struct {
 	ResourceName any
 	// <p>A summary for sync blockers.</p>
 	SyncBlockerSummary any
-	SyncType any
+	SyncType           any
 }
 
 var CodestarConnectionsSyncBlockerSummary = ubx.DataSourceBinding{
 	WireType: "aws_codestar_connections_sync_blocker_summary",
 	Fields: ubx.FieldMap{
 		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
-		"SyncType": ubx.FieldSpec{WireName: "sync_type"},
+		"SyncType":     ubx.FieldSpec{WireName: "sync_type"},
 	},
 }

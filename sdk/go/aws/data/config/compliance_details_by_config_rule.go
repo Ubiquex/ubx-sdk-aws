@@ -6,46 +6,46 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ComplianceDetailsByConfigRule_EvaluationResults_EvaluationResultIdentifier_EvaluationResultQualifier struct {
 	ConfigRuleName any
 	EvaluationMode any
-	ResourceId any
-	ResourceType any
+	ResourceId     any
+	ResourceType   any
 }
 
 type ComplianceDetailsByConfigRule_EvaluationResults_EvaluationResultIdentifier struct {
 	EvaluationResultQualifier any
-	OrderingTimestamp any
-	ResourceEvaluationId any
+	OrderingTimestamp         any
+	ResourceEvaluationId      any
 }
 
 type ComplianceDetailsByConfigRule_EvaluationResults struct {
-	Annotation any
-	ComplianceType any
-	ConfigRuleInvokedTime any
+	Annotation                 any
+	ComplianceType             any
+	ConfigRuleInvokedTime      any
 	EvaluationResultIdentifier any
-	ResultRecordedTime any
-	ResultToken any
+	ResultRecordedTime         any
+	ResultToken                any
 }
 
 type ComplianceDetailsByConfigRuleConfig struct {
 	ComplianceTypes any
-	ConfigRuleName any
-	Limit any
-	NextToken any
+	ConfigRuleName  any
+	Limit           any
+	NextToken       any
 }
 
 type ComplianceDetailsByConfigRuleAttrs struct {
-	ComplianceTypes any
-	ConfigRuleName any
+	ComplianceTypes   any
+	ConfigRuleName    any
 	EvaluationResults any
-	Limit any
-	NextToken any
+	Limit             any
+	NextToken         any
 }
 
 var ComplianceDetailsByConfigRule = ubx.DataSourceBinding{
 	WireType: "aws_config_compliance_details_by_config_rule",
 	Fields: ubx.FieldMap{
 		"ComplianceTypes": ubx.FieldSpec{WireName: "compliance_types"},
-		"ConfigRuleName": ubx.FieldSpec{WireName: "config_rule_name"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ConfigRuleName":  ubx.FieldSpec{WireName: "config_rule_name"},
+		"Limit":           ubx.FieldSpec{WireName: "limit"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

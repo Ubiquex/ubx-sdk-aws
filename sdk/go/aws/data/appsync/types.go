@@ -4,34 +4,34 @@ package appsync
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Types_Types struct {
-	Arn any
-	Definition any
+	Arn         any
+	Definition  any
 	Description any
-	Format any
-	Name any
+	Format      any
+	Name        any
 }
 
 type TypesConfig struct {
-	ApiId any
-	Format any
+	ApiId      any
+	Format     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type TypesAttrs struct {
-	ApiId any
-	Format any
+	ApiId      any
+	Format     any
 	MaxResults any
-	NextToken any
-	Types any
+	NextToken  any
+	Types      any
 }
 
 var Types = ubx.DataSourceBinding{
 	WireType: "aws_appsync_types",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
-		"Format": ubx.FieldSpec{WireName: "format"},
+		"ApiId":      ubx.FieldSpec{WireName: "api_id"},
+		"Format":     ubx.FieldSpec{WireName: "format"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

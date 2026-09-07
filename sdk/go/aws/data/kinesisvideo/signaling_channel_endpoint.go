@@ -4,19 +4,19 @@ package kinesisvideo
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SignalingChannelEndpoint_ResourceEndpointList struct {
-	Protocol any
+	Protocol         any
 	ResourceEndpoint any
 }
 
 type SignalingChannelEndpoint_SingleMasterChannelEndpointConfiguration struct {
 	Protocols any
-	Role any
+	Role      any
 }
 
 var SignalingChannelEndpoint_SingleMasterChannelEndpointConfigurationFields = ubx.FieldMap{
-		"Protocols": ubx.FieldSpec{WireName: "protocols"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"Protocols": ubx.FieldSpec{WireName: "protocols"},
+	"Role":      ubx.FieldSpec{WireName: "role"},
+}
 
 type SignalingChannelEndpointConfig struct {
 	ChannelArn any
@@ -25,7 +25,7 @@ type SignalingChannelEndpointConfig struct {
 }
 
 type SignalingChannelEndpointAttrs struct {
-	ChannelArn any
+	ChannelArn           any
 	ResourceEndpointList any
 	// <p>An object that contains the endpoint configuration for the <code>SINGLE_MASTER</code> channel type. </p>
 	SingleMasterChannelEndpointConfiguration any
@@ -37,8 +37,8 @@ var SignalingChannelEndpoint = ubx.DataSourceBinding{
 		"ChannelArn": ubx.FieldSpec{WireName: "channel_arn"},
 		"SingleMasterChannelEndpointConfiguration": ubx.FieldSpec{
 			WireName: "single_master_channel_endpoint_configuration",
-			Kind: "object",
-			Fields: SignalingChannelEndpoint_SingleMasterChannelEndpointConfigurationFields,
+			Kind:     "object",
+			Fields:   SignalingChannelEndpoint_SingleMasterChannelEndpointConfigurationFields,
 		},
 	},
 }

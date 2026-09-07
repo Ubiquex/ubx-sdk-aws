@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CalculatedAttributeDefinitions_Items struct {
 	CalculatedAttributeName any
-	CreatedAt any
-	Description any
-	DisplayName any
-	LastUpdatedAt any
-	Status any
-	Tags any
-	UseHistoricalData any
+	CreatedAt               any
+	Description             any
+	DisplayName             any
+	LastUpdatedAt           any
+	Status                  any
+	Tags                    any
+	UseHistoricalData       any
 }
 
 type CalculatedAttributeDefinitionsConfig struct {
 	DomainName any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CalculatedAttributeDefinitionsAttrs struct {
 	DomainName any
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var CalculatedAttributeDefinitions = ubx.DataSourceBinding{
@@ -32,6 +32,6 @@ var CalculatedAttributeDefinitions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

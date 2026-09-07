@@ -4,23 +4,23 @@ package apprunner
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Services_ServiceSummaryList struct {
-	CreatedAt any
-	ServiceArn any
-	ServiceId any
+	CreatedAt   any
+	ServiceArn  any
+	ServiceId   any
 	ServiceName any
-	ServiceUrl any
-	Status any
-	UpdatedAt any
+	ServiceUrl  any
+	Status      any
+	UpdatedAt   any
 }
 
 type ServicesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ServicesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	ServiceSummaryList any
 }
 
@@ -28,6 +28,6 @@ var Services = ubx.DataSourceBinding{
 	WireType: "aws_apprunner_services",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

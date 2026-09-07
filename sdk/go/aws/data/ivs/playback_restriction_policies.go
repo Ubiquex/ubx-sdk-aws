@@ -4,22 +4,22 @@ package ivs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PlaybackRestrictionPolicies_PlaybackRestrictionPolicies struct {
-	AllowedCountries any
-	AllowedOrigins any
-	Arn any
+	AllowedCountries              any
+	AllowedOrigins                any
+	Arn                           any
 	EnableStrictOriginEnforcement any
-	Name any
-	Tags any
+	Name                          any
+	Tags                          any
 }
 
 type PlaybackRestrictionPoliciesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type PlaybackRestrictionPoliciesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults                  any
+	NextToken                   any
 	PlaybackRestrictionPolicies any
 }
 
@@ -27,6 +27,6 @@ var PlaybackRestrictionPolicies = ubx.DataSourceBinding{
 	WireType: "aws_ivs_playback_restriction_policies",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

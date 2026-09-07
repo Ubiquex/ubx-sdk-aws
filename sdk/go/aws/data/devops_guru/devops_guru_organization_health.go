@@ -4,23 +4,23 @@ package devops_guru
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DevopsGuruOrganizationHealthConfig struct {
-	AccountIds any
+	AccountIds            any
 	OrganizationalUnitIds any
 }
 
 type DevopsGuruOrganizationHealthAttrs struct {
-	AccountIds any
-	MetricsAnalyzed any
+	AccountIds            any
+	MetricsAnalyzed       any
 	OpenProactiveInsights any
-	OpenReactiveInsights any
+	OpenReactiveInsights  any
 	OrganizationalUnitIds any
-	ResourceHours any
+	ResourceHours         any
 }
 
 var DevopsGuruOrganizationHealth = ubx.DataSourceBinding{
 	WireType: "aws_devops_guru_organization_health",
 	Fields: ubx.FieldMap{
-		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
+		"AccountIds":            ubx.FieldSpec{WireName: "account_ids"},
 		"OrganizationalUnitIds": ubx.FieldSpec{WireName: "organizational_unit_ids"},
 	},
 }

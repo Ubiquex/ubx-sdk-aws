@@ -8,11 +8,11 @@ type LicenseManagerLinuxSubscriptionsRegisteredSubscriptionProviderConfig struct
 }
 
 type LicenseManagerLinuxSubscriptionsRegisteredSubscriptionProviderAttrs struct {
-	LastSuccessfulDataRetrievalTime any
-	SecretArn any
-	SubscriptionProviderArn any
-	SubscriptionProviderSource any
-	SubscriptionProviderStatus any
+	LastSuccessfulDataRetrievalTime   any
+	SecretArn                         any
+	SubscriptionProviderArn           any
+	SubscriptionProviderSource        any
+	SubscriptionProviderStatus        any
 	SubscriptionProviderStatusMessage any
 }
 

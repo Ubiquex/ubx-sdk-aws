@@ -4,34 +4,34 @@ package discovery
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContinuousExports_Descriptions struct {
-	DataSource any
-	ExportId any
-	S3Bucket any
+	DataSource          any
+	ExportId            any
+	S3Bucket            any
 	SchemaStorageConfig any
-	StartTime any
-	Status any
-	StatusDetail any
-	StopTime any
+	StartTime           any
+	Status              any
+	StatusDetail        any
+	StopTime            any
 }
 
 type ContinuousExportsConfig struct {
-	ExportIds any
+	ExportIds  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ContinuousExportsAttrs struct {
 	Descriptions any
-	ExportIds any
-	MaxResults any
-	NextToken any
+	ExportIds    any
+	MaxResults   any
+	NextToken    any
 }
 
 var ContinuousExports = ubx.DataSourceBinding{
 	WireType: "aws_discovery_continuous_exports",
 	Fields: ubx.FieldMap{
-		"ExportIds": ubx.FieldSpec{WireName: "export_ids"},
+		"ExportIds":  ubx.FieldSpec{WireName: "export_ids"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

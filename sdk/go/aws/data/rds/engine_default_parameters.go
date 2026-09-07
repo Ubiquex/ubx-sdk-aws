@@ -4,49 +4,49 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EngineDefaultParameters_EngineDefaults_Parameters struct {
-	AllowedValues any
-	ApplyMethod any
-	ApplyType any
-	DataType any
-	Description any
-	IsModifiable any
+	AllowedValues        any
+	ApplyMethod          any
+	ApplyType            any
+	DataType             any
+	Description          any
+	IsModifiable         any
 	MinimumEngineVersion any
-	ParameterName any
-	ParameterValue any
-	Source any
+	ParameterName        any
+	ParameterValue       any
+	Source               any
 	SupportedEngineModes any
 }
 
 type EngineDefaultParameters_EngineDefaults struct {
 	DbparameterGroupFamily any
-	Marker any
-	Parameters any
+	Marker                 any
+	Parameters             any
 }
 
 type EngineDefaultParameters_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var EngineDefaultParameters_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type EngineDefaultParametersConfig struct {
 	DbparameterGroupFamily any
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters                any
+	Marker                 any
+	MaxRecords             any
 }
 
 type EngineDefaultParametersAttrs struct {
 	DbparameterGroupFamily any
 	// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
 	EngineDefaults any
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters        any
+	Marker         any
+	MaxRecords     any
 }
 
 var EngineDefaultParameters = ubx.DataSourceBinding{
@@ -55,10 +55,10 @@ var EngineDefaultParameters = ubx.DataSourceBinding{
 		"DbparameterGroupFamily": ubx.FieldSpec{WireName: "dbparameter_group_family"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: EngineDefaultParameters_FiltersFields,
+			Kind:     "list",
+			Fields:   EngineDefaultParameters_FiltersFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
 	},
 }

@@ -87,7 +87,7 @@ type Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConf
 
 type Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateEndpointOverrides struct {
 	// The domain name that overrides the default endpoint for the custom OAuth2 provider when using a private endpoint, typically pointing to an internal VPC hostname. (AI-inferred)
-	Domain any
+	Domain          any
 	PrivateEndpoint any
 }
 
@@ -203,229 +203,229 @@ type Oauth2CredentialProvider_Oauth2ProviderConfigOutput struct {
 }
 
 type Oauth2CredentialProvider_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfig_ClientSecretConfigFields = ubx.FieldMap{
-		"JsonKey": ubx.FieldSpec{WireName: "json_key"},
-		"SecretId": ubx.FieldSpec{WireName: "secret_id"},
-	}
+	"JsonKey":  ubx.FieldSpec{WireName: "json_key"},
+	"SecretId": ubx.FieldSpec{WireName: "secret_id"},
+}
 
 var Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfigFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"ClientSecretConfig": ubx.FieldSpec{
-			WireName: "client_secret_config",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfig_ClientSecretConfigFields,
-		},
-		"ClientSecretSource": ubx.FieldSpec{WireName: "client_secret_source"},
-	}
+	"ClientId":     ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
+	"ClientSecretConfig": ubx.FieldSpec{
+		WireName: "client_secret_config",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfig_ClientSecretConfigFields,
+	},
+	"ClientSecretSource": ubx.FieldSpec{WireName: "client_secret_source"},
+}
 
 var Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_OauthDiscovery_AuthorizationServerMetadataFields = ubx.FieldMap{
-		"AuthorizationEndpoint": ubx.FieldSpec{WireName: "authorization_endpoint"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"ResponseTypes": ubx.FieldSpec{WireName: "response_types"},
-		"TokenEndpoint": ubx.FieldSpec{WireName: "token_endpoint"},
-	}
+	"AuthorizationEndpoint": ubx.FieldSpec{WireName: "authorization_endpoint"},
+	"Issuer":                ubx.FieldSpec{WireName: "issuer"},
+	"ResponseTypes":         ubx.FieldSpec{WireName: "response_types"},
+	"TokenEndpoint":         ubx.FieldSpec{WireName: "token_endpoint"},
+}
 
 var Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_OauthDiscoveryFields = ubx.FieldMap{
-		"AuthorizationServerMetadata": ubx.FieldSpec{
-			WireName: "authorization_server_metadata",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_OauthDiscovery_AuthorizationServerMetadataFields,
-		},
-		"DiscoveryUrl": ubx.FieldSpec{WireName: "discovery_url"},
-	}
+	"AuthorizationServerMetadata": ubx.FieldSpec{
+		WireName: "authorization_server_metadata",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_OauthDiscovery_AuthorizationServerMetadataFields,
+	},
+	"DiscoveryUrl": ubx.FieldSpec{WireName: "discovery_url"},
+}
 
 var Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_OnBehalfOfTokenExchangeConfig_TokenExchangeGrantTypeConfigFields = ubx.FieldMap{
-		"ActorTokenContent": ubx.FieldSpec{WireName: "actor_token_content"},
-		"ActorTokenScopes": ubx.FieldSpec{WireName: "actor_token_scopes"},
-	}
+	"ActorTokenContent": ubx.FieldSpec{WireName: "actor_token_content"},
+	"ActorTokenScopes":  ubx.FieldSpec{WireName: "actor_token_scopes"},
+}
 
 var Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_OnBehalfOfTokenExchangeConfigFields = ubx.FieldMap{
-		"GrantType": ubx.FieldSpec{WireName: "grant_type"},
-		"TokenExchangeGrantTypeConfig": ubx.FieldSpec{
-			WireName: "token_exchange_grant_type_config",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_OnBehalfOfTokenExchangeConfig_TokenExchangeGrantTypeConfigFields,
-		},
-	}
+	"GrantType": ubx.FieldSpec{WireName: "grant_type"},
+	"TokenExchangeGrantTypeConfig": ubx.FieldSpec{
+		WireName: "token_exchange_grant_type_config",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_OnBehalfOfTokenExchangeConfig_TokenExchangeGrantTypeConfigFields,
+	},
+}
 
 var Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateEndpoint_ManagedVpcResourceFields = ubx.FieldMap{
-		"EndpointIpAddressType": ubx.FieldSpec{WireName: "endpoint_ip_address_type"},
-		"RoutingDomain": ubx.FieldSpec{WireName: "routing_domain"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"VpcIdentifier": ubx.FieldSpec{WireName: "vpc_identifier"},
-	}
+	"EndpointIpAddressType": ubx.FieldSpec{WireName: "endpoint_ip_address_type"},
+	"RoutingDomain":         ubx.FieldSpec{WireName: "routing_domain"},
+	"SecurityGroupIds":      ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":             ubx.FieldSpec{WireName: "subnet_ids"},
+	"Tags":                  ubx.FieldSpec{WireName: "tags"},
+	"VpcIdentifier":         ubx.FieldSpec{WireName: "vpc_identifier"},
+}
 
 var Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateEndpoint_SelfManagedLatticeResourceFields = ubx.FieldMap{
-		"ResourceConfigurationIdentifier": ubx.FieldSpec{WireName: "resource_configuration_identifier"},
-	}
+	"ResourceConfigurationIdentifier": ubx.FieldSpec{WireName: "resource_configuration_identifier"},
+}
 
 var Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateEndpointFields = ubx.FieldMap{
-		"ManagedVpcResource": ubx.FieldSpec{
-			WireName: "managed_vpc_resource",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateEndpoint_ManagedVpcResourceFields,
-		},
-		"SelfManagedLatticeResource": ubx.FieldSpec{
-			WireName: "self_managed_lattice_resource",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateEndpoint_SelfManagedLatticeResourceFields,
-		},
-	}
+	"ManagedVpcResource": ubx.FieldSpec{
+		WireName: "managed_vpc_resource",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateEndpoint_ManagedVpcResourceFields,
+	},
+	"SelfManagedLatticeResource": ubx.FieldSpec{
+		WireName: "self_managed_lattice_resource",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateEndpoint_SelfManagedLatticeResourceFields,
+	},
+}
 
 var Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateEndpointOverridesFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"PrivateEndpoint": ubx.FieldSpec{
-			WireName: "private_endpoint",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateEndpointFields,
-		},
-	}
+	"Domain": ubx.FieldSpec{WireName: "domain"},
+	"PrivateEndpoint": ubx.FieldSpec{
+		WireName: "private_endpoint",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateEndpointFields,
+	},
+}
 
 var Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateKeyJwtConfig_PrivateKeySource_KmsKeySourceFields = ubx.FieldMap{
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-	}
+	"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+}
 
 var Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateKeyJwtConfig_PrivateKeySourceFields = ubx.FieldMap{
-		"KmsKeySource": ubx.FieldSpec{
-			WireName: "kms_key_source",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateKeyJwtConfig_PrivateKeySource_KmsKeySourceFields,
-		},
-	}
+	"KmsKeySource": ubx.FieldSpec{
+		WireName: "kms_key_source",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateKeyJwtConfig_PrivateKeySource_KmsKeySourceFields,
+	},
+}
 
 var Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateKeyJwtConfigFields = ubx.FieldMap{
-		"AdditionalHeaderClaims": ubx.FieldSpec{WireName: "additional_header_claims"},
-		"AdditionalPayloadClaims": ubx.FieldSpec{WireName: "additional_payload_claims"},
-		"PrivateKeySource": ubx.FieldSpec{
-			WireName: "private_key_source",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateKeyJwtConfig_PrivateKeySourceFields,
-		},
-		"SigningAlgorithm": ubx.FieldSpec{WireName: "signing_algorithm"},
-	}
+	"AdditionalHeaderClaims":  ubx.FieldSpec{WireName: "additional_header_claims"},
+	"AdditionalPayloadClaims": ubx.FieldSpec{WireName: "additional_payload_claims"},
+	"PrivateKeySource": ubx.FieldSpec{
+		WireName: "private_key_source",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateKeyJwtConfig_PrivateKeySourceFields,
+	},
+	"SigningAlgorithm": ubx.FieldSpec{WireName: "signing_algorithm"},
+}
 
 var Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfigFields = ubx.FieldMap{
-		"ClientAuthenticationMethod": ubx.FieldSpec{WireName: "client_authentication_method"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"ClientSecretConfig": ubx.FieldSpec{
-			WireName: "client_secret_config",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfig_ClientSecretConfigFields,
-		},
-		"ClientSecretSource": ubx.FieldSpec{WireName: "client_secret_source"},
-		"OauthDiscovery": ubx.FieldSpec{
-			WireName: "oauth_discovery",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_OauthDiscoveryFields,
-		},
-		"OnBehalfOfTokenExchangeConfig": ubx.FieldSpec{
-			WireName: "on_behalf_of_token_exchange_config",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_OnBehalfOfTokenExchangeConfigFields,
-		},
-		"PrivateEndpoint": ubx.FieldSpec{
-			WireName: "private_endpoint",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateEndpointFields,
-		},
-		"PrivateEndpointOverrides": ubx.FieldSpec{
-			WireName: "private_endpoint_overrides",
-			Kind: "list",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateEndpointOverridesFields,
-		},
-		"PrivateKeyJwtConfig": ubx.FieldSpec{
-			WireName: "private_key_jwt_config",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateKeyJwtConfigFields,
-		},
-	}
+	"ClientAuthenticationMethod": ubx.FieldSpec{WireName: "client_authentication_method"},
+	"ClientId":                   ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":               ubx.FieldSpec{WireName: "client_secret"},
+	"ClientSecretConfig": ubx.FieldSpec{
+		WireName: "client_secret_config",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfig_ClientSecretConfigFields,
+	},
+	"ClientSecretSource": ubx.FieldSpec{WireName: "client_secret_source"},
+	"OauthDiscovery": ubx.FieldSpec{
+		WireName: "oauth_discovery",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_OauthDiscoveryFields,
+	},
+	"OnBehalfOfTokenExchangeConfig": ubx.FieldSpec{
+		WireName: "on_behalf_of_token_exchange_config",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_OnBehalfOfTokenExchangeConfigFields,
+	},
+	"PrivateEndpoint": ubx.FieldSpec{
+		WireName: "private_endpoint",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateEndpointFields,
+	},
+	"PrivateEndpointOverrides": ubx.FieldSpec{
+		WireName: "private_endpoint_overrides",
+		Kind:     "list",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateEndpointOverridesFields,
+	},
+	"PrivateKeyJwtConfig": ubx.FieldSpec{
+		WireName: "private_key_jwt_config",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateKeyJwtConfigFields,
+	},
+}
 
 var Oauth2CredentialProvider_Oauth2ProviderConfigInput_IncludedOauth2ProviderConfigFields = ubx.FieldMap{
-		"AuthorizationEndpoint": ubx.FieldSpec{WireName: "authorization_endpoint"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"ClientSecretConfig": ubx.FieldSpec{
-			WireName: "client_secret_config",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfig_ClientSecretConfigFields,
-		},
-		"ClientSecretSource": ubx.FieldSpec{WireName: "client_secret_source"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"TokenEndpoint": ubx.FieldSpec{WireName: "token_endpoint"},
-	}
+	"AuthorizationEndpoint": ubx.FieldSpec{WireName: "authorization_endpoint"},
+	"ClientId":              ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":          ubx.FieldSpec{WireName: "client_secret"},
+	"ClientSecretConfig": ubx.FieldSpec{
+		WireName: "client_secret_config",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfig_ClientSecretConfigFields,
+	},
+	"ClientSecretSource": ubx.FieldSpec{WireName: "client_secret_source"},
+	"Issuer":             ubx.FieldSpec{WireName: "issuer"},
+	"TokenEndpoint":      ubx.FieldSpec{WireName: "token_endpoint"},
+}
 
 var Oauth2CredentialProvider_Oauth2ProviderConfigInput_MicrosoftOauth2ProviderConfigFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"ClientSecretConfig": ubx.FieldSpec{
-			WireName: "client_secret_config",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfig_ClientSecretConfigFields,
-		},
-		"ClientSecretSource": ubx.FieldSpec{WireName: "client_secret_source"},
-		"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
-	}
+	"ClientId":     ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
+	"ClientSecretConfig": ubx.FieldSpec{
+		WireName: "client_secret_config",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfig_ClientSecretConfigFields,
+	},
+	"ClientSecretSource": ubx.FieldSpec{WireName: "client_secret_source"},
+	"TenantId":           ubx.FieldSpec{WireName: "tenant_id"},
+}
 
 var Oauth2CredentialProvider_Oauth2ProviderConfigInputFields = ubx.FieldMap{
-		"AtlassianOauth2ProviderConfig": ubx.FieldSpec{
-			WireName: "atlassian_oauth2_provider_config",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfigFields,
-		},
-		"CustomOauth2ProviderConfig": ubx.FieldSpec{
-			WireName: "custom_oauth2_provider_config",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfigFields,
-		},
-		"GithubOauth2ProviderConfig": ubx.FieldSpec{
-			WireName: "github_oauth2_provider_config",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfigFields,
-		},
-		"GoogleOauth2ProviderConfig": ubx.FieldSpec{
-			WireName: "google_oauth2_provider_config",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfigFields,
-		},
-		"IncludedOauth2ProviderConfig": ubx.FieldSpec{
-			WireName: "included_oauth2_provider_config",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_IncludedOauth2ProviderConfigFields,
-		},
-		"LinkedinOauth2ProviderConfig": ubx.FieldSpec{
-			WireName: "linkedin_oauth2_provider_config",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfigFields,
-		},
-		"MicrosoftOauth2ProviderConfig": ubx.FieldSpec{
-			WireName: "microsoft_oauth2_provider_config",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_MicrosoftOauth2ProviderConfigFields,
-		},
-		"SalesforceOauth2ProviderConfig": ubx.FieldSpec{
-			WireName: "salesforce_oauth2_provider_config",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfigFields,
-		},
-		"SlackOauth2ProviderConfig": ubx.FieldSpec{
-			WireName: "slack_oauth2_provider_config",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfigFields,
-		},
-	}
+	"AtlassianOauth2ProviderConfig": ubx.FieldSpec{
+		WireName: "atlassian_oauth2_provider_config",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfigFields,
+	},
+	"CustomOauth2ProviderConfig": ubx.FieldSpec{
+		WireName: "custom_oauth2_provider_config",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfigFields,
+	},
+	"GithubOauth2ProviderConfig": ubx.FieldSpec{
+		WireName: "github_oauth2_provider_config",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfigFields,
+	},
+	"GoogleOauth2ProviderConfig": ubx.FieldSpec{
+		WireName: "google_oauth2_provider_config",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfigFields,
+	},
+	"IncludedOauth2ProviderConfig": ubx.FieldSpec{
+		WireName: "included_oauth2_provider_config",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_IncludedOauth2ProviderConfigFields,
+	},
+	"LinkedinOauth2ProviderConfig": ubx.FieldSpec{
+		WireName: "linkedin_oauth2_provider_config",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfigFields,
+	},
+	"MicrosoftOauth2ProviderConfig": ubx.FieldSpec{
+		WireName: "microsoft_oauth2_provider_config",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_MicrosoftOauth2ProviderConfigFields,
+	},
+	"SalesforceOauth2ProviderConfig": ubx.FieldSpec{
+		WireName: "salesforce_oauth2_provider_config",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfigFields,
+	},
+	"SlackOauth2ProviderConfig": ubx.FieldSpec{
+		WireName: "slack_oauth2_provider_config",
+		Kind:     "object",
+		Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfigFields,
+	},
+}
 
 var Oauth2CredentialProvider_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type Oauth2CredentialProviderConfig struct {
 	// The vendor of the OAuth2 credential provider
@@ -471,16 +471,16 @@ var Oauth2CredentialProvider = ubx.ResourceBinding{
 	WireType: "aws_bedrock_agent_core_oauth2_credential_provider",
 	Fields: ubx.FieldMap{
 		"CredentialProviderVendor": ubx.FieldSpec{WireName: "credential_provider_vendor"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
 		"Oauth2ProviderConfigInput": ubx.FieldSpec{
 			WireName: "oauth2_provider_config_input",
-			Kind: "object",
-			Fields: Oauth2CredentialProvider_Oauth2ProviderConfigInputFields,
+			Kind:     "object",
+			Fields:   Oauth2CredentialProvider_Oauth2ProviderConfigInputFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Oauth2CredentialProvider_TagsFields,
+			Kind:     "list",
+			Fields:   Oauth2CredentialProvider_TagsFields,
 		},
 	},
 }

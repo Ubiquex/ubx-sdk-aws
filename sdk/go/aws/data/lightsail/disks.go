@@ -4,43 +4,43 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Disks_Disks_AddOns struct {
-	Duration any
-	Name any
+	Duration              any
+	Name                  any
 	NextSnapshotTimeOfDay any
-	SnapshotTimeOfDay any
-	Status any
-	Threshold any
+	SnapshotTimeOfDay     any
+	Status                any
+	Threshold             any
 }
 
 type Disks_Disks_Location struct {
 	AvailabilityZone any
-	RegionName any
+	RegionName       any
 }
 
 type Disks_Disks_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Disks_Disks struct {
-	AddOns any
-	Arn any
-	AttachedTo any
+	AddOns          any
+	Arn             any
+	AttachedTo      any
 	AttachmentState any
 	AutoMountStatus any
-	CreatedAt any
-	GbInUse any
-	Iops any
-	IsAttached any
-	IsSystemDisk any
-	Location any
-	Name any
-	Path any
-	ResourceType any
-	SizeInGb any
-	State any
-	SupportCode any
-	Tags any
+	CreatedAt       any
+	GbInUse         any
+	Iops            any
+	IsAttached      any
+	IsSystemDisk    any
+	Location        any
+	Name            any
+	Path            any
+	ResourceType    any
+	SizeInGb        any
+	State           any
+	SupportCode     any
+	Tags            any
 }
 
 type DisksConfig struct {
@@ -48,9 +48,9 @@ type DisksConfig struct {
 }
 
 type DisksAttrs struct {
-	Disks any
+	Disks         any
 	NextPageToken any
-	PageToken any
+	PageToken     any
 }
 
 var Disks = ubx.DataSourceBinding{

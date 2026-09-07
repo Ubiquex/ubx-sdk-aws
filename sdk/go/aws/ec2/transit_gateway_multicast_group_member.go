@@ -38,8 +38,8 @@ type TransitGatewayMulticastGroupMemberAttrs struct {
 var TransitGatewayMulticastGroupMember = ubx.ResourceBinding{
 	WireType: "aws_ec2_transit_gateway_multicast_group_member",
 	Fields: ubx.FieldMap{
-		"GroupIpAddress": ubx.FieldSpec{WireName: "group_ip_address"},
-		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
+		"GroupIpAddress":                  ubx.FieldSpec{WireName: "group_ip_address"},
+		"NetworkInterfaceId":              ubx.FieldSpec{WireName: "network_interface_id"},
 		"TransitGatewayMulticastDomainId": ubx.FieldSpec{WireName: "transit_gateway_multicast_domain_id"},
 	},
 }

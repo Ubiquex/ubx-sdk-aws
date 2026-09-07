@@ -4,38 +4,38 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssociatedContacts_ContactSummaryList struct {
-	Channel any
-	ContactArn any
-	ContactId any
+	Channel             any
+	ContactArn          any
+	ContactId           any
 	DisconnectTimestamp any
-	InitialContactId any
-	InitiationMethod any
+	InitialContactId    any
+	InitiationMethod    any
 	InitiationTimestamp any
-	PreviousContactId any
-	RelatedContactId any
+	PreviousContactId   any
+	RelatedContactId    any
 }
 
 type AssociatedContactsConfig struct {
-	ContactId any
+	ContactId  any
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AssociatedContactsAttrs struct {
-	ContactId any
+	ContactId          any
 	ContactSummaryList any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId         any
+	MaxResults         any
+	NextToken          any
 }
 
 var AssociatedContacts = ubx.DataSourceBinding{
 	WireType: "aws_connect_associated_contacts",
 	Fields: ubx.FieldMap{
-		"ContactId": ubx.FieldSpec{WireName: "contact_id"},
+		"ContactId":  ubx.FieldSpec{WireName: "contact_id"},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

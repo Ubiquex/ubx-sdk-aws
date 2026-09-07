@@ -23,6 +23,6 @@ var ElasticsearchVersions = ubx.DataSourceBinding{
 	WireType: "aws_es_elasticsearch_versions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

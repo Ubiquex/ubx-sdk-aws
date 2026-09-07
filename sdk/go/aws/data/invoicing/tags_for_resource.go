@@ -4,7 +4,7 @@ package invoicing
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_ResourceTags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -13,7 +13,7 @@ type TagsForResourceConfig struct {
 }
 
 type TagsForResourceAttrs struct {
-	ResourceArn any
+	ResourceArn  any
 	ResourceTags any
 }
 

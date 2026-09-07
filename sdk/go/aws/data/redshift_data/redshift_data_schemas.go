@@ -6,26 +6,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type RedshiftDataSchemasConfig struct {
 	ClusterIdentifier any
 	ConnectedDatabase any
-	Database any
-	DbUser any
-	MaxResults any
-	NextToken any
-	SchemaPattern any
-	SecretArn any
-	WorkgroupName any
+	Database          any
+	DbUser            any
+	MaxResults        any
+	NextToken         any
+	SchemaPattern     any
+	SecretArn         any
+	WorkgroupName     any
 }
 
 type RedshiftDataSchemasAttrs struct {
 	ClusterIdentifier any
 	ConnectedDatabase any
-	Database any
-	DbUser any
-	MaxResults any
-	NextToken any
-	SchemaPattern any
-	Schemas any
-	SecretArn any
-	WorkgroupName any
+	Database          any
+	DbUser            any
+	MaxResults        any
+	NextToken         any
+	SchemaPattern     any
+	Schemas           any
+	SecretArn         any
+	WorkgroupName     any
 }
 
 var RedshiftDataSchemas = ubx.DataSourceBinding{
@@ -33,12 +33,12 @@ var RedshiftDataSchemas = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ClusterIdentifier": ubx.FieldSpec{WireName: "cluster_identifier"},
 		"ConnectedDatabase": ubx.FieldSpec{WireName: "connected_database"},
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"DbUser": ubx.FieldSpec{WireName: "db_user"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SchemaPattern": ubx.FieldSpec{WireName: "schema_pattern"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-		"WorkgroupName": ubx.FieldSpec{WireName: "workgroup_name"},
+		"Database":          ubx.FieldSpec{WireName: "database"},
+		"DbUser":            ubx.FieldSpec{WireName: "db_user"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
+		"SchemaPattern":     ubx.FieldSpec{WireName: "schema_pattern"},
+		"SecretArn":         ubx.FieldSpec{WireName: "secret_arn"},
+		"WorkgroupName":     ubx.FieldSpec{WireName: "workgroup_name"},
 	},
 }

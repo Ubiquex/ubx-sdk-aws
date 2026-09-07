@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DashboardSnapshotJobResult_ErrorInfo struct {
 	ErrorMessage any
-	ErrorType any
+	ErrorType    any
 }
 
 type DashboardSnapshotJobResult_Result_AnonymousUsers_FileGroups_Files_SheetSelections struct {
 	SelectionScope any
-	SheetId any
-	VisualIds any
+	SheetId        any
+	VisualIds      any
 }
 
 type DashboardSnapshotJobResult_Result_AnonymousUsers_FileGroups_Files struct {
-	FormatType any
+	FormatType      any
 	SheetSelections any
 }
 
 type DashboardSnapshotJobResult_Result_AnonymousUsers_FileGroups_S3Results_S3DestinationConfiguration_BucketConfiguration struct {
-	BucketName any
+	BucketName   any
 	BucketPrefix any
 	BucketRegion any
 }
@@ -30,13 +30,13 @@ type DashboardSnapshotJobResult_Result_AnonymousUsers_FileGroups_S3Results_S3Des
 }
 
 type DashboardSnapshotJobResult_Result_AnonymousUsers_FileGroups_S3Results struct {
-	ErrorInfo any
+	ErrorInfo                  any
 	S3DestinationConfiguration any
-	S3Uri any
+	S3Uri                      any
 }
 
 type DashboardSnapshotJobResult_Result_AnonymousUsers_FileGroups struct {
-	Files any
+	Files     any
 	S3Results any
 }
 
@@ -45,37 +45,37 @@ type DashboardSnapshotJobResult_Result_AnonymousUsers struct {
 }
 
 type DashboardSnapshotJobResult_Result struct {
-	AnonymousUsers any
+	AnonymousUsers  any
 	RegisteredUsers any
 }
 
 type DashboardSnapshotJobResultConfig struct {
-	AwsAccountId any
-	DashboardId any
+	AwsAccountId  any
+	DashboardId   any
 	SnapshotJobId any
 }
 
 type DashboardSnapshotJobResultAttrs struct {
-	Arn any
+	Arn          any
 	AwsAccountId any
-	CreatedTime any
-	DashboardId any
+	CreatedTime  any
+	DashboardId  any
 	// <p>An object that contains information on the error that caused the snapshot job to fail.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboardSnapshotJobResult.html">DescribeDashboardSnapshotJobResult API</a>.</p>
-	ErrorInfo any
-	JobStatus any
+	ErrorInfo       any
+	JobStatus       any
 	LastUpdatedTime any
-	RequestId any
+	RequestId       any
 	// <p>An object that provides information on the result of a snapshot job. This object provides information about the job, the job status, and the location of the generated file.</p>
-	Result any
+	Result        any
 	SnapshotJobId any
-	Status any
+	Status        any
 }
 
 var DashboardSnapshotJobResult = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_dashboard_snapshot_job_result",
 	Fields: ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"DashboardId": ubx.FieldSpec{WireName: "dashboard_id"},
+		"AwsAccountId":  ubx.FieldSpec{WireName: "aws_account_id"},
+		"DashboardId":   ubx.FieldSpec{WireName: "dashboard_id"},
 		"SnapshotJobId": ubx.FieldSpec{WireName: "snapshot_job_id"},
 	},
 }

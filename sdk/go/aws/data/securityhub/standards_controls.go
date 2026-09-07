@@ -4,36 +4,36 @@ package securityhub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StandardsControls_Controls struct {
-	ControlId any
-	ControlStatus any
+	ControlId              any
+	ControlStatus          any
 	ControlStatusUpdatedAt any
-	Description any
-	DisabledReason any
-	RelatedRequirements any
-	RemediationUrl any
-	SeverityRating any
-	StandardsControlArn any
-	Title any
+	Description            any
+	DisabledReason         any
+	RelatedRequirements    any
+	RemediationUrl         any
+	SeverityRating         any
+	StandardsControlArn    any
+	Title                  any
 }
 
 type StandardsControlsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults               any
+	NextToken                any
 	StandardsSubscriptionArn any
 }
 
 type StandardsControlsAttrs struct {
-	Controls any
-	MaxResults any
-	NextToken any
+	Controls                 any
+	MaxResults               any
+	NextToken                any
 	StandardsSubscriptionArn any
 }
 
 var StandardsControls = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_standards_controls",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":               ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                ubx.FieldSpec{WireName: "next_token"},
 		"StandardsSubscriptionArn": ubx.FieldSpec{WireName: "standards_subscription_arn"},
 	},
 }

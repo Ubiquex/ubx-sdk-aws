@@ -4,21 +4,21 @@ package acm_pca
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AcmPcaCertificateConfig struct {
-	CertificateArn any
+	CertificateArn          any
 	CertificateAuthorityArn any
 }
 
 type AcmPcaCertificateAttrs struct {
-	Certificate any
-	CertificateArn any
+	Certificate             any
+	CertificateArn          any
 	CertificateAuthorityArn any
-	CertificateChain any
+	CertificateChain        any
 }
 
 var AcmPcaCertificate = ubx.DataSourceBinding{
 	WireType: "aws_acm_pca_certificate",
 	Fields: ubx.FieldMap{
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
+		"CertificateArn":          ubx.FieldSpec{WireName: "certificate_arn"},
 		"CertificateAuthorityArn": ubx.FieldSpec{WireName: "certificate_authority_arn"},
 	},
 }

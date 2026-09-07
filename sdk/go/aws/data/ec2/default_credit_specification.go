@@ -4,17 +4,17 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DefaultCreditSpecification_InstanceFamilyCreditSpecification struct {
-	CpuCredits any
+	CpuCredits     any
 	InstanceFamily any
 }
 
 type DefaultCreditSpecificationConfig struct {
-	DryRun any
+	DryRun         any
 	InstanceFamily any
 }
 
 type DefaultCreditSpecificationAttrs struct {
-	DryRun any
+	DryRun         any
 	InstanceFamily any
 	// <p>Describes the default credit option for CPU usage of a burstable performance instance family.</p>
 	InstanceFamilyCreditSpecification any
@@ -23,7 +23,7 @@ type DefaultCreditSpecificationAttrs struct {
 var DefaultCreditSpecification = ubx.DataSourceBinding{
 	WireType: "aws_ec2_default_credit_specification",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":         ubx.FieldSpec{WireName: "dry_run"},
 		"InstanceFamily": ubx.FieldSpec{WireName: "instance_family"},
 	},
 }

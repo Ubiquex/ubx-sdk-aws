@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiEcrPublicRegistries_Registries_Aliases struct {
 	DefaultRegistryAlias any
-	Name any
+	Name                 any
 	PrimaryRegistryAlias any
-	Status any
+	Status               any
 }
 
 type ApiEcrPublicRegistries_Registries struct {
-	Aliases any
+	Aliases     any
 	RegistryArn any
-	RegistryId any
+	RegistryId  any
 	RegistryUri any
-	Verified any
+	Verified    any
 }
 
 type ApiEcrPublicRegistriesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApiEcrPublicRegistriesAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	Registries any
 }
 
@@ -33,6 +33,6 @@ var ApiEcrPublicRegistries = ubx.DataSourceBinding{
 	WireType: "aws_api_ecr_public_registries",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

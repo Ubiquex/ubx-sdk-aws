@@ -4,7 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImportImageTasks_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -14,67 +14,67 @@ type ImportImageTasks_ImportImageTasks_LicenseSpecifications struct {
 
 type ImportImageTasks_ImportImageTasks_SnapshotDetails_UserBucket struct {
 	S3Bucket any
-	S3Key any
+	S3Key    any
 }
 
 type ImportImageTasks_ImportImageTasks_SnapshotDetails struct {
-	Description any
-	DeviceName any
+	Description   any
+	DeviceName    any
 	DiskImageSize any
-	Format any
-	Progress any
-	SnapshotId any
-	Status any
+	Format        any
+	Progress      any
+	SnapshotId    any
+	Status        any
 	StatusMessage any
-	Url any
-	UserBucket any
+	Url           any
+	UserBucket    any
 }
 
 type ImportImageTasks_ImportImageTasks_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ImportImageTasks_ImportImageTasks struct {
-	Architecture any
-	BootMode any
-	Description any
-	Encrypted any
-	Hypervisor any
-	ImageId any
-	ImportTaskId any
-	KmsKeyId any
+	Architecture          any
+	BootMode              any
+	Description           any
+	Encrypted             any
+	Hypervisor            any
+	ImageId               any
+	ImportTaskId          any
+	KmsKeyId              any
 	LicenseSpecifications any
-	LicenseType any
-	Platform any
-	Progress any
-	SnapshotDetails any
-	Status any
-	StatusMessage any
-	Tags any
-	UsageOperation any
+	LicenseType           any
+	Platform              any
+	Progress              any
+	SnapshotDetails       any
+	Status                any
+	StatusMessage         any
+	Tags                  any
+	UsageOperation        any
 }
 
 var ImportImageTasks_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ImportImageTasksConfig struct {
-	DryRun any
-	Filters any
+	DryRun        any
+	Filters       any
 	ImportTaskIds any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type ImportImageTasksAttrs struct {
-	DryRun any
-	Filters any
+	DryRun           any
+	Filters          any
 	ImportImageTasks any
-	ImportTaskIds any
-	MaxResults any
-	NextToken any
+	ImportTaskIds    any
+	MaxResults       any
+	NextToken        any
 }
 
 var ImportImageTasks = ubx.DataSourceBinding{
@@ -83,11 +83,11 @@ var ImportImageTasks = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ImportImageTasks_FiltersFields,
+			Kind:     "list",
+			Fields:   ImportImageTasks_FiltersFields,
 		},
 		"ImportTaskIds": ubx.FieldSpec{WireName: "import_task_ids"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

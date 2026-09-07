@@ -11,9 +11,9 @@ type SubscriptionTarget_SubscriptionTargetConfig struct {
 }
 
 var SubscriptionTarget_SubscriptionTargetConfigFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"FormName": ubx.FieldSpec{WireName: "form_name"},
-	}
+	"Content":  ubx.FieldSpec{WireName: "content"},
+	"FormName": ubx.FieldSpec{WireName: "form_name"},
+}
 
 type SubscriptionTargetConfig struct {
 	// The asset types that can be included in the subscription target.
@@ -76,17 +76,17 @@ type SubscriptionTargetAttrs struct {
 var SubscriptionTarget = ubx.ResourceBinding{
 	WireType: "aws_data_zone_subscription_target",
 	Fields: ubx.FieldMap{
-		"ApplicableAssetTypes": ubx.FieldSpec{WireName: "applicable_asset_types"},
-		"AuthorizedPrincipals": ubx.FieldSpec{WireName: "authorized_principals"},
-		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
+		"ApplicableAssetTypes":  ubx.FieldSpec{WireName: "applicable_asset_types"},
+		"AuthorizedPrincipals":  ubx.FieldSpec{WireName: "authorized_principals"},
+		"DomainIdentifier":      ubx.FieldSpec{WireName: "domain_identifier"},
 		"EnvironmentIdentifier": ubx.FieldSpec{WireName: "environment_identifier"},
-		"ManageAccessRole": ubx.FieldSpec{WireName: "manage_access_role"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Provider": ubx.FieldSpec{WireName: "provider"},
+		"ManageAccessRole":      ubx.FieldSpec{WireName: "manage_access_role"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"Provider":              ubx.FieldSpec{WireName: "provider"},
 		"SubscriptionTargetConfig": ubx.FieldSpec{
 			WireName: "subscription_target_config",
-			Kind: "list",
-			Fields: SubscriptionTarget_SubscriptionTargetConfigFields,
+			Kind:     "list",
+			Fields:   SubscriptionTarget_SubscriptionTargetConfigFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

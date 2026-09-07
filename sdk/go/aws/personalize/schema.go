@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Schema_Tags struct {
 	// The key of a tag attached to the AWS Personalize schema resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Schema_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SchemaConfig struct {
 	// The domain of a Domain dataset group.
@@ -42,12 +42,12 @@ var Schema = ubx.ResourceBinding{
 	WireType: "aws_personalize_schema",
 	Fields: ubx.FieldMap{
 		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Schema": ubx.FieldSpec{WireName: "schema"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Schema_TagsFields,
+			Kind:     "list",
+			Fields:   Schema_TagsFields,
 		},
 	},
 }

@@ -4,7 +4,7 @@ package meetings_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MeetingsChimeTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type MeetingsChimeTagsForResourceConfig struct {
 
 type MeetingsChimeTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var MeetingsChimeTagsForResource = ubx.DataSourceBinding{

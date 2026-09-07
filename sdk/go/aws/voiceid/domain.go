@@ -16,13 +16,13 @@ type Domain_Tags struct {
 }
 
 var Domain_ServerSideEncryptionConfigurationFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+}
 
 var Domain_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DomainConfig struct {
 	// Specifies a description for the Voice ID domain. (AI-inferred)
@@ -52,16 +52,16 @@ var Domain = ubx.ResourceBinding{
 	WireType: "aws_voice_id_domain",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"ServerSideEncryptionConfiguration": ubx.FieldSpec{
 			WireName: "server_side_encryption_configuration",
-			Kind: "object",
-			Fields: Domain_ServerSideEncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   Domain_ServerSideEncryptionConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Domain_TagsFields,
+			Kind:     "list",
+			Fields:   Domain_TagsFields,
 		},
 	},
 }

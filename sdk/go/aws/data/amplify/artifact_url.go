@@ -8,7 +8,7 @@ type ArtifactUrlConfig struct {
 }
 
 type ArtifactUrlAttrs struct {
-	ArtifactId any
+	ArtifactId  any
 	ArtifactUrl any
 }
 

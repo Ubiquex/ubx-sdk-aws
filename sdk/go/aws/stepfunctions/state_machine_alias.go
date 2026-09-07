@@ -24,17 +24,17 @@ type StateMachineAlias_RoutingConfiguration struct {
 }
 
 var StateMachineAlias_DeploymentPreferenceFields = ubx.FieldMap{
-		"Alarms": ubx.FieldSpec{WireName: "alarms"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"Percentage": ubx.FieldSpec{WireName: "percentage"},
-		"StateMachineVersionArn": ubx.FieldSpec{WireName: "state_machine_version_arn"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Alarms":                 ubx.FieldSpec{WireName: "alarms"},
+	"Interval":               ubx.FieldSpec{WireName: "interval"},
+	"Percentage":             ubx.FieldSpec{WireName: "percentage"},
+	"StateMachineVersionArn": ubx.FieldSpec{WireName: "state_machine_version_arn"},
+	"Type":                   ubx.FieldSpec{WireName: "type"},
+}
 
 var StateMachineAlias_RoutingConfigurationFields = ubx.FieldMap{
-		"StateMachineVersionArn": ubx.FieldSpec{WireName: "state_machine_version_arn"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"StateMachineVersionArn": ubx.FieldSpec{WireName: "state_machine_version_arn"},
+	"Weight":                 ubx.FieldSpec{WireName: "weight"},
+}
 
 type StateMachineAliasConfig struct {
 	// The settings to enable gradual state machine deployments.
@@ -69,15 +69,15 @@ var StateMachineAlias = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DeploymentPreference": ubx.FieldSpec{
 			WireName: "deployment_preference",
-			Kind: "object",
-			Fields: StateMachineAlias_DeploymentPreferenceFields,
+			Kind:     "object",
+			Fields:   StateMachineAlias_DeploymentPreferenceFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"RoutingConfiguration": ubx.FieldSpec{
 			WireName: "routing_configuration",
-			Kind: "list",
-			Fields: StateMachineAlias_RoutingConfigurationFields,
+			Kind:     "list",
+			Fields:   StateMachineAlias_RoutingConfigurationFields,
 		},
 		"StateMachineArn": ubx.FieldSpec{WireName: "state_machine_arn"},
 	},

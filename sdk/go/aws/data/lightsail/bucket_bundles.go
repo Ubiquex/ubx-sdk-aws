@@ -4,11 +4,11 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BucketBundles_Bundles struct {
-	BundleId any
-	IsActive any
-	Name any
-	Price any
-	StoragePerMonthInGb any
+	BundleId             any
+	IsActive             any
+	Name                 any
+	Price                any
+	StoragePerMonthInGb  any
 	TransferPerMonthInGb any
 }
 
@@ -17,7 +17,7 @@ type BucketBundlesConfig struct {
 }
 
 type BucketBundlesAttrs struct {
-	Bundles any
+	Bundles         any
 	IncludeInactive any
 }
 

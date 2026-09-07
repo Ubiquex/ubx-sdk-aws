@@ -4,28 +4,28 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SessionEmbedUrlConfig struct {
-	AwsAccountId any
-	EntryPoint any
+	AwsAccountId             any
+	EntryPoint               any
 	SessionLifetimeInMinutes any
-	UserArn any
+	UserArn                  any
 }
 
 type SessionEmbedUrlAttrs struct {
-	AwsAccountId any
-	EmbedUrl any
-	EntryPoint any
-	RequestId any
+	AwsAccountId             any
+	EmbedUrl                 any
+	EntryPoint               any
+	RequestId                any
 	SessionLifetimeInMinutes any
-	Status any
-	UserArn any
+	Status                   any
+	UserArn                  any
 }
 
 var SessionEmbedUrl = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_session_embed_url",
 	Fields: ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"EntryPoint": ubx.FieldSpec{WireName: "entry_point"},
+		"AwsAccountId":             ubx.FieldSpec{WireName: "aws_account_id"},
+		"EntryPoint":               ubx.FieldSpec{WireName: "entry_point"},
 		"SessionLifetimeInMinutes": ubx.FieldSpec{WireName: "session_lifetime_in_minutes"},
-		"UserArn": ubx.FieldSpec{WireName: "user_arn"},
+		"UserArn":                  ubx.FieldSpec{WireName: "user_arn"},
 	},
 }

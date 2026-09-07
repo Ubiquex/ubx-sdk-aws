@@ -21,69 +21,69 @@ type BucketReplication_ReplicationConfiguration_Rules_Destination_Metrics_EventT
 
 type BucketReplication_ReplicationConfiguration_Rules_Destination_Metrics struct {
 	EventThreshold any
-	Status any
+	Status         any
 }
 
 type BucketReplication_ReplicationConfiguration_Rules_Destination_ReplicationTime struct {
 	Status any
-	Time any
+	Time   any
 }
 
 type BucketReplication_ReplicationConfiguration_Rules_Destination struct {
 	AccessControlTranslation any
-	Account any
-	Bucket any
-	EncryptionConfiguration any
-	Metrics any
-	ReplicationTime any
-	StorageClass any
+	Account                  any
+	Bucket                   any
+	EncryptionConfiguration  any
+	Metrics                  any
+	ReplicationTime          any
+	StorageClass             any
 }
 
 type BucketReplication_ReplicationConfiguration_Rules_Filter_And_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type BucketReplication_ReplicationConfiguration_Rules_Filter_And struct {
 	Prefix any
-	Tags any
+	Tags   any
 }
 
 type BucketReplication_ReplicationConfiguration_Rules_Filter struct {
-	And any
+	And    any
 	Prefix any
-	Tag any
+	Tag    any
 }
 
 type BucketReplication_ReplicationConfiguration_Rules_SourceSelectionCriteria struct {
-	ReplicaModifications any
+	ReplicaModifications   any
 	SseKmsEncryptedObjects any
 }
 
 type BucketReplication_ReplicationConfiguration_Rules struct {
-	DeleteMarkerReplication any
-	Destination any
+	DeleteMarkerReplication   any
+	Destination               any
 	ExistingObjectReplication any
-	Filter any
-	Id any
-	Prefix any
-	Priority any
-	SourceSelectionCriteria any
-	Status any
+	Filter                    any
+	Id                        any
+	Prefix                    any
+	Priority                  any
+	SourceSelectionCriteria   any
+	Status                    any
 }
 
 type BucketReplication_ReplicationConfiguration struct {
-	Role any
+	Role  any
 	Rules any
 }
 
 type BucketReplicationConfig struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 }
 
 type BucketReplicationAttrs struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 	// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
 	ReplicationConfiguration any
@@ -92,7 +92,7 @@ type BucketReplicationAttrs struct {
 var BucketReplication = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_replication",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
 	},
 }

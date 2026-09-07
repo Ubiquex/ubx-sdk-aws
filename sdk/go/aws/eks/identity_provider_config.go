@@ -28,23 +28,23 @@ type IdentityProviderConfig_Oidc struct {
 }
 
 var IdentityProviderConfig_Oidc_RequiredClaimsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var IdentityProviderConfig_OidcFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"GroupsClaim": ubx.FieldSpec{WireName: "groups_claim"},
-		"GroupsPrefix": ubx.FieldSpec{WireName: "groups_prefix"},
-		"IssuerUrl": ubx.FieldSpec{WireName: "issuer_url"},
-		"RequiredClaims": ubx.FieldSpec{
-			WireName: "required_claims",
-			Kind: "list",
-			Fields: IdentityProviderConfig_Oidc_RequiredClaimsFields,
-		},
-		"UsernameClaim": ubx.FieldSpec{WireName: "username_claim"},
-		"UsernamePrefix": ubx.FieldSpec{WireName: "username_prefix"},
-	}
+	"ClientId":     ubx.FieldSpec{WireName: "client_id"},
+	"GroupsClaim":  ubx.FieldSpec{WireName: "groups_claim"},
+	"GroupsPrefix": ubx.FieldSpec{WireName: "groups_prefix"},
+	"IssuerUrl":    ubx.FieldSpec{WireName: "issuer_url"},
+	"RequiredClaims": ubx.FieldSpec{
+		WireName: "required_claims",
+		Kind:     "list",
+		Fields:   IdentityProviderConfig_Oidc_RequiredClaimsFields,
+	},
+	"UsernameClaim":  ubx.FieldSpec{WireName: "username_claim"},
+	"UsernamePrefix": ubx.FieldSpec{WireName: "username_prefix"},
+}
 
 type IdentityProviderConfigConfig struct {
 	// The name of the identity provider configuration.
@@ -77,17 +77,17 @@ type IdentityProviderConfigAttrs struct {
 var IdentityProviderConfig = ubx.ResourceBinding{
 	WireType: "aws_eks_identity_provider_config",
 	Fields: ubx.FieldMap{
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
+		"ClusterName":                ubx.FieldSpec{WireName: "cluster_name"},
 		"IdentityProviderConfigName": ubx.FieldSpec{WireName: "identity_provider_config_name"},
 		"Oidc": ubx.FieldSpec{
 			WireName: "oidc",
-			Kind: "object",
-			Fields: IdentityProviderConfig_OidcFields,
+			Kind:     "object",
+			Fields:   IdentityProviderConfig_OidcFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: IdentityProviderConfig_Oidc_RequiredClaimsFields,
+			Kind:     "list",
+			Fields:   IdentityProviderConfig_Oidc_RequiredClaimsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

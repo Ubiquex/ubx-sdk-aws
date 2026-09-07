@@ -4,10 +4,10 @@ package apigatewayv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProductRestEndpointPages_Items_RestEndpointIdentifier_IdentifierParts struct {
-	Method any
-	Path any
+	Method    any
+	Path      any
 	RestApiId any
-	Stage any
+	Stage     any
 }
 
 type ProductRestEndpointPages_Items_RestEndpointIdentifier struct {
@@ -16,42 +16,42 @@ type ProductRestEndpointPages_Items_RestEndpointIdentifier struct {
 
 type ProductRestEndpointPages_Items_StatusException struct {
 	Exception any
-	Message any
+	Message   any
 }
 
 type ProductRestEndpointPages_Items struct {
-	Endpoint any
-	LastModified any
-	OperationName any
+	Endpoint                   any
+	LastModified               any
+	OperationName              any
 	ProductRestEndpointPageArn any
-	ProductRestEndpointPageId any
-	RestEndpointIdentifier any
-	Status any
-	StatusException any
-	TryItState any
+	ProductRestEndpointPageId  any
+	RestEndpointIdentifier     any
+	Status                     any
+	StatusException            any
+	TryItState                 any
 }
 
 type ProductRestEndpointPagesConfig struct {
-	MaxResults any
-	NextToken any
-	PortalProductId any
+	MaxResults             any
+	NextToken              any
+	PortalProductId        any
 	ResourceOwnerAccountId any
 }
 
 type ProductRestEndpointPagesAttrs struct {
-	Items any
-	MaxResults any
-	NextToken any
-	PortalProductId any
+	Items                  any
+	MaxResults             any
+	NextToken              any
+	PortalProductId        any
 	ResourceOwnerAccountId any
 }
 
 var ProductRestEndpointPages = ubx.DataSourceBinding{
 	WireType: "aws_apigatewayv2_product_rest_endpoint_pages",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PortalProductId": ubx.FieldSpec{WireName: "portal_product_id"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
+		"PortalProductId":        ubx.FieldSpec{WireName: "portal_product_id"},
 		"ResourceOwnerAccountId": ubx.FieldSpec{WireName: "resource_owner_account_id"},
 	},
 }

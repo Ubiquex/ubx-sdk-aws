@@ -4,7 +4,7 @@ package api_iotwireless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotwirelessTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 

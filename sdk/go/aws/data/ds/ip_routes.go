@@ -4,33 +4,33 @@ package ds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpRoutes_IpRoutesInfo struct {
-	AddedDateTime any
-	CidrIp any
-	CidrIpv6 any
-	Description any
-	DirectoryId any
-	IpRouteStatusMsg any
+	AddedDateTime       any
+	CidrIp              any
+	CidrIpv6            any
+	Description         any
+	DirectoryId         any
+	IpRouteStatusMsg    any
 	IpRouteStatusReason any
 }
 
 type IpRoutesConfig struct {
 	DirectoryId any
-	Limit any
-	NextToken any
+	Limit       any
+	NextToken   any
 }
 
 type IpRoutesAttrs struct {
-	DirectoryId any
+	DirectoryId  any
 	IpRoutesInfo any
-	Limit any
-	NextToken any
+	Limit        any
+	NextToken    any
 }
 
 var IpRoutes = ubx.DataSourceBinding{
 	WireType: "aws_ds_ip_routes",
 	Fields: ubx.FieldMap{
 		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":       ubx.FieldSpec{WireName: "limit"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

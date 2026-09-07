@@ -38,11 +38,11 @@ type RouteResponseAttrs struct {
 var RouteResponse = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_v2_route_response",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":                    ubx.FieldSpec{WireName: "api_id"},
 		"ModelSelectionExpression": ubx.FieldSpec{WireName: "model_selection_expression"},
-		"ResponseModels": ubx.FieldSpec{WireName: "response_models"},
-		"ResponseParameters": ubx.FieldSpec{WireName: "response_parameters"},
-		"RouteId": ubx.FieldSpec{WireName: "route_id"},
-		"RouteResponseKey": ubx.FieldSpec{WireName: "route_response_key"},
+		"ResponseModels":           ubx.FieldSpec{WireName: "response_models"},
+		"ResponseParameters":       ubx.FieldSpec{WireName: "response_parameters"},
+		"RouteId":                  ubx.FieldSpec{WireName: "route_id"},
+		"RouteResponseKey":         ubx.FieldSpec{WireName: "route_response_key"},
 	},
 }

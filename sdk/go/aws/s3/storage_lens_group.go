@@ -55,69 +55,69 @@ type StorageLensGroup_Filter struct {
 }
 
 var StorageLensGroup_Filter_And_MatchAnyTagFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var StorageLensGroup_Filter_And_MatchObjectAgeFields = ubx.FieldMap{
-		"DaysGreaterThan": ubx.FieldSpec{WireName: "days_greater_than"},
-		"DaysLessThan": ubx.FieldSpec{WireName: "days_less_than"},
-	}
+	"DaysGreaterThan": ubx.FieldSpec{WireName: "days_greater_than"},
+	"DaysLessThan":    ubx.FieldSpec{WireName: "days_less_than"},
+}
 
 var StorageLensGroup_Filter_And_MatchObjectSizeFields = ubx.FieldMap{
-		"BytesGreaterThan": ubx.FieldSpec{WireName: "bytes_greater_than"},
-		"BytesLessThan": ubx.FieldSpec{WireName: "bytes_less_than"},
-	}
+	"BytesGreaterThan": ubx.FieldSpec{WireName: "bytes_greater_than"},
+	"BytesLessThan":    ubx.FieldSpec{WireName: "bytes_less_than"},
+}
 
 var StorageLensGroup_Filter_AndFields = ubx.FieldMap{
-		"MatchAnyPrefix": ubx.FieldSpec{WireName: "match_any_prefix"},
-		"MatchAnySuffix": ubx.FieldSpec{WireName: "match_any_suffix"},
-		"MatchAnyTag": ubx.FieldSpec{
-			WireName: "match_any_tag",
-			Kind: "list",
-			Fields: StorageLensGroup_Filter_And_MatchAnyTagFields,
-		},
-		"MatchObjectAge": ubx.FieldSpec{
-			WireName: "match_object_age",
-			Kind: "object",
-			Fields: StorageLensGroup_Filter_And_MatchObjectAgeFields,
-		},
-		"MatchObjectSize": ubx.FieldSpec{
-			WireName: "match_object_size",
-			Kind: "object",
-			Fields: StorageLensGroup_Filter_And_MatchObjectSizeFields,
-		},
-	}
+	"MatchAnyPrefix": ubx.FieldSpec{WireName: "match_any_prefix"},
+	"MatchAnySuffix": ubx.FieldSpec{WireName: "match_any_suffix"},
+	"MatchAnyTag": ubx.FieldSpec{
+		WireName: "match_any_tag",
+		Kind:     "list",
+		Fields:   StorageLensGroup_Filter_And_MatchAnyTagFields,
+	},
+	"MatchObjectAge": ubx.FieldSpec{
+		WireName: "match_object_age",
+		Kind:     "object",
+		Fields:   StorageLensGroup_Filter_And_MatchObjectAgeFields,
+	},
+	"MatchObjectSize": ubx.FieldSpec{
+		WireName: "match_object_size",
+		Kind:     "object",
+		Fields:   StorageLensGroup_Filter_And_MatchObjectSizeFields,
+	},
+}
 
 var StorageLensGroup_FilterFields = ubx.FieldMap{
-		"And": ubx.FieldSpec{
-			WireName: "and",
-			Kind: "object",
-			Fields: StorageLensGroup_Filter_AndFields,
-		},
-		"MatchAnyPrefix": ubx.FieldSpec{WireName: "match_any_prefix"},
-		"MatchAnySuffix": ubx.FieldSpec{WireName: "match_any_suffix"},
-		"MatchAnyTag": ubx.FieldSpec{
-			WireName: "match_any_tag",
-			Kind: "list",
-			Fields: StorageLensGroup_Filter_And_MatchAnyTagFields,
-		},
-		"MatchObjectAge": ubx.FieldSpec{
-			WireName: "match_object_age",
-			Kind: "object",
-			Fields: StorageLensGroup_Filter_And_MatchObjectAgeFields,
-		},
-		"MatchObjectSize": ubx.FieldSpec{
-			WireName: "match_object_size",
-			Kind: "object",
-			Fields: StorageLensGroup_Filter_And_MatchObjectSizeFields,
-		},
-		"Or": ubx.FieldSpec{
-			WireName: "or",
-			Kind: "object",
-			Fields: StorageLensGroup_Filter_AndFields,
-		},
-	}
+	"And": ubx.FieldSpec{
+		WireName: "and",
+		Kind:     "object",
+		Fields:   StorageLensGroup_Filter_AndFields,
+	},
+	"MatchAnyPrefix": ubx.FieldSpec{WireName: "match_any_prefix"},
+	"MatchAnySuffix": ubx.FieldSpec{WireName: "match_any_suffix"},
+	"MatchAnyTag": ubx.FieldSpec{
+		WireName: "match_any_tag",
+		Kind:     "list",
+		Fields:   StorageLensGroup_Filter_And_MatchAnyTagFields,
+	},
+	"MatchObjectAge": ubx.FieldSpec{
+		WireName: "match_object_age",
+		Kind:     "object",
+		Fields:   StorageLensGroup_Filter_And_MatchObjectAgeFields,
+	},
+	"MatchObjectSize": ubx.FieldSpec{
+		WireName: "match_object_size",
+		Kind:     "object",
+		Fields:   StorageLensGroup_Filter_And_MatchObjectSizeFields,
+	},
+	"Or": ubx.FieldSpec{
+		WireName: "or",
+		Kind:     "object",
+		Fields:   StorageLensGroup_Filter_AndFields,
+	},
+}
 
 type StorageLensGroupConfig struct {
 	// Sets the Storage Lens Group filter.
@@ -144,14 +144,14 @@ var StorageLensGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: StorageLensGroup_FilterFields,
+			Kind:     "object",
+			Fields:   StorageLensGroup_FilterFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: StorageLensGroup_Filter_And_MatchAnyTagFields,
+			Kind:     "list",
+			Fields:   StorageLensGroup_Filter_And_MatchAnyTagFields,
 		},
 	},
 }

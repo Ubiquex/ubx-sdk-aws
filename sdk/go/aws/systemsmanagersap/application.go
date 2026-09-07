@@ -29,21 +29,21 @@ type Application_Tags struct {
 }
 
 var Application_ComponentsInfoFields = ubx.FieldMap{
-		"ComponentType": ubx.FieldSpec{WireName: "component_type"},
-		"Ec2InstanceId": ubx.FieldSpec{WireName: "ec2_instance_id"},
-		"Sid": ubx.FieldSpec{WireName: "sid"},
-	}
+	"ComponentType": ubx.FieldSpec{WireName: "component_type"},
+	"Ec2InstanceId": ubx.FieldSpec{WireName: "ec2_instance_id"},
+	"Sid":           ubx.FieldSpec{WireName: "sid"},
+}
 
 var Application_CredentialsFields = ubx.FieldMap{
-		"CredentialType": ubx.FieldSpec{WireName: "credential_type"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"SecretId": ubx.FieldSpec{WireName: "secret_id"},
-	}
+	"CredentialType": ubx.FieldSpec{WireName: "credential_type"},
+	"DatabaseName":   ubx.FieldSpec{WireName: "database_name"},
+	"SecretId":       ubx.FieldSpec{WireName: "secret_id"},
+}
 
 var Application_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApplicationConfig struct {
 	// The unique identifier of the SAP application to register with AWS Systems Manager for SAP. (AI-inferred)
@@ -92,26 +92,26 @@ type ApplicationAttrs struct {
 var Application = ubx.ResourceBinding{
 	WireType: "aws_systems_manager_sap_application",
 	Fields: ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"ApplicationId":   ubx.FieldSpec{WireName: "application_id"},
 		"ApplicationType": ubx.FieldSpec{WireName: "application_type"},
 		"ComponentsInfo": ubx.FieldSpec{
 			WireName: "components_info",
-			Kind: "list",
-			Fields: Application_ComponentsInfoFields,
+			Kind:     "list",
+			Fields:   Application_ComponentsInfoFields,
 		},
 		"Credentials": ubx.FieldSpec{
 			WireName: "credentials",
-			Kind: "list",
-			Fields: Application_CredentialsFields,
+			Kind:     "list",
+			Fields:   Application_CredentialsFields,
 		},
-		"DatabaseArn": ubx.FieldSpec{WireName: "database_arn"},
-		"Instances": ubx.FieldSpec{WireName: "instances"},
+		"DatabaseArn":       ubx.FieldSpec{WireName: "database_arn"},
+		"Instances":         ubx.FieldSpec{WireName: "instances"},
 		"SapInstanceNumber": ubx.FieldSpec{WireName: "sap_instance_number"},
-		"Sid": ubx.FieldSpec{WireName: "sid"},
+		"Sid":               ubx.FieldSpec{WireName: "sid"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Application_TagsFields,
+			Kind:     "list",
+			Fields:   Application_TagsFields,
 		},
 	},
 }

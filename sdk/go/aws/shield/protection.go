@@ -24,23 +24,23 @@ type Protection_Tags struct {
 }
 
 var Protection_ApplicationLayerAutomaticResponseConfiguration_ActionFields = ubx.FieldMap{
-		"Block": ubx.FieldSpec{WireName: "block"},
-		"Count": ubx.FieldSpec{WireName: "count"},
-	}
+	"Block": ubx.FieldSpec{WireName: "block"},
+	"Count": ubx.FieldSpec{WireName: "count"},
+}
 
 var Protection_ApplicationLayerAutomaticResponseConfigurationFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: Protection_ApplicationLayerAutomaticResponseConfiguration_ActionFields,
-		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   Protection_ApplicationLayerAutomaticResponseConfiguration_ActionFields,
+	},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var Protection_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ProtectionConfig struct {
 	// The automatic application layer DDoS mitigation settings for a Protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks.
@@ -77,16 +77,16 @@ var Protection = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApplicationLayerAutomaticResponseConfiguration": ubx.FieldSpec{
 			WireName: "application_layer_automatic_response_configuration",
-			Kind: "object",
-			Fields: Protection_ApplicationLayerAutomaticResponseConfigurationFields,
+			Kind:     "object",
+			Fields:   Protection_ApplicationLayerAutomaticResponseConfigurationFields,
 		},
 		"HealthCheckArns": ubx.FieldSpec{WireName: "health_check_arns"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"ResourceArn":     ubx.FieldSpec{WireName: "resource_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Protection_TagsFields,
+			Kind:     "list",
+			Fields:   Protection_TagsFields,
 		},
 	},
 }

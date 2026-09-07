@@ -20,21 +20,21 @@ type CapacityReservation_Tags struct {
 }
 
 var CapacityReservation_CapacityAssignmentConfiguration_CapacityAssignmentsFields = ubx.FieldMap{
-		"WorkgroupNames": ubx.FieldSpec{WireName: "workgroup_names"},
-	}
+	"WorkgroupNames": ubx.FieldSpec{WireName: "workgroup_names"},
+}
 
 var CapacityReservation_CapacityAssignmentConfigurationFields = ubx.FieldMap{
-		"CapacityAssignments": ubx.FieldSpec{
-			WireName: "capacity_assignments",
-			Kind: "list",
-			Fields: CapacityReservation_CapacityAssignmentConfiguration_CapacityAssignmentsFields,
-		},
-	}
+	"CapacityAssignments": ubx.FieldSpec{
+		WireName: "capacity_assignments",
+		Kind:     "list",
+		Fields:   CapacityReservation_CapacityAssignmentConfiguration_CapacityAssignmentsFields,
+	},
+}
 
 var CapacityReservation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CapacityReservationConfig struct {
 	// Assignment configuration to assign workgroups to a reservation
@@ -73,14 +73,14 @@ var CapacityReservation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CapacityAssignmentConfiguration": ubx.FieldSpec{
 			WireName: "capacity_assignment_configuration",
-			Kind: "object",
-			Fields: CapacityReservation_CapacityAssignmentConfigurationFields,
+			Kind:     "object",
+			Fields:   CapacityReservation_CapacityAssignmentConfigurationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CapacityReservation_TagsFields,
+			Kind:     "list",
+			Fields:   CapacityReservation_TagsFields,
 		},
 		"TargetDpus": ubx.FieldSpec{WireName: "target_dpus"},
 	},

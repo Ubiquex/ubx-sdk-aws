@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetadataModelChildren_MetadataModelChildren struct {
 	MetadataModelName any
-	SelectionRules any
+	SelectionRules    any
 }
 
 type MetadataModelChildrenConfig struct {
-	Marker any
-	MaxRecords any
+	Marker                     any
+	MaxRecords                 any
 	MigrationProjectIdentifier any
-	Origin any
-	SelectionRules any
+	Origin                     any
+	SelectionRules             any
 }
 
 type MetadataModelChildrenAttrs struct {
-	Marker any
-	MaxRecords any
-	MetadataModelChildren any
+	Marker                     any
+	MaxRecords                 any
+	MetadataModelChildren      any
 	MigrationProjectIdentifier any
-	Origin any
-	SelectionRules any
+	Origin                     any
+	SelectionRules             any
 }
 
 var MetadataModelChildren = ubx.DataSourceBinding{
 	WireType: "aws_dms_metadata_model_children",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
+		"Marker":                     ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":                 ubx.FieldSpec{WireName: "max_records"},
 		"MigrationProjectIdentifier": ubx.FieldSpec{WireName: "migration_project_identifier"},
-		"Origin": ubx.FieldSpec{WireName: "origin"},
-		"SelectionRules": ubx.FieldSpec{WireName: "selection_rules"},
+		"Origin":                     ubx.FieldSpec{WireName: "origin"},
+		"SelectionRules":             ubx.FieldSpec{WireName: "selection_rules"},
 	},
 }

@@ -7,12 +7,11 @@ type OrganizationConfigurationConfig struct {
 }
 
 type OrganizationConfigurationAttrs struct {
-	AutoEnable any
+	AutoEnable             any
 	MaxAccountLimitReached any
 }
 
 var OrganizationConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_macie2_organization_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

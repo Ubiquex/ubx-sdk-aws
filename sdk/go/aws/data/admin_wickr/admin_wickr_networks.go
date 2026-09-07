@@ -4,38 +4,38 @@ package admin_wickr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AdminWickrNetworks_Networks struct {
-	AccessLevel any
-	AwsAccountId any
-	EncryptionKeyArn any
+	AccessLevel         any
+	AwsAccountId        any
+	EncryptionKeyArn    any
 	FreeTrialExpiration any
-	MigrationState any
-	NetworkArn any
-	NetworkId any
-	NetworkName any
-	Standing any
+	MigrationState      any
+	NetworkArn          any
+	NetworkId           any
+	NetworkName         any
+	Standing            any
 }
 
 type AdminWickrNetworksConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 	SortDirection any
-	SortFields any
+	SortFields    any
 }
 
 type AdminWickrNetworksAttrs struct {
-	MaxResults any
-	Networks any
-	NextToken any
+	MaxResults    any
+	Networks      any
+	NextToken     any
 	SortDirection any
-	SortFields any
+	SortFields    any
 }
 
 var AdminWickrNetworks = ubx.DataSourceBinding{
 	WireType: "aws_admin_wickr_networks",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"SortDirection": ubx.FieldSpec{WireName: "sort_direction"},
-		"SortFields": ubx.FieldSpec{WireName: "sort_fields"},
+		"SortFields":    ubx.FieldSpec{WireName: "sort_fields"},
 	},
 }

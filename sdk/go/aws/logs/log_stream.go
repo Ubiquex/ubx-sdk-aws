@@ -20,7 +20,7 @@ type LogStreamAttrs struct {
 var LogStream = ubx.ResourceBinding{
 	WireType: "aws_logs_log_stream",
 	Fields: ubx.FieldMap{
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
+		"LogGroupName":  ubx.FieldSpec{WireName: "log_group_name"},
 		"LogStreamName": ubx.FieldSpec{WireName: "log_stream_name"},
 	},
 }

@@ -4,30 +4,30 @@ package greengrass
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupVersions_Versions struct {
-	Arn any
+	Arn               any
 	CreationTimestamp any
-	Id any
-	Version any
+	Id                any
+	Version           any
 }
 
 type GroupVersionsConfig struct {
-	GroupId any
+	GroupId    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type GroupVersionsAttrs struct {
-	GroupId any
+	GroupId    any
 	MaxResults any
-	NextToken any
-	Versions any
+	NextToken  any
+	Versions   any
 }
 
 var GroupVersions = ubx.DataSourceBinding{
 	WireType: "aws_greengrass_group_versions",
 	Fields: ubx.FieldMap{
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
+		"GroupId":    ubx.FieldSpec{WireName: "group_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

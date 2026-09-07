@@ -9,20 +9,20 @@ type SeverityLevels_SeverityLevels struct {
 }
 
 type SeverityLevelsConfig struct {
-	DryRun any
+	DryRun   any
 	Language any
 }
 
 type SeverityLevelsAttrs struct {
-	DryRun any
-	Language any
+	DryRun         any
+	Language       any
 	SeverityLevels any
 }
 
 var SeverityLevels = ubx.DataSourceBinding{
 	WireType: "aws_support_severity_levels",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":   ubx.FieldSpec{WireName: "dry_run"},
 		"Language": ubx.FieldSpec{WireName: "language"},
 	},
 }

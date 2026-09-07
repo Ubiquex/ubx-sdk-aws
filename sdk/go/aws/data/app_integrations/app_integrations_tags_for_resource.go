@@ -9,7 +9,7 @@ type AppIntegrationsTagsForResourceConfig struct {
 
 type AppIntegrationsTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var AppIntegrationsTagsForResource = ubx.DataSourceBinding{

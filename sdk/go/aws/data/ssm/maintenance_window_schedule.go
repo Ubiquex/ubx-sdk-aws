@@ -4,38 +4,38 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MaintenanceWindowSchedule_Filters struct {
-	Key any
+	Key    any
 	Values any
 }
 
 type MaintenanceWindowSchedule_ScheduledWindowExecutions struct {
 	ExecutionTime any
-	Name any
-	WindowId any
+	Name          any
+	WindowId      any
 }
 
 var MaintenanceWindowSchedule_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type MaintenanceWindowScheduleConfig struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters      any
+	MaxResults   any
+	NextToken    any
 	ResourceType any
-	Targets any
-	WindowId any
+	Targets      any
+	WindowId     any
 }
 
 type MaintenanceWindowScheduleAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
-	ResourceType any
+	Filters                   any
+	MaxResults                any
+	NextToken                 any
+	ResourceType              any
 	ScheduledWindowExecutions any
-	Targets any
-	WindowId any
+	Targets                   any
+	WindowId                  any
 }
 
 var MaintenanceWindowSchedule = ubx.DataSourceBinding{
@@ -43,16 +43,16 @@ var MaintenanceWindowSchedule = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: MaintenanceWindowSchedule_FiltersFields,
+			Kind:     "list",
+			Fields:   MaintenanceWindowSchedule_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 		"Targets": ubx.FieldSpec{
 			WireName: "targets",
-			Kind: "list",
-			Fields: MaintenanceWindowSchedule_FiltersFields,
+			Kind:     "list",
+			Fields:   MaintenanceWindowSchedule_FiltersFields,
 		},
 		"WindowId": ubx.FieldSpec{WireName: "window_id"},
 	},

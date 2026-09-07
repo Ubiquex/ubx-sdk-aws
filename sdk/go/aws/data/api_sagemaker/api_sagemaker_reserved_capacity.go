@@ -5,10 +5,10 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerReservedCapacity_UltraServerSummary struct {
 	AvailableSpareInstanceCount any
-	InstanceType any
-	UltraServerCount any
-	UltraServerType any
-	UnhealthyInstanceCount any
+	InstanceType                any
+	UltraServerCount            any
+	UltraServerType             any
+	UnhealthyInstanceCount      any
 }
 
 type ApiSagemakerReservedCapacityConfig struct {
@@ -16,18 +16,18 @@ type ApiSagemakerReservedCapacityConfig struct {
 }
 
 type ApiSagemakerReservedCapacityAttrs struct {
-	AvailabilityZone any
+	AvailabilityZone       any
 	AvailableInstanceCount any
-	DurationHours any
-	DurationMinutes any
-	EndTime any
-	InUseInstanceCount any
-	InstanceType any
-	ReservedCapacityArn any
-	ReservedCapacityType any
-	StartTime any
-	Status any
-	TotalInstanceCount any
+	DurationHours          any
+	DurationMinutes        any
+	EndTime                any
+	InUseInstanceCount     any
+	InstanceType           any
+	ReservedCapacityArn    any
+	ReservedCapacityType   any
+	StartTime              any
+	Status                 any
+	TotalInstanceCount     any
 	// <p>A summary of UltraServer resources and their current status.</p>
 	UltraServerSummary any
 }

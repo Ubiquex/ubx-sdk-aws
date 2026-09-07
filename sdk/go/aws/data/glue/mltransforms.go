@@ -5,23 +5,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Mltransforms_Filter_Schema struct {
 	DataType any
-	Name any
+	Name     any
 }
 
 type Mltransforms_Filter struct {
-	CreatedAfter any
-	CreatedBefore any
-	GlueVersion any
-	LastModifiedAfter any
+	CreatedAfter       any
+	CreatedBefore      any
+	GlueVersion        any
+	LastModifiedAfter  any
 	LastModifiedBefore any
-	Name any
-	Schema any
-	Status any
-	TransformType any
+	Name               any
+	Schema             any
+	Status             any
+	TransformType      any
 }
 
 type Mltransforms_Sort struct {
-	Column any
+	Column        any
 	SortDirection any
 }
 
@@ -33,118 +33,118 @@ type Mltransforms_Transforms_EvaluationMetrics_FindMatchesMetrics_ColumnImportan
 type Mltransforms_Transforms_EvaluationMetrics_FindMatchesMetrics_ConfusionMatrix struct {
 	NumFalseNegatives any
 	NumFalsePositives any
-	NumTrueNegatives any
-	NumTruePositives any
+	NumTrueNegatives  any
+	NumTruePositives  any
 }
 
 type Mltransforms_Transforms_EvaluationMetrics_FindMatchesMetrics struct {
-	AreaUnderPrcurve any
+	AreaUnderPrcurve  any
 	ColumnImportances any
-	ConfusionMatrix any
-	F1 any
-	Precision any
-	Recall any
+	ConfusionMatrix   any
+	F1                any
+	Precision         any
+	Recall            any
 }
 
 type Mltransforms_Transforms_EvaluationMetrics struct {
 	FindMatchesMetrics any
-	TransformType any
+	TransformType      any
 }
 
 type Mltransforms_Transforms_InputRecordTables struct {
 	AdditionalOptions any
-	CatalogId any
-	ConnectionName any
-	DatabaseName any
-	TableName any
+	CatalogId         any
+	ConnectionName    any
+	DatabaseName      any
+	TableName         any
 }
 
 type Mltransforms_Transforms_Parameters_FindMatchesParameters struct {
-	AccuracyCostTradeoff any
-	EnforceProvidedLabels any
+	AccuracyCostTradeoff    any
+	EnforceProvidedLabels   any
 	PrecisionRecallTradeoff any
-	PrimaryKeyColumnName any
+	PrimaryKeyColumnName    any
 }
 
 type Mltransforms_Transforms_Parameters struct {
 	FindMatchesParameters any
-	TransformType any
+	TransformType         any
 }
 
 type Mltransforms_Transforms_TransformEncryption_MlUserDataEncryption struct {
-	KmsKeyId any
+	KmsKeyId                 any
 	MlUserDataEncryptionMode any
 }
 
 type Mltransforms_Transforms_TransformEncryption struct {
-	MlUserDataEncryption any
+	MlUserDataEncryption             any
 	TaskRunSecurityConfigurationName any
 }
 
 type Mltransforms_Transforms struct {
-	CreatedOn any
-	Description any
-	EvaluationMetrics any
-	GlueVersion any
-	InputRecordTables any
-	LabelCount any
-	LastModifiedOn any
-	MaxCapacity any
-	MaxRetries any
-	Name any
-	NumberOfWorkers any
-	Parameters any
-	Role any
-	Schema any
-	Status any
-	Timeout any
+	CreatedOn           any
+	Description         any
+	EvaluationMetrics   any
+	GlueVersion         any
+	InputRecordTables   any
+	LabelCount          any
+	LastModifiedOn      any
+	MaxCapacity         any
+	MaxRetries          any
+	Name                any
+	NumberOfWorkers     any
+	Parameters          any
+	Role                any
+	Schema              any
+	Status              any
+	Timeout             any
 	TransformEncryption any
-	TransformId any
-	WorkerType any
+	TransformId         any
+	WorkerType          any
 }
 
 var Mltransforms_Filter_SchemaFields = ubx.FieldMap{
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"DataType": ubx.FieldSpec{WireName: "data_type"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+}
 
 var Mltransforms_FilterFields = ubx.FieldMap{
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
-		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
-		"GlueVersion": ubx.FieldSpec{WireName: "glue_version"},
-		"LastModifiedAfter": ubx.FieldSpec{WireName: "last_modified_after"},
-		"LastModifiedBefore": ubx.FieldSpec{WireName: "last_modified_before"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "list",
-			Fields: Mltransforms_Filter_SchemaFields,
-		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"TransformType": ubx.FieldSpec{WireName: "transform_type"},
-	}
+	"CreatedAfter":       ubx.FieldSpec{WireName: "created_after"},
+	"CreatedBefore":      ubx.FieldSpec{WireName: "created_before"},
+	"GlueVersion":        ubx.FieldSpec{WireName: "glue_version"},
+	"LastModifiedAfter":  ubx.FieldSpec{WireName: "last_modified_after"},
+	"LastModifiedBefore": ubx.FieldSpec{WireName: "last_modified_before"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Schema": ubx.FieldSpec{
+		WireName: "schema",
+		Kind:     "list",
+		Fields:   Mltransforms_Filter_SchemaFields,
+	},
+	"Status":        ubx.FieldSpec{WireName: "status"},
+	"TransformType": ubx.FieldSpec{WireName: "transform_type"},
+}
 
 var Mltransforms_SortFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"SortDirection": ubx.FieldSpec{WireName: "sort_direction"},
-	}
+	"Column":        ubx.FieldSpec{WireName: "column"},
+	"SortDirection": ubx.FieldSpec{WireName: "sort_direction"},
+}
 
 type MltransformsConfig struct {
 	// <p>The criteria used to filter the machine learning transforms.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>The sorting criteria that are associated with the machine learning transform.</p>
 	Sort any
 }
 
 type MltransformsAttrs struct {
 	// <p>The criteria used to filter the machine learning transforms.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>The sorting criteria that are associated with the machine learning transform.</p>
-	Sort any
+	Sort       any
 	Transforms any
 }
 
@@ -153,15 +153,15 @@ var Mltransforms = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: Mltransforms_FilterFields,
+			Kind:     "object",
+			Fields:   Mltransforms_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"Sort": ubx.FieldSpec{
 			WireName: "sort",
-			Kind: "object",
-			Fields: Mltransforms_SortFields,
+			Kind:     "object",
+			Fields:   Mltransforms_SortFields,
 		},
 	},
 }

@@ -4,33 +4,33 @@ package cognito_identity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdentityIdentities_Identities struct {
-	CreationDate any
-	IdentityId any
+	CreationDate     any
+	IdentityId       any
 	LastModifiedDate any
-	Logins any
+	Logins           any
 }
 
 type CognitoIdentityIdentitiesConfig struct {
-	HideDisabled any
+	HideDisabled   any
 	IdentityPoolId any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 type CognitoIdentityIdentitiesAttrs struct {
-	HideDisabled any
-	Identities any
+	HideDisabled   any
+	Identities     any
 	IdentityPoolId any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 var CognitoIdentityIdentities = ubx.DataSourceBinding{
 	WireType: "aws_cognito_identity_identities",
 	Fields: ubx.FieldMap{
-		"HideDisabled": ubx.FieldSpec{WireName: "hide_disabled"},
+		"HideDisabled":   ubx.FieldSpec{WireName: "hide_disabled"},
 		"IdentityPoolId": ubx.FieldSpec{WireName: "identity_pool_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 	},
 }

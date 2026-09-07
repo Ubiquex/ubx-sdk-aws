@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type S3ControlAccessPointsForObjectLambda_ObjectLambdaAccessPointList_Alias struct {
 	Status any
-	Value any
+	Value  any
 }
 
 type S3ControlAccessPointsForObjectLambda_ObjectLambdaAccessPointList struct {
-	Alias any
-	Name any
+	Alias                      any
+	Name                       any
 	ObjectLambdaAccessPointArn any
 }
 
 type S3ControlAccessPointsForObjectLambdaConfig struct {
-	AccountId any
+	AccountId  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type S3ControlAccessPointsForObjectLambdaAttrs struct {
-	AccountId any
-	MaxResults any
-	NextToken any
+	AccountId                   any
+	MaxResults                  any
+	NextToken                   any
 	ObjectLambdaAccessPointList any
 }
 
 var S3ControlAccessPointsForObjectLambda = ubx.DataSourceBinding{
 	WireType: "aws_s3_control_access_points_for_object_lambda",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

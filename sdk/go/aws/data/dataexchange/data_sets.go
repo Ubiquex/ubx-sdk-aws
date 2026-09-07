@@ -5,40 +5,40 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataSets_DataSets_OriginDetails struct {
 	DataGrantId any
-	ProductId any
+	ProductId   any
 }
 
 type DataSets_DataSets struct {
-	Arn any
-	AssetType any
-	CreatedAt any
-	Description any
-	Id any
-	Name any
-	Origin any
+	Arn           any
+	AssetType     any
+	CreatedAt     any
+	Description   any
+	Id            any
+	Name          any
+	Origin        any
 	OriginDetails any
-	SourceId any
-	UpdatedAt any
+	SourceId      any
+	UpdatedAt     any
 }
 
 type DataSetsConfig struct {
 	MaxResults any
-	NextToken any
-	Origin any
+	NextToken  any
+	Origin     any
 }
 
 type DataSetsAttrs struct {
-	DataSets any
+	DataSets   any
 	MaxResults any
-	NextToken any
-	Origin any
+	NextToken  any
+	Origin     any
 }
 
 var DataSets = ubx.DataSourceBinding{
 	WireType: "aws_dataexchange_data_sets",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Origin": ubx.FieldSpec{WireName: "origin"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Origin":     ubx.FieldSpec{WireName: "origin"},
 	},
 }

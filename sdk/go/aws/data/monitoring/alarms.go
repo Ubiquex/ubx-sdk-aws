@@ -4,87 +4,87 @@ package monitoring
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Alarms_CompositeAlarms struct {
-	ActionsEnabled any
-	ActionsSuppressedBy any
-	ActionsSuppressedReason any
-	ActionsSuppressor any
-	ActionsSuppressorExtensionPeriod any
-	ActionsSuppressorWaitPeriod any
-	AlarmActions any
-	AlarmArn any
+	ActionsEnabled                     any
+	ActionsSuppressedBy                any
+	ActionsSuppressedReason            any
+	ActionsSuppressor                  any
+	ActionsSuppressorExtensionPeriod   any
+	ActionsSuppressorWaitPeriod        any
+	AlarmActions                       any
+	AlarmArn                           any
 	AlarmConfigurationUpdatedTimestamp any
-	AlarmDescription any
-	AlarmName any
-	AlarmRule any
-	InsufficientDataActions any
-	Okactions any
-	StateReason any
-	StateReasonData any
-	StateTransitionedTimestamp any
-	StateUpdatedTimestamp any
-	StateValue any
+	AlarmDescription                   any
+	AlarmName                          any
+	AlarmRule                          any
+	InsufficientDataActions            any
+	Okactions                          any
+	StateReason                        any
+	StateReasonData                    any
+	StateTransitionedTimestamp         any
+	StateUpdatedTimestamp              any
+	StateValue                         any
 }
 
 type Alarms_LogAlarms_ScheduledQueryConfiguration_ScheduleConfiguration struct {
-	EndTimeOffset any
+	EndTimeOffset      any
 	ScheduleExpression any
-	StartTimeOffset any
+	StartTimeOffset    any
 }
 
 type Alarms_LogAlarms_ScheduledQueryConfiguration_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Alarms_LogAlarms_ScheduledQueryConfiguration struct {
 	AggregationExpression any
-	LogGroupIdentifiers any
-	QueryArn any
-	QueryString any
+	LogGroupIdentifiers   any
+	QueryArn              any
+	QueryString           any
 	ScheduleConfiguration any
 	ScheduledQueryRoleArn any
-	Tags any
+	Tags                  any
 }
 
 type Alarms_LogAlarms_WarmUpConfiguration struct {
 	OnlyStartEvaluatingAfterWarmUpPeriodEnds any
-	WarmUpPeriodDurationInMinutes any
+	WarmUpPeriodDurationInMinutes            any
 }
 
 type Alarms_LogAlarms struct {
-	ActionLogLineCount any
-	ActionLogLineRoleArn any
-	ActionsEnabled any
-	AlarmActions any
-	AlarmArn any
+	ActionLogLineCount                 any
+	ActionLogLineRoleArn               any
+	ActionsEnabled                     any
+	AlarmActions                       any
+	AlarmArn                           any
 	AlarmConfigurationUpdatedTimestamp any
-	AlarmDescription any
-	AlarmName any
-	ComparisonOperator any
-	EvaluationState any
-	InsufficientDataActions any
-	Okactions any
-	QueryResultsToAlarm any
-	QueryResultsToEvaluate any
-	ScheduledQueryConfiguration any
-	StateReason any
-	StateReasonData any
-	StateTransitionedTimestamp any
-	StateUpdatedTimestamp any
-	StateValue any
-	Threshold any
-	TreatMissingData any
-	WarmUpConfiguration any
+	AlarmDescription                   any
+	AlarmName                          any
+	ComparisonOperator                 any
+	EvaluationState                    any
+	InsufficientDataActions            any
+	Okactions                          any
+	QueryResultsToAlarm                any
+	QueryResultsToEvaluate             any
+	ScheduledQueryConfiguration        any
+	StateReason                        any
+	StateReasonData                    any
+	StateTransitionedTimestamp         any
+	StateUpdatedTimestamp              any
+	StateValue                         any
+	Threshold                          any
+	TreatMissingData                   any
+	WarmUpConfiguration                any
 }
 
 type Alarms_MetricAlarms_Dimensions struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Alarms_MetricAlarms_EvaluationCriteria_PromQlcriteria struct {
-	PendingPeriod any
-	Query any
+	PendingPeriod  any
+	Query          any
 	RecoveryPeriod any
 }
 
@@ -97,107 +97,107 @@ type Alarms_MetricAlarms_EvaluationWindow_WallClockWindow struct {
 }
 
 type Alarms_MetricAlarms_EvaluationWindow struct {
-	SlidingWindow any
+	SlidingWindow   any
 	WallClockWindow any
 }
 
 type Alarms_MetricAlarms_Metrics_MetricStat_Metric struct {
 	Dimensions any
 	MetricName any
-	Namespace any
+	Namespace  any
 }
 
 type Alarms_MetricAlarms_Metrics_MetricStat struct {
 	Metric any
 	Period any
-	Stat any
-	Unit any
+	Stat   any
+	Unit   any
 }
 
 type Alarms_MetricAlarms_Metrics struct {
-	AccountId any
+	AccountId  any
 	Expression any
-	Id any
-	Label any
+	Id         any
+	Label      any
 	MetricStat any
-	Period any
+	Period     any
 	ReturnData any
 }
 
 type Alarms_MetricAlarms struct {
-	ActionsEnabled any
-	AlarmActions any
-	AlarmArn any
+	ActionsEnabled                     any
+	AlarmActions                       any
+	AlarmArn                           any
 	AlarmConfigurationUpdatedTimestamp any
-	AlarmDescription any
-	AlarmName any
-	ComparisonOperator any
-	DatapointsToAlarm any
-	Dimensions any
-	EvaluateLowSampleCountPercentile any
-	EvaluationCriteria any
-	EvaluationInterval any
-	EvaluationPeriods any
-	EvaluationState any
-	EvaluationWindow any
-	ExtendedStatistic any
-	InsufficientDataActions any
-	MetricName any
-	Metrics any
-	Namespace any
-	Okactions any
-	Period any
-	StateReason any
-	StateReasonData any
-	StateTransitionedTimestamp any
-	StateUpdatedTimestamp any
-	StateValue any
-	Statistic any
-	Threshold any
-	ThresholdMetricId any
-	TreatMissingData any
-	Unit any
-	WarmUpConfiguration any
+	AlarmDescription                   any
+	AlarmName                          any
+	ComparisonOperator                 any
+	DatapointsToAlarm                  any
+	Dimensions                         any
+	EvaluateLowSampleCountPercentile   any
+	EvaluationCriteria                 any
+	EvaluationInterval                 any
+	EvaluationPeriods                  any
+	EvaluationState                    any
+	EvaluationWindow                   any
+	ExtendedStatistic                  any
+	InsufficientDataActions            any
+	MetricName                         any
+	Metrics                            any
+	Namespace                          any
+	Okactions                          any
+	Period                             any
+	StateReason                        any
+	StateReasonData                    any
+	StateTransitionedTimestamp         any
+	StateUpdatedTimestamp              any
+	StateValue                         any
+	Statistic                          any
+	Threshold                          any
+	ThresholdMetricId                  any
+	TreatMissingData                   any
+	Unit                               any
+	WarmUpConfiguration                any
 }
 
 type AlarmsConfig struct {
-	ActionPrefix any
-	AlarmNamePrefix any
-	AlarmNames any
-	AlarmTypes any
+	ActionPrefix        any
+	AlarmNamePrefix     any
+	AlarmNames          any
+	AlarmTypes          any
 	ChildrenOfAlarmName any
-	MaxRecords any
-	NextToken any
-	ParentsOfAlarmName any
-	StateValue any
+	MaxRecords          any
+	NextToken           any
+	ParentsOfAlarmName  any
+	StateValue          any
 }
 
 type AlarmsAttrs struct {
-	ActionPrefix any
-	AlarmNamePrefix any
-	AlarmNames any
-	AlarmTypes any
+	ActionPrefix        any
+	AlarmNamePrefix     any
+	AlarmNames          any
+	AlarmTypes          any
 	ChildrenOfAlarmName any
-	CompositeAlarms any
-	LogAlarms any
-	MaxRecords any
-	MetricAlarms any
-	NextToken any
-	ParentsOfAlarmName any
-	StateValue any
+	CompositeAlarms     any
+	LogAlarms           any
+	MaxRecords          any
+	MetricAlarms        any
+	NextToken           any
+	ParentsOfAlarmName  any
+	StateValue          any
 }
 
 var Alarms = ubx.DataSourceBinding{
 	WireType: "aws_monitoring_alarms",
 	Fields: ubx.FieldMap{
-		"ActionPrefix": ubx.FieldSpec{WireName: "action_prefix"},
-		"AlarmNamePrefix": ubx.FieldSpec{WireName: "alarm_name_prefix"},
-		"AlarmNames": ubx.FieldSpec{WireName: "alarm_names"},
-		"AlarmTypes": ubx.FieldSpec{WireName: "alarm_types"},
+		"ActionPrefix":        ubx.FieldSpec{WireName: "action_prefix"},
+		"AlarmNamePrefix":     ubx.FieldSpec{WireName: "alarm_name_prefix"},
+		"AlarmNames":          ubx.FieldSpec{WireName: "alarm_names"},
+		"AlarmTypes":          ubx.FieldSpec{WireName: "alarm_types"},
 		"ChildrenOfAlarmName": ubx.FieldSpec{WireName: "children_of_alarm_name"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ParentsOfAlarmName": ubx.FieldSpec{WireName: "parents_of_alarm_name"},
-		"StateValue": ubx.FieldSpec{WireName: "state_value"},
+		"MaxRecords":          ubx.FieldSpec{WireName: "max_records"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
+		"ParentsOfAlarmName":  ubx.FieldSpec{WireName: "parents_of_alarm_name"},
+		"StateValue":          ubx.FieldSpec{WireName: "state_value"},
 	},
 }

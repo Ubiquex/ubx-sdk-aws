@@ -4,9 +4,9 @@ package globalaccelerator
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomRoutingEndpointGroups_EndpointGroups_DestinationDescriptions struct {
-	FromPort any
+	FromPort  any
 	Protocols any
-	ToPort any
+	ToPort    any
 }
 
 type CustomRoutingEndpointGroups_EndpointGroups_EndpointDescriptions struct {
@@ -15,29 +15,29 @@ type CustomRoutingEndpointGroups_EndpointGroups_EndpointDescriptions struct {
 
 type CustomRoutingEndpointGroups_EndpointGroups struct {
 	DestinationDescriptions any
-	EndpointDescriptions any
-	EndpointGroupArn any
-	EndpointGroupRegion any
+	EndpointDescriptions    any
+	EndpointGroupArn        any
+	EndpointGroupRegion     any
 }
 
 type CustomRoutingEndpointGroupsConfig struct {
 	ListenerArn any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type CustomRoutingEndpointGroupsAttrs struct {
 	EndpointGroups any
-	ListenerArn any
-	MaxResults any
-	NextToken any
+	ListenerArn    any
+	MaxResults     any
+	NextToken      any
 }
 
 var CustomRoutingEndpointGroups = ubx.DataSourceBinding{
 	WireType: "aws_globalaccelerator_custom_routing_endpoint_groups",
 	Fields: ubx.FieldMap{
 		"ListenerArn": ubx.FieldSpec{WireName: "listener_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

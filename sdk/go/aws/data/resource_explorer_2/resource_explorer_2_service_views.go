@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceExplorer2ServiceViewsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ResourceExplorer2ServiceViewsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	ServiceViews any
 }
 
@@ -18,6 +18,6 @@ var ResourceExplorer2ServiceViews = ubx.DataSourceBinding{
 	WireType: "aws_resource_explorer_2_service_views",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

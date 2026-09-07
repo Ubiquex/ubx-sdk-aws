@@ -5,35 +5,35 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReviewTemplateAnswer_Answer_ChoiceAnswers struct {
 	ChoiceId any
-	Notes any
-	Reason any
-	Status any
+	Notes    any
+	Reason   any
+	Status   any
 }
 
 type ReviewTemplateAnswer_Answer_Choices_AdditionalResources_Content struct {
 	DisplayText any
-	Url any
+	Url         any
 }
 
 type ReviewTemplateAnswer_Answer_Choices_AdditionalResources struct {
 	Content any
-	Type any
+	Type    any
 }
 
 type ReviewTemplateAnswer_Answer_Choices struct {
 	AdditionalResources any
-	ChoiceId any
-	Description any
-	HelpfulResource any
-	ImprovementPlan any
-	Title any
+	ChoiceId            any
+	Description         any
+	HelpfulResource     any
+	ImprovementPlan     any
+	Title               any
 }
 
 type ReviewTemplateAnswer_Answer struct {
-	AnswerStatus any
+	AnswerStatus  any
 	ChoiceAnswers any
 	// <p>List of choices available for a question.</p>
-	Choices any
+	Choices                    any
 	HelpfulResourceDisplayText any
 	// <p>The helpful resource URL.</p> <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p> <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
 	HelpfulResourceUrl any
@@ -51,7 +51,7 @@ type ReviewTemplateAnswer_Answer struct {
 	QuestionId any
 	// <p>The title of the question.</p>
 	QuestionTitle any
-	Reason any
+	Reason        any
 	// <p>List of selected choice IDs in a question answer.</p> <p>The values entered replace the previously selected choices.</p>
 	SelectedChoices any
 }
@@ -60,7 +60,7 @@ type ReviewTemplateAnswerConfig struct {
 	// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
 	LensAlias any
 	// <p>The ID of the question.</p>
-	QuestionId any
+	QuestionId  any
 	TemplateArn any
 }
 
@@ -70,15 +70,15 @@ type ReviewTemplateAnswerAttrs struct {
 	// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
 	LensAlias any
 	// <p>The ID of the question.</p>
-	QuestionId any
+	QuestionId  any
 	TemplateArn any
 }
 
 var ReviewTemplateAnswer = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_review_template_answer",
 	Fields: ubx.FieldMap{
-		"LensAlias": ubx.FieldSpec{WireName: "lens_alias"},
-		"QuestionId": ubx.FieldSpec{WireName: "question_id"},
+		"LensAlias":   ubx.FieldSpec{WireName: "lens_alias"},
+		"QuestionId":  ubx.FieldSpec{WireName: "question_id"},
 		"TemplateArn": ubx.FieldSpec{WireName: "template_arn"},
 	},
 }

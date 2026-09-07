@@ -4,36 +4,36 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClusterDbRevisions_ClusterDbRevisions_RevisionTargets struct {
-	DatabaseRevision any
+	DatabaseRevision            any
 	DatabaseRevisionReleaseDate any
-	Description any
+	Description                 any
 }
 
 type ClusterDbRevisions_ClusterDbRevisions struct {
-	ClusterIdentifier any
-	CurrentDatabaseRevision any
+	ClusterIdentifier           any
+	CurrentDatabaseRevision     any
 	DatabaseRevisionReleaseDate any
-	RevisionTargets any
+	RevisionTargets             any
 }
 
 type ClusterDbRevisionsConfig struct {
 	ClusterIdentifier any
-	Marker any
-	MaxRecords any
+	Marker            any
+	MaxRecords        any
 }
 
 type ClusterDbRevisionsAttrs struct {
 	ClusterDbRevisions any
-	ClusterIdentifier any
-	Marker any
-	MaxRecords any
+	ClusterIdentifier  any
+	Marker             any
+	MaxRecords         any
 }
 
 var ClusterDbRevisions = ubx.DataSourceBinding{
 	WireType: "aws_redshift_cluster_db_revisions",
 	Fields: ubx.FieldMap{
 		"ClusterIdentifier": ubx.FieldSpec{WireName: "cluster_identifier"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
+		"Marker":            ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":        ubx.FieldSpec{WireName: "max_records"},
 	},
 }

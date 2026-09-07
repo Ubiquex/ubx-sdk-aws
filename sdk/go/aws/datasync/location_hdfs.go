@@ -43,24 +43,24 @@ type LocationHdfs_Tags struct {
 }
 
 var LocationHdfs_CustomSecretConfigFields = ubx.FieldMap{
-		"SecretAccessRoleArn": ubx.FieldSpec{WireName: "secret_access_role_arn"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"SecretAccessRoleArn": ubx.FieldSpec{WireName: "secret_access_role_arn"},
+	"SecretArn":           ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var LocationHdfs_NameNodesFields = ubx.FieldMap{
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Hostname": ubx.FieldSpec{WireName: "hostname"},
+	"Port":     ubx.FieldSpec{WireName: "port"},
+}
 
 var LocationHdfs_QopConfigurationFields = ubx.FieldMap{
-		"DataTransferProtection": ubx.FieldSpec{WireName: "data_transfer_protection"},
-		"RpcProtection": ubx.FieldSpec{WireName: "rpc_protection"},
-	}
+	"DataTransferProtection": ubx.FieldSpec{WireName: "data_transfer_protection"},
+	"RpcProtection":          ubx.FieldSpec{WireName: "rpc_protection"},
+}
 
 var LocationHdfs_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LocationHdfsConfig struct {
 	// ARN(s) of the agent(s) to use for an HDFS location.
@@ -135,35 +135,35 @@ type LocationHdfsAttrs struct {
 var LocationHdfs = ubx.ResourceBinding{
 	WireType: "aws_data_sync_location_hdfs",
 	Fields: ubx.FieldMap{
-		"AgentArns": ubx.FieldSpec{WireName: "agent_arns"},
+		"AgentArns":          ubx.FieldSpec{WireName: "agent_arns"},
 		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"BlockSize": ubx.FieldSpec{WireName: "block_size"},
+		"BlockSize":          ubx.FieldSpec{WireName: "block_size"},
 		"CustomSecretConfig": ubx.FieldSpec{
 			WireName: "custom_secret_config",
-			Kind: "object",
-			Fields: LocationHdfs_CustomSecretConfigFields,
+			Kind:     "object",
+			Fields:   LocationHdfs_CustomSecretConfigFields,
 		},
-		"KerberosKeytab": ubx.FieldSpec{WireName: "kerberos_keytab"},
-		"KerberosKrb5Conf": ubx.FieldSpec{WireName: "kerberos_krb5_conf"},
+		"KerberosKeytab":    ubx.FieldSpec{WireName: "kerberos_keytab"},
+		"KerberosKrb5Conf":  ubx.FieldSpec{WireName: "kerberos_krb5_conf"},
 		"KerberosPrincipal": ubx.FieldSpec{WireName: "kerberos_principal"},
 		"KmsKeyProviderUri": ubx.FieldSpec{WireName: "kms_key_provider_uri"},
 		"NameNodes": ubx.FieldSpec{
 			WireName: "name_nodes",
-			Kind: "list",
-			Fields: LocationHdfs_NameNodesFields,
+			Kind:     "list",
+			Fields:   LocationHdfs_NameNodesFields,
 		},
 		"QopConfiguration": ubx.FieldSpec{
 			WireName: "qop_configuration",
-			Kind: "object",
-			Fields: LocationHdfs_QopConfigurationFields,
+			Kind:     "object",
+			Fields:   LocationHdfs_QopConfigurationFields,
 		},
 		"ReplicationFactor": ubx.FieldSpec{WireName: "replication_factor"},
-		"SimpleUser": ubx.FieldSpec{WireName: "simple_user"},
-		"Subdirectory": ubx.FieldSpec{WireName: "subdirectory"},
+		"SimpleUser":        ubx.FieldSpec{WireName: "simple_user"},
+		"Subdirectory":      ubx.FieldSpec{WireName: "subdirectory"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LocationHdfs_TagsFields,
+			Kind:     "list",
+			Fields:   LocationHdfs_TagsFields,
 		},
 	},
 }

@@ -5,38 +5,38 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiPricingPriceLists_PriceLists struct {
 	CurrencyCode any
-	FileFormats any
+	FileFormats  any
 	PriceListArn any
-	RegionCode any
+	RegionCode   any
 }
 
 type ApiPricingPriceListsConfig struct {
-	CurrencyCode any
+	CurrencyCode  any
 	EffectiveDate any
-	MaxResults any
-	NextToken any
-	RegionCode any
-	ServiceCode any
+	MaxResults    any
+	NextToken     any
+	RegionCode    any
+	ServiceCode   any
 }
 
 type ApiPricingPriceListsAttrs struct {
-	CurrencyCode any
+	CurrencyCode  any
 	EffectiveDate any
-	MaxResults any
-	NextToken any
-	PriceLists any
-	RegionCode any
-	ServiceCode any
+	MaxResults    any
+	NextToken     any
+	PriceLists    any
+	RegionCode    any
+	ServiceCode   any
 }
 
 var ApiPricingPriceLists = ubx.DataSourceBinding{
 	WireType: "aws_api_pricing_price_lists",
 	Fields: ubx.FieldMap{
-		"CurrencyCode": ubx.FieldSpec{WireName: "currency_code"},
+		"CurrencyCode":  ubx.FieldSpec{WireName: "currency_code"},
 		"EffectiveDate": ubx.FieldSpec{WireName: "effective_date"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RegionCode": ubx.FieldSpec{WireName: "region_code"},
-		"ServiceCode": ubx.FieldSpec{WireName: "service_code"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"RegionCode":    ubx.FieldSpec{WireName: "region_code"},
+		"ServiceCode":   ubx.FieldSpec{WireName: "service_code"},
 	},
 }

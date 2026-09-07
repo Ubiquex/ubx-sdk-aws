@@ -4,7 +4,7 @@ package es
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CompatibleElasticsearchVersions_CompatibleElasticsearchVersions struct {
-	SourceVersion any
+	SourceVersion  any
 	TargetVersions any
 }
 

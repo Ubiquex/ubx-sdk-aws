@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityResolutionJobs_IdentityResolutionJobsList_ExportingLocation_S3Exporting struct {
 	S3BucketName any
-	S3KeyName any
+	S3KeyName    any
 }
 
 type IdentityResolutionJobs_IdentityResolutionJobsList_ExportingLocation struct {
@@ -13,33 +13,33 @@ type IdentityResolutionJobs_IdentityResolutionJobsList_ExportingLocation struct 
 }
 
 type IdentityResolutionJobs_IdentityResolutionJobsList_JobStats struct {
-	NumberOfMatchesFound any
-	NumberOfMergesDone any
+	NumberOfMatchesFound     any
+	NumberOfMergesDone       any
 	NumberOfProfilesReviewed any
 }
 
 type IdentityResolutionJobs_IdentityResolutionJobsList struct {
-	DomainName any
+	DomainName        any
 	ExportingLocation any
-	JobEndTime any
-	JobId any
-	JobStartTime any
-	JobStats any
-	Message any
-	Status any
+	JobEndTime        any
+	JobId             any
+	JobStartTime      any
+	JobStats          any
+	Message           any
+	Status            any
 }
 
 type IdentityResolutionJobsConfig struct {
 	DomainName any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type IdentityResolutionJobsAttrs struct {
-	DomainName any
+	DomainName                 any
 	IdentityResolutionJobsList any
-	MaxResults any
-	NextToken any
+	MaxResults                 any
+	NextToken                  any
 }
 
 var IdentityResolutionJobs = ubx.DataSourceBinding{
@@ -47,6 +47,6 @@ var IdentityResolutionJobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

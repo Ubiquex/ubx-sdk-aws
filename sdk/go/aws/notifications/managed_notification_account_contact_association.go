@@ -20,7 +20,7 @@ type ManagedNotificationAccountContactAssociationAttrs struct {
 var ManagedNotificationAccountContactAssociation = ubx.ResourceBinding{
 	WireType: "aws_notifications_managed_notification_account_contact_association",
 	Fields: ubx.FieldMap{
-		"ContactIdentifier": ubx.FieldSpec{WireName: "contact_identifier"},
+		"ContactIdentifier":                   ubx.FieldSpec{WireName: "contact_identifier"},
 		"ManagedNotificationConfigurationArn": ubx.FieldSpec{WireName: "managed_notification_configuration_arn"},
 	},
 }

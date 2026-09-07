@@ -245,249 +245,249 @@ type ModelCard_SecurityConfig struct {
 
 type ModelCard_Tags struct {
 	// The key part of a user-defined tag attached to the SageMaker Model Card, enabling metadata for resource organization, access control, and cost allocation. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var ModelCard_Content_AdditionalInformationFields = ubx.FieldMap{
-		"CaveatsAndRecommendations": ubx.FieldSpec{WireName: "caveats_and_recommendations"},
-		"CustomDetails": ubx.FieldSpec{WireName: "custom_details"},
-		"EthicalConsiderations": ubx.FieldSpec{WireName: "ethical_considerations"},
-	}
+	"CaveatsAndRecommendations": ubx.FieldSpec{WireName: "caveats_and_recommendations"},
+	"CustomDetails":             ubx.FieldSpec{WireName: "custom_details"},
+	"EthicalConsiderations":     ubx.FieldSpec{WireName: "ethical_considerations"},
+}
 
 var ModelCard_Content_BusinessDetailsFields = ubx.FieldMap{
-		"BusinessProblem": ubx.FieldSpec{WireName: "business_problem"},
-		"BusinessStakeholders": ubx.FieldSpec{WireName: "business_stakeholders"},
-		"LineOfBusiness": ubx.FieldSpec{WireName: "line_of_business"},
-	}
+	"BusinessProblem":      ubx.FieldSpec{WireName: "business_problem"},
+	"BusinessStakeholders": ubx.FieldSpec{WireName: "business_stakeholders"},
+	"LineOfBusiness":       ubx.FieldSpec{WireName: "line_of_business"},
+}
 
 var ModelCard_Content_EvaluationDetails_MetricGroups_MetricDataFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Notes": ubx.FieldSpec{WireName: "notes"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"XaxisName": ubx.FieldSpec{WireName: "xaxis_name"},
-		"YaxisName": ubx.FieldSpec{WireName: "yaxis_name"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Notes":     ubx.FieldSpec{WireName: "notes"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+	"XaxisName": ubx.FieldSpec{WireName: "xaxis_name"},
+	"YaxisName": ubx.FieldSpec{WireName: "yaxis_name"},
+}
 
 var ModelCard_Content_EvaluationDetails_MetricGroupsFields = ubx.FieldMap{
-		"MetricData": ubx.FieldSpec{
-			WireName: "metric_data",
-			Kind: "list",
-			Fields: ModelCard_Content_EvaluationDetails_MetricGroups_MetricDataFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"MetricData": ubx.FieldSpec{
+		WireName: "metric_data",
+		Kind:     "list",
+		Fields:   ModelCard_Content_EvaluationDetails_MetricGroups_MetricDataFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var ModelCard_Content_EvaluationDetailsFields = ubx.FieldMap{
-		"Datasets": ubx.FieldSpec{WireName: "datasets"},
-		"EvaluationJobArn": ubx.FieldSpec{WireName: "evaluation_job_arn"},
-		"EvaluationObservation": ubx.FieldSpec{WireName: "evaluation_observation"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"MetricGroups": ubx.FieldSpec{
-			WireName: "metric_groups",
-			Kind: "list",
-			Fields: ModelCard_Content_EvaluationDetails_MetricGroupsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Datasets":              ubx.FieldSpec{WireName: "datasets"},
+	"EvaluationJobArn":      ubx.FieldSpec{WireName: "evaluation_job_arn"},
+	"EvaluationObservation": ubx.FieldSpec{WireName: "evaluation_observation"},
+	"Metadata":              ubx.FieldSpec{WireName: "metadata"},
+	"MetricGroups": ubx.FieldSpec{
+		WireName: "metric_groups",
+		Kind:     "list",
+		Fields:   ModelCard_Content_EvaluationDetails_MetricGroupsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var ModelCard_Content_IntendedUsesFields = ubx.FieldMap{
-		"ExplanationsForRiskRating": ubx.FieldSpec{WireName: "explanations_for_risk_rating"},
-		"FactorsAffectingModelEfficiency": ubx.FieldSpec{WireName: "factors_affecting_model_efficiency"},
-		"IntendedUses": ubx.FieldSpec{WireName: "intended_uses"},
-		"PurposeOfModel": ubx.FieldSpec{WireName: "purpose_of_model"},
-		"RiskRating": ubx.FieldSpec{WireName: "risk_rating"},
-	}
+	"ExplanationsForRiskRating":       ubx.FieldSpec{WireName: "explanations_for_risk_rating"},
+	"FactorsAffectingModelEfficiency": ubx.FieldSpec{WireName: "factors_affecting_model_efficiency"},
+	"IntendedUses":                    ubx.FieldSpec{WireName: "intended_uses"},
+	"PurposeOfModel":                  ubx.FieldSpec{WireName: "purpose_of_model"},
+	"RiskRating":                      ubx.FieldSpec{WireName: "risk_rating"},
+}
 
 var ModelCard_Content_ModelOverview_InferenceEnvironmentFields = ubx.FieldMap{
-		"ContainerImage": ubx.FieldSpec{WireName: "container_image"},
-	}
+	"ContainerImage": ubx.FieldSpec{WireName: "container_image"},
+}
 
 var ModelCard_Content_ModelOverviewFields = ubx.FieldMap{
-		"AlgorithmType": ubx.FieldSpec{WireName: "algorithm_type"},
-		"InferenceEnvironment": ubx.FieldSpec{
-			WireName: "inference_environment",
-			Kind: "object",
-			Fields: ModelCard_Content_ModelOverview_InferenceEnvironmentFields,
-		},
-		"ModelArtifact": ubx.FieldSpec{WireName: "model_artifact"},
-		"ModelCreator": ubx.FieldSpec{WireName: "model_creator"},
-		"ModelDescription": ubx.FieldSpec{WireName: "model_description"},
-		"ModelId": ubx.FieldSpec{WireName: "model_id"},
-		"ModelName": ubx.FieldSpec{WireName: "model_name"},
-		"ModelOwner": ubx.FieldSpec{WireName: "model_owner"},
-		"ModelVersion": ubx.FieldSpec{WireName: "model_version"},
-		"ProblemType": ubx.FieldSpec{WireName: "problem_type"},
-	}
+	"AlgorithmType": ubx.FieldSpec{WireName: "algorithm_type"},
+	"InferenceEnvironment": ubx.FieldSpec{
+		WireName: "inference_environment",
+		Kind:     "object",
+		Fields:   ModelCard_Content_ModelOverview_InferenceEnvironmentFields,
+	},
+	"ModelArtifact":    ubx.FieldSpec{WireName: "model_artifact"},
+	"ModelCreator":     ubx.FieldSpec{WireName: "model_creator"},
+	"ModelDescription": ubx.FieldSpec{WireName: "model_description"},
+	"ModelId":          ubx.FieldSpec{WireName: "model_id"},
+	"ModelName":        ubx.FieldSpec{WireName: "model_name"},
+	"ModelOwner":       ubx.FieldSpec{WireName: "model_owner"},
+	"ModelVersion":     ubx.FieldSpec{WireName: "model_version"},
+	"ProblemType":      ubx.FieldSpec{WireName: "problem_type"},
+}
 
 var ModelCard_Content_ModelPackageDetails_CreatedByFields = ubx.FieldMap{
-		"UserProfileName": ubx.FieldSpec{WireName: "user_profile_name"},
-	}
+	"UserProfileName": ubx.FieldSpec{WireName: "user_profile_name"},
+}
 
 var ModelCard_Content_ModelPackageDetails_InferenceSpecification_ContainersFields = ubx.FieldMap{
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"ModelDataUrl": ubx.FieldSpec{WireName: "model_data_url"},
-		"NearestModelName": ubx.FieldSpec{WireName: "nearest_model_name"},
-	}
+	"Image":            ubx.FieldSpec{WireName: "image"},
+	"ModelDataUrl":     ubx.FieldSpec{WireName: "model_data_url"},
+	"NearestModelName": ubx.FieldSpec{WireName: "nearest_model_name"},
+}
 
 var ModelCard_Content_ModelPackageDetails_InferenceSpecificationFields = ubx.FieldMap{
-		"Containers": ubx.FieldSpec{
-			WireName: "containers",
-			Kind: "list",
-			Fields: ModelCard_Content_ModelPackageDetails_InferenceSpecification_ContainersFields,
-		},
-	}
+	"Containers": ubx.FieldSpec{
+		WireName: "containers",
+		Kind:     "list",
+		Fields:   ModelCard_Content_ModelPackageDetails_InferenceSpecification_ContainersFields,
+	},
+}
 
 var ModelCard_Content_ModelPackageDetails_SourceAlgorithmsFields = ubx.FieldMap{
-		"AlgorithmName": ubx.FieldSpec{WireName: "algorithm_name"},
-		"ModelDataUrl": ubx.FieldSpec{WireName: "model_data_url"},
-	}
+	"AlgorithmName": ubx.FieldSpec{WireName: "algorithm_name"},
+	"ModelDataUrl":  ubx.FieldSpec{WireName: "model_data_url"},
+}
 
 var ModelCard_Content_ModelPackageDetailsFields = ubx.FieldMap{
-		"ApprovalDescription": ubx.FieldSpec{WireName: "approval_description"},
-		"CreatedBy": ubx.FieldSpec{
-			WireName: "created_by",
-			Kind: "object",
-			Fields: ModelCard_Content_ModelPackageDetails_CreatedByFields,
-		},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"InferenceSpecification": ubx.FieldSpec{
-			WireName: "inference_specification",
-			Kind: "object",
-			Fields: ModelCard_Content_ModelPackageDetails_InferenceSpecificationFields,
-		},
-		"ModelApprovalStatus": ubx.FieldSpec{WireName: "model_approval_status"},
-		"ModelPackageArn": ubx.FieldSpec{WireName: "model_package_arn"},
-		"ModelPackageDescription": ubx.FieldSpec{WireName: "model_package_description"},
-		"ModelPackageGroupName": ubx.FieldSpec{WireName: "model_package_group_name"},
-		"ModelPackageName": ubx.FieldSpec{WireName: "model_package_name"},
-		"ModelPackageStatus": ubx.FieldSpec{WireName: "model_package_status"},
-		"ModelPackageVersion": ubx.FieldSpec{WireName: "model_package_version"},
-		"SourceAlgorithms": ubx.FieldSpec{
-			WireName: "source_algorithms",
-			Kind: "list",
-			Fields: ModelCard_Content_ModelPackageDetails_SourceAlgorithmsFields,
-		},
-		"Task": ubx.FieldSpec{WireName: "task"},
-	}
+	"ApprovalDescription": ubx.FieldSpec{WireName: "approval_description"},
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   ModelCard_Content_ModelPackageDetails_CreatedByFields,
+	},
+	"Domain": ubx.FieldSpec{WireName: "domain"},
+	"InferenceSpecification": ubx.FieldSpec{
+		WireName: "inference_specification",
+		Kind:     "object",
+		Fields:   ModelCard_Content_ModelPackageDetails_InferenceSpecificationFields,
+	},
+	"ModelApprovalStatus":     ubx.FieldSpec{WireName: "model_approval_status"},
+	"ModelPackageArn":         ubx.FieldSpec{WireName: "model_package_arn"},
+	"ModelPackageDescription": ubx.FieldSpec{WireName: "model_package_description"},
+	"ModelPackageGroupName":   ubx.FieldSpec{WireName: "model_package_group_name"},
+	"ModelPackageName":        ubx.FieldSpec{WireName: "model_package_name"},
+	"ModelPackageStatus":      ubx.FieldSpec{WireName: "model_package_status"},
+	"ModelPackageVersion":     ubx.FieldSpec{WireName: "model_package_version"},
+	"SourceAlgorithms": ubx.FieldSpec{
+		WireName: "source_algorithms",
+		Kind:     "list",
+		Fields:   ModelCard_Content_ModelPackageDetails_SourceAlgorithmsFields,
+	},
+	"Task": ubx.FieldSpec{WireName: "task"},
+}
 
 var ModelCard_Content_TrainingDetails_ObjectiveFunction_FunctionFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Facet": ubx.FieldSpec{WireName: "facet"},
-		"Function": ubx.FieldSpec{WireName: "function"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Facet":     ubx.FieldSpec{WireName: "facet"},
+	"Function":  ubx.FieldSpec{WireName: "function"},
+}
 
 var ModelCard_Content_TrainingDetails_ObjectiveFunctionFields = ubx.FieldMap{
-		"Function": ubx.FieldSpec{
-			WireName: "function",
-			Kind: "object",
-			Fields: ModelCard_Content_TrainingDetails_ObjectiveFunction_FunctionFields,
-		},
-		"Notes": ubx.FieldSpec{WireName: "notes"},
-	}
+	"Function": ubx.FieldSpec{
+		WireName: "function",
+		Kind:     "object",
+		Fields:   ModelCard_Content_TrainingDetails_ObjectiveFunction_FunctionFields,
+	},
+	"Notes": ubx.FieldSpec{WireName: "notes"},
+}
 
 var ModelCard_Content_TrainingDetails_TrainingJobDetails_HyperParametersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ModelCard_Content_TrainingDetails_TrainingJobDetails_TrainingMetricsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Notes": ubx.FieldSpec{WireName: "notes"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Notes": ubx.FieldSpec{WireName: "notes"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ModelCard_Content_TrainingDetails_TrainingJobDetailsFields = ubx.FieldMap{
-		"HyperParameters": ubx.FieldSpec{
-			WireName: "hyper_parameters",
-			Kind: "list",
-			Fields: ModelCard_Content_TrainingDetails_TrainingJobDetails_HyperParametersFields,
-		},
-		"TrainingArn": ubx.FieldSpec{WireName: "training_arn"},
-		"TrainingDatasets": ubx.FieldSpec{WireName: "training_datasets"},
-		"TrainingEnvironment": ubx.FieldSpec{
-			WireName: "training_environment",
-			Kind: "object",
-			Fields: ModelCard_Content_ModelOverview_InferenceEnvironmentFields,
-		},
-		"TrainingMetrics": ubx.FieldSpec{
-			WireName: "training_metrics",
-			Kind: "list",
-			Fields: ModelCard_Content_TrainingDetails_TrainingJobDetails_TrainingMetricsFields,
-		},
-		"UserProvidedHyperParameters": ubx.FieldSpec{
-			WireName: "user_provided_hyper_parameters",
-			Kind: "list",
-			Fields: ModelCard_Content_TrainingDetails_TrainingJobDetails_HyperParametersFields,
-		},
-		"UserProvidedTrainingMetrics": ubx.FieldSpec{
-			WireName: "user_provided_training_metrics",
-			Kind: "list",
-			Fields: ModelCard_Content_TrainingDetails_TrainingJobDetails_TrainingMetricsFields,
-		},
-	}
+	"HyperParameters": ubx.FieldSpec{
+		WireName: "hyper_parameters",
+		Kind:     "list",
+		Fields:   ModelCard_Content_TrainingDetails_TrainingJobDetails_HyperParametersFields,
+	},
+	"TrainingArn":      ubx.FieldSpec{WireName: "training_arn"},
+	"TrainingDatasets": ubx.FieldSpec{WireName: "training_datasets"},
+	"TrainingEnvironment": ubx.FieldSpec{
+		WireName: "training_environment",
+		Kind:     "object",
+		Fields:   ModelCard_Content_ModelOverview_InferenceEnvironmentFields,
+	},
+	"TrainingMetrics": ubx.FieldSpec{
+		WireName: "training_metrics",
+		Kind:     "list",
+		Fields:   ModelCard_Content_TrainingDetails_TrainingJobDetails_TrainingMetricsFields,
+	},
+	"UserProvidedHyperParameters": ubx.FieldSpec{
+		WireName: "user_provided_hyper_parameters",
+		Kind:     "list",
+		Fields:   ModelCard_Content_TrainingDetails_TrainingJobDetails_HyperParametersFields,
+	},
+	"UserProvidedTrainingMetrics": ubx.FieldSpec{
+		WireName: "user_provided_training_metrics",
+		Kind:     "list",
+		Fields:   ModelCard_Content_TrainingDetails_TrainingJobDetails_TrainingMetricsFields,
+	},
+}
 
 var ModelCard_Content_TrainingDetailsFields = ubx.FieldMap{
-		"ObjectiveFunction": ubx.FieldSpec{
-			WireName: "objective_function",
-			Kind: "object",
-			Fields: ModelCard_Content_TrainingDetails_ObjectiveFunctionFields,
-		},
-		"TrainingJobDetails": ubx.FieldSpec{
-			WireName: "training_job_details",
-			Kind: "object",
-			Fields: ModelCard_Content_TrainingDetails_TrainingJobDetailsFields,
-		},
-		"TrainingObservations": ubx.FieldSpec{WireName: "training_observations"},
-	}
+	"ObjectiveFunction": ubx.FieldSpec{
+		WireName: "objective_function",
+		Kind:     "object",
+		Fields:   ModelCard_Content_TrainingDetails_ObjectiveFunctionFields,
+	},
+	"TrainingJobDetails": ubx.FieldSpec{
+		WireName: "training_job_details",
+		Kind:     "object",
+		Fields:   ModelCard_Content_TrainingDetails_TrainingJobDetailsFields,
+	},
+	"TrainingObservations": ubx.FieldSpec{WireName: "training_observations"},
+}
 
 var ModelCard_ContentFields = ubx.FieldMap{
-		"AdditionalInformation": ubx.FieldSpec{
-			WireName: "additional_information",
-			Kind: "object",
-			Fields: ModelCard_Content_AdditionalInformationFields,
-		},
-		"BusinessDetails": ubx.FieldSpec{
-			WireName: "business_details",
-			Kind: "object",
-			Fields: ModelCard_Content_BusinessDetailsFields,
-		},
-		"EvaluationDetails": ubx.FieldSpec{
-			WireName: "evaluation_details",
-			Kind: "list",
-			Fields: ModelCard_Content_EvaluationDetailsFields,
-		},
-		"IntendedUses": ubx.FieldSpec{
-			WireName: "intended_uses",
-			Kind: "object",
-			Fields: ModelCard_Content_IntendedUsesFields,
-		},
-		"ModelOverview": ubx.FieldSpec{
-			WireName: "model_overview",
-			Kind: "object",
-			Fields: ModelCard_Content_ModelOverviewFields,
-		},
-		"ModelPackageDetails": ubx.FieldSpec{
-			WireName: "model_package_details",
-			Kind: "object",
-			Fields: ModelCard_Content_ModelPackageDetailsFields,
-		},
-		"TrainingDetails": ubx.FieldSpec{
-			WireName: "training_details",
-			Kind: "object",
-			Fields: ModelCard_Content_TrainingDetailsFields,
-		},
-	}
+	"AdditionalInformation": ubx.FieldSpec{
+		WireName: "additional_information",
+		Kind:     "object",
+		Fields:   ModelCard_Content_AdditionalInformationFields,
+	},
+	"BusinessDetails": ubx.FieldSpec{
+		WireName: "business_details",
+		Kind:     "object",
+		Fields:   ModelCard_Content_BusinessDetailsFields,
+	},
+	"EvaluationDetails": ubx.FieldSpec{
+		WireName: "evaluation_details",
+		Kind:     "list",
+		Fields:   ModelCard_Content_EvaluationDetailsFields,
+	},
+	"IntendedUses": ubx.FieldSpec{
+		WireName: "intended_uses",
+		Kind:     "object",
+		Fields:   ModelCard_Content_IntendedUsesFields,
+	},
+	"ModelOverview": ubx.FieldSpec{
+		WireName: "model_overview",
+		Kind:     "object",
+		Fields:   ModelCard_Content_ModelOverviewFields,
+	},
+	"ModelPackageDetails": ubx.FieldSpec{
+		WireName: "model_package_details",
+		Kind:     "object",
+		Fields:   ModelCard_Content_ModelPackageDetailsFields,
+	},
+	"TrainingDetails": ubx.FieldSpec{
+		WireName: "training_details",
+		Kind:     "object",
+		Fields:   ModelCard_Content_TrainingDetailsFields,
+	},
+}
 
 var ModelCard_SecurityConfigFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+}
 
 var ModelCard_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ModelCardConfig struct {
 	// The content of the model card.
@@ -534,20 +534,20 @@ var ModelCard = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Content": ubx.FieldSpec{
 			WireName: "content",
-			Kind: "object",
-			Fields: ModelCard_ContentFields,
+			Kind:     "object",
+			Fields:   ModelCard_ContentFields,
 		},
-		"ModelCardName": ubx.FieldSpec{WireName: "model_card_name"},
+		"ModelCardName":   ubx.FieldSpec{WireName: "model_card_name"},
 		"ModelCardStatus": ubx.FieldSpec{WireName: "model_card_status"},
 		"SecurityConfig": ubx.FieldSpec{
 			WireName: "security_config",
-			Kind: "object",
-			Fields: ModelCard_SecurityConfigFields,
+			Kind:     "object",
+			Fields:   ModelCard_SecurityConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ModelCard_TagsFields,
+			Kind:     "list",
+			Fields:   ModelCard_TagsFields,
 		},
 	},
 }

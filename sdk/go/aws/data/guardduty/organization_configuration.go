@@ -33,31 +33,31 @@ type OrganizationConfiguration_DataSources struct {
 
 type OrganizationConfiguration_Features_AdditionalConfiguration struct {
 	AutoEnable any
-	Name any
+	Name       any
 }
 
 type OrganizationConfiguration_Features struct {
 	AdditionalConfiguration any
-	AutoEnable any
-	Name any
+	AutoEnable              any
+	Name                    any
 }
 
 type OrganizationConfigurationConfig struct {
 	DetectorId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type OrganizationConfigurationAttrs struct {
-	AutoEnable any
+	AutoEnable                    any
 	AutoEnableOrganizationMembers any
 	// <p>An object that contains information on which data sources are automatically enabled for new members within the organization.</p>
-	DataSources any
-	DetectorId any
-	Features any
-	MaxResults any
+	DataSources               any
+	DetectorId                any
+	Features                  any
+	MaxResults                any
 	MemberAccountLimitReached any
-	NextToken any
+	NextToken                 any
 }
 
 var OrganizationConfiguration = ubx.DataSourceBinding{
@@ -65,6 +65,6 @@ var OrganizationConfiguration = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DetectorId": ubx.FieldSpec{WireName: "detector_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

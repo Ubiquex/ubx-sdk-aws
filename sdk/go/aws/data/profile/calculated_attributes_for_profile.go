@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CalculatedAttributesForProfile_Items struct {
 	CalculatedAttributeName any
-	DisplayName any
-	IsDataPartial any
-	LastObjectTimestamp any
-	Value any
+	DisplayName             any
+	IsDataPartial           any
+	LastObjectTimestamp     any
+	Value                   any
 }
 
 type CalculatedAttributesForProfileConfig struct {
 	DomainName any
 	MaxResults any
-	NextToken any
-	ProfileId any
+	NextToken  any
+	ProfileId  any
 }
 
 type CalculatedAttributesForProfileAttrs struct {
 	DomainName any
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
-	ProfileId any
+	NextToken  any
+	ProfileId  any
 }
 
 var CalculatedAttributesForProfile = ubx.DataSourceBinding{
@@ -31,7 +31,7 @@ var CalculatedAttributesForProfile = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"ProfileId":  ubx.FieldSpec{WireName: "profile_id"},
 	},
 }

@@ -25,19 +25,19 @@ type User_Tags struct {
 }
 
 var User_LoginProfileFields = ubx.FieldMap{
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"PasswordResetRequired": ubx.FieldSpec{WireName: "password_reset_required"},
-	}
+	"Password":              ubx.FieldSpec{WireName: "password"},
+	"PasswordResetRequired": ubx.FieldSpec{WireName: "password_reset_required"},
+}
 
 var User_PoliciesFields = ubx.FieldMap{
-		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-	}
+	"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
+	"PolicyName":     ubx.FieldSpec{WireName: "policy_name"},
+}
 
 var User_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type UserConfig struct {
 	// A list of group names to which you want to add the user.
@@ -85,21 +85,21 @@ var User = ubx.ResourceBinding{
 		"Groups": ubx.FieldSpec{WireName: "groups"},
 		"LoginProfile": ubx.FieldSpec{
 			WireName: "login_profile",
-			Kind: "object",
-			Fields: User_LoginProfileFields,
+			Kind:     "object",
+			Fields:   User_LoginProfileFields,
 		},
-		"ManagedPolicyArns": ubx.FieldSpec{WireName: "managed_policy_arns"},
-		"Path": ubx.FieldSpec{WireName: "path"},
+		"ManagedPolicyArns":   ubx.FieldSpec{WireName: "managed_policy_arns"},
+		"Path":                ubx.FieldSpec{WireName: "path"},
 		"PermissionsBoundary": ubx.FieldSpec{WireName: "permissions_boundary"},
 		"Policies": ubx.FieldSpec{
 			WireName: "policies",
-			Kind: "list",
-			Fields: User_PoliciesFields,
+			Kind:     "list",
+			Fields:   User_PoliciesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: User_TagsFields,
+			Kind:     "list",
+			Fields:   User_TagsFields,
 		},
 		"UserName": ubx.FieldSpec{WireName: "user_name"},
 	},

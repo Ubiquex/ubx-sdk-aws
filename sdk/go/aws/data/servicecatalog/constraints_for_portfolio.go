@@ -5,38 +5,38 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConstraintsForPortfolio_ConstraintDetails struct {
 	ConstraintId any
-	Description any
-	Owner any
-	PortfolioId any
-	ProductId any
-	Type any
+	Description  any
+	Owner        any
+	PortfolioId  any
+	ProductId    any
+	Type         any
 }
 
 type ConstraintsForPortfolioConfig struct {
 	AcceptLanguage any
-	PageSize any
-	PageToken any
-	PortfolioId any
-	ProductId any
+	PageSize       any
+	PageToken      any
+	PortfolioId    any
+	ProductId      any
 }
 
 type ConstraintsForPortfolioAttrs struct {
-	AcceptLanguage any
+	AcceptLanguage    any
 	ConstraintDetails any
-	NextPageToken any
-	PageSize any
-	PageToken any
-	PortfolioId any
-	ProductId any
+	NextPageToken     any
+	PageSize          any
+	PageToken         any
+	PortfolioId       any
+	ProductId         any
 }
 
 var ConstraintsForPortfolio = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_constraints_for_portfolio",
 	Fields: ubx.FieldMap{
 		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
-		"PortfolioId": ubx.FieldSpec{WireName: "portfolio_id"},
-		"ProductId": ubx.FieldSpec{WireName: "product_id"},
+		"PageSize":       ubx.FieldSpec{WireName: "page_size"},
+		"PageToken":      ubx.FieldSpec{WireName: "page_token"},
+		"PortfolioId":    ubx.FieldSpec{WireName: "portfolio_id"},
+		"ProductId":      ubx.FieldSpec{WireName: "product_id"},
 	},
 }

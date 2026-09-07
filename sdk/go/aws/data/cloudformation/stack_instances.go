@@ -4,7 +4,7 @@ package cloudformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StackInstances_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -13,43 +13,43 @@ type StackInstances_Summaries_StackInstanceStatus struct {
 }
 
 type StackInstances_Summaries struct {
-	Account any
-	DriftStatus any
+	Account                 any
+	DriftStatus             any
 	LastDriftCheckTimestamp any
-	LastOperationId any
-	OrganizationalUnitId any
-	Region any
-	StackId any
-	StackInstanceStatus any
-	StackSetId any
-	Status any
-	StatusReason any
+	LastOperationId         any
+	OrganizationalUnitId    any
+	Region                  any
+	StackId                 any
+	StackInstanceStatus     any
+	StackSetId              any
+	Status                  any
+	StatusReason            any
 }
 
 var StackInstances_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type StackInstancesConfig struct {
-	CallAs any
-	Filters any
-	MaxResults any
-	NextToken any
+	CallAs               any
+	Filters              any
+	MaxResults           any
+	NextToken            any
 	StackInstanceAccount any
-	StackInstanceRegion any
-	StackSetName any
+	StackInstanceRegion  any
+	StackSetName         any
 }
 
 type StackInstancesAttrs struct {
-	CallAs any
-	Filters any
-	MaxResults any
-	NextToken any
+	CallAs               any
+	Filters              any
+	MaxResults           any
+	NextToken            any
 	StackInstanceAccount any
-	StackInstanceRegion any
-	StackSetName any
-	Summaries any
+	StackInstanceRegion  any
+	StackSetName         any
+	Summaries            any
 }
 
 var StackInstances = ubx.DataSourceBinding{
@@ -58,13 +58,13 @@ var StackInstances = ubx.DataSourceBinding{
 		"CallAs": ubx.FieldSpec{WireName: "call_as"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: StackInstances_FiltersFields,
+			Kind:     "list",
+			Fields:   StackInstances_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 		"StackInstanceAccount": ubx.FieldSpec{WireName: "stack_instance_account"},
-		"StackInstanceRegion": ubx.FieldSpec{WireName: "stack_instance_region"},
-		"StackSetName": ubx.FieldSpec{WireName: "stack_set_name"},
+		"StackInstanceRegion":  ubx.FieldSpec{WireName: "stack_instance_region"},
+		"StackSetName":         ubx.FieldSpec{WireName: "stack_set_name"},
 	},
 }

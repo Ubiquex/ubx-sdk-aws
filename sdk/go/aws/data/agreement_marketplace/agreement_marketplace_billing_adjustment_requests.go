@@ -4,51 +4,51 @@ package agreement_marketplace
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgreementMarketplaceBillingAdjustmentRequests_Items struct {
-	AdjustmentAmount any
-	AgreementId any
-	AgreementType any
+	AdjustmentAmount           any
+	AgreementId                any
+	AgreementType              any
 	BillingAdjustmentRequestId any
-	Catalog any
-	CreatedAt any
-	CurrencyCode any
-	OriginalInvoiceId any
-	Status any
-	UpdatedAt any
+	Catalog                    any
+	CreatedAt                  any
+	CurrencyCode               any
+	OriginalInvoiceId          any
+	Status                     any
+	UpdatedAt                  any
 }
 
 type AgreementMarketplaceBillingAdjustmentRequestsConfig struct {
-	AgreementId any
+	AgreementId   any
 	AgreementType any
-	Catalog any
-	CreatedAfter any
+	Catalog       any
+	CreatedAfter  any
 	CreatedBefore any
-	MaxResults any
-	NextToken any
-	Status any
+	MaxResults    any
+	NextToken     any
+	Status        any
 }
 
 type AgreementMarketplaceBillingAdjustmentRequestsAttrs struct {
-	AgreementId any
+	AgreementId   any
 	AgreementType any
-	Catalog any
-	CreatedAfter any
+	Catalog       any
+	CreatedAfter  any
 	CreatedBefore any
-	Items any
-	MaxResults any
-	NextToken any
-	Status any
+	Items         any
+	MaxResults    any
+	NextToken     any
+	Status        any
 }
 
 var AgreementMarketplaceBillingAdjustmentRequests = ubx.DataSourceBinding{
 	WireType: "aws_agreement_marketplace_billing_adjustment_requests",
 	Fields: ubx.FieldMap{
-		"AgreementId": ubx.FieldSpec{WireName: "agreement_id"},
+		"AgreementId":   ubx.FieldSpec{WireName: "agreement_id"},
 		"AgreementType": ubx.FieldSpec{WireName: "agreement_type"},
-		"Catalog": ubx.FieldSpec{WireName: "catalog"},
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
+		"Catalog":       ubx.FieldSpec{WireName: "catalog"},
+		"CreatedAfter":  ubx.FieldSpec{WireName: "created_after"},
 		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"Status":        ubx.FieldSpec{WireName: "status"},
 	},
 }

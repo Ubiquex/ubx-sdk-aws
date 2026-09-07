@@ -4,47 +4,47 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PhoneNumbersV2_ListPhoneNumbersSummaryList struct {
-	InstanceId any
-	PhoneNumber any
-	PhoneNumberArn any
+	InstanceId             any
+	PhoneNumber            any
+	PhoneNumberArn         any
 	PhoneNumberCountryCode any
 	PhoneNumberDescription any
-	PhoneNumberId any
-	PhoneNumberType any
-	SourcePhoneNumberArn any
-	TargetArn any
+	PhoneNumberId          any
+	PhoneNumberType        any
+	SourcePhoneNumberArn   any
+	TargetArn              any
 }
 
 type PhoneNumbersV2Config struct {
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId              any
+	MaxResults              any
+	NextToken               any
 	PhoneNumberCountryCodes any
-	PhoneNumberPrefix any
-	PhoneNumberTypes any
-	TargetArn any
+	PhoneNumberPrefix       any
+	PhoneNumberTypes        any
+	TargetArn               any
 }
 
 type PhoneNumbersV2Attrs struct {
-	InstanceId any
+	InstanceId                  any
 	ListPhoneNumbersSummaryList any
-	MaxResults any
-	NextToken any
-	PhoneNumberCountryCodes any
-	PhoneNumberPrefix any
-	PhoneNumberTypes any
-	TargetArn any
+	MaxResults                  any
+	NextToken                   any
+	PhoneNumberCountryCodes     any
+	PhoneNumberPrefix           any
+	PhoneNumberTypes            any
+	TargetArn                   any
 }
 
 var PhoneNumbersV2 = ubx.DataSourceBinding{
 	WireType: "aws_connect_phone_numbers_v2",
 	Fields: ubx.FieldMap{
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"InstanceId":              ubx.FieldSpec{WireName: "instance_id"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
 		"PhoneNumberCountryCodes": ubx.FieldSpec{WireName: "phone_number_country_codes"},
-		"PhoneNumberPrefix": ubx.FieldSpec{WireName: "phone_number_prefix"},
-		"PhoneNumberTypes": ubx.FieldSpec{WireName: "phone_number_types"},
-		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
+		"PhoneNumberPrefix":       ubx.FieldSpec{WireName: "phone_number_prefix"},
+		"PhoneNumberTypes":        ubx.FieldSpec{WireName: "phone_number_types"},
+		"TargetArn":               ubx.FieldSpec{WireName: "target_arn"},
 	},
 }

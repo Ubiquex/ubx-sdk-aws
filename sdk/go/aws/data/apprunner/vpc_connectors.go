@@ -4,24 +4,24 @@ package apprunner
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcConnectors_VpcConnectors struct {
-	CreatedAt any
-	DeletedAt any
-	SecurityGroups any
-	Status any
-	Subnets any
-	VpcConnectorArn any
-	VpcConnectorName any
+	CreatedAt            any
+	DeletedAt            any
+	SecurityGroups       any
+	Status               any
+	Subnets              any
+	VpcConnectorArn      any
+	VpcConnectorName     any
 	VpcConnectorRevision any
 }
 
 type VpcConnectorsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type VpcConnectorsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 	VpcConnectors any
 }
 
@@ -29,6 +29,6 @@ var VpcConnectors = ubx.DataSourceBinding{
 	WireType: "aws_apprunner_vpc_connectors",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

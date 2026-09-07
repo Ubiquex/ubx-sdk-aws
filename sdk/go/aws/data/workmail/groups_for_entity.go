@@ -8,30 +8,30 @@ type GroupsForEntity_Filters struct {
 }
 
 type GroupsForEntity_Groups struct {
-	GroupId any
+	GroupId   any
 	GroupName any
 }
 
 var GroupsForEntity_FiltersFields = ubx.FieldMap{
-		"GroupNamePrefix": ubx.FieldSpec{WireName: "group_name_prefix"},
-	}
+	"GroupNamePrefix": ubx.FieldSpec{WireName: "group_name_prefix"},
+}
 
 type GroupsForEntityConfig struct {
 	EntityId any
 	// <p> Filtering options for <i>ListGroupsForEntity</i> operation. This is only used as input to Operation.</p>
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters        any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
 }
 
 type GroupsForEntityAttrs struct {
 	EntityId any
 	// <p> Filtering options for <i>ListGroupsForEntity</i> operation. This is only used as input to Operation.</p>
-	Filters any
-	Groups any
-	MaxResults any
-	NextToken any
+	Filters        any
+	Groups         any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
 }
 
@@ -41,11 +41,11 @@ var GroupsForEntity = ubx.DataSourceBinding{
 		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: GroupsForEntity_FiltersFields,
+			Kind:     "object",
+			Fields:   GroupsForEntity_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
 	},
 }

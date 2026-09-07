@@ -17,12 +17,12 @@ type DbproxyTargetGroup_ConnectionPoolConfigurationInfo struct {
 }
 
 var DbproxyTargetGroup_ConnectionPoolConfigurationInfoFields = ubx.FieldMap{
-		"ConnectionBorrowTimeout": ubx.FieldSpec{WireName: "connection_borrow_timeout"},
-		"InitQuery": ubx.FieldSpec{WireName: "init_query"},
-		"MaxConnectionsPercent": ubx.FieldSpec{WireName: "max_connections_percent"},
-		"MaxIdleConnectionsPercent": ubx.FieldSpec{WireName: "max_idle_connections_percent"},
-		"SessionPinningFilters": ubx.FieldSpec{WireName: "session_pinning_filters"},
-	}
+	"ConnectionBorrowTimeout":   ubx.FieldSpec{WireName: "connection_borrow_timeout"},
+	"InitQuery":                 ubx.FieldSpec{WireName: "init_query"},
+	"MaxConnectionsPercent":     ubx.FieldSpec{WireName: "max_connections_percent"},
+	"MaxIdleConnectionsPercent": ubx.FieldSpec{WireName: "max_idle_connections_percent"},
+	"SessionPinningFilters":     ubx.FieldSpec{WireName: "session_pinning_filters"},
+}
 
 type DbproxyTargetGroupConfig struct {
 	// Configures the connection pool for the DB proxy target group, including maximum connections percentage, maximum idle connections percentage, connection borrow timeout, and session pinning filters. (AI-inferred)
@@ -57,12 +57,12 @@ var DbproxyTargetGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConnectionPoolConfigurationInfo": ubx.FieldSpec{
 			WireName: "connection_pool_configuration_info",
-			Kind: "object",
-			Fields: DbproxyTargetGroup_ConnectionPoolConfigurationInfoFields,
+			Kind:     "object",
+			Fields:   DbproxyTargetGroup_ConnectionPoolConfigurationInfoFields,
 		},
-		"DbclusterIdentifiers": ubx.FieldSpec{WireName: "dbcluster_identifiers"},
+		"DbclusterIdentifiers":  ubx.FieldSpec{WireName: "dbcluster_identifiers"},
 		"DbinstanceIdentifiers": ubx.FieldSpec{WireName: "dbinstance_identifiers"},
-		"DbproxyName": ubx.FieldSpec{WireName: "dbproxy_name"},
-		"TargetGroupName": ubx.FieldSpec{WireName: "target_group_name"},
+		"DbproxyName":           ubx.FieldSpec{WireName: "dbproxy_name"},
+		"TargetGroupName":       ubx.FieldSpec{WireName: "target_group_name"},
 	},
 }

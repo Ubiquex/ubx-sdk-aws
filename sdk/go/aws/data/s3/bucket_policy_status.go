@@ -8,12 +8,12 @@ type BucketPolicyStatus_PolicyStatus struct {
 }
 
 type BucketPolicyStatusConfig struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 }
 
 type BucketPolicyStatusAttrs struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 	// <p>The container element for a bucket's policy status.</p>
 	PolicyStatus any
@@ -22,7 +22,7 @@ type BucketPolicyStatusAttrs struct {
 var BucketPolicyStatus = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_policy_status",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
 	},
 }

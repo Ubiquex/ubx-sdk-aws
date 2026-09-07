@@ -8,35 +8,35 @@ type ApplicationSignalsServiceLevelObjectiveExclusionWindows_ExclusionWindows_Re
 }
 
 type ApplicationSignalsServiceLevelObjectiveExclusionWindows_ExclusionWindows_Window struct {
-	Duration any
+	Duration     any
 	DurationUnit any
 }
 
 type ApplicationSignalsServiceLevelObjectiveExclusionWindows_ExclusionWindows struct {
-	Reason any
+	Reason         any
 	RecurrenceRule any
-	StartTime any
-	Window any
+	StartTime      any
+	Window         any
 }
 
 type ApplicationSignalsServiceLevelObjectiveExclusionWindowsConfig struct {
-	Id any
+	Id         any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApplicationSignalsServiceLevelObjectiveExclusionWindowsAttrs struct {
 	ExclusionWindows any
-	Id any
-	MaxResults any
-	NextToken any
+	Id               any
+	MaxResults       any
+	NextToken        any
 }
 
 var ApplicationSignalsServiceLevelObjectiveExclusionWindows = ubx.DataSourceBinding{
 	WireType: "aws_application_signals_service_level_objective_exclusion_windows",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":         ubx.FieldSpec{WireName: "id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

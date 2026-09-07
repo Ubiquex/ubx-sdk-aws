@@ -6,7 +6,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type LicenseManagerUserSubscriptionsUserAssociations_Filters struct {
 	Attribute any
 	Operation any
-	Value any
+	Value     any
 }
 
 type LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDirectoryIdentityProvider_ActiveDirectorySettings_DomainCredentialsProvider_SecretsManagerCredentialsProvider struct {
@@ -23,16 +23,16 @@ type LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDire
 
 type LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDirectoryIdentityProvider_ActiveDirectorySettings struct {
 	DomainCredentialsProvider any
-	DomainIpv4List any
-	DomainIpv6List any
-	DomainName any
-	DomainNetworkSettings any
+	DomainIpv4List            any
+	DomainIpv6List            any
+	DomainName                any
+	DomainNetworkSettings     any
 }
 
 type LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDirectoryIdentityProvider struct {
 	ActiveDirectorySettings any
-	ActiveDirectoryType any
-	DirectoryId any
+	ActiveDirectoryType     any
+	DirectoryId             any
 	IsSharedActiveDirectory any
 }
 
@@ -41,91 +41,91 @@ type LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider struct {
 }
 
 type LicenseManagerUserSubscriptionsUserAssociations_InstanceUserSummaries struct {
-	AssociationDate any
+	AssociationDate    any
 	DisassociationDate any
-	Domain any
-	IdentityProvider any
-	InstanceId any
-	InstanceUserArn any
-	Status any
-	StatusMessage any
-	Username any
+	Domain             any
+	IdentityProvider   any
+	InstanceId         any
+	InstanceUserArn    any
+	Status             any
+	StatusMessage      any
+	Username           any
 }
 
 var LicenseManagerUserSubscriptionsUserAssociations_FiltersFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Operation": ubx.FieldSpec{WireName: "operation"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 var LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDirectoryIdentityProvider_ActiveDirectorySettings_DomainCredentialsProvider_SecretsManagerCredentialsProviderFields = ubx.FieldMap{
-		"SecretId": ubx.FieldSpec{WireName: "secret_id"},
-	}
+	"SecretId": ubx.FieldSpec{WireName: "secret_id"},
+}
 
 var LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDirectoryIdentityProvider_ActiveDirectorySettings_DomainCredentialsProviderFields = ubx.FieldMap{
-		"SecretsManagerCredentialsProvider": ubx.FieldSpec{
-			WireName: "secrets_manager_credentials_provider",
-			Kind: "object",
-			Fields: LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDirectoryIdentityProvider_ActiveDirectorySettings_DomainCredentialsProvider_SecretsManagerCredentialsProviderFields,
-		},
-	}
+	"SecretsManagerCredentialsProvider": ubx.FieldSpec{
+		WireName: "secrets_manager_credentials_provider",
+		Kind:     "object",
+		Fields:   LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDirectoryIdentityProvider_ActiveDirectorySettings_DomainCredentialsProvider_SecretsManagerCredentialsProviderFields,
+	},
+}
 
 var LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDirectoryIdentityProvider_ActiveDirectorySettings_DomainNetworkSettingsFields = ubx.FieldMap{
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"Subnets": ubx.FieldSpec{WireName: "subnets"},
+}
 
 var LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDirectoryIdentityProvider_ActiveDirectorySettingsFields = ubx.FieldMap{
-		"DomainCredentialsProvider": ubx.FieldSpec{
-			WireName: "domain_credentials_provider",
-			Kind: "object",
-			Fields: LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDirectoryIdentityProvider_ActiveDirectorySettings_DomainCredentialsProviderFields,
-		},
-		"DomainIpv4List": ubx.FieldSpec{WireName: "domain_ipv4_list"},
-		"DomainIpv6List": ubx.FieldSpec{WireName: "domain_ipv6_list"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"DomainNetworkSettings": ubx.FieldSpec{
-			WireName: "domain_network_settings",
-			Kind: "object",
-			Fields: LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDirectoryIdentityProvider_ActiveDirectorySettings_DomainNetworkSettingsFields,
-		},
-	}
+	"DomainCredentialsProvider": ubx.FieldSpec{
+		WireName: "domain_credentials_provider",
+		Kind:     "object",
+		Fields:   LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDirectoryIdentityProvider_ActiveDirectorySettings_DomainCredentialsProviderFields,
+	},
+	"DomainIpv4List": ubx.FieldSpec{WireName: "domain_ipv4_list"},
+	"DomainIpv6List": ubx.FieldSpec{WireName: "domain_ipv6_list"},
+	"DomainName":     ubx.FieldSpec{WireName: "domain_name"},
+	"DomainNetworkSettings": ubx.FieldSpec{
+		WireName: "domain_network_settings",
+		Kind:     "object",
+		Fields:   LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDirectoryIdentityProvider_ActiveDirectorySettings_DomainNetworkSettingsFields,
+	},
+}
 
 var LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDirectoryIdentityProviderFields = ubx.FieldMap{
-		"ActiveDirectorySettings": ubx.FieldSpec{
-			WireName: "active_directory_settings",
-			Kind: "object",
-			Fields: LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDirectoryIdentityProvider_ActiveDirectorySettingsFields,
-		},
-		"ActiveDirectoryType": ubx.FieldSpec{WireName: "active_directory_type"},
-		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
-		"IsSharedActiveDirectory": ubx.FieldSpec{WireName: "is_shared_active_directory"},
-	}
+	"ActiveDirectorySettings": ubx.FieldSpec{
+		WireName: "active_directory_settings",
+		Kind:     "object",
+		Fields:   LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDirectoryIdentityProvider_ActiveDirectorySettingsFields,
+	},
+	"ActiveDirectoryType":     ubx.FieldSpec{WireName: "active_directory_type"},
+	"DirectoryId":             ubx.FieldSpec{WireName: "directory_id"},
+	"IsSharedActiveDirectory": ubx.FieldSpec{WireName: "is_shared_active_directory"},
+}
 
 var LicenseManagerUserSubscriptionsUserAssociations_IdentityProviderFields = ubx.FieldMap{
-		"ActiveDirectoryIdentityProvider": ubx.FieldSpec{
-			WireName: "active_directory_identity_provider",
-			Kind: "object",
-			Fields: LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDirectoryIdentityProviderFields,
-		},
-	}
+	"ActiveDirectoryIdentityProvider": ubx.FieldSpec{
+		WireName: "active_directory_identity_provider",
+		Kind:     "object",
+		Fields:   LicenseManagerUserSubscriptionsUserAssociations_IdentityProvider_ActiveDirectoryIdentityProviderFields,
+	},
+}
 
 type LicenseManagerUserSubscriptionsUserAssociationsConfig struct {
 	Filters any
 	// <p>Refers to an identity provider.</p>
 	IdentityProvider any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId       any
+	MaxResults       any
+	NextToken        any
 }
 
 type LicenseManagerUserSubscriptionsUserAssociationsAttrs struct {
 	Filters any
 	// <p>Refers to an identity provider.</p>
-	IdentityProvider any
-	InstanceId any
+	IdentityProvider      any
+	InstanceId            any
 	InstanceUserSummaries any
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 }
 
 var LicenseManagerUserSubscriptionsUserAssociations = ubx.DataSourceBinding{
@@ -133,16 +133,16 @@ var LicenseManagerUserSubscriptionsUserAssociations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: LicenseManagerUserSubscriptionsUserAssociations_FiltersFields,
+			Kind:     "list",
+			Fields:   LicenseManagerUserSubscriptionsUserAssociations_FiltersFields,
 		},
 		"IdentityProvider": ubx.FieldSpec{
 			WireName: "identity_provider",
-			Kind: "object",
-			Fields: LicenseManagerUserSubscriptionsUserAssociations_IdentityProviderFields,
+			Kind:     "object",
+			Fields:   LicenseManagerUserSubscriptionsUserAssociations_IdentityProviderFields,
 		},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ThingConnectivityDataConfig struct {
 	IncludeSocketInformation any
-	ThingName any
+	ThingName                any
 }
 
 type ThingConnectivityDataAttrs struct {
-	CleanSession any
-	ClientId any
-	Connected any
-	DisconnectReason any
+	CleanSession             any
+	ClientId                 any
+	Connected                any
+	DisconnectReason         any
 	IncludeSocketInformation any
-	KeepAliveDuration any
-	SessionExpiry any
-	SourceIp any
-	SourcePort any
-	TargetIp any
-	TargetPort any
-	ThingName any
-	Timestamp any
-	VpcEndpointId any
+	KeepAliveDuration        any
+	SessionExpiry            any
+	SourceIp                 any
+	SourcePort               any
+	TargetIp                 any
+	TargetPort               any
+	ThingName                any
+	Timestamp                any
+	VpcEndpointId            any
 }
 
 var ThingConnectivityData = ubx.DataSourceBinding{
 	WireType: "aws_iot_thing_connectivity_data",
 	Fields: ubx.FieldMap{
 		"IncludeSocketInformation": ubx.FieldSpec{WireName: "include_socket_information"},
-		"ThingName": ubx.FieldSpec{WireName: "thing_name"},
+		"ThingName":                ubx.FieldSpec{WireName: "thing_name"},
 	},
 }

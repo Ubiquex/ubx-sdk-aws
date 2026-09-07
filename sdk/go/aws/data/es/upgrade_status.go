@@ -10,8 +10,8 @@ type UpgradeStatusConfig struct {
 
 type UpgradeStatusAttrs struct {
 	// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-	DomainName any
-	StepStatus any
+	DomainName  any
+	StepStatus  any
 	UpgradeName any
 	UpgradeStep any
 }

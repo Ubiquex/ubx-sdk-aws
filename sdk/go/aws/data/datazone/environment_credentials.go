@@ -4,23 +4,23 @@ package datazone
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EnvironmentCredentialsConfig struct {
-	DomainIdentifier any
+	DomainIdentifier      any
 	EnvironmentIdentifier any
 }
 
 type EnvironmentCredentialsAttrs struct {
-	AccessKeyId any
-	DomainIdentifier any
+	AccessKeyId           any
+	DomainIdentifier      any
 	EnvironmentIdentifier any
-	Expiration any
-	SecretAccessKey any
-	SessionToken any
+	Expiration            any
+	SecretAccessKey       any
+	SessionToken          any
 }
 
 var EnvironmentCredentials = ubx.DataSourceBinding{
 	WireType: "aws_datazone_environment_credentials",
 	Fields: ubx.FieldMap{
-		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
+		"DomainIdentifier":      ubx.FieldSpec{WireName: "domain_identifier"},
 		"EnvironmentIdentifier": ubx.FieldSpec{WireName: "environment_identifier"},
 	},
 }

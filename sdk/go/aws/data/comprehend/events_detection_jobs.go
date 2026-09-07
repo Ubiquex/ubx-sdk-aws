@@ -5,63 +5,63 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EventsDetectionJobs_EventsDetectionJobPropertiesList_InputDataConfig_DocumentReaderConfig struct {
 	DocumentReadAction any
-	DocumentReadMode any
-	FeatureTypes any
+	DocumentReadMode   any
+	FeatureTypes       any
 }
 
 type EventsDetectionJobs_EventsDetectionJobPropertiesList_InputDataConfig struct {
 	DocumentReaderConfig any
-	InputFormat any
-	S3Uri any
+	InputFormat          any
+	S3Uri                any
 }
 
 type EventsDetectionJobs_EventsDetectionJobPropertiesList_OutputDataConfig struct {
 	KmsKeyId any
-	S3Uri any
+	S3Uri    any
 }
 
 type EventsDetectionJobs_EventsDetectionJobPropertiesList struct {
 	DataAccessRoleArn any
-	EndTime any
-	InputDataConfig any
-	JobArn any
-	JobId any
-	JobName any
-	JobStatus any
-	LanguageCode any
-	Message any
-	OutputDataConfig any
-	SubmitTime any
-	TargetEventTypes any
+	EndTime           any
+	InputDataConfig   any
+	JobArn            any
+	JobId             any
+	JobName           any
+	JobStatus         any
+	LanguageCode      any
+	Message           any
+	OutputDataConfig  any
+	SubmitTime        any
+	TargetEventTypes  any
 }
 
 type EventsDetectionJobs_Filter struct {
-	JobName any
-	JobStatus any
-	SubmitTimeAfter any
+	JobName          any
+	JobStatus        any
+	SubmitTimeAfter  any
 	SubmitTimeBefore any
 }
 
 var EventsDetectionJobs_FilterFields = ubx.FieldMap{
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"JobStatus": ubx.FieldSpec{WireName: "job_status"},
-		"SubmitTimeAfter": ubx.FieldSpec{WireName: "submit_time_after"},
-		"SubmitTimeBefore": ubx.FieldSpec{WireName: "submit_time_before"},
-	}
+	"JobName":          ubx.FieldSpec{WireName: "job_name"},
+	"JobStatus":        ubx.FieldSpec{WireName: "job_status"},
+	"SubmitTimeAfter":  ubx.FieldSpec{WireName: "submit_time_after"},
+	"SubmitTimeBefore": ubx.FieldSpec{WireName: "submit_time_before"},
+}
 
 type EventsDetectionJobsConfig struct {
 	// <p>Provides information for filtering a list of event detection jobs.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EventsDetectionJobsAttrs struct {
 	EventsDetectionJobPropertiesList any
 	// <p>Provides information for filtering a list of event detection jobs.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var EventsDetectionJobs = ubx.DataSourceBinding{
@@ -69,10 +69,10 @@ var EventsDetectionJobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: EventsDetectionJobs_FilterFields,
+			Kind:     "object",
+			Fields:   EventsDetectionJobs_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

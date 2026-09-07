@@ -4,7 +4,7 @@ package dynamodb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Endpoints_Endpoints struct {
-	Address any
+	Address              any
 	CachePeriodInMinutes any
 }
 
@@ -17,6 +17,5 @@ type EndpointsAttrs struct {
 
 var Endpoints = ubx.DataSourceBinding{
 	WireType: "aws_dynamodb_endpoints",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

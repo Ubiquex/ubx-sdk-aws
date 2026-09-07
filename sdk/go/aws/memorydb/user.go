@@ -17,14 +17,14 @@ type User_Tags struct {
 }
 
 var User_AuthenticationModeFields = ubx.FieldMap{
-		"Passwords": ubx.FieldSpec{WireName: "passwords"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Passwords": ubx.FieldSpec{WireName: "passwords"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 var User_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type UserConfig struct {
 	// Access permissions string used for this user account.
@@ -58,13 +58,13 @@ var User = ubx.ResourceBinding{
 		"AccessString": ubx.FieldSpec{WireName: "access_string"},
 		"AuthenticationMode": ubx.FieldSpec{
 			WireName: "authentication_mode",
-			Kind: "object",
-			Fields: User_AuthenticationModeFields,
+			Kind:     "object",
+			Fields:   User_AuthenticationModeFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: User_TagsFields,
+			Kind:     "list",
+			Fields:   User_TagsFields,
 		},
 		"UserName": ubx.FieldSpec{WireName: "user_name"},
 	},

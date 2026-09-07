@@ -179,7 +179,7 @@ type DeliveryStream_DatabaseSourceConfiguration struct {
 	DatabaseSourceVpcconfiguration any
 	// This required field lists the names of the databases from which the Kinesis Firehose delivery stream ingests data when configured with a database source. (AI-inferred)
 	Databases any
-	Digest any
+	Digest    any
 	// Specifies the connection endpoint (hostname or IP address) of the source database that Kinesis Data Firehose uses to ingest data, typically the DNS endpoint of an RDS or Aurora database instance. (AI-inferred)
 	Endpoint any
 	// The TCP port number on the source database server that this Firehose delivery stream connects to when ingesting data from the database source. (AI-inferred)
@@ -192,7 +192,7 @@ type DeliveryStream_DatabaseSourceConfiguration struct {
 	Sslmode any
 	// Specifies the list of column names (surrogate keys) in the source database table that Firehose uses to uniquely identify records for change data capture (CDC) operations such as updates and deletes. (AI-inferred)
 	SurrogateKeys any
-	Tables any
+	Tables        any
 	// The database engine type (e.g., MySQL or PostgreSQL) that identifies the kind of database from which Kinesis Data Firehose pulls the source data. (AI-inferred)
 	Type any
 }
@@ -633,771 +633,771 @@ type DeliveryStream_SplunkDestinationConfiguration struct {
 
 type DeliveryStream_Tags struct {
 	// The key of a user-defined tag assigned to the Kinesis Data Firehose delivery stream, used for organizing and identifying the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields = ubx.FieldMap{
-		"IntervalInSeconds": ubx.FieldSpec{WireName: "interval_in_seconds"},
-		"SizeInMbs": ubx.FieldSpec{WireName: "size_in_mbs"},
-	}
+	"IntervalInSeconds": ubx.FieldSpec{WireName: "interval_in_seconds"},
+	"SizeInMbs":         ubx.FieldSpec{WireName: "size_in_mbs"},
+}
 
 var DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-		"LogStreamName": ubx.FieldSpec{WireName: "log_stream_name"},
-	}
+	"Enabled":       ubx.FieldSpec{WireName: "enabled"},
+	"LogGroupName":  ubx.FieldSpec{WireName: "log_group_name"},
+	"LogStreamName": ubx.FieldSpec{WireName: "log_stream_name"},
+}
 
 var DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfiguration_Processors_ParametersFields = ubx.FieldMap{
-		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
-		"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
-	}
+	"ParameterName":  ubx.FieldSpec{WireName: "parameter_name"},
+	"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
+}
 
 var DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfiguration_ProcessorsFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "list",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfiguration_Processors_ParametersFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "list",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfiguration_Processors_ParametersFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Processors": ubx.FieldSpec{
-			WireName: "processors",
-			Kind: "list",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfiguration_ProcessorsFields,
-		},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Processors": ubx.FieldSpec{
+		WireName: "processors",
+		Kind:     "list",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfiguration_ProcessorsFields,
+	},
+}
 
 var DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields = ubx.FieldMap{
-		"DurationInSeconds": ubx.FieldSpec{WireName: "duration_in_seconds"},
-	}
+	"DurationInSeconds": ubx.FieldSpec{WireName: "duration_in_seconds"},
+}
 
 var DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3Configuration_EncryptionConfiguration_KmsencryptionConfigFields = ubx.FieldMap{
-		"AwskmskeyArn": ubx.FieldSpec{WireName: "awskmskey_arn"},
-	}
+	"AwskmskeyArn": ubx.FieldSpec{WireName: "awskmskey_arn"},
+}
 
 var DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3Configuration_EncryptionConfigurationFields = ubx.FieldMap{
-		"KmsencryptionConfig": ubx.FieldSpec{
-			WireName: "kmsencryption_config",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3Configuration_EncryptionConfiguration_KmsencryptionConfigFields,
-		},
-		"NoEncryptionConfig": ubx.FieldSpec{WireName: "no_encryption_config"},
-	}
+	"KmsencryptionConfig": ubx.FieldSpec{
+		WireName: "kmsencryption_config",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3Configuration_EncryptionConfiguration_KmsencryptionConfigFields,
+	},
+	"NoEncryptionConfig": ubx.FieldSpec{WireName: "no_encryption_config"},
+}
 
 var DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields = ubx.FieldMap{
-		"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
-		"BufferingHints": ubx.FieldSpec{
-			WireName: "buffering_hints",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields,
-		},
-		"CloudWatchLoggingOptions": ubx.FieldSpec{
-			WireName: "cloud_watch_logging_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
-		},
-		"CompressionFormat": ubx.FieldSpec{WireName: "compression_format"},
-		"EncryptionConfiguration": ubx.FieldSpec{
-			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3Configuration_EncryptionConfigurationFields,
-		},
-		"ErrorOutputPrefix": ubx.FieldSpec{WireName: "error_output_prefix"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
+	"BufferingHints": ubx.FieldSpec{
+		WireName: "buffering_hints",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields,
+	},
+	"CloudWatchLoggingOptions": ubx.FieldSpec{
+		WireName: "cloud_watch_logging_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
+	},
+	"CompressionFormat": ubx.FieldSpec{WireName: "compression_format"},
+	"EncryptionConfiguration": ubx.FieldSpec{
+		WireName: "encryption_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3Configuration_EncryptionConfigurationFields,
+	},
+	"ErrorOutputPrefix": ubx.FieldSpec{WireName: "error_output_prefix"},
+	"Prefix":            ubx.FieldSpec{WireName: "prefix"},
+	"RoleArn":           ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_VpcConfigurationFields = ubx.FieldMap{
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"RoleArn":          ubx.FieldSpec{WireName: "role_arn"},
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 var DeliveryStream_AmazonOpenSearchServerlessDestinationConfigurationFields = ubx.FieldMap{
-		"BufferingHints": ubx.FieldSpec{
-			WireName: "buffering_hints",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields,
-		},
-		"CloudWatchLoggingOptions": ubx.FieldSpec{
-			WireName: "cloud_watch_logging_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
-		},
-		"CollectionEndpoint": ubx.FieldSpec{WireName: "collection_endpoint"},
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
-		"ProcessingConfiguration": ubx.FieldSpec{
-			WireName: "processing_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields,
-		},
-		"RetryOptions": ubx.FieldSpec{
-			WireName: "retry_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"S3BackupMode": ubx.FieldSpec{WireName: "s3_backup_mode"},
-		"S3Configuration": ubx.FieldSpec{
-			WireName: "s3_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
-		},
-		"VpcConfiguration": ubx.FieldSpec{
-			WireName: "vpc_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_VpcConfigurationFields,
-		},
-	}
+	"BufferingHints": ubx.FieldSpec{
+		WireName: "buffering_hints",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields,
+	},
+	"CloudWatchLoggingOptions": ubx.FieldSpec{
+		WireName: "cloud_watch_logging_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
+	},
+	"CollectionEndpoint": ubx.FieldSpec{WireName: "collection_endpoint"},
+	"IndexName":          ubx.FieldSpec{WireName: "index_name"},
+	"ProcessingConfiguration": ubx.FieldSpec{
+		WireName: "processing_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields,
+	},
+	"RetryOptions": ubx.FieldSpec{
+		WireName: "retry_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields,
+	},
+	"RoleArn":      ubx.FieldSpec{WireName: "role_arn"},
+	"S3BackupMode": ubx.FieldSpec{WireName: "s3_backup_mode"},
+	"S3Configuration": ubx.FieldSpec{
+		WireName: "s3_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
+	},
+	"VpcConfiguration": ubx.FieldSpec{
+		WireName: "vpc_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_VpcConfigurationFields,
+	},
+}
 
 var DeliveryStream_AmazonopensearchserviceDestinationConfiguration_DocumentIdOptionsFields = ubx.FieldMap{
-		"DefaultDocumentIdFormat": ubx.FieldSpec{WireName: "default_document_id_format"},
-	}
+	"DefaultDocumentIdFormat": ubx.FieldSpec{WireName: "default_document_id_format"},
+}
 
 var DeliveryStream_AmazonopensearchserviceDestinationConfigurationFields = ubx.FieldMap{
-		"BufferingHints": ubx.FieldSpec{
-			WireName: "buffering_hints",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields,
-		},
-		"CloudWatchLoggingOptions": ubx.FieldSpec{
-			WireName: "cloud_watch_logging_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
-		},
-		"ClusterEndpoint": ubx.FieldSpec{WireName: "cluster_endpoint"},
-		"DocumentIdOptions": ubx.FieldSpec{
-			WireName: "document_id_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonopensearchserviceDestinationConfiguration_DocumentIdOptionsFields,
-		},
-		"DomainArn": ubx.FieldSpec{WireName: "domain_arn"},
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
-		"IndexRotationPeriod": ubx.FieldSpec{WireName: "index_rotation_period"},
-		"ProcessingConfiguration": ubx.FieldSpec{
-			WireName: "processing_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields,
-		},
-		"RetryOptions": ubx.FieldSpec{
-			WireName: "retry_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"S3BackupMode": ubx.FieldSpec{WireName: "s3_backup_mode"},
-		"S3Configuration": ubx.FieldSpec{
-			WireName: "s3_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
-		},
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
-		"VpcConfiguration": ubx.FieldSpec{
-			WireName: "vpc_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_VpcConfigurationFields,
-		},
-	}
+	"BufferingHints": ubx.FieldSpec{
+		WireName: "buffering_hints",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields,
+	},
+	"CloudWatchLoggingOptions": ubx.FieldSpec{
+		WireName: "cloud_watch_logging_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
+	},
+	"ClusterEndpoint": ubx.FieldSpec{WireName: "cluster_endpoint"},
+	"DocumentIdOptions": ubx.FieldSpec{
+		WireName: "document_id_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonopensearchserviceDestinationConfiguration_DocumentIdOptionsFields,
+	},
+	"DomainArn":           ubx.FieldSpec{WireName: "domain_arn"},
+	"IndexName":           ubx.FieldSpec{WireName: "index_name"},
+	"IndexRotationPeriod": ubx.FieldSpec{WireName: "index_rotation_period"},
+	"ProcessingConfiguration": ubx.FieldSpec{
+		WireName: "processing_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields,
+	},
+	"RetryOptions": ubx.FieldSpec{
+		WireName: "retry_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields,
+	},
+	"RoleArn":      ubx.FieldSpec{WireName: "role_arn"},
+	"S3BackupMode": ubx.FieldSpec{WireName: "s3_backup_mode"},
+	"S3Configuration": ubx.FieldSpec{
+		WireName: "s3_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
+	},
+	"TypeName": ubx.FieldSpec{WireName: "type_name"},
+	"VpcConfiguration": ubx.FieldSpec{
+		WireName: "vpc_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_VpcConfigurationFields,
+	},
+}
 
 var DeliveryStream_DatabaseSourceConfiguration_ColumnsFields = ubx.FieldMap{
-		"Exclude": ubx.FieldSpec{WireName: "exclude"},
-		"Include": ubx.FieldSpec{WireName: "include"},
-	}
+	"Exclude": ubx.FieldSpec{WireName: "exclude"},
+	"Include": ubx.FieldSpec{WireName: "include"},
+}
 
 var DeliveryStream_DatabaseSourceConfiguration_DatabaseSourceAuthenticationConfiguration_SecretsManagerConfigurationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"Enabled":   ubx.FieldSpec{WireName: "enabled"},
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+	"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var DeliveryStream_DatabaseSourceConfiguration_DatabaseSourceAuthenticationConfigurationFields = ubx.FieldMap{
-		"SecretsManagerConfiguration": ubx.FieldSpec{
-			WireName: "secrets_manager_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_DatabaseSourceConfiguration_DatabaseSourceAuthenticationConfiguration_SecretsManagerConfigurationFields,
-		},
-	}
+	"SecretsManagerConfiguration": ubx.FieldSpec{
+		WireName: "secrets_manager_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_DatabaseSourceConfiguration_DatabaseSourceAuthenticationConfiguration_SecretsManagerConfigurationFields,
+	},
+}
 
 var DeliveryStream_DatabaseSourceConfiguration_DatabaseSourceVpcconfigurationFields = ubx.FieldMap{
-		"VpcEndpointServiceName": ubx.FieldSpec{WireName: "vpc_endpoint_service_name"},
-	}
+	"VpcEndpointServiceName": ubx.FieldSpec{WireName: "vpc_endpoint_service_name"},
+}
 
 var DeliveryStream_DatabaseSourceConfigurationFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "object",
-			Fields: DeliveryStream_DatabaseSourceConfiguration_ColumnsFields,
-		},
-		"DatabaseSourceAuthenticationConfiguration": ubx.FieldSpec{
-			WireName: "database_source_authentication_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_DatabaseSourceConfiguration_DatabaseSourceAuthenticationConfigurationFields,
-		},
-		"DatabaseSourceVpcconfiguration": ubx.FieldSpec{
-			WireName: "database_source_vpcconfiguration",
-			Kind: "object",
-			Fields: DeliveryStream_DatabaseSourceConfiguration_DatabaseSourceVpcconfigurationFields,
-		},
-		"Databases": ubx.FieldSpec{
-			WireName: "databases",
-			Kind: "object",
-			Fields: DeliveryStream_DatabaseSourceConfiguration_ColumnsFields,
-		},
-		"Digest": ubx.FieldSpec{WireName: "digest"},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"PublicCertificate": ubx.FieldSpec{WireName: "public_certificate"},
-		"SnapshotWatermarkTable": ubx.FieldSpec{WireName: "snapshot_watermark_table"},
-		"Sslmode": ubx.FieldSpec{WireName: "sslmode"},
-		"SurrogateKeys": ubx.FieldSpec{WireName: "surrogate_keys"},
-		"Tables": ubx.FieldSpec{
-			WireName: "tables",
-			Kind: "object",
-			Fields: DeliveryStream_DatabaseSourceConfiguration_ColumnsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "object",
+		Fields:   DeliveryStream_DatabaseSourceConfiguration_ColumnsFields,
+	},
+	"DatabaseSourceAuthenticationConfiguration": ubx.FieldSpec{
+		WireName: "database_source_authentication_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_DatabaseSourceConfiguration_DatabaseSourceAuthenticationConfigurationFields,
+	},
+	"DatabaseSourceVpcconfiguration": ubx.FieldSpec{
+		WireName: "database_source_vpcconfiguration",
+		Kind:     "object",
+		Fields:   DeliveryStream_DatabaseSourceConfiguration_DatabaseSourceVpcconfigurationFields,
+	},
+	"Databases": ubx.FieldSpec{
+		WireName: "databases",
+		Kind:     "object",
+		Fields:   DeliveryStream_DatabaseSourceConfiguration_ColumnsFields,
+	},
+	"Digest":                 ubx.FieldSpec{WireName: "digest"},
+	"Endpoint":               ubx.FieldSpec{WireName: "endpoint"},
+	"Port":                   ubx.FieldSpec{WireName: "port"},
+	"PublicCertificate":      ubx.FieldSpec{WireName: "public_certificate"},
+	"SnapshotWatermarkTable": ubx.FieldSpec{WireName: "snapshot_watermark_table"},
+	"Sslmode":                ubx.FieldSpec{WireName: "sslmode"},
+	"SurrogateKeys":          ubx.FieldSpec{WireName: "surrogate_keys"},
+	"Tables": ubx.FieldSpec{
+		WireName: "tables",
+		Kind:     "object",
+		Fields:   DeliveryStream_DatabaseSourceConfiguration_ColumnsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var DeliveryStream_DeliveryStreamEncryptionConfigurationInputFields = ubx.FieldMap{
-		"KeyArn": ubx.FieldSpec{WireName: "key_arn"},
-		"KeyType": ubx.FieldSpec{WireName: "key_type"},
-	}
+	"KeyArn":  ubx.FieldSpec{WireName: "key_arn"},
+	"KeyType": ubx.FieldSpec{WireName: "key_type"},
+}
 
 var DeliveryStream_DirectPutSourceConfigurationFields = ubx.FieldMap{
-		"ThroughputHintInMbs": ubx.FieldSpec{WireName: "throughput_hint_in_mbs"},
-	}
+	"ThroughputHintInMbs": ubx.FieldSpec{WireName: "throughput_hint_in_mbs"},
+}
 
 var DeliveryStream_ElasticsearchDestinationConfigurationFields = ubx.FieldMap{
-		"BufferingHints": ubx.FieldSpec{
-			WireName: "buffering_hints",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields,
-		},
-		"CloudWatchLoggingOptions": ubx.FieldSpec{
-			WireName: "cloud_watch_logging_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
-		},
-		"ClusterEndpoint": ubx.FieldSpec{WireName: "cluster_endpoint"},
-		"DocumentIdOptions": ubx.FieldSpec{
-			WireName: "document_id_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonopensearchserviceDestinationConfiguration_DocumentIdOptionsFields,
-		},
-		"DomainArn": ubx.FieldSpec{WireName: "domain_arn"},
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
-		"IndexRotationPeriod": ubx.FieldSpec{WireName: "index_rotation_period"},
-		"ProcessingConfiguration": ubx.FieldSpec{
-			WireName: "processing_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields,
-		},
-		"RetryOptions": ubx.FieldSpec{
-			WireName: "retry_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"S3BackupMode": ubx.FieldSpec{WireName: "s3_backup_mode"},
-		"S3Configuration": ubx.FieldSpec{
-			WireName: "s3_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
-		},
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
-		"VpcConfiguration": ubx.FieldSpec{
-			WireName: "vpc_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_VpcConfigurationFields,
-		},
-	}
+	"BufferingHints": ubx.FieldSpec{
+		WireName: "buffering_hints",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields,
+	},
+	"CloudWatchLoggingOptions": ubx.FieldSpec{
+		WireName: "cloud_watch_logging_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
+	},
+	"ClusterEndpoint": ubx.FieldSpec{WireName: "cluster_endpoint"},
+	"DocumentIdOptions": ubx.FieldSpec{
+		WireName: "document_id_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonopensearchserviceDestinationConfiguration_DocumentIdOptionsFields,
+	},
+	"DomainArn":           ubx.FieldSpec{WireName: "domain_arn"},
+	"IndexName":           ubx.FieldSpec{WireName: "index_name"},
+	"IndexRotationPeriod": ubx.FieldSpec{WireName: "index_rotation_period"},
+	"ProcessingConfiguration": ubx.FieldSpec{
+		WireName: "processing_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields,
+	},
+	"RetryOptions": ubx.FieldSpec{
+		WireName: "retry_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields,
+	},
+	"RoleArn":      ubx.FieldSpec{WireName: "role_arn"},
+	"S3BackupMode": ubx.FieldSpec{WireName: "s3_backup_mode"},
+	"S3Configuration": ubx.FieldSpec{
+		WireName: "s3_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
+	},
+	"TypeName": ubx.FieldSpec{WireName: "type_name"},
+	"VpcConfiguration": ubx.FieldSpec{
+		WireName: "vpc_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_VpcConfigurationFields,
+	},
+}
 
 var DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_InputFormatConfiguration_Deserializer_HiveJsonSerDeFields = ubx.FieldMap{
-		"TimestampFormats": ubx.FieldSpec{WireName: "timestamp_formats"},
-	}
+	"TimestampFormats": ubx.FieldSpec{WireName: "timestamp_formats"},
+}
 
 var DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_InputFormatConfiguration_Deserializer_OpenXjsonSerDeFields = ubx.FieldMap{
-		"CaseInsensitive": ubx.FieldSpec{WireName: "case_insensitive"},
-		"ColumnToJsonKeyMappings": ubx.FieldSpec{WireName: "column_to_json_key_mappings"},
-		"ConvertDotsInJsonKeysToUnderscores": ubx.FieldSpec{WireName: "convert_dots_in_json_keys_to_underscores"},
-	}
+	"CaseInsensitive":                    ubx.FieldSpec{WireName: "case_insensitive"},
+	"ColumnToJsonKeyMappings":            ubx.FieldSpec{WireName: "column_to_json_key_mappings"},
+	"ConvertDotsInJsonKeysToUnderscores": ubx.FieldSpec{WireName: "convert_dots_in_json_keys_to_underscores"},
+}
 
 var DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_InputFormatConfiguration_DeserializerFields = ubx.FieldMap{
-		"HiveJsonSerDe": ubx.FieldSpec{
-			WireName: "hive_json_ser_de",
-			Kind: "object",
-			Fields: DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_InputFormatConfiguration_Deserializer_HiveJsonSerDeFields,
-		},
-		"OpenXjsonSerDe": ubx.FieldSpec{
-			WireName: "open_xjson_ser_de",
-			Kind: "object",
-			Fields: DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_InputFormatConfiguration_Deserializer_OpenXjsonSerDeFields,
-		},
-	}
+	"HiveJsonSerDe": ubx.FieldSpec{
+		WireName: "hive_json_ser_de",
+		Kind:     "object",
+		Fields:   DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_InputFormatConfiguration_Deserializer_HiveJsonSerDeFields,
+	},
+	"OpenXjsonSerDe": ubx.FieldSpec{
+		WireName: "open_xjson_ser_de",
+		Kind:     "object",
+		Fields:   DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_InputFormatConfiguration_Deserializer_OpenXjsonSerDeFields,
+	},
+}
 
 var DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_InputFormatConfigurationFields = ubx.FieldMap{
-		"Deserializer": ubx.FieldSpec{
-			WireName: "deserializer",
-			Kind: "object",
-			Fields: DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_InputFormatConfiguration_DeserializerFields,
-		},
-	}
+	"Deserializer": ubx.FieldSpec{
+		WireName: "deserializer",
+		Kind:     "object",
+		Fields:   DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_InputFormatConfiguration_DeserializerFields,
+	},
+}
 
 var DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_OutputFormatConfiguration_Serializer_OrcSerDeFields = ubx.FieldMap{
-		"BlockSizeBytes": ubx.FieldSpec{WireName: "block_size_bytes"},
-		"BloomFilterColumns": ubx.FieldSpec{WireName: "bloom_filter_columns"},
-		"BloomFilterFalsePositiveProbability": ubx.FieldSpec{WireName: "bloom_filter_false_positive_probability"},
-		"Compression": ubx.FieldSpec{WireName: "compression"},
-		"DictionaryKeyThreshold": ubx.FieldSpec{WireName: "dictionary_key_threshold"},
-		"EnablePadding": ubx.FieldSpec{WireName: "enable_padding"},
-		"FormatVersion": ubx.FieldSpec{WireName: "format_version"},
-		"PaddingTolerance": ubx.FieldSpec{WireName: "padding_tolerance"},
-		"RowIndexStride": ubx.FieldSpec{WireName: "row_index_stride"},
-		"StripeSizeBytes": ubx.FieldSpec{WireName: "stripe_size_bytes"},
-	}
+	"BlockSizeBytes":                      ubx.FieldSpec{WireName: "block_size_bytes"},
+	"BloomFilterColumns":                  ubx.FieldSpec{WireName: "bloom_filter_columns"},
+	"BloomFilterFalsePositiveProbability": ubx.FieldSpec{WireName: "bloom_filter_false_positive_probability"},
+	"Compression":                         ubx.FieldSpec{WireName: "compression"},
+	"DictionaryKeyThreshold":              ubx.FieldSpec{WireName: "dictionary_key_threshold"},
+	"EnablePadding":                       ubx.FieldSpec{WireName: "enable_padding"},
+	"FormatVersion":                       ubx.FieldSpec{WireName: "format_version"},
+	"PaddingTolerance":                    ubx.FieldSpec{WireName: "padding_tolerance"},
+	"RowIndexStride":                      ubx.FieldSpec{WireName: "row_index_stride"},
+	"StripeSizeBytes":                     ubx.FieldSpec{WireName: "stripe_size_bytes"},
+}
 
 var DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_OutputFormatConfiguration_Serializer_ParquetSerDeFields = ubx.FieldMap{
-		"BlockSizeBytes": ubx.FieldSpec{WireName: "block_size_bytes"},
-		"Compression": ubx.FieldSpec{WireName: "compression"},
-		"EnableDictionaryCompression": ubx.FieldSpec{WireName: "enable_dictionary_compression"},
-		"MaxPaddingBytes": ubx.FieldSpec{WireName: "max_padding_bytes"},
-		"PageSizeBytes": ubx.FieldSpec{WireName: "page_size_bytes"},
-		"WriterVersion": ubx.FieldSpec{WireName: "writer_version"},
-	}
+	"BlockSizeBytes":              ubx.FieldSpec{WireName: "block_size_bytes"},
+	"Compression":                 ubx.FieldSpec{WireName: "compression"},
+	"EnableDictionaryCompression": ubx.FieldSpec{WireName: "enable_dictionary_compression"},
+	"MaxPaddingBytes":             ubx.FieldSpec{WireName: "max_padding_bytes"},
+	"PageSizeBytes":               ubx.FieldSpec{WireName: "page_size_bytes"},
+	"WriterVersion":               ubx.FieldSpec{WireName: "writer_version"},
+}
 
 var DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_OutputFormatConfiguration_SerializerFields = ubx.FieldMap{
-		"OrcSerDe": ubx.FieldSpec{
-			WireName: "orc_ser_de",
-			Kind: "object",
-			Fields: DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_OutputFormatConfiguration_Serializer_OrcSerDeFields,
-		},
-		"ParquetSerDe": ubx.FieldSpec{
-			WireName: "parquet_ser_de",
-			Kind: "object",
-			Fields: DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_OutputFormatConfiguration_Serializer_ParquetSerDeFields,
-		},
-	}
+	"OrcSerDe": ubx.FieldSpec{
+		WireName: "orc_ser_de",
+		Kind:     "object",
+		Fields:   DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_OutputFormatConfiguration_Serializer_OrcSerDeFields,
+	},
+	"ParquetSerDe": ubx.FieldSpec{
+		WireName: "parquet_ser_de",
+		Kind:     "object",
+		Fields:   DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_OutputFormatConfiguration_Serializer_ParquetSerDeFields,
+	},
+}
 
 var DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_OutputFormatConfigurationFields = ubx.FieldMap{
-		"Serializer": ubx.FieldSpec{
-			WireName: "serializer",
-			Kind: "object",
-			Fields: DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_OutputFormatConfiguration_SerializerFields,
-		},
-	}
+	"Serializer": ubx.FieldSpec{
+		WireName: "serializer",
+		Kind:     "object",
+		Fields:   DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_OutputFormatConfiguration_SerializerFields,
+	},
+}
 
 var DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_SchemaConfigurationFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
-	}
+	"CatalogId":    ubx.FieldSpec{WireName: "catalog_id"},
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"Region":       ubx.FieldSpec{WireName: "region"},
+	"RoleArn":      ubx.FieldSpec{WireName: "role_arn"},
+	"TableName":    ubx.FieldSpec{WireName: "table_name"},
+	"VersionId":    ubx.FieldSpec{WireName: "version_id"},
+}
 
 var DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfigurationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"InputFormatConfiguration": ubx.FieldSpec{
-			WireName: "input_format_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_InputFormatConfigurationFields,
-		},
-		"OutputFormatConfiguration": ubx.FieldSpec{
-			WireName: "output_format_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_OutputFormatConfigurationFields,
-		},
-		"SchemaConfiguration": ubx.FieldSpec{
-			WireName: "schema_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_SchemaConfigurationFields,
-		},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"InputFormatConfiguration": ubx.FieldSpec{
+		WireName: "input_format_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_InputFormatConfigurationFields,
+	},
+	"OutputFormatConfiguration": ubx.FieldSpec{
+		WireName: "output_format_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_OutputFormatConfigurationFields,
+	},
+	"SchemaConfiguration": ubx.FieldSpec{
+		WireName: "schema_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_SchemaConfigurationFields,
+	},
+}
 
 var DeliveryStream_ExtendedS3DestinationConfiguration_DynamicPartitioningConfigurationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"RetryOptions": ubx.FieldSpec{
-			WireName: "retry_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields,
-		},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"RetryOptions": ubx.FieldSpec{
+		WireName: "retry_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields,
+	},
+}
 
 var DeliveryStream_ExtendedS3DestinationConfigurationFields = ubx.FieldMap{
-		"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
-		"BufferingHints": ubx.FieldSpec{
-			WireName: "buffering_hints",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields,
-		},
-		"CloudWatchLoggingOptions": ubx.FieldSpec{
-			WireName: "cloud_watch_logging_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
-		},
-		"CompressionFormat": ubx.FieldSpec{WireName: "compression_format"},
-		"CustomTimeZone": ubx.FieldSpec{WireName: "custom_time_zone"},
-		"DataFormatConversionConfiguration": ubx.FieldSpec{
-			WireName: "data_format_conversion_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfigurationFields,
-		},
-		"DynamicPartitioningConfiguration": ubx.FieldSpec{
-			WireName: "dynamic_partitioning_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_ExtendedS3DestinationConfiguration_DynamicPartitioningConfigurationFields,
-		},
-		"EncryptionConfiguration": ubx.FieldSpec{
-			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3Configuration_EncryptionConfigurationFields,
-		},
-		"ErrorOutputPrefix": ubx.FieldSpec{WireName: "error_output_prefix"},
-		"FileExtension": ubx.FieldSpec{WireName: "file_extension"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"ProcessingConfiguration": ubx.FieldSpec{
-			WireName: "processing_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"S3BackupConfiguration": ubx.FieldSpec{
-			WireName: "s3_backup_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
-		},
-		"S3BackupMode": ubx.FieldSpec{WireName: "s3_backup_mode"},
-	}
+	"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
+	"BufferingHints": ubx.FieldSpec{
+		WireName: "buffering_hints",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields,
+	},
+	"CloudWatchLoggingOptions": ubx.FieldSpec{
+		WireName: "cloud_watch_logging_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
+	},
+	"CompressionFormat": ubx.FieldSpec{WireName: "compression_format"},
+	"CustomTimeZone":    ubx.FieldSpec{WireName: "custom_time_zone"},
+	"DataFormatConversionConfiguration": ubx.FieldSpec{
+		WireName: "data_format_conversion_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfigurationFields,
+	},
+	"DynamicPartitioningConfiguration": ubx.FieldSpec{
+		WireName: "dynamic_partitioning_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_ExtendedS3DestinationConfiguration_DynamicPartitioningConfigurationFields,
+	},
+	"EncryptionConfiguration": ubx.FieldSpec{
+		WireName: "encryption_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3Configuration_EncryptionConfigurationFields,
+	},
+	"ErrorOutputPrefix": ubx.FieldSpec{WireName: "error_output_prefix"},
+	"FileExtension":     ubx.FieldSpec{WireName: "file_extension"},
+	"Prefix":            ubx.FieldSpec{WireName: "prefix"},
+	"ProcessingConfiguration": ubx.FieldSpec{
+		WireName: "processing_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields,
+	},
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+	"S3BackupConfiguration": ubx.FieldSpec{
+		WireName: "s3_backup_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
+	},
+	"S3BackupMode": ubx.FieldSpec{WireName: "s3_backup_mode"},
+}
 
 var DeliveryStream_HttpEndpointDestinationConfiguration_EndpointConfigurationFields = ubx.FieldMap{
-		"AccessKey": ubx.FieldSpec{WireName: "access_key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"AccessKey": ubx.FieldSpec{WireName: "access_key"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Url":       ubx.FieldSpec{WireName: "url"},
+}
 
 var DeliveryStream_HttpEndpointDestinationConfiguration_RequestConfiguration_CommonAttributesFields = ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"AttributeValue": ubx.FieldSpec{WireName: "attribute_value"},
-	}
+	"AttributeName":  ubx.FieldSpec{WireName: "attribute_name"},
+	"AttributeValue": ubx.FieldSpec{WireName: "attribute_value"},
+}
 
 var DeliveryStream_HttpEndpointDestinationConfiguration_RequestConfigurationFields = ubx.FieldMap{
-		"CommonAttributes": ubx.FieldSpec{
-			WireName: "common_attributes",
-			Kind: "list",
-			Fields: DeliveryStream_HttpEndpointDestinationConfiguration_RequestConfiguration_CommonAttributesFields,
-		},
-		"ContentEncoding": ubx.FieldSpec{WireName: "content_encoding"},
-	}
+	"CommonAttributes": ubx.FieldSpec{
+		WireName: "common_attributes",
+		Kind:     "list",
+		Fields:   DeliveryStream_HttpEndpointDestinationConfiguration_RequestConfiguration_CommonAttributesFields,
+	},
+	"ContentEncoding": ubx.FieldSpec{WireName: "content_encoding"},
+}
 
 var DeliveryStream_HttpEndpointDestinationConfigurationFields = ubx.FieldMap{
-		"BufferingHints": ubx.FieldSpec{
-			WireName: "buffering_hints",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields,
-		},
-		"CloudWatchLoggingOptions": ubx.FieldSpec{
-			WireName: "cloud_watch_logging_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
-		},
-		"EndpointConfiguration": ubx.FieldSpec{
-			WireName: "endpoint_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_HttpEndpointDestinationConfiguration_EndpointConfigurationFields,
-		},
-		"ProcessingConfiguration": ubx.FieldSpec{
-			WireName: "processing_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields,
-		},
-		"RequestConfiguration": ubx.FieldSpec{
-			WireName: "request_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_HttpEndpointDestinationConfiguration_RequestConfigurationFields,
-		},
-		"RetryOptions": ubx.FieldSpec{
-			WireName: "retry_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"S3BackupMode": ubx.FieldSpec{WireName: "s3_backup_mode"},
-		"S3Configuration": ubx.FieldSpec{
-			WireName: "s3_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
-		},
-		"SecretsManagerConfiguration": ubx.FieldSpec{
-			WireName: "secrets_manager_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_DatabaseSourceConfiguration_DatabaseSourceAuthenticationConfiguration_SecretsManagerConfigurationFields,
-		},
-	}
+	"BufferingHints": ubx.FieldSpec{
+		WireName: "buffering_hints",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields,
+	},
+	"CloudWatchLoggingOptions": ubx.FieldSpec{
+		WireName: "cloud_watch_logging_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
+	},
+	"EndpointConfiguration": ubx.FieldSpec{
+		WireName: "endpoint_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_HttpEndpointDestinationConfiguration_EndpointConfigurationFields,
+	},
+	"ProcessingConfiguration": ubx.FieldSpec{
+		WireName: "processing_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields,
+	},
+	"RequestConfiguration": ubx.FieldSpec{
+		WireName: "request_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_HttpEndpointDestinationConfiguration_RequestConfigurationFields,
+	},
+	"RetryOptions": ubx.FieldSpec{
+		WireName: "retry_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields,
+	},
+	"RoleArn":      ubx.FieldSpec{WireName: "role_arn"},
+	"S3BackupMode": ubx.FieldSpec{WireName: "s3_backup_mode"},
+	"S3Configuration": ubx.FieldSpec{
+		WireName: "s3_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
+	},
+	"SecretsManagerConfiguration": ubx.FieldSpec{
+		WireName: "secrets_manager_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_DatabaseSourceConfiguration_DatabaseSourceAuthenticationConfiguration_SecretsManagerConfigurationFields,
+	},
+}
 
 var DeliveryStream_IcebergDestinationConfiguration_CatalogConfigurationFields = ubx.FieldMap{
-		"CatalogArn": ubx.FieldSpec{WireName: "catalog_arn"},
-		"WarehouseLocation": ubx.FieldSpec{WireName: "warehouse_location"},
-	}
+	"CatalogArn":        ubx.FieldSpec{WireName: "catalog_arn"},
+	"WarehouseLocation": ubx.FieldSpec{WireName: "warehouse_location"},
+}
 
 var DeliveryStream_IcebergDestinationConfiguration_DestinationTableConfigurationList_PartitionSpec_IdentityFields = ubx.FieldMap{
-		"SourceName": ubx.FieldSpec{WireName: "source_name"},
-	}
+	"SourceName": ubx.FieldSpec{WireName: "source_name"},
+}
 
 var DeliveryStream_IcebergDestinationConfiguration_DestinationTableConfigurationList_PartitionSpecFields = ubx.FieldMap{
-		"Identity": ubx.FieldSpec{
-			WireName: "identity",
-			Kind: "list",
-			Fields: DeliveryStream_IcebergDestinationConfiguration_DestinationTableConfigurationList_PartitionSpec_IdentityFields,
-		},
-	}
+	"Identity": ubx.FieldSpec{
+		WireName: "identity",
+		Kind:     "list",
+		Fields:   DeliveryStream_IcebergDestinationConfiguration_DestinationTableConfigurationList_PartitionSpec_IdentityFields,
+	},
+}
 
 var DeliveryStream_IcebergDestinationConfiguration_DestinationTableConfigurationListFields = ubx.FieldMap{
-		"DestinationDatabaseName": ubx.FieldSpec{WireName: "destination_database_name"},
-		"DestinationTableName": ubx.FieldSpec{WireName: "destination_table_name"},
-		"PartitionSpec": ubx.FieldSpec{
-			WireName: "partition_spec",
-			Kind: "object",
-			Fields: DeliveryStream_IcebergDestinationConfiguration_DestinationTableConfigurationList_PartitionSpecFields,
-		},
-		"S3ErrorOutputPrefix": ubx.FieldSpec{WireName: "s3_error_output_prefix"},
-		"UniqueKeys": ubx.FieldSpec{WireName: "unique_keys"},
-	}
+	"DestinationDatabaseName": ubx.FieldSpec{WireName: "destination_database_name"},
+	"DestinationTableName":    ubx.FieldSpec{WireName: "destination_table_name"},
+	"PartitionSpec": ubx.FieldSpec{
+		WireName: "partition_spec",
+		Kind:     "object",
+		Fields:   DeliveryStream_IcebergDestinationConfiguration_DestinationTableConfigurationList_PartitionSpecFields,
+	},
+	"S3ErrorOutputPrefix": ubx.FieldSpec{WireName: "s3_error_output_prefix"},
+	"UniqueKeys":          ubx.FieldSpec{WireName: "unique_keys"},
+}
 
 var DeliveryStream_IcebergDestinationConfiguration_SchemaEvolutionConfigurationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var DeliveryStream_IcebergDestinationConfigurationFields = ubx.FieldMap{
-		"AppendOnly": ubx.FieldSpec{WireName: "append_only"},
-		"BufferingHints": ubx.FieldSpec{
-			WireName: "buffering_hints",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields,
-		},
-		"CatalogConfiguration": ubx.FieldSpec{
-			WireName: "catalog_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_IcebergDestinationConfiguration_CatalogConfigurationFields,
-		},
-		"CloudWatchLoggingOptions": ubx.FieldSpec{
-			WireName: "cloud_watch_logging_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
-		},
-		"DestinationTableConfigurationList": ubx.FieldSpec{
-			WireName: "destination_table_configuration_list",
-			Kind: "list",
-			Fields: DeliveryStream_IcebergDestinationConfiguration_DestinationTableConfigurationListFields,
-		},
-		"ProcessingConfiguration": ubx.FieldSpec{
-			WireName: "processing_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields,
-		},
-		"RetryOptions": ubx.FieldSpec{
-			WireName: "retry_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"S3BackupMode": ubx.FieldSpec{WireName: "s3_backup_mode"},
-		"S3Configuration": ubx.FieldSpec{
-			WireName: "s3_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
-		},
-		"SchemaEvolutionConfiguration": ubx.FieldSpec{
-			WireName: "schema_evolution_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_IcebergDestinationConfiguration_SchemaEvolutionConfigurationFields,
-		},
-		"TableCreationConfiguration": ubx.FieldSpec{
-			WireName: "table_creation_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_IcebergDestinationConfiguration_SchemaEvolutionConfigurationFields,
-		},
-	}
+	"AppendOnly": ubx.FieldSpec{WireName: "append_only"},
+	"BufferingHints": ubx.FieldSpec{
+		WireName: "buffering_hints",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields,
+	},
+	"CatalogConfiguration": ubx.FieldSpec{
+		WireName: "catalog_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_IcebergDestinationConfiguration_CatalogConfigurationFields,
+	},
+	"CloudWatchLoggingOptions": ubx.FieldSpec{
+		WireName: "cloud_watch_logging_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
+	},
+	"DestinationTableConfigurationList": ubx.FieldSpec{
+		WireName: "destination_table_configuration_list",
+		Kind:     "list",
+		Fields:   DeliveryStream_IcebergDestinationConfiguration_DestinationTableConfigurationListFields,
+	},
+	"ProcessingConfiguration": ubx.FieldSpec{
+		WireName: "processing_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields,
+	},
+	"RetryOptions": ubx.FieldSpec{
+		WireName: "retry_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields,
+	},
+	"RoleArn":      ubx.FieldSpec{WireName: "role_arn"},
+	"S3BackupMode": ubx.FieldSpec{WireName: "s3_backup_mode"},
+	"S3Configuration": ubx.FieldSpec{
+		WireName: "s3_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
+	},
+	"SchemaEvolutionConfiguration": ubx.FieldSpec{
+		WireName: "schema_evolution_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_IcebergDestinationConfiguration_SchemaEvolutionConfigurationFields,
+	},
+	"TableCreationConfiguration": ubx.FieldSpec{
+		WireName: "table_creation_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_IcebergDestinationConfiguration_SchemaEvolutionConfigurationFields,
+	},
+}
 
 var DeliveryStream_KinesisStreamSourceConfigurationFields = ubx.FieldMap{
-		"KinesisStreamArn": ubx.FieldSpec{WireName: "kinesis_stream_arn"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"KinesisStreamArn": ubx.FieldSpec{WireName: "kinesis_stream_arn"},
+	"RoleArn":          ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var DeliveryStream_MsksourceConfiguration_AuthenticationConfigurationFields = ubx.FieldMap{
-		"Connectivity": ubx.FieldSpec{WireName: "connectivity"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"Connectivity": ubx.FieldSpec{WireName: "connectivity"},
+	"RoleArn":      ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var DeliveryStream_MsksourceConfigurationFields = ubx.FieldMap{
-		"AuthenticationConfiguration": ubx.FieldSpec{
-			WireName: "authentication_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_MsksourceConfiguration_AuthenticationConfigurationFields,
-		},
-		"MskclusterArn": ubx.FieldSpec{WireName: "mskcluster_arn"},
-		"ReadFromTimestamp": ubx.FieldSpec{WireName: "read_from_timestamp"},
-		"TopicName": ubx.FieldSpec{WireName: "topic_name"},
-	}
+	"AuthenticationConfiguration": ubx.FieldSpec{
+		WireName: "authentication_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_MsksourceConfiguration_AuthenticationConfigurationFields,
+	},
+	"MskclusterArn":     ubx.FieldSpec{WireName: "mskcluster_arn"},
+	"ReadFromTimestamp": ubx.FieldSpec{WireName: "read_from_timestamp"},
+	"TopicName":         ubx.FieldSpec{WireName: "topic_name"},
+}
 
 var DeliveryStream_RedshiftDestinationConfiguration_CopyCommandFields = ubx.FieldMap{
-		"CopyOptions": ubx.FieldSpec{WireName: "copy_options"},
-		"DataTableColumns": ubx.FieldSpec{WireName: "data_table_columns"},
-		"DataTableName": ubx.FieldSpec{WireName: "data_table_name"},
-	}
+	"CopyOptions":      ubx.FieldSpec{WireName: "copy_options"},
+	"DataTableColumns": ubx.FieldSpec{WireName: "data_table_columns"},
+	"DataTableName":    ubx.FieldSpec{WireName: "data_table_name"},
+}
 
 var DeliveryStream_RedshiftDestinationConfigurationFields = ubx.FieldMap{
-		"CloudWatchLoggingOptions": ubx.FieldSpec{
-			WireName: "cloud_watch_logging_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
-		},
-		"ClusterJdbcurl": ubx.FieldSpec{WireName: "cluster_jdbcurl"},
-		"CopyCommand": ubx.FieldSpec{
-			WireName: "copy_command",
-			Kind: "object",
-			Fields: DeliveryStream_RedshiftDestinationConfiguration_CopyCommandFields,
-		},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"ProcessingConfiguration": ubx.FieldSpec{
-			WireName: "processing_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields,
-		},
-		"RetryOptions": ubx.FieldSpec{
-			WireName: "retry_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"S3BackupConfiguration": ubx.FieldSpec{
-			WireName: "s3_backup_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
-		},
-		"S3BackupMode": ubx.FieldSpec{WireName: "s3_backup_mode"},
-		"S3Configuration": ubx.FieldSpec{
-			WireName: "s3_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
-		},
-		"SecretsManagerConfiguration": ubx.FieldSpec{
-			WireName: "secrets_manager_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_DatabaseSourceConfiguration_DatabaseSourceAuthenticationConfiguration_SecretsManagerConfigurationFields,
-		},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"CloudWatchLoggingOptions": ubx.FieldSpec{
+		WireName: "cloud_watch_logging_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
+	},
+	"ClusterJdbcurl": ubx.FieldSpec{WireName: "cluster_jdbcurl"},
+	"CopyCommand": ubx.FieldSpec{
+		WireName: "copy_command",
+		Kind:     "object",
+		Fields:   DeliveryStream_RedshiftDestinationConfiguration_CopyCommandFields,
+	},
+	"Password": ubx.FieldSpec{WireName: "password"},
+	"ProcessingConfiguration": ubx.FieldSpec{
+		WireName: "processing_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields,
+	},
+	"RetryOptions": ubx.FieldSpec{
+		WireName: "retry_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields,
+	},
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+	"S3BackupConfiguration": ubx.FieldSpec{
+		WireName: "s3_backup_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
+	},
+	"S3BackupMode": ubx.FieldSpec{WireName: "s3_backup_mode"},
+	"S3Configuration": ubx.FieldSpec{
+		WireName: "s3_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
+	},
+	"SecretsManagerConfiguration": ubx.FieldSpec{
+		WireName: "secrets_manager_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_DatabaseSourceConfiguration_DatabaseSourceAuthenticationConfiguration_SecretsManagerConfigurationFields,
+	},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var DeliveryStream_SnowflakeDestinationConfiguration_SnowflakeRoleConfigurationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"SnowflakeRole": ubx.FieldSpec{WireName: "snowflake_role"},
-	}
+	"Enabled":       ubx.FieldSpec{WireName: "enabled"},
+	"SnowflakeRole": ubx.FieldSpec{WireName: "snowflake_role"},
+}
 
 var DeliveryStream_SnowflakeDestinationConfiguration_SnowflakeVpcConfigurationFields = ubx.FieldMap{
-		"PrivateLinkVpceId": ubx.FieldSpec{WireName: "private_link_vpce_id"},
-	}
+	"PrivateLinkVpceId": ubx.FieldSpec{WireName: "private_link_vpce_id"},
+}
 
 var DeliveryStream_SnowflakeDestinationConfigurationFields = ubx.FieldMap{
-		"AccountUrl": ubx.FieldSpec{WireName: "account_url"},
-		"BufferingHints": ubx.FieldSpec{
-			WireName: "buffering_hints",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields,
-		},
-		"CloudWatchLoggingOptions": ubx.FieldSpec{
-			WireName: "cloud_watch_logging_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
-		},
-		"ContentColumnName": ubx.FieldSpec{WireName: "content_column_name"},
-		"DataLoadingOption": ubx.FieldSpec{WireName: "data_loading_option"},
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"KeyPassphrase": ubx.FieldSpec{WireName: "key_passphrase"},
-		"MetaDataColumnName": ubx.FieldSpec{WireName: "meta_data_column_name"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"ProcessingConfiguration": ubx.FieldSpec{
-			WireName: "processing_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields,
-		},
-		"RetryOptions": ubx.FieldSpec{
-			WireName: "retry_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"S3BackupMode": ubx.FieldSpec{WireName: "s3_backup_mode"},
-		"S3Configuration": ubx.FieldSpec{
-			WireName: "s3_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
-		},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-		"SecretsManagerConfiguration": ubx.FieldSpec{
-			WireName: "secrets_manager_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_DatabaseSourceConfiguration_DatabaseSourceAuthenticationConfiguration_SecretsManagerConfigurationFields,
-		},
-		"SnowflakeRoleConfiguration": ubx.FieldSpec{
-			WireName: "snowflake_role_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_SnowflakeDestinationConfiguration_SnowflakeRoleConfigurationFields,
-		},
-		"SnowflakeVpcConfiguration": ubx.FieldSpec{
-			WireName: "snowflake_vpc_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_SnowflakeDestinationConfiguration_SnowflakeVpcConfigurationFields,
-		},
-		"Table": ubx.FieldSpec{WireName: "table"},
-		"User": ubx.FieldSpec{WireName: "user"},
-	}
+	"AccountUrl": ubx.FieldSpec{WireName: "account_url"},
+	"BufferingHints": ubx.FieldSpec{
+		WireName: "buffering_hints",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields,
+	},
+	"CloudWatchLoggingOptions": ubx.FieldSpec{
+		WireName: "cloud_watch_logging_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
+	},
+	"ContentColumnName":  ubx.FieldSpec{WireName: "content_column_name"},
+	"DataLoadingOption":  ubx.FieldSpec{WireName: "data_loading_option"},
+	"Database":           ubx.FieldSpec{WireName: "database"},
+	"KeyPassphrase":      ubx.FieldSpec{WireName: "key_passphrase"},
+	"MetaDataColumnName": ubx.FieldSpec{WireName: "meta_data_column_name"},
+	"PrivateKey":         ubx.FieldSpec{WireName: "private_key"},
+	"ProcessingConfiguration": ubx.FieldSpec{
+		WireName: "processing_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields,
+	},
+	"RetryOptions": ubx.FieldSpec{
+		WireName: "retry_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields,
+	},
+	"RoleArn":      ubx.FieldSpec{WireName: "role_arn"},
+	"S3BackupMode": ubx.FieldSpec{WireName: "s3_backup_mode"},
+	"S3Configuration": ubx.FieldSpec{
+		WireName: "s3_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
+	},
+	"Schema": ubx.FieldSpec{WireName: "schema"},
+	"SecretsManagerConfiguration": ubx.FieldSpec{
+		WireName: "secrets_manager_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_DatabaseSourceConfiguration_DatabaseSourceAuthenticationConfiguration_SecretsManagerConfigurationFields,
+	},
+	"SnowflakeRoleConfiguration": ubx.FieldSpec{
+		WireName: "snowflake_role_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_SnowflakeDestinationConfiguration_SnowflakeRoleConfigurationFields,
+	},
+	"SnowflakeVpcConfiguration": ubx.FieldSpec{
+		WireName: "snowflake_vpc_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_SnowflakeDestinationConfiguration_SnowflakeVpcConfigurationFields,
+	},
+	"Table": ubx.FieldSpec{WireName: "table"},
+	"User":  ubx.FieldSpec{WireName: "user"},
+}
 
 var DeliveryStream_SplunkDestinationConfigurationFields = ubx.FieldMap{
-		"BufferingHints": ubx.FieldSpec{
-			WireName: "buffering_hints",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields,
-		},
-		"CloudWatchLoggingOptions": ubx.FieldSpec{
-			WireName: "cloud_watch_logging_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
-		},
-		"HecacknowledgmentTimeoutInSeconds": ubx.FieldSpec{WireName: "hecacknowledgment_timeout_in_seconds"},
-		"Hecendpoint": ubx.FieldSpec{WireName: "hecendpoint"},
-		"HecendpointType": ubx.FieldSpec{WireName: "hecendpoint_type"},
-		"Hectoken": ubx.FieldSpec{WireName: "hectoken"},
-		"ProcessingConfiguration": ubx.FieldSpec{
-			WireName: "processing_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields,
-		},
-		"RetryOptions": ubx.FieldSpec{
-			WireName: "retry_options",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields,
-		},
-		"S3BackupMode": ubx.FieldSpec{WireName: "s3_backup_mode"},
-		"S3Configuration": ubx.FieldSpec{
-			WireName: "s3_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
-		},
-		"SecretsManagerConfiguration": ubx.FieldSpec{
-			WireName: "secrets_manager_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_DatabaseSourceConfiguration_DatabaseSourceAuthenticationConfiguration_SecretsManagerConfigurationFields,
-		},
-	}
+	"BufferingHints": ubx.FieldSpec{
+		WireName: "buffering_hints",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHintsFields,
+	},
+	"CloudWatchLoggingOptions": ubx.FieldSpec{
+		WireName: "cloud_watch_logging_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptionsFields,
+	},
+	"HecacknowledgmentTimeoutInSeconds": ubx.FieldSpec{WireName: "hecacknowledgment_timeout_in_seconds"},
+	"Hecendpoint":                       ubx.FieldSpec{WireName: "hecendpoint"},
+	"HecendpointType":                   ubx.FieldSpec{WireName: "hecendpoint_type"},
+	"Hectoken":                          ubx.FieldSpec{WireName: "hectoken"},
+	"ProcessingConfiguration": ubx.FieldSpec{
+		WireName: "processing_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfigurationFields,
+	},
+	"RetryOptions": ubx.FieldSpec{
+		WireName: "retry_options",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptionsFields,
+	},
+	"S3BackupMode": ubx.FieldSpec{WireName: "s3_backup_mode"},
+	"S3Configuration": ubx.FieldSpec{
+		WireName: "s3_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
+	},
+	"SecretsManagerConfiguration": ubx.FieldSpec{
+		WireName: "secrets_manager_configuration",
+		Kind:     "object",
+		Fields:   DeliveryStream_DatabaseSourceConfiguration_DatabaseSourceAuthenticationConfiguration_SecretsManagerConfigurationFields,
+	},
+}
 
 var DeliveryStream_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DeliveryStreamConfig struct {
 	// Specifies the configuration for delivering data from the Firehose stream to an Amazon OpenSearch Serverless collection, including the collection endpoint, index name, buffering hints, and authentication details. (AI-inferred)
@@ -1411,7 +1411,7 @@ type DeliveryStreamConfig struct {
 	// A name for the Kinesis Data Firehose delivery stream; if omitted, CloudFormation generates a unique physical ID to use as the stream name. (AI-inferred)
 	DeliveryStreamName any
 	// Specifies the type of delivery stream, either 'DirectPut' (default) or 'KinesisStreamAsSource', which determines whether the stream can be written to directly or reads from a Kinesis data stream as its source. (AI-inferred)
-	DeliveryStreamType any
+	DeliveryStreamType           any
 	DirectPutSourceConfiguration any
 	// Defines the delivery stream's target as Amazon Elasticsearch Service (now OpenSearch), specifying the domain/endpoint, index and type, buffering and retry behavior, and optional S3 backup for failed records. (AI-inferred)
 	ElasticsearchDestinationConfiguration any
@@ -1451,7 +1451,7 @@ type DeliveryStreamAttrs struct {
 	// A name for the Kinesis Data Firehose delivery stream; if omitted, CloudFormation generates a unique physical ID to use as the stream name. (AI-inferred)
 	DeliveryStreamName any
 	// Specifies the type of delivery stream, either 'DirectPut' (default) or 'KinesisStreamAsSource', which determines whether the stream can be written to directly or reads from a Kinesis data stream as its source. (AI-inferred)
-	DeliveryStreamType any
+	DeliveryStreamType           any
 	DirectPutSourceConfiguration any
 	// Defines the delivery stream's target as Amazon Elasticsearch Service (now OpenSearch), specifying the domain/endpoint, index and type, buffering and retry behavior, and optional S3 backup for failed records. (AI-inferred)
 	ElasticsearchDestinationConfiguration any
@@ -1482,85 +1482,85 @@ var DeliveryStream = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AmazonOpenSearchServerlessDestinationConfiguration": ubx.FieldSpec{
 			WireName: "amazon_open_search_serverless_destination_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfigurationFields,
+			Kind:     "object",
+			Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfigurationFields,
 		},
 		"AmazonopensearchserviceDestinationConfiguration": ubx.FieldSpec{
 			WireName: "amazonopensearchservice_destination_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonopensearchserviceDestinationConfigurationFields,
+			Kind:     "object",
+			Fields:   DeliveryStream_AmazonopensearchserviceDestinationConfigurationFields,
 		},
 		"DatabaseSourceConfiguration": ubx.FieldSpec{
 			WireName: "database_source_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_DatabaseSourceConfigurationFields,
+			Kind:     "object",
+			Fields:   DeliveryStream_DatabaseSourceConfigurationFields,
 		},
 		"DeliveryStreamEncryptionConfigurationInput": ubx.FieldSpec{
 			WireName: "delivery_stream_encryption_configuration_input",
-			Kind: "object",
-			Fields: DeliveryStream_DeliveryStreamEncryptionConfigurationInputFields,
+			Kind:     "object",
+			Fields:   DeliveryStream_DeliveryStreamEncryptionConfigurationInputFields,
 		},
 		"DeliveryStreamName": ubx.FieldSpec{WireName: "delivery_stream_name"},
 		"DeliveryStreamType": ubx.FieldSpec{WireName: "delivery_stream_type"},
 		"DirectPutSourceConfiguration": ubx.FieldSpec{
 			WireName: "direct_put_source_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_DirectPutSourceConfigurationFields,
+			Kind:     "object",
+			Fields:   DeliveryStream_DirectPutSourceConfigurationFields,
 		},
 		"ElasticsearchDestinationConfiguration": ubx.FieldSpec{
 			WireName: "elasticsearch_destination_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_ElasticsearchDestinationConfigurationFields,
+			Kind:     "object",
+			Fields:   DeliveryStream_ElasticsearchDestinationConfigurationFields,
 		},
 		"ExtendedS3DestinationConfiguration": ubx.FieldSpec{
 			WireName: "extended_s3_destination_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_ExtendedS3DestinationConfigurationFields,
+			Kind:     "object",
+			Fields:   DeliveryStream_ExtendedS3DestinationConfigurationFields,
 		},
 		"HttpEndpointDestinationConfiguration": ubx.FieldSpec{
 			WireName: "http_endpoint_destination_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_HttpEndpointDestinationConfigurationFields,
+			Kind:     "object",
+			Fields:   DeliveryStream_HttpEndpointDestinationConfigurationFields,
 		},
 		"IcebergDestinationConfiguration": ubx.FieldSpec{
 			WireName: "iceberg_destination_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_IcebergDestinationConfigurationFields,
+			Kind:     "object",
+			Fields:   DeliveryStream_IcebergDestinationConfigurationFields,
 		},
 		"KinesisStreamSourceConfiguration": ubx.FieldSpec{
 			WireName: "kinesis_stream_source_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_KinesisStreamSourceConfigurationFields,
+			Kind:     "object",
+			Fields:   DeliveryStream_KinesisStreamSourceConfigurationFields,
 		},
 		"MsksourceConfiguration": ubx.FieldSpec{
 			WireName: "msksource_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_MsksourceConfigurationFields,
+			Kind:     "object",
+			Fields:   DeliveryStream_MsksourceConfigurationFields,
 		},
 		"RedshiftDestinationConfiguration": ubx.FieldSpec{
 			WireName: "redshift_destination_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_RedshiftDestinationConfigurationFields,
+			Kind:     "object",
+			Fields:   DeliveryStream_RedshiftDestinationConfigurationFields,
 		},
 		"S3DestinationConfiguration": ubx.FieldSpec{
 			WireName: "s3_destination_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
+			Kind:     "object",
+			Fields:   DeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3ConfigurationFields,
 		},
 		"SnowflakeDestinationConfiguration": ubx.FieldSpec{
 			WireName: "snowflake_destination_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_SnowflakeDestinationConfigurationFields,
+			Kind:     "object",
+			Fields:   DeliveryStream_SnowflakeDestinationConfigurationFields,
 		},
 		"SplunkDestinationConfiguration": ubx.FieldSpec{
 			WireName: "splunk_destination_configuration",
-			Kind: "object",
-			Fields: DeliveryStream_SplunkDestinationConfigurationFields,
+			Kind:     "object",
+			Fields:   DeliveryStream_SplunkDestinationConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DeliveryStream_TagsFields,
+			Kind:     "list",
+			Fields:   DeliveryStream_TagsFields,
 		},
 	},
 }

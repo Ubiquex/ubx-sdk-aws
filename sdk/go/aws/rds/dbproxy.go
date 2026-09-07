@@ -23,17 +23,17 @@ type Dbproxy_Tags struct {
 }
 
 var Dbproxy_AuthFields = ubx.FieldMap{
-		"AuthScheme": ubx.FieldSpec{WireName: "auth_scheme"},
-		"ClientPasswordAuthType": ubx.FieldSpec{WireName: "client_password_auth_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Iamauth": ubx.FieldSpec{WireName: "iamauth"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"AuthScheme":             ubx.FieldSpec{WireName: "auth_scheme"},
+	"ClientPasswordAuthType": ubx.FieldSpec{WireName: "client_password_auth_type"},
+	"Description":            ubx.FieldSpec{WireName: "description"},
+	"Iamauth":                ubx.FieldSpec{WireName: "iamauth"},
+	"SecretArn":              ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var Dbproxy_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DbproxyConfig struct {
 	// The authorization mechanism that the proxy uses.
@@ -104,24 +104,24 @@ var Dbproxy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Auth": ubx.FieldSpec{
 			WireName: "auth",
-			Kind: "list",
-			Fields: Dbproxy_AuthFields,
+			Kind:     "list",
+			Fields:   Dbproxy_AuthFields,
 		},
-		"DbproxyName": ubx.FieldSpec{WireName: "dbproxy_name"},
-		"DebugLogging": ubx.FieldSpec{WireName: "debug_logging"},
-		"DefaultAuthScheme": ubx.FieldSpec{WireName: "default_auth_scheme"},
+		"DbproxyName":         ubx.FieldSpec{WireName: "dbproxy_name"},
+		"DebugLogging":        ubx.FieldSpec{WireName: "debug_logging"},
+		"DefaultAuthScheme":   ubx.FieldSpec{WireName: "default_auth_scheme"},
 		"EndpointNetworkType": ubx.FieldSpec{WireName: "endpoint_network_type"},
-		"EngineFamily": ubx.FieldSpec{WireName: "engine_family"},
-		"IdleClientTimeout": ubx.FieldSpec{WireName: "idle_client_timeout"},
-		"RequireTls": ubx.FieldSpec{WireName: "require_tls"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"EngineFamily":        ubx.FieldSpec{WireName: "engine_family"},
+		"IdleClientTimeout":   ubx.FieldSpec{WireName: "idle_client_timeout"},
+		"RequireTls":          ubx.FieldSpec{WireName: "require_tls"},
+		"RoleArn":             ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dbproxy_TagsFields,
+			Kind:     "list",
+			Fields:   Dbproxy_TagsFields,
 		},
 		"TargetConnectionNetworkType": ubx.FieldSpec{WireName: "target_connection_network_type"},
-		"VpcSecurityGroupIds": ubx.FieldSpec{WireName: "vpc_security_group_ids"},
-		"VpcSubnetIds": ubx.FieldSpec{WireName: "vpc_subnet_ids"},
+		"VpcSecurityGroupIds":         ubx.FieldSpec{WireName: "vpc_security_group_ids"},
+		"VpcSubnetIds":                ubx.FieldSpec{WireName: "vpc_subnet_ids"},
 	},
 }

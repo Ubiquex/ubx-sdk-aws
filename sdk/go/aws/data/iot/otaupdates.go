@@ -6,27 +6,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Otaupdates_OtaUpdates struct {
 	CreationDate any
 	OtaUpdateArn any
-	OtaUpdateId any
+	OtaUpdateId  any
 }
 
 type OtaupdatesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	OtaUpdateStatus any
 }
 
 type OtaupdatesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	OtaUpdateStatus any
-	OtaUpdates any
+	OtaUpdates      any
 }
 
 var Otaupdates = ubx.DataSourceBinding{
 	WireType: "aws_iot_otaupdates",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 		"OtaUpdateStatus": ubx.FieldSpec{WireName: "ota_update_status"},
 	},
 }

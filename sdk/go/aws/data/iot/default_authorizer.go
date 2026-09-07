@@ -4,15 +4,15 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DefaultAuthorizer_AuthorizerDescription struct {
-	AuthorizerArn any
-	AuthorizerFunctionArn any
-	AuthorizerName any
-	CreationDate any
-	EnableCachingForHttp any
-	LastModifiedDate any
-	SigningDisabled any
-	Status any
-	TokenKeyName any
+	AuthorizerArn          any
+	AuthorizerFunctionArn  any
+	AuthorizerName         any
+	CreationDate           any
+	EnableCachingForHttp   any
+	LastModifiedDate       any
+	SigningDisabled        any
+	Status                 any
+	TokenKeyName           any
 	TokenSigningPublicKeys any
 }
 
@@ -26,6 +26,5 @@ type DefaultAuthorizerAttrs struct {
 
 var DefaultAuthorizer = ubx.DataSourceBinding{
 	WireType: "aws_iot_default_authorizer",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

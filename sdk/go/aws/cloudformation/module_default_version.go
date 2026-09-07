@@ -24,8 +24,8 @@ type ModuleDefaultVersionAttrs struct {
 var ModuleDefaultVersion = ubx.ResourceBinding{
 	WireType: "aws_cloud_formation_module_default_version",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":        ubx.FieldSpec{WireName: "arn"},
 		"ModuleName": ubx.FieldSpec{WireName: "module_name"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
+		"VersionId":  ubx.FieldSpec{WireName: "version_id"},
 	},
 }

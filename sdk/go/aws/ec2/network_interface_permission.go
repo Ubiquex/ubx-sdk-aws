@@ -26,8 +26,8 @@ type NetworkInterfacePermissionAttrs struct {
 var NetworkInterfacePermission = ubx.ResourceBinding{
 	WireType: "aws_network_interface_permission",
 	Fields: ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
+		"AwsAccountId":       ubx.FieldSpec{WireName: "aws_account_id"},
 		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
-		"Permission": ubx.FieldSpec{WireName: "permission"},
+		"Permission":         ubx.FieldSpec{WireName: "permission"},
 	},
 }

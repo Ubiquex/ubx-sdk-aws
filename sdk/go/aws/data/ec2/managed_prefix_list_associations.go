@@ -4,31 +4,31 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagedPrefixListAssociations_PrefixListAssociations struct {
-	ResourceId any
+	ResourceId    any
 	ResourceOwner any
 }
 
 type ManagedPrefixListAssociationsConfig struct {
-	DryRun any
-	MaxResults any
-	NextToken any
+	DryRun       any
+	MaxResults   any
+	NextToken    any
 	PrefixListId any
 }
 
 type ManagedPrefixListAssociationsAttrs struct {
-	DryRun any
-	MaxResults any
-	NextToken any
+	DryRun                 any
+	MaxResults             any
+	NextToken              any
 	PrefixListAssociations any
-	PrefixListId any
+	PrefixListId           any
 }
 
 var ManagedPrefixListAssociations = ubx.DataSourceBinding{
 	WireType: "aws_ec2_managed_prefix_list_associations",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"DryRun":       ubx.FieldSpec{WireName: "dry_run"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"PrefixListId": ubx.FieldSpec{WireName: "prefix_list_id"},
 	},
 }

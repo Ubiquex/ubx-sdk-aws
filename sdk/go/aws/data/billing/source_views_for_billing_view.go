@@ -4,23 +4,23 @@ package billing
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SourceViewsForBillingViewConfig struct {
-	Arn any
+	Arn        any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SourceViewsForBillingViewAttrs struct {
-	Arn any
-	MaxResults any
-	NextToken any
+	Arn         any
+	MaxResults  any
+	NextToken   any
 	SourceViews any
 }
 
 var SourceViewsForBillingView = ubx.DataSourceBinding{
 	WireType: "aws_billing_source_views_for_billing_view",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":        ubx.FieldSpec{WireName: "arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

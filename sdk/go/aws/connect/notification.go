@@ -29,28 +29,28 @@ type Notification_Content struct {
 }
 
 type Notification_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Notification_ContentFields = ubx.FieldMap{
-		"DeDe": ubx.FieldSpec{WireName: "de_de"},
-		"EnUs": ubx.FieldSpec{WireName: "en_us"},
-		"EsEs": ubx.FieldSpec{WireName: "es_es"},
-		"FrFr": ubx.FieldSpec{WireName: "fr_fr"},
-		"IdId": ubx.FieldSpec{WireName: "id_id"},
-		"ItIt": ubx.FieldSpec{WireName: "it_it"},
-		"JaJp": ubx.FieldSpec{WireName: "ja_jp"},
-		"KoKr": ubx.FieldSpec{WireName: "ko_kr"},
-		"PtBr": ubx.FieldSpec{WireName: "pt_br"},
-		"ZhCn": ubx.FieldSpec{WireName: "zh_cn"},
-		"ZhTw": ubx.FieldSpec{WireName: "zh_tw"},
-	}
+	"DeDe": ubx.FieldSpec{WireName: "de_de"},
+	"EnUs": ubx.FieldSpec{WireName: "en_us"},
+	"EsEs": ubx.FieldSpec{WireName: "es_es"},
+	"FrFr": ubx.FieldSpec{WireName: "fr_fr"},
+	"IdId": ubx.FieldSpec{WireName: "id_id"},
+	"ItIt": ubx.FieldSpec{WireName: "it_it"},
+	"JaJp": ubx.FieldSpec{WireName: "ja_jp"},
+	"KoKr": ubx.FieldSpec{WireName: "ko_kr"},
+	"PtBr": ubx.FieldSpec{WireName: "pt_br"},
+	"ZhCn": ubx.FieldSpec{WireName: "zh_cn"},
+	"ZhTw": ubx.FieldSpec{WireName: "zh_tw"},
+}
 
 var Notification_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type NotificationConfig struct {
 	// The content of a notification
@@ -93,17 +93,17 @@ var Notification = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Content": ubx.FieldSpec{
 			WireName: "content",
-			Kind: "object",
-			Fields: Notification_ContentFields,
+			Kind:     "object",
+			Fields:   Notification_ContentFields,
 		},
-		"ExpiresAt": ubx.FieldSpec{WireName: "expires_at"},
+		"ExpiresAt":   ubx.FieldSpec{WireName: "expires_at"},
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Recipients": ubx.FieldSpec{WireName: "recipients"},
+		"Priority":    ubx.FieldSpec{WireName: "priority"},
+		"Recipients":  ubx.FieldSpec{WireName: "recipients"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Notification_TagsFields,
+			Kind:     "list",
+			Fields:   Notification_TagsFields,
 		},
 	},
 }

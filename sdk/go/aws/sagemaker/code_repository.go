@@ -19,15 +19,15 @@ type CodeRepository_Tags struct {
 }
 
 var CodeRepository_GitConfigFields = ubx.FieldMap{
-		"Branch": ubx.FieldSpec{WireName: "branch"},
-		"RepositoryUrl": ubx.FieldSpec{WireName: "repository_url"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"Branch":        ubx.FieldSpec{WireName: "branch"},
+	"RepositoryUrl": ubx.FieldSpec{WireName: "repository_url"},
+	"SecretArn":     ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var CodeRepository_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CodeRepositoryConfig struct {
 	// Specifies the name of the SageMaker code repository, which uniquely identifies the repository within an AWS account and Region and is used to reference it in SageMaker operations. (AI-inferred)
@@ -55,13 +55,13 @@ var CodeRepository = ubx.ResourceBinding{
 		"CodeRepositoryName": ubx.FieldSpec{WireName: "code_repository_name"},
 		"GitConfig": ubx.FieldSpec{
 			WireName: "git_config",
-			Kind: "object",
-			Fields: CodeRepository_GitConfigFields,
+			Kind:     "object",
+			Fields:   CodeRepository_GitConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CodeRepository_TagsFields,
+			Kind:     "list",
+			Fields:   CodeRepository_TagsFields,
 		},
 	},
 }

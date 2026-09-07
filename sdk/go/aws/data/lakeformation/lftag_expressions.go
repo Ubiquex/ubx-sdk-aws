@@ -4,35 +4,35 @@ package lakeformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LftagExpressions_LftagExpressions_Expression struct {
-	TagKey any
+	TagKey    any
 	TagValues any
 }
 
 type LftagExpressions_LftagExpressions struct {
-	CatalogId any
+	CatalogId   any
 	Description any
-	Expression any
-	Name any
+	Expression  any
+	Name        any
 }
 
 type LftagExpressionsConfig struct {
-	CatalogId any
+	CatalogId  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type LftagExpressionsAttrs struct {
-	CatalogId any
+	CatalogId        any
 	LftagExpressions any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 var LftagExpressions = ubx.DataSourceBinding{
 	WireType: "aws_lakeformation_lftag_expressions",
 	Fields: ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
+		"CatalogId":  ubx.FieldSpec{WireName: "catalog_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

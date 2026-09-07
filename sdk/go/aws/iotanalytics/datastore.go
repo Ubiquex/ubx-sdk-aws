@@ -95,107 +95,107 @@ type Datastore_Tags struct {
 }
 
 var Datastore_DatastorePartitions_Partitions_PartitionFields = ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-	}
+	"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
+}
 
 var Datastore_DatastorePartitions_Partitions_TimestampPartitionFields = ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"TimestampFormat": ubx.FieldSpec{WireName: "timestamp_format"},
-	}
+	"AttributeName":   ubx.FieldSpec{WireName: "attribute_name"},
+	"TimestampFormat": ubx.FieldSpec{WireName: "timestamp_format"},
+}
 
 var Datastore_DatastorePartitions_PartitionsFields = ubx.FieldMap{
-		"Partition": ubx.FieldSpec{
-			WireName: "partition",
-			Kind: "object",
-			Fields: Datastore_DatastorePartitions_Partitions_PartitionFields,
-		},
-		"TimestampPartition": ubx.FieldSpec{
-			WireName: "timestamp_partition",
-			Kind: "object",
-			Fields: Datastore_DatastorePartitions_Partitions_TimestampPartitionFields,
-		},
-	}
+	"Partition": ubx.FieldSpec{
+		WireName: "partition",
+		Kind:     "object",
+		Fields:   Datastore_DatastorePartitions_Partitions_PartitionFields,
+	},
+	"TimestampPartition": ubx.FieldSpec{
+		WireName: "timestamp_partition",
+		Kind:     "object",
+		Fields:   Datastore_DatastorePartitions_Partitions_TimestampPartitionFields,
+	},
+}
 
 var Datastore_DatastorePartitionsFields = ubx.FieldMap{
-		"Partitions": ubx.FieldSpec{
-			WireName: "partitions",
-			Kind: "list",
-			Fields: Datastore_DatastorePartitions_PartitionsFields,
-		},
-	}
+	"Partitions": ubx.FieldSpec{
+		WireName: "partitions",
+		Kind:     "list",
+		Fields:   Datastore_DatastorePartitions_PartitionsFields,
+	},
+}
 
 var Datastore_DatastoreStorage_CustomerManagedS3Fields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"KeyPrefix": ubx.FieldSpec{WireName: "key_prefix"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"Bucket":    ubx.FieldSpec{WireName: "bucket"},
+	"KeyPrefix": ubx.FieldSpec{WireName: "key_prefix"},
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var Datastore_DatastoreStorage_IotSiteWiseMultiLayerStorage_CustomerManagedS3StorageFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"KeyPrefix": ubx.FieldSpec{WireName: "key_prefix"},
-	}
+	"Bucket":    ubx.FieldSpec{WireName: "bucket"},
+	"KeyPrefix": ubx.FieldSpec{WireName: "key_prefix"},
+}
 
 var Datastore_DatastoreStorage_IotSiteWiseMultiLayerStorageFields = ubx.FieldMap{
-		"CustomerManagedS3Storage": ubx.FieldSpec{
-			WireName: "customer_managed_s3_storage",
-			Kind: "object",
-			Fields: Datastore_DatastoreStorage_IotSiteWiseMultiLayerStorage_CustomerManagedS3StorageFields,
-		},
-	}
+	"CustomerManagedS3Storage": ubx.FieldSpec{
+		WireName: "customer_managed_s3_storage",
+		Kind:     "object",
+		Fields:   Datastore_DatastoreStorage_IotSiteWiseMultiLayerStorage_CustomerManagedS3StorageFields,
+	},
+}
 
 var Datastore_DatastoreStorageFields = ubx.FieldMap{
-		"CustomerManagedS3": ubx.FieldSpec{
-			WireName: "customer_managed_s3",
-			Kind: "object",
-			Fields: Datastore_DatastoreStorage_CustomerManagedS3Fields,
-		},
-		"IotSiteWiseMultiLayerStorage": ubx.FieldSpec{
-			WireName: "iot_site_wise_multi_layer_storage",
-			Kind: "object",
-			Fields: Datastore_DatastoreStorage_IotSiteWiseMultiLayerStorageFields,
-		},
-		"ServiceManagedS3": ubx.FieldSpec{WireName: "service_managed_s3"},
-	}
+	"CustomerManagedS3": ubx.FieldSpec{
+		WireName: "customer_managed_s3",
+		Kind:     "object",
+		Fields:   Datastore_DatastoreStorage_CustomerManagedS3Fields,
+	},
+	"IotSiteWiseMultiLayerStorage": ubx.FieldSpec{
+		WireName: "iot_site_wise_multi_layer_storage",
+		Kind:     "object",
+		Fields:   Datastore_DatastoreStorage_IotSiteWiseMultiLayerStorageFields,
+	},
+	"ServiceManagedS3": ubx.FieldSpec{WireName: "service_managed_s3"},
+}
 
 var Datastore_FileFormatConfiguration_ParquetConfiguration_SchemaDefinition_ColumnsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Datastore_FileFormatConfiguration_ParquetConfiguration_SchemaDefinitionFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: Datastore_FileFormatConfiguration_ParquetConfiguration_SchemaDefinition_ColumnsFields,
-		},
-	}
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   Datastore_FileFormatConfiguration_ParquetConfiguration_SchemaDefinition_ColumnsFields,
+	},
+}
 
 var Datastore_FileFormatConfiguration_ParquetConfigurationFields = ubx.FieldMap{
-		"SchemaDefinition": ubx.FieldSpec{
-			WireName: "schema_definition",
-			Kind: "object",
-			Fields: Datastore_FileFormatConfiguration_ParquetConfiguration_SchemaDefinitionFields,
-		},
-	}
+	"SchemaDefinition": ubx.FieldSpec{
+		WireName: "schema_definition",
+		Kind:     "object",
+		Fields:   Datastore_FileFormatConfiguration_ParquetConfiguration_SchemaDefinitionFields,
+	},
+}
 
 var Datastore_FileFormatConfigurationFields = ubx.FieldMap{
-		"JsonConfiguration": ubx.FieldSpec{WireName: "json_configuration"},
-		"ParquetConfiguration": ubx.FieldSpec{
-			WireName: "parquet_configuration",
-			Kind: "object",
-			Fields: Datastore_FileFormatConfiguration_ParquetConfigurationFields,
-		},
-	}
+	"JsonConfiguration": ubx.FieldSpec{WireName: "json_configuration"},
+	"ParquetConfiguration": ubx.FieldSpec{
+		WireName: "parquet_configuration",
+		Kind:     "object",
+		Fields:   Datastore_FileFormatConfiguration_ParquetConfigurationFields,
+	},
+}
 
 var Datastore_RetentionPeriodFields = ubx.FieldMap{
-		"NumberOfDays": ubx.FieldSpec{WireName: "number_of_days"},
-		"Unlimited": ubx.FieldSpec{WireName: "unlimited"},
-	}
+	"NumberOfDays": ubx.FieldSpec{WireName: "number_of_days"},
+	"Unlimited":    ubx.FieldSpec{WireName: "unlimited"},
+}
 
 var Datastore_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DatastoreConfig struct {
 	// The unique name of the AWS IoT Analytics datastore, which is optional; if omitted, AWS CloudFormation generates a unique physical ID for the datastore. (AI-inferred)
@@ -235,28 +235,28 @@ var Datastore = ubx.ResourceBinding{
 		"DatastoreName": ubx.FieldSpec{WireName: "datastore_name"},
 		"DatastorePartitions": ubx.FieldSpec{
 			WireName: "datastore_partitions",
-			Kind: "object",
-			Fields: Datastore_DatastorePartitionsFields,
+			Kind:     "object",
+			Fields:   Datastore_DatastorePartitionsFields,
 		},
 		"DatastoreStorage": ubx.FieldSpec{
 			WireName: "datastore_storage",
-			Kind: "object",
-			Fields: Datastore_DatastoreStorageFields,
+			Kind:     "object",
+			Fields:   Datastore_DatastoreStorageFields,
 		},
 		"FileFormatConfiguration": ubx.FieldSpec{
 			WireName: "file_format_configuration",
-			Kind: "object",
-			Fields: Datastore_FileFormatConfigurationFields,
+			Kind:     "object",
+			Fields:   Datastore_FileFormatConfigurationFields,
 		},
 		"RetentionPeriod": ubx.FieldSpec{
 			WireName: "retention_period",
-			Kind: "object",
-			Fields: Datastore_RetentionPeriodFields,
+			Kind:     "object",
+			Fields:   Datastore_RetentionPeriodFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Datastore_TagsFields,
+			Kind:     "list",
+			Fields:   Datastore_TagsFields,
 		},
 	},
 }

@@ -8,7 +8,7 @@ type CapacityAssignmentConfiguration_CapacityAssignmentConfiguration_CapacityAss
 }
 
 type CapacityAssignmentConfiguration_CapacityAssignmentConfiguration struct {
-	CapacityAssignments any
+	CapacityAssignments     any
 	CapacityReservationName any
 }
 
@@ -19,7 +19,7 @@ type CapacityAssignmentConfigurationConfig struct {
 type CapacityAssignmentConfigurationAttrs struct {
 	// <p>Assigns Athena workgroups (and hence their queries) to capacity reservations. A capacity reservation can have only one capacity assignment configuration, but the capacity assignment configuration can be made up of multiple individual assignments. Each assignment specifies how Athena queries can consume capacity from the capacity reservation that their workgroup is mapped to.</p>
 	CapacityAssignmentConfiguration any
-	CapacityReservationName any
+	CapacityReservationName         any
 }
 
 var CapacityAssignmentConfiguration = ubx.DataSourceBinding{

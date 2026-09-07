@@ -36,7 +36,7 @@ type ModuleVersionAttrs struct {
 var ModuleVersion = ubx.ResourceBinding{
 	WireType: "aws_cloud_formation_module_version",
 	Fields: ubx.FieldMap{
-		"ModuleName": ubx.FieldSpec{WireName: "module_name"},
+		"ModuleName":    ubx.FieldSpec{WireName: "module_name"},
 		"ModulePackage": ubx.FieldSpec{WireName: "module_package"},
 	},
 }

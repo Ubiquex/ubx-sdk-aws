@@ -4,43 +4,43 @@ package discovery
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImportTasks_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ImportTasks_Tasks struct {
-	ApplicationImportFailure any
-	ApplicationImportSuccess any
-	ClientRequestToken any
+	ApplicationImportFailure  any
+	ApplicationImportSuccess  any
+	ClientRequestToken        any
 	ErrorsAndFailedEntriesZip any
-	FileClassification any
-	ImportCompletionTime any
-	ImportDeletedTime any
-	ImportRequestTime any
-	ImportTaskId any
-	ImportUrl any
-	Name any
-	ServerImportFailure any
-	ServerImportSuccess any
-	Status any
+	FileClassification        any
+	ImportCompletionTime      any
+	ImportDeletedTime         any
+	ImportRequestTime         any
+	ImportTaskId              any
+	ImportUrl                 any
+	Name                      any
+	ServerImportFailure       any
+	ServerImportSuccess       any
+	Status                    any
 }
 
 var ImportTasks_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ImportTasksConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ImportTasksAttrs struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	Tasks any
+	NextToken  any
+	Tasks      any
 }
 
 var ImportTasks = ubx.DataSourceBinding{
@@ -48,10 +48,10 @@ var ImportTasks = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ImportTasks_FiltersFields,
+			Kind:     "list",
+			Fields:   ImportTasks_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

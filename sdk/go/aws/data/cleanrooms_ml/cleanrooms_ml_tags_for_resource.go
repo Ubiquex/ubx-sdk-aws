@@ -9,7 +9,7 @@ type CleanroomsMlTagsForResourceConfig struct {
 
 type CleanroomsMlTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var CleanroomsMlTagsForResource = ubx.DataSourceBinding{

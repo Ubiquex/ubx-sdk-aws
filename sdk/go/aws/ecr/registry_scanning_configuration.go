@@ -18,18 +18,18 @@ type RegistryScanningConfiguration_Rules struct {
 }
 
 var RegistryScanningConfiguration_Rules_RepositoryFiltersFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"FilterType": ubx.FieldSpec{WireName: "filter_type"},
-	}
+	"Filter":     ubx.FieldSpec{WireName: "filter"},
+	"FilterType": ubx.FieldSpec{WireName: "filter_type"},
+}
 
 var RegistryScanningConfiguration_RulesFields = ubx.FieldMap{
-		"RepositoryFilters": ubx.FieldSpec{
-			WireName: "repository_filters",
-			Kind: "list",
-			Fields: RegistryScanningConfiguration_Rules_RepositoryFiltersFields,
-		},
-		"ScanFrequency": ubx.FieldSpec{WireName: "scan_frequency"},
-	}
+	"RepositoryFilters": ubx.FieldSpec{
+		WireName: "repository_filters",
+		Kind:     "list",
+		Fields:   RegistryScanningConfiguration_Rules_RepositoryFiltersFields,
+	},
+	"ScanFrequency": ubx.FieldSpec{WireName: "scan_frequency"},
+}
 
 type RegistryScanningConfigurationConfig struct {
 	// The scanning rules associated with the registry. A registry scanning configuration may contain a maximum of 2 rules.
@@ -52,8 +52,8 @@ var RegistryScanningConfiguration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: RegistryScanningConfiguration_RulesFields,
+			Kind:     "list",
+			Fields:   RegistryScanningConfiguration_RulesFields,
 		},
 		"ScanType": ubx.FieldSpec{WireName: "scan_type"},
 	},

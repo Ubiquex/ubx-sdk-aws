@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContentModeration_GetRequestMetadata struct {
 	AggregateBy any
-	SortBy any
+	SortBy      any
 }
 
 type ContentModeration_ModerationLabels_ContentTypes struct {
 	Confidence any
-	Name any
+	Name       any
 }
 
 type ContentModeration_ModerationLabels_ModerationLabel struct {
-	Confidence any
-	Name any
-	ParentName any
+	Confidence    any
+	Name          any
+	ParentName    any
 	TaxonomyLevel any
 }
 
 type ContentModeration_ModerationLabels struct {
-	ContentTypes any
-	DurationMillis any
-	EndTimestampMillis any
-	ModerationLabel any
+	ContentTypes         any
+	DurationMillis       any
+	EndTimestampMillis   any
+	ModerationLabel      any
 	StartTimestampMillis any
-	Timestamp any
+	Timestamp            any
 }
 
 type ContentModeration_Video_S3Object struct {
-	Bucket any
-	Name any
+	Bucket  any
+	Name    any
 	Version any
 }
 
@@ -41,36 +41,36 @@ type ContentModeration_Video struct {
 }
 
 type ContentModeration_VideoMetadata struct {
-	Codec any
-	ColorRange any
+	Codec          any
+	ColorRange     any
 	DurationMillis any
-	Format any
-	FrameHeight any
-	FrameRate any
-	FrameWidth any
+	Format         any
+	FrameHeight    any
+	FrameRate      any
+	FrameWidth     any
 }
 
 type ContentModerationConfig struct {
 	AggregateBy any
-	JobId any
-	MaxResults any
-	NextToken any
-	SortBy any
+	JobId       any
+	MaxResults  any
+	NextToken   any
+	SortBy      any
 }
 
 type ContentModerationAttrs struct {
 	AggregateBy any
 	// <p>Contains metadata about a content moderation request, including the SortBy and AggregateBy options.</p>
-	GetRequestMetadata any
-	JobId any
-	JobStatus any
-	JobTag any
-	MaxResults any
-	ModerationLabels any
+	GetRequestMetadata     any
+	JobId                  any
+	JobStatus              any
+	JobTag                 any
+	MaxResults             any
+	ModerationLabels       any
 	ModerationModelVersion any
-	NextToken any
-	SortBy any
-	StatusMessage any
+	NextToken              any
+	SortBy                 any
+	StatusMessage          any
 	// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
 	Video any
 	// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
@@ -81,9 +81,9 @@ var ContentModeration = ubx.DataSourceBinding{
 	WireType: "aws_rekognition_content_moderation",
 	Fields: ubx.FieldMap{
 		"AggregateBy": ubx.FieldSpec{WireName: "aggregate_by"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
+		"JobId":       ubx.FieldSpec{WireName: "job_id"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":      ubx.FieldSpec{WireName: "sort_by"},
 	},
 }

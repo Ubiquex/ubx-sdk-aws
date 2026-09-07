@@ -9,7 +9,7 @@ type BcmDashboardsResourcePolicyConfig struct {
 
 type BcmDashboardsResourcePolicyAttrs struct {
 	PolicyDocument any
-	ResourceArn any
+	ResourceArn    any
 }
 
 var BcmDashboardsResourcePolicy = ubx.DataSourceBinding{

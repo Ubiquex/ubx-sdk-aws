@@ -6,30 +6,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type DomainObjectType_Fields struct {
 	ContentType any
 	FeatureType any
-	Source any
-	Target any
+	Source      any
+	Target      any
 }
 
 type DomainObjectTypeConfig struct {
-	DomainName any
+	DomainName     any
 	ObjectTypeName any
 }
 
 type DomainObjectTypeAttrs struct {
-	CreatedAt any
-	Description any
-	DomainName any
-	EncryptionKey any
-	Fields any
-	LastUpdatedAt any
+	CreatedAt      any
+	Description    any
+	DomainName     any
+	EncryptionKey  any
+	Fields         any
+	LastUpdatedAt  any
 	ObjectTypeName any
-	Tags any
+	Tags           any
 }
 
 var DomainObjectType = ubx.DataSourceBinding{
 	WireType: "aws_profile_domain_object_type",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":     ubx.FieldSpec{WireName: "domain_name"},
 		"ObjectTypeName": ubx.FieldSpec{WireName: "object_type_name"},
 	},
 }

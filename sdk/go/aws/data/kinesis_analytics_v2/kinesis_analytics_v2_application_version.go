@@ -4,27 +4,27 @@ package kinesis_analytics_v2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_ApplicationCodeConfigurationDescription_CodeContentDescription_S3ApplicationCodeLocationDescription struct {
-	BucketArn any
-	FileKey any
+	BucketArn     any
+	FileKey       any
 	ObjectVersion any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_ApplicationCodeConfigurationDescription_CodeContentDescription struct {
-	CodeMd5 any
+	CodeMd5  any
 	CodeSize any
 	// <p>Describes the location of an application's code stored in an S3 bucket.</p>
 	S3ApplicationCodeLocationDescription any
-	TextContent any
+	TextContent                          any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_ApplicationCodeConfigurationDescription struct {
 	// <p>Describes details about the code of a Managed Service for Apache Flink application.</p>
 	CodeContentDescription any
-	CodeContentType any
+	CodeContentType        any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_ApplicationEncryptionConfigurationDescription struct {
-	KeyId any
+	KeyId   any
 	KeyType any
 }
 
@@ -38,7 +38,7 @@ type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationCo
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_EnvironmentPropertyDescriptions_PropertyGroupDescriptions struct {
 	PropertyGroupId any
-	PropertyMap any
+	PropertyMap     any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_EnvironmentPropertyDescriptions struct {
@@ -46,30 +46,30 @@ type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationCo
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_FlinkApplicationConfigurationDescription_CheckpointConfigurationDescription struct {
-	CheckpointInterval any
-	CheckpointingEnabled any
-	ConfigurationType any
+	CheckpointInterval         any
+	CheckpointingEnabled       any
+	ConfigurationType          any
 	MinPauseBetweenCheckpoints any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_FlinkApplicationConfigurationDescription_MonitoringConfigurationDescription struct {
 	ConfigurationType any
-	LogLevel any
-	MetricsLevel any
+	LogLevel          any
+	MetricsLevel      any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_FlinkApplicationConfigurationDescription_ParallelismConfigurationDescription struct {
 	AutoScalingEnabled any
-	ConfigurationType any
+	ConfigurationType  any
 	CurrentParallelism any
-	Parallelism any
-	ParallelismPerKpu any
+	Parallelism        any
+	ParallelismPerKpu  any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_FlinkApplicationConfigurationDescription struct {
 	// <p>Describes checkpointing parameters for a Managed Service for Apache Flink application.</p>
 	CheckpointConfigurationDescription any
-	JobPlanDescription any
+	JobPlanDescription                 any
 	// <p>Describes configuration parameters for CloudWatch logging for an application.</p>
 	MonitoringConfigurationDescription any
 	// <p>Describes parameters for how a Managed Service for Apache Flink application executes multiple tasks simultaneously.</p>
@@ -78,7 +78,7 @@ type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationCo
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_RunConfigurationDescription_ApplicationRestoreConfigurationDescription struct {
 	ApplicationRestoreType any
-	SnapshotName any
+	SnapshotName           any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_RunConfigurationDescription_FlinkRunConfigurationDescription struct {
@@ -98,7 +98,7 @@ type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationCo
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_SqlApplicationConfigurationDescription_InputDescriptions_InputProcessingConfigurationDescription_InputLambdaProcessorDescription struct {
 	ResourceArn any
-	RoleArn any
+	RoleArn     any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_SqlApplicationConfigurationDescription_InputDescriptions_InputProcessingConfigurationDescription struct {
@@ -107,13 +107,13 @@ type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationCo
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_SqlApplicationConfigurationDescription_InputDescriptions_InputSchema_RecordColumns struct {
 	Mapping any
-	Name any
+	Name    any
 	SqlType any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_SqlApplicationConfigurationDescription_InputDescriptions_InputSchema_RecordFormat_MappingParameters_CsvmappingParameters struct {
 	RecordColumnDelimiter any
-	RecordRowDelimiter any
+	RecordRowDelimiter    any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_SqlApplicationConfigurationDescription_InputDescriptions_InputSchema_RecordFormat_MappingParameters_JsonmappingParameters struct {
@@ -121,19 +121,19 @@ type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationCo
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_SqlApplicationConfigurationDescription_InputDescriptions_InputSchema_RecordFormat_MappingParameters struct {
-	CsvmappingParameters any
+	CsvmappingParameters  any
 	JsonmappingParameters any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_SqlApplicationConfigurationDescription_InputDescriptions_InputSchema_RecordFormat struct {
 	MappingParameters any
-	RecordFormatType any
+	RecordFormatType  any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_SqlApplicationConfigurationDescription_InputDescriptions_InputSchema struct {
-	RecordColumns any
+	RecordColumns  any
 	RecordEncoding any
-	RecordFormat any
+	RecordFormat   any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_SqlApplicationConfigurationDescription_InputDescriptions_InputStartingPositionConfiguration struct {
@@ -141,15 +141,15 @@ type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationCo
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_SqlApplicationConfigurationDescription_InputDescriptions struct {
-	InAppStreamNames any
-	InputId any
-	InputParallelism any
+	InAppStreamNames                        any
+	InputId                                 any
+	InputParallelism                        any
 	InputProcessingConfigurationDescription any
-	InputSchema any
-	InputStartingPositionConfiguration any
-	KinesisFirehoseInputDescription any
-	KinesisStreamsInputDescription any
-	NamePrefix any
+	InputSchema                             any
+	InputStartingPositionConfiguration      any
+	KinesisFirehoseInputDescription         any
+	KinesisStreamsInputDescription          any
+	NamePrefix                              any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_SqlApplicationConfigurationDescription_OutputDescriptions_DestinationSchema struct {
@@ -157,38 +157,38 @@ type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationCo
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_SqlApplicationConfigurationDescription_OutputDescriptions struct {
-	DestinationSchema any
+	DestinationSchema                any
 	KinesisFirehoseOutputDescription any
-	KinesisStreamsOutputDescription any
-	LambdaOutputDescription any
-	Name any
-	OutputId any
+	KinesisStreamsOutputDescription  any
+	LambdaOutputDescription          any
+	Name                             any
+	OutputId                         any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_SqlApplicationConfigurationDescription_ReferenceDataSourceDescriptions_S3ReferenceDataSourceDescription struct {
-	BucketArn any
-	FileKey any
+	BucketArn        any
+	FileKey          any
 	ReferenceRoleArn any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_SqlApplicationConfigurationDescription_ReferenceDataSourceDescriptions struct {
-	ReferenceId any
-	ReferenceSchema any
+	ReferenceId                      any
+	ReferenceSchema                  any
 	S3ReferenceDataSourceDescription any
-	TableName any
+	TableName                        any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_SqlApplicationConfigurationDescription struct {
-	InputDescriptions any
-	OutputDescriptions any
+	InputDescriptions               any
+	OutputDescriptions              any
 	ReferenceDataSourceDescriptions any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_VpcConfigurationDescriptions struct {
-	SecurityGroupIds any
-	SubnetIds any
+	SecurityGroupIds   any
+	SubnetIds          any
 	VpcConfigurationId any
-	VpcId any
+	VpcId              any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_ZeppelinApplicationConfigurationDescription_CatalogConfigurationDescription_GlueDataCatalogConfigurationDescription struct {
@@ -202,18 +202,18 @@ type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationCo
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_ZeppelinApplicationConfigurationDescription_CustomArtifactsConfigurationDescription_MavenReferenceDescription struct {
 	ArtifactId any
-	GroupId any
-	Version any
+	GroupId    any
+	Version    any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_ZeppelinApplicationConfigurationDescription_CustomArtifactsConfigurationDescription struct {
-	ArtifactType any
-	MavenReferenceDescription any
+	ArtifactType                 any
+	MavenReferenceDescription    any
 	S3ContentLocationDescription any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_ZeppelinApplicationConfigurationDescription_DeployAsApplicationConfigurationDescription_S3ContentLocationDescription struct {
-	BasePath any
+	BasePath  any
 	BucketArn any
 }
 
@@ -228,7 +228,7 @@ type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationCo
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationConfigurationDescription_ZeppelinApplicationConfigurationDescription struct {
 	// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Managed Service for Apache Flink Studio notebook.</p>
-	CatalogConfigurationDescription any
+	CatalogConfigurationDescription         any
 	CustomArtifactsConfigurationDescription any
 	// <p>The configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.</p>
 	DeployAsApplicationConfigurationDescription any
@@ -253,49 +253,49 @@ type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationCo
 	RunConfigurationDescription any
 	// <p>Describes the inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
 	SqlApplicationConfigurationDescription any
-	VpcConfigurationDescriptions any
+	VpcConfigurationDescriptions           any
 	// <p>The configuration of a Managed Service for Apache Flink Studio notebook.</p>
 	ZeppelinApplicationConfigurationDescription any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_ApplicationMaintenanceConfigurationDescription struct {
-	ApplicationMaintenanceWindowEndTime any
+	ApplicationMaintenanceWindowEndTime   any
 	ApplicationMaintenanceWindowStartTime any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail_CloudWatchLoggingOptionDescriptions struct {
 	CloudWatchLoggingOptionId any
-	LogStreamArn any
-	RoleArn any
+	LogStreamArn              any
+	RoleArn                   any
 }
 
 type KinesisAnalyticsV2ApplicationVersion_ApplicationVersionDetail struct {
 	ApplicationArn any
 	// <p>Describes details about the application code and starting parameters for a Managed Service for Apache Flink application.</p>
 	ApplicationConfigurationDescription any
-	ApplicationDescription any
+	ApplicationDescription              any
 	// <p>The details of the maintenance configuration for the application.</p>
 	ApplicationMaintenanceConfigurationDescription any
-	ApplicationMode any
+	ApplicationMode                                any
 	// <p>The name of the application.</p>
-	ApplicationName any
-	ApplicationStatus any
-	ApplicationVersionCreateTimestamp any
-	ApplicationVersionId any
-	ApplicationVersionRolledBackFrom any
-	ApplicationVersionRolledBackTo any
-	ApplicationVersionUpdatedFrom any
+	ApplicationName                     any
+	ApplicationStatus                   any
+	ApplicationVersionCreateTimestamp   any
+	ApplicationVersionId                any
+	ApplicationVersionRolledBackFrom    any
+	ApplicationVersionRolledBackTo      any
+	ApplicationVersionUpdatedFrom       any
 	CloudWatchLoggingOptionDescriptions any
-	ConditionalToken any
-	CreateTimestamp any
-	LastUpdateTimestamp any
-	RuntimeEnvironment any
-	ServiceExecutionRole any
+	ConditionalToken                    any
+	CreateTimestamp                     any
+	LastUpdateTimestamp                 any
+	RuntimeEnvironment                  any
+	ServiceExecutionRole                any
 }
 
 type KinesisAnalyticsV2ApplicationVersionConfig struct {
 	// <p>The name of the application.</p>
-	ApplicationName any
+	ApplicationName      any
 	ApplicationVersionId any
 }
 
@@ -304,13 +304,13 @@ type KinesisAnalyticsV2ApplicationVersionAttrs struct {
 	ApplicationName any
 	// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
 	ApplicationVersionDetail any
-	ApplicationVersionId any
+	ApplicationVersionId     any
 }
 
 var KinesisAnalyticsV2ApplicationVersion = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_analytics_v2_application_version",
 	Fields: ubx.FieldMap{
-		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
+		"ApplicationName":      ubx.FieldSpec{WireName: "application_name"},
 		"ApplicationVersionId": ubx.FieldSpec{WireName: "application_version_id"},
 	},
 }

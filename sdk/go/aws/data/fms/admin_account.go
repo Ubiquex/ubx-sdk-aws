@@ -8,11 +8,10 @@ type AdminAccountConfig struct {
 
 type AdminAccountAttrs struct {
 	AdminAccount any
-	RoleStatus any
+	RoleStatus   any
 }
 
 var AdminAccount = ubx.DataSourceBinding{
 	WireType: "aws_fms_admin_account",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

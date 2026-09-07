@@ -8,13 +8,12 @@ type ReportCreationConfig struct {
 
 type ReportCreationAttrs struct {
 	ErrorMessage any
-	S3Location any
-	StartDate any
-	Status any
+	S3Location   any
+	StartDate    any
+	Status       any
 }
 
 var ReportCreation = ubx.DataSourceBinding{
 	WireType: "aws_tagging_report_creation",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

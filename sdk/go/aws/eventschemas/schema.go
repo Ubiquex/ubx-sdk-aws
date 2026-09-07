@@ -11,9 +11,9 @@ type Schema_Tags struct {
 }
 
 var Schema_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SchemaConfig struct {
 	// The source of the schema definition.
@@ -56,14 +56,14 @@ type SchemaAttrs struct {
 var Schema = ubx.ResourceBinding{
 	WireType: "aws_event_schemas_schema",
 	Fields: ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Content":      ubx.FieldSpec{WireName: "content"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
 		"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
-		"SchemaName": ubx.FieldSpec{WireName: "schema_name"},
+		"SchemaName":   ubx.FieldSpec{WireName: "schema_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Schema_TagsFields,
+			Kind:     "list",
+			Fields:   Schema_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

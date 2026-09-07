@@ -9,27 +9,27 @@ type VpcAttribute_EnableDnsHostnames struct {
 
 type VpcAttributeConfig struct {
 	Attribute any
-	DryRun any
-	VpcId any
+	DryRun    any
+	VpcId     any
 }
 
 type VpcAttributeAttrs struct {
 	Attribute any
-	DryRun any
+	DryRun    any
 	// <p>Describes a value for a resource attribute that is a Boolean value.</p>
 	EnableDnsHostnames any
 	// <p>Describes a value for a resource attribute that is a Boolean value.</p>
 	EnableDnsSupport any
 	// <p>Describes a value for a resource attribute that is a Boolean value.</p>
 	EnableNetworkAddressUsageMetrics any
-	VpcId any
+	VpcId                            any
 }
 
 var VpcAttribute = ubx.DataSourceBinding{
 	WireType: "aws_ec2_vpc_attribute",
 	Fields: ubx.FieldMap{
 		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
+		"DryRun":    ubx.FieldSpec{WireName: "dry_run"},
+		"VpcId":     ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

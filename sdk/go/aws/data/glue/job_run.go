@@ -9,62 +9,62 @@ type JobRun_JobRun_NotificationProperty struct {
 
 type JobRun_JobRun_PredecessorRuns struct {
 	JobName any
-	RunId any
+	RunId   any
 }
 
 type JobRun_JobRun struct {
-	AllocatedCapacity any
-	Arguments any
-	Attempt any
-	CompletedOn any
-	Dpuseconds any
-	ErrorMessage any
-	ExecutionClass any
+	AllocatedCapacity          any
+	Arguments                  any
+	Attempt                    any
+	CompletedOn                any
+	Dpuseconds                 any
+	ErrorMessage               any
+	ExecutionClass             any
 	ExecutionRoleSessionPolicy any
-	ExecutionTime any
-	GlueVersion any
-	Id any
-	JobMode any
-	JobName any
-	JobRunQueuingEnabled any
-	JobRunState any
-	LastModifiedOn any
-	LogGroupName any
-	MaintenanceWindow any
-	MaxCapacity any
+	ExecutionTime              any
+	GlueVersion                any
+	Id                         any
+	JobMode                    any
+	JobName                    any
+	JobRunQueuingEnabled       any
+	JobRunState                any
+	LastModifiedOn             any
+	LogGroupName               any
+	MaintenanceWindow          any
+	MaxCapacity                any
 	// <p>Specifies configuration properties of a notification.</p>
-	NotificationProperty any
-	NumberOfWorkers any
-	PredecessorRuns any
-	PreviousRunId any
-	ProfileName any
+	NotificationProperty  any
+	NumberOfWorkers       any
+	PredecessorRuns       any
+	PreviousRunId         any
+	ProfileName           any
 	SecurityConfiguration any
-	StartedOn any
-	StateDetail any
-	Timeout any
-	TriggerName any
-	WorkerType any
+	StartedOn             any
+	StateDetail           any
+	Timeout               any
+	TriggerName           any
+	WorkerType            any
 }
 
 type JobRunConfig struct {
-	JobName any
+	JobName              any
 	PredecessorsIncluded any
-	RunId any
+	RunId                any
 }
 
 type JobRunAttrs struct {
 	JobName any
 	// <p>Contains information about a job run.</p>
-	JobRun any
+	JobRun               any
 	PredecessorsIncluded any
-	RunId any
+	RunId                any
 }
 
 var JobRun = ubx.DataSourceBinding{
 	WireType: "aws_glue_job_run",
 	Fields: ubx.FieldMap{
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
+		"JobName":              ubx.FieldSpec{WireName: "job_name"},
 		"PredecessorsIncluded": ubx.FieldSpec{WireName: "predecessors_included"},
-		"RunId": ubx.FieldSpec{WireName: "run_id"},
+		"RunId":                ubx.FieldSpec{WireName: "run_id"},
 	},
 }

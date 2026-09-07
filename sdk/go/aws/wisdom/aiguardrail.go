@@ -88,92 +88,92 @@ type Aiguardrail_WordPolicyConfig struct {
 }
 
 var Aiguardrail_ContentPolicyConfig_FiltersConfigFields = ubx.FieldMap{
-		"InputStrength": ubx.FieldSpec{WireName: "input_strength"},
-		"OutputStrength": ubx.FieldSpec{WireName: "output_strength"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"InputStrength":  ubx.FieldSpec{WireName: "input_strength"},
+	"OutputStrength": ubx.FieldSpec{WireName: "output_strength"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+}
 
 var Aiguardrail_ContentPolicyConfigFields = ubx.FieldMap{
-		"FiltersConfig": ubx.FieldSpec{
-			WireName: "filters_config",
-			Kind: "list",
-			Fields: Aiguardrail_ContentPolicyConfig_FiltersConfigFields,
-		},
-	}
+	"FiltersConfig": ubx.FieldSpec{
+		WireName: "filters_config",
+		Kind:     "list",
+		Fields:   Aiguardrail_ContentPolicyConfig_FiltersConfigFields,
+	},
+}
 
 var Aiguardrail_ContextualGroundingPolicyConfig_FiltersConfigFields = ubx.FieldMap{
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Threshold": ubx.FieldSpec{WireName: "threshold"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 var Aiguardrail_ContextualGroundingPolicyConfigFields = ubx.FieldMap{
-		"FiltersConfig": ubx.FieldSpec{
-			WireName: "filters_config",
-			Kind: "list",
-			Fields: Aiguardrail_ContextualGroundingPolicyConfig_FiltersConfigFields,
-		},
-	}
+	"FiltersConfig": ubx.FieldSpec{
+		WireName: "filters_config",
+		Kind:     "list",
+		Fields:   Aiguardrail_ContextualGroundingPolicyConfig_FiltersConfigFields,
+	},
+}
 
 var Aiguardrail_SensitiveInformationPolicyConfig_PiiEntitiesConfigFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+}
 
 var Aiguardrail_SensitiveInformationPolicyConfig_RegexesConfigFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-	}
+	"Action":      ubx.FieldSpec{WireName: "action"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Pattern":     ubx.FieldSpec{WireName: "pattern"},
+}
 
 var Aiguardrail_SensitiveInformationPolicyConfigFields = ubx.FieldMap{
-		"PiiEntitiesConfig": ubx.FieldSpec{
-			WireName: "pii_entities_config",
-			Kind: "list",
-			Fields: Aiguardrail_SensitiveInformationPolicyConfig_PiiEntitiesConfigFields,
-		},
-		"RegexesConfig": ubx.FieldSpec{
-			WireName: "regexes_config",
-			Kind: "list",
-			Fields: Aiguardrail_SensitiveInformationPolicyConfig_RegexesConfigFields,
-		},
-	}
+	"PiiEntitiesConfig": ubx.FieldSpec{
+		WireName: "pii_entities_config",
+		Kind:     "list",
+		Fields:   Aiguardrail_SensitiveInformationPolicyConfig_PiiEntitiesConfigFields,
+	},
+	"RegexesConfig": ubx.FieldSpec{
+		WireName: "regexes_config",
+		Kind:     "list",
+		Fields:   Aiguardrail_SensitiveInformationPolicyConfig_RegexesConfigFields,
+	},
+}
 
 var Aiguardrail_TopicPolicyConfig_TopicsConfigFields = ubx.FieldMap{
-		"Definition": ubx.FieldSpec{WireName: "definition"},
-		"Examples": ubx.FieldSpec{WireName: "examples"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Definition": ubx.FieldSpec{WireName: "definition"},
+	"Examples":   ubx.FieldSpec{WireName: "examples"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var Aiguardrail_TopicPolicyConfigFields = ubx.FieldMap{
-		"TopicsConfig": ubx.FieldSpec{
-			WireName: "topics_config",
-			Kind: "list",
-			Fields: Aiguardrail_TopicPolicyConfig_TopicsConfigFields,
-		},
-	}
+	"TopicsConfig": ubx.FieldSpec{
+		WireName: "topics_config",
+		Kind:     "list",
+		Fields:   Aiguardrail_TopicPolicyConfig_TopicsConfigFields,
+	},
+}
 
 var Aiguardrail_WordPolicyConfig_ManagedWordListsConfigFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Aiguardrail_WordPolicyConfig_WordsConfigFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 var Aiguardrail_WordPolicyConfigFields = ubx.FieldMap{
-		"ManagedWordListsConfig": ubx.FieldSpec{
-			WireName: "managed_word_lists_config",
-			Kind: "list",
-			Fields: Aiguardrail_WordPolicyConfig_ManagedWordListsConfigFields,
-		},
-		"WordsConfig": ubx.FieldSpec{
-			WireName: "words_config",
-			Kind: "list",
-			Fields: Aiguardrail_WordPolicyConfig_WordsConfigFields,
-		},
-	}
+	"ManagedWordListsConfig": ubx.FieldSpec{
+		WireName: "managed_word_lists_config",
+		Kind:     "list",
+		Fields:   Aiguardrail_WordPolicyConfig_ManagedWordListsConfigFields,
+	},
+	"WordsConfig": ubx.FieldSpec{
+		WireName: "words_config",
+		Kind:     "list",
+		Fields:   Aiguardrail_WordPolicyConfig_WordsConfigFields,
+	},
+}
 
 type AiguardrailConfig struct {
 	// The identifier of the Amazon Wisdom assistant to which this AI guardrail is associated. (AI-inferred)
@@ -236,36 +236,36 @@ type AiguardrailAttrs struct {
 var Aiguardrail = ubx.ResourceBinding{
 	WireType: "aws_wisdom_aiguardrail",
 	Fields: ubx.FieldMap{
-		"AssistantId": ubx.FieldSpec{WireName: "assistant_id"},
-		"BlockedInputMessaging": ubx.FieldSpec{WireName: "blocked_input_messaging"},
+		"AssistantId":             ubx.FieldSpec{WireName: "assistant_id"},
+		"BlockedInputMessaging":   ubx.FieldSpec{WireName: "blocked_input_messaging"},
 		"BlockedOutputsMessaging": ubx.FieldSpec{WireName: "blocked_outputs_messaging"},
 		"ContentPolicyConfig": ubx.FieldSpec{
 			WireName: "content_policy_config",
-			Kind: "object",
-			Fields: Aiguardrail_ContentPolicyConfigFields,
+			Kind:     "object",
+			Fields:   Aiguardrail_ContentPolicyConfigFields,
 		},
 		"ContextualGroundingPolicyConfig": ubx.FieldSpec{
 			WireName: "contextual_grounding_policy_config",
-			Kind: "object",
-			Fields: Aiguardrail_ContextualGroundingPolicyConfigFields,
+			Kind:     "object",
+			Fields:   Aiguardrail_ContextualGroundingPolicyConfigFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"SensitiveInformationPolicyConfig": ubx.FieldSpec{
 			WireName: "sensitive_information_policy_config",
-			Kind: "object",
-			Fields: Aiguardrail_SensitiveInformationPolicyConfigFields,
+			Kind:     "object",
+			Fields:   Aiguardrail_SensitiveInformationPolicyConfigFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"TopicPolicyConfig": ubx.FieldSpec{
 			WireName: "topic_policy_config",
-			Kind: "object",
-			Fields: Aiguardrail_TopicPolicyConfigFields,
+			Kind:     "object",
+			Fields:   Aiguardrail_TopicPolicyConfigFields,
 		},
 		"WordPolicyConfig": ubx.FieldSpec{
 			WireName: "word_policy_config",
-			Kind: "object",
-			Fields: Aiguardrail_WordPolicyConfigFields,
+			Kind:     "object",
+			Fields:   Aiguardrail_WordPolicyConfigFields,
 		},
 	},
 }

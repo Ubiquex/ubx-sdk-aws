@@ -19,6 +19,5 @@ type GlobalSettingsAttrs struct {
 
 var GlobalSettings = ubx.DataSourceBinding{
 	WireType: "aws_chime_global_settings",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

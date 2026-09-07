@@ -4,42 +4,42 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TransitGatewayMulticastDomainAssociations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type TransitGatewayMulticastDomainAssociations_MulticastDomainAssociations_Subnet struct {
-	State any
+	State    any
 	SubnetId any
 }
 
 type TransitGatewayMulticastDomainAssociations_MulticastDomainAssociations struct {
-	ResourceId any
-	ResourceOwnerId any
-	ResourceType any
-	Subnet any
+	ResourceId                 any
+	ResourceOwnerId            any
+	ResourceType               any
+	Subnet                     any
 	TransitGatewayAttachmentId any
 }
 
 var TransitGatewayMulticastDomainAssociations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type TransitGatewayMulticastDomainAssociationsConfig struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                          any
+	Filters                         any
+	MaxResults                      any
+	NextToken                       any
 	TransitGatewayMulticastDomainId any
 }
 
 type TransitGatewayMulticastDomainAssociationsAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	MulticastDomainAssociations any
-	NextToken any
+	DryRun                          any
+	Filters                         any
+	MaxResults                      any
+	MulticastDomainAssociations     any
+	NextToken                       any
 	TransitGatewayMulticastDomainId any
 }
 
@@ -49,11 +49,11 @@ var TransitGatewayMulticastDomainAssociations = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: TransitGatewayMulticastDomainAssociations_FiltersFields,
+			Kind:     "list",
+			Fields:   TransitGatewayMulticastDomainAssociations_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                       ubx.FieldSpec{WireName: "next_token"},
 		"TransitGatewayMulticastDomainId": ubx.FieldSpec{WireName: "transit_gateway_multicast_domain_id"},
 	},
 }

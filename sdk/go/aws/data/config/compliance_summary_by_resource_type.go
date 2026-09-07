@@ -10,13 +10,13 @@ type ComplianceSummaryByResourceType_ComplianceSummariesByResourceType_Complianc
 
 type ComplianceSummaryByResourceType_ComplianceSummariesByResourceType_ComplianceSummary struct {
 	ComplianceSummaryTimestamp any
-	CompliantResourceCount any
-	NonCompliantResourceCount any
+	CompliantResourceCount     any
+	NonCompliantResourceCount  any
 }
 
 type ComplianceSummaryByResourceType_ComplianceSummariesByResourceType struct {
 	ComplianceSummary any
-	ResourceType any
+	ResourceType      any
 }
 
 type ComplianceSummaryByResourceTypeConfig struct {
@@ -25,7 +25,7 @@ type ComplianceSummaryByResourceTypeConfig struct {
 
 type ComplianceSummaryByResourceTypeAttrs struct {
 	ComplianceSummariesByResourceType any
-	ResourceTypes any
+	ResourceTypes                     any
 }
 
 var ComplianceSummaryByResourceType = ubx.DataSourceBinding{

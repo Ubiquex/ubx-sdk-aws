@@ -19,15 +19,15 @@ type Context_Tags struct {
 }
 
 var Context_SourceFields = ubx.FieldMap{
-		"SourceId": ubx.FieldSpec{WireName: "source_id"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-		"SourceUri": ubx.FieldSpec{WireName: "source_uri"},
-	}
+	"SourceId":   ubx.FieldSpec{WireName: "source_id"},
+	"SourceType": ubx.FieldSpec{WireName: "source_type"},
+	"SourceUri":  ubx.FieldSpec{WireName: "source_uri"},
+}
 
 var Context_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ContextConfig struct {
 	// The name of the context. Must be unique to your account in an AWS Region.
@@ -71,16 +71,16 @@ var Context = ubx.ResourceBinding{
 		"ContextName": ubx.FieldSpec{WireName: "context_name"},
 		"ContextType": ubx.FieldSpec{WireName: "context_type"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
+		"Properties":  ubx.FieldSpec{WireName: "properties"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: Context_SourceFields,
+			Kind:     "object",
+			Fields:   Context_SourceFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Context_TagsFields,
+			Kind:     "list",
+			Fields:   Context_TagsFields,
 		},
 	},
 }

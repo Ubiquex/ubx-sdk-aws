@@ -9,7 +9,7 @@ type SsmIncidentsTagsForResourceConfig struct {
 
 type SsmIncidentsTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var SsmIncidentsTagsForResource = ubx.DataSourceBinding{

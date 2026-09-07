@@ -28,8 +28,8 @@ type AccessKeyAttrs struct {
 var AccessKey = ubx.ResourceBinding{
 	WireType: "aws_iam_access_key",
 	Fields: ubx.FieldMap{
-		"Serial": ubx.FieldSpec{WireName: "serial"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Serial":   ubx.FieldSpec{WireName: "serial"},
+		"Status":   ubx.FieldSpec{WireName: "status"},
 		"UserName": ubx.FieldSpec{WireName: "user_name"},
 	},
 }

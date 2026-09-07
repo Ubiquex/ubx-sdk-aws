@@ -48,7 +48,7 @@ type Transformer_InputConversion_AdvancedOptions_X12_ValidationOptions_Validatio
 type Transformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRules struct {
 	CodeListValidationRule any
 	// This X12 validation rule checks whether incoming EDI data element values conform to the maximum length defined for their element type, and when enabled, causes the transformer to flag or fail validation for non-conforming values during input conversion. (AI-inferred)
-	ElementLengthValidationRule any
+	ElementLengthValidationRule      any
 	ElementRequirementValidationRule any
 }
 
@@ -58,7 +58,7 @@ type Transformer_InputConversion_AdvancedOptions_X12_ValidationOptions struct {
 
 type Transformer_InputConversion_AdvancedOptions_X12 struct {
 	// Defines how the transformer splits an incoming X12 envelope into separate processing units, such as by transaction set, during input conversion. (AI-inferred)
-	SplitOptions any
+	SplitOptions      any
 	ValidationOptions any
 }
 
@@ -90,13 +90,13 @@ type Transformer_Mapping struct {
 type Transformer_OutputConversion struct {
 	// A map of advanced options that customize the output conversion format, allowing you to set format-specific parameters like delimiters and character sets for the transformed EDI document. (AI-inferred)
 	AdvancedOptions any
-	FormatOptions any
+	FormatOptions   any
 	// The target format to which the input EDI document is converted, such as JSON or XML. (AI-inferred)
 	ToFormat any
 }
 
 type Transformer_SampleDocuments_Keys struct {
-	Input any
+	Input  any
 	Output any
 }
 
@@ -115,145 +115,145 @@ type Transformer_Tags struct {
 }
 
 var Transformer_EdiType_X12DetailsFields = ubx.FieldMap{
-		"TransactionSet": ubx.FieldSpec{WireName: "transaction_set"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"TransactionSet": ubx.FieldSpec{WireName: "transaction_set"},
+	"Version":        ubx.FieldSpec{WireName: "version"},
+}
 
 var Transformer_EdiTypeFields = ubx.FieldMap{
-		"X12Details": ubx.FieldSpec{
-			WireName: "x12_details",
-			Kind: "object",
-			Fields: Transformer_EdiType_X12DetailsFields,
-		},
-	}
+	"X12Details": ubx.FieldSpec{
+		WireName: "x12_details",
+		Kind:     "object",
+		Fields:   Transformer_EdiType_X12DetailsFields,
+	},
+}
 
 var Transformer_InputConversion_AdvancedOptions_X12_SplitOptionsFields = ubx.FieldMap{
-		"SplitBy": ubx.FieldSpec{WireName: "split_by"},
-	}
+	"SplitBy": ubx.FieldSpec{WireName: "split_by"},
+}
 
 var Transformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRules_CodeListValidationRuleFields = ubx.FieldMap{
-		"CodesToAdd": ubx.FieldSpec{WireName: "codes_to_add"},
-		"CodesToRemove": ubx.FieldSpec{WireName: "codes_to_remove"},
-		"ElementId": ubx.FieldSpec{WireName: "element_id"},
-	}
+	"CodesToAdd":    ubx.FieldSpec{WireName: "codes_to_add"},
+	"CodesToRemove": ubx.FieldSpec{WireName: "codes_to_remove"},
+	"ElementId":     ubx.FieldSpec{WireName: "element_id"},
+}
 
 var Transformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRules_ElementLengthValidationRuleFields = ubx.FieldMap{
-		"ElementId": ubx.FieldSpec{WireName: "element_id"},
-		"MaxLength": ubx.FieldSpec{WireName: "max_length"},
-		"MinLength": ubx.FieldSpec{WireName: "min_length"},
-	}
+	"ElementId": ubx.FieldSpec{WireName: "element_id"},
+	"MaxLength": ubx.FieldSpec{WireName: "max_length"},
+	"MinLength": ubx.FieldSpec{WireName: "min_length"},
+}
 
 var Transformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRules_ElementRequirementValidationRuleFields = ubx.FieldMap{
-		"ElementPosition": ubx.FieldSpec{WireName: "element_position"},
-		"Requirement": ubx.FieldSpec{WireName: "requirement"},
-	}
+	"ElementPosition": ubx.FieldSpec{WireName: "element_position"},
+	"Requirement":     ubx.FieldSpec{WireName: "requirement"},
+}
 
 var Transformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRulesFields = ubx.FieldMap{
-		"CodeListValidationRule": ubx.FieldSpec{
-			WireName: "code_list_validation_rule",
-			Kind: "object",
-			Fields: Transformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRules_CodeListValidationRuleFields,
-		},
-		"ElementLengthValidationRule": ubx.FieldSpec{
-			WireName: "element_length_validation_rule",
-			Kind: "object",
-			Fields: Transformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRules_ElementLengthValidationRuleFields,
-		},
-		"ElementRequirementValidationRule": ubx.FieldSpec{
-			WireName: "element_requirement_validation_rule",
-			Kind: "object",
-			Fields: Transformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRules_ElementRequirementValidationRuleFields,
-		},
-	}
+	"CodeListValidationRule": ubx.FieldSpec{
+		WireName: "code_list_validation_rule",
+		Kind:     "object",
+		Fields:   Transformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRules_CodeListValidationRuleFields,
+	},
+	"ElementLengthValidationRule": ubx.FieldSpec{
+		WireName: "element_length_validation_rule",
+		Kind:     "object",
+		Fields:   Transformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRules_ElementLengthValidationRuleFields,
+	},
+	"ElementRequirementValidationRule": ubx.FieldSpec{
+		WireName: "element_requirement_validation_rule",
+		Kind:     "object",
+		Fields:   Transformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRules_ElementRequirementValidationRuleFields,
+	},
+}
 
 var Transformer_InputConversion_AdvancedOptions_X12_ValidationOptionsFields = ubx.FieldMap{
-		"ValidationRules": ubx.FieldSpec{
-			WireName: "validation_rules",
-			Kind: "list",
-			Fields: Transformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRulesFields,
-		},
-	}
+	"ValidationRules": ubx.FieldSpec{
+		WireName: "validation_rules",
+		Kind:     "list",
+		Fields:   Transformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRulesFields,
+	},
+}
 
 var Transformer_InputConversion_AdvancedOptions_X12Fields = ubx.FieldMap{
-		"SplitOptions": ubx.FieldSpec{
-			WireName: "split_options",
-			Kind: "object",
-			Fields: Transformer_InputConversion_AdvancedOptions_X12_SplitOptionsFields,
-		},
-		"ValidationOptions": ubx.FieldSpec{
-			WireName: "validation_options",
-			Kind: "object",
-			Fields: Transformer_InputConversion_AdvancedOptions_X12_ValidationOptionsFields,
-		},
-	}
+	"SplitOptions": ubx.FieldSpec{
+		WireName: "split_options",
+		Kind:     "object",
+		Fields:   Transformer_InputConversion_AdvancedOptions_X12_SplitOptionsFields,
+	},
+	"ValidationOptions": ubx.FieldSpec{
+		WireName: "validation_options",
+		Kind:     "object",
+		Fields:   Transformer_InputConversion_AdvancedOptions_X12_ValidationOptionsFields,
+	},
+}
 
 var Transformer_InputConversion_AdvancedOptionsFields = ubx.FieldMap{
-		"X12": ubx.FieldSpec{
-			WireName: "x12",
-			Kind: "object",
-			Fields: Transformer_InputConversion_AdvancedOptions_X12Fields,
-		},
-	}
+	"X12": ubx.FieldSpec{
+		WireName: "x12",
+		Kind:     "object",
+		Fields:   Transformer_InputConversion_AdvancedOptions_X12Fields,
+	},
+}
 
 var Transformer_InputConversion_FormatOptionsFields = ubx.FieldMap{
-		"X12": ubx.FieldSpec{
-			WireName: "x12",
-			Kind: "object",
-			Fields: Transformer_EdiType_X12DetailsFields,
-		},
-	}
+	"X12": ubx.FieldSpec{
+		WireName: "x12",
+		Kind:     "object",
+		Fields:   Transformer_EdiType_X12DetailsFields,
+	},
+}
 
 var Transformer_InputConversionFields = ubx.FieldMap{
-		"AdvancedOptions": ubx.FieldSpec{
-			WireName: "advanced_options",
-			Kind: "object",
-			Fields: Transformer_InputConversion_AdvancedOptionsFields,
-		},
-		"FormatOptions": ubx.FieldSpec{
-			WireName: "format_options",
-			Kind: "object",
-			Fields: Transformer_InputConversion_FormatOptionsFields,
-		},
-		"FromFormat": ubx.FieldSpec{WireName: "from_format"},
-	}
+	"AdvancedOptions": ubx.FieldSpec{
+		WireName: "advanced_options",
+		Kind:     "object",
+		Fields:   Transformer_InputConversion_AdvancedOptionsFields,
+	},
+	"FormatOptions": ubx.FieldSpec{
+		WireName: "format_options",
+		Kind:     "object",
+		Fields:   Transformer_InputConversion_FormatOptionsFields,
+	},
+	"FromFormat": ubx.FieldSpec{WireName: "from_format"},
+}
 
 var Transformer_MappingFields = ubx.FieldMap{
-		"Template": ubx.FieldSpec{WireName: "template"},
-		"TemplateLanguage": ubx.FieldSpec{WireName: "template_language"},
-	}
+	"Template":         ubx.FieldSpec{WireName: "template"},
+	"TemplateLanguage": ubx.FieldSpec{WireName: "template_language"},
+}
 
 var Transformer_OutputConversionFields = ubx.FieldMap{
-		"AdvancedOptions": ubx.FieldSpec{
-			WireName: "advanced_options",
-			Kind: "object",
-			Fields: Transformer_InputConversion_AdvancedOptionsFields,
-		},
-		"FormatOptions": ubx.FieldSpec{
-			WireName: "format_options",
-			Kind: "object",
-			Fields: Transformer_InputConversion_FormatOptionsFields,
-		},
-		"ToFormat": ubx.FieldSpec{WireName: "to_format"},
-	}
+	"AdvancedOptions": ubx.FieldSpec{
+		WireName: "advanced_options",
+		Kind:     "object",
+		Fields:   Transformer_InputConversion_AdvancedOptionsFields,
+	},
+	"FormatOptions": ubx.FieldSpec{
+		WireName: "format_options",
+		Kind:     "object",
+		Fields:   Transformer_InputConversion_FormatOptionsFields,
+	},
+	"ToFormat": ubx.FieldSpec{WireName: "to_format"},
+}
 
 var Transformer_SampleDocuments_KeysFields = ubx.FieldMap{
-		"Input": ubx.FieldSpec{WireName: "input"},
-		"Output": ubx.FieldSpec{WireName: "output"},
-	}
+	"Input":  ubx.FieldSpec{WireName: "input"},
+	"Output": ubx.FieldSpec{WireName: "output"},
+}
 
 var Transformer_SampleDocumentsFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"Keys": ubx.FieldSpec{
-			WireName: "keys",
-			Kind: "list",
-			Fields: Transformer_SampleDocuments_KeysFields,
-		},
-	}
+	"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+	"Keys": ubx.FieldSpec{
+		WireName: "keys",
+		Kind:     "list",
+		Fields:   Transformer_SampleDocuments_KeysFields,
+	},
+}
 
 var Transformer_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TransformerConfig struct {
 	// Defines the EDI interchange format and version (X12 or EDIFACT) that the transformer uses for parsing or generating EDI documents. (AI-inferred)
@@ -318,38 +318,38 @@ var Transformer = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EdiType": ubx.FieldSpec{
 			WireName: "edi_type",
-			Kind: "object",
-			Fields: Transformer_EdiTypeFields,
+			Kind:     "object",
+			Fields:   Transformer_EdiTypeFields,
 		},
 		"FileFormat": ubx.FieldSpec{WireName: "file_format"},
 		"InputConversion": ubx.FieldSpec{
 			WireName: "input_conversion",
-			Kind: "object",
-			Fields: Transformer_InputConversionFields,
+			Kind:     "object",
+			Fields:   Transformer_InputConversionFields,
 		},
 		"Mapping": ubx.FieldSpec{
 			WireName: "mapping",
-			Kind: "object",
-			Fields: Transformer_MappingFields,
+			Kind:     "object",
+			Fields:   Transformer_MappingFields,
 		},
 		"MappingTemplate": ubx.FieldSpec{WireName: "mapping_template"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"OutputConversion": ubx.FieldSpec{
 			WireName: "output_conversion",
-			Kind: "object",
-			Fields: Transformer_OutputConversionFields,
+			Kind:     "object",
+			Fields:   Transformer_OutputConversionFields,
 		},
 		"SampleDocument": ubx.FieldSpec{WireName: "sample_document"},
 		"SampleDocuments": ubx.FieldSpec{
 			WireName: "sample_documents",
-			Kind: "object",
-			Fields: Transformer_SampleDocumentsFields,
+			Kind:     "object",
+			Fields:   Transformer_SampleDocumentsFields,
 		},
 		"Status": ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Transformer_TagsFields,
+			Kind:     "list",
+			Fields:   Transformer_TagsFields,
 		},
 	},
 }

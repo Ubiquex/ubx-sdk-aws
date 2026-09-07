@@ -12,6 +12,5 @@ type HealthServiceStatusForOrganizationAttrs struct {
 
 var HealthServiceStatusForOrganization = ubx.DataSourceBinding{
 	WireType: "aws_health_health_service_status_for_organization",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

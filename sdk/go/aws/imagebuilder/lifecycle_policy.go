@@ -81,84 +81,84 @@ type LifecyclePolicy_ResourceSelection struct {
 }
 
 var LifecyclePolicy_PolicyDetails_Action_IncludeResourcesFields = ubx.FieldMap{
-		"Amis": ubx.FieldSpec{WireName: "amis"},
-		"Containers": ubx.FieldSpec{WireName: "containers"},
-		"Snapshots": ubx.FieldSpec{WireName: "snapshots"},
-	}
+	"Amis":       ubx.FieldSpec{WireName: "amis"},
+	"Containers": ubx.FieldSpec{WireName: "containers"},
+	"Snapshots":  ubx.FieldSpec{WireName: "snapshots"},
+}
 
 var LifecyclePolicy_PolicyDetails_ActionFields = ubx.FieldMap{
-		"IncludeResources": ubx.FieldSpec{
-			WireName: "include_resources",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_Action_IncludeResourcesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"IncludeResources": ubx.FieldSpec{
+		WireName: "include_resources",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_Action_IncludeResourcesFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var LifecyclePolicy_PolicyDetails_ExclusionRules_Amis_LastLaunchedFields = ubx.FieldMap{
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Unit":  ubx.FieldSpec{WireName: "unit"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var LifecyclePolicy_PolicyDetails_ExclusionRules_AmisFields = ubx.FieldMap{
-		"IsPublic": ubx.FieldSpec{WireName: "is_public"},
-		"LastLaunched": ubx.FieldSpec{
-			WireName: "last_launched",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_ExclusionRules_Amis_LastLaunchedFields,
-		},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
-		"SharedAccounts": ubx.FieldSpec{WireName: "shared_accounts"},
-		"TagMap": ubx.FieldSpec{WireName: "tag_map"},
-	}
+	"IsPublic": ubx.FieldSpec{WireName: "is_public"},
+	"LastLaunched": ubx.FieldSpec{
+		WireName: "last_launched",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_ExclusionRules_Amis_LastLaunchedFields,
+	},
+	"Regions":        ubx.FieldSpec{WireName: "regions"},
+	"SharedAccounts": ubx.FieldSpec{WireName: "shared_accounts"},
+	"TagMap":         ubx.FieldSpec{WireName: "tag_map"},
+}
 
 var LifecyclePolicy_PolicyDetails_ExclusionRulesFields = ubx.FieldMap{
-		"Amis": ubx.FieldSpec{
-			WireName: "amis",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_ExclusionRules_AmisFields,
-		},
-		"TagMap": ubx.FieldSpec{WireName: "tag_map"},
-	}
+	"Amis": ubx.FieldSpec{
+		WireName: "amis",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_ExclusionRules_AmisFields,
+	},
+	"TagMap": ubx.FieldSpec{WireName: "tag_map"},
+}
 
 var LifecyclePolicy_PolicyDetails_FilterFields = ubx.FieldMap{
-		"RetainAtLeast": ubx.FieldSpec{WireName: "retain_at_least"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"RetainAtLeast": ubx.FieldSpec{WireName: "retain_at_least"},
+	"Type":          ubx.FieldSpec{WireName: "type"},
+	"Unit":          ubx.FieldSpec{WireName: "unit"},
+	"Value":         ubx.FieldSpec{WireName: "value"},
+}
 
 var LifecyclePolicy_PolicyDetailsFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_ActionFields,
-		},
-		"ExclusionRules": ubx.FieldSpec{
-			WireName: "exclusion_rules",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_ExclusionRulesFields,
-		},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_FilterFields,
-		},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_ActionFields,
+	},
+	"ExclusionRules": ubx.FieldSpec{
+		WireName: "exclusion_rules",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_ExclusionRulesFields,
+	},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_FilterFields,
+	},
+}
 
 var LifecyclePolicy_ResourceSelection_RecipesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SemanticVersion": ubx.FieldSpec{WireName: "semantic_version"},
-	}
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"SemanticVersion": ubx.FieldSpec{WireName: "semantic_version"},
+}
 
 var LifecyclePolicy_ResourceSelectionFields = ubx.FieldMap{
-		"Recipes": ubx.FieldSpec{
-			WireName: "recipes",
-			Kind: "list",
-			Fields: LifecyclePolicy_ResourceSelection_RecipesFields,
-		},
-		"TagMap": ubx.FieldSpec{WireName: "tag_map"},
-	}
+	"Recipes": ubx.FieldSpec{
+		WireName: "recipes",
+		Kind:     "list",
+		Fields:   LifecyclePolicy_ResourceSelection_RecipesFields,
+	},
+	"TagMap": ubx.FieldSpec{WireName: "tag_map"},
+}
 
 type LifecyclePolicyConfig struct {
 	// The description of the lifecycle policy.
@@ -203,21 +203,21 @@ type LifecyclePolicyAttrs struct {
 var LifecyclePolicy = ubx.ResourceBinding{
 	WireType: "aws_image_builder_lifecycle_policy",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
 		"ExecutionRole": ubx.FieldSpec{WireName: "execution_role"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"PolicyDetails": ubx.FieldSpec{
 			WireName: "policy_details",
-			Kind: "list",
-			Fields: LifecyclePolicy_PolicyDetailsFields,
+			Kind:     "list",
+			Fields:   LifecyclePolicy_PolicyDetailsFields,
 		},
 		"ResourceSelection": ubx.FieldSpec{
 			WireName: "resource_selection",
-			Kind: "object",
-			Fields: LifecyclePolicy_ResourceSelectionFields,
+			Kind:     "object",
+			Fields:   LifecyclePolicy_ResourceSelectionFields,
 		},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Status":       ubx.FieldSpec{WireName: "status"},
+		"Tags":         ubx.FieldSpec{WireName: "tags"},
 	},
 }

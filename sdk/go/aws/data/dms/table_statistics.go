@@ -4,59 +4,59 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TableStatistics_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type TableStatistics_TableStatistics struct {
-	AppliedDdls any
-	AppliedDeletes any
-	AppliedInserts any
-	AppliedUpdates any
-	Ddls any
-	Deletes any
+	AppliedDdls                  any
+	AppliedDeletes               any
+	AppliedInserts               any
+	AppliedUpdates               any
+	Ddls                         any
+	Deletes                      any
 	FullLoadCondtnlChkFailedRows any
-	FullLoadEndTime any
-	FullLoadErrorRows any
-	FullLoadReloaded any
-	FullLoadRows any
-	FullLoadStartTime any
-	Inserts any
-	LastUpdateTime any
-	ResyncProgress any
-	ResyncRowsAttempted any
-	ResyncRowsFailed any
-	ResyncRowsSucceeded any
-	ResyncState any
-	SchemaName any
-	TableName any
-	TableState any
-	Updates any
-	ValidationFailedRecords any
-	ValidationPendingRecords any
-	ValidationState any
-	ValidationStateDetails any
-	ValidationSuspendedRecords any
+	FullLoadEndTime              any
+	FullLoadErrorRows            any
+	FullLoadReloaded             any
+	FullLoadRows                 any
+	FullLoadStartTime            any
+	Inserts                      any
+	LastUpdateTime               any
+	ResyncProgress               any
+	ResyncRowsAttempted          any
+	ResyncRowsFailed             any
+	ResyncRowsSucceeded          any
+	ResyncState                  any
+	SchemaName                   any
+	TableName                    any
+	TableState                   any
+	Updates                      any
+	ValidationFailedRecords      any
+	ValidationPendingRecords     any
+	ValidationState              any
+	ValidationStateDetails       any
+	ValidationSuspendedRecords   any
 }
 
 var TableStatistics_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type TableStatisticsConfig struct {
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters            any
+	Marker             any
+	MaxRecords         any
 	ReplicationTaskArn any
 }
 
 type TableStatisticsAttrs struct {
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters            any
+	Marker             any
+	MaxRecords         any
 	ReplicationTaskArn any
-	TableStatistics any
+	TableStatistics    any
 }
 
 var TableStatistics = ubx.DataSourceBinding{
@@ -64,11 +64,11 @@ var TableStatistics = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: TableStatistics_FiltersFields,
+			Kind:     "list",
+			Fields:   TableStatistics_FiltersFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
+		"Marker":             ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":         ubx.FieldSpec{WireName: "max_records"},
 		"ReplicationTaskArn": ubx.FieldSpec{WireName: "replication_task_arn"},
 	},
 }

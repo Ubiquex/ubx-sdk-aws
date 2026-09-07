@@ -30,7 +30,7 @@ type Flow_MediaStreams_Attributes_Fmtp struct {
 	Range any
 	// Specifies the scan mode (for example, progressive or interlaced) of the video in the media stream's FMTP parameters for an AWS MediaConnect flow. (AI-inferred)
 	ScanMode any
-	Tcs any
+	Tcs      any
 }
 
 type Flow_MediaStreams_Attributes struct {
@@ -41,7 +41,7 @@ type Flow_MediaStreams_Attributes struct {
 }
 
 type Flow_MediaStreams_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -60,7 +60,7 @@ type Flow_MediaStreams struct {
 	MediaStreamName any
 	// The type of the media stream, such as video, audio, ancillary-data, or combination, which determines how the stream is handled in the flow. (AI-inferred)
 	MediaStreamType any
-	Tags any
+	Tags            any
 	// The video format of the media stream, specifying the video resolution and frame rate (e.g., '1080p') for the flow's video transport. (AI-inferred)
 	VideoFormat any
 }
@@ -264,7 +264,7 @@ type Flow_SourceMonitoringConfig struct {
 
 type Flow_VpcInterfaces struct {
 	// The name of the VPC interface, which identifies it within the flow. (AI-inferred)
-	Name any
+	Name                any
 	NetworkInterfaceIds any
 	// Specifies the network interface type for the VPC interface, either 'EIP' to allocate an Elastic IP address or 'ANY' for a standard network interface without a public IP. (AI-inferred)
 	NetworkInterfaceType any
@@ -274,148 +274,148 @@ type Flow_VpcInterfaces struct {
 	SecurityGroupIds any
 	// The ID of the subnet in which the VPC interface is created. (AI-inferred)
 	SubnetId any
-	Tags any
+	Tags     any
 }
 
 var Flow_EncodingConfigFields = ubx.FieldMap{
-		"EncodingProfile": ubx.FieldSpec{WireName: "encoding_profile"},
-		"VideoMaxBitrate": ubx.FieldSpec{WireName: "video_max_bitrate"},
-	}
+	"EncodingProfile": ubx.FieldSpec{WireName: "encoding_profile"},
+	"VideoMaxBitrate": ubx.FieldSpec{WireName: "video_max_bitrate"},
+}
 
 var Flow_MaintenanceFields = ubx.FieldMap{
-		"MaintenanceDay": ubx.FieldSpec{WireName: "maintenance_day"},
-		"MaintenanceStartHour": ubx.FieldSpec{WireName: "maintenance_start_hour"},
-	}
+	"MaintenanceDay":       ubx.FieldSpec{WireName: "maintenance_day"},
+	"MaintenanceStartHour": ubx.FieldSpec{WireName: "maintenance_start_hour"},
+}
 
 var Flow_MediaStreams_Attributes_FmtpFields = ubx.FieldMap{
-		"ChannelOrder": ubx.FieldSpec{WireName: "channel_order"},
-		"Colorimetry": ubx.FieldSpec{WireName: "colorimetry"},
-		"ExactFramerate": ubx.FieldSpec{WireName: "exact_framerate"},
-		"Par": ubx.FieldSpec{WireName: "par"},
-		"Range": ubx.FieldSpec{WireName: "range"},
-		"ScanMode": ubx.FieldSpec{WireName: "scan_mode"},
-		"Tcs": ubx.FieldSpec{WireName: "tcs"},
-	}
+	"ChannelOrder":   ubx.FieldSpec{WireName: "channel_order"},
+	"Colorimetry":    ubx.FieldSpec{WireName: "colorimetry"},
+	"ExactFramerate": ubx.FieldSpec{WireName: "exact_framerate"},
+	"Par":            ubx.FieldSpec{WireName: "par"},
+	"Range":          ubx.FieldSpec{WireName: "range"},
+	"ScanMode":       ubx.FieldSpec{WireName: "scan_mode"},
+	"Tcs":            ubx.FieldSpec{WireName: "tcs"},
+}
 
 var Flow_MediaStreams_AttributesFields = ubx.FieldMap{
-		"Fmtp": ubx.FieldSpec{
-			WireName: "fmtp",
-			Kind: "object",
-			Fields: Flow_MediaStreams_Attributes_FmtpFields,
-		},
-		"Lang": ubx.FieldSpec{WireName: "lang"},
-	}
+	"Fmtp": ubx.FieldSpec{
+		WireName: "fmtp",
+		Kind:     "object",
+		Fields:   Flow_MediaStreams_Attributes_FmtpFields,
+	},
+	"Lang": ubx.FieldSpec{WireName: "lang"},
+}
 
 var Flow_MediaStreams_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Flow_MediaStreamsFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Flow_MediaStreams_AttributesFields,
-		},
-		"ClockRate": ubx.FieldSpec{WireName: "clock_rate"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Fmt": ubx.FieldSpec{WireName: "fmt"},
-		"MediaStreamId": ubx.FieldSpec{WireName: "media_stream_id"},
-		"MediaStreamName": ubx.FieldSpec{WireName: "media_stream_name"},
-		"MediaStreamType": ubx.FieldSpec{WireName: "media_stream_type"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: Flow_MediaStreams_TagsFields,
-		},
-		"VideoFormat": ubx.FieldSpec{WireName: "video_format"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Flow_MediaStreams_AttributesFields,
+	},
+	"ClockRate":       ubx.FieldSpec{WireName: "clock_rate"},
+	"Description":     ubx.FieldSpec{WireName: "description"},
+	"Fmt":             ubx.FieldSpec{WireName: "fmt"},
+	"MediaStreamId":   ubx.FieldSpec{WireName: "media_stream_id"},
+	"MediaStreamName": ubx.FieldSpec{WireName: "media_stream_name"},
+	"MediaStreamType": ubx.FieldSpec{WireName: "media_stream_type"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   Flow_MediaStreams_TagsFields,
+	},
+	"VideoFormat": ubx.FieldSpec{WireName: "video_format"},
+}
 
 var Flow_NdiConfig_NdiDiscoveryServersFields = ubx.FieldMap{
-		"DiscoveryServerAddress": ubx.FieldSpec{WireName: "discovery_server_address"},
-		"DiscoveryServerPort": ubx.FieldSpec{WireName: "discovery_server_port"},
-		"VpcInterfaceAdapter": ubx.FieldSpec{WireName: "vpc_interface_adapter"},
-	}
+	"DiscoveryServerAddress": ubx.FieldSpec{WireName: "discovery_server_address"},
+	"DiscoveryServerPort":    ubx.FieldSpec{WireName: "discovery_server_port"},
+	"VpcInterfaceAdapter":    ubx.FieldSpec{WireName: "vpc_interface_adapter"},
+}
 
 var Flow_NdiConfigFields = ubx.FieldMap{
-		"MachineName": ubx.FieldSpec{WireName: "machine_name"},
-		"NdiDiscoveryServers": ubx.FieldSpec{
-			WireName: "ndi_discovery_servers",
-			Kind: "list",
-			Fields: Flow_NdiConfig_NdiDiscoveryServersFields,
-		},
-		"NdiState": ubx.FieldSpec{WireName: "ndi_state"},
-	}
+	"MachineName": ubx.FieldSpec{WireName: "machine_name"},
+	"NdiDiscoveryServers": ubx.FieldSpec{
+		WireName: "ndi_discovery_servers",
+		Kind:     "list",
+		Fields:   Flow_NdiConfig_NdiDiscoveryServersFields,
+	},
+	"NdiState": ubx.FieldSpec{WireName: "ndi_state"},
+}
 
 var Flow_SourceFailoverConfig_SourcePriorityFields = ubx.FieldMap{
-		"PrimarySource": ubx.FieldSpec{WireName: "primary_source"},
-	}
+	"PrimarySource": ubx.FieldSpec{WireName: "primary_source"},
+}
 
 var Flow_SourceFailoverConfigFields = ubx.FieldMap{
-		"FailoverMode": ubx.FieldSpec{WireName: "failover_mode"},
-		"RecoveryWindow": ubx.FieldSpec{WireName: "recovery_window"},
-		"SourcePriority": ubx.FieldSpec{
-			WireName: "source_priority",
-			Kind: "object",
-			Fields: Flow_SourceFailoverConfig_SourcePriorityFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"FailoverMode":   ubx.FieldSpec{WireName: "failover_mode"},
+	"RecoveryWindow": ubx.FieldSpec{WireName: "recovery_window"},
+	"SourcePriority": ubx.FieldSpec{
+		WireName: "source_priority",
+		Kind:     "object",
+		Fields:   Flow_SourceFailoverConfig_SourcePriorityFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var Flow_SourceMonitoringConfig_AudioMonitoringSettings_SilentAudioFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-		"ThresholdSeconds": ubx.FieldSpec{WireName: "threshold_seconds"},
-	}
+	"State":            ubx.FieldSpec{WireName: "state"},
+	"ThresholdSeconds": ubx.FieldSpec{WireName: "threshold_seconds"},
+}
 
 var Flow_SourceMonitoringConfig_AudioMonitoringSettingsFields = ubx.FieldMap{
-		"SilentAudio": ubx.FieldSpec{
-			WireName: "silent_audio",
-			Kind: "object",
-			Fields: Flow_SourceMonitoringConfig_AudioMonitoringSettings_SilentAudioFields,
-		},
-	}
+	"SilentAudio": ubx.FieldSpec{
+		WireName: "silent_audio",
+		Kind:     "object",
+		Fields:   Flow_SourceMonitoringConfig_AudioMonitoringSettings_SilentAudioFields,
+	},
+}
 
 var Flow_SourceMonitoringConfig_VideoMonitoringSettingsFields = ubx.FieldMap{
-		"BlackFrames": ubx.FieldSpec{
-			WireName: "black_frames",
-			Kind: "object",
-			Fields: Flow_SourceMonitoringConfig_AudioMonitoringSettings_SilentAudioFields,
-		},
-		"FrozenFrames": ubx.FieldSpec{
-			WireName: "frozen_frames",
-			Kind: "object",
-			Fields: Flow_SourceMonitoringConfig_AudioMonitoringSettings_SilentAudioFields,
-		},
-	}
+	"BlackFrames": ubx.FieldSpec{
+		WireName: "black_frames",
+		Kind:     "object",
+		Fields:   Flow_SourceMonitoringConfig_AudioMonitoringSettings_SilentAudioFields,
+	},
+	"FrozenFrames": ubx.FieldSpec{
+		WireName: "frozen_frames",
+		Kind:     "object",
+		Fields:   Flow_SourceMonitoringConfig_AudioMonitoringSettings_SilentAudioFields,
+	},
+}
 
 var Flow_SourceMonitoringConfigFields = ubx.FieldMap{
-		"AudioMonitoringSettings": ubx.FieldSpec{
-			WireName: "audio_monitoring_settings",
-			Kind: "list",
-			Fields: Flow_SourceMonitoringConfig_AudioMonitoringSettingsFields,
-		},
-		"ContentQualityAnalysisState": ubx.FieldSpec{WireName: "content_quality_analysis_state"},
-		"ThumbnailState": ubx.FieldSpec{WireName: "thumbnail_state"},
-		"VideoMonitoringSettings": ubx.FieldSpec{
-			WireName: "video_monitoring_settings",
-			Kind: "list",
-			Fields: Flow_SourceMonitoringConfig_VideoMonitoringSettingsFields,
-		},
-	}
+	"AudioMonitoringSettings": ubx.FieldSpec{
+		WireName: "audio_monitoring_settings",
+		Kind:     "list",
+		Fields:   Flow_SourceMonitoringConfig_AudioMonitoringSettingsFields,
+	},
+	"ContentQualityAnalysisState": ubx.FieldSpec{WireName: "content_quality_analysis_state"},
+	"ThumbnailState":              ubx.FieldSpec{WireName: "thumbnail_state"},
+	"VideoMonitoringSettings": ubx.FieldSpec{
+		WireName: "video_monitoring_settings",
+		Kind:     "list",
+		Fields:   Flow_SourceMonitoringConfig_VideoMonitoringSettingsFields,
+	},
+}
 
 var Flow_VpcInterfacesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NetworkInterfaceIds": ubx.FieldSpec{WireName: "network_interface_ids"},
-		"NetworkInterfaceType": ubx.FieldSpec{WireName: "network_interface_type"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: Flow_MediaStreams_TagsFields,
-		},
-	}
+	"Name":                 ubx.FieldSpec{WireName: "name"},
+	"NetworkInterfaceIds":  ubx.FieldSpec{WireName: "network_interface_ids"},
+	"NetworkInterfaceType": ubx.FieldSpec{WireName: "network_interface_type"},
+	"RoleArn":              ubx.FieldSpec{WireName: "role_arn"},
+	"SecurityGroupIds":     ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetId":             ubx.FieldSpec{WireName: "subnet_id"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   Flow_MediaStreams_TagsFields,
+	},
+}
 
 type FlowConfig struct {
 	// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.
@@ -483,45 +483,45 @@ var Flow = ubx.ResourceBinding{
 		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
 		"EncodingConfig": ubx.FieldSpec{
 			WireName: "encoding_config",
-			Kind: "object",
-			Fields: Flow_EncodingConfigFields,
+			Kind:     "object",
+			Fields:   Flow_EncodingConfigFields,
 		},
 		"FlowSize": ubx.FieldSpec{WireName: "flow_size"},
 		"Maintenance": ubx.FieldSpec{
 			WireName: "maintenance",
-			Kind: "object",
-			Fields: Flow_MaintenanceFields,
+			Kind:     "object",
+			Fields:   Flow_MaintenanceFields,
 		},
 		"MediaStreams": ubx.FieldSpec{
 			WireName: "media_streams",
-			Kind: "list",
-			Fields: Flow_MediaStreamsFields,
+			Kind:     "list",
+			Fields:   Flow_MediaStreamsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"NdiConfig": ubx.FieldSpec{
 			WireName: "ndi_config",
-			Kind: "object",
-			Fields: Flow_NdiConfigFields,
+			Kind:     "object",
+			Fields:   Flow_NdiConfigFields,
 		},
 		"SourceFailoverConfig": ubx.FieldSpec{
 			WireName: "source_failover_config",
-			Kind: "object",
-			Fields: Flow_SourceFailoverConfigFields,
+			Kind:     "object",
+			Fields:   Flow_SourceFailoverConfigFields,
 		},
 		"SourceMonitoringConfig": ubx.FieldSpec{
 			WireName: "source_monitoring_config",
-			Kind: "object",
-			Fields: Flow_SourceMonitoringConfigFields,
+			Kind:     "object",
+			Fields:   Flow_SourceMonitoringConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Flow_MediaStreams_TagsFields,
+			Kind:     "list",
+			Fields:   Flow_MediaStreams_TagsFields,
 		},
 		"VpcInterfaces": ubx.FieldSpec{
 			WireName: "vpc_interfaces",
-			Kind: "list",
-			Fields: Flow_VpcInterfacesFields,
+			Kind:     "list",
+			Fields:   Flow_VpcInterfacesFields,
 		},
 	},
 }

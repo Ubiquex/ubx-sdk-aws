@@ -6,29 +6,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Models_Items struct {
 	ContentType any
 	Description any
-	ModelId any
-	Name any
-	Schema any
+	ModelId     any
+	Name        any
+	Schema      any
 }
 
 type ModelsConfig struct {
-	ApiId any
+	ApiId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ModelsAttrs struct {
-	ApiId any
-	Items any
+	ApiId      any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Models = ubx.DataSourceBinding{
 	WireType: "aws_apigatewayv2_models",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":      ubx.FieldSpec{WireName: "api_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

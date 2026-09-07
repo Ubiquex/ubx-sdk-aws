@@ -32,38 +32,38 @@ type VirtualService_Tags struct {
 }
 
 var VirtualService_Spec_Provider_VirtualNodeFields = ubx.FieldMap{
-		"VirtualNodeName": ubx.FieldSpec{WireName: "virtual_node_name"},
-	}
+	"VirtualNodeName": ubx.FieldSpec{WireName: "virtual_node_name"},
+}
 
 var VirtualService_Spec_Provider_VirtualRouterFields = ubx.FieldMap{
-		"VirtualRouterName": ubx.FieldSpec{WireName: "virtual_router_name"},
-	}
+	"VirtualRouterName": ubx.FieldSpec{WireName: "virtual_router_name"},
+}
 
 var VirtualService_Spec_ProviderFields = ubx.FieldMap{
-		"VirtualNode": ubx.FieldSpec{
-			WireName: "virtual_node",
-			Kind: "object",
-			Fields: VirtualService_Spec_Provider_VirtualNodeFields,
-		},
-		"VirtualRouter": ubx.FieldSpec{
-			WireName: "virtual_router",
-			Kind: "object",
-			Fields: VirtualService_Spec_Provider_VirtualRouterFields,
-		},
-	}
+	"VirtualNode": ubx.FieldSpec{
+		WireName: "virtual_node",
+		Kind:     "object",
+		Fields:   VirtualService_Spec_Provider_VirtualNodeFields,
+	},
+	"VirtualRouter": ubx.FieldSpec{
+		WireName: "virtual_router",
+		Kind:     "object",
+		Fields:   VirtualService_Spec_Provider_VirtualRouterFields,
+	},
+}
 
 var VirtualService_SpecFields = ubx.FieldMap{
-		"Provider": ubx.FieldSpec{
-			WireName: "provider",
-			Kind: "object",
-			Fields: VirtualService_Spec_ProviderFields,
-		},
-	}
+	"Provider": ubx.FieldSpec{
+		WireName: "provider",
+		Kind:     "object",
+		Fields:   VirtualService_Spec_ProviderFields,
+	},
+}
 
 var VirtualService_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VirtualServiceConfig struct {
 	// The name of the App Mesh service mesh in which this virtual service is defined. (AI-inferred)
@@ -102,17 +102,17 @@ type VirtualServiceAttrs struct {
 var VirtualService = ubx.ResourceBinding{
 	WireType: "aws_app_mesh_virtual_service",
 	Fields: ubx.FieldMap{
-		"MeshName": ubx.FieldSpec{WireName: "mesh_name"},
+		"MeshName":  ubx.FieldSpec{WireName: "mesh_name"},
 		"MeshOwner": ubx.FieldSpec{WireName: "mesh_owner"},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: VirtualService_SpecFields,
+			Kind:     "object",
+			Fields:   VirtualService_SpecFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VirtualService_TagsFields,
+			Kind:     "list",
+			Fields:   VirtualService_TagsFields,
 		},
 		"VirtualServiceName": ubx.FieldSpec{WireName: "virtual_service_name"},
 	},

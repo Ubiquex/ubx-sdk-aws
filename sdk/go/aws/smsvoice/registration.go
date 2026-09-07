@@ -10,9 +10,9 @@ type Registration_Tags struct {
 }
 
 var Registration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RegistrationConfig struct {
 	// The type of registration form to create.
@@ -44,8 +44,8 @@ var Registration = ubx.ResourceBinding{
 		"RegistrationType": ubx.FieldSpec{WireName: "registration_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Registration_TagsFields,
+			Kind:     "list",
+			Fields:   Registration_TagsFields,
 		},
 	},
 }

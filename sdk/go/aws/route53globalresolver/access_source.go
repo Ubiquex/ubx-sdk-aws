@@ -4,14 +4,14 @@ package route53globalresolver
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessSource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var AccessSource_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AccessSourceConfig struct {
 	// The CIDR block defining the IP address range this access source authorizes to send DNS queries. (AI-inferred)
@@ -60,16 +60,16 @@ type AccessSourceAttrs struct {
 var AccessSource = ubx.ResourceBinding{
 	WireType: "aws_route53_global_resolver_access_source",
 	Fields: ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
-		"DnsViewId": ubx.FieldSpec{WireName: "dns_view_id"},
+		"Cidr":          ubx.FieldSpec{WireName: "cidr"},
+		"ClientToken":   ubx.FieldSpec{WireName: "client_token"},
+		"DnsViewId":     ubx.FieldSpec{WireName: "dns_view_id"},
 		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Protocol":      ubx.FieldSpec{WireName: "protocol"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AccessSource_TagsFields,
+			Kind:     "list",
+			Fields:   AccessSource_TagsFields,
 		},
 	},
 }

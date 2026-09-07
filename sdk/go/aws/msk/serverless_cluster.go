@@ -26,29 +26,29 @@ type ServerlessCluster_VpcConfigs struct {
 }
 
 var ServerlessCluster_ClientAuthentication_Sasl_IamFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var ServerlessCluster_ClientAuthentication_SaslFields = ubx.FieldMap{
-		"Iam": ubx.FieldSpec{
-			WireName: "iam",
-			Kind: "object",
-			Fields: ServerlessCluster_ClientAuthentication_Sasl_IamFields,
-		},
-	}
+	"Iam": ubx.FieldSpec{
+		WireName: "iam",
+		Kind:     "object",
+		Fields:   ServerlessCluster_ClientAuthentication_Sasl_IamFields,
+	},
+}
 
 var ServerlessCluster_ClientAuthenticationFields = ubx.FieldMap{
-		"Sasl": ubx.FieldSpec{
-			WireName: "sasl",
-			Kind: "object",
-			Fields: ServerlessCluster_ClientAuthentication_SaslFields,
-		},
-	}
+	"Sasl": ubx.FieldSpec{
+		WireName: "sasl",
+		Kind:     "object",
+		Fields:   ServerlessCluster_ClientAuthentication_SaslFields,
+	},
+}
 
 var ServerlessCluster_VpcConfigsFields = ubx.FieldMap{
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
+	"SubnetIds":      ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 type ServerlessClusterConfig struct {
 	// Configures client authentication for the MSK Serverless cluster, specifically enabling or disabling AWS IAM access control via the nested Sasl.Iam property. (AI-inferred)
@@ -79,15 +79,15 @@ var ServerlessCluster = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ClientAuthentication": ubx.FieldSpec{
 			WireName: "client_authentication",
-			Kind: "object",
-			Fields: ServerlessCluster_ClientAuthenticationFields,
+			Kind:     "object",
+			Fields:   ServerlessCluster_ClientAuthenticationFields,
 		},
 		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 		"VpcConfigs": ubx.FieldSpec{
 			WireName: "vpc_configs",
-			Kind: "list",
-			Fields: ServerlessCluster_VpcConfigsFields,
+			Kind:     "list",
+			Fields:   ServerlessCluster_VpcConfigsFields,
 		},
 	},
 }

@@ -52,49 +52,49 @@ type Mltransform_TransformParameters struct {
 }
 
 var Mltransform_InputRecordTables_GlueTablesFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"CatalogId":      ubx.FieldSpec{WireName: "catalog_id"},
+	"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
+	"DatabaseName":   ubx.FieldSpec{WireName: "database_name"},
+	"TableName":      ubx.FieldSpec{WireName: "table_name"},
+}
 
 var Mltransform_InputRecordTablesFields = ubx.FieldMap{
-		"GlueTables": ubx.FieldSpec{
-			WireName: "glue_tables",
-			Kind: "list",
-			Fields: Mltransform_InputRecordTables_GlueTablesFields,
-		},
-	}
+	"GlueTables": ubx.FieldSpec{
+		WireName: "glue_tables",
+		Kind:     "list",
+		Fields:   Mltransform_InputRecordTables_GlueTablesFields,
+	},
+}
 
 var Mltransform_TransformEncryption_MluserDataEncryptionFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"MluserDataEncryptionMode": ubx.FieldSpec{WireName: "mluser_data_encryption_mode"},
-	}
+	"KmsKeyId":                 ubx.FieldSpec{WireName: "kms_key_id"},
+	"MluserDataEncryptionMode": ubx.FieldSpec{WireName: "mluser_data_encryption_mode"},
+}
 
 var Mltransform_TransformEncryptionFields = ubx.FieldMap{
-		"MluserDataEncryption": ubx.FieldSpec{
-			WireName: "mluser_data_encryption",
-			Kind: "object",
-			Fields: Mltransform_TransformEncryption_MluserDataEncryptionFields,
-		},
-		"TaskRunSecurityConfigurationName": ubx.FieldSpec{WireName: "task_run_security_configuration_name"},
-	}
+	"MluserDataEncryption": ubx.FieldSpec{
+		WireName: "mluser_data_encryption",
+		Kind:     "object",
+		Fields:   Mltransform_TransformEncryption_MluserDataEncryptionFields,
+	},
+	"TaskRunSecurityConfigurationName": ubx.FieldSpec{WireName: "task_run_security_configuration_name"},
+}
 
 var Mltransform_TransformParameters_FindMatchesParametersFields = ubx.FieldMap{
-		"AccuracyCostTradeoff": ubx.FieldSpec{WireName: "accuracy_cost_tradeoff"},
-		"EnforceProvidedLabels": ubx.FieldSpec{WireName: "enforce_provided_labels"},
-		"PrecisionRecallTradeoff": ubx.FieldSpec{WireName: "precision_recall_tradeoff"},
-		"PrimaryKeyColumnName": ubx.FieldSpec{WireName: "primary_key_column_name"},
-	}
+	"AccuracyCostTradeoff":    ubx.FieldSpec{WireName: "accuracy_cost_tradeoff"},
+	"EnforceProvidedLabels":   ubx.FieldSpec{WireName: "enforce_provided_labels"},
+	"PrecisionRecallTradeoff": ubx.FieldSpec{WireName: "precision_recall_tradeoff"},
+	"PrimaryKeyColumnName":    ubx.FieldSpec{WireName: "primary_key_column_name"},
+}
 
 var Mltransform_TransformParametersFields = ubx.FieldMap{
-		"FindMatchesParameters": ubx.FieldSpec{
-			WireName: "find_matches_parameters",
-			Kind: "object",
-			Fields: Mltransform_TransformParameters_FindMatchesParametersFields,
-		},
-		"TransformType": ubx.FieldSpec{WireName: "transform_type"},
-	}
+	"FindMatchesParameters": ubx.FieldSpec{
+		WireName: "find_matches_parameters",
+		Kind:     "object",
+		Fields:   Mltransform_TransformParameters_FindMatchesParametersFields,
+	},
+	"TransformType": ubx.FieldSpec{WireName: "transform_type"},
+}
 
 type MltransformConfig struct {
 	// A user-defined, long-form description text for the machine learning transform.
@@ -163,25 +163,25 @@ var Mltransform = ubx.ResourceBinding{
 		"GlueVersion": ubx.FieldSpec{WireName: "glue_version"},
 		"InputRecordTables": ubx.FieldSpec{
 			WireName: "input_record_tables",
-			Kind: "object",
-			Fields: Mltransform_InputRecordTablesFields,
+			Kind:     "object",
+			Fields:   Mltransform_InputRecordTablesFields,
 		},
-		"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
-		"MaxRetries": ubx.FieldSpec{WireName: "max_retries"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"MaxCapacity":     ubx.FieldSpec{WireName: "max_capacity"},
+		"MaxRetries":      ubx.FieldSpec{WireName: "max_retries"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"NumberOfWorkers": ubx.FieldSpec{WireName: "number_of_workers"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
+		"Role":            ubx.FieldSpec{WireName: "role"},
+		"Tags":            ubx.FieldSpec{WireName: "tags"},
+		"Timeout":         ubx.FieldSpec{WireName: "timeout"},
 		"TransformEncryption": ubx.FieldSpec{
 			WireName: "transform_encryption",
-			Kind: "object",
-			Fields: Mltransform_TransformEncryptionFields,
+			Kind:     "object",
+			Fields:   Mltransform_TransformEncryptionFields,
 		},
 		"TransformParameters": ubx.FieldSpec{
 			WireName: "transform_parameters",
-			Kind: "object",
-			Fields: Mltransform_TransformParametersFields,
+			Kind:     "object",
+			Fields:   Mltransform_TransformParametersFields,
 		},
 		"WorkerType": ubx.FieldSpec{WireName: "worker_type"},
 	},

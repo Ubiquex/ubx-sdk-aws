@@ -4,25 +4,25 @@ package applicationinsights
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComponentConfigurationConfig struct {
-	AccountId any
-	ComponentName any
+	AccountId         any
+	ComponentName     any
 	ResourceGroupName any
 }
 
 type ComponentConfigurationAttrs struct {
-	AccountId any
+	AccountId              any
 	ComponentConfiguration any
-	ComponentName any
-	Monitor any
-	ResourceGroupName any
-	Tier any
+	ComponentName          any
+	Monitor                any
+	ResourceGroupName      any
+	Tier                   any
 }
 
 var ComponentConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_applicationinsights_component_configuration",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ComponentName": ubx.FieldSpec{WireName: "component_name"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
+		"ComponentName":     ubx.FieldSpec{WireName: "component_name"},
 		"ResourceGroupName": ubx.FieldSpec{WireName: "resource_group_name"},
 	},
 }

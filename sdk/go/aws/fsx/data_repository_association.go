@@ -23,26 +23,26 @@ type DataRepositoryAssociation_Tags struct {
 }
 
 var DataRepositoryAssociation_S3_AutoExportPolicyFields = ubx.FieldMap{
-		"Events": ubx.FieldSpec{WireName: "events"},
-	}
+	"Events": ubx.FieldSpec{WireName: "events"},
+}
 
 var DataRepositoryAssociation_S3Fields = ubx.FieldMap{
-		"AutoExportPolicy": ubx.FieldSpec{
-			WireName: "auto_export_policy",
-			Kind: "object",
-			Fields: DataRepositoryAssociation_S3_AutoExportPolicyFields,
-		},
-		"AutoImportPolicy": ubx.FieldSpec{
-			WireName: "auto_import_policy",
-			Kind: "object",
-			Fields: DataRepositoryAssociation_S3_AutoExportPolicyFields,
-		},
-	}
+	"AutoExportPolicy": ubx.FieldSpec{
+		WireName: "auto_export_policy",
+		Kind:     "object",
+		Fields:   DataRepositoryAssociation_S3_AutoExportPolicyFields,
+	},
+	"AutoImportPolicy": ubx.FieldSpec{
+		WireName: "auto_import_policy",
+		Kind:     "object",
+		Fields:   DataRepositoryAssociation_S3_AutoExportPolicyFields,
+	},
+}
 
 var DataRepositoryAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DataRepositoryAssociationConfig struct {
 	// A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to true.
@@ -86,19 +86,19 @@ var DataRepositoryAssociation = ubx.ResourceBinding{
 	WireType: "aws_fsx_data_repository_association",
 	Fields: ubx.FieldMap{
 		"BatchImportMetaDataOnCreate": ubx.FieldSpec{WireName: "batch_import_meta_data_on_create"},
-		"DataRepositoryPath": ubx.FieldSpec{WireName: "data_repository_path"},
-		"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
-		"FileSystemPath": ubx.FieldSpec{WireName: "file_system_path"},
-		"ImportedFileChunkSize": ubx.FieldSpec{WireName: "imported_file_chunk_size"},
+		"DataRepositoryPath":          ubx.FieldSpec{WireName: "data_repository_path"},
+		"FileSystemId":                ubx.FieldSpec{WireName: "file_system_id"},
+		"FileSystemPath":              ubx.FieldSpec{WireName: "file_system_path"},
+		"ImportedFileChunkSize":       ubx.FieldSpec{WireName: "imported_file_chunk_size"},
 		"S3": ubx.FieldSpec{
 			WireName: "s3",
-			Kind: "object",
-			Fields: DataRepositoryAssociation_S3Fields,
+			Kind:     "object",
+			Fields:   DataRepositoryAssociation_S3Fields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataRepositoryAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   DataRepositoryAssociation_TagsFields,
 		},
 	},
 }

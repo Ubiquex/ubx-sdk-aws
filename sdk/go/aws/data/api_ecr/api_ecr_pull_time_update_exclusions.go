@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiEcrPullTimeUpdateExclusionsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApiEcrPullTimeUpdateExclusionsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults               any
+	NextToken                any
 	PullTimeUpdateExclusions any
 }
 
@@ -18,6 +18,6 @@ var ApiEcrPullTimeUpdateExclusions = ubx.DataSourceBinding{
 	WireType: "aws_api_ecr_pull_time_update_exclusions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

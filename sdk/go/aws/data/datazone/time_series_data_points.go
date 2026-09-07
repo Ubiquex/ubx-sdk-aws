@@ -5,46 +5,46 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TimeSeriesDataPoints_Items struct {
 	ContentSummary any
-	FormName any
-	Id any
-	Timestamp any
+	FormName       any
+	Id             any
+	Timestamp      any
 	TypeIdentifier any
-	TypeRevision any
+	TypeRevision   any
 }
 
 type TimeSeriesDataPointsConfig struct {
 	DomainIdentifier any
-	EndedAt any
+	EndedAt          any
 	EntityIdentifier any
-	EntityType any
-	FormName any
-	MaxResults any
-	NextToken any
-	StartedAt any
+	EntityType       any
+	FormName         any
+	MaxResults       any
+	NextToken        any
+	StartedAt        any
 }
 
 type TimeSeriesDataPointsAttrs struct {
 	DomainIdentifier any
-	EndedAt any
+	EndedAt          any
 	EntityIdentifier any
-	EntityType any
-	FormName any
-	Items any
-	MaxResults any
-	NextToken any
-	StartedAt any
+	EntityType       any
+	FormName         any
+	Items            any
+	MaxResults       any
+	NextToken        any
+	StartedAt        any
 }
 
 var TimeSeriesDataPoints = ubx.DataSourceBinding{
 	WireType: "aws_datazone_time_series_data_points",
 	Fields: ubx.FieldMap{
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
-		"EndedAt": ubx.FieldSpec{WireName: "ended_at"},
+		"EndedAt":          ubx.FieldSpec{WireName: "ended_at"},
 		"EntityIdentifier": ubx.FieldSpec{WireName: "entity_identifier"},
-		"EntityType": ubx.FieldSpec{WireName: "entity_type"},
-		"FormName": ubx.FieldSpec{WireName: "form_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StartedAt": ubx.FieldSpec{WireName: "started_at"},
+		"EntityType":       ubx.FieldSpec{WireName: "entity_type"},
+		"FormName":         ubx.FieldSpec{WireName: "form_name"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"StartedAt":        ubx.FieldSpec{WireName: "started_at"},
 	},
 }

@@ -4,24 +4,24 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RolePoliciesConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 	RoleName any
 }
 
 type RolePoliciesAttrs struct {
 	IsTruncated any
-	Marker any
-	MaxItems any
+	Marker      any
+	MaxItems    any
 	// <p>Contains a list of policy names.</p> <p>This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html">ListPolicies</a> operation.</p>
 	PolicyNames any
-	RoleName any
+	RoleName    any
 }
 
 var RolePolicies = ubx.DataSourceBinding{
 	WireType: "aws_iam_role_policies",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 		"RoleName": ubx.FieldSpec{WireName: "role_name"},
 	},

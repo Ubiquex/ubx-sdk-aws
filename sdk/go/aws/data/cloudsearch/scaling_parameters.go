@@ -5,17 +5,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ScalingParameters_ScalingParameters_Options struct {
 	// <p>The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted.</p>
-	DesiredInstanceType any
-	DesiredPartitionCount any
+	DesiredInstanceType     any
+	DesiredPartitionCount   any
 	DesiredReplicationCount any
 }
 
 type ScalingParameters_ScalingParameters_Status struct {
-	CreationDate any
+	CreationDate    any
 	PendingDeletion any
 	// <p>The state of processing a change to an option. One of:</p> <ul> <li>RequiresIndexDocuments: The option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li>Processing: The option's latest value is in the process of being activated.</li> <li>Active: The option's latest value is fully deployed. </li> <li>FailedToValidate: The option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> </ul>
-	State any
-	UpdateDate any
+	State         any
+	UpdateDate    any
 	UpdateVersion any
 }
 

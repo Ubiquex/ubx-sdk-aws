@@ -4,7 +4,7 @@ package license_manager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseManagerReceivedGrants_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -13,37 +13,37 @@ type LicenseManagerReceivedGrants_Grants_Options struct {
 }
 
 type LicenseManagerReceivedGrants_Grants struct {
-	GrantArn any
-	GrantName any
-	GrantStatus any
-	GrantedOperations any
+	GrantArn            any
+	GrantName           any
+	GrantStatus         any
+	GrantedOperations   any
 	GranteePrincipalArn any
-	HomeRegion any
-	LicenseArn any
-	Options any
-	ParentArn any
-	StatusReason any
-	Version any
+	HomeRegion          any
+	LicenseArn          any
+	Options             any
+	ParentArn           any
+	StatusReason        any
+	Version             any
 }
 
 var LicenseManagerReceivedGrants_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type LicenseManagerReceivedGrantsConfig struct {
-	Filters any
-	GrantArns any
+	Filters    any
+	GrantArns  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type LicenseManagerReceivedGrantsAttrs struct {
-	Filters any
-	GrantArns any
-	Grants any
+	Filters    any
+	GrantArns  any
+	Grants     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var LicenseManagerReceivedGrants = ubx.DataSourceBinding{
@@ -51,11 +51,11 @@ var LicenseManagerReceivedGrants = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: LicenseManagerReceivedGrants_FiltersFields,
+			Kind:     "list",
+			Fields:   LicenseManagerReceivedGrants_FiltersFields,
 		},
-		"GrantArns": ubx.FieldSpec{WireName: "grant_arns"},
+		"GrantArns":  ubx.FieldSpec{WireName: "grant_arns"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

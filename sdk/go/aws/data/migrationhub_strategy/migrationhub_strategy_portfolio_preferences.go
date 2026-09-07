@@ -9,7 +9,7 @@ type MigrationhubStrategyPortfolioPreferences_ApplicationPreferences_ManagementP
 
 type MigrationhubStrategyPortfolioPreferences_ApplicationPreferences_ManagementPreference struct {
 	AwsManagedResources any
-	NoPreference any
+	NoPreference        any
 	SelfManageResources any
 }
 
@@ -24,8 +24,8 @@ type MigrationhubStrategyPortfolioPreferences_DatabasePreferences_DatabaseMigrat
 
 type MigrationhubStrategyPortfolioPreferences_DatabasePreferences_DatabaseMigrationPreference struct {
 	Heterogeneous any
-	Homogeneous any
-	NoPreference any
+	Homogeneous   any
+	NoPreference  any
 }
 
 type MigrationhubStrategyPortfolioPreferences_DatabasePreferences struct {
@@ -35,10 +35,10 @@ type MigrationhubStrategyPortfolioPreferences_DatabasePreferences struct {
 }
 
 type MigrationhubStrategyPortfolioPreferences_PrioritizeBusinessGoals_BusinessGoals struct {
-	LicenseCostReduction any
+	LicenseCostReduction                               any
 	ModernizeInfrastructureWithCloudNativeTechnologies any
-	ReduceOperationalOverheadWithManagedServices any
-	SpeedOfMigration any
+	ReduceOperationalOverheadWithManagedServices       any
+	SpeedOfMigration                                   any
 }
 
 type MigrationhubStrategyPortfolioPreferences_PrioritizeBusinessGoals struct {
@@ -61,6 +61,5 @@ type MigrationhubStrategyPortfolioPreferencesAttrs struct {
 
 var MigrationhubStrategyPortfolioPreferences = ubx.DataSourceBinding{
 	WireType: "aws_migrationhub_strategy_portfolio_preferences",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

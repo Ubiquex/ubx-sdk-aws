@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResolverConfig_ResolverConfig struct {
 	AutodefinedReverse any
-	Id any
-	OwnerId any
-	ResourceId any
+	Id                 any
+	OwnerId            any
+	ResourceId         any
 }
 
 type ResolverConfigConfig struct {
@@ -17,7 +17,7 @@ type ResolverConfigConfig struct {
 type ResolverConfigAttrs struct {
 	// <p>A complex type that contains information about a Resolver configuration for a VPC.</p>
 	ResolverConfig any
-	ResourceId any
+	ResourceId     any
 }
 
 var ResolverConfig = ubx.DataSourceBinding{

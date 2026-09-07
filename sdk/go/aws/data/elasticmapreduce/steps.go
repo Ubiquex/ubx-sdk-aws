@@ -4,67 +4,67 @@ package elasticmapreduce
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Steps_Steps_Config struct {
-	Args any
-	Jar any
-	MainClass any
+	Args       any
+	Jar        any
+	MainClass  any
 	Properties any
 }
 
 type Steps_Steps_Status_FailureDetails struct {
 	LogFile any
 	Message any
-	Reason any
+	Reason  any
 }
 
 type Steps_Steps_Status_StateChangeReason struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type Steps_Steps_Status_Timeline struct {
 	CreationDateTime any
-	EndDateTime any
-	StartDateTime any
+	EndDateTime      any
+	StartDateTime    any
 }
 
 type Steps_Steps_Status struct {
-	FailureDetails any
-	State any
+	FailureDetails    any
+	State             any
 	StateChangeReason any
-	Timeline any
+	Timeline          any
 }
 
 type Steps_Steps struct {
-	ActionOnFailure any
-	Config any
+	ActionOnFailure  any
+	Config           any
 	EncryptionKeyArn any
-	Id any
-	LogUri any
-	Name any
-	Status any
+	Id               any
+	LogUri           any
+	Name             any
+	Status           any
 }
 
 type StepsConfig struct {
-	ClusterId any
-	Marker any
-	StepIds any
+	ClusterId  any
+	Marker     any
+	StepIds    any
 	StepStates any
 }
 
 type StepsAttrs struct {
-	ClusterId any
-	Marker any
-	StepIds any
+	ClusterId  any
+	Marker     any
+	StepIds    any
 	StepStates any
-	Steps any
+	Steps      any
 }
 
 var Steps = ubx.DataSourceBinding{
 	WireType: "aws_elasticmapreduce_steps",
 	Fields: ubx.FieldMap{
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"StepIds": ubx.FieldSpec{WireName: "step_ids"},
+		"ClusterId":  ubx.FieldSpec{WireName: "cluster_id"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
+		"StepIds":    ubx.FieldSpec{WireName: "step_ids"},
 		"StepStates": ubx.FieldSpec{WireName: "step_states"},
 	},
 }

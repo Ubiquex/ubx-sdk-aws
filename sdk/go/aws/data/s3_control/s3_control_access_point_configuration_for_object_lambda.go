@@ -4,7 +4,7 @@ package s3_control
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type S3ControlAccessPointConfigurationForObjectLambda_Configuration_TransformationConfigurations_ContentTransformation_AwsLambda struct {
-	FunctionArn any
+	FunctionArn     any
 	FunctionPayload any
 }
 
@@ -13,33 +13,33 @@ type S3ControlAccessPointConfigurationForObjectLambda_Configuration_Transformati
 }
 
 type S3ControlAccessPointConfigurationForObjectLambda_Configuration_TransformationConfigurations struct {
-	Actions any
+	Actions               any
 	ContentTransformation any
 }
 
 type S3ControlAccessPointConfigurationForObjectLambda_Configuration struct {
-	AllowedFeatures any
-	CloudWatchMetricsEnabled any
-	SupportingAccessPoint any
+	AllowedFeatures              any
+	CloudWatchMetricsEnabled     any
+	SupportingAccessPoint        any
 	TransformationConfigurations any
 }
 
 type S3ControlAccessPointConfigurationForObjectLambdaConfig struct {
 	AccountId any
-	Name any
+	Name      any
 }
 
 type S3ControlAccessPointConfigurationForObjectLambdaAttrs struct {
 	AccountId any
 	// <p>A configuration used when creating an Object Lambda Access Point.</p>
 	Configuration any
-	Name any
+	Name          any
 }
 
 var S3ControlAccessPointConfigurationForObjectLambda = ubx.DataSourceBinding{
 	WireType: "aws_s3_control_access_point_configuration_for_object_lambda",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

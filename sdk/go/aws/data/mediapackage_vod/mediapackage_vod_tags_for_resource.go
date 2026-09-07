@@ -9,7 +9,7 @@ type MediapackageVodTagsForResourceConfig struct {
 
 type MediapackageVodTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var MediapackageVodTagsForResource = ubx.DataSourceBinding{

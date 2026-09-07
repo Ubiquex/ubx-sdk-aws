@@ -4,36 +4,36 @@ package apprunner
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AutoScalingConfigurations_AutoScalingConfigurationSummaryList struct {
-	AutoScalingConfigurationArn any
-	AutoScalingConfigurationName any
+	AutoScalingConfigurationArn      any
+	AutoScalingConfigurationName     any
 	AutoScalingConfigurationRevision any
-	CreatedAt any
-	HasAssociatedService any
-	IsDefault any
-	Status any
+	CreatedAt                        any
+	HasAssociatedService             any
+	IsDefault                        any
+	Status                           any
 }
 
 type AutoScalingConfigurationsConfig struct {
 	AutoScalingConfigurationName any
-	LatestOnly any
-	MaxResults any
-	NextToken any
+	LatestOnly                   any
+	MaxResults                   any
+	NextToken                    any
 }
 
 type AutoScalingConfigurationsAttrs struct {
-	AutoScalingConfigurationName any
+	AutoScalingConfigurationName        any
 	AutoScalingConfigurationSummaryList any
-	LatestOnly any
-	MaxResults any
-	NextToken any
+	LatestOnly                          any
+	MaxResults                          any
+	NextToken                           any
 }
 
 var AutoScalingConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_apprunner_auto_scaling_configurations",
 	Fields: ubx.FieldMap{
 		"AutoScalingConfigurationName": ubx.FieldSpec{WireName: "auto_scaling_configuration_name"},
-		"LatestOnly": ubx.FieldSpec{WireName: "latest_only"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"LatestOnly":                   ubx.FieldSpec{WireName: "latest_only"},
+		"MaxResults":                   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

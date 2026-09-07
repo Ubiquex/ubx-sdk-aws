@@ -4,7 +4,7 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResponseHeadersPolicyConfig_ResponseHeadersPolicyConfig_CorsConfig_AccessControlAllowHeaders struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
@@ -18,18 +18,18 @@ type ResponseHeadersPolicyConfig_ResponseHeadersPolicyConfig_CorsConfig struct {
 	AccessControlAllowOrigins any
 	// <p>A list of HTTP headers that CloudFront includes as values for the <code>Access-Control-Expose-Headers</code> HTTP response header.</p> <p>For more information about the <code>Access-Control-Expose-Headers</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
 	AccessControlExposeHeaders any
-	AccessControlMaxAgeSec any
-	OriginOverride any
+	AccessControlMaxAgeSec     any
+	OriginOverride             any
 }
 
 type ResponseHeadersPolicyConfig_ResponseHeadersPolicyConfig_CustomHeadersConfig_Items struct {
-	Header any
+	Header   any
 	Override any
-	Value any
+	Value    any
 }
 
 type ResponseHeadersPolicyConfig_ResponseHeadersPolicyConfig_CustomHeadersConfig struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
@@ -38,13 +38,13 @@ type ResponseHeadersPolicyConfig_ResponseHeadersPolicyConfig_RemoveHeadersConfig
 }
 
 type ResponseHeadersPolicyConfig_ResponseHeadersPolicyConfig_RemoveHeadersConfig struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type ResponseHeadersPolicyConfig_ResponseHeadersPolicyConfig_SecurityHeadersConfig_ContentSecurityPolicy struct {
 	ContentSecurityPolicy any
-	Override any
+	Override              any
 }
 
 type ResponseHeadersPolicyConfig_ResponseHeadersPolicyConfig_SecurityHeadersConfig_ContentTypeOptions struct {
@@ -53,26 +53,26 @@ type ResponseHeadersPolicyConfig_ResponseHeadersPolicyConfig_SecurityHeadersConf
 
 type ResponseHeadersPolicyConfig_ResponseHeadersPolicyConfig_SecurityHeadersConfig_FrameOptions struct {
 	FrameOption any
-	Override any
+	Override    any
 }
 
 type ResponseHeadersPolicyConfig_ResponseHeadersPolicyConfig_SecurityHeadersConfig_ReferrerPolicy struct {
-	Override any
+	Override       any
 	ReferrerPolicy any
 }
 
 type ResponseHeadersPolicyConfig_ResponseHeadersPolicyConfig_SecurityHeadersConfig_StrictTransportSecurity struct {
 	AccessControlMaxAgeSec any
-	IncludeSubdomains any
-	Override any
-	Preload any
+	IncludeSubdomains      any
+	Override               any
+	Preload                any
 }
 
 type ResponseHeadersPolicyConfig_ResponseHeadersPolicyConfig_SecurityHeadersConfig_Xssprotection struct {
-	ModeBlock any
-	Override any
+	ModeBlock  any
+	Override   any
 	Protection any
-	ReportUri any
+	ReportUri  any
 }
 
 type ResponseHeadersPolicyConfig_ResponseHeadersPolicyConfig_SecurityHeadersConfig struct {
@@ -91,7 +91,7 @@ type ResponseHeadersPolicyConfig_ResponseHeadersPolicyConfig_SecurityHeadersConf
 }
 
 type ResponseHeadersPolicyConfig_ResponseHeadersPolicyConfig_ServerTimingHeadersConfig struct {
-	Enabled any
+	Enabled      any
 	SamplingRate any
 }
 
@@ -101,7 +101,7 @@ type ResponseHeadersPolicyConfig_ResponseHeadersPolicyConfig struct {
 	CorsConfig any
 	// <p>A list of HTTP response header names and their values. CloudFront includes these headers in HTTP responses that it sends for requests that match a cache behavior that's associated with this response headers policy.</p>
 	CustomHeadersConfig any
-	Name any
+	Name                any
 	// <p>A list of HTTP header names that CloudFront removes from HTTP responses to requests that match the cache behavior that this response headers policy is attached to.</p>
 	RemoveHeadersConfig any
 	// <p>A configuration for a set of security-related HTTP response headers. CloudFront adds these headers to HTTP responses that it sends for requests that match a cache behavior associated with this response headers policy.</p>
@@ -116,7 +116,7 @@ type ResponseHeadersPolicyConfigConfig struct {
 
 type ResponseHeadersPolicyConfigAttrs struct {
 	Etag any
-	Id any
+	Id   any
 	// <p>A response headers policy configuration.</p> <p>A response headers policy configuration contains metadata about the response headers policy, and configurations for sets of HTTP response headers.</p>
 	ResponseHeadersPolicyConfig any
 }

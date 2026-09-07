@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BulkDeployments_BulkDeployments struct {
 	BulkDeploymentArn any
-	BulkDeploymentId any
-	CreatedAt any
+	BulkDeploymentId  any
+	CreatedAt         any
 }
 
 type BulkDeploymentsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type BulkDeploymentsAttrs struct {
 	BulkDeployments any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 var BulkDeployments = ubx.DataSourceBinding{
 	WireType: "aws_greengrass_bulk_deployments",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,25 +4,25 @@ package sns
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EndpointsByPlatformApplication_Endpoints struct {
-	Attributes any
+	Attributes  any
 	EndpointArn any
 }
 
 type EndpointsByPlatformApplicationConfig struct {
-	NextToken any
+	NextToken              any
 	PlatformApplicationArn any
 }
 
 type EndpointsByPlatformApplicationAttrs struct {
-	Endpoints any
-	NextToken any
+	Endpoints              any
+	NextToken              any
 	PlatformApplicationArn any
 }
 
 var EndpointsByPlatformApplication = ubx.DataSourceBinding{
 	WireType: "aws_sns_endpoints_by_platform_application",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
 		"PlatformApplicationArn": ubx.FieldSpec{WireName: "platform_application_arn"},
 	},
 }

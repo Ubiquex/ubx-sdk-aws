@@ -27,24 +27,24 @@ type TrustStore_Tags struct {
 }
 
 var TrustStore_CaCertificatesBundleSource_CaCertificatesBundleS3LocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Bucket":  ubx.FieldSpec{WireName: "bucket"},
+	"Key":     ubx.FieldSpec{WireName: "key"},
+	"Region":  ubx.FieldSpec{WireName: "region"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var TrustStore_CaCertificatesBundleSourceFields = ubx.FieldMap{
-		"CaCertificatesBundleS3Location": ubx.FieldSpec{
-			WireName: "ca_certificates_bundle_s3_location",
-			Kind: "object",
-			Fields: TrustStore_CaCertificatesBundleSource_CaCertificatesBundleS3LocationFields,
-		},
-	}
+	"CaCertificatesBundleS3Location": ubx.FieldSpec{
+		WireName: "ca_certificates_bundle_s3_location",
+		Kind:     "object",
+		Fields:   TrustStore_CaCertificatesBundleSource_CaCertificatesBundleS3LocationFields,
+	},
+}
 
 var TrustStore_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TrustStoreConfig struct {
 	// A CA certificates bundle source.
@@ -85,14 +85,14 @@ var TrustStore = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CaCertificatesBundleSource": ubx.FieldSpec{
 			WireName: "ca_certificates_bundle_source",
-			Kind: "object",
-			Fields: TrustStore_CaCertificatesBundleSourceFields,
+			Kind:     "object",
+			Fields:   TrustStore_CaCertificatesBundleSourceFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TrustStore_TagsFields,
+			Kind:     "list",
+			Fields:   TrustStore_TagsFields,
 		},
 		"UseClientCertificateOcspendpoint": ubx.FieldSpec{WireName: "use_client_certificate_ocspendpoint"},
 	},

@@ -4,26 +4,26 @@ package codebuild
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SandboxesForProjectConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	ProjectName any
-	SortOrder any
+	SortOrder   any
 }
 
 type SandboxesForProjectAttrs struct {
-	Ids any
-	MaxResults any
-	NextToken any
+	Ids         any
+	MaxResults  any
+	NextToken   any
 	ProjectName any
-	SortOrder any
+	SortOrder   any
 }
 
 var SandboxesForProject = ubx.DataSourceBinding{
 	WireType: "aws_codebuild_sandboxes_for_project",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ProjectName": ubx.FieldSpec{WireName: "project_name"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"SortOrder":   ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

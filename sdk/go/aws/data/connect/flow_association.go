@@ -4,23 +4,23 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FlowAssociationConfig struct {
-	InstanceId any
-	ResourceId any
+	InstanceId   any
+	ResourceId   any
 	ResourceType any
 }
 
 type FlowAssociationAttrs struct {
-	FlowId any
-	InstanceId any
-	ResourceId any
+	FlowId       any
+	InstanceId   any
+	ResourceId   any
 	ResourceType any
 }
 
 var FlowAssociation = ubx.DataSourceBinding{
 	WireType: "aws_connect_flow_association",
 	Fields: ubx.FieldMap{
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+		"InstanceId":   ubx.FieldSpec{WireName: "instance_id"},
+		"ResourceId":   ubx.FieldSpec{WireName: "resource_id"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

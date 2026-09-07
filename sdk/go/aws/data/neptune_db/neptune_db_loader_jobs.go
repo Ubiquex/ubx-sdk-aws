@@ -9,21 +9,21 @@ type NeptuneDbLoaderJobs_Payload struct {
 
 type NeptuneDbLoaderJobsConfig struct {
 	IncludeQueuedLoads any
-	Limit any
+	Limit              any
 }
 
 type NeptuneDbLoaderJobsAttrs struct {
 	IncludeQueuedLoads any
-	Limit any
+	Limit              any
 	// <p>Contains a list of load IDs.</p>
 	Payload any
-	Status any
+	Status  any
 }
 
 var NeptuneDbLoaderJobs = ubx.DataSourceBinding{
 	WireType: "aws_neptune_db_loader_jobs",
 	Fields: ubx.FieldMap{
 		"IncludeQueuedLoads": ubx.FieldSpec{WireName: "include_queued_loads"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":              ubx.FieldSpec{WireName: "limit"},
 	},
 }

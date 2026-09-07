@@ -11,9 +11,9 @@ type Snapshot_Tags struct {
 }
 
 var Snapshot_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SnapshotConfig struct {
 	// The user-assigned name of the FSx snapshot, used to identify it within the volume. (AI-inferred)
@@ -30,7 +30,7 @@ type SnapshotAttrs struct {
 	Name any
 	// The Amazon Resource Name (ARN) assigned by AWS to the FSx snapshot, uniquely identifying it across regions and accounts. (AI-inferred)
 	ResourceArn any
-	Tags any
+	Tags        any
 	// The ID of the Amazon FSx volume (file system) from which this snapshot is created. (AI-inferred)
 	VolumeId any
 }
@@ -41,8 +41,8 @@ var Snapshot = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Snapshot_TagsFields,
+			Kind:     "list",
+			Fields:   Snapshot_TagsFields,
 		},
 		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
 	},

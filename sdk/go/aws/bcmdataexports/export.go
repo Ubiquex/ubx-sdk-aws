@@ -67,9 +67,9 @@ type Export_Tags struct {
 }
 
 var Export_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ExportConfig struct {
 	// Defines the customer-managed tags (key-value pairs) to associate with the BCM data export resource, allowing you to categorize, identify, and filter exports for billing and cost management. (AI-inferred)
@@ -90,8 +90,8 @@ var Export = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Export_TagsFields,
+			Kind:     "list",
+			Fields:   Export_TagsFields,
 		},
 	},
 }

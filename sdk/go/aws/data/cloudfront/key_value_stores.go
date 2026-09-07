@@ -4,40 +4,40 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KeyValueStores_KeyValueStoreList_Items struct {
-	Arn any
-	Comment any
-	Id any
+	Arn              any
+	Comment          any
+	Id               any
 	LastModifiedTime any
-	Name any
-	Status any
+	Name             any
+	Status           any
 }
 
 type KeyValueStores_KeyValueStoreList struct {
-	Items any
-	MaxItems any
+	Items      any
+	MaxItems   any
 	NextMarker any
-	Quantity any
+	Quantity   any
 }
 
 type KeyValueStoresConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
-	Status any
+	Status   any
 }
 
 type KeyValueStoresAttrs struct {
 	// <p>The key value store list.</p>
 	KeyValueStoreList any
-	Marker any
-	MaxItems any
-	Status any
+	Marker            any
+	MaxItems          any
+	Status            any
 }
 
 var KeyValueStores = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_key_value_stores",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":   ubx.FieldSpec{WireName: "status"},
 	},
 }

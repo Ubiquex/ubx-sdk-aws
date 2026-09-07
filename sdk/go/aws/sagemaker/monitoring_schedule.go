@@ -207,219 +207,219 @@ type MonitoringSchedule_Tags struct {
 }
 
 var MonitoringSchedule_LastMonitoringExecutionSummaryFields = ubx.FieldMap{
-		"CreationTime": ubx.FieldSpec{WireName: "creation_time"},
-		"EndpointName": ubx.FieldSpec{WireName: "endpoint_name"},
-		"FailureReason": ubx.FieldSpec{WireName: "failure_reason"},
-		"LastModifiedTime": ubx.FieldSpec{WireName: "last_modified_time"},
-		"MonitoringExecutionStatus": ubx.FieldSpec{WireName: "monitoring_execution_status"},
-		"MonitoringScheduleName": ubx.FieldSpec{WireName: "monitoring_schedule_name"},
-		"ProcessingJobArn": ubx.FieldSpec{WireName: "processing_job_arn"},
-		"ScheduledTime": ubx.FieldSpec{WireName: "scheduled_time"},
-	}
+	"CreationTime":              ubx.FieldSpec{WireName: "creation_time"},
+	"EndpointName":              ubx.FieldSpec{WireName: "endpoint_name"},
+	"FailureReason":             ubx.FieldSpec{WireName: "failure_reason"},
+	"LastModifiedTime":          ubx.FieldSpec{WireName: "last_modified_time"},
+	"MonitoringExecutionStatus": ubx.FieldSpec{WireName: "monitoring_execution_status"},
+	"MonitoringScheduleName":    ubx.FieldSpec{WireName: "monitoring_schedule_name"},
+	"ProcessingJobArn":          ubx.FieldSpec{WireName: "processing_job_arn"},
+	"ScheduledTime":             ubx.FieldSpec{WireName: "scheduled_time"},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_BaselineConfig_ConstraintsResourceFields = ubx.FieldMap{
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_BaselineConfigFields = ubx.FieldMap{
-		"ConstraintsResource": ubx.FieldSpec{
-			WireName: "constraints_resource",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_BaselineConfig_ConstraintsResourceFields,
-		},
-		"StatisticsResource": ubx.FieldSpec{
-			WireName: "statistics_resource",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_BaselineConfig_ConstraintsResourceFields,
-		},
-	}
+	"ConstraintsResource": ubx.FieldSpec{
+		WireName: "constraints_resource",
+		Kind:     "object",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_BaselineConfig_ConstraintsResourceFields,
+	},
+	"StatisticsResource": ubx.FieldSpec{
+		WireName: "statistics_resource",
+		Kind:     "object",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_BaselineConfig_ConstraintsResourceFields,
+	},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringAppSpecificationFields = ubx.FieldMap{
-		"ContainerArguments": ubx.FieldSpec{WireName: "container_arguments"},
-		"ContainerEntrypoint": ubx.FieldSpec{WireName: "container_entrypoint"},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"PostAnalyticsProcessorSourceUri": ubx.FieldSpec{WireName: "post_analytics_processor_source_uri"},
-		"RecordPreprocessorSourceUri": ubx.FieldSpec{WireName: "record_preprocessor_source_uri"},
-	}
+	"ContainerArguments":              ubx.FieldSpec{WireName: "container_arguments"},
+	"ContainerEntrypoint":             ubx.FieldSpec{WireName: "container_entrypoint"},
+	"ImageUri":                        ubx.FieldSpec{WireName: "image_uri"},
+	"PostAnalyticsProcessorSourceUri": ubx.FieldSpec{WireName: "post_analytics_processor_source_uri"},
+	"RecordPreprocessorSourceUri":     ubx.FieldSpec{WireName: "record_preprocessor_source_uri"},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_BatchTransformInput_DatasetFormat_CsvFields = ubx.FieldMap{
-		"Header": ubx.FieldSpec{WireName: "header"},
-	}
+	"Header": ubx.FieldSpec{WireName: "header"},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_BatchTransformInput_DatasetFormat_JsonFields = ubx.FieldMap{
-		"Line": ubx.FieldSpec{WireName: "line"},
-	}
+	"Line": ubx.FieldSpec{WireName: "line"},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_BatchTransformInput_DatasetFormatFields = ubx.FieldMap{
-		"Csv": ubx.FieldSpec{
-			WireName: "csv",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_BatchTransformInput_DatasetFormat_CsvFields,
-		},
-		"Json": ubx.FieldSpec{
-			WireName: "json",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_BatchTransformInput_DatasetFormat_JsonFields,
-		},
-		"Parquet": ubx.FieldSpec{WireName: "parquet"},
-	}
+	"Csv": ubx.FieldSpec{
+		WireName: "csv",
+		Kind:     "object",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_BatchTransformInput_DatasetFormat_CsvFields,
+	},
+	"Json": ubx.FieldSpec{
+		WireName: "json",
+		Kind:     "object",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_BatchTransformInput_DatasetFormat_JsonFields,
+	},
+	"Parquet": ubx.FieldSpec{WireName: "parquet"},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_BatchTransformInputFields = ubx.FieldMap{
-		"DataCapturedDestinationS3Uri": ubx.FieldSpec{WireName: "data_captured_destination_s3_uri"},
-		"DatasetFormat": ubx.FieldSpec{
-			WireName: "dataset_format",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_BatchTransformInput_DatasetFormatFields,
-		},
-		"ExcludeFeaturesAttribute": ubx.FieldSpec{WireName: "exclude_features_attribute"},
-		"LocalPath": ubx.FieldSpec{WireName: "local_path"},
-		"S3DataDistributionType": ubx.FieldSpec{WireName: "s3_data_distribution_type"},
-		"S3InputMode": ubx.FieldSpec{WireName: "s3_input_mode"},
-	}
+	"DataCapturedDestinationS3Uri": ubx.FieldSpec{WireName: "data_captured_destination_s3_uri"},
+	"DatasetFormat": ubx.FieldSpec{
+		WireName: "dataset_format",
+		Kind:     "object",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_BatchTransformInput_DatasetFormatFields,
+	},
+	"ExcludeFeaturesAttribute": ubx.FieldSpec{WireName: "exclude_features_attribute"},
+	"LocalPath":                ubx.FieldSpec{WireName: "local_path"},
+	"S3DataDistributionType":   ubx.FieldSpec{WireName: "s3_data_distribution_type"},
+	"S3InputMode":              ubx.FieldSpec{WireName: "s3_input_mode"},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_EndpointInputFields = ubx.FieldMap{
-		"EndpointName": ubx.FieldSpec{WireName: "endpoint_name"},
-		"ExcludeFeaturesAttribute": ubx.FieldSpec{WireName: "exclude_features_attribute"},
-		"LocalPath": ubx.FieldSpec{WireName: "local_path"},
-		"S3DataDistributionType": ubx.FieldSpec{WireName: "s3_data_distribution_type"},
-		"S3InputMode": ubx.FieldSpec{WireName: "s3_input_mode"},
-	}
+	"EndpointName":             ubx.FieldSpec{WireName: "endpoint_name"},
+	"ExcludeFeaturesAttribute": ubx.FieldSpec{WireName: "exclude_features_attribute"},
+	"LocalPath":                ubx.FieldSpec{WireName: "local_path"},
+	"S3DataDistributionType":   ubx.FieldSpec{WireName: "s3_data_distribution_type"},
+	"S3InputMode":              ubx.FieldSpec{WireName: "s3_input_mode"},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputsFields = ubx.FieldMap{
-		"BatchTransformInput": ubx.FieldSpec{
-			WireName: "batch_transform_input",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_BatchTransformInputFields,
-		},
-		"EndpointInput": ubx.FieldSpec{
-			WireName: "endpoint_input",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_EndpointInputFields,
-		},
-	}
+	"BatchTransformInput": ubx.FieldSpec{
+		WireName: "batch_transform_input",
+		Kind:     "object",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_BatchTransformInputFields,
+	},
+	"EndpointInput": ubx.FieldSpec{
+		WireName: "endpoint_input",
+		Kind:     "object",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_EndpointInputFields,
+	},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringOutputConfig_MonitoringOutputs_S3OutputFields = ubx.FieldMap{
-		"LocalPath": ubx.FieldSpec{WireName: "local_path"},
-		"S3UploadMode": ubx.FieldSpec{WireName: "s3_upload_mode"},
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"LocalPath":    ubx.FieldSpec{WireName: "local_path"},
+	"S3UploadMode": ubx.FieldSpec{WireName: "s3_upload_mode"},
+	"S3Uri":        ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringOutputConfig_MonitoringOutputsFields = ubx.FieldMap{
-		"S3Output": ubx.FieldSpec{
-			WireName: "s3_output",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringOutputConfig_MonitoringOutputs_S3OutputFields,
-		},
-	}
+	"S3Output": ubx.FieldSpec{
+		WireName: "s3_output",
+		Kind:     "object",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringOutputConfig_MonitoringOutputs_S3OutputFields,
+	},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringOutputConfigFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"MonitoringOutputs": ubx.FieldSpec{
-			WireName: "monitoring_outputs",
-			Kind: "list",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringOutputConfig_MonitoringOutputsFields,
-		},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+	"MonitoringOutputs": ubx.FieldSpec{
+		WireName: "monitoring_outputs",
+		Kind:     "list",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringOutputConfig_MonitoringOutputsFields,
+	},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringResources_ClusterConfigFields = ubx.FieldMap{
-		"InstanceCount": ubx.FieldSpec{WireName: "instance_count"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"VolumeKmsKeyId": ubx.FieldSpec{WireName: "volume_kms_key_id"},
-		"VolumeSizeInGb": ubx.FieldSpec{WireName: "volume_size_in_gb"},
-	}
+	"InstanceCount":  ubx.FieldSpec{WireName: "instance_count"},
+	"InstanceType":   ubx.FieldSpec{WireName: "instance_type"},
+	"VolumeKmsKeyId": ubx.FieldSpec{WireName: "volume_kms_key_id"},
+	"VolumeSizeInGb": ubx.FieldSpec{WireName: "volume_size_in_gb"},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringResourcesFields = ubx.FieldMap{
-		"ClusterConfig": ubx.FieldSpec{
-			WireName: "cluster_config",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringResources_ClusterConfigFields,
-		},
-	}
+	"ClusterConfig": ubx.FieldSpec{
+		WireName: "cluster_config",
+		Kind:     "object",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringResources_ClusterConfigFields,
+	},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_NetworkConfig_VpcConfigFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"Subnets":          ubx.FieldSpec{WireName: "subnets"},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_NetworkConfigFields = ubx.FieldMap{
-		"EnableInterContainerTrafficEncryption": ubx.FieldSpec{WireName: "enable_inter_container_traffic_encryption"},
-		"EnableNetworkIsolation": ubx.FieldSpec{WireName: "enable_network_isolation"},
-		"VpcConfig": ubx.FieldSpec{
-			WireName: "vpc_config",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_NetworkConfig_VpcConfigFields,
-		},
-	}
+	"EnableInterContainerTrafficEncryption": ubx.FieldSpec{WireName: "enable_inter_container_traffic_encryption"},
+	"EnableNetworkIsolation":                ubx.FieldSpec{WireName: "enable_network_isolation"},
+	"VpcConfig": ubx.FieldSpec{
+		WireName: "vpc_config",
+		Kind:     "object",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_NetworkConfig_VpcConfigFields,
+	},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_StoppingConditionFields = ubx.FieldMap{
-		"MaxRuntimeInSeconds": ubx.FieldSpec{WireName: "max_runtime_in_seconds"},
-	}
+	"MaxRuntimeInSeconds": ubx.FieldSpec{WireName: "max_runtime_in_seconds"},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinitionFields = ubx.FieldMap{
-		"BaselineConfig": ubx.FieldSpec{
-			WireName: "baseline_config",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_BaselineConfigFields,
-		},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"MonitoringAppSpecification": ubx.FieldSpec{
-			WireName: "monitoring_app_specification",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringAppSpecificationFields,
-		},
-		"MonitoringInputs": ubx.FieldSpec{
-			WireName: "monitoring_inputs",
-			Kind: "list",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputsFields,
-		},
-		"MonitoringOutputConfig": ubx.FieldSpec{
-			WireName: "monitoring_output_config",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringOutputConfigFields,
-		},
-		"MonitoringResources": ubx.FieldSpec{
-			WireName: "monitoring_resources",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringResourcesFields,
-		},
-		"NetworkConfig": ubx.FieldSpec{
-			WireName: "network_config",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_NetworkConfigFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"StoppingCondition": ubx.FieldSpec{
-			WireName: "stopping_condition",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_StoppingConditionFields,
-		},
-	}
+	"BaselineConfig": ubx.FieldSpec{
+		WireName: "baseline_config",
+		Kind:     "object",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_BaselineConfigFields,
+	},
+	"Environment": ubx.FieldSpec{WireName: "environment"},
+	"MonitoringAppSpecification": ubx.FieldSpec{
+		WireName: "monitoring_app_specification",
+		Kind:     "object",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringAppSpecificationFields,
+	},
+	"MonitoringInputs": ubx.FieldSpec{
+		WireName: "monitoring_inputs",
+		Kind:     "list",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputsFields,
+	},
+	"MonitoringOutputConfig": ubx.FieldSpec{
+		WireName: "monitoring_output_config",
+		Kind:     "object",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringOutputConfigFields,
+	},
+	"MonitoringResources": ubx.FieldSpec{
+		WireName: "monitoring_resources",
+		Kind:     "object",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringResourcesFields,
+	},
+	"NetworkConfig": ubx.FieldSpec{
+		WireName: "network_config",
+		Kind:     "object",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_NetworkConfigFields,
+	},
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+	"StoppingCondition": ubx.FieldSpec{
+		WireName: "stopping_condition",
+		Kind:     "object",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_StoppingConditionFields,
+	},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfig_ScheduleConfigFields = ubx.FieldMap{
-		"DataAnalysisEndTime": ubx.FieldSpec{WireName: "data_analysis_end_time"},
-		"DataAnalysisStartTime": ubx.FieldSpec{WireName: "data_analysis_start_time"},
-		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
-	}
+	"DataAnalysisEndTime":   ubx.FieldSpec{WireName: "data_analysis_end_time"},
+	"DataAnalysisStartTime": ubx.FieldSpec{WireName: "data_analysis_start_time"},
+	"ScheduleExpression":    ubx.FieldSpec{WireName: "schedule_expression"},
+}
 
 var MonitoringSchedule_MonitoringScheduleConfigFields = ubx.FieldMap{
-		"MonitoringJobDefinition": ubx.FieldSpec{
-			WireName: "monitoring_job_definition",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinitionFields,
-		},
-		"MonitoringJobDefinitionName": ubx.FieldSpec{WireName: "monitoring_job_definition_name"},
-		"MonitoringType": ubx.FieldSpec{WireName: "monitoring_type"},
-		"ScheduleConfig": ubx.FieldSpec{
-			WireName: "schedule_config",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfig_ScheduleConfigFields,
-		},
-	}
+	"MonitoringJobDefinition": ubx.FieldSpec{
+		WireName: "monitoring_job_definition",
+		Kind:     "object",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinitionFields,
+	},
+	"MonitoringJobDefinitionName": ubx.FieldSpec{WireName: "monitoring_job_definition_name"},
+	"MonitoringType":              ubx.FieldSpec{WireName: "monitoring_type"},
+	"ScheduleConfig": ubx.FieldSpec{
+		WireName: "schedule_config",
+		Kind:     "object",
+		Fields:   MonitoringSchedule_MonitoringScheduleConfig_ScheduleConfigFields,
+	},
+}
 
 var MonitoringSchedule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MonitoringScheduleConfig struct {
 	// The name of the endpoint used to run the monitoring job.
@@ -464,24 +464,24 @@ type MonitoringScheduleAttrs struct {
 var MonitoringSchedule = ubx.ResourceBinding{
 	WireType: "aws_sage_maker_monitoring_schedule",
 	Fields: ubx.FieldMap{
-		"EndpointName": ubx.FieldSpec{WireName: "endpoint_name"},
+		"EndpointName":  ubx.FieldSpec{WireName: "endpoint_name"},
 		"FailureReason": ubx.FieldSpec{WireName: "failure_reason"},
 		"LastMonitoringExecutionSummary": ubx.FieldSpec{
 			WireName: "last_monitoring_execution_summary",
-			Kind: "object",
-			Fields: MonitoringSchedule_LastMonitoringExecutionSummaryFields,
+			Kind:     "object",
+			Fields:   MonitoringSchedule_LastMonitoringExecutionSummaryFields,
 		},
 		"MonitoringScheduleConfig": ubx.FieldSpec{
 			WireName: "monitoring_schedule_config",
-			Kind: "object",
-			Fields: MonitoringSchedule_MonitoringScheduleConfigFields,
+			Kind:     "object",
+			Fields:   MonitoringSchedule_MonitoringScheduleConfigFields,
 		},
-		"MonitoringScheduleName": ubx.FieldSpec{WireName: "monitoring_schedule_name"},
+		"MonitoringScheduleName":   ubx.FieldSpec{WireName: "monitoring_schedule_name"},
 		"MonitoringScheduleStatus": ubx.FieldSpec{WireName: "monitoring_schedule_status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MonitoringSchedule_TagsFields,
+			Kind:     "list",
+			Fields:   MonitoringSchedule_TagsFields,
 		},
 	},
 }

@@ -4,21 +4,21 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PasswordDataConfig struct {
-	DryRun any
+	DryRun     any
 	InstanceId any
 }
 
 type PasswordDataAttrs struct {
-	DryRun any
-	InstanceId any
+	DryRun       any
+	InstanceId   any
 	PasswordData any
-	Timestamp any
+	Timestamp    any
 }
 
 var PasswordData = ubx.DataSourceBinding{
 	WireType: "aws_ec2_password_data",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":     ubx.FieldSpec{WireName: "dry_run"},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 	},
 }

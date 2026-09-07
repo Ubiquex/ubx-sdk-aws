@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MessagingChimeChannelsAssociatedWithChannelFlow_Channels struct {
 	ChannelArn any
-	Metadata any
-	Mode any
-	Name any
-	Privacy any
+	Metadata   any
+	Mode       any
+	Name       any
+	Privacy    any
 }
 
 type MessagingChimeChannelsAssociatedWithChannelFlowConfig struct {
 	ChannelFlowArn any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 type MessagingChimeChannelsAssociatedWithChannelFlowAttrs struct {
 	ChannelFlowArn any
-	Channels any
-	MaxResults any
-	NextToken any
+	Channels       any
+	MaxResults     any
+	NextToken      any
 }
 
 var MessagingChimeChannelsAssociatedWithChannelFlow = ubx.DataSourceBinding{
 	WireType: "aws_messaging_chime_channels_associated_with_channel_flow",
 	Fields: ubx.FieldMap{
 		"ChannelFlowArn": ubx.FieldSpec{WireName: "channel_flow_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 	},
 }

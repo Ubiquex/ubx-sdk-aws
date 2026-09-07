@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Orders_Orders struct {
 	LineItemCountsByStatus any
-	OrderFulfilledDate any
-	OrderId any
-	OrderSubmissionDate any
-	OrderType any
-	OutpostId any
-	Status any
+	OrderFulfilledDate     any
+	OrderId                any
+	OrderSubmissionDate    any
+	OrderType              any
+	OutpostId              any
+	Status                 any
 }
 
 type OrdersConfig struct {
 	// <p>The maximum page size.</p>
 	MaxResults any
 	// <p>The pagination token.</p>
-	NextToken any
+	NextToken               any
 	OutpostIdentifierFilter any
 }
 
@@ -25,16 +25,16 @@ type OrdersAttrs struct {
 	// <p>The maximum page size.</p>
 	MaxResults any
 	// <p>The pagination token.</p>
-	NextToken any
-	Orders any
+	NextToken               any
+	Orders                  any
 	OutpostIdentifierFilter any
 }
 
 var Orders = ubx.DataSourceBinding{
 	WireType: "aws_outposts_orders",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
 		"OutpostIdentifierFilter": ubx.FieldSpec{WireName: "outpost_identifier_filter"},
 	},
 }

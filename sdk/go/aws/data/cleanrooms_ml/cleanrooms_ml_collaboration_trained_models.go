@@ -4,45 +4,45 @@ package cleanrooms_ml
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CleanroomsMlCollaborationTrainedModels_CollaborationTrainedModels_IncrementalTrainingDataChannels struct {
-	ChannelName any
-	ModelName any
+	ChannelName       any
+	ModelName         any
 	VersionIdentifier any
 }
 
 type CleanroomsMlCollaborationTrainedModels_CollaborationTrainedModels struct {
-	CollaborationIdentifier any
+	CollaborationIdentifier                any
 	ConfiguredModelAlgorithmAssociationArn any
-	CreateTime any
-	CreatorAccountId any
-	Description any
-	IncrementalTrainingDataChannels any
-	MembershipIdentifier any
-	MlModelTrainingPayerAccountId any
-	Name any
-	Status any
-	TrainedModelArn any
-	UpdateTime any
-	VersionIdentifier any
+	CreateTime                             any
+	CreatorAccountId                       any
+	Description                            any
+	IncrementalTrainingDataChannels        any
+	MembershipIdentifier                   any
+	MlModelTrainingPayerAccountId          any
+	Name                                   any
+	Status                                 any
+	TrainedModelArn                        any
+	UpdateTime                             any
+	VersionIdentifier                      any
 }
 
 type CleanroomsMlCollaborationTrainedModelsConfig struct {
 	CollaborationIdentifier any
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 }
 
 type CleanroomsMlCollaborationTrainedModelsAttrs struct {
-	CollaborationIdentifier any
+	CollaborationIdentifier    any
 	CollaborationTrainedModels any
-	MaxResults any
-	NextToken any
+	MaxResults                 any
+	NextToken                  any
 }
 
 var CleanroomsMlCollaborationTrainedModels = ubx.DataSourceBinding{
 	WireType: "aws_cleanrooms_ml_collaboration_trained_models",
 	Fields: ubx.FieldMap{
 		"CollaborationIdentifier": ubx.FieldSpec{WireName: "collaboration_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
 	},
 }

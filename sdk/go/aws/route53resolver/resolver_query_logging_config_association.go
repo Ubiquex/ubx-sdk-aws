@@ -31,6 +31,6 @@ var ResolverQueryLoggingConfigAssociation = ubx.ResourceBinding{
 	WireType: "aws_route53_resolver_resolver_query_logging_config_association",
 	Fields: ubx.FieldMap{
 		"ResolverQueryLogConfigId": ubx.FieldSpec{WireName: "resolver_query_log_config_id"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceId":               ubx.FieldSpec{WireName: "resource_id"},
 	},
 }

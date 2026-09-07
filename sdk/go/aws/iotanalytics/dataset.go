@@ -161,180 +161,180 @@ type Dataset_VersioningConfiguration struct {
 }
 
 var Dataset_Actions_ContainerAction_ResourceConfigurationFields = ubx.FieldMap{
-		"ComputeType": ubx.FieldSpec{WireName: "compute_type"},
-		"VolumeSizeInGb": ubx.FieldSpec{WireName: "volume_size_in_gb"},
-	}
+	"ComputeType":    ubx.FieldSpec{WireName: "compute_type"},
+	"VolumeSizeInGb": ubx.FieldSpec{WireName: "volume_size_in_gb"},
+}
 
 var Dataset_Actions_ContainerAction_Variables_DatasetContentVersionValueFields = ubx.FieldMap{
-		"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
-	}
+	"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
+}
 
 var Dataset_Actions_ContainerAction_Variables_OutputFileUriValueFields = ubx.FieldMap{
-		"FileName": ubx.FieldSpec{WireName: "file_name"},
-	}
+	"FileName": ubx.FieldSpec{WireName: "file_name"},
+}
 
 var Dataset_Actions_ContainerAction_VariablesFields = ubx.FieldMap{
-		"DatasetContentVersionValue": ubx.FieldSpec{
-			WireName: "dataset_content_version_value",
-			Kind: "object",
-			Fields: Dataset_Actions_ContainerAction_Variables_DatasetContentVersionValueFields,
-		},
-		"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
-		"OutputFileUriValue": ubx.FieldSpec{
-			WireName: "output_file_uri_value",
-			Kind: "object",
-			Fields: Dataset_Actions_ContainerAction_Variables_OutputFileUriValueFields,
-		},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-		"VariableName": ubx.FieldSpec{WireName: "variable_name"},
-	}
+	"DatasetContentVersionValue": ubx.FieldSpec{
+		WireName: "dataset_content_version_value",
+		Kind:     "object",
+		Fields:   Dataset_Actions_ContainerAction_Variables_DatasetContentVersionValueFields,
+	},
+	"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
+	"OutputFileUriValue": ubx.FieldSpec{
+		WireName: "output_file_uri_value",
+		Kind:     "object",
+		Fields:   Dataset_Actions_ContainerAction_Variables_OutputFileUriValueFields,
+	},
+	"StringValue":  ubx.FieldSpec{WireName: "string_value"},
+	"VariableName": ubx.FieldSpec{WireName: "variable_name"},
+}
 
 var Dataset_Actions_ContainerActionFields = ubx.FieldMap{
-		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"ResourceConfiguration": ubx.FieldSpec{
-			WireName: "resource_configuration",
-			Kind: "object",
-			Fields: Dataset_Actions_ContainerAction_ResourceConfigurationFields,
-		},
-		"Variables": ubx.FieldSpec{
-			WireName: "variables",
-			Kind: "list",
-			Fields: Dataset_Actions_ContainerAction_VariablesFields,
-		},
-	}
+	"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
+	"Image":            ubx.FieldSpec{WireName: "image"},
+	"ResourceConfiguration": ubx.FieldSpec{
+		WireName: "resource_configuration",
+		Kind:     "object",
+		Fields:   Dataset_Actions_ContainerAction_ResourceConfigurationFields,
+	},
+	"Variables": ubx.FieldSpec{
+		WireName: "variables",
+		Kind:     "list",
+		Fields:   Dataset_Actions_ContainerAction_VariablesFields,
+	},
+}
 
 var Dataset_Actions_QueryAction_Filters_DeltaTimeFields = ubx.FieldMap{
-		"OffsetSeconds": ubx.FieldSpec{WireName: "offset_seconds"},
-		"TimeExpression": ubx.FieldSpec{WireName: "time_expression"},
-	}
+	"OffsetSeconds":  ubx.FieldSpec{WireName: "offset_seconds"},
+	"TimeExpression": ubx.FieldSpec{WireName: "time_expression"},
+}
 
 var Dataset_Actions_QueryAction_FiltersFields = ubx.FieldMap{
-		"DeltaTime": ubx.FieldSpec{
-			WireName: "delta_time",
-			Kind: "object",
-			Fields: Dataset_Actions_QueryAction_Filters_DeltaTimeFields,
-		},
-	}
+	"DeltaTime": ubx.FieldSpec{
+		WireName: "delta_time",
+		Kind:     "object",
+		Fields:   Dataset_Actions_QueryAction_Filters_DeltaTimeFields,
+	},
+}
 
 var Dataset_Actions_QueryActionFields = ubx.FieldMap{
-		"Filters": ubx.FieldSpec{
-			WireName: "filters",
-			Kind: "list",
-			Fields: Dataset_Actions_QueryAction_FiltersFields,
-		},
-		"SqlQuery": ubx.FieldSpec{WireName: "sql_query"},
-	}
+	"Filters": ubx.FieldSpec{
+		WireName: "filters",
+		Kind:     "list",
+		Fields:   Dataset_Actions_QueryAction_FiltersFields,
+	},
+	"SqlQuery": ubx.FieldSpec{WireName: "sql_query"},
+}
 
 var Dataset_ActionsFields = ubx.FieldMap{
-		"ActionName": ubx.FieldSpec{WireName: "action_name"},
-		"ContainerAction": ubx.FieldSpec{
-			WireName: "container_action",
-			Kind: "object",
-			Fields: Dataset_Actions_ContainerActionFields,
-		},
-		"QueryAction": ubx.FieldSpec{
-			WireName: "query_action",
-			Kind: "object",
-			Fields: Dataset_Actions_QueryActionFields,
-		},
-	}
+	"ActionName": ubx.FieldSpec{WireName: "action_name"},
+	"ContainerAction": ubx.FieldSpec{
+		WireName: "container_action",
+		Kind:     "object",
+		Fields:   Dataset_Actions_ContainerActionFields,
+	},
+	"QueryAction": ubx.FieldSpec{
+		WireName: "query_action",
+		Kind:     "object",
+		Fields:   Dataset_Actions_QueryActionFields,
+	},
+}
 
 var Dataset_ContentDeliveryRules_Destination_IotEventsDestinationConfigurationFields = ubx.FieldMap{
-		"InputName": ubx.FieldSpec{WireName: "input_name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"InputName": ubx.FieldSpec{WireName: "input_name"},
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var Dataset_ContentDeliveryRules_Destination_S3DestinationConfiguration_GlueConfigurationFields = ubx.FieldMap{
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"TableName":    ubx.FieldSpec{WireName: "table_name"},
+}
 
 var Dataset_ContentDeliveryRules_Destination_S3DestinationConfigurationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"GlueConfiguration": ubx.FieldSpec{
-			WireName: "glue_configuration",
-			Kind: "object",
-			Fields: Dataset_ContentDeliveryRules_Destination_S3DestinationConfiguration_GlueConfigurationFields,
-		},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"Bucket": ubx.FieldSpec{WireName: "bucket"},
+	"GlueConfiguration": ubx.FieldSpec{
+		WireName: "glue_configuration",
+		Kind:     "object",
+		Fields:   Dataset_ContentDeliveryRules_Destination_S3DestinationConfiguration_GlueConfigurationFields,
+	},
+	"Key":     ubx.FieldSpec{WireName: "key"},
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var Dataset_ContentDeliveryRules_DestinationFields = ubx.FieldMap{
-		"IotEventsDestinationConfiguration": ubx.FieldSpec{
-			WireName: "iot_events_destination_configuration",
-			Kind: "object",
-			Fields: Dataset_ContentDeliveryRules_Destination_IotEventsDestinationConfigurationFields,
-		},
-		"S3DestinationConfiguration": ubx.FieldSpec{
-			WireName: "s3_destination_configuration",
-			Kind: "object",
-			Fields: Dataset_ContentDeliveryRules_Destination_S3DestinationConfigurationFields,
-		},
-	}
+	"IotEventsDestinationConfiguration": ubx.FieldSpec{
+		WireName: "iot_events_destination_configuration",
+		Kind:     "object",
+		Fields:   Dataset_ContentDeliveryRules_Destination_IotEventsDestinationConfigurationFields,
+	},
+	"S3DestinationConfiguration": ubx.FieldSpec{
+		WireName: "s3_destination_configuration",
+		Kind:     "object",
+		Fields:   Dataset_ContentDeliveryRules_Destination_S3DestinationConfigurationFields,
+	},
+}
 
 var Dataset_ContentDeliveryRulesFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: Dataset_ContentDeliveryRules_DestinationFields,
-		},
-		"EntryName": ubx.FieldSpec{WireName: "entry_name"},
-	}
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   Dataset_ContentDeliveryRules_DestinationFields,
+	},
+	"EntryName": ubx.FieldSpec{WireName: "entry_name"},
+}
 
 var Dataset_LateDataRules_RuleConfiguration_DeltaTimeSessionWindowConfigurationFields = ubx.FieldMap{
-		"TimeoutInMinutes": ubx.FieldSpec{WireName: "timeout_in_minutes"},
-	}
+	"TimeoutInMinutes": ubx.FieldSpec{WireName: "timeout_in_minutes"},
+}
 
 var Dataset_LateDataRules_RuleConfigurationFields = ubx.FieldMap{
-		"DeltaTimeSessionWindowConfiguration": ubx.FieldSpec{
-			WireName: "delta_time_session_window_configuration",
-			Kind: "object",
-			Fields: Dataset_LateDataRules_RuleConfiguration_DeltaTimeSessionWindowConfigurationFields,
-		},
-	}
+	"DeltaTimeSessionWindowConfiguration": ubx.FieldSpec{
+		WireName: "delta_time_session_window_configuration",
+		Kind:     "object",
+		Fields:   Dataset_LateDataRules_RuleConfiguration_DeltaTimeSessionWindowConfigurationFields,
+	},
+}
 
 var Dataset_LateDataRulesFields = ubx.FieldMap{
-		"RuleConfiguration": ubx.FieldSpec{
-			WireName: "rule_configuration",
-			Kind: "object",
-			Fields: Dataset_LateDataRules_RuleConfigurationFields,
-		},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-	}
+	"RuleConfiguration": ubx.FieldSpec{
+		WireName: "rule_configuration",
+		Kind:     "object",
+		Fields:   Dataset_LateDataRules_RuleConfigurationFields,
+	},
+	"RuleName": ubx.FieldSpec{WireName: "rule_name"},
+}
 
 var Dataset_RetentionPeriodFields = ubx.FieldMap{
-		"NumberOfDays": ubx.FieldSpec{WireName: "number_of_days"},
-		"Unlimited": ubx.FieldSpec{WireName: "unlimited"},
-	}
+	"NumberOfDays": ubx.FieldSpec{WireName: "number_of_days"},
+	"Unlimited":    ubx.FieldSpec{WireName: "unlimited"},
+}
 
 var Dataset_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Dataset_Triggers_ScheduleFields = ubx.FieldMap{
-		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
-	}
+	"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
+}
 
 var Dataset_TriggersFields = ubx.FieldMap{
-		"Schedule": ubx.FieldSpec{
-			WireName: "schedule",
-			Kind: "object",
-			Fields: Dataset_Triggers_ScheduleFields,
-		},
-		"TriggeringDataset": ubx.FieldSpec{
-			WireName: "triggering_dataset",
-			Kind: "object",
-			Fields: Dataset_Actions_ContainerAction_Variables_DatasetContentVersionValueFields,
-		},
-	}
+	"Schedule": ubx.FieldSpec{
+		WireName: "schedule",
+		Kind:     "object",
+		Fields:   Dataset_Triggers_ScheduleFields,
+	},
+	"TriggeringDataset": ubx.FieldSpec{
+		WireName: "triggering_dataset",
+		Kind:     "object",
+		Fields:   Dataset_Actions_ContainerAction_Variables_DatasetContentVersionValueFields,
+	},
+}
 
 var Dataset_VersioningConfigurationFields = ubx.FieldMap{
-		"MaxVersions": ubx.FieldSpec{WireName: "max_versions"},
-		"Unlimited": ubx.FieldSpec{WireName: "unlimited"},
-	}
+	"MaxVersions": ubx.FieldSpec{WireName: "max_versions"},
+	"Unlimited":   ubx.FieldSpec{WireName: "unlimited"},
+}
 
 type DatasetConfig struct {
 	// The actions define the orders of operations that create the dataset content, either by running a SQL query on the IoT Analytics data store or by invoking a containerized application to transform the data. (AI-inferred)
@@ -381,39 +381,39 @@ var Dataset = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Actions": ubx.FieldSpec{
 			WireName: "actions",
-			Kind: "list",
-			Fields: Dataset_ActionsFields,
+			Kind:     "list",
+			Fields:   Dataset_ActionsFields,
 		},
 		"ContentDeliveryRules": ubx.FieldSpec{
 			WireName: "content_delivery_rules",
-			Kind: "list",
-			Fields: Dataset_ContentDeliveryRulesFields,
+			Kind:     "list",
+			Fields:   Dataset_ContentDeliveryRulesFields,
 		},
 		"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
 		"LateDataRules": ubx.FieldSpec{
 			WireName: "late_data_rules",
-			Kind: "list",
-			Fields: Dataset_LateDataRulesFields,
+			Kind:     "list",
+			Fields:   Dataset_LateDataRulesFields,
 		},
 		"RetentionPeriod": ubx.FieldSpec{
 			WireName: "retention_period",
-			Kind: "object",
-			Fields: Dataset_RetentionPeriodFields,
+			Kind:     "object",
+			Fields:   Dataset_RetentionPeriodFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dataset_TagsFields,
+			Kind:     "list",
+			Fields:   Dataset_TagsFields,
 		},
 		"Triggers": ubx.FieldSpec{
 			WireName: "triggers",
-			Kind: "list",
-			Fields: Dataset_TriggersFields,
+			Kind:     "list",
+			Fields:   Dataset_TriggersFields,
 		},
 		"VersioningConfiguration": ubx.FieldSpec{
 			WireName: "versioning_configuration",
-			Kind: "object",
-			Fields: Dataset_VersioningConfigurationFields,
+			Kind:     "object",
+			Fields:   Dataset_VersioningConfigurationFields,
 		},
 	},
 }

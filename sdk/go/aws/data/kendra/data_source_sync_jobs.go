@@ -4,66 +4,66 @@ package kendra
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataSourceSyncJobs_History_Metrics struct {
-	DocumentsAdded any
-	DocumentsDeleted any
-	DocumentsFailed any
+	DocumentsAdded    any
+	DocumentsDeleted  any
+	DocumentsFailed   any
 	DocumentsModified any
-	DocumentsScanned any
+	DocumentsScanned  any
 }
 
 type DataSourceSyncJobs_History struct {
 	DataSourceErrorCode any
-	EndTime any
-	ErrorCode any
-	ErrorMessage any
-	ExecutionId any
-	Metrics any
-	StartTime any
-	Status any
+	EndTime             any
+	ErrorCode           any
+	ErrorMessage        any
+	ExecutionId         any
+	Metrics             any
+	StartTime           any
+	Status              any
 }
 
 type DataSourceSyncJobs_StartTimeFilter struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 var DataSourceSyncJobs_StartTimeFilterFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 type DataSourceSyncJobsConfig struct {
-	Id any
-	IndexId any
+	Id         any
+	IndexId    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Provides a range of time.</p>
 	StartTimeFilter any
-	StatusFilter any
+	StatusFilter    any
 }
 
 type DataSourceSyncJobsAttrs struct {
-	History any
-	Id any
-	IndexId any
+	History    any
+	Id         any
+	IndexId    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Provides a range of time.</p>
 	StartTimeFilter any
-	StatusFilter any
+	StatusFilter    any
 }
 
 var DataSourceSyncJobs = ubx.DataSourceBinding{
 	WireType: "aws_kendra_data_source_sync_jobs",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
+		"Id":         ubx.FieldSpec{WireName: "id"},
+		"IndexId":    ubx.FieldSpec{WireName: "index_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"StartTimeFilter": ubx.FieldSpec{
 			WireName: "start_time_filter",
-			Kind: "object",
-			Fields: DataSourceSyncJobs_StartTimeFilterFields,
+			Kind:     "object",
+			Fields:   DataSourceSyncJobs_StartTimeFilterFields,
 		},
 		"StatusFilter": ubx.FieldSpec{WireName: "status_filter"},
 	},

@@ -4,43 +4,43 @@ package appstream2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExportImageTasks_ExportImageTasks_ErrorDetails struct {
-	ErrorCode any
+	ErrorCode    any
 	ErrorMessage any
 }
 
 type ExportImageTasks_ExportImageTasks struct {
-	AmiDescription any
-	AmiId any
-	AmiName any
-	CreatedDate any
-	ErrorDetails any
-	ImageArn any
-	State any
+	AmiDescription    any
+	AmiId             any
+	AmiName           any
+	CreatedDate       any
+	ErrorDetails      any
+	ImageArn          any
+	State             any
 	TagSpecifications any
-	TaskId any
+	TaskId            any
 }
 
 type ExportImageTasks_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var ExportImageTasks_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ExportImageTasksConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ExportImageTasksAttrs struct {
 	ExportImageTasks any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters          any
+	MaxResults       any
+	NextToken        any
 }
 
 var ExportImageTasks = ubx.DataSourceBinding{
@@ -48,10 +48,10 @@ var ExportImageTasks = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ExportImageTasks_FiltersFields,
+			Kind:     "list",
+			Fields:   ExportImageTasks_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

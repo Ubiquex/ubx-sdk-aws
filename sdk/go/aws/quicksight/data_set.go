@@ -113,7 +113,7 @@ type DataSet_DatasetParameters_DecimalDatasetParameter struct {
 type DataSet_DatasetParameters_StringDatasetParameter struct {
 	// Specifies the default string values for this string dataset parameter, which are used when the parameter is not provided at analysis runtime. (AI-inferred)
 	DefaultValues any
-	Id any
+	Id            any
 	// The name that identifies this QuickSight dataset string parameter, used to reference the parameter in dataset custom SQL (for example, ${param_name}) and dataset expressions. (AI-inferred)
 	Name any
 	// Specifies whether the string dataset parameter permits a single value ('SINGLE_VALUED') or multiple values ('MULTI_VALUED'). (AI-inferred)
@@ -141,7 +141,7 @@ type DataSet_IngestionWaitPolicy struct {
 type DataSet_OutputColumns struct {
 	// A description of the output column, providing additional context about the data contained in that column within the QuickSight dataset. (AI-inferred)
 	Description any
-	Id any
+	Id          any
 	// The name of the output column, which defines the column heading in the resulting dataset schema for Amazon QuickSight. (AI-inferred)
 	Name any
 	// The sub data type of the output column in an Amazon QuickSight data set, which further refines the column's data type, for instance indicating that a string column carries geospatial data. (AI-inferred)
@@ -244,245 +244,245 @@ type DataSet_Tags struct {
 }
 
 var DataSet_ColumnGroups_GeoSpatialColumnGroupFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{WireName: "columns"},
-		"CountryCode": ubx.FieldSpec{WireName: "country_code"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Columns":     ubx.FieldSpec{WireName: "columns"},
+	"CountryCode": ubx.FieldSpec{WireName: "country_code"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var DataSet_ColumnGroupsFields = ubx.FieldMap{
-		"GeoSpatialColumnGroup": ubx.FieldSpec{
-			WireName: "geo_spatial_column_group",
-			Kind: "object",
-			Fields: DataSet_ColumnGroups_GeoSpatialColumnGroupFields,
-		},
-	}
+	"GeoSpatialColumnGroup": ubx.FieldSpec{
+		WireName: "geo_spatial_column_group",
+		Kind:     "object",
+		Fields:   DataSet_ColumnGroups_GeoSpatialColumnGroupFields,
+	},
+}
 
 var DataSet_ColumnLevelPermissionRulesFields = ubx.FieldMap{
-		"ColumnNames": ubx.FieldSpec{WireName: "column_names"},
-		"Principals": ubx.FieldSpec{WireName: "principals"},
-	}
+	"ColumnNames": ubx.FieldSpec{WireName: "column_names"},
+	"Principals":  ubx.FieldSpec{WireName: "principals"},
+}
 
 var DataSet_DataPrepConfigurationFields = ubx.FieldMap{
-		"DestinationTableMap": ubx.FieldSpec{WireName: "destination_table_map"},
-		"SourceTableMap": ubx.FieldSpec{WireName: "source_table_map"},
-		"TransformStepMap": ubx.FieldSpec{WireName: "transform_step_map"},
-	}
+	"DestinationTableMap": ubx.FieldSpec{WireName: "destination_table_map"},
+	"SourceTableMap":      ubx.FieldSpec{WireName: "source_table_map"},
+	"TransformStepMap":    ubx.FieldSpec{WireName: "transform_step_map"},
+}
 
 var DataSet_DataSetRefreshProperties_FailureConfiguration_EmailAlertFields = ubx.FieldMap{
-		"AlertStatus": ubx.FieldSpec{WireName: "alert_status"},
-	}
+	"AlertStatus": ubx.FieldSpec{WireName: "alert_status"},
+}
 
 var DataSet_DataSetRefreshProperties_FailureConfigurationFields = ubx.FieldMap{
-		"EmailAlert": ubx.FieldSpec{
-			WireName: "email_alert",
-			Kind: "object",
-			Fields: DataSet_DataSetRefreshProperties_FailureConfiguration_EmailAlertFields,
-		},
-	}
+	"EmailAlert": ubx.FieldSpec{
+		WireName: "email_alert",
+		Kind:     "object",
+		Fields:   DataSet_DataSetRefreshProperties_FailureConfiguration_EmailAlertFields,
+	},
+}
 
 var DataSet_DataSetRefreshProperties_RefreshConfiguration_IncrementalRefresh_LookbackWindowFields = ubx.FieldMap{
-		"ColumnName": ubx.FieldSpec{WireName: "column_name"},
-		"Size": ubx.FieldSpec{WireName: "size"},
-		"SizeUnit": ubx.FieldSpec{WireName: "size_unit"},
-	}
+	"ColumnName": ubx.FieldSpec{WireName: "column_name"},
+	"Size":       ubx.FieldSpec{WireName: "size"},
+	"SizeUnit":   ubx.FieldSpec{WireName: "size_unit"},
+}
 
 var DataSet_DataSetRefreshProperties_RefreshConfiguration_IncrementalRefreshFields = ubx.FieldMap{
-		"LookbackWindow": ubx.FieldSpec{
-			WireName: "lookback_window",
-			Kind: "object",
-			Fields: DataSet_DataSetRefreshProperties_RefreshConfiguration_IncrementalRefresh_LookbackWindowFields,
-		},
-	}
+	"LookbackWindow": ubx.FieldSpec{
+		WireName: "lookback_window",
+		Kind:     "object",
+		Fields:   DataSet_DataSetRefreshProperties_RefreshConfiguration_IncrementalRefresh_LookbackWindowFields,
+	},
+}
 
 var DataSet_DataSetRefreshProperties_RefreshConfigurationFields = ubx.FieldMap{
-		"IncrementalRefresh": ubx.FieldSpec{
-			WireName: "incremental_refresh",
-			Kind: "object",
-			Fields: DataSet_DataSetRefreshProperties_RefreshConfiguration_IncrementalRefreshFields,
-		},
-	}
+	"IncrementalRefresh": ubx.FieldSpec{
+		WireName: "incremental_refresh",
+		Kind:     "object",
+		Fields:   DataSet_DataSetRefreshProperties_RefreshConfiguration_IncrementalRefreshFields,
+	},
+}
 
 var DataSet_DataSetRefreshPropertiesFields = ubx.FieldMap{
-		"FailureConfiguration": ubx.FieldSpec{
-			WireName: "failure_configuration",
-			Kind: "object",
-			Fields: DataSet_DataSetRefreshProperties_FailureConfigurationFields,
-		},
-		"RefreshConfiguration": ubx.FieldSpec{
-			WireName: "refresh_configuration",
-			Kind: "object",
-			Fields: DataSet_DataSetRefreshProperties_RefreshConfigurationFields,
-		},
-	}
+	"FailureConfiguration": ubx.FieldSpec{
+		WireName: "failure_configuration",
+		Kind:     "object",
+		Fields:   DataSet_DataSetRefreshProperties_FailureConfigurationFields,
+	},
+	"RefreshConfiguration": ubx.FieldSpec{
+		WireName: "refresh_configuration",
+		Kind:     "object",
+		Fields:   DataSet_DataSetRefreshProperties_RefreshConfigurationFields,
+	},
+}
 
 var DataSet_DataSetUsageConfigurationFields = ubx.FieldMap{
-		"DisableUseAsDirectQuerySource": ubx.FieldSpec{WireName: "disable_use_as_direct_query_source"},
-		"DisableUseAsImportedSource": ubx.FieldSpec{WireName: "disable_use_as_imported_source"},
-	}
+	"DisableUseAsDirectQuerySource": ubx.FieldSpec{WireName: "disable_use_as_direct_query_source"},
+	"DisableUseAsImportedSource":    ubx.FieldSpec{WireName: "disable_use_as_imported_source"},
+}
 
 var DataSet_DatasetParameters_DateTimeDatasetParameter_DefaultValuesFields = ubx.FieldMap{
-		"StaticValues": ubx.FieldSpec{WireName: "static_values"},
-	}
+	"StaticValues": ubx.FieldSpec{WireName: "static_values"},
+}
 
 var DataSet_DatasetParameters_DateTimeDatasetParameterFields = ubx.FieldMap{
-		"DefaultValues": ubx.FieldSpec{
-			WireName: "default_values",
-			Kind: "object",
-			Fields: DataSet_DatasetParameters_DateTimeDatasetParameter_DefaultValuesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
-		"ValueType": ubx.FieldSpec{WireName: "value_type"},
-	}
+	"DefaultValues": ubx.FieldSpec{
+		WireName: "default_values",
+		Kind:     "object",
+		Fields:   DataSet_DatasetParameters_DateTimeDatasetParameter_DefaultValuesFields,
+	},
+	"Id":              ubx.FieldSpec{WireName: "id"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
+	"ValueType":       ubx.FieldSpec{WireName: "value_type"},
+}
 
 var DataSet_DatasetParameters_DecimalDatasetParameter_DefaultValuesFields = ubx.FieldMap{
-		"StaticValues": ubx.FieldSpec{WireName: "static_values"},
-	}
+	"StaticValues": ubx.FieldSpec{WireName: "static_values"},
+}
 
 var DataSet_DatasetParameters_DecimalDatasetParameterFields = ubx.FieldMap{
-		"DefaultValues": ubx.FieldSpec{
-			WireName: "default_values",
-			Kind: "object",
-			Fields: DataSet_DatasetParameters_DecimalDatasetParameter_DefaultValuesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ValueType": ubx.FieldSpec{WireName: "value_type"},
-	}
+	"DefaultValues": ubx.FieldSpec{
+		WireName: "default_values",
+		Kind:     "object",
+		Fields:   DataSet_DatasetParameters_DecimalDatasetParameter_DefaultValuesFields,
+	},
+	"Id":        ubx.FieldSpec{WireName: "id"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"ValueType": ubx.FieldSpec{WireName: "value_type"},
+}
 
 var DataSet_DatasetParameters_StringDatasetParameterFields = ubx.FieldMap{
-		"DefaultValues": ubx.FieldSpec{
-			WireName: "default_values",
-			Kind: "object",
-			Fields: DataSet_DatasetParameters_DateTimeDatasetParameter_DefaultValuesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ValueType": ubx.FieldSpec{WireName: "value_type"},
-	}
+	"DefaultValues": ubx.FieldSpec{
+		WireName: "default_values",
+		Kind:     "object",
+		Fields:   DataSet_DatasetParameters_DateTimeDatasetParameter_DefaultValuesFields,
+	},
+	"Id":        ubx.FieldSpec{WireName: "id"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"ValueType": ubx.FieldSpec{WireName: "value_type"},
+}
 
 var DataSet_DatasetParametersFields = ubx.FieldMap{
-		"DateTimeDatasetParameter": ubx.FieldSpec{
-			WireName: "date_time_dataset_parameter",
-			Kind: "object",
-			Fields: DataSet_DatasetParameters_DateTimeDatasetParameterFields,
-		},
-		"DecimalDatasetParameter": ubx.FieldSpec{
-			WireName: "decimal_dataset_parameter",
-			Kind: "object",
-			Fields: DataSet_DatasetParameters_DecimalDatasetParameterFields,
-		},
-		"IntegerDatasetParameter": ubx.FieldSpec{
-			WireName: "integer_dataset_parameter",
-			Kind: "object",
-			Fields: DataSet_DatasetParameters_DecimalDatasetParameterFields,
-		},
-		"StringDatasetParameter": ubx.FieldSpec{
-			WireName: "string_dataset_parameter",
-			Kind: "object",
-			Fields: DataSet_DatasetParameters_StringDatasetParameterFields,
-		},
-	}
+	"DateTimeDatasetParameter": ubx.FieldSpec{
+		WireName: "date_time_dataset_parameter",
+		Kind:     "object",
+		Fields:   DataSet_DatasetParameters_DateTimeDatasetParameterFields,
+	},
+	"DecimalDatasetParameter": ubx.FieldSpec{
+		WireName: "decimal_dataset_parameter",
+		Kind:     "object",
+		Fields:   DataSet_DatasetParameters_DecimalDatasetParameterFields,
+	},
+	"IntegerDatasetParameter": ubx.FieldSpec{
+		WireName: "integer_dataset_parameter",
+		Kind:     "object",
+		Fields:   DataSet_DatasetParameters_DecimalDatasetParameterFields,
+	},
+	"StringDatasetParameter": ubx.FieldSpec{
+		WireName: "string_dataset_parameter",
+		Kind:     "object",
+		Fields:   DataSet_DatasetParameters_StringDatasetParameterFields,
+	},
+}
 
 var DataSet_IngestionWaitPolicyFields = ubx.FieldMap{
-		"IngestionWaitTimeInHours": ubx.FieldSpec{WireName: "ingestion_wait_time_in_hours"},
-		"WaitForSpiceIngestion": ubx.FieldSpec{WireName: "wait_for_spice_ingestion"},
-	}
+	"IngestionWaitTimeInHours": ubx.FieldSpec{WireName: "ingestion_wait_time_in_hours"},
+	"WaitForSpiceIngestion":    ubx.FieldSpec{WireName: "wait_for_spice_ingestion"},
+}
 
 var DataSet_PerformanceConfiguration_UniqueKeysFields = ubx.FieldMap{
-		"ColumnNames": ubx.FieldSpec{WireName: "column_names"},
-	}
+	"ColumnNames": ubx.FieldSpec{WireName: "column_names"},
+}
 
 var DataSet_PerformanceConfigurationFields = ubx.FieldMap{
-		"UniqueKeys": ubx.FieldSpec{
-			WireName: "unique_keys",
-			Kind: "list",
-			Fields: DataSet_PerformanceConfiguration_UniqueKeysFields,
-		},
-	}
+	"UniqueKeys": ubx.FieldSpec{
+		WireName: "unique_keys",
+		Kind:     "list",
+		Fields:   DataSet_PerformanceConfiguration_UniqueKeysFields,
+	},
+}
 
 var DataSet_PermissionsFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-	}
+	"Actions":   ubx.FieldSpec{WireName: "actions"},
+	"Principal": ubx.FieldSpec{WireName: "principal"},
+}
 
 var DataSet_RowLevelPermissionDataSetFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"FormatVersion": ubx.FieldSpec{WireName: "format_version"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"PermissionPolicy": ubx.FieldSpec{WireName: "permission_policy"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Arn":              ubx.FieldSpec{WireName: "arn"},
+	"FormatVersion":    ubx.FieldSpec{WireName: "format_version"},
+	"Namespace":        ubx.FieldSpec{WireName: "namespace"},
+	"PermissionPolicy": ubx.FieldSpec{WireName: "permission_policy"},
+	"Status":           ubx.FieldSpec{WireName: "status"},
+}
 
 var DataSet_RowLevelPermissionTagConfiguration_TagRulesFields = ubx.FieldMap{
-		"ColumnName": ubx.FieldSpec{WireName: "column_name"},
-		"MatchAllValue": ubx.FieldSpec{WireName: "match_all_value"},
-		"TagKey": ubx.FieldSpec{WireName: "tag_key"},
-		"TagMultiValueDelimiter": ubx.FieldSpec{WireName: "tag_multi_value_delimiter"},
-	}
+	"ColumnName":             ubx.FieldSpec{WireName: "column_name"},
+	"MatchAllValue":          ubx.FieldSpec{WireName: "match_all_value"},
+	"TagKey":                 ubx.FieldSpec{WireName: "tag_key"},
+	"TagMultiValueDelimiter": ubx.FieldSpec{WireName: "tag_multi_value_delimiter"},
+}
 
 var DataSet_RowLevelPermissionTagConfigurationFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"TagRuleConfigurations": ubx.FieldSpec{WireName: "tag_rule_configurations"},
-		"TagRules": ubx.FieldSpec{
-			WireName: "tag_rules",
-			Kind: "list",
-			Fields: DataSet_RowLevelPermissionTagConfiguration_TagRulesFields,
-		},
-	}
+	"Status":                ubx.FieldSpec{WireName: "status"},
+	"TagRuleConfigurations": ubx.FieldSpec{WireName: "tag_rule_configurations"},
+	"TagRules": ubx.FieldSpec{
+		WireName: "tag_rules",
+		Kind:     "list",
+		Fields:   DataSet_RowLevelPermissionTagConfiguration_TagRulesFields,
+	},
+}
 
 var DataSet_SemanticModelConfiguration_SemanticMetadata_CustomInstructions_InlineCustomInstruction_UploadedDocumentMetadataFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var DataSet_SemanticModelConfiguration_SemanticMetadata_CustomInstructions_InlineCustomInstructionFields = ubx.FieldMap{
-		"InstructionText": ubx.FieldSpec{WireName: "instruction_text"},
-		"UploadedDocumentMetadata": ubx.FieldSpec{
-			WireName: "uploaded_document_metadata",
-			Kind: "object",
-			Fields: DataSet_SemanticModelConfiguration_SemanticMetadata_CustomInstructions_InlineCustomInstruction_UploadedDocumentMetadataFields,
-		},
-	}
+	"InstructionText": ubx.FieldSpec{WireName: "instruction_text"},
+	"UploadedDocumentMetadata": ubx.FieldSpec{
+		WireName: "uploaded_document_metadata",
+		Kind:     "object",
+		Fields:   DataSet_SemanticModelConfiguration_SemanticMetadata_CustomInstructions_InlineCustomInstruction_UploadedDocumentMetadataFields,
+	},
+}
 
 var DataSet_SemanticModelConfiguration_SemanticMetadata_CustomInstructionsFields = ubx.FieldMap{
-		"InlineCustomInstruction": ubx.FieldSpec{
-			WireName: "inline_custom_instruction",
-			Kind: "object",
-			Fields: DataSet_SemanticModelConfiguration_SemanticMetadata_CustomInstructions_InlineCustomInstructionFields,
-		},
-	}
+	"InlineCustomInstruction": ubx.FieldSpec{
+		WireName: "inline_custom_instruction",
+		Kind:     "object",
+		Fields:   DataSet_SemanticModelConfiguration_SemanticMetadata_CustomInstructions_InlineCustomInstructionFields,
+	},
+}
 
 var DataSet_SemanticModelConfiguration_SemanticMetadata_DescriptionFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 var DataSet_SemanticModelConfiguration_SemanticMetadataFields = ubx.FieldMap{
-		"CustomInstructions": ubx.FieldSpec{
-			WireName: "custom_instructions",
-			Kind: "list",
-			Fields: DataSet_SemanticModelConfiguration_SemanticMetadata_CustomInstructionsFields,
-		},
-		"Description": ubx.FieldSpec{
-			WireName: "description",
-			Kind: "object",
-			Fields: DataSet_SemanticModelConfiguration_SemanticMetadata_DescriptionFields,
-		},
-	}
+	"CustomInstructions": ubx.FieldSpec{
+		WireName: "custom_instructions",
+		Kind:     "list",
+		Fields:   DataSet_SemanticModelConfiguration_SemanticMetadata_CustomInstructionsFields,
+	},
+	"Description": ubx.FieldSpec{
+		WireName: "description",
+		Kind:     "object",
+		Fields:   DataSet_SemanticModelConfiguration_SemanticMetadata_DescriptionFields,
+	},
+}
 
 var DataSet_SemanticModelConfigurationFields = ubx.FieldMap{
-		"SemanticMetadata": ubx.FieldSpec{
-			WireName: "semantic_metadata",
-			Kind: "list",
-			Fields: DataSet_SemanticModelConfiguration_SemanticMetadataFields,
-		},
-		"TableMap": ubx.FieldSpec{WireName: "table_map"},
-	}
+	"SemanticMetadata": ubx.FieldSpec{
+		WireName: "semantic_metadata",
+		Kind:     "list",
+		Fields:   DataSet_SemanticModelConfiguration_SemanticMetadataFields,
+	},
+	"TableMap": ubx.FieldSpec{WireName: "table_map"},
+}
 
 var DataSet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DataSetConfig struct {
 	// The AWS account ID that owns the data set, defaulting to the account used to make the request if not specified. (AI-inferred)
@@ -491,7 +491,7 @@ type DataSetConfig struct {
 	ColumnGroups any
 	// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
 	ColumnLevelPermissionRules any
-	DataPrepConfiguration any
+	DataPrepConfiguration      any
 	// The user-defined unique identifier for the QuickSight dataset within an AWS Region; if omitted, QuickSight generates one automatically. (AI-inferred)
 	DataSetId any
 	// <p>The refresh properties of a dataset.</p>
@@ -542,7 +542,7 @@ type DataSetAttrs struct {
 	// <p>The amount of SPICE capacity used by this dataset. This is 0 if the dataset isn't imported into SPICE.</p>
 	ConsumedSpiceCapacityInBytes any
 	// <p>The time that this dataset was created.</p>
-	CreatedTime any
+	CreatedTime           any
 	DataPrepConfiguration any
 	// The user-defined unique identifier for the QuickSight dataset within an AWS Region; if omitted, QuickSight generates one automatically. (AI-inferred)
 	DataSetId any
@@ -592,75 +592,75 @@ var DataSet = ubx.ResourceBinding{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
 		"ColumnGroups": ubx.FieldSpec{
 			WireName: "column_groups",
-			Kind: "list",
-			Fields: DataSet_ColumnGroupsFields,
+			Kind:     "list",
+			Fields:   DataSet_ColumnGroupsFields,
 		},
 		"ColumnLevelPermissionRules": ubx.FieldSpec{
 			WireName: "column_level_permission_rules",
-			Kind: "list",
-			Fields: DataSet_ColumnLevelPermissionRulesFields,
+			Kind:     "list",
+			Fields:   DataSet_ColumnLevelPermissionRulesFields,
 		},
 		"DataPrepConfiguration": ubx.FieldSpec{
 			WireName: "data_prep_configuration",
-			Kind: "object",
-			Fields: DataSet_DataPrepConfigurationFields,
+			Kind:     "object",
+			Fields:   DataSet_DataPrepConfigurationFields,
 		},
 		"DataSetId": ubx.FieldSpec{WireName: "data_set_id"},
 		"DataSetRefreshProperties": ubx.FieldSpec{
 			WireName: "data_set_refresh_properties",
-			Kind: "object",
-			Fields: DataSet_DataSetRefreshPropertiesFields,
+			Kind:     "object",
+			Fields:   DataSet_DataSetRefreshPropertiesFields,
 		},
 		"DataSetUsageConfiguration": ubx.FieldSpec{
 			WireName: "data_set_usage_configuration",
-			Kind: "object",
-			Fields: DataSet_DataSetUsageConfigurationFields,
+			Kind:     "object",
+			Fields:   DataSet_DataSetUsageConfigurationFields,
 		},
 		"DatasetParameters": ubx.FieldSpec{
 			WireName: "dataset_parameters",
-			Kind: "list",
-			Fields: DataSet_DatasetParametersFields,
+			Kind:     "list",
+			Fields:   DataSet_DatasetParametersFields,
 		},
 		"FieldFolders": ubx.FieldSpec{WireName: "field_folders"},
-		"FolderArns": ubx.FieldSpec{WireName: "folder_arns"},
-		"ImportMode": ubx.FieldSpec{WireName: "import_mode"},
+		"FolderArns":   ubx.FieldSpec{WireName: "folder_arns"},
+		"ImportMode":   ubx.FieldSpec{WireName: "import_mode"},
 		"IngestionWaitPolicy": ubx.FieldSpec{
 			WireName: "ingestion_wait_policy",
-			Kind: "object",
-			Fields: DataSet_IngestionWaitPolicyFields,
+			Kind:     "object",
+			Fields:   DataSet_IngestionWaitPolicyFields,
 		},
 		"LogicalTableMap": ubx.FieldSpec{WireName: "logical_table_map"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"PerformanceConfiguration": ubx.FieldSpec{
 			WireName: "performance_configuration",
-			Kind: "object",
-			Fields: DataSet_PerformanceConfigurationFields,
+			Kind:     "object",
+			Fields:   DataSet_PerformanceConfigurationFields,
 		},
 		"Permissions": ubx.FieldSpec{
 			WireName: "permissions",
-			Kind: "list",
-			Fields: DataSet_PermissionsFields,
+			Kind:     "list",
+			Fields:   DataSet_PermissionsFields,
 		},
 		"PhysicalTableMap": ubx.FieldSpec{WireName: "physical_table_map"},
 		"RowLevelPermissionDataSet": ubx.FieldSpec{
 			WireName: "row_level_permission_data_set",
-			Kind: "object",
-			Fields: DataSet_RowLevelPermissionDataSetFields,
+			Kind:     "object",
+			Fields:   DataSet_RowLevelPermissionDataSetFields,
 		},
 		"RowLevelPermissionTagConfiguration": ubx.FieldSpec{
 			WireName: "row_level_permission_tag_configuration",
-			Kind: "object",
-			Fields: DataSet_RowLevelPermissionTagConfigurationFields,
+			Kind:     "object",
+			Fields:   DataSet_RowLevelPermissionTagConfigurationFields,
 		},
 		"SemanticModelConfiguration": ubx.FieldSpec{
 			WireName: "semantic_model_configuration",
-			Kind: "object",
-			Fields: DataSet_SemanticModelConfigurationFields,
+			Kind:     "object",
+			Fields:   DataSet_SemanticModelConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataSet_TagsFields,
+			Kind:     "list",
+			Fields:   DataSet_TagsFields,
 		},
 		"UseAs": ubx.FieldSpec{WireName: "use_as"},
 	},

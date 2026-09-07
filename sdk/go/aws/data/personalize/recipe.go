@@ -4,15 +4,15 @@ package personalize
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Recipe_Recipe struct {
-	AlgorithmArn any
-	CreationDateTime any
-	Description any
+	AlgorithmArn             any
+	CreationDateTime         any
+	Description              any
 	FeatureTransformationArn any
-	LastUpdatedDateTime any
-	Name any
-	RecipeArn any
-	RecipeType any
-	Status any
+	LastUpdatedDateTime      any
+	Name                     any
+	RecipeArn                any
+	RecipeType               any
+	Status                   any
 }
 
 type RecipeConfig struct {
@@ -21,7 +21,7 @@ type RecipeConfig struct {
 
 type RecipeAttrs struct {
 	// <p>Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a> operation. </p>
-	Recipe any
+	Recipe    any
 	RecipeArn any
 }
 

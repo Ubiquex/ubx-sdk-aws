@@ -23,6 +23,6 @@ var VpngatewayRoutePropagation = ubx.ResourceBinding{
 	WireType: "aws_ec2_vpngateway_route_propagation",
 	Fields: ubx.FieldMap{
 		"RouteTableIds": ubx.FieldSpec{WireName: "route_table_ids"},
-		"VpnGatewayId": ubx.FieldSpec{WireName: "vpn_gateway_id"},
+		"VpnGatewayId":  ubx.FieldSpec{WireName: "vpn_gateway_id"},
 	},
 }

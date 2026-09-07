@@ -4,39 +4,39 @@ package thinclient
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Devices_Devices struct {
-	Arn any
-	CreatedAt any
-	CurrentSoftwareSetId any
-	DesiredSoftwareSetId any
-	EnvironmentId any
-	Id any
-	LastConnectedAt any
-	LastPostureAt any
-	LastUserId any
-	Model any
-	Name any
-	PendingSoftwareSetId any
-	SerialNumber any
+	Arn                       any
+	CreatedAt                 any
+	CurrentSoftwareSetId      any
+	DesiredSoftwareSetId      any
+	EnvironmentId             any
+	Id                        any
+	LastConnectedAt           any
+	LastPostureAt             any
+	LastUserId                any
+	Model                     any
+	Name                      any
+	PendingSoftwareSetId      any
+	SerialNumber              any
 	SoftwareSetUpdateSchedule any
-	Status any
-	UpdatedAt any
+	Status                    any
+	UpdatedAt                 any
 }
 
 type DevicesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DevicesAttrs struct {
-	Devices any
+	Devices    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Devices = ubx.DataSourceBinding{
 	WireType: "aws_thinclient_devices",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

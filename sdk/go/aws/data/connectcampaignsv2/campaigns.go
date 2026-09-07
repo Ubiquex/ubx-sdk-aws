@@ -4,26 +4,26 @@ package connectcampaignsv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Campaigns_CampaignSummaryList_EntryLimitsConfig struct {
-	MaxEntryCount any
+	MaxEntryCount    any
 	MinEntryInterval any
 }
 
 type Campaigns_CampaignSummaryList_Schedule struct {
-	EndTime any
+	EndTime          any
 	RefreshFrequency any
-	StartTime any
+	StartTime        any
 }
 
 type Campaigns_CampaignSummaryList struct {
-	Arn any
-	ChannelSubtypes any
+	Arn                    any
+	ChannelSubtypes        any
 	ConnectCampaignFlowArn any
-	ConnectInstanceId any
-	EntryLimitsConfig any
-	Id any
-	Name any
-	Schedule any
-	Type any
+	ConnectInstanceId      any
+	EntryLimitsConfig      any
+	Id                     any
+	Name                   any
+	Schedule               any
+	Type                   any
 }
 
 type Campaigns_Filters_InstanceIdFilter struct {
@@ -39,17 +39,17 @@ type Campaigns_Filters struct {
 }
 
 var Campaigns_Filters_InstanceIdFilterFields = ubx.FieldMap{
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var Campaigns_FiltersFields = ubx.FieldMap{
-		"InstanceIdFilter": ubx.FieldSpec{
-			WireName: "instance_id_filter",
-			Kind: "object",
-			Fields: Campaigns_Filters_InstanceIdFilterFields,
-		},
-	}
+	"InstanceIdFilter": ubx.FieldSpec{
+		WireName: "instance_id_filter",
+		Kind:     "object",
+		Fields:   Campaigns_Filters_InstanceIdFilterFields,
+	},
+}
 
 type CampaignsConfig struct {
 	// Filter model by type
@@ -76,10 +76,10 @@ var Campaigns = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: Campaigns_FiltersFields,
+			Kind:     "object",
+			Fields:   Campaigns_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

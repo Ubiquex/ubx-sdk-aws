@@ -4,25 +4,25 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FleetMetrics_FleetMetrics struct {
-	MetricArn any
+	MetricArn  any
 	MetricName any
 }
 
 type FleetMetricsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FleetMetricsAttrs struct {
 	FleetMetrics any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var FleetMetrics = ubx.DataSourceBinding{
 	WireType: "aws_iot_fleet_metrics",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,37 +4,37 @@ package mq
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SharedResources_SharedResources_Error struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type SharedResources_SharedResources struct {
-	DnsNames any
-	Error any
-	ResourceArn any
+	DnsNames          any
+	Error             any
+	ResourceArn       any
 	ResourceShareArns any
-	Status any
-	Type any
+	Status            any
+	Type              any
 }
 
 type SharedResourcesConfig struct {
-	BrokerId any
+	BrokerId   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SharedResourcesAttrs struct {
-	BrokerId any
-	MaxResults any
-	NextToken any
+	BrokerId        any
+	MaxResults      any
+	NextToken       any
 	SharedResources any
 }
 
 var SharedResources = ubx.DataSourceBinding{
 	WireType: "aws_mq_shared_resources",
 	Fields: ubx.FieldMap{
-		"BrokerId": ubx.FieldSpec{WireName: "broker_id"},
+		"BrokerId":   ubx.FieldSpec{WireName: "broker_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

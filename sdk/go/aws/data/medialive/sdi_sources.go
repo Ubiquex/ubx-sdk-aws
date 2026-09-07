@@ -4,13 +4,13 @@ package medialive
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SdiSources_SdiSources struct {
-	Arn any
-	Id any
+	Arn    any
+	Id     any
 	Inputs any
-	Mode any
-	Name any
-	State any
-	Type any
+	Mode   any
+	Name   any
+	State  any
+	Type   any
 }
 
 type SdiSourcesConfig struct {
@@ -33,6 +33,6 @@ var SdiSources = ubx.DataSourceBinding{
 	WireType: "aws_medialive_sdi_sources",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

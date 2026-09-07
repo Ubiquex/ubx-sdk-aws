@@ -4,17 +4,17 @@ package docdb_elastic
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DocdbElasticPendingMaintenanceAction_ResourcePendingMaintenanceAction_PendingMaintenanceActionDetails struct {
-	Action any
+	Action               any
 	AutoAppliedAfterDate any
-	CurrentApplyDate any
-	Description any
-	ForcedApplyDate any
-	OptInStatus any
+	CurrentApplyDate     any
+	Description          any
+	ForcedApplyDate      any
+	OptInStatus          any
 }
 
 type DocdbElasticPendingMaintenanceAction_ResourcePendingMaintenanceAction struct {
 	PendingMaintenanceActionDetails any
-	ResourceArn any
+	ResourceArn                     any
 }
 
 type DocdbElasticPendingMaintenanceActionConfig struct {

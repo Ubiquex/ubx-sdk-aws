@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgreementMarketplaceAgreementCancellationRequestConfig struct {
 	AgreementCancellationRequestId any
-	AgreementId any
+	AgreementId                    any
 }
 
 type AgreementMarketplaceAgreementCancellationRequestAttrs struct {
 	AgreementCancellationRequestId any
-	AgreementId any
-	CreatedAt any
-	Description any
-	ReasonCode any
-	Status any
-	StatusMessage any
-	UpdatedAt any
+	AgreementId                    any
+	CreatedAt                      any
+	Description                    any
+	ReasonCode                     any
+	Status                         any
+	StatusMessage                  any
+	UpdatedAt                      any
 }
 
 var AgreementMarketplaceAgreementCancellationRequest = ubx.DataSourceBinding{
 	WireType: "aws_agreement_marketplace_agreement_cancellation_request",
 	Fields: ubx.FieldMap{
 		"AgreementCancellationRequestId": ubx.FieldSpec{WireName: "agreement_cancellation_request_id"},
-		"AgreementId": ubx.FieldSpec{WireName: "agreement_id"},
+		"AgreementId":                    ubx.FieldSpec{WireName: "agreement_id"},
 	},
 }

@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityKeys_SecurityKeys struct {
 	AssociationId any
-	CreationTime any
-	Key any
+	CreationTime  any
+	Key           any
 }
 
 type SecurityKeysConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SecurityKeysAttrs struct {
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId   any
+	MaxResults   any
+	NextToken    any
 	SecurityKeys any
 }
 
@@ -27,6 +27,6 @@ var SecurityKeys = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

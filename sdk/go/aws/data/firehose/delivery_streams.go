@@ -4,24 +4,24 @@ package firehose
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeliveryStreamsConfig struct {
-	DeliveryStreamType any
+	DeliveryStreamType               any
 	ExclusiveStartDeliveryStreamName any
-	Limit any
+	Limit                            any
 }
 
 type DeliveryStreamsAttrs struct {
-	DeliveryStreamNames any
-	DeliveryStreamType any
+	DeliveryStreamNames              any
+	DeliveryStreamType               any
 	ExclusiveStartDeliveryStreamName any
-	HasMoreDeliveryStreams any
-	Limit any
+	HasMoreDeliveryStreams           any
+	Limit                            any
 }
 
 var DeliveryStreams = ubx.DataSourceBinding{
 	WireType: "aws_firehose_delivery_streams",
 	Fields: ubx.FieldMap{
-		"DeliveryStreamType": ubx.FieldSpec{WireName: "delivery_stream_type"},
+		"DeliveryStreamType":               ubx.FieldSpec{WireName: "delivery_stream_type"},
 		"ExclusiveStartDeliveryStreamName": ubx.FieldSpec{WireName: "exclusive_start_delivery_stream_name"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":                            ubx.FieldSpec{WireName: "limit"},
 	},
 }

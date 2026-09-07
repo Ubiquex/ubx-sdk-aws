@@ -9,20 +9,20 @@ type DataLakeSettings_DataLakeSettings_CreateDatabaseDefaultPermissions_Principa
 
 type DataLakeSettings_DataLakeSettings_CreateDatabaseDefaultPermissions struct {
 	Permissions any
-	Principal any
+	Principal   any
 }
 
 type DataLakeSettings_DataLakeSettings struct {
-	AllowExternalDataFiltering any
+	AllowExternalDataFiltering       any
 	AllowFullTableExternalDataAccess any
-	AuthorizedSessionTagValueList any
+	AuthorizedSessionTagValueList    any
 	CreateDatabaseDefaultPermissions any
-	CreateTableDefaultPermissions any
-	DataLakeAdmins any
-	ExternalDataFilteringAllowList any
+	CreateTableDefaultPermissions    any
+	DataLakeAdmins                   any
+	ExternalDataFilteringAllowList   any
 	// <p>A key-value map that provides additional configuration for Lake Formation. Supported keys include:</p> <ul> <li><code>CROSS_ACCOUNT_VERSION</code> - Specifies the cross-account access version.</li> <li><code>SET_SOURCE_IDENTITY</code> - When set to "TRUE", enables inclusion of the IAM role identifier that was used to query(sourceIdentity) in CloudTrail logs for S3 data access events. This helps track which IAM role (such as Athena or EMR job role) accessed table data. Requires the <code>sts:SetSourceIdentity</code> permission in the trust policy of the IAM role used to register S3 buckets with Lake Formation. Default is "FALSE".</li> </ul>
-	Parameters any
-	ReadOnlyAdmins any
+	Parameters            any
+	ReadOnlyAdmins        any
 	TrustedResourceOwners any
 }
 

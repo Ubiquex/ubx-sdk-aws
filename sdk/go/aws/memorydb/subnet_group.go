@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SubnetGroup_Tags struct {
 	// The key portion of a tag applied to this MemoryDB subnet group, used to organize, identify, and apply IAM-based access controls to the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var SubnetGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SubnetGroupConfig struct {
 	// An optional description of the subnet group.
@@ -43,13 +43,13 @@ type SubnetGroupAttrs struct {
 var SubnetGroup = ubx.ResourceBinding{
 	WireType: "aws_memory_db_subnet_group",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"SubnetGroupName": ubx.FieldSpec{WireName: "subnet_group_name"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"SubnetIds":       ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SubnetGroup_TagsFields,
+			Kind:     "list",
+			Fields:   SubnetGroup_TagsFields,
 		},
 	},
 }

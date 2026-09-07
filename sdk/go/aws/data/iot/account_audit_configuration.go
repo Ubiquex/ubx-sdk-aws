@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountAuditConfiguration_AuditCheckConfigurations struct {
 	Configuration any
-	Enabled any
+	Enabled       any
 }
 
 type AccountAuditConfiguration_AuditNotificationTargetConfigurations struct {
-	Enabled any
-	RoleArn any
+	Enabled   any
+	RoleArn   any
 	TargetArn any
 }
 
@@ -18,13 +18,12 @@ type AccountAuditConfigurationConfig struct {
 }
 
 type AccountAuditConfigurationAttrs struct {
-	AuditCheckConfigurations any
+	AuditCheckConfigurations              any
 	AuditNotificationTargetConfigurations any
-	RoleArn any
+	RoleArn                               any
 }
 
 var AccountAuditConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_iot_account_audit_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

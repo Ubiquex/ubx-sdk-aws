@@ -23,18 +23,18 @@ type AccessGrant_Tags struct {
 }
 
 var AccessGrant_AccessGrantsLocationConfigurationFields = ubx.FieldMap{
-		"S3SubPrefix": ubx.FieldSpec{WireName: "s3_sub_prefix"},
-	}
+	"S3SubPrefix": ubx.FieldSpec{WireName: "s3_sub_prefix"},
+}
 
 var AccessGrant_GranteeFields = ubx.FieldMap{
-		"GranteeIdentifier": ubx.FieldSpec{WireName: "grantee_identifier"},
-		"GranteeType": ubx.FieldSpec{WireName: "grantee_type"},
-	}
+	"GranteeIdentifier": ubx.FieldSpec{WireName: "grantee_identifier"},
+	"GranteeType":       ubx.FieldSpec{WireName: "grantee_type"},
+}
 
 var AccessGrant_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AccessGrantConfig struct {
 	// Configures the S3 sub-prefix (S3SubPrefix) within the associated access grants location, restricting the access grant's permission scope to that prefix. (AI-inferred)
@@ -81,22 +81,22 @@ var AccessGrant = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessGrantsLocationConfiguration": ubx.FieldSpec{
 			WireName: "access_grants_location_configuration",
-			Kind: "object",
-			Fields: AccessGrant_AccessGrantsLocationConfigurationFields,
+			Kind:     "object",
+			Fields:   AccessGrant_AccessGrantsLocationConfigurationFields,
 		},
 		"AccessGrantsLocationId": ubx.FieldSpec{WireName: "access_grants_location_id"},
-		"ApplicationArn": ubx.FieldSpec{WireName: "application_arn"},
+		"ApplicationArn":         ubx.FieldSpec{WireName: "application_arn"},
 		"Grantee": ubx.FieldSpec{
 			WireName: "grantee",
-			Kind: "object",
-			Fields: AccessGrant_GranteeFields,
+			Kind:     "object",
+			Fields:   AccessGrant_GranteeFields,
 		},
-		"Permission": ubx.FieldSpec{WireName: "permission"},
+		"Permission":   ubx.FieldSpec{WireName: "permission"},
 		"S3PrefixType": ubx.FieldSpec{WireName: "s3_prefix_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AccessGrant_TagsFields,
+			Kind:     "list",
+			Fields:   AccessGrant_TagsFields,
 		},
 	},
 }

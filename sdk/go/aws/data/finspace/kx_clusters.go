@@ -9,42 +9,42 @@ type KxClusters_KxClusterSummaries_Volumes struct {
 }
 
 type KxClusters_KxClusterSummaries struct {
-	AvailabilityZoneId any
-	AzMode any
-	ClusterDescription any
-	ClusterName any
-	ClusterType any
-	CreatedTimestamp any
-	ExecutionRole any
-	InitializationScript any
+	AvailabilityZoneId    any
+	AzMode                any
+	ClusterDescription    any
+	ClusterName           any
+	ClusterType           any
+	CreatedTimestamp      any
+	ExecutionRole         any
+	InitializationScript  any
 	LastModifiedTimestamp any
-	ReleaseLabel any
-	Status any
-	StatusReason any
-	Volumes any
+	ReleaseLabel          any
+	Status                any
+	StatusReason          any
+	Volumes               any
 }
 
 type KxClustersConfig struct {
-	ClusterType any
+	ClusterType   any
 	EnvironmentId any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type KxClustersAttrs struct {
-	ClusterType any
-	EnvironmentId any
+	ClusterType        any
+	EnvironmentId      any
 	KxClusterSummaries any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 var KxClusters = ubx.DataSourceBinding{
 	WireType: "aws_finspace_kx_clusters",
 	Fields: ubx.FieldMap{
-		"ClusterType": ubx.FieldSpec{WireName: "cluster_type"},
+		"ClusterType":   ubx.FieldSpec{WireName: "cluster_type"},
 		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

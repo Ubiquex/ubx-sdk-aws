@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MobileDeviceAccessEffect_MatchedRules struct {
 	MobileDeviceAccessRuleId any
-	Name any
+	Name                     any
 }
 
 type MobileDeviceAccessEffectConfig struct {
-	DeviceModel any
+	DeviceModel           any
 	DeviceOperatingSystem any
-	DeviceType any
-	DeviceUserAgent any
-	OrganizationId any
+	DeviceType            any
+	DeviceUserAgent       any
+	OrganizationId        any
 }
 
 type MobileDeviceAccessEffectAttrs struct {
-	DeviceModel any
+	DeviceModel           any
 	DeviceOperatingSystem any
-	DeviceType any
-	DeviceUserAgent any
-	Effect any
-	MatchedRules any
-	OrganizationId any
+	DeviceType            any
+	DeviceUserAgent       any
+	Effect                any
+	MatchedRules          any
+	OrganizationId        any
 }
 
 var MobileDeviceAccessEffect = ubx.DataSourceBinding{
 	WireType: "aws_workmail_mobile_device_access_effect",
 	Fields: ubx.FieldMap{
-		"DeviceModel": ubx.FieldSpec{WireName: "device_model"},
+		"DeviceModel":           ubx.FieldSpec{WireName: "device_model"},
 		"DeviceOperatingSystem": ubx.FieldSpec{WireName: "device_operating_system"},
-		"DeviceType": ubx.FieldSpec{WireName: "device_type"},
-		"DeviceUserAgent": ubx.FieldSpec{WireName: "device_user_agent"},
-		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
+		"DeviceType":            ubx.FieldSpec{WireName: "device_type"},
+		"DeviceUserAgent":       ubx.FieldSpec{WireName: "device_user_agent"},
+		"OrganizationId":        ubx.FieldSpec{WireName: "organization_id"},
 	},
 }

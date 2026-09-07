@@ -20,15 +20,15 @@ type RobotApplication_Sources struct {
 }
 
 var RobotApplication_RobotSoftwareSuiteFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var RobotApplication_SourcesFields = ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
-		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
-		"S3Key": ubx.FieldSpec{WireName: "s3_key"},
-	}
+	"Architecture": ubx.FieldSpec{WireName: "architecture"},
+	"S3Bucket":     ubx.FieldSpec{WireName: "s3_bucket"},
+	"S3Key":        ubx.FieldSpec{WireName: "s3_key"},
+}
 
 type RobotApplicationConfig struct {
 	// The revision ID of robot application.
@@ -66,17 +66,17 @@ var RobotApplication = ubx.ResourceBinding{
 	WireType: "aws_robo_maker_robot_application",
 	Fields: ubx.FieldMap{
 		"CurrentRevisionId": ubx.FieldSpec{WireName: "current_revision_id"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Environment":       ubx.FieldSpec{WireName: "environment"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"RobotSoftwareSuite": ubx.FieldSpec{
 			WireName: "robot_software_suite",
-			Kind: "object",
-			Fields: RobotApplication_RobotSoftwareSuiteFields,
+			Kind:     "object",
+			Fields:   RobotApplication_RobotSoftwareSuiteFields,
 		},
 		"Sources": ubx.FieldSpec{
 			WireName: "sources",
-			Kind: "list",
-			Fields: RobotApplication_SourcesFields,
+			Kind:     "list",
+			Fields:   RobotApplication_SourcesFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

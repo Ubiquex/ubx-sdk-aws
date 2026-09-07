@@ -17,14 +17,14 @@ type TrafficMirrorFilterRule_Tags struct {
 }
 
 var TrafficMirrorFilterRule_DestinationPortRangeFields = ubx.FieldMap{
-		"FromPort": ubx.FieldSpec{WireName: "from_port"},
-		"ToPort": ubx.FieldSpec{WireName: "to_port"},
-	}
+	"FromPort": ubx.FieldSpec{WireName: "from_port"},
+	"ToPort":   ubx.FieldSpec{WireName: "to_port"},
+}
 
 var TrafficMirrorFilterRule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TrafficMirrorFilterRuleConfig struct {
 	// The description of the Traffic Mirror Filter rule.
@@ -81,28 +81,28 @@ type TrafficMirrorFilterRuleAttrs struct {
 var TrafficMirrorFilterRule = ubx.ResourceBinding{
 	WireType: "aws_ec2_traffic_mirror_filter_rule",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
 		"DestinationCidrBlock": ubx.FieldSpec{WireName: "destination_cidr_block"},
 		"DestinationPortRange": ubx.FieldSpec{
 			WireName: "destination_port_range",
-			Kind: "object",
-			Fields: TrafficMirrorFilterRule_DestinationPortRangeFields,
+			Kind:     "object",
+			Fields:   TrafficMirrorFilterRule_DestinationPortRangeFields,
 		},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"RuleAction": ubx.FieldSpec{WireName: "rule_action"},
-		"RuleNumber": ubx.FieldSpec{WireName: "rule_number"},
+		"Protocol":        ubx.FieldSpec{WireName: "protocol"},
+		"RuleAction":      ubx.FieldSpec{WireName: "rule_action"},
+		"RuleNumber":      ubx.FieldSpec{WireName: "rule_number"},
 		"SourceCidrBlock": ubx.FieldSpec{WireName: "source_cidr_block"},
 		"SourcePortRange": ubx.FieldSpec{
 			WireName: "source_port_range",
-			Kind: "object",
-			Fields: TrafficMirrorFilterRule_DestinationPortRangeFields,
+			Kind:     "object",
+			Fields:   TrafficMirrorFilterRule_DestinationPortRangeFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TrafficMirrorFilterRule_TagsFields,
+			Kind:     "list",
+			Fields:   TrafficMirrorFilterRule_TagsFields,
 		},
-		"TrafficDirection": ubx.FieldSpec{WireName: "traffic_direction"},
+		"TrafficDirection":      ubx.FieldSpec{WireName: "traffic_direction"},
 		"TrafficMirrorFilterId": ubx.FieldSpec{WireName: "traffic_mirror_filter_id"},
 	},
 }

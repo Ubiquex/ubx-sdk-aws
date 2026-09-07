@@ -4,14 +4,14 @@ package guardduty
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrustedEntitySet_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var TrustedEntitySet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TrustedEntitySetConfig struct {
 	// Whether GuardDuty uses this trusted entity set to suppress findings for the IP addresses and domains it lists. (AI-inferred)
@@ -60,16 +60,16 @@ type TrustedEntitySetAttrs struct {
 var TrustedEntitySet = ubx.ResourceBinding{
 	WireType: "aws_guard_duty_trusted_entity_set",
 	Fields: ubx.FieldMap{
-		"Activate": ubx.FieldSpec{WireName: "activate"},
-		"DetectorId": ubx.FieldSpec{WireName: "detector_id"},
+		"Activate":            ubx.FieldSpec{WireName: "activate"},
+		"DetectorId":          ubx.FieldSpec{WireName: "detector_id"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Format":              ubx.FieldSpec{WireName: "format"},
+		"Location":            ubx.FieldSpec{WireName: "location"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TrustedEntitySet_TagsFields,
+			Kind:     "list",
+			Fields:   TrustedEntitySet_TagsFields,
 		},
 	},
 }

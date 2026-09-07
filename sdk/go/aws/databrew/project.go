@@ -18,14 +18,14 @@ type Project_Tags struct {
 }
 
 var Project_SampleFields = ubx.FieldMap{
-		"Size": ubx.FieldSpec{WireName: "size"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Size": ubx.FieldSpec{WireName: "size"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Project_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ProjectConfig struct {
 	// Dataset name
@@ -61,18 +61,18 @@ var Project = ubx.ResourceBinding{
 	WireType: "aws_data_brew_project",
 	Fields: ubx.FieldMap{
 		"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RecipeName": ubx.FieldSpec{WireName: "recipe_name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"RecipeName":  ubx.FieldSpec{WireName: "recipe_name"},
+		"RoleArn":     ubx.FieldSpec{WireName: "role_arn"},
 		"Sample": ubx.FieldSpec{
 			WireName: "sample",
-			Kind: "object",
-			Fields: Project_SampleFields,
+			Kind:     "object",
+			Fields:   Project_SampleFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Project_TagsFields,
+			Kind:     "list",
+			Fields:   Project_TagsFields,
 		},
 	},
 }

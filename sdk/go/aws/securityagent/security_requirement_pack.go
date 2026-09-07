@@ -6,29 +6,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type SecurityRequirementPack_SecurityRequirements struct {
 	// Provides a human-readable description of the security requirement, explaining the specific security control or configuration the requirement addresses. (AI-inferred)
 	Description any
-	Domain any
-	Evaluation any
-	Name any
+	Domain      any
+	Evaluation  any
+	Name        any
 	Remediation any
 }
 
 type SecurityRequirementPack_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var SecurityRequirementPack_SecurityRequirementsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Evaluation": ubx.FieldSpec{WireName: "evaluation"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Remediation": ubx.FieldSpec{WireName: "remediation"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Domain":      ubx.FieldSpec{WireName: "domain"},
+	"Evaluation":  ubx.FieldSpec{WireName: "evaluation"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Remediation": ubx.FieldSpec{WireName: "remediation"},
+}
 
 var SecurityRequirementPack_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SecurityRequirementPackConfig struct {
 	// Description of the pack
@@ -66,18 +66,18 @@ var SecurityRequirementPack = ubx.ResourceBinding{
 	WireType: "aws_security_agent_security_requirement_pack",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"KmsKeyId":    ubx.FieldSpec{WireName: "kms_key_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"SecurityRequirements": ubx.FieldSpec{
 			WireName: "security_requirements",
-			Kind: "list",
-			Fields: SecurityRequirementPack_SecurityRequirementsFields,
+			Kind:     "list",
+			Fields:   SecurityRequirementPack_SecurityRequirementsFields,
 		},
 		"Status": ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SecurityRequirementPack_TagsFields,
+			Kind:     "list",
+			Fields:   SecurityRequirementPack_TagsFields,
 		},
 	},
 }

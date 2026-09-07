@@ -4,23 +4,23 @@ package directconnect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LoaConfig struct {
-	ConnectionId any
+	ConnectionId   any
 	LoaContentType any
-	ProviderName any
+	ProviderName   any
 }
 
 type LoaAttrs struct {
-	ConnectionId any
-	LoaContent any
+	ConnectionId   any
+	LoaContent     any
 	LoaContentType any
-	ProviderName any
+	ProviderName   any
 }
 
 var Loa = ubx.DataSourceBinding{
 	WireType: "aws_directconnect_loa",
 	Fields: ubx.FieldMap{
-		"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
+		"ConnectionId":   ubx.FieldSpec{WireName: "connection_id"},
 		"LoaContentType": ubx.FieldSpec{WireName: "loa_content_type"},
-		"ProviderName": ubx.FieldSpec{WireName: "provider_name"},
+		"ProviderName":   ubx.FieldSpec{WireName: "provider_name"},
 	},
 }

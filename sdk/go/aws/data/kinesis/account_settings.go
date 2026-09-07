@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountSettings_MinimumThroughputBillingCommitment struct {
 	EarliestAllowedEndAt any
-	EndedAt any
-	StartedAt any
-	Status any
+	EndedAt              any
+	StartedAt            any
+	Status               any
 }
 
 type AccountSettingsConfig struct {
@@ -20,6 +20,5 @@ type AccountSettingsAttrs struct {
 
 var AccountSettings = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_account_settings",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

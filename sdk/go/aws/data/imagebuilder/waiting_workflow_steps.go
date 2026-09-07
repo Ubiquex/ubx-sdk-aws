@@ -4,30 +4,30 @@ package imagebuilder
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WaitingWorkflowSteps_Steps struct {
-	Action any
-	ImageBuildVersionArn any
-	Name any
-	StartTime any
-	StepExecutionId any
+	Action                  any
+	ImageBuildVersionArn    any
+	Name                    any
+	StartTime               any
+	StepExecutionId         any
 	WorkflowBuildVersionArn any
-	WorkflowExecutionId any
+	WorkflowExecutionId     any
 }
 
 type WaitingWorkflowStepsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type WaitingWorkflowStepsAttrs struct {
 	MaxResults any
-	NextToken any
-	Steps any
+	NextToken  any
+	Steps      any
 }
 
 var WaitingWorkflowSteps = ubx.DataSourceBinding{
 	WireType: "aws_imagebuilder_waiting_workflow_steps",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

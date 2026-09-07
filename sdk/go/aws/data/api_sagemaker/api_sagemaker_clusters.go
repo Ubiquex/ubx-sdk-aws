@@ -4,47 +4,47 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerClusters_ClusterSummaries struct {
-	ClusterArn any
-	ClusterName any
-	ClusterStatus any
-	CreationTime any
+	ClusterArn         any
+	ClusterName        any
+	ClusterStatus      any
+	CreationTime       any
 	ImageVersionStatus any
-	TrainingPlanArns any
+	TrainingPlanArns   any
 }
 
 type ApiSagemakerClustersConfig struct {
-	CreationTimeAfter any
+	CreationTimeAfter  any
 	CreationTimeBefore any
-	MaxResults any
-	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
-	TrainingPlanArn any
+	MaxResults         any
+	NameContains       any
+	NextToken          any
+	SortBy             any
+	SortOrder          any
+	TrainingPlanArn    any
 }
 
 type ApiSagemakerClustersAttrs struct {
-	ClusterSummaries any
-	CreationTimeAfter any
+	ClusterSummaries   any
+	CreationTimeAfter  any
 	CreationTimeBefore any
-	MaxResults any
-	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
-	TrainingPlanArn any
+	MaxResults         any
+	NameContains       any
+	NextToken          any
+	SortBy             any
+	SortOrder          any
+	TrainingPlanArn    any
 }
 
 var ApiSagemakerClusters = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_clusters",
 	Fields: ubx.FieldMap{
-		"CreationTimeAfter": ubx.FieldSpec{WireName: "creation_time_after"},
+		"CreationTimeAfter":  ubx.FieldSpec{WireName: "creation_time_after"},
 		"CreationTimeBefore": ubx.FieldSpec{WireName: "creation_time_before"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"TrainingPlanArn": ubx.FieldSpec{WireName: "training_plan_arn"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NameContains":       ubx.FieldSpec{WireName: "name_contains"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":             ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":          ubx.FieldSpec{WireName: "sort_order"},
+		"TrainingPlanArn":    ubx.FieldSpec{WireName: "training_plan_arn"},
 	},
 }

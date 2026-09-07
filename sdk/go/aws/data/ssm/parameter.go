@@ -4,33 +4,33 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Parameter_Parameter struct {
-	Arn any
-	DataType any
+	Arn              any
+	DataType         any
 	LastModifiedDate any
-	Name any
-	Selector any
-	SourceResult any
-	Type any
-	Value any
-	Version any
+	Name             any
+	Selector         any
+	SourceResult     any
+	Type             any
+	Value            any
+	Version          any
 }
 
 type ParameterConfig struct {
-	Name any
+	Name           any
 	WithDecryption any
 }
 
 type ParameterAttrs struct {
 	Name any
 	// <p>An Amazon Web Services Systems Manager parameter in Parameter Store.</p>
-	Parameter any
+	Parameter      any
 	WithDecryption any
 }
 
 var Parameter = ubx.DataSourceBinding{
 	WireType: "aws_ssm_parameter",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"WithDecryption": ubx.FieldSpec{WireName: "with_decryption"},
 	},
 }

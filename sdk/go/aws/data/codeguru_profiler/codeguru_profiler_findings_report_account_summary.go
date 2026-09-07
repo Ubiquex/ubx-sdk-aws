@@ -4,31 +4,31 @@ package codeguru_profiler
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodeguruProfilerFindingsReportAccountSummary_ReportSummaries struct {
-	Id any
-	ProfileEndTime any
-	ProfileStartTime any
-	ProfilingGroupName any
+	Id                    any
+	ProfileEndTime        any
+	ProfileStartTime      any
+	ProfilingGroupName    any
 	TotalNumberOfFindings any
 }
 
 type CodeguruProfilerFindingsReportAccountSummaryConfig struct {
 	DailyReportsOnly any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 type CodeguruProfilerFindingsReportAccountSummaryAttrs struct {
 	DailyReportsOnly any
-	MaxResults any
-	NextToken any
-	ReportSummaries any
+	MaxResults       any
+	NextToken        any
+	ReportSummaries  any
 }
 
 var CodeguruProfilerFindingsReportAccountSummary = ubx.DataSourceBinding{
 	WireType: "aws_codeguru_profiler_findings_report_account_summary",
 	Fields: ubx.FieldMap{
 		"DailyReportsOnly": ubx.FieldSpec{WireName: "daily_reports_only"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

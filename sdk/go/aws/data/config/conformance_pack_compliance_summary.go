@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConformancePackComplianceSummary_ConformancePackComplianceSummaryList struct {
 	ConformancePackComplianceStatus any
-	ConformancePackName any
+	ConformancePackName             any
 }
 
 type ConformancePackComplianceSummaryConfig struct {
 	ConformancePackNames any
-	Limit any
-	NextToken any
+	Limit                any
+	NextToken            any
 }
 
 type ConformancePackComplianceSummaryAttrs struct {
 	ConformancePackComplianceSummaryList any
-	ConformancePackNames any
-	Limit any
-	NextToken any
+	ConformancePackNames                 any
+	Limit                                any
+	NextToken                            any
 }
 
 var ConformancePackComplianceSummary = ubx.DataSourceBinding{
 	WireType: "aws_config_conformance_pack_compliance_summary",
 	Fields: ubx.FieldMap{
 		"ConformancePackNames": ubx.FieldSpec{WireName: "conformance_pack_names"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":                ubx.FieldSpec{WireName: "limit"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,17 +4,17 @@ package waf_regional
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WafRegionalRuleGroups_RuleGroups struct {
-	Name any
+	Name        any
 	RuleGroupId any
 }
 
 type WafRegionalRuleGroupsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type WafRegionalRuleGroupsAttrs struct {
-	Limit any
+	Limit      any
 	NextMarker any
 	RuleGroups any
 }
@@ -22,7 +22,7 @@ type WafRegionalRuleGroupsAttrs struct {
 var WafRegionalRuleGroups = ubx.DataSourceBinding{
 	WireType: "aws_waf_regional_rule_groups",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

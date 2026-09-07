@@ -4,38 +4,38 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReservedNodeExchangeStatus_ReservedNodeExchangeStatusDetails struct {
-	RequestTime any
+	RequestTime                   any
 	ReservedNodeExchangeRequestId any
-	SourceReservedNodeCount any
-	SourceReservedNodeId any
-	SourceReservedNodeType any
-	Status any
-	TargetReservedNodeCount any
-	TargetReservedNodeOfferingId any
-	TargetReservedNodeType any
+	SourceReservedNodeCount       any
+	SourceReservedNodeId          any
+	SourceReservedNodeType        any
+	Status                        any
+	TargetReservedNodeCount       any
+	TargetReservedNodeOfferingId  any
+	TargetReservedNodeType        any
 }
 
 type ReservedNodeExchangeStatusConfig struct {
-	Marker any
-	MaxRecords any
+	Marker                        any
+	MaxRecords                    any
 	ReservedNodeExchangeRequestId any
-	ReservedNodeId any
+	ReservedNodeId                any
 }
 
 type ReservedNodeExchangeStatusAttrs struct {
-	Marker any
-	MaxRecords any
-	ReservedNodeExchangeRequestId any
+	Marker                            any
+	MaxRecords                        any
+	ReservedNodeExchangeRequestId     any
 	ReservedNodeExchangeStatusDetails any
-	ReservedNodeId any
+	ReservedNodeId                    any
 }
 
 var ReservedNodeExchangeStatus = ubx.DataSourceBinding{
 	WireType: "aws_redshift_reserved_node_exchange_status",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
+		"Marker":                        ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":                    ubx.FieldSpec{WireName: "max_records"},
 		"ReservedNodeExchangeRequestId": ubx.FieldSpec{WireName: "reserved_node_exchange_request_id"},
-		"ReservedNodeId": ubx.FieldSpec{WireName: "reserved_node_id"},
+		"ReservedNodeId":                ubx.FieldSpec{WireName: "reserved_node_id"},
 	},
 }

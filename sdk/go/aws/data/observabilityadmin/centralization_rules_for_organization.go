@@ -4,41 +4,41 @@ package observabilityadmin
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CentralizationRulesForOrganization_CentralizationRuleSummaries struct {
-	CreatedRegion any
-	CreatedTimeStamp any
-	CreatorAccountId any
-	DestinationAccountId any
-	DestinationRegion any
-	FailureReason any
-	LastUpdateTimeStamp any
-	RuleArn any
-	RuleHealth any
-	RuleName any
+	CreatedRegion               any
+	CreatedTimeStamp            any
+	CreatorAccountId            any
+	DestinationAccountId        any
+	DestinationRegion           any
+	FailureReason               any
+	LastUpdateTimeStamp         any
+	RuleArn                     any
+	RuleHealth                  any
+	RuleName                    any
 	TagPropagationFailureReason any
-	TagPropagationStatus any
+	TagPropagationStatus        any
 }
 
 type CentralizationRulesForOrganizationConfig struct {
-	AllRegions any
-	MaxResults any
-	NextToken any
+	AllRegions     any
+	MaxResults     any
+	NextToken      any
 	RuleNamePrefix any
 }
 
 type CentralizationRulesForOrganizationAttrs struct {
-	AllRegions any
+	AllRegions                  any
 	CentralizationRuleSummaries any
-	MaxResults any
-	NextToken any
-	RuleNamePrefix any
+	MaxResults                  any
+	NextToken                   any
+	RuleNamePrefix              any
 }
 
 var CentralizationRulesForOrganization = ubx.DataSourceBinding{
 	WireType: "aws_observabilityadmin_centralization_rules_for_organization",
 	Fields: ubx.FieldMap{
-		"AllRegions": ubx.FieldSpec{WireName: "all_regions"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"AllRegions":     ubx.FieldSpec{WireName: "all_regions"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"RuleNamePrefix": ubx.FieldSpec{WireName: "rule_name_prefix"},
 	},
 }

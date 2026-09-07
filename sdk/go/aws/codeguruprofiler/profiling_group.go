@@ -23,18 +23,18 @@ type ProfilingGroup_Tags struct {
 }
 
 var ProfilingGroup_AgentPermissionsFields = ubx.FieldMap{
-		"Principals": ubx.FieldSpec{WireName: "principals"},
-	}
+	"Principals": ubx.FieldSpec{WireName: "principals"},
+}
 
 var ProfilingGroup_AnomalyDetectionNotificationConfigurationFields = ubx.FieldMap{
-		"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
-		"ChannelUri": ubx.FieldSpec{WireName: "channel_uri"},
-	}
+	"ChannelId":  ubx.FieldSpec{WireName: "channel_id"},
+	"ChannelUri": ubx.FieldSpec{WireName: "channel_uri"},
+}
 
 var ProfilingGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ProfilingGroupConfig struct {
 	// The agent permissions attached to this profiling group.
@@ -69,20 +69,20 @@ var ProfilingGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AgentPermissions": ubx.FieldSpec{
 			WireName: "agent_permissions",
-			Kind: "object",
-			Fields: ProfilingGroup_AgentPermissionsFields,
+			Kind:     "object",
+			Fields:   ProfilingGroup_AgentPermissionsFields,
 		},
 		"AnomalyDetectionNotificationConfiguration": ubx.FieldSpec{
 			WireName: "anomaly_detection_notification_configuration",
-			Kind: "list",
-			Fields: ProfilingGroup_AnomalyDetectionNotificationConfigurationFields,
+			Kind:     "list",
+			Fields:   ProfilingGroup_AnomalyDetectionNotificationConfigurationFields,
 		},
-		"ComputePlatform": ubx.FieldSpec{WireName: "compute_platform"},
+		"ComputePlatform":    ubx.FieldSpec{WireName: "compute_platform"},
 		"ProfilingGroupName": ubx.FieldSpec{WireName: "profiling_group_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ProfilingGroup_TagsFields,
+			Kind:     "list",
+			Fields:   ProfilingGroup_TagsFields,
 		},
 	},
 }

@@ -30,7 +30,7 @@ type Trail_AdvancedEventSelectors struct {
 type Trail_AggregationConfigurations struct {
 	// Specifies the event category (e.g., Management, Data, Insight, or NetworkActivity) that this aggregation configuration applies to for a CloudTrail trail delivering events to a CloudTrail Lake event data store. (AI-inferred)
 	EventCategory any
-	Templates any
+	Templates     any
 }
 
 type Trail_EventSelectors_DataResources struct {
@@ -66,54 +66,54 @@ type Trail_Tags struct {
 }
 
 var Trail_AdvancedEventSelectors_FieldSelectorsFields = ubx.FieldMap{
-		"EndsWith": ubx.FieldSpec{WireName: "ends_with"},
-		"Equals": ubx.FieldSpec{WireName: "equals"},
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"NotEndsWith": ubx.FieldSpec{WireName: "not_ends_with"},
-		"NotEquals": ubx.FieldSpec{WireName: "not_equals"},
-		"NotStartsWith": ubx.FieldSpec{WireName: "not_starts_with"},
-		"StartsWith": ubx.FieldSpec{WireName: "starts_with"},
-	}
+	"EndsWith":      ubx.FieldSpec{WireName: "ends_with"},
+	"Equals":        ubx.FieldSpec{WireName: "equals"},
+	"Field":         ubx.FieldSpec{WireName: "field"},
+	"NotEndsWith":   ubx.FieldSpec{WireName: "not_ends_with"},
+	"NotEquals":     ubx.FieldSpec{WireName: "not_equals"},
+	"NotStartsWith": ubx.FieldSpec{WireName: "not_starts_with"},
+	"StartsWith":    ubx.FieldSpec{WireName: "starts_with"},
+}
 
 var Trail_AdvancedEventSelectorsFields = ubx.FieldMap{
-		"FieldSelectors": ubx.FieldSpec{
-			WireName: "field_selectors",
-			Kind: "list",
-			Fields: Trail_AdvancedEventSelectors_FieldSelectorsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"FieldSelectors": ubx.FieldSpec{
+		WireName: "field_selectors",
+		Kind:     "list",
+		Fields:   Trail_AdvancedEventSelectors_FieldSelectorsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Trail_AggregationConfigurationsFields = ubx.FieldMap{
-		"EventCategory": ubx.FieldSpec{WireName: "event_category"},
-		"Templates": ubx.FieldSpec{WireName: "templates"},
-	}
+	"EventCategory": ubx.FieldSpec{WireName: "event_category"},
+	"Templates":     ubx.FieldSpec{WireName: "templates"},
+}
 
 var Trail_EventSelectors_DataResourcesFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Type":   ubx.FieldSpec{WireName: "type"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Trail_EventSelectorsFields = ubx.FieldMap{
-		"DataResources": ubx.FieldSpec{
-			WireName: "data_resources",
-			Kind: "list",
-			Fields: Trail_EventSelectors_DataResourcesFields,
-		},
-		"ExcludeManagementEventSources": ubx.FieldSpec{WireName: "exclude_management_event_sources"},
-		"IncludeManagementEvents": ubx.FieldSpec{WireName: "include_management_events"},
-		"ReadWriteType": ubx.FieldSpec{WireName: "read_write_type"},
-	}
+	"DataResources": ubx.FieldSpec{
+		WireName: "data_resources",
+		Kind:     "list",
+		Fields:   Trail_EventSelectors_DataResourcesFields,
+	},
+	"ExcludeManagementEventSources": ubx.FieldSpec{WireName: "exclude_management_event_sources"},
+	"IncludeManagementEvents":       ubx.FieldSpec{WireName: "include_management_events"},
+	"ReadWriteType":                 ubx.FieldSpec{WireName: "read_write_type"},
+}
 
 var Trail_InsightSelectorsFields = ubx.FieldMap{
-		"EventCategories": ubx.FieldSpec{WireName: "event_categories"},
-		"InsightType": ubx.FieldSpec{WireName: "insight_type"},
-	}
+	"EventCategories": ubx.FieldSpec{WireName: "event_categories"},
+	"InsightType":     ubx.FieldSpec{WireName: "insight_type"},
+}
 
 var Trail_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TrailConfig struct {
 	// The advanced event selectors that were used to select events for the data store.
@@ -146,7 +146,7 @@ type TrailConfig struct {
 	S3KeyPrefix any
 	// Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.
 	SnsTopicName any
-	Tags any
+	Tags         any
 	// Specifies the name of the CloudTrail trail; if omitted, CloudFormation generates a unique name, and trail names must start with a letter and may contain only lowercase letters, numbers, periods, underscores, and dashes. (AI-inferred)
 	TrailName any
 }
@@ -186,7 +186,7 @@ type TrailAttrs struct {
 	SnsTopicArn any
 	// Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.
 	SnsTopicName any
-	Tags any
+	Tags         any
 	// Specifies the name of the CloudTrail trail; if omitted, CloudFormation generates a unique name, and trail names must start with a letter and may contain only lowercase letters, numbers, periods, underscores, and dashes. (AI-inferred)
 	TrailName any
 }
@@ -196,39 +196,39 @@ var Trail = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdvancedEventSelectors": ubx.FieldSpec{
 			WireName: "advanced_event_selectors",
-			Kind: "list",
-			Fields: Trail_AdvancedEventSelectorsFields,
+			Kind:     "list",
+			Fields:   Trail_AdvancedEventSelectorsFields,
 		},
 		"AggregationConfigurations": ubx.FieldSpec{
 			WireName: "aggregation_configurations",
-			Kind: "list",
-			Fields: Trail_AggregationConfigurationsFields,
+			Kind:     "list",
+			Fields:   Trail_AggregationConfigurationsFields,
 		},
 		"CloudWatchLogsLogGroupArn": ubx.FieldSpec{WireName: "cloud_watch_logs_log_group_arn"},
-		"CloudWatchLogsRoleArn": ubx.FieldSpec{WireName: "cloud_watch_logs_role_arn"},
-		"EnableLogFileValidation": ubx.FieldSpec{WireName: "enable_log_file_validation"},
+		"CloudWatchLogsRoleArn":     ubx.FieldSpec{WireName: "cloud_watch_logs_role_arn"},
+		"EnableLogFileValidation":   ubx.FieldSpec{WireName: "enable_log_file_validation"},
 		"EventSelectors": ubx.FieldSpec{
 			WireName: "event_selectors",
-			Kind: "list",
-			Fields: Trail_EventSelectorsFields,
+			Kind:     "list",
+			Fields:   Trail_EventSelectorsFields,
 		},
 		"IncludeGlobalServiceEvents": ubx.FieldSpec{WireName: "include_global_service_events"},
 		"InsightSelectors": ubx.FieldSpec{
 			WireName: "insight_selectors",
-			Kind: "list",
-			Fields: Trail_InsightSelectorsFields,
+			Kind:     "list",
+			Fields:   Trail_InsightSelectorsFields,
 		},
-		"IsLogging": ubx.FieldSpec{WireName: "is_logging"},
-		"IsMultiRegionTrail": ubx.FieldSpec{WireName: "is_multi_region_trail"},
+		"IsLogging":           ubx.FieldSpec{WireName: "is_logging"},
+		"IsMultiRegionTrail":  ubx.FieldSpec{WireName: "is_multi_region_trail"},
 		"IsOrganizationTrail": ubx.FieldSpec{WireName: "is_organization_trail"},
-		"KmskeyId": ubx.FieldSpec{WireName: "kmskey_id"},
-		"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
-		"S3KeyPrefix": ubx.FieldSpec{WireName: "s3_key_prefix"},
-		"SnsTopicName": ubx.FieldSpec{WireName: "sns_topic_name"},
+		"KmskeyId":            ubx.FieldSpec{WireName: "kmskey_id"},
+		"S3BucketName":        ubx.FieldSpec{WireName: "s3_bucket_name"},
+		"S3KeyPrefix":         ubx.FieldSpec{WireName: "s3_key_prefix"},
+		"SnsTopicName":        ubx.FieldSpec{WireName: "sns_topic_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Trail_TagsFields,
+			Kind:     "list",
+			Fields:   Trail_TagsFields,
 		},
 		"TrailName": ubx.FieldSpec{WireName: "trail_name"},
 	},

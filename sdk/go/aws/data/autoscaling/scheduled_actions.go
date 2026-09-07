@@ -5,45 +5,45 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ScheduledActions_ScheduledUpdateGroupActions struct {
 	AutoScalingGroupName any
-	DesiredCapacity any
-	EndTime any
-	MaxSize any
-	MinSize any
-	Recurrence any
-	ScheduledActionArn any
-	ScheduledActionName any
-	StartTime any
-	Time any
-	TimeZone any
+	DesiredCapacity      any
+	EndTime              any
+	MaxSize              any
+	MinSize              any
+	Recurrence           any
+	ScheduledActionArn   any
+	ScheduledActionName  any
+	StartTime            any
+	Time                 any
+	TimeZone             any
 }
 
 type ScheduledActionsConfig struct {
 	AutoScalingGroupName any
-	EndTime any
-	MaxRecords any
-	NextToken any
+	EndTime              any
+	MaxRecords           any
+	NextToken            any
 	ScheduledActionNames any
-	StartTime any
+	StartTime            any
 }
 
 type ScheduledActionsAttrs struct {
-	AutoScalingGroupName any
-	EndTime any
-	MaxRecords any
-	NextToken any
-	ScheduledActionNames any
+	AutoScalingGroupName        any
+	EndTime                     any
+	MaxRecords                  any
+	NextToken                   any
+	ScheduledActionNames        any
 	ScheduledUpdateGroupActions any
-	StartTime any
+	StartTime                   any
 }
 
 var ScheduledActions = ubx.DataSourceBinding{
 	WireType: "aws_autoscaling_scheduled_actions",
 	Fields: ubx.FieldMap{
 		"AutoScalingGroupName": ubx.FieldSpec{WireName: "auto_scaling_group_name"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"EndTime":              ubx.FieldSpec{WireName: "end_time"},
+		"MaxRecords":           ubx.FieldSpec{WireName: "max_records"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 		"ScheduledActionNames": ubx.FieldSpec{WireName: "scheduled_action_names"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"StartTime":            ubx.FieldSpec{WireName: "start_time"},
 	},
 }

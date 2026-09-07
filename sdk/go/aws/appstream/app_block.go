@@ -32,27 +32,27 @@ type AppBlock_Tags struct {
 }
 
 var AppBlock_PostSetupScriptDetails_ScriptS3LocationFields = ubx.FieldMap{
-		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
-		"S3Key": ubx.FieldSpec{WireName: "s3_key"},
-	}
+	"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
+	"S3Key":    ubx.FieldSpec{WireName: "s3_key"},
+}
 
 var AppBlock_PostSetupScriptDetailsFields = ubx.FieldMap{
-		"ExecutableParameters": ubx.FieldSpec{WireName: "executable_parameters"},
-		"ExecutablePath": ubx.FieldSpec{WireName: "executable_path"},
-		"ScriptS3Location": ubx.FieldSpec{
-			WireName: "script_s3_location",
-			Kind: "object",
-			Fields: AppBlock_PostSetupScriptDetails_ScriptS3LocationFields,
-		},
-		"TimeoutInSeconds": ubx.FieldSpec{WireName: "timeout_in_seconds"},
-	}
+	"ExecutableParameters": ubx.FieldSpec{WireName: "executable_parameters"},
+	"ExecutablePath":       ubx.FieldSpec{WireName: "executable_path"},
+	"ScriptS3Location": ubx.FieldSpec{
+		WireName: "script_s3_location",
+		Kind:     "object",
+		Fields:   AppBlock_PostSetupScriptDetails_ScriptS3LocationFields,
+	},
+	"TimeoutInSeconds": ubx.FieldSpec{WireName: "timeout_in_seconds"},
+}
 
 var AppBlock_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"TagKey": ubx.FieldSpec{WireName: "tag_key"},
-		"TagValue": ubx.FieldSpec{WireName: "tag_value"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"TagKey":   ubx.FieldSpec{WireName: "tag_key"},
+	"TagValue": ubx.FieldSpec{WireName: "tag_value"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 type AppBlockConfig struct {
 	// The description of the AppStream 2.0 AppBlock, a user-defined string that provides human-readable details about the application bundle stored as an app block. (AI-inferred)
@@ -99,29 +99,29 @@ type AppBlockAttrs struct {
 var AppBlock = ubx.ResourceBinding{
 	WireType: "aws_app_stream_app_block",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"PackagingType": ubx.FieldSpec{WireName: "packaging_type"},
 		"PostSetupScriptDetails": ubx.FieldSpec{
 			WireName: "post_setup_script_details",
-			Kind: "object",
-			Fields: AppBlock_PostSetupScriptDetailsFields,
+			Kind:     "object",
+			Fields:   AppBlock_PostSetupScriptDetailsFields,
 		},
 		"SetupScriptDetails": ubx.FieldSpec{
 			WireName: "setup_script_details",
-			Kind: "object",
-			Fields: AppBlock_PostSetupScriptDetailsFields,
+			Kind:     "object",
+			Fields:   AppBlock_PostSetupScriptDetailsFields,
 		},
 		"SourceS3Location": ubx.FieldSpec{
 			WireName: "source_s3_location",
-			Kind: "object",
-			Fields: AppBlock_PostSetupScriptDetails_ScriptS3LocationFields,
+			Kind:     "object",
+			Fields:   AppBlock_PostSetupScriptDetails_ScriptS3LocationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AppBlock_TagsFields,
+			Kind:     "list",
+			Fields:   AppBlock_TagsFields,
 		},
 	},
 }

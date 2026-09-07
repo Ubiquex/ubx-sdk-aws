@@ -4,31 +4,31 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dashboards_DashboardSummaries struct {
-	CreationDate any
-	Description any
-	Id any
+	CreationDate   any
+	Description    any
+	Id             any
 	LastUpdateDate any
-	Name any
+	Name           any
 }
 
 type DashboardsConfig struct {
 	MaxResults any
-	NextToken any
-	ProjectId any
+	NextToken  any
+	ProjectId  any
 }
 
 type DashboardsAttrs struct {
 	DashboardSummaries any
-	MaxResults any
-	NextToken any
-	ProjectId any
+	MaxResults         any
+	NextToken          any
+	ProjectId          any
 }
 
 var Dashboards = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_dashboards",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"ProjectId":  ubx.FieldSpec{WireName: "project_id"},
 	},
 }

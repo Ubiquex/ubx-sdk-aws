@@ -67,7 +67,7 @@ type Function_FileSystemConfigs struct {
 	Arn any
 	// Specifies the directory path (starting with '/mnt/') in the Lambda function's file system where the Amazon EFS file system is mounted, such as '/mnt/efs-data'. (AI-inferred)
 	LocalMountPath any
-	S3FilesConfig any
+	S3FilesConfig  any
 }
 
 type Function_FunctionScalingConfig struct {
@@ -143,106 +143,106 @@ type Function_VpcConfig struct {
 }
 
 var Function_CapacityProviderConfig_LambdaManagedInstancesCapacityProviderConfigFields = ubx.FieldMap{
-		"CapacityProviderArn": ubx.FieldSpec{WireName: "capacity_provider_arn"},
-		"ExecutionEnvironmentMemoryGiBperVcpu": ubx.FieldSpec{WireName: "execution_environment_memory_gi_bper_vcpu"},
-		"PerExecutionEnvironmentMaxConcurrency": ubx.FieldSpec{WireName: "per_execution_environment_max_concurrency"},
-	}
+	"CapacityProviderArn":                   ubx.FieldSpec{WireName: "capacity_provider_arn"},
+	"ExecutionEnvironmentMemoryGiBperVcpu":  ubx.FieldSpec{WireName: "execution_environment_memory_gi_bper_vcpu"},
+	"PerExecutionEnvironmentMaxConcurrency": ubx.FieldSpec{WireName: "per_execution_environment_max_concurrency"},
+}
 
 var Function_CapacityProviderConfigFields = ubx.FieldMap{
-		"LambdaManagedInstancesCapacityProviderConfig": ubx.FieldSpec{
-			WireName: "lambda_managed_instances_capacity_provider_config",
-			Kind: "object",
-			Fields: Function_CapacityProviderConfig_LambdaManagedInstancesCapacityProviderConfigFields,
-		},
-	}
+	"LambdaManagedInstancesCapacityProviderConfig": ubx.FieldSpec{
+		WireName: "lambda_managed_instances_capacity_provider_config",
+		Kind:     "object",
+		Fields:   Function_CapacityProviderConfig_LambdaManagedInstancesCapacityProviderConfigFields,
+	},
+}
 
 var Function_CodeFields = ubx.FieldMap{
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
-		"S3Key": ubx.FieldSpec{WireName: "s3_key"},
-		"S3ObjectStorageMode": ubx.FieldSpec{WireName: "s3_object_storage_mode"},
-		"S3ObjectVersion": ubx.FieldSpec{WireName: "s3_object_version"},
-		"SourceKmskeyArn": ubx.FieldSpec{WireName: "source_kmskey_arn"},
-		"ZipFile": ubx.FieldSpec{WireName: "zip_file"},
-	}
+	"ImageUri":            ubx.FieldSpec{WireName: "image_uri"},
+	"S3Bucket":            ubx.FieldSpec{WireName: "s3_bucket"},
+	"S3Key":               ubx.FieldSpec{WireName: "s3_key"},
+	"S3ObjectStorageMode": ubx.FieldSpec{WireName: "s3_object_storage_mode"},
+	"S3ObjectVersion":     ubx.FieldSpec{WireName: "s3_object_version"},
+	"SourceKmskeyArn":     ubx.FieldSpec{WireName: "source_kmskey_arn"},
+	"ZipFile":             ubx.FieldSpec{WireName: "zip_file"},
+}
 
 var Function_DeadLetterConfigFields = ubx.FieldMap{
-		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
-	}
+	"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
+}
 
 var Function_DurableConfigFields = ubx.FieldMap{
-		"ExecutionTimeout": ubx.FieldSpec{WireName: "execution_timeout"},
-		"KmskeyArn": ubx.FieldSpec{WireName: "kmskey_arn"},
-		"RetentionPeriodInDays": ubx.FieldSpec{WireName: "retention_period_in_days"},
-	}
+	"ExecutionTimeout":      ubx.FieldSpec{WireName: "execution_timeout"},
+	"KmskeyArn":             ubx.FieldSpec{WireName: "kmskey_arn"},
+	"RetentionPeriodInDays": ubx.FieldSpec{WireName: "retention_period_in_days"},
+}
 
 var Function_EnvironmentFields = ubx.FieldMap{
-		"Variables": ubx.FieldSpec{WireName: "variables"},
-	}
+	"Variables": ubx.FieldSpec{WireName: "variables"},
+}
 
 var Function_EphemeralStorageFields = ubx.FieldMap{
-		"Size": ubx.FieldSpec{WireName: "size"},
-	}
+	"Size": ubx.FieldSpec{WireName: "size"},
+}
 
 var Function_FileSystemConfigs_S3FilesConfigFields = ubx.FieldMap{
-		"DirectS3Read": ubx.FieldSpec{WireName: "direct_s3_read"},
-	}
+	"DirectS3Read": ubx.FieldSpec{WireName: "direct_s3_read"},
+}
 
 var Function_FileSystemConfigsFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"LocalMountPath": ubx.FieldSpec{WireName: "local_mount_path"},
-		"S3FilesConfig": ubx.FieldSpec{
-			WireName: "s3_files_config",
-			Kind: "object",
-			Fields: Function_FileSystemConfigs_S3FilesConfigFields,
-		},
-	}
+	"Arn":            ubx.FieldSpec{WireName: "arn"},
+	"LocalMountPath": ubx.FieldSpec{WireName: "local_mount_path"},
+	"S3FilesConfig": ubx.FieldSpec{
+		WireName: "s3_files_config",
+		Kind:     "object",
+		Fields:   Function_FileSystemConfigs_S3FilesConfigFields,
+	},
+}
 
 var Function_FunctionScalingConfigFields = ubx.FieldMap{
-		"MaxExecutionEnvironments": ubx.FieldSpec{WireName: "max_execution_environments"},
-		"MinExecutionEnvironments": ubx.FieldSpec{WireName: "min_execution_environments"},
-	}
+	"MaxExecutionEnvironments": ubx.FieldSpec{WireName: "max_execution_environments"},
+	"MinExecutionEnvironments": ubx.FieldSpec{WireName: "min_execution_environments"},
+}
 
 var Function_ImageConfigFields = ubx.FieldMap{
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"EntryPoint": ubx.FieldSpec{WireName: "entry_point"},
-		"WorkingDirectory": ubx.FieldSpec{WireName: "working_directory"},
-	}
+	"Command":          ubx.FieldSpec{WireName: "command"},
+	"EntryPoint":       ubx.FieldSpec{WireName: "entry_point"},
+	"WorkingDirectory": ubx.FieldSpec{WireName: "working_directory"},
+}
 
 var Function_LoggingConfigFields = ubx.FieldMap{
-		"ApplicationLogLevel": ubx.FieldSpec{WireName: "application_log_level"},
-		"LogFormat": ubx.FieldSpec{WireName: "log_format"},
-		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
-		"SystemLogLevel": ubx.FieldSpec{WireName: "system_log_level"},
-	}
+	"ApplicationLogLevel": ubx.FieldSpec{WireName: "application_log_level"},
+	"LogFormat":           ubx.FieldSpec{WireName: "log_format"},
+	"LogGroup":            ubx.FieldSpec{WireName: "log_group"},
+	"SystemLogLevel":      ubx.FieldSpec{WireName: "system_log_level"},
+}
 
 var Function_RuntimeManagementConfigFields = ubx.FieldMap{
-		"RuntimeVersionArn": ubx.FieldSpec{WireName: "runtime_version_arn"},
-		"UpdateRuntimeOn": ubx.FieldSpec{WireName: "update_runtime_on"},
-	}
+	"RuntimeVersionArn": ubx.FieldSpec{WireName: "runtime_version_arn"},
+	"UpdateRuntimeOn":   ubx.FieldSpec{WireName: "update_runtime_on"},
+}
 
 var Function_SnapStartFields = ubx.FieldMap{
-		"ApplyOn": ubx.FieldSpec{WireName: "apply_on"},
-	}
+	"ApplyOn": ubx.FieldSpec{WireName: "apply_on"},
+}
 
 var Function_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Function_TenancyConfigFields = ubx.FieldMap{
-		"TenantIsolationMode": ubx.FieldSpec{WireName: "tenant_isolation_mode"},
-	}
+	"TenantIsolationMode": ubx.FieldSpec{WireName: "tenant_isolation_mode"},
+}
 
 var Function_TracingConfigFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var Function_VpcConfigFields = ubx.FieldMap{
-		"Ipv6AllowedForDualStack": ubx.FieldSpec{WireName: "ipv6_allowed_for_dual_stack"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"Ipv6AllowedForDualStack": ubx.FieldSpec{WireName: "ipv6_allowed_for_dual_stack"},
+	"SecurityGroupIds":        ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":               ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 type FunctionConfig struct {
 	// The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is ``x86_64``.
@@ -384,97 +384,97 @@ var Function = ubx.ResourceBinding{
 		"Architectures": ubx.FieldSpec{WireName: "architectures"},
 		"CapacityProviderConfig": ubx.FieldSpec{
 			WireName: "capacity_provider_config",
-			Kind: "object",
-			Fields: Function_CapacityProviderConfigFields,
+			Kind:     "object",
+			Fields:   Function_CapacityProviderConfigFields,
 		},
 		"Code": ubx.FieldSpec{
 			WireName: "code",
-			Kind: "object",
-			Fields: Function_CodeFields,
+			Kind:     "object",
+			Fields:   Function_CodeFields,
 		},
 		"CodeSigningConfigArn": ubx.FieldSpec{WireName: "code_signing_config_arn"},
 		"DeadLetterConfig": ubx.FieldSpec{
 			WireName: "dead_letter_config",
-			Kind: "object",
-			Fields: Function_DeadLetterConfigFields,
+			Kind:     "object",
+			Fields:   Function_DeadLetterConfigFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DurableConfig": ubx.FieldSpec{
 			WireName: "durable_config",
-			Kind: "object",
-			Fields: Function_DurableConfigFields,
+			Kind:     "object",
+			Fields:   Function_DurableConfigFields,
 		},
 		"Environment": ubx.FieldSpec{
 			WireName: "environment",
-			Kind: "object",
-			Fields: Function_EnvironmentFields,
+			Kind:     "object",
+			Fields:   Function_EnvironmentFields,
 		},
 		"EphemeralStorage": ubx.FieldSpec{
 			WireName: "ephemeral_storage",
-			Kind: "object",
-			Fields: Function_EphemeralStorageFields,
+			Kind:     "object",
+			Fields:   Function_EphemeralStorageFields,
 		},
 		"FileSystemConfigs": ubx.FieldSpec{
 			WireName: "file_system_configs",
-			Kind: "list",
-			Fields: Function_FileSystemConfigsFields,
+			Kind:     "list",
+			Fields:   Function_FileSystemConfigsFields,
 		},
 		"FunctionName": ubx.FieldSpec{WireName: "function_name"},
 		"FunctionScalingConfig": ubx.FieldSpec{
 			WireName: "function_scaling_config",
-			Kind: "object",
-			Fields: Function_FunctionScalingConfigFields,
+			Kind:     "object",
+			Fields:   Function_FunctionScalingConfigFields,
 		},
 		"Handler": ubx.FieldSpec{WireName: "handler"},
 		"ImageConfig": ubx.FieldSpec{
 			WireName: "image_config",
-			Kind: "object",
-			Fields: Function_ImageConfigFields,
+			Kind:     "object",
+			Fields:   Function_ImageConfigFields,
 		},
 		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"Layers": ubx.FieldSpec{WireName: "layers"},
+		"Layers":    ubx.FieldSpec{WireName: "layers"},
 		"LoggingConfig": ubx.FieldSpec{
 			WireName: "logging_config",
-			Kind: "object",
-			Fields: Function_LoggingConfigFields,
+			Kind:     "object",
+			Fields:   Function_LoggingConfigFields,
 		},
-		"MemorySize": ubx.FieldSpec{WireName: "memory_size"},
-		"PackageType": ubx.FieldSpec{WireName: "package_type"},
-		"PublishToLatestPublished": ubx.FieldSpec{WireName: "publish_to_latest_published"},
-		"RecursiveLoop": ubx.FieldSpec{WireName: "recursive_loop"},
+		"MemorySize":                   ubx.FieldSpec{WireName: "memory_size"},
+		"PackageType":                  ubx.FieldSpec{WireName: "package_type"},
+		"PublishToLatestPublished":     ubx.FieldSpec{WireName: "publish_to_latest_published"},
+		"RecursiveLoop":                ubx.FieldSpec{WireName: "recursive_loop"},
 		"ReservedConcurrentExecutions": ubx.FieldSpec{WireName: "reserved_concurrent_executions"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-		"Runtime": ubx.FieldSpec{WireName: "runtime"},
+		"Role":                         ubx.FieldSpec{WireName: "role"},
+		"Runtime":                      ubx.FieldSpec{WireName: "runtime"},
 		"RuntimeManagementConfig": ubx.FieldSpec{
 			WireName: "runtime_management_config",
-			Kind: "object",
-			Fields: Function_RuntimeManagementConfigFields,
+			Kind:     "object",
+			Fields:   Function_RuntimeManagementConfigFields,
 		},
 		"SnapStart": ubx.FieldSpec{
 			WireName: "snap_start",
-			Kind: "object",
-			Fields: Function_SnapStartFields,
+			Kind:     "object",
+			Fields:   Function_SnapStartFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Function_TagsFields,
+			Kind:     "list",
+			Fields:   Function_TagsFields,
 		},
 		"TenancyConfig": ubx.FieldSpec{
 			WireName: "tenancy_config",
-			Kind: "object",
-			Fields: Function_TenancyConfigFields,
+			Kind:     "object",
+			Fields:   Function_TenancyConfigFields,
 		},
 		"Timeout": ubx.FieldSpec{WireName: "timeout"},
 		"TracingConfig": ubx.FieldSpec{
 			WireName: "tracing_config",
-			Kind: "object",
-			Fields: Function_TracingConfigFields,
+			Kind:     "object",
+			Fields:   Function_TracingConfigFields,
 		},
 		"VpcConfig": ubx.FieldSpec{
 			WireName: "vpc_config",
-			Kind: "object",
-			Fields: Function_VpcConfigFields,
+			Kind:     "object",
+			Fields:   Function_VpcConfigFields,
 		},
 	},
 }

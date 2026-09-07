@@ -53,48 +53,48 @@ type TagAssociation_Resource struct {
 }
 
 var TagAssociation_LftagsFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"TagKey": ubx.FieldSpec{WireName: "tag_key"},
-		"TagValues": ubx.FieldSpec{WireName: "tag_values"},
-	}
+	"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
+	"TagKey":    ubx.FieldSpec{WireName: "tag_key"},
+	"TagValues": ubx.FieldSpec{WireName: "tag_values"},
+}
 
 var TagAssociation_Resource_DatabaseFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+}
 
 var TagAssociation_Resource_TableFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TableWildcard": ubx.FieldSpec{WireName: "table_wildcard"},
-	}
+	"CatalogId":     ubx.FieldSpec{WireName: "catalog_id"},
+	"DatabaseName":  ubx.FieldSpec{WireName: "database_name"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"TableWildcard": ubx.FieldSpec{WireName: "table_wildcard"},
+}
 
 var TagAssociation_Resource_TableWithColumnsFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"ColumnNames": ubx.FieldSpec{WireName: "column_names"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CatalogId":    ubx.FieldSpec{WireName: "catalog_id"},
+	"ColumnNames":  ubx.FieldSpec{WireName: "column_names"},
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+}
 
 var TagAssociation_ResourceFields = ubx.FieldMap{
-		"Catalog": ubx.FieldSpec{WireName: "catalog"},
-		"Database": ubx.FieldSpec{
-			WireName: "database",
-			Kind: "object",
-			Fields: TagAssociation_Resource_DatabaseFields,
-		},
-		"Table": ubx.FieldSpec{
-			WireName: "table",
-			Kind: "object",
-			Fields: TagAssociation_Resource_TableFields,
-		},
-		"TableWithColumns": ubx.FieldSpec{
-			WireName: "table_with_columns",
-			Kind: "object",
-			Fields: TagAssociation_Resource_TableWithColumnsFields,
-		},
-	}
+	"Catalog": ubx.FieldSpec{WireName: "catalog"},
+	"Database": ubx.FieldSpec{
+		WireName: "database",
+		Kind:     "object",
+		Fields:   TagAssociation_Resource_DatabaseFields,
+	},
+	"Table": ubx.FieldSpec{
+		WireName: "table",
+		Kind:     "object",
+		Fields:   TagAssociation_Resource_TableFields,
+	},
+	"TableWithColumns": ubx.FieldSpec{
+		WireName: "table_with_columns",
+		Kind:     "object",
+		Fields:   TagAssociation_Resource_TableWithColumnsFields,
+	},
+}
 
 type TagAssociationConfig struct {
 	// The list of LF-Tags (key-value pairs) to associate with the specified resource, where each LF-Tag consists of a tag key and a list of tag values. (AI-inferred)
@@ -119,13 +119,13 @@ var TagAssociation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Lftags": ubx.FieldSpec{
 			WireName: "lftags",
-			Kind: "list",
-			Fields: TagAssociation_LftagsFields,
+			Kind:     "list",
+			Fields:   TagAssociation_LftagsFields,
 		},
 		"Resource": ubx.FieldSpec{
 			WireName: "resource",
-			Kind: "object",
-			Fields: TagAssociation_ResourceFields,
+			Kind:     "object",
+			Fields:   TagAssociation_ResourceFields,
 		},
 	},
 }

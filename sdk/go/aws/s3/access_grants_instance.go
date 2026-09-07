@@ -11,9 +11,9 @@ type AccessGrantsInstance_Tags struct {
 }
 
 var AccessGrantsInstance_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AccessGrantsInstanceConfig struct {
 	// The Amazon Resource Name (ARN) of the specified AWS Identity Center.
@@ -39,8 +39,8 @@ var AccessGrantsInstance = ubx.ResourceBinding{
 		"IdentityCenterArn": ubx.FieldSpec{WireName: "identity_center_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AccessGrantsInstance_TagsFields,
+			Kind:     "list",
+			Fields:   AccessGrantsInstance_TagsFields,
 		},
 	},
 }

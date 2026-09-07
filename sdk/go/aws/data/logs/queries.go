@@ -4,43 +4,43 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Queries_Queries struct {
-	BytesScanned any
-	CreateTime any
-	LogGroupName any
+	BytesScanned  any
+	CreateTime    any
+	LogGroupName  any
 	QueryDuration any
-	QueryId any
+	QueryId       any
 	QueryLanguage any
-	QueryString any
-	Status any
-	UserIdentity any
+	QueryString   any
+	Status        any
+	UserIdentity  any
 }
 
 type QueriesConfig struct {
 	LogGroupName any
-	MaxResults any
+	MaxResults   any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-	NextToken any
+	NextToken     any
 	QueryLanguage any
-	Status any
+	Status        any
 }
 
 type QueriesAttrs struct {
 	LogGroupName any
-	MaxResults any
+	MaxResults   any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-	NextToken any
-	Queries any
+	NextToken     any
+	Queries       any
 	QueryLanguage any
-	Status any
+	Status        any
 }
 
 var Queries = ubx.DataSourceBinding{
 	WireType: "aws_logs_queries",
 	Fields: ubx.FieldMap{
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"LogGroupName":  ubx.FieldSpec{WireName: "log_group_name"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"QueryLanguage": ubx.FieldSpec{WireName: "query_language"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":        ubx.FieldSpec{WireName: "status"},
 	},
 }

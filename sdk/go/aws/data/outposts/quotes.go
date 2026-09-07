@@ -4,94 +4,94 @@ package outposts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Quotes_Quotes_QuoteOptions_Capacities struct {
-	Quantity any
+	Quantity          any
 	QuoteCapacityType any
-	Unit any
+	Unit              any
 }
 
 type Quotes_Quotes_QuoteOptions_CapacitySummary struct {
-	CapacityChange any
+	CapacityChange     any
 	ExistingCapacities any
-	FinalCapacities any
+	FinalCapacities    any
 }
 
 type Quotes_Quotes_QuoteOptions_PricingOptions_SubscriptionPricingDetails struct {
-	Currency any
+	Currency              any
 	MonthlyRecurringPrice any
-	PaymentOption any
-	PaymentTerm any
-	UpfrontPrice any
+	PaymentOption         any
+	PaymentTerm           any
+	UpfrontPrice          any
 }
 
 type Quotes_Quotes_QuoteOptions_PricingOptions struct {
-	PricingType any
+	PricingType                any
 	SubscriptionPricingDetails any
 }
 
 type Quotes_Quotes_QuoteOptions_Specifications_ExistingRackSpecificationDetails_Ec2Capacities struct {
-	Family any
-	MaxSize any
+	Family   any
+	MaxSize  any
 	Quantity any
 }
 
 type Quotes_Quotes_QuoteOptions_Specifications_ExistingRackSpecificationDetails struct {
-	Ec2Capacities any
-	RackDepthInches any
+	Ec2Capacities    any
+	RackDepthInches  any
 	RackHeightInches any
-	RackId any
+	RackId           any
 	RackPowerDrawKva any
-	RackUnitHeight any
-	RackUse any
-	RackWeightLbs any
-	RackWidthInches any
+	RackUnitHeight   any
+	RackUse          any
+	RackWeightLbs    any
+	RackWidthInches  any
 }
 
 type Quotes_Quotes_QuoteOptions_Specifications_ServerSpecificationDetails struct {
-	Ec2Capacities any
-	RackUnitHeight any
-	ServerDepthInches any
+	Ec2Capacities      any
+	RackUnitHeight     any
+	ServerDepthInches  any
 	ServerHeightInches any
 	ServerPowerDrawKva any
-	ServerWeightLbs any
-	ServerWidthInches any
+	ServerWeightLbs    any
+	ServerWidthInches  any
 }
 
 type Quotes_Quotes_QuoteOptions_Specifications struct {
 	ExistingRackSpecificationDetails any
-	FinalRackSpecificationDetails any
-	QuoteSpecificationType any
-	ServerSpecificationDetails any
+	FinalRackSpecificationDetails    any
+	QuoteSpecificationType           any
+	ServerSpecificationDetails       any
 }
 
 type Quotes_Quotes_QuoteOptions struct {
-	Capacities any
-	CapacitySummary any
-	PricingOptions any
+	Capacities            any
+	CapacitySummary       any
+	PricingOptions        any
 	QuoteOptionIdentifier any
-	Specifications any
+	Specifications        any
 }
 
 type Quotes_Quotes_RequestedConstraints struct {
 	QuoteConstraintType any
-	Value any
+	Value               any
 }
 
 type Quotes_Quotes struct {
-	AccountId any
-	CountryCode any
-	CreatedDate any
-	Description any
-	ExpirationDate any
-	OutpostArn any
-	QuoteId any
-	QuoteOptions any
-	QuoteStatus any
-	RequestedCapacities any
-	RequestedConstraints any
+	AccountId               any
+	CountryCode             any
+	CreatedDate             any
+	Description             any
+	ExpirationDate          any
+	OutpostArn              any
+	QuoteId                 any
+	QuoteOptions            any
+	QuoteStatus             any
+	RequestedCapacities     any
+	RequestedConstraints    any
 	RequestedPaymentOptions any
-	RequestedPaymentTerms any
-	StatusMessage any
-	SubmittedOrderId any
+	RequestedPaymentTerms   any
+	StatusMessage           any
+	SubmittedOrderId        any
 }
 
 type QuotesConfig struct {
@@ -106,13 +106,13 @@ type QuotesAttrs struct {
 	MaxResults any
 	// <p>The pagination token.</p>
 	NextToken any
-	Quotes any
+	Quotes    any
 }
 
 var Quotes = ubx.DataSourceBinding{
 	WireType: "aws_outposts_quotes",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

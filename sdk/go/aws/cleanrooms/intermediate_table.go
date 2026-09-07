@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IntermediateTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholds struct {
 	MinimumIdentityCount any
-	OutputColumnName any
+	OutputColumnName     any
 }
 
 type IntermediateTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds struct {
 	AllowedAggregateExpressionType any
-	IdentityColumns any
-	MinimumIdentityCount any
-	OutputColumnThresholds any
-	Type any
+	IdentityColumns                any
+	MinimumIdentityCount           any
+	OutputColumnThresholds         any
+	Type                           any
 }
 
 type IntermediateTable_AnalysisRules_Policy_V1_Custom_ComparisonControls struct {
-	AllowedColumnComparisonColumns any
+	AllowedColumnComparisonColumns  any
 	AllowedLiteralComparisonColumns any
 }
 
@@ -33,7 +33,7 @@ type IntermediateTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy struct
 
 type IntermediateTable_AnalysisRules_Policy_V1_Custom struct {
 	// This field specifies the ARNs of additional analyses that are allowed to be run on the intermediate table under the custom analysis rule policy. (AI-inferred)
-	AdditionalAnalyses any
+	AdditionalAnalyses    any
 	AggregationThresholds any
 	// Specifies the list of allowed analysis template names (strings) that collaborators may run on the configured table under this custom analysis rule, restricting which analyses are permitted. (AI-inferred)
 	AllowedAnalyses any
@@ -41,7 +41,7 @@ type IntermediateTable_AnalysisRules_Policy_V1_Custom struct {
 	AllowedAnalysisProviders any
 	// Specifies the list of member account identifiers that are allowed to receive the results of queries run under this custom analysis rule policy. (AI-inferred)
 	AllowedResultReceivers any
-	ComparisonControls any
+	ComparisonControls     any
 	// Defines the differential privacy settings for the custom analysis rule, specifying the privacy budget and noise injection mechanism applied to prevent re-identification of individual records. (AI-inferred)
 	DifferentialPrivacy any
 	// Specifies the list of column names from the intermediate table that are prohibited from being included in the output of any query executed under this custom analysis rule, preventing sensitive data from being exposed. (AI-inferred)
@@ -59,7 +59,7 @@ type IntermediateTable_AnalysisRules_Policy struct {
 
 type IntermediateTable_AnalysisRules struct {
 	Policy any
-	Type any
+	Type   any
 }
 
 type IntermediateTable_PopulationAnalysisConfiguration_SqlParameters struct {
@@ -76,109 +76,109 @@ type IntermediateTable_PopulationAnalysisConfiguration struct {
 
 type IntermediateTable_Tags struct {
 	// The key of a user-defined tag attached to the AWS Clean Rooms intermediate table, serving as the identifier for the tag's metadata label. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var IntermediateTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholdsFields = ubx.FieldMap{
-		"MinimumIdentityCount": ubx.FieldSpec{WireName: "minimum_identity_count"},
-		"OutputColumnName": ubx.FieldSpec{WireName: "output_column_name"},
-	}
+	"MinimumIdentityCount": ubx.FieldSpec{WireName: "minimum_identity_count"},
+	"OutputColumnName":     ubx.FieldSpec{WireName: "output_column_name"},
+}
 
 var IntermediateTable_AnalysisRules_Policy_V1_Custom_AggregationThresholdsFields = ubx.FieldMap{
-		"AllowedAggregateExpressionType": ubx.FieldSpec{WireName: "allowed_aggregate_expression_type"},
-		"IdentityColumns": ubx.FieldSpec{WireName: "identity_columns"},
-		"MinimumIdentityCount": ubx.FieldSpec{WireName: "minimum_identity_count"},
-		"OutputColumnThresholds": ubx.FieldSpec{
-			WireName: "output_column_thresholds",
-			Kind: "list",
-			Fields: IntermediateTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholdsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AllowedAggregateExpressionType": ubx.FieldSpec{WireName: "allowed_aggregate_expression_type"},
+	"IdentityColumns":                ubx.FieldSpec{WireName: "identity_columns"},
+	"MinimumIdentityCount":           ubx.FieldSpec{WireName: "minimum_identity_count"},
+	"OutputColumnThresholds": ubx.FieldSpec{
+		WireName: "output_column_thresholds",
+		Kind:     "list",
+		Fields:   IntermediateTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholdsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var IntermediateTable_AnalysisRules_Policy_V1_Custom_ComparisonControlsFields = ubx.FieldMap{
-		"AllowedColumnComparisonColumns": ubx.FieldSpec{WireName: "allowed_column_comparison_columns"},
-		"AllowedLiteralComparisonColumns": ubx.FieldSpec{WireName: "allowed_literal_comparison_columns"},
-	}
+	"AllowedColumnComparisonColumns":  ubx.FieldSpec{WireName: "allowed_column_comparison_columns"},
+	"AllowedLiteralComparisonColumns": ubx.FieldSpec{WireName: "allowed_literal_comparison_columns"},
+}
 
 var IntermediateTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy_ColumnsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var IntermediateTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacyFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: IntermediateTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy_ColumnsFields,
-		},
-	}
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   IntermediateTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy_ColumnsFields,
+	},
+}
 
 var IntermediateTable_AnalysisRules_Policy_V1_CustomFields = ubx.FieldMap{
-		"AdditionalAnalyses": ubx.FieldSpec{WireName: "additional_analyses"},
-		"AggregationThresholds": ubx.FieldSpec{
-			WireName: "aggregation_thresholds",
-			Kind: "list",
-			Fields: IntermediateTable_AnalysisRules_Policy_V1_Custom_AggregationThresholdsFields,
-		},
-		"AllowedAnalyses": ubx.FieldSpec{WireName: "allowed_analyses"},
-		"AllowedAnalysisProviders": ubx.FieldSpec{WireName: "allowed_analysis_providers"},
-		"AllowedResultReceivers": ubx.FieldSpec{WireName: "allowed_result_receivers"},
-		"ComparisonControls": ubx.FieldSpec{
-			WireName: "comparison_controls",
-			Kind: "object",
-			Fields: IntermediateTable_AnalysisRules_Policy_V1_Custom_ComparisonControlsFields,
-		},
-		"DifferentialPrivacy": ubx.FieldSpec{
-			WireName: "differential_privacy",
-			Kind: "object",
-			Fields: IntermediateTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacyFields,
-		},
-		"DisallowedOutputColumns": ubx.FieldSpec{WireName: "disallowed_output_columns"},
-	}
+	"AdditionalAnalyses": ubx.FieldSpec{WireName: "additional_analyses"},
+	"AggregationThresholds": ubx.FieldSpec{
+		WireName: "aggregation_thresholds",
+		Kind:     "list",
+		Fields:   IntermediateTable_AnalysisRules_Policy_V1_Custom_AggregationThresholdsFields,
+	},
+	"AllowedAnalyses":          ubx.FieldSpec{WireName: "allowed_analyses"},
+	"AllowedAnalysisProviders": ubx.FieldSpec{WireName: "allowed_analysis_providers"},
+	"AllowedResultReceivers":   ubx.FieldSpec{WireName: "allowed_result_receivers"},
+	"ComparisonControls": ubx.FieldSpec{
+		WireName: "comparison_controls",
+		Kind:     "object",
+		Fields:   IntermediateTable_AnalysisRules_Policy_V1_Custom_ComparisonControlsFields,
+	},
+	"DifferentialPrivacy": ubx.FieldSpec{
+		WireName: "differential_privacy",
+		Kind:     "object",
+		Fields:   IntermediateTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacyFields,
+	},
+	"DisallowedOutputColumns": ubx.FieldSpec{WireName: "disallowed_output_columns"},
+}
 
 var IntermediateTable_AnalysisRules_Policy_V1Fields = ubx.FieldMap{
-		"Custom": ubx.FieldSpec{
-			WireName: "custom",
-			Kind: "object",
-			Fields: IntermediateTable_AnalysisRules_Policy_V1_CustomFields,
-		},
-	}
+	"Custom": ubx.FieldSpec{
+		WireName: "custom",
+		Kind:     "object",
+		Fields:   IntermediateTable_AnalysisRules_Policy_V1_CustomFields,
+	},
+}
 
 var IntermediateTable_AnalysisRules_PolicyFields = ubx.FieldMap{
-		"V1": ubx.FieldSpec{
-			WireName: "v1",
-			Kind: "object",
-			Fields: IntermediateTable_AnalysisRules_Policy_V1Fields,
-		},
-	}
+	"V1": ubx.FieldSpec{
+		WireName: "v1",
+		Kind:     "object",
+		Fields:   IntermediateTable_AnalysisRules_Policy_V1Fields,
+	},
+}
 
 var IntermediateTable_AnalysisRulesFields = ubx.FieldMap{
-		"Policy": ubx.FieldSpec{
-			WireName: "policy",
-			Kind: "object",
-			Fields: IntermediateTable_AnalysisRules_PolicyFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Policy": ubx.FieldSpec{
+		WireName: "policy",
+		Kind:     "object",
+		Fields:   IntermediateTable_AnalysisRules_PolicyFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var IntermediateTable_PopulationAnalysisConfiguration_SqlParametersFields = ubx.FieldMap{
-		"AnalysisTemplateArn": ubx.FieldSpec{WireName: "analysis_template_arn"},
-		"QueryString": ubx.FieldSpec{WireName: "query_string"},
-	}
+	"AnalysisTemplateArn": ubx.FieldSpec{WireName: "analysis_template_arn"},
+	"QueryString":         ubx.FieldSpec{WireName: "query_string"},
+}
 
 var IntermediateTable_PopulationAnalysisConfigurationFields = ubx.FieldMap{
-		"SqlParameters": ubx.FieldSpec{
-			WireName: "sql_parameters",
-			Kind: "object",
-			Fields: IntermediateTable_PopulationAnalysisConfiguration_SqlParametersFields,
-		},
-	}
+	"SqlParameters": ubx.FieldSpec{
+		WireName: "sql_parameters",
+		Kind:     "object",
+		Fields:   IntermediateTable_PopulationAnalysisConfiguration_SqlParametersFields,
+	},
+}
 
 var IntermediateTable_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IntermediateTableConfig struct {
 	// Defines the analysis constraints that govern how members can query the intermediate table, including the allowed analysis methods and their configurations. (AI-inferred)
@@ -190,7 +190,7 @@ type IntermediateTableConfig struct {
 	// The unique identifier of the membership within the AWS Clean Rooms collaboration that this intermediate table belongs to. (AI-inferred)
 	MembershipIdentifier any
 	// The name of this intermediate table. (AI-inferred)
-	Name any
+	Name                            any
 	PopulationAnalysisConfiguration any
 	// The tags assigned to this intermediate table. (AI-inferred)
 	Tags any
@@ -216,7 +216,7 @@ type IntermediateTableAttrs struct {
 	// The unique identifier of the membership within the AWS Clean Rooms collaboration that this intermediate table belongs to. (AI-inferred)
 	MembershipIdentifier any
 	// The name of this intermediate table. (AI-inferred)
-	Name any
+	Name                            any
 	PopulationAnalysisConfiguration any
 	// The current status of this intermediate table. (AI-inferred)
 	Status any
@@ -229,22 +229,22 @@ var IntermediateTable = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AnalysisRules": ubx.FieldSpec{
 			WireName: "analysis_rules",
-			Kind: "list",
-			Fields: IntermediateTable_AnalysisRulesFields,
+			Kind:     "list",
+			Fields:   IntermediateTable_AnalysisRulesFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"KmsKeyArn":            ubx.FieldSpec{WireName: "kms_key_arn"},
 		"MembershipIdentifier": ubx.FieldSpec{WireName: "membership_identifier"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
 		"PopulationAnalysisConfiguration": ubx.FieldSpec{
 			WireName: "population_analysis_configuration",
-			Kind: "object",
-			Fields: IntermediateTable_PopulationAnalysisConfigurationFields,
+			Kind:     "object",
+			Fields:   IntermediateTable_PopulationAnalysisConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: IntermediateTable_TagsFields,
+			Kind:     "list",
+			Fields:   IntermediateTable_TagsFields,
 		},
 	},
 }

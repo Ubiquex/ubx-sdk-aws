@@ -4,10 +4,10 @@ package auditmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServicesInScope_ServiceMetadata struct {
-	Category any
+	Category    any
 	Description any
 	DisplayName any
-	Name any
+	Name        any
 }
 
 type ServicesInScopeConfig struct {
@@ -19,6 +19,5 @@ type ServicesInScopeAttrs struct {
 
 var ServicesInScope = ubx.DataSourceBinding{
 	WireType: "aws_auditmanager_services_in_scope",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

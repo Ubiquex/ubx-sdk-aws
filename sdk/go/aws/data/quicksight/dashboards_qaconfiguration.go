@@ -8,10 +8,10 @@ type DashboardsQaconfigurationConfig struct {
 }
 
 type DashboardsQaconfigurationAttrs struct {
-	AwsAccountId any
+	AwsAccountId       any
 	DashboardsQastatus any
-	RequestId any
-	Status any
+	RequestId          any
+	Status             any
 }
 
 var DashboardsQaconfiguration = ubx.DataSourceBinding{

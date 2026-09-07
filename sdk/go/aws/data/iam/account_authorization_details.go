@@ -4,142 +4,142 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountAuthorizationDetails_GroupDetailList_AttachedManagedPolicies struct {
-	PolicyArn any
+	PolicyArn  any
 	PolicyName any
 }
 
 type AccountAuthorizationDetails_GroupDetailList_GroupPolicyList struct {
 	PolicyDocument any
-	PolicyName any
+	PolicyName     any
 }
 
 type AccountAuthorizationDetails_GroupDetailList struct {
-	Arn any
+	Arn                     any
 	AttachedManagedPolicies any
-	CreateDate any
-	GroupId any
-	GroupName any
-	GroupPolicyList any
-	Path any
+	CreateDate              any
+	GroupId                 any
+	GroupName               any
+	GroupPolicyList         any
+	Path                    any
 }
 
 type AccountAuthorizationDetails_Policies_PolicyVersionList struct {
-	CreateDate any
-	Document any
+	CreateDate       any
+	Document         any
 	IsDefaultVersion any
-	VersionId any
+	VersionId        any
 }
 
 type AccountAuthorizationDetails_Policies struct {
-	Arn any
-	AttachmentCount any
-	CreateDate any
-	DefaultVersionId any
-	Description any
-	IsAttachable any
-	Path any
+	Arn                           any
+	AttachmentCount               any
+	CreateDate                    any
+	DefaultVersionId              any
+	Description                   any
+	IsAttachable                  any
+	Path                          any
 	PermissionsBoundaryUsageCount any
-	PolicyId any
-	PolicyName any
-	PolicyVersionList any
-	UpdateDate any
+	PolicyId                      any
+	PolicyName                    any
+	PolicyVersionList             any
+	UpdateDate                    any
 }
 
 type AccountAuthorizationDetails_RoleDetailList_InstanceProfileList_Roles_PermissionsBoundary struct {
-	PermissionsBoundaryArn any
+	PermissionsBoundaryArn  any
 	PermissionsBoundaryType any
 }
 
 type AccountAuthorizationDetails_RoleDetailList_InstanceProfileList_Roles_RoleLastUsed struct {
 	LastUsedDate any
-	Region any
+	Region       any
 }
 
 type AccountAuthorizationDetails_RoleDetailList_InstanceProfileList_Roles_SourceRoleTemplate struct {
-	TemplateArn any
+	TemplateArn          any
 	TemplateMinorVersion any
 }
 
 type AccountAuthorizationDetails_RoleDetailList_InstanceProfileList_Roles_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type AccountAuthorizationDetails_RoleDetailList_InstanceProfileList_Roles struct {
-	Arn any
+	Arn                      any
 	AssumeRolePolicyDocument any
-	CreateDate any
-	Description any
-	MaxSessionDuration any
-	Path any
-	PermissionsBoundary any
-	RoleId any
-	RoleLastUsed any
-	RoleName any
-	SourceRoleTemplate any
-	Tags any
+	CreateDate               any
+	Description              any
+	MaxSessionDuration       any
+	Path                     any
+	PermissionsBoundary      any
+	RoleId                   any
+	RoleLastUsed             any
+	RoleName                 any
+	SourceRoleTemplate       any
+	Tags                     any
 }
 
 type AccountAuthorizationDetails_RoleDetailList_InstanceProfileList struct {
-	Arn any
-	CreateDate any
-	InstanceProfileId any
+	Arn                 any
+	CreateDate          any
+	InstanceProfileId   any
 	InstanceProfileName any
-	Path any
-	Roles any
-	Tags any
+	Path                any
+	Roles               any
+	Tags                any
 }
 
 type AccountAuthorizationDetails_RoleDetailList struct {
-	Arn any
+	Arn                      any
 	AssumeRolePolicyDocument any
-	AttachedManagedPolicies any
-	CreateDate any
-	InstanceProfileList any
-	Path any
-	PermissionsBoundary any
-	RoleId any
-	RoleLastUsed any
-	RoleName any
-	RolePolicyList any
-	Tags any
+	AttachedManagedPolicies  any
+	CreateDate               any
+	InstanceProfileList      any
+	Path                     any
+	PermissionsBoundary      any
+	RoleId                   any
+	RoleLastUsed             any
+	RoleName                 any
+	RolePolicyList           any
+	Tags                     any
 }
 
 type AccountAuthorizationDetails_UserDetailList struct {
-	Arn any
+	Arn                     any
 	AttachedManagedPolicies any
-	CreateDate any
-	GroupList any
-	Path any
-	PermissionsBoundary any
-	Tags any
-	UserId any
-	UserName any
-	UserPolicyList any
+	CreateDate              any
+	GroupList               any
+	Path                    any
+	PermissionsBoundary     any
+	Tags                    any
+	UserId                  any
+	UserName                any
+	UserPolicyList          any
 }
 
 type AccountAuthorizationDetailsConfig struct {
-	Filter any
-	Marker any
+	Filter   any
+	Marker   any
 	MaxItems any
 }
 
 type AccountAuthorizationDetailsAttrs struct {
-	Filter any
+	Filter          any
 	GroupDetailList any
-	IsTruncated any
-	Marker any
-	MaxItems any
-	Policies any
-	RoleDetailList any
-	UserDetailList any
+	IsTruncated     any
+	Marker          any
+	MaxItems        any
+	Policies        any
+	RoleDetailList  any
+	UserDetailList  any
 }
 
 var AccountAuthorizationDetails = ubx.DataSourceBinding{
 	WireType: "aws_iam_account_authorization_details",
 	Fields: ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Filter":   ubx.FieldSpec{WireName: "filter"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 	},
 }

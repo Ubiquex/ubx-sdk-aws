@@ -34,10 +34,10 @@ type PolicyAttrs struct {
 var Policy = ubx.ResourceBinding{
 	WireType: "aws_iam_policy",
 	Fields: ubx.FieldMap{
-		"Groups": ubx.FieldSpec{WireName: "groups"},
+		"Groups":         ubx.FieldSpec{WireName: "groups"},
 		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-		"Roles": ubx.FieldSpec{WireName: "roles"},
-		"Users": ubx.FieldSpec{WireName: "users"},
+		"PolicyName":     ubx.FieldSpec{WireName: "policy_name"},
+		"Roles":          ubx.FieldSpec{WireName: "roles"},
+		"Users":          ubx.FieldSpec{WireName: "users"},
 	},
 }

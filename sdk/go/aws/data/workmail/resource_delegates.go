@@ -4,31 +4,31 @@ package workmail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceDelegates_Delegates struct {
-	Id any
+	Id   any
 	Type any
 }
 
 type ResourceDelegatesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
-	ResourceId any
+	ResourceId     any
 }
 
 type ResourceDelegatesAttrs struct {
-	Delegates any
-	MaxResults any
-	NextToken any
+	Delegates      any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
-	ResourceId any
+	ResourceId     any
 }
 
 var ResourceDelegates = ubx.DataSourceBinding{
 	WireType: "aws_workmail_resource_delegates",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceId":     ubx.FieldSpec{WireName: "resource_id"},
 	},
 }

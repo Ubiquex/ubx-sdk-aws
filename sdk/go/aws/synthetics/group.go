@@ -11,9 +11,9 @@ type Group_Tags struct {
 }
 
 var Group_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type GroupConfig struct {
 	// Name of the group.
@@ -38,12 +38,12 @@ type GroupAttrs struct {
 var Group = ubx.ResourceBinding{
 	WireType: "aws_synthetics_group",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"ResourceArns": ubx.FieldSpec{WireName: "resource_arns"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Group_TagsFields,
+			Kind:     "list",
+			Fields:   Group_TagsFields,
 		},
 	},
 }

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CatalogMarketplaceAssessments_AssessmentSummaryList_AssessmentTargetSummary struct {
 	ChangeSetId any
-	EntityId any
+	EntityId    any
 }
 
 type CatalogMarketplaceAssessments_AssessmentSummaryList_FrameworkSummary_AmisecuritySummary struct {
@@ -13,69 +13,69 @@ type CatalogMarketplaceAssessments_AssessmentSummaryList_FrameworkSummary_Amisec
 }
 
 type CatalogMarketplaceAssessments_AssessmentSummaryList_FrameworkSummary struct {
-	AmisecuritySummary any
+	AmisecuritySummary       any
 	ContainerSecuritySummary any
 }
 
 type CatalogMarketplaceAssessments_AssessmentSummaryList struct {
-	AssessmentArn any
-	AssessmentId any
-	AssessmentResult any
+	AssessmentArn           any
+	AssessmentId            any
+	AssessmentResult        any
 	AssessmentTargetSummary any
-	CreatedAt any
-	ExpiresAt any
-	FrameworkId any
-	FrameworkSummary any
+	CreatedAt               any
+	ExpiresAt               any
+	FrameworkId             any
+	FrameworkSummary        any
 }
 
 type CatalogMarketplaceAssessments_FrameworkFilters struct {
-	AmisecurityFilters any
+	AmisecurityFilters       any
 	ContainerSecurityFilters any
 }
 
 var CatalogMarketplaceAssessments_AssessmentSummaryList_AssessmentTargetSummaryFields = ubx.FieldMap{
-		"ChangeSetId": ubx.FieldSpec{WireName: "change_set_id"},
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-	}
+	"ChangeSetId": ubx.FieldSpec{WireName: "change_set_id"},
+	"EntityId":    ubx.FieldSpec{WireName: "entity_id"},
+}
 
 var CatalogMarketplaceAssessments_AssessmentSummaryList_FrameworkSummary_AmisecuritySummaryFields = ubx.FieldMap{
-		"DeliveryOptionId": ubx.FieldSpec{WireName: "delivery_option_id"},
-	}
+	"DeliveryOptionId": ubx.FieldSpec{WireName: "delivery_option_id"},
+}
 
 var CatalogMarketplaceAssessments_FrameworkFiltersFields = ubx.FieldMap{
-		"AmisecurityFilters": ubx.FieldSpec{
-			WireName: "amisecurity_filters",
-			Kind: "object",
-			Fields: CatalogMarketplaceAssessments_AssessmentSummaryList_FrameworkSummary_AmisecuritySummaryFields,
-		},
-		"ContainerSecurityFilters": ubx.FieldSpec{
-			WireName: "container_security_filters",
-			Kind: "object",
-			Fields: CatalogMarketplaceAssessments_AssessmentSummaryList_FrameworkSummary_AmisecuritySummaryFields,
-		},
-	}
+	"AmisecurityFilters": ubx.FieldSpec{
+		WireName: "amisecurity_filters",
+		Kind:     "object",
+		Fields:   CatalogMarketplaceAssessments_AssessmentSummaryList_FrameworkSummary_AmisecuritySummaryFields,
+	},
+	"ContainerSecurityFilters": ubx.FieldSpec{
+		WireName: "container_security_filters",
+		Kind:     "object",
+		Fields:   CatalogMarketplaceAssessments_AssessmentSummaryList_FrameworkSummary_AmisecuritySummaryFields,
+	},
+}
 
 type CatalogMarketplaceAssessmentsConfig struct {
 	// <p>Filters assessment list results by the resource that was assessed. Provide an entity identifier, a change set identifier, or both.</p>
 	AssessmentTargetFilter any
-	Catalog any
+	Catalog                any
 	// <p>Framework-specific filters used to scope <code>ListAssessments</code> results. Set exactly one member, corresponding to the framework you want to filter by.</p>
 	FrameworkFilters any
-	FrameworkId any
-	MaxResults any
-	NextToken any
+	FrameworkId      any
+	MaxResults       any
+	NextToken        any
 }
 
 type CatalogMarketplaceAssessmentsAttrs struct {
 	AssessmentSummaryList any
 	// <p>Filters assessment list results by the resource that was assessed. Provide an entity identifier, a change set identifier, or both.</p>
 	AssessmentTargetFilter any
-	Catalog any
+	Catalog                any
 	// <p>Framework-specific filters used to scope <code>ListAssessments</code> results. Set exactly one member, corresponding to the framework you want to filter by.</p>
 	FrameworkFilters any
-	FrameworkId any
-	MaxResults any
-	NextToken any
+	FrameworkId      any
+	MaxResults       any
+	NextToken        any
 }
 
 var CatalogMarketplaceAssessments = ubx.DataSourceBinding{
@@ -83,17 +83,17 @@ var CatalogMarketplaceAssessments = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AssessmentTargetFilter": ubx.FieldSpec{
 			WireName: "assessment_target_filter",
-			Kind: "object",
-			Fields: CatalogMarketplaceAssessments_AssessmentSummaryList_AssessmentTargetSummaryFields,
+			Kind:     "object",
+			Fields:   CatalogMarketplaceAssessments_AssessmentSummaryList_AssessmentTargetSummaryFields,
 		},
 		"Catalog": ubx.FieldSpec{WireName: "catalog"},
 		"FrameworkFilters": ubx.FieldSpec{
 			WireName: "framework_filters",
-			Kind: "object",
-			Fields: CatalogMarketplaceAssessments_FrameworkFiltersFields,
+			Kind:     "object",
+			Fields:   CatalogMarketplaceAssessments_FrameworkFiltersFields,
 		},
 		"FrameworkId": ubx.FieldSpec{WireName: "framework_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

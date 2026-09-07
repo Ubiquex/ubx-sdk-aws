@@ -4,36 +4,36 @@ package ssm_sap
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmSapApplications_Applications struct {
-	Arn any
+	Arn             any
 	DiscoveryStatus any
-	Id any
-	Tags any
-	Type any
+	Id              any
+	Tags            any
+	Type            any
 }
 
 type SsmSapApplications_Filters struct {
-	Name any
+	Name     any
 	Operator any
-	Value any
+	Value    any
 }
 
 var SsmSapApplications_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 type SsmSapApplicationsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SsmSapApplicationsAttrs struct {
 	Applications any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters      any
+	MaxResults   any
+	NextToken    any
 }
 
 var SsmSapApplications = ubx.DataSourceBinding{
@@ -41,10 +41,10 @@ var SsmSapApplications = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SsmSapApplications_FiltersFields,
+			Kind:     "list",
+			Fields:   SsmSapApplications_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

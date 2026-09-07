@@ -44,7 +44,7 @@ type InstanceFleetConfig_InstanceTypeConfigs struct {
 	BidPriceAsPercentageOfOnDemandPrice any
 	// For each instance type in the EMR instance fleet, this list of configuration objects defines custom application and software settings (classification and property key–value pairs) that are applied to the nodes of that instance type. (AI-inferred)
 	Configurations any
-	CustomAmiId any
+	CustomAmiId    any
 	// Configures the Amazon EBS volumes and EBS-optimized setting for instances of the associated instance type within the EMR instance fleet. (AI-inferred)
 	EbsConfiguration any
 	// The EC2 instance type (e.g., m5.xlarge) for this instance type configuration within the EMR instance fleet, defining the hardware for the instances in the fleet. (AI-inferred)
@@ -113,117 +113,117 @@ type InstanceFleetConfig_ResizeSpecifications struct {
 }
 
 var InstanceFleetConfig_InstanceTypeConfigs_ConfigurationsFields = ubx.FieldMap{
-		"Classification": ubx.FieldSpec{WireName: "classification"},
-		"ConfigurationProperties": ubx.FieldSpec{WireName: "configuration_properties"},
-		"Configurations": ubx.FieldSpec{WireName: "configurations"},
-	}
+	"Classification":          ubx.FieldSpec{WireName: "classification"},
+	"ConfigurationProperties": ubx.FieldSpec{WireName: "configuration_properties"},
+	"Configurations":          ubx.FieldSpec{WireName: "configurations"},
+}
 
 var InstanceFleetConfig_InstanceTypeConfigs_EbsConfiguration_EbsBlockDeviceConfigs_VolumeSpecificationFields = ubx.FieldMap{
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"SizeInGb": ubx.FieldSpec{WireName: "size_in_gb"},
-		"Throughput": ubx.FieldSpec{WireName: "throughput"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
-	}
+	"Iops":       ubx.FieldSpec{WireName: "iops"},
+	"SizeInGb":   ubx.FieldSpec{WireName: "size_in_gb"},
+	"Throughput": ubx.FieldSpec{WireName: "throughput"},
+	"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
+}
 
 var InstanceFleetConfig_InstanceTypeConfigs_EbsConfiguration_EbsBlockDeviceConfigsFields = ubx.FieldMap{
-		"VolumeSpecification": ubx.FieldSpec{
-			WireName: "volume_specification",
-			Kind: "object",
-			Fields: InstanceFleetConfig_InstanceTypeConfigs_EbsConfiguration_EbsBlockDeviceConfigs_VolumeSpecificationFields,
-		},
-		"VolumesPerInstance": ubx.FieldSpec{WireName: "volumes_per_instance"},
-	}
+	"VolumeSpecification": ubx.FieldSpec{
+		WireName: "volume_specification",
+		Kind:     "object",
+		Fields:   InstanceFleetConfig_InstanceTypeConfigs_EbsConfiguration_EbsBlockDeviceConfigs_VolumeSpecificationFields,
+	},
+	"VolumesPerInstance": ubx.FieldSpec{WireName: "volumes_per_instance"},
+}
 
 var InstanceFleetConfig_InstanceTypeConfigs_EbsConfigurationFields = ubx.FieldMap{
-		"EbsBlockDeviceConfigs": ubx.FieldSpec{
-			WireName: "ebs_block_device_configs",
-			Kind: "list",
-			Fields: InstanceFleetConfig_InstanceTypeConfigs_EbsConfiguration_EbsBlockDeviceConfigsFields,
-		},
-		"EbsOptimized": ubx.FieldSpec{WireName: "ebs_optimized"},
-	}
+	"EbsBlockDeviceConfigs": ubx.FieldSpec{
+		WireName: "ebs_block_device_configs",
+		Kind:     "list",
+		Fields:   InstanceFleetConfig_InstanceTypeConfigs_EbsConfiguration_EbsBlockDeviceConfigsFields,
+	},
+	"EbsOptimized": ubx.FieldSpec{WireName: "ebs_optimized"},
+}
 
 var InstanceFleetConfig_InstanceTypeConfigsFields = ubx.FieldMap{
-		"BidPrice": ubx.FieldSpec{WireName: "bid_price"},
-		"BidPriceAsPercentageOfOnDemandPrice": ubx.FieldSpec{WireName: "bid_price_as_percentage_of_on_demand_price"},
-		"Configurations": ubx.FieldSpec{
-			WireName: "configurations",
-			Kind: "list",
-			Fields: InstanceFleetConfig_InstanceTypeConfigs_ConfigurationsFields,
-		},
-		"CustomAmiId": ubx.FieldSpec{WireName: "custom_ami_id"},
-		"EbsConfiguration": ubx.FieldSpec{
-			WireName: "ebs_configuration",
-			Kind: "object",
-			Fields: InstanceFleetConfig_InstanceTypeConfigs_EbsConfigurationFields,
-		},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"WeightedCapacity": ubx.FieldSpec{WireName: "weighted_capacity"},
-	}
+	"BidPrice":                            ubx.FieldSpec{WireName: "bid_price"},
+	"BidPriceAsPercentageOfOnDemandPrice": ubx.FieldSpec{WireName: "bid_price_as_percentage_of_on_demand_price"},
+	"Configurations": ubx.FieldSpec{
+		WireName: "configurations",
+		Kind:     "list",
+		Fields:   InstanceFleetConfig_InstanceTypeConfigs_ConfigurationsFields,
+	},
+	"CustomAmiId": ubx.FieldSpec{WireName: "custom_ami_id"},
+	"EbsConfiguration": ubx.FieldSpec{
+		WireName: "ebs_configuration",
+		Kind:     "object",
+		Fields:   InstanceFleetConfig_InstanceTypeConfigs_EbsConfigurationFields,
+	},
+	"InstanceType":     ubx.FieldSpec{WireName: "instance_type"},
+	"Priority":         ubx.FieldSpec{WireName: "priority"},
+	"WeightedCapacity": ubx.FieldSpec{WireName: "weighted_capacity"},
+}
 
 var InstanceFleetConfig_LaunchSpecifications_OnDemandSpecification_CapacityReservationOptionsFields = ubx.FieldMap{
-		"CapacityReservationPreference": ubx.FieldSpec{WireName: "capacity_reservation_preference"},
-		"CapacityReservationResourceGroupArn": ubx.FieldSpec{WireName: "capacity_reservation_resource_group_arn"},
-		"UsageStrategy": ubx.FieldSpec{WireName: "usage_strategy"},
-	}
+	"CapacityReservationPreference":       ubx.FieldSpec{WireName: "capacity_reservation_preference"},
+	"CapacityReservationResourceGroupArn": ubx.FieldSpec{WireName: "capacity_reservation_resource_group_arn"},
+	"UsageStrategy":                       ubx.FieldSpec{WireName: "usage_strategy"},
+}
 
 var InstanceFleetConfig_LaunchSpecifications_OnDemandSpecificationFields = ubx.FieldMap{
-		"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
-		"CapacityReservationOptions": ubx.FieldSpec{
-			WireName: "capacity_reservation_options",
-			Kind: "object",
-			Fields: InstanceFleetConfig_LaunchSpecifications_OnDemandSpecification_CapacityReservationOptionsFields,
-		},
-	}
+	"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
+	"CapacityReservationOptions": ubx.FieldSpec{
+		WireName: "capacity_reservation_options",
+		Kind:     "object",
+		Fields:   InstanceFleetConfig_LaunchSpecifications_OnDemandSpecification_CapacityReservationOptionsFields,
+	},
+}
 
 var InstanceFleetConfig_LaunchSpecifications_SpotSpecificationFields = ubx.FieldMap{
-		"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
-		"BlockDurationMinutes": ubx.FieldSpec{WireName: "block_duration_minutes"},
-		"TimeoutAction": ubx.FieldSpec{WireName: "timeout_action"},
-		"TimeoutDurationMinutes": ubx.FieldSpec{WireName: "timeout_duration_minutes"},
-	}
+	"AllocationStrategy":     ubx.FieldSpec{WireName: "allocation_strategy"},
+	"BlockDurationMinutes":   ubx.FieldSpec{WireName: "block_duration_minutes"},
+	"TimeoutAction":          ubx.FieldSpec{WireName: "timeout_action"},
+	"TimeoutDurationMinutes": ubx.FieldSpec{WireName: "timeout_duration_minutes"},
+}
 
 var InstanceFleetConfig_LaunchSpecificationsFields = ubx.FieldMap{
-		"OnDemandSpecification": ubx.FieldSpec{
-			WireName: "on_demand_specification",
-			Kind: "object",
-			Fields: InstanceFleetConfig_LaunchSpecifications_OnDemandSpecificationFields,
-		},
-		"SpotSpecification": ubx.FieldSpec{
-			WireName: "spot_specification",
-			Kind: "object",
-			Fields: InstanceFleetConfig_LaunchSpecifications_SpotSpecificationFields,
-		},
-	}
+	"OnDemandSpecification": ubx.FieldSpec{
+		WireName: "on_demand_specification",
+		Kind:     "object",
+		Fields:   InstanceFleetConfig_LaunchSpecifications_OnDemandSpecificationFields,
+	},
+	"SpotSpecification": ubx.FieldSpec{
+		WireName: "spot_specification",
+		Kind:     "object",
+		Fields:   InstanceFleetConfig_LaunchSpecifications_SpotSpecificationFields,
+	},
+}
 
 var InstanceFleetConfig_ResizeSpecifications_OnDemandResizeSpecificationFields = ubx.FieldMap{
-		"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
-		"CapacityReservationOptions": ubx.FieldSpec{
-			WireName: "capacity_reservation_options",
-			Kind: "object",
-			Fields: InstanceFleetConfig_LaunchSpecifications_OnDemandSpecification_CapacityReservationOptionsFields,
-		},
-		"TimeoutDurationMinutes": ubx.FieldSpec{WireName: "timeout_duration_minutes"},
-	}
+	"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
+	"CapacityReservationOptions": ubx.FieldSpec{
+		WireName: "capacity_reservation_options",
+		Kind:     "object",
+		Fields:   InstanceFleetConfig_LaunchSpecifications_OnDemandSpecification_CapacityReservationOptionsFields,
+	},
+	"TimeoutDurationMinutes": ubx.FieldSpec{WireName: "timeout_duration_minutes"},
+}
 
 var InstanceFleetConfig_ResizeSpecifications_SpotResizeSpecificationFields = ubx.FieldMap{
-		"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
-		"TimeoutDurationMinutes": ubx.FieldSpec{WireName: "timeout_duration_minutes"},
-	}
+	"AllocationStrategy":     ubx.FieldSpec{WireName: "allocation_strategy"},
+	"TimeoutDurationMinutes": ubx.FieldSpec{WireName: "timeout_duration_minutes"},
+}
 
 var InstanceFleetConfig_ResizeSpecificationsFields = ubx.FieldMap{
-		"OnDemandResizeSpecification": ubx.FieldSpec{
-			WireName: "on_demand_resize_specification",
-			Kind: "object",
-			Fields: InstanceFleetConfig_ResizeSpecifications_OnDemandResizeSpecificationFields,
-		},
-		"SpotResizeSpecification": ubx.FieldSpec{
-			WireName: "spot_resize_specification",
-			Kind: "object",
-			Fields: InstanceFleetConfig_ResizeSpecifications_SpotResizeSpecificationFields,
-		},
-	}
+	"OnDemandResizeSpecification": ubx.FieldSpec{
+		WireName: "on_demand_resize_specification",
+		Kind:     "object",
+		Fields:   InstanceFleetConfig_ResizeSpecifications_OnDemandResizeSpecificationFields,
+	},
+	"SpotResizeSpecification": ubx.FieldSpec{
+		WireName: "spot_resize_specification",
+		Kind:     "object",
+		Fields:   InstanceFleetConfig_ResizeSpecifications_SpotResizeSpecificationFields,
+	},
+}
 
 type InstanceFleetConfigConfig struct {
 	// The ID of the EMR cluster to which this instance fleet configuration is applied. (AI-inferred)
@@ -268,25 +268,25 @@ type InstanceFleetConfigAttrs struct {
 var InstanceFleetConfig = ubx.ResourceBinding{
 	WireType: "aws_emr_instance_fleet_config",
 	Fields: ubx.FieldMap{
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
+		"ClusterId":         ubx.FieldSpec{WireName: "cluster_id"},
 		"InstanceFleetType": ubx.FieldSpec{WireName: "instance_fleet_type"},
 		"InstanceTypeConfigs": ubx.FieldSpec{
 			WireName: "instance_type_configs",
-			Kind: "list",
-			Fields: InstanceFleetConfig_InstanceTypeConfigsFields,
+			Kind:     "list",
+			Fields:   InstanceFleetConfig_InstanceTypeConfigsFields,
 		},
 		"LaunchSpecifications": ubx.FieldSpec{
 			WireName: "launch_specifications",
-			Kind: "object",
-			Fields: InstanceFleetConfig_LaunchSpecificationsFields,
+			Kind:     "object",
+			Fields:   InstanceFleetConfig_LaunchSpecificationsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ResizeSpecifications": ubx.FieldSpec{
 			WireName: "resize_specifications",
-			Kind: "object",
-			Fields: InstanceFleetConfig_ResizeSpecificationsFields,
+			Kind:     "object",
+			Fields:   InstanceFleetConfig_ResizeSpecificationsFields,
 		},
 		"TargetOnDemandCapacity": ubx.FieldSpec{WireName: "target_on_demand_capacity"},
-		"TargetSpotCapacity": ubx.FieldSpec{WireName: "target_spot_capacity"},
+		"TargetSpotCapacity":     ubx.FieldSpec{WireName: "target_spot_capacity"},
 	},
 }

@@ -4,25 +4,25 @@ package partnercentral_account
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PartnercentralAccountVerification_VerificationResponseDetails_BusinessVerificationResponse_BusinessVerificationDetails struct {
-	CountryCode any
+	CountryCode                 any
 	JurisdictionOfIncorporation any
-	LegalName any
-	RegistrationId any
+	LegalName                   any
+	RegistrationId              any
 }
 
 type PartnercentralAccountVerification_VerificationResponseDetails_BusinessVerificationResponse struct {
 	BusinessVerificationDetails any
-	CompletionUrl any
-	CompletionUrlExpiresAt any
+	CompletionUrl               any
+	CompletionUrlExpiresAt      any
 }
 
 type PartnercentralAccountVerification_VerificationResponseDetails_RegistrantVerificationResponse struct {
-	CompletionUrl any
+	CompletionUrl          any
 	CompletionUrlExpiresAt any
 }
 
 type PartnercentralAccountVerification_VerificationResponseDetails struct {
-	BusinessVerificationResponse any
+	BusinessVerificationResponse   any
 	RegistrantVerificationResponse any
 }
 
@@ -32,12 +32,12 @@ type PartnercentralAccountVerificationConfig struct {
 
 type PartnercentralAccountVerificationAttrs struct {
 	CompletedAt any
-	StartedAt any
+	StartedAt   any
 	// <p>A union structure containing the response details specific to different types of verification processes, providing type-specific information and results.</p>
 	VerificationResponseDetails any
-	VerificationStatus any
-	VerificationStatusReason any
-	VerificationType any
+	VerificationStatus          any
+	VerificationStatusReason    any
+	VerificationType            any
 }
 
 var PartnercentralAccountVerification = ubx.DataSourceBinding{

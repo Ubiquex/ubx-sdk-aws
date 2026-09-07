@@ -4,32 +4,32 @@ package transfer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HostKeys_HostKeys struct {
-	Arn any
+	Arn          any
 	DateImported any
-	Description any
-	Fingerprint any
-	HostKeyId any
-	Type any
+	Description  any
+	Fingerprint  any
+	HostKeyId    any
+	Type         any
 }
 
 type HostKeysConfig struct {
 	MaxResults any
-	NextToken any
-	ServerId any
+	NextToken  any
+	ServerId   any
 }
 
 type HostKeysAttrs struct {
-	HostKeys any
+	HostKeys   any
 	MaxResults any
-	NextToken any
-	ServerId any
+	NextToken  any
+	ServerId   any
 }
 
 var HostKeys = ubx.DataSourceBinding{
 	WireType: "aws_transfer_host_keys",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ServerId": ubx.FieldSpec{WireName: "server_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"ServerId":   ubx.FieldSpec{WireName: "server_id"},
 	},
 }

@@ -8,7 +8,7 @@ type ApplicationSessionConfigurationConfig struct {
 }
 
 type ApplicationSessionConfigurationAttrs struct {
-	ApplicationArn any
+	ApplicationArn                         any
 	UserBackgroundSessionApplicationStatus any
 }
 

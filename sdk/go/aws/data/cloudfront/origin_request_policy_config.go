@@ -4,7 +4,7 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OriginRequestPolicyConfig_OriginRequestPolicyConfig_CookiesConfig_Cookies struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
@@ -32,7 +32,7 @@ type OriginRequestPolicyConfig_OriginRequestPolicyConfig struct {
 	CookiesConfig any
 	// <p>An object that determines whether any HTTP headers (and if so, which headers) are included in requests that CloudFront sends to the origin.</p>
 	HeadersConfig any
-	Name any
+	Name          any
 	// <p>An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in requests that CloudFront sends to the origin.</p>
 	QueryStringsConfig any
 }
@@ -43,7 +43,7 @@ type OriginRequestPolicyConfigConfig struct {
 
 type OriginRequestPolicyConfigAttrs struct {
 	Etag any
-	Id any
+	Id   any
 	// <p>An origin request policy configuration.</p> <p>This configuration determines the values that CloudFront includes in requests that it sends to the origin. Each request that CloudFront sends to the origin includes the following:</p> <ul> <li> <p>The request body and the URL path (without the domain name) from the viewer request.</p> </li> <li> <p>The headers that CloudFront automatically includes in every origin request, including <code>Host</code>, <code>User-Agent</code>, and <code>X-Amz-Cf-Id</code>.</p> </li> <li> <p>All HTTP headers, cookies, and URL query strings that are specified in the cache policy or the origin request policy. These can include items from the viewer request and, in the case of headers, additional ones that are added by CloudFront.</p> </li> </ul> <p>CloudFront sends a request when it can't find an object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.</p>
 	OriginRequestPolicyConfig any
 }

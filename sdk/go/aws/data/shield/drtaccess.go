@@ -8,11 +8,10 @@ type DrtaccessConfig struct {
 
 type DrtaccessAttrs struct {
 	LogBucketList any
-	RoleArn any
+	RoleArn       any
 }
 
 var Drtaccess = ubx.DataSourceBinding{
 	WireType: "aws_shield_drtaccess",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

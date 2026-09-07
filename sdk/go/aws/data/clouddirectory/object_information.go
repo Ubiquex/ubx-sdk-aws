@@ -13,34 +13,34 @@ type ObjectInformation_SchemaFacets struct {
 }
 
 var ObjectInformation_ObjectReferenceFields = ubx.FieldMap{
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"Selector": ubx.FieldSpec{WireName: "selector"},
+}
 
 type ObjectInformationConfig struct {
 	ConsistencyLevel any
-	DirectoryArn any
+	DirectoryArn     any
 	// <p>The reference that identifies an object.</p>
 	ObjectReference any
 }
 
 type ObjectInformationAttrs struct {
 	ConsistencyLevel any
-	DirectoryArn any
+	DirectoryArn     any
 	ObjectIdentifier any
 	// <p>The reference that identifies an object.</p>
 	ObjectReference any
-	SchemaFacets any
+	SchemaFacets    any
 }
 
 var ObjectInformation = ubx.DataSourceBinding{
 	WireType: "aws_clouddirectory_object_information",
 	Fields: ubx.FieldMap{
 		"ConsistencyLevel": ubx.FieldSpec{WireName: "consistency_level"},
-		"DirectoryArn": ubx.FieldSpec{WireName: "directory_arn"},
+		"DirectoryArn":     ubx.FieldSpec{WireName: "directory_arn"},
 		"ObjectReference": ubx.FieldSpec{
 			WireName: "object_reference",
-			Kind: "object",
-			Fields: ObjectInformation_ObjectReferenceFields,
+			Kind:     "object",
+			Fields:   ObjectInformation_ObjectReferenceFields,
 		},
 	},
 }

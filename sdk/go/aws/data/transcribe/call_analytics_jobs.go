@@ -4,8 +4,8 @@ package transcribe
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CallAnalyticsJobs_CallAnalyticsJobSummaries_CallAnalyticsJobDetails_Skipped struct {
-	Feature any
-	Message any
+	Feature    any
+	Message    any
 	ReasonCode any
 }
 
@@ -15,36 +15,36 @@ type CallAnalyticsJobs_CallAnalyticsJobSummaries_CallAnalyticsJobDetails struct 
 
 type CallAnalyticsJobs_CallAnalyticsJobSummaries struct {
 	CallAnalyticsJobDetails any
-	CallAnalyticsJobName any
-	CallAnalyticsJobStatus any
-	CompletionTime any
-	CreationTime any
-	FailureReason any
-	LanguageCode any
-	StartTime any
+	CallAnalyticsJobName    any
+	CallAnalyticsJobStatus  any
+	CompletionTime          any
+	CreationTime            any
+	FailureReason           any
+	LanguageCode            any
+	StartTime               any
 }
 
 type CallAnalyticsJobsConfig struct {
 	JobNameContains any
-	MaxResults any
-	NextToken any
-	Status any
+	MaxResults      any
+	NextToken       any
+	Status          any
 }
 
 type CallAnalyticsJobsAttrs struct {
 	CallAnalyticsJobSummaries any
-	JobNameContains any
-	MaxResults any
-	NextToken any
-	Status any
+	JobNameContains           any
+	MaxResults                any
+	NextToken                 any
+	Status                    any
 }
 
 var CallAnalyticsJobs = ubx.DataSourceBinding{
 	WireType: "aws_transcribe_call_analytics_jobs",
 	Fields: ubx.FieldMap{
 		"JobNameContains": ubx.FieldSpec{WireName: "job_name_contains"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"Status":          ubx.FieldSpec{WireName: "status"},
 	},
 }

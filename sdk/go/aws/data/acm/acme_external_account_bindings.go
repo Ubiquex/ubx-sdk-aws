@@ -4,34 +4,34 @@ package acm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AcmeExternalAccountBindings_ExternalAccountBindings struct {
-	AcmeEndpointArn any
+	AcmeEndpointArn               any
 	AcmeExternalAccountBindingArn any
-	CreatedAt any
-	ExpiresAt any
-	LastUsedAt any
-	RevokedAt any
-	RoleArn any
-	UpdatedAt any
+	CreatedAt                     any
+	ExpiresAt                     any
+	LastUsedAt                    any
+	RevokedAt                     any
+	RoleArn                       any
+	UpdatedAt                     any
 }
 
 type AcmeExternalAccountBindingsConfig struct {
 	AcmeEndpointArn any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 type AcmeExternalAccountBindingsAttrs struct {
-	AcmeEndpointArn any
+	AcmeEndpointArn         any
 	ExternalAccountBindings any
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 }
 
 var AcmeExternalAccountBindings = ubx.DataSourceBinding{
 	WireType: "aws_acm_acme_external_account_bindings",
 	Fields: ubx.FieldMap{
 		"AcmeEndpointArn": ubx.FieldSpec{WireName: "acme_endpoint_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

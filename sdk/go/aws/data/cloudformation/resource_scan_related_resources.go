@@ -4,46 +4,46 @@ package cloudformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceScanRelatedResources_RelatedResources struct {
-	ManagedByStack any
+	ManagedByStack     any
 	ResourceIdentifier any
-	ResourceType any
+	ResourceType       any
 }
 
 type ResourceScanRelatedResources_Resources struct {
 	ResourceIdentifier any
-	ResourceType any
+	ResourceType       any
 }
 
 var ResourceScanRelatedResources_ResourcesFields = ubx.FieldMap{
-		"ResourceIdentifier": ubx.FieldSpec{WireName: "resource_identifier"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-	}
+	"ResourceIdentifier": ubx.FieldSpec{WireName: "resource_identifier"},
+	"ResourceType":       ubx.FieldSpec{WireName: "resource_type"},
+}
 
 type ResourceScanRelatedResourcesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	ResourceScanId any
-	Resources any
+	Resources      any
 }
 
 type ResourceScanRelatedResourcesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	RelatedResources any
-	ResourceScanId any
-	Resources any
+	ResourceScanId   any
+	Resources        any
 }
 
 var ResourceScanRelatedResources = ubx.DataSourceBinding{
 	WireType: "aws_cloudformation_resource_scan_related_resources",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"ResourceScanId": ubx.FieldSpec{WireName: "resource_scan_id"},
 		"Resources": ubx.FieldSpec{
 			WireName: "resources",
-			Kind: "list",
-			Fields: ResourceScanRelatedResources_ResourcesFields,
+			Kind:     "list",
+			Fields:   ResourceScanRelatedResources_ResourcesFields,
 		},
 	},
 }

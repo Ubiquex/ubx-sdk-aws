@@ -11,19 +11,19 @@ type VpcIngressConnection_IngressVpcConfiguration struct {
 }
 
 type VpcIngressConnection_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var VpcIngressConnection_IngressVpcConfigurationFields = ubx.FieldMap{
-		"VpcEndpointId": ubx.FieldSpec{WireName: "vpc_endpoint_id"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-	}
+	"VpcEndpointId": ubx.FieldSpec{WireName: "vpc_endpoint_id"},
+	"VpcId":         ubx.FieldSpec{WireName: "vpc_id"},
+}
 
 var VpcIngressConnection_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VpcIngressConnectionConfig struct {
 	// The configuration of customer’s VPC and related VPC endpoint
@@ -58,14 +58,14 @@ var VpcIngressConnection = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"IngressVpcConfiguration": ubx.FieldSpec{
 			WireName: "ingress_vpc_configuration",
-			Kind: "object",
-			Fields: VpcIngressConnection_IngressVpcConfigurationFields,
+			Kind:     "object",
+			Fields:   VpcIngressConnection_IngressVpcConfigurationFields,
 		},
 		"ServiceArn": ubx.FieldSpec{WireName: "service_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VpcIngressConnection_TagsFields,
+			Kind:     "list",
+			Fields:   VpcIngressConnection_TagsFields,
 		},
 		"VpcIngressConnectionName": ubx.FieldSpec{WireName: "vpc_ingress_connection_name"},
 	},

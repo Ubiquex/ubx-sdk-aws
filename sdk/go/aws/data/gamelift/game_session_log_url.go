@@ -9,7 +9,7 @@ type GameSessionLogUrlConfig struct {
 
 type GameSessionLogUrlAttrs struct {
 	GameSessionId any
-	PreSignedUrl any
+	PreSignedUrl  any
 }
 
 var GameSessionLogUrl = ubx.DataSourceBinding{

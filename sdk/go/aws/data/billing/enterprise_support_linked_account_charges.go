@@ -5,35 +5,35 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EnterpriseSupportLinkedAccountCharges_LinkedAccount_LinkedTimePeriods struct {
 	BeginDate any
-	EndDate any
+	EndDate   any
 }
 
 type EnterpriseSupportLinkedAccountCharges_LinkedAccount_SupportEligibleSpendByService struct {
-	ServiceCode any
+	ServiceCode               any
 	TotalSupportEligibleSpend any
 }
 
 type EnterpriseSupportLinkedAccountCharges_LinkedAccount struct {
-	AccountId any
-	AccountType any
-	BillableSeconds any
-	LinkedTimePeriods any
-	PayerAccountId any
-	ProratedTotalSupportEligibleSpend any
-	SubscriptionTimePeriods any
-	SupportEligibleSpendByService any
-	TotalSeconds any
+	AccountId                                 any
+	AccountType                               any
+	BillableSeconds                           any
+	LinkedTimePeriods                         any
+	PayerAccountId                            any
+	ProratedTotalSupportEligibleSpend         any
+	SubscriptionTimePeriods                   any
+	SupportEligibleSpendByService             any
+	TotalSeconds                              any
 	TotalSupportEligibleReservedInstanceSpend any
-	TotalSupportEligibleSavingsPlanSpend any
-	TotalSupportEligibleSpend any
+	TotalSupportEligibleSavingsPlanSpend      any
+	TotalSupportEligibleSpend                 any
 }
 
 type EnterpriseSupportLinkedAccountChargesConfig struct {
 	AccountId any
 	// <p>The billing month in YYYY-MM format. This must be a month in the past.</p>
 	BillingMonth any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type EnterpriseSupportLinkedAccountChargesAttrs struct {
@@ -42,16 +42,16 @@ type EnterpriseSupportLinkedAccountChargesAttrs struct {
 	BillingMonth any
 	// <p>A list of linked account charges.</p>
 	LinkedAccount any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 var EnterpriseSupportLinkedAccountCharges = ubx.DataSourceBinding{
 	WireType: "aws_billing_enterprise_support_linked_account_charges",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
 		"BillingMonth": ubx.FieldSpec{WireName: "billing_month"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

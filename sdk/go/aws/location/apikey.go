@@ -35,34 +35,34 @@ type Apikey_Tags struct {
 }
 
 var Apikey_Restrictions_AllowAndroidAppsFields = ubx.FieldMap{
-		"CertificateFingerprint": ubx.FieldSpec{WireName: "certificate_fingerprint"},
-		"Package": ubx.FieldSpec{WireName: "package"},
-	}
+	"CertificateFingerprint": ubx.FieldSpec{WireName: "certificate_fingerprint"},
+	"Package":                ubx.FieldSpec{WireName: "package"},
+}
 
 var Apikey_Restrictions_AllowAppleAppsFields = ubx.FieldMap{
-		"BundleId": ubx.FieldSpec{WireName: "bundle_id"},
-	}
+	"BundleId": ubx.FieldSpec{WireName: "bundle_id"},
+}
 
 var Apikey_RestrictionsFields = ubx.FieldMap{
-		"AllowActions": ubx.FieldSpec{WireName: "allow_actions"},
-		"AllowAndroidApps": ubx.FieldSpec{
-			WireName: "allow_android_apps",
-			Kind: "list",
-			Fields: Apikey_Restrictions_AllowAndroidAppsFields,
-		},
-		"AllowAppleApps": ubx.FieldSpec{
-			WireName: "allow_apple_apps",
-			Kind: "list",
-			Fields: Apikey_Restrictions_AllowAppleAppsFields,
-		},
-		"AllowReferers": ubx.FieldSpec{WireName: "allow_referers"},
-		"AllowResources": ubx.FieldSpec{WireName: "allow_resources"},
-	}
+	"AllowActions": ubx.FieldSpec{WireName: "allow_actions"},
+	"AllowAndroidApps": ubx.FieldSpec{
+		WireName: "allow_android_apps",
+		Kind:     "list",
+		Fields:   Apikey_Restrictions_AllowAndroidAppsFields,
+	},
+	"AllowAppleApps": ubx.FieldSpec{
+		WireName: "allow_apple_apps",
+		Kind:     "list",
+		Fields:   Apikey_Restrictions_AllowAppleAppsFields,
+	},
+	"AllowReferers":  ubx.FieldSpec{WireName: "allow_referers"},
+	"AllowResources": ubx.FieldSpec{WireName: "allow_resources"},
+}
 
 var Apikey_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApikeyConfig struct {
 	// An optional user-provided description that annotates or identifies the API key in AWS Location Service. (AI-inferred)
@@ -114,20 +114,20 @@ var Apikey = ubx.ResourceBinding{
 	WireType: "aws_location_apikey",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+		"ExpireTime":  ubx.FieldSpec{WireName: "expire_time"},
 		"ForceDelete": ubx.FieldSpec{WireName: "force_delete"},
 		"ForceUpdate": ubx.FieldSpec{WireName: "force_update"},
-		"KeyName": ubx.FieldSpec{WireName: "key_name"},
-		"NoExpiry": ubx.FieldSpec{WireName: "no_expiry"},
+		"KeyName":     ubx.FieldSpec{WireName: "key_name"},
+		"NoExpiry":    ubx.FieldSpec{WireName: "no_expiry"},
 		"Restrictions": ubx.FieldSpec{
 			WireName: "restrictions",
-			Kind: "object",
-			Fields: Apikey_RestrictionsFields,
+			Kind:     "object",
+			Fields:   Apikey_RestrictionsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Apikey_TagsFields,
+			Kind:     "list",
+			Fields:   Apikey_TagsFields,
 		},
 	},
 }

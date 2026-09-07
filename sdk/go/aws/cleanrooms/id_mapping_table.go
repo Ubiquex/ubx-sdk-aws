@@ -30,14 +30,14 @@ type IdMappingTable_Tags struct {
 }
 
 var IdMappingTable_InputReferenceConfigFields = ubx.FieldMap{
-		"InputReferenceArn": ubx.FieldSpec{WireName: "input_reference_arn"},
-		"ManageResourcePolicies": ubx.FieldSpec{WireName: "manage_resource_policies"},
-	}
+	"InputReferenceArn":      ubx.FieldSpec{WireName: "input_reference_arn"},
+	"ManageResourcePolicies": ubx.FieldSpec{WireName: "manage_resource_policies"},
+}
 
 var IdMappingTable_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IdMappingTableConfig struct {
 	// An optional user-defined description that provides context or identification for the ID mapping table in AWS Clean Rooms. (AI-inferred)
@@ -87,16 +87,16 @@ var IdMappingTable = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"InputReferenceConfig": ubx.FieldSpec{
 			WireName: "input_reference_config",
-			Kind: "object",
-			Fields: IdMappingTable_InputReferenceConfigFields,
+			Kind:     "object",
+			Fields:   IdMappingTable_InputReferenceConfigFields,
 		},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+		"KmsKeyArn":            ubx.FieldSpec{WireName: "kms_key_arn"},
 		"MembershipIdentifier": ubx.FieldSpec{WireName: "membership_identifier"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: IdMappingTable_TagsFields,
+			Kind:     "list",
+			Fields:   IdMappingTable_TagsFields,
 		},
 	},
 }

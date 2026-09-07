@@ -10,19 +10,19 @@ type Services_Services struct {
 
 type ServicesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ServicesAttrs struct {
 	MaxResults any
-	NextToken any
-	Services any
+	NextToken  any
+	Services   any
 }
 
 var Services = ubx.DataSourceBinding{
 	WireType: "aws_servicequotas_services",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

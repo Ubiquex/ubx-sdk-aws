@@ -11,9 +11,9 @@ type OrganizationalUnit_Tags struct {
 }
 
 var OrganizationalUnit_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type OrganizationalUnitConfig struct {
 	// The friendly name of this OU.
@@ -42,12 +42,12 @@ type OrganizationalUnitAttrs struct {
 var OrganizationalUnit = ubx.ResourceBinding{
 	WireType: "aws_organizations_organizational_unit",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"ParentId": ubx.FieldSpec{WireName: "parent_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: OrganizationalUnit_TagsFields,
+			Kind:     "list",
+			Fields:   OrganizationalUnit_TagsFields,
 		},
 	},
 }

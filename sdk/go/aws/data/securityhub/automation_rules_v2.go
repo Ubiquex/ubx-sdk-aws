@@ -8,32 +8,32 @@ type AutomationRulesV2_Rules_Actions struct {
 }
 
 type AutomationRulesV2_Rules struct {
-	Actions any
-	CreatedAt any
+	Actions     any
+	CreatedAt   any
 	Description any
-	RuleArn any
-	RuleId any
-	RuleName any
-	RuleOrder any
-	RuleStatus any
-	UpdatedAt any
+	RuleArn     any
+	RuleId      any
+	RuleName    any
+	RuleOrder   any
+	RuleStatus  any
+	UpdatedAt   any
 }
 
 type AutomationRulesV2Config struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AutomationRulesV2Attrs struct {
 	MaxResults any
-	NextToken any
-	Rules any
+	NextToken  any
+	Rules      any
 }
 
 var AutomationRulesV2 = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_automation_rules_v2",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

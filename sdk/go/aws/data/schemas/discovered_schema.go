@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveredSchemaConfig struct {
 	Events any
-	Type any
+	Type   any
 }
 
 type DiscoveredSchemaAttrs struct {
 	Content any
-	Events any
-	Type any
+	Events  any
+	Type    any
 }
 
 var DiscoveredSchema = ubx.DataSourceBinding{
 	WireType: "aws_schemas_discovered_schema",
 	Fields: ubx.FieldMap{
 		"Events": ubx.FieldSpec{WireName: "events"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":   ubx.FieldSpec{WireName: "type"},
 	},
 }

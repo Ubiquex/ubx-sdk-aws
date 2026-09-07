@@ -11,9 +11,9 @@ type SignalingChannel_Tags struct {
 }
 
 var SignalingChannel_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SignalingChannelConfig struct {
 	// The period of time a signaling channel retains undelivered messages before they are discarded.
@@ -43,11 +43,11 @@ var SignalingChannel = ubx.ResourceBinding{
 	WireType: "aws_kinesis_video_signaling_channel",
 	Fields: ubx.FieldMap{
 		"MessageTtlSeconds": ubx.FieldSpec{WireName: "message_ttl_seconds"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SignalingChannel_TagsFields,
+			Kind:     "list",
+			Fields:   SignalingChannel_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

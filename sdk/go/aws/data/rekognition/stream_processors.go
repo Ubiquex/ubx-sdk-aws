@@ -4,18 +4,18 @@ package rekognition
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamProcessors_StreamProcessors struct {
-	Name any
+	Name   any
 	Status any
 }
 
 type StreamProcessorsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type StreamProcessorsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	StreamProcessors any
 }
 
@@ -23,6 +23,6 @@ var StreamProcessors = ubx.DataSourceBinding{
 	WireType: "aws_rekognition_stream_processors",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

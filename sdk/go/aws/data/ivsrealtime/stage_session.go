@@ -4,19 +4,19 @@ package ivsrealtime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StageSession_StageSession struct {
-	EndTime any
+	EndTime   any
 	SessionId any
 	StartTime any
 }
 
 type StageSessionConfig struct {
 	SessionId any
-	StageArn any
+	StageArn  any
 }
 
 type StageSessionAttrs struct {
 	SessionId any
-	StageArn any
+	StageArn  any
 	// <p>A stage session begins when the first participant joins a stage and ends after the last participant leaves the stage. A stage session helps with debugging stages by grouping events and participants into shorter periods of time (i.e., a session), which is helpful when stages are used over long periods of time.</p>
 	StageSession any
 }
@@ -25,6 +25,6 @@ var StageSession = ubx.DataSourceBinding{
 	WireType: "aws_ivsrealtime_stage_session",
 	Fields: ubx.FieldMap{
 		"SessionId": ubx.FieldSpec{WireName: "session_id"},
-		"StageArn": ubx.FieldSpec{WireName: "stage_arn"},
+		"StageArn":  ubx.FieldSpec{WireName: "stage_arn"},
 	},
 }

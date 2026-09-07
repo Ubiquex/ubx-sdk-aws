@@ -12,10 +12,10 @@ type NetworkFirewallFirewallMetadataConfig struct {
 }
 
 type NetworkFirewallFirewallMetadataAttrs struct {
-	Description any
-	FirewallArn any
-	FirewallPolicyArn any
-	Status any
+	Description                any
+	FirewallArn                any
+	FirewallPolicyArn          any
+	Status                     any
 	SupportedAvailabilityZones any
 	TransitGatewayAttachmentId any
 }

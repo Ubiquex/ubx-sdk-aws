@@ -11,9 +11,9 @@ type LicenseEndpoint_Tags struct {
 }
 
 var LicenseEndpoint_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LicenseEndpointConfig struct {
 	// Specifies the list of VPC security group IDs to associate with the license endpoint's elastic network interface, defining the firewall rules that permit traffic to and from the license endpoint. (AI-inferred)
@@ -51,11 +51,11 @@ var LicenseEndpoint = ubx.ResourceBinding{
 	WireType: "aws_deadline_license_endpoint",
 	Fields: ubx.FieldMap{
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LicenseEndpoint_TagsFields,
+			Kind:     "list",
+			Fields:   LicenseEndpoint_TagsFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

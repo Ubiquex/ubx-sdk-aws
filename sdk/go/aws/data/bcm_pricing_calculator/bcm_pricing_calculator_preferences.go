@@ -8,12 +8,11 @@ type BcmPricingCalculatorPreferencesConfig struct {
 
 type BcmPricingCalculatorPreferencesAttrs struct {
 	ManagementAccountRateTypeSelections any
-	MemberAccountRateTypeSelections any
+	MemberAccountRateTypeSelections     any
 	StandaloneAccountRateTypeSelections any
 }
 
 var BcmPricingCalculatorPreferences = ubx.DataSourceBinding{
 	WireType: "aws_bcm_pricing_calculator_preferences",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

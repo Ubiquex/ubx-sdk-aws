@@ -4,7 +4,7 @@ package voice_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChimeVoiceConnectorExternalSystemsConfiguration_ExternalSystemsConfiguration struct {
-	ContactCenterSystemTypes any
+	ContactCenterSystemTypes     any
 	SessionBorderControllerTypes any
 }
 
@@ -15,7 +15,7 @@ type VoiceChimeVoiceConnectorExternalSystemsConfigurationConfig struct {
 type VoiceChimeVoiceConnectorExternalSystemsConfigurationAttrs struct {
 	// <p>Contains information about an external systems configuration for a Voice Connector.</p>
 	ExternalSystemsConfiguration any
-	VoiceConnectorId any
+	VoiceConnectorId             any
 }
 
 var VoiceChimeVoiceConnectorExternalSystemsConfiguration = ubx.DataSourceBinding{

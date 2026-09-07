@@ -4,28 +4,28 @@ package profile
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecommenderSchemas_RecommenderSchemas_Fields struct {
-	ContentType any
-	FeatureType any
+	ContentType     any
+	FeatureType     any
 	TargetFieldName any
 }
 
 type RecommenderSchemas_RecommenderSchemas struct {
-	CreatedAt any
-	Fields any
+	CreatedAt             any
+	Fields                any
 	RecommenderSchemaName any
-	Status any
+	Status                any
 }
 
 type RecommenderSchemasConfig struct {
 	DomainName any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type RecommenderSchemasAttrs struct {
-	DomainName any
-	MaxResults any
-	NextToken any
+	DomainName         any
+	MaxResults         any
+	NextToken          any
 	RecommenderSchemas any
 }
 
@@ -34,6 +34,6 @@ var RecommenderSchemas = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

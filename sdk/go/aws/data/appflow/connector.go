@@ -5,42 +5,42 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Connector_ConnectorConfiguration_AuthenticationConfig_CustomAuthConfigs_AuthParameters struct {
 	ConnectorSuppliedValues any
-	Description any
-	IsRequired any
-	IsSensitiveField any
-	Key any
-	Label any
+	Description             any
+	IsRequired              any
+	IsSensitiveField        any
+	Key                     any
+	Label                   any
 }
 
 type Connector_ConnectorConfiguration_AuthenticationConfig_CustomAuthConfigs struct {
-	AuthParameters any
+	AuthParameters           any
 	CustomAuthenticationType any
 }
 
 type Connector_ConnectorConfiguration_AuthenticationConfig_OAuth2Defaults_Oauth2CustomProperties struct {
 	ConnectorSuppliedValues any
-	Description any
-	IsRequired any
-	IsSensitiveField any
-	Key any
-	Label any
-	Type any
+	Description             any
+	IsRequired              any
+	IsSensitiveField        any
+	Key                     any
+	Label                   any
+	Type                    any
 }
 
 type Connector_ConnectorConfiguration_AuthenticationConfig_OAuth2Defaults struct {
-	AuthCodeUrls any
-	Oauth2CustomProperties any
+	AuthCodeUrls              any
+	Oauth2CustomProperties    any
 	Oauth2GrantTypesSupported any
-	OauthScopes any
-	TokenUrls any
+	OauthScopes               any
+	TokenUrls                 any
 }
 
 type Connector_ConnectorConfiguration_AuthenticationConfig struct {
-	CustomAuthConfigs any
+	CustomAuthConfigs     any
 	IsApiKeyAuthSupported any
-	IsBasicAuthSupported any
+	IsBasicAuthSupported  any
 	IsCustomAuthSupported any
-	IsOauth2Supported any
+	IsOauth2Supported     any
 	// <p>Contains the default values required for OAuth 2.0 authentication.</p>
 	OAuth2Defaults any
 }
@@ -50,8 +50,8 @@ type Connector_ConnectorConfiguration_ConnectorMetadata_GoogleAnalytics struct {
 }
 
 type Connector_ConnectorConfiguration_ConnectorMetadata_Salesforce struct {
-	DataTransferApis any
-	OAuthScopes any
+	DataTransferApis          any
+	OAuthScopes               any
 	Oauth2GrantTypesSupported any
 }
 
@@ -117,12 +117,12 @@ type Connector_ConnectorConfiguration_ConnectorProvisioningConfig struct {
 
 type Connector_ConnectorConfiguration_ConnectorRuntimeSettings struct {
 	ConnectorSuppliedValueOptions any
-	DataType any
-	Description any
-	IsRequired any
-	Key any
-	Label any
-	Scope any
+	DataType                      any
+	Description                   any
+	IsRequired                    any
+	Key                           any
+	Label                         any
+	Scope                         any
 }
 
 type Connector_ConnectorConfiguration_SupportedDataTransferApis struct {
@@ -133,54 +133,54 @@ type Connector_ConnectorConfiguration_SupportedDataTransferApis struct {
 type Connector_ConnectorConfiguration struct {
 	// <p>Contains information about the authentication config that the connector supports.</p>
 	AuthenticationConfig any
-	CanUseAsDestination any
-	CanUseAsSource any
-	ConnectorArn any
+	CanUseAsDestination  any
+	CanUseAsSource       any
+	ConnectorArn         any
 	ConnectorDescription any
-	ConnectorLabel any
+	ConnectorLabel       any
 	// <p> A structure to specify connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on. </p>
 	ConnectorMetadata any
-	ConnectorModes any
-	ConnectorName any
-	ConnectorOwner any
+	ConnectorModes    any
+	ConnectorName     any
+	ConnectorOwner    any
 	// <p>Contains information about the configuration of the connector being registered.</p>
 	ConnectorProvisioningConfig any
 	// <p>The type of provisioning that the connector supports, such as Lambda.</p>
-	ConnectorProvisioningType any
-	ConnectorRuntimeSettings any
-	ConnectorType any
-	ConnectorVersion any
-	IsPrivateLinkEnabled any
+	ConnectorProvisioningType        any
+	ConnectorRuntimeSettings         any
+	ConnectorType                    any
+	ConnectorVersion                 any
+	IsPrivateLinkEnabled             any
 	IsPrivateLinkEndpointUrlRequired any
-	LogoUrl any
-	RegisteredAt any
-	RegisteredBy any
-	SupportedApiVersions any
-	SupportedDataTransferApis any
-	SupportedDataTransferTypes any
-	SupportedDestinationConnectors any
-	SupportedOperators any
-	SupportedSchedulingFrequencies any
-	SupportedTriggerTypes any
-	SupportedWriteOperations any
+	LogoUrl                          any
+	RegisteredAt                     any
+	RegisteredBy                     any
+	SupportedApiVersions             any
+	SupportedDataTransferApis        any
+	SupportedDataTransferTypes       any
+	SupportedDestinationConnectors   any
+	SupportedOperators               any
+	SupportedSchedulingFrequencies   any
+	SupportedTriggerTypes            any
+	SupportedWriteOperations         any
 }
 
 type ConnectorConfig struct {
 	ConnectorLabel any
-	ConnectorType any
+	ConnectorType  any
 }
 
 type ConnectorAttrs struct {
 	// <p> The configuration settings related to a given connector. </p>
 	ConnectorConfiguration any
-	ConnectorLabel any
-	ConnectorType any
+	ConnectorLabel         any
+	ConnectorType          any
 }
 
 var Connector = ubx.DataSourceBinding{
 	WireType: "aws_appflow_connector",
 	Fields: ubx.FieldMap{
 		"ConnectorLabel": ubx.FieldSpec{WireName: "connector_label"},
-		"ConnectorType": ubx.FieldSpec{WireName: "connector_type"},
+		"ConnectorType":  ubx.FieldSpec{WireName: "connector_type"},
 	},
 }

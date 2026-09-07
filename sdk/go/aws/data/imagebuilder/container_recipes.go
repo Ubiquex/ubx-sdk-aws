@@ -4,41 +4,41 @@ package imagebuilder
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContainerRecipes_ContainerRecipeSummaryList struct {
-	Arn any
+	Arn           any
 	ContainerType any
-	DateCreated any
+	DateCreated   any
 	InstanceImage any
-	Name any
-	Owner any
-	ParentImage any
-	Platform any
-	Tags any
+	Name          any
+	Owner         any
+	ParentImage   any
+	Platform      any
+	Tags          any
 }
 
 type ContainerRecipes_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var ContainerRecipes_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ContainerRecipesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	Owner any
+	NextToken  any
+	Owner      any
 }
 
 type ContainerRecipesAttrs struct {
 	ContainerRecipeSummaryList any
-	Filters any
-	MaxResults any
-	NextToken any
-	Owner any
-	RequestId any
+	Filters                    any
+	MaxResults                 any
+	NextToken                  any
+	Owner                      any
+	RequestId                  any
 }
 
 var ContainerRecipes = ubx.DataSourceBinding{
@@ -46,11 +46,11 @@ var ContainerRecipes = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ContainerRecipes_FiltersFields,
+			Kind:     "list",
+			Fields:   ContainerRecipes_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Owner": ubx.FieldSpec{WireName: "owner"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Owner":      ubx.FieldSpec{WireName: "owner"},
 	},
 }

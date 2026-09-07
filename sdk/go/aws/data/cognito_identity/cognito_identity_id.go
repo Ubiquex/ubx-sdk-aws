@@ -4,23 +4,23 @@ package cognito_identity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdentityIdConfig struct {
-	AccountId any
+	AccountId      any
 	IdentityPoolId any
-	Logins any
+	Logins         any
 }
 
 type CognitoIdentityIdAttrs struct {
-	AccountId any
-	IdentityId any
+	AccountId      any
+	IdentityId     any
 	IdentityPoolId any
-	Logins any
+	Logins         any
 }
 
 var CognitoIdentityId = ubx.DataSourceBinding{
 	WireType: "aws_cognito_identity_id",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":      ubx.FieldSpec{WireName: "account_id"},
 		"IdentityPoolId": ubx.FieldSpec{WireName: "identity_pool_id"},
-		"Logins": ubx.FieldSpec{WireName: "logins"},
+		"Logins":         ubx.FieldSpec{WireName: "logins"},
 	},
 }

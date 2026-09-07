@@ -32,13 +32,13 @@ type Channel_Tags struct {
 }
 
 var Channel_EgressAccessLogsFields = ubx.FieldMap{
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-	}
+	"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
+}
 
 var Channel_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ChannelConfig struct {
 	// A short text description of the Channel.
@@ -76,19 +76,19 @@ var Channel = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EgressAccessLogs": ubx.FieldSpec{
 			WireName: "egress_access_logs",
-			Kind: "object",
-			Fields: Channel_EgressAccessLogsFields,
+			Kind:     "object",
+			Fields:   Channel_EgressAccessLogsFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 		"IngressAccessLogs": ubx.FieldSpec{
 			WireName: "ingress_access_logs",
-			Kind: "object",
-			Fields: Channel_EgressAccessLogsFields,
+			Kind:     "object",
+			Fields:   Channel_EgressAccessLogsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Channel_TagsFields,
+			Kind:     "list",
+			Fields:   Channel_TagsFields,
 		},
 	},
 }

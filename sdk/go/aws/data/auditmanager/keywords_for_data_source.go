@@ -6,23 +6,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type KeywordsForDataSourceConfig struct {
 	// Max results in the page.
 	MaxResults any
-	NextToken any
-	Source any
+	NextToken  any
+	Source     any
 }
 
 type KeywordsForDataSourceAttrs struct {
 	Keywords any
 	// Max results in the page.
 	MaxResults any
-	NextToken any
-	Source any
+	NextToken  any
+	Source     any
 }
 
 var KeywordsForDataSource = ubx.DataSourceBinding{
 	WireType: "aws_auditmanager_keywords_for_data_source",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Source": ubx.FieldSpec{WireName: "source"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Source":     ubx.FieldSpec{WireName: "source"},
 	},
 }

@@ -10,58 +10,58 @@ type IntegratedResources_IntegratedResourceSummaries_Capabilities_Bitbucket stru
 
 type IntegratedResources_IntegratedResourceSummaries_Capabilities_Confluence struct {
 	CreateDocument any
-	FetchDocument any
+	FetchDocument  any
 	UpdateDocument any
 }
 
 type IntegratedResources_IntegratedResourceSummaries_Capabilities struct {
-	Bitbucket any
+	Bitbucket  any
 	Confluence any
-	Github any
-	Gitlab any
+	Github     any
+	Gitlab     any
 }
 
 type IntegratedResources_IntegratedResourceSummaries_Resource_BitbucketRepository struct {
-	AccessType any
-	Name any
+	AccessType         any
+	Name               any
 	ProviderResourceId any
-	Workspace any
+	Workspace          any
 }
 
 type IntegratedResources_IntegratedResourceSummaries_Resource_ConfluenceDocument struct {
-	Name any
-	PageId any
+	Name               any
+	PageId             any
 	ProviderResourceId any
-	SpaceKey any
-	SpaceTitle any
-	Title any
+	SpaceKey           any
+	SpaceTitle         any
+	Title              any
 }
 
 type IntegratedResources_IntegratedResourceSummaries_Resource_GithubRepository struct {
-	AccessType any
-	Name any
-	Owner any
+	AccessType         any
+	Name               any
+	Owner              any
 	ProviderResourceId any
 }
 
 type IntegratedResources_IntegratedResourceSummaries_Resource_GitlabRepository struct {
-	AccessType any
-	Name any
-	Namespace any
+	AccessType         any
+	Name               any
+	Namespace          any
 	ProviderResourceId any
 }
 
 type IntegratedResources_IntegratedResourceSummaries_Resource struct {
 	BitbucketRepository any
-	ConfluenceDocument any
-	GithubRepository any
-	GitlabRepository any
+	ConfluenceDocument  any
+	GithubRepository    any
+	GitlabRepository    any
 }
 
 type IntegratedResources_IntegratedResourceSummaries struct {
-	Capabilities any
+	Capabilities  any
 	IntegrationId any
-	Resource any
+	Resource      any
 }
 
 type IntegratedResourcesConfig struct {
@@ -95,10 +95,10 @@ type IntegratedResourcesAttrs struct {
 var IntegratedResources = ubx.DataSourceBinding{
 	WireType: "aws_securityagent_integrated_resources",
 	Fields: ubx.FieldMap{
-		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
+		"AgentSpaceId":  ubx.FieldSpec{WireName: "agent_space_id"},
 		"IntegrationId": ubx.FieldSpec{WireName: "integration_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"ResourceType":  ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

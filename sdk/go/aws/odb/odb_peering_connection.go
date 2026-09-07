@@ -4,14 +4,14 @@ package odb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OdbPeeringConnection_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var OdbPeeringConnection_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type OdbPeeringConnectionConfig struct {
 	// The additional CIDR blocks for the ODB peering connection.
@@ -57,14 +57,14 @@ var OdbPeeringConnection = ubx.ResourceBinding{
 	WireType: "aws_odb_odb_peering_connection",
 	Fields: ubx.FieldMap{
 		"AdditionalPeerNetworkCidrs": ubx.FieldSpec{WireName: "additional_peer_network_cidrs"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"OdbNetworkId": ubx.FieldSpec{WireName: "odb_network_id"},
-		"PeerNetworkId": ubx.FieldSpec{WireName: "peer_network_id"},
-		"PeerNetworkRouteTableIds": ubx.FieldSpec{WireName: "peer_network_route_table_ids"},
+		"DisplayName":                ubx.FieldSpec{WireName: "display_name"},
+		"OdbNetworkId":               ubx.FieldSpec{WireName: "odb_network_id"},
+		"PeerNetworkId":              ubx.FieldSpec{WireName: "peer_network_id"},
+		"PeerNetworkRouteTableIds":   ubx.FieldSpec{WireName: "peer_network_route_table_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: OdbPeeringConnection_TagsFields,
+			Kind:     "list",
+			Fields:   OdbPeeringConnection_TagsFields,
 		},
 	},
 }

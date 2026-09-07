@@ -17,24 +17,24 @@ type ModelsV2LexImport_ResourceSpecification_BotImportSpecification struct {
 	// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot. </p>
 	DataPrivacy any
 	// <p>Settings parameters for the error logs, whether it is enabled or disabled.</p>
-	ErrorLogSettings any
+	ErrorLogSettings        any
 	IdleSessionTtlinSeconds any
-	RoleArn any
-	TestBotAliasTags any
+	RoleArn                 any
+	TestBotAliasTags        any
 }
 
 type ModelsV2LexImport_ResourceSpecification_BotLocaleImportSpecification_AudioFillerSettings struct {
 	// <p>The audio filler identifier played during speech-to-speech interactions. Supported values include melody and typing variants such as <code>MELODY_CHIPPER_CHIME</code>, <code>MELODY_CURIOUS_CRAWL</code>, <code>MELODY_RISING_RIPPLE</code>, <code>MELODY_PATIENT_PING</code>, <code>MELODY_PONDERING_PONG</code>, <code>TYPING_KINETIC_KEYS</code>, and <code>TYPING_QUIET_QWERTY</code>.</p>
-	AudioType any
-	Enabled any
-	MinimumPlayDurationInMilliseconds any
+	AudioType                           any
+	Enabled                             any
+	MinimumPlayDurationInMilliseconds   any
 	ResponseDeliveryDelayInMilliseconds any
-	StartDelayInMilliseconds any
+	StartDelayInMilliseconds            any
 }
 
 type ModelsV2LexImport_ResourceSpecification_BotLocaleImportSpecification_SpeechRecognitionSettings_SpeechModelConfig_DeepgramConfig struct {
 	ApiTokenSecretArn any
-	ModelId any
+	ModelId           any
 }
 
 type ModelsV2LexImport_ResourceSpecification_BotLocaleImportSpecification_SpeechRecognitionSettings_SpeechModelConfig struct {
@@ -44,13 +44,13 @@ type ModelsV2LexImport_ResourceSpecification_BotLocaleImportSpecification_Speech
 
 type ModelsV2LexImport_ResourceSpecification_BotLocaleImportSpecification_SpeechRecognitionSettings struct {
 	// <p>Configuration settings that define which speech-to-text model to use for processing speech input.</p>
-	SpeechModelConfig any
+	SpeechModelConfig     any
 	SpeechModelPreference any
 }
 
 type ModelsV2LexImport_ResourceSpecification_BotLocaleImportSpecification_UnifiedSpeechSettings_SpeechFoundationModel struct {
 	ModelArn any
-	VoiceId any
+	VoiceId  any
 }
 
 type ModelsV2LexImport_ResourceSpecification_BotLocaleImportSpecification_UnifiedSpeechSettings struct {
@@ -59,16 +59,16 @@ type ModelsV2LexImport_ResourceSpecification_BotLocaleImportSpecification_Unifie
 }
 
 type ModelsV2LexImport_ResourceSpecification_BotLocaleImportSpecification_VoiceSettings struct {
-	Engine any
+	Engine  any
 	VoiceId any
 }
 
 type ModelsV2LexImport_ResourceSpecification_BotLocaleImportSpecification struct {
 	// <p>Configuration that plays background filler audio during speech-to-speech interactions to mask processing delays and improve the perceived responsiveness of the bot.</p> <p>Audio filler requires <code>unifiedSpeechSettings</code> (speech-to-speech) to be enabled on the bot locale when <code>enabled</code> is <code>true</code>.</p>
-	AudioFillerSettings any
-	BotId any
-	BotVersion any
-	LocaleId any
+	AudioFillerSettings          any
+	BotId                        any
+	BotVersion                   any
+	LocaleId                     any
 	NluIntentConfidenceThreshold any
 	// <p>Determines the sensitivity level for voice activity detection (VAD) in noisy environments. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise.</p> <p>Valid values include:</p> <ul> <li> <p> <code>Default</code> - Standard sensitivity level suitable for most environments</p> </li> <li> <p> <code>HighNoiseTolerance</code> - Increased tolerance for moderate background noise</p> </li> <li> <p> <code>MaximumNoiseTolerance</code> - Maximum tolerance for high levels of background noise</p> </li> </ul>
 	SpeechDetectionSensitivity any
@@ -81,32 +81,32 @@ type ModelsV2LexImport_ResourceSpecification_BotLocaleImportSpecification struct
 }
 
 type ModelsV2LexImport_ResourceSpecification_CustomVocabularyImportSpecification struct {
-	BotId any
+	BotId      any
 	BotVersion any
-	LocaleId any
+	LocaleId   any
 }
 
 type ModelsV2LexImport_ResourceSpecification_TestSetImportResourceSpecification_ImportInputLocation struct {
 	S3BucketName any
-	S3Path any
+	S3Path       any
 }
 
 type ModelsV2LexImport_ResourceSpecification_TestSetImportResourceSpecification_StorageLocation struct {
-	KmsKeyArn any
+	KmsKeyArn    any
 	S3BucketName any
-	S3Path any
+	S3Path       any
 }
 
 type ModelsV2LexImport_ResourceSpecification_TestSetImportResourceSpecification struct {
 	Description any
 	// <p>Contains information about the Amazon S3 location from which the test set is imported.</p>
 	ImportInputLocation any
-	Modality any
-	RoleArn any
+	Modality            any
+	RoleArn             any
 	// <p>Contains information about the location in which the test set is stored.</p>
 	StorageLocation any
-	TestSetName any
-	TestSetTags any
+	TestSetName     any
+	TestSetTags     any
 }
 
 type ModelsV2LexImport_ResourceSpecification struct {
@@ -125,14 +125,14 @@ type ModelsV2LexImportConfig struct {
 }
 
 type ModelsV2LexImportAttrs struct {
-	CreationDateTime any
-	FailureReasons any
-	ImportId any
-	ImportStatus any
-	ImportedResourceId any
+	CreationDateTime     any
+	FailureReasons       any
+	ImportId             any
+	ImportStatus         any
+	ImportedResourceId   any
 	ImportedResourceName any
-	LastUpdatedDateTime any
-	MergeStrategy any
+	LastUpdatedDateTime  any
+	MergeStrategy        any
 	// <p>Provides information about the bot or bot locale that you want to import. You can specify the <code>botImportSpecification</code> or the <code>botLocaleImportSpecification</code>, but not both.</p>
 	ResourceSpecification any
 }

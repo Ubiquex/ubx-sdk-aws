@@ -4,14 +4,14 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrafficMirrorTarget_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var TrafficMirrorTarget_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TrafficMirrorTargetConfig struct {
 	// The description of the Traffic Mirror target.
@@ -44,14 +44,14 @@ type TrafficMirrorTargetAttrs struct {
 var TrafficMirrorTarget = ubx.ResourceBinding{
 	WireType: "aws_ec2_traffic_mirror_target",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":                   ubx.FieldSpec{WireName: "description"},
 		"GatewayLoadBalancerEndpointId": ubx.FieldSpec{WireName: "gateway_load_balancer_endpoint_id"},
-		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
-		"NetworkLoadBalancerArn": ubx.FieldSpec{WireName: "network_load_balancer_arn"},
+		"NetworkInterfaceId":            ubx.FieldSpec{WireName: "network_interface_id"},
+		"NetworkLoadBalancerArn":        ubx.FieldSpec{WireName: "network_load_balancer_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TrafficMirrorTarget_TagsFields,
+			Kind:     "list",
+			Fields:   TrafficMirrorTarget_TagsFields,
 		},
 	},
 }

@@ -4,49 +4,49 @@ package machinelearning
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataSources_Results_Rdsmetadata_Database struct {
-	DatabaseName any
+	DatabaseName       any
 	InstanceIdentifier any
 }
 
 type DataSources_Results_Rdsmetadata struct {
-	DataPipelineId any
-	Database any
+	DataPipelineId   any
+	Database         any
 	DatabaseUserName any
-	ResourceRole any
-	SelectSqlQuery any
-	ServiceRole any
+	ResourceRole     any
+	SelectSqlQuery   any
+	ServiceRole      any
 }
 
 type DataSources_Results_RedshiftMetadata_RedshiftDatabase struct {
 	ClusterIdentifier any
-	DatabaseName any
+	DatabaseName      any
 }
 
 type DataSources_Results_RedshiftMetadata struct {
 	DatabaseUserName any
 	RedshiftDatabase any
-	SelectSqlQuery any
+	SelectSqlQuery   any
 }
 
 type DataSources_Results struct {
 	ComputeStatistics any
-	ComputeTime any
-	CreatedAt any
-	CreatedByIamUser any
-	DataLocationS3 any
+	ComputeTime       any
+	CreatedAt         any
+	CreatedByIamUser  any
+	DataLocationS3    any
 	DataRearrangement any
-	DataSizeInBytes any
-	DataSourceId any
-	FinishedAt any
-	LastUpdatedAt any
-	Message any
-	Name any
-	NumberOfFiles any
-	Rdsmetadata any
-	RedshiftMetadata any
-	RoleArn any
-	StartedAt any
-	Status any
+	DataSizeInBytes   any
+	DataSourceId      any
+	FinishedAt        any
+	LastUpdatedAt     any
+	Message           any
+	Name              any
+	NumberOfFiles     any
+	Rdsmetadata       any
+	RedshiftMetadata  any
+	RoleArn           any
+	StartedAt         any
+	Status            any
 }
 
 type DataSourcesConfig struct {
@@ -59,7 +59,7 @@ type DataSourcesConfig struct {
 	// <p>The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.</p>
 	Gt any
 	// <p>The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.</p>
-	Le any
+	Le    any
 	Limit any
 	// <p>The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.</p>
 	Lt any
@@ -83,7 +83,7 @@ type DataSourcesAttrs struct {
 	// <p>The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.</p>
 	Gt any
 	// <p>The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.</p>
-	Le any
+	Le    any
 	Limit any
 	// <p>The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.</p>
 	Lt any
@@ -92,7 +92,7 @@ type DataSourcesAttrs struct {
 	// <p>String type.</p>
 	NextToken any
 	// <p>The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.</p>
-	Prefix any
+	Prefix  any
 	Results any
 	// <p>The sort order specified in a listing condition. Possible values include the following:</p> <ul> <li> <p> <code>asc</code> - Present the information in ascending order (from A-Z).</p> </li> <li> <p> <code>dsc</code> - Present the information in descending order (from Z-A).</p> </li> </ul>
 	SortOrder any
@@ -101,16 +101,16 @@ type DataSourcesAttrs struct {
 var DataSources = ubx.DataSourceBinding{
 	WireType: "aws_machinelearning_data_sources",
 	Fields: ubx.FieldMap{
-		"Eq": ubx.FieldSpec{WireName: "eq"},
+		"Eq":             ubx.FieldSpec{WireName: "eq"},
 		"FilterVariable": ubx.FieldSpec{WireName: "filter_variable"},
-		"Ge": ubx.FieldSpec{WireName: "ge"},
-		"Gt": ubx.FieldSpec{WireName: "gt"},
-		"Le": ubx.FieldSpec{WireName: "le"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Lt": ubx.FieldSpec{WireName: "lt"},
-		"Ne": ubx.FieldSpec{WireName: "ne"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"Ge":             ubx.FieldSpec{WireName: "ge"},
+		"Gt":             ubx.FieldSpec{WireName: "gt"},
+		"Le":             ubx.FieldSpec{WireName: "le"},
+		"Limit":          ubx.FieldSpec{WireName: "limit"},
+		"Lt":             ubx.FieldSpec{WireName: "lt"},
+		"Ne":             ubx.FieldSpec{WireName: "ne"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"Prefix":         ubx.FieldSpec{WireName: "prefix"},
+		"SortOrder":      ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

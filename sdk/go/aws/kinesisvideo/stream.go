@@ -16,13 +16,13 @@ type Stream_Tags struct {
 }
 
 var Stream_StreamStorageConfigurationFields = ubx.FieldMap{
-		"DefaultStorageTier": ubx.FieldSpec{WireName: "default_storage_tier"},
-	}
+	"DefaultStorageTier": ubx.FieldSpec{WireName: "default_storage_tier"},
+}
 
 var Stream_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StreamConfig struct {
 	// The number of hours till which Kinesis Video will retain the data in the stream
@@ -64,19 +64,19 @@ var Stream = ubx.ResourceBinding{
 	WireType: "aws_kinesis_video_stream",
 	Fields: ubx.FieldMap{
 		"DataRetentionInHours": ubx.FieldSpec{WireName: "data_retention_in_hours"},
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"MediaType": ubx.FieldSpec{WireName: "media_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DeviceName":           ubx.FieldSpec{WireName: "device_name"},
+		"KmsKeyId":             ubx.FieldSpec{WireName: "kms_key_id"},
+		"MediaType":            ubx.FieldSpec{WireName: "media_type"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
 		"StreamStorageConfiguration": ubx.FieldSpec{
 			WireName: "stream_storage_configuration",
-			Kind: "object",
-			Fields: Stream_StreamStorageConfigurationFields,
+			Kind:     "object",
+			Fields:   Stream_StreamStorageConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Stream_TagsFields,
+			Kind:     "list",
+			Fields:   Stream_TagsFields,
 		},
 	},
 }

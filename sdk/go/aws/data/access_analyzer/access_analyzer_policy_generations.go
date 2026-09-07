@@ -4,31 +4,31 @@ package access_analyzer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessAnalyzerPolicyGenerations_PolicyGenerations struct {
-	CompletedOn any
-	JobId any
+	CompletedOn  any
+	JobId        any
 	PrincipalArn any
-	StartedOn any
-	Status any
+	StartedOn    any
+	Status       any
 }
 
 type AccessAnalyzerPolicyGenerationsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	PrincipalArn any
 }
 
 type AccessAnalyzerPolicyGenerationsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 	PolicyGenerations any
-	PrincipalArn any
+	PrincipalArn      any
 }
 
 var AccessAnalyzerPolicyGenerations = ubx.DataSourceBinding{
 	WireType: "aws_access_analyzer_policy_generations",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"PrincipalArn": ubx.FieldSpec{WireName: "principal_arn"},
 	},
 }

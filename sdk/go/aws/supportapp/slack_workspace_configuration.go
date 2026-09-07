@@ -20,7 +20,7 @@ type SlackWorkspaceConfigurationAttrs struct {
 var SlackWorkspaceConfiguration = ubx.ResourceBinding{
 	WireType: "aws_support_app_slack_workspace_configuration",
 	Fields: ubx.FieldMap{
-		"TeamId": ubx.FieldSpec{WireName: "team_id"},
+		"TeamId":    ubx.FieldSpec{WireName: "team_id"},
 		"VersionId": ubx.FieldSpec{WireName: "version_id"},
 	},
 }

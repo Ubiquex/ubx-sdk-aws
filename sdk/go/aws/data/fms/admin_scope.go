@@ -4,25 +4,25 @@ package fms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AdminScope_AdminScope_AccountScope struct {
-	Accounts any
-	AllAccountsEnabled any
+	Accounts                 any
+	AllAccountsEnabled       any
 	ExcludeSpecifiedAccounts any
 }
 
 type AdminScope_AdminScope_OrganizationalUnitScope struct {
-	AllOrganizationalUnitsEnabled any
+	AllOrganizationalUnitsEnabled       any
 	ExcludeSpecifiedOrganizationalUnits any
-	OrganizationalUnits any
+	OrganizationalUnits                 any
 }
 
 type AdminScope_AdminScope_PolicyTypeScope struct {
 	AllPolicyTypesEnabled any
-	PolicyTypes any
+	PolicyTypes           any
 }
 
 type AdminScope_AdminScope_RegionScope struct {
 	AllRegionsEnabled any
-	Regions any
+	Regions           any
 }
 
 type AdminScope_AdminScope struct {
@@ -44,7 +44,7 @@ type AdminScopeAttrs struct {
 	AdminAccount any
 	// <p>Defines the resources that the Firewall Manager administrator can manage. For more information about administrative scope, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-administrators.html">Managing Firewall Manager administrators</a> in the <i>Firewall Manager Developer Guide</i>.</p>
 	AdminScope any
-	Status any
+	Status     any
 }
 
 var AdminScope = ubx.DataSourceBinding{

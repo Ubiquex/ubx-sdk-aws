@@ -4,42 +4,42 @@ package cognito_idp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdpManagedLoginBrandingByClient_ManagedLoginBranding_Assets struct {
-	Bytes any
-	Category any
-	ColorMode any
-	Extension any
+	Bytes      any
+	Category   any
+	ColorMode  any
+	Extension  any
 	ResourceId any
 }
 
 type CognitoIdpManagedLoginBrandingByClient_ManagedLoginBranding struct {
-	Assets any
-	CreationDate any
-	LastModifiedDate any
-	ManagedLoginBrandingId any
-	Settings any
+	Assets                   any
+	CreationDate             any
+	LastModifiedDate         any
+	ManagedLoginBrandingId   any
+	Settings                 any
 	UseCognitoProvidedValues any
-	UserPoolId any
+	UserPoolId               any
 }
 
 type CognitoIdpManagedLoginBrandingByClientConfig struct {
-	ClientId any
+	ClientId              any
 	ReturnMergedResources any
-	UserPoolId any
+	UserPoolId            any
 }
 
 type CognitoIdpManagedLoginBrandingByClientAttrs struct {
 	ClientId any
 	// <p>A managed login branding style that's assigned to a user pool app client.</p>
-	ManagedLoginBranding any
+	ManagedLoginBranding  any
 	ReturnMergedResources any
-	UserPoolId any
+	UserPoolId            any
 }
 
 var CognitoIdpManagedLoginBrandingByClient = ubx.DataSourceBinding{
 	WireType: "aws_cognito_idp_managed_login_branding_by_client",
 	Fields: ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"ClientId":              ubx.FieldSpec{WireName: "client_id"},
 		"ReturnMergedResources": ubx.FieldSpec{WireName: "return_merged_resources"},
-		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
+		"UserPoolId":            ubx.FieldSpec{WireName: "user_pool_id"},
 	},
 }

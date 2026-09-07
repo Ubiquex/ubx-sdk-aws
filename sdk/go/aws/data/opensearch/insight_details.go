@@ -11,20 +11,20 @@ type InsightDetails_Entity struct {
 }
 
 type InsightDetails_Fields struct {
-	Name any
-	Type any
+	Name  any
+	Type  any
 	Value any
 }
 
 var InsightDetails_EntityFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type InsightDetailsConfig struct {
 	// <p>Specifies the entity for which to retrieve insights. An entity can be an Amazon OpenSearch Service domain or an Amazon Web Services account.</p>
-	Entity any
-	InsightId any
+	Entity          any
+	InsightId       any
 	ShowHtmlContent any
 }
 
@@ -32,8 +32,8 @@ type InsightDetailsAttrs struct {
 	// <p>Specifies the entity for which to retrieve insights. An entity can be an Amazon OpenSearch Service domain or an Amazon Web Services account.</p>
 	Entity any
 	// <p>A list of insight fields.</p>
-	Fields any
-	InsightId any
+	Fields          any
+	InsightId       any
 	ShowHtmlContent any
 }
 
@@ -42,10 +42,10 @@ var InsightDetails = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Entity": ubx.FieldSpec{
 			WireName: "entity",
-			Kind: "object",
-			Fields: InsightDetails_EntityFields,
+			Kind:     "object",
+			Fields:   InsightDetails_EntityFields,
 		},
-		"InsightId": ubx.FieldSpec{WireName: "insight_id"},
+		"InsightId":       ubx.FieldSpec{WireName: "insight_id"},
 		"ShowHtmlContent": ubx.FieldSpec{WireName: "show_html_content"},
 	},
 }

@@ -11,9 +11,9 @@ type LogicallyAirGappedBackupVault_Notifications struct {
 }
 
 var LogicallyAirGappedBackupVault_NotificationsFields = ubx.FieldMap{
-		"BackupVaultEvents": ubx.FieldSpec{WireName: "backup_vault_events"},
-		"SnstopicArn": ubx.FieldSpec{WireName: "snstopic_arn"},
-	}
+	"BackupVaultEvents": ubx.FieldSpec{WireName: "backup_vault_events"},
+	"SnstopicArn":       ubx.FieldSpec{WireName: "snstopic_arn"},
+}
 
 type LogicallyAirGappedBackupVaultConfig struct {
 	// The access policy is a JSON resource-based policy that controls which IAM principals can perform actions (such as creating, deleting, or restoring backups) on this logically air-gapped backup vault. (AI-inferred)
@@ -62,17 +62,17 @@ type LogicallyAirGappedBackupVaultAttrs struct {
 var LogicallyAirGappedBackupVault = ubx.ResourceBinding{
 	WireType: "aws_backup_logically_air_gapped_backup_vault",
 	Fields: ubx.FieldMap{
-		"AccessPolicy": ubx.FieldSpec{WireName: "access_policy"},
-		"BackupVaultName": ubx.FieldSpec{WireName: "backup_vault_name"},
-		"BackupVaultTags": ubx.FieldSpec{WireName: "backup_vault_tags"},
-		"EncryptionKeyArn": ubx.FieldSpec{WireName: "encryption_key_arn"},
-		"MaxRetentionDays": ubx.FieldSpec{WireName: "max_retention_days"},
-		"MinRetentionDays": ubx.FieldSpec{WireName: "min_retention_days"},
+		"AccessPolicy":       ubx.FieldSpec{WireName: "access_policy"},
+		"BackupVaultName":    ubx.FieldSpec{WireName: "backup_vault_name"},
+		"BackupVaultTags":    ubx.FieldSpec{WireName: "backup_vault_tags"},
+		"EncryptionKeyArn":   ubx.FieldSpec{WireName: "encryption_key_arn"},
+		"MaxRetentionDays":   ubx.FieldSpec{WireName: "max_retention_days"},
+		"MinRetentionDays":   ubx.FieldSpec{WireName: "min_retention_days"},
 		"MpaApprovalTeamArn": ubx.FieldSpec{WireName: "mpa_approval_team_arn"},
 		"Notifications": ubx.FieldSpec{
 			WireName: "notifications",
-			Kind: "object",
-			Fields: LogicallyAirGappedBackupVault_NotificationsFields,
+			Kind:     "object",
+			Fields:   LogicallyAirGappedBackupVault_NotificationsFields,
 		},
 	},
 }

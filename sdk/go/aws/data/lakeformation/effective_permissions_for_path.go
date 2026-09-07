@@ -20,44 +20,44 @@ type EffectivePermissionsForPath_Permissions_Resource_Catalog struct {
 }
 
 type EffectivePermissionsForPath_Permissions_Resource_DataCellsFilter struct {
-	DatabaseName any
-	Name any
+	DatabaseName   any
+	Name           any
 	TableCatalogId any
-	TableName any
+	TableName      any
 }
 
 type EffectivePermissionsForPath_Permissions_Resource_DataLocation struct {
-	CatalogId any
+	CatalogId   any
 	ResourceArn any
 }
 
 type EffectivePermissionsForPath_Permissions_Resource_Database struct {
 	CatalogId any
-	Name any
+	Name      any
 }
 
 type EffectivePermissionsForPath_Permissions_Resource_Lftag struct {
 	CatalogId any
-	TagKey any
+	TagKey    any
 	TagValues any
 }
 
 type EffectivePermissionsForPath_Permissions_Resource_LftagPolicy_Expression struct {
-	TagKey any
+	TagKey    any
 	TagValues any
 }
 
 type EffectivePermissionsForPath_Permissions_Resource_LftagPolicy struct {
-	CatalogId any
-	Expression any
+	CatalogId      any
+	Expression     any
 	ExpressionName any
-	ResourceType any
+	ResourceType   any
 }
 
 type EffectivePermissionsForPath_Permissions_Resource_Table struct {
-	CatalogId any
-	DatabaseName any
-	Name any
+	CatalogId     any
+	DatabaseName  any
+	Name          any
 	TableWildcard any
 }
 
@@ -66,47 +66,47 @@ type EffectivePermissionsForPath_Permissions_Resource_TableWithColumns_ColumnWil
 }
 
 type EffectivePermissionsForPath_Permissions_Resource_TableWithColumns struct {
-	CatalogId any
-	ColumnNames any
+	CatalogId      any
+	ColumnNames    any
 	ColumnWildcard any
-	DatabaseName any
-	Name any
+	DatabaseName   any
+	Name           any
 }
 
 type EffectivePermissionsForPath_Permissions_Resource struct {
-	Catalog any
-	DataCellsFilter any
-	DataLocation any
-	Database any
-	Lftag any
-	LftagExpression any
-	LftagPolicy any
-	Table any
+	Catalog          any
+	DataCellsFilter  any
+	DataLocation     any
+	Database         any
+	Lftag            any
+	LftagExpression  any
+	LftagPolicy      any
+	Table            any
 	TableWithColumns any
 }
 
 type EffectivePermissionsForPath_Permissions struct {
-	AdditionalDetails any
-	Condition any
-	LastUpdated any
-	LastUpdatedBy any
-	Permissions any
+	AdditionalDetails          any
+	Condition                  any
+	LastUpdated                any
+	LastUpdatedBy              any
+	Permissions                any
 	PermissionsWithGrantOption any
-	Principal any
-	Resource any
+	Principal                  any
+	Resource                   any
 }
 
 type EffectivePermissionsForPathConfig struct {
-	CatalogId any
-	MaxResults any
-	NextToken any
+	CatalogId   any
+	MaxResults  any
+	NextToken   any
 	ResourceArn any
 }
 
 type EffectivePermissionsForPathAttrs struct {
-	CatalogId any
-	MaxResults any
-	NextToken any
+	CatalogId   any
+	MaxResults  any
+	NextToken   any
 	Permissions any
 	ResourceArn any
 }
@@ -114,9 +114,9 @@ type EffectivePermissionsForPathAttrs struct {
 var EffectivePermissionsForPath = ubx.DataSourceBinding{
 	WireType: "aws_lakeformation_effective_permissions_for_path",
 	Fields: ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"CatalogId":   ubx.FieldSpec{WireName: "catalog_id"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

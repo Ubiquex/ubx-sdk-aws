@@ -11,7 +11,7 @@ type LambdaMicrovmsTagsConfig struct {
 type LambdaMicrovmsTagsAttrs struct {
 	// ARN of a taggable Lambda resource.
 	Resource any
-	Tags any
+	Tags     any
 }
 
 var LambdaMicrovmsTags = ubx.DataSourceBinding{

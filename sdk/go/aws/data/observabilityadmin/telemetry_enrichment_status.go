@@ -8,11 +8,10 @@ type TelemetryEnrichmentStatusConfig struct {
 
 type TelemetryEnrichmentStatusAttrs struct {
 	AwsResourceExplorerManagedViewArn any
-	Status any
+	Status                            any
 }
 
 var TelemetryEnrichmentStatus = ubx.DataSourceBinding{
 	WireType: "aws_observabilityadmin_telemetry_enrichment_status",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

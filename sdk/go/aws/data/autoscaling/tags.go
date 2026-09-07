@@ -4,34 +4,34 @@ package autoscaling
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Tags_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type Tags_Tags struct {
-	Key any
+	Key               any
 	PropagateAtLaunch any
-	ResourceId any
-	ResourceType any
-	Value any
+	ResourceId        any
+	ResourceType      any
+	Value             any
 }
 
 var Tags_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type TagsConfig struct {
-	Filters any
+	Filters    any
 	MaxRecords any
-	NextToken any
+	NextToken  any
 }
 
 type TagsAttrs struct {
-	Filters any
+	Filters    any
 	MaxRecords any
-	NextToken any
-	Tags any
+	NextToken  any
+	Tags       any
 }
 
 var Tags = ubx.DataSourceBinding{
@@ -39,10 +39,10 @@ var Tags = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Tags_FiltersFields,
+			Kind:     "list",
+			Fields:   Tags_FiltersFields,
 		},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

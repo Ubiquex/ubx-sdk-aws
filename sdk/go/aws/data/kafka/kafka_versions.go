@@ -4,25 +4,25 @@ package kafka
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KafkaVersions_KafkaVersions struct {
-	Status any
+	Status  any
 	Version any
 }
 
 type KafkaVersionsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type KafkaVersionsAttrs struct {
 	KafkaVersions any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 var KafkaVersions = ubx.DataSourceBinding{
 	WireType: "aws_kafka_kafka_versions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

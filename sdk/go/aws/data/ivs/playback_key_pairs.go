@@ -4,26 +4,26 @@ package ivs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PlaybackKeyPairs_KeyPairs struct {
-	Arn any
+	Arn  any
 	Name any
 	Tags any
 }
 
 type PlaybackKeyPairsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type PlaybackKeyPairsAttrs struct {
-	KeyPairs any
+	KeyPairs   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var PlaybackKeyPairs = ubx.DataSourceBinding{
 	WireType: "aws_ivs_playback_key_pairs",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

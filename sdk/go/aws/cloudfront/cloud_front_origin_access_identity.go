@@ -9,8 +9,8 @@ type CloudFrontOriginAccessIdentity_CloudFrontOriginAccessIdentityConfig struct 
 }
 
 var CloudFrontOriginAccessIdentity_CloudFrontOriginAccessIdentityConfigFields = ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-	}
+	"Comment": ubx.FieldSpec{WireName: "comment"},
+}
 
 type CloudFrontOriginAccessIdentityConfig struct {
 	// Origin access identity configuration. Send a ``GET`` request to the ``/CloudFront API version/CloudFront/identity ID/config`` resource.
@@ -31,8 +31,8 @@ var CloudFrontOriginAccessIdentity = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CloudFrontOriginAccessIdentityConfig": ubx.FieldSpec{
 			WireName: "cloud_front_origin_access_identity_config",
-			Kind: "object",
-			Fields: CloudFrontOriginAccessIdentity_CloudFrontOriginAccessIdentityConfigFields,
+			Kind:     "object",
+			Fields:   CloudFrontOriginAccessIdentity_CloudFrontOriginAccessIdentityConfigFields,
 		},
 	},
 }

@@ -26,22 +26,22 @@ type MetricFilter_MetricTransformations struct {
 }
 
 var MetricFilter_MetricTransformations_DimensionsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var MetricFilter_MetricTransformationsFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: MetricFilter_MetricTransformations_DimensionsFields,
-		},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"MetricNamespace": ubx.FieldSpec{WireName: "metric_namespace"},
-		"MetricValue": ubx.FieldSpec{WireName: "metric_value"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-	}
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   MetricFilter_MetricTransformations_DimensionsFields,
+	},
+	"MetricName":      ubx.FieldSpec{WireName: "metric_name"},
+	"MetricNamespace": ubx.FieldSpec{WireName: "metric_namespace"},
+	"MetricValue":     ubx.FieldSpec{WireName: "metric_value"},
+	"Unit":            ubx.FieldSpec{WireName: "unit"},
+}
 
 type MetricFilterConfig struct {
 	// This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see [PutTransformer](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html). If this value is ``true``, the metric filter is applied on the transformed version of the log events instead of the original ingested log events.
@@ -80,16 +80,16 @@ type MetricFilterAttrs struct {
 var MetricFilter = ubx.ResourceBinding{
 	WireType: "aws_logs_metric_filter",
 	Fields: ubx.FieldMap{
-		"ApplyOnTransformedLogs": ubx.FieldSpec{WireName: "apply_on_transformed_logs"},
+		"ApplyOnTransformedLogs":    ubx.FieldSpec{WireName: "apply_on_transformed_logs"},
 		"EmitSystemFieldDimensions": ubx.FieldSpec{WireName: "emit_system_field_dimensions"},
-		"FieldSelectionCriteria": ubx.FieldSpec{WireName: "field_selection_criteria"},
-		"FilterName": ubx.FieldSpec{WireName: "filter_name"},
-		"FilterPattern": ubx.FieldSpec{WireName: "filter_pattern"},
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
+		"FieldSelectionCriteria":    ubx.FieldSpec{WireName: "field_selection_criteria"},
+		"FilterName":                ubx.FieldSpec{WireName: "filter_name"},
+		"FilterPattern":             ubx.FieldSpec{WireName: "filter_pattern"},
+		"LogGroupName":              ubx.FieldSpec{WireName: "log_group_name"},
 		"MetricTransformations": ubx.FieldSpec{
 			WireName: "metric_transformations",
-			Kind: "list",
-			Fields: MetricFilter_MetricTransformationsFields,
+			Kind:     "list",
+			Fields:   MetricFilter_MetricTransformationsFields,
 		},
 	},
 }

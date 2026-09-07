@@ -4,7 +4,7 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IntegrationResourceProperties_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -14,34 +14,34 @@ type IntegrationResourceProperties_IntegrationResourcePropertyList_SourceProcess
 
 type IntegrationResourceProperties_IntegrationResourcePropertyList_TargetProcessingProperties struct {
 	ConnectionName any
-	EventBusArn any
-	KmsArn any
-	RoleArn any
+	EventBusArn    any
+	KmsArn         any
+	RoleArn        any
 }
 
 type IntegrationResourceProperties_IntegrationResourcePropertyList struct {
-	ResourceArn any
-	ResourcePropertyArn any
+	ResourceArn                any
+	ResourcePropertyArn        any
 	SourceProcessingProperties any
 	TargetProcessingProperties any
 }
 
 var IntegrationResourceProperties_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type IntegrationResourcePropertiesConfig struct {
-	Filters any
-	Marker any
+	Filters    any
+	Marker     any
 	MaxRecords any
 }
 
 type IntegrationResourcePropertiesAttrs struct {
-	Filters any
+	Filters                         any
 	IntegrationResourcePropertyList any
-	Marker any
-	MaxRecords any
+	Marker                          any
+	MaxRecords                      any
 }
 
 var IntegrationResourceProperties = ubx.DataSourceBinding{
@@ -49,10 +49,10 @@ var IntegrationResourceProperties = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: IntegrationResourceProperties_FiltersFields,
+			Kind:     "list",
+			Fields:   IntegrationResourceProperties_FiltersFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
 	},
 }

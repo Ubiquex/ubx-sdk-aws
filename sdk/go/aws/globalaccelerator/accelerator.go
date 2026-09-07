@@ -10,9 +10,9 @@ type Accelerator_Tags struct {
 }
 
 var Accelerator_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AcceleratorConfig struct {
 	// Indicates whether an accelerator is enabled. The value is true or false.
@@ -65,17 +65,17 @@ type AcceleratorAttrs struct {
 var Accelerator = ubx.ResourceBinding{
 	WireType: "aws_global_accelerator_accelerator",
 	Fields: ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"FlowLogsEnabled": ubx.FieldSpec{WireName: "flow_logs_enabled"},
+		"Enabled":          ubx.FieldSpec{WireName: "enabled"},
+		"FlowLogsEnabled":  ubx.FieldSpec{WireName: "flow_logs_enabled"},
 		"FlowLogsS3Bucket": ubx.FieldSpec{WireName: "flow_logs_s3_bucket"},
 		"FlowLogsS3Prefix": ubx.FieldSpec{WireName: "flow_logs_s3_prefix"},
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"IpAddresses": ubx.FieldSpec{WireName: "ip_addresses"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"IpAddressType":    ubx.FieldSpec{WireName: "ip_address_type"},
+		"IpAddresses":      ubx.FieldSpec{WireName: "ip_addresses"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Accelerator_TagsFields,
+			Kind:     "list",
+			Fields:   Accelerator_TagsFields,
 		},
 	},
 }

@@ -14,17 +14,17 @@ type NetworkInterfaceAttribute_Attachment_EnaSrdSpecification struct {
 }
 
 type NetworkInterfaceAttribute_Attachment struct {
-	AttachTime any
-	AttachmentId any
+	AttachTime          any
+	AttachmentId        any
 	DeleteOnTermination any
-	DeviceIndex any
-	EnaQueueCount any
+	DeviceIndex         any
+	EnaQueueCount       any
 	// <p>ENA Express uses Amazon Web Services Scalable Reliable Datagram (SRD) technology to increase the maximum bandwidth used per stream and minimize tail latency of network traffic between EC2 instances. With ENA Express, you can communicate between two EC2 instances in the same subnet within the same account, or in different accounts. Both sending and receiving instances must have ENA Express enabled.</p> <p>To improve the reliability of network packet delivery, ENA Express reorders network packets on the receiving end by default. However, some UDP-based applications are designed to handle network packets that are out of order to reduce the overhead for packet delivery at the network layer. When ENA Express is enabled, you can specify whether UDP network traffic uses it.</p>
 	EnaSrdSpecification any
-	InstanceId any
-	InstanceOwnerId any
-	NetworkCardIndex any
-	Status any
+	InstanceId          any
+	InstanceOwnerId     any
+	NetworkCardIndex    any
+	Status              any
 }
 
 type NetworkInterfaceAttribute_Description struct {
@@ -32,7 +32,7 @@ type NetworkInterfaceAttribute_Description struct {
 }
 
 type NetworkInterfaceAttribute_Groups struct {
-	GroupId any
+	GroupId   any
 	GroupName any
 }
 
@@ -41,8 +41,8 @@ type NetworkInterfaceAttribute_SourceDestCheck struct {
 }
 
 type NetworkInterfaceAttributeConfig struct {
-	Attribute any
-	DryRun any
+	Attribute          any
+	DryRun             any
 	NetworkInterfaceId any
 }
 
@@ -50,11 +50,11 @@ type NetworkInterfaceAttributeAttrs struct {
 	AssociatePublicIpAddress any
 	// <p>Describes a network interface attachment.</p>
 	Attachment any
-	Attribute any
+	Attribute  any
 	// <p>Describes a value for a resource attribute that is a String.</p>
-	Description any
-	DryRun any
-	Groups any
+	Description        any
+	DryRun             any
+	Groups             any
 	NetworkInterfaceId any
 	// <p>Describes a value for a resource attribute that is a Boolean value.</p>
 	SourceDestCheck any
@@ -63,8 +63,8 @@ type NetworkInterfaceAttributeAttrs struct {
 var NetworkInterfaceAttribute = ubx.DataSourceBinding{
 	WireType: "aws_ec2_network_interface_attribute",
 	Fields: ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"Attribute":          ubx.FieldSpec{WireName: "attribute"},
+		"DryRun":             ubx.FieldSpec{WireName: "dry_run"},
 		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
 	},
 }

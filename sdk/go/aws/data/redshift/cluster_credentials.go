@@ -4,36 +4,36 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClusterCredentialsConfig struct {
-	AutoCreate any
+	AutoCreate        any
 	ClusterIdentifier any
-	CustomDomainName any
-	DbGroups any
-	DbName any
-	DbUser any
-	DurationSeconds any
+	CustomDomainName  any
+	DbGroups          any
+	DbName            any
+	DbUser            any
+	DurationSeconds   any
 }
 
 type ClusterCredentialsAttrs struct {
-	AutoCreate any
+	AutoCreate        any
 	ClusterIdentifier any
-	CustomDomainName any
-	DbGroups any
-	DbName any
-	DbPassword any
-	DbUser any
-	DurationSeconds any
-	Expiration any
+	CustomDomainName  any
+	DbGroups          any
+	DbName            any
+	DbPassword        any
+	DbUser            any
+	DurationSeconds   any
+	Expiration        any
 }
 
 var ClusterCredentials = ubx.DataSourceBinding{
 	WireType: "aws_redshift_cluster_credentials",
 	Fields: ubx.FieldMap{
-		"AutoCreate": ubx.FieldSpec{WireName: "auto_create"},
+		"AutoCreate":        ubx.FieldSpec{WireName: "auto_create"},
 		"ClusterIdentifier": ubx.FieldSpec{WireName: "cluster_identifier"},
-		"CustomDomainName": ubx.FieldSpec{WireName: "custom_domain_name"},
-		"DbGroups": ubx.FieldSpec{WireName: "db_groups"},
-		"DbName": ubx.FieldSpec{WireName: "db_name"},
-		"DbUser": ubx.FieldSpec{WireName: "db_user"},
-		"DurationSeconds": ubx.FieldSpec{WireName: "duration_seconds"},
+		"CustomDomainName":  ubx.FieldSpec{WireName: "custom_domain_name"},
+		"DbGroups":          ubx.FieldSpec{WireName: "db_groups"},
+		"DbName":            ubx.FieldSpec{WireName: "db_name"},
+		"DbUser":            ubx.FieldSpec{WireName: "db_user"},
+		"DurationSeconds":   ubx.FieldSpec{WireName: "duration_seconds"},
 	},
 }

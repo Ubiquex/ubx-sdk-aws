@@ -8,54 +8,54 @@ type ComputeOptimizerEc2RecommendationProjectedMetrics_RecommendationPreferences
 }
 
 type ComputeOptimizerEc2RecommendationProjectedMetrics_RecommendedOptionProjectedMetrics_ProjectedMetrics struct {
-	Name any
+	Name       any
 	Timestamps any
-	Values any
+	Values     any
 }
 
 type ComputeOptimizerEc2RecommendationProjectedMetrics_RecommendedOptionProjectedMetrics struct {
-	ProjectedMetrics any
-	Rank any
+	ProjectedMetrics        any
+	Rank                    any
 	RecommendedInstanceType any
 }
 
 var ComputeOptimizerEc2RecommendationProjectedMetrics_RecommendationPreferencesFields = ubx.FieldMap{
-		"CpuVendorArchitectures": ubx.FieldSpec{WireName: "cpu_vendor_architectures"},
-	}
+	"CpuVendorArchitectures": ubx.FieldSpec{WireName: "cpu_vendor_architectures"},
+}
 
 type ComputeOptimizerEc2RecommendationProjectedMetricsConfig struct {
-	EndTime any
+	EndTime     any
 	InstanceArn any
-	Period any
+	Period      any
 	// <p>Describes the recommendation preferences to return in the response of a <a>GetAutoScalingGroupRecommendations</a>, <a>GetEC2InstanceRecommendations</a>, <a>GetEC2RecommendationProjectedMetrics</a>, <a>GetRDSDatabaseRecommendations</a>, and <a>GetRDSDatabaseRecommendationProjectedMetrics</a> request.</p>
 	RecommendationPreferences any
-	StartTime any
-	Stat any
+	StartTime                 any
+	Stat                      any
 }
 
 type ComputeOptimizerEc2RecommendationProjectedMetricsAttrs struct {
-	EndTime any
+	EndTime     any
 	InstanceArn any
-	Period any
+	Period      any
 	// <p>Describes the recommendation preferences to return in the response of a <a>GetAutoScalingGroupRecommendations</a>, <a>GetEC2InstanceRecommendations</a>, <a>GetEC2RecommendationProjectedMetrics</a>, <a>GetRDSDatabaseRecommendations</a>, and <a>GetRDSDatabaseRecommendationProjectedMetrics</a> request.</p>
-	RecommendationPreferences any
+	RecommendationPreferences         any
 	RecommendedOptionProjectedMetrics any
-	StartTime any
-	Stat any
+	StartTime                         any
+	Stat                              any
 }
 
 var ComputeOptimizerEc2RecommendationProjectedMetrics = ubx.DataSourceBinding{
 	WireType: "aws_compute_optimizer_ec2_recommendation_projected_metrics",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":     ubx.FieldSpec{WireName: "end_time"},
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Period": ubx.FieldSpec{WireName: "period"},
+		"Period":      ubx.FieldSpec{WireName: "period"},
 		"RecommendationPreferences": ubx.FieldSpec{
 			WireName: "recommendation_preferences",
-			Kind: "object",
-			Fields: ComputeOptimizerEc2RecommendationProjectedMetrics_RecommendationPreferencesFields,
+			Kind:     "object",
+			Fields:   ComputeOptimizerEc2RecommendationProjectedMetrics_RecommendationPreferencesFields,
 		},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Stat": ubx.FieldSpec{WireName: "stat"},
+		"Stat":      ubx.FieldSpec{WireName: "stat"},
 	},
 }

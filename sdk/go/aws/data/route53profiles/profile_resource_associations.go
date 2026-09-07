@@ -4,40 +4,40 @@ package route53profiles
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfileResourceAssociations_ProfileResourceAssociations struct {
-	CreationTime any
-	Id any
-	ModificationTime any
-	Name any
-	OwnerId any
-	ProfileId any
-	ResourceArn any
+	CreationTime       any
+	Id                 any
+	ModificationTime   any
+	Name               any
+	OwnerId            any
+	ProfileId          any
+	ResourceArn        any
 	ResourceProperties any
-	ResourceType any
-	Status any
-	StatusMessage any
+	ResourceType       any
+	Status             any
+	StatusMessage      any
 }
 
 type ProfileResourceAssociationsConfig struct {
-	MaxResults any
-	NextToken any
-	ProfileId any
+	MaxResults   any
+	NextToken    any
+	ProfileId    any
 	ResourceType any
 }
 
 type ProfileResourceAssociationsAttrs struct {
-	MaxResults any
-	NextToken any
-	ProfileId any
+	MaxResults                  any
+	NextToken                   any
+	ProfileId                   any
 	ProfileResourceAssociations any
-	ResourceType any
+	ResourceType                any
 }
 
 var ProfileResourceAssociations = ubx.DataSourceBinding{
 	WireType: "aws_route53profiles_profile_resource_associations",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"ProfileId":    ubx.FieldSpec{WireName: "profile_id"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

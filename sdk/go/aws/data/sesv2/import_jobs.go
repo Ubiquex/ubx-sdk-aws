@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImportJobs_ImportJobs_ImportDestination_ContactListDestination struct {
 	ContactListImportAction any
-	ContactListName any
+	ContactListName         any
 }
 
 type ImportJobs_ImportJobs_ImportDestination_SuppressionListDestination struct {
@@ -13,24 +13,24 @@ type ImportJobs_ImportJobs_ImportDestination_SuppressionListDestination struct {
 }
 
 type ImportJobs_ImportJobs_ImportDestination struct {
-	ContactListDestination any
+	ContactListDestination     any
 	SuppressionListDestination any
 }
 
 type ImportJobs_ImportJobs struct {
-	CreatedTimestamp any
-	FailedRecordsCount any
-	ImportDestination any
-	JobId any
-	JobStatus any
+	CreatedTimestamp      any
+	FailedRecordsCount    any
+	ImportDestination     any
+	JobId                 any
+	JobStatus             any
 	ProcessedRecordsCount any
 }
 
 type ImportJobsConfig struct {
 	// <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
 	ImportDestinationType any
-	NextToken any
-	PageSize any
+	NextToken             any
+	PageSize              any
 }
 
 type ImportJobsAttrs struct {
@@ -38,15 +38,15 @@ type ImportJobsAttrs struct {
 	ImportDestinationType any
 	// <p>A list of the import job summaries.</p>
 	ImportJobs any
-	NextToken any
-	PageSize any
+	NextToken  any
+	PageSize   any
 }
 
 var ImportJobs = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_import_jobs",
 	Fields: ubx.FieldMap{
 		"ImportDestinationType": ubx.FieldSpec{WireName: "import_destination_type"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
+		"PageSize":              ubx.FieldSpec{WireName: "page_size"},
 	},
 }

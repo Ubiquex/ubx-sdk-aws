@@ -5,17 +5,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssociatedAssets_AssetSummaries_Hierarchies struct {
 	ExternalId any
-	Id any
-	Name any
+	Id         any
+	Name       any
 }
 
 type AssociatedAssets_AssetSummaries_Status_Error_Details struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type AssociatedAssets_AssetSummaries_Status_Error struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
@@ -26,42 +26,42 @@ type AssociatedAssets_AssetSummaries_Status struct {
 }
 
 type AssociatedAssets_AssetSummaries struct {
-	Arn any
-	AssetModelId any
-	CreationDate any
-	Description any
-	ExternalId any
-	Hierarchies any
-	Id any
+	Arn            any
+	AssetModelId   any
+	CreationDate   any
+	Description    any
+	ExternalId     any
+	Hierarchies    any
+	Id             any
 	LastUpdateDate any
-	Name any
-	Status any
+	Name           any
+	Status         any
 }
 
 type AssociatedAssetsConfig struct {
-	AssetId any
-	HierarchyId any
-	MaxResults any
-	NextToken any
+	AssetId            any
+	HierarchyId        any
+	MaxResults         any
+	NextToken          any
 	TraversalDirection any
 }
 
 type AssociatedAssetsAttrs struct {
-	AssetId any
-	AssetSummaries any
-	HierarchyId any
-	MaxResults any
-	NextToken any
+	AssetId            any
+	AssetSummaries     any
+	HierarchyId        any
+	MaxResults         any
+	NextToken          any
 	TraversalDirection any
 }
 
 var AssociatedAssets = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_associated_assets",
 	Fields: ubx.FieldMap{
-		"AssetId": ubx.FieldSpec{WireName: "asset_id"},
-		"HierarchyId": ubx.FieldSpec{WireName: "hierarchy_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"AssetId":            ubx.FieldSpec{WireName: "asset_id"},
+		"HierarchyId":        ubx.FieldSpec{WireName: "hierarchy_id"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 		"TraversalDirection": ubx.FieldSpec{WireName: "traversal_direction"},
 	},
 }

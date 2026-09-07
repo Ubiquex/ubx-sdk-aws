@@ -9,8 +9,8 @@ type FormType_Model struct {
 }
 
 var FormType_ModelFields = ubx.FieldMap{
-		"Smithy": ubx.FieldSpec{WireName: "smithy"},
-	}
+	"Smithy": ubx.FieldSpec{WireName: "smithy"},
+}
 
 type FormTypeConfig struct {
 	// The description of this Amazon DataZone metadata form type.
@@ -57,15 +57,15 @@ type FormTypeAttrs struct {
 var FormType = ubx.ResourceBinding{
 	WireType: "aws_data_zone_form_type",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
 		"Model": ubx.FieldSpec{
 			WireName: "model",
-			Kind: "object",
-			Fields: FormType_ModelFields,
+			Kind:     "object",
+			Fields:   FormType_ModelFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
 		"OwningProjectIdentifier": ubx.FieldSpec{WireName: "owning_project_identifier"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":                  ubx.FieldSpec{WireName: "status"},
 	},
 }

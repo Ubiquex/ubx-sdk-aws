@@ -4,32 +4,32 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrderableReplicationInstances_OrderableReplicationInstances struct {
-	AvailabilityZones any
-	DefaultAllocatedStorage any
-	EngineVersion any
+	AvailabilityZones        any
+	DefaultAllocatedStorage  any
+	EngineVersion            any
 	IncludedAllocatedStorage any
-	MaxAllocatedStorage any
-	MinAllocatedStorage any
-	ReleaseStatus any
+	MaxAllocatedStorage      any
+	MinAllocatedStorage      any
+	ReleaseStatus            any
 	ReplicationInstanceClass any
-	StorageType any
+	StorageType              any
 }
 
 type OrderableReplicationInstancesConfig struct {
-	Marker any
+	Marker     any
 	MaxRecords any
 }
 
 type OrderableReplicationInstancesAttrs struct {
-	Marker any
-	MaxRecords any
+	Marker                        any
+	MaxRecords                    any
 	OrderableReplicationInstances any
 }
 
 var OrderableReplicationInstances = ubx.DataSourceBinding{
 	WireType: "aws_dms_orderable_replication_instances",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
 	},
 }

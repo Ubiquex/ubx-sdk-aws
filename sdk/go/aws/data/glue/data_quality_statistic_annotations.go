@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataQualityStatisticAnnotations_Annotations_InclusionAnnotation struct {
 	LastModifiedOn any
-	Value any
+	Value          any
 }
 
 type DataQualityStatisticAnnotations_Annotations struct {
 	InclusionAnnotation any
-	ProfileId any
-	StatisticId any
+	ProfileId           any
+	StatisticId         any
 	StatisticRecordedOn any
 }
 
 type DataQualityStatisticAnnotations_TimestampFilter struct {
-	RecordedAfter any
+	RecordedAfter  any
 	RecordedBefore any
 }
 
 var DataQualityStatisticAnnotations_TimestampFilterFields = ubx.FieldMap{
-		"RecordedAfter": ubx.FieldSpec{WireName: "recorded_after"},
-		"RecordedBefore": ubx.FieldSpec{WireName: "recorded_before"},
-	}
+	"RecordedAfter":  ubx.FieldSpec{WireName: "recorded_after"},
+	"RecordedBefore": ubx.FieldSpec{WireName: "recorded_before"},
+}
 
 type DataQualityStatisticAnnotationsConfig struct {
-	MaxResults any
-	NextToken any
-	ProfileId any
+	MaxResults  any
+	NextToken   any
+	ProfileId   any
 	StatisticId any
 	// <p>A timestamp filter.</p>
 	TimestampFilter any
@@ -36,9 +36,9 @@ type DataQualityStatisticAnnotationsConfig struct {
 
 type DataQualityStatisticAnnotationsAttrs struct {
 	Annotations any
-	MaxResults any
-	NextToken any
-	ProfileId any
+	MaxResults  any
+	NextToken   any
+	ProfileId   any
 	StatisticId any
 	// <p>A timestamp filter.</p>
 	TimestampFilter any
@@ -47,14 +47,14 @@ type DataQualityStatisticAnnotationsAttrs struct {
 var DataQualityStatisticAnnotations = ubx.DataSourceBinding{
 	WireType: "aws_glue_data_quality_statistic_annotations",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"ProfileId":   ubx.FieldSpec{WireName: "profile_id"},
 		"StatisticId": ubx.FieldSpec{WireName: "statistic_id"},
 		"TimestampFilter": ubx.FieldSpec{
 			WireName: "timestamp_filter",
-			Kind: "object",
-			Fields: DataQualityStatisticAnnotations_TimestampFilterFields,
+			Kind:     "object",
+			Fields:   DataQualityStatisticAnnotations_TimestampFilterFields,
 		},
 	},
 }

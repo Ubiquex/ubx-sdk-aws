@@ -30,9 +30,9 @@ type VpcLinkAttrs struct {
 var VpcLink = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_v2_vpc_link",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+		"Tags":             ubx.FieldSpec{WireName: "tags"},
 	},
 }

@@ -9,8 +9,8 @@ type EnvironmentActions_Parameters struct {
 }
 
 var EnvironmentActions_ParametersFields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 type EnvironmentActionsConfig struct {
 	// The description of the Amazon DataZone environment action.
@@ -51,15 +51,15 @@ type EnvironmentActionsAttrs struct {
 var EnvironmentActions = ubx.ResourceBinding{
 	WireType: "aws_data_zone_environment_actions",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"DomainIdentifier":      ubx.FieldSpec{WireName: "domain_identifier"},
 		"EnvironmentIdentifier": ubx.FieldSpec{WireName: "environment_identifier"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Identifier":            ubx.FieldSpec{WireName: "identifier"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
 		"Parameters": ubx.FieldSpec{
 			WireName: "parameters",
-			Kind: "object",
-			Fields: EnvironmentActions_ParametersFields,
+			Kind:     "object",
+			Fields:   EnvironmentActions_ParametersFields,
 		},
 	},
 }

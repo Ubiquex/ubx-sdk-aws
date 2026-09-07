@@ -53,59 +53,59 @@ type LoggingConfiguration_RedactedFields struct {
 }
 
 var LoggingConfiguration_LoggingFilter_Filters_Conditions_ActionConditionFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+}
 
 var LoggingConfiguration_LoggingFilter_Filters_Conditions_LabelNameConditionFields = ubx.FieldMap{
-		"LabelName": ubx.FieldSpec{WireName: "label_name"},
-	}
+	"LabelName": ubx.FieldSpec{WireName: "label_name"},
+}
 
 var LoggingConfiguration_LoggingFilter_Filters_ConditionsFields = ubx.FieldMap{
-		"ActionCondition": ubx.FieldSpec{
-			WireName: "action_condition",
-			Kind: "object",
-			Fields: LoggingConfiguration_LoggingFilter_Filters_Conditions_ActionConditionFields,
-		},
-		"LabelNameCondition": ubx.FieldSpec{
-			WireName: "label_name_condition",
-			Kind: "object",
-			Fields: LoggingConfiguration_LoggingFilter_Filters_Conditions_LabelNameConditionFields,
-		},
-	}
+	"ActionCondition": ubx.FieldSpec{
+		WireName: "action_condition",
+		Kind:     "object",
+		Fields:   LoggingConfiguration_LoggingFilter_Filters_Conditions_ActionConditionFields,
+	},
+	"LabelNameCondition": ubx.FieldSpec{
+		WireName: "label_name_condition",
+		Kind:     "object",
+		Fields:   LoggingConfiguration_LoggingFilter_Filters_Conditions_LabelNameConditionFields,
+	},
+}
 
 var LoggingConfiguration_LoggingFilter_FiltersFields = ubx.FieldMap{
-		"Behavior": ubx.FieldSpec{WireName: "behavior"},
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: LoggingConfiguration_LoggingFilter_Filters_ConditionsFields,
-		},
-		"Requirement": ubx.FieldSpec{WireName: "requirement"},
-	}
+	"Behavior": ubx.FieldSpec{WireName: "behavior"},
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   LoggingConfiguration_LoggingFilter_Filters_ConditionsFields,
+	},
+	"Requirement": ubx.FieldSpec{WireName: "requirement"},
+}
 
 var LoggingConfiguration_LoggingFilterFields = ubx.FieldMap{
-		"DefaultBehavior": ubx.FieldSpec{WireName: "default_behavior"},
-		"Filters": ubx.FieldSpec{
-			WireName: "filters",
-			Kind: "list",
-			Fields: LoggingConfiguration_LoggingFilter_FiltersFields,
-		},
-	}
+	"DefaultBehavior": ubx.FieldSpec{WireName: "default_behavior"},
+	"Filters": ubx.FieldSpec{
+		WireName: "filters",
+		Kind:     "list",
+		Fields:   LoggingConfiguration_LoggingFilter_FiltersFields,
+	},
+}
 
 var LoggingConfiguration_RedactedFields_SingleHeaderFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var LoggingConfiguration_RedactedFieldsFields = ubx.FieldMap{
-		"Method": ubx.FieldSpec{WireName: "method"},
-		"QueryString": ubx.FieldSpec{WireName: "query_string"},
-		"SingleHeader": ubx.FieldSpec{
-			WireName: "single_header",
-			Kind: "object",
-			Fields: LoggingConfiguration_RedactedFields_SingleHeaderFields,
-		},
-		"UriPath": ubx.FieldSpec{WireName: "uri_path"},
-	}
+	"Method":      ubx.FieldSpec{WireName: "method"},
+	"QueryString": ubx.FieldSpec{WireName: "query_string"},
+	"SingleHeader": ubx.FieldSpec{
+		WireName: "single_header",
+		Kind:     "object",
+		Fields:   LoggingConfiguration_RedactedFields_SingleHeaderFields,
+	},
+	"UriPath": ubx.FieldSpec{WireName: "uri_path"},
+}
 
 type LoggingConfigurationConfig struct {
 	// The Amazon Resource Names (ARNs) of the logging destinations that you want to associate with the web ACL.
@@ -137,13 +137,13 @@ var LoggingConfiguration = ubx.ResourceBinding{
 		"LogDestinationConfigs": ubx.FieldSpec{WireName: "log_destination_configs"},
 		"LoggingFilter": ubx.FieldSpec{
 			WireName: "logging_filter",
-			Kind: "object",
-			Fields: LoggingConfiguration_LoggingFilterFields,
+			Kind:     "object",
+			Fields:   LoggingConfiguration_LoggingFilterFields,
 		},
 		"RedactedFields": ubx.FieldSpec{
 			WireName: "redacted_fields",
-			Kind: "list",
-			Fields: LoggingConfiguration_RedactedFieldsFields,
+			Kind:     "list",
+			Fields:   LoggingConfiguration_RedactedFieldsFields,
 		},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},

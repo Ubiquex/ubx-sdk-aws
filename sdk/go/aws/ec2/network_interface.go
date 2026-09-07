@@ -51,32 +51,32 @@ type NetworkInterface_Tags struct {
 }
 
 var NetworkInterface_ConnectionTrackingSpecificationFields = ubx.FieldMap{
-		"TcpEstablishedTimeout": ubx.FieldSpec{WireName: "tcp_established_timeout"},
-		"UdpStreamTimeout": ubx.FieldSpec{WireName: "udp_stream_timeout"},
-		"UdpTimeout": ubx.FieldSpec{WireName: "udp_timeout"},
-	}
+	"TcpEstablishedTimeout": ubx.FieldSpec{WireName: "tcp_established_timeout"},
+	"UdpStreamTimeout":      ubx.FieldSpec{WireName: "udp_stream_timeout"},
+	"UdpTimeout":            ubx.FieldSpec{WireName: "udp_timeout"},
+}
 
 var NetworkInterface_Ipv4PrefixesFields = ubx.FieldMap{
-		"Ipv4Prefix": ubx.FieldSpec{WireName: "ipv4_prefix"},
-	}
+	"Ipv4Prefix": ubx.FieldSpec{WireName: "ipv4_prefix"},
+}
 
 var NetworkInterface_Ipv6AddressesFields = ubx.FieldMap{
-		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
-	}
+	"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
+}
 
 var NetworkInterface_Ipv6PrefixesFields = ubx.FieldMap{
-		"Ipv6Prefix": ubx.FieldSpec{WireName: "ipv6_prefix"},
-	}
+	"Ipv6Prefix": ubx.FieldSpec{WireName: "ipv6_prefix"},
+}
 
 var NetworkInterface_PrivateIpAddressesFields = ubx.FieldMap{
-		"Primary": ubx.FieldSpec{WireName: "primary"},
-		"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
-	}
+	"Primary":          ubx.FieldSpec{WireName: "primary"},
+	"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
+}
 
 var NetworkInterface_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type NetworkInterfaceConfig struct {
 	// Specifies the connection tracking configuration for the network interface, including idle timeout values for established TCP connections and UDP flows to control stateful traffic tracking. (AI-inferred)
@@ -173,45 +173,45 @@ var NetworkInterface = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConnectionTrackingSpecification": ubx.FieldSpec{
 			WireName: "connection_tracking_specification",
-			Kind: "object",
-			Fields: NetworkInterface_ConnectionTrackingSpecificationFields,
+			Kind:     "object",
+			Fields:   NetworkInterface_ConnectionTrackingSpecificationFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
 		"EnablePrimaryIpv6": ubx.FieldSpec{WireName: "enable_primary_ipv6"},
-		"GroupSet": ubx.FieldSpec{WireName: "group_set"},
-		"InterfaceType": ubx.FieldSpec{WireName: "interface_type"},
-		"Ipv4PrefixCount": ubx.FieldSpec{WireName: "ipv4_prefix_count"},
+		"GroupSet":          ubx.FieldSpec{WireName: "group_set"},
+		"InterfaceType":     ubx.FieldSpec{WireName: "interface_type"},
+		"Ipv4PrefixCount":   ubx.FieldSpec{WireName: "ipv4_prefix_count"},
 		"Ipv4Prefixes": ubx.FieldSpec{
 			WireName: "ipv4_prefixes",
-			Kind: "list",
-			Fields: NetworkInterface_Ipv4PrefixesFields,
+			Kind:     "list",
+			Fields:   NetworkInterface_Ipv4PrefixesFields,
 		},
 		"Ipv6AddressCount": ubx.FieldSpec{WireName: "ipv6_address_count"},
 		"Ipv6Addresses": ubx.FieldSpec{
 			WireName: "ipv6_addresses",
-			Kind: "list",
-			Fields: NetworkInterface_Ipv6AddressesFields,
+			Kind:     "list",
+			Fields:   NetworkInterface_Ipv6AddressesFields,
 		},
 		"Ipv6PrefixCount": ubx.FieldSpec{WireName: "ipv6_prefix_count"},
 		"Ipv6Prefixes": ubx.FieldSpec{
 			WireName: "ipv6_prefixes",
-			Kind: "list",
-			Fields: NetworkInterface_Ipv6PrefixesFields,
+			Kind:     "list",
+			Fields:   NetworkInterface_Ipv6PrefixesFields,
 		},
 		"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
 		"PrivateIpAddresses": ubx.FieldSpec{
 			WireName: "private_ip_addresses",
-			Kind: "list",
-			Fields: NetworkInterface_PrivateIpAddressesFields,
+			Kind:     "list",
+			Fields:   NetworkInterface_PrivateIpAddressesFields,
 		},
 		"PublicIpDnsHostnameTypeSpecification": ubx.FieldSpec{WireName: "public_ip_dns_hostname_type_specification"},
-		"SecondaryPrivateIpAddressCount": ubx.FieldSpec{WireName: "secondary_private_ip_address_count"},
-		"SourceDestCheck": ubx.FieldSpec{WireName: "source_dest_check"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
+		"SecondaryPrivateIpAddressCount":       ubx.FieldSpec{WireName: "secondary_private_ip_address_count"},
+		"SourceDestCheck":                      ubx.FieldSpec{WireName: "source_dest_check"},
+		"SubnetId":                             ubx.FieldSpec{WireName: "subnet_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: NetworkInterface_TagsFields,
+			Kind:     "list",
+			Fields:   NetworkInterface_TagsFields,
 		},
 	},
 }

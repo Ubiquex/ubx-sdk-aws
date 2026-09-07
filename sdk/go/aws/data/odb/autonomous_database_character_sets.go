@@ -9,22 +9,22 @@ type AutonomousDatabaseCharacterSets_AutonomousDatabaseCharacterSets struct {
 
 type AutonomousDatabaseCharacterSetsConfig struct {
 	CharacterSetType any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 type AutonomousDatabaseCharacterSetsAttrs struct {
 	AutonomousDatabaseCharacterSets any
-	CharacterSetType any
-	MaxResults any
-	NextToken any
+	CharacterSetType                any
+	MaxResults                      any
+	NextToken                       any
 }
 
 var AutonomousDatabaseCharacterSets = ubx.DataSourceBinding{
 	WireType: "aws_odb_autonomous_database_character_sets",
 	Fields: ubx.FieldMap{
 		"CharacterSetType": ubx.FieldSpec{WireName: "character_set_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

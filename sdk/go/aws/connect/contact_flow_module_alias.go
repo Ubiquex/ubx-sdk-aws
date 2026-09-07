@@ -32,9 +32,9 @@ type ContactFlowModuleAliasAttrs struct {
 var ContactFlowModuleAlias = ubx.ResourceBinding{
 	WireType: "aws_connect_contact_flow_module_alias",
 	Fields: ubx.FieldMap{
-		"ContactFlowModuleId": ubx.FieldSpec{WireName: "contact_flow_module_id"},
+		"ContactFlowModuleId":      ubx.FieldSpec{WireName: "contact_flow_module_id"},
 		"ContactFlowModuleVersion": ubx.FieldSpec{WireName: "contact_flow_module_version"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
 	},
 }

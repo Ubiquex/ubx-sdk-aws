@@ -4,23 +4,23 @@ package wellarchitected
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Lenses_LensSummaries struct {
-	CreatedAt any
+	CreatedAt   any
 	Description any
-	LensAlias any
-	LensArn any
-	LensName any
-	LensStatus any
-	LensType any
+	LensAlias   any
+	LensArn     any
+	LensName    any
+	LensStatus  any
+	LensType    any
 	LensVersion any
-	Owner any
-	UpdatedAt any
+	Owner       any
+	UpdatedAt   any
 }
 
 type LensesConfig struct {
 	// <p>The full name of the lens.</p>
-	LensName any
+	LensName   any
 	LensStatus any
-	LensType any
+	LensType   any
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
@@ -29,11 +29,11 @@ type LensesConfig struct {
 
 type LensesAttrs struct {
 	// <p>The full name of the lens.</p>
-	LensName any
+	LensName   any
 	LensStatus any
 	// <p>List of lens summaries of available lenses.</p>
 	LensSummaries any
-	LensType any
+	LensType      any
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
@@ -43,10 +43,10 @@ type LensesAttrs struct {
 var Lenses = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_lenses",
 	Fields: ubx.FieldMap{
-		"LensName": ubx.FieldSpec{WireName: "lens_name"},
+		"LensName":   ubx.FieldSpec{WireName: "lens_name"},
 		"LensStatus": ubx.FieldSpec{WireName: "lens_status"},
-		"LensType": ubx.FieldSpec{WireName: "lens_type"},
+		"LensType":   ubx.FieldSpec{WireName: "lens_type"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

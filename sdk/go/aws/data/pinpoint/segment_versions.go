@@ -5,11 +5,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SegmentVersions_SegmentsResponse_Item_Dimensions_Attributes struct {
 	AttributeType any
-	Values any
+	Values        any
 }
 
 type SegmentVersions_SegmentsResponse_Item_Dimensions_Behavior_Recency struct {
-	Duration any
+	Duration    any
 	RecencyType any
 }
 
@@ -19,115 +19,115 @@ type SegmentVersions_SegmentsResponse_Item_Dimensions_Behavior struct {
 
 type SegmentVersions_SegmentsResponse_Item_Dimensions_Demographic_AppVersion struct {
 	DimensionType any
-	Values any
+	Values        any
 }
 
 type SegmentVersions_SegmentsResponse_Item_Dimensions_Demographic struct {
 	AppVersion any
-	Channel any
+	Channel    any
 	DeviceType any
-	Make any
-	Model any
-	Platform any
+	Make       any
+	Model      any
+	Platform   any
 }
 
 type SegmentVersions_SegmentsResponse_Item_Dimensions_Location_Gpspoint_Coordinates struct {
-	Latitude any
+	Latitude  any
 	Longitude any
 }
 
 type SegmentVersions_SegmentsResponse_Item_Dimensions_Location_Gpspoint struct {
-	Coordinates any
+	Coordinates       any
 	RangeInKilometers any
 }
 
 type SegmentVersions_SegmentsResponse_Item_Dimensions_Location struct {
-	Country any
+	Country  any
 	Gpspoint any
 }
 
 type SegmentVersions_SegmentsResponse_Item_Dimensions_Metrics struct {
 	ComparisonOperator any
-	Value any
+	Value              any
 }
 
 type SegmentVersions_SegmentsResponse_Item_Dimensions struct {
-	Attributes any
-	Behavior any
-	Demographic any
-	Location any
-	Metrics any
+	Attributes     any
+	Behavior       any
+	Demographic    any
+	Location       any
+	Metrics        any
 	UserAttributes any
 }
 
 type SegmentVersions_SegmentsResponse_Item_ImportDefinition struct {
 	ChannelCounts any
-	ExternalId any
-	Format any
-	RoleArn any
-	S3Url any
-	Size any
+	ExternalId    any
+	Format        any
+	RoleArn       any
+	S3Url         any
+	Size          any
 }
 
 type SegmentVersions_SegmentsResponse_Item_SegmentGroups_Groups_SourceSegments struct {
-	Id any
+	Id      any
 	Version any
 }
 
 type SegmentVersions_SegmentsResponse_Item_SegmentGroups_Groups struct {
-	Dimensions any
+	Dimensions     any
 	SourceSegments any
-	SourceType any
-	Type any
+	SourceType     any
+	Type           any
 }
 
 type SegmentVersions_SegmentsResponse_Item_SegmentGroups struct {
-	Groups any
+	Groups  any
 	Include any
 }
 
 type SegmentVersions_SegmentsResponse_Item struct {
-	ApplicationId any
-	Arn any
-	CreationDate any
-	Dimensions any
-	Id any
+	ApplicationId    any
+	Arn              any
+	CreationDate     any
+	Dimensions       any
+	Id               any
 	ImportDefinition any
 	LastModifiedDate any
-	Name any
-	SegmentGroups any
-	SegmentType any
-	Tags any
-	Version any
+	Name             any
+	SegmentGroups    any
+	SegmentType      any
+	Tags             any
+	Version          any
 }
 
 type SegmentVersions_SegmentsResponse struct {
-	Item any
+	Item      any
 	NextToken any
 }
 
 type SegmentVersionsConfig struct {
 	ApplicationId any
-	PageSize any
-	SegmentId any
-	Token any
+	PageSize      any
+	SegmentId     any
+	Token         any
 }
 
 type SegmentVersionsAttrs struct {
 	ApplicationId any
-	PageSize any
-	SegmentId any
+	PageSize      any
+	SegmentId     any
 	// <p>Provides information about all the segments that are associated with an application.</p>
 	SegmentsResponse any
-	Token any
+	Token            any
 }
 
 var SegmentVersions = ubx.DataSourceBinding{
 	WireType: "aws_pinpoint_segment_versions",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"SegmentId": ubx.FieldSpec{WireName: "segment_id"},
-		"Token": ubx.FieldSpec{WireName: "token"},
+		"PageSize":      ubx.FieldSpec{WireName: "page_size"},
+		"SegmentId":     ubx.FieldSpec{WireName: "segment_id"},
+		"Token":         ubx.FieldSpec{WireName: "token"},
 	},
 }

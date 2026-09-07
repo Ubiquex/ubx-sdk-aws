@@ -5,51 +5,51 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AuditFinding_Finding_NonCompliantResource_ResourceIdentifier_IssuerCertificateIdentifier struct {
 	IssuerCertificateSerialNumber any
-	IssuerCertificateSubject any
-	IssuerId any
+	IssuerCertificateSubject      any
+	IssuerId                      any
 }
 
 type AuditFinding_Finding_NonCompliantResource_ResourceIdentifier_PolicyVersionIdentifier struct {
-	PolicyName any
+	PolicyName      any
 	PolicyVersionId any
 }
 
 type AuditFinding_Finding_NonCompliantResource_ResourceIdentifier struct {
-	Account any
-	CaCertificateId any
-	ClientId any
+	Account               any
+	CaCertificateId       any
+	ClientId              any
 	CognitoIdentityPoolId any
-	DeviceCertificateArn any
-	DeviceCertificateId any
-	IamRoleArn any
+	DeviceCertificateArn  any
+	DeviceCertificateId   any
+	IamRoleArn            any
 	// <p>The certificate issuer indentifier.</p>
 	IssuerCertificateIdentifier any
 	// <p>Information about the version of the policy associated with the resource.</p>
 	PolicyVersionIdentifier any
-	RoleAliasArn any
+	RoleAliasArn            any
 }
 
 type AuditFinding_Finding_NonCompliantResource struct {
 	AdditionalInfo any
 	// <p>Information that identifies the noncompliant resource.</p>
 	ResourceIdentifier any
-	ResourceType any
+	ResourceType       any
 }
 
 type AuditFinding_Finding struct {
 	// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-	CheckName any
-	FindingId any
-	FindingTime any
+	CheckName    any
+	FindingId    any
+	FindingTime  any
 	IsSuppressed any
 	// <p>Information about the resource that was noncompliant with the audit check.</p>
-	NonCompliantResource any
-	ReasonForNonCompliance any
+	NonCompliantResource       any
+	ReasonForNonCompliance     any
 	ReasonForNonComplianceCode any
-	RelatedResources any
-	Severity any
-	TaskId any
-	TaskStartTime any
+	RelatedResources           any
+	Severity                   any
+	TaskId                     any
+	TaskStartTime              any
 }
 
 type AuditFindingConfig struct {
@@ -58,7 +58,7 @@ type AuditFindingConfig struct {
 
 type AuditFindingAttrs struct {
 	// <p>The findings (results) of the audit.</p>
-	Finding any
+	Finding   any
 	FindingId any
 }
 

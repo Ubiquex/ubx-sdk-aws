@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Queries_Queries struct {
 	CompletedAt any
-	QueryId any
-	Status any
+	QueryId     any
+	Status      any
 	SubmittedAt any
 }
 
@@ -16,7 +16,7 @@ type QueriesConfig struct {
 	// <p>The maximum number of results to return for each paginated request.</p>
 	MaxResults any
 	// <p>Pagination token for the query list.</p>
-	NextToken any
+	NextToken     any
 	WorkspaceName any
 }
 
@@ -28,16 +28,16 @@ type QueriesAttrs struct {
 	// <p>Pagination token for the query list.</p>
 	NextToken any
 	// <p>A list of query summaries.</p>
-	Queries any
+	Queries       any
 	WorkspaceName any
 }
 
 var Queries = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_queries",
 	Fields: ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Filter":        ubx.FieldSpec{WireName: "filter"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"WorkspaceName": ubx.FieldSpec{WireName: "workspace_name"},
 	},
 }

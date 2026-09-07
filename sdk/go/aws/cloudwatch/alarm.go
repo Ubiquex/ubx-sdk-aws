@@ -88,81 +88,81 @@ type Alarm_WarmUpConfiguration struct {
 }
 
 var Alarm_DimensionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Alarm_EvaluationCriteria_PromQlcriteriaFields = ubx.FieldMap{
-		"PendingPeriod": ubx.FieldSpec{WireName: "pending_period"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"RecoveryPeriod": ubx.FieldSpec{WireName: "recovery_period"},
-	}
+	"PendingPeriod":  ubx.FieldSpec{WireName: "pending_period"},
+	"Query":          ubx.FieldSpec{WireName: "query"},
+	"RecoveryPeriod": ubx.FieldSpec{WireName: "recovery_period"},
+}
 
 var Alarm_EvaluationCriteriaFields = ubx.FieldMap{
-		"PromQlcriteria": ubx.FieldSpec{
-			WireName: "prom_qlcriteria",
-			Kind: "object",
-			Fields: Alarm_EvaluationCriteria_PromQlcriteriaFields,
-		},
-	}
+	"PromQlcriteria": ubx.FieldSpec{
+		WireName: "prom_qlcriteria",
+		Kind:     "object",
+		Fields:   Alarm_EvaluationCriteria_PromQlcriteriaFields,
+	},
+}
 
 var Alarm_EvaluationWindow_WallClockWindowFields = ubx.FieldMap{
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-	}
+	"Timezone": ubx.FieldSpec{WireName: "timezone"},
+}
 
 var Alarm_EvaluationWindowFields = ubx.FieldMap{
-		"SlidingWindow": ubx.FieldSpec{WireName: "sliding_window"},
-		"WallClockWindow": ubx.FieldSpec{
-			WireName: "wall_clock_window",
-			Kind: "object",
-			Fields: Alarm_EvaluationWindow_WallClockWindowFields,
-		},
-	}
+	"SlidingWindow": ubx.FieldSpec{WireName: "sliding_window"},
+	"WallClockWindow": ubx.FieldSpec{
+		WireName: "wall_clock_window",
+		Kind:     "object",
+		Fields:   Alarm_EvaluationWindow_WallClockWindowFields,
+	},
+}
 
 var Alarm_Metrics_MetricStat_MetricFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: Alarm_DimensionsFields,
-		},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   Alarm_DimensionsFields,
+	},
+	"MetricName": ubx.FieldSpec{WireName: "metric_name"},
+	"Namespace":  ubx.FieldSpec{WireName: "namespace"},
+}
 
 var Alarm_Metrics_MetricStatFields = ubx.FieldMap{
-		"Metric": ubx.FieldSpec{
-			WireName: "metric",
-			Kind: "object",
-			Fields: Alarm_Metrics_MetricStat_MetricFields,
-		},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"Stat": ubx.FieldSpec{WireName: "stat"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-	}
+	"Metric": ubx.FieldSpec{
+		WireName: "metric",
+		Kind:     "object",
+		Fields:   Alarm_Metrics_MetricStat_MetricFields,
+	},
+	"Period": ubx.FieldSpec{WireName: "period"},
+	"Stat":   ubx.FieldSpec{WireName: "stat"},
+	"Unit":   ubx.FieldSpec{WireName: "unit"},
+}
 
 var Alarm_MetricsFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"MetricStat": ubx.FieldSpec{
-			WireName: "metric_stat",
-			Kind: "object",
-			Fields: Alarm_Metrics_MetricStatFields,
-		},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"ReturnData": ubx.FieldSpec{WireName: "return_data"},
-	}
+	"AccountId":  ubx.FieldSpec{WireName: "account_id"},
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Id":         ubx.FieldSpec{WireName: "id"},
+	"Label":      ubx.FieldSpec{WireName: "label"},
+	"MetricStat": ubx.FieldSpec{
+		WireName: "metric_stat",
+		Kind:     "object",
+		Fields:   Alarm_Metrics_MetricStatFields,
+	},
+	"Period":     ubx.FieldSpec{WireName: "period"},
+	"ReturnData": ubx.FieldSpec{WireName: "return_data"},
+}
 
 var Alarm_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Alarm_WarmUpConfigurationFields = ubx.FieldMap{
-		"OnlyStartEvaluatingAfterWarmUpPeriodEnds": ubx.FieldSpec{WireName: "only_start_evaluating_after_warm_up_period_ends"},
-		"WarmUpPeriodDurationInMinutes": ubx.FieldSpec{WireName: "warm_up_period_duration_in_minutes"},
-	}
+	"OnlyStartEvaluatingAfterWarmUpPeriodEnds": ubx.FieldSpec{WireName: "only_start_evaluating_after_warm_up_period_ends"},
+	"WarmUpPeriodDurationInMinutes":            ubx.FieldSpec{WireName: "warm_up_period_duration_in_minutes"},
+}
 
 type AlarmConfig struct {
 	// Indicates whether actions should be executed during any changes to the alarm state. The default is TRUE.
@@ -214,7 +214,7 @@ type AlarmConfig struct {
 	// Sets how this alarm is to handle missing data points. Valid values are ``breaching``, ``notBreaching``, ``ignore``, and ``missing``. For more information, see [Configuring How Alarms Treat Missing Data](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data) in the *Amazon User Guide*. If you omit this parameter, the default behavior of ``missing`` is used.
 	TreatMissingData any
 	// The unit of the metric associated with the alarm. Specify this only if you are creating an alarm based on a single metric. Do not specify this if you are specifying a ``Metrics`` array. You can specify the following values: Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, or None.
-	Unit any
+	Unit                any
 	WarmUpConfiguration any
 }
 
@@ -270,62 +270,62 @@ type AlarmAttrs struct {
 	// Sets how this alarm is to handle missing data points. Valid values are ``breaching``, ``notBreaching``, ``ignore``, and ``missing``. For more information, see [Configuring How Alarms Treat Missing Data](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data) in the *Amazon User Guide*. If you omit this parameter, the default behavior of ``missing`` is used.
 	TreatMissingData any
 	// The unit of the metric associated with the alarm. Specify this only if you are creating an alarm based on a single metric. Do not specify this if you are specifying a ``Metrics`` array. You can specify the following values: Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, or None.
-	Unit any
+	Unit                any
 	WarmUpConfiguration any
 }
 
 var Alarm = ubx.ResourceBinding{
 	WireType: "aws_cloud_watch_alarm",
 	Fields: ubx.FieldMap{
-		"ActionsEnabled": ubx.FieldSpec{WireName: "actions_enabled"},
-		"AlarmActions": ubx.FieldSpec{WireName: "alarm_actions"},
-		"AlarmDescription": ubx.FieldSpec{WireName: "alarm_description"},
-		"AlarmName": ubx.FieldSpec{WireName: "alarm_name"},
+		"ActionsEnabled":     ubx.FieldSpec{WireName: "actions_enabled"},
+		"AlarmActions":       ubx.FieldSpec{WireName: "alarm_actions"},
+		"AlarmDescription":   ubx.FieldSpec{WireName: "alarm_description"},
+		"AlarmName":          ubx.FieldSpec{WireName: "alarm_name"},
 		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"DatapointsToAlarm": ubx.FieldSpec{WireName: "datapoints_to_alarm"},
+		"DatapointsToAlarm":  ubx.FieldSpec{WireName: "datapoints_to_alarm"},
 		"Dimensions": ubx.FieldSpec{
 			WireName: "dimensions",
-			Kind: "list",
-			Fields: Alarm_DimensionsFields,
+			Kind:     "list",
+			Fields:   Alarm_DimensionsFields,
 		},
 		"EvaluateLowSampleCountPercentile": ubx.FieldSpec{WireName: "evaluate_low_sample_count_percentile"},
 		"EvaluationCriteria": ubx.FieldSpec{
 			WireName: "evaluation_criteria",
-			Kind: "object",
-			Fields: Alarm_EvaluationCriteriaFields,
+			Kind:     "object",
+			Fields:   Alarm_EvaluationCriteriaFields,
 		},
 		"EvaluationInterval": ubx.FieldSpec{WireName: "evaluation_interval"},
-		"EvaluationPeriods": ubx.FieldSpec{WireName: "evaluation_periods"},
+		"EvaluationPeriods":  ubx.FieldSpec{WireName: "evaluation_periods"},
 		"EvaluationWindow": ubx.FieldSpec{
 			WireName: "evaluation_window",
-			Kind: "object",
-			Fields: Alarm_EvaluationWindowFields,
+			Kind:     "object",
+			Fields:   Alarm_EvaluationWindowFields,
 		},
-		"ExtendedStatistic": ubx.FieldSpec{WireName: "extended_statistic"},
+		"ExtendedStatistic":       ubx.FieldSpec{WireName: "extended_statistic"},
 		"InsufficientDataActions": ubx.FieldSpec{WireName: "insufficient_data_actions"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
+		"MetricName":              ubx.FieldSpec{WireName: "metric_name"},
 		"Metrics": ubx.FieldSpec{
 			WireName: "metrics",
-			Kind: "list",
-			Fields: Alarm_MetricsFields,
+			Kind:     "list",
+			Fields:   Alarm_MetricsFields,
 		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
 		"Okactions": ubx.FieldSpec{WireName: "okactions"},
-		"Period": ubx.FieldSpec{WireName: "period"},
+		"Period":    ubx.FieldSpec{WireName: "period"},
 		"Statistic": ubx.FieldSpec{WireName: "statistic"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Alarm_TagsFields,
+			Kind:     "list",
+			Fields:   Alarm_TagsFields,
 		},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
+		"Threshold":         ubx.FieldSpec{WireName: "threshold"},
 		"ThresholdMetricId": ubx.FieldSpec{WireName: "threshold_metric_id"},
-		"TreatMissingData": ubx.FieldSpec{WireName: "treat_missing_data"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
+		"TreatMissingData":  ubx.FieldSpec{WireName: "treat_missing_data"},
+		"Unit":              ubx.FieldSpec{WireName: "unit"},
 		"WarmUpConfiguration": ubx.FieldSpec{
 			WireName: "warm_up_configuration",
-			Kind: "object",
-			Fields: Alarm_WarmUpConfigurationFields,
+			Kind:     "object",
+			Fields:   Alarm_WarmUpConfigurationFields,
 		},
 	},
 }

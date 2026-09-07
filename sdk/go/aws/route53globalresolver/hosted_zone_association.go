@@ -35,7 +35,7 @@ var HostedZoneAssociation = ubx.ResourceBinding{
 	WireType: "aws_route53_global_resolver_hosted_zone_association",
 	Fields: ubx.FieldMap{
 		"HostedZoneId": ubx.FieldSpec{WireName: "hosted_zone_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
+		"ResourceArn":  ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

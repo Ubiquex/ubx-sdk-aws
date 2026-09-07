@@ -4,24 +4,24 @@ package route53_recovery_cluster
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Route53RecoveryClusterRoutingControls_RoutingControls struct {
-	ControlPanelArn any
-	ControlPanelName any
-	Owner any
-	RoutingControlArn any
-	RoutingControlName any
+	ControlPanelArn     any
+	ControlPanelName    any
+	Owner               any
+	RoutingControlArn   any
+	RoutingControlName  any
 	RoutingControlState any
 }
 
 type Route53RecoveryClusterRoutingControlsConfig struct {
 	ControlPanelArn any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 type Route53RecoveryClusterRoutingControlsAttrs struct {
 	ControlPanelArn any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	RoutingControls any
 }
 
@@ -29,7 +29,7 @@ var Route53RecoveryClusterRoutingControls = ubx.DataSourceBinding{
 	WireType: "aws_route53_recovery_cluster_routing_controls",
 	Fields: ubx.FieldMap{
 		"ControlPanelArn": ubx.FieldSpec{WireName: "control_panel_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

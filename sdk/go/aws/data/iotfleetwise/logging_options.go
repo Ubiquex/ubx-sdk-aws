@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LoggingOptions_CloudWatchLogDelivery struct {
 	LogGroupName any
-	LogType any
+	LogType      any
 }
 
 type LoggingOptionsConfig struct {
@@ -18,6 +18,5 @@ type LoggingOptionsAttrs struct {
 
 var LoggingOptions = ubx.DataSourceBinding{
 	WireType: "aws_iotfleetwise_logging_options",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

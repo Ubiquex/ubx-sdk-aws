@@ -4,26 +4,26 @@ package oam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Sinks_Items struct {
-	Arn any
-	Id any
+	Arn  any
+	Id   any
 	Name any
 }
 
 type SinksConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SinksAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Sinks = ubx.DataSourceBinding{
 	WireType: "aws_oam_sinks",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

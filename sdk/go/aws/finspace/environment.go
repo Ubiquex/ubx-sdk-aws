@@ -35,28 +35,28 @@ type Environment_SuperuserParameters struct {
 }
 
 var Environment_FederationParameters_AttributeMapFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Environment_FederationParametersFields = ubx.FieldMap{
-		"ApplicationCallBackUrl": ubx.FieldSpec{WireName: "application_call_back_url"},
-		"AttributeMap": ubx.FieldSpec{
-			WireName: "attribute_map",
-			Kind: "list",
-			Fields: Environment_FederationParameters_AttributeMapFields,
-		},
-		"FederationProviderName": ubx.FieldSpec{WireName: "federation_provider_name"},
-		"FederationUrn": ubx.FieldSpec{WireName: "federation_urn"},
-		"SamlMetadataDocument": ubx.FieldSpec{WireName: "saml_metadata_document"},
-		"SamlMetadataUrl": ubx.FieldSpec{WireName: "saml_metadata_url"},
-	}
+	"ApplicationCallBackUrl": ubx.FieldSpec{WireName: "application_call_back_url"},
+	"AttributeMap": ubx.FieldSpec{
+		WireName: "attribute_map",
+		Kind:     "list",
+		Fields:   Environment_FederationParameters_AttributeMapFields,
+	},
+	"FederationProviderName": ubx.FieldSpec{WireName: "federation_provider_name"},
+	"FederationUrn":          ubx.FieldSpec{WireName: "federation_urn"},
+	"SamlMetadataDocument":   ubx.FieldSpec{WireName: "saml_metadata_document"},
+	"SamlMetadataUrl":        ubx.FieldSpec{WireName: "saml_metadata_url"},
+}
 
 var Environment_SuperuserParametersFields = ubx.FieldMap{
-		"EmailAddress": ubx.FieldSpec{WireName: "email_address"},
-		"FirstName": ubx.FieldSpec{WireName: "first_name"},
-		"LastName": ubx.FieldSpec{WireName: "last_name"},
-	}
+	"EmailAddress": ubx.FieldSpec{WireName: "email_address"},
+	"FirstName":    ubx.FieldSpec{WireName: "first_name"},
+	"LastName":     ubx.FieldSpec{WireName: "last_name"},
+}
 
 type EnvironmentConfig struct {
 	// ARNs of FinSpace Data Bundles to install
@@ -113,25 +113,25 @@ type EnvironmentAttrs struct {
 var Environment = ubx.ResourceBinding{
 	WireType: "aws_fin_space_environment",
 	Fields: ubx.FieldMap{
-		"DataBundles": ubx.FieldSpec{WireName: "data_bundles"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"DataBundles":    ubx.FieldSpec{WireName: "data_bundles"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
 		"FederationMode": ubx.FieldSpec{WireName: "federation_mode"},
 		"FederationParameters": ubx.FieldSpec{
 			WireName: "federation_parameters",
-			Kind: "object",
-			Fields: Environment_FederationParametersFields,
+			Kind:     "object",
+			Fields:   Environment_FederationParametersFields,
 		},
 		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"SuperuserParameters": ubx.FieldSpec{
 			WireName: "superuser_parameters",
-			Kind: "object",
-			Fields: Environment_SuperuserParametersFields,
+			Kind:     "object",
+			Fields:   Environment_SuperuserParametersFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Environment_FederationParameters_AttributeMapFields,
+			Kind:     "list",
+			Fields:   Environment_FederationParameters_AttributeMapFields,
 		},
 	},
 }

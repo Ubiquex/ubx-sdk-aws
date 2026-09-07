@@ -17,7 +17,7 @@ type ChannelNamespace_HandlerConfigs_OnPublish_Integration struct {
 
 type ChannelNamespace_HandlerConfigs_OnPublish struct {
 	// Integration behavior for a handler configuration.
-	Behavior any
+	Behavior    any
 	Integration any
 }
 
@@ -41,48 +41,48 @@ type ChannelNamespace_Tags struct {
 }
 
 var ChannelNamespace_HandlerConfigs_OnPublish_Integration_LambdaConfigFields = ubx.FieldMap{
-		"InvokeType": ubx.FieldSpec{WireName: "invoke_type"},
-	}
+	"InvokeType": ubx.FieldSpec{WireName: "invoke_type"},
+}
 
 var ChannelNamespace_HandlerConfigs_OnPublish_IntegrationFields = ubx.FieldMap{
-		"DataSourceName": ubx.FieldSpec{WireName: "data_source_name"},
-		"LambdaConfig": ubx.FieldSpec{
-			WireName: "lambda_config",
-			Kind: "object",
-			Fields: ChannelNamespace_HandlerConfigs_OnPublish_Integration_LambdaConfigFields,
-		},
-	}
+	"DataSourceName": ubx.FieldSpec{WireName: "data_source_name"},
+	"LambdaConfig": ubx.FieldSpec{
+		WireName: "lambda_config",
+		Kind:     "object",
+		Fields:   ChannelNamespace_HandlerConfigs_OnPublish_Integration_LambdaConfigFields,
+	},
+}
 
 var ChannelNamespace_HandlerConfigs_OnPublishFields = ubx.FieldMap{
-		"Behavior": ubx.FieldSpec{WireName: "behavior"},
-		"Integration": ubx.FieldSpec{
-			WireName: "integration",
-			Kind: "object",
-			Fields: ChannelNamespace_HandlerConfigs_OnPublish_IntegrationFields,
-		},
-	}
+	"Behavior": ubx.FieldSpec{WireName: "behavior"},
+	"Integration": ubx.FieldSpec{
+		WireName: "integration",
+		Kind:     "object",
+		Fields:   ChannelNamespace_HandlerConfigs_OnPublish_IntegrationFields,
+	},
+}
 
 var ChannelNamespace_HandlerConfigsFields = ubx.FieldMap{
-		"OnPublish": ubx.FieldSpec{
-			WireName: "on_publish",
-			Kind: "object",
-			Fields: ChannelNamespace_HandlerConfigs_OnPublishFields,
-		},
-		"OnSubscribe": ubx.FieldSpec{
-			WireName: "on_subscribe",
-			Kind: "object",
-			Fields: ChannelNamespace_HandlerConfigs_OnPublishFields,
-		},
-	}
+	"OnPublish": ubx.FieldSpec{
+		WireName: "on_publish",
+		Kind:     "object",
+		Fields:   ChannelNamespace_HandlerConfigs_OnPublishFields,
+	},
+	"OnSubscribe": ubx.FieldSpec{
+		WireName: "on_subscribe",
+		Kind:     "object",
+		Fields:   ChannelNamespace_HandlerConfigs_OnPublishFields,
+	},
+}
 
 var ChannelNamespace_PublishAuthModesFields = ubx.FieldMap{
-		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-	}
+	"AuthType": ubx.FieldSpec{WireName: "auth_type"},
+}
 
 var ChannelNamespace_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ChannelNamespaceConfig struct {
 	// AppSync Api Id that this Channel Namespace belongs to.
@@ -127,29 +127,29 @@ type ChannelNamespaceAttrs struct {
 var ChannelNamespace = ubx.ResourceBinding{
 	WireType: "aws_app_sync_channel_namespace",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
-		"CodeHandlers": ubx.FieldSpec{WireName: "code_handlers"},
+		"ApiId":          ubx.FieldSpec{WireName: "api_id"},
+		"CodeHandlers":   ubx.FieldSpec{WireName: "code_handlers"},
 		"CodeS3Location": ubx.FieldSpec{WireName: "code_s3_location"},
 		"HandlerConfigs": ubx.FieldSpec{
 			WireName: "handler_configs",
-			Kind: "object",
-			Fields: ChannelNamespace_HandlerConfigsFields,
+			Kind:     "object",
+			Fields:   ChannelNamespace_HandlerConfigsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PublishAuthModes": ubx.FieldSpec{
 			WireName: "publish_auth_modes",
-			Kind: "list",
-			Fields: ChannelNamespace_PublishAuthModesFields,
+			Kind:     "list",
+			Fields:   ChannelNamespace_PublishAuthModesFields,
 		},
 		"SubscribeAuthModes": ubx.FieldSpec{
 			WireName: "subscribe_auth_modes",
-			Kind: "list",
-			Fields: ChannelNamespace_PublishAuthModesFields,
+			Kind:     "list",
+			Fields:   ChannelNamespace_PublishAuthModesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ChannelNamespace_TagsFields,
+			Kind:     "list",
+			Fields:   ChannelNamespace_TagsFields,
 		},
 	},
 }

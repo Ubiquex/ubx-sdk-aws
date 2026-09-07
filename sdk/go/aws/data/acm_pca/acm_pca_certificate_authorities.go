@@ -4,81 +4,81 @@ package acm_pca
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AcmPcaCertificateAuthorities_CertificateAuthorities_CertificateAuthorityConfiguration_CsrExtensions_KeyUsage struct {
-	Crlsign any
+	Crlsign          any
 	DataEncipherment any
-	DecipherOnly any
+	DecipherOnly     any
 	DigitalSignature any
-	EncipherOnly any
-	KeyAgreement any
-	KeyCertSign any
-	KeyEncipherment any
-	NonRepudiation any
+	EncipherOnly     any
+	KeyAgreement     any
+	KeyCertSign      any
+	KeyEncipherment  any
+	NonRepudiation   any
 }
 
 type AcmPcaCertificateAuthorities_CertificateAuthorities_CertificateAuthorityConfiguration_CsrExtensions_SubjectInformationAccess_AccessLocation_DirectoryName_CustomAttributes struct {
 	ObjectIdentifier any
-	Value any
+	Value            any
 }
 
 type AcmPcaCertificateAuthorities_CertificateAuthorities_CertificateAuthorityConfiguration_CsrExtensions_SubjectInformationAccess_AccessLocation_DirectoryName struct {
-	CommonName any
-	Country any
-	CustomAttributes any
+	CommonName                 any
+	Country                    any
+	CustomAttributes           any
 	DistinguishedNameQualifier any
-	GenerationQualifier any
-	GivenName any
-	Initials any
-	Locality any
-	Organization any
-	OrganizationalUnit any
-	Pseudonym any
-	SerialNumber any
-	State any
-	Surname any
-	Title any
+	GenerationQualifier        any
+	GivenName                  any
+	Initials                   any
+	Locality                   any
+	Organization               any
+	OrganizationalUnit         any
+	Pseudonym                  any
+	SerialNumber               any
+	State                      any
+	Surname                    any
+	Title                      any
 }
 
 type AcmPcaCertificateAuthorities_CertificateAuthorities_CertificateAuthorityConfiguration_CsrExtensions_SubjectInformationAccess_AccessLocation_EdiPartyName struct {
 	NameAssigner any
-	PartyName any
+	PartyName    any
 }
 
 type AcmPcaCertificateAuthorities_CertificateAuthorities_CertificateAuthorityConfiguration_CsrExtensions_SubjectInformationAccess_AccessLocation_OtherName struct {
 	TypeId any
-	Value any
+	Value  any
 }
 
 type AcmPcaCertificateAuthorities_CertificateAuthorities_CertificateAuthorityConfiguration_CsrExtensions_SubjectInformationAccess_AccessLocation struct {
-	DirectoryName any
-	DnsName any
-	EdiPartyName any
-	IpAddress any
-	OtherName any
-	RegisteredId any
-	Rfc822Name any
+	DirectoryName             any
+	DnsName                   any
+	EdiPartyName              any
+	IpAddress                 any
+	OtherName                 any
+	RegisteredId              any
+	Rfc822Name                any
 	UniformResourceIdentifier any
 }
 
 type AcmPcaCertificateAuthorities_CertificateAuthorities_CertificateAuthorityConfiguration_CsrExtensions_SubjectInformationAccess_AccessMethod struct {
-	AccessMethodType any
+	AccessMethodType       any
 	CustomObjectIdentifier any
 }
 
 type AcmPcaCertificateAuthorities_CertificateAuthorities_CertificateAuthorityConfiguration_CsrExtensions_SubjectInformationAccess struct {
 	AccessLocation any
-	AccessMethod any
+	AccessMethod   any
 }
 
 type AcmPcaCertificateAuthorities_CertificateAuthorities_CertificateAuthorityConfiguration_CsrExtensions struct {
-	KeyUsage any
+	KeyUsage                 any
 	SubjectInformationAccess any
 }
 
 type AcmPcaCertificateAuthorities_CertificateAuthorities_CertificateAuthorityConfiguration struct {
-	CsrExtensions any
-	KeyAlgorithm any
+	CsrExtensions    any
+	KeyAlgorithm     any
 	SigningAlgorithm any
-	Subject any
+	Subject          any
 }
 
 type AcmPcaCertificateAuthorities_CertificateAuthorities_RevocationConfiguration_CrlConfiguration_CrlDistributionPointExtensionConfiguration struct {
@@ -87,61 +87,61 @@ type AcmPcaCertificateAuthorities_CertificateAuthorities_RevocationConfiguration
 
 type AcmPcaCertificateAuthorities_CertificateAuthorities_RevocationConfiguration_CrlConfiguration struct {
 	CrlDistributionPointExtensionConfiguration any
-	CrlType any
-	CustomCname any
-	CustomPath any
-	Enabled any
-	ExpirationInDays any
-	S3BucketName any
-	S3ObjectAcl any
+	CrlType                                    any
+	CustomCname                                any
+	CustomPath                                 any
+	Enabled                                    any
+	ExpirationInDays                           any
+	S3BucketName                               any
+	S3ObjectAcl                                any
 }
 
 type AcmPcaCertificateAuthorities_CertificateAuthorities_RevocationConfiguration_OcspConfiguration struct {
-	Enabled any
+	Enabled         any
 	OcspCustomCname any
 }
 
 type AcmPcaCertificateAuthorities_CertificateAuthorities_RevocationConfiguration struct {
-	CrlConfiguration any
+	CrlConfiguration  any
 	OcspConfiguration any
 }
 
 type AcmPcaCertificateAuthorities_CertificateAuthorities struct {
-	Arn any
+	Arn                               any
 	CertificateAuthorityConfiguration any
-	CreatedAt any
-	FailureReason any
-	KeyStorageSecurityStandard any
-	LastStateChangeAt any
-	NotAfter any
-	NotBefore any
-	OwnerAccount any
-	RestorableUntil any
-	RevocationConfiguration any
-	Serial any
-	Status any
-	Type any
-	UsageMode any
+	CreatedAt                         any
+	FailureReason                     any
+	KeyStorageSecurityStandard        any
+	LastStateChangeAt                 any
+	NotAfter                          any
+	NotBefore                         any
+	OwnerAccount                      any
+	RestorableUntil                   any
+	RevocationConfiguration           any
+	Serial                            any
+	Status                            any
+	Type                              any
+	UsageMode                         any
 }
 
 type AcmPcaCertificateAuthoritiesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 	ResourceOwner any
 }
 
 type AcmPcaCertificateAuthoritiesAttrs struct {
 	CertificateAuthorities any
-	MaxResults any
-	NextToken any
-	ResourceOwner any
+	MaxResults             any
+	NextToken              any
+	ResourceOwner          any
 }
 
 var AcmPcaCertificateAuthorities = ubx.DataSourceBinding{
 	WireType: "aws_acm_pca_certificate_authorities",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"ResourceOwner": ubx.FieldSpec{WireName: "resource_owner"},
 	},
 }

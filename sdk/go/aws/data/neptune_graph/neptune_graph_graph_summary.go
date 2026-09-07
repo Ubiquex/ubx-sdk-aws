@@ -4,51 +4,51 @@ package neptune_graph
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NeptuneGraphGraphSummary_GraphSummary_EdgeStructures struct {
-	Count any
+	Count          any
 	EdgeProperties any
 }
 
 type NeptuneGraphGraphSummary_GraphSummary_NodeStructures struct {
-	Count any
+	Count                      any
 	DistinctOutgoingEdgeLabels any
-	NodeProperties any
+	NodeProperties             any
 }
 
 type NeptuneGraphGraphSummary_GraphSummary struct {
-	EdgeLabels any
-	EdgeProperties any
-	EdgeStructures any
-	NodeLabels any
-	NodeProperties any
-	NodeStructures any
-	NumEdgeLabels any
-	NumEdgeProperties any
-	NumEdges any
-	NumNodeLabels any
-	NumNodeProperties any
-	NumNodes any
+	EdgeLabels              any
+	EdgeProperties          any
+	EdgeStructures          any
+	NodeLabels              any
+	NodeProperties          any
+	NodeStructures          any
+	NumEdgeLabels           any
+	NumEdgeProperties       any
+	NumEdges                any
+	NumNodeLabels           any
+	NumNodeProperties       any
+	NumNodes                any
 	TotalEdgePropertyValues any
 	TotalNodePropertyValues any
 }
 
 type NeptuneGraphGraphSummaryConfig struct {
 	GraphIdentifier any
-	Mode any
+	Mode            any
 }
 
 type NeptuneGraphGraphSummaryAttrs struct {
 	GraphIdentifier any
 	// <p>Summary information about the graph.</p>
-	GraphSummary any
+	GraphSummary                  any
 	LastStatisticsComputationTime any
-	Mode any
-	Version any
+	Mode                          any
+	Version                       any
 }
 
 var NeptuneGraphGraphSummary = ubx.DataSourceBinding{
 	WireType: "aws_neptune_graph_graph_summary",
 	Fields: ubx.FieldMap{
 		"GraphIdentifier": ubx.FieldSpec{WireName: "graph_identifier"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
+		"Mode":            ubx.FieldSpec{WireName: "mode"},
 	},
 }

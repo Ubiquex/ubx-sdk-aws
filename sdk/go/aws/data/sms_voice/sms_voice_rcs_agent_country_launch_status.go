@@ -5,43 +5,43 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SmsVoiceRcsAgentCountryLaunchStatus_CountryLaunchStatus_CarrierStatus struct {
 	CarrierName any
-	Status any
+	Status      any
 }
 
 type SmsVoiceRcsAgentCountryLaunchStatus_CountryLaunchStatus struct {
-	CarrierStatus any
+	CarrierStatus  any
 	IsoCountryCode any
-	RcsPlatformId any
+	RcsPlatformId  any
 	RegistrationId any
-	Status any
+	Status         any
 }
 
 type SmsVoiceRcsAgentCountryLaunchStatus_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var SmsVoiceRcsAgentCountryLaunchStatus_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type SmsVoiceRcsAgentCountryLaunchStatusConfig struct {
-	Filters any
+	Filters         any
 	IsoCountryCodes any
-	MaxResults any
-	NextToken any
-	RcsAgentId any
+	MaxResults      any
+	NextToken       any
+	RcsAgentId      any
 }
 
 type SmsVoiceRcsAgentCountryLaunchStatusAttrs struct {
 	CountryLaunchStatus any
-	Filters any
-	IsoCountryCodes any
-	MaxResults any
-	NextToken any
-	RcsAgentArn any
-	RcsAgentId any
+	Filters             any
+	IsoCountryCodes     any
+	MaxResults          any
+	NextToken           any
+	RcsAgentArn         any
+	RcsAgentId          any
 }
 
 var SmsVoiceRcsAgentCountryLaunchStatus = ubx.DataSourceBinding{
@@ -49,12 +49,12 @@ var SmsVoiceRcsAgentCountryLaunchStatus = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SmsVoiceRcsAgentCountryLaunchStatus_FiltersFields,
+			Kind:     "list",
+			Fields:   SmsVoiceRcsAgentCountryLaunchStatus_FiltersFields,
 		},
 		"IsoCountryCodes": ubx.FieldSpec{WireName: "iso_country_codes"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RcsAgentId": ubx.FieldSpec{WireName: "rcs_agent_id"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"RcsAgentId":      ubx.FieldSpec{WireName: "rcs_agent_id"},
 	},
 }

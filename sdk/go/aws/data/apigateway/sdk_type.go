@@ -5,10 +5,10 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SdkType_ConfigurationProperties struct {
 	DefaultValue any
-	Description any
+	Description  any
 	FriendlyName any
-	Name any
-	Required any
+	Name         any
+	Required     any
 }
 
 type SdkTypeConfig struct {
@@ -17,9 +17,9 @@ type SdkTypeConfig struct {
 
 type SdkTypeAttrs struct {
 	ConfigurationProperties any
-	Description any
-	FriendlyName any
-	Id any
+	Description             any
+	FriendlyName            any
+	Id                      any
 }
 
 var SdkType = ubx.DataSourceBinding{

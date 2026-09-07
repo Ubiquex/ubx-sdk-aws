@@ -7,13 +7,12 @@ type AccountCustomizationsConfig struct {
 }
 
 type AccountCustomizationsAttrs struct {
-	AccountColor any
-	VisibleRegions any
+	AccountColor    any
+	VisibleRegions  any
 	VisibleServices any
 }
 
 var AccountCustomizations = ubx.DataSourceBinding{
 	WireType: "aws_uxc_account_customizations",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

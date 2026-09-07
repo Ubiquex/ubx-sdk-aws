@@ -11,9 +11,9 @@ type EnvironmentAccountConnection_Tags struct {
 }
 
 var EnvironmentAccountConnection_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EnvironmentAccountConnectionConfig struct {
 	// The Amazon Resource Name (ARN) of an IAM service role in the environment account. AWS Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.
@@ -58,16 +58,16 @@ type EnvironmentAccountConnectionAttrs struct {
 var EnvironmentAccountConnection = ubx.ResourceBinding{
 	WireType: "aws_proton_environment_account_connection",
 	Fields: ubx.FieldMap{
-		"CodebuildRoleArn": ubx.FieldSpec{WireName: "codebuild_role_arn"},
-		"ComponentRoleArn": ubx.FieldSpec{WireName: "component_role_arn"},
+		"CodebuildRoleArn":     ubx.FieldSpec{WireName: "codebuild_role_arn"},
+		"ComponentRoleArn":     ubx.FieldSpec{WireName: "component_role_arn"},
 		"EnvironmentAccountId": ubx.FieldSpec{WireName: "environment_account_id"},
-		"EnvironmentName": ubx.FieldSpec{WireName: "environment_name"},
-		"ManagementAccountId": ubx.FieldSpec{WireName: "management_account_id"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"EnvironmentName":      ubx.FieldSpec{WireName: "environment_name"},
+		"ManagementAccountId":  ubx.FieldSpec{WireName: "management_account_id"},
+		"RoleArn":              ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EnvironmentAccountConnection_TagsFields,
+			Kind:     "list",
+			Fields:   EnvironmentAccountConnection_TagsFields,
 		},
 	},
 }

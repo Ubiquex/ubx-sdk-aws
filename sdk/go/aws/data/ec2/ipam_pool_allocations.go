@@ -4,46 +4,46 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamPoolAllocations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type IpamPoolAllocations_IpamPoolAllocations_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type IpamPoolAllocations_IpamPoolAllocations struct {
-	Cidr any
-	Description any
+	Cidr                 any
+	Description          any
 	IpamPoolAllocationId any
-	ResourceId any
-	ResourceOwner any
-	ResourceRegion any
-	ResourceType any
-	Tags any
+	ResourceId           any
+	ResourceOwner        any
+	ResourceRegion       any
+	ResourceType         any
+	Tags                 any
 }
 
 var IpamPoolAllocations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type IpamPoolAllocationsConfig struct {
-	DryRun any
-	Filters any
+	DryRun                any
+	Filters               any
 	IpamPoolAllocationIds any
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 }
 
 type IpamPoolAllocationsAttrs struct {
-	DryRun any
-	Filters any
+	DryRun                any
+	Filters               any
 	IpamPoolAllocationIds any
-	IpamPoolAllocations any
-	MaxResults any
-	NextToken any
+	IpamPoolAllocations   any
+	MaxResults            any
+	NextToken             any
 }
 
 var IpamPoolAllocations = ubx.DataSourceBinding{
@@ -52,11 +52,11 @@ var IpamPoolAllocations = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: IpamPoolAllocations_FiltersFields,
+			Kind:     "list",
+			Fields:   IpamPoolAllocations_FiltersFields,
 		},
 		"IpamPoolAllocationIds": ubx.FieldSpec{WireName: "ipam_pool_allocation_ids"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 	},
 }

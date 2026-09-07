@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessKeys_AccessKeyMetadata struct {
 	AccessKeyId any
-	CreateDate any
-	Status any
-	UserName any
+	CreateDate  any
+	Status      any
+	UserName    any
 }
 
 type AccessKeysConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 	UserName any
 }
@@ -19,16 +19,16 @@ type AccessKeysConfig struct {
 type AccessKeysAttrs struct {
 	// <p>Contains a list of access key metadata.</p> <p>This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html">ListAccessKeys</a> operation.</p>
 	AccessKeyMetadata any
-	IsTruncated any
-	Marker any
-	MaxItems any
-	UserName any
+	IsTruncated       any
+	Marker            any
+	MaxItems          any
+	UserName          any
 }
 
 var AccessKeys = ubx.DataSourceBinding{
 	WireType: "aws_iam_access_keys",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 		"UserName": ubx.FieldSpec{WireName: "user_name"},
 	},

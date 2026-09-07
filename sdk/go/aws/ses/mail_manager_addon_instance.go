@@ -11,9 +11,9 @@ type MailManagerAddonInstance_Tags struct {
 }
 
 var MailManagerAddonInstance_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MailManagerAddonInstanceConfig struct {
 	// The ID of the addon subscription that this addon instance is associated with. (AI-inferred)
@@ -41,8 +41,8 @@ var MailManagerAddonInstance = ubx.ResourceBinding{
 		"AddonSubscriptionId": ubx.FieldSpec{WireName: "addon_subscription_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MailManagerAddonInstance_TagsFields,
+			Kind:     "list",
+			Fields:   MailManagerAddonInstance_TagsFields,
 		},
 	},
 }

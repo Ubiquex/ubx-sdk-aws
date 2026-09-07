@@ -9,57 +9,57 @@ type Databases_DatabaseList_CreateTableDefaultPermissions_Principal struct {
 
 type Databases_DatabaseList_CreateTableDefaultPermissions struct {
 	Permissions any
-	Principal any
+	Principal   any
 }
 
 type Databases_DatabaseList_FederatedDatabase struct {
 	ConnectionName any
 	ConnectionType any
-	Identifier any
+	Identifier     any
 }
 
 type Databases_DatabaseList_TargetDatabase struct {
-	CatalogId any
+	CatalogId    any
 	DatabaseName any
-	Region any
+	Region       any
 }
 
 type Databases_DatabaseList struct {
-	CatalogId any
+	CatalogId                     any
 	CreateTableDefaultPermissions any
-	CreateTime any
-	Description any
-	FederatedDatabase any
-	LocationUri any
-	Name any
-	Parameters any
-	TargetDatabase any
+	CreateTime                    any
+	Description                   any
+	FederatedDatabase             any
+	LocationUri                   any
+	Name                          any
+	Parameters                    any
+	TargetDatabase                any
 }
 
 type DatabasesConfig struct {
-	AttributesToGet any
-	CatalogId any
-	MaxResults any
-	NextToken any
+	AttributesToGet   any
+	CatalogId         any
+	MaxResults        any
+	NextToken         any
 	ResourceShareType any
 }
 
 type DatabasesAttrs struct {
-	AttributesToGet any
-	CatalogId any
-	DatabaseList any
-	MaxResults any
-	NextToken any
+	AttributesToGet   any
+	CatalogId         any
+	DatabaseList      any
+	MaxResults        any
+	NextToken         any
 	ResourceShareType any
 }
 
 var Databases = ubx.DataSourceBinding{
 	WireType: "aws_glue_databases",
 	Fields: ubx.FieldMap{
-		"AttributesToGet": ubx.FieldSpec{WireName: "attributes_to_get"},
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"AttributesToGet":   ubx.FieldSpec{WireName: "attributes_to_get"},
+		"CatalogId":         ubx.FieldSpec{WireName: "catalog_id"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"ResourceShareType": ubx.FieldSpec{WireName: "resource_share_type"},
 	},
 }

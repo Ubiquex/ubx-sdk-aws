@@ -5,47 +5,47 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReportJobs_ReportJobs_ReportDestination struct {
 	S3BucketName any
-	S3Keys any
+	S3Keys       any
 }
 
 type ReportJobs_ReportJobs struct {
-	CompletionTime any
-	CreationTime any
+	CompletionTime    any
+	CreationTime      any
 	ReportDestination any
-	ReportJobId any
-	ReportPlanArn any
-	ReportTemplate any
-	Status any
-	StatusMessage any
+	ReportJobId       any
+	ReportPlanArn     any
+	ReportTemplate    any
+	Status            any
+	StatusMessage     any
 }
 
 type ReportJobsConfig struct {
-	ByCreationAfter any
+	ByCreationAfter  any
 	ByCreationBefore any
 	ByReportPlanName any
-	ByStatus any
-	MaxResults any
-	NextToken any
+	ByStatus         any
+	MaxResults       any
+	NextToken        any
 }
 
 type ReportJobsAttrs struct {
-	ByCreationAfter any
+	ByCreationAfter  any
 	ByCreationBefore any
 	ByReportPlanName any
-	ByStatus any
-	MaxResults any
-	NextToken any
-	ReportJobs any
+	ByStatus         any
+	MaxResults       any
+	NextToken        any
+	ReportJobs       any
 }
 
 var ReportJobs = ubx.DataSourceBinding{
 	WireType: "aws_backup_report_jobs",
 	Fields: ubx.FieldMap{
-		"ByCreationAfter": ubx.FieldSpec{WireName: "by_creation_after"},
+		"ByCreationAfter":  ubx.FieldSpec{WireName: "by_creation_after"},
 		"ByCreationBefore": ubx.FieldSpec{WireName: "by_creation_before"},
 		"ByReportPlanName": ubx.FieldSpec{WireName: "by_report_plan_name"},
-		"ByStatus": ubx.FieldSpec{WireName: "by_status"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ByStatus":         ubx.FieldSpec{WireName: "by_status"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

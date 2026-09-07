@@ -11,9 +11,9 @@ type SubnetGroup_Tags struct {
 }
 
 var SubnetGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SubnetGroupConfig struct {
 	// The name for the cache subnet group. This value is stored as a lowercase string.
@@ -41,12 +41,12 @@ var SubnetGroup = ubx.ResourceBinding{
 	WireType: "aws_elasti_cache_subnet_group",
 	Fields: ubx.FieldMap{
 		"CacheSubnetGroupName": ubx.FieldSpec{WireName: "cache_subnet_group_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"SubnetIds":            ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SubnetGroup_TagsFields,
+			Kind:     "list",
+			Fields:   SubnetGroup_TagsFields,
 		},
 	},
 }

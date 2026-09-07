@@ -4,29 +4,29 @@ package route53resolver
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallRuleGroups_FirewallRuleGroups struct {
-	Arn any
+	Arn              any
 	CreatorRequestId any
-	Id any
-	Name any
-	OwnerId any
-	ShareStatus any
+	Id               any
+	Name             any
+	OwnerId          any
+	ShareStatus      any
 }
 
 type FirewallRuleGroupsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FirewallRuleGroupsAttrs struct {
 	FirewallRuleGroups any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 var FirewallRuleGroups = ubx.DataSourceBinding{
 	WireType: "aws_route53resolver_firewall_rule_groups",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

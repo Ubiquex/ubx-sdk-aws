@@ -13,20 +13,20 @@ type Workspace_DataResidency struct {
 }
 
 type Workspace_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Workspace_DataResidencyFields = ubx.FieldMap{
-		"AllowedInferenceGeos": ubx.FieldSpec{WireName: "allowed_inference_geos"},
-		"DefaultInferenceGeo": ubx.FieldSpec{WireName: "default_inference_geo"},
-		"WorkspaceGeo": ubx.FieldSpec{WireName: "workspace_geo"},
-	}
+	"AllowedInferenceGeos": ubx.FieldSpec{WireName: "allowed_inference_geos"},
+	"DefaultInferenceGeo":  ubx.FieldSpec{WireName: "default_inference_geo"},
+	"WorkspaceGeo":         ubx.FieldSpec{WireName: "workspace_geo"},
+}
 
 var Workspace_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type WorkspaceConfig struct {
 	// Data residency configuration for the workspace. WorkspaceGeo is immutable after creation.
@@ -57,14 +57,14 @@ var Workspace = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DataResidency": ubx.FieldSpec{
 			WireName: "data_residency",
-			Kind: "object",
-			Fields: Workspace_DataResidencyFields,
+			Kind:     "object",
+			Fields:   Workspace_DataResidencyFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Workspace_TagsFields,
+			Kind:     "list",
+			Fields:   Workspace_TagsFields,
 		},
 	},
 }

@@ -27,7 +27,7 @@ var Certificate = ubx.ResourceBinding{
 	WireType: "aws_dms_certificate",
 	Fields: ubx.FieldMap{
 		"CertificateIdentifier": ubx.FieldSpec{WireName: "certificate_identifier"},
-		"CertificatePem": ubx.FieldSpec{WireName: "certificate_pem"},
-		"CertificateWallet": ubx.FieldSpec{WireName: "certificate_wallet"},
+		"CertificatePem":        ubx.FieldSpec{WireName: "certificate_pem"},
+		"CertificateWallet":     ubx.FieldSpec{WireName: "certificate_wallet"},
 	},
 }

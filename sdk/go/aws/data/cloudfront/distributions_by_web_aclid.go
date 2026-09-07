@@ -4,40 +4,40 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DistributionsByWebAclid_DistributionList_Items_AliasIcprecordals struct {
-	Cname any
+	Cname             any
 	IcprecordalStatus any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_Aliases struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_CacheBehaviors_Items_AllowedMethods struct {
 	CachedMethods any
-	Items any
-	Quantity any
+	Items         any
+	Quantity      any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_CacheBehaviors_Items_ForwardedValues_Cookies struct {
-	Forward any
+	Forward          any
 	WhitelistedNames any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_CacheBehaviors_Items_ForwardedValues struct {
-	Cookies any
-	Headers any
-	QueryString any
+	Cookies              any
+	Headers              any
+	QueryString          any
 	QueryStringCacheKeys any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_CacheBehaviors_Items_FunctionAssociations_Items struct {
-	EventType any
+	EventType   any
 	FunctionArn any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_CacheBehaviors_Items_FunctionAssociations struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
@@ -46,47 +46,47 @@ type DistributionsByWebAclid_DistributionList_Items_CacheBehaviors_Items_GrpcCon
 }
 
 type DistributionsByWebAclid_DistributionList_Items_CacheBehaviors_Items_LambdaFunctionAssociations_Items struct {
-	EventType any
-	IncludeBody any
+	EventType         any
+	IncludeBody       any
 	LambdaFunctionArn any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_CacheBehaviors_Items_LambdaFunctionAssociations struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_CacheBehaviors_Items_TrustedKeyGroups struct {
-	Enabled any
-	Items any
+	Enabled  any
+	Items    any
 	Quantity any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_CacheBehaviors_Items struct {
-	AllowedMethods any
-	CachePolicyId any
-	Compress any
-	DefaultTtl any
-	FieldLevelEncryptionId any
-	ForwardedValues any
-	FunctionAssociations any
-	GrpcConfig any
+	AllowedMethods             any
+	CachePolicyId              any
+	Compress                   any
+	DefaultTtl                 any
+	FieldLevelEncryptionId     any
+	ForwardedValues            any
+	FunctionAssociations       any
+	GrpcConfig                 any
 	LambdaFunctionAssociations any
-	MaxTtl any
-	MinTtl any
-	OriginRequestPolicyId any
-	PathPattern any
-	RealtimeLogConfigArn any
-	ResponseHeadersPolicyId any
-	SmoothStreaming any
-	TargetOriginId any
-	TrustedKeyGroups any
-	TrustedSigners any
-	ViewerProtocolPolicy any
+	MaxTtl                     any
+	MinTtl                     any
+	OriginRequestPolicyId      any
+	PathPattern                any
+	RealtimeLogConfigArn       any
+	ResponseHeadersPolicyId    any
+	SmoothStreaming            any
+	TargetOriginId             any
+	TrustedKeyGroups           any
+	TrustedSigners             any
+	ViewerProtocolPolicy       any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_CacheBehaviors struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
@@ -96,40 +96,40 @@ type DistributionsByWebAclid_DistributionList_Items_ConnectionFunctionAssociatio
 
 type DistributionsByWebAclid_DistributionList_Items_CustomErrorResponses_Items struct {
 	ErrorCachingMinTtl any
-	ErrorCode any
-	ResponseCode any
-	ResponsePagePath any
+	ErrorCode          any
+	ResponseCode       any
+	ResponsePagePath   any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_CustomErrorResponses struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_DefaultCacheBehavior struct {
-	AllowedMethods any
-	CachePolicyId any
-	Compress any
-	DefaultTtl any
-	FieldLevelEncryptionId any
-	ForwardedValues any
-	FunctionAssociations any
-	GrpcConfig any
+	AllowedMethods             any
+	CachePolicyId              any
+	Compress                   any
+	DefaultTtl                 any
+	FieldLevelEncryptionId     any
+	ForwardedValues            any
+	FunctionAssociations       any
+	GrpcConfig                 any
 	LambdaFunctionAssociations any
-	MaxTtl any
-	MinTtl any
-	OriginRequestPolicyId any
-	RealtimeLogConfigArn any
-	ResponseHeadersPolicyId any
-	SmoothStreaming any
-	TargetOriginId any
-	TrustedKeyGroups any
-	TrustedSigners any
-	ViewerProtocolPolicy any
+	MaxTtl                     any
+	MinTtl                     any
+	OriginRequestPolicyId      any
+	RealtimeLogConfigArn       any
+	ResponseHeadersPolicyId    any
+	SmoothStreaming            any
+	TargetOriginId             any
+	TrustedKeyGroups           any
+	TrustedSigners             any
+	ViewerProtocolPolicy       any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_OriginGroups_Items_FailoverCriteria_StatusCodes struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
@@ -142,29 +142,29 @@ type DistributionsByWebAclid_DistributionList_Items_OriginGroups_Items_Members_I
 }
 
 type DistributionsByWebAclid_DistributionList_Items_OriginGroups_Items_Members struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_OriginGroups_Items struct {
-	FailoverCriteria any
-	Id any
-	Members any
+	FailoverCriteria  any
+	Id                any
+	Members           any
 	SelectionCriteria any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_OriginGroups struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_Origins_Items_CustomHeaders_Items struct {
-	HeaderName any
+	HeaderName  any
 	HeaderValue any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_Origins_Items_CustomHeaders struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
@@ -173,56 +173,56 @@ type DistributionsByWebAclid_DistributionList_Items_Origins_Items_CustomOriginCo
 }
 
 type DistributionsByWebAclid_DistributionList_Items_Origins_Items_CustomOriginConfig struct {
-	Httpport any
-	Httpsport any
-	IpAddressType any
+	Httpport               any
+	Httpsport              any
+	IpAddressType          any
 	OriginKeepaliveTimeout any
-	OriginMtlsConfig any
-	OriginProtocolPolicy any
-	OriginReadTimeout any
-	OriginSslProtocols any
+	OriginMtlsConfig       any
+	OriginProtocolPolicy   any
+	OriginReadTimeout      any
+	OriginSslProtocols     any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_Origins_Items_OriginShield struct {
-	Enabled any
+	Enabled            any
 	OriginShieldRegion any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_Origins_Items_S3OriginConfig struct {
 	OriginAccessIdentity any
-	OriginReadTimeout any
+	OriginReadTimeout    any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_Origins_Items_VpcOriginConfig struct {
 	OriginKeepaliveTimeout any
-	OriginReadTimeout any
-	OwnerAccountId any
-	VpcOriginId any
+	OriginReadTimeout      any
+	OwnerAccountId         any
+	VpcOriginId            any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_Origins_Items struct {
-	ConnectionAttempts any
-	ConnectionTimeout any
-	CustomHeaders any
-	CustomOriginConfig any
-	DomainName any
-	Id any
-	OriginAccessControlId any
-	OriginPath any
-	OriginShield any
+	ConnectionAttempts        any
+	ConnectionTimeout         any
+	CustomHeaders             any
+	CustomOriginConfig        any
+	DomainName                any
+	Id                        any
+	OriginAccessControlId     any
+	OriginPath                any
+	OriginShield              any
 	ResponseCompletionTimeout any
-	S3OriginConfig any
-	VpcOriginConfig any
+	S3OriginConfig            any
+	VpcOriginConfig           any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_Origins struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_Restrictions_GeoRestriction struct {
-	Items any
-	Quantity any
+	Items           any
+	Quantity        any
 	RestrictionType any
 }
 
@@ -231,66 +231,66 @@ type DistributionsByWebAclid_DistributionList_Items_Restrictions struct {
 }
 
 type DistributionsByWebAclid_DistributionList_Items_ViewerCertificate struct {
-	AcmcertificateArn any
-	Certificate any
-	CertificateSource any
+	AcmcertificateArn            any
+	Certificate                  any
+	CertificateSource            any
 	CloudFrontDefaultCertificate any
-	IamcertificateId any
-	MinimumProtocolVersion any
-	SslsupportMethod any
+	IamcertificateId             any
+	MinimumProtocolVersion       any
+	SslsupportMethod             any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_ViewerMtlsConfig_TrustStoreConfig struct {
 	AdvertiseTrustStoreCaNames any
-	IgnoreCertificateExpiry any
-	TrustStoreId any
+	IgnoreCertificateExpiry    any
+	TrustStoreId               any
 }
 
 type DistributionsByWebAclid_DistributionList_Items_ViewerMtlsConfig struct {
-	Mode any
+	Mode             any
 	TrustStoreConfig any
 }
 
 type DistributionsByWebAclid_DistributionList_Items struct {
-	AliasIcprecordals any
-	Aliases any
-	AnycastIpListId any
-	Arn any
-	CacheBehaviors any
-	Comment any
+	AliasIcprecordals             any
+	Aliases                       any
+	AnycastIpListId               any
+	Arn                           any
+	CacheBehaviors                any
+	Comment                       any
 	ConnectionFunctionAssociation any
-	ConnectionMode any
-	CustomErrorResponses any
-	DefaultCacheBehavior any
-	DomainName any
-	Enabled any
-	Etag any
-	HttpVersion any
-	Id any
-	IsIpv6Enabled any
-	LastModifiedTime any
-	OriginGroups any
-	Origins any
-	PriceClass any
-	Restrictions any
-	Staging any
-	Status any
-	ViewerCertificate any
-	ViewerMtlsConfig any
-	WebAclid any
+	ConnectionMode                any
+	CustomErrorResponses          any
+	DefaultCacheBehavior          any
+	DomainName                    any
+	Enabled                       any
+	Etag                          any
+	HttpVersion                   any
+	Id                            any
+	IsIpv6Enabled                 any
+	LastModifiedTime              any
+	OriginGroups                  any
+	Origins                       any
+	PriceClass                    any
+	Restrictions                  any
+	Staging                       any
+	Status                        any
+	ViewerCertificate             any
+	ViewerMtlsConfig              any
+	WebAclid                      any
 }
 
 type DistributionsByWebAclid_DistributionList struct {
 	IsTruncated any
-	Items any
-	Marker any
-	MaxItems any
-	NextMarker any
-	Quantity any
+	Items       any
+	Marker      any
+	MaxItems    any
+	NextMarker  any
+	Quantity    any
 }
 
 type DistributionsByWebAclidConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 	WebAclid any
 }
@@ -298,15 +298,15 @@ type DistributionsByWebAclidConfig struct {
 type DistributionsByWebAclidAttrs struct {
 	// <p>A distribution list.</p>
 	DistributionList any
-	Marker any
-	MaxItems any
-	WebAclid any
+	Marker           any
+	MaxItems         any
+	WebAclid         any
 }
 
 var DistributionsByWebAclid = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_distributions_by_web_aclid",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 		"WebAclid": ubx.FieldSpec{WireName: "web_aclid"},
 	},

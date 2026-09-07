@@ -4,16 +4,16 @@ package sso
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PermissionSetProvisioningStatus_PermissionSetProvisioningStatus struct {
-	AccountId any
-	CreatedDate any
-	FailureReason any
+	AccountId        any
+	CreatedDate      any
+	FailureReason    any
 	PermissionSetArn any
-	RequestId any
-	Status any
+	RequestId        any
+	Status           any
 }
 
 type PermissionSetProvisioningStatusConfig struct {
-	InstanceArn any
+	InstanceArn                     any
 	ProvisionPermissionSetRequestId any
 }
 
@@ -27,7 +27,7 @@ type PermissionSetProvisioningStatusAttrs struct {
 var PermissionSetProvisioningStatus = ubx.DataSourceBinding{
 	WireType: "aws_sso_permission_set_provisioning_status",
 	Fields: ubx.FieldMap{
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
+		"InstanceArn":                     ubx.FieldSpec{WireName: "instance_arn"},
 		"ProvisionPermissionSetRequestId": ubx.FieldSpec{WireName: "provision_permission_set_request_id"},
 	},
 }

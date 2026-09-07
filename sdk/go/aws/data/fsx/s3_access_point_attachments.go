@@ -4,7 +4,7 @@ package fsx
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type S3AccessPointAttachments_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -17,30 +17,30 @@ type S3AccessPointAttachments_S3AccessPointAttachments_OntapConfiguration_FileSy
 }
 
 type S3AccessPointAttachments_S3AccessPointAttachments_OntapConfiguration_FileSystemIdentity struct {
-	Type any
-	UnixUser any
+	Type        any
+	UnixUser    any
 	WindowsUser any
 }
 
 type S3AccessPointAttachments_S3AccessPointAttachments_OntapConfiguration struct {
 	FileSystemIdentity any
-	VolumeId any
+	VolumeId           any
 }
 
 type S3AccessPointAttachments_S3AccessPointAttachments_OpenZfsconfiguration_FileSystemIdentity_PosixUser struct {
-	Gid any
+	Gid           any
 	SecondaryGids any
-	Uid any
+	Uid           any
 }
 
 type S3AccessPointAttachments_S3AccessPointAttachments_OpenZfsconfiguration_FileSystemIdentity struct {
 	PosixUser any
-	Type any
+	Type      any
 }
 
 type S3AccessPointAttachments_S3AccessPointAttachments_OpenZfsconfiguration struct {
 	FileSystemIdentity any
-	VolumeId any
+	VolumeId           any
 }
 
 type S3AccessPointAttachments_S3AccessPointAttachments_S3AccessPoint_VpcConfiguration struct {
@@ -48,32 +48,32 @@ type S3AccessPointAttachments_S3AccessPointAttachments_S3AccessPoint_VpcConfigur
 }
 
 type S3AccessPointAttachments_S3AccessPointAttachments_S3AccessPoint struct {
-	Alias any
-	ResourceArn any
+	Alias            any
+	ResourceArn      any
 	VpcConfiguration any
 }
 
 type S3AccessPointAttachments_S3AccessPointAttachments struct {
-	CreationTime any
-	Lifecycle any
+	CreationTime              any
+	Lifecycle                 any
 	LifecycleTransitionReason any
-	Name any
-	OntapConfiguration any
-	OpenZfsconfiguration any
-	S3AccessPoint any
-	Type any
+	Name                      any
+	OntapConfiguration        any
+	OpenZfsconfiguration      any
+	S3AccessPoint             any
+	Type                      any
 }
 
 var S3AccessPointAttachments_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type S3AccessPointAttachmentsConfig struct {
 	Filters any
 	// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
 	MaxResults any
-	Names any
+	Names      any
 	// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
 	NextToken any
 }
@@ -82,9 +82,9 @@ type S3AccessPointAttachmentsAttrs struct {
 	Filters any
 	// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
 	MaxResults any
-	Names any
+	Names      any
 	// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-	NextToken any
+	NextToken                any
 	S3AccessPointAttachments any
 }
 
@@ -93,11 +93,11 @@ var S3AccessPointAttachments = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: S3AccessPointAttachments_FiltersFields,
+			Kind:     "list",
+			Fields:   S3AccessPointAttachments_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Names": ubx.FieldSpec{WireName: "names"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Names":      ubx.FieldSpec{WireName: "names"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

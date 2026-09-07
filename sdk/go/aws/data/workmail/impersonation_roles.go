@@ -4,31 +4,31 @@ package workmail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImpersonationRoles_Roles struct {
-	DateCreated any
-	DateModified any
+	DateCreated         any
+	DateModified        any
 	ImpersonationRoleId any
-	Name any
-	Type any
+	Name                any
+	Type                any
 }
 
 type ImpersonationRolesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
 }
 
 type ImpersonationRolesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
-	Roles any
+	Roles          any
 }
 
 var ImpersonationRoles = ubx.DataSourceBinding{
 	WireType: "aws_workmail_impersonation_roles",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
 	},
 }

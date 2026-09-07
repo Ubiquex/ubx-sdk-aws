@@ -50,10 +50,10 @@ type RuntimeEndpointAttrs struct {
 var RuntimeEndpoint = ubx.ResourceBinding{
 	WireType: "aws_bedrock_agent_core_runtime_endpoint",
 	Fields: ubx.FieldMap{
-		"AgentRuntimeId": ubx.FieldSpec{WireName: "agent_runtime_id"},
+		"AgentRuntimeId":      ubx.FieldSpec{WireName: "agent_runtime_id"},
 		"AgentRuntimeVersion": ubx.FieldSpec{WireName: "agent_runtime_version"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"Tags":                ubx.FieldSpec{WireName: "tags"},
 	},
 }

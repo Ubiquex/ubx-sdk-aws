@@ -8,30 +8,30 @@ type VolumeAttribute_AutoEnableIo struct {
 }
 
 type VolumeAttribute_ProductCodes struct {
-	ProductCodeId any
+	ProductCodeId   any
 	ProductCodeType any
 }
 
 type VolumeAttributeConfig struct {
 	Attribute any
-	DryRun any
-	VolumeId any
+	DryRun    any
+	VolumeId  any
 }
 
 type VolumeAttributeAttrs struct {
 	Attribute any
 	// <p>Describes a value for a resource attribute that is a Boolean value.</p>
 	AutoEnableIo any
-	DryRun any
+	DryRun       any
 	ProductCodes any
-	VolumeId any
+	VolumeId     any
 }
 
 var VolumeAttribute = ubx.DataSourceBinding{
 	WireType: "aws_ec2_volume_attribute",
 	Fields: ubx.FieldMap{
 		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
+		"DryRun":    ubx.FieldSpec{WireName: "dry_run"},
+		"VolumeId":  ubx.FieldSpec{WireName: "volume_id"},
 	},
 }

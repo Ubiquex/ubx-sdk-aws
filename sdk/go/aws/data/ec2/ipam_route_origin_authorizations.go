@@ -4,35 +4,35 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamRouteOriginAuthorizations_IpamRouteOriginAuthorizations struct {
-	Asn any
-	Cidr any
+	Asn       any
+	Cidr      any
 	MaxLength any
 }
 
 type IpamRouteOriginAuthorizationsConfig struct {
-	Cidr any
-	DryRun any
+	Cidr                              any
+	DryRun                            any
 	IpamInternetRegistryAssociationId any
-	MaxResults any
-	NextToken any
+	MaxResults                        any
+	NextToken                         any
 }
 
 type IpamRouteOriginAuthorizationsAttrs struct {
-	Cidr any
-	DryRun any
+	Cidr                              any
+	DryRun                            any
 	IpamInternetRegistryAssociationId any
-	IpamRouteOriginAuthorizations any
-	MaxResults any
-	NextToken any
+	IpamRouteOriginAuthorizations     any
+	MaxResults                        any
+	NextToken                         any
 }
 
 var IpamRouteOriginAuthorizations = ubx.DataSourceBinding{
 	WireType: "aws_ec2_ipam_route_origin_authorizations",
 	Fields: ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"Cidr":                              ubx.FieldSpec{WireName: "cidr"},
+		"DryRun":                            ubx.FieldSpec{WireName: "dry_run"},
 		"IpamInternetRegistryAssociationId": ubx.FieldSpec{WireName: "ipam_internet_registry_association_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                         ubx.FieldSpec{WireName: "next_token"},
 	},
 }

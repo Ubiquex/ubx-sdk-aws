@@ -10,9 +10,9 @@ type ResourceGateway_Tags struct {
 }
 
 var ResourceGateway_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ResourceGatewayConfig struct {
 	// Specifies the IP address type (IPv4 or IPv6) that the resource gateway uses for network traffic to and from its associated resources. (AI-inferred)
@@ -59,16 +59,16 @@ type ResourceGatewayAttrs struct {
 var ResourceGateway = ubx.ResourceBinding{
 	WireType: "aws_vpc_lattice_resource_gateway",
 	Fields: ubx.FieldMap{
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"Ipv4AddressesPerEni": ubx.FieldSpec{WireName: "ipv4_addresses_per_eni"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"IpAddressType":               ubx.FieldSpec{WireName: "ip_address_type"},
+		"Ipv4AddressesPerEni":         ubx.FieldSpec{WireName: "ipv4_addresses_per_eni"},
+		"Name":                        ubx.FieldSpec{WireName: "name"},
 		"ResourceConfigDnsResolution": ubx.FieldSpec{WireName: "resource_config_dns_resolution"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"SecurityGroupIds":            ubx.FieldSpec{WireName: "security_group_ids"},
+		"SubnetIds":                   ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ResourceGateway_TagsFields,
+			Kind:     "list",
+			Fields:   ResourceGateway_TagsFields,
 		},
 		"VpcIdentifier": ubx.FieldSpec{WireName: "vpc_identifier"},
 	},

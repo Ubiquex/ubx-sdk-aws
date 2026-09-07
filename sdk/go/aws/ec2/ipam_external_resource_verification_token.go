@@ -4,14 +4,14 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamExternalResourceVerificationToken_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var IpamExternalResourceVerificationToken_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IpamExternalResourceVerificationTokenConfig struct {
 	// The ID of the IPAM that will create the token.
@@ -51,8 +51,8 @@ var IpamExternalResourceVerificationToken = ubx.ResourceBinding{
 		"IpamId": ubx.FieldSpec{WireName: "ipam_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: IpamExternalResourceVerificationToken_TagsFields,
+			Kind:     "list",
+			Fields:   IpamExternalResourceVerificationToken_TagsFields,
 		},
 	},
 }

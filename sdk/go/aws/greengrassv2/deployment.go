@@ -78,88 +78,88 @@ type Deployment_IotJobConfiguration struct {
 }
 
 var Deployment_DeploymentPolicies_ComponentUpdatePolicyFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"TimeoutInSeconds": ubx.FieldSpec{WireName: "timeout_in_seconds"},
-	}
+	"Action":           ubx.FieldSpec{WireName: "action"},
+	"TimeoutInSeconds": ubx.FieldSpec{WireName: "timeout_in_seconds"},
+}
 
 var Deployment_DeploymentPolicies_ConfigurationValidationPolicyFields = ubx.FieldMap{
-		"TimeoutInSeconds": ubx.FieldSpec{WireName: "timeout_in_seconds"},
-	}
+	"TimeoutInSeconds": ubx.FieldSpec{WireName: "timeout_in_seconds"},
+}
 
 var Deployment_DeploymentPoliciesFields = ubx.FieldMap{
-		"ComponentUpdatePolicy": ubx.FieldSpec{
-			WireName: "component_update_policy",
-			Kind: "object",
-			Fields: Deployment_DeploymentPolicies_ComponentUpdatePolicyFields,
-		},
-		"ConfigurationValidationPolicy": ubx.FieldSpec{
-			WireName: "configuration_validation_policy",
-			Kind: "object",
-			Fields: Deployment_DeploymentPolicies_ConfigurationValidationPolicyFields,
-		},
-		"FailureHandlingPolicy": ubx.FieldSpec{WireName: "failure_handling_policy"},
-	}
+	"ComponentUpdatePolicy": ubx.FieldSpec{
+		WireName: "component_update_policy",
+		Kind:     "object",
+		Fields:   Deployment_DeploymentPolicies_ComponentUpdatePolicyFields,
+	},
+	"ConfigurationValidationPolicy": ubx.FieldSpec{
+		WireName: "configuration_validation_policy",
+		Kind:     "object",
+		Fields:   Deployment_DeploymentPolicies_ConfigurationValidationPolicyFields,
+	},
+	"FailureHandlingPolicy": ubx.FieldSpec{WireName: "failure_handling_policy"},
+}
 
 var Deployment_IotJobConfiguration_AbortConfig_CriteriaListFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"FailureType": ubx.FieldSpec{WireName: "failure_type"},
-		"MinNumberOfExecutedThings": ubx.FieldSpec{WireName: "min_number_of_executed_things"},
-		"ThresholdPercentage": ubx.FieldSpec{WireName: "threshold_percentage"},
-	}
+	"Action":                    ubx.FieldSpec{WireName: "action"},
+	"FailureType":               ubx.FieldSpec{WireName: "failure_type"},
+	"MinNumberOfExecutedThings": ubx.FieldSpec{WireName: "min_number_of_executed_things"},
+	"ThresholdPercentage":       ubx.FieldSpec{WireName: "threshold_percentage"},
+}
 
 var Deployment_IotJobConfiguration_AbortConfigFields = ubx.FieldMap{
-		"CriteriaList": ubx.FieldSpec{
-			WireName: "criteria_list",
-			Kind: "list",
-			Fields: Deployment_IotJobConfiguration_AbortConfig_CriteriaListFields,
-		},
-	}
+	"CriteriaList": ubx.FieldSpec{
+		WireName: "criteria_list",
+		Kind:     "list",
+		Fields:   Deployment_IotJobConfiguration_AbortConfig_CriteriaListFields,
+	},
+}
 
 var Deployment_IotJobConfiguration_JobExecutionsRolloutConfig_ExponentialRate_RateIncreaseCriteriaFields = ubx.FieldMap{
-		"NumberOfNotifiedThings": ubx.FieldSpec{WireName: "number_of_notified_things"},
-		"NumberOfSucceededThings": ubx.FieldSpec{WireName: "number_of_succeeded_things"},
-	}
+	"NumberOfNotifiedThings":  ubx.FieldSpec{WireName: "number_of_notified_things"},
+	"NumberOfSucceededThings": ubx.FieldSpec{WireName: "number_of_succeeded_things"},
+}
 
 var Deployment_IotJobConfiguration_JobExecutionsRolloutConfig_ExponentialRateFields = ubx.FieldMap{
-		"BaseRatePerMinute": ubx.FieldSpec{WireName: "base_rate_per_minute"},
-		"IncrementFactor": ubx.FieldSpec{WireName: "increment_factor"},
-		"RateIncreaseCriteria": ubx.FieldSpec{
-			WireName: "rate_increase_criteria",
-			Kind: "object",
-			Fields: Deployment_IotJobConfiguration_JobExecutionsRolloutConfig_ExponentialRate_RateIncreaseCriteriaFields,
-		},
-	}
+	"BaseRatePerMinute": ubx.FieldSpec{WireName: "base_rate_per_minute"},
+	"IncrementFactor":   ubx.FieldSpec{WireName: "increment_factor"},
+	"RateIncreaseCriteria": ubx.FieldSpec{
+		WireName: "rate_increase_criteria",
+		Kind:     "object",
+		Fields:   Deployment_IotJobConfiguration_JobExecutionsRolloutConfig_ExponentialRate_RateIncreaseCriteriaFields,
+	},
+}
 
 var Deployment_IotJobConfiguration_JobExecutionsRolloutConfigFields = ubx.FieldMap{
-		"ExponentialRate": ubx.FieldSpec{
-			WireName: "exponential_rate",
-			Kind: "object",
-			Fields: Deployment_IotJobConfiguration_JobExecutionsRolloutConfig_ExponentialRateFields,
-		},
-		"MaximumPerMinute": ubx.FieldSpec{WireName: "maximum_per_minute"},
-	}
+	"ExponentialRate": ubx.FieldSpec{
+		WireName: "exponential_rate",
+		Kind:     "object",
+		Fields:   Deployment_IotJobConfiguration_JobExecutionsRolloutConfig_ExponentialRateFields,
+	},
+	"MaximumPerMinute": ubx.FieldSpec{WireName: "maximum_per_minute"},
+}
 
 var Deployment_IotJobConfiguration_TimeoutConfigFields = ubx.FieldMap{
-		"InProgressTimeoutInMinutes": ubx.FieldSpec{WireName: "in_progress_timeout_in_minutes"},
-	}
+	"InProgressTimeoutInMinutes": ubx.FieldSpec{WireName: "in_progress_timeout_in_minutes"},
+}
 
 var Deployment_IotJobConfigurationFields = ubx.FieldMap{
-		"AbortConfig": ubx.FieldSpec{
-			WireName: "abort_config",
-			Kind: "object",
-			Fields: Deployment_IotJobConfiguration_AbortConfigFields,
-		},
-		"JobExecutionsRolloutConfig": ubx.FieldSpec{
-			WireName: "job_executions_rollout_config",
-			Kind: "object",
-			Fields: Deployment_IotJobConfiguration_JobExecutionsRolloutConfigFields,
-		},
-		"TimeoutConfig": ubx.FieldSpec{
-			WireName: "timeout_config",
-			Kind: "object",
-			Fields: Deployment_IotJobConfiguration_TimeoutConfigFields,
-		},
-	}
+	"AbortConfig": ubx.FieldSpec{
+		WireName: "abort_config",
+		Kind:     "object",
+		Fields:   Deployment_IotJobConfiguration_AbortConfigFields,
+	},
+	"JobExecutionsRolloutConfig": ubx.FieldSpec{
+		WireName: "job_executions_rollout_config",
+		Kind:     "object",
+		Fields:   Deployment_IotJobConfiguration_JobExecutionsRolloutConfigFields,
+	},
+	"TimeoutConfig": ubx.FieldSpec{
+		WireName: "timeout_config",
+		Kind:     "object",
+		Fields:   Deployment_IotJobConfiguration_TimeoutConfigFields,
+	},
+}
 
 type DeploymentConfig struct {
 	// Specifies the components to deploy and their deployment configuration, including component version, configuration updates, and system resource limits for each component within the AWS IoT Greengrass V2 deployment. (AI-inferred)
@@ -200,20 +200,20 @@ type DeploymentAttrs struct {
 var Deployment = ubx.ResourceBinding{
 	WireType: "aws_greengrass_v2_deployment",
 	Fields: ubx.FieldMap{
-		"Components": ubx.FieldSpec{WireName: "components"},
+		"Components":     ubx.FieldSpec{WireName: "components"},
 		"DeploymentName": ubx.FieldSpec{WireName: "deployment_name"},
 		"DeploymentPolicies": ubx.FieldSpec{
 			WireName: "deployment_policies",
-			Kind: "object",
-			Fields: Deployment_DeploymentPoliciesFields,
+			Kind:     "object",
+			Fields:   Deployment_DeploymentPoliciesFields,
 		},
 		"IotJobConfiguration": ubx.FieldSpec{
 			WireName: "iot_job_configuration",
-			Kind: "object",
-			Fields: Deployment_IotJobConfigurationFields,
+			Kind:     "object",
+			Fields:   Deployment_IotJobConfigurationFields,
 		},
 		"ParentTargetArn": ubx.FieldSpec{WireName: "parent_target_arn"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
+		"Tags":            ubx.FieldSpec{WireName: "tags"},
+		"TargetArn":       ubx.FieldSpec{WireName: "target_arn"},
 	},
 }

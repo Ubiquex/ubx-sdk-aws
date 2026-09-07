@@ -24,28 +24,28 @@ type Function_FunctionMetadata struct {
 
 type Function_Tags struct {
 	// The tag key (e.g., 'environment') assigned to the CloudFront function for metadata and cost allocation. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Function_FunctionConfig_KeyValueStoreAssociationsFields = ubx.FieldMap{
-		"KeyValueStoreArn": ubx.FieldSpec{WireName: "key_value_store_arn"},
-	}
+	"KeyValueStoreArn": ubx.FieldSpec{WireName: "key_value_store_arn"},
+}
 
 var Function_FunctionConfigFields = ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"KeyValueStoreAssociations": ubx.FieldSpec{
-			WireName: "key_value_store_associations",
-			Kind: "list",
-			Fields: Function_FunctionConfig_KeyValueStoreAssociationsFields,
-		},
-		"Runtime": ubx.FieldSpec{WireName: "runtime"},
-	}
+	"Comment": ubx.FieldSpec{WireName: "comment"},
+	"KeyValueStoreAssociations": ubx.FieldSpec{
+		WireName: "key_value_store_associations",
+		Kind:     "list",
+		Fields:   Function_FunctionConfig_KeyValueStoreAssociationsFields,
+	},
+	"Runtime": ubx.FieldSpec{WireName: "runtime"},
+}
 
 var Function_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FunctionConfig struct {
 	// A flag that determines whether to automatically publish the function to the ``LIVE`` stage when it’s created. To automatically publish to the ``LIVE`` stage, set this property to ``true``.
@@ -82,18 +82,18 @@ type FunctionAttrs struct {
 var Function = ubx.ResourceBinding{
 	WireType: "aws_cloud_front_function",
 	Fields: ubx.FieldMap{
-		"AutoPublish": ubx.FieldSpec{WireName: "auto_publish"},
+		"AutoPublish":  ubx.FieldSpec{WireName: "auto_publish"},
 		"FunctionCode": ubx.FieldSpec{WireName: "function_code"},
 		"FunctionConfig": ubx.FieldSpec{
 			WireName: "function_config",
-			Kind: "object",
-			Fields: Function_FunctionConfigFields,
+			Kind:     "object",
+			Fields:   Function_FunctionConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Function_TagsFields,
+			Kind:     "list",
+			Fields:   Function_TagsFields,
 		},
 	},
 }

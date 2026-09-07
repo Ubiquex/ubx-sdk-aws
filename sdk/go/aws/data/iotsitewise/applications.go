@@ -4,30 +4,30 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Applications_Applications struct {
-	Arn any
-	CreatedAt any
-	Id any
-	Name any
-	Status any
+	Arn           any
+	CreatedAt     any
+	Id            any
+	Name          any
+	Status        any
 	WorkspaceName any
 }
 
 type ApplicationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApplicationsAttrs struct {
 	// <p>List of applications</p>
 	Applications any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var Applications = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_applications",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

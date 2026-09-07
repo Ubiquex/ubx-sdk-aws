@@ -4,25 +4,25 @@ package waf_regional
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WafRegionalRegexMatchSets_RegexMatchSets struct {
-	Name any
+	Name            any
 	RegexMatchSetId any
 }
 
 type WafRegionalRegexMatchSetsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type WafRegionalRegexMatchSetsAttrs struct {
-	Limit any
-	NextMarker any
+	Limit          any
+	NextMarker     any
 	RegexMatchSets any
 }
 
 var WafRegionalRegexMatchSets = ubx.DataSourceBinding{
 	WireType: "aws_waf_regional_regex_match_sets",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

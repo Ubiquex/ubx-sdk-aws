@@ -4,29 +4,29 @@ package sesv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeliverabilityTestReports_DeliverabilityTestReports struct {
-	CreateDate any
+	CreateDate               any
 	DeliverabilityTestStatus any
-	FromEmailAddress any
-	ReportId any
-	ReportName any
-	Subject any
+	FromEmailAddress         any
+	ReportId                 any
+	ReportName               any
+	Subject                  any
 }
 
 type DeliverabilityTestReportsConfig struct {
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 type DeliverabilityTestReportsAttrs struct {
 	DeliverabilityTestReports any
-	NextToken any
-	PageSize any
+	NextToken                 any
+	PageSize                  any
 }
 
 var DeliverabilityTestReports = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_deliverability_test_reports",
 	Fields: ubx.FieldMap{
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 	},
 }

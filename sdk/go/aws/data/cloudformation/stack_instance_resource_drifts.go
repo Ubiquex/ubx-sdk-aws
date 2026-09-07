@@ -4,61 +4,61 @@ package cloudformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StackInstanceResourceDrifts_Summaries_PhysicalResourceIdContext struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type StackInstanceResourceDrifts_Summaries_PropertyDifferences struct {
-	ActualValue any
+	ActualValue    any
 	DifferenceType any
-	ExpectedValue any
-	PropertyPath any
+	ExpectedValue  any
+	PropertyPath   any
 }
 
 type StackInstanceResourceDrifts_Summaries struct {
-	LogicalResourceId any
-	PhysicalResourceId any
+	LogicalResourceId         any
+	PhysicalResourceId        any
 	PhysicalResourceIdContext any
-	PropertyDifferences any
-	ResourceType any
-	StackId any
-	StackResourceDriftStatus any
-	Timestamp any
+	PropertyDifferences       any
+	ResourceType              any
+	StackId                   any
+	StackResourceDriftStatus  any
+	Timestamp                 any
 }
 
 type StackInstanceResourceDriftsConfig struct {
-	CallAs any
-	MaxResults any
-	NextToken any
-	OperationId any
-	StackInstanceAccount any
-	StackInstanceRegion any
+	CallAs                             any
+	MaxResults                         any
+	NextToken                          any
+	OperationId                        any
+	StackInstanceAccount               any
+	StackInstanceRegion                any
 	StackInstanceResourceDriftStatuses any
-	StackSetName any
+	StackSetName                       any
 }
 
 type StackInstanceResourceDriftsAttrs struct {
-	CallAs any
-	MaxResults any
-	NextToken any
-	OperationId any
-	StackInstanceAccount any
-	StackInstanceRegion any
+	CallAs                             any
+	MaxResults                         any
+	NextToken                          any
+	OperationId                        any
+	StackInstanceAccount               any
+	StackInstanceRegion                any
 	StackInstanceResourceDriftStatuses any
-	StackSetName any
-	Summaries any
+	StackSetName                       any
+	Summaries                          any
 }
 
 var StackInstanceResourceDrifts = ubx.DataSourceBinding{
 	WireType: "aws_cloudformation_stack_instance_resource_drifts",
 	Fields: ubx.FieldMap{
-		"CallAs": ubx.FieldSpec{WireName: "call_as"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OperationId": ubx.FieldSpec{WireName: "operation_id"},
-		"StackInstanceAccount": ubx.FieldSpec{WireName: "stack_instance_account"},
-		"StackInstanceRegion": ubx.FieldSpec{WireName: "stack_instance_region"},
+		"CallAs":                             ubx.FieldSpec{WireName: "call_as"},
+		"MaxResults":                         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                          ubx.FieldSpec{WireName: "next_token"},
+		"OperationId":                        ubx.FieldSpec{WireName: "operation_id"},
+		"StackInstanceAccount":               ubx.FieldSpec{WireName: "stack_instance_account"},
+		"StackInstanceRegion":                ubx.FieldSpec{WireName: "stack_instance_region"},
 		"StackInstanceResourceDriftStatuses": ubx.FieldSpec{WireName: "stack_instance_resource_drift_statuses"},
-		"StackSetName": ubx.FieldSpec{WireName: "stack_set_name"},
+		"StackSetName":                       ubx.FieldSpec{WireName: "stack_set_name"},
 	},
 }

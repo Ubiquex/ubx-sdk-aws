@@ -31,26 +31,26 @@ type SuiteDefinition_Tags struct {
 }
 
 var SuiteDefinition_SuiteDefinitionConfiguration_DevicesFields = ubx.FieldMap{
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"ThingArn": ubx.FieldSpec{WireName: "thing_arn"},
-	}
+	"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
+	"ThingArn":       ubx.FieldSpec{WireName: "thing_arn"},
+}
 
 var SuiteDefinition_SuiteDefinitionConfigurationFields = ubx.FieldMap{
-		"DevicePermissionRoleArn": ubx.FieldSpec{WireName: "device_permission_role_arn"},
-		"Devices": ubx.FieldSpec{
-			WireName: "devices",
-			Kind: "list",
-			Fields: SuiteDefinition_SuiteDefinitionConfiguration_DevicesFields,
-		},
-		"IntendedForQualification": ubx.FieldSpec{WireName: "intended_for_qualification"},
-		"RootGroup": ubx.FieldSpec{WireName: "root_group"},
-		"SuiteDefinitionName": ubx.FieldSpec{WireName: "suite_definition_name"},
-	}
+	"DevicePermissionRoleArn": ubx.FieldSpec{WireName: "device_permission_role_arn"},
+	"Devices": ubx.FieldSpec{
+		WireName: "devices",
+		Kind:     "list",
+		Fields:   SuiteDefinition_SuiteDefinitionConfiguration_DevicesFields,
+	},
+	"IntendedForQualification": ubx.FieldSpec{WireName: "intended_for_qualification"},
+	"RootGroup":                ubx.FieldSpec{WireName: "root_group"},
+	"SuiteDefinitionName":      ubx.FieldSpec{WireName: "suite_definition_name"},
+}
 
 var SuiteDefinition_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SuiteDefinitionConfig struct {
 	// Defines the core configuration for the Device Advisor suite definition, including the device permission role ARN, devices under test, root group, and suite definition name. (AI-inferred)
@@ -77,13 +77,13 @@ var SuiteDefinition = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"SuiteDefinitionConfiguration": ubx.FieldSpec{
 			WireName: "suite_definition_configuration",
-			Kind: "object",
-			Fields: SuiteDefinition_SuiteDefinitionConfigurationFields,
+			Kind:     "object",
+			Fields:   SuiteDefinition_SuiteDefinitionConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SuiteDefinition_TagsFields,
+			Kind:     "list",
+			Fields:   SuiteDefinition_TagsFields,
 		},
 	},
 }

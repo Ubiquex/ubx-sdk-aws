@@ -80,101 +80,101 @@ type Application_Inputs struct {
 }
 
 var Application_Inputs_InputParallelismFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-	}
+	"Count": ubx.FieldSpec{WireName: "count"},
+}
 
 var Application_Inputs_InputProcessingConfiguration_InputLambdaProcessorFields = ubx.FieldMap{
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+	"RoleArn":     ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var Application_Inputs_InputProcessingConfigurationFields = ubx.FieldMap{
-		"InputLambdaProcessor": ubx.FieldSpec{
-			WireName: "input_lambda_processor",
-			Kind: "object",
-			Fields: Application_Inputs_InputProcessingConfiguration_InputLambdaProcessorFields,
-		},
-	}
+	"InputLambdaProcessor": ubx.FieldSpec{
+		WireName: "input_lambda_processor",
+		Kind:     "object",
+		Fields:   Application_Inputs_InputProcessingConfiguration_InputLambdaProcessorFields,
+	},
+}
 
 var Application_Inputs_InputSchema_RecordColumnsFields = ubx.FieldMap{
-		"Mapping": ubx.FieldSpec{WireName: "mapping"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SqlType": ubx.FieldSpec{WireName: "sql_type"},
-	}
+	"Mapping": ubx.FieldSpec{WireName: "mapping"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"SqlType": ubx.FieldSpec{WireName: "sql_type"},
+}
 
 var Application_Inputs_InputSchema_RecordFormat_MappingParameters_CsvmappingParametersFields = ubx.FieldMap{
-		"RecordColumnDelimiter": ubx.FieldSpec{WireName: "record_column_delimiter"},
-		"RecordRowDelimiter": ubx.FieldSpec{WireName: "record_row_delimiter"},
-	}
+	"RecordColumnDelimiter": ubx.FieldSpec{WireName: "record_column_delimiter"},
+	"RecordRowDelimiter":    ubx.FieldSpec{WireName: "record_row_delimiter"},
+}
 
 var Application_Inputs_InputSchema_RecordFormat_MappingParameters_JsonmappingParametersFields = ubx.FieldMap{
-		"RecordRowPath": ubx.FieldSpec{WireName: "record_row_path"},
-	}
+	"RecordRowPath": ubx.FieldSpec{WireName: "record_row_path"},
+}
 
 var Application_Inputs_InputSchema_RecordFormat_MappingParametersFields = ubx.FieldMap{
-		"CsvmappingParameters": ubx.FieldSpec{
-			WireName: "csvmapping_parameters",
-			Kind: "object",
-			Fields: Application_Inputs_InputSchema_RecordFormat_MappingParameters_CsvmappingParametersFields,
-		},
-		"JsonmappingParameters": ubx.FieldSpec{
-			WireName: "jsonmapping_parameters",
-			Kind: "object",
-			Fields: Application_Inputs_InputSchema_RecordFormat_MappingParameters_JsonmappingParametersFields,
-		},
-	}
+	"CsvmappingParameters": ubx.FieldSpec{
+		WireName: "csvmapping_parameters",
+		Kind:     "object",
+		Fields:   Application_Inputs_InputSchema_RecordFormat_MappingParameters_CsvmappingParametersFields,
+	},
+	"JsonmappingParameters": ubx.FieldSpec{
+		WireName: "jsonmapping_parameters",
+		Kind:     "object",
+		Fields:   Application_Inputs_InputSchema_RecordFormat_MappingParameters_JsonmappingParametersFields,
+	},
+}
 
 var Application_Inputs_InputSchema_RecordFormatFields = ubx.FieldMap{
-		"MappingParameters": ubx.FieldSpec{
-			WireName: "mapping_parameters",
-			Kind: "object",
-			Fields: Application_Inputs_InputSchema_RecordFormat_MappingParametersFields,
-		},
-		"RecordFormatType": ubx.FieldSpec{WireName: "record_format_type"},
-	}
+	"MappingParameters": ubx.FieldSpec{
+		WireName: "mapping_parameters",
+		Kind:     "object",
+		Fields:   Application_Inputs_InputSchema_RecordFormat_MappingParametersFields,
+	},
+	"RecordFormatType": ubx.FieldSpec{WireName: "record_format_type"},
+}
 
 var Application_Inputs_InputSchemaFields = ubx.FieldMap{
-		"RecordColumns": ubx.FieldSpec{
-			WireName: "record_columns",
-			Kind: "list",
-			Fields: Application_Inputs_InputSchema_RecordColumnsFields,
-		},
-		"RecordEncoding": ubx.FieldSpec{WireName: "record_encoding"},
-		"RecordFormat": ubx.FieldSpec{
-			WireName: "record_format",
-			Kind: "object",
-			Fields: Application_Inputs_InputSchema_RecordFormatFields,
-		},
-	}
+	"RecordColumns": ubx.FieldSpec{
+		WireName: "record_columns",
+		Kind:     "list",
+		Fields:   Application_Inputs_InputSchema_RecordColumnsFields,
+	},
+	"RecordEncoding": ubx.FieldSpec{WireName: "record_encoding"},
+	"RecordFormat": ubx.FieldSpec{
+		WireName: "record_format",
+		Kind:     "object",
+		Fields:   Application_Inputs_InputSchema_RecordFormatFields,
+	},
+}
 
 var Application_InputsFields = ubx.FieldMap{
-		"InputParallelism": ubx.FieldSpec{
-			WireName: "input_parallelism",
-			Kind: "object",
-			Fields: Application_Inputs_InputParallelismFields,
-		},
-		"InputProcessingConfiguration": ubx.FieldSpec{
-			WireName: "input_processing_configuration",
-			Kind: "object",
-			Fields: Application_Inputs_InputProcessingConfigurationFields,
-		},
-		"InputSchema": ubx.FieldSpec{
-			WireName: "input_schema",
-			Kind: "object",
-			Fields: Application_Inputs_InputSchemaFields,
-		},
-		"KinesisFirehoseInput": ubx.FieldSpec{
-			WireName: "kinesis_firehose_input",
-			Kind: "object",
-			Fields: Application_Inputs_InputProcessingConfiguration_InputLambdaProcessorFields,
-		},
-		"KinesisStreamsInput": ubx.FieldSpec{
-			WireName: "kinesis_streams_input",
-			Kind: "object",
-			Fields: Application_Inputs_InputProcessingConfiguration_InputLambdaProcessorFields,
-		},
-		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-	}
+	"InputParallelism": ubx.FieldSpec{
+		WireName: "input_parallelism",
+		Kind:     "object",
+		Fields:   Application_Inputs_InputParallelismFields,
+	},
+	"InputProcessingConfiguration": ubx.FieldSpec{
+		WireName: "input_processing_configuration",
+		Kind:     "object",
+		Fields:   Application_Inputs_InputProcessingConfigurationFields,
+	},
+	"InputSchema": ubx.FieldSpec{
+		WireName: "input_schema",
+		Kind:     "object",
+		Fields:   Application_Inputs_InputSchemaFields,
+	},
+	"KinesisFirehoseInput": ubx.FieldSpec{
+		WireName: "kinesis_firehose_input",
+		Kind:     "object",
+		Fields:   Application_Inputs_InputProcessingConfiguration_InputLambdaProcessorFields,
+	},
+	"KinesisStreamsInput": ubx.FieldSpec{
+		WireName: "kinesis_streams_input",
+		Kind:     "object",
+		Fields:   Application_Inputs_InputProcessingConfiguration_InputLambdaProcessorFields,
+	},
+	"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
+}
 
 type ApplicationConfig struct {
 	// Specifies the SQL statements that define the data processing logic of the Kinesis Analytics application, including how input streams are transformed and output to destinations. (AI-inferred)
@@ -203,13 +203,13 @@ type ApplicationAttrs struct {
 var Application = ubx.ResourceBinding{
 	WireType: "aws_kinesis_analytics_application",
 	Fields: ubx.FieldMap{
-		"ApplicationCode": ubx.FieldSpec{WireName: "application_code"},
+		"ApplicationCode":        ubx.FieldSpec{WireName: "application_code"},
 		"ApplicationDescription": ubx.FieldSpec{WireName: "application_description"},
-		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
+		"ApplicationName":        ubx.FieldSpec{WireName: "application_name"},
 		"Inputs": ubx.FieldSpec{
 			WireName: "inputs",
-			Kind: "list",
-			Fields: Application_InputsFields,
+			Kind:     "list",
+			Fields:   Application_InputsFields,
 		},
 	},
 }

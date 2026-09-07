@@ -34,9 +34,9 @@ type UserJourneyAttrs struct {
 var UserJourney = ubx.ResourceBinding{
 	WireType: "aws_resilience_hub_v2_user_journey",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PolicyArn": ubx.FieldSpec{WireName: "policy_arn"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"PolicyArn":        ubx.FieldSpec{WireName: "policy_arn"},
 		"SystemIdentifier": ubx.FieldSpec{WireName: "system_identifier"},
 	},
 }

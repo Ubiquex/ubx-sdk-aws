@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PredictiveScalingForecast_CapacityForecast struct {
 	Timestamps any
-	Values any
+	Values     any
 }
 
 type PredictiveScalingForecast_LoadForecast_MetricSpecification_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_Metric_Dimensions struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type PredictiveScalingForecast_LoadForecast_MetricSpecification_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_Metric struct {
 	Dimensions any
 	MetricName any
-	Namespace any
+	Namespace  any
 }
 
 type PredictiveScalingForecast_LoadForecast_MetricSpecification_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat struct {
 	Metric any
-	Stat any
-	Unit any
+	Stat   any
+	Unit   any
 }
 
 type PredictiveScalingForecast_LoadForecast_MetricSpecification_CustomizedCapacityMetricSpecification_MetricDataQueries struct {
 	Expression any
-	Id any
-	Label any
+	Id         any
+	Label      any
 	MetricStat any
 	ReturnData any
 }
@@ -39,49 +39,49 @@ type PredictiveScalingForecast_LoadForecast_MetricSpecification_CustomizedCapaci
 
 type PredictiveScalingForecast_LoadForecast_MetricSpecification_PredefinedLoadMetricSpecification struct {
 	PredefinedMetricType any
-	ResourceLabel any
+	ResourceLabel        any
 }
 
 type PredictiveScalingForecast_LoadForecast_MetricSpecification struct {
 	CustomizedCapacityMetricSpecification any
-	CustomizedLoadMetricSpecification any
-	CustomizedScalingMetricSpecification any
-	PredefinedLoadMetricSpecification any
-	PredefinedMetricPairSpecification any
-	PredefinedScalingMetricSpecification any
-	TargetValue any
+	CustomizedLoadMetricSpecification     any
+	CustomizedScalingMetricSpecification  any
+	PredefinedLoadMetricSpecification     any
+	PredefinedMetricPairSpecification     any
+	PredefinedScalingMetricSpecification  any
+	TargetValue                           any
 }
 
 type PredictiveScalingForecast_LoadForecast struct {
 	MetricSpecification any
-	Timestamps any
-	Values any
+	Timestamps          any
+	Values              any
 }
 
 type PredictiveScalingForecastConfig struct {
 	AutoScalingGroupName any
-	EndTime any
-	PolicyName any
-	StartTime any
+	EndTime              any
+	PolicyName           any
+	StartTime            any
 }
 
 type PredictiveScalingForecastAttrs struct {
 	AutoScalingGroupName any
 	// <p>A <code>GetPredictiveScalingForecast</code> call returns the capacity forecast for a predictive scaling policy. This structure includes the data points for that capacity forecast, along with the timestamps of those data points. </p>
 	CapacityForecast any
-	EndTime any
-	LoadForecast any
-	PolicyName any
-	StartTime any
-	UpdateTime any
+	EndTime          any
+	LoadForecast     any
+	PolicyName       any
+	StartTime        any
+	UpdateTime       any
 }
 
 var PredictiveScalingForecast = ubx.DataSourceBinding{
 	WireType: "aws_autoscaling_predictive_scaling_forecast",
 	Fields: ubx.FieldMap{
 		"AutoScalingGroupName": ubx.FieldSpec{WireName: "auto_scaling_group_name"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"EndTime":              ubx.FieldSpec{WireName: "end_time"},
+		"PolicyName":           ubx.FieldSpec{WireName: "policy_name"},
+		"StartTime":            ubx.FieldSpec{WireName: "start_time"},
 	},
 }

@@ -36,30 +36,30 @@ type AccessPoint_RootDirectory struct {
 }
 
 var AccessPoint_AccessPointTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var AccessPoint_PosixUserFields = ubx.FieldMap{
-		"Gid": ubx.FieldSpec{WireName: "gid"},
-		"SecondaryGids": ubx.FieldSpec{WireName: "secondary_gids"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Gid":           ubx.FieldSpec{WireName: "gid"},
+	"SecondaryGids": ubx.FieldSpec{WireName: "secondary_gids"},
+	"Uid":           ubx.FieldSpec{WireName: "uid"},
+}
 
 var AccessPoint_RootDirectory_CreationInfoFields = ubx.FieldMap{
-		"OwnerGid": ubx.FieldSpec{WireName: "owner_gid"},
-		"OwnerUid": ubx.FieldSpec{WireName: "owner_uid"},
-		"Permissions": ubx.FieldSpec{WireName: "permissions"},
-	}
+	"OwnerGid":    ubx.FieldSpec{WireName: "owner_gid"},
+	"OwnerUid":    ubx.FieldSpec{WireName: "owner_uid"},
+	"Permissions": ubx.FieldSpec{WireName: "permissions"},
+}
 
 var AccessPoint_RootDirectoryFields = ubx.FieldMap{
-		"CreationInfo": ubx.FieldSpec{
-			WireName: "creation_info",
-			Kind: "object",
-			Fields: AccessPoint_RootDirectory_CreationInfoFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"CreationInfo": ubx.FieldSpec{
+		WireName: "creation_info",
+		Kind:     "object",
+		Fields:   AccessPoint_RootDirectory_CreationInfoFields,
+	},
+	"Path": ubx.FieldSpec{WireName: "path"},
+}
 
 type AccessPointConfig struct {
 	// An array of key-value pairs to apply to this resource. For more information, see [Tag](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html).
@@ -96,20 +96,20 @@ var AccessPoint = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessPointTags": ubx.FieldSpec{
 			WireName: "access_point_tags",
-			Kind: "list",
-			Fields: AccessPoint_AccessPointTagsFields,
+			Kind:     "list",
+			Fields:   AccessPoint_AccessPointTagsFields,
 		},
-		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
+		"ClientToken":  ubx.FieldSpec{WireName: "client_token"},
 		"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
 		"PosixUser": ubx.FieldSpec{
 			WireName: "posix_user",
-			Kind: "object",
-			Fields: AccessPoint_PosixUserFields,
+			Kind:     "object",
+			Fields:   AccessPoint_PosixUserFields,
 		},
 		"RootDirectory": ubx.FieldSpec{
 			WireName: "root_directory",
-			Kind: "object",
-			Fields: AccessPoint_RootDirectoryFields,
+			Kind:     "object",
+			Fields:   AccessPoint_RootDirectoryFields,
 		},
 	},
 }

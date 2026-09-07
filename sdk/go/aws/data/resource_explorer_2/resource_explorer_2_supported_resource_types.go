@@ -5,18 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceExplorer2SupportedResourceTypes_ResourceTypes struct {
 	CfnresourceTypes any
-	ResourceType any
-	Service any
+	ResourceType     any
+	Service          any
 }
 
 type ResourceExplorer2SupportedResourceTypesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ResourceExplorer2SupportedResourceTypesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 	ResourceTypes any
 }
 
@@ -24,6 +24,6 @@ var ResourceExplorer2SupportedResourceTypes = ubx.DataSourceBinding{
 	WireType: "aws_resource_explorer_2_supported_resource_types",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

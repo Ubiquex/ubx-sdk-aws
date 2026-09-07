@@ -11,9 +11,9 @@ type UserDefinedFunction_ResourceUris struct {
 }
 
 var UserDefinedFunction_ResourceUrisFields = ubx.FieldMap{
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	"Uri":          ubx.FieldSpec{WireName: "uri"},
+}
 
 type UserDefinedFunctionConfig struct {
 	// The Java class that contains the function code.
@@ -54,16 +54,16 @@ type UserDefinedFunctionAttrs struct {
 var UserDefinedFunction = ubx.ResourceBinding{
 	WireType: "aws_glue_user_defined_function",
 	Fields: ubx.FieldMap{
-		"ClassName": ubx.FieldSpec{WireName: "class_name"},
+		"ClassName":    ubx.FieldSpec{WireName: "class_name"},
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
 		"FunctionName": ubx.FieldSpec{WireName: "function_name"},
 		"FunctionType": ubx.FieldSpec{WireName: "function_type"},
-		"OwnerName": ubx.FieldSpec{WireName: "owner_name"},
-		"OwnerType": ubx.FieldSpec{WireName: "owner_type"},
+		"OwnerName":    ubx.FieldSpec{WireName: "owner_name"},
+		"OwnerType":    ubx.FieldSpec{WireName: "owner_type"},
 		"ResourceUris": ubx.FieldSpec{
 			WireName: "resource_uris",
-			Kind: "list",
-			Fields: UserDefinedFunction_ResourceUrisFields,
+			Kind:     "list",
+			Fields:   UserDefinedFunction_ResourceUrisFields,
 		},
 	},
 }

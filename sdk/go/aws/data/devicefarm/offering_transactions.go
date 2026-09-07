@@ -4,36 +4,36 @@ package devicefarm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OfferingTransactions_OfferingTransactions_Cost struct {
-	Amount any
+	Amount       any
 	CurrencyCode any
 }
 
 type OfferingTransactions_OfferingTransactions_OfferingStatus_Offering_RecurringCharges struct {
-	Cost any
+	Cost      any
 	Frequency any
 }
 
 type OfferingTransactions_OfferingTransactions_OfferingStatus_Offering struct {
-	Description any
-	Id any
-	Platform any
+	Description      any
+	Id               any
+	Platform         any
 	RecurringCharges any
-	Type any
+	Type             any
 }
 
 type OfferingTransactions_OfferingTransactions_OfferingStatus struct {
 	EffectiveOn any
-	Offering any
-	Quantity any
-	Type any
+	Offering    any
+	Quantity    any
+	Type        any
 }
 
 type OfferingTransactions_OfferingTransactions struct {
-	Cost any
-	CreatedOn any
+	Cost                any
+	CreatedOn           any
 	OfferingPromotionId any
-	OfferingStatus any
-	TransactionId any
+	OfferingStatus      any
+	TransactionId       any
 }
 
 type OfferingTransactionsConfig struct {
@@ -41,7 +41,7 @@ type OfferingTransactionsConfig struct {
 }
 
 type OfferingTransactionsAttrs struct {
-	NextToken any
+	NextToken            any
 	OfferingTransactions any
 }
 

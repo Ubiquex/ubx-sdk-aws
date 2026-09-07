@@ -15,11 +15,11 @@ type CoreDefinitionVersion_Cores struct {
 }
 
 var CoreDefinitionVersion_CoresFields = ubx.FieldMap{
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"SyncShadow": ubx.FieldSpec{WireName: "sync_shadow"},
-		"ThingArn": ubx.FieldSpec{WireName: "thing_arn"},
-	}
+	"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
+	"Id":             ubx.FieldSpec{WireName: "id"},
+	"SyncShadow":     ubx.FieldSpec{WireName: "sync_shadow"},
+	"ThingArn":       ubx.FieldSpec{WireName: "thing_arn"},
+}
 
 type CoreDefinitionVersionConfig struct {
 	// The unique ID of the AWS Greengrass core definition that this core definition version is associated with. (AI-inferred)
@@ -43,8 +43,8 @@ var CoreDefinitionVersion = ubx.ResourceBinding{
 		"CoreDefinitionId": ubx.FieldSpec{WireName: "core_definition_id"},
 		"Cores": ubx.FieldSpec{
 			WireName: "cores",
-			Kind: "list",
-			Fields: CoreDefinitionVersion_CoresFields,
+			Kind:     "list",
+			Fields:   CoreDefinitionVersion_CoresFields,
 		},
 	},
 }

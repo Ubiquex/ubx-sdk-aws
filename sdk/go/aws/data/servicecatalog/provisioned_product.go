@@ -8,33 +8,33 @@ type ProvisionedProduct_CloudWatchDashboards struct {
 }
 
 type ProvisionedProduct_ProvisionedProductDetail struct {
-	Arn any
-	CreatedTime any
-	Id any
-	IdempotencyToken any
-	LastProvisioningRecordId any
-	LastRecordId any
+	Arn                                any
+	CreatedTime                        any
+	Id                                 any
+	IdempotencyToken                   any
+	LastProvisioningRecordId           any
+	LastRecordId                       any
 	LastSuccessfulProvisioningRecordId any
-	LaunchRoleArn any
-	Name any
-	ProductId any
-	ProvisioningArtifactId any
-	Status any
-	StatusMessage any
-	Type any
+	LaunchRoleArn                      any
+	Name                               any
+	ProductId                          any
+	ProvisioningArtifactId             any
+	Status                             any
+	StatusMessage                      any
+	Type                               any
 }
 
 type ProvisionedProductConfig struct {
 	AcceptLanguage any
-	Id any
-	Name any
+	Id             any
+	Name           any
 }
 
 type ProvisionedProductAttrs struct {
-	AcceptLanguage any
+	AcceptLanguage       any
 	CloudWatchDashboards any
-	Id any
-	Name any
+	Id                   any
+	Name                 any
 	// <p>Information about a provisioned product.</p>
 	ProvisionedProductDetail any
 }
@@ -43,7 +43,7 @@ var ProvisionedProduct = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_provisioned_product",
 	Fields: ubx.FieldMap{
 		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Id":             ubx.FieldSpec{WireName: "id"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 	},
 }

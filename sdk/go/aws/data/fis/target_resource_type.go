@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TargetResourceType_TargetResourceType_Parameters struct {
 	Description any
-	Required any
+	Required    any
 }
 
 type TargetResourceType_TargetResourceType struct {
-	Description any
-	Parameters any
+	Description  any
+	Parameters   any
 	ResourceType any
 }
 

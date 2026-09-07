@@ -82,72 +82,72 @@ type RecordSetGroup_RecordSets struct {
 }
 
 var RecordSetGroup_RecordSets_AliasTargetFields = ubx.FieldMap{
-		"Dnsname": ubx.FieldSpec{WireName: "dnsname"},
-		"EvaluateTargetHealth": ubx.FieldSpec{WireName: "evaluate_target_health"},
-		"HostedZoneId": ubx.FieldSpec{WireName: "hosted_zone_id"},
-	}
+	"Dnsname":              ubx.FieldSpec{WireName: "dnsname"},
+	"EvaluateTargetHealth": ubx.FieldSpec{WireName: "evaluate_target_health"},
+	"HostedZoneId":         ubx.FieldSpec{WireName: "hosted_zone_id"},
+}
 
 var RecordSetGroup_RecordSets_CidrRoutingConfigFields = ubx.FieldMap{
-		"CollectionId": ubx.FieldSpec{WireName: "collection_id"},
-		"LocationName": ubx.FieldSpec{WireName: "location_name"},
-	}
+	"CollectionId": ubx.FieldSpec{WireName: "collection_id"},
+	"LocationName": ubx.FieldSpec{WireName: "location_name"},
+}
 
 var RecordSetGroup_RecordSets_GeoLocationFields = ubx.FieldMap{
-		"ContinentCode": ubx.FieldSpec{WireName: "continent_code"},
-		"CountryCode": ubx.FieldSpec{WireName: "country_code"},
-		"SubdivisionCode": ubx.FieldSpec{WireName: "subdivision_code"},
-	}
+	"ContinentCode":   ubx.FieldSpec{WireName: "continent_code"},
+	"CountryCode":     ubx.FieldSpec{WireName: "country_code"},
+	"SubdivisionCode": ubx.FieldSpec{WireName: "subdivision_code"},
+}
 
 var RecordSetGroup_RecordSets_GeoProximityLocation_CoordinatesFields = ubx.FieldMap{
-		"Latitude": ubx.FieldSpec{WireName: "latitude"},
-		"Longitude": ubx.FieldSpec{WireName: "longitude"},
-	}
+	"Latitude":  ubx.FieldSpec{WireName: "latitude"},
+	"Longitude": ubx.FieldSpec{WireName: "longitude"},
+}
 
 var RecordSetGroup_RecordSets_GeoProximityLocationFields = ubx.FieldMap{
-		"Awsregion": ubx.FieldSpec{WireName: "awsregion"},
-		"Bias": ubx.FieldSpec{WireName: "bias"},
-		"Coordinates": ubx.FieldSpec{
-			WireName: "coordinates",
-			Kind: "object",
-			Fields: RecordSetGroup_RecordSets_GeoProximityLocation_CoordinatesFields,
-		},
-		"LocalZoneGroup": ubx.FieldSpec{WireName: "local_zone_group"},
-	}
+	"Awsregion": ubx.FieldSpec{WireName: "awsregion"},
+	"Bias":      ubx.FieldSpec{WireName: "bias"},
+	"Coordinates": ubx.FieldSpec{
+		WireName: "coordinates",
+		Kind:     "object",
+		Fields:   RecordSetGroup_RecordSets_GeoProximityLocation_CoordinatesFields,
+	},
+	"LocalZoneGroup": ubx.FieldSpec{WireName: "local_zone_group"},
+}
 
 var RecordSetGroup_RecordSetsFields = ubx.FieldMap{
-		"AliasTarget": ubx.FieldSpec{
-			WireName: "alias_target",
-			Kind: "object",
-			Fields: RecordSetGroup_RecordSets_AliasTargetFields,
-		},
-		"CidrRoutingConfig": ubx.FieldSpec{
-			WireName: "cidr_routing_config",
-			Kind: "object",
-			Fields: RecordSetGroup_RecordSets_CidrRoutingConfigFields,
-		},
-		"Failover": ubx.FieldSpec{WireName: "failover"},
-		"GeoLocation": ubx.FieldSpec{
-			WireName: "geo_location",
-			Kind: "object",
-			Fields: RecordSetGroup_RecordSets_GeoLocationFields,
-		},
-		"GeoProximityLocation": ubx.FieldSpec{
-			WireName: "geo_proximity_location",
-			Kind: "object",
-			Fields: RecordSetGroup_RecordSets_GeoProximityLocationFields,
-		},
-		"HealthCheckId": ubx.FieldSpec{WireName: "health_check_id"},
-		"HostedZoneId": ubx.FieldSpec{WireName: "hosted_zone_id"},
-		"HostedZoneName": ubx.FieldSpec{WireName: "hosted_zone_name"},
-		"MultiValueAnswer": ubx.FieldSpec{WireName: "multi_value_answer"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ResourceRecords": ubx.FieldSpec{WireName: "resource_records"},
-		"SetIdentifier": ubx.FieldSpec{WireName: "set_identifier"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"AliasTarget": ubx.FieldSpec{
+		WireName: "alias_target",
+		Kind:     "object",
+		Fields:   RecordSetGroup_RecordSets_AliasTargetFields,
+	},
+	"CidrRoutingConfig": ubx.FieldSpec{
+		WireName: "cidr_routing_config",
+		Kind:     "object",
+		Fields:   RecordSetGroup_RecordSets_CidrRoutingConfigFields,
+	},
+	"Failover": ubx.FieldSpec{WireName: "failover"},
+	"GeoLocation": ubx.FieldSpec{
+		WireName: "geo_location",
+		Kind:     "object",
+		Fields:   RecordSetGroup_RecordSets_GeoLocationFields,
+	},
+	"GeoProximityLocation": ubx.FieldSpec{
+		WireName: "geo_proximity_location",
+		Kind:     "object",
+		Fields:   RecordSetGroup_RecordSets_GeoProximityLocationFields,
+	},
+	"HealthCheckId":    ubx.FieldSpec{WireName: "health_check_id"},
+	"HostedZoneId":     ubx.FieldSpec{WireName: "hosted_zone_id"},
+	"HostedZoneName":   ubx.FieldSpec{WireName: "hosted_zone_name"},
+	"MultiValueAnswer": ubx.FieldSpec{WireName: "multi_value_answer"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"Region":           ubx.FieldSpec{WireName: "region"},
+	"ResourceRecords":  ubx.FieldSpec{WireName: "resource_records"},
+	"SetIdentifier":    ubx.FieldSpec{WireName: "set_identifier"},
+	"Ttl":              ubx.FieldSpec{WireName: "ttl"},
+	"Type":             ubx.FieldSpec{WireName: "type"},
+	"Weight":           ubx.FieldSpec{WireName: "weight"},
+}
 
 type RecordSetGroupConfig struct {
 	// A free-form comment that describes the record set group, useful for documenting the purpose or contents of the group. (AI-inferred)
@@ -176,13 +176,13 @@ type RecordSetGroupAttrs struct {
 var RecordSetGroup = ubx.ResourceBinding{
 	WireType: "aws_route53_record_set_group",
 	Fields: ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"HostedZoneId": ubx.FieldSpec{WireName: "hosted_zone_id"},
+		"Comment":        ubx.FieldSpec{WireName: "comment"},
+		"HostedZoneId":   ubx.FieldSpec{WireName: "hosted_zone_id"},
 		"HostedZoneName": ubx.FieldSpec{WireName: "hosted_zone_name"},
 		"RecordSets": ubx.FieldSpec{
 			WireName: "record_sets",
-			Kind: "list",
-			Fields: RecordSetGroup_RecordSetsFields,
+			Kind:     "list",
+			Fields:   RecordSetGroup_RecordSetsFields,
 		},
 	},
 }

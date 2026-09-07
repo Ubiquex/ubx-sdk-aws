@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EnabledProductsForImportConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EnabledProductsForImportAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 	ProductSubscriptions any
 }
 
@@ -18,6 +18,6 @@ var EnabledProductsForImport = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_enabled_products_for_import",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

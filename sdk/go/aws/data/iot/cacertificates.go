@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Cacertificates_Certificates struct {
 	CertificateArn any
-	CertificateId any
-	CreationDate any
-	Status any
+	CertificateId  any
+	CreationDate   any
+	Status         any
 }
 
 type CacertificatesConfig struct {
 	AscendingOrder any
-	Marker any
-	PageSize any
-	TemplateName any
+	Marker         any
+	PageSize       any
+	TemplateName   any
 }
 
 type CacertificatesAttrs struct {
 	AscendingOrder any
-	Certificates any
-	Marker any
-	NextMarker any
-	PageSize any
-	TemplateName any
+	Certificates   any
+	Marker         any
+	NextMarker     any
+	PageSize       any
+	TemplateName   any
 }
 
 var Cacertificates = ubx.DataSourceBinding{
 	WireType: "aws_iot_cacertificates",
 	Fields: ubx.FieldMap{
 		"AscendingOrder": ubx.FieldSpec{WireName: "ascending_order"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
+		"Marker":         ubx.FieldSpec{WireName: "marker"},
+		"PageSize":       ubx.FieldSpec{WireName: "page_size"},
+		"TemplateName":   ubx.FieldSpec{WireName: "template_name"},
 	},
 }

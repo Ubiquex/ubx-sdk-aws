@@ -42,60 +42,60 @@ type Capability_Configuration struct {
 
 type Capability_Tags struct {
 	// The key of a user-defined tag to associate with the AWS B2B Data Interchange capability. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Capability_Configuration_Edi_InputLocationFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+}
 
 var Capability_Configuration_Edi_Type_X12DetailsFields = ubx.FieldMap{
-		"TransactionSet": ubx.FieldSpec{WireName: "transaction_set"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"TransactionSet": ubx.FieldSpec{WireName: "transaction_set"},
+	"Version":        ubx.FieldSpec{WireName: "version"},
+}
 
 var Capability_Configuration_Edi_TypeFields = ubx.FieldMap{
-		"X12Details": ubx.FieldSpec{
-			WireName: "x12_details",
-			Kind: "object",
-			Fields: Capability_Configuration_Edi_Type_X12DetailsFields,
-		},
-	}
+	"X12Details": ubx.FieldSpec{
+		WireName: "x12_details",
+		Kind:     "object",
+		Fields:   Capability_Configuration_Edi_Type_X12DetailsFields,
+	},
+}
 
 var Capability_Configuration_EdiFields = ubx.FieldMap{
-		"CapabilityDirection": ubx.FieldSpec{WireName: "capability_direction"},
-		"InputLocation": ubx.FieldSpec{
-			WireName: "input_location",
-			Kind: "object",
-			Fields: Capability_Configuration_Edi_InputLocationFields,
-		},
-		"OutputLocation": ubx.FieldSpec{
-			WireName: "output_location",
-			Kind: "object",
-			Fields: Capability_Configuration_Edi_InputLocationFields,
-		},
-		"TransformerId": ubx.FieldSpec{WireName: "transformer_id"},
-		"Type": ubx.FieldSpec{
-			WireName: "type",
-			Kind: "object",
-			Fields: Capability_Configuration_Edi_TypeFields,
-		},
-	}
+	"CapabilityDirection": ubx.FieldSpec{WireName: "capability_direction"},
+	"InputLocation": ubx.FieldSpec{
+		WireName: "input_location",
+		Kind:     "object",
+		Fields:   Capability_Configuration_Edi_InputLocationFields,
+	},
+	"OutputLocation": ubx.FieldSpec{
+		WireName: "output_location",
+		Kind:     "object",
+		Fields:   Capability_Configuration_Edi_InputLocationFields,
+	},
+	"TransformerId": ubx.FieldSpec{WireName: "transformer_id"},
+	"Type": ubx.FieldSpec{
+		WireName: "type",
+		Kind:     "object",
+		Fields:   Capability_Configuration_Edi_TypeFields,
+	},
+}
 
 var Capability_ConfigurationFields = ubx.FieldMap{
-		"Edi": ubx.FieldSpec{
-			WireName: "edi",
-			Kind: "object",
-			Fields: Capability_Configuration_EdiFields,
-		},
-	}
+	"Edi": ubx.FieldSpec{
+		WireName: "edi",
+		Kind:     "object",
+		Fields:   Capability_Configuration_EdiFields,
+	},
+}
 
 var Capability_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CapabilityConfig struct {
 	// The configuration object contains the EDI transformation settings for the B2Bi capability, specifying the EDI type, input/output document locations, and the transformer that processes interchange data. (AI-inferred)
@@ -136,19 +136,19 @@ var Capability = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: Capability_ConfigurationFields,
+			Kind:     "object",
+			Fields:   Capability_ConfigurationFields,
 		},
 		"InstructionsDocuments": ubx.FieldSpec{
 			WireName: "instructions_documents",
-			Kind: "list",
-			Fields: Capability_Configuration_Edi_InputLocationFields,
+			Kind:     "list",
+			Fields:   Capability_Configuration_Edi_InputLocationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Capability_TagsFields,
+			Kind:     "list",
+			Fields:   Capability_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

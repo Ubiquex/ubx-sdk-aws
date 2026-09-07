@@ -4,32 +4,32 @@ package auditmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Delegations_Delegations struct {
-	AssessmentId any
+	AssessmentId   any
 	AssessmentName any
 	ControlSetName any
-	CreationTime any
-	Id any
-	RoleArn any
-	Status any
+	CreationTime   any
+	Id             any
+	RoleArn        any
+	Status         any
 }
 
 type DelegationsConfig struct {
 	// Max results in the page.
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DelegationsAttrs struct {
 	Delegations any
 	// Max results in the page.
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Delegations = ubx.DataSourceBinding{
 	WireType: "aws_auditmanager_delegations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

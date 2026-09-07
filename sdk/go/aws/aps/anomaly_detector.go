@@ -22,30 +22,30 @@ type AnomalyDetector_Configuration struct {
 }
 
 type AnomalyDetector_Labels struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var AnomalyDetector_Configuration_RandomCutForestFields = ubx.FieldMap{
-		"IgnoreNearExpectedFromAbove": ubx.FieldSpec{WireName: "ignore_near_expected_from_above"},
-		"IgnoreNearExpectedFromBelow": ubx.FieldSpec{WireName: "ignore_near_expected_from_below"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"SampleSize": ubx.FieldSpec{WireName: "sample_size"},
-		"ShingleSize": ubx.FieldSpec{WireName: "shingle_size"},
-	}
+	"IgnoreNearExpectedFromAbove": ubx.FieldSpec{WireName: "ignore_near_expected_from_above"},
+	"IgnoreNearExpectedFromBelow": ubx.FieldSpec{WireName: "ignore_near_expected_from_below"},
+	"Query":                       ubx.FieldSpec{WireName: "query"},
+	"SampleSize":                  ubx.FieldSpec{WireName: "sample_size"},
+	"ShingleSize":                 ubx.FieldSpec{WireName: "shingle_size"},
+}
 
 var AnomalyDetector_ConfigurationFields = ubx.FieldMap{
-		"RandomCutForest": ubx.FieldSpec{
-			WireName: "random_cut_forest",
-			Kind: "object",
-			Fields: AnomalyDetector_Configuration_RandomCutForestFields,
-		},
-	}
+	"RandomCutForest": ubx.FieldSpec{
+		WireName: "random_cut_forest",
+		Kind:     "object",
+		Fields:   AnomalyDetector_Configuration_RandomCutForestFields,
+	},
+}
 
 var AnomalyDetector_LabelsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AnomalyDetectorConfig struct {
 	// The AnomalyDetector alias.
@@ -89,20 +89,20 @@ var AnomalyDetector = ubx.ResourceBinding{
 		"Alias": ubx.FieldSpec{WireName: "alias"},
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: AnomalyDetector_ConfigurationFields,
+			Kind:     "object",
+			Fields:   AnomalyDetector_ConfigurationFields,
 		},
 		"EvaluationIntervalInSeconds": ubx.FieldSpec{WireName: "evaluation_interval_in_seconds"},
 		"Labels": ubx.FieldSpec{
 			WireName: "labels",
-			Kind: "list",
-			Fields: AnomalyDetector_LabelsFields,
+			Kind:     "list",
+			Fields:   AnomalyDetector_LabelsFields,
 		},
 		"MissingDataAction": ubx.FieldSpec{WireName: "missing_data_action"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AnomalyDetector_LabelsFields,
+			Kind:     "list",
+			Fields:   AnomalyDetector_LabelsFields,
 		},
 		"Workspace": ubx.FieldSpec{WireName: "workspace"},
 	},

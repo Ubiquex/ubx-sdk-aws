@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountPreferences_AccountPreferences struct {
 	TrainingDataCollectionEnabled any
-	UserAuthorizationRequired any
+	UserAuthorizationRequired     any
 }
 
 type AccountPreferencesConfig struct {
@@ -18,6 +18,5 @@ type AccountPreferencesAttrs struct {
 
 var AccountPreferences = ubx.DataSourceBinding{
 	WireType: "aws_chatbot_account_preferences",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

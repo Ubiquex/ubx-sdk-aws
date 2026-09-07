@@ -22,26 +22,26 @@ type JobQueue_JobStateTimeLimitActions struct {
 }
 
 type JobQueue_ServiceEnvironmentOrder struct {
-	Order any
+	Order              any
 	ServiceEnvironment any
 }
 
 var JobQueue_ComputeEnvironmentOrderFields = ubx.FieldMap{
-		"ComputeEnvironment": ubx.FieldSpec{WireName: "compute_environment"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-	}
+	"ComputeEnvironment": ubx.FieldSpec{WireName: "compute_environment"},
+	"Order":              ubx.FieldSpec{WireName: "order"},
+}
 
 var JobQueue_JobStateTimeLimitActionsFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"MaxTimeSeconds": ubx.FieldSpec{WireName: "max_time_seconds"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Action":         ubx.FieldSpec{WireName: "action"},
+	"MaxTimeSeconds": ubx.FieldSpec{WireName: "max_time_seconds"},
+	"Reason":         ubx.FieldSpec{WireName: "reason"},
+	"State":          ubx.FieldSpec{WireName: "state"},
+}
 
 var JobQueue_ServiceEnvironmentOrderFields = ubx.FieldMap{
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"ServiceEnvironment": ubx.FieldSpec{WireName: "service_environment"},
-	}
+	"Order":              ubx.FieldSpec{WireName: "order"},
+	"ServiceEnvironment": ubx.FieldSpec{WireName: "service_environment"},
+}
 
 type JobQueueConfig struct {
 	// Defines the ordered list of compute environments for the job queue, where each entry assigns a priority (order) to a compute environment and AWS Batch schedules jobs to the first available environment in that order. (AI-inferred)
@@ -92,24 +92,24 @@ var JobQueue = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ComputeEnvironmentOrder": ubx.FieldSpec{
 			WireName: "compute_environment_order",
-			Kind: "list",
-			Fields: JobQueue_ComputeEnvironmentOrderFields,
+			Kind:     "list",
+			Fields:   JobQueue_ComputeEnvironmentOrderFields,
 		},
 		"JobQueueName": ubx.FieldSpec{WireName: "job_queue_name"},
 		"JobQueueType": ubx.FieldSpec{WireName: "job_queue_type"},
 		"JobStateTimeLimitActions": ubx.FieldSpec{
 			WireName: "job_state_time_limit_actions",
-			Kind: "list",
-			Fields: JobQueue_JobStateTimeLimitActionsFields,
+			Kind:     "list",
+			Fields:   JobQueue_JobStateTimeLimitActionsFields,
 		},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"Priority":            ubx.FieldSpec{WireName: "priority"},
 		"SchedulingPolicyArn": ubx.FieldSpec{WireName: "scheduling_policy_arn"},
 		"ServiceEnvironmentOrder": ubx.FieldSpec{
 			WireName: "service_environment_order",
-			Kind: "list",
-			Fields: JobQueue_ServiceEnvironmentOrderFields,
+			Kind:     "list",
+			Fields:   JobQueue_ServiceEnvironmentOrderFields,
 		},
 		"State": ubx.FieldSpec{WireName: "state"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":  ubx.FieldSpec{WireName: "tags"},
 	},
 }

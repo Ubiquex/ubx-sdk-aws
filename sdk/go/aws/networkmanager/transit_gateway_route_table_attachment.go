@@ -29,29 +29,29 @@ type TransitGatewayRouteTableAttachment_ProposedSegmentChange struct {
 }
 
 var TransitGatewayRouteTableAttachment_ProposedNetworkFunctionGroupChange_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var TransitGatewayRouteTableAttachment_ProposedNetworkFunctionGroupChangeFields = ubx.FieldMap{
-		"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
-		"NetworkFunctionGroupName": ubx.FieldSpec{WireName: "network_function_group_name"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: TransitGatewayRouteTableAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
-		},
-	}
+	"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
+	"NetworkFunctionGroupName":   ubx.FieldSpec{WireName: "network_function_group_name"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   TransitGatewayRouteTableAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
+	},
+}
 
 var TransitGatewayRouteTableAttachment_ProposedSegmentChangeFields = ubx.FieldMap{
-		"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
-		"SegmentName": ubx.FieldSpec{WireName: "segment_name"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: TransitGatewayRouteTableAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
-		},
-	}
+	"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
+	"SegmentName":                ubx.FieldSpec{WireName: "segment_name"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   TransitGatewayRouteTableAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
+	},
+}
 
 type TransitGatewayRouteTableAttachmentConfig struct {
 	// The name of the network function group attachment.
@@ -117,22 +117,22 @@ var TransitGatewayRouteTableAttachment = ubx.ResourceBinding{
 	WireType: "aws_network_manager_transit_gateway_route_table_attachment",
 	Fields: ubx.FieldMap{
 		"NetworkFunctionGroupName": ubx.FieldSpec{WireName: "network_function_group_name"},
-		"PeeringId": ubx.FieldSpec{WireName: "peering_id"},
+		"PeeringId":                ubx.FieldSpec{WireName: "peering_id"},
 		"ProposedNetworkFunctionGroupChange": ubx.FieldSpec{
 			WireName: "proposed_network_function_group_change",
-			Kind: "object",
-			Fields: TransitGatewayRouteTableAttachment_ProposedNetworkFunctionGroupChangeFields,
+			Kind:     "object",
+			Fields:   TransitGatewayRouteTableAttachment_ProposedNetworkFunctionGroupChangeFields,
 		},
 		"ProposedSegmentChange": ubx.FieldSpec{
 			WireName: "proposed_segment_change",
-			Kind: "object",
-			Fields: TransitGatewayRouteTableAttachment_ProposedSegmentChangeFields,
+			Kind:     "object",
+			Fields:   TransitGatewayRouteTableAttachment_ProposedSegmentChangeFields,
 		},
 		"RoutingPolicyLabel": ubx.FieldSpec{WireName: "routing_policy_label"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TransitGatewayRouteTableAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
+			Kind:     "list",
+			Fields:   TransitGatewayRouteTableAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
 		},
 		"TransitGatewayRouteTableArn": ubx.FieldSpec{WireName: "transit_gateway_route_table_arn"},
 	},

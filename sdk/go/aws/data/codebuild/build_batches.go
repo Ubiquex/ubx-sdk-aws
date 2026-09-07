@@ -8,24 +8,24 @@ type BuildBatches_Filter struct {
 }
 
 var BuildBatches_FilterFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 type BuildBatchesConfig struct {
 	// <p>Specifies filters when retrieving batch builds.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
-	SortOrder any
+	NextToken  any
+	SortOrder  any
 }
 
 type BuildBatchesAttrs struct {
 	// <p>Specifies filters when retrieving batch builds.</p>
-	Filter any
-	Ids any
+	Filter     any
+	Ids        any
 	MaxResults any
-	NextToken any
-	SortOrder any
+	NextToken  any
+	SortOrder  any
 }
 
 var BuildBatches = ubx.DataSourceBinding{
@@ -33,11 +33,11 @@ var BuildBatches = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: BuildBatches_FilterFields,
+			Kind:     "object",
+			Fields:   BuildBatches_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"SortOrder":  ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

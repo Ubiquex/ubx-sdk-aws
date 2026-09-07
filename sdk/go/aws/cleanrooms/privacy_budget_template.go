@@ -15,38 +15,38 @@ type PrivacyBudgetTemplate_Parameters_BudgetParameters struct {
 type PrivacyBudgetTemplate_Parameters struct {
 	BudgetParameters any
 	// Specifies the epsilon value for the differential privacy budget, which limits the amount of privacy loss allowed for queries using this template. (AI-inferred)
-	Epsilon any
+	Epsilon     any
 	ResourceArn any
 	// The number of users' worth of noise added to each query in the privacy budget template, controlling the level of differential privacy applied to query results. (AI-inferred)
 	UsersNoisePerQuery any
 }
 
 type PrivacyBudgetTemplate_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var PrivacyBudgetTemplate_Parameters_BudgetParametersFields = ubx.FieldMap{
-		"AutoRefresh": ubx.FieldSpec{WireName: "auto_refresh"},
-		"Budget": ubx.FieldSpec{WireName: "budget"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AutoRefresh": ubx.FieldSpec{WireName: "auto_refresh"},
+	"Budget":      ubx.FieldSpec{WireName: "budget"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var PrivacyBudgetTemplate_ParametersFields = ubx.FieldMap{
-		"BudgetParameters": ubx.FieldSpec{
-			WireName: "budget_parameters",
-			Kind: "list",
-			Fields: PrivacyBudgetTemplate_Parameters_BudgetParametersFields,
-		},
-		"Epsilon": ubx.FieldSpec{WireName: "epsilon"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"UsersNoisePerQuery": ubx.FieldSpec{WireName: "users_noise_per_query"},
-	}
+	"BudgetParameters": ubx.FieldSpec{
+		WireName: "budget_parameters",
+		Kind:     "list",
+		Fields:   PrivacyBudgetTemplate_Parameters_BudgetParametersFields,
+	},
+	"Epsilon":            ubx.FieldSpec{WireName: "epsilon"},
+	"ResourceArn":        ubx.FieldSpec{WireName: "resource_arn"},
+	"UsersNoisePerQuery": ubx.FieldSpec{WireName: "users_noise_per_query"},
+}
 
 var PrivacyBudgetTemplate_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PrivacyBudgetTemplateConfig struct {
 	// Indicates whether the privacy budget template automatically refreshes at the end of each allocation period, with valid values 'ENABLED' or 'DISABLED'. (AI-inferred)
@@ -87,18 +87,18 @@ type PrivacyBudgetTemplateAttrs struct {
 var PrivacyBudgetTemplate = ubx.ResourceBinding{
 	WireType: "aws_clean_rooms_privacy_budget_template",
 	Fields: ubx.FieldMap{
-		"AutoRefresh": ubx.FieldSpec{WireName: "auto_refresh"},
+		"AutoRefresh":          ubx.FieldSpec{WireName: "auto_refresh"},
 		"MembershipIdentifier": ubx.FieldSpec{WireName: "membership_identifier"},
 		"Parameters": ubx.FieldSpec{
 			WireName: "parameters",
-			Kind: "object",
-			Fields: PrivacyBudgetTemplate_ParametersFields,
+			Kind:     "object",
+			Fields:   PrivacyBudgetTemplate_ParametersFields,
 		},
 		"PrivacyBudgetType": ubx.FieldSpec{WireName: "privacy_budget_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PrivacyBudgetTemplate_TagsFields,
+			Kind:     "list",
+			Fields:   PrivacyBudgetTemplate_TagsFields,
 		},
 	},
 }

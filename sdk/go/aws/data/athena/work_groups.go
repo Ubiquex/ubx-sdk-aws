@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkGroups_WorkGroups_EngineVersion struct {
 	EffectiveEngineVersion any
-	SelectedEngineVersion any
+	SelectedEngineVersion  any
 }
 
 type WorkGroups_WorkGroups struct {
-	CreationTime any
-	Description any
-	EngineVersion any
+	CreationTime                 any
+	Description                  any
+	EngineVersion                any
 	IdentityCenterApplicationArn any
-	Name any
-	State any
+	Name                         any
+	State                        any
 }
 
 type WorkGroupsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type WorkGroupsAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	WorkGroups any
 }
 
@@ -32,6 +32,6 @@ var WorkGroups = ubx.DataSourceBinding{
 	WireType: "aws_athena_work_groups",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -71,53 +71,53 @@ type ImageRecipe_LatestVersion struct {
 }
 
 var ImageRecipe_AdditionalInstanceConfiguration_SystemsManagerAgentFields = ubx.FieldMap{
-		"UninstallAfterBuild": ubx.FieldSpec{WireName: "uninstall_after_build"},
-	}
+	"UninstallAfterBuild": ubx.FieldSpec{WireName: "uninstall_after_build"},
+}
 
 var ImageRecipe_AdditionalInstanceConfigurationFields = ubx.FieldMap{
-		"SystemsManagerAgent": ubx.FieldSpec{
-			WireName: "systems_manager_agent",
-			Kind: "object",
-			Fields: ImageRecipe_AdditionalInstanceConfiguration_SystemsManagerAgentFields,
-		},
-		"UserDataOverride": ubx.FieldSpec{WireName: "user_data_override"},
-	}
+	"SystemsManagerAgent": ubx.FieldSpec{
+		WireName: "systems_manager_agent",
+		Kind:     "object",
+		Fields:   ImageRecipe_AdditionalInstanceConfiguration_SystemsManagerAgentFields,
+	},
+	"UserDataOverride": ubx.FieldSpec{WireName: "user_data_override"},
+}
 
 var ImageRecipe_BlockDeviceMappings_EbsFields = ubx.FieldMap{
-		"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
-		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"SnapshotId": ubx.FieldSpec{WireName: "snapshot_id"},
-		"Throughput": ubx.FieldSpec{WireName: "throughput"},
-		"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
-	}
+	"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
+	"Encrypted":           ubx.FieldSpec{WireName: "encrypted"},
+	"Iops":                ubx.FieldSpec{WireName: "iops"},
+	"KmsKeyId":            ubx.FieldSpec{WireName: "kms_key_id"},
+	"SnapshotId":          ubx.FieldSpec{WireName: "snapshot_id"},
+	"Throughput":          ubx.FieldSpec{WireName: "throughput"},
+	"VolumeSize":          ubx.FieldSpec{WireName: "volume_size"},
+	"VolumeType":          ubx.FieldSpec{WireName: "volume_type"},
+}
 
 var ImageRecipe_BlockDeviceMappingsFields = ubx.FieldMap{
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"Ebs": ubx.FieldSpec{
-			WireName: "ebs",
-			Kind: "object",
-			Fields: ImageRecipe_BlockDeviceMappings_EbsFields,
-		},
-		"NoDevice": ubx.FieldSpec{WireName: "no_device"},
-		"VirtualName": ubx.FieldSpec{WireName: "virtual_name"},
-	}
+	"DeviceName": ubx.FieldSpec{WireName: "device_name"},
+	"Ebs": ubx.FieldSpec{
+		WireName: "ebs",
+		Kind:     "object",
+		Fields:   ImageRecipe_BlockDeviceMappings_EbsFields,
+	},
+	"NoDevice":    ubx.FieldSpec{WireName: "no_device"},
+	"VirtualName": ubx.FieldSpec{WireName: "virtual_name"},
+}
 
 var ImageRecipe_Components_ParametersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ImageRecipe_ComponentsFields = ubx.FieldMap{
-		"ComponentArn": ubx.FieldSpec{WireName: "component_arn"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "list",
-			Fields: ImageRecipe_Components_ParametersFields,
-		},
-	}
+	"ComponentArn": ubx.FieldSpec{WireName: "component_arn"},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "list",
+		Fields:   ImageRecipe_Components_ParametersFields,
+	},
+}
 
 type ImageRecipeConfig struct {
 	// Specify additional settings and launch scripts for your build instances.
@@ -178,26 +178,26 @@ var ImageRecipe = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdditionalInstanceConfiguration": ubx.FieldSpec{
 			WireName: "additional_instance_configuration",
-			Kind: "object",
-			Fields: ImageRecipe_AdditionalInstanceConfigurationFields,
+			Kind:     "object",
+			Fields:   ImageRecipe_AdditionalInstanceConfigurationFields,
 		},
-		"AmiTags": ubx.FieldSpec{WireName: "ami_tags"},
+		"AmiTags":       ubx.FieldSpec{WireName: "ami_tags"},
 		"AmiWatermarks": ubx.FieldSpec{WireName: "ami_watermarks"},
 		"BlockDeviceMappings": ubx.FieldSpec{
 			WireName: "block_device_mappings",
-			Kind: "list",
-			Fields: ImageRecipe_BlockDeviceMappingsFields,
+			Kind:     "list",
+			Fields:   ImageRecipe_BlockDeviceMappingsFields,
 		},
 		"Components": ubx.FieldSpec{
 			WireName: "components",
-			Kind: "list",
-			Fields: ImageRecipe_ComponentsFields,
+			Kind:     "list",
+			Fields:   ImageRecipe_ComponentsFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParentImage": ubx.FieldSpec{WireName: "parent_image"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Version": ubx.FieldSpec{WireName: "version"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"ParentImage":      ubx.FieldSpec{WireName: "parent_image"},
+		"Tags":             ubx.FieldSpec{WireName: "tags"},
+		"Version":          ubx.FieldSpec{WireName: "version"},
 		"WorkingDirectory": ubx.FieldSpec{WireName: "working_directory"},
 	},
 }

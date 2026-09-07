@@ -18,13 +18,13 @@ type SessionEndpointConfig struct {
 }
 
 type SessionEndpointAttrs struct {
-	AuthToken any
+	AuthToken               any
 	AuthTokenExpirationTime any
-	ClusterId any
+	ClusterId               any
 	// <p>The credentials that you can use to connect to cluster endpoints. Credentials consist of a username and a password.</p>
 	Credentials any
-	Endpoint any
-	SessionId any
+	Endpoint    any
+	SessionId   any
 }
 
 var SessionEndpoint = ubx.DataSourceBinding{

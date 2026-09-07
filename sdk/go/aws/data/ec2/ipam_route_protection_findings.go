@@ -4,61 +4,61 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamRouteProtectionFindings_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type IpamRouteProtectionFindings_RouteProtectionFindings_Roas struct {
-	Asn any
+	Asn        any
 	Expiration any
-	Match any
-	MaxLength any
-	Prefix any
+	Match      any
+	MaxLength  any
+	Prefix     any
 }
 
 type IpamRouteProtectionFindings_RouteProtectionFindings_RouteOverlaps struct {
-	Asn any
+	Asn        any
 	DetectedAt any
-	Prefix any
+	Prefix     any
 }
 
 type IpamRouteProtectionFindings_RouteProtectionFindings struct {
-	AdvertisementType any
-	Asn any
-	Cidr any
-	IpamPoolId any
+	AdvertisementType  any
+	Asn                any
+	Cidr               any
+	IpamPoolId         any
 	NetworkBorderGroup any
-	PoolId any
-	ResourceOwnerId any
-	ResourceRegion any
-	RoaSampleTime any
-	Roas any
-	RouteOverlaps any
-	RpkiStatus any
-	RpkiStrength any
-	SampleTime any
-	State any
+	PoolId             any
+	ResourceOwnerId    any
+	ResourceRegion     any
+	RoaSampleTime      any
+	Roas               any
+	RouteOverlaps      any
+	RpkiStatus         any
+	RpkiStrength       any
+	SampleTime         any
+	State              any
 }
 
 var IpamRouteProtectionFindings_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type IpamRouteProtectionFindingsConfig struct {
-	DryRun any
-	Filters any
-	IpamId any
+	DryRun     any
+	Filters    any
+	IpamId     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type IpamRouteProtectionFindingsAttrs struct {
-	DryRun any
-	Filters any
-	IpamId any
-	MaxResults any
-	NextToken any
+	DryRun                  any
+	Filters                 any
+	IpamId                  any
+	MaxResults              any
+	NextToken               any
 	RouteProtectionFindings any
 }
 
@@ -68,11 +68,11 @@ var IpamRouteProtectionFindings = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: IpamRouteProtectionFindings_FiltersFields,
+			Kind:     "list",
+			Fields:   IpamRouteProtectionFindings_FiltersFields,
 		},
-		"IpamId": ubx.FieldSpec{WireName: "ipam_id"},
+		"IpamId":     ubx.FieldSpec{WireName: "ipam_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

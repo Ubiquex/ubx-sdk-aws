@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataAtsIotRetainedMessages_RetainedTopics struct {
 	LastModifiedTime any
-	PayloadSize any
-	Qos any
-	Topic any
+	PayloadSize      any
+	Qos              any
+	Topic            any
 }
 
 type DataAtsIotRetainedMessagesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DataAtsIotRetainedMessagesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	RetainedTopics any
 }
 
@@ -25,6 +25,6 @@ var DataAtsIotRetainedMessages = ubx.DataSourceBinding{
 	WireType: "aws_data_ats_iot_retained_messages",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -24,17 +24,17 @@ type Stage_DefaultRouteSettings struct {
 }
 
 var Stage_AccessLogSettingsFields = ubx.FieldMap{
-		"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-	}
+	"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
+	"Format":         ubx.FieldSpec{WireName: "format"},
+}
 
 var Stage_DefaultRouteSettingsFields = ubx.FieldMap{
-		"DataTraceEnabled": ubx.FieldSpec{WireName: "data_trace_enabled"},
-		"DetailedMetricsEnabled": ubx.FieldSpec{WireName: "detailed_metrics_enabled"},
-		"LoggingLevel": ubx.FieldSpec{WireName: "logging_level"},
-		"ThrottlingBurstLimit": ubx.FieldSpec{WireName: "throttling_burst_limit"},
-		"ThrottlingRateLimit": ubx.FieldSpec{WireName: "throttling_rate_limit"},
-	}
+	"DataTraceEnabled":       ubx.FieldSpec{WireName: "data_trace_enabled"},
+	"DetailedMetricsEnabled": ubx.FieldSpec{WireName: "detailed_metrics_enabled"},
+	"LoggingLevel":           ubx.FieldSpec{WireName: "logging_level"},
+	"ThrottlingBurstLimit":   ubx.FieldSpec{WireName: "throttling_burst_limit"},
+	"ThrottlingRateLimit":    ubx.FieldSpec{WireName: "throttling_rate_limit"},
+}
 
 type StageConfig struct {
 	// Configures access logging for the API Gateway stage, including the CloudWatch Logs destination ARN and the log format template. (AI-inferred)
@@ -91,22 +91,22 @@ var Stage = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessLogSettings": ubx.FieldSpec{
 			WireName: "access_log_settings",
-			Kind: "object",
-			Fields: Stage_AccessLogSettingsFields,
+			Kind:     "object",
+			Fields:   Stage_AccessLogSettingsFields,
 		},
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
-		"AutoDeploy": ubx.FieldSpec{WireName: "auto_deploy"},
+		"ApiId":               ubx.FieldSpec{WireName: "api_id"},
+		"AutoDeploy":          ubx.FieldSpec{WireName: "auto_deploy"},
 		"ClientCertificateId": ubx.FieldSpec{WireName: "client_certificate_id"},
 		"DefaultRouteSettings": ubx.FieldSpec{
 			WireName: "default_route_settings",
-			Kind: "object",
-			Fields: Stage_DefaultRouteSettingsFields,
+			Kind:     "object",
+			Fields:   Stage_DefaultRouteSettingsFields,
 		},
-		"DeploymentId": ubx.FieldSpec{WireName: "deployment_id"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"RouteSettings": ubx.FieldSpec{WireName: "route_settings"},
-		"StageName": ubx.FieldSpec{WireName: "stage_name"},
+		"DeploymentId":   ubx.FieldSpec{WireName: "deployment_id"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"RouteSettings":  ubx.FieldSpec{WireName: "route_settings"},
+		"StageName":      ubx.FieldSpec{WireName: "stage_name"},
 		"StageVariables": ubx.FieldSpec{WireName: "stage_variables"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":           ubx.FieldSpec{WireName: "tags"},
 	},
 }
