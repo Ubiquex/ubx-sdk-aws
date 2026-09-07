@@ -23,6 +23,7 @@ export interface ClientVpnAuthorizationRuleAttrs {
   clientVpnEndpointId: string;
   /** A brief, optional description that identifies the purpose of the Client VPN authorization rule. (AI-inferred) */
   description: string;
+  /** The unique identifier of this Client VPN authorization rule. (AI-inferred) */
   id: string;
   /** The CIDR block of the target network that this authorization rule grants access to for the specified clients or groups. (AI-inferred) */
   targetNetworkCidr: string;

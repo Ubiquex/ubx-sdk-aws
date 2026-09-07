@@ -77,6 +77,7 @@ type MeshAttrs struct {
 	Spec any
 	// Specifies the tags (key-value metadata) to attach to the AWS App Mesh mesh resource. (AI-inferred)
 	Tags any
+	// The unique identifier assigned by App Mesh to this mesh. (AI-inferred)
 	Uid any
 }
 

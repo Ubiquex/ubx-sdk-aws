@@ -96,7 +96,9 @@ export interface AutomatedReasoningPolicyConfig {
   forceDelete?: boolean | Computed<boolean>;
   /** The KMS key with which the Policy's assets will be encrypted at rest. */
   kmsKeyId?: string | Computed<string>;
+  /** The name of this automated reasoning policy. (AI-inferred) */
   name: string | Computed<string>;
+  /** The formal logic definition (rules, variables, and their relationships) this automated reasoning policy checks model responses against. (AI-inferred) */
   policyDefinition?: AutomatedReasoningPolicy_PolicyDefinition | Computed<AutomatedReasoningPolicy_PolicyDefinition>;
   /** A list of key-value tags to associate with the AWS Bedrock automated reasoning policy. (AI-inferred) */
   tags?: AutomatedReasoningPolicy_Tags[] | Computed<AutomatedReasoningPolicy_Tags[]>;
@@ -115,8 +117,11 @@ export interface AutomatedReasoningPolicyAttrs {
   kmsKeyArn: string;
   /** The KMS key with which the Policy's assets will be encrypted at rest. */
   kmsKeyId: string;
+  /** The name of this automated reasoning policy. (AI-inferred) */
   name: string;
+  /** The Amazon Resource Name (ARN) of this automated reasoning policy. (AI-inferred) */
   policyArn: string;
+  /** The formal logic definition (rules, variables, and their relationships) this automated reasoning policy checks model responses against. (AI-inferred) */
   policyDefinition: AutomatedReasoningPolicy_PolicyDefinition;
   /** The id of the policy */
   policyId: string;

@@ -330,6 +330,7 @@ var CapacityProvider_TagsFields = ubx.FieldMap{
 type CapacityProviderConfig struct {
 	// Configures the Auto Scaling group that backs this ECS capacity provider, including its ARN, optional managed scaling parameters, and managed termination protection settings. (AI-inferred)
 	AutoScalingGroupProvider any
+	// The cluster this capacity provider is associated with. Required for Amazon ECS Managed Instances capacity providers, which are scoped to a single cluster. (AI-inferred)
 	ClusterName any
 	ManagedInstancesProvider any
 	// Specifies the name of the capacity provider, which must be unique within the account and Region and contain only letters, numbers, underscores, and hyphens (up to 255 characters); if omitted, CloudFormation generates a unique name. (AI-inferred)
@@ -341,6 +342,7 @@ type CapacityProviderConfig struct {
 type CapacityProviderAttrs struct {
 	// Configures the Auto Scaling group that backs this ECS capacity provider, including its ARN, optional managed scaling parameters, and managed termination protection settings. (AI-inferred)
 	AutoScalingGroupProvider any
+	// The cluster this capacity provider is associated with. Required for Amazon ECS Managed Instances capacity providers, which are scoped to a single cluster. (AI-inferred)
 	ClusterName any
 	ManagedInstancesProvider any
 	// Specifies the name of the capacity provider, which must be unique within the account and Region and contain only letters, numbers, underscores, and hyphens (up to 255 characters); if omitted, CloudFormation generates a unique name. (AI-inferred)

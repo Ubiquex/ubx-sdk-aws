@@ -305,6 +305,7 @@ export interface MemoryConfig {
   memoryExecutionRoleArn?: string | Computed<string>;
   /** Name of the Memory resource */
   name: string | Computed<string>;
+  /** The real resource(s) memory events are streamed to as they occur. (AI-inferred) */
   streamDeliveryResources?: Memory_StreamDeliveryResources | Computed<Memory_StreamDeliveryResources>;
   /** A map of tag keys and values */
   tags?: unknown | Computed<unknown>;
@@ -335,6 +336,7 @@ export interface MemoryAttrs {
   name: string;
   /** Status of the Memory resource */
   status: string;
+  /** The real resource(s) memory events are streamed to as they occur. (AI-inferred) */
   streamDeliveryResources: Memory_StreamDeliveryResources;
   /** A map of tag keys and values */
   tags: unknown;

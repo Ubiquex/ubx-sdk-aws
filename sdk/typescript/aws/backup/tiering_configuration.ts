@@ -17,22 +17,28 @@ const TieringConfiguration_ResourceSelectionFields: FieldMap = {
 export interface TieringConfigurationConfig {
   /** The name of the AWS Backup vault to which this tiering configuration is applied. (AI-inferred) */
   backupVaultName: string | Computed<string>;
+  /** The resource selections and their tiering settings that this tiering configuration applies. (AI-inferred) */
   resourceSelection: TieringConfiguration_ResourceSelection[] | Computed<TieringConfiguration_ResourceSelection[]>;
   /** The name that identifies this tiering configuration, which defines when backups transition to the cold storage tier within an AWS Backup plan. (AI-inferred) */
   tieringConfigurationName: string | Computed<string>;
+  /** The tags assigned to this tiering configuration. (AI-inferred) */
   tieringConfigurationTags?: unknown | Computed<unknown>;
 }
 
 export interface TieringConfigurationAttrs {
   /** The name of the AWS Backup vault to which this tiering configuration is applied. (AI-inferred) */
   backupVaultName: string;
+  /** The date and time when this tiering configuration was created. (AI-inferred) */
   creationTime: string;
   /** The timestamp of the most recent update to this AWS Backup tiering configuration. (AI-inferred) */
   lastUpdatedTime: string;
+  /** The resource selections and their tiering settings that this tiering configuration applies. (AI-inferred) */
   resourceSelection: TieringConfiguration_ResourceSelection[];
+  /** The Amazon Resource Name (ARN) of this tiering configuration. (AI-inferred) */
   tieringConfigurationArn: string;
   /** The name that identifies this tiering configuration, which defines when backups transition to the cold storage tier within an AWS Backup plan. (AI-inferred) */
   tieringConfigurationName: string;
+  /** The tags assigned to this tiering configuration. (AI-inferred) */
   tieringConfigurationTags: unknown;
 }
 

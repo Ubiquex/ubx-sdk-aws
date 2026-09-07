@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LimitConfig:
+    # The value referenced as the amounts.name in a job template step's own hostRequirements to declare this limit's requirement. (AI-inferred)
     amount_requirement_name: Any = None
     # Provides an optional human-readable description for the AWS Deadline Cloud limit, clarifying the limit's purpose or scope. (AI-inferred)
     description: Any = None
@@ -20,6 +21,7 @@ class LimitConfig:
 
 @dataclasses.dataclass
 class LimitAttrs:
+    # The value referenced as the amounts.name in a job template step's own hostRequirements to declare this limit's requirement. (AI-inferred)
     amount_requirement_name: Any = None
     # The current number of resources that are using this limit, as tracked by AWS Deadline Cloud and updated automatically as usage changes. (AI-inferred)
     current_count: Any = None

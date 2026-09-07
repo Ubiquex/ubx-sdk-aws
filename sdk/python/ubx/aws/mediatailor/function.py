@@ -90,6 +90,7 @@ class FunctionConfig:
     description: Any = None
     # The unique identifier for the function.
     function_id: Any = None
+    # The type of this MediaTailor function. (AI-inferred)
     function_type: Any = None
     # Configuration for HTTP request functions.
     http_request_configuration: Any = None
@@ -108,6 +109,7 @@ class FunctionAttrs:
     description: Any = None
     # The unique identifier for the function.
     function_id: Any = None
+    # The type of this MediaTailor function. (AI-inferred)
     function_type: Any = None
     # Configuration for HTTP request functions.
     http_request_configuration: Any = None

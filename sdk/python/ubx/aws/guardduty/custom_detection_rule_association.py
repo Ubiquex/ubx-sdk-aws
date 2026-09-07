@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CustomDetectionRuleAssociation_Tags:
+    # The key of a tag attached to the GuardDuty custom detection rule association, used as the name of the key-value metadata pair for organizing or identifying the resource. (AI-inferred)
     key: Any = None
+    # The value component of a tag attached to the GuardDuty custom detection rule association, allowing you to associate arbitrary metadata such as ownership or environment with the association. (AI-inferred)
     value: Any = None
 
 _CustomDetectionRuleAssociation_TagsFields = {

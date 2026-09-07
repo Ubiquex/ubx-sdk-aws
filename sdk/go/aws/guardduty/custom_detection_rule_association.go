@@ -4,7 +4,9 @@ package guardduty
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomDetectionRuleAssociation_Tags struct {
+	// The key of a tag attached to the GuardDuty custom detection rule association, used as the name of the key-value metadata pair for organizing or identifying the resource. (AI-inferred)
 	Key any
+	// The value component of a tag attached to the GuardDuty custom detection rule association, allowing you to associate arbitrary metadata such as ownership or environment with the association. (AI-inferred)
 	Value any
 }
 

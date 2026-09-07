@@ -75,7 +75,9 @@ const InboundExternalLink_TagsFields: FieldMap = {
 };
 
 export interface InboundExternalLinkConfig {
+  /** A reference to the RTB Fabric gateway this inbound external link connects an outside bid requester to. (AI-inferred) */
   gatewayId: string | Computed<string>;
+  /** Attributes controlling how this inbound external link behaves. (AI-inferred) */
   linkAttributes?: InboundExternalLink_LinkAttributes | Computed<InboundExternalLink_LinkAttributes>;
   /** Specifies the logging configuration for the inbound external link, including the destination where log records are delivered and the level of detail captured for link activity. (AI-inferred) */
   linkLogSettings: InboundExternalLink_LinkLogSettings | Computed<InboundExternalLink_LinkLogSettings>;
@@ -84,11 +86,17 @@ export interface InboundExternalLinkConfig {
 }
 
 export interface InboundExternalLinkAttrs {
+  /** The Amazon Resource Name (ARN) of this inbound external link. (AI-inferred) */
   arn: string;
+  /** The date and time when this inbound external link was created. (AI-inferred) */
   createdTimestamp: string;
+  /** The domain name external bid requesters use to reach this inbound external link. (AI-inferred) */
   domainName: string;
+  /** A reference to the RTB Fabric gateway this inbound external link connects an outside bid requester to. (AI-inferred) */
   gatewayId: string;
+  /** Attributes controlling how this inbound external link behaves. (AI-inferred) */
   linkAttributes: InboundExternalLink_LinkAttributes;
+  /** The unique identifier of this inbound external link. (AI-inferred) */
   linkId: string;
   /** Specifies the logging configuration for the inbound external link, including the destination where log records are delivered and the level of detail captured for link activity. (AI-inferred) */
   linkLogSettings: InboundExternalLink_LinkLogSettings;

@@ -8,16 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ResourcePolicyConfig:
-    # The resource policy of your Lambda resource
+    # The policy document you want to add to your LAM resource. This is formatted as a JSON string. For more information, see [Working with resource-based policies in](https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html) in the *Developer Guide*.
     policy_document: Any = None
-    # The resource arn of your Lambda resource
+    # The Amazon Resource Name (ARN) of the LAM resource you want to add the policy to. For a function, you can use a qualified or an unqualified ARN. The value must be a complete ARN, and the operation does not accept wildcard characters.
     resource_arn: Any = None
 
 @dataclasses.dataclass
 class ResourcePolicyAttrs:
-    # The resource policy of your Lambda resource
+    # The policy document you want to add to your LAM resource. This is formatted as a JSON string. For more information, see [Working with resource-based policies in](https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html) in the *Developer Guide*.
     policy_document: Any = None
-    # The resource arn of your Lambda resource
+    # The Amazon Resource Name (ARN) of the LAM resource you want to add the policy to. For a function, you can use a qualified or an unqualified ARN. The value must be a complete ARN, and the operation does not accept wildcard characters.
     resource_arn: Any = None
 
 ResourcePolicy = ubx.ResourceBinding(

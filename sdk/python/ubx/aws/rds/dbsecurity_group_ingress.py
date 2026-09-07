@@ -31,6 +31,7 @@ class DbsecurityGroupIngressAttrs:
     ec2_security_group_name: Any = None
     # The AWS account ID of the owner of the EC2 security group referenced by the EC2SecurityGroupName property, used when the security group belongs to a different AWS account. (AI-inferred)
     ec2_security_group_owner_id: Any = None
+    # The unique identifier of this DB security group ingress rule. (AI-inferred)
     id: Any = None
 
 DbsecurityGroupIngress = ubx.ResourceBinding(

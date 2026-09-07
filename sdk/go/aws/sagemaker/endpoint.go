@@ -161,6 +161,8 @@ type EndpointConfig_ struct {
 	DeploymentConfig any
 	// The name of the endpoint configuration for the SageMaker endpoint. This is a required property.
 	EndpointConfigName any
+	// The name of the SageMaker endpoint. This name must be unique within an AWS Region.
+	EndpointName any
 	// Specifies a list of variant properties that you want to exclude when updating an endpoint.
 	ExcludeRetainedVariantProperties any
 	// When set to true, retains all variant properties for an endpoint when it is updated.
@@ -199,6 +201,7 @@ var Endpoint = ubx.ResourceBinding{
 			Fields: Endpoint_DeploymentConfigFields,
 		},
 		"EndpointConfigName": ubx.FieldSpec{WireName: "endpoint_config_name"},
+		"EndpointName": ubx.FieldSpec{WireName: "endpoint_name"},
 		"ExcludeRetainedVariantProperties": ubx.FieldSpec{
 			WireName: "exclude_retained_variant_properties",
 			Kind: "list",

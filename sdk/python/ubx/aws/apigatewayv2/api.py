@@ -111,6 +111,7 @@ class ApiAttrs:
     disable_execute_api_endpoint: Any = None
     # Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
     disable_schema_validation: Any = None
+    # The Amazon Resource Name (ARN) that can be used to reference this API's own execute-api permissions, for example in a resource-based IAM policy. (AI-inferred)
     execute_api_arn: Any = None
     # Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.
     fail_on_warnings: Any = None

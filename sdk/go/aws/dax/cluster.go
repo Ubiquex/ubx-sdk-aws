@@ -41,6 +41,7 @@ type ClusterConfig struct {
 	SecurityGroupIds any
 	// The name of the subnet group that defines the VPC subnets in which the DAX cluster nodes are launched. (AI-inferred)
 	SubnetGroupName any
+	// The tags assigned to this DAX cluster. (AI-inferred)
 	Tags any
 }
 
@@ -81,6 +82,7 @@ type ClusterAttrs struct {
 	SecurityGroupIds any
 	// The name of the subnet group that defines the VPC subnets in which the DAX cluster nodes are launched. (AI-inferred)
 	SubnetGroupName any
+	// The tags assigned to this DAX cluster. (AI-inferred)
 	Tags any
 }
 

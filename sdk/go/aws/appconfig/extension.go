@@ -37,6 +37,7 @@ type ExtensionAttrs struct {
 	Arn any
 	// Description of the extension.
 	Description any
+	// The unique identifier of this AppConfig extension. (AI-inferred)
 	Id any
 	// The version number of the current extension to be replaced, used as an optimistic concurrency check when updating the extension to prevent overwriting concurrent changes. (AI-inferred)
 	LatestVersionNumber any

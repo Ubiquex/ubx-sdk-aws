@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class IndexConfig:
+    # The tags assigned to this Resource Explorer index. (AI-inferred)
     tags: Any = None
     # Specifies the index type, either LOCAL (indexes resources in your account and region) or AGGREGATOR (aggregates indices from multiple accounts and regions). (AI-inferred)
     type: Any = None
@@ -18,6 +19,7 @@ class IndexAttrs:
     arn: Any = None
     # The current lifecycle state of the index, such as ACTIVE, CREATING, UPDATING, or DELETING, as reported by AWS Resource Explorer. (AI-inferred)
     index_state: Any = None
+    # The tags assigned to this Resource Explorer index. (AI-inferred)
     tags: Any = None
     # Specifies the index type, either LOCAL (indexes resources in your account and region) or AGGREGATOR (aggregates indices from multiple accounts and regions). (AI-inferred)
     type: Any = None

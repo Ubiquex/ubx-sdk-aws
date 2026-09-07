@@ -7,6 +7,21 @@ type Fhirdatastores_DatastorePropertiesList_AnalyticsConfiguration struct {
 	Status any
 }
 
+type Fhirdatastores_DatastorePropertiesList_BackupStatusInfo_Configuration struct {
+	BackupTagsEnabled any
+	BackupType any
+	RetentionPeriodInDays any
+	Status any
+}
+
+type Fhirdatastores_DatastorePropertiesList_BackupStatusInfo struct {
+	BackupEnabledAt any
+	Configuration any
+	EarliestRestorePoint any
+	LatestRestorePoint any
+	ScheduledPermanentDeletionTime any
+}
+
 type Fhirdatastores_DatastorePropertiesList_ErrorCause struct {
 	ErrorCategory any
 	ErrorMessage any
@@ -38,6 +53,7 @@ type Fhirdatastores_DatastorePropertiesList_SseConfiguration struct {
 
 type Fhirdatastores_DatastorePropertiesList struct {
 	AnalyticsConfiguration any
+	BackupStatusInfo any
 	CreatedAt any
 	DatastoreArn any
 	DatastoreEndpoint any

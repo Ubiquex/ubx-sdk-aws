@@ -23,6 +23,7 @@ type OwnerAttrs struct {
 	EntityType any
 	// The properties of a domain unit's owner.
 	Owner any
+	// The unique identifier of the owner added to this entity. (AI-inferred)
 	OwnerIdentifier any
 	// Indicates whether the owner associated with the DataZone resource is a user or a group, as determined by the service. (AI-inferred)
 	OwnerType any

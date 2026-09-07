@@ -107,6 +107,7 @@ type ApiAttrs struct {
 	DisableExecuteApiEndpoint any
 	// Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
 	DisableSchemaValidation any
+	// The Amazon Resource Name (ARN) that can be used to reference this API's own execute-api permissions, for example in a resource-based IAM policy. (AI-inferred)
 	ExecuteApiArn any
 	// Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.
 	FailOnWarnings any

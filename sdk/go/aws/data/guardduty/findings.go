@@ -709,7 +709,20 @@ type Findings_Findings_Service_Detection_Sequence_SequenceIndicators struct {
 	Values any
 }
 
+type Findings_Findings_Service_Detection_Sequence_Signals_Activities_Api struct {
+	Error any
+	Operation any
+	Service any
+	UserAgent any
+}
+
+type Findings_Findings_Service_Detection_Sequence_Signals_Activities struct {
+	Api any
+	Type any
+}
+
 type Findings_Findings_Service_Detection_Sequence_Signals struct {
+	Activities any
 	ActorIds any
 	Count any
 	CreatedAt any

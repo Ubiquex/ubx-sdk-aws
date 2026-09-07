@@ -502,6 +502,7 @@ class OriginEndpointConfig:
     segment: Any = None
     # <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p>
     startover_window_seconds: Any = None
+    stream_name_output_mode: Any = None
     # Defines a list of key-value tags to attach to the MediaPackage v2 origin endpoint, enabling resource identification, cost allocation, and access management. (AI-inferred)
     tags: Any = None
     # For the DASH manifest of an AWS Elemental MediaPackage v2 origin endpoint, this property sets the URI separator character (either '/' or '_') used in the segment template URL to delimit segment numbers from the preceding path. (AI-inferred)
@@ -547,6 +548,7 @@ class OriginEndpointAttrs:
     segment: Any = None
     # <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p>
     startover_window_seconds: Any = None
+    stream_name_output_mode: Any = None
     # Defines a list of key-value tags to attach to the MediaPackage v2 origin endpoint, enabling resource identification, cost allocation, and access management. (AI-inferred)
     tags: Any = None
     # For the DASH manifest of an AWS Elemental MediaPackage v2 origin endpoint, this property sets the URI separator character (either '/' or '_') used in the segment template URL to delimit segment numbers from the preceding path. (AI-inferred)
@@ -581,6 +583,7 @@ OriginEndpoint = ubx.ResourceBinding(
             fields=_OriginEndpoint_SegmentFields,
         ),
         "startover_window_seconds": ubx.FieldSpec(wire_name="startover_window_seconds"),
+        "stream_name_output_mode": ubx.FieldSpec(wire_name="stream_name_output_mode"),
         "tags": ubx.FieldSpec(
             wire_name="tags",
             kind="list",

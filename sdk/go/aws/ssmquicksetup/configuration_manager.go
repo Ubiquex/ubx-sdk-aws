@@ -34,6 +34,7 @@ type ConfigurationManagerConfig struct {
 	Description any
 	// An optional friendly name for the Systems Manager Quick Setup configuration manager, used to identify and reference the configuration in the AWS Management Console and API operations. (AI-inferred)
 	Name any
+	// The tags assigned to this Systems Manager Quick Setup configuration manager. (AI-inferred)
 	Tags any
 }
 
@@ -52,6 +53,7 @@ type ConfigurationManagerAttrs struct {
 	Name any
 	// Returns a list of status summaries for this configuration manager, where each summary includes a status type (such as Deployment) and the corresponding status (such as Success). (AI-inferred)
 	StatusSummaries any
+	// The tags assigned to this Systems Manager Quick Setup configuration manager. (AI-inferred)
 	Tags any
 }
 

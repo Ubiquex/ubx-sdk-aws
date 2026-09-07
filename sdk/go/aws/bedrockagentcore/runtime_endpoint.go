@@ -8,7 +8,9 @@ type RuntimeEndpointConfig struct {
 	AgentRuntimeId any
 	// The version of the Bedrock Agent runtime to use for the endpoint, which controls the runtime behavior and feature set available when invoking the agent through this core runtime endpoint. (AI-inferred)
 	AgentRuntimeVersion any
+	// The description of this agent runtime endpoint. (AI-inferred)
 	Description any
+	// The name of this agent runtime endpoint. (AI-inferred)
 	Name any
 	// A map of tag keys and values
 	Tags any
@@ -17,23 +19,31 @@ type RuntimeEndpointConfig struct {
 type RuntimeEndpointAttrs struct {
 	// The Amazon Resource Name (ARN) of the Bedrock agent core runtime endpoint, automatically assigned by AWS to uniquely identify the endpoint for agent invocation. (AI-inferred)
 	AgentRuntimeArn any
+	// The Amazon Resource Name (ARN) of this agent runtime endpoint. (AI-inferred)
 	AgentRuntimeEndpointArn any
 	// The ID of the parent Agent Runtime
 	AgentRuntimeId any
 	// The version of the Bedrock Agent runtime to use for the endpoint, which controls the runtime behavior and feature set available when invoking the agent through this core runtime endpoint. (AI-inferred)
 	AgentRuntimeVersion any
+	// The date and time at which this agent runtime endpoint was created. (AI-inferred)
 	CreatedAt any
+	// The description of this agent runtime endpoint. (AI-inferred)
 	Description any
 	// The reason for failure if the endpoint is in a failed state
 	FailureReason any
 	// The unique ID of the Agent Runtime Endpoint itself
 	Id any
+	// The date and time at which this agent runtime endpoint was last updated. (AI-inferred)
 	LastUpdatedAt any
+	// The real AgentCore Runtime version this endpoint currently routes live traffic to. (AI-inferred)
 	LiveVersion any
+	// The name of this agent runtime endpoint. (AI-inferred)
 	Name any
+	// The current status of this agent runtime endpoint. (AI-inferred)
 	Status any
 	// A map of tag keys and values
 	Tags any
+	// The real AgentCore Runtime version this endpoint is configured to route to, once available. (AI-inferred)
 	TargetVersion any
 }
 

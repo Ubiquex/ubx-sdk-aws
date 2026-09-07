@@ -2,27 +2,46 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MountTargetConfig {
+  /** A reference to the file system this mount target provides network access to. (AI-inferred) */
   fileSystemId: string | Computed<string>;
+  /** The type of IP address (IPv4-only, IPv6-only, or dual-stack) this mount target uses. (AI-inferred) */
   ipAddressType?: string | Computed<string>;
+  /** The IPv4 address of this mount target. (AI-inferred) */
   ipv4Address?: string | Computed<string>;
+  /** The IPv6 address of this mount target. (AI-inferred) */
   ipv6Address?: string | Computed<string>;
+  /** The VPC security groups controlling network access to this mount target. (AI-inferred) */
   securityGroups?: string[] | Computed<string[]>;
+  /** A reference to the subnet this mount target is located in. (AI-inferred) */
   subnetId: string | Computed<string>;
 }
 
 export interface MountTargetAttrs {
+  /** The unique identifier of the Availability Zone this mount target is located in. (AI-inferred) */
   availabilityZoneId: string;
+  /** A reference to the file system this mount target provides network access to. (AI-inferred) */
   fileSystemId: string;
+  /** The type of IP address (IPv4-only, IPv6-only, or dual-stack) this mount target uses. (AI-inferred) */
   ipAddressType: string;
+  /** The IPv4 address of this mount target. (AI-inferred) */
   ipv4Address: string;
+  /** The IPv6 address of this mount target. (AI-inferred) */
   ipv6Address: string;
+  /** The unique identifier of this mount target. (AI-inferred) */
   mountTargetId: string;
+  /** A reference to the network interface Amazon S3 Files created for this mount target. (AI-inferred) */
   networkInterfaceId: string;
+  /** The AWS account ID that owns this mount target. (AI-inferred) */
   ownerId: string;
+  /** The VPC security groups controlling network access to this mount target. (AI-inferred) */
   securityGroups: string[];
+  /** The current status of this mount target. (AI-inferred) */
   status: string;
+  /** Additional information about this mount target's own current status. (AI-inferred) */
   statusMessage: string;
+  /** A reference to the subnet this mount target is located in. (AI-inferred) */
   subnetId: string;
+  /** A reference to the VPC this mount target is located in. (AI-inferred) */
   vpcId: string;
 }
 

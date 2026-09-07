@@ -28,6 +28,7 @@ class IpamInternetRegistryAssociations_IpamInternetRegistryAssociations:
     owner_id: Any = None
     rir: Any = None
     state: Any = None
+    state_message: Any = None
     tags: Any = None
 
 _IpamInternetRegistryAssociations_FiltersFields = {

@@ -60,6 +60,7 @@ class AnomalyDetectorConfig:
     evaluation_interval_in_seconds: Any = None
     # An array of key-value pairs to provide meta-data.
     labels: Any = None
+    # The action this Amazon Managed Service for Prometheus anomaly detector takes when metric data is missing. (AI-inferred)
     missing_data_action: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
@@ -78,6 +79,7 @@ class AnomalyDetectorAttrs:
     evaluation_interval_in_seconds: Any = None
     # An array of key-value pairs to provide meta-data.
     labels: Any = None
+    # The action this Amazon Managed Service for Prometheus anomaly detector takes when metric data is missing. (AI-inferred)
     missing_data_action: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

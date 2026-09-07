@@ -403,11 +403,13 @@ const Runtime_RequestHeaderConfigurationFields: FieldMap = {
 
 export interface RuntimeConfig {
   agentRuntimeArtifact: Runtime_AgentRuntimeArtifact | Computed<Runtime_AgentRuntimeArtifact>;
+  /** The name of the AgentCore Runtime. (AI-inferred) */
   agentRuntimeName: string | Computed<string>;
   /** Configuration for the authorizer */
   authorizerConfiguration?: Runtime_AuthorizerConfiguration | Computed<Runtime_AuthorizerConfiguration>;
   /** Configuration for a capacity provider */
   capacityProviderConfiguration?: Runtime_CapacityProviderConfiguration | Computed<Runtime_CapacityProviderConfiguration>;
+  /** The description of the AgentCore Runtime. (AI-inferred) */
   description?: string | Computed<string>;
   /** Environment variable attributes */
   environmentVariables?: unknown | Computed<unknown>;
@@ -417,6 +419,7 @@ export interface RuntimeConfig {
   lifecycleConfiguration?: Runtime_LifecycleConfiguration | Computed<Runtime_LifecycleConfiguration>;
   /** Provides the VPC configuration (security group IDs and subnet IDs) used by the agent's core runtime to access resources within a private network. (AI-inferred) */
   networkConfiguration?: Runtime_NetworkConfiguration | Computed<Runtime_NetworkConfiguration>;
+  /** The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients. (AI-inferred) */
   protocolConfiguration?: string | Computed<string>;
   /** Configuration for HTTP request headers */
   requestHeaderConfiguration?: Runtime_RequestHeaderConfiguration | Computed<Runtime_RequestHeaderConfiguration>;
@@ -430,8 +433,11 @@ export interface RuntimeAttrs {
   /** The Amazon Resource Name (ARN) that uniquely identifies this Bedrock agent core runtime resource. (AI-inferred) */
   agentRuntimeArn: string;
   agentRuntimeArtifact: Runtime_AgentRuntimeArtifact;
+  /** The unique identifier of the AgentCore Runtime. (AI-inferred) */
   agentRuntimeId: string;
+  /** The name of the AgentCore Runtime. (AI-inferred) */
   agentRuntimeName: string;
+  /** The version of the AgentCore Runtime. (AI-inferred) */
   agentRuntimeVersion: string;
   /** Configuration for the authorizer */
   authorizerConfiguration: Runtime_AuthorizerConfiguration;
@@ -439,6 +445,7 @@ export interface RuntimeAttrs {
   capacityProviderConfiguration: Runtime_CapacityProviderConfiguration;
   /** The creation timestamp of this Bedrock agent core runtime, returned as a read-only string. (AI-inferred) */
   createdAt: string;
+  /** The description of the AgentCore Runtime. (AI-inferred) */
   description: string;
   /** Environment variable attributes */
   environmentVariables: unknown;
@@ -446,16 +453,19 @@ export interface RuntimeAttrs {
   failureReason: string;
   /** List of filesystem configurations */
   filesystemConfigurations: Runtime_FilesystemConfigurations[];
+  /** The timestamp when the AgentCore Runtime was last updated. (AI-inferred) */
   lastUpdatedAt: string;
   /** Configuration for managing the lifecycle of runtime sessions and resources */
   lifecycleConfiguration: Runtime_LifecycleConfiguration;
   /** Provides the VPC configuration (security group IDs and subnet IDs) used by the agent's core runtime to access resources within a private network. (AI-inferred) */
   networkConfiguration: Runtime_NetworkConfiguration;
+  /** The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients. (AI-inferred) */
   protocolConfiguration: string;
   /** Configuration for HTTP request headers */
   requestHeaderConfiguration: Runtime_RequestHeaderConfiguration;
   /** The Amazon Resource Name (ARN) of the IAM service role that the Bedrock agent core runtime assumes to access AWS services and resources on behalf of the agent. (AI-inferred) */
   roleArn: string;
+  /** The current status of the AgentCore Runtime. (AI-inferred) */
   status: string;
   /** A map of tag keys and values */
   tags: unknown;

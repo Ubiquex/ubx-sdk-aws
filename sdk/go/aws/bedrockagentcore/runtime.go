@@ -405,11 +405,13 @@ var Runtime_RequestHeaderConfigurationFields = ubx.FieldMap{
 
 type RuntimeConfig struct {
 	AgentRuntimeArtifact any
+	// The name of the AgentCore Runtime. (AI-inferred)
 	AgentRuntimeName any
 	// Configuration for the authorizer
 	AuthorizerConfiguration any
 	// Configuration for a capacity provider
 	CapacityProviderConfiguration any
+	// The description of the AgentCore Runtime. (AI-inferred)
 	Description any
 	// Environment variable attributes
 	EnvironmentVariables any
@@ -419,6 +421,7 @@ type RuntimeConfig struct {
 	LifecycleConfiguration any
 	// Provides the VPC configuration (security group IDs and subnet IDs) used by the agent's core runtime to access resources within a private network. (AI-inferred)
 	NetworkConfiguration any
+	// The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients. (AI-inferred)
 	ProtocolConfiguration any
 	// Configuration for HTTP request headers
 	RequestHeaderConfiguration any
@@ -432,8 +435,11 @@ type RuntimeAttrs struct {
 	// The Amazon Resource Name (ARN) that uniquely identifies this Bedrock agent core runtime resource. (AI-inferred)
 	AgentRuntimeArn any
 	AgentRuntimeArtifact any
+	// The unique identifier of the AgentCore Runtime. (AI-inferred)
 	AgentRuntimeId any
+	// The name of the AgentCore Runtime. (AI-inferred)
 	AgentRuntimeName any
+	// The version of the AgentCore Runtime. (AI-inferred)
 	AgentRuntimeVersion any
 	// Configuration for the authorizer
 	AuthorizerConfiguration any
@@ -441,6 +447,7 @@ type RuntimeAttrs struct {
 	CapacityProviderConfiguration any
 	// The creation timestamp of this Bedrock agent core runtime, returned as a read-only string. (AI-inferred)
 	CreatedAt any
+	// The description of the AgentCore Runtime. (AI-inferred)
 	Description any
 	// Environment variable attributes
 	EnvironmentVariables any
@@ -448,16 +455,19 @@ type RuntimeAttrs struct {
 	FailureReason any
 	// List of filesystem configurations
 	FilesystemConfigurations any
+	// The timestamp when the AgentCore Runtime was last updated. (AI-inferred)
 	LastUpdatedAt any
 	// Configuration for managing the lifecycle of runtime sessions and resources
 	LifecycleConfiguration any
 	// Provides the VPC configuration (security group IDs and subnet IDs) used by the agent's core runtime to access resources within a private network. (AI-inferred)
 	NetworkConfiguration any
+	// The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients. (AI-inferred)
 	ProtocolConfiguration any
 	// Configuration for HTTP request headers
 	RequestHeaderConfiguration any
 	// The Amazon Resource Name (ARN) of the IAM service role that the Bedrock agent core runtime assumes to access AWS services and resources on behalf of the agent. (AI-inferred)
 	RoleArn any
+	// The current status of the AgentCore Runtime. (AI-inferred)
 	Status any
 	// A map of tag keys and values
 	Tags any

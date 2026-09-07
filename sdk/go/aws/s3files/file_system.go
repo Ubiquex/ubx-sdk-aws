@@ -32,31 +32,50 @@ var FileSystem_TagsFields = ubx.FieldMap{
 	}
 
 type FileSystemConfig struct {
+	// Whether the warning about using this S3 bucket for an S3 Files file system has been read and accepted. (AI-inferred)
 	AcceptBucketWarning any
 	// The name of the S3 bucket that stores the underlying file data for this file system. (AI-inferred)
 	Bucket any
+	// A unique string that identifies the request used to create this file system, ensuring idempotency. (AI-inferred)
 	ClientToken any
+	// The AWS KMS key used to encrypt this file system. (AI-inferred)
 	KmsKeyId any
+	// The S3 key prefix this file system is scoped to; when set, only objects under this prefix in the bucket are accessible through the file system. (AI-inferred)
 	Prefix any
+	// The Amazon Resource Name (ARN) of the IAM role this file system uses to access its own underlying S3 bucket. (AI-inferred)
 	RoleArn any
+	// The tags assigned to this file system. (AI-inferred)
 	Tags any
 }
 
 type FileSystemAttrs struct {
+	// Whether the warning about using this S3 bucket for an S3 Files file system has been read and accepted. (AI-inferred)
 	AcceptBucketWarning any
 	// The name of the S3 bucket that stores the underlying file data for this file system. (AI-inferred)
 	Bucket any
+	// A unique string that identifies the request used to create this file system, ensuring idempotency. (AI-inferred)
 	ClientToken any
+	// The date and time when this file system was created. (AI-inferred)
 	CreationTime any
+	// The Amazon Resource Name (ARN) of this file system. (AI-inferred)
 	FileSystemArn any
+	// The unique identifier of this file system. (AI-inferred)
 	FileSystemId any
+	// The AWS KMS key used to encrypt this file system. (AI-inferred)
 	KmsKeyId any
+	// The AWS account ID that owns this file system. (AI-inferred)
 	OwnerId any
+	// The S3 key prefix this file system is scoped to; when set, only objects under this prefix in the bucket are accessible through the file system. (AI-inferred)
 	Prefix any
+	// The Amazon Resource Name (ARN) of the IAM role this file system uses to access its own underlying S3 bucket. (AI-inferred)
 	RoleArn any
+	// The current status of this file system. (AI-inferred)
 	Status any
+	// Additional information about this file system's own current status. (AI-inferred)
 	StatusMessage any
+	// The synchronization configuration controlling how data is imported into and expired from this file system between S3 and the file system view. (AI-inferred)
 	SynchronizationConfiguration any
+	// The tags assigned to this file system. (AI-inferred)
 	Tags any
 }
 

@@ -19,6 +19,7 @@ export interface CreateCaseOptions_CommunicationTypes {
 
 export interface CreateCaseOptionsConfig {
   categoryCode: string | Computed<string>;
+  dryRun?: boolean | Computed<boolean>;
   issueType: string | Computed<string>;
   language: string | Computed<string>;
   serviceCode: string | Computed<string>;
@@ -27,6 +28,7 @@ export interface CreateCaseOptionsConfig {
 export interface CreateCaseOptionsAttrs {
   categoryCode: string;
   communicationTypes: CreateCaseOptions_CommunicationTypes[];
+  dryRun: boolean;
   issueType: string;
   language: string;
   languageAvailability: string;
@@ -37,6 +39,7 @@ export const CreateCaseOptions: DataSourceBinding<CreateCaseOptionsConfig, Creat
   wireType: "aws_support_create_case_options",
   fields: {
     categoryCode: "category_code",
+    dryRun: "dry_run",
     issueType: "issue_type",
     language: "language",
     serviceCode: "service_code",

@@ -256,9 +256,21 @@ class Fleet_OnDemandOptions:
     single_instance_type: Any = None
 
 @dataclasses.dataclass
+class Fleet_ReservedCapacityOptions_CapacityReservationTarget:
+    capacity_reservation_ids: Any = None
+    capacity_reservation_resource_group_arns: Any = None
+
+@dataclasses.dataclass
+class Fleet_ReservedCapacityOptions_ReservedCapacityFallbackOptions:
+    market_types: Any = None
+
+@dataclasses.dataclass
 class Fleet_ReservedCapacityOptions:
+    allocation_strategy: Any = None
+    capacity_reservation_target: Any = None
     # Specifies the types of reserved capacity (e.g., capacity-reservation or capacity-block) that the EC2 Fleet can use to fulfill On-Demand capacity. (AI-inferred)
     reservation_types: Any = None
+    reserved_capacity_fallback_options: Any = None
 
 @dataclasses.dataclass
 class Fleet_SpotOptions_MaintenanceStrategies_CapacityRebalance:
@@ -567,8 +579,28 @@ _Fleet_OnDemandOptionsFields = {
     "single_instance_type": ubx.FieldSpec(wire_name="single_instance_type"),
 }
 
+_Fleet_ReservedCapacityOptions_CapacityReservationTargetFields = {
+    "capacity_reservation_ids": ubx.FieldSpec(wire_name="capacity_reservation_ids"),
+    "capacity_reservation_resource_group_arns": ubx.FieldSpec(wire_name="capacity_reservation_resource_group_arns"),
+}
+
+_Fleet_ReservedCapacityOptions_ReservedCapacityFallbackOptionsFields = {
+    "market_types": ubx.FieldSpec(wire_name="market_types"),
+}
+
 _Fleet_ReservedCapacityOptionsFields = {
+    "allocation_strategy": ubx.FieldSpec(wire_name="allocation_strategy"),
+    "capacity_reservation_target": ubx.FieldSpec(
+        wire_name="capacity_reservation_target",
+        kind="object",
+        fields=_Fleet_ReservedCapacityOptions_CapacityReservationTargetFields,
+    ),
     "reservation_types": ubx.FieldSpec(wire_name="reservation_types"),
+    "reserved_capacity_fallback_options": ubx.FieldSpec(
+        wire_name="reserved_capacity_fallback_options",
+        kind="object",
+        fields=_Fleet_ReservedCapacityOptions_ReservedCapacityFallbackOptionsFields,
+    ),
 }
 
 _Fleet_SpotOptions_MaintenanceStrategies_CapacityRebalanceFields = {

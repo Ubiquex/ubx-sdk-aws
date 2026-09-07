@@ -123,6 +123,7 @@ export interface DistributionTenantConfig {
 }
 
 export interface DistributionTenantAttrs {
+  /** The Amazon Resource Name (ARN) of this distribution tenant. (AI-inferred) */
   arn: string;
   /** The ID of the connection group for the distribution tenant. If you don't specify a connection group, CloudFront uses the default connection group. */
   connectionGroupId: string;
@@ -132,13 +133,17 @@ export interface DistributionTenantAttrs {
   customizations: DistributionTenant_Customizations;
   /** The ID of the multi-tenant distribution. */
   distributionId: string;
+  /** The per-domain results (e.g. validation and certificate status) for each of this distribution tenant's own configured domains. (AI-inferred) */
   domainResults: DistributionTenant_DomainResults[];
   /** The domains associated with the distribution tenant. */
   domains: string[];
+  /** The current version identifier of this distribution tenant. (AI-inferred) */
   etag: string;
   /** Indicates whether the distribution tenant is in an enabled state. If disabled, the distribution tenant won't serve traffic. */
   enabled: boolean;
+  /** The unique identifier of this distribution tenant. (AI-inferred) */
   id: string;
+  /** The date and time when this distribution tenant was last updated. (AI-inferred) */
   lastModifiedTime: string;
   /** An object that represents the request for the Amazon CloudFront managed ACM certificate. */
   managedCertificateRequest: DistributionTenant_ManagedCertificateRequest;
@@ -146,6 +151,7 @@ export interface DistributionTenantAttrs {
   name: string;
   /** A list of parameter values to add to the resource. A parameter is specified as a key-value pair. A valid parameter value must exist for any parameter that is marked as required in the multi-tenant distribution. */
   parameters: DistributionTenant_Parameters[];
+  /** The current status of this distribution tenant. (AI-inferred) */
   status: string;
   /** A complex type that contains zero or more ``Tag`` elements. */
   tags: DistributionTenant_Tags[];

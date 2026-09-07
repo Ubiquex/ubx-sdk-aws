@@ -30,6 +30,7 @@ export interface SequenceStoreConfig {
   s3AccessPolicy?: unknown | Computed<unknown>;
   /** Server-side encryption (SSE) settings for a store. */
   sseConfig?: SequenceStore_SseConfig | Computed<SequenceStore_SseConfig>;
+  /** The tags assigned to this Omics sequence store. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
 }
 
@@ -64,6 +65,7 @@ export interface SequenceStoreAttrs {
   status: string;
   /** The status message of the sequence store. */
   statusMessage: string;
+  /** The tags assigned to this Omics sequence store. (AI-inferred) */
   tags: unknown;
   /** The last-updated time of the sequence store. */
   updateTime: string;

@@ -13,6 +13,7 @@ type UserToGroupAdditionConfig struct {
 type UserToGroupAdditionAttrs struct {
 	// The name of the IAM group that the user is added to. (AI-inferred)
 	GroupName any
+	// The unique identifier of this user-to-group addition. (AI-inferred)
 	Id any
 	// Specifies the list of existing IAM user names to add to the group specified in the GroupName property. (AI-inferred)
 	Users any

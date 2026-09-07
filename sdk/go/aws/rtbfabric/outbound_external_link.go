@@ -78,9 +78,13 @@ var OutboundExternalLink_TagsFields = ubx.FieldMap{
 	}
 
 type OutboundExternalLinkConfig struct {
+	// A reference to the RTB Fabric gateway this outbound external link sends bid traffic from. (AI-inferred)
 	GatewayId any
+	// Attributes controlling how this outbound external link behaves. (AI-inferred)
 	LinkAttributes any
+	// The application log settings for this outbound external link, including the sampling percentage for error and filter logs; set both to 0 to turn off application logging for the link. (AI-inferred)
 	LinkLogSettings any
+	// The public HTTP or HTTPS endpoint this outbound external link sends bid requests to. (AI-inferred)
 	PublicEndpoint any
 	// Tags to assign to the Link.
 	Tags any
@@ -89,16 +93,23 @@ type OutboundExternalLinkConfig struct {
 type OutboundExternalLinkAttrs struct {
 	// The Amazon Resource Name (ARN) uniquely identifying this AWS RTB Fabric outbound external link. (AI-inferred)
 	Arn any
+	// The date and time when this outbound external link was created. (AI-inferred)
 	CreatedTimestamp any
+	// A reference to the RTB Fabric gateway this outbound external link sends bid traffic from. (AI-inferred)
 	GatewayId any
+	// Attributes controlling how this outbound external link behaves. (AI-inferred)
 	LinkAttributes any
 	// The unique identifier that AWS RTB Fabric assigns to this outbound external link when it is created. (AI-inferred)
 	LinkId any
+	// The application log settings for this outbound external link, including the sampling percentage for error and filter logs; set both to 0 to turn off application logging for the link. (AI-inferred)
 	LinkLogSettings any
+	// The current status of this outbound external link. (AI-inferred)
 	LinkStatus any
+	// The public HTTP or HTTPS endpoint this outbound external link sends bid requests to. (AI-inferred)
 	PublicEndpoint any
 	// Tags to assign to the Link.
 	Tags any
+	// The date and time when this outbound external link was last updated. (AI-inferred)
 	UpdatedTimestamp any
 }
 

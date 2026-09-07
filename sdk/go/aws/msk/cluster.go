@@ -426,6 +426,7 @@ type ClusterConfig struct {
 	StorageMode any
 	// A key-value pair to associate with a resource.
 	Tags any
+	// Whether direct access to this MSK cluster's own Apache ZooKeeper nodes is allowed. (AI-inferred)
 	ZookeeperAccess any
 }
 
@@ -460,6 +461,7 @@ type ClusterAttrs struct {
 	StorageMode any
 	// A key-value pair to associate with a resource.
 	Tags any
+	// Whether direct access to this MSK cluster's own Apache ZooKeeper nodes is allowed. (AI-inferred)
 	ZookeeperAccess any
 }
 

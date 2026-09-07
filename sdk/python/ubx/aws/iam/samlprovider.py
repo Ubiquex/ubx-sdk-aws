@@ -36,6 +36,7 @@ class SamlproviderConfig:
     assertion_encryption_mode: Any = None
     # The name of the SAML provider, which serves as the unique identifier in IAM and is appended to the provider ARN; if omitted, CloudFormation derives it from the resource's logical ID. (AI-inferred)
     name: Any = None
+    # The private keys associated with this SAML provider, used for signing SAML assertions. (AI-inferred)
     private_key_list: Any = None
     # The Key ID of the private key to remove
     remove_private_key: Any = None
@@ -54,6 +55,7 @@ class SamlproviderAttrs:
     assertion_encryption_mode: Any = None
     # The name of the SAML provider, which serves as the unique identifier in IAM and is appended to the provider ARN; if omitted, CloudFormation derives it from the resource's logical ID. (AI-inferred)
     name: Any = None
+    # The private keys associated with this SAML provider, used for signing SAML assertions. (AI-inferred)
     private_key_list: Any = None
     # The Key ID of the private key to remove
     remove_private_key: Any = None

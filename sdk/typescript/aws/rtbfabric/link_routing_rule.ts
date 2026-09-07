@@ -45,13 +45,16 @@ export interface LinkRoutingRuleConfig {
   conditions: LinkRoutingRule_Conditions | Computed<LinkRoutingRule_Conditions>;
   /** The ID of the gateway (such as an internet gateway or virtual private gateway) that the routing rule uses to direct matching traffic. (AI-inferred) */
   gatewayId: string | Computed<string>;
+  /** A reference to the link this routing rule directs matching bid traffic to. (AI-inferred) */
   linkId: string | Computed<string>;
+  /** The priority of this routing rule relative to the gateway's other routing rules; lower values are evaluated first. (AI-inferred) */
   priority: number | Computed<number>;
   /** Tags to assign to the LinkRoutingRule. */
   tags?: LinkRoutingRule_Conditions_QueryStringEquals[] | Computed<LinkRoutingRule_Conditions_QueryStringEquals[]>;
 }
 
 export interface LinkRoutingRuleAttrs {
+  /** The Amazon Resource Name (ARN) of this link routing rule. (AI-inferred) */
   arn: string;
   /** Conditions for a routing rule. All non-null fields must match (AND logic). At least one field must be set. HostHeader and HostHeaderWildcard are mutually exclusive. PathPrefix and PathExact are mutually exclusive. */
   conditions: LinkRoutingRule_Conditions;
@@ -59,9 +62,13 @@ export interface LinkRoutingRuleAttrs {
   createdTimestamp: string;
   /** The ID of the gateway (such as an internet gateway or virtual private gateway) that the routing rule uses to direct matching traffic. (AI-inferred) */
   gatewayId: string;
+  /** A reference to the link this routing rule directs matching bid traffic to. (AI-inferred) */
   linkId: string;
+  /** The priority of this routing rule relative to the gateway's other routing rules; lower values are evaluated first. (AI-inferred) */
   priority: number;
+  /** The unique identifier of this routing rule. (AI-inferred) */
   ruleId: string;
+  /** The current status of this routing rule. (AI-inferred) */
   status: string;
   /** Tags to assign to the LinkRoutingRule. */
   tags: LinkRoutingRule_Conditions_QueryStringEquals[];

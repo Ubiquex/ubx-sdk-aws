@@ -57,31 +57,40 @@ const DataTableAttribute_ValidationFields: FieldMap = {
 export interface DataTableAttributeConfig {
   /** The Amazon Resource Name (ARN) of the data table to which this attribute is attached. (AI-inferred) */
   dataTableArn: string | Computed<string>;
+  /** The description explaining the purpose and usage of this attribute. (AI-inferred) */
   description?: string | Computed<string>;
   /** The Amazon Resource Name (ARN) of the Amazon Connect instance that contains the data table to which this attribute belongs. (AI-inferred) */
   instanceArn: string | Computed<string>;
+  /** The human-readable name of this attribute, unique within its own data table. (AI-inferred) */
   name: string | Computed<string>;
   /** Boolean flag indicating whether this attribute serves as the primary key for the Amazon Connect data table, uniquely identifying each row. (AI-inferred) */
   primary?: boolean | Computed<boolean>;
+  /** The validation rules applied to values of this attribute. (AI-inferred) */
   validation?: DataTableAttribute_Validation | Computed<DataTableAttribute_Validation>;
   /** Specifies the data type of the attribute value (e.g., string, number, boolean) in an Amazon Connect data table, controlling how the value is stored and used in contact flows. (AI-inferred) */
   valueType: string | Computed<string>;
 }
 
 export interface DataTableAttributeAttrs {
+  /** The unique identifier of this attribute within its own data table. (AI-inferred) */
   attributeId: string;
   /** The Amazon Resource Name (ARN) of the data table to which this attribute is attached. (AI-inferred) */
   dataTableArn: string;
+  /** The description explaining the purpose and usage of this attribute. (AI-inferred) */
   description: string;
   /** The Amazon Resource Name (ARN) of the Amazon Connect instance that contains the data table to which this attribute belongs. (AI-inferred) */
   instanceArn: string;
   /** The AWS Region where the data table attribute was last updated or modified. (AI-inferred) */
   lastModifiedRegion: string;
+  /** The date and time when this attribute was last modified. (AI-inferred) */
   lastModifiedTime: number;
+  /** The version number used to detect and prevent concurrent modification conflicts on this attribute. (AI-inferred) */
   lockVersion: DataTableAttribute_LockVersion;
+  /** The human-readable name of this attribute, unique within its own data table. (AI-inferred) */
   name: string;
   /** Boolean flag indicating whether this attribute serves as the primary key for the Amazon Connect data table, uniquely identifying each row. (AI-inferred) */
   primary: boolean;
+  /** The validation rules applied to values of this attribute. (AI-inferred) */
   validation: DataTableAttribute_Validation;
   /** Specifies the data type of the attribute value (e.g., string, number, boolean) in an Amazon Connect data table, controlling how the value is stored and used in contact flows. (AI-inferred) */
   valueType: string;

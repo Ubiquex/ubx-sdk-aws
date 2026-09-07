@@ -208,6 +208,7 @@ type FirewallPolicyConfig struct {
 	FirewallPolicy any
 	// The descriptive name of the firewall policy, used to identify it within AWS Network Firewall. (AI-inferred)
 	FirewallPolicyName any
+	// The tags assigned to this firewall policy. (AI-inferred)
 	Tags any
 }
 
@@ -222,6 +223,7 @@ type FirewallPolicyAttrs struct {
 	FirewallPolicyId any
 	// The descriptive name of the firewall policy, used to identify it within AWS Network Firewall. (AI-inferred)
 	FirewallPolicyName any
+	// The tags assigned to this firewall policy. (AI-inferred)
 	Tags any
 }
 

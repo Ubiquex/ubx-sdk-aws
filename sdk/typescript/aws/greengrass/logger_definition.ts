@@ -40,12 +40,14 @@ export interface LoggerDefinitionConfig {
   initialVersion?: LoggerDefinition_InitialVersion | Computed<LoggerDefinition_InitialVersion>;
   /** The name that identifies this Greengrass logger definition in the AWS IoT Greengrass console and API. (AI-inferred) */
   name: string | Computed<string>;
+  /** The tags assigned to this Greengrass logger definition. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
 }
 
 export interface LoggerDefinitionAttrs {
   /** The Amazon Resource Name (ARN) of the Greengrass logger definition, which uniquely identifies this resource in AWS and can be used to reference it in IAM policies and other AWS services. (AI-inferred) */
   arn: string;
+  /** The unique identifier of this Greengrass logger definition. (AI-inferred) */
   id: string;
   /** Specifies the initial version of the logger definition, which consists of a set of loggers that define how Greengrass components write logs to CloudWatch or the local file system. (AI-inferred) */
   initialVersion: LoggerDefinition_InitialVersion;
@@ -53,6 +55,7 @@ export interface LoggerDefinitionAttrs {
   latestVersionArn: string;
   /** The name that identifies this Greengrass logger definition in the AWS IoT Greengrass console and API. (AI-inferred) */
   name: string;
+  /** The tags assigned to this Greengrass logger definition. (AI-inferred) */
   tags: unknown;
 }
 

@@ -362,6 +362,7 @@ const TestCase_StepsFields: FieldMap = {
 };
 
 export interface TestCaseConfig {
+  /** The description of this test case. (AI-inferred) */
   description?: string | Computed<string>;
   /** The human-readable name of the AWS AppTest test case, which is required when creating this resource. (AI-inferred) */
   name: string | Computed<string>;
@@ -374,6 +375,7 @@ export interface TestCaseConfig {
 export interface TestCaseAttrs {
   /** The timestamp indicating when the AppTest test case was created. (AI-inferred) */
   creationTime: string;
+  /** The description of this test case. (AI-inferred) */
   description: string;
   /** The timestamp, as a string, indicating when this test case was last updated. (AI-inferred) */
   lastUpdateTime: string;
@@ -381,13 +383,17 @@ export interface TestCaseAttrs {
   latestVersion: TestCase_LatestVersion;
   /** The human-readable name of the AWS AppTest test case, which is required when creating this resource. (AI-inferred) */
   name: string;
+  /** The current status of this test case. (AI-inferred) */
   status: string;
   /** The 'steps' property defines the ordered list of test steps that constitute the test case, where each step specifies an action (such as invoking an API or comparing outputs) to be executed during the test. (AI-inferred) */
   steps: TestCase_Steps[];
   /** A map of key-value pairs to assign as tags to the AWS AppTest test case, used for identifying and organizing the resource. (AI-inferred) */
   tags: unknown;
+  /** The Amazon Resource Name (ARN) of this test case. (AI-inferred) */
   testCaseArn: string;
+  /** The unique identifier of this test case. (AI-inferred) */
   testCaseId: string;
+  /** The version of this test case. (AI-inferred) */
   testCaseVersion: number;
 }
 

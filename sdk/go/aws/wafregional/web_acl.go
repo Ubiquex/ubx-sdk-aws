@@ -36,6 +36,7 @@ type WebAclConfig struct {
 	DefaultAction any
 	// The name of the Amazon CloudWatch metric associated with the web ACL, used for monitoring its activity in CloudWatch. (AI-inferred)
 	MetricName any
+	// The name of this WAF Classic Regional web ACL. (AI-inferred)
 	Name any
 	// Defines the ordered list of rules for the web ACL, where each rule specifies the rule's ID (referencing an aws_wafregional_rule or aws_wafregional_rule_group resource) and the action (allow, block, or count) that AWS WAF Regional takes when a request matches the rule. (AI-inferred)
 	Rules any
@@ -48,6 +49,7 @@ type WebAclAttrs struct {
 	Id any
 	// The name of the Amazon CloudWatch metric associated with the web ACL, used for monitoring its activity in CloudWatch. (AI-inferred)
 	MetricName any
+	// The name of this WAF Classic Regional web ACL. (AI-inferred)
 	Name any
 	// Defines the ordered list of rules for the web ACL, where each rule specifies the rule's ID (referencing an aws_wafregional_rule or aws_wafregional_rule_group resource) and the action (allow, block, or count) that AWS WAF Regional takes when a request matches the rule. (AI-inferred)
 	Rules any

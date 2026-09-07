@@ -36,6 +36,7 @@ var DataTableRecord_DataTableRecordFields = ubx.FieldMap{
 	}
 
 type DataTableRecordConfig struct {
+	// The Amazon Resource Name (ARN) of the data table this record belongs to. (AI-inferred)
 	DataTableArn any
 	// The 'data_table_record' object holds the key-value pairs (column names to values) that constitute the record to be inserted into the specified Amazon Connect data table. (AI-inferred)
 	DataTableRecord any
@@ -44,6 +45,7 @@ type DataTableRecordConfig struct {
 }
 
 type DataTableRecordAttrs struct {
+	// The Amazon Resource Name (ARN) of the data table this record belongs to. (AI-inferred)
 	DataTableArn any
 	// The 'data_table_record' object holds the key-value pairs (column names to values) that constitute the record to be inserted into the specified Amazon Connect data table. (AI-inferred)
 	DataTableRecord any

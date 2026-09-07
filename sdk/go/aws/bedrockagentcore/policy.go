@@ -64,6 +64,7 @@ type PolicyAttrs struct {
 	PolicyEngineId any
 	// The unique identifier for the policy.
 	PolicyId any
+	// The current status of this policy. (AI-inferred)
 	Status any
 	// Additional information about the policy status.
 	StatusReasons any

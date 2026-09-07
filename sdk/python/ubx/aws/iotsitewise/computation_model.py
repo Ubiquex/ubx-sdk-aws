@@ -44,6 +44,7 @@ _ComputationModel_TagsFields = {
 @dataclasses.dataclass
 class ComputationModelConfig:
     computation_model_configuration: Any = None
+    # The data binding for this computation model: for each variable defined in its own configuration, the real data source value that variable is bound to. (AI-inferred)
     computation_model_data_binding: Any = None
     # A description about the computation model.
     computation_model_description: Any = None
@@ -57,6 +58,7 @@ class ComputationModelAttrs:
     # The ARN of the computation model.
     computation_model_arn: Any = None
     computation_model_configuration: Any = None
+    # The data binding for this computation model: for each variable defined in its own configuration, the real data source value that variable is bound to. (AI-inferred)
     computation_model_data_binding: Any = None
     # A description about the computation model.
     computation_model_description: Any = None

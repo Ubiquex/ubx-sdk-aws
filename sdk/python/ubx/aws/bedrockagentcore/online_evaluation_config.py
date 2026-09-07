@@ -163,6 +163,7 @@ class OnlineEvaluationConfigConfig:
     evaluation_execution_role_arn: Any = None
     # The list of evaluators to apply during online evaluation.
     evaluators: Any = None
+    # The current execution status of this online evaluation configuration. (AI-inferred)
     execution_status: Any = None
     # The list of insights to enable for failure analysis.
     insights: Any = None
@@ -187,6 +188,7 @@ class OnlineEvaluationConfigAttrs:
     evaluation_execution_role_arn: Any = None
     # The list of evaluators to apply during online evaluation.
     evaluators: Any = None
+    # The current execution status of this online evaluation configuration. (AI-inferred)
     execution_status: Any = None
     # The list of insights to enable for failure analysis.
     insights: Any = None
@@ -200,6 +202,7 @@ class OnlineEvaluationConfigAttrs:
     output_config: Any = None
     # The evaluation rule that defines sampling configuration, filtering criteria, and session detection settings.
     rule: Any = None
+    # The current status of this online evaluation configuration. (AI-inferred)
     status: Any = None
     # A list of tags to assign to the online evaluation configuration.
     tags: Any = None

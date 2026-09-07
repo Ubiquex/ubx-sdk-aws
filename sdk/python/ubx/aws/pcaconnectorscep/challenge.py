@@ -10,6 +10,7 @@ import ubx_sdk as ubx
 class ChallengeConfig:
     # The Amazon Resource Name (ARN) of the connector that this SCEP challenge belongs to, required to create the challenge under that connector. (AI-inferred)
     connector_arn: Any = None
+    # The tags assigned to this Private CA Connector SCEP challenge. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -18,6 +19,7 @@ class ChallengeAttrs:
     challenge_arn: Any = None
     # The Amazon Resource Name (ARN) of the connector that this SCEP challenge belongs to, required to create the challenge under that connector. (AI-inferred)
     connector_arn: Any = None
+    # The tags assigned to this Private CA Connector SCEP challenge. (AI-inferred)
     tags: Any = None
 
 Challenge = ubx.ResourceBinding(

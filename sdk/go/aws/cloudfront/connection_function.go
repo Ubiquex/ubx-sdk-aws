@@ -57,6 +57,7 @@ type ConnectionFunctionConfig struct {
 type ConnectionFunctionAttrs struct {
 	// A flag that determines whether to automatically publish the function to the ``LIVE`` stage when it’s created. To automatically publish to the ``LIVE`` stage, set this property to ``true``.
 	AutoPublish any
+	// The Amazon Resource Name (ARN) of this connection function. (AI-inferred)
 	ConnectionFunctionArn any
 	// The code for the connection function.
 	ConnectionFunctionCode any
@@ -66,12 +67,15 @@ type ConnectionFunctionAttrs struct {
 	CreatedTime any
 	// Represents the current ETag version identifier of the CloudFront connection function, used for optimistic concurrency control during update/delete operations. (AI-inferred)
 	Etag any
+	// The unique identifier of this connection function. (AI-inferred)
 	Id any
 	// The date and time when the CloudFront function was last modified, returned by the API and updated automatically whenever the function's code or configuration changes. (AI-inferred)
 	LastModifiedTime any
 	// The connection function name.
 	Name any
+	// The stage this connection function is published to. (AI-inferred)
 	Stage any
+	// The current status of this connection function. (AI-inferred)
 	Status any
 	// A complex type that contains zero or more ``Tag`` elements.
 	Tags any

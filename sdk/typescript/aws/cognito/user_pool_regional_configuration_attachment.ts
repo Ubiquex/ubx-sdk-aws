@@ -148,11 +148,13 @@ const UserPoolRegionalConfigurationAttachment_SmsConfigurationFields: FieldMap =
 export interface UserPoolRegionalConfigurationAttachmentConfig {
   /** Configures the email delivery settings for the Cognito user pool, including the sender address, reply-to address, and the Amazon SES configuration set or source ARN used to send emails. (AI-inferred) */
   emailConfiguration?: UserPoolRegionalConfigurationAttachment_EmailConfiguration | Computed<UserPoolRegionalConfigurationAttachment_EmailConfiguration>;
+  /** The Lambda triggers Amazon Cognito invokes for this user pool replica's own authentication operations. (AI-inferred) */
   lambdaConfig?: UserPoolRegionalConfigurationAttachment_LambdaConfig | Computed<UserPoolRegionalConfigurationAttachment_LambdaConfig>;
   /** Specifies the SMS message configuration (e.g., SNS caller ARN and external ID) used by the user pool to send SMS verification codes and MFA messages. (AI-inferred) */
   smsConfiguration?: UserPoolRegionalConfigurationAttachment_SmsConfiguration | Computed<UserPoolRegionalConfigurationAttachment_SmsConfiguration>;
   /** The status of the replica. Set to ACTIVE or INACTIVE. */
   status?: string | Computed<string>;
+  /** A reference to the user pool this regional configuration attaches to. (AI-inferred) */
   userPoolId: string | Computed<string>;
   /** A map of key-value tags to assign to the Amazon Cognito user pool associated with this regional configuration attachment. (AI-inferred) */
   userPoolTags?: unknown | Computed<unknown>;
@@ -161,11 +163,13 @@ export interface UserPoolRegionalConfigurationAttachmentConfig {
 export interface UserPoolRegionalConfigurationAttachmentAttrs {
   /** Configures the email delivery settings for the Cognito user pool, including the sender address, reply-to address, and the Amazon SES configuration set or source ARN used to send emails. (AI-inferred) */
   emailConfiguration: UserPoolRegionalConfigurationAttachment_EmailConfiguration;
+  /** The Lambda triggers Amazon Cognito invokes for this user pool replica's own authentication operations. (AI-inferred) */
   lambdaConfig: UserPoolRegionalConfigurationAttachment_LambdaConfig;
   /** Specifies the SMS message configuration (e.g., SNS caller ARN and external ID) used by the user pool to send SMS verification codes and MFA messages. (AI-inferred) */
   smsConfiguration: UserPoolRegionalConfigurationAttachment_SmsConfiguration;
   /** The status of the replica. Set to ACTIVE or INACTIVE. */
   status: string;
+  /** A reference to the user pool this regional configuration attaches to. (AI-inferred) */
   userPoolId: string;
   /** A map of key-value tags to assign to the Amazon Cognito user pool associated with this regional configuration attachment. (AI-inferred) */
   userPoolTags: unknown;

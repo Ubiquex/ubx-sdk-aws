@@ -98,6 +98,7 @@ class TopicV2Config:
     name: Any = None
     # A list of resource permissions that grant or revoke access to the QuickSight topic for specific principals (users, groups, or folders), each specifying allowed actions. (AI-inferred)
     permissions: Any = None
+    # The tags assigned to this topic. (AI-inferred)
     tags: Any = None
     # The unique identifier for the QuickSight topic, used when importing an existing topic or to reference the topic in other resources. (AI-inferred)
     topic_id: Any = None
@@ -121,6 +122,7 @@ class TopicV2Attrs:
     name: Any = None
     # A list of resource permissions that grant or revoke access to the QuickSight topic for specific principals (users, groups, or folders), each specifying allowed actions. (AI-inferred)
     permissions: Any = None
+    # The tags assigned to this topic. (AI-inferred)
     tags: Any = None
     # The unique identifier for the QuickSight topic, used when importing an existing topic or to reference the topic in other resources. (AI-inferred)
     topic_id: Any = None

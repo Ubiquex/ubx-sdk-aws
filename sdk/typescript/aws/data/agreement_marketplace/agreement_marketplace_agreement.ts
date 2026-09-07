@@ -5,6 +5,17 @@ export interface AgreementMarketplaceAgreement_Acceptor {
   accountId?: string | Computed<string>;
 }
 
+export interface AgreementMarketplaceAgreement_EndTimeBehavior_RenewalSummary {
+  offerId?: string | Computed<string>;
+}
+
+export interface AgreementMarketplaceAgreement_EndTimeBehavior {
+  reasonCode?: string | Computed<string>;
+  /** <p>The details of the renewal that applies at the end date of an agreement.</p> */
+  renewalSummary?: AgreementMarketplaceAgreement_EndTimeBehavior_RenewalSummary | Computed<AgreementMarketplaceAgreement_EndTimeBehavior_RenewalSummary>;
+  type: string | Computed<string>;
+}
+
 export interface AgreementMarketplaceAgreement_EstimatedCharges {
   agreementValue?: string | Computed<string>;
   currencyCode?: string | Computed<string>;
@@ -32,8 +43,11 @@ export interface AgreementMarketplaceAgreementAttrs {
   agreementId: string;
   agreementType: string;
   endTime: string;
+  /** <p>The behavior of an agreement when it reaches its end date. For example, whether the agreement renews, and if it doesn't, the reason why.</p> */
+  endTimeBehavior: AgreementMarketplaceAgreement_EndTimeBehavior;
   /** <p>Estimated cost of the agreement.</p> */
   estimatedCharges: AgreementMarketplaceAgreement_EstimatedCharges;
+  initialAgreementId: string;
   /** <p>A summary of the proposal received from the proposer.</p> */
   proposalSummary: AgreementMarketplaceAgreement_ProposalSummary;
   /** <p>Details of the party proposing the agreement terms,. This is commonly the seller for <code>PurchaseAgreement</code>. </p> */

@@ -2,20 +2,32 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LimitsProfileConfig {
+  /** The AWS account ID this limits profile belongs to. (AI-inferred) */
   accountId: string | Computed<string>;
+  /** The description of this limits profile. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The name of this limits profile. (AI-inferred) */
   profileName: string | Computed<string>;
+  /** The real resource usage limit(s) this profile applies, e.g. to users or groups it is assigned to. (AI-inferred) */
   resourceLimits: unknown | Computed<unknown>;
 }
 
 export interface LimitsProfileAttrs {
+  /** The AWS account ID this limits profile belongs to. (AI-inferred) */
   accountId: string;
+  /** The Amazon Resource Name (ARN) of this limits profile. (AI-inferred) */
   arn: string;
+  /** The date and time this limits profile was created. (AI-inferred) */
   createdAt: string;
+  /** The description of this limits profile. (AI-inferred) */
   description: string;
+  /** The unique identifier of this limits profile. (AI-inferred) */
   profileId: string;
+  /** The name of this limits profile. (AI-inferred) */
   profileName: string;
+  /** The real resource usage limit(s) this profile applies, e.g. to users or groups it is assigned to. (AI-inferred) */
   resourceLimits: unknown;
+  /** The date and time this limits profile was last updated. (AI-inferred) */
   updatedAt: string;
 }
 

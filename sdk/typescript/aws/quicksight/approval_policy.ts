@@ -21,7 +21,9 @@ export interface ApprovalPolicyConfig {
   approvalGroups: string[] | Computed<string[]>;
   /** List of asset types a policy applies to. At least one asset type is required. */
   assetTypes: unknown[] | Computed<unknown[]>;
+  /** The description of this approval policy. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The name of this approval policy. (AI-inferred) */
   name: string | Computed<string>;
   /** The unique identifier for a QuickSight approval policy that governs whether asset publishing requires approval before the asset is shared. (AI-inferred) */
   policyId: string | Computed<string>;
@@ -36,13 +38,17 @@ export interface ApprovalPolicyAttrs {
   approvalGroups: string[];
   /** List of asset types a policy applies to. At least one asset type is required. */
   assetTypes: unknown[];
+  /** The date and time this approval policy was created. (AI-inferred) */
   createdAt: string;
+  /** The description of this approval policy. (AI-inferred) */
   description: string;
+  /** The name of this approval policy. (AI-inferred) */
   name: string;
   /** The Amazon Resource Name (ARN) that uniquely identifies the QuickSight approval policy, used as a reference in IAM policies and API operations. (AI-inferred) */
   policyArn: string;
   /** The unique identifier for a QuickSight approval policy that governs whether asset publishing requires approval before the asset is shared. (AI-inferred) */
   policyId: string;
+  /** The date and time this approval policy was last updated. (AI-inferred) */
   updatedAt: string;
 }
 

@@ -96,6 +96,7 @@ class WorkflowConfig:
     accelerators: Any = None
     # A map of container image names to their fully-qualified registry image URIs, used to override the default container registries from which the workflow's container images are pulled. (AI-inferred)
     container_registry_map: Any = None
+    # A reference to the container registry mapping this Omics workflow uses to resolve container image references. (AI-inferred)
     container_registry_map_uri: Any = None
     # Specifies the source control repository (type, URI, and version) from which AWS HealthOmics retrieves the workflow definition file when it is not provided inline or via an S3 URI. (AI-inferred)
     definition_repository: Any = None
@@ -136,6 +137,7 @@ class WorkflowAttrs:
     arn: Any = None
     # A map of container image names to their fully-qualified registry image URIs, used to override the default container registries from which the workflow's container images are pulled. (AI-inferred)
     container_registry_map: Any = None
+    # A reference to the container registry mapping this Omics workflow uses to resolve container image references. (AI-inferred)
     container_registry_map_uri: Any = None
     # The read-only timestamp indicating when the workflow was created. (AI-inferred)
     creation_time: Any = None

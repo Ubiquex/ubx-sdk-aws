@@ -32,6 +32,7 @@ export interface ConfigurationManagerConfig {
   description?: string | Computed<string>;
   /** An optional friendly name for the Systems Manager Quick Setup configuration manager, used to identify and reference the configuration in the AWS Management Console and API operations. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The tags assigned to this Systems Manager Quick Setup configuration manager. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
 }
 
@@ -50,6 +51,7 @@ export interface ConfigurationManagerAttrs {
   name: string;
   /** Returns a list of status summaries for this configuration manager, where each summary includes a status type (such as Deployment) and the corresponding status (such as Success). (AI-inferred) */
   statusSummaries: ConfigurationManager_StatusSummaries[];
+  /** The tags assigned to this Systems Manager Quick Setup configuration manager. (AI-inferred) */
   tags: unknown;
 }
 

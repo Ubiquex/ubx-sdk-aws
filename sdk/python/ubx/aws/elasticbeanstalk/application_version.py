@@ -33,6 +33,7 @@ class ApplicationVersionAttrs:
     application_name: Any = None
     # A description of this application version.
     description: Any = None
+    # The unique identifier of this Elastic Beanstalk application version. (AI-inferred)
     id: Any = None
     # The source_bundle specifies the Amazon S3 bucket and key where the application version source bundle is located. (AI-inferred)
     source_bundle: Any = None

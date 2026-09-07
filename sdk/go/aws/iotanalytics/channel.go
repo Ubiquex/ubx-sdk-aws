@@ -73,6 +73,7 @@ type ChannelAttrs struct {
 	ChannelName any
 	// Configures the storage destination for the channel's message data, choosing between an AWS IoT Analytics service-managed S3 bucket or a customer-managed S3 bucket. (AI-inferred)
 	ChannelStorage any
+	// The unique identifier of this IoT Analytics channel. (AI-inferred)
 	Id any
 	// Specifies how long message data is kept in the channel, either as a finite number of days or indefinitely. (AI-inferred)
 	RetentionPeriod any

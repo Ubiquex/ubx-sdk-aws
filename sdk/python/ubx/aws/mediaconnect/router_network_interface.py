@@ -95,9 +95,11 @@ class RouterNetworkInterfaceAttrs:
     id: Any = None
     # The name of the router network interface.
     name: Any = None
+    # The type of this router network interface: public (communicates over the internet) or VPC (communicates within an Amazon VPC). (AI-inferred)
     network_interface_type: Any = None
     # The AWS Region for the router network interface. Defaults to the current region if not specified.
     region_name: Any = None
+    # The current state of this router network interface. (AI-inferred)
     state: Any = None
     # Key-value pairs that can be used to tag and organize this router network interface.
     tags: Any = None

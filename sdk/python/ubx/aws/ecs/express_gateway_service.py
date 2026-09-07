@@ -170,41 +170,74 @@ _ExpressGatewayService_TagsFields = {
 
 @dataclasses.dataclass
 class ExpressGatewayServiceConfig:
+    # The short name or full Amazon Resource Name (ARN) of the cluster this Express service runs in. (AI-inferred)
     cluster: Any = None
+    # The CPU allocation for tasks in this Express service. (AI-inferred)
     cpu: Any = None
+    # The Amazon Resource Name (ARN) of the task execution role for this Express service. (AI-inferred)
     execution_role_arn: Any = None
+    # The health check path this Express service's own load balancer uses to determine task health. (AI-inferred)
     health_check_path: Any = None
+    # The Amazon Resource Name (ARN) of the infrastructure role Amazon ECS assumes to manage AWS resources on this Express service's own behalf. (AI-inferred)
     infrastructure_role_arn: Any = None
+    # The memory allocation for tasks in this Express service. (AI-inferred)
     memory: Any = None
+    # The network configuration for tasks in this Express service. (AI-inferred)
     network_configuration: Any = None
+    # The primary container configuration, including the application image, for this Express service. (AI-inferred)
     primary_container: Any = None
+    # The auto-scaling configuration for this Express service. (AI-inferred)
     scaling_target: Any = None
+    # The name of this Express service. (AI-inferred)
     service_name: Any = None
+    # The tags assigned to this Express service. (AI-inferred)
     tags: Any = None
+    # The Amazon Resource Name (ARN) of the task definition this Express service is currently running, whether managed by Amazon ECS or provided directly. (AI-inferred)
     task_definition_arn: Any = None
+    # The Amazon Resource Name (ARN) of the task role for this Express service. (AI-inferred)
     task_role_arn: Any = None
 
 @dataclasses.dataclass
 class ExpressGatewayServiceAttrs:
+    # The list of active service configurations currently in effect for this Express service. (AI-inferred)
     active_configurations: Any = None
+    # The short name or full Amazon Resource Name (ARN) of the cluster this Express service runs in. (AI-inferred)
     cluster: Any = None
+    # The CPU allocation for tasks in this Express service. (AI-inferred)
     cpu: Any = None
+    # The date and time when this Express service was created. (AI-inferred)
     created_at: Any = None
+    # The Amazon Resource Names (ARNs) of the AWS resources (load balancer, target groups, security groups, auto scaling policies, log groups, and related infrastructure) Amazon ECS provisioned and manages on this Express service's own behalf. (AI-inferred)
     ecsmanaged_resource_arns: Any = None
+    # The endpoint clients use to reach this Express service. (AI-inferred)
     endpoint: Any = None
+    # The Amazon Resource Name (ARN) of the task execution role for this Express service. (AI-inferred)
     execution_role_arn: Any = None
+    # The health check path this Express service's own load balancer uses to determine task health. (AI-inferred)
     health_check_path: Any = None
+    # The Amazon Resource Name (ARN) of the infrastructure role Amazon ECS assumes to manage AWS resources on this Express service's own behalf. (AI-inferred)
     infrastructure_role_arn: Any = None
+    # The memory allocation for tasks in this Express service. (AI-inferred)
     memory: Any = None
+    # The network configuration for tasks in this Express service. (AI-inferred)
     network_configuration: Any = None
+    # The primary container configuration, including the application image, for this Express service. (AI-inferred)
     primary_container: Any = None
+    # The auto-scaling configuration for this Express service. (AI-inferred)
     scaling_target: Any = None
+    # The Amazon Resource Name (ARN) that identifies this Express service. (AI-inferred)
     service_arn: Any = None
+    # The name of this Express service. (AI-inferred)
     service_name: Any = None
+    # The current status of this Express service. (AI-inferred)
     status: Any = None
+    # The tags assigned to this Express service. (AI-inferred)
     tags: Any = None
+    # The Amazon Resource Name (ARN) of the task definition this Express service is currently running, whether managed by Amazon ECS or provided directly. (AI-inferred)
     task_definition_arn: Any = None
+    # The Amazon Resource Name (ARN) of the task role for this Express service. (AI-inferred)
     task_role_arn: Any = None
+    # The date and time when this Express service was last updated. (AI-inferred)
     updated_at: Any = None
 
 ExpressGatewayService = ubx.ResourceBinding(

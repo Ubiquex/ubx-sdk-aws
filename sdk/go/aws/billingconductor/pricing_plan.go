@@ -16,6 +16,7 @@ var PricingPlan_TagsFields = ubx.FieldMap{
 	}
 
 type PricingPlanConfig struct {
+	// The description of this Billing Conductor pricing plan. (AI-inferred)
 	Description any
 	// The user-defined name for the pricing plan, required when creating the plan in AWS Billing Conductor and used for identification and display. (AI-inferred)
 	Name any
@@ -29,6 +30,7 @@ type PricingPlanAttrs struct {
 	Arn any
 	// Creation timestamp in UNIX epoch time format
 	CreationTime any
+	// The description of this Billing Conductor pricing plan. (AI-inferred)
 	Description any
 	// Latest modified timestamp in UNIX epoch time format
 	LastModifiedTime any

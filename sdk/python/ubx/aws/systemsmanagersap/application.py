@@ -62,6 +62,7 @@ class ApplicationConfig:
     database_arn: Any = None
     # The instances field lists the EC2 instance IDs that host the SAP application components that are registered and managed by this Systems Manager for SAP application. (AI-inferred)
     instances: Any = None
+    # The SAP instance number of this Systems Manager for SAP application. (AI-inferred)
     sap_instance_number: Any = None
     # Specifies the SAP System Identifier (SID) for the SAP system associated with this application, a three-character code that uniquely identifies the SAP system (e.g., `H20`). (AI-inferred)
     sid: Any = None
@@ -84,6 +85,7 @@ class ApplicationAttrs:
     database_arn: Any = None
     # The instances field lists the EC2 instance IDs that host the SAP application components that are registered and managed by this Systems Manager for SAP application. (AI-inferred)
     instances: Any = None
+    # The SAP instance number of this Systems Manager for SAP application. (AI-inferred)
     sap_instance_number: Any = None
     # Specifies the SAP System Identifier (SID) for the SAP system associated with this application, a three-character code that uniquely identifies the SAP system (e.g., `H20`). (AI-inferred)
     sid: Any = None

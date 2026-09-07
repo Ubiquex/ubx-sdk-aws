@@ -56,6 +56,7 @@ type AnomalyDetectorConfig struct {
 	EvaluationIntervalInSeconds any
 	// An array of key-value pairs to provide meta-data.
 	Labels any
+	// The action this Amazon Managed Service for Prometheus anomaly detector takes when metric data is missing. (AI-inferred)
 	MissingDataAction any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
@@ -74,6 +75,7 @@ type AnomalyDetectorAttrs struct {
 	EvaluationIntervalInSeconds any
 	// An array of key-value pairs to provide meta-data.
 	Labels any
+	// The action this Amazon Managed Service for Prometheus anomaly detector takes when metric data is missing. (AI-inferred)
 	MissingDataAction any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

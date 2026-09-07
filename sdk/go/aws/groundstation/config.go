@@ -301,6 +301,7 @@ type ConfigAttrs struct {
 	Arn any
 	// The required config data that defines this Ground Station config, containing one of the supported configuration types (such as antenna downlink, antenna uplink, antenna downlink demod decode, tracking, dataflow endpoint, or uplink echo) along with its specific parameters. (AI-inferred)
 	ConfigData any
+	// The unique identifier of this Ground Station config. (AI-inferred)
 	Id any
 	// The user-defined name assigned to this AWS Ground Station config, used to identify it within the service. (AI-inferred)
 	Name any

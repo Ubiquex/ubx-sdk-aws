@@ -52,6 +52,7 @@ type DomainNameConfig struct {
 	OwnershipVerificationCertificateArn any
 	// Specifies the ARN of an AWS Certificate Manager (ACM) certificate to use for the domain name's regional API endpoint, which serves requests for a specific AWS region. (AI-inferred)
 	RegionalCertificateArn any
+	// How this API Gateway custom domain name routes requests across its own base path mappings. (AI-inferred)
 	RoutingMode any
 	// Specifies the minimum TLS version (e.g., 'TLS_1_0' or 'TLS_1_2') that API Gateway uses for the custom domain name's HTTPS connections. (AI-inferred)
 	SecurityPolicy any
@@ -84,6 +85,7 @@ type DomainNameAttrs struct {
 	RegionalDomainName any
 	// The Route 53 hosted zone ID for the regional API Gateway endpoint, used to configure DNS alias records pointing to the regional domain name. (AI-inferred)
 	RegionalHostedZoneId any
+	// How this API Gateway custom domain name routes requests across its own base path mappings. (AI-inferred)
 	RoutingMode any
 	// Specifies the minimum TLS version (e.g., 'TLS_1_0' or 'TLS_1_2') that API Gateway uses for the custom domain name's HTTPS connections. (AI-inferred)
 	SecurityPolicy any

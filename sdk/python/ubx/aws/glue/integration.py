@@ -38,6 +38,7 @@ class IntegrationConfig:
     additional_encryption_context: Any = None
     # Specifies a SQL query string that filters the source data to be included in the Glue integration, such as selecting specific columns or rows from a source table. (AI-inferred)
     data_filter: Any = None
+    # The description of this Glue zero-ETL integration. (AI-inferred)
     description: Any = None
     # The configuration settings for the integration.
     integration_config: Any = None
@@ -60,6 +61,7 @@ class IntegrationAttrs:
     create_time: Any = None
     # Specifies a SQL query string that filters the source data to be included in the Glue integration, such as selecting specific columns or rows from a source table. (AI-inferred)
     data_filter: Any = None
+    # The description of this Glue zero-ETL integration. (AI-inferred)
     description: Any = None
     # The Amazon Resource Name (ARN) of the integration.
     integration_arn: Any = None

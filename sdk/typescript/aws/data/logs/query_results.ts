@@ -13,6 +13,7 @@ export interface QueryResults_Statistics {
   logGroupsScanned?: number | Computed<number>;
   recordsMatched?: number | Computed<number>;
   recordsScanned?: number | Computed<number>;
+  resultCount?: number | Computed<number>;
 }
 
 export interface QueryResultsConfig {

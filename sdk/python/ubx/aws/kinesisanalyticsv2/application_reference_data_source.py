@@ -147,6 +147,7 @@ class ApplicationReferenceDataSourceConfig:
 class ApplicationReferenceDataSourceAttrs:
     # The name of the Kinesis Data Analytics for Apache Flink application to which the reference data source belongs. (AI-inferred)
     application_name: Any = None
+    # The unique identifier of this Kinesis Analytics v2 application reference data source. (AI-inferred)
     id: Any = None
     # The 'reference_data_source' property defines the reference data source for the Kinesis Data Analytics application, specifying the S3 location and bucket key, the table name, and the reference schema (columns, data types, and mappings) that describe how the application reads the reference data. (AI-inferred)
     reference_data_source: Any = None

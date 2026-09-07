@@ -36,6 +36,7 @@ type Dbsnapshots_Dbsnapshots struct {
 	Encrypted any
 	Engine any
 	EngineVersion any
+	FullSnapshotSizeInBytes any
 	IamdatabaseAuthenticationEnabled any
 	InstanceCreateTime any
 	Iops any

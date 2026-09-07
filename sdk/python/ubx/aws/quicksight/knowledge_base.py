@@ -121,8 +121,11 @@ _KnowledgeBase_TagsFields = {
 class KnowledgeBaseConfig:
     # Specifies how access to the knowledge base is secured, such as by configuring row-level security through an associated dataset. (AI-inferred)
     access_control_configuration: Any = None
+    # The AWS account ID this knowledge base belongs to. (AI-inferred)
     aws_account_id: Any = None
+    # The Amazon Resource Name (ARN) of the real data source this knowledge base indexes. (AI-inferred)
     data_source_arn: Any = None
+    # The description of this knowledge base. (AI-inferred)
     description: Any = None
     # Indicates whether email notifications are enabled for failures that occur during the ingestion of documents into the QuickSight knowledge base. (AI-inferred)
     is_email_notification_opted_for_ingestion_failures: Any = None
@@ -136,17 +139,22 @@ class KnowledgeBaseConfig:
     permissions: Any = None
     # The Amazon Resource Name (ARN) of the primary owner of the QuickSight knowledge base, typically the IAM user or role with administrative ownership. (AI-inferred)
     primary_owner_arn: Any = None
+    # The tags assigned to this knowledge base. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBaseAttrs:
     # Specifies how access to the knowledge base is secured, such as by configuring row-level security through an associated dataset. (AI-inferred)
     access_control_configuration: Any = None
+    # The AWS account ID this knowledge base belongs to. (AI-inferred)
     aws_account_id: Any = None
     # The timestamp (in ISO 8601 format) indicating when the QuickSight knowledge base was created. (AI-inferred)
     created_at: Any = None
+    # The Amazon Resource Name (ARN) of the real data source this knowledge base indexes. (AI-inferred)
     data_source_arn: Any = None
+    # The description of this knowledge base. (AI-inferred)
     description: Any = None
+    # The real, current number of documents indexed in this knowledge base. (AI-inferred)
     document_count: Any = None
     # Indicates whether email notifications are enabled for failures that occur during the ingestion of documents into the QuickSight knowledge base. (AI-inferred)
     is_email_notification_opted_for_ingestion_failures: Any = None
@@ -164,9 +172,13 @@ class KnowledgeBaseAttrs:
     permissions: Any = None
     # The Amazon Resource Name (ARN) of the primary owner of the QuickSight knowledge base, typically the IAM user or role with administrative ownership. (AI-inferred)
     primary_owner_arn: Any = None
+    # The username of this knowledge base's own primary owner. (AI-inferred)
     primary_owner_username: Any = None
+    # The current status of this knowledge base. (AI-inferred)
     status: Any = None
+    # The tags assigned to this knowledge base. (AI-inferred)
     tags: Any = None
+    # The real type of this knowledge base, e.g. which underlying data source it indexes. (AI-inferred)
     type: Any = None
     # The read-only updated_at field holds the timestamp of the last modification to the QuickSight knowledge base. (AI-inferred)
     updated_at: Any = None

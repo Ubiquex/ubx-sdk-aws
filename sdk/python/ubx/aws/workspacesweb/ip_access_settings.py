@@ -41,6 +41,7 @@ class IpAccessSettingsConfig:
     display_name: Any = None
     # Specifies the list of IP rules that define allowed or denied client IP address ranges (in CIDR notation) for accessing the WorkSpaces Web portal. (AI-inferred)
     ip_rules: Any = None
+    # The tags assigned to these IP access settings. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -61,6 +62,7 @@ class IpAccessSettingsAttrs:
     ip_access_settings_arn: Any = None
     # Specifies the list of IP rules that define allowed or denied client IP address ranges (in CIDR notation) for accessing the WorkSpaces Web portal. (AI-inferred)
     ip_rules: Any = None
+    # The tags assigned to these IP access settings. (AI-inferred)
     tags: Any = None
 
 IpAccessSettings = ubx.ResourceBinding(

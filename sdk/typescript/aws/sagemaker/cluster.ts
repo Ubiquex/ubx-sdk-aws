@@ -194,7 +194,15 @@ export interface Cluster_Orchestrator_Eks {
   clusterArn?: string | Computed<string>;
 }
 
+export interface Cluster_Orchestrator_Slurm_AccountingDatabase {
+  endpoint?: string | Computed<string>;
+  name?: string | Computed<string>;
+  port?: number | Computed<number>;
+  secretArn?: string | Computed<string>;
+}
+
 export interface Cluster_Orchestrator_Slurm {
+  accountingDatabase?: Cluster_Orchestrator_Slurm_AccountingDatabase | Computed<Cluster_Orchestrator_Slurm_AccountingDatabase>;
   /** Specifies whether SageMaker automatically generates the Slurm configuration files (Auto) or uses pre-existing configuration files you supply (NoAuto) for the Slurm orchestrator on the SageMaker HyperPod cluster. (AI-inferred) */
   slurmConfigStrategy?: string | Computed<string>;
 }
@@ -275,7 +283,19 @@ const Cluster_Orchestrator_EksFields: FieldMap = {
   clusterArn: "cluster_arn",
 };
 
+const Cluster_Orchestrator_Slurm_AccountingDatabaseFields: FieldMap = {
+  endpoint: "endpoint",
+  name: "name",
+  port: "port",
+  secretArn: "secret_arn",
+};
+
 const Cluster_Orchestrator_SlurmFields: FieldMap = {
+  accountingDatabase: {
+    wireName: "accounting_database",
+    kind: "object",
+    fields: Cluster_Orchestrator_Slurm_AccountingDatabaseFields,
+  },
   slurmConfigStrategy: "slurm_config_strategy",
 };
 

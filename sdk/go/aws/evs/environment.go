@@ -189,28 +189,39 @@ type EnvironmentConfig struct {
 	Hosts any
 	// The initial Vlan configuration only required upon creation. Modification after creation will have no effect
 	InitialVlans any
+	// The AWS KMS key AWS Secrets Manager uses to encrypt this environment's own stored VCF credentials. (AI-inferred)
 	KmsKeyId any
 	// The license information for an EVS environment
 	LicenseInfo any
+	// The security groups that allow traffic between the Amazon EVS control plane and this environment's own VPC for service access. (AI-inferred)
 	ServiceAccessSecurityGroups any
+	// A reference to the subnet Amazon EVS uses to establish connectivity between its control plane and this environment's own VPC. (AI-inferred)
 	ServiceAccessSubnetId any
+	// The Broadcom Site ID associated with this environment, used to meet Broadcom VCF license usage reporting requirements. (AI-inferred)
 	SiteId any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
+	// Whether the customer has confirmed they hold and will maintain the required VCF software licenses covering all physical processor cores in this environment. (AI-inferred)
 	TermsAccepted any
+	// The DNS hostnames used by the VCF management appliances (vCenter Server, NSX, SDDC Manager) in this environment. (AI-inferred)
 	VcfHostnames any
+	// The VCF version this environment runs. (AI-inferred)
 	VcfVersion any
+	// A reference to the VPC this environment is deployed in. (AI-inferred)
 	VpcId any
 }
 
 type EnvironmentAttrs struct {
+	// The results of the health and licensing checks Amazon EVS runs against this environment, e.g. key reuse, key coverage, reachability, and host count. (AI-inferred)
 	Checks any
 	ConnectivityInfo any
 	// This read-only string contains the ISO 8601 timestamp of when the EVS environment was created. (AI-inferred)
 	CreatedAt any
+	// References to the AWS Secrets Manager secrets holding the VCF credentials (vCenter Server, NSX, SDDC Manager) Amazon EVS created for this environment. (AI-inferred)
 	Credentials any
 	// The Amazon Resource Name (ARN) that uniquely identifies this EVS environment, assigned by AWS when the environment is created. (AI-inferred)
 	EnvironmentArn any
+	// The unique identifier of this environment. (AI-inferred)
 	EnvironmentId any
 	// The name of an EVS environment
 	EnvironmentName any
@@ -220,20 +231,29 @@ type EnvironmentAttrs struct {
 	Hosts any
 	// The initial Vlan configuration only required upon creation. Modification after creation will have no effect
 	InitialVlans any
+	// The AWS KMS key AWS Secrets Manager uses to encrypt this environment's own stored VCF credentials. (AI-inferred)
 	KmsKeyId any
 	// The license information for an EVS environment
 	LicenseInfo any
+	// The date and time when this environment was last modified. (AI-inferred)
 	ModifiedAt any
+	// The security groups that allow traffic between the Amazon EVS control plane and this environment's own VPC for service access. (AI-inferred)
 	ServiceAccessSecurityGroups any
+	// A reference to the subnet Amazon EVS uses to establish connectivity between its control plane and this environment's own VPC. (AI-inferred)
 	ServiceAccessSubnetId any
+	// The Broadcom Site ID associated with this environment, used to meet Broadcom VCF license usage reporting requirements. (AI-inferred)
 	SiteId any
 	// A read-only string that provides supplementary details about the current state of the AWS EVS environment, including error messages if the environment is not in a healthy state. (AI-inferred)
 	StateDetails any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
+	// Whether the customer has confirmed they hold and will maintain the required VCF software licenses covering all physical processor cores in this environment. (AI-inferred)
 	TermsAccepted any
+	// The DNS hostnames used by the VCF management appliances (vCenter Server, NSX, SDDC Manager) in this environment. (AI-inferred)
 	VcfHostnames any
+	// The VCF version this environment runs. (AI-inferred)
 	VcfVersion any
+	// A reference to the VPC this environment is deployed in. (AI-inferred)
 	VpcId any
 }
 

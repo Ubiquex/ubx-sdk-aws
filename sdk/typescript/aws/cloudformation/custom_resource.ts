@@ -9,6 +9,7 @@ export interface CustomResourceConfig {
 }
 
 export interface CustomResourceAttrs {
+  /** The unique identifier of this custom resource. (AI-inferred) */
   id: string;
   /** The maximum amount of time (in seconds) that AWS CloudFormation waits for the custom resource provider to respond before considering the resource operation failed. (AI-inferred) */
   serviceTimeout: number;

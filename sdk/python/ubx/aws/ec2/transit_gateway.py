@@ -30,9 +30,11 @@ class TransitGatewayConfig:
     default_route_table_association: Any = None
     # The ID of the default route table to which all new attachments propagate routes. (AI-inferred)
     default_route_table_propagation: Any = None
+    # The description of this transit gateway. (AI-inferred)
     description: Any = None
     # Indicates whether to enable or disable DNS support for the transit gateway, with valid values being 'enable' (default) or 'disable'. (AI-inferred)
     dns_support: Any = None
+    # Whether encryption support is enabled for this transit gateway. (AI-inferred)
     encryption_support: Any = None
     # Indicates whether multicast support is enabled for the transit gateway, with valid values 'enable' or 'disable' and defaulting to disabled. (AI-inferred)
     multicast_support: Any = None
@@ -59,10 +61,13 @@ class TransitGatewayAttrs:
     default_route_table_association: Any = None
     # The ID of the default route table to which all new attachments propagate routes. (AI-inferred)
     default_route_table_propagation: Any = None
+    # The description of this transit gateway. (AI-inferred)
     description: Any = None
     # Indicates whether to enable or disable DNS support for the transit gateway, with valid values being 'enable' (default) or 'disable'. (AI-inferred)
     dns_support: Any = None
+    # Whether encryption support is enabled for this transit gateway. (AI-inferred)
     encryption_support: Any = None
+    # The current state of this transit gateway's own encryption support setting. (AI-inferred)
     encryption_support_state: Any = None
     # The unique identifier (ID) of the transit gateway, such as tgw-0a1b2c3d4e5f67890, assigned by AWS when the resource is created. (AI-inferred)
     id: Any = None

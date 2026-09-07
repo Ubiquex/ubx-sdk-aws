@@ -750,6 +750,7 @@ type VirtualNodeConfig struct {
 type VirtualNodeAttrs struct {
 	// The Amazon Resource Name (ARN) of the virtual node, uniquely identifying it within AWS App Mesh. (AI-inferred)
 	Arn any
+	// The unique identifier of this virtual node. (AI-inferred)
 	Id any
 	// The name of the App Mesh service mesh that this virtual node belongs to, scoping the virtual node within the specified mesh. (AI-inferred)
 	MeshName any
@@ -760,6 +761,7 @@ type VirtualNodeAttrs struct {
 	// The desired configuration for the virtual node, defining its listeners, service discovery, backends, and logging settings. (AI-inferred)
 	Spec any
 	Tags any
+	// The unique identifier assigned by App Mesh to this virtual node. (AI-inferred)
 	Uid any
 	// Specifies the name of the virtual node, which must be unique within the service mesh and is used to identify the virtual node in App Mesh APIs and configuration. (AI-inferred)
 	VirtualNodeName any

@@ -72,6 +72,7 @@ export interface DbclusterConfig {
   serverlessV2ScalingConfiguration?: Dbcluster_ServerlessV2ScalingConfiguration | Computed<Dbcluster_ServerlessV2ScalingConfiguration>;
   /** The identifier of an existing DB cluster snapshot to restore the cluster from when creating it. (AI-inferred) */
   snapshotIdentifier?: string | Computed<string>;
+  /** A reference to the source DocumentDB cluster this cluster was restored or replicated from. (AI-inferred) */
   sourceDbclusterIdentifier?: string | Computed<string>;
   /** Indicates whether the DB cluster's storage is encrypted at rest, using AWS Key Management Service (KMS) keys. (AI-inferred) */
   storageEncrypted?: boolean | Computed<boolean>;
@@ -142,6 +143,7 @@ export interface DbclusterAttrs {
   serverlessV2ScalingConfiguration: Dbcluster_ServerlessV2ScalingConfiguration;
   /** The identifier of an existing DB cluster snapshot to restore the cluster from when creating it. (AI-inferred) */
   snapshotIdentifier: string;
+  /** A reference to the source DocumentDB cluster this cluster was restored or replicated from. (AI-inferred) */
   sourceDbclusterIdentifier: string;
   /** Indicates whether the DB cluster's storage is encrypted at rest, using AWS Key Management Service (KMS) keys. (AI-inferred) */
   storageEncrypted: boolean;

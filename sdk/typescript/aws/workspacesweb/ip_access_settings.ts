@@ -35,6 +35,7 @@ export interface IpAccessSettingsConfig {
   displayName?: string | Computed<string>;
   /** Specifies the list of IP rules that define allowed or denied client IP address ranges (in CIDR notation) for accessing the WorkSpaces Web portal. (AI-inferred) */
   ipRules: IpAccessSettings_IpRules[] | Computed<IpAccessSettings_IpRules[]>;
+  /** The tags assigned to these IP access settings. (AI-inferred) */
   tags?: IpAccessSettings_Tags[] | Computed<IpAccessSettings_Tags[]>;
 }
 
@@ -55,6 +56,7 @@ export interface IpAccessSettingsAttrs {
   ipAccessSettingsArn: string;
   /** Specifies the list of IP rules that define allowed or denied client IP address ranges (in CIDR notation) for accessing the WorkSpaces Web portal. (AI-inferred) */
   ipRules: IpAccessSettings_IpRules[];
+  /** The tags assigned to these IP access settings. (AI-inferred) */
   tags: IpAccessSettings_Tags[];
 }
 

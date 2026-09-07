@@ -748,6 +748,7 @@ export interface VirtualNodeConfig {
 export interface VirtualNodeAttrs {
   /** The Amazon Resource Name (ARN) of the virtual node, uniquely identifying it within AWS App Mesh. (AI-inferred) */
   arn: string;
+  /** The unique identifier of this virtual node. (AI-inferred) */
   id: string;
   /** The name of the App Mesh service mesh that this virtual node belongs to, scoping the virtual node within the specified mesh. (AI-inferred) */
   meshName: string;
@@ -758,6 +759,7 @@ export interface VirtualNodeAttrs {
   /** The desired configuration for the virtual node, defining its listeners, service discovery, backends, and logging settings. (AI-inferred) */
   spec: VirtualNode_Spec;
   tags: VirtualNode_Spec_Logging_AccessLog_File_Format_Json[];
+  /** The unique identifier assigned by App Mesh to this virtual node. (AI-inferred) */
   uid: string;
   /** Specifies the name of the virtual node, which must be unique within the service mesh and is used to identify the virtual node in App Mesh APIs and configuration. (AI-inferred) */
   virtualNodeName: string;

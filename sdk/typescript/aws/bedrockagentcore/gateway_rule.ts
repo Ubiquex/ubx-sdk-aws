@@ -82,6 +82,10 @@ export interface GatewayRule_Conditions {
   matchPrincipals?: GatewayRule_Conditions_MatchPrincipals | Computed<GatewayRule_Conditions_MatchPrincipals>;
 }
 
+export interface GatewayRule_System {
+  managedBy: string | Computed<string>;
+}
+
 const GatewayRule_Actions_ConfigurationBundle_StaticOverrideFields: FieldMap = {
   bundleArn: "bundle_arn",
   bundleVersion: "bundle_version",
@@ -205,27 +209,39 @@ const GatewayRule_ConditionsFields: FieldMap = {
 };
 
 export interface GatewayRuleConfig {
+  /** The action(s) this gateway rule applies, e.g. routing a portion of traffic to a particular target configuration. (AI-inferred) */
   actions: GatewayRule_Actions[] | Computed<GatewayRule_Actions[]>;
   /** A list of conditions that are evaluated against the incoming request or context to determine whether this core gateway rule should trigger its associated actions. (AI-inferred) */
   conditions?: GatewayRule_Conditions[] | Computed<GatewayRule_Conditions[]>;
+  /** Provides a human-readable note about this traffic split entry, used within a weighted override of an action's configuration bundle to document the purpose of routing a portion of traffic to a particular agent configuration in the core gateway rule. (AI-inferred) */
   description?: string | Computed<string>;
   /** The unique identifier of the Bedrock agent core gateway to which this rule is attached, used to apply the rule's routing behavior to that gateway's traffic. (AI-inferred) */
   gatewayIdentifier?: string | Computed<string>;
+  /** This rule's own real evaluation order relative to the gateway's own other rules; a lower value is evaluated first. (AI-inferred) */
   priority: number | Computed<number>;
 }
 
 export interface GatewayRuleAttrs {
+  /** The action(s) this gateway rule applies, e.g. routing a portion of traffic to a particular target configuration. (AI-inferred) */
   actions: GatewayRule_Actions[];
   /** A list of conditions that are evaluated against the incoming request or context to determine whether this core gateway rule should trigger its associated actions. (AI-inferred) */
   conditions: GatewayRule_Conditions[];
+  /** The date and time at which this gateway rule was created. (AI-inferred) */
   createdAt: string;
+  /** Provides a human-readable note about this traffic split entry, used within a weighted override of an action's configuration bundle to document the purpose of routing a portion of traffic to a particular agent configuration in the core gateway rule. (AI-inferred) */
   description: string;
+  /** The Amazon Resource Name (ARN) of the gateway this rule belongs to. (AI-inferred) */
   gatewayArn: string;
   /** The unique identifier of the Bedrock agent core gateway to which this rule is attached, used to apply the rule's routing behavior to that gateway's traffic. (AI-inferred) */
   gatewayIdentifier: string;
+  /** This rule's own real evaluation order relative to the gateway's own other rules; a lower value is evaluated first. (AI-inferred) */
   priority: number;
+  /** The unique identifier of this gateway rule. (AI-inferred) */
   ruleId: string;
+  /** The current status of this gateway rule. (AI-inferred) */
   status: string;
+  system: GatewayRule_System;
+  /** The date and time at which this gateway rule was updated. (AI-inferred) */
   updatedAt: string;
 }
 

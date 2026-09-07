@@ -13,19 +13,28 @@ const ServiceEnvironment_CapacityLimitsFields: FieldMap = {
 };
 
 export interface ServiceEnvironmentConfig {
+  /** The maximum resources service jobs in this service environment can use. (AI-inferred) */
   capacityLimits: ServiceEnvironment_CapacityLimits[] | Computed<ServiceEnvironment_CapacityLimits[]>;
+  /** The name of this service environment. (AI-inferred) */
   serviceEnvironmentName?: string | Computed<string>;
+  /** The type of service this environment runs, e.g. SageMaker Training jobs. (AI-inferred) */
   serviceEnvironmentType: string | Computed<string>;
+  /** Whether this service environment is enabled or disabled. (AI-inferred) */
   state?: string | Computed<string>;
   /** A key-value pair to associate with a resource. */
   tags?: unknown | Computed<unknown>;
 }
 
 export interface ServiceEnvironmentAttrs {
+  /** The maximum resources service jobs in this service environment can use. (AI-inferred) */
   capacityLimits: ServiceEnvironment_CapacityLimits[];
+  /** The Amazon Resource Name (ARN) of this service environment. (AI-inferred) */
   serviceEnvironmentArn: string;
+  /** The name of this service environment. (AI-inferred) */
   serviceEnvironmentName: string;
+  /** The type of service this environment runs, e.g. SageMaker Training jobs. (AI-inferred) */
   serviceEnvironmentType: string;
+  /** Whether this service environment is enabled or disabled. (AI-inferred) */
   state: string;
   /** A key-value pair to associate with a resource. */
   tags: unknown;

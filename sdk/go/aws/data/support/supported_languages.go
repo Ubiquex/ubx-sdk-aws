@@ -11,12 +11,14 @@ type SupportedLanguages_SupportedLanguages struct {
 
 type SupportedLanguagesConfig struct {
 	CategoryCode any
+	DryRun any
 	IssueType any
 	ServiceCode any
 }
 
 type SupportedLanguagesAttrs struct {
 	CategoryCode any
+	DryRun any
 	IssueType any
 	ServiceCode any
 	SupportedLanguages any
@@ -26,6 +28,7 @@ var SupportedLanguages = ubx.DataSourceBinding{
 	WireType: "aws_support_supported_languages",
 	Fields: ubx.FieldMap{
 		"CategoryCode": ubx.FieldSpec{WireName: "category_code"},
+		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"IssueType": ubx.FieldSpec{WireName: "issue_type"},
 		"ServiceCode": ubx.FieldSpec{WireName: "service_code"},
 	},

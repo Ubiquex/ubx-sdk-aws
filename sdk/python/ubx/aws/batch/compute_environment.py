@@ -183,7 +183,9 @@ _ComputeEnvironment_UpdatePolicyFields = {
 class ComputeEnvironmentConfig:
     # The name for the AWS Batch compute environment, which must be unique within the region and can contain letters, numbers, hyphens, and underscores; if omitted, AWS CloudFormation generates a unique name. (AI-inferred)
     compute_environment_name: Any = None
+    # Reserved for AWS Batch's own internal use. (AI-inferred)
     context: Any = None
+    # The Amazon ECS settings for this compute environment, controlling CloudWatch Container Insights collection. (AI-inferred)
     ecs_settings: Any = None
     # Specifies the Amazon EKS cluster and optional Kubernetes namespace that the Batch compute environment uses when it is of type EKS. (AI-inferred)
     eks_configuration: Any = None
@@ -210,7 +212,9 @@ class ComputeEnvironmentAttrs:
     compute_environment_name: Any = None
     # The resolved configuration of EC2 compute resources (instance types, min/max vCPUs, subnets, security groups) that AWS Batch uses to run jobs in the managed compute environment. (AI-inferred)
     compute_resources: Any = None
+    # Reserved for AWS Batch's own internal use. (AI-inferred)
     context: Any = None
+    # The Amazon ECS settings for this compute environment, controlling CloudWatch Container Insights collection. (AI-inferred)
     ecs_settings: Any = None
     # Specifies the Amazon EKS cluster and optional Kubernetes namespace that the Batch compute environment uses when it is of type EKS. (AI-inferred)
     eks_configuration: Any = None

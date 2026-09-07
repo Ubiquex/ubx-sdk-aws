@@ -98,6 +98,7 @@ type RoutingRuleAttrs struct {
 	Priority any
 	// The Amazon Resource Name (ARN) that uniquely identifies this API Gateway v2 routing rule within the AWS account and region, used for IAM policies and resource-level references. (AI-inferred)
 	RoutingRuleArn any
+	// The unique identifier of this routing rule. (AI-inferred)
 	RoutingRuleId any
 }
 

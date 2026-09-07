@@ -42,6 +42,11 @@ class InferenceComponent_DeploymentConfig:
     rolling_update_policy: Any = None
 
 @dataclasses.dataclass
+class InferenceComponent_RuntimeConfig_PlacementStatus:
+    current_copy_count: Any = None
+    instance_type: Any = None
+
+@dataclasses.dataclass
 class InferenceComponent_RuntimeConfig:
     # The number of copies for the inference component
     copy_count: Any = None
@@ -49,6 +54,8 @@ class InferenceComponent_RuntimeConfig:
     current_copy_count: Any = None
     # The number of copies for the inference component
     desired_copy_count: Any = None
+    # The placement status of the inference component across instance types
+    placement_status: Any = None
 
 @dataclasses.dataclass
 class InferenceComponent_Specification_ComputeResourceRequirements:
@@ -60,6 +67,15 @@ class InferenceComponent_Specification_ComputeResourceRequirements:
     number_of_accelerator_devices_required: Any = None
     # The exact number of CPU cores that must be allocated to the inference component, used when a fixed compute resource allocation is specified rather than a range. (AI-inferred)
     number_of_cpu_cores_required: Any = None
+
+@dataclasses.dataclass
+class InferenceComponent_Specification_Container_ContainerMetricsConfig_MetricsEndpoints:
+    metric_publish_frequency_in_seconds: Any = None
+    metrics_endpoint_path: Any = None
+
+@dataclasses.dataclass
+class InferenceComponent_Specification_Container_ContainerMetricsConfig:
+    metrics_endpoints: Any = None
 
 @dataclasses.dataclass
 class InferenceComponent_Specification_Container_DeployedImage:
@@ -74,12 +90,31 @@ class InferenceComponent_Specification_Container_DeployedImage:
 class InferenceComponent_Specification_Container:
     # The Amazon S3 URI where the model artifacts for this inference component container are stored. (AI-inferred)
     artifact_url: Any = None
+    # The configuration for container metrics scraping
+    container_metrics_config: Any = None
     # The `deployed_image` object contains the resolved image URI and the resolution method that SageMaker actually used for the inference component's container after deployment, which may differ from the image originally specified. (AI-inferred)
     deployed_image: Any = None
     # Environment variables to specify on the container
     environment: Any = None
     # The image to use for the container that will be materialized for the inference component
     image: Any = None
+
+@dataclasses.dataclass
+class InferenceComponent_Specification_CurrentDataCacheConfig:
+    # Whether the endpoint caches the model artifacts and container image on each instance it provisions for the inference component
+    enable_caching: Any = None
+
+@dataclasses.dataclass
+class InferenceComponent_Specification_SchedulingConfig_AvailabilityZoneBalance:
+    enforcement_mode: Any = None
+    # The maximum allowed difference in the number of inference component copies between any two Availability Zones
+    max_imbalance: Any = None
+
+@dataclasses.dataclass
+class InferenceComponent_Specification_SchedulingConfig:
+    # Configuration for balancing inference component copies across Availability Zones
+    availability_zone_balance: Any = None
+    placement_strategy: Any = None
 
 @dataclasses.dataclass
 class InferenceComponent_Specification_StartupParameters:
@@ -96,9 +131,33 @@ class InferenceComponent_Specification:
     compute_resource_requirements: Any = None
     # Specifies the container configuration for the SageMaker inference component, including the Docker image, model artifact URL, and environment variables. (AI-inferred)
     container: Any = None
+    # Settings that affect how the inference component caches data
+    current_data_cache_config: Any = None
+    # Settings that affect how the inference component caches data
+    data_cache_config: Any = None
     # The name of the model to use with the inference component
     model_name: Any = None
+    # The scheduling configuration that determines how inference component copies are placed across available instances
+    scheduling_config: Any = None
     # Specifies startup parameters for the inference component's model container, including the model data download timeout and container startup health check timeout, used to control how the container is launched and validated before it begins serving inference traffic. (AI-inferred)
+    startup_parameters: Any = None
+
+@dataclasses.dataclass
+class InferenceComponent_Specifications_Container:
+    artifact_url: Any = None
+    container_metrics_config: Any = None
+    environment: Any = None
+    image: Any = None
+
+@dataclasses.dataclass
+class InferenceComponent_Specifications:
+    compute_resource_requirements: Any = None
+    container: Any = None
+    current_data_cache_config: Any = None
+    data_cache_config: Any = None
+    instance_type: Any = None
+    model_name: Any = None
+    scheduling_config: Any = None
     startup_parameters: Any = None
 
 @dataclasses.dataclass
@@ -195,8 +254,10 @@ class InferenceComponentAttrs:
     last_modified_time: Any = None
     # The runtime config for the inference component
     runtime_config: Any = None
-    # The specification for the inference component
+    # The specification for the inference component, for an endpoint with a single instance type. Specify exactly one of Specification or Specifications. InstanceType is not accepted here; use Specifications for per instance type configuration.
     specification: Any = None
+    # A list of specification objects for the inference component, one per instance type. The service requires at least two entries; use the singular Specification for a single instance type.
+    specifications: Any = None
     # An array of tags to apply to the resource
     tags: Any = None
     # The name of the endpoint variant the inference component is associated with

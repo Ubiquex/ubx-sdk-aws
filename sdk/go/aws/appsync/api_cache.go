@@ -29,6 +29,7 @@ type ApiCacheAttrs struct {
 	AtRestEncryptionEnabled any
 	// Configures whether cache health metrics are enabled for the AppSync API cache, with valid values ENABLED or DISABLED. (AI-inferred)
 	HealthMetricsConfig any
+	// The unique identifier of this AppSync API cache. (AI-inferred)
 	Id any
 	// Indicates whether encryption in transit is enabled for the AppSync API cache. (AI-inferred)
 	TransitEncryptionEnabled any

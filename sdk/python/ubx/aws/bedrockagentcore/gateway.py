@@ -310,53 +310,78 @@ _Gateway_WafConfigurationFields = {
 
 @dataclasses.dataclass
 class GatewayConfig:
+    # Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred)
     authorizer_configuration: Any = None
     # Specifies the type of authorizer that the Bedrock Agent core gateway uses to authenticate and authorize incoming API requests before invoking the underlying agent. (AI-inferred)
     authorizer_type: Any = None
+    # The description of the gateway. (AI-inferred)
     description: Any = None
+    # The exception level for the gateway. (AI-inferred)
     exception_level: Any = None
     # Specifies a list of interceptor configurations that attach Lambda-based hooks to the agent core gateway for monitoring, modifying, or short-circuiting requests and responses between clients and the agent. (AI-inferred)
     interceptor_configurations: Any = None
     # The ARN of the customer-managed AWS KMS key used to encrypt the Bedrock agent core gateway's data at rest, providing control over encryption. (AI-inferred)
     kms_key_arn: Any = None
+    # The name of the gateway. (AI-inferred)
     name: Any = None
+    # The policy engine configuration for the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies. (AI-inferred)
     policy_engine_configuration: Any = None
+    # The protocol configuration for the gateway. (AI-inferred)
     protocol_configuration: Any = None
     # Defines the communication protocol used by the core gateway, with supported values of 'APPLICATION' for application-to-agent traffic and 'AGENTS' for agent-to-agent traffic. (AI-inferred)
     protocol_type: Any = None
     # The ARN of the IAM role that the Bedrock Agent Core Gateway assumes to invoke Amazon Bedrock agents and access related AWS services. (AI-inferred)
     role_arn: Any = None
+    # The tags for the gateway. (AI-inferred)
     tags: Any = None
+    # The AWS WAF configuration for the gateway. This configuration controls how the gateway behaves when the associated web ACL cannot be evaluated. (AI-inferred)
     waf_configuration: Any = None
 
 @dataclasses.dataclass
 class GatewayAttrs:
+    # Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred)
     authorizer_configuration: Any = None
     # Specifies the type of authorizer that the Bedrock Agent core gateway uses to authenticate and authorize incoming API requests before invoking the underlying agent. (AI-inferred)
     authorizer_type: Any = None
+    # The date and time at which the gateway was created. (AI-inferred)
     created_at: Any = None
+    # The description of the gateway. (AI-inferred)
     description: Any = None
+    # The exception level for the gateway. (AI-inferred)
     exception_level: Any = None
+    # The Amazon Resource Name (ARN) of the gateway. (AI-inferred)
     gateway_arn: Any = None
+    # The unique identifier of the gateway. (AI-inferred)
     gateway_identifier: Any = None
+    # The URL endpoint for the gateway. (AI-inferred)
     gateway_url: Any = None
     # Specifies a list of interceptor configurations that attach Lambda-based hooks to the agent core gateway for monitoring, modifying, or short-circuiting requests and responses between clients and the agent. (AI-inferred)
     interceptor_configurations: Any = None
     # The ARN of the customer-managed AWS KMS key used to encrypt the Bedrock agent core gateway's data at rest, providing control over encryption. (AI-inferred)
     kms_key_arn: Any = None
+    # The name of the gateway. (AI-inferred)
     name: Any = None
+    # The policy engine configuration for the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies. (AI-inferred)
     policy_engine_configuration: Any = None
+    # The protocol configuration for the gateway. (AI-inferred)
     protocol_configuration: Any = None
     # Defines the communication protocol used by the core gateway, with supported values of 'APPLICATION' for application-to-agent traffic and 'AGENTS' for agent-to-agent traffic. (AI-inferred)
     protocol_type: Any = None
     # The ARN of the IAM role that the Bedrock Agent Core Gateway assumes to invoke Amazon Bedrock agents and access related AWS services. (AI-inferred)
     role_arn: Any = None
+    # The status for the gateway. (AI-inferred)
     status: Any = None
+    # The status reasons for the gateway's own current status. (AI-inferred)
     status_reasons: Any = None
+    # The tags for the gateway. (AI-inferred)
     tags: Any = None
+    # The date and time at which the gateway was updated. (AI-inferred)
     updated_at: Any = None
+    # The AWS WAF configuration for the gateway. This configuration controls how the gateway behaves when the associated web ACL cannot be evaluated. (AI-inferred)
     waf_configuration: Any = None
+    # The Amazon Resource Name (ARN) of the AWS WAF web ACL associated with the gateway. (AI-inferred)
     web_acl_arn: Any = None
+    # Details of the workload identity associated with the gateway, used to authenticate the gateway's own outbound calls. (AI-inferred)
     workload_identity_details: Any = None
 
 Gateway = ubx.ResourceBinding(

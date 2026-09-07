@@ -5,6 +5,7 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .customer_gateway import CustomerGateway, CustomerGatewayConfig
+from .application_status_check import ApplicationStatusCheck, ApplicationStatusCheckConfig
 from .capacity_manager_data_export import CapacityManagerDataExport, CapacityManagerDataExportConfig
 from .capacity_reservation import CapacityReservation, CapacityReservationConfig
 from .capacity_reservation_fleet import CapacityReservationFleet, CapacityReservationFleetConfig
@@ -23,6 +24,7 @@ from .host import Host, HostConfig
 from .instance_connect_endpoint import InstanceConnectEndpoint, InstanceConnectEndpointConfig
 from .ip_pool_route_table_association import IpPoolRouteTableAssociation, IpPoolRouteTableAssociationConfig
 from .ipam import Ipam, IpamConfig
+from .ipam_external_resource_verification_token import IpamExternalResourceVerificationToken, IpamExternalResourceVerificationTokenConfig
 from .ipamallocation import Ipamallocation, IpamallocationConfig
 from .ipampool import Ipampool, IpampoolConfig
 from .ipampool_cidr import IpampoolCidr, IpampoolCidrConfig

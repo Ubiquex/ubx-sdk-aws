@@ -68,6 +68,7 @@ class ConnectorConfig:
     description: Any = None
     # Display name for the connector.
     name: Any = None
+    # The external code repository provider (e.g. GitHub, GitLab) this Inspector connector connects to. (AI-inferred)
     provider: Any = None
     # Tags to apply to the connector.
     tags: Any = None
@@ -80,6 +81,7 @@ class ConnectorAttrs:
     created_at: Any = None
     # Optional description of the connector.
     description: Any = None
+    # Whether this Inspector connector is currently enabled. (AI-inferred)
     enablement_status: Any = None
     # Reason for the current enablement status, if applicable.
     enablement_status_reason: Any = None
@@ -89,6 +91,7 @@ class ConnectorAttrs:
     last_updated_at: Any = None
     # Display name for the connector.
     name: Any = None
+    # The external code repository provider (e.g. GitHub, GitLab) this Inspector connector connects to. (AI-inferred)
     provider: Any = None
     provider_configuration: Any = None
     # Tags to apply to the connector.

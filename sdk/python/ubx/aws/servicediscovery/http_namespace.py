@@ -19,24 +19,24 @@ _HttpNamespace_TagsFields = {
 
 @dataclasses.dataclass
 class HttpNamespaceConfig:
-    # Provides an optional human-readable description for the HTTP namespace, helping to identify its purpose or distinguish it from other namespaces in service discovery. (AI-inferred)
+    # A description for the namespace.
     description: Any = None
-    # The name of the HTTP namespace, which must be unique within the AWS account and can contain up to 1024 characters. (AI-inferred)
+    # The name that you want to assign to this namespace.
     name: Any = None
-    # Specifies a list of key-value tags to associate with the HTTP namespace, enabling you to organize, identify, and manage cost allocation for the namespace. (AI-inferred)
+    # The tags for the namespace. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
     tags: Any = None
 
 @dataclasses.dataclass
 class HttpNamespaceAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the HTTP namespace in AWS. (AI-inferred)
+    # The Amazon Resource Name (ARN) of the namespace.
     arn: Any = None
-    # Provides an optional human-readable description for the HTTP namespace, helping to identify its purpose or distinguish it from other namespaces in service discovery. (AI-inferred)
+    # A description for the namespace.
     description: Any = None
-    # The ID of the HTTP namespace, assigned by AWS Cloud Map when the namespace is created. (AI-inferred)
+    # The ID of the namespace.
     id: Any = None
-    # The name of the HTTP namespace, which must be unique within the AWS account and can contain up to 1024 characters. (AI-inferred)
+    # The name that you want to assign to this namespace.
     name: Any = None
-    # Specifies a list of key-value tags to associate with the HTTP namespace, enabling you to organize, identify, and manage cost allocation for the namespace. (AI-inferred)
+    # The tags for the namespace. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
     tags: Any = None
 
 HttpNamespace = ubx.ResourceBinding(

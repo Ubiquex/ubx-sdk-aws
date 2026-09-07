@@ -38,6 +38,7 @@ const ComputationModel_TagsFields: FieldMap = {
 
 export interface ComputationModelConfig {
   computationModelConfiguration: ComputationModel_ComputationModelConfiguration | Computed<ComputationModel_ComputationModelConfiguration>;
+  /** The data binding for this computation model: for each variable defined in its own configuration, the real data source value that variable is bound to. (AI-inferred) */
   computationModelDataBinding: unknown | Computed<unknown>;
   /** A description about the computation model. */
   computationModelDescription?: string | Computed<string>;
@@ -51,6 +52,7 @@ export interface ComputationModelAttrs {
   /** The ARN of the computation model. */
   computationModelArn: string;
   computationModelConfiguration: ComputationModel_ComputationModelConfiguration;
+  /** The data binding for this computation model: for each variable defined in its own configuration, the real data source value that variable is bound to. (AI-inferred) */
   computationModelDataBinding: unknown;
   /** A description about the computation model. */
   computationModelDescription: string;

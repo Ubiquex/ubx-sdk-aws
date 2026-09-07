@@ -203,6 +203,7 @@ export interface PolicyConfig {
   resourceType?: string | Computed<string>;
   /** Specifies the list of AWS resource types (e.g., AWS::EC2::Instance, AWS::ElasticLoadBalancingV2::LoadBalancer) to which this Firewall Manager policy applies, filtering the resources evaluated and protected by the policy. (AI-inferred) */
   resourceTypeList?: string[] | Computed<string[]>;
+  /** Whether AWS Firewall Manager removes the resources it created for this policy when the policy itself is deleted. (AI-inferred) */
   resourcesCleanUp?: boolean | Computed<boolean>;
   /** Firewall security service policy data. */
   securityServicePolicyData: Policy_SecurityServicePolicyData | Computed<Policy_SecurityServicePolicyData>;
@@ -239,6 +240,7 @@ export interface PolicyAttrs {
   resourceType: string;
   /** Specifies the list of AWS resource types (e.g., AWS::EC2::Instance, AWS::ElasticLoadBalancingV2::LoadBalancer) to which this Firewall Manager policy applies, filtering the resources evaluated and protected by the policy. (AI-inferred) */
   resourceTypeList: string[];
+  /** Whether AWS Firewall Manager removes the resources it created for this policy when the policy itself is deleted. (AI-inferred) */
   resourcesCleanUp: boolean;
   /** Firewall security service policy data. */
   securityServicePolicyData: Policy_SecurityServicePolicyData;

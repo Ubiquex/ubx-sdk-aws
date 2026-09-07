@@ -54,6 +54,7 @@ export interface JobQueueConfig {
   priority: number | Computed<number>;
   /** The Amazon Resource Name (ARN) of the scheduling policy that controls the prioritization and placement of jobs in the AWS Batch job queue. (AI-inferred) */
   schedulingPolicyArn?: string | Computed<string>;
+  /** The order in which this job queue considers its own associated service environments when scheduling service jobs. (AI-inferred) */
   serviceEnvironmentOrder?: JobQueue_ServiceEnvironmentOrder[] | Computed<JobQueue_ServiceEnvironmentOrder[]>;
   /** Specifies whether the job queue is enabled to accept new jobs (ENABLED) or disabled (DISABLED), with the default being ENABLED. (AI-inferred) */
   state?: string | Computed<string>;
@@ -76,6 +77,7 @@ export interface JobQueueAttrs {
   priority: number;
   /** The Amazon Resource Name (ARN) of the scheduling policy that controls the prioritization and placement of jobs in the AWS Batch job queue. (AI-inferred) */
   schedulingPolicyArn: string;
+  /** The order in which this job queue considers its own associated service environments when scheduling service jobs. (AI-inferred) */
   serviceEnvironmentOrder: JobQueue_ServiceEnvironmentOrder[];
   /** Specifies whether the job queue is enabled to accept new jobs (ENABLED) or disabled (DISABLED), with the default being ENABLED. (AI-inferred) */
   state: string;

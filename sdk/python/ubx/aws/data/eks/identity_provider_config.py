@@ -7,12 +7,50 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IdentityProviderConfig_IdentityProviderConfig_Oidc:
+    client_id: Any = None
+    cluster_name: Any = None
+    groups_claim: Any = None
+    groups_prefix: Any = None
+    identity_provider_config_arn: Any = None
+    identity_provider_config_name: Any = None
+    issuer_url: Any = None
+    required_claims: Any = None
+    status: Any = None
+    # <p>The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value. You define them.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per resource – 50</p> </li> <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key length – 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length – 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> </ul>
+    tags: Any = None
+    username_claim: Any = None
+    username_prefix: Any = None
+
+@dataclasses.dataclass
 class IdentityProviderConfig_IdentityProviderConfig:
     name: Any = None
+    # <p>An object representing the configuration for an OpenID Connect (OIDC) identity provider. </p>
+    oidc: Any = None
     type: Any = None
+
+_IdentityProviderConfig_IdentityProviderConfig_OidcFields = {
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
+    "groups_claim": ubx.FieldSpec(wire_name="groups_claim"),
+    "groups_prefix": ubx.FieldSpec(wire_name="groups_prefix"),
+    "identity_provider_config_arn": ubx.FieldSpec(wire_name="identity_provider_config_arn"),
+    "identity_provider_config_name": ubx.FieldSpec(wire_name="identity_provider_config_name"),
+    "issuer_url": ubx.FieldSpec(wire_name="issuer_url"),
+    "required_claims": ubx.FieldSpec(wire_name="required_claims"),
+    "status": ubx.FieldSpec(wire_name="status"),
+    "tags": ubx.FieldSpec(wire_name="tags"),
+    "username_claim": ubx.FieldSpec(wire_name="username_claim"),
+    "username_prefix": ubx.FieldSpec(wire_name="username_prefix"),
+}
 
 _IdentityProviderConfig_IdentityProviderConfigFields = {
     "name": ubx.FieldSpec(wire_name="name"),
+    "oidc": ubx.FieldSpec(
+        wire_name="oidc",
+        kind="object",
+        fields=_IdentityProviderConfig_IdentityProviderConfig_OidcFields,
+    ),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

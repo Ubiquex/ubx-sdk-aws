@@ -22,6 +22,7 @@ export interface IpamInternetRegistryAssociations_IpamInternetRegistryAssociatio
   ownerId?: string | Computed<string>;
   rir?: string | Computed<string>;
   state?: string | Computed<string>;
+  stateMessage?: string | Computed<string>;
   tags?: IpamInternetRegistryAssociations_IpamInternetRegistryAssociations_Tags[] | Computed<IpamInternetRegistryAssociations_IpamInternetRegistryAssociations_Tags[]>;
 }
 

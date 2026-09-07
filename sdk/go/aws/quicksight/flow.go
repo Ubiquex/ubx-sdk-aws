@@ -20,24 +20,40 @@ var Flow_PermissionsFields = ubx.FieldMap{
 	}
 
 type FlowConfig struct {
+	// The AWS account ID this flow belongs to. (AI-inferred)
 	AwsAccountId any
+	// The description of this flow. (AI-inferred)
 	Description any
+	// The real, ordered step(s) that make up this flow's own automated workflow. (AI-inferred)
 	FlowDefinition any
+	// The name of this flow. (AI-inferred)
 	Name any
+	// The real permission(s) granted on this flow, and to whom. (AI-inferred)
 	Permissions any
 }
 
 type FlowAttrs struct {
+	// The Amazon Resource Name (ARN) of this flow. (AI-inferred)
 	Arn any
+	// The AWS account ID this flow belongs to. (AI-inferred)
 	AwsAccountId any
+	// The date and time this flow was created. (AI-inferred)
 	CreatedTime any
+	// The description of this flow. (AI-inferred)
 	Description any
+	// The real, ordered step(s) that make up this flow's own automated workflow. (AI-inferred)
 	FlowDefinition any
+	// The unique identifier of this flow. (AI-inferred)
 	FlowId any
+	// The date and time this flow was last updated. (AI-inferred)
 	LastUpdatedTime any
+	// The name of this flow. (AI-inferred)
 	Name any
+	// The real permission(s) granted on this flow, and to whom. (AI-inferred)
 	Permissions any
+	// Whether this flow is published and available to run, or still a draft. (AI-inferred)
 	PublishState any
+	// The real, caller-assigned alias for each step in this flow's own definition. (AI-inferred)
 	StepAliases any
 }
 

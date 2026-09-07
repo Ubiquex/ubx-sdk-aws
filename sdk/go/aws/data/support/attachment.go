@@ -10,17 +10,20 @@ type Attachment_Attachment struct {
 
 type AttachmentConfig struct {
 	AttachmentId any
+	DryRun any
 }
 
 type AttachmentAttrs struct {
 	// <p>An attachment to a case communication. The attachment consists of the file name and the content of the file. Each attachment file size should not exceed 5 MB. File types that are supported include the following: pdf, jpeg,.doc, .log, .text </p>
 	Attachment any
 	AttachmentId any
+	DryRun any
 }
 
 var Attachment = ubx.DataSourceBinding{
 	WireType: "aws_support_attachment",
 	Fields: ubx.FieldMap{
 		"AttachmentId": ubx.FieldSpec{WireName: "attachment_id"},
+		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 	},
 }

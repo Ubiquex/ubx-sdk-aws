@@ -212,6 +212,7 @@ class FirewallPolicyConfig:
     firewall_policy: Any = None
     # The descriptive name of the firewall policy, used to identify it within AWS Network Firewall. (AI-inferred)
     firewall_policy_name: Any = None
+    # The tags assigned to this firewall policy. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -226,6 +227,7 @@ class FirewallPolicyAttrs:
     firewall_policy_id: Any = None
     # The descriptive name of the firewall policy, used to identify it within AWS Network Firewall. (AI-inferred)
     firewall_policy_name: Any = None
+    # The tags assigned to this firewall policy. (AI-inferred)
     tags: Any = None
 
 FirewallPolicy = ubx.ResourceBinding(

@@ -71,6 +71,7 @@ export interface CodeSecurityIntegrationConfig {
   createIntegrationDetails?: CodeSecurityIntegration_CreateIntegrationDetails | Computed<CodeSecurityIntegration_CreateIntegrationDetails>;
   /** Code Security Integration name */
   name?: string | Computed<string>;
+  /** The tags assigned to this Inspector code security integration. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
   /** Specifies the type of code security integration to configure, such as GITHUB or GITLAB, indicating which source code repository service to connect to Inspector for vulnerability scanning. (AI-inferred) */
   type?: string | Computed<string>;
@@ -94,6 +95,7 @@ export interface CodeSecurityIntegrationAttrs {
   status: string;
   /** Reason for the current status */
   statusReason: string;
+  /** The tags assigned to this Inspector code security integration. (AI-inferred) */
   tags: unknown;
   /** Specifies the type of code security integration to configure, such as GITHUB or GITLAB, indicating which source code repository service to connect to Inspector for vulnerability scanning. (AI-inferred) */
   type: string;

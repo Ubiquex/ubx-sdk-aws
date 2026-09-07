@@ -286,6 +286,7 @@ export interface InputConfig {
   name?: string | Computed<string>;
   /** The ARN of the IAM role that AWS Elemental MediaLive assumes to access the input source, such as an S3 bucket for media files or an external pull endpoint. (AI-inferred) */
   roleArn?: string | Computed<string>;
+  /** The settings connecting this MediaLive input to a MediaConnect router input. (AI-inferred) */
   routerSettings?: Input_RouterSettings | Computed<Input_RouterSettings>;
   /** Associates the MediaLive input with the specified SDI sources (physical serial digital interface video inputs) by their identifiers, used when the input type is set to SDI. (AI-inferred) */
   sdiSources?: string[] | Computed<string[]>;
@@ -324,6 +325,7 @@ export interface InputAttrs {
   name: string;
   /** The ARN of the IAM role that AWS Elemental MediaLive assumes to access the input source, such as an S3 bucket for media files or an external pull endpoint. (AI-inferred) */
   roleArn: string;
+  /** The settings connecting this MediaLive input to a MediaConnect router input. (AI-inferred) */
   routerSettings: Input_RouterSettings;
   /** Associates the MediaLive input with the specified SDI sources (physical serial digital interface video inputs) by their identifiers, used when the input type is set to SDI. (AI-inferred) */
   sdiSources: string[];

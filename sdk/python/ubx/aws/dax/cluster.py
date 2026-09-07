@@ -45,6 +45,7 @@ class ClusterConfig:
     security_group_ids: Any = None
     # The name of the subnet group that defines the VPC subnets in which the DAX cluster nodes are launched. (AI-inferred)
     subnet_group_name: Any = None
+    # The tags assigned to this DAX cluster. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -85,6 +86,7 @@ class ClusterAttrs:
     security_group_ids: Any = None
     # The name of the subnet group that defines the VPC subnets in which the DAX cluster nodes are launched. (AI-inferred)
     subnet_group_name: Any = None
+    # The tags assigned to this DAX cluster. (AI-inferred)
     tags: Any = None
 
 Cluster = ubx.ResourceBinding(

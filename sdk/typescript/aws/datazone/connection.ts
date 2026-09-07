@@ -582,6 +582,7 @@ export interface ConnectionConfig {
   name: string | Computed<string>;
   /** The identifier of the project in which the connection should be created. If */
   projectIdentifier?: string | Computed<string>;
+  /** The type-specific connection properties for this DataZone connection's own external resource or service. (AI-inferred) */
   props?: Connection_Props | Computed<Connection_Props>;
   /** The scope of the connection. */
   scope?: string | Computed<string>;
@@ -616,6 +617,7 @@ export interface ConnectionAttrs {
   projectId: string;
   /** The identifier of the project in which the connection should be created. If */
   projectIdentifier: string;
+  /** The type-specific connection properties for this DataZone connection's own external resource or service. (AI-inferred) */
   props: Connection_Props;
   /** The scope of the connection. */
   scope: string;

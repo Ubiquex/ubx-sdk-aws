@@ -26,6 +26,7 @@ export interface Presets_Presets_Settings_AudioDescriptions_CodecSettings_AacSet
   codecProfile?: string | Computed<string>;
   codingMode?: string | Computed<string>;
   loudnessMeasurementMode?: string | Computed<string>;
+  passthroughControl?: string | Computed<string>;
   rapInterval?: number | Computed<number>;
   rateControlMode?: string | Computed<string>;
   rawFormat?: string | Computed<string>;
@@ -282,6 +283,18 @@ export interface Presets_Presets_Settings_CaptionDescriptions_DestinationSetting
   pageTypes?: string[] | Computed<string[]>;
 }
 
+export interface Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_TtmlDestinationSettings {
+  backgroundColor?: string | Computed<string>;
+  backgroundOpacity?: number | Computed<number>;
+  fontColor?: string | Computed<string>;
+  fontOpacity?: number | Computed<number>;
+  fontSize?: number | Computed<number>;
+  fontStyle?: string | Computed<string>;
+  fontWeight?: string | Computed<string>;
+  stylePassthrough?: string | Computed<string>;
+  textDecoration?: string | Computed<string>;
+}
+
 export interface Presets_Presets_Settings_CaptionDescriptions_DestinationSettings {
   burninDestinationSettings?: Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_BurninDestinationSettings | Computed<Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_BurninDestinationSettings>;
   destinationType?: string | Computed<string>;
@@ -291,7 +304,7 @@ export interface Presets_Presets_Settings_CaptionDescriptions_DestinationSetting
   sccDestinationSettings?: Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_SccDestinationSettings | Computed<Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_SccDestinationSettings>;
   srtDestinationSettings?: Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_SrtDestinationSettings | Computed<Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_SrtDestinationSettings>;
   teletextDestinationSettings?: Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_TeletextDestinationSettings | Computed<Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_TeletextDestinationSettings>;
-  ttmlDestinationSettings?: Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_SrtDestinationSettings | Computed<Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_SrtDestinationSettings>;
+  ttmlDestinationSettings?: Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_TtmlDestinationSettings | Computed<Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_TtmlDestinationSettings>;
   webvttDestinationSettings?: Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_ImscDestinationSettings | Computed<Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_ImscDestinationSettings>;
 }
 
@@ -764,6 +777,11 @@ export interface Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSet
   slices?: number | Computed<number>;
 }
 
+export interface Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_XavcHdIntraCbgProfileSettings {
+  interlaceMode?: string | Computed<string>;
+  xavcClass?: string | Computed<string>;
+}
+
 export interface Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_XavcHdProfileSettings {
   bitrateClass?: string | Computed<string>;
   flickerAdaptiveQuantization?: string | Computed<string>;
@@ -792,7 +810,7 @@ export interface Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSet
   xavc4kIntraCbgProfileSettings?: Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_Xavc4kIntraCbgProfileSettings | Computed<Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_Xavc4kIntraCbgProfileSettings>;
   xavc4kIntraVbrProfileSettings?: Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_Xavc4kIntraCbgProfileSettings | Computed<Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_Xavc4kIntraCbgProfileSettings>;
   xavc4kProfileSettings?: Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_Xavc4kProfileSettings | Computed<Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_Xavc4kProfileSettings>;
-  xavcHdIntraCbgProfileSettings?: Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_Xavc4kIntraCbgProfileSettings | Computed<Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_Xavc4kIntraCbgProfileSettings>;
+  xavcHdIntraCbgProfileSettings?: Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_XavcHdIntraCbgProfileSettings | Computed<Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_XavcHdIntraCbgProfileSettings>;
   xavcHdProfileSettings?: Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_XavcHdProfileSettings | Computed<Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_XavcHdProfileSettings>;
 }
 

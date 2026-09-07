@@ -102,6 +102,7 @@ class RoutingRuleAttrs:
     priority: Any = None
     # The Amazon Resource Name (ARN) that uniquely identifies this API Gateway v2 routing rule within the AWS account and region, used for IAM policies and resource-level references. (AI-inferred)
     routing_rule_arn: Any = None
+    # The unique identifier of this routing rule. (AI-inferred)
     routing_rule_id: Any = None
 
 RoutingRule = ubx.ResourceBinding(

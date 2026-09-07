@@ -33,6 +33,7 @@ class PublicKeyConfig:
 class PublicKeyAttrs:
     # The date and time when the CloudFront public key was created. (AI-inferred)
     created_time: Any = None
+    # The unique identifier of this public key. (AI-inferred)
     id: Any = None
     # Configuration information about a public key that you can use with [signed URLs and signed cookies](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html), or with [field-level encryption](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html). CloudFront supports signed URLs and signed cookies with RSA 2048 or ECDSA 256 key signatures. Field-level encryption is only compatible with RSA 2048 key signatures.
     public_key_config: Any = None

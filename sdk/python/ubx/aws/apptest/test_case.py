@@ -368,6 +368,7 @@ _TestCase_StepsFields = {
 
 @dataclasses.dataclass
 class TestCaseConfig:
+    # The description of this test case. (AI-inferred)
     description: Any = None
     # The human-readable name of the AWS AppTest test case, which is required when creating this resource. (AI-inferred)
     name: Any = None
@@ -380,6 +381,7 @@ class TestCaseConfig:
 class TestCaseAttrs:
     # The timestamp indicating when the AppTest test case was created. (AI-inferred)
     creation_time: Any = None
+    # The description of this test case. (AI-inferred)
     description: Any = None
     # The timestamp, as a string, indicating when this test case was last updated. (AI-inferred)
     last_update_time: Any = None
@@ -387,13 +389,17 @@ class TestCaseAttrs:
     latest_version: Any = None
     # The human-readable name of the AWS AppTest test case, which is required when creating this resource. (AI-inferred)
     name: Any = None
+    # The current status of this test case. (AI-inferred)
     status: Any = None
     # The 'steps' property defines the ordered list of test steps that constitute the test case, where each step specifies an action (such as invoking an API or comparing outputs) to be executed during the test. (AI-inferred)
     steps: Any = None
     # A map of key-value pairs to assign as tags to the AWS AppTest test case, used for identifying and organizing the resource. (AI-inferred)
     tags: Any = None
+    # The Amazon Resource Name (ARN) of this test case. (AI-inferred)
     test_case_arn: Any = None
+    # The unique identifier of this test case. (AI-inferred)
     test_case_id: Any = None
+    # The version of this test case. (AI-inferred)
     test_case_version: Any = None
 
 TestCase = ubx.ResourceBinding(

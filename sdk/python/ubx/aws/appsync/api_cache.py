@@ -33,6 +33,7 @@ class ApiCacheAttrs:
     at_rest_encryption_enabled: Any = None
     # Configures whether cache health metrics are enabled for the AppSync API cache, with valid values ENABLED or DISABLED. (AI-inferred)
     health_metrics_config: Any = None
+    # The unique identifier of this AppSync API cache. (AI-inferred)
     id: Any = None
     # Indicates whether encryption in transit is enabled for the AppSync API cache. (AI-inferred)
     transit_encryption_enabled: Any = None

@@ -36,6 +36,7 @@ class DomainNameV2Config:
     certificate_arn: Any = None
     # The custom domain name (e.g., api.example.com) that this API Gateway v2 domain name configuration represents, which must be owned by the user and is used as the public endpoint for invoking the associated APIs. (AI-inferred)
     domain_name: Any = None
+    # Whether this API Gateway custom domain name is reachable publicly or only from within a VPC. (AI-inferred)
     endpoint_access_mode: Any = None
     endpoint_configuration: Any = None
     # A JSON string specifying an IAM resource policy that controls access to the API Gateway domain name's endpoints by allowing or denying invoking principals, source IPs, or VPC origins. (AI-inferred)
@@ -57,6 +58,7 @@ class DomainNameV2Attrs:
     domain_name_arn: Any = None
     # The computed unique identifier for the API Gateway v2 domain name resource, which is the domain name string itself used as the resource's primary key in the service. (AI-inferred)
     domain_name_id: Any = None
+    # Whether this API Gateway custom domain name is reachable publicly or only from within a VPC. (AI-inferred)
     endpoint_access_mode: Any = None
     endpoint_configuration: Any = None
     # A JSON string specifying an IAM resource policy that controls access to the API Gateway domain name's endpoints by allowing or denying invoking principals, source IPs, or VPC origins. (AI-inferred)

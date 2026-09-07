@@ -118,6 +118,7 @@ const CapacityProvider_VpcConfigFields: FieldMap = {
 };
 
 export interface CapacityProviderConfig {
+  /** The name of this Lambda capacity provider. (AI-inferred) */
   capacityProviderName?: string | Computed<string>;
   /** Configuration that defines how the capacity provider scales compute instances based on demand and policies. */
   capacityProviderScalingConfig?: CapacityProvider_CapacityProviderScalingConfig | Computed<CapacityProvider_CapacityProviderScalingConfig>;
@@ -138,7 +139,9 @@ export interface CapacityProviderConfig {
 }
 
 export interface CapacityProviderAttrs {
+  /** The Amazon Resource Name (ARN) of this Lambda capacity provider. (AI-inferred) */
   arn: string;
+  /** The name of this Lambda capacity provider. (AI-inferred) */
   capacityProviderName: string;
   /** Configuration that defines how the capacity provider scales compute instances based on demand and policies. */
   capacityProviderScalingConfig: CapacityProvider_CapacityProviderScalingConfig;

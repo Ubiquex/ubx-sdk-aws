@@ -14,6 +14,7 @@ const PricingPlan_TagsFields: FieldMap = {
 };
 
 export interface PricingPlanConfig {
+  /** The description of this Billing Conductor pricing plan. (AI-inferred) */
   description?: string | Computed<string>;
   /** The user-defined name for the pricing plan, required when creating the plan in AWS Billing Conductor and used for identification and display. (AI-inferred) */
   name: string | Computed<string>;
@@ -27,6 +28,7 @@ export interface PricingPlanAttrs {
   arn: string;
   /** Creation timestamp in UNIX epoch time format */
   creationTime: number;
+  /** The description of this Billing Conductor pricing plan. (AI-inferred) */
   description: string;
   /** Latest modified timestamp in UNIX epoch time format */
   lastModifiedTime: number;

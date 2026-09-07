@@ -54,6 +54,7 @@ export interface PortalAttrs {
   authenticationType: string;
   /** The ARN of the browser settings resource that defines the browser configuration and policies applied to this WorkSpaces Web portal. (AI-inferred) */
   browserSettingsArn: string;
+  /** The browser users see when they start a streaming session through this web portal. (AI-inferred) */
   browserType: string;
   /** The timestamp indicating when the WorkSpaces Web portal was created. (AI-inferred) */
   creationDate: string;

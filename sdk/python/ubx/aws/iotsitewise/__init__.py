@@ -11,5 +11,8 @@ from .computation_model import ComputationModel, ComputationModelConfig
 from .dashboard import Dashboard, DashboardConfig
 from .dataset import Dataset, DatasetConfig
 from .gateway import Gateway, GatewayConfig
+from .pipeline import Pipeline, PipelineConfig
 from .portal import Portal, PortalConfig
 from .project import Project, ProjectConfig
+from .task import Task, TaskConfig
+from .workspace import Workspace, WorkspaceConfig

@@ -6,20 +6,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type HostedZoneAssociationConfig struct {
 	// The ID of the Route 53 hosted zone that is being associated with the global resolver in this resource. (AI-inferred)
 	HostedZoneId any
+	// The name of this hosted zone association. (AI-inferred)
 	Name any
+	// The Amazon Resource Name (ARN) of the resource (e.g. the global resolver) this hosted zone is associated with. (AI-inferred)
 	ResourceArn any
 }
 
 type HostedZoneAssociationAttrs struct {
+	// The date and time when this hosted zone association was created. (AI-inferred)
 	CreatedAt any
+	// The unique identifier of this hosted zone association. (AI-inferred)
 	HostedZoneAssociationId any
 	// The ID of the Route 53 hosted zone that is being associated with the global resolver in this resource. (AI-inferred)
 	HostedZoneId any
+	// The name of the Route 53 private hosted zone this association makes resolvable through the global resolver. (AI-inferred)
 	HostedZoneName any
+	// The name of this hosted zone association. (AI-inferred)
 	Name any
+	// The Amazon Resource Name (ARN) of the resource (e.g. the global resolver) this hosted zone is associated with. (AI-inferred)
 	ResourceArn any
 	// The current status of the association, indicating its lifecycle state with values such as CREATING, COMPLETE, DELETING, DELETED, or FAILED. (AI-inferred)
 	Status any
+	// The date and time when this hosted zone association was last updated. (AI-inferred)
 	UpdatedAt any
 }
 

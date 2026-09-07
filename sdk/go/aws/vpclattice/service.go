@@ -32,6 +32,7 @@ type ServiceConfig struct {
 	IdleTimeoutSeconds any
 	// A user-friendly name for the VPC Lattice service; if you don't provide one, AWS CloudFormation generates a unique name for the service. (AI-inferred)
 	Name any
+	// The tags assigned to this VPC Lattice service. (AI-inferred)
 	Tags any
 }
 
@@ -58,6 +59,7 @@ type ServiceAttrs struct {
 	Name any
 	// The current lifecycle status of the VPC Lattice service (for example, ACTIVE or CREATE_IN_PROGRESS), which is computed by AWS and indicates whether the service is available or still being provisioned. (AI-inferred)
 	Status any
+	// The tags assigned to this VPC Lattice service. (AI-inferred)
 	Tags any
 }
 

@@ -14,34 +14,52 @@ var GlobalResolver_TagsFields = ubx.FieldMap{
 	}
 
 type GlobalResolverConfig struct {
+	// A unique string that identifies the request used to create this global resolver, ensuring idempotency. (AI-inferred)
 	ClientToken any
+	// The description of this global resolver. (AI-inferred)
 	Description any
+	// Whether this global resolver serves IPv4-only or dual-stack (IPv4 and IPv6) addresses. (AI-inferred)
 	IpAddressType any
+	// The name of this global resolver. (AI-inferred)
 	Name any
+	// The AWS Region where observability data (e.g. query logs, metrics) for this global resolver is collected. (AI-inferred)
 	ObservabilityRegion any
 	// The list of regions the Global Resolver exists in. Regions can be added or removed on update; the order of this list is not significant.
 	Regions any
+	// The tags assigned to this global resolver. (AI-inferred)
 	Tags any
 }
 
 type GlobalResolverAttrs struct {
 	// The Amazon Resource Name (ARN) that AWS assigns to this Route 53 Global Resolver, used as a unique identifier and in IAM policies and resource references. (AI-inferred)
 	Arn any
+	// A unique string that identifies the request used to create this global resolver, ensuring idempotency. (AI-inferred)
 	ClientToken any
+	// The date and time when this global resolver was created. (AI-inferred)
 	CreatedAt any
+	// The description of this global resolver. (AI-inferred)
 	Description any
+	// The DNS name of this global resolver. (AI-inferred)
 	DnsName any
+	// The unique identifier of this global resolver. (AI-inferred)
 	GlobalResolverId any
+	// The global anycast IPv4 addresses assigned to this global resolver. DNS clients can send queries to these addresses from anywhere on the internet. (AI-inferred)
 	Ipv4Addresses any
+	// The global anycast IPv6 addresses assigned to this global resolver, populated only when its own ip_address_type is dual-stack. DNS clients can send queries to these addresses from anywhere on the internet. (AI-inferred)
 	Ipv6Addresses any
+	// Whether this global resolver serves IPv4-only or dual-stack (IPv4 and IPv6) addresses. (AI-inferred)
 	IpAddressType any
+	// The name of this global resolver. (AI-inferred)
 	Name any
+	// The AWS Region where observability data (e.g. query logs, metrics) for this global resolver is collected. (AI-inferred)
 	ObservabilityRegion any
 	// The list of regions the Global Resolver exists in. Regions can be added or removed on update; the order of this list is not significant.
 	Regions any
 	// The current lifecycle status of the Route 53 global resolver rule, reporting values such as COMPLETE, FAILED, UPDATING, or DELETING to indicate the rule's operational state. (AI-inferred)
 	Status any
+	// The tags assigned to this global resolver. (AI-inferred)
 	Tags any
+	// The date and time when this global resolver was last updated. (AI-inferred)
 	UpdatedAt any
 }
 

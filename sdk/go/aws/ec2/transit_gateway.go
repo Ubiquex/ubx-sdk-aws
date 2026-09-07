@@ -26,9 +26,11 @@ type TransitGatewayConfig struct {
 	DefaultRouteTableAssociation any
 	// The ID of the default route table to which all new attachments propagate routes. (AI-inferred)
 	DefaultRouteTablePropagation any
+	// The description of this transit gateway. (AI-inferred)
 	Description any
 	// Indicates whether to enable or disable DNS support for the transit gateway, with valid values being 'enable' (default) or 'disable'. (AI-inferred)
 	DnsSupport any
+	// Whether encryption support is enabled for this transit gateway. (AI-inferred)
 	EncryptionSupport any
 	// Indicates whether multicast support is enabled for the transit gateway, with valid values 'enable' or 'disable' and defaulting to disabled. (AI-inferred)
 	MulticastSupport any
@@ -55,10 +57,13 @@ type TransitGatewayAttrs struct {
 	DefaultRouteTableAssociation any
 	// The ID of the default route table to which all new attachments propagate routes. (AI-inferred)
 	DefaultRouteTablePropagation any
+	// The description of this transit gateway. (AI-inferred)
 	Description any
 	// Indicates whether to enable or disable DNS support for the transit gateway, with valid values being 'enable' (default) or 'disable'. (AI-inferred)
 	DnsSupport any
+	// Whether encryption support is enabled for this transit gateway. (AI-inferred)
 	EncryptionSupport any
+	// The current state of this transit gateway's own encryption support setting. (AI-inferred)
 	EncryptionSupportState any
 	// The unique identifier (ID) of the transit gateway, such as tgw-0a1b2c3d4e5f67890, assigned by AWS when the resource is created. (AI-inferred)
 	Id any

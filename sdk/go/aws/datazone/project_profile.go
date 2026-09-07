@@ -73,10 +73,14 @@ type ProjectProfileConfig struct {
 	DomainIdentifier any
 	// The unique identifier of the Amazon DataZone domain unit that this project profile is associated with, used to scope the profile to a specific domain unit. (AI-inferred)
 	DomainUnitIdentifier any
+	// The name of this project profile. (AI-inferred)
 	Name any
 	ProjectResourceTags any
+	// The description shown to project users describing the allowed resource tag specifications for this project profile. (AI-inferred)
 	ProjectResourceTagsDescription any
+	// Whether this project profile is enabled or disabled. (AI-inferred)
 	Status any
+	// Whether this project profile uses DataZone's own default environment configurations rather than the ones explicitly set on it. (AI-inferred)
 	UseDefaultConfigurations any
 }
 
@@ -101,13 +105,18 @@ type ProjectProfileAttrs struct {
 	EnvironmentConfigurations any
 	// The unique identifier assigned by AWS DataZone to this project profile. (AI-inferred)
 	Id any
+	// The unique identifier of this project profile. (AI-inferred)
 	Identifier any
 	// The timestamp indicating when the project profile was last updated, set automatically by AWS DataZone. (AI-inferred)
 	LastUpdatedAt any
+	// The name of this project profile. (AI-inferred)
 	Name any
 	ProjectResourceTags any
+	// The description shown to project users describing the allowed resource tag specifications for this project profile. (AI-inferred)
 	ProjectResourceTagsDescription any
+	// Whether this project profile is enabled or disabled. (AI-inferred)
 	Status any
+	// Whether this project profile uses DataZone's own default environment configurations rather than the ones explicitly set on it. (AI-inferred)
 	UseDefaultConfigurations any
 }
 

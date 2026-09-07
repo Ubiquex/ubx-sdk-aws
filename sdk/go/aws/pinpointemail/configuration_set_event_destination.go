@@ -117,6 +117,7 @@ type ConfigurationSetEventDestinationAttrs struct {
 	EventDestination any
 	// The name of the event destination, which uniquely identifies it within the Amazon Pinpoint email configuration set. (AI-inferred)
 	EventDestinationName any
+	// The unique identifier of this Pinpoint email configuration set event destination. (AI-inferred)
 	Id any
 }
 

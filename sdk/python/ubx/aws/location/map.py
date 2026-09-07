@@ -37,6 +37,7 @@ _Map_TagsFields = {
 class MapConfig:
     # Specifies the map style (e.g., VectorEsriStreets or RasterEsriImagery) used by the map resource. (AI-inferred)
     configuration: Any = None
+    # The description of this map resource. (AI-inferred)
     description: Any = None
     # A user-defined name for the Amazon Location Service map resource, used to identify it within the AWS account and in API calls. (AI-inferred)
     map_name: Any = None
@@ -53,6 +54,7 @@ class MapAttrs:
     configuration: Any = None
     # The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ)
     create_time: Any = None
+    # The description of this map resource. (AI-inferred)
     description: Any = None
     # The Amazon Resource Name (ARN) of the AWS Location Service map, assigned by AWS when the map is created. (AI-inferred)
     map_arn: Any = None

@@ -311,6 +311,7 @@ class MemoryConfig:
     memory_execution_role_arn: Any = None
     # Name of the Memory resource
     name: Any = None
+    # The real resource(s) memory events are streamed to as they occur. (AI-inferred)
     stream_delivery_resources: Any = None
     # A map of tag keys and values
     tags: Any = None
@@ -341,6 +342,7 @@ class MemoryAttrs:
     name: Any = None
     # Status of the Memory resource
     status: Any = None
+    # The real resource(s) memory events are streamed to as they occur. (AI-inferred)
     stream_delivery_resources: Any = None
     # A map of tag keys and values
     tags: Any = None

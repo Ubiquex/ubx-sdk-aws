@@ -73,6 +73,7 @@ class VpcencryptionControlAttrs:
     mode: Any = None
     # Used to enable or disable Nat gateway exclusion
     nat_gateway_exclusion_input: Any = None
+    # Real resource types (e.g. NAT gateway, internet gateway, Lambda, VPC peering) excluded from this VPC's own encryption-in-transit enforcement, and each exclusion's own current state. (AI-inferred)
     resource_exclusions: Any = None
     # The current state of the VPC encryption control.
     state: Any = None

@@ -196,6 +196,7 @@ class AiguardrailConfig:
     name: Any = None
     # Sensitive information policy config for a guardrail.
     sensitive_information_policy_config: Any = None
+    # The tags assigned to this Wisdom AI Guardrail. (AI-inferred)
     tags: Any = None
     # Topic policy config for a guardrail.
     topic_policy_config: Any = None
@@ -228,6 +229,7 @@ class AiguardrailAttrs:
     name: Any = None
     # Sensitive information policy config for a guardrail.
     sensitive_information_policy_config: Any = None
+    # The tags assigned to this Wisdom AI Guardrail. (AI-inferred)
     tags: Any = None
     # Topic policy config for a guardrail.
     topic_policy_config: Any = None

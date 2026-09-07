@@ -50,6 +50,7 @@ class JobTemplateConfig:
     settings_json: Any = None
     # Specifies how often (in seconds) MediaConvert sends job status updates to CloudWatch Events and your SNS topic, with valid values of 10, 12, 15, 20, 30, 60, 120, 180, 240, 300, 360, 420, 480, 540, or 600, defaulting to 600 if not set. (AI-inferred)
     status_update_interval: Any = None
+    # The tags assigned to this MediaConvert job template. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -76,6 +77,7 @@ class JobTemplateAttrs:
     settings_json: Any = None
     # Specifies how often (in seconds) MediaConvert sends job status updates to CloudWatch Events and your SNS topic, with valid values of 10, 12, 15, 20, 30, 60, 120, 180, 240, 300, 360, 420, 480, 540, or 600, defaulting to 600 if not set. (AI-inferred)
     status_update_interval: Any = None
+    # The tags assigned to this MediaConvert job template. (AI-inferred)
     tags: Any = None
 
 JobTemplate = ubx.ResourceBinding(

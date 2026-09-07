@@ -351,21 +351,28 @@ var Dashboard_WidgetsFields = ubx.FieldMap{
 	}
 
 type DashboardConfig struct {
+	// The description of this dashboard. (AI-inferred)
 	Description any
 	// A user-specified unique name for the AWS Billing and Cost Management dashboard, used to identify and display the dashboard in the console. (AI-inferred)
 	Name any
+	// The tags assigned to this dashboard. (AI-inferred)
 	Tags any
 	// This required list contains the widget definitions—each specifying a visual block like a chart or KPI tile—that together form the content of the BCM dashboard. (AI-inferred)
 	Widgets any
 }
 
 type DashboardAttrs struct {
+	// The Amazon Resource Name (ARN) of this Billing and Cost Management dashboard. (AI-inferred)
 	Arn any
+	// The date and time when this dashboard was created. (AI-inferred)
 	CreatedAt any
+	// The description of this dashboard. (AI-inferred)
 	Description any
 	// A user-specified unique name for the AWS Billing and Cost Management dashboard, used to identify and display the dashboard in the console. (AI-inferred)
 	Name any
+	// The tags assigned to this dashboard. (AI-inferred)
 	Tags any
+	// The type of this dashboard. (AI-inferred)
 	Type any
 	// The `updated_at` attribute is a read-only timestamp that records when the AWS Billing and Cost Management dashboard was last updated, automatically set by the service. (AI-inferred)
 	UpdatedAt any

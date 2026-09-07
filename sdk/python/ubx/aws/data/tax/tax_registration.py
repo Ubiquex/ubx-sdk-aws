@@ -40,6 +40,7 @@ class TaxRegistration_TaxRegistration_AdditionalTaxInformation_EstoniaAdditional
 
 @dataclasses.dataclass
 class TaxRegistration_TaxRegistration_AdditionalTaxInformation_FranceAdditionalInfo:
+    e_invoice_routing_code: Any = None
     siren_number: Any = None
 
 @dataclasses.dataclass
@@ -78,6 +79,10 @@ class TaxRegistration_TaxRegistration_AdditionalTaxInformation_MalaysiaAdditiona
     business_registration_number: Any = None
     service_tax_codes: Any = None
     tax_information_number: Any = None
+
+@dataclasses.dataclass
+class TaxRegistration_TaxRegistration_AdditionalTaxInformation_MonacoAdditionalInfo:
+    business_number: Any = None
 
 @dataclasses.dataclass
 class TaxRegistration_TaxRegistration_AdditionalTaxInformation_PhilippinesAdditionalInfo:
@@ -158,6 +163,8 @@ class TaxRegistration_TaxRegistration_AdditionalTaxInformation:
     kenya_additional_info: Any = None
     # <p> Additional tax information associated with your TRN in Malaysia.</p>
     malaysia_additional_info: Any = None
+    # <p>Additional tax information associated with your TRN in Monaco.</p>
+    monaco_additional_info: Any = None
     # <p>Additional tax information associated with your TRN in the Philippines.</p>
     philippines_additional_info: Any = None
     # <p> Additional tax information associated with your TRN in Poland. </p>

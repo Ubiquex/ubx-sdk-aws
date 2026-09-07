@@ -195,6 +195,7 @@ export interface NodegroupAttrs {
   diskSize: number;
   /** Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue. */
   forceUpdateEnabled: boolean;
+  /** The unique identifier of this EKS node group. (AI-inferred) */
   id: string;
   /** Specify the instance types for a node group. */
   instanceTypes: string[];

@@ -27,6 +27,7 @@ type DbsecurityGroupIngressAttrs struct {
 	Ec2SecurityGroupName any
 	// The AWS account ID of the owner of the EC2 security group referenced by the EC2SecurityGroupName property, used when the security group belongs to a different AWS account. (AI-inferred)
 	Ec2SecurityGroupOwnerId any
+	// The unique identifier of this DB security group ingress rule. (AI-inferred)
 	Id any
 }
 

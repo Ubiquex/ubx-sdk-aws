@@ -106,6 +106,10 @@ export interface RouterOutput_Configuration {
   standard?: RouterOutput_Configuration_Standard | Computed<RouterOutput_Configuration_Standard>;
 }
 
+export interface RouterOutput_FabricConfiguration {
+  recoveryLatencyMode: string | Computed<string>;
+}
+
 export interface RouterOutput_MaintenanceConfiguration_PreferredDayTime {
   /** The day of the week, specified as an uppercase string such as 'MONDAY' or 'SATURDAY', on which maintenance is preferred for this router output. (AI-inferred) */
   day?: string | Computed<string>;
@@ -259,6 +263,10 @@ const RouterOutput_ConfigurationFields: FieldMap = {
   },
 };
 
+const RouterOutput_FabricConfigurationFields: FieldMap = {
+  recoveryLatencyMode: "recovery_latency_mode",
+};
+
 const RouterOutput_MaintenanceConfiguration_PreferredDayTimeFields: FieldMap = {
   day: "day",
   time: "time",
@@ -283,6 +291,8 @@ export interface RouterOutputConfig {
   availabilityZone?: string | Computed<string>;
   /** The configuration settings for a router output. */
   configuration: RouterOutput_Configuration | Computed<RouterOutput_Configuration>;
+  /** The fabric configuration settings for the router output. */
+  fabricConfiguration?: RouterOutput_FabricConfiguration | Computed<RouterOutput_FabricConfiguration>;
   /** The configuration settings for maintenance operations, including preferred maintenance windows and schedules. */
   maintenanceConfiguration?: RouterOutput_MaintenanceConfiguration | Computed<RouterOutput_MaintenanceConfiguration>;
   /** The maximum bitrate for the router output. */
@@ -291,6 +301,7 @@ export interface RouterOutputConfig {
   name: string | Computed<string>;
   /** The Amazon Web Services Region for the router output. Defaults to the current region if not specified. */
   regionName?: string | Computed<string>;
+  /** Whether this router output is configured for regional or global routing. (AI-inferred) */
   routingScope: string | Computed<string>;
   /** Key-value pairs that can be used to tag this router output. */
   tags?: RouterOutput_Tags[] | Computed<RouterOutput_Tags[]>;
@@ -307,23 +318,29 @@ export interface RouterOutputAttrs {
   configuration: RouterOutput_Configuration;
   /** The timestamp when the router output was created. */
   createdAt: string;
+  /** The fabric configuration settings for the router output. */
+  fabricConfiguration: RouterOutput_FabricConfiguration;
   /** The unique identifier of the router output. */
   id: string;
   /** The IP address of the router output. */
   ipAddress: string;
   /** The configuration settings for maintenance operations, including preferred maintenance windows and schedules. */
   maintenanceConfiguration: RouterOutput_MaintenanceConfiguration;
+  /** The type of maintenance configuration applied to this router output. (AI-inferred) */
   maintenanceType: string;
   /** The maximum bitrate for the router output. */
   maximumBitrate: number;
   /** The name of the router output. */
   name: string;
+  /** The type of this router output. (AI-inferred) */
   outputType: string;
   /** The Amazon Web Services Region for the router output. Defaults to the current region if not specified. */
   regionName: string;
   /** The current routing status of the router output, reported by the AWS API as either 'ACTIVE' (actively routing media) or 'STANDBY' (not actively routing media). (AI-inferred) */
   routedState: string;
+  /** Whether this router output is configured for regional or global routing. (AI-inferred) */
   routingScope: string;
+  /** The current state of this router output. (AI-inferred) */
   state: string;
   /** Key-value pairs that can be used to tag this router output. */
   tags: RouterOutput_Tags[];
@@ -341,6 +358,11 @@ export const RouterOutput: ResourceBinding<RouterOutputConfig, RouterOutputAttrs
       wireName: "configuration",
       kind: "object",
       fields: RouterOutput_ConfigurationFields,
+    },
+    fabricConfiguration: {
+      wireName: "fabric_configuration",
+      kind: "object",
+      fields: RouterOutput_FabricConfigurationFields,
     },
     maintenanceConfiguration: {
       wireName: "maintenance_configuration",

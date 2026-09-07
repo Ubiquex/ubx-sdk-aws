@@ -11,6 +11,7 @@ type WebAclassociationConfig struct {
 }
 
 type WebAclassociationAttrs struct {
+	// The unique identifier of this web ACL association. (AI-inferred)
 	Id any
 	// The ARN of the AWS resource (such as an Application Load Balancer or Amazon API Gateway stage) to associate with the Web ACL. (AI-inferred)
 	ResourceArn any

@@ -33,19 +33,27 @@ class ConnectionGroupConfig:
 class ConnectionGroupAttrs:
     # The ID of the Anycast static IP list.
     anycast_ip_list_id: Any = None
+    # The Amazon Resource Name (ARN) of this connection group. (AI-inferred)
     arn: Any = None
+    # The date and time when this connection group was created. (AI-inferred)
     created_time: Any = None
+    # The current version identifier of this connection group. (AI-inferred)
     etag: Any = None
     # Whether the connection group is enabled.
     enabled: Any = None
+    # The unique identifier of this connection group. (AI-inferred)
     id: Any = None
     # IPv6 is enabled for the connection group.
     ipv6_enabled: Any = None
+    # Whether this connection group is the default connection group used for distribution tenants that don't specify one. (AI-inferred)
     is_default: Any = None
+    # The date and time when this connection group was last updated. (AI-inferred)
     last_modified_time: Any = None
     # The name of the connection group.
     name: Any = None
+    # The routing endpoint (DNS name, e.g. d111111abcdef8.cloudfront.net) assigned to this connection group. (AI-inferred)
     routing_endpoint: Any = None
+    # The current status of this connection group. (AI-inferred)
     status: Any = None
     # A complex type that contains zero or more ``Tag`` elements.
     tags: Any = None

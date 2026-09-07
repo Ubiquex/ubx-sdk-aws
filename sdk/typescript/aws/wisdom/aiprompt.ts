@@ -34,11 +34,13 @@ export interface AipromptConfig {
   modelId: string | Computed<string>;
   /** The user-friendly name assigned to the AI prompt, which is used to identify and reference the prompt within the Amazon Wisdom service and its console. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The tags assigned to this Wisdom AI Prompt. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
   /** Defines the prompt template settings for the AI prompt, allowing you to specify either a simple text prompt or a full prompt template with its corresponding type. (AI-inferred) */
   templateConfiguration: Aiprompt_TemplateConfiguration | Computed<Aiprompt_TemplateConfiguration>;
   /** Defines whether the AI prompt uses a plain text template or a chat-based template, determining the expected configuration format for the prompt. (AI-inferred) */
   templateType: string | Computed<string>;
+  /** The type of this AI Prompt, e.g. answer generation, query reformulation, or case summarization. (AI-inferred) */
   type: string | Computed<string>;
 }
 
@@ -61,11 +63,13 @@ export interface AipromptAttrs {
   modifiedTimeSeconds: number;
   /** The user-friendly name assigned to the AI prompt, which is used to identify and reference the prompt within the Amazon Wisdom service and its console. (AI-inferred) */
   name: string;
+  /** The tags assigned to this Wisdom AI Prompt. (AI-inferred) */
   tags: unknown;
   /** Defines the prompt template settings for the AI prompt, allowing you to specify either a simple text prompt or a full prompt template with its corresponding type. (AI-inferred) */
   templateConfiguration: Aiprompt_TemplateConfiguration;
   /** Defines whether the AI prompt uses a plain text template or a chat-based template, determining the expected configuration format for the prompt. (AI-inferred) */
   templateType: string;
+  /** The type of this AI Prompt, e.g. answer generation, query reformulation, or case summarization. (AI-inferred) */
   type: string;
 }
 

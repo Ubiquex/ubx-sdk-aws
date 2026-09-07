@@ -98,7 +98,9 @@ type AutomatedReasoningPolicyConfig struct {
 	ForceDelete any
 	// The KMS key with which the Policy's assets will be encrypted at rest.
 	KmsKeyId any
+	// The name of this automated reasoning policy. (AI-inferred)
 	Name any
+	// The formal logic definition (rules, variables, and their relationships) this automated reasoning policy checks model responses against. (AI-inferred)
 	PolicyDefinition any
 	// A list of key-value tags to associate with the AWS Bedrock automated reasoning policy. (AI-inferred)
 	Tags any
@@ -117,8 +119,11 @@ type AutomatedReasoningPolicyAttrs struct {
 	KmsKeyArn any
 	// The KMS key with which the Policy's assets will be encrypted at rest.
 	KmsKeyId any
+	// The name of this automated reasoning policy. (AI-inferred)
 	Name any
+	// The Amazon Resource Name (ARN) of this automated reasoning policy. (AI-inferred)
 	PolicyArn any
+	// The formal logic definition (rules, variables, and their relationships) this automated reasoning policy checks model responses against. (AI-inferred)
 	PolicyDefinition any
 	// The id of the policy
 	PolicyId any

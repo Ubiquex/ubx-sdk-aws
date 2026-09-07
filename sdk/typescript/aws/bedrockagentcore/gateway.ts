@@ -303,53 +303,78 @@ const Gateway_WafConfigurationFields: FieldMap = {
 };
 
 export interface GatewayConfig {
+  /** Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred) */
   authorizerConfiguration?: Gateway_AuthorizerConfiguration | Computed<Gateway_AuthorizerConfiguration>;
   /** Specifies the type of authorizer that the Bedrock Agent core gateway uses to authenticate and authorize incoming API requests before invoking the underlying agent. (AI-inferred) */
   authorizerType: string | Computed<string>;
+  /** The description of the gateway. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The exception level for the gateway. (AI-inferred) */
   exceptionLevel?: string | Computed<string>;
   /** Specifies a list of interceptor configurations that attach Lambda-based hooks to the agent core gateway for monitoring, modifying, or short-circuiting requests and responses between clients and the agent. (AI-inferred) */
   interceptorConfigurations?: Gateway_InterceptorConfigurations[] | Computed<Gateway_InterceptorConfigurations[]>;
   /** The ARN of the customer-managed AWS KMS key used to encrypt the Bedrock agent core gateway's data at rest, providing control over encryption. (AI-inferred) */
   kmsKeyArn?: string | Computed<string>;
+  /** The name of the gateway. (AI-inferred) */
   name: string | Computed<string>;
+  /** The policy engine configuration for the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies. (AI-inferred) */
   policyEngineConfiguration?: Gateway_PolicyEngineConfiguration | Computed<Gateway_PolicyEngineConfiguration>;
+  /** The protocol configuration for the gateway. (AI-inferred) */
   protocolConfiguration?: Gateway_ProtocolConfiguration | Computed<Gateway_ProtocolConfiguration>;
   /** Defines the communication protocol used by the core gateway, with supported values of 'APPLICATION' for application-to-agent traffic and 'AGENTS' for agent-to-agent traffic. (AI-inferred) */
   protocolType?: Gateway_ProtocolType | Computed<Gateway_ProtocolType>;
   /** The ARN of the IAM role that the Bedrock Agent Core Gateway assumes to invoke Amazon Bedrock agents and access related AWS services. (AI-inferred) */
   roleArn: string | Computed<string>;
+  /** The tags for the gateway. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
+  /** The AWS WAF configuration for the gateway. This configuration controls how the gateway behaves when the associated web ACL cannot be evaluated. (AI-inferred) */
   wafConfiguration?: Gateway_WafConfiguration | Computed<Gateway_WafConfiguration>;
 }
 
 export interface GatewayAttrs {
+  /** Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred) */
   authorizerConfiguration: Gateway_AuthorizerConfiguration;
   /** Specifies the type of authorizer that the Bedrock Agent core gateway uses to authenticate and authorize incoming API requests before invoking the underlying agent. (AI-inferred) */
   authorizerType: string;
+  /** The date and time at which the gateway was created. (AI-inferred) */
   createdAt: string;
+  /** The description of the gateway. (AI-inferred) */
   description: string;
+  /** The exception level for the gateway. (AI-inferred) */
   exceptionLevel: string;
+  /** The Amazon Resource Name (ARN) of the gateway. (AI-inferred) */
   gatewayArn: string;
+  /** The unique identifier of the gateway. (AI-inferred) */
   gatewayIdentifier: string;
+  /** The URL endpoint for the gateway. (AI-inferred) */
   gatewayUrl: string;
   /** Specifies a list of interceptor configurations that attach Lambda-based hooks to the agent core gateway for monitoring, modifying, or short-circuiting requests and responses between clients and the agent. (AI-inferred) */
   interceptorConfigurations: Gateway_InterceptorConfigurations[];
   /** The ARN of the customer-managed AWS KMS key used to encrypt the Bedrock agent core gateway's data at rest, providing control over encryption. (AI-inferred) */
   kmsKeyArn: string;
+  /** The name of the gateway. (AI-inferred) */
   name: string;
+  /** The policy engine configuration for the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies. (AI-inferred) */
   policyEngineConfiguration: Gateway_PolicyEngineConfiguration;
+  /** The protocol configuration for the gateway. (AI-inferred) */
   protocolConfiguration: Gateway_ProtocolConfiguration;
   /** Defines the communication protocol used by the core gateway, with supported values of 'APPLICATION' for application-to-agent traffic and 'AGENTS' for agent-to-agent traffic. (AI-inferred) */
   protocolType: Gateway_ProtocolType;
   /** The ARN of the IAM role that the Bedrock Agent Core Gateway assumes to invoke Amazon Bedrock agents and access related AWS services. (AI-inferred) */
   roleArn: string;
+  /** The status for the gateway. (AI-inferred) */
   status: string;
+  /** The status reasons for the gateway's own current status. (AI-inferred) */
   statusReasons: string[];
+  /** The tags for the gateway. (AI-inferred) */
   tags: unknown;
+  /** The date and time at which the gateway was updated. (AI-inferred) */
   updatedAt: string;
+  /** The AWS WAF configuration for the gateway. This configuration controls how the gateway behaves when the associated web ACL cannot be evaluated. (AI-inferred) */
   wafConfiguration: Gateway_WafConfiguration;
+  /** The Amazon Resource Name (ARN) of the AWS WAF web ACL associated with the gateway. (AI-inferred) */
   webAclArn: string;
+  /** Details of the workload identity associated with the gateway, used to authenticate the gateway's own outbound calls. (AI-inferred) */
   workloadIdentityDetails: Gateway_WorkloadIdentityDetails;
 }
 

@@ -141,6 +141,7 @@ class MetricAttrs:
     category: Any = None
     # The timestamp where the metric was created
     created_time: Any = None
+    # The user who created this metric. (AI-inferred)
     created_user: Any = None
     # Whether the metric was built with the guided Service Level (SL) experience, or with the free-form metric builder
     creation_method: Any = None
@@ -158,6 +159,7 @@ class MetricAttrs:
     last_modified_region: Any = None
     # The timestamp where the metric was last modified
     last_modified_time: Any = None
+    # The user who last modified this metric. (AI-inferred)
     last_modified_user: Any = None
     # The Amazon Resource Name (ARN) for the custom metric.
     metric_arn: Any = None

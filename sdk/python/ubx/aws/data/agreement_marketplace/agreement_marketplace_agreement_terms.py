@@ -114,9 +114,43 @@ class AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_Configuration
     enable_auto_renew: Any = None
 
 @dataclasses.dataclass
+class AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease_FixedPercentage:
+    value: Any = None
+
+@dataclasses.dataclass
+class AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease_PercentageRange:
+    default_value: Any = None
+    max_value: Any = None
+    min_value: Any = None
+
+@dataclasses.dataclass
+class AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease:
+    fixed_percentage: Any = None
+    percentage_range: Any = None
+
+@dataclasses.dataclass
+class AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate_Schedule:
+    charge_date_offset: Any = None
+    charge_percentage: Any = None
+    day_of_month: Any = None
+
+@dataclasses.dataclass
+class AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate:
+    schedule: Any = None
+
+@dataclasses.dataclass
+class AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_TermTemplates:
+    payment_schedule_term_template: Any = None
+
+@dataclasses.dataclass
 class AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm:
+    adjustment_deadline: Any = None
     configuration: Any = None
     id: Any = None
+    lockout_period: Any = None
+    max_renewals: Any = None
+    price_increase: Any = None
+    term_templates: Any = None
     type: Any = None
 
 @dataclasses.dataclass

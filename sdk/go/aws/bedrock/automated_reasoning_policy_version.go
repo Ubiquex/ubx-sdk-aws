@@ -18,6 +18,7 @@ type AutomatedReasoningPolicyVersionConfig struct {
 	LastUpdatedDefinitionHash any
 	// Arn of the policy
 	PolicyArn any
+	// The tags assigned to this automated reasoning policy version. (AI-inferred)
 	Tags any
 }
 
@@ -36,6 +37,7 @@ type AutomatedReasoningPolicyVersionAttrs struct {
 	PolicyArn any
 	// The id of the associated policy
 	PolicyId any
+	// The tags assigned to this automated reasoning policy version. (AI-inferred)
 	Tags any
 	// Time this policy was last updated
 	UpdatedAt any

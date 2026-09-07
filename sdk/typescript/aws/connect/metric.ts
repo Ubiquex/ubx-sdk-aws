@@ -135,6 +135,7 @@ export interface MetricAttrs {
   category: string;
   /** The timestamp where the metric was created */
   createdTime: number;
+  /** The user who created this metric. (AI-inferred) */
   createdUser: unknown;
   /** Whether the metric was built with the guided Service Level (SL) experience, or with the free-form metric builder */
   creationMethod: string;
@@ -152,6 +153,7 @@ export interface MetricAttrs {
   lastModifiedRegion: string;
   /** The timestamp where the metric was last modified */
   lastModifiedTime: number;
+  /** The user who last modified this metric. (AI-inferred) */
   lastModifiedUser: unknown;
   /** The Amazon Resource Name (ARN) for the custom metric. */
   metricArn: string;

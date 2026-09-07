@@ -209,6 +209,7 @@ class PolicyConfig:
     resource_type: Any = None
     # Specifies the list of AWS resource types (e.g., AWS::EC2::Instance, AWS::ElasticLoadBalancingV2::LoadBalancer) to which this Firewall Manager policy applies, filtering the resources evaluated and protected by the policy. (AI-inferred)
     resource_type_list: Any = None
+    # Whether AWS Firewall Manager removes the resources it created for this policy when the policy itself is deleted. (AI-inferred)
     resources_clean_up: Any = None
     # Firewall security service policy data.
     security_service_policy_data: Any = None
@@ -245,6 +246,7 @@ class PolicyAttrs:
     resource_type: Any = None
     # Specifies the list of AWS resource types (e.g., AWS::EC2::Instance, AWS::ElasticLoadBalancingV2::LoadBalancer) to which this Firewall Manager policy applies, filtering the resources evaluated and protected by the policy. (AI-inferred)
     resource_type_list: Any = None
+    # Whether AWS Firewall Manager removes the resources it created for this policy when the policy itself is deleted. (AI-inferred)
     resources_clean_up: Any = None
     # Firewall security service policy data.
     security_service_policy_data: Any = None

@@ -41,6 +41,7 @@ class PolicyEngineAttrs:
     policy_engine_arn: Any = None
     # The unique identifier for the policy engine
     policy_engine_id: Any = None
+    # The current status of the policy engine. (AI-inferred)
     status: Any = None
     # Additional information about the policy engine status
     status_reasons: Any = None

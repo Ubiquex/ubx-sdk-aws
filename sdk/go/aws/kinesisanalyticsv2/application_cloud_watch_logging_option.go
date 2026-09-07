@@ -24,6 +24,7 @@ type ApplicationCloudWatchLoggingOptionAttrs struct {
 	ApplicationName any
 	// Configures the CloudWatch Logs log stream (via its ARN) to which the Kinesis Analytics v2 application sends operational logs and metrics. (AI-inferred)
 	CloudWatchLoggingOption any
+	// The unique identifier of this Kinesis Analytics v2 application CloudWatch logging option. (AI-inferred)
 	Id any
 }
 

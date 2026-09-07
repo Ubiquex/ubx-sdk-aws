@@ -86,6 +86,7 @@ type FunctionConfig struct {
 	Description any
 	// The unique identifier for the function.
 	FunctionId any
+	// The type of this MediaTailor function. (AI-inferred)
 	FunctionType any
 	// Configuration for HTTP request functions.
 	HttpRequestConfiguration any
@@ -104,6 +105,7 @@ type FunctionAttrs struct {
 	Description any
 	// The unique identifier for the function.
 	FunctionId any
+	// The type of this MediaTailor function. (AI-inferred)
 	FunctionType any
 	// Configuration for HTTP request functions.
 	HttpRequestConfiguration any

@@ -68,6 +68,7 @@ type BranchConfig struct {
 	Description any
 	// Indicates whether automatic builds are enabled for the branch, causing Amplify to build the branch automatically every time a code change is pushed to the repository. (AI-inferred)
 	EnableAutoBuild any
+	// Whether performance mode is enabled for this Amplify branch, trading some CDN cache staleness for faster deploys. (AI-inferred)
 	EnablePerformanceMode any
 	// Indicates whether Amplify automatically generates a preview of the branch for every pull request, enabling you to test changes before merging them into the main branch. (AI-inferred)
 	EnablePullRequestPreview any
@@ -104,6 +105,7 @@ type BranchAttrs struct {
 	Description any
 	// Indicates whether automatic builds are enabled for the branch, causing Amplify to build the branch automatically every time a code change is pushed to the repository. (AI-inferred)
 	EnableAutoBuild any
+	// Whether performance mode is enabled for this Amplify branch, trading some CDN cache staleness for faster deploys. (AI-inferred)
 	EnablePerformanceMode any
 	// Indicates whether Amplify automatically generates a preview of the branch for every pull request, enabling you to test changes before merging them into the main branch. (AI-inferred)
 	EnablePullRequestPreview any

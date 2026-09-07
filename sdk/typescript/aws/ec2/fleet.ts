@@ -250,9 +250,21 @@ export interface Fleet_OnDemandOptions {
   singleInstanceType?: boolean | Computed<boolean>;
 }
 
+export interface Fleet_ReservedCapacityOptions_CapacityReservationTarget {
+  capacityReservationIds?: string[] | Computed<string[]>;
+  capacityReservationResourceGroupArns?: string[] | Computed<string[]>;
+}
+
+export interface Fleet_ReservedCapacityOptions_ReservedCapacityFallbackOptions {
+  marketTypes?: string[] | Computed<string[]>;
+}
+
 export interface Fleet_ReservedCapacityOptions {
+  allocationStrategy?: string | Computed<string>;
+  capacityReservationTarget?: Fleet_ReservedCapacityOptions_CapacityReservationTarget | Computed<Fleet_ReservedCapacityOptions_CapacityReservationTarget>;
   /** Specifies the types of reserved capacity (e.g., capacity-reservation or capacity-block) that the EC2 Fleet can use to fulfill On-Demand capacity. (AI-inferred) */
   reservationTypes?: string[] | Computed<string[]>;
+  reservedCapacityFallbackOptions?: Fleet_ReservedCapacityOptions_ReservedCapacityFallbackOptions | Computed<Fleet_ReservedCapacityOptions_ReservedCapacityFallbackOptions>;
 }
 
 export interface Fleet_SpotOptions_MaintenanceStrategies_CapacityRebalance {
@@ -562,8 +574,28 @@ const Fleet_OnDemandOptionsFields: FieldMap = {
   singleInstanceType: "single_instance_type",
 };
 
+const Fleet_ReservedCapacityOptions_CapacityReservationTargetFields: FieldMap = {
+  capacityReservationIds: "capacity_reservation_ids",
+  capacityReservationResourceGroupArns: "capacity_reservation_resource_group_arns",
+};
+
+const Fleet_ReservedCapacityOptions_ReservedCapacityFallbackOptionsFields: FieldMap = {
+  marketTypes: "market_types",
+};
+
 const Fleet_ReservedCapacityOptionsFields: FieldMap = {
+  allocationStrategy: "allocation_strategy",
+  capacityReservationTarget: {
+    wireName: "capacity_reservation_target",
+    kind: "object",
+    fields: Fleet_ReservedCapacityOptions_CapacityReservationTargetFields,
+  },
   reservationTypes: "reservation_types",
+  reservedCapacityFallbackOptions: {
+    wireName: "reserved_capacity_fallback_options",
+    kind: "object",
+    fields: Fleet_ReservedCapacityOptions_ReservedCapacityFallbackOptionsFields,
+  },
 };
 
 const Fleet_SpotOptions_MaintenanceStrategies_CapacityRebalanceFields: FieldMap = {

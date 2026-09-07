@@ -14,6 +14,7 @@ var RequesterGateway_TagsFields = ubx.FieldMap{
 	}
 
 type RequesterGatewayConfig struct {
+	// The description of this requester gateway. (AI-inferred)
 	Description any
 	// The ID of one or more security groups in order to create a requester gateway.
 	SecurityGroupIds any
@@ -21,15 +22,22 @@ type RequesterGatewayConfig struct {
 	SubnetIds any
 	// Tags to assign to the Requester Gateway.
 	Tags any
+	// A reference to the VPC this requester gateway is deployed in. (AI-inferred)
 	VpcId any
 }
 
 type RequesterGatewayAttrs struct {
+	// The number of currently active links connected to this requester gateway. (AI-inferred)
 	ActiveLinksCount any
+	// The Amazon Resource Name (ARN) of this requester gateway. (AI-inferred)
 	Arn any
+	// The date and time when this requester gateway was created. (AI-inferred)
 	CreatedTimestamp any
+	// The description of this requester gateway. (AI-inferred)
 	Description any
+	// The domain name assigned to this requester gateway. (AI-inferred)
 	DomainName any
+	// The unique identifier of this requester gateway. (AI-inferred)
 	GatewayId any
 	// The current status of the requester gateway, indicating its operational lifecycle state such as Active, Inactive, or Deleting, as managed by the RTB Fabric service. (AI-inferred)
 	RequesterGatewayStatus any
@@ -39,8 +47,11 @@ type RequesterGatewayAttrs struct {
 	SubnetIds any
 	// Tags to assign to the Requester Gateway.
 	Tags any
+	// The total number of links, active or otherwise, connected to this requester gateway. (AI-inferred)
 	TotalLinksCount any
+	// The date and time when this requester gateway was last updated. (AI-inferred)
 	UpdatedTimestamp any
+	// A reference to the VPC this requester gateway is deployed in. (AI-inferred)
 	VpcId any
 }
 

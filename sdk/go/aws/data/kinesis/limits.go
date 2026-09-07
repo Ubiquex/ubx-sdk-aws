@@ -7,6 +7,8 @@ type LimitsConfig struct {
 }
 
 type LimitsAttrs struct {
+	ChannelCount any
+	ChannelCountLimit any
 	OnDemandStreamCount any
 	OnDemandStreamCountLimit any
 	OpenShardCount any

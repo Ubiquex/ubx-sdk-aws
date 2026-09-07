@@ -7,10 +7,12 @@ export interface SeverityLevels_SeverityLevels {
 }
 
 export interface SeverityLevelsConfig {
+  dryRun?: boolean | Computed<boolean>;
   language?: string | Computed<string>;
 }
 
 export interface SeverityLevelsAttrs {
+  dryRun: boolean;
   language: string;
   severityLevels: SeverityLevels_SeverityLevels[];
 }
@@ -18,6 +20,7 @@ export interface SeverityLevelsAttrs {
 export const SeverityLevels: DataSourceBinding<SeverityLevelsConfig, SeverityLevelsAttrs> = {
   wireType: "aws_support_severity_levels",
   fields: {
+    dryRun: "dry_run",
     language: "language",
   },
 };

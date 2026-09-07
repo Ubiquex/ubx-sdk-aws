@@ -33,6 +33,7 @@ var PaymentConnector_CredentialProviderConfigurationsFields = ubx.FieldMap{
 type PaymentConnectorConfig struct {
 	// The name of the payment connector
 	ConnectorName any
+	// The real type of payment provider this connector integrates with. (AI-inferred)
 	ConnectorType any
 	// The credential provider configurations for the connector. Required when ProvisionMode is MANUAL or not specified. Empty for QUICK_CREATE until provisioning completes.
 	CredentialProviderConfigurations any
@@ -40,6 +41,7 @@ type PaymentConnectorConfig struct {
 	Description any
 	// The identifier of the parent payment manager
 	PaymentManagerId any
+	// How this payment connector's own underlying resources are provisioned. (AI-inferred)
 	ProvisionMode any
 }
 
@@ -52,7 +54,9 @@ type PaymentConnectorAttrs struct {
 	ConnectorLastUpdatedAt any
 	// The name of the payment connector
 	ConnectorName any
+	// The current status of this payment connector. (AI-inferred)
 	ConnectorStatus any
+	// The real type of payment provider this connector integrates with. (AI-inferred)
 	ConnectorType any
 	// The credential provider configurations for the connector. Required when ProvisionMode is MANUAL or not specified. Empty for QUICK_CREATE until provisioning completes.
 	CredentialProviderConfigurations any
@@ -64,6 +68,7 @@ type PaymentConnectorAttrs struct {
 	PaymentConnectorId any
 	// The identifier of the parent payment manager
 	PaymentManagerId any
+	// How this payment connector's own underlying resources are provisioned. (AI-inferred)
 	ProvisionMode any
 }
 

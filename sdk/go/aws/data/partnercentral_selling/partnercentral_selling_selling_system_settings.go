@@ -4,10 +4,12 @@ package partnercentral_selling
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PartnercentralSellingSellingSystemSettingsConfig struct {
+	// Value space is validated at runtime against an allowlist, so the model keeps only a coarse character-class pattern.
 	Catalog any
 }
 
 type PartnercentralSellingSellingSystemSettingsAttrs struct {
+	// Value space is validated at runtime against an allowlist, so the model keeps only a coarse character-class pattern.
 	Catalog any
 	ResourceSnapshotJobRoleArn any
 }

@@ -108,9 +108,43 @@ export interface AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_Co
   enableAutoRenew?: boolean | Computed<boolean>;
 }
 
+export interface AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease_FixedPercentage {
+  value?: string | Computed<string>;
+}
+
+export interface AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease_PercentageRange {
+  defaultValue?: string | Computed<string>;
+  maxValue?: string | Computed<string>;
+  minValue?: string | Computed<string>;
+}
+
+export interface AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease {
+  fixedPercentage?: AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease_FixedPercentage | Computed<AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease_FixedPercentage>;
+  percentageRange?: AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease_PercentageRange | Computed<AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease_PercentageRange>;
+}
+
+export interface AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate_Schedule {
+  chargeDateOffset?: string | Computed<string>;
+  chargePercentage?: string | Computed<string>;
+  dayOfMonth?: number | Computed<number>;
+}
+
+export interface AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate {
+  schedule?: AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate_Schedule[] | Computed<AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate_Schedule[]>;
+}
+
+export interface AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_TermTemplates {
+  paymentScheduleTermTemplate?: AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate | Computed<AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate>;
+}
+
 export interface AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm {
+  adjustmentDeadline?: string | Computed<string>;
   configuration?: AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_Configuration | Computed<AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_Configuration>;
   id?: string | Computed<string>;
+  lockoutPeriod?: string | Computed<string>;
+  maxRenewals?: number | Computed<number>;
+  priceIncrease?: AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease | Computed<AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease>;
+  termTemplates?: AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_TermTemplates[] | Computed<AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_TermTemplates[]>;
   type?: string | Computed<string>;
 }
 

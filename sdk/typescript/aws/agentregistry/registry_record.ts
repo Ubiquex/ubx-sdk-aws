@@ -85,6 +85,11 @@ export interface RegistryRecord_Descriptors_AgentSkillsDefinition {
   dataSchemaVersion?: string | Computed<string>;
 }
 
+export interface RegistryRecord_Descriptors_Agui {
+  /** Source configuration for a source-only descriptor. Unlike mcpServer/a2aAgentCard sources, source-only descriptors do not support credential providers. */
+  source?: RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalData_SkillMd_Source | Computed<RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalData_SkillMd_Source>;
+}
+
 export interface RegistryRecord_Descriptors_Custom {
   /** Descriptor payload data. */
   data?: string | Computed<string>;
@@ -118,8 +123,12 @@ export interface RegistryRecord_Descriptors {
   a2aAgentCard?: RegistryRecord_Descriptors_A2aAgentCard | Computed<RegistryRecord_Descriptors_A2aAgentCard>;
   /** The agent skills definition descriptor, populated when the record type is SKILL. */
   agentSkillsDefinition?: RegistryRecord_Descriptors_AgentSkillsDefinition | Computed<RegistryRecord_Descriptors_AgentSkillsDefinition>;
+  /** The AG-UI (Agent-User Interaction) descriptor, populated for records detected from an AG-UI protocol source. This descriptor is source-only: its content is synchronized from the configured source URL rather than supplied inline. */
+  agui?: RegistryRecord_Descriptors_Agui | Computed<RegistryRecord_Descriptors_Agui>;
   /** The custom descriptor, populated when the record type is CUSTOM. */
   custom?: RegistryRecord_Descriptors_Custom | Computed<RegistryRecord_Descriptors_Custom>;
+  /** The HTTP descriptor, populated for records detected from an HTTP protocol source. This descriptor is source-only: its content is synchronized from the configured source URL rather than supplied inline. */
+  http?: RegistryRecord_Descriptors_Agui | Computed<RegistryRecord_Descriptors_Agui>;
   /** The MCP server descriptor, populated when the record type is MCP. */
   mcpServer?: RegistryRecord_Descriptors_McpServer | Computed<RegistryRecord_Descriptors_McpServer>;
 }
@@ -231,6 +240,14 @@ const RegistryRecord_Descriptors_AgentSkillsDefinitionFields: FieldMap = {
   dataSchemaVersion: "data_schema_version",
 };
 
+const RegistryRecord_Descriptors_AguiFields: FieldMap = {
+  source: {
+    wireName: "source",
+    kind: "object",
+    fields: RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalData_SkillMd_SourceFields,
+  },
+};
+
 const RegistryRecord_Descriptors_CustomFields: FieldMap = {
   data: "data",
 };
@@ -274,10 +291,20 @@ const RegistryRecord_DescriptorsFields: FieldMap = {
     kind: "object",
     fields: RegistryRecord_Descriptors_AgentSkillsDefinitionFields,
   },
+  agui: {
+    wireName: "agui",
+    kind: "object",
+    fields: RegistryRecord_Descriptors_AguiFields,
+  },
   custom: {
     wireName: "custom",
     kind: "object",
     fields: RegistryRecord_Descriptors_CustomFields,
+  },
+  http: {
+    wireName: "http",
+    kind: "object",
+    fields: RegistryRecord_Descriptors_AguiFields,
   },
   mcpServer: {
     wireName: "mcp_server",
@@ -304,8 +331,8 @@ export interface RegistryRecordConfig {
   recordType: string | Computed<string>;
   /** The version of the registry record. */
   recordVersion?: string | Computed<string>;
-  /** The identifier of the registry containing the record. */
-  registryId: string | Computed<string>;
+  /** The identifier of the registry in which to create the record. You can specify either the registry ID or the registry Amazon Resource Name (ARN). Use the ARN form to reference a registry shared from another account via AWS Resource Access Manager (RAM). */
+  registryId?: string | Computed<string>;
   /** Tags to assign to the registry record. */
   tags?: RegistryRecord_Tags[] | Computed<RegistryRecord_Tags[]>;
 }
@@ -313,6 +340,8 @@ export interface RegistryRecordConfig {
 export interface RegistryRecordAttrs {
   /** The timestamp when the registry record was created. */
   createdAt: string;
+  /** The identifier of the AWS account that created the registry record. */
+  createdBy: string;
   /** The description of the registry record. */
   description: string;
   /** The typed set of descriptors for a registry record. Exactly one descriptor field is populated based on the record type. */
@@ -331,7 +360,7 @@ export interface RegistryRecordAttrs {
   recordVersion: string;
   /** The Amazon Resource Name (ARN) of the registry containing the record. */
   registryArn: string;
-  /** The identifier of the registry containing the record. */
+  /** The identifier of the registry in which to create the record. You can specify either the registry ID or the registry Amazon Resource Name (ARN). Use the ARN form to reference a registry shared from another account via AWS Resource Access Manager (RAM). */
   registryId: string;
   /** The lifecycle status of the registry record. */
   status: string;

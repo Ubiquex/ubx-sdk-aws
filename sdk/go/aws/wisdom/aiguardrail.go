@@ -192,6 +192,7 @@ type AiguardrailConfig struct {
 	Name any
 	// Sensitive information policy config for a guardrail.
 	SensitiveInformationPolicyConfig any
+	// The tags assigned to this Wisdom AI Guardrail. (AI-inferred)
 	Tags any
 	// Topic policy config for a guardrail.
 	TopicPolicyConfig any
@@ -224,6 +225,7 @@ type AiguardrailAttrs struct {
 	Name any
 	// Sensitive information policy config for a guardrail.
 	SensitiveInformationPolicyConfig any
+	// The tags assigned to this Wisdom AI Guardrail. (AI-inferred)
 	Tags any
 	// Topic policy config for a guardrail.
 	TopicPolicyConfig any

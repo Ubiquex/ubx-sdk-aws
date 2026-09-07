@@ -63,31 +63,40 @@ _DataTableAttribute_ValidationFields = {
 class DataTableAttributeConfig:
     # The Amazon Resource Name (ARN) of the data table to which this attribute is attached. (AI-inferred)
     data_table_arn: Any = None
+    # The description explaining the purpose and usage of this attribute. (AI-inferred)
     description: Any = None
     # The Amazon Resource Name (ARN) of the Amazon Connect instance that contains the data table to which this attribute belongs. (AI-inferred)
     instance_arn: Any = None
+    # The human-readable name of this attribute, unique within its own data table. (AI-inferred)
     name: Any = None
     # Boolean flag indicating whether this attribute serves as the primary key for the Amazon Connect data table, uniquely identifying each row. (AI-inferred)
     primary: Any = None
+    # The validation rules applied to values of this attribute. (AI-inferred)
     validation: Any = None
     # Specifies the data type of the attribute value (e.g., string, number, boolean) in an Amazon Connect data table, controlling how the value is stored and used in contact flows. (AI-inferred)
     value_type: Any = None
 
 @dataclasses.dataclass
 class DataTableAttributeAttrs:
+    # The unique identifier of this attribute within its own data table. (AI-inferred)
     attribute_id: Any = None
     # The Amazon Resource Name (ARN) of the data table to which this attribute is attached. (AI-inferred)
     data_table_arn: Any = None
+    # The description explaining the purpose and usage of this attribute. (AI-inferred)
     description: Any = None
     # The Amazon Resource Name (ARN) of the Amazon Connect instance that contains the data table to which this attribute belongs. (AI-inferred)
     instance_arn: Any = None
     # The AWS Region where the data table attribute was last updated or modified. (AI-inferred)
     last_modified_region: Any = None
+    # The date and time when this attribute was last modified. (AI-inferred)
     last_modified_time: Any = None
+    # The version number used to detect and prevent concurrent modification conflicts on this attribute. (AI-inferred)
     lock_version: Any = None
+    # The human-readable name of this attribute, unique within its own data table. (AI-inferred)
     name: Any = None
     # Boolean flag indicating whether this attribute serves as the primary key for the Amazon Connect data table, uniquely identifying each row. (AI-inferred)
     primary: Any = None
+    # The validation rules applied to values of this attribute. (AI-inferred)
     validation: Any = None
     # Specifies the data type of the attribute value (e.g., string, number, boolean) in an Amazon Connect data table, controlling how the value is stored and used in contact flows. (AI-inferred)
     value_type: Any = None

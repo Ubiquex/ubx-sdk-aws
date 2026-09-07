@@ -25,6 +25,7 @@ const VpcendpointService_TagsFields: FieldMap = {
 export interface VpcendpointServiceConfig {
   /** Indicates whether acceptance of connection requests to the VPC endpoint service is required from the service consumer. (AI-inferred) */
   acceptanceRequired?: boolean | Computed<boolean>;
+  /** Whether Amazon CloudWatch Contributor Insights is enabled for this VPC endpoint service. (AI-inferred) */
   contributorInsightsEnabled?: boolean | Computed<boolean>;
   /** The ARNs of one or more Gateway Load Balancers to associate with the endpoint service, routing traffic from the service to these load balancers. (AI-inferred) */
   gatewayLoadBalancerArns?: string[] | Computed<string[]>;
@@ -45,6 +46,7 @@ export interface VpcendpointServiceConfig {
 export interface VpcendpointServiceAttrs {
   /** Indicates whether acceptance of connection requests to the VPC endpoint service is required from the service consumer. (AI-inferred) */
   acceptanceRequired: boolean;
+  /** Whether Amazon CloudWatch Contributor Insights is enabled for this VPC endpoint service. (AI-inferred) */
   contributorInsightsEnabled: boolean;
   /** The ARNs of one or more Gateway Load Balancers to associate with the endpoint service, routing traffic from the service to these load balancers. (AI-inferred) */
   gatewayLoadBalancerArns: string[];

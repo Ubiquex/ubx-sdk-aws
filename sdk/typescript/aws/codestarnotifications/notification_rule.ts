@@ -18,6 +18,7 @@ export interface NotificationRuleConfig {
   createdBy?: string | Computed<string>;
   /** Specifies the level of detail included in the notifications, with BASIC providing only essential event information and FULL providing complete event details. (AI-inferred) */
   detailType: string | Computed<string>;
+  /** The unique identifier of the event type this notification rule triggers on. (AI-inferred) */
   eventTypeId?: string | Computed<string>;
   /** The list of event type IDs (e.g., codecommit-repository-comments-on-commits or codepipeline-pipeline-stage-execution-failed) that trigger the notification rule, each identifying a specific AWS service event that activates the notification. (AI-inferred) */
   eventTypeIds: string[] | Computed<string[]>;
@@ -42,6 +43,7 @@ export interface NotificationRuleAttrs {
   createdBy: string;
   /** Specifies the level of detail included in the notifications, with BASIC providing only essential event information and FULL providing complete event details. (AI-inferred) */
   detailType: string;
+  /** The unique identifier of the event type this notification rule triggers on. (AI-inferred) */
   eventTypeId: string;
   /** The list of event type IDs (e.g., codecommit-repository-comments-on-commits or codepipeline-pipeline-stage-execution-failed) that trigger the notification rule, each identifying a specific AWS service event that activates the notification. (AI-inferred) */
   eventTypeIds: string[];

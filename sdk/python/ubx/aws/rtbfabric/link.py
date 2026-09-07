@@ -96,31 +96,48 @@ _Link_TagsFields = {
 
 @dataclasses.dataclass
 class LinkConfig:
+    # A reference to the gateway this link originates from. (AI-inferred)
     gateway_id: Any = None
+    # Whether the peer gateway on this link is permitted to respond over plain HTTP rather than requiring HTTPS. (AI-inferred)
     http_responder_allowed: Any = None
+    # Attributes controlling how this link behaves. (AI-inferred)
     link_attributes: Any = None
+    # The application log settings for this link, including the sampling percentage for error and filter logs; set both to 0 to turn off application logging for the link. (AI-inferred)
     link_log_settings: Any = None
+    # The list of module configurations attached to this link, each controlling an additional piece of bid-processing behavior applied as traffic flows across the link. (AI-inferred)
     module_configuration_list: Any = None
+    # A reference to the peer gateway this link connects to on the other end. (AI-inferred)
     peer_gateway_id: Any = None
     # Tags to assign to the Link.
     tags: Any = None
 
 @dataclasses.dataclass
 class LinkAttrs:
+    # The Amazon Resource Name (ARN) of this link. (AI-inferred)
     arn: Any = None
+    # The date and time when this link was created. (AI-inferred)
     created_timestamp: Any = None
+    # A reference to the gateway this link originates from. (AI-inferred)
     gateway_id: Any = None
+    # Whether the peer gateway on this link is permitted to respond over plain HTTP rather than requiring HTTPS. (AI-inferred)
     http_responder_allowed: Any = None
+    # Attributes controlling how this link behaves. (AI-inferred)
     link_attributes: Any = None
+    # The direction of bid traffic flow across this link, relative to its own gateway. (AI-inferred)
     link_direction: Any = None
+    # The unique identifier of this link. (AI-inferred)
     link_id: Any = None
+    # The application log settings for this link, including the sampling percentage for error and filter logs; set both to 0 to turn off application logging for the link. (AI-inferred)
     link_log_settings: Any = None
     # The read-only status of the AWS RTB Fabric link, such as whether the link is active or inactive, which is determined and reported by the AWS RTB Fabric service. (AI-inferred)
     link_status: Any = None
+    # The list of module configurations attached to this link, each controlling an additional piece of bid-processing behavior applied as traffic flows across the link. (AI-inferred)
     module_configuration_list: Any = None
+    # A reference to the peer gateway this link connects to on the other end. (AI-inferred)
     peer_gateway_id: Any = None
     # Tags to assign to the Link.
     tags: Any = None
+    # The date and time when this link was last updated. (AI-inferred)
     updated_timestamp: Any = None
 
 Link = ubx.ResourceBinding(

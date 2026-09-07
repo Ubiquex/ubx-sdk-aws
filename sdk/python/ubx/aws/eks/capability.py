@@ -7,6 +7,13 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Capability_Configuration_Ack:
+    # A list of ACK service names to disable. Controllers for services in this list are not installed or managed.
+    disabled_services: Any = None
+    # Whether cross-namespace references are enabled for ACK controllers. When not specified, the service default applies.
+    enable_cross_namespace: Any = None
+
+@dataclasses.dataclass
 class Capability_Configuration_ArgoCd_AwsIdc:
     # The ARN of the IAM Identity Center instance to use for authentication.
     idc_instance_arn: Any = None
@@ -47,6 +54,7 @@ class Capability_Configuration_ArgoCd:
 
 @dataclasses.dataclass
 class Capability_Configuration:
+    # Configuration settings for an ACK (AWS Controllers for Kubernetes) capability.
     ack: Any = None
     # Configuration settings for an Argo CD capability. This includes the Kubernetes namespace, IAM Identity Center integration, RBAC role mappings, and network access configuration.
     argo_cd: Any = None

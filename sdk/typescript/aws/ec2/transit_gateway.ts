@@ -24,9 +24,11 @@ export interface TransitGatewayConfig {
   defaultRouteTableAssociation?: string | Computed<string>;
   /** The ID of the default route table to which all new attachments propagate routes. (AI-inferred) */
   defaultRouteTablePropagation?: string | Computed<string>;
+  /** The description of this transit gateway. (AI-inferred) */
   description?: string | Computed<string>;
   /** Indicates whether to enable or disable DNS support for the transit gateway, with valid values being 'enable' (default) or 'disable'. (AI-inferred) */
   dnsSupport?: string | Computed<string>;
+  /** Whether encryption support is enabled for this transit gateway. (AI-inferred) */
   encryptionSupport?: string | Computed<string>;
   /** Indicates whether multicast support is enabled for the transit gateway, with valid values 'enable' or 'disable' and defaulting to disabled. (AI-inferred) */
   multicastSupport?: string | Computed<string>;
@@ -53,10 +55,13 @@ export interface TransitGatewayAttrs {
   defaultRouteTableAssociation: string;
   /** The ID of the default route table to which all new attachments propagate routes. (AI-inferred) */
   defaultRouteTablePropagation: string;
+  /** The description of this transit gateway. (AI-inferred) */
   description: string;
   /** Indicates whether to enable or disable DNS support for the transit gateway, with valid values being 'enable' (default) or 'disable'. (AI-inferred) */
   dnsSupport: string;
+  /** Whether encryption support is enabled for this transit gateway. (AI-inferred) */
   encryptionSupport: string;
+  /** The current state of this transit gateway's own encryption support setting. (AI-inferred) */
   encryptionSupportState: string;
   /** The unique identifier (ID) of the transit gateway, such as tgw-0a1b2c3d4e5f67890, assigned by AWS when the resource is created. (AI-inferred) */
   id: string;

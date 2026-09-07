@@ -4,6 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
+from .cognito_idp_client_token import CognitoIdpClientToken, CognitoIdpClientTokenConfig
 from .cognito_idp_csvheader import CognitoIdpCsvheader, CognitoIdpCsvheaderConfig
 from .cognito_idp_device import CognitoIdpDevice, CognitoIdpDeviceConfig
 from .cognito_idp_devices import CognitoIdpDevices, CognitoIdpDevicesConfig
@@ -18,6 +19,7 @@ from .cognito_idp_risk_configuration import CognitoIdpRiskConfiguration, Cognito
 from .cognito_idp_signing_certificate import CognitoIdpSigningCertificate, CognitoIdpSigningCertificateConfig
 from .cognito_idp_tags_for_resource import CognitoIdpTagsForResource, CognitoIdpTagsForResourceConfig
 from .cognito_idp_terms import CognitoIdpTerms, CognitoIdpTermsConfig
+from .cognito_idp_terms_by_client import CognitoIdpTermsByClient, CognitoIdpTermsByClientConfig
 from .cognito_idp_tokens_from_refresh_token import CognitoIdpTokensFromRefreshToken, CognitoIdpTokensFromRefreshTokenConfig
 from .cognito_idp_uicustomization import CognitoIdpUicustomization, CognitoIdpUicustomizationConfig
 from .cognito_idp_user import CognitoIdpUser, CognitoIdpUserConfig

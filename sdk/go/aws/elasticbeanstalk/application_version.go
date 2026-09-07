@@ -29,6 +29,7 @@ type ApplicationVersionAttrs struct {
 	ApplicationName any
 	// A description of this application version.
 	Description any
+	// The unique identifier of this Elastic Beanstalk application version. (AI-inferred)
 	Id any
 	// The source_bundle specifies the Amazon S3 bucket and key where the application version source bundle is located. (AI-inferred)
 	SourceBundle any

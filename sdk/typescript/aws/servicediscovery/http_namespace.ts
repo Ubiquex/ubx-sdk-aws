@@ -13,24 +13,24 @@ const HttpNamespace_TagsFields: FieldMap = {
 };
 
 export interface HttpNamespaceConfig {
-  /** Provides an optional human-readable description for the HTTP namespace, helping to identify its purpose or distinguish it from other namespaces in service discovery. (AI-inferred) */
+  /** A description for the namespace. */
   description?: string | Computed<string>;
-  /** The name of the HTTP namespace, which must be unique within the AWS account and can contain up to 1024 characters. (AI-inferred) */
+  /** The name that you want to assign to this namespace. */
   name: string | Computed<string>;
-  /** Specifies a list of key-value tags to associate with the HTTP namespace, enabling you to organize, identify, and manage cost allocation for the namespace. (AI-inferred) */
+  /** The tags for the namespace. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. */
   tags?: HttpNamespace_Tags[] | Computed<HttpNamespace_Tags[]>;
 }
 
 export interface HttpNamespaceAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the HTTP namespace in AWS. (AI-inferred) */
+  /** The Amazon Resource Name (ARN) of the namespace. */
   arn: string;
-  /** Provides an optional human-readable description for the HTTP namespace, helping to identify its purpose or distinguish it from other namespaces in service discovery. (AI-inferred) */
+  /** A description for the namespace. */
   description: string;
-  /** The ID of the HTTP namespace, assigned by AWS Cloud Map when the namespace is created. (AI-inferred) */
+  /** The ID of the namespace. */
   id: string;
-  /** The name of the HTTP namespace, which must be unique within the AWS account and can contain up to 1024 characters. (AI-inferred) */
+  /** The name that you want to assign to this namespace. */
   name: string;
-  /** Specifies a list of key-value tags to associate with the HTTP namespace, enabling you to organize, identify, and manage cost allocation for the namespace. (AI-inferred) */
+  /** The tags for the namespace. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. */
   tags: HttpNamespace_Tags[];
 }
 

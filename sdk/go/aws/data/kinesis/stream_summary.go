@@ -17,6 +17,7 @@ type StreamSummary_StreamDescriptionSummary_WarmThroughput struct {
 }
 
 type StreamSummary_StreamDescriptionSummary struct {
+	ChannelCount any
 	ConsumerCount any
 	EncryptionType any
 	EnhancedMonitoring any

@@ -49,6 +49,7 @@ type ScheduledQueryConfig struct {
 	ExecutionRoleArn any
 	// Specifies the list of log group names or ARNs that the scheduled query will run against. (AI-inferred)
 	LogGroupIdentifiers any
+	// The name of this scheduled query. (AI-inferred)
 	Name any
 	// The query language used to parse and execute the scheduled query string, where `CWLI` denotes CloudWatch Logs Insights and `PPL` denotes OpenSearch Piped Processing Language. (AI-inferred)
 	QueryLanguage any
@@ -86,6 +87,7 @@ type ScheduledQueryAttrs struct {
 	LastUpdatedTime any
 	// Specifies the list of log group names or ARNs that the scheduled query will run against. (AI-inferred)
 	LogGroupIdentifiers any
+	// The name of this scheduled query. (AI-inferred)
 	Name any
 	// The query language used to parse and execute the scheduled query string, where `CWLI` denotes CloudWatch Logs Insights and `PPL` denotes OpenSearch Piped Processing Language. (AI-inferred)
 	QueryLanguage any

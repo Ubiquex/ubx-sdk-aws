@@ -51,13 +51,16 @@ class LinkRoutingRuleConfig:
     conditions: Any = None
     # The ID of the gateway (such as an internet gateway or virtual private gateway) that the routing rule uses to direct matching traffic. (AI-inferred)
     gateway_id: Any = None
+    # A reference to the link this routing rule directs matching bid traffic to. (AI-inferred)
     link_id: Any = None
+    # The priority of this routing rule relative to the gateway's other routing rules; lower values are evaluated first. (AI-inferred)
     priority: Any = None
     # Tags to assign to the LinkRoutingRule.
     tags: Any = None
 
 @dataclasses.dataclass
 class LinkRoutingRuleAttrs:
+    # The Amazon Resource Name (ARN) of this link routing rule. (AI-inferred)
     arn: Any = None
     # Conditions for a routing rule. All non-null fields must match (AND logic). At least one field must be set. HostHeader and HostHeaderWildcard are mutually exclusive. PathPrefix and PathExact are mutually exclusive.
     conditions: Any = None
@@ -65,9 +68,13 @@ class LinkRoutingRuleAttrs:
     created_timestamp: Any = None
     # The ID of the gateway (such as an internet gateway or virtual private gateway) that the routing rule uses to direct matching traffic. (AI-inferred)
     gateway_id: Any = None
+    # A reference to the link this routing rule directs matching bid traffic to. (AI-inferred)
     link_id: Any = None
+    # The priority of this routing rule relative to the gateway's other routing rules; lower values are evaluated first. (AI-inferred)
     priority: Any = None
+    # The unique identifier of this routing rule. (AI-inferred)
     rule_id: Any = None
+    # The current status of this routing rule. (AI-inferred)
     status: Any = None
     # Tags to assign to the LinkRoutingRule.
     tags: Any = None

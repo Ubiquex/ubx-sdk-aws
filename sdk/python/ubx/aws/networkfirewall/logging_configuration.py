@@ -36,6 +36,7 @@ _LoggingConfiguration_LoggingConfigurationFields = {
 
 @dataclasses.dataclass
 class LoggingConfigurationConfig:
+    # Whether the Network Firewall monitoring dashboard is enabled for this logging configuration's own firewall. (AI-inferred)
     enable_monitoring_dashboard: Any = None
     # A resource ARN.
     firewall_arn: Any = None
@@ -46,6 +47,7 @@ class LoggingConfigurationConfig:
 
 @dataclasses.dataclass
 class LoggingConfigurationAttrs:
+    # Whether the Network Firewall monitoring dashboard is enabled for this logging configuration's own firewall. (AI-inferred)
     enable_monitoring_dashboard: Any = None
     # A resource ARN.
     firewall_arn: Any = None

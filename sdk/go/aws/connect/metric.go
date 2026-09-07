@@ -137,6 +137,7 @@ type MetricAttrs struct {
 	Category any
 	// The timestamp where the metric was created
 	CreatedTime any
+	// The user who created this metric. (AI-inferred)
 	CreatedUser any
 	// Whether the metric was built with the guided Service Level (SL) experience, or with the free-form metric builder
 	CreationMethod any
@@ -154,6 +155,7 @@ type MetricAttrs struct {
 	LastModifiedRegion any
 	// The timestamp where the metric was last modified
 	LastModifiedTime any
+	// The user who last modified this metric. (AI-inferred)
 	LastModifiedUser any
 	// The Amazon Resource Name (ARN) for the custom metric.
 	MetricArn any

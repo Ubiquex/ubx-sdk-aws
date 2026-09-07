@@ -36,6 +36,24 @@ export interface ConfiguredTable_AnalysisRules_Policy_V1_Aggregation {
   scalarFunctions?: string[] | Computed<string[]>;
 }
 
+export interface ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholds {
+  minimumIdentityCount?: number | Computed<number>;
+  outputColumnName?: string | Computed<string>;
+}
+
+export interface ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds {
+  allowedAggregateExpressionType?: string | Computed<string>;
+  identityColumns?: string[] | Computed<string[]>;
+  minimumIdentityCount?: number | Computed<number>;
+  outputColumnThresholds?: ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholds[] | Computed<ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholds[]>;
+  type?: string | Computed<string>;
+}
+
+export interface ConfiguredTable_AnalysisRules_Policy_V1_Custom_ComparisonControls {
+  allowedColumnComparisonColumns?: string[] | Computed<string[]>;
+  allowedLiteralComparisonColumns?: string[] | Computed<string[]>;
+}
+
 export interface ConfiguredTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy_Columns {
   /** The name of a column that is included in the differential privacy policy of the custom analysis rule, specifying which configured table column is protected by the differential privacy aggregation. (AI-inferred) */
   name?: string | Computed<string>;
@@ -49,10 +67,12 @@ export interface ConfiguredTable_AnalysisRules_Policy_V1_Custom_DifferentialPriv
 export interface ConfiguredTable_AnalysisRules_Policy_V1_Custom {
   /** Specifies whether the results of a query executed on this configured table can be used in subsequent additional analyses, with allowed values ALLOWED, REQUIRED, or NOT_ALLOWED. (AI-inferred) */
   additionalAnalyses?: string | Computed<string>;
+  aggregationThresholds?: ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds[] | Computed<ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds[]>;
   /** A list of allowed analysis template identifiers (such as ARNs) that are permitted to run against the configured table under this custom analysis rule. (AI-inferred) */
   allowedAnalyses?: string[] | Computed<string[]>;
   /** Specifies the Amazon Resource Names (ARNs) of the analysis providers that are permitted to run analyses on the configured table under this custom analysis rule. (AI-inferred) */
   allowedAnalysisProviders?: string[] | Computed<string[]>;
+  comparisonControls?: ConfiguredTable_AnalysisRules_Policy_V1_Custom_ComparisonControls | Computed<ConfiguredTable_AnalysisRules_Policy_V1_Custom_ComparisonControls>;
   /** Specifies the differential privacy configuration for the custom analysis rule, including the list of protected columns and the epsilon value that controls the privacy-accuracy trade-off for query results. (AI-inferred) */
   differentialPrivacy?: ConfiguredTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy | Computed<ConfiguredTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy>;
   /** Specifies the list of column names that must be excluded from the output of queries run under this custom analysis rule policy, preventing collaborators from viewing those columns. (AI-inferred) */
@@ -183,6 +203,28 @@ const ConfiguredTable_AnalysisRules_Policy_V1_AggregationFields: FieldMap = {
   scalarFunctions: "scalar_functions",
 };
 
+const ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholdsFields: FieldMap = {
+  minimumIdentityCount: "minimum_identity_count",
+  outputColumnName: "output_column_name",
+};
+
+const ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholdsFields: FieldMap = {
+  allowedAggregateExpressionType: "allowed_aggregate_expression_type",
+  identityColumns: "identity_columns",
+  minimumIdentityCount: "minimum_identity_count",
+  outputColumnThresholds: {
+    wireName: "output_column_thresholds",
+    kind: "list",
+    fields: ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholdsFields,
+  },
+  type: "type",
+};
+
+const ConfiguredTable_AnalysisRules_Policy_V1_Custom_ComparisonControlsFields: FieldMap = {
+  allowedColumnComparisonColumns: "allowed_column_comparison_columns",
+  allowedLiteralComparisonColumns: "allowed_literal_comparison_columns",
+};
+
 const ConfiguredTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy_ColumnsFields: FieldMap = {
   name: "name",
 };
@@ -197,8 +239,18 @@ const ConfiguredTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacyFields: 
 
 const ConfiguredTable_AnalysisRules_Policy_V1_CustomFields: FieldMap = {
   additionalAnalyses: "additional_analyses",
+  aggregationThresholds: {
+    wireName: "aggregation_thresholds",
+    kind: "list",
+    fields: ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholdsFields,
+  },
   allowedAnalyses: "allowed_analyses",
   allowedAnalysisProviders: "allowed_analysis_providers",
+  comparisonControls: {
+    wireName: "comparison_controls",
+    kind: "object",
+    fields: ConfiguredTable_AnalysisRules_Policy_V1_Custom_ComparisonControlsFields,
+  },
   differentialPrivacy: {
     wireName: "differential_privacy",
     kind: "object",

@@ -7,6 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IntermediateTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholds:
+    minimum_identity_count: Any = None
+    output_column_name: Any = None
+
+@dataclasses.dataclass
+class IntermediateTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds:
+    allowed_aggregate_expression_type: Any = None
+    identity_columns: Any = None
+    minimum_identity_count: Any = None
+    output_column_thresholds: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class IntermediateTable_AnalysisRules_Policy_V1_Custom_ComparisonControls:
+    allowed_column_comparison_columns: Any = None
+    allowed_literal_comparison_columns: Any = None
+
+@dataclasses.dataclass
 class IntermediateTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy_Columns:
     # The name of the column in the configured table to which the differential privacy policy is applied. (AI-inferred)
     name: Any = None
@@ -20,12 +38,14 @@ class IntermediateTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy:
 class IntermediateTable_AnalysisRules_Policy_V1_Custom:
     # This field specifies the ARNs of additional analyses that are allowed to be run on the intermediate table under the custom analysis rule policy. (AI-inferred)
     additional_analyses: Any = None
+    aggregation_thresholds: Any = None
     # Specifies the list of allowed analysis template names (strings) that collaborators may run on the configured table under this custom analysis rule, restricting which analyses are permitted. (AI-inferred)
     allowed_analyses: Any = None
     # This list of strings defines the AWS account IDs that are authorized to act as analysis providers for the custom analysis rule, restricting which accounts can run SQL queries against the intermediate table. (AI-inferred)
     allowed_analysis_providers: Any = None
     # Specifies the list of member account identifiers that are allowed to receive the results of queries run under this custom analysis rule policy. (AI-inferred)
     allowed_result_receivers: Any = None
+    comparison_controls: Any = None
     # Defines the differential privacy settings for the custom analysis rule, specifying the privacy budget and noise injection mechanism applied to prevent re-identification of individual records. (AI-inferred)
     differential_privacy: Any = None
     # Specifies the list of column names from the intermediate table that are prohibited from being included in the output of any query executed under this custom analysis rule, preventing sensitive data from being exposed. (AI-inferred)
@@ -63,6 +83,28 @@ class IntermediateTable_Tags:
     key: Any = None
     value: Any = None
 
+_IntermediateTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholdsFields = {
+    "minimum_identity_count": ubx.FieldSpec(wire_name="minimum_identity_count"),
+    "output_column_name": ubx.FieldSpec(wire_name="output_column_name"),
+}
+
+_IntermediateTable_AnalysisRules_Policy_V1_Custom_AggregationThresholdsFields = {
+    "allowed_aggregate_expression_type": ubx.FieldSpec(wire_name="allowed_aggregate_expression_type"),
+    "identity_columns": ubx.FieldSpec(wire_name="identity_columns"),
+    "minimum_identity_count": ubx.FieldSpec(wire_name="minimum_identity_count"),
+    "output_column_thresholds": ubx.FieldSpec(
+        wire_name="output_column_thresholds",
+        kind="list",
+        fields=_IntermediateTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholdsFields,
+    ),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_IntermediateTable_AnalysisRules_Policy_V1_Custom_ComparisonControlsFields = {
+    "allowed_column_comparison_columns": ubx.FieldSpec(wire_name="allowed_column_comparison_columns"),
+    "allowed_literal_comparison_columns": ubx.FieldSpec(wire_name="allowed_literal_comparison_columns"),
+}
+
 _IntermediateTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy_ColumnsFields = {
     "name": ubx.FieldSpec(wire_name="name"),
 }
@@ -77,9 +119,19 @@ _IntermediateTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacyFields = {
 
 _IntermediateTable_AnalysisRules_Policy_V1_CustomFields = {
     "additional_analyses": ubx.FieldSpec(wire_name="additional_analyses"),
+    "aggregation_thresholds": ubx.FieldSpec(
+        wire_name="aggregation_thresholds",
+        kind="list",
+        fields=_IntermediateTable_AnalysisRules_Policy_V1_Custom_AggregationThresholdsFields,
+    ),
     "allowed_analyses": ubx.FieldSpec(wire_name="allowed_analyses"),
     "allowed_analysis_providers": ubx.FieldSpec(wire_name="allowed_analysis_providers"),
     "allowed_result_receivers": ubx.FieldSpec(wire_name="allowed_result_receivers"),
+    "comparison_controls": ubx.FieldSpec(
+        wire_name="comparison_controls",
+        kind="object",
+        fields=_IntermediateTable_AnalysisRules_Policy_V1_Custom_ComparisonControlsFields,
+    ),
     "differential_privacy": ubx.FieldSpec(
         wire_name="differential_privacy",
         kind="object",
@@ -135,24 +187,29 @@ _IntermediateTable_TagsFields = {
 class IntermediateTableConfig:
     # Defines the analysis constraints that govern how members can query the intermediate table, including the allowed analysis methods and their configurations. (AI-inferred)
     analysis_rules: Any = None
+    # The description of this intermediate table. (AI-inferred)
     description: Any = None
     # Specifies the AWS KMS key ARN used to encrypt the intermediate table, enabling customer-managed server-side encryption for the table's data. (AI-inferred)
     kms_key_arn: Any = None
     # The unique identifier of the membership within the AWS Clean Rooms collaboration that this intermediate table belongs to. (AI-inferred)
     membership_identifier: Any = None
+    # The name of this intermediate table. (AI-inferred)
     name: Any = None
     population_analysis_configuration: Any = None
+    # The tags assigned to this intermediate table. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class IntermediateTableAttrs:
     # Defines the analysis constraints that govern how members can query the intermediate table, including the allowed analysis methods and their configurations. (AI-inferred)
     analysis_rules: Any = None
+    # The Amazon Resource Name (ARN) of this intermediate table. (AI-inferred)
     arn: Any = None
     # The Amazon Resource Name (ARN) of the AWS Clean Rooms collaboration in which the intermediate table is defined. (AI-inferred)
     collaboration_arn: Any = None
     # The unique identifier of the AWS Clean Rooms collaboration that this intermediate table belongs to. (AI-inferred)
     collaboration_identifier: Any = None
+    # The description of this intermediate table. (AI-inferred)
     description: Any = None
     # The system-generated unique identifier assigned by AWS Clean Rooms to this intermediate table, used to reference and manage the table resource. (AI-inferred)
     intermediate_table_identifier: Any = None
@@ -162,9 +219,12 @@ class IntermediateTableAttrs:
     membership_arn: Any = None
     # The unique identifier of the membership within the AWS Clean Rooms collaboration that this intermediate table belongs to. (AI-inferred)
     membership_identifier: Any = None
+    # The name of this intermediate table. (AI-inferred)
     name: Any = None
     population_analysis_configuration: Any = None
+    # The current status of this intermediate table. (AI-inferred)
     status: Any = None
+    # The tags assigned to this intermediate table. (AI-inferred)
     tags: Any = None
 
 IntermediateTable = ubx.ResourceBinding(

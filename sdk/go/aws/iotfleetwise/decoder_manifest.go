@@ -228,6 +228,7 @@ type DecoderManifestConfig struct {
 	SignalDecoders any
 	// The status of the decoder manifest, which is set to either 'DRAFT' or 'ACTIVE' to indicate whether the manifest is in a draft state or ready for use. (AI-inferred)
 	Status any
+	// The tags assigned to this IoT FleetWise decoder manifest. (AI-inferred)
 	Tags any
 }
 
@@ -252,6 +253,7 @@ type DecoderManifestAttrs struct {
 	SignalDecoders any
 	// The status of the decoder manifest, which is set to either 'DRAFT' or 'ACTIVE' to indicate whether the manifest is in a draft state or ready for use. (AI-inferred)
 	Status any
+	// The tags assigned to this IoT FleetWise decoder manifest. (AI-inferred)
 	Tags any
 }
 

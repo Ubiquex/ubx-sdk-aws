@@ -74,6 +74,7 @@ type DbclusterConfig struct {
 	ServerlessV2ScalingConfiguration any
 	// The identifier of an existing DB cluster snapshot to restore the cluster from when creating it. (AI-inferred)
 	SnapshotIdentifier any
+	// A reference to the source DocumentDB cluster this cluster was restored or replicated from. (AI-inferred)
 	SourceDbclusterIdentifier any
 	// Indicates whether the DB cluster's storage is encrypted at rest, using AWS Key Management Service (KMS) keys. (AI-inferred)
 	StorageEncrypted any
@@ -144,6 +145,7 @@ type DbclusterAttrs struct {
 	ServerlessV2ScalingConfiguration any
 	// The identifier of an existing DB cluster snapshot to restore the cluster from when creating it. (AI-inferred)
 	SnapshotIdentifier any
+	// A reference to the source DocumentDB cluster this cluster was restored or replicated from. (AI-inferred)
 	SourceDbclusterIdentifier any
 	// Indicates whether the DB cluster's storage is encrypted at rest, using AWS Key Management Service (KMS) keys. (AI-inferred)
 	StorageEncrypted any

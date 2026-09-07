@@ -2,16 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Volume_OntapConfiguration_AggregateConfiguration {
-  /** Specifies the list of ONTAP aggregates (storage pools) to which the volume's data is assigned within the aggregate configuration of an FSx for ONTAP volume. (AI-inferred) */
+  /** The list of aggregates that this volume resides on. Aggregates are storage pools which make up your primary storage tier. */
   aggregates?: string[] | Computed<string[]>;
-  /** For an FSx for ONTAP volume, specifies the number of constituent volumes to create within each aggregate that is selected by the aggregate configuration, controlling the volume's data distribution and performance across aggregates. (AI-inferred) */
+  /** Used to explicitly set the number of constituents within the FlexGroup per storage aggregate. This field is optional when creating a FlexGroup volume. If unspecified, the default value will be 8. This field cannot be provided when creating a FlexVol volume. */
   constituentsPerAggregate?: number | Computed<number>;
 }
 
 export interface Volume_OntapConfiguration_SnaplockConfiguration_AutocommitPeriod {
-  /** Specifies the unit of time (DAYS, MONTHS, or YEARS) used with the accompanying value to determine how long after creation a file on a SnapLock volume is automatically committed to a write-once-read-many (WORM) state. (AI-inferred) */
+  /** Defines the type of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. Setting this value to NONE disables autocommit. The default value is NONE. */
   type: string | Computed<string>;
-  /** The numeric value of the autocommit period, used with the unit type to define how long after file modification or creation files are automatically committed to the WORM state in the SnapLock configuration of the FSx for ONTAP volume. (AI-inferred) */
+  /** Defines the amount of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. */
   value?: number | Computed<number>;
 }
 
@@ -25,53 +25,53 @@ export interface Volume_OntapConfiguration_SnaplockConfiguration_RetentionPeriod
 }
 
 export interface Volume_OntapConfiguration_SnaplockConfiguration {
-  /** The name or ID of the ONTAP volume used to store audit logs for this SnapLock configuration. (AI-inferred) */
+  /** Enables or disables the audit log volume for an FSx for ONTAP SnapLock volume */
   auditLogVolume?: string | Computed<string>;
   /** Specifies the duration after which a file on the FSx for ONTAP SnapLock volume is automatically committed to the WORM state, using a predefined interval such as 5 minutes, 1 hour, or 1 day. (AI-inferred) */
   autocommitPeriod?: Volume_OntapConfiguration_SnaplockConfiguration_AutocommitPeriod | Computed<Volume_OntapConfiguration_SnaplockConfiguration_AutocommitPeriod>;
-  /** Specifies whether privileged delete is enabled or disabled for the SnapLock volume, controlling whether an administrator can permanently delete files before their retention period expires. (AI-inferred) */
+  /** Enables, disables, or permanently disables privileged delete on an FSx for ONTAP SnapLock Enterprise volume. */
   privilegedDelete?: string | Computed<string>;
   /** Defines the default and maximum retention periods for WORM-protected files in this ONTAP SnapLock volume. (AI-inferred) */
   retentionPeriod?: Volume_OntapConfiguration_SnaplockConfiguration_RetentionPeriod | Computed<Volume_OntapConfiguration_SnaplockConfiguration_RetentionPeriod>;
-  /** Specifies the SnapLock immutability mode for the volume, either 'COMPLIANCE' or 'ENTERPRISE', determining the WORM (write-once-read-many) protection behavior. (AI-inferred) */
+  /** Specifies the retention mode of an FSx for ONTAP SnapLock volume. After it is set, it can't be changed. */
   snaplockType: string | Computed<string>;
-  /** Turns on volume append mode for the SnapLock volume, allowing existing WORM-protected files to be appended to without modifying or deleting their content. (AI-inferred) */
+  /** Enables or disables volume-append mode on an FSx for ONTAP SnapLock volume. */
   volumeAppendModeEnabled?: string | Computed<string>;
 }
 
 export interface Volume_OntapConfiguration_TieringPolicy {
-  /** The number of days data must remain in the standard (hot) storage tier before being automatically moved to the cold capacity pool storage tier for this FSx for ONTAP volume's tiering policy. (AI-inferred) */
+  /** Specifies the number of days that user data in a volume must remain inactive before it is considered "cold" and moved to the capacity pool. */
   coolingPeriod?: number | Computed<number>;
-  /** Specifies the tiering policy name that controls how data is tiered from SSD to cold storage for the ONTAP volume, with allowed values like AUTO, ALL, SNAPSHOT_ONLY, or NONE. (AI-inferred) */
+  /** Specifies the tiering policy used to transition data. Default value is SNAPSHOT_ONLY. */
   name?: string | Computed<string>;
 }
 
 export interface Volume_OntapConfiguration {
   /** Configures the ONTAP storage aggregate name and size for the FSx volume, determining which aggregate hosts the volume's data and its allocated storage capacity. (AI-inferred) */
   aggregateConfiguration?: Volume_OntapConfiguration_AggregateConfiguration | Computed<Volume_OntapConfiguration_AggregateConfiguration>;
-  /** Indicates whether tags on the volume are copied to backups created from it. (AI-inferred) */
+  /** A boolean flag indicating whether tags for the volume should be copied to backups. */
   copyTagsToBackups?: string | Computed<string>;
-  /** The junction path where the ONTAP volume is mounted within the file system, such as /vol1. (AI-inferred) */
+  /** Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The JunctionPath must have a leading forward slash, such as /vol3. */
   junctionPath?: string | Computed<string>;
-  /** Specifies the ONTAP volume type for the volume, with valid values RW (read/write), DP (data-protection), or LS (load-sharing). (AI-inferred) */
+  /** Specifies the type of volume you are creating. Valid values are the following: RW or DP */
   ontapVolumeType?: string | Computed<string>;
-  /** Specifies the security style for the FSx for ONTAP volume, which can be UNIX, NTFS, or MIXED, controlling how file and directory permissions are applied. (AI-inferred) */
+  /** Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. */
   securityStyle?: string | Computed<string>;
-  /** The size of the FSx for ONTAP volume, specified in bytes. (AI-inferred) */
+  /** Specifies the configured size of the volume, in bytes. */
   sizeInBytes?: string | Computed<string>;
-  /** Specifies the storage capacity of the FSx for ONTAP volume in megabytes (MB), used to set the volume's size. (AI-inferred) */
+  /** Use SizeInBytes instead. Specifies the size of the volume, in megabytes (MB), that you are creating */
   sizeInMegabytes?: string | Computed<string>;
   /** Specifies the SnapLock (write-once, read-many) compliance settings for the FSx for ONTAP volume, including retention periods, autocommit interval, privileged delete behavior, and whether the volume is a SnapLock audit log volume. (AI-inferred) */
   snaplockConfiguration?: Volume_OntapConfiguration_SnaplockConfiguration | Computed<Volume_OntapConfiguration_SnaplockConfiguration>;
-  /** The snapshot policy to apply to the FSx for ONTAP volume, controlling automatic snapshot creation schedules. (AI-inferred) */
+  /** Specifies the snapshot policy for the volume. There are three built-in snapshot policies: default, default-1weekly, none. */
   snapshotPolicy?: string | Computed<string>;
-  /** Indicates whether storage efficiency, which includes data compression, deduplication, and compaction, is enabled for the FSx for ONTAP volume. (AI-inferred) */
+  /** Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume, or set to false to disable them. */
   storageEfficiencyEnabled?: string | Computed<string>;
-  /** The unique identifier of the storage virtual machine (SVM) that will host this FSx for ONTAP volume. (AI-inferred) */
+  /** Specifies the ONTAP SVM in which to create the volume. */
   storageVirtualMachineId: string | Computed<string>;
-  /** Defines the tiering policy for the ONTAP volume, specifying how cold data is moved from the SSD tier to the capacity pool storage, including the tiering policy name and optional cooling period. (AI-inferred) */
+  /** Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for ONTAP's intelligent tiering automatically transitions a volume's data between the file system's primary storage and capacity pool storage based on your access patterns. */
   tieringPolicy?: Volume_OntapConfiguration_TieringPolicy | Computed<Volume_OntapConfiguration_TieringPolicy>;
-  /** Specifies whether the ONTAP volume is a FlexVol (standard flexible volume) or a FlexGroup (a scalable collection of FlexVols), with valid values FLEXVOL and FLEXGROUP. (AI-inferred) */
+  /** Use to specify the style of an ONTAP volume. */
   volumeStyle?: string | Computed<string>;
 }
 
@@ -88,9 +88,9 @@ export interface Volume_OpenZfsconfiguration_NfsExports {
 }
 
 export interface Volume_OpenZfsconfiguration_OriginSnapshot {
-  /** Specifies the copy strategy to use when creating the OpenZFS volume from the origin snapshot, with allowed values FULL_COPY, INCREMENTAL_COPY, or NONE. (AI-inferred) */
+  /** The configuration object for mounting a Network File System (NFS) file system. */
   copyStrategy: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the OpenZFS snapshot to use as the origin when creating the volume. (AI-inferred) */
+  /** Specifies the snapshot to use when creating an OpenZFS volume from a snapshot. */
   snapshotArn: string | Computed<string>;
 }
 
@@ -104,27 +104,27 @@ export interface Volume_OpenZfsconfiguration_UserAndGroupQuotas {
 }
 
 export interface Volume_OpenZfsconfiguration {
-  /** Controls whether tags from this FSx for OpenZFS volume are copied to any snapshots created from it, as specified by CopyTagsToSnapshots. (AI-inferred) */
+  /** A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to false. If this value is set to true, and you do not specify any tags, all tags for the original volume are copied over to snapshots. If this value is set to true, and you do specify one or more tags, only the specified tags for the original volume are copied over to snapshots. If you specify one or more tags when creating a new snapshot, no tags are copied over from the original volume, regardless of this value. */
   copyTagsToSnapshots?: boolean | Computed<boolean>;
-  /** Specifies the data compression algorithm for the OpenZFS volume, with valid values of NONE, ZSTD, or LZ4. (AI-inferred) */
+  /** Specifies the method used to compress the data on the volume */
   dataCompressionType?: string | Computed<string>;
-  /** This field specifies the NFS export configuration for the OpenZFS volume, including client access rules and transit encryption settings for each export. (AI-inferred) */
+  /** The configuration object for mounting a Network File System (NFS) file system. */
   nfsExports?: Volume_OpenZfsconfiguration_NfsExports[] | Computed<Volume_OpenZfsconfiguration_NfsExports[]>;
-  /** A list of options for the FSx for OpenZFS volume, where the only supported value is DELETE_CHILD_VOLUMES_AND_SNAPSHOTS, which causes the volume's child volumes and snapshots to be deleted when the volume is deleted. (AI-inferred) */
+  /** The configuration object for mounting a Network File System (NFS) file system. */
   options?: string[] | Computed<string[]>;
   /** Specifies the source snapshot and copy strategy (full or incremental) used to create the OpenZFS volume from an existing FSx for OpenZFS snapshot. (AI-inferred) */
   originSnapshot?: Volume_OpenZfsconfiguration_OriginSnapshot | Computed<Volume_OpenZfsconfiguration_OriginSnapshot>;
-  /** Specifies the ID of the parent volume in the OpenZFS file system that this volume is a child of, using 'root' to create a root volume. (AI-inferred) */
+  /** The ID of the volume to use as the parent volume of the volume that you are creating. */
   parentVolumeId: string | Computed<string>;
-  /** When set to true, makes the FSx for OpenZFS volume read-only; when false (default), the volume is writable. (AI-inferred) */
+  /** A Boolean value indicating whether the volume is read-only. */
   readOnly?: boolean | Computed<boolean>;
-  /** Specifies the record size of the OpenZFS volume in kibibytes (KiB), which controls the block size for file data and must be one of the valid values 4, 8, 16, 32, 64, 128, 256, 512, or 1024 (default 128). (AI-inferred) */
+  /** Specifies the suggested block size for a volume in a ZFS dataset, in kibibytes (KiB). */
   recordSizeKiB?: number | Computed<number>;
-  /** Specifies the maximum storage capacity in GiB that the OpenZFS volume can use, acting as a quota; when omitted, the volume may consume all of the file system's available storage. (AI-inferred) */
+  /** Sets the maximum storage size in gibibytes (GiB) for the volume. You can specify a quota that is larger than the storage on the parent volume. A volume quota limits the amount of storage that the volume can consume to the configured amount, but does not guarantee the space will be available on the parent volume. To guarantee quota space, you must also set StorageCapacityReservationGiB. To not specify a storage capacity quota, set this to -1. */
   storageCapacityQuotaGiB?: number | Computed<number>;
-  /** The amount of storage capacity in GiB to reserve for the OpenZFS volume, guaranteeing that this space is available for the volume's data and snapshots. (AI-inferred) */
+  /** Specifies the amount of storage in gibibytes (GiB) to reserve from the parent volume. Setting StorageCapacityReservationGiB guarantees that the specified amount of storage space on the parent volume will always be available for the volume. You can't reserve more storage than the parent volume has. To not specify a storage capacity reservation, set this to 0 or -1. For more information, see Volume properties in the Amazon FSx for OpenZFS User Guide. */
   storageCapacityReservationGiB?: number | Computed<number>;
-  /** Defines storage capacity quotas for specific users or groups on the OpenZFS volume, with each entry specifying the quota type (user or group), the user or group ID, and the maximum storage capacity in GiB. (AI-inferred) */
+  /** Configures how much storage users and groups can use on the volume. */
   userAndGroupQuotas?: Volume_OpenZfsconfiguration_UserAndGroupQuotas[] | Computed<Volume_OpenZfsconfiguration_UserAndGroupQuotas[]>;
 }
 
@@ -269,36 +269,38 @@ const Volume_TagsFields: FieldMap = {
 };
 
 export interface VolumeConfig {
-  /** The ID of the backup from which the volume is created, used to restore a volume from an existing backup. (AI-inferred) */
+  /** Specifies the ID of the volume backup to use to create a new volume. */
   backupId?: string | Computed<string>;
-  /** Specifies the name of the Amazon FSx volume, which must be unique within the file system and is used to identify the volume. (AI-inferred) */
+  /** The name of the volume. */
   name: string | Computed<string>;
   /** Specifies the ONTAP-specific configuration for an Amazon FSx for NetApp ONTAP volume, including settings such as the junction path, security style, size, and storage efficiency. (AI-inferred) */
   ontapConfiguration?: Volume_OntapConfiguration | Computed<Volume_OntapConfiguration>;
   /** Configures the OpenZFS-specific properties of this FSx volume, such as the parent volume ID, data compression type, NFS export settings, and storage capacity quotas. (AI-inferred) */
   openZfsconfiguration?: Volume_OpenZfsconfiguration | Computed<Volume_OpenZfsconfiguration>;
+  /** One or more tags. */
   tags?: Volume_Tags[] | Computed<Volume_Tags[]>;
-  /** Specifies the type of FSx volume being created, either ONTAP or OPENZFS, which determines the applicable file system and volume configuration. (AI-inferred) */
+  /** The type of the volume. */
   volumeType?: string | Computed<string>;
 }
 
 export interface VolumeAttrs {
-  /** The ID of the backup from which the volume is created, used to restore a volume from an existing backup. (AI-inferred) */
+  /** Specifies the ID of the volume backup to use to create a new volume. */
   backupId: string;
-  /** Specifies the name of the Amazon FSx volume, which must be unique within the file system and is used to identify the volume. (AI-inferred) */
+  /** The name of the volume. */
   name: string;
   /** Specifies the ONTAP-specific configuration for an Amazon FSx for NetApp ONTAP volume, including settings such as the junction path, security style, size, and storage efficiency. (AI-inferred) */
   ontapConfiguration: Volume_OntapConfiguration;
   /** Configures the OpenZFS-specific properties of this FSx volume, such as the parent volume ID, data compression type, NFS export settings, and storage capacity quotas. (AI-inferred) */
   openZfsconfiguration: Volume_OpenZfsconfiguration;
-  /** The Amazon Resource Name (ARN) of the FSx volume. (AI-inferred) */
+  /** Returns the volume's Amazon Resource Name (ARN). */
   resourceArn: string;
+  /** One or more tags. */
   tags: Volume_Tags[];
-  /** The system-assigned UUID for an FSx for OpenZFS volume, which serves as the unique mount name that clients use to access the volume and is distinct from the volume's resource ID. (AI-inferred) */
+  /** Returns the volume's ID. */
   uuid: string;
-  /** The unique AWS-assigned identifier for the FSx volume, formatted as `fsvol-` followed by a 17-character hexadecimal string, which is populated after the volume is created. (AI-inferred) */
+  /** Returns the volume's universally unique identifier (UUID). */
   volumeId: string;
-  /** Specifies the type of FSx volume being created, either ONTAP or OPENZFS, which determines the applicable file system and volume configuration. (AI-inferred) */
+  /** The type of the volume. */
   volumeType: string;
 }
 

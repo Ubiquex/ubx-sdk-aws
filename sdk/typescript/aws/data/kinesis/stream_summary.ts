@@ -15,6 +15,7 @@ export interface StreamSummary_StreamDescriptionSummary_WarmThroughput {
 }
 
 export interface StreamSummary_StreamDescriptionSummary {
+  channelCount?: number | Computed<number>;
   consumerCount?: number | Computed<number>;
   encryptionType?: string | Computed<string>;
   enhancedMonitoring: StreamSummary_StreamDescriptionSummary_EnhancedMonitoring[] | Computed<StreamSummary_StreamDescriptionSummary_EnhancedMonitoring[]>;

@@ -164,41 +164,74 @@ const ExpressGatewayService_TagsFields: FieldMap = {
 };
 
 export interface ExpressGatewayServiceConfig {
+  /** The short name or full Amazon Resource Name (ARN) of the cluster this Express service runs in. (AI-inferred) */
   cluster?: string | Computed<string>;
+  /** The CPU allocation for tasks in this Express service. (AI-inferred) */
   cpu?: string | Computed<string>;
+  /** The Amazon Resource Name (ARN) of the task execution role for this Express service. (AI-inferred) */
   executionRoleArn?: string | Computed<string>;
+  /** The health check path this Express service's own load balancer uses to determine task health. (AI-inferred) */
   healthCheckPath?: string | Computed<string>;
+  /** The Amazon Resource Name (ARN) of the infrastructure role Amazon ECS assumes to manage AWS resources on this Express service's own behalf. (AI-inferred) */
   infrastructureRoleArn: string | Computed<string>;
+  /** The memory allocation for tasks in this Express service. (AI-inferred) */
   memory?: string | Computed<string>;
+  /** The network configuration for tasks in this Express service. (AI-inferred) */
   networkConfiguration?: ExpressGatewayService_ActiveConfigurations_NetworkConfiguration | Computed<ExpressGatewayService_ActiveConfigurations_NetworkConfiguration>;
+  /** The primary container configuration, including the application image, for this Express service. (AI-inferred) */
   primaryContainer?: ExpressGatewayService_ActiveConfigurations_PrimaryContainer | Computed<ExpressGatewayService_ActiveConfigurations_PrimaryContainer>;
+  /** The auto-scaling configuration for this Express service. (AI-inferred) */
   scalingTarget?: ExpressGatewayService_ActiveConfigurations_ScalingTarget | Computed<ExpressGatewayService_ActiveConfigurations_ScalingTarget>;
+  /** The name of this Express service. (AI-inferred) */
   serviceName?: string | Computed<string>;
+  /** The tags assigned to this Express service. (AI-inferred) */
   tags?: ExpressGatewayService_Tags[] | Computed<ExpressGatewayService_Tags[]>;
+  /** The Amazon Resource Name (ARN) of the task definition this Express service is currently running, whether managed by Amazon ECS or provided directly. (AI-inferred) */
   taskDefinitionArn?: string | Computed<string>;
+  /** The Amazon Resource Name (ARN) of the task role for this Express service. (AI-inferred) */
   taskRoleArn?: string | Computed<string>;
 }
 
 export interface ExpressGatewayServiceAttrs {
+  /** The list of active service configurations currently in effect for this Express service. (AI-inferred) */
   activeConfigurations: ExpressGatewayService_ActiveConfigurations[];
+  /** The short name or full Amazon Resource Name (ARN) of the cluster this Express service runs in. (AI-inferred) */
   cluster: string;
+  /** The CPU allocation for tasks in this Express service. (AI-inferred) */
   cpu: string;
+  /** The date and time when this Express service was created. (AI-inferred) */
   createdAt: string;
+  /** The Amazon Resource Names (ARNs) of the AWS resources (load balancer, target groups, security groups, auto scaling policies, log groups, and related infrastructure) Amazon ECS provisioned and manages on this Express service's own behalf. (AI-inferred) */
   ecsmanagedResourceArns: ExpressGatewayService_EcsmanagedResourceArns;
+  /** The endpoint clients use to reach this Express service. (AI-inferred) */
   endpoint: string;
+  /** The Amazon Resource Name (ARN) of the task execution role for this Express service. (AI-inferred) */
   executionRoleArn: string;
+  /** The health check path this Express service's own load balancer uses to determine task health. (AI-inferred) */
   healthCheckPath: string;
+  /** The Amazon Resource Name (ARN) of the infrastructure role Amazon ECS assumes to manage AWS resources on this Express service's own behalf. (AI-inferred) */
   infrastructureRoleArn: string;
+  /** The memory allocation for tasks in this Express service. (AI-inferred) */
   memory: string;
+  /** The network configuration for tasks in this Express service. (AI-inferred) */
   networkConfiguration: ExpressGatewayService_ActiveConfigurations_NetworkConfiguration;
+  /** The primary container configuration, including the application image, for this Express service. (AI-inferred) */
   primaryContainer: ExpressGatewayService_ActiveConfigurations_PrimaryContainer;
+  /** The auto-scaling configuration for this Express service. (AI-inferred) */
   scalingTarget: ExpressGatewayService_ActiveConfigurations_ScalingTarget;
+  /** The Amazon Resource Name (ARN) that identifies this Express service. (AI-inferred) */
   serviceArn: string;
+  /** The name of this Express service. (AI-inferred) */
   serviceName: string;
+  /** The current status of this Express service. (AI-inferred) */
   status: ExpressGatewayService_Status;
+  /** The tags assigned to this Express service. (AI-inferred) */
   tags: ExpressGatewayService_Tags[];
+  /** The Amazon Resource Name (ARN) of the task definition this Express service is currently running, whether managed by Amazon ECS or provided directly. (AI-inferred) */
   taskDefinitionArn: string;
+  /** The Amazon Resource Name (ARN) of the task role for this Express service. (AI-inferred) */
   taskRoleArn: string;
+  /** The date and time when this Express service was last updated. (AI-inferred) */
   updatedAt: string;
 }
 

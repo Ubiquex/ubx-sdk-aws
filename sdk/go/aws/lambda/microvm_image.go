@@ -120,6 +120,7 @@ var MicrovmImage_ResourcesFields = ubx.FieldMap{
 	}
 
 type MicrovmImageConfig struct {
+	// Additional OS capabilities granted to this MicroVM's own runtime environment. (AI-inferred)
 	AdditionalOsCapabilities any
 	// ARN of the base MicroVM image.
 	BaseImageArn any
@@ -128,22 +129,28 @@ type MicrovmImageConfig struct {
 	// ARN of the IAM build role.
 	BuildRoleArn any
 	CodeArtifact any
+	// The CPU configurations this MicroVM supports. (AI-inferred)
 	CpuConfigurations any
 	// Human-readable description of the MicroVM image and its purpose.
 	Description any
+	// The egress network connectors available to this MicroVM at runtime. (AI-inferred)
 	EgressNetworkConnectors any
 	// Environment variables to set in the container during the snapshot build.
 	EnvironmentVariables any
+	// The lifecycle hook configuration for this MicroVM and its own image. (AI-inferred)
 	Hooks any
+	// The logging configuration for this MicroVM's own output: CloudWatch logging enabled, or logging disabled. (AI-inferred)
 	Logging any
 	// Unique name for the MicroVM image within the account.
 	Name any
+	// The resource requirements (e.g. memory, storage) for this MicroVM. (AI-inferred)
 	Resources any
 	// Key-value pairs to associate with the MicroVM image for organization and management.
 	Tags any
 }
 
 type MicrovmImageAttrs struct {
+	// Additional OS capabilities granted to this MicroVM's own runtime environment. (AI-inferred)
 	AdditionalOsCapabilities any
 	// ARN of the base MicroVM image.
 	BaseImageArn any
@@ -152,14 +159,17 @@ type MicrovmImageAttrs struct {
 	// ARN of the IAM build role.
 	BuildRoleArn any
 	CodeArtifact any
+	// The CPU configurations this MicroVM supports. (AI-inferred)
 	CpuConfigurations any
 	// Timestamp when the MicroVM image was created.
 	CreatedAt any
 	// Human-readable description of the MicroVM image and its purpose.
 	Description any
+	// The egress network connectors available to this MicroVM at runtime. (AI-inferred)
 	EgressNetworkConnectors any
 	// Environment variables to set in the container during the snapshot build.
 	EnvironmentVariables any
+	// The lifecycle hook configuration for this MicroVM and its own image. (AI-inferred)
 	Hooks any
 	// ARN of the MicroVM image.
 	ImageArn any
@@ -167,10 +177,13 @@ type MicrovmImageAttrs struct {
 	LatestActiveImageVersion any
 	// The latest failed version of the MicroVM image.
 	LatestFailedImageVersion any
+	// The logging configuration for this MicroVM's own output: CloudWatch logging enabled, or logging disabled. (AI-inferred)
 	Logging any
 	// Unique name for the MicroVM image within the account.
 	Name any
+	// The resource requirements (e.g. memory, storage) for this MicroVM. (AI-inferred)
 	Resources any
+	// The current build state of this MicroVM image version: creating, created, or create-failed. (AI-inferred)
 	State any
 	// Key-value pairs to associate with the MicroVM image for organization and management.
 	Tags any

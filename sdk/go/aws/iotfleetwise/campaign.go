@@ -280,6 +280,7 @@ var Campaign_TagsFields = ubx.FieldMap{
 	}
 
 type CampaignConfig struct {
+	// How to update this campaign: APPROVE to deliver its data collection scheme to vehicles, SUSPEND to stop collecting and remove it from vehicles, RESUME to redeploy a suspended campaign, or UPDATE to modify it. (AI-inferred)
 	Action any
 	// Defines the data collection scheme for the campaign, specifying either a time-based interval or a condition-based trigger (based on signal values) that determines when vehicle data is captured and sent to AWS IoT FleetWise. (AI-inferred)
 	CollectionScheme any
@@ -320,6 +321,7 @@ type CampaignConfig struct {
 }
 
 type CampaignAttrs struct {
+	// How to update this campaign: APPROVE to deliver its data collection scheme to vehicles, SUSPEND to stop collecting and remove it from vehicles, RESUME to redeploy a suspended campaign, or UPDATE to modify it. (AI-inferred)
 	Action any
 	// The Amazon Resource Name (ARN) that uniquely identifies the AWS IoT FleetWise campaign. (AI-inferred)
 	Arn any

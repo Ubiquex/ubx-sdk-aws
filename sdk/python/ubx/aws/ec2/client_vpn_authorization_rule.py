@@ -29,6 +29,7 @@ class ClientVpnAuthorizationRuleAttrs:
     client_vpn_endpoint_id: Any = None
     # A brief, optional description that identifies the purpose of the Client VPN authorization rule. (AI-inferred)
     description: Any = None
+    # The unique identifier of this Client VPN authorization rule. (AI-inferred)
     id: Any = None
     # The CIDR block of the target network that this authorization rule grants access to for the specified clients or groups. (AI-inferred)
     target_network_cidr: Any = None

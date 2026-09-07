@@ -8,18 +8,28 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DictionaryConfig:
+    # The entries in this dictionary, used to bias or correct inference output for domain-specific terms. (AI-inferred)
     entries: Any = None
+    # The language this dictionary's own entries apply to. (AI-inferred)
     language: Any = None
+    # The name of this dictionary. (AI-inferred)
     name: Any = None
+    # The tags assigned to this dictionary. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class DictionaryAttrs:
+    # The Amazon Resource Name (ARN) of this dictionary. (AI-inferred)
     arn: Any = None
+    # The entries in this dictionary, used to bias or correct inference output for domain-specific terms. (AI-inferred)
     entries: Any = None
+    # The unique identifier of this dictionary. (AI-inferred)
     id: Any = None
+    # The language this dictionary's own entries apply to. (AI-inferred)
     language: Any = None
+    # The name of this dictionary. (AI-inferred)
     name: Any = None
+    # The tags assigned to this dictionary. (AI-inferred)
     tags: Any = None
 
 Dictionary = ubx.ResourceBinding(

@@ -42,29 +42,45 @@ const ApprovalTeam_TagsFields: FieldMap = {
 
 export interface ApprovalTeamConfig {
   approvalStrategy: ApprovalTeam_ApprovalStrategy | Computed<ApprovalTeam_ApprovalStrategy>;
+  /** The description of this approval team. (AI-inferred) */
   description: string | Computed<string>;
+  /** The name of this approval team. (AI-inferred) */
   name: string | Computed<string>;
+  /** The policies defining what operations this approval team's own approval grants permission for. (AI-inferred) */
   policies: unknown[] | Computed<unknown[]>;
+  /** The tags assigned to this approval team. (AI-inferred) */
   tags?: ApprovalTeam_Tags[] | Computed<ApprovalTeam_Tags[]>;
 }
 
 export interface ApprovalTeamAttrs {
   approvalStrategy: ApprovalTeam_ApprovalStrategy;
+  /** The individual approvers assigned to this approval team. (AI-inferred) */
   approvers: ApprovalTeam_Approvers[];
   /** The Amazon Resource Name (ARN) uniquely identifying the approval team, used as a durable reference in IAM policies and AWS Marketplace APIs. (AI-inferred) */
   arn: string;
+  /** The date and time when this approval team was created. (AI-inferred) */
   creationTime: string;
+  /** The description of this approval team. (AI-inferred) */
   description: string;
   /** A read-only string field that records the time when the approval team was last updated, managed automatically by AWS. (AI-inferred) */
   lastUpdateTime: string;
+  /** The name of this approval team. (AI-inferred) */
   name: string;
+  /** The total number of approvers on this approval team. (AI-inferred) */
   numberOfApprovers: number;
+  /** The policies defining what operations this approval team's own approval grants permission for. (AI-inferred) */
   policies: unknown[];
+  /** The current status of this approval team. (AI-inferred) */
   status: string;
+  /** The status code of this approval team. (AI-inferred) */
   statusCode: string;
+  /** A message describing this approval team's own current status. (AI-inferred) */
   statusMessage: string;
+  /** The tags assigned to this approval team. (AI-inferred) */
   tags: ApprovalTeam_Tags[];
+  /** The Amazon Resource Name (ARN) of this approval team's own most recent update session. (AI-inferred) */
   updateSessionArn: string;
+  /** The version identifier of this approval team. (AI-inferred) */
   versionId: string;
 }
 

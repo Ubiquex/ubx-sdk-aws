@@ -47,6 +47,7 @@ export interface DaemonConfig {
   capacityProviderArns?: string[] | Computed<string[]>;
   /** The Amazon Resource Name (ARN) of the cluster that the daemon is running in. */
   clusterArn?: string | Computed<string>;
+  /** The name of this daemon. (AI-inferred) */
   daemonName?: string | Computed<string>;
   /** The Amazon Resource Name (ARN) of the daemon task definition used by this revision. */
   daemonTaskDefinitionArn?: string | Computed<string>;
@@ -58,6 +59,7 @@ export interface DaemonConfig {
   enableExecuteCommand?: boolean | Computed<boolean>;
   /** Specifies whether tags are propagated from the daemon to the daemon tasks. */
   propagateTags?: string | Computed<string>;
+  /** The tags assigned to this daemon. (AI-inferred) */
   tags?: Daemon_Tags[] | Computed<Daemon_Tags[]>;
 }
 
@@ -66,12 +68,17 @@ export interface DaemonAttrs {
   capacityProviderArns: string[];
   /** The Amazon Resource Name (ARN) of the cluster that the daemon is running in. */
   clusterArn: string;
+  /** The date and time when this daemon was created. (AI-inferred) */
   createdAt: string;
+  /** The Amazon Resource Name (ARN) of this daemon. (AI-inferred) */
   daemonArn: string;
+  /** The name of this daemon. (AI-inferred) */
   daemonName: string;
+  /** The current status of this daemon. (AI-inferred) */
   daemonStatus: string;
   /** The Amazon Resource Name (ARN) of the daemon task definition used by this revision. */
   daemonTaskDefinitionArn: string;
+  /** The Amazon Resource Name (ARN) of this daemon's own most recent deployment. (AI-inferred) */
   deploymentArn: string;
   /** Optional deployment parameters that control how a daemon rolls out updates across container instances. */
   deploymentConfiguration: Daemon_DeploymentConfiguration;
@@ -81,7 +88,9 @@ export interface DaemonAttrs {
   enableExecuteCommand: boolean;
   /** Specifies whether tags are propagated from the daemon to the daemon tasks. */
   propagateTags: string;
+  /** The tags assigned to this daemon. (AI-inferred) */
   tags: Daemon_Tags[];
+  /** The date and time when this daemon was last updated. (AI-inferred) */
   updatedAt: string;
 }
 

@@ -408,6 +408,7 @@ type RouterInputConfig struct {
 	RoutingScope any
 	// Key-value pairs that can be used to tag and organize this router input.
 	Tags any
+	// The tier level of this router input, which determines its own maximum throughput. (AI-inferred)
 	Tier any
 	// The transit encryption settings for a router input.
 	TransitEncryption any
@@ -422,16 +423,19 @@ type RouterInputAttrs struct {
 	Configuration any
 	// The content quality analysis configuration for the router input. The content quality analysis feature only monitors the first video stream and the first audio stream it encounters within the router input source.
 	ContentQualityAnalysisConfiguration any
+	// The type of content quality analysis applied to this router input. (AI-inferred)
 	ContentQualityAnalysisType any
 	// The timestamp when the router input was created.
 	CreatedAt any
 	// The unique identifier of the router input.
 	Id any
+	// The type of this router input. (AI-inferred)
 	InputType any
 	// The IP address of the router input.
 	IpAddress any
 	// The configuration settings for maintenance operations, including preferred maintenance windows and schedules.
 	MaintenanceConfiguration any
+	// The type of maintenance configuration applied to this router input. (AI-inferred)
 	MaintenanceType any
 	// The maximum bitrate for the router input.
 	MaximumBitrate any
@@ -447,6 +451,7 @@ type RouterInputAttrs struct {
 	State any
 	// Key-value pairs that can be used to tag and organize this router input.
 	Tags any
+	// The tier level of this router input, which determines its own maximum throughput. (AI-inferred)
 	Tier any
 	// The transit encryption settings for a router input.
 	TransitEncryption any

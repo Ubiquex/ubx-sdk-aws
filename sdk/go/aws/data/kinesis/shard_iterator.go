@@ -4,6 +4,7 @@ package kinesis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ShardIteratorConfig struct {
+	DryRun any
 	ShardId any
 	ShardIteratorType any
 	StartingSequenceNumber any
@@ -14,6 +15,7 @@ type ShardIteratorConfig struct {
 }
 
 type ShardIteratorAttrs struct {
+	DryRun any
 	ShardId any
 	ShardIterator any
 	ShardIteratorType any
@@ -27,6 +29,7 @@ type ShardIteratorAttrs struct {
 var ShardIterator = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_shard_iterator",
 	Fields: ubx.FieldMap{
+		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"ShardId": ubx.FieldSpec{WireName: "shard_id"},
 		"ShardIteratorType": ubx.FieldSpec{WireName: "shard_iterator_type"},
 		"StartingSequenceNumber": ubx.FieldSpec{WireName: "starting_sequence_number"},

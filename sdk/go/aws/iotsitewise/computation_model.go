@@ -40,6 +40,7 @@ var ComputationModel_TagsFields = ubx.FieldMap{
 
 type ComputationModelConfig struct {
 	ComputationModelConfiguration any
+	// The data binding for this computation model: for each variable defined in its own configuration, the real data source value that variable is bound to. (AI-inferred)
 	ComputationModelDataBinding any
 	// A description about the computation model.
 	ComputationModelDescription any
@@ -53,6 +54,7 @@ type ComputationModelAttrs struct {
 	// The ARN of the computation model.
 	ComputationModelArn any
 	ComputationModelConfiguration any
+	// The data binding for this computation model: for each variable defined in its own configuration, the real data source value that variable is bound to. (AI-inferred)
 	ComputationModelDataBinding any
 	// A description about the computation model.
 	ComputationModelDescription any

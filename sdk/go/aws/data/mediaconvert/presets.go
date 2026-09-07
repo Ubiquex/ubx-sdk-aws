@@ -28,6 +28,7 @@ type Presets_Presets_Settings_AudioDescriptions_CodecSettings_AacSettings struct
 	CodecProfile any
 	CodingMode any
 	LoudnessMeasurementMode any
+	PassthroughControl any
 	RapInterval any
 	RateControlMode any
 	RawFormat any
@@ -282,6 +283,18 @@ type Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_SrtDestina
 type Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_TeletextDestinationSettings struct {
 	PageNumber any
 	PageTypes any
+}
+
+type Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_TtmlDestinationSettings struct {
+	BackgroundColor any
+	BackgroundOpacity any
+	FontColor any
+	FontOpacity any
+	FontSize any
+	FontStyle any
+	FontWeight any
+	StylePassthrough any
+	TextDecoration any
 }
 
 type Presets_Presets_Settings_CaptionDescriptions_DestinationSettings struct {
@@ -764,6 +777,11 @@ type Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_Xavc4k
 	HrdBufferSize any
 	QualityTuningLevel any
 	Slices any
+}
+
+type Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_XavcHdIntraCbgProfileSettings struct {
+	InterlaceMode any
+	XavcClass any
 }
 
 type Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_XavcHdProfileSettings struct {

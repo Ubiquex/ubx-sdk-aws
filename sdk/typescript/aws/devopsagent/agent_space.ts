@@ -61,6 +61,7 @@ export interface AgentSpaceAttrs {
   locale: string;
   /** The name of the AgentSpace. */
   name: string;
+  /** The operator application associated with this DevOps agent space. (AI-inferred) */
   operatorApp: AgentSpace_OperatorApp;
   /** An array of key-value pairs to apply to this resource. */
   tags: AgentSpace_Tags[];

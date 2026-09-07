@@ -15,58 +15,62 @@ var ReplicationTask_TagsFields = ubx.FieldMap{
 	}
 
 type ReplicationTaskConfig struct {
-	// Specifies the native source database position (such as a log file number or LSN) from which AWS DMS begins reading change data capture (CDC) changes when starting the replication task. (AI-inferred)
+	// Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
 	CdcStartPosition any
-	// The Unix timestamp in seconds that specifies when Change Data Capture (CDC) should begin for the replication task, defining the starting point for capturing ongoing data changes. (AI-inferred)
+	// Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.
 	CdcStartTime any
-	// Specifies the point in time (as a Unix timestamp) or LSN (log sequence number) up to which the change data capture (CDC) portion of the replication task should process changes, after which the task stops. (AI-inferred)
+	// Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.
 	CdcStopPosition any
-	// Specifies the migration type for the replication task, which can be one of 'full-load', 'cdc', or 'full-load-and-cdc'. (AI-inferred)
+	// The migration type.
 	MigrationType any
-	// The Amazon Resource Name (ARN) of the AWS DMS replication instance that will run the replication task. (AI-inferred)
+	// The Amazon Resource Name (ARN) of a replication instance.
 	ReplicationInstanceArn any
-	// A user-supplied unique identifier for the DMS replication task within an AWS account, used to reference and manage the task in AWS DMS. (AI-inferred)
+	// An identifier for the replication task.
 	ReplicationTaskIdentifier any
-	// A JSON-format string that configures the AWS DMS replication task's operational settings, such as target table preparation mode, full load behavior, and error handling options. (AI-inferred)
+	// Overall settings for the task, in JSON format
 	ReplicationTaskSettings any
+	// A friendly name for the resource identifier at the end of the EndpointArn response parameter that is returned in the created Endpoint object.
 	ResourceIdentifier any
-	// The Amazon Resource Name (ARN) of the source database endpoint that the DMS replication task reads data from during migration. (AI-inferred)
+	// An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.
 	SourceEndpointArn any
-	// JSON string that specifies table mapping rules, including selection and transformation rules, for a DMS replication task. (AI-inferred)
+	// The table mappings for the task, in JSON format.
 	TableMappings any
 	// Assigns metadata key-value pairs to the DMS replication task for resource categorization and cost tracking. (AI-inferred)
 	Tags any
-	// The ARN of the target database endpoint that the replication task connects to for writing migrated data. (AI-inferred)
+	// An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.
 	TargetEndpointArn any
+	// Supplemental information that the task requires to migrate the data for certain source and target endpoints.
 	TaskData any
 }
 
 type ReplicationTaskAttrs struct {
-	// Specifies the native source database position (such as a log file number or LSN) from which AWS DMS begins reading change data capture (CDC) changes when starting the replication task. (AI-inferred)
+	// Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
 	CdcStartPosition any
-	// The Unix timestamp in seconds that specifies when Change Data Capture (CDC) should begin for the replication task, defining the starting point for capturing ongoing data changes. (AI-inferred)
+	// Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.
 	CdcStartTime any
-	// Specifies the point in time (as a Unix timestamp) or LSN (log sequence number) up to which the change data capture (CDC) portion of the replication task should process changes, after which the task stops. (AI-inferred)
+	// Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.
 	CdcStopPosition any
-	// The ARN of the DMS replication task, which uniquely identifies it within AWS. (AI-inferred)
-	Id any
-	// Specifies the migration type for the replication task, which can be one of 'full-load', 'cdc', or 'full-load-and-cdc'. (AI-inferred)
+	// The migration type.
 	MigrationType any
-	// The Amazon Resource Name (ARN) of the AWS DMS replication instance that will run the replication task. (AI-inferred)
+	// The Amazon Resource Name (ARN) of a replication instance.
 	ReplicationInstanceArn any
-	// A user-supplied unique identifier for the DMS replication task within an AWS account, used to reference and manage the task in AWS DMS. (AI-inferred)
+	// The ARN of the ReplicationTask. Also serves the purpise of Primary Identifier.
+	ReplicationTaskArn any
+	// An identifier for the replication task.
 	ReplicationTaskIdentifier any
-	// A JSON-format string that configures the AWS DMS replication task's operational settings, such as target table preparation mode, full load behavior, and error handling options. (AI-inferred)
+	// Overall settings for the task, in JSON format
 	ReplicationTaskSettings any
+	// A friendly name for the resource identifier at the end of the EndpointArn response parameter that is returned in the created Endpoint object.
 	ResourceIdentifier any
-	// The Amazon Resource Name (ARN) of the source database endpoint that the DMS replication task reads data from during migration. (AI-inferred)
+	// An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.
 	SourceEndpointArn any
-	// JSON string that specifies table mapping rules, including selection and transformation rules, for a DMS replication task. (AI-inferred)
+	// The table mappings for the task, in JSON format.
 	TableMappings any
 	// Assigns metadata key-value pairs to the DMS replication task for resource categorization and cost tracking. (AI-inferred)
 	Tags any
-	// The ARN of the target database endpoint that the replication task connects to for writing migrated data. (AI-inferred)
+	// An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.
 	TargetEndpointArn any
+	// Supplemental information that the task requires to migrate the data for certain source and target endpoints.
 	TaskData any
 }
 

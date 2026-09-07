@@ -24,6 +24,7 @@ type FirewallDomainListConfig struct {
 	DomainFileUrl any
 	// An inline list of domains to use for this domain list.
 	Domains any
+	// A reference to the global resolver this firewall domain list is associated with. (AI-inferred)
 	GlobalResolverId any
 	// The name to assign to the Route 53 Resolver firewall domain list, which serves as its identifier in your AWS account. (AI-inferred)
 	Name any
@@ -47,6 +48,7 @@ type FirewallDomainListAttrs struct {
 	Domains any
 	// The unique identifier assigned by AWS to the Route 53 Resolver firewall domain list. (AI-inferred)
 	FirewallDomainListId any
+	// A reference to the global resolver this firewall domain list is associated with. (AI-inferred)
 	GlobalResolverId any
 	// The name to assign to the Route 53 Resolver firewall domain list, which serves as its identifier in your AWS account. (AI-inferred)
 	Name any

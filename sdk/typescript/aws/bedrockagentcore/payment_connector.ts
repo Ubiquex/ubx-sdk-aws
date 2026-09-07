@@ -31,6 +31,7 @@ const PaymentConnector_CredentialProviderConfigurationsFields: FieldMap = {
 export interface PaymentConnectorConfig {
   /** The name of the payment connector */
   connectorName: string | Computed<string>;
+  /** The real type of payment provider this connector integrates with. (AI-inferred) */
   connectorType: string | Computed<string>;
   /** The credential provider configurations for the connector. Required when ProvisionMode is MANUAL or not specified. Empty for QUICK_CREATE until provisioning completes. */
   credentialProviderConfigurations?: PaymentConnector_CredentialProviderConfigurations[] | Computed<PaymentConnector_CredentialProviderConfigurations[]>;
@@ -38,6 +39,7 @@ export interface PaymentConnectorConfig {
   description?: string | Computed<string>;
   /** The identifier of the parent payment manager */
   paymentManagerId: string | Computed<string>;
+  /** How this payment connector's own underlying resources are provisioned. (AI-inferred) */
   provisionMode?: string | Computed<string>;
 }
 
@@ -50,7 +52,9 @@ export interface PaymentConnectorAttrs {
   connectorLastUpdatedAt: string;
   /** The name of the payment connector */
   connectorName: string;
+  /** The current status of this payment connector. (AI-inferred) */
   connectorStatus: string;
+  /** The real type of payment provider this connector integrates with. (AI-inferred) */
   connectorType: string;
   /** The credential provider configurations for the connector. Required when ProvisionMode is MANUAL or not specified. Empty for QUICK_CREATE until provisioning completes. */
   credentialProviderConfigurations: PaymentConnector_CredentialProviderConfigurations[];
@@ -62,6 +66,7 @@ export interface PaymentConnectorAttrs {
   paymentConnectorId: string;
   /** The identifier of the parent payment manager */
   paymentManagerId: string;
+  /** How this payment connector's own underlying resources are provisioned. (AI-inferred) */
   provisionMode: string;
 }
 

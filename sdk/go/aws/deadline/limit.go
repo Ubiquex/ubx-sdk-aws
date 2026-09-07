@@ -4,6 +4,7 @@ package deadline
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LimitConfig struct {
+	// The value referenced as the amounts.name in a job template step's own hostRequirements to declare this limit's requirement. (AI-inferred)
 	AmountRequirementName any
 	// Provides an optional human-readable description for the AWS Deadline Cloud limit, clarifying the limit's purpose or scope. (AI-inferred)
 	Description any
@@ -16,6 +17,7 @@ type LimitConfig struct {
 }
 
 type LimitAttrs struct {
+	// The value referenced as the amounts.name in a job template step's own hostRequirements to declare this limit's requirement. (AI-inferred)
 	AmountRequirementName any
 	// The current number of resources that are using this limit, as tracked by AWS Deadline Cloud and updated automatically as usage changes. (AI-inferred)
 	CurrentCount any

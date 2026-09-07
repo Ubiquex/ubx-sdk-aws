@@ -4,6 +4,7 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface PolicyTemplateConfig {
   /** Specifies an optional text description for the policy template, used to provide context about the template's intended purpose. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The name of this Verified Permissions policy template. (AI-inferred) */
   name?: string | Computed<string>;
   /** The ID of the policy store in which this policy template is created, associating the template with a specific Cedar policy store. (AI-inferred) */
   policyStoreId: string | Computed<string>;
@@ -14,6 +15,7 @@ export interface PolicyTemplateConfig {
 export interface PolicyTemplateAttrs {
   /** Specifies an optional text description for the policy template, used to provide context about the template's intended purpose. (AI-inferred) */
   description: string;
+  /** The name of this Verified Permissions policy template. (AI-inferred) */
   name: string;
   /** The ID of the policy store in which this policy template is created, associating the template with a specific Cedar policy store. (AI-inferred) */
   policyStoreId: string;

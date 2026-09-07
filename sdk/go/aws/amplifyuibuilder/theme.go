@@ -39,6 +39,7 @@ type ThemeConfig struct {
 	Name any
 	// Specifies a list of theme value overrides that supersede the base theme values for the Amplify UI Builder theme. (AI-inferred)
 	Overrides any
+	// The tags assigned to this Amplify UI Builder theme. (AI-inferred)
 	Tags any
 	// Defines the list of theme value objects (key-value pairs) that create design tokens for the Amplify UI Builder theme, where each object can also contain nested children for grouped tokens. (AI-inferred)
 	Values any
@@ -59,6 +60,7 @@ type ThemeAttrs struct {
 	Name any
 	// Specifies a list of theme value overrides that supersede the base theme values for the Amplify UI Builder theme. (AI-inferred)
 	Overrides any
+	// The tags assigned to this Amplify UI Builder theme. (AI-inferred)
 	Tags any
 	// Defines the list of theme value objects (key-value pairs) that create design tokens for the Amplify UI Builder theme, where each object can also contain nested children for grouped tokens. (AI-inferred)
 	Values any

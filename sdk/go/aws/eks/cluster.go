@@ -69,9 +69,16 @@ type Cluster_KubeControllerManagerConfig_HorizontalPodAutoscalerControllerConfig
 	HorizontalPodAutoscalerSyncPeriod any
 }
 
+type Cluster_KubeControllerManagerConfig_PodGcControllerConfig struct {
+	// The number of terminated pods that can exist before the terminated pod garbage collector starts deleting them.
+	TerminatedPodGcThreshold any
+}
+
 type Cluster_KubeControllerManagerConfig struct {
 	// The horizontal pod autoscaler controller configuration.
 	HorizontalPodAutoscalerControllerConfig any
+	// The pod garbage collector controller configuration.
+	PodGcControllerConfig any
 }
 
 type Cluster_KubeSchedulerConfig_NodeResourcesFit_ScoringStrategy_Resources struct {
@@ -247,11 +254,20 @@ var Cluster_KubeControllerManagerConfig_HorizontalPodAutoscalerControllerConfigF
 		"HorizontalPodAutoscalerSyncPeriod": ubx.FieldSpec{WireName: "horizontal_pod_autoscaler_sync_period"},
 	}
 
+var Cluster_KubeControllerManagerConfig_PodGcControllerConfigFields = ubx.FieldMap{
+		"TerminatedPodGcThreshold": ubx.FieldSpec{WireName: "terminated_pod_gc_threshold"},
+	}
+
 var Cluster_KubeControllerManagerConfigFields = ubx.FieldMap{
 		"HorizontalPodAutoscalerControllerConfig": ubx.FieldSpec{
 			WireName: "horizontal_pod_autoscaler_controller_config",
 			Kind: "object",
 			Fields: Cluster_KubeControllerManagerConfig_HorizontalPodAutoscalerControllerConfigFields,
+		},
+		"PodGcControllerConfig": ubx.FieldSpec{
+			WireName: "pod_gc_controller_config",
+			Kind: "object",
+			Fields: Cluster_KubeControllerManagerConfig_PodGcControllerConfigFields,
 		},
 	}
 

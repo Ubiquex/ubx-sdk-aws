@@ -94,6 +94,7 @@ type TopicV2Config struct {
 	Name any
 	// A list of resource permissions that grant or revoke access to the QuickSight topic for specific principals (users, groups, or folders), each specifying allowed actions. (AI-inferred)
 	Permissions any
+	// The tags assigned to this topic. (AI-inferred)
 	Tags any
 	// The unique identifier for the QuickSight topic, used when importing an existing topic or to reference the topic in other resources. (AI-inferred)
 	TopicId any
@@ -117,6 +118,7 @@ type TopicV2Attrs struct {
 	Name any
 	// A list of resource permissions that grant or revoke access to the QuickSight topic for specific principals (users, groups, or folders), each specifying allowed actions. (AI-inferred)
 	Permissions any
+	// The tags assigned to this topic. (AI-inferred)
 	Tags any
 	// The unique identifier for the QuickSight topic, used when importing an existing topic or to reference the topic in other resources. (AI-inferred)
 	TopicId any

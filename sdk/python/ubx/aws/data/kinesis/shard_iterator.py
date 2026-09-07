@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ShardIteratorConfig:
+    dry_run: Any = None
     shard_id: Any = None
     shard_iterator_type: Any = None
     starting_sequence_number: Any = None
@@ -18,6 +19,7 @@ class ShardIteratorConfig:
 
 @dataclasses.dataclass
 class ShardIteratorAttrs:
+    dry_run: Any = None
     shard_id: Any = None
     shard_iterator: Any = None
     shard_iterator_type: Any = None
@@ -30,6 +32,7 @@ class ShardIteratorAttrs:
 ShardIterator = ubx.DataSourceBinding(
     wire_type="aws_kinesis_shard_iterator",
     fields={
+        "dry_run": ubx.FieldSpec(wire_name="dry_run"),
         "shard_id": ubx.FieldSpec(wire_name="shard_id"),
         "shard_iterator_type": ubx.FieldSpec(wire_name="shard_iterator_type"),
         "starting_sequence_number": ubx.FieldSpec(wire_name="starting_sequence_number"),

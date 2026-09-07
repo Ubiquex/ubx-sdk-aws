@@ -62,11 +62,14 @@ var SessionLogger_TagsFields = ubx.FieldMap{
 type SessionLoggerConfig struct {
 	// A map of key-value pairs that serve as additional encryption context for the KMS key used to encrypt session log data, providing extra authenticated data to the encryption/decryption process. (AI-inferred)
 	AdditionalEncryptionContext any
+	// The customer managed AWS KMS key used to encrypt this session logger's own data. (AI-inferred)
 	CustomerManagedKey any
 	// Specifies the display name for the session logger, providing a human-readable identifier for this logging configuration in the AWS Management Console and CloudFormation stacks. (AI-inferred)
 	DisplayName any
+	// The filter that specifies which session events this session logger monitors. (AI-inferred)
 	EventFilter any
 	LogConfiguration any
+	// The tags assigned to this session logger. (AI-inferred)
 	Tags any
 }
 
@@ -77,13 +80,16 @@ type SessionLoggerAttrs struct {
 	AssociatedPortalArns any
 	// The date and time when the WorkSpaces Web session logger configuration was created, returned as an ISO 8601 formatted string. (AI-inferred)
 	CreationDate any
+	// The customer managed AWS KMS key used to encrypt this session logger's own data. (AI-inferred)
 	CustomerManagedKey any
 	// Specifies the display name for the session logger, providing a human-readable identifier for this logging configuration in the AWS Management Console and CloudFormation stacks. (AI-inferred)
 	DisplayName any
+	// The filter that specifies which session events this session logger monitors. (AI-inferred)
 	EventFilter any
 	LogConfiguration any
 	// The Amazon Resource Name (ARN) that uniquely identifies this WorkSpaces Web session logger and is used to attach the logger to a WorkSpaces Web portal for session logging. (AI-inferred)
 	SessionLoggerArn any
+	// The tags assigned to this session logger. (AI-inferred)
 	Tags any
 }
 

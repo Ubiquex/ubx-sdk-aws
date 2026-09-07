@@ -62,6 +62,7 @@ type ComponentConfig struct {
 	Properties any
 	// The schema version of the component, indicating which version of the Amplify UI Builder component schema the component adheres to. (AI-inferred)
 	SchemaVersion any
+	// A reference to the source (e.g. a Figma file) this Amplify UI Builder component was generated from. (AI-inferred)
 	SourceId any
 	// A map of key-value pairs used to assign metadata tags to the Amplify UI Builder component for identification and organization. (AI-inferred)
 	Tags any
@@ -86,6 +87,7 @@ type ComponentAttrs struct {
 	EnvironmentName any
 	// Configures event handlers for the component, mapping event names (such as onClick) to action definitions for user interactions. (AI-inferred)
 	Events any
+	// The unique identifier of this Amplify UI Builder component. (AI-inferred)
 	Id any
 	// The timestamp (in ISO 8601 format) indicating when the component was last updated. (AI-inferred)
 	ModifiedAt any
@@ -97,6 +99,7 @@ type ComponentAttrs struct {
 	Properties any
 	// The schema version of the component, indicating which version of the Amplify UI Builder component schema the component adheres to. (AI-inferred)
 	SchemaVersion any
+	// A reference to the source (e.g. a Figma file) this Amplify UI Builder component was generated from. (AI-inferred)
 	SourceId any
 	// A map of key-value pairs used to assign metadata tags to the Amplify UI Builder component for identification and organization. (AI-inferred)
 	Tags any

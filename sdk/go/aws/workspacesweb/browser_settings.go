@@ -35,6 +35,7 @@ type BrowserSettingsConfig struct {
 	BrowserPolicy any
 	// The ARN of a customer-managed KMS key used to encrypt the browser settings, with AWS-managed encryption applied when this optional field is left empty. (AI-inferred)
 	CustomerManagedKey any
+	// The tags assigned to these browser settings. (AI-inferred)
 	Tags any
 	// Specifies the web content filtering policy for WorkSpaces Web browser settings, defining rules that allow or block web content by category (such as adult content, social media, or advertising) in browser sessions. (AI-inferred)
 	WebContentFilteringPolicy any
@@ -51,6 +52,7 @@ type BrowserSettingsAttrs struct {
 	BrowserSettingsArn any
 	// The ARN of a customer-managed KMS key used to encrypt the browser settings, with AWS-managed encryption applied when this optional field is left empty. (AI-inferred)
 	CustomerManagedKey any
+	// The tags assigned to these browser settings. (AI-inferred)
 	Tags any
 	// Specifies the web content filtering policy for WorkSpaces Web browser settings, defining rules that allow or block web content by category (such as adult content, social media, or advertising) in browser sessions. (AI-inferred)
 	WebContentFilteringPolicy any

@@ -92,7 +92,9 @@ const PaymentManager_TagsFields: FieldMap = {
 };
 
 export interface PaymentManagerConfig {
+  /** Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred) */
   authorizerConfiguration?: PaymentManager_AuthorizerConfiguration | Computed<PaymentManager_AuthorizerConfiguration>;
+  /** The type of authorizer used by the payment manager. (AI-inferred) */
   authorizerType: string | Computed<string>;
   /** A description of the payment manager */
   description?: string | Computed<string>;
@@ -105,7 +107,9 @@ export interface PaymentManagerConfig {
 }
 
 export interface PaymentManagerAttrs {
+  /** Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred) */
   authorizerConfiguration: PaymentManager_AuthorizerConfiguration;
+  /** The type of authorizer used by the payment manager. (AI-inferred) */
   authorizerType: string;
   /** The timestamp when the payment manager was created */
   createdAt: string;
@@ -121,9 +125,11 @@ export interface PaymentManagerAttrs {
   paymentManagerId: string;
   /** The ARN of the IAM role for the payment manager */
   roleArn: string;
+  /** The current status of the payment manager. (AI-inferred) */
   status: string;
   /** Tags to assign to the payment manager */
   tags: PaymentManager_Tags[];
+  /** Details of the workload identity associated with the payment manager, used to authenticate its own outbound calls. (AI-inferred) */
   workloadIdentityDetails: PaymentManager_WorkloadIdentityDetails;
 }
 

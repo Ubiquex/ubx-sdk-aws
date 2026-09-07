@@ -45,6 +45,7 @@ type UserPoolDomainConfig struct {
 	Domain any
 	// Specify the version of the managed login experience for the user pool domain, with 1 representing the original hosted UI and 2 representing the new managed login experience. (AI-inferred)
 	ManagedLoginVersion any
+	// The routing configuration for this user pool domain, specifying failover settings for multi-region deployments. (AI-inferred)
 	Routing any
 	// The ID of the Amazon Cognito user pool to associate with the custom domain or Amazon Cognito-hosted domain. (AI-inferred)
 	UserPoolId any
@@ -59,6 +60,7 @@ type UserPoolDomainAttrs struct {
 	Domain any
 	// Specify the version of the managed login experience for the user pool domain, with 1 representing the original hosted UI and 2 representing the new managed login experience. (AI-inferred)
 	ManagedLoginVersion any
+	// The routing configuration for this user pool domain, specifying failover settings for multi-region deployments. (AI-inferred)
 	Routing any
 	// The ID of the Amazon Cognito user pool to associate with the custom domain or Amazon Cognito-hosted domain. (AI-inferred)
 	UserPoolId any

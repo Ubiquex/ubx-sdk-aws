@@ -162,6 +162,7 @@ type ExperimentTemplateAttrs struct {
 	ExperimentOptions any
 	// Configures the delivery of the experiment report for the FIS experiment template, specifying the S3 destination bucket and prefix as well as the report format and schema version for the generated experiment results. (AI-inferred)
 	ExperimentReportConfiguration any
+	// The unique identifier of this FIS experiment template. (AI-inferred)
 	Id any
 	// Specifies where to deliver experiment logs, including the destination CloudWatch Logs group and/or S3 bucket for storing the FIS experiment's activity and results. (AI-inferred)
 	LogConfiguration any

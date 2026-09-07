@@ -166,6 +166,7 @@ type CommandConfig struct {
 	DisplayName any
 	// The date and time when the command was last updated.
 	LastUpdatedAt any
+	// The parameters this IoT command requires devices to supply when the command is invoked. (AI-inferred)
 	MandatoryParameters any
 	// The namespace to which the command belongs.
 	Namespace any
@@ -198,6 +199,7 @@ type CommandAttrs struct {
 	DisplayName any
 	// The date and time when the command was last updated.
 	LastUpdatedAt any
+	// The parameters this IoT command requires devices to supply when the command is invoked. (AI-inferred)
 	MandatoryParameters any
 	// The namespace to which the command belongs.
 	Namespace any

@@ -3,6 +3,30 @@ package sms_voice
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_ConditionalBehavior_Rules_ConditionalValidation struct {
+	AllowedValues any
+	MaxLength any
+	MinLength any
+	Pattern any
+}
+
+type SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_ConditionalBehavior_Rules_Conditions struct {
+	DependsOnFieldPath any
+	Operator any
+	Values any
+}
+
+type SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_ConditionalBehavior_Rules struct {
+	ConditionalValidation any
+	Conditions any
+	RuleBehavior any
+}
+
+type SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_ConditionalBehavior struct {
+	DefaultBehavior any
+	Rules any
+}
+
 type SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_DisplayHints_SelectOptionDescriptions struct {
 	Description any
 	Option any
@@ -33,6 +57,7 @@ type SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_TextValid
 }
 
 type SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions struct {
+	ConditionalBehavior any
 	DisplayHints any
 	FieldPath any
 	FieldRequirement any

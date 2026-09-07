@@ -46,16 +46,22 @@ var TelemetryPipelines_Pipeline_TagsFields = ubx.FieldMap{
 	}
 
 type TelemetryPipelinesConfig struct {
+	// The configuration defining how this telemetry pipeline collects and routes observability data. (AI-inferred)
 	Configuration any
+	// The name of this telemetry pipeline. (AI-inferred)
 	Name any
 	// An array of key-value pairs to apply to this resource
 	Tags any
 }
 
 type TelemetryPipelinesAttrs struct {
+	// The Amazon Resource Name (ARN) of this telemetry pipeline. (AI-inferred)
 	Arn any
+	// The configuration defining how this telemetry pipeline collects and routes observability data. (AI-inferred)
 	Configuration any
+	// The name of this telemetry pipeline. (AI-inferred)
 	Name any
+	// The pipeline definition, including its own stages and destinations, for this telemetry pipeline. (AI-inferred)
 	Pipeline any
 	// The unique identifier assigned by AWS to the telemetry pipeline, used to reference the pipeline when managing or querying telemetry configurations. (AI-inferred)
 	PipelineIdentifier any

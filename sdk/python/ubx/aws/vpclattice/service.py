@@ -36,6 +36,7 @@ class ServiceConfig:
     idle_timeout_seconds: Any = None
     # A user-friendly name for the VPC Lattice service; if you don't provide one, AWS CloudFormation generates a unique name for the service. (AI-inferred)
     name: Any = None
+    # The tags assigned to this VPC Lattice service. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -62,6 +63,7 @@ class ServiceAttrs:
     name: Any = None
     # The current lifecycle status of the VPC Lattice service (for example, ACTIVE or CREATE_IN_PROGRESS), which is computed by AWS and indicates whether the service is available or still being provisioned. (AI-inferred)
     status: Any = None
+    # The tags assigned to this VPC Lattice service. (AI-inferred)
     tags: Any = None
 
 Service = ubx.ResourceBinding(

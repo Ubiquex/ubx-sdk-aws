@@ -66,6 +66,7 @@ export interface BranchConfig {
   description?: string | Computed<string>;
   /** Indicates whether automatic builds are enabled for the branch, causing Amplify to build the branch automatically every time a code change is pushed to the repository. (AI-inferred) */
   enableAutoBuild?: boolean | Computed<boolean>;
+  /** Whether performance mode is enabled for this Amplify branch, trading some CDN cache staleness for faster deploys. (AI-inferred) */
   enablePerformanceMode?: boolean | Computed<boolean>;
   /** Indicates whether Amplify automatically generates a preview of the branch for every pull request, enabling you to test changes before merging them into the main branch. (AI-inferred) */
   enablePullRequestPreview?: boolean | Computed<boolean>;
@@ -102,6 +103,7 @@ export interface BranchAttrs {
   description: string;
   /** Indicates whether automatic builds are enabled for the branch, causing Amplify to build the branch automatically every time a code change is pushed to the repository. (AI-inferred) */
   enableAutoBuild: boolean;
+  /** Whether performance mode is enabled for this Amplify branch, trading some CDN cache staleness for faster deploys. (AI-inferred) */
   enablePerformanceMode: boolean;
   /** Indicates whether Amplify automatically generates a preview of the branch for every pull request, enabling you to test changes before merging them into the main branch. (AI-inferred) */
   enablePullRequestPreview: boolean;

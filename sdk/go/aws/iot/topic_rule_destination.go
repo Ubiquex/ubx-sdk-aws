@@ -8,6 +8,19 @@ type TopicRuleDestination_HttpUrlProperties struct {
 	ConfirmationUrl any
 }
 
+type TopicRuleDestination_InfluxDbproperties struct {
+	// The endpoint URL of the InfluxDB database.
+	Endpoint any
+	// The version of the InfluxDB database (for example, V2 or V3).
+	InfluxDbversion any
+	// The ARN or name of the Secrets Manager secret containing the InfluxDB API token.
+	SecretId any
+	// The key name within the secret that contains the InfluxDB token.
+	SecretKey any
+	// The type of the secret value (SecretString or SecretBinary).
+	SecretType any
+}
+
 type TopicRuleDestination_VpcProperties struct {
 	// The ARN of the IAM role that AWS IoT assumes to access the VPC for the topic rule destination's VPC configuration. (AI-inferred)
 	RoleArn any
@@ -23,6 +36,14 @@ var TopicRuleDestination_HttpUrlPropertiesFields = ubx.FieldMap{
 		"ConfirmationUrl": ubx.FieldSpec{WireName: "confirmation_url"},
 	}
 
+var TopicRuleDestination_InfluxDbpropertiesFields = ubx.FieldMap{
+		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
+		"InfluxDbversion": ubx.FieldSpec{WireName: "influx_dbversion"},
+		"SecretId": ubx.FieldSpec{WireName: "secret_id"},
+		"SecretKey": ubx.FieldSpec{WireName: "secret_key"},
+		"SecretType": ubx.FieldSpec{WireName: "secret_type"},
+	}
+
 var TopicRuleDestination_VpcPropertiesFields = ubx.FieldMap{
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
@@ -33,6 +54,7 @@ var TopicRuleDestination_VpcPropertiesFields = ubx.FieldMap{
 type TopicRuleDestinationConfig struct {
 	// Specifies the HTTP destination's confirmation URL, which AWS IoT uses to verify ownership of the endpoint before activating the topic rule destination. (AI-inferred)
 	HttpUrlProperties any
+	InfluxDbproperties any
 	// Sets the desired status (ENABLED or DISABLED) of the AWS IoT topic rule destination, controlling whether it can be used by IoT rule actions. (AI-inferred)
 	Status any
 	// Defines the VPC configuration for the IoT topic rule destination, including the subnets and security groups that the destination uses to deliver messages to resources inside a VPC. (AI-inferred)
@@ -44,6 +66,7 @@ type TopicRuleDestinationAttrs struct {
 	Arn any
 	// Specifies the HTTP destination's confirmation URL, which AWS IoT uses to verify ownership of the endpoint before activating the topic rule destination. (AI-inferred)
 	HttpUrlProperties any
+	InfluxDbproperties any
 	// Sets the desired status (ENABLED or DISABLED) of the AWS IoT topic rule destination, controlling whether it can be used by IoT rule actions. (AI-inferred)
 	Status any
 	// The reasoning for the current status of the TopicRuleDestination.
@@ -59,6 +82,11 @@ var TopicRuleDestination = ubx.ResourceBinding{
 			WireName: "http_url_properties",
 			Kind: "object",
 			Fields: TopicRuleDestination_HttpUrlPropertiesFields,
+		},
+		"InfluxDbproperties": ubx.FieldSpec{
+			WireName: "influx_dbproperties",
+			Kind: "object",
+			Fields: TopicRuleDestination_InfluxDbpropertiesFields,
 		},
 		"Status": ubx.FieldSpec{WireName: "status"},
 		"VpcProperties": ubx.FieldSpec{

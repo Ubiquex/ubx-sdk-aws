@@ -84,6 +84,10 @@ type GatewayRule_Conditions struct {
 	MatchPrincipals any
 }
 
+type GatewayRule_System struct {
+	ManagedBy any
+}
+
 var GatewayRule_Actions_ConfigurationBundle_StaticOverrideFields = ubx.FieldMap{
 		"BundleArn": ubx.FieldSpec{WireName: "bundle_arn"},
 		"BundleVersion": ubx.FieldSpec{WireName: "bundle_version"},
@@ -207,27 +211,39 @@ var GatewayRule_ConditionsFields = ubx.FieldMap{
 	}
 
 type GatewayRuleConfig struct {
+	// The action(s) this gateway rule applies, e.g. routing a portion of traffic to a particular target configuration. (AI-inferred)
 	Actions any
 	// A list of conditions that are evaluated against the incoming request or context to determine whether this core gateway rule should trigger its associated actions. (AI-inferred)
 	Conditions any
+	// Provides a human-readable note about this traffic split entry, used within a weighted override of an action's configuration bundle to document the purpose of routing a portion of traffic to a particular agent configuration in the core gateway rule. (AI-inferred)
 	Description any
 	// The unique identifier of the Bedrock agent core gateway to which this rule is attached, used to apply the rule's routing behavior to that gateway's traffic. (AI-inferred)
 	GatewayIdentifier any
+	// This rule's own real evaluation order relative to the gateway's own other rules; a lower value is evaluated first. (AI-inferred)
 	Priority any
 }
 
 type GatewayRuleAttrs struct {
+	// The action(s) this gateway rule applies, e.g. routing a portion of traffic to a particular target configuration. (AI-inferred)
 	Actions any
 	// A list of conditions that are evaluated against the incoming request or context to determine whether this core gateway rule should trigger its associated actions. (AI-inferred)
 	Conditions any
+	// The date and time at which this gateway rule was created. (AI-inferred)
 	CreatedAt any
+	// Provides a human-readable note about this traffic split entry, used within a weighted override of an action's configuration bundle to document the purpose of routing a portion of traffic to a particular agent configuration in the core gateway rule. (AI-inferred)
 	Description any
+	// The Amazon Resource Name (ARN) of the gateway this rule belongs to. (AI-inferred)
 	GatewayArn any
 	// The unique identifier of the Bedrock agent core gateway to which this rule is attached, used to apply the rule's routing behavior to that gateway's traffic. (AI-inferred)
 	GatewayIdentifier any
+	// This rule's own real evaluation order relative to the gateway's own other rules; a lower value is evaluated first. (AI-inferred)
 	Priority any
+	// The unique identifier of this gateway rule. (AI-inferred)
 	RuleId any
+	// The current status of this gateway rule. (AI-inferred)
 	Status any
+	System any
+	// The date and time at which this gateway rule was updated. (AI-inferred)
 	UpdatedAt any
 }
 

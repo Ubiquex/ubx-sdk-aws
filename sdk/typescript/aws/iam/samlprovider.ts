@@ -30,6 +30,7 @@ export interface SamlproviderConfig {
   assertionEncryptionMode?: string | Computed<string>;
   /** The name of the SAML provider, which serves as the unique identifier in IAM and is appended to the provider ARN; if omitted, CloudFormation derives it from the resource's logical ID. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The private keys associated with this SAML provider, used for signing SAML assertions. (AI-inferred) */
   privateKeyList?: Samlprovider_PrivateKeyList[] | Computed<Samlprovider_PrivateKeyList[]>;
   /** The Key ID of the private key to remove */
   removePrivateKey?: string | Computed<string>;
@@ -48,6 +49,7 @@ export interface SamlproviderAttrs {
   assertionEncryptionMode: string;
   /** The name of the SAML provider, which serves as the unique identifier in IAM and is appended to the provider ARN; if omitted, CloudFormation derives it from the resource's logical ID. (AI-inferred) */
   name: string;
+  /** The private keys associated with this SAML provider, used for signing SAML assertions. (AI-inferred) */
   privateKeyList: Samlprovider_PrivateKeyList[];
   /** The Key ID of the private key to remove */
   removePrivateKey: string;

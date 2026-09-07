@@ -14,16 +14,19 @@ class Attachment_Attachment:
 @dataclasses.dataclass
 class AttachmentConfig:
     attachment_id: Any = None
+    dry_run: Any = None
 
 @dataclasses.dataclass
 class AttachmentAttrs:
     # <p>An attachment to a case communication. The attachment consists of the file name and the content of the file. Each attachment file size should not exceed 5 MB. File types that are supported include the following: pdf, jpeg,.doc, .log, .text </p>
     attachment: Any = None
     attachment_id: Any = None
+    dry_run: Any = None
 
 Attachment = ubx.DataSourceBinding(
     wire_type="aws_support_attachment",
     fields={
         "attachment_id": ubx.FieldSpec(wire_name="attachment_id"),
+        "dry_run": ubx.FieldSpec(wire_name="dry_run"),
     },
 )

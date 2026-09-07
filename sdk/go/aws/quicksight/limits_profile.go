@@ -4,20 +4,32 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LimitsProfileConfig struct {
+	// The AWS account ID this limits profile belongs to. (AI-inferred)
 	AccountId any
+	// The description of this limits profile. (AI-inferred)
 	Description any
+	// The name of this limits profile. (AI-inferred)
 	ProfileName any
+	// The real resource usage limit(s) this profile applies, e.g. to users or groups it is assigned to. (AI-inferred)
 	ResourceLimits any
 }
 
 type LimitsProfileAttrs struct {
+	// The AWS account ID this limits profile belongs to. (AI-inferred)
 	AccountId any
+	// The Amazon Resource Name (ARN) of this limits profile. (AI-inferred)
 	Arn any
+	// The date and time this limits profile was created. (AI-inferred)
 	CreatedAt any
+	// The description of this limits profile. (AI-inferred)
 	Description any
+	// The unique identifier of this limits profile. (AI-inferred)
 	ProfileId any
+	// The name of this limits profile. (AI-inferred)
 	ProfileName any
+	// The real resource usage limit(s) this profile applies, e.g. to users or groups it is assigned to. (AI-inferred)
 	ResourceLimits any
+	// The date and time this limits profile was last updated. (AI-inferred)
 	UpdatedAt any
 }
 

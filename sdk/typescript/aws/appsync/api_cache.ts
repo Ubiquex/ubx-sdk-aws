@@ -27,6 +27,7 @@ export interface ApiCacheAttrs {
   atRestEncryptionEnabled: boolean;
   /** Configures whether cache health metrics are enabled for the AppSync API cache, with valid values ENABLED or DISABLED. (AI-inferred) */
   healthMetricsConfig: string;
+  /** The unique identifier of this AppSync API cache. (AI-inferred) */
   id: string;
   /** Indicates whether encryption in transit is enabled for the AppSync API cache. (AI-inferred) */
   transitEncryptionEnabled: boolean;

@@ -531,6 +531,7 @@ export interface TemplateConfig {
   name: string | Computed<string>;
   /** When set to true, triggers reissuance of certificates to all existing certificate holders when the template is updated or modified. (AI-inferred) */
   reenrollAllCertificateHolders?: boolean | Computed<boolean>;
+  /** The tags assigned to this Private CA Connector for Active Directory template. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
 }
 
@@ -543,6 +544,7 @@ export interface TemplateAttrs {
   name: string;
   /** When set to true, triggers reissuance of certificates to all existing certificate holders when the template is updated or modified. (AI-inferred) */
   reenrollAllCertificateHolders: boolean;
+  /** The tags assigned to this Private CA Connector for Active Directory template. (AI-inferred) */
   tags: unknown;
   /** The Amazon Resource Name (ARN) that uniquely identifies the Private CA Connector for Active Directory template managed by this resource. (AI-inferred) */
   templateArn: string;

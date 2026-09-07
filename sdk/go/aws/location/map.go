@@ -33,6 +33,7 @@ var Map_TagsFields = ubx.FieldMap{
 type MapConfig struct {
 	// Specifies the map style (e.g., VectorEsriStreets or RasterEsriImagery) used by the map resource. (AI-inferred)
 	Configuration any
+	// The description of this map resource. (AI-inferred)
 	Description any
 	// A user-defined name for the Amazon Location Service map resource, used to identify it within the AWS account and in API calls. (AI-inferred)
 	MapName any
@@ -49,6 +50,7 @@ type MapAttrs struct {
 	Configuration any
 	// The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ)
 	CreateTime any
+	// The description of this map resource. (AI-inferred)
 	Description any
 	// The Amazon Resource Name (ARN) of the AWS Location Service map, assigned by AWS when the map is created. (AI-inferred)
 	MapArn any

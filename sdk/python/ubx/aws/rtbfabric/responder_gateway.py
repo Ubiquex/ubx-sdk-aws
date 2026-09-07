@@ -36,13 +36,19 @@ _ResponderGateway_TrustStoreConfigurationFields = {
 class ResponderGatewayConfig:
     # The Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate used for TLS/SSL termination on the responder gateway's public endpoint. (AI-inferred)
     acm_certificate_arn: Any = None
+    # The description of this responder gateway. (AI-inferred)
     description: Any = None
+    # The custom domain name assigned to this responder gateway. (AI-inferred)
     domain_name: Any = None
+    # Whether this responder gateway is reachable from the public internet (EXTERNAL) or only from within RTB Fabric (INTERNAL). (AI-inferred)
     gateway_type: Any = None
     # Configures the network listener for the responder gateway, specifying the port and protocol (such as HTTP or HTTPS) on which it accepts incoming bid requests. (AI-inferred)
     listener_config: Any = None
+    # The configuration for this responder gateway's own AWS-managed endpoint, used when no custom domain name is configured. (AI-inferred)
     managed_endpoint_configuration: Any = None
+    # The networking port this responder gateway listens on. (AI-inferred)
     port: Any = None
+    # The networking protocol (HTTP or HTTPS) this responder gateway listens on. (AI-inferred)
     protocol: Any = None
     # The ID of one or more security groups in order to create a gateway.
     security_group_ids: Any = None
@@ -52,25 +58,38 @@ class ResponderGatewayConfig:
     tags: Any = None
     # Configures the trust store used by the responder gateway to validate client certificates during mutual TLS handshakes, enabling secure client authentication. (AI-inferred)
     trust_store_configuration: Any = None
+    # A reference to the VPC this responder gateway is deployed in. (AI-inferred)
     vpc_id: Any = None
 
 @dataclasses.dataclass
 class ResponderGatewayAttrs:
     # The Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate used for TLS/SSL termination on the responder gateway's public endpoint. (AI-inferred)
     acm_certificate_arn: Any = None
+    # The Amazon Resource Name (ARN) of this responder gateway. (AI-inferred)
     arn: Any = None
+    # The status of the ACM certificate association with this responder gateway's own custom domain. (AI-inferred)
     certificate_association_status: Any = None
+    # The date and time when this responder gateway was created. (AI-inferred)
     created_timestamp: Any = None
+    # The description of this responder gateway. (AI-inferred)
     description: Any = None
+    # The custom domain name assigned to this responder gateway. (AI-inferred)
     domain_name: Any = None
+    # The endpoint external bid requesters use to reach this responder gateway. (AI-inferred)
     external_inbound_endpoint: Any = None
+    # The unique identifier of this responder gateway. (AI-inferred)
     gateway_id: Any = None
+    # Whether this responder gateway is reachable from the public internet (EXTERNAL) or only from within RTB Fabric (INTERNAL). (AI-inferred)
     gateway_type: Any = None
     # Configures the network listener for the responder gateway, specifying the port and protocol (such as HTTP or HTTPS) on which it accepts incoming bid requests. (AI-inferred)
     listener_config: Any = None
+    # The configuration for this responder gateway's own AWS-managed endpoint, used when no custom domain name is configured. (AI-inferred)
     managed_endpoint_configuration: Any = None
+    # The networking port this responder gateway listens on. (AI-inferred)
     port: Any = None
+    # The networking protocol (HTTP or HTTPS) this responder gateway listens on. (AI-inferred)
     protocol: Any = None
+    # The current status of this responder gateway. (AI-inferred)
     responder_gateway_status: Any = None
     # The ID of one or more security groups in order to create a gateway.
     security_group_ids: Any = None
@@ -80,7 +99,9 @@ class ResponderGatewayAttrs:
     tags: Any = None
     # Configures the trust store used by the responder gateway to validate client certificates during mutual TLS handshakes, enabling secure client authentication. (AI-inferred)
     trust_store_configuration: Any = None
+    # The date and time when this responder gateway was last updated. (AI-inferred)
     updated_timestamp: Any = None
+    # A reference to the VPC this responder gateway is deployed in. (AI-inferred)
     vpc_id: Any = None
 
 ResponderGateway = ubx.ResourceBinding(

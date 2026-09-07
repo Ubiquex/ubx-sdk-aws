@@ -15,6 +15,7 @@ class WebAclassociationConfig:
 
 @dataclasses.dataclass
 class WebAclassociationAttrs:
+    # The unique identifier of this web ACL association. (AI-inferred)
     id: Any = None
     # The ARN of the AWS resource (such as an Application Load Balancer or Amazon API Gateway stage) to associate with the Web ACL. (AI-inferred)
     resource_arn: Any = None

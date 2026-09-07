@@ -6,6 +6,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type PolicyTemplateConfig struct {
 	// Specifies an optional text description for the policy template, used to provide context about the template's intended purpose. (AI-inferred)
 	Description any
+	// The name of this Verified Permissions policy template. (AI-inferred)
 	Name any
 	// The ID of the policy store in which this policy template is created, associating the template with a specific Cedar policy store. (AI-inferred)
 	PolicyStoreId any
@@ -16,6 +17,7 @@ type PolicyTemplateConfig struct {
 type PolicyTemplateAttrs struct {
 	// Specifies an optional text description for the policy template, used to provide context about the template's intended purpose. (AI-inferred)
 	Description any
+	// The name of this Verified Permissions policy template. (AI-inferred)
 	Name any
 	// The ID of the policy store in which this policy template is created, associating the template with a specific Cedar policy store. (AI-inferred)
 	PolicyStoreId any

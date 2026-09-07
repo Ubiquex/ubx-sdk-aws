@@ -2094,6 +2094,7 @@ const Bot_TestBotAliasSettingsFields: FieldMap = {
 };
 
 export interface BotConfig {
+  /** Whether Amazon Lex automatically builds this bot's own locales as they're added or updated. (AI-inferred) */
   autoBuildBotLocales?: boolean | Computed<boolean>;
   /** Configuration for the Amazon S3 location of the bot definition file, specifying the S3 bucket and object key used to import the bot. (AI-inferred) */
   botFileS3Location?: Bot_BotFileS3Location | Computed<Bot_BotFileS3Location>;
@@ -2128,6 +2129,7 @@ export interface BotConfig {
 export interface BotAttrs {
   /** The Amazon Resource Name (ARN) that uniquely identifies this Amazon Lex bot in AWS. (AI-inferred) */
   arn: string;
+  /** Whether Amazon Lex automatically builds this bot's own locales as they're added or updated. (AI-inferred) */
   autoBuildBotLocales: boolean;
   /** Configuration for the Amazon S3 location of the bot definition file, specifying the S3 bucket and object key used to import the bot. (AI-inferred) */
   botFileS3Location: Bot_BotFileS3Location;

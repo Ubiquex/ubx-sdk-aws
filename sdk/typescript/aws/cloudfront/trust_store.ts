@@ -56,6 +56,7 @@ export interface TrustStoreConfig {
 }
 
 export interface TrustStoreAttrs {
+  /** The Amazon Resource Name (ARN) of this trust store. (AI-inferred) */
   arn: string;
   /** A CA certificates bundle source. */
   caCertificatesBundleSource: TrustStore_CaCertificatesBundleSource;
@@ -69,6 +70,7 @@ export interface TrustStoreAttrs {
   name: string;
   /** The number of CA certificates currently contained in the CloudFront trust store. (AI-inferred) */
   numberOfCaCertificates: number;
+  /** The current status of this trust store. (AI-inferred) */
   status: string;
   /** A complex type that contains zero or more ``Tag`` elements. */
   tags: TrustStore_Tags[];

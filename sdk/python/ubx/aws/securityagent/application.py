@@ -26,18 +26,24 @@ _Application_TagsFields = {
 class ApplicationConfig:
     # Identifier of a KMS key. Can be a key ID, key ARN, alias name, or alias ARN.
     default_kms_key_id: Any = None
+    # The Amazon Resource Name (ARN) of the IAM role this security agent application assumes. (AI-inferred)
     role_arn: Any = None
     # Tags for the application
     tags: Any = None
 
 @dataclasses.dataclass
 class ApplicationAttrs:
+    # The unique identifier of this security agent application. (AI-inferred)
     application_id: Any = None
+    # The name of this security agent application. (AI-inferred)
     application_name: Any = None
     # Identifier of a KMS key. Can be a key ID, key ARN, alias name, or alias ARN.
     default_kms_key_id: Any = None
+    # The domain this security agent application is registered under. (AI-inferred)
     domain: Any = None
+    # The identity configuration for this security agent application. (AI-inferred)
     id_cconfiguration: Any = None
+    # The Amazon Resource Name (ARN) of the IAM role this security agent application assumes. (AI-inferred)
     role_arn: Any = None
     # Tags for the application
     tags: Any = None

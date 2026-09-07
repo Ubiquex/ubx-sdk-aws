@@ -30,31 +30,50 @@ const FileSystem_TagsFields: FieldMap = {
 };
 
 export interface FileSystemConfig {
+  /** Whether the warning about using this S3 bucket for an S3 Files file system has been read and accepted. (AI-inferred) */
   acceptBucketWarning?: boolean | Computed<boolean>;
   /** The name of the S3 bucket that stores the underlying file data for this file system. (AI-inferred) */
   bucket: string | Computed<string>;
+  /** A unique string that identifies the request used to create this file system, ensuring idempotency. (AI-inferred) */
   clientToken?: string | Computed<string>;
+  /** The AWS KMS key used to encrypt this file system. (AI-inferred) */
   kmsKeyId?: string | Computed<string>;
+  /** The S3 key prefix this file system is scoped to; when set, only objects under this prefix in the bucket are accessible through the file system. (AI-inferred) */
   prefix?: string | Computed<string>;
+  /** The Amazon Resource Name (ARN) of the IAM role this file system uses to access its own underlying S3 bucket. (AI-inferred) */
   roleArn: string | Computed<string>;
+  /** The tags assigned to this file system. (AI-inferred) */
   tags?: FileSystem_Tags[] | Computed<FileSystem_Tags[]>;
 }
 
 export interface FileSystemAttrs {
+  /** Whether the warning about using this S3 bucket for an S3 Files file system has been read and accepted. (AI-inferred) */
   acceptBucketWarning: boolean;
   /** The name of the S3 bucket that stores the underlying file data for this file system. (AI-inferred) */
   bucket: string;
+  /** A unique string that identifies the request used to create this file system, ensuring idempotency. (AI-inferred) */
   clientToken: string;
+  /** The date and time when this file system was created. (AI-inferred) */
   creationTime: string;
+  /** The Amazon Resource Name (ARN) of this file system. (AI-inferred) */
   fileSystemArn: string;
+  /** The unique identifier of this file system. (AI-inferred) */
   fileSystemId: string;
+  /** The AWS KMS key used to encrypt this file system. (AI-inferred) */
   kmsKeyId: string;
+  /** The AWS account ID that owns this file system. (AI-inferred) */
   ownerId: string;
+  /** The S3 key prefix this file system is scoped to; when set, only objects under this prefix in the bucket are accessible through the file system. (AI-inferred) */
   prefix: string;
+  /** The Amazon Resource Name (ARN) of the IAM role this file system uses to access its own underlying S3 bucket. (AI-inferred) */
   roleArn: string;
+  /** The current status of this file system. (AI-inferred) */
   status: string;
+  /** Additional information about this file system's own current status. (AI-inferred) */
   statusMessage: string;
+  /** The synchronization configuration controlling how data is imported into and expired from this file system between S3 and the file system view. (AI-inferred) */
   synchronizationConfiguration: FileSystem_SynchronizationConfiguration;
+  /** The tags assigned to this file system. (AI-inferred) */
   tags: FileSystem_Tags[];
 }
 

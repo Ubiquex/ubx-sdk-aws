@@ -703,6 +703,7 @@ export interface SpotFleetConfig {
 }
 
 export interface SpotFleetAttrs {
+  /** The unique identifier of this Spot Fleet request. (AI-inferred) */
   id: string;
   /** This object defines the configuration for the Spot Fleet request, including the IAM fleet role, target capacity, launch specifications for instances, and allocation strategy. (AI-inferred) */
   spotFleetRequestConfigData: SpotFleet_SpotFleetRequestConfigData;

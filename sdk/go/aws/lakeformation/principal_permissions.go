@@ -8,6 +8,10 @@ type PrincipalPermissions_Principal struct {
 	DataLakePrincipalIdentifier any
 }
 
+type PrincipalPermissions_Resource_Catalog struct {
+	Id any
+}
+
 type PrincipalPermissions_Resource_DataCellsFilter struct {
 	// The name of the Lake Formation database that contains the data cells filter to which the principal permissions are being granted. (AI-inferred)
 	DatabaseName any
@@ -110,6 +114,10 @@ var PrincipalPermissions_PrincipalFields = ubx.FieldMap{
 		"DataLakePrincipalIdentifier": ubx.FieldSpec{WireName: "data_lake_principal_identifier"},
 	}
 
+var PrincipalPermissions_Resource_CatalogFields = ubx.FieldMap{
+		"Id": ubx.FieldSpec{WireName: "id"},
+	}
+
 var PrincipalPermissions_Resource_DataCellsFilterFields = ubx.FieldMap{
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
 		"Name": ubx.FieldSpec{WireName: "name"},
@@ -172,7 +180,11 @@ var PrincipalPermissions_Resource_TableWithColumnsFields = ubx.FieldMap{
 	}
 
 var PrincipalPermissions_ResourceFields = ubx.FieldMap{
-		"Catalog": ubx.FieldSpec{WireName: "catalog"},
+		"Catalog": ubx.FieldSpec{
+			WireName: "catalog",
+			Kind: "object",
+			Fields: PrincipalPermissions_Resource_CatalogFields,
+		},
 		"DataCellsFilter": ubx.FieldSpec{
 			WireName: "data_cells_filter",
 			Kind: "object",
@@ -211,6 +223,7 @@ var PrincipalPermissions_ResourceFields = ubx.FieldMap{
 	}
 
 type PrincipalPermissionsConfig struct {
+	// A reference to the Lake Formation data catalog these principal permissions apply to. (AI-inferred)
 	Catalog any
 	// The list of Lake Formation permissions to grant to the principal, with allowed values such as ALL, ALTER, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS, DELETE, DESCRIBE, DROP, INSERT, and SELECT. (AI-inferred)
 	Permissions any
@@ -223,6 +236,7 @@ type PrincipalPermissionsConfig struct {
 }
 
 type PrincipalPermissionsAttrs struct {
+	// A reference to the Lake Formation data catalog these principal permissions apply to. (AI-inferred)
 	Catalog any
 	// The list of Lake Formation permissions to grant to the principal, with allowed values such as ALL, ALTER, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS, DELETE, DESCRIBE, DROP, INSERT, and SELECT. (AI-inferred)
 	Permissions any

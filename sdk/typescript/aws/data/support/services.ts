@@ -13,11 +13,13 @@ export interface Services_Services {
 }
 
 export interface ServicesConfig {
+  dryRun?: boolean | Computed<boolean>;
   language?: string | Computed<string>;
   serviceCodeList?: string[] | Computed<string[]>;
 }
 
 export interface ServicesAttrs {
+  dryRun: boolean;
   language: string;
   serviceCodeList: string[];
   services: Services_Services[];
@@ -26,6 +28,7 @@ export interface ServicesAttrs {
 export const Services: DataSourceBinding<ServicesConfig, ServicesAttrs> = {
   wireType: "aws_support_services",
   fields: {
+    dryRun: "dry_run",
     language: "language",
     serviceCodeList: "service_code_list",
   },

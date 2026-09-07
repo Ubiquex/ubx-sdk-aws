@@ -31,6 +31,7 @@ const Map_TagsFields: FieldMap = {
 export interface MapConfig {
   /** Specifies the map style (e.g., VectorEsriStreets or RasterEsriImagery) used by the map resource. (AI-inferred) */
   configuration: Map_Configuration | Computed<Map_Configuration>;
+  /** The description of this map resource. (AI-inferred) */
   description?: string | Computed<string>;
   /** A user-defined name for the Amazon Location Service map resource, used to identify it within the AWS account and in API calls. (AI-inferred) */
   mapName: string | Computed<string>;
@@ -47,6 +48,7 @@ export interface MapAttrs {
   configuration: Map_Configuration;
   /** The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ) */
   createTime: string;
+  /** The description of this map resource. (AI-inferred) */
   description: string;
   /** The Amazon Resource Name (ARN) of the AWS Location Service map, assigned by AWS when the map is created. (AI-inferred) */
   mapArn: string;

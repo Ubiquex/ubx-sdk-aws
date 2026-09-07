@@ -39,6 +39,7 @@ class MailManagerRelayConfig:
     server_name: Any = None
     # Sets the TCP port number on the destination mail server that the SES Mail Manager relay uses for SMTP email relaying. (AI-inferred)
     server_port: Any = None
+    # The tags assigned to this Mail Manager relay. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -55,6 +56,7 @@ class MailManagerRelayAttrs:
     server_name: Any = None
     # Sets the TCP port number on the destination mail server that the SES Mail Manager relay uses for SMTP email relaying. (AI-inferred)
     server_port: Any = None
+    # The tags assigned to this Mail Manager relay. (AI-inferred)
     tags: Any = None
 
 MailManagerRelay = ubx.ResourceBinding(

@@ -71,6 +71,7 @@ const Policy_DefinitionFields: FieldMap = {
 export interface PolicyConfig {
   /** Contains the policy's definition, either a static statement written in Cedar policy syntax or a template-linked reference to a policy template with a principal. (AI-inferred) */
   definition: Policy_Definition | Computed<Policy_Definition>;
+  /** The name of this Verified Permissions policy. (AI-inferred) */
   name?: string | Computed<string>;
   /** The unique identifier of the policy store in AWS Verified Permissions where this policy is created and to which it belongs. (AI-inferred) */
   policyStoreId: string | Computed<string>;
@@ -79,6 +80,7 @@ export interface PolicyConfig {
 export interface PolicyAttrs {
   /** Contains the policy's definition, either a static statement written in Cedar policy syntax or a template-linked reference to a policy template with a principal. (AI-inferred) */
   definition: Policy_Definition;
+  /** The name of this Verified Permissions policy. (AI-inferred) */
   name: string;
   /** The unique identifier assigned by Amazon Verified Permissions to the policy when it is created, used to reference and manage the policy. (AI-inferred) */
   policyId: string;

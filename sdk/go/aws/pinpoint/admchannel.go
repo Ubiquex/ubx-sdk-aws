@@ -23,6 +23,7 @@ type AdmchannelAttrs struct {
 	ClientSecret any
 	// Indicates whether the ADM channel is enabled for sending push notifications through Amazon Pinpoint. (AI-inferred)
 	Enabled any
+	// The unique identifier of this Pinpoint ADM channel. (AI-inferred)
 	Id any
 }
 

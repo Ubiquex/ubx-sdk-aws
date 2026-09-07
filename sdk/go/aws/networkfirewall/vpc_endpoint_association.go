@@ -26,17 +26,20 @@ var VpcEndpointAssociation_TagsFields = ubx.FieldMap{
 	}
 
 type VpcEndpointAssociationConfig struct {
+	// The description of this VPC endpoint association. (AI-inferred)
 	Description any
 	// A resource ARN.
 	FirewallArn any
 	// Defines the subnet mappings (each with subnet ID and optional IP address type) to associate with the Network Firewall VPC endpoint. (AI-inferred)
 	SubnetMapping any
+	// The tags assigned to this VPC endpoint association. (AI-inferred)
 	Tags any
 	// The ID of the VPC in which the VPC endpoint is being associated with the Network Firewall firewall. (AI-inferred)
 	VpcId any
 }
 
 type VpcEndpointAssociationAttrs struct {
+	// The description of this VPC endpoint association. (AI-inferred)
 	Description any
 	// An endpoint Id.
 	EndpointId any
@@ -44,6 +47,7 @@ type VpcEndpointAssociationAttrs struct {
 	FirewallArn any
 	// Defines the subnet mappings (each with subnet ID and optional IP address type) to associate with the Network Firewall VPC endpoint. (AI-inferred)
 	SubnetMapping any
+	// The tags assigned to this VPC endpoint association. (AI-inferred)
 	Tags any
 	// A resource ARN.
 	VpcEndpointAssociationArn any

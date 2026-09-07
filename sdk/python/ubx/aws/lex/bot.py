@@ -2100,6 +2100,7 @@ _Bot_TestBotAliasSettingsFields = {
 
 @dataclasses.dataclass
 class BotConfig:
+    # Whether Amazon Lex automatically builds this bot's own locales as they're added or updated. (AI-inferred)
     auto_build_bot_locales: Any = None
     # Configuration for the Amazon S3 location of the bot definition file, specifying the S3 bucket and object key used to import the bot. (AI-inferred)
     bot_file_s3_location: Any = None
@@ -2134,6 +2135,7 @@ class BotConfig:
 class BotAttrs:
     # The Amazon Resource Name (ARN) that uniquely identifies this Amazon Lex bot in AWS. (AI-inferred)
     arn: Any = None
+    # Whether Amazon Lex automatically builds this bot's own locales as they're added or updated. (AI-inferred)
     auto_build_bot_locales: Any = None
     # Configuration for the Amazon S3 location of the bot definition file, specifying the S3 bucket and object key used to import the bot. (AI-inferred)
     bot_file_s3_location: Any = None

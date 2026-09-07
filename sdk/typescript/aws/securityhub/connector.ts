@@ -76,11 +76,13 @@ export interface ConnectorAttrs {
   description: string;
   /** The enablement status of the connector */
   enablementStatus: string;
+  /** The issues reported by this Security Hub connector's own external source. (AI-inferred) */
   issues: Connector_Issues[];
   /** The timestamp formatted in ISO8601 */
   lastCheckedAt: string;
   /** The timestamp formatted in ISO8601 */
   lastUpdatedAt: string;
+  /** A message describing this Security Hub connector's own current state. (AI-inferred) */
   message: string;
   /** The name of the connector. */
   name: string;

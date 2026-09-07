@@ -10,6 +10,8 @@ type Dbinstance_AdditionalStorageVolumes struct {
 	Iops any
 	// The maximum storage size, in gigabytes, to which this additional storage volume can be automatically scaled when automatic storage expansion is enabled for the DB instance. (AI-inferred)
 	MaxAllocatedStorage any
+	StorageOperationPercentProgress any
+	StorageOperationStatus any
 	// Specifies the storage throughput in MiB/s for the additional storage volume when using the gp3 storage type. (AI-inferred)
 	StorageThroughput any
 	StorageType any
@@ -71,15 +73,6 @@ type Dbinstance_Tags struct {
 	Value any
 }
 
-var Dbinstance_AdditionalStorageVolumesFields = ubx.FieldMap{
-		"AllocatedStorage": ubx.FieldSpec{WireName: "allocated_storage"},
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"MaxAllocatedStorage": ubx.FieldSpec{WireName: "max_allocated_storage"},
-		"StorageThroughput": ubx.FieldSpec{WireName: "storage_throughput"},
-		"StorageType": ubx.FieldSpec{WireName: "storage_type"},
-		"VolumeName": ubx.FieldSpec{WireName: "volume_name"},
-	}
-
 var Dbinstance_AssociatedRolesFields = ubx.FieldMap{
 		"FeatureName": ubx.FieldSpec{WireName: "feature_name"},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
@@ -96,8 +89,6 @@ var Dbinstance_TagsFields = ubx.FieldMap{
 	}
 
 type DbinstanceConfig struct {
-	// The additional storage volumes associated with the DB instance. RDS supports additional storage volumes for RDS for Oracle and RDS for SQL Server.
-	AdditionalStorageVolumes any
 	// The amount of storage in gibibytes (GiB) to be initially allocated for the database instance. If any value is set in the ``Iops`` parameter, ``AllocatedStorage`` must be at least 100 GiB, which corresponds to the minimum Iops value of 1,000. If you increase the ``Iops`` value (in 1,000 IOPS increments), then you must also increase the ``AllocatedStorage`` value (in 100-GiB increments). *Amazon Aurora* Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume. *Db2* Constraints to the amount of storage for each storage type are the following: + General Purpose (SSD) storage (gp3): Must be an integer from 20 to 64000. + Provisioned IOPS storage (io1): Must be an integer from 100 to 64000. *MySQL* Constraints to the amount of storage for each storage type are the following: + General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. + Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. + Magnetic storage (standard): Must be an integer from 5 to 3072. *MariaDB* Constraints to the amount of storage for each storage type are the following: + General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. + Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. + Magnetic storage (standard): Must be an integer from 5 to 3072. *PostgreSQL* Constraints to the amount of storage for each storage type are the following: + General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. + Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. + Magnetic storage (standard): Must be an integer from 5 to 3072. *Oracle* Constraints to the amount of storage for each storage type are the following: + General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. + Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. + Magnetic storage (standard): Must be an integer from 10 to 3072. *SQL Server* Constraints to the amount of storage for each storage type are the following: + General Purpose (SSD) storage (gp2): + Enterprise and Standard editions: Must be an integer from 20 to 16384. + Web and Express editions: Must be an integer from 20 to 16384. + Provisioned IOPS storage (io1): + Enterprise and Standard editions: Must be an integer from 20 to 16384. + Web and Express editions: Must be an integer from 20 to 16384. + Magnetic storage (standard): + Enterprise and Standard editions: Must be an integer from 20 to 1024. + Web and Express editions: Must be an integer from 20 to 1024.
 	AllocatedStorage any
 	// A value that indicates whether major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. Constraints: Major version upgrades must be allowed when specifying a value for the ``EngineVersion`` parameter that is a different major version than the DB instance's current version.
@@ -281,6 +272,7 @@ type DbinstanceAttrs struct {
 	AutomaticBackupReplicationRegion any
 	// The retention period for automated backups in a different AWS Region. Use this parameter to set a unique retention period that only applies to cross-Region automated backups. To enable automated backups in a different Region, specify a positive value for the ``AutomaticBackupReplicationRegion`` parameter. If not specified, this parameter defaults to the value of the ``BackupRetentionPeriod`` parameter. The maximum allowed value is 35.
 	AutomaticBackupReplicationRetentionPeriod any
+	// The date and time when this DB instance is scheduled to automatically restart. (AI-inferred)
 	AutomaticRestartTime any
 	// The Availability Zone (AZ) where the database will be created. For information on AWS-Regions and Availability Zones, see [Regions and Availability Zones](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html). For Amazon Aurora, each Aurora DB cluster hosts copies of its storage in three separate Availability Zones. Specify one of these Availability Zones. Aurora automatically chooses an appropriate Availability Zone if you don't specify one. Default: A random, system-chosen Availability Zone in the endpoint's AWS-Region. Constraints: + The ``AvailabilityZone`` parameter can't be specified if the DB instance is a Multi-AZ deployment. + The specified Availability Zone must be in the same AWS-Region as the current endpoint. Example: ``us-east-1d``
 	AvailabilityZone any
@@ -442,6 +434,8 @@ type DbinstanceAttrs struct {
 	StatusInfos any
 	// A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted. If you specify the ``KmsKeyId`` property, then you must enable encryption. If you specify the ``SourceDBInstanceIdentifier`` or ``SourceDbiResourceId`` property, don't specify this property. The value is inherited from the source DB instance, and if the DB instance is encrypted, the specified ``KmsKeyId`` property is used. If you specify the ``SourceDBInstanceAutomatedBackupsArn`` property, don't specify this property. The value is inherited from the source DB instance automated backup. If you specify ``DBSnapshotIdentifier`` property, don't specify this property. The value is inherited from the snapshot. *Amazon Aurora* Not applicable. The encryption for DB instances is managed by the DB cluster.
 	StorageEncrypted any
+	StorageOperationPercentProgress any
+	StorageOperationStatus any
 	// Specifies the storage throughput value, in mebibyte per second (MiBps), for the DB instance. This setting applies only to the ``gp3`` storage type. This setting doesn't apply to RDS Custom or Amazon Aurora.
 	StorageThroughput any
 	// The storage type to associate with the DB instance. If you specify ``io1``, ``io2``, or ``gp3``, you must also include a value for the ``Iops`` parameter. This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster. Valid Values: ``gp2 | gp3 | io1 | io2 | standard`` Default: ``io1``, if the ``Iops`` parameter is specified. Otherwise, ``gp3``.
@@ -465,11 +459,6 @@ type DbinstanceAttrs struct {
 var Dbinstance = ubx.ResourceBinding{
 	WireType: "aws_rds_dbinstance",
 	Fields: ubx.FieldMap{
-		"AdditionalStorageVolumes": ubx.FieldSpec{
-			WireName: "additional_storage_volumes",
-			Kind: "list",
-			Fields: Dbinstance_AdditionalStorageVolumesFields,
-		},
 		"AllocatedStorage": ubx.FieldSpec{WireName: "allocated_storage"},
 		"AllowMajorVersionUpgrade": ubx.FieldSpec{WireName: "allow_major_version_upgrade"},
 		"ApplyImmediately": ubx.FieldSpec{WireName: "apply_immediately"},

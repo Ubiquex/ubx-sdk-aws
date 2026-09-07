@@ -14,6 +14,7 @@ class Communications_Communications_AttachmentSet:
 @dataclasses.dataclass
 class Communications_Communications:
     attachment_set: Any = None
+    attachments: Any = None
     body: Any = None
     case_id: Any = None
     submitted_by: Any = None
@@ -24,6 +25,7 @@ class CommunicationsConfig:
     after_time: Any = None
     before_time: Any = None
     case_id: Any = None
+    dry_run: Any = None
     max_results: Any = None
     next_token: Any = None
 
@@ -33,6 +35,7 @@ class CommunicationsAttrs:
     before_time: Any = None
     case_id: Any = None
     communications: Any = None
+    dry_run: Any = None
     max_results: Any = None
     next_token: Any = None
 
@@ -42,6 +45,7 @@ Communications = ubx.DataSourceBinding(
         "after_time": ubx.FieldSpec(wire_name="after_time"),
         "before_time": ubx.FieldSpec(wire_name="before_time"),
         "case_id": ubx.FieldSpec(wire_name="case_id"),
+        "dry_run": ubx.FieldSpec(wire_name="dry_run"),
         "max_results": ubx.FieldSpec(wire_name="max_results"),
         "next_token": ubx.FieldSpec(wire_name="next_token"),
     },

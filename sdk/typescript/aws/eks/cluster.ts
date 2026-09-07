@@ -67,9 +67,16 @@ export interface Cluster_KubeControllerManagerConfig_HorizontalPodAutoscalerCont
   horizontalPodAutoscalerSyncPeriod?: string | Computed<string>;
 }
 
+export interface Cluster_KubeControllerManagerConfig_PodGcControllerConfig {
+  /** The number of terminated pods that can exist before the terminated pod garbage collector starts deleting them. */
+  terminatedPodGcThreshold?: number | Computed<number>;
+}
+
 export interface Cluster_KubeControllerManagerConfig {
   /** The horizontal pod autoscaler controller configuration. */
   horizontalPodAutoscalerControllerConfig?: Cluster_KubeControllerManagerConfig_HorizontalPodAutoscalerControllerConfig | Computed<Cluster_KubeControllerManagerConfig_HorizontalPodAutoscalerControllerConfig>;
+  /** The pod garbage collector controller configuration. */
+  podGcControllerConfig?: Cluster_KubeControllerManagerConfig_PodGcControllerConfig | Computed<Cluster_KubeControllerManagerConfig_PodGcControllerConfig>;
 }
 
 export interface Cluster_KubeSchedulerConfig_NodeResourcesFit_ScoringStrategy_Resources {
@@ -245,11 +252,20 @@ const Cluster_KubeControllerManagerConfig_HorizontalPodAutoscalerControllerConfi
   horizontalPodAutoscalerSyncPeriod: "horizontal_pod_autoscaler_sync_period",
 };
 
+const Cluster_KubeControllerManagerConfig_PodGcControllerConfigFields: FieldMap = {
+  terminatedPodGcThreshold: "terminated_pod_gc_threshold",
+};
+
 const Cluster_KubeControllerManagerConfigFields: FieldMap = {
   horizontalPodAutoscalerControllerConfig: {
     wireName: "horizontal_pod_autoscaler_controller_config",
     kind: "object",
     fields: Cluster_KubeControllerManagerConfig_HorizontalPodAutoscalerControllerConfigFields,
+  },
+  podGcControllerConfig: {
+    wireName: "pod_gc_controller_config",
+    kind: "object",
+    fields: Cluster_KubeControllerManagerConfig_PodGcControllerConfigFields,
   },
 };
 

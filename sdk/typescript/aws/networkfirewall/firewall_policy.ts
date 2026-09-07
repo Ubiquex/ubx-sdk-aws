@@ -206,6 +206,7 @@ export interface FirewallPolicyConfig {
   firewallPolicy: FirewallPolicy_FirewallPolicy | Computed<FirewallPolicy_FirewallPolicy>;
   /** The descriptive name of the firewall policy, used to identify it within AWS Network Firewall. (AI-inferred) */
   firewallPolicyName: string | Computed<string>;
+  /** The tags assigned to this firewall policy. (AI-inferred) */
   tags?: FirewallPolicy_Tags[] | Computed<FirewallPolicy_Tags[]>;
 }
 
@@ -220,6 +221,7 @@ export interface FirewallPolicyAttrs {
   firewallPolicyId: string;
   /** The descriptive name of the firewall policy, used to identify it within AWS Network Firewall. (AI-inferred) */
   firewallPolicyName: string;
+  /** The tags assigned to this firewall policy. (AI-inferred) */
   tags: FirewallPolicy_Tags[];
 }
 

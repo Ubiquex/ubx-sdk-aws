@@ -22,18 +22,24 @@ var Application_TagsFields = ubx.FieldMap{
 type ApplicationConfig struct {
 	// Identifier of a KMS key. Can be a key ID, key ARN, alias name, or alias ARN.
 	DefaultKmsKeyId any
+	// The Amazon Resource Name (ARN) of the IAM role this security agent application assumes. (AI-inferred)
 	RoleArn any
 	// Tags for the application
 	Tags any
 }
 
 type ApplicationAttrs struct {
+	// The unique identifier of this security agent application. (AI-inferred)
 	ApplicationId any
+	// The name of this security agent application. (AI-inferred)
 	ApplicationName any
 	// Identifier of a KMS key. Can be a key ID, key ARN, alias name, or alias ARN.
 	DefaultKmsKeyId any
+	// The domain this security agent application is registered under. (AI-inferred)
 	Domain any
+	// The identity configuration for this security agent application. (AI-inferred)
 	IdCconfiguration any
+	// The Amazon Resource Name (ARN) of the IAM role this security agent application assumes. (AI-inferred)
 	RoleArn any
 	// Tags for the application
 	Tags any

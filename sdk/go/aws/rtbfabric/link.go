@@ -92,31 +92,48 @@ var Link_TagsFields = ubx.FieldMap{
 	}
 
 type LinkConfig struct {
+	// A reference to the gateway this link originates from. (AI-inferred)
 	GatewayId any
+	// Whether the peer gateway on this link is permitted to respond over plain HTTP rather than requiring HTTPS. (AI-inferred)
 	HttpResponderAllowed any
+	// Attributes controlling how this link behaves. (AI-inferred)
 	LinkAttributes any
+	// The application log settings for this link, including the sampling percentage for error and filter logs; set both to 0 to turn off application logging for the link. (AI-inferred)
 	LinkLogSettings any
+	// The list of module configurations attached to this link, each controlling an additional piece of bid-processing behavior applied as traffic flows across the link. (AI-inferred)
 	ModuleConfigurationList any
+	// A reference to the peer gateway this link connects to on the other end. (AI-inferred)
 	PeerGatewayId any
 	// Tags to assign to the Link.
 	Tags any
 }
 
 type LinkAttrs struct {
+	// The Amazon Resource Name (ARN) of this link. (AI-inferred)
 	Arn any
+	// The date and time when this link was created. (AI-inferred)
 	CreatedTimestamp any
+	// A reference to the gateway this link originates from. (AI-inferred)
 	GatewayId any
+	// Whether the peer gateway on this link is permitted to respond over plain HTTP rather than requiring HTTPS. (AI-inferred)
 	HttpResponderAllowed any
+	// Attributes controlling how this link behaves. (AI-inferred)
 	LinkAttributes any
+	// The direction of bid traffic flow across this link, relative to its own gateway. (AI-inferred)
 	LinkDirection any
+	// The unique identifier of this link. (AI-inferred)
 	LinkId any
+	// The application log settings for this link, including the sampling percentage for error and filter logs; set both to 0 to turn off application logging for the link. (AI-inferred)
 	LinkLogSettings any
 	// The read-only status of the AWS RTB Fabric link, such as whether the link is active or inactive, which is determined and reported by the AWS RTB Fabric service. (AI-inferred)
 	LinkStatus any
+	// The list of module configurations attached to this link, each controlling an additional piece of bid-processing behavior applied as traffic flows across the link. (AI-inferred)
 	ModuleConfigurationList any
+	// A reference to the peer gateway this link connects to on the other end. (AI-inferred)
 	PeerGatewayId any
 	// Tags to assign to the Link.
 	Tags any
+	// The date and time when this link was last updated. (AI-inferred)
 	UpdatedTimestamp any
 }
 

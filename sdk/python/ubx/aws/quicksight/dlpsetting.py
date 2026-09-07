@@ -85,12 +85,15 @@ class DlpsettingConfig:
     dlp_setting_id: Any = None
     # Indicates whether the AWS QuickSight data loss prevention (DLP) setting is enabled, which activates the configured data protection policies for the relevant assets. (AI-inferred)
     enabled: Any = None
+    # The name of this data loss prevention setting. (AI-inferred)
     name: Any = None
     # Specifies the configuration for the data loss prevention (DLP) provider in Amazon QuickSight, including provider-specific parameters required to activate and manage DLP settings. (AI-inferred)
     provider_config: Any = None
     # Specifies the action QuickSight takes when its configured identity provider becomes unavailable, used to enforce Data Loss Prevention (DLP) controls during outage events. (AI-inferred)
     provider_outage_action: Any = None
+    # The real data loss prevention provider this setting integrates with, e.g. Microsoft Purview. (AI-inferred)
     provider_type: Any = None
+    # The tags assigned to this data loss prevention setting. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -99,18 +102,23 @@ class DlpsettingAttrs:
     arn: Any = None
     # The AWS account ID for which the QuickSight data loss prevention settings are configured. (AI-inferred)
     aws_account_id: Any = None
+    # The date and time this data loss prevention setting was created. (AI-inferred)
     created_at: Any = None
     # The required DlpSettingId property specifies a unique, user-defined identifier for the data loss prevention (DLP) setting in Amazon QuickSight. (AI-inferred)
     dlp_setting_id: Any = None
     # Indicates whether the AWS QuickSight data loss prevention (DLP) setting is enabled, which activates the configured data protection policies for the relevant assets. (AI-inferred)
     enabled: Any = None
+    # The name of this data loss prevention setting. (AI-inferred)
     name: Any = None
     # Specifies the configuration for the data loss prevention (DLP) provider in Amazon QuickSight, including provider-specific parameters required to activate and manage DLP settings. (AI-inferred)
     provider_config: Any = None
     # Specifies the action QuickSight takes when its configured identity provider becomes unavailable, used to enforce Data Loss Prevention (DLP) controls during outage events. (AI-inferred)
     provider_outage_action: Any = None
+    # The real data loss prevention provider this setting integrates with, e.g. Microsoft Purview. (AI-inferred)
     provider_type: Any = None
+    # The current status of this data loss prevention setting. (AI-inferred)
     status: Any = None
+    # The tags assigned to this data loss prevention setting. (AI-inferred)
     tags: Any = None
     # The timestamp of the last update to the QuickSight data loss prevention setting. (AI-inferred)
     updated_at: Any = None

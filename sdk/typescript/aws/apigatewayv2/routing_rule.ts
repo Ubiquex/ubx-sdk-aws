@@ -96,6 +96,7 @@ export interface RoutingRuleAttrs {
   priority: number;
   /** The Amazon Resource Name (ARN) that uniquely identifies this API Gateway v2 routing rule within the AWS account and region, used for IAM policies and resource-level references. (AI-inferred) */
   routingRuleArn: string;
+  /** The unique identifier of this routing rule. (AI-inferred) */
   routingRuleId: string;
 }
 

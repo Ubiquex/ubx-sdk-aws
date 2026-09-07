@@ -5,6 +5,8 @@ export interface LimitsConfig {
 }
 
 export interface LimitsAttrs {
+  channelCount: number;
+  channelCountLimit: number;
   onDemandStreamCount: number;
   onDemandStreamCountLimit: number;
   openShardCount: number;

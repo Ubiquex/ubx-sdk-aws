@@ -70,6 +70,7 @@ class AccessPointConfig:
     public_access_block_configuration: Any = None
     # Defines an optional prefix scope that restricts the S3 Express access point to only objects whose keys start with the specified prefix; if this object is absent, the access point applies to the entire directory bucket. (AI-inferred)
     scope: Any = None
+    # The tags assigned to this S3 Express access point. (AI-inferred)
     tags: Any = None
     # The Virtual Private Cloud (VPC) configuration for a bucket access point.
     vpc_configuration: Any = None
@@ -92,6 +93,7 @@ class AccessPointAttrs:
     public_access_block_configuration: Any = None
     # Defines an optional prefix scope that restricts the S3 Express access point to only objects whose keys start with the specified prefix; if this object is absent, the access point applies to the entire directory bucket. (AI-inferred)
     scope: Any = None
+    # The tags assigned to this S3 Express access point. (AI-inferred)
     tags: Any = None
     # The Virtual Private Cloud (VPC) configuration for a bucket access point.
     vpc_configuration: Any = None

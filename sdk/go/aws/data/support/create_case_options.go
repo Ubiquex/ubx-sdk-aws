@@ -21,6 +21,7 @@ type CreateCaseOptions_CommunicationTypes struct {
 
 type CreateCaseOptionsConfig struct {
 	CategoryCode any
+	DryRun any
 	IssueType any
 	Language any
 	ServiceCode any
@@ -29,6 +30,7 @@ type CreateCaseOptionsConfig struct {
 type CreateCaseOptionsAttrs struct {
 	CategoryCode any
 	CommunicationTypes any
+	DryRun any
 	IssueType any
 	Language any
 	LanguageAvailability any
@@ -39,6 +41,7 @@ var CreateCaseOptions = ubx.DataSourceBinding{
 	WireType: "aws_support_create_case_options",
 	Fields: ubx.FieldMap{
 		"CategoryCode": ubx.FieldSpec{WireName: "category_code"},
+		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"IssueType": ubx.FieldSpec{WireName: "issue_type"},
 		"Language": ubx.FieldSpec{WireName: "language"},
 		"ServiceCode": ubx.FieldSpec{WireName: "service_code"},

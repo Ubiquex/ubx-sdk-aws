@@ -12,6 +12,19 @@ class TopicRuleDestination_HttpUrlProperties:
     confirmation_url: Any = None
 
 @dataclasses.dataclass
+class TopicRuleDestination_InfluxDbproperties:
+    # The endpoint URL of the InfluxDB database.
+    endpoint: Any = None
+    # The version of the InfluxDB database (for example, V2 or V3).
+    influx_dbversion: Any = None
+    # The ARN or name of the Secrets Manager secret containing the InfluxDB API token.
+    secret_id: Any = None
+    # The key name within the secret that contains the InfluxDB token.
+    secret_key: Any = None
+    # The type of the secret value (SecretString or SecretBinary).
+    secret_type: Any = None
+
+@dataclasses.dataclass
 class TopicRuleDestination_VpcProperties:
     # The ARN of the IAM role that AWS IoT assumes to access the VPC for the topic rule destination's VPC configuration. (AI-inferred)
     role_arn: Any = None
@@ -26,6 +39,14 @@ _TopicRuleDestination_HttpUrlPropertiesFields = {
     "confirmation_url": ubx.FieldSpec(wire_name="confirmation_url"),
 }
 
+_TopicRuleDestination_InfluxDbpropertiesFields = {
+    "endpoint": ubx.FieldSpec(wire_name="endpoint"),
+    "influx_dbversion": ubx.FieldSpec(wire_name="influx_dbversion"),
+    "secret_id": ubx.FieldSpec(wire_name="secret_id"),
+    "secret_key": ubx.FieldSpec(wire_name="secret_key"),
+    "secret_type": ubx.FieldSpec(wire_name="secret_type"),
+}
+
 _TopicRuleDestination_VpcPropertiesFields = {
     "role_arn": ubx.FieldSpec(wire_name="role_arn"),
     "security_groups": ubx.FieldSpec(wire_name="security_groups"),
@@ -37,6 +58,7 @@ _TopicRuleDestination_VpcPropertiesFields = {
 class TopicRuleDestinationConfig:
     # Specifies the HTTP destination's confirmation URL, which AWS IoT uses to verify ownership of the endpoint before activating the topic rule destination. (AI-inferred)
     http_url_properties: Any = None
+    influx_dbproperties: Any = None
     # Sets the desired status (ENABLED or DISABLED) of the AWS IoT topic rule destination, controlling whether it can be used by IoT rule actions. (AI-inferred)
     status: Any = None
     # Defines the VPC configuration for the IoT topic rule destination, including the subnets and security groups that the destination uses to deliver messages to resources inside a VPC. (AI-inferred)
@@ -48,6 +70,7 @@ class TopicRuleDestinationAttrs:
     arn: Any = None
     # Specifies the HTTP destination's confirmation URL, which AWS IoT uses to verify ownership of the endpoint before activating the topic rule destination. (AI-inferred)
     http_url_properties: Any = None
+    influx_dbproperties: Any = None
     # Sets the desired status (ENABLED or DISABLED) of the AWS IoT topic rule destination, controlling whether it can be used by IoT rule actions. (AI-inferred)
     status: Any = None
     # The reasoning for the current status of the TopicRuleDestination.
@@ -62,6 +85,11 @@ TopicRuleDestination = ubx.ResourceBinding(
             wire_name="http_url_properties",
             kind="object",
             fields=_TopicRuleDestination_HttpUrlPropertiesFields,
+        ),
+        "influx_dbproperties": ubx.FieldSpec(
+            wire_name="influx_dbproperties",
+            kind="object",
+            fields=_TopicRuleDestination_InfluxDbpropertiesFields,
         ),
         "status": ubx.FieldSpec(wire_name="status"),
         "vpc_properties": ubx.FieldSpec(

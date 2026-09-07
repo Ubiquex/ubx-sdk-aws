@@ -117,8 +117,11 @@ var KnowledgeBase_TagsFields = ubx.FieldMap{
 type KnowledgeBaseConfig struct {
 	// Specifies how access to the knowledge base is secured, such as by configuring row-level security through an associated dataset. (AI-inferred)
 	AccessControlConfiguration any
+	// The AWS account ID this knowledge base belongs to. (AI-inferred)
 	AwsAccountId any
+	// The Amazon Resource Name (ARN) of the real data source this knowledge base indexes. (AI-inferred)
 	DataSourceArn any
+	// The description of this knowledge base. (AI-inferred)
 	Description any
 	// Indicates whether email notifications are enabled for failures that occur during the ingestion of documents into the QuickSight knowledge base. (AI-inferred)
 	IsEmailNotificationOptedForIngestionFailures any
@@ -132,17 +135,22 @@ type KnowledgeBaseConfig struct {
 	Permissions any
 	// The Amazon Resource Name (ARN) of the primary owner of the QuickSight knowledge base, typically the IAM user or role with administrative ownership. (AI-inferred)
 	PrimaryOwnerArn any
+	// The tags assigned to this knowledge base. (AI-inferred)
 	Tags any
 }
 
 type KnowledgeBaseAttrs struct {
 	// Specifies how access to the knowledge base is secured, such as by configuring row-level security through an associated dataset. (AI-inferred)
 	AccessControlConfiguration any
+	// The AWS account ID this knowledge base belongs to. (AI-inferred)
 	AwsAccountId any
 	// The timestamp (in ISO 8601 format) indicating when the QuickSight knowledge base was created. (AI-inferred)
 	CreatedAt any
+	// The Amazon Resource Name (ARN) of the real data source this knowledge base indexes. (AI-inferred)
 	DataSourceArn any
+	// The description of this knowledge base. (AI-inferred)
 	Description any
+	// The real, current number of documents indexed in this knowledge base. (AI-inferred)
 	DocumentCount any
 	// Indicates whether email notifications are enabled for failures that occur during the ingestion of documents into the QuickSight knowledge base. (AI-inferred)
 	IsEmailNotificationOptedForIngestionFailures any
@@ -160,9 +168,13 @@ type KnowledgeBaseAttrs struct {
 	Permissions any
 	// The Amazon Resource Name (ARN) of the primary owner of the QuickSight knowledge base, typically the IAM user or role with administrative ownership. (AI-inferred)
 	PrimaryOwnerArn any
+	// The username of this knowledge base's own primary owner. (AI-inferred)
 	PrimaryOwnerUsername any
+	// The current status of this knowledge base. (AI-inferred)
 	Status any
+	// The tags assigned to this knowledge base. (AI-inferred)
 	Tags any
+	// The real type of this knowledge base, e.g. which underlying data source it indexes. (AI-inferred)
 	Type any
 	// The read-only updated_at field holds the timestamp of the last modification to the QuickSight knowledge base. (AI-inferred)
 	UpdatedAt any

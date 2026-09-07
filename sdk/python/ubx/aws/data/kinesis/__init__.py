@@ -5,6 +5,7 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .account_settings import AccountSettings, AccountSettingsConfig
+from .channels import Channels, ChannelsConfig
 from .limits import Limits, LimitsConfig
 from .records import Records, RecordsConfig
 from .resource_policy import ResourcePolicy, ResourcePolicyConfig

@@ -10,20 +10,28 @@ import ubx_sdk as ubx
 class HostedZoneAssociationConfig:
     # The ID of the Route 53 hosted zone that is being associated with the global resolver in this resource. (AI-inferred)
     hosted_zone_id: Any = None
+    # The name of this hosted zone association. (AI-inferred)
     name: Any = None
+    # The Amazon Resource Name (ARN) of the resource (e.g. the global resolver) this hosted zone is associated with. (AI-inferred)
     resource_arn: Any = None
 
 @dataclasses.dataclass
 class HostedZoneAssociationAttrs:
+    # The date and time when this hosted zone association was created. (AI-inferred)
     created_at: Any = None
+    # The unique identifier of this hosted zone association. (AI-inferred)
     hosted_zone_association_id: Any = None
     # The ID of the Route 53 hosted zone that is being associated with the global resolver in this resource. (AI-inferred)
     hosted_zone_id: Any = None
+    # The name of the Route 53 private hosted zone this association makes resolvable through the global resolver. (AI-inferred)
     hosted_zone_name: Any = None
+    # The name of this hosted zone association. (AI-inferred)
     name: Any = None
+    # The Amazon Resource Name (ARN) of the resource (e.g. the global resolver) this hosted zone is associated with. (AI-inferred)
     resource_arn: Any = None
     # The current status of the association, indicating its lifecycle state with values such as CREATING, COMPLETE, DELETING, DELETED, or FAILED. (AI-inferred)
     status: Any = None
+    # The date and time when this hosted zone association was last updated. (AI-inferred)
     updated_at: Any = None
 
 HostedZoneAssociation = ubx.ResourceBinding(

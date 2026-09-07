@@ -481,6 +481,7 @@ type LifecyclePolicyConfig struct {
 	CreateInterval any
 	// Defines the destination regions and their encryption configurations (including optional KMS key ARN) to which snapshots or AMIs created by this DLM lifecycle policy are copied. (AI-inferred)
 	CrossRegionCopyTargets any
+	// The default lifecycle policy type (e.g. instance or volume) this Data Lifecycle Manager policy applies when no other policy targets a resource. (AI-inferred)
 	DefaultPolicy any
 	// A user-provided descriptive text that identifies the purpose and details of the DLM lifecycle policy, helping to distinguish it from other policies in the AWS account. (AI-inferred)
 	Description any
@@ -488,6 +489,7 @@ type LifecyclePolicyConfig struct {
 	Exclusions any
 	// The Amazon Resource Name (ARN) of the IAM role that AWS Data Lifecycle Manager assumes to create snapshots and manage the lifecycle of the target resources. (AI-inferred)
 	ExecutionRoleArn any
+	// Whether this lifecycle policy's own snapshot or AMI deletion is delayed rather than applied immediately once a retention rule is exceeded. (AI-inferred)
 	ExtendDeletion any
 	// This object defines the core configuration of the DLM lifecycle policy, specifying the resource type (e.g., EBS snapshots or AMIs), target resource tags, state, and the schedules with their associated actions, such as creating, retaining, and deleting snapshots or AMIs. (AI-inferred)
 	PolicyDetails any
@@ -508,6 +510,7 @@ type LifecyclePolicyAttrs struct {
 	CreateInterval any
 	// Defines the destination regions and their encryption configurations (including optional KMS key ARN) to which snapshots or AMIs created by this DLM lifecycle policy are copied. (AI-inferred)
 	CrossRegionCopyTargets any
+	// The default lifecycle policy type (e.g. instance or volume) this Data Lifecycle Manager policy applies when no other policy targets a resource. (AI-inferred)
 	DefaultPolicy any
 	// A user-provided descriptive text that identifies the purpose and details of the DLM lifecycle policy, helping to distinguish it from other policies in the AWS account. (AI-inferred)
 	Description any
@@ -515,6 +518,7 @@ type LifecyclePolicyAttrs struct {
 	Exclusions any
 	// The Amazon Resource Name (ARN) of the IAM role that AWS Data Lifecycle Manager assumes to create snapshots and manage the lifecycle of the target resources. (AI-inferred)
 	ExecutionRoleArn any
+	// Whether this lifecycle policy's own snapshot or AMI deletion is delayed rather than applied immediately once a retention rule is exceeded. (AI-inferred)
 	ExtendDeletion any
 	// The unique identifier assigned by AWS to the DLM lifecycle policy. (AI-inferred)
 	Id any

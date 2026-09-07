@@ -118,6 +118,15 @@ export interface GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime {
   schema?: GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema | Computed<GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema>;
 }
 
+export interface GatewayTarget_TargetConfiguration_Http_Connector_Source {
+  connectorId?: string | Computed<string>;
+}
+
+export interface GatewayTarget_TargetConfiguration_Http_Connector {
+  parameters?: unknown | Computed<unknown>;
+  source?: GatewayTarget_TargetConfiguration_Http_Connector_Source | Computed<GatewayTarget_TargetConfiguration_Http_Connector_Source>;
+}
+
 export interface GatewayTarget_TargetConfiguration_Http_Passthrough_StickinessConfiguration {
   identifier?: string | Computed<string>;
   /** The duration in seconds for which a client session remains pinned to the same target in the HTTP passthrough stickiness configuration, after which the sticky session expires. (AI-inferred) */
@@ -134,15 +143,12 @@ export interface GatewayTarget_TargetConfiguration_Http_Passthrough {
 
 export interface GatewayTarget_TargetConfiguration_Http {
   agentcoreRuntime?: GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime | Computed<GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime>;
+  connector?: GatewayTarget_TargetConfiguration_Http_Connector | Computed<GatewayTarget_TargetConfiguration_Http_Connector>;
   passthrough?: GatewayTarget_TargetConfiguration_Http_Passthrough | Computed<GatewayTarget_TargetConfiguration_Http_Passthrough>;
 }
 
-export interface GatewayTarget_TargetConfiguration_Inference_Connector_Source {
-  connectorId?: string | Computed<string>;
-}
-
 export interface GatewayTarget_TargetConfiguration_Inference_Connector {
-  source?: GatewayTarget_TargetConfiguration_Inference_Connector_Source | Computed<GatewayTarget_TargetConfiguration_Inference_Connector_Source>;
+  source?: GatewayTarget_TargetConfiguration_Http_Connector_Source | Computed<GatewayTarget_TargetConfiguration_Http_Connector_Source>;
 }
 
 export interface GatewayTarget_TargetConfiguration_Inference_Provider_ModelMapping_ProviderPrefix {
@@ -226,7 +232,7 @@ export interface GatewayTarget_TargetConfiguration_Mcp_Connector_Configurations 
 export interface GatewayTarget_TargetConfiguration_Mcp_Connector {
   configurations?: GatewayTarget_TargetConfiguration_Mcp_Connector_Configurations[] | Computed<GatewayTarget_TargetConfiguration_Mcp_Connector_Configurations[]>;
   enabled?: string[] | Computed<string[]>;
-  source?: GatewayTarget_TargetConfiguration_Inference_Connector_Source | Computed<GatewayTarget_TargetConfiguration_Inference_Connector_Source>;
+  source?: GatewayTarget_TargetConfiguration_Http_Connector_Source | Computed<GatewayTarget_TargetConfiguration_Http_Connector_Source>;
 }
 
 export interface GatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema_InlinePayload_InputSchema {
@@ -416,6 +422,19 @@ const GatewayTarget_TargetConfiguration_Http_AgentcoreRuntimeFields: FieldMap = 
   },
 };
 
+const GatewayTarget_TargetConfiguration_Http_Connector_SourceFields: FieldMap = {
+  connectorId: "connector_id",
+};
+
+const GatewayTarget_TargetConfiguration_Http_ConnectorFields: FieldMap = {
+  parameters: "parameters",
+  source: {
+    wireName: "source",
+    kind: "object",
+    fields: GatewayTarget_TargetConfiguration_Http_Connector_SourceFields,
+  },
+};
+
 const GatewayTarget_TargetConfiguration_Http_Passthrough_StickinessConfigurationFields: FieldMap = {
   identifier: "identifier",
   timeout: "timeout",
@@ -442,6 +461,11 @@ const GatewayTarget_TargetConfiguration_HttpFields: FieldMap = {
     kind: "object",
     fields: GatewayTarget_TargetConfiguration_Http_AgentcoreRuntimeFields,
   },
+  connector: {
+    wireName: "connector",
+    kind: "object",
+    fields: GatewayTarget_TargetConfiguration_Http_ConnectorFields,
+  },
   passthrough: {
     wireName: "passthrough",
     kind: "object",
@@ -449,15 +473,11 @@ const GatewayTarget_TargetConfiguration_HttpFields: FieldMap = {
   },
 };
 
-const GatewayTarget_TargetConfiguration_Inference_Connector_SourceFields: FieldMap = {
-  connectorId: "connector_id",
-};
-
 const GatewayTarget_TargetConfiguration_Inference_ConnectorFields: FieldMap = {
   source: {
     wireName: "source",
     kind: "object",
-    fields: GatewayTarget_TargetConfiguration_Inference_Connector_SourceFields,
+    fields: GatewayTarget_TargetConfiguration_Http_Connector_SourceFields,
   },
 };
 
@@ -577,7 +597,7 @@ const GatewayTarget_TargetConfiguration_Mcp_ConnectorFields: FieldMap = {
   source: {
     wireName: "source",
     kind: "object",
-    fields: GatewayTarget_TargetConfiguration_Inference_Connector_SourceFields,
+    fields: GatewayTarget_TargetConfiguration_Http_Connector_SourceFields,
   },
 };
 
@@ -689,34 +709,53 @@ const GatewayTarget_TargetConfigurationFields: FieldMap = {
 };
 
 export interface GatewayTargetConfig {
+  /** The credential provider configurations for this gateway target. (AI-inferred) */
   credentialProviderConfigurations?: GatewayTarget_CredentialProviderConfigurations[] | Computed<GatewayTarget_CredentialProviderConfigurations[]>;
+  /** The description for the gateway target. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The gateway ID for the gateway target. (AI-inferred) */
   gatewayIdentifier?: string | Computed<string>;
   metadataConfiguration?: GatewayTarget_MetadataConfiguration | Computed<GatewayTarget_MetadataConfiguration>;
+  /** The name of the gateway target. (AI-inferred) */
   name?: string | Computed<string>;
   /** Defines the VPC private connection configuration (such as a VPC endpoint ID) that the Amazon Bedrock core gateway uses to securely route requests to a target resource that is not publicly accessible. (AI-inferred) */
   privateEndpoint?: GatewayTarget_PrivateEndpoint | Computed<GatewayTarget_PrivateEndpoint>;
+  /** The configuration for a gateway target. This structure defines how the gateway connects to and interacts with the target endpoint. (AI-inferred) */
   targetConfiguration: GatewayTarget_TargetConfiguration | Computed<GatewayTarget_TargetConfiguration>;
 }
 
 export interface GatewayTargetAttrs {
   authorizationData: GatewayTarget_AuthorizationData;
+  /** The date and time at which the target was created. (AI-inferred) */
   createdAt: string;
+  /** The credential provider configurations for this gateway target. (AI-inferred) */
   credentialProviderConfigurations: GatewayTarget_CredentialProviderConfigurations[];
+  /** The description for the gateway target. (AI-inferred) */
   description: string;
+  /** The Amazon Resource Name (ARN) of the gateway target. (AI-inferred) */
   gatewayArn: string;
+  /** The gateway ID for the gateway target. (AI-inferred) */
   gatewayIdentifier: string;
+  /** The timestamp when the target was last synchronized. (AI-inferred) */
   lastSynchronizedAt: string;
   metadataConfiguration: GatewayTarget_MetadataConfiguration;
+  /** The name of the gateway target. (AI-inferred) */
   name: string;
   /** Defines the VPC private connection configuration (such as a VPC endpoint ID) that the Amazon Bedrock core gateway uses to securely route requests to a target resource that is not publicly accessible. (AI-inferred) */
   privateEndpoint: GatewayTarget_PrivateEndpoint;
+  /** A list of managed resources created by the gateway for private endpoint connectivity. (AI-inferred) */
   privateEndpointManagedResources: GatewayTarget_PrivateEndpointManagedResources[];
+  /** The protocol type this gateway target's own tools are exposed through. (AI-inferred) */
   protocolType: string;
+  /** The status of the gateway target. (AI-inferred) */
   status: string;
+  /** The status reasons for the target status. (AI-inferred) */
   statusReasons: string[];
+  /** The configuration for a gateway target. This structure defines how the gateway connects to and interacts with the target endpoint. (AI-inferred) */
   targetConfiguration: GatewayTarget_TargetConfiguration;
+  /** The target ID. (AI-inferred) */
   targetId: string;
+  /** The date and time at which the target was updated. (AI-inferred) */
   updatedAt: string;
 }
 

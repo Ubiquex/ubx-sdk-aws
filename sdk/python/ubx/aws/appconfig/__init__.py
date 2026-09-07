@@ -10,6 +10,7 @@ from .deployment import Deployment, DeploymentConfig
 from .deployment_strategy import DeploymentStrategy, DeploymentStrategyConfig
 from .environment import Environment, EnvironmentConfig
 from .experiment_definition import ExperimentDefinition, ExperimentDefinitionConfig
+from .experiment_run import ExperimentRun, ExperimentRunConfig
 from .extension import Extension, ExtensionConfig
 from .extension_association import ExtensionAssociation, ExtensionAssociationConfig
 from .hosted_configuration_version import HostedConfigurationVersion, HostedConfigurationVersionConfig

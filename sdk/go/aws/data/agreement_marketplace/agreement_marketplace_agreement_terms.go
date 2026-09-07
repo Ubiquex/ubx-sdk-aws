@@ -110,9 +110,43 @@ type AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_Configuration 
 	EnableAutoRenew any
 }
 
+type AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease_FixedPercentage struct {
+	Value any
+}
+
+type AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease_PercentageRange struct {
+	DefaultValue any
+	MaxValue any
+	MinValue any
+}
+
+type AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease struct {
+	FixedPercentage any
+	PercentageRange any
+}
+
+type AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate_Schedule struct {
+	ChargeDateOffset any
+	ChargePercentage any
+	DayOfMonth any
+}
+
+type AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate struct {
+	Schedule any
+}
+
+type AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_TermTemplates struct {
+	PaymentScheduleTermTemplate any
+}
+
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm struct {
+	AdjustmentDeadline any
 	Configuration any
 	Id any
+	LockoutPeriod any
+	MaxRenewals any
+	PriceIncrease any
+	TermTemplates any
 	Type any
 }
 

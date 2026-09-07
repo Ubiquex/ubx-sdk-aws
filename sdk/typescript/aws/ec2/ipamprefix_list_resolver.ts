@@ -62,6 +62,7 @@ const IpamprefixListResolver_RulesFields: FieldMap = {
 export interface IpamprefixListResolverConfig {
   /** The address family of the address space in this Prefix List Resolver. Either IPv4 or IPv6. */
   addressFamily: string | Computed<string>;
+  /** The description of this IPAM prefix list resolver. (AI-inferred) */
   description?: string | Computed<string>;
   /** The Id of the IPAM this Prefix List Resolver is a part of. */
   ipamId?: string | Computed<string>;
@@ -74,6 +75,7 @@ export interface IpamprefixListResolverConfig {
 export interface IpamprefixListResolverAttrs {
   /** The address family of the address space in this Prefix List Resolver. Either IPv4 or IPv6. */
   addressFamily: string;
+  /** The description of this IPAM prefix list resolver. (AI-inferred) */
   description: string;
   /** The Amazon Resource Name (ARN) of the IPAM this Prefix List Resolver is a part of. */
   ipamArn: string;

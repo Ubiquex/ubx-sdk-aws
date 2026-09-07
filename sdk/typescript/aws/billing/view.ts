@@ -78,6 +78,7 @@ export interface ViewConfig {
 export interface ViewAttrs {
   /** The Amazon Resource Name (ARN) that uniquely identifies this AWS Billing billing view. (AI-inferred) */
   arn: string;
+  /** The type of this billing view. (AI-inferred) */
   billingViewType: string;
   /** The time when the billing view was created. */
   createdAt: number;

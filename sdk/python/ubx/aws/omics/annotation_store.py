@@ -69,6 +69,7 @@ class AnnotationStoreConfig:
     store_format: Any = None
     # StoreOptions specifies the format and schema for the annotation store, allowing you to choose either TSV options (which require a schema for each column) or VCF options (which configure how variant call files are interpreted). (AI-inferred)
     store_options: Any = None
+    # The tags assigned to this Omics annotation store. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -77,6 +78,7 @@ class AnnotationStoreAttrs:
     creation_time: Any = None
     # A user-supplied description of the annotation store, providing optional additional context about the store's purpose or contents. (AI-inferred)
     description: Any = None
+    # The unique identifier of this Omics annotation store. (AI-inferred)
     id: Any = None
     # The name of the annotation store, which must be unique within the AWS account and region and serves as the primary identifier for the store. (AI-inferred)
     name: Any = None
@@ -96,6 +98,7 @@ class AnnotationStoreAttrs:
     store_options: Any = None
     # The total storage size of the annotation store in bytes, as reported by the AWS Omics service. (AI-inferred)
     store_size_bytes: Any = None
+    # The tags assigned to this Omics annotation store. (AI-inferred)
     tags: Any = None
     # The timestamp of the last update to the annotation store, reported as an ISO 8601 string. (AI-inferred)
     update_time: Any = None

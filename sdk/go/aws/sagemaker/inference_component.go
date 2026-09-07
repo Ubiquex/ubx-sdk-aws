@@ -38,6 +38,11 @@ type InferenceComponent_DeploymentConfig struct {
 	RollingUpdatePolicy any
 }
 
+type InferenceComponent_RuntimeConfig_PlacementStatus struct {
+	CurrentCopyCount any
+	InstanceType any
+}
+
 type InferenceComponent_RuntimeConfig struct {
 	// The number of copies for the inference component
 	CopyCount any
@@ -45,6 +50,8 @@ type InferenceComponent_RuntimeConfig struct {
 	CurrentCopyCount any
 	// The number of copies for the inference component
 	DesiredCopyCount any
+	// The placement status of the inference component across instance types
+	PlacementStatus any
 }
 
 type InferenceComponent_Specification_ComputeResourceRequirements struct {
@@ -56,6 +63,15 @@ type InferenceComponent_Specification_ComputeResourceRequirements struct {
 	NumberOfAcceleratorDevicesRequired any
 	// The exact number of CPU cores that must be allocated to the inference component, used when a fixed compute resource allocation is specified rather than a range. (AI-inferred)
 	NumberOfCpuCoresRequired any
+}
+
+type InferenceComponent_Specification_Container_ContainerMetricsConfig_MetricsEndpoints struct {
+	MetricPublishFrequencyInSeconds any
+	MetricsEndpointPath any
+}
+
+type InferenceComponent_Specification_Container_ContainerMetricsConfig struct {
+	MetricsEndpoints any
 }
 
 type InferenceComponent_Specification_Container_DeployedImage struct {
@@ -70,12 +86,31 @@ type InferenceComponent_Specification_Container_DeployedImage struct {
 type InferenceComponent_Specification_Container struct {
 	// The Amazon S3 URI where the model artifacts for this inference component container are stored. (AI-inferred)
 	ArtifactUrl any
+	// The configuration for container metrics scraping
+	ContainerMetricsConfig any
 	// The `deployed_image` object contains the resolved image URI and the resolution method that SageMaker actually used for the inference component's container after deployment, which may differ from the image originally specified. (AI-inferred)
 	DeployedImage any
 	// Environment variables to specify on the container
 	Environment any
 	// The image to use for the container that will be materialized for the inference component
 	Image any
+}
+
+type InferenceComponent_Specification_CurrentDataCacheConfig struct {
+	// Whether the endpoint caches the model artifacts and container image on each instance it provisions for the inference component
+	EnableCaching any
+}
+
+type InferenceComponent_Specification_SchedulingConfig_AvailabilityZoneBalance struct {
+	EnforcementMode any
+	// The maximum allowed difference in the number of inference component copies between any two Availability Zones
+	MaxImbalance any
+}
+
+type InferenceComponent_Specification_SchedulingConfig struct {
+	// Configuration for balancing inference component copies across Availability Zones
+	AvailabilityZoneBalance any
+	PlacementStrategy any
 }
 
 type InferenceComponent_Specification_StartupParameters struct {
@@ -92,9 +127,33 @@ type InferenceComponent_Specification struct {
 	ComputeResourceRequirements any
 	// Specifies the container configuration for the SageMaker inference component, including the Docker image, model artifact URL, and environment variables. (AI-inferred)
 	Container any
+	// Settings that affect how the inference component caches data
+	CurrentDataCacheConfig any
+	// Settings that affect how the inference component caches data
+	DataCacheConfig any
 	// The name of the model to use with the inference component
 	ModelName any
+	// The scheduling configuration that determines how inference component copies are placed across available instances
+	SchedulingConfig any
 	// Specifies startup parameters for the inference component's model container, including the model data download timeout and container startup health check timeout, used to control how the container is launched and validated before it begins serving inference traffic. (AI-inferred)
+	StartupParameters any
+}
+
+type InferenceComponent_Specifications_Container struct {
+	ArtifactUrl any
+	ContainerMetricsConfig any
+	Environment any
+	Image any
+}
+
+type InferenceComponent_Specifications struct {
+	ComputeResourceRequirements any
+	Container any
+	CurrentDataCacheConfig any
+	DataCacheConfig any
+	InstanceType any
+	ModelName any
+	SchedulingConfig any
 	StartupParameters any
 }
 
@@ -191,8 +250,10 @@ type InferenceComponentAttrs struct {
 	LastModifiedTime any
 	// The runtime config for the inference component
 	RuntimeConfig any
-	// The specification for the inference component
+	// The specification for the inference component, for an endpoint with a single instance type. Specify exactly one of Specification or Specifications. InstanceType is not accepted here; use Specifications for per instance type configuration.
 	Specification any
+	// A list of specification objects for the inference component, one per instance type. The service requires at least two entries; use the singular Specification for a single instance type.
+	Specifications any
 	// An array of tags to apply to the resource
 	Tags any
 	// The name of the endpoint variant the inference component is associated with

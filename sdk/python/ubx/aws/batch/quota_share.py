@@ -59,6 +59,7 @@ class QuotaShareAttrs:
     # The AWS Batch job queue associated with the quota share. This can be the job queue name or ARN. A job queue must be in the `VALID` state before you can associate it with a quota share.
     job_queue: Any = None
     preemption_configuration: Any = None
+    # The Amazon Resource Name (ARN) of this quota share. (AI-inferred)
     quota_share_arn: Any = None
     # The name of the quota share. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).
     quota_share_name: Any = None

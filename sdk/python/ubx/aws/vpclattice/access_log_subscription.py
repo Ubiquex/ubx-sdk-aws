@@ -24,6 +24,7 @@ class AccessLogSubscriptionConfig:
     destination_arn: Any = None
     # Specifies the ID or ARN of the service network or service that the access log subscription is associated with, determining which resource's access logs are delivered to the destination. (AI-inferred)
     resource_identifier: Any = None
+    # The log type (service or resource) this access log subscription's own service network emits. (AI-inferred)
     service_network_log_type: Any = None
     # A list of tag objects (Key and Value) to attach to the VPC Lattice access log subscription, used for organization, cost tracking, and resource management. (AI-inferred)
     tags: Any = None
@@ -42,6 +43,7 @@ class AccessLogSubscriptionAttrs:
     resource_id: Any = None
     # Specifies the ID or ARN of the service network or service that the access log subscription is associated with, determining which resource's access logs are delivered to the destination. (AI-inferred)
     resource_identifier: Any = None
+    # The log type (service or resource) this access log subscription's own service network emits. (AI-inferred)
     service_network_log_type: Any = None
     # A list of tag objects (Key and Value) to attach to the VPC Lattice access log subscription, used for organization, cost tracking, and resource management. (AI-inferred)
     tags: Any = None

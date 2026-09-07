@@ -125,6 +125,15 @@ class GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime:
     schema: Any = None
 
 @dataclasses.dataclass
+class GatewayTarget_TargetConfiguration_Http_Connector_Source:
+    connector_id: Any = None
+
+@dataclasses.dataclass
+class GatewayTarget_TargetConfiguration_Http_Connector:
+    parameters: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
 class GatewayTarget_TargetConfiguration_Http_Passthrough_StickinessConfiguration:
     identifier: Any = None
     # The duration in seconds for which a client session remains pinned to the same target in the HTTP passthrough stickiness configuration, after which the sticky session expires. (AI-inferred)
@@ -141,11 +150,8 @@ class GatewayTarget_TargetConfiguration_Http_Passthrough:
 @dataclasses.dataclass
 class GatewayTarget_TargetConfiguration_Http:
     agentcore_runtime: Any = None
+    connector: Any = None
     passthrough: Any = None
-
-@dataclasses.dataclass
-class GatewayTarget_TargetConfiguration_Inference_Connector_Source:
-    connector_id: Any = None
 
 @dataclasses.dataclass
 class GatewayTarget_TargetConfiguration_Inference_Connector:
@@ -422,6 +428,19 @@ _GatewayTarget_TargetConfiguration_Http_AgentcoreRuntimeFields = {
     ),
 }
 
+_GatewayTarget_TargetConfiguration_Http_Connector_SourceFields = {
+    "connector_id": ubx.FieldSpec(wire_name="connector_id"),
+}
+
+_GatewayTarget_TargetConfiguration_Http_ConnectorFields = {
+    "parameters": ubx.FieldSpec(wire_name="parameters"),
+    "source": ubx.FieldSpec(
+        wire_name="source",
+        kind="object",
+        fields=_GatewayTarget_TargetConfiguration_Http_Connector_SourceFields,
+    ),
+}
+
 _GatewayTarget_TargetConfiguration_Http_Passthrough_StickinessConfigurationFields = {
     "identifier": ubx.FieldSpec(wire_name="identifier"),
     "timeout": ubx.FieldSpec(wire_name="timeout"),
@@ -448,6 +467,11 @@ _GatewayTarget_TargetConfiguration_HttpFields = {
         kind="object",
         fields=_GatewayTarget_TargetConfiguration_Http_AgentcoreRuntimeFields,
     ),
+    "connector": ubx.FieldSpec(
+        wire_name="connector",
+        kind="object",
+        fields=_GatewayTarget_TargetConfiguration_Http_ConnectorFields,
+    ),
     "passthrough": ubx.FieldSpec(
         wire_name="passthrough",
         kind="object",
@@ -455,15 +479,11 @@ _GatewayTarget_TargetConfiguration_HttpFields = {
     ),
 }
 
-_GatewayTarget_TargetConfiguration_Inference_Connector_SourceFields = {
-    "connector_id": ubx.FieldSpec(wire_name="connector_id"),
-}
-
 _GatewayTarget_TargetConfiguration_Inference_ConnectorFields = {
     "source": ubx.FieldSpec(
         wire_name="source",
         kind="object",
-        fields=_GatewayTarget_TargetConfiguration_Inference_Connector_SourceFields,
+        fields=_GatewayTarget_TargetConfiguration_Http_Connector_SourceFields,
     ),
 }
 
@@ -583,7 +603,7 @@ _GatewayTarget_TargetConfiguration_Mcp_ConnectorFields = {
     "source": ubx.FieldSpec(
         wire_name="source",
         kind="object",
-        fields=_GatewayTarget_TargetConfiguration_Inference_Connector_SourceFields,
+        fields=_GatewayTarget_TargetConfiguration_Http_Connector_SourceFields,
     ),
 }
 
@@ -696,34 +716,53 @@ _GatewayTarget_TargetConfigurationFields = {
 
 @dataclasses.dataclass
 class GatewayTargetConfig:
+    # The credential provider configurations for this gateway target. (AI-inferred)
     credential_provider_configurations: Any = None
+    # The description for the gateway target. (AI-inferred)
     description: Any = None
+    # The gateway ID for the gateway target. (AI-inferred)
     gateway_identifier: Any = None
     metadata_configuration: Any = None
+    # The name of the gateway target. (AI-inferred)
     name: Any = None
     # Defines the VPC private connection configuration (such as a VPC endpoint ID) that the Amazon Bedrock core gateway uses to securely route requests to a target resource that is not publicly accessible. (AI-inferred)
     private_endpoint: Any = None
+    # The configuration for a gateway target. This structure defines how the gateway connects to and interacts with the target endpoint. (AI-inferred)
     target_configuration: Any = None
 
 @dataclasses.dataclass
 class GatewayTargetAttrs:
     authorization_data: Any = None
+    # The date and time at which the target was created. (AI-inferred)
     created_at: Any = None
+    # The credential provider configurations for this gateway target. (AI-inferred)
     credential_provider_configurations: Any = None
+    # The description for the gateway target. (AI-inferred)
     description: Any = None
+    # The Amazon Resource Name (ARN) of the gateway target. (AI-inferred)
     gateway_arn: Any = None
+    # The gateway ID for the gateway target. (AI-inferred)
     gateway_identifier: Any = None
+    # The timestamp when the target was last synchronized. (AI-inferred)
     last_synchronized_at: Any = None
     metadata_configuration: Any = None
+    # The name of the gateway target. (AI-inferred)
     name: Any = None
     # Defines the VPC private connection configuration (such as a VPC endpoint ID) that the Amazon Bedrock core gateway uses to securely route requests to a target resource that is not publicly accessible. (AI-inferred)
     private_endpoint: Any = None
+    # A list of managed resources created by the gateway for private endpoint connectivity. (AI-inferred)
     private_endpoint_managed_resources: Any = None
+    # The protocol type this gateway target's own tools are exposed through. (AI-inferred)
     protocol_type: Any = None
+    # The status of the gateway target. (AI-inferred)
     status: Any = None
+    # The status reasons for the target status. (AI-inferred)
     status_reasons: Any = None
+    # The configuration for a gateway target. This structure defines how the gateway connects to and interacts with the target endpoint. (AI-inferred)
     target_configuration: Any = None
+    # The target ID. (AI-inferred)
     target_id: Any = None
+    # The date and time at which the target was updated. (AI-inferred)
     updated_at: Any = None
 
 GatewayTarget = ubx.ResourceBinding(

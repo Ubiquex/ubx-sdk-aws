@@ -11,6 +11,7 @@ const InputSecurityGroup_WhitelistRulesFields: FieldMap = {
 };
 
 export interface InputSecurityGroupConfig {
+  /** The tags assigned to this MediaLive input security group. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
   /** Specifies the list of IPv4 CIDR blocks (with optional descriptions) that are allowed to access the input security group, controlling which source IPs can send media content. (AI-inferred) */
   whitelistRules?: InputSecurityGroup_WhitelistRules[] | Computed<InputSecurityGroup_WhitelistRules[]>;
@@ -21,6 +22,7 @@ export interface InputSecurityGroupAttrs {
   arn: string;
   /** The unique identifier of the AWS Elemental MediaLive input security group, returned as a string when the resource is created. (AI-inferred) */
   id: string;
+  /** The tags assigned to this MediaLive input security group. (AI-inferred) */
   tags: unknown;
   /** Specifies the list of IPv4 CIDR blocks (with optional descriptions) that are allowed to access the input security group, controlling which source IPs can send media content. (AI-inferred) */
   whitelistRules: InputSecurityGroup_WhitelistRules[];

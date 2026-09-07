@@ -232,6 +232,7 @@ class DecoderManifestConfig:
     signal_decoders: Any = None
     # The status of the decoder manifest, which is set to either 'DRAFT' or 'ACTIVE' to indicate whether the manifest is in a draft state or ready for use. (AI-inferred)
     status: Any = None
+    # The tags assigned to this IoT FleetWise decoder manifest. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -256,6 +257,7 @@ class DecoderManifestAttrs:
     signal_decoders: Any = None
     # The status of the decoder manifest, which is set to either 'DRAFT' or 'ACTIVE' to indicate whether the manifest is in a draft state or ready for use. (AI-inferred)
     status: Any = None
+    # The tags assigned to this IoT FleetWise decoder manifest. (AI-inferred)
     tags: Any = None
 
 DecoderManifest = ubx.ResourceBinding(

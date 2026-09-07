@@ -50,6 +50,7 @@ export interface ApplicationConfig {
   name: string | Computed<string>;
   /** Identifies the operating system platforms on which the AppStream 2.0 application can be launched, with valid values including WINDOWS and AMAZON_LINUX. (AI-inferred) */
   platforms: string[] | Computed<string[]>;
+  /** The tags assigned to this AppStream application. (AI-inferred) */
   tags?: Application_Tags[] | Computed<Application_Tags[]>;
   /** Specifies the working directory that the application uses when launched on a streaming instance. (AI-inferred) */
   workingDirectory?: string | Computed<string>;
@@ -80,6 +81,7 @@ export interface ApplicationAttrs {
   name: string;
   /** Identifies the operating system platforms on which the AppStream 2.0 application can be launched, with valid values including WINDOWS and AMAZON_LINUX. (AI-inferred) */
   platforms: string[];
+  /** The tags assigned to this AppStream application. (AI-inferred) */
   tags: Application_Tags[];
   /** Specifies the working directory that the application uses when launched on a streaming instance. (AI-inferred) */
   workingDirectory: string;

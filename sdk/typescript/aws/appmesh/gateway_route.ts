@@ -415,6 +415,7 @@ export interface GatewayRouteAttrs {
   spec: GatewayRoute_Spec;
   /** Specifies the tags (key-value pairs) to attach to this App Mesh gateway route, used for organizing and identifying the route. (AI-inferred) */
   tags: GatewayRoute_Tags[];
+  /** The unique identifier assigned by App Mesh to this gateway route. (AI-inferred) */
   uid: string;
   /** The name of the AWS App Mesh virtual gateway that this gateway route is attached to, identifying the parent resource for the routing rules. (AI-inferred) */
   virtualGatewayName: string;

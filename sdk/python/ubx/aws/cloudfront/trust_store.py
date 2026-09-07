@@ -62,6 +62,7 @@ class TrustStoreConfig:
 
 @dataclasses.dataclass
 class TrustStoreAttrs:
+    # The Amazon Resource Name (ARN) of this trust store. (AI-inferred)
     arn: Any = None
     # A CA certificates bundle source.
     ca_certificates_bundle_source: Any = None
@@ -75,6 +76,7 @@ class TrustStoreAttrs:
     name: Any = None
     # The number of CA certificates currently contained in the CloudFront trust store. (AI-inferred)
     number_of_ca_certificates: Any = None
+    # The current status of this trust store. (AI-inferred)
     status: Any = None
     # A complex type that contains zero or more ``Tag`` elements.
     tags: Any = None

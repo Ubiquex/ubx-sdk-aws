@@ -3,6 +3,13 @@ package eks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Capability_Configuration_Ack struct {
+	// A list of ACK service names to disable. Controllers for services in this list are not installed or managed.
+	DisabledServices any
+	// Whether cross-namespace references are enabled for ACK controllers. When not specified, the service default applies.
+	EnableCrossNamespace any
+}
+
 type Capability_Configuration_ArgoCd_AwsIdc struct {
 	// The ARN of the IAM Identity Center instance to use for authentication.
 	IdcInstanceArn any
@@ -43,6 +50,7 @@ type Capability_Configuration_ArgoCd struct {
 }
 
 type Capability_Configuration struct {
+	// Configuration settings for an ACK (AWS Controllers for Kubernetes) capability.
 	Ack any
 	// Configuration settings for an Argo CD capability. This includes the Kubernetes namespace, IAM Identity Center integration, RBAC role mappings, and network access configuration.
 	ArgoCd any

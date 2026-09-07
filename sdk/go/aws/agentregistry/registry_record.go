@@ -87,6 +87,11 @@ type RegistryRecord_Descriptors_AgentSkillsDefinition struct {
 	DataSchemaVersion any
 }
 
+type RegistryRecord_Descriptors_Agui struct {
+	// Source configuration for a source-only descriptor. Unlike mcpServer/a2aAgentCard sources, source-only descriptors do not support credential providers.
+	Source any
+}
+
 type RegistryRecord_Descriptors_Custom struct {
 	// Descriptor payload data.
 	Data any
@@ -120,8 +125,12 @@ type RegistryRecord_Descriptors struct {
 	A2aAgentCard any
 	// The agent skills definition descriptor, populated when the record type is SKILL.
 	AgentSkillsDefinition any
+	// The AG-UI (Agent-User Interaction) descriptor, populated for records detected from an AG-UI protocol source. This descriptor is source-only: its content is synchronized from the configured source URL rather than supplied inline.
+	Agui any
 	// The custom descriptor, populated when the record type is CUSTOM.
 	Custom any
+	// The HTTP descriptor, populated for records detected from an HTTP protocol source. This descriptor is source-only: its content is synchronized from the configured source URL rather than supplied inline.
+	Http any
 	// The MCP server descriptor, populated when the record type is MCP.
 	McpServer any
 }
@@ -233,6 +242,14 @@ var RegistryRecord_Descriptors_AgentSkillsDefinitionFields = ubx.FieldMap{
 		"DataSchemaVersion": ubx.FieldSpec{WireName: "data_schema_version"},
 	}
 
+var RegistryRecord_Descriptors_AguiFields = ubx.FieldMap{
+		"Source": ubx.FieldSpec{
+			WireName: "source",
+			Kind: "object",
+			Fields: RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalData_SkillMd_SourceFields,
+		},
+	}
+
 var RegistryRecord_Descriptors_CustomFields = ubx.FieldMap{
 		"Data": ubx.FieldSpec{WireName: "data"},
 	}
@@ -276,10 +293,20 @@ var RegistryRecord_DescriptorsFields = ubx.FieldMap{
 			Kind: "object",
 			Fields: RegistryRecord_Descriptors_AgentSkillsDefinitionFields,
 		},
+		"Agui": ubx.FieldSpec{
+			WireName: "agui",
+			Kind: "object",
+			Fields: RegistryRecord_Descriptors_AguiFields,
+		},
 		"Custom": ubx.FieldSpec{
 			WireName: "custom",
 			Kind: "object",
 			Fields: RegistryRecord_Descriptors_CustomFields,
+		},
+		"Http": ubx.FieldSpec{
+			WireName: "http",
+			Kind: "object",
+			Fields: RegistryRecord_Descriptors_AguiFields,
 		},
 		"McpServer": ubx.FieldSpec{
 			WireName: "mcp_server",
@@ -306,7 +333,7 @@ type RegistryRecordConfig struct {
 	RecordType any
 	// The version of the registry record.
 	RecordVersion any
-	// The identifier of the registry containing the record.
+	// The identifier of the registry in which to create the record. You can specify either the registry ID or the registry Amazon Resource Name (ARN). Use the ARN form to reference a registry shared from another account via AWS Resource Access Manager (RAM).
 	RegistryId any
 	// Tags to assign to the registry record.
 	Tags any
@@ -315,6 +342,8 @@ type RegistryRecordConfig struct {
 type RegistryRecordAttrs struct {
 	// The timestamp when the registry record was created.
 	CreatedAt any
+	// The identifier of the AWS account that created the registry record.
+	CreatedBy any
 	// The description of the registry record.
 	Description any
 	// The typed set of descriptors for a registry record. Exactly one descriptor field is populated based on the record type.
@@ -333,7 +362,7 @@ type RegistryRecordAttrs struct {
 	RecordVersion any
 	// The Amazon Resource Name (ARN) of the registry containing the record.
 	RegistryArn any
-	// The identifier of the registry containing the record.
+	// The identifier of the registry in which to create the record. You can specify either the registry ID or the registry Amazon Resource Name (ARN). Use the ARN form to reference a registry shared from another account via AWS Resource Access Manager (RAM).
 	RegistryId any
 	// The lifecycle status of the registry record.
 	Status any

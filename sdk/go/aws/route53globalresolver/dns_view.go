@@ -14,32 +14,48 @@ var DnsView_TagsFields = ubx.FieldMap{
 	}
 
 type DnsViewConfig struct {
+	// A unique string that identifies the request used to create this DNS view, ensuring idempotency. (AI-inferred)
 	ClientToken any
 	// An optional human-readable description that you provide for the DNS view to help manage and identify it. (AI-inferred)
 	Description any
+	// Whether this DNS view validates the authenticity and integrity of DNS responses from public name servers for DNSSEC-signed domains. (AI-inferred)
 	DnssecValidation any
+	// Whether this DNS view forwards client subnet information with queries, so upstream resolvers can return more geographically accurate DNS responses. (AI-inferred)
 	EdnsClientSubnet any
 	// Determines whether DNS queries are allowed to pass through (fail open) or are rejected (fail closed) when the Route 53 Resolver DNS Firewall cannot evaluate the configured firewall rules due to an internal error. (AI-inferred)
 	FirewallRulesFailOpen any
+	// A reference to the global resolver this DNS view is created under. (AI-inferred)
 	GlobalResolverId any
+	// The name of this DNS view. (AI-inferred)
 	Name any
+	// The tags assigned to this DNS view. (AI-inferred)
 	Tags any
 }
 
 type DnsViewAttrs struct {
+	// The Amazon Resource Name (ARN) of this DNS view. (AI-inferred)
 	Arn any
+	// A unique string that identifies the request used to create this DNS view, ensuring idempotency. (AI-inferred)
 	ClientToken any
+	// The date and time when this DNS view was created. (AI-inferred)
 	CreatedAt any
 	// An optional human-readable description that you provide for the DNS view to help manage and identify it. (AI-inferred)
 	Description any
+	// The unique identifier of this DNS view. (AI-inferred)
 	DnsViewId any
+	// Whether this DNS view validates the authenticity and integrity of DNS responses from public name servers for DNSSEC-signed domains. (AI-inferred)
 	DnssecValidation any
+	// Whether this DNS view forwards client subnet information with queries, so upstream resolvers can return more geographically accurate DNS responses. (AI-inferred)
 	EdnsClientSubnet any
 	// Determines whether DNS queries are allowed to pass through (fail open) or are rejected (fail closed) when the Route 53 Resolver DNS Firewall cannot evaluate the configured firewall rules due to an internal error. (AI-inferred)
 	FirewallRulesFailOpen any
+	// A reference to the global resolver this DNS view is created under. (AI-inferred)
 	GlobalResolverId any
+	// The name of this DNS view. (AI-inferred)
 	Name any
+	// The current status of this DNS view. (AI-inferred)
 	Status any
+	// The tags assigned to this DNS view. (AI-inferred)
 	Tags any
 	// A read-only timestamp that records when the global resolver DNS view was last modified. (AI-inferred)
 	UpdatedAt any

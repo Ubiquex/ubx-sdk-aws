@@ -99,6 +99,7 @@ class CapacityReservationAttrs:
     commitment_info: Any = None
     # The date and time at which the Capacity Reservation was created. (AI-inferred)
     create_date: Any = None
+    # How this capacity reservation's own reserved capacity is delivered, e.g. all at once or incrementally. (AI-inferred)
     delivery_preference: Any = None
     # Indicates whether the capacity reservation is EBS-optimized, which provides dedicated throughput for Amazon EBS I/O. (AI-inferred)
     ebs_optimized: Any = None

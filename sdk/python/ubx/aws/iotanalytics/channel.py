@@ -77,6 +77,7 @@ class ChannelAttrs:
     channel_name: Any = None
     # Configures the storage destination for the channel's message data, choosing between an AWS IoT Analytics service-managed S3 bucket or a customer-managed S3 bucket. (AI-inferred)
     channel_storage: Any = None
+    # The unique identifier of this IoT Analytics channel. (AI-inferred)
     id: Any = None
     # Specifies how long message data is kept in the channel, either as a finite number of days or indefinitely. (AI-inferred)
     retention_period: Any = None

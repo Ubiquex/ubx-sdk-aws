@@ -193,28 +193,39 @@ class EnvironmentConfig:
     hosts: Any = None
     # The initial Vlan configuration only required upon creation. Modification after creation will have no effect
     initial_vlans: Any = None
+    # The AWS KMS key AWS Secrets Manager uses to encrypt this environment's own stored VCF credentials. (AI-inferred)
     kms_key_id: Any = None
     # The license information for an EVS environment
     license_info: Any = None
+    # The security groups that allow traffic between the Amazon EVS control plane and this environment's own VPC for service access. (AI-inferred)
     service_access_security_groups: Any = None
+    # A reference to the subnet Amazon EVS uses to establish connectivity between its control plane and this environment's own VPC. (AI-inferred)
     service_access_subnet_id: Any = None
+    # The Broadcom Site ID associated with this environment, used to meet Broadcom VCF license usage reporting requirements. (AI-inferred)
     site_id: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
+    # Whether the customer has confirmed they hold and will maintain the required VCF software licenses covering all physical processor cores in this environment. (AI-inferred)
     terms_accepted: Any = None
+    # The DNS hostnames used by the VCF management appliances (vCenter Server, NSX, SDDC Manager) in this environment. (AI-inferred)
     vcf_hostnames: Any = None
+    # The VCF version this environment runs. (AI-inferred)
     vcf_version: Any = None
+    # A reference to the VPC this environment is deployed in. (AI-inferred)
     vpc_id: Any = None
 
 @dataclasses.dataclass
 class EnvironmentAttrs:
+    # The results of the health and licensing checks Amazon EVS runs against this environment, e.g. key reuse, key coverage, reachability, and host count. (AI-inferred)
     checks: Any = None
     connectivity_info: Any = None
     # This read-only string contains the ISO 8601 timestamp of when the EVS environment was created. (AI-inferred)
     created_at: Any = None
+    # References to the AWS Secrets Manager secrets holding the VCF credentials (vCenter Server, NSX, SDDC Manager) Amazon EVS created for this environment. (AI-inferred)
     credentials: Any = None
     # The Amazon Resource Name (ARN) that uniquely identifies this EVS environment, assigned by AWS when the environment is created. (AI-inferred)
     environment_arn: Any = None
+    # The unique identifier of this environment. (AI-inferred)
     environment_id: Any = None
     # The name of an EVS environment
     environment_name: Any = None
@@ -224,20 +235,29 @@ class EnvironmentAttrs:
     hosts: Any = None
     # The initial Vlan configuration only required upon creation. Modification after creation will have no effect
     initial_vlans: Any = None
+    # The AWS KMS key AWS Secrets Manager uses to encrypt this environment's own stored VCF credentials. (AI-inferred)
     kms_key_id: Any = None
     # The license information for an EVS environment
     license_info: Any = None
+    # The date and time when this environment was last modified. (AI-inferred)
     modified_at: Any = None
+    # The security groups that allow traffic between the Amazon EVS control plane and this environment's own VPC for service access. (AI-inferred)
     service_access_security_groups: Any = None
+    # A reference to the subnet Amazon EVS uses to establish connectivity between its control plane and this environment's own VPC. (AI-inferred)
     service_access_subnet_id: Any = None
+    # The Broadcom Site ID associated with this environment, used to meet Broadcom VCF license usage reporting requirements. (AI-inferred)
     site_id: Any = None
     # A read-only string that provides supplementary details about the current state of the AWS EVS environment, including error messages if the environment is not in a healthy state. (AI-inferred)
     state_details: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
+    # Whether the customer has confirmed they hold and will maintain the required VCF software licenses covering all physical processor cores in this environment. (AI-inferred)
     terms_accepted: Any = None
+    # The DNS hostnames used by the VCF management appliances (vCenter Server, NSX, SDDC Manager) in this environment. (AI-inferred)
     vcf_hostnames: Any = None
+    # The VCF version this environment runs. (AI-inferred)
     vcf_version: Any = None
+    # A reference to the VPC this environment is deployed in. (AI-inferred)
     vpc_id: Any = None
 
 Environment = ubx.ResourceBinding(

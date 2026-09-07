@@ -67,6 +67,7 @@ export interface VpcencryptionControlAttrs {
   mode: string;
   /** Used to enable or disable Nat gateway exclusion */
   natGatewayExclusionInput: string;
+  /** Real resource types (e.g. NAT gateway, internet gateway, Lambda, VPC peering) excluded from this VPC's own encryption-in-transit enforcement, and each exclusion's own current state. (AI-inferred) */
   resourceExclusions: VpcencryptionControl_ResourceExclusions;
   /** The current state of the VPC encryption control. */
   state: string;

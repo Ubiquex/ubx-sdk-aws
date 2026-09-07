@@ -224,6 +224,7 @@ type EvaluatorConfig struct {
 	EvaluatorName any
 	// The ARN of the KMS key used to encrypt evaluator data.
 	KmsKeyArn any
+	// The real severity or grading level this evaluator assigns. (AI-inferred)
 	Level any
 	// A list of tags to assign to the evaluator.
 	Tags any
@@ -244,7 +245,9 @@ type EvaluatorAttrs struct {
 	EvaluatorName any
 	// The ARN of the KMS key used to encrypt evaluator data.
 	KmsKeyArn any
+	// The real severity or grading level this evaluator assigns. (AI-inferred)
 	Level any
+	// The current status of this evaluator. (AI-inferred)
 	Status any
 	// A list of tags to assign to the evaluator.
 	Tags any

@@ -37,6 +37,7 @@ type IpAccessSettingsConfig struct {
 	DisplayName any
 	// Specifies the list of IP rules that define allowed or denied client IP address ranges (in CIDR notation) for accessing the WorkSpaces Web portal. (AI-inferred)
 	IpRules any
+	// The tags assigned to these IP access settings. (AI-inferred)
 	Tags any
 }
 
@@ -57,6 +58,7 @@ type IpAccessSettingsAttrs struct {
 	IpAccessSettingsArn any
 	// Specifies the list of IP rules that define allowed or denied client IP address ranges (in CIDR notation) for accessing the WorkSpaces Web portal. (AI-inferred)
 	IpRules any
+	// The tags assigned to these IP access settings. (AI-inferred)
 	Tags any
 }
 

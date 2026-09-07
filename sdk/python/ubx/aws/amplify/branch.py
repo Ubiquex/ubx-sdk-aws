@@ -72,6 +72,7 @@ class BranchConfig:
     description: Any = None
     # Indicates whether automatic builds are enabled for the branch, causing Amplify to build the branch automatically every time a code change is pushed to the repository. (AI-inferred)
     enable_auto_build: Any = None
+    # Whether performance mode is enabled for this Amplify branch, trading some CDN cache staleness for faster deploys. (AI-inferred)
     enable_performance_mode: Any = None
     # Indicates whether Amplify automatically generates a preview of the branch for every pull request, enabling you to test changes before merging them into the main branch. (AI-inferred)
     enable_pull_request_preview: Any = None
@@ -108,6 +109,7 @@ class BranchAttrs:
     description: Any = None
     # Indicates whether automatic builds are enabled for the branch, causing Amplify to build the branch automatically every time a code change is pushed to the repository. (AI-inferred)
     enable_auto_build: Any = None
+    # Whether performance mode is enabled for this Amplify branch, trading some CDN cache staleness for faster deploys. (AI-inferred)
     enable_performance_mode: Any = None
     # Indicates whether Amplify automatically generates a preview of the branch for every pull request, enabling you to test changes before merging them into the main branch. (AI-inferred)
     enable_pull_request_preview: Any = None

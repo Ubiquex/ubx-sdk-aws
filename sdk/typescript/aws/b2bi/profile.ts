@@ -23,6 +23,7 @@ export interface ProfileConfig {
   name: string | Computed<string>;
   /** The phone number associated with the AWS B2Bi profile, a required contact detail used for the profile's business contact information. (AI-inferred) */
   phone: string | Computed<string>;
+  /** The tags assigned to this B2B Data Interchange profile. (AI-inferred) */
   tags?: Profile_Tags[] | Computed<Profile_Tags[]>;
 }
 
@@ -47,6 +48,7 @@ export interface ProfileAttrs {
   profileArn: string;
   /** The unique identifier assigned by AWS to the B2Bi profile, generated upon creation and used to reference the profile in subsequent API operations and CloudFormation resources. (AI-inferred) */
   profileId: string;
+  /** The tags assigned to this B2B Data Interchange profile. (AI-inferred) */
   tags: Profile_Tags[];
 }
 

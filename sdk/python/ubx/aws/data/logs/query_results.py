@@ -19,6 +19,7 @@ class QueryResults_Statistics:
     log_groups_scanned: Any = None
     records_matched: Any = None
     records_scanned: Any = None
+    result_count: Any = None
 
 @dataclasses.dataclass
 class QueryResultsConfig:

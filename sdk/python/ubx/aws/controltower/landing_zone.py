@@ -21,6 +21,7 @@ _LandingZone_TagsFields = {
 class LandingZoneConfig:
     # The manifest is a structured JSON document that defines the landing zone configuration, including the version, governed Regions, organizational structure, and security controls, which AWS Control Tower uses to create or update the landing zone. (AI-inferred)
     manifest: Any = None
+    # The types of remediation Control Tower applies to this landing zone when it drifts from its own baseline configuration. (AI-inferred)
     remediation_types: Any = None
     # The tags to associate with the AWS Control Tower landing zone, enabling cost allocation, access control, and resource identification. (AI-inferred)
     tags: Any = None
@@ -39,6 +40,7 @@ class LandingZoneAttrs:
     latest_available_version: Any = None
     # The manifest is a structured JSON document that defines the landing zone configuration, including the version, governed Regions, organizational structure, and security controls, which AWS Control Tower uses to create or update the landing zone. (AI-inferred)
     manifest: Any = None
+    # The types of remediation Control Tower applies to this landing zone when it drifts from its own baseline configuration. (AI-inferred)
     remediation_types: Any = None
     # The current lifecycle status of the landing zone, such as ACTIVE, FAILED, or PROCESSING. (AI-inferred)
     status: Any = None

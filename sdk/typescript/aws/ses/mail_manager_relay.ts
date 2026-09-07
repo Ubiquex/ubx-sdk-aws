@@ -33,6 +33,7 @@ export interface MailManagerRelayConfig {
   serverName: string | Computed<string>;
   /** Sets the TCP port number on the destination mail server that the SES Mail Manager relay uses for SMTP email relaying. (AI-inferred) */
   serverPort: number | Computed<number>;
+  /** The tags assigned to this Mail Manager relay. (AI-inferred) */
   tags?: MailManagerRelay_Tags[] | Computed<MailManagerRelay_Tags[]>;
 }
 
@@ -49,6 +50,7 @@ export interface MailManagerRelayAttrs {
   serverName: string;
   /** Sets the TCP port number on the destination mail server that the SES Mail Manager relay uses for SMTP email relaying. (AI-inferred) */
   serverPort: number;
+  /** The tags assigned to this Mail Manager relay. (AI-inferred) */
   tags: MailManagerRelay_Tags[];
 }
 

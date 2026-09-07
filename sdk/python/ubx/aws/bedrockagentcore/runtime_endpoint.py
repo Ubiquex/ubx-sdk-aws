@@ -12,7 +12,9 @@ class RuntimeEndpointConfig:
     agent_runtime_id: Any = None
     # The version of the Bedrock Agent runtime to use for the endpoint, which controls the runtime behavior and feature set available when invoking the agent through this core runtime endpoint. (AI-inferred)
     agent_runtime_version: Any = None
+    # The description of this agent runtime endpoint. (AI-inferred)
     description: Any = None
+    # The name of this agent runtime endpoint. (AI-inferred)
     name: Any = None
     # A map of tag keys and values
     tags: Any = None
@@ -21,23 +23,31 @@ class RuntimeEndpointConfig:
 class RuntimeEndpointAttrs:
     # The Amazon Resource Name (ARN) of the Bedrock agent core runtime endpoint, automatically assigned by AWS to uniquely identify the endpoint for agent invocation. (AI-inferred)
     agent_runtime_arn: Any = None
+    # The Amazon Resource Name (ARN) of this agent runtime endpoint. (AI-inferred)
     agent_runtime_endpoint_arn: Any = None
     # The ID of the parent Agent Runtime
     agent_runtime_id: Any = None
     # The version of the Bedrock Agent runtime to use for the endpoint, which controls the runtime behavior and feature set available when invoking the agent through this core runtime endpoint. (AI-inferred)
     agent_runtime_version: Any = None
+    # The date and time at which this agent runtime endpoint was created. (AI-inferred)
     created_at: Any = None
+    # The description of this agent runtime endpoint. (AI-inferred)
     description: Any = None
     # The reason for failure if the endpoint is in a failed state
     failure_reason: Any = None
     # The unique ID of the Agent Runtime Endpoint itself
     id: Any = None
+    # The date and time at which this agent runtime endpoint was last updated. (AI-inferred)
     last_updated_at: Any = None
+    # The real AgentCore Runtime version this endpoint currently routes live traffic to. (AI-inferred)
     live_version: Any = None
+    # The name of this agent runtime endpoint. (AI-inferred)
     name: Any = None
+    # The current status of this agent runtime endpoint. (AI-inferred)
     status: Any = None
     # A map of tag keys and values
     tags: Any = None
+    # The real AgentCore Runtime version this endpoint is configured to route to, once available. (AI-inferred)
     target_version: Any = None
 
 RuntimeEndpoint = ubx.ResourceBinding(

@@ -81,7 +81,7 @@ type RepositoryConfig struct {
 }
 
 type RepositoryAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this ECR repository, such as arn:aws:ecr:region:account-id:repository/repository-name. (AI-inferred)
+	// The repository's real ARN, computed, known only after ship. (AI-inferred)
 	Arn any
 	// If true, deleting the repository force deletes the contents of the repository. Without a force delete, you can only delete empty repositories.
 	EmptyOnDelete any

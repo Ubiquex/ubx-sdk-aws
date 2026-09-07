@@ -20,6 +20,7 @@ _PricingPlan_TagsFields = {
 
 @dataclasses.dataclass
 class PricingPlanConfig:
+    # The description of this Billing Conductor pricing plan. (AI-inferred)
     description: Any = None
     # The user-defined name for the pricing plan, required when creating the plan in AWS Billing Conductor and used for identification and display. (AI-inferred)
     name: Any = None
@@ -33,6 +34,7 @@ class PricingPlanAttrs:
     arn: Any = None
     # Creation timestamp in UNIX epoch time format
     creation_time: Any = None
+    # The description of this Billing Conductor pricing plan. (AI-inferred)
     description: Any = None
     # Latest modified timestamp in UNIX epoch time format
     last_modified_time: Any = None

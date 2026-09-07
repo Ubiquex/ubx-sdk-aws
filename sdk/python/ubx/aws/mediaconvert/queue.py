@@ -12,6 +12,7 @@ class QueueConfig:
     concurrent_jobs: Any = None
     # An optional user-defined description of the MediaConvert queue, used to identify its purpose in the AWS Elemental MediaConvert console. (AI-inferred)
     description: Any = None
+    # The maximum number of jobs this MediaConvert queue can process concurrently. (AI-inferred)
     maximum_concurrent_feeds: Any = None
     # The name of the MediaConvert queue; if omitted, AWS Elemental MediaConvert automatically generates a unique queue name. (AI-inferred)
     name: Any = None
@@ -30,7 +31,9 @@ class QueueAttrs:
     concurrent_jobs: Any = None
     # An optional user-defined description of the MediaConvert queue, used to identify its purpose in the AWS Elemental MediaConvert console. (AI-inferred)
     description: Any = None
+    # The unique identifier of this MediaConvert queue. (AI-inferred)
     id: Any = None
+    # The maximum number of jobs this MediaConvert queue can process concurrently. (AI-inferred)
     maximum_concurrent_feeds: Any = None
     # The name of the MediaConvert queue; if omitted, AWS Elemental MediaConvert automatically generates a unique queue name. (AI-inferred)
     name: Any = None

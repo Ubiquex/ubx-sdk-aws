@@ -11,6 +11,7 @@ type AgentRegistryDiscoverableRegistryRecords_Filters struct {
 type AgentRegistryDiscoverableRegistryRecords_RegistryRecords struct {
 	CreatedAt any
 	Description any
+	DescriptorTypes any
 	DisplayName any
 	Name any
 	RecordArn any

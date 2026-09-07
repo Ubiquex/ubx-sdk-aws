@@ -124,6 +124,7 @@ _CapacityProvider_VpcConfigFields = {
 
 @dataclasses.dataclass
 class CapacityProviderConfig:
+    # The name of this Lambda capacity provider. (AI-inferred)
     capacity_provider_name: Any = None
     # Configuration that defines how the capacity provider scales compute instances based on demand and policies.
     capacity_provider_scaling_config: Any = None
@@ -144,7 +145,9 @@ class CapacityProviderConfig:
 
 @dataclasses.dataclass
 class CapacityProviderAttrs:
+    # The Amazon Resource Name (ARN) of this Lambda capacity provider. (AI-inferred)
     arn: Any = None
+    # The name of this Lambda capacity provider. (AI-inferred)
     capacity_provider_name: Any = None
     # Configuration that defines how the capacity provider scales compute instances based on demand and policies.
     capacity_provider_scaling_config: Any = None

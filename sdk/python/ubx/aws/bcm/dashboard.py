@@ -355,21 +355,28 @@ _Dashboard_WidgetsFields = {
 
 @dataclasses.dataclass
 class DashboardConfig:
+    # The description of this dashboard. (AI-inferred)
     description: Any = None
     # A user-specified unique name for the AWS Billing and Cost Management dashboard, used to identify and display the dashboard in the console. (AI-inferred)
     name: Any = None
+    # The tags assigned to this dashboard. (AI-inferred)
     tags: Any = None
     # This required list contains the widget definitions—each specifying a visual block like a chart or KPI tile—that together form the content of the BCM dashboard. (AI-inferred)
     widgets: Any = None
 
 @dataclasses.dataclass
 class DashboardAttrs:
+    # The Amazon Resource Name (ARN) of this Billing and Cost Management dashboard. (AI-inferred)
     arn: Any = None
+    # The date and time when this dashboard was created. (AI-inferred)
     created_at: Any = None
+    # The description of this dashboard. (AI-inferred)
     description: Any = None
     # A user-specified unique name for the AWS Billing and Cost Management dashboard, used to identify and display the dashboard in the console. (AI-inferred)
     name: Any = None
+    # The tags assigned to this dashboard. (AI-inferred)
     tags: Any = None
+    # The type of this dashboard. (AI-inferred)
     type: Any = None
     # The `updated_at` attribute is a read-only timestamp that records when the AWS Billing and Cost Management dashboard was last updated, automatically set by the service. (AI-inferred)
     updated_at: Any = None

@@ -50,16 +50,22 @@ _TelemetryPipelines_Pipeline_TagsFields = {
 
 @dataclasses.dataclass
 class TelemetryPipelinesConfig:
+    # The configuration defining how this telemetry pipeline collects and routes observability data. (AI-inferred)
     configuration: Any = None
+    # The name of this telemetry pipeline. (AI-inferred)
     name: Any = None
     # An array of key-value pairs to apply to this resource
     tags: Any = None
 
 @dataclasses.dataclass
 class TelemetryPipelinesAttrs:
+    # The Amazon Resource Name (ARN) of this telemetry pipeline. (AI-inferred)
     arn: Any = None
+    # The configuration defining how this telemetry pipeline collects and routes observability data. (AI-inferred)
     configuration: Any = None
+    # The name of this telemetry pipeline. (AI-inferred)
     name: Any = None
+    # The pipeline definition, including its own stages and destinations, for this telemetry pipeline. (AI-inferred)
     pipeline: Any = None
     # The unique identifier assigned by AWS to the telemetry pipeline, used to reference the pipeline when managing or querying telemetry configurations. (AI-inferred)
     pipeline_identifier: Any = None

@@ -21,6 +21,7 @@ export interface AdmchannelAttrs {
   clientSecret: string;
   /** Indicates whether the ADM channel is enabled for sending push notifications through Amazon Pinpoint. (AI-inferred) */
   enabled: boolean;
+  /** The unique identifier of this Pinpoint ADM channel. (AI-inferred) */
   id: string;
 }
 

@@ -47,13 +47,16 @@ type LinkRoutingRuleConfig struct {
 	Conditions any
 	// The ID of the gateway (such as an internet gateway or virtual private gateway) that the routing rule uses to direct matching traffic. (AI-inferred)
 	GatewayId any
+	// A reference to the link this routing rule directs matching bid traffic to. (AI-inferred)
 	LinkId any
+	// The priority of this routing rule relative to the gateway's other routing rules; lower values are evaluated first. (AI-inferred)
 	Priority any
 	// Tags to assign to the LinkRoutingRule.
 	Tags any
 }
 
 type LinkRoutingRuleAttrs struct {
+	// The Amazon Resource Name (ARN) of this link routing rule. (AI-inferred)
 	Arn any
 	// Conditions for a routing rule. All non-null fields must match (AND logic). At least one field must be set. HostHeader and HostHeaderWildcard are mutually exclusive. PathPrefix and PathExact are mutually exclusive.
 	Conditions any
@@ -61,9 +64,13 @@ type LinkRoutingRuleAttrs struct {
 	CreatedTimestamp any
 	// The ID of the gateway (such as an internet gateway or virtual private gateway) that the routing rule uses to direct matching traffic. (AI-inferred)
 	GatewayId any
+	// A reference to the link this routing rule directs matching bid traffic to. (AI-inferred)
 	LinkId any
+	// The priority of this routing rule relative to the gateway's other routing rules; lower values are evaluated first. (AI-inferred)
 	Priority any
+	// The unique identifier of this routing rule. (AI-inferred)
 	RuleId any
+	// The current status of this routing rule. (AI-inferred)
 	Status any
 	// Tags to assign to the LinkRoutingRule.
 	Tags any

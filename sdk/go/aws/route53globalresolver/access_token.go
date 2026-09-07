@@ -18,14 +18,18 @@ type AccessTokenConfig struct {
 	ClientToken any
 	// Specifies the DNS view ID that this access token is scoped to, which the global resolver uses to authorize DNS resolution requests for that view. (AI-inferred)
 	DnsViewId any
+	// The date and time when this access token expires. (AI-inferred)
 	ExpiresAt any
+	// The name of this access token. (AI-inferred)
 	Name any
+	// The tags assigned to this access token. (AI-inferred)
 	Tags any
 }
 
 type AccessTokenAttrs struct {
 	// The unique identifier automatically assigned to this global resolver access token. (AI-inferred)
 	AccessTokenId any
+	// The Amazon Resource Name (ARN) of this access token. (AI-inferred)
 	Arn any
 	// An optional caller-supplied token that ensures idempotent creation of the Route 53 Global Resolver access token by uniquely identifying the Create request, allowing safe retries without duplicating the token. (AI-inferred)
 	ClientToken any
@@ -33,12 +37,19 @@ type AccessTokenAttrs struct {
 	CreatedAt any
 	// Specifies the DNS view ID that this access token is scoped to, which the global resolver uses to authorize DNS resolution requests for that view. (AI-inferred)
 	DnsViewId any
+	// The date and time when this access token expires. (AI-inferred)
 	ExpiresAt any
+	// A reference to the global resolver this access token authorizes access to. (AI-inferred)
 	GlobalResolverId any
+	// The name of this access token. (AI-inferred)
 	Name any
+	// The current status of this access token. (AI-inferred)
 	Status any
+	// The tags assigned to this access token. (AI-inferred)
 	Tags any
+	// The date and time when this access token was last updated. (AI-inferred)
 	UpdatedAt any
+	// The real token value clients present in DoH and DoT requests to authenticate to this global resolver, regardless of their IP address. Sensitive -- keep secure once issued. (AI-inferred)
 	Value any
 }
 

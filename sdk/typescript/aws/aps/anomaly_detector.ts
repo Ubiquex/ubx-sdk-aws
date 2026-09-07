@@ -54,6 +54,7 @@ export interface AnomalyDetectorConfig {
   evaluationIntervalInSeconds?: number | Computed<number>;
   /** An array of key-value pairs to provide meta-data. */
   labels?: AnomalyDetector_Labels[] | Computed<AnomalyDetector_Labels[]>;
+  /** The action this Amazon Managed Service for Prometheus anomaly detector takes when metric data is missing. (AI-inferred) */
   missingDataAction?: unknown | Computed<unknown>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: AnomalyDetector_Labels[] | Computed<AnomalyDetector_Labels[]>;
@@ -72,6 +73,7 @@ export interface AnomalyDetectorAttrs {
   evaluationIntervalInSeconds: number;
   /** An array of key-value pairs to provide meta-data. */
   labels: AnomalyDetector_Labels[];
+  /** The action this Amazon Managed Service for Prometheus anomaly detector takes when metric data is missing. (AI-inferred) */
   missingDataAction: unknown;
   /** An array of key-value pairs to apply to this resource. */
   tags: AnomalyDetector_Labels[];

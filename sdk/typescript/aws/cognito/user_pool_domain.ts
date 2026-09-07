@@ -43,6 +43,7 @@ export interface UserPoolDomainConfig {
   domain: string | Computed<string>;
   /** Specify the version of the managed login experience for the user pool domain, with 1 representing the original hosted UI and 2 representing the new managed login experience. (AI-inferred) */
   managedLoginVersion?: number | Computed<number>;
+  /** The routing configuration for this user pool domain, specifying failover settings for multi-region deployments. (AI-inferred) */
   routing?: UserPoolDomain_Routing | Computed<UserPoolDomain_Routing>;
   /** The ID of the Amazon Cognito user pool to associate with the custom domain or Amazon Cognito-hosted domain. (AI-inferred) */
   userPoolId: string | Computed<string>;
@@ -57,6 +58,7 @@ export interface UserPoolDomainAttrs {
   domain: string;
   /** Specify the version of the managed login experience for the user pool domain, with 1 representing the original hosted UI and 2 representing the new managed login experience. (AI-inferred) */
   managedLoginVersion: number;
+  /** The routing configuration for this user pool domain, specifying failover settings for multi-region deployments. (AI-inferred) */
   routing: UserPoolDomain_Routing;
   /** The ID of the Amazon Cognito user pool to associate with the custom domain or Amazon Cognito-hosted domain. (AI-inferred) */
   userPoolId: string;

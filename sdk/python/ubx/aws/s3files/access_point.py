@@ -72,12 +72,14 @@ class AccessPointConfig:
     posix_user: Any = None
     # Specifies the root directory path within the S3 bucket that the access point is restricted to, so requests through the access point can only access objects under that prefix (supported for S3 on Outposts buckets). (AI-inferred)
     root_directory: Any = None
+    # The tags assigned to this S3 Files access point. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class AccessPointAttrs:
     # The Amazon Resource Name (ARN) of the S3 access point, which uniquely identifies the access point and is used for making requests to S3 through the access point. (AI-inferred)
     access_point_arn: Any = None
+    # The unique identifier of this S3 Files access point. (AI-inferred)
     access_point_id: Any = None
     # (optional) A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.
     client_token: Any = None
@@ -89,7 +91,9 @@ class AccessPointAttrs:
     posix_user: Any = None
     # Specifies the root directory path within the S3 bucket that the access point is restricted to, so requests through the access point can only access objects under that prefix (supported for S3 on Outposts buckets). (AI-inferred)
     root_directory: Any = None
+    # The current status of this S3 Files access point. (AI-inferred)
     status: Any = None
+    # The tags assigned to this S3 Files access point. (AI-inferred)
     tags: Any = None
 
 AccessPoint = ubx.ResourceBinding(

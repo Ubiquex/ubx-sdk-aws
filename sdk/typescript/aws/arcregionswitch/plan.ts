@@ -689,44 +689,66 @@ const Plan_WorkflowsFields: FieldMap = {
 export interface PlanConfig {
   /** A list of ARNs or names of CloudWatch alarms associated with the region switch plan; when any of these alarms enters the ALARM state, the switch plan is automatically executed to perform the region failover. (AI-inferred) */
   associatedAlarms?: unknown | Computed<unknown>;
+  /** The description of this Region switch plan. (AI-inferred) */
   description?: string | Computed<string>;
   /** The IAM role that AWS Application Recovery Controller (ARC) assumes to execute the region switch plan, granting permissions to update routing controls and perform the crossover of traffic between regions. (AI-inferred) */
   executionRole: string | Computed<string>;
+  /** The name of this Region switch plan. (AI-inferred) */
   name: string | Computed<string>;
   /** Specifies the AWS region that is considered the primary or active region, which is the source from which traffic is switched to the secondary region during a region switch plan execution. (AI-inferred) */
   primaryRegion?: string | Computed<string>;
+  /** The recovery approach for this Region switch plan: active/active (traffic already flows to both regions) or active/passive (traffic shifts wholesale from one region to the other). (AI-inferred) */
   recoveryApproach: string | Computed<string>;
   /** The target recovery time objective (RTO) in minutes for the switch plan, specifying the maximum acceptable time to resume operations after a failover or region switch. (AI-inferred) */
   recoveryTimeObjectiveMinutes?: number | Computed<number>;
+  /** The two AWS Regions this Region switch plan shifts traffic between. (AI-inferred) */
   regions: string[] | Computed<string[]>;
+  /** The configuration controlling where and how this Region switch plan's own execution reports are delivered, e.g. to an S3 bucket. (AI-inferred) */
   reportConfiguration?: Plan_ReportConfiguration | Computed<Plan_ReportConfiguration>;
+  /** The tags assigned to this Region switch plan. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
+  /** The conditions that automatically initiate this Region switch plan, such as a CloudWatch alarm entering the ALARM state. (AI-inferred) */
   triggers?: Plan_Triggers[] | Computed<Plan_Triggers[]>;
+  /** The ordered steps this Region switch plan executes to shift traffic from one region to the other. (AI-inferred) */
   workflows: Plan_Workflows[] | Computed<Plan_Workflows[]>;
 }
 
 export interface PlanAttrs {
+  /** The Amazon Resource Name (ARN) of this Region switch plan. (AI-inferred) */
   arn: string;
   /** A list of ARNs or names of CloudWatch alarms associated with the region switch plan; when any of these alarms enters the ALARM state, the switch plan is automatically executed to perform the region failover. (AI-inferred) */
   associatedAlarms: unknown;
+  /** The description of this Region switch plan. (AI-inferred) */
   description: string;
   /** The IAM role that AWS Application Recovery Controller (ARC) assumes to execute the region switch plan, granting permissions to update routing controls and perform the crossover of traffic between regions. (AI-inferred) */
   executionRole: string;
+  /** The health checks Amazon Route 53 Application Recovery Controller evaluates to determine this plan's own overall health. (AI-inferred) */
   healthChecksForPlan: unknown;
+  /** The name of this Region switch plan. (AI-inferred) */
   name: string;
+  /** The owner of this Region switch plan. (AI-inferred) */
   owner: string;
+  /** The health checks associated with this Region switch plan as a whole, distinct from the health checks defined on its own individual triggers. (AI-inferred) */
   planHealthChecks: string[];
   /** Specifies the AWS region that is considered the primary or active region, which is the source from which traffic is switched to the secondary region during a region switch plan execution. (AI-inferred) */
   primaryRegion: string;
+  /** The recovery approach for this Region switch plan: active/active (traffic already flows to both regions) or active/passive (traffic shifts wholesale from one region to the other). (AI-inferred) */
   recoveryApproach: string;
   /** The target recovery time objective (RTO) in minutes for the switch plan, specifying the maximum acceptable time to resume operations after a failover or region switch. (AI-inferred) */
   recoveryTimeObjectiveMinutes: number;
+  /** The two AWS Regions this Region switch plan shifts traffic between. (AI-inferred) */
   regions: string[];
+  /** The configuration controlling where and how this Region switch plan's own execution reports are delivered, e.g. to an S3 bucket. (AI-inferred) */
   reportConfiguration: Plan_ReportConfiguration;
+  /** The Amazon Route 53 health checks and their associated hosted zones and DNS records that this Region switch plan monitors to help determine whether a region switch should be initiated. (AI-inferred) */
   route53HealthChecks: Plan_Route53HealthChecks;
+  /** The tags assigned to this Region switch plan. (AI-inferred) */
   tags: unknown;
+  /** The conditions that automatically initiate this Region switch plan, such as a CloudWatch alarm entering the ALARM state. (AI-inferred) */
   triggers: Plan_Triggers[];
+  /** The version of this Region switch plan. (AI-inferred) */
   version: string;
+  /** The ordered steps this Region switch plan executes to shift traffic from one region to the other. (AI-inferred) */
   workflows: Plan_Workflows[];
 }
 

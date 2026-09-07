@@ -45,6 +45,7 @@ class HarnessEndpointAttrs:
     harness_name: Any = None
     # The harness version that the endpoint is currently serving.
     live_version: Any = None
+    # The current status of this harness endpoint. (AI-inferred)
     status: Any = None
     # Tags to apply to the harness endpoint resource.
     tags: Any = None

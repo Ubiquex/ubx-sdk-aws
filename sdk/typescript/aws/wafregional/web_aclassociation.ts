@@ -9,6 +9,7 @@ export interface WebAclassociationConfig {
 }
 
 export interface WebAclassociationAttrs {
+  /** The unique identifier of this web ACL association. (AI-inferred) */
   id: string;
   /** The ARN of the AWS resource (such as an Application Load Balancer or Amazon API Gateway stage) to associate with the Web ACL. (AI-inferred) */
   resourceArn: string;

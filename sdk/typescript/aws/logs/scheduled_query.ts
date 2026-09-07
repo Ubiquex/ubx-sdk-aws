@@ -47,6 +47,7 @@ export interface ScheduledQueryConfig {
   executionRoleArn: string | Computed<string>;
   /** Specifies the list of log group names or ARNs that the scheduled query will run against. (AI-inferred) */
   logGroupIdentifiers?: string[] | Computed<string[]>;
+  /** The name of this scheduled query. (AI-inferred) */
   name: string | Computed<string>;
   /** The query language used to parse and execute the scheduled query string, where `CWLI` denotes CloudWatch Logs Insights and `PPL` denotes OpenSearch Piped Processing Language. (AI-inferred) */
   queryLanguage: string | Computed<string>;
@@ -84,6 +85,7 @@ export interface ScheduledQueryAttrs {
   lastUpdatedTime: number;
   /** Specifies the list of log group names or ARNs that the scheduled query will run against. (AI-inferred) */
   logGroupIdentifiers: string[];
+  /** The name of this scheduled query. (AI-inferred) */
   name: string;
   /** The query language used to parse and execute the scheduled query string, where `CWLI` denotes CloudWatch Logs Insights and `PPL` denotes OpenSearch Piped Processing Language. (AI-inferred) */
   queryLanguage: string;

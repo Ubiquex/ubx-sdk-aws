@@ -42,12 +42,14 @@ type LoggerDefinitionConfig struct {
 	InitialVersion any
 	// The name that identifies this Greengrass logger definition in the AWS IoT Greengrass console and API. (AI-inferred)
 	Name any
+	// The tags assigned to this Greengrass logger definition. (AI-inferred)
 	Tags any
 }
 
 type LoggerDefinitionAttrs struct {
 	// The Amazon Resource Name (ARN) of the Greengrass logger definition, which uniquely identifies this resource in AWS and can be used to reference it in IAM policies and other AWS services. (AI-inferred)
 	Arn any
+	// The unique identifier of this Greengrass logger definition. (AI-inferred)
 	Id any
 	// Specifies the initial version of the logger definition, which consists of a set of loggers that define how Greengrass components write logs to CloudWatch or the local file system. (AI-inferred)
 	InitialVersion any
@@ -55,6 +57,7 @@ type LoggerDefinitionAttrs struct {
 	LatestVersionArn any
 	// The name that identifies this Greengrass logger definition in the AWS IoT Greengrass console and API. (AI-inferred)
 	Name any
+	// The tags assigned to this Greengrass logger definition. (AI-inferred)
 	Tags any
 }
 

@@ -154,11 +154,13 @@ _UserPoolRegionalConfigurationAttachment_SmsConfigurationFields = {
 class UserPoolRegionalConfigurationAttachmentConfig:
     # Configures the email delivery settings for the Cognito user pool, including the sender address, reply-to address, and the Amazon SES configuration set or source ARN used to send emails. (AI-inferred)
     email_configuration: Any = None
+    # The Lambda triggers Amazon Cognito invokes for this user pool replica's own authentication operations. (AI-inferred)
     lambda_config: Any = None
     # Specifies the SMS message configuration (e.g., SNS caller ARN and external ID) used by the user pool to send SMS verification codes and MFA messages. (AI-inferred)
     sms_configuration: Any = None
     # The status of the replica. Set to ACTIVE or INACTIVE.
     status: Any = None
+    # A reference to the user pool this regional configuration attaches to. (AI-inferred)
     user_pool_id: Any = None
     # A map of key-value tags to assign to the Amazon Cognito user pool associated with this regional configuration attachment. (AI-inferred)
     user_pool_tags: Any = None
@@ -167,11 +169,13 @@ class UserPoolRegionalConfigurationAttachmentConfig:
 class UserPoolRegionalConfigurationAttachmentAttrs:
     # Configures the email delivery settings for the Cognito user pool, including the sender address, reply-to address, and the Amazon SES configuration set or source ARN used to send emails. (AI-inferred)
     email_configuration: Any = None
+    # The Lambda triggers Amazon Cognito invokes for this user pool replica's own authentication operations. (AI-inferred)
     lambda_config: Any = None
     # Specifies the SMS message configuration (e.g., SNS caller ARN and external ID) used by the user pool to send SMS verification codes and MFA messages. (AI-inferred)
     sms_configuration: Any = None
     # The status of the replica. Set to ACTIVE or INACTIVE.
     status: Any = None
+    # A reference to the user pool this regional configuration attaches to. (AI-inferred)
     user_pool_id: Any = None
     # A map of key-value tags to assign to the Amazon Cognito user pool associated with this regional configuration attachment. (AI-inferred)
     user_pool_tags: Any = None

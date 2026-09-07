@@ -22,6 +22,7 @@ class AutomatedReasoningPolicyVersionConfig:
     last_updated_definition_hash: Any = None
     # Arn of the policy
     policy_arn: Any = None
+    # The tags assigned to this automated reasoning policy version. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -40,6 +41,7 @@ class AutomatedReasoningPolicyVersionAttrs:
     policy_arn: Any = None
     # The id of the associated policy
     policy_id: Any = None
+    # The tags assigned to this automated reasoning policy version. (AI-inferred)
     tags: Any = None
     # Time this policy was last updated
     updated_at: Any = None

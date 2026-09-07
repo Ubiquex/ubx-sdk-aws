@@ -21,6 +21,7 @@ class StreamSummary_StreamDescriptionSummary_WarmThroughput:
 
 @dataclasses.dataclass
 class StreamSummary_StreamDescriptionSummary:
+    channel_count: Any = None
     consumer_count: Any = None
     encryption_type: Any = None
     enhanced_monitoring: Any = None

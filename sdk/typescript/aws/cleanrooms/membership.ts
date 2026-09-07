@@ -173,6 +173,7 @@ export interface MembershipConfig {
   defaultResultConfiguration?: Membership_DefaultResultConfiguration | Computed<Membership_DefaultResultConfiguration>;
   /** Whether query metrics are enabled for the Clean Rooms membership, which if true enables Amazon CloudWatch metrics for queries run within the membership. (AI-inferred) */
   isMetricsEnabled?: boolean | Computed<boolean>;
+  /** Whether job logging is enabled for this membership's own collaboration; when enabled, AWS Clean Rooms logs job details to Amazon CloudWatch Logs. (AI-inferred) */
   jobLogStatus?: string | Computed<string>;
   /** Configures the payment details for the membership, including the mode that determines which member is billed for query compute in the clean room. (AI-inferred) */
   paymentConfiguration?: Membership_PaymentConfiguration | Computed<Membership_PaymentConfiguration>;
@@ -197,6 +198,7 @@ export interface MembershipAttrs {
   defaultResultConfiguration: Membership_DefaultResultConfiguration;
   /** Whether query metrics are enabled for the Clean Rooms membership, which if true enables Amazon CloudWatch metrics for queries run within the membership. (AI-inferred) */
   isMetricsEnabled: boolean;
+  /** Whether job logging is enabled for this membership's own collaboration; when enabled, AWS Clean Rooms logs job details to Amazon CloudWatch Logs. (AI-inferred) */
   jobLogStatus: string;
   /** The unique AWS-assigned identifier for this AWS Clean Rooms membership. (AI-inferred) */
   membershipIdentifier: string;

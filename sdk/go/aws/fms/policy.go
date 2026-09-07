@@ -205,6 +205,7 @@ type PolicyConfig struct {
 	ResourceType any
 	// Specifies the list of AWS resource types (e.g., AWS::EC2::Instance, AWS::ElasticLoadBalancingV2::LoadBalancer) to which this Firewall Manager policy applies, filtering the resources evaluated and protected by the policy. (AI-inferred)
 	ResourceTypeList any
+	// Whether AWS Firewall Manager removes the resources it created for this policy when the policy itself is deleted. (AI-inferred)
 	ResourcesCleanUp any
 	// Firewall security service policy data.
 	SecurityServicePolicyData any
@@ -241,6 +242,7 @@ type PolicyAttrs struct {
 	ResourceType any
 	// Specifies the list of AWS resource types (e.g., AWS::EC2::Instance, AWS::ElasticLoadBalancingV2::LoadBalancer) to which this Firewall Manager policy applies, filtering the resources evaluated and protected by the policy. (AI-inferred)
 	ResourceTypeList any
+	// Whether AWS Firewall Manager removes the resources it created for this policy when the policy itself is deleted. (AI-inferred)
 	ResourcesCleanUp any
 	// Firewall security service policy data.
 	SecurityServicePolicyData any

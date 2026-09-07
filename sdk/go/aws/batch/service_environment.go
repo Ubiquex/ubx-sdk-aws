@@ -15,19 +15,28 @@ var ServiceEnvironment_CapacityLimitsFields = ubx.FieldMap{
 	}
 
 type ServiceEnvironmentConfig struct {
+	// The maximum resources service jobs in this service environment can use. (AI-inferred)
 	CapacityLimits any
+	// The name of this service environment. (AI-inferred)
 	ServiceEnvironmentName any
+	// The type of service this environment runs, e.g. SageMaker Training jobs. (AI-inferred)
 	ServiceEnvironmentType any
+	// Whether this service environment is enabled or disabled. (AI-inferred)
 	State any
 	// A key-value pair to associate with a resource.
 	Tags any
 }
 
 type ServiceEnvironmentAttrs struct {
+	// The maximum resources service jobs in this service environment can use. (AI-inferred)
 	CapacityLimits any
+	// The Amazon Resource Name (ARN) of this service environment. (AI-inferred)
 	ServiceEnvironmentArn any
+	// The name of this service environment. (AI-inferred)
 	ServiceEnvironmentName any
+	// The type of service this environment runs, e.g. SageMaker Training jobs. (AI-inferred)
 	ServiceEnvironmentType any
+	// Whether this service environment is enabled or disabled. (AI-inferred)
 	State any
 	// A key-value pair to associate with a resource.
 	Tags any

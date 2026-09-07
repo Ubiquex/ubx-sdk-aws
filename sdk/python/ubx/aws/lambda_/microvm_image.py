@@ -124,6 +124,7 @@ _MicrovmImage_ResourcesFields = {
 
 @dataclasses.dataclass
 class MicrovmImageConfig:
+    # Additional OS capabilities granted to this MicroVM's own runtime environment. (AI-inferred)
     additional_os_capabilities: Any = None
     # ARN of the base MicroVM image.
     base_image_arn: Any = None
@@ -132,22 +133,28 @@ class MicrovmImageConfig:
     # ARN of the IAM build role.
     build_role_arn: Any = None
     code_artifact: Any = None
+    # The CPU configurations this MicroVM supports. (AI-inferred)
     cpu_configurations: Any = None
     # Human-readable description of the MicroVM image and its purpose.
     description: Any = None
+    # The egress network connectors available to this MicroVM at runtime. (AI-inferred)
     egress_network_connectors: Any = None
     # Environment variables to set in the container during the snapshot build.
     environment_variables: Any = None
+    # The lifecycle hook configuration for this MicroVM and its own image. (AI-inferred)
     hooks: Any = None
+    # The logging configuration for this MicroVM's own output: CloudWatch logging enabled, or logging disabled. (AI-inferred)
     logging: Any = None
     # Unique name for the MicroVM image within the account.
     name: Any = None
+    # The resource requirements (e.g. memory, storage) for this MicroVM. (AI-inferred)
     resources: Any = None
     # Key-value pairs to associate with the MicroVM image for organization and management.
     tags: Any = None
 
 @dataclasses.dataclass
 class MicrovmImageAttrs:
+    # Additional OS capabilities granted to this MicroVM's own runtime environment. (AI-inferred)
     additional_os_capabilities: Any = None
     # ARN of the base MicroVM image.
     base_image_arn: Any = None
@@ -156,14 +163,17 @@ class MicrovmImageAttrs:
     # ARN of the IAM build role.
     build_role_arn: Any = None
     code_artifact: Any = None
+    # The CPU configurations this MicroVM supports. (AI-inferred)
     cpu_configurations: Any = None
     # Timestamp when the MicroVM image was created.
     created_at: Any = None
     # Human-readable description of the MicroVM image and its purpose.
     description: Any = None
+    # The egress network connectors available to this MicroVM at runtime. (AI-inferred)
     egress_network_connectors: Any = None
     # Environment variables to set in the container during the snapshot build.
     environment_variables: Any = None
+    # The lifecycle hook configuration for this MicroVM and its own image. (AI-inferred)
     hooks: Any = None
     # ARN of the MicroVM image.
     image_arn: Any = None
@@ -171,10 +181,13 @@ class MicrovmImageAttrs:
     latest_active_image_version: Any = None
     # The latest failed version of the MicroVM image.
     latest_failed_image_version: Any = None
+    # The logging configuration for this MicroVM's own output: CloudWatch logging enabled, or logging disabled. (AI-inferred)
     logging: Any = None
     # Unique name for the MicroVM image within the account.
     name: Any = None
+    # The resource requirements (e.g. memory, storage) for this MicroVM. (AI-inferred)
     resources: Any = None
+    # The current build state of this MicroVM image version: creating, created, or create-failed. (AI-inferred)
     state: Any = None
     # Key-value pairs to associate with the MicroVM image for organization and management.
     tags: Any = None

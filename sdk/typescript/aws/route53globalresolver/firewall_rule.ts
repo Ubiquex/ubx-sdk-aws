@@ -18,7 +18,9 @@ export interface FirewallRuleConfig {
   confidenceThreshold?: string | Computed<string>;
   /** Provides an optional description for the Route 53 Resolver firewall rule, used to annotate the rule with its purpose or notes. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The advanced DNS threat protection type (e.g. DGA, DNS tunneling, dictionary DGA) this firewall rule detects and acts on, based on known threat signatures. (AI-inferred) */
   dnsAdvancedProtection?: string | Computed<string>;
+  /** A reference to the DNS view this firewall rule is evaluated against. (AI-inferred) */
   dnsViewId: string | Computed<string>;
   /** The unique ID of the firewall domain list that defines the set of domains this resolver firewall rule applies to, associating the rule with that list. (AI-inferred) */
   firewallDomainListId?: string | Computed<string>;
@@ -49,7 +51,9 @@ export interface FirewallRuleAttrs {
   createdAt: string;
   /** Provides an optional description for the Route 53 Resolver firewall rule, used to annotate the rule with its purpose or notes. (AI-inferred) */
   description: string;
+  /** The advanced DNS threat protection type (e.g. DGA, DNS tunneling, dictionary DGA) this firewall rule detects and acts on, based on known threat signatures. (AI-inferred) */
   dnsAdvancedProtection: string;
+  /** A reference to the DNS view this firewall rule is evaluated against. (AI-inferred) */
   dnsViewId: string;
   /** The unique ID of the firewall domain list that defines the set of domains this resolver firewall rule applies to, associating the rule with that list. (AI-inferred) */
   firewallDomainListId: string;
@@ -63,6 +67,7 @@ export interface FirewallRuleAttrs {
   qtype: string;
   /** The DNS query type (e.g., A, AAAA, CNAME, MX, etc.) that this firewall rule evaluates, where an empty value means the rule applies to all query types. (AI-inferred) */
   queryType: string;
+  /** The current status of this firewall rule. (AI-inferred) */
   status: string;
   /** A timestamp that indicates when the firewall rule was last updated. (AI-inferred) */
   updatedAt: string;

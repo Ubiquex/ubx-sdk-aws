@@ -409,11 +409,13 @@ _Runtime_RequestHeaderConfigurationFields = {
 @dataclasses.dataclass
 class RuntimeConfig:
     agent_runtime_artifact: Any = None
+    # The name of the AgentCore Runtime. (AI-inferred)
     agent_runtime_name: Any = None
     # Configuration for the authorizer
     authorizer_configuration: Any = None
     # Configuration for a capacity provider
     capacity_provider_configuration: Any = None
+    # The description of the AgentCore Runtime. (AI-inferred)
     description: Any = None
     # Environment variable attributes
     environment_variables: Any = None
@@ -423,6 +425,7 @@ class RuntimeConfig:
     lifecycle_configuration: Any = None
     # Provides the VPC configuration (security group IDs and subnet IDs) used by the agent's core runtime to access resources within a private network. (AI-inferred)
     network_configuration: Any = None
+    # The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients. (AI-inferred)
     protocol_configuration: Any = None
     # Configuration for HTTP request headers
     request_header_configuration: Any = None
@@ -436,8 +439,11 @@ class RuntimeAttrs:
     # The Amazon Resource Name (ARN) that uniquely identifies this Bedrock agent core runtime resource. (AI-inferred)
     agent_runtime_arn: Any = None
     agent_runtime_artifact: Any = None
+    # The unique identifier of the AgentCore Runtime. (AI-inferred)
     agent_runtime_id: Any = None
+    # The name of the AgentCore Runtime. (AI-inferred)
     agent_runtime_name: Any = None
+    # The version of the AgentCore Runtime. (AI-inferred)
     agent_runtime_version: Any = None
     # Configuration for the authorizer
     authorizer_configuration: Any = None
@@ -445,6 +451,7 @@ class RuntimeAttrs:
     capacity_provider_configuration: Any = None
     # The creation timestamp of this Bedrock agent core runtime, returned as a read-only string. (AI-inferred)
     created_at: Any = None
+    # The description of the AgentCore Runtime. (AI-inferred)
     description: Any = None
     # Environment variable attributes
     environment_variables: Any = None
@@ -452,16 +459,19 @@ class RuntimeAttrs:
     failure_reason: Any = None
     # List of filesystem configurations
     filesystem_configurations: Any = None
+    # The timestamp when the AgentCore Runtime was last updated. (AI-inferred)
     last_updated_at: Any = None
     # Configuration for managing the lifecycle of runtime sessions and resources
     lifecycle_configuration: Any = None
     # Provides the VPC configuration (security group IDs and subnet IDs) used by the agent's core runtime to access resources within a private network. (AI-inferred)
     network_configuration: Any = None
+    # The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients. (AI-inferred)
     protocol_configuration: Any = None
     # Configuration for HTTP request headers
     request_header_configuration: Any = None
     # The Amazon Resource Name (ARN) of the IAM service role that the Bedrock agent core runtime assumes to access AWS services and resources on behalf of the agent. (AI-inferred)
     role_arn: Any = None
+    # The current status of the AgentCore Runtime. (AI-inferred)
     status: Any = None
     # A map of tag keys and values
     tags: Any = None

@@ -15,6 +15,7 @@ class AgentRegistryDiscoverableRegistryRecords_Filters:
 class AgentRegistryDiscoverableRegistryRecords_RegistryRecords:
     created_at: Any = None
     description: Any = None
+    descriptor_types: Any = None
     display_name: Any = None
     name: Any = None
     record_arn: Any = None

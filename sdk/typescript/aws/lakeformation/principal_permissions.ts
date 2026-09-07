@@ -6,6 +6,10 @@ export interface PrincipalPermissions_Principal {
   dataLakePrincipalIdentifier?: string | Computed<string>;
 }
 
+export interface PrincipalPermissions_Resource_Catalog {
+  id?: string | Computed<string>;
+}
+
 export interface PrincipalPermissions_Resource_DataCellsFilter {
   /** The name of the Lake Formation database that contains the data cells filter to which the principal permissions are being granted. (AI-inferred) */
   databaseName: string | Computed<string>;
@@ -87,7 +91,7 @@ export interface PrincipalPermissions_Resource_TableWithColumns {
 
 export interface PrincipalPermissions_Resource {
   /** When set, this field identifies the Data Catalog itself as the resource to which the granted principal permissions apply, meaning the permissions cover all metadata objects in the catalog. (AI-inferred) */
-  catalog?: unknown | Computed<unknown>;
+  catalog?: PrincipalPermissions_Resource_Catalog | Computed<PrincipalPermissions_Resource_Catalog>;
   /** A structure that describes certain columns on certain rows. */
   dataCellsFilter?: PrincipalPermissions_Resource_DataCellsFilter | Computed<PrincipalPermissions_Resource_DataCellsFilter>;
   /** A structure for a data location object where permissions are granted or revoked. */
@@ -106,6 +110,10 @@ export interface PrincipalPermissions_Resource {
 
 const PrincipalPermissions_PrincipalFields: FieldMap = {
   dataLakePrincipalIdentifier: "data_lake_principal_identifier",
+};
+
+const PrincipalPermissions_Resource_CatalogFields: FieldMap = {
+  id: "id",
 };
 
 const PrincipalPermissions_Resource_DataCellsFilterFields: FieldMap = {
@@ -170,7 +178,11 @@ const PrincipalPermissions_Resource_TableWithColumnsFields: FieldMap = {
 };
 
 const PrincipalPermissions_ResourceFields: FieldMap = {
-  catalog: "catalog",
+  catalog: {
+    wireName: "catalog",
+    kind: "object",
+    fields: PrincipalPermissions_Resource_CatalogFields,
+  },
   dataCellsFilter: {
     wireName: "data_cells_filter",
     kind: "object",
@@ -209,6 +221,7 @@ const PrincipalPermissions_ResourceFields: FieldMap = {
 };
 
 export interface PrincipalPermissionsConfig {
+  /** A reference to the Lake Formation data catalog these principal permissions apply to. (AI-inferred) */
   catalog?: string | Computed<string>;
   /** The list of Lake Formation permissions to grant to the principal, with allowed values such as ALL, ALTER, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS, DELETE, DESCRIBE, DROP, INSERT, and SELECT. (AI-inferred) */
   permissions: string[] | Computed<string[]>;
@@ -221,6 +234,7 @@ export interface PrincipalPermissionsConfig {
 }
 
 export interface PrincipalPermissionsAttrs {
+  /** A reference to the Lake Formation data catalog these principal permissions apply to. (AI-inferred) */
   catalog: string;
   /** The list of Lake Formation permissions to grant to the principal, with allowed values such as ALL, ALTER, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS, DELETE, DESCRIBE, DROP, INSERT, and SELECT. (AI-inferred) */
   permissions: string[];

@@ -62,6 +62,7 @@ export interface PolicyAttrs {
   policyEngineId: string;
   /** The unique identifier for the policy. */
   policyId: string;
+  /** The current status of this policy. (AI-inferred) */
   status: string;
   /** Additional information about the policy status. */
   statusReasons: string[];

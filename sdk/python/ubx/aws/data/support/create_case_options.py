@@ -25,6 +25,7 @@ class CreateCaseOptions_CommunicationTypes:
 @dataclasses.dataclass
 class CreateCaseOptionsConfig:
     category_code: Any = None
+    dry_run: Any = None
     issue_type: Any = None
     language: Any = None
     service_code: Any = None
@@ -33,6 +34,7 @@ class CreateCaseOptionsConfig:
 class CreateCaseOptionsAttrs:
     category_code: Any = None
     communication_types: Any = None
+    dry_run: Any = None
     issue_type: Any = None
     language: Any = None
     language_availability: Any = None
@@ -42,6 +44,7 @@ CreateCaseOptions = ubx.DataSourceBinding(
     wire_type="aws_support_create_case_options",
     fields={
         "category_code": ubx.FieldSpec(wire_name="category_code"),
+        "dry_run": ubx.FieldSpec(wire_name="dry_run"),
         "issue_type": ubx.FieldSpec(wire_name="issue_type"),
         "language": ubx.FieldSpec(wire_name="language"),
         "service_code": ubx.FieldSpec(wire_name="service_code"),

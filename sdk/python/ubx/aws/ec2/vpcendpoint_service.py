@@ -31,6 +31,7 @@ _VpcendpointService_TagsFields = {
 class VpcendpointServiceConfig:
     # Indicates whether acceptance of connection requests to the VPC endpoint service is required from the service consumer. (AI-inferred)
     acceptance_required: Any = None
+    # Whether Amazon CloudWatch Contributor Insights is enabled for this VPC endpoint service. (AI-inferred)
     contributor_insights_enabled: Any = None
     # The ARNs of one or more Gateway Load Balancers to associate with the endpoint service, routing traffic from the service to these load balancers. (AI-inferred)
     gateway_load_balancer_arns: Any = None
@@ -51,6 +52,7 @@ class VpcendpointServiceConfig:
 class VpcendpointServiceAttrs:
     # Indicates whether acceptance of connection requests to the VPC endpoint service is required from the service consumer. (AI-inferred)
     acceptance_required: Any = None
+    # Whether Amazon CloudWatch Contributor Insights is enabled for this VPC endpoint service. (AI-inferred)
     contributor_insights_enabled: Any = None
     # The ARNs of one or more Gateway Load Balancers to associate with the endpoint service, routing traffic from the service to these load balancers. (AI-inferred)
     gateway_load_balancer_arns: Any = None

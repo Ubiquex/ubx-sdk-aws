@@ -17,6 +17,7 @@ type ConnectorConfig struct {
 	CertificateAuthorityArn any
 	// This field specifies the mobile device management (MDM) configuration for the SCEP connector, which enables integration with an MDM system like Microsoft Intune by providing the necessary Intune credentials and domain details for challenge password delivery. (AI-inferred)
 	MobileDeviceManagement any
+	// The tags assigned to this Private CA Connector SCEP connector. (AI-inferred)
 	Tags any
 	// The ID of the VPC endpoint that this SCEP connector uses to privately receive SCEP traffic within your VPC. (AI-inferred)
 	VpcEndpointId any
@@ -33,6 +34,7 @@ type ConnectorAttrs struct {
 	MobileDeviceManagement any
 	// The OpenID Connect (OIDC) configuration for the SCEP connector, containing the issuer URL and JSON Web Key Set (JWKS) endpoint used to authenticate SCEP client requests. (AI-inferred)
 	OpenIdConfiguration any
+	// The tags assigned to this Private CA Connector SCEP connector. (AI-inferred)
 	Tags any
 	// The AWS-assigned connector type (e.g., GENERAL_PURPOSE) that describes the intended use mode of the SCEP connector returned after provisioning. (AI-inferred)
 	Type any

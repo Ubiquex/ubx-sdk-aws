@@ -19,11 +19,13 @@ class Services_Services:
 
 @dataclasses.dataclass
 class ServicesConfig:
+    dry_run: Any = None
     language: Any = None
     service_code_list: Any = None
 
 @dataclasses.dataclass
 class ServicesAttrs:
+    dry_run: Any = None
     language: Any = None
     service_code_list: Any = None
     services: Any = None
@@ -31,6 +33,7 @@ class ServicesAttrs:
 Services = ubx.DataSourceBinding(
     wire_type="aws_support_services",
     fields={
+        "dry_run": ubx.FieldSpec(wire_name="dry_run"),
         "language": ubx.FieldSpec(wire_name="language"),
         "service_code_list": ubx.FieldSpec(wire_name="service_code_list"),
     },

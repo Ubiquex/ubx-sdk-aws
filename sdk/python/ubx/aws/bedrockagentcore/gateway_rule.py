@@ -87,6 +87,10 @@ class GatewayRule_Conditions:
     match_paths: Any = None
     match_principals: Any = None
 
+@dataclasses.dataclass
+class GatewayRule_System:
+    managed_by: Any = None
+
 _GatewayRule_Actions_ConfigurationBundle_StaticOverrideFields = {
     "bundle_arn": ubx.FieldSpec(wire_name="bundle_arn"),
     "bundle_version": ubx.FieldSpec(wire_name="bundle_version"),
@@ -211,27 +215,39 @@ _GatewayRule_ConditionsFields = {
 
 @dataclasses.dataclass
 class GatewayRuleConfig:
+    # The action(s) this gateway rule applies, e.g. routing a portion of traffic to a particular target configuration. (AI-inferred)
     actions: Any = None
     # A list of conditions that are evaluated against the incoming request or context to determine whether this core gateway rule should trigger its associated actions. (AI-inferred)
     conditions: Any = None
+    # Provides a human-readable note about this traffic split entry, used within a weighted override of an action's configuration bundle to document the purpose of routing a portion of traffic to a particular agent configuration in the core gateway rule. (AI-inferred)
     description: Any = None
     # The unique identifier of the Bedrock agent core gateway to which this rule is attached, used to apply the rule's routing behavior to that gateway's traffic. (AI-inferred)
     gateway_identifier: Any = None
+    # This rule's own real evaluation order relative to the gateway's own other rules; a lower value is evaluated first. (AI-inferred)
     priority: Any = None
 
 @dataclasses.dataclass
 class GatewayRuleAttrs:
+    # The action(s) this gateway rule applies, e.g. routing a portion of traffic to a particular target configuration. (AI-inferred)
     actions: Any = None
     # A list of conditions that are evaluated against the incoming request or context to determine whether this core gateway rule should trigger its associated actions. (AI-inferred)
     conditions: Any = None
+    # The date and time at which this gateway rule was created. (AI-inferred)
     created_at: Any = None
+    # Provides a human-readable note about this traffic split entry, used within a weighted override of an action's configuration bundle to document the purpose of routing a portion of traffic to a particular agent configuration in the core gateway rule. (AI-inferred)
     description: Any = None
+    # The Amazon Resource Name (ARN) of the gateway this rule belongs to. (AI-inferred)
     gateway_arn: Any = None
     # The unique identifier of the Bedrock agent core gateway to which this rule is attached, used to apply the rule's routing behavior to that gateway's traffic. (AI-inferred)
     gateway_identifier: Any = None
+    # This rule's own real evaluation order relative to the gateway's own other rules; a lower value is evaluated first. (AI-inferred)
     priority: Any = None
+    # The unique identifier of this gateway rule. (AI-inferred)
     rule_id: Any = None
+    # The current status of this gateway rule. (AI-inferred)
     status: Any = None
+    system: Any = None
+    # The date and time at which this gateway rule was updated. (AI-inferred)
     updated_at: Any = None
 
 GatewayRule = ubx.ResourceBinding(

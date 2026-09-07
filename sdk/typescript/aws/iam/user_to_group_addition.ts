@@ -11,6 +11,7 @@ export interface UserToGroupAdditionConfig {
 export interface UserToGroupAdditionAttrs {
   /** The name of the IAM group that the user is added to. (AI-inferred) */
   groupName: string;
+  /** The unique identifier of this user-to-group addition. (AI-inferred) */
   id: string;
   /** Specifies the list of existing IAM user names to add to the group specified in the GroupName property. (AI-inferred) */
   users: string[];

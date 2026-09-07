@@ -18,24 +18,40 @@ const Flow_PermissionsFields: FieldMap = {
 };
 
 export interface FlowConfig {
+  /** The AWS account ID this flow belongs to. (AI-inferred) */
   awsAccountId: string | Computed<string>;
+  /** The description of this flow. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The real, ordered step(s) that make up this flow's own automated workflow. (AI-inferred) */
   flowDefinition: unknown | Computed<unknown>;
+  /** The name of this flow. (AI-inferred) */
   name: string | Computed<string>;
+  /** The real permission(s) granted on this flow, and to whom. (AI-inferred) */
   permissions?: Flow_Permissions[] | Computed<Flow_Permissions[]>;
 }
 
 export interface FlowAttrs {
+  /** The Amazon Resource Name (ARN) of this flow. (AI-inferred) */
   arn: string;
+  /** The AWS account ID this flow belongs to. (AI-inferred) */
   awsAccountId: string;
+  /** The date and time this flow was created. (AI-inferred) */
   createdTime: string;
+  /** The description of this flow. (AI-inferred) */
   description: string;
+  /** The real, ordered step(s) that make up this flow's own automated workflow. (AI-inferred) */
   flowDefinition: unknown;
+  /** The unique identifier of this flow. (AI-inferred) */
   flowId: string;
+  /** The date and time this flow was last updated. (AI-inferred) */
   lastUpdatedTime: string;
+  /** The name of this flow. (AI-inferred) */
   name: string;
+  /** The real permission(s) granted on this flow, and to whom. (AI-inferred) */
   permissions: Flow_Permissions[];
+  /** Whether this flow is published and available to run, or still a draft. (AI-inferred) */
   publishState: string;
+  /** The real, caller-assigned alias for each step in this flow's own definition. (AI-inferred) */
   stepAliases: Flow_StepAliases[];
 }
 

@@ -96,6 +96,7 @@ type RulesetConfig struct {
 	Name any
 	// List of the data quality rules in the ruleset
 	Rules any
+	// The tags assigned to this DataBrew ruleset. (AI-inferred)
 	Tags any
 	// Arn of the target resource (dataset) to apply the ruleset to
 	TargetArn any
@@ -108,6 +109,7 @@ type RulesetAttrs struct {
 	Name any
 	// List of the data quality rules in the ruleset
 	Rules any
+	// The tags assigned to this DataBrew ruleset. (AI-inferred)
 	Tags any
 	// Arn of the target resource (dataset) to apply the ruleset to
 	TargetArn any

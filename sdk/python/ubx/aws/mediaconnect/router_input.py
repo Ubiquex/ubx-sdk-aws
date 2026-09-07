@@ -412,6 +412,7 @@ class RouterInputConfig:
     routing_scope: Any = None
     # Key-value pairs that can be used to tag and organize this router input.
     tags: Any = None
+    # The tier level of this router input, which determines its own maximum throughput. (AI-inferred)
     tier: Any = None
     # The transit encryption settings for a router input.
     transit_encryption: Any = None
@@ -426,16 +427,19 @@ class RouterInputAttrs:
     configuration: Any = None
     # The content quality analysis configuration for the router input. The content quality analysis feature only monitors the first video stream and the first audio stream it encounters within the router input source.
     content_quality_analysis_configuration: Any = None
+    # The type of content quality analysis applied to this router input. (AI-inferred)
     content_quality_analysis_type: Any = None
     # The timestamp when the router input was created.
     created_at: Any = None
     # The unique identifier of the router input.
     id: Any = None
+    # The type of this router input. (AI-inferred)
     input_type: Any = None
     # The IP address of the router input.
     ip_address: Any = None
     # The configuration settings for maintenance operations, including preferred maintenance windows and schedules.
     maintenance_configuration: Any = None
+    # The type of maintenance configuration applied to this router input. (AI-inferred)
     maintenance_type: Any = None
     # The maximum bitrate for the router input.
     maximum_bitrate: Any = None
@@ -451,6 +455,7 @@ class RouterInputAttrs:
     state: Any = None
     # Key-value pairs that can be used to tag and organize this router input.
     tags: Any = None
+    # The tier level of this router input, which determines its own maximum throughput. (AI-inferred)
     tier: Any = None
     # The transit encryption settings for a router input.
     transit_encryption: Any = None

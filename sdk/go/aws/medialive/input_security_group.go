@@ -13,6 +13,7 @@ var InputSecurityGroup_WhitelistRulesFields = ubx.FieldMap{
 	}
 
 type InputSecurityGroupConfig struct {
+	// The tags assigned to this MediaLive input security group. (AI-inferred)
 	Tags any
 	// Specifies the list of IPv4 CIDR blocks (with optional descriptions) that are allowed to access the input security group, controlling which source IPs can send media content. (AI-inferred)
 	WhitelistRules any
@@ -23,6 +24,7 @@ type InputSecurityGroupAttrs struct {
 	Arn any
 	// The unique identifier of the AWS Elemental MediaLive input security group, returned as a string when the resource is created. (AI-inferred)
 	Id any
+	// The tags assigned to this MediaLive input security group. (AI-inferred)
 	Tags any
 	// Specifies the list of IPv4 CIDR blocks (with optional descriptions) that are allowed to access the input security group, controlling which source IPs can send media content. (AI-inferred)
 	WhitelistRules any

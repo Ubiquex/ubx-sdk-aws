@@ -141,6 +141,7 @@ class CollaborationConfig:
     allowed_result_regions: Any = None
     # Specifies the analytics engine for the collaboration, which must be either `CLEAN_ROOMS_SQL` (the default) or `SPARK`, and controls the query engine used by members of the collaboration. (AI-inferred)
     analytics_engine: Any = None
+    # The types of change requests that are automatically approved for this collaboration. (AI-inferred)
     auto_approved_change_types: Any = None
     # Specifies the display name of the member who creates the collaboration, which is visible to other members in the collaboration. (AI-inferred)
     creator_display_name: Any = None
@@ -156,6 +157,7 @@ class CollaborationConfig:
     description: Any = None
     # Whether the collaboration collects metrics about query activity (such as query counts and latency), enabling you to monitor and analyze usage patterns. (AI-inferred)
     is_metrics_enabled: Any = None
+    # Whether job logging is enabled for this collaboration; when enabled, AWS Clean Rooms logs job details to Amazon CloudWatch Logs. (AI-inferred)
     job_log_status: Any = None
     # Defines the AWS accounts that participate in the collaboration, each with an account ID, display name, and the abilities (such as CAN_QUERY or CAN_RECEIVE_RESULTS) granted to that member. (AI-inferred)
     members: Any = None
@@ -174,6 +176,7 @@ class CollaborationAttrs:
     analytics_engine: Any = None
     # The Amazon Resource Name (ARN) uniquely identifying the Clean Rooms collaboration. (AI-inferred)
     arn: Any = None
+    # The types of change requests that are automatically approved for this collaboration. (AI-inferred)
     auto_approved_change_types: Any = None
     # The unique identifier assigned by AWS to the collaboration. (AI-inferred)
     collaboration_identifier: Any = None
@@ -191,6 +194,7 @@ class CollaborationAttrs:
     description: Any = None
     # Whether the collaboration collects metrics about query activity (such as query counts and latency), enabling you to monitor and analyze usage patterns. (AI-inferred)
     is_metrics_enabled: Any = None
+    # Whether job logging is enabled for this collaboration; when enabled, AWS Clean Rooms logs job details to Amazon CloudWatch Logs. (AI-inferred)
     job_log_status: Any = None
     # Defines the AWS accounts that participate in the collaboration, each with an account ID, display name, and the abilities (such as CAN_QUERY or CAN_RECEIVE_RESULTS) granted to that member. (AI-inferred)
     members: Any = None

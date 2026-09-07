@@ -12,6 +12,10 @@ class PrincipalPermissions_Principal:
     data_lake_principal_identifier: Any = None
 
 @dataclasses.dataclass
+class PrincipalPermissions_Resource_Catalog:
+    id: Any = None
+
+@dataclasses.dataclass
 class PrincipalPermissions_Resource_DataCellsFilter:
     # The name of the Lake Formation database that contains the data cells filter to which the principal permissions are being granted. (AI-inferred)
     database_name: Any = None
@@ -113,6 +117,10 @@ _PrincipalPermissions_PrincipalFields = {
     "data_lake_principal_identifier": ubx.FieldSpec(wire_name="data_lake_principal_identifier"),
 }
 
+_PrincipalPermissions_Resource_CatalogFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+}
+
 _PrincipalPermissions_Resource_DataCellsFilterFields = {
     "database_name": ubx.FieldSpec(wire_name="database_name"),
     "name": ubx.FieldSpec(wire_name="name"),
@@ -175,7 +183,11 @@ _PrincipalPermissions_Resource_TableWithColumnsFields = {
 }
 
 _PrincipalPermissions_ResourceFields = {
-    "catalog": ubx.FieldSpec(wire_name="catalog"),
+    "catalog": ubx.FieldSpec(
+        wire_name="catalog",
+        kind="object",
+        fields=_PrincipalPermissions_Resource_CatalogFields,
+    ),
     "data_cells_filter": ubx.FieldSpec(
         wire_name="data_cells_filter",
         kind="object",
@@ -215,6 +227,7 @@ _PrincipalPermissions_ResourceFields = {
 
 @dataclasses.dataclass
 class PrincipalPermissionsConfig:
+    # A reference to the Lake Formation data catalog these principal permissions apply to. (AI-inferred)
     catalog: Any = None
     # The list of Lake Formation permissions to grant to the principal, with allowed values such as ALL, ALTER, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS, DELETE, DESCRIBE, DROP, INSERT, and SELECT. (AI-inferred)
     permissions: Any = None
@@ -227,6 +240,7 @@ class PrincipalPermissionsConfig:
 
 @dataclasses.dataclass
 class PrincipalPermissionsAttrs:
+    # A reference to the Lake Formation data catalog these principal permissions apply to. (AI-inferred)
     catalog: Any = None
     # The list of Lake Formation permissions to grant to the principal, with allowed values such as ALL, ALTER, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS, DELETE, DESCRIBE, DROP, INSERT, and SELECT. (AI-inferred)
     permissions: Any = None

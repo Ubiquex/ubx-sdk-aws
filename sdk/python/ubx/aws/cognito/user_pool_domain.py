@@ -49,6 +49,7 @@ class UserPoolDomainConfig:
     domain: Any = None
     # Specify the version of the managed login experience for the user pool domain, with 1 representing the original hosted UI and 2 representing the new managed login experience. (AI-inferred)
     managed_login_version: Any = None
+    # The routing configuration for this user pool domain, specifying failover settings for multi-region deployments. (AI-inferred)
     routing: Any = None
     # The ID of the Amazon Cognito user pool to associate with the custom domain or Amazon Cognito-hosted domain. (AI-inferred)
     user_pool_id: Any = None
@@ -63,6 +64,7 @@ class UserPoolDomainAttrs:
     domain: Any = None
     # Specify the version of the managed login experience for the user pool domain, with 1 representing the original hosted UI and 2 representing the new managed login experience. (AI-inferred)
     managed_login_version: Any = None
+    # The routing configuration for this user pool domain, specifying failover settings for multi-region deployments. (AI-inferred)
     routing: Any = None
     # The ID of the Amazon Cognito user pool to associate with the custom domain or Amazon Cognito-hosted domain. (AI-inferred)
     user_pool_id: Any = None

@@ -685,6 +685,7 @@ type JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_AudioDescriptions_Codec
 	CodecProfile any
 	CodingMode any
 	LoudnessMeasurementMode any
+	PassthroughControl any
 	RapInterval any
 	RateControlMode any
 	RawFormat any
@@ -922,6 +923,18 @@ type JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_Des
 type JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings_TeletextDestinationSettings struct {
 	PageNumber any
 	PageTypes any
+}
+
+type JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings_TtmlDestinationSettings struct {
+	BackgroundColor any
+	BackgroundOpacity any
+	FontColor any
+	FontOpacity any
+	FontSize any
+	FontStyle any
+	FontWeight any
+	StylePassthrough any
+	TextDecoration any
 }
 
 type JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings struct {
@@ -1419,6 +1432,11 @@ type JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescription_CodecS
 	HrdBufferSize any
 	QualityTuningLevel any
 	Slices any
+}
+
+type JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescription_CodecSettings_XavcSettings_XavcHdIntraCbgProfileSettings struct {
+	InterlaceMode any
+	XavcClass any
 }
 
 type JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescription_CodecSettings_XavcSettings_XavcHdProfileSettings struct {

@@ -23,6 +23,7 @@ var DomainVerification_TagsFields = ubx.FieldMap{
 type DomainVerificationConfig struct {
 	// The custom domain name that AWS VPC Lattice will verify to prove ownership before it can be associated with a service network. (AI-inferred)
 	DomainName any
+	// The tags assigned to this domain verification. (AI-inferred)
 	Tags any
 }
 
@@ -31,9 +32,11 @@ type DomainVerificationAttrs struct {
 	Arn any
 	// The custom domain name that AWS VPC Lattice will verify to prove ownership before it can be associated with a service network. (AI-inferred)
 	DomainName any
+	// The unique identifier of this domain verification. (AI-inferred)
 	Id any
 	// The current state of the domain ownership verification for the VPC Lattice service network, indicating whether the domain has been successfully verified (e.g., IN_PROGRESS, SUCCESS, FAILED). (AI-inferred)
 	Status any
+	// The tags assigned to this domain verification. (AI-inferred)
 	Tags any
 	// This read-only object contains the TXT record details (such as record name and value) that AWS VPC Lattice generated for verifying ownership of the specified domain. (AI-inferred)
 	TxtMethodConfig any

@@ -36,6 +36,7 @@ class SequenceStoreConfig:
     s3_access_policy: Any = None
     # Server-side encryption (SSE) settings for a store.
     sse_config: Any = None
+    # The tags assigned to this Omics sequence store. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -70,6 +71,7 @@ class SequenceStoreAttrs:
     status: Any = None
     # The status message of the sequence store.
     status_message: Any = None
+    # The tags assigned to this Omics sequence store. (AI-inferred)
     tags: Any = None
     # The last-updated time of the sequence store.
     update_time: Any = None

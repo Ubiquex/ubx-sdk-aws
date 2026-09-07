@@ -533,6 +533,7 @@ type TemplateConfig struct {
 	Name any
 	// When set to true, triggers reissuance of certificates to all existing certificate holders when the template is updated or modified. (AI-inferred)
 	ReenrollAllCertificateHolders any
+	// The tags assigned to this Private CA Connector for Active Directory template. (AI-inferred)
 	Tags any
 }
 
@@ -545,6 +546,7 @@ type TemplateAttrs struct {
 	Name any
 	// When set to true, triggers reissuance of certificates to all existing certificate holders when the template is updated or modified. (AI-inferred)
 	ReenrollAllCertificateHolders any
+	// The tags assigned to this Private CA Connector for Active Directory template. (AI-inferred)
 	Tags any
 	// The Amazon Resource Name (ARN) that uniquely identifies the Private CA Connector for Active Directory template managed by this resource. (AI-inferred)
 	TemplateArn any

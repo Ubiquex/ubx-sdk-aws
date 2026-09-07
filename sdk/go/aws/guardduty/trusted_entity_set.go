@@ -14,31 +14,46 @@ var TrustedEntitySet_TagsFields = ubx.FieldMap{
 	}
 
 type TrustedEntitySetConfig struct {
+	// Whether GuardDuty uses this trusted entity set to suppress findings for the IP addresses and domains it lists. (AI-inferred)
 	Activate any
+	// A reference to the GuardDuty detector this trusted entity set belongs to. (AI-inferred)
 	DetectorId any
 	// The AWS account ID of the S3 bucket owner that GuardDuty expects when accessing the bucket for this trusted entity set, used to verify bucket ownership and prevent cross-account misconfiguration. (AI-inferred)
 	ExpectedBucketOwner any
+	// The format of the file containing this trusted entity set's own entries. (AI-inferred)
 	Format any
 	// The S3 URI of the file containing the trusted entities (such as IP addresses or domain names) that GuardDuty uses for this set. (AI-inferred)
 	Location any
+	// The name of this trusted entity set. (AI-inferred)
 	Name any
+	// The tags assigned to this trusted entity set. (AI-inferred)
 	Tags any
 }
 
 type TrustedEntitySetAttrs struct {
+	// Whether GuardDuty uses this trusted entity set to suppress findings for the IP addresses and domains it lists. (AI-inferred)
 	Activate any
+	// The date and time when this trusted entity set was created. (AI-inferred)
 	CreatedAt any
+	// A reference to the GuardDuty detector this trusted entity set belongs to. (AI-inferred)
 	DetectorId any
+	// The error details for this trusted entity set, populated when its own status is Error. (AI-inferred)
 	ErrorDetails any
 	// The AWS account ID of the S3 bucket owner that GuardDuty expects when accessing the bucket for this trusted entity set, used to verify bucket ownership and prevent cross-account misconfiguration. (AI-inferred)
 	ExpectedBucketOwner any
+	// The format of the file containing this trusted entity set's own entries. (AI-inferred)
 	Format any
+	// The unique identifier of this trusted entity set. (AI-inferred)
 	Id any
 	// The S3 URI of the file containing the trusted entities (such as IP addresses or domain names) that GuardDuty uses for this set. (AI-inferred)
 	Location any
+	// The name of this trusted entity set. (AI-inferred)
 	Name any
+	// The current status of this trusted entity set. (AI-inferred)
 	Status any
+	// The tags assigned to this trusted entity set. (AI-inferred)
 	Tags any
+	// The date and time when this trusted entity set was last updated. (AI-inferred)
 	UpdatedAt any
 }
 
