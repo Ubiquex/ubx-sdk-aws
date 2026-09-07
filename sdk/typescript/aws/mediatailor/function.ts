@@ -84,6 +84,7 @@ export interface FunctionConfig {
   description?: string | Computed<string>;
   /** The unique identifier for the function. */
   functionId: string | Computed<string>;
+  /** The type of this MediaTailor function. (AI-inferred) */
   functionType: string | Computed<string>;
   /** Configuration for HTTP request functions. */
   httpRequestConfiguration?: Function_HttpRequestConfiguration | Computed<Function_HttpRequestConfiguration>;
@@ -102,6 +103,7 @@ export interface FunctionAttrs {
   description: string;
   /** The unique identifier for the function. */
   functionId: string;
+  /** The type of this MediaTailor function. (AI-inferred) */
   functionType: string;
   /** Configuration for HTTP request functions. */
   httpRequestConfiguration: Function_HttpRequestConfiguration;

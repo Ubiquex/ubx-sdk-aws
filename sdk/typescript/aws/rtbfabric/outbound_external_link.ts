@@ -76,9 +76,13 @@ const OutboundExternalLink_TagsFields: FieldMap = {
 };
 
 export interface OutboundExternalLinkConfig {
+  /** A reference to the RTB Fabric gateway this outbound external link sends bid traffic from. (AI-inferred) */
   gatewayId: string | Computed<string>;
+  /** Attributes controlling how this outbound external link behaves. (AI-inferred) */
   linkAttributes?: OutboundExternalLink_LinkAttributes | Computed<OutboundExternalLink_LinkAttributes>;
+  /** The application log settings for this outbound external link, including the sampling percentage for error and filter logs; set both to 0 to turn off application logging for the link. (AI-inferred) */
   linkLogSettings: OutboundExternalLink_LinkLogSettings | Computed<OutboundExternalLink_LinkLogSettings>;
+  /** The public HTTP or HTTPS endpoint this outbound external link sends bid requests to. (AI-inferred) */
   publicEndpoint: string | Computed<string>;
   /** Tags to assign to the Link. */
   tags?: OutboundExternalLink_Tags[] | Computed<OutboundExternalLink_Tags[]>;
@@ -87,16 +91,23 @@ export interface OutboundExternalLinkConfig {
 export interface OutboundExternalLinkAttrs {
   /** The Amazon Resource Name (ARN) uniquely identifying this AWS RTB Fabric outbound external link. (AI-inferred) */
   arn: string;
+  /** The date and time when this outbound external link was created. (AI-inferred) */
   createdTimestamp: string;
+  /** A reference to the RTB Fabric gateway this outbound external link sends bid traffic from. (AI-inferred) */
   gatewayId: string;
+  /** Attributes controlling how this outbound external link behaves. (AI-inferred) */
   linkAttributes: OutboundExternalLink_LinkAttributes;
   /** The unique identifier that AWS RTB Fabric assigns to this outbound external link when it is created. (AI-inferred) */
   linkId: string;
+  /** The application log settings for this outbound external link, including the sampling percentage for error and filter logs; set both to 0 to turn off application logging for the link. (AI-inferred) */
   linkLogSettings: OutboundExternalLink_LinkLogSettings;
+  /** The current status of this outbound external link. (AI-inferred) */
   linkStatus: string;
+  /** The public HTTP or HTTPS endpoint this outbound external link sends bid requests to. (AI-inferred) */
   publicEndpoint: string;
   /** Tags to assign to the Link. */
   tags: OutboundExternalLink_Tags[];
+  /** The date and time when this outbound external link was last updated. (AI-inferred) */
   updatedTimestamp: string;
 }
 

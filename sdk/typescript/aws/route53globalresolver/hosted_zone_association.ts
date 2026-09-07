@@ -4,20 +4,28 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface HostedZoneAssociationConfig {
   /** The ID of the Route 53 hosted zone that is being associated with the global resolver in this resource. (AI-inferred) */
   hostedZoneId: string | Computed<string>;
+  /** The name of this hosted zone association. (AI-inferred) */
   name: string | Computed<string>;
+  /** The Amazon Resource Name (ARN) of the resource (e.g. the global resolver) this hosted zone is associated with. (AI-inferred) */
   resourceArn: string | Computed<string>;
 }
 
 export interface HostedZoneAssociationAttrs {
+  /** The date and time when this hosted zone association was created. (AI-inferred) */
   createdAt: string;
+  /** The unique identifier of this hosted zone association. (AI-inferred) */
   hostedZoneAssociationId: string;
   /** The ID of the Route 53 hosted zone that is being associated with the global resolver in this resource. (AI-inferred) */
   hostedZoneId: string;
+  /** The name of the Route 53 private hosted zone this association makes resolvable through the global resolver. (AI-inferred) */
   hostedZoneName: string;
+  /** The name of this hosted zone association. (AI-inferred) */
   name: string;
+  /** The Amazon Resource Name (ARN) of the resource (e.g. the global resolver) this hosted zone is associated with. (AI-inferred) */
   resourceArn: string;
   /** The current status of the association, indicating its lifecycle state with values such as CREATING, COMPLETE, DELETING, DELETED, or FAILED. (AI-inferred) */
   status: string;
+  /** The date and time when this hosted zone association was last updated. (AI-inferred) */
   updatedAt: string;
 }
 

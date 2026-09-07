@@ -44,16 +44,22 @@ const TelemetryPipelines_Pipeline_TagsFields: FieldMap = {
 };
 
 export interface TelemetryPipelinesConfig {
+  /** The configuration defining how this telemetry pipeline collects and routes observability data. (AI-inferred) */
   configuration: TelemetryPipelines_Configuration | Computed<TelemetryPipelines_Configuration>;
+  /** The name of this telemetry pipeline. (AI-inferred) */
   name?: string | Computed<string>;
   /** An array of key-value pairs to apply to this resource */
   tags?: TelemetryPipelines_Pipeline_Tags[] | Computed<TelemetryPipelines_Pipeline_Tags[]>;
 }
 
 export interface TelemetryPipelinesAttrs {
+  /** The Amazon Resource Name (ARN) of this telemetry pipeline. (AI-inferred) */
   arn: string;
+  /** The configuration defining how this telemetry pipeline collects and routes observability data. (AI-inferred) */
   configuration: TelemetryPipelines_Configuration;
+  /** The name of this telemetry pipeline. (AI-inferred) */
   name: string;
+  /** The pipeline definition, including its own stages and destinations, for this telemetry pipeline. (AI-inferred) */
   pipeline: TelemetryPipelines_Pipeline;
   /** The unique identifier assigned by AWS to the telemetry pipeline, used to reference the pipeline when managing or querying telemetry configurations. (AI-inferred) */
   pipelineIdentifier: string;

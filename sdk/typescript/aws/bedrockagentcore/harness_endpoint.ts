@@ -39,6 +39,7 @@ export interface HarnessEndpointAttrs {
   harnessName: string;
   /** The harness version that the endpoint is currently serving. */
   liveVersion: string;
+  /** The current status of this harness endpoint. (AI-inferred) */
   status: string;
   /** Tags to apply to the harness endpoint resource. */
   tags: HarnessEndpoint_Tags[];

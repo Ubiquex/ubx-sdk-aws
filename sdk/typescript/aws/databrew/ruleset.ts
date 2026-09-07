@@ -94,6 +94,7 @@ export interface RulesetConfig {
   name: string | Computed<string>;
   /** List of the data quality rules in the ruleset */
   rules: Ruleset_Rules[] | Computed<Ruleset_Rules[]>;
+  /** The tags assigned to this DataBrew ruleset. (AI-inferred) */
   tags?: Ruleset_Tags[] | Computed<Ruleset_Tags[]>;
   /** Arn of the target resource (dataset) to apply the ruleset to */
   targetArn: string | Computed<string>;
@@ -106,6 +107,7 @@ export interface RulesetAttrs {
   name: string;
   /** List of the data quality rules in the ruleset */
   rules: Ruleset_Rules[];
+  /** The tags assigned to this DataBrew ruleset. (AI-inferred) */
   tags: Ruleset_Tags[];
   /** Arn of the target resource (dataset) to apply the ruleset to */
   targetArn: string;

@@ -430,6 +430,7 @@ class ClusterConfig:
     storage_mode: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None
+    # Whether direct access to this MSK cluster's own Apache ZooKeeper nodes is allowed. (AI-inferred)
     zookeeper_access: Any = None
 
 @dataclasses.dataclass
@@ -464,6 +465,7 @@ class ClusterAttrs:
     storage_mode: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None
+    # Whether direct access to this MSK cluster's own Apache ZooKeeper nodes is allowed. (AI-inferred)
     zookeeper_access: Any = None
 
 Cluster = ubx.ResourceBinding(

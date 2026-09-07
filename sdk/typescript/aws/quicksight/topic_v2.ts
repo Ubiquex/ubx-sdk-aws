@@ -92,6 +92,7 @@ export interface TopicV2Config {
   name?: string | Computed<string>;
   /** A list of resource permissions that grant or revoke access to the QuickSight topic for specific principals (users, groups, or folders), each specifying allowed actions. (AI-inferred) */
   permissions?: TopicV2_Permissions[] | Computed<TopicV2_Permissions[]>;
+  /** The tags assigned to this topic. (AI-inferred) */
   tags?: TopicV2_Tags[] | Computed<TopicV2_Tags[]>;
   /** The unique identifier for the QuickSight topic, used when importing an existing topic or to reference the topic in other resources. (AI-inferred) */
   topicId?: string | Computed<string>;
@@ -115,6 +116,7 @@ export interface TopicV2Attrs {
   name: string;
   /** A list of resource permissions that grant or revoke access to the QuickSight topic for specific principals (users, groups, or folders), each specifying allowed actions. (AI-inferred) */
   permissions: TopicV2_Permissions[];
+  /** The tags assigned to this topic. (AI-inferred) */
   tags: TopicV2_Tags[];
   /** The unique identifier for the QuickSight topic, used when importing an existing topic or to reference the topic in other resources. (AI-inferred) */
   topicId: string;

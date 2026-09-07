@@ -39,6 +39,7 @@ export interface ClusterConfig {
   securityGroupIds?: string[] | Computed<string[]>;
   /** The name of the subnet group that defines the VPC subnets in which the DAX cluster nodes are launched. (AI-inferred) */
   subnetGroupName?: string | Computed<string>;
+  /** The tags assigned to this DAX cluster. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
 }
 
@@ -79,6 +80,7 @@ export interface ClusterAttrs {
   securityGroupIds: string[];
   /** The name of the subnet group that defines the VPC subnets in which the DAX cluster nodes are launched. (AI-inferred) */
   subnetGroupName: string;
+  /** The tags assigned to this DAX cluster. (AI-inferred) */
   tags: unknown;
 }
 

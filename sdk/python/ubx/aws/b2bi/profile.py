@@ -29,6 +29,7 @@ class ProfileConfig:
     name: Any = None
     # The phone number associated with the AWS B2Bi profile, a required contact detail used for the profile's business contact information. (AI-inferred)
     phone: Any = None
+    # The tags assigned to this B2B Data Interchange profile. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -53,6 +54,7 @@ class ProfileAttrs:
     profile_arn: Any = None
     # The unique identifier assigned by AWS to the B2Bi profile, generated upon creation and used to reference the profile in subsequent API operations and CloudFormation resources. (AI-inferred)
     profile_id: Any = None
+    # The tags assigned to this B2B Data Interchange profile. (AI-inferred)
     tags: Any = None
 
 Profile = ubx.ResourceBinding(

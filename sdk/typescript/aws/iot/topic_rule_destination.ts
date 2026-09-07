@@ -6,6 +6,19 @@ export interface TopicRuleDestination_HttpUrlProperties {
   confirmationUrl?: string | Computed<string>;
 }
 
+export interface TopicRuleDestination_InfluxDbproperties {
+  /** The endpoint URL of the InfluxDB database. */
+  endpoint: string | Computed<string>;
+  /** The version of the InfluxDB database (for example, V2 or V3). */
+  influxDbversion: string | Computed<string>;
+  /** The ARN or name of the Secrets Manager secret containing the InfluxDB API token. */
+  secretId: string | Computed<string>;
+  /** The key name within the secret that contains the InfluxDB token. */
+  secretKey?: string | Computed<string>;
+  /** The type of the secret value (SecretString or SecretBinary). */
+  secretType?: string | Computed<string>;
+}
+
 export interface TopicRuleDestination_VpcProperties {
   /** The ARN of the IAM role that AWS IoT assumes to access the VPC for the topic rule destination's VPC configuration. (AI-inferred) */
   roleArn?: string | Computed<string>;
@@ -21,6 +34,14 @@ const TopicRuleDestination_HttpUrlPropertiesFields: FieldMap = {
   confirmationUrl: "confirmation_url",
 };
 
+const TopicRuleDestination_InfluxDbpropertiesFields: FieldMap = {
+  endpoint: "endpoint",
+  influxDbversion: "influx_dbversion",
+  secretId: "secret_id",
+  secretKey: "secret_key",
+  secretType: "secret_type",
+};
+
 const TopicRuleDestination_VpcPropertiesFields: FieldMap = {
   roleArn: "role_arn",
   securityGroups: "security_groups",
@@ -31,6 +52,7 @@ const TopicRuleDestination_VpcPropertiesFields: FieldMap = {
 export interface TopicRuleDestinationConfig {
   /** Specifies the HTTP destination's confirmation URL, which AWS IoT uses to verify ownership of the endpoint before activating the topic rule destination. (AI-inferred) */
   httpUrlProperties?: TopicRuleDestination_HttpUrlProperties | Computed<TopicRuleDestination_HttpUrlProperties>;
+  influxDbproperties?: TopicRuleDestination_InfluxDbproperties | Computed<TopicRuleDestination_InfluxDbproperties>;
   /** Sets the desired status (ENABLED or DISABLED) of the AWS IoT topic rule destination, controlling whether it can be used by IoT rule actions. (AI-inferred) */
   status?: string | Computed<string>;
   /** Defines the VPC configuration for the IoT topic rule destination, including the subnets and security groups that the destination uses to deliver messages to resources inside a VPC. (AI-inferred) */
@@ -42,6 +64,7 @@ export interface TopicRuleDestinationAttrs {
   arn: string;
   /** Specifies the HTTP destination's confirmation URL, which AWS IoT uses to verify ownership of the endpoint before activating the topic rule destination. (AI-inferred) */
   httpUrlProperties: TopicRuleDestination_HttpUrlProperties;
+  influxDbproperties: TopicRuleDestination_InfluxDbproperties;
   /** Sets the desired status (ENABLED or DISABLED) of the AWS IoT topic rule destination, controlling whether it can be used by IoT rule actions. (AI-inferred) */
   status: string;
   /** The reasoning for the current status of the TopicRuleDestination. */
@@ -57,6 +80,11 @@ export const TopicRuleDestination: ResourceBinding<TopicRuleDestinationConfig, T
       wireName: "http_url_properties",
       kind: "object",
       fields: TopicRuleDestination_HttpUrlPropertiesFields,
+    },
+    influxDbproperties: {
+      wireName: "influx_dbproperties",
+      kind: "object",
+      fields: TopicRuleDestination_InfluxDbpropertiesFields,
     },
     status: "status",
     vpcProperties: {

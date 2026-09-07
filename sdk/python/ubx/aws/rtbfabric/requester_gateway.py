@@ -18,6 +18,7 @@ _RequesterGateway_TagsFields = {
 
 @dataclasses.dataclass
 class RequesterGatewayConfig:
+    # The description of this requester gateway. (AI-inferred)
     description: Any = None
     # The ID of one or more security groups in order to create a requester gateway.
     security_group_ids: Any = None
@@ -25,15 +26,22 @@ class RequesterGatewayConfig:
     subnet_ids: Any = None
     # Tags to assign to the Requester Gateway.
     tags: Any = None
+    # A reference to the VPC this requester gateway is deployed in. (AI-inferred)
     vpc_id: Any = None
 
 @dataclasses.dataclass
 class RequesterGatewayAttrs:
+    # The number of currently active links connected to this requester gateway. (AI-inferred)
     active_links_count: Any = None
+    # The Amazon Resource Name (ARN) of this requester gateway. (AI-inferred)
     arn: Any = None
+    # The date and time when this requester gateway was created. (AI-inferred)
     created_timestamp: Any = None
+    # The description of this requester gateway. (AI-inferred)
     description: Any = None
+    # The domain name assigned to this requester gateway. (AI-inferred)
     domain_name: Any = None
+    # The unique identifier of this requester gateway. (AI-inferred)
     gateway_id: Any = None
     # The current status of the requester gateway, indicating its operational lifecycle state such as Active, Inactive, or Deleting, as managed by the RTB Fabric service. (AI-inferred)
     requester_gateway_status: Any = None
@@ -43,8 +51,11 @@ class RequesterGatewayAttrs:
     subnet_ids: Any = None
     # Tags to assign to the Requester Gateway.
     tags: Any = None
+    # The total number of links, active or otherwise, connected to this requester gateway. (AI-inferred)
     total_links_count: Any = None
+    # The date and time when this requester gateway was last updated. (AI-inferred)
     updated_timestamp: Any = None
+    # A reference to the VPC this requester gateway is deployed in. (AI-inferred)
     vpc_id: Any = None
 
 RequesterGateway = ubx.ResourceBinding(

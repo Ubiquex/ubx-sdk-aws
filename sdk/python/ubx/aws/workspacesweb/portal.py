@@ -60,6 +60,7 @@ class PortalAttrs:
     authentication_type: Any = None
     # The ARN of the browser settings resource that defines the browser configuration and policies applied to this WorkSpaces Web portal. (AI-inferred)
     browser_settings_arn: Any = None
+    # The browser users see when they start a streaming session through this web portal. (AI-inferred)
     browser_type: Any = None
     # The timestamp indicating when the WorkSpaces Web portal was created. (AI-inferred)
     creation_date: Any = None

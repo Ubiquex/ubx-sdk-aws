@@ -80,6 +80,7 @@ type ViewConfig struct {
 type ViewAttrs struct {
 	// The Amazon Resource Name (ARN) that uniquely identifies this AWS Billing billing view. (AI-inferred)
 	Arn any
+	// The type of this billing view. (AI-inferred)
 	BillingViewType any
 	// The time when the billing view was created.
 	CreatedAt any

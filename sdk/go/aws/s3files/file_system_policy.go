@@ -4,12 +4,14 @@ package s3files
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FileSystemPolicyConfig struct {
+	// A reference to the file system this resource-based policy applies to. (AI-inferred)
 	FileSystemId any
 	// The policy field specifies the JSON-formatted resource-based policy that grants or denies access to the associated Amazon EFS file system for specified principals, actions, and conditions. (AI-inferred)
 	Policy any
 }
 
 type FileSystemPolicyAttrs struct {
+	// A reference to the file system this resource-based policy applies to. (AI-inferred)
 	FileSystemId any
 	// The policy field specifies the JSON-formatted resource-based policy that grants or denies access to the associated Amazon EFS file system for specified principals, actions, and conditions. (AI-inferred)
 	Policy any

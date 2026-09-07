@@ -25,6 +25,7 @@ export interface DbsecurityGroupIngressAttrs {
   ec2SecurityGroupName: string;
   /** The AWS account ID of the owner of the EC2 security group referenced by the EC2SecurityGroupName property, used when the security group belongs to a different AWS account. (AI-inferred) */
   ec2SecurityGroupOwnerId: string;
+  /** The unique identifier of this DB security group ingress rule. (AI-inferred) */
   id: string;
 }
 

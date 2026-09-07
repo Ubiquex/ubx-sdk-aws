@@ -588,6 +588,7 @@ class ConnectionConfig:
     name: Any = None
     # The identifier of the project in which the connection should be created. If
     project_identifier: Any = None
+    # The type-specific connection properties for this DataZone connection's own external resource or service. (AI-inferred)
     props: Any = None
     # The scope of the connection.
     scope: Any = None
@@ -622,6 +623,7 @@ class ConnectionAttrs:
     project_id: Any = None
     # The identifier of the project in which the connection should be created. If
     project_identifier: Any = None
+    # The type-specific connection properties for this DataZone connection's own external resource or service. (AI-inferred)
     props: Any = None
     # The scope of the connection.
     scope: Any = None

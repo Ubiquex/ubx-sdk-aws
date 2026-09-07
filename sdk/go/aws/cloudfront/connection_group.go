@@ -29,19 +29,27 @@ type ConnectionGroupConfig struct {
 type ConnectionGroupAttrs struct {
 	// The ID of the Anycast static IP list.
 	AnycastIpListId any
+	// The Amazon Resource Name (ARN) of this connection group. (AI-inferred)
 	Arn any
+	// The date and time when this connection group was created. (AI-inferred)
 	CreatedTime any
+	// The current version identifier of this connection group. (AI-inferred)
 	Etag any
 	// Whether the connection group is enabled.
 	Enabled any
+	// The unique identifier of this connection group. (AI-inferred)
 	Id any
 	// IPv6 is enabled for the connection group.
 	Ipv6Enabled any
+	// Whether this connection group is the default connection group used for distribution tenants that don't specify one. (AI-inferred)
 	IsDefault any
+	// The date and time when this connection group was last updated. (AI-inferred)
 	LastModifiedTime any
 	// The name of the connection group.
 	Name any
+	// The routing endpoint (DNS name, e.g. d111111abcdef8.cloudfront.net) assigned to this connection group. (AI-inferred)
 	RoutingEndpoint any
+	// The current status of this connection group. (AI-inferred)
 	Status any
 	// A complex type that contains zero or more ``Tag`` elements.
 	Tags any

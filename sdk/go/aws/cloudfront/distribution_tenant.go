@@ -125,6 +125,7 @@ type DistributionTenantConfig struct {
 }
 
 type DistributionTenantAttrs struct {
+	// The Amazon Resource Name (ARN) of this distribution tenant. (AI-inferred)
 	Arn any
 	// The ID of the connection group for the distribution tenant. If you don't specify a connection group, CloudFront uses the default connection group.
 	ConnectionGroupId any
@@ -134,13 +135,17 @@ type DistributionTenantAttrs struct {
 	Customizations any
 	// The ID of the multi-tenant distribution.
 	DistributionId any
+	// The per-domain results (e.g. validation and certificate status) for each of this distribution tenant's own configured domains. (AI-inferred)
 	DomainResults any
 	// The domains associated with the distribution tenant.
 	Domains any
+	// The current version identifier of this distribution tenant. (AI-inferred)
 	Etag any
 	// Indicates whether the distribution tenant is in an enabled state. If disabled, the distribution tenant won't serve traffic.
 	Enabled any
+	// The unique identifier of this distribution tenant. (AI-inferred)
 	Id any
+	// The date and time when this distribution tenant was last updated. (AI-inferred)
 	LastModifiedTime any
 	// An object that represents the request for the Amazon CloudFront managed ACM certificate.
 	ManagedCertificateRequest any
@@ -148,6 +153,7 @@ type DistributionTenantAttrs struct {
 	Name any
 	// A list of parameter values to add to the resource. A parameter is specified as a key-value pair. A valid parameter value must exist for any parameter that is marked as required in the multi-tenant distribution.
 	Parameters any
+	// The current status of this distribution tenant. (AI-inferred)
 	Status any
 	// A complex type that contains zero or more ``Tag`` elements.
 	Tags any

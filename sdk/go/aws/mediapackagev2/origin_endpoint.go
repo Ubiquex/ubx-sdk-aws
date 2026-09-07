@@ -498,6 +498,7 @@ type OriginEndpointConfig struct {
 	Segment any
 	// <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p>
 	StartoverWindowSeconds any
+	StreamNameOutputMode any
 	// Defines a list of key-value tags to attach to the MediaPackage v2 origin endpoint, enabling resource identification, cost allocation, and access management. (AI-inferred)
 	Tags any
 	// For the DASH manifest of an AWS Elemental MediaPackage v2 origin endpoint, this property sets the URI separator character (either '/' or '_') used in the segment template URL to delimit segment numbers from the preceding path. (AI-inferred)
@@ -543,6 +544,7 @@ type OriginEndpointAttrs struct {
 	Segment any
 	// <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p>
 	StartoverWindowSeconds any
+	StreamNameOutputMode any
 	// Defines a list of key-value tags to attach to the MediaPackage v2 origin endpoint, enabling resource identification, cost allocation, and access management. (AI-inferred)
 	Tags any
 	// For the DASH manifest of an AWS Elemental MediaPackage v2 origin endpoint, this property sets the URI separator character (either '/' or '_') used in the segment template URL to delimit segment numbers from the preceding path. (AI-inferred)
@@ -578,6 +580,7 @@ var OriginEndpoint = ubx.ResourceBinding{
 			Fields: OriginEndpoint_SegmentFields,
 		},
 		"StartoverWindowSeconds": ubx.FieldSpec{WireName: "startover_window_seconds"},
+		"StreamNameOutputMode": ubx.FieldSpec{WireName: "stream_name_output_mode"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
 			Kind: "list",

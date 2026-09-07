@@ -15,6 +15,7 @@ class CustomResourceConfig:
 
 @dataclasses.dataclass
 class CustomResourceAttrs:
+    # The unique identifier of this custom resource. (AI-inferred)
     id: Any = None
     # The maximum amount of time (in seconds) that AWS CloudFormation waits for the custom resource provider to respond before considering the resource operation failed. (AI-inferred)
     service_timeout: Any = None

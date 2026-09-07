@@ -15,6 +15,7 @@ const LandingZone_TagsFields: FieldMap = {
 export interface LandingZoneConfig {
   /** The manifest is a structured JSON document that defines the landing zone configuration, including the version, governed Regions, organizational structure, and security controls, which AWS Control Tower uses to create or update the landing zone. (AI-inferred) */
   manifest: unknown | Computed<unknown>;
+  /** The types of remediation Control Tower applies to this landing zone when it drifts from its own baseline configuration. (AI-inferred) */
   remediationTypes?: string[] | Computed<string[]>;
   /** The tags to associate with the AWS Control Tower landing zone, enabling cost allocation, access control, and resource identification. (AI-inferred) */
   tags?: LandingZone_Tags[] | Computed<LandingZone_Tags[]>;
@@ -33,6 +34,7 @@ export interface LandingZoneAttrs {
   latestAvailableVersion: string;
   /** The manifest is a structured JSON document that defines the landing zone configuration, including the version, governed Regions, organizational structure, and security controls, which AWS Control Tower uses to create or update the landing zone. (AI-inferred) */
   manifest: unknown;
+  /** The types of remediation Control Tower applies to this landing zone when it drifts from its own baseline configuration. (AI-inferred) */
   remediationTypes: string[];
   /** The current lifecycle status of the landing zone, such as ACTIVE, FAILED, or PROCESSING. (AI-inferred) */
   status: string;

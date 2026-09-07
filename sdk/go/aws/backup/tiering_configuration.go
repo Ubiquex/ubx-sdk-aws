@@ -19,22 +19,28 @@ var TieringConfiguration_ResourceSelectionFields = ubx.FieldMap{
 type TieringConfigurationConfig struct {
 	// The name of the AWS Backup vault to which this tiering configuration is applied. (AI-inferred)
 	BackupVaultName any
+	// The resource selections and their tiering settings that this tiering configuration applies. (AI-inferred)
 	ResourceSelection any
 	// The name that identifies this tiering configuration, which defines when backups transition to the cold storage tier within an AWS Backup plan. (AI-inferred)
 	TieringConfigurationName any
+	// The tags assigned to this tiering configuration. (AI-inferred)
 	TieringConfigurationTags any
 }
 
 type TieringConfigurationAttrs struct {
 	// The name of the AWS Backup vault to which this tiering configuration is applied. (AI-inferred)
 	BackupVaultName any
+	// The date and time when this tiering configuration was created. (AI-inferred)
 	CreationTime any
 	// The timestamp of the most recent update to this AWS Backup tiering configuration. (AI-inferred)
 	LastUpdatedTime any
+	// The resource selections and their tiering settings that this tiering configuration applies. (AI-inferred)
 	ResourceSelection any
+	// The Amazon Resource Name (ARN) of this tiering configuration. (AI-inferred)
 	TieringConfigurationArn any
 	// The name that identifies this tiering configuration, which defines when backups transition to the cold storage tier within an AWS Backup plan. (AI-inferred)
 	TieringConfigurationName any
+	// The tags assigned to this tiering configuration. (AI-inferred)
 	TieringConfigurationTags any
 }
 

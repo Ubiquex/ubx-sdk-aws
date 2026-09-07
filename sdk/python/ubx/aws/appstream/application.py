@@ -56,6 +56,7 @@ class ApplicationConfig:
     name: Any = None
     # Identifies the operating system platforms on which the AppStream 2.0 application can be launched, with valid values including WINDOWS and AMAZON_LINUX. (AI-inferred)
     platforms: Any = None
+    # The tags assigned to this AppStream application. (AI-inferred)
     tags: Any = None
     # Specifies the working directory that the application uses when launched on a streaming instance. (AI-inferred)
     working_directory: Any = None
@@ -86,6 +87,7 @@ class ApplicationAttrs:
     name: Any = None
     # Identifies the operating system platforms on which the AppStream 2.0 application can be launched, with valid values including WINDOWS and AMAZON_LINUX. (AI-inferred)
     platforms: Any = None
+    # The tags assigned to this AppStream application. (AI-inferred)
     tags: Any = None
     # Specifies the working directory that the application uses when launched on a streaming instance. (AI-inferred)
     working_directory: Any = None

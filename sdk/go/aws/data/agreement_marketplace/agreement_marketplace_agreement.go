@@ -7,6 +7,17 @@ type AgreementMarketplaceAgreement_Acceptor struct {
 	AccountId any
 }
 
+type AgreementMarketplaceAgreement_EndTimeBehavior_RenewalSummary struct {
+	OfferId any
+}
+
+type AgreementMarketplaceAgreement_EndTimeBehavior struct {
+	ReasonCode any
+	// <p>The details of the renewal that applies at the end date of an agreement.</p>
+	RenewalSummary any
+	Type any
+}
+
 type AgreementMarketplaceAgreement_EstimatedCharges struct {
 	AgreementValue any
 	CurrencyCode any
@@ -34,8 +45,11 @@ type AgreementMarketplaceAgreementAttrs struct {
 	AgreementId any
 	AgreementType any
 	EndTime any
+	// <p>The behavior of an agreement when it reaches its end date. For example, whether the agreement renews, and if it doesn't, the reason why.</p>
+	EndTimeBehavior any
 	// <p>Estimated cost of the agreement.</p>
 	EstimatedCharges any
+	InitialAgreementId any
 	// <p>A summary of the proposal received from the proposer.</p>
 	ProposalSummary any
 	// <p>Details of the party proposing the agreement terms,. This is commonly the seller for <code>PurchaseAgreement</code>. </p>

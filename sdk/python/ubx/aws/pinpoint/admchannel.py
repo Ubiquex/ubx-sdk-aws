@@ -27,6 +27,7 @@ class AdmchannelAttrs:
     client_secret: Any = None
     # Indicates whether the ADM channel is enabled for sending push notifications through Amazon Pinpoint. (AI-inferred)
     enabled: Any = None
+    # The unique identifier of this Pinpoint ADM channel. (AI-inferred)
     id: Any = None
 
 Admchannel = ubx.ResourceBinding(

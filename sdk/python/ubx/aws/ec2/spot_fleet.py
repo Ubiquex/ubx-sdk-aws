@@ -709,6 +709,7 @@ class SpotFleetConfig:
 
 @dataclasses.dataclass
 class SpotFleetAttrs:
+    # The unique identifier of this Spot Fleet request. (AI-inferred)
     id: Any = None
     # This object defines the configuration for the Spot Fleet request, including the IAM fleet role, target capacity, launch specifications for instances, and allocation strategy. (AI-inferred)
     spot_fleet_request_config_data: Any = None

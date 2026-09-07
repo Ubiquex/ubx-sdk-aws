@@ -27,6 +27,7 @@ class OwnerAttrs:
     entity_type: Any = None
     # The properties of a domain unit's owner.
     owner: Any = None
+    # The unique identifier of the owner added to this entity. (AI-inferred)
     owner_identifier: Any = None
     # Indicates whether the owner associated with the DataZone resource is a user or a group, as determined by the service. (AI-inferred)
     owner_type: Any = None

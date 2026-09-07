@@ -31,17 +31,25 @@ _IdentitySource_TagsFields = {
 
 @dataclasses.dataclass
 class IdentitySourceConfig:
+    # The tags assigned to this identity source. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class IdentitySourceAttrs:
+    # The date and time when this identity source was created. (AI-inferred)
     creation_time: Any = None
+    # The Amazon Resource Name (ARN) of this identity source. (AI-inferred)
     identity_source_arn: Any = None
     identity_source_parameters: Any = None
+    # The type of resource (for example, an IAM Identity Center instance) that provides identities to this identity source. (AI-inferred)
     identity_source_type: Any = None
+    # The current status of this identity source. (AI-inferred)
     status: Any = None
+    # The status code of this identity source. (AI-inferred)
     status_code: Any = None
+    # A message describing this identity source's own current status. (AI-inferred)
     status_message: Any = None
+    # The tags assigned to this identity source. (AI-inferred)
     tags: Any = None
 
 IdentitySource = ubx.ResourceBinding(

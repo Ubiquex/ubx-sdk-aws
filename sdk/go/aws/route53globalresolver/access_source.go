@@ -14,27 +14,46 @@ var AccessSource_TagsFields = ubx.FieldMap{
 	}
 
 type AccessSourceConfig struct {
+	// The CIDR block defining the IP address range this access source authorizes to send DNS queries. (AI-inferred)
 	Cidr any
+	// A unique string that identifies the request used to create this access source, ensuring idempotency. (AI-inferred)
 	ClientToken any
+	// A reference to the DNS view this access source is associated with. (AI-inferred)
 	DnsViewId any
+	// The IP address type (IPv4 or IPv6) of this access source. (AI-inferred)
 	IpAddressType any
+	// The name of this access source. (AI-inferred)
 	Name any
+	// The DNS protocol (Do53, DoH, or DoT) clients from this access source are authorized to use. (AI-inferred)
 	Protocol any
+	// The tags assigned to this access source. (AI-inferred)
 	Tags any
 }
 
 type AccessSourceAttrs struct {
+	// The unique identifier of this access source. (AI-inferred)
 	AccessSourceId any
+	// The Amazon Resource Name (ARN) of this access source. (AI-inferred)
 	Arn any
+	// The CIDR block defining the IP address range this access source authorizes to send DNS queries. (AI-inferred)
 	Cidr any
+	// A unique string that identifies the request used to create this access source, ensuring idempotency. (AI-inferred)
 	ClientToken any
+	// The date and time when this access source was created. (AI-inferred)
 	CreatedAt any
+	// A reference to the DNS view this access source is associated with. (AI-inferred)
 	DnsViewId any
+	// The IP address type (IPv4 or IPv6) of this access source. (AI-inferred)
 	IpAddressType any
+	// The name of this access source. (AI-inferred)
 	Name any
+	// The DNS protocol (Do53, DoH, or DoT) clients from this access source are authorized to use. (AI-inferred)
 	Protocol any
+	// The current status of this access source. (AI-inferred)
 	Status any
+	// The tags assigned to this access source. (AI-inferred)
 	Tags any
+	// The date and time when this access source was last updated. (AI-inferred)
 	UpdatedAt any
 }
 

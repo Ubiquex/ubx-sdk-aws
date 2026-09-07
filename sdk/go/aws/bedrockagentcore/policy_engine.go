@@ -37,6 +37,7 @@ type PolicyEngineAttrs struct {
 	PolicyEngineArn any
 	// The unique identifier for the policy engine
 	PolicyEngineId any
+	// The current status of the policy engine. (AI-inferred)
 	Status any
 	// Additional information about the policy engine status
 	StatusReasons any

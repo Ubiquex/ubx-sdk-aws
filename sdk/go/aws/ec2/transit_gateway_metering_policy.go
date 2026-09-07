@@ -16,6 +16,7 @@ var TransitGatewayMeteringPolicy_TagsFields = ubx.FieldMap{
 type TransitGatewayMeteringPolicyConfig struct {
 	// Middle box attachment Ids
 	MiddleboxAttachmentIds any
+	// The tags assigned to this transit gateway metering policy. (AI-inferred)
 	Tags any
 	// The Id of transit gateway
 	TransitGatewayId any
@@ -26,6 +27,7 @@ type TransitGatewayMeteringPolicyAttrs struct {
 	MiddleboxAttachmentIds any
 	// State of the transit gateway metering policy
 	State any
+	// The tags assigned to this transit gateway metering policy. (AI-inferred)
 	Tags any
 	// The Id of transit gateway
 	TransitGatewayId any

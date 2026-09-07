@@ -118,6 +118,7 @@ const MicrovmImage_ResourcesFields: FieldMap = {
 };
 
 export interface MicrovmImageConfig {
+  /** Additional OS capabilities granted to this MicroVM's own runtime environment. (AI-inferred) */
   additionalOsCapabilities: string[] | Computed<string[]>;
   /** ARN of the base MicroVM image. */
   baseImageArn: string | Computed<string>;
@@ -126,22 +127,28 @@ export interface MicrovmImageConfig {
   /** ARN of the IAM build role. */
   buildRoleArn: string | Computed<string>;
   codeArtifact: MicrovmImage_CodeArtifact | Computed<MicrovmImage_CodeArtifact>;
+  /** The CPU configurations this MicroVM supports. (AI-inferred) */
   cpuConfigurations: MicrovmImage_CpuConfigurations[] | Computed<MicrovmImage_CpuConfigurations[]>;
   /** Human-readable description of the MicroVM image and its purpose. */
   description: string | Computed<string>;
+  /** The egress network connectors available to this MicroVM at runtime. (AI-inferred) */
   egressNetworkConnectors: string[] | Computed<string[]>;
   /** Environment variables to set in the container during the snapshot build. */
   environmentVariables: MicrovmImage_EnvironmentVariables[] | Computed<MicrovmImage_EnvironmentVariables[]>;
+  /** The lifecycle hook configuration for this MicroVM and its own image. (AI-inferred) */
   hooks: MicrovmImage_Hooks | Computed<MicrovmImage_Hooks>;
+  /** The logging configuration for this MicroVM's own output: CloudWatch logging enabled, or logging disabled. (AI-inferred) */
   logging: MicrovmImage_Logging | Computed<MicrovmImage_Logging>;
   /** Unique name for the MicroVM image within the account. */
   name: string | Computed<string>;
+  /** The resource requirements (e.g. memory, storage) for this MicroVM. (AI-inferred) */
   resources: MicrovmImage_Resources[] | Computed<MicrovmImage_Resources[]>;
   /** Key-value pairs to associate with the MicroVM image for organization and management. */
   tags?: MicrovmImage_EnvironmentVariables[] | Computed<MicrovmImage_EnvironmentVariables[]>;
 }
 
 export interface MicrovmImageAttrs {
+  /** Additional OS capabilities granted to this MicroVM's own runtime environment. (AI-inferred) */
   additionalOsCapabilities: string[];
   /** ARN of the base MicroVM image. */
   baseImageArn: string;
@@ -150,14 +157,17 @@ export interface MicrovmImageAttrs {
   /** ARN of the IAM build role. */
   buildRoleArn: string;
   codeArtifact: MicrovmImage_CodeArtifact;
+  /** The CPU configurations this MicroVM supports. (AI-inferred) */
   cpuConfigurations: MicrovmImage_CpuConfigurations[];
   /** Timestamp when the MicroVM image was created. */
   createdAt: string;
   /** Human-readable description of the MicroVM image and its purpose. */
   description: string;
+  /** The egress network connectors available to this MicroVM at runtime. (AI-inferred) */
   egressNetworkConnectors: string[];
   /** Environment variables to set in the container during the snapshot build. */
   environmentVariables: MicrovmImage_EnvironmentVariables[];
+  /** The lifecycle hook configuration for this MicroVM and its own image. (AI-inferred) */
   hooks: MicrovmImage_Hooks;
   /** ARN of the MicroVM image. */
   imageArn: string;
@@ -165,10 +175,13 @@ export interface MicrovmImageAttrs {
   latestActiveImageVersion: string;
   /** The latest failed version of the MicroVM image. */
   latestFailedImageVersion: string;
+  /** The logging configuration for this MicroVM's own output: CloudWatch logging enabled, or logging disabled. (AI-inferred) */
   logging: MicrovmImage_Logging;
   /** Unique name for the MicroVM image within the account. */
   name: string;
+  /** The resource requirements (e.g. memory, storage) for this MicroVM. (AI-inferred) */
   resources: MicrovmImage_Resources[];
+  /** The current build state of this MicroVM image version: creating, created, or create-failed. (AI-inferred) */
   state: string;
   /** Key-value pairs to associate with the MicroVM image for organization and management. */
   tags: MicrovmImage_EnvironmentVariables[];

@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface ShardIteratorConfig {
+  dryRun?: boolean | Computed<boolean>;
   shardId: string | Computed<string>;
   shardIteratorType: string | Computed<string>;
   startingSequenceNumber?: string | Computed<string>;
@@ -12,6 +13,7 @@ export interface ShardIteratorConfig {
 }
 
 export interface ShardIteratorAttrs {
+  dryRun: boolean;
   shardId: string;
   shardIterator: string;
   shardIteratorType: string;
@@ -25,6 +27,7 @@ export interface ShardIteratorAttrs {
 export const ShardIterator: DataSourceBinding<ShardIteratorConfig, ShardIteratorAttrs> = {
   wireType: "aws_kinesis_shard_iterator",
   fields: {
+    dryRun: "dry_run",
     shardId: "shard_id",
     shardIteratorType: "shard_iterator_type",
     startingSequenceNumber: "starting_sequence_number",

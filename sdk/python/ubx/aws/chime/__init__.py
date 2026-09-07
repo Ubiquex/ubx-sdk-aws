@@ -8,3 +8,4 @@ from .app_instance import AppInstance, AppInstanceConfig
 from .app_instance_bot import AppInstanceBot, AppInstanceBotConfig
 from .app_instance_user import AppInstanceUser, AppInstanceUserConfig
 from .channel_flow import ChannelFlow, ChannelFlowConfig
+from .media_pipeline_kinesis_video_stream_pool import MediaPipelineKinesisVideoStreamPool, MediaPipelineKinesisVideoStreamPoolConfig

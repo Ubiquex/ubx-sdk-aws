@@ -406,6 +406,7 @@ export interface RouterInputConfig {
   routingScope: string | Computed<string>;
   /** Key-value pairs that can be used to tag and organize this router input. */
   tags?: RouterInput_Tags[] | Computed<RouterInput_Tags[]>;
+  /** The tier level of this router input, which determines its own maximum throughput. (AI-inferred) */
   tier: string | Computed<string>;
   /** The transit encryption settings for a router input. */
   transitEncryption?: RouterInput_Configuration_MediaConnectFlow_SourceTransitDecryption | Computed<RouterInput_Configuration_MediaConnectFlow_SourceTransitDecryption>;
@@ -420,16 +421,19 @@ export interface RouterInputAttrs {
   configuration: RouterInput_Configuration;
   /** The content quality analysis configuration for the router input. The content quality analysis feature only monitors the first video stream and the first audio stream it encounters within the router input source. */
   contentQualityAnalysisConfiguration: RouterInput_ContentQualityAnalysisConfiguration;
+  /** The type of content quality analysis applied to this router input. (AI-inferred) */
   contentQualityAnalysisType: string;
   /** The timestamp when the router input was created. */
   createdAt: string;
   /** The unique identifier of the router input. */
   id: string;
+  /** The type of this router input. (AI-inferred) */
   inputType: string;
   /** The IP address of the router input. */
   ipAddress: string;
   /** The configuration settings for maintenance operations, including preferred maintenance windows and schedules. */
   maintenanceConfiguration: RouterInput_MaintenanceConfiguration;
+  /** The type of maintenance configuration applied to this router input. (AI-inferred) */
   maintenanceType: string;
   /** The maximum bitrate for the router input. */
   maximumBitrate: number;
@@ -445,6 +449,7 @@ export interface RouterInputAttrs {
   state: string;
   /** Key-value pairs that can be used to tag and organize this router input. */
   tags: RouterInput_Tags[];
+  /** The tier level of this router input, which determines its own maximum throughput. (AI-inferred) */
   tier: string;
   /** The transit encryption settings for a router input. */
   transitEncryption: RouterInput_Configuration_MediaConnectFlow_SourceTransitDecryption;

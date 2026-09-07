@@ -14,6 +14,7 @@ const TransitGatewayMeteringPolicy_TagsFields: FieldMap = {
 export interface TransitGatewayMeteringPolicyConfig {
   /** Middle box attachment Ids */
   middleboxAttachmentIds?: string[] | Computed<string[]>;
+  /** The tags assigned to this transit gateway metering policy. (AI-inferred) */
   tags?: TransitGatewayMeteringPolicy_Tags[] | Computed<TransitGatewayMeteringPolicy_Tags[]>;
   /** The Id of transit gateway */
   transitGatewayId: string | Computed<string>;
@@ -24,6 +25,7 @@ export interface TransitGatewayMeteringPolicyAttrs {
   middleboxAttachmentIds: string[];
   /** State of the transit gateway metering policy */
   state: string;
+  /** The tags assigned to this transit gateway metering policy. (AI-inferred) */
   tags: TransitGatewayMeteringPolicy_Tags[];
   /** The Id of transit gateway */
   transitGatewayId: string;

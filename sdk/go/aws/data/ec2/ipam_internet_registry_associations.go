@@ -24,6 +24,7 @@ type IpamInternetRegistryAssociations_IpamInternetRegistryAssociations struct {
 	OwnerId any
 	Rir any
 	State any
+	StateMessage any
 	Tags any
 }
 

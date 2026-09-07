@@ -4,27 +4,46 @@ package s3files
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MountTargetConfig struct {
+	// A reference to the file system this mount target provides network access to. (AI-inferred)
 	FileSystemId any
+	// The type of IP address (IPv4-only, IPv6-only, or dual-stack) this mount target uses. (AI-inferred)
 	IpAddressType any
+	// The IPv4 address of this mount target. (AI-inferred)
 	Ipv4Address any
+	// The IPv6 address of this mount target. (AI-inferred)
 	Ipv6Address any
+	// The VPC security groups controlling network access to this mount target. (AI-inferred)
 	SecurityGroups any
+	// A reference to the subnet this mount target is located in. (AI-inferred)
 	SubnetId any
 }
 
 type MountTargetAttrs struct {
+	// The unique identifier of the Availability Zone this mount target is located in. (AI-inferred)
 	AvailabilityZoneId any
+	// A reference to the file system this mount target provides network access to. (AI-inferred)
 	FileSystemId any
+	// The type of IP address (IPv4-only, IPv6-only, or dual-stack) this mount target uses. (AI-inferred)
 	IpAddressType any
+	// The IPv4 address of this mount target. (AI-inferred)
 	Ipv4Address any
+	// The IPv6 address of this mount target. (AI-inferred)
 	Ipv6Address any
+	// The unique identifier of this mount target. (AI-inferred)
 	MountTargetId any
+	// A reference to the network interface Amazon S3 Files created for this mount target. (AI-inferred)
 	NetworkInterfaceId any
+	// The AWS account ID that owns this mount target. (AI-inferred)
 	OwnerId any
+	// The VPC security groups controlling network access to this mount target. (AI-inferred)
 	SecurityGroups any
+	// The current status of this mount target. (AI-inferred)
 	Status any
+	// Additional information about this mount target's own current status. (AI-inferred)
 	StatusMessage any
+	// A reference to the subnet this mount target is located in. (AI-inferred)
 	SubnetId any
+	// A reference to the VPC this mount target is located in. (AI-inferred)
 	VpcId any
 }
 

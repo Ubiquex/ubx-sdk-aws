@@ -200,7 +200,15 @@ class Cluster_Orchestrator_Eks:
     cluster_arn: Any = None
 
 @dataclasses.dataclass
+class Cluster_Orchestrator_Slurm_AccountingDatabase:
+    endpoint: Any = None
+    name: Any = None
+    port: Any = None
+    secret_arn: Any = None
+
+@dataclasses.dataclass
 class Cluster_Orchestrator_Slurm:
+    accounting_database: Any = None
     # Specifies whether SageMaker automatically generates the Slurm configuration files (Auto) or uses pre-existing configuration files you supply (NoAuto) for the Slurm orchestrator on the SageMaker HyperPod cluster. (AI-inferred)
     slurm_config_strategy: Any = None
 
@@ -280,7 +288,19 @@ _Cluster_Orchestrator_EksFields = {
     "cluster_arn": ubx.FieldSpec(wire_name="cluster_arn"),
 }
 
+_Cluster_Orchestrator_Slurm_AccountingDatabaseFields = {
+    "endpoint": ubx.FieldSpec(wire_name="endpoint"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "secret_arn": ubx.FieldSpec(wire_name="secret_arn"),
+}
+
 _Cluster_Orchestrator_SlurmFields = {
+    "accounting_database": ubx.FieldSpec(
+        wire_name="accounting_database",
+        kind="object",
+        fields=_Cluster_Orchestrator_Slurm_AccountingDatabaseFields,
+    ),
     "slurm_config_strategy": ubx.FieldSpec(wire_name="slurm_config_strategy"),
 }
 

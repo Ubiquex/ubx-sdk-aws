@@ -159,6 +159,7 @@ type WorkflowVersionAttrs struct {
 	Tags any
 	// The workflow engine type (such as WDL or Nextflow) for this Omics workflow version, automatically assigned by the service when the version is created. (AI-inferred)
 	Type any
+	// The unique identifier of this Omics workflow version. (AI-inferred)
 	Uuid any
 	// The version_name field assigns a user-defined name to this version of the Omics workflow, which must be unique among all versions of the same workflow. (AI-inferred)
 	VersionName any

@@ -159,6 +159,7 @@ type OnlineEvaluationConfigConfig struct {
 	EvaluationExecutionRoleArn any
 	// The list of evaluators to apply during online evaluation.
 	Evaluators any
+	// The current execution status of this online evaluation configuration. (AI-inferred)
 	ExecutionStatus any
 	// The list of insights to enable for failure analysis.
 	Insights any
@@ -183,6 +184,7 @@ type OnlineEvaluationConfigAttrs struct {
 	EvaluationExecutionRoleArn any
 	// The list of evaluators to apply during online evaluation.
 	Evaluators any
+	// The current execution status of this online evaluation configuration. (AI-inferred)
 	ExecutionStatus any
 	// The list of insights to enable for failure analysis.
 	Insights any
@@ -196,6 +198,7 @@ type OnlineEvaluationConfigAttrs struct {
 	OutputConfig any
 	// The evaluation rule that defines sampling configuration, filtering criteria, and session detection settings.
 	Rule any
+	// The current status of this online evaluation configuration. (AI-inferred)
 	Status any
 	// A list of tags to assign to the online evaluation configuration.
 	Tags any

@@ -91,6 +91,11 @@ class RegistryRecord_Descriptors_AgentSkillsDefinition:
     data_schema_version: Any = None
 
 @dataclasses.dataclass
+class RegistryRecord_Descriptors_Agui:
+    # Source configuration for a source-only descriptor. Unlike mcpServer/a2aAgentCard sources, source-only descriptors do not support credential providers.
+    source: Any = None
+
+@dataclasses.dataclass
 class RegistryRecord_Descriptors_Custom:
     # Descriptor payload data.
     data: Any = None
@@ -124,8 +129,12 @@ class RegistryRecord_Descriptors:
     a2a_agent_card: Any = None
     # The agent skills definition descriptor, populated when the record type is SKILL.
     agent_skills_definition: Any = None
+    # The AG-UI (Agent-User Interaction) descriptor, populated for records detected from an AG-UI protocol source. This descriptor is source-only: its content is synchronized from the configured source URL rather than supplied inline.
+    agui: Any = None
     # The custom descriptor, populated when the record type is CUSTOM.
     custom: Any = None
+    # The HTTP descriptor, populated for records detected from an HTTP protocol source. This descriptor is source-only: its content is synchronized from the configured source URL rather than supplied inline.
+    http: Any = None
     # The MCP server descriptor, populated when the record type is MCP.
     mcp_server: Any = None
 
@@ -236,6 +245,14 @@ _RegistryRecord_Descriptors_AgentSkillsDefinitionFields = {
     "data_schema_version": ubx.FieldSpec(wire_name="data_schema_version"),
 }
 
+_RegistryRecord_Descriptors_AguiFields = {
+    "source": ubx.FieldSpec(
+        wire_name="source",
+        kind="object",
+        fields=_RegistryRecord_Descriptors_AgentSkillsDefinition_AdditionalData_SkillMd_SourceFields,
+    ),
+}
+
 _RegistryRecord_Descriptors_CustomFields = {
     "data": ubx.FieldSpec(wire_name="data"),
 }
@@ -279,10 +296,20 @@ _RegistryRecord_DescriptorsFields = {
         kind="object",
         fields=_RegistryRecord_Descriptors_AgentSkillsDefinitionFields,
     ),
+    "agui": ubx.FieldSpec(
+        wire_name="agui",
+        kind="object",
+        fields=_RegistryRecord_Descriptors_AguiFields,
+    ),
     "custom": ubx.FieldSpec(
         wire_name="custom",
         kind="object",
         fields=_RegistryRecord_Descriptors_CustomFields,
+    ),
+    "http": ubx.FieldSpec(
+        wire_name="http",
+        kind="object",
+        fields=_RegistryRecord_Descriptors_AguiFields,
     ),
     "mcp_server": ubx.FieldSpec(
         wire_name="mcp_server",
@@ -310,7 +337,7 @@ class RegistryRecordConfig:
     record_type: Any = None
     # The version of the registry record.
     record_version: Any = None
-    # The identifier of the registry containing the record.
+    # The identifier of the registry in which to create the record. You can specify either the registry ID or the registry Amazon Resource Name (ARN). Use the ARN form to reference a registry shared from another account via AWS Resource Access Manager (RAM).
     registry_id: Any = None
     # Tags to assign to the registry record.
     tags: Any = None
@@ -319,6 +346,8 @@ class RegistryRecordConfig:
 class RegistryRecordAttrs:
     # The timestamp when the registry record was created.
     created_at: Any = None
+    # The identifier of the AWS account that created the registry record.
+    created_by: Any = None
     # The description of the registry record.
     description: Any = None
     # The typed set of descriptors for a registry record. Exactly one descriptor field is populated based on the record type.
@@ -337,7 +366,7 @@ class RegistryRecordAttrs:
     record_version: Any = None
     # The Amazon Resource Name (ARN) of the registry containing the record.
     registry_arn: Any = None
-    # The identifier of the registry containing the record.
+    # The identifier of the registry in which to create the record. You can specify either the registry ID or the registry Amazon Resource Name (ARN). Use the ARN form to reference a registry shared from another account via AWS Resource Access Manager (RAM).
     registry_id: Any = None
     # The lifecycle status of the registry record.
     status: Any = None

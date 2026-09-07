@@ -64,6 +64,7 @@ type ConnectorConfig struct {
 	Description any
 	// Display name for the connector.
 	Name any
+	// The external code repository provider (e.g. GitHub, GitLab) this Inspector connector connects to. (AI-inferred)
 	Provider any
 	// Tags to apply to the connector.
 	Tags any
@@ -76,6 +77,7 @@ type ConnectorAttrs struct {
 	CreatedAt any
 	// Optional description of the connector.
 	Description any
+	// Whether this Inspector connector is currently enabled. (AI-inferred)
 	EnablementStatus any
 	// Reason for the current enablement status, if applicable.
 	EnablementStatusReason any
@@ -85,6 +87,7 @@ type ConnectorAttrs struct {
 	LastUpdatedAt any
 	// Display name for the connector.
 	Name any
+	// The external code repository provider (e.g. GitHub, GitLab) this Inspector connector connects to. (AI-inferred)
 	Provider any
 	ProviderConfiguration any
 	// Tags to apply to the connector.

@@ -58,7 +58,9 @@ type NatGatewayConfig struct {
 type NatGatewayAttrs struct {
 	// [Public NAT gateway only] The allocation ID of the Elastic IP address that's associated with the NAT gateway. This property is required for a public NAT gateway and cannot be specified with a private NAT gateway.
 	AllocationId any
+	// For a regional NAT gateway, whether AWS automatically manages its own Availability Zone coverage, expanding into new zones as subnets are added and retracting from zones with none left. (AI-inferred)
 	AutoProvisionZones any
+	// For a regional NAT gateway, whether AWS automatically allocates additional Elastic IP addresses in an Availability Zone as concurrent connections to a single destination grow. (AI-inferred)
 	AutoScalingIps any
 	// Indicates whether this is a zonal (single-AZ) or regional (multi-AZ) NAT gateway. A zonal NAT gateway is a NAT Gateway that provides redundancy and scalability within a single availability zone. A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region. For more information, see [Regional NAT gateways for automatic multi-AZ expansion](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html) in the *Amazon VPC User Guide*.
 	AvailabilityMode any
@@ -74,6 +76,7 @@ type NatGatewayAttrs struct {
 	NatGatewayId any
 	// The private IPv4 address to assign to the NAT gateway. If you don't provide an address, a private IPv4 address will be automatically assigned.
 	PrivateIpAddress any
+	// A reference to the route table this NAT gateway's own route is created in. (AI-inferred)
 	RouteTableId any
 	// Secondary EIP allocation IDs. For more information, see [Create a NAT gateway](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html) in the *Amazon VPC User Guide*.
 	SecondaryAllocationIds any

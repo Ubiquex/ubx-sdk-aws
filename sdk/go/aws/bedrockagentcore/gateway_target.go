@@ -120,6 +120,15 @@ type GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime struct {
 	Schema any
 }
 
+type GatewayTarget_TargetConfiguration_Http_Connector_Source struct {
+	ConnectorId any
+}
+
+type GatewayTarget_TargetConfiguration_Http_Connector struct {
+	Parameters any
+	Source any
+}
+
 type GatewayTarget_TargetConfiguration_Http_Passthrough_StickinessConfiguration struct {
 	Identifier any
 	// The duration in seconds for which a client session remains pinned to the same target in the HTTP passthrough stickiness configuration, after which the sticky session expires. (AI-inferred)
@@ -136,11 +145,8 @@ type GatewayTarget_TargetConfiguration_Http_Passthrough struct {
 
 type GatewayTarget_TargetConfiguration_Http struct {
 	AgentcoreRuntime any
+	Connector any
 	Passthrough any
-}
-
-type GatewayTarget_TargetConfiguration_Inference_Connector_Source struct {
-	ConnectorId any
 }
 
 type GatewayTarget_TargetConfiguration_Inference_Connector struct {
@@ -418,6 +424,19 @@ var GatewayTarget_TargetConfiguration_Http_AgentcoreRuntimeFields = ubx.FieldMap
 		},
 	}
 
+var GatewayTarget_TargetConfiguration_Http_Connector_SourceFields = ubx.FieldMap{
+		"ConnectorId": ubx.FieldSpec{WireName: "connector_id"},
+	}
+
+var GatewayTarget_TargetConfiguration_Http_ConnectorFields = ubx.FieldMap{
+		"Parameters": ubx.FieldSpec{WireName: "parameters"},
+		"Source": ubx.FieldSpec{
+			WireName: "source",
+			Kind: "object",
+			Fields: GatewayTarget_TargetConfiguration_Http_Connector_SourceFields,
+		},
+	}
+
 var GatewayTarget_TargetConfiguration_Http_Passthrough_StickinessConfigurationFields = ubx.FieldMap{
 		"Identifier": ubx.FieldSpec{WireName: "identifier"},
 		"Timeout": ubx.FieldSpec{WireName: "timeout"},
@@ -444,6 +463,11 @@ var GatewayTarget_TargetConfiguration_HttpFields = ubx.FieldMap{
 			Kind: "object",
 			Fields: GatewayTarget_TargetConfiguration_Http_AgentcoreRuntimeFields,
 		},
+		"Connector": ubx.FieldSpec{
+			WireName: "connector",
+			Kind: "object",
+			Fields: GatewayTarget_TargetConfiguration_Http_ConnectorFields,
+		},
 		"Passthrough": ubx.FieldSpec{
 			WireName: "passthrough",
 			Kind: "object",
@@ -451,15 +475,11 @@ var GatewayTarget_TargetConfiguration_HttpFields = ubx.FieldMap{
 		},
 	}
 
-var GatewayTarget_TargetConfiguration_Inference_Connector_SourceFields = ubx.FieldMap{
-		"ConnectorId": ubx.FieldSpec{WireName: "connector_id"},
-	}
-
 var GatewayTarget_TargetConfiguration_Inference_ConnectorFields = ubx.FieldMap{
 		"Source": ubx.FieldSpec{
 			WireName: "source",
 			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Inference_Connector_SourceFields,
+			Fields: GatewayTarget_TargetConfiguration_Http_Connector_SourceFields,
 		},
 	}
 
@@ -579,7 +599,7 @@ var GatewayTarget_TargetConfiguration_Mcp_ConnectorFields = ubx.FieldMap{
 		"Source": ubx.FieldSpec{
 			WireName: "source",
 			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Inference_Connector_SourceFields,
+			Fields: GatewayTarget_TargetConfiguration_Http_Connector_SourceFields,
 		},
 	}
 
@@ -691,34 +711,53 @@ var GatewayTarget_TargetConfigurationFields = ubx.FieldMap{
 	}
 
 type GatewayTargetConfig struct {
+	// The credential provider configurations for this gateway target. (AI-inferred)
 	CredentialProviderConfigurations any
+	// The description for the gateway target. (AI-inferred)
 	Description any
+	// The gateway ID for the gateway target. (AI-inferred)
 	GatewayIdentifier any
 	MetadataConfiguration any
+	// The name of the gateway target. (AI-inferred)
 	Name any
 	// Defines the VPC private connection configuration (such as a VPC endpoint ID) that the Amazon Bedrock core gateway uses to securely route requests to a target resource that is not publicly accessible. (AI-inferred)
 	PrivateEndpoint any
+	// The configuration for a gateway target. This structure defines how the gateway connects to and interacts with the target endpoint. (AI-inferred)
 	TargetConfiguration any
 }
 
 type GatewayTargetAttrs struct {
 	AuthorizationData any
+	// The date and time at which the target was created. (AI-inferred)
 	CreatedAt any
+	// The credential provider configurations for this gateway target. (AI-inferred)
 	CredentialProviderConfigurations any
+	// The description for the gateway target. (AI-inferred)
 	Description any
+	// The Amazon Resource Name (ARN) of the gateway target. (AI-inferred)
 	GatewayArn any
+	// The gateway ID for the gateway target. (AI-inferred)
 	GatewayIdentifier any
+	// The timestamp when the target was last synchronized. (AI-inferred)
 	LastSynchronizedAt any
 	MetadataConfiguration any
+	// The name of the gateway target. (AI-inferred)
 	Name any
 	// Defines the VPC private connection configuration (such as a VPC endpoint ID) that the Amazon Bedrock core gateway uses to securely route requests to a target resource that is not publicly accessible. (AI-inferred)
 	PrivateEndpoint any
+	// A list of managed resources created by the gateway for private endpoint connectivity. (AI-inferred)
 	PrivateEndpointManagedResources any
+	// The protocol type this gateway target's own tools are exposed through. (AI-inferred)
 	ProtocolType any
+	// The status of the gateway target. (AI-inferred)
 	Status any
+	// The status reasons for the target status. (AI-inferred)
 	StatusReasons any
+	// The configuration for a gateway target. This structure defines how the gateway connects to and interacts with the target endpoint. (AI-inferred)
 	TargetConfiguration any
+	// The target ID. (AI-inferred)
 	TargetId any
+	// The date and time at which the target was updated. (AI-inferred)
 	UpdatedAt any
 }
 

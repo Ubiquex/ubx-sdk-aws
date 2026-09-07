@@ -58,6 +58,7 @@ type TrustStoreConfig struct {
 }
 
 type TrustStoreAttrs struct {
+	// The Amazon Resource Name (ARN) of this trust store. (AI-inferred)
 	Arn any
 	// A CA certificates bundle source.
 	CaCertificatesBundleSource any
@@ -71,6 +72,7 @@ type TrustStoreAttrs struct {
 	Name any
 	// The number of CA certificates currently contained in the CloudFront trust store. (AI-inferred)
 	NumberOfCaCertificates any
+	// The current status of this trust store. (AI-inferred)
 	Status any
 	// A complex type that contains zero or more ``Tag`` elements.
 	Tags any

@@ -98,7 +98,9 @@ _PaymentManager_TagsFields = {
 
 @dataclasses.dataclass
 class PaymentManagerConfig:
+    # Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred)
     authorizer_configuration: Any = None
+    # The type of authorizer used by the payment manager. (AI-inferred)
     authorizer_type: Any = None
     # A description of the payment manager
     description: Any = None
@@ -111,7 +113,9 @@ class PaymentManagerConfig:
 
 @dataclasses.dataclass
 class PaymentManagerAttrs:
+    # Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred)
     authorizer_configuration: Any = None
+    # The type of authorizer used by the payment manager. (AI-inferred)
     authorizer_type: Any = None
     # The timestamp when the payment manager was created
     created_at: Any = None
@@ -127,9 +131,11 @@ class PaymentManagerAttrs:
     payment_manager_id: Any = None
     # The ARN of the IAM role for the payment manager
     role_arn: Any = None
+    # The current status of the payment manager. (AI-inferred)
     status: Any = None
     # Tags to assign to the payment manager
     tags: Any = None
+    # Details of the workload identity associated with the payment manager, used to authenticate its own outbound calls. (AI-inferred)
     workload_identity_details: Any = None
 
 PaymentManager = ubx.ResourceBinding(

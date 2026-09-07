@@ -754,6 +754,7 @@ class VirtualNodeConfig:
 class VirtualNodeAttrs:
     # The Amazon Resource Name (ARN) of the virtual node, uniquely identifying it within AWS App Mesh. (AI-inferred)
     arn: Any = None
+    # The unique identifier of this virtual node. (AI-inferred)
     id: Any = None
     # The name of the App Mesh service mesh that this virtual node belongs to, scoping the virtual node within the specified mesh. (AI-inferred)
     mesh_name: Any = None
@@ -764,6 +765,7 @@ class VirtualNodeAttrs:
     # The desired configuration for the virtual node, defining its listeners, service discovery, backends, and logging settings. (AI-inferred)
     spec: Any = None
     tags: Any = None
+    # The unique identifier assigned by App Mesh to this virtual node. (AI-inferred)
     uid: Any = None
     # Specifies the name of the virtual node, which must be unique within the service mesh and is used to identify the virtual node in App Mesh APIs and configuration. (AI-inferred)
     virtual_node_name: Any = None

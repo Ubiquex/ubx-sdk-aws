@@ -36,11 +36,13 @@ type AipromptConfig struct {
 	ModelId any
 	// The user-friendly name assigned to the AI prompt, which is used to identify and reference the prompt within the Amazon Wisdom service and its console. (AI-inferred)
 	Name any
+	// The tags assigned to this Wisdom AI Prompt. (AI-inferred)
 	Tags any
 	// Defines the prompt template settings for the AI prompt, allowing you to specify either a simple text prompt or a full prompt template with its corresponding type. (AI-inferred)
 	TemplateConfiguration any
 	// Defines whether the AI prompt uses a plain text template or a chat-based template, determining the expected configuration format for the prompt. (AI-inferred)
 	TemplateType any
+	// The type of this AI Prompt, e.g. answer generation, query reformulation, or case summarization. (AI-inferred)
 	Type any
 }
 
@@ -63,11 +65,13 @@ type AipromptAttrs struct {
 	ModifiedTimeSeconds any
 	// The user-friendly name assigned to the AI prompt, which is used to identify and reference the prompt within the Amazon Wisdom service and its console. (AI-inferred)
 	Name any
+	// The tags assigned to this Wisdom AI Prompt. (AI-inferred)
 	Tags any
 	// Defines the prompt template settings for the AI prompt, allowing you to specify either a simple text prompt or a full prompt template with its corresponding type. (AI-inferred)
 	TemplateConfiguration any
 	// Defines whether the AI prompt uses a plain text template or a chat-based template, determining the expected configuration format for the prompt. (AI-inferred)
 	TemplateType any
+	// The type of this AI Prompt, e.g. answer generation, query reformulation, or case summarization. (AI-inferred)
 	Type any
 }
 

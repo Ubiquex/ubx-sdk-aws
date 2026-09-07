@@ -25,6 +25,7 @@ type ClientVpnAuthorizationRuleAttrs struct {
 	ClientVpnEndpointId any
 	// A brief, optional description that identifies the purpose of the Client VPN authorization rule. (AI-inferred)
 	Description any
+	// The unique identifier of this Client VPN authorization rule. (AI-inferred)
 	Id any
 	// The CIDR block of the target network that this authorization rule grants access to for the specified clients or groups. (AI-inferred)
 	TargetNetworkCidr any

@@ -58,6 +58,7 @@ type ResiliencyPolicyConfig struct {
 	PolicyDescription any
 	// Name of Resiliency Policy.
 	PolicyName any
+	// The tags assigned to this Resilience Hub resiliency policy. (AI-inferred)
 	Tags any
 	// Resiliency Policy Tier.
 	Tier any
@@ -74,6 +75,7 @@ type ResiliencyPolicyAttrs struct {
 	PolicyDescription any
 	// Name of Resiliency Policy.
 	PolicyName any
+	// The tags assigned to this Resilience Hub resiliency policy. (AI-inferred)
 	Tags any
 	// Resiliency Policy Tier.
 	Tier any

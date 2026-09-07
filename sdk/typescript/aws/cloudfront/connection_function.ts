@@ -55,6 +55,7 @@ export interface ConnectionFunctionConfig {
 export interface ConnectionFunctionAttrs {
   /** A flag that determines whether to automatically publish the function to the ``LIVE`` stage when it’s created. To automatically publish to the ``LIVE`` stage, set this property to ``true``. */
   autoPublish: boolean;
+  /** The Amazon Resource Name (ARN) of this connection function. (AI-inferred) */
   connectionFunctionArn: string;
   /** The code for the connection function. */
   connectionFunctionCode: string;
@@ -64,12 +65,15 @@ export interface ConnectionFunctionAttrs {
   createdTime: string;
   /** Represents the current ETag version identifier of the CloudFront connection function, used for optimistic concurrency control during update/delete operations. (AI-inferred) */
   etag: string;
+  /** The unique identifier of this connection function. (AI-inferred) */
   id: string;
   /** The date and time when the CloudFront function was last modified, returned by the API and updated automatically whenever the function's code or configuration changes. (AI-inferred) */
   lastModifiedTime: string;
   /** The connection function name. */
   name: string;
+  /** The stage this connection function is published to. (AI-inferred) */
   stage: string;
+  /** The current status of this connection function. (AI-inferred) */
   status: string;
   /** A complex type that contains zero or more ``Tag`` elements. */
   tags: ConnectionFunction_Tags[];

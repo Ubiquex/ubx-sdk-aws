@@ -115,6 +115,7 @@ export interface ConfigurationSetEventDestinationAttrs {
   eventDestination: ConfigurationSetEventDestination_EventDestination;
   /** The name of the event destination, which uniquely identifies it within the Amazon Pinpoint email configuration set. (AI-inferred) */
   eventDestinationName: string;
+  /** The unique identifier of this Pinpoint email configuration set event destination. (AI-inferred) */
   id: string;
 }
 

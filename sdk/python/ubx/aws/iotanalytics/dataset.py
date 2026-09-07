@@ -366,6 +366,7 @@ class DatasetAttrs:
     content_delivery_rules: Any = None
     # The name to assign to the AWS IoT Analytics dataset; if not provided, CloudFormation generates a unique name. (AI-inferred)
     dataset_name: Any = None
+    # The unique identifier of this IoT Analytics dataset. (AI-inferred)
     id: Any = None
     # Defines the late data rules for the AWS IoT Analytics dataset, each specifying a delta-time configuration that determines when late-arriving data should trigger a dataset content update. (AI-inferred)
     late_data_rules: Any = None

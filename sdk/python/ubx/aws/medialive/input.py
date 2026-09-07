@@ -292,6 +292,7 @@ class InputConfig:
     name: Any = None
     # The ARN of the IAM role that AWS Elemental MediaLive assumes to access the input source, such as an S3 bucket for media files or an external pull endpoint. (AI-inferred)
     role_arn: Any = None
+    # The settings connecting this MediaLive input to a MediaConnect router input. (AI-inferred)
     router_settings: Any = None
     # Associates the MediaLive input with the specified SDI sources (physical serial digital interface video inputs) by their identifiers, used when the input type is set to SDI. (AI-inferred)
     sdi_sources: Any = None
@@ -330,6 +331,7 @@ class InputAttrs:
     name: Any = None
     # The ARN of the IAM role that AWS Elemental MediaLive assumes to access the input source, such as an S3 bucket for media files or an external pull endpoint. (AI-inferred)
     role_arn: Any = None
+    # The settings connecting this MediaLive input to a MediaConnect router input. (AI-inferred)
     router_settings: Any = None
     # Associates the MediaLive input with the specified SDI sources (physical serial digital interface video inputs) by their identifiers, used when the input type is set to SDI. (AI-inferred)
     sdi_sources: Any = None

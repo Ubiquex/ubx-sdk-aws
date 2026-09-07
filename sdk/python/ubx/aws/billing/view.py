@@ -84,6 +84,7 @@ class ViewConfig:
 class ViewAttrs:
     # The Amazon Resource Name (ARN) that uniquely identifies this AWS Billing billing view. (AI-inferred)
     arn: Any = None
+    # The type of this billing view. (AI-inferred)
     billing_view_type: Any = None
     # The time when the billing view was created.
     created_at: Any = None

@@ -59,6 +59,7 @@ var CodeSecurityScanConfiguration_ScopeSettingsFields = ubx.FieldMap{
 type CodeSecurityScanConfigurationConfig struct {
 	// Configuration is an object that specifies how Inspector v2 performs code security scans, including the scan mode (continuous or on a schedule) and any associated scheduling details such as daily start time. (AI-inferred)
 	Configuration any
+	// The severity level this code security scan configuration reports findings at. (AI-inferred)
 	Level any
 	// Code Security Scan Configuration name
 	Name any
@@ -73,6 +74,7 @@ type CodeSecurityScanConfigurationAttrs struct {
 	Arn any
 	// Configuration is an object that specifies how Inspector v2 performs code security scans, including the scan mode (continuous or on a schedule) and any associated scheduling details such as daily start time. (AI-inferred)
 	Configuration any
+	// The severity level this code security scan configuration reports findings at. (AI-inferred)
 	Level any
 	// Code Security Scan Configuration name
 	Name any

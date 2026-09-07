@@ -8,6 +8,7 @@ export interface Communications_Communications_AttachmentSet {
 
 export interface Communications_Communications {
   attachmentSet?: Communications_Communications_AttachmentSet[] | Computed<Communications_Communications_AttachmentSet[]>;
+  attachments?: Communications_Communications_AttachmentSet[] | Computed<Communications_Communications_AttachmentSet[]>;
   body?: string | Computed<string>;
   caseId?: string | Computed<string>;
   submittedBy?: string | Computed<string>;
@@ -18,6 +19,7 @@ export interface CommunicationsConfig {
   afterTime?: string | Computed<string>;
   beforeTime?: string | Computed<string>;
   caseId: string | Computed<string>;
+  dryRun?: boolean | Computed<boolean>;
   maxResults?: number | Computed<number>;
   nextToken?: string | Computed<string>;
 }
@@ -27,6 +29,7 @@ export interface CommunicationsAttrs {
   beforeTime: string;
   caseId: string;
   communications: Communications_Communications[];
+  dryRun: boolean;
   maxResults: number;
   nextToken: string;
 }
@@ -37,6 +40,7 @@ export const Communications: DataSourceBinding<CommunicationsConfig, Communicati
     afterTime: "after_time",
     beforeTime: "before_time",
     caseId: "case_id",
+    dryRun: "dry_run",
     maxResults: "max_results",
     nextToken: "next_token",
   },

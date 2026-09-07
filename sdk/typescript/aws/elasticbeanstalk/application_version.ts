@@ -27,6 +27,7 @@ export interface ApplicationVersionAttrs {
   applicationName: string;
   /** A description of this application version. */
   description: string;
+  /** The unique identifier of this Elastic Beanstalk application version. (AI-inferred) */
   id: string;
   /** The source_bundle specifies the Amazon S3 bucket and key where the application version source bundle is located. (AI-inferred) */
   sourceBundle: ApplicationVersion_SourceBundle;

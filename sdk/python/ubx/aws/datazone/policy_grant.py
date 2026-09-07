@@ -249,6 +249,7 @@ _PolicyGrant_PrincipalFields = {
 
 @dataclasses.dataclass
 class PolicyGrantConfig:
+    # The details of this policy grant, specific to its own policy type. (AI-inferred)
     detail: Any = None
     # The identifier of the Amazon DataZone domain where the policy grant is created. (AI-inferred)
     domain_identifier: Any = None
@@ -267,6 +268,7 @@ class PolicyGrantAttrs:
     created_at: Any = None
     # Specifies the user who created the policy grant member.
     created_by: Any = None
+    # The details of this policy grant, specific to its own policy type. (AI-inferred)
     detail: Any = None
     # The identifier of the Amazon DataZone domain where the policy grant is created. (AI-inferred)
     domain_identifier: Any = None

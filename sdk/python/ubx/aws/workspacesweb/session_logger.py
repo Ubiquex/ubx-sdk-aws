@@ -66,11 +66,14 @@ _SessionLogger_TagsFields = {
 class SessionLoggerConfig:
     # A map of key-value pairs that serve as additional encryption context for the KMS key used to encrypt session log data, providing extra authenticated data to the encryption/decryption process. (AI-inferred)
     additional_encryption_context: Any = None
+    # The customer managed AWS KMS key used to encrypt this session logger's own data. (AI-inferred)
     customer_managed_key: Any = None
     # Specifies the display name for the session logger, providing a human-readable identifier for this logging configuration in the AWS Management Console and CloudFormation stacks. (AI-inferred)
     display_name: Any = None
+    # The filter that specifies which session events this session logger monitors. (AI-inferred)
     event_filter: Any = None
     log_configuration: Any = None
+    # The tags assigned to this session logger. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -81,13 +84,16 @@ class SessionLoggerAttrs:
     associated_portal_arns: Any = None
     # The date and time when the WorkSpaces Web session logger configuration was created, returned as an ISO 8601 formatted string. (AI-inferred)
     creation_date: Any = None
+    # The customer managed AWS KMS key used to encrypt this session logger's own data. (AI-inferred)
     customer_managed_key: Any = None
     # Specifies the display name for the session logger, providing a human-readable identifier for this logging configuration in the AWS Management Console and CloudFormation stacks. (AI-inferred)
     display_name: Any = None
+    # The filter that specifies which session events this session logger monitors. (AI-inferred)
     event_filter: Any = None
     log_configuration: Any = None
     # The Amazon Resource Name (ARN) that uniquely identifies this WorkSpaces Web session logger and is used to attach the logger to a WorkSpaces Web portal for session logging. (AI-inferred)
     session_logger_arn: Any = None
+    # The tags assigned to this session logger. (AI-inferred)
     tags: Any = None
 
 SessionLogger = ubx.ResourceBinding(

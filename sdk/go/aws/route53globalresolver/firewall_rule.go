@@ -20,7 +20,9 @@ type FirewallRuleConfig struct {
 	ConfidenceThreshold any
 	// Provides an optional description for the Route 53 Resolver firewall rule, used to annotate the rule with its purpose or notes. (AI-inferred)
 	Description any
+	// The advanced DNS threat protection type (e.g. DGA, DNS tunneling, dictionary DGA) this firewall rule detects and acts on, based on known threat signatures. (AI-inferred)
 	DnsAdvancedProtection any
+	// A reference to the DNS view this firewall rule is evaluated against. (AI-inferred)
 	DnsViewId any
 	// The unique ID of the firewall domain list that defines the set of domains this resolver firewall rule applies to, associating the rule with that list. (AI-inferred)
 	FirewallDomainListId any
@@ -51,7 +53,9 @@ type FirewallRuleAttrs struct {
 	CreatedAt any
 	// Provides an optional description for the Route 53 Resolver firewall rule, used to annotate the rule with its purpose or notes. (AI-inferred)
 	Description any
+	// The advanced DNS threat protection type (e.g. DGA, DNS tunneling, dictionary DGA) this firewall rule detects and acts on, based on known threat signatures. (AI-inferred)
 	DnsAdvancedProtection any
+	// A reference to the DNS view this firewall rule is evaluated against. (AI-inferred)
 	DnsViewId any
 	// The unique ID of the firewall domain list that defines the set of domains this resolver firewall rule applies to, associating the rule with that list. (AI-inferred)
 	FirewallDomainListId any
@@ -65,6 +69,7 @@ type FirewallRuleAttrs struct {
 	Qtype any
 	// The DNS query type (e.g., A, AAAA, CNAME, MX, etc.) that this firewall rule evaluates, where an empty value means the rule applies to all query types. (AI-inferred)
 	QueryType any
+	// The current status of this firewall rule. (AI-inferred)
 	Status any
 	// A timestamp that indicates when the firewall rule was last updated. (AI-inferred)
 	UpdatedAt any

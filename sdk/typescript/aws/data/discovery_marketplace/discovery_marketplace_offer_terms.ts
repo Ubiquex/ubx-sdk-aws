@@ -107,6 +107,45 @@ export interface DiscoveryMarketplaceOfferTerms_OfferTerms_RecurringPaymentTerm 
   type?: string | Computed<string>;
 }
 
+export interface DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_PriceIncrease_FixedPercentage {
+  percentageValue?: string | Computed<string>;
+}
+
+export interface DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_PriceIncrease_PercentageRange {
+  defaultValue?: string | Computed<string>;
+  maximumValue?: string | Computed<string>;
+  minimumValue?: string | Computed<string>;
+}
+
+export interface DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_PriceIncrease {
+  fixedPercentage?: DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_PriceIncrease_FixedPercentage | Computed<DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_PriceIncrease_FixedPercentage>;
+  percentageRange?: DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_PriceIncrease_PercentageRange | Computed<DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_PriceIncrease_PercentageRange>;
+}
+
+export interface DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate_Schedule {
+  chargeDateOffset?: string | Computed<string>;
+  chargePercentage?: string | Computed<string>;
+  dayOfMonth?: number | Computed<number>;
+}
+
+export interface DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate {
+  schedule?: DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate_Schedule[] | Computed<DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate_Schedule[]>;
+}
+
+export interface DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_TermTemplates {
+  paymentScheduleTermTemplate?: DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate | Computed<DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate>;
+}
+
+export interface DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm {
+  adjustmentDeadline?: string | Computed<string>;
+  id?: string | Computed<string>;
+  lockoutPeriod?: string | Computed<string>;
+  maxRenewals?: number | Computed<number>;
+  priceIncrease?: DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_PriceIncrease | Computed<DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_PriceIncrease>;
+  termTemplates?: DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_TermTemplates[] | Computed<DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_TermTemplates[]>;
+  type?: string | Computed<string>;
+}
+
 export interface DiscoveryMarketplaceOfferTerms_OfferTerms_SupportTerm {
   id?: string | Computed<string>;
   refundPolicy?: string | Computed<string>;
@@ -148,7 +187,7 @@ export interface DiscoveryMarketplaceOfferTerms_OfferTerms {
   netPaymentTerm?: DiscoveryMarketplaceOfferTerms_OfferTerms_NetPaymentTerm | Computed<DiscoveryMarketplaceOfferTerms_OfferTerms_NetPaymentTerm>;
   paymentScheduleTerm?: DiscoveryMarketplaceOfferTerms_OfferTerms_PaymentScheduleTerm | Computed<DiscoveryMarketplaceOfferTerms_OfferTerms_PaymentScheduleTerm>;
   recurringPaymentTerm?: DiscoveryMarketplaceOfferTerms_OfferTerms_RecurringPaymentTerm | Computed<DiscoveryMarketplaceOfferTerms_OfferTerms_RecurringPaymentTerm>;
-  renewalTerm?: DiscoveryMarketplaceOfferTerms_OfferTerms_ByolPricingTerm | Computed<DiscoveryMarketplaceOfferTerms_OfferTerms_ByolPricingTerm>;
+  renewalTerm?: DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm | Computed<DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm>;
   supportTerm?: DiscoveryMarketplaceOfferTerms_OfferTerms_SupportTerm | Computed<DiscoveryMarketplaceOfferTerms_OfferTerms_SupportTerm>;
   usageBasedPricingTerm?: DiscoveryMarketplaceOfferTerms_OfferTerms_UsageBasedPricingTerm | Computed<DiscoveryMarketplaceOfferTerms_OfferTerms_UsageBasedPricingTerm>;
   validityTerm?: DiscoveryMarketplaceOfferTerms_OfferTerms_ValidityTerm | Computed<DiscoveryMarketplaceOfferTerms_OfferTerms_ValidityTerm>;

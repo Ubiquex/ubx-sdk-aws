@@ -187,28 +187,39 @@ export interface EnvironmentConfig {
   hosts?: Environment_Hosts[] | Computed<Environment_Hosts[]>;
   /** The initial Vlan configuration only required upon creation. Modification after creation will have no effect */
   initialVlans?: Environment_InitialVlans | Computed<Environment_InitialVlans>;
+  /** The AWS KMS key AWS Secrets Manager uses to encrypt this environment's own stored VCF credentials. (AI-inferred) */
   kmsKeyId?: string | Computed<string>;
   /** The license information for an EVS environment */
   licenseInfo?: Environment_LicenseInfo | Computed<Environment_LicenseInfo>;
+  /** The security groups that allow traffic between the Amazon EVS control plane and this environment's own VPC for service access. (AI-inferred) */
   serviceAccessSecurityGroups?: Environment_ServiceAccessSecurityGroups | Computed<Environment_ServiceAccessSecurityGroups>;
+  /** A reference to the subnet Amazon EVS uses to establish connectivity between its control plane and this environment's own VPC. (AI-inferred) */
   serviceAccessSubnetId: string | Computed<string>;
+  /** The Broadcom Site ID associated with this environment, used to meet Broadcom VCF license usage reporting requirements. (AI-inferred) */
   siteId?: string | Computed<string>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: Environment_Tags[] | Computed<Environment_Tags[]>;
+  /** Whether the customer has confirmed they hold and will maintain the required VCF software licenses covering all physical processor cores in this environment. (AI-inferred) */
   termsAccepted: boolean | Computed<boolean>;
+  /** The DNS hostnames used by the VCF management appliances (vCenter Server, NSX, SDDC Manager) in this environment. (AI-inferred) */
   vcfHostnames?: Environment_VcfHostnames | Computed<Environment_VcfHostnames>;
+  /** The VCF version this environment runs. (AI-inferred) */
   vcfVersion: string | Computed<string>;
+  /** A reference to the VPC this environment is deployed in. (AI-inferred) */
   vpcId: string | Computed<string>;
 }
 
 export interface EnvironmentAttrs {
+  /** The results of the health and licensing checks Amazon EVS runs against this environment, e.g. key reuse, key coverage, reachability, and host count. (AI-inferred) */
   checks: Environment_Checks[];
   connectivityInfo: Environment_ConnectivityInfo;
   /** This read-only string contains the ISO 8601 timestamp of when the EVS environment was created. (AI-inferred) */
   createdAt: string;
+  /** References to the AWS Secrets Manager secrets holding the VCF credentials (vCenter Server, NSX, SDDC Manager) Amazon EVS created for this environment. (AI-inferred) */
   credentials: Environment_Credentials[];
   /** The Amazon Resource Name (ARN) that uniquely identifies this EVS environment, assigned by AWS when the environment is created. (AI-inferred) */
   environmentArn: string;
+  /** The unique identifier of this environment. (AI-inferred) */
   environmentId: string;
   /** The name of an EVS environment */
   environmentName: string;
@@ -218,20 +229,29 @@ export interface EnvironmentAttrs {
   hosts: Environment_Hosts[];
   /** The initial Vlan configuration only required upon creation. Modification after creation will have no effect */
   initialVlans: Environment_InitialVlans;
+  /** The AWS KMS key AWS Secrets Manager uses to encrypt this environment's own stored VCF credentials. (AI-inferred) */
   kmsKeyId: string;
   /** The license information for an EVS environment */
   licenseInfo: Environment_LicenseInfo;
+  /** The date and time when this environment was last modified. (AI-inferred) */
   modifiedAt: string;
+  /** The security groups that allow traffic between the Amazon EVS control plane and this environment's own VPC for service access. (AI-inferred) */
   serviceAccessSecurityGroups: Environment_ServiceAccessSecurityGroups;
+  /** A reference to the subnet Amazon EVS uses to establish connectivity between its control plane and this environment's own VPC. (AI-inferred) */
   serviceAccessSubnetId: string;
+  /** The Broadcom Site ID associated with this environment, used to meet Broadcom VCF license usage reporting requirements. (AI-inferred) */
   siteId: string;
   /** A read-only string that provides supplementary details about the current state of the AWS EVS environment, including error messages if the environment is not in a healthy state. (AI-inferred) */
   stateDetails: string;
   /** An array of key-value pairs to apply to this resource. */
   tags: Environment_Tags[];
+  /** Whether the customer has confirmed they hold and will maintain the required VCF software licenses covering all physical processor cores in this environment. (AI-inferred) */
   termsAccepted: boolean;
+  /** The DNS hostnames used by the VCF management appliances (vCenter Server, NSX, SDDC Manager) in this environment. (AI-inferred) */
   vcfHostnames: Environment_VcfHostnames;
+  /** The VCF version this environment runs. (AI-inferred) */
   vcfVersion: string;
+  /** A reference to the VPC this environment is deployed in. (AI-inferred) */
   vpcId: string;
 }
 

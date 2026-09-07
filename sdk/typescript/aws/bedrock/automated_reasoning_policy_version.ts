@@ -16,6 +16,7 @@ export interface AutomatedReasoningPolicyVersionConfig {
   lastUpdatedDefinitionHash?: string | Computed<string>;
   /** Arn of the policy */
   policyArn: string | Computed<string>;
+  /** The tags assigned to this automated reasoning policy version. (AI-inferred) */
   tags?: AutomatedReasoningPolicyVersion_Tags[] | Computed<AutomatedReasoningPolicyVersion_Tags[]>;
 }
 
@@ -34,6 +35,7 @@ export interface AutomatedReasoningPolicyVersionAttrs {
   policyArn: string;
   /** The id of the associated policy */
   policyId: string;
+  /** The tags assigned to this automated reasoning policy version. (AI-inferred) */
   tags: AutomatedReasoningPolicyVersion_Tags[];
   /** Time this policy was last updated */
   updatedAt: string;

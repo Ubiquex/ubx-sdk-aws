@@ -64,6 +64,7 @@ type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_Es
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_FranceAdditionalInfo struct {
+	EInvoiceRoutingCode any
 	SirenNumber any
 }
 
@@ -102,6 +103,10 @@ type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_Ma
 	BusinessRegistrationNumber any
 	ServiceTaxCodes any
 	TaxInformationNumber any
+}
+
+type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_MonacoAdditionalInfo struct {
+	BusinessNumber any
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_PhilippinesAdditionalInfo struct {
@@ -167,6 +172,7 @@ type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation st
 	ItalyAdditionalInfo any
 	KenyaAdditionalInfo any
 	MalaysiaAdditionalInfo any
+	MonacoAdditionalInfo any
 	PhilippinesAdditionalInfo any
 	PolandAdditionalInfo any
 	RomaniaAdditionalInfo any

@@ -95,6 +95,7 @@ type CapacityReservationAttrs struct {
 	CommitmentInfo any
 	// The date and time at which the Capacity Reservation was created. (AI-inferred)
 	CreateDate any
+	// How this capacity reservation's own reserved capacity is delivered, e.g. all at once or incrementally. (AI-inferred)
 	DeliveryPreference any
 	// Indicates whether the capacity reservation is EBS-optimized, which provides dedicated throughput for Amazon EBS I/O. (AI-inferred)
 	EbsOptimized any

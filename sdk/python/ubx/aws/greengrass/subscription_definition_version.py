@@ -33,6 +33,7 @@ class SubscriptionDefinitionVersionConfig:
 
 @dataclasses.dataclass
 class SubscriptionDefinitionVersionAttrs:
+    # The unique identifier of this Greengrass subscription definition version. (AI-inferred)
     id: Any = None
     # The ID of the Greengrass subscription definition that this subscription definition version belongs to. (AI-inferred)
     subscription_definition_id: Any = None

@@ -39,6 +39,7 @@ class BrowserSettingsConfig:
     browser_policy: Any = None
     # The ARN of a customer-managed KMS key used to encrypt the browser settings, with AWS-managed encryption applied when this optional field is left empty. (AI-inferred)
     customer_managed_key: Any = None
+    # The tags assigned to these browser settings. (AI-inferred)
     tags: Any = None
     # Specifies the web content filtering policy for WorkSpaces Web browser settings, defining rules that allow or block web content by category (such as adult content, social media, or advertising) in browser sessions. (AI-inferred)
     web_content_filtering_policy: Any = None
@@ -55,6 +56,7 @@ class BrowserSettingsAttrs:
     browser_settings_arn: Any = None
     # The ARN of a customer-managed KMS key used to encrypt the browser settings, with AWS-managed encryption applied when this optional field is left empty. (AI-inferred)
     customer_managed_key: Any = None
+    # The tags assigned to these browser settings. (AI-inferred)
     tags: Any = None
     # Specifies the web content filtering policy for WorkSpaces Web browser settings, defining rules that allow or block web content by category (such as adult content, social media, or advertising) in browser sessions. (AI-inferred)
     web_content_filtering_policy: Any = None

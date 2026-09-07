@@ -2,21 +2,32 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TermsConfig {
+  /** The ID of the app client these terms documents are assigned to. (AI-inferred) */
   clientId?: string | Computed<string>;
+  /** Reserved for future use by Amazon Cognito; currently accepts only one value. (AI-inferred) */
   enforcement: string | Computed<string>;
+  /** The map of localized language to URL for these terms documents, so users see the terms document matching their own current language. (AI-inferred) */
   links: unknown | Computed<unknown>;
+  /** The type and friendly name of these terms documents, terms-of-use or privacy-policy. (AI-inferred) */
   termsName: string | Computed<string>;
+  /** Reserved for future use by Amazon Cognito; currently accepts only one value. (AI-inferred) */
   termsSource: string | Computed<string>;
   /** The unique identifier of the Amazon Cognito user pool to which these terms are associated. (AI-inferred) */
   userPoolId: string | Computed<string>;
 }
 
 export interface TermsAttrs {
+  /** The ID of the app client these terms documents are assigned to. (AI-inferred) */
   clientId: string;
+  /** Reserved for future use by Amazon Cognito; currently accepts only one value. (AI-inferred) */
   enforcement: string;
+  /** The map of localized language to URL for these terms documents, so users see the terms document matching their own current language. (AI-inferred) */
   links: unknown;
+  /** The unique identifier of these terms documents. (AI-inferred) */
   termsId: string;
+  /** The type and friendly name of these terms documents, terms-of-use or privacy-policy. (AI-inferred) */
   termsName: string;
+  /** Reserved for future use by Amazon Cognito; currently accepts only one value. (AI-inferred) */
   termsSource: string;
   /** The unique identifier of the Amazon Cognito user pool to which these terms are associated. (AI-inferred) */
   userPoolId: string;

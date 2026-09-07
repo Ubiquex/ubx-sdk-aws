@@ -59,31 +59,40 @@ var DataTableAttribute_ValidationFields = ubx.FieldMap{
 type DataTableAttributeConfig struct {
 	// The Amazon Resource Name (ARN) of the data table to which this attribute is attached. (AI-inferred)
 	DataTableArn any
+	// The description explaining the purpose and usage of this attribute. (AI-inferred)
 	Description any
 	// The Amazon Resource Name (ARN) of the Amazon Connect instance that contains the data table to which this attribute belongs. (AI-inferred)
 	InstanceArn any
+	// The human-readable name of this attribute, unique within its own data table. (AI-inferred)
 	Name any
 	// Boolean flag indicating whether this attribute serves as the primary key for the Amazon Connect data table, uniquely identifying each row. (AI-inferred)
 	Primary any
+	// The validation rules applied to values of this attribute. (AI-inferred)
 	Validation any
 	// Specifies the data type of the attribute value (e.g., string, number, boolean) in an Amazon Connect data table, controlling how the value is stored and used in contact flows. (AI-inferred)
 	ValueType any
 }
 
 type DataTableAttributeAttrs struct {
+	// The unique identifier of this attribute within its own data table. (AI-inferred)
 	AttributeId any
 	// The Amazon Resource Name (ARN) of the data table to which this attribute is attached. (AI-inferred)
 	DataTableArn any
+	// The description explaining the purpose and usage of this attribute. (AI-inferred)
 	Description any
 	// The Amazon Resource Name (ARN) of the Amazon Connect instance that contains the data table to which this attribute belongs. (AI-inferred)
 	InstanceArn any
 	// The AWS Region where the data table attribute was last updated or modified. (AI-inferred)
 	LastModifiedRegion any
+	// The date and time when this attribute was last modified. (AI-inferred)
 	LastModifiedTime any
+	// The version number used to detect and prevent concurrent modification conflicts on this attribute. (AI-inferred)
 	LockVersion any
+	// The human-readable name of this attribute, unique within its own data table. (AI-inferred)
 	Name any
 	// Boolean flag indicating whether this attribute serves as the primary key for the Amazon Connect data table, uniquely identifying each row. (AI-inferred)
 	Primary any
+	// The validation rules applied to values of this attribute. (AI-inferred)
 	Validation any
 	// Specifies the data type of the attribute value (e.g., string, number, boolean) in an Amazon Connect data table, controlling how the value is stored and used in contact flows. (AI-inferred)
 	ValueType any

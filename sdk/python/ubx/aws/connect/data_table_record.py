@@ -40,6 +40,7 @@ _DataTableRecord_DataTableRecordFields = {
 
 @dataclasses.dataclass
 class DataTableRecordConfig:
+    # The Amazon Resource Name (ARN) of the data table this record belongs to. (AI-inferred)
     data_table_arn: Any = None
     # The 'data_table_record' object holds the key-value pairs (column names to values) that constitute the record to be inserted into the specified Amazon Connect data table. (AI-inferred)
     data_table_record: Any = None
@@ -48,6 +49,7 @@ class DataTableRecordConfig:
 
 @dataclasses.dataclass
 class DataTableRecordAttrs:
+    # The Amazon Resource Name (ARN) of the data table this record belongs to. (AI-inferred)
     data_table_arn: Any = None
     # The 'data_table_record' object holds the key-value pairs (column names to values) that constitute the record to be inserted into the specified Amazon Connect data table. (AI-inferred)
     data_table_record: Any = None

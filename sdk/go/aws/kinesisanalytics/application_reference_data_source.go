@@ -146,6 +146,7 @@ type ApplicationReferenceDataSourceConfig struct {
 type ApplicationReferenceDataSourceAttrs struct {
 	// The name of the Kinesis Analytics application to which this reference data source is associated. (AI-inferred)
 	ApplicationName any
+	// The unique identifier of this Kinesis Analytics application reference data source. (AI-inferred)
 	Id any
 	// The reference_data_source field defines the reference data source for the Kinesis Analytics application, including the table name, the S3 location of the reference data, and the reference schema that maps it to the application's input. (AI-inferred)
 	ReferenceDataSource any

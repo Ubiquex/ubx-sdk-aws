@@ -18,6 +18,7 @@ export interface AccessLogSubscriptionConfig {
   destinationArn: string | Computed<string>;
   /** Specifies the ID or ARN of the service network or service that the access log subscription is associated with, determining which resource's access logs are delivered to the destination. (AI-inferred) */
   resourceIdentifier?: string | Computed<string>;
+  /** The log type (service or resource) this access log subscription's own service network emits. (AI-inferred) */
   serviceNetworkLogType?: string | Computed<string>;
   /** A list of tag objects (Key and Value) to attach to the VPC Lattice access log subscription, used for organization, cost tracking, and resource management. (AI-inferred) */
   tags?: AccessLogSubscription_Tags[] | Computed<AccessLogSubscription_Tags[]>;
@@ -36,6 +37,7 @@ export interface AccessLogSubscriptionAttrs {
   resourceId: string;
   /** Specifies the ID or ARN of the service network or service that the access log subscription is associated with, determining which resource's access logs are delivered to the destination. (AI-inferred) */
   resourceIdentifier: string;
+  /** The log type (service or resource) this access log subscription's own service network emits. (AI-inferred) */
   serviceNetworkLogType: string;
   /** A list of tag objects (Key and Value) to attach to the VPC Lattice access log subscription, used for organization, cost tracking, and resource management. (AI-inferred) */
   tags: AccessLogSubscription_Tags[];

@@ -15,11 +15,13 @@ type Services_Services struct {
 }
 
 type ServicesConfig struct {
+	DryRun any
 	Language any
 	ServiceCodeList any
 }
 
 type ServicesAttrs struct {
+	DryRun any
 	Language any
 	ServiceCodeList any
 	Services any
@@ -28,6 +30,7 @@ type ServicesAttrs struct {
 var Services = ubx.DataSourceBinding{
 	WireType: "aws_support_services",
 	Fields: ubx.FieldMap{
+		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Language": ubx.FieldSpec{WireName: "language"},
 		"ServiceCodeList": ubx.FieldSpec{WireName: "service_code_list"},
 	},

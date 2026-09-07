@@ -288,6 +288,7 @@ type InputConfig struct {
 	Name any
 	// The ARN of the IAM role that AWS Elemental MediaLive assumes to access the input source, such as an S3 bucket for media files or an external pull endpoint. (AI-inferred)
 	RoleArn any
+	// The settings connecting this MediaLive input to a MediaConnect router input. (AI-inferred)
 	RouterSettings any
 	// Associates the MediaLive input with the specified SDI sources (physical serial digital interface video inputs) by their identifiers, used when the input type is set to SDI. (AI-inferred)
 	SdiSources any
@@ -326,6 +327,7 @@ type InputAttrs struct {
 	Name any
 	// The ARN of the IAM role that AWS Elemental MediaLive assumes to access the input source, such as an S3 bucket for media files or an external pull endpoint. (AI-inferred)
 	RoleArn any
+	// The settings connecting this MediaLive input to a MediaConnect router input. (AI-inferred)
 	RouterSettings any
 	// Associates the MediaLive input with the specified SDI sources (physical serial digital interface video inputs) by their identifiers, used when the input type is set to SDI. (AI-inferred)
 	SdiSources any

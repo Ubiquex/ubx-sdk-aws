@@ -81,7 +81,9 @@ _InboundExternalLink_TagsFields = {
 
 @dataclasses.dataclass
 class InboundExternalLinkConfig:
+    # A reference to the RTB Fabric gateway this inbound external link connects an outside bid requester to. (AI-inferred)
     gateway_id: Any = None
+    # Attributes controlling how this inbound external link behaves. (AI-inferred)
     link_attributes: Any = None
     # Specifies the logging configuration for the inbound external link, including the destination where log records are delivered and the level of detail captured for link activity. (AI-inferred)
     link_log_settings: Any = None
@@ -90,11 +92,17 @@ class InboundExternalLinkConfig:
 
 @dataclasses.dataclass
 class InboundExternalLinkAttrs:
+    # The Amazon Resource Name (ARN) of this inbound external link. (AI-inferred)
     arn: Any = None
+    # The date and time when this inbound external link was created. (AI-inferred)
     created_timestamp: Any = None
+    # The domain name external bid requesters use to reach this inbound external link. (AI-inferred)
     domain_name: Any = None
+    # A reference to the RTB Fabric gateway this inbound external link connects an outside bid requester to. (AI-inferred)
     gateway_id: Any = None
+    # Attributes controlling how this inbound external link behaves. (AI-inferred)
     link_attributes: Any = None
+    # The unique identifier of this inbound external link. (AI-inferred)
     link_id: Any = None
     # Specifies the logging configuration for the inbound external link, including the destination where log records are delivered and the level of detail captured for link activity. (AI-inferred)
     link_log_settings: Any = None

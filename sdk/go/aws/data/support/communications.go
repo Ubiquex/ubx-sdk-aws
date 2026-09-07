@@ -10,6 +10,7 @@ type Communications_Communications_AttachmentSet struct {
 
 type Communications_Communications struct {
 	AttachmentSet any
+	Attachments any
 	Body any
 	CaseId any
 	SubmittedBy any
@@ -20,6 +21,7 @@ type CommunicationsConfig struct {
 	AfterTime any
 	BeforeTime any
 	CaseId any
+	DryRun any
 	MaxResults any
 	NextToken any
 }
@@ -29,6 +31,7 @@ type CommunicationsAttrs struct {
 	BeforeTime any
 	CaseId any
 	Communications any
+	DryRun any
 	MaxResults any
 	NextToken any
 }
@@ -39,6 +42,7 @@ var Communications = ubx.DataSourceBinding{
 		"AfterTime": ubx.FieldSpec{WireName: "after_time"},
 		"BeforeTime": ubx.FieldSpec{WireName: "before_time"},
 		"CaseId": ubx.FieldSpec{WireName: "case_id"},
+		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},

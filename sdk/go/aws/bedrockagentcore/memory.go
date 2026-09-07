@@ -307,6 +307,7 @@ type MemoryConfig struct {
 	MemoryExecutionRoleArn any
 	// Name of the Memory resource
 	Name any
+	// The real resource(s) memory events are streamed to as they occur. (AI-inferred)
 	StreamDeliveryResources any
 	// A map of tag keys and values
 	Tags any
@@ -337,6 +338,7 @@ type MemoryAttrs struct {
 	Name any
 	// Status of the Memory resource
 	Status any
+	// The real resource(s) memory events are streamed to as they occur. (AI-inferred)
 	StreamDeliveryResources any
 	// A map of tag keys and values
 	Tags any

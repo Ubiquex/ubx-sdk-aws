@@ -109,6 +109,45 @@ type DiscoveryMarketplaceOfferTerms_OfferTerms_RecurringPaymentTerm struct {
 	Type any
 }
 
+type DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_PriceIncrease_FixedPercentage struct {
+	PercentageValue any
+}
+
+type DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_PriceIncrease_PercentageRange struct {
+	DefaultValue any
+	MaximumValue any
+	MinimumValue any
+}
+
+type DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_PriceIncrease struct {
+	FixedPercentage any
+	PercentageRange any
+}
+
+type DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate_Schedule struct {
+	ChargeDateOffset any
+	ChargePercentage any
+	DayOfMonth any
+}
+
+type DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate struct {
+	Schedule any
+}
+
+type DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_TermTemplates struct {
+	PaymentScheduleTermTemplate any
+}
+
+type DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm struct {
+	AdjustmentDeadline any
+	Id any
+	LockoutPeriod any
+	MaxRenewals any
+	PriceIncrease any
+	TermTemplates any
+	Type any
+}
+
 type DiscoveryMarketplaceOfferTerms_OfferTerms_SupportTerm struct {
 	Id any
 	RefundPolicy any

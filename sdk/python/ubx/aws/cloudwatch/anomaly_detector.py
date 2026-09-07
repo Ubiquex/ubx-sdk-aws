@@ -190,6 +190,7 @@ class AnomalyDetectorAttrs:
     configuration: Any = None
     # A list of dimension key-value pairs that scope the anomaly detector to a specific metric, such as an instance ID or environment, and when omitted the detector applies to the metric without any dimensions. (AI-inferred)
     dimensions: Any = None
+    # The unique identifier of this CloudWatch anomaly detector. (AI-inferred)
     id: Any = None
     # The metric_characteristics object specifies the period (in seconds) and timezone (e.g., 'UTC') used by the CloudWatch anomaly detector for evaluating the metric data. (AI-inferred)
     metric_characteristics: Any = None

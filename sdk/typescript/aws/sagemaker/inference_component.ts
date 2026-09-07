@@ -36,6 +36,11 @@ export interface InferenceComponent_DeploymentConfig {
   rollingUpdatePolicy?: InferenceComponent_DeploymentConfig_RollingUpdatePolicy | Computed<InferenceComponent_DeploymentConfig_RollingUpdatePolicy>;
 }
 
+export interface InferenceComponent_RuntimeConfig_PlacementStatus {
+  currentCopyCount?: number | Computed<number>;
+  instanceType?: string | Computed<string>;
+}
+
 export interface InferenceComponent_RuntimeConfig {
   /** The number of copies for the inference component */
   copyCount?: number | Computed<number>;
@@ -43,6 +48,8 @@ export interface InferenceComponent_RuntimeConfig {
   currentCopyCount?: number | Computed<number>;
   /** The number of copies for the inference component */
   desiredCopyCount?: number | Computed<number>;
+  /** The placement status of the inference component across instance types */
+  placementStatus?: InferenceComponent_RuntimeConfig_PlacementStatus[] | Computed<InferenceComponent_RuntimeConfig_PlacementStatus[]>;
 }
 
 export interface InferenceComponent_Specification_ComputeResourceRequirements {
@@ -54,6 +61,15 @@ export interface InferenceComponent_Specification_ComputeResourceRequirements {
   numberOfAcceleratorDevicesRequired?: number | Computed<number>;
   /** The exact number of CPU cores that must be allocated to the inference component, used when a fixed compute resource allocation is specified rather than a range. (AI-inferred) */
   numberOfCpuCoresRequired?: number | Computed<number>;
+}
+
+export interface InferenceComponent_Specification_Container_ContainerMetricsConfig_MetricsEndpoints {
+  metricPublishFrequencyInSeconds?: number | Computed<number>;
+  metricsEndpointPath?: string | Computed<string>;
+}
+
+export interface InferenceComponent_Specification_Container_ContainerMetricsConfig {
+  metricsEndpoints: InferenceComponent_Specification_Container_ContainerMetricsConfig_MetricsEndpoints[] | Computed<InferenceComponent_Specification_Container_ContainerMetricsConfig_MetricsEndpoints[]>;
 }
 
 export interface InferenceComponent_Specification_Container_DeployedImage {
@@ -68,12 +84,31 @@ export interface InferenceComponent_Specification_Container_DeployedImage {
 export interface InferenceComponent_Specification_Container {
   /** The Amazon S3 URI where the model artifacts for this inference component container are stored. (AI-inferred) */
   artifactUrl?: string | Computed<string>;
+  /** The configuration for container metrics scraping */
+  containerMetricsConfig?: InferenceComponent_Specification_Container_ContainerMetricsConfig | Computed<InferenceComponent_Specification_Container_ContainerMetricsConfig>;
   /** The `deployed_image` object contains the resolved image URI and the resolution method that SageMaker actually used for the inference component's container after deployment, which may differ from the image originally specified. (AI-inferred) */
   deployedImage?: InferenceComponent_Specification_Container_DeployedImage | Computed<InferenceComponent_Specification_Container_DeployedImage>;
   /** Environment variables to specify on the container */
   environment?: unknown | Computed<unknown>;
   /** The image to use for the container that will be materialized for the inference component */
   image?: string | Computed<string>;
+}
+
+export interface InferenceComponent_Specification_CurrentDataCacheConfig {
+  /** Whether the endpoint caches the model artifacts and container image on each instance it provisions for the inference component */
+  enableCaching: boolean | Computed<boolean>;
+}
+
+export interface InferenceComponent_Specification_SchedulingConfig_AvailabilityZoneBalance {
+  enforcementMode: string | Computed<string>;
+  /** The maximum allowed difference in the number of inference component copies between any two Availability Zones */
+  maxImbalance?: number | Computed<number>;
+}
+
+export interface InferenceComponent_Specification_SchedulingConfig {
+  /** Configuration for balancing inference component copies across Availability Zones */
+  availabilityZoneBalance: InferenceComponent_Specification_SchedulingConfig_AvailabilityZoneBalance | Computed<InferenceComponent_Specification_SchedulingConfig_AvailabilityZoneBalance>;
+  placementStrategy: string | Computed<string>;
 }
 
 export interface InferenceComponent_Specification_StartupParameters {
@@ -90,9 +125,33 @@ export interface InferenceComponent_Specification {
   computeResourceRequirements?: InferenceComponent_Specification_ComputeResourceRequirements | Computed<InferenceComponent_Specification_ComputeResourceRequirements>;
   /** Specifies the container configuration for the SageMaker inference component, including the Docker image, model artifact URL, and environment variables. (AI-inferred) */
   container?: InferenceComponent_Specification_Container | Computed<InferenceComponent_Specification_Container>;
+  /** Settings that affect how the inference component caches data */
+  currentDataCacheConfig?: InferenceComponent_Specification_CurrentDataCacheConfig | Computed<InferenceComponent_Specification_CurrentDataCacheConfig>;
+  /** Settings that affect how the inference component caches data */
+  dataCacheConfig?: InferenceComponent_Specification_CurrentDataCacheConfig | Computed<InferenceComponent_Specification_CurrentDataCacheConfig>;
   /** The name of the model to use with the inference component */
   modelName?: string | Computed<string>;
+  /** The scheduling configuration that determines how inference component copies are placed across available instances */
+  schedulingConfig?: InferenceComponent_Specification_SchedulingConfig | Computed<InferenceComponent_Specification_SchedulingConfig>;
   /** Specifies startup parameters for the inference component's model container, including the model data download timeout and container startup health check timeout, used to control how the container is launched and validated before it begins serving inference traffic. (AI-inferred) */
+  startupParameters?: InferenceComponent_Specification_StartupParameters | Computed<InferenceComponent_Specification_StartupParameters>;
+}
+
+export interface InferenceComponent_Specifications_Container {
+  artifactUrl?: string | Computed<string>;
+  containerMetricsConfig?: InferenceComponent_Specification_Container_ContainerMetricsConfig | Computed<InferenceComponent_Specification_Container_ContainerMetricsConfig>;
+  environment?: unknown | Computed<unknown>;
+  image?: string | Computed<string>;
+}
+
+export interface InferenceComponent_Specifications {
+  computeResourceRequirements?: InferenceComponent_Specification_ComputeResourceRequirements | Computed<InferenceComponent_Specification_ComputeResourceRequirements>;
+  container?: InferenceComponent_Specifications_Container | Computed<InferenceComponent_Specifications_Container>;
+  currentDataCacheConfig?: InferenceComponent_Specification_CurrentDataCacheConfig | Computed<InferenceComponent_Specification_CurrentDataCacheConfig>;
+  dataCacheConfig?: InferenceComponent_Specification_CurrentDataCacheConfig | Computed<InferenceComponent_Specification_CurrentDataCacheConfig>;
+  instanceType?: string | Computed<string>;
+  modelName?: string | Computed<string>;
+  schedulingConfig?: InferenceComponent_Specification_SchedulingConfig | Computed<InferenceComponent_Specification_SchedulingConfig>;
   startupParameters?: InferenceComponent_Specification_StartupParameters | Computed<InferenceComponent_Specification_StartupParameters>;
 }
 
@@ -189,8 +248,10 @@ export interface InferenceComponentAttrs {
   lastModifiedTime: string;
   /** The runtime config for the inference component */
   runtimeConfig: InferenceComponent_RuntimeConfig;
-  /** The specification for the inference component */
+  /** The specification for the inference component, for an endpoint with a single instance type. Specify exactly one of Specification or Specifications. InstanceType is not accepted here; use Specifications for per instance type configuration. */
   specification: InferenceComponent_Specification;
+  /** A list of specification objects for the inference component, one per instance type. The service requires at least two entries; use the singular Specification for a single instance type. */
+  specifications: InferenceComponent_Specifications[];
   /** An array of tags to apply to the resource */
   tags: InferenceComponent_Tags[];
   /** The name of the endpoint variant the inference component is associated with */

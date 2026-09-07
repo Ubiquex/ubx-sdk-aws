@@ -12,6 +12,8 @@ class LimitsConfig:
 
 @dataclasses.dataclass
 class LimitsAttrs:
+    channel_count: Any = None
+    channel_count_limit: Any = None
     on_demand_stream_count: Any = None
     on_demand_stream_count_limit: Any = None
     open_shard_count: Any = None

@@ -184,6 +184,7 @@ export interface AnomalyDetectorAttrs {
   configuration: AnomalyDetector_Configuration;
   /** A list of dimension key-value pairs that scope the anomaly detector to a specific metric, such as an instance ID or environment, and when omitted the detector applies to the metric without any dimensions. (AI-inferred) */
   dimensions: AnomalyDetector_Dimensions[];
+  /** The unique identifier of this CloudWatch anomaly detector. (AI-inferred) */
   id: string;
   /** The metric_characteristics object specifies the period (in seconds) and timezone (e.g., 'UTC') used by the CloudWatch anomaly detector for evaluating the metric data. (AI-inferred) */
   metricCharacteristics: AnomalyDetector_MetricCharacteristics;

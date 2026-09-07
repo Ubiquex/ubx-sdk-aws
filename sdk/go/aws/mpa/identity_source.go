@@ -27,17 +27,25 @@ var IdentitySource_TagsFields = ubx.FieldMap{
 	}
 
 type IdentitySourceConfig struct {
+	// The tags assigned to this identity source. (AI-inferred)
 	Tags any
 }
 
 type IdentitySourceAttrs struct {
+	// The date and time when this identity source was created. (AI-inferred)
 	CreationTime any
+	// The Amazon Resource Name (ARN) of this identity source. (AI-inferred)
 	IdentitySourceArn any
 	IdentitySourceParameters any
+	// The type of resource (for example, an IAM Identity Center instance) that provides identities to this identity source. (AI-inferred)
 	IdentitySourceType any
+	// The current status of this identity source. (AI-inferred)
 	Status any
+	// The status code of this identity source. (AI-inferred)
 	StatusCode any
+	// A message describing this identity source's own current status. (AI-inferred)
 	StatusMessage any
+	// The tags assigned to this identity source. (AI-inferred)
 	Tags any
 }
 

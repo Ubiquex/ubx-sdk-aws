@@ -63,6 +63,7 @@ _CodeSecurityScanConfiguration_ScopeSettingsFields = {
 class CodeSecurityScanConfigurationConfig:
     # Configuration is an object that specifies how Inspector v2 performs code security scans, including the scan mode (continuous or on a schedule) and any associated scheduling details such as daily start time. (AI-inferred)
     configuration: Any = None
+    # The severity level this code security scan configuration reports findings at. (AI-inferred)
     level: Any = None
     # Code Security Scan Configuration name
     name: Any = None
@@ -77,6 +78,7 @@ class CodeSecurityScanConfigurationAttrs:
     arn: Any = None
     # Configuration is an object that specifies how Inspector v2 performs code security scans, including the scan mode (continuous or on a schedule) and any associated scheduling details such as daily start time. (AI-inferred)
     configuration: Any = None
+    # The severity level this code security scan configuration reports findings at. (AI-inferred)
     level: Any = None
     # Code Security Scan Configuration name
     name: Any = None

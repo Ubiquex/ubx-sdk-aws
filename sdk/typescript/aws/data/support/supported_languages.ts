@@ -9,12 +9,14 @@ export interface SupportedLanguages_SupportedLanguages {
 
 export interface SupportedLanguagesConfig {
   categoryCode: string | Computed<string>;
+  dryRun?: boolean | Computed<boolean>;
   issueType: string | Computed<string>;
   serviceCode: string | Computed<string>;
 }
 
 export interface SupportedLanguagesAttrs {
   categoryCode: string;
+  dryRun: boolean;
   issueType: string;
   serviceCode: string;
   supportedLanguages: SupportedLanguages_SupportedLanguages[];
@@ -24,6 +26,7 @@ export const SupportedLanguages: DataSourceBinding<SupportedLanguagesConfig, Sup
   wireType: "aws_support_supported_languages",
   fields: {
     categoryCode: "category_code",
+    dryRun: "dry_run",
     issueType: "issue_type",
     serviceCode: "service_code",
   },

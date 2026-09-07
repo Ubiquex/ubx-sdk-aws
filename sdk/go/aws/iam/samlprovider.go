@@ -32,6 +32,7 @@ type SamlproviderConfig struct {
 	AssertionEncryptionMode any
 	// The name of the SAML provider, which serves as the unique identifier in IAM and is appended to the provider ARN; if omitted, CloudFormation derives it from the resource's logical ID. (AI-inferred)
 	Name any
+	// The private keys associated with this SAML provider, used for signing SAML assertions. (AI-inferred)
 	PrivateKeyList any
 	// The Key ID of the private key to remove
 	RemovePrivateKey any
@@ -50,6 +51,7 @@ type SamlproviderAttrs struct {
 	AssertionEncryptionMode any
 	// The name of the SAML provider, which serves as the unique identifier in IAM and is appended to the provider ARN; if omitted, CloudFormation derives it from the resource's logical ID. (AI-inferred)
 	Name any
+	// The private keys associated with this SAML provider, used for signing SAML assertions. (AI-inferred)
 	PrivateKeyList any
 	// The Key ID of the private key to remove
 	RemovePrivateKey any

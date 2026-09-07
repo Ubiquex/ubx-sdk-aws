@@ -137,6 +137,7 @@ type CollaborationConfig struct {
 	AllowedResultRegions any
 	// Specifies the analytics engine for the collaboration, which must be either `CLEAN_ROOMS_SQL` (the default) or `SPARK`, and controls the query engine used by members of the collaboration. (AI-inferred)
 	AnalyticsEngine any
+	// The types of change requests that are automatically approved for this collaboration. (AI-inferred)
 	AutoApprovedChangeTypes any
 	// Specifies the display name of the member who creates the collaboration, which is visible to other members in the collaboration. (AI-inferred)
 	CreatorDisplayName any
@@ -152,6 +153,7 @@ type CollaborationConfig struct {
 	Description any
 	// Whether the collaboration collects metrics about query activity (such as query counts and latency), enabling you to monitor and analyze usage patterns. (AI-inferred)
 	IsMetricsEnabled any
+	// Whether job logging is enabled for this collaboration; when enabled, AWS Clean Rooms logs job details to Amazon CloudWatch Logs. (AI-inferred)
 	JobLogStatus any
 	// Defines the AWS accounts that participate in the collaboration, each with an account ID, display name, and the abilities (such as CAN_QUERY or CAN_RECEIVE_RESULTS) granted to that member. (AI-inferred)
 	Members any
@@ -170,6 +172,7 @@ type CollaborationAttrs struct {
 	AnalyticsEngine any
 	// The Amazon Resource Name (ARN) uniquely identifying the Clean Rooms collaboration. (AI-inferred)
 	Arn any
+	// The types of change requests that are automatically approved for this collaboration. (AI-inferred)
 	AutoApprovedChangeTypes any
 	// The unique identifier assigned by AWS to the collaboration. (AI-inferred)
 	CollaborationIdentifier any
@@ -187,6 +190,7 @@ type CollaborationAttrs struct {
 	Description any
 	// Whether the collaboration collects metrics about query activity (such as query counts and latency), enabling you to monitor and analyze usage patterns. (AI-inferred)
 	IsMetricsEnabled any
+	// Whether job logging is enabled for this collaboration; when enabled, AWS Clean Rooms logs job details to Amazon CloudWatch Logs. (AI-inferred)
 	JobLogStatus any
 	// Defines the AWS accounts that participate in the collaboration, each with an account ID, display name, and the abilities (such as CAN_QUERY or CAN_RECEIVE_RESULTS) granted to that member. (AI-inferred)
 	Members any

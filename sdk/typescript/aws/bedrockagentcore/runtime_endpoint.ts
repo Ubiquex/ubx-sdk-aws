@@ -6,7 +6,9 @@ export interface RuntimeEndpointConfig {
   agentRuntimeId: string | Computed<string>;
   /** The version of the Bedrock Agent runtime to use for the endpoint, which controls the runtime behavior and feature set available when invoking the agent through this core runtime endpoint. (AI-inferred) */
   agentRuntimeVersion?: string | Computed<string>;
+  /** The description of this agent runtime endpoint. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The name of this agent runtime endpoint. (AI-inferred) */
   name: string | Computed<string>;
   /** A map of tag keys and values */
   tags?: unknown | Computed<unknown>;
@@ -15,23 +17,31 @@ export interface RuntimeEndpointConfig {
 export interface RuntimeEndpointAttrs {
   /** The Amazon Resource Name (ARN) of the Bedrock agent core runtime endpoint, automatically assigned by AWS to uniquely identify the endpoint for agent invocation. (AI-inferred) */
   agentRuntimeArn: string;
+  /** The Amazon Resource Name (ARN) of this agent runtime endpoint. (AI-inferred) */
   agentRuntimeEndpointArn: string;
   /** The ID of the parent Agent Runtime */
   agentRuntimeId: string;
   /** The version of the Bedrock Agent runtime to use for the endpoint, which controls the runtime behavior and feature set available when invoking the agent through this core runtime endpoint. (AI-inferred) */
   agentRuntimeVersion: string;
+  /** The date and time at which this agent runtime endpoint was created. (AI-inferred) */
   createdAt: string;
+  /** The description of this agent runtime endpoint. (AI-inferred) */
   description: string;
   /** The reason for failure if the endpoint is in a failed state */
   failureReason: string;
   /** The unique ID of the Agent Runtime Endpoint itself */
   id: string;
+  /** The date and time at which this agent runtime endpoint was last updated. (AI-inferred) */
   lastUpdatedAt: string;
+  /** The real AgentCore Runtime version this endpoint currently routes live traffic to. (AI-inferred) */
   liveVersion: string;
+  /** The name of this agent runtime endpoint. (AI-inferred) */
   name: string;
+  /** The current status of this agent runtime endpoint. (AI-inferred) */
   status: string;
   /** A map of tag keys and values */
   tags: unknown;
+  /** The real AgentCore Runtime version this endpoint is configured to route to, once available. (AI-inferred) */
   targetVersion: string;
 }
 

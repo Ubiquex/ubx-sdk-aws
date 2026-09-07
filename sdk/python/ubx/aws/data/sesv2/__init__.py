@@ -20,6 +20,7 @@ from .domain_deliverability_campaigns import DomainDeliverabilityCampaigns, Doma
 from .domain_statistics_report import DomainStatisticsReport, DomainStatisticsReportConfig
 from .email_address_insights import EmailAddressInsights, EmailAddressInsightsConfig
 from .email_identities import EmailIdentities, EmailIdentitiesConfig
+from .email_identity_certificates import EmailIdentityCertificates, EmailIdentityCertificatesConfig
 from .email_identity_policies import EmailIdentityPolicies, EmailIdentityPoliciesConfig
 from .email_templates import EmailTemplates, EmailTemplatesConfig
 from .export_jobs import ExportJobs, ExportJobsConfig

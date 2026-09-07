@@ -190,6 +190,7 @@ export interface AiguardrailConfig {
   name?: string | Computed<string>;
   /** Sensitive information policy config for a guardrail. */
   sensitiveInformationPolicyConfig?: Aiguardrail_SensitiveInformationPolicyConfig | Computed<Aiguardrail_SensitiveInformationPolicyConfig>;
+  /** The tags assigned to this Wisdom AI Guardrail. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
   /** Topic policy config for a guardrail. */
   topicPolicyConfig?: Aiguardrail_TopicPolicyConfig | Computed<Aiguardrail_TopicPolicyConfig>;
@@ -222,6 +223,7 @@ export interface AiguardrailAttrs {
   name: string;
   /** Sensitive information policy config for a guardrail. */
   sensitiveInformationPolicyConfig: Aiguardrail_SensitiveInformationPolicyConfig;
+  /** The tags assigned to this Wisdom AI Guardrail. (AI-inferred) */
   tags: unknown;
   /** Topic policy config for a guardrail. */
   topicPolicyConfig: Aiguardrail_TopicPolicyConfig;

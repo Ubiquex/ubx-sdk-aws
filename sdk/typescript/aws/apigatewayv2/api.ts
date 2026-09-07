@@ -105,6 +105,7 @@ export interface ApiAttrs {
   disableExecuteApiEndpoint: boolean;
   /** Avoid validating models when creating a deployment. Supported only for WebSocket APIs. */
   disableSchemaValidation: boolean;
+  /** The Amazon Resource Name (ARN) that can be used to reference this API's own execute-api permissions, for example in a resource-based IAM policy. (AI-inferred) */
   executeApiArn: string;
   /** Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered. */
   failOnWarnings: boolean;

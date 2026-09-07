@@ -68,6 +68,7 @@ _IpamprefixListResolver_RulesFields = {
 class IpamprefixListResolverConfig:
     # The address family of the address space in this Prefix List Resolver. Either IPv4 or IPv6.
     address_family: Any = None
+    # The description of this IPAM prefix list resolver. (AI-inferred)
     description: Any = None
     # The Id of the IPAM this Prefix List Resolver is a part of.
     ipam_id: Any = None
@@ -80,6 +81,7 @@ class IpamprefixListResolverConfig:
 class IpamprefixListResolverAttrs:
     # The address family of the address space in this Prefix List Resolver. Either IPv4 or IPv6.
     address_family: Any = None
+    # The description of this IPAM prefix list resolver. (AI-inferred)
     description: Any = None
     # The Amazon Resource Name (ARN) of the IPAM this Prefix List Resolver is a part of.
     ipam_arn: Any = None

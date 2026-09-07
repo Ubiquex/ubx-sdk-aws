@@ -32,6 +32,7 @@ type SequenceStoreConfig struct {
 	S3AccessPolicy any
 	// Server-side encryption (SSE) settings for a store.
 	SseConfig any
+	// The tags assigned to this Omics sequence store. (AI-inferred)
 	Tags any
 }
 
@@ -66,6 +67,7 @@ type SequenceStoreAttrs struct {
 	Status any
 	// The status message of the sequence store.
 	StatusMessage any
+	// The tags assigned to this Omics sequence store. (AI-inferred)
 	Tags any
 	// The last-updated time of the sequence store.
 	UpdateTime any

@@ -707,7 +707,20 @@ export interface Findings_Findings_Service_Detection_Sequence_SequenceIndicators
   values?: string[] | Computed<string[]>;
 }
 
+export interface Findings_Findings_Service_Detection_Sequence_Signals_Activities_Api {
+  error?: string | Computed<string>;
+  operation?: string | Computed<string>;
+  service?: string | Computed<string>;
+  userAgent?: string | Computed<string>;
+}
+
+export interface Findings_Findings_Service_Detection_Sequence_Signals_Activities {
+  api?: Findings_Findings_Service_Detection_Sequence_Signals_Activities_Api | Computed<Findings_Findings_Service_Detection_Sequence_Signals_Activities_Api>;
+  type?: string | Computed<string>;
+}
+
 export interface Findings_Findings_Service_Detection_Sequence_Signals {
+  activities?: Findings_Findings_Service_Detection_Sequence_Signals_Activities[] | Computed<Findings_Findings_Service_Detection_Sequence_Signals_Activities[]>;
   actorIds?: string[] | Computed<string[]>;
   count?: number | Computed<number>;
   createdAt?: string | Computed<string>;

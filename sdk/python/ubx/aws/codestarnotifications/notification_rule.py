@@ -24,6 +24,7 @@ class NotificationRuleConfig:
     created_by: Any = None
     # Specifies the level of detail included in the notifications, with BASIC providing only essential event information and FULL providing complete event details. (AI-inferred)
     detail_type: Any = None
+    # The unique identifier of the event type this notification rule triggers on. (AI-inferred)
     event_type_id: Any = None
     # The list of event type IDs (e.g., codecommit-repository-comments-on-commits or codepipeline-pipeline-stage-execution-failed) that trigger the notification rule, each identifying a specific AWS service event that activates the notification. (AI-inferred)
     event_type_ids: Any = None
@@ -48,6 +49,7 @@ class NotificationRuleAttrs:
     created_by: Any = None
     # Specifies the level of detail included in the notifications, with BASIC providing only essential event information and FULL providing complete event details. (AI-inferred)
     detail_type: Any = None
+    # The unique identifier of the event type this notification rule triggers on. (AI-inferred)
     event_type_id: Any = None
     # The list of event type IDs (e.g., codecommit-repository-comments-on-commits or codepipeline-pipeline-stage-execution-failed) that trigger the notification rule, each identifying a specific AWS service event that activates the notification. (AI-inferred)
     event_type_ids: Any = None

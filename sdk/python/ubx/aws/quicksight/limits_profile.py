@@ -8,20 +8,32 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LimitsProfileConfig:
+    # The AWS account ID this limits profile belongs to. (AI-inferred)
     account_id: Any = None
+    # The description of this limits profile. (AI-inferred)
     description: Any = None
+    # The name of this limits profile. (AI-inferred)
     profile_name: Any = None
+    # The real resource usage limit(s) this profile applies, e.g. to users or groups it is assigned to. (AI-inferred)
     resource_limits: Any = None
 
 @dataclasses.dataclass
 class LimitsProfileAttrs:
+    # The AWS account ID this limits profile belongs to. (AI-inferred)
     account_id: Any = None
+    # The Amazon Resource Name (ARN) of this limits profile. (AI-inferred)
     arn: Any = None
+    # The date and time this limits profile was created. (AI-inferred)
     created_at: Any = None
+    # The description of this limits profile. (AI-inferred)
     description: Any = None
+    # The unique identifier of this limits profile. (AI-inferred)
     profile_id: Any = None
+    # The name of this limits profile. (AI-inferred)
     profile_name: Any = None
+    # The real resource usage limit(s) this profile applies, e.g. to users or groups it is assigned to. (AI-inferred)
     resource_limits: Any = None
+    # The date and time this limits profile was last updated. (AI-inferred)
     updated_at: Any = None
 
 LimitsProfile = ubx.ResourceBinding(

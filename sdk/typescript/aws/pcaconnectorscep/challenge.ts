@@ -4,6 +4,7 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface ChallengeConfig {
   /** The Amazon Resource Name (ARN) of the connector that this SCEP challenge belongs to, required to create the challenge under that connector. (AI-inferred) */
   connectorArn: string | Computed<string>;
+  /** The tags assigned to this Private CA Connector SCEP challenge. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
 }
 
@@ -12,6 +13,7 @@ export interface ChallengeAttrs {
   challengeArn: string;
   /** The Amazon Resource Name (ARN) of the connector that this SCEP challenge belongs to, required to create the challenge under that connector. (AI-inferred) */
   connectorArn: string;
+  /** The tags assigned to this Private CA Connector SCEP challenge. (AI-inferred) */
   tags: unknown;
 }
 

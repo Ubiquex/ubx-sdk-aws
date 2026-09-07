@@ -704,6 +704,7 @@ _Harness_TruncationFields = {
 class HarnessConfig:
     # The tools that the agent is allowed to use.
     allowed_tools: Any = None
+    # Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred)
     authorizer_configuration: Any = None
     environment_artifact: Any = None
     # Environment variables to set in the harness runtime environment.
@@ -728,6 +729,7 @@ class HarnessConfig:
     timeout_seconds: Any = None
     # The tools available to the agent.
     tools: Any = None
+    # Configuration for truncating model context. (AI-inferred)
     truncation: Any = None
 
 @dataclasses.dataclass
@@ -736,9 +738,11 @@ class HarnessAttrs:
     allowed_tools: Any = None
     # The Amazon Resource Name (ARN) of the harness.
     arn: Any = None
+    # Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred)
     authorizer_configuration: Any = None
     # The timestamp when the harness was created.
     created_at: Any = None
+    # The compute environment on which the harness runs. (AI-inferred)
     environment: Any = None
     environment_artifact: Any = None
     # Environment variables to set in the harness runtime environment.
@@ -758,6 +762,7 @@ class HarnessAttrs:
     model: Any = None
     # The skills available to the agent.
     skills: Any = None
+    # The status of the harness. (AI-inferred)
     status: Any = None
     # The system prompt that defines the agent's behavior.
     system_prompt: Any = None
@@ -767,6 +772,7 @@ class HarnessAttrs:
     timeout_seconds: Any = None
     # The tools available to the agent.
     tools: Any = None
+    # Configuration for truncating model context. (AI-inferred)
     truncation: Any = None
     # The timestamp when the harness was last updated.
     updated_at: Any = None

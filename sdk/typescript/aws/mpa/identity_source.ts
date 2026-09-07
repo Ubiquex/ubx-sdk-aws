@@ -25,17 +25,25 @@ const IdentitySource_TagsFields: FieldMap = {
 };
 
 export interface IdentitySourceConfig {
+  /** The tags assigned to this identity source. (AI-inferred) */
   tags?: IdentitySource_Tags[] | Computed<IdentitySource_Tags[]>;
 }
 
 export interface IdentitySourceAttrs {
+  /** The date and time when this identity source was created. (AI-inferred) */
   creationTime: string;
+  /** The Amazon Resource Name (ARN) of this identity source. (AI-inferred) */
   identitySourceArn: string;
   identitySourceParameters: IdentitySource_IdentitySourceParameters;
+  /** The type of resource (for example, an IAM Identity Center instance) that provides identities to this identity source. (AI-inferred) */
   identitySourceType: string;
+  /** The current status of this identity source. (AI-inferred) */
   status: string;
+  /** The status code of this identity source. (AI-inferred) */
   statusCode: string;
+  /** A message describing this identity source's own current status. (AI-inferred) */
   statusMessage: string;
+  /** The tags assigned to this identity source. (AI-inferred) */
   tags: IdentitySource_Tags[];
 }
 

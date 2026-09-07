@@ -1092,6 +1092,7 @@ type BucketConfig struct {
 	BucketName any
 	// This prefix is used to generate a unique S3 bucket name by combining the specified prefix with a random suffix, ensuring the bucket name is globally unique. (AI-inferred)
 	BucketNamePrefix any
+	// The namespace this S3 bucket belongs to. (AI-inferred)
 	BucketNamespace any
 	// Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see [Enabling Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html) in the *Amazon S3 User Guide*.
 	CorsConfiguration any
@@ -1142,6 +1143,7 @@ type BucketAttrs struct {
 	BucketName any
 	// This prefix is used to generate a unique S3 bucket name by combining the specified prefix with a random suffix, ensuring the bucket name is globally unique. (AI-inferred)
 	BucketNamePrefix any
+	// The namespace this S3 bucket belongs to. (AI-inferred)
 	BucketNamespace any
 	// Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see [Enabling Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html) in the *Amazon S3 User Guide*.
 	CorsConfiguration any

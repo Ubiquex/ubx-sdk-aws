@@ -62,6 +62,7 @@ export interface ConnectorConfig {
   description?: string | Computed<string>;
   /** Display name for the connector. */
   name: string | Computed<string>;
+  /** The external code repository provider (e.g. GitHub, GitLab) this Inspector connector connects to. (AI-inferred) */
   provider: string | Computed<string>;
   /** Tags to apply to the connector. */
   tags?: Connector_Tags[] | Computed<Connector_Tags[]>;
@@ -74,6 +75,7 @@ export interface ConnectorAttrs {
   createdAt: string;
   /** Optional description of the connector. */
   description: string;
+  /** Whether this Inspector connector is currently enabled. (AI-inferred) */
   enablementStatus: string;
   /** Reason for the current enablement status, if applicable. */
   enablementStatusReason: string;
@@ -83,6 +85,7 @@ export interface ConnectorAttrs {
   lastUpdatedAt: string;
   /** Display name for the connector. */
   name: string;
+  /** The external code repository provider (e.g. GitHub, GitLab) this Inspector connector connects to. (AI-inferred) */
   provider: string;
   providerConfiguration: Connector_ProviderConfiguration;
   /** Tags to apply to the connector. */

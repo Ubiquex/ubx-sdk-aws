@@ -73,6 +73,7 @@ type CodeSecurityIntegrationConfig struct {
 	CreateIntegrationDetails any
 	// Code Security Integration name
 	Name any
+	// The tags assigned to this Inspector code security integration. (AI-inferred)
 	Tags any
 	// Specifies the type of code security integration to configure, such as GITHUB or GITLAB, indicating which source code repository service to connect to Inspector for vulnerability scanning. (AI-inferred)
 	Type any
@@ -96,6 +97,7 @@ type CodeSecurityIntegrationAttrs struct {
 	Status any
 	// Reason for the current status
 	StatusReason any
+	// The tags assigned to this Inspector code security integration. (AI-inferred)
 	Tags any
 	// Specifies the type of code security integration to configure, such as GITHUB or GITLAB, indicating which source code repository service to connect to Inspector for vulnerability scanning. (AI-inferred)
 	Type any

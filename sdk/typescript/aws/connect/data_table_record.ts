@@ -34,6 +34,7 @@ const DataTableRecord_DataTableRecordFields: FieldMap = {
 };
 
 export interface DataTableRecordConfig {
+  /** The Amazon Resource Name (ARN) of the data table this record belongs to. (AI-inferred) */
   dataTableArn: string | Computed<string>;
   /** The 'data_table_record' object holds the key-value pairs (column names to values) that constitute the record to be inserted into the specified Amazon Connect data table. (AI-inferred) */
   dataTableRecord: DataTableRecord_DataTableRecord | Computed<DataTableRecord_DataTableRecord>;
@@ -42,6 +43,7 @@ export interface DataTableRecordConfig {
 }
 
 export interface DataTableRecordAttrs {
+  /** The Amazon Resource Name (ARN) of the data table this record belongs to. (AI-inferred) */
   dataTableArn: string;
   /** The 'data_table_record' object holds the key-value pairs (column names to values) that constitute the record to be inserted into the specified Amazon Connect data table. (AI-inferred) */
   dataTableRecord: DataTableRecord_DataTableRecord;

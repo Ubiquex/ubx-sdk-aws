@@ -61,6 +61,7 @@ class ConnectionFunctionConfig:
 class ConnectionFunctionAttrs:
     # A flag that determines whether to automatically publish the function to the ``LIVE`` stage when it’s created. To automatically publish to the ``LIVE`` stage, set this property to ``true``.
     auto_publish: Any = None
+    # The Amazon Resource Name (ARN) of this connection function. (AI-inferred)
     connection_function_arn: Any = None
     # The code for the connection function.
     connection_function_code: Any = None
@@ -70,12 +71,15 @@ class ConnectionFunctionAttrs:
     created_time: Any = None
     # Represents the current ETag version identifier of the CloudFront connection function, used for optimistic concurrency control during update/delete operations. (AI-inferred)
     etag: Any = None
+    # The unique identifier of this connection function. (AI-inferred)
     id: Any = None
     # The date and time when the CloudFront function was last modified, returned by the API and updated automatically whenever the function's code or configuration changes. (AI-inferred)
     last_modified_time: Any = None
     # The connection function name.
     name: Any = None
+    # The stage this connection function is published to. (AI-inferred)
     stage: Any = None
+    # The current status of this connection function. (AI-inferred)
     status: Any = None
     # A complex type that contains zero or more ``Tag`` elements.
     tags: Any = None

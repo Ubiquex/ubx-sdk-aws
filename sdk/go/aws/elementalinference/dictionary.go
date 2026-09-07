@@ -4,18 +4,28 @@ package elementalinference
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DictionaryConfig struct {
+	// The entries in this dictionary, used to bias or correct inference output for domain-specific terms. (AI-inferred)
 	Entries any
+	// The language this dictionary's own entries apply to. (AI-inferred)
 	Language any
+	// The name of this dictionary. (AI-inferred)
 	Name any
+	// The tags assigned to this dictionary. (AI-inferred)
 	Tags any
 }
 
 type DictionaryAttrs struct {
+	// The Amazon Resource Name (ARN) of this dictionary. (AI-inferred)
 	Arn any
+	// The entries in this dictionary, used to bias or correct inference output for domain-specific terms. (AI-inferred)
 	Entries any
+	// The unique identifier of this dictionary. (AI-inferred)
 	Id any
+	// The language this dictionary's own entries apply to. (AI-inferred)
 	Language any
+	// The name of this dictionary. (AI-inferred)
 	Name any
+	// The tags assigned to this dictionary. (AI-inferred)
 	Tags any
 }
 

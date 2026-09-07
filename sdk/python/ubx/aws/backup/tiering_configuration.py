@@ -23,22 +23,28 @@ _TieringConfiguration_ResourceSelectionFields = {
 class TieringConfigurationConfig:
     # The name of the AWS Backup vault to which this tiering configuration is applied. (AI-inferred)
     backup_vault_name: Any = None
+    # The resource selections and their tiering settings that this tiering configuration applies. (AI-inferred)
     resource_selection: Any = None
     # The name that identifies this tiering configuration, which defines when backups transition to the cold storage tier within an AWS Backup plan. (AI-inferred)
     tiering_configuration_name: Any = None
+    # The tags assigned to this tiering configuration. (AI-inferred)
     tiering_configuration_tags: Any = None
 
 @dataclasses.dataclass
 class TieringConfigurationAttrs:
     # The name of the AWS Backup vault to which this tiering configuration is applied. (AI-inferred)
     backup_vault_name: Any = None
+    # The date and time when this tiering configuration was created. (AI-inferred)
     creation_time: Any = None
     # The timestamp of the most recent update to this AWS Backup tiering configuration. (AI-inferred)
     last_updated_time: Any = None
+    # The resource selections and their tiering settings that this tiering configuration applies. (AI-inferred)
     resource_selection: Any = None
+    # The Amazon Resource Name (ARN) of this tiering configuration. (AI-inferred)
     tiering_configuration_arn: Any = None
     # The name that identifies this tiering configuration, which defines when backups transition to the cold storage tier within an AWS Backup plan. (AI-inferred)
     tiering_configuration_name: Any = None
+    # The tags assigned to this tiering configuration. (AI-inferred)
     tiering_configuration_tags: Any = None
 
 TieringConfiguration = ubx.ResourceBinding(

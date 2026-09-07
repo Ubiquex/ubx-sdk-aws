@@ -225,13 +225,18 @@ var ActionConnector_TagsFields = ubx.FieldMap{
 	}
 
 type ActionConnectorConfig struct {
+	// The unique identifier of this action connector. (AI-inferred)
 	ActionConnectorId any
+	// The authentication configuration this action connector uses to connect to its own external service. (AI-inferred)
 	AuthenticationConfig any
 	// The AWS account ID where the QuickSight action connector is deployed, used to scope the resource within the correct account. (AI-inferred)
 	AwsAccountId any
+	// The description of this action connector. (AI-inferred)
 	Description any
+	// The name of this action connector. (AI-inferred)
 	Name any
 	Permissions any
+	// The tags assigned to this action connector. (AI-inferred)
 	Tags any
 	// The type of the QuickSight action connector, identifying the external system or service it integrates with (e.g., ServiceNow, Salesforce, or similar supported platforms), required when defining the connector. (AI-inferred)
 	Type any
@@ -240,18 +245,28 @@ type ActionConnectorConfig struct {
 }
 
 type ActionConnectorAttrs struct {
+	// The unique identifier of this action connector. (AI-inferred)
 	ActionConnectorId any
+	// The Amazon Resource Name (ARN) of this action connector. (AI-inferred)
 	Arn any
+	// The authentication configuration this action connector uses to connect to its own external service. (AI-inferred)
 	AuthenticationConfig any
 	// The AWS account ID where the QuickSight action connector is deployed, used to scope the resource within the correct account. (AI-inferred)
 	AwsAccountId any
+	// The date and time when this action connector was created. (AI-inferred)
 	CreatedTime any
+	// The description of this action connector. (AI-inferred)
 	Description any
+	// The actions enabled on this action connector. (AI-inferred)
 	EnabledActions any
+	// The date and time when this action connector was last updated. (AI-inferred)
 	LastUpdatedTime any
+	// The name of this action connector. (AI-inferred)
 	Name any
 	Permissions any
+	// The current status of this action connector. (AI-inferred)
 	Status any
+	// The tags assigned to this action connector. (AI-inferred)
 	Tags any
 	// The type of the QuickSight action connector, identifying the external system or service it integrates with (e.g., ServiceNow, Salesforce, or similar supported platforms), required when defining the connector. (AI-inferred)
 	Type any

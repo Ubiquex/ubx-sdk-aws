@@ -34,6 +34,7 @@ export interface WebAclConfig {
   defaultAction: WebAcl_DefaultAction | Computed<WebAcl_DefaultAction>;
   /** The name of the Amazon CloudWatch metric associated with the web ACL, used for monitoring its activity in CloudWatch. (AI-inferred) */
   metricName: string | Computed<string>;
+  /** The name of this WAF Classic Regional web ACL. (AI-inferred) */
   name: string | Computed<string>;
   /** Defines the ordered list of rules for the web ACL, where each rule specifies the rule's ID (referencing an aws_wafregional_rule or aws_wafregional_rule_group resource) and the action (allow, block, or count) that AWS WAF Regional takes when a request matches the rule. (AI-inferred) */
   rules?: WebAcl_Rules[] | Computed<WebAcl_Rules[]>;
@@ -46,6 +47,7 @@ export interface WebAclAttrs {
   id: string;
   /** The name of the Amazon CloudWatch metric associated with the web ACL, used for monitoring its activity in CloudWatch. (AI-inferred) */
   metricName: string;
+  /** The name of this WAF Classic Regional web ACL. (AI-inferred) */
   name: string;
   /** Defines the ordered list of rules for the web ACL, where each rule specifies the rule's ID (referencing an aws_wafregional_rule or aws_wafregional_rule_group resource) and the action (allow, block, or count) that AWS WAF Regional takes when a request matches the rule. (AI-inferred) */
   rules: WebAcl_Rules[];

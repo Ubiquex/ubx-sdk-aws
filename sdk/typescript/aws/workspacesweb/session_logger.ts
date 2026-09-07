@@ -60,11 +60,14 @@ const SessionLogger_TagsFields: FieldMap = {
 export interface SessionLoggerConfig {
   /** A map of key-value pairs that serve as additional encryption context for the KMS key used to encrypt session log data, providing extra authenticated data to the encryption/decryption process. (AI-inferred) */
   additionalEncryptionContext?: unknown | Computed<unknown>;
+  /** The customer managed AWS KMS key used to encrypt this session logger's own data. (AI-inferred) */
   customerManagedKey?: string | Computed<string>;
   /** Specifies the display name for the session logger, providing a human-readable identifier for this logging configuration in the AWS Management Console and CloudFormation stacks. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The filter that specifies which session events this session logger monitors. (AI-inferred) */
   eventFilter: SessionLogger_EventFilter | Computed<SessionLogger_EventFilter>;
   logConfiguration: SessionLogger_LogConfiguration | Computed<SessionLogger_LogConfiguration>;
+  /** The tags assigned to this session logger. (AI-inferred) */
   tags?: SessionLogger_Tags[] | Computed<SessionLogger_Tags[]>;
 }
 
@@ -75,13 +78,16 @@ export interface SessionLoggerAttrs {
   associatedPortalArns: string[];
   /** The date and time when the WorkSpaces Web session logger configuration was created, returned as an ISO 8601 formatted string. (AI-inferred) */
   creationDate: string;
+  /** The customer managed AWS KMS key used to encrypt this session logger's own data. (AI-inferred) */
   customerManagedKey: string;
   /** Specifies the display name for the session logger, providing a human-readable identifier for this logging configuration in the AWS Management Console and CloudFormation stacks. (AI-inferred) */
   displayName: string;
+  /** The filter that specifies which session events this session logger monitors. (AI-inferred) */
   eventFilter: SessionLogger_EventFilter;
   logConfiguration: SessionLogger_LogConfiguration;
   /** The Amazon Resource Name (ARN) that uniquely identifies this WorkSpaces Web session logger and is used to attach the logger to a WorkSpaces Web portal for session logging. (AI-inferred) */
   sessionLoggerArn: string;
+  /** The tags assigned to this session logger. (AI-inferred) */
   tags: SessionLogger_Tags[];
 }
 

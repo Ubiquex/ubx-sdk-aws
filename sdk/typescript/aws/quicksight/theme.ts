@@ -278,6 +278,7 @@ export interface ThemeAttrs {
   tags: Theme_Tags[];
   /** The unique identifier for the theme, which must be unique within an AWS account and is used to reference the theme in other QuickSight resources. (AI-inferred) */
   themeId: string;
+  /** The real base type this theme was created from, e.g. a QuickSight-provided starting theme. (AI-inferred) */
   type: string;
   /** <p>A version of a theme.</p> */
   version: Theme_Version;

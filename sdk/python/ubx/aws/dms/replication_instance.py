@@ -47,6 +47,7 @@ class ReplicationInstanceConfig:
     replication_instance_identifier: Any = None
     # The identifier of an existing DMS replication subnet group that determines the VPC and subnets where the replication instance's network interfaces are placed. (AI-inferred)
     replication_subnet_group_identifier: Any = None
+    # A unique string identifier for this replication instance's own underlying resource. (AI-inferred)
     resource_identifier: Any = None
     # Specifies the tags (key-value pairs) to associate with the DMS replication instance, which are used for cost allocation, access control, and identifying the resource in AWS. (AI-inferred)
     tags: Any = None
@@ -89,6 +90,7 @@ class ReplicationInstanceAttrs:
     replication_instance_public_ip_addresses: Any = None
     # The identifier of an existing DMS replication subnet group that determines the VPC and subnets where the replication instance's network interfaces are placed. (AI-inferred)
     replication_subnet_group_identifier: Any = None
+    # A unique string identifier for this replication instance's own underlying resource. (AI-inferred)
     resource_identifier: Any = None
     # Specifies the tags (key-value pairs) to associate with the DMS replication instance, which are used for cost allocation, access control, and identifying the resource in AWS. (AI-inferred)
     tags: Any = None

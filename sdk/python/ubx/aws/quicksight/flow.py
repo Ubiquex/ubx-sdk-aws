@@ -24,24 +24,40 @@ _Flow_PermissionsFields = {
 
 @dataclasses.dataclass
 class FlowConfig:
+    # The AWS account ID this flow belongs to. (AI-inferred)
     aws_account_id: Any = None
+    # The description of this flow. (AI-inferred)
     description: Any = None
+    # The real, ordered step(s) that make up this flow's own automated workflow. (AI-inferred)
     flow_definition: Any = None
+    # The name of this flow. (AI-inferred)
     name: Any = None
+    # The real permission(s) granted on this flow, and to whom. (AI-inferred)
     permissions: Any = None
 
 @dataclasses.dataclass
 class FlowAttrs:
+    # The Amazon Resource Name (ARN) of this flow. (AI-inferred)
     arn: Any = None
+    # The AWS account ID this flow belongs to. (AI-inferred)
     aws_account_id: Any = None
+    # The date and time this flow was created. (AI-inferred)
     created_time: Any = None
+    # The description of this flow. (AI-inferred)
     description: Any = None
+    # The real, ordered step(s) that make up this flow's own automated workflow. (AI-inferred)
     flow_definition: Any = None
+    # The unique identifier of this flow. (AI-inferred)
     flow_id: Any = None
+    # The date and time this flow was last updated. (AI-inferred)
     last_updated_time: Any = None
+    # The name of this flow. (AI-inferred)
     name: Any = None
+    # The real permission(s) granted on this flow, and to whom. (AI-inferred)
     permissions: Any = None
+    # Whether this flow is published and available to run, or still a draft. (AI-inferred)
     publish_state: Any = None
+    # The real, caller-assigned alias for each step in this flow's own definition. (AI-inferred)
     step_aliases: Any = None
 
 Flow = ubx.ResourceBinding(

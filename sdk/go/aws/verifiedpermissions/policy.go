@@ -73,6 +73,7 @@ var Policy_DefinitionFields = ubx.FieldMap{
 type PolicyConfig struct {
 	// Contains the policy's definition, either a static statement written in Cedar policy syntax or a template-linked reference to a policy template with a principal. (AI-inferred)
 	Definition any
+	// The name of this Verified Permissions policy. (AI-inferred)
 	Name any
 	// The unique identifier of the policy store in AWS Verified Permissions where this policy is created and to which it belongs. (AI-inferred)
 	PolicyStoreId any
@@ -81,6 +82,7 @@ type PolicyConfig struct {
 type PolicyAttrs struct {
 	// Contains the policy's definition, either a static statement written in Cedar policy syntax or a template-linked reference to a policy template with a principal. (AI-inferred)
 	Definition any
+	// The name of this Verified Permissions policy. (AI-inferred)
 	Name any
 	// The unique identifier assigned by Amazon Verified Permissions to the policy when it is created, used to reference and manage the policy. (AI-inferred)
 	PolicyId any

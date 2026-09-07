@@ -108,6 +108,10 @@ type RouterOutput_Configuration struct {
 	Standard any
 }
 
+type RouterOutput_FabricConfiguration struct {
+	RecoveryLatencyMode any
+}
+
 type RouterOutput_MaintenanceConfiguration_PreferredDayTime struct {
 	// The day of the week, specified as an uppercase string such as 'MONDAY' or 'SATURDAY', on which maintenance is preferred for this router output. (AI-inferred)
 	Day any
@@ -261,6 +265,10 @@ var RouterOutput_ConfigurationFields = ubx.FieldMap{
 		},
 	}
 
+var RouterOutput_FabricConfigurationFields = ubx.FieldMap{
+		"RecoveryLatencyMode": ubx.FieldSpec{WireName: "recovery_latency_mode"},
+	}
+
 var RouterOutput_MaintenanceConfiguration_PreferredDayTimeFields = ubx.FieldMap{
 		"Day": ubx.FieldSpec{WireName: "day"},
 		"Time": ubx.FieldSpec{WireName: "time"},
@@ -285,6 +293,8 @@ type RouterOutputConfig struct {
 	AvailabilityZone any
 	// The configuration settings for a router output.
 	Configuration any
+	// The fabric configuration settings for the router output.
+	FabricConfiguration any
 	// The configuration settings for maintenance operations, including preferred maintenance windows and schedules.
 	MaintenanceConfiguration any
 	// The maximum bitrate for the router output.
@@ -293,6 +303,7 @@ type RouterOutputConfig struct {
 	Name any
 	// The Amazon Web Services Region for the router output. Defaults to the current region if not specified.
 	RegionName any
+	// Whether this router output is configured for regional or global routing. (AI-inferred)
 	RoutingScope any
 	// Key-value pairs that can be used to tag this router output.
 	Tags any
@@ -309,23 +320,29 @@ type RouterOutputAttrs struct {
 	Configuration any
 	// The timestamp when the router output was created.
 	CreatedAt any
+	// The fabric configuration settings for the router output.
+	FabricConfiguration any
 	// The unique identifier of the router output.
 	Id any
 	// The IP address of the router output.
 	IpAddress any
 	// The configuration settings for maintenance operations, including preferred maintenance windows and schedules.
 	MaintenanceConfiguration any
+	// The type of maintenance configuration applied to this router output. (AI-inferred)
 	MaintenanceType any
 	// The maximum bitrate for the router output.
 	MaximumBitrate any
 	// The name of the router output.
 	Name any
+	// The type of this router output. (AI-inferred)
 	OutputType any
 	// The Amazon Web Services Region for the router output. Defaults to the current region if not specified.
 	RegionName any
 	// The current routing status of the router output, reported by the AWS API as either 'ACTIVE' (actively routing media) or 'STANDBY' (not actively routing media). (AI-inferred)
 	RoutedState any
+	// Whether this router output is configured for regional or global routing. (AI-inferred)
 	RoutingScope any
+	// The current state of this router output. (AI-inferred)
 	State any
 	// Key-value pairs that can be used to tag this router output.
 	Tags any
@@ -343,6 +360,11 @@ var RouterOutput = ubx.ResourceBinding{
 			WireName: "configuration",
 			Kind: "object",
 			Fields: RouterOutput_ConfigurationFields,
+		},
+		"FabricConfiguration": ubx.FieldSpec{
+			WireName: "fabric_configuration",
+			Kind: "object",
+			Fields: RouterOutput_FabricConfigurationFields,
 		},
 		"MaintenanceConfiguration": ubx.FieldSpec{
 			WireName: "maintenance_configuration",

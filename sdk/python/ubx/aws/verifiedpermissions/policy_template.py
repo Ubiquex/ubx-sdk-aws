@@ -10,6 +10,7 @@ import ubx_sdk as ubx
 class PolicyTemplateConfig:
     # Specifies an optional text description for the policy template, used to provide context about the template's intended purpose. (AI-inferred)
     description: Any = None
+    # The name of this Verified Permissions policy template. (AI-inferred)
     name: Any = None
     # The ID of the policy store in which this policy template is created, associating the template with a specific Cedar policy store. (AI-inferred)
     policy_store_id: Any = None
@@ -20,6 +21,7 @@ class PolicyTemplateConfig:
 class PolicyTemplateAttrs:
     # Specifies an optional text description for the policy template, used to provide context about the template's intended purpose. (AI-inferred)
     description: Any = None
+    # The name of this Verified Permissions policy template. (AI-inferred)
     name: Any = None
     # The ID of the policy store in which this policy template is created, associating the template with a specific Cedar policy store. (AI-inferred)
     policy_store_id: Any = None

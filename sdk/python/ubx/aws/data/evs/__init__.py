@@ -4,5 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
+from .account_settings import AccountSettings, AccountSettingsConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig
 from .versions import Versions, VersionsConfig

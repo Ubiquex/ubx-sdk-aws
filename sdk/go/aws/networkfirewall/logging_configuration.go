@@ -32,6 +32,7 @@ var LoggingConfiguration_LoggingConfigurationFields = ubx.FieldMap{
 	}
 
 type LoggingConfigurationConfig struct {
+	// Whether the Network Firewall monitoring dashboard is enabled for this logging configuration's own firewall. (AI-inferred)
 	EnableMonitoringDashboard any
 	// A resource ARN.
 	FirewallArn any
@@ -42,6 +43,7 @@ type LoggingConfigurationConfig struct {
 }
 
 type LoggingConfigurationAttrs struct {
+	// Whether the Network Firewall monitoring dashboard is enabled for this logging configuration's own firewall. (AI-inferred)
 	EnableMonitoringDashboard any
 	// A resource ARN.
 	FirewallArn any

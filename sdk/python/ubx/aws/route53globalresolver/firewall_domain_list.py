@@ -28,6 +28,7 @@ class FirewallDomainListConfig:
     domain_file_url: Any = None
     # An inline list of domains to use for this domain list.
     domains: Any = None
+    # A reference to the global resolver this firewall domain list is associated with. (AI-inferred)
     global_resolver_id: Any = None
     # The name to assign to the Route 53 Resolver firewall domain list, which serves as its identifier in your AWS account. (AI-inferred)
     name: Any = None
@@ -51,6 +52,7 @@ class FirewallDomainListAttrs:
     domains: Any = None
     # The unique identifier assigned by AWS to the Route 53 Resolver firewall domain list. (AI-inferred)
     firewall_domain_list_id: Any = None
+    # A reference to the global resolver this firewall domain list is associated with. (AI-inferred)
     global_resolver_id: Any = None
     # The name to assign to the Route 53 Resolver firewall domain list, which serves as its identifier in your AWS account. (AI-inferred)
     name: Any = None

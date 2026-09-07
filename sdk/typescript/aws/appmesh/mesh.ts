@@ -75,6 +75,7 @@ export interface MeshAttrs {
   spec: Mesh_Spec;
   /** Specifies the tags (key-value metadata) to attach to the AWS App Mesh mesh resource. (AI-inferred) */
   tags: Mesh_Tags[];
+  /** The unique identifier assigned by App Mesh to this mesh. (AI-inferred) */
   uid: string;
 }
 

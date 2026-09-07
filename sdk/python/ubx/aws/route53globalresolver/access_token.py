@@ -22,14 +22,18 @@ class AccessTokenConfig:
     client_token: Any = None
     # Specifies the DNS view ID that this access token is scoped to, which the global resolver uses to authorize DNS resolution requests for that view. (AI-inferred)
     dns_view_id: Any = None
+    # The date and time when this access token expires. (AI-inferred)
     expires_at: Any = None
+    # The name of this access token. (AI-inferred)
     name: Any = None
+    # The tags assigned to this access token. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class AccessTokenAttrs:
     # The unique identifier automatically assigned to this global resolver access token. (AI-inferred)
     access_token_id: Any = None
+    # The Amazon Resource Name (ARN) of this access token. (AI-inferred)
     arn: Any = None
     # An optional caller-supplied token that ensures idempotent creation of the Route 53 Global Resolver access token by uniquely identifying the Create request, allowing safe retries without duplicating the token. (AI-inferred)
     client_token: Any = None
@@ -37,12 +41,19 @@ class AccessTokenAttrs:
     created_at: Any = None
     # Specifies the DNS view ID that this access token is scoped to, which the global resolver uses to authorize DNS resolution requests for that view. (AI-inferred)
     dns_view_id: Any = None
+    # The date and time when this access token expires. (AI-inferred)
     expires_at: Any = None
+    # A reference to the global resolver this access token authorizes access to. (AI-inferred)
     global_resolver_id: Any = None
+    # The name of this access token. (AI-inferred)
     name: Any = None
+    # The current status of this access token. (AI-inferred)
     status: Any = None
+    # The tags assigned to this access token. (AI-inferred)
     tags: Any = None
+    # The date and time when this access token was last updated. (AI-inferred)
     updated_at: Any = None
+    # The real token value clients present in DoH and DoT requests to authenticate to this global resolver, regardless of their IP address. Sensitive -- keep secure once issued. (AI-inferred)
     value: Any = None
 
 AccessToken = ubx.ResourceBinding(

@@ -12,6 +12,7 @@ const RequesterGateway_TagsFields: FieldMap = {
 };
 
 export interface RequesterGatewayConfig {
+  /** The description of this requester gateway. (AI-inferred) */
   description?: string | Computed<string>;
   /** The ID of one or more security groups in order to create a requester gateway. */
   securityGroupIds: unknown[] | Computed<unknown[]>;
@@ -19,15 +20,22 @@ export interface RequesterGatewayConfig {
   subnetIds: string[] | Computed<string[]>;
   /** Tags to assign to the Requester Gateway. */
   tags?: RequesterGateway_Tags[] | Computed<RequesterGateway_Tags[]>;
+  /** A reference to the VPC this requester gateway is deployed in. (AI-inferred) */
   vpcId: string | Computed<string>;
 }
 
 export interface RequesterGatewayAttrs {
+  /** The number of currently active links connected to this requester gateway. (AI-inferred) */
   activeLinksCount: number;
+  /** The Amazon Resource Name (ARN) of this requester gateway. (AI-inferred) */
   arn: string;
+  /** The date and time when this requester gateway was created. (AI-inferred) */
   createdTimestamp: string;
+  /** The description of this requester gateway. (AI-inferred) */
   description: string;
+  /** The domain name assigned to this requester gateway. (AI-inferred) */
   domainName: string;
+  /** The unique identifier of this requester gateway. (AI-inferred) */
   gatewayId: string;
   /** The current status of the requester gateway, indicating its operational lifecycle state such as Active, Inactive, or Deleting, as managed by the RTB Fabric service. (AI-inferred) */
   requesterGatewayStatus: string;
@@ -37,8 +45,11 @@ export interface RequesterGatewayAttrs {
   subnetIds: string[];
   /** Tags to assign to the Requester Gateway. */
   tags: RequesterGateway_Tags[];
+  /** The total number of links, active or otherwise, connected to this requester gateway. (AI-inferred) */
   totalLinksCount: number;
+  /** The date and time when this requester gateway was last updated. (AI-inferred) */
   updatedTimestamp: string;
+  /** A reference to the VPC this requester gateway is deployed in. (AI-inferred) */
   vpcId: string;
 }
 

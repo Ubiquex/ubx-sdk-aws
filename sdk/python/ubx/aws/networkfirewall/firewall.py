@@ -62,6 +62,7 @@ class FirewallConfig:
     # Specifies the subnets within the VPC where the Network Firewall endpoint is attached, enabling the firewall to filter traffic for each associated subnet. (AI-inferred)
     subnet_mappings: Any = None
     tags: Any = None
+    # A reference to the transit gateway associated with this firewall, present only for transit gateway-attached firewalls. (AI-inferred)
     transit_gateway_id: Any = None
     # The unique identifier of the Amazon Virtual Private Cloud (VPC) where the AWS Network Firewall firewall is deployed. (AI-inferred)
     vpc_id: Any = None
@@ -97,6 +98,7 @@ class FirewallAttrs:
     tags: Any = None
     # The unique identifier of the Transit Gateway attachment that connects the firewall to its VPC, populated after the firewall is created. (AI-inferred)
     transit_gateway_attachment_id: Any = None
+    # A reference to the transit gateway associated with this firewall, present only for transit gateway-attached firewalls. (AI-inferred)
     transit_gateway_id: Any = None
     # The unique identifier of the Amazon Virtual Private Cloud (VPC) where the AWS Network Firewall firewall is deployed. (AI-inferred)
     vpc_id: Any = None

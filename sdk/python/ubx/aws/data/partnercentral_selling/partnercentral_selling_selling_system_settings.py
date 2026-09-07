@@ -8,10 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PartnercentralSellingSellingSystemSettingsConfig:
+    # Value space is validated at runtime against an allowlist, so the model keeps only a coarse character-class pattern.
     catalog: Any = None
 
 @dataclasses.dataclass
 class PartnercentralSellingSellingSystemSettingsAttrs:
+    # Value space is validated at runtime against an allowlist, so the model keeps only a coarse character-class pattern.
     catalog: Any = None
     resource_snapshot_job_role_arn: Any = None
 

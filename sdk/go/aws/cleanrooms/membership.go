@@ -175,6 +175,7 @@ type MembershipConfig struct {
 	DefaultResultConfiguration any
 	// Whether query metrics are enabled for the Clean Rooms membership, which if true enables Amazon CloudWatch metrics for queries run within the membership. (AI-inferred)
 	IsMetricsEnabled any
+	// Whether job logging is enabled for this membership's own collaboration; when enabled, AWS Clean Rooms logs job details to Amazon CloudWatch Logs. (AI-inferred)
 	JobLogStatus any
 	// Configures the payment details for the membership, including the mode that determines which member is billed for query compute in the clean room. (AI-inferred)
 	PaymentConfiguration any
@@ -199,6 +200,7 @@ type MembershipAttrs struct {
 	DefaultResultConfiguration any
 	// Whether query metrics are enabled for the Clean Rooms membership, which if true enables Amazon CloudWatch metrics for queries run within the membership. (AI-inferred)
 	IsMetricsEnabled any
+	// Whether job logging is enabled for this membership's own collaboration; when enabled, AWS Clean Rooms logs job details to Amazon CloudWatch Logs. (AI-inferred)
 	JobLogStatus any
 	// The unique AWS-assigned identifier for this AWS Clean Rooms membership. (AI-inferred)
 	MembershipIdentifier any

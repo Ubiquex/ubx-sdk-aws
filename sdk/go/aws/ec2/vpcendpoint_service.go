@@ -27,6 +27,7 @@ var VpcendpointService_TagsFields = ubx.FieldMap{
 type VpcendpointServiceConfig struct {
 	// Indicates whether acceptance of connection requests to the VPC endpoint service is required from the service consumer. (AI-inferred)
 	AcceptanceRequired any
+	// Whether Amazon CloudWatch Contributor Insights is enabled for this VPC endpoint service. (AI-inferred)
 	ContributorInsightsEnabled any
 	// The ARNs of one or more Gateway Load Balancers to associate with the endpoint service, routing traffic from the service to these load balancers. (AI-inferred)
 	GatewayLoadBalancerArns any
@@ -47,6 +48,7 @@ type VpcendpointServiceConfig struct {
 type VpcendpointServiceAttrs struct {
 	// Indicates whether acceptance of connection requests to the VPC endpoint service is required from the service consumer. (AI-inferred)
 	AcceptanceRequired any
+	// Whether Amazon CloudWatch Contributor Insights is enabled for this VPC endpoint service. (AI-inferred)
 	ContributorInsightsEnabled any
 	// The ARNs of one or more Gateway Load Balancers to associate with the endpoint service, routing traffic from the service to these load balancers. (AI-inferred)
 	GatewayLoadBalancerArns any

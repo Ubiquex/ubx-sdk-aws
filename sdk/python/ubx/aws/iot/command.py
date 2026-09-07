@@ -170,6 +170,7 @@ class CommandConfig:
     display_name: Any = None
     # The date and time when the command was last updated.
     last_updated_at: Any = None
+    # The parameters this IoT command requires devices to supply when the command is invoked. (AI-inferred)
     mandatory_parameters: Any = None
     # The namespace to which the command belongs.
     namespace: Any = None
@@ -202,6 +203,7 @@ class CommandAttrs:
     display_name: Any = None
     # The date and time when the command was last updated.
     last_updated_at: Any = None
+    # The parameters this IoT command requires devices to supply when the command is invoked. (AI-inferred)
     mandatory_parameters: Any = None
     # The namespace to which the command belongs.
     namespace: Any = None

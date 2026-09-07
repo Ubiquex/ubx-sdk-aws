@@ -81,6 +81,7 @@ class MeshAttrs:
     spec: Any = None
     # Specifies the tags (key-value metadata) to attach to the AWS App Mesh mesh resource. (AI-inferred)
     tags: Any = None
+    # The unique identifier assigned by App Mesh to this mesh. (AI-inferred)
     uid: Any = None
 
 Mesh = ubx.ResourceBinding(

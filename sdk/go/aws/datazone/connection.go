@@ -584,6 +584,7 @@ type ConnectionConfig struct {
 	Name any
 	// The identifier of the project in which the connection should be created. If
 	ProjectIdentifier any
+	// The type-specific connection properties for this DataZone connection's own external resource or service. (AI-inferred)
 	Props any
 	// The scope of the connection.
 	Scope any
@@ -618,6 +619,7 @@ type ConnectionAttrs struct {
 	ProjectId any
 	// The identifier of the project in which the connection should be created. If
 	ProjectIdentifier any
+	// The type-specific connection properties for this DataZone connection's own external resource or service. (AI-inferred)
 	Props any
 	// The scope of the connection.
 	Scope any

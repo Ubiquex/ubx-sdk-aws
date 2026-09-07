@@ -66,12 +66,14 @@ export interface AccessPointConfig {
   posixUser?: AccessPoint_PosixUser | Computed<AccessPoint_PosixUser>;
   /** Specifies the root directory path within the S3 bucket that the access point is restricted to, so requests through the access point can only access objects under that prefix (supported for S3 on Outposts buckets). (AI-inferred) */
   rootDirectory?: AccessPoint_RootDirectory | Computed<AccessPoint_RootDirectory>;
+  /** The tags assigned to this S3 Files access point. (AI-inferred) */
   tags?: AccessPoint_Tags[] | Computed<AccessPoint_Tags[]>;
 }
 
 export interface AccessPointAttrs {
   /** The Amazon Resource Name (ARN) of the S3 access point, which uniquely identifies the access point and is used for making requests to S3 through the access point. (AI-inferred) */
   accessPointArn: string;
+  /** The unique identifier of this S3 Files access point. (AI-inferred) */
   accessPointId: string;
   /** (optional) A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation. */
   clientToken: string;
@@ -83,7 +85,9 @@ export interface AccessPointAttrs {
   posixUser: AccessPoint_PosixUser;
   /** Specifies the root directory path within the S3 bucket that the access point is restricted to, so requests through the access point can only access objects under that prefix (supported for S3 on Outposts buckets). (AI-inferred) */
   rootDirectory: AccessPoint_RootDirectory;
+  /** The current status of this S3 Files access point. (AI-inferred) */
   status: string;
+  /** The tags assigned to this S3 Files access point. (AI-inferred) */
   tags: AccessPoint_Tags[];
 }
 

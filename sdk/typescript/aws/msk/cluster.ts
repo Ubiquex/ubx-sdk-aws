@@ -424,6 +424,7 @@ export interface ClusterConfig {
   storageMode?: string | Computed<string>;
   /** A key-value pair to associate with a resource. */
   tags?: unknown | Computed<unknown>;
+  /** Whether direct access to this MSK cluster's own Apache ZooKeeper nodes is allowed. (AI-inferred) */
   zookeeperAccess?: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_Iam | Computed<Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_Iam>;
 }
 
@@ -458,6 +459,7 @@ export interface ClusterAttrs {
   storageMode: string;
   /** A key-value pair to associate with a resource. */
   tags: unknown;
+  /** Whether direct access to this MSK cluster's own Apache ZooKeeper nodes is allowed. (AI-inferred) */
   zookeeperAccess: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_Iam;
 }
 

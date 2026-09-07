@@ -33,6 +33,7 @@ export interface BrowserSettingsConfig {
   browserPolicy?: string | Computed<string>;
   /** The ARN of a customer-managed KMS key used to encrypt the browser settings, with AWS-managed encryption applied when this optional field is left empty. (AI-inferred) */
   customerManagedKey?: string | Computed<string>;
+  /** The tags assigned to these browser settings. (AI-inferred) */
   tags?: BrowserSettings_Tags[] | Computed<BrowserSettings_Tags[]>;
   /** Specifies the web content filtering policy for WorkSpaces Web browser settings, defining rules that allow or block web content by category (such as adult content, social media, or advertising) in browser sessions. (AI-inferred) */
   webContentFilteringPolicy?: BrowserSettings_WebContentFilteringPolicy | Computed<BrowserSettings_WebContentFilteringPolicy>;
@@ -49,6 +50,7 @@ export interface BrowserSettingsAttrs {
   browserSettingsArn: string;
   /** The ARN of a customer-managed KMS key used to encrypt the browser settings, with AWS-managed encryption applied when this optional field is left empty. (AI-inferred) */
   customerManagedKey: string;
+  /** The tags assigned to these browser settings. (AI-inferred) */
   tags: BrowserSettings_Tags[];
   /** Specifies the web content filtering policy for WorkSpaces Web browser settings, defining rules that allow or block web content by category (such as adult content, social media, or advertising) in browser sessions. (AI-inferred) */
   webContentFilteringPolicy: BrowserSettings_WebContentFilteringPolicy;

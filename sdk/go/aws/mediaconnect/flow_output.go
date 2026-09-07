@@ -184,6 +184,7 @@ type FlowOutputConfig struct {
 	Protocol any
 	// The remote ID for the Zixi-pull stream.
 	RemoteId any
+	// The state of this flow output's own integration with a MediaConnect router input or output. (AI-inferred)
 	RouterIntegrationState any
 	// The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.
 	RouterIntegrationTransitEncryption any
@@ -232,6 +233,7 @@ type FlowOutputAttrs struct {
 	Protocol any
 	// The remote ID for the Zixi-pull stream.
 	RemoteId any
+	// The state of this flow output's own integration with a MediaConnect router input or output. (AI-inferred)
 	RouterIntegrationState any
 	// The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.
 	RouterIntegrationTransitEncryption any

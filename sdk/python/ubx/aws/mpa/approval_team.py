@@ -48,29 +48,45 @@ _ApprovalTeam_TagsFields = {
 @dataclasses.dataclass
 class ApprovalTeamConfig:
     approval_strategy: Any = None
+    # The description of this approval team. (AI-inferred)
     description: Any = None
+    # The name of this approval team. (AI-inferred)
     name: Any = None
+    # The policies defining what operations this approval team's own approval grants permission for. (AI-inferred)
     policies: Any = None
+    # The tags assigned to this approval team. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class ApprovalTeamAttrs:
     approval_strategy: Any = None
+    # The individual approvers assigned to this approval team. (AI-inferred)
     approvers: Any = None
     # The Amazon Resource Name (ARN) uniquely identifying the approval team, used as a durable reference in IAM policies and AWS Marketplace APIs. (AI-inferred)
     arn: Any = None
+    # The date and time when this approval team was created. (AI-inferred)
     creation_time: Any = None
+    # The description of this approval team. (AI-inferred)
     description: Any = None
     # A read-only string field that records the time when the approval team was last updated, managed automatically by AWS. (AI-inferred)
     last_update_time: Any = None
+    # The name of this approval team. (AI-inferred)
     name: Any = None
+    # The total number of approvers on this approval team. (AI-inferred)
     number_of_approvers: Any = None
+    # The policies defining what operations this approval team's own approval grants permission for. (AI-inferred)
     policies: Any = None
+    # The current status of this approval team. (AI-inferred)
     status: Any = None
+    # The status code of this approval team. (AI-inferred)
     status_code: Any = None
+    # A message describing this approval team's own current status. (AI-inferred)
     status_message: Any = None
+    # The tags assigned to this approval team. (AI-inferred)
     tags: Any = None
+    # The Amazon Resource Name (ARN) of this approval team's own most recent update session. (AI-inferred)
     update_session_arn: Any = None
+    # The version identifier of this approval team. (AI-inferred)
     version_id: Any = None
 
 ApprovalTeam = ubx.ResourceBinding(

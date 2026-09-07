@@ -7,6 +7,10 @@ SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 from .administrator_account import AdministratorAccount, AdministratorAccountConfig
 from .coverage import Coverage, CoverageConfig
 from .coverage_statistics import CoverageStatistics, CoverageStatisticsConfig
+from .custom_detection_rule import CustomDetectionRule, CustomDetectionRuleConfig
+from .custom_detection_rule_associations import CustomDetectionRuleAssociations, CustomDetectionRuleAssociationsConfig
+from .custom_detection_rule_org_configurations import CustomDetectionRuleOrgConfigurations, CustomDetectionRuleOrgConfigurationsConfig
+from .custom_detection_rules import CustomDetectionRules, CustomDetectionRulesConfig
 from .detectors import Detectors, DetectorsConfig
 from .filters import Filters, FiltersConfig
 from .findings import Findings, FindingsConfig

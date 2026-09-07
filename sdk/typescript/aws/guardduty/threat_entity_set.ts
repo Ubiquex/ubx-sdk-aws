@@ -41,6 +41,7 @@ export interface ThreatEntitySetAttrs {
   expectedBucketOwner: string;
   /** Specifies the format of the uploaded threat intelligence set file, which for AWS GuardDuty must be one of TXT, STIX, OTX_CSV, or ALIEN_VAULT. (AI-inferred) */
   format: string;
+  /** The unique identifier of this threat entity set. (AI-inferred) */
   id: string;
   /** The S3 URI (for example, s3://bucket/prefix/object) of the file that contains the threat intelligence set, which GuardDuty retrieves and imports as the indicators for this set. (AI-inferred) */
   location: string;

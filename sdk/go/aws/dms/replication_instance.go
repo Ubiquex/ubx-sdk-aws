@@ -43,6 +43,7 @@ type ReplicationInstanceConfig struct {
 	ReplicationInstanceIdentifier any
 	// The identifier of an existing DMS replication subnet group that determines the VPC and subnets where the replication instance's network interfaces are placed. (AI-inferred)
 	ReplicationSubnetGroupIdentifier any
+	// A unique string identifier for this replication instance's own underlying resource. (AI-inferred)
 	ResourceIdentifier any
 	// Specifies the tags (key-value pairs) to associate with the DMS replication instance, which are used for cost allocation, access control, and identifying the resource in AWS. (AI-inferred)
 	Tags any
@@ -85,6 +86,7 @@ type ReplicationInstanceAttrs struct {
 	ReplicationInstancePublicIpAddresses any
 	// The identifier of an existing DMS replication subnet group that determines the VPC and subnets where the replication instance's network interfaces are placed. (AI-inferred)
 	ReplicationSubnetGroupIdentifier any
+	// A unique string identifier for this replication instance's own underlying resource. (AI-inferred)
 	ResourceIdentifier any
 	// Specifies the tags (key-value pairs) to associate with the DMS replication instance, which are used for cost allocation, access control, and identifying the resource in AWS. (AI-inferred)
 	Tags any

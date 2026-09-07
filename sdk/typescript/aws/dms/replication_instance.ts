@@ -41,6 +41,7 @@ export interface ReplicationInstanceConfig {
   replicationInstanceIdentifier?: string | Computed<string>;
   /** The identifier of an existing DMS replication subnet group that determines the VPC and subnets where the replication instance's network interfaces are placed. (AI-inferred) */
   replicationSubnetGroupIdentifier?: string | Computed<string>;
+  /** A unique string identifier for this replication instance's own underlying resource. (AI-inferred) */
   resourceIdentifier?: string | Computed<string>;
   /** Specifies the tags (key-value pairs) to associate with the DMS replication instance, which are used for cost allocation, access control, and identifying the resource in AWS. (AI-inferred) */
   tags?: ReplicationInstance_Tags[] | Computed<ReplicationInstance_Tags[]>;
@@ -83,6 +84,7 @@ export interface ReplicationInstanceAttrs {
   replicationInstancePublicIpAddresses: string;
   /** The identifier of an existing DMS replication subnet group that determines the VPC and subnets where the replication instance's network interfaces are placed. (AI-inferred) */
   replicationSubnetGroupIdentifier: string;
+  /** A unique string identifier for this replication instance's own underlying resource. (AI-inferred) */
   resourceIdentifier: string;
   /** Specifies the tags (key-value pairs) to associate with the DMS replication instance, which are used for cost allocation, access control, and identifying the resource in AWS. (AI-inferred) */
   tags: ReplicationInstance_Tags[];

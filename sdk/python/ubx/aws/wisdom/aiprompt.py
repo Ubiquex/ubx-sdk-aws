@@ -40,11 +40,13 @@ class AipromptConfig:
     model_id: Any = None
     # The user-friendly name assigned to the AI prompt, which is used to identify and reference the prompt within the Amazon Wisdom service and its console. (AI-inferred)
     name: Any = None
+    # The tags assigned to this Wisdom AI Prompt. (AI-inferred)
     tags: Any = None
     # Defines the prompt template settings for the AI prompt, allowing you to specify either a simple text prompt or a full prompt template with its corresponding type. (AI-inferred)
     template_configuration: Any = None
     # Defines whether the AI prompt uses a plain text template or a chat-based template, determining the expected configuration format for the prompt. (AI-inferred)
     template_type: Any = None
+    # The type of this AI Prompt, e.g. answer generation, query reformulation, or case summarization. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -67,11 +69,13 @@ class AipromptAttrs:
     modified_time_seconds: Any = None
     # The user-friendly name assigned to the AI prompt, which is used to identify and reference the prompt within the Amazon Wisdom service and its console. (AI-inferred)
     name: Any = None
+    # The tags assigned to this Wisdom AI Prompt. (AI-inferred)
     tags: Any = None
     # Defines the prompt template settings for the AI prompt, allowing you to specify either a simple text prompt or a full prompt template with its corresponding type. (AI-inferred)
     template_configuration: Any = None
     # Defines whether the AI prompt uses a plain text template or a chat-based template, determining the expected configuration format for the prompt. (AI-inferred)
     template_type: Any = None
+    # The type of this AI Prompt, e.g. answer generation, query reformulation, or case summarization. (AI-inferred)
     type: Any = None
 
 Aiprompt = ubx.ResourceBinding(

@@ -383,6 +383,7 @@ const WorkspaceInstance_ManagedInstanceFields: FieldMap = {
 };
 
 export interface WorkspaceInstanceConfig {
+  /** Whether this WorkSpaces Instance is managed by AWS. (AI-inferred) */
   managedInstance?: WorkspaceInstance_ManagedInstance | Computed<WorkspaceInstance_ManagedInstance>;
   /** Assigns a list of key-value tags to the WorkSpace instance for resource identification, cost tracking, and access management. (AI-inferred) */
   tags?: WorkspaceInstance_ManagedInstance_TagSpecifications_Tags[] | Computed<WorkspaceInstance_ManagedInstance_TagSpecifications_Tags[]>;
@@ -391,6 +392,7 @@ export interface WorkspaceInstanceConfig {
 export interface WorkspaceInstanceAttrs {
   /** Provides the read-only details of the EC2 instance that AWS WorkSpaces automatically manages for this workspace instance. (AI-inferred) */
   ec2ManagedInstance: WorkspaceInstance_Ec2ManagedInstance;
+  /** Whether this WorkSpaces Instance is managed by AWS. (AI-inferred) */
   managedInstance: WorkspaceInstance_ManagedInstance;
   /** The current state of the workspace instance */
   provisionState: string;

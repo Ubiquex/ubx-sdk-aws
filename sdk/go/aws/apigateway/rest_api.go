@@ -63,6 +63,7 @@ type RestApiConfig struct {
 	Description any
 	// When set to true, disables the default execute-api endpoint for the REST API, so the API is accessible only through custom domain names. (AI-inferred)
 	DisableExecuteApiEndpoint any
+	// Whether this REST API's own endpoint is reachable publicly or only from within a VPC. (AI-inferred)
 	EndpointAccessMode any
 	// The ``EndpointConfiguration`` property type specifies the endpoint types and IP address types of a REST API. ``EndpointConfiguration`` is a property of the [AWS::ApiGateway::RestApi](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html) resource.
 	EndpointConfiguration any
@@ -82,6 +83,7 @@ type RestApiConfig struct {
 	SecurityPolicy any
 	// Defines a list of key-value pairs to tag the API Gateway REST API, enabling cost allocation, resource-level access control, and management of the API resource. (AI-inferred)
 	Tags any
+	Version any
 }
 
 type RestApiAttrs struct {
@@ -99,6 +101,7 @@ type RestApiAttrs struct {
 	Description any
 	// When set to true, disables the default execute-api endpoint for the REST API, so the API is accessible only through custom domain names. (AI-inferred)
 	DisableExecuteApiEndpoint any
+	// Whether this REST API's own endpoint is reachable publicly or only from within a VPC. (AI-inferred)
 	EndpointAccessMode any
 	// The ``EndpointConfiguration`` property type specifies the endpoint types and IP address types of a REST API. ``EndpointConfiguration`` is a property of the [AWS::ApiGateway::RestApi](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html) resource.
 	EndpointConfiguration any
@@ -122,6 +125,7 @@ type RestApiAttrs struct {
 	SecurityPolicy any
 	// Defines a list of key-value pairs to tag the API Gateway REST API, enabling cost allocation, resource-level access control, and management of the API resource. (AI-inferred)
 	Tags any
+	Version any
 }
 
 var RestApi = ubx.ResourceBinding{
@@ -156,5 +160,6 @@ var RestApi = ubx.ResourceBinding{
 			Kind: "list",
 			Fields: RestApi_TagsFields,
 		},
+		"Version": ubx.FieldSpec{WireName: "version"},
 	},
 }

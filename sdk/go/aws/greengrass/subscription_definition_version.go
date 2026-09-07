@@ -29,6 +29,7 @@ type SubscriptionDefinitionVersionConfig struct {
 }
 
 type SubscriptionDefinitionVersionAttrs struct {
+	// The unique identifier of this Greengrass subscription definition version. (AI-inferred)
 	Id any
 	// The ID of the Greengrass subscription definition that this subscription definition version belongs to. (AI-inferred)
 	SubscriptionDefinitionId any

@@ -362,6 +362,7 @@ type DatasetAttrs struct {
 	ContentDeliveryRules any
 	// The name to assign to the AWS IoT Analytics dataset; if not provided, CloudFormation generates a unique name. (AI-inferred)
 	DatasetName any
+	// The unique identifier of this IoT Analytics dataset. (AI-inferred)
 	Id any
 	// Defines the late data rules for the AWS IoT Analytics dataset, each specifying a delta-time configuration that determines when late-arriving data should trigger a dataset content update. (AI-inferred)
 	LateDataRules any

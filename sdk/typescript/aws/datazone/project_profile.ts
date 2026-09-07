@@ -71,10 +71,14 @@ export interface ProjectProfileConfig {
   domainIdentifier?: string | Computed<string>;
   /** The unique identifier of the Amazon DataZone domain unit that this project profile is associated with, used to scope the profile to a specific domain unit. (AI-inferred) */
   domainUnitIdentifier?: string | Computed<string>;
+  /** The name of this project profile. (AI-inferred) */
   name: string | Computed<string>;
   projectResourceTags?: ProjectProfile_ProjectResourceTags[] | Computed<ProjectProfile_ProjectResourceTags[]>;
+  /** The description shown to project users describing the allowed resource tag specifications for this project profile. (AI-inferred) */
   projectResourceTagsDescription?: string | Computed<string>;
+  /** Whether this project profile is enabled or disabled. (AI-inferred) */
   status?: string | Computed<string>;
+  /** Whether this project profile uses DataZone's own default environment configurations rather than the ones explicitly set on it. (AI-inferred) */
   useDefaultConfigurations?: boolean | Computed<boolean>;
 }
 
@@ -99,13 +103,18 @@ export interface ProjectProfileAttrs {
   environmentConfigurations: ProjectProfile_EnvironmentConfigurations[];
   /** The unique identifier assigned by AWS DataZone to this project profile. (AI-inferred) */
   id: string;
+  /** The unique identifier of this project profile. (AI-inferred) */
   identifier: string;
   /** The timestamp indicating when the project profile was last updated, set automatically by AWS DataZone. (AI-inferred) */
   lastUpdatedAt: string;
+  /** The name of this project profile. (AI-inferred) */
   name: string;
   projectResourceTags: ProjectProfile_ProjectResourceTags[];
+  /** The description shown to project users describing the allowed resource tag specifications for this project profile. (AI-inferred) */
   projectResourceTagsDescription: string;
+  /** Whether this project profile is enabled or disabled. (AI-inferred) */
   status: string;
+  /** Whether this project profile uses DataZone's own default environment configurations rather than the ones explicitly set on it. (AI-inferred) */
   useDefaultConfigurations: boolean;
 }
 

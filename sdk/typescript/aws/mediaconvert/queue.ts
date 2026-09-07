@@ -6,6 +6,7 @@ export interface QueueConfig {
   concurrentJobs?: number | Computed<number>;
   /** An optional user-defined description of the MediaConvert queue, used to identify its purpose in the AWS Elemental MediaConvert console. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The maximum number of jobs this MediaConvert queue can process concurrently. (AI-inferred) */
   maximumConcurrentFeeds?: number | Computed<number>;
   /** The name of the MediaConvert queue; if omitted, AWS Elemental MediaConvert automatically generates a unique queue name. (AI-inferred) */
   name?: string | Computed<string>;
@@ -24,7 +25,9 @@ export interface QueueAttrs {
   concurrentJobs: number;
   /** An optional user-defined description of the MediaConvert queue, used to identify its purpose in the AWS Elemental MediaConvert console. (AI-inferred) */
   description: string;
+  /** The unique identifier of this MediaConvert queue. (AI-inferred) */
   id: string;
+  /** The maximum number of jobs this MediaConvert queue can process concurrently. (AI-inferred) */
   maximumConcurrentFeeds: number;
   /** The name of the MediaConvert queue; if omitted, AWS Elemental MediaConvert automatically generates a unique queue name. (AI-inferred) */
   name: string;

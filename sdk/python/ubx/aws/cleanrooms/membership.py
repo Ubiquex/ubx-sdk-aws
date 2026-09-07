@@ -179,6 +179,7 @@ class MembershipConfig:
     default_result_configuration: Any = None
     # Whether query metrics are enabled for the Clean Rooms membership, which if true enables Amazon CloudWatch metrics for queries run within the membership. (AI-inferred)
     is_metrics_enabled: Any = None
+    # Whether job logging is enabled for this membership's own collaboration; when enabled, AWS Clean Rooms logs job details to Amazon CloudWatch Logs. (AI-inferred)
     job_log_status: Any = None
     # Configures the payment details for the membership, including the mode that determines which member is billed for query compute in the clean room. (AI-inferred)
     payment_configuration: Any = None
@@ -203,6 +204,7 @@ class MembershipAttrs:
     default_result_configuration: Any = None
     # Whether query metrics are enabled for the Clean Rooms membership, which if true enables Amazon CloudWatch metrics for queries run within the membership. (AI-inferred)
     is_metrics_enabled: Any = None
+    # Whether job logging is enabled for this membership's own collaboration; when enabled, AWS Clean Rooms logs job details to Amazon CloudWatch Logs. (AI-inferred)
     job_log_status: Any = None
     # The unique AWS-assigned identifier for this AWS Clean Rooms membership. (AI-inferred)
     membership_identifier: Any = None

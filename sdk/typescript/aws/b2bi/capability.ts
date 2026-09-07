@@ -102,6 +102,7 @@ export interface CapabilityConfig {
   instructionsDocuments?: Capability_Configuration_Edi_InputLocation[] | Computed<Capability_Configuration_Edi_InputLocation[]>;
   /** A user-specified name for the AWS B2BI capability, which is required when creating the resource and serves as a human-readable identifier for the capability in the AWS B2BI service. (AI-inferred) */
   name: string | Computed<string>;
+  /** The tags assigned to this B2B Data Interchange capability. (AI-inferred) */
   tags?: Capability_Tags[] | Computed<Capability_Tags[]>;
   /** The type of the B2BI capability, which determines the document exchange protocol, with 'edi' currently the only supported value. (AI-inferred) */
   type: string | Computed<string>;
@@ -122,6 +123,7 @@ export interface CapabilityAttrs {
   modifiedAt: string;
   /** A user-specified name for the AWS B2BI capability, which is required when creating the resource and serves as a human-readable identifier for the capability in the AWS B2BI service. (AI-inferred) */
   name: string;
+  /** The tags assigned to this B2B Data Interchange capability. (AI-inferred) */
   tags: Capability_Tags[];
   /** The type of the B2BI capability, which determines the document exchange protocol, with 'edi' currently the only supported value. (AI-inferred) */
   type: string;

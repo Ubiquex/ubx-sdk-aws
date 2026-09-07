@@ -20,6 +20,7 @@ _Farm_TagsFields = {
 
 @dataclasses.dataclass
 class FarmConfig:
+    # A multiplier applied to this farm's own reported usage costs, used to adjust cost tracking without changing actual resource consumption. (AI-inferred)
     cost_scale_factor: Any = None
     # A human-readable description of the Deadline Cloud farm, used to identify the farm's purpose or details. (AI-inferred)
     description: Any = None
@@ -34,6 +35,7 @@ class FarmConfig:
 class FarmAttrs:
     # The unique Amazon Resource Name (ARN) of the farm, used to reference the farm across AWS services and in IAM policies. (AI-inferred)
     arn: Any = None
+    # A multiplier applied to this farm's own reported usage costs, used to adjust cost tracking without changing actual resource consumption. (AI-inferred)
     cost_scale_factor: Any = None
     # A human-readable description of the Deadline Cloud farm, used to identify the farm's purpose or details. (AI-inferred)
     description: Any = None

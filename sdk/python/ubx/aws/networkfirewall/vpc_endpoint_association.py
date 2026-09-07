@@ -30,17 +30,20 @@ _VpcEndpointAssociation_TagsFields = {
 
 @dataclasses.dataclass
 class VpcEndpointAssociationConfig:
+    # The description of this VPC endpoint association. (AI-inferred)
     description: Any = None
     # A resource ARN.
     firewall_arn: Any = None
     # Defines the subnet mappings (each with subnet ID and optional IP address type) to associate with the Network Firewall VPC endpoint. (AI-inferred)
     subnet_mapping: Any = None
+    # The tags assigned to this VPC endpoint association. (AI-inferred)
     tags: Any = None
     # The ID of the VPC in which the VPC endpoint is being associated with the Network Firewall firewall. (AI-inferred)
     vpc_id: Any = None
 
 @dataclasses.dataclass
 class VpcEndpointAssociationAttrs:
+    # The description of this VPC endpoint association. (AI-inferred)
     description: Any = None
     # An endpoint Id.
     endpoint_id: Any = None
@@ -48,6 +51,7 @@ class VpcEndpointAssociationAttrs:
     firewall_arn: Any = None
     # Defines the subnet mappings (each with subnet ID and optional IP address type) to associate with the Network Firewall VPC endpoint. (AI-inferred)
     subnet_mapping: Any = None
+    # The tags assigned to this VPC endpoint association. (AI-inferred)
     tags: Any = None
     # A resource ARN.
     vpc_endpoint_association_arn: Any = None

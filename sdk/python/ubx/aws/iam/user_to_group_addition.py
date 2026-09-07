@@ -17,6 +17,7 @@ class UserToGroupAdditionConfig:
 class UserToGroupAdditionAttrs:
     # The name of the IAM group that the user is added to. (AI-inferred)
     group_name: Any = None
+    # The unique identifier of this user-to-group addition. (AI-inferred)
     id: Any = None
     # Specifies the list of existing IAM user names to add to the group specified in the GroupName property. (AI-inferred)
     users: Any = None

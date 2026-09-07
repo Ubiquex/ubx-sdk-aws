@@ -104,6 +104,7 @@ type CapabilityConfig struct {
 	InstructionsDocuments any
 	// A user-specified name for the AWS B2BI capability, which is required when creating the resource and serves as a human-readable identifier for the capability in the AWS B2BI service. (AI-inferred)
 	Name any
+	// The tags assigned to this B2B Data Interchange capability. (AI-inferred)
 	Tags any
 	// The type of the B2BI capability, which determines the document exchange protocol, with 'edi' currently the only supported value. (AI-inferred)
 	Type any
@@ -124,6 +125,7 @@ type CapabilityAttrs struct {
 	ModifiedAt any
 	// A user-specified name for the AWS B2BI capability, which is required when creating the resource and serves as a human-readable identifier for the capability in the AWS B2BI service. (AI-inferred)
 	Name any
+	// The tags assigned to this B2B Data Interchange capability. (AI-inferred)
 	Tags any
 	// The type of the B2BI capability, which determines the document exchange protocol, with 'edi' currently the only supported value. (AI-inferred)
 	Type any

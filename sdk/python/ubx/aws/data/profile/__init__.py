@@ -34,7 +34,9 @@ from .recommenders import Recommenders, RecommendersConfig
 from .rule_based_matches import RuleBasedMatches, RuleBasedMatchesConfig
 from .segment_definitions import SegmentDefinitions, SegmentDefinitionsConfig
 from .segment_membership import SegmentMembership, SegmentMembershipConfig
+from .segment_subscription import SegmentSubscription, SegmentSubscriptionConfig
 from .similar_profiles import SimilarProfiles, SimilarProfilesConfig
+from .stream_for_segments import StreamForSegments, StreamForSegmentsConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig
 from .upload_job_path import UploadJobPath, UploadJobPathConfig
 from .upload_jobs import UploadJobs, UploadJobsConfig

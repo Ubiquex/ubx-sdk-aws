@@ -179,7 +179,9 @@ var ComputeEnvironment_UpdatePolicyFields = ubx.FieldMap{
 type ComputeEnvironmentConfig struct {
 	// The name for the AWS Batch compute environment, which must be unique within the region and can contain letters, numbers, hyphens, and underscores; if omitted, AWS CloudFormation generates a unique name. (AI-inferred)
 	ComputeEnvironmentName any
+	// Reserved for AWS Batch's own internal use. (AI-inferred)
 	Context any
+	// The Amazon ECS settings for this compute environment, controlling CloudWatch Container Insights collection. (AI-inferred)
 	EcsSettings any
 	// Specifies the Amazon EKS cluster and optional Kubernetes namespace that the Batch compute environment uses when it is of type EKS. (AI-inferred)
 	EksConfiguration any
@@ -206,7 +208,9 @@ type ComputeEnvironmentAttrs struct {
 	ComputeEnvironmentName any
 	// The resolved configuration of EC2 compute resources (instance types, min/max vCPUs, subnets, security groups) that AWS Batch uses to run jobs in the managed compute environment. (AI-inferred)
 	ComputeResources any
+	// Reserved for AWS Batch's own internal use. (AI-inferred)
 	Context any
+	// The Amazon ECS settings for this compute environment, controlling CloudWatch Container Insights collection. (AI-inferred)
 	EcsSettings any
 	// Specifies the Amazon EKS cluster and optional Kubernetes namespace that the Batch compute environment uses when it is of type EKS. (AI-inferred)
 	EksConfiguration any

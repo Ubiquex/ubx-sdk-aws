@@ -166,6 +166,7 @@ type BrokerConfig struct {
 	StorageType any
 	// Specifies the subnets where the broker's instances are deployed: one subnet for a single-instance broker, or two subnets in different Availability Zones for an active/standby broker; if you provide subnet IDs, you must also provide the SecurityGroups property. (AI-inferred)
 	SubnetIds any
+	// The tags assigned to this Amazon MQ broker. (AI-inferred)
 	Tags any
 	// Users to configure on the broker. For RabbitMQ, this should be one user, created when the broker is created, and changes thereafter are ignored. For ActiveMQ, changes to anything but Password are detected and will trigger an update, but changes to Password cannot be detected so updates to Password may not take effect unless there is some other change.
 	Users any
@@ -234,6 +235,7 @@ type BrokerAttrs struct {
 	StorageType any
 	// Specifies the subnets where the broker's instances are deployed: one subnet for a single-instance broker, or two subnets in different Availability Zones for an active/standby broker; if you provide subnet IDs, you must also provide the SecurityGroups property. (AI-inferred)
 	SubnetIds any
+	// The tags assigned to this Amazon MQ broker. (AI-inferred)
 	Tags any
 	// Users to configure on the broker. For RabbitMQ, this should be one user, created when the broker is created, and changes thereafter are ignored. For ActiveMQ, changes to anything but Password are detected and will trigger an update, but changes to Password cannot be detected so updates to Password may not take effect unless there is some other change.
 	Users any

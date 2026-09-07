@@ -108,6 +108,7 @@ class CapabilityConfig:
     instructions_documents: Any = None
     # A user-specified name for the AWS B2BI capability, which is required when creating the resource and serves as a human-readable identifier for the capability in the AWS B2BI service. (AI-inferred)
     name: Any = None
+    # The tags assigned to this B2B Data Interchange capability. (AI-inferred)
     tags: Any = None
     # The type of the B2BI capability, which determines the document exchange protocol, with 'edi' currently the only supported value. (AI-inferred)
     type: Any = None
@@ -128,6 +129,7 @@ class CapabilityAttrs:
     modified_at: Any = None
     # A user-specified name for the AWS B2BI capability, which is required when creating the resource and serves as a human-readable identifier for the capability in the AWS B2BI service. (AI-inferred)
     name: Any = None
+    # The tags assigned to this B2B Data Interchange capability. (AI-inferred)
     tags: Any = None
     # The type of the B2BI capability, which determines the document exchange protocol, with 'edi' currently the only supported value. (AI-inferred)
     type: Any = None

@@ -77,6 +77,7 @@ class CodeSecurityIntegrationConfig:
     create_integration_details: Any = None
     # Code Security Integration name
     name: Any = None
+    # The tags assigned to this Inspector code security integration. (AI-inferred)
     tags: Any = None
     # Specifies the type of code security integration to configure, such as GITHUB or GITLAB, indicating which source code repository service to connect to Inspector for vulnerability scanning. (AI-inferred)
     type: Any = None
@@ -100,6 +101,7 @@ class CodeSecurityIntegrationAttrs:
     status: Any = None
     # Reason for the current status
     status_reason: Any = None
+    # The tags assigned to this Inspector code security integration. (AI-inferred)
     tags: Any = None
     # Specifies the type of code security integration to configure, such as GITHUB or GITLAB, indicating which source code repository service to connect to Inspector for vulnerability scanning. (AI-inferred)
     type: Any = None

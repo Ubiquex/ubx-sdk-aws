@@ -38,6 +38,24 @@ type ConfiguredTable_AnalysisRules_Policy_V1_Aggregation struct {
 	ScalarFunctions any
 }
 
+type ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholds struct {
+	MinimumIdentityCount any
+	OutputColumnName any
+}
+
+type ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds struct {
+	AllowedAggregateExpressionType any
+	IdentityColumns any
+	MinimumIdentityCount any
+	OutputColumnThresholds any
+	Type any
+}
+
+type ConfiguredTable_AnalysisRules_Policy_V1_Custom_ComparisonControls struct {
+	AllowedColumnComparisonColumns any
+	AllowedLiteralComparisonColumns any
+}
+
 type ConfiguredTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy_Columns struct {
 	// The name of a column that is included in the differential privacy policy of the custom analysis rule, specifying which configured table column is protected by the differential privacy aggregation. (AI-inferred)
 	Name any
@@ -51,10 +69,12 @@ type ConfiguredTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy struct {
 type ConfiguredTable_AnalysisRules_Policy_V1_Custom struct {
 	// Specifies whether the results of a query executed on this configured table can be used in subsequent additional analyses, with allowed values ALLOWED, REQUIRED, or NOT_ALLOWED. (AI-inferred)
 	AdditionalAnalyses any
+	AggregationThresholds any
 	// A list of allowed analysis template identifiers (such as ARNs) that are permitted to run against the configured table under this custom analysis rule. (AI-inferred)
 	AllowedAnalyses any
 	// Specifies the Amazon Resource Names (ARNs) of the analysis providers that are permitted to run analyses on the configured table under this custom analysis rule. (AI-inferred)
 	AllowedAnalysisProviders any
+	ComparisonControls any
 	// Specifies the differential privacy configuration for the custom analysis rule, including the list of protected columns and the epsilon value that controls the privacy-accuracy trade-off for query results. (AI-inferred)
 	DifferentialPrivacy any
 	// Specifies the list of column names that must be excluded from the output of queries run under this custom analysis rule policy, preventing collaborators from viewing those columns. (AI-inferred)
@@ -185,6 +205,28 @@ var ConfiguredTable_AnalysisRules_Policy_V1_AggregationFields = ubx.FieldMap{
 		"ScalarFunctions": ubx.FieldSpec{WireName: "scalar_functions"},
 	}
 
+var ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholdsFields = ubx.FieldMap{
+		"MinimumIdentityCount": ubx.FieldSpec{WireName: "minimum_identity_count"},
+		"OutputColumnName": ubx.FieldSpec{WireName: "output_column_name"},
+	}
+
+var ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholdsFields = ubx.FieldMap{
+		"AllowedAggregateExpressionType": ubx.FieldSpec{WireName: "allowed_aggregate_expression_type"},
+		"IdentityColumns": ubx.FieldSpec{WireName: "identity_columns"},
+		"MinimumIdentityCount": ubx.FieldSpec{WireName: "minimum_identity_count"},
+		"OutputColumnThresholds": ubx.FieldSpec{
+			WireName: "output_column_thresholds",
+			Kind: "list",
+			Fields: ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholds_OutputColumnThresholdsFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
+
+var ConfiguredTable_AnalysisRules_Policy_V1_Custom_ComparisonControlsFields = ubx.FieldMap{
+		"AllowedColumnComparisonColumns": ubx.FieldSpec{WireName: "allowed_column_comparison_columns"},
+		"AllowedLiteralComparisonColumns": ubx.FieldSpec{WireName: "allowed_literal_comparison_columns"},
+	}
+
 var ConfiguredTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy_ColumnsFields = ubx.FieldMap{
 		"Name": ubx.FieldSpec{WireName: "name"},
 	}
@@ -199,8 +241,18 @@ var ConfiguredTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacyFields = u
 
 var ConfiguredTable_AnalysisRules_Policy_V1_CustomFields = ubx.FieldMap{
 		"AdditionalAnalyses": ubx.FieldSpec{WireName: "additional_analyses"},
+		"AggregationThresholds": ubx.FieldSpec{
+			WireName: "aggregation_thresholds",
+			Kind: "list",
+			Fields: ConfiguredTable_AnalysisRules_Policy_V1_Custom_AggregationThresholdsFields,
+		},
 		"AllowedAnalyses": ubx.FieldSpec{WireName: "allowed_analyses"},
 		"AllowedAnalysisProviders": ubx.FieldSpec{WireName: "allowed_analysis_providers"},
+		"ComparisonControls": ubx.FieldSpec{
+			WireName: "comparison_controls",
+			Kind: "object",
+			Fields: ConfiguredTable_AnalysisRules_Policy_V1_Custom_ComparisonControlsFields,
+		},
 		"DifferentialPrivacy": ubx.FieldSpec{
 			WireName: "differential_privacy",
 			Kind: "object",

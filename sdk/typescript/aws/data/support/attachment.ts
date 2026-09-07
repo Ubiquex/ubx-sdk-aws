@@ -8,17 +8,20 @@ export interface Attachment_Attachment {
 
 export interface AttachmentConfig {
   attachmentId: string | Computed<string>;
+  dryRun?: boolean | Computed<boolean>;
 }
 
 export interface AttachmentAttrs {
   /** <p>An attachment to a case communication. The attachment consists of the file name and the content of the file. Each attachment file size should not exceed 5 MB. File types that are supported include the following: pdf, jpeg,.doc, .log, .text </p> */
   attachment: Attachment_Attachment;
   attachmentId: string;
+  dryRun: boolean;
 }
 
 export const Attachment: DataSourceBinding<AttachmentConfig, AttachmentAttrs> = {
   wireType: "aws_support_attachment",
   fields: {
     attachmentId: "attachment_id",
+    dryRun: "dry_run",
   },
 };

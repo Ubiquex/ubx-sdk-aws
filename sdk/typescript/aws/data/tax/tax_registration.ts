@@ -34,6 +34,7 @@ export interface TaxRegistration_TaxRegistration_AdditionalTaxInformation_Estoni
 }
 
 export interface TaxRegistration_TaxRegistration_AdditionalTaxInformation_FranceAdditionalInfo {
+  eInvoiceRoutingCode?: string | Computed<string>;
   sirenNumber: string | Computed<string>;
 }
 
@@ -72,6 +73,10 @@ export interface TaxRegistration_TaxRegistration_AdditionalTaxInformation_Malays
   businessRegistrationNumber?: string | Computed<string>;
   serviceTaxCodes?: string[] | Computed<string[]>;
   taxInformationNumber?: string | Computed<string>;
+}
+
+export interface TaxRegistration_TaxRegistration_AdditionalTaxInformation_MonacoAdditionalInfo {
+  businessNumber: string | Computed<string>;
 }
 
 export interface TaxRegistration_TaxRegistration_AdditionalTaxInformation_PhilippinesAdditionalInfo {
@@ -152,6 +157,8 @@ export interface TaxRegistration_TaxRegistration_AdditionalTaxInformation {
   kenyaAdditionalInfo?: TaxRegistration_TaxRegistration_AdditionalTaxInformation_GeorgiaAdditionalInfo | Computed<TaxRegistration_TaxRegistration_AdditionalTaxInformation_GeorgiaAdditionalInfo>;
   /** <p> Additional tax information associated with your TRN in Malaysia.</p> */
   malaysiaAdditionalInfo?: TaxRegistration_TaxRegistration_AdditionalTaxInformation_MalaysiaAdditionalInfo | Computed<TaxRegistration_TaxRegistration_AdditionalTaxInformation_MalaysiaAdditionalInfo>;
+  /** <p>Additional tax information associated with your TRN in Monaco.</p> */
+  monacoAdditionalInfo?: TaxRegistration_TaxRegistration_AdditionalTaxInformation_MonacoAdditionalInfo | Computed<TaxRegistration_TaxRegistration_AdditionalTaxInformation_MonacoAdditionalInfo>;
   /** <p>Additional tax information associated with your TRN in the Philippines.</p> */
   philippinesAdditionalInfo?: TaxRegistration_TaxRegistration_AdditionalTaxInformation_PhilippinesAdditionalInfo | Computed<TaxRegistration_TaxRegistration_AdditionalTaxInformation_PhilippinesAdditionalInfo>;
   /** <p> Additional tax information associated with your TRN in Poland. </p> */

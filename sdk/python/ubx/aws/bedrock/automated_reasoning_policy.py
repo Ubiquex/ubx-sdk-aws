@@ -102,7 +102,9 @@ class AutomatedReasoningPolicyConfig:
     force_delete: Any = None
     # The KMS key with which the Policy's assets will be encrypted at rest.
     kms_key_id: Any = None
+    # The name of this automated reasoning policy. (AI-inferred)
     name: Any = None
+    # The formal logic definition (rules, variables, and their relationships) this automated reasoning policy checks model responses against. (AI-inferred)
     policy_definition: Any = None
     # A list of key-value tags to associate with the AWS Bedrock automated reasoning policy. (AI-inferred)
     tags: Any = None
@@ -121,8 +123,11 @@ class AutomatedReasoningPolicyAttrs:
     kms_key_arn: Any = None
     # The KMS key with which the Policy's assets will be encrypted at rest.
     kms_key_id: Any = None
+    # The name of this automated reasoning policy. (AI-inferred)
     name: Any = None
+    # The Amazon Resource Name (ARN) of this automated reasoning policy. (AI-inferred)
     policy_arn: Any = None
+    # The formal logic definition (rules, variables, and their relationships) this automated reasoning policy checks model responses against. (AI-inferred)
     policy_definition: Any = None
     # The id of the policy
     policy_id: Any = None

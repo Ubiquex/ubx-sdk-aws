@@ -56,6 +56,7 @@ class DomainNameConfig:
     ownership_verification_certificate_arn: Any = None
     # Specifies the ARN of an AWS Certificate Manager (ACM) certificate to use for the domain name's regional API endpoint, which serves requests for a specific AWS region. (AI-inferred)
     regional_certificate_arn: Any = None
+    # How this API Gateway custom domain name routes requests across its own base path mappings. (AI-inferred)
     routing_mode: Any = None
     # Specifies the minimum TLS version (e.g., 'TLS_1_0' or 'TLS_1_2') that API Gateway uses for the custom domain name's HTTPS connections. (AI-inferred)
     security_policy: Any = None
@@ -88,6 +89,7 @@ class DomainNameAttrs:
     regional_domain_name: Any = None
     # The Route 53 hosted zone ID for the regional API Gateway endpoint, used to configure DNS alias records pointing to the regional domain name. (AI-inferred)
     regional_hosted_zone_id: Any = None
+    # How this API Gateway custom domain name routes requests across its own base path mappings. (AI-inferred)
     routing_mode: Any = None
     # Specifies the minimum TLS version (e.g., 'TLS_1_0' or 'TLS_1_2') that API Gateway uses for the custom domain name's HTTPS connections. (AI-inferred)
     security_policy: Any = None

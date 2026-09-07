@@ -67,11 +67,13 @@ type WorkflowConfig struct {
 	// The location of code artifacts in Amazon S3 for the workflow. Modeled as a single-member container so it stays extensible to future artifact types (e.g. OCI images).
 	Code any
 	DefinitionS3Location any
+	// The description of this workflow. (AI-inferred)
 	Description any
 	// Specifies the AWS KMS key configuration for encrypting the MWAA environment's data, with the key ARN provided in the nested 'KmsKey' property. (AI-inferred)
 	EncryptionConfiguration any
 	// Configures the logging settings for the AWS MWAA serverless workflow, specifying whether to enable logging and the log level (e.g., INFO, WARNING, ERROR, CRITICAL) for each component such as DAG processing, scheduler, task, web server, and worker logs. (AI-inferred)
 	LoggingConfiguration any
+	// The name of this workflow. (AI-inferred)
 	Name any
 	// Defines the VPC network configuration, including the subnet IDs and security group IDs, that the serverless workflow uses to run and access resources within your VPC. (AI-inferred)
 	NetworkConfiguration any
@@ -86,10 +88,12 @@ type WorkflowConfig struct {
 type WorkflowAttrs struct {
 	// The location of code artifacts in Amazon S3 for the workflow. Modeled as a single-member container so it stays extensible to future artifact types (e.g. OCI images).
 	Code any
+	// The date and time when this workflow's own code was snapshotted for this version. (AI-inferred)
 	CodeSnapshottedAt any
 	// The timestamp, in ISO 8601 format, that indicates when the serverless workflow was created. (AI-inferred)
 	CreatedAt any
 	DefinitionS3Location any
+	// The description of this workflow. (AI-inferred)
 	Description any
 	// Specifies the AWS KMS key configuration for encrypting the MWAA environment's data, with the key ARN provided in the nested 'KmsKey' property. (AI-inferred)
 	EncryptionConfiguration any
@@ -97,6 +101,7 @@ type WorkflowAttrs struct {
 	LoggingConfiguration any
 	// The read-only timestamp (in ISO 8601 format) indicating when the MWAA serverless workflow was last modified, as provided by the AWS API. (AI-inferred)
 	ModifiedAt any
+	// The name of this workflow. (AI-inferred)
 	Name any
 	// Defines the VPC network configuration, including the subnet IDs and security group IDs, that the serverless workflow uses to run and access resources within your VPC. (AI-inferred)
 	NetworkConfiguration any
@@ -107,8 +112,11 @@ type WorkflowAttrs struct {
 	Tags any
 	// Specifies how the workflow is triggered, with allowed values such as SCHEDULE (for cron-based scheduling) or EVENT (for event-driven execution). (AI-inferred)
 	TriggerMode any
+	// The Amazon Resource Name (ARN) of this workflow. (AI-inferred)
 	WorkflowArn any
+	// The current status of this workflow. (AI-inferred)
 	WorkflowStatus any
+	// The version identifier of this workflow. (AI-inferred)
 	WorkflowVersion any
 }
 

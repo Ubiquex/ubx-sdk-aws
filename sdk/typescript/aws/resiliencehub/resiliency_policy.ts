@@ -56,6 +56,7 @@ export interface ResiliencyPolicyConfig {
   policyDescription?: string | Computed<string>;
   /** Name of Resiliency Policy. */
   policyName: string | Computed<string>;
+  /** The tags assigned to this Resilience Hub resiliency policy. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
   /** Resiliency Policy Tier. */
   tier: string | Computed<string>;
@@ -72,6 +73,7 @@ export interface ResiliencyPolicyAttrs {
   policyDescription: string;
   /** Name of Resiliency Policy. */
   policyName: string;
+  /** The tags assigned to this Resilience Hub resiliency policy. (AI-inferred) */
   tags: unknown;
   /** Resiliency Policy Tier. */
   tier: string;

@@ -79,12 +79,15 @@ export interface DlpsettingConfig {
   dlpSettingId: string | Computed<string>;
   /** Indicates whether the AWS QuickSight data loss prevention (DLP) setting is enabled, which activates the configured data protection policies for the relevant assets. (AI-inferred) */
   enabled: boolean | Computed<boolean>;
+  /** The name of this data loss prevention setting. (AI-inferred) */
   name: string | Computed<string>;
   /** Specifies the configuration for the data loss prevention (DLP) provider in Amazon QuickSight, including provider-specific parameters required to activate and manage DLP settings. (AI-inferred) */
   providerConfig: Dlpsetting_ProviderConfig | Computed<Dlpsetting_ProviderConfig>;
   /** Specifies the action QuickSight takes when its configured identity provider becomes unavailable, used to enforce Data Loss Prevention (DLP) controls during outage events. (AI-inferred) */
   providerOutageAction: string | Computed<string>;
+  /** The real data loss prevention provider this setting integrates with, e.g. Microsoft Purview. (AI-inferred) */
   providerType: string | Computed<string>;
+  /** The tags assigned to this data loss prevention setting. (AI-inferred) */
   tags?: Dlpsetting_Tags[] | Computed<Dlpsetting_Tags[]>;
 }
 
@@ -93,18 +96,23 @@ export interface DlpsettingAttrs {
   arn: string;
   /** The AWS account ID for which the QuickSight data loss prevention settings are configured. (AI-inferred) */
   awsAccountId: string;
+  /** The date and time this data loss prevention setting was created. (AI-inferred) */
   createdAt: string;
   /** The required DlpSettingId property specifies a unique, user-defined identifier for the data loss prevention (DLP) setting in Amazon QuickSight. (AI-inferred) */
   dlpSettingId: string;
   /** Indicates whether the AWS QuickSight data loss prevention (DLP) setting is enabled, which activates the configured data protection policies for the relevant assets. (AI-inferred) */
   enabled: boolean;
+  /** The name of this data loss prevention setting. (AI-inferred) */
   name: string;
   /** Specifies the configuration for the data loss prevention (DLP) provider in Amazon QuickSight, including provider-specific parameters required to activate and manage DLP settings. (AI-inferred) */
   providerConfig: Dlpsetting_ProviderConfig;
   /** Specifies the action QuickSight takes when its configured identity provider becomes unavailable, used to enforce Data Loss Prevention (DLP) controls during outage events. (AI-inferred) */
   providerOutageAction: string;
+  /** The real data loss prevention provider this setting integrates with, e.g. Microsoft Purview. (AI-inferred) */
   providerType: string;
+  /** The current status of this data loss prevention setting. (AI-inferred) */
   status: string;
+  /** The tags assigned to this data loss prevention setting. (AI-inferred) */
   tags: Dlpsetting_Tags[];
   /** The timestamp of the last update to the QuickSight data loss prevention setting. (AI-inferred) */
   updatedAt: string;

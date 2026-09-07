@@ -25,7 +25,7 @@ type Image_ImageScanningConfiguration_EcrConfiguration struct {
 type Image_ImageScanningConfiguration struct {
 	// Settings for Image Builder to configure the ECR repository and output container images that are scanned.
 	EcrConfiguration any
-	// This sets whether Image Builder keeps a snapshot of the vulnerability scans that Amazon Inspector runs against the build instance when you create a new image.
+	// This sets whether Image Builder keeps a snapshot of the vulnerability scans that Amazon Inspector runs against the test instance when you create a new image.
 	ImageScanningEnabled any
 }
 

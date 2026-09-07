@@ -9,6 +9,7 @@ export interface AgentRegistryDiscoverableRegistryRecords_Filters {
 export interface AgentRegistryDiscoverableRegistryRecords_RegistryRecords {
   createdAt?: string | Computed<string>;
   description?: string | Computed<string>;
+  descriptorTypes?: string[] | Computed<string[]>;
   displayName?: string | Computed<string>;
   name?: string | Computed<string>;
   recordArn?: string | Computed<string>;

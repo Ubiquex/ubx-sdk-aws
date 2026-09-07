@@ -2,10 +2,12 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface PartnercentralSellingSellingSystemSettingsConfig {
+  /** Value space is validated at runtime against an allowlist, so the model keeps only a coarse character-class pattern. */
   catalog: string | Computed<string>;
 }
 
 export interface PartnercentralSellingSellingSystemSettingsAttrs {
+  /** Value space is validated at runtime against an allowlist, so the model keeps only a coarse character-class pattern. */
   catalog: string;
   resourceSnapshotJobRoleArn: string;
 }

@@ -54,6 +54,7 @@ export interface Channel_Destinations_Settings {
   url?: string | Computed<string>;
   /** The username used for authentication when pushing content to the destination endpoint (e.g., an RTMP server) in these MediaLive channel destination settings. (AI-inferred) */
   username?: string | Computed<string>;
+  virtualSourceAddress?: string | Computed<string>;
 }
 
 export interface Channel_Destinations_SrtSettings {
@@ -124,6 +125,7 @@ export interface Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSett
   nielsenDistributionType?: string | Computed<string>;
   /** Specifies the Nielsen NAES II NW watermarking settings, which configure how Nielsen network watermarks are inserted into the audio via the NAES II NW protocol, including the destination endpoint for the watermark payload. (AI-inferred) */
   nielsenNaesIiNwSettings?: Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings_NielsenNaesIiNwSettings | Computed<Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings_NielsenNaesIiNwSettings>;
+  nielsenNwOnlySettings?: Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings_NielsenNaesIiNwSettings | Computed<Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings_NielsenNaesIiNwSettings>;
 }
 
 export interface Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings {
@@ -2205,6 +2207,7 @@ const Channel_Destinations_SettingsFields: FieldMap = {
   streamName: "stream_name",
   url: "url",
   username: "username",
+  virtualSourceAddress: "virtual_source_address",
 };
 
 const Channel_Destinations_SrtSettingsFields: FieldMap = {
@@ -2274,6 +2277,11 @@ const Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_Nielse
   nielsenDistributionType: "nielsen_distribution_type",
   nielsenNaesIiNwSettings: {
     wireName: "nielsen_naes_ii_nw_settings",
+    kind: "object",
+    fields: Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings_NielsenNaesIiNwSettingsFields,
+  },
+  nielsenNwOnlySettings: {
+    wireName: "nielsen_nw_only_settings",
     kind: "object",
     fields: Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings_NielsenNaesIiNwSettingsFields,
   },
@@ -4309,11 +4317,13 @@ export interface ChannelConfig {
   dryRun?: boolean | Computed<boolean>;
   /** Defines the encoding configuration for the MediaLive channel, including video, audio, captions, and output group settings that control how input sources are transcoded and delivered. (AI-inferred) */
   encoderSettings?: Channel_EncoderSettings | Computed<Channel_EncoderSettings>;
+  /** The machine-learning inference settings applied to this MediaLive channel's own output. (AI-inferred) */
   inferenceSettings?: Channel_InferenceSettings | Computed<Channel_InferenceSettings>;
   /** Defines the list of input attachments for the MediaLive channel, each specifying the input to use, its attached settings, and optional automatic input failover configuration. (AI-inferred) */
   inputAttachments?: Channel_InputAttachments[] | Computed<Channel_InputAttachments[]>;
   /** Specifies the input codec, maximum bitrate, and resolution for the channel's inputs, which MediaLive uses to determine the appropriate input settings. (AI-inferred) */
   inputSpecification?: Channel_InputSpecification | Computed<Channel_InputSpecification>;
+  /** The settings linking this MediaLive channel to a related channel, such as for redundant or associated processing. (AI-inferred) */
   linkedChannelSettings?: Channel_LinkedChannelSettings | Computed<Channel_LinkedChannelSettings>;
   /** Specifies the verbosity of the channel's logging, accepting values such as ERROR, WARNING, INFO, and DEBUG to control which log messages are emitted. (AI-inferred) */
   logLevel?: string | Computed<string>;
@@ -4350,6 +4360,7 @@ export interface ChannelAttrs {
   encoderSettings: Channel_EncoderSettings;
   /** The unique channel identifier assigned by AWS when the MediaLive channel is created. (AI-inferred) */
   id: string;
+  /** The machine-learning inference settings applied to this MediaLive channel's own output. (AI-inferred) */
   inferenceSettings: Channel_InferenceSettings;
   /** Defines the list of input attachments for the MediaLive channel, each specifying the input to use, its attached settings, and optional automatic input failover configuration. (AI-inferred) */
   inputAttachments: Channel_InputAttachments[];
@@ -4357,6 +4368,7 @@ export interface ChannelAttrs {
   inputSpecification: Channel_InputSpecification;
   /** The list of input IDs attached to the MediaLive channel. (AI-inferred) */
   inputs: string[];
+  /** The settings linking this MediaLive channel to a related channel, such as for redundant or associated processing. (AI-inferred) */
   linkedChannelSettings: Channel_LinkedChannelSettings;
   /** Specifies the verbosity of the channel's logging, accepting values such as ERROR, WARNING, INFO, and DEBUG to control which log messages are emitted. (AI-inferred) */
   logLevel: string;

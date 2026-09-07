@@ -125,6 +125,7 @@ class MailManagerIngressPointConfig:
     rule_set_id: Any = None
     # Defines the desired operational status (e.g., ACTIVE or INACTIVE) that the ingress point should be updated to, enabling you to start or stop inbound email processing through this endpoint. (AI-inferred)
     status_to_update: Any = None
+    # The tags assigned to this Mail Manager ingress point. (AI-inferred)
     tags: Any = None
     # Specifies the TLS enforcement for connections to the ingress point, with allowed values 'REQUIRE' (forces TLS) or 'OPTIONAL' (allows both TLS and non-TLS). (AI-inferred)
     tls_policy: Any = None
@@ -153,6 +154,7 @@ class MailManagerIngressPointAttrs:
     status: Any = None
     # Defines the desired operational status (e.g., ACTIVE or INACTIVE) that the ingress point should be updated to, enabling you to start or stop inbound email processing through this endpoint. (AI-inferred)
     status_to_update: Any = None
+    # The tags assigned to this Mail Manager ingress point. (AI-inferred)
     tags: Any = None
     # Specifies the TLS enforcement for connections to the ingress point, with allowed values 'REQUIRE' (forces TLS) or 'OPTIONAL' (allows both TLS and non-TLS). (AI-inferred)
     tls_policy: Any = None

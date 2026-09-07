@@ -30,6 +30,7 @@ export interface DomainNameV2Config {
   certificateArn?: string | Computed<string>;
   /** The custom domain name (e.g., api.example.com) that this API Gateway v2 domain name configuration represents, which must be owned by the user and is used as the public endpoint for invoking the associated APIs. (AI-inferred) */
   domainName?: string | Computed<string>;
+  /** Whether this API Gateway custom domain name is reachable publicly or only from within a VPC. (AI-inferred) */
   endpointAccessMode?: string | Computed<string>;
   endpointConfiguration?: DomainNameV2_EndpointConfiguration | Computed<DomainNameV2_EndpointConfiguration>;
   /** A JSON string specifying an IAM resource policy that controls access to the API Gateway domain name's endpoints by allowing or denying invoking principals, source IPs, or VPC origins. (AI-inferred) */
@@ -51,6 +52,7 @@ export interface DomainNameV2Attrs {
   domainNameArn: string;
   /** The computed unique identifier for the API Gateway v2 domain name resource, which is the domain name string itself used as the resource's primary key in the service. (AI-inferred) */
   domainNameId: string;
+  /** Whether this API Gateway custom domain name is reachable publicly or only from within a VPC. (AI-inferred) */
   endpointAccessMode: string;
   endpointConfiguration: DomainNameV2_EndpointConfiguration;
   /** A JSON string specifying an IAM resource policy that controls access to the API Gateway domain name's endpoints by allowing or denying invoking principals, source IPs, or VPC origins. (AI-inferred) */

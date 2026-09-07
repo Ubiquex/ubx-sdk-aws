@@ -8,21 +8,32 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TermsConfig:
+    # The ID of the app client these terms documents are assigned to. (AI-inferred)
     client_id: Any = None
+    # Reserved for future use by Amazon Cognito; currently accepts only one value. (AI-inferred)
     enforcement: Any = None
+    # The map of localized language to URL for these terms documents, so users see the terms document matching their own current language. (AI-inferred)
     links: Any = None
+    # The type and friendly name of these terms documents, terms-of-use or privacy-policy. (AI-inferred)
     terms_name: Any = None
+    # Reserved for future use by Amazon Cognito; currently accepts only one value. (AI-inferred)
     terms_source: Any = None
     # The unique identifier of the Amazon Cognito user pool to which these terms are associated. (AI-inferred)
     user_pool_id: Any = None
 
 @dataclasses.dataclass
 class TermsAttrs:
+    # The ID of the app client these terms documents are assigned to. (AI-inferred)
     client_id: Any = None
+    # Reserved for future use by Amazon Cognito; currently accepts only one value. (AI-inferred)
     enforcement: Any = None
+    # The map of localized language to URL for these terms documents, so users see the terms document matching their own current language. (AI-inferred)
     links: Any = None
+    # The unique identifier of these terms documents. (AI-inferred)
     terms_id: Any = None
+    # The type and friendly name of these terms documents, terms-of-use or privacy-policy. (AI-inferred)
     terms_name: Any = None
+    # Reserved for future use by Amazon Cognito; currently accepts only one value. (AI-inferred)
     terms_source: Any = None
     # The unique identifier of the Amazon Cognito user pool to which these terms are associated. (AI-inferred)
     user_pool_id: Any = None

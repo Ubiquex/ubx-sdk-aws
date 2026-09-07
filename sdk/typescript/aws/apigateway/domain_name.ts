@@ -50,6 +50,7 @@ export interface DomainNameConfig {
   ownershipVerificationCertificateArn?: string | Computed<string>;
   /** Specifies the ARN of an AWS Certificate Manager (ACM) certificate to use for the domain name's regional API endpoint, which serves requests for a specific AWS region. (AI-inferred) */
   regionalCertificateArn?: string | Computed<string>;
+  /** How this API Gateway custom domain name routes requests across its own base path mappings. (AI-inferred) */
   routingMode?: string | Computed<string>;
   /** Specifies the minimum TLS version (e.g., 'TLS_1_0' or 'TLS_1_2') that API Gateway uses for the custom domain name's HTTPS connections. (AI-inferred) */
   securityPolicy?: string | Computed<string>;
@@ -82,6 +83,7 @@ export interface DomainNameAttrs {
   regionalDomainName: string;
   /** The Route 53 hosted zone ID for the regional API Gateway endpoint, used to configure DNS alias records pointing to the regional domain name. (AI-inferred) */
   regionalHostedZoneId: string;
+  /** How this API Gateway custom domain name routes requests across its own base path mappings. (AI-inferred) */
   routingMode: string;
   /** Specifies the minimum TLS version (e.g., 'TLS_1_0' or 'TLS_1_2') that API Gateway uses for the custom domain name's HTTPS connections. (AI-inferred) */
   securityPolicy: string;

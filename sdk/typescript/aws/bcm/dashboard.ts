@@ -349,21 +349,28 @@ const Dashboard_WidgetsFields: FieldMap = {
 };
 
 export interface DashboardConfig {
+  /** The description of this dashboard. (AI-inferred) */
   description?: string | Computed<string>;
   /** A user-specified unique name for the AWS Billing and Cost Management dashboard, used to identify and display the dashboard in the console. (AI-inferred) */
   name: string | Computed<string>;
+  /** The tags assigned to this dashboard. (AI-inferred) */
   tags?: Dashboard_Tags[] | Computed<Dashboard_Tags[]>;
   /** This required list contains the widget definitions—each specifying a visual block like a chart or KPI tile—that together form the content of the BCM dashboard. (AI-inferred) */
   widgets: Dashboard_Widgets[] | Computed<Dashboard_Widgets[]>;
 }
 
 export interface DashboardAttrs {
+  /** The Amazon Resource Name (ARN) of this Billing and Cost Management dashboard. (AI-inferred) */
   arn: string;
+  /** The date and time when this dashboard was created. (AI-inferred) */
   createdAt: string;
+  /** The description of this dashboard. (AI-inferred) */
   description: string;
   /** A user-specified unique name for the AWS Billing and Cost Management dashboard, used to identify and display the dashboard in the console. (AI-inferred) */
   name: string;
+  /** The tags assigned to this dashboard. (AI-inferred) */
   tags: Dashboard_Tags[];
+  /** The type of this dashboard. (AI-inferred) */
   type: string;
   /** The `updated_at` attribute is a read-only timestamp that records when the AWS Billing and Cost Management dashboard was last updated, automatically set by the service. (AI-inferred) */
   updatedAt: string;

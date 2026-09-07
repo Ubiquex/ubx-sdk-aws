@@ -32,6 +32,7 @@ class Presets_Presets_Settings_AudioDescriptions_CodecSettings_AacSettings:
     codec_profile: Any = None
     coding_mode: Any = None
     loudness_measurement_mode: Any = None
+    passthrough_control: Any = None
     rap_interval: Any = None
     rate_control_mode: Any = None
     raw_format: Any = None
@@ -286,6 +287,18 @@ class Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_SrtDestin
 class Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_TeletextDestinationSettings:
     page_number: Any = None
     page_types: Any = None
+
+@dataclasses.dataclass
+class Presets_Presets_Settings_CaptionDescriptions_DestinationSettings_TtmlDestinationSettings:
+    background_color: Any = None
+    background_opacity: Any = None
+    font_color: Any = None
+    font_opacity: Any = None
+    font_size: Any = None
+    font_style: Any = None
+    font_weight: Any = None
+    style_passthrough: Any = None
+    text_decoration: Any = None
 
 @dataclasses.dataclass
 class Presets_Presets_Settings_CaptionDescriptions_DestinationSettings:
@@ -768,6 +781,11 @@ class Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_Xavc4
     hrd_buffer_size: Any = None
     quality_tuning_level: Any = None
     slices: Any = None
+
+@dataclasses.dataclass
+class Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_XavcHdIntraCbgProfileSettings:
+    interlace_mode: Any = None
+    xavc_class: Any = None
 
 @dataclasses.dataclass
 class Presets_Presets_Settings_VideoDescription_CodecSettings_XavcSettings_XavcHdProfileSettings:

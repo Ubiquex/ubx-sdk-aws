@@ -67,6 +67,7 @@ class AgentSpaceAttrs:
     locale: Any = None
     # The name of the AgentSpace.
     name: Any = None
+    # The operator application associated with this DevOps agent space. (AI-inferred)
     operator_app: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

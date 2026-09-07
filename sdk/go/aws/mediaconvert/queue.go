@@ -8,6 +8,7 @@ type QueueConfig struct {
 	ConcurrentJobs any
 	// An optional user-defined description of the MediaConvert queue, used to identify its purpose in the AWS Elemental MediaConvert console. (AI-inferred)
 	Description any
+	// The maximum number of jobs this MediaConvert queue can process concurrently. (AI-inferred)
 	MaximumConcurrentFeeds any
 	// The name of the MediaConvert queue; if omitted, AWS Elemental MediaConvert automatically generates a unique queue name. (AI-inferred)
 	Name any
@@ -26,7 +27,9 @@ type QueueAttrs struct {
 	ConcurrentJobs any
 	// An optional user-defined description of the MediaConvert queue, used to identify its purpose in the AWS Elemental MediaConvert console. (AI-inferred)
 	Description any
+	// The unique identifier of this MediaConvert queue. (AI-inferred)
 	Id any
+	// The maximum number of jobs this MediaConvert queue can process concurrently. (AI-inferred)
 	MaximumConcurrentFeeds any
 	// The name of the MediaConvert queue; if omitted, AWS Elemental MediaConvert automatically generates a unique queue name. (AI-inferred)
 	Name any

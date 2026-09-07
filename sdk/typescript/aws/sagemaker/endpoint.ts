@@ -159,6 +159,8 @@ export interface EndpointConfig {
   deploymentConfig?: Endpoint_DeploymentConfig | Computed<Endpoint_DeploymentConfig>;
   /** The name of the endpoint configuration for the SageMaker endpoint. This is a required property. */
   endpointConfigName: string | Computed<string>;
+  /** The name of the SageMaker endpoint. This name must be unique within an AWS Region. */
+  endpointName?: string | Computed<string>;
   /** Specifies a list of variant properties that you want to exclude when updating an endpoint. */
   excludeRetainedVariantProperties?: Endpoint_ExcludeRetainedVariantProperties[] | Computed<Endpoint_ExcludeRetainedVariantProperties[]>;
   /** When set to true, retains all variant properties for an endpoint when it is updated. */
@@ -197,6 +199,7 @@ export const Endpoint: ResourceBinding<EndpointConfig, EndpointAttrs> = {
       fields: Endpoint_DeploymentConfigFields,
     },
     endpointConfigName: "endpoint_config_name",
+    endpointName: "endpoint_name",
     excludeRetainedVariantProperties: {
       wireName: "exclude_retained_variant_properties",
       kind: "list",

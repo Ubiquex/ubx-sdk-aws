@@ -56,6 +56,7 @@ type Channel_Destinations_Settings struct {
 	Url any
 	// The username used for authentication when pushing content to the destination endpoint (e.g., an RTMP server) in these MediaLive channel destination settings. (AI-inferred)
 	Username any
+	VirtualSourceAddress any
 }
 
 type Channel_Destinations_SrtSettings struct {
@@ -126,6 +127,7 @@ type Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_Nielsen
 	NielsenDistributionType any
 	// Specifies the Nielsen NAES II NW watermarking settings, which configure how Nielsen network watermarks are inserted into the audio via the NAES II NW protocol, including the destination endpoint for the watermark payload. (AI-inferred)
 	NielsenNaesIiNwSettings any
+	NielsenNwOnlySettings any
 }
 
 type Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings struct {
@@ -2207,6 +2209,7 @@ var Channel_Destinations_SettingsFields = ubx.FieldMap{
 		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
 		"Url": ubx.FieldSpec{WireName: "url"},
 		"Username": ubx.FieldSpec{WireName: "username"},
+		"VirtualSourceAddress": ubx.FieldSpec{WireName: "virtual_source_address"},
 	}
 
 var Channel_Destinations_SrtSettingsFields = ubx.FieldMap{
@@ -2276,6 +2279,11 @@ var Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenW
 		"NielsenDistributionType": ubx.FieldSpec{WireName: "nielsen_distribution_type"},
 		"NielsenNaesIiNwSettings": ubx.FieldSpec{
 			WireName: "nielsen_naes_ii_nw_settings",
+			Kind: "object",
+			Fields: Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings_NielsenNaesIiNwSettingsFields,
+		},
+		"NielsenNwOnlySettings": ubx.FieldSpec{
+			WireName: "nielsen_nw_only_settings",
 			Kind: "object",
 			Fields: Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings_NielsenNaesIiNwSettingsFields,
 		},
@@ -4311,11 +4319,13 @@ type ChannelConfig struct {
 	DryRun any
 	// Defines the encoding configuration for the MediaLive channel, including video, audio, captions, and output group settings that control how input sources are transcoded and delivered. (AI-inferred)
 	EncoderSettings any
+	// The machine-learning inference settings applied to this MediaLive channel's own output. (AI-inferred)
 	InferenceSettings any
 	// Defines the list of input attachments for the MediaLive channel, each specifying the input to use, its attached settings, and optional automatic input failover configuration. (AI-inferred)
 	InputAttachments any
 	// Specifies the input codec, maximum bitrate, and resolution for the channel's inputs, which MediaLive uses to determine the appropriate input settings. (AI-inferred)
 	InputSpecification any
+	// The settings linking this MediaLive channel to a related channel, such as for redundant or associated processing. (AI-inferred)
 	LinkedChannelSettings any
 	// Specifies the verbosity of the channel's logging, accepting values such as ERROR, WARNING, INFO, and DEBUG to control which log messages are emitted. (AI-inferred)
 	LogLevel any
@@ -4352,6 +4362,7 @@ type ChannelAttrs struct {
 	EncoderSettings any
 	// The unique channel identifier assigned by AWS when the MediaLive channel is created. (AI-inferred)
 	Id any
+	// The machine-learning inference settings applied to this MediaLive channel's own output. (AI-inferred)
 	InferenceSettings any
 	// Defines the list of input attachments for the MediaLive channel, each specifying the input to use, its attached settings, and optional automatic input failover configuration. (AI-inferred)
 	InputAttachments any
@@ -4359,6 +4370,7 @@ type ChannelAttrs struct {
 	InputSpecification any
 	// The list of input IDs attached to the MediaLive channel. (AI-inferred)
 	Inputs any
+	// The settings linking this MediaLive channel to a related channel, such as for redundant or associated processing. (AI-inferred)
 	LinkedChannelSettings any
 	// Specifies the verbosity of the channel's logging, accepting values such as ERROR, WARNING, INFO, and DEBUG to control which log messages are emitted. (AI-inferred)
 	LogLevel any

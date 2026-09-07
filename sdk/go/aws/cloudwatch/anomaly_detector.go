@@ -186,6 +186,7 @@ type AnomalyDetectorAttrs struct {
 	Configuration any
 	// A list of dimension key-value pairs that scope the anomaly detector to a specific metric, such as an instance ID or environment, and when omitted the detector applies to the metric without any dimensions. (AI-inferred)
 	Dimensions any
+	// The unique identifier of this CloudWatch anomaly detector. (AI-inferred)
 	Id any
 	// The metric_characteristics object specifies the period (in seconds) and timezone (e.g., 'UTC') used by the CloudWatch anomaly detector for evaluating the metric data. (AI-inferred)
 	MetricCharacteristics any

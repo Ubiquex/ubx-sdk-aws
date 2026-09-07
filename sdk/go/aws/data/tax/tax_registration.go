@@ -36,6 +36,7 @@ type TaxRegistration_TaxRegistration_AdditionalTaxInformation_EstoniaAdditionalI
 }
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_FranceAdditionalInfo struct {
+	EInvoiceRoutingCode any
 	SirenNumber any
 }
 
@@ -74,6 +75,10 @@ type TaxRegistration_TaxRegistration_AdditionalTaxInformation_MalaysiaAdditional
 	BusinessRegistrationNumber any
 	ServiceTaxCodes any
 	TaxInformationNumber any
+}
+
+type TaxRegistration_TaxRegistration_AdditionalTaxInformation_MonacoAdditionalInfo struct {
+	BusinessNumber any
 }
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_PhilippinesAdditionalInfo struct {
@@ -154,6 +159,8 @@ type TaxRegistration_TaxRegistration_AdditionalTaxInformation struct {
 	KenyaAdditionalInfo any
 	// <p> Additional tax information associated with your TRN in Malaysia.</p>
 	MalaysiaAdditionalInfo any
+	// <p>Additional tax information associated with your TRN in Monaco.</p>
+	MonacoAdditionalInfo any
 	// <p>Additional tax information associated with your TRN in the Philippines.</p>
 	PhilippinesAdditionalInfo any
 	// <p> Additional tax information associated with your TRN in Poland. </p>

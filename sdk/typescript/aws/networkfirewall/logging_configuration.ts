@@ -30,6 +30,7 @@ const LoggingConfiguration_LoggingConfigurationFields: FieldMap = {
 };
 
 export interface LoggingConfigurationConfig {
+  /** Whether the Network Firewall monitoring dashboard is enabled for this logging configuration's own firewall. (AI-inferred) */
   enableMonitoringDashboard?: boolean | Computed<boolean>;
   /** A resource ARN. */
   firewallArn: string | Computed<string>;
@@ -40,6 +41,7 @@ export interface LoggingConfigurationConfig {
 }
 
 export interface LoggingConfigurationAttrs {
+  /** Whether the Network Firewall monitoring dashboard is enabled for this logging configuration's own firewall. (AI-inferred) */
   enableMonitoringDashboard: boolean;
   /** A resource ARN. */
   firewallArn: string;

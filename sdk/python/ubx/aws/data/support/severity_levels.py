@@ -13,16 +13,19 @@ class SeverityLevels_SeverityLevels:
 
 @dataclasses.dataclass
 class SeverityLevelsConfig:
+    dry_run: Any = None
     language: Any = None
 
 @dataclasses.dataclass
 class SeverityLevelsAttrs:
+    dry_run: Any = None
     language: Any = None
     severity_levels: Any = None
 
 SeverityLevels = ubx.DataSourceBinding(
     wire_type="aws_support_severity_levels",
     fields={
+        "dry_run": ubx.FieldSpec(wire_name="dry_run"),
         "language": ubx.FieldSpec(wire_name="language"),
     },
 )

@@ -22,6 +22,7 @@ export interface FirewallDomainListConfig {
   domainFileUrl?: string | Computed<string>;
   /** An inline list of domains to use for this domain list. */
   domains?: string[] | Computed<string[]>;
+  /** A reference to the global resolver this firewall domain list is associated with. (AI-inferred) */
   globalResolverId: string | Computed<string>;
   /** The name to assign to the Route 53 Resolver firewall domain list, which serves as its identifier in your AWS account. (AI-inferred) */
   name: string | Computed<string>;
@@ -45,6 +46,7 @@ export interface FirewallDomainListAttrs {
   domains: string[];
   /** The unique identifier assigned by AWS to the Route 53 Resolver firewall domain list. (AI-inferred) */
   firewallDomainListId: string;
+  /** A reference to the global resolver this firewall domain list is associated with. (AI-inferred) */
   globalResolverId: string;
   /** The name to assign to the Route 53 Resolver firewall domain list, which serves as its identifier in your AWS account. (AI-inferred) */
   name: string;

@@ -700,6 +700,7 @@ var Harness_TruncationFields = ubx.FieldMap{
 type HarnessConfig struct {
 	// The tools that the agent is allowed to use.
 	AllowedTools any
+	// Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred)
 	AuthorizerConfiguration any
 	EnvironmentArtifact any
 	// Environment variables to set in the harness runtime environment.
@@ -724,6 +725,7 @@ type HarnessConfig struct {
 	TimeoutSeconds any
 	// The tools available to the agent.
 	Tools any
+	// Configuration for truncating model context. (AI-inferred)
 	Truncation any
 }
 
@@ -732,9 +734,11 @@ type HarnessAttrs struct {
 	AllowedTools any
 	// The Amazon Resource Name (ARN) of the harness.
 	Arn any
+	// Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred)
 	AuthorizerConfiguration any
 	// The timestamp when the harness was created.
 	CreatedAt any
+	// The compute environment on which the harness runs. (AI-inferred)
 	Environment any
 	EnvironmentArtifact any
 	// Environment variables to set in the harness runtime environment.
@@ -754,6 +758,7 @@ type HarnessAttrs struct {
 	Model any
 	// The skills available to the agent.
 	Skills any
+	// The status of the harness. (AI-inferred)
 	Status any
 	// The system prompt that defines the agent's behavior.
 	SystemPrompt any
@@ -763,6 +768,7 @@ type HarnessAttrs struct {
 	TimeoutSeconds any
 	// The tools available to the agent.
 	Tools any
+	// Configuration for truncating model context. (AI-inferred)
 	Truncation any
 	// The timestamp when the harness was last updated.
 	UpdatedAt any

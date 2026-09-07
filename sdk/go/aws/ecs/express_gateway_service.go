@@ -166,41 +166,74 @@ var ExpressGatewayService_TagsFields = ubx.FieldMap{
 	}
 
 type ExpressGatewayServiceConfig struct {
+	// The short name or full Amazon Resource Name (ARN) of the cluster this Express service runs in. (AI-inferred)
 	Cluster any
+	// The CPU allocation for tasks in this Express service. (AI-inferred)
 	Cpu any
+	// The Amazon Resource Name (ARN) of the task execution role for this Express service. (AI-inferred)
 	ExecutionRoleArn any
+	// The health check path this Express service's own load balancer uses to determine task health. (AI-inferred)
 	HealthCheckPath any
+	// The Amazon Resource Name (ARN) of the infrastructure role Amazon ECS assumes to manage AWS resources on this Express service's own behalf. (AI-inferred)
 	InfrastructureRoleArn any
+	// The memory allocation for tasks in this Express service. (AI-inferred)
 	Memory any
+	// The network configuration for tasks in this Express service. (AI-inferred)
 	NetworkConfiguration any
+	// The primary container configuration, including the application image, for this Express service. (AI-inferred)
 	PrimaryContainer any
+	// The auto-scaling configuration for this Express service. (AI-inferred)
 	ScalingTarget any
+	// The name of this Express service. (AI-inferred)
 	ServiceName any
+	// The tags assigned to this Express service. (AI-inferred)
 	Tags any
+	// The Amazon Resource Name (ARN) of the task definition this Express service is currently running, whether managed by Amazon ECS or provided directly. (AI-inferred)
 	TaskDefinitionArn any
+	// The Amazon Resource Name (ARN) of the task role for this Express service. (AI-inferred)
 	TaskRoleArn any
 }
 
 type ExpressGatewayServiceAttrs struct {
+	// The list of active service configurations currently in effect for this Express service. (AI-inferred)
 	ActiveConfigurations any
+	// The short name or full Amazon Resource Name (ARN) of the cluster this Express service runs in. (AI-inferred)
 	Cluster any
+	// The CPU allocation for tasks in this Express service. (AI-inferred)
 	Cpu any
+	// The date and time when this Express service was created. (AI-inferred)
 	CreatedAt any
+	// The Amazon Resource Names (ARNs) of the AWS resources (load balancer, target groups, security groups, auto scaling policies, log groups, and related infrastructure) Amazon ECS provisioned and manages on this Express service's own behalf. (AI-inferred)
 	EcsmanagedResourceArns any
+	// The endpoint clients use to reach this Express service. (AI-inferred)
 	Endpoint any
+	// The Amazon Resource Name (ARN) of the task execution role for this Express service. (AI-inferred)
 	ExecutionRoleArn any
+	// The health check path this Express service's own load balancer uses to determine task health. (AI-inferred)
 	HealthCheckPath any
+	// The Amazon Resource Name (ARN) of the infrastructure role Amazon ECS assumes to manage AWS resources on this Express service's own behalf. (AI-inferred)
 	InfrastructureRoleArn any
+	// The memory allocation for tasks in this Express service. (AI-inferred)
 	Memory any
+	// The network configuration for tasks in this Express service. (AI-inferred)
 	NetworkConfiguration any
+	// The primary container configuration, including the application image, for this Express service. (AI-inferred)
 	PrimaryContainer any
+	// The auto-scaling configuration for this Express service. (AI-inferred)
 	ScalingTarget any
+	// The Amazon Resource Name (ARN) that identifies this Express service. (AI-inferred)
 	ServiceArn any
+	// The name of this Express service. (AI-inferred)
 	ServiceName any
+	// The current status of this Express service. (AI-inferred)
 	Status any
+	// The tags assigned to this Express service. (AI-inferred)
 	Tags any
+	// The Amazon Resource Name (ARN) of the task definition this Express service is currently running, whether managed by Amazon ECS or provided directly. (AI-inferred)
 	TaskDefinitionArn any
+	// The Amazon Resource Name (ARN) of the task role for this Express service. (AI-inferred)
 	TaskRoleArn any
+	// The date and time when this Express service was last updated. (AI-inferred)
 	UpdatedAt any
 }
 

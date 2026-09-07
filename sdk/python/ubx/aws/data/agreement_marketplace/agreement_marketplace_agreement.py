@@ -11,6 +11,17 @@ class AgreementMarketplaceAgreement_Acceptor:
     account_id: Any = None
 
 @dataclasses.dataclass
+class AgreementMarketplaceAgreement_EndTimeBehavior_RenewalSummary:
+    offer_id: Any = None
+
+@dataclasses.dataclass
+class AgreementMarketplaceAgreement_EndTimeBehavior:
+    reason_code: Any = None
+    # <p>The details of the renewal that applies at the end date of an agreement.</p>
+    renewal_summary: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
 class AgreementMarketplaceAgreement_EstimatedCharges:
     agreement_value: Any = None
     currency_code: Any = None
@@ -38,8 +49,11 @@ class AgreementMarketplaceAgreementAttrs:
     agreement_id: Any = None
     agreement_type: Any = None
     end_time: Any = None
+    # <p>The behavior of an agreement when it reaches its end date. For example, whether the agreement renews, and if it doesn't, the reason why.</p>
+    end_time_behavior: Any = None
     # <p>Estimated cost of the agreement.</p>
     estimated_charges: Any = None
+    initial_agreement_id: Any = None
     # <p>A summary of the proposal received from the proposer.</p>
     proposal_summary: Any = None
     # <p>Details of the party proposing the agreement terms,. This is commonly the seller for <code>PurchaseAgreement</code>. </p>

@@ -60,6 +60,7 @@ class JobQueueConfig:
     priority: Any = None
     # The Amazon Resource Name (ARN) of the scheduling policy that controls the prioritization and placement of jobs in the AWS Batch job queue. (AI-inferred)
     scheduling_policy_arn: Any = None
+    # The order in which this job queue considers its own associated service environments when scheduling service jobs. (AI-inferred)
     service_environment_order: Any = None
     # Specifies whether the job queue is enabled to accept new jobs (ENABLED) or disabled (DISABLED), with the default being ENABLED. (AI-inferred)
     state: Any = None
@@ -82,6 +83,7 @@ class JobQueueAttrs:
     priority: Any = None
     # The Amazon Resource Name (ARN) of the scheduling policy that controls the prioritization and placement of jobs in the AWS Batch job queue. (AI-inferred)
     scheduling_policy_arn: Any = None
+    # The order in which this job queue considers its own associated service environments when scheduling service jobs. (AI-inferred)
     service_environment_order: Any = None
     # Specifies whether the job queue is enabled to accept new jobs (ENABLED) or disabled (DISABLED), with the default being ENABLED. (AI-inferred)
     state: Any = None

@@ -223,13 +223,18 @@ const ActionConnector_TagsFields: FieldMap = {
 };
 
 export interface ActionConnectorConfig {
+  /** The unique identifier of this action connector. (AI-inferred) */
   actionConnectorId: string | Computed<string>;
+  /** The authentication configuration this action connector uses to connect to its own external service. (AI-inferred) */
   authenticationConfig: ActionConnector_AuthenticationConfig | Computed<ActionConnector_AuthenticationConfig>;
   /** The AWS account ID where the QuickSight action connector is deployed, used to scope the resource within the correct account. (AI-inferred) */
   awsAccountId: string | Computed<string>;
+  /** The description of this action connector. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The name of this action connector. (AI-inferred) */
   name: string | Computed<string>;
   permissions?: ActionConnector_Permissions[] | Computed<ActionConnector_Permissions[]>;
+  /** The tags assigned to this action connector. (AI-inferred) */
   tags?: ActionConnector_Tags[] | Computed<ActionConnector_Tags[]>;
   /** The type of the QuickSight action connector, identifying the external system or service it integrates with (e.g., ServiceNow, Salesforce, or similar supported platforms), required when defining the connector. (AI-inferred) */
   type: string | Computed<string>;
@@ -238,18 +243,28 @@ export interface ActionConnectorConfig {
 }
 
 export interface ActionConnectorAttrs {
+  /** The unique identifier of this action connector. (AI-inferred) */
   actionConnectorId: string;
+  /** The Amazon Resource Name (ARN) of this action connector. (AI-inferred) */
   arn: string;
+  /** The authentication configuration this action connector uses to connect to its own external service. (AI-inferred) */
   authenticationConfig: ActionConnector_AuthenticationConfig;
   /** The AWS account ID where the QuickSight action connector is deployed, used to scope the resource within the correct account. (AI-inferred) */
   awsAccountId: string;
+  /** The date and time when this action connector was created. (AI-inferred) */
   createdTime: string;
+  /** The description of this action connector. (AI-inferred) */
   description: string;
+  /** The actions enabled on this action connector. (AI-inferred) */
   enabledActions: string[];
+  /** The date and time when this action connector was last updated. (AI-inferred) */
   lastUpdatedTime: string;
+  /** The name of this action connector. (AI-inferred) */
   name: string;
   permissions: ActionConnector_Permissions[];
+  /** The current status of this action connector. (AI-inferred) */
   status: string;
+  /** The tags assigned to this action connector. (AI-inferred) */
   tags: ActionConnector_Tags[];
   /** The type of the QuickSight action connector, identifying the external system or service it integrates with (e.g., ServiceNow, Salesforce, or similar supported platforms), required when defining the connector. (AI-inferred) */
   type: string;

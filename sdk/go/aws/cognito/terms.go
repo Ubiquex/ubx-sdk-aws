@@ -4,21 +4,32 @@ package cognito
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TermsConfig struct {
+	// The ID of the app client these terms documents are assigned to. (AI-inferred)
 	ClientId any
+	// Reserved for future use by Amazon Cognito; currently accepts only one value. (AI-inferred)
 	Enforcement any
+	// The map of localized language to URL for these terms documents, so users see the terms document matching their own current language. (AI-inferred)
 	Links any
+	// The type and friendly name of these terms documents, terms-of-use or privacy-policy. (AI-inferred)
 	TermsName any
+	// Reserved for future use by Amazon Cognito; currently accepts only one value. (AI-inferred)
 	TermsSource any
 	// The unique identifier of the Amazon Cognito user pool to which these terms are associated. (AI-inferred)
 	UserPoolId any
 }
 
 type TermsAttrs struct {
+	// The ID of the app client these terms documents are assigned to. (AI-inferred)
 	ClientId any
+	// Reserved for future use by Amazon Cognito; currently accepts only one value. (AI-inferred)
 	Enforcement any
+	// The map of localized language to URL for these terms documents, so users see the terms document matching their own current language. (AI-inferred)
 	Links any
+	// The unique identifier of these terms documents. (AI-inferred)
 	TermsId any
+	// The type and friendly name of these terms documents, terms-of-use or privacy-policy. (AI-inferred)
 	TermsName any
+	// Reserved for future use by Amazon Cognito; currently accepts only one value. (AI-inferred)
 	TermsSource any
 	// The unique identifier of the Amazon Cognito user pool to which these terms are associated. (AI-inferred)
 	UserPoolId any

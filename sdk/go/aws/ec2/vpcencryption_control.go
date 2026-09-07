@@ -69,6 +69,7 @@ type VpcencryptionControlAttrs struct {
 	Mode any
 	// Used to enable or disable Nat gateway exclusion
 	NatGatewayExclusionInput any
+	// Real resource types (e.g. NAT gateway, internet gateway, Lambda, VPC peering) excluded from this VPC's own encryption-in-transit enforcement, and each exclusion's own current state. (AI-inferred)
 	ResourceExclusions any
 	// The current state of the VPC encryption control.
 	State any

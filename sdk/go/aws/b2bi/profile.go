@@ -25,6 +25,7 @@ type ProfileConfig struct {
 	Name any
 	// The phone number associated with the AWS B2Bi profile, a required contact detail used for the profile's business contact information. (AI-inferred)
 	Phone any
+	// The tags assigned to this B2B Data Interchange profile. (AI-inferred)
 	Tags any
 }
 
@@ -49,6 +50,7 @@ type ProfileAttrs struct {
 	ProfileArn any
 	// The unique identifier assigned by AWS to the B2Bi profile, generated upon creation and used to reference the profile in subsequent API operations and CloudFormation resources. (AI-inferred)
 	ProfileId any
+	// The tags assigned to this B2B Data Interchange profile. (AI-inferred)
 	Tags any
 }
 

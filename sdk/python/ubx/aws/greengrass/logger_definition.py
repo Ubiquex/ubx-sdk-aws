@@ -46,12 +46,14 @@ class LoggerDefinitionConfig:
     initial_version: Any = None
     # The name that identifies this Greengrass logger definition in the AWS IoT Greengrass console and API. (AI-inferred)
     name: Any = None
+    # The tags assigned to this Greengrass logger definition. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class LoggerDefinitionAttrs:
     # The Amazon Resource Name (ARN) of the Greengrass logger definition, which uniquely identifies this resource in AWS and can be used to reference it in IAM policies and other AWS services. (AI-inferred)
     arn: Any = None
+    # The unique identifier of this Greengrass logger definition. (AI-inferred)
     id: Any = None
     # Specifies the initial version of the logger definition, which consists of a set of loggers that define how Greengrass components write logs to CloudWatch or the local file system. (AI-inferred)
     initial_version: Any = None
@@ -59,6 +61,7 @@ class LoggerDefinitionAttrs:
     latest_version_arn: Any = None
     # The name that identifies this Greengrass logger definition in the AWS IoT Greengrass console and API. (AI-inferred)
     name: Any = None
+    # The tags assigned to this Greengrass logger definition. (AI-inferred)
     tags: Any = None
 
 LoggerDefinition = ubx.ResourceBinding(

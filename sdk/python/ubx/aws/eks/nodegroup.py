@@ -201,6 +201,7 @@ class NodegroupAttrs:
     disk_size: Any = None
     # Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue.
     force_update_enabled: Any = None
+    # The unique identifier of this EKS node group. (AI-inferred)
     id: Any = None
     # Specify the instance types for a node group.
     instance_types: Any = None

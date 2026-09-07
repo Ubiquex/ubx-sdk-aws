@@ -2096,6 +2096,7 @@ var Bot_TestBotAliasSettingsFields = ubx.FieldMap{
 	}
 
 type BotConfig struct {
+	// Whether Amazon Lex automatically builds this bot's own locales as they're added or updated. (AI-inferred)
 	AutoBuildBotLocales any
 	// Configuration for the Amazon S3 location of the bot definition file, specifying the S3 bucket and object key used to import the bot. (AI-inferred)
 	BotFileS3Location any
@@ -2130,6 +2131,7 @@ type BotConfig struct {
 type BotAttrs struct {
 	// The Amazon Resource Name (ARN) that uniquely identifies this Amazon Lex bot in AWS. (AI-inferred)
 	Arn any
+	// Whether Amazon Lex automatically builds this bot's own locales as they're added or updated. (AI-inferred)
 	AutoBuildBotLocales any
 	// Configuration for the Amazon S3 location of the bot definition file, specifying the S3 bucket and object key used to import the bot. (AI-inferred)
 	BotFileS3Location any

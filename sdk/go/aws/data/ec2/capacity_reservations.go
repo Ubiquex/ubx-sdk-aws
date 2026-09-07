@@ -25,6 +25,7 @@ type CapacityReservations_CapacityReservations_InterruptibleCapacityAllocation s
 	InterruptionType any
 	Status any
 	TargetInstanceCount any
+	ZeroSizePreference any
 }
 
 type CapacityReservations_CapacityReservations_InterruptionInfo struct {
@@ -64,6 +65,7 @@ type CapacityReservations_CapacityReservations struct {
 	Tenancy any
 	TotalInstanceCount any
 	UnusedReservationBillingOwnerId any
+	ZeroSizePreference any
 }
 
 type CapacityReservations_Filters struct {

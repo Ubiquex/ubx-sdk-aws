@@ -11,6 +11,21 @@ class Fhirdatastores_DatastorePropertiesList_AnalyticsConfiguration:
     status: Any = None
 
 @dataclasses.dataclass
+class Fhirdatastores_DatastorePropertiesList_BackupStatusInfo_Configuration:
+    backup_tags_enabled: Any = None
+    backup_type: Any = None
+    retention_period_in_days: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class Fhirdatastores_DatastorePropertiesList_BackupStatusInfo:
+    backup_enabled_at: Any = None
+    configuration: Any = None
+    earliest_restore_point: Any = None
+    latest_restore_point: Any = None
+    scheduled_permanent_deletion_time: Any = None
+
+@dataclasses.dataclass
 class Fhirdatastores_DatastorePropertiesList_ErrorCause:
     error_category: Any = None
     error_message: Any = None
@@ -42,6 +57,7 @@ class Fhirdatastores_DatastorePropertiesList_SseConfiguration:
 @dataclasses.dataclass
 class Fhirdatastores_DatastorePropertiesList:
     analytics_configuration: Any = None
+    backup_status_info: Any = None
     created_at: Any = None
     datastore_arn: Any = None
     datastore_endpoint: Any = None

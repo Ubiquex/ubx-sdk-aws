@@ -150,11 +150,13 @@ var UserPoolRegionalConfigurationAttachment_SmsConfigurationFields = ubx.FieldMa
 type UserPoolRegionalConfigurationAttachmentConfig struct {
 	// Configures the email delivery settings for the Cognito user pool, including the sender address, reply-to address, and the Amazon SES configuration set or source ARN used to send emails. (AI-inferred)
 	EmailConfiguration any
+	// The Lambda triggers Amazon Cognito invokes for this user pool replica's own authentication operations. (AI-inferred)
 	LambdaConfig any
 	// Specifies the SMS message configuration (e.g., SNS caller ARN and external ID) used by the user pool to send SMS verification codes and MFA messages. (AI-inferred)
 	SmsConfiguration any
 	// The status of the replica. Set to ACTIVE or INACTIVE.
 	Status any
+	// A reference to the user pool this regional configuration attaches to. (AI-inferred)
 	UserPoolId any
 	// A map of key-value tags to assign to the Amazon Cognito user pool associated with this regional configuration attachment. (AI-inferred)
 	UserPoolTags any
@@ -163,11 +165,13 @@ type UserPoolRegionalConfigurationAttachmentConfig struct {
 type UserPoolRegionalConfigurationAttachmentAttrs struct {
 	// Configures the email delivery settings for the Cognito user pool, including the sender address, reply-to address, and the Amazon SES configuration set or source ARN used to send emails. (AI-inferred)
 	EmailConfiguration any
+	// The Lambda triggers Amazon Cognito invokes for this user pool replica's own authentication operations. (AI-inferred)
 	LambdaConfig any
 	// Specifies the SMS message configuration (e.g., SNS caller ARN and external ID) used by the user pool to send SMS verification codes and MFA messages. (AI-inferred)
 	SmsConfiguration any
 	// The status of the replica. Set to ACTIVE or INACTIVE.
 	Status any
+	// A reference to the user pool this regional configuration attaches to. (AI-inferred)
 	UserPoolId any
 	// A map of key-value tags to assign to the Amazon Cognito user pool associated with this regional configuration attachment. (AI-inferred)
 	UserPoolTags any

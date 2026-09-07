@@ -20,18 +20,24 @@ const Application_TagsFields: FieldMap = {
 export interface ApplicationConfig {
   /** Identifier of a KMS key. Can be a key ID, key ARN, alias name, or alias ARN. */
   defaultKmsKeyId?: string | Computed<string>;
+  /** The Amazon Resource Name (ARN) of the IAM role this security agent application assumes. (AI-inferred) */
   roleArn?: string | Computed<string>;
   /** Tags for the application */
   tags?: Application_Tags[] | Computed<Application_Tags[]>;
 }
 
 export interface ApplicationAttrs {
+  /** The unique identifier of this security agent application. (AI-inferred) */
   applicationId: string;
+  /** The name of this security agent application. (AI-inferred) */
   applicationName: string;
   /** Identifier of a KMS key. Can be a key ID, key ARN, alias name, or alias ARN. */
   defaultKmsKeyId: string;
+  /** The domain this security agent application is registered under. (AI-inferred) */
   domain: string;
+  /** The identity configuration for this security agent application. (AI-inferred) */
   idCconfiguration: Application_IdCconfiguration;
+  /** The Amazon Resource Name (ARN) of the IAM role this security agent application assumes. (AI-inferred) */
   roleArn: string;
   /** Tags for the application */
   tags: Application_Tags[];

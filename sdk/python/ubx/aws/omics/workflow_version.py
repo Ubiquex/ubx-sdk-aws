@@ -163,6 +163,7 @@ class WorkflowVersionAttrs:
     tags: Any = None
     # The workflow engine type (such as WDL or Nextflow) for this Omics workflow version, automatically assigned by the service when the version is created. (AI-inferred)
     type: Any = None
+    # The unique identifier of this Omics workflow version. (AI-inferred)
     uuid: Any = None
     # The version_name field assigns a user-defined name to this version of the Omics workflow, which must be unique among all versions of the same workflow. (AI-inferred)
     version_name: Any = None

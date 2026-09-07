@@ -2,18 +2,28 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DictionaryConfig {
+  /** The entries in this dictionary, used to bias or correct inference output for domain-specific terms. (AI-inferred) */
   entries?: string | Computed<string>;
+  /** The language this dictionary's own entries apply to. (AI-inferred) */
   language: string | Computed<string>;
+  /** The name of this dictionary. (AI-inferred) */
   name: string | Computed<string>;
+  /** The tags assigned to this dictionary. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
 }
 
 export interface DictionaryAttrs {
+  /** The Amazon Resource Name (ARN) of this dictionary. (AI-inferred) */
   arn: string;
+  /** The entries in this dictionary, used to bias or correct inference output for domain-specific terms. (AI-inferred) */
   entries: string;
+  /** The unique identifier of this dictionary. (AI-inferred) */
   id: string;
+  /** The language this dictionary's own entries apply to. (AI-inferred) */
   language: string;
+  /** The name of this dictionary. (AI-inferred) */
   name: string;
+  /** The tags assigned to this dictionary. (AI-inferred) */
   tags: unknown;
 }
 

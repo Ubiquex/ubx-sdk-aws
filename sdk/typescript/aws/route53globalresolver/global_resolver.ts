@@ -12,34 +12,52 @@ const GlobalResolver_TagsFields: FieldMap = {
 };
 
 export interface GlobalResolverConfig {
+  /** A unique string that identifies the request used to create this global resolver, ensuring idempotency. (AI-inferred) */
   clientToken?: string | Computed<string>;
+  /** The description of this global resolver. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Whether this global resolver serves IPv4-only or dual-stack (IPv4 and IPv6) addresses. (AI-inferred) */
   ipAddressType?: string | Computed<string>;
+  /** The name of this global resolver. (AI-inferred) */
   name: string | Computed<string>;
+  /** The AWS Region where observability data (e.g. query logs, metrics) for this global resolver is collected. (AI-inferred) */
   observabilityRegion?: string | Computed<string>;
   /** The list of regions the Global Resolver exists in. Regions can be added or removed on update; the order of this list is not significant. */
   regions: string[] | Computed<string[]>;
+  /** The tags assigned to this global resolver. (AI-inferred) */
   tags?: GlobalResolver_Tags[] | Computed<GlobalResolver_Tags[]>;
 }
 
 export interface GlobalResolverAttrs {
   /** The Amazon Resource Name (ARN) that AWS assigns to this Route 53 Global Resolver, used as a unique identifier and in IAM policies and resource references. (AI-inferred) */
   arn: string;
+  /** A unique string that identifies the request used to create this global resolver, ensuring idempotency. (AI-inferred) */
   clientToken: string;
+  /** The date and time when this global resolver was created. (AI-inferred) */
   createdAt: string;
+  /** The description of this global resolver. (AI-inferred) */
   description: string;
+  /** The DNS name of this global resolver. (AI-inferred) */
   dnsName: string;
+  /** The unique identifier of this global resolver. (AI-inferred) */
   globalResolverId: string;
+  /** The global anycast IPv4 addresses assigned to this global resolver. DNS clients can send queries to these addresses from anywhere on the internet. (AI-inferred) */
   ipv4Addresses: string[];
+  /** The global anycast IPv6 addresses assigned to this global resolver, populated only when its own ip_address_type is dual-stack. DNS clients can send queries to these addresses from anywhere on the internet. (AI-inferred) */
   ipv6Addresses: string[];
+  /** Whether this global resolver serves IPv4-only or dual-stack (IPv4 and IPv6) addresses. (AI-inferred) */
   ipAddressType: string;
+  /** The name of this global resolver. (AI-inferred) */
   name: string;
+  /** The AWS Region where observability data (e.g. query logs, metrics) for this global resolver is collected. (AI-inferred) */
   observabilityRegion: string;
   /** The list of regions the Global Resolver exists in. Regions can be added or removed on update; the order of this list is not significant. */
   regions: string[];
   /** The current lifecycle status of the Route 53 global resolver rule, reporting values such as COMPLETE, FAILED, UPDATING, or DELETING to indicate the rule's operational state. (AI-inferred) */
   status: string;
+  /** The tags assigned to this global resolver. (AI-inferred) */
   tags: GlobalResolver_Tags[];
+  /** The date and time when this global resolver was last updated. (AI-inferred) */
   updatedAt: string;
 }
 

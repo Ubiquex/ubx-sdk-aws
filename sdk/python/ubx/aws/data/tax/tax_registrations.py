@@ -68,6 +68,7 @@ class TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_E
 
 @dataclasses.dataclass
 class TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_FranceAdditionalInfo:
+    e_invoice_routing_code: Any = None
     siren_number: Any = None
 
 @dataclasses.dataclass
@@ -106,6 +107,10 @@ class TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_M
     business_registration_number: Any = None
     service_tax_codes: Any = None
     tax_information_number: Any = None
+
+@dataclasses.dataclass
+class TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_MonacoAdditionalInfo:
+    business_number: Any = None
 
 @dataclasses.dataclass
 class TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_PhilippinesAdditionalInfo:
@@ -171,6 +176,7 @@ class TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation:
     italy_additional_info: Any = None
     kenya_additional_info: Any = None
     malaysia_additional_info: Any = None
+    monaco_additional_info: Any = None
     philippines_additional_info: Any = None
     poland_additional_info: Any = None
     romania_additional_info: Any = None

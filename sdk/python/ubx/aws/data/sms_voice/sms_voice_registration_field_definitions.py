@@ -7,6 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_ConditionalBehavior_Rules_ConditionalValidation:
+    allowed_values: Any = None
+    max_length: Any = None
+    min_length: Any = None
+    pattern: Any = None
+
+@dataclasses.dataclass
+class SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_ConditionalBehavior_Rules_Conditions:
+    depends_on_field_path: Any = None
+    operator: Any = None
+    values: Any = None
+
+@dataclasses.dataclass
+class SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_ConditionalBehavior_Rules:
+    conditional_validation: Any = None
+    conditions: Any = None
+    rule_behavior: Any = None
+
+@dataclasses.dataclass
+class SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_ConditionalBehavior:
+    default_behavior: Any = None
+    rules: Any = None
+
+@dataclasses.dataclass
 class SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_DisplayHints_SelectOptionDescriptions:
     description: Any = None
     option: Any = None
@@ -37,6 +61,7 @@ class SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions_TextVali
 
 @dataclasses.dataclass
 class SmsVoiceRegistrationFieldDefinitions_RegistrationFieldDefinitions:
+    conditional_behavior: Any = None
     display_hints: Any = None
     field_path: Any = None
     field_requirement: Any = None

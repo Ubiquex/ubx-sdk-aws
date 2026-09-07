@@ -23,6 +23,7 @@ export interface CapacityReservations_CapacityReservations_InterruptibleCapacity
   interruptionType?: string | Computed<string>;
   status?: string | Computed<string>;
   targetInstanceCount?: number | Computed<number>;
+  zeroSizePreference?: string | Computed<string>;
 }
 
 export interface CapacityReservations_CapacityReservations_InterruptionInfo {
@@ -62,6 +63,7 @@ export interface CapacityReservations_CapacityReservations {
   tenancy?: string | Computed<string>;
   totalInstanceCount?: number | Computed<number>;
   unusedReservationBillingOwnerId?: string | Computed<string>;
+  zeroSizePreference?: string | Computed<string>;
 }
 
 export interface CapacityReservations_Filters {

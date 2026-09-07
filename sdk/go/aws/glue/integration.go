@@ -34,6 +34,7 @@ type IntegrationConfig struct {
 	AdditionalEncryptionContext any
 	// Specifies a SQL query string that filters the source data to be included in the Glue integration, such as selecting specific columns or rows from a source table. (AI-inferred)
 	DataFilter any
+	// The description of this Glue zero-ETL integration. (AI-inferred)
 	Description any
 	// The configuration settings for the integration.
 	IntegrationConfig any
@@ -56,6 +57,7 @@ type IntegrationAttrs struct {
 	CreateTime any
 	// Specifies a SQL query string that filters the source data to be included in the Glue integration, such as selecting specific columns or rows from a source table. (AI-inferred)
 	DataFilter any
+	// The description of this Glue zero-ETL integration. (AI-inferred)
 	Description any
 	// The Amazon Resource Name (ARN) of the integration.
 	IntegrationArn any

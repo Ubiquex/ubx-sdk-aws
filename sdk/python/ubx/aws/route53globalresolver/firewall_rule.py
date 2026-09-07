@@ -24,7 +24,9 @@ class FirewallRuleConfig:
     confidence_threshold: Any = None
     # Provides an optional description for the Route 53 Resolver firewall rule, used to annotate the rule with its purpose or notes. (AI-inferred)
     description: Any = None
+    # The advanced DNS threat protection type (e.g. DGA, DNS tunneling, dictionary DGA) this firewall rule detects and acts on, based on known threat signatures. (AI-inferred)
     dns_advanced_protection: Any = None
+    # A reference to the DNS view this firewall rule is evaluated against. (AI-inferred)
     dns_view_id: Any = None
     # The unique ID of the firewall domain list that defines the set of domains this resolver firewall rule applies to, associating the rule with that list. (AI-inferred)
     firewall_domain_list_id: Any = None
@@ -55,7 +57,9 @@ class FirewallRuleAttrs:
     created_at: Any = None
     # Provides an optional description for the Route 53 Resolver firewall rule, used to annotate the rule with its purpose or notes. (AI-inferred)
     description: Any = None
+    # The advanced DNS threat protection type (e.g. DGA, DNS tunneling, dictionary DGA) this firewall rule detects and acts on, based on known threat signatures. (AI-inferred)
     dns_advanced_protection: Any = None
+    # A reference to the DNS view this firewall rule is evaluated against. (AI-inferred)
     dns_view_id: Any = None
     # The unique ID of the firewall domain list that defines the set of domains this resolver firewall rule applies to, associating the rule with that list. (AI-inferred)
     firewall_domain_list_id: Any = None
@@ -69,6 +73,7 @@ class FirewallRuleAttrs:
     qtype: Any = None
     # The DNS query type (e.g., A, AAAA, CNAME, MX, etc.) that this firewall rule evaluates, where an empty value means the rule applies to all query types. (AI-inferred)
     query_type: Any = None
+    # The current status of this firewall rule. (AI-inferred)
     status: Any = None
     # A timestamp that indicates when the firewall rule was last updated. (AI-inferred)
     updated_at: Any = None

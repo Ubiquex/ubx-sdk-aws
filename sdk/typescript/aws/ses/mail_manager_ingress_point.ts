@@ -118,6 +118,7 @@ export interface MailManagerIngressPointConfig {
   ruleSetId: string | Computed<string>;
   /** Defines the desired operational status (e.g., ACTIVE or INACTIVE) that the ingress point should be updated to, enabling you to start or stop inbound email processing through this endpoint. (AI-inferred) */
   statusToUpdate?: string | Computed<string>;
+  /** The tags assigned to this Mail Manager ingress point. (AI-inferred) */
   tags?: MailManagerIngressPoint_Tags[] | Computed<MailManagerIngressPoint_Tags[]>;
   /** Specifies the TLS enforcement for connections to the ingress point, with allowed values 'REQUIRE' (forces TLS) or 'OPTIONAL' (allows both TLS and non-TLS). (AI-inferred) */
   tlsPolicy?: string | Computed<string>;
@@ -146,6 +147,7 @@ export interface MailManagerIngressPointAttrs {
   status: string;
   /** Defines the desired operational status (e.g., ACTIVE or INACTIVE) that the ingress point should be updated to, enabling you to start or stop inbound email processing through this endpoint. (AI-inferred) */
   statusToUpdate: string;
+  /** The tags assigned to this Mail Manager ingress point. (AI-inferred) */
   tags: MailManagerIngressPoint_Tags[];
   /** Specifies the TLS enforcement for connections to the ingress point, with allowed values 'REQUIRE' (forces TLS) or 'OPTIONAL' (allows both TLS and non-TLS). (AI-inferred) */
   tlsPolicy: string;

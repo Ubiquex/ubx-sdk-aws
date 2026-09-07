@@ -33,6 +33,7 @@ from .key_pairs import KeyPairs, KeyPairsConfig
 from .load_balancer_metric_data import LoadBalancerMetricData, LoadBalancerMetricDataConfig
 from .load_balancer_tls_policies import LoadBalancerTlsPolicies, LoadBalancerTlsPoliciesConfig
 from .load_balancers import LoadBalancers, LoadBalancersConfig
+from .profile import Profile, ProfileConfig
 from .relational_database_blueprints import RelationalDatabaseBlueprints, RelationalDatabaseBlueprintsConfig
 from .relational_database_bundles import RelationalDatabaseBundles, RelationalDatabaseBundlesConfig
 from .relational_database_log_streams import RelationalDatabaseLogStreams, RelationalDatabaseLogStreamsConfig

@@ -120,6 +120,7 @@ var CapacityProvider_VpcConfigFields = ubx.FieldMap{
 	}
 
 type CapacityProviderConfig struct {
+	// The name of this Lambda capacity provider. (AI-inferred)
 	CapacityProviderName any
 	// Configuration that defines how the capacity provider scales compute instances based on demand and policies.
 	CapacityProviderScalingConfig any
@@ -140,7 +141,9 @@ type CapacityProviderConfig struct {
 }
 
 type CapacityProviderAttrs struct {
+	// The Amazon Resource Name (ARN) of this Lambda capacity provider. (AI-inferred)
 	Arn any
+	// The name of this Lambda capacity provider. (AI-inferred)
 	CapacityProviderName any
 	// Configuration that defines how the capacity provider scales compute instances based on demand and policies.
 	CapacityProviderScalingConfig any

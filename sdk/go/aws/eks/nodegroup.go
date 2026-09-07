@@ -197,6 +197,7 @@ type NodegroupAttrs struct {
 	DiskSize any
 	// Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue.
 	ForceUpdateEnabled any
+	// The unique identifier of this EKS node group. (AI-inferred)
 	Id any
 	// Specify the instance types for a node group.
 	InstanceTypes any

@@ -24,17 +24,20 @@ const VpcEndpointAssociation_TagsFields: FieldMap = {
 };
 
 export interface VpcEndpointAssociationConfig {
+  /** The description of this VPC endpoint association. (AI-inferred) */
   description?: string | Computed<string>;
   /** A resource ARN. */
   firewallArn: string | Computed<string>;
   /** Defines the subnet mappings (each with subnet ID and optional IP address type) to associate with the Network Firewall VPC endpoint. (AI-inferred) */
   subnetMapping: VpcEndpointAssociation_SubnetMapping | Computed<VpcEndpointAssociation_SubnetMapping>;
+  /** The tags assigned to this VPC endpoint association. (AI-inferred) */
   tags?: VpcEndpointAssociation_Tags[] | Computed<VpcEndpointAssociation_Tags[]>;
   /** The ID of the VPC in which the VPC endpoint is being associated with the Network Firewall firewall. (AI-inferred) */
   vpcId: string | Computed<string>;
 }
 
 export interface VpcEndpointAssociationAttrs {
+  /** The description of this VPC endpoint association. (AI-inferred) */
   description: string;
   /** An endpoint Id. */
   endpointId: string;
@@ -42,6 +45,7 @@ export interface VpcEndpointAssociationAttrs {
   firewallArn: string;
   /** Defines the subnet mappings (each with subnet ID and optional IP address type) to associate with the Network Firewall VPC endpoint. (AI-inferred) */
   subnetMapping: VpcEndpointAssociation_SubnetMapping;
+  /** The tags assigned to this VPC endpoint association. (AI-inferred) */
   tags: VpcEndpointAssociation_Tags[];
   /** A resource ARN. */
   vpcEndpointAssociationArn: string;

@@ -8,27 +8,46 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MountTargetConfig:
+    # A reference to the file system this mount target provides network access to. (AI-inferred)
     file_system_id: Any = None
+    # The type of IP address (IPv4-only, IPv6-only, or dual-stack) this mount target uses. (AI-inferred)
     ip_address_type: Any = None
+    # The IPv4 address of this mount target. (AI-inferred)
     ipv4_address: Any = None
+    # The IPv6 address of this mount target. (AI-inferred)
     ipv6_address: Any = None
+    # The VPC security groups controlling network access to this mount target. (AI-inferred)
     security_groups: Any = None
+    # A reference to the subnet this mount target is located in. (AI-inferred)
     subnet_id: Any = None
 
 @dataclasses.dataclass
 class MountTargetAttrs:
+    # The unique identifier of the Availability Zone this mount target is located in. (AI-inferred)
     availability_zone_id: Any = None
+    # A reference to the file system this mount target provides network access to. (AI-inferred)
     file_system_id: Any = None
+    # The type of IP address (IPv4-only, IPv6-only, or dual-stack) this mount target uses. (AI-inferred)
     ip_address_type: Any = None
+    # The IPv4 address of this mount target. (AI-inferred)
     ipv4_address: Any = None
+    # The IPv6 address of this mount target. (AI-inferred)
     ipv6_address: Any = None
+    # The unique identifier of this mount target. (AI-inferred)
     mount_target_id: Any = None
+    # A reference to the network interface Amazon S3 Files created for this mount target. (AI-inferred)
     network_interface_id: Any = None
+    # The AWS account ID that owns this mount target. (AI-inferred)
     owner_id: Any = None
+    # The VPC security groups controlling network access to this mount target. (AI-inferred)
     security_groups: Any = None
+    # The current status of this mount target. (AI-inferred)
     status: Any = None
+    # Additional information about this mount target's own current status. (AI-inferred)
     status_message: Any = None
+    # A reference to the subnet this mount target is located in. (AI-inferred)
     subnet_id: Any = None
+    # A reference to the VPC this mount target is located in. (AI-inferred)
     vpc_id: Any = None
 
 MountTarget = ubx.ResourceBinding(

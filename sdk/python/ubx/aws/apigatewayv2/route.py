@@ -53,6 +53,7 @@ class RouteAttrs:
     request_models: Any = None
     # The request parameters for the route. Supported only for WebSocket APIs.
     request_parameters: Any = None
+    # The unique identifier of this route. (AI-inferred)
     route_id: Any = None
     # The route key for the route. For HTTP APIs, the route key can be either ``$default``, or a combination of an HTTP method and resource path, for example, ``GET /pets``.
     route_key: Any = None

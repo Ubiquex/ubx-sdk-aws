@@ -139,6 +139,17 @@ export interface TopicRule_TopicRulePayload_Actions_Http {
   url?: string | Computed<string>;
 }
 
+export interface TopicRule_TopicRulePayload_Actions_InfluxDb {
+  batchConfig?: TopicRule_TopicRulePayload_Actions_Http_BatchConfig | Computed<TopicRule_TopicRulePayload_Actions_Http_BatchConfig>;
+  databaseName?: string | Computed<string>;
+  destinationArn?: string | Computed<string>;
+  organization?: string | Computed<string>;
+  roleArn?: string | Computed<string>;
+  tableName?: string | Computed<string>;
+  tags?: unknown | Computed<unknown>;
+  timestampUnit?: string | Computed<string>;
+}
+
 export interface TopicRule_TopicRulePayload_Actions_IotAnalytics {
   /** When true, the IoT Analytics action batches multiple MQTT messages into a single IoT Analytics message; when false, each incoming message is processed separately. (AI-inferred) */
   batchMode?: boolean | Computed<boolean>;
@@ -358,6 +369,7 @@ export interface TopicRule_TopicRulePayload_Actions {
   firehose?: TopicRule_TopicRulePayload_Actions_Firehose | Computed<TopicRule_TopicRulePayload_Actions_Firehose>;
   /** The HTTP action configuration that forwards the IoT message to an HTTPS endpoint, defining the URL, optional headers, and authentication details. (AI-inferred) */
   http?: TopicRule_TopicRulePayload_Actions_Http | Computed<TopicRule_TopicRulePayload_Actions_Http>;
+  influxDb?: TopicRule_TopicRulePayload_Actions_InfluxDb | Computed<TopicRule_TopicRulePayload_Actions_InfluxDb>;
   /** Defines an AWS IoT Analytics action that routes IoT rule messages to a specified IoT Analytics channel, requiring a channelName and roleArn to authorize the write. (AI-inferred) */
   iotAnalytics?: TopicRule_TopicRulePayload_Actions_IotAnalytics | Computed<TopicRule_TopicRulePayload_Actions_IotAnalytics>;
   /** Specifies the AWS IoT Events action, which sends the message payload to an AWS IoT Events input for processing by a detector model. (AI-inferred) */
@@ -510,6 +522,21 @@ const TopicRule_TopicRulePayload_Actions_HttpFields: FieldMap = {
     fields: TopicRule_TagsFields,
   },
   url: "url",
+};
+
+const TopicRule_TopicRulePayload_Actions_InfluxDbFields: FieldMap = {
+  batchConfig: {
+    wireName: "batch_config",
+    kind: "object",
+    fields: TopicRule_TopicRulePayload_Actions_Http_BatchConfigFields,
+  },
+  databaseName: "database_name",
+  destinationArn: "destination_arn",
+  organization: "organization",
+  roleArn: "role_arn",
+  tableName: "table_name",
+  tags: "tags",
+  timestampUnit: "timestamp_unit",
 };
 
 const TopicRule_TopicRulePayload_Actions_IotAnalyticsFields: FieldMap = {
@@ -723,6 +750,11 @@ const TopicRule_TopicRulePayload_ActionsFields: FieldMap = {
     wireName: "http",
     kind: "object",
     fields: TopicRule_TopicRulePayload_Actions_HttpFields,
+  },
+  influxDb: {
+    wireName: "influx_db",
+    kind: "object",
+    fields: TopicRule_TopicRulePayload_Actions_InfluxDbFields,
   },
   iotAnalytics: {
     wireName: "iot_analytics",

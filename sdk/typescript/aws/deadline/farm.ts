@@ -14,6 +14,7 @@ const Farm_TagsFields: FieldMap = {
 };
 
 export interface FarmConfig {
+  /** A multiplier applied to this farm's own reported usage costs, used to adjust cost tracking without changing actual resource consumption. (AI-inferred) */
   costScaleFactor?: number | Computed<number>;
   /** A human-readable description of the Deadline Cloud farm, used to identify the farm's purpose or details. (AI-inferred) */
   description?: string | Computed<string>;
@@ -28,6 +29,7 @@ export interface FarmConfig {
 export interface FarmAttrs {
   /** The unique Amazon Resource Name (ARN) of the farm, used to reference the farm across AWS services and in IAM policies. (AI-inferred) */
   arn: string;
+  /** A multiplier applied to this farm's own reported usage costs, used to adjust cost tracking without changing actual resource consumption. (AI-inferred) */
   costScaleFactor: number;
   /** A human-readable description of the Deadline Cloud farm, used to identify the farm's purpose or details. (AI-inferred) */
   description: string;

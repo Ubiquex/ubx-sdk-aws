@@ -13,7 +13,10 @@ from .agents import Agents, AgentsConfig
 from .analyses import Analyses, AnalysesConfig
 from .analysis_definition import AnalysisDefinition, AnalysisDefinitionConfig
 from .analysis_permissions import AnalysisPermissions, AnalysisPermissionsConfig
+from .app import App, AppConfig
+from .app_permissions import AppPermissions, AppPermissionsConfig
 from .approval_policies import ApprovalPolicies, ApprovalPoliciesConfig
+from .apps import Apps, AppsConfig
 from .asset_bundle_export_job import AssetBundleExportJob, AssetBundleExportJobConfig
 from .asset_bundle_export_jobs import AssetBundleExportJobs, AssetBundleExportJobsConfig
 from .asset_bundle_import_job import AssetBundleImportJob, AssetBundleImportJobConfig

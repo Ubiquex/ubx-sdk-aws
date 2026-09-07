@@ -44,29 +44,45 @@ var ApprovalTeam_TagsFields = ubx.FieldMap{
 
 type ApprovalTeamConfig struct {
 	ApprovalStrategy any
+	// The description of this approval team. (AI-inferred)
 	Description any
+	// The name of this approval team. (AI-inferred)
 	Name any
+	// The policies defining what operations this approval team's own approval grants permission for. (AI-inferred)
 	Policies any
+	// The tags assigned to this approval team. (AI-inferred)
 	Tags any
 }
 
 type ApprovalTeamAttrs struct {
 	ApprovalStrategy any
+	// The individual approvers assigned to this approval team. (AI-inferred)
 	Approvers any
 	// The Amazon Resource Name (ARN) uniquely identifying the approval team, used as a durable reference in IAM policies and AWS Marketplace APIs. (AI-inferred)
 	Arn any
+	// The date and time when this approval team was created. (AI-inferred)
 	CreationTime any
+	// The description of this approval team. (AI-inferred)
 	Description any
 	// A read-only string field that records the time when the approval team was last updated, managed automatically by AWS. (AI-inferred)
 	LastUpdateTime any
+	// The name of this approval team. (AI-inferred)
 	Name any
+	// The total number of approvers on this approval team. (AI-inferred)
 	NumberOfApprovers any
+	// The policies defining what operations this approval team's own approval grants permission for. (AI-inferred)
 	Policies any
+	// The current status of this approval team. (AI-inferred)
 	Status any
+	// The status code of this approval team. (AI-inferred)
 	StatusCode any
+	// A message describing this approval team's own current status. (AI-inferred)
 	StatusMessage any
+	// The tags assigned to this approval team. (AI-inferred)
 	Tags any
+	// The Amazon Resource Name (ARN) of this approval team's own most recent update session. (AI-inferred)
 	UpdateSessionArn any
+	// The version identifier of this approval team. (AI-inferred)
 	VersionId any
 }
 

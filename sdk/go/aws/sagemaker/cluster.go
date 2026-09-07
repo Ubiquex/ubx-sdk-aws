@@ -196,7 +196,15 @@ type Cluster_Orchestrator_Eks struct {
 	ClusterArn any
 }
 
+type Cluster_Orchestrator_Slurm_AccountingDatabase struct {
+	Endpoint any
+	Name any
+	Port any
+	SecretArn any
+}
+
 type Cluster_Orchestrator_Slurm struct {
+	AccountingDatabase any
 	// Specifies whether SageMaker automatically generates the Slurm configuration files (Auto) or uses pre-existing configuration files you supply (NoAuto) for the Slurm orchestrator on the SageMaker HyperPod cluster. (AI-inferred)
 	SlurmConfigStrategy any
 }
@@ -277,7 +285,19 @@ var Cluster_Orchestrator_EksFields = ubx.FieldMap{
 		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
 	}
 
+var Cluster_Orchestrator_Slurm_AccountingDatabaseFields = ubx.FieldMap{
+		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Port": ubx.FieldSpec{WireName: "port"},
+		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+	}
+
 var Cluster_Orchestrator_SlurmFields = ubx.FieldMap{
+		"AccountingDatabase": ubx.FieldSpec{
+			WireName: "accounting_database",
+			Kind: "object",
+			Fields: Cluster_Orchestrator_Slurm_AccountingDatabaseFields,
+		},
 		"SlurmConfigStrategy": ubx.FieldSpec{WireName: "slurm_config_strategy"},
 	}
 

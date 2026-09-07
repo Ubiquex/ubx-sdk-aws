@@ -5,6 +5,21 @@ export interface Fhirdatastores_DatastorePropertiesList_AnalyticsConfiguration {
   status?: string | Computed<string>;
 }
 
+export interface Fhirdatastores_DatastorePropertiesList_BackupStatusInfo_Configuration {
+  backupTagsEnabled?: boolean | Computed<boolean>;
+  backupType?: string | Computed<string>;
+  retentionPeriodInDays?: number | Computed<number>;
+  status?: string | Computed<string>;
+}
+
+export interface Fhirdatastores_DatastorePropertiesList_BackupStatusInfo {
+  backupEnabledAt?: string | Computed<string>;
+  configuration?: Fhirdatastores_DatastorePropertiesList_BackupStatusInfo_Configuration | Computed<Fhirdatastores_DatastorePropertiesList_BackupStatusInfo_Configuration>;
+  earliestRestorePoint?: string | Computed<string>;
+  latestRestorePoint?: string | Computed<string>;
+  scheduledPermanentDeletionTime?: string | Computed<string>;
+}
+
 export interface Fhirdatastores_DatastorePropertiesList_ErrorCause {
   errorCategory?: string | Computed<string>;
   errorMessage?: string | Computed<string>;
@@ -36,6 +51,7 @@ export interface Fhirdatastores_DatastorePropertiesList_SseConfiguration {
 
 export interface Fhirdatastores_DatastorePropertiesList {
   analyticsConfiguration?: Fhirdatastores_DatastorePropertiesList_AnalyticsConfiguration | Computed<Fhirdatastores_DatastorePropertiesList_AnalyticsConfiguration>;
+  backupStatusInfo?: Fhirdatastores_DatastorePropertiesList_BackupStatusInfo | Computed<Fhirdatastores_DatastorePropertiesList_BackupStatusInfo>;
   createdAt?: string | Computed<string>;
   datastoreArn?: string | Computed<string>;
   datastoreEndpoint?: string | Computed<string>;

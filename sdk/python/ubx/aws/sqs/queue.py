@@ -55,7 +55,7 @@ class QueueConfig:
 
 @dataclasses.dataclass
 class QueueAttrs:
-    # The Amazon Resource Name (ARN) of the SQS queue, automatically assigned by AWS when the queue is created. (AI-inferred)
+    # The queue's real ARN, computed, known only after ship. (AI-inferred)
     arn: Any = None
     # For first-in-first-out (FIFO) queues, specifies whether to enable content-based deduplication. During the deduplication interval, SQS treats messages that are sent with identical content as duplicates and delivers only one copy of the message. For more information, see the ``ContentBasedDeduplication`` attribute for the ``CreateQueue`` action in the *API Reference*.
     content_based_deduplication: Any = None

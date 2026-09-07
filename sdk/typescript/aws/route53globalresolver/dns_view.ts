@@ -12,32 +12,48 @@ const DnsView_TagsFields: FieldMap = {
 };
 
 export interface DnsViewConfig {
+  /** A unique string that identifies the request used to create this DNS view, ensuring idempotency. (AI-inferred) */
   clientToken?: string | Computed<string>;
   /** An optional human-readable description that you provide for the DNS view to help manage and identify it. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Whether this DNS view validates the authenticity and integrity of DNS responses from public name servers for DNSSEC-signed domains. (AI-inferred) */
   dnssecValidation?: string | Computed<string>;
+  /** Whether this DNS view forwards client subnet information with queries, so upstream resolvers can return more geographically accurate DNS responses. (AI-inferred) */
   ednsClientSubnet?: string | Computed<string>;
   /** Determines whether DNS queries are allowed to pass through (fail open) or are rejected (fail closed) when the Route 53 Resolver DNS Firewall cannot evaluate the configured firewall rules due to an internal error. (AI-inferred) */
   firewallRulesFailOpen?: string | Computed<string>;
+  /** A reference to the global resolver this DNS view is created under. (AI-inferred) */
   globalResolverId: string | Computed<string>;
+  /** The name of this DNS view. (AI-inferred) */
   name: string | Computed<string>;
+  /** The tags assigned to this DNS view. (AI-inferred) */
   tags?: DnsView_Tags[] | Computed<DnsView_Tags[]>;
 }
 
 export interface DnsViewAttrs {
+  /** The Amazon Resource Name (ARN) of this DNS view. (AI-inferred) */
   arn: string;
+  /** A unique string that identifies the request used to create this DNS view, ensuring idempotency. (AI-inferred) */
   clientToken: string;
+  /** The date and time when this DNS view was created. (AI-inferred) */
   createdAt: string;
   /** An optional human-readable description that you provide for the DNS view to help manage and identify it. (AI-inferred) */
   description: string;
+  /** The unique identifier of this DNS view. (AI-inferred) */
   dnsViewId: string;
+  /** Whether this DNS view validates the authenticity and integrity of DNS responses from public name servers for DNSSEC-signed domains. (AI-inferred) */
   dnssecValidation: string;
+  /** Whether this DNS view forwards client subnet information with queries, so upstream resolvers can return more geographically accurate DNS responses. (AI-inferred) */
   ednsClientSubnet: string;
   /** Determines whether DNS queries are allowed to pass through (fail open) or are rejected (fail closed) when the Route 53 Resolver DNS Firewall cannot evaluate the configured firewall rules due to an internal error. (AI-inferred) */
   firewallRulesFailOpen: string;
+  /** A reference to the global resolver this DNS view is created under. (AI-inferred) */
   globalResolverId: string;
+  /** The name of this DNS view. (AI-inferred) */
   name: string;
+  /** The current status of this DNS view. (AI-inferred) */
   status: string;
+  /** The tags assigned to this DNS view. (AI-inferred) */
   tags: DnsView_Tags[];
   /** A read-only timestamp that records when the global resolver DNS view was last modified. (AI-inferred) */
   updatedAt: string;

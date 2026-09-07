@@ -496,6 +496,7 @@ export interface OriginEndpointConfig {
   segment?: OriginEndpoint_Segment | Computed<OriginEndpoint_Segment>;
   /** <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p> */
   startoverWindowSeconds?: number | Computed<number>;
+  streamNameOutputMode?: string | Computed<string>;
   /** Defines a list of key-value tags to attach to the MediaPackage v2 origin endpoint, enabling resource identification, cost allocation, and access management. (AI-inferred) */
   tags?: OriginEndpoint_Tags[] | Computed<OriginEndpoint_Tags[]>;
   /** For the DASH manifest of an AWS Elemental MediaPackage v2 origin endpoint, this property sets the URI separator character (either '/' or '_') used in the segment template URL to delimit segment numbers from the preceding path. (AI-inferred) */
@@ -541,6 +542,7 @@ export interface OriginEndpointAttrs {
   segment: OriginEndpoint_Segment;
   /** <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p> */
   startoverWindowSeconds: number;
+  streamNameOutputMode: string;
   /** Defines a list of key-value tags to attach to the MediaPackage v2 origin endpoint, enabling resource identification, cost allocation, and access management. (AI-inferred) */
   tags: OriginEndpoint_Tags[];
   /** For the DASH manifest of an AWS Elemental MediaPackage v2 origin endpoint, this property sets the URI separator character (either '/' or '_') used in the segment template URL to delimit segment numbers from the preceding path. (AI-inferred) */
@@ -576,6 +578,7 @@ export const OriginEndpoint: ResourceBinding<OriginEndpointConfig, OriginEndpoin
       fields: OriginEndpoint_SegmentFields,
     },
     startoverWindowSeconds: "startover_window_seconds",
+    streamNameOutputMode: "stream_name_output_mode",
     tags: {
       wireName: "tags",
       kind: "list",

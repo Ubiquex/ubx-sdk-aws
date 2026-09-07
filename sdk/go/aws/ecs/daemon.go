@@ -49,6 +49,7 @@ type DaemonConfig struct {
 	CapacityProviderArns any
 	// The Amazon Resource Name (ARN) of the cluster that the daemon is running in.
 	ClusterArn any
+	// The name of this daemon. (AI-inferred)
 	DaemonName any
 	// The Amazon Resource Name (ARN) of the daemon task definition used by this revision.
 	DaemonTaskDefinitionArn any
@@ -60,6 +61,7 @@ type DaemonConfig struct {
 	EnableExecuteCommand any
 	// Specifies whether tags are propagated from the daemon to the daemon tasks.
 	PropagateTags any
+	// The tags assigned to this daemon. (AI-inferred)
 	Tags any
 }
 
@@ -68,12 +70,17 @@ type DaemonAttrs struct {
 	CapacityProviderArns any
 	// The Amazon Resource Name (ARN) of the cluster that the daemon is running in.
 	ClusterArn any
+	// The date and time when this daemon was created. (AI-inferred)
 	CreatedAt any
+	// The Amazon Resource Name (ARN) of this daemon. (AI-inferred)
 	DaemonArn any
+	// The name of this daemon. (AI-inferred)
 	DaemonName any
+	// The current status of this daemon. (AI-inferred)
 	DaemonStatus any
 	// The Amazon Resource Name (ARN) of the daemon task definition used by this revision.
 	DaemonTaskDefinitionArn any
+	// The Amazon Resource Name (ARN) of this daemon's own most recent deployment. (AI-inferred)
 	DeploymentArn any
 	// Optional deployment parameters that control how a daemon rolls out updates across container instances.
 	DeploymentConfiguration any
@@ -83,7 +90,9 @@ type DaemonAttrs struct {
 	EnableExecuteCommand any
 	// Specifies whether tags are propagated from the daemon to the daemon tasks.
 	PropagateTags any
+	// The tags assigned to this daemon. (AI-inferred)
 	Tags any
+	// The date and time when this daemon was last updated. (AI-inferred)
 	UpdatedAt any
 }
 

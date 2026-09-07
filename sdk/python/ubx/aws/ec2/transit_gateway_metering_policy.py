@@ -20,6 +20,7 @@ _TransitGatewayMeteringPolicy_TagsFields = {
 class TransitGatewayMeteringPolicyConfig:
     # Middle box attachment Ids
     middlebox_attachment_ids: Any = None
+    # The tags assigned to this transit gateway metering policy. (AI-inferred)
     tags: Any = None
     # The Id of transit gateway
     transit_gateway_id: Any = None
@@ -30,6 +31,7 @@ class TransitGatewayMeteringPolicyAttrs:
     middlebox_attachment_ids: Any = None
     # State of the transit gateway metering policy
     state: Any = None
+    # The tags assigned to this transit gateway metering policy. (AI-inferred)
     tags: Any = None
     # The Id of transit gateway
     transit_gateway_id: Any = None

@@ -160,6 +160,7 @@ export interface ExperimentTemplateAttrs {
   experimentOptions: ExperimentTemplate_ExperimentOptions;
   /** Configures the delivery of the experiment report for the FIS experiment template, specifying the S3 destination bucket and prefix as well as the report format and schema version for the generated experiment results. (AI-inferred) */
   experimentReportConfiguration: ExperimentTemplate_ExperimentReportConfiguration;
+  /** The unique identifier of this FIS experiment template. (AI-inferred) */
   id: string;
   /** Specifies where to deliver experiment logs, including the destination CloudWatch Logs group and/or S3 bucket for storing the FIS experiment's activity and results. (AI-inferred) */
   logConfiguration: ExperimentTemplate_LogConfiguration;

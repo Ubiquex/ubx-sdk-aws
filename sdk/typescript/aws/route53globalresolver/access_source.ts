@@ -12,27 +12,46 @@ const AccessSource_TagsFields: FieldMap = {
 };
 
 export interface AccessSourceConfig {
+  /** The CIDR block defining the IP address range this access source authorizes to send DNS queries. (AI-inferred) */
   cidr: string | Computed<string>;
+  /** A unique string that identifies the request used to create this access source, ensuring idempotency. (AI-inferred) */
   clientToken?: string | Computed<string>;
+  /** A reference to the DNS view this access source is associated with. (AI-inferred) */
   dnsViewId: string | Computed<string>;
+  /** The IP address type (IPv4 or IPv6) of this access source. (AI-inferred) */
   ipAddressType?: string | Computed<string>;
+  /** The name of this access source. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The DNS protocol (Do53, DoH, or DoT) clients from this access source are authorized to use. (AI-inferred) */
   protocol: string | Computed<string>;
+  /** The tags assigned to this access source. (AI-inferred) */
   tags?: AccessSource_Tags[] | Computed<AccessSource_Tags[]>;
 }
 
 export interface AccessSourceAttrs {
+  /** The unique identifier of this access source. (AI-inferred) */
   accessSourceId: string;
+  /** The Amazon Resource Name (ARN) of this access source. (AI-inferred) */
   arn: string;
+  /** The CIDR block defining the IP address range this access source authorizes to send DNS queries. (AI-inferred) */
   cidr: string;
+  /** A unique string that identifies the request used to create this access source, ensuring idempotency. (AI-inferred) */
   clientToken: string;
+  /** The date and time when this access source was created. (AI-inferred) */
   createdAt: string;
+  /** A reference to the DNS view this access source is associated with. (AI-inferred) */
   dnsViewId: string;
+  /** The IP address type (IPv4 or IPv6) of this access source. (AI-inferred) */
   ipAddressType: string;
+  /** The name of this access source. (AI-inferred) */
   name: string;
+  /** The DNS protocol (Do53, DoH, or DoT) clients from this access source are authorized to use. (AI-inferred) */
   protocol: string;
+  /** The current status of this access source. (AI-inferred) */
   status: string;
+  /** The tags assigned to this access source. (AI-inferred) */
   tags: AccessSource_Tags[];
+  /** The date and time when this access source was last updated. (AI-inferred) */
   updatedAt: string;
 }
 

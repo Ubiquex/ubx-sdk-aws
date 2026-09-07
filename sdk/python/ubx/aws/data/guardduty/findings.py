@@ -713,7 +713,20 @@ class Findings_Findings_Service_Detection_Sequence_SequenceIndicators:
     values: Any = None
 
 @dataclasses.dataclass
+class Findings_Findings_Service_Detection_Sequence_Signals_Activities_Api:
+    error: Any = None
+    operation: Any = None
+    service: Any = None
+    user_agent: Any = None
+
+@dataclasses.dataclass
+class Findings_Findings_Service_Detection_Sequence_Signals_Activities:
+    api: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
 class Findings_Findings_Service_Detection_Sequence_Signals:
+    activities: Any = None
     actor_ids: Any = None
     count: Any = None
     created_at: Any = None

@@ -157,6 +157,7 @@ export interface OnlineEvaluationConfigConfig {
   evaluationExecutionRoleArn: string | Computed<string>;
   /** The list of evaluators to apply during online evaluation. */
   evaluators?: OnlineEvaluationConfig_Evaluators[] | Computed<OnlineEvaluationConfig_Evaluators[]>;
+  /** The current execution status of this online evaluation configuration. (AI-inferred) */
   executionStatus?: string | Computed<string>;
   /** The list of insights to enable for failure analysis. */
   insights?: OnlineEvaluationConfig_Insights[] | Computed<OnlineEvaluationConfig_Insights[]>;
@@ -181,6 +182,7 @@ export interface OnlineEvaluationConfigAttrs {
   evaluationExecutionRoleArn: string;
   /** The list of evaluators to apply during online evaluation. */
   evaluators: OnlineEvaluationConfig_Evaluators[];
+  /** The current execution status of this online evaluation configuration. (AI-inferred) */
   executionStatus: string;
   /** The list of insights to enable for failure analysis. */
   insights: OnlineEvaluationConfig_Insights[];
@@ -194,6 +196,7 @@ export interface OnlineEvaluationConfigAttrs {
   outputConfig: OnlineEvaluationConfig_OutputConfig;
   /** The evaluation rule that defines sampling configuration, filtering criteria, and session detection settings. */
   rule: OnlineEvaluationConfig_Rule;
+  /** The current status of this online evaluation configuration. (AI-inferred) */
   status: string;
   /** A list of tags to assign to the online evaluation configuration. */
   tags: OnlineEvaluationConfig_Tags[];

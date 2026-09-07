@@ -23,6 +23,7 @@ class WaitConditionAttrs:
     data: Any = None
     # The handle property is the pre-signed URL (from the associated WaitConditionHandle) that a signal is sent to, marking the wait as complete and allowing CloudFormation to finish creating this WaitCondition resource. (AI-inferred)
     handle: Any = None
+    # The unique identifier of this wait condition. (AI-inferred)
     id: Any = None
     # The number of seconds to wait for the required number of signals to arrive before the wait condition times out. (AI-inferred)
     timeout: Any = None

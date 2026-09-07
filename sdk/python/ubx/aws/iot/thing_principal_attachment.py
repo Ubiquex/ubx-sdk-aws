@@ -12,15 +12,18 @@ class ThingPrincipalAttachmentConfig:
     principal: Any = None
     # The name of the AWS IoT thing to which the principal (certificate or Cognito identity) is attached. (AI-inferred)
     thing_name: Any = None
+    # The type of principal (e.g. certificate) attached to this IoT thing. (AI-inferred)
     thing_principal_type: Any = None
 
 @dataclasses.dataclass
 class ThingPrincipalAttachmentAttrs:
+    # The unique identifier of this thing-principal attachment. (AI-inferred)
     id: Any = None
     # The ARN of the AWS IoT certificate or Amazon Cognito identity that is attached as a principal to the IoT thing. (AI-inferred)
     principal: Any = None
     # The name of the AWS IoT thing to which the principal (certificate or Cognito identity) is attached. (AI-inferred)
     thing_name: Any = None
+    # The type of principal (e.g. certificate) attached to this IoT thing. (AI-inferred)
     thing_principal_type: Any = None
 
 ThingPrincipalAttachment = ubx.ResourceBinding(

@@ -66,6 +66,7 @@ class ComponentConfig:
     properties: Any = None
     # The schema version of the component, indicating which version of the Amplify UI Builder component schema the component adheres to. (AI-inferred)
     schema_version: Any = None
+    # A reference to the source (e.g. a Figma file) this Amplify UI Builder component was generated from. (AI-inferred)
     source_id: Any = None
     # A map of key-value pairs used to assign metadata tags to the Amplify UI Builder component for identification and organization. (AI-inferred)
     tags: Any = None
@@ -90,6 +91,7 @@ class ComponentAttrs:
     environment_name: Any = None
     # Configures event handlers for the component, mapping event names (such as onClick) to action definitions for user interactions. (AI-inferred)
     events: Any = None
+    # The unique identifier of this Amplify UI Builder component. (AI-inferred)
     id: Any = None
     # The timestamp (in ISO 8601 format) indicating when the component was last updated. (AI-inferred)
     modified_at: Any = None
@@ -101,6 +103,7 @@ class ComponentAttrs:
     properties: Any = None
     # The schema version of the component, indicating which version of the Amplify UI Builder component schema the component adheres to. (AI-inferred)
     schema_version: Any = None
+    # A reference to the source (e.g. a Figma file) this Amplify UI Builder component was generated from. (AI-inferred)
     source_id: Any = None
     # A map of key-value pairs used to assign metadata tags to the Amplify UI Builder component for identification and organization. (AI-inferred)
     tags: Any = None

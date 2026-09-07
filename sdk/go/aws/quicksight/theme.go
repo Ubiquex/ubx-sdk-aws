@@ -280,6 +280,7 @@ type ThemeAttrs struct {
 	Tags any
 	// The unique identifier for the theme, which must be unique within an AWS account and is used to reference the theme in other QuickSight resources. (AI-inferred)
 	ThemeId any
+	// The real base type this theme was created from, e.g. a QuickSight-provided starting theme. (AI-inferred)
 	Type any
 	// <p>A version of a theme.</p>
 	Version any

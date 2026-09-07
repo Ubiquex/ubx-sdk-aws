@@ -698,6 +698,7 @@ const Harness_TruncationFields: FieldMap = {
 export interface HarnessConfig {
   /** The tools that the agent is allowed to use. */
   allowedTools?: string[] | Computed<string[]>;
+  /** Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred) */
   authorizerConfiguration?: Harness_AuthorizerConfiguration | Computed<Harness_AuthorizerConfiguration>;
   environmentArtifact?: Harness_EnvironmentArtifact | Computed<Harness_EnvironmentArtifact>;
   /** Environment variables to set in the harness runtime environment. */
@@ -722,6 +723,7 @@ export interface HarnessConfig {
   timeoutSeconds?: number | Computed<number>;
   /** The tools available to the agent. */
   tools?: Harness_Tools[] | Computed<Harness_Tools[]>;
+  /** Configuration for truncating model context. (AI-inferred) */
   truncation?: Harness_Truncation | Computed<Harness_Truncation>;
 }
 
@@ -730,9 +732,11 @@ export interface HarnessAttrs {
   allowedTools: string[];
   /** The Amazon Resource Name (ARN) of the harness. */
   arn: string;
+  /** Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred) */
   authorizerConfiguration: Harness_AuthorizerConfiguration;
   /** The timestamp when the harness was created. */
   createdAt: string;
+  /** The compute environment on which the harness runs. (AI-inferred) */
   environment: Harness_Environment;
   environmentArtifact: Harness_EnvironmentArtifact;
   /** Environment variables to set in the harness runtime environment. */
@@ -752,6 +756,7 @@ export interface HarnessAttrs {
   model: Harness_Model;
   /** The skills available to the agent. */
   skills: Harness_Skills[];
+  /** The status of the harness. (AI-inferred) */
   status: string;
   /** The system prompt that defines the agent's behavior. */
   systemPrompt: Harness_SystemPrompt[];
@@ -761,6 +766,7 @@ export interface HarnessAttrs {
   timeoutSeconds: number;
   /** The tools available to the agent. */
   tools: Harness_Tools[];
+  /** Configuration for truncating model context. (AI-inferred) */
   truncation: Harness_Truncation;
   /** The timestamp when the harness was last updated. */
   updatedAt: string;

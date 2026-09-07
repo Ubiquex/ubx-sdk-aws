@@ -14,6 +14,7 @@ class TransitGatewayMeteringPolicyEntryConfig:
     destination_port_range: Any = None
     # The ID of the source attachment through which traffic leaves a transit gateway
     destination_transit_gateway_attachment_id: Any = None
+    # The real attachment type (e.g. VPC, VPN, Direct Connect gateway) this metering policy entry's own destination traffic is measured against. (AI-inferred)
     destination_transit_gateway_attachment_type: Any = None
     # The AWS account ID of the account whose traffic traversing the transit gateway is metered under this metering policy entry. (AI-inferred)
     metered_account: Any = None
@@ -27,6 +28,7 @@ class TransitGatewayMeteringPolicyEntryConfig:
     source_port_range: Any = None
     # The ID of the source attachment through which traffic enters a transit gateway
     source_transit_gateway_attachment_id: Any = None
+    # The real attachment type (e.g. VPC, VPN, Direct Connect gateway) this metering policy entry's own source traffic is measured against. (AI-inferred)
     source_transit_gateway_attachment_type: Any = None
     # The ID of the transit gateway metering policy for which the entry is being created
     transit_gateway_metering_policy_id: Any = None
@@ -39,6 +41,7 @@ class TransitGatewayMeteringPolicyEntryAttrs:
     destination_port_range: Any = None
     # The ID of the source attachment through which traffic leaves a transit gateway
     destination_transit_gateway_attachment_id: Any = None
+    # The real attachment type (e.g. VPC, VPN, Direct Connect gateway) this metering policy entry's own destination traffic is measured against. (AI-inferred)
     destination_transit_gateway_attachment_type: Any = None
     # The AWS account ID of the account whose traffic traversing the transit gateway is metered under this metering policy entry. (AI-inferred)
     metered_account: Any = None
@@ -52,6 +55,7 @@ class TransitGatewayMeteringPolicyEntryAttrs:
     source_port_range: Any = None
     # The ID of the source attachment through which traffic enters a transit gateway
     source_transit_gateway_attachment_id: Any = None
+    # The real attachment type (e.g. VPC, VPN, Direct Connect gateway) this metering policy entry's own source traffic is measured against. (AI-inferred)
     source_transit_gateway_attachment_type: Any = None
     # State of the transit gateway metering policy
     state: Any = None

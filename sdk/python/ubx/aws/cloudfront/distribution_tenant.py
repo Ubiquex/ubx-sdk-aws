@@ -129,6 +129,7 @@ class DistributionTenantConfig:
 
 @dataclasses.dataclass
 class DistributionTenantAttrs:
+    # The Amazon Resource Name (ARN) of this distribution tenant. (AI-inferred)
     arn: Any = None
     # The ID of the connection group for the distribution tenant. If you don't specify a connection group, CloudFront uses the default connection group.
     connection_group_id: Any = None
@@ -138,13 +139,17 @@ class DistributionTenantAttrs:
     customizations: Any = None
     # The ID of the multi-tenant distribution.
     distribution_id: Any = None
+    # The per-domain results (e.g. validation and certificate status) for each of this distribution tenant's own configured domains. (AI-inferred)
     domain_results: Any = None
     # The domains associated with the distribution tenant.
     domains: Any = None
+    # The current version identifier of this distribution tenant. (AI-inferred)
     etag: Any = None
     # Indicates whether the distribution tenant is in an enabled state. If disabled, the distribution tenant won't serve traffic.
     enabled: Any = None
+    # The unique identifier of this distribution tenant. (AI-inferred)
     id: Any = None
+    # The date and time when this distribution tenant was last updated. (AI-inferred)
     last_modified_time: Any = None
     # An object that represents the request for the Amazon CloudFront managed ACM certificate.
     managed_certificate_request: Any = None
@@ -152,6 +157,7 @@ class DistributionTenantAttrs:
     name: Any = None
     # A list of parameter values to add to the resource. A parameter is specified as a key-value pair. A valid parameter value must exist for any parameter that is marked as required in the multi-tenant distribution.
     parameters: Any = None
+    # The current status of this distribution tenant. (AI-inferred)
     status: Any = None
     # A complex type that contains zero or more ``Tag`` elements.
     tags: Any = None

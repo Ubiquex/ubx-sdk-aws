@@ -35,6 +35,7 @@ type MailManagerRelayConfig struct {
 	ServerName any
 	// Sets the TCP port number on the destination mail server that the SES Mail Manager relay uses for SMTP email relaying. (AI-inferred)
 	ServerPort any
+	// The tags assigned to this Mail Manager relay. (AI-inferred)
 	Tags any
 }
 
@@ -51,6 +52,7 @@ type MailManagerRelayAttrs struct {
 	ServerName any
 	// Sets the TCP port number on the destination mail server that the SES Mail Manager relay uses for SMTP email relaying. (AI-inferred)
 	ServerPort any
+	// The tags assigned to this Mail Manager relay. (AI-inferred)
 	Tags any
 }
 

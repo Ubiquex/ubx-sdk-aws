@@ -23,7 +23,9 @@ type ApprovalPolicyConfig struct {
 	ApprovalGroups any
 	// List of asset types a policy applies to. At least one asset type is required.
 	AssetTypes any
+	// The description of this approval policy. (AI-inferred)
 	Description any
+	// The name of this approval policy. (AI-inferred)
 	Name any
 	// The unique identifier for a QuickSight approval policy that governs whether asset publishing requires approval before the asset is shared. (AI-inferred)
 	PolicyId any
@@ -38,13 +40,17 @@ type ApprovalPolicyAttrs struct {
 	ApprovalGroups any
 	// List of asset types a policy applies to. At least one asset type is required.
 	AssetTypes any
+	// The date and time this approval policy was created. (AI-inferred)
 	CreatedAt any
+	// The description of this approval policy. (AI-inferred)
 	Description any
+	// The name of this approval policy. (AI-inferred)
 	Name any
 	// The Amazon Resource Name (ARN) that uniquely identifies the QuickSight approval policy, used as a reference in IAM policies and API operations. (AI-inferred)
 	PolicyArn any
 	// The unique identifier for a QuickSight approval policy that governs whether asset publishing requires approval before the asset is shared. (AI-inferred)
 	PolicyId any
+	// The date and time this approval policy was last updated. (AI-inferred)
 	UpdatedAt any
 }
 

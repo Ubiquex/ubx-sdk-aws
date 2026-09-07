@@ -7,6 +7,7 @@ SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 from .autonomous_database_character_sets import AutonomousDatabaseCharacterSets, AutonomousDatabaseCharacterSetsConfig
 from .autonomous_database_versions import AutonomousDatabaseVersions, AutonomousDatabaseVersionsConfig
 from .db_system_shapes import DbSystemShapes, DbSystemShapesConfig
+from .flex_components import FlexComponents, FlexComponentsConfig
 from .gi_minor_versions import GiMinorVersions, GiMinorVersionsConfig
 from .gi_versions import GiVersions, GiVersionsConfig
 from .oci_onboarding_status import OciOnboardingStatus, OciOnboardingStatusConfig

@@ -60,6 +60,7 @@ export interface ComponentConfig {
   properties?: unknown | Computed<unknown>;
   /** The schema version of the component, indicating which version of the Amplify UI Builder component schema the component adheres to. (AI-inferred) */
   schemaVersion?: string | Computed<string>;
+  /** A reference to the source (e.g. a Figma file) this Amplify UI Builder component was generated from. (AI-inferred) */
   sourceId?: string | Computed<string>;
   /** A map of key-value pairs used to assign metadata tags to the Amplify UI Builder component for identification and organization. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
@@ -84,6 +85,7 @@ export interface ComponentAttrs {
   environmentName: string;
   /** Configures event handlers for the component, mapping event names (such as onClick) to action definitions for user interactions. (AI-inferred) */
   events: unknown;
+  /** The unique identifier of this Amplify UI Builder component. (AI-inferred) */
   id: string;
   /** The timestamp (in ISO 8601 format) indicating when the component was last updated. (AI-inferred) */
   modifiedAt: string;
@@ -95,6 +97,7 @@ export interface ComponentAttrs {
   properties: unknown;
   /** The schema version of the component, indicating which version of the Amplify UI Builder component schema the component adheres to. (AI-inferred) */
   schemaVersion: string;
+  /** A reference to the source (e.g. a Figma file) this Amplify UI Builder component was generated from. (AI-inferred) */
   sourceId: string;
   /** A map of key-value pairs used to assign metadata tags to the Amplify UI Builder component for identification and organization. (AI-inferred) */
   tags: unknown;

@@ -27,19 +27,27 @@ export interface ConnectionGroupConfig {
 export interface ConnectionGroupAttrs {
   /** The ID of the Anycast static IP list. */
   anycastIpListId: string;
+  /** The Amazon Resource Name (ARN) of this connection group. (AI-inferred) */
   arn: string;
+  /** The date and time when this connection group was created. (AI-inferred) */
   createdTime: string;
+  /** The current version identifier of this connection group. (AI-inferred) */
   etag: string;
   /** Whether the connection group is enabled. */
   enabled: boolean;
+  /** The unique identifier of this connection group. (AI-inferred) */
   id: string;
   /** IPv6 is enabled for the connection group. */
   ipv6Enabled: boolean;
+  /** Whether this connection group is the default connection group used for distribution tenants that don't specify one. (AI-inferred) */
   isDefault: boolean;
+  /** The date and time when this connection group was last updated. (AI-inferred) */
   lastModifiedTime: string;
   /** The name of the connection group. */
   name: string;
+  /** The routing endpoint (DNS name, e.g. d111111abcdef8.cloudfront.net) assigned to this connection group. (AI-inferred) */
   routingEndpoint: string;
+  /** The current status of this connection group. (AI-inferred) */
   status: string;
   /** A complex type that contains zero or more ``Tag`` elements. */
   tags: ConnectionGroup_Tags[];

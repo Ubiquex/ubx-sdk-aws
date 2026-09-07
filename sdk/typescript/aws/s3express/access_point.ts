@@ -64,6 +64,7 @@ export interface AccessPointConfig {
   publicAccessBlockConfiguration?: AccessPoint_PublicAccessBlockConfiguration | Computed<AccessPoint_PublicAccessBlockConfiguration>;
   /** Defines an optional prefix scope that restricts the S3 Express access point to only objects whose keys start with the specified prefix; if this object is absent, the access point applies to the entire directory bucket. (AI-inferred) */
   scope?: AccessPoint_Scope | Computed<AccessPoint_Scope>;
+  /** The tags assigned to this S3 Express access point. (AI-inferred) */
   tags?: AccessPoint_Tags[] | Computed<AccessPoint_Tags[]>;
   /** The Virtual Private Cloud (VPC) configuration for a bucket access point. */
   vpcConfiguration?: AccessPoint_VpcConfiguration | Computed<AccessPoint_VpcConfiguration>;
@@ -86,6 +87,7 @@ export interface AccessPointAttrs {
   publicAccessBlockConfiguration: AccessPoint_PublicAccessBlockConfiguration;
   /** Defines an optional prefix scope that restricts the S3 Express access point to only objects whose keys start with the specified prefix; if this object is absent, the access point applies to the entire directory bucket. (AI-inferred) */
   scope: AccessPoint_Scope;
+  /** The tags assigned to this S3 Express access point. (AI-inferred) */
   tags: AccessPoint_Tags[];
   /** The Virtual Private Cloud (VPC) configuration for a bucket access point. */
   vpcConfiguration: AccessPoint_VpcConfiguration;

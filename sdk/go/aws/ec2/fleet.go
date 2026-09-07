@@ -252,9 +252,21 @@ type Fleet_OnDemandOptions struct {
 	SingleInstanceType any
 }
 
+type Fleet_ReservedCapacityOptions_CapacityReservationTarget struct {
+	CapacityReservationIds any
+	CapacityReservationResourceGroupArns any
+}
+
+type Fleet_ReservedCapacityOptions_ReservedCapacityFallbackOptions struct {
+	MarketTypes any
+}
+
 type Fleet_ReservedCapacityOptions struct {
+	AllocationStrategy any
+	CapacityReservationTarget any
 	// Specifies the types of reserved capacity (e.g., capacity-reservation or capacity-block) that the EC2 Fleet can use to fulfill On-Demand capacity. (AI-inferred)
 	ReservationTypes any
+	ReservedCapacityFallbackOptions any
 }
 
 type Fleet_SpotOptions_MaintenanceStrategies_CapacityRebalance struct {
@@ -564,8 +576,28 @@ var Fleet_OnDemandOptionsFields = ubx.FieldMap{
 		"SingleInstanceType": ubx.FieldSpec{WireName: "single_instance_type"},
 	}
 
+var Fleet_ReservedCapacityOptions_CapacityReservationTargetFields = ubx.FieldMap{
+		"CapacityReservationIds": ubx.FieldSpec{WireName: "capacity_reservation_ids"},
+		"CapacityReservationResourceGroupArns": ubx.FieldSpec{WireName: "capacity_reservation_resource_group_arns"},
+	}
+
+var Fleet_ReservedCapacityOptions_ReservedCapacityFallbackOptionsFields = ubx.FieldMap{
+		"MarketTypes": ubx.FieldSpec{WireName: "market_types"},
+	}
+
 var Fleet_ReservedCapacityOptionsFields = ubx.FieldMap{
+		"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
+		"CapacityReservationTarget": ubx.FieldSpec{
+			WireName: "capacity_reservation_target",
+			Kind: "object",
+			Fields: Fleet_ReservedCapacityOptions_CapacityReservationTargetFields,
+		},
 		"ReservationTypes": ubx.FieldSpec{WireName: "reservation_types"},
+		"ReservedCapacityFallbackOptions": ubx.FieldSpec{
+			WireName: "reserved_capacity_fallback_options",
+			Kind: "object",
+			Fields: Fleet_ReservedCapacityOptions_ReservedCapacityFallbackOptionsFields,
+		},
 	}
 
 var Fleet_SpotOptions_MaintenanceStrategies_CapacityRebalanceFields = ubx.FieldMap{

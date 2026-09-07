@@ -17,7 +17,7 @@ class ImagePipeline_ImageScanningConfiguration_EcrConfiguration:
 class ImagePipeline_ImageScanningConfiguration:
     # Settings for Image Builder to configure the ECR repository and output container images that are scanned.
     ecr_configuration: Any = None
-    # This sets whether Image Builder keeps a snapshot of the vulnerability scans that Amazon Inspector runs against the build instance when you create a new image.
+    # This sets whether Image Builder keeps a snapshot of the vulnerability scans that Amazon Inspector runs against the test instance when you create a new image.
     image_scanning_enabled: Any = None
 
 @dataclasses.dataclass

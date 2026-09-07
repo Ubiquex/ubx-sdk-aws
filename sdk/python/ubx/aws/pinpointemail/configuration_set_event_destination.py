@@ -121,6 +121,7 @@ class ConfigurationSetEventDestinationAttrs:
     event_destination: Any = None
     # The name of the event destination, which uniquely identifies it within the Amazon Pinpoint email configuration set. (AI-inferred)
     event_destination_name: Any = None
+    # The unique identifier of this Pinpoint email configuration set event destination. (AI-inferred)
     id: Any = None
 
 ConfigurationSetEventDestination = ubx.ResourceBinding(

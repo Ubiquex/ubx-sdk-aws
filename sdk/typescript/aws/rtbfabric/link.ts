@@ -90,31 +90,48 @@ const Link_TagsFields: FieldMap = {
 };
 
 export interface LinkConfig {
+  /** A reference to the gateway this link originates from. (AI-inferred) */
   gatewayId: string | Computed<string>;
+  /** Whether the peer gateway on this link is permitted to respond over plain HTTP rather than requiring HTTPS. (AI-inferred) */
   httpResponderAllowed?: boolean | Computed<boolean>;
+  /** Attributes controlling how this link behaves. (AI-inferred) */
   linkAttributes?: Link_LinkAttributes | Computed<Link_LinkAttributes>;
+  /** The application log settings for this link, including the sampling percentage for error and filter logs; set both to 0 to turn off application logging for the link. (AI-inferred) */
   linkLogSettings: Link_LinkLogSettings | Computed<Link_LinkLogSettings>;
+  /** The list of module configurations attached to this link, each controlling an additional piece of bid-processing behavior applied as traffic flows across the link. (AI-inferred) */
   moduleConfigurationList?: Link_ModuleConfigurationList[] | Computed<Link_ModuleConfigurationList[]>;
+  /** A reference to the peer gateway this link connects to on the other end. (AI-inferred) */
   peerGatewayId: string | Computed<string>;
   /** Tags to assign to the Link. */
   tags?: Link_Tags[] | Computed<Link_Tags[]>;
 }
 
 export interface LinkAttrs {
+  /** The Amazon Resource Name (ARN) of this link. (AI-inferred) */
   arn: string;
+  /** The date and time when this link was created. (AI-inferred) */
   createdTimestamp: string;
+  /** A reference to the gateway this link originates from. (AI-inferred) */
   gatewayId: string;
+  /** Whether the peer gateway on this link is permitted to respond over plain HTTP rather than requiring HTTPS. (AI-inferred) */
   httpResponderAllowed: boolean;
+  /** Attributes controlling how this link behaves. (AI-inferred) */
   linkAttributes: Link_LinkAttributes;
+  /** The direction of bid traffic flow across this link, relative to its own gateway. (AI-inferred) */
   linkDirection: string;
+  /** The unique identifier of this link. (AI-inferred) */
   linkId: string;
+  /** The application log settings for this link, including the sampling percentage for error and filter logs; set both to 0 to turn off application logging for the link. (AI-inferred) */
   linkLogSettings: Link_LinkLogSettings;
   /** The read-only status of the AWS RTB Fabric link, such as whether the link is active or inactive, which is determined and reported by the AWS RTB Fabric service. (AI-inferred) */
   linkStatus: string;
+  /** The list of module configurations attached to this link, each controlling an additional piece of bid-processing behavior applied as traffic flows across the link. (AI-inferred) */
   moduleConfigurationList: Link_ModuleConfigurationList[];
+  /** A reference to the peer gateway this link connects to on the other end. (AI-inferred) */
   peerGatewayId: string;
   /** Tags to assign to the Link. */
   tags: Link_Tags[];
+  /** The date and time when this link was last updated. (AI-inferred) */
   updatedTimestamp: string;
 }
 

@@ -188,6 +188,7 @@ class FlowOutputConfig:
     protocol: Any = None
     # The remote ID for the Zixi-pull stream.
     remote_id: Any = None
+    # The state of this flow output's own integration with a MediaConnect router input or output. (AI-inferred)
     router_integration_state: Any = None
     # The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.
     router_integration_transit_encryption: Any = None
@@ -236,6 +237,7 @@ class FlowOutputAttrs:
     protocol: Any = None
     # The remote ID for the Zixi-pull stream.
     remote_id: Any = None
+    # The state of this flow output's own integration with a MediaConnect router input or output. (AI-inferred)
     router_integration_state: Any = None
     # The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.
     router_integration_transit_encryption: Any = None

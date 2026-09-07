@@ -305,6 +305,7 @@ class ConfigAttrs:
     arn: Any = None
     # The required config data that defines this Ground Station config, containing one of the supported configuration types (such as antenna downlink, antenna uplink, antenna downlink demod decode, tracking, dataflow endpoint, or uplink echo) along with its specific parameters. (AI-inferred)
     config_data: Any = None
+    # The unique identifier of this Ground Station config. (AI-inferred)
     id: Any = None
     # The user-defined name assigned to this AWS Ground Station config, used to identify it within the service. (AI-inferred)
     name: Any = None

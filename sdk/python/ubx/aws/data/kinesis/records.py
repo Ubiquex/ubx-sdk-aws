@@ -27,6 +27,7 @@ class Records_Records:
 
 @dataclasses.dataclass
 class RecordsConfig:
+    dry_run: Any = None
     limit: Any = None
     shard_iterator: Any = None
     stream_arn: Any = None
@@ -35,6 +36,7 @@ class RecordsConfig:
 @dataclasses.dataclass
 class RecordsAttrs:
     child_shards: Any = None
+    dry_run: Any = None
     limit: Any = None
     millis_behind_latest: Any = None
     next_shard_iterator: Any = None
@@ -46,6 +48,7 @@ class RecordsAttrs:
 Records = ubx.DataSourceBinding(
     wire_type="aws_kinesis_records",
     fields={
+        "dry_run": ubx.FieldSpec(wire_name="dry_run"),
         "limit": ubx.FieldSpec(wire_name="limit"),
         "shard_iterator": ubx.FieldSpec(wire_name="shard_iterator"),
         "stream_arn": ubx.FieldSpec(wire_name="stream_arn"),

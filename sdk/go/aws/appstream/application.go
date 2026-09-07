@@ -52,6 +52,7 @@ type ApplicationConfig struct {
 	Name any
 	// Identifies the operating system platforms on which the AppStream 2.0 application can be launched, with valid values including WINDOWS and AMAZON_LINUX. (AI-inferred)
 	Platforms any
+	// The tags assigned to this AppStream application. (AI-inferred)
 	Tags any
 	// Specifies the working directory that the application uses when launched on a streaming instance. (AI-inferred)
 	WorkingDirectory any
@@ -82,6 +83,7 @@ type ApplicationAttrs struct {
 	Name any
 	// Identifies the operating system platforms on which the AppStream 2.0 application can be launched, with valid values including WINDOWS and AMAZON_LINUX. (AI-inferred)
 	Platforms any
+	// The tags assigned to this AppStream application. (AI-inferred)
 	Tags any
 	// Specifies the working directory that the application uses when launched on a streaming instance. (AI-inferred)
 	WorkingDirectory any

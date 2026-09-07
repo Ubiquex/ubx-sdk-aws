@@ -112,6 +112,10 @@ class RouterOutput_Configuration:
     standard: Any = None
 
 @dataclasses.dataclass
+class RouterOutput_FabricConfiguration:
+    recovery_latency_mode: Any = None
+
+@dataclasses.dataclass
 class RouterOutput_MaintenanceConfiguration_PreferredDayTime:
     # The day of the week, specified as an uppercase string such as 'MONDAY' or 'SATURDAY', on which maintenance is preferred for this router output. (AI-inferred)
     day: Any = None
@@ -264,6 +268,10 @@ _RouterOutput_ConfigurationFields = {
     ),
 }
 
+_RouterOutput_FabricConfigurationFields = {
+    "recovery_latency_mode": ubx.FieldSpec(wire_name="recovery_latency_mode"),
+}
+
 _RouterOutput_MaintenanceConfiguration_PreferredDayTimeFields = {
     "day": ubx.FieldSpec(wire_name="day"),
     "time": ubx.FieldSpec(wire_name="time"),
@@ -289,6 +297,8 @@ class RouterOutputConfig:
     availability_zone: Any = None
     # The configuration settings for a router output.
     configuration: Any = None
+    # The fabric configuration settings for the router output.
+    fabric_configuration: Any = None
     # The configuration settings for maintenance operations, including preferred maintenance windows and schedules.
     maintenance_configuration: Any = None
     # The maximum bitrate for the router output.
@@ -297,6 +307,7 @@ class RouterOutputConfig:
     name: Any = None
     # The Amazon Web Services Region for the router output. Defaults to the current region if not specified.
     region_name: Any = None
+    # Whether this router output is configured for regional or global routing. (AI-inferred)
     routing_scope: Any = None
     # Key-value pairs that can be used to tag this router output.
     tags: Any = None
@@ -313,23 +324,29 @@ class RouterOutputAttrs:
     configuration: Any = None
     # The timestamp when the router output was created.
     created_at: Any = None
+    # The fabric configuration settings for the router output.
+    fabric_configuration: Any = None
     # The unique identifier of the router output.
     id: Any = None
     # The IP address of the router output.
     ip_address: Any = None
     # The configuration settings for maintenance operations, including preferred maintenance windows and schedules.
     maintenance_configuration: Any = None
+    # The type of maintenance configuration applied to this router output. (AI-inferred)
     maintenance_type: Any = None
     # The maximum bitrate for the router output.
     maximum_bitrate: Any = None
     # The name of the router output.
     name: Any = None
+    # The type of this router output. (AI-inferred)
     output_type: Any = None
     # The Amazon Web Services Region for the router output. Defaults to the current region if not specified.
     region_name: Any = None
     # The current routing status of the router output, reported by the AWS API as either 'ACTIVE' (actively routing media) or 'STANDBY' (not actively routing media). (AI-inferred)
     routed_state: Any = None
+    # Whether this router output is configured for regional or global routing. (AI-inferred)
     routing_scope: Any = None
+    # The current state of this router output. (AI-inferred)
     state: Any = None
     # Key-value pairs that can be used to tag this router output.
     tags: Any = None
@@ -346,6 +363,11 @@ RouterOutput = ubx.ResourceBinding(
             wire_name="configuration",
             kind="object",
             fields=_RouterOutput_ConfigurationFields,
+        ),
+        "fabric_configuration": ubx.FieldSpec(
+            wire_name="fabric_configuration",
+            kind="object",
+            fields=_RouterOutput_FabricConfigurationFields,
         ),
         "maintenance_configuration": ubx.FieldSpec(
             wire_name="maintenance_configuration",

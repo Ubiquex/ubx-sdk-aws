@@ -56,6 +56,7 @@ type PortalAttrs struct {
 	AuthenticationType any
 	// The ARN of the browser settings resource that defines the browser configuration and policies applied to this WorkSpaces Web portal. (AI-inferred)
 	BrowserSettingsArn any
+	// The browser users see when they start a streaming session through this web portal. (AI-inferred)
 	BrowserType any
 	// The timestamp indicating when the WorkSpaces Web portal was created. (AI-inferred)
 	CreationDate any

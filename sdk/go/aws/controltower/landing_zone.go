@@ -17,6 +17,7 @@ var LandingZone_TagsFields = ubx.FieldMap{
 type LandingZoneConfig struct {
 	// The manifest is a structured JSON document that defines the landing zone configuration, including the version, governed Regions, organizational structure, and security controls, which AWS Control Tower uses to create or update the landing zone. (AI-inferred)
 	Manifest any
+	// The types of remediation Control Tower applies to this landing zone when it drifts from its own baseline configuration. (AI-inferred)
 	RemediationTypes any
 	// The tags to associate with the AWS Control Tower landing zone, enabling cost allocation, access control, and resource identification. (AI-inferred)
 	Tags any
@@ -35,6 +36,7 @@ type LandingZoneAttrs struct {
 	LatestAvailableVersion any
 	// The manifest is a structured JSON document that defines the landing zone configuration, including the version, governed Regions, organizational structure, and security controls, which AWS Control Tower uses to create or update the landing zone. (AI-inferred)
 	Manifest any
+	// The types of remediation Control Tower applies to this landing zone when it drifts from its own baseline configuration. (AI-inferred)
 	RemediationTypes any
 	// The current lifecycle status of the landing zone, such as ACTIVE, FAILED, or PROCESSING. (AI-inferred)
 	Status any

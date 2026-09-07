@@ -21,6 +21,7 @@ type EncryptionConfigurationConfig struct {
 type EncryptionConfigurationAttrs struct {
 	// This field contains the AWS account ID of the account that owns the IoT encryption configuration, which is populated automatically by the AWS IoT service. (AI-inferred)
 	AccountId any
+	// The encryption type and key details configured for this account-level IoT Core encryption configuration. (AI-inferred)
 	ConfigurationDetails any
 	// Specifies the type of encryption key used for AWS IoT data encryption, either AWS-owned (AWS_OWNED) or customer-managed (CUSTOMER_MANAGED), determining whether you use an AWS-managed key or your own KMS key. (AI-inferred)
 	EncryptionType any

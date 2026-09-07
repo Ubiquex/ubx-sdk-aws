@@ -68,12 +68,14 @@ type AccessPointConfig struct {
 	PosixUser any
 	// Specifies the root directory path within the S3 bucket that the access point is restricted to, so requests through the access point can only access objects under that prefix (supported for S3 on Outposts buckets). (AI-inferred)
 	RootDirectory any
+	// The tags assigned to this S3 Files access point. (AI-inferred)
 	Tags any
 }
 
 type AccessPointAttrs struct {
 	// The Amazon Resource Name (ARN) of the S3 access point, which uniquely identifies the access point and is used for making requests to S3 through the access point. (AI-inferred)
 	AccessPointArn any
+	// The unique identifier of this S3 Files access point. (AI-inferred)
 	AccessPointId any
 	// (optional) A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.
 	ClientToken any
@@ -85,7 +87,9 @@ type AccessPointAttrs struct {
 	PosixUser any
 	// Specifies the root directory path within the S3 bucket that the access point is restricted to, so requests through the access point can only access objects under that prefix (supported for S3 on Outposts buckets). (AI-inferred)
 	RootDirectory any
+	// The current status of this S3 Files access point. (AI-inferred)
 	Status any
+	// The tags assigned to this S3 Files access point. (AI-inferred)
 	Tags any
 }
 

@@ -68,6 +68,7 @@ class PolicyAttrs:
     policy_engine_id: Any = None
     # The unique identifier for the policy.
     policy_id: Any = None
+    # The current status of this policy. (AI-inferred)
     status: Any = None
     # Additional information about the policy status.
     status_reasons: Any = None

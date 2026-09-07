@@ -5,6 +5,9 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .attachment import Attachment, AttachmentConfig
+from .attachment_download_link import AttachmentDownloadLink, AttachmentDownloadLinkConfig
+from .attachment_upload_links import AttachmentUploadLinks, AttachmentUploadLinksConfig
+from .attachment_upload_status import AttachmentUploadStatus, AttachmentUploadStatusConfig
 from .communications import Communications, CommunicationsConfig
 from .create_case_options import CreateCaseOptions, CreateCaseOptionsConfig
 from .services import Services, ServicesConfig

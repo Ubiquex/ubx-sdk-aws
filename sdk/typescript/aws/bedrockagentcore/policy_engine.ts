@@ -35,6 +35,7 @@ export interface PolicyEngineAttrs {
   policyEngineArn: string;
   /** The unique identifier for the policy engine */
   policyEngineId: string;
+  /** The current status of the policy engine. (AI-inferred) */
   status: string;
   /** Additional information about the policy engine status */
   statusReasons: string[];

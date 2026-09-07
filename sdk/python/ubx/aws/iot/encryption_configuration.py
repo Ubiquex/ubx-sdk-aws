@@ -25,6 +25,7 @@ class EncryptionConfigurationConfig:
 class EncryptionConfigurationAttrs:
     # This field contains the AWS account ID of the account that owns the IoT encryption configuration, which is populated automatically by the AWS IoT service. (AI-inferred)
     account_id: Any = None
+    # The encryption type and key details configured for this account-level IoT Core encryption configuration. (AI-inferred)
     configuration_details: Any = None
     # Specifies the type of encryption key used for AWS IoT data encryption, either AWS-owned (AWS_OWNED) or customer-managed (CUSTOMER_MANAGED), determining whether you use an AWS-managed key or your own KMS key. (AI-inferred)
     encryption_type: Any = None

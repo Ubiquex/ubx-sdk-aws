@@ -84,6 +84,7 @@ class MissionProfileAttrs:
     minimum_viable_contact_duration_seconds: Any = None
     # A name used to identify a mission profile.
     name: Any = None
+    # The AWS Region this Ground Station mission profile is created in. (AI-inferred)
     region: Any = None
     # The AWS KMS key (specified as an ARN or alias) used to encrypt data streams produced by this mission profile, enabling customer-controlled encryption of downlinked satellite data. (AI-inferred)
     streams_kms_key: Any = None

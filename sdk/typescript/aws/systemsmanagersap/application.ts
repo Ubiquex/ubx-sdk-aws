@@ -56,6 +56,7 @@ export interface ApplicationConfig {
   databaseArn?: string | Computed<string>;
   /** The instances field lists the EC2 instance IDs that host the SAP application components that are registered and managed by this Systems Manager for SAP application. (AI-inferred) */
   instances?: string[] | Computed<string[]>;
+  /** The SAP instance number of this Systems Manager for SAP application. (AI-inferred) */
   sapInstanceNumber?: string | Computed<string>;
   /** Specifies the SAP System Identifier (SID) for the SAP system associated with this application, a three-character code that uniquely identifies the SAP system (e.g., `H20`). (AI-inferred) */
   sid?: string | Computed<string>;
@@ -78,6 +79,7 @@ export interface ApplicationAttrs {
   databaseArn: string;
   /** The instances field lists the EC2 instance IDs that host the SAP application components that are registered and managed by this Systems Manager for SAP application. (AI-inferred) */
   instances: string[];
+  /** The SAP instance number of this Systems Manager for SAP application. (AI-inferred) */
   sapInstanceNumber: string;
   /** Specifies the SAP System Identifier (SID) for the SAP system associated with this application, a three-character code that uniquely identifies the SAP system (e.g., `H20`). (AI-inferred) */
   sid: string;

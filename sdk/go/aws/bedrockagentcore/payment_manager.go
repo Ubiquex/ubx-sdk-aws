@@ -94,7 +94,9 @@ var PaymentManager_TagsFields = ubx.FieldMap{
 	}
 
 type PaymentManagerConfig struct {
+	// Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred)
 	AuthorizerConfiguration any
+	// The type of authorizer used by the payment manager. (AI-inferred)
 	AuthorizerType any
 	// A description of the payment manager
 	Description any
@@ -107,7 +109,9 @@ type PaymentManagerConfig struct {
 }
 
 type PaymentManagerAttrs struct {
+	// Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred)
 	AuthorizerConfiguration any
+	// The type of authorizer used by the payment manager. (AI-inferred)
 	AuthorizerType any
 	// The timestamp when the payment manager was created
 	CreatedAt any
@@ -123,9 +127,11 @@ type PaymentManagerAttrs struct {
 	PaymentManagerId any
 	// The ARN of the IAM role for the payment manager
 	RoleArn any
+	// The current status of the payment manager. (AI-inferred)
 	Status any
 	// Tags to assign to the payment manager
 	Tags any
+	// Details of the workload identity associated with the payment manager, used to authenticate its own outbound calls. (AI-inferred)
 	WorkloadIdentityDetails any
 }
 

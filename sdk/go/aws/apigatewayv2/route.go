@@ -49,6 +49,7 @@ type RouteAttrs struct {
 	RequestModels any
 	// The request parameters for the route. Supported only for WebSocket APIs.
 	RequestParameters any
+	// The unique identifier of this route. (AI-inferred)
 	RouteId any
 	// The route key for the route. For HTTP APIs, the route key can be either ``$default``, or a combination of an HTTP method and resource path, for example, ``GET /pets``.
 	RouteKey any

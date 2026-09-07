@@ -705,6 +705,7 @@ type SpotFleetConfig struct {
 }
 
 type SpotFleetAttrs struct {
+	// The unique identifier of this Spot Fleet request. (AI-inferred)
 	Id any
 	// This object defines the configuration for the Spot Fleet request, including the IAM fleet role, target capacity, launch specifications for instances, and allocation strategy. (AI-inferred)
 	SpotFleetRequestConfigData any

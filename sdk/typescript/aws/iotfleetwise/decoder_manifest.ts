@@ -226,6 +226,7 @@ export interface DecoderManifestConfig {
   signalDecoders?: DecoderManifest_SignalDecoders[] | Computed<DecoderManifest_SignalDecoders[]>;
   /** The status of the decoder manifest, which is set to either 'DRAFT' or 'ACTIVE' to indicate whether the manifest is in a draft state or ready for use. (AI-inferred) */
   status?: string | Computed<string>;
+  /** The tags assigned to this IoT FleetWise decoder manifest. (AI-inferred) */
   tags?: DecoderManifest_Tags[] | Computed<DecoderManifest_Tags[]>;
 }
 
@@ -250,6 +251,7 @@ export interface DecoderManifestAttrs {
   signalDecoders: DecoderManifest_SignalDecoders[];
   /** The status of the decoder manifest, which is set to either 'DRAFT' or 'ACTIVE' to indicate whether the manifest is in a draft state or ready for use. (AI-inferred) */
   status: string;
+  /** The tags assigned to this IoT FleetWise decoder manifest. (AI-inferred) */
   tags: DecoderManifest_Tags[];
 }
 

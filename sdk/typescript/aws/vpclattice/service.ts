@@ -30,6 +30,7 @@ export interface ServiceConfig {
   idleTimeoutSeconds?: number | Computed<number>;
   /** A user-friendly name for the VPC Lattice service; if you don't provide one, AWS CloudFormation generates a unique name for the service. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The tags assigned to this VPC Lattice service. (AI-inferred) */
   tags?: Service_Tags[] | Computed<Service_Tags[]>;
 }
 
@@ -56,6 +57,7 @@ export interface ServiceAttrs {
   name: string;
   /** The current lifecycle status of the VPC Lattice service (for example, ACTIVE or CREATE_IN_PROGRESS), which is computed by AWS and indicates whether the service is available or still being provisioned. (AI-inferred) */
   status: string;
+  /** The tags assigned to this VPC Lattice service. (AI-inferred) */
   tags: Service_Tags[];
 }
 

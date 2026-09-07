@@ -27,7 +27,9 @@ class ApprovalPolicyConfig:
     approval_groups: Any = None
     # List of asset types a policy applies to. At least one asset type is required.
     asset_types: Any = None
+    # The description of this approval policy. (AI-inferred)
     description: Any = None
+    # The name of this approval policy. (AI-inferred)
     name: Any = None
     # The unique identifier for a QuickSight approval policy that governs whether asset publishing requires approval before the asset is shared. (AI-inferred)
     policy_id: Any = None
@@ -42,13 +44,17 @@ class ApprovalPolicyAttrs:
     approval_groups: Any = None
     # List of asset types a policy applies to. At least one asset type is required.
     asset_types: Any = None
+    # The date and time this approval policy was created. (AI-inferred)
     created_at: Any = None
+    # The description of this approval policy. (AI-inferred)
     description: Any = None
+    # The name of this approval policy. (AI-inferred)
     name: Any = None
     # The Amazon Resource Name (ARN) that uniquely identifies the QuickSight approval policy, used as a reference in IAM policies and API operations. (AI-inferred)
     policy_arn: Any = None
     # The unique identifier for a QuickSight approval policy that governs whether asset publishing requires approval before the asset is shared. (AI-inferred)
     policy_id: Any = None
+    # The date and time this approval policy was last updated. (AI-inferred)
     updated_at: Any = None
 
 ApprovalPolicy = ubx.ResourceBinding(

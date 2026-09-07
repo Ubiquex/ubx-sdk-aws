@@ -78,6 +78,7 @@ class DbclusterConfig:
     serverless_v2_scaling_configuration: Any = None
     # The identifier of an existing DB cluster snapshot to restore the cluster from when creating it. (AI-inferred)
     snapshot_identifier: Any = None
+    # A reference to the source DocumentDB cluster this cluster was restored or replicated from. (AI-inferred)
     source_dbcluster_identifier: Any = None
     # Indicates whether the DB cluster's storage is encrypted at rest, using AWS Key Management Service (KMS) keys. (AI-inferred)
     storage_encrypted: Any = None
@@ -148,6 +149,7 @@ class DbclusterAttrs:
     serverless_v2_scaling_configuration: Any = None
     # The identifier of an existing DB cluster snapshot to restore the cluster from when creating it. (AI-inferred)
     snapshot_identifier: Any = None
+    # A reference to the source DocumentDB cluster this cluster was restored or replicated from. (AI-inferred)
     source_dbcluster_identifier: Any = None
     # Indicates whether the DB cluster's storage is encrypted at rest, using AWS Key Management Service (KMS) keys. (AI-inferred)
     storage_encrypted: Any = None

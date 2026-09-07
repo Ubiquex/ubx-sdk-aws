@@ -62,6 +62,7 @@ class ResiliencyPolicyConfig:
     policy_description: Any = None
     # Name of Resiliency Policy.
     policy_name: Any = None
+    # The tags assigned to this Resilience Hub resiliency policy. (AI-inferred)
     tags: Any = None
     # Resiliency Policy Tier.
     tier: Any = None
@@ -78,6 +79,7 @@ class ResiliencyPolicyAttrs:
     policy_description: Any = None
     # Name of Resiliency Policy.
     policy_name: Any = None
+    # The tags assigned to this Resilience Hub resiliency policy. (AI-inferred)
     tags: Any = None
     # Resiliency Policy Tier.
     tier: Any = None

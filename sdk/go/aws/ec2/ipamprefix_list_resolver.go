@@ -64,6 +64,7 @@ var IpamprefixListResolver_RulesFields = ubx.FieldMap{
 type IpamprefixListResolverConfig struct {
 	// The address family of the address space in this Prefix List Resolver. Either IPv4 or IPv6.
 	AddressFamily any
+	// The description of this IPAM prefix list resolver. (AI-inferred)
 	Description any
 	// The Id of the IPAM this Prefix List Resolver is a part of.
 	IpamId any
@@ -76,6 +77,7 @@ type IpamprefixListResolverConfig struct {
 type IpamprefixListResolverAttrs struct {
 	// The address family of the address space in this Prefix List Resolver. Either IPv4 or IPv6.
 	AddressFamily any
+	// The description of this IPAM prefix list resolver. (AI-inferred)
 	Description any
 	// The Amazon Resource Name (ARN) of the IPAM this Prefix List Resolver is a part of.
 	IpamArn any

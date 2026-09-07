@@ -21,6 +21,7 @@ export interface OwnerAttrs {
   entityType: string;
   /** The properties of a domain unit's owner. */
   owner: unknown;
+  /** The unique identifier of the owner added to this entity. (AI-inferred) */
   ownerIdentifier: string;
   /** Indicates whether the owner associated with the DataZone resource is a user or a group, as determined by the service. (AI-inferred) */
   ownerType: string;

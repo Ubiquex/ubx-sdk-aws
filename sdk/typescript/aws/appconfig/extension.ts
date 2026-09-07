@@ -35,6 +35,7 @@ export interface ExtensionAttrs {
   arn: string;
   /** Description of the extension. */
   description: string;
+  /** The unique identifier of this AppConfig extension. (AI-inferred) */
   id: string;
   /** The version number of the current extension to be replaced, used as an optimistic concurrency check when updating the extension to prevent overwriting concurrent changes. (AI-inferred) */
   latestVersionNumber: number;

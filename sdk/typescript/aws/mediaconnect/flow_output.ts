@@ -182,6 +182,7 @@ export interface FlowOutputConfig {
   protocol?: string | Computed<string>;
   /** The remote ID for the Zixi-pull stream. */
   remoteId?: string | Computed<string>;
+  /** The state of this flow output's own integration with a MediaConnect router input or output. (AI-inferred) */
   routerIntegrationState?: string | Computed<string>;
   /** The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow. */
   routerIntegrationTransitEncryption?: FlowOutput_RouterIntegrationTransitEncryption | Computed<FlowOutput_RouterIntegrationTransitEncryption>;
@@ -230,6 +231,7 @@ export interface FlowOutputAttrs {
   protocol: string;
   /** The remote ID for the Zixi-pull stream. */
   remoteId: string;
+  /** The state of this flow output's own integration with a MediaConnect router input or output. (AI-inferred) */
   routerIntegrationState: string;
   /** The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow. */
   routerIntegrationTransitEncryption: FlowOutput_RouterIntegrationTransitEncryption;

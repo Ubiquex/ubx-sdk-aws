@@ -115,8 +115,11 @@ const KnowledgeBase_TagsFields: FieldMap = {
 export interface KnowledgeBaseConfig {
   /** Specifies how access to the knowledge base is secured, such as by configuring row-level security through an associated dataset. (AI-inferred) */
   accessControlConfiguration?: KnowledgeBase_AccessControlConfiguration | Computed<KnowledgeBase_AccessControlConfiguration>;
+  /** The AWS account ID this knowledge base belongs to. (AI-inferred) */
   awsAccountId: string | Computed<string>;
+  /** The Amazon Resource Name (ARN) of the real data source this knowledge base indexes. (AI-inferred) */
   dataSourceArn: string | Computed<string>;
+  /** The description of this knowledge base. (AI-inferred) */
   description?: string | Computed<string>;
   /** Indicates whether email notifications are enabled for failures that occur during the ingestion of documents into the QuickSight knowledge base. (AI-inferred) */
   isEmailNotificationOptedForIngestionFailures?: boolean | Computed<boolean>;
@@ -130,17 +133,22 @@ export interface KnowledgeBaseConfig {
   permissions?: KnowledgeBase_Permissions[] | Computed<KnowledgeBase_Permissions[]>;
   /** The Amazon Resource Name (ARN) of the primary owner of the QuickSight knowledge base, typically the IAM user or role with administrative ownership. (AI-inferred) */
   primaryOwnerArn?: string | Computed<string>;
+  /** The tags assigned to this knowledge base. (AI-inferred) */
   tags?: KnowledgeBase_Tags[] | Computed<KnowledgeBase_Tags[]>;
 }
 
 export interface KnowledgeBaseAttrs {
   /** Specifies how access to the knowledge base is secured, such as by configuring row-level security through an associated dataset. (AI-inferred) */
   accessControlConfiguration: KnowledgeBase_AccessControlConfiguration;
+  /** The AWS account ID this knowledge base belongs to. (AI-inferred) */
   awsAccountId: string;
   /** The timestamp (in ISO 8601 format) indicating when the QuickSight knowledge base was created. (AI-inferred) */
   createdAt: string;
+  /** The Amazon Resource Name (ARN) of the real data source this knowledge base indexes. (AI-inferred) */
   dataSourceArn: string;
+  /** The description of this knowledge base. (AI-inferred) */
   description: string;
+  /** The real, current number of documents indexed in this knowledge base. (AI-inferred) */
   documentCount: number;
   /** Indicates whether email notifications are enabled for failures that occur during the ingestion of documents into the QuickSight knowledge base. (AI-inferred) */
   isEmailNotificationOptedForIngestionFailures: boolean;
@@ -158,9 +166,13 @@ export interface KnowledgeBaseAttrs {
   permissions: KnowledgeBase_Permissions[];
   /** The Amazon Resource Name (ARN) of the primary owner of the QuickSight knowledge base, typically the IAM user or role with administrative ownership. (AI-inferred) */
   primaryOwnerArn: string;
+  /** The username of this knowledge base's own primary owner. (AI-inferred) */
   primaryOwnerUsername: string;
+  /** The current status of this knowledge base. (AI-inferred) */
   status: string;
+  /** The tags assigned to this knowledge base. (AI-inferred) */
   tags: KnowledgeBase_Tags[];
+  /** The real type of this knowledge base, e.g. which underlying data source it indexes. (AI-inferred) */
   type: string;
   /** The read-only updated_at field holds the timestamp of the last modification to the QuickSight knowledge base. (AI-inferred) */
   updatedAt: string;

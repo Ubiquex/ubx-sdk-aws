@@ -32,13 +32,19 @@ var ResponderGateway_TrustStoreConfigurationFields = ubx.FieldMap{
 type ResponderGatewayConfig struct {
 	// The Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate used for TLS/SSL termination on the responder gateway's public endpoint. (AI-inferred)
 	AcmCertificateArn any
+	// The description of this responder gateway. (AI-inferred)
 	Description any
+	// The custom domain name assigned to this responder gateway. (AI-inferred)
 	DomainName any
+	// Whether this responder gateway is reachable from the public internet (EXTERNAL) or only from within RTB Fabric (INTERNAL). (AI-inferred)
 	GatewayType any
 	// Configures the network listener for the responder gateway, specifying the port and protocol (such as HTTP or HTTPS) on which it accepts incoming bid requests. (AI-inferred)
 	ListenerConfig any
+	// The configuration for this responder gateway's own AWS-managed endpoint, used when no custom domain name is configured. (AI-inferred)
 	ManagedEndpointConfiguration any
+	// The networking port this responder gateway listens on. (AI-inferred)
 	Port any
+	// The networking protocol (HTTP or HTTPS) this responder gateway listens on. (AI-inferred)
 	Protocol any
 	// The ID of one or more security groups in order to create a gateway.
 	SecurityGroupIds any
@@ -48,25 +54,38 @@ type ResponderGatewayConfig struct {
 	Tags any
 	// Configures the trust store used by the responder gateway to validate client certificates during mutual TLS handshakes, enabling secure client authentication. (AI-inferred)
 	TrustStoreConfiguration any
+	// A reference to the VPC this responder gateway is deployed in. (AI-inferred)
 	VpcId any
 }
 
 type ResponderGatewayAttrs struct {
 	// The Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate used for TLS/SSL termination on the responder gateway's public endpoint. (AI-inferred)
 	AcmCertificateArn any
+	// The Amazon Resource Name (ARN) of this responder gateway. (AI-inferred)
 	Arn any
+	// The status of the ACM certificate association with this responder gateway's own custom domain. (AI-inferred)
 	CertificateAssociationStatus any
+	// The date and time when this responder gateway was created. (AI-inferred)
 	CreatedTimestamp any
+	// The description of this responder gateway. (AI-inferred)
 	Description any
+	// The custom domain name assigned to this responder gateway. (AI-inferred)
 	DomainName any
+	// The endpoint external bid requesters use to reach this responder gateway. (AI-inferred)
 	ExternalInboundEndpoint any
+	// The unique identifier of this responder gateway. (AI-inferred)
 	GatewayId any
+	// Whether this responder gateway is reachable from the public internet (EXTERNAL) or only from within RTB Fabric (INTERNAL). (AI-inferred)
 	GatewayType any
 	// Configures the network listener for the responder gateway, specifying the port and protocol (such as HTTP or HTTPS) on which it accepts incoming bid requests. (AI-inferred)
 	ListenerConfig any
+	// The configuration for this responder gateway's own AWS-managed endpoint, used when no custom domain name is configured. (AI-inferred)
 	ManagedEndpointConfiguration any
+	// The networking port this responder gateway listens on. (AI-inferred)
 	Port any
+	// The networking protocol (HTTP or HTTPS) this responder gateway listens on. (AI-inferred)
 	Protocol any
+	// The current status of this responder gateway. (AI-inferred)
 	ResponderGatewayStatus any
 	// The ID of one or more security groups in order to create a gateway.
 	SecurityGroupIds any
@@ -76,7 +95,9 @@ type ResponderGatewayAttrs struct {
 	Tags any
 	// Configures the trust store used by the responder gateway to validate client certificates during mutual TLS handshakes, enabling secure client authentication. (AI-inferred)
 	TrustStoreConfiguration any
+	// The date and time when this responder gateway was last updated. (AI-inferred)
 	UpdatedTimestamp any
+	// A reference to the VPC this responder gateway is deployed in. (AI-inferred)
 	VpcId any
 }
 

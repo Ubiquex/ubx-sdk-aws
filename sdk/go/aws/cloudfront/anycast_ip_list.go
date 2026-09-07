@@ -89,6 +89,7 @@ type AnycastIpListAttrs struct {
 	AnycastIpList any
 	// The entity tag (ETag) of the Anycast IP list, which is updated every time the list is modified and is used for conditional updates (e.g., If-Match requests). (AI-inferred)
 	Etag any
+	// The unique identifier of this Anycast static IP list. (AI-inferred)
 	Id any
 	// Specifies whether the anycast IP list contains IPv4 or IPv6 addresses, determining which type of IPs can be included in the IpList property. (AI-inferred)
 	IpAddressType any

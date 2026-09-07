@@ -245,6 +245,7 @@ var PolicyGrant_PrincipalFields = ubx.FieldMap{
 	}
 
 type PolicyGrantConfig struct {
+	// The details of this policy grant, specific to its own policy type. (AI-inferred)
 	Detail any
 	// The identifier of the Amazon DataZone domain where the policy grant is created. (AI-inferred)
 	DomainIdentifier any
@@ -263,6 +264,7 @@ type PolicyGrantAttrs struct {
 	CreatedAt any
 	// Specifies the user who created the policy grant member.
 	CreatedBy any
+	// The details of this policy grant, specific to its own policy type. (AI-inferred)
 	Detail any
 	// The identifier of the Amazon DataZone domain where the policy grant is created. (AI-inferred)
 	DomainIdentifier any

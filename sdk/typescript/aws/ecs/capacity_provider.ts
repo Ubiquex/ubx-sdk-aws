@@ -328,6 +328,7 @@ const CapacityProvider_TagsFields: FieldMap = {
 export interface CapacityProviderConfig {
   /** Configures the Auto Scaling group that backs this ECS capacity provider, including its ARN, optional managed scaling parameters, and managed termination protection settings. (AI-inferred) */
   autoScalingGroupProvider?: CapacityProvider_AutoScalingGroupProvider | Computed<CapacityProvider_AutoScalingGroupProvider>;
+  /** The cluster this capacity provider is associated with. Required for Amazon ECS Managed Instances capacity providers, which are scoped to a single cluster. (AI-inferred) */
   clusterName?: string | Computed<string>;
   managedInstancesProvider?: CapacityProvider_ManagedInstancesProvider | Computed<CapacityProvider_ManagedInstancesProvider>;
   /** Specifies the name of the capacity provider, which must be unique within the account and Region and contain only letters, numbers, underscores, and hyphens (up to 255 characters); if omitted, CloudFormation generates a unique name. (AI-inferred) */
@@ -339,6 +340,7 @@ export interface CapacityProviderConfig {
 export interface CapacityProviderAttrs {
   /** Configures the Auto Scaling group that backs this ECS capacity provider, including its ARN, optional managed scaling parameters, and managed termination protection settings. (AI-inferred) */
   autoScalingGroupProvider: CapacityProvider_AutoScalingGroupProvider;
+  /** The cluster this capacity provider is associated with. Required for Amazon ECS Managed Instances capacity providers, which are scoped to a single cluster. (AI-inferred) */
   clusterName: string;
   managedInstancesProvider: CapacityProvider_ManagedInstancesProvider;
   /** Specifies the name of the capacity provider, which must be unique within the account and Region and contain only letters, numbers, underscores, and hyphens (up to 255 characters); if omitted, CloudFormation generates a unique name. (AI-inferred) */

@@ -41,6 +41,7 @@ type HarnessEndpointAttrs struct {
 	HarnessName any
 	// The harness version that the endpoint is currently serving.
 	LiveVersion any
+	// The current status of this harness endpoint. (AI-inferred)
 	Status any
 	// Tags to apply to the harness endpoint resource.
 	Tags any

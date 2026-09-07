@@ -537,6 +537,7 @@ class TemplateConfig:
     name: Any = None
     # When set to true, triggers reissuance of certificates to all existing certificate holders when the template is updated or modified. (AI-inferred)
     reenroll_all_certificate_holders: Any = None
+    # The tags assigned to this Private CA Connector for Active Directory template. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -549,6 +550,7 @@ class TemplateAttrs:
     name: Any = None
     # When set to true, triggers reissuance of certificates to all existing certificate holders when the template is updated or modified. (AI-inferred)
     reenroll_all_certificate_holders: Any = None
+    # The tags assigned to this Private CA Connector for Active Directory template. (AI-inferred)
     tags: Any = None
     # The Amazon Resource Name (ARN) that uniquely identifies the Private CA Connector for Active Directory template managed by this resource. (AI-inferred)
     template_arn: Any = None

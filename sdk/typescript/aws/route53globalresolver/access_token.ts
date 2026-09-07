@@ -16,14 +16,18 @@ export interface AccessTokenConfig {
   clientToken?: string | Computed<string>;
   /** Specifies the DNS view ID that this access token is scoped to, which the global resolver uses to authorize DNS resolution requests for that view. (AI-inferred) */
   dnsViewId: string | Computed<string>;
+  /** The date and time when this access token expires. (AI-inferred) */
   expiresAt?: string | Computed<string>;
+  /** The name of this access token. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The tags assigned to this access token. (AI-inferred) */
   tags?: AccessToken_Tags[] | Computed<AccessToken_Tags[]>;
 }
 
 export interface AccessTokenAttrs {
   /** The unique identifier automatically assigned to this global resolver access token. (AI-inferred) */
   accessTokenId: string;
+  /** The Amazon Resource Name (ARN) of this access token. (AI-inferred) */
   arn: string;
   /** An optional caller-supplied token that ensures idempotent creation of the Route 53 Global Resolver access token by uniquely identifying the Create request, allowing safe retries without duplicating the token. (AI-inferred) */
   clientToken: string;
@@ -31,12 +35,19 @@ export interface AccessTokenAttrs {
   createdAt: string;
   /** Specifies the DNS view ID that this access token is scoped to, which the global resolver uses to authorize DNS resolution requests for that view. (AI-inferred) */
   dnsViewId: string;
+  /** The date and time when this access token expires. (AI-inferred) */
   expiresAt: string;
+  /** A reference to the global resolver this access token authorizes access to. (AI-inferred) */
   globalResolverId: string;
+  /** The name of this access token. (AI-inferred) */
   name: string;
+  /** The current status of this access token. (AI-inferred) */
   status: string;
+  /** The tags assigned to this access token. (AI-inferred) */
   tags: AccessToken_Tags[];
+  /** The date and time when this access token was last updated. (AI-inferred) */
   updatedAt: string;
+  /** The real token value clients present in DoH and DoT requests to authenticate to this global resolver, regardless of their IP address. Sensitive -- keep secure once issued. (AI-inferred) */
   value: string;
 }
 

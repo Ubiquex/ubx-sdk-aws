@@ -8,6 +8,7 @@ export interface TransitGatewayMeteringPolicyEntryConfig {
   destinationPortRange?: string | Computed<string>;
   /** The ID of the source attachment through which traffic leaves a transit gateway */
   destinationTransitGatewayAttachmentId?: string | Computed<string>;
+  /** The real attachment type (e.g. VPC, VPN, Direct Connect gateway) this metering policy entry's own destination traffic is measured against. (AI-inferred) */
   destinationTransitGatewayAttachmentType?: string | Computed<string>;
   /** The AWS account ID of the account whose traffic traversing the transit gateway is metered under this metering policy entry. (AI-inferred) */
   meteredAccount: string | Computed<string>;
@@ -21,6 +22,7 @@ export interface TransitGatewayMeteringPolicyEntryConfig {
   sourcePortRange?: string | Computed<string>;
   /** The ID of the source attachment through which traffic enters a transit gateway */
   sourceTransitGatewayAttachmentId?: string | Computed<string>;
+  /** The real attachment type (e.g. VPC, VPN, Direct Connect gateway) this metering policy entry's own source traffic is measured against. (AI-inferred) */
   sourceTransitGatewayAttachmentType?: string | Computed<string>;
   /** The ID of the transit gateway metering policy for which the entry is being created */
   transitGatewayMeteringPolicyId: string | Computed<string>;
@@ -33,6 +35,7 @@ export interface TransitGatewayMeteringPolicyEntryAttrs {
   destinationPortRange: string;
   /** The ID of the source attachment through which traffic leaves a transit gateway */
   destinationTransitGatewayAttachmentId: string;
+  /** The real attachment type (e.g. VPC, VPN, Direct Connect gateway) this metering policy entry's own destination traffic is measured against. (AI-inferred) */
   destinationTransitGatewayAttachmentType: string;
   /** The AWS account ID of the account whose traffic traversing the transit gateway is metered under this metering policy entry. (AI-inferred) */
   meteredAccount: string;
@@ -46,6 +49,7 @@ export interface TransitGatewayMeteringPolicyEntryAttrs {
   sourcePortRange: string;
   /** The ID of the source attachment through which traffic enters a transit gateway */
   sourceTransitGatewayAttachmentId: string;
+  /** The real attachment type (e.g. VPC, VPN, Direct Connect gateway) this metering policy entry's own source traffic is measured against. (AI-inferred) */
   sourceTransitGatewayAttachmentType: string;
   /** State of the transit gateway metering policy */
   state: string;

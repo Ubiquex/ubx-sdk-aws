@@ -27,6 +27,7 @@ _DomainVerification_TagsFields = {
 class DomainVerificationConfig:
     # The custom domain name that AWS VPC Lattice will verify to prove ownership before it can be associated with a service network. (AI-inferred)
     domain_name: Any = None
+    # The tags assigned to this domain verification. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -35,9 +36,11 @@ class DomainVerificationAttrs:
     arn: Any = None
     # The custom domain name that AWS VPC Lattice will verify to prove ownership before it can be associated with a service network. (AI-inferred)
     domain_name: Any = None
+    # The unique identifier of this domain verification. (AI-inferred)
     id: Any = None
     # The current state of the domain ownership verification for the VPC Lattice service network, indicating whether the domain has been successfully verified (e.g., IN_PROGRESS, SUCCESS, FAILED). (AI-inferred)
     status: Any = None
+    # The tags assigned to this domain verification. (AI-inferred)
     tags: Any = None
     # This read-only object contains the TXT record details (such as record name and value) that AWS VPC Lattice generated for verifying ownership of the specified domain. (AI-inferred)
     txt_method_config: Any = None

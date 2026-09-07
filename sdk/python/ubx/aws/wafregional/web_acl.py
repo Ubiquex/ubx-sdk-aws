@@ -40,6 +40,7 @@ class WebAclConfig:
     default_action: Any = None
     # The name of the Amazon CloudWatch metric associated with the web ACL, used for monitoring its activity in CloudWatch. (AI-inferred)
     metric_name: Any = None
+    # The name of this WAF Classic Regional web ACL. (AI-inferred)
     name: Any = None
     # Defines the ordered list of rules for the web ACL, where each rule specifies the rule's ID (referencing an aws_wafregional_rule or aws_wafregional_rule_group resource) and the action (allow, block, or count) that AWS WAF Regional takes when a request matches the rule. (AI-inferred)
     rules: Any = None
@@ -52,6 +53,7 @@ class WebAclAttrs:
     id: Any = None
     # The name of the Amazon CloudWatch metric associated with the web ACL, used for monitoring its activity in CloudWatch. (AI-inferred)
     metric_name: Any = None
+    # The name of this WAF Classic Regional web ACL. (AI-inferred)
     name: Any = None
     # Defines the ordered list of rules for the web ACL, where each rule specifies the rule's ID (referencing an aws_wafregional_rule or aws_wafregional_rule_group resource) and the action (allow, block, or count) that AWS WAF Regional takes when a request matches the rule. (AI-inferred)
     rules: Any = None

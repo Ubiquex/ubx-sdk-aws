@@ -10,6 +10,7 @@ type TransitGatewayMeteringPolicyEntryConfig struct {
 	DestinationPortRange any
 	// The ID of the source attachment through which traffic leaves a transit gateway
 	DestinationTransitGatewayAttachmentId any
+	// The real attachment type (e.g. VPC, VPN, Direct Connect gateway) this metering policy entry's own destination traffic is measured against. (AI-inferred)
 	DestinationTransitGatewayAttachmentType any
 	// The AWS account ID of the account whose traffic traversing the transit gateway is metered under this metering policy entry. (AI-inferred)
 	MeteredAccount any
@@ -23,6 +24,7 @@ type TransitGatewayMeteringPolicyEntryConfig struct {
 	SourcePortRange any
 	// The ID of the source attachment through which traffic enters a transit gateway
 	SourceTransitGatewayAttachmentId any
+	// The real attachment type (e.g. VPC, VPN, Direct Connect gateway) this metering policy entry's own source traffic is measured against. (AI-inferred)
 	SourceTransitGatewayAttachmentType any
 	// The ID of the transit gateway metering policy for which the entry is being created
 	TransitGatewayMeteringPolicyId any
@@ -35,6 +37,7 @@ type TransitGatewayMeteringPolicyEntryAttrs struct {
 	DestinationPortRange any
 	// The ID of the source attachment through which traffic leaves a transit gateway
 	DestinationTransitGatewayAttachmentId any
+	// The real attachment type (e.g. VPC, VPN, Direct Connect gateway) this metering policy entry's own destination traffic is measured against. (AI-inferred)
 	DestinationTransitGatewayAttachmentType any
 	// The AWS account ID of the account whose traffic traversing the transit gateway is metered under this metering policy entry. (AI-inferred)
 	MeteredAccount any
@@ -48,6 +51,7 @@ type TransitGatewayMeteringPolicyEntryAttrs struct {
 	SourcePortRange any
 	// The ID of the source attachment through which traffic enters a transit gateway
 	SourceTransitGatewayAttachmentId any
+	// The real attachment type (e.g. VPC, VPN, Direct Connect gateway) this metering policy entry's own source traffic is measured against. (AI-inferred)
 	SourceTransitGatewayAttachmentType any
 	// State of the transit gateway metering policy
 	State any

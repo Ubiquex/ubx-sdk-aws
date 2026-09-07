@@ -53,6 +53,7 @@ class DaemonConfig:
     capacity_provider_arns: Any = None
     # The Amazon Resource Name (ARN) of the cluster that the daemon is running in.
     cluster_arn: Any = None
+    # The name of this daemon. (AI-inferred)
     daemon_name: Any = None
     # The Amazon Resource Name (ARN) of the daemon task definition used by this revision.
     daemon_task_definition_arn: Any = None
@@ -64,6 +65,7 @@ class DaemonConfig:
     enable_execute_command: Any = None
     # Specifies whether tags are propagated from the daemon to the daemon tasks.
     propagate_tags: Any = None
+    # The tags assigned to this daemon. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -72,12 +74,17 @@ class DaemonAttrs:
     capacity_provider_arns: Any = None
     # The Amazon Resource Name (ARN) of the cluster that the daemon is running in.
     cluster_arn: Any = None
+    # The date and time when this daemon was created. (AI-inferred)
     created_at: Any = None
+    # The Amazon Resource Name (ARN) of this daemon. (AI-inferred)
     daemon_arn: Any = None
+    # The name of this daemon. (AI-inferred)
     daemon_name: Any = None
+    # The current status of this daemon. (AI-inferred)
     daemon_status: Any = None
     # The Amazon Resource Name (ARN) of the daemon task definition used by this revision.
     daemon_task_definition_arn: Any = None
+    # The Amazon Resource Name (ARN) of this daemon's own most recent deployment. (AI-inferred)
     deployment_arn: Any = None
     # Optional deployment parameters that control how a daemon rolls out updates across container instances.
     deployment_configuration: Any = None
@@ -87,7 +94,9 @@ class DaemonAttrs:
     enable_execute_command: Any = None
     # Specifies whether tags are propagated from the daemon to the daemon tasks.
     propagate_tags: Any = None
+    # The tags assigned to this daemon. (AI-inferred)
     tags: Any = None
+    # The date and time when this daemon was last updated. (AI-inferred)
     updated_at: Any = None
 
 Daemon = ubx.ResourceBinding(

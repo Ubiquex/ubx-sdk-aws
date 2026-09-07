@@ -228,6 +228,7 @@ class EvaluatorConfig:
     evaluator_name: Any = None
     # The ARN of the KMS key used to encrypt evaluator data.
     kms_key_arn: Any = None
+    # The real severity or grading level this evaluator assigns. (AI-inferred)
     level: Any = None
     # A list of tags to assign to the evaluator.
     tags: Any = None
@@ -248,7 +249,9 @@ class EvaluatorAttrs:
     evaluator_name: Any = None
     # The ARN of the KMS key used to encrypt evaluator data.
     kms_key_arn: Any = None
+    # The real severity or grading level this evaluator assigns. (AI-inferred)
     level: Any = None
+    # The current status of this evaluator. (AI-inferred)
     status: Any = None
     # A list of tags to assign to the evaluator.
     tags: Any = None

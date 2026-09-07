@@ -229,13 +229,18 @@ _ActionConnector_TagsFields = {
 
 @dataclasses.dataclass
 class ActionConnectorConfig:
+    # The unique identifier of this action connector. (AI-inferred)
     action_connector_id: Any = None
+    # The authentication configuration this action connector uses to connect to its own external service. (AI-inferred)
     authentication_config: Any = None
     # The AWS account ID where the QuickSight action connector is deployed, used to scope the resource within the correct account. (AI-inferred)
     aws_account_id: Any = None
+    # The description of this action connector. (AI-inferred)
     description: Any = None
+    # The name of this action connector. (AI-inferred)
     name: Any = None
     permissions: Any = None
+    # The tags assigned to this action connector. (AI-inferred)
     tags: Any = None
     # The type of the QuickSight action connector, identifying the external system or service it integrates with (e.g., ServiceNow, Salesforce, or similar supported platforms), required when defining the connector. (AI-inferred)
     type: Any = None
@@ -244,18 +249,28 @@ class ActionConnectorConfig:
 
 @dataclasses.dataclass
 class ActionConnectorAttrs:
+    # The unique identifier of this action connector. (AI-inferred)
     action_connector_id: Any = None
+    # The Amazon Resource Name (ARN) of this action connector. (AI-inferred)
     arn: Any = None
+    # The authentication configuration this action connector uses to connect to its own external service. (AI-inferred)
     authentication_config: Any = None
     # The AWS account ID where the QuickSight action connector is deployed, used to scope the resource within the correct account. (AI-inferred)
     aws_account_id: Any = None
+    # The date and time when this action connector was created. (AI-inferred)
     created_time: Any = None
+    # The description of this action connector. (AI-inferred)
     description: Any = None
+    # The actions enabled on this action connector. (AI-inferred)
     enabled_actions: Any = None
+    # The date and time when this action connector was last updated. (AI-inferred)
     last_updated_time: Any = None
+    # The name of this action connector. (AI-inferred)
     name: Any = None
     permissions: Any = None
+    # The current status of this action connector. (AI-inferred)
     status: Any = None
+    # The tags assigned to this action connector. (AI-inferred)
     tags: Any = None
     # The type of the QuickSight action connector, identifying the external system or service it integrates with (e.g., ServiceNow, Salesforce, or similar supported platforms), required when defining the connector. (AI-inferred)
     type: Any = None

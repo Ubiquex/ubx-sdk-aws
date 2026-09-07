@@ -364,6 +364,7 @@ var TestCase_StepsFields = ubx.FieldMap{
 	}
 
 type TestCaseConfig struct {
+	// The description of this test case. (AI-inferred)
 	Description any
 	// The human-readable name of the AWS AppTest test case, which is required when creating this resource. (AI-inferred)
 	Name any
@@ -376,6 +377,7 @@ type TestCaseConfig struct {
 type TestCaseAttrs struct {
 	// The timestamp indicating when the AppTest test case was created. (AI-inferred)
 	CreationTime any
+	// The description of this test case. (AI-inferred)
 	Description any
 	// The timestamp, as a string, indicating when this test case was last updated. (AI-inferred)
 	LastUpdateTime any
@@ -383,13 +385,17 @@ type TestCaseAttrs struct {
 	LatestVersion any
 	// The human-readable name of the AWS AppTest test case, which is required when creating this resource. (AI-inferred)
 	Name any
+	// The current status of this test case. (AI-inferred)
 	Status any
 	// The 'steps' property defines the ordered list of test steps that constitute the test case, where each step specifies an action (such as invoking an API or comparing outputs) to be executed during the test. (AI-inferred)
 	Steps any
 	// A map of key-value pairs to assign as tags to the AWS AppTest test case, used for identifying and organizing the resource. (AI-inferred)
 	Tags any
+	// The Amazon Resource Name (ARN) of this test case. (AI-inferred)
 	TestCaseArn any
+	// The unique identifier of this test case. (AI-inferred)
 	TestCaseId any
+	// The version of this test case. (AI-inferred)
 	TestCaseVersion any
 }
 

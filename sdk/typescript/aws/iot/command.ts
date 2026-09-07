@@ -164,6 +164,7 @@ export interface CommandConfig {
   displayName?: string | Computed<string>;
   /** The date and time when the command was last updated. */
   lastUpdatedAt?: string | Computed<string>;
+  /** The parameters this IoT command requires devices to supply when the command is invoked. (AI-inferred) */
   mandatoryParameters?: Command_MandatoryParameters[] | Computed<Command_MandatoryParameters[]>;
   /** The namespace to which the command belongs. */
   namespace?: string | Computed<string>;
@@ -196,6 +197,7 @@ export interface CommandAttrs {
   displayName: string;
   /** The date and time when the command was last updated. */
   lastUpdatedAt: string;
+  /** The parameters this IoT command requires devices to supply when the command is invoked. (AI-inferred) */
   mandatoryParameters: Command_MandatoryParameters[];
   /** The namespace to which the command belongs. */
   namespace: string;

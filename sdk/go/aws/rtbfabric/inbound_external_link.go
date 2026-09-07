@@ -77,7 +77,9 @@ var InboundExternalLink_TagsFields = ubx.FieldMap{
 	}
 
 type InboundExternalLinkConfig struct {
+	// A reference to the RTB Fabric gateway this inbound external link connects an outside bid requester to. (AI-inferred)
 	GatewayId any
+	// Attributes controlling how this inbound external link behaves. (AI-inferred)
 	LinkAttributes any
 	// Specifies the logging configuration for the inbound external link, including the destination where log records are delivered and the level of detail captured for link activity. (AI-inferred)
 	LinkLogSettings any
@@ -86,11 +88,17 @@ type InboundExternalLinkConfig struct {
 }
 
 type InboundExternalLinkAttrs struct {
+	// The Amazon Resource Name (ARN) of this inbound external link. (AI-inferred)
 	Arn any
+	// The date and time when this inbound external link was created. (AI-inferred)
 	CreatedTimestamp any
+	// The domain name external bid requesters use to reach this inbound external link. (AI-inferred)
 	DomainName any
+	// A reference to the RTB Fabric gateway this inbound external link connects an outside bid requester to. (AI-inferred)
 	GatewayId any
+	// Attributes controlling how this inbound external link behaves. (AI-inferred)
 	LinkAttributes any
+	// The unique identifier of this inbound external link. (AI-inferred)
 	LinkId any
 	// Specifies the logging configuration for the inbound external link, including the destination where log records are delivered and the level of detail captured for link activity. (AI-inferred)
 	LinkLogSettings any

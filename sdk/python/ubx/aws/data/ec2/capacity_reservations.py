@@ -29,6 +29,7 @@ class CapacityReservations_CapacityReservations_InterruptibleCapacityAllocation:
     interruption_type: Any = None
     status: Any = None
     target_instance_count: Any = None
+    zero_size_preference: Any = None
 
 @dataclasses.dataclass
 class CapacityReservations_CapacityReservations_InterruptionInfo:
@@ -68,6 +69,7 @@ class CapacityReservations_CapacityReservations:
     tenancy: Any = None
     total_instance_count: Any = None
     unused_reservation_billing_owner_id: Any = None
+    zero_size_preference: Any = None
 
 @dataclasses.dataclass
 class CapacityReservations_Filters:

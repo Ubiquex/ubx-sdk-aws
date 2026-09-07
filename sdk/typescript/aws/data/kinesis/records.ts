@@ -21,6 +21,7 @@ export interface Records_Records {
 }
 
 export interface RecordsConfig {
+  dryRun?: boolean | Computed<boolean>;
   limit?: number | Computed<number>;
   shardIterator: string | Computed<string>;
   streamArn?: string | Computed<string>;
@@ -29,6 +30,7 @@ export interface RecordsConfig {
 
 export interface RecordsAttrs {
   childShards: Records_ChildShards[];
+  dryRun: boolean;
   limit: number;
   millisBehindLatest: number;
   nextShardIterator: string;
@@ -41,6 +43,7 @@ export interface RecordsAttrs {
 export const Records: DataSourceBinding<RecordsConfig, RecordsAttrs> = {
   wireType: "aws_kinesis_records",
   fields: {
+    dryRun: "dry_run",
     limit: "limit",
     shardIterator: "shard_iterator",
     streamArn: "stream_arn",

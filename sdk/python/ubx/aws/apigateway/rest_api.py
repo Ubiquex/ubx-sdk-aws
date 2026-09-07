@@ -67,6 +67,7 @@ class RestApiConfig:
     description: Any = None
     # When set to true, disables the default execute-api endpoint for the REST API, so the API is accessible only through custom domain names. (AI-inferred)
     disable_execute_api_endpoint: Any = None
+    # Whether this REST API's own endpoint is reachable publicly or only from within a VPC. (AI-inferred)
     endpoint_access_mode: Any = None
     # The ``EndpointConfiguration`` property type specifies the endpoint types and IP address types of a REST API. ``EndpointConfiguration`` is a property of the [AWS::ApiGateway::RestApi](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html) resource.
     endpoint_configuration: Any = None
@@ -86,6 +87,7 @@ class RestApiConfig:
     security_policy: Any = None
     # Defines a list of key-value pairs to tag the API Gateway REST API, enabling cost allocation, resource-level access control, and management of the API resource. (AI-inferred)
     tags: Any = None
+    version: Any = None
 
 @dataclasses.dataclass
 class RestApiAttrs:
@@ -103,6 +105,7 @@ class RestApiAttrs:
     description: Any = None
     # When set to true, disables the default execute-api endpoint for the REST API, so the API is accessible only through custom domain names. (AI-inferred)
     disable_execute_api_endpoint: Any = None
+    # Whether this REST API's own endpoint is reachable publicly or only from within a VPC. (AI-inferred)
     endpoint_access_mode: Any = None
     # The ``EndpointConfiguration`` property type specifies the endpoint types and IP address types of a REST API. ``EndpointConfiguration`` is a property of the [AWS::ApiGateway::RestApi](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html) resource.
     endpoint_configuration: Any = None
@@ -126,6 +129,7 @@ class RestApiAttrs:
     security_policy: Any = None
     # Defines a list of key-value pairs to tag the API Gateway REST API, enabling cost allocation, resource-level access control, and management of the API resource. (AI-inferred)
     tags: Any = None
+    version: Any = None
 
 RestApi = ubx.ResourceBinding(
     wire_type="aws_api_gateway_rest_api",
@@ -159,5 +163,6 @@ RestApi = ubx.ResourceBinding(
             kind="list",
             fields=_RestApi_TagsFields,
         ),
+        "version": ubx.FieldSpec(wire_name="version"),
     },
 )

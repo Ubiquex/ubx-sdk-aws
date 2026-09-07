@@ -157,6 +157,7 @@ export interface WorkflowVersionAttrs {
   tags: unknown;
   /** The workflow engine type (such as WDL or Nextflow) for this Omics workflow version, automatically assigned by the service when the version is created. (AI-inferred) */
   type: string;
+  /** The unique identifier of this Omics workflow version. (AI-inferred) */
   uuid: string;
   /** The version_name field assigns a user-defined name to this version of the Omics workflow, which must be unique among all versions of the same workflow. (AI-inferred) */
   versionName: string;

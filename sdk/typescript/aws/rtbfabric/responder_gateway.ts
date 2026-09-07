@@ -30,13 +30,19 @@ const ResponderGateway_TrustStoreConfigurationFields: FieldMap = {
 export interface ResponderGatewayConfig {
   /** The Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate used for TLS/SSL termination on the responder gateway's public endpoint. (AI-inferred) */
   acmCertificateArn?: string | Computed<string>;
+  /** The description of this responder gateway. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The custom domain name assigned to this responder gateway. (AI-inferred) */
   domainName?: string | Computed<string>;
+  /** Whether this responder gateway is reachable from the public internet (EXTERNAL) or only from within RTB Fabric (INTERNAL). (AI-inferred) */
   gatewayType?: string | Computed<string>;
   /** Configures the network listener for the responder gateway, specifying the port and protocol (such as HTTP or HTTPS) on which it accepts incoming bid requests. (AI-inferred) */
   listenerConfig?: ResponderGateway_ListenerConfig | Computed<ResponderGateway_ListenerConfig>;
+  /** The configuration for this responder gateway's own AWS-managed endpoint, used when no custom domain name is configured. (AI-inferred) */
   managedEndpointConfiguration?: unknown | Computed<unknown>;
+  /** The networking port this responder gateway listens on. (AI-inferred) */
   port: number | Computed<number>;
+  /** The networking protocol (HTTP or HTTPS) this responder gateway listens on. (AI-inferred) */
   protocol: string | Computed<string>;
   /** The ID of one or more security groups in order to create a gateway. */
   securityGroupIds: unknown[] | Computed<unknown[]>;
@@ -46,25 +52,38 @@ export interface ResponderGatewayConfig {
   tags?: ResponderGateway_Tags[] | Computed<ResponderGateway_Tags[]>;
   /** Configures the trust store used by the responder gateway to validate client certificates during mutual TLS handshakes, enabling secure client authentication. (AI-inferred) */
   trustStoreConfiguration?: ResponderGateway_TrustStoreConfiguration | Computed<ResponderGateway_TrustStoreConfiguration>;
+  /** A reference to the VPC this responder gateway is deployed in. (AI-inferred) */
   vpcId: string | Computed<string>;
 }
 
 export interface ResponderGatewayAttrs {
   /** The Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate used for TLS/SSL termination on the responder gateway's public endpoint. (AI-inferred) */
   acmCertificateArn: string;
+  /** The Amazon Resource Name (ARN) of this responder gateway. (AI-inferred) */
   arn: string;
+  /** The status of the ACM certificate association with this responder gateway's own custom domain. (AI-inferred) */
   certificateAssociationStatus: string;
+  /** The date and time when this responder gateway was created. (AI-inferred) */
   createdTimestamp: string;
+  /** The description of this responder gateway. (AI-inferred) */
   description: string;
+  /** The custom domain name assigned to this responder gateway. (AI-inferred) */
   domainName: string;
+  /** The endpoint external bid requesters use to reach this responder gateway. (AI-inferred) */
   externalInboundEndpoint: string;
+  /** The unique identifier of this responder gateway. (AI-inferred) */
   gatewayId: string;
+  /** Whether this responder gateway is reachable from the public internet (EXTERNAL) or only from within RTB Fabric (INTERNAL). (AI-inferred) */
   gatewayType: string;
   /** Configures the network listener for the responder gateway, specifying the port and protocol (such as HTTP or HTTPS) on which it accepts incoming bid requests. (AI-inferred) */
   listenerConfig: ResponderGateway_ListenerConfig;
+  /** The configuration for this responder gateway's own AWS-managed endpoint, used when no custom domain name is configured. (AI-inferred) */
   managedEndpointConfiguration: unknown;
+  /** The networking port this responder gateway listens on. (AI-inferred) */
   port: number;
+  /** The networking protocol (HTTP or HTTPS) this responder gateway listens on. (AI-inferred) */
   protocol: string;
+  /** The current status of this responder gateway. (AI-inferred) */
   responderGatewayStatus: string;
   /** The ID of one or more security groups in order to create a gateway. */
   securityGroupIds: unknown[];
@@ -74,7 +93,9 @@ export interface ResponderGatewayAttrs {
   tags: ResponderGateway_Tags[];
   /** Configures the trust store used by the responder gateway to validate client certificates during mutual TLS handshakes, enabling secure client authentication. (AI-inferred) */
   trustStoreConfiguration: ResponderGateway_TrustStoreConfiguration;
+  /** The date and time when this responder gateway was last updated. (AI-inferred) */
   updatedTimestamp: string;
+  /** A reference to the VPC this responder gateway is deployed in. (AI-inferred) */
   vpcId: string;
 }
 

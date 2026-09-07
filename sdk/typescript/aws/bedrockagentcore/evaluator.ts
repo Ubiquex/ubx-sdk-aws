@@ -222,6 +222,7 @@ export interface EvaluatorConfig {
   evaluatorName: string | Computed<string>;
   /** The ARN of the KMS key used to encrypt evaluator data. */
   kmsKeyArn?: string | Computed<string>;
+  /** The real severity or grading level this evaluator assigns. (AI-inferred) */
   level: string | Computed<string>;
   /** A list of tags to assign to the evaluator. */
   tags?: Evaluator_Tags[] | Computed<Evaluator_Tags[]>;
@@ -242,7 +243,9 @@ export interface EvaluatorAttrs {
   evaluatorName: string;
   /** The ARN of the KMS key used to encrypt evaluator data. */
   kmsKeyArn: string;
+  /** The real severity or grading level this evaluator assigns. (AI-inferred) */
   level: string;
+  /** The current status of this evaluator. (AI-inferred) */
   status: string;
   /** A list of tags to assign to the evaluator. */
   tags: Evaluator_Tags[];

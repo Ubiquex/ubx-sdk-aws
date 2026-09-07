@@ -37,6 +37,7 @@ _PaymentConnector_CredentialProviderConfigurationsFields = {
 class PaymentConnectorConfig:
     # The name of the payment connector
     connector_name: Any = None
+    # The real type of payment provider this connector integrates with. (AI-inferred)
     connector_type: Any = None
     # The credential provider configurations for the connector. Required when ProvisionMode is MANUAL or not specified. Empty for QUICK_CREATE until provisioning completes.
     credential_provider_configurations: Any = None
@@ -44,6 +45,7 @@ class PaymentConnectorConfig:
     description: Any = None
     # The identifier of the parent payment manager
     payment_manager_id: Any = None
+    # How this payment connector's own underlying resources are provisioned. (AI-inferred)
     provision_mode: Any = None
 
 @dataclasses.dataclass
@@ -56,7 +58,9 @@ class PaymentConnectorAttrs:
     connector_last_updated_at: Any = None
     # The name of the payment connector
     connector_name: Any = None
+    # The current status of this payment connector. (AI-inferred)
     connector_status: Any = None
+    # The real type of payment provider this connector integrates with. (AI-inferred)
     connector_type: Any = None
     # The credential provider configurations for the connector. Required when ProvisionMode is MANUAL or not specified. Empty for QUICK_CREATE until provisioning completes.
     credential_provider_configurations: Any = None
@@ -68,6 +72,7 @@ class PaymentConnectorAttrs:
     payment_connector_id: Any = None
     # The identifier of the parent payment manager
     payment_manager_id: Any = None
+    # How this payment connector's own underlying resources are provisioned. (AI-inferred)
     provision_mode: Any = None
 
 PaymentConnector = ubx.ResourceBinding(

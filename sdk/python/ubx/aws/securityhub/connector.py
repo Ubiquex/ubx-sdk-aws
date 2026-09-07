@@ -82,11 +82,13 @@ class ConnectorAttrs:
     description: Any = None
     # The enablement status of the connector
     enablement_status: Any = None
+    # The issues reported by this Security Hub connector's own external source. (AI-inferred)
     issues: Any = None
     # The timestamp formatted in ISO8601
     last_checked_at: Any = None
     # The timestamp formatted in ISO8601
     last_updated_at: Any = None
+    # A message describing this Security Hub connector's own current state. (AI-inferred)
     message: Any = None
     # The name of the connector.
     name: Any = None

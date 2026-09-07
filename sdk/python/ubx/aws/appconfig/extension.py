@@ -41,6 +41,7 @@ class ExtensionAttrs:
     arn: Any = None
     # Description of the extension.
     description: Any = None
+    # The unique identifier of this AppConfig extension. (AI-inferred)
     id: Any = None
     # The version number of the current extension to be replaced, used as an optimistic concurrency check when updating the extension to prevent overwriting concurrent changes. (AI-inferred)
     latest_version_number: Any = None

@@ -145,6 +145,17 @@ class TopicRule_TopicRulePayload_Actions_Http:
     url: Any = None
 
 @dataclasses.dataclass
+class TopicRule_TopicRulePayload_Actions_InfluxDb:
+    batch_config: Any = None
+    database_name: Any = None
+    destination_arn: Any = None
+    organization: Any = None
+    role_arn: Any = None
+    table_name: Any = None
+    tags: Any = None
+    timestamp_unit: Any = None
+
+@dataclasses.dataclass
 class TopicRule_TopicRulePayload_Actions_IotAnalytics:
     # When true, the IoT Analytics action batches multiple MQTT messages into a single IoT Analytics message; when false, each incoming message is processed separately. (AI-inferred)
     batch_mode: Any = None
@@ -364,6 +375,7 @@ class TopicRule_TopicRulePayload_Actions:
     firehose: Any = None
     # The HTTP action configuration that forwards the IoT message to an HTTPS endpoint, defining the URL, optional headers, and authentication details. (AI-inferred)
     http: Any = None
+    influx_db: Any = None
     # Defines an AWS IoT Analytics action that routes IoT rule messages to a specified IoT Analytics channel, requiring a channelName and roleArn to authorize the write. (AI-inferred)
     iot_analytics: Any = None
     # Specifies the AWS IoT Events action, which sends the message payload to an AWS IoT Events input for processing by a detector model. (AI-inferred)
@@ -515,6 +527,21 @@ _TopicRule_TopicRulePayload_Actions_HttpFields = {
         fields=_TopicRule_TagsFields,
     ),
     "url": ubx.FieldSpec(wire_name="url"),
+}
+
+_TopicRule_TopicRulePayload_Actions_InfluxDbFields = {
+    "batch_config": ubx.FieldSpec(
+        wire_name="batch_config",
+        kind="object",
+        fields=_TopicRule_TopicRulePayload_Actions_Http_BatchConfigFields,
+    ),
+    "database_name": ubx.FieldSpec(wire_name="database_name"),
+    "destination_arn": ubx.FieldSpec(wire_name="destination_arn"),
+    "organization": ubx.FieldSpec(wire_name="organization"),
+    "role_arn": ubx.FieldSpec(wire_name="role_arn"),
+    "table_name": ubx.FieldSpec(wire_name="table_name"),
+    "tags": ubx.FieldSpec(wire_name="tags"),
+    "timestamp_unit": ubx.FieldSpec(wire_name="timestamp_unit"),
 }
 
 _TopicRule_TopicRulePayload_Actions_IotAnalyticsFields = {
@@ -728,6 +755,11 @@ _TopicRule_TopicRulePayload_ActionsFields = {
         wire_name="http",
         kind="object",
         fields=_TopicRule_TopicRulePayload_Actions_HttpFields,
+    ),
+    "influx_db": ubx.FieldSpec(
+        wire_name="influx_db",
+        kind="object",
+        fields=_TopicRule_TopicRulePayload_Actions_InfluxDbFields,
     ),
     "iot_analytics": ubx.FieldSpec(
         wire_name="iot_analytics",

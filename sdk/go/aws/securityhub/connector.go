@@ -78,11 +78,13 @@ type ConnectorAttrs struct {
 	Description any
 	// The enablement status of the connector
 	EnablementStatus any
+	// The issues reported by this Security Hub connector's own external source. (AI-inferred)
 	Issues any
 	// The timestamp formatted in ISO8601
 	LastCheckedAt any
 	// The timestamp formatted in ISO8601
 	LastUpdatedAt any
+	// A message describing this Security Hub connector's own current state. (AI-inferred)
 	Message any
 	// The name of the connector.
 	Name any

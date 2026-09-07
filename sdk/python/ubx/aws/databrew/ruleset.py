@@ -100,6 +100,7 @@ class RulesetConfig:
     name: Any = None
     # List of the data quality rules in the ruleset
     rules: Any = None
+    # The tags assigned to this DataBrew ruleset. (AI-inferred)
     tags: Any = None
     # Arn of the target resource (dataset) to apply the ruleset to
     target_arn: Any = None
@@ -112,6 +113,7 @@ class RulesetAttrs:
     name: Any = None
     # List of the data quality rules in the ruleset
     rules: Any = None
+    # The tags assigned to this DataBrew ruleset. (AI-inferred)
     tags: Any = None
     # Arn of the target resource (dataset) to apply the ruleset to
     target_arn: Any = None

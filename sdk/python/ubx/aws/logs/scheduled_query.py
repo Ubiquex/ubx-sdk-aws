@@ -53,6 +53,7 @@ class ScheduledQueryConfig:
     execution_role_arn: Any = None
     # Specifies the list of log group names or ARNs that the scheduled query will run against. (AI-inferred)
     log_group_identifiers: Any = None
+    # The name of this scheduled query. (AI-inferred)
     name: Any = None
     # The query language used to parse and execute the scheduled query string, where `CWLI` denotes CloudWatch Logs Insights and `PPL` denotes OpenSearch Piped Processing Language. (AI-inferred)
     query_language: Any = None
@@ -90,6 +91,7 @@ class ScheduledQueryAttrs:
     last_updated_time: Any = None
     # Specifies the list of log group names or ARNs that the scheduled query will run against. (AI-inferred)
     log_group_identifiers: Any = None
+    # The name of this scheduled query. (AI-inferred)
     name: Any = None
     # The query language used to parse and execute the scheduled query string, where `CWLI` denotes CloudWatch Logs Insights and `PPL` denotes OpenSearch Piped Processing Language. (AI-inferred)
     query_language: Any = None

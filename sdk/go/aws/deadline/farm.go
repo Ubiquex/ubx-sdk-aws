@@ -16,6 +16,7 @@ var Farm_TagsFields = ubx.FieldMap{
 	}
 
 type FarmConfig struct {
+	// A multiplier applied to this farm's own reported usage costs, used to adjust cost tracking without changing actual resource consumption. (AI-inferred)
 	CostScaleFactor any
 	// A human-readable description of the Deadline Cloud farm, used to identify the farm's purpose or details. (AI-inferred)
 	Description any
@@ -30,6 +31,7 @@ type FarmConfig struct {
 type FarmAttrs struct {
 	// The unique Amazon Resource Name (ARN) of the farm, used to reference the farm across AWS services and in IAM policies. (AI-inferred)
 	Arn any
+	// A multiplier applied to this farm's own reported usage costs, used to adjust cost tracking without changing actual resource consumption. (AI-inferred)
 	CostScaleFactor any
 	// A human-readable description of the Deadline Cloud farm, used to identify the farm's purpose or details. (AI-inferred)
 	Description any

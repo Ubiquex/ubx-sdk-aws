@@ -15,6 +15,7 @@ type QueryResults_Statistics struct {
 	LogGroupsScanned any
 	RecordsMatched any
 	RecordsScanned any
+	ResultCount any
 }
 
 type QueryResultsConfig struct {

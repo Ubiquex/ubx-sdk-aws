@@ -61,6 +61,7 @@ export interface RestApiConfig {
   description?: string | Computed<string>;
   /** When set to true, disables the default execute-api endpoint for the REST API, so the API is accessible only through custom domain names. (AI-inferred) */
   disableExecuteApiEndpoint?: boolean | Computed<boolean>;
+  /** Whether this REST API's own endpoint is reachable publicly or only from within a VPC. (AI-inferred) */
   endpointAccessMode?: string | Computed<string>;
   /** The ``EndpointConfiguration`` property type specifies the endpoint types and IP address types of a REST API. ``EndpointConfiguration`` is a property of the [AWS::ApiGateway::RestApi](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html) resource. */
   endpointConfiguration?: RestApi_EndpointConfiguration | Computed<RestApi_EndpointConfiguration>;
@@ -80,6 +81,7 @@ export interface RestApiConfig {
   securityPolicy?: string | Computed<string>;
   /** Defines a list of key-value pairs to tag the API Gateway REST API, enabling cost allocation, resource-level access control, and management of the API resource. (AI-inferred) */
   tags?: RestApi_Tags[] | Computed<RestApi_Tags[]>;
+  version?: string | Computed<string>;
 }
 
 export interface RestApiAttrs {
@@ -97,6 +99,7 @@ export interface RestApiAttrs {
   description: string;
   /** When set to true, disables the default execute-api endpoint for the REST API, so the API is accessible only through custom domain names. (AI-inferred) */
   disableExecuteApiEndpoint: boolean;
+  /** Whether this REST API's own endpoint is reachable publicly or only from within a VPC. (AI-inferred) */
   endpointAccessMode: string;
   /** The ``EndpointConfiguration`` property type specifies the endpoint types and IP address types of a REST API. ``EndpointConfiguration`` is a property of the [AWS::ApiGateway::RestApi](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html) resource. */
   endpointConfiguration: RestApi_EndpointConfiguration;
@@ -120,6 +123,7 @@ export interface RestApiAttrs {
   securityPolicy: string;
   /** Defines a list of key-value pairs to tag the API Gateway REST API, enabling cost allocation, resource-level access control, and management of the API resource. (AI-inferred) */
   tags: RestApi_Tags[];
+  version: string;
 }
 
 export const RestApi: ResourceBinding<RestApiConfig, RestApiAttrs> = {
@@ -154,5 +158,6 @@ export const RestApi: ResourceBinding<RestApiConfig, RestApiAttrs> = {
       kind: "list",
       fields: RestApi_TagsFields,
     },
+    version: "version",
   },
 };

@@ -683,6 +683,7 @@ export interface JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_AudioDescri
   codecProfile?: string | Computed<string>;
   codingMode?: string | Computed<string>;
   loudnessMeasurementMode?: string | Computed<string>;
+  passthroughControl?: string | Computed<string>;
   rapInterval?: number | Computed<number>;
   rateControlMode?: string | Computed<string>;
   rawFormat?: string | Computed<string>;
@@ -922,6 +923,18 @@ export interface JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDesc
   pageTypes?: string[] | Computed<string[]>;
 }
 
+export interface JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings_TtmlDestinationSettings {
+  backgroundColor?: string | Computed<string>;
+  backgroundOpacity?: number | Computed<number>;
+  fontColor?: string | Computed<string>;
+  fontOpacity?: number | Computed<number>;
+  fontSize?: number | Computed<number>;
+  fontStyle?: string | Computed<string>;
+  fontWeight?: string | Computed<string>;
+  stylePassthrough?: string | Computed<string>;
+  textDecoration?: string | Computed<string>;
+}
+
 export interface JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings {
   burninDestinationSettings?: JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings_BurninDestinationSettings | Computed<JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings_BurninDestinationSettings>;
   destinationType?: string | Computed<string>;
@@ -931,7 +944,7 @@ export interface JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDesc
   sccDestinationSettings?: JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings_SccDestinationSettings | Computed<JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings_SccDestinationSettings>;
   srtDestinationSettings?: JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings_SrtDestinationSettings | Computed<JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings_SrtDestinationSettings>;
   teletextDestinationSettings?: JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings_TeletextDestinationSettings | Computed<JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings_TeletextDestinationSettings>;
-  ttmlDestinationSettings?: JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings_SrtDestinationSettings | Computed<JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings_SrtDestinationSettings>;
+  ttmlDestinationSettings?: JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings_TtmlDestinationSettings | Computed<JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings_TtmlDestinationSettings>;
   webvttDestinationSettings?: JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings_ImscDestinationSettings | Computed<JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_CaptionDescriptions_DestinationSettings_ImscDestinationSettings>;
 }
 
@@ -1419,6 +1432,11 @@ export interface JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescri
   slices?: number | Computed<number>;
 }
 
+export interface JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescription_CodecSettings_XavcSettings_XavcHdIntraCbgProfileSettings {
+  interlaceMode?: string | Computed<string>;
+  xavcClass?: string | Computed<string>;
+}
+
 export interface JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescription_CodecSettings_XavcSettings_XavcHdProfileSettings {
   bitrateClass?: string | Computed<string>;
   flickerAdaptiveQuantization?: string | Computed<string>;
@@ -1447,7 +1465,7 @@ export interface JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescri
   xavc4kIntraCbgProfileSettings?: JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescription_CodecSettings_XavcSettings_Xavc4kIntraCbgProfileSettings | Computed<JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescription_CodecSettings_XavcSettings_Xavc4kIntraCbgProfileSettings>;
   xavc4kIntraVbrProfileSettings?: JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescription_CodecSettings_XavcSettings_Xavc4kIntraCbgProfileSettings | Computed<JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescription_CodecSettings_XavcSettings_Xavc4kIntraCbgProfileSettings>;
   xavc4kProfileSettings?: JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescription_CodecSettings_XavcSettings_Xavc4kProfileSettings | Computed<JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescription_CodecSettings_XavcSettings_Xavc4kProfileSettings>;
-  xavcHdIntraCbgProfileSettings?: JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescription_CodecSettings_XavcSettings_Xavc4kIntraCbgProfileSettings | Computed<JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescription_CodecSettings_XavcSettings_Xavc4kIntraCbgProfileSettings>;
+  xavcHdIntraCbgProfileSettings?: JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescription_CodecSettings_XavcSettings_XavcHdIntraCbgProfileSettings | Computed<JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescription_CodecSettings_XavcSettings_XavcHdIntraCbgProfileSettings>;
   xavcHdProfileSettings?: JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescription_CodecSettings_XavcSettings_XavcHdProfileSettings | Computed<JobsQueryResults_Jobs_Settings_OutputGroups_Outputs_VideoDescription_CodecSettings_XavcSettings_XavcHdProfileSettings>;
 }
 

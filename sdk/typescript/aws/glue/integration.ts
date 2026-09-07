@@ -32,6 +32,7 @@ export interface IntegrationConfig {
   additionalEncryptionContext?: unknown | Computed<unknown>;
   /** Specifies a SQL query string that filters the source data to be included in the Glue integration, such as selecting specific columns or rows from a source table. (AI-inferred) */
   dataFilter?: string | Computed<string>;
+  /** The description of this Glue zero-ETL integration. (AI-inferred) */
   description?: string | Computed<string>;
   /** The configuration settings for the integration. */
   integrationConfig?: Integration_IntegrationConfig | Computed<Integration_IntegrationConfig>;
@@ -54,6 +55,7 @@ export interface IntegrationAttrs {
   createTime: string;
   /** Specifies a SQL query string that filters the source data to be included in the Glue integration, such as selecting specific columns or rows from a source table. (AI-inferred) */
   dataFilter: string;
+  /** The description of this Glue zero-ETL integration. (AI-inferred) */
   description: string;
   /** The Amazon Resource Name (ARN) of the integration. */
   integrationArn: string;

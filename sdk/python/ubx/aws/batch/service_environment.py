@@ -19,19 +19,28 @@ _ServiceEnvironment_CapacityLimitsFields = {
 
 @dataclasses.dataclass
 class ServiceEnvironmentConfig:
+    # The maximum resources service jobs in this service environment can use. (AI-inferred)
     capacity_limits: Any = None
+    # The name of this service environment. (AI-inferred)
     service_environment_name: Any = None
+    # The type of service this environment runs, e.g. SageMaker Training jobs. (AI-inferred)
     service_environment_type: Any = None
+    # Whether this service environment is enabled or disabled. (AI-inferred)
     state: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None
 
 @dataclasses.dataclass
 class ServiceEnvironmentAttrs:
+    # The maximum resources service jobs in this service environment can use. (AI-inferred)
     capacity_limits: Any = None
+    # The Amazon Resource Name (ARN) of this service environment. (AI-inferred)
     service_environment_arn: Any = None
+    # The name of this service environment. (AI-inferred)
     service_environment_name: Any = None
+    # The type of service this environment runs, e.g. SageMaker Training jobs. (AI-inferred)
     service_environment_type: Any = None
+    # Whether this service environment is enabled or disabled. (AI-inferred)
     state: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None

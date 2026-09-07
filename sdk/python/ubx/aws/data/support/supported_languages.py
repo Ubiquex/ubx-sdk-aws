@@ -15,12 +15,14 @@ class SupportedLanguages_SupportedLanguages:
 @dataclasses.dataclass
 class SupportedLanguagesConfig:
     category_code: Any = None
+    dry_run: Any = None
     issue_type: Any = None
     service_code: Any = None
 
 @dataclasses.dataclass
 class SupportedLanguagesAttrs:
     category_code: Any = None
+    dry_run: Any = None
     issue_type: Any = None
     service_code: Any = None
     supported_languages: Any = None
@@ -29,6 +31,7 @@ SupportedLanguages = ubx.DataSourceBinding(
     wire_type="aws_support_supported_languages",
     fields={
         "category_code": ubx.FieldSpec(wire_name="category_code"),
+        "dry_run": ubx.FieldSpec(wire_name="dry_run"),
         "issue_type": ubx.FieldSpec(wire_name="issue_type"),
         "service_code": ubx.FieldSpec(wire_name="service_code"),
     },

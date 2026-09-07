@@ -63,6 +63,7 @@ type AgentSpaceAttrs struct {
 	Locale any
 	// The name of the AgentSpace.
 	Name any
+	// The operator application associated with this DevOps agent space. (AI-inferred)
 	OperatorApp any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

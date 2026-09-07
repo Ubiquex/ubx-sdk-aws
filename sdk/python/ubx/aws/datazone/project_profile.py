@@ -77,10 +77,14 @@ class ProjectProfileConfig:
     domain_identifier: Any = None
     # The unique identifier of the Amazon DataZone domain unit that this project profile is associated with, used to scope the profile to a specific domain unit. (AI-inferred)
     domain_unit_identifier: Any = None
+    # The name of this project profile. (AI-inferred)
     name: Any = None
     project_resource_tags: Any = None
+    # The description shown to project users describing the allowed resource tag specifications for this project profile. (AI-inferred)
     project_resource_tags_description: Any = None
+    # Whether this project profile is enabled or disabled. (AI-inferred)
     status: Any = None
+    # Whether this project profile uses DataZone's own default environment configurations rather than the ones explicitly set on it. (AI-inferred)
     use_default_configurations: Any = None
 
 @dataclasses.dataclass
@@ -105,13 +109,18 @@ class ProjectProfileAttrs:
     environment_configurations: Any = None
     # The unique identifier assigned by AWS DataZone to this project profile. (AI-inferred)
     id: Any = None
+    # The unique identifier of this project profile. (AI-inferred)
     identifier: Any = None
     # The timestamp indicating when the project profile was last updated, set automatically by AWS DataZone. (AI-inferred)
     last_updated_at: Any = None
+    # The name of this project profile. (AI-inferred)
     name: Any = None
     project_resource_tags: Any = None
+    # The description shown to project users describing the allowed resource tag specifications for this project profile. (AI-inferred)
     project_resource_tags_description: Any = None
+    # Whether this project profile is enabled or disabled. (AI-inferred)
     status: Any = None
+    # Whether this project profile uses DataZone's own default environment configurations rather than the ones explicitly set on it. (AI-inferred)
     use_default_configurations: Any = None
 
 ProjectProfile = ubx.ResourceBinding(

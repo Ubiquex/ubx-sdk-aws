@@ -23,6 +23,7 @@ type Records_Records struct {
 }
 
 type RecordsConfig struct {
+	DryRun any
 	Limit any
 	ShardIterator any
 	StreamArn any
@@ -31,6 +32,7 @@ type RecordsConfig struct {
 
 type RecordsAttrs struct {
 	ChildShards any
+	DryRun any
 	Limit any
 	MillisBehindLatest any
 	NextShardIterator any
@@ -43,6 +45,7 @@ type RecordsAttrs struct {
 var Records = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_records",
 	Fields: ubx.FieldMap{
+		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Limit": ubx.FieldSpec{WireName: "limit"},
 		"ShardIterator": ubx.FieldSpec{WireName: "shard_iterator"},
 		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},

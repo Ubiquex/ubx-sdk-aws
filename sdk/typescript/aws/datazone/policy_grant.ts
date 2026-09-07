@@ -243,6 +243,7 @@ const PolicyGrant_PrincipalFields: FieldMap = {
 };
 
 export interface PolicyGrantConfig {
+  /** The details of this policy grant, specific to its own policy type. (AI-inferred) */
   detail?: PolicyGrant_Detail | Computed<PolicyGrant_Detail>;
   /** The identifier of the Amazon DataZone domain where the policy grant is created. (AI-inferred) */
   domainIdentifier: string | Computed<string>;
@@ -261,6 +262,7 @@ export interface PolicyGrantAttrs {
   createdAt: string;
   /** Specifies the user who created the policy grant member. */
   createdBy: string;
+  /** The details of this policy grant, specific to its own policy type. (AI-inferred) */
   detail: PolicyGrant_Detail;
   /** The identifier of the Amazon DataZone domain where the policy grant is created. (AI-inferred) */
   domainIdentifier: string;

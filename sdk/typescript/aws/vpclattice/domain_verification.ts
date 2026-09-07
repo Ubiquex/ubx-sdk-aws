@@ -21,6 +21,7 @@ const DomainVerification_TagsFields: FieldMap = {
 export interface DomainVerificationConfig {
   /** The custom domain name that AWS VPC Lattice will verify to prove ownership before it can be associated with a service network. (AI-inferred) */
   domainName: string | Computed<string>;
+  /** The tags assigned to this domain verification. (AI-inferred) */
   tags?: DomainVerification_Tags[] | Computed<DomainVerification_Tags[]>;
 }
 
@@ -29,9 +30,11 @@ export interface DomainVerificationAttrs {
   arn: string;
   /** The custom domain name that AWS VPC Lattice will verify to prove ownership before it can be associated with a service network. (AI-inferred) */
   domainName: string;
+  /** The unique identifier of this domain verification. (AI-inferred) */
   id: string;
   /** The current state of the domain ownership verification for the VPC Lattice service network, indicating whether the domain has been successfully verified (e.g., IN_PROGRESS, SUCCESS, FAILED). (AI-inferred) */
   status: string;
+  /** The tags assigned to this domain verification. (AI-inferred) */
   tags: DomainVerification_Tags[];
   /** This read-only object contains the TXT record details (such as record name and value) that AWS VPC Lattice generated for verifying ownership of the specified domain. (AI-inferred) */
   txtMethodConfig: DomainVerification_TxtMethodConfig;

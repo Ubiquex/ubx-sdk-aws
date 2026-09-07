@@ -12,31 +12,46 @@ const TrustedEntitySet_TagsFields: FieldMap = {
 };
 
 export interface TrustedEntitySetConfig {
+  /** Whether GuardDuty uses this trusted entity set to suppress findings for the IP addresses and domains it lists. (AI-inferred) */
   activate?: boolean | Computed<boolean>;
+  /** A reference to the GuardDuty detector this trusted entity set belongs to. (AI-inferred) */
   detectorId?: string | Computed<string>;
   /** The AWS account ID of the S3 bucket owner that GuardDuty expects when accessing the bucket for this trusted entity set, used to verify bucket ownership and prevent cross-account misconfiguration. (AI-inferred) */
   expectedBucketOwner?: string | Computed<string>;
+  /** The format of the file containing this trusted entity set's own entries. (AI-inferred) */
   format: string | Computed<string>;
   /** The S3 URI of the file containing the trusted entities (such as IP addresses or domain names) that GuardDuty uses for this set. (AI-inferred) */
   location: string | Computed<string>;
+  /** The name of this trusted entity set. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The tags assigned to this trusted entity set. (AI-inferred) */
   tags?: TrustedEntitySet_Tags[] | Computed<TrustedEntitySet_Tags[]>;
 }
 
 export interface TrustedEntitySetAttrs {
+  /** Whether GuardDuty uses this trusted entity set to suppress findings for the IP addresses and domains it lists. (AI-inferred) */
   activate: boolean;
+  /** The date and time when this trusted entity set was created. (AI-inferred) */
   createdAt: string;
+  /** A reference to the GuardDuty detector this trusted entity set belongs to. (AI-inferred) */
   detectorId: string;
+  /** The error details for this trusted entity set, populated when its own status is Error. (AI-inferred) */
   errorDetails: string;
   /** The AWS account ID of the S3 bucket owner that GuardDuty expects when accessing the bucket for this trusted entity set, used to verify bucket ownership and prevent cross-account misconfiguration. (AI-inferred) */
   expectedBucketOwner: string;
+  /** The format of the file containing this trusted entity set's own entries. (AI-inferred) */
   format: string;
+  /** The unique identifier of this trusted entity set. (AI-inferred) */
   id: string;
   /** The S3 URI of the file containing the trusted entities (such as IP addresses or domain names) that GuardDuty uses for this set. (AI-inferred) */
   location: string;
+  /** The name of this trusted entity set. (AI-inferred) */
   name: string;
+  /** The current status of this trusted entity set. (AI-inferred) */
   status: string;
+  /** The tags assigned to this trusted entity set. (AI-inferred) */
   tags: TrustedEntitySet_Tags[];
+  /** The date and time when this trusted entity set was last updated. (AI-inferred) */
   updatedAt: string;
 }
 
